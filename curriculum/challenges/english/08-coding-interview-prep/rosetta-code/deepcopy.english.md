@@ -47,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function deepcopy (obj) {
+function deepcopy(obj) {
   // Good luck!
   return true;
 }

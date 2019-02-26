@@ -61,7 +61,7 @@ const solution = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
 
 
 ```js
-function getFinalOpenedDoors (numDoors) {
+function getFinalOpenedDoors(numDoors) {
   // this is the final pattern (always squares).
   // thus, the most efficient solution simply returns an array of squares up to numDoors).
   const finalState = [];

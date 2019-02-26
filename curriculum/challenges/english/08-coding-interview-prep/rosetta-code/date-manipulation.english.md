@@ -46,7 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function add12Hours (dateString) {
+function add12Hours(dateString) {
   // Good luck!
   return true;
 }
@@ -61,7 +61,7 @@ function add12Hours (dateString) {
 
 
 ```js
-function add12Hours (dateString) {
+function add12Hours(dateString) {
   const months = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
   // Get the parts of the string

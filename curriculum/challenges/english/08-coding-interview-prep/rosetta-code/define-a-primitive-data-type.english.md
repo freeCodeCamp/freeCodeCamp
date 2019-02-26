@@ -63,7 +63,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Num (n) {
+function Num(n) {
   // Good luck!
   return n;
 }

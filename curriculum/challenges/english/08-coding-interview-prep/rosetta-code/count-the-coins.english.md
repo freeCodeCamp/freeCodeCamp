@@ -54,7 +54,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function countCoins () {
+function countCoins() {
   // Good luck!
   return true;
 }
@@ -71,7 +71,7 @@ function countCoins () {
 
 
 ```js
-function countCoins () {
+function countCoins() {
   let t = 100;
   const operands = [1, 5, 10, 25];
   const targetsLength = t + 1;

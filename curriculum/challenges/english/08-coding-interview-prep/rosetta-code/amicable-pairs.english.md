@@ -45,7 +45,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function amicablePairsUpTo (maxNum) {
+function amicablePairsUpTo(maxNum) {
   // Good luck!
   return true;
 }
@@ -86,7 +86,7 @@ const answer20000 = [
 
 ```js
 // amicablePairsUpTo :: Int -> [(Int, Int)]
-function amicablePairsUpTo (maxNum) {
+function amicablePairsUpTo(maxNum) {
   return range(1, maxNum)
     .map(x => properDivisors(x)
       .reduce((a, b) => a + b, 0))
@@ -101,7 +101,7 @@ function amicablePairsUpTo (maxNum) {
 }
 
 // properDivisors :: Int -> [Int]
-function properDivisors (n) {
+function properDivisors(n) {
   if (n < 2) return [];
 
   const rRoot = Math.sqrt(n);
@@ -117,7 +117,7 @@ function properDivisors (n) {
 }
 
 // Int -> Int -> Maybe Int -> [Int]
-function range (m, n, step) {
+function range(m, n, step) {
   const d = (step || 1) * (n >= m ? 1 : -1);
 
   return Array.from({

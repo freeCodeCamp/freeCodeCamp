@@ -55,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function pythagoreanMeans (rangeArr) {
+function pythagoreanMeans(rangeArr) {
   // Good luck!
 }
 ```
@@ -88,7 +88,7 @@ const answer1 = {
 
 
 ```js
-function pythagoreanMeans (rangeArr) {
+function pythagoreanMeans(rangeArr) {
   // arithmeticMean :: [Number] -> Number
   const arithmeticMean = xs =>
     foldl((sum, n) => sum + n, 0, xs) / length(xs);

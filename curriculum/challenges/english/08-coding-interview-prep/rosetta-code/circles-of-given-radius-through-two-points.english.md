@@ -68,7 +68,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function getCircles (...args) {
+function getCircles(...args) {
   // Good luck!
   return true;
 }
@@ -111,7 +111,7 @@ const pAng = (p1, p2) => Math.atan(p1.map((e, i) => e - p2[i]).reduce((p, c) => 
 const solveF = (p, r) => t => [parseFloat((r * Math.cos(t) + p[0]).toFixed(4)), parseFloat((r * Math.sin(t) + p[1]).toFixed(4))];
 const diamPoints = (p1, p2) => p1.map((e, i) => parseFloat((e + (p2[i] - e) / 2).toFixed(4)));
 
-function getCircles (...args) {
+function getCircles(...args) {
   const [p1, p2, s] = args;
   const solve = solveF(p1, s);
   const halfDist = hDist(p1, p2);

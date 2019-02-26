@@ -72,7 +72,7 @@ const solution = [15043, 4, 4953];
 
 
 ```js
-function getDPA (num) {
+function getDPA(num) {
   const dpa = [1, 0, 0];
   for (let n = 2; n <= num; n += 1) {
     let ds = 1;

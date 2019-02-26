@@ -102,18 +102,18 @@ tests:
 <div id='js-seed'>
 
 ```js
-const Point = function (x, y) {
+const Point = function(x, y) {
   this.x = x;
   this.y = y;
 };
-Point.prototype.getX = function () {
+Point.prototype.getX = function() {
   return this.x;
 };
-Point.prototype.getY = function () {
+Point.prototype.getY = function() {
   return this.y;
 };
 
-function getClosestPair (pointsArr) {
+function getClosestPair(pointsArr) {
   // Good luck!
   return true;
 }
@@ -238,14 +238,14 @@ const benchmarkPoints = [
 
 
 ```js
-const Point = function (x, y) {
+const Point = function(x, y) {
   this.x = x;
   this.y = y;
 };
-Point.prototype.getX = function () {
+Point.prototype.getX = function() {
   return this.x;
 };
-Point.prototype.getY = function () {
+Point.prototype.getY = function() {
   return this.y;
 };
 
@@ -344,9 +344,9 @@ const closestPair = function _closestPair(Px, Py) {
 	};
 };
 
-function getClosestPair (points) {
-  const sortX = function (a, b) { return (a.x < b.x) ? -1 : ((a.x > b.x) ? 1 : 0); }
-  const sortY = function (a, b) { return (a.y < b.y) ? -1 : ((a.y > b.y) ? 1 : 0); }
+function getClosestPair(points) {
+  const sortX = function(a, b) { return (a.x < b.x) ? -1 : ((a.x > b.x) ? 1 : 0); }
+  const sortY = function(a, b) { return (a.y < b.y) ? -1 : ((a.y > b.y) ? 1 : 0); }
 
   const Px = mergeSort(points, sortX);
   const Py = mergeSort(points, sortY);

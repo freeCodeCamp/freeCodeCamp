@@ -57,7 +57,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function quibble (words) {
+function quibble(words) {
   // Good luck!
   return true;
 }
@@ -83,7 +83,7 @@ const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
 
 
 ```js
-function quibble (words) {
+function quibble(words) {
   return "{" +
     words.slice(0, words.length - 1).join(",") +
    (words.length > 1 ? " and " : "") +

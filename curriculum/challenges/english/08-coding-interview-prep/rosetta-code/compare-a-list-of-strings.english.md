@@ -58,12 +58,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function allEqual (arr) {
+function allEqual(arr) {
   // Good luck!
   return true;
 }
 
-function azSorted (arr) {
+function azSorted(arr) {
   // Good luck!
   return true;
 }

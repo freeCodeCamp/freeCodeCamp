@@ -96,7 +96,7 @@ const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
 
 
 ```js
-function canMakeWord (word) {
+function canMakeWord(word) {
   const characters = 'BO XK DQ CP NA GT RE TG QD FS JW HU VI AN OB ER FS LY PC ZM';
   const blocks = characters.split(' ').map(pair => pair.split(''));
 

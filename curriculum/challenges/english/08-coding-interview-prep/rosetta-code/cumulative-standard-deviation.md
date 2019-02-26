@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function standardDeviation (arr) {
+function standardDeviation(arr) {
   // Good luck!
 }
 ```
@@ -54,7 +54,7 @@ function standardDeviation (arr) {
 <section id='solution'>
 
 ```js
-function standardDeviation (arr) {
+function standardDeviation(arr) {
   var sum = 0,
     sum_sq = 0,
     n = arr.length;

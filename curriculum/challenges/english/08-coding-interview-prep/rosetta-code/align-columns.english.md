@@ -155,7 +155,7 @@ const testArr = [
 
 String.prototype.repeat = function (n) { return new Array(1 + parseInt(n)).join(this); };
 
-function formatText (input, justification) {
+function formatText(input, justification) {
   let x, y, max, cols = 0, diff, left, right;
   for (x = 0; x < input.length; x++) {
     input[x] = input[x].split('$');

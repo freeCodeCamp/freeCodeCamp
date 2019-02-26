@@ -46,7 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function countSubstring (str, subStr) {
+function countSubstring(str, subStr) {
   // Good luck!
   return true;
 }

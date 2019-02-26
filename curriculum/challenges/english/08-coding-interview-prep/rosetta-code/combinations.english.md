@@ -50,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function combinations (m, n) {
+function combinations(m, n) {
   // Good luck!
   return true;
 }
@@ -79,7 +79,7 @@ const testOutput2 = [[0, 1, 2, 3], [0, 1, 2, 4], [0, 1, 2, 5], [0, 1, 3, 4], [0,
 
 
 ```js
-function combinations (m, n) {
+function combinations(m, n) {
   const nArr = [...Array(n).keys()];
 
   return (function generateCombinations (size, numArr) {

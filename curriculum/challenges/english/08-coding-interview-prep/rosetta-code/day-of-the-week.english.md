@@ -39,7 +39,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function findXmasSunday (start, end) {
+function findXmasSunday(start, end) {
   // Good luck!
   return true;
 }
@@ -65,7 +65,7 @@ const secondSolution = [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 20
 
 
 ```js
-function findXmasSunday (start, end) {
+function findXmasSunday(start, end) {
   const xmasSunday = [];
   for (let year = start; year <= end; year++) {
     const xmas = new Date(year, 11, 25);

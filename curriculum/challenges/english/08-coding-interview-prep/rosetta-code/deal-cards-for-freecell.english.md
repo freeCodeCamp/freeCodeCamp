@@ -91,7 +91,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function dealFreeCell (seed) {
+function dealFreeCell(seed) {
   // Good luck!
   return true;
 }
@@ -135,7 +135,7 @@ const game617 = [
 
 ```js
 // RNG
-function FreeCellRNG (seed) {
+function FreeCellRNG(seed) {
   return {
     lastNum: seed,
     next() {
