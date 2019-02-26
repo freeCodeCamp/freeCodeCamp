@@ -51,6 +51,7 @@ export const types = createTypes(
     'hardGoTo',
     'openDonationModal',
     'onlineStatusChange',
+    'resetUserData',
     'submitComplete',
     'updateComplete',
     'updateFailed',
@@ -109,6 +110,8 @@ export const fetchProfileForUserError = createAction(
 export const reportUser = createAction(types.reportUser);
 export const reportUserComplete = createAction(types.reportUserComplete);
 export const reportUserError = createAction(types.reportUserError);
+
+export const resetUserData = createAction(types.resetUserData);
 
 export const showCert = createAction(types.showCert);
 export const showCertComplete = createAction(types.showCertComplete);
@@ -258,6 +261,11 @@ export const reducer = handleActions(
     [types.openDonationModal]: state => ({
       ...state,
       showDonationModal: true
+    }),
+    [types.resetUserData]: state => ({
+      ...state,
+      appUsername: '',
+      user: {}
     }),
     [types.showCert]: state => ({
       ...state,

@@ -1,3 +1,4 @@
+import { navigate } from 'gatsby';
 import { call, put, takeEvery } from 'redux-saga/effects';
 
 import {
@@ -6,27 +7,30 @@ import {
   resetProgressComplete,
   resetProgressError
 } from './';
-
-import {
-  postResetProgress,
-  postDeleteAccount
-} from '../../utils/ajax';
+import { resetUserData, fetchUser } from '../';
+import { postResetProgress, postDeleteAccount } from '../../utils/ajax';
 import { createFlashMessage } from '../../components/Flash/redux';
 
-function* deleteAccountSaga({ payload }) {
+function* deleteAccountSaga() {
   try {
-    const { data: response } = yield call(postDeleteAccount, payload);
+    const { data: response } = yield call(postDeleteAccount);
     yield put(deleteAccountComplete(response));
+    // remove current user information from application state
+    yield put(resetUserData());
+    yield call(navigate, '/');
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(deleteAccountError(e));
   }
 }
 
-function* resetProgressSaga({ payload }) {
+function* resetProgressSaga() {
   try {
-    const { data: response } = yield call(postResetProgress, payload);
+    const { data: response } = yield call(postResetProgress);
     yield put(resetProgressComplete(response));
+    // refresh current user data in application state
+    yield put(fetchUser());
+    yield call(navigate, '/welcome');
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(resetProgressError(e));
