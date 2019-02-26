@@ -97,7 +97,6 @@ export const resetProgressComplete = createAction(types.resetProgressComplete);
 export const resetProgressError = createAction(types.resetProgressError);
 
 export const deleteAccount = createAction(types.deleteAccount);
-export const deleteAccountComplete = createAction(types.deleteAccountComplete);
 export const deleteAccountError = createAction(types.deleteAccountError);
 
 export const usernameValidationSelector = state => state[ns].usernameValidation;
