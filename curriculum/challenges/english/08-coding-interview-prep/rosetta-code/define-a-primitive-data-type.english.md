@@ -6,13 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Define a type that behaves like an integer but has a lowest valid value of 1 and a highest valid value of 10.</p>
-Errors:
-If you try to instantiate a <code>Num</code> with a value outside of 1 - 10
-it should throw a <code>TypeError</code> with an error message of <code>'Out of range'</code>.
-If you try to instantiate a <code>Num</code> with a value that is not a number
-it should throw a <code>TypeError</code> with an error message of <code>'Not a Number'</code>.
+Define a type that behaves like an integer but has a lowest valid value of 1 and a highest valid value of 10.
+Error handling:
+<ul>
+  <li>If you try to instantiate a <code>Num</code> with a value outside of 1 - 10, it should throw a <code>TypeError</code> with an error message of <code>'Out of range'</code>.</li>
+  <li>If you try to instantiate a <code>Num</code> with a value that is not a number, it should throw a <code>TypeError</code> with an error message of <code>'Not a Number'</code>.</li>
+</ul>
 </section>
 
 ## Instructions
