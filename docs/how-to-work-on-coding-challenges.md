@@ -74,8 +74,6 @@ Optional Test setup code.
 
 </div>
 
-</section>
-
 ### After Test
 <div id='{ext}-teardown'>
 
