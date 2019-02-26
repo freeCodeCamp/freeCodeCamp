@@ -70,11 +70,7 @@ function Welcome({
   activeDonations
 }) {
   if (pending && !complete) {
-    return (
-      <div className='loader-wrapper'>
-        <Loader />
-      </div>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!isSignedIn) {

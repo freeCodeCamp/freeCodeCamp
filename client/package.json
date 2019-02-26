@@ -87,7 +87,9 @@
     "chokidar": "^2.0.4",
     "copy-webpack-plugin": "^4.6.0",
     "jest": "^23.6.0",
+    "jest-dom": "^3.1.2",
     "react-test-renderer": "^16.5.2",
+    "react-testing-library": "^6.0.0",
     "webpack-cli": "^3.1.1"
   },
   "repository": {

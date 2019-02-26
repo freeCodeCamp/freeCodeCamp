@@ -165,11 +165,7 @@ function ShowSettings(props) {
   } = props;
 
   if (showLoading) {
-    return (
-      <div className='loader-wrapper'>
-        <Loader />
-      </div>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!showLoading && !isSignedIn) {
