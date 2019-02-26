@@ -1,6 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes, createAsyncTypes } from '../../utils/createTypes';
+import { createDangerZoneSaga } from './danger-zone-saga';
 import { createSettingsSagas } from './settings-sagas';
 import { createUpdateMyEmailSaga } from './update-email-saga';
 
@@ -37,7 +38,8 @@ export const types = createTypes(
 
 export const sagas = [
   ...createSettingsSagas(types),
-  ...createUpdateMyEmailSaga(types)
+  ...createUpdateMyEmailSaga(types),
+  ...createDangerZoneSaga(types)
 ];
 
 const checkForSuccessPayload = ({ type, payload }) =>
