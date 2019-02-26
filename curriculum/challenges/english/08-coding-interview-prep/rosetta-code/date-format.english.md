@@ -6,11 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Return an array with the current date in the formats:</p>
-<p>-   2007-11-23   and </p>
-<p>-   Sunday, November 23, 2007</p>
-<p>Example output: <code>['2007-11-23', 'Sunday, November 23, 2007']</code></p>
+Return an array with the current date in the formats:
+<ul>
+  <li><b>2007-11-23</b> and</li>
+  <li><b>Sunday, November 23, 2007</b></li>
+</ul>
+Example output: <code>['2007-11-23', 'Sunday, November 23, 2007']</code>
 </section>
 
 ## Instructions

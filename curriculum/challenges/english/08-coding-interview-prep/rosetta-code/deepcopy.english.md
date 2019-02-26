@@ -6,14 +6,14 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Write a function that returns a deep copy of a given object.</p>
-<p>The copy must not be the same object that was given.</p>
-<p>This task will not test for: </p>
-Objects with properties that are functions
-Date objects or object with properties that are Date objects
-RegEx or object with properties that are RegEx objects
-Prototype copying
+Write a function that returns a deep copy of a given object. The copy must not be the same object that was given.
+This task will not test for:
+<ul>
+  <li>Objects with properties that are functions</li>
+  <li>Date objects or object with properties that are Date objects</li>
+  <li>RegEx or object with properties that are RegEx objects</li>
+  <li>Prototype copying</li>
+</ul>
 </section>
 
 ## Instructions

@@ -6,13 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Given a date string in EST, output the given date as a string with 12 hours added to the time. </p>
-<p>Time zone should be preserved.</p>
-<p>Example input: </p>
-<p><code>"March 7 2009 7:30pm EST"</code></p>
-<p>Example output: </p>
-<p><code>"March 8 2009 7:30am EST"</code></p>
+Given a date string in EST, output the given date as a string with 12 hours added to the time. Time zone should be preserved.
+Example input: <code>"March 7 2009 7:30pm EST"</code>
+Example output: <code>"March 8 2009 7:30am EST"</code>
 </section>
 
 ## Instructions
