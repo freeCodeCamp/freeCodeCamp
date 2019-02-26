@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { ButtonSpacer } from '../helpers';
 import { Button, Modal } from '@freecodecamp/react-bootstrap'
 
-import './DangerZone'
+import './danger-zone.css';
 
 const propTypes = {
   delete: PropTypes.func.isRequired,

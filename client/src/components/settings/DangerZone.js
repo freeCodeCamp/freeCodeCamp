@@ -5,12 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { FullWidthRow, ButtonSpacer, Spacer } from '../helpers';
+import { deleteAccount, resetProgress } from '../../redux/settings';
 import DeleteModal from './DeleteModal';
-
-import {deleteAccount, resetProgress } from '../../redux/settings';
+import ResetModal from './ResetModal';
 
 import './danger-zone.css';
-import ResetModal from './ResetModal';
 
 const propTypes = {
   deleteAccount: PropTypes.func.isRequired,
@@ -48,6 +47,7 @@ class DangerZone extends Component {
   }
 
   render() {
+    const { deleteAccount, resetProgress } = this.props;
     return (
       <div className='danger-zone'>
         <FullWidthRow>
@@ -79,9 +79,11 @@ class DangerZone extends Component {
             </FullWidthRow>
           </Panel>
           <ResetModal
+            reset={resetProgress}
             onHide={() => this.toggleResetModal()}
             show={this.state.reset} />
           <DeleteModal
+            delete={deleteAccount}
             onHide={() => this.toggleDeleteModal()}
             show={this.state.delete} />
         </FullWidthRow>
