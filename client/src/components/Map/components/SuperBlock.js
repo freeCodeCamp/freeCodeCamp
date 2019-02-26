@@ -8,6 +8,7 @@ import { uniq, find } from 'lodash';
 import Block from './Block';
 
 import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
+import { userSelector } from '../../../redux';
 import Caret from '../../icons/Caret';
 import { ChallengeNode } from '../../../redux/propTypes';
 
@@ -16,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return createSelector(
     expandedSelector,
-    isExpanded => ({ isExpanded })
+    userSelector,
+    (isExpanded, { currentChallengeId }) => ({ isExpanded, currentChallengeId })
   )(state);
 };
 
@@ -30,6 +32,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 const propTypes = {
+  currentChallengeId: PropTypes.string,
   introNodes: PropTypes.arrayOf(
     PropTypes.shape({
       fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
@@ -54,11 +57,8 @@ function createSuperBlockTitle(str) {
 }
 
 export class SuperBlock extends Component {
-  renderBlock(superBlock) {
-    const { nodes, introNodes } = this.props;
-    const blocksForSuperBlock = nodes.filter(
-      node => node.superBlock === superBlock
-    );
+  renderBlock(blocksForSuperBlock, noCurrentChallenge) {
+    const { introNodes } = this.props;
     const blockDashedNames = uniq(
       blocksForSuperBlock.map(({ block }) => block)
     );
@@ -79,6 +79,7 @@ export class SuperBlock extends Component {
                   .join('-') === blockDashedName
             )}
             key={blockDashedName}
+            noCurrentChallenge={noCurrentChallenge}
           />
         ))}
       </ul>
@@ -86,18 +87,41 @@ export class SuperBlock extends Component {
   }
 
   render() {
-    const { superBlock, isExpanded, toggleSuperBlock } = this.props;
+    const {
+      superBlock,
+      isExpanded,
+      toggleSuperBlock,
+      nodes,
+      currentChallengeId
+    } = this.props;
+    const blocksForSuperBlock = nodes.filter(
+      node => node.superBlock === superBlock
+    );
+    const noCurrentChallenge = !nodes.some(
+      challenge => challenge.id === currentChallengeId
+    );
+    // If, somehow, the user does not have a current challenge, this opens the
+    // first superBlock.
+    const hasCurrentChallenge = noCurrentChallenge
+      ? superBlock === 'Responsive Web Design'
+      : blocksForSuperBlock.some(
+          challenge => challenge.id === currentChallengeId
+        );
+    const isOpen =
+      typeof isExpanded === 'undefined' ? hasCurrentChallenge : isExpanded;
     return (
-      <li className={`superblock ${isExpanded ? 'open' : ''}`}>
+      <li className={`superblock ${isOpen ? 'open' : ''}`}>
         <button
-          aria-expanded={isExpanded}
+          aria-expanded={isOpen}
           className='map-title'
-          onClick={() => toggleSuperBlock(superBlock)}
+          onClick={() => toggleSuperBlock(superBlock, !isOpen)}
         >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
         </button>
-        {isExpanded ? this.renderBlock(superBlock) : null}
+        {isOpen
+          ? this.renderBlock(blocksForSuperBlock, noCurrentChallenge)
+          : null}
       </li>
     );
   }

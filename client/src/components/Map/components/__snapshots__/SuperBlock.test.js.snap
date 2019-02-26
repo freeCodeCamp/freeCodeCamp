@@ -58,6 +58,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
           },
         }
       }
+      noCurrentChallenge={true}
     />
     <Connect(Block)
       blockDashedName="block-b"
@@ -102,6 +103,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
           },
         }
       }
+      noCurrentChallenge={true}
     />
     <Connect(Block)
       blockDashedName="block-c"
@@ -133,6 +135,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
           },
         }
       }
+      noCurrentChallenge={true}
     />
   </ul>
 </li>

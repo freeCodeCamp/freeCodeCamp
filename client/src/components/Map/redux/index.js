@@ -8,24 +8,28 @@ export const getNS = () => ns;
 
 const initialState = {
   expandedState: {
-    superBlock: {
-      'Responsive Web Design': true
-    },
-    block: {
-      'basic-html-and-html5': true
-    }
+    superBlock: {},
+    block: {}
   }
 };
 
 const types = createTypes(['toggleSuperBlock', 'toggleBlock'], ns);
 
-export const toggleBlock = createAction(types.toggleBlock);
-export const toggleSuperBlock = createAction(types.toggleSuperBlock);
+export const toggleBlock = createAction(
+  types.toggleBlock,
+  (block, expanded) => ({ block, expanded })
+);
+export const toggleSuperBlock = createAction(
+  types.toggleSuperBlock,
+  (superBlock, expanded) => ({ superBlock, expanded })
+);
 
+// The expandedState tracks if the user has manually toggled the (super)block
+// and, if so, which state they want it to be in.
 export const makeExpandedSuperBlockSelector = superBlock => state =>
-  !!state[ns].expandedState.superBlock[superBlock];
+  state[ns].expandedState.superBlock[superBlock];
 export const makeExpandedBlockSelector = block => state =>
-  !!state[ns].expandedState.block[block];
+  state[ns].expandedState.block[block];
 
 export const reducer = handleActions(
   {
@@ -35,7 +39,7 @@ export const reducer = handleActions(
         ...state.expandedState,
         block: {
           ...state.expandedState.block,
-          [payload]: !state.expandedState.block[payload]
+          [payload.block]: !!payload.expanded
         }
       }
     }),
@@ -45,7 +49,7 @@ export const reducer = handleActions(
         ...state.expandedState,
         superBlock: {
           ...state.expandedState.superBlock,
-          [payload]: !state.expandedState.superBlock[payload]
+          [payload.superBlock]: !!payload.expanded
         }
       }
     })

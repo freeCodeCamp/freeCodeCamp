@@ -67,7 +67,8 @@ test('<SuperBlock should handle toggle clicks correctly', () => {
   enzymeWrapper.find('.map-title').simulate('click');
 
   expect(toggleSpy.called).toBe(true);
-  expect(toggleSpy.calledWithExactly('Super Block One')).toBe(true);
+  // initially the SuperBlock is not expanded, so it should be toggled open.
+  expect(toggleSpy.calledWithExactly('Super Block One', true)).toBe(true);
 
   enzymeWrapper.setProps({ ...props, isExpanded: true });
 
