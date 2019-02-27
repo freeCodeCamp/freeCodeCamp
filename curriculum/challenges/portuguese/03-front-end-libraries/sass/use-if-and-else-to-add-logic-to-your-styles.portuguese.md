@@ -10,7 +10,9 @@ localeTitle: Use @if e @else para adicionar lógica aos seus estilos
 <section id="description"> A diretiva <code>@if</code> no Sass é útil para testar um caso específico - funciona da mesma forma que a instrução <code>if</code> em JavaScript. <blockquote> @mixin make-bold ($ bool) { <br> @if $ bool == true { <br> intensidade da fonte: Negrito; <br> } <br> } </blockquote> E, assim como no JavaScript, <code>@else if</code> e <code>@else</code> test para mais condições: <blockquote> @mixin text-effect ($ val) { <br> @if $ val == danger { <br> cor vermelha; <br> } <br> @else if $ val == alert { <br> cor amarela; <br> } <br> @else if $ val == success { <br> cor verde; <br> } <br> @outro { <br> cor preta; <br> } <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Crie um <code>mixin</code> chamado <code>border-stroke</code> que use um parâmetro <code>$val</code> . O <code>mixin</code> deve verificar as seguintes condições usando <code>@if</code> , <code>@else if</code> e <code>@else</code> : <blockquote> luz - 1px preto sólido <br> médio - preto sólido 3px <br> pesado - preto sólido de 6px <br> nenhum - sem fronteira </blockquote></section>
+<section id="instructions"> Crie um <code>mixin</code> chamado <code>border-stroke</code> que use um parâmetro <code>$val</code> . O <code>mixin</code> deve verificar as seguintes condições usando <code>@if</code> , <code>@else if</code> e <code>@else</code> : <blockquote> luz - 1px preto sólido <br> médio - preto sólido 3px <br> pesado - preto sólido de 6px </blockquote>
+Certifique-se de que seus elementos <code>li</code> não contêm um string de espaço vazio ou somente espaço em branco.
+</section>
 
 ## Tests
 <section id='tests'>
