@@ -5,19 +5,16 @@ challengeType: 2
 ---
 
 ## Description
-
 <section id='description'>
 When saving a document, mongodb automatically adds the field _id, and set it to a unique alphanumeric key. Searching by _id is an extremely frequent operation, so mongoose provides a dedicated method for it. Find the (only!!) person who has the given _id using Model.findById() -> Person. Use the function argument personId as search key.
 </section>
 
 ## Instructions
-
 <section id='instructions'>
 
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml
@@ -29,13 +26,11 @@ tests:
 </section>
 
 ## Challenge Seed
-
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
-
 <section id='solution'>
 
 ```js

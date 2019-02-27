@@ -5,7 +5,6 @@ challengeType: 2
 ---
 
 ## Description
-
 <section id='description'>
 In the good old days this was what you needed to do if you wanted to edit a document and be able to use it somehow e.g. sending it back in a server response. Mongoose has a dedicated updating method : Model.update(). It is bound to the low-level mongo driver. It can bulk edit many documents matching certain criteria, but it doesn’t send back the updated document, only a ‘status’ message. Furthermore it makes model validations difficult, because it just directly calls the mongo driver.
 Find a person by _id ( use any of the above methods ) with the parameter personId as search key. Add “hamburger” to the list of her favoriteFoods (you can use Array.push()). Then - inside the find callback - save() the updated Person.
@@ -13,31 +12,27 @@ Find a person by _id ( use any of the above methods ) with the parameter personI
 </section>
 
 ## Instructions
-
 <section id='instructions'>
 
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml
 tests:
   - text: Find-edit-update an item should succeed
-    testString: "getUserInput => $.post(getUserInput('url') + '/_api/find-edit-save', {name:'Poldo', age: 40, favoriteFoods:['spaghetti']}).then(data => { assert.equal(data.name, 'Poldo', 'item.name is not what expected'); assert.equal(data.age, 40, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['spaghetti', 'hamburger'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 1, 'The item should be previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+    testString: "getUserInput => $.post(getUserInput('url') + '/_api/find-edit-save', {name:'Poldo', age: 40, favoriteFoods:['spaghetti']}).then(data => { assert.equal(data.name, 'Poldo', 'item.name is not what is expected'); assert.equal(data.age, 40, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['spaghetti', 'hamburger'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 1, 'The item should be previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
 ```
 
 </section>
 
 ## Challenge Seed
-
 <section id='challengeSeed'>
 
 </section>
 
 ## Solution
-
 <section id='solution'>
 
 ```js
