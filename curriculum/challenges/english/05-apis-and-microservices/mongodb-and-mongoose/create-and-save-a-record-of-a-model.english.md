@@ -6,7 +6,7 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Create a document instance using the Person constructor you built before. Pass to the constructor an object having the fields name, age, and favoriteFoods. Their types must be conformant to the ones in the Person Schema. Then call the method document.save() on the returned document instance. Pass to it a callback using the Node convention. This is a common pattern, all the following CRUD methods take a callback function like this as the last argument.
+Create a document instance using the Person constructor you built before. Pass an object to the constructor with the fields name, age, and favoriteFoods. Their types must conform to the ones in the Person Schema. Then call the method document.save() on the returned document instance. Pass it a callback using the Node convention you saw before. This is a common pattern, all the following CRUD methods take a callback function like this as the last argument.
 <code>/* Example */</code>
 <code>// ...</code>
 <code>person.save(function(err, data) {</code>
@@ -26,7 +26,6 @@ Create a document instance using the Person constructor you built before. Pass t
 tests:
   - text: Creating and saving a db item should succeed
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/create-and-save-person'').then(data => { assert.isString(data.name, ''"item.name" should be a String''); assert.isNumber(data.age, ''28'', ''"item.age" should be a Number''); assert.isArray(data.favoriteFoods, ''"item.favoriteFoods" should be an Array''); assert.equal(data.__v, 0, ''The db item should be not previously edited''); }, xhr => { throw new Error(xhr.responseText); })'
-
 ```
 
 </section>
@@ -42,4 +41,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>
