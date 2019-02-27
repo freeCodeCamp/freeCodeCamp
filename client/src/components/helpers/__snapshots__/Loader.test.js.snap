@@ -5,8 +5,11 @@ exports[`<Loader /> matches the fullScreen render snapshot 1`] = `
   class="full-screen-wrapper"
 >
   <div
-    class="sk-fade-in sk-spinner ball-clip-rotate-multiple"
+    class="sk-fade-in sk-spinner line-scale-pulse-out"
   >
+    <div />
+    <div />
+    <div />
     <div />
     <div />
   </div>
@@ -18,8 +21,11 @@ exports[`<Loader /> matches to the default render snapshot 1`] = `
   class=""
 >
   <div
-    class="sk-fade-in sk-spinner ball-clip-rotate-multiple"
+    class="sk-fade-in sk-spinner line-scale-pulse-out"
   >
+    <div />
+    <div />
+    <div />
     <div />
     <div />
   </div>

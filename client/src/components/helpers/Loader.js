@@ -7,7 +7,7 @@ import './loader.css';
 function Loader({ fullScreen }) {
   return (
     <div className={fullScreen ? 'full-screen-wrapper' : ''}>
-      <Spinner name='ball-clip-rotate-multiple' />
+      <Spinner name='line-scale-pulse-out' />
     </div>
   );
 }
