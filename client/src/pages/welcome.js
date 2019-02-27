@@ -85,7 +85,7 @@ function Welcome({
   return (
     <Fragment>
       <Helmet>
-        <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
+        <title>Welcome | freeCodeCamp.org</title>
       </Helmet>
       <main>
         <Grid className='text-center'>
