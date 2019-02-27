@@ -41,9 +41,7 @@ module.exports = function(app, done) {
     const { user } = req;
     const homePage = user ? 'userHome' : 'noUserHome';
     const { quote, author} = randomQuote();
-    const title = user ?
-      `Welcome, ${user.name ? user.name : 'Camper'}!` :
-      'Learn to Code and Help Nonprofits';
+    const title = user ? 'Welcome' : 'Learn to Code and Help Nonprofits';
     const completedChallengeCount = user && user.completedChallengeCount || 0;
     const completedProjectCount = user && user.completedProjectCount || 0;
     const completedCertCount = user && user.completedCertCount || 0;
