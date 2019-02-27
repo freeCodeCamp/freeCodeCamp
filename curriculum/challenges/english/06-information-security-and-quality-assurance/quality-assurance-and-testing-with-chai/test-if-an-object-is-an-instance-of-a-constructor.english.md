@@ -7,13 +7,13 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-#instanceOf asserts that an object is an instance of a constructor.
-Use #instanceOf or #notInstanceOf where appropriate
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+<code>#instanceOf</code> asserts that an object is an instance of a constructor.
+Use <code>#instanceOf</code> or <code>#notInstanceOf</code> where it is appropriate.
 </section>
 
 ## Tests
