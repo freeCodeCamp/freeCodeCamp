@@ -4,7 +4,7 @@ title: For Loop
 
 # For Loop
 
-The `for` loop executes a block of code until the specified condition is false. Use `while` loops when the number of iterations are not known or variable; otherwise, use `for` loops. A common use of `for` loops is array iterations. 
+The `for` loop executes a block of code until the specified condition is false. Use `while` loops when the number of iterations is not known or variable; otherwise, use `for` loops. A common use of `for` loops is array iterations. 
 It is also known as an 'entry-controlled loop' since the condition is checked before the next iteration. Another example of an 'entry-controlled loop' is a `while` loop. 
 The block of code around which the <b>for</b> loop iterates is packed inside the curly braces. A <b>for</b> loop is also acceptable without curly braces. The compiler assumes only the 1st statement to be under the <b>imaginary curly braces</b>.
 A variable declared inside the curly braces of a <b>for</b> loop is only valid inside that particular for loop. We cannot use a variable declared inside a <b>for</b> loop outside it.
@@ -23,7 +23,7 @@ The `for` loop consists of 3 sections:
 
 The initialization statement is executed only once. Then, the condition is evaluated. If the condition is false (or 0), the `for` loop is terminated. But if the condition is true (nonzero), code inside the block of the `for` loop is executed. Finally, the update expression is executed. This process repeats until the condition is false.
 
-You can leave any of the three field blank:
+You can leave any of the three fields blank:
 - If you leave initialization blank, then there is no initialization phase
 - If you leave update blank, then there is no update phase
 - If you leave the condition blank, then practically it becomes an infinite loop unless you break inside loop
@@ -167,7 +167,7 @@ int main()
 
 ## Syntax of For Infinite loop
 
-An infinite loop occurs when the condition will never be met, due to some inherent characteristic of the loop. An infinite loop also called an endless loop, and it is a piece of coding that lacks a functional exit so that it repeats indefinitely.
+An infinite loop occurs when the condition will never be met, due to some inherent characteristics of the loop. An infinite loop is also called an endless loop, and it is a piece of coding that lacks a functional exit so that it repeats indefinitely.
 
 ### Examples:
 
