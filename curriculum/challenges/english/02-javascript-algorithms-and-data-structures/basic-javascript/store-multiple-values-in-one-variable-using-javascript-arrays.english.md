@@ -2,6 +2,7 @@
 id: bd7993c9c69feddfaeb8bdef
 title: Store Multiple Values in one Variable using JavaScript Arrays
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/crZQWAm'
 ---
 
 ## Description
@@ -23,11 +24,11 @@ Modify the new array <code>myArray</code> so that it contains both a <code>strin
 ```yml
 tests:
   - text: <code>myArray</code> should be an <code>array</code>.
-    testString: 'assert(typeof myArray == "object", "<code>myArray</code> should be an <code>array</code>.");'
+    testString: assert(typeof myArray == 'object', '<code>myArray</code> should be an <code>array</code>.');
   - text: The first item in <code>myArray</code> should be a <code>string</code>.
-    testString: 'assert(typeof myArray[0] !== "undefined" && typeof myArray[0] == "string", "The first item in <code>myArray</code> should be a <code>string</code>.");'
+    testString: assert(typeof myArray[0] !== 'undefined' && typeof myArray[0] == 'string', 'The first item in <code>myArray</code> should be a <code>string</code>.');
   - text: The second item in <code>myArray</code> should be a <code>number</code>.
-    testString: 'assert(typeof myArray[1] !== "undefined" && typeof myArray[1] == "number", "The second item in <code>myArray</code> should be a <code>number</code>.");'
+    testString: assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number', 'The second item in <code>myArray</code> should be a <code>number</code>.');
 
 ```
 
@@ -54,7 +55,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return z;})(myArray);
 ```
 
 </div>

@@ -2,7 +2,7 @@
 title: List Remove Method
 localeTitle: Список Удалить метод
 ---
-## Список Удалить метод
+## Метод удаления элемента из списка
 
 Метод `remove()` удаляет аргумент, предоставленный ему из списка.
 
@@ -24,8 +24,7 @@ words = ["I", "love", "Python"]
 
 ```py
 kiss = ["keep", "it", "simple", "stupid"] 
- kiss.remove("complex") 
- print(kiss) 
+kiss.remove("complex") 
 ```
 
 #### Вывод
@@ -33,6 +32,20 @@ kiss = ["keep", "it", "simple", "stupid"]
 Traceback (most recent call last): 
   File "<stdin>", line 1, in <module> 
  ValueError: list.remove(x): x not in list 
+```
+
+Если требуется удалить элемент с конкретным индексом, можно прибегнуть в функции `del`:
+
+```python
+kiss = ['keep', 'it', 'simple', 'stupid']
+del kiss[3]
+print(kiss)
+```
+
+#### Вывод
+
+```python
+['keep', 'it', 'simple']
 ```
 
 #### Дополнительная информация:

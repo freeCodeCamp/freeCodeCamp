@@ -2,6 +2,7 @@
 id: cf1111c1c11feddfaeb1bdef
 title: Iterate with JavaScript While Loops
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c8QbnCM'
 ---
 
 ## Description
@@ -23,9 +24,9 @@ Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> 
 ```yml
 tests:
   - text: You should be using a <code>while</code> loop for this.
-    testString: 'assert(code.match(/while/g), "You should be using a <code>while</code> loop for this.");'
-  - text: '<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.'
-    testString: 'assert.deepEqual(myArray, [0,1,2,3,4], "<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.");'
+    testString: assert(code.match(/while/g), 'You should be using a <code>while</code> loop for this.');
+  - text: <code>myArray</code> should equal <code>[0,1,2,3,4]</code>.
+    testString: assert.deepEqual(myArray, [0,1,2,3,4], '<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');
 
 ```
 
@@ -52,7 +53,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>

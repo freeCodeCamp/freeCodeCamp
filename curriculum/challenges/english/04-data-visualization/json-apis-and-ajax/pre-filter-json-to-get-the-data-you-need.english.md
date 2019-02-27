@@ -23,7 +23,7 @@ Add code to <code>filter</code> the json data to remove the cat with the "id" va
 ```yml
 tests:
   - text: Your code should use the <code>filter</code> method.
-    testString: 'assert(code.match(/json\.filter/g), "Your code should use the <code>filter</code> method.");'
+    testString: assert(code.match(/json\.filter/g), 'Your code should use the <code>filter</code> method.');
 
 ```
 
@@ -87,7 +87,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>

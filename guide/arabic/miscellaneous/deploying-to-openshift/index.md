@@ -30,7 +30,7 @@ localeTitle: نشر إلى Openshift
 
 *   املأ عنوان Git URL واسم فرعنا
 
-![حيث يمكنك العثور على عنوان URL الخاص بـ Git واسم فرعك في Github](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
+![حيث يمكنك العثور على عنوان URL الخاص بـ Git واسم فرعك في GitHub](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
 
 ![املأ عنوان URL الخاص بـ Git واسم الفرع الخاص بك](//discourse-user-assets.s3.amazonaws.com/original/2X/9/989e44c1af80c9b8f26883a3d897f377b3a27ca4.jpg)
 

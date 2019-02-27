@@ -36,7 +36,7 @@ Finally, find the greatest sum of (any number of) adjacent entries in any direct
 ```yml
 tests:
   - text: <code>euler149()</code> should return 52852124.
-    testString: 'assert.strictEqual(euler149(), 52852124, "<code>euler149()</code> should return 52852124.");'
+    testString: assert.strictEqual(euler149(), 52852124, '<code>euler149()</code> should return 52852124.');
 
 ```
 
