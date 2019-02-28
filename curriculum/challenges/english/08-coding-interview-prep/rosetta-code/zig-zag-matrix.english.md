@@ -52,7 +52,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function ZigZagMatrix(n){
+function ZigZagMatrix(n) {
   // Good luck!
   return [[], []];
 }
@@ -85,7 +85,7 @@ const zm5 = [
 
 
 ```js
-function ZigZagMatrix(n){
+function ZigZagMatrix(n) {
   const mtx = [];
   for (let i = 0; i < n; i++) {
     mtx[i] = [];
