@@ -48,7 +48,6 @@ class Header extends Component {
 
   componentWillUnmount() {
     document.removeEventListener('click', this.handleClickOutside);
-    console.log('header unmount');
   }
 
   toggleDisplayMenuLogic = () => {
@@ -87,10 +86,6 @@ class Header extends Component {
   };
 
   render() {
-    const viewportWidth = Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    );
     const {
       disableSettings,
       onGuide,
@@ -104,26 +99,30 @@ class Header extends Component {
             <NavLogo />
           </Link>
           {disableSettings ? null : <FCCSearch />}
-          {onGuide && displayMenu && viewportWidth < 991 ? null : (
-            <ul id='top-right-nav'>
-              <li onClick={toggleDisplayMenu}>
-                <Link to='/learn'>Learn</Link>
-              </li>
-              <li onClick={toggleDisplayMenu}>
-                <Link external={true} to='/forum'>
-                  Forum
-                </Link>
-              </li>
-              <li onClick={toggleDisplayMenu}>
-                <Link external={true} to='/news'>
-                  News
-                </Link>
-              </li>
-              <li className='user-state-link' onClick={toggleDisplayMenu}>
-                <UserState disableSettings={disableSettings} />
-              </li>
-            </ul>
-          )}
+          <Media query='(max-width: 991px)'>
+            {matches =>
+              matches && onGuide && displayMenu ? null : (
+                <ul id='top-right-nav'>
+                  <li onClick={toggleDisplayMenu}>
+                    <Link to='/learn'>Learn</Link>
+                  </li>
+                  <li onClick={toggleDisplayMenu}>
+                    <Link external={true} to='/forum'>
+                      Forum
+                    </Link>
+                  </li>
+                  <li onClick={toggleDisplayMenu}>
+                    <Link external={true} to='/news'>
+                      News
+                    </Link>
+                  </li>
+                  <li className='user-state-link' onClick={toggleDisplayMenu}>
+                    <UserState disableSettings={disableSettings} />
+                  </li>
+                </ul>
+              )
+            }
+          </Media>
           <span
             className='menu-button'
             onClick={this.toggleDisplayMenuLogic}
@@ -131,7 +130,17 @@ class Header extends Component {
           >
             Menu
           </span>
-          <Media onChange={this.handleMediaChange} query='(max-width: 734px)' />
+          {onGuide ? (
+            <Media
+              onChange={this.handleMediaChange}
+              query='(max-width: 991px)'
+            />
+          ) : (
+            <Media
+              onChange={this.handleMediaChange}
+              query='(max-width: 734px)'
+            />
+          )}
         </nav>
       </header>
     );
