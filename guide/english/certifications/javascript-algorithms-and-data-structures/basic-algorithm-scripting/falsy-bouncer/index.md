@@ -48,6 +48,7 @@ function bouncer(arr) {
   }
   return newArray;
 }
+```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/WarmPlainWebportal' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
@@ -59,17 +60,17 @@ We return the new array (newArray).
 
 #### Relevant Links
 
-*   <a href='http://forum.freecodecamp.com/t/javascript-boolean/14311' target='_blank' rel='nofollow'>Boolean</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-truthy-value/15975' target='_blank' rel='nofollow'>Truthy value</a>
-*   <a href='https://www.freecodecamp.org/forum/t/javascript-falsy-values/14664' target='_blank' rel='nofollow'>Falsy values</a>
-*   <a href='https://www.freecodecamp.org/forum/t/javascript-array-prototype-push/14298' target='_blank' rel='nofollow'>Array.prototype.push()</a>
+* [Boolean](https://forum.freecodecamp.com/t/javascript-boolean/14311)
+* [Truthy value](https://forum.freecodecamp.com/t/javascript-truthy-value/15975)
+* [Falsey values](https://www.freecodecamp.org/forum/t/javascript-falsy-values/14664)
+* [Array.prototype.push](https://www.freecodecamp.org/forum/t/javascript-array-prototype-push/14298)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
-
+```js
     function bouncer(arr) {
       return arr.filter(Boolean);
     }
-
+```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/32' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
