@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import SideNav from './components/guide/SideNav';
@@ -13,7 +14,10 @@ import './guide.css';
 
 import {
   toggleExpandedState,
-  toggleDisplaySideNav
+  toggleDisplaySideNav,
+  displaySideNavSelector,
+  displayMenuSelector,
+  expandedStateSelector
 } from './components/guide/redux';
 
 const propTypes = {
@@ -40,13 +44,16 @@ const propTypes = {
   toggleExpandedState: PropTypes.func
 };
 
-const mapStateToProps = state => {
-  return {
-    expandedState: state.guideNav.expandedState,
-    displayMenu: state.guideNav.displayMenu,
-    displaySideNav: state.guideNav.displaySideNav
-  };
-};
+const mapStateToProps = createSelector(
+  displaySideNavSelector,
+  displayMenuSelector,
+  expandedStateSelector,
+  (displaySideNav, displayMenu, expandedState) => ({
+    displaySideNav,
+    displayMenu,
+    expandedState
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleExpandedState, toggleDisplaySideNav }, dispatch);

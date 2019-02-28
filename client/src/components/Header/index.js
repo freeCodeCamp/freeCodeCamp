@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
 import Media from 'react-media';
 import FCCSearch from 'react-freecodecamp-search';
 
@@ -13,14 +14,16 @@ import './header.css';
 
 import {
   toggleDisplaySideNav,
-  toggleDisplayMenu
+  toggleDisplayMenu,
+  displayMenuSelector
 } from '../layouts/components/guide/redux';
 
-const mapStateToProps = state => {
-  return {
-    displayMenu: state.guideNav.displayMenu
-  };
-};
+const mapStateToProps = createSelector(
+  displayMenuSelector,
+  displayMenu => ({
+    displayMenu
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ toggleDisplaySideNav, toggleDisplayMenu }, dispatch);
