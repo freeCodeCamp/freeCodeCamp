@@ -48,6 +48,7 @@ const AllHits = connectAutoComplete(({ hits, currentRefinement }) => {
             <a
               href={buildUrl(index, result)}
               key={result.objectID}
+              rel='noopener noreferrer'
               target='_blank'
             >
               <li className='ais-Hits-item dataset-node'>
