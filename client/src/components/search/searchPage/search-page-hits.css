@@ -1,0 +1,40 @@
+.ais-Hits {
+  margin-top: 36px;
+  z-index: 100;
+  position: relative;
+  background: #fefefe;
+}
+
+.ais-Hits-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+  border: 1px solid #efefef;
+}
+
+.ais-Hits-list > a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.ais-Hits-list > a:nth-child(odd) {
+  background-color: #efefef;
+}
+
+.ais-Hits-item {
+  width: 100%;
+  margin: 0;
+  border-color: transparent;
+  color: #333;
+  padding: 15px;
+  box-shadow: none;
+}
+
+.ais-Hits-item:hover {
+  background-color: rgba(0, 100, 0, 0.4);
+  color: white;
+}
+.ais-Hits-item:hover em {
+  color: #333;
+}

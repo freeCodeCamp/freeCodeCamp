@@ -17,6 +17,7 @@ import { flashMessagesSelector, removeFlashMessage } from '../Flash/redux';
 
 import { isBrowser } from '../../../utils';
 
+import WithInstantSearch from '../search/WithInstantSearch';
 import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
@@ -70,6 +71,7 @@ const propTypes = {
   landingPage: PropTypes.bool,
   navigationMenu: PropTypes.element,
   onlineStatusChange: PropTypes.func.isRequired,
+  pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool
 };
@@ -92,30 +94,22 @@ const mapDispatchToProps = dispatch =>
   );
 
 class DefaultLayout extends Component {
-  constructor(props) {
-    super(props);
-
-    this.location = '';
-  }
-
   componentDidMount() {
-    if (!this.props.isSignedIn) {
-      this.props.fetchUser();
+    const { isSignedIn, fetchUser, pathname } = this.props;
+    if (!isSignedIn) {
+      fetchUser();
     }
-    const url = window.location.pathname + window.location.search;
-    ga.pageview(url);
+    ga.pageview(pathname);
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
-
-    this.location = url;
   }
 
-  componentDidUpdate() {
-    const url = window.location.pathname + window.location.search;
-    if (url !== this.location) {
-      ga.pageview(url);
-      this.location = url;
+  componentDidUpdate(prevProps) {
+    const { pathname } = this.props;
+    const { pathname: prevPathname } = prevProps;
+    if (pathname !== prevPathname) {
+      ga.pageview(pathname);
     }
   }
 
@@ -136,12 +130,13 @@ class DefaultLayout extends Component {
       children,
       hasMessages,
       flashMessages = [],
-      removeFlashMessage,
-      landingPage,
-      showFooter = true,
-      navigationMenu,
       isOnline,
-      isSignedIn
+      isSignedIn,
+      landingPage,
+      navigationMenu,
+      pathname,
+      removeFlashMessage,
+      showFooter = true
     } = this.props;
     return (
       <Fragment>
@@ -158,14 +153,21 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <Header disableSettings={landingPage} navigationMenu={navigationMenu} />
-        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
-          <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
-          {hasMessages ? (
-            <Flash messages={flashMessages} onClose={removeFlashMessage} />
-          ) : null}
-          {children}
-        </div>
+        <WithInstantSearch pathname={pathname}>
+          <Header
+            disableSettings={landingPage}
+            navigationMenu={navigationMenu}
+          />
+          <div
+            className={`default-layout ${landingPage ? 'landing-page' : ''}`}
+          >
+            <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
+            {hasMessages ? (
+              <Flash messages={flashMessages} onClose={removeFlashMessage} />
+            ) : null}
+            {children}
+          </div>
+        </WithInstantSearch>
         {showFooter && <Footer />}
       </Fragment>
     );
