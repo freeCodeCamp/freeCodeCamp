@@ -19,6 +19,10 @@ export const toggleExpandedState = createAction(types.toggleExpandedState);
 export const toggleDisplaySideNav = createAction(types.toggleDisplaySideNav);
 export const toggleDisplayMenu = createAction(types.toggleDisplayMenu);
 
+export const displaySideNavSelector = state => state[ns].displaySideNav;
+export const displayMenuSelector = state => state[ns].displayMenu;
+export const expandedStateSelector = state => state[ns].expandedState;
+
 export const reducer = handleActions(
   {
     [types.toggleExpandedState]: (state, { payload }) => ({
