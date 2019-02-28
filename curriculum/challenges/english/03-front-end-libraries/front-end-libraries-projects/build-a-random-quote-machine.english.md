@@ -14,7 +14,7 @@ You can use any mix of HTML, JavaScript, CSS, Bootstrap, SASS, React, Redux, and
 <strong>User Story #2:</strong> Within <code>#quote-box</code>, I can see an element with a corresponding <code>id="text"</code>.
 <strong>User Story #3:</strong> Within <code>#quote-box</code>, I can see an element with a corresponding <code>id="author"</code>.
 <strong>User Story #4:</strong> Within <code>#quote-box</code>, I can see a clickable element with a corresponding <code>id="new-quote"</code>.
-<strong>User Story #5:</strong> Within <code>#quote-box</code>, I can see a clickable <codea</code> element with a corresponding <code>id="tweet-quote"</code>.
+<strong>User Story #5:</strong> Within <code>#quote-box</code>, I can see a clickable element with a corresponding <code>id="tweet-quote"</code>.
 <strong>User Story #6:</strong> On first load, my quote machine displays a random quote in the element with <code>id="text"</code>.
 <strong>User Story #7:</strong> On first load, my quote machine displays the random quote's author in the element with <code>id="author"</code>.
 <strong>User Story #8:</strong> When the <code>#new-quote</code> button is clicked, my quote machine should fetch a new quote and display it in the <code>#text</code> element.
