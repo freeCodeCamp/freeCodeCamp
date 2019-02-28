@@ -106,7 +106,7 @@ echo $herbie->model;
 
 ### PHP Resource
 
-A resource is a special variable, holding a reference to an external resource. Resources are created and used by special functions. See the [appendix](http://php.net/manual/en/resource.php) for a listing of all these functions and the corresponding resource types. You can use [get_resource_type()](http://php.net/manual/en/function.get-resource-type.php) function to see resource type.
+A resource is a special variable, holding a reference to an external resource. Resources are created and used by special functions. See the [official PHP documentation](http://php.net/manual/en/resource.php) for a listing of all these functions and the corresponding resource types. You can use [get_resource_type()](http://php.net/manual/en/function.get-resource-type.php) function to see resource type.
 
 **Example:**
 ```php
