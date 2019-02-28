@@ -1,6 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../../../utils/createTypes';
+import { createSideNavigationSaga } from './side-navigation-saga';
 
 export const ns = 'guideNav';
 
@@ -14,6 +15,8 @@ const types = createTypes(
   ['toggleExpandedState', 'toggleDisplaySideNav', 'toggleDisplayMenu'],
   ns
 );
+
+export const sagas = [...createSideNavigationSaga(types)];
 
 export const toggleExpandedState = createAction(types.toggleExpandedState);
 export const toggleDisplaySideNav = createAction(types.toggleDisplaySideNav);
