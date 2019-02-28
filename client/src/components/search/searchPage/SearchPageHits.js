@@ -41,7 +41,7 @@ const AllHits = connectAutoComplete(({ hits, currentRefinement }) => {
   const isHitsEmpty = nonQuerySuggestionHits.every(({ hits }) => !hits.length);
 
   return currentRefinement && !isHitsEmpty ? (
-    <div className='ais-Hits'>
+    <div className='ais-Hits search-page'>
       <ul className='ais-Hits-list'>
         {nonQuerySuggestionHits.map(({ hits: results, index }) =>
           results.map(result => (

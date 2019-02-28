@@ -6,15 +6,16 @@ import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
 import { navigate } from 'gatsby';
 
-import SearchHits from './SearchHits';
-
-import './searchbar.css';
 import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
   toggleSearchDropdown,
   toggleSearchFocused
 } from '../redux';
+import SearchHits from './SearchHits';
+
+import './searchbar-base.css';
+import './searchbar.css';
 
 const propTypes = {
   isDropdownEnabled: PropTypes.bool,

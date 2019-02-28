@@ -1,11 +1,10 @@
-.ais-Hits {
-  margin-top: 36px;
-  z-index: 100;
+.search-page.ais-Hits {
+  width: 100%;
   position: relative;
   background: #fefefe;
 }
 
-.ais-Hits-list {
+.search-page .ais-Hits-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,16 +12,16 @@
   border: 1px solid #efefef;
 }
 
-.ais-Hits-list > a {
+.search-page .ais-Hits-list > a {
   width: 100%;
   text-decoration: none;
 }
 
-.ais-Hits-list > a:nth-child(odd) {
+.search-page .ais-Hits-list > a:nth-child(odd) {
   background-color: #efefef;
 }
 
-.ais-Hits-item {
+.search-page .ais-Hits-item {
   width: 100%;
   margin: 0;
   border-color: transparent;
@@ -31,10 +30,11 @@
   box-shadow: none;
 }
 
-.ais-Hits-item:hover {
-  background-color: rgba(0, 100, 0, 0.4);
+.search-page .ais-Hits-item:hover,
+.search-page .ais-Hits-item:focus {
+  background-color: #006400;
   color: white;
 }
-.ais-Hits-item:hover em {
+.search-page .ais-Hits-item:hover em {
   color: #333;
 }
