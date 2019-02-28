@@ -4,7 +4,8 @@ title: Operators
 # Operators in C
 
 ## 1. Arithmetic Operators
-- `+` Adds to operands (values)
+
+- `+` Adds two operands (values) 
      ```C
      int a = 6;
      int c = a + 1; // c = 7
@@ -90,7 +91,7 @@ int main()
   int a = 8, b = 5;
   bool c = (a > b); // c = true
   ```
-- `<` Less than - True when the first operand is smaller then the second.
+- `<` Less than - True when the first operand is smaller than the second.
   ```C
   int a = 5, b = 8;
   bool c = (a < b); // c = true

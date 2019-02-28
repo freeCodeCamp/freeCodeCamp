@@ -14,7 +14,7 @@ class MyClass {
   }
 }
 ```
-PI is now a constant. Any attempt to assign it a value will cause an error.
+PI is now a constant. Any attempt to reassign the value for PI will cause an error.
 
 -----------------------------------------------------------------------------------------
 If you make any method as final, you cannot override it.

@@ -26,6 +26,20 @@ stack exec my-project-exe
 ```
 
 A word of cautious, try not to use stack install <package> even though it will install package globally, this is not recommended as different versions of packages are compatible with different versions of GHC. Hence using local copy of package using stack build is best way to follow.
+  
+## Structure of a Haskell Function
+A Haskell function declaration has a name and type identifiers
+```haskell
+name :: type
+name = expression
+```
+For example, this function squares an Integer
+```haskell
+square :: Integer -> Integer
+square n = n * n 
+```
+
+The last type value is the return value, in the case above it takes a single integer and returns a single integer.
 
 ## Hello World
 
@@ -33,12 +47,18 @@ A word of cautious, try not to use stack install <package> even though it will i
 main :: IO ()
 main = print "Hello Haskell :)"
 ```
-Save above code in a file named "hello.hs" and save.
+Save the code above in a file named "hello.hs".
 
-To compile the Hello World example, this will convert our haskell code to machine understandable bytecodes.
+You can use ghc to convert our haskell code to machine understandable bytecodes.
 ```shell
 stack ghc hello.hs
 ./hello
+```
+
+Alternatively, you can use `runhaskell` to skip the compiling step.
+
+```shell
+stack runhaskell hello.hs
 ```
 
 ## Documentation

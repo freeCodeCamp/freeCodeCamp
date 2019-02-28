@@ -3,8 +3,8 @@ title: Logical Operators and If Statements
 ---
 
 # If Statements in C
-The ability to change the behavior of a piece of code which is based on certain information in the environment is known as conditional code flow. Sometimes, you want your code to run according to certain conditions. In such situations we can use **If** statements. It is also known as a decision making statement, as it makes the decision on the basis of a given expression (or on a given condition). If the expression evaluates to true, then the block of code inside the 'if' statement will be executed. If the expression evaluates to false, then the first set of code after the end of the 'if' statement (after the closing curly brace) will be executed. An expression is something that has relational and/or logical operators operating on boolean variables. Expressions evaluate to either true or false.
 
+The ability to change the behavior of a piece of code which is based on certain information in the environment is known as conditional code flow. Sometimes, you want your code to run according to certain conditions. In such situations we can use **If** statements. It is also known as a decision making statement, as it makes the decision on the basis of a given expression (or on a given condition). If the expression evaluates to true, then the block of code inside the 'if' statement will be executed. If the expression evaluates to false, then the first set of code after the end of the 'if' statement (after the closing curly brace) will be executed. An expression is something that has relational and/or logical operators operating on boolean variables. Expressions evaluate to either true or false.
 
 ## Syntax of *if statement*
 ```
@@ -33,12 +33,12 @@ output:
 Statement is True!
 ```
 
-Just like helloworld.c, stdio.h has been included. New in this program is stdbool.h, which is the standard boolean library- it contains code that gives us access to 'true' and 'false'.
+Just like in helloworld.c, stdio.h has been included. New in this program is stdbool.h, which is the standard boolean library- it contains code that gives us access to 'true' and 'false'. If you wish not to include stdbool.h, then you can replace true with 1. 
 
-Also new in the above example is that 'if' statement. If the statement within the parenthesis is true, the code within the brackets of the if statement will be run. In the case of this example, true is true, so the code will run the `printf` function.
+Also new in the above example is that 'if' statement. If the statement within the parenthesis is true, the code within the curly braces ({...}) of the if statement will be run. In the case of this example, true is true, so the code will run the `printf` function.
 
 ## If-else
-In the 'If-else' statement, If the statement within the parenthesis is true, the code within the brackets of the 'if' statement will be executed and if the statement within the parenthesis is false, the code within the brackets of the 'else' statement will be executed.
+In the 'If-else' statement, If the statement within the parenthesis is true, the code within the curly braces of the 'if' statement will be executed and if the statement within the parenthesis is false, the code within the curly braces of the 'else' statement will be executed.
 
 Of course, that example wasn't very useful, because true is always true. Here's another one that's a bit more practical:
 
@@ -136,6 +136,9 @@ int main(void) {
     else if (n > 5) {
         printf("n is greater than 5!\n");
     }
+    else{
+        printf("n is smaller than 5!\n");
+    }
 
     return 0;
 }
@@ -145,7 +148,7 @@ output:
 n is equal to 5!
 ```
 
-The if-else statement has an 'else if' attached to it. This code runs if the condition within the previous if was false, but adds a condition within its own parenthesis that must be true before the code is run.
+The if-else statement has an 'else if' attached to it. This code runs if the condition within the previous if was false, but adds a condition within its own parenthesis that must be true before the code is run. If both the 'if' and 'else-if' statements are false then the code within the else statement is run.
 
 ## Logical Operators
 Of course, we might want something to happen if it is not true, or if it and something else are true. For that, we have logical operators: ! for not, && for and, and || for or. Let's take a look at this in action:
@@ -178,7 +181,7 @@ output:
 n is equal to 5 and m is equal to 10!
 ```
 
-Here's the first set of parenthesis: `n > m || n == 5`. This will be true if n is greater than m, or if n is equal to 5. n is not greater than m, but n is equal to 5. Because one of these things are true, and they are joined by an or, this statement will be true and the code within will be printed.
+Here's the first set of parenthesis: `n > m || n == 5`. This will be true if n is greater than m, or if n is equal to 5. n is not greater than m, but n is equal to 5. Because one of these things are true, and they are joined by an or, this statement will be true and the code within will be printed. The important point to note here is that, when using an OR (||) in code, if the first condition before the || is true, then it will not check for the condition present after ||. In the code above since n = 5 is not greater than m = 10, the condition n==5 is checked and is evaluated to true.
 
 Because the previous code was executed, it won't check the other else statements- those only get checked if the ones previous don't get checked. Just for the sake of exercise, though, consider what the rest of the code would be checking. `n == 5 && m == 10` will be true if n is equal to 5 and m is equal to 10. This is true, but if n was 6 it would no longer be true and the code within that else would not be run.
 

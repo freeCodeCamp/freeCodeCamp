@@ -6,7 +6,7 @@ A function allows you to define a reusable block of code that can be executed ma
 
 Functions can be named and called repeatedly or can be run anonymously in place (similar to lambda functions in python).
 
-Developing full understanding of R functions requires understanding of environments. 
+Developing a full understanding of R functions requires understanding of environments. 
 Environments are simply a way to manage objects. An example of environments in action is that you can use a redundant variable
 name within a function, that won't be affected if the larger runtime already has the same variable. Additionally, if a 
 function calls a variable which is not defined within the function, it will check the higher level environment for that variable.
@@ -169,15 +169,15 @@ its factorial with the `factorial()`.
 [1] 6
 ```
 - If you’re not sure which names to use with a function, you can look up the function’s
-arguments with args.
+arguments with `args()`. For example:
 
 ```r
 > args(round)
 [1] function(x, digits=0)
 ```
 
-## Resources
-
- * [Official Docs](https://cran.r-project.org/manuals.html)
- * [Quick-R](https://www.statmethods.net/management/functions.html)
- * [Advanced R: Functions](http://adv-r.had.co.nz/Functions.html)
+## Additional Resources
+ - [Official Docs](https://cran.r-project.org/manuals.html)
+ - [Quick-R](https://www.statmethods.net/management/functions.html)
+ - [Advanced R: Functions](http://adv-r.had.co.nz/Functions.html)
+ - [CRAN](https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions)

@@ -14,8 +14,8 @@ A binary search tree (BST) adds these two characteristics:
 2. For each node, the values of its left descendent nodes are less than that of the current node, which in turn is less than the right descendent nodes (if any).
 
 
-The BST is built upon the idea of the <a href='https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search' targer='_blank' rel='nofollow'>binary search</a> algorithm, which allows for fast lookup, insertion and removal of nodes. The way that they are set up means that, on average, each comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes time proportional to the logarithm of the number of items stored in the tree, `O(log n)`. However, some times the worst case can happen, when the tree isn't balanced and the time complexity is `O(n)` for all three of these functions. That is why self-balancing trees (AVL, red-black, etc.) are a lot more effective than the basic BST.
 
+The BST is built on the idea of the <a href='https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search' targer='_blank' rel='nofollow'>binary search</a> algorithm, which allows for fast lookup, insertion and removal of nodes. The way that they are set up means that, on average, each comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes time proportional to the logarithm of the number of items stored in the tree, `O(log n)`. However, some times the worst case can happen, when the tree isn't balanced and the time complexity is `O(n)` for all three of these functions. That is why self-balancing trees (AVL, red-black, etc.) are a lot more effective than the basic BST.
 
 **Worst case scenario example:** This can happen when you keep adding nodes that are *always* larger than the node before (its parent), the same can happen when you always add nodes with values lower than their parents.
 
@@ -47,9 +47,9 @@ It is very similar to the search function. You again start at the root of the tr
 There are 3 cases that can happen when you are trying to delete a node. If it has,
 1. No subtree (no children): This one is the easiest one. You can simply just delete the node, without any additional actions required.
 2. One subtree (one child): You have to make sure that after the node is deleted, its child is then connected to the deleted node's parent.
-3. Two subtrees (two children): You have to find and replace the node you want to delete with its successor (the leftfmost node in the right subtree).
+3. Two subtrees (two children): You have to find and replace the node you want to delete with its inorder successor (the leftmost node in the right subtree).
 
-The time complexity for creating a tree is `O(1)`. The time complexity for searching, inserting or deleting a node depends on the height of the tree `h`, so the worst case is `O(h)`.
+The time complexity for creating a tree is `O(1)`. The time complexity for searching, inserting or deleting a node depends on the height of the tree `h`, so the worst case is `O(h)` in case of skewed trees.
 
 #### Predecessor of a node
 Predecessors can be described as the node that would come right before the node you are currently at. To find the predecessor of the current node, look at the right-most/largest leaf node in the left subtree.

@@ -46,4 +46,5 @@ This is my curated list of awesome Swift and iOS Resources for becoming a self-t
 
 #### Youtube Playlists
 
+* [Swift Clone Applications - Lets Build That App](https://www.youtube.com/channel/UCuP2vJ6kRutQBfRmdcI92mA)
 * [Swift Skills Updates](https://www.youtube.com/channel/UCuP2vJ6kRutQBfRmdcI92mA/videos)

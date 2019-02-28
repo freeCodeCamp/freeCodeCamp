@@ -56,6 +56,8 @@ There are three slightly more interesting options for `justify-content` you migh
 
 `flex-start`, `center` and `flex-end` behave as before - left, center and right have become top, center and bottom. Other options are `baseline`, whereby all children will centralize themselves down a single baseline, and `stretch`, whereby they will stretch to fill the container.
 
+Note that when you apply a display "flex" on the parent container, it will only affect direct children properties. You can nest flexboxes as well. 
+
 
 #### More Information
 
@@ -66,5 +68,7 @@ There are three slightly more interesting options for `justify-content` you migh
 - A great visual guide to Flexbox is provided by [JavaScript Teacher](https://medium.freecodecamp.org/@js_tut) on the FreeCodeCamp Medium page: [The Complete Illustrated Flexbox Tutorial](https://medium.freecodecamp.org/the-complete-illustrated-flexbox-tutorial-d35c085dbf35).
 
 - Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
+
+- I suggest working out while playing the game [Flexbox Froggy](http://flexboxfroggy.com)- [Guide](https://github.com/thomaspark/flexboxfroggy)
 
 - <a href="https://flexbox.io/" target="_blank" rel="nofolow">A simple, free 20 video course that will help you master CSS Flexbox! by Wes Bos</a>

@@ -31,7 +31,22 @@ int numbers [5] = {6};
 //Initialization with declaration:
 int numbers [] = {1, 2, 3, 4, 5};
 //Note that here the number of values defines the size of the array.
-//In the examples above, the size was fixed at compile time
+
+// In the examples above, the size was fixed beforehand
+```
+
+## Two-Dimensional Arrays
+
+The simplest form of the multidimensional array is the two-dimensional array. A two-dimensional array is, in essence, a list of one-dimensional arrays. To declare a two-dimensional integer array of size `x*y`, you would write something as follows −
+`type arrayName [ x ][ y ]`;
+
+```C++
+int a[3][4] = {  
+   {0, 1, 2, 3} ,   /*  initializers for row indexed by 0 */
+   {4, 5, 6, 7} ,   /*  initializers for row indexed by 1 */
+   {8, 9, 10, 11}   /*  initializers for row indexed by 2 */
+};
+
 ```
 ## Types Of Arrays
 There are two types of arrays based on way the array is declared.
@@ -50,6 +65,10 @@ int x = numbers[0]; // x is assigned 1. index 0 is the first position
 numbers[2] = 55; // Sets the third position (index 2) to the new value 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+
+### What is the difference between arrays and pointers?
+An array is a collection of variables of similar data type that are stored in contiguous memory locations whereas the pointer is a variable that stores the memory address of another variable i.e. a pointer is a variable that points to the location of another variable.
+
 
 How to insert and print array elements:
 ```C++

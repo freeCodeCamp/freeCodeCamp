@@ -16,10 +16,12 @@ function* fetchSessionUser() {
   }
   try {
     const {
-      data: { user = {}, result = '' }
+      data: { user = {}, result = '', sessionMeta = {} }
     } = yield call(getSessionUser);
     const appUser = user[result] || {};
-    yield put(fetchUserComplete({ user: appUser, username: result }));
+    yield put(
+      fetchUserComplete({ user: appUser, username: result, sessionMeta })
+    );
   } catch (e) {
     yield put(fetchUserError(e));
   }

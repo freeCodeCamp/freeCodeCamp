@@ -4,7 +4,7 @@ We recommend the following guidelines to writing Guide articles to help you get 
 
 ## Title
 
-Article titles should be as short, concise, and to-the-point as possible.
+Article titles should be as short, concise, and as to-the-point as possible.
 
 We want campers to quickly find the information they're looking for, and the title should reflect the main theme of the article.
 
