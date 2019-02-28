@@ -6,15 +6,15 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists."</p>
+Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
   
-  ### Rules:
-  <ul>
-    <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
-    <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
-    <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
-    <li> The order of the digits when given does not have to be preserved. </li>
-  </ul>
+<h4><strong>Rules:</strong></h4>
+<ul>
+  <li> Only the following operators/functions are allowed: multiplication, division, addition, subtraction. </li>
+  <li> Division should use floating point or rational arithmetic, etc, to preserve remainders. </li>
+  <li> Forming multiple digit numbers from the supplied digits is disallowed. (So an answer of 12+12 when given 1, 2, 2, and 1 is wrong). </li>
+  <li> The order of the digits when given does not have to be preserved. </li>
+</ul>
 
 | Example input | Example output |
 | --- | --- |
@@ -55,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function solve24 (numStr){
+function solve24(numStr) {
   // Good luck!
   return true;
 }
@@ -99,7 +99,7 @@ function include(ansArr, res) {
 ```js
 // noprotect
 
-function solve24 (numStr){
+function solve24(numStr) {
   const digitsArr = numStr.split('');
   const answers = [];
 
