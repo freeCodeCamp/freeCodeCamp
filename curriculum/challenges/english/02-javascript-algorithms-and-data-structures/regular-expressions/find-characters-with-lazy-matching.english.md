@@ -15,6 +15,7 @@ However, you can use the <code>?</code> character to change it to <code>lazy</co
 ## Instructions
 <section id='instructions'>
 Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;</code> and not the text <code>"&lt;h1&gt;Winter is coming&lt;/h1&gt;"</code>. Remember the wildcard <code>.</code> in a regular expression matches any character.
+<strong>Note</strong><br>Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
 </section>
 
 ## Tests
