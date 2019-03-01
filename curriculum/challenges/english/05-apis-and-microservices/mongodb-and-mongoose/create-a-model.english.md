@@ -23,9 +23,9 @@ Note: Glitch is a real server, and in real servers the interactions with the db 
 Warning - When interacting with remote services, errors may occur !
 <code>/* Example */</code>
 <code>var someFunc = function(done) {</code>
-<code>  //... do something (risky) ...</code>
-<code>  if(error) return done(error);</code>
-<code>  done(null, result);</code>
+<code>&nbsp;&nbsp;//... do something (risky) ...</code>
+<code>&nbsp;&nbsp;if(error) return done(error);</code>
+<code>&nbsp;&nbsp;done(null, result);</code>
 <code>};</code>
 </section>
 
