@@ -3,7 +3,7 @@ import { takeEvery, put, all } from 'redux-saga/effects';
 import { toggleExpandedState } from './';
 import { types as appTypes } from '../../../../../redux';
 
-function* showDonateModalSaga() {
+function* expandSideNavOnMountSaga() {
   let guideRegex = /^\/guide\//;
   let onGuide = guideRegex.test(window.location.pathname);
   if (onGuide && typeof window !== 'undefined') {
