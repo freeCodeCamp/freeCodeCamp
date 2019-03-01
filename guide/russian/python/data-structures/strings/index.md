@@ -8,7 +8,7 @@ Python позволяет `str` объектам или _строкам_ выр�
     
 *   Двойные кавычки: `"Double quote strings can have 'single' quotes inside."` двойными кавычками `"Double quote strings can have 'single' quotes inside."`
     
-*   Тройной котировки:
+*   Тройные кавычки:
     
     ```
     """Triple quoted strings can span multiple lines. 

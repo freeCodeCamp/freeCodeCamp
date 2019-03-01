@@ -6,9 +6,12 @@ import { createSelector } from 'reselect';
 
 import { userSelector } from '../../../redux';
 
-const mapStateToProps = createSelector(userSelector, ({ picture }) => ({
-  picture
-}));
+const mapStateToProps = createSelector(
+  userSelector,
+  ({ picture }) => ({
+    picture
+  })
+);
 
 function SignedIn({ picture }) {
   return (

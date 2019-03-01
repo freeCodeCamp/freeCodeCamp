@@ -1,12 +1,12 @@
 ---
-title: Creating a New Github Issue
+title: Creating a New GitHub Issue
 localeTitle: 创建一个新的Github问题
 ---
 在提交问题之前，请尝试[在Github上搜索您的问题](https://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390)
 
 制定一个好的问题将使开发团队更容易复制和解决您的问题。请按照以下步骤操作：
 
-1.  转到FreeCodeCamp的[Github Issues](https://github.com/FreeCodeCamp/FreeCodeCamp/issues)页面，然后单击`New Issue` 。
+1.  转到FreeCodeCamp的[GitHub Issues](https://github.com/FreeCodeCamp/FreeCodeCamp/issues)页面，然后单击`New Issue` 。
     
 2.  **有一个有用的标题**
     
