@@ -63,5 +63,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "acorn": "^6.1.1"
   }
 }
