@@ -20,6 +20,7 @@ To include a single quote in the string, use a backslash to escape it.
 $last_name = 'O\'Brian';
 ```
 
+
 ### Double Quotes
 
 You can also create strings using double quotes.
@@ -91,5 +92,5 @@ echo str_replace("world", "Dolly", "Hello world!"); // outputs Hello Dolly!
 
 ### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-[PHP: Strings](http://php.net/manual/en/language.types.string.php)
-[PHP String tutorial](https://www.w3schools.com/php/php_string.asp)
+* [PHP: Strings](http://php.net/manual/en/language.types.string.php)
+* [PHP String tutorial](https://www.w3schools.com/php/php_string.asp)
