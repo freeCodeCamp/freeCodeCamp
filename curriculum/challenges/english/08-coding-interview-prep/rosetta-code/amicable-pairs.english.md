@@ -6,19 +6,18 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Two integers $N$ and $M$ are said to be <a href="https://en.wikipedia.org/wiki/Amicable numbers" title="wp: Amicable numbers">amicable pairs</a> if $N \neq M$ and the sum of the <a href="http://rosettacode.org/wiki/Proper divisors" title="Proper divisors">proper divisors</a> of $N$ ($\mathrm{sum}(\mathrm{propDivs}(N))$) $= M$ as well as $\mathrm{sum}(\mathrm{propDivs}(M)) = N$.
+Two integers $N$ and $M$ are said to be <a href='https://en.wikipedia.org/wiki/Amicable numbers' title='wp: Amicable numbers' target='_blank'>amicable pairs</a> if $N \neq M$ and the sum of the <a href="http://rosettacode.org/wiki/Proper divisors" title="Proper divisors">proper divisors</a> of $N$ ($\mathrm{sum}(\mathrm{propDivs}(N))$) $= M$ as well as $\mathrm{sum}(\mathrm{propDivs}(M)) = N$.
 <b>Example:</b>
 <b>1184</b> and <b>1210</b> are an amicable pair, with proper divisors:
 <ul>
-<li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592  and</li>
-<li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605   respectively.</li>
+  <li>1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592  and</li>
+  <li>1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605   respectively.</li>
 </ul>
-Calculate and show here the Amicable pairs below 20,000 (there are eight).
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Calculate and show here the Amicable pairs below 20,000 (there are eight).
 </section>
 
 ## Tests

@@ -6,7 +6,11 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Comma quibbling is a task originally set by Eric Lippert in his <a href="http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" title="link: http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx">blog</a>.
+Comma quibbling is a task originally set by Eric Lippert in his <a href="http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" title="link: http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" target="_blank">blog</a>.
+</section>
+
+## Instructions
+<section id='instructions'>
 Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
 <ol>
   <li>An input of no words produces the output string of just the two brace characters "{}".</li>
@@ -22,11 +26,6 @@ Test your function with the following series of inputs showing your output here 
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
 Note: Assume words are non-empty strings of uppercase characters for this task.
-</section>
-
-## Instructions
-<section id='instructions'>
-
 </section>
 
 ## Tests

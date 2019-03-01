@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Compute the  <a href="https://en.wikipedia.org/wiki/Root mean square" title="wp: Root mean square">Root mean square</a>  of the numbers 1 through 10 inclusive.
+Compute the  <a href="https://en.wikipedia.org/wiki/Root mean square" title="wp: Root mean square" target='_blank'>Root mean square</a>  of the numbers 1 through 10 inclusive.
 The <i>root mean square</i> is also known by its initials RMS (or rms), and as the <b>quadratic mean</b>.
 The RMS is calculated as the mean of the squares of the numbers, square-rooted:
 <big>$$x_{\mathrm{rms}} = \sqrt {{{x_1}^2 + {x_2}^2 + \cdots + {x_n}^2} \over n}. $$</big>

@@ -56,13 +56,12 @@ The algorithm follows:
 ['4S', 'TS', '2H', '5D', 'JC', '6C', 'JH', 'QH'],
 ['JD', 'KS', 'KC', '4H']
 ]</pre>
-Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
-Deals can also be checked against <a href="http://freecellgamesolutions.com/" title="link: http://freecellgamesolutions.com/">FreeCell solutions to 1000000 games</a>. (Summon a video solution, and it displays the initial deal.)
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
+Deals can also be checked against <a href="http://freecellgamesolutions.com/" title="link: http://freecellgamesolutions.com/">FreeCell solutions to 1000000 games</a>. (Summon a video solution, and it displays the initial deal.)
 </section>
 
 ## Tests

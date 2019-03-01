@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-These define three classifications of positive integers based on their <a href="http://rosettacode.org/wiki/Proper divisors" title="Proper divisors">proper divisors</a>.
+These define three classifications of positive integers based on their <a href='http://rosettacode.org/wiki/Proper divisors' title='Proper divisors' target='_blank'>proper divisors</a>.
 Let $P(n)$ be the sum of the proper divisors of <b>n</b> where proper divisors are all positive integers <b>n</b> other than <b>n</b> itself.
 <pre>
 If <code style='border: 1px solid #ddd;'> P(n) < n </code> then <b>n</b> is classed as <b>deficient</b>
@@ -16,12 +16,11 @@ If <code style='border: 1px solid #ddd;'> P(n) > n </code> then <b>n</b> is clas
 Example:
 <b>6</b> has proper divisors of <b>1</b>, <b>2</b>, and <b>3</b>.
 <b>1 + 2 + 3 = 6</b>, so <b>6</b> is classed as a perfect number.
-Implement a function that calculates how many of the integers from <b>1</b> to <b>20,000</b> (inclusive) are in each of the three classes. Output the result as an array in the following format <code>[deficient, perfect, abundant]</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement a function that calculates how many of the integers from <b>1</b> to <b>20,000</b> (inclusive) are in each of the three classes. Output the result as an array in the following format <code>[deficient, perfect, abundant]</code>.
 </section>
 
 ## Tests

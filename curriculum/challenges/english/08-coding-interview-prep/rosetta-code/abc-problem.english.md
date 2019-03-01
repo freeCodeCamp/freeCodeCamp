@@ -29,15 +29,16 @@ You are given a collection of ABC blocks (e.g., childhood alphabet blocks). Ther
 (P C)
 (Z M)
 </pre>
-Some rules to keep in mind:
-Once a letter on a block is used, that block cannot be used again.
-The function should be case-insensitive.
-Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+Some rules to keep in mind:
+<ul>
+  <li>Once a letter on a block is used, that block cannot be used again.</li>
+  <li>The function should be case-insensitive.</li>
+</ul>
 </section>
 
 ## Tests

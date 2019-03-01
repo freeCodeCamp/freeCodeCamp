@@ -19,7 +19,10 @@ Then the values of $x, y$ and $z$ can be found as follows:
 <big>
   $x = \frac{\begin{vmatrix} {\color{red}d_1} & b_1 & c_1 \\ {\color{red}d_2} & b_2 & c_2 \\ {\color{red}d_3} & b_3 & c_3 \end{vmatrix} } { \begin{vmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{vmatrix}}, \quad y = \frac {\begin{vmatrix} a_1 & {\color{red}d_1} & c_1 \\ a_2 & {\color{red}d_2} & c_2 \\ a_3 & {\color{red}d_3} & c_3 \end{vmatrix}} {\begin{vmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{vmatrix}}, \text{ and }z = \frac { \begin{vmatrix} a_1 & b_1 & {\color{red}d_1} \\ a_2 & b_2 & {\color{red}d_2} \\ a_3 & b_3 & {\color{red}d_3} \end{vmatrix}} {\begin{vmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{vmatrix} }.$
 </big>
-<b>Task</b>
+</section>
+
+## Instructions
+<section id='instructions'>
 Given the following system of equations:
 <big>
   $\begin{cases}
@@ -30,11 +33,6 @@ Given the following system of equations:
   \end{cases}$
 </big>
 solve for <big>$w$, $x$, $y$</big> and <big>$z$</big>, using Cramer's rule.
-</section>
-
-## Instructions
-<section id='instructions'>
-
 </section>
 
 ## Tests

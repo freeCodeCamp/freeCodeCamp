@@ -12,12 +12,11 @@ A given rectangle is made from <i>m</i> × <i>n</i> squares. If <i>m</i> and <i>
     <img src="https://rosettacode.org/mw/images/5/55/Rect-cut.svg" width="520" height="170" alt="Picture of cut rectangles">
   </a>
 </div>
-Write a function that calculates the number of different ways to cut an <i>m</i> × <i>n</i> rectangle.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that calculates the number of different ways to cut an <i>m</i> × <i>n</i> rectangle.
 </section>
 
 ## Tests

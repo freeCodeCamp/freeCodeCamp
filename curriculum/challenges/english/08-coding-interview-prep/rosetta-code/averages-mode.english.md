@@ -6,7 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a program to find the <a href="https://en.wikipedia.org/wiki/Mode (statistics)" title="wp: Mode (statistics)">mode</a> value of a collection.</p><p>The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.</p><p>If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.</p>
+Write a program to find the <a href='https://en.wikipedia.org/wiki/Mode (statistics)' title='wp: Mode (statistics)' target='_blank'>mode</a> value of a collection.
+The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
+If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.
 </section>
 
 ## Instructions

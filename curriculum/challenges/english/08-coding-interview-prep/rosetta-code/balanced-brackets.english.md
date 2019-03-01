@@ -7,16 +7,16 @@ challengeType: 5
 ## Description
 <section id='description'>
 Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
-Examples:
-<pre>
-(empty) true
-<code>[]</code> true
-<code>][</code> false
-<code>[][]</code> true
-<code>][][</code> false
-<code>[]][[]</code> false
-<code>[[[[]]]]</code> true
-</pre>
+<h4><strong>Examples:</strong></h4>
+
+| Input | Output |
+| --- | --- |
+| <code>[]</code> | true |
+| <code>][</code> | false |
+| <code>[][]</code> | true |
+| <code>][][</code> | false |
+| <code>[]][[]</code> | false |
+| <code>[[[[]]]]</code> | true |
 </section>
 
 ## Instructions

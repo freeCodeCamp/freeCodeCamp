@@ -14,7 +14,10 @@ Given two points on a plane and a radius, usually two circles of given radius ca
   <li>If the points form a diameter then return a single circle.</li>
   <li>If the points are too far apart then no circles can be drawn.</li>
 </ul>
-<b>Task:</b>
+</section>
+
+## Instructions
+<section id='instructions'>
 Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
 <b>For edge cases, return the following:</b>
 <ul>
@@ -33,11 +36,6 @@ Implement a function that takes two points and a radius and returns the two circ
 </pre>
 <b>Ref:</b>
 <a href="http://mathforum.org/library/drmath/view/53027.html" title="link: http://mathforum.org/library/drmath/view/53027.html">Finding the Center of a Circle from 2 Points and Radius</a> from Math forum @ Drexel
-</section>
-
-## Instructions
-<section id='instructions'>
-
 </section>
 
 ## Tests
