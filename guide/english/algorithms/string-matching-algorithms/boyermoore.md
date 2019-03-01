@@ -1,5 +1,8 @@
-Boyer-Moore algorithm for pattern matching
--------------------
+---
+title: Boyer-Moore
+---
+
+## Boyer-Moore
 
 This algorithm has been shown to be more effective than the Knuth-Morris-Pratt algorithm and others for pattern matching in natural languages like English. It relies on the use of [two key heuristics][1], namely:
 * The looking-glass heuristic: where the pattern P is compared to a substring of the text T starting from P’s last letter
