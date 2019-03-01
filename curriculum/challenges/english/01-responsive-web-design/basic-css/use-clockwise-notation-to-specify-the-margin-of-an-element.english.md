@@ -24,13 +24,15 @@ Use <code>Clockwise Notation</code> to give the element with the <code>blue-box<
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-top") === "40px", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-top") === "40px");
   - text: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-right") === "20px", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-right") === "20px");
   - text: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-bottom") === "20px", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-bottom") === "20px");
   - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-left") === "40px", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-left") === "40px");
+  - text: You should use the clockwise notation to set the margin of <code>blue-box</code> class.
+    testString: const removeCssComments = str => str.replace(/\/\*[\s\S]+?\*\//g, '');assert(/\.blue-box\s*{[\s\S]*margin:\s*\d+px\s+\d+px\s+\d+px\s+\d+px(;[\s\S]*}|\s*)/.test(removeCssComments($('style').text())));
 
 ```
 
@@ -81,14 +83,48 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+
+  .box {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+  }
+
+  .yellow-box {
+    background-color: yellow;
+    padding: 20px 40px 20px 40px;
+  }
+
+  .red-box {
+    background-color: crimson;
+    color: #fff;
+    margin: 20px 40px 20px 40px;
+  }
+
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    margin: 40px 20px 20px 40px;
+  }
+</style>
+<h5 class="injected-text">margin</h5>
+
+<div class="box yellow-box">
+  <h5 class="box red-box">padding</h5>
+  <h5 class="box blue-box">padding</h5>
+</div>
 ```
+
 </section>

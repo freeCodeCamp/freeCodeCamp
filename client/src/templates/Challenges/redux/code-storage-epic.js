@@ -105,18 +105,20 @@ function loadCodeEpic(action$, state$) {
       const codeFound = getCode(id);
       if (codeFound && isFilesAllPoly(codeFound)) {
         finalFiles = {
-          ...fileKeys.map(key => files[key]).reduce(
-            (files, file) => ({
-              ...files,
-              [file.key]: {
-                ...file,
-                contents: codeFound[file.key]
-                  ? codeFound[file.key].contents
-                  : file.contents
-              }
-            }),
-            {}
-          )
+          ...fileKeys
+            .map(key => files[key])
+            .reduce(
+              (files, file) => ({
+                ...files,
+                [file.key]: {
+                  ...file,
+                  contents: codeFound[file.key]
+                    ? codeFound[file.key].contents
+                    : file.contents
+                }
+              }),
+              {}
+            )
         };
       } else {
         const legacyCode = getLegacyCode(legacyKey);

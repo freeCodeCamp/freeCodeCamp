@@ -21,6 +21,7 @@ Selection sort always takes the same number of key comparisons — N(N − 1)/2.
 
 ### Implementation in C/C++
 
+#### Iterative Implementation
 ```C
 for(int i = 0; i < n-1; i++)
 {
@@ -40,8 +41,32 @@ for(int i = 0; i < n-1; i++)
 }
 ```
 
-### Implementation in Javascript
+#### Recursive Implementation
+```C
+int minIndex(int a[], int i, int j) 
+{ 
+    if (i == j) return i;
 
+    int k = minIndex(a, i + 1, j);
+
+    return (a[i] < a[k])? i : k; 
+} 
+  
+
+void recurSelectionSort(int a[], int n, int index = 0) 
+{ 
+    
+    if (index == n) return;
+
+    int k = minIndex(a, index, n-1);
+
+    if (k != index) swap(a[k], a[index]);
+
+    recurSelectionSort(a, n, index + 1);
+}
+```
+
+### Implementation in Javascript
 ``` Javascript
 function selection_sort(A) {
     var len = A.length;
@@ -121,19 +146,16 @@ end
 ```
 
 ### Properties
-
 * Space Complexity: <b>O(n)</b>
 * Time Complexity: <b>O(n<sup>2</sup>)</b>
 * Sorting in Place: <b>Yes</b>
 * Stable: <b>No</b>
 
 ### Visualization
-
 * [USFCA](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
 * [HackerEarth](https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/visualize/)
 
 ### References
-
 * [Wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
 * [KhanAcademy](https://www.khanacademy.org/computing/computer-science/algorithms#sorting-algorithms)
 * [MyCodeSchool](https://www.youtube.com/watch?v=GUDLRan2DWM)

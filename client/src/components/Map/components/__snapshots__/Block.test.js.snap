@@ -9,9 +9,9 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
     onClick={[Function]}
   >
     <Caret />
-    <h5>
+    <h4>
       Block A
-    </h5>
+    </h4>
     <div
       className="map-title-completed"
     >
@@ -44,9 +44,9 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     onClick={[Function]}
   >
     <Caret />
-    <h5>
+    <h4>
       Block A
-    </h5>
+    </h4>
     <div
       className="map-title-completed"
     >

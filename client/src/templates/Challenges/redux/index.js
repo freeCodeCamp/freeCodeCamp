@@ -171,7 +171,7 @@ export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 
-export const backendFormValuesSelector = state => state.form[backendNS];
+export const backendFormValuesSelector = state => state.form[backendNS] || {};
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
 
@@ -187,9 +187,7 @@ export const challengeDataSelector = state => {
       files: challengeFilesSelector(state)
     };
   } else if (challengeType === challengeTypes.backend) {
-    const {
-      solution: { value: url }
-    } = backendFormValuesSelector(state);
+    const { solution: { value: url } = {} } = backendFormValuesSelector(state);
     challengeData = {
       ...challengeData,
       url

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const base = `/internal`;
+const base = '/internal';
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -46,9 +46,16 @@ export function getArticleById(shortId) {
 
 /** POST **/
 
-
 export function postReportUser(body) {
   return post('/user/report-user', body);
+}
+
+export function postDeleteAccount(body) {
+  return post('/account/delete', body);
+}
+
+export function postResetProgress(body) {
+  return post('/account/reset-progress', body);
 }
 
 /** PUT **/

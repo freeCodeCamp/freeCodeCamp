@@ -39,29 +39,46 @@ class WorkerExecutor {
       // Handle timeout
       const timeoutId = setTimeout(() => {
         this.killWorker();
-        reject('timeout');
+        done('timeout');
       }, timeout);
+
+      const done = (err, data) => {
+        clearTimeout(timeoutId);
+        this.remove('error', handleError);
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data);
+        }
+      };
+
+      const handleError = e => {
+        done(e.message);
+      };
+      this.on('error', handleError);
 
       worker.postMessage(data);
 
       // Handle result
       worker.onmessage = e => {
         if (e.data && e.data.type) {
-          const observers = this.observers[e.data.type] || [];
-          for (const observer of observers) {
-            observer(e.data.data);
-          }
+          this.handleEvent(e.data.type, e.data.data);
           return;
         }
-        clearTimeout(timeoutId);
-        resolve(e.data);
+        done(null, e.data);
       };
 
       worker.onerror = e => {
-        clearTimeout(timeoutId);
-        reject(e.message);
+        this.handleEvent('error', { message: e.message });
       };
     });
+  }
+
+  handleEvent(type, data) {
+    const observers = this.observers[type] || [];
+    for (const observer of observers) {
+      observer(data);
+    }
   }
 
   on(type, callback) {

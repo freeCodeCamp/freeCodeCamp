@@ -42,5 +42,5 @@ title: Change Text Inside an Element Using jQuery
 
 [jQuery API  Documentation](http://api.jquery.com/html/)
 
-[freeCoceCamp Guide](https://guide.freecodecamp.org/jquery/jquery-html-method)
+[freeCodeCamp Guide](https://guide.freecodecamp.org/jquery/jquery-html-method)
 

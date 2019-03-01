@@ -84,7 +84,7 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args);
+    proxyLogger(args.map(arg => JSON.stringify(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
@@ -98,7 +98,7 @@ const initTestFrame = frameReady => ctx => {
       resolve();
     }
   });
-  contentLoaded.then(async() => {
+  contentLoaded.then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern
