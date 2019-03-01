@@ -27,5 +27,5 @@ function* expandSideNavOnMountSaga() {
 }
 
 export function createSideNavigationSaga() {
-  return [takeEvery(appTypes.appMount, showDonateModalSaga)];
+  return [takeEvery(appTypes.appMount, expandSideNavOnMountSaga)];
 }
