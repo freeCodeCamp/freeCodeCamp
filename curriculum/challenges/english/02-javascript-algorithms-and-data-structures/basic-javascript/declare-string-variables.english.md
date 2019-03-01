@@ -2,6 +2,7 @@
 id: bd7123c9c444eddfaeb5bdef
 title: Declare String Variables
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c2QvWU6'
 ---
 
 ## Description
