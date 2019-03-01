@@ -1,38 +1,36 @@
 ---
 title: Use the Conditional (Ternary) Operator
 ---
+
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+
 ## Use the Conditional (Ternary) Operator
 
-### Problem explanation:
-_Use the `conditional operator` in the `checkEqual` function to check if two numbers are equal or not. The function should return either true or false._
+### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
 
-#### Hint 1
-Remember that the "traditional" `if...else` syntax can be re-written using the conditional operator (`condition ? statement if true : statement if false;`)
+* You need to write a function named `checkEqual`, which checks if the two parameters are equal.
+* If the parameters are equal, `true` is to be returned else `false` should be returned.
+
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint
+
+Use ternary operator to check for equality.
+
 > _try to solve the problem now_
-> 
 
+## Spoiler Alert!
 
-## Spoiler alert!
+![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
 
 **Solution ahead!**
-
-## Code solution:
 
 ```javascript
 function checkEqual(a, b) {
   return a === b ? true : false;
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Ternary-operator).
 
-### Code explanation
-- The function checks if the `condition` before the interrogation sign (`?`) is true, and if so, executes the `true` statement. Otherwise, it returns `false`.
+### Code Explanation:
 
-
-### Resources
-
-- ["Conditional (ternary) operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
-
-
-
-
+* A function `checkEqual` is declared, it accepts two parameters in variables `a` and `b`.
+* The `return` statement would return the value of the evaluated ternary expression.
+* The ternary expression checks if `a` and `b` are equal or not and returns `true` or `false` respectively.
