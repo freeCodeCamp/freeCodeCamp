@@ -9,12 +9,11 @@ An example is `fix(learn): Fixed tests for the do...while loop challenge`.
 
 | scope | documentation |
 |---|---|
-| `learn`,`curriculum` | For Pull Requests making changes to the curriculum challenges |
-| `client` |   |
+| `learn`,`curriculum` | For Pull Requests making changes to the curriculum challenges. |
+| `client` | For Pull Requests making changing to the project settings. |
 | `guide` | For Pull Requests which make changes to the guide. |
-| `server` |  |
 | `ui` | For Pull Requests which modify the User Interface of any page. |
-| `pages` |  |
+| `docs` | For Pull Requests making changes to the project's documentation. |
 
 ## Proposing a Pull Request (PR)
 
