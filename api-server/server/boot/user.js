@@ -12,14 +12,14 @@ import {
 import { fixCompletedChallengeItem } from '../../common/utils';
 import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 import { removeCookies } from '../utils/getSetAccessToken';
+import { createChallengeUrlResolver } from './challenge';
 
 const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectTo(homeLocation);
 
-function bootUser(app) {
+async function bootUser(app, done) {
   const api = app.loopback.Router();
-
-  const getSessionUser = createReadSessionUser(app);
+  const getSessionUser = await createReadSessionUser(app);
   const postReportUserProfile = createPostReportUserProfile(app);
   const postDeleteAccount = createPostDeleteAccount(app);
 
@@ -32,13 +32,19 @@ function bootUser(app) {
   api.post('/user/report-user/', ifNoUser401, postReportUserProfile);
 
   app.use('/internal', api);
+  done();
 }
 
-function createReadSessionUser(app) {
+async function createReadSessionUser(app) {
   const { Donation } = app.models;
+  const challengeUrlResolver = await createChallengeUrlResolver(app);
 
   return function getSessionUser(req, res, next) {
     const queryUser = req.user;
+
+    const challengeUrlResolver$ = Observable.fromPromise(
+      challengeUrlResolver(queryUser && queryUser.currentChallengeId)
+    );
 
     const source =
       queryUser &&
@@ -46,26 +52,40 @@ function createReadSessionUser(app) {
         queryUser.getCompletedChallenges$(),
         queryUser.getPoints$(),
         Donation.getCurrentActiveDonationCount$(),
-        (completedChallenges, progressTimestamps, activeDonations) => ({
+        challengeUrlResolver$,
+        (
+          completedChallenges,
+          progressTimestamps,
+          activeDonations,
+          currentChallengeUrl
+        ) => ({
           activeDonations,
           completedChallenges,
-          progress: getProgress(progressTimestamps, queryUser.timezone)
+          progress: getProgress(progressTimestamps, queryUser.timezone),
+          currentChallengeUrl
         })
       );
     Observable.if(
       () => !queryUser,
       Observable.of({ user: {}, result: '' }),
       Observable.defer(() => source)
-        .map(({ activeDonations, completedChallenges, progress }) => ({
-          user: {
-            ...queryUser.toJSON(),
-            ...progress,
-            completedChallenges: completedChallenges.map(
-              fixCompletedChallengeItem
-            )
-          },
-          sessionMeta: { activeDonations }
-        }))
+        .map(
+          ({
+            activeDonations,
+            completedChallenges,
+            progress,
+            currentChallengeUrl
+          }) => ({
+            user: {
+              ...queryUser.toJSON(),
+              ...progress,
+              completedChallenges: completedChallenges.map(
+                fixCompletedChallengeItem
+              )
+            },
+            sessionMeta: { activeDonations, currentChallengeUrl }
+          })
+        )
         .map(({ user, sessionMeta }) => ({
           user: {
             [user.username]: {

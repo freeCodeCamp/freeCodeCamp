@@ -7,10 +7,7 @@ import { Link } from 'gatsby';
 
 import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import {
-  completedChallengesSelector,
-  currentChallengeIdSelector
-} from '../../../redux';
+import { completedChallengesSelector } from '../../../redux';
 import Caret from '../../icons/Caret';
 import { blockNameify } from '../../../../utils/blockNameify';
 /* eslint-disable max-len */
@@ -23,10 +20,8 @@ const mapStateToProps = (state, ownProps) => {
   return createSelector(
     expandedSelector,
     completedChallengesSelector,
-    currentChallengeIdSelector,
-    (isExpanded, completedChallenges, currentChallengeId) => ({
+    (isExpanded, completedChallenges) => ({
       isExpanded,
-      currentChallengeId,
       completedChallenges: completedChallenges.map(({ id }) => id)
     })
   )(state);
@@ -39,7 +34,6 @@ const propTypes = {
   blockDashedName: PropTypes.string,
   challenges: PropTypes.array,
   completedChallenges: PropTypes.arrayOf(PropTypes.string),
-  currentChallengeId: PropTypes.string,
   intro: PropTypes.shape({
     fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
     frontmatter: PropTypes.shape({
@@ -117,7 +111,6 @@ export class Block extends Component {
   render() {
     const {
       blockDashedName,
-      currentChallengeId,
       completedChallenges,
       challenges,
       isExpanded,
@@ -134,18 +127,11 @@ export class Block extends Component {
       }
       return { ...challenge, isCompleted };
     });
-    // If, somehow, the user does not have a current challenge, this opens the
-    // first block.
-    const hasCurrentChallenge = !currentChallengeId
-      ? blockDashedName === 'basic-html-and-html5'
-      : challenges.some(challenge => challenge.id === currentChallengeId);
-    // isExpanded is toggled, starting as false, by the user unless this
-    // block hasCurrentChallenge when it starts as true.
-    const isOpen = hasCurrentChallenge ? !isExpanded : isExpanded;
+
     return (
-      <li className={`block ${isOpen ? 'open' : ''}`}>
+      <li className={`block ${isExpanded ? 'open' : ''}`}>
         <button
-          aria-expanded={isOpen}
+          aria-expanded={isExpanded}
           className='map-title'
           onClick={this.handleBlockClick}
         >
@@ -161,7 +147,7 @@ export class Block extends Component {
           </div>
         </button>
         <ul>
-          {isOpen
+          {isExpanded
             ? this.renderChallenges(intro, challengesWithCompleted)
             : null}
         </ul>

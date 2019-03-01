@@ -1,6 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../../utils/stateManagement';
+import { isEmpty } from 'lodash';
 
 export const ns = 'curriculumMap';
 
@@ -22,6 +23,8 @@ export const makeExpandedSuperBlockSelector = superBlock => state =>
   !!state[ns].expandedState.superBlock[superBlock];
 export const makeExpandedBlockSelector = block => state =>
   !!state[ns].expandedState.block[block];
+export const isInitializedSelector = state =>
+  !isEmpty(state[ns].expandedState.superBlock);
 
 export const reducer = handleActions(
   {

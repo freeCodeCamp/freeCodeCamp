@@ -8,7 +8,6 @@ import { uniq, find } from 'lodash';
 import Block from './Block';
 
 import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
-import { userSelector } from '../../../redux';
 import Caret from '../../icons/Caret';
 import { ChallengeNode } from '../../../redux/propTypes';
 
@@ -17,8 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return createSelector(
     expandedSelector,
-    userSelector,
-    (isExpanded, { currentChallengeId }) => ({ isExpanded, currentChallengeId })
+    isExpanded => ({ isExpanded })
   )(state);
 };
 
@@ -32,7 +30,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 const propTypes = {
-  currentChallengeId: PropTypes.string,
   introNodes: PropTypes.arrayOf(
     PropTypes.shape({
       fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
@@ -57,8 +54,11 @@ function createSuperBlockTitle(str) {
 }
 
 export class SuperBlock extends Component {
-  renderBlock(blocksForSuperBlock) {
-    const { introNodes } = this.props;
+  renderBlock(superBlock) {
+    const { nodes, introNodes } = this.props;
+    const blocksForSuperBlock = nodes.filter(
+      node => node.superBlock === superBlock
+    );
     const blockDashedNames = uniq(
       blocksForSuperBlock.map(({ block }) => block)
     );
@@ -86,37 +86,18 @@ export class SuperBlock extends Component {
   }
 
   render() {
-    const {
-      superBlock,
-      isExpanded,
-      toggleSuperBlock,
-      nodes,
-      currentChallengeId
-    } = this.props;
-    const blocksForSuperBlock = nodes.filter(
-      node => node.superBlock === superBlock
-    );
-    // If, somehow, the user does not have a current challenge, this opens the
-    // first superBlock.
-    const hasCurrentChallenge = !currentChallengeId
-      ? superBlock === 'Responsive Web Design'
-      : blocksForSuperBlock.some(
-          challenge => challenge.id === currentChallengeId
-        );
-    // isExpanded is toggled, starting as false, by the user unless this
-    // block hasCurrentChallenge when it starts as true.
-    const isOpen = hasCurrentChallenge ? !isExpanded : isExpanded;
+    const { superBlock, isExpanded, toggleSuperBlock } = this.props;
     return (
-      <li className={`superblock ${isOpen ? 'open' : ''}`}>
+      <li className={`superblock ${isExpanded ? 'open' : ''}`}>
         <button
-          aria-expanded={isOpen}
+          aria-expanded={isExpanded}
           className='map-title'
           onClick={() => toggleSuperBlock(superBlock)}
         >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
         </button>
-        {isOpen ? this.renderBlock(blocksForSuperBlock) : null}
+        {isExpanded ? this.renderBlock(superBlock) : null}
       </li>
     );
   }
