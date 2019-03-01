@@ -9,16 +9,20 @@ challengeType: 5
 Compute all three of the <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Pythagorean means' title='wp: Pythagorean means'>Pythagorean means</a> of the set of integers <big>1</big> through <big>10</big> (inclusive).
 Show that <big>$A(x_1,\ldots,x_n) \geq G(x_1,\ldots,x_n) \geq H(x_1,\ldots,x_n)$</big> for this set of positive integers.
 <ul>
-  <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='http://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
+  <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='http://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
   <big>$ A(x_1, \ldots, x_n) = \frac{x_1 + \cdots + x_n}{n}$</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean'>geometric mean</a> is the $n$th root of the product of the list:<br>
+  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean' target='_blank'>geometric mean</a> is the $n$th root of the product of the list:<br>
   <big>$ G(x_1, \ldots, x_n) = \sqrt[n]{x_1 \cdots x_n} $</big></li>
-  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list:<br>
+  <li>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean' target='_blank'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list:<br>
   <big>$ H(x_1, \ldots, x_n) = \frac{n}{\frac{1}{x_1} + \cdots + \frac{1}{x_n}} $</big></li>
 </ul>
-Assume the input is an ordered array of all inclusive numbers.
+</section>
+
+## Instructions
+<section id='instructions'>
+When writing your function, assume the input is an ordered array of all inclusive numbers.
 For the answer, please output an object in the following format:
-<pre class='rosetta__pre'>
+<pre>
 {
   values: {
     Arithmetic: 5.5,
@@ -28,11 +32,6 @@ For the answer, please output an object in the following format:
   test: 'is A >= G >= H ? yes'
 }
 </pre>
-</section>
-
-## Instructions
-<section id='instructions'>
-
 </section>
 
 ## Tests

@@ -7,12 +7,11 @@ challengeType: 5
 ## Description
 <section id='description'>
 A <b>CUSIP</b> is a nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades. The CUSIP was adopted as an American National Standard under Accredited Standards X9.6.
-Write a function that takes a string as a parameter and checks if the string is valid CUSIP.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes a string as a parameter and checks if the string is valid CUSIP.
 </section>
 
 ## Tests

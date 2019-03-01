@@ -13,64 +13,24 @@ Implement a function which:
 </ul>
 Demonstrate that it passes the following three test-cases:
 <div style="font-size:115%; font-weight: bold;">Test Cases</div>
-<table>
-  <tbody>
-    <tr>
-      <th>input number</th>
-      <th>output number</th>
-    </tr>
-    <tr>
-      <td>7259</td>
-      <td><code>2 hr, 59 sec</code></td>
-    </tr>
-    <tr>
-      <td>86400</td>
-      <td><code>1 d</code></td>
-    </tr>
-    <tr>
-      <td>6000000</td>
-      <td><code>9 wk, 6 d, 10 hr, 40 min</code></td>
-    </tr>
-  </tbody>
-</table>
+
+| Input number | Output number |
+| --- | --- |
+| 7259 | <code>2 hr, 59 sec</code> |
+| 728640059 | <code>1 d</code> |
+| 6000000 | <code>9 wk, 6 d, 10 hr, 40 min</code> |
 <div style="font-size:115%; font-weight: bold;">Details</div>
 <ul>
   <li>
     The following five units should be used:
-    <table>
-      <tbody>
-        <tr>
-          <th>unit</th>
-          <th>suffix used in output</th>
-          <th>conversion</th>
-        </tr>
-        <tr>
-          <td>week</td>
-          <td><code>wk</code></td>
-          <td>1 week = 7 days</td>
-        </tr>
-        <tr>
-          <td>day</td>
-          <td><code>d</code></td>
-          <td>1 day = 24 hours</td>
-        </tr>
-        <tr>
-          <td>hour</td>
-          <td><code>hr</code></td>
-          <td>1 hour = 60 minutes</td>
-        </tr>
-        <tr>
-          <td>minute</td>
-          <td><code>min</code></td>
-          <td>1 minute = 60 seconds</td>
-        </tr>
-        <tr>
-          <td>second</td>
-          <td><code>sec</code></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+
+| Unit | Suffix used in Output | Conversion |
+| --- | --- | --- |
+| week | <code>wk</code> | 1 week = 7 days |
+| day | <code>d</code> | 1 day = 24 hours |
+| hour | <code>hr</code> | 1 hour = 60 minutes |
+| minute | <code>min</code> | 1 minute = 60 seconds |
+| second | <code>sec</code> | --- |
   </li>
   <li>
     However, <b>only</b> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).

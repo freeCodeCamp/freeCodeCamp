@@ -6,32 +6,34 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>There is a highly organized city that has decided to assign a number to each of their departments:</p>
-Police department
-Sanitation department
-Fire department
-<p>Each department can have a number between 1 and 7  (inclusive).</p><p>The three department numbers are to be unique (different from each other) and must add up to the number 12.</p><p>The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.</p>
-Task:
-<p>Write a program which outputs all valid combinations:</p>
-<p>[2, 3, 7]</p>
-<p>[2, 4, 6]</p>
-<p>[2, 6, 4]</p>
-<p>[2, 7, 3]</p>
-<p>[4, 1, 7]</p>
-<p>[4, 2, 6]</p>
-<p>[4, 3, 5]</p>
-<p>[4, 5, 3]</p>
-<p>[4, 6, 2]</p>
-<p>[4, 7, 1]</p>
-<p>[6, 1, 5]</p>
-<p>[6, 2, 4]</p>
-<p>[6, 4, 2]</p>
-<p>[6, 5, 1]</p>
+There is a highly organized city that has decided to assign a number to each of their departments:
+<ul>
+  <li>Police department</li>
+  <li>Sanitation department</li>
+  <li>Fire department</li>
+</ul>
+Each department can have a number between 1 and 7  (inclusive).
+The three department numbers are to be unique (different from each other) and must add up to the number 12.
+The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a program which outputs all valid combinations:
+[2, 3, 7]
+[2, 4, 6]
+[2, 6, 4]
+[2, 7, 3]
+[4, 1, 7]
+[4, 2, 6]
+[4, 3, 5]
+[4, 5, 3]
+[4, 6, 2]
+[4, 7, 1]
+[6, 1, 5]
+[6, 2, 4]
+[6, 4, 2]
+[6, 5, 1]
 </section>
 
 ## Tests
