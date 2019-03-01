@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>CatPhotoApp</h2>
+    <main>
+      <h3>Cat Photos</h3>
+      <!-- TODO: Add link to cat photos -->
+      <p>Click here to view more <a target="_blank" href="#">cat photos</a>.</p>
+      <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+      <h3>Cat Lists</h3>
+      <p>Things cats love:</p>
+      <ul>
+        <li>cat nip</li>
+        <li>laser pointers</li>
+        <li>lasagna</li>
+      </ul>
+      <figure>
+        <img src="lasagna.jpg" alt="Lasagna">
+        <figcaption>Cats <em>love</em> lasagna.</figcaption>  
+      </figure>
+      <p>Top 3 things cats hate:</p>
+      <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+      </ol>
+      <figure>
+        <img src="cats.jpg" alt="Cats">
+        <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
+      </figure>
+      <h3>Cat Form</h3>
+      <form action="/submit-cat-photo">
+        <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+        <input type="text" placeholder="cat photo URL" required>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
+
+<!-- An id attribute is used to identify specific elements in other sections of HTML, CSS, and JavaScript. Add an id attribute set to equal "indoor" on the first radio input element and add an id attribute set to equal "outdoor" on the second radio input element. When elements have multiple attributes, the order of the attributes do not matter. -->
