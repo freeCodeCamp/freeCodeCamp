@@ -7,7 +7,7 @@ When opening a Pull Request(PR), use the following scope table to decide what to
 
 An example is `fix(learn): Fixed tests for the do...while loop challenge`.
 
-| scope | documentation |
+| Scope | Documentation |
 |---|---|
 | `learn`,`curriculum` | For Pull Requests making changes to the curriculum challenges. |
 | `client` | For Pull Requests making changing to the project settings. |
