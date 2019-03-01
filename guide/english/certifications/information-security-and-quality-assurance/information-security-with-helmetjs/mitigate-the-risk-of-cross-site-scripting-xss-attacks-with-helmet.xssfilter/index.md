@@ -3,8 +3,12 @@ title: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFi
 ---
 ## Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/mitigate-the-risk-of-cross-site-scripting-xss-attacks-with-helmet.xssfilter/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+- You want to use helmet's `xssFilter()` method on each request.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+- In the `myApp.js` file, add `app.use(helmet.xssFilter({}));` under the fourth instruction.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.
