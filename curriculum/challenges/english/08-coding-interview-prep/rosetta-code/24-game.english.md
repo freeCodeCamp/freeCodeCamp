@@ -6,6 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+The <a href="http://en.wikipedia.org/wiki/24_Game" target="_blank">24 Game</a> tests a person's mental arithmetic.
+The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
+</section>
+
+## Instructions
+<section id='instructions'>
 Implement a function that takes a string of four digits as its argument, with each digit from 1 to 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return "no solution exists".
   
 <h4><strong>Rules:</strong></h4>
@@ -22,11 +28,6 @@ Implement a function that takes a string of four digits as its argument, with ea
 | <code>solve24("1234");</code> | <code>3*1*4*2</code> |
 | <code>solve24("6789");</code> | <code>(6*8)/(9-7)</code> |
 | <code>solve24("1127");</code> | <code>(1+7)*(2+1)</code> |
-</section>
-
-## Instructions
-<section id='instructions'>
-
 </section>
 
 ## Tests
