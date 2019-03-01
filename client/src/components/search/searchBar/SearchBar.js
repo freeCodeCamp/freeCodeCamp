@@ -38,7 +38,7 @@ const mapDispatchToProps = dispatch =>
 
 const placeholder = 'Search 8,000+ lessons, articles, and videos';
 
-class FCCSearchBar extends Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props);
 
@@ -99,10 +99,10 @@ class FCCSearchBar extends Component {
   }
 }
 
-FCCSearchBar.displayName = 'FCCSearchBar';
-FCCSearchBar.propTypes = propTypes;
+SearchBar.displayName = 'SearchBar';
+SearchBar.propTypes = propTypes;
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FCCSearchBar);
+)(SearchBar);
