@@ -66,9 +66,7 @@ const propTypes = {
   initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.shape({
-      nextChallengePath: PropTypes.string
-    })
+    challengeMeta: PropTypes.object
   }),
   tests: PropTypes.arrayOf(
     PropTypes.shape({
@@ -201,13 +199,22 @@ class ShowClassic extends Component {
       instructions
     } = this.getChallenge();
 
+    const {
+      introPath,
+      nextChallengePath,
+      prevChallengePath
+    } = this.props.pageContext.challengeMeta;
     return (
       <SidePanel
         className='full-height'
         description={description}
         guideUrl={this.getGuideUrl()}
         instructions={instructions}
+        introPath={introPath}
+        nextChallengePath={nextChallengePath}
+        prevChallengePath={prevChallengePath}
         section={dasherize(blockName)}
+        showPrevNextBtns={true}
         showToolPanel={showToolPanel}
         title={this.getBlockNameTitle()}
         videoUrl={this.getVideoUrl()}

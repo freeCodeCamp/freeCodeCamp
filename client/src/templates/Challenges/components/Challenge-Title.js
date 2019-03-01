@@ -1,12 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { navigate } from 'gatsby';
+import { Button } from '@freecodecamp/react-bootstrap';
+
+import './challenge-title.css';
 
 const propTypes = {
   children: PropTypes.string,
-  isCompleted: PropTypes.bool
+  introPath: PropTypes.string,
+  isCompleted: PropTypes.bool,
+  nextChallengePath: PropTypes.string,
+  prevChallengePath: PropTypes.string,
+  showPrevNextBtns: PropTypes.bool
 };
 
-function ChallengeTitle({ children, isCompleted }) {
+function ChallengeTitle({
+  children,
+  introPath,
+  isCompleted,
+  nextChallengePath,
+  prevChallengePath,
+  showPrevNextBtns
+}) {
   let icon = null;
   if (isCompleted) {
     icon = (
@@ -15,10 +30,25 @@ function ChallengeTitle({ children, isCompleted }) {
     );
   }
   return (
-    <h2 className='text-center challenge-title'>
-      {children || 'Happy Coding!'}
-      {icon}
-    </h2>
+    <div className='challenge-title-wrap'>
+      {showPrevNextBtns ? (
+        <Button bsStyle='primary' onClick={() => navigate(prevChallengePath)}>
+          &lt;
+        </Button>
+      ) : null}
+      <h2 className='text-center challenge-title'>
+        {children || 'Happy Coding!'}
+        {icon}
+      </h2>
+      {showPrevNextBtns ? (
+        <Button
+          bsStyle='primary'
+          onClick={() => navigate(introPath ? introPath : nextChallengePath)}
+        >
+          &gt;
+        </Button>
+      ) : null}
+    </div>
   );
 }
 
