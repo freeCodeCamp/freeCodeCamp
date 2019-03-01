@@ -6,8 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A ''zig-zag'' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
-For example, given '5', produce this array:
+A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
+
+For example, for the input <code>5</code>, the following result should be produced:
 <pre>
  0  1  5  6 14
  2  4  7 13 15
@@ -15,13 +16,11 @@ For example, given '5', produce this array:
  9 11 17 20 22
 10 18 19 23 24
 </pre>
-
-Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
 </section>
 
 ## Tests
