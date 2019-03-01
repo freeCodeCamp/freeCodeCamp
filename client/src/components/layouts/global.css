@@ -1,3 +1,8 @@
+html {
+  color: #333 !important;
+  font-size: 18px;
+  font: monospace !important;
+}
 .btn-cta-big {
   max-height: 100%;
   font-size: 40px;
@@ -12,29 +17,55 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+a,
+p,
+btn {
   font-weight: 400;
+  font-size: 1rem;
+  font-family: monospace;
 }
 
-.text-center {
-  text-align: center !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  margin: 0;
+}
+
+h3 {
+  text-decoration: underline;
 }
 
 .green-text {
-  color: #006400;
+  color: #6b6d6f;
 }
 
 .btn-invert {
   background-color: #fff;
-  color: #006400;
+  color: #6b6d6f;
 }
 
-a:hover, a:focus {
-   text-decoration: none;
+a {
+  text-decoration: underline;
+  color: #333;
+}
+.btn {
+  text-decoration: none;
+}
+.btn-cta-big {
+  text-decoration: none !important;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
 }
 
 .fcc-modal {
-  background-color: #006400;
+  background-color: #6b6d6f;
   color: #fff;
 }
 

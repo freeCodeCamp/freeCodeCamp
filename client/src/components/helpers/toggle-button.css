@@ -1,5 +1,5 @@
 .toggle-active.btn[disabled] {
-  background-color: #006400;
+  background-color: #6B6D6F;
   opacity: 1;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .toggle-not-active.btn-primary.active {
-  background-color: #006400;
+  background-color: #6B6D6F;
 }
 
 .toggle-not-active {
@@ -23,7 +23,7 @@
 
 .toggle-not-active:hover,
 .toggle-not-active:focus {
-  background-color: #006400;
+  background-color: #6B6D6F;
 }
 
 .night .toggle-not-active:hover,

@@ -22,8 +22,8 @@ import Flash from '../Flash';
 import Header from '../Header';
 import Footer from '../Footer';
 
-import './global.css';
 import './layout.css';
+import './global.css';
 import './night.css';
 
 fontawesome.config = {

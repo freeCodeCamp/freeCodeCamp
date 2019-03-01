@@ -34,13 +34,13 @@ const favicons = [
     rel='manifest'
   />,
   <link
-    color='#006400'
+    color='#6B6D6F'
     href='/assets/safari-pinned-tab.svg'
     key='/assets/safari-pinned-tab.svg'
     rel='mask-icon'
   />,
   <meta
-    content='#006400'
+    content='#6B6D6F'
     key='msapplication-TileColor'
     name='msapplication-TileColor'
   />,
@@ -49,7 +49,7 @@ const favicons = [
     key='msapplication-TileImage'
     name='msapplication-TileImage'
   />,
-  <meta content='#006400' key='theme-color' name='theme-color' />
+  <meta content='#6B6D6F' key='theme-color' name='theme-color' />
 ];
 
 export default favicons;

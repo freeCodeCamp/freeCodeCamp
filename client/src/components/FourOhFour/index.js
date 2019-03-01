@@ -47,7 +47,7 @@ class NotFoundPage extends Component {
             </blockquote>
           </div>
         ) : (
-          <Spinner color='#006400' name='ball-clip-rotate-multiple' />
+          <Spinner color='#6B6D6F' name='ball-clip-rotate-multiple' />
         )}
         <Link className='btn-curriculum' to='/learn'>
           View the Curriculum

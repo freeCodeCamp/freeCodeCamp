@@ -1,5 +1,5 @@
 .footer {
-  background-color: #f1f5f8;
+  background-color: #dbdcdd;
   font-size: 0.9em;
   width: 100%;
   padding-top: 40px;
@@ -20,7 +20,7 @@
 }
 
 .night .footer a {
-  color: #006400;
+  color: #6b6d6f;
 }
 
 .night .footer a:hover {

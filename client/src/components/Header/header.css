@@ -10,7 +10,7 @@ header {
 }
 
 #top-nav {
-  background: #006400;
+  background: #6B6D6F;
   height: var(--header-height);
   margin-bottom: 0;
   border-radius: 0;
@@ -38,7 +38,7 @@ header {
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  background-color: #006400;
+  background-color: #6B6D6F;
 }
 
 #top-right-nav a,
@@ -62,7 +62,7 @@ header {
 #top-right-nav a:hover,
 #top-right-nav a:focus {
   background-color: #fff;
-  color: #006400;
+  color: #6B6D6F;
 }
 
 #top-right-nav li.user-state-link,
@@ -71,7 +71,7 @@ header {
 #top-right-nav li.user-state-link > a,
 #top-right-nav li.user-state-link > a:hover,
 #top-right-nav li.user-state-link > a:focus {
-  background-color: #006400;
+  background-color: #6B6D6F;
 }
 
 #top-right-nav a:hover,

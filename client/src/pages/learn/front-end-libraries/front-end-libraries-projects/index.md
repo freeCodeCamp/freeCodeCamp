@@ -10,7 +10,7 @@ In this section you will complete the following projects with Bootstrap, jQuery,
 * A Random Quote Machine
 * A Markdown Previewer
 * A Drum Machine
-* A JavaScript Calculator
+* A JavaScript Calcumonospacer
 * A Pomodoro Clock
 
 Have fun and remember to use the [Read-Search-Ask] (https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.

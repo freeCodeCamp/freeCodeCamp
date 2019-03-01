@@ -5,12 +5,12 @@
 
 .night .btn-invert {
   background-color: #ddd;
-  color: #006400;
+  color: #6B6D6F;
 }
 
 .night .btn-invert:hover,
 .night .btn-invert:focus {
-  background-color: #006400;
+  background-color: #6B6D6F;
   color: #ddd;
 }
 

@@ -3,9 +3,9 @@
 }
 
 #learn-app-wrapper .reflex-container.vertical .reflex-splitter:hover {
-  border-left: 2px solid #006400;
-  border-right: 2px solid #006400;
-  background-color: #006400;
+  border-left: 2px solid #6B6D6F;
+  border-right: 2px solid #6B6D6F;
+  background-color: #6B6D6F;
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
@@ -13,9 +13,9 @@
 }
 
 #learn-app-wrapper .reflex-container.horizontal .reflex-splitter:hover {
-  border-top: 2px solid #006400;
-  border-bottom: 2px solid #006400;
-  background-color: #006400;
+  border-top: 2px solid #6B6D6F;
+  border-bottom: 2px solid #6B6D6F;
+  background-color: #6B6D6F;
 }
 
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {

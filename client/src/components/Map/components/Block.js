@@ -132,14 +132,8 @@ export class Block extends Component {
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
           <h4>{blockNameify(blockDashedName)}</h4>
-          <div className='map-title-completed'>
-            <span>
-              {this.renderCheckMark(
-                completedCount === challengesWithCompleted.length
-              )}
-            </span>
-            <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
-          </div>
+          &nbsp; &nbsp; &nbsp;
+          <h4>{`${completedCount}/${challengesWithCompleted.length}`}</h4>
         </div>
         <ul>
           {isExpanded

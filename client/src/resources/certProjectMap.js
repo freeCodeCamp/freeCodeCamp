@@ -97,8 +97,8 @@ export const projectMap = {
     },
     {
       id: 'bd7158d8c442eddfaeb5bd17',
-      title: 'Build a JavaScript Calculator',
-      link: `${feLibsBase}/build-a-javascript-calculator`,
+      title: 'Build a JavaScript Calcumonospacer',
+      link: `${feLibsBase}/build-a-javascript-calcumonospacer`,
       superBlock: 'front-end-libraries'
     },
     {

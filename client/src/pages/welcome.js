@@ -88,7 +88,7 @@ function Welcome({
         <title>Welcome | freeCodeCamp.org</title>
       </Helmet>
       <main>
-        <Grid className='text-center'>
+        <Grid>
           <Row>
             <Col xs={12}>
               <Spacer />
