@@ -1,5 +1,6 @@
 ---
 title: INVEST
+localeTitle: INVEST
 ---
 ## INVEST
 
