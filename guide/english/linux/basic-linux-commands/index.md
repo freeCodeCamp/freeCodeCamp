@@ -99,7 +99,7 @@ When starting out with Linux, there are some basic commands everyone should know
 - Use 'chmod' to make a file executable and to change the permissions granted to it in Linux. For the example , imagine you have a file named `myFile.txt` . But it can't executable because you not have a permission to this file , you can use the command `chmod +x myFile.txt` or `chmod 755 myFile.txt`.
 
 29. **locate**
-- Used to locate a file in the system
+- Used to locate a file in the system  
      Example:
      ```sh
      locate sample.txt
