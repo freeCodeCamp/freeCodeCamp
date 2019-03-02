@@ -6,7 +6,15 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.</p> The generator should be able to : Show the first <b>n</b> prime numbers.Show the prime numbers in a range.Show the number of primes in a range.Show the <b>n<sup>th</sup></b> prime number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array.
+Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+The generator should be able to:
+<ul>
+  <li>Show the first <b>n</b> prime numbers.</li>
+  <li>Show the prime numbers in a range.</li>
+  <li>Show the number of primes in a range.</li>
+  <li>Show the <b>n<sup>th</sup></b> prime number.</li>
+</ul>
+The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array.
 </section>
 
 ## Instructions
@@ -40,7 +48,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function primeGenerator (num, showPrimes) {
+function primeGenerator(num, showPrimes) {
   // Good luck!
 }
 ```

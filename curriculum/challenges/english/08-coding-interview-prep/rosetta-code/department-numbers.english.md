@@ -60,7 +60,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function combinations (possibleNumbers, total) {
+function combinations(possibleNumbers, total) {
   // Good luck!
   return true;
 }
@@ -103,7 +103,7 @@ const result = [
 
 
 ```js
-function combinations (possibleNumbers, total) {
+function combinations(possibleNumbers, total) {
   let firstNumber;
   let secondNumber;
   let thridNumber;
