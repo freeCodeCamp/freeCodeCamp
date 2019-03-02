@@ -76,8 +76,8 @@ which will compile as:
 }
 ```
 
-## MIXINS
-Mixins are like functions for CSS.
+## Mixins
+Mixins are like functions for CSS. They allow you to break CSS down into modular chunks that can be reused anywhere in your stylesheets, and this helps us to avoid writing repetitive code. Mixins are created using the `@` symbol and included in other rules using `@include`.
 
 Example:
 ```css
@@ -90,6 +90,24 @@ Example:
 
 .mydiv {
   @include box-shadow(0px,0px,5px,#fff);
+}
+```
+
+## Extends
+Sometimes you’ll want one selector to share the styles of another selector. The `@extend` directive works like mixins in that you’re able to share snippets of code across your stylesheets. `@extend` is useful for sharing sets of related properties that get repeated in your stylesheets, such as base styles for button sets.
+
+Example:
+```css
+.btn--primary {
+  background-color: #333;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.btn--callout {
+  @extend .btn;
+}
+.btn--info {
+  @extend .btn;
 }
 ```
 
