@@ -11,16 +11,16 @@ app.use(helmet()) will automatically include all the middleware introduced above
 <h3>Example:</h3>
 <blockquote>
 app.use(helmet({<br>
-&nbsp;frameguard: {         // configure<br>
-&nbsp;&nbsp;action: 'deny'<br>
-&nbsp;},<br>
-&nbsp;contentSecurityPolicy: {    // enable and configure<br>
-&nbsp;&nbsp;directives: {<br>
-&nbsp;&nbsp;&nbsp;defaultSrc: ["self"],<br>
-&nbsp;&nbsp;&nbsp;styleSrc: ['style.com'],<br>
-&nbsp;&nbsp;}<br>
-&nbsp;},<br>
-&nbsp;dnsPrefetchControl: false     // disable<br>
+&nbsp;&nbsp;frameguard: {         // configure<br>
+&nbsp;&nbsp;&nbsp;&nbsp;action: 'deny'<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;contentSecurityPolicy: {    // enable and configure<br>
+&nbsp;&nbsp;&nbsp;&nbsp;directives: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defaultSrc: ["self"],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;styleSrc: ['style.com'],<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;dnsPrefetchControl: false     // disable<br>
 }))
 </blockquote>
 We introduced each middleware separately for teaching purpose, and for ease of testing. Using the ‘parent’ helmet() middleware is easiest, and cleaner, for a real project.

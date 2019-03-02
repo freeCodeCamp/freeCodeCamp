@@ -12,7 +12,7 @@ Helmet helps you secure your Express apps by setting various HTTP headers.
 
 ## Instructions
 <section id='instructions'>
-Install the express package, then require it.
+Install the Helmet package, then require it.
 </section>
 
 ## Tests

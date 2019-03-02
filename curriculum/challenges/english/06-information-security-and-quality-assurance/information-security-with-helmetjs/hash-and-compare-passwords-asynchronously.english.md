@@ -16,10 +16,11 @@ Add this hashing function to your server(we've already defined the variables use
 Now when you need to figure out if a new input is the same data as the hash you would just use the compare function <code>bcrypt.compare(myPlaintextPassword, hash, (err, res) => { /*res == true or false*/ });</code>. Add this into your existing hash function(since you need to wait for the hash to complete before calling the compare function) after you log the completed hash and log 'res' to the console within the compare. You should see in the console a hash then 'true' is printed! If you change 'myPlaintextPassword' in the compare function to 'someOtherPlaintextPassword' then it should say false.
 <blockquote>
 bcrypt.hash('passw0rd!', 13, (err, hash) => {<br>
-&nbsp;console.log(hash); //$2a$12$Y.PHPE15wR25qrrtgGkiYe2sXo98cjuMCG1YwSI5rJW1DSJp0gEYS<br>
-&nbsp;bcrypt.compare('passw0rd!', hash, (err, res) => {<br>
-&nbsp;&nbsp;&nbsp;console.log(res); //true<br>
-&nbsp;});<br>
+&nbsp;&nbsp;console.log(hash);<br>
+&nbsp;&nbsp;//$2a$12$Y.PHPE15wR25qrrtgGkiYe2sXo98cjuMCG1YwSI5rJW1DSJp0gEYS<br>
+&nbsp;&nbsp;bcrypt.compare('passw0rd!', hash, (err, res) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(res); //true<br>
+&nbsp;&nbsp;});<br>
 });<br>
 </blockquote>
 Submit your page when you think you've got it right.
