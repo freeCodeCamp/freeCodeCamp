@@ -12,7 +12,7 @@ Now a publisher typically publishes messages with a _routing key_ to something c
 
 ## Getting started
 
-We're going to cook up a very simple example where a publisher script publishes a message to Rabbit, containing a URL, and a consumer script listens to Rabbit, takes the published URL, calls it and displays the results. You can find the finished sample up on [Github](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise).
+We're going to cook up a very simple example where a publisher script publishes a message to Rabbit, containing a URL, and a consumer script listens to Rabbit, takes the published URL, calls it and displays the results. You can find the finished sample up on [GitHub](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise).
 
 First, let's initialize a npm project:
 

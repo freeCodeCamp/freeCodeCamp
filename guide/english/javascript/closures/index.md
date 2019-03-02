@@ -115,7 +115,7 @@ Javascript did not have a concept of block-scoped variables. Meaning that when d
     }
 ```
 
-Since the variable i does not have block-scope, it's value within all three functions was updated with the loop counter and created malicious values. Closure can help us solve this issue by creating a snapshot of the environment the function was in when it was created, preserving its state.
+Since the variable i does not have block-scope, its value within all three functions was updated with the loop counter and created malicious values. Closure can help us solve this issue by creating a snapshot of the environment the function was in when it was created, preserving its state.
 
 ```javascript
     var funcs = [];
@@ -149,7 +149,7 @@ Unlike many other languages, Javascript does not have a mechanism which allows y
 
 Much like in the previous example, you can build functions which return object literals with methods that have access to the object's local variables without exposing them. Thus, making them effectively private.
 
-Closures can also help you manage your global namespace to avoid collisions with globally shared data. Usually all global variables are shared between all scripts in your project, which will definitely give you alot of trouble when building medium to large programs. That is why library and module authors use closures to hide an entire module's methods and data. This is called the module pattern, it uses an immediately invoked function expression which exports only certain functionality to the outside world, significantly reducing the amount of global references.
+Closures can also help you manage your global namespace to avoid collisions with globally shared data. Usually all global variables are shared between all scripts in your project, which will definitely give you a lot of trouble when building medium to large programs. That is why library and module authors use closures to hide an entire module's methods and data. This is called the module pattern, it uses an immediately invoked function expression which exports only certain functionality to the outside world, significantly reducing the amount of global references.
 
 Here's a short sample of a module skeleton.
 
@@ -171,6 +171,55 @@ myModule.method2(); // I am method 2, I am a private variable
 ```
 
 Closures are useful for capturing new instances of private variables contained in the 'remembered' environment, and those variables can only be accessed through the returned function or methods.
+
+<b>Asynchronous server side calls inside loops</b>
+
+Closures are very useful for making asynchronous server calls inside for/while loops in ECMA 5 script standard. We will see this using an example below.
+
+Suppose we have a `data.txt` file inside a directory which contains a number; we need to fetch the number inside for loop and print the power value of that number from 0 to 10.
+
+```
+var fs = require('fs');
+
+var power = function (b, p) {
+  if (p === 0) return 1;
+  var out = 1;
+  while (p > 0) {
+    out *= b;
+    p--;
+  }
+  return out;
+}
+
+for(var i = 0; i <= 10; ++i) {
+  var pw = i;
+  var fileName = './data.txt';
+  fs.readFile(fileName, 'utf8', function(err, data) {
+    if(data) {
+      var number = parseInt(data);
+      console.log(power(number, pw));
+    }
+  });
+}
+```
+While running the above function, it'll print the 10th power for all the iterations. The reason behind this scenario is, the for loop is iterating over the values and calls the readFile function asynchronouly; when the callback function gets the data, the value of the variable <b>pw</b> already becomes <b>10</b> and that is why the all the loop iteration uses the power as last values.
+
+To mitigate this we can use closure function. We can keep the codes inside the loop in a closure function and then the variable <b>pw</b> will be inside the scope of closure function and it will be fixed for an iteration. While running a callback function for iteration fifth, it won't be overridden by the values of other iteration as the `var pw` will be scoped inside the closure function. This concept is called Immediately Invoked Function Expressions in Javascript
+
+```
+for(var i = 0; i <= 10; ++i) {
+  (function () {
+    var pw = i;
+    var fileName = './data.txt';
+    fs.readFile(fileName, 'utf8', function(err, data) {
+      if(data) {
+        var number = parseInt(data);
+        console.log(power(number, pw));
+      }
+    });
+  })();
+}
+```
 
 ### More Information:
 
