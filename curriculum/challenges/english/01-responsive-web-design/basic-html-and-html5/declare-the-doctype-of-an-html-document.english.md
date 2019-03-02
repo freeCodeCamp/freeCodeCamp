@@ -55,7 +55,13 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+
+<!DOCTYPE html>
+<html>
+  <h1> Hello world </h1>
+</html>
+
 ```
+
 </section>
