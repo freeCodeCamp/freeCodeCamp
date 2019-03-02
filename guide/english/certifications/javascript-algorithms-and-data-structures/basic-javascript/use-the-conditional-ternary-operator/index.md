@@ -25,7 +25,7 @@ Use ternary operator to check for equality.
 
 ```javascript
 function checkEqual(a, b) {
-  return a === b ? true : false;
+  return a === b ? "Equal" : "Not Equal";
 }
 ```
 
@@ -33,4 +33,4 @@ function checkEqual(a, b) {
 
 * A function `checkEqual` is declared, it accepts two parameters in variables `a` and `b`.
 * The `return` statement would return the value of the evaluated ternary expression.
-* The ternary expression checks if `a` and `b` are equal or not and returns `true` or `false` respectively.
+* The ternary expression checks if `a` and `b` are equal or not and returns `Equal` or `Not Equal` respectively.
