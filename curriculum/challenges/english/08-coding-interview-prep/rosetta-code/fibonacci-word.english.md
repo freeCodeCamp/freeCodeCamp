@@ -6,15 +6,18 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a function to return the Fibonacci Words upto N. N will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form : { N: 1, Length: 1, Entropy: 0, Word: '1' }. More details are given below : </p><p>The  Fibonacci Word  may be created in a manner analogous to the  Fibonacci Sequence   <a href="http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" title="link: http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf">as described here</a>:</p><p>Define  F_Word<sub>1</sub>  as  1</p>
-<p>Define  F_Word<sub>2</sub>  as  0</p>
-<p>Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  01</p>
-<p>Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub></p>
+The  Fibonacci Word  may be created in a manner analogous to the  Fibonacci Sequence <a href="http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" title="link: http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" target="_blank">as described here</a>:
+<pre>
+Define  F_Word<sub>1</sub>  as  <b>1</b>
+Define  F_Word<sub>2</sub>  as  <b>0</b>
+Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <b>01</b>
+Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
+</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function to return the Fibonacci Words upto <b>N</b>. <b>N</b> will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: <code>{ N: 1, Length: 1, Entropy: 0, Word: '1' }</code>.
 </section>
 
 ## Tests
@@ -39,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function fibWord (n) {
+function fibWord(n) {
   // Good luck!
 }
 ```
