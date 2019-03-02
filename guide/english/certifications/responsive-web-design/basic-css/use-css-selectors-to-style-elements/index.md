@@ -5,7 +5,7 @@ title: Use CSS Selectors to Style Elements
 
 CSS selectors are widely used to apply styling to all instances of a particular element.
 
-To apply the color `purple` to all the `H2` headings of the page, you can define the following CSS inside a `<style></style>` block.
+To apply the color `purple` to all the `h2`s on the page, you can define the following CSS inside a `<style></style>` block.
 
 ```css
 h2 {
