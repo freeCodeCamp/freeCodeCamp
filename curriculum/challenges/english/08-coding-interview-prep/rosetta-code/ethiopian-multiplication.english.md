@@ -6,53 +6,65 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.</p>
-<p>Method: </p>
-Take two numbers to be multiplied and write them down at the top of two columns.
-In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of 1.
-In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows 1.
-Examine the table produced and discard any row where the value in the left column is even.
-Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together
-<p>For example:  17 &times; 34</p>
-<p>17    34</p>
-<p>Halving the first column:</p>
-<p>17    34</p>
-<p>8</p>
-<p>4</p>
-<p>2</p>
-<p>1</p>
-<p>Doubling the second column:</p>
-<p>17    34</p>
-<p>8    68</p>
-<p>4   136</p>
-<p>2   272</p>
-<p>1   544</p>
-<p>Strike-out rows whose first cell is even:</p>
-<p>17    34</p>
-<p>8    <strike>68</strike></p>
-<p>4   <strike>136</strike></p>
-<p>2   <strike>272</strike></p>
-<p>1   544</p>
-<p>Sum the remaining numbers in the right-hand column:</p>
-<p>17    34</p>
-<p>8    --</p>
-<p>4   ---</p>
-<p>2   ---</p>
-<p>1   544</p>
-<p>====</p>
-<p>578</p>
-<p>So 17 multiplied by 34, by the Ethiopian method is 578.</p>
-Task:
-<p>The task is to define three named functions/methods/procedures/subroutines:</p>
-one to halve an integer,
-one to double an integer, and
-one to state if an integer is even.
-<p>Use these functions to create a function that does Ethiopian multiplication.</p>
+Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
+<b>Method:</b>
+<ol>
+  <li>Take two numbers to be multiplied and write them down at the top of two columns.</li>
+  <li>In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of 1.</li>
+  <li>In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows 1.</li>
+  <li>Examine the table produced and discard any row where the value in the left column is even.</li>
+  <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
+</ol>
+<b>For example:</b> 17 &times; 34
+<pre>
+17   34
+</pre>
+Halving the first column:
+<pre>
+17   34
+8
+4
+2
+1
+</pre>
+Doubling the second column:
+<pre>
+17   34
+8    68
+4   136
+2   272
+1   544
+</pre>
+Strike-out rows whose first cell is even:
+<pre>
+17   34
+8    <strike>68</strike>
+4   <strike>136</strike>
+2   <strike>272</strike>
+1   544
+</pre>
+Sum the remaining numbers in the right-hand column:
+<pre>
+17   34
+8    --
+4   ---
+2   ---
+1   544
+   ====
+    578
+</pre>
+So 17 multiplied by 34, by the Ethiopian method is 578.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+The task is to define three named functions/methods/procedures/subroutines:
+<ol>
+  <li>one to halve an integer,</li>
+  <li>one to double an integer, and</li>
+  <li>one to state if an integer is even.</li>
+</ol>
+Use these functions to create a function that does Ethiopian multiplication.
 </section>
 
 ## Tests
@@ -83,7 +95,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function eth_mult (a, b) {
+function eth_mult(a, b) {
   // Good luck!
 }
 ```

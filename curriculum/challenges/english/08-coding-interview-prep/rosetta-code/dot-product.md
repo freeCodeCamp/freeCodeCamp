@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function dotProduct (ary1, ary2) {
+function dotProduct(ary1, ary2) {
   // Good luck!
 }
 ```
@@ -54,7 +54,7 @@ function dotProduct (ary1, ary2) {
 <section id='solution'>
 
 ```js
-function dotProduct (ary1, ary2) {
+function dotProduct(ary1, ary2) {
     var dotprod = 0;
     for (var i = 0; i < ary1.length; i++)
         dotprod += ary1[i] * ary2[i];

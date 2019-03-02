@@ -46,7 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function discordianDate (date) {
+function discordianDate(date) {
   // Good luck!
   return true;
 }

@@ -6,13 +6,19 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>An  emirp  (prime spelled backwards)  are primes that when reversed  (in their decimal representation)  are a different prime.</p>
-<p>Write a function that should be able to : Show the first <b>n</b> eprimes numbers.Show the eprimes numbers in a range.Show the number of eprimes in a range.Show the <b>n<sup>th</sup></b> eprimes number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the eprimes as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array or a number.
+An  emirp (<b>prime</b> spelled backwards) are primes that when reversed (in their decimal representation) are a different prime.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that: 
+<ul>
+  <li>Shows the first <b>n</b> emirp numbers.</li>
+  <li>Shows the emirp numbers in a range.</li>
+  <li>Shows the number of emirps in a range.</li>
+  <li>Shows the <b>n<sup>th</sup></b> emirp number.</li>
+</ul>
+The function should accept two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the emirps as an array or a single number (the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array or a number.
 </section>
 
 ## Tests

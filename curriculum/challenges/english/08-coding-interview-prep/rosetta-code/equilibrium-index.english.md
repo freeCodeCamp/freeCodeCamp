@@ -6,20 +6,33 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.</p>
-<p>For example, in a sequence  <big>$A$</big>:</p><p>::::  <big>$A_0 = -7$</big></p>
-<p>::::  <big>$A_1 =  1$</big></p>
-<p>::::  <big>$A_2 =  5$</big></p>
-<p>::::  <big>$A_3 =  2$</big></p>
-<p>::::  <big>$A_4 = -4$</big></p>
-<p>::::  <big>$A_5 =  3$</big></p>
-<p>::::  <big>$A_6 =  0$</big></p><p>3  is an equilibrium index, because:</p><p>::::  <big>$A_0 + A_1 + A_2 = A_4 + A_5 + A_6$</big></p><p>6  is also an equilibrium index, because:</p><p>::::  <big>$A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0$</big></p><p>(sum of zero elements is zero)</p><p>7  is not an equilibrium index, because it is not a valid index of sequence <big>$A$</big>.</p>
-<p>Write a function that, given a sequence, returns its equilibrium indices (if any).</p><p>Assume that the sequence may be very long.</p>
+An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.
+For example, in a sequence  <big>$A$</big>:
+<ul style="list-style: none;">
+  <li><big>$A_0 = -7$</big></li>
+  <li><big>$A_1 =  1$</big></li>
+  <li><big>$A_2 =  5$</big></li>
+  <li><big>$A_3 =  2$</big></li>
+  <li><big>$A_4 = -4$</big></li>
+  <li><big>$A_5 =  3$</big></li>
+  <li><big>$A_6 =  0$</big></li>
+</ul>
+3  is an equilibrium index, because:
+<ul style="list-style: none;">
+  <li><big>$A_0 + A_1 + A_2 = A_4 + A_5 + A_6$</big></li>
+</ul>
+6  is also an equilibrium index, because:
+<ul style="list-style: none;">
+  <li><big>$A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0$</big></li>
+</ul>
+(sum of zero elements is zero)
+7  is not an equilibrium index, because it is not a valid index of sequence <big>$A$</big>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that, given a sequence, returns its equilibrium indices (if any).
+Assume that the sequence may be very long.
 </section>
 
 ## Tests
@@ -52,7 +65,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function equilibrium (a) {
+function equilibrium(a) {
   // Good luck!
 }
 ```

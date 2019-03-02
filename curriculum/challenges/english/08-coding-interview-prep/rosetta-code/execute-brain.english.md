@@ -6,30 +6,22 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a function to implement a Brain**** interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below : </p>
-<p>RCBF is a set of <a href="http://rosettacode.org/wiki/Brainf***" title="Brainf***">Brainf***</a> compilers and interpreters written for Rosetta Code in a variety of languages.</p><p>Below are links to each of the versions of RCBF.</p><p>An implementation need only properly implement the following instructions:</p>
-<p>{|</p>
-<p>!Command</p>
-<p>!Description</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>&gt;</code> || Move the pointer to the right</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>&lt;</code> || Move the pointer to the left</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>+</code> || Increment the memory cell under the pointer</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>-</code> || Decrement the memory cell under the pointer</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>.</code> || Output the character signified by the cell at the pointer</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>,</code> || Input a character and store it in the cell at the pointer</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>[</code> || Jump past the matching <code>]</code> if the cell under the pointer is 0</p>
-<p>|-</p>
-<p>| style="text-align:center"| <code>]</code> || Jump back to the matching <code>[</code> if the cell under the pointer is nonzero</p>
-<p>|}</p>
-<p>Any cell size is allowed,  EOF   (<u>E</u>nd-<u>O</u>-<u>F</u>ile)  support is optional, as is whether you have bounded or unbounded memory.</p>
+Write a function to implement a Brain**** interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below:
+RCBF is a set of <a href="http://rosettacode.org/wiki/Brainf***" title="Brainf***">Brainf***</a> compilers and interpreters written for Rosetta Code in a variety of languages.
+Below are links to each of the versions of RCBF.
+An implementation need only properly implement the following instructions:
 
+| Command | Description |
+| --- | --- |
+| <code>&gt;</code> | Move the pointer to the right |
+| <code>&lt;</code> | Move the pointer to the left |
+| <code>+</code> | Increment the memory cell under the pointer |
+| <code>-</code> | Decrement the memory cell under the pointer |
+| <code>.</code> | Output the character signified by the cell at the pointer |
+| <code>,</code> | Input a character and store it in the cell at the pointer |
+| <code>[</code> | Jump past the matching <code>]</code> if the cell under the pointer is 0 |
+| <code>]</code> | Jump back to the matching <code>[</code> if the cell under the pointer is nonzero |
+Any cell size is allowed, EOF (<u>E</u>nd-<u>O</u>-<u>F</u>ile) support is optional, as is whether you have bounded or unbounded memory.
 </section>
 
 ## Instructions
@@ -63,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function brain (prog) {
+function brain(prog) {
   // Good luck!
 }
 ```

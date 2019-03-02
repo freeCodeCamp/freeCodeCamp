@@ -6,13 +6,16 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Implement basic element-wise matrix-matrix and scalar-matrix operations.</p><p>Implement:</p>
-<p>::*  addition</p>
-<p>::*  subtraction</p>
-<p>::*  multiplication</p>
-<p>::*  division</p>
-<p>::*  exponentiation</p>
-<p>The first parameter will be the operation to be performed, for example : "m_add" for matrix addition and "s_add" for scalar addition. The second and third parameters will be the matrices on which the operations are to be performed.
+Implement basic element-wise matrix-matrix and scalar-matrix operations.
+<b>Implement:</b>
+<ul>
+  <li>addition</li>
+  <li>subtraction</li>
+  <li>multiplication</li>
+  <li>division</li>
+  <li>exponentiation</li>
+</ul>
+The first parameter will be the operation to be performed, for example, "m_add" for matrix addition and "s_add" for scalar addition. The second and third parameters will be the matrices on which the operations are to be performed.
 </section>
 
 ## Instructions
@@ -52,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function operation (op, arr1, arr2) {
+function operation(op, arr1, arr2) {
   // Good luck!
 }
 ```
