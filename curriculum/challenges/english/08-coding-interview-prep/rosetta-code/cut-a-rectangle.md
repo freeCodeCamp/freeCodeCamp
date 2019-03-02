@@ -8,10 +8,53 @@ challengeType: 5
 <section id='description'>
 A given rectangle is made from <i>m</i> × <i>n</i> squares. If <i>m</i> and <i>n</i> are not both odd, then it is possible to cut a path through the rectangle along the square edges such that the rectangle splits into two connected pieces with the same shape (after rotating one of the pieces by 180°). All such paths for 2 × 2 and 4 × 3 rectangles are shown below.
 <div style="width: 100%; text-align: center;">
-  <a href="http://rosettacode.org/wiki/file:rect-cut.svg" target="_blank">
-    <img src="https://rosettacode.org/mw/images/5/55/Rect-cut.svg" width="520" height="170" alt="Picture of cut rectangles">
-  </a>
-</div>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="520" height="170" aria-hidden="true" alt="Diagram showing the possible paths for 2 by 2 and 4 by 3 rectangles">
+    <style>
+    .g { fill: none; stroke: #ccc }
+    .s, .s2 { fill: #bff; stroke: black; fill-opacity: .4 }
+    .s2 { fill: #fbf }
+    .d { stroke:black; fill:none}
+    </style>
+    <defs>	<g id="m">
+      <g id="h4"><g id="h2">
+      <path id="h" d="m0 10h 640" class="g"/>
+      <use xlink:href="#h" transform="translate(0,20)"/></g>
+      <use xlink:href="#h2" transform="translate(0, 40)"/></g>
+      <use xlink:href="#h4" transform="translate(0,80)"/>
+      <g id="v8"><g id="v4"><g id="v2">
+      <path id="v" d="m10 0v160 m 20 0 v-160" class="g"/>
+      <use xlink:href="#v" transform="translate(40,0)"/></g>
+      <use xlink:href="#v2" transform="translate(80,0)"/></g>
+      <use xlink:href="#v4" transform="translate(160,0)"/></g>
+      <use xlink:href="#v8" transform="translate(320,0)"/></g>
+      <path id="b" d="m0 0h80v60h-80z" class="s"/>
+    </defs>
+    <g transform="translate(.5,.5)">
+    <use xlink:href="#m"/>
+    <g transform="translate(10,10)">
+    <path d="m0 0v40h40v-40z" class="s2"/><path d="m20 0v40" class="d"/>
+    <path d="m60 0v40h40v-40z" class="s2"/><path d="m60 20h40" class="d"/>
+    <g transform="translate(120, 0)">
+    <use xlink:href="#b"/><path d="m0 20h40v20h40" class="d"/></g>
+    <g transform="translate(220, 0)">
+    <use xlink:href="#b"/><path d="m0 40h40v-20h40" class="d"/></g>
+    <g transform="translate(320, 0)">
+    <use xlink:href="#b"/><path d="m20 0v40h20v-20h20v40" class="d"/></g>
+    <g transform="translate(420, 0)">
+    <use xlink:href="#b"/><path d="m60 0v40h-20v-20h-20v40" class="d"/></g>
+    <g transform="translate(20, 80)">
+    <use xlink:href="#b"/><path d="m40 0v60" class="d"/></g>
+    <g transform="translate(120, 80)">
+    <use xlink:href="#b"/><path d="m60 0v20h-20v20h-20v20" class="d"/></g>
+    <g transform="translate(220, 80)">
+    <use xlink:href="#b"/><path d="m20 0v20h20v20h20v20" class="d"/></g>
+    <g transform="translate(320, 80)">
+    <use xlink:href="#b"/><path d="m0 20h20v20h20v-20h20v20h20" class="d"/></g>
+    <g transform="translate(420, 80)">
+    <use xlink:href="#b"/><path d="m0 40h20v-20h20v20h20v-20h20" class="d"/></g>
+    </g></g>
+    </svg>
+  </div>
 </section>
 
 ## Instructions
