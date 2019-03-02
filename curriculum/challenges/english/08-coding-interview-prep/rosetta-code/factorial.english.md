@@ -6,17 +6,18 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a function to return the factorial of a number.</p>
-<p>Factorial of a number is given by : </p>
-n! = n * (n-1) * (n-2) * ..... * 1
-<p>
-For example :
-3! = 3*2*1 = 6
-4! = 4*3*2*1 = 24
-</p>
-<p>Note :
+Write a function to return the factorial of a number.
+Factorial of a number is given by:
+<pre>
+<big>n! = n * (n-1) * (n-2) * ..... * 1</big>
+</pre>
+For example:
+<ul>
+  <li><big>3! = 3 * 2 * 1 = 6</big></li>
+  <li><big>4! = 4 * 3 * 2 * 1 = 24</big></li>
+</ul>
+<b>Note:</b>
 0! = 1
-</p>
 </section>
 
 ## Instructions
@@ -50,7 +51,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function factorial (n) {
+function factorial(n) {
   // Good luck!
 }
 ```

@@ -6,24 +6,26 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a function that returns the Farey sequence of order n. The function should have one parameter that is n. It should return the sequence as an array. Read the following for more details : </p><p>The  <a href="https://en.wikipedia.org/wiki/Farey sequence" title="wp: Farey sequence">Farey sequence</a>   F<sub>n</sub>  of order  n  is the sequence of completely reduced fractions between  0  and  1  which, when in lowest terms, have denominators less than or equal to  n,  arranged in order of increasing size.</p><p>The  Farey sequence  is sometimes incorrectly called a  Farey series.</p>
-<p>Each Farey sequence:</p>
-<p>::*  starts with the value  0,  denoted by the fraction  $ \frac{0}{1} $</p>
-<p>::*  ends with the value  1,  denoted by the fraction  $ \frac{1}{1}$.</p>
-<p>The Farey sequences of orders  1  to  5  are:</p><p>${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</p>
-<p></p>
-<p>${\bf\it{F}}_2 = \frac{0}{1}, \frac{1}{2}, \frac{1}{1}$</p>
-<p></p>
-<p>${\bf\it{F}}_3 = \frac{0}{1}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3}, \frac{1}{1}$</p>
-<p></p>
-<p>${\bf\it{F}}_4 = \frac{0}{1}, \frac{1}{4}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{1}{1}$</p>
-<p></p>
-<p>${\bf\it{F}}_5 = \frac{0}{1}, \frac{1}{5}, \frac{1}{4}, \frac{1}{3}, \frac{2}{5}, \frac{1}{2}, \frac{3}{5}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \frac{1}{1}$</p>
+The  <a href="https://en.wikipedia.org/wiki/Farey sequence" title="wp: Farey sequence" target="_blank">Farey sequence</a>   <b>F<sub>n</sub></b> of order <b>n</b> is the sequence of completely reduced fractions between <b>0</b> and <b>1</b> which, when in lowest terms, have denominators less than or equal to <b>n</b>, arranged in order of increasing size.
+The <i>Farey sequence</i> is sometimes incorrectly called a <i>Farey series</i>.
+Each Farey sequence:
+<ul>
+  <li>starts with the value  0,  denoted by the fraction  $ \frac{0}{1} $</li>
+  <li>ends with the value  1,  denoted by the fraction  $ \frac{1}{1}$.</li>
+</ul>
+The Farey sequences of orders <b>1</b> to <b>5</b> are:
+<ul>
+  <li style="list-style: none;">${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</li>
+  <li style="list-style: none;">${\bf\it{F}}_2 = \frac{0}{1}, \frac{1}{2}, \frac{1}{1}$</li>
+  <li style="list-style: none;">${\bf\it{F}}_3 = \frac{0}{1}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3}, \frac{1}{1}$</li>
+  <li style="list-style: none;">${\bf\it{F}}_4 = \frac{0}{1}, \frac{1}{4}, \frac{1}{3}, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, \frac{1}{1}$</li>
+  <li style="list-style: none;">${\bf\it{F}}_5 = \frac{0}{1}, \frac{1}{5}, \frac{1}{4}, \frac{1}{3}, \frac{2}{5}, \frac{1}{2}, \frac{3}{5}, \frac{2}{3}, \frac{3}{4}, \frac{4}{5}, \frac{1}{1}$</li>
+</ul>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that returns the Farey sequence of order <b>n</b>. The function should have one parameter that is <b>n</b>. It should return the sequence as an array.
 </section>
 
 ## Tests
@@ -52,7 +54,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function farey (n) {
+function farey(n) {
   // Good luck!
 }
 ```
