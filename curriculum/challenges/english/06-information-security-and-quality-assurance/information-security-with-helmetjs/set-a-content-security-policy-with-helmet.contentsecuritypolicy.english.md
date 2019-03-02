@@ -14,7 +14,7 @@ By default, directives are wide open, so it’s important to set the defaultSrc 
 ## Instructions
 <section id='instructions'>
 In this exercise, use helmet.contentSecurityPolicy(), and configure it setting the defaultSrc directive to ["self"] (the list of allowed sources must be in an array), in order to trust only your website address by default. Set also the scriptSrc directive so that you will allow scripts to be downloaded from your website, and from the domain 'trusted-cdn.com'.
-Hint: in the "'self'" keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working.
+Hint: in the <code>self</code> keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working.
 </section>
 
 ## Tests
