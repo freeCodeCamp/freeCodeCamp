@@ -13,4 +13,4 @@ h2 {
 }
 ```
 
-This will apply the color `purple` to all H2 headings. If you are using the `style="color: purple"` attribute on each H2 element, you can remove it and instead define it in a single place inside a `<style></style>` block.
+This will apply the color `purple` to all `<h2>` headings. If you are using the `style="color: purple"` attribute on each `<h2>` element, you can remove it and instead define it in a single place inside a `<style></style>` block.
