@@ -1,7 +1,7 @@
 ---
 title: Use the Rest Parameter with Function Parameters
 ---
-## Use the rest parameter with Function Parameters
+## Use the Rest Parameter with Function Parameters
 
 ###  Rest parameter explanation
 [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters "Mozilla Developer Network")
