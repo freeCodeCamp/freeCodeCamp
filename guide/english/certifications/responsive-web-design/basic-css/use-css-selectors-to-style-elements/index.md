@@ -9,7 +9,7 @@ To apply the color `purple` to all the `h2`s on the page, you can define the fol
 
 ```css
 h2 {
-    color: purple;
+  color: purple;
 }
 ```
 
