@@ -107,13 +107,13 @@ with open('hello_world.txt', 'w') as f:
     f.write('Hello World!')
 ```
 #### Reading files
-There are many ways of reading a file. For a file <code>fh</code> opened in the read mode, the following are the options:
+There are many ways of reading a file. Reading a file <code>fh</code> is only possible if file is opened in read mode, the following are the options:
 
 <code>fh.read()</code>: read file as a single string
 
 <code>fh.read(n)</code>: read n number of characters
 
-<code>fh.readline()</code>: read one line and end with <code>'\n'</code>
+<code>fh.readline()</code>: read one line and end with <code>\n</code>
 
 <code>fh.readlines()</code>: read file as a list of strings and end with <code>'\n'</code>
 
