@@ -9,7 +9,7 @@ title: Use the Conditional (Ternary) Operator
 ### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
 
 * You need to write a function named `checkEqual`, which checks if the two parameters are equal.
-* If the parameters are equal, `true` is to be returned else `false` should be returned.
+* If the parameters are equal, `Equal` is to be returned else `Not Equal` should be returned.
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint
 
@@ -25,7 +25,7 @@ Use ternary operator to check for equality.
 
 ```javascript
 function checkEqual(a, b) {
-  return a === b ? true : false;
+  return a === b ? "Equal" : "Not Equal";
 }
 ```
 
@@ -33,4 +33,4 @@ function checkEqual(a, b) {
 
 * A function `checkEqual` is declared, it accepts two parameters in variables `a` and `b`.
 * The `return` statement would return the value of the evaluated ternary expression.
-* The ternary expression checks if `a` and `b` are equal or not and returns `true` or `false` respectively.
+* The ternary expression checks if `a` and `b` are equal or not and returns `Equal` or `Not Equal` respectively.
