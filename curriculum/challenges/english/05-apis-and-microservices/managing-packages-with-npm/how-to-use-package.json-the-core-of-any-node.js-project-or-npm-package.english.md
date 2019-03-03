@@ -6,21 +6,16 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-The file package.json is the center of any Node.js project or npm package. It stores information about your project just like the &lt;head&gt;-section in a HTML document describes the content of a webpage. The package.json consists of a single JSON-object where information is stored in "key": value-pairs. There are only two required fields in a minimal package.json - name and version - but it’s a good practice to provide additional information about your project that could be useful to future users or maintainers.
-The author-field
-If you go to the Glitch project that you set up previously and look at on the left side of your screen, you’ll find the file tree where you can see an overview of the various files in your project. Under the file tree’s back-end section, you’ll find package.json - the file that we’ll be improving in the next couple of challenges.
-One of the most common pieces of information in this file is the author-field that specifies who’s the creator of a project. It can either be a string or an object with contact details. The object is recommended for bigger projects but in our case, a simple string like the following example will do.
-<code>"author": "Jane Doe",</code>
-Instructions
-Add your name to the author-field in the package.json of your Glitch project.
-Remember that you’re writing JSON.
-All field-names must use double-quotes ("), e.g. "author"
-All fields must be separated with a comma (,)
+The <code>package.json</code> file is the center of any Node.js project or npm package. It stores information about your project, similar to how the &lt;head&gt; section of an HTML document describes the content of a webpage. It consists of a single JSON object where information is stored in key-value pairs. There are only two required fields; "name" and "version", but it’s good practice to provide additional information about your project that could be useful to future users or maintainers.
+If you look at the file tree of your project, you will find the package.json file on the top level of the tree. This is the file that you will be improving in the next couple of challenges.
+One of the most common pieces of information in this file is the <code>author</code> field. It specifies who created the project, and can consist of a string or an object with contact or other details. An object is recommended for bigger projects, but a simple string like the following example will do for this project.
+<blockquote>"author": "Jane Doe",</blockquote>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Add your name as the <code>author</code> of the project in the package.json file.
+<strong>Note:</strong> Remember that you’re writing JSON, so all field names must use double-quotes (") and be separated with a comma (,).
 </section>
 
 ## Tests
