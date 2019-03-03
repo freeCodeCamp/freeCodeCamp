@@ -6,7 +6,7 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-[C]RUD Part I - CREATE
+<b>C</b>RUD Part I - CREATE
 
 First of all we need a Schema. Each schema maps to a MongoDB collection. It defines the shape of the documents within that collection.
 Schemas are building block for Models. They can be nested to create complex models, but in this case we’ll keep things simple.
