@@ -31,7 +31,7 @@
   "auth:before": {
     "./middlewares/add-return-to": {},
     "./middlewares/cookie-parser": {},
-    "./middlewares/jwt-authorization": {}
+    "./middlewares/request-authorization": {}
   },
   "parse": {
     "body-parser#json": {},
