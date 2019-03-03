@@ -49,12 +49,38 @@ Modern programs should not need to use the eval function. The behaviour can usua
 
 **Most command line tools, CLIs, and shells can theoretically be classified as interpreted languages.**
 
+### Syntax error handling
+
+#### Compiled Languge
+A Compiled program is guaranteed to be free of syntax errors and type errors, but not logical errors. If a program has a syntax error, it ***WILL NOT*** compile. Note that it is still possible to make logic, or other kinds of errors.
+For Example:
+```Java
+String a = "xyz";
+
+void f(){
+  a.sqrt();
+}
+```
+The above program in Java will throw an error, because obviously, there is no way to find the square root of a string. The compiler will detect the error in the function f, even before the program is executed. In fact, there is no way to execute such code in a compiled language. 
+
+#### Interpreted Languge
+An Interpreted program may have such errors, because while a compiler checks ***ALL*** errors, an interpreter only throws an error if a statement is ***EXECUTED***.
+```JavaScript
+let a = "xyz";
+
+function f(){
+  a.sqrt();
+}
+```
+The above program in JavaScript would run fine, untill the function f is called, at which point the program will stop and throw an error. In fact, if there was code before and after the snippet, it would execute with no problems at all. The main disadvantage is that if there is such an obvious error in the program, it may escape detection if the code is not througly tested. Some developer tools may detect such simple errors, but more complex cases may escape detection. Another way to check for such errors is to use Unit Tests, but even they are not perfect, and are time consuming to write. 
+
+Compiled languages are ***NOT a shortcut*** to writing error free code. Nor is it impossible, or even too difficult to write error free code in Interpreted languages. But Compiled languages weed out all the obvious little syntax errors, and reduce some effort for the programmer.
+
 ### Advantages and Disadvantages
 
 #### Advantages of Compiled Languages
-* Programs compiled into native code at compile time usually tend to be faster than those translated at run time, due to the overhead of the translation process.
+* Programs compiled into native code at compile time usually tend to be faster (sometimes 4 to 5 times as fast) than those translated at run time, due to the overhead of the translation process.
 * All the errors are provided to you at once. This allows the programmer to correct all the mistakes at once and recompile the code for execution.
-* Well written programs are usually more robust and less prone to bugs.
 
 #### Disadvantages of Compiled Languages
 The most notable disadvantages are :-
