@@ -81,3 +81,8 @@ console.log(LANGUAGES); // ['Js', 'Ruby', 'Python', 'Go', 'Java']
 This may be little confusing.
 
 Consider in this way. Whenever you define a const variable, Javascript references the address of the value to the variable. In our example the variable ‘LANGUAGES’ actually references to the memory allocated to the array. So you cannot change the variable to reference some other memory location later. Throughout the program it only references to the array.
+
+## Further Reading
+
+* [MDN - let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+* [MDN - const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)

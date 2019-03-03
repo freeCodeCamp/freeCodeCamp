@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cM9MRsJ'
 
 ## Description
 <section id='description'>
-In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts for use on our website. There are various sources for web fonts on the internet but, for this example we will focus on the Google Fonts library.
+In addition to specifying common fonts that are found on most operating systems, we can also specify non-standard, custom web fonts for use on our website. There are many sources for web fonts on the Internet. For this example we will focus on the Google Fonts library.
 <a href='https://fonts.google.com/' target='_blank'>Google Fonts</a> is a free library of web fonts that you can use in your CSS by referencing the font's URL.
 So, let's go ahead and import and apply a Google font (note that if Google is blocked in your country, you will need to skip this challenge).
 To import a Google Font, you can copy the font(s) URL from the Google Fonts library and then paste it in your HTML. For this challenge, we'll import the <code>Lobster</code> font. To do this, copy the following code snippet and paste it into the top of your code editor (before the opening <code>style</code> element):

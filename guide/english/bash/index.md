@@ -43,17 +43,17 @@ It's worth noting that the first line of the script starts with `#!`. It is a sp
 
 That is because it is a convention to let the interactive shell know what kind of interpreter to run for the program that follows. The first line tells Unix that the file is to be executed by /bin/bash. This is the standard location of the Bourne shell on just about every Unix system. Adding #!/bin/bash as the first line of your script tells the OS to invoke the specified shell to execute the commands that follow in the script.
 `#!` is often referred to as a "hash-bang", "she-bang" or "sha-bang".
+
 Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, the first line is ignored. 
 
-
 Then you could run the script like so:
-For make file executable you should call this command under sudo chmod +x "filename".
+
 ```
 zach@marigold:~$ ./myBashScript.sh
 Hello world!
 ```
 
-The script only has two lines. The first indicates what interpreter to use to run the file (in this case, bash). The second line is the command we want to use, echo, followed by what we want to print which is "Hello World".
+The script only has two lines. The first line indicates what interpreter to use to run the file (in this case, bash). The second line is the command we want to use, echo, followed by what we want to print which is "Hello World".
 
 Sometimes the script won't be executed, and the above command will return an error. This is due to the permissions set on the file. To avoid that use:
 ```
@@ -64,6 +64,17 @@ or
 zach@marigold:~$ chmod 744 myBashScript.sh
 ````
 And then execute the script.
+
+## Running bash commands as "Root" (Sudo)
+Sometimes, running certain commands in bash will return in an error letting you know you don't have the proper permissions to execute it. This means the command requires elevated permissions to run. This can be achieved, through the "Sudo" command. Users can be granted special "sudoer" permissions through a file located at ```/etc/sudoers```. To run sudo, you simply need to prepend it to the front of the command you're running. It will then ask you for your password to validate that you're authorized to run this command as well as to verify that you are intending to run it as "root". Running a command as root means you are running it with the highest permissions available on the system with no restrictions.
+
+An example of a sudo command might look something like this:
+
+```
+$sudo apt update
+[sudo] password for user:
+Get:1 http://deb.parrotsec.org/parrot parrot InRelease [14.6 kB]
+```
 
 
 ### Script Example

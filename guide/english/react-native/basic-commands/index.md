@@ -3,12 +3,12 @@ title: Basic Commands
 ---
 ## Basic Commands
 
-Here you will find a list of basic commands to start developing iOS and Android apps using React Native. If you don't have it installed yet, is highly recommended that you follow the [official guide](https://facebook.github.io/react-native/docs/getting-started.html).
+Here you will find a list of basic commands to start developing iOS and Android apps using React Native. If you don't have it installed yet, it is highly recommended that you follow the [official guide](https://facebook.github.io/react-native/docs/getting-started.html).
 
 
 ### Starting a new project
 
-There are different ways you can bootstrap a react native application. You can use **Expo** or `create-react-native-app`(which in turns uses Expo-Cli) to start your new project, but with this method you are in more control of what happend in your project and can communicate, tweak and write your own modules with native libraries for iOS and Android mobile platform.
+There are different ways you can bootstrap a React Native application. You can use **Expo** or `create-react-native-app`(which in turns uses Expo-Cli) to start your new project, but with this method you are in more control of what happend in your project and can communicate, tweak and write your own modules with native libraries for iOS and Android mobile platform.
 ```
 react-native init [PROJECT-NAME]
 cd [PROJECT-NAME]
@@ -26,7 +26,7 @@ react-native run-android
 
 **Run app in iOS emulator**
 
-This command do exactly the same as `react-native run-android` but instead of the Android emulator, it opens the iPhone simulator.
+This command does exactly the same as `react-native run-android` but instead of the Android emulator, it opens the iOS simulator.
 ```
 react-native run-ios
 ```
@@ -34,7 +34,7 @@ react-native run-ios
 
 **Link dependencies to native projects**
 
-Some libraries have dependencies that need to be linked in the native code generated for React Native. If something doesn't work after you installed a new library, maybe is because you skip this step.
+Some libraries have dependencies that need to be linked in the native code generated for React Native. If something doesn't work after you installed a new library, you may have skipped this step.
 ```
 react-native link [LIBRARY-NAME]
 ```
@@ -52,7 +52,7 @@ The Link function in the `react-native-cli` occasionally doesn't work for iOS an
 
 **Clear bundle**
 
-If something don't run as expected, maybe you need to clear and create a new bundle with this command.
+If something doesn't run as expected, maybe you need to clear and create a new bundle with this command.
 ```
 watchman watch-del-all
 ```

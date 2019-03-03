@@ -85,3 +85,5 @@ while (true)
 The main advantage of using an infinite loop over a regular loop is readability.
 
 Sometimes, the body of a loop is easier to understand if the loop ends in the middle, and not at the end/beginning. In such a situation, an infinite loop will be a better choice.
+
+Uses: A lot of programs (embedded control software, graphical applications, games, web & DBMS servers, and even Unix or Posix or Linux kernels) is organized around an infinite event loop. Servers also listen to incoming traffic in an endless loop.

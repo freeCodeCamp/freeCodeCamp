@@ -51,15 +51,16 @@ capitalizeString("hello!");
 <div id='js-setup'>
 
 ```js
-window.require = function (str) {
-if (str === 'string_functions') {
-return {
-capitalizeString: str => str.toUpperCase()
-}}};
+self.require = function (str) {
+  if (str === 'string_functions') {
+    return {
+      capitalizeString: str => str.toUpperCase()
+    }
+  }
+};
 ```
 
 </div>
-
 
 </section>
 
@@ -71,4 +72,5 @@ capitalizeString: str => str.toUpperCase()
 import { capitalizeString } from "./string_functions";
 capitalizeString("hello!");
 ```
+
 </section>

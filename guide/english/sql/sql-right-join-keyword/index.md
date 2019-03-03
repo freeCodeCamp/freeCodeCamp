@@ -20,7 +20,7 @@ ON table1.column_name = table2.column_name;
 
 ### Complete table listings for reference
 
-food or LEFT table data
+foods or LEFT table data
 ```text
 +---------+--------------+-----------+------------+
 | ITEM_ID | ITEM_NAME    | ITEM_UNIT | COMPANY_ID |
@@ -47,7 +47,6 @@ company or RIGHT table data
 | 17         | Foodies.      | London       |
 | 19         | sip-n-Bite.   | New York     |
 +------------+---------------+--------------+
-
 ```
 
 To get company name from company table and company ID, item name columns from foods table, the following SQL statement can be used:
@@ -63,15 +62,16 @@ ON company.company_id = foods.company_id;
 
 OUTPUT
 
-``` text
-COMPANY_ID COMPANY_NAME              COMPANY_CITY              COMPANY_ID ITEM_NAME
----------- ------------------------- ------------------------- ---------- --------------
-18         Order All                 Boston                    18         Jaffa Cakes
-15         Jack Hill Ltd             London                    15         Pot Rice
-15         Jack Hill Ltd             London                    15         BN Biscuit
-15         Jack Hill Ltd             London                    15         Cheez-It
-16         Akas Foods                Delhi                     16         Chex Mix
-17         Foodies.                  London                    17         Mighty Munch
-NULL       NULL                      NULL                      NULL       Salt n Shake
-
+```text
++------------+---------------+--------------+------------+--------------+
+| COMPANY_ID | COMPANY_NAME  | COMPANY_CITY | COMPANY_ID | ITEM_NAME    |
++------------+---------------+--------------+------------+--------------+
+| 18         | Order All     | Boston       | 18         | Jaffa Cakes  |
+| 15         | Jack Hill Ltd | London       | 15         | Pot Rice     |
+| 15         | Jack Hill Ltd | London       | 15         | BN Biscuit   |
+| 15         | Jack Hill Ltd | London       | 15         | Cheez-It     |
+| 16         | Akas Foods    | Delhi        | 16         | Chex Mix     |
+| 17         | Foodies.      | London       | 17         | Mighty Munch |
+| NULL       | NULL          | NULL         | NULL       | Salt n Shake |
++------------+---------------+--------------+------------+--------------+
 ```

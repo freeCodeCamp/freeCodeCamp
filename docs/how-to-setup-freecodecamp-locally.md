@@ -20,7 +20,7 @@ This is essential, because this way you are able to work on your copy of freeCod
 2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
-![GIF - How to fork freeCodeCamp on Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
+![GIF - How to fork freeCodeCamp on GitHub](/docs/images/github/how-to-fork-freeCodeCamp.gif)
 
 ## Preparing the development environment
 
@@ -114,7 +114,7 @@ Start by installing these prerequisite software.
 | Prerequisite                                | Version | Notes |
 | ------------------------------------------- | ------- | ----- |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
-| [Node.js](http://nodejs.org)                | `8.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule), Note: We are currently on `8.x`, an upgrade is planned to 10.x |
+| [Node.js](http://nodejs.org)                | `10.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)|
 | npm (comes bundled with Node)               | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
 **Important:**
@@ -129,6 +129,10 @@ npm -v
 ```
 
 > If you have a different version, please install the recommended version. We can support installation issues for recommended versions only.
+
+**Note to Windows users:**
+
+Make sure the command line tool (Cmd, PowerShell or Git Bash for Windows, etc.) you use has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On windows, you should be able to launch a tool by right clicking it and selecting `Launch as an Administrator`.
 
 **I am having issues with installing the recommended prerequisites. What should I do?**
 
@@ -221,6 +225,16 @@ Now open a web browser and visit <http://localhost:8000>. If the app loads, cong
 Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs that we have.
 
 Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+
+## How to Sign in when working locally
+
+Your local setup automatically populates a local user in the database. Clicking the sign in button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a 404 page for the user portfolio when working locally. 
+
+Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
+
+![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
 
 ## Quick commands reference when working locally
 
@@ -446,8 +460,9 @@ There might be an error in the console of your browser or in Bash / Terminal / C
 If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
 
 ```shell
-# Remove all installed node modules
-rm -rf node_modules ./**/node_modules
+# We use a mono repo and have multiple components (server, client, tools, plugins, etc.)
+# Use this command to clean up all dependencies in all of the components
+npm run clean
 
 # Reinstall npm packages
 npm install
@@ -458,6 +473,6 @@ npm run bootstrap
 # Seed the database
 npm run seed
 
-# Re-start the application
+# Restart the application
 npm run develop
 ```

@@ -1,10 +1,10 @@
 ---
-title: Behavioral patterns
+title: Behavioral Patterns
 ---
 
 ## Behavioral patterns
 
-Behavioral design patterns are design patterns that identify common communication problems between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication, making the software more reliable and easy to maintain.
+Behavioral patterns are design patterns that identify common communication problems between objects and realize these patterns. In so doing, these patterns increase flexibility in carrying out communication, making the software more reliable and easy to mantain.
 
 Examples of this type of design pattern include:
 
@@ -15,7 +15,7 @@ Examples of this type of design pattern include:
 5. **Mediator pattern**: Provides a unified interface to a set of interfaces in a subsystem.
 6. **Memento pattern**: Provides the ability to restore an object to its previous state (rollback).
 7. **Null Object pattern**: Designed to act as a default value of an object.
-8. **Observer pattern**: a.k.a. P**ublish/Subscribe** or **Event Listener**. Objects register to observe an event that may be raised by another object.
+8. **Observer pattern**: a.k.a. **Publish/Subscribe** or **Event Listener**. Objects register to observe an event that may be raised by another object.
 9. **Weak reference pattern**: De-couple an observer from an observable event.
 10. **Protocol stack**: Communications are handled by multiple layers, which form an encapsulation hierarchy.
 11. **Scheduled-task pattern**: A task is scheduled to be performed at a particular interval or clock time (used in real-time computing).

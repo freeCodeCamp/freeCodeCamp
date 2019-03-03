@@ -12,10 +12,10 @@ For example, an anchor (`<a>`) element in an HTML document creates links to othe
 Here's an example of a link that sends users to freeCodeCamp's home page:
 
 ```html
-<a href="www.freecodecamp.org">Click here to go to freeCodeCamp!</a>
+<a href="https://www.freecodecamp.org/">Click here to go to freeCodeCamp!</a>
 ```
 
-Notice that the attribute name (`href`) and value ("www.freeCodeCamp.org") are separated with an equals sign, and quotes surround the value.
+Notice that the attribute name (`href`) and value ("https://www.freeCodeCamp.org/") are separated with an equals sign, and quotes surround the value.
 
 There are many different HTML attributes, but most of them only work on certain HTML elements. For example, the `href` attribute won't work if it's placed in an opening `<h1>` tag.
 
@@ -35,7 +35,6 @@ Here are examples that do the same thing:
 ```
 
 ## Other Resources
-
 - [HTML links](https://guide.freecodecamp.org/html/attributes/links/)
 - [Href Attribute](https://guide.freecodecamp.org/html/attributes/href-attribute/)
 - [Lang Attribute](https://guide.freecodecamp.org/html/attributes/lang/)

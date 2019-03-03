@@ -11,8 +11,7 @@ Bootstrap doesn’t include an icon library by default, but it has a handful of 
 
 ### How to use
 
-To use Bootstrap icons, create a `<span>` tag with base class `glyphicon` and individual icon class.
-Use it only on elements that contain no text content and have no child elements.
+To use a Bootstrap icon, create a span tag with base class `glyphicon` and  individual icon class.  Use it only on elements that contain no text content and have no child elements.
 
 **Code Example:**
 
@@ -24,7 +23,7 @@ Use it only on elements that contain no text content and have no child elements.
 
 <span class="glyphicon glyphicon-cog"></span>
 
-The Bootstrap framework provides you with over 250 icons called glyphs. They come in font format from the Glyphicon Halflings set.
+The Bootstrap framework provides you with over 250 icons called glyphs. They come in font format from the Glyphicon Halflings set. Glyphicons Halflings are normally not available for free, but their creator has made them available for Bootstrap free of cost. As a thank you, they only ask that you include a link back to Glyphicons whenever possible.
 
 ### How To Use
 
@@ -38,7 +37,7 @@ To use Bootstrap icons you simply create a `<span>` tag and apply the applicable
 
 ### Bootstrap Glyphicon Class List
 
-This is an example of the CSS classes that Bootstrap provides for glyphicons. More of them are avalible <a href='https://getbootstrap.com/docs/3.3/components/#glyphicons' target='_blank' rel='nofollow'>here</a>
+This is an example of the CSS classes that bootstrap provides for glyphicons. More of them are available <a href='https://getbootstrap.com/docs/3.3/components/#glyphicons' target='_blank' rel='nofollow'>here</a>
 
 `.glyphicon glyphicon-plus` This is Bootstrap's plus/add icon.
 
@@ -47,6 +46,16 @@ This is an example of the CSS classes that Bootstrap provides for glyphicons. Mo
 `.glyphicon glyphicon-trash` This is Bootstrap's trash/delete icon.
 
 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+
+`.glyphicon glyphicon-search` This is bootstrap's search/magnify icon.
+
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+`.glyphicon glyphicon-envelope` This is bootstrap's envelope icon.
+<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+
+`.glyphicon glyphicon-print` This is bootstrap's print icon.
+<span class="glyphicon glyphicon-print" aria-hidden="true"></span>
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
