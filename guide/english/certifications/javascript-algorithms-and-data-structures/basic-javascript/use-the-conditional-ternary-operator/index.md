@@ -9,7 +9,7 @@ title: Use the Conditional (Ternary) Operator
 ### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
 
 * You need to write a function named `checkEqual`, which checks if the two parameters are equal.
-* If the parameters are equal, `true` is to be returned else `false` should be returned.
+* If the parameters are equal, `Equal` is to be returned else `Not Equal` should be returned.
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint
 
