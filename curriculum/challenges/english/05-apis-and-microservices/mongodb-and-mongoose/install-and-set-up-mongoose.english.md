@@ -10,6 +10,7 @@ Add mongodb and mongoose to the project’s package.json. Then require mongoose.
 </section>
 
 ## Instructions
+Add mongodb and mongoose to the project’s <code>package.json</code>. Then require mongoose. Store your mLab database URI in the private <code>.env</code> file as <code>MONGO_URI</code>. Connect to the database using <code>mongoose.connect(&lt;Your URI&gt;)</code>
 <section id='instructions'>
 
 </section>
