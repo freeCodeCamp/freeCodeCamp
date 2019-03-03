@@ -10,7 +10,7 @@ localeTitle: تصحيح JavaScript باستخدام متصفح Devtools
 
 قبل القفز إلى تصحيح الأخطاء ، يتسنى لنا تسريب بعض الحقائق السرية عن _محرك فحص الشفرة الرائع_ في FCC.
 
-نحن نستخدم [CodeMirror](http://codemirror.net/mode/javascript/index.html) مخصصة ، كمحرر التعليمات البرمجية. يتم استخدام [دالة `eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) لتقييم شفرة جافا سكريبت ممثلة كسلسلة من المحرر. عندما يتم استدعاء `eval()` ، ستنفذ المستعرضات التعليمات البرمجية الخاصة بك. سنتعلم المزيد عن سبب أهمية هذا السر في الأقسام اللاحقة من هذه المقالة.
+نحن نستخدم [Monaco Editor](https://microsoft.github.io/monaco-editor) مخصصة ، كمحرر التعليمات البرمجية. يتم استخدام [دالة `eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) لتقييم شفرة جافا سكريبت ممثلة كسلسلة من المحرر. عندما يتم استدعاء `eval()` ، ستنفذ المستعرضات التعليمات البرمجية الخاصة بك. سنتعلم المزيد عن سبب أهمية هذا السر في الأقسام اللاحقة من هذه المقالة.
 
 ## الآن ننتقل إلى الحيل:
 
