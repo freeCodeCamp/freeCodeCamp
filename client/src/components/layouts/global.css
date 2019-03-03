@@ -14,13 +14,19 @@ body {
 .big-heading {
   font-size: 50px !important;
 }
+.default-layout {
+  display: block;
+  margin-top: var(--header-height);
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
+p,
+td,
+th {
   font-weight: 400;
   font-size: 1rem;
   font-family: 'hackregular';
@@ -42,6 +48,7 @@ h3 {
 a {
   text-decoration: underline;
   color: #333;
+  font-weight: 400;
 }
 .btn {
   text-decoration: none;

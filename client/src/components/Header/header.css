@@ -10,7 +10,7 @@ header {
 }
 
 #top-nav {
-  background: #6b6d6f;
+  background: #333;
   height: var(--header-height);
   margin-bottom: 0;
   border-radius: 0;
