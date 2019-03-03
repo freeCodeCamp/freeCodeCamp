@@ -26,6 +26,8 @@ import './layout.css';
 import './global.css';
 import './night.css';
 
+import { GlobalStyle } from '../../assets/styles';
+
 fontawesome.config = {
   autoAddCss: false
 };
@@ -160,6 +162,7 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
+        <GlobalStyle />
         <Header disableSettings={disableSettings} onGuide={onGuide} />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />

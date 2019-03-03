@@ -1,7 +1,6 @@
 html {
   color: #333 !important;
   font-size: 18px;
-  font: monospace !important;
 }
 .btn-cta-big {
   max-height: 100%;
@@ -9,6 +8,9 @@ html {
   white-space: normal;
 }
 
+body {
+  font-family: 'hackregular';
+}
 .big-heading {
   font-size: 50px !important;
 }
@@ -21,14 +23,9 @@ h6,
 p {
   font-weight: 400;
   font-size: 1rem;
-  font-family: monospace;
+  font-family: 'hackregular';
   margin: 0 0 1.2rem;
 }
-
-a {
-  font-family: monospace;
-}
-
 h3 {
   text-decoration: underline;
 }

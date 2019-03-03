@@ -16,6 +16,7 @@
     "@freecodecamp/react-bootstrap": "^0.32.3",
     "@reach/router": "^1.1.1",
     "axios": "^0.18.0",
+    "babel-plugin-styled-components": "^1.10.0",
     "browser-cookies": "^1.2.0",
     "chai": "^4.2.0",
     "date-fns": "^1.29.0",
@@ -30,6 +31,7 @@
     "gatsby-plugin-manifest": "^2.0.19",
     "gatsby-plugin-react-helmet": "^3.0.7",
     "gatsby-plugin-sitemap": "^2.0.6",
+    "gatsby-plugin-styled-components": "^3.0.6",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-remark": "^2.2.0",
@@ -63,6 +65,7 @@
     "rxjs": "^6.3.3",
     "sass.js": "^0.10.13",
     "store": "^2.0.12",
+    "styled-components": "^4.1.3",
     "validator": "^10.7.0",
     "webpack-remove-serviceworker-plugin": "^1.0.0"
   },

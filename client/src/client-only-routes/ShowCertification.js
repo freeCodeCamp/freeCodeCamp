@@ -148,7 +148,7 @@ class ShowCertification extends Component {
                 alt="Quincy Larson's Signature"
                 src={
                   'https://cdn.freecodecamp.org' +
-                  '/platform/english/images/quincy-larson-signature.svg'
+                  '/platform/english/assets/images/quincy-larson-signature.svg'
                 }
               />
               <p>

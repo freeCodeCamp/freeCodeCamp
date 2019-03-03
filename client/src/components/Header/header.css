@@ -19,6 +19,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+  font-family: 'saxmonoregular', 'monospace';
+  border: none;
 }
 
 #top-nav:first-child > div {
@@ -46,7 +48,6 @@ header {
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  background-color: #6b6d6f;
 }
 
 #top-right-nav a,
@@ -65,21 +66,13 @@ header {
 #top-right-nav a {
   color: #fff;
   font-size: 18px;
+  text-decoration: none;
 }
 
 #top-right-nav a:hover,
 #top-right-nav a:focus {
   background-color: #fff;
   color: #6b6d6f;
-}
-
-#top-right-nav li.user-state-link,
-#top-right-nav li.user-state-link:hover,
-#top-right-nav li.user-state-link:focus,
-#top-right-nav li.user-state-link > a,
-#top-right-nav li.user-state-link > a:hover,
-#top-right-nav li.user-state-link > a:focus {
-  background-color: #6b6d6f;
 }
 
 #top-right-nav {

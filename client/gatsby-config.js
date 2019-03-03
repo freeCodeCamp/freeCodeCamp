@@ -25,6 +25,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-create-client-paths',
       options: {
@@ -144,7 +145,7 @@ module.exports = {
         background_color: '#fff',
         /* eslint-enable camelcase */
         display: 'minimal-ui',
-        icon: 'src/images/square_puck.png'
+        icon: 'src/assets/images/square_puck.png'
       }
     },
     {
