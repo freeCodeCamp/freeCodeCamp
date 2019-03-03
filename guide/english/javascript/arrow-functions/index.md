@@ -31,19 +31,19 @@ You no longer need the `function` and `return` keywords, or even the curly brack
 // everything included
 const multiply = function(x, y) => { return x * y };
 
-// remove "function" 
+// remove "function"
 const multiply = (x, y) => { return x * y };
 
 // remove curly brackets and "return" ==> this way it returns implicitly
 const multiply = (x, y) => x * y;
 
-// if you only have one argument/parameter 
+// if you only have one argument/parameter
 const multiplyBy2 = x => x * 2;
 
 // if you need to concisely return an object, you can wrap the {} inside the () to avoid syntax conflicts
 const getSumProductObject = (x, y) => ({sum : x + y, product: x * y});
 
-// combined with the ternary operator, but note it's not a looker! 
+// combined with the ternary operator, but note it's not a looker!
 const addOrMultiply = (x, y, mathOperator) => mathOperator.toLowerCase() === 'add' ? x + y : x * y;
 ```
 
@@ -80,7 +80,7 @@ function Person(){
 
 var p = new Person();
 ```
-An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` operator:
+An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` parameter:
 ```javascript
 const myFunc = (...n) => {
   console.log('The first argument is', n[0]);
