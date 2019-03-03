@@ -20,13 +20,13 @@ localeTitle: 电脑硬件
 
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)
 
-### 存储（SSD或HDD）
+### 只读存储器（SSD或HDD）
 
 固态硬盘（SSD）或硬盘驱动器（HDD）用于在计算机上存储信息。它即使在断电后也能保留内存。
 
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)
 
-### 记忆（RAM）
+### 随机存取存储器（RAM）
 
 随机存取存储器（RAM）是计算机数据存储的一种形式，其存储当前正在使用的数据和机器代码。随机存取存储器设备允许在几乎相同的时间内读取或写入数据项，而不管存储器内的数据的物理位置如何。
 

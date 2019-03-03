@@ -86,7 +86,38 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-indexof/15936' target='_blank' rel='nofollow'>JS String Prototype IndexOf</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-substr/15945' target='_blank' rel='nofollow'>JS String Prototype Substr</a>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution #1:
+    
+    function translatePigLatin(str) {
+      if (str.match(/^[aeiou]/)) return str + "way";
+
+      const consonantCluster = str.match(/^[^aeiou]+/)[0];
+      return str.substring(consonantCluster.length) + consonantCluster + "ay";
+    }
+    
+    // test here
+    translatePigLatin("consonant");
+
+### Code Explanation:
+
+*   First, check to see if the string begins with a vowel.
+    * The regex looks at the beginning of the string `^` for one of the specified characters `[aeiou]` 
+    * If it does, you only need to return the original string with "way" appended on the end.
+*   If the string does not start with a vowel, we want to build a string which contains every consonant before the first vowel in the provided string.
+    * To do this, look at the beginning of a string `^` for one or more characters `+` NOT specified `[^aeiou]`.
+    * If there is a match (and in this case, there always will be), `match()` returns an Array with the matched string as the first element, which is all we want. Grab it with `[0]`.
+*   Now, we can start building our Pig Latin string to return. This can be built in three parts:
+    * The first part contains all of the characters in the original string, starting from the first vowel. We can easily get these characters by creating a substring of the original string, with its starting index being the first vowel.
+    * The second part contains the consonant string we just built. (If you add the second and first parts of this string together, you will get the original string.)
+    * The final part contains "ay".
+
+#### Relevant Links
+
+*   <a>JS Regex Resources</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match' target='_blank' rel='nofollow'>String.prototype.match()</a>
+*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-substr/15945' target='_blank' rel='nofollow'>JS String Prototype Substr</a>
+
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution #2:
 
     function translatePigLatin(str) {
       function check(obj) {
@@ -166,7 +197,7 @@ You will need to use everything you know about string manipulation to get the la
 
 If you found this page useful, you may say thanks to the contributors by copying and pasting the following line in the main chat:
 
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad for your help with Algorithm: Pig Latin`**
+**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad @finally_static for your help with Algorithm: Pig Latin`**
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 

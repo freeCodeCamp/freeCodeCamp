@@ -1,8 +1,6 @@
 ---
 id: 587d7fad367417b2b2512bdf
 title: Add Axes to a Visualization
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 ---
 
@@ -35,7 +33,7 @@ tests:
   - text: The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).
     testString: assert($('g').eq(1).attr('transform').match(/translate\(60\s*?,\s*?0\)/g), 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).');
   - text: Your code should call the <code>yAxis</code>.
-    testString: assert(code.match(/\.call\(yAxis\)/g), 'Your code should call the <code>yAxis</code>.');
+    testString: assert(code.match(/\.call\(\s*yAxis\s*\)/g), 'Your code should call the <code>yAxis</code>.');
 
 ```
 
