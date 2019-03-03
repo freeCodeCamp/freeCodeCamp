@@ -10,7 +10,7 @@ header {
 }
 
 #top-nav {
-  background: #6B6D6F;
+  background: #6b6d6f;
   height: var(--header-height);
   margin-bottom: 0;
   border-radius: 0;
@@ -19,6 +19,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 15px;
+}
+
+#top-nav:first-child > div {
+  margin-right: auto;
+}
+
+#top-nav:last-child > ul {
+  margin-left: auto;
 }
 
 #top-nav .home-link {
@@ -38,7 +46,7 @@ header {
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  background-color: #6B6D6F;
+  background-color: #6b6d6f;
 }
 
 #top-right-nav a,
@@ -62,7 +70,7 @@ header {
 #top-right-nav a:hover,
 #top-right-nav a:focus {
   background-color: #fff;
-  color: #6B6D6F;
+  color: #6b6d6f;
 }
 
 #top-right-nav li.user-state-link,
@@ -71,9 +79,12 @@ header {
 #top-right-nav li.user-state-link > a,
 #top-right-nav li.user-state-link > a:hover,
 #top-right-nav li.user-state-link > a:focus {
-  background-color: #6B6D6F;
+  background-color: #6b6d6f;
 }
 
+#top-right-nav {
+  padding-left: 0;
+}
 #top-right-nav a:hover,
 #top-right-nav a:focus {
   text-decoration: none;
@@ -90,7 +101,7 @@ header {
 
 /* Search bar */
 .fcc_searchBar {
-  flex-grow: 1;
+  flex-grow: inherit;
   padding: 0 10px;
   max-height: 33px;
 }
@@ -98,6 +109,10 @@ header {
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
   background-color: #fff;
+}
+
+.fcc_searchBar {
+  width: 23%;
 }
 
 .fcc_searchBar .ais-SearchBox-form {

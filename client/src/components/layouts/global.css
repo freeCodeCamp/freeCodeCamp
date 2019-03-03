@@ -18,22 +18,15 @@ h3,
 h4,
 h5,
 h6,
-a,
-p,
-btn {
+p {
   font-weight: 400;
   font-size: 1rem;
   font-family: monospace;
+  margin: 0 0 1.2rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 a {
-  margin: 0;
+  font-family: monospace;
 }
 
 h3 {

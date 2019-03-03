@@ -95,6 +95,7 @@ class Header extends Component {
     return (
       <header className={this.renderClassNames(displayMenu, onGuide)}>
         <nav id='top-nav'>
+          {disableSettings ? null : <FCCSearch />}
           <Link className='home-link' to='/'>
             <NavLogo />
           </Link>

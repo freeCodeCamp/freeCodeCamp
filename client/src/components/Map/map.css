@@ -53,6 +53,6 @@ li.open > .map-title svg:first-child {
   color: #67d269;
 }
 
-.map-challenge-title-completed {
-  opacity: 0.5;
+.block a {
+  text-decoration: none;
 }

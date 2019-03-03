@@ -4,6 +4,7 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
+  top: 38px;
 }
 
 @media screen and (max-width: 630px) {
@@ -12,6 +13,6 @@
   }
 }
 
-.learn-page-wrapper p {
-  margin-bottom: 0.75rem;
+.map-ui p {
+  margin-bottom: 0rem;
 }
