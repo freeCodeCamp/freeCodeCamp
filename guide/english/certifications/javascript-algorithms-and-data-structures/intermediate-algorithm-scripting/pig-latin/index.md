@@ -85,7 +85,7 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-indexof/15936' target='_blank' rel='nofollow'>JS String Prototype IndexOf</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-substr/15945' target='_blank' rel='nofollow'>JS String Prototype Substr</a>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution #1:
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
     
     function translatePigLatin(str) {
       if (str.match(/^[aeiou]/)) return str + "way";
@@ -115,33 +115,6 @@ You will need to use everything you know about string manipulation to get the la
 *   <a>JS Regex Resources</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match' target='_blank' rel='nofollow'>String.prototype.match()</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-substr/15945' target='_blank' rel='nofollow'>JS String Prototype Substr</a>
-
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution #2:
-
-    function translatePigLatin(str) {
-      function check(obj) {
-          return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
-      }
-
-      return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
-    }
-
-    // test here
-    translatePigLatin("consonant");
-
-
-### Code Explanation:
-
-*   This is a declarative as well as recursive approach to this problem.
-*   `check()` is a function which checks for first letter of string to be in the array of vowels, `['a','i','u','e','o']`.
-*   In case of consonants, `check()` calls itself on the next characters until finding the first vowel.
-*   It'll return the index of whatever it finds to be the last initial consonant i.e., Schmidtsville's would be 3.
-*   Then, letters up until that index are removed from the string and concatenated with either that same chunk of removed string or **w** accordingly, and then **ay** regardless.
-
-#### Relevant Links
-
-*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charat/15932' target='_blank' rel='nofollow'>JS String Prototype CharAt</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-concat/15935' target='_blank' rel='nofollow'>JS String Prototype Concat</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
