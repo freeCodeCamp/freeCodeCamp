@@ -108,5 +108,93 @@ Did you mean?  make
 
 Viewing the previous output from [`irb`](https://en.wikipedia.org/wiki/Interactive_Ruby_Shell), you can see that each one of the instance variables is readable. We can write to `@color`, but we end up causing a `NoMethodError` exception when we attempt to write to `@make`. This is because `@make` was only defined using an `attr_reader`, so `make=` is not defined. This could be fixed by adding the make to the `attr_accessor` like we did for color.
 
+### Treating Objects like Hashes or Arrays
+
+Lets say that a class is created, which contains an array that we would like to access directly. For instance, say our class `Car` had an array of nicknames that we wanted to know.
+
+```Ruby
+class Car                      
+    attr_accessor :color
+    attr_reader :make, :model, :nicknames
+    
+    def initialize(make, model, color, nicknames)
+        @make = make
+        @model = model
+        @color = color
+        @nicknames = nicknames
+    end
+    
+    def turn(direction)
+    end
+    
+    def honk
+        puts "beep beep"       
+    end
+    
+    def brake        
+    end
+end
+``` 
+We can assign the car an array of nicknames and access them by calling the `attr_reader` for `nicknames`
+
+```Ruby
+c = Car.new("Volvo","V70", "Black", ["The Wagon","Long Fella","Slick"])
+=> #<Car:0x00005615321badf8 @make="Volvo", @model="V70", @color="Black", @nicknames=["The Wagon", "Long Fella", "Slick"]>
+irb(main):023:0> c.nicknames
+=> ["The Wagon", "Long Fella", "Slick"]
+irb(main):024:0> c.nicknames[1]
+=> "Long Fella"
+```
+Sometimes, we may not want to have to reference a specific variable, or the return type is implied by the object. In this case, it would be handy to call the car object and directly reference `nicknames`. With ruby we can overload methods such as `[]` like so
+
+```Ruby
+class Car                      
+    attr_accessor :color
+    attr_reader :make, :model, :nicknames
+    
+    def initialize(make, model, color, nicknames)
+        @make = make
+        @model = model
+        @color = color
+        @nicknames = nicknames
+    end
+    
+    def [](key)
+      @nicknames[key]
+    end
+
+    def []=(key,value)
+      @nicknames[key] = value
+    end
+
+    def turn(direction)
+    end
+    
+    def honk
+        puts "beep beep"       
+    end
+        
+    def brake        
+    end
+end
+```
+
+Here, we have added two methods, `[]` and `[]=`. These methods are special because they allow us to index the `Car` object directly, in this case to resolve a nickname. Here's an example of how we can use these methods
+
+```Ruby
+irb(main):030:0> c = Car.new("Volvo","V70", "Black", ["The Wagon","Long Fella","Slick"])
+=> #<Car:0x00005648c1b35820 @make="Volvo", @model="V70", @color="Black", @nicknames=["The Wagon", "Long Fella", "Slick"]>
+irb(main):031:0> c[1]
+=> "Long Fella"
+irb(main):032:0> c[0]
+=> "The Wagon"
+irb(main):033:0> c[3] = "Speedy guy"
+=> "Speedy guy"
+irb(main):034:0> c.nicknames
+=> ["The Wagon", "Long Fella", "Slick", "Speedy guy"]
+```
+
+As can be seen, the `Car` object `c` can now be treated like an array to directly retrieve and set nicknames
+
 ### Resources
 - [Ruby Programming/Syntax/Classes](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Classes)
