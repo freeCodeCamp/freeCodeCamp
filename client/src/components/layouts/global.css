@@ -18,9 +18,7 @@ body {
   display: block;
   margin-top: var(--header-height);
 }
-h1,
-h2,
-h3,
+
 h4,
 h5,
 h6,
@@ -32,8 +30,24 @@ th {
   font-family: 'hackregular';
   margin: 0 0 1.2rem;
 }
+
+h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'hackregular';
+  margin: 1.2rem 0 1.2rem;
+}
+h2 {
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: 'hackregular';
+  margin: 1.2rem 0 1.2rem;
+}
 h3 {
-  text-decoration: underline;
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-family: 'hackregular';
+  margin: 0 0 1.2rem;
 }
 
 .green-text {

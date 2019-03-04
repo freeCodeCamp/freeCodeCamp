@@ -9,16 +9,15 @@
   padding: 5px 10px;
   margin: 0;
   margin-bottom: 5px;
-  opacity: 0.8;
   transition: opacity 0.1s ease-out;
 }
 
-.breadcrumb:hover {
-  opacity: 1;
+.breadcrumb a {
+  text-decoration: none;
 }
 
 .breadcrumb > li a {
-  color: #6B6D6F;
+  color: #6b6d6f;
 }
 
 .breadcrumb > li {
@@ -43,6 +42,9 @@
   overflow-y: auto;
 }
 
+.sideNav a {
+  text-decoration: none;
+}
 .content img {
   max-width: 100%;
   display: block;
@@ -79,7 +81,7 @@
   margin-bottom: 0;
 }
 
-.navItemTitle {
+a .navItemTitle {
   margin-left: 19px;
 }
 
