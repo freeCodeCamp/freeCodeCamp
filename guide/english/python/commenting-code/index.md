@@ -45,4 +45,16 @@ For a string literal to be a docstring, it must start and end with `"""` and be 
             pass
 ```
 
-String literals that start and end with `"""` that are not docstrings (not the first statement), can be used for multiline strings. They will not become `__doc__` attributes. If they are not assigned to a variable, they will not generate bytecode. There is some discussion about using them as multiline comments found [Multiline Comments in Python - Stack Overflow](http://stackoverflow.com/questions/7696924/multiline-comments-in-python).
+String literals that start and end with `"""` that are not docstrings (not the first statement), can be used for multiline strings. They will not become `__doc__` attributes. If they are not assigned to a variable, they will not generate bytecode. There is some discussion about using them as multiline comments found <a href='http://stackoverflow.com/questions/7696924/multiline-comments-in-python' target='_blank' rel='nofollow'>here</a>.
+
+## Sample Code  
+```python
+    def print_greeting(name): 
+        """This function will print a greeting to a friend."""
+        
+        # prints the greeting with the name 
+        print("Howdy, " + str(name) + "!")
+    
+    print_greeting("John")
+    >>> Howdy, John!
+ ```
