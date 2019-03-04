@@ -32,26 +32,26 @@ The `for...of` statement creates a loop iterating over iterable objects (includi
 
 ### Map
 ```javascript
-    var m = new Map();
+    const m = new Map();
     m.set(1, "black");
     m.set(2, "red");
 
-    for (var n of m) {
+    for (let n of m) {
         console.log(n);
     }
 
     // Output:
-    // 1,black
-    // 2,red
+    // [1, "black"]
+    // [2, "red"]
 ```
 
 ### Set
 ```javascript
-    var s = new Set();
+    const s = new Set();
     s.add(1);
     s.add("red");
 
-    for (var n of s) {
+    for (let n of s) {
         console.log(n);
     }
 

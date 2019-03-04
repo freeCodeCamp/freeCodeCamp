@@ -2,7 +2,7 @@
 title: Penetration Testing
 ---
 
-Penetration Testing is a method that many companies follow in order to minimize their security breaches. This is a controlled way of hiring a professional who will try to hack your system and show you the loopholes that how you should fix. Penetration testing can occasionally bring down systems, and cause the company to lose uptime, it's best practice to penetration test on a pre-production version of the production enviroment.
+Penetration Testing is a method that many companies follow in order to minimize their security breaches. This is a controlled way of hiring a professional who will try to hack your system and show you the loopholes that you should fix. Penetration testing can occasionally bring down systems, and cause the company to lose uptime, it's best practice to penetration test on a pre-production version of the production enviroment.
 
 Before doing a penetration test, it is mandatory to have an agreement that will explicitly mention the following parameters −
 
@@ -10,7 +10,7 @@ Before doing a penetration test, it is mandatory to have an agreement that will 
 - where will be the IP source of the attack, and
 - what will be the penetration fields of the system.
 
-Penetration testing is conducted by professional ethical hackers who mainly use commercial, open-source tools, automate tools and manual checks. There are no restrictions; the most important objective here is to uncover as many security flaws as possible. Many big companies offer rewards for anybody that can point out security vulnerabilities in their systems, through what is called [bug bounty programs](https://en.wikipedia.org/wiki/Bug_bounty_program). Google, for example, will offer tens of thousands of dollars through their Vulnerability Reward Program.
+Penetration testing without authorization is illegal, so it is very important to have this signed agreement before starting any work. Penetration testing is conducted by professional ethical hackers who mainly use commercial, open-source tools, automate tools and manual checks. There are no restrictions; the most important objective here is to uncover as many security flaws as possible. Many big companies offer rewards for anybody that can point out security vulnerabilities in their systems, through what is called [bug bounty programs](https://en.wikipedia.org/wiki/Bug_bounty_program). Google, for example, will offer tens of thousands of dollars through their Vulnerability Reward Program.
 
 ## Phases of Penetration Testing
 
@@ -52,6 +52,10 @@ Before doing a penetration test, it is recommended that you put down the scope o
 
 - Your company has a VPN or any other remote access techniques and you want to test that particular point.
 - Your application has webservers with databases, so you might want to get it tested for SQL injection attacks which is one of the most crucial tests on a webserver. In addition, you can check if your webserver is immune to DoS attacks.
+
+## Penetration testing tools
+
+The most flexible and powerful tool used for penetration testing is **kali** linux operating system .With the kali linux os pentration tester gets a  flexible platform to perform the panoply of penetration task such as enumerating a target,identifying vulnerabilities,and exploiting targets in a networked environment 
 
 ## Quick Tips
 

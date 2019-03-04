@@ -2,6 +2,7 @@
 id: bd7123c9c441eddfaeb5bdef
 title: Understanding Boolean Values
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c9Me8t4'
 ---
 
 ## Description
@@ -37,11 +38,11 @@ tests:
 ```js
 function welcomeToBooleans() {
 
-// Only change code below this line.
+  // Only change code below this line.
 
-return false; // Change this line
+  return false; // Change this line
 
-// Only change code above this line.
+  // Only change code above this line.
 }
 ```
 
