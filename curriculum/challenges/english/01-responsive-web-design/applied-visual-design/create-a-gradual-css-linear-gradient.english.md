@@ -17,7 +17,6 @@ Example:
 ## Instructions
 <section id='instructions'>
 Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>background</code>, and set it from a direction of 35 degrees to change the color from <code>#CCFFFF</code> to <code>#FFCCCC</code>.
-<strong>Note</strong><br>While there are other ways to specify a color value, like <code>rgb()</code> or <code>hsl()</code>, use hex values for this challenge.
 </section>
 
 ## Tests
