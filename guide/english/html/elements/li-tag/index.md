@@ -39,7 +39,7 @@ In an unordered list, `<li>` appears as a numbered item.
 
 This numeric display counter can be customized using the _list-style-type_ CSS property.
 
-Examples:
+### Example
 
 ```html
 <!-- In a simple unordered list -->
