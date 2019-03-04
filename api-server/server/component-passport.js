@@ -101,14 +101,6 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
   res,
   next
 ) => {
-  // https://stackoverflow.com/q/37430452
-  const successRedirect = req => {
-    if (!!req && req.session && req.session.returnTo) {
-      delete req.session.returnTo;
-      return `${homeLocation}/welcome`;
-    }
-    return config.successRedirect || `${homeLocation}/welcome`;
-  };
   return passport.authenticate(
     strategy,
     { session: false },
@@ -120,9 +112,7 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       if (!user || !userInfo) {
         return res.redirect('/signin');
       }
-      let redirect = url.parse(successRedirect(req), true);
-
-      delete redirect.search;
+      const redirect = `${homeLocation}/welcome`;
 
       const { accessToken } = userInfo;
       const { provider } = config;
@@ -146,9 +136,7 @@ we recommend using your email address: ${user.email} to sign in instead.
         setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
-
-      redirect = url.format(redirect);
-      return res.redirect(redirect);
+      return res.redirectWithFlash(redirect);
     }
   )(req, res, next);
 };
