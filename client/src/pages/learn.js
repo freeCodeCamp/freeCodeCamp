@@ -40,7 +40,7 @@ const IndexPage = ({
       <Helmet title='Learn | freeCodeCamp.org' />
       <Spacer />
       <Spacer />
-      <p>Welcome to the freeCodeCamp curriculum.</p>
+      <h1 className='text-center'>Welcome to the freeCodeCamp curriculum.</h1>
       <p>
         We have thousands of coding lessons to help you improve your skills.
       </p>

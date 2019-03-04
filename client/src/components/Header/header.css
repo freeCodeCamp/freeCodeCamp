@@ -1,7 +1,3 @@
-:root {
-  --header-height: 38px;
-}
-
 header {
   top: 0;
   position: fixed;
@@ -10,7 +6,7 @@ header {
 }
 
 #top-nav {
-  background: #1b2b4d;
+  background: var(--secondary-color);
   height: var(--header-height);
   margin-bottom: 0;
   border-radius: 0;

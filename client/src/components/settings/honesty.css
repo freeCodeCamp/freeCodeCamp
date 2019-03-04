@@ -11,9 +11,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 100, 0, 0.8);
+  background-color: var(--quaternary-color);
   color: #fff;
-  border-color: #6B6D6F;
+}
+
+div .agreed p {
+  color: white;
 }
 
 .honesty-policy .agreed p {
@@ -28,4 +31,8 @@
 
 .night .honesty-panel a {
   color: darkgreen;
+}
+
+.btn-invert {
+  color: var(--primary-canvas);
 }

@@ -1,5 +1,4 @@
 html {
-  color: #333 !important;
   font-size: 18px;
 }
 .btn-cta-big {
@@ -17,6 +16,7 @@ body {
 .default-layout {
   display: block;
   margin-top: var(--header-height);
+  background: var(--primary-canvas);
 }
 
 h4,
@@ -25,6 +25,7 @@ h6,
 p,
 td,
 th {
+  color: var(--secondary-color);
   font-weight: 400;
   font-size: 1rem;
   font-family: 'hackregular';
@@ -32,18 +33,21 @@ th {
 }
 
 h1 {
+  color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.5rem;
   font-family: 'hackregular';
   margin: 1.2rem 0 1.2rem;
 }
 h2 {
+  color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.2rem;
   font-family: 'hackregular';
   margin: 1.2rem 0 1.2rem;
 }
 h3 {
+  color: var(--secondary-color);
   font-weight: 700;
   font-size: 1.1rem;
   font-family: 'hackregular';
@@ -61,7 +65,7 @@ h3 {
 
 a {
   text-decoration: underline;
-  color: #333;
+  color: var(--secondary-color);
   font-weight: 400;
 }
 .btn {
@@ -84,4 +88,55 @@ a:focus {
   color: #fff;
   font-size: 28px;
   text-shadow: none;
+}
+
+/* boostrap override */
+.btn {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+}
+
+strong {
+  color: var(--secondary-color);
+}
+
+.form-control {
+  color: var(--quaternary-color);
+}
+
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus {
+  background-color: var(--quaternary-color);
+  border-color: var(--tertiary-color);
+}
+
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  box-shadow: none;
+  background-color: var(--quaternary-color);
+}
+
+.form-control {
+  outline: none;
+  border-color: var(--quaternary-canvas);
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.form-control:focus {
+  border-color: var(--tertiary-color);
 }

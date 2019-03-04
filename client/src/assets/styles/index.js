@@ -2,8 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 import * as fontFiles from '../fonts';
 
 const GlobalStyle = createGlobalStyle`
-  html{
-    color: blue;
+  :root {
+    --header-height: 38px;
+    --primary-color: black;
+    --secondary-color: #0a0a2e;
+    --tertiary-color: #292948;
+    --quaternary-color: #43435d;
+    --quaternary-canvas: #d4d4da;
+    --tertiary-canvas: #e8e8eb;
+    --secondary-canvas: #f5f6f7;
+    --primary-canvas: white;
   }
 
   @font-face {

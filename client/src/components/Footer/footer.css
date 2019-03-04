@@ -1,5 +1,6 @@
 .footer {
-  background-color: #dbdcdd;
+  background-color: var(--quaternary-canvas);
+  color: var(--secondary-color);
   font-size: 0.9em;
   width: 100%;
   padding-top: 40px;
