@@ -35,7 +35,7 @@ This problem is hard if you have to create your own code to check for primes, so
 
 **Solution ahead!**
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution 1:
 
     function sumPrimes(num) {
       var res = 0;
@@ -86,11 +86,11 @@ This problem is hard if you have to create your own code to check for primes, so
 
 *   <a href='https://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>JS For Loops Explained</a>
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Simplified Basic Code Solution:
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution 2:
 
     function sumPrimes(num) {
      let i = 1;
-     let sum =0;
+     let sum = 0;
      while(i <= num){
        if(isPrime(i)){
          sum += i;
@@ -115,7 +115,7 @@ This problem is hard if you have to create your own code to check for primes, so
 *   Create a function to check if a number is prime or not.
 *   Declare two variables. One to keep us within the limit of the given number and the other to store the sum of numbers to be returned.
 *   Create a loop to check all numbers lesser than or equal to the given number.
-*   check if a number is prime and add it to the value of sum.
+*   Check if a number is prime and add it to the value of sum.
 *   Return the value of sum once the loop exits.
 
 
