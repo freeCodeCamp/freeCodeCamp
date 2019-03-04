@@ -15,4 +15,4 @@ $('#someElement').removeClass('classA').addClass('classB');
 ```
 
 #### More Information:
-For more information, please visit the <a href='https://www.w3schools.com/jquery/jquery_chaining.asp' target='_blank' rel='nofollow'>w3schools documentation</a>.
+For more information, please visit the [w3schools documentation](https://www.w3schools.com/jquery/jquery_chaining.asp).
