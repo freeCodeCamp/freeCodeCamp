@@ -11,7 +11,7 @@ When designing your page for smaller devices, you should focus on the main conte
 
 The thought process for responsive design should be:
 1. Which content to show?
-2. How to lay out the page?
+2. How to create the layout of the page?
 3. Which size to use?
 
 ### The basic syntax
@@ -22,7 +22,7 @@ The thought process for responsive design should be:
     }
 ```
 
-This media query adds 30px of padding to all `p` tags when the screen is wider than 767px.
+`p` tags will have 30px of padding when the screen width is at least 768px.
 
 ### The AND syntax
 
@@ -33,7 +33,7 @@ This media query adds 30px of padding to all `p` tags when the screen is wider t
   }
 ```
 
-This media query adds 30px of padding to all `p` tags when the screen is wider than 767px AND its orientation is landscape.
+`p` tags will have 30px of padding when the screen width is at least 768px AND its orientation is landscape.
 
 ### The OR syntax
 
@@ -43,7 +43,7 @@ This media query adds 30px of padding to all `p` tags when the screen is wider t
     }
 ```
 
-This media query adds 30px of padding to all `p` tags when the screen is wider than 767px OR its resolution reaches 150dpi.
+`p` tags will have 30px of padding when the screen width is at least 768px OR its resolution reaches 150dpi.
 
 ### And beyond!
 
