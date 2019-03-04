@@ -1,14 +1,7 @@
 ---
 title: Exponents Basic Rules
 ---
-## Exponents Basic Rules
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/exponents-basic-rules/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-### Rules of Exponents
+## Exponents Basic Rules### Rules of Exponents
 The nine laws for exponents are:
 - x<sup>1</sup> = x
 - x<sup>0</sup> = 1
