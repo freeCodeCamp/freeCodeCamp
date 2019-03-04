@@ -147,7 +147,7 @@ You will need to use everything you know about string manipulation to get the la
 
     function translatePigLatin(str) {
       return str.replace(/^[aeiou]\w*/, "$&way").replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
-      }
+    }
 
     // test here
     translatePigLatin("consonant");
