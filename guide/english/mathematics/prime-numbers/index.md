@@ -11,6 +11,16 @@ Despite seeming simple, prime numbers are incredibly important in [cryptography]
 
 For example, there are no '[fast](https://en.wikipedia.org/wiki/General_number_field_sieve)' ways to find prime factors, so while finding the prime factors of 6 above is easy, it is only easy because 6 is small. Finding the prime factors of a number with hundreds or thousands of digits, however, is exceptionally time consuming when there are no [polynomial time](https://en.wikipedia.org/wiki/Time_complexity#Superpolynomial_time) algorithms.
 
-There is no formula for primes, i.e., there is no formula that you can plug any natural number `n` in and get the `n-th` prime from it. The distribution of primes is unknown, i.e., after the `n-th` prime there is no formula for how much larger the `(n+1)-th` prime is. However, it is known that there are [arbitrarily large](https://math.stackexchange.com/a/1675495/12133) gaps between consecutive primes. It is also known that there are infinitely many pairs of consecutive primes that differ by [at most 246](https://en.wikipedia.org/wiki/Twin_prime#History).
+12 is a not a prime number as it can be divided evenly by 1, 2, 3, 4, 6, and 12.
 
-You can also win [$1 000 000](https://en.wikipedia.org/wiki/Riemann_hypothesis) for gaining (and demonstrating) new knowledge about the prime numbers.
+The first ten prime numbers are: 2, 3, 5, 7, 11, 13, 17, 19, 23, and 29.
+
+![alt text](https://cdn.britannica.com/04/183104-004-DC24F17A.jpg)
+
+**This is a chart with the first 100 natural numbers, indicating which are prime and which are composite.**
+
+<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+There is no formula for primes, i.e., there is no formula that you can plug any natural number `n` in and get the `n-th` prime from it. The distribution of primes is unknown, i.e., after the `n-th` prime there is no formula for how much larger the `(n+1)-th` prime is. However, it is known that there are [arbitrarily large](https://math.stackexchange.com/a/1675495/12133) gaps between consecutive primes. It is also known that there are infinitely many pairs of consecutive primes that differ by [at most 246](https://en.wikipedia.org/wiki/Twin_prime#History).

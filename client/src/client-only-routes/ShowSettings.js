@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -6,15 +6,16 @@ import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
+import { apiLocation } from '../../config/env.json';
 import {
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  hardGoTo
 } from '../redux';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
 
-import Layout from '../components/layouts/Default';
 import Spacer from '../components/helpers/Spacer';
 import Loader from '../components/helpers/Loader';
 import FullWidthRow from '../components/helpers/FullWidthRow';
@@ -25,10 +26,12 @@ import Internet from '../components/settings/Internet';
 import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
+import DangerZone from '../components/settings/DangerZone';
 import RedirectHome from '../components/RedirectHome';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
+  hardGoTo: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
@@ -101,6 +104,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       createFlashMessage,
+      hardGoTo,
       submitNewAbout,
       toggleNightMode: theme => updateUserFlag({ theme }),
       updateInternetSettings: updateUserFlag,
@@ -112,9 +116,15 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
+const createHandleSignoutClick = hardGoTo => e => {
+  e.preventDefault();
+  return hardGoTo(`${apiLocation}/signout`);
+};
+
 function ShowSettings(props) {
   const {
     createFlashMessage,
+    hardGoTo,
     isSignedIn,
     submitNewAbout,
     toggleNightMode,
@@ -156,13 +166,7 @@ function ShowSettings(props) {
   } = props;
 
   if (showLoading) {
-    return (
-      <Layout>
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      </Layout>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!showLoading && !isSignedIn) {
@@ -170,7 +174,7 @@ function ShowSettings(props) {
   }
 
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
         <title>Settings | freeCodeCamp.org</title>
       </Helmet>
@@ -184,7 +188,7 @@ function ShowSettings(props) {
               bsStyle='primary'
               className='btn-invert'
               href={`/${username}`}
-              >
+            >
               Show me my public portfolio
             </Button>
             <Button
@@ -193,7 +197,8 @@ function ShowSettings(props) {
               bsStyle='primary'
               className='btn-invert'
               href={'/signout'}
-              >
+              onClick={createHandleSignoutClick(hardGoTo)}
+            >
               Sign me out of freeCodeCamp
             </Button>
           </FullWidthRow>
@@ -250,10 +255,10 @@ function ShowSettings(props) {
             verifyCert={verifyCert}
           />
           <Spacer />
-          {/* <DangerZone /> */}
+          <DangerZone />
         </main>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 

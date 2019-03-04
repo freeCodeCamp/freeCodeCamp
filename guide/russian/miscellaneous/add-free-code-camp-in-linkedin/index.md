@@ -1,6 +1,6 @@
 ---
-title: Add Free Code Camp in Linkedin
-localeTitle: Добавить бесплатный кодовый лагерь в Linkedin
+title: Add Free Code Camp in LinkedIn
+localeTitle: Добавить бесплатный кодовый лагерь в LinkedIn
 ---
 LinkedIn признает Free Code Camp как университет.
 
