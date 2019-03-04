@@ -34,19 +34,6 @@
   left: 0;
 }
 
-.article h3 span {
-  color: darkred;
-}
-
-.article > h3 {
-  margin: 0 0;
-}
-
-.article h3 {
-  margin: 20px 0;
-  color: #006400;
-}
-
-.article .text-center {
-  margin: 20px 0;
+.select-city {
+  display: block;
 }

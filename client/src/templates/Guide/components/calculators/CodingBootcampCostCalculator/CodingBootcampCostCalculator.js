@@ -24,44 +24,48 @@ class CostCalculator extends React.Component {
   };
 
   initComponent() {
-    fetch('/json/bootcamps.json')
-      .then(response => {
-        return response.json();
-      })
-      .then(responseJson => {
-        this.setState({
-          bootcamps: responseJson,
-          cities: responseJson
-            .reduce((previous, current) => {
-              return previous.concat(current.cities);
-            }, [])
-            .filter((city, idx, me) => {
-              return me.indexOf(city) === idx;
-            })
-            .sort(),
-          incomes: [
-            '0',
-            '10000',
-            '20000',
-            '30000',
-            '40000',
-            '50000',
-            '60000',
-            '70000',
-            '80000',
-            '90000',
-            '100000',
-            '120000',
-            '140000',
-            '160000',
-            '180000',
-            '200000'
-          ]
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    const bootcamps = JSON.parse(
+      document.getElementById('bootcamps').innerHTML
+    );
+
+    document
+      .getElementById('bootcamps-data-link')
+      .setAttribute(
+        'href',
+        `data:text/plain;charset=utf-8,${encodeURIComponent(
+          JSON.stringify(bootcamps, null, 2)
+        )}`
+      );
+
+    this.setState({
+      bootcamps: bootcamps,
+      cities: bootcamps
+        .reduce((previous, current) => {
+          return previous.concat(current.cities);
+        }, [])
+        .filter((city, idx, me) => {
+          return me.indexOf(city) === idx;
+        })
+        .sort(),
+      incomes: [
+        '0',
+        '10000',
+        '20000',
+        '30000',
+        '40000',
+        '50000',
+        '60000',
+        '70000',
+        '80000',
+        '90000',
+        '100000',
+        '120000',
+        '140000',
+        '160000',
+        '180000',
+        '200000'
+      ]
+    });
 
     const selectCityDiv = document.getElementById('select-city');
     const selectIncomeDiv = document.getElementById('select-income');
@@ -141,7 +145,7 @@ class CostCalculator extends React.Component {
         {this.state.incomes.map((income, idx) => {
           let incomeLabel =
             typeof income !== 'undefined'
-              ? income.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              ? parseInt(income, 10).toLocaleString()
               : '0';
           return (
             <option key={idx} value={income}>

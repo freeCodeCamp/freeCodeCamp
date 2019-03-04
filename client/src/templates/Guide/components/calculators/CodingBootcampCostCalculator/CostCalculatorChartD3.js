@@ -187,7 +187,7 @@ export function updateCalculator(d3Node, bootcamps, city, lastYearsIncome) {
         );
     })
     .on('mouseout', function() {
-      d3.select('.CodingBootcampCostCalculator')
+      d3.select('.d3-chart')
         .select('.tooltip')
         .transition()
         .duration(500)
