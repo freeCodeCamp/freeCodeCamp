@@ -38,6 +38,8 @@ tests:
     testString: assert(/\\SecondLine/.test(myStr));
   - text: There should be a newline character between <code>SecondLine</code> and <code>ThirdLine</code>
     testString: assert(/SecondLine\nThirdLine/.test(myStr));
+  - text: <code>myStr</code> should only contain characters shown in the instructions
+    testString: assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');    
 
 ```
 
