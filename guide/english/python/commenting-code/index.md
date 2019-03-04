@@ -1,8 +1,7 @@
 ---
 title: Python Commenting Code
 ---
-
-Comments are used to annotate, describe, or explain code that is complex or difficult to understand. Python will intentionally ignore comments when it compiles to bytecode by the interpreter. <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a> has a section dealing with comments. They also increase the readablity of code by adding easy and descriptive language for better understanding.
+Comments are used to annotate, describe, or explain code that is complex or difficult to understand. The Python interpreter will intentionally ignore comments when it compiles to bytecode. <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a> has a section dealing with comments. They also increase the readablity of code by adding easy and descriptive language for better understanding.
 
 **Block** and **inline** comments start with a `#`, followed by a space before the comment:
 
@@ -30,7 +29,7 @@ For example:
 
 Another type of comment is the **docstring**, documented in [`PEP 257`](https://www.python.org/dev/peps/pep-0257/). Docstrings are a specific type of comment that becomes the `__doc__` attribute.
 
-For a string literal to be a docstring, it must start and end with `"""` and be the first statement of the module, function, class, or method definition it is documenting:
+For a string literal to be a docstring, it must start and end with triple quotes `"""` and be the first statement of the module, function, class, or method definition it is documenting:
 
 ```python
     class SomeClass():
@@ -58,3 +57,4 @@ String literals that start and end with `"""` that are not docstrings (not the f
     print_greeting("John")
     >>> Howdy, John!
  ```
+ 
