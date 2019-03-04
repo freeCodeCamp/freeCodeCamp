@@ -81,8 +81,5 @@ Here the transition from red to yellow will start at 45% and finish at 45%.
 
 **More resources:**
 
-[Linear-gradient on Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
-
-[Page with the great Gradient examples](https://uigradients.com/)
-
-
+- [Linear-gradient on Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+- [Linear Gradient Generator](https://uigradients.com/)
