@@ -17,7 +17,7 @@ An object in Ruby has very similar characteristics. Ruby Objects also have state
 
 A class is basically an object's template. This template defines the available `properties` that make up the object using `instance variables`. Again, there are also `behaviors` defined in the form of `methods` to help change the object's state.
 
-A new instance of a class is created (instantiated) by using the `initialize` method of a class.
+A new instance of a class is created using the `initialize` method of a class. An instance will have properties required to initialize the instance as dictated by the class' initialize method.
 
 Take for example the following sample code of a class:
 
@@ -198,3 +198,4 @@ As can be seen, the `Car` object `c` can now be treated like an array to directl
 
 ### Resources
 - [Ruby Programming/Syntax/Classes](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Classes)
+- [Ruby Class Relationships Explained Through Pokemon](https://medium.com/@tpstar/object-relationships-in-ruby-explained-by-relationships-in-pokemons-8dd64c8af773)
