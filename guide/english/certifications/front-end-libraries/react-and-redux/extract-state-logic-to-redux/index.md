@@ -1,7 +1,9 @@
 ---
 title: Extract State Logic to Redux
 ---
-## Extract State Logic to ReduxSuggested solution: 
+## Extract State Logic to Redux
+
+Suggested solution: 
 
 ```javascript
 const ADD = 'ADD';

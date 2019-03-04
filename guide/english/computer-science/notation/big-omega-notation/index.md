@@ -1,7 +1,9 @@
 ---
 title: Big Omega Notation
 ---
-## Big Omega NotationSimilar to [big O](https://guide.freecodecamp.org/computer-science/notation/big-o-notation) notation, big Omega(Ω) function is used in computer science to describe the performance or complexity of an algorithm.  
+## Big Omega Notation
+
+Similar to [big O](https://guide.freecodecamp.org/computer-science/notation/big-o-notation) notation, big Omega(Ω) function is used in computer science to describe the performance or complexity of an algorithm.  
 
 If a running time is Ω(f(n)), then for large enough n, the running time is at least k⋅f(n)  for some constant k. Here's how to think of a running time that is Ω(f(n)):  
 <img src="https://s3.amazonaws.com/ka-cs-algorithms/Omega_fn.png" alt="big-omega function"/>  

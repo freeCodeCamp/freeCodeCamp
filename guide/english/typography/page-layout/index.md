@@ -1,7 +1,9 @@
 ---
 title: Page Layout
 ---
-## Page Layout#### Page Layout:
+## Page Layout
+
+#### Page Layout:
 Page layout is the term used to describe how each page of your document will appear when it is printed. In any Word processor (Microsoft Word, LibreOffice Writer etc), page layout includes elements such as the margins, the number of columns, how headers and footers appear, and a host of other considerations. As you design your pages, you can use the tools that any Word processor puts at your disposal in this regard. We have many features under page layout like:
 
 #### Page Orientation:

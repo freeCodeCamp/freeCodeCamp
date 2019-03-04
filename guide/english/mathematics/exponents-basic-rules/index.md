@@ -1,7 +1,9 @@
 ---
 title: Exponents Basic Rules
 ---
-## Exponents Basic Rules### Rules of Exponents
+## Exponents Basic Rules
+
+### Rules of Exponents
 The nine laws for exponents are:
 - x<sup>1</sup> = x
 - x<sup>0</sup> = 1

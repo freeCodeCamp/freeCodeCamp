@@ -1,7 +1,9 @@
 ---
 title: Color and Tonal Value
 ---
-## Color and Tonal ValueIn color theory, a tonal value is produced by adding white, grey, or black to a selected color. This does not change the hue but does alter the colorfullness, also known as saturation. When discussing tonal value, there are three main terms that must be discussed: Tint, Tone, and Shade. 
+## Color and Tonal Value
+
+In color theory, a tonal value is produced by adding white, grey, or black to a selected color. This does not change the hue but does alter the colorfullness, also known as saturation. When discussing tonal value, there are three main terms that must be discussed: Tint, Tone, and Shade. 
 
 Tint is the addition of white to a color. Tint can be used to highlight an area as well as begin to create the illusion of depth on an object.
 

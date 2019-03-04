@@ -1,7 +1,9 @@
 ---
 title: MySQLi
 ---
-## MySQLiMYSQLi functions allow access to the database.
+## MySQLi
+
+MYSQLi functions allow access to the database.
 MYSQLi is an improved version of MYSQL
 
 #### Some Important MYSQLi functions and their uses:

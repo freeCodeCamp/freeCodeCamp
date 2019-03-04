@@ -1,7 +1,9 @@
 ---
 title: String.prototype.includes
 ---
-## String.prototype.includesThe `includes()` method is used to determine whether or not one string can be found in another string. This method returns a boolean value (either `true` or `false`).
+## String.prototype.includes
+
+The `includes()` method is used to determine whether or not one string can be found in another string. This method returns a boolean value (either `true` or `false`).
 
 Important to note is that this method is case-sensitive.
 

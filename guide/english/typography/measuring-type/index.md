@@ -1,7 +1,9 @@
 ---
 title: Measuring Type
 ---
-## Measuring TypeThere are two units of meausurement to meausure font points and picas
+## Measuring Type
+
+There are two units of meausurement to meausure font points and picas
 
 A Point is 1/72 of an inch. Point is also abbreviated as "pt"
 

@@ -1,9 +1,9 @@
 ---
 title: Super Globals
 ---
+## Super Globals
 
-
-## Super Globals## List of Super Globals and what are they
+## List of Super Globals and what are they
 Super globals are variables defined in the core of PHP, and they are available in all scopes throughout the script. This means that you do not need to define them as **global $variable** .
 
 These superglobal variables are:

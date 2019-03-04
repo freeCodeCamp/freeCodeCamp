@@ -1,7 +1,9 @@
 ---
 title: Object Assign
 ---
-## Object AssignThe `Object.assign()` method is used to 1) add properties and values to an existing object, 2) make a new copy of an existing object, or 3) combine multiple existing objects into a single object. The `Object.assign()` method requires one targetObject as a parameter and can accept an unlimited number of sourceObjects as additional parameters.
+## Object Assign
+
+The `Object.assign()` method is used to 1) add properties and values to an existing object, 2) make a new copy of an existing object, or 3) combine multiple existing objects into a single object. The `Object.assign()` method requires one targetObject as a parameter and can accept an unlimited number of sourceObjects as additional parameters.
 
 Important to note here is that the targetObject parameter will always be modified. If that parameter points to an existing object, then that object will be both modified and copied. If, however, you wish to create a copy of an object without modifying that original object, you can pass an empty object `{}` as the first (or targetObject) parameter and the object to be copied as the second (or sourceObject) parameter.
 

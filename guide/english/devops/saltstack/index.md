@@ -1,4 +1,7 @@
 ---
 title: Saltstack Server
 ---
-## Saltstack Server[Saltstack Server Docs](https://saltstack.com/)
+## Saltstack Server
+
+#### More Information:
+* [Saltstack Server Docs](https://saltstack.com/)
