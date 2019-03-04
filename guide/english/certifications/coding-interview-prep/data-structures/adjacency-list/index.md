@@ -38,7 +38,6 @@ Read the presentation and try to understand what it means to be an undirected gr
         Jeff: ["Jenny", "James"]
     };
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/SereneScholarlyAnalyst' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
