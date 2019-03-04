@@ -44,6 +44,7 @@ using namespace std;
 * The first line tells the computer to use the `iostream` header file for this specific program. A header file is a separate file with pre-written C++ code. There are many other header files which are required for a specific program to run properly. For example, `math`, `vector`, `string`, etc. Header files are generally represented by a `.h` extension, when including standard library header files you don't include the `.h` extension.
 * The `iostream` header contains the public interface for the input-output stream from the standard library. The `iostream` file contains code for allowing the computer to take input and generate an output, using the C++ language.
 * The second line tells the computer to use the standard namespace, which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
+* While not including `std::` seems easier, it is not good practice to omit the namsespace. The benefit of putting the namespace in front is to ensure that functions with the same names but from different libraries can still run normally.
 
 #### Line 3 and 4
 
