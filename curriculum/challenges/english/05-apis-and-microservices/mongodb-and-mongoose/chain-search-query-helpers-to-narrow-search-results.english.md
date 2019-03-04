@@ -6,7 +6,7 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-If you don’t pass the callback as the last argument to <code>Model.find()</code> (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method <code>.exec()</code>. Pass your callback to this last method. There are many query helpers, here we’ll use the most ‘famous’ ones.
+If you don’t pass the callback as the last argument to <code>Model.find()</code> (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method <code>.exec()</code>. You always need to pass your callback to this last method. There are many query helpers, here we’ll use the most ‘famous’ ones.
 </section>
 
 ## Instructions
