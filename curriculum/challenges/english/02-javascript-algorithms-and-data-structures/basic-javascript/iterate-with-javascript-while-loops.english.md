@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/c/c8QbnCM'
 ## Description
 <section id='description'>
 You can run the same code multiple times by using a loop.
-The first type of loop we will learn is called a "<code>while</code>" loop because it runs "while" a specified condition is true and stops once that condition is no longer true.
+The first type of loop we will learn is called a <code>while</code> loop because it runs "while" a specified condition is true and stops once that condition is no longer true.
 <blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>}</blockquote>
 Let's try getting a while loop to work by pushing values to an array.
 </section>
