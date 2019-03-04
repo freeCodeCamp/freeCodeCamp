@@ -4,23 +4,23 @@ title: Classes
 ## Classes
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-JavaScript does not have the concept of classes inherently. 
+JavaScript does not have native syntax support for classes. 
 
-But we could simulate the functionalities of a class by taking advantage of the prototypal nature of JavaScript.
+However, we can simulate the functionalities of a class by taking advantage of the prototypal nature of JavaScript.
 
 This article assumes that you have a basic understanding of <a href="/src/pages/javascript/prototypes/index.md">prototypes</a>.
 
-For the sake of clarity let us assume that we want to create a class which can do the following
+For the sake of clarity, let us assume that we want to create a class which can do the following:
 
 ```javascript
 var p = new Person('James','Bond'); // create a new instance of Person class
-	p.log() // Output: 'I am James Bond' // Accessing a function in the class
-	// Using setters and getters 
-	p.profession = 'spy'
-	p.profession // output: James bond is a spy
+p.log() // Output: 'I am James Bond' // Accessing a function in the class
+// Using setters and getters 
+p.profession = 'spy'
+p.profession // output: James bond is a spy
 ```
 
-### Using class keyword
+### Using the `class` keyword
 
 Like in any other programming language, you can now use the `class` keyword to create a class.
 
@@ -45,20 +45,17 @@ class Person {
     get profession() {
         console.log(this._firstName, this._lastName, 'is a', this._profession);
     }
-
 }
 
 ```
-<br />
-<br />
 
-`class` is just a syntactic sugar over JavaScript's existing prototype-based inheritance model.
+`class` is just a syntactic substitute for JavaScript's existing prototype-based inheritance model.
 
 In general programmers use the following ways to create a class in JavaScript.
 
-### Using methods added to prototypes:
+### Using methods added to prototypes
 
-Here, all the methods are added to prototype
+Here, all the methods are added to a prototype
 
 ```javascript
 function Person(firstName, lastName) {
@@ -83,7 +80,7 @@ Object.defineProperty(Person.prototype, 'profession', {
 
 ```
 
-You could also write prototype methods over function `Person` as below
+You could also write prototype methods over function `Person` as below:
 
 ```javascript
 Person.prototype = {
@@ -104,7 +101,7 @@ Person.prototype = {
 
 ### Using methods added internally
 
-Here the methods are added internally instead of prototype
+Here the methods are added internally instead of prototype:
 
 ```javascript
 function Person(firstName, lastName) {
@@ -130,7 +127,7 @@ function Person(firstName, lastName) {
 ### Hiding details in classes with symbols
 
 
-Most often some properties and methods have to be hidden to prevent access from outside the function. With classes, to obtain this functionality, one way to do this is by using symbols. Symbol is a new built-in type of JavaScript, which can be invoked to give a new symbol value. Every Symbol is unique and can be used as a key on object. So one use case of symbols is that you can add something to an object you might not own, and you might not want to collide with any other keys of object so creating a new one and adding as property to that object using symbol is the safest. Also, when symbol value is added to an object; no one else will know how to get it.
+Most often some properties and methods have to be hidden to prevent access from outside the function. With classes, this functionality can be obtained by using symbols. A Symbol is a new, built-in type of JavaScript, which can be invoked to give a new symbol value. Every Symbol is unique and can be used as a key on object. One use case of symbols is adding something to an object you might not own, and you might not want to collide with any other keys of object, so creating a new one and adding it as property to that object using Symbol is the safest. Also, when a Symbol value is added to an object; no one else will know how to get it.
 
 ```javascript
 class Person {
@@ -178,6 +175,6 @@ class Person {
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+* [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 

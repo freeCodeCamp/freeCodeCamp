@@ -17,9 +17,9 @@ The thought process for responsive design should be:
 ### The basic syntax
 
 ```css
-    @media only screen and (min-width: 768px) {
-      p {padding: 30px;}
-    }
+@media only screen and (min-width: 768px) {
+  p {padding: 30px;}
+}
 ```
 
 `p` tags will have 30px of padding when the screen width is at least 768px.
@@ -28,9 +28,9 @@ The thought process for responsive design should be:
 
 
 ```css
-  @media only screen and (min-height: 768px) and (orientation: landscape) {
-    p {padding: 30px;}
-  }
+@media only screen and (min-height: 768px) and (orientation: landscape) {
+  p {padding: 30px;}
+}
 ```
 
 `p` tags will have 30px of padding when the screen width is at least 768px AND its orientation is landscape.
@@ -38,9 +38,9 @@ The thought process for responsive design should be:
 ### The OR syntax
 
 ```css
-    @media only screen and (min-width: 768px), (min-resolution: 150dpi) {
-      p {padding: 30px;}
-    }
+@media only screen and (min-width: 768px), (min-resolution: 150dpi) {
+  p {padding: 30px;}
+}
 ```
 
 `p` tags will have 30px of padding when the screen width is at least 768px OR its resolution reaches 150dpi.
@@ -53,25 +53,27 @@ Beyond their core use for mobile-first web design, media queries can also greatl
 
 1. Adjusting for screen readers that convert website text to speech for people with visual impairments (for example, ignoring non-essential text).
 ```css
-    @media speech {
-      /* ... */
-    }
+  @media speech {
+    /* ... */
+  }
 ```
+
 2. Allowing for more graceful zooming in for people with visual impairments.
+
 3. Allowing smoother experiences for those who prefer or need less animation to read a page.
 ```css
-    @media (prefers-reduced-motion: reduce) {
-      .animation {
-        animation: none;
-        -webkit-animation: none;
-      }
+  @media (prefers-reduced-motion: reduce) {
+    .animation {
+      animation: none;
+      -webkit-animation: none;
     }
+  }
 ```
 4. Restyling a page for printing as opposed to reading on a screen.
 ```css
-    @media print {
-      /* ... */
-    }
+  @media print {
+    /* ... */
+  }
 ```
 
 ### More Information
