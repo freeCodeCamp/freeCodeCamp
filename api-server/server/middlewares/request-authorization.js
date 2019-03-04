@@ -1,5 +1,6 @@
-import loopback from 'loopback';
 import { isEmpty } from 'lodash';
+
+import { getUserById as _getUserById } from '../utils/user-stats';
 import {
   getAccessTokenFromRequest,
   errorTypes,
@@ -63,7 +64,6 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
         return getUserById(userId)
           .then(user => {
             if (user) {
-              user.points = user.progressTimestamps.length;
               req.user = user;
             }
             return;
@@ -76,15 +76,3 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
     }
     return Promise.resolve(next());
   };
-
-export function _getUserById(id) {
-  const User = loopback.getModelByType('User');
-  return new Promise((resolve, reject) =>
-    User.findById(id, (err, instance) => {
-      if (err) {
-        return reject(err);
-      }
-      return resolve(instance);
-    })
-  );
-}

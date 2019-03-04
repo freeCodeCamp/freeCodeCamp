@@ -1,10 +1,13 @@
+import loopback from 'loopback';
 import compose from 'lodash/fp/compose';
 import map from 'lodash/fp/map';
 import sortBy from 'lodash/fp/sortBy';
 import trans from 'lodash/fp/transform';
 import last from 'lodash/fp/last';
 import forEachRight from 'lodash/fp/forEachRight';
+import { isEmpty } from 'lodash';
 import moment from 'moment-timezone';
+
 import { dayCount } from '../utils/date-utils';
 
 const transform = trans.convert({ cap: false });
@@ -99,4 +102,55 @@ export function calcLongestStreak(cals, tz = 'UTC') {
   );
 
   return dayCount(longest, tz);
+}
+
+export function getUserById(id, User = loopback.getModelByType('User')) {
+  return new Promise((resolve, reject) =>
+    User.findById(id, (err, instance) => {
+      if (err || isEmpty(instance)) {
+        return reject(err || 'No user instance found');
+      }
+      instance.points =
+        (instance.progressTimestamps && instance.progressTimestamps.length) ||
+        1;
+      let completedChallengeCount = 0;
+      let completedProjectCount = 0;
+      if ('completedChallenges' in instance) {
+        completedChallengeCount = instance.completedChallenges.length;
+        instance.completedChallenges.forEach(item => {
+          if (
+            'challengeType' in item &&
+            (item.challengeType === 3 || item.challengeType === 4)
+          ) {
+            completedProjectCount++;
+          }
+        });
+      }
+      instance.completedChallengeCount = completedChallengeCount;
+      instance.completedProjectCount = completedProjectCount;
+      instance.completedCertCount = getCompletedCertCount(instance);
+      instance.completedLegacyCertCount = getLegacyCertCount(instance);
+      instance.completedChallenges = [];
+      delete instance.progressTimestamps;
+      return resolve(instance);
+    })
+  );
+}
+
+function getCompletedCertCount(user) {
+  return [
+    'isApisMicroservicesCert',
+    'is2018DataVisCert',
+    'isFrontEndLibsCert',
+    'isInfosecQaCert',
+    'isJsAlgoDataStructCert',
+    'isRespWebDesignCert'
+  ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
+}
+
+function getLegacyCertCount(user) {
+  return ['isFrontEndCert', 'isBackEndCert', 'isDataVisCert'].reduce(
+    (sum, key) => (user[key] ? sum + 1 : sum),
+    0
+  );
 }

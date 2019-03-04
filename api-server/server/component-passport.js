@@ -7,6 +7,7 @@ import {
 import url from 'url';
 import dedent from 'dedent';
 
+import { getUserById } from './utils/user-stats';
 import { homeLocation } from '../../config/env';
 import passportProviders from './passport-providers';
 import { setAccessTokenToResponse } from './utils/getSetAccessToken';
@@ -15,28 +16,6 @@ const passportOptions = {
   emailOptional: true,
   profileToUser: null
 };
-
-const fields = {
-  progressTimestamps: false
-};
-
-function getCompletedCertCount(user) {
-  return [
-    'isApisMicroservicesCert',
-    'is2018DataVisCert',
-    'isFrontEndLibsCert',
-    'isInfosecQaCert',
-    'isJsAlgoDataStructCert',
-    'isRespWebDesignCert'
-  ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
-}
-
-function getLegacyCertCount(user) {
-  return ['isFrontEndCert', 'isBackEndCert', 'isDataVisCert'].reduce(
-    (sum, key) => (user[key] ? sum + 1 : sum),
-    0
-  );
-}
 
 PassportConfigurator.prototype.init = function passportInit(noSession) {
   this.app.middleware('session:after', passport.initialize());
@@ -50,62 +29,15 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
   // Serialization and deserialization is only required if passport session is
   // enabled
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
-  });
+  passport.serializeUser((user, done) => done(null, user.id));
 
-  passport.deserializeUser((id, done) => {
-    this.userModel.findById(id, { fields }, (err, user) => {
-      if (err || !user) {
-        return done(err, user);
-      }
-
-      return this.app.dataSources.db.connector
-        .collection('user')
-        .aggregate([
-          { $match: { _id: user.id } },
-          { $project: { points: { $size: '$progressTimestamps' } } }
-        ])
-        .get(function(err, [{ points = 1 } = {}]) {
-          if (err) {
-            console.error(err);
-            return done(err);
-          }
-          user.points = points;
-          let completedChallengeCount = 0;
-          let completedProjectCount = 0;
-          if ('completedChallenges' in user) {
-            completedChallengeCount = user.completedChallenges.length;
-            user.completedChallenges.forEach(item => {
-              if (
-                'challengeType' in item &&
-                (item.challengeType === 3 || item.challengeType === 4)
-              ) {
-                completedProjectCount++;
-              }
-            });
-          }
-          user.completedChallengeCount = completedChallengeCount;
-          user.completedProjectCount = completedProjectCount;
-          user.completedCertCount = getCompletedCertCount(user);
-          user.completedLegacyCertCount = getLegacyCertCount(user);
-          user.completedChallenges = [];
-          return done(null, user);
-        });
-    });
+  passport.deserializeUser(async (id, done) => {
+    const user = await getUserById(id).catch(done);
+    return done(null, user);
   });
 };
 
 export function setupPassport(app) {
-  // NOTE(Bouncey): Not sure this is doing much now
-  // Loopback complains about userCredentialModle when this
-  // setup is remoed from server/server.js
-  //
-  // I have split the custom callback in to it's own export that we can use both
-  // here and in boot:auth
-  //
-  // Needs more investigation...
-
   const configurator = new PassportConfigurator(app);
 
   configurator.setupModels({
