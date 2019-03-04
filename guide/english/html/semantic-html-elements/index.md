@@ -53,3 +53,4 @@ Developers use semantic elements to improve the following:
 
 #### More Information:
 Refer to the [MDN Web Docs article](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines) about HTML sections and outlines.
+For some history, this 2001 [article in Scientific American](https://www-sop.inria.fr/acacia/cours/essi2006/Scientific%20American_%20Feature%20Article_%20The%20Semantic%20Web_%20May%202001.pdf) about the semantic web was co-authored by Tim Berners-Lee, the inventor of the World Wide Web.
