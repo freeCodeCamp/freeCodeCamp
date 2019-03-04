@@ -79,4 +79,7 @@ background: linear-gradient(to right,red 45%, yellow 45%);
 Here the transition from red to yellow will start at 45% and finish at 45%.
 
 
-**More information:** [Linear-gradient on Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+**More resources:**
+
+- [Linear-gradient on Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+- [Linear Gradient Generator](https://uigradients.com/)
