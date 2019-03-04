@@ -6,7 +6,7 @@ You can use a CSS linear gradient to make colors transition or fade from one col
 
 
 ### Syntax 
-To create a linear gradient you must define at least two color stops.(They are the colors the transitions are created from). It is declared on either the `background` or `background-image` properties.
+To create a linear gradient you must define at least two color stops. A color stop is the location in the gradient where a specified color is shown. A linear gradient may be declared on either the `background` or `background-image` properties.
 ```css
 background: linear-gradient(direction, colour-stop1, colour-stop2, ...);
 ```
@@ -39,7 +39,7 @@ Here's a sample for a gradient starting at top-left
 ### Using Angles to Specify Direction of the gradient
 You can also use angles, to be more accurate in specifying the direction of the gradient:
 ```css
-background: linear-gradient(angle, colour-stop1, colour-stop2);
+background: linear-gradient(angle, color-stop1, color-stop2);
 ```
 The angle is specified as an angle between a horizontal line and the gradient line.
 ```css
@@ -70,7 +70,7 @@ In this case, the transition from red to yellow will start at 5px and finish at 
 
 
 ### Hard color stops
-You can not only use gradients to transition with fading colors, but you can also use it to change from one solid color to another solid color instantly
+You can not only use gradients to transition with fading colors, but you can also use it to change from one solid color to another solid color instantly.
 ```css
 background: linear-gradient(to right,red 45%, yellow 45%);
 ```
