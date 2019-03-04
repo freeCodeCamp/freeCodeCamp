@@ -43,7 +43,7 @@ using namespace std;
 
 * The first line tells the computer to use the `iostream` header file for this specific program. A header file is a separate file with pre-written C++ code. There are many other header files which are required for a specific program to run properly. For example, `math`, `vector`, `string`, etc. Header files are generally represented by a `.h` extension, when including standard library header files you don't include the `.h` extension.
 * The `iostream` header contains the public interface for the input-output stream from the standard library. The `iostream` file contains code for allowing the computer to take input and generate an output, using the C++ language.
-* The second line tells the computer to use the standard namespace which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
+* The second line tells the computer to use the standard namespace, which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
 
 #### Line 3 and 4
 
@@ -52,7 +52,7 @@ int main()
 {
 ```
 
-* C++ starts execution of a program from the -main function- `int main()` . During execution, the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
+* C++ starts execution of a program from the -main function- `int main()`. During execution, the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
   **NOTE : Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
 * Line 4 indicates the start of the main() function. 
 
@@ -76,8 +76,8 @@ int main()
 
 **NOTE : Every statement except the main function definition and the #include directive needs to be ended by the semicolon. Without a ";", you may encounter a compiler error.**
 
-* `return 0;` safely terminates the current function i.e. 'main()' in this case and since no function follows after 'main()' the program is terminated. 
-* Don't forget to tell the computer that this is end of the main() function. To do this , you add the closing curly brace "}". You will encounter compiler error before program execution if you do not include the **}** .
+* `return 0;` safely terminates the current function i.e. `main()` in this case and since no function follows after 'main()' the program is terminated. 
+* Don't forget to tell the computer that this is end of the `main()` function. To do this, you add the closing curly brace `}`. You will encounter compiler error before program execution if you do not include the `}`.
 
 ### The code should look something like this:
 
