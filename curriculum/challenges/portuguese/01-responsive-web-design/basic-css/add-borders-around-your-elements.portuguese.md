@@ -2,7 +2,6 @@
 id: bad87fee1348bd9bedf08813
 title: Add Borders Around Your Elements
 challengeType: 0
-guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/add-borders-around-your-elements'
 videoUrl: ''
 localeTitle: Adicionar bordas ao redor de seus elementos
 ---
