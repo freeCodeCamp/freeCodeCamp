@@ -121,8 +121,7 @@ describe('getSetAccessToken', () => {
   });
 
   describe('setAccessTokenToResponse', () => {
-    it('sets three cookies in the response', () => {
-      expect.assertions(3);
+    it('sets a jwt access token cookie in the response', () => {
       const req = mockReq();
       const res = mockRes();
 
@@ -133,24 +132,6 @@ describe('getSetAccessToken', () => {
       expect(res.cookie.getCall(0).args).toEqual([
         'jwt_access_token',
         expectedJWT,
-        {
-          signed: false,
-          domain: 'localhost',
-          maxAge: accessToken.ttl
-        }
-      ]);
-      expect(res.cookie.getCall(1).args).toEqual([
-        'access_token',
-        accessToken.id,
-        {
-          signed: false,
-          domain: 'localhost',
-          maxAge: accessToken.ttl
-        }
-      ]);
-      expect(res.cookie.getCall(2).args).toEqual([
-        'userId',
-        accessToken.userId,
         {
           signed: false,
           domain: 'localhost',
