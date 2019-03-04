@@ -33,7 +33,7 @@ The thought process for responsive design should be:
 }
 ```
 
-`p` tags will have 30px of padding when the screen width is at least 768px AND its orientation is landscape.
+`p` tags will have 30px of padding when the screen height is at least 768px AND its orientation is landscape.
 
 ### The OR syntax
 
