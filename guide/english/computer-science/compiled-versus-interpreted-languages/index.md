@@ -49,10 +49,10 @@ Modern programs should not need to use the eval function. The behaviour can usua
 
 **Most command line tools, CLIs, and shells can theoretically be classified as interpreted languages.**
 
-### Syntax error handling
+### Semantic error handling
 
 #### Compiled Languge
-A Compiled program is guaranteed to be free of syntax errors and type errors, but not logical errors. If a program has a syntax error, it ***WILL NOT*** compile. Note that it is still possible to make logic, or other kinds of errors.
+A Compiled program is guaranteed to be free of syntax and semantic, but not logical errors. If a program has a syntax or semantic error, it ***WILL NOT*** compile. Note that it is still possible to make logic, or other kinds of errors.
 For Example:
 ```Java
 String a = "xyz";
