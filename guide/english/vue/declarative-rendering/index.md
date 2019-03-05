@@ -20,14 +20,14 @@ When jumping to production, this:
 ```
 
 As mentioned before, you can also install the `vue-cli`, but this is not
-recomended for beginners.
+recommended for beginners.
 
 ## Declarative Rendering
 
 Vue.js is a great tool for creating dynamic pages, and a first way to get in
 touch with that is what's called Declarative Rendering.
 
-The use of term "declarative" intends to straighten this concept to
+The use of term "declarative" tends to straighten this concept to
 declarative languages, such as SQL: you order something, it's not implied
 any implementation. Vue.js allows you to declare what data you want to be
 rendered, as simply as that:
@@ -47,12 +47,12 @@ let app = new Vue({
 });
 ```
 
-With those snipets, you're telling Vue to dynamically render whatever is stored
+With those snippets, you're telling Vue to dynamically render whatever is stored
 inside `message` variable. And the fun: whenever `message` is changed,
 Vue.js manages to reload that specific part of the DOM and you see the
 change. 
 
-If you want to try this reactivity out, open the console and change de value
+If you want to try this reactivity out, open the console and change the value
 of `app.message` to, say, `"Hello from console"`. Did you notice the change in
 the page?
 
@@ -66,7 +66,7 @@ will result in `hello`:
 </div>
 ```
 
-There're cases which what we want is to set an attribute using our Vue app's
+There are cases in which what we want is to set an attribute using our Vue app's
 variable.  You might think that the same syntax applies, but Vue has something
 specific for that, what we call "binding".
 

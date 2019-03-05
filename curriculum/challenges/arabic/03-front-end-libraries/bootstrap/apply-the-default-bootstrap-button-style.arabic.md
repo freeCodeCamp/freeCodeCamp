@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908850
 title: Apply the Default Bootstrap Button Style
 challengeType: 0
-guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/apply-the-default-bootstrap-button-style'
 videoUrl: ''
 localeTitle: ''
 ---

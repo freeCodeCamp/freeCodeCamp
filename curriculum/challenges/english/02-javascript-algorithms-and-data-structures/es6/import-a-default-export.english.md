@@ -22,8 +22,8 @@ In the following code, please import the default export, <code>subtract</code>, 
 
 ```yml
 tests:
-  - text: Properly imports <code>export default</code> method.
-    testString: getUserInput => assert(getUserInput('index').match(/import\s+subtract\s+from\s+"math_functions"/g), 'Properly imports <code>export default</code> method.');
+  - text: You need to properly import <code>subtract</code> from <code>"math_functions"</code>.
+    testString: getUserInput => assert(getUserInput('index').match(/import\s+subtract\s+from\s+('|")math_functions\1/g), 'You need to properly import <code>subtract</code> from <code>"math_functions"</code>.');
 
 ```
 
@@ -45,15 +45,16 @@ subtract(7,4);
 <div id='js-setup'>
 
 ```js
-window.require = function(str) {
-if (str === 'math_functions') {
-return function(a, b) {
-return a - b;
-}}};
+self.require = function(str) {
+  if (str === 'math_functions') {
+    return function(a, b) {
+      return a - b;
+    }
+  }
+};
 ```
 
 </div>
-
 
 </section>
 
@@ -61,6 +62,8 @@ return a - b;
 <section id='solution'>
 
 ```js
-// solution required
+import subtract from "math_functions";
+subtract(7,4);
 ```
+
 </section>
