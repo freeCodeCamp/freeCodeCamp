@@ -23,14 +23,3 @@ When writing a problem statement, you might first ask the following questions (r
 and finally, 6. HOW does the user perfom this task?
 
 Once you have identified your user's problem, you can structure your problem statement. This statement is important as it will be how you go about formulating possible solutions to the issue.
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/user-experience-research/defining-the-problem/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
