@@ -57,7 +57,7 @@ Sin - The sine trigonometric expression.
    
 2. If two sides of a triangle are known to be 3 and 6, and the angle between them is 30 degrees, what is the angle of the triangle?
 
-   Area = 0.5 x 3 x 6 x sin(30 degrees) = 4.5 units<sup>2</sup>
+   Area = 0.5 x 3 x 6 x sin 30° = 4.5 units<sup>2</sup>
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->

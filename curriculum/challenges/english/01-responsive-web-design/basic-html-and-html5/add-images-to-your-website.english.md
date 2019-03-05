@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08812
 title: Add Images to Your Website
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-images-to-your-website'
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 ---
 
@@ -68,17 +67,13 @@ tests:
 ## Solution
 <section id='solution'>
 
-<div id='html-seed'>
-
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="cat_img"></img>
-
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
-
-</div>
 ```
+
 </section>

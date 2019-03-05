@@ -7,17 +7,20 @@ import {
 } from 'react-stripe-elements';
 import { ControlLabel, FormGroup } from '@freecodecamp/react-bootstrap';
 
+import '../Donation.css';
+
 const propTypes = {
   getValidationState: PropTypes.func.isRequired
 };
 
 const style = {
   base: {
-    color: '#006400'
+    color: '#006400',
+    fontSize: '18px'
   }
 };
 
-class StripCardForm extends Component {
+class StripeCardForm extends Component {
   constructor(...props) {
     super(...props);
 
@@ -74,23 +77,35 @@ class StripCardForm extends Component {
     return (
       <div className='donation-elements'>
         <FormGroup>
-          <ControlLabel>Card Number:</ControlLabel>
-          <CardNumberElement onChange={this.handleInputChange} style={style} />
+          <ControlLabel>Your Card Number:</ControlLabel>
+          <CardNumberElement
+            className='form-control donate-input-element'
+            onChange={this.handleInputChange}
+            style={style}
+          />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Card Expiry:</ControlLabel>
-          <CardExpiryElement onChange={this.handleInputChange} style={style} />
+          <ControlLabel>Your Card Expiration Month:</ControlLabel>
+          <CardExpiryElement
+            className='form-control donate-input-element'
+            onChange={this.handleInputChange}
+            style={style}
+          />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Card CVC (3-digit security number):</ControlLabel>
-          <CardCVCElement onChange={this.handleInputChange} style={style} />
+          <ControlLabel>Your Card CVC (3-digit security number):</ControlLabel>
+          <CardCVCElement
+            className='form-control donate-input-element'
+            onChange={this.handleInputChange}
+            style={style}
+          />
         </FormGroup>
       </div>
     );
   }
 }
 
-StripCardForm.displayName = 'StripCardForm';
-StripCardForm.propTypes = propTypes;
+StripeCardForm.displayName = 'StripeCardForm';
+StripeCardForm.propTypes = propTypes;
 
-export default StripCardForm;
+export default StripeCardForm;

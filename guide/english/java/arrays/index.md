@@ -4,9 +4,9 @@ title: Arrays
 
 # Array
 
-An Array is a collection of values (or objects) of similar data types (primitive and reference, both form of data types are allowed) held in sequential memory addresses.
-All the variables in the array must be of the same type, declared at instantiation.
-Arrays always start with the index of 0 and are instantiated to a set number of indexes. 
+An Array is a collection of values (or objects) of similar datatypes (both primitive and reference datatypes are allowed) held in sequential memory addresses.
+All the variables in the array must be of the same type, declared at instantiation. Failure to remain consistent with the type will lead to compilation errors.
+Arrays always start with an index of 0 and are instantiated to a set number of indexes. To clarify, an array that is instantiated will be created to hold a certain number of variables. The number of variables that can be held in an array is not mutable.
 
 **Syntax:**
 
@@ -28,14 +28,21 @@ Above code snippet instantiates 2 arrays of double type named list1 and list2.
 ```java
 double list1[], list2; // works but not preferred way
 ```
-Above code snippet an array of datatype double named list1 and a simple variable of datatype double named list2 (Don't be confused by the name **list2**. Variables names have nothing to do with the type of variable).
+
+Above code snippet an array of datatype double named list1 and a simple variable of datatype double named list2 (Don't be confused by the name **list2**. Variable names have nothing to do with the type of variable).
 
 Note: The style `double list[]` is not preferred as it comes from the C/C++ language and was adopted in Java to accommodate C/C++ programmers. Additionally it's more readable to use the style `double[] list`: you can easily read that it's a "double array named list" other than "a double called list that is an array."
 
 ## Creating Arrays:
 
 ```java
-dataType[] arrayName = new dataType[arraySize];
+dataType[] arrayName = new dataType[arraySize]; //Preferable
+```
+
+OR
+
+```java
+datatype arrayName[] = new dataType[arraySize]; //Not preferable
 ```
 Here we have declared and initialized the array in one step. We could have also written it in two parts with one step being the declaration of array followed by the initialization of array. By default, all memory locations allocated to the array is initialized to its default values, depending upon the datatype.
 
@@ -43,6 +50,8 @@ Here we have declared and initialized the array in one step. We could have also 
 
 ```java
 double[] List = new double[10];
+String[] words = new String[20];
+int[] numbers = new int[100];
 ```
  We are creating a array variable named `List` of type double and allocating it 10 memory locations. This double datatype array is initialized to `0.0` by default.
 
@@ -61,6 +70,11 @@ The code above is equivalent to:
 double[] list = new double[4];
 *IMPORTANT NOTE: Please note the difference between the types of brackets
 that are used to represent arrays in two different ways.
+
+String[] rainbow = {"red", "orange", "yellow", "green", "blue", "purple"};
+
+The code above is equivalent to:
+String[] rainbow = new String[6];
 ```
 
 ## Declaring array literal
@@ -92,6 +106,8 @@ Output:
 ## Modifying Arrays:
 ```java
 arrayName[index] = value; 
+
+rainbow[0] = "red";
 ```
 
 Note: You cannot change the size or type of an array after initializing it.
@@ -99,6 +115,13 @@ Note: You can however reset the array like so
 
 ```java
 arrayName = new dataType[] {value1, value2, value3};
+```
+
+However, there is a way to increase the size of an array, with the cost one one more variable, as below:
+
+```java
+arrayName = new dataType[] {value1, value2, value3, value4, value5} // five values
+newArray = arrays.copyOf(arrayName, 10) // creates a new array that has all of the previous array's elements, including 5 new spaces for more values
 ```
 
 ## Size of Arrays:
@@ -133,7 +156,7 @@ Output:
 
 
 ### Multi-dimensional Arrays
-Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualize the array for better problem-solving. The values are actually stored in sequential memory addresses only.
+Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualize the array for better problem-solving. The values are actually stored in sequential memory addresses only. Additionally, their coordinate system is different from cartesian coordinates in that array values are referenced row then column.
 ```java
 int M = 5;
 int N = 5;
@@ -144,7 +167,7 @@ for(int i = 0; i < M; i++) {
     }
 }
 ```
-This loop will execute M ^ N times and will build this:
+This loop will execute M * N times and will build this:
 ```java
 [ 0 | 1 | 2 | 3 | 4 ]  
 [ 0 | 1 | 2 | 3 | 4 ]  
@@ -164,7 +187,7 @@ In a similar manner, one can declare an array of as many dimensions as desired, 
 Tip: Arrays like this can be quite confusing, especially to beginners, so if you are planning to use this, be prepared to make a visual representation either in your head or on pen and paper.
 
 ### Jagged Arrays
-Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. Here is an example:
+Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. They can be thought of as arrays which holds arrays. Here is an example:
 
 ```java
 int[][] array = new int[5][]; //initialize a 2D array with 5 rows

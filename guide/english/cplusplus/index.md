@@ -5,8 +5,8 @@ title: C++
 
 ## What is C++?
 
-* C++ is a general purpose programming language which has been used since the 1990's
-* It was designed by Bjarne Stroustrup under the name "C with classes".
+* C++ is a general purpose programming [Object-Oriented](https://en.wikipedia.org/wiki/Object-oriented_programming) language which has been used since the 1990's
+* It was designed as a thesis paper by [Bjarne Stroustrup](https://en.wikipedia.org/wiki/Bjarne_Stroustrup) under the name "C with Classes", which later became C++.
 * It is a version of C that includes Object-Oriented elements, including classes and functions.
 
 * It is considered one of the biggest programming languages, as you can see in the following image:
@@ -20,7 +20,7 @@ _source: Github_
 using namespace std;
 int main()
 {
-    cout << "Hello World" << endl;
+    cout << "Hello World!" << endl;
     return 0;
 }
 ```
@@ -41,9 +41,10 @@ Now, let's break down the code:
 using namespace std;
 ```
 
-* The first line tells the computer to use the "iostream" header file for this specific program. A header file is a separate file with prewritten C++ code. There are many other header files which are required for a specific program to run properly. For example, math, vector, string, etc. Header files are generally represented by a ".h" extension, when including standard library header files you don't include the ".h" extension.
-* The `iostream` header contains the public interface for the input-output stream from the standard library. The "iostream" file contains code for allowing the computer to take input and generate an output, using the C++ language.
-* The second line tells the computer to use the standard namespace which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
+* The first line tells the computer to use the `iostream` header file for this specific program. A header file is a separate file with pre-written C++ code. There are many other header files which are required for a specific program to run properly. For example, `math`, `vector`, `string`, etc. Header files are generally represented by a `.h` extension, when including standard library header files you don't include the `.h` extension.
+* The `iostream` header contains the public interface for the input-output stream from the standard library. The `iostream` file contains code for allowing the computer to take input and generate an output, using the C++ language.
+* The second line tells the computer to use the standard namespace, which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
+* While not including `std::` seems easier, it is not good practice to omit the namsespace. The benefit of putting the namespace in front is to ensure that functions with the same names but from different libraries can still run normally.
 
 #### Line 3 and 4
 
@@ -52,8 +53,8 @@ int main()
 {
 ```
 
-* C++ starts execution of a program from the -main function- `int main()` . During execution, the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
-  **NOTE : Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
+* C++ starts execution of a program from the -main function- `int main()`. During execution, the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
+  **NOTE: Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
 * Line 4 indicates the start of the main() function. 
 
 #### Lines 5, 6 & 7
@@ -71,13 +72,13 @@ int main()
 
 ***Challenge: Change Hello World to another sentence. What will be the output?***
 
-* `endl` is another symbol from the iostream library which means to **end this line and go to the next line during output** .   - _cout stands for "console output"_
+* `endl` is another symbol from the iostream library which means to **end this line and go to the next line during output**.   - _cout stands for "console output"_
 * Finally, finish the statement with a semicolon `;`.
 
 **NOTE : Every statement except the main function definition and the #include directive needs to be ended by the semicolon. Without a ";", you may encounter a compiler error.**
 
-* `return 0;` safely terminates the current function i.e. 'main()' in this case and since no function follows after 'main()' the program is terminated. 
-* Don't forget to tell the computer that this is end of the main() function. To do this , you add the closing curly brace "}". You will encounter compiler error before program execution if you do not include the **}** .
+* `return 0;` safely terminates the current function i.e. `main()` in this case and since no function follows after 'main()' the program is terminated. 
+* Don't forget to tell the computer that this is end of the `main()` function. To do this, you add the closing curly brace `}`. You will encounter compiler error before program execution if you do not include the `}`.
 
 ### The code should look something like this:
 

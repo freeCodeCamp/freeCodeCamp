@@ -13,8 +13,8 @@ In the simplest sense, parallel computing is the simultaneous use of **multiple 
 
 ### Why Parallelism
 - Faster, of course
-  - Finish the work earlier - Same work in less time
-  - Do more work - More work in the same time
+  - Finish the work earlier - Same work in less time.
+  - Do more work - More work in the same time.
 
 ### How to parallelize
 - Firstly, break down the computational part into small pieces.
@@ -65,7 +65,7 @@ In the simplest sense, parallel computing is the simultaneous use of **multiple 
 - Part (or all) of the memory is accessible to all processors.
 - Processors interact by modifying data objects stored in this shared-address-space.
 - If the time taken by a processor to access any memory word in the system (global or local) is 
-  - identical, then the platform is classiﬁed as a **uniform memory access (UMA)**,
+  - identical, then the platform is classiﬁed as a **uniform memory access (UMA)**.
   - not identical, then its classiﬁed as **non-uniform memory access (NUMA)** machine.
 
 ![Shared memory](https://computing.llnl.gov/tutorials/parallel_comp/images/sharedMemoryModel.gif) 
@@ -83,5 +83,7 @@ In the simplest sense, parallel computing is the simultaneous use of **multiple 
 
 #### More Information:
 - [Parallel Computing on Wikipedia](https://en.wikipedia.org/wiki/Parallel_computing)
+  - [Task (Functional) Parallelism](https://en.wikipedia.org/wiki/Task_parallelism)
+  - [Data (Domain) Parallelism](https://en.wikipedia.org/wiki/Data_parallelism)
 - [Introduction to Parallel Computing](https://computing.llnl.gov/tutorials/parallel_comp/)
 - [Introduction to Parallel Computing-Book](https://www-users.cs.umn.edu/~karypis/parbook/)

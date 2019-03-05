@@ -37,7 +37,8 @@ impaired.
 
 Non-semantic tags are tags that convey nothing about what they contain. Examples of non-semantic tags are: `<div>`, `<section>`, `<span>`, etc.
 
-Instead of using the generic `<div>` for every other container use the semantic tags such as `<header>` and `<footer>`. 
+Instead of using the generic `<div>` for every other container, use the semantic tags such as `<header>` and `<footer>`. These tags help people using screenreaders to navigate the page, and so makes the content more accessible for those with visual impairments.
+
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)

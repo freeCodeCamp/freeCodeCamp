@@ -23,7 +23,7 @@ Here's an example using the action attribute:
 <p>Controls will appear inside here.</p>
 </form>
 ```
-As you can see, the form is submitting its data to the URL [http://www.google.com/from.php](http://www.google.com/from.php).
+As you can see, the form is submitting its data to the URL [http://www.google.com/form.php](http://www.google.com/form.php).
 
 ###Method
 Forms can be submitted using either the GET or POST method.
