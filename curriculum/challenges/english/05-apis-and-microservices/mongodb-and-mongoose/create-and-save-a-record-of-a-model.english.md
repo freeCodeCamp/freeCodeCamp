@@ -17,7 +17,8 @@ Create a document instance using the <code>Person</code> constructor you built b
 // ...<br>
 person.save(function(err, data) {<br>
 &nbsp;&nbsp;//   ...do your stuff here...<br>
-});</blockquote>
+});
+</blockquote>
 </section>
 
 ## Tests
