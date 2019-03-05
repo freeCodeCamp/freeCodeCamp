@@ -3,9 +3,15 @@ title: A Target Attribute
 ---
 ## A Target Attribute
 
-The `<a target>` attribute specifies where to open the linked document in an `a` (anchor) tag.
+The `<a target>` attribute specifies where to open the linked document in an `<a>` (anchor) tag.
 <br>
  
+#### Syntax
+
+```html
+        <a target="_blank|_self|_parent|_top|framname">
+```
+   
 #### Examples:
 
 
@@ -39,7 +45,7 @@ A target attribute with the value of “_top” opens the linked document in the
 	<a href="https://www.freecodecamp.org" target="_top">freeCodeCamp</a>
 ```
 
-A target attribute with the value of _"framename"_ Opens the linked document in a specified named frame.
+A target attribute with the value of _"framename"_ opens the linked document in a specified named frame.
 
 ```html
 	<a href="https://www.freecodecamp.org" target="framename">freeCodeCamp</a>
