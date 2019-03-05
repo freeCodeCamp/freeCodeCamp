@@ -54,7 +54,7 @@ int main()
 ```
 
 * C++ starts execution of a program from the -main function- `int main()`. During execution, the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
-  **NOTE : Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
+  **NOTE: Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
 * Line 4 indicates the start of the main() function. 
 
 #### Lines 5, 6 & 7
@@ -72,7 +72,7 @@ int main()
 
 ***Challenge: Change Hello World to another sentence. What will be the output?***
 
-* `endl` is another symbol from the iostream library which means to **end this line and go to the next line during output** .   - _cout stands for "console output"_
+* `endl` is another symbol from the iostream library which means to **end this line and go to the next line during output**.   - _cout stands for "console output"_
 * Finally, finish the statement with a semicolon `;`.
 
 **NOTE : Every statement except the main function definition and the #include directive needs to be ended by the semicolon. Without a ";", you may encounter a compiler error.**
