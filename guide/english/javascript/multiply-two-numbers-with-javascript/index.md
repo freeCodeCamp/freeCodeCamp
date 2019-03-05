@@ -1,12 +1,12 @@
 ---
 title: Multiply Two Numbers with JavaScript
 ---
-JavaScript uses use the `*` symbol for multiplication.
+JavaScript uses the `*` symbol for multiplication.
 
 Here is an example:
 
     var product = 8 * 10;
     
-the 'product' would have the value '80' after this line.
+The variable `product` would have a value of `80` after this declaration.
 
-When making calculations it is possible to use parentheses to prioritise which numbers should be multiplied together.
+When making calculations, it is possible to use parentheses to prioritise which numbers should be multiplied together.
