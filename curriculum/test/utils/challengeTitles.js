@@ -20,7 +20,7 @@ class ChallengeTitles {
     The title ${title} is already assigned
     `);
     }
-    this.knownTitles = [ ...this.knownTitles, titleToCheck ];
+    this.knownTitles = [...this.knownTitles, titleToCheck];
   }
 }
 
