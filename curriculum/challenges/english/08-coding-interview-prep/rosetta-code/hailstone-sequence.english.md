@@ -6,21 +6,27 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>The Hailstone sequence of numbers can be generated from a starting positive integer,  n  by:</p>
- If  n  is   1   then the sequence ends.
- If  n  is  even then the next  n  of the sequence <code> = n/2 </code>
- If  n  is  odd   then the next  n  of the sequence <code> = (3 * n) + 1 </code><p>The (unproven) <a href="https://en.wikipedia.org/wiki/Collatz conjecture" title="wp: Collatz conjecture">Collatz conjecture</a> is that the hailstone sequence for any starting number always terminates.</p>
-<p>The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.</p>
-Task:
-Create a routine to generate the hailstone sequence for a number.
-Use the routine to show that the hailstone sequence for the number 27 has 112 elements starting with <code>27, 82, 41, 124</code> and ending with <code>8, 4, 2, 1</code>
-Show the number less than 100,000 which has the longest hailstone sequence together with that sequence's length.   (But don't show the actual sequence!)See also:
- <a href="http://xkcd.com/710" title="link: http://xkcd.com/710">xkcd</a> (humourous).
+The Hailstone sequence of numbers can be generated from a starting positive integer, n by:
+<ul>
+  <li>If n is <b>1</b> then the sequence ends.</li>
+  <li>If n is <b>even</b> then the next n of the sequence <code>= n/2</code></li>
+  <li>If n is <b>odd</b> then the next n of the sequence <code>= (3 * n) + 1</code></li>
+</ul>
+The (unproven) <a href="https://en.wikipedia.org/wiki/Collatz conjecture" title="wp: Collatz conjecture" target="_blank">Collatz conjecture</a> is that the hailstone sequence for any starting number always terminates.
+The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+<ol>
+  <li>Create a routine to generate the hailstone sequence for a number.</li>
+  <li>Use the routine to show that the hailstone sequence for the number 27 has 112 elements starting with <code>27, 82, 41, 124</code> and ending with <code>8, 4, 2, 1</code></li>
+  <li>Show the number less than 100,000 which has the longest hailstone sequence together with that sequence's length. (But don't show the actual sequence!)</li>
+</ol>
+<b>See also:</b>
+<ul>
+  <li><a href="http://xkcd.com/710" title="link: http://xkcd.com/710" target="_blank">xkcd</a> (humourous).</li>
+</ul>
 </section>
 
 ## Tests
@@ -44,7 +50,7 @@ tests:
 
 ```js
 // noprotect
-function hailstoneSequence () {
+function hailstoneSequence() {
   const res = [];
   // Good luck!
 

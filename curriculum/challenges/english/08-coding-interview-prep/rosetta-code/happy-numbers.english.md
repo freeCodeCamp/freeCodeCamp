@@ -6,14 +6,13 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>A happy number is defined by the following process:</p>
-<p>Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers.</p>
-<p>Implement a function that returns true if the number is happy, or false if not.</p>
+A <a href="https://en.wikipedia.org/wiki/Happy_number" target="_blank">happy number</a> is defined by the following process:
+Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals <b>1</b> (where it will stay), or it loops endlessly in a cycle which does not include <b>1</b>. Those numbers for which this process ends in <b>1</b> are happy numbers, while those that do not end in <b>1</b> are unhappy numbers.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement a function that returns true if the number is happy, or false if not.
 </section>
 
 ## Tests
@@ -58,7 +57,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function happy (number) {
+function happy(number) {
   // Good luck!
 }
 ```

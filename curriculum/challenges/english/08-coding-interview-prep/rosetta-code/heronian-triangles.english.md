@@ -6,18 +6,21 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p><a href="https://en.wikipedia.org/wiki/Heron's formula" title="wp: Heron's formula">Hero's formula</a> for the area of a triangle given the length of its three sides  <big> a,</big>  <big>b,</big>  and  <big>c</big>  is given by:</p><p><big>$$A = \sqrt{s(s-a)(s-b)(s-c)},$$</big></p><p>where  <big>s</big>  is half the perimeter of the triangle; that is,</p><p><big>$$s=\frac{a+b+c}{2}.$$</big></p>
-<p><a href="http://www.had2know.com/academics/heronian-triangles-generator-calculator.html" title="link: http://www.had2know.com/academics/heronian-triangles-generator-calculator.html">Heronian triangles</a> are triangles whose sides and area are all integers.</p>
-<p> An example is the triangle with sides  3, 4, 5  whose area is  6  (and whose perimeter is  12). </p>
-<p>Note that any triangle whose sides are all an integer multiple of  3, 4, 5;  such as  6, 8, 10,  will also be a Heronian triangle.</p><p>Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor</p>
-<p>of all three sides is  1  (unity).</p><p>This will exclude, for example, triangle  6, 8, 10.</p>
-Task:
-<p>Implement a function based on Hero's formula that returns the first <code>n<sub>th</sub></code> ordered triangles in an array of arrays.</p>
+<a href="https://en.wikipedia.org/wiki/Heron's formula" title="wp: Heron's formula" target="_blank">Hero's formula</a> for the area of a triangle given the length of its three sides <big> a,</big> <big>b,</big> and <big>c</big> is given by:
+<span style="margin-left: 2em;"><big>$A = \sqrt{s(s-a)(s-b)(s-c)},$</big></span>
+where <big>s</big> is half the perimeter of the triangle; that is,
+<span style="margin-left: 2em;"><big>$s=\frac{a+b+c}{2}.$</big></span>
+<a href="http://www.had2know.com/academics/heronian-triangles-generator-calculator.html" title="link: http://www.had2know.com/academics/heronian-triangles-generator-calculator.html" target="_blank">Heronian triangles</a> are triangles whose sides and area are all integers.
+An example is the triangle with sides <b>3, 4, 5</b> whose area is <b>6</b> (and whose perimeter is <b>12</b>).
+Note that any triangle whose sides are all an integer multiple of <b>3, 4, 5</b>; such as <b>6, 8, 10,</b> will also be a Heronian triangle.
+Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor
+of all three sides is <b>1</b> (unity).
+This will exclude, for example, triangle <b>6, 8, 10.</b>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement a function based on Hero's formula that returns the first <code>n<sub>th</sub></code> ordered triangles in an array of arrays.
 </section>
 
 ## Tests
@@ -47,7 +50,7 @@ tests:
 
 ```js
 // noprotect
-function heronianTriangle (n) {
+function heronianTriangle(n) {
   // Good luck!
 
   return [];
@@ -81,7 +84,7 @@ const res = [
 
 ```js
 // noprotect
-function heronianTriangle (n) {
+function heronianTriangle(n) {
   const list = [];
   const result = [];
 

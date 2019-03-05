@@ -6,15 +6,15 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>The <a href="http://mathworld.wolfram.com/HarshadNumber.html" title="link: http://mathworld.wolfram.com/HarshadNumber.html">Harshad</a> or Niven numbers are positive integers ≥ 1 that are divisible by the sum of their digits.</p><p>For example,  42  is a <a href="http://rosettacode.org/wiki/oeis:A005349" title="oeis:A005349">Harshad number</a> as  42  is divisible by  (4 + 2)  without remainder.</p>
+The <a href="http://mathworld.wolfram.com/HarshadNumber.html" title="link: http://mathworld.wolfram.com/HarshadNumber.html" target="_blank">Harshad</a> or Niven numbers are positive integers ≥ 1 that are divisible by the sum of their digits.
+For example, <b>42</b> is a <a href="http://rosettacode.org/wiki/oeis:A005349" title="oeis:A005349" target="_blank">Harshad number</a> as <b>42</b> is divisible by <b>(4 + 2)</b> without remainder.
 Assume that the series is defined as the numbers in increasing order.
-Task:
-<p>Implement a function to generate successive members of the Harshad sequence.</p><p>Use it to list the first twenty members of the sequence and list the first Harshad number greater than 1000.</p>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement a function to generate successive members of the Harshad sequence.
+Use it to list the first twenty members of the sequence and list the first Harshad number greater than 1000.
 </section>
 
 ## Tests
@@ -37,7 +37,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isHarshadOrNiven () {
+function isHarshadOrNiven() {
   const res = {
     firstTwenty: [],
     firstOver1000: undefined

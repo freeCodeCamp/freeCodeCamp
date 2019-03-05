@@ -6,23 +6,31 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>These two sequences of positive integers are defined as:</p>
-<p><big>$$R(1)=1\ ;\ S(1)=2 \\R(n)=R(n-1)+S(n-1), \quad n>1.$$</big></p>
-<p>The sequence <big>$S(n)$</big> is further defined as the sequence of positive integers not present in <big>$R(n)$</big>.</p><p>Sequence <big>$R$</big> starts:</p>
-<p>1, 3, 7, 12, 18, ...</p>
-<p>Sequence <big>$S$</big> starts:</p>
-<p>2, 4, 5, 6, 8, ...</p>
-Task:
-Create two functions named ffr and ffs that when given n return R(n) or S(n) respectively.(Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
-No maximum value for n should be assumed.
-Sloane's <a href="http://oeis.org/A005228" title="link: http://oeis.org/A005228">A005228</a> and <a href="http://oeis.org/A030124" title="link: http://oeis.org/A030124">A030124</a>.
-<a href="http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" title="link: http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html">Wolfram MathWorld</a>
-Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences">Hofstadter Figure-Figure sequences</a>.
+These two sequences of positive integers are defined as:
+<span style="margin-left: 2em;"><big>$R(1)=1\ ;\ S(1)=2 \\R(n)=R(n-1)+S(n-1), \quad n>1.$</big></span>
+The sequence <big>$S(n)$</big> is further defined as the sequence of positive integers not present in <big>$R(n)$</big>.
+Sequence <big>$R$</big> starts:
+<pre>1, 3, 7, 12, 18, ...</pre>
+Sequence <big>$S$</big> starts:
+<pre>2, 4, 5, 6, 8, ...</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Create two functions named <b>ffr</b> and <b>ffs</b>  that when given <b>n</b> return <b>R(n)</b> or <b>S(n)</b> respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
+No maximum value for <b>n</b> should be assumed.
+<b>References</b>
+<ul>
+  <li>
+    Sloane's <a href="http://oeis.org/A005228" title="link: http://oeis.org/A005228" target="_blank">A005228</a> and <a href="http://oeis.org/A030124" title="link: http://oeis.org/A030124" target="_blank">A030124</a>.
+  </li>
+  <li>
+    <a href="http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" title="link: http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" target="_blank">Wolfram MathWorld</a>
+  </li>
+  <li>
+    Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" target="_blank">Hofstadter Figure-Figure sequences</a>.
+  </li>
+</ul>
 </section>
 
 ## Tests
