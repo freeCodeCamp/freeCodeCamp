@@ -6,10 +6,11 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Using two Arrays of equal length, create a Hash object where the elements from one array (the keys) are linked to the elements of the other (the values)</p>
-Related task:
- <a href="http://rosettacode.org/wiki/Associative arrays/Creation" title="Associative arrays/Creation">Associative arrays/Creation</a>
+Using two Arrays of equal length, create a Hash object where the elements from one array (the keys) are linked to the elements of the other (the values).
+<b>Related task:</b>
+<ul>
+  <li><a href="http://rosettacode.org/wiki/Associative arrays/Creation" title="Associative arrays/Creation" target="_blank">Associative arrays/Creation</a></li>
+</ul>
 </section>
 
 ## Instructions

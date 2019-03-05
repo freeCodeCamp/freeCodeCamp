@@ -6,16 +6,14 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>The <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp: Hofstadter_sequence#Hofstadter_Q_sequence">Hofstadter Q sequence</a> is defined as:</p>
-<p>$Q(1)=Q(2)=1, \\ Q(n)=Q\big(n-Q(n-1)\big)+Q\big(n-Q(n-2)), \quad n>2.$</p>
-<p>It is defined like the <a href="http://rosettacode.org/wiki/Fibonacci sequence" title="Fibonacci sequence">Fibonacci sequence</a>, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.</p>
-Task:
-Implement the Hofstadter Q Sequence equation into JavaScript
+The <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp: Hofstadter_sequence#Hofstadter_Q_sequence" target="_blank">Hofstadter Q sequence</a> is defined as:
+<span style="left-margin: 2em;">$Q(1)=Q(2)=1, \\ Q(n)=Q\big(n-Q(n-1)\big)+Q\big(n-Q(n-2)), \quad n>2.$</span>
+It is defined like the <a href="http://rosettacode.org/wiki/Fibonacci sequence" title="Fibonacci sequence" target="_blank">Fibonacci sequence</a>, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement the Hofstadter Q Sequence equation as a function. The function should accept number, <code>n</code>, and return an integer.
 </section>
 
 ## Tests
@@ -46,7 +44,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function hofstadterQ (n) {
+function hofstadterQ(n) {
   // Good luck!
   return n;
 }
