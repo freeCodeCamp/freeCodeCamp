@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     --tertiary-canvas: #e8e8eb;
     --secondary-canvas: #f5f6f7;
     --primary-canvas: white;
+    --theme-color:#0a0a2e;
   }
 
   @font-face {

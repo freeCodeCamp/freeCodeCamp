@@ -33,6 +33,6 @@ div .agreed p {
   color: darkgreen;
 }
 
-.btn-invert {
+.honesty-panel .btn-invert {
   color: var(--primary-canvas);
 }

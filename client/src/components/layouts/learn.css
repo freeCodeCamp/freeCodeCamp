@@ -2,22 +2,27 @@
   height: calc(100vh - var(--header-height));
 }
 
-#learn-app-wrapper .reflex-container.vertical .reflex-splitter:hover {
-  border-left: 2px solid #6b6d6f;
-  border-right: 2px solid #6b6d6f;
-  background-color: #6b6d6f;
+#learn-app-wrapper .reflex-container.vertical .reflex-splitter:hover,
+#learn-app-wrapper .reflex-container.horizontal .reflex-splitter:hover {
+  background-color: var(--tertiary-color);
 }
 
 #learn-app-wrapper .reflex-container.vertical > .reflex-splitter {
+  background-color: var(--quaternary-canvas);
   width: 5px;
-}
-
-#learn-app-wrapper .reflex-container.horizontal .reflex-splitter:hover {
-  border-top: 2px solid #6b6d6f;
-  border-bottom: 2px solid #6b6d6f;
-  background-color: #6b6d6f;
+  border: none;
 }
 
 #learn-app-wrapper .reflex-container.horizontal > .reflex-splitter {
   height: 5px;
+  background-color: var(--quaternary-canvas);
+  border: none;
+}
+
+#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter :before {
+  content: ' ';
+  display: block;
+  background-color: blue;
+  height: 20px;
+  width: 30px;
 }

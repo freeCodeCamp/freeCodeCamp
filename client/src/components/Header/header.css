@@ -68,7 +68,7 @@ header {
 #top-right-nav a:hover,
 #top-right-nav a:focus {
   background-color: #fff;
-  color: #6b6d6f;
+  color: var(--theme-color);
 }
 
 #top-right-nav {
@@ -97,7 +97,12 @@ header {
 
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
-  background-color: #fff;
+  background-color: var(--primary-canvas);
+  border-radius: 0px;
+}
+
+.ais-SearchBox-submitIcon > path {
+  fill: var(--quaternary-color) !important;
 }
 
 .fcc_searchBar {

@@ -12,6 +12,7 @@ const propTypes = {
 
 const options = {
   lineNumbers: false,
+  hideCursorInOverviewRuler: true,
   minimap: {
     enabled: false
   },
@@ -21,7 +22,8 @@ const options = {
   scrollbar: {
     horizontal: 'hidden',
     vertical: 'visible',
-    verticalHasArrows: true
+    verticalHasArrows: false,
+    verticalScrollbarSize: 5
   }
 };
 

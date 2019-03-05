@@ -70,6 +70,11 @@ class Editor extends Component {
     super(...props);
 
     this.options = {
+      scrollBeyondLastLine: false,
+      selectionHighlight: false,
+      overviewRulerBorder: false,
+      hideCursorInOverviewRuler: true,
+      renderIndentGuides: false,
       minimap: {
         enabled: false
       },
@@ -78,7 +83,9 @@ class Editor extends Component {
       scrollbar: {
         horizontal: 'hidden',
         vertical: 'visible',
-        verticalHasArrows: true
+        verticalHasArrows: false,
+        useShadows: false,
+        verticalScrollbarSize: 5
       }
     };
 

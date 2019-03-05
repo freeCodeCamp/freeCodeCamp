@@ -7,7 +7,6 @@ import ChallengeTitle from './Challenge-Title';
 import ChallengeDescription from './Challenge-Description';
 import ToolPanel from './Tool-Panel';
 import TestSuite from './Test-Suite';
-import Spacer from '../../../components/helpers/Spacer';
 
 import { initConsole, challengeTestsSelector } from '../redux';
 import { createSelector } from 'reselect';
@@ -72,7 +71,6 @@ export class SidePanel extends Component {
     } = this.props;
     return (
       <div className='instructions-panel' role='complementary'>
-        <Spacer />
         <div>
           <ChallengeTitle>{title}</ChallengeTitle>
           <ChallengeDescription

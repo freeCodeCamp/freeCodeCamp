@@ -58,11 +58,6 @@ h3 {
   color: #6b6d6f;
 }
 
-.btn-invert {
-  background-color: #fff;
-  color: #6b6d6f;
-}
-
 a {
   text-decoration: underline;
   color: var(--secondary-color);
@@ -92,13 +87,15 @@ a:focus {
 
 /* boostrap override */
 .btn {
-  background-color: var(--secondary-color);
-  border-color: var(--primary-color);
+  background-color: var(--primary-canvas);
+  border-width: 3px;
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
   border-radius: 0px;
 }
 
 .btn:hover {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 strong {
@@ -139,10 +136,19 @@ fieldset[disabled] .btn {
   border-radius: 0px;
 }
 
-.form-control:focus {
-  border-color: var(--tertiary-color);
+input {
+  outline: none;
+  border-color: var(--quaternary-canvas);
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0px;
 }
 
+.form-control:focus,
+input:focus {
+  border-color: var(--tertiary-color);
+}
 code {
   background-color: var(--tertiary-canvas);
   color: var(--tertiary-color);
@@ -154,4 +160,8 @@ code {
 }
 .help-block em {
   font-size: 0.9rem;
+}
+
+hr {
+  border-top: 1px solid var(--tertiary-canvas);
 }
