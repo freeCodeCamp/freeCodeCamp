@@ -91,9 +91,9 @@ The following represents two other examples using JavaScript and CSS syntax high
 
 Please keep the following recommendations in mind:
 
-- To ensure correct rendering, each codeblock must have a language label. You can find a list of supported languages [here](http://prismjs.com/#languages-list ).
+- To ensure correct rendering, each code block must have a language label. You can find a list of supported languages [here](http://prismjs.com/#languages-list ).
 - For codeblocks with no appropriate language, use generic labels like ` ```text `, or ` ```code `.
-- You may know about markdown's four-space indentation syntax for writing codeblocks. However, this is currently __not__ supported by our rendering system.
+- You may know about markdown's four-space indentation syntax for writing code blocks. However, this is currently __not__ supported by our rendering system.
 
 Finally, here are some suggested formatting guidelines when writing code blocks:
 
@@ -192,7 +192,7 @@ Typically, an attribution has a structure like the following:
 
 > Author Last Name, Author First Name. "Article Title." *Publication.* Publisher. Date Published. Date Accessed.
 
-If you cannot find an author or published date, which is common, simply omit these.
+If you cannot find an author or a publication date, which is common, simply omit these.
 
 Use of proper citations will not only keep the guide reputable, but these citations and links will also provide valuable resources should the reader want to learn more about the topic.
 
