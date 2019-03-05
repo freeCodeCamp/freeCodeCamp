@@ -27,17 +27,19 @@ Here is the text with the escape sequences written out.
 ```yml
 tests:
   - text: <code>myStr</code> should not contain any spaces
-    testString: assert(!/ /.test(myStr), '<code>myStr</code> should not contain any spaces');
+    testString: assert(!/ /.test(myStr));
   - text: <code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity)
-    testString: assert(/FirstLine/.test(myStr) && /SecondLine/.test(myStr) && /ThirdLine/.test(myStr), '<code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity)');
+    testString: assert(/FirstLine/.test(myStr) && /SecondLine/.test(myStr) && /ThirdLine/.test(myStr));
   - text: <code>FirstLine</code> should be followed by the newline character <code>\n</code>
-    testString: assert(/FirstLine\n/.test(myStr), '<code>FirstLine</code> should be followed by the newline character <code>\n</code>');
+    testString: assert(/FirstLine\n/.test(myStr));
   - text: <code>myStr</code> should contain a tab character <code>\t</code> which follows a newline character
-    testString: assert(/\n\t/.test(myStr), '<code>myStr</code> should contain a tab character <code>\t</code> which follows a newline character');
-  - text: <code>SecondLine</code> should be preceded by the backslash character <code>\\</code>
-    testString: assert(/\SecondLine/.test(myStr), '<code>SecondLine</code> should be preceded by the backslash character <code>\\</code>');
+    testString: assert(/\n\t/.test(myStr));
+  - text: <code>SecondLine</code> should be preceded by the backslash character <code>\</code>
+    testString: assert(/\\SecondLine/.test(myStr));
   - text: There should be a newline character between <code>SecondLine</code> and <code>ThirdLine</code>
-    testString: assert(/SecondLine\nThirdLine/.test(myStr), 'There should be a newline character between <code>SecondLine</code> and <code>ThirdLine</code>');
+    testString: assert(/SecondLine\nThirdLine/.test(myStr));
+  - text: <code>myStr</code> should only contain characters shown in the instructions
+    testString: assert(myStr === 'FirstLine\n\t\\SecondLine\nThirdLine');    
 
 ```
 
