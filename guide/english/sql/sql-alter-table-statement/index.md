@@ -35,7 +35,7 @@ Rename some columns:
 
 Remove a column:
 ```sql
-ALTER TABLE student DROP COLUMN studentNotes;
+ALTER TABLE table_name DROP COLUMN column_name;
 ```
 
 You can also use the alter table workbench tool. Just RIGHT click on the table you want to change and change as you wish.
