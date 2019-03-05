@@ -10,7 +10,7 @@ localeTitle: 使用浏览器Devtools调试JavaScript
 
 在进入调试之前，让我们泄漏一些有关FCC _真棒代码检查引擎的_秘密事实。
 
-我们使用自定义的[CodeMirror](http://codemirror.net/mode/javascript/index.html)作为代码编辑器。 [`eval()`函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)用于评估编辑器中表示为字符串的JavaScript代码。调用`eval()` ，浏览器将本机执行您的代码。我们将在本文后面的部分中了解更多为什么这个秘密很重要。
+我们使用自定义的[Monaco Editor](https://microsoft.github.io/monaco-editor)作为代码编辑器。 [`eval()`函数](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval)用于评估编辑器中表示为字符串的JavaScript代码。调用`eval()` ，浏览器将本机执行您的代码。我们将在本文后面的部分中了解更多为什么这个秘密很重要。
 
 ## 现在转向技巧：
 
