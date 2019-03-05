@@ -50,7 +50,7 @@ Line-by-Line Explanation of the above code:
 
 ## Infinite Loops:
 
-As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to  set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Use caution when setting logic parameters to prevent the infinite loop unless that is the desired output. 
+As previously noted, a `while` loop will run until the conditional logic is false. Because of this, it is important to  set a "false" condition within the executable code. If no false is included, the `while` loop will run infinitely. Use caution when setting logic parameters to prevent the infinite loop unless that is the desired output. 
 
 A simple example of this would be as follows:  
 
