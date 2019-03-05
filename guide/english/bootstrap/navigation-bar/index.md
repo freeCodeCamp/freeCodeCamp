@@ -3,7 +3,7 @@ title: Navigation Bar
 ---
 ## Navigation Bar
 
-The Bootstrap framework provides you with a feature call navigation bars. In short a navigation bar (also referred to navbars) is a header at the top of the page to display navigational information.
+The Bootstrap framework provides you with a feature called navigation bars. In short, a navigation bar (also referred to as a navbar) is a header at the top of the page to display navigational information.
 
 #### How To Use
 To use Bootstrap Navigation Bars you add a `<nav>` element to the top inside the `<body>` element of your webpage. There are various styles you can add to customize the display of your navbars.
@@ -32,7 +32,7 @@ Bootstrap provides a set of classes in the Bootstrap framework to style your nav
 * `navbar navbar-inverse` This is similar to the default style except the colors are inverted.
 
 #### Adding drop-down menus to the navbar
-You can include a drop down menu inside a navbar. This feature requires you to include Bootstrap's javascript file for it to work.
+You can include a drop-down menu inside a navbar. This feature requires you to include Bootstrap's javascript file for it to work.
 ```html
 <li class="dropdown">
   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Drop down

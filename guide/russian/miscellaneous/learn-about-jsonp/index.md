@@ -23,6 +23,6 @@ script.src = 'http://www.someWebApiServer.com/some-data?callback=my_callback';
 ### Дополнительная информация:
 
 *   [Wikipidea / JSONP](https://en.wikipedia.org/wiki/JSONP)
-*   [JSONP и JQuery](https://learn.jquery.com/ajax/working-with-jsonp)
-*   [Больше JSONP с JQuery](http://api.jquery.com/jquery.getjson/#jsonp)
+*   [JSONP и jQuery](https://learn.jquery.com/ajax/working-with-jsonp)
+*   [Больше JSONP с jQuery](http://api.jquery.com/jquery.getjson/#jsonp)
 *   [Ajax и JSONP](http://stackoverflow.com/questions/5943630/basic-example-of-using-ajax-with-jsonp)

@@ -36,26 +36,26 @@ This is by no means an exhaustive list but the links below will be able to give 
 
 | Character | Entity Name | Entity Number |	Description |
 |-------|-----------|-----------|-------|
-|       |           | `&#32;`   | Space |
-|   !   |           | `&#33;`   | Exclamation mark |
-|   "   |	          | `&#34;`   | Quotation mark |
-|   #   |	          | `&#35;`   | Number sign |
-|   $   |           | `&#36;`   | Dollar sign |
+|       | `&nbsp; ` | `&#32;`   | Space |
+|   !   | `&excl;`  | `&#33;`   | Exclamation mark |
+|   "   |	`&quot;`  | `&#34;`   | Quotation mark |
+|   #   |	`&num;`   | `&#35;`   | Number sign |
+|   $   | `&dollar;`| `&#36;`   | Dollar sign |
 |   ¢   | `&cent;`  | `&#162;`  | Cent sign |
 |   €   | `&euro;`  | `&#8364;` | Euro sign | 
 |   £   | `&pound;` | `&#163;`  | GBP sign |
 |   ¥   | `&yen;`   | `&#165;`  | Yen sign |
-|   %   |	          | `&#37;`   | Percent sign |
+|   %   |	`&percnt;`| `&#37;`   | Percent sign |
 |   &   |	`&amp;`	  | `&#38;`   | Ampersand |
-|   '   |  		      | `&#39;`  	| Apostrophe |
-|   (   |  		      | `&#40;`   | Opening/Left Parenthesis |
-|    )  |  		      | `&#41;`   | Closing/Right Parenthesis |
-|   *   |  		      | `&#42;`   | Asterisk |
-|   +   |  		      | `&#43;`   | Plus sign|
-|   ,   |   		    | `&#44;`  	| Comma |
-|   -   |	  	      | `&#45;`  	| Hyphen |
-|   .   |	  	      | `&#46;`  	| Period |
-|   /   |   	      | `&#47;`  	| Slash |
+|   '   | `&apos;`  | `&#39;`  	| Apostrophe |
+|   (   | `&lpar;`  | `&#40;`   | Opening/Left Parenthesis |
+|    )  | `&rpar;`  | `&#41;`   | Closing/Right Parenthesis |
+|   *   | `&ast;`   | `&#42;`   | Asterisk |
+|   +   | `&plus;`  | `&#43;`   | Plus sign|
+|   ,   | `&comma;` | `&#44;`  	| Comma |
+|   -   |	`&dash;`  | `&#45;`  	| Hyphen |
+|   .   |	`&period;`| `&#46;`  	| Period |
+|   /   | `&sol;`   | `&#47;`  	| Slash |
 |   ©   | `&copy;`  | `&#169;`  | Copyright |
 |   ®   | `&reg;`   | `&#174;`  | Registered Trademark |
 |   "   | `&quot;`  | `&#34;`   | double quotation mark |
