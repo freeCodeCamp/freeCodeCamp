@@ -4,7 +4,7 @@ title: Your first React App
 ## Your first React App
 ### Installation
 
-As specified in the previous artice (Installation), run the `Create React App` tool. After everything has finished, `cd` into the folder of your application and run `npm start`.
+As specified in the previous article (Installation), run the `Create React App` tool. After everything has finished, `cd` into the folder of your application and run `npm start`.
 This will start a development server and you are all set to start developing your app!
 
 - For node version 5.2+
