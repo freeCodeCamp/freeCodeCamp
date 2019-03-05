@@ -34,7 +34,9 @@ Rename some columns:
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table03.JPG?raw=true)
 
 Remove a column:
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table04.JPG?raw=true)
+```sql
+ALTER TABLE table_name DROP COLUMN column_name;
+```
 
 You can also use the alter table workbench tool. Just RIGHT click on the table you want to change and change as you wish.
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table05.JPG?raw=true)
