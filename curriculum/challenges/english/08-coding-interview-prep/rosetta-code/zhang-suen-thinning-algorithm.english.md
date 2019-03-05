@@ -68,8 +68,8 @@ All pixels are tested and pixels satisfying all the following conditions (simult
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
     <li>$A(P1) = 1$</li>
-    <li>At least one of P2 and P4 and P6 is white</li>
-    <li>At least one of P4 and P6 and P8 is white</li>
+    <li>At least one of <b>P2, P4 and P6</b> is white</li>
+    <li>At least one of <b>P4, P6 and P8</b> is white</li>
   </ol>
 After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
 
