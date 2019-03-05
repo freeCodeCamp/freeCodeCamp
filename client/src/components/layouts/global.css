@@ -94,6 +94,7 @@ a:focus {
 .btn {
   background-color: var(--secondary-color);
   border-color: var(--primary-color);
+  border-radius: 0px;
 }
 
 .btn:hover {
@@ -135,8 +136,22 @@ fieldset[disabled] .btn {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+  border-radius: 0px;
 }
 
 .form-control:focus {
   border-color: var(--tertiary-color);
+}
+
+code {
+  background-color: var(--tertiary-canvas);
+  color: var(--tertiary-color);
+  border-radius: 0px;
+  font-family: 'hackregular';
+}
+.panel {
+  border-radius: 0;
+}
+.help-block em {
+  font-size: 0.9rem;
 }

@@ -9,6 +9,7 @@
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   border: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
+  padding-left: 0;
 }
