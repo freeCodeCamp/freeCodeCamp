@@ -6,8 +6,6 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Compute the least common multiple of an array of intergers.
-Given  <i>m</i>  and  <i>n</i>,  the least common multiple is the smallest positive integer that has both  <i>m</i>  and  <i>n</i>  as factors.
 The least common multiple of 12 and 18 is 36, because 12 is a factor (12 &times; 3 = 36), and 18 is a factor (18 &times; 2 = 36), and there is no positive integer less than 36 that has both factors.  As a special case, if either  <i>m</i>  or  <i>n</i>  is zero, then the least common multiple is zero.
 One way to calculate the least common multiple is to iterate all the multiples of  <i>m</i>,  until you find one that is also a multiple of  <i>n</i>.
 If you already have  <i>gcd</i>  for <a href="http://rosettacode.org/wiki/greatest common divisor">greatest common divisor</a>,  then this formula calculates  <i>lcm</i>.
@@ -16,7 +14,8 @@ If you already have  <i>gcd</i>  for <a href="http://rosettacode.org/wiki/greate
 
 ## Instructions
 <section id='instructions'>
-
+Compute the least common multiple of an array of intergers.
+Given  <i>m</i>  and  <i>n</i>,  the least common multiple is the smallest positive integer that has both  <i>m</i>  and  <i>n</i>  as factors.
 </section>
 
 ## Tests
@@ -47,7 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function LCM (A) {
+function LCM(A) {
   // Good luck!
 }
 ```

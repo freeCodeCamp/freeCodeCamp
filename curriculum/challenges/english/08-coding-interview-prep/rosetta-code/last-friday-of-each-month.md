@@ -48,7 +48,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function lastFriday (year, month) {
+function lastFriday(year, month) {
   // Good luck!
 }
 ```

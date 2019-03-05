@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function maxCombine (xs) {
+function maxCombine(xs) {
   // Good luck!
 }
 ```

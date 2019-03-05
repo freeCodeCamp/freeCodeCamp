@@ -6,32 +6,26 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-  A positive integer is a <a href="https://en.wikipedia.org/wiki/Kaprekar number">Kaprekar number</a> if:
-  <ul>
-    <li>It is 1</li>
-    <li>The decimal representation of its square may be split once into two parts consisting of positive integers which
-      sum to the original number. </li>
-  </ul>
-  Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.Example
-  Kaprekar numbers:
-  <ul>
-    <li>$2223$ is a Kaprekar number, as $2223 * 2223 = 4941729$, $4941729$ may be split to $494$ and $1729$, and $494 +
-      1729 = 2223$.</li>
-    <li>The series of Kaprekar numbers is known as <a href="http://rosettacode.org/wiki/oeis:A006886">A006886</a>, and
-      begins as $1, 9, 45, 55, ...$.</li>
-  </ul>
-  <ul>
-    <li>$$2223$$ is a Kaprekar number, as $2223 * 2223 = 4941729$, $4941729$ may be split to $494$ and $1729$, and $494
-      + 1729 = 2223$.</li>
-    <li>The series of Kaprekar numbers is known as <a href="http://rosettacode.org/wiki/oeis:A006886">A006886</a>, and
-      begins as $1, 9, 45, 55, ...$.</li>
-  </ul>
-  Write a function that takes a number $n$, a base $bs$, and returns true if the number is a Kaprekar number for the given base. Otherwise, the function returns false.
+A positive integer is a <a href="https://en.wikipedia.org/wiki/Kaprekar number">Kaprekar number</a> if:
+<ul>
+<li>It is 1</li>
+<li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number. </li>
+</ul>
+Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.Example
+Kaprekar numbers:
+<ul>
+<li>$2223$ is a Kaprekar number, as $2223 * 2223 = 4941729$, $4941729$ may be split to $494$ and $1729$, and $494 + 1729 = 2223$</li>
+<li>The series of Kaprekar numbers is known as <a href="http://rosettacode.org/wiki/oeis:A006886">A006886</a>, and begins as $1, 9, 45, 55, ...$</li>
+</ul>
+<ul>
+<li>$2223$ is a Kaprekar number, as $2223 * 2223 = 4941729$, $4941729$ may be split to $494$ and $1729$, and $494 + 1729 = 2223$</li>
+<li>The series of Kaprekar numbers is known as <a href="http://rosettacode.org/wiki/oeis:A006886">A006886</a>, and begins as $1, 9, 45, 55, ...$</li>
+</ul>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes a number $n$, a base $bs$, and returns true if the number is a Kaprekar number for the given base. Otherwise, the function returns false.
 </section>
 
 ## Tests
@@ -66,7 +60,7 @@ tests:
   <div id='js-seed'>
 
 ```js
-function isKaprekar (n, bs) {
+function isKaprekar(n, bs) {
   // Good luck!
 }
 ```

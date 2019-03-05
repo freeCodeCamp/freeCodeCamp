@@ -44,7 +44,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isLeapYear (year) {
+function isLeapYear(year) {
   // Good luck!
 }
 ```
