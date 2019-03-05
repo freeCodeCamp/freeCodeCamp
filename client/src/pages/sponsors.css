@@ -2,14 +2,25 @@
   display: block;
   max-width: 100%;
   height: auto;
+  padding: 0;
+  margin: 0;
 }
 
-.sponsor-logos {
+.sls {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.sponsor-logo {
+.sl {
   max-height: 80px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  width: 150px;
+  height: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
 import Media from 'react-media';
 import FCCSearch from 'react-freecodecamp-search';
 
@@ -9,12 +12,33 @@ import { Link } from '../helpers';
 
 import './header.css';
 
+import {
+  toggleDisplaySideNav,
+  toggleDisplayMenu,
+  displayMenuSelector
+} from '../layouts/components/guide/redux';
+
+const mapStateToProps = createSelector(
+  displayMenuSelector,
+  displayMenu => ({
+    displayMenu
+  })
+);
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleDisplaySideNav, toggleDisplayMenu }, dispatch);
+
+const propTypes = {
+  disableSettings: PropTypes.bool,
+  displayMenu: PropTypes.bool,
+  onGuide: PropTypes.bool,
+  toggleDisplayMenu: PropTypes.func,
+  toggleDisplaySideNav: PropTypes.func
+};
+
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isMenuOpened: false
-    };
     this.menuButtonRef = React.createRef();
   }
 
@@ -26,69 +50,106 @@ class Header extends Component {
     document.removeEventListener('click', this.handleClickOutside);
   }
 
-  toggleClass = () => {
-    this.setState({
-      isMenuOpened: !this.state.isMenuOpened
-    });
+  toggleDisplayMenuLogic = () => {
+    if (this.props.onGuide) {
+      this.props.toggleDisplaySideNav();
+    } else {
+      this.props.toggleDisplayMenu();
+    }
   };
 
   handleClickOutside = event => {
     if (
-      this.state.isMenuOpened &&
-      !this.menuButtonRef.current.contains(event.target)
+      this.props.displayMenu &&
+      !this.menuButtonRef.current.contains(event.target) &&
+      !this.props.onGuide
     ) {
-      this.toggleClass();
+      this.toggleDisplayMenuLogic();
     }
   };
 
   handleMediaChange = matches => {
-    if (!matches && this.state.isMenuOpened) {
-      this.toggleClass();
+    if (!matches && this.props.displayMenu) {
+      this.toggleDisplayMenuLogic();
     }
   };
 
+  renderClassNames = (displayMenu, onGuide) => {
+    if (displayMenu && onGuide) {
+      return 'opened onGuide';
+    } else if (displayMenu) {
+      return 'opened';
+    } else if (onGuide) {
+      return 'onGuide';
+    }
+    return '';
+  };
+
   render() {
-    const { disableSettings } = this.props;
+    const {
+      disableSettings,
+      onGuide,
+      displayMenu,
+      toggleDisplayMenu
+    } = this.props;
     return (
-      <header className={this.state.isMenuOpened ? 'opened' : null}>
+      <header className={this.renderClassNames(displayMenu, onGuide)}>
         <nav id='top-nav'>
           <Link className='home-link' to='/'>
             <NavLogo />
           </Link>
           {disableSettings ? null : <FCCSearch />}
-          <ul id='top-right-nav'>
-            <li>
-              <Link to='/learn'>Learn</Link>
-            </li>
-            <li>
-              <Link external={true} to='/forum'>
-                Forum
-              </Link>
-            </li>
-            <li>
-              <Link external={true} to='/news'>
-                News
-              </Link>
-            </li>
-            <li className='user-state-link'>
-              <UserState disableSettings={disableSettings} />
-            </li>
-          </ul>
+          <Media query='(max-width: 991px)'>
+            {matches =>
+              matches && onGuide && displayMenu ? null : (
+                <ul id='top-right-nav'>
+                  <li onClick={toggleDisplayMenu}>
+                    <Link to='/learn'>Learn</Link>
+                  </li>
+                  <li onClick={toggleDisplayMenu}>
+                    <Link external={true} to='/forum'>
+                      Forum
+                    </Link>
+                  </li>
+                  <li onClick={toggleDisplayMenu}>
+                    <Link external={true} to='/news'>
+                      News
+                    </Link>
+                  </li>
+                  <li className='user-state-link' onClick={toggleDisplayMenu}>
+                    <UserState disableSettings={disableSettings} />
+                  </li>
+                </ul>
+              )
+            }
+          </Media>
           <span
             className='menu-button'
-            onClick={this.toggleClass}
+            onClick={this.toggleDisplayMenuLogic}
             ref={this.menuButtonRef}
           >
             Menu
           </span>
-          <Media onChange={this.handleMediaChange} query='(max-width: 734px)' />
+          {onGuide ? (
+            <Media
+              onChange={this.handleMediaChange}
+              query='(max-width: 991px)'
+            />
+          ) : (
+            <Media
+              onChange={this.handleMediaChange}
+              query='(max-width: 734px)'
+            />
+          )}
         </nav>
       </header>
     );
   }
 }
 
-Header.propTypes = {
-  disableSettings: PropTypes.bool
-};
-export default Header;
+Header.propTypes = propTypes;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

@@ -6,16 +6,13 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-The version is together with name one of the required fields in a package.json. This field describes the current version of your project.
-Example
-<code>"version": "1.2",</code>
-Instructions
-Add a version to the package.json in your Glitch project.
+A <code>version</code> is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
+<blockquote>"version": "1.2",</blockquote>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Add a <code>version</code> to the package.json file of your project.
 </section>
 
 ## Tests

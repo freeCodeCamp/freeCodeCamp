@@ -1,17 +1,20 @@
 export const firstChallengeUrl = '/learn/the/first/challenge';
 export const requestedChallengeUrl = '/learn/my/actual/challenge';
+
 export const mockChallenge = {
   id: '123abc',
   block: 'actual',
   superBlock: 'my',
   dashedName: 'challenge'
 };
+
 export const mockFirstChallenge = {
   id: '456def',
   block: 'first',
   superBlock: 'the',
   dashedName: 'challenge'
 };
+
 export const mockCompletedChallenge = {
   id: '890xyz',
   challengeType: 0,
@@ -26,6 +29,7 @@ export const mockCompletedChallenge = {
   ],
   completedDate: Date.now()
 };
+
 export const mockCompletedChallenges = [
   {
     id: 'bd7123c8c441eddfaeb5bdef',
@@ -57,12 +61,16 @@ export const mockCompletedChallenges = [
     files: []
   }
 ];
+export const mockUserID = '5c7d892aff9777c8b1c1a95e';
 export const mockUser = {
+  id: mockUserID,
   username: 'camperbot',
   currentChallengeId: '123abc',
   timezone: 'UTC',
-  completedChallenges: mockCompletedChallenges
+  completedChallenges: mockCompletedChallenges,
+  progressTimestamps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 };
+
 export const mockApp = {
   models: {
     Challenge: {
@@ -74,10 +82,20 @@ export const mockApp = {
           ? cb(null, mockChallenge)
           : cb(new Error('challenge not found'));
       }
+    },
+    User: {
+      findById(id, cb) {
+        if (id === mockUser.id) {
+          return cb(null, mockUser);
+        }
+        return cb(Error('No user'));
+      }
     }
   }
 };
+
 export const mockGetFirstChallenge = () => firstChallengeUrl;
+
 export const firstChallengeQuery = {
   // first challenge of the first block of the first superBlock
   where: { challengeOrder: 0, superOrder: 1, order: 0 }

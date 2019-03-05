@@ -6,7 +6,7 @@ title: Target HTML Elements with Selectors Using jQuery
 - You can "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more.
 
 ## Example
-```javascipt
+```js
 //You can select all <p> elements on a page like this  =  $("p")
   $(document).ready(function(){
     $("button").click(function(){
@@ -17,7 +17,7 @@ title: Target HTML Elements with Selectors Using jQuery
 
 
 ## Solution
-```javascript
+```html
 <script>
   $(document).ready(function() {
       $("button").addClass("animated bounce"); // We are selecting the button elements and adding "animated bounce" class to them.
