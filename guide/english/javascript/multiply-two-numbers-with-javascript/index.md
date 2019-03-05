@@ -9,4 +9,4 @@ Here is an example:
     
 The variable `product` would have a value of `80` after this declaration.
 
-When making calculations, it is possible to use parentheses to prioritise which numbers should be multiplied together.
+When making calculations, it is possible to use parentheses `()` to prioritise which numbers should be multiplied together.

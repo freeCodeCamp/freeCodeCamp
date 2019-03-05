@@ -350,8 +350,15 @@ Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are co
      /  \   /
     8   7  9 
 
-### Augumenting a BST
+Perfect Binary Tree A Binary tree is Perfect Binary Tree in which all internal nodes have two children and all leaves are at the same level.
 
+              18
+           /       \  
+         15         30  
+        /  \        /  \
+      40    50    100   40
+
+### Augumenting a BST
 Sometimes we need to store some additional information with the traditional data structures to make our tasks easier.
 For example, consider a scenario where you are supposed to find the ith smallest number in a set. You can use brute force here but we can reduce the complexity of the problem to O(lg n) by augumenting a red-black or any self-balancing tree (where n is the number of elements in the set). We can also compute rank of any element in O(lg n) time. Let us consider a case where we are augumenting a red-black tree to store the addional information needed. Besides the usual attributes, we can store number of internal nodes in the subtree rooted at x(size of the subtree rooted at x including the node itself).
 Let x be any arbitary node of a tree.

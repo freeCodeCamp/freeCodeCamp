@@ -422,32 +422,7 @@ Follow these steps:
 
 ## Proposing a Pull Request (PR)
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
-
-    ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
-
-2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
-
-    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
-
-    ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
-
-3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
-
-4. In the body of your PR include a more detailed summary of the changes you made and why.
-
-    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
-
-    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
-
-    - If the PR is meant to fix an existing bug/issue then, at the end of
-      your PR's description, append the keyword `closes` and #xxxx (where xxxx
-      is the issue number). Example: `closes #1337`. This tells GitHub to
-      automatically close the existing issue, if the PR is accepted and merged.
-
-5. Indicate if you have tested on a local copy of the site or not.
-
-    This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
+After you've committed your changes, check here for [how to open a Pull Request](/docs/how-to-open-a-pull-request.md).
 
 ## Getting Help
 

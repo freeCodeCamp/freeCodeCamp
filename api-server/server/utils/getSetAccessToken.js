@@ -25,8 +25,6 @@ export function setAccessTokenToResponse(
   };
   const jwtAccess = jwt.sign({ accessToken }, jwtSecret);
   res.cookie(jwtCookieNS, jwtAccess, cookieConfig);
-  res.cookie('access_token', accessToken.id, cookieConfig);
-  res.cookie('userId', accessToken.userId, cookieConfig);
   return;
 }
 

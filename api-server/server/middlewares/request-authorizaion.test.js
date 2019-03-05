@@ -111,7 +111,7 @@ describe('request-authorization', () => {
       });
 
       it('adds the user to the request object', async done => {
-        expect.assertions(5);
+        expect.assertions(3);
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
           path: '/internal/some-path/that-needs/auth',
@@ -124,8 +124,6 @@ describe('request-authorization', () => {
         expect(next.called).toBe(true);
         expect(req).toHaveProperty('user');
         expect(req.user).toEqual(users['456def']);
-        expect(req.user).toHaveProperty('points');
-        expect(req.user.points).toEqual(4);
         return done();
       });
 
@@ -200,7 +198,7 @@ describe('request-authorization', () => {
       });
 
       it('adds the user to the request object', async done => {
-        expect.assertions(5);
+        expect.assertions(3);
         const validJWT = jwt.sign({ accessToken }, validJWTSecret);
         const req = mockReq({
           path: '/internal/some-path/that-needs/auth',
@@ -212,8 +210,6 @@ describe('request-authorization', () => {
         expect(next.called).toBe(true);
         expect(req).toHaveProperty('user');
         expect(req.user).toEqual(users['456def']);
-        expect(req.user).toHaveProperty('points');
-        expect(req.user.points).toEqual(4);
         return done();
       });
 
