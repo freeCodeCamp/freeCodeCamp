@@ -9,7 +9,7 @@ Use the `grid-area` property.
 
 ### Solution
 
-```css
+```html
 <style>
   .item1{background:LightSkyBlue;}
   .item2{background:LightSalmon;}
