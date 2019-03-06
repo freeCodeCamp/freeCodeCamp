@@ -10,15 +10,6 @@
   width: 30vh;
 }
 
-.night .challenge-list-header {
-  background-color: #333;
-  border-bottom-color: #222;
-}
-
-.night .challenge-success-modal .modal-content {
-  background-color: #333;
-}
-
 @media screen and (max-width: 767px) {
   .challenge-success-modal .btn-lg {
     font-size: 16px;

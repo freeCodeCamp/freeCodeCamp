@@ -24,15 +24,6 @@ div .agreed p {
   margin-bottom: 0;
 }
 
-.night .honesty-panel {
-  color: #333333;
-  background-color: #cccccc;
-}
-
-.night .honesty-panel a {
-  color: darkgreen;
-}
-
 .honesty-panel .btn-invert {
   color: var(--primary-canvas);
 }

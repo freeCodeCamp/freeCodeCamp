@@ -3,10 +3,6 @@
   opacity: 1;
 }
 
-.night .toggle-active {
-  color: #ddd;
-}
-
 .toggle-not-active.btn-primary.active {
   background-color: #6b6d6f;
 }
@@ -16,17 +12,7 @@
   color: var(--secondary-color);
 }
 
-.night .toggle-not-active {
-  background-color: #dedede;
-  color: #333;
-}
-
 .toggle-not-active:hover,
 .toggle-not-active:focus {
   background-color: var(--secondary-color);
-}
-
-.night .toggle-not-active:hover,
-.night .toggle-not-active:focus {
-  color: #ddd;
 }

@@ -3,16 +3,13 @@
   justify-content: space-around;
   align-items: center;
   font-size: 18px;
-  color: #6B6D6F;
+  color: #6b6d6f;
 }
 
 .streak strong {
   color: #333;
 }
 
-.night .streak strong {
-  color: #ccc;
-}
 .react-calendar-heatmap .colour-empty {
   fill: #eee;
 }
@@ -29,5 +26,5 @@
   fill: #1e6823;
 }
 .react-calendar-heatmap .colour-scale-a-lot {
-  fill: #6B6D6F;
+  fill: #6b6d6f;
 }

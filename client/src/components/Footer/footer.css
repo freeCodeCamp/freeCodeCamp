@@ -14,16 +14,3 @@
 .footer a:not([class*='inline']) {
   display: block;
 }
-
-.night .footer {
-  color: #606f7b;
-  background: #222;
-}
-
-.night .footer a {
-  color: #6b6d6f;
-}
-
-.night .footer a:hover {
-  color: #606f7b;
-}

@@ -117,11 +117,6 @@ a .navItemTitle {
   cursor: pointer;
 }
 
-.night .panelStyle,
-.night .title {
-  background-color: #333;
-}
-
 @media (max-width: 992px) {
   .content {
     height: auto;

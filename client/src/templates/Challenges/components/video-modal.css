@@ -30,15 +30,3 @@
 .video-modal p {
   margin-bottom: 0;
 }
-
-.night .video-modal-header .close {
-  color: #fff;
-}
-
-.night .video-modal-body,
-.night .video-modal-header {
-  background-color: #333;
-}
-.night .video-modal-header {
-  border-bottom-color: #222;
-}

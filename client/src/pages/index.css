@@ -1,17 +1,3 @@
-
-/*
-  Embrace the cascade to override night mode styles
-  This ensures a consistent landing page, even for users with nigt mode enabled
-*/
-.night body .landing-page{
-  background-color: #fff;
-  color: #333;
-}
-.night .landing-page #top-right-nav li > a, .night #top-right-nav li > span {
-  color: #fff;
-}
-/* End night mode override */
-
 .black-text {
   color: #333;
   font-weight: 400;
@@ -32,7 +18,7 @@
 }
 
 .landing-skill-icon {
-  color: #6B6D6F;
+  color: #6b6d6f;
   margin-top: -15px;
   padding-bottom: 15px;
   height: 150px;
@@ -43,7 +29,7 @@
   border-radius: 5px;
   height: 200px;
   width: 200px;
-  color: #6B6D6F;
+  color: #6b6d6f;
 }
 
 .testimonial-copy {

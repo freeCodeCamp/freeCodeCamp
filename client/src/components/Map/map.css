@@ -49,12 +49,6 @@ li.open > .map-title svg:first-child {
   max-width: 28rem;
 }
 
-.night .map-challenge-title a,
-.night .map-title h4,
-.night .map-title-completed {
-  color: #67d269;
-}
-
 .block a {
   text-decoration: none;
 }
