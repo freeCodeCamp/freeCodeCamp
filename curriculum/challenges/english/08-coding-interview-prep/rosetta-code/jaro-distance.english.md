@@ -6,21 +6,31 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that  <b>0</b>  equates to no similarity and  <b>1</b>  is an exact match. Definition The Jaro distance  \( d_j \)  of two given strings  \(s_1\)  and  \(s_2\) is
+The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that <b>0</b> equates to no similarity and <b>1</b> is an exact match. 
+<b>Definition</b>
+The Jaro distance  \( d_j \)  of two given strings  \(s_1\)  and  \(s_2\) is
 \begin{align}d_j = \begin{cases}0&amp;  & \text{if }m=0 \\\\{\frac {1}{3}}\left({\frac {m}{|s_{1}|}}+{\frac {m}{|s_{2}|}}+{\frac {m-t}{m}}\right)&amp; & \text{otherwise}\end{cases}\end{align}
-  Where: <ul><li>\(m\)   is the number of <i>matching characters</i>;</li><li> \(t\)   is half the number of <i>transpositions</i>.</li></uL>
+Where:
+<ul>
+  <li>\(m\) is the number of <i>matching characters</i>;</li>
+  <li> \(t\) is half the number of <i>transpositions</i>.</li>
+</uL>
 Two characters from  \(s_1\)   and  \(s_2\)   respectively, are considered <i>matching</i> only if they are the same and not farther than  \(\left\lfloor\frac{\max(|s_1|,|s_2|)}{2}\right\rfloor-1\).
 Each character of  \(s_1\)   is compared with all its matching characters in  \(s_2\) . The number of matching (but different sequence order) characters divided by 2 defines the number of <i>transpositions</i>.
 <b>Example</b>
 Given the strings  \(s_1\)   <i>DWAYNE</i>  and  \(s_2\)   <i>DUANE</i>  we find:
-<ul><li>\(m = 4\)</li><li>\(|s_1| = 6\) </li><li>\(|s_2| = 5\) </li><li>\(t = 0\) </li></ul>
+<ul>
+  <li>\(m = 4\)</li>
+  <li>\(|s_1| = 6\)</li>
+  <li>\(|s_2| = 5\)</li>
+  <li>\(t = 0\)</li>
+</ul>
 We find a Jaro score of: \(d_j = \frac{1}{3}\left(\frac{4}{6} + \frac{4}{5} + \frac{4-0}{4}\right) = 0.822\).
-Write a function a that takes two strings as parameters and returns the associated Jaro distance.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function a that takes two strings as parameters and returns the associated Jaro distance.
 </section>
 
 ## Tests
@@ -53,7 +63,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function jaro (s, t) {
+function jaro(s, t) {
   // Good luck!
 }
 ```
@@ -67,7 +77,7 @@ function jaro (s, t) {
 
 
 ```js
-function jaro (s, t) {
+function jaro(s, t) {
   var s_len = s.length;
   var t_len = t.length;
 
