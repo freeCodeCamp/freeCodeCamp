@@ -18,11 +18,3 @@
   background-color: var(--quaternary-canvas);
   border: none;
 }
-
-#learn-app-wrapper .reflex-container.horizontal > .reflex-splitter :before {
-  content: ' ';
-  display: block;
-  background-color: blue;
-  height: 20px;
-  width: 30px;
-}

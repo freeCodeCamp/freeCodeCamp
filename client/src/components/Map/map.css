@@ -32,10 +32,12 @@
   padding-left: 20px;
 }
 
-.map-title > svg {
+.superblock .map-title svg {
   width: 14px;
   margin-right: 5px;
   flex-shrink: 0;
+  fill: var(--color-quaternary) !important;
+  stroke: var(--color-quaternary);
 }
 
 li.open > .map-title svg:first-child {

@@ -4,14 +4,14 @@ import * as fontFiles from '../fonts';
 const GlobalStyle = createGlobalStyle`
   :root {
     --header-height: 38px;
-    --primary-color: black;
-    --secondary-color: #0a0a2e;
-    --tertiary-color: #292948;
-    --quaternary-color: #43435d;
-    --quaternary-canvas: #d4d4da;
-    --tertiary-canvas: #e8e8eb;
-    --secondary-canvas: #f5f6f7;
-    --primary-canvas: white;
+    --primary-color: ${props => (props.darkMode ? 'black' : 'white')};
+    --secondary-color: ${props => (props.darkMode ? '#0a0a2e' : '#f5f6f7')};
+    --tertiary-color: ${props => (props.darkMode ? '#292948' : '#e8e8eb')};
+    --quaternary-color: ${props => (props.darkMode ? '#d4d4da' : '#43435d')};
+    --quaternary-canvas: ${props => (props.darkMode ? '#43435d' : '#d4d4da')};
+    --tertiary-canvas: ${props => (props.darkMode ? '#e8e8eb' : '#292948')};
+    --secondary-canvas: ${props => (props.darkMode ? '#f5f6f7' : '#0a0a2e')};
+    --primary-canvas: ${props => (props.darkMode ? 'white' : '#0a0a2e')};
     --theme-color:#0a0a2e;
   }
 

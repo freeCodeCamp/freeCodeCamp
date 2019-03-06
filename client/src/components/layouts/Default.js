@@ -11,7 +11,8 @@ import {
   fetchUser,
   isSignedInSelector,
   onlineStatusChange,
-  isOnlineSelector
+  isOnlineSelector,
+  userSelector
 } from '../../redux';
 import { flashMessagesSelector, removeFlashMessage } from '../Flash/redux';
 
@@ -74,18 +75,21 @@ const propTypes = {
   onGuide: PropTypes.bool,
   onlineStatusChange: PropTypes.func.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
-  showFooter: PropTypes.bool
+  showFooter: PropTypes.bool,
+  theme: PropTypes.string
 };
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
   flashMessagesSelector,
   isOnlineSelector,
-  (isSignedIn, flashMessages, isOnline) => ({
+  userSelector,
+  (isSignedIn, flashMessages, isOnline, user) => ({
     isSignedIn,
     flashMessages,
     hasMessages: !!flashMessages.length,
-    isOnline
+    isOnline,
+    theme: user.theme
   })
 );
 const mapDispatchToProps = dispatch =>
@@ -145,8 +149,10 @@ class DefaultLayout extends Component {
       showFooter = true,
       onGuide = false,
       isOnline,
-      isSignedIn
+      isSignedIn,
+      theme
     } = this.props;
+    console.log(theme);
     return (
       <Fragment>
         <Helmet
@@ -162,7 +168,7 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <GlobalStyle />
+        <GlobalStyle darkMode={theme === 'default' ? true : false} />
         <Header disableSettings={disableSettings} onGuide={onGuide} />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
