@@ -116,7 +116,7 @@ It is also possbible to import a new font:
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> 
 ```
-In this was we import the `lobster`
+Here, the `Lobster` font has been imported
 
 the in the css we can use such font:
 ```css
