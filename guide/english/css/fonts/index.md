@@ -15,7 +15,14 @@ p {
 }
 ```
 
-In the above example, "Times New Roman" and "Times" are <family-name>s and "serif" is a <generic-name>. Generic names are used as a fallback mechanism for preserving style if the <family-name> is unavailable. A generic name should always be the last item in the list of font family names. The generic family name options are serif, sans-serif, monospace, cursive, fantasy, and system-ui.
+In the above example, "Times New Roman" and "Times" are <family-name>s and "serif" is a <generic-name>. Generic names are used as a fallback mechanism for preserving style if the <family-name> is unavailable. A generic name should always be the last item in the list of font family names. The generic family name options are: 
+  
+* serif
+* sans-serif
+* monospace
+* cursive
+* fantasy
+* system-ui
 
 ### Importing a font
 In addition to specifying common fonts that are found on most operating systems, custom web fonts can be used as well. To import such a font, copy the font URL from the library and reference it in the HTML. [fonts.google.com](https://fonts.google.com/) is a popular place to find fonts to import, but there are many other resources.
@@ -33,9 +40,9 @@ This property has 3 values:
 * italic - Text shown in *italic*
 * oblique - Text shown slanted
 
-If a font does not have an italic version, the oblique version may be substituted, and vice versa; if neither version exists, the style will be simulated.
-
 `italic` and `oblique` both look like the normal font but slanted. The main difference is that `italic` is a whole other version of the font, slanted at a particular angle and sometimes styled slightly differently. `oblique` is the original font but with the ability to be slanted at and angle to different degrees.
+
+If a font does not have an italic version, the oblique version may be substituted, and vice versa. If a font has neither version, the letters will be artificially slanted.
 
 ```css
 .normal {
