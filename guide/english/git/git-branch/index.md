@@ -105,17 +105,17 @@ If you want to see a list of all the branches that are completely merged into yo
 
 ### Update a Branch from Remote <a name="update-branch-from-remote"></a>
 
-# To update a local branch from remote:
+#### To update a local branch from remote:
 ```shell
 git stash (optional, to save local changes which differs from the remote repository if any) 
 ```
 
-# If you weren't already on my_local_branch branch:
+#### If you weren't already on the branch you want to work on:
 ```shell
 git checkout my_local_branch 
 ```
 
-# Finally pull from the remote branch
+#### Finally pull from the remote branch
 ```shell
 git pull
 ```
