@@ -89,10 +89,14 @@ export class SuperBlock extends Component {
     const { superBlock, isExpanded, toggleSuperBlock } = this.props;
     return (
       <li className={`superblock ${isExpanded ? 'open' : ''}`}>
-        <div className='map-title' onClick={() => toggleSuperBlock(superBlock)}>
+        <button
+          aria-expanded={isExpanded}
+          className='map-title'
+          onClick={() => toggleSuperBlock(superBlock)}
+        >
           <Caret />
           <h4>{createSuperBlockTitle(superBlock)}</h4>
-        </div>
+        </button>
         {isExpanded ? this.renderBlock(superBlock) : null}
       </li>
     );
