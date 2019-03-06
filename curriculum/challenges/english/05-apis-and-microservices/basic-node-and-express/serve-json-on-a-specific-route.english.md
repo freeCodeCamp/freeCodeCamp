@@ -12,7 +12,7 @@ Let's create a simple API by creating a route that responds with JSON at the pat
 
 ## Instructions
 <section id='instructions'>
-Serve the object <code>{"message": "Hello json"}</code> as a response, in JSON format, to GET requests to the <code>/json</code> route. Then point your browser to your-app-url/json, you should see the message on the screen.
+Serve the object <code>{"message": "Hello json"}</code> as a response, in JSON format, to GET requests to the <code>/json</code> route. Then point your browser to <code>your-app-url/json</code>, you should see the message on the screen.
 </section>
 
 ## Tests
