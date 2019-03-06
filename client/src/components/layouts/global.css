@@ -9,6 +9,8 @@ html {
 
 body {
   font-family: 'hackregular';
+  color: var(--secondary-color);
+  background: var(--primary-canvas);
 }
 .big-heading {
   font-size: 50px !important;
