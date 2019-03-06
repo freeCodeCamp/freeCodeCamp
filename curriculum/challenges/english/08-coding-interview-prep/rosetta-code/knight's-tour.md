@@ -6,8 +6,8 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/Knight%27s_tour">Problem</a>: you have a w x h chessboard, empty but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is <i>not</i> a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
-Write a function that takes w, h as parameters and returns the number of initial position from where it is possible to achieve the task stated above.
+<a href="https://en.wikipedia.org/wiki/Knight%27s_tour">Problem</a>: you have a <code>w</code> x <code>h</code> chessboard, empty but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is <i>not</i> a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
+Write a function that takes <code>w</code> and <code>h</code> as parameters and returns the number of initial position from where it is possible to achieve the task stated above.
 </section>
 
 ## Instructions
