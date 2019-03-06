@@ -14,7 +14,6 @@ p {
   font-family: "Times New Roman", Times, serif;   
 }
 ```
-
 In the above example, "Times New Roman" and "Times" are <family-name>s and "serif" is a <generic-name>. Generic names are used as a fallback mechanism for preserving style if the <family-name> is unavailable. A generic name should always be the last item in the list of font family names. The generic family name options are: 
   
 * serif
@@ -139,3 +138,4 @@ p {
 - [CSSFontStack](https://www.cssfontstack.com/)
 - [Google Fonts](https://fonts.google.com/)
 - [Google Docs: How to get started](https://developers.google.com/fonts/docs/getting_started)
+- [W3 Schools - Examples of websafe fonts](https://www.w3schools.com/cssref/css_websafe_fonts.asp)
