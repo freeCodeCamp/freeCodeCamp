@@ -11,7 +11,7 @@ An HTML server usually has one or more directories that are accessible by the us
 
 ## Instructions
 <section id='instructions'>
-Mount the <code>express.static()</code> middleware for all the requests with <code>app.use()</code>. The absolute path to the assets folder is <code>__dirname + /public</code>.
+Mount the <code>express.static()</code> middleware for all requests with <code>app.use()</code>. The absolute path to the assets folder is <code>__dirname + /public</code>.
 Now your app should be able to serve a CSS stylesheet. From outside, the public folder will appear mounted to the root directory. Your front-page should look a little better now!
 </section>
 
