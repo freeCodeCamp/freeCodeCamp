@@ -3,35 +3,11 @@ title: Add Flex Superpowers to the Tweet Embed
 ---
 ## Add Flex Superpowers to the Tweet Embed
 
-Building on the <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/responsive-web-design/css-flexbox/use-display-flex-to-position-two-boxes/index.md' target='_blank' rel='nofollow'>previous challenge</a>, you will need to add the property to the right selectors. Here the trick is identifying the right selector then all you need to add the <i>display: flex;</i> property.
+Building on the previous challenge, you will need to add the property to the right selectors. Here the trick is identifying the right selector then all you need to add the *display: flex;* property.
 
 The header will ensure the picture, name, handle, and follow buttons get repositioned horizonatally.
 
-```CSS
-header {
-    display: flex;
-}
-```
-Aligns the name and handle to look as one sentence.
-```CSS
-header .profile-name {
-    display:flex;
-    margin-left: 10px;
-  }
-```
-Adding the property to the follow button along with the margin will center the button to the right size.
-
-```CSS
-header .follow-btn {
-    display:flex;
-    margin: 0 0 0 auto;
-  }
-```
-The same idea is used on the footer elements.
-
-### Solution
-
-```css
+```html
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -91,4 +67,35 @@ The same idea is used on the footer elements.
     background: transparent;
   }
 </style>
+<header>
+  <img src="https://pbs.twimg.com/profile_images/378800000147359764/54dc9a5c34e912f34db8662d53d16a39_400x400.png" alt="Quincy Larson's profile picture" class="profile-thumbnail">
+  <div class="profile-name">
+    <h3>Quincy Larson</h3>
+    <h4>@ossia</h4>
+  </div>
+  <div class="follow-btn">
+    <button>Follow</button>
+  </div>
+</header>
+<div id="inner">
+  <p>I meet so many people who are in search of that one trick that will help them work smart. Even if you work smart, you still have to work hard.</p>
+  <span class="date">1:32 PM - 12 Jan 2018</span>
+  <hr>
+</div>
+<footer>
+  <div class="stats">
+    <div class="Retweets">
+      <strong>107</strong> Retweets
+    </div>
+    <div class="likes">
+      <strong>431</strong> Likes
+    </div>
+  </div>
+  <div class="cta">
+    <button class="share-btn">Share</button>
+    <button class="retweet-btn">Retweet</button>
+    <button class="like-btn">Like</button>
+  </div>
+</footer>
+
 ```
