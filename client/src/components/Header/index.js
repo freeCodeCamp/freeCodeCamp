@@ -99,7 +99,6 @@ class Header extends Component {
           <Link className='home-link' to='/'>
             <NavLogo />
           </Link>
-          {disableSettings ? null : <FCCSearch />}
           <Media query='(max-width: 991px)'>
             {matches =>
               matches && onGuide && displayMenu ? null : (
