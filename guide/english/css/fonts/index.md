@@ -2,21 +2,21 @@
 title: Fonts
 ---
 ## Fonts
-The CSS font properties define the font family, weight, size, variant, line height and style of a text.
+The CSS font properties define the font family, weight, size, variant, line height, and style of an element's text content.
 
 ### Font family
-The font family of a text is set by using the `font-family` property.
+The font family is set by using the `font-family` property.
 
-It works with a *fallback* system, meaning if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. Either single quotes `(')` or double quotes `(")` can be used.
+It works with a *fallback* system i.e. if your browser does not support the first font specified, it tries with the next one, and so on. If the name of the font is longer than one word, it must be in quotes.
 
 ```css
 p {
   font-family: "Times New Roman", Times, serif;   
 }
 ```
-In the above example, "Times New Roman" is the *family-name* of the font, while "serif" is the *generic-name*. Generic names are used as a fallback mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names.
 
-Generic family names are:
+In the above example, "Times New Roman" and "Times" are <family-name>s and "serif" is a <generic-name>. Generic names are used as a fallback mechanism for preserving style if the <family-name> is unavailable. A generic name should always be the last item in the list of font family names. The generic family name options are: 
+  
 * serif
 * sans-serif
 * monospace
@@ -32,15 +32,17 @@ In addition to specifying common fonts that are found on most operating systems,
 Then you can use the font that you have imported (in this example, `Lobster`) in your code as normal.
 
 ### Font style
-The `font-style` property can be used to specify italic text.
+The `font-style` property can be used to specify the text's style.
 
 This property has 3 values:
 
 * normal - Text shown normally
 * italic - Text shown in *italic*
-* oblique - Text shown leaning
+* oblique - Text shown slanted
 
 `italic` and `oblique` both look like the normal font but slanted. The main difference is that `italic` is a whole other version of the font, slanted at a particular angle and sometimes styled slightly differently. `oblique` is the original font but with the ability to be slanted at and angle to different degrees.
+
+If a font does not have an italic version, the oblique version may be substituted, and vice versa. If a font has neither version, the letters will be artificially slanted.
 
 ```css
 .normal {
@@ -57,14 +59,13 @@ This property has 3 values:
 ```
 
 ### Font size
-The `font-size` property sets the size of the text.
+The `font-size` property sets the size of the text. The default size is usually `16px`.
 
-There are different types of font size values:
+There are several different values that may be used to determine size:
 
-* `px` (pixels) - The default size of text being `16px`
-* `em` - based on the current or inherited font size of an element
-* `rem` - like `em`, but based on the base font-size of the document
-* `small`, `medium`, `large` - known as absolute size values
+* `px` (pixels) - specifies the exact number of pixels for the size of the font
+* `em` - a relative measurement that is dynamically created based on the font size of an element's parent. `1em` = the current font size, so `1em` = `16px` (recommended by the W3C)
+* `small`, `medium`, `large` - absolute size values
 * `%` - percentages
 
 ```css
@@ -116,7 +117,8 @@ p.small {
 ```
 
 ### Font shorthand property
-Font properties can be specified with the shorthand property `font`. 
+Font properties can be specified with the shorthand `font`. 
+
 It takes as values (in this order):
 - font-style (optional)
 - font-variant (optional)
