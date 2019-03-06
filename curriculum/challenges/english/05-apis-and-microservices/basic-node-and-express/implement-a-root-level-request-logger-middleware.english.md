@@ -6,7 +6,7 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Earlier, we introduced the <code>express.static()</code> middleware function. Now it’s time to see what middleware is in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response, when they are done they start the execution of the next function in the stack. This triggered calling the 3rd argument, <code>next()</code>.
+Earlier, you were introduced to the <code>express.static()</code> middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, <code>next()</code>.
 Look at the following example:
 <blockquote>
 function(req, res, next) {<br>
