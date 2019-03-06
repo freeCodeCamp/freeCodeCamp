@@ -14,7 +14,8 @@ function(req, res, next) {<br>
 &nbsp;&nbsp;next();<br>
 }
 </blockquote>
-Let’s suppose we mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack. In this exercise, we are going to build root-level middleware. As we have seen in challenge 4, to mount a middleware function at root level, we can use the <code>app.use(&lt;mware-function&gt;)</code> method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use <code>app.post(&lt;mware-function&gt;)</code>. Analogous methods exist for all the http verbs (GET, DELETE, PUT, …).
+Let’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack. 
+In this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the <code>app.use(&lt;mware-function&gt;)</code> method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use <code>app.post(&lt;mware-function&gt;)</code>. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
 </section>
 
 ## Instructions
