@@ -30,7 +30,7 @@ tests:
   - text: Remove the style attribute from your <code>h2</code> element.
     testString: assert(!$("h2").attr("style"), 'Remove the style attribute from your <code>h2</code> element.');
   - text: Create a <code>style</code> element.
-    testString: assert($("style") && $("style").length > 1, 'Create a <code>style</code> element.');
+    testString: assert($("style") && $("style").length >= 1, 'Create a <code>style</code> element.');
   - text: Your <code>h2</code> element should be blue.
     testString: assert($("h2").css("color") === "rgb(0, 0, 255)", 'Your <code>h2</code> element should be blue.');
   - text: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.
@@ -90,7 +90,12 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  h2 {
+    color: blue;
+  }
+</style>
+<h2>CatPhotoApp</h2>
 ```
 </section>
