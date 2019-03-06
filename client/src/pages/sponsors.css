@@ -1,11 +1,3 @@
-.img-responsive {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
-}
-
 .sls {
   display: flex;
   flex-wrap: wrap;
@@ -19,6 +11,7 @@
   border-radius: 10px;
   width: 150px;
   height: 100px;
+  margin: 0 auto;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
