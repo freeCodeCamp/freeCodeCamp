@@ -13,9 +13,10 @@ Git's branching functionality lets you create new branches of a project to test 
 - [Rename a Branch](#rename-a-branch)
 - [Delete a Branch](#delete-a-branch)
 - [Compare Branches](#compare-branches)
+- [Update a Branch from Remote](#update-branch-from-remote)
+- [Track a Remote Branch](#track-a-remote-branch)
 - [Help with Git Branch](#help-with-git-branch)
 - [More Information](#more-information)
-- [Track a Remote Branch](#track-a-remote-branch)
 
 ### View Branches <a name="view-branches"></a>
 To view the branches in a Git repository, run the command:
@@ -102,14 +103,34 @@ You'll see colored output for the changes between branches. For all lines that h
 
 If you want to see a list of all the branches that are completely merged into your current branch (in other words, your current branch includes all the changes of the other branches that are listed), run the command `git branch --merged`.
 
+### Update a Branch from Remote <a name="update-branch-from-remote"></a>
+
+#### To update a local branch from remote:
+```shell
+git stash (optional, to save local changes which differs from the remote repository if any) 
+```
+
+#### If you weren't already on the branch you want to work on:
+```shell
+git checkout my_local_branch 
+```
+
+#### Finally pull from the remote branch
+```shell
+git pull
+```
+
 ### Track a Remote Branch <a name="track-a-remote-branch"></a>
+
 If you already have a branch and you want to track a remote branch, then you use `set-upstream-to` command:
 ```shell
 git branch --set-upstream-to origin/BRANCH
 ```
+
 Or you can use the `-u` flag (upstream) when you make your first push:
 ```shell
 git push -u origin BRANCH
+
 ```
 
 ### Help with Git Branch <a name="help-with-git-branch"></a>
