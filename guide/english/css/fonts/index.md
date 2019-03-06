@@ -7,7 +7,7 @@ The CSS font properties define the font family, weight, size, variant, line heig
 ### Font family
 The font family is set by using the `font-family` property.
 
-It works with a *fallback* system: if your browser does not support the first font specified, it tries with the next one, and so on. If the name of the font is longer than one word, it must be in quotes.
+It works with a *fallback* system i.e. if your browser does not support the first font specified, it tries with the next one, and so on. If the name of the font is longer than one word, it must be in quotes.
 
 ```css
 p {
@@ -25,7 +25,7 @@ In addition to specifying common fonts that are found on most operating systems,
 Then you can use the font that you have imported (in this example, `Lobster`) in your code as normal.
 
 ### Font style
-The `font-style` property can be used to specify the text style.
+The `font-style` property can be used to specify the text's style.
 
 This property has 3 values:
 
@@ -52,7 +52,7 @@ If a font does not have an italic version, the oblique version may be substitute
 ```
 
 ### Font size
-The `font-size` property sets the size of the text. The default size is `16px`.
+The `font-size` property sets the size of the text. The default size is usually `16px`.
 
 There are several different values that may be used to determine size:
 
