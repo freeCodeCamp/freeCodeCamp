@@ -28,14 +28,16 @@ h1 {
 ```
 ![twobackground](https://user-images.githubusercontent.com/26467304/31036152-0607936a-a539-11e7-9e9f-a5e60ade042d.png)
 
-In CSS color can be defined in a few different ways:
-* A valid color name such as `blue`
-* A HEX value such as `#FFFFF` (This is the hex value for white.)
-* An abbreviated HEX value such as '#FFF'.
-* An RGB value such as `rgb(76,175,80)` (This is the RGB value for light green.)
-* RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity of the object.
-    * An RGBA color is specified with the rgba() function, which has the following syntax: `rgba(red, green, blue, alpha)`
-    * The alpha parameter is a number between `0.0` (fully transparent) and `1.0` (fully opaque).
+In CSS color can be defined in the following ways:
+* A valid "color" keyword name such as `blue`
+* Numerical color values
+  + A HEX value such as `#FFFFF` (This is the hex value for white.)
+  + An abbreviated HEX value such as `#FFF`.
+  + An RGB value such as `rgb(76,175,80)` (This is the RGB value for light green.)
+  + RGBA value (RGB + alpha channel for contolling opacity)
+    - Note: The alpha parameter is a number between `0.0` (fully transparent) and `1.0` (fully opaque)
+  + HSL (Hue, Saturation, Lightness) (e.g., `hsl(115, 75%, 73%)` is HSL for light green)
+  + HSLA (HSL + alpha channel for controlling opacity)
 
 ### Background Images
 You can use the `background-image` property to set an image as a background for an element. 
