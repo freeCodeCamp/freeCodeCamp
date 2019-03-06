@@ -164,7 +164,7 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 #### Relevant Links
 
 *   <a>JS While Loop</a>
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternate Advanced Code Solution:
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternative Advance Code Solution:
 
     function uniteUnique(...arr) {
     
@@ -183,8 +183,8 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 *   We use Set data structure which store only uniques value and return the values of set as Array using spread operator `...` .
 
 #### Relevant Links
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat' target='_blank' rel='nofollow'>Flat</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set' target='_blank' rel='nofollow'>Set</a>
+*   <a href='' target='_blank' rel='nofollow'>Flat</a>
+*   <a href='' target='_blank' rel='nofollow'>Set</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternative Code Solution using ES2015
 
