@@ -118,7 +118,7 @@ It is also possbible to import a new font:
 ```
 Here, the `Lobster` font has been imported
 
-the in the css we can use such font:
+In the page style, it can be used in the following form:
 ```css
   h2 {
     font-family: Lobster, monospace;
