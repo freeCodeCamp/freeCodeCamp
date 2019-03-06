@@ -15,7 +15,7 @@ In this exercise we will use a urlencoded body. To parse the data coming from PO
 
 ## Instructions
 <section id='instructions'>
-Install the body-parser module in your package.json. Then require it at the top of the file. Store it in a variable named bodyParser. The middleware to handle url encoded data is returned by <code>bodyParser.urlencoded({extended: false})</code>. Pass to <code>app.use()</code> the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
+Install the <code>body-parser</code> module in your <code>package.json</code>. Then, <code>require</code> it at the top of the file. Store it in a variable named <code>bodyParser</code>. The middleware to handle urlencoded data is returned by <code>bodyParser.urlencoded({extended: false})</code>. Pass to <code>app.use()</code> the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it.
 <strong>Note:</strong> <code>extended=false</code> is a configuration option that tells the parser to use the classic encoding. When using it, values can be only strings or arrays. The extended version allows more data flexibility, but it is outmatched by JSON.
 </section>
 
