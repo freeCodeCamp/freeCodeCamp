@@ -124,7 +124,7 @@ In the page style, it can be used in the following form:
     font-family: Lobster, monospace;
   }
 ```
-In this way the font `Lobster` will be the first choice, but if it is not avaiable the `monospace` will replace it.
+In this way the font `Lobster` will be the first choice, but if it is not available the `monospace` font will replace it.
 
 
 
