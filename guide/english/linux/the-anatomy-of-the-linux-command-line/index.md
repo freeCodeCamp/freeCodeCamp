@@ -24,7 +24,7 @@ user_name@machine_name:~$
 
 You can see a command line ending with a blinking shell prompt, signifying the shell is ready to receive commands from the user. 
 
-* The <strong><em>“user_name”</em></strong> represnts the login name.
+* The <strong><em>“user_name”</em></strong> represents the login name.
 
 * The <strong><em>“machine_name”</em></strong> (also known as the domain name) is the name assigned to the computer(or server) and it is usually set during installation. Sometimes it could also be represented by an IP address.
 
