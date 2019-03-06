@@ -31,5 +31,16 @@ Using a pipe to combine commands, list files and folders in the current working 
 ls | grep code
 ```
 
-#### More Information:
-* [Bash Guide for Beginners, Examples using grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html)
+Search for IP 127.0.0.1 in the /etc/hosts file
+ ```bash
+ grep "127.0.0.1" /etc/hosts
+ ```
+ 
+Search for oom (out of memory) in /var/log/messages
+ ```bash
+ grep -i oom /var/log/messages
+ ```
+ 
+ ### More Information
+* [Bash Guide for Beginners, Examples using grep](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html)
+* [Wikipedia](https://en.wikipedia.org/wiki/Grep)

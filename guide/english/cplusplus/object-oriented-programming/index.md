@@ -56,6 +56,26 @@ Data abstraction refers to providing only needed information to the outside worl
 ### Inheritance:
 Inheritance is the process by which objects of one class acquire the properties of objects of another class. It supports the concept of hierarchical classification. Inheritance provides reusability. This means that we can add additional features to an existing class without modifying it.
 
+Here is an example of using inheritance to create a hierarchy, which can be refered to as an 'IS A' relationship between the classes.
+```
+class animal { 
+    private:
+    public:
+        void sleep();
+    protected: 
+        int amt_legs;
+};
+
+class cat: public animal {
+    private:
+    public:
+        void purr();
+    protected:
+        char * color_of_fur;
+};
+```
+In the above code, the `cat` class derives from the `animal` class, which means that a cat IS AN animal, plus some other features. The `cat` class explicitly has a variable for the color of its fur and a function for purring, but it also implicitly has a variable for the amount of legs it has and a function for sleeping.
+
 ### Polymorphism:
 Polymorphism means ability to take more than one form. An operation may exhibit different behaviors in different instances. The behavior depends on the types of data used in the operation.
 
