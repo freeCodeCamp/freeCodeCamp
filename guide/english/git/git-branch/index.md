@@ -15,6 +15,7 @@ Git's branching functionality lets you create new branches of a project to test 
 - [Compare Branches](#compare-branches)
 - [Help with Git Branch](#help-with-git-branch)
 - [More Information](#more-information)
+- [Track a Remote Branch](#track-a-remote-branch)
 
 ### View Branches <a name="view-branches"></a>
 To view the branches in a Git repository, run the command:
@@ -100,6 +101,16 @@ git diff FIRST-BRANCH..SECOND-BRANCH
 You'll see colored output for the changes between branches. For all lines that have changed, the `SECOND-BRANCH` version will be a green line starting with a "+", and the `FIRST-BRANCH` version will be a red line starting with a "-". If you don't want Git to display two lines for each change, you can use the `--color-words` option. Instead, Git will show one line with deleted text in red, and added text in green.
 
 If you want to see a list of all the branches that are completely merged into your current branch (in other words, your current branch includes all the changes of the other branches that are listed), run the command `git branch --merged`.
+
+### Track a Remote Branch <a name="track-a-remote-branch"></a>
+If you already have a branch and you want to track a remote branch, then you use `set-upstream-to` command:
+```shell
+git branch --set-upstream-to origin/BRANCH
+```
+Or you can use the `-u` flag (upstream) when you make your first push:
+```shell
+git push -u origin BRANCH
+```
 
 ### Help with Git Branch <a name="help-with-git-branch"></a>
 If you forget how to use an option, or want to explore other functionality around the `git branch` command, you can run any of these commands:
