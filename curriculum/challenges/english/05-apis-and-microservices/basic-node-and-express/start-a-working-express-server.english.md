@@ -18,7 +18,7 @@ will serve the string 'Response String'.
 
 ## Instructions
 <section id='instructions'>
-Use the <code>app.get()</code> method to serve the string "Hello Express" to GET requests matching the "/" (root) path.
+Use the <code>app.get()</code> method to serve the string "Hello Express" to GET requests matching the <code>/</code> (root) path.
 <strong>Note:</strong> Be sure that your code works by looking at the logs, then see the results in your browser by clicking the ‘Show Live’ button if you are using Glitch.
 </section>
 
