@@ -13,7 +13,7 @@ Another common way to get input from the client is by encoding the data after th
 ## Instructions
 <section id='instructions'>
 Build an API endpoint, mounted at <code>GET /name</code>. Respond with a JSON document, taking the structure <code>{ name: 'firstname lastname'}</code>. The first and last name parameters should be encoded in a query string e.g. <code>?first=firstname&last=lastname</code>.
-<strong>Note:</strong> In the following exercise you are going to receive data from a POST request, at the same <code>/name</code> route path. If you want you can use the method <code>app.route(path).get(handler).post(handler)</code>. This syntax allows you to chain different verb handlers on the same path route. You can save a bit of typing, and have cleaner code.
+<strong>Note:</strong> In the following exercise you are going to receive data from a POST request, at the same <code>/name</code> route path. If you want, you can use the method <code>app.route(path).get(handler).post(handler)</code>. This syntax allows you to chain different verb handlers on the same path route. You can save a bit of typing, and have cleaner code.
 </section>
 
 ## Tests
