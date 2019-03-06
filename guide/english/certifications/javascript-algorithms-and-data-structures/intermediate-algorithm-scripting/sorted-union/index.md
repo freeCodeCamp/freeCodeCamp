@@ -164,6 +164,27 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 #### Relevant Links
 
 *   <a>JS While Loop</a>
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternate Advanced Code Solution:
+
+    function uniteUnique(...arr) {
+    
+      return [...new Set(arr.flat())];;
+      
+    }
+
+    // test here
+    uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@AshishKumar24/AdorableNeatCheckpoint' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   The spread operator `...` to create an array out of the Arguments object and flatten the array using Array.prototype.flat().
+*   We use Set data structure which store only uniques value and return the values of set as Array using spread operator `...` .
+
+#### Relevant Links
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat' target='_blank' rel='nofollow'>Flat</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set' target='_blank' rel='nofollow'>Set</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternative Code Solution using ES2015
 
