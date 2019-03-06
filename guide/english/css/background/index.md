@@ -116,6 +116,16 @@ A gradient is a transition between two or more colors and can be used via CSS si
 
 The syntax of a gradient background can be quite complex and is often still used with vendor prefixes due to inconsistencies between supported browsers.
 
+Below is an example of a background gradient:
+
+![background gradient example image](https://res.cloudinary.com/ikayz/image/upload/v1540563757/gradient.png)
+
+```css
+header {
+  background-image: linear-gradient(to right, #069, #099);
+}
+```
+
 The [Colorzilla Gradient Editor](http://www.colorzilla.com/gradient-editor/) is a great online tool for generating custom gradients and the associated css markup.
 
 ### Background – The Shorthand Property
