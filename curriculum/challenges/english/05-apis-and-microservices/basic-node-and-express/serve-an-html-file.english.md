@@ -12,7 +12,7 @@ You can respond to requests with a file using the <code>res.sendFile(path)</code
 
 ## Instructions
 <section id='instructions'>
-Send the <code>/views/index.html</code> file as a response to GET requests to the "/" path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
+Send the <code>/views/index.html</code> file as a response to GET requests to the <code>/</code> path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
 
 <strong>Note:</strong> You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string.
 </section>
