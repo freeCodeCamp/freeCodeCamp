@@ -5,7 +5,7 @@ title: Binary Search Trees
 ![Binary Search Tree](https://cdn-images-1.medium.com/max/1320/0*x5o1G1UpM1RfLpyx.png)
 
 A tree is a data structure composed of nodes that has the following characteristics:
-1. Each tree has a root node (at the top) - containing some value (can be any datatype).
+1. Each tree has a root node at the top (also known as Parent Node) containing some value (can be any datatype).
 2. The root node has zero or more child nodes.
 3. Each child node has zero or more child nodes, and so on. This creates a subtree in the tree. Every node has its own subtree made up of its children and their children, etc. This means that every node on its own can be a tree.
 
@@ -332,31 +332,34 @@ void postOrder(struct node* root) {
 ### Following are common types of Binary Trees:
 Full Binary Tree/Strict Binary Tree: A Binary Tree is full or strict if every node has exactly 0 or 2 children.
 
-               18
+              18
+             /   \
            /       \  
          15         30  
-        /  \        /  \
-      40    50    100   40
+        /  \       /  \
+      40    50   100   40
 
 In Full Binary Tree, number of leaf nodes is equal to number of internal nodes plus one.
  
 Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible
  
                18
-           /       \  
+             /    \
+           /        \  
          15         30  
-        /  \        /  \
-      40    50    100   40
+        /  \       /  \
+      40    50   100   40
      /  \   /
-    8   7  9 
+    8    7 9 
 
 Perfect Binary Tree A Binary tree is Perfect Binary Tree in which all internal nodes have two children and all leaves are at the same level.
 
               18
-           /       \  
-         15         30  
-        /  \        /  \
-      40    50    100   40
+             /  \
+           /      \  
+         15        30  
+        /  \      /  \
+      40    50  100   40
 
 ### Augumenting a BST
 Sometimes we need to store some additional information with the traditional data structures to make our tasks easier.
