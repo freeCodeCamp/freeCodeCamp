@@ -40,7 +40,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sortByKey (arr) {
+function sortByKey(arr) {
   // Good luck!
 }
 ```
