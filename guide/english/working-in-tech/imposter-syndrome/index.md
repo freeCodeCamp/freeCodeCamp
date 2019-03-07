@@ -4,11 +4,11 @@ title: Imposter Syndrome
 
 ## Imposter Syndrome
 
-Imposter Syndrome is a feeling of _being a fraud_ or _not being good enough_ to get the job done. It is a common feeling among software engineers, developers and designers working in tech companies, especially those not coming from a traditional tech background. People suffering from imposter syndrome have a sense of inadequacy and insecurity concerning their ability to make a contribution at the workplace. In reality, they may be perfectly capable of and do contribute successfully to their tasks.
+Imposter Syndrome is a feeling of _being a fraud_ or _not being good enough_ to get the job done. It is common among software engineers, developers, and designers working in tech companies, especially those not coming from a traditional tech background.  People suffering from imposter syndrome have a sense of inadequacy and insecurity concerning their ability to make a contribution at the workplace. In reality, they may be perfectly capable and do contribute successfully to their tasks.
 
-Imposter Syndrome is very common among software engineers or developers who are new to the role and lack the experience of some of their co-workers. Throughout various industries, imposter syndrome is very common with highly successful people. Studies have found that two out of five 'successful' people consider themselves frauds/imposters while other studies have shown that up to 70% of people experience imposter syndrome at one point in time or another.
+Imposter Syndrome is very common among software engineers or developers who are new to the role and lack the experience of some of their co-workers. Throughout various industries, imposter syndrome is very common with highly successful people. Studies have found two out of five 'successful' people consider themselves frauds/imposters while other studies have shown that up to 70% of people experience imposter syndrome at one point in time or another.
 
-If you suffer from imposter syndrome you may have a sense of inadequacy or insecurity about your ability to contribute. In reality, you may be perfectly capable and do contribute to your tasks. 
+If you suffer from imposter syndrome, you may have a sense of inadequacy or insecurity about your ability to contribute. In reality, you may be perfectly capable and do contribute to your tasks.
 
 These thoughts are fairly common if you struggle with imposter syndrome:
 
@@ -17,7 +17,7 @@ These thoughts are fairly common if you struggle with imposter syndrome:
 * "My colleagues are much smarter than me; I could never match up to them." (undermines own achievements)
 * "My coworkers have told me I've achieved a lot, but I feel like it's never enough." (discounts praise)
 * "I have no idea how I got through the interview process." (feels only luck dictates results)
-* "I will be ridiculed and fired when people realize I am not as smart as I portrayed myself as being." (fears failure)
+* "I will be ridiculed and fired when people realize I am not as smart as I portrayed myself to be." (fears failure)
 * "My IQ is not high enough to work here." (doubts inherent ability)
 * "I need more training to feel like I deserve to be here."
 
