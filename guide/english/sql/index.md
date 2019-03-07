@@ -9,7 +9,7 @@ SQL is commonly pronounced "sequel." Its most popular variants are Microsoft SQL
 
 However, SQL code can differ between the different variants. For example, Microsoft SQL is programmed with T-SQL, which sometimes has a different syntax.
 
-SQL is commonly pronounced "sequel." Its most popular variants are MySQL, PostgreSQL, and SQLite - a version of SQL which is commonly used for prototyping. It introduced the concept of accessing many records with one single command, using SQL Queries.
+SQL is commonly pronounced "sequel." Its most popular variants are MySQL, PostgreSQL, and SQLite (version commonly used for prototyping). It introduced the concept of accessing many records with one single command, using SQL Queries.
 
 
 ### Syntax
