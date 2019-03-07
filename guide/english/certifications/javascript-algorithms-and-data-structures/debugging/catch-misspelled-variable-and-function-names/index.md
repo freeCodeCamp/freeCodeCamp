@@ -7,7 +7,7 @@ title: Catch Misspelled Variable and Function Names
 Fix the two spelling errors in the code so the netWorkingCapital calculation works.
 
 ### Hint
-Check the spelling of the first two variables against when it is used. Also, reading a text backwards can help with detecting spelling errors. Make sure to check for these common spelling pratfalls in English:
+Check the spelling of the first two variables against when it is used. Also, reading a text backwards can help with detecting spelling errors. Make sure to check for these common spelling mistakes in English:
 
 * vowel confusion (a instead of e, i instead of a)
 * i before e
