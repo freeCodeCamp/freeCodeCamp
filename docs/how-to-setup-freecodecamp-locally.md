@@ -109,22 +109,21 @@ You can skip running freeCodeCamp locally, if you are just editing files, doing 
 
 ### Installing prerequisites
 
-Start by installing these prerequisite software.
+Start by installing the prerequisite software:
 
-| Prerequisite                                | Version | Notes |
-| ------------------------------------------- | ------- | ----- |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
-| [Node.js](http://nodejs.org)                | `10.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)|
-| npm (comes bundled with Node)               | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
+| Prerequisite                                  | Version  | Notes |
+| --------------------------------------------- | -------- | ----- |
+| [Docker CE](https://docs.docker.com/install/) | `Stable` |       |
+| [Node.js](http://nodejs.org)                  | `10.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
+| npm (comes bundled with Node)                 | `6.x`    | Does not have LTS releases, we use the version bundled with Node LTS |
 
 **Important:**
 
 We highly recommend updating to the latest stable releases a.k.a Long Term Support (LTS) versions of the above.
-If Node.js or MongoDB is already installed on your machine, run the following commands to validate the versions:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```shell
 node -v
-mongo --version
 npm -v
 ```
 
@@ -140,7 +139,7 @@ We regularly develop on popular and latest operating systems like macOS 10.12 or
 
 If you are on a different OS, and/or are still running into issues, reach out to [contributors community on our public forum](https://www.freeCodeCamp.org/c/contributors) or the [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
 
-Please avoid creating GitHub issues for pre-requisite issues. They are out of the scope of this project.
+Please avoid creating GitHub issues for pre-requisite software and use the forum and chat room instead.
 
 ### Installing dependencies
 
@@ -156,53 +155,22 @@ cp sample.env .env
 # Windows
 copy sample.env .env
 ```
+The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as is. But if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the `.env` file.
 
-Then you have to install the dependencies required for the application to startup.
+Then you have to bootstrap the docker images one time to prepare them for running.
 
 ```shell
-# Install NPM dependencies
-npm install
+npm run docker:init
+npm run docker:install
+npm run docker:seed
 ```
 
-The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as is.
+Each of the above commands will take a little time to complete and you should wait for each to complete before running the next command.
 
-
-Next, let's bootstrap the various services, i.e. the api-server, the client UI application, etc. You can [learn more about these services in this guide](#).
-
-`MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the `sample.env` should work fine.
-
-You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the `.env` file.
-
-### Start MongoDB
-
-You will need to start MongoDB, before you can start the application:
-
-Start the MongoDB server in a separate terminal
-
-- On macOS & Ubuntu:
-
-    ```shell
-    mongod
-    ```
-
-- On Windows, you have to instead specify the full path to the `mongod` binary
-
-    Make sure to replace `3.6` with the version you have installed
-
-    ```shell
-    "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-    ```
-
-> ProTip:
-> You can avoid having to start MongoDB every time, by installing it as a background service.
-> You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
-
-### Seeding the database
-
-Next, let's seed the database. In this step, we run the below command that will fill the MongoDB server with some initial data-sets that is required by the other services. This include a few schemas, among other things.
+Next you need to install a few npm packages outside of docker. You can skip this step if you are only running the app locally and will not use git.
 
 ```shell
-npm run seed
+npm install --ignore-scripts
 ```
 
 ### Start the freeCodeCamp client application and API server
@@ -210,10 +178,10 @@ npm run seed
 You can now start up the API server and the client applications.
 
 ```shell
-npm run develop
+npm run docker:develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+This single command will start all the services including the API server and the client application available for you to work on. It will also start the supporting services which include mongodb and the mail testing server (MailHog).
 
 Now open a web browser and visit <http://localhost:8000>. If the app loads, congratulations – you're all set.
 
