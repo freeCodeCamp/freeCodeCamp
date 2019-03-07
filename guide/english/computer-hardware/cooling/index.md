@@ -18,6 +18,7 @@ Cooling devices are available for individual parts on the computer. The two most
 ## Environmental Considerations
 
 * Keep it clean - Dust can clog up fans, heat sinks and act an an insulating layer trapping heat. Use compressed air to clean dust from the internal components. Maintenance of liquid cooling systems should be considered as well. Many forms of liquid cooling require regular flushing to keep the tubes clean.
+* Make sure to keep the room clean to keep dust and hair out of the fans and cooling systems to keep them functioning properly.
 * Case Covers - Contrary to what you read on the internet, keeping the case covers on the computer will aid cooling. Absence of the case covers disrupts air flow and can actually increase the heat inside the case.
 * Room ventilation - Place the computer in a neutral location away from the rooms environmental registers. Keep the computer away from room heaters or vents at all times.
 * Room placement - Keep the computer away from windows or areas of strong sunlight exposure. Placement in closets can also provide challenges to cooling. The case should be located in a way that allows good airflow. It is recommended to keep the computer away from any carpet-like material, which can easily bring dust into the computer.
