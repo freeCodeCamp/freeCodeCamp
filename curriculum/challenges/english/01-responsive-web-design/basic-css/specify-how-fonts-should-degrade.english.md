@@ -9,7 +9,7 @@ videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 <section id='description'>
 There are several default fonts that are available in all browsers. These generic font families include <code>monospace</code>, <code>serif</code> and <code>sans-serif</code>
 When one font isn't available, you can tell the browser to "degrade" to another font.
-For example, if you wanted an element to use the <code>Helvetica</code> font, but degrade to the <code>sans-serif</code> font when <code>Helvetica</code> wasn't available, you will specify it as follows:
+For example, if you wanted an element to use the <code>Helvetica</code> font, but degrade to the <code>sans-serif</code> font when <code>Helvetica</code> isn't available, you will specify it as follows:
 <blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, sans-serif;<br>}</blockquote>
 Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.
 </section>
@@ -27,13 +27,13 @@ In the last challenge, you imported the <code>Lobster</code> font using the <cod
 ```yml
 tests:
   - text: Your h2 element should use the font <code>Lobster</code>.
-    testString: 'assert($("h2").css("font-family").match(/^"?lobster/i), "Your h2 element should use the font <code>Lobster</code>.");'
+    testString: assert($("h2").css("font-family").match(/^"?lobster/i), 'Your h2 element should use the font <code>Lobster</code>.');
   - text: Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?,\s*monospace\s*;\s*\}/gi.test(code), "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.");'
-  - text: 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.'
-    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.");'
-  - text: 'Be sure to close your comment by adding <code>--&#62;</code>.'
-    testString: 'assert(new RegExp("[^fc]-->", "gi").test(code), "Be sure to close your comment by adding <code>--&#62;</code>.");'
+    testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\'|")?Lobster(\'|")?,\s*monospace\s*;\s*\}/gi.test(code), 'Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.');
+  - text: Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.
+    testString: assert(new RegExp("<!--[^fc]", "gi").test(code), 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.');
+  - text: Be sure to close your comment by adding <code>--&#62;!</code>.
+    testString: assert(new RegExp("[^fc]-->", "gi").test(code), 'Be sure to close your comment by adding <code>--&#62;!</code>.');
 
 ```
 

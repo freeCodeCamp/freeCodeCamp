@@ -2,6 +2,7 @@
 id: cf1111c1c12feddfaeb3bdef
 title: Use Conditional Logic with If Statements
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cy87mf3'
 ---
 
 ## Description
@@ -26,15 +27,15 @@ Create an <code>if</code> statement inside the function to return <code>"Yes, th
 ```yml
 tests:
   - text: <code>trueOrFalse</code> should be a function
-    testString: 'assert(typeof trueOrFalse === "function", "<code>trueOrFalse</code> should be a function");'
+    testString: assert(typeof trueOrFalse === "function", '<code>trueOrFalse</code> should be a function');
   - text: <code>trueOrFalse(true)</code> should return a string
-    testString: 'assert(typeof trueOrFalse(true) === "string", "<code>trueOrFalse(true)</code> should return a string");'
+    testString: assert(typeof trueOrFalse(true) === "string", '<code>trueOrFalse(true)</code> should return a string');
   - text: <code>trueOrFalse(false)</code> should return a string
-    testString: 'assert(typeof trueOrFalse(false) === "string", "<code>trueOrFalse(false)</code> should return a string");'
-  - text: '<code>trueOrFalse(true)</code> should return "Yes, that was true"'
-    testString: 'assert(trueOrFalse(true) === "Yes, that was true", "<code>trueOrFalse(true)</code> should return "Yes, that was true"");'
-  - text: '<code>trueOrFalse(false)</code> should return "No, that was false"'
-    testString: 'assert(trueOrFalse(false) === "No, that was false", "<code>trueOrFalse(false)</code> should return "No, that was false"");'
+    testString: assert(typeof trueOrFalse(false) === "string", '<code>trueOrFalse(false)</code> should return a string');
+  - text: <code>trueOrFalse(true)</code> should return "Yes, that was true"
+    testString: assert(trueOrFalse(true) === "Yes, that was true", '<code>trueOrFalse(true)</code> should return "Yes, that was true"');
+  - text: <code>trueOrFalse(false)</code> should return "No, that was false"
+    testString: assert(trueOrFalse(false) === "No, that was false", '<code>trueOrFalse(false)</code> should return "No, that was false"');
 
 ```
 

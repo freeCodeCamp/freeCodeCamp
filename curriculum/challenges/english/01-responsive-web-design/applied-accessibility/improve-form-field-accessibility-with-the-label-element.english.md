@@ -16,7 +16,7 @@ The value of the <code>for</code> attribute must be the same as the value of the
 
 ## Instructions
 <section id='instructions'>
-Camper Cat expects a lot of interest in his thoughtful blog posts, and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field.
+Camper Cat expects a lot of interest in his thoughtful blog posts and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field.
 </section>
 
 ## Tests
@@ -25,9 +25,9 @@ Camper Cat expects a lot of interest in his thoughtful blog posts, and wants to 
 ```yml
 tests:
   - text: Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.
-    testString: 'assert($("label").attr("for"), "Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.");'
+    testString: assert($('label').attr('for'), 'Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.');
   - text: Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.
-    testString: 'assert($("label").attr("for") == "email", "Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.");'
+    testString: assert($('label').attr('for') == 'email', 'Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.');
 
 ```
 

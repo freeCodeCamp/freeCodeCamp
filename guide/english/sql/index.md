@@ -3,7 +3,11 @@ title: SQL
 ---
 ## SQL
 
-SQL stands for Structured Query Language. It is the most common tool used to manipulate and manage data in a relational database (often referred to as a "SQL database").
+SQL stands for Structured Query Language. It is the most common tool used to create, delete, manipulate and manage data in a relational database (often referred to as a "SQL database").
+
+SQL is commonly pronounced "sequel." Its most popular variants are Microsoft SQL, MySQL, PostgreSQL, and SQLite - a version of SQL which is commonly used for prototyping. It introduced the concept of accessing many records with one single command, using SQL Queries.
+
+However, SQL code can differ between the different variants. For example, Microsoft SQL is programmed with T-SQL, which sometimes has a different syntax.
 
 SQL is commonly pronounced "sequel." Its most popular variants are MySQL, PostgreSQL, and SQLite - a version of SQL which is commonly used for prototyping. It introduced the concept of accessing many records with one single command, using SQL Queries.
 
@@ -14,5 +18,3 @@ DDL is the creating/editing the structure of tables. Functions include CREATE da
 DML is selecting data, inserting data, updating data, and deleting data. Another common acronym in SQL DDL is CRUD, which stands for Create, Read, Update and Delete. SQL functions for manipulating data are SELECT, INSERT, UPDATE and DELETE. 
 
 Additionally there is TCL (Transaction Control Language), which allows you to block code together into transactions, ie., complete all of the code successfully or fail back gracefully. Statements include COMMIT and ROLLBACK.
-
-

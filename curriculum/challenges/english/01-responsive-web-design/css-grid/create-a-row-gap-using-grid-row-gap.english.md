@@ -21,7 +21,7 @@ Create a gap for the rows that is <code>5px</code> tall.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.");'
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.');
 
 ```
 

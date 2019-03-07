@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/c/c2MZVSg'
 ## Description
 <section id='description'>
 To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:
-<blockquote>p {<br>&nbsp;&nbsp;transform:scale(2);<br>}</blockquote>
+<blockquote>p {<br>&nbsp;&nbsp;transform: scale(2);<br>}</blockquote>
 </section>
 
 ## Instructions
@@ -21,8 +21,8 @@ Increase the size of the element with the id of <code>ball2</code> to 1.5 times 
 
 ```yml
 tests:
-  - text: 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.'
-    testString: 'assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.");'
+  - text: Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.
+    testString: assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');
 
 ```
 

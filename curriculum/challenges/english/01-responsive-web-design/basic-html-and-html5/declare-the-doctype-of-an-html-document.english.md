@@ -27,11 +27,11 @@ Add a <code>DOCTYPE</code> tag for HTML5 to the top of the blank HTML document i
 ```yml
 tests:
   - text: Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.
-    testString: 'assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi), "Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.");'
+    testString: assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi), 'Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.');
   - text: There should be one <code>html</code> element.
-    testString: 'assert($("html").length == 1, "There should be one <code>html</code> element.");'
+    testString: assert($('html').length == 1, 'There should be one <code>html</code> element.');
   - text: The <code>html</code> tags should wrap around one <code>h1</code> element.
-    testString: 'assert(code.match(/<html>\s*?<h1>\s*?.*?\s*?<\/h1>\s*?<\/html>/gi), "The <code>html</code> tags should wrap around one <code>h1</code> element.");'
+    testString: assert(code.match(/<html>\s*?<h1>\s*?.*?\s*?<\/h1>\s*?<\/html>/gi), 'The <code>html</code> tags should wrap around one <code>h1</code> element.');
 
 ```
 
@@ -55,7 +55,13 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+
+<!DOCTYPE html>
+<html>
+  <h1> Hello world </h1>
+</html>
+
 ```
+
 </section>
