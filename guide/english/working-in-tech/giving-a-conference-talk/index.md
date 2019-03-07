@@ -25,7 +25,7 @@ Organize your thoughts in a bulleted list. This will help you when you write you
 
 ## Submit Proposal to Conferences
 
-You can find conferences on websites such as [**PaperCall**](https://papercall.io), through social media by following profiles like [**Call Back Women**](https://twitter.com/callbackwomen) on twitter, or simply by using a search engine. 
+You can find conferences on websites such as [**PaperCall**](https://papercall.io), by signing up on the mailing lists of [**Women Who Code**](https://www.womenwhocode.com), through social media by following profiles like [**Call Back Women**](https://twitter.com/callbackwomen) on twitter, or simply by using a search engine. 
 
 Most of the time, you can submit a proposal to multiple conferences, or you can submit multiple proposals to the same conference. If you do either, you increase your chance of being accepted. You should pay attention to what the conference organizers are looking for in submittals and edit your submittal to match. 
 
