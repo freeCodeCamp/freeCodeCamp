@@ -9,9 +9,12 @@ SQL is commonly pronounced "sequel." Its most popular variants are Microsoft SQL
 
 However, SQL code can differ between the different variants. For example, Microsoft SQL is programmed with T-SQL, which sometimes has a different syntax.
 
-### SQL can be divided into three parts:
+SQL is commonly pronounced "sequel." Its most popular variants are MySQL, PostgreSQL, and SQLite - a version of SQL which is commonly used for prototyping. It introduced the concept of accessing many records with one single command, using SQL Queries.
 
-1. The Data Manipulation Language (DML) is for working with the database tables.  
-2. The Data Definition Language (DDL) is for working with the data in the tables.  
-3. The Data Control Language (DCL) is for access control to the database.  
+SQL can be broken down further into DDL (Data Definition Language) and  DML (Data manipulation Language). 
 
+DDL is the creating/editing the structure of tables. Functions include CREATE database/role/table/function/, DROP table/function, TRUNCATE table, ALTER table, RENAME table. You can also GRANT and REVOKE permissions to objects using DDL.
+
+DML is selecting data, inserting data, updating data, and deleting data. Another common acronym in SQL DDL is CRUD, which stands for Create, Read, Update and Delete. SQL functions for manipulating data are SELECT, INSERT, UPDATE and DELETE. 
+
+Additionally there is TCL (Transaction Control Language), which allows you to block code together into transactions, ie., complete all of the code successfully or fail back gracefully. Statements include COMMIT and ROLLBACK.
