@@ -1,10 +1,11 @@
 ---
-title: Loop
+title: Loops
 ---
 
-# PHP Loop
-When you need to repeat same task for many times, you can use loop instead of keep adding same code over and over again.
-In PHP have following loop statements :
+# PHP Loops
+When you need to repeat a task multiple times, you can use a loop instead of adding the same code over and over again.
+PHP has the following loop statements :
+
 - for - loop through a block of code with specific number of times.
 - while - loop through a block of code if condition is true.
 - do...while - loop through a block of code one and continue loop if condition is true.
@@ -16,7 +17,8 @@ Using a `break` within the loop can stop the loop execution.
 Loop through a block of code with specific number of times.
 
 ## Syntax
-```
+```php
+
 for (init counter; condition; counter increment or decrement)
 {
     // Code to be executed
@@ -49,7 +51,8 @@ for($index = 0; $index < 5; $index ++)
 Loop through a block of code if condition is true.
 
 ## Syntax
-```
+```php
+
 while (condition)
 {
     // Code to be executed
@@ -87,10 +90,11 @@ while ($index >= 0)
 ```
 
 # Do...While loop
-Loop through a block of code one and continue loop if condition is true.
+Loop through a block of code once and continue to loop if the condition is true.
 
 ## Syntax
-```
+```php
+
 do
 {
     // Code to be executed
@@ -126,7 +130,7 @@ while ($index > 0);
 Loop through a block of code for each value within an array.
 
 ## Syntax
-```
+```php
 foreach ($array as $value)
 {
     // Code to be executed
@@ -165,3 +169,6 @@ foreach ($array as $name)
 > Hi, my name is Cecily.
 > "Hello, Cecily!"
 ```
+
+## For More Information:
+http://php.net/manual/en/control-structures.for.php
