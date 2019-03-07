@@ -38,7 +38,12 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
 3. Rich Query Language
 4. High Availability
 5. Horizontal Scalability
+6. Supports Indexing
 
+### Cons of MongoDB
+1. Schemaless design requires database manager to ensure certain constraints
+2. Indexing on multiple fields takes more memory
+3. Aggregation queries are at times non-intutive
 
 ### More Information
 [What is Mongo DB?](https://www.mongodb.com/what-is-mongodb)
@@ -49,4 +54,6 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
 
 [Learn MongoDB from MongoDB](https://university.mongodb.com/)
 
-[Getting Started with MongoDB] (https://docs.mongodb.com/manual/tutorial/getting-started/)
+[ACID vs BASE databases](http://www.dataversity.net/acid-vs-base-the-shifting-ph-of-database-transaction-processing/)
+
+[Getting Started with MongoDB](https://docs.mongodb.com/manual/tutorial/getting-started/)
