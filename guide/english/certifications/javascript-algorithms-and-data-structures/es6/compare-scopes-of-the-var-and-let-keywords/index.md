@@ -39,7 +39,7 @@ _Fix the code so that `i` declared in the if statement is a separate variable th
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") [Run code at codepen.io](https://codepen.io/dylantyates/pen/wxwxRd)
 
 
-# Code Explanation:
+## Code Explanation:
 
 By using `let` you can declare variables in relation to their scope.
 
