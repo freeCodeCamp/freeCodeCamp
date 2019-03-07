@@ -41,7 +41,7 @@ You can add Bootstrap CSS by using a `<link>` element inside the `<head>` of you
 
 `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">`
 
-Adding the JavaScript elements of Bootstrap is similar with `<script>` elements usually placed at the bottom of your ‘<body>’ tag.  You may need to include some dependencies first. Pay special attention to the order listed:
+Adding the JavaScript elements of Bootstrap is similar with `<script>` elements usually placed at the bottom of your `<body>` tag.  You may need to include some dependencies first. Pay special attention to the order listed:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
