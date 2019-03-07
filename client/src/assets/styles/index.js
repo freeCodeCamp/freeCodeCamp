@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --quaternary-canvas: ${props => (props.darkMode ? '#d4d4da' : '#43435d')};
     --tertiary-canvas: ${props => (props.darkMode ? '#e8e8eb' : '#292948')};
     --secondary-canvas: ${props => (props.darkMode ? '#f5f6f7' : '#0a0a2e')};
-    --primary-canvas: ${props => (props.darkMode ? 'white' : '#0a0a2e')};
+    --primary-canvas: ${props => (props.darkMode ? 'white' : 'black')};
     --theme-color:#0a0a2e;
   }
 

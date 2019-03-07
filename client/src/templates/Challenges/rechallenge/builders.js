@@ -14,7 +14,7 @@ const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
 
 const defaultTemplate = ({ source }) => `
-  <body style='margin:8px;'>
+  <body id='display-body'style='margin:8px; color:white '>
     <!-- fcc-start-source -->
       ${source}
     <!-- fcc-end-source -->

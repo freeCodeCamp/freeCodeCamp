@@ -1,7 +1,13 @@
 .guide-container {
   font-size: 16px;
 }
-
+#guide-navigation-side-panel {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-canvas);
+}
+/* .guide-container .content {
+  font-family: 'Lato', sans-serif;
+} */
 /* Breadcrumbs */
 
 .breadcrumb {
@@ -111,7 +117,6 @@ a .navItemTitle {
 }
 
 .title {
-  background-color: white;
   border: none;
   border-radius: 0;
   cursor: pointer;

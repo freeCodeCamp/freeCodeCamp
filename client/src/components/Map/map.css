@@ -22,6 +22,11 @@
   padding-bottom: 18px;
 }
 
+.map-title :hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-canvas);
+}
+
 .map-title > h4 {
   margin-bottom: 0;
 }

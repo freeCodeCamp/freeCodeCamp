@@ -103,8 +103,8 @@ header {
 
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
-  background-color: var(--primary-canvas);
-  color: var(--primary-color);
+  background-color: var(--secondary-canvas);
+  color: var(--secondary-color);
   border-radius: 0px;
 }
 
