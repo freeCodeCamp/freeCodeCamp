@@ -4,7 +4,7 @@ title: Compare Scopes of the var and let Keywords
 
 ![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### Problem explanation:
+## Problem Explanation:
 
 _Fix the code so that `i` declared in the if statement is a separate variable than `i` declared in the first line of the function._
 
