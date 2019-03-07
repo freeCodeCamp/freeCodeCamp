@@ -51,6 +51,9 @@ const defineMonacoThemes = monaco => {
   monaco.editor.defineTheme('vs-dark-custom', {
     base: 'vs-dark',
     inherit: true,
+    colors: {
+      'editor.background': '#292948'
+    },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
       { token: 'delimiter.parenthesis.js', foreground: yellowCollor },

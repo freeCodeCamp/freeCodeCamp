@@ -89,7 +89,7 @@ a:focus {
 
 /* boostrap override */
 .btn {
-  background-color: var(--primary-canvas);
+  background-color: var(--quaternary-canvas);
   border-width: 3px;
   border-color: var(--secondary-color);
   color: var(--secondary-color);
@@ -166,4 +166,9 @@ code {
 
 hr {
   border-top: 1px solid var(--tertiary-canvas);
+}
+
+.challenge-preview iframe {
+  background-color: var(--primary-canvas);
+  color: white;
 }

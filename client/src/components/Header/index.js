@@ -116,7 +116,7 @@ class Header extends Component {
                       News
                     </Link>
                   </li>
-                  <li className='user-state-link' onClick={toggleDisplayMenu}>
+                  <li onClick={toggleDisplayMenu}>
                     <UserState disableSettings={disableSettings} />
                   </li>
                 </ul>

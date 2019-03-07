@@ -6,7 +6,7 @@ header {
 }
 
 #top-nav {
-  background: var(--secondary-color);
+  background: var(--theme-color);
   height: var(--header-height);
   margin-bottom: 0;
   border-radius: 0;
@@ -16,7 +16,7 @@ header {
   align-items: center;
   padding: 0 15px;
   font-family: 'hackregular', 'monospace';
-  border: none;
+  border-bottom: 1px solid var(--quaternary-color);
 }
 
 #top-nav:first-child > div {
@@ -71,6 +71,12 @@ header {
   color: var(--theme-color);
 }
 
+.user-state-link a:hover,
+.user-state-link a:hover {
+  background-color: #fff;
+  color: var(--theme-color);
+}
+
 #top-right-nav {
   padding-left: 0;
 }
@@ -98,6 +104,7 @@ header {
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
   background-color: var(--primary-canvas);
+  color: var(--primary-color);
   border-radius: 0px;
 }
 

@@ -14,3 +14,7 @@
 .disable-iframe {
   pointer-events: none;
 }
+
+.challenge preview-frame body {
+  color: white !important;
+}
