@@ -1,6 +1,10 @@
 ---
 title: MongoDB
 ---
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/MongoDB-Logo.svg/527px-MongoDB-Logo.svg.png">
+
+
 ## MongoDB
 
 MongoDB is an open-source non-relational Database that uses a JSON like structure to store data. 
