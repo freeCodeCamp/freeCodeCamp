@@ -28,6 +28,7 @@
     "test:curriculum": "cd ./curriculum && npm test && cd ../",
     "test:guide-formatting": "node ./tools/scripts/ci/ensure-guide-formatting.js",
     "test:lint": "echo 'Warning: TODO - Define Linting tests.'",
+    "test:search-indexing": "jest ./search-indexing",
     "test:server": "cd ./api-server && npm test && cd ../",
     "test:tools": "jest ./tools"
   },
