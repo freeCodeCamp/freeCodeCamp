@@ -7,7 +7,7 @@ title: MongoDB
 
 ## MongoDB
 
-MongoDB is an open-source non-relational Database that uses a JSON like structure to store data. 
+MongoDB is an open-source non-relational Database that uses a JSON-like structure to store data. 
 It uses a document model to store and retrieve the data instead of the table model used by sequential databases such as SQL or Oracle.
 MongoDB is a distributed database at its core, so high availability, horizontal scaling, and geographic distribution are built in and easy to use.
 MongoDB in applications built with javascript is mainly used with Mongoose which is a package built on top of native mongo driver . It gives features like schema based design , virtuals , data validations etc. It makes the mongodb experience smooth and easy to use. You can learn more about mongoose [here](https://mongoosejs.com/).
@@ -18,7 +18,7 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
 | --- | --- |
 | Database | Database |
 | Collection | Table |
-| document | Row |
+| Document | Row |
 | Field | Column |
 | Index | Index |
 | Embedded Documents | Table Joins |
@@ -29,7 +29,7 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
 2. No Joins
 3. Clustering
 4. Opensource
-5. Schema less
+5. Schema-Less
 6. No Relationships
 
 ### Features of MongoDB
@@ -49,4 +49,4 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
 
 [Learn MongoDB from MongoDB](https://university.mongodb.com/)
 
-[MongoDB Documentation](https://docs.mongodb.com/)
+[Getting Started with MongoDB] (https://docs.mongodb.com/manual/tutorial/getting-started/)
