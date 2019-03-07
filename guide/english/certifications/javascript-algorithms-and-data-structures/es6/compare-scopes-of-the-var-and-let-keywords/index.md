@@ -17,7 +17,7 @@ _Fix the code so that `i` declared in the if statement is a separate variable th
 *   _Remember that `let`'s scope is limited to the block, function or statement in which you declare it._
 > _try to solve the problem now_
 
-## Spoiler alert!
+## Spoiler Alert!
 
 ![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
 
