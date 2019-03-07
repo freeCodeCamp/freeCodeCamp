@@ -81,6 +81,24 @@ function frankenSplice(arr1, arr2, n) {
 * Since the `splice()` function will mutate (alter) arrays and can be used to add new elements we will use it to add the contents of `arr1` into `localArr`.  `n` is the starting position where our content will be inserted.  We won't be deleting any elements so the next argument is `0`.  Then we add the entire contents of `arr1` using spread syntax `...`.
 
 * `localArr` is returned and the function is complete.
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+```js
+function frankenSplice(arr1, arr2, n) {
+  return [...arr2.slice(0, n), ...arr1, ...arr2.slice(n, arr2.length)];
+}
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='#' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+* arr2.slice(0, n) returns an array of arr2 elements from index 0 (inclusive) to index n (exclusive i.e. last element included has index n-1)
+* arr2.slice(n, arr2.length) returns an array of arr2 from index n (inclusive) to index arr2.length (exclusive, but since arrayLength = lastIndex + 1, it will include the last element)
+* [...anyArray] copies all elements from anyArray into this new array with spread operator (...)
+* [...arr2.slice(0, n), ...arr1, ...arr2.slice(n, arr2.length)] is an array of arr2 elements to n, all arr1 elements, and arr2 elements from n to end
+
+#### Relevant Links
+
+*   <a href='https://learn.freecodecamp.org/front-end-libraries/redux/use-the-spread-operator-on-arrays/' target='_blank' rel='nofollow'>Spread Operator</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/combine-arrays-with-the-spread-operator/' target='_blank' rel='nofollow'>Combine Arrays with Spread Operator</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
