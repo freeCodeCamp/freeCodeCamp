@@ -84,6 +84,10 @@ int main（） { float a = 0.0; scanf（“％f”，＆a）; //输入是45.65 p
 
 字符串输入：％s
 
+可以设定要放多少个小数点: 
+%.2f 代表只会显示两个小数点。
+但只可以放在 printf（）里，不能在scanf()里。
+
 # 包括
 
 int main（） { char str \[20\]; scanf（“％s”，str）; //输入是nitesh printf（“％s \\ n”，str）; 返回0; }

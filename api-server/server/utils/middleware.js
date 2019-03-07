@@ -2,7 +2,11 @@ import dedent from 'dedent';
 import { validationResult } from 'express-validator/check';
 
 import { createValidatorErrorFormatter } from './create-handled-error.js';
-import { homeLocation } from '../../../config/env.json';
+import { homeLocation } from '../../../config/env';
+import {
+  getAccessTokenFromRequest,
+  removeCookies
+} from './getSetAccessToken.js';
 
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
@@ -54,8 +58,17 @@ export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
 export function ifUserRedirectTo(path = `${homeLocation}/welcome`, status) {
   status = status === 302 ? 302 : 301;
   return (req, res, next) => {
-    if (req.user) {
+    const { accessToken } = getAccessTokenFromRequest(req);
+    if (req.user && accessToken) {
       return res.status(status).redirect(path);
+    }
+    if (req.user && !accessToken) {
+      // This request has an active auth session
+      // but there is no accessToken attached to the request
+      // perhaps the user cleared cookies?
+      // we need to remove the zombie auth session
+      removeCookies(req, res);
+      delete req.session.passport;
     }
     return next();
   };
