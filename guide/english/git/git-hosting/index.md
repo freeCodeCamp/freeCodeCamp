@@ -3,11 +3,14 @@ title: Git hosting
 ---
 ## Git hosting
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/git/git-hosting/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Git repositories can be hosted remotely and various services are there to host Git repositories. In simple words, a Git project folder can be hosted online either publicly or privately.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Although one can setup his/her own Git server but it's easy and more popular to use an external dedicated hosting site like <a href='https://github.com/' target='_blank'>GitHub</a>. Hosting Git repositories on such popular public hosting sites even makes it easier for the open source community to find the project and collaborate with it.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Public Git Hosting Sites
+
+There are a lot of hosting options for Git repositories. Here's an up-to-date list: [GitHosting](https://git.wiki.kernel.org/index.php/GitHosting)
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+* Git documentation: [Hosted Git](https://git-scm.com/book/en/v1/Git-on-the-Server-Hosted-Git)
