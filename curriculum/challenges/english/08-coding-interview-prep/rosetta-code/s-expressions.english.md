@@ -6,50 +6,24 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>
-<a href="https://en.wikipedia.org/wiki/S-Expression" title="wp: S-Expression">S-Expressions</a> are one convenient way to parse and store data.
-</p>
-Task:
-<p>
-    Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
-</p>
-<p>
-The function should read a single but nested S-Expression from a string and
-return it as a (nested) array.
-</p>
-<p>
-    Newlines and other whitespace may be ignored unless contained within a quoted string.
-</p>
-<p>“<tt>()</tt>”  inside quoted strings are not interpreted, but treated as part of the string.
-</p>
-<p>
-Handling escaped quotes inside a string is optional;  thus “<tt>(foo"bar)</tt>” maybe treated as a string “<tt>foo"bar</tt>”, or as an error.
-</p>
-<p>
-For this, the reader need not recognize “<tt>\</tt>” for escaping, but should, in addition, recognize numbers if the language has appropriate datatypes.
-</p>
-<p>
-Note that with the exception of “<tt>()"</tt>” (“<tt>\</tt>” if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
-</p>
-<p>The reader should be able to read the following input</p>
-<p>
-<pre>
-    ((data "quoted data" 123 4.5)
-    (data (!@# (4.5) "(more" "data)")))
-</pre>
-</p>
-<p>
-and turn it into a native datastructure. (see the
-<a href="http://rosettacode.org/wiki/#Pike" title="#Pike">Pike</a>,
-<a href="http://rosettacode.org/wiki/#Python" title="#Python">Python</a> and
-<a href="http://rosettacode.org/wiki/#Ruby" title="#Ruby">Ruby</a> implementations
-for examples of native data structures.)
-</p>
+<a href="https://en.wikipedia.org/wiki/S-Expression" title="wp: S-Expression" target="_blank">S-Expressions</a> are one convenient way to parse and store data.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
+The function should read a single but nested S-Expression from a string and return it as a (nested) array.
+Newlines and other whitespace may be ignored unless contained within a quoted string.
+“<tt>()</tt>”  inside quoted strings are not interpreted, but treated as part of the string.
+Handling escaped quotes inside a string is optional; thus “<tt>(foo"bar)</tt>” maybe treated as a string “<tt>foo"bar</tt>”, or as an error.
+For this, the reader need not recognize “<tt>\</tt>” for escaping, but should, in addition, recognize numbers if the language has appropriate datatypes.
+Note that with the exception of “<tt>()"</tt>” (“<tt>\</tt>” if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
+The reader should be able to read the following input
+<pre>
+((data "quoted data" 123 4.5)
+(data (!@# (4.5) "(more" "data)")))
+</pre>
+and turn it into a native datastructure. (see the <a href="https://rosettacode.org/wiki/S-Expressions#Pike" title="#Pike" target="_blank">Pike</a>, <a href="https://rosettacode.org/wiki/S-Expressions#Python" title="#Python" target="_blank">Python</a> and <a href="https://rosettacode.org/wiki/S-Expressions#Ruby" title="#Ruby" target="_blank">Ruby</a> implementations for examples of native data structures.)
 </section>
 
 ## Tests

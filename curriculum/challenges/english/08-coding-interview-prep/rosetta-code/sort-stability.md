@@ -6,20 +6,22 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-When sorting records in a table by a particular column or field, a <a href="https://en.wikipedia.org/wiki/Stable_sort#Stability">stable sort</a> will always retain the  relative order of records that have the same key.
+When sorting records in a table by a particular column or field, a <a href="https://en.wikipedia.org/wiki/Stable_sort#Stability" target="_blank">stable sort</a> will always retain the  relative order of records that have the same key.
 For example, in this table of countries and cities, a stable sort on the <b>second</b> column, the cities, would  keep the US Birmingham above the UK Birmingham. (Although an unstable sort <i>might</i>, in this case, place the US Birmingham above the UK Birmingham, a stable sort routine would <i>guarantee</i> it).
-<pre>UK  London
+<pre>
+UK  London
 US  New York
 US  Birmingham
-UK  Birmingham</pre>
+UK  Birmingham
+</pre>
 Similarly, stable sorting on just the first column would generate “UK London” as the first item and “US Birmingham” as the last item (since the order of the elements having the same first word – “UK” or “US” – would be maintained).
-Write a function that takes a 2D array as a parameter. Each element has 2 elements similar to the above example. The function should sort the array as mentioned previously and return the sorted array.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes a 2D array as a parameter. Each element has 2 elements similar to the above example. The function should sort the array as mentioned previously and return the sorted array.
 </section>
+
 ## Tests
 <section id='tests'>
 
@@ -27,8 +29,8 @@ Write a function that takes a 2D array as a parameter. Each element has 2 elemen
 tests:
   - text: <code>stableSort</code> should be a function.
     testString: assert(typeof stableSort == 'function', '<code>stableSort</code> should be a function.');
-  - text: <code>stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])</code> should return a array.
-    testString: assert(Array.isArray(stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])), '<code>stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])</code> should return a array.');
+  - text: <code>stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])</code> should return an array.
+    testString: assert(Array.isArray(stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])), '<code>stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])</code> should return an array.');
   - text: <code>stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])</code> should return <code>[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]</code>.
     testString: assert.deepEqual(stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]]), [["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]], '<code>stableSort([["UK", "London"], ["US", "New York"], ["US", "Birmingham"], ["UK", "Birmingham"]])</code> should return <code>[["US", "Birmingham"], ["UK", "Birmingham"], ["UK", "London"], ["US", "New York"]]</code>.');
   - text: <code>stableSort([[2, 2], [1, 2], [1, 4], [1, 5]])</code> should return <code>[[2, 2], [1, 2], [1, 4], [1, 5]]</code>.
@@ -48,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function stableSort (arr) {
+function stableSort(arr) {
   // Good luck!
 }
 ```

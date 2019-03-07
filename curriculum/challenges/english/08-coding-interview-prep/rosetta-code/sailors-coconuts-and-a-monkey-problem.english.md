@@ -6,69 +6,22 @@ challengeType: 5
 
 ## Description
 <section id='description'>
- <p>
-   Five sailors are shipwrecked on an island and
-   collect a large pile of coconuts during the day.
- </p>
- <p>That night the first sailor wakes up and decides
-   to take his first share early  so tries to divide the pile of coconuts equally
-   into five piles but finds that there is one coconut left over, so he tosses it
-   to a monkey and then hides "his" one of the five equally sized piles of
-   coconuts and pushes the other four piles together to form a single visible pile
-   of coconuts again and goes to bed.
- </p>
- <p>
-   To cut a long story short, each of the sailors in
-   turn gets up once during the night and performs the same actions of dividing
-   the coconut pile into five, finding that one coconut is left over and giving
-   that single remainder coconut to the monkey.
- </p>
- <p>
-   In the morning (after the surreptitious and
-   separate action of each of the five sailors during the night), the remaining
-   coconuts are divided into five equal piles for each of the sailors, whereupon
-   it is found that the pile of coconuts divides equally amongst the sailors with
-   no remainder. (Nothing for the monkey in the morning.)
- </p>
-
- The task:
-
-
-     Create a function that returns the
-     the minimum possible size
-     of the initial pile of coconuts collected during the day for N
-     sailors.
-
-
- Note:
-
-
-     Of course the tale is told in a
-     world where the collection of any amount of coconuts in a day and multiple
-     divisions of the pile, etc can occur in time fitting the story line, so as
-     not to affect the mathematics.
-
-
-
- C.f:
-
-   <a
-       href="https://www.youtube.com/watch?v=U9qU20VmvaU" title="link: https://www.youtube.com/watch?v=U9qU20VmvaU">
-       Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.
-
-
-     <a
-       href="http://oeis.org/A002021" title="link: http://oeis.org/A002021">A002021 Pile of coconuts problem</a> The On-Line
-     Encyclopedia of Integer Sequences. (Although some of its references may use
-     the alternate form of the tale).
-
-
-
+Five sailors are shipwrecked on an island and collect a large pile of coconuts during the day.
+That night the first sailor wakes up and decides to take his first share early  so tries to divide the pile of coconuts equally into five piles but finds that there is one coconut left over, so he tosses it to a monkey and then hides "his" one of the five equally sized piles of coconuts and pushes the other four piles together to form a single visible pile of coconuts again and goes to bed.
+To cut a long story short, each of the sailors in turn gets up once during the night and performs the same actions of dividing the coconut pile into five, finding that one coconut is left over and giving that single remainder coconut to the monkey.
+In the morning (after the surreptitious and separate action of each of the five sailors during the night), the remaining coconuts are divided into five equal piles for each of the sailors, whereupon it is found that the pile of coconuts divides equally amongst the sailors with no remainder. (Nothing for the monkey in the morning.)
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for <code>N</code> sailors.
+<b>Note:</b>
+Of course the tale is told in a world where the collection of any amount of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect the mathematics.
+<b>C.f:</b>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=U9qU20VmvaU" title="link: https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank"> Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.</li>
+  <li><a href="http://oeis.org/A002021" title="link: http://oeis.org/A002021" target="_blank">A002021 Pile of coconuts problem</a> The On-Line Encyclopedia of Integer Sequences. (Although some of its references may use the alternate form of the tale).</li>
+</ul>
 </section>
 
 ## Tests

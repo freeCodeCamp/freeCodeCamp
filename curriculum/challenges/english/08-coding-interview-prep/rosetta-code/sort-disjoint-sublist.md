@@ -47,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sortDisjoint (values, indices) {
+function sortDisjoint(values, indices) {
   // Good luck!
 }
 ```
