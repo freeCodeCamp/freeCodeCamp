@@ -25,10 +25,10 @@ const propTypes = {
   showLoading: PropTypes.bool
 };
 
-const createRequestedUserSelector = () => (state, { maybeUser }) =>
-  userByNameSelector(maybeUser)(state);
-const createIsSessionUserSelector = () => (state, { maybeUser }) =>
-  maybeUser === usernameSelector(state);
+const createRequestedUserSelector = () => (state, { maybeUser = '' }) =>
+  userByNameSelector(maybeUser.toLowerCase())(state);
+const createIsSessionUserSelector = () => (state, { maybeUser = '' }) =>
+  maybeUser.toLowerCase() === usernameSelector(state);
 
 const makeMapStateToProps = () => (state, props) => {
   const requestedUserSelector = createRequestedUserSelector();

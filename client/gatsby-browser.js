@@ -57,3 +57,5 @@ wrapPageElement.propTypes = {
   location: PropTypes.objectOf({ pathname: PropTypes.string }),
   props: PropTypes.any
 };
+
+export const disableCorePrefetching = () => true;
