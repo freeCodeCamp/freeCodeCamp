@@ -1,8 +1,8 @@
 ---
-title: Creating a New Github Issue
-localeTitle: خلق إصدار جديد Github
+title: Creating a New GitHub Issue
+localeTitle: خلق إصدار جديد GitHub
 ---
-قبل إرسال مشكلة ، حاول [البحث عن](https://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) مشكلتك [على Github](https://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390)
+قبل إرسال مشكلة ، حاول [البحث عن](https://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) مشكلتك [على GitHub](https://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390)
 
 إن صياغة قضية جيدة سيجعل من الأسهل على فريق التطوير تكرار مشكلتك وحلها. اتبع هذه الخطوات للقيام بذلك بشكل صحيح:
 

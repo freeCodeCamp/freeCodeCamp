@@ -25,10 +25,10 @@ Use destructuring assignment with the rest operator to perform an effective <cod
 tests:
   - text: <code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>
     testString: assert(arr.every((v, i) => v === i + 3) && arr.length === 8,'<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');
-  - text: Destructuring should be used.
-    testString: getUserInput => assert(getUserInput('index').match(/\[\s*\w*\s*,\s*\w*\s*,\s*...\w+\s*\]/g),'Destructuring should be used.');
   - text: <code>Array.slice()</code> should not be used.
     testString: getUserInput => assert(!getUserInput('index').match(/slice/g), '<code>Array.slice()</code> should not be used.');
+  - text: Destructuring on <code>list</code> should be used.
+    testString: getUserInput => assert(getUserInput('index').match(/\s*\[\s*,\s*,\s*\.\.\.\s*arr\s*\]\s*=\s*list\s*/g), 'Destructuring on <code>list</code> should be used.');
 
 ```
 
@@ -44,7 +44,7 @@ const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   "use strict";
   // change code below this line
-  arr = list; // change this
+  const arr = list; // change this
   // change code above this line
   return arr;
 }
@@ -63,6 +63,14 @@ console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
 <section id='solution'>
 
 ```js
-// solution required
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [, , ...arr] = list;
+  // change code above this line
+  return arr;
+}
+const arr = removeFirstTwo(source);
 ```
 </section>
