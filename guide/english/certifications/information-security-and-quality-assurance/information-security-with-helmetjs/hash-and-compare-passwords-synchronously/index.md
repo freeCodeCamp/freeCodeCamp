@@ -3,8 +3,22 @@ title: Hash and Compare Passwords Synchronously
 ---
 ## Hash and Compare Passwords Synchronously
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/hash-and-compare-passwords-synchronously/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+- The code for this lesson goes between the `//START_SYNC` and `//END_SYNC` lines in your server file.
+- Use bcrypt's `hashSync()` method to hash a `plain text password` with a specific number of `salt rounds`, and set the results to a variable.
+- Then use bcrypt's `compareSync()` method to compare a `plain text password` against the variable.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+- In the `server.js` file, add:
+```javascript
+let hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
+console.log(hash);
+let result = bcrypt.compareSync(myPlaintextPassword, hash);
+console.log(result);
+```
+between the `//START_SYNC` and `//END_SYNC` lines.
+- Check the console to see the results from the methods.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.

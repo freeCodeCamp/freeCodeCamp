@@ -39,6 +39,13 @@ function makeItBIG($a_lot_of_names) {
 $a_lot_of_names = ['Homer', 'Marge', 'Bart', 'Maggy', 'Lisa'];
 var_dump(makeItBIG($a_lot_of_names));
 ```
+## strtolower Function
+The strtolower() function converts a string to lowercase.
+```
+<?php
+  echo strtolower("Hello WORLD."); //hello world.
+?>
+```
 
 #### More Information:
 
