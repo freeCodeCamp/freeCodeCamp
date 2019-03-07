@@ -33,7 +33,7 @@ We need to prevent `MATH_CONSTANTS` value from changing.
       
       try {
         MATH_CONSTANTS.PI = 99;
-      } catch( ex ) {
+      } catch(ex) {
         console.log(ex);
       }
       return MATH_CONSTANTS.PI;
