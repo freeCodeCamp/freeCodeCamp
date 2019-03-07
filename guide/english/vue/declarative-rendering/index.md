@@ -20,7 +20,7 @@ When jumping to production, this:
 ```
 
 As mentioned before, you can also install the `vue-cli`, but this is not
-recomended for beginners.
+recommended for beginners.
 
 ## Declarative Rendering
 
