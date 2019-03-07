@@ -3,7 +3,7 @@ title: Prevent Object Mutation
 ---
 ![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### Problem explanation:
+### Problem Explanation:
 
 _You need to freeze the `MATH_CONSTANTS` object so that no one is able to alter the value of `PI`, add, or delete properties ._
 
@@ -13,11 +13,11 @@ _You need to freeze the `MATH_CONSTANTS` object so that no one is able to alter 
 
 > _try to solve the problem now_
 
-## Spoiler alert!
+## Spoiler Alert!
 
 ![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
 
-**Solution ahead!**
+**Solution Ahead!**
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic code solution:
 ```javascript
@@ -41,7 +41,7 @@ _You need to freeze the `MATH_CONSTANTS` object so that no one is able to alter 
 ```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:")[Run code at codepen.io](https://codepen.io/dylantyates/pen/OwVxYB)
 
-# Code explanation:
+# Code Explanation:
 
 By using Object.freeze() on `MATH_CONSTANTS` we can avoid manipulating it.
 
