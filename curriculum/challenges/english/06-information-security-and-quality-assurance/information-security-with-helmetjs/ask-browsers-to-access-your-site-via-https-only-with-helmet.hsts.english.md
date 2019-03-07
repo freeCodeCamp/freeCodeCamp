@@ -12,7 +12,7 @@ HTTP Strict Transport Security (HSTS) is a web security policy which helps to pr
 
 ## Instructions
 <section id='instructions'>
-Configure helmet.hsts() to use HTTPS for the next 90 days. Pass the config object {maxAge: timeInMilliseconds, force: true}. Glitch already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Glitch header, after inspecting it for testing.
+Configure <code>helmet.hsts()</code> to use HTTPS for the next 90 days. Pass the config object <code>{maxAge: timeInMilliseconds, force: true}</code>. Glitch already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Glitch header, after inspecting it for testing.
 Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TSL Certificate.
 </section>
 
