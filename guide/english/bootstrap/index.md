@@ -9,7 +9,7 @@ title: Bootstrap
 
 Bootstrap is a popular front-end framework for web development. It contains pre-built components and design elements to style HTML content. Modern browsers such as Chrome, Firefox, Opera, Safari, and Internet Explorer support Bootstrap.
 
-Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality like collapsible content, carousels, and modals.
+Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality, such as collapsible content, carousels, and modals.
 
 #### Why Use Bootstrap?
 Bootstrap provides an easy solution both for design and responsiveness. It is packed with beautiful elements that can be further styled with your own custom CSS, as well as a full grid system to keep your website responsive across all screens while using a clean and understandable syntax.
@@ -67,13 +67,13 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 ### Boostrap Features
 
-- Bootstrap 3 supports the latest versions of the Google Chrome, Firefox, Internet Explorer, Opera, and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).[12]
+- Bootstrap 3 supports the latest versions of Google Chrome, Firefox, Internet Explorer, Opera and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).[12]
 
-- Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device used (desktop, tablet, mobile phone).
+- Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device which is being used (desktop, tablet, mobile phone).
 
 - Starting with version 3.0, Bootstrap adopted a mobile-first design philosophy, emphasizing responsive design by default.
 
-- Version 4.0 added Sass and flexbox support
+- Version 4.0 added Sass and flexbox support.
 
 - Version 4.1 Added new custom range form control.
 
