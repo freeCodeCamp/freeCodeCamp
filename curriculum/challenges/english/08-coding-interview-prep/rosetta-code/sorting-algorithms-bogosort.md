@@ -6,15 +6,17 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/Bogosort">Bogosort</a> a list of numbers.
+<a href="https://en.wikipedia.org/wiki/Bogosort" target="_blank">Bogosort</a> a list of numbers.
 Bogosort simply shuffles a collection randomly until it is sorted.
 "Bogosort" is a perversely inefficient algorithm only used as an in-joke.
 Its average run-time is  O(n!)  because the chance that any given shuffle of a set will end up in sorted order is about one in  <i>n</i>  factorial,  and the worst case is infinite since there's no guarantee that a random shuffling will ever produce a sorted sequence.
 Its best case is  O(n)  since a single pass through the elements may suffice to order them.
 Pseudocode:
+<pre>
 <b>while not</b> InOrder(list) <b>do</b>
-Shuffle(list)
+  Shuffle(list)
 <b>done</b>
+</pre>
 </section>
 
 ## Instructions
@@ -29,8 +31,8 @@ Shuffle(list)
 tests:
   - text: <code>bogosort</code> should be a function.
     testString: assert(typeof bogosort == 'function', '<code>bogosort</code> should be a function.');
-  - text: <code>bogosort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(bogosort([25, 32, 12, 7, 20])), '<code>bogosort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>bogosort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(bogosort([25, 32, 12, 7, 20])), '<code>bogosort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>bogosort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(bogosort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>bogosort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>bogosort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -50,7 +52,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function bogosort (v) {
+function bogosort(v) {
   // Good luck!
 }
 ```

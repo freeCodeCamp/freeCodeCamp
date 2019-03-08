@@ -13,6 +13,7 @@ Write a function to sort an array (or list) of strings in order of descending le
 <section id='instructions'>
 
 </section>
+
 ## Tests
 <section id='tests'>
 
@@ -20,8 +21,8 @@ Write a function to sort an array (or list) of strings in order of descending le
 tests:
   - text: <code>lengthSorter</code> should be a function.
     testString: assert(typeof lengthSorter == 'function', '<code>lengthSorter</code> should be a function.');
-  - text: <code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return a array.
-    testString: assert(Array.isArray(lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])), '<code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return a array.');
+  - text: <code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return an array.
+    testString: assert(Array.isArray(lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])), '<code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return an array.');
   - text: <code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return <code>["strings", "sample", "sorted", "Here", "some", "are", "be", "to"]</code>.
     testString: assert.deepEqual(lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"]), ["strings", "sample", "sorted", "Here", "some", "are", "be", "to"], '<code>lengthSorter(["Here", "are", "some", "sample", "strings", "to", "be", "sorted"])</code> should return <code>["strings", "sample", "sorted", "Here", "some", "are", "be", "to"]</code>.');
   - text: <code>lengthSorter(["I", "hope", "your", "day", "is", "going", "good", "?"])</code> should return <code>["going", "good", "hope", "your", "day", "is", "?","I"]</code>.
@@ -41,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function lengthSorter (arr) {
+function lengthSorter(arr) {
   // Good luck!
 }
 ```

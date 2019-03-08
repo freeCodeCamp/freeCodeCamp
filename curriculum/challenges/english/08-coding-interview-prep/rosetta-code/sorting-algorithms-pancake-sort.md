@@ -6,11 +6,11 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Write a function to sort an array of integers (of any convenient size) into ascending order using <a href="https://en.wikipedia.org/wiki/Pancake sorting">Pancake sorting</a>. The function should return the sorted array.
+Write a function to sort an array of integers (of any convenient size) into ascending order using <a href="https://en.wikipedia.org/wiki/Pancake sorting" target="_blank">Pancake sorting</a>. The function should return the sorted array.
 In short, instead of individual elements being sorted, the only operation allowed is to "flip" one end of the list, like so:
 <pre>
 Before:
-<b>6 7 8 9</b> 2 5 3 4 1
+<b>6 7 8 9</b> 2 5 3 4 1<br>
 After:
 <b>9 8 7 6</b> 2 5 3 4 1
 </pre>
@@ -29,8 +29,8 @@ Only one end of the list can be flipped; this should be the low end, but the hig
 tests:
   - text: <code>pancakeSort</code> should be a function.
     testString: assert(typeof pancakeSort == 'function', '<code>pancakeSort</code> should be a function.');
-  - text: <code>pancakeSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(pancakeSort([25, 32, 12, 7, 20])), '<code>pancakeSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>pancakeSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(pancakeSort([25, 32, 12, 7, 20])), '<code>pancakeSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>pancakeSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(pancakeSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>pancakeSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>pancakeSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -50,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function pancakeSort (arr) {
+function pancakeSort(arr) {
   // Good luck!
 }
 ```

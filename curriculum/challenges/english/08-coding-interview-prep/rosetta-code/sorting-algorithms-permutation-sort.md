@@ -27,8 +27,8 @@ Pseudocode:
 tests:
   - text: <code>permutationSort</code> should be a function.
     testString: assert(typeof permutationSort == 'function', '<code>permutationSort</code> should be a function.');
-  - text: <code>permutationSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(permutationSort([25, 32, 12, 7, 20])), '<code>permutationSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>permutationSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(permutationSort([25, 32, 12, 7, 20])), '<code>permutationSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>permutationSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(permutationSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>permutationSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>permutationSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -48,7 +48,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function permutationSort (arr) {
+function permutationSort(arr) {
   // Good luck!
 }
 ```
@@ -60,7 +60,7 @@ function permutationSort (arr) {
 <section id='solution'>
 
 ```js
-function permutationSort (arr) {
+function permutationSort(arr) {
   function pSort(a) {
     var list = [];
     permute(a, a.length, list);

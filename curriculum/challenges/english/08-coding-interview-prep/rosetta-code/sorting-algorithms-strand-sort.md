@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Write a function to sort an array using the <a href="https://en.wikipedia.org/wiki/Strand sort">Strand sort</a>. The function should return the sorted array.
+Write a function to sort an array using the <a href="https://en.wikipedia.org/wiki/Strand sort" target="_blank">Strand sort</a>. The function should return the sorted array.
 This is a way of sorting numbers by extracting shorter sequences of already sorted numbers from an unsorted list.
 </section>
 
@@ -22,8 +22,8 @@ This is a way of sorting numbers by extracting shorter sequences of already sort
 tests:
   - text: <code>strandSort</code> should be a function.
     testString: assert(typeof strandSort == 'function', '<code>strandSort</code> should be a function.');
-  - text: <code>strandSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(strandSort([25, 32, 12, 7, 20])), '<code>strandSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>strandSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(strandSort([25, 32, 12, 7, 20])), '<code>strandSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>strandSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(strandSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>strandSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>strandSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -43,7 +43,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function strandSort (list) {
+function strandSort(list) {
   // Good luck!
 }
 ```
@@ -55,7 +55,7 @@ function strandSort (list) {
 <section id='solution'>
 
 ```js
-function strandSort (list) {
+function strandSort(list) {
 
   function merge(left, right) {
     var result = [];

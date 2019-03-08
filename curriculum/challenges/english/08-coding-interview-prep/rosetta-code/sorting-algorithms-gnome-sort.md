@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Gnome sort is a sorting algorithm which is similar to <a href="http://rosettacode.org/wiki/Insertion sort">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a>.
+Gnome sort is a sorting algorithm which is similar to <a href="http://rosettacode.org/wiki/Insertion sort" target="_blank">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="http://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
 The pseudocode for the algorithm is:
 <pre>
 <b>function</b> <i>gnomeSort</i>(a[0..size-1])
@@ -27,12 +27,11 @@ The pseudocode for the algorithm is:
     <b>endif</b>
   <b>done</b>
 </pre>
-Write a function to implement the above pseudo code. The function should return the sorted array.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function to implement the above pseudo code. The function should return the sorted array.
 </section>
 
 ## Tests
@@ -42,8 +41,8 @@ Write a function to implement the above pseudo code. The function should return 
 tests:
   - text: <code>gnomeSort</code> should be a function.
     testString: assert(typeof gnomeSort == 'function', '<code>gnomeSort</code> should be a function.');
-  - text: <code>gnomeSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(gnomeSort([25, 32, 12, 7, 20])), '<code>gnomeSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>gnomeSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(gnomeSort([25, 32, 12, 7, 20])), '<code>gnomeSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>gnomeSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(gnomeSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>gnomeSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>gnomeSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
