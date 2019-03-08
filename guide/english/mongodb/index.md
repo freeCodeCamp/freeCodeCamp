@@ -45,6 +45,28 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
 2. Indexing on multiple fields takes more memory
 3. Aggregation queries are at times non-intutive
 
+### Sample Document Structure
+{
+   "_id":ObjectId("52ffc33cd85242f436123532"),
+   "name": "Rich Rick",
+   "contact": "8826078979",
+   "dob": "11-04-1997",
+   "address": [
+      {
+         "building": "24 A, Indiana Apt",
+         "pincode": 123456,
+         "city": "Los Angeles",
+         "state": "California"
+      },
+      {
+         "building": "170 A, Acropolis Apt",
+         "pincode": 456899,
+         "city": "Chicago",
+         "state": "Illinois"
+      }
+   ]
+}
+
 ### More Information
 [What is Mongo DB?](https://www.mongodb.com/what-is-mongodb)
 
