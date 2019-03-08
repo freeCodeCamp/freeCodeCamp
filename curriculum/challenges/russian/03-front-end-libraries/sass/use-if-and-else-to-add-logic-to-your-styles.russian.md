@@ -10,7 +10,10 @@ localeTitle: 'Используйте @if и @else, чтобы добавить �
 <section id="description"> Директива <code>@if</code> в Sass полезна для проверки конкретного случая - она ​​работает так же, как и оператор <code>if</code> в JavaScript. <blockquote> @mixin make-bold ($ bool) { <br> @if $ bool == true { <br> font-weight: bold; <br> } <br> } </blockquote> И так же, как в JavaScript, <code>@else if</code> и <code>@else</code> test для получения дополнительных условий: <blockquote> @mixin text-effect ($ val) { <br> @if $ val == опасность { <br> красный цвет; <br> } <br> @else, если $ val == alert { <br> цвет: желтый; <br> } <br> @else, если $ val == success { <br> цвет: зеленый; <br> } <br> @else { <br> черный цвет; <br> } <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Создайте <code>mixin</code> называемый <code>border-stroke</code> который принимает параметр <code>$val</code> . <code>mixin</code> должен проверить следующие условия, используя <code>@if</code> , <code>@else if</code> и <code>@else</code> : <blockquote> свет - 1px сплошной черный <br> средний - 3px сплошной черный <br> тяжелый - 6px сплошной черный <br> none - нет границы </blockquote></section>
+<section id="instructions"> Создайте <code>mixin</code> называемый <code>border-stroke</code> который принимает параметр <code>$val</code> . <code>mixin</code> должен проверить следующие условия, используя <code>@if</code> , <code>@else if</code> и <code>@else</code> :
+<blockquote>свет - 1px сплошной черный<br>средний - 3px сплошной черный<br>тяжелый - 6px сплошной черный</blockquote>
+Если <code>$val</code> не является <code>light</code>, <code>medium</code>, или <code>heavy</code>, для границы должно быть установлено значение <code>none</code>.
+</section>
 
 ## Tests
 <section id='tests'>
