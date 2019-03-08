@@ -1,10 +1,10 @@
 ---
 title: Groovy
-localeTitle: Maravilloso
+localeTitle: Groovy
 ---
-## Maravilloso
+## Groovy
 
-Apache Groovy o Groovy es un lenguaje poderoso y dinámico con capacidades de compilación y escritura estáticas para la plataforma Java y fue diseñado para aumentar la productividad con su sintaxis concisa y familiar. Se integra con cualquier programa de Java con facilidad.
+Apache Groovy o Groovy es un potente lenguaje dinámico con capacidades de compilación y escritura estáticas para la plataforma Java y fue diseñado para aumentar la productividad con su sintaxis concisa y familiar. Se integra con cualquier programa Java con facilidad.
 
 #### Más información:
 
