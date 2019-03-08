@@ -14,12 +14,12 @@ Here's the same assignment statement with ES6 destructuring syntax:
 <blockquote>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</blockquote>
 If instead you want to store the values of <code>voxel.x</code> into <code>a</code>, <code>voxel.y</code> into <code>b</code>, and <code>voxel.z</code> into <code>c</code>, you have that freedom as well.
 <blockquote>const { x : a, y : b, z : c } = voxel; // a = 3.6, b = 7.4, c = 6.54</blockquote>
-You may read it as "get the field <code>x</code> and copy the value into <code>a</code>," and so on.
+You may read it as "get the property <code>x</code> and copy its value into <code>a</code>," and so on.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use destructuring to obtain the average temperature for tomorrow from the input object <code>AVG_TEMPERATURES</code>, and assign value with key <code>tomorrow</code> to <code>tempOfTomorrow</code> in line.
+Use destructuring to obtain the average temperature for tomorrow, stored in the <code>tomorrow</code> property of the input object, and assign it to <code>tempOfTomorrow</code>.  This should be achieved by modifying a single line of code.
 </section>
 
 ## Tests
@@ -27,10 +27,12 @@ Use destructuring to obtain the average temperature for tomorrow from the input 
 
 ```yml
 tests:
-  - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>
-    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, '<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>');
-  - text: destructuring with reassignment was used
-    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),'destructuring with reassignment was used');
+  - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>.
+    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79);
+  - text: Destructuring with reassignment should be used.
+    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s/g));
+  - text: The function argument should be used, not the global variable <code>AVG_TEMPERATURES</code>.
+    testString: 'assert(getTempOfTmrw({ today: 100, tomorrow: 150 } ) === 150);'
 
 ```
 
