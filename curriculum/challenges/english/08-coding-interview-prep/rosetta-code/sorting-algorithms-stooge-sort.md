@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Write a function to permform <a href="https://en.wikipedia.org/wiki/Stooge sort">Stooge Sort</a> on an array of integers. The function should return a sorted array.
+Write a function to permform <a href="https://en.wikipedia.org/wiki/Stooge sort" target="_blank">Stooge Sort</a> on an array of integers. The function should return a sorted array.
 The Stooge Sort algorithm is as follows:
 <pre>
 <b>algorithm</b> stoogesort(<b>array</b> L, i = 0, j = <b>length</b>(L)-1)
@@ -33,8 +33,8 @@ The Stooge Sort algorithm is as follows:
 tests:
   - text: <code>stoogeSort</code> should be a function.
     testString: assert(typeof stoogeSort == 'function', '<code>stoogeSort</code> should be a function.');
-  - text: <code>stoogeSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(stoogeSort([25, 32, 12, 7, 20])), '<code>stoogeSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>stoogeSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(stoogeSort([25, 32, 12, 7, 20])), '<code>stoogeSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>stoogeSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(stoogeSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>stoogeSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>stoogeSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -54,7 +54,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function stoogeSort (arr) {
+function stoogeSort(arr) {
   // Good luck!
 }
 ```
@@ -66,7 +66,7 @@ function stoogeSort (arr) {
 <section id='solution'>
 
 ```js
-function stoogeSort (arr) {
+function stoogeSort(arr) {
   function stoogeSortRecurse(array, i, j) {
     if (j === undefined) {
       j = array.length - 1;

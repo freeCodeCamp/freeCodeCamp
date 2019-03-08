@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Write a function to sort an array of elements using the <a href="https://en.wikipedia.org/wiki/Shell sort">Shell sort</a> algorithm, a diminishing increment sort. The function should return the sorted array.
+Write a function to sort an array of elements using the <a href="https://en.wikipedia.org/wiki/Shell sort" target="_blank">Shell sort</a> algorithm, a diminishing increment sort. The function should return the sorted array.
 The Shell sort (also known as Shellsort or Shell's method) is named after its inventor, Donald Shell, who published the algorithm in 1959.
 Shell sort is a sequence of interleaved insertion sorts based on an increment sequence. The increment size is reduced after each pass until the increment size is 1.
 With an increment size of 1, the sort is a basic insertion sort, but by this time the data is guaranteed to be almost sorted, which is insertion sort's "best case".
@@ -26,8 +26,8 @@ Empirical studies have shown a geometric increment sequence with a ratio of abou
 tests:
   - text: <code>shellSort</code> should be a function.
     testString: assert(typeof shellSort == 'function', '<code>shellSort</code> should be a function.');
-  - text: <code>shellSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(shellSort([25, 32, 12, 7, 20])), '<code>shellSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>shellSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(shellSort([25, 32, 12, 7, 20])), '<code>shellSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>shellSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(shellSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>shellSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>shellSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -47,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function shellSort (a) {
+function shellSort(a) {
   // Good luck!
 }
 ```
@@ -59,7 +59,7 @@ function shellSort (a) {
 <section id='solution'>
 
 ```js
-function shellSort (a) {
+function shellSort(a) {
     for (var h = a.length; h > 0; h = parseInt(h / 2)) {
         for (var i = h; i < a.length; i++) {
             var k = a[i];

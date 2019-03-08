@@ -26,8 +26,8 @@ Where the correct result would be:
 tests:
   - text: <code>sortDisjoint</code> should be a function.
     testString: assert(typeof sortDisjoint == 'function', '<code>sortDisjoint</code> should be a function.');
-  - text: <code>sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])</code> should return a array.
-    testString: assert(Array.isArray(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])), '<code>sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])</code> should return a array.');
+  - text: <code>sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])</code> should return an array.
+    testString: assert(Array.isArray(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])), '<code>sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])</code> should return an array.');
   - text: <code>sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])</code> should return <code>[7, 0, 5, 4, 3, 2, 1, 6]</code>.
     testString: assert.deepEqual(sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7]), [7, 0, 5, 4, 3, 2, 1, 6], '<code>sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [6, 1, 7])</code> should return <code>[7, 0, 5, 4, 3, 2, 1, 6]</code>.');
   - text: <code>sortDisjoint([7, 6, 5, 4, 3, 2, 1, 0], [1, 2, 5, 6])</code> should return <code>[7, 1, 2, 4, 3, 5, 6, 0]</code>.

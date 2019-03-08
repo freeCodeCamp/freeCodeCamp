@@ -7,13 +7,13 @@ challengeType: 5
 ## Description
 <section id='description'>
 Implement a <i>comb sort</i>.
-The <b>Comb Sort</b> is a variant of the <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a>.
-Like the <a href="http://rosettacode.org/wiki/Shell sort">Shell sort</a>, the Comb Sort increases the gap used in comparisons and exchanges.
+The <b>Comb Sort</b> is a variant of the <a href="http://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
+Like the <a href="http://rosettacode.org/wiki/Shell sort" target="_blank">Shell sort</a>, the Comb Sort increases the gap used in comparisons and exchanges.
 Dividing the gap by $(1-e^{-\varphi})^{-1} \approx 1.247330950103979$ works best, but 1.3 may be more practical.
 Some implementations use the insertion sort once the gap is less than a certain amount.
 <b>Also see</b>
 <ul>
-  <li>the Wikipedia article: <a href="https://en.wikipedia.org/wiki/Comb sort">Comb sort</a>.</li>
+  <li>the Wikipedia article: <a href="https://en.wikipedia.org/wiki/Comb sort" target="_blank">Comb sort</a>.</li>
 </ul>
 Variants:
 <ul>
@@ -45,12 +45,11 @@ Pseudocode:
   <b>end loop</b>
 <b>end function</b>
 </pre>
-Write a function that sorts a given array using Comb sort.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that sorts a given array using Comb sort.
 </section>
 
 ## Tests
@@ -60,8 +59,8 @@ Write a function that sorts a given array using Comb sort.
 tests:
   - text: <code>combSort</code> should be a function.
     testString: assert(typeof combSort == 'function', '<code>combSort</code> should be a function.');
-  - text: <code>combSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(combSort([25, 32, 12, 7, 20])), '<code>combSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>combSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(combSort([25, 32, 12, 7, 20])), '<code>combSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>combSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(combSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>combSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>combSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -81,7 +80,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function combSort (arr) {
+function combSort(arr) {
   // Good luck!
 }
 ```
@@ -93,7 +92,7 @@ function combSort (arr) {
 <section id='solution'>
 
 ```js
-function combSort (arr) {
+function combSort(arr) {
   function is_array_sorted(arr) {
     var sorted = true;
     for (var i = 0; i < arr.length - 1; i++) {

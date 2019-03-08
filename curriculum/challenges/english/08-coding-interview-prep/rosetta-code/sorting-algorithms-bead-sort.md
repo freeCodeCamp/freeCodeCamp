@@ -6,9 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Sort an array of positive integers using the <a href="https://en.wikipedia.org/wiki/Bead_sort">Bead Sort Algorithm</a>.
+Sort an array of positive integers using the <a href="https://en.wikipedia.org/wiki/Bead_sort" target="_blank">Bead Sort Algorithm</a>.
 A  <i>bead sort</i>  is also known as a  <i>gravity sort</i>.
-Algorithm has  O(S),  where  S  is the sum of the integers in the input set:  Each bead is moved individually.
+The algorithm has  O(S),  where  S  is the sum of the integers in the input set:  Each bead is moved individually.
 This is the case when bead sort is implemented without a mechanism to assist in finding empty spaces below the beads, such as in software implementations.
 </section>
 
@@ -24,8 +24,8 @@ This is the case when bead sort is implemented without a mechanism to assist in 
 tests:
   - text: <code>beadSort</code> should be a function.
     testString: assert(typeof beadSort == 'function', '<code>beadSort</code> should be a function.');
-  - text: <code>beadSort([25, 32, 12, 7, 20])</code> should return a array.
-    testString: assert(Array.isArray(beadSort([25, 32, 12, 7, 20])), '<code>beadSort([25, 32, 12, 7, 20])</code> should return a array.');
+  - text: <code>beadSort([25, 32, 12, 7, 20])</code> should return an array.
+    testString: assert(Array.isArray(beadSort([25, 32, 12, 7, 20])), '<code>beadSort([25, 32, 12, 7, 20])</code> should return an array.');
   - text: <code>beadSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.
     testString: assert.deepEqual(beadSort([25, 32, 12, 7, 20]), [7, 12, 20, 25, 32], '<code>beadSort([25, 32, 12, 7, 20])</code> should return <code>[7, 12, 20, 25, 32]</code>.');
   - text: <code>beadSort([38, 45, 35, 8, 13])</code> should return <code>[8, 13, 35, 38, 45]</code>.
@@ -45,7 +45,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function beadSort (arr) {
+function beadSort(arr) {
   // Good luck!
 }
 ```
