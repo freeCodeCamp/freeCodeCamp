@@ -102,6 +102,29 @@ $ python3.5
  If the implementation is hard to explain, it's a bad idea. 
  If the implementation is easy to explain, it may be a good idea. 
  Namespaces are one honking great idea -- let's do more of those! 
+ 
+ 优美胜于丑陋，显明胜于隐含。
+ 简单胜于复杂，复杂胜于繁复。
+ 扁平胜于嵌套，稀疏胜于密集。
+ 可读性会起作用。
+ 即使要为了实用性而牺牲纯粹性，
+ 特例也并不特殊到足以破坏常规。
+ 除非你想明白无误地保持沉默，
+ 否则就永远不要悄悄放过错误。
+ 面对模棱两可，
+ 拒绝猜的诱惑。
+ 做任何事情总该有一个，
+ 而且最好只有一个明显的方式，
+ 尽管那种方式起初并不见得明显，
+ 但是谁叫你不是荷兰人[1]。
+ 虽然一直不做经常要好过匆忙去做，
+ 但是现在就做还是要好过一直不做。
+ 如果实现方法很难以解释，那一定是个坏主意；
+ 如果实现方法很容易解释，那也许是个好注意。
+ 名字空间就是一个呱呱叫的好主意。
+ 现在就让我们多多动手体验这些吧。
+
+ [1]python发明人Guido van Rossum是荷兰人。
 ```
 
 ## Python的优点和缺点
@@ -158,6 +181,9 @@ Python 3中的[`print`](https://docs.python.org/3/library/functions.html#print)�
 我们称之为`print`函数的参数是`str`对象或_字符串_ ，它是Python的[_内置类型之一_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) 。 关于python最重要的是你在声明变量时不必指定数据类型，python的编译器 将根据分配的值类型自行完成。
 
 `objects`参数以`*`为前缀，表示该函数将为该参数采用任意数量的参数。
+
+## 你可以用python来做的事
+正如之前所说，Python是一门通用型语言。你可以用它来做任何你想做的事情，但是python一个很重要的应用在于机器学习和人工智能。python同样是一门很受欢迎的网站开发语言，这得益于一些优秀的框架，例如[Django](https://www.djangoproject.com/) and [flask](http://flask.pocoo.org/)。除此之外，python还是一种流行的脚本语言。由于它易读易懂的语法格式，python正在不同的领域快速发展，并成为最受欢迎的编程语言。
 
 ## 想了解更多？
 

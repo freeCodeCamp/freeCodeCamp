@@ -17,7 +17,7 @@ localeTitle: Di hola a los elementos HTML
 
 ```yml
 tests:
-  - text: Su elemento <code>h1</code> debe tener el texto &quot;Hola mundo&quot;.
+  - text: Tu elemento <code>h1</code> debe tener el texto &quot;Hola mundo&quot;.
     testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
 
 ```
