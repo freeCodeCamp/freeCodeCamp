@@ -71,7 +71,9 @@ Also be sure to respect those guidelines to preserve readability:
 <p class="text-2">Hello</p>
 <p class="text-3">Hello</p>
 <p class="text-4">Hello</p>
-<p class="text-5">Hello</p>```
+<p class="text-5">Hello</p>
+```
+
 The solution above will generate the following CSS:
 
 ```css
