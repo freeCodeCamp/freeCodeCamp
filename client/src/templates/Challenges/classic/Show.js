@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import { first } from 'lodash';
-import Media from 'react-media';
+import Media from 'react-responsive';
 
 import LearnLayout from '../../../components/layouts/Learn';
 import Editor from './Editor';
@@ -249,7 +249,7 @@ class ShowClassic extends Component {
         <Helmet
           title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
         />
-        <Media defaultMatches={false} query={{ maxWidth: MAX_MOBILE_WIDTH }}>
+        <Media maxWidth={MAX_MOBILE_WIDTH}>
           {matches =>
             matches ? (
               <MobileLayout

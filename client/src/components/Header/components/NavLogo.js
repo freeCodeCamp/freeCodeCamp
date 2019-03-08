@@ -1,5 +1,5 @@
 import React from 'react';
-import Media from 'react-media';
+import Media from 'react-responsive';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
-import Media from 'react-media';
+import Media from 'react-responsive';
 import FCCSearch from 'react-freecodecamp-search';
 
 import NavLogo from './components/NavLogo';
