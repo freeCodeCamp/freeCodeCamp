@@ -9,9 +9,13 @@ challengeType: 5
 Split a (character) string into comma (plus a blank) delimited strings based on a change of character  (left to right).
 Blanks should be treated as any other character  (except they are problematic to display clearly).  The same applies to commas.
 For instance, the string:
+<pre>
 "gHHH5YY++///\"
+</pre>
 should be split as:
-["g", "HHH", "5", "YY", "++", "///", "\" ]
+<pre>
+["g", "HHH", "5", "YY", "++", "///", "\" ];
+</pre>
 </section>
 
 ## Instructions
@@ -26,8 +30,8 @@ should be split as:
 tests:
   - text: <code>split</code> should be a function.
     testString: assert(typeof split == 'function', '<code>split</code> should be a function.');
-  - text: <code>split("hello")</code> should return a array.
-    testString: assert(Array.isArray(split("hello")), '<code>split("hello")</code> should return a array.');
+  - text: <code>split("hello")</code> should return an array.
+    testString: assert(Array.isArray(split("hello")), '<code>split("hello")</code> should return an array.');
   - text: <code>split("hello")</code> should return <code>["h", "e", "ll", "o"]</code>.
     testString: assert.deepEqual(split("hello"), ["h", "e", "ll", "o"], '<code>split("hello")</code> should return <code>["h", "e", "ll", "o"]</code>.');
   - text: <code>split("commission")</code> should return <code>["c", "o", "mm", "i", "ss", "i", "o", "n"]</code>.
@@ -47,7 +51,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function split (str) {
+function split(str) {
   // Good luck!
 }
 ```
@@ -59,7 +63,7 @@ function split (str) {
 <section id='solution'>
 
 ```js
-function split (str) {
+function split(str) {
   const concat = xs =>
     xs.length > 0 ? (() => {
       const unit = typeof xs[0] === 'string' ? '' : [];
