@@ -10,7 +10,6 @@ title: Control Flow
 With Vue.js you can decide whether to show or not a piece of code in your final page, depending on some condition. For example, imagine a form input that requires a text input at least 8 characters long: if the user input is shorter than 8, an error message should appear; but if the input is longer than 8, the message disappears.
 
 Let's make a simpler example. We want to condition the exibition of a message to a counter:
-=======
 
 ```html
 <div id="app">
