@@ -17,6 +17,10 @@ title: Use @each to Map Over Items in a List
     width: 200px;
   }
 </style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
 ```
 
 
