@@ -4,11 +4,11 @@ title: Accessibility
 ## Accessibility
 <strong>Web accessibility means that people with disabilities can use the Web</strong>.
 
-More specifically, Web accessibility means that people with a wide range of disabilities can perceive, understand, navigate, and interact with the Web, and that they can contribute to the Web. Web accessibility can make it easier for people to find a website, access it, and use it successfully, thus resulting in increased audience (more users) and increased effectiveness (more use).
+More specifically, Web accessibility means that people with a wide range of disabilities can perceive, understand, navigate, and interact with the Web and that they can contribute to the Web. Web accessibility can make it easier for people to find a website, access it, and use it successfully, thus resulting in an increased audience (more users) and increased effectiveness (more useful).
 
 Web accessibility encompasses all disabilities that affect access to the Web, including visual, auditory, physical, speech, cognitive, and neurological disabilities. The article [How People with Disabilities Use the Web](http://www.w3.org/WAI/intro/people-use-web/Overview.html) describes how different disabilities affect Web use and includes scenarios of people with disabilities using the Web.
 
-Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of Web accessibility is designing Web sites and software that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people *without* disabilities in certain situations, such as people using a slow Internet connection, people with "temporary disabilities" such as a broken arm, and older people with changing abilities due to aging. The article [Developing a Web Accessibility Business Case for Your Organization](https://www.w3.org/WAI/bcase/Overview) describes many different benefits of Web accessibility, including **benefits for organizations**.
+Web accessibility also **benefits** people *without* disabilities. For example, a key principle of Web accessibility is designing Web sites and software that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people *without* disabilities in certain situations, such as people using a slow Internet connection, people with "temporary disabilities" such as a broken arm, and older people with changing abilities due to aging. The article [Developing a Web Accessibility Business Case for Your Organization](https://www.w3.org/WAI/bcase/Overview) describes many different benefits of Web accessibility, including **benefits for organizations**.
 
 Web accessibility should also include the people who don't have access to the internet or to computers and also the countries with slow Internet.
 
@@ -18,7 +18,7 @@ The use of images and graphics on websites can decrease accessibility for those 
 
 Just like alt text has the ability to help people that are visually impaired, providing written documents or transcripts of the audio can help people that have hearing disabilities. Videos should always be captioned. Providing a written document or a transcript of what is being spoken makes this content accessible to people who are Deaf or hard of hearing, with speech-processing disabilities, those using devices without sound capability, and people on slow or data-limited devices that make loading videos cumbersome or impossible.
 
-A high level test of a websites accessibilty can be conducted through several online tools.  One is a popular Chrome Browswer extension known as <a href="http://wave.webaim.org/">WAVE</a>.  This will provide you with areas to focus on to present a usable experience for all visitors to the site.
+A high-level test of a website's accessibility can be conducted through several online tools.  One is a popular Chrome Browser extension known as <a href="http://wave.webaim.org/">WAVE</a>.  This will provide you with areas to focus on to present a usable experience for all visitors to the site.
 
 The W3's WCAG (Web Content Accessibility Guidelines) also recommend a certain level of colour contrast for text, stating that the foreground and background should be clearly separate. Because larger text is already easier to read than smaller text, the colour contrast requirements are lower. [Learn more about the W3's colour contrast guidelines](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
