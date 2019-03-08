@@ -1,7 +1,7 @@
 ---
 title: Cooling Systems
 ---
-Your computer contains many parts that generate heat. Excessive heat can cause your computer to behave erratically or its hardware to fail prematurely. The more you overclock the graphics or the CPU, the hotter the computer will run. Cooling systems assure that your computer is stable and extends the life of your investment.
+Your computer contains many parts that generate heat. Excessive heat can cause your computer to behave erratically or its hardware to fail prematurely. Overclocking, changing the default hardware settings for maximum performance, will also cause components to run hotter. The more you overclock a graphics card, CPU, etc., the hotter the component will run. Cooling systems assure that your computer is stable and extends the life of your investment.
 
 ## Case Cooling
 Case cooling can be a combination of a well ventilated case and the use of fans to circulate air within the case. Most cases come with at least one fan. This is the minimum configuration. For best results, there should be at least two fans in the case. One as an intake to draw in cold air, while the other as an exhaust to expel hot air. It is important to consider the direction of the fan and whether or not the fan is intaking air or exhausting air. It is typical to place exhaust fans towards the top of the case as hot air rises, and intake fans towards the bottom of the case as cool air sinks. There are many different types of fans and configurations. Cable management also plays a huge part in cooling the system. Bad cable management and tangled wires can disrupt airflow and cause dust to accumulate inside the case.
