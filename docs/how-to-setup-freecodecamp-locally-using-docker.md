@@ -1,10 +1,12 @@
-# Set up freeCodeCamp locally
-
-As of 8 March 2018, please consider helping us test our new guide on how to [setup freeCodeCamp locally using Docker](/docs/how-to-setup-freecodecamp-locally-using-docker.md) instead of using this guide. It *should* result in fewer or no error but we won't know until enough devs try it.
+# Set up freeCodeCamp locally using Docker
 
 Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to be contributing regularly.
 
-Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
+Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, require you to have freeCodeCamp running locally.
+
+This guide is new as of 8 March 2019 and we would appreciate if you can use it and let us know how well (or not) it worked for you. You can let us know in our [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
+
+This new setup procedure *should* result in fewer or no errors during the setup process and make it easier for you. We use Docker to install and run many of the software dependencies which means that you don't have to install things like MongoDB or MailHog on your computer or worry about getting those versions right.
 
 ## Fork the repository on GitHub
 
@@ -111,22 +113,21 @@ You can skip running freeCodeCamp locally, if you are just editing files, doing 
 
 ### Installing prerequisites
 
-Start by installing these prerequisite software.
+Start by installing the prerequisite software:
 
-| Prerequisite                                | Version | Notes |
-| ------------------------------------------- | ------- | ----- |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
-| [Node.js](http://nodejs.org)                | `10.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)|
-| npm (comes bundled with Node)               | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
+| Prerequisite                                  | Version  | Notes |
+| --------------------------------------------- | -------- | ----- |
+| [Docker CE](https://docs.docker.com/install/) | `Stable` |       |
+| [Node.js](http://nodejs.org)                  | `10.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
+| npm (comes bundled with Node)                 | `6.x`    | Does not have LTS releases, we use the version bundled with Node LTS |
 
 **Important:**
 
 We highly recommend updating to the latest stable releases a.k.a Long Term Support (LTS) versions of the above.
-If Node.js or MongoDB is already installed on your machine, run the following commands to validate the versions:
+If Node.js is already installed on your machine, run the following commands to validate the versions:
 
 ```shell
 node -v
-mongo --version
 npm -v
 ```
 
@@ -142,11 +143,11 @@ We regularly develop on popular and latest operating systems like macOS 10.12 or
 
 If you are on a different OS, and/or are still running into issues, reach out to [contributors community on our public forum](https://www.freeCodeCamp.org/c/contributors) or the [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
 
-Please avoid creating GitHub issues for pre-requisite issues. They are out of the scope of this project.
+Please avoid creating GitHub issues for pre-requisite software and use the forum and chat room instead.
 
 ### Installing dependencies
 
-First you need to add the private environment variables (API Keys):
+First you need to add the private environment variables (API Keys). You only need to do this one time:
 
 ```shell
 # Create a copy of the "sample.env" and name it as ".env".
@@ -158,66 +159,41 @@ cp sample.env .env
 # Windows
 copy sample.env .env
 ```
+The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as is. But if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the `.env` file.
 
-Then you have to install the dependencies required for the application to startup.
+If the Docker installation instructions told you to use Docker Toolbox (applies to older versions of macOS and Windows), you need to change `DOCKER_HOST_LOCATION` in your `.env` file var to the output from the `docker-machine ip` command. If you use any Docker supported flavor of Linux or if you use Docker Desktop (new versions of macOS and Windows 10) you can leave `DOCKER_HOST_LOCATION` to the default value.
 
-```shell
-# Install NPM dependencies
-npm install
-```
-
-The keys are not required to be changed, to run the app locally. You can leave the default values from the `sample.env` as is.
-
-
-Next, let's bootstrap the various services, i.e. the api-server, the client UI application, etc. You can [learn more about these services in this guide](#).
-
-`MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the `sample.env` should work fine.
-
-You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the `.env` file.
-
-### Start MongoDB
-
-You will need to start MongoDB, before you can start the application:
-
-Start the MongoDB server in a separate terminal
-
-- On macOS & Ubuntu:
-
-    ```shell
-    mongod
-    ```
-
-- On Windows, you have to instead specify the full path to the `mongod` binary
-
-    Make sure to replace `3.6` with the version you have installed
-
-    ```shell
-    "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
-    ```
-
-> ProTip:
-> You can avoid having to start MongoDB every time, by installing it as a background service.
-> You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
-
-### Seeding the database
-
-Next, let's seed the database. In this step, we run the below command that will fill the MongoDB server with some initial data-sets that is required by the other services. This include a few schemas, among other things.
+Then you have to bootstrap the docker images just one time to prepare them for running.
 
 ```shell
-npm run seed
+npm run docker:init
+npm run docker:install
+npm run docker:seed
 ```
+
+Each of the above commands will take a little time to complete and you should wait for each to complete before running the next command.
+
+Next you need to install a few npm packages outside of docker. You can skip this step if you are only running the app locally and will not use git.
+
+```shell
+npm install --ignore-scripts
+```
+
+All of the above needs to be run only the first time you set up the local dev environment.
 
 ### Start the freeCodeCamp client application and API server
 
 You can now start up the API server and the client applications.
 
 ```shell
-npm run develop
+npm run docker:develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+This single command will start all the services including the API server and the client application available for you to work on. It will also start the supporting services which include mongodb and the mail testing server (MailHog).
 
 Now open a web browser and visit <http://localhost:8000>. If the app loads, congratulations – you're all set.
+
+NOTE: if you changed the value of `DOCKER_HOST_LOCATION` in your `.env` file, use that instead of `localhost`.
 
 > ProTip:
 >
@@ -227,6 +203,12 @@ Now open a web browser and visit <http://localhost:8000>. If the app loads, cong
 Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs that we have.
 
 Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+
+When you are done, you can stop it from running by pressing Ctrl+C. Every time you want to start the local dev environment again you just need to run:
+
+```shell
+npm run docker:develop
+```
 
 ## How to Sign in when working locally
 
@@ -424,7 +406,32 @@ Follow these steps:
 
 ## Proposing a Pull Request (PR)
 
-After you've committed your changes, check here for [how to open a Pull Request](/docs/how-to-open-a-pull-request.md).
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+
+    ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
+
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
+
+    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
+
+    ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
+
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
+
+4. In the body of your PR include a more detailed summary of the changes you made and why.
+
+    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+
+    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
+
+    - If the PR is meant to fix an existing bug/issue then, at the end of
+      your PR's description, append the keyword `closes` and #xxxx (where xxxx
+      is the issue number). Example: `closes #1337`. This tells GitHub to
+      automatically close the existing issue, if the PR is accepted and merged.
+
+5. Indicate if you have tested on a local copy of the site or not.
+
+    This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
 
 ## Getting Help
 
