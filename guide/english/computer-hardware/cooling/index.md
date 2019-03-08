@@ -1,13 +1,14 @@
 ---
 title: Cooling Systems
 ---
+
 Your computer contains many parts that generate heat. Excessive heat can cause your computer to behave erratically or its hardware to fail prematurely. Overclocking, changing the default hardware settings for maximum performance, will also cause components to run hotter. The more you overclock a graphics card, CPU, etc., the hotter the component will run. Cooling systems assure that your computer is stable and extends the life of your investment.
 
 ## Case Cooling
 Case cooling can be a combination of a well ventilated case and the use of fans to circulate air within the case. Most cases come with at least one fan. This is the minimum configuration. For best results, there should be at least two fans in the case. One as an intake to draw in cold air, while the other as an exhaust to expel hot air. It is important to consider the direction of the fan and whether or not the fan is intaking air or exhausting air. It is typical to place exhaust fans towards the top of the case as hot air rises, and intake fans towards the bottom of the case as cool air sinks. There are many different types of fans and configurations. Cable management also plays a huge part in cooling the system. Bad cable management and tangled wires can disrupt airflow and cause dust to accumulate inside the case.
 
 ## Components Cooling
-Cooling devices are available for individual parts on the computer. The two most common are coolers for CPUs and GPUs. There are generally two types of component cooling systems: active and passive.
+Cooling devices are available for individual parts on the computer. The two most common are coolers for CPUs and GPUs. There are generally two types of component cooling systems: active and passive, although a combined approach is commonly used.
 
 * Passive Systems - Usually consist of a heat sink or a heat conductive metal attached to the component. Passive cooling works by providing a larger surface to absorb and dissipate the heat.
 * Active Systems - Add a fan to the heat sink and you are actively removing heat. The cooling fan can be dynamically adjusted to the load of the CPU or graphics card on most motherboards.
