@@ -7,7 +7,7 @@ Information Security (also called "infosec" or just "security") deals with guard
 
 This is a particularly important space right now, following major breaches such as the <a href='https://medium.freecodecamp.org/the-equifax-hack-and-how-to-protect-your-family-all-explained-in-5-minutes-a2b5187cb6c0' target='_blank' rel='nofollow'>2017 Equifax breach</a>.
 
-Information security practitioners are often called "security researchers", though they are also often referred to as "hackers" for hacking into systems.
+Information security practitioners are often called "security researchers" or penetration testers "pentesters", though they are also often referred to as "hackers" for hacking into systems.
 
 There are "white hat hackers" (ethical hackers) who try to discover new vulnerabilities and bring them to the attention of the people maintaining those systems, which is called "ethical disclosure". They often do this for prestige in the field, or for "bug bounties" that companies have set aside to compensate people for helping them discover vulnerabilities. 
 
