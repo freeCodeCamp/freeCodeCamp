@@ -62,6 +62,17 @@ In the below given example,only input type corresponding to first name will be s
   <input type="submit" value="submit">
 </form>
 ```
+## Style input element with css
+
+### :focus selector
+The `:focus` selector is applied when the element accepts user inputs.
+
+```css
+input:focus {
+    background-color: #FFFF66;
+}
+```
+
 
 
 
