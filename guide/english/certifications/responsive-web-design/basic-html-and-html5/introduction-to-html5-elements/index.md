@@ -3,18 +3,6 @@ title: Introduction to HTML5 Elements
 ---
 ## Introduction to HTML5 Elements
 
-## Problem
-```html
-<h2>CatPhotoApp</h2>
-
-<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
-```
-
-## Objective
-The objective is to create a second `<p>` element that states `Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.`, and then put the `<main>` elements between the `<p>` tags.
-
-To wrap an HTML element around other HTML element(s)  means to put the <em>inner</em> element(s) after the opening tag of the wrapper and before its closing tag.<br/>
-
 The example below represent a `h1` element and a `h4` element wrapped into a `header` element:
 ```
 <header>
