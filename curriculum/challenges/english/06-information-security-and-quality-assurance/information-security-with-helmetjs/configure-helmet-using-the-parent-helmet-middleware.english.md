@@ -23,7 +23,7 @@ app.use(helmet({<br>
 &nbsp;&nbsp;dnsPrefetchControl: false     // disable<br>
 }))
 </blockquote>
-We introduced each middleware separately for teaching purpose, and for ease of testing. Using the ‘parent’ <code>helmet()</code> middleware is easiest, and cleaner, for a real project.
+We introduced each middleware separately for teaching purposes and for ease of testing. Using the ‘parent’ <code>helmet()</code> middleware is easy to implement in a real project.
 </section>
 
 ## Instructions
