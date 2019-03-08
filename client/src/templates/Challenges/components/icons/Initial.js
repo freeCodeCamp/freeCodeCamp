@@ -42,7 +42,7 @@ function Initial(props) {
               '447 1-1zm3 3c0-.552-.448-1-1-1s-1 .448-1 1 .448 1 1 1 1-.448 ' +
               '1-1z'
             }
-            fill='#fff'
+            fill='white'
           />
         </svg>
       </g>

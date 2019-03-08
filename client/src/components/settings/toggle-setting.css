@@ -1,7 +1,6 @@
 .toggle-setting-container .form-group {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .toggle-setting-container .form-group label {
