@@ -29,3 +29,7 @@ If you want to group multiple console messages, you can use the `console.group`:
     console.error('I am not part of the group');
     
 Above example of the group is not collapsed by default, if you want to, use `console.groupCollapsed` instead.
+
+#### More Information
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console" target="_blank" rel="noopener noreferrer">MDN</a>
+

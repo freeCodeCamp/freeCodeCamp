@@ -24,8 +24,8 @@ The **block** statement is commonly used with control flow statements (e.g. `if.
       x++;
     }
 
-    function addnums(num1, num2) {
-      var sum = 0;
+    function addNums(num1, num2) {
+      let sum = 0;
       sum = num1 + num2;
       return sum;
     }

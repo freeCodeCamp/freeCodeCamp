@@ -4,7 +4,9 @@ title: CSS Grid Layout
 ## CSS Grid Layout
 CSS Grid Layout is the most powerful layout system available in CSS.
 It is a 2-dimensional system, meaning it can handle both columns and rows, unlike flexbox which is largely a 1-dimensional system.
-Though Grid Layout isn't fully supported by all browsers, it's the most advanced and conveniet way to make page layouts.
+Though Grid Layout isn't fully supported by all browsers, it's the most advanced and convenient way to make page layouts.
+
+One of the real advantages of CSS Grid Layout is being able to design responsive layouts without the use of media queries. CSS Grid works with explicit grids, with defined numbers of rows and columns, or implicit grids, which are automatically generated to contain extra items that are not explicitly defined. This allows a great deal of flexibility in responsive styling using a minimum of CSS code.
 
 #### More Resources:
 - [A Complete Guide to CSS Grid Layout](http://chris.house/blog/a-complete-guide-css-grid-layout/)

@@ -5,27 +5,15 @@
   align-items: center;
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-@media screen, (max-width: 630px) {
+@media screen and (max-width: 630px) {
   .learn-page-wrapper {
-    padding: 0px 25px 0px 25px;
+    padding: 0 15px;
   }
 }
 
 .learn-page-wrapper p {
   margin-bottom: 0.75rem;
-}
-
-#learn-app-wrapper {
-  margin: 0 2em;
-  position: absolute;
-  width: 100%;
-  right: -1.4em;
-  padding: 5px 10px 5px 10px;
-}
-
-.reflex-layout.reflex-container.vertical {
-  width: 100%;
-  margin: 0 18px;
 }

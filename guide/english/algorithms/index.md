@@ -20,7 +20,7 @@ Some common types of algorithms include sorting algorithms, search algorithms, a
 There are different approaches used for writing an algorithm depending on the type of problem
 <ol>
   <li>Brute force Approach: A straightforward approach to solving a problem,usually directly based on the problem statement and definitions of the concepts involved.</li>
-  <li>Divide and Conquer Approach: This approach works by recursively breaking down a problem into two or more sub-problems of the same or realted type,until these become simple enough to be solved directly.</li>
+  <li>Divide and Conquer Approach: This approach works by recursively breaking down a problem into two or more sub-problems of the same or related type,until these become simple enough to be solved directly.</li>
   <li>Decrease and Conquer Approach: This technique works by dividing a given problem into subproblem,finding the solutions to that subproblem,and finally extending solution of subproblem to arrive at the solution of original problem.</li>
   <li>Greedy Technique: Greedy approach solves a given problem by making a local optimal choice at each step which will lead to a globally-optimal solution.</li>
   <li>Backtracking: Backtracking can be defined as technique for solving problems recursively by trying to find a solution incrementally i.e. step by step and by removing those solutions that fail to satisfy the constraints of the problem at any point of time. </li>
@@ -40,11 +40,11 @@ Some, very common and widely used are:
 
 #### Quick Sort
 
-There is no sorting discussion which can finish without quick sort.
+There is no sorting discussion which can finish without quicksort.
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
 #### Merge Sort
-It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
+It is the sorting algorithm which relies on the concept how two sorted arrays are merged to give one sorted array. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
 
@@ -63,17 +63,17 @@ freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is becaus
 
 This video gives an accessible and lively introduction to algorithms focusing on sorting and graph search algorithms. 
 
-[What is an Algorithm and Why Should you Care? | Khan Academy](https://www.youtube.com/watch?v=CvSOaYi89B4)
+[What is an Algorithm and Why Should You Care? | Khan Academy](https://www.youtube.com/watch?v=CvSOaYi89B4)
 
 This video introduces algorithms and briefly discusses some high profile uses of them. 
 
 [15 Sorting Algorithms in 6 Minutes | Timo Bingmann](https://www.youtube.com/watch?v=kPRA0W1kECg)
 
-This video visually demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
+This video demonstrates some popular sorting algorithms that are commonly taught in programming and Computer Science courses.
 
 [How algorithms shape our world | Kevin Slavin](https://www.youtube.com/watch?v=TDaFwnOiKVE)
 
-This is a short video on how algorithms shape our world and their occurence in everyday life.
+This is a short video on how algorithms shape our world and their occurrence in everyday life.
 
 [Algorithm Visualizer](http://algo-visualizer.jasonpark.me)
 
@@ -85,7 +85,7 @@ This infographic shows you how unsupervised and supervised machine learning algo
 
 [Visualization of How Algorithms Work](https://visualgo.net/en)
 
-This website has interactive visuals and elaborative explanations(pseudocode) of well known algorithms.
+This website has interactive visuals and elaborative explanations(pseudocode) of well-known algorithms.
 
 [An entire course on Khanacademy on algorithms](https://www.khanacademy.org/computing/computer-science/algorithms)
 

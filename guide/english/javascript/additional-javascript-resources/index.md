@@ -17,9 +17,10 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/' target='_blank' rel='nofollow'>The 50 Best Websites to Learn JavaScript</a>
 *   <a href='https://www.codementor.io/community/topic/javascript' target='_blank' rel='nofollow'>Codementor JavaScript tutorial</a> 
 *   <a href='http://youmightnotneedjquery.com/' target='_blank' rel='nofollow'>You Might Not Need jQuery</a>
+*   <a href='http://www.theodinproject.com/' target='_blank' rel='nofollow'>The Odin Project</a>
 *   <a href='https://learnxinyminutes.com/docs/javascript/' target='_blank' rel='nofollow'>Learn X in Y minutes (X = JavaScript)</a>
 *   <a href='http://javascriptbook.com/' target='_blank' rel='nofollow'>JavaScript and jQuery: interactive front-end web development</a>
-*   <a href='https://www.udemy.com/the-complete-javascript-course/' target='_blank' rel='nofollow' >The Complete Javascript Course</a>
+
 
 
 ## References
@@ -43,6 +44,10 @@ title: JavaScript Tutorials and Other Resources
 *   [Javascript.com by Pluralsight](https://www.javascript.com/learn)
 *   [SoloLearn JavaScript Tutorial](https://www.sololearn.com/Course/JavaScript/)
 *   [GeeksforGeeks](https://www.geeksforgeeks.org/javascript-tutorial/)
+*   [Udacity Intro to JavaScript](https://eu.udacity.com/course/intro-to-javascript--ud803)
+*   [Tutorial to React](https://reactjs.org/tutorial/tutorial.html)
+*   [Introduction to Babel](https://flaviocopes.com/babel/)
+*   [Khan Academy - Intro to JS](https://www.khanacademy.org/computing/computer-programming/programming)
 
 ## Video Tutorials
 
@@ -58,26 +63,36 @@ title: JavaScript Tutorials and Other Resources
 
 ## Desktop Editors
 
-*   [Visual Studio Code](https://code.visualstudio.com)
 
-    Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation and code refactoring. It comes with a built-in debugger, git support and has a plethora of extensions.
+ *   [Visual Studio Code](https://code.visualstudio.com)
     
-*   [Webstorm](https://www.jetbrains.com/webstorm)
+    Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation, and code refactoring. It comes with a built-in debugger and git support and has a plethora of extensions.
+    
+    <a href='https://code.visualstudio.com/insiders/' target='_blank' rel='nofollow'>Visual Studio Code Insiders</a>
+    
+    Insiders has the most recent code pushes and may lead to the occasional broken build. New builds at least everyday with features, bug fixes, and other recently closed issues. Insiders installs next to the Stable build, allowing you to use either independently.
 
-    A full-feature IDE for Javascript, including code completion, support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
 
-    A full-feature IDE for JavaScript, including code completion and support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
+*   [WebStorm](https://www.jetbrains.com/webstorm)
+
+    A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by JetBrains and modelled after their IntelliJ Java IDE.
+
 *   <a href='http://brackets.io' target='_blank' rel='nofollow'>Brackets</a>
 
     A text editor made with web designers and front-end developers in mind. Features include: inline editing, live preview, and preprocessor support.   
+    
 *   <a href='http://atom.io' target='_blank' rel='nofollow'>Atom</a>
 
     Atom is an open source text editor made by GitHub. It features embedded Git Control and numerous customization options.
     
 *   [Brackets](http://brackets.io)
+
+    Lightweight text editor featuring inline editors, live previews, and allows you to quick edit and live highlight with your LESS and SCSS files.
+
 *   [Sublime Text](https://www.sublimetext.com)
     Sublime Text is a cross-platform editor featuring a Python API. Free to download and evaluate, but requires a license for continued use.
 
+    A cross-platform editor with a Python API. It features many shortcuts, key bindings and visual customization.
   
 ## Online Editors
 
@@ -106,21 +121,28 @@ title: JavaScript Tutorials and Other Resources
 *   [Exercism](https://exercism.io)
 *   [JavaScript30](https://javascript30.com)
 
+## Interview Preparation
+
+*   <a href="https://medium.freecodecamp.org/5-top-sites-for-javascript-interview-preparation-71b48e9a6c8a">Interview Preparation Resources</a>
 
 ## Blogs
 
 *   [JavaScript on Medium](https://medium.com/topic/javascript)
+*   [The Cost Of JavaScript In 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
 *   [Codementor JavaScript Tutorials and Insights](https://www.codementor.io/community/topic/javascript)
 *   [2ality](https://www.2ality.com)
 *   [David Walsh](https://davidwalsh.name)
 *   [SuperheroJS](http://superherojs.com)
 *   [The 50 Best Websites to Learn JavaScript](http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/)
 *   [Perfection Kills](http://perfectionkills.com) - Not been updated since 2015
+*   [Top mentioned Javascript books of Reddit, Hacker News and Stack Overflow](https://medium.com/@jadeydi/best-javascript-books-should-be-read-which-are-recommended-by-hundreds-people-eeb87353f10d)
 
 
 ## Podcasts
 
 *   [JavaScript Jabber](https://devchat.tv/js-jabber)
+*   [Syntax FM](https://syntax.fm/)
+*   [Fulstack Radio](http://www.fullstackradio.com//)
 
 
 ## Free JavaScript Books

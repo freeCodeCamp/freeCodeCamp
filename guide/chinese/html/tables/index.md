@@ -1,20 +1,18 @@
 ---
 title: Tables
-localeTitle: 表
+localeTitle: 表格
 ---
 ### 定义HTML表
 
-用表定义HTML表标签。
+HTML中的表格由<table>标签定义。
 
-每个表行都是用
+表格中的行由<tr>定义。每一行中可以为表头或者数据。
 
-标签。在一行内可能有表头或表数据。
 
-*   使用表定义表头
+*  表头由<tr>标签定义。表头默认为加粗居中。
 
-标签。默认情况下，表格标题为粗体且居中。*   表格数据/单元格用
+*   表格数据/单元格用<td>标签定义
 
-标签。
 
 更复杂的HTML表格还可能包含`<caption>` ， `<col>` ， `<colgroup>` ， `<thead>` ， `<tfoot>`和`<tbody>`元素。
 
@@ -77,17 +75,14 @@ localeTitle: 表
     </body> 
    </html> 
 ```
+结果
+Item Amount
 
-结果：
+Apple 10
 
-项目  量
+Peach 15
 
-桃子  15
-
-西瓜  3
-
-苹果  10
-
+Watermelon 3
 
 
 #### 更多信息：
