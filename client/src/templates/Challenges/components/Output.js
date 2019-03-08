@@ -11,6 +11,8 @@ const propTypes = {
 };
 
 const options = {
+  fontSize: '18px',
+  fontFamily: 'hackregular',
   lineNumbers: false,
   hideCursorInOverviewRuler: true,
   minimap: {

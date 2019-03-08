@@ -82,16 +82,20 @@ a:focus {
 }
 
 .fcc-modal {
-  background-color: #6b6d6f;
-  color: #fff;
+  background-color: var(--secondary-canvas);
+  color: var(--secondary-color);
 }
 
 .fcc-modal .close {
-  color: #fff;
+  color: var(--secondary-color);
+  opacity: 100%;
   font-size: 28px;
   text-shadow: none;
 }
 
+.modal-content {
+  background-color: var(--secondary-canvas);
+}
 /* boostrap override */
 .btn {
   background-color: var(--quaternary-canvas);
@@ -209,4 +213,8 @@ hr {
 
 .panel-default > .panel-heading {
   background-color: transparent;
+}
+
+.challenge-output span {
+  font-siez: 1rem;
 }

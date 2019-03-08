@@ -73,6 +73,8 @@ class Editor extends Component {
     super(...props);
 
     this.options = {
+      fontSize: '18px',
+      fontFamily: 'hackregular',
       scrollBeyondLastLine: false,
       selectionHighlight: false,
       overviewRulerBorder: false,

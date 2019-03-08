@@ -31,9 +31,6 @@
 }
 
 .test-status-icon circle {
-  cx: 100;
-  cy: 99;
   fill: var(--quaternary-color);
-  r: 85;
   stroke: var(--quaternary-color);
 }
