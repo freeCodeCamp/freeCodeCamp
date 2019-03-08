@@ -7,6 +7,9 @@ The example uses a link to the font's API, in the ```<head>``` of the HTML docum
 
 To browse through other fonts offered by Google, please check [Google Fonts](https://fonts.google.com "Google Fonts") 
 
+To look at what is going on behind a font, you can open the URL for the font.
+We have used the _Lobster_ font, [click here](https://fonts.googleapis.com/css?family=Lobster) to have a look at what's going on under-the-hood for the _Lobster_ font 
+
 ### Solution
 
 ```html
@@ -57,10 +60,10 @@ To browse through other fonts offered by Google, please check [Google Fonts](htt
   </form>
 </main>
 ```
-#### More on this
-To look at what is going on behind a font, you can open the URL for the font.
-We have used the _Lobster_ font, [click here](https://fonts.googleapis.com/css?family=Lobster) to have a look at what's going on under-the-hood for the _Lobster_ font 
 
-[Another way of importing font: using @font-face](https://css-tricks.com/snippets/css/using-font-face/)
-
-[Don't just copy the fonts out of Google Fonts URLs](https://css-tricks.com/dont-just-copy-the-font-face-out-of-google-fonts-urls/)
+#### More Information
+* [Developers Google - Getting Started with the Google Fonts API](https://developers.google.com/fonts/docs/getting_started)
+* [Google Fonts](https://fonts.google.com/)\
+* [How to use Google Fonts](https://www.w3schools.com/howto/howto_google_fonts.asp)
+* [Another way of importing font: using @font-face](https://css-tricks.com/snippets/css/using-font-face/)
+* [Don't just copy the fonts out of Google Fonts URLs](https://css-tricks.com/dont-just-copy-the-font-face-out-of-google-fonts-urls/)
