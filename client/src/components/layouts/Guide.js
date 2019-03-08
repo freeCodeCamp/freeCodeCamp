@@ -14,8 +14,7 @@ import './guide.css';
 
 import {
   toggleExpandedState,
-  toggleDisplaySideNav,
-  displaySideNavSelector,
+  toggleDisplayMenu,
   displayMenuSelector,
   expandedStateSelector
 } from './components/guide/redux';
@@ -37,48 +36,37 @@ const propTypes = {
     })
   }),
   displayMenu: PropTypes.bool,
-  displaySideNav: PropTypes.bool,
   expandedState: PropTypes.object,
   location: PropTypes.object,
-  toggleDisplaySideNav: PropTypes.func,
+  toggleDisplayMenu: PropTypes.func,
   toggleExpandedState: PropTypes.func
 };
 
 const mapStateToProps = createSelector(
-  displaySideNavSelector,
   displayMenuSelector,
   expandedStateSelector,
-  (displaySideNav, displayMenu, expandedState) => ({
-    displaySideNav,
+  (displayMenu, expandedState) => ({
     displayMenu,
     expandedState
   })
 );
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleExpandedState, toggleDisplaySideNav }, dispatch);
+  bindActionCreators({ toggleExpandedState, toggleDisplayMenu }, dispatch);
 
 class GuideLayout extends React.Component {
   getContentRef = ref => (this.contentRef = ref);
 
-  handleNavigation = () => {
-    this.contentRef.scrollTop = 0;
-    this.contentRef.focus();
+  handleNavigation = () => {};
+
+  hideSideNav = () => {
+    if (this.props.displayMenu) {
+      this.props.toggleDisplayMenu();
+    }
   };
 
-  componentWillUnmount() {
-    if (this.props.displayMenu) {
-      this.props.toggleDisplaySideNav();
-    }
-  }
-
   render() {
-    let {
-      displaySideNav,
-      expandedState,
-      toggleExpandedState,
-      toggleDisplaySideNav
-    } = this.props;
+    const { expandedState, toggleExpandedState, displayMenu } = this.props;
     return (
       <StaticQuery
         query={graphql`
@@ -105,24 +93,16 @@ class GuideLayout extends React.Component {
               <Spacer size={1} />
               <Grid className='guide-container'>
                 <Row>
-                  <Col
-                    md={4}
-                    smHidden={!displaySideNav}
-                    xsHidden={!displaySideNav}
-                  >
+                  <Col md={4} smHidden={!displayMenu} xsHidden={!displayMenu}>
                     <SideNav
                       expandedState={expandedState}
                       onNavigate={this.handleNavigation}
                       pages={pages}
-                      toggleDisplaySideNav={toggleDisplaySideNav}
+                      toggleDisplaySideNav={this.hideSideNav}
                       toggleExpandedState={toggleExpandedState}
                     />
                   </Col>
-                  <Col
-                    md={8}
-                    smHidden={displaySideNav}
-                    xsHidden={displaySideNav}
-                  >
+                  <Col md={8} smHidden={displayMenu} xsHidden={displayMenu}>
                     <main
                       className='content'
                       id='main'

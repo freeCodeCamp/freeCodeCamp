@@ -1,5 +1,4 @@
-.signup-btn.btn,
-#top-right-nav .signup-btn.btn {
+.signup-btn {
   background-color: #ffac33;
   background-image: linear-gradient(#ffcc4d, #ffac33);
   -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#ffac33,  GradientType=0)';
@@ -10,18 +9,14 @@
 }
 .signup-btn:hover,
 .signup-btn:focus,
-.signup-btn:active:hover,
-#top-right-nav .signup-btn:hover,
-#top-right-nav .signup-btn:focus,
-#top-right-nav .signup-btn:active:hover {
+.signup-btn:active:hover {
   background-color: #e99110;
   background-image: linear-gradient(#ffcc4d, #e99110);
   -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#e99110,  GradientType=0)';
   border-color: #ec8b11;
   color: #292f33 !important;
 }
-.signup-btn:active,
-#top-right-nav .signup-btn:active {
+.signup-btn:active {
   background-color: #f2a330;
   background-image: none;
   box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
