@@ -28,4 +28,7 @@ title: Use @if and @else to Add Logic To Your Styles
     @include border-stroke(medium);
   }  
 </style>
+
+<div id="box"></div>
+
 ```
