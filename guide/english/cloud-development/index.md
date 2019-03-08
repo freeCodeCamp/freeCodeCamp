@@ -9,7 +9,6 @@ Popular choices for Public Cloud providers are Amazon Web Services, Microsoft Az
 
 Many modern websites and big data efforts are said to be developed in the Cloud, meaning they are operating in some of these massive shared datacenters.
 
-
 ## Primary Cloud Service Models
 
 ### SaaS
@@ -21,15 +20,8 @@ Platform as a service, this layer provides a platform for the developers to deve
 ### IaaS
 Infrastructure as a service, this layer provides virtualized resources like CPU, memory storage etc that are used for hosting an application on the cloud on a pay per use basis. Example Amazon EC2, IBM Blue Cloud, etc.
 
-
 #### More Information:
-
-- [Getting Started with AWS](https://aws.amazon.com/getting-started/)
-
-- [Google Cloud Documentation](https://cloud.google.com/docs/)
-
-- [Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
-
-- [Firebase Documentation](https://firebase.google.com/docs/)
-
-- [Cloud computing news](https://www.ibm.com/blogs/cloud-computing/2018/10/15/what-is-ibm-multicloud-manager/)
+* [Getting Started with AWS](https://aws.amazon.com/getting-started/)
+* [Google Cloud Documentation](https://cloud.google.com/docs/)
+* [Getting Started with Microsoft Azure](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide)
+* [Firebase Documentation](https://firebase.google.com/docs/)
