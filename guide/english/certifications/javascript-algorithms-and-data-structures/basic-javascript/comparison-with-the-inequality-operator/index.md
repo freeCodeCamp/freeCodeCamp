@@ -22,7 +22,7 @@ The inequality operator (`!=`) will return `true` if the first value is not equa
 // Setup
 function testNotEqual(val) {
   if (val != 99) { // Change this line
-    return "Not equal";
+    return "Not Equal";
   }
   return "Equal";
 }
