@@ -14,7 +14,7 @@ Free Code Camp Issue Mods and staff are on hand to assist with Pull Request rela
 ## Setting Up your System
 
 1.  Install <a href='https://git-scm.com/' target='_blank' rel='nofollow'>Git</a> or your favorite Git client
-2.  (Optional) <a href='https://help.github.com/articles/generating-ssh-keys/' target='_blank' rel='nofollow'>Setup an SSH Key</a> for Github.  
+2.  (Optional) <a href='https://help.github.com/articles/generating-ssh-keys/' target='_blank' rel='nofollow'>Setup an SSH Key</a> for GitHub.  
     Using SSH can greatly speed up your interactions with GitHub, since you will not be prompted for your password.
 3.  Create a parent projects directory on your system. For the purposes of this document we will assume it is `/mean/`
 
