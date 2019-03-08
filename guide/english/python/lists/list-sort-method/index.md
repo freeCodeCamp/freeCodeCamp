@@ -9,7 +9,7 @@ list.sort(key=…,  reverse=[True/False])
 
 ### Parameters
 
-There are two optional parameters to this method
+There are two optional parameters to this method:
 <br><br>
 <i>key</i> - The input value for the key parameter should be a function that takes a single argument	and returns a value used for comparisons to sort the items in the list.
 <br><br>
@@ -70,6 +70,17 @@ b.sort(key = compareByAge)
 
 #Output
 print b # prints [('Adam', 20), ('Rahul', 25), ('Rahman', 30)]
+```
+You can also use <b>Lambda expression</b> instead of full function to define key. <br>Here is example of sorting strings based on last two characters:
+```py
+# Our strings can contain any characters and we want to sort them based on last two of them
+strings = ["apple_05", "orange_01", "strawberry_03", "pear_04", "banana_02"]
+
+# Take just last two characters as key value
+strings.sort(key = lambda x: x[-2:])
+
+# Output
+print strings    # Prints ['orange_01', 'banana_02', 'strawberry_03', 'pear_04', 'apple_05']
 ```
 
 ### Sorting Basics
