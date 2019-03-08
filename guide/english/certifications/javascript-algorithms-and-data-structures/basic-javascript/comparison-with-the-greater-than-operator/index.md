@@ -34,8 +34,6 @@ function testGreaterThan(val) {
 // Change this value to test
 testGreaterThan(10);
 ```
-· [Run code at repl.it](https://repl.it/@AdrianSkar/Basic-JS-Comparison-with-greater-operator)
-
 ### Code explanation
 The function first evaluates `if` the condition `(val > 100)` evaluates to `true` converting `val` to a number if necessary. If it does, it returns the statement between the curly braces ("Over 100"). If it doesn't, it checks if the next condition is `true` (returning "Over 10"). Otherwise the function will return "10 or under".
 
