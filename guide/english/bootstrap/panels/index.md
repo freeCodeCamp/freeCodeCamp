@@ -13,50 +13,71 @@ To use Bootstrap Panels you add a `<div>` with a class for your type of panel (c
 **Code Example**
 ```html
 <div class="panel panel-primary">
-  <div class="panel panel-heading">Panel Primary</div>
+  <div class="panel panel-heading">Panel Header</div>
   <div class="panel panel-body"> This is a panel with the primary panel style.</div>
+  <div class="panel panel-footer">Panel Footer</div>
 </div>
 ```
 
 #### Panel Examples:
 This is a set of examples that shows each type of panel. The CSS Class is displayed above each example.
 
-`panel panel-default`
+- default
+```html
 <div class="panel panel-default">
-<div class="panel panel-heading">Panel Default</div>
+<div class="panel panel-heading">Panel Default Header</div>
 <div class="panel panel-body"> This is a panel with the default panel style.</div>
+<div class="panel panel-footer">Panel Default Footer</div>
 </div>
+```
 
-`panel panel-primary`
+- primary
+```html
 <div class="panel panel-primary">
-<div class="panel panel-heading">Panel Primary</div>
+<div class="panel panel-heading">Panel Primary Header</div>
 <div class="panel panel-body"> This is a panel with the primary panel style.</div>
+<div class="panel panel-footer">Panel Primary Footer</div>
 </div>
+```
 
-`panel panel-success`
+- success
+```html
 <div class="panel panel-success">
-<div class="panel panel-heading">Panel Success</div>
+<div class="panel panel-heading">Panel Success Header</div>
 <div class="panel panel-body"> This is a panel with the success panel style.</div>
+<div class="panel panel-footer">Panel Success Footer</div>
 </div>
+```
 
-`panel panel-info`
+- info
+```html
 <div class="panel panel-info">
-<div class="panel panel-heading">Panel Info</div>
+<div class="panel panel-heading">Panel Info Header</div>
 <div class="panel panel-body"> This is a panel with the info panel style.</div>
+<div class="panel panel-footer">Panel Info Footer</div>
 </div>
+```
 
-`panel panel-warning`
+- warning
+```html
 <div class="panel panel-warning">
-<div class="panel panel-heading">Panel Warning</div>
+<div class="panel panel-heading">Panel Warning Header</div>
 <div class="panel panel-body"> This is a panel with the warning panel style.</div>
+<div class="panel panel-footer">Panel Warning Footer</div>
 </div>
+```  
 
-`panel panel-danger`
+- danger
+```html
 <div class="panel panel-danger">
-<div class="panel panel-heading">Panel Danger</div>
+<div class="panel panel-heading">Panel Danger Header</div>
 <div class="panel panel-body"> This is a panel with the danger panel style.</div>
+<div class="panel panel-footer">Panel Danger Footer</div>
 </div>
+```
 
 ### More Information
 
 - [Bootstrap dropdown documentation](https://getbootstrap.com/docs/4.0/components/dropdowns/)
+- [Panels have been replaced with the "card" class in Bootstrap 4](https://getbootstrap.com/docs/4.0/components/card/)
+- [Bootstrap v4.0.0 Migration Panels](https://getbootstrap.com/docs/4.1/migration/#panels/)

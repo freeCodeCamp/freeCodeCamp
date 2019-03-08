@@ -35,7 +35,7 @@ This problem is hard if you have to create your own code to check for primes, so
 
 **Solution ahead!**
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution 1:
 
     function sumPrimes(num) {
       var res = 0;
@@ -85,6 +85,39 @@ This problem is hard if you have to create your own code to check for primes, so
 #### Relevant Links
 
 *   <a href='https://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>JS For Loops Explained</a>
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution 2:
+
+    function sumPrimes(num) {
+     let i = 1;
+     let sum = 0;
+     while(i <= num){
+       if(isPrime(i)){
+         sum += i;
+       }
+       i++;
+     }
+    return sum;
+    }
+    //function to check if a number is prime or not
+    function isPrime(x){
+     for(let i =2;i < x;i++){
+      if(x % i === 0) return false;
+    }
+    return x !==1 && x !== 0;
+    }
+    //test here
+    sumPrimes(10);
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnZ/0' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Create a function to check if a number is prime or not.
+*   Declare two variables. One to keep us within the limit of the given number and the other to store the sum of numbers to be returned.
+*   Create a loop to check all numbers lesser than or equal to the given number.
+*   Check if a number is prime and add it to the value of sum.
+*   Return the value of sum once the loop exits.
+
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 

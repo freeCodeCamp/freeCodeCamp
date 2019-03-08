@@ -19,9 +19,10 @@ Each of those variables are now an instance of the class Person, and have all th
 To define a class, the keyword **class** is used, followed by the name defining the class and a colon. The lines after the definition line (code describing attributes and behaviors/methods) are indented as in a Python function.
 
 For example, to create a class named Person, we can write:
-
-`class Person:
-   <code describing attributes and behaviors/methods> `
+```
+class Person:
+   <code describing attributes and behaviors/methods> 
+```
 
 Class definitions must be executed before they have any effect.
 

@@ -3,6 +3,20 @@ title: Create a Model
 ---
 ## Create a Model
 
+### Creating Schema
+See the [Mongoose docs](https://mongoosejs.com/docs/guide.html) first where is a lot of useful stuff. 
+When you are building schema you can use either of three options for name validation
+```javascript
+name: String
+name: {type: String}
+name: {type: String, required: true} //preferred
+```
+For array of favoriteFoods here is the validation:
+```javascript
+favoriteFoods: [{ type: String }]
+```
+### Creating a Model
+
 There are 3 things to do in this challenge. You can click each item to see the code.
 
 <details>

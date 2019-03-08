@@ -3,7 +3,6 @@ id: 587d774c367417b2b2512a9c
 title: Добавьте текстовое описание для изображений, чтобы увеличить их информативность для пользователей с нарушением зрения
 challengeType: 0
 videoUrl: ''
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-alt-text-to-an-image-for-accessibility'
 localeTitle: Добавьте текстовое описание для изображений, чтобы увеличить их информативность для пользователей с нарушением зрения
 ---
 ## Description (Описание)

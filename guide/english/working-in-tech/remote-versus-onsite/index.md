@@ -23,14 +23,16 @@ Onsite work is what you might think of when you think of a 9-5 job. When you're 
 
 Remote work occurs when team members work in separate physical locations. You can work from anywhere: your home (no commute!), a co-working space (sometimes paid for by your employer), or even a beach in Thailand. Often your only restriction is that you have internet access. Sometimes you will also see this listed as a "distributed team" or "100% remote", with emphasis on the 100%. 
 
-Because in-person communication occurs less frequently (if at all), remote teams often rely more on communication software like [Slack](https://slack.com/), [Skype](https://www.skype.com/), and [HipChat](https://www.hipchat.com/).
+Because in-person communication occurs less frequently (if at all), remote teams often rely more on communication software like [Slack](https://slack.com/), [Skype](https://www.skype.com/), and [HipChat](https://www.hipchat.com/), and collaboration software like [Trello](https://trello.com/) and [Jira](https://www.atlassian.com/software/jira).
 
 Remote teams may host regular company retreats so team members can meet, hang out and plan the next steps for their company.
+
 
 #### Pros of Remote Work
 * cutting down commute time and costs
 * flexibility
 * expand geographic limitations by hiring outside of local area
+
 
 #### Cons of Remote Work
 * weakens communication
@@ -45,7 +47,7 @@ Remote work can be a great tool for a business as a contingency plan in the even
 
 Some companies also have a physical office where you can go to work if you'd like, but allow you to work wherever. Recently there has been more movement from large companies, such as IBM, toward moving employees back to onsite employment. However, many large organizations are still very flexible and willing to let you work from home, or another convenient location.
 
-With teams that are not 100% remote (some onsite and some remote) this can sometimes create a disconnected between those working in the office and those working from home. For example, communication needs to be top priority to make sure no one is left out of an impromptu meeting or decision. 
+With teams that are not 100% remote (some onsite and some remote) this can sometimes create a disconnect between those working in the office and those working from home. For example, communication needs to be top priority to make sure no one is left out of an impromptu meeting or decision. 
 
 ### Multiple Teams 
 

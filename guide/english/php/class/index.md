@@ -16,16 +16,16 @@ class Lab { // class keyword is mandatory identifier for class creation, after c
     return $this->name;
   }
 
-  public function say_my_name() {
+  public function sayMyName() {
     $name = $this->getName();
     return $name;
   }
 
 }
-$breaking_bad = 'Heisenberg';
-$lab = new Lab(); // keyword new creates instance of Lab class, variable $lab points to that instance
-$lab->setName($breaking_bad); // $lab variable that points to Lab instance calls setter function setName with $breaking_bad as parameter
-echo "My Name is " . $lab->say_my_name(). "!";
+$breakingBad = 'Heisenberg';
+$lab = new Lab();
+$lab->setName($breakingBad);
+echo "My Name is " . $lab->sayMyName(). "!";
 ```
 
 

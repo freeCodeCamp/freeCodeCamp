@@ -165,5 +165,6 @@ In many cases buttons will have to link to an url. As we can't add an href attri
 ```
 
 #### More Information:
-* https://www.w3schools.com/css/css3_buttons.asp
-* https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+
+- [W3 Schools - CSS Buttons](https://www.w3schools.com/css/css3_buttons.asp)
+- [W3 Schools - CSS Buttons Animate](https://www.w3schools.com/howto/howto_css_animate_buttons.asp)
