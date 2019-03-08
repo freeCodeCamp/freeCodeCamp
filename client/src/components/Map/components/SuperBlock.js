@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -14,9 +14,10 @@ import { ChallengeNode } from '../../../redux/propTypes';
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedSuperBlockSelector(ownProps.superBlock);
 
-  return createSelector(expandedSelector, isExpanded => ({ isExpanded }))(
-    state
-  );
+  return createSelector(
+    expandedSelector,
+    isExpanded => ({ isExpanded })
+  )(state);
 };
 
 function mapDispatchToProps(dispatch) {
@@ -52,7 +53,7 @@ function createSuperBlockTitle(str) {
     : `${str} Certification (300 hours)`;
 }
 
-export class SuperBlock extends PureComponent {
+export class SuperBlock extends Component {
   renderBlock(superBlock) {
     const { nodes, introNodes } = this.props;
     const blocksForSuperBlock = nodes.filter(
