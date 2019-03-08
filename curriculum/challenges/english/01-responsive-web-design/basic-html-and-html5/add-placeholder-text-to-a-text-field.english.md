@@ -11,8 +11,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 Placeholder text is what is displayed in your <code>input</code> element before your user has inputted anything.
 You can create placeholder text like so:
 <code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code><br>
-<strong>Note</strong><br>
-Remember that <code>input</code> elements are self-closing.
+<strong>Note:</strong> Remember that <code>input</code> elements are self-closing.
 </section>
 
 ## Instructions
