@@ -30,8 +30,8 @@ For example, given <b>5</b>,  produce this array:
 tests:
   - text: <code>spiralArray</code> should be a function.
     testString: assert(typeof spiralArray=='function','<code>spiralArray</code> should be a function.');
-  - text: <code>spiralArray(3)</code> should return a array.
-    testString: assert(Array.isArray(spiralArray(3)), '<code>spiralArray(3)</code> should return a array.');
+  - text: <code>spiralArray(3)</code> should return an array.
+    testString: assert(Array.isArray(spiralArray(3)), '<code>spiralArray(3)</code> should return an array.');
   - text: <code>spiralArray(3)</code> should return <code>[[0, 1, 2],[7, 8, 3],[6, 5, 4]]</code>.
     testString: assert.deepEqual(spiralArray(3), [[0, 1, 2], [7, 8, 3], [6, 5, 4]], '<code>spiralArray(3)</code> should return <code>[[0, 1, 2],[7, 8, 3],[6, 5, 4]]</code>.');
   - text: <code>spiralArray(4)</code> should return <code>[[0, 1, 2, 3],[11, 12, 13, 4],[10, 15, 14, 5],[9, 8, 7, 6]]</code>.
@@ -47,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function spiralArray (n) {
+function spiralArray(n) {
   // Good luck!
 }
 ```
@@ -59,7 +59,7 @@ function spiralArray (n) {
 <section id='solution'>
 
 ```js
-function spiralArray (n) {
+function spiralArray(n) {
     var arr = Array(n),
         x = 0, y = n,
         total = n * n--,
