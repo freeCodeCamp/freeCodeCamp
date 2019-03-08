@@ -3,16 +3,16 @@ title: The Programmers Oath
 ---
 ## The Programmers Oath
 
-The Programmers Oath is a an oath created by Robert C. Martin, highlighting the guidelines for a better web. The oath goes as follows:
+The Programmers Oath is an oath created by Robert C. Martin, highlighting the guidelines for a better web. The oath goes as follows:
 
 >In order to defend and preserve the honor of the profession of computer programmers,
->I promise that, to the best of my ability and judgement:
+>I promise that, to the best of my ability and judgment:
 >1. I will not produce harmful code.
 >2. The code that I produce will always be my best work. I will not knowingly allow code that is defective either in behavior or structure to accumulate.
 >3. I will produce, with each release, a quick, sure, and repeatable proof that every element of the code works as it should.
 >4. I will make frequent, small, releases so that I do not impede the progress of others.
 >5. I will fearlessly and relentlessly improve my creations at every opportunity. I will never degrade them.
->6. I will do all that I can to keep the productivity of myself, and others, as high as possible. I will do nothing that decreases that productivity.
+>6. I will do all that I can keep the productivity of myself, and others, as high as possible. I will do nothing that decreases that productivity.
 >7. I will continuously ensure that others can cover for me, and that I can cover for them.
 >8. I will produce estimates that are honest both in magnitude and precision. I will not make promises without certainty.
 >9. I will never stop learning and improving my craft.
@@ -25,16 +25,17 @@ The Programmers Oath is a an oath created by Robert C. Martin, highlighting the 
 #### What is harmful code?
 
 Harmful code is code that is harmful to customers, fellow programmers, or to the structure of the system.
-Harm comes in many different forms. <b>You</b> as a professional programmer promise not to produce harmful code, whatever that harm means in your judgement, and in the judgement of your peers.
+Harm comes in many different forms. <b>You</b> as a professional programmer promise not to produce harmful code, whatever that harm means in your judgment, and in the judgment of your peers.
 
 ### Promise 2
 >2. The code that I produce will always be my best work. I will not knowingly allow code that is defective either in behavior or structure to accumulate.
 
-As a programmer, you want to believe in doing your best work, and you never want to be in a situation where code you release is knowingly not your best work.
+As a programmer, you want to believe in doing your best work. 
+you never want to be in a situation where code you release is knowingly not your best work.
 
 You don't want to allow code that is defective to accumulate in your system. You may not be able to prevent it from getting into your system (ex. a release emergency), but you won't allow it to accumulate. 
 
-Notice that in the promise, there is an aspect of both "behavior" and "structure" in the oath.  Something that is defective in behavior is <b>clearly a problem,</b> but code defective in structure will drive the productivity of your team members down, untill you can barely get anything done.
+Notice that in the promise, there is an aspect of both "behavior" and "structure" in the oath.  Something that is defective in behavior is <b>clearly a problem,</b> but code defective in structure will drive the productivity of your team members down, until you can barely get anything done.
 
 ### Promise 3
 >3. I will produce, with each release, a quick, sure, and repeatable proof that every element of the code works as it should.

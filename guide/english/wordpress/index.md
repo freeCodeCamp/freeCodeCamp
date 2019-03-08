@@ -194,7 +194,7 @@ After confirming installation your will be on the WordPress Dashboard.
 ### More Information
 - [WordPress Theme Directory](https://wordpress.org/themes/)
 - [WordPress Plugin Directory](https://wordpress.org/plugins/)
-- [WordPress Github Repository](https://github.com/WordPress/WordPress)
+- [WordPress GitHub Repository](https://github.com/WordPress/WordPress)
 - [WordPress Support Forums](https://wordpress.org/support/)
 - [Download WordPress](https://wordpress.org/download/)
 - [WPHub-WordPress Themes](https://www.wphub.com/)

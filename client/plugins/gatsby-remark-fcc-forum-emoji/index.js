@@ -20,10 +20,7 @@ function markdownToHTML(node) {
 }
 
 module.exports = function forumEmojiPlugin({ markdownAST }) {
-  visit(
-    markdownAST,
-    'image',
-    imageNode =>
-      emojiRE.test(imageNode.title) ? markdownToHTML(imageNode) : imageNode
+  visit(markdownAST, 'image', imageNode =>
+    emojiRE.test(imageNode.title) ? markdownToHTML(imageNode) : imageNode
   );
 };

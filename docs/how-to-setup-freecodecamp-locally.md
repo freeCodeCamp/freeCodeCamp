@@ -20,7 +20,7 @@ This is essential, because this way you are able to work on your copy of freeCod
 2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
-![GIF - How to fork freeCodeCamp on Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
+![GIF - How to fork freeCodeCamp on GitHub](/docs/images/github/how-to-fork-freeCodeCamp.gif)
 
 ## Preparing the development environment
 
@@ -114,7 +114,7 @@ Start by installing these prerequisite software.
 | Prerequisite                                | Version | Notes |
 | ------------------------------------------- | ------- | ----- |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
-| [Node.js](http://nodejs.org)                | `8.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule), Note: We are currently on `8.x`, an upgrade is planned to 10.x |
+| [Node.js](http://nodejs.org)                | `10.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)|
 | npm (comes bundled with Node)               | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
 **Important:**
@@ -129,6 +129,10 @@ npm -v
 ```
 
 > If you have a different version, please install the recommended version. We can support installation issues for recommended versions only.
+
+**Note to Windows users:**
+
+Make sure the command line tool (Cmd, PowerShell or Git Bash for Windows, etc.) you use has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On windows, you should be able to launch a tool by right clicking it and selecting `Launch as an Administrator`.
 
 **I am having issues with installing the recommended prerequisites. What should I do?**
 
@@ -221,6 +225,16 @@ Now open a web browser and visit <http://localhost:8000>. If the app loads, cong
 Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs that we have.
 
 Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+
+## How to Sign in when working locally
+
+Your local setup automatically populates a local user in the database. Clicking the sign in button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a 404 page for the user portfolio when working locally. 
+
+Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
+
+![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
 
 ## Quick commands reference when working locally
 
@@ -408,32 +422,7 @@ Follow these steps:
 
 ## Proposing a Pull Request (PR)
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
-
-    ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
-
-2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
-
-    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
-
-    ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
-
-3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
-
-4. In the body of your PR include a more detailed summary of the changes you made and why.
-
-    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
-
-    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
-
-    - If the PR is meant to fix an existing bug/issue then, at the end of
-      your PR's description, append the keyword `closes` and #xxxx (where xxxx
-      is the issue number). Example: `closes #1337`. This tells GitHub to
-      automatically close the existing issue, if the PR is accepted and merged.
-
-5. Indicate if you have tested on a local copy of the site or not.
-
-    This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
+After you've committed your changes, check here for [how to open a Pull Request](/docs/how-to-open-a-pull-request.md).
 
 ## Getting Help
 
@@ -446,8 +435,9 @@ There might be an error in the console of your browser or in Bash / Terminal / C
 If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
 
 ```shell
-# Remove all installed node modules
-rm -rf node_modules ./**/node_modules
+# We use a mono repo and have multiple components (server, client, tools, plugins, etc.)
+# Use this command to clean up all dependencies in all of the components
+npm run clean
 
 # Reinstall npm packages
 npm install
@@ -458,6 +448,6 @@ npm run bootstrap
 # Seed the database
 npm run seed
 
-# Re-start the application
+# Restart the application
 npm run develop
 ```

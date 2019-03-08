@@ -16,15 +16,15 @@ There are two major brands producing GPUs: NVidia and AMD. They are often referr
 
 ## Origin of GPU
 
-Most primitive background of GPU can be mapped to the era of VGA (Virtual Graphics Array) controllers. These were not actually a whole processing unit but acted as supporting units for display functions. A VGA controller is a simple memory controller connected to Dynamic RAM and a display generator. The main function of a VGA is to receive image data, arrange it properly, and send it to a video device, which was mainly a computer monitor or a TV screen connected to a gaming console for display.
+The most primitive background of GPU can be mapped to the era of VGA (Virtual Graphics Array) controllers. These were not actually whole processing units, but acted as supporting units for display functions. A VGA controller is a simple memory controller connected to Dynamic RAM and a display generator. The main function of a VGA is to receive image data, arrange it properly, and send it to a video device, which was mainly a computer monitor or a TV screen connected to a gaming console for display.
 
-The first ever full-fledged processing unit for graphic acceleration was developed and marketed by NVIDIA in 1999, "GeForce 256". Older 3D accelerators had to rely on CPU to execute graphic calculations. With the new "GeForce 256" as a co-processor for CPU, improved frame rate by more than 50% and lowered the total cost, thereby expanding itself in the consumer market.
+The first ever full-fledged processing unit for graphic acceleration was developed and marketed by NVIDIA in 1999, "GeForce 256". Older 3D accelerators had to rely on the CPU to execute graphic calculations. With the new "GeForce 256" as a co-processor for CPU, frame rates improved by more than 50% and the total cost was lowered, thereby expanding itself in the consumer market.
 
 
 ## GPU vs CPU
 
 A CPU is optimized for minimum latency, i.e., "to be able to execute as many instructions as possible belonging to a single serial thread, in a given window of time". The processor must be able to switch quickly between operations. In order to get lots of latency on the CPU, there is a lot of infrastructure in the CPU like large caches for data to be readily available for execution, lots of Control Units for out-of-order executions, and a few ALU cores. The ISA of CPU is designed in a more generalized manner and can perform a wide-range of operations.
-While the CPU was designed for general purpose computations and instructions, GPU evolved for graphic computations. Same computation needs to be performed on hundreds and thousands of pixels for 2D/3D rendering of graphics. Thus, GPUs were primarily optimized for maximum throughput. This is implemented using tons of ALUs in a single architecture. The L2 cache is shrunk because till the data is fetched from DRAM, GPU cores have a lot of computations to perform, thereby overlapping the CPU stall time with massive parallelism. This is known as latency hiding.
+While the CPU was designed for general purpose computations and instructions, the GPU evolved for graphic computations. The same computation needs to be performed on hundreds and thousands of pixels for 2D/3D rendering of graphics. Thus, GPUs were primarily optimized for maximum throughput. This is implemented using tons of ALUs in a single architecture. The L2 cache is shrunk because until the data is fetched from DRAM, GPU cores have a lot of computations to perform, thereby overlapping the CPU stall time with massive parallelism. This is known as latency hiding.
 
 
 

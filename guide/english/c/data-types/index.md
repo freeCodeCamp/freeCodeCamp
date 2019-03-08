@@ -48,7 +48,7 @@ C makes pick the data type, and makes us be very specific and intentional about 
 
 In general, you should pick the minimum for your task. If you know you'll be counting from integer 1 to 10, you don't need a long and you don't need a double. If you know that you will never have negative values, look into using the `unsigned` variants of the data types. By providing this functionality rather than doing it automatically, C is able to produce very light and efficient code. However, it's up to you as the programmer to understand the abilities and limitations, and choose accordingly.
 
-We can use the sizeof() operator to check the size of a variable. See the following C program for the usage of the various data types:
+We can use the `sizeof()` operator to check the size of a variable. See the following C program for the usage of the various data types:
 
 ```c
 #include <stdio.h>

@@ -41,37 +41,20 @@ If the element to be searched presides on the the first memory block then the co
 
 The code for a linear search function in JavaScript is shown below. This function returns the position of the item we are looking for in the array. If the item is not present in the array, the function would return null.
 
-### Example in C 
-```c
-#include <stdio.h>
-
-int LinearSearch(int array[], int l,int n);
-
-int main(void) {
-  int arr[] = {10, 2, 3, 1, 4, 5, 8, 9, 7, 6};
-  LinearSearch(arr, 10, 3);
-  return 0;
-}
-
-int LinearSearch(int array[], int l,int n)     // l is length of array, n is the number to be searched
-{
-int i, flag = 0;
-for (i = 0 ; i < l - 1; i++)
-  {
-    if(array[i] == n)
-    {
-      flag = 1;
-      break;
-    }
-  }
-if (flag == 1)
-  printf("Number found");
-else
-  printf("Number not found");
-  
-  return 0;
-}
 ```
+int linearSearch(int arr[], int num)
+{
+        int len = (int)( sizeof(arr) / sizeof(arr[0]);
+        int *a = arr;
+        for(int i = 0; i < len; i++)
+        {
+                if(*(a+i) == num) return i;
+        }
+        return -1;
+}
+
+```
+
 ### Example in Javascript
 ```javascript
 function linearSearch(arr, item) {
@@ -116,6 +99,7 @@ int linear_search(int arr[],int n,int num)
    return -1; 
 }
 ```
+### Example in C
 
 ### Example in Python
 ```python
@@ -149,7 +133,27 @@ int linearSearch(int[] arr, int element)
 }
 
 ```
-        
+
+### Example in PHP
+
+```php
+function linear_search($arr=[],$num=0)
+{
+     $n = count($arr);   
+     for( $i=0; $i<$n; $i++){
+           if($arr[$i] == $num)
+                return $i;
+      }
+      // Item not found in the array
+      return -1; 
+}
+
+$arr = array(1,3,2,8,5,7,4,0);
+print("Linear search result for 2: ");
+echo linear_search($arr,2);
+
+```
+
 ## Global Linear Search
 
 What if you are searching the multiple occurrences of an element? For example you want to see how many 5’s are in an array.
@@ -184,7 +188,7 @@ end
 
 ## Why linear search is not efficient
 
-There is no doubt that linear search is simple but because it compares each element one by one, it is time consuming and hence not much efficient. If we have to find a number from say, 1000000 numbers and number is at the last location, linear search technique would become quite tedious. So, also learn about bubble sort, quick sort,etc. which are much more efficient than linear search.
+There is no doubt that linear search is simple but because it compares each element one by one, it is time consuming and hence not very efficient. If we have to find a number from say, 1000000 numbers and number is at the last location, linear search technique would become quite tedious. So, also learn about binary search, exponential search, etc. which are much more efficient than linear search.
 
 #### Relevant Video:
 

@@ -86,7 +86,7 @@ $ rails s
 | test/ | Unit tests, fixtures, and other test apparatus. These are covered in Testing Rails Applications. |  
 | tmp/ | Temporary files (like cache and pid files). |  
 | vendor/ | A place for all third-party code. In a typical Rails application this includes vendored gems. |  
-| .gitignore | This file tells git which files (or patterns) it should ignore. See Github - Ignoring files for more info about ignoring files. |  
+| .gitignore | This file tells git which files (or patterns) it should ignore. See GitHub - Ignoring files for more info about ignoring files. |  
 
 A great place to getting started with this awesome framework is reading his [Getting Started page](http://guides.rubyonrails.org/getting_started.html).
 
@@ -105,4 +105,4 @@ Controller (Action controller) interacts with the views and model to direct the 
 Not only is it free to use, you can also help make it better. More than 4,500 people have already contributed code to [Rails](https://github.com/rails/rails). It’s easier than you think to become one of them.
 
 ## Famous websites use or used Ruby on Rails
-Twitter was originally written in Ruby on Rails but moved away to a Java-based framework when needing to scale more. Twitch also heavily used Ruby and Ruby on Rails in the early stages but moved certain parts to Go-lang for anything that needed to be high-performant. Many websites that become famous and popular move parts or all of their back-end systems to frameworks based on compiled languages such Java, C++/C, and Go-lang from dynamic languages Ruby, Python, and Javascript (node). This is not always the case. Certain website are able to make dynamic language frameworks scale to as large as they need. Some good example are Github, Gitlab(open-source), Shopify, and Hulu.
+Twitter was originally written in Ruby on Rails but moved away to a Java-based framework when needing to scale more. Twitch also heavily used Ruby and Ruby on Rails in the early stages but moved certain parts to Go-lang for anything that needed to be high-performant. Many websites that become famous and popular move parts or all of their back-end systems to frameworks based on compiled languages such Java, C++/C, and Go-lang from dynamic languages Ruby, Python, and Javascript (node). This is not always the case. Certain website are able to make dynamic language frameworks scale to as large as they need. Some good example are GitHub, Gitlab(open-source), Shopify, and Hulu.

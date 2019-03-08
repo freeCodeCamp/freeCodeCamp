@@ -27,8 +27,9 @@ for training and interacting with models using Tensorflow.
 ### Mobile app development:
 Mobile apps and games can be created with python using Kivy, Pygame and PyQt.
 
+
 ### Security And Networking:
-Python is used to build Networking tools and security-tools that are widely used.Python's remote automation is the most secured, fast and efficient for cloud-testing
+Python is used to build Networking tools and security-tools that are widely used. Python's remote automation is the most secured, fast and efficient for cloud-testing
 of frameworks, that's why professional developers use python for making most secured frameworks and for socket-programmings.
 
 ### Machine Learning, Deep Learning:
@@ -43,7 +44,7 @@ You can use Python and some Python-libraries for developing your own <a href='ht
 You can use Python and some Python-libraries for developing <a href='https://github.com/discord-python/hacktoberbot' target="_blank" rel="nofollow">Discord Bots</a>
 
 #### Data Gathering by crawling and scraping
-Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as: Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick!
+Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick!
 
 ### More Information:
 Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>link</a> to a section of the official Python website describing its various applications.

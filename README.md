@@ -121,6 +121,7 @@ Our community also has:
 
 - A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
+- A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
@@ -142,7 +143,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### License
 
-Copyright © 2018 freeCodeCamp.org
+Copyright © 2019 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 

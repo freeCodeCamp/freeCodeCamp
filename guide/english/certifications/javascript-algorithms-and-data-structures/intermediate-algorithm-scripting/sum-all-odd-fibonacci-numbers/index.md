@@ -92,13 +92,13 @@ As you get the next odd one, don't forget to add it to a global variable that ca
         // First, reverse the array to avoid starting acc with the first/greater number when it's even
         return arrFib.reverse().reduce((acc, curr) => {
             return acc + curr * (curr % 2);
-        });
+        }, 0);
     }
 
     // test here
     sumFibs(4);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@kr3at0/SumAllOddFibonacciNumbers' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/ImpassionedFineConnection' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
