@@ -63,12 +63,12 @@ Example:
 
 ```
 
-## Extend/ Inheritance
+## Extend / Inheritance
 
-Reuse CSS properties across multiple selectors to avoid repetition by using @extend.
+SASS allows you to reuse CSS properties across multiple selectors to avoid repetition by using `@extend`.
 
-Example:
-```
+For Example:
+```sass
 %success {
   background-color:green;
   color:white;
@@ -85,7 +85,7 @@ Example:
 }
 
 ```
-Both selectors will inherit properties from %success, while maintaining their own unique properties.
+Both selectors(`#myDiv` and `#myOtherDiv`) will inherit properties from `%success`, while maintaining their own unique properties.
 
 ## Operators
 
