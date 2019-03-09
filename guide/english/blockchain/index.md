@@ -65,7 +65,7 @@ A third party is usually needed to validate trust relationships. In the most com
 For this reason, Blockchain is also known as **"The Trust Protocol"**.
 
 ## History
-The first work on a cryptographically- secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta. They wanted to implement a system where documents' timestamps could not be tampered with or backdated. In 1992, Bayer, Haber, and Stornetta incorporated Merkle trees to the design, which improved its efficiency by allowing several documents to be collated into one block.
+The first work on a cryptographically secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta. They wanted to implement a system where documents' timestamps could not be tampered with or backdated. In 1992, Bayer, Haber, and Stornetta incorporated Merkle trees to the design, which improved its efficiency by allowing several documents to be collated into one block.
 
 The first blockchain was conceptualized by a person (or group of people) known as Satoshi Nakamoto in 2008. It was implemented the following year by Nakamoto as a core component of the cryptocurrency Bitcoin, where it serves as the public ledger for all transactions on the network. The identity of Satoshi Nakamoto is not known, with some claiming him to be an Australian or Japanese man. Furthermore, Nakamoto introduced the concept of proof of work to ensure a more decentralized trust in the records' security.
 
