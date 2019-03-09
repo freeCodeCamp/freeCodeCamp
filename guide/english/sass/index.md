@@ -117,8 +117,8 @@ Mixins can also take arguements. For example:
 ## Extends
 Sometimes you’ll want one selector to share the styles of another selector. The `@extend` directive works like mixins in that you’re able to share snippets of code across your stylesheets. `@extend` is useful for sharing sets of related properties that get repeated in your stylesheets, such as base styles for button sets.
 
-Example:
-```css
+Example 1:
+```sass
 .btn--primary {
   background-color: #333;
   border-radius: 5px;
@@ -129,6 +129,38 @@ Example:
 }
 .btn--info {
   @extend .btn;
+}
+```
+
+Example 2:
+```sass
+%success {
+  background-color:green;
+  color:white;
+}
+
+#myDiv {
+  @extend %success;
+  font-size:10px;
+}
+
+#myOtherDiv {
+  @extend %success;
+  font-size:20px;
+}
+```
+Both selectors(`#myDiv` and `#myOtherDiv`) will inherit properties from `%success`, while maintaining their own unique properties.
+
+## Operators
+
+Sass adds mathematical operators, such as +, -, *, / and % to CSS.
+
+Example:
+
+```
+#myDiv {
+  height: 1920px / 480px;
+  width: 1080px * 2;
 }
 ```
 
