@@ -26,7 +26,7 @@ header {
   align-items: center;
 }
 
-#top-nav img {
+#top-nav .nav-logo {
   max-height: 25px;
   min-width: 35px;
   margin: 0 5px;
@@ -169,8 +169,13 @@ header {
   color: #006400;
 }
 
-#top-right-nav .signup-btn {
+#top-right-nav .signup-btn,
+#top-right-nav .settings-link {
   margin: 0 15px;
+}
+
+#top-right-nav .user-avatar {
+  max-height: calc(var(--header-height) - 4px);
 }
 
 @media (max-width: 734px) {
@@ -188,13 +193,13 @@ header {
     padding: 10px 0;
   }
 
-  #top-nav img {
+  #top-nav .nav-logo {
     margin: 0 0 0 10px;
   }
 }
 
 @media (max-width: 420px) {
-  #top-nav img {
+  #top-nav .nav-logo {
     margin: 0 0 0 5px;
   }
 
