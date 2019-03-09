@@ -49,15 +49,19 @@ function who() {
 const greet = <h1>Hello {who()}!</h1>;
 ```
 ### Only a single parent tag is allowed
-A JSX expression must have only one parent tag. We can add multiple tags nested within the parent element only.
+A JSX expression must have only one parent element. We can have multiple elements nested within the parent element.
 
 ```jsx
 // This is valid.
 const tags = (
-  <ul>
-    <li>Once</li>
-    <li>Twice</li>
-  </ul>
+  <div>
+    <h1>Hello World!</h1>
+    <h3>This is my special list:</h3>
+    <ul>
+      <li>Once</li>
+      <li>Twice</li>
+    </ul>
+  </div>
 );
 
 // This is not valid.
