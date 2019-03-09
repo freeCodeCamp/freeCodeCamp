@@ -7,12 +7,17 @@ The @each directive loops over a list and for each iteration the variable is ass
 
 ## Example:
 
-```
+```html
+<style type='text/sass'>
+  
 @each $color in white, black, blue {
   .#{$color}-font {
     color: $color;
   }
 }
+
+</style>
+
 <div class="white-font"></div>
 <div class="black-font"></div>
 <div class="blue-font"></div>
@@ -20,9 +25,9 @@ The @each directive loops over a list and for each iteration the variable is ass
 
 ## Solution
 
-```sass
+```html
 <style type='text/sass'>
-  
+
   @each $color in blue, black, red {
     .#{$color}-bg {background-color: $color;}
   }
@@ -31,6 +36,7 @@ The @each directive loops over a list and for each iteration the variable is ass
     height: 200px;
     width: 200px;
   }
+
 </style>
 
 <div class="blue-bg"></div>
