@@ -7,7 +7,7 @@
 
 .map-ui ul {
   list-style: none;
-  color: #333;
+  color: var(--secondary-color);;
 }
 
 .map-ui > ul {

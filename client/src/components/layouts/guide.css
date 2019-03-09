@@ -23,7 +23,7 @@
 }
 
 .breadcrumb > li a {
-  color: #6b6d6f;
+  color: var(--secondary-color);;
 }
 
 .breadcrumb > li {

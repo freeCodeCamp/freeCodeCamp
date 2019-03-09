@@ -1,5 +1,5 @@
 .black-text {
-  color: #333;
+  color: var(--secondary-color);;
   font-weight: 400;
   font-size: 40px;
 }
@@ -18,7 +18,7 @@
 }
 
 .landing-skill-icon {
-  color: #6b6d6f;
+  color: var(--secondary-color);;
   margin-top: -15px;
   padding-bottom: 15px;
   height: 150px;
@@ -29,7 +29,7 @@
   border-radius: 5px;
   height: 200px;
   width: 200px;
-  color: #6b6d6f;
+  color: var(--secondary-color);;
 }
 
 .testimonial-copy {

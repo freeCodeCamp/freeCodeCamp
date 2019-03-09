@@ -57,7 +57,7 @@ h3 {
 }
 
 .green-text {
-  color: #6b6d6f;
+  color: var(--secondary-color);
 }
 
 a {
