@@ -5,7 +5,7 @@ title: Adjust the Tone of a Color
 
 ### Solution
 
-```css
+```html
 <style>
   header {
     background-color: hsl(180, 90%, 35%);
