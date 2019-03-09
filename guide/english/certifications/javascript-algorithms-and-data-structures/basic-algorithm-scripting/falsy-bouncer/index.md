@@ -37,12 +37,40 @@ Then we need to add a `filter()` with the falsy values function...
 
 **Solution ahead!**
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
+```js
+function bouncer(arr) {
+  let newArray = [];
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i])
+      newArray.push(arr[i]);
+  }
+  return newArray;
+}
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/WarmPlainWebportal' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+We create a new empty array.
+We use a for cycle to iterate over all elements of the provided array (arr).
+We use the if statement to check if the current element is <a href='http://forum.freecodecamp.com/t/javascript-truthy-value/15975' target='_blank' rel='nofollow'>truthy</a> or <a href='https://guide.freecodecamp.org/javascript/falsy-values/' target='_blank' rel='nofollow'>falsy</a>.
+If the element is truthy, we push it to the new array (newArray). This result in the new array (newArray) containing only truthy elements.
+We return the new array (newArray).
+
+#### Relevant Links
+
+* [Boolean](https://forum.freecodecamp.com/t/javascript-boolean/14311)
+* [Truthy value](https://forum.freecodecamp.com/t/javascript-truthy-value/15975)
+* [Falsey values](https://www.freecodecamp.org/forum/t/javascript-falsy-values/14664)
+* [Array.prototype.push](https://www.freecodecamp.org/forum/t/javascript-array-prototype-push/14298)
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+```js
     function bouncer(arr) {
       return arr.filter(Boolean);
     }
-
+```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/32' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
@@ -59,7 +87,6 @@ The `Array.prototype.filter` method expects a function that returns a `Boolean` 
 
 If you found this page useful, you can give thanks by copying and pasting this on the main chat:
 
-**`Thanks @renelis @abhisekp @Rafase282 for your help with Algorithm: Falsy Bouncer`**
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
