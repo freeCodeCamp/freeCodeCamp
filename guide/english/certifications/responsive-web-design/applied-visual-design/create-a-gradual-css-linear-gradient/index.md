@@ -15,8 +15,20 @@ The colors can be used in both hex() and rgb() formats. Experiment a bit and you
 
 ### Solution
 
-```css
-background-image: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+```html
+<style>
+
+  div{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin: 50px auto;
+    background-image: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+  }
+
+</style>
+
+<div></div>
 ```
 
 #### Resources
