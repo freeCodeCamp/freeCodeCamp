@@ -8,47 +8,10 @@ import { unwrapHandledError } from '../utils/create-handled-error.js';
 
 const isDev = process.env.NODE_ENV !== 'production';
 
-// const toString = Object.prototype.toString;
-// is full error or just trace
-// _.toString(new Error('foo')) => "Error: foo
-// Object.prototype.toString.call(new Error('foo')) => "[object Error]"
-// const isInspect = val => !val.stack && _.toString(val) === toString.call(val);
-// const stringifyErr = val => {
-//   if (val.stack) {
-//     return String(val.stack);
-//   }
-
-//   const str = String(val);
-
-//   return isInspect(val) ?
-//     inspect(val) :
-//     str;
-// };
-
-// const createStackHtml = _.flow(
-//   _.cond([
-//     [isInspect, err => [err]],
-//     // may be stack or just err.msg
-//     [_.stubTrue, _.flow(stringifyErr, _.split('\n'), _.tail) ]
-//   ]),
-//   _.map(_.escape),
-//   _.map(line => `<li>${line}</lin>`),
-//   _.join('')
-// );
-
-// const createErrorTitle = _.cond([
-//   [
-//     _.negate(isInspect),
-//     _.flow(stringifyErr, _.split('\n'), _.head, _.defaultTo('Error'))
-//   ],
-//   [_.stubTrue, _.constant('Error')]
-// ]);
-
 export default function prodErrorHandler() {
   // error handling in production.
-  // disabling eslint due to express parity rules for error handlers
+  // eslint-disable-next-line no-unused-vars
   return function(err, req, res, next) {
-    // eslint-disable-line
     const handled = unwrapHandledError(err);
     // respect handled error status
     let status = handled.status || err.status || res.statusCode;

@@ -68,6 +68,18 @@ foo.toFixed(2);  // "47.69"
 ```
 >Type `Number.prototype` in your browser and see other available methods yourself.
 
+Numbers in strings are treated differently than normal numbers.
+
+```javascript
+var foo = "12" + 18; // "1218"
+```
+In order to convert a string into a number you must run it through a ```Number()``` function.
+
+```javascript
+var foo = "12";
+var bar = Number(foo) + 18; // "30"
+```
+
 #### More Information:
 1. <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type' target='_blank' rel='nofollow'>MDN</a>
 2. <a href='https://www.w3schools.com/js/js_numbers.asp' target='_blank' rel='nofollow'>JavaScript Numbers</a>
