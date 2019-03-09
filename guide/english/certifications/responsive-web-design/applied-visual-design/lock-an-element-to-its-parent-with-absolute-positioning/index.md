@@ -24,12 +24,27 @@ Use the `right` and `top` properties.
 
 **Solution ahead!**
 
-```css
-#searchbar {
-  position: absolute;
-  top: 50px;
-  right: 50px;
-}
+```html
+<style>
+  #searchbar {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+  section {
+    position: relative;
+  }
+</style>
+<body>
+  <h1>Welcome!</h1>
+  <section>
+    <form id="searchbar">
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search">
+      <input type="submit" name="submit" value="Go!">
+    </form>
+  </section>
+</body>
 ```
 
 ### Code Explanation:
