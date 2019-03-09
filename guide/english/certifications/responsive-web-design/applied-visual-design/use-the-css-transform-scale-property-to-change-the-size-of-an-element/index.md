@@ -3,7 +3,7 @@ title: Use the CSS Transform scale Property to Change the Size of an Element
 ---
 ## Use the CSS Transform scale Property to Change the Size of an Element
 
-```css
+```html
 <style>
   .ball { 
     width: 40px;
