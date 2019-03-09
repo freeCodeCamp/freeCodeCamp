@@ -5,7 +5,7 @@ title: Learn about Complementary Colors
 
 ### Solution
 
-```css
+```html
 <style>
   body {
     background-color: #FFFFFF;
