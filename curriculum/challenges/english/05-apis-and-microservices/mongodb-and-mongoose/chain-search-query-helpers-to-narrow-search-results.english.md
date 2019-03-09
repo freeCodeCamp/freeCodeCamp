@@ -11,7 +11,7 @@ If you don’t pass the callback as the last argument to <code>Model.find()</cod
 
 ## Instructions
 <section id='instructions'>
-Find people who like <code>burrito</code>. Sort them by name, limit the results to two documents, and hide their age. Chain `.find()`, <code>.sort()</code>, <code>.limit()</code>, <code>.select()</code>, and then <code>.exec()</code>. Pass the <code>done(err, data)</code> callback to <code>exec()</code>.
+Find people who like <code>burrito</code>. Sort them by name, limit the results to two documents, and hide their age. Chain <code>.find()</code>, <code>.sort()</code>, <code>.limit()</code>, <code>.select()</code>, and then <code>.exec()</code>. Pass the <code>done(err, data)</code> callback to <code>exec()</code>.
 </section>
 
 ## Tests
