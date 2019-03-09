@@ -16,7 +16,8 @@ One of Docker's biggest advantages is that it can be used by a team using differ
 
 ### Installation
 
-* Ubuntu: `sudo apt install docker`
+* Ubuntu: [Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package)
+          There are multiple ways to install the docker but the most convinient way is to use "Script".
 
 * RedHat: `yum install docker-ce`
 
