@@ -9,7 +9,7 @@ The `grid-area` takes values in the following format `horizontal line to start a
 
 ### Solution
 
-```css
+```html
 <style>
   .item1{background:LightSkyBlue;}
   .item2{background:LightSalmon;}
