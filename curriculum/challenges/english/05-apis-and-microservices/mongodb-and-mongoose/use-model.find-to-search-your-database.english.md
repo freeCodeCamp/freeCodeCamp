@@ -6,8 +6,8 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Find all the people having a given name, using Model.find() -> [Person]
-In its simplest usage, Model.find() accepts a query document (a JSON object ) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Check it in the docs. Use the function argument personName as search key.
+Find all the people having a given name, using <code>Model.find() -> [Person]</code>
+In its simplest usage, <code>Model.find()</code> accepts a query document (a JSON object) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Check it in the docs. Use the function argument <code>personName</code> as search key.
 </section>
 
 ## Instructions

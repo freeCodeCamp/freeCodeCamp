@@ -6,12 +6,12 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-When saving a document, mongodb automatically adds the field _id, and set it to a unique alphanumeric key. Searching by _id is an extremely frequent operation, so mongoose provides a dedicated method for it. Find the (only!!) person who has the given _id using Model.findById() -> Person. Use the function argument personId as search key.
+When saving a document, mongodb automatically adds the field <code>_id</code>, and set it to a unique alphanumeric key. Searching by <code>_id</code> is an extremely frequent operation, so mongoose provides a dedicated method for it. 
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Find the (only!!) person having a given <code>_id</code>, using <code>Model.findById() -> Person</code>. Use the function argument <code>personId</code> as the search key.
 </section>
 
 ## Tests
