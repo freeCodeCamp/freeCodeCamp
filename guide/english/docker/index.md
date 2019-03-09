@@ -21,9 +21,13 @@ One of Docker's biggest advantages is that it can be used by a team using differ
 
 * RedHat: `yum install docker-ce`
 
-* Windows / macOS: [Download](https://www.docker.com/get-started)
+* Windows: [Download](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-* Linux:
+* MacOS: [Download](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+
+* Linux: `sudo apt-get install docker-ce`
+
+* CentOS: [Instruction](https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions)
 
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
