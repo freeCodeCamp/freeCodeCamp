@@ -29,6 +29,15 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
+## Kitematic
+
+Kitematic is a built-in easy management tool for Docker (Windows & IOS Versions) available on version 1.8 and newer.
+This tool is usefull for easily managing and maintaining your Containers on Docker via a GUI interface and can be used to quickly browse for and set up new containers available on the Docker store.
+
+To Install/Enable just click the Kitematic option found under the pop-up mune when right-clicking the Docker quick launch icon.
+
+More information can be found here: https://kitematic.com/
+
 #### More Information:
 
 * For download and documentation check the docker official site: [Docker official site](https://www.docker.com)
