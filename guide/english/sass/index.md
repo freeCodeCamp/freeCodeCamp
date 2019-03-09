@@ -151,13 +151,47 @@ Example 2:
 ```
 Both selectors(`#myDiv` and `#myOtherDiv`) will inherit properties from `%success`, while maintaining their own unique properties.
 
+## Functions
+Sass has built in functions which can be easily used to manipulate colors.
+
+### Darken + Lighten
+The first argument contains the color, the second the percentage adjusted.
+
+```sass
+$heading-color
+.nav-bar li {
+  &.active {
+    darken( $heading-color, 10% );
+  }
+  &:hover {
+    lighten( $heading-color, 10% );
+  }
+}
+```
+
+Sass also provides control directives such as `@if`, `@for`, `@each` and `@while`
+
+### @if
+```sass
+$boolean: true
+
+@if $boolean
+  .header {
+    display: block;
+  }
+@else
+  .header {
+    display: none;
+  }
+```
+
 ## Operators
 
 Sass adds mathematical operators, such as +, -, *, / and % to CSS.
 
 Example:
 
-```
+```sass
 #myDiv {
   height: 1920px / 480px;
   width: 1080px * 2;
