@@ -6,12 +6,11 @@ Sass is a preprossessor scripting language that compiles CSS. It essentially bri
 ## Store data with Sass variables:
 
 Variable starts with '$' followed by variable name
+```sass
+$main-fonts: Arial,sans-serif;
+$heading-color: green;
 ```
-// Sass Code
-$main-fonts:Arial,sans-serif;
-$heading-color:green;
-
-// Css Code
+```css
 h1{
   font-family: $main-fonts;
   color: $heading-color;
@@ -21,7 +20,7 @@ h1{
 ## Nest CSS within SASS:
 
 On normal CSS codes we have to write each elements css seperate like:
-```
+```css
 .nav-bar{
   background-color: green;
 }
@@ -34,7 +33,7 @@ On normal CSS codes we have to write each elements css seperate like:
 
 ```
 So the above code in Sass code will be:
-```
+```sass
 .nav-bar{
   background-color:green;
   ul{
@@ -53,7 +52,7 @@ To create a mixin, use the `@mixin` command followed by a space and the name of 
 
 For example:
 
-```
+```sass
 @mixin box-shadow() {   
   -webkit-box-shadow: 10px 10px 5px 0px;
   -moz-box-shadow: 10px 10px 5px 0px;
@@ -64,16 +63,14 @@ For example:
 
 You can now use your mixin like this:
 
-```
+```sass
 .mydiv{
   @include box-shadow();
 }
 ```
 
-Mixins can also take arguements.
-
-For example:
-```
+Mixins can also take arguements. For example:
+```sass
 @mixin box-shadow($x,$y,$blur,$c){
   -webkit-box-shadow: $x,$y,$blur,$c;
   -moz-box-shadow: $x,$y,$blur,$c;
@@ -82,13 +79,12 @@ For example:
 }
 ```
 
-You can now pass your arguements into your mixin like this:
-
-```
+You can now pass your arguments into your mixin like this:
+```sass
 .mydiv{
   @include box-shadow(0px,0px,5px,#fff);
 }
 ```
 
 #### More Information
-[Official Sass website](https://sass-lang.com/)
+* [Official Sass website](https://sass-lang.com/)
