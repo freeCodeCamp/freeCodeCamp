@@ -19,22 +19,6 @@ Put a constructor with a parameter called `name`, and set it to `this.name`.
 
 ## Solution:
 
-```javascript
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
-  class Vegetable {
-    constructor(name){
-      this.name = name;
-    }
-  }
-  /* Alter code above this line */
-  return Vegetable;
-}
-```
-
-=======
-
 Spoiler Warning: here is a basic solution to this challenge in case you're stuck.
 
 ```javascript
@@ -43,8 +27,8 @@ function makeClass() {
   /* Alter code below this line */
 
    class Vegetable {
-     constructor(Vegetable){
-       this.Vegetable = Vegetable;
+     constructor(name){
+       this.name = name;
   
      }
    }

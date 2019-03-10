@@ -15,7 +15,7 @@ Tokens are the smallest units of a program which are important to the compiler. 
 
 ### What are Variables ?
 
-* Textbook definition : Variables are named memory locations whoose data can be altered.
+* Textbook definition : Variables are named memory locations whose data can be altered.
 
 * But I would like you to think of a variable to be something like a box, something like this : 
     ![Img](https://i.imgur.com/YdbgWHL.png)
@@ -25,16 +25,16 @@ So, for example :
    Hence , we know that a variable in C++ needs a *name* and a *data type* and that the value stored in them can be changed.
    
 ### Data Types in C++ : 
-When declaring variables in c++ they must have a name to which you will reffer later on, a value (constant or not) and a type.
-The type will tell the compiler the values that the variable can use, the possible operations and will save a certain space in memmory.
+When declaring variables in c++ they must have a name to which you will refer later on, a value (constant or not) and a type.
+The type will tell the compiler the values that the variable can use, the possible operations and will save a certain space in memory.
 In c++ there are two types of data:
 * Simple type
 * Struct type
 
 ### Simple data types
 
-* Boolean -- bool
-Works like a switch, can be on or off.
+* Boolean  -- bool
+Boolean variable can store either true or false.
 * Character -- char
 Stores a single character.
 * Integer  -- int
@@ -65,10 +65,10 @@ long
 ## Rules for naming a variable : ##
 
 - Start naming with a letter from A-Z or a-z .
-- Numbers can follow thee first letter but we cannot start naming with numbers.
+- Numbers can follow the first letter but we cannot start naming with numbers.
 - NO use of spaces or special characters are allowed, instead, use an UNDERSCORE _ .  
 
-#### Declaring a variabe :
+#### Declaring a variable :
 
 The syntax is as follows 
 <*data type*> <*variable name*>;
@@ -107,7 +107,7 @@ long l!!;
 You can imagine different boxes of different sizes and storing different things as different variables.
 
 **NOTES :** 
-1. **The C++ compiler ignores whitespaces and they are generally used for beautification of the code so that it is eassy for any programmer to debug or understand the code.**
+1. **The C++ compiler ignores white spaces and they are generally used for beautification of the code so that it is easy for any programmer to debug or understand the code.**
 2. **If a variable is not initialized , it contains a garbage value. Let me give an example:**
 
 ### Scope of Variables

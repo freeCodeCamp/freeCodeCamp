@@ -54,9 +54,9 @@ Only one option can be selected by the user. The group of radio buttons needs to
 A user can select zero or more options from the group of checkboxes. You can use `checked` property here too for one or more options.
 ```html
     <form>
-      <label><input type="checkbox" name="lang" value="english">english</label>
-      <label><input type="checkbox" name="lang" value="spanish">spanish</label>
-      <label><input type="checkbox" name="lang" value="french">french</label>
+      <label><input type="checkbox" name="lang" value="english">English</label>
+      <label><input type="checkbox" name="lang" value="spanish">Spanish</label>
+      <label><input type="checkbox" name="lang" value="french">French</label>
     </form>
 ```
 ### button
@@ -68,6 +68,7 @@ The input is displayed as a button, the text which should be displayed in the bu
 ```
 ### submit
 Displays the submit button. The text which should be displayed in the button is in the value attribute. After clicking on the button, HTML validation is performed and if it passes, the form is submitted.
+
 ```html
     <form>
       <input type="submit" value="SUBMIT">
@@ -81,6 +82,14 @@ Displays the reset button. The text which should be displayed in the button is i
       <input type="reset" value="CANCEL">
     </form>
 ```
+### color
+Allows color input through a color picker. The color which should be displayed by default in the box is in the `value` attribute, and should be specified in hexadecimal format.
+```html
+<form>
+    <input type="color" name="myfavcolor" value="#ba1e1e">
+</form>
+```
+Note: `type="color"` is not supported in Internet Explorer 11.
 
-There are more types of elements. For more information visit [MSDN]("https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input") or [w3schools]("https://www.w3schools.com/Html/html_form_input_types.asp").
 
+There are more types of elements. For more information visit [MSDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) or [W3schools](https://www.w3schools.com/Html/html_form_input_types.asp).
