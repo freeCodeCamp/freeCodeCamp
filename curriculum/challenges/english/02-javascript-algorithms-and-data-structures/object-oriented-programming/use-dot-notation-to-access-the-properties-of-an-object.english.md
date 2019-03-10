@@ -21,10 +21,10 @@ Print both <code>properties</code> of the <code>dog</code> object below to your 
 
 ```yml
 tests:
-  - text: Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.
-    testString: assert(/console.log\(.*dog\.name.*\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.');
-  - text: Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.
-    testString: assert(/console.log\(.*dog\.numLegs.*\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.');
+  - text: Your code should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.
+    testString: assert(/console.log\(.*dog\.name.*\)/g.test(code));
+  - text: Your code should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.
+    testString: assert(/console.log\(.*dog\.numLegs.*\)/g.test(code));
 
 ```
 
