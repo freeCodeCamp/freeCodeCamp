@@ -23,22 +23,35 @@
   border-bottom: 1px solid #e2e2e2;
 }
 
+.map-title > h4 {
+  margin-bottom: 0;
+}
+
+.map-title-completed {
+  margin-left: auto;
+  width: 100px;
+  padding-left: 20px;
+}
+
 .map-title > svg {
   width: 14px;
   margin-right: 5px;
   flex-shrink: 0;
 }
 
-li.open > .map-title svg {
+li.open > .map-title svg:first-child {
   transform: rotate(90deg);
 }
 
 .map-challenge-title {
   margin-bottom: 0.25rem;
+  max-width: 28rem;
 }
 
-.night .map-challenge-title a {
-  color: #f8f8f8;
+.night .map-challenge-title a,
+.night .map-title h4,
+.night .map-title-completed {
+  color: #67d269;
 }
 
 .map-challenge-title-completed {

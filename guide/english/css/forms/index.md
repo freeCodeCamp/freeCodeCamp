@@ -59,7 +59,7 @@ Here is an example of using the label element with an input element:
 <input type="text" id="firstName">
 ```
 
-### The NAME attribute
+### The name attribute
 If you want to submit the form that the input fields must contain the name attribute,if it is not present,
 the data of that input field will not be sent at all.
 In the below given example,only input type corresponding to first name will be submitted.
@@ -70,4 +70,15 @@ In the below given example,only input type corresponding to first name will be s
   Last name: <input type="text">
   <input type="submit" value="submit">
 </form>
+```
+
+## Style input element with CSS
+
+### :focus selector
+The `:focus` selector is applied when the element accepts user inputs.
+
+```css
+input:focus {
+    background-color: #FFFF66;
+}
 ```
