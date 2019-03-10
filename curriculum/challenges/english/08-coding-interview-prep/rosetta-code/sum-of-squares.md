@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sumsq (array) {
+function sumsq(array) {
   // Good luck!
 }
 ```
@@ -54,7 +54,7 @@ function sumsq (array) {
 <section id='solution'>
 
 ```js
-function sumsq (array) {
+function sumsq(array) {
   var sum = 0;
   var i, iLen;
 

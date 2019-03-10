@@ -21,8 +21,8 @@ Write a function that takes multiple sorted arrays of items, and returns one arr
 tests:
   - text: <code>mergeLists</code> should be a function.
     testString: assert(typeof mergeLists == 'function', '<code>mergeLists</code> should be a function.');
-  - text: <code>mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])</code> should return a array.
-    testString: assert(Array.isArray(mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])), '<code>mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])</code> should return a array.');
+  - text: <code>mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])</code> should return an array.
+    testString: assert(Array.isArray(mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])), '<code>mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])</code> should return an array.');
   - text: <code>mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])</code> should return <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>.
     testString: assert.deepEqual(mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]]), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], '<code>mergeLists([[1, 3, 5, 9, 10], [2, 4, 6, 7, 8]])</code> should return <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>.');
   - text: <code>mergeLists([[1, 4, 7, 10], [2, 5, 8, 11], [3, 6, 9, 12]])</code> should return <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</code>.
@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function mergeLists (lists) {
+function mergeLists(lists) {
   // Good luck!
 }
 ```
@@ -54,7 +54,7 @@ function mergeLists (lists) {
 <section id='solution'>
 
 ```js
-function mergeLists (lists) {
+function mergeLists(lists) {
   function merge (l1, l2) {
     var result = [], i=0, j=0;
     while (l1.length && l2.length) {

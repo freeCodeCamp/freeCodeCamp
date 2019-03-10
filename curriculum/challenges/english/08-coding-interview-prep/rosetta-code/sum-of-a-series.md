@@ -6,20 +6,19 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Compute the  <b>n</b><sup>th</sup>  term of a <a href="https://en.wikipedia.org/wiki/Series (mathematics)">series</a>,  i.e. the sum of the  <b>n</b>  first terms  of the corresponding <a href="https://en.wikipedia.org/wiki/sequence">sequence</a>.
+Compute the  <b>n</b><sup>th</sup>  term of a <a href="https://en.wikipedia.org/wiki/Series (mathematics)" target="_blank">series</a>,  i.e. the sum of the  <b>n</b>  first terms  of the corresponding <a href="https://en.wikipedia.org/wiki/sequence" target="_blank">sequence</a>.
 Informally this value, or its limit when  <b>n</b>  tends to infinity, is also called the <i>sum of the series</i>, thus the title of this task.
 For this task, use:
-$S_n = \sum_{k=1}^n \frac{1}{k^2}$
+<span style="margin-left: 2em;">$S_n = \sum_{k=1}^n \frac{1}{k^2}$</span>
 and compute  $S_{1000}$
 This approximates the   <a href="https://en.wikipedia.org/wiki/Riemann zeta function">zeta function</a>  for  S=2,  whose exact value
-$\zeta(2) = {\pi^2\over 6}$
+<span style="margin-left: 2em;">$\zeta(2) = {\pi^2\over 6}$</span>
 is the solution of the <a href="https://en.wikipedia.org/wiki/Basel problem">Basel problem</a>.
-Write a function that take $a$ and $b$ as parameters and returns the sum of $a^{th}$ to $b^{th}$ members of the sequence.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that take $a$ and $b$ as parameters and returns the sum of $a^{th}$ to $b^{th}$ members of the sequence.
 </section>
 
 ## Tests
@@ -50,7 +49,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sum (a, b) {
+function sum(a, b) {
   // Good luck!
 }
 ```
@@ -62,7 +61,7 @@ function sum (a, b) {
 <section id='solution'>
 
 ```js
-function sum (a, b) {
+function sum(a, b) {
   function fn(x) {
     return 1 / (x * x)
   }

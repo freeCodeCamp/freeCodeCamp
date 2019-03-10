@@ -10,12 +10,11 @@ Find solutions to the  <i>sum to one hundred</i>  puzzle.
 Add (insert) the mathematical operators <b>+</b> or <b>─</b> (plus or minus)  before any of the digits in the decimal numeric string   <b>123456789</b>   such that the resulting mathematical expression adds up to a particular sum   (in this iconic case,  <b>100</b>).
 Example:
 <pre><b>123 + 4 - 5 + 67 - 89   =   100</b></pre>
-Write a function that takes a number as parameter. The function should return an array containing all solutions for the given number. The solutions should be strings representing the expressions. For example: "1+23-456+78-9". Note: sort the array before returning it.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes a number as parameter. The function should return an array containing all solutions for the given number. The solutions should be strings representing the expressions. For example: "1+23-456+78-9". Sort the array before returning it.
 </section>
 
 ## Tests
@@ -25,8 +24,8 @@ Write a function that takes a number as parameter. The function should return an
 tests:
   - text: <code>sumTo100</code> should be a function.
     testString: assert(typeof sumTo100 == 'function', '<code>sumTo100</code> should be a function.');
-  - text: <code>sumTo100(199)</code> should return a array.
-    testString: assert(Array.isArray(sumTo100(199)), '<code>sumTo100(199)</code> should return a array.');
+  - text: <code>sumTo100(199)</code> should return an array.
+    testString: assert(Array.isArray(sumTo100(199)), '<code>sumTo100(199)</code> should return an array.');
   - text: <code>sumTo100(199)</code> should return <code>["-1+2-3+45+67+89", "123-4+5+6+78-9", "123-4+56+7+8+9"]</code>.
     testString: assert.deepEqual(sumTo100(199), ["-1+2-3+45+67+89", "123-4+5+6+78-9", "123-4+56+7+8+9"], '<code>sumTo100(199)</code> should return <code>["-1+2-3+45+67+89", "123-4+5+6+78-9", "123-4+56+7+8+9"]</code>.');
   - text: <code>sumTo100(209)</code> should return <code>["1+234+56+7-89"]</code>.
@@ -46,7 +45,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sumTo100 (n) {
+function sumTo100(n) {
   // Good luck!
 }
 ```
@@ -58,7 +57,7 @@ function sumTo100 (n) {
 <section id='solution'>
 
 ```js
-function sumTo100 (n) {
+function sumTo100(n) {
   var permutationsWithRepetition = function(n, as) {
     return as.length > 0 ?
       foldl1(curry(cartesianProduct)(as), replicate(n, as)) : [];

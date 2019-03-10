@@ -50,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sumDigits (n) {
+function sumDigits(n) {
   // Good luck!
 }
 ```
@@ -62,7 +62,7 @@ function sumDigits (n) {
 <section id='solution'>
 
 ```js
-function sumDigits (n) {
+function sumDigits(n) {
   n += ''
   for (var s=0, i=0, e=n.length; i<e; i+=1) s+=parseInt(n.charAt(i),36)
   return s

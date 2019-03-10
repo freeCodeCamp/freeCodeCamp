@@ -6,15 +6,14 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Given two <a href="http://rosettacode.org/wiki/set">set</a>s <i>A</i> and <i>B</i>, compute $(A \setminus B) \cup (B \setminus A).$
-That is, enumerate the items that are in <i>A</i> or <i>B</i> but not both. This set is called the <a href="https://en.wikipedia.org/wiki/Symmetric difference">symmetric difference</a> of <i>A</i> and <i>B</i>.
+Given two <a href="http://rosettacode.org/wiki/set" target="_blank">set</a>s <i>A</i> and <i>B</i>, compute $(A \setminus B) \cup (B \setminus A).$
+That is, enumerate the items that are in <i>A</i> or <i>B</i> but not both. This set is called the <a href="https://en.wikipedia.org/wiki/Symmetric difference" target="_blank">symmetric difference</a> of <i>A</i> and <i>B</i>.
 In other words: $(A \cup B) \setminus (A \cap B)$ (the set of items that are in at least one of <i>A</i> or <i>B</i> minus the set of items that are in both <i>A</i> and <i>B</i>).
-Write a function that takes two arrays as parameters and returns the symmetric difference. Note: Sort the resultant array before returning it.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes two arrays as parameters and returns the symmetric difference. Sort the resultant array before returning it.
 </section>
 
 ## Tests
@@ -24,8 +23,8 @@ Write a function that takes two arrays as parameters and returns the symmetric d
 tests:
   - text: <code>symmetricDifference</code> should be a function.
     testString: assert(typeof symmetricDifference == 'function', '<code>symmetricDifference</code> should be a function.');
-  - text: <code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return a array.
-    testString: assert(Array.isArray(symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])), '<code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return a array.');
+  - text: <code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return an array.
+    testString: assert(Array.isArray(symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])), '<code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return an array.');
   - text: <code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return <code>["Jim", "Serena"]</code>.
     testString: assert.deepEqual(symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"]), ["Jim", "Serena"], '<code>symmetricDifference(["John", "Bob", "Mary", "Serena"], ["Jim", "Mary", "John", "Bob"])</code> should return <code>["Jim", "Serena"]</code>.');
   - text: <code>symmetricDifference([1, 2, 3], [3, 4])</code> should return <code>[1, 2, 4]</code>.
@@ -45,7 +44,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function symmetricDifference (A, B) {
+function symmetricDifference(A, B) {
   // Good luck!
 }
 ```
@@ -57,7 +56,7 @@ function symmetricDifference (A, B) {
 <section id='solution'>
 
 ```js
-function symmetricDifference (A, B) {
+function symmetricDifference(A, B) {
   function relative_complement(A, B) {
     return A.filter(function(elem) {
       return B.indexOf(elem) == -1
