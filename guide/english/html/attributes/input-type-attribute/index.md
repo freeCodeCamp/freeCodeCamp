@@ -6,7 +6,7 @@ title: Input Type Attribute
 The input type attribute specifies the type of the input the user should put in your form.
 
 ### text
-One line of a text.
+One line of text.
 ```html
     <form>
       <label for="login">Login:</label>
@@ -15,7 +15,7 @@ One line of a text.
 ```
 
 ### password
-One line of a text. Text is automatically displayed as a series of dots or asterisks (depends on the browser and OS).
+One line of text. Text is automatically displayed as a series of dots or asterisks (depends on the browser and OS).
 ```html
     <form>
       <label for="password">Password:</label>
@@ -33,7 +33,7 @@ The HTML checks if the input matches the e-mail address format (something@someth
 ```
 
 ### number
-Allow only numeric input. You can also specify the min and max value allowed. The example below check that the input is number between 1 and 120.
+Allow only numeric input. You can also specify the min and max value allowed. The example below checks that the input is number between 1 and 120.
 ```html
     <form>
       <label for="age">Age:</label>
@@ -60,7 +60,7 @@ Let the user choose one or more files from their device storage. Once chosen, th
 ```
 
 ### radio
-Only one option can be selected by the user. The group of radio buttons needs to have the same name attribute. You can select automatically one option by using `checked` property (in the example below the value Blue is selected).
+Only one option can be selected by the user. The group of radio buttons needs to have the same name attribute. You can select  one option automatically by using `checked` property (in the example below the value Blue is selected).
 ```html
     <form>
       <label><input type="radio" name="color" value="red">Red</label>
@@ -88,7 +88,7 @@ The input is displayed as a button, the text which should be displayed in the bu
 ```
 
 ### submit
-Displays the submit button. The text which should be displayed in the button is in value attribute. After clicking on the button, the HTML does the validation and if it passes, the form is submitted.
+Displays the submit button. The text which should be displayed in the button is in the value attribute. After clicking on the button, HTML validation is performed and if it passes, the form is submitted.
 
 ```html
     <form>
@@ -97,7 +97,7 @@ Displays the submit button. The text which should be displayed in the button is 
 ```
 
 ### reset
-Displays the reset button. The text which should be displayed in the button is in the value attribute. After clicking on the button, all values from the form are deleted.
+Displays the reset button. The text which should be displayed in the button is in the value attribute. After clicking on the button, all entered values from the form are deleted.
 ```html
     <form>
       <input type="reset" value="CANCEL">
