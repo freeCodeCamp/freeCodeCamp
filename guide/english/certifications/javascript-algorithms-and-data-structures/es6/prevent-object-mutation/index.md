@@ -39,8 +39,6 @@ _You need to freeze the `MATH_CONSTANTS` object so that no one is able to alter 
     
     const PI = freezeObj();
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:")[Run code at codepen.io](https://codepen.io/dylantyates/pen/OwVxYB)
-
 # Code Explanation:
 
 By using Object.freeze() on `MATH_CONSTANTS` we can avoid manipulating it.
