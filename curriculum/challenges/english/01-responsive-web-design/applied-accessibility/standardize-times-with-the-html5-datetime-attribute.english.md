@@ -93,7 +93,7 @@ tests:
     
     <!-- Add your code below this line -->
     
-    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is <time datetime="2016-09-15"> Thursday, September 15<sup>th</sup> </time>. May the best ninja win!</p>
+    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is <time datetime="2016-09-15">Thursday, September 15<sup>th</sup></time>. May the best ninja win!</p>
     
     <!-- Add your code above this line -->
     
