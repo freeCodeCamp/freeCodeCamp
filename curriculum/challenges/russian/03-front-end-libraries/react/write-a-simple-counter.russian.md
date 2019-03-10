@@ -45,13 +45,13 @@ class Counter extends React.Component {
     this.state = {
       count: 0
     };
-    // change code below this line
+    // Измените код ниже
 
-    // change code above this line
+    // Измените код выше
   }
-  // change code below this line
+   // Измените код ниже
 
-  // change code above this line
+   // Измените код выше
   render() {
     return (
       <div>

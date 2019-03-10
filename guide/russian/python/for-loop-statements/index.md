@@ -124,60 +124,33 @@ fruits_to_colors = {"apple": "#ff0000",
 
 **Итерацию над двумя списками одинакового размера в одном цикле с помощью функции zip ()**
 
-\`\` \`\` Питон A = \["a", "b", "c"\] B = \["a", "d", "e"\]
-
-для a, b в zip (A, B): print a, b, a == b
+A = \["a", "b", "c"\] B = \["a", "d", "e"\]
+```python
+for a, b in zip(A, B):
+  print(a, b, a == b)
 ```
-Output: 
+Вывод: 
 ```
-
-\> aa True bd False Неверно >
-```
-**Iterate over a list and get the corresponding index with the enumerate() function** 
-```
-
-питон A = \["this", "is", "something", "fun"\]
-
-для индекса, слова в перечислении (A): print (индекс, слово)
-```
-Output: 
+a a True
+b d False
+c e False
 ```
 
-\> 0 это 1 - 2 что-то 3 весело >
+Можно **for** использовать с функцией **enumerate()** для получения индекса итерируемого объекта:
+```python
+A = ['Первый объект', 'Второй объект', 'Третий объект']
+
+for index, item in enumerate(A):
+  print('Индекс:', index, '--->', item)
 ```
-A common use case is iterating over a dictionary: 
+Вывод:
+```
+Индекс: 0 ---> Первый объект
+Индекс: 1 ---> Второй объект
+Индекс: 2 ---> Третий объект
 ```
 
-питон для имени, номер телефона в contacts.items (): print (имя, «доступно под», номер телефона)
-```
-If you absolutely need to access the current index of your iteration, do **NOT** use `range(len(iterable))`! This is an extremely bad practice and will get you plenty of chuckles from senior Python developers. Use the built in function `enumerate()` instead: 
-```
-
-питон для индекса, элемент в перечислении (shopping\_basket): print («Item», index, «is», item)
-```
-**for/else statements** 
- Pyhton permits you to use else with for loops, the else case is executed when none of the conditions with in the loop body was satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satsfied condition.If we do not break out then the else part will be executed. 
-```
-
-питон недельные _дни = \['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница'\] Сегодня = 'Суббота' за день в неделю_ : если день == сегодня: print ('сегодня - недельный день') перерыв еще: print («сегодня не день недели»)
-```
-In the above case the output will be `today is not a week day` since the break within the loop will never be executed. 
- 
- **Iterate over a list using inline loop function** 
- 
- We could also iterate inline using python, for example if we need to uppercase all the words in a list from a list we could simply do the following: 
-```
-
-питон A = \["this", "is", "awesome", "shinning", "star"\]
-
-UPPERCASE = \[word.upper () для слова в A\] print (UPPERCASE)
-```
-Output: 
-```
-
-\> \[«ЭТО», «ЕСТЬ», «УДИВИТЕЛЬНОЕ», «СИНХРОНИЗАЦИЯ», «ЗВЕЗДА») > \`\` \`
-
-#### Дополнительная информация:
+На самом деле, функция **for** может быть использована с любым объектом который годен для итерации, включая итераторов и генераторов (iterator objects, generator objects). Дополнительная информация доступна по следующим ссылкам:
 
 *   [Документация Python2 для цикла](https://docs.python.org/2.7/tutorial/controlflow.html#for-statements)
     
