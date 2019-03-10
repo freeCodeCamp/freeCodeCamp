@@ -6,16 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-    Task:
-<p>Solve the <a href="https://en.wikipedia.org/wiki/Towers_of_Hanoi" title="wp: Towers_of_Hanoi">Towers of Hanoi</a>  problem.</p>
-<p>
-Your solution should accept the number of discs as the first parameters, and
-three string used to identify each of the three stacks of discs, for example
-<code>towerOfHanoi(4, 'A', 'B', 'C')</code>. The function should return an
-array of arrays containing the list of moves, source -> destination. For
-example, the array <code>[['A', 'C'], ['B', 'A']]</code> indicates that the
-1st move was to move a disc from stack A to C, and the 2nd move was to move a
-disc from stack B to A.
+Solve the <a href="https://en.wikipedia.org/wiki/Towers_of_Hanoi" title="wp: Towers_of_Hanoi" target="_blank">Towers of Hanoi</a> problem.</p>
+Your solution should accept the number of discs as the first parameters, and three string used to identify each of the three stacks of discs, for example <code>towerOfHanoi(4, 'A', 'B', 'C')</code>. The function should return an array of arrays containing the list of moves, source -> destination.
+For example, the array <code>[['A', 'C'], ['B', 'A']]</code> indicates that the 1st move was to move a disc from stack A to C, and the 2nd move was to move a disc from stack B to A.
 </p>
 </section>
 
@@ -50,7 +43,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function towerOfHanoi (n, a, b, c) {
+function towerOfHanoi(n, a, b, c) {
   // Good luck!
   return [[]];
 }
