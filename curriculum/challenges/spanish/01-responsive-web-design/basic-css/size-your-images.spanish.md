@@ -3,7 +3,7 @@ id: bad87fee1348bd9acdf08812
 title: Size Your Images
 challengeType: 0
 videoUrl: ''
-localeTitle: Tamaño de sus imágenes
+localeTitle: Dele tamaño a sus imágenes
 ---
 
 ## Descripción
@@ -17,7 +17,7 @@ localeTitle: Tamaño de sus imágenes
 
 ```yml
 tests:
-  - text: Tu elemento <code>img</code> debería tener la clase <code>smaller-image</code> .
+  - text: Su elemento <code>img</code> debería tener la clase <code>smaller-image</code> .
     testString: 'assert($("img[src="https://bit.ly/fcc-relaxing-cat"]").attr("class") === "smaller-image", "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
   - text: Su imagen debe tener 100 píxeles de ancho. El zoom del navegador debe estar al 100%.
     testString: 'assert($("img").width() === 100, "Your image should be 100 pixels wide. Browser zoom should be at 100%.");'
