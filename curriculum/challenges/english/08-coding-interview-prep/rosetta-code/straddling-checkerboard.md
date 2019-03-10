@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Implement functions to encrypt and decrypt a message using the <a href="https://en.wikipedia.org/wiki/Straddling_checkerboard">straddling checkerboard</a> method. The functions will take a string and an array as parameters. The array has 3 strings representing the 3 rows of the checkerboard. The output will be a series of decimal digits.
+Implement functions to encrypt and decrypt a message using the <a href="https://en.wikipedia.org/wiki/Straddling_checkerboard" target="_blank">straddling checkerboard</a> method. The functions will take a string and an array as parameters. The array has 3 strings representing the 3 rows of the checkerboard. The output will be a series of decimal digits.
 Numbers should be encrypted by inserting the escape character before each digit, then including the digit unencrypted. This should be reversed for decryption.
 </section>
 
@@ -49,10 +49,11 @@ tests:
 <div id='js-seed'>
 
 ```js
-function straddle (message, alphabet) {
+function straddle(message, alphabet) {
   // Good luck!
 }
-function unstraddle (message, alphabet) {
+
+function unstraddle(message, alphabet) {
   // Good luck!
 }
 ```
@@ -64,7 +65,7 @@ function unstraddle (message, alphabet) {
 <section id='solution'>
 
 ```js
-function straddle (message, alphabet) {
+function straddle(message, alphabet) {
   var prefixes = new Array("", alphabet[0].indexOf(" "), alphabet[0].lastIndexOf(" "))
 
   var out = ""
@@ -82,7 +83,7 @@ function straddle (message, alphabet) {
   }
   return out
 }
-function unstraddle (message, alphabet) {
+function unstraddle(message, alphabet) {
   var prefixes = new Array("", alphabet[0].indexOf(" "), alphabet[0].lastIndexOf(" "))
   var out = ""
   var n, o

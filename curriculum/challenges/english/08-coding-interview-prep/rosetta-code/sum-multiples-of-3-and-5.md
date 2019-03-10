@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sumMults (n) {
+function sumMults(n) {
   // Good luck!
 }
 ```
@@ -54,7 +54,7 @@ function sumMults (n) {
 <section id='solution'>
 
 ```js
-function sumMults (n) {
+function sumMults(n) {
   var sum = 0;
   for (var i = 1; i < n; i++) {
     if (i % 3 == 0 || i % 5 == 0) sum += i;

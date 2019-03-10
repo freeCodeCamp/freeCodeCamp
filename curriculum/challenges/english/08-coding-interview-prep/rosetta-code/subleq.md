@@ -6,8 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<a href="http://rosettacode.org/wiki/eso:Subleq">Subleq</a> is an example of a <a href="https://en.wikipedia.org/wiki/One_instruction_set_computer">One-Instruction
-  Set Computer (OISC)</a>.
+<a href="http://rosettacode.org/wiki/eso:Subleq" target="_blank">Subleq</a> is an example of a <a href="https://en.wikipedia.org/wiki/One_instruction_set_computer" target="_blank">One-Instruction Set Computer (OISC)</a>.
 It is named after its only instruction, which is <b>SU</b>btract and <b>B</b>ranch if <b>L</b>ess than or <b>EQ</b>ual
 to zero.
 Your task is to create an interpreter which emulates such a machine.
@@ -35,7 +34,8 @@ character sets or Unicode. You may translate it into another character set if yo
 non-ASCiI-compatible environment.)
 <pre>15 17 -1 17 -1 -1 16 1 -1 16 3 -1 15 15 0 0 -1 72 101 108 108 111 44 32 119 111 114 108 100 33 10 0</pre>
 Which corresponds to something like this in a hypothetical assembler language:
-<pre>start:
+<pre>
+start:
     zero, message, -1
     message, -1, -1
     neg1, start+1, -1
@@ -43,14 +43,14 @@ Which corresponds to something like this in a hypothetical assembler language:
     zero, zero, start
 zero: 0
 neg1: -1
-message: "Hello, world!\n\0"</pre>
-Write a function that takes an array of integers as a parameter. This represents the memory elements. The function
-should interpret the sequence and return the output string. For this task, assume that there is no standard input.
+message: "Hello, world!\n\0"
+</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes an array of integers as a parameter. This represents the memory elements. The function
+should interpret the sequence and return the output string. For this task, assume that there is no standard input.
 </section>
 
 ## Tests
@@ -73,7 +73,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Subleq (mem) {
+function Subleq(mem) {
   // Good luck!
 }
 ```
@@ -85,7 +85,7 @@ function Subleq (mem) {
 <section id='solution'>
 
 ```js
-function Subleq (mem) {
+function Subleq(mem) {
   var out = "";
   var instructionPointer = 0;
   do {

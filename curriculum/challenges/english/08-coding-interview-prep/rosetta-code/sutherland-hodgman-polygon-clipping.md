@@ -6,18 +6,17 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The  <a href="https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm">Sutherland-Hodgman clipping algorithm</a>  finds the polygon that is the intersection between an arbitrary polygon (the “subject polygon”) and a convex polygon (the “clip polygon”).
+The  <a href="https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm" target="_blank">Sutherland-Hodgman clipping algorithm</a>  finds the polygon that is the intersection between an arbitrary polygon (the “subject polygon”) and a convex polygon (the “clip polygon”).
 It is used in computer graphics (especially 2D graphics) to reduce the complexity of a scene being displayed by eliminating parts of a polygon that do not need to be displayed.
 Take the closed polygon defined by the points:
-$[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]$
+<pre>[(50, 150), (200, 50), (350, 150), (350, 300), (250, 300), (200, 250), (150, 350), (100, 250), (100, 200)]</pre>
 and clip it by the rectangle defined by the points:
-$[(100, 100), (300, 100), (300, 300), (100, 300)]$
-Write a function that takes 2 arrays as parameters. The first array contains the points of the subject polygon and the second array contains the points of the clipping polygon. The function should return an array containing the points of the clipped polygon. Each number should be rounded to 3 decimal places.
+<pre>[(100, 100), (300, 100), (300, 300), (100, 300)]</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes 2 arrays as parameters. The first array contains the points of the subject polygon and the second array contains the points of the clipping polygon. The function should return an array containing the points of the clipped polygon. Each number should be rounded to 3 decimal places.
 </section>
 
 ## Tests
@@ -27,8 +26,8 @@ Write a function that takes 2 arrays as parameters. The first array contains the
 tests:
   - text: <code>clip</code> should be a function.
     testString: assert(typeof clip == 'function', '<code>clip</code> should be a function.');
-  - text: <code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return a array.
-    testString: assert(Array.isArray(clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])), '<code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return a array.');
+  - text: <code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return an array.
+    testString: assert(Array.isArray(clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])), '<code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return an array.');
   - text: <code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return <code>[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]</code>.
     testString: assert.deepEqual(clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]]), [[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]], '<code>clip([[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]], [[100, 100], [300, 100], [300, 300], [100, 300]])</code> should return <code>[[100, 116.667], [125, 100], [275, 100], [300, 116.667], [300, 300], [250, 300], [200, 250], [175, 300], [125, 300], [100, 250]]</code>.');
   - text: <code>clip([[150, 200], [400, 450], [30, 50]], [[10, 10], [300, 200], [400, 600], [100, 300]])</code> should return <code>[[150, 200], [350, 400], [348.611, 394.444], [30, 50]]</code>.
@@ -44,7 +43,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function clip (subjectPolygon, clipPolygon) {
+function clip(subjectPolygon, clipPolygon) {
   // Good luck!
 }
 ```
@@ -56,7 +55,7 @@ function clip (subjectPolygon, clipPolygon) {
 <section id='solution'>
 
 ```js
-function clip (subjectPolygon, clipPolygon) {
+function clip(subjectPolygon, clipPolygon) {
   var cp1, cp2, s, e, i, j;
   var inside = function(p) {
     return (cp2[0] - cp1[0]) * (p[1] - cp1[1]) > (cp2[1] - cp1[1]) * (p[0] - cp1[0]);
