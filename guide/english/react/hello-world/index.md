@@ -56,6 +56,14 @@ copy the code below and paste it into src/App.js
   export default App;
 ```
 If we check the index.js file in the src folder, we find that the above App.js is called into index.js and then rendered. 
+The code may look cryptic, especially part with: 
+```jsx
+constructor(props) {
+  super(props);
+}
+```
+Don't worry about it now. Just know that Class components should always call the base constructor with props and will be useful later when using the 'this' code.
+
 
 ```javascript
 // Other code
