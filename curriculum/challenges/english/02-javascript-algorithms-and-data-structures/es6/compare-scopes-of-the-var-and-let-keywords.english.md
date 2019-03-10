@@ -30,8 +30,8 @@ This exercise is designed to illustrate the difference between how <code>var</co
 
 ```yml
 tests:
-  - text: <code>var</code> does not exist in code.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');
+  - text: <code>var</code> should not exist in code.
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> should not exist in code.');
   - text: The variable <code>i</code> declared in the if statement should equal "block scope".
     testString: getUserInput => assert(getUserInput('index').match(/(i\s*=\s*).*\s*.*\s*.*\1('|")block\s*scope\2/g), 'The variable <code>i</code> declared in the if statement should equal "block scope".');
   - text: <code>checkScope()</code> should return "function scope"
