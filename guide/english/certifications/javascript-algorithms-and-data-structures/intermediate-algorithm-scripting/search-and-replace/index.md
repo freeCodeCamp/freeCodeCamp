@@ -215,7 +215,21 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 ```
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution Alternative 3:
 
+```javascript
+
+function myReplace(str, before, after) {
+
+  return str.split(" ")
+  .map((item)=>{
+  return item==before?(before[0]==before[0].toUpperCase()?after[0].toUpperCase().concat(after.slice(1)):after):item;})
+  .reduce((acc,item)=>{return acc+" "+item});
+}
+
+console.log(myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped"));
+
+```
 
 #### Relevant Links
 
