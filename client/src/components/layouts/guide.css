@@ -23,7 +23,7 @@
 }
 
 .breadcrumb > li a {
-  color: var(--secondary-color);;
+  color: var(--secondary-color);
 }
 
 .breadcrumb > li {
@@ -32,11 +32,11 @@
 
 .breadcrumb > li + li:before {
   content: '\203A';
-  color: #555;
+  color: var(--tertiary-color);
 }
 
 .breadcrumb > .active {
-  color: #555;
+  color: var(--tertiary-color);
 }
 
 /* Layout */

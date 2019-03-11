@@ -152,7 +152,6 @@ class DefaultLayout extends Component {
       isSignedIn,
       theme
     } = this.props;
-    console.log(theme);
     return (
       <Fragment>
         <Helmet

@@ -28,11 +28,9 @@ export default function ToggleButton({
   onLabel = 'On',
   offLabel = 'Off'
 }) {
-  const mapIconStyle = {
+  const checkIconStyle = {
     height: '15px',
-    marginRight: '10px',
-    marginLeft: '10px',
-    width: '25px'
+    width: '20px'
   };
   return (
     <Fragment>
@@ -46,9 +44,9 @@ export default function ToggleButton({
           value={1}
         >
           {value ? (
-            <ToggleCheck style={mapIconStyle} />
+            <ToggleCheck style={checkIconStyle} />
           ) : (
-            <Spacer style={mapIconStyle} />
+            <Spacer style={checkIconStyle} />
           )}
 
           {onLabel}
@@ -63,9 +61,9 @@ export default function ToggleButton({
         >
           {offLabel}
           {!value ? (
-            <ToggleCheck style={mapIconStyle} />
+            <ToggleCheck style={checkIconStyle} />
           ) : (
-            <Spacer style={mapIconStyle} />
+            <Spacer style={checkIconStyle} />
           )}
         </TB>
       </BSBG>

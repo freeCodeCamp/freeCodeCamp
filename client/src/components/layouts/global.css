@@ -168,6 +168,7 @@ code {
   border-radius: 0px;
   font-family: 'hackregular';
 }
+
 .panel {
   border-radius: 0;
 }
@@ -217,4 +218,14 @@ hr {
 
 .challenge-output span {
   font-siez: 1rem;
+}
+
+.breadcrumb {
+  background: var(--tertiary-canvas);
+  border-radius: 0px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  border-radius: 0px;
 }
