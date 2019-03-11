@@ -90,9 +90,7 @@ As you get the next odd one, don't forget to add it to a global variable that ca
 
         // Sum only the odd numbers and return the value
         // First, reverse the array to avoid starting acc with the first/greater number when it's even
-        return arrFib.reverse().reduce((acc, curr) => {
-            return acc + curr * (curr % 2);
-        }, 0);
+        return arrFib.filter(x => x % 2 != 0).reduce((a, b) => a + b);
     }
 
     // test here
