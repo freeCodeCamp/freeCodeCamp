@@ -22,15 +22,25 @@ The regression problems above can be turned into classification problems. Suppos
 
 #### Example 1:
 
+Suppose you wanted someone to differentiate between an apple and a banana. With Supervised Learning, you need to teach him what is apple and what is banana. The more he learns, the more he understands, the smarter it becomes. Note that you need to know what kind of answer you want to get: apple or bananas (nothing else). [Inspired by: Thomas Abot](https://triskell.github.io/2016/11/13/Supervised-Learning-and-Unsupervised-Learning.html)
+
+#### Example 2:
+
 > Given data about the size of houses on the real estate market, try to predict their price. 
 
 Price as a function of size is a continuous output, so this is a regression problem.
 
-#### Example 2:
+#### Example 3:
 
 (a) Regression - For continuous-response values. For example given a picture of a person, we have to predict their age on the basis of the given picture
 
 (b) Classification - for categorical response values, where the data can be separated into specific “classes”. For example given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
+
+#### Example 3:
+
+(a) Regression - Predicting people's income based on years of higher education.
+
+(b) Classification - Object classification in images. Given an image, the algorithm can determine which objects are present, such as "dog", "vase", or "car".
 
 #### Suggested Reading:
 
