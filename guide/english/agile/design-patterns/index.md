@@ -2,15 +2,15 @@
 title: Design Patterns
 ---
 ## Design Patterns
-A design pattern is a common design solution to a common design problem. A collection of design patterns for a related field or domain is called a pattern language. Note that there are also patterns at other levels: code, concurrency, architecture, interaction design ...
+A design pattern is a common design solution to a common design problem. A collection of design patterns for a related field or domain is called a pattern language. Note that there are also patterns at other levels: code, concurrency, architecture, interaction design, ect...
 
-In software engineering, a software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations. Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.
+In software engineering, a software design pattern is a general reusable solution to a reoccurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations. Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system.
 
 Object-oriented design patterns typically show relationships and interactions between classes or objects, without specifying the final application classes or objects that are involved. Patterns that imply mutable state may be unsuited for functional programming languages, some patterns can be rendered unnecessary in languages that have built-in support for solving the problem they are trying to solve, and object-oriented patterns are not necessarily suitable for non-object-oriented languages.
 
 Design patterns may be viewed as a structured approach to computer programming intermediate between the levels of a programming paradigm and a concrete algorithm.
 
-The book that popularised the field is Gang of Four's (GoF) **Design Patterns: Elements of Reusable Object-Oriented Software** (1994). It present a series (23) of patterns for an conventional (C++) OO language classified in three types:
+The book that popularised the field is "Gang of Four's" (GoF) **Design Patterns: Elements of Reusable Object-Oriented Software** (1994). It present a series (23) of patterns for an conventional (C++) OO language classified in three types:
 * **Creational** (to create objects): abstract factory, builder, factory method, prototype, singleton.
 * **Structural** (to compose objects): adapter, bridge, composite, decorator, facade, flyweight, proxy.
 * **Behavioral** (to communicate between objects): chain of responsibility, command, interpreter, iterator, mediator, memmento, observer, state, strategy, template method, visitor.
