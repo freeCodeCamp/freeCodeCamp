@@ -19,6 +19,7 @@ Commonly used options:
 - `-f` to force move them and overwrite files without checking with the user.
 - `-i` to prompt confirmation before overwriting files.
 - `-n` do not overwrite an existing file
+- `-T` to rename a file named source to destination
 
 ### Warning
 
