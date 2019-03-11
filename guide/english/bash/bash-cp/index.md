@@ -27,6 +27,11 @@ cp -p somefile.txt your/target/directory
 cp file1.txt file2.txt fileN.txt your/target/directory
 ```
  `cd` into the target directory, `ls`, and you will see copies of all of the files.
+ ### Copy an entire set of files with given extension
+ ```bash
+ cp *.extension directory
+ ```
+ `cd` into the target directory and you will see all files with entered extension into the directory
  #### Copy a directory
  ```bash
 cp -R directory/to/copy your/target/directory
