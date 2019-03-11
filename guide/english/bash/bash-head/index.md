@@ -9,7 +9,7 @@ Cat is used to read a file sequentially and print it to the standard output. <br
 ie prints out the entire contents of the entire file. - that is not always necessary, perhaps you just want to check the contents of a file to see if it is the correct one, or check that it is indeed not empty.
 The head command allows you to view the first N lines of a file.
 
-if more than on file is called then the first ten lines of each file is displayed, unless specific number of lines are specified.
+If more than one file is called. then the first ten lines of each file is displayed, unless specific number of lines are specified.
 Choosing to display the file header is optional using the option below
 
 ### Usage
