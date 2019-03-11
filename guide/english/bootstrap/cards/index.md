@@ -99,9 +99,11 @@ This is some text within a card body.
 ```
 ### Card is balanced with the image
 
+###### This is how it will look in an html doc
+
 ```html
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <img class="card-img-top" src="path/to/image/picture.png" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
@@ -109,9 +111,6 @@ This is some text within a card body.
 <!--You must set the image height on all cards -->
 ```
 
-
 #### More Information
 
 - [Bootstrap cards](https://getbootstrap.com/docs/4.1/components/card/)
-
-
