@@ -4,7 +4,7 @@ import * as fontFiles from '../fonts';
 const GlobalStyle = createGlobalStyle`
   :root {
     --header-height: 38px;
-    --primary-color: ${props => (props.darkMode ? 'black' : '#0a0a2e')};
+    --primary-color: ${props => (props.darkMode ? '#0a0a2e' : 'white')};
     --secondary-color: ${props => (props.darkMode ? '#1e2040' : '#f5f6f7')};
     --tertiary-color: ${props => (props.darkMode ? '#292948' : '#e8e8eb')};
     --quaternary-color: ${props => (props.darkMode ? '#43435d' : '#d4d4da')};

@@ -34,17 +34,15 @@ const createOnClick = (navigate, isSignedIn) => e => {
 function Login(props) {
   const { children, navigate, isSignedIn, ...restProps } = props;
   return (
-    <a href='/signin' onClick={createOnClick(navigate, isSignedIn)}>
-      <Button
-        {...restProps}
-        bsStyle='default'
-        className={
-          (restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'
-        }
-      >
-        {children || 'Sign In'}
-      </Button>
-    </a>
+    <Button
+      {...restProps}
+      bsStyle='default'
+      className={(restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
+      href='/signin'
+      onClick={createOnClick(navigate, isSignedIn)}
+    >
+      {children || 'Sign In'}
+    </Button>
   );
 }
 
