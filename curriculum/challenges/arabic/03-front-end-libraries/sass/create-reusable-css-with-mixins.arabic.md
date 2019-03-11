@@ -20,11 +20,11 @@ tests:
   - text: ''
     testString: 'assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi), "Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.");'
   - text: ''
-    testString: 'assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
+    testString: 'assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-webkit-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.");'
   - text: ''
-    testString: 'assert(code.match(/-moz-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-moz-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
+    testString: 'assert(code.match(/-moz-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-moz-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.");'
   - text: يجب أن تحتوي <code>-ms-border-radius</code> على <code>-ms-border-radius</code> التي تستخدم معلمة <code>$radius</code> .
-    testString: 'assert(code.match(/-ms-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-ms-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
+    testString: 'assert(code.match(/-ms-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-ms-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.");'
   - text: يجب أن تتضمن شفرتك قاعدة <code>border-radius</code> العامة التي تستخدم معلمة <code>$radius</code> .
     testString: 'assert(code.match(/border-radius:\s*?\$radius;/gi).length == 4, "Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.");'
   - text: ''

@@ -20,11 +20,11 @@ tests:
   - text: Ваш код должен объявить <code>mixin</code> именем <code>border-radius</code> который имеет параметр с именем <code>$radius</code> .
     testString: 'assert(code.match(/@mixin\s+?border-radius\s*?\(\s*?\$radius\s*?\)\s*?{/gi), "Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.");'
   - text: Ваш код должен включать <code>-webkit-border-radius</code> который использует параметр <code>$radius</code> .
-    testString: 'assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
-  - text: 'Ваш код должен включать префикс <code>-moz-border-radius</code> vender, который использует параметр <code>$radius</code> .'
-    testString: 'assert(code.match(/-moz-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-moz-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
-  - text: 'Ваш код должен включать префикс <code>-ms-border-radius</code> vender, который использует параметр <code>$radius</code> .'
-    testString: 'assert(code.match(/-ms-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-ms-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.");'
+    testString: 'assert(code.match(/-webkit-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-webkit-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.");'
+  - text: 'Ваш код должен включать префикс <code>-moz-border-radius</code> vendor, который использует параметр <code>$radius</code> .'
+    testString: 'assert(code.match(/-moz-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-moz-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.");'
+  - text: 'Ваш код должен включать префикс <code>-ms-border-radius</code> vendor, который использует параметр <code>$radius</code> .'
+    testString: 'assert(code.match(/-ms-border-radius:\s*?\$radius;/gi), "Your code should include the <code>-ms-border-radius</code> vendor prefix that uses the <code>$radius</code> parameter.");'
   - text: Ваш код должен содержать общее правило <code>border-radius</code> которое использует параметр <code>$radius</code> .
     testString: 'assert(code.match(/border-radius:\s*?\$radius;/gi).length == 4, "Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.");'
   - text: 'Ваш код должен вызвать <code>@include</code> <code>border-radius mixin</code> с помощью <code>@include</code> слова <code>@include</code> , установив его на 15 пикселей.'
