@@ -7,7 +7,7 @@ The factorial function is a useful function in [combinatorics](https://en.wikipe
 
 For any positive integer n we define the factorial of n, denoted n!, as the product
 
-<p align='center'>n! = 1 &times; 2 &times; 3 &times; ... &times; (n-2) &times; (n-1) &times; n.</p>
+#### n! = 1 &times; 2 &times; 3 &times; ... &times; (n-2) &times; (n-1) &times; n.
 
 For example,
 - 1! = 1,
@@ -24,7 +24,7 @@ If you have n different objects and want to know how many ways they can be arran
 
 Another common method of counting involves [combinations](https://en.wikipedia.org/wiki/Combination) which are a given by a quotient of factorials. The combinations then come up in, for example, the [binomial formula](https://en.wikipedia.org/wiki/Binomial_theorem), the coefficients in the expansion of
 
-<p align='center'>(x + y)<sup>n</sup></p>
+#### (x + y)<sup>n</sup>
 
 for any integer n.
 
@@ -34,30 +34,30 @@ Factorials also appear in many useful representations of functions, including ap
 
 Computing the factorial of a positive integer is incredibly straightforward, it is simply a product of all positive integers less than or equal to itself. However, this is not an efficient approach for very large numbers, and such a product will be incredibly large as well, so it is usually better to use an approximation when looking to compute very large factorials. One simple approximation is [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling%27s_approximation), namely,
 
-<p align='center'>n! ~ sqrt(2&pi;n)[n/e]<sup>n</sup></p>
+#### n! ~ sqrt(2&pi;n)[n/e]<sup>n</sup>
 
 so, for example,
 
-<p align='center'>10<sup>100</sup>! ~ sqrt(2&pi;10<sup>100</sup>)[10<sup>100</sup>/e]<sup>10<sup>100</sup></sup> ~ e<sup>-10<sup>100</sup></sup> &times; 10<sup>10<sup>102</sup></sup>.</p>
+#### 10<sup>100</sup>! ~ sqrt(2&pi;10<sup>100</sup>)[10<sup>100</sup>/e]<sup>10<sup>100</sup></sup> ~ e<sup>-10<sup>100</sup></sup> &times; 10<sup>10<sup>102</sup></sup>.
 
 ### Interesting formulas
 
 As mentioned above, the factorial can be used to defined Euler's number, namely
 
-<p align='center'>&Sigma; 1/n! = e. </p>
+#### &Sigma; 1/n! = e
 
 With a slight adjustment we have the fascinating sum
 
-<p align='center'>&Sigma; 1/[(n+2)n!] = 1.</p>
+#### &Sigma; 1/[(n+2)n!] = 1
 
 Lastly, the generalization of the factorial to non-integer values comes from the formula
 
-<p align='center'>n! = &int;<sub>0</sub><sup>&infin;</sup> t<sup>z</sup>e<sup>-t</sup> dt.</p>
+#### n! = &int;<sub>0</sub><sup>&infin;</sup> t<sup>z</sup>e<sup>-t</sup> dt
 
 This formula is where the value for (-1/2)! above comes from, since
 
-<p align='center'> &int;<sub>0</sub><sup>&infin;</sup> t<sup>-1/2</sup>e<sup>-t</sup> dt = sqrt(&pi;).</p>
+#### &int;<sub>0</sub><sup>&infin;</sup> t<sup>-1/2</sup>e<sup>-t</sup> dt = sqrt(&pi;)
 
 The recurrence now tells us that each half integer factorial is just a multiple of sqrt(&pi;) as, for example
 
-<p align='center'>(3/2)! = (3/2)*(1/2)! = (3/2)*(1/2)*(-1/2)! = 3sqrt(&pi;)/4
+#### (3/2)! = (3/2)*(1/2)! = (3/2)*(1/2)*(-1/2)! = 3sqrt(&pi;)/4
