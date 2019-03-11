@@ -18,15 +18,23 @@ Most used options:
 
 * `-f`, print a short description of the given command
 * `-a`, display, in succession, all of the available intro manual pages contained within the manual
+* `-c`, reformat the source man page, used mostly when the page was formatted for a screen with a different number of columns
 
-### Example
+### Examples
 
-Display the man page of ls:
+#### Display the man page of ls
 
 ```bash
 man ls
 ```
 
-#### More information:
+#### Display a short description of the shutdown command
 
-* Wikipedia: https://en.wikipedia.org/wiki/Man_page
+```bash
+man -f shutdown
+```
+
+### More information:
+
+* [Wikipedia](https://en.wikipedia.org/wiki/Man_page)
+* [Linux](https://linux.die.net/man/1/man)
