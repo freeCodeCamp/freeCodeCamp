@@ -16,7 +16,6 @@ header {
   align-items: center;
   padding: 0 15px;
   font-family: 'hackregular', 'monospace';
-  border-bottom: 1px solid var(--quaternary-color);
 }
 
 #top-nav:first-child > div {
