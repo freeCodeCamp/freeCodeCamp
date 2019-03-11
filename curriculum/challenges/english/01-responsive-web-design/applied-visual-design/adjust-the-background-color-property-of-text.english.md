@@ -25,7 +25,7 @@ Also for the <code>h4</code>, remove the <code>height</code> property and add <c
 ```yml
 tests:
   - text: Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.
-    testString: assert(code.match(/background-color:\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\)/gi), 'Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.');
+    testString: assert(code.match(/(background-color|background):\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\);/gi), 'Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>. Be sure to use a <code>;</code> after your property declaration.');
   - text: Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.
     testString: assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', 'Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.');
   - text: The <code>height</code> property on the <code>h4</code> element should be removed.

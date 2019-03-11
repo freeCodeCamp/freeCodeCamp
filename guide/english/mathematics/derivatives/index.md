@@ -4,7 +4,7 @@ title: Derivatives
 
 ## Derivatives
 
-The derivative is the instantaneous rate of change of a function, or the rate of change of a function at any particular instant in time. The derivative is a tool of calculus and you can determine it by taking a limit. 
+The derivative is the instantaneous rate of change of a function, or the rate of change of a function at any particular instant in time. The derivative is a tool of calculus and you can determine it by taking a limit. The common notation for taking the derivative is (dy/dx) but it can be written as (d/dx)y.
 
 You can understand the concept of derivative by comparing it with the concept of slope (the average rate of change) in algebra. 
 
