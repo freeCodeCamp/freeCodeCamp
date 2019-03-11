@@ -65,6 +65,19 @@ If you do not want the background image to scroll with the rest of the page, use
   background-attachment: fixed;
 ```
 
+### Background Attachment
+
+The background-attachment property sets whether a background image will scroll with the rest of the page, or would remain fixed.
+
+```css
+   background-image: url("GitHub-Mark.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+```
+
+Valid Property Values: scroll, fixed, initial, local, inherit
+
+
 ### Shorthand property
 
 You can pass all the properties in one super-property:
