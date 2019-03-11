@@ -53,7 +53,7 @@ You can add buttons on the navbar. The existing Bootstrap Button classes work ho
 ```
 
 #### Adding forms to the navbar
-You can also add forms to the navbar. This could be uses for tasks such as a search field, quick login field, etc.
+You can also add forms to the navbar. This could be used for tasks such as a search field, quick login field, etc.
 ```html
 <form class="navbar-form navbar-right">
   <div class="form-group">
