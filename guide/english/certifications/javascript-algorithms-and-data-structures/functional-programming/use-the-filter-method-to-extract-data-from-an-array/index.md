@@ -24,12 +24,12 @@ var filteredList = watchList.map((movie) => {
   // return false it will reject the item
   return parseFloat(movie.rating) >= 8.0
 })
-
-//In the beginnner solution we're mapping over the watchList array to reduce the amount of data we have to work with and only returning the two items we need
-//Once we've reduced the items to what we're interested in (Title and imdbRating) we're filtering through and only returning the remaining items that meet the criteria
-//In this case it's having an imdbRating of 8.0 or higher
-
 ```
+#### Code Explanation
+In the beginnner solution we're mapping over the watchList array to reduce the amount of data we have to work with and only returning the two items we need.  
+Once we've reduced the items to what we're interested in (Title and imdbRating) we're filtering through and only returning the remaining items that meet the criteria.  
+In this case it's having an imdbRating of 8.0 or higher.
+
 
 ### Intermediate Solution
 
