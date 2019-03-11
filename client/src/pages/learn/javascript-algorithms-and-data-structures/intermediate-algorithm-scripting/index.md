@@ -5,7 +5,7 @@ superBlock: JavaScript Algorithms and Data Structures
 ---
 ## Introduction to the Intermediate Algorithm Scripting Challenges
 
-The following 21 challenges are part of FCC's Intermediate Algorithm Scripting Challenges. These serve the purpose of preparing you before you start the final challenges to complete the Javascript Algorithms And Data Structures Certification.
+The following challenges are part of FCC's Intermediate Algorithm Scripting Challenges. These should prepare you to complete the final challenges for the JavaScript Algorithms And Data Structures Certification.
 
 These challenges will allow you to test how much you have learned and which parts you may need to brush up again before starting the projects.
 
