@@ -34,6 +34,12 @@ man ls
 man -f shutdown
 ```
 
+#### Display the man page of ASCII table:
+
+```bash
+man ascii
+```
+
 ### More information:
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Man_page)
