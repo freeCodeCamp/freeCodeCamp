@@ -19,6 +19,7 @@ Most used options:
 * `-f`, print a short description of the given command
 * `-a`, display, in succession, all of the available intro manual pages contained within the manual
 * `-c`, reformat the source man page, used mostly when the page was formatted for a screen with a different number of columns
+* `-l`, enabling case sensitivity
 
 ### Examples
 
