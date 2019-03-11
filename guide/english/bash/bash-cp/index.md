@@ -3,7 +3,7 @@ title: Bash Copy
 ---
  ## Bash command: cp
  `cp` is used to copy files and directories.
- It can be used to copy a file, copy a file to a directory, or copy a directory.
+ The utility copies the contents of the source file to the target file. The utility can also copy the contents of each named source file to the target directory. The names of the files themselves are not changed. If cp detects an attempt to copy a file to itself, the copy will fail.
  ### Usage
  ```
 cp [options] source target
