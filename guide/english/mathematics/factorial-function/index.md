@@ -3,9 +3,9 @@ title: Factorial Function
 ---
 ## Factorial Function
 
-In mathematics, the __factorial__ of a __non-negative integer__ _n_, denoted by _n!_, is the product of __all positive integers less than or equal to *n*__<sup>1</sup>. Here are for example the calculations of the factorial of the first six natural numbers.
+The __factorial__ of a __non-negative integer__ _n_, denoted by _n!_, is the product of __all positive integers less than or equal to *n*__&sup1;. Here are for example the calculations of the factorial of the first six natural numbers.
 
-### Example
+### Examples
 
 1. 0! = 1 (by convention)
 2. 1! = 1
@@ -29,17 +29,7 @@ function factorial(n) {
         return undefined;
     }
 }
-
-console.log(factorial(5));
-// ouputs 120
-console.log(factorial(-5));
-// outputs undefined
-console.log(factorial(0));
-// outputs 1
 ```
-### Sources
-1. Wikipedia - Attributions
 
 #### More Information:
 [Factorial on Wikipedia](https://en.wikipedia.org/wiki/Factorial)
-
