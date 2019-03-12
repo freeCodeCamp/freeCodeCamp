@@ -30,7 +30,6 @@ _أضف عامل المساواة إلى الخط المحدد بحيث تقوم
  testEqual(10); 
 ` 
 
-[تشغيل الكود في repl.it](https://repl.it/@AdrianSkar/Basic-JS-Equality-operator)
 
 ### تفسير الشفرة
 

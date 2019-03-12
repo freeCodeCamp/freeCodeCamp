@@ -25,7 +25,6 @@ localeTitle: أكبر عامل رئيسي
  } 
 ` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Problem-3-Largest-prime-factor)
 
 ### مصادر:
 

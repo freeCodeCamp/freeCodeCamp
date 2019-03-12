@@ -105,7 +105,6 @@ localeTitle: تحديث المخزون
     updateInventory(curInv, newInv); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLok/0)
 
 ### شرح الشفرة:
 
@@ -190,7 +189,6 @@ localeTitle: تحديث المخزون
     updateInventory(curInv, newInv); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLol/0)
 
 ### شرح الشفرة:
 
@@ -265,7 +263,6 @@ localeTitle: تحديث المخزون
     updateInventory(curInv, newInv); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/MQvv/latest)
 
 ### شرح الشفرة:
 

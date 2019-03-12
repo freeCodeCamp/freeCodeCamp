@@ -118,7 +118,6 @@ localeTitle: عد بطاقات
  } 
 ` 
 
-تشغيل الكود في [repl.it.](https://repl.it/@AdrianSkar/Basic-JS-Counting-cards)
 
 ### تفسير الشفرة
 

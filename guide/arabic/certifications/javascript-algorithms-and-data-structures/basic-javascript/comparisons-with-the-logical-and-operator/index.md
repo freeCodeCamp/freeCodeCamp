@@ -41,7 +41,6 @@ localeTitle: مقارنات مع عامل التشغيل && (المنطقية AN
  testLogicalAnd(10); 
 ` 
 
-[تشغيل الكود في repl.it](https://repl.it/@AdrianSkar/Basic-JS-Comparison-with-the-and-operator)
 
 ### تفسير الشفرة
 
