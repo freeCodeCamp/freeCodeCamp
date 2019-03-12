@@ -5,6 +5,7 @@ title: Absolute Value
 
 Absolute value is the non-negative value of a number, whether that number is positive or negative.
 You can think of a number's absolute value as its distance from zero.
+It can be also be considered as magnitude without direction.
 It can be defined as,
 
 ![img](https://latex.codecogs.com/gif.latex?%5Cdpi%7B120%7D%20%5Clarge%20y%20%3D%20%5Cleft%20%7C%20x%20%5Cright%20%7C%20%3D%20%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20x%20%26%20for%20%5C%2C%20x%20%5Cgeq%200%20%5C%5C%20-x%20%26%20for%20%5C%2Cx%20%3C0%20%5Cend%7Bmatrix%7D%5Cright.)
