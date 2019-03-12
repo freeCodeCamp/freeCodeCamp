@@ -120,6 +120,5 @@ class PriorityQueue {
   }
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Priority-Queue)
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Priority_queue)

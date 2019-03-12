@@ -43,7 +43,6 @@ Do not forget to join the characters back together after you reverse them.
       return str.split('').reverse().join('');
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

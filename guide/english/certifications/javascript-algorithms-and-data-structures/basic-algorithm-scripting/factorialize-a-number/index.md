@@ -89,7 +89,6 @@ Got it? ![:wink:](https://forum.freecodecamp.com/images/emoji/emoji_one/wink.png
 
     factorialize(5);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/1' target='_blank' rel='nofollow'>Run Code</a>
 
 ## Code Explanation:
 
@@ -113,7 +112,6 @@ Notice at the first line we have the terminal condition, i.e a condition to chec
 
     factorialize(5);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/CrimsonVerifiableDownload' target='_blank' rel='nofollow'>Run Code</a>
 
 ## Code Explanation:
 

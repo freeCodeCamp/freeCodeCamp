@@ -85,7 +85,6 @@ In the event of *odd number of sets* the symmetric difference will include ident
     }
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/C4II/0" target="_blank" rel="nofollow">Run Code</a>
 
 ### Code Explanation: ###
 
@@ -140,7 +139,6 @@ In the event of *odd number of sets* the symmetric difference will include ident
     sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CLoc/0" target="_blank" rel="nofollow">Run Code</a>
 
 ### Code Explanation: ###
 
@@ -175,7 +173,6 @@ In the event of *odd number of sets* the symmetric difference will include ident
     sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/@ashenm/Symmetric-Difference" target="_blank" rel="nofollow">Run Code</a>
 
 ### Code Explanation: ###
 

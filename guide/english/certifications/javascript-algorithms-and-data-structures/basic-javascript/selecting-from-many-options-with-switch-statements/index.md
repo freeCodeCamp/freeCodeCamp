@@ -105,7 +105,6 @@ function caseInSwitch(val) {
 // Change this value to test
 caseInSwitch(1);
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Switch-statements).
 
 ### Code explanation
 Since you already have a variable defined at the beginning of the function named `answer` and it's defined as the last return statement, you can assign new values to it for each case and will return the expected answer depending on the value you pass to the function. 
