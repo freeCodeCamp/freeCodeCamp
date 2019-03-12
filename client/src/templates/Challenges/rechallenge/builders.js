@@ -10,6 +10,8 @@ import {
 
 import { compileHeadTail, setExt, transformContents } from '../utils/polyvinyl';
 
+import { nightThemeStyle } from './displayStyle.js';
+
 const htmlCatch = '\n<!--fcc-->\n';
 const jsCatch = '\n;/*fcc*/\n';
 
@@ -60,10 +62,18 @@ export const cssToHtml = cond([
 //   required: [ ...Object ],
 //   template: String,
 //   files: [ polyVinyl ]
-// ) => String
-export function concatHtml({ required = [], template, files = [] } = {}) {
-  const createBody = template ? _template(template) : defaultTemplate;
+// ) => String'
 
+export function concatHtml({
+  required = [],
+  template,
+  files = [],
+  theme = 'default'
+} = {}) {
+  console.log(theme);
+  const createBody = template ? _template(template) : defaultTemplate;
+  const displayTheme = theme === 'night' ? nightThemeStyle : ` `;
+  console.log(displayTheme);
   const head = required
     .map(({ link, src }) => {
       if (link && src) {
@@ -79,7 +89,7 @@ A required file can not have both a src and a link: src = ${src}, link = ${link}
       }
       return '';
     })
-    .reduce((head, element) => head.concat(element), '');
+    .reduce((head, element) => head.concat(element), displayTheme);
 
   const source = files.reduce(
     (source, file) => source.concat(file.contents, htmlCatch),
