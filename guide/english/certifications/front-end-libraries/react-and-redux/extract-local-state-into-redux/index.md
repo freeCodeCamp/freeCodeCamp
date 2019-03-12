@@ -21,7 +21,36 @@ The `submitMessage` function still needs to set the state of the `input`.
   <summary>Spoiler!</summary>
   
 ```jsx
-  class Presentational extends React.Component {
+// Redux:
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message: message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(messageReducer);
+
+// React:
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+
+// Change code below this line
+class Presentational extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,6 +88,31 @@ The `submitMessage` function still needs to set the state of the `input`.
           }
         </ul>
       </div>
+    );
+  }
+};
+// Change code above this line
+
+const mapStateToProps = (state) => {
+  return {messages: state}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewMessage: (message) => {
+      dispatch(addMessage(message))
+    }
+  }
+};
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Container/>
+      </Provider>
     );
   }
 };
