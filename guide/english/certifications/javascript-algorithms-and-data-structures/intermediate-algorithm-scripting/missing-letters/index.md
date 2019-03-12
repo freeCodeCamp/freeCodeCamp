@@ -40,6 +40,52 @@ You will need to figure out where the missing letter is, along with handling the
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
     function fearNotLetter(str) {
+      let firstChar = str.charAt(0);
+      let lastChar = str.charAt(str.length - 1);
+
+      let alphabetArr = 'abcdefghijklmnopqrstuvwxyz'.split("");
+
+      let myRange = alphabetArr.slice(alphabetArr.indexOf(firstChar), alphabetArr.indexOf(lastChar) + 1);
+      let differentLetters = myRange.filter(item => str.indexOf(item) === -1).join("");
+      return (differentLetters === "") ? undefined : differentLetters;
+    }
+    
+    // test here
+    fearNotLetter("abce");
+    
+    
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnD/0' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   get first letter of the input `str` and save in `firstChar`
+*   get last letter of the input `str` and save in `lastChar` (remember the index of the last letter is the length of string - 1)
+
+*   split string of alphabet into array (if we didn't split the alphabet string, we would later have to split the myRange (which would be still be a string in order to use filter: myRange.split("").filter(...))
+
+*   myRange is an array sliced from alphabetArr (remember slice(from, until) works with arrays and strings and to include the last letter we have to do (until + 1))
+*   if (str === "abce"), myRange === ['a','b','c','d','e'] and myRange.join("") === "abcde"
+
+*   filter(): for every letter in myRange, if letter is not found in string (indexOf(item) === -1), push it to new array that will be returned
+*   join the filtered array
+
+*   if `str` has every letters in the range, `differentLetters` will be ""
+*   using ternary operator, return `undefined` if no letters, otherwise return the string of different letters
+
+#### Relevant Links
+
+*   <a href='https://guide.freecodecamp.org/javascript/standard-objects/string/string-prototype-charat/' target='_blank' rel='nofollow'>charAt()</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/split-a-string-into-an-array-using-the-split-method/' target='_blank' rel='nofollow'>split()</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures/check-for-the-presence-of-an-element-with-indexof/' target='_blank' rel='nofollow'>indexOf()</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/return-part-of-an-array-using-the-slice-method/' target='_blank' rel='nofollow'>slice()</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming/use-the-filter-method-to-extract-data-from-an-array/' target='_blank' rel='nofollow'>filter()</a>
+*   <a href='https://guide.freecodecamp.org/javascript/standard-objects/array/array-prototype-join/' target='_blank' rel='nofollow'>join()</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-conditional-ternary-operator/' target='_blank' rel='nofollow'>Ternary Operator</a>
+
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+
+    function fearNotLetter(str) {
 
       for(var i = 0; i < str.length; i++) {
         /* code of current character */
