@@ -61,3 +61,40 @@ int main () {
 -> a is not less than 5!
 -> Value of a is : 10
 ```
+## Nested IF Statement
+```
+if( boolean_expression 1) {
+
+   /* Executes when the boolean expression 1 is true */
+   if(boolean_expression 2) {
+      /* Executes when the boolean expression 2 is true */
+   }
+}
+```
+### Example
+```
+#include <stdio.h>
+ 
+int main () {
+
+   /* local variable definition */
+   int a = 100;
+   int b = 200;
+ 
+   /* check the boolean condition */
+   if( a == 100 ) {
+   
+      /* if condition is true then check the following */
+      if( b == 200 ) {
+         /* if condition is true then print the following */
+         printf("Value of a is 100 and b is 200\n" );
+      }
+   }
+   
+   printf("Exact value of a is : %d\n", a );
+   printf("Exact value of b is : %d\n", b );
+ 
+   return 0;
+}
+```
+for more info visit <https://www.tutorialspoint.com/cprogramming/nested_if_statements_in_c.htm>
