@@ -51,7 +51,6 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/30)
 
 ### Код Объяснение:
 
@@ -79,7 +78,6 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/31)
 
 ### Код Объяснение:
 

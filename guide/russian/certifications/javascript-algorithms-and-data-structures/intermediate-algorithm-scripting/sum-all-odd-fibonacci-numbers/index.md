@@ -58,7 +58,6 @@ function sumFibs(num) {
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLnV/0)
 
 ### Код Объяснение:
 
@@ -100,7 +99,6 @@ function sumFibs(num) {
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/repls/ImpassionedFineConnection)
 
 ### Код Объяснение:
 
