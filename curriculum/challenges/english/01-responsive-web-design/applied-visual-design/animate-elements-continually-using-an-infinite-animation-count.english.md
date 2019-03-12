@@ -14,7 +14,7 @@ In this case the animation will stop after running 3 times, but it's possible to
 
 ## Instructions
 <section id='instructions'>
-To keep the ball bouncing on the right on a continuous loop, change the <code>animation-iteration-count</code> property to infinite.
+To keep the ball bouncing on the right on a continuous loop, change the <code>animation-iteration-count</code> property to <code>infinite</code>.
 </section>
 
 ## Tests
