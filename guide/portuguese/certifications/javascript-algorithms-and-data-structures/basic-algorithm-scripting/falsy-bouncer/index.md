@@ -45,8 +45,7 @@ function bouncer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/32)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 O `Array.prototype.filter` método espera uma função que retorna um `Boolean` valor que recebe um único argumento e retorna `true` para [truthy](http://forum.freecodecamp.com/t/javascript-truthy-value/15975) valor ou `false` para [Falsas](https://guide.freecodecamp.org/javascript/falsy-values/) valor. Por isso passamos a função `Boolean` incorporada.
