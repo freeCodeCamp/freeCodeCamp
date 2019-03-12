@@ -45,7 +45,8 @@ Pythagorean Theorem: If z=a+bi, where a=Re{z} and b=Im{z}, then |z|=sqrt(a^2+b^2
   |8| = 8
   
 * **Simplify |(-5)^3|**
-|-125| = 125
+
+|(-5)^3| = |-125| = 125
 
 * **Simplify -|(4)^2|**
 -|16| = -16
