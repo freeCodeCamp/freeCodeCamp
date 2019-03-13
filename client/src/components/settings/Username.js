@@ -91,9 +91,8 @@ class UsernameSettings extends Component {
       characterValidation: { valid }
     } = this.state;
 
-    return this.setState(
-      { submitClicked: true },
-      () => (valid ? submitNewUsername(formValue) : null)
+    return this.setState({ submitClicked: true }, () =>
+      valid ? submitNewUsername(formValue) : null
     );
   }
 
@@ -137,7 +136,6 @@ class UsernameSettings extends Component {
       );
     }
     if (!validating && !isValidUsername) {
-      console.log(this.props, this.state);
       return (
         <FullWidthRow>
           <Alert bsStyle='warning'>Username not available</Alert>

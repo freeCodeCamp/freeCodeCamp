@@ -6,6 +6,9 @@ title: Bash chmod
 
 The chmod command is used to change file permissions for both files and directories.
 
+Commonly used options:
+- `R` change files and directories recursively
+
 The standard mode is used via the arguments listed below in the commonly used arguments section.
 
 The numeric mode is dictated by three numbers the user, group, and others, in that order.

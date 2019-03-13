@@ -29,7 +29,7 @@ These are the steps you need to follow to deploy to <a href='https://www.openshi
 
 *   Fill our Git URL and our branch name
 
-![Where you can find your Git URL and your branch name at Github](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
+![Where you can find your Git URL and your branch name at GitHub](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
 
 ![Fill your Git URL and your branch name](//discourse-user-assets.s3.amazonaws.com/original/2X/9/989e44c1af80c9b8f26883a3d897f377b3a27ca4.jpg)
 
