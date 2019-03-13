@@ -7,21 +7,21 @@ localeTitle: Usa una clase CSS para diseñar un elemento
 ---
 
 ## Descripción
-<section id="description"> Las clases son estilos reutilizables que se pueden agregar a elementos HTML. Aquí hay un ejemplo de declaración de clase CSS: <blockquote> &lt;style&gt; <br> .blue-text { <br> color: blue; <br> } <br> &lt;/style&gt; </blockquote> Puede ver que hemos creado una clase CSS llamada <code>blue-text</code> dentro de la etiqueta <code>&lt;style&gt;</code> . Puede aplicar una clase a un elemento HTML como este: <code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Tenga en cuenta que en su elemento de <code>style</code> CSS, los nombres de clase comienzan con un punto. En el atributo de clase de los elementos HTML, el nombre de la clase no incluye el período. </section>
+<section id="description"> Las clases son estilos reutilizables que se pueden agregar a elementos HTML. Aquí hay un ejemplo de declaración de clase CSS: <blockquote> &lt;style&gt; <br> .blue-text { <br> color: blue; <br> } <br> &lt;/style&gt; </blockquote> Puede ver que hemos creado una clase CSS llamada <code>blue-text</code> dentro de la etiqueta <code>&lt;style&gt;</code> . Puede aplicar una clase a un elemento HTML como este: <code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Tenga en cuenta que en su elemento de <code>class</code> CSS en la etiqueta <code>&lt;style&gt;</code>, los nombres de clase comienzan con un punto. En el atributo de clase de los elementos HTML, el nombre de la clase no incluye el punto. </section>
 
 ## Instrucciones
-<section id="instructions"> Dentro de su elemento de <code>style</code> , cambie el selector <code>h2</code> a <code>.red-text</code> y actualice el valor del <code>blue</code> de <code>blue</code> a <code>red</code> . Déle a su elemento <code>h2</code> el atributo de <code>class</code> con un valor de <code>&#39;red-text&#39;</code> . </section>
+<section id="instructions"> Dentro de la etiqueta <code>style</code> , cambie el selector <code>h2</code> a <code>.red-text</code> y actualice el valor  <code>blue</code> a <code>red</code> . Déle a su elemento <code>h2</code> el atributo de <code>class</code> con un valor de <code>&#39;red-text&#39;</code> . </section>
 
 ## Pruebas
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Tu elemento <code>h2</code> debe ser rojo.
+  - text: Tu elemento <code>h2</code> debería ser rojo.
     testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
-  - text: Tu elemento <code>h2</code> debe tener la clase <code>red-text</code> .
+  - text: Tu elemento <code>h2</code> debería tener la clase <code>red-text</code> .
     testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");'
-  - text: Su hoja de estilo debe declarar una clase de <code>red-text</code> y tener su color establecido en rojo.
+  - text: Su hoja de estilo debe declarar una clase de <code>red-text</code> y tener establecido el color en rojo.
     testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.");'
   - text: 'No use declaraciones de estilo en línea como <code>style=&quot;color: red&quot;</code> en su elemento <code>h2</code> .'
     testString: 'assert($("h2").attr("style") === undefined, "Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.");'
