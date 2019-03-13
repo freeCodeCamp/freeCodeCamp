@@ -236,7 +236,11 @@ const AboutPage = () => {
               <tbody>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon ariaLabel='YouTube' icon={faYoutube} />
+                    <FontAwesomeIcon
+                      aria-hidden='false'
+                      aria-label='YouTube icon'
+                      icon={faYoutube}
+                    />
                   </td>
                   <td>
                     <Link to='https://youtube.com/freecodecamp'>
@@ -246,7 +250,11 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon ariaLabel='GitHub' icon={faGithub} />
+                    <FontAwesomeIcon
+                      aria-hidden='false'
+                      aria-label='GitHub icon'
+                      icon={faGithub}
+                    />
                   </td>
                   <td>
                     <Link to='https://github.com/freecodecamp/'>
@@ -256,7 +264,11 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon ariaLabel='LinkedIn' icon={faLinkedin} />
+                    <FontAwesomeIcon
+                      aria-hidden='false'
+                      aria-label='LinkedIn icon'
+                      icon={faLinkedin}
+                    />
                   </td>
                   <td>
                     <Link to='https://www.linkedin.com/edu/school?id=166029'>
@@ -266,7 +278,11 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon ariaLabel='Medium' icon={faMedium} />
+                    <FontAwesomeIcon
+                      aria-hidden='false'
+                      aria-label='Medium (Blogging Platform) icon'
+                      icon={faMedium}
+                    />
                   </td>
                   <td>
                     <Link to='https://medium.freecodecamp.org'>
@@ -276,7 +292,11 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon ariaLabel='Twitter' icon={faTwitter} />
+                    <FontAwesomeIcon
+                      aria-hidden='false'
+                      aria-label='Twitter icon'
+                      icon={faTwitter}
+                    />
                   </td>
                   <td>
                     <Link to='https://twitter.com/freecodecamp'>
@@ -286,7 +306,11 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon ariaLabel='Facebook' icon={faFacebook} />
+                    <FontAwesomeIcon
+                      aria-hidden='false'
+                      aria-label='Facebook icon'
+                      icon={faFacebook}
+                    />
                   </td>
                   <td>
                     <Link to='https://facebook.com/freecodecamp'>
@@ -296,7 +320,11 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon ariaLabel='Privacy Policy' icon={faLock} />
+                    <FontAwesomeIcon
+                      aria-hidden='false'
+                      aria-label='Lock icon'
+                      icon={faLock}
+                    />
                   </td>
                   <td>
                     <Link to='/privacy-policy'>Our privacy policy</Link>
@@ -305,7 +333,8 @@ const AboutPage = () => {
                 <tr>
                   <td className='text-center'>
                     <FontAwesomeIcon
-                      ariaLabel='Code of Conduct'
+                      aria-hidden='false'
+                      aria-label='Scale icon'
                       icon={faBalanceScale}
                     />
                   </td>
@@ -316,7 +345,8 @@ const AboutPage = () => {
                 <tr>
                   <td className='text-center'>
                     <FontAwesomeIcon
-                      ariaLabel='Academic Honesty'
+                      aria-hidden='false'
+                      aria-label='Academic icon'
                       icon={faUniversity}
                     />
                   </td>
@@ -329,7 +359,8 @@ const AboutPage = () => {
                 <tr>
                   <td className='text-center'>
                     <FontAwesomeIcon
-                      ariaLabel='Terms of Service'
+                      aria-hidden='false'
+                      aria-label='Book icon'
                       icon={faBook}
                     />
                   </td>

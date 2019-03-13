@@ -146,7 +146,8 @@ const IndexPage = () => (
       <Row className='text-center'>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
-            ariaLabel='HTML5'
+            aria-hidden='false'
+            aria-label='HTML5 icon'
             className='landing-skill-icon'
             icon={faHtml5}
             size='9x'
@@ -155,7 +156,7 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
-            ariaLabel='CSS3'
+            aria-label='CSS3 icon'
             className='landing-skill-icon'
             icon={faCss3Alt}
             size='9x'
@@ -164,7 +165,8 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
-            ariaLabel='JavaScript'
+            aria-hidden='false'
+            aria-label='JavaScript icon'
             className='landing-skill-icon'
             icon={faJs}
             size='9x'
@@ -173,7 +175,8 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
-            ariaLabel='Databases'
+            aria-hidden='false'
+            aria-label='Database icon'
             className='landing-skill-icon'
             icon={faDatabase}
             size='9x'
@@ -184,7 +187,8 @@ const IndexPage = () => (
       <Row className='text-center'>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
-            ariaLabel='Git & GitHub'
+            aria-hidden='false'
+            aria-label='GitHub (Octocat) icon'
             className='landing-skill-icon'
             icon={faGithub}
             size='9x'
@@ -193,7 +197,8 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
-            ariaLabel='Node JS'
+            aria-hidden='false'
+            aria-label='Node JS icon'
             className='landing-skill-icon'
             icon={faNodeJs}
             size='9x'
@@ -202,7 +207,8 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
-            ariaLabel='React JS'
+            aria-hidden='false'
+            aria-label='React JS icon'
             className='landing-skill-icon'
             icon={faReact}
             size='9x'
