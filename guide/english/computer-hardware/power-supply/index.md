@@ -53,7 +53,8 @@ In the past, power supplies often only had on or off switches and didn't include
 Because the power supply unit is the first component between the electric outlet and your other PC parts, they are at the highest risk of damage from power surges or spikes. If your machine is situated in an area where these things are common, it would be wise to invest in a surge protector or similar piece of hardware to prevent that kind of damage. 
 Additionally, the internal parts of a PSU are usually not user serviceable. For your safety, it is wise to never open a power supply unit without proper equipment and/or certifications.
 
-A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit.
+A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit. If you do encounter an open power supply, do not touch any of the internals, even if it has been unplugged, as power can be stored in them for a long time. 
+
 
 #### More Information:
 
