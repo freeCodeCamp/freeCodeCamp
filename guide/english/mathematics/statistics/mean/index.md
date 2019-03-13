@@ -21,7 +21,7 @@ To find the mean (*A*) of a set of numbers , you add their values and divide by 
   
 *  **-12, -20, -16, -21**
 
-    (-12, -20, -16, -21) / 4 = -17.25\
+    (-12, -20, -16, -21) / 4 = -17.25
     
 <br>
   

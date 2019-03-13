@@ -21,7 +21,7 @@ Find the smallest cube for which exactly five permutations of its digits are cub
 ```yml
 tests:
   - text: <code>euler62()</code> should return 127035954683.
-    testString: 'assert.strictEqual(euler62(), 127035954683, "<code>euler62()</code> should return 127035954683.");'
+    testString: assert.strictEqual(euler62(), 127035954683, '<code>euler62()</code> should return 127035954683.');
 
 ```
 
