@@ -4,12 +4,13 @@ title: Forms
 ## Forms
 ---
 
-Bootstrap framework provides a form feature which you can use to create beautiful html forms easily. Using the bootstrap form gives each individual form element a unified global style. Bootstrap form adds the right spacing and look to each element. 
+Bootstrap framework provides a form feature which you can use to create beautiful html forms easily. Using the Bootstrap form gives each individual form element a unified global style. Bootstrap form adds the right spacing and look to each element. 
 
-Each bootstrap form element should have a class *form-control*. This class is how bootstrap knows which elements to style. All textual elements like **input**, **textarea** and **select** that have *form-control* class will have 100% width by default. There are two types of Bootstrap forms, which are:
+Each Bootstrap form element should have a class *form-control*. This class is how Bootstrap knows which elements to style. All textual elements like **input**, **textarea** and **select** that have the *form-control* class will have 100% width by default. 
 
-* Inline form - creates the form on a single line. Useful for login forms in a nav bar
-* Horizontal form - creates a form with each element in a different row
+There are two types of Bootstrap forms, which are:
+- Inline form - creates the form on a single line. Useful for login forms in a nav bar
+- Horizontal form - creates a form with each element in a different row
 
 ## Example of a basic form
 
@@ -132,7 +133,7 @@ Take the following simple form:
 </form>
 ```
 
-Individual form fields and the associated label should be wrapped in a `<div>` with a class of `form-group`. One exception to this is when using checkbox field where `form-check` should be used instead of `form-group`.
+Individual form fields and the associated labels should be wrapped in a `<div>` with a class of `form-group`. One exception to this is when using a checkbox field where `form-check` should be used instead of `form-group`.
 
 The `<input>` tag should be given a class of `form-control`.
 
@@ -179,6 +180,5 @@ In combination with Bootstrap's predefined grid classes to align labels and grou
     
 ![Horizontal Form](https://github.com/TroyB12/Pictures/blob/master/Horizontal%20Form.PNG)
 
-#### More Information
-[Bootstrap Forms](https://getbootstrap.com/docs/4.1/components/forms/)
-
+## Additional Resources
+- [Bootstrap Forms](https://getbootstrap.com/docs/4.1/components/forms/)

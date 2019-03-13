@@ -129,3 +129,5 @@ Developers are able to change the style of each individual row and/or cell by us
 ![Contextual Class Table](https://github.com/TroyB12/Pictures/blob/master/Table%20Contextual%20Classes.PNG)
 
 ---
+# More Information 
+- [Bootstrap Tables](https://getbootstrap.com/docs/4.1/content/tables/)

@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const matter = require('gray-matter');
+const { dasherize } = require('../../../client/utils');
 
 const pass = true;
 
@@ -36,22 +37,13 @@ exports.checkGuideFile = function checkGuideFile(file) {
 
 function checkDirName(dirName, fullPath) {
   return new Promise((resolve, reject) => {
-    if (dirName.replace(/(\s|\_)/, '') !== dirName) {
+    if (dasherize(dirName) !== dirName) {
       return reject(
         new Error(`
-    Invalid character found in '${dirName}', please use '-' for spaces
+Invalid or upper case character found in '${dirName}', please use '-' for spaces
+and all folder names must be lower case. Valid characters are [a-z0-9\\-.].
 
-      Found in:
-        ${fullPath}
-    `)
-      );
-    }
-    if (dirName.toLowerCase() !== dirName) {
-      return reject(
-        new Error(`
-Upper case characters found in ${dirName}, all folder names must be lower case
-
-  Found in :
+  Found in:
     ${fullPath}
 `)
       );
@@ -107,7 +99,7 @@ exports.checkFrontmatter = function checkFrontmatter(
       } catch (e) {
         console.log(`
 
-  The below occured in:
+  The below occurred in:
 
   ${fullPath}
 

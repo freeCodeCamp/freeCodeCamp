@@ -9,7 +9,7 @@ When we start working with React components, we frequently hear two terms. These
 
 * State is something that a component owns. It belongs to that particular component where it is defined.
 For example, A person's age is a state of that person.
-* State is mutable. But it can be changed by only by the component itself, meaning it is private. As I only can change my age, no one else can.
+* State is mutable. But it can only be changed by the component itself, meaning it is private. As I only can change my age, no one else can.
 * You can change the state by using `this.setState()`
 
 See the below example to get an idea of state:
@@ -24,6 +24,7 @@ See the below example to get an idea of state:
       super(props);
       this.state = {
         age:0
+      }
       this.incrementAge = this.incrementAge.bind(this)
     }
 
@@ -79,7 +80,5 @@ In the above example, `const person = <Person character = "good"></Person>` we a
 It gives output as "I am a good person", in fact I am.
 
 There is lot more to learn on State and Props. Many things can be learnt by actually diving into coding. So get your hands dirty by coding.
-
-Reach me out on [twitter](https://twitter.com/getifyJr) if needed.
 
 Happy Coding !!!

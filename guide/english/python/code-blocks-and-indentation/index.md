@@ -5,6 +5,9 @@ It is generally good practice for you not to mix tabs and spaces when coding in 
 
 That being said, it is a good idea to follow the formatting convention that your team agreed to use. Be consistent when you code - choose either to indent using tabs or spaces and follow your chosen convention throughout your program. Many code editors and IDEs allow you to specify how many spaces you want in a tab to ensure consistency.
 
+### Tabs or Spaces?
+In the community-driven [PEP 8 - Style Guide For Python](https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces) it states that spaces are the preferred way to indent your code. Tabs should only be used to remain consistent with code that already uses tabs. As stated above, never mix tabs and spaces as this can cause errors when invoking a command line interpreter. You might ask, how many spaces? The guide covers that too, and says you should use 4 per indentation level.
+
 #### Code Blocks and Indentation
 One of the most distinctive features of Python is its use of indentation to mark blocks of code. Consider the if-statement from our simple password-checking program:
 

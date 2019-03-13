@@ -114,7 +114,7 @@ function superBlockInfoFromPath(filePath) {
 }
 
 function superBlockInfoFromFullPath(fullFilePath) {
-  const [,, maybeSuper] = fullFilePath.split(path.sep).reverse();
+  const [, , maybeSuper] = fullFilePath.split(path.sep).reverse();
   return superBlockInfo(maybeSuper);
 }
 

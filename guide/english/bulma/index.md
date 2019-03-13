@@ -10,7 +10,7 @@ Bulma is a free and open source frontend CSS framework based on Flexbox. It cont
 * 100% Responsive.
 * Modular.
 * Modern.
-* Free (Source code on Github).
+* Free (Source code on GitHub).
 * growing community.
 * Easy to learn.
 * Quick Customization.

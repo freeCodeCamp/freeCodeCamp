@@ -170,7 +170,10 @@ void insertionSort(int arr[], int n)
 
 ### Properties:
 * Space Complexity: O(1)
-* Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively
+* Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively.
+     - Best Case: array is already sorted
+     - Average Case: array is randomly sorted
+     - Worst Case: array is reversely sorted. 
 * Sorting In Place: Yes
 * Stable: Yes
 
