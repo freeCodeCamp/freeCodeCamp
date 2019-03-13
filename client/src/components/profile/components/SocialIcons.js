@@ -27,7 +27,7 @@ const propTypes = {
 function LinkedInIcon(linkedIn) {
   return (
     <a href={linkedIn} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon icon={faLinkedin} size='2x' />
+      <FontAwesomeIcon ariaLabel='LinkedIn' icon={faLinkedin} size='2x' />
     </a>
   );
 }
@@ -35,7 +35,7 @@ function LinkedInIcon(linkedIn) {
 function GithubIcon(ghURL) {
   return (
     <a href={ghURL} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon icon={faGithub} size='2x' />
+      <FontAwesomeIcon ariaLabel='GitHub' icon={faGithub} size='2x' />
     </a>
   );
 }
@@ -43,7 +43,7 @@ function GithubIcon(ghURL) {
 function WebsiteIcon(website) {
   return (
     <a href={website} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon icon={faLink} size='2x' />
+      <FontAwesomeIcon ariaLabel='Website' icon={faLink} size='2x' />
     </a>
   );
 }
@@ -51,7 +51,7 @@ function WebsiteIcon(website) {
 function TwitterIcon(handle) {
   return (
     <a href={handle} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon icon={faTwitter} size='2x' />
+      <FontAwesomeIcon ariaLabel='Twitter' icon={faTwitter} size='2x' />
     </a>
   );
 }

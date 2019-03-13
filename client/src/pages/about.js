@@ -236,7 +236,7 @@ const AboutPage = () => {
               <tbody>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faYoutube} />
+                    <FontAwesomeIcon ariaLabel='YouTube' icon={faYoutube} />
                   </td>
                   <td>
                     <Link to='https://youtube.com/freecodecamp'>
@@ -246,7 +246,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faGithub} />
+                    <FontAwesomeIcon ariaLabel='GitHub' icon={faGithub} />
                   </td>
                   <td>
                     <Link to='https://github.com/freecodecamp/'>
@@ -256,7 +256,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <FontAwesomeIcon ariaLabel='LinkedIn' icon={faLinkedin} />
                   </td>
                   <td>
                     <Link to='https://www.linkedin.com/edu/school?id=166029'>
@@ -266,7 +266,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faMedium} />
+                    <FontAwesomeIcon ariaLabel='Medium' icon={faMedium} />
                   </td>
                   <td>
                     <Link to='https://medium.freecodecamp.org'>
@@ -276,7 +276,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faTwitter} />
+                    <FontAwesomeIcon ariaLabel='Twitter' icon={faTwitter} />
                   </td>
                   <td>
                     <Link to='https://twitter.com/freecodecamp'>
@@ -286,7 +286,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <FontAwesomeIcon ariaLabel='Facebook' icon={faFacebook} />
                   </td>
                   <td>
                     <Link to='https://facebook.com/freecodecamp'>
@@ -296,7 +296,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faLock} />
+                    <FontAwesomeIcon ariaLabel='Privacy Policy' icon={faLock} />
                   </td>
                   <td>
                     <Link to='/privacy-policy'>Our privacy policy</Link>
@@ -304,7 +304,10 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faBalanceScale} />
+                    <FontAwesomeIcon
+                      ariaLabel='Code of Conduct'
+                      icon={faBalanceScale}
+                    />
                   </td>
                   <td>
                     <Link to='/code-of-conduct'>Our code of conduct</Link>
@@ -312,7 +315,10 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faUniversity} />
+                    <FontAwesomeIcon
+                      ariaLabel='Academic Honesty'
+                      icon={faUniversity}
+                    />
                   </td>
                   <td>
                     <Link to='/academic-honesty'>
@@ -322,7 +328,10 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon icon={faBook} />
+                    <FontAwesomeIcon
+                      ariaLabel='Terms of Service'
+                      icon={faBook}
+                    />
                   </td>
                   <td>
                     <Link to='/terms-of-service'>Our terms of service</Link>

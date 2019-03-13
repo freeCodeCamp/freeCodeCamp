@@ -146,6 +146,7 @@ const IndexPage = () => (
       <Row className='text-center'>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
+            ariaLabel='HTML5'
             className='landing-skill-icon'
             icon={faHtml5}
             size='9x'
@@ -154,6 +155,7 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
+            ariaLabel='CSS3'
             className='landing-skill-icon'
             icon={faCss3Alt}
             size='9x'
@@ -162,6 +164,7 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
+            ariaLabel='JavaScript'
             className='landing-skill-icon'
             icon={faJs}
             size='9x'
@@ -170,6 +173,7 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
+            ariaLabel='Databases'
             className='landing-skill-icon'
             icon={faDatabase}
             size='9x'
@@ -180,6 +184,7 @@ const IndexPage = () => (
       <Row className='text-center'>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
+            ariaLabel='Git & GitHub'
             className='landing-skill-icon'
             icon={faGithub}
             size='9x'
@@ -188,6 +193,7 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
+            ariaLabel='Node JS'
             className='landing-skill-icon'
             icon={faNodeJs}
             size='9x'
@@ -196,6 +202,7 @@ const IndexPage = () => (
         </Col>
         <Col md={3} sm={6} xs={12}>
           <FontAwesomeIcon
+            ariaLabel='React JS'
             className='landing-skill-icon'
             icon={faReact}
             size='9x'
