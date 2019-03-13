@@ -14,4 +14,4 @@ In this section you get the chance to work on many Take Home Projects like:
 *  Build a Wikipedia Viewer
 *  Build a Recipe Box and many more...
 
-By the end of this section, you will have 20 Take Home Projects under your belt. This will boost your confidence and make you prepared for Take Home Project Interviews. Have fun and remember to use the [Read-Search-Ask](https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
+By the end of this section, you will have 20 Take Home Projects under your belt. This will boost your confidence and prepare you for Take Home Project Interviews. Have fun and remember to use the [Read-Search-Ask](https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
