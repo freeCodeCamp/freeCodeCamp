@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import MonacoEditor from 'react-monaco-editor';
 
-import { executeChallenge, updateFile } from '../redux';
+import { executeChallenge, updateFile, saveEditorContent } from '../redux';
 import { userSelector } from '../../../redux';
 import { createSelector } from 'reselect';
 
@@ -14,6 +14,7 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
+  saveEditorContent: PropTypes.func.isRequired,
   theme: PropTypes.string,
   updateFile: PropTypes.func.isRequired
 };
@@ -27,7 +28,8 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       executeChallenge,
-      updateFile
+      updateFile,
+      saveEditorContent
     },
     dispatch
   );
@@ -92,6 +94,10 @@ class Editor extends Component {
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
     this._editor.focus();
+    this.addEditorActions(monaco);
+  };
+
+  addEditorActions(monaco) {
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -101,7 +107,16 @@ class Editor extends Component {
       ],
       run: this.props.executeChallenge
     });
-  };
+    this._editor.addAction({
+      id: 'save-editor-content',
+      label: 'Save editor content to localStorage',
+      keybindings: [
+        /* eslint-disable no-bitwise */
+        monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S)
+      ],
+      run: this.props.saveEditorContent
+    });
+  }
 
   onChange = editorValue => {
     const { updateFile, fileKey } = this.props;

@@ -65,6 +65,7 @@ export const types = createTypes(
     'disableBuildOnError',
     'storedCodeFound',
     'noStoredCodeFound',
+    'saveEditorContent',
 
     'closeModal',
     'openModal',
@@ -142,6 +143,7 @@ export const unlockCode = createAction(types.unlockCode);
 export const disableBuildOnError = createAction(types.disableBuildOnError);
 export const storedCodeFound = createAction(types.storedCodeFound);
 export const noStoredCodeFound = createAction(types.noStoredCodeFound);
+export const saveEditorContent = createAction(types.saveEditorContent);
 
 export const closeModal = createAction(types.closeModal);
 export const openModal = createAction(types.openModal);
