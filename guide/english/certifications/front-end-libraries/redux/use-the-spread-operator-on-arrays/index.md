@@ -12,8 +12,7 @@ const immutableReducer = (state = ['Do not mutate state!'], action) => {
   switch(action.type) {
     case 'ADD_TO_DO':
       // don't mutate state here or the tests will fail
-      let arr = [...state];
-      arr.push(action.todo);
+      let arr = [...state, action.todo];
       return arr;
     default:
       return state;
