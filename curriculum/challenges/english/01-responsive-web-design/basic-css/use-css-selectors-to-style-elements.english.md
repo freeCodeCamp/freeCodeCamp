@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/c/cJKMBT2'
 ## Description
 <section id='description'>
 With CSS, there are hundreds of CSS <code>properties</code> that you can use to change the way an element looks on your page.
-When you entered <code>&#60;h2 style="color: red"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with <code>inline CSS</code>, which stands for <code>Cascading Style Sheets</code>.
+When you entered <code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with <code>inline CSS</code>, which stands for <code>Cascading Style Sheets</code>.
 That's one way to specify the style of an element, but there's a better way to apply <code>CSS</code>.
 At the top of your code, create a <code>style</code> block like this:
 <blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>
@@ -48,7 +48,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2 style="color: red">CatPhotoApp</h2>
+<h2 style="color: red;">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 
