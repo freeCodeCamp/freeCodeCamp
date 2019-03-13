@@ -8,7 +8,8 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cQ3B8TM'
 ## Description
 <section id='description'>
 HTML has another special element for creating <code>ordered lists</code>, or numbered lists.
-Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists close with a <code>&#60;/ol&#62;</code>
+Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists are closed with the <code>&#60;/ol&#62;</code> tag.
+
 For example:
 <blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>
 would create a numbered list of "Garfield" and "Sylvester".
