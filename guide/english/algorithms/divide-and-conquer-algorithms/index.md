@@ -12,7 +12,8 @@ Like Greedy and Dynamic Programming, Divide and Conquer is an algorithmic paradi
 3. Combine: Appropriately combine the answers.
 
 This method usually allows us to reduce the time complexity by a large extent.
-For eg - Bubble Sort uses a complexity of O(n^2) whereas quicksort (An  Application Of Divide And Conquer) reduces the time complexity to O(nlog(n)). Linear Search has time complexity O(n) whereas Binary Search (An  Application Of Divide And Conquer) reduces time complexity to O(log(n)).
+
+For example, Bubble Sort uses a complexity of O(n^2), whereas quicksort (an application Of Divide And Conquer) reduces the time complexity to O(nlog(n)). Linear Search has time complexity O(n), whereas Binary Search (an application Of Divide And Conquer) reduces time complexity to O(log(n)).
 
 Following are some standard algorithms that are Divide and Conquer algorithms.
 
