@@ -1,101 +1,153 @@
 class WorkerExecutor {
-  constructor(workerName, location) {
-    this.workerName = workerName;
-    this.worker = null;
-    this.observers = {};
-    this.location = location;
+  constructor(
+    workerName,
+    { location = '/js/', concurrency = 2, terminateWorker = false } = {}
+  ) {
+    this._workerName = workerName;
+    this._workers = [];
+    this._queue = [];
+    this._running = 0;
+    this._concurrency = concurrency;
+    this._terminateWorker = terminateWorker;
+    this._location = location;
 
-    this.execute = this.execute.bind(this);
-    this.killWorker = this.killWorker.bind(this);
-    this.getWorker = this.getWorker.bind(this);
+    this._getWorker = this._getWorker.bind(this);
   }
 
-  async getWorker() {
-    if (this.worker === null) {
-      this.worker = await new Promise((resolve, reject) => {
-        const worker = new Worker(`${this.location}${this.workerName}.js`);
+  async _getWorker() {
+    let worker;
+    if (this._workers.length) {
+      worker = this._workers.shift();
+    } else {
+      worker = await new Promise((resolve, reject) => {
+        const worker = new Worker(`${this._location}${this._workerName}.js`);
         worker.onmessage = e => {
           if (e.data && e.data.type && e.data.type === 'contentLoaded') {
             resolve(worker);
           }
         };
-        worker.onerror = e => reject(e.message);
+        worker.onerror = err => reject(err);
       });
     }
-
-    return this.worker;
+    return worker;
   }
 
-  killWorker() {
-    if (this.worker !== null) {
-      this.worker.terminate();
-      this.worker = null;
-    }
+  _pushTask(task) {
+    this._queue.push(task);
+    this._next();
   }
 
-  async execute(data, timeout = 1000) {
-    const worker = await this.getWorker();
-    return new Promise((resolve, reject) => {
-      // Handle timeout
-      const timeoutId = setTimeout(() => {
-        this.killWorker();
-        done('timeout');
-      }, timeout);
-
-      const done = (err, data) => {
-        clearTimeout(timeoutId);
-        this.remove('error', handleError);
-        if (err) {
-          reject(err);
+  _handleTaskEnd(task) {
+    return () => {
+      this._running--;
+      if (task._worker) {
+        const worker = task._worker;
+        if (this._terminateWorker) {
+          worker.terminate();
         } else {
-          resolve(data);
+          worker.onmessage = null;
+          worker.onerror = null;
+          this._workers.push(worker);
         }
-      };
+      }
+      this._next();
+    };
+  }
 
-      const handleError = e => {
-        done(e.message);
-      };
-      this.on('error', handleError);
+  _next() {
+    while (this._running < this._concurrency && this._queue.length) {
+      const task = this._queue.shift();
+      const handleTaskEnd = this._handleTaskEnd(task);
+      task._execute(this._getWorker).done.then(handleTaskEnd, handleTaskEnd);
+      this._running++;
+    }
+  }
 
-      worker.postMessage(data);
+  execute(data, timeout = 1000) {
+    const task = eventify({});
+    task._execute = function(getWorker) {
+      getWorker().then(
+        worker => {
+          task._worker = worker;
+          const timeoutId = setTimeout(() => {
+            task._worker.terminate();
+            task._worker = null;
+            this.emit('error', { message: 'timeout' });
+          }, timeout);
 
-      // Handle result
-      worker.onmessage = e => {
-        if (e.data && e.data.type) {
-          this.handleEvent(e.data.type, e.data.data);
-          return;
-        }
-        done(null, e.data);
-      };
+          worker.onmessage = e => {
+            if (e.data && e.data.type) {
+              this.emit(e.data.type, e.data.data);
+              return;
+            }
+            clearTimeout(timeoutId);
+            this.emit('done', e.data);
+          };
 
-      worker.onerror = e => {
-        this.handleEvent('error', { message: e.message });
-      };
+          worker.onerror = e => {
+            clearTimeout(timeoutId);
+            this.emit('error', { message: e.message });
+          };
+
+          worker.postMessage(data);
+        },
+        err => this.emit('error', err)
+      );
+      return this;
+    };
+
+    task.done = new Promise((resolve, reject) => {
+      task
+        .once('done', data => resolve(data))
+        .once('error', err => reject(err.message));
     });
-  }
 
-  handleEvent(type, data) {
-    const observers = this.observers[type] || [];
-    for (const observer of observers) {
-      observer(data);
-    }
-  }
-
-  on(type, callback) {
-    const observers = this.observers[type] || [];
-    observers.push(callback);
-    this.observers[type] = observers;
-  }
-
-  remove(type, callback) {
-    const observers = this.observers[type] || [];
-    const index = observers.indexOf(callback);
-    if (index !== -1) {
-      observers.splice(index, 1);
-    }
+    this._pushTask(task);
+    return task;
   }
 }
 
-export default function createWorkerExecutor(workerName, location = '/js/') {
-  return new WorkerExecutor(workerName, location);
+const eventify = self => {
+  self._events = {};
+
+  self.on = (event, listener) => {
+    if (typeof self._events[event] === 'undefined') {
+      self._events[event] = [];
+    }
+    self._events[event].push(listener);
+    return self;
+  };
+
+  self.removeListener = (event, listener) => {
+    if (typeof self._events[event] !== 'undefined') {
+      const index = self._events[event].indexOf(listener);
+      if (index !== -1) {
+        self._events[event].splice(index, 1);
+      }
+    }
+    return self;
+  };
+
+  self.emit = (event, ...args) => {
+    if (typeof self._events[event] !== 'undefined') {
+      self._events[event].forEach(listener => {
+        listener.apply(self, args);
+      });
+    }
+    return self;
+  };
+
+  self.once = (event, listener) => {
+    self.on(event, function handler(...args) {
+      self.removeListener(handler);
+      listener.apply(self, args);
+    });
+    return self;
+  };
+
+  return self;
+};
+
+export default function createWorkerExecutor(workerName, options) {
+  return new WorkerExecutor(workerName, options);
 }
