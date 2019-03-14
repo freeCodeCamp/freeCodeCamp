@@ -16,7 +16,7 @@ You can:
 5. 👉 [Make a pull request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Get your pull request approved - success!
 
-Or just [create an issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) - any little bit of help counts! 😊
+Or just [create an issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) - any little bit of help counts!! 😊
 
 ### [Follow these recommended guidelines from our Style guide for a compelling guide article](/docs/style-guide-for-guide-articles.md)
 
