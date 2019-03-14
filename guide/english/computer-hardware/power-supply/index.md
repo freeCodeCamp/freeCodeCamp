@@ -55,6 +55,7 @@ Additionally, the internal parts of a PSU are usually not user serviceable. For 
 
 A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit. If you do encounter an open power supply, do not touch any of the internals, even if it has been unplugged, as power can be stored in them for a long time. 
 
+A great way to make sure you dont underpower your computer is to put all the components together to see how much power they require, then go 50-100W above that. A good way to calculate your required voltage is to go to a site like [PC Part Picker](https://pcpartpicker.com/), add in each component, and it will calculate the minimum for you!
 
 #### More Information:
 
