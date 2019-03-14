@@ -6,7 +6,10 @@ title: ArrayList
   
   The *Collection framework* consists of all interfaces and classes that can hold a set of values (similar to [arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)). **ArrayList** is a class that is in this hierarchy and known as a _**Collection object**_. It implements the *List* interface which in turn implements the *Collection* interface. This *Collection* interface can be found in the `java.util` package. You will need to import this package.
   
-  ```java import java.util.ArrayList;  //is more efficient than importing all of java.util```
+  ```java
+  import java.util.ArrayList;  // is more efficient than importing all of java.util
+  ```
+
   
   Always import the most specific package in order to save memory size and performance time.
   
@@ -67,7 +70,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
 **Reverse elements in list**  
   
   ```java
-  import java.util.Collections // package
+  import java.util.Collections; // package
   Collections.reverse(variable_name);
   ```
   
@@ -78,10 +81,26 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
 **Sort elements in descending order**
    ```java
-  Collections.reverseOrder());
+  Collections.sort(variable_name, Collections.reverseOrder());
  ```
- 
-   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
+
+
+**Creating Array from ArrayList**
+
+   ```java
+   Object[] arr = variable_name.toArray(new Object[variable_name.size()]);
+   ```
+    
+**Creating ArrayList from Array**
+
+```java
+for(Object obj : arr) {
+  variable_name.add(obj);
+}
+```
+    
+  An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways, but it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
+
   
   So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
  

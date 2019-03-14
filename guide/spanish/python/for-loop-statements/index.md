@@ -1,21 +1,21 @@
 ---
 title: For Loop Statements
-localeTitle: Para declaraciones de bucle
+localeTitle: Bucles For
 ---
-## Para declaraciones de bucle
+## Bucles For
 
-Python utiliza un bucle for para iterar sobre una lista de elementos. A diferencia de C o Java, que usan el bucle for para cambiar un valor en pasos y acceder a algo como una matriz que usa ese valor.
+Python utiliza los bucles for para iterar sobre una lista de elementos. A diferencia de C o Java, que usan los bucles for para cambiar un valor y acceder a algo como una matriz que usa ese valor.
 
-Para los bucles, repita sobre las estructuras de datos basadas en recopilación, como listas, tuplas y diccionarios.
+Los bucles 'for' iteran sobre estructuras de datos basadas en conjuntos de datos como las listas, las tuplas o los diccionarios.
 
-La sintaxis básica es:
+La sintaxis básica de un bucle for es la siguiente:
 
 ```python
 for value in list_of_values: 
   # use value inside this block 
 ```
 
-En general, puede usar cualquier cosa como el valor del iterador, donde se pueden asignar las entradas del iterable. Por ejemplo, puede desempaquetar tuplas de una lista de tuplas:
+En general, puedes usar cualquier cosa como iterador, a este se le asignan todos los valores del iterable. Por ejemplo, puedes desempaquetar tuplas de una lista de tuplas:
 
 ```python
 list_of_tuples = [(1,2), (3,4)] 
@@ -24,7 +24,7 @@ list_of_tuples = [(1,2), (3,4)]
   print("a:", a, "b:", b) 
 ```
 
-Por otro lado, puedes hacer un bucle sobre cualquier cosa que sea iterable. Puedes llamar a una función o usar una lista literal.
+Por otro lado, puedes hacer correr un bucle sobre cualquier cosa que sea iterable. Puedes llamar a una función o usar una lista literal.
 
 ```python
 for person in load_persons(): 
@@ -38,14 +38,14 @@ for character in ["P", "y", "t", "h", "o", "n"]:
 
 Algunas formas en que se utilizan los bucles For:
 
-**Iterar sobre la función de rango ()**
+**Iterar sobre la función range()**
 
 ```python
 for i in range(10): 
     print(i) 
 ```
 
-En lugar de ser una función, el rango es en realidad un tipo de secuencia inmutable. La salida contendrá los resultados del límite inferior, es decir, 0 al límite superior, es decir, 10, pero excluyendo 10. Por defecto, el límite inferior o el índice de inicio se establece en cero. Salida:
+En lugar de ser una función, range es en realidad un tipo de secuencia inmutable. La salida contendrá los resultados del límite inferior, es decir, 0 al límite superior, es decir, 10, pero excluyendo 10. Por defecto, el límite inferior o el índice de inicio se establece en cero. Salida:
 ```
 > 
  0 

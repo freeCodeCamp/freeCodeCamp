@@ -3,10 +3,17 @@ title: Bootstrap
 ---
 ## Bootstrap
 
+![Bootstrap Logo][logo]
+
+[logo]: https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png
+
 Bootstrap is a popular front-end framework for web development. It contains pre-built components and design elements to style HTML content. Modern browsers such as Chrome, Firefox, Opera, Safari, and Internet Explorer support Bootstrap.
 
-Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality like collapsible content, carousels, and modals.
+Bootstrap includes a responsive grid system for varying layouts. It is a great starting point for building a mobile friendly website. It also includes optional JavaScript functionality, such as collapsible content, carousels, and modals.
 
+#### Why Use Bootstrap?
+Bootstrap provides an easy solution both for design and responsiveness. It is packed with beautiful elements that can be further styled with your own custom CSS, as well as a full grid system to keep your website responsive across all screens while using a clean and understandable syntax.
+You can build a professional looking website without any CSS or JavaScript and easily customize the elements if needed
 
 #### Version History
 
@@ -34,7 +41,7 @@ You can add Bootstrap CSS by using a `<link>` element inside the `<head>` of you
 
 `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">`
 
-Adding the JavaScript elements of Bootstrap is similar with `<script>` elements usually placed at the bottom of your ‘<body>’ tag.  You may need to include some dependencies first. Pay special attention to the order listed:
+Adding the JavaScript elements of Bootstrap is similar with `<script>` elements usually placed at the bottom of your `<body>` tag.  You may need to include some dependencies first. Pay special attention to the order listed:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -51,7 +58,6 @@ You can download and install the Bootstrap source files with Bower, Composer, Me
 
 `gem 'bootstrap', '~> 4.1.3'`
 
-
 _Note: These are only examples and may change without notice. Please refer to the _<a href='https://getbootstrap.com/' target='_blank' rel='nofollow'>Bootstrap website</a>_ for the most up-to-date links._
 
 #### The Bootstrap Grid System
@@ -61,25 +67,31 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 ### Boostrap Features
 
-- Bootstrap 3 supports the latest versions of the Google Chrome, Firefox, Internet Explorer, Opera, and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).[12]
+- Bootstrap 3 supports the latest versions of Google Chrome, Firefox, Internet Explorer, Opera and Safari (except on Windows). It additionally supports back to IE8 and the latest Firefox Extended Support Release (ESR).[12]
 
-- Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device used (desktop, tablet, mobile phone).
+- Since 2.0, Bootstrap supports responsive web design. This means the layout of web pages adjusts dynamically, taking into account the characteristics of the device which is being used (desktop, tablet, mobile phone).
 
 - Starting with version 3.0, Bootstrap adopted a mobile-first design philosophy, emphasizing responsive design by default.
 
-- Version 4.0 added Sass and flexbox support
+- Version 4.0 added Sass and flexbox support.
+
+- Version 4.1 Added new custom range form control.
+
+- Bootstrap does not restrict you to a fixed CSS format but allows you to develop quickly allowing style overwrites using cascading to add/edit the default styles.
 
 #### More Information:
 
-Bootstrap has thorough documentation with many <a href='https://getbootstrap.com/docs/4.0/examples/' target='_blank' rel='nofollow'>examples</a> and an <a href='https://getbootstrap.com/docs/4.0/getting-started/introduction/' target='_blank' rel='nofollow'>HTML template for getting started</a> (this template only has script included; it does not contain a set up of the grid system if that's what you're looking for). 
+Bootstrap has thorough documentation with many <a href='https://getbootstrap.com/docs/4.0/examples/' target='_blank' rel='nofollow'>examples</a> and an <a href='https://getbootstrap.com/docs/4.0/getting-started/introduction/' target='_blank' rel='nofollow'>HTML template for getting started</a> (this template only has script included; it does not contain a <a href='https://getbootstrap.com/docs/4.0/layout/grid/' target='_blank' rel='nofollow'>set up</a> of the grid system if that's what you're looking for). 
 
 In addition, you can find both <a href='https://bootswatch.com/' target='_blank' rel='nofollow'>free</a> and <a href='https://themes.getbootstrap.com/' target='_blank' rel='nofollow'>paid</a>
 themes that build on the Bootstrap framework to provide a more customized and stylish look.
 
 #### Bootstrap Resources: 
+
 - [Bootstrap's official blog](http://blog.getbootstrap.com/)
 - [Bootstrap site inspiration](http://expo.getbootstrap.com/)
 - [Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
 - [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
 - [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
 - [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
+- [Video: Install and Use](https://www.youtube.com/watch?v=GU6EWzBGo64)

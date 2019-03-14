@@ -3,7 +3,7 @@ id: 587d778b367417b2b2512aa7
 title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
 videoUrl: ''
-localeTitle: Envuelva los botones de radio en un elemento fieldset para una mejor accesibilidad
+localeTitle: Agrupe los botones de radio en un elemento fieldset para una mejor accesibilidad
 ---
 
 ## Description
@@ -92,7 +92,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

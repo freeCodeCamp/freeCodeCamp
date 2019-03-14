@@ -10,6 +10,7 @@ localeTitle: Функциональные компоненты и компоне
 *   Компоненты с использованием классов
 
 ## Функциональные компоненты
+
  
 *   Функциональные компоненты - это обыкновенные функции JavaScript. Они обычно создаются с помощью стрелочных функций, но также могут быть созданы с помощью ключевого слова `function`.
 *   Иногда они называются «простыми» или «без состояния», поскольку они просто принимают данные и отображают их в какой-либо форме; то есть они в основном отвечают за отрисовку пользовательского интерфейса.
@@ -19,51 +20,56 @@ localeTitle: Функциональные компоненты и компоне
 *   Функциональные компоненты могут принимать и использовать свойства (props).
 *   Функциональные компоненты являются более предпочтительными для использования в вашем коде, если вам не нужно использовать состояние React.
 
+
 ```js
-import React from "react"; 
- 
- const Person = props => ( 
-  <div> 
-    <h1>Hello, {props.name}</h1> 
-  </div> 
- ); 
- 
- export default Person; 
+import React from "react";
+
+const Person = props => (
+  <div>
+    <h1>Hello, {props.name}</h1>
+  </div>
+);
+
+export default Person;
 ```
 
 ## Компоненты с использованием классов
 
-*   Компоненты с классами используют ключевое слово class из ES6 и расширяют класс `Component` в React.
-*   Иногда они называются «умными» или «с состоянием», поскольку они предназначены для реализации логики и состояние приложения.
+
+*   Компоненты класса используют класс ES6 и расширяют класс `Component` в React.
+*   Иногда они называются "smart" или "stateful", поскольку они склонны реализовывать логику и состояние.
 *   Методы жизненного цикла React могут использоваться внутри компонентов класса (например, `componentDidMount` ).
-*   Вы передаете свойства (props) вниз к классовым компонентам и получаете доступ к соответствующим свойствам с помощью `this.props`
+*   Вы передаете props до компонентов класса и `this.props` доступ к ним с помощью `this.props`
+
 
 ```js
-import React, { Component } from "react"; 
- 
- class Person extends Component { 
-  constructor(props){ 
-    super(props); 
-    this.state = { 
-      myState: true; 
-    } 
-  } 
- 
-  render() { 
-    return ( 
-      <div> 
-        <h1>Hello Person</h1> 
-      </div> 
-    ); 
-  } 
- } 
- 
- export default Person; 
+import React, { Component } from "react";
+
+class Person extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      myState: true;
+    }
+  }
+  
+  render() {
+    return (
+      <div>
+        <h1>Hello Person</h1>
+      </div>
+    );
+  }
+}
+
+export default Person;
 ```
 
 ## Дополнительная информация
 
+
 *   [React компоненты](https://reactjs.org/docs/components-and-props.html)
 *   [Функциональные компоненты класса vs компоненты с использованием классов](https://react.christmas/16)
 *   [Компоненты с состоянием vs компонентов без состояния](https://code.tutsplus.com/tutorials/stateful-vs-stateless-functional-components-in-react--cms-29541)
+
 *   [Состояние и жизненный цикл](https://reactjs.org/docs/state-and-lifecycle.html)

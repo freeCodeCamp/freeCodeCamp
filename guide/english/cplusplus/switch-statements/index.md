@@ -42,7 +42,12 @@ using namespace std;
 int main () {
    // local variable declaration:
    char grade = 'D';
-
+   
+   /* You can also have the user enter the value of grade to make your code more dynamic, like so:
+   char grade;
+   cin >> grade; 
+   */
+   
    switch(grade) {
       case 'A' :
          cout << "Excellent!" << endl;
@@ -63,7 +68,7 @@ int main () {
    cout << "Your grade is " << grade << endl;
 
    return 0;
-}```
+}
 
 Output:
 You passed

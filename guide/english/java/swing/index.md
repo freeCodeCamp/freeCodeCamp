@@ -11,8 +11,10 @@ Let's explore the Java swing tutorial. Before making our hands all dirty with th
 2. Pluggable Look and Feel(PLAF)- The Look and Feel of component is entirely determined by Swing itself. That makes it easier to distinguish between look and feel and the logic of component.
 
 Swing GUI consists of two main pillars:-components and containers.The following part discusses about both of them thoroughly.
+
 ### Components
-An Component is simply an independent visual control.Swing components are derived from JComponent class. Further JComponent inherits all its characteristics from AWT Containers and Components.For more information, please go through the hierarchy of [JComponent](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html) class.
+An Component is simply an independent visual control. Swing components are derived from JComponent class. Further JComponent inherits all its characteristics from AWT Containers and Components.For more information, please go through the hierarchy of [JComponent](https://docs.oracle.com/javase/tutorial/uiswing/components/jcomponent.html) class. Some of the useful Components are - 
+- **Text Components**: Swing text components can be used to display or edit text. One example of this is `JTextField`, which can be used to enter a small amount of text from the user.
 
 ### Containers
 All containers are also components. Containers may comprise of one or more components. Swing defines two types of containers

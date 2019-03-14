@@ -141,4 +141,18 @@ Also referred to as the "modulus" or "modulo" operator.
 
 _!Important!_ You **cannot** perform any sort of operations on `Infinity`.
 
+## Exponentiation
+
+**Syntax**
+
+`a ** b`
+
+**Usage**
+    
+    3 ** 2;           // returns 9
+    3 ** 0;           // returns 1
+    3 ** -Infinity;   // returns 0
+    
+_!Important!_ As you can see, you **cannot** perform any sort of operations on `Infinity`.
+
 Source: The amazing [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)

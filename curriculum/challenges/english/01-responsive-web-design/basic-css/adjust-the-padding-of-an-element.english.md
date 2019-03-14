@@ -2,7 +2,6 @@
 id: bad88fee1348bd9aedf08825
 title: Adjust the Padding of an Element
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/adjust-the-padding-of-an-element'
 videoUrl: 'https://scrimba.com/c/cED8ZC2'
 ---
 

@@ -7,7 +7,7 @@ function RedFail() {
       viewBox='0 0 200 200'
       width='50'
       xmlns='http://www.w3.org/2000/svg'
-      >
+    >
       <g>
         <title>Test failed</title>
         <circle

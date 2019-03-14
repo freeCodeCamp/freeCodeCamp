@@ -32,7 +32,8 @@ module.exports = {
           '/certification/*',
           '/unsubscribed/*',
           '/user/*',
-          '/settings/*'
+          '/settings/*',
+          '/n/*'
         ]
       }
     },
@@ -144,6 +145,12 @@ module.exports = {
         /* eslint-enable camelcase */
         display: 'minimal-ui',
         icon: 'src/images/square_puck.png'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Lato:400,400i,500']
       }
     },
     'gatsby-plugin-sitemap'
