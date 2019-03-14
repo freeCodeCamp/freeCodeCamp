@@ -9,7 +9,7 @@ title: Basic blockchain implementation
 ## Quick explanation:
 
 Blockchain is a list of blocks with "every block contain verified content of the previous block".
-Then we use collision-free attribute of the cryptographic hash function to verify "the content of the previous block".
+Then we use the collision-free attribute of the cryptographic hash function to verify "the content of the previous block".
 This example will use SHA256 hash function, and use built-in ArrayList type of Java.
 
 ## Basic struture:
