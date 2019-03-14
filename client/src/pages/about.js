@@ -247,7 +247,6 @@ const AboutPage = () => {
                 <tr>
                   <td className='text-center'>
                     <FontAwesomeIcon icon={faGithub} />
-                    />
                   </td>
                   <td>
                     <Link to='https://github.com/freecodecamp/'>

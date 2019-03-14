@@ -97,8 +97,7 @@ function Camper({
         <div>
           <br />
           <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon icon={faAward} />
-            Top Contributor
+            <FontAwesomeIcon icon={faAward} /> Top Contributor
           </p>
           <p className='text-center'>{joinArray(yearsTopContributor)}</p>
         </div>
