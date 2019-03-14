@@ -10,11 +10,18 @@ Everything in React is a component.
 But before that we need to make sure to have node.js and npm installed in the computer. Optionally we can use CRA(Create React App) which is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create-react-app sets up the tools you need to start your React project.
 
 We can install it through the following commands 
-```
+```bash
 npm install -g create-react-app
 
 create-react-app my-app
 
+cd my-app
+npm start
+```
+
+Or, on npm 5.2+ with Node.js 6.0+,
+```bash
+npx create-react-app my-app
 cd my-app
 npm start
 ```
@@ -49,6 +56,14 @@ copy the code below and paste it into src/App.js
   export default App;
 ```
 If we check the index.js file in the src folder, we find that the above App.js is called into index.js and then rendered. 
+The code may look cryptic, especially part with: 
+```jsx
+constructor(props) {
+  super(props);
+}
+```
+Don't worry about it now. Just know that Class components should always call the base constructor with props and will be useful later when using the 'this' code.
+
 
 ```javascript
 // Other code

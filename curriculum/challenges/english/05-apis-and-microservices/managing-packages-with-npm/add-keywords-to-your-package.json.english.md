@@ -6,18 +6,15 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-The keywords-field is where you can describe your project using related keywords.
-Example
-<code>"keywords": [ "descriptive", "related", "words" ],</code>
+The <code>keywords</code> field is where you can describe your project using related keywords. Here's an example:
+<blockquote>"keywords": [ "descriptive", "related", "words" ],</blockquote>
 As you can see, this field is structured as an array of double-quoted strings.
-Instructions
-Add an array of suitable strings to the keywords-field in the package.json of your Glitch project.
-One of the keywords should be freecodecamp.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Add an array of suitable strings to the <code>keywords</code> field in the package.json file of your project.
+One of the keywords should be "freecodecamp".
 </section>
 
 ## Tests

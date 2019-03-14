@@ -158,6 +158,34 @@ def bubbleSort(arr):
     print(arr)
 
 ```
+
+### Example in PHP
+```php
+
+function bubble_sort($arr) {
+    $size = count($arr)-1;
+    for ($i=0; $i<$size; $i++) {
+        for ($j=0; $j<$size-$i; $j++) {
+            $k = $j+1;
+            if ($arr[$k] < $arr[$j]) {
+                // Swap elements at indices: $j, $k
+                list($arr[$j], $arr[$k]) = array($arr[$k], $arr[$j]);
+            }
+        }
+    }
+    return $arr;// return the sorted array
+}
+
+$arr = array(1,3,2,8,5,7,4,0);
+print("Before sorting");
+print_r($arr);
+
+$arr = bubble_sort($arr);
+print("After sorting by using bubble sort");
+print_r($arr);
+
+```
+
 ### Example in C
 ```c
 #include <stdio.h>
@@ -191,7 +219,6 @@ for (int i = 0 ; i < n - 1; i++)
 ```
 
 ### More Information
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 - [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
 - [Bubble Sort Algorithm - CS50](https://youtu.be/Ui97-_n5xjo)
 - [Bubble Sort Algorithm - GeeksForGeeks (article)](http://www.geeksforgeeks.org/bubble-sort)

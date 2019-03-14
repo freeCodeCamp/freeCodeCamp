@@ -11,7 +11,7 @@ HyperText Markup Language (HTML) is the standard [markup language](https://en.wi
    2) Structure the content in our document 
    3) Attribute context and meaning to the content of our document
 
-An HTML document has two aspects which are the Markup and the HyperText. The first aspect contains structured information that makes up the website, and latter contains text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
+An HTML document has two aspects which are the Markup and the HyperText. The first aspect contains structured information that makes up the website, and the latter contains text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
 
 The first publicly available description of HTML was a document called "HTML Tags", first mentioned on the Internet in late 1991 by Tim Berners-Lee, who is widely credited with the invention of html. 
 
@@ -19,7 +19,7 @@ The Internet was originally created to store and present static (unchanging) doc
  
 HTML5 is the latest version, or specification, of HTML. The [World Wide Web Consortium (W3C)](https://www.w3.org/) is the organization responsible for developing standards for the World Wide Web, including those for HTML. As web pages and web applications grow more complex, W3C updates HTML's standards.
  
-HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our documents, however it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
+HTML5 introduced a host of semantic elements. As discussed, HTML provides meaning to our documents, however, it wasn't until HTML5's introduction of [semantic elements](#) that its potential was realized.
 
 HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages.
 
@@ -39,7 +39,7 @@ HTML can embed programs written in a scripting language such as JavaScript, whic
 </body>
 </html>
 ```
-In HTML tags come in pairs, as seen above. The first tag in a pair is called the *start tag* or the *opening tag*,and the second tag is called the *end tag* or the *closing tag*. The later comes with a forward slash, which is inserted before the tag name.
+In HTML tags come in pairs, as seen above. The first tag in a pair is called the *start tag* or the *opening tag*, and the second tag is called the *end tag* or the *closing tag*. The later comes with a forward slash, which is inserted before the tag name.
 
 !DOCTYPE html: Defines this document to be HTML5
 
@@ -183,12 +183,12 @@ HTML defines special elements for defining text with special meanings.
 
 ## HTML Attributes
 
-An attribute gives more information about an element. Attibutes always come inside an opening tag.
+An attribute gives more information about an element. Attributes always come inside an opening tag.
 
 **Format of an attribute**
 
 Name = “value”
-Alt = “alternate text”. The alt attribute provides an alternative information about an image that is not displaying. It is good practice to use the alt attribute on all images for the sake of users who cannot view it to help screen readers access the alternate text of the image. An alt text should be a text that describes what the image is about. The alternative text is inserted into the 'alt' within the `<img>` tag
+Alt = “alternate text”. The alt attribute provides alternative information about an image that is not displaying. It is good practice to use the alt attribute on all images for the sake of users who cannot view it to help screen readers access the alternate text of the image. An alt text should be a text that describes what the image is about. The alternative text is inserted into the 'alt' within the `<img>` tag
 
 An example of `alt` attribute used in an `<img>` is this:
 
@@ -198,7 +198,7 @@ An example of `alt` attribute used in an `<img>` is this:
 
 **Empty alt text**
 
-An alt tag can be blank only when the image is used for decorative purposes. When an alt tag is empty, screen readers will ignore them. Decorative images do not add information to the content of the page. A blank alt tag is written without a text in the quotes `alt=""` or `alt = " " `.You might think that because the images is for decorative purposes, why not leave out the option of using `alt` attribute. When you leave out the `alt` attribute, screen readers would read out the file name instead. So, it is always best to include the `alt` attribute.
+An alt tag can be blank only when the image is used for decorative purposes. When an alt tag is empty, screen readers will ignore them. Decorative images do not add information to the content of the page. A blank alt tag is written without a text in the quotes `alt=""` or `alt = " " `.You might think that because the images are for decorative purposes, why not leave out the option of using `alt` attribute. When you leave out the `alt` attribute, screen readers would read out the file name instead. So, it is always best to include the `alt` attribute.
 
 ```
 <img src="examples/topinfo_bg.png" alt="">

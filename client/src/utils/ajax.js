@@ -50,6 +50,14 @@ export function postReportUser(body) {
   return post('/user/report-user', body);
 }
 
+export function postDeleteAccount(body) {
+  return post('/account/delete', body);
+}
+
+export function postResetProgress(body) {
+  return post('/account/reset-progress', body);
+}
+
 /** PUT **/
 
 export function putUpdateMyAbout(values) {

@@ -3,8 +3,11 @@ import { put, select, call, takeEvery } from 'redux-saga/effects';
 import {
   isSignedInSelector,
   currentChallengeIdSelector,
+  openDonationModal,
+  showDonationSelector,
   updateComplete,
-  updateFailed
+  updateFailed,
+  userSelector
 } from '../../../redux';
 
 import { post } from '../../../utils/ajax';
@@ -35,9 +38,18 @@ function* updateSuccessMessageSaga() {
   yield put(updateSuccessMessage(randomCompliment()));
 }
 
+function* showDonateModalSaga() {
+  let { isDonating } = yield select(userSelector);
+  let shouldShowDonate = yield select(showDonationSelector);
+  if (!isDonating && shouldShowDonate) {
+    yield put(openDonationModal());
+  }
+}
+
 export function createCurrentChallengeSaga(types) {
   return [
     takeEvery(types.challengeMounted, currentChallengeSaga),
-    takeEvery(types.challengeMounted, updateSuccessMessageSaga)
+    takeEvery(types.challengeMounted, updateSuccessMessageSaga),
+    takeEvery(types.challengeMounted, showDonateModalSaga)
   ];
 }

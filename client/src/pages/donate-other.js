@@ -1,11 +1,9 @@
-/* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import ReactGA from '../analytics/index.js';
-import Spacer from '../components/helpers/Spacer';
+import { Link, Spacer } from '../components/helpers';
 
 const paypalMonthlyDonations = [
   {
@@ -85,16 +83,17 @@ class DonateOtherPage extends Component {
     );
   }
 
+  /* eslint-disable max-len */
   render() {
     return (
       <Fragment>
         <Helmet title='Other ways to donate | freeCodeCamp.org' />
         <Spacer />
-        <Grid className='container'>
+        <Grid>
           <Row>
             <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
               <h2 className='text-center'>
-                Other ways you can support the freeCodeCamp.org nonprofit
+                Other ways you can support our nonprofit
               </h2>
               <p>
                 freeCodeCamp is a small donor-supported 501(c)(3) public
@@ -224,6 +223,7 @@ class DonateOtherPage extends Component {
       </Fragment>
     );
   }
+  /* eslint-enable max-len */
 }
 
 DonateOtherPage.displayName = 'DonateOtherPage';
