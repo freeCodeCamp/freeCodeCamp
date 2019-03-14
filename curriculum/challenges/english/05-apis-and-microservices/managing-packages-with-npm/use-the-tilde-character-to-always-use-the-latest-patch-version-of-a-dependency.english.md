@@ -6,18 +6,16 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-In the last challenge, we told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases you don’t want to miss bug fixes, since they often include important security patches and (hopefully) don’t break things in doing so.
-To allow a npm dependency to get updated to the latest PATCH-version, you can prefix the dependency’s version with the tilde-character (~). In package.json, our current rule for how npm may upgrade moment is to use a specific version only (2.10.2), but we want to allow the latest 2.10.x-version.
-Example
-<code>"some-package-name": "~1.3.8" allows updates to any 1.3.x version.</code>
-Instructions
-Use the tilde-character (~) to prefix the version of moment in your dependencies and allow npm to update it to any new PATCH release.
-Note that the version numbers themselves should not be changed.
+In the last challenge, you told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases, you don’t want to miss bug fixes since they often include important security patches and (hopefully) don’t break things in doing so.
+To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (<code>~</code>) character. Here's an example of how to allow updates to any 1.3.x version.
+<blockquote>"package": "~1.3.8"</blockquote>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+In the package.json file, your current rule for how npm may upgrade moment is to use a specific version (2.10.2). But now, you want to allow the latest 2.10.x version.
+Use the tilde (<code>~</code>) character to prefix the version of moment in your dependencies, and allow npm to update it to any new PATCH release.
+<strong>Note:</strong> The version numbers themselves should not be changed.
 </section>
 
 ## Tests

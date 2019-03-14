@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/ca8Q8tP'
 
 ## Description
 <section id='description'>
-In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the <code>queue</code> and old items are taken off from the front of the <code>queue</code>.
+In Computer Science a <dfn>queue</dfn> is an abstract <dfn>Data Structure</dfn> where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.
 Write a function <code>nextInLine</code> which takes an array (<code>arr</code>) and a number (<code>item</code>) as arguments.
 Add the number to the end of the array, then remove the first element of the array.
 The <code>nextInLine</code> function should then return the element that was removed.

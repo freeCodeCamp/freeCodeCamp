@@ -2,8 +2,8 @@
 title: Power Supply
 ---
 ## Power Supply
-
-A Power Supply Unit (PSU) supplies power to a computer. It converts AC power into steady low-voltage DC power for the internal components. A power supply is required in order for a computer to operate properly and it's wattage must be matched appropriately to all the components inside the computer. It also regulates overheating by controlling the voltage. Depending on the model of power supply, voltage control can either be manual or automatic.
+ 
+A Power Supply Unit (PSU) regulates the power supply to a computer. It converts AC power into steady low-voltage DC power for the internal components. A power supply is required in order for a computer to operate properly and it's wattage must be matched appropriately to all the components inside the computer. It also regulates overheating by controlling the voltage. Depending on the model of power supply, voltage control can either be manual or automatic.
 
 ## Description
 
@@ -45,13 +45,18 @@ With every modern power supply you should have:
 - 1x Small cable to power the GPU
 - 2x or more small cables to power hard drives, optical drives, and accessory parts. 
 
+## Power Supply History 
+In the past, power supplies often only had on or off switches and didn't include features such as standby mode. They had a variety of different form factors, which made it much more complicated when determining which to choose. Today, the most common form factor for a power supply is ATX. Having a single common form factor simplifies things greatly when choosing which features would be compatible with a build.
+
 ## MISC Information
 
 Because the power supply unit is the first component between the electric outlet and your other PC parts, they are at the highest risk of damage from power surges or spikes. If your machine is situated in an area where these things are common, it would be wise to invest in a surge protector or similar piece of hardware to prevent that kind of damage. 
 Additionally, the internal parts of a PSU are usually not user serviceable. For your safety, it is wise to never open a power supply unit without proper equipment and/or certifications.
 
+A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit. If you do encounter an open power supply, do not touch any of the internals, even if it has been unplugged, as power can be stored in them for a long time. 
+
+
 #### More Information:
 
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 * [HowStuffWorks - How a power supply works](https://computer.howstuffworks.com/power-supply.htm)
-* Power Supply: [Wikipedia](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
+* [Wikipedia - Power Supply Unit](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))

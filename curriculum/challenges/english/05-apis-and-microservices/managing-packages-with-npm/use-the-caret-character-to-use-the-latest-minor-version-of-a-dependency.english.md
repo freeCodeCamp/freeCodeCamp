@@ -6,18 +6,16 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Similar to how the tilde (~) we learned about in the last challenge allow npm to install the latest PATCH for a dependency, the caret (^) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
-At the moment, your current version of moment should be ~2.10.2 which allows npm to install to the latest 2.10.x-version. If we instead were to use the caret (^) as our version prefix, npm would instead be allowed to update to any 2.x.x-version.
-Example
-<code>"some-package-name": "^1.3.8" allows updates to any 1.x.x version.</code>
-Instructions
-Use the caret-character (^) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
-Note that the version numbers themselves not should be changed.
+Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (<code>^</code>) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
+Your current version of moment should be "~2.10.2" which allows npm to install to the latest 2.10.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 2.x.x version.
+<blockquote>"package": "^1.3.8"</blockquote>
+This would allow updates to any 1.x.x version of the package.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use the caret (<code>^</code>) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
+<strong>Note:</strong> The version numbers themselves not should be changed.
 </section>
 
 ## Tests

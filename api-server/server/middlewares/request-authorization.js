@@ -1,8 +1,13 @@
-import loopback from 'loopback';
-import jwt from 'jsonwebtoken';
-import { isBefore } from 'date-fns';
+import { isEmpty } from 'lodash';
 
+import { getUserById as _getUserById } from '../utils/user-stats';
+import {
+  getAccessTokenFromRequest,
+  errorTypes,
+  authHeaderNS
+} from '../utils/getSetAccessToken';
 import { homeLocation } from '../../../config/env';
+import { jwtSecret as _jwtSecret } from '../../../config/secrets';
 
 import { wrapHandledError } from '../utils/create-handled-error';
 
@@ -18,15 +23,15 @@ export function isWhiteListedPath(path, whiteListREs = _whiteListREs) {
   return whiteListREs.some(re => re.test(path));
 }
 
-export default () =>
-  function authorizeByJWT(req, res, next) {
+export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
+  function requestAuthorisation(req, res, next) {
     const { path } = req;
     if (apiProxyRE.test(path) && !isWhiteListedPath(path)) {
-      const cookie =
-        (req.signedCookies && req.signedCookies['jwt_access_token']) ||
-        (req.cookie && req.cookie['jwt_access_token']);
-
-      if (!cookie) {
+      const { accessToken, error, jwt } = getAccessTokenFromRequest(
+        req,
+        jwtSecret
+      );
+      if (!accessToken && error === errorTypes.noTokenFound) {
         throw wrapHandledError(
           new Error('Access token is required for this request'),
           {
@@ -37,22 +42,15 @@ export default () =>
           }
         );
       }
-      let token;
-      try {
-        token = jwt.verify(cookie, process.env.JWT_SECRET);
-      } catch (err) {
-        throw wrapHandledError(new Error(err.message), {
+      if (!accessToken && error === errorTypes.invalidToken) {
+        throw wrapHandledError(new Error('Access token is invalid'), {
           type: 'info',
           redirect: `${homeLocation}/signin`,
           message: 'Your access token is invalid',
           status: 403
         });
       }
-      const {
-        accessToken: { created, ttl, userId }
-      } = token;
-      const valid = isBefore(Date.now(), Date.parse(created) + ttl);
-      if (!valid) {
+      if (!accessToken && error === errorTypes.expiredToken) {
         throw wrapHandledError(new Error('Access token is no longer vaild'), {
           type: 'info',
           redirect: `${homeLocation}/signin`,
@@ -60,12 +58,12 @@ export default () =>
           status: 403
         });
       }
-      if (!req.user) {
-        const User = loopback.getModelByType('User');
-        return User.findById(userId)
+      res.set(authHeaderNS, jwt);
+      if (isEmpty(req.user)) {
+        const { userId } = accessToken;
+        return getUserById(userId)
           .then(user => {
             if (user) {
-              user.points = user.progressTimestamps.length;
               req.user = user;
             }
             return;
@@ -73,8 +71,8 @@ export default () =>
           .then(next)
           .catch(next);
       } else {
-        return next();
+        return Promise.resolve(next());
       }
     }
-    return next();
+    return Promise.resolve(next());
   };

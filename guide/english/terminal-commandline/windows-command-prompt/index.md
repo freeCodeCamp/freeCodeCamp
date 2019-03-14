@@ -18,11 +18,11 @@ To go back one directory type and enter `cd..`. Your current working directory s
 ```
 C:\Users\YourUserName>
 ```
-Also, to go back to the root directory type and enter `cd\`. Your current working directory should return to this:
+To go back to the root directory type and enter `cd \`. Your current working directory should return to this:
+```		
+C:\>		
 ```
-C:\>
-```
-With the `cd`, `cd ..` and `cd\` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
+With the `cd` and `cd ..` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
 
 ## Here is a list of common commands:
 | Command | Description  |
@@ -59,3 +59,4 @@ rm /s name_of_directory_you_want_to_delete
 - If you know the path to a file or directory can type `cd PATH_TO_YOUR_DIRECTORY` instead of changing directories several times to get to a directory or file 
 - Use `cd ..` to move to the previous parent directory
 - When you hit the up arrow key your previously entered command will appear and if you hit it repeatedly it will cycle through all of your previously entered commands 
+- You can change the color of your terminal font and of its background. `color ?` will give you a list of these colors. 

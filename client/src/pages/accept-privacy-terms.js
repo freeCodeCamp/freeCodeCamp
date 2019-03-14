@@ -14,7 +14,7 @@ import {
 import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
 
-import { ButtonSpacer, Spacer } from '../components/helpers';
+import { ButtonSpacer, Spacer, Link } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import createRedirect from '../components/createRedirect';
 
@@ -103,13 +103,9 @@ class AcceptPrivacyTerms extends Component {
                     onChange={this.createHandleChange('termsOfService')}
                   >
                     I accept the{' '}
-                    <a
-                      href='https://www.freecodecamp/terms'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                    >
+                    <Link external={true} to='/terms-of-service'>
                       terms of service
-                    </a>{' '}
+                    </Link>{' '}
                     (required)
                   </Checkbox>
                 </FormGroup>
@@ -125,13 +121,9 @@ class AcceptPrivacyTerms extends Component {
                     onChange={this.createHandleChange('privacyPolicy')}
                   >
                     I accept the{' '}
-                    <a
-                      href='https://www.freecodecamp/privacy'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                    >
+                    <Link external={true} to='/privacy-policy'>
                       privacy policy
-                    </a>{' '}
+                    </Link>{' '}
                     (required)
                   </Checkbox>
                 </FormGroup>
