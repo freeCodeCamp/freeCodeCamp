@@ -1,0 +1,21 @@
+.btn-danger {
+  background-color: #fff;
+  color: #ad1601;
+  border-color: #ad1601;
+}
+
+.btn-danger:hover, .btn-danger:focus {
+  background-color: #ad1601;
+}
+.danger-zone .panel-heading {
+  background-color: #ad1601;
+  color: #fff;
+}
+
+.danger-zone .panel-danger {
+  border-color: #ad1601;
+}
+
+.danger-zone p {
+  color: #ad1601;
+}

@@ -1,8 +1,6 @@
 ---
 id: 587d7fa9367417b2b2512bcf
 title: Dynamically Change the Height of Each Bar
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: ''
