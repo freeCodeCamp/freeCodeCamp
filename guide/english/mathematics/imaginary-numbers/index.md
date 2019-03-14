@@ -11,6 +11,7 @@ For example, the polynomial `x^2 + 1` does not factor over the real numbers, as 
 ```
 which does correspond to real numbers. However, in the complex numbers we see the roots immediately, `i` and `-i`, as `sqrt(-4)/2 = 2*sqrt(-1)/2`.
 
+
 The *imaginary numbers* are a subset of the complex numbers, the set of complex numbers of the form `bi`, i.e., with real part 0. So, `i, 2i` and `-3i` are all imaginary numbers, while `1, 1 + i, 1 - i` and `-2 - 3i` are not. As `0 = 0*i` it is the only real *and* imaginary number.
 
 One astounding connection between the set of imaginary numbers and the set of complex numbers is [Euler's formula](https://en.wikipedia.org/wiki/Euler%27s_formula), which states that
