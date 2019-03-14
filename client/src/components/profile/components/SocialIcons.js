@@ -26,52 +26,52 @@ const propTypes = {
 
 function LinkedInIcon(linkedIn) {
   return (
-    <a href={linkedIn} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon
-        aria-hidden='false'
-        aria-label='LinkedIn icon'
-        icon={faLinkedin}
-        size='2x'
-      />
+    <a
+      aria-label='Link to our LinkedIn'
+      href={linkedIn}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      <FontAwesomeIcon icon={faLinkedin} size='2x' />
     </a>
   );
 }
 
 function GithubIcon(ghURL) {
   return (
-    <a href={ghURL} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon
-        aria-hidden='false'
-        aria-label='GitHub icon'
-        icon={faGithub}
-        size='2x'
-      />
+    <a
+      aria-label='Link to our Facebook'
+      href={ghURL}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      <FontAwesomeIcon icon={faGithub} size='2x' />
     </a>
   );
 }
 
 function WebsiteIcon(website) {
   return (
-    <a href={website} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon
-        aria-hidden='false'
-        aria-label='Link icon'
-        icon={faLink}
-        size='2x'
-      />
+    <a
+      aria-label={`Link to ${website}`}
+      href={website}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      <FontAwesomeIcon icon={faLink} size='2x' />
     </a>
   );
 }
 
 function TwitterIcon(handle) {
   return (
-    <a href={handle} rel='noopener noreferrer' target='_blank'>
-      <FontAwesomeIcon
-        aria-hidden='false'
-        aria-label='Twitter icon'
-        icon={faTwitter}
-        size='2x'
-      />
+    <a
+      aria-label='Link to our Twitter'
+      href={handle}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      <FontAwesomeIcon icon={faTwitter} size='2x' />
     </a>
   );
 }

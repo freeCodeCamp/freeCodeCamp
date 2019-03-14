@@ -236,11 +236,7 @@ const AboutPage = () => {
               <tbody>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='YouTube icon'
-                      icon={faYoutube}
-                    />
+                    <FontAwesomeIcon icon={faYoutube} />
                   </td>
                   <td>
                     <Link to='https://youtube.com/freecodecamp'>
@@ -250,10 +246,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='GitHub icon'
-                      icon={faGithub}
+                    <FontAwesomeIcon icon={faGithub} />
                     />
                   </td>
                   <td>
@@ -264,11 +257,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='LinkedIn icon'
-                      icon={faLinkedin}
-                    />
+                    <FontAwesomeIcon icon={faLinkedin} />
                   </td>
                   <td>
                     <Link to='https://www.linkedin.com/edu/school?id=166029'>
@@ -278,11 +267,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='Medium (Blogging Platform) icon'
-                      icon={faMedium}
-                    />
+                    <FontAwesomeIcon icon={faMedium} />
                   </td>
                   <td>
                     <Link to='https://medium.freecodecamp.org'>
@@ -292,11 +277,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='Twitter icon'
-                      icon={faTwitter}
-                    />
+                    <FontAwesomeIcon icon={faTwitter} />
                   </td>
                   <td>
                     <Link to='https://twitter.com/freecodecamp'>
@@ -306,11 +287,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='Facebook icon'
-                      icon={faFacebook}
-                    />
+                    <FontAwesomeIcon icon={faFacebook} />
                   </td>
                   <td>
                     <Link to='https://facebook.com/freecodecamp'>
@@ -320,11 +297,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='Lock icon'
-                      icon={faLock}
-                    />
+                    <FontAwesomeIcon icon={faLock} />
                   </td>
                   <td>
                     <Link to='/privacy-policy'>Our privacy policy</Link>
@@ -332,11 +305,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='Scale icon'
-                      icon={faBalanceScale}
-                    />
+                    <FontAwesomeIcon icon={faBalanceScale} />
                   </td>
                   <td>
                     <Link to='/code-of-conduct'>Our code of conduct</Link>
@@ -344,11 +313,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='Academic icon'
-                      icon={faUniversity}
-                    />
+                    <FontAwesomeIcon icon={faUniversity} />
                   </td>
                   <td>
                     <Link to='/academic-honesty'>
@@ -358,11 +323,7 @@ const AboutPage = () => {
                 </tr>
                 <tr>
                   <td className='text-center'>
-                    <FontAwesomeIcon
-                      aria-hidden='false'
-                      aria-label='Book icon'
-                      icon={faBook}
-                    />
+                    <FontAwesomeIcon icon={faBook} />
                   </td>
                   <td>
                     <Link to='/terms-of-service'>Our terms of service</Link>
