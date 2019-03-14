@@ -217,6 +217,8 @@ export const challengeDataSelector = state => {
   return challengeData;
 };
 
+const MAX_LOGS_SIZE = 64 * 1024;
+
 export const reducer = handleActions(
   {
     [types.fetchIdToNameMapComplete]: (state, { payload }) => ({
@@ -261,19 +263,17 @@ export const reducer = handleActions(
     }),
     [types.initLogs]: state => ({
       ...state,
-      logsOut: []
+      logsOut: ''
     }),
     [types.updateLogs]: (state, { payload }) => ({
       ...state,
-      logsOut: [...state.logsOut, payload]
+      logsOut: (state.logsOut + '\n' + payload).slice(-MAX_LOGS_SIZE)
     }),
     [types.logsToConsole]: (state, { payload }) => ({
       ...state,
       consoleOut:
         state.consoleOut +
-        (state.logsOut.length
-          ? '\n' + payload + '\n' + state.logsOut.join('\n')
-          : '')
+        (state.logsOut ? '\n' + payload + '\n' + state.logsOut : '')
     }),
     [types.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
