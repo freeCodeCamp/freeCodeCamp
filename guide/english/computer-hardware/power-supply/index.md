@@ -1,30 +1,28 @@
 ---
 title: Power Supply
 ---
-## Power Supply
- 
-A Power Supply Unit (PSU) regulates the power supply to a computer. It converts AC power into steady low-voltage DC power for the internal components. A power supply is required in order for a computer to operate properly and it's wattage must be matched appropriately to all the components inside the computer. It also regulates overheating by controlling the voltage. Depending on the model of power supply, voltage control can either be manual or automatic.
+
+# Power Supply
+
+A Power Supply Unit (PSU) regulates the power supply to a computer. It converts AC power into steady low-voltage DC power that the internal components can use. A power supply is required in order for a computer to operate, and its wattage must be matched appropriately to all the components inside the computer. It regulates overheating by controlling the voltage. Depending on the model of power supply, voltage control can either be manual or automatic.
 
 ## Description
+The PSU typically appears as a metal box, in either the top or bottom posterior portion of a PC case. It has several cables connected off of it to various computer components. These cables can be detachable or integrated, depending on the model of PSU. Typically, its wattage (e.g, 600W) is relative to the size of the PSU, and is an important factor to keep in mind when considering the demand of your machine vs how much space is inside the case.
 
-Is typically seen as a metal box either in the top or bottom, most posterior portion of a PC case. It has a bunch of cables streaming out of it to various parts of the computer. These cables can be detachable or integrated depending on the model of PSU. Typically it's wattage (e.g 600w) is relative to the size of the PSU, and is an important factor to keep in mind when considering the demand of your machine vs how much space is inside the case. 
-
-Like the CPU, or RAM, the PSU is a necessary component to the PC because without it nothing within the machine would function. Arguably may be one of the more crucial parts to research when assembling custom computers because of this fact. 
+Like the CPU and RAM, the PSU is a necessary component of the PC because, without it, none of the components will function!
 
 ## Modularity
 PSUs can be divided into two categories:
 
 ### Non-modular
-
-A non-modular PSU is the most common type of PSU, this PSU is unadaptable with the power ports it provides to the components, it will usually contain:
+A non-modular PSU is the most common type of PSU, this PSU is un-adaptable with the power ports it provides to the components, it will usually contain:
 * A 32pin power supply module for the motherboard
-* Any number of SATA power supply modules, these are usually to power hard drives and disk drives
-* One or two PCIE power supply modules, usually for expansion cards such as GPU
+* Any number of SATA power supply modules - these are usually to power hard drives
+* One or two PCIe power supply modules, usually for expansion cards such as GPU
 * A CPU power supply module
 
 ### Modular
-
-Modular power supplies are becoming more common nowadays, these are more commonly seen amongst "high end" PSUs. The advantage these have over non-modular supplies is that they can be expanded to add additional power supply modules.
+Modular power supplies are becoming more common, and are commonly seen amongst the "high end" PSUs. The advantage these have over non-modular power supplies is that they can be expanded to add additional power supply modules.
 
 As with the non-modular supply, you will get:
 * A 32 pin power supply module for the motherboard
@@ -32,32 +30,28 @@ As with the non-modular supply, you will get:
 
 The PSU will then have several expansion slots on the back to add additional PCIE power cables and SATA cables for multi GPU or hard drive builds. 
 
-
-A PSU is usually not user-serviceable. For your safety, it is wise to never open a power supply unit.
-
-Note: Please do not "cheap out" when buying a power supply, it is one of the most crucial elements when building a PC and can damage your other components if not treated as such. 
-
-## Standard types of Cables
-
+## Standard Cables
 With every modern power supply you should have:
 - 1x Large cable for motherboard
 - 1x Small cable for motherboard, typically powers the CPU
 - 1x Small cable to power the GPU
 - 2x or more small cables to power hard drives, optical drives, and accessory parts. 
 
-## Power Supply History 
+## History 
 In the past, power supplies often only had on or off switches and didn't include features such as standby mode. They had a variety of different form factors, which made it much more complicated when determining which to choose. Today, the most common form factor for a power supply is ATX. Having a single common form factor simplifies things greatly when choosing which features would be compatible with a build.
 
-## MISC Information
-
+## Safety
 Because the power supply unit is the first component between the electric outlet and your other PC parts, they are at the highest risk of damage from power surges or spikes. If your machine is situated in an area where these things are common, it would be wise to invest in a surge protector or similar piece of hardware to prevent that kind of damage. 
-Additionally, the internal parts of a PSU are usually not user serviceable. For your safety, it is wise to never open a power supply unit without proper equipment and/or certifications.
 
-A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit. If you do encounter an open power supply, do not touch any of the internals, even if it has been unplugged, as power can be stored in them for a long time. 
+The internal parts of a PSU are usually not user serviceable. For your safety, it is wise to never open a power supply unit without proper equipment and/or certifications. If you do encounter an open power supply, do not touch any of the internals, even if it has been unplugged, as power can be stored in them for a long time.
 
-A great way to make sure you dont underpower your computer is to put all the components together to see how much power they require, then go 50-100W above that. A good way to calculate your required voltage is to go to a site like [PC Part Picker](https://pcpartpicker.com/), add in each component, and it will calculate the minimum for you!
+Please do not "cheap out" when buying a power supply, it is one of the most crucial elements when building a PC and can damage your other components if not treated as such. 
 
-#### More Information:
+## Determining Required Wattage
+A great way to make sure your computer has enough power to combine the power requirements for every component then add an additional 50-100W to the total.  This should give you the total Wattage required when purchasing your power supply.
 
-* [HowStuffWorks - How a power supply works](https://computer.howstuffworks.com/power-supply.htm)
-* [Wikipedia - Power Supply Unit](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
+Sites like [PC Part Picker](https://pcpartpicker.com/) allow you to add components to a build and then calculate the minimum power requirements for you!
+
+## Additional Resources
+- [HowStuffWorks - How a power supply works](https://computer.howstuffworks.com/power-supply.htm)
+- [Wikipedia - Power Supply Unit](https://en.wikipedia.org/wiki/Power_supply_unit_(computer))
