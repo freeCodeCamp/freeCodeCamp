@@ -4,7 +4,8 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
 <li
   className="block "
 >
-  <div
+  <button
+    aria-expanded={false}
     className="map-title"
     onClick={[Function]}
   >
@@ -30,7 +31,7 @@ exports[`<Block /> not expanded snapshot: block-not-expanded 1`] = `
         2/4
       </span>
     </div>
-  </div>
+  </button>
   <ul />
 </li>
 `;
@@ -39,7 +40,8 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
 <li
   className="block open"
 >
-  <div
+  <button
+    aria-expanded={true}
     className="map-title"
     onClick={[Function]}
   >
@@ -65,7 +67,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
         2/4
       </span>
     </div>
-  </div>
+  </button>
   <ul>
     <li
       className="map-challenge-title"
