@@ -11,7 +11,7 @@ Unlike hard drives which are also called **secondary storage**, RAM is *volatile
 
 There are two main types of RAM: static (SRAM) and dynamic (DRAM). Static RAM is constructed using flip-flops, is very fast, but is difficult to make in large sizes. Dynamic RAM is constructed using capacitors, is fairly fast, but needs 'refreshed' periodically to keep charge on the capacitors. SRAM is often used closer to the CPU due to its speed and space constraints whereas DRAM is used as main memory.
 
-Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SOO-RIMM. Below is an example image of a 512 MB DIMM computer memory module, a typical piece of RAM found in desktop computers. This memory module would be installed into one of the memory slots on a motherboard.
+Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SO-RIMM. Below is an example image of a 512 MB DIMM computer memory module, a typical piece of RAM found in desktop computers. This memory module would be installed into one of the memory slots on a motherboard.
 
 ![RAM](https://images-na.ssl-images-amazon.com/images/I/41kVnWQebtL._SL256_.jpg)
 
@@ -29,7 +29,15 @@ Servers typically use ECC or Error-Correcting Code RAM. This RAM features a few 
 
 Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a relevant feature to most consumers, instead being mostly used in servers, data centers, and high end business workstations where the added 'insurance' against any down time is worth the added cost.
 
-### More Information
+### Cost Efficiency:
+
+When building a new machine as a hobby, or assembling an entire server rack for a data center, cost efficiency is important with this type of hardware as well as others (such as a GPU) because it's both necessary and often times costly component. A good analysis to start with before the compatibility with other hardware is checked may just be "how much is this gonna cost me" vs "how much am I gonna get out of it". 
+
+Cost can be dependent on the current market, manufacturing of hardware, and the specifications of the hardware itself. Some of these factors may not be something that can be helped on an individual level, but they do influence the choice you make when determining how much you're getting out of purchasing that kind of RAM. 
+
+Do you plan on running VMs across a framework of server clients? Consider new, efficient RAM with desirable features that will benefit that configuration the most, without spending too little or less. Do you plan on building a home machine with the sole purpose of playing movies in the living room? Buy enough to run your desired operating system, and if that's not cheap enough to fit the bill then consider older generation hardware. 
+
+### More Information:
 
 * [Random-access Memory - Wikipedia](https://en.wikipedia.org/wiki/Random-access_memory)
 * [RAM - Webopedia](http://www.webopedia.com/TERM/R/RAM.html)
@@ -39,3 +47,4 @@ Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
+* [ECC Memory](https://en.wikipedia.org/wiki/ECC_memory)
