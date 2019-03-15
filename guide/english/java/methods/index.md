@@ -106,3 +106,5 @@ public class Car {
 ```
 
 The `Car` class and the `Car(String model, int numberOfWheels)` method have to have the same name in order for java to know that it is the constructor. Now anytime you instantiate a new `Car` instance with the `new` keyword you will need to call this constructor and pass in the needed data.
+
+When we don't specifically define a constructor for a class, java creates a default constructor. This is a non-parameterized constructor, so it does not contain or accept any arguments. The default constructor calls the super class constructor and initializes all necessary instance variables
