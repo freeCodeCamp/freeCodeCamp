@@ -1,34 +1,31 @@
 # Set up freeCodeCamp locally
 
-As of 8 March 2019, please consider helping us test our new guide on how to [setup freeCodeCamp locally using Docker](/docs/how-to-setup-freecodecamp-locally-using-docker.md) instead of using this guide. It *should* result in fewer or no error but we won't know until enough devs try it.
+As of 8 March 2019, please consider helping us test our new guide on how to [setup freeCodeCamp locally using Docker](/docs/how-to-setup-freecodecamp-locally-using-docker.md) instead of using this guide. It *should* result in fewer, if not zero, errors, but we won't know until enough devs try it.
 
-Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to be contributing regularly.
+Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
 Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
 
 ## Fork the repository on GitHub
-
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
-This is essential, because this way you are able to work on your copy of freeCodeCamp on GitHub, or download it for working locally. Later, you will be able to request changes to be pulled into the main repository via a pull request.
+This is essential as it allows you to work on your own copy of freeCodeCamp on GitHub, or to download (clone) your repository to work on locally. Later, you will be able to request changes to be pulled into the main repository from your fork via a pull request.
 
 > **ProTip:**
-> The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as `upstream` repository.
-> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as `origin` repository.
+> The main repository at `https://github.com/freeCodeCamp/freeCodeCamp` is often referred to as the `upstream` repository.
+> Your fork at `https://github.com/YOUR_USER_NAME/freeCodeCamp` is often referred to as the `origin` repository.
 
-**Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:**
-
+#### Follow these steps to fork the `https://github.com/freeCodeCamp/freeCodeCamp` repository:
 1. Go to the freeCodeCamp repository on GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. After the repository has been forked, you will be taken to your copy of the freeCodeCamp repository at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 ![GIF - How to fork freeCodeCamp on GitHub](/docs/images/github/how-to-fork-freeCodeCamp.gif)
 
 ## Preparing the development environment
+Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will only need to do this once.
 
-Once you have the prerequisites installed, you need to prepare your development environment. This is common for many development workflows, and you will need to do this only once.
-
-**Follow these steps to get your development environment ready:**
+#### Follow these steps to get your development environment ready:
 
 1. Install [Git](https://git-scm.com/) or your favorite Git client, if you haven't already. Update to the latest version, the one that came bundled with your OS may be outdated.
 
@@ -113,14 +110,13 @@ You can skip running freeCodeCamp locally, if you are just editing files, doing 
 
 Start by installing these prerequisite software.
 
-| Prerequisite                                | Version | Notes |
-| ------------------------------------------- | ------- | ----- |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
-| [Node.js](http://nodejs.org)                | `10.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)|
-| npm (comes bundled with Node)               | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
+| Prerequisite                                                                                  | Version | Notes                                                                                                                                                                                 |
+| --------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
+| [Node.js](http://nodejs.org)                                                                  | `10.x`  | [LTS Schedule](https://github.com/nodejs/Release#release-schedule)                                                                                                                    |
+| npm (comes bundled with Node)                                                                 | `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS                                                                                                                  |
 
-**Important:**
-
+#### Important:
 We highly recommend updating to the latest stable releases a.k.a Long Term Support (LTS) versions of the above.
 If Node.js or MongoDB is already installed on your machine, run the following commands to validate the versions:
 
@@ -132,12 +128,10 @@ npm -v
 
 > If you have a different version, please install the recommended version. We can support installation issues for recommended versions only.
 
-**Note to Windows users:**
-
+#### Note to Windows users:
 Make sure the command line tool (Cmd, PowerShell or Git Bash for Windows, etc.) you use has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On windows, you should be able to launch a tool by right clicking it and selecting `Launch as an Administrator`.
 
-**I am having issues with installing the recommended prerequisites. What should I do?**
-
+#### I am having issues with installing the recommended prerequisites. What should I do?
 We regularly develop on popular and latest operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. Its recommended to lookup your specific issue on resources like: Google, Stack Overflow or Stack Exchange. Chances are that someone has faced the same issue and there is already an answer to your specific query.
 
 If you are on a different OS, and/or are still running into issues, reach out to [contributors community on our public forum](https://www.freeCodeCamp.org/c/contributors) or the [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
