@@ -34,7 +34,7 @@ int main(void){
 }
 ```
 
-Let's break down what we did under the `Some shingy things`:
+Let's break down what we did under the `Some shiny things`:
 ```C
 printf("%d \n", c); 
 ```
@@ -46,7 +46,7 @@ You can print out several integers in the order given after the comma.
 
 Note that when you try to store a decimal value in an `int`, you will only get the whole part of it, because they will be truncated.
 
-we can also write the program in the manner below:
+We can also write the program in the manner below:
 ```
 #include <stdio.h>
 int main(void){

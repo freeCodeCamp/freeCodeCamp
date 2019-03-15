@@ -16,5 +16,6 @@ Linear algebra: the study of vector spaces and linear mappings.
 [Learn algebra on Khan Academy](https://www.khanacademy.org/math/algebra-home)
 
 #### Resources:  
-[Definition](https://www.merriam-webster.com/dictionary/algebra)  
-[Wolfram Mathworld](http://mathworld.wolfram.com/Algebra.html)
+- [Definition](https://www.merriam-webster.com/dictionary/algebra)  
+- [Wolfram Mathworld](http://mathworld.wolfram.com/Algebra.html)
+- [Brilliant](https://brilliant.org/courses/#math-foundational)
