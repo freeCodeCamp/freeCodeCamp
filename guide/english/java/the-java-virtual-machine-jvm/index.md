@@ -9,4 +9,6 @@ For Java, this intermediate form is called **Bytecode** which is then interprete
 
 In Java, code is written and saved as `.java` files. The compiler (javac) operates on the java files and generates the equivalent Bytecode (`.class`) files. The `java` command would now be able to execute the Bytecode stored in the `.class` files. More on this later.
 
+Java has become such a versatile programming language because of the JVM. The JVM is aware of the specific instruction lengths and other particularities of the underlying hardware platform. Because of this knowledge, the JVM is able to run any bytecode passed to it, eliminating the need for a programmer to rewrite or recompile code for each platform. This impressively versatile runability is what has led to Java being so prevalent in the computing world.
+
 The following sections describe some of the basic building blocks of coding in Java.

@@ -169,5 +169,5 @@ Congratulations you have successfully set up the Kotlin compiler and development
 
 ## Documentation
 
-One of the greatest things about Kotlin is it's comprehensive and well structured documentation. Even if you are new to programming, you will find yourself right at home with the docs. They do a pretty amazing job at laying it all out in a well structured manner. You can check out the official documentation at <a href='https://kotlinlang.org/docs/reference/'>this link</a>.
+One of the greatest things about Kotlin is its comprehensive and well structured documentation. Even if you are new to programming, you will find yourself right at home with the docs. They do a pretty amazing job at laying it all out in a well structured manner. You can check out the official documentation at <a href='https://kotlinlang.org/docs/reference/'>this link</a>.
 
