@@ -153,7 +153,11 @@ const IndexPage = () => (
           <h2 className='black-text'>HTML5</h2>
         </Col>
         <Col md={3} sm={6} xs={12}>
-          <FontAwesomeIcon icon={faCss3Alt} size='9x' />
+          <FontAwesomeIcon
+            className='landing-skill-icon'
+            icon={faCss3Alt}
+            size='9x'
+          />
           <h2 className='black-text'>CSS3</h2>
         </Col>
         <Col md={3} sm={6} xs={12}>
