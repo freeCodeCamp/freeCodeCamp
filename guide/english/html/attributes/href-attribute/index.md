@@ -14,6 +14,12 @@ Href is short for "Hypertext Reference" and is an HTML attribute.  The href attr
 
 <a href="index.html">This is a relative URL</a>
 ```
+#### Another use
+`<a href="#top">Go to top</a>`
+
+#### Description
+It will take you to that position in the page where `id="top"` is given.
+
 
 #### More Information:
 [W3Schools](https://www.w3schools.com/tags/att_href.asp)
