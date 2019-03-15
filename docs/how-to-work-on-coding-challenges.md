@@ -8,6 +8,8 @@ You can make a change without having anything running on your local system.
 
 After you find the file you want to modify within the GitHub interface, click the pencil icon to start editing the file. This will automatically create a fork of the project, if you don't have one already.
 
+You can try to create / edit challenges through a handy tool (forms in the browser), which is much more convenient than editing the file on the github. [Open the tool in your browser](https://iliyazelenko.github.io/freeCodeCamp-challenges-manager/) (this is a new tool). [Instructions how to use.](https://github.com/iliyaZelenko/freeCodeCamp-challenges-manager/blob/master/HOW_TO_USE.md)
+
 You can also clone the project and edit locally on your computer. For help with that, read the main [contributing guide](/CONTRIBUTING.md).
 
 ### Challenge Template
