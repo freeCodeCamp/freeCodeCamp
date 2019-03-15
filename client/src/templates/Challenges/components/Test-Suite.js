@@ -38,7 +38,7 @@ function TestSuite({ tests }) {
             className='test-result'
             key={text.slice(-6) + index}
             tabIndex='0'
-            >
+          >
             <div className='test-status-icon'>
               {isInitial ? <Initial /> : statusIcon}
             </div>
