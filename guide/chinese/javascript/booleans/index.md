@@ -4,51 +4,51 @@ localeTitle: 布尔
 ---
 ## 布尔
 
-布尔值是计算机编程语言中常用的原始数据类型。根据定义，布尔值有两个可能的值： `true`或`false` 。
+布尔值是计算机编程语言中常用的原始数据类型。根据定义，一个布尔值有两个可能的值： `true` 或 `false` 。
 
-在Javascript中，通常存在对boolean的隐式类型强制。例如，如果你有一个if语句来检查某个表达式，那么该表达式将被强制转换为布尔值：
+在 Javascript 中，通常存在隐式类型强制转换为布尔值的情况。例如，如果你有一个 if 语句来检查某个表达式，那么该表达式将被强制转换为布尔值：
 
 ```javascript
 var a = 'a string'; 
- if (a) { 
+if (a) { 
   console.log(a); // logs 'a string' 
- } 
+} 
 ```
 
-只有少数值会被强制为false：
+只有少数值会被强制转换为 false ：
 
-*   假（不是真的被胁迫，因为它已经是假的）
-*   空值
-*   未定义
-*   为NaN
+*   false（并不算强制转换，因为它本来就是 false ）
+*   null
+*   undefined
+*   NaN
 *   0
-*   ''（空字符串）
+*   '' 或 "" （空字符串）
 
 所有其他值将被强制为true。 当一个值被强制转换为布尔值时，我们也称之为'falsy'或'truthy'。
 
-使用类型强制的一种方法是使用or（ `||` ）和and（ `&&` ）运算符：
+使用或（ `||` ）和与（ `&&` ）运算符时也会出现类型强制转换：
 
 ```javascript
 var a = 'word'; 
- var b = false; 
- var c = true; 
- var d = 0 
- var e = 1 
- var f = 2 
- var g = null 
- 
- console.log(a || b); // 'word' 
- console.log(c || a); // true 
- console.log(b || a); // 'word' 
- console.log(e || f); // 1 
- console.log(f || e); // 2 
- console.log(d || g); // null 
- console.log(g || d); // 0 
- console.log(a && c); // true 
- console.log(c && a); // 'word' 
+var b = false; 
+var c = true; 
+var d = 0 
+var e = 1 
+var f = 2 
+var g = null 
+
+console.log(a || b); // 'word' 
+console.log(c || a); // true 
+console.log(b || a); // 'word' 
+console.log(e || f); // 1 
+console.log(f || e); // 2 
+console.log(d || g); // null 
+console.log(g || d); // 0 
+console.log(a && c); // true 
+console.log(c && a); // 'word' 
 ```
 
-如您所见， _or_运算符检查第一个操作数。如果这是真的或真实的，它会立即返回（这就是为什么我们在第一种情况下得到'word'而在第二种情况下得到true）。如果它不是真或真，它会返回第二个操作数（这就是为什么我们在第三种情况下得到'word'）。
+如您所见， _或_ 运算符检查第一个操作数。如果这是真的或真实的，它会立即返回（这就是为什么我们在第一种情况下得到'word'而在第二种情况下得到true）。如果它不是真或真，它会返回第二个操作数（这就是为什么我们在第三种情况下得到'word'）。
 
 使用和运算符它以类似的方式工作，但为了'和'是真的，两个操作数都需要真实。因此，如果两者都是真/真，它将始终返回第二个操作数，否则它将返回false。这就是为什么在第四种情况下我们得到了真实，在最后一种情况下，我们得到了'字'。
 
