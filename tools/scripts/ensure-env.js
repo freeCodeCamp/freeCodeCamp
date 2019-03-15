@@ -2,51 +2,60 @@ const fs = require('fs');
 const path = require('path');
 const debug = require('debug');
 
-const envPath = path.resolve(__dirname, '../../.env');
-require('dotenv').config({ path: envPath });
+const env = require('../../config/env');
+
+const { getChallengesForLang } = require('../../curriculum/getChallenges');
+const { createPathMigrationMap } = require('./seed/createPathMigrationMap');
 
 const { createRedirects } = require('./createRedirects');
 
 const log = debug('fcc:tools:ensure-env');
-const {
-  HOME_LOCATION: home,
-  API_LOCATION: api,
-  FORUM_LOCATION: forum,
-  FORUM_PROXY_LOCATION: forumProxy,
-  LOCALE: locale
-} = process.env;
 
-const locations = {
-  homeLocation: home,
+const { NODE_ENV } = process.env;
+
+const {
   apiLocation: api,
   forumLocation: forum,
-  forumProxyLocation: forumProxy
-};
-
+  locale,
+  newsLocation: news
+} = env;
 
 const apiPath = path.resolve(__dirname, '../../api-server');
 const clientPath = path.resolve(__dirname, '../../client');
 const clientStaticPath = path.resolve(clientPath, 'static');
 const globalConfigPath = path.resolve(__dirname, '../../config');
-const env = Object.assign(locations, {locale});
 
-const redirects = createRedirects({ api, home, forum, forumProxy });
+if (NODE_ENV === 'production') {
+  const redirects = createRedirects({ api, news, forum });
+  fs.writeFile(`${clientStaticPath}/_redirects`, redirects, function(err) {
+    if (err) {
+      log('Error');
+      console.error(err);
+    }
+    log('_redirects written');
+  });
+} else {
+  log(`ignoring creation of redirect file in ${NODE_ENV}`);
+}
 
-fs.writeFile(`${clientStaticPath}/_redirects`, redirects, function(err) {
-  if (err) {
-    log('Error');
-    console.error(err);
-  }
-  log('_redirects written');
-});
-
-fs.access(`${apiPath}/server/resources/pathMigration.json`, err => {
-  if (err) {
+const migrationMapPath = `${apiPath}/server/resources/pathMigration.json`;
+fs.access(migrationMapPath, err => {
+  if (err && NODE_ENV !== 'production') {
     log('creating pathMigration');
-    return fs.writeFileSync(
-      `${apiPath}/server/resources/pathMigration.json`,
-      '{}'
-    );
+    return fs.writeFileSync(migrationMapPath, '{}');
+  }
+  if (NODE_ENV === 'production') {
+    return getChallengesForLang(locale)
+      .then(createPathMigrationMap)
+      .then(map => {
+        fs.writeFileSync(migrationMapPath, JSON.stringify(map));
+        log('pathMigration has been written');
+      })
+      .catch(err => {
+        console.error(err);
+        // eslint-disable-next-line
+        process.exit(1);
+      });
   }
   log('pathMigration present');
   return null;
