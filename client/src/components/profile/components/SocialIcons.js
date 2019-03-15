@@ -21,13 +21,14 @@ const propTypes = {
   linkedin: PropTypes.string,
   show: PropTypes.bool,
   twitter: PropTypes.string,
+  username: PropTypes.string,
   website: PropTypes.string
 };
 
-function LinkedInIcon(linkedIn) {
+function LinkedInIcon(linkedIn, username) {
   return (
     <a
-      aria-label='Link to our LinkedIn'
+      aria-label={`Link to ${username}'s LinkedIn`}
       href={linkedIn}
       rel='noopener noreferrer'
       target='_blank'
@@ -37,10 +38,10 @@ function LinkedInIcon(linkedIn) {
   );
 }
 
-function GithubIcon(ghURL) {
+function GithubIcon(ghURL, username) {
   return (
     <a
-      aria-label='Link to our Facebook'
+      aria-label={`Link to ${username}'s Github`}
       href={ghURL}
       rel='noopener noreferrer'
       target='_blank'
@@ -50,10 +51,10 @@ function GithubIcon(ghURL) {
   );
 }
 
-function WebsiteIcon(website) {
+function WebsiteIcon(website, username) {
   return (
     <a
-      aria-label={`Link to ${website}`}
+      aria-label={`Link to ${username}'s website`}
       href={website}
       rel='noopener noreferrer'
       target='_blank'
@@ -63,10 +64,10 @@ function WebsiteIcon(website) {
   );
 }
 
-function TwitterIcon(handle) {
+function TwitterIcon(handle, username) {
   return (
     <a
-      aria-label='Link to our Twitter'
+      aria-label={`Link to ${username}'s Twitter`}
       href={handle}
       rel='noopener noreferrer'
       target='_blank'
@@ -85,6 +86,7 @@ function SocialIcons(props) {
     isWebsite,
     linkedin,
     twitter,
+    username,
     website
   } = props;
   const show = isLinkedIn || isGithub || isTwitter || isWebsite;
@@ -95,10 +97,10 @@ function SocialIcons(props) {
   return (
     <Row>
       <Col className='text-center social-media-icons' sm={6} smOffset={3}>
-        {isLinkedIn ? LinkedInIcon(linkedin) : null}
-        {isGithub ? GithubIcon(githubProfile) : null}
-        {isWebsite ? WebsiteIcon(website) : null}
-        {isTwitter ? TwitterIcon(twitter) : null}
+        {isLinkedIn ? LinkedInIcon(linkedin, username) : null}
+        {isGithub ? GithubIcon(githubProfile, username) : null}
+        {isWebsite ? WebsiteIcon(website, username) : null}
+        {isTwitter ? TwitterIcon(twitter, username) : null}
       </Col>
     </Row>
   );
