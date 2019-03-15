@@ -3,19 +3,11 @@ title: RAM
 ---
 ## RAM
 
-RAM stands for random access memory, alternatively referred to as **main memory**, **primary memory**, or **system memory**.<br>
+RAM stands for random-access memory, alternatively referred to as **main memory**, **primary memory**, **primary storage**, or **system memory**. It is a piece of computer hardware where the data that your computer is currently working on is stored.
 
-This is where a PC stores data before it’s processed. A RAM DIMM (Dual Insert Memory Module) is made of up memory chips that a computer can write continiously & rapidly. RAM is a volatile form of data storage, which means that it only process and transfer data as long as it is powered on. The moment RAM is out of power is the moment the data inside RAM is erased. RAM is measured in gigabytes (GB). In contrast to other direct-access storage media such as CD & DVD or hard disks, read and write times varies significantly depending on their physical location, recording medium and media rotation and arm movement.
+Unlike hard drives which are also called **secondary storage**, RAM is *volatile* memory and requires power to keep the data accessible. If the power is turned off, all data contained in RAM is lost. New users often confuse RAM with disk drive space. See [memory definition](https://www.computerhope.com/jargon/m/memory.htm) for a comparison between system memory and hard drive storage.
 
-RAM contains multiplexing and demultiplexing circuitry, to connect the data lines to the addressed storage for reading or writing the entry. Usually more than one bit of storage is accessed by the same address, and RAM devices often have multiple data lines and are said to be "8-bit" or "16-bit", etc. devices.
-
-RAM is associated with volatile types of memory, altough non-volatile RAM has also been developed. However, these types of RAM come with a burden. Such as not being able to write but just read.
-
-RAM consumes much more power than hard drives. However, as stated above the RAM you will be using in your laptop or computer is most likely a volatile memory and requires power to keep the data accessible. If the computer is powered off, all information inside RAM will be lost.
-(https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br>
- 
-
-### Types of RAM:
+### Types of RAM
 
 There are two main types of RAM: static (SRAM) and dynamic (DRAM). Static RAM is constructed using flip-flops, is very fast, but is difficult to make in large sizes. Dynamic RAM is constructed using capacitors, is fairly fast, but needs 'refreshed' periodically to keep charge on the capacitors. SRAM is often used closer to the CPU due to its speed and space constraints whereas DRAM is used as main memory.
 
@@ -23,17 +15,17 @@ Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SO-RIMM. Belo
 
 ![RAM](https://images-na.ssl-images-amazon.com/images/I/41kVnWQebtL._SL256_.jpg)
 
-### RAM speeds:
+### RAM Speeds
 
-The speed rating of your RAM module is an expression of its data transfer rate, and it's almost always expressed in megahertz (Mhz). The faster the number, the faster your computer can store and retrieve the data stored in local memory. The formula for the exact speed rating changes slightly based on the version of DDR memory your computer is using. It’s no longer simply an expression of clock speed, like a processor, but a combination of hardware factors. But in general, faster is better. Like the GPU and CPU, RAM can also be overclocked. To achieve the faster speed, a user has to enable an XMP (Intel) or AMP (AMD) profile in the BIOS.
+The speed rating of your RAM module is an expression of its data transfer rate, and it's almost always expressed in megahertz (Mhz). The faster the number, the faster your computer can store and retrieve the data stored in local memory. The formula for the exact speed rating changes slightly based on the version of DDR memory your computer is using. It’s no longer simply an expression of clock speed, like a processor, but a combination of hardware factors. But in general, faster is better. Like the GPU (graphical processing unit) and CPU (central processing unit), RAM can also be overclocked. To achieve the faster speed, a user has to enable an XMP (Intel) or AMP (AMD) profile in the BIOS.
 
 The standard which dictates the rough speed for RAM in most computers has been DDR3, which is still widely adopted and supports a limit of 2133MHz or greater when run outside of its specification by overclocking. A new standard, DDR4, has been released in recent years and promises a wider range of clock speeds and reduced power consumption and latencies, and increases the maximum DIMM size from 16 GB to 64 GB.
 
-The clock speed of the RAM module is not all that matters though. System memory is also affected by the [CAS latency](https://en.wikipedia.org/wiki/CAS_latency) or timings. This can commonly be seen on a RAM module's specifications as a list of numbers separated by dashes such as 15-15-15-35 . Unlike the clock speed the lower these numbers the better the performance. Typically an increase in clock speed requires an increase in latency, and this even apparent across the DDR generations as with each new versions higher clock speeds and higher latencies are seen.
+The clock speed of the RAM module is not all that matters though. System memory is also affected by the [CAS latency](https://en.wikipedia.org/wiki/CAS_latency) or timings. This can commonly be seen on a RAM module's specifications as a list of numbers separated by dashes such as 15-15-15-35 . Unlike the clock speed the lower these numbers are the better the performance. Typically an increase in clock speed requires an increase in latency and this is apparent across the DDR generations, as with each new version higher clock speeds and higher latencies are seen.
 
-### ECC RAM:
+### ECC RAM
 
-Servers typically use ECC or Error-Correcting Code RAM. This RAM features a few changes which make it less prone to soft errors in memory. The most notable of these changes is the inclusion of an extra physical memory 'chip' on the module. This added memory serves partly to check if any memory has become corrupted. This does bring with it a bit of overhead though, which includes the necessity for ECC RAM to run on a 72-bit bus as opposed to the typical 64-bit bus that would match the processor (as most computers today run on 64bit x86-64 CPUS)
+Servers typically use ECC or Error-Correcting Code RAM. This RAM features a few differences which make it less prone to soft errors in memory. The most notable of these changes is the inclusion of an extra physical memory 'chip' on the module. This added memory serves partly to check if any memory has become corrupted. This does bring with it a bit of overhead though, which includes the necessity for ECC RAM to run on a 72-bit bus as opposed to the typical 64-bit bus that would match the processor (as most computers today run on 64bit x86-64 CPUs)
 
 Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a relevant feature to most consumers, instead being mostly used in servers, data centers, and high end business workstations where the added 'insurance' against any down time is worth the added cost.
 
