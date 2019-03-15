@@ -1,5 +1,6 @@
 ---
 title: Constructors
+
 ---
 Constructors are functions or methods in a program that creates an object of a class and can also initialize attributes for the object. The object is an instance of the class and can perform the methods/functions defined within the class.
 
@@ -33,14 +34,14 @@ Then, when calling `new Car()`, the variable `name` will get auto-initialized to
 Clearly, constructors are exactly as they sound: they are used to `construct` i.e., instantiate an object of a particular class.  
 Constructors look similar to method declarations, but are slightly different in the sense that they:
 
-1.  Are named exactly the same as the class.
-2.  Don't have a return type.
+1. Are named exactly the same as the class.
+2. Don't have a return type.
 
 Hence, the purpose of using `constructors` is to provide:
 
-1.  A way to instantiate an object.
-2.  Provide initial values to a object properties.
-3.  Control how an object is created.
+1. A way to instantiate an object.
+2. Provide initial values to a object properties.
+3. Control how an object is created.
 
 Let's look at another example. Say, Honda (the car manufacturer), wants all of its cars to be named `Honda <a name>`. In order to enforce this, we might represent this using a class as follows:
 
@@ -147,11 +148,14 @@ public class Car {
 So, the only way to gain access to the instance is by using `Bank.getInstance()`. Such instances are called `Singleton` since you get exactly one instance (per VM to be precise) throughout the life of your application.
 
 ## Copy constructor
+
 The copy constructor is a constructor which creates an object by initializing it with an object of the same class, which has been created previously. The copy constructor is used to-
+
 1. Initialize an object from another of the same type.
 2. Copy an object to pass it as an argument to a function.
 3. Copy an object to return it from a function.
-Here is a program that shows a simple use of copy constructor:
+   Here is a program that shows a simple use of copy constructor:
+
 ```Java
 class Complex {
  
@@ -173,8 +177,37 @@ class Complex {
     }
 }
 ```
+
 [run the full code](https://repl.it/MwnJ)
 
+## Constructor Chaining
+
+A chaining constructor is when a constructor calls another constructor from the same class.It can be used for multiple ways to create one Object which can be useful.
+
+```Java
+class Number {
+ 
+    int number;
+     
+    // Constructor 1
+    public Number(int number) {
+        this.number = number;
+    }
+    
+    // Chained Construction(Constructor 2)
+    public Number(int number1, int number2) {
+        //Calls the Constructor 1
+        this(number1+number2);
+    }
+    
+    // Chained Construction(Constructor 3)
+    public Number(int number1, float floatNumber) {
+        //Calls the Constructor 2
+        this(number1, (int) floatNumber*3);
+    }
+    
+}
+```
 
 #### More Information:
 - [Oracle Java Docs :Constructor Declarations](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.8)
