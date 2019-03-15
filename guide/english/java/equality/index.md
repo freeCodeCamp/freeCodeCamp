@@ -49,12 +49,12 @@ For example, you may decide that two `Person`s should be considered "equal" if t
 
 ```java
 public class Person {
-    public String name;
-    public Date dateOfBirth;
-    
-    public boolean equals(Person person) {
-        return this.name.equals(person.name) && this.dateOfBirth.equals(person.dateOfBirth);
-    }
+  public String name;
+  public Date dateOfBirth;
+
+  public boolean equals(Person person) {
+    return this.name.equals(person.name) && this.dateOfBirth.equals(person.dateOfBirth);
+  }
 }
 ```
 
@@ -78,12 +78,11 @@ However, the default implementation of the methods will have limitations as we c
 Consider the following example for the limitation.
 
 ``` java
-    
-    public static void main (String[]args) {
-        Employee emp1 = new Employee(1,"foo");
-        Employee emp2 = new Employee(1,"foo");
-        System.out.println(emp1.equals(emp2)); //output :- false        
-    }
+public static void main (String[]args) {
+  Employee emp1 = new Employee(1,"foo");
+  Employee emp2 = new Employee(1,"foo");
+  System.out.println(emp1.equals(emp2)); //output :- false        
+}
 ```
 The example prints `false` because both the employee objects (though they have same attribute id which is `1`) are stored in different memory locations. Hence, they are not considered to be equal.
 
@@ -92,30 +91,29 @@ The above limitation can be resolved by overriding the equals method of Employee
 ``` java
 @Override
 public boolean equals(Object obj) {
+
+  // If the object is null return false.
+  if (obj == null) return false;
+
+  // If the object is not an instance of Employee object return false.
+  if (!(obj instanceof Employee))
+    return false;
+
+  // If the objects are stored in same memory address return true.
+  if (obj == this)
+    return true;
     
-    // If the object is null return false.
-    if (obj == null) return false;
-    
-    // If the object is not an instance of Employee object return false.
-    if (!(obj instanceof Employee))
-        return false;
-    
-    // If the objects are stored in same memory address return true.
-    if (obj == this)
-        return true;
-    
-    // If the objects have same employee Id return true. 
-    return this.getId() == ((Employee) obj).getId();
+  // If the objects have same employee Id return true. 
+  return this.getId() == ((Employee) obj).getId();
 }
 ```
 
 Now, the following example will print true as we are comparing the objects on the attribute `id` of the Employee object.
 
 ``` java
-    
-    public static void main (String[]args) {
-        Employee emp1 = new Employee(1,"foo");
-        Employee emp2 = new Employee(1,"foo");
-        System.out.println(emp1.equals(emp2)); //output :- true        
-    }
+public static void main (String[]args) {
+  Employee emp1 = new Employee(1,"foo");
+  Employee emp2 = new Employee(1,"foo");
+  System.out.println(emp1.equals(emp2)); //output :- true        
+}
 ```
