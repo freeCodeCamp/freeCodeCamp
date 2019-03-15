@@ -47,7 +47,7 @@ The `if` statement will cause an error.  It is important to remember that a sing
 
 The built-in `Object` class in Java, which all other classes automatically extend, contains a number of helpful built-in methods. One such method is `equals()`, which takes another object as its argument and returns whether the two objects should be considered "equal" according to the relevant logic for that class.
 
-The 'String' class is one of the most common examples of a class that overrides the 'equals()' method. When comparing two 'String's for equality, you need to use the 'equals()' method, as '==' won't work as you expect.
+The 'String' class is one of the most common examples of a class that overrides the `equals()` method. When comparing two 'String's for equality, you need to use the `equals()` method, as `==` won't work as you expect.
 
 ```java
 String s1 = "Bob";
