@@ -29,6 +29,20 @@ System.out.println(obj1 == obj3) // false
 System.out.println(obj2 == obj3) // false
 ```
 
+### Note: a common first time coding error is to use a single equal sign instead of double equal signs.  Using a single = will cause a compile time error.  For example:
+
+```java
+int var1 = 4;
+int var2 = 4;
+
+if(var1 = var2)
+    System.out.println("The variables are equal.");
+else
+    System.out.println("The variables are not equal.");
+```
+The `if` statement will cause an error.  It is important to remember that a single equal sign is used for assignment while the double equal sign is used for comparison.
+    
+    
 ## The `.equals()` Method
 
 The built-in `Object` class in Java, which all other classes automatically extend, contains a number of helpful built-in methods. One such method is `equals()`, which takes another object as its argument and returns whether the two objects should be considered "equal" according to the relevant logic for that class.
