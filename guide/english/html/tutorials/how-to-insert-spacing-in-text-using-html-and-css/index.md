@@ -1,7 +1,7 @@
 ---
-title: How to Insert Spaces or Tabs in Text Using HTML and CSS
+title: How to Insert Spacing in Text Using HTML and CSS
 ---
-## How to Insert Spaces or Tabs in Text Using HTML and CSS
+## How to Insert Spacing in Text Using HTML and CSS
 
 There are a multitude of ways to insert spaces using html. For simplicity sake we will 
 go over a couple of these. 
@@ -10,7 +10,7 @@ go over a couple of these.
 
 `<span>`
 
-Span Tags `<span>` are self closing tags meaning they do not need a `/>`.
+Span Tags `<span>` are self closing tags meaning they do not need a `</span>`.
 
 ## Span Example
 
