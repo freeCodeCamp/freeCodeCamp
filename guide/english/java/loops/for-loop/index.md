@@ -59,7 +59,7 @@ for (int i = 1; i <= addUntil; i++)
     sum+=i
 }
 
-System.out.println("The sum of the first 50 numbers is: " + 50);
+System.out.println("The sum of the first 50 numbers is: " + sum);
 ```
 
 ![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYr/0' target='_blank' rel='nofollow'>Run Code</a>
