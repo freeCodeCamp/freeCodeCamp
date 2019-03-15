@@ -42,4 +42,4 @@ Javascript $ ( "MyClass"). SlideDown (). // будет расширять эле
 
 #### Дополнительная информация:
 
-Метод JQuery Show () на [официальном сайте](http://api.jquery.com/show/)
+Метод jQuery Show () на [официальном сайте](http://api.jquery.com/show/)

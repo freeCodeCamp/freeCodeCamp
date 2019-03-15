@@ -76,4 +76,5 @@ System.out.println(s1.equals(s2));      //false
 System.out.println(s1.equalsIgnoreCase(s2));    //true
 ```
 
-The function compares the alphabet irrespective of whether it 
+#### More Information:
+- [Oracle Java Docs : Equality Operators](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.21)
