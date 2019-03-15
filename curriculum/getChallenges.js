@@ -18,11 +18,20 @@ exports.getChallengesDirForLang = getChallengesDirForLang;
 
 exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
-  return new Promise(resolve =>
+  return new Promise(resolve => {
+    let running = 1;
+    function done() {
+      if (--running === 0) {
+        resolve(curriculum);
+      }
+    }
     readDirP({ root: getChallengesDirForLang(lang) })
-      .on('data', file => buildCurriculum(file, curriculum))
-      .on('end', () => resolve(curriculum))
-  );
+      .on('data', file => {
+        running++;
+        buildCurriculum(file, curriculum).then(done);
+      })
+      .on('end', done);
+  });
 };
 
 async function buildCurriculum(file, curriculum) {
