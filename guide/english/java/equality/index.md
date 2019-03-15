@@ -45,7 +45,7 @@ System.out.println(s1.equals(s2)); //true
 
 When you create a new class in Java, you will often want to override the `equals()` method in order to provide a more meaningful way to compare two objects of the same class. How this method is implemented is completely up to the developer's judgement. 
 
-For example, you may decide that two `Person` objects should be considered "equal" if their `name` and `dateOfBirth` instance variables are the same. This logic would be implemented in your `Person` class's `equals()` method:
+For example, you may decide that two `Person` objects should be considered *equal* if their `name` and `dateOfBirth` instance variables are the same. This logic would be implemented in your `Person` class's `equals()` method:
 
 ```java
 public class Person {
@@ -54,7 +54,8 @@ public class Person {
     //The two lines above are instance attributes of the Person object
     
     public boolean equals(Person person) {
-        return this.name.equals(person.name) && this.dateOfBirth.equals(person.dateOfBirth); //An edited equals() method can allow for the developer to choose what characteristics of an object should be compared in order to deem them equal
+        return this.name.equals(person.name) && this.dateOfBirth.equals(person.dateOfBirth);
+        //An edited equals() method can allow for the developer to choose what characteristics of an object should be compared in order to deem them equal
     }
 }
 ```
