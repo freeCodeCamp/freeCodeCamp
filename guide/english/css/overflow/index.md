@@ -14,7 +14,7 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
 * `visible`: This is the default value of the property. Content is not clipped when it's bigger than the box.
 * `hidden`: Overflowing content will be hidden.
 * `scroll`: Similar to hidden, but users will be able to scroll through the hidden content.
-* `auto`: If the content proceeds outside its box, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
+* `auto`: If the content proceeds outside its box, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content. Behaviour can vary according to the browser's user-agent.
 * `initial`: Uses the default value which is visible.
 * `inherit`: Sets the overflow to the value of its parent element.
 
@@ -45,9 +45,10 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
 ![Example Image](https://i.gyazo.com/173a13fd618d7946fceabcf35f33c458.png)
 
 ## overflow-x and overflow-y
+Different overflow properties can be set for content overflowing the width and height of an element.
 
-* `overflow-x`: Allows the user to scroll through the content that extends beyond the height of the box element.
-* `overflow-y`: Allows the user to scroll through the content that extends beyond the width of the box.
+* `overflow-x`: Specify overflow behaviour for left and right edges.
+* `overflow-y`: Specify overflow behaviour for top and bottom edges.
 
 ```css
 .box-element {
@@ -58,7 +59,7 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
 And the `.box-element` will look like this:
 ![Example Image](https://s26.postimg.org/ff2kmdfzd/5-_Xand_Y.png)
 
-If the content overflows the Y-axis, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
+If the content overflows the y-axis, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
 
 ## text-overflow
 
