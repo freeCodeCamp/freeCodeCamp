@@ -5,7 +5,7 @@ title: Voice
 # Voice
 Speech recognition allows users affected by accessibility difficulties (such as permanent visual impairment or temporary impairment while driving) the ability to navigate content on a website or input text data (such as a form). 
 
-Speech synthesis provides websites with the ability to provide information to users by reading the text.
+Speech synthesis provides websites the ability to provide information to users by reading the text.
 
 
 ## Javascript Web Speech API
@@ -81,7 +81,7 @@ The audio captured by the Echo will be influenced by:
 4) the output audio against the wall of the room.
 
 ## Software
-The software components within the platform include both Natural Language Understanding (NLU) as well as Automated Speech Recognition (ASR).  These software components can be leveraged by custom wrote "skills" by independent software developers who are then certified to a set of standards by Amazon. There are already more than 20k of these custom skills available through their app store.
+The software components within the platform include both Natural Language Understanding (NLU) as well as Automated Speech Recognition (ASR). These software components can be leveraged by custom written "skills" by independent software developers who are then certified to a set of standards by Amazon. There are already more than 20k of these custom skills available through their app store.
 
 ## IBM Watson Speech-to-Text API
 The IBM Watson Speech-to-Text API uses machine learning to accurately predict speech in real time. Currently, seven different languages are supported as well as live voice and pre-recorded audio. The API can be used for free; paid versions are also available for larger scale apps. 
