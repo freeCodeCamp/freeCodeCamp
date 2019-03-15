@@ -29,9 +29,9 @@ System.out.println(obj1 == obj3) // false
 System.out.println(obj2 == obj3) // false
 ```
 
-Note: a common first time coding error is to use a single equal sign instead of double equal signs.  Using a single = will cause a compile time error.  For example:
+### Note: a common first time coding error is to use a single equal sign instead of double equal signs.  Using a single = will cause a compile time error.  For example:
 
-```
+```java
 int var1 = 4;
 int var2 = 4;
 
@@ -40,7 +40,7 @@ if(var1 = var2)
 else
     System.out.println("The variables are not equal.");
 ```
-The if statement will cause an error.  It is important to remember that a single equal sign is used for assignment (int var1 = 4;) while the double equal sign is used for comparison ( if(var1 == var2)...)
+The `if` statement will cause an error.  It is important to remember that a single equal sign is used for assignment while the double equal sign is used for comparison.
     
     
 ## The `.equals()` Method
