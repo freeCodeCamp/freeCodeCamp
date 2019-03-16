@@ -3,12 +3,11 @@ title: Grid System
 ---
 ## Grid System
 
-In a nutshell, the Bootstrap grid system helps you create responsive layouts, this system is comprised of a grid containing rows and columns that help you structure your content. 
+In a nutshell, the Bootstrap grid system helps you create responsive layouts, and it is comprised of a system of rows and columns that helps you structure your content. 
 
 Rows are horizontal groups of columns, and each page has a maximum of 12 columns per row. Within each row, the content is placed inside the columns and it can span anywhere between 1 to 12 columns.
 
-Bootstrap has five different types of grid tiers: Extra small, Small, Medium, Large, and Extra large. There is a breakpoint defined for each of these grid tiers.
-
+Bootstrap has five different types of grid tiers: Extra small, Small, Medium, Large and Extra large. There is a breakpoint defined for each of these grid tiers.
 Bootstrap uses pixels to define the grid tier breakpoints.
 
 #### How it works
