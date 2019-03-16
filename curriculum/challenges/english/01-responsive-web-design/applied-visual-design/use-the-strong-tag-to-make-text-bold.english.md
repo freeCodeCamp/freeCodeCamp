@@ -12,7 +12,7 @@ To make text bold, you can use the <code>strong</code> tag. This is often used t
 
 ## Instructions
 <section id='instructions'>
-Wrap a <code>strong</code> tag around "Stanford University" inside the <code>p</code> tag.
+Wrap a <code>strong</code> tag around "Stanford University" inside the <code>p</code> tag (do not include the period).
 </section>
 
 ## Tests
