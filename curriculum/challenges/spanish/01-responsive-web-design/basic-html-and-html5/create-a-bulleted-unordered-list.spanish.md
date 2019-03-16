@@ -25,6 +25,8 @@ tests:
     testString: 'assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, "Make sure your <code>ul</code> element has a closing tag.");'
   - text: Asegúrese de que sus elementos <code>li</code> tengan etiquetas de cierre.
     testString: 'assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length, "Make sure your <code>li</code> elements have closing tags.");'
+  - text: Asegúrese de que sus elementos <code>li</code> no contengan una cadena vacía o sólo espacios en blanco.
+    testString: assert($("ul li").filter((_, item) => !$(item).text().trim()).length === 0, 'Make sure your <code>li</code> elements don\’t contain an empty string or only white-space.');
 
 ```
 
