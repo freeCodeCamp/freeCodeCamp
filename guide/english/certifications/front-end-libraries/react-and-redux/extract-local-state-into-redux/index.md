@@ -3,8 +3,31 @@ title: Extract Local State into Redux
 ---
 ## Extract Local State into Redux
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/extract-local-state-into-redux/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+```javascript
+const ADD = 'ADD';
+const addMessage = (message) => {
+    return ({
+        type: ADD,
+        message
+    })
+}
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+// Use ES6 default paramter to give the 'previousState' parameter an initial value.
+const messageReducer = (previousState = [], action) => {
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+    // Use switch statement to lay out the reducer logic in response to different action type
+    switch(action.type) {
+        case ADD:
+
+            // Use ES6 spread operator to return a new array where the new message is added to previousState
+            return [...previousState, action.message]
+            break;
+
+        default:
+            // A default case to fall back on in case if the update to Redux store is not for this specific state.
+            return previousState;
+    }
+}
+
+const store = Redux.createStore(messageReducer);
+```
