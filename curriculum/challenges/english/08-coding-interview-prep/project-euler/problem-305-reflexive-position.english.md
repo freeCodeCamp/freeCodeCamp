@@ -31,7 +31,7 @@ Find ∑f(3k) for 1≤k≤13.
 ```yml
 tests:
   - text: <code>euler305()</code> should return 18174995535140.
-    testString: 'assert.strictEqual(euler305(), 18174995535140, "<code>euler305()</code> should return 18174995535140.");'
+    testString: assert.strictEqual(euler305(), 18174995535140, '<code>euler305()</code> should return 18174995535140.');
 
 ```
 

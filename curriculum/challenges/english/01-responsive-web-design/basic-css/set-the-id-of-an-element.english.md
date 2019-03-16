@@ -25,7 +25,7 @@ Give your <code>form</code> element the id <code>cat-photo-form</code>.
 ```yml
 tests:
   - text: Give your <code>form</code> element the id of <code>cat-photo-form</code>.
-    testString: 'assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");'
+    testString: assert($("form").attr("id") === "cat-photo-form", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');
 
 ```
 

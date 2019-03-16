@@ -22,13 +22,13 @@ The code editor has the previous example as well as the start of a <code>reducer
 ```yml
 tests:
   - text: Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.
-    testString: 'assert(loginAction().type === "LOGIN", "Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.");'
+    testString: assert(loginAction().type === 'LOGIN', 'Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.');
   - text: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.
-    testString: 'assert(store.getState().login === false, "The store should be initialized with an object with property <code>login</code> set to <code>false</code>.");'
+    testString: assert(store.getState().login === false, 'The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');
   - text: Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.
-    testString: 'assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })(), "Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.");'
-  - text: 'If the action is not of type <code>LOGIN</code>, the store should return the current state.'
-    testString: 'assert((function() { store.dispatch({type: "__TEST__ACTION__"}); let afterTest = store.getState(); return typeof afterTest === "object" && afterTest.hasOwnProperty("login") })(), "If the action is not of type <code>LOGIN</code>, the store should return the current state.");'
+    testString: assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })(), 'Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.');
+  - text: If the action is not of type <code>LOGIN</code>, the store should return the current state.
+    testString: 'assert((function() { store.dispatch({type: ''__TEST__ACTION__''}); let afterTest = store.getState(); return typeof afterTest === ''object'' && afterTest.hasOwnProperty(''login'') })(), ''If the action is not of type <code>LOGIN</code>, the store should return the current state.'');'
 
 ```
 
