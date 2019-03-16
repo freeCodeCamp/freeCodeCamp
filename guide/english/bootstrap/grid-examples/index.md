@@ -106,6 +106,5 @@ Change the order of the grid columns with `.col-md-push-*` and `.col-md-pull-*` 
 
 #### More Information:
 
-[Bootstrap Grid](https://getbootstrap.com/docs/4.0/layout/grid/)
-
+[Bootstrap Grid](https://getbootstrap.com/docs/4.1/layout/grid/)
 
