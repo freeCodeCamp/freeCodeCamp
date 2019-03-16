@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-placeholder-text-to-a-text-field'
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 ---
 
@@ -10,7 +9,8 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 <section id='description'>
 Placeholder text is what is displayed in your <code>input</code> element before your user has inputted anything.
 You can create placeholder text like so:
-<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code>
+<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code><br>
+<strong>Note:</strong> Remember that <code>input</code> elements are self-closing.
 </section>
 
 ## Instructions
