@@ -3,16 +3,11 @@ title: Font Awesome Icons For Bootstrap
 ---
 ## Font Awesome Icons For Bootstrap
 
-Bootstrap (from version 4 onwards) have dropped Glyphicon icons font in their latest release. 
-
-Font Awesome icons provide you with over 675 icons and they come in font format.
+Fontawesome Icons provide you with over 675 icons and they come in font format.
 
 #### How To Use:
 
 In the `<head>` of your html include a reference to Font Awesome. 
-```html
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-```
 
 You can also use Font Awesome's own CDN.
 ```html
@@ -25,10 +20,9 @@ Additionally, the Font Awesome CDN can supply the brand and regular logos indepe
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/brands.css" integrity="sha384-Px1uYmw7+bCkOsNAiAV5nxGKJ0Ixn5nChyW8lCK1Li1ic9nbO5pC/iXaq27X5ENt" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css" integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I" crossorigin="anonymous">
 ```
-Using Font Awesome is same as using Glyphicon. 
 
-
-Simply create `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's name.  A code example has been provided below.
+Using fontawesome is same as using [Glyphicon](https://www.glyphicons.com/). 
+Simply create a `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's name.  A code example has been provided below.
 
 **Code Example:**
 
@@ -71,4 +65,3 @@ List of v5 free icons is available [here](https://fontawesome.com/icons?d=galler
 
 #### More Information:
 [Font Awesome Cheatsheet](http://fontawesome.io/cheatsheet/)
-
