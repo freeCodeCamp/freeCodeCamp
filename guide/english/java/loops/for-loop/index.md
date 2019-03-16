@@ -15,7 +15,7 @@ for (variable initialization; boolean expression; increment expression)
 
 * `initialization` - Initializes the loop and is executed just once, at the beginning.
 
-You can initialize more than one variable of the same type in the first part of the basic `for` loop declaration; each initialization must be separated by a comma.
+You can initialize more than one variable of the same type in the first part of the basic `for` loop declaration; each initialization must be separated by a comma. Remember that the variable(s) declared as the `initialization` will only be used within that `for` loop and nowhere else outside of the loop.
 
 * `expression` - Evaluated at the beginning of each iteration. If the `expression` evaluates to `true`, `Statements` will get executed.
 * `increment` - Invoked after each iteration through the loop. You can increase/decrease the value of variables here. Be sure the increment is working towards the expression value, to avoid an infinite loop.
@@ -59,7 +59,7 @@ for (int i = 1; i <= addUntil; i++)
     sum+=i
 }
 
-System.out.println("The sum of the first 50 numbers is: " + 50);
+System.out.println("The sum of the first 50 numbers is: " + sum);
 ```
 
 ![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYr/0' target='_blank' rel='nofollow'>Run Code</a>

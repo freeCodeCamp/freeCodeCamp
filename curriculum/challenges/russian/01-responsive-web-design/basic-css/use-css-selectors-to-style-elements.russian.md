@@ -7,7 +7,8 @@ localeTitle: Используйте селекторы CSS для изменен
 ---
 
 ## Description
-<section id="description"> В CSS есть сотни <code>properties</code> CSS, которые вы можете использовать, чтобы изменить способ поиска элемента на вашей странице. Когда вы ввели <code>&lt;h2 style=&quot;color: red&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> , вы стали стилизовать этот отдельный элемент <code>h2</code> со <code>inline CSS</code> , который обозначает <code>Cascading Style Sheets</code> . Это один из способов указать стиль элемента, но есть лучший способ применить <code>CSS</code> . В верхней части кода создайте блок <code>style</code> следующим образом: <blockquote> &lt;style&gt; <br> &lt;/ style&gt; </blockquote> Внутри этого блока стиля вы можете создать <code>CSS selector</code> для всех элементов <code>h2</code> . Например, если вы хотите, чтобы все элементы <code>h2</code> были красными, вы можете добавить правило CSS, которое выглядит так: <blockquote> &lt;style&gt; <br> h2 {color: red;} <br> &lt;/ style&gt; </blockquote> Обратите внимание, что важно иметь как открывающиеся, так и закрывающие фигурные скобки ( <code>{</code> и <code>}</code> ) вокруг правила CSS каждого селектора. Вы также должны убедиться, что правила CSS вашего селектора находится между открывающей и закрывающей фигурной скобкой. Наконец, обязательно добавьте точку с запятой в конец каждого из правил CSS вашего селектора. </section>
+
+<section id="description"> В CSS есть сотни <code>properties</code> CSS, которые вы можете использовать, чтобы изменить способ поиска элемента на вашей странице. Когда вы ввели <code>&lt;h2 style=&quot;color: red;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> , вы стали стилизовать этот отдельный элемент <code>h2</code> со <code>inline CSS</code> , который обозначает <code>Cascading Style Sheets</code> . Это один из способов указать стиль элемента, но есть лучший способ применить <code>CSS</code> . В верхней части кода создайте блок <code>style</code> следующим образом: <blockquote> &lt;style&gt; <br> &lt;/ style&gt; </blockquote> Внутри этого блока стиля вы можете создать <code>CSS selector</code> для всех элементов <code>h2</code> . Например, если вы хотите, чтобы все элементы <code>h2</code> были красными, вы можете добавить правило CSS, которое выглядит так: <blockquote> &lt;style&gt; <br> h2 {color: red;} <br> &lt;/ style&gt; </blockquote> Обратите внимание, что важно иметь как открывающиеся, так и закрывающие фигурные скобки ( <code>{</code> и <code>}</code> ) вокруг правила CSS каждого селектора. Вы также должны убедиться, что правила CSS вашего селектора находится между открывающей и закрывающей фигурной скобкой. Наконец, обязательно добавьте точку с запятой в конец каждого из правил CSS вашего селектора. </section>
 
 ## Instructions
 <section id="instructions"> Удалите атрибут стиля элемента <code>h2</code> и вместо этого создайте блок <code>style</code> CSS. Добавьте необходимые правила CSS, чтобы все элементы <code>h2</code> стали синими. </section>
@@ -38,7 +39,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2 style="color: red">CatPhotoApp</h2>
+<h2 style="color: red;">CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
 

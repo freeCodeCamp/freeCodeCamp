@@ -17,10 +17,12 @@
 .map-title {
   display: flex;
   align-items: center;
-  cursor: pointer;
   padding-top: 10px;
   padding-bottom: 20px;
+  border: none;
   border-bottom: 1px solid #e2e2e2;
+  background-color: transparent;
+  width: 100%;
 }
 
 .map-title > h4 {

@@ -129,7 +129,11 @@ export class Block extends Component {
     });
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
-        <div className='map-title' onClick={this.handleBlockClick}>
+        <button
+          aria-expanded={isExpanded}
+          className='map-title'
+          onClick={this.handleBlockClick}
+        >
           <Caret />
           <h4>{blockNameify(blockDashedName)}</h4>
           <div className='map-title-completed'>
@@ -140,7 +144,7 @@ export class Block extends Component {
             </span>
             <span>{`${completedCount}/${challengesWithCompleted.length}`}</span>
           </div>
-        </div>
+        </button>
         <ul>
           {isExpanded
             ? this.renderChallenges(intro, challengesWithCompleted)

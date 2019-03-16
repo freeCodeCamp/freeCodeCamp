@@ -29,11 +29,25 @@ System.out.println(obj1 == obj3) // false
 System.out.println(obj2 == obj3) // false
 ```
 
+### Note: a common first time coding error is to use a single equal sign instead of double equal signs.  Using a single = will cause a compile time error.  For example:
+
+```java
+int var1 = 4;
+int var2 = 4;
+
+if(var1 = var2)
+    System.out.println("The variables are equal.");
+else
+    System.out.println("The variables are not equal.");
+```
+The `if` statement will cause an error.  It is important to remember that a single equal sign is used for assignment while the double equal sign is used for comparison.
+    
+    
 ## The `.equals()` Method
 
 The built-in `Object` class in Java, which all other classes automatically extend, contains a number of helpful built-in methods. One such method is `equals()`, which takes another object as its argument and returns whether the two objects should be considered "equal" according to the relevant logic for that class.
 
-The 'String' class is one of the most common examples of a class that overrides the 'equals()' method. When comparing two 'String's for equality, you need to use the 'equals()' method, as '==' won't work as you expect.
+The 'String' class is one of the most common examples of a class that overrides the `equals()` method. When comparing two 'String's for equality, you need to use the `equals()` method, as `==` won't work as you expect.
 
 ```java
 String s1 = "Bob";
@@ -63,6 +77,18 @@ Most of the built-in classes in Java, as well as classes provided by popular lib
 For example, the `java.util.Set` interface specifies that a `Set`'s `equals()` method will return true if "the specified object is also a set, the two sets have the same size, and every member of the specified set is contained in this set".
 
 However, if a class does not override the default `equals()` implementation, the default implementation will apply, which simply uses the `==` operator to compare the two objects.
+
+## The `.equalsIgnoreCase()` Method
+
+This built-in function in java is used to compare the equality of 2 strings return true or false depending on the match but this function does not see if the characters are in upper case or in lower case.
+Example:
+
+```java
+String s1="DEMO for Equality";
+String s2="Demo for equality";
+System.out.println(s1.equals(s2));      //false
+System.out.println(s1.equalsIgnoreCase(s2));    //true
+```
 
 #### More Information:
 - [Oracle Java Docs : Equality Operators](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.21)
