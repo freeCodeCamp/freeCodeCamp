@@ -66,8 +66,7 @@ using std::endl;
 
 int main () {
    // for loop execution
-   for( int a = 10; a < 20; a = a + 1 ) 
-   { // The loop will run till the value of a is less than 20
+   for( int a = 10; a < 20; a++ ) { // The loop will run till the value of a is less than 20
       cout << "value of a: " << a << endl;
    }
 
@@ -99,7 +98,7 @@ The body of the for loop need not be enclosed in braces if the loop iterates ove
    
    int main () {
    // Single line for loop
-   for( int a = 10; a < 20; a = a + 1 ) 
+   for( int a = 10; a < 20; a++ ) 
       cout << "value of a: " << a << endl;
    
 
