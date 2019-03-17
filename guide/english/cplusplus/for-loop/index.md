@@ -2,6 +2,8 @@
 title: For Loop
 ---
 
+# For Loop
+
 A `for` loop is a repetitive statement that is used to check for some condition and then, based upon the condition a block of code, is executed repeatedly until the specified condition is satisfied.
 
 The `for` loop is distinguished from other looping statements through an explicit loop counter or loop variable which allows the body of the loop to know the exact sequencing of each iteration.
