@@ -33,3 +33,14 @@ src="https://www.youtube.com/watch?v=v8kFT4I31es?autoplay=1">
 ```
 
 Inserted values are recommended, and feel free to change them however you like.
+
+## YouTube Loop
+
+Value 0 (default): The video will play only once.<br>
+Value 1: The video will loop (forever).
+
+```
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+</iframe>
+```
