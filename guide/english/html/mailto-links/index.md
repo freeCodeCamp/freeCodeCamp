@@ -22,9 +22,9 @@ If you want to add a specific subject to that mail, be careful to add `%20` or `
 
 Similarly, you can add a specific message in the body portion of the email:
 Again, spaces have to be replaced by `%20` or `+`.
-After the subject paramater, any additional parameter must be preceded by `&`
+After the subject paramater, any additional parameter must be preceded by `&`.
 
-Example: Say you want users to send an email to their friends about their progress at Free Code Camp:
+Example: Say you want users to send an email to their friends about their progress at Free Code Camp.
 
 Address: empty
 
@@ -36,12 +36,13 @@ Your html link now:
 ```html
 <a href="mailto:?subject=Great%20news&body=I%20am%20becoming%20a%20developer">Send mail!</a>
 ```
-Here, we've left mailto empty (mailto:?). This will open the user's email client and the user will add the recipient address themselves.
+Here, we've left mailto empty (mailto:?). This will open the user's email client and the user will add the recipient addresses themselves.
 
 #### Adding more recipients:
 
-In the same manner, you can add CC and bcc parameters. 
-Seperate each address by a comma!
+
+In the same manner, you can add CC (Carbon Copy) and BCC (Blind Carbon Copy) parameters. 
+Separate each address by a comma.
 
 Additional parameters must be preceded by `&`.
 ```html

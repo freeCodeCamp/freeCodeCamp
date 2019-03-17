@@ -17,7 +17,7 @@ What we will need?
 
 ```html
 <iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=v8kFT4I31es">
+src="https://www.youtube.com/embed/v8kFT4I31es">
 </iframe>
 ```
 
@@ -31,3 +31,5 @@ What should we do if we would like to make this player start playing automatical
 src="https://www.youtube.com/watch?v=v8kFT4I31es?autoplay=1">
 </iframe>
 ```
+
+Inserted values are recommended, and feel free to change them however you like.

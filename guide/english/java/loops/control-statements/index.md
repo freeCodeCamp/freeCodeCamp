@@ -14,7 +14,7 @@ The 'break' control statement breaks out of the loop when the condition is met. 
 For example, in the loop below if i reaches 5, the loop breaks, so it does not continue on.
 
 ```java
-for(int i=0;i<10;i++){
+for(int i=0; i < 10; i++){
 
   if(i == 5){ //if i is 5, break out of the loop.
     break;
@@ -33,7 +33,7 @@ Output:
 The 'continue' control statement is the less intense version of 'break'. It only breaks out of the current instance of the loop and continues on. In the loop below, if i is 5, the loop continues, so it will skip over the print statement below and move on until i reaches 10 and the loop stops.
 
 ```java
-for(int i=0;i<10;i++){
+for(int i=0; i < 10; i++){
 
   if(i == 5){ //if i is 5, break out of the current instance loop.
     continue;
