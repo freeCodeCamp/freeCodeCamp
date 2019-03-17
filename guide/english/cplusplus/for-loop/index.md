@@ -152,5 +152,16 @@ Output:
 5
 ```
 
+## Applications of the for loops
+
+### Use as infinite loops
+
+This C-style for-loop is commonly the source of an infinite loop since the fundamental steps of iteration are completely in the control of the programmer. In fact, when infinite loops are intended, this type of for-loop can be used (with empty expressions), such as:
+```
+for (;;)
+   //loop body
+```
+
 ## Additional Resources
 - [Range for-loop](https://guide.freecodecamp.org/cplusplus/range-for-loop)
+- [More on For Loops](http://www.cplusplus.com/doc/tutorial/control/)
