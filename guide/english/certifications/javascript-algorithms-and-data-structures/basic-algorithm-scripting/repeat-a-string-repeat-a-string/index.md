@@ -65,12 +65,7 @@ Make the variable created store the current value and append the word to it.
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
     function repeatStringNumTimes(str, num) {
-      if(num < 0)
-        return "";
-      if(num === 1)
-        return str;
-      else
-        return str + repeatStringNumTimes(str, num - 1);
+        return num > 0 ? str + repeatStringNumTimes(str, num - 1) : "";
     }
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/21' target='_blank' rel='nofollow'>Run Code</a>
@@ -78,9 +73,10 @@ Make the variable created store the current value and append the word to it.
 ### Code Explanation:
 
 *   This solution uses recursion.
-*   We check if `num` is negative and return an empty string if true.
-*   Then we check if it's equal to 1 and in that case we return the string itself.
-*   If not, we add the string to a call of our function with `num` being decreased by 1, which will add another `str` and another.. until eventually `num` is 1\. And return that whole process.
+*   We check if `num` is positive (not negative or 0) and return an empty string if true.
+*   We add the string to a call of our function with `num` being decreased by 1, which will add another `str` and another.. until eventually `num` is 0\. And return that whole process.
+*   If num = 1 is given as an input to the function, it will return the str concatinated with an empty string which is the same as str.
+*   If num = 0 is given as an input to the function it will return an empty string as it is supposed to.
 
 #### Relevant Links
 
