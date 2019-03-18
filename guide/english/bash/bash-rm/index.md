@@ -6,6 +6,10 @@ title: Bash rm
 
 ### Usage
 
+```bash
+rm [options] [file_name]
+```
+
 **Delete a File**
 
 ```bash
@@ -31,9 +35,9 @@ There are few commonly used arguments:
 This command is capable of deleting many files at once with ease. This can be beneficial, but also dangerous. Use at your own risk.
 
 To remove a nonempty folder for example, type:
-   `rm -rf folder`
- 
-
+```bash
+rm -rf folder
+```
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
