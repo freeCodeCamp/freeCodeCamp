@@ -3,7 +3,7 @@ title: Cascading CSS Variables
 ---
 ## Cascading CSS Variables
 
-Cascading CSS variables officially called custom properties are entities which behave similarly to traditional variables. In that variables allow for data to be stored and updated to reflect new values later<sup>2</sup>. 
+Cascading CSS variables (officially called custom properties) are entities which behave similarly to traditional variables, in that variables allow for data to be stored and updated to reflect new values later<sup>2</sup>. 
 
 CSS variables are defined to contain specific values and be reused throughout a document. They are set using custom property notation (e.g., `--main-color: black`) and are accessed using the `var()` function (e.g., `color: var(--main-color)`)<sup>1</sup>. Declare the CSS variable in the `:root` or `body` selectors for global access.
 
@@ -32,6 +32,15 @@ Using the variable:
 var(--custom-name)
 ```
 
+### Solution
+
+In the ```:root``` selector we need to declare the ```--penguin-belly``` variable and give it the value of ```pink```:
+
+```css 
+  :root {
+    --penguin-belly: pink;
+  }
+```
 
 ### Sources
 
