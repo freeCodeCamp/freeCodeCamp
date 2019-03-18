@@ -29,7 +29,7 @@ tests:
   - text: Your regex should reuse the capture group twice.
     testString: assert(reRegex.source.match(/\\\d/g).length === 2, 'Your regex should reuse the capture group twice.');
   - text: Your regex should have two spaces separating the three numbers.
-    testString: assert(reRegex.source.match(/\\s/g).length === 2, 'Your regex should have two spaces separating the three numbers.');
+    testString: assert(reRegex.source.match(/ |\\s/g).length === 2, 'Your regex should have two spaces separating the three numbers.');
   - text: Your regex should match <code>"42 42 42"</code>.
     testString: assert(reRegex.test("42 42 42"), 'Your regex should match <code>"42 42 42"</code>.');
   - text: Your regex should match <code>"100 100 100"</code>.
@@ -70,6 +70,8 @@ let result = reRegex.test(repeatNum);
 <section id='solution'>
 
 ```js
-// solution required
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/;
+let result = reRegex.test(repeatNum);
 ```
 </section>
