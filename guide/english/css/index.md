@@ -30,14 +30,14 @@ and `yellow` is the style we want to give it.
 <!DOCTYPE html>
 <html>
   <head>
-      <style>
-          body { background-color: Yellow; }
+	  <style>
+  		body { background-color: Yellow; }
       p { font-size: 18px; } 
-      </style>
+	  </style>
   </head>
   
   <body>
-      <p>Welcome to the world of CSS</p>
+	  <p>Welcome to the world of CSS</p>
   </body>
 </html>
 ```
