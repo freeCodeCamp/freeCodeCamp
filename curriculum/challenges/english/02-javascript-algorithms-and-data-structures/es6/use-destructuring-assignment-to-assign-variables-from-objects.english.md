@@ -28,12 +28,14 @@ Use destructuring to obtain the average temperature for tomorrow from the input 
 ```yml
 tests:
   - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>
-    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, '<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>');
-  - text: Shouldn't include key <code>today</code>
-    testString: getUserInput => assert( 
-    getUserInput('index').not.match(/\{\s*today\s*,\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),'Shouldn't include key <code>today</code>');
+    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79);
+  - text: Shouldn't include key <code>today</code> after assignment of <code>tempOfTomorrow</code>.
+    testString: getUserInput => assert(!code.match(\s*const\s*{\s*tomorrow\s*:\s*tempOfTomorrow\s*,\s*today\s*:\s*\w*\s*}\s*=\s*avgTemperatures\s*;?));
+  - text: Shouldn't include key <code>today</code> before assignment of <code>tempOfTomorrow</code>
+    testString: getUserInput => assert(! code.match(\s*const\s*{\s*\s*today\s*:\s*\w*\s*,\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures\s*;?));
   - text: destructuring with reassignment was used
-    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),'destructuring with reassignment was used');
+    testString: getUserInput => 
+    assert(code.match(\s*const\s*{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures\s*;?));
 
 ```
 
