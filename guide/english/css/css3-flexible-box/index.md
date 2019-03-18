@@ -62,6 +62,8 @@ Note that when you apply a display "flex" on the parent container, it will only 
 Set both the justify-content and align-items properties to center, and the flex item will be perfectly centered:
 
 ``` css
+.center-item {
+  display: flex;
   align-items:center;
   justify-content: center;
 }
