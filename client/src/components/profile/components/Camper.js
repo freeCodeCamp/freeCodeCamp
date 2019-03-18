@@ -81,6 +81,7 @@ function Camper({
         isWebsite={isWebsite}
         linkedin={linkedin}
         twitter={twitter}
+        username={username}
         website={website}
       />
       <br />
