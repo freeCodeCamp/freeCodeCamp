@@ -26,7 +26,7 @@ tests:
     testString: assert.strictEqual(multiplesOf3or5(49), 543, '<code>multiplesOf3or5(49)</code> should return 543.');
   - text: <code>multiplesOf3or5(19564)</code> should return 89301183.
     testString: assert.strictEqual(multiplesOf3or5(19564), 89301183, '<code>multiplesOf3or5(19564)</code> should return 89301183.');
-  - text: Your function should return sum of all the multiples of 3 or 5 below the provided parameter value.
+  - text: Your function should return the sum of all the multiples of 3 or 5 below the provided parameter value.
     testString: assert.strictEqual(multiplesOf3or5(8456), 16687353, '<code>multiplesOf3or5(8456)</code> should return 16687353.');
 
 ```
