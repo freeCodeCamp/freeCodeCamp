@@ -9,7 +9,7 @@ challengeType: 1
 Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our <code>users</code> object, this could look like:
 <blockquote>for (let user in users) {<br>&nbsp;&nbsp;console.log(user);<br>}<br><br>// logs:<br>Alan<br>Jeff<br>Sarah<br>Ryan</blockquote>
 In this statement, we defined a variable <code>user</code>, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console.
-<strong>NOTE:</strong><br>Objects do not maintain an ordering to stored keys like arrays do; thus a keys position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
+<strong>NOTE:</strong><br>Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
 </section>
 
 ## Instructions
