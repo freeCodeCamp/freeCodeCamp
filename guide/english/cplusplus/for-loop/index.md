@@ -59,8 +59,7 @@ The update statement is used to alter the loop variable by using simple operatio
 
 You will often see an increment operation as the update statement (e.g. i++, count++). This is often seen as one of the distinguishing features and possible name sources for the C++ language.
 
-## IMPLEMENTATION:
-
+## Implementation
 ```C++
 #include <iostream>
 using std::cout; // Here we use the scope resolution operator to define the scope of the standard functions as std
@@ -95,14 +94,13 @@ The body of the for loop need not be enclosed in braces if the loop iterates ove
 
 ### Example
 ```c++
-   #include<iostream.h>
-   using std::cout;
+#include<iostream.h>
+using std::cout;
    
-   int main () {
+int main () {
    // Single line for loop
    for( int a = 10; a < 20; a++ ) 
       cout << "value of a: " << a << endl;
-   
 
    return 0;
 }
