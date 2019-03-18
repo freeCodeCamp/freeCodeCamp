@@ -57,16 +57,7 @@ There are three slightly more interesting options for `justify-content` you migh
 
 Note that when you apply a display "flex" on the parent container, it will only affect direct children properties. You can nest flexboxes as well. 
 
-#### Flex Flow
-The flex-flow property is shorthand for flex-direction and flex-wrap. Rather than specifying the flex direction and wrap preferences separately, you can use flex-flow as followed:
-
-``` css
-.center-elements-inside {
-  display: flex;
-  flex-flow:row wrap;
-}
-```
-This sets the flex items to display horizontally, and will wrap to a new line as necessary.
+The `flex-flow` property is shorthand for `flex-direction` and `flex-wrap` in that order.
 
 #### More Information
 
