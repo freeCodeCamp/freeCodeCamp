@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cnpymfJ'
 
 ## Description
 <section id='description'>
-You have been giving <code>id</code> or <code>class</code> attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.
+You have been given <code>id</code> or <code>class</code> attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.
 Let's bring out CatPhotoApp again to practice using CSS Selectors.
 For this challenge, you will use the <code>[attr=value]</code> attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute <code>type</code> and a corresponding value of <code>radio</code>:
 <blockquote>[type='radio'] {<br>&nbsp;&nbsp;margin: 20px 0px 20px 0px;<br>}</blockquote>
@@ -24,11 +24,11 @@ Using the <code>type</code> attribute selector, try to give the checkboxes in Ca
 ```yml
 tests:
   - text: The <code>type</code> attribute selector should be used to select the checkboxes.
-    testString: 'assert(code.match(/<style>[\s\S]*?\[type=("|")checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),"The <code>type</code> attribute selector should be used to select the checkboxes.");'
+    testString: assert(code.match(/<style>[\s\S]*?\[type=("|')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),'The <code>type</code> attribute selector should be used to select the checkboxes.');
   - text: The top margins of the checkboxes should be 10px.
-    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginTop") === "10px") {count++;}});return (count===3)}()),"The top margins of the checkboxes should be 10px.");'
+    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'The top margins of the checkboxes should be 10px.');
   - text: The bottom margins of the checkboxes should be 15px.
-    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginBottom") === "15px") {count++;}});return (count===3)}()),"The bottom margins of the checkboxes should be 15px.");'
+    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'The bottom margins of the checkboxes should be 15px.');
 
 ```
 
