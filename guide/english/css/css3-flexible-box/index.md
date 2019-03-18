@@ -6,7 +6,6 @@ The Flexbox model provides for an efficient way to lay out, align, and distribut
 
 The most important idea behind the Flexbox model is that the parent container can alter its items' width/height/order to best fill the available space. A flex container expands items to fill available free space, or shrinks them to prevent overflow.<sup>1</sup>
 
-
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 #### Basic usage
 Flexbox can be used to center any amount of given elements inside one element. Given the following HTML structure:
@@ -58,6 +57,7 @@ There are three slightly more interesting options for `justify-content` you migh
 
 Note that when you apply a display "flex" on the parent container, it will only affect direct children properties. You can nest flexboxes as well. 
 
+The `flex-flow` property is shorthand for `flex-direction` and `flex-wrap` in that order.
 
 #### More Information
 
