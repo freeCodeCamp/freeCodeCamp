@@ -35,6 +35,7 @@ This is my curated list of awesome Swift and iOS Resources for becoming a self-t
 
 * [The Complete Swift 3 Tutorial with Bob](https://www.youtube.com/playlist?list=PL8btZwalbjYlRZh8Q1VK80Ly0YsZ7PZxx)
 * [Getting Started with Swift 3 - Apple WWDC 2016](https://www.youtube.com/watch?v=AzesJrOcFDU)
+* [Swift Tutorial - Full Course for Beginners](https://youtu.be/comQ1-x2a1Q)
 
 ### Advanced
 
