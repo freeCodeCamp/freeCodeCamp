@@ -10,9 +10,10 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/c4Ep9Am'
 
 HTML5 introduces more descriptive HTML tags. These include <code>main</code>, <code>header</code>, <code>footer</code>, <code>nav</code>, <code>video</code>, <code>article</code>, <code>section</code> and others.
 
-These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. They mainly act as descriptive containers for other elements.
+These tags give a descriptive structure to your HTML, make your HTML easier to read, and help with Search Engine Optimization (SEO) and accessibility. The <code>main</code> HTML5 tag helps search engines and other developers find the main content of your page.
 
-When an element has other elements nested inside it, it's known as a parent. The elements inside the parent are known as children. The parent element wraps around the child element, the child element is nested inside the parent.
+Example usage, <code>main</code> element with two elements nested inside:
+<blockquote>&#60;main&#62; <br>&nbsp;&nbsp;&#60;h1&#62;Hello World&#60;/h1&#62;<br>&nbsp;&nbsp;&#60;p&#62;Hello Paragraph&#60;/p&#62;<br>&#60;/main&#62;</blockquote>
 
 <blockquote>&#60;main&#62; <br>&nbsp;&nbsp;&#60;h1&#62;I'm a child of the main element, see how it wraps around me&#60;/h1&#62;<br>&nbsp;&nbsp;&#60;p&#62;So am I, see how I'm nested inside my parent the main element&#60;/p&#62;<br>&#60;/main&#62;</blockquote>
 
@@ -25,7 +26,7 @@ The <code>main</code> HTML5 tag helps search engines and other developers find t
 
 Create a second <code>p</code> element after the existing <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>
 
-Wrap the two <code>p</code> elements with an opening and closing <code>main</code> tag.
+Nest the two <code>p</code> elements inside a <code>main</code> element.
 </section>
 
 ## Tests
