@@ -39,6 +39,7 @@ Other popular distributions of Linux include:
 * CentOS
 * RHEL
 * Arch Linux
+* Gnome 3
 * Elementary OS
 * Tails
 
