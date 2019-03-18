@@ -27,9 +27,9 @@ tests:
   - text: The <code>Camper</code> component should render.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('Camper').length === 1; })());
   - text: The <code>Camper</code> component should include default props which assign the string <code>CamperBot</code> to the key <code>name</code>.
-    testString: getUserInput => assert((function() { const normalized = getUserInput('index').replace(/\s/g, '').replace(/"/g,'\''); const verify1 = 'Camper.defaultProps={name:\'CamperBot\'}'; const verify2 = 'Camper.defaultProps={name:\'CamperBot\',}'; return (normalized.includes(verify1) || normalized.includes(verify2)); })());
+    testString: assert(/Camper.defaultProps={name:['"]CamperBot['"],?}/.test(code.replace(/\s/g, '')));
   - text: The <code>Camper</code> component should include prop types which require the <code>name</code> prop to be of type <code>string</code>.
-    testString: getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); const noWhiteSpace = getUserInput('index').replace(/\s/g, ''); const verifyDefaultProps1 = 'Camper.propTypes={name:PropTypes.string.isRequired}'; const verifyDefaultProps2 = 'Camper.propTypes={name:PropTypes.string.isRequired,}'; return noWhiteSpace.includes(verifyDefaultProps1) || noWhiteSpace.includes(verifyDefaultProps2); })());
+    testString: assert(/Camper.propTypes={name:PropTypes.string.isRequired,?}/.test(code.replace(/\s/g, '')));
   - text: The <code>Camper</code> component should contain a <code>p</code> element with only the text from the <code>name</code> prop.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(CampSite)); return mockedComponent.find('p').text() === mockedComponent.find('Camper').props().name; })());
 
