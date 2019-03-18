@@ -89,7 +89,7 @@ If any pixels were set in this round of either step 1 or step 2 then all steps a
 
 ## Instructions
 <section id='instructions'>
-WWrite a routine to perform Zhang-Suen thinning on the provided image matrix.
+Write a routine to perform Zhang-Suen thinning on the provided image matrix.
 </section>
 
 ## Tests
