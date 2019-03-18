@@ -1,15 +1,16 @@
 ---
 title: Python Integers
 ---
-The theoretical domain for integers in python is negative infinity to infinity. In practice, integer values are limited by the amount of available memory.
 
-In Python 2, there was a distinction between **`int`**, numbers that fit in a 32 or 64 bit _C long_, and **`long`**, numbers limited by available memory. Python 3 unified the two types into just **`int`**, more info in <a href='https://www.python.org/dev/peps/pep-0237/' target='_blank' rel='nofollow'>PEP 237</a>.
+Integers are whole numbers with no decimal point. They include negative, zero, and positive numbers. The theoretical domain for integers in python is negative infinity to infinity. In practice, integer values are limited by the amount of available memory.
+
+In Python 2, there was a distinction between **`int`**, numbers that fit in a 32 or 64 bit _C long_, and **`long`**, numbers limited by available memory. Python 3 unified the two types into just **`int`** (more info in <a href='https://www.python.org/dev/peps/pep-0237/' target='_blank' rel='nofollow'>PEP 237</a>).
 
 **`int` creation using integer literals**
 
 <a href='https://docs.python.org/3/reference/lexical_analysis.html#integer-literals' target='_blank' rel='nofollow'>Integer Literals</a>
 
-_Integer objects_ can be created using using integer literals. Unadorned numbers without decimals are integer literals:
+_Integer objects_ can be created using integer literals. Unadorned numbers without decimals are integer literals:
 
     >>> 1234567890           # Unadorned numbers are integer literals
     1234567890
@@ -23,7 +24,7 @@ Numeric literals do not contain a sign, however creating negative _integer objec
     >>> type(-1234567890)
     <class 'int'>
 
-Likewise, positive integer objects can be created by prefixing a unary `+` (plus) operator with no space before the digits. Usually `+` is ommited:
+Likewise, positive integer objects can be created by prefixing a unary `+` (plus) operator with no space before the digits. Usually `+` is omitted:
 
     >>> +1234
     1234
@@ -47,6 +48,7 @@ Note that leading 0's for non-zero integer literals are **not allowed**:
          ^
     SyntaxError: invalid token
 
+## `int` creation using constructors
 The `int` <a href='https://docs.python.org/3/library/functions.html#int' target='_blank' rel='nofollow'>constructor</a> is another way to create _integer objects_.
 
     class int(x=0)
