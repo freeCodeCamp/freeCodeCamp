@@ -11,11 +11,12 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
-import { projectMap } from '../../resources/certProjectMap';
+import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
 import { FullWidthRow, Spacer } from '../helpers';
+// import { Form } from '../formHelpers';
 import { maybeUrlRE } from '../../utils';
 
 import './certification.css';
@@ -48,6 +49,7 @@ const propTypes = {
 };
 
 const certifications = Object.keys(projectMap);
+const legacyCertifications = Object.keys(legacyProjectMap);
 const isCertSelector = ({
   is2018DataVisCert,
   isApisMicroservicesCert,
@@ -80,14 +82,20 @@ const isCertMapSelector = createSelector(
     isJsAlgoDataStructCert,
     isInfosecQaCert,
     isFrontEndLibsCert,
-    isRespWebDesignCert
+    isRespWebDesignCert,
+    isDataVisCert,
+    isFrontEndCert,
+    isBackEndCert
   }) => ({
     'Responsive Web Design': isRespWebDesignCert,
     'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
     'Front End Libraries': isFrontEndLibsCert,
     'Data Visualization': is2018DataVisCert,
     "API's and Microservices": isApisMicroservicesCert,
-    'Information Security And Quality Assurance': isInfosecQaCert
+    'Information Security And Quality Assurance': isInfosecQaCert,
+    'Legacy Front End': isFrontEndCert,
+    'Legacy Data Visualization': isDataVisCert,
+    'Legacy Back End': isBackEndCert
   })
 );
 
@@ -222,6 +230,9 @@ class CertificationSettings extends Component {
   );
 
   renderProjectsFor = (certName, isCert) => {
+    console.log(certName);
+    console.log(this.getUserIsCertMap());
+    console.log(this.getUserIsCertMap()[certName]);
     const { username, isHonest, createFlashMessage, verifyCert } = this.props;
     const { superBlock } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
@@ -266,7 +277,164 @@ class CertificationSettings extends Component {
       ]);
   };
 
+  renderLegacyCertifications = certName => (
+    <FullWidthRow key={certName}>
+      <Spacer />
+      <h3>{certName}</h3>
+      <Table>
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.renderLegacyProjectsFor(
+            certName,
+            this.getUserIsCertMap()[certName]
+          )}
+        </tbody>
+      </Table>
+    </FullWidthRow>
+  );
+
+  renderLegacyProjectsFor = (certName, isCert) => {
+    console.log(certName);
+    console.log(this.getUserIsCertMap()[certName]);
+    const { username, isHonest, createFlashMessage, verifyCert } = this.props;
+    const { superBlock } = first(legacyProjectMap[certName]);
+    const certLocation = `/certification/${username}/${superBlock}`;
+    const createClickHandler = superBlock => e => {
+      e.preventDefault();
+      if (isCert) {
+        return navigate(certLocation);
+      }
+      return isHonest
+        ? verifyCert(superBlock)
+        : createFlashMessage({
+            type: 'info',
+            message:
+              'To claim a certification, you must first accept our academic ' +
+              'honesty policy'
+          });
+    };
+    return legacyProjectMap[certName]
+      .map(({ title, id }) => (
+        <tr className='project-row' key={id}>
+          <td className='project-title col-sm-8'>
+            <h3>{title}</h3>
+          </td>
+          <td className='project-solution col-sm-4'>
+            {this.getLegacyProjectSolution(id, title)}
+          </td>
+        </tr>
+      ))
+      .concat([
+        <tr key={`cert-${superBlock}-button`}>
+          <td colSpan={2}>
+            <Button
+              block={true}
+              bsStyle='primary'
+              href={certLocation}
+              onClick={createClickHandler(superBlock)}
+            >
+              {isCert ? 'Show Certification' : 'Claim Certification'}
+            </Button>
+          </td>
+        </tr>
+      ]);
+  };
+
+  getLegacyProjectSolution = (projectId, projectTitle) => {
+    const { completedChallenges } = this.props;
+    const completedProject = find(
+      completedChallenges,
+      ({ id }) => projectId === id
+    );
+    if (!completedProject) {
+      return null;
+    }
+    const { solution, githubLink, files } = completedProject;
+    const onClickHandler = () =>
+      this.setState({
+        solutionViewer: {
+          projectTitle,
+          files,
+          solution,
+          isOpen: true
+        }
+      });
+    if (files && files.length) {
+      return (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={onClickHandler}
+        >
+          Show Code
+        </Button>
+      );
+    }
+    if (githubLink) {
+      return (
+        <div className='solutions-dropdown'>
+          <DropdownButton
+            block={true}
+            bsStyle='primary'
+            className='btn-invert'
+            id={`dropdown-for-${projectId}`}
+            title='Show Solutions'
+          >
+            <MenuItem
+              bsStyle='primary'
+              href={solution}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Front End
+            </MenuItem>
+            <MenuItem
+              bsStyle='primary'
+              href={githubLink}
+              rel='noopener noreferrer'
+              target='_blank'
+            >
+              Back End
+            </MenuItem>
+          </DropdownButton>
+        </div>
+      );
+    }
+    if (maybeUrlRE.test(solution)) {
+      return (
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-invert'
+          href={solution}
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          Show Solution
+        </Button>
+      );
+    }
+    return (
+      <Button
+        block={true}
+        bsStyle='primary'
+        className='btn-invert'
+        onClick={onClickHandler}
+      >
+        Show Code
+      </Button>
+    );
+  };
+
   render() {
+    // console.log(this.props.completedChallenges);
+    // console.log(getUserIsCertMap);
     const {
       solutionViewer: { files, solution, isOpen, projectTitle }
     } = this.state;
@@ -274,6 +442,8 @@ class CertificationSettings extends Component {
       <section id='certifcation-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
+        <SectionHeader>Legacy Certifications</SectionHeader>
+        {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
           <Modal
             aria-labelledby='solution-viewer-modal-title'

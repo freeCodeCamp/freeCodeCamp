@@ -15,7 +15,7 @@ const legacyBackEndBase = '';
 const legacyDataVisBase = '';
 
 export const legacyProjectMap = {
-  'Legacy Front End Projects': [
+  'Legacy Front End': [
     {
       id: 'bd7158d8c242eddfaeb5bd13',
       title: 'Build a Personal Portfolio Webpage',
@@ -77,7 +77,7 @@ export const legacyProjectMap = {
       superBlock: 'legacy-front-end'
     }
   ],
-  'Legacy Back End Projects': [
+  'Legacy Back End': [
     {
       id: 'bd7158d8c443edefaeb5bdef',
       title: 'Timestamp Microservice',
@@ -139,7 +139,7 @@ export const legacyProjectMap = {
       superBlock: 'legacy-back-end'
     }
   ],
-  'Legacy Data Visualization Projects': [
+  'Legacy Data Visualization': [
     {
       id: 'bd7157d8c242eddfaeb5bd13',
       title: 'Build a Markdown Previewer',
