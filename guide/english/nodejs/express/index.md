@@ -7,7 +7,7 @@ When it comes to building web applications using Node.js, creating a server can 
 
 ## What is Express?
 
-Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not force its own philosophy on developer and does not oblige them to buil applications or APIs in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
+Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not enforce its own philosophy that a application or API should be built in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
 
 Express was developed by TJ Holowaychuk and is now maintained by Node.js foundation and open source developers. To get started with the development using Express, you need to have Node.js and npm installed. You can install [Node.js](https://nodejs.org/en/) on your local machine and along with it comes the command line utility `npm` that will help us to install plugins or as called dependencies later on in our project.
 
