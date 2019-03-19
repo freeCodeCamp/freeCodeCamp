@@ -35,6 +35,7 @@ Popular AWS services include:
 * Application Monitoring tools
 * Mobile development tools and platforms
 * Amazon Alexa development area
+* Simple Notification Service (SNS)
 * CloudFormation (Infrastructure as Code)
 
 #### AWS Certifications 
