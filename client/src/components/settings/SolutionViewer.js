@@ -42,7 +42,7 @@ function SolutionViewer({
         bsStyle='primary'
         className='solution-viewer'
         key={solution.slice(0, 10)}
-        >
+      >
         <Panel.Heading>JS</Panel.Heading>
         <Panel.Body>
           <pre>

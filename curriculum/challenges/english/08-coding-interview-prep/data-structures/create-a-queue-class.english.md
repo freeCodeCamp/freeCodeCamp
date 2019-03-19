@@ -34,7 +34,7 @@ tests:
   - text: Your <code>Queue</code> class should have an <code>isEmpty</code> method.
     testString: assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'Your <code>Queue</code> class should have an <code>isEmpty</code> method.');
   - text: The <code>dequeue</code> method should remove and return the front element of the queue
-    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.dequeue() === 'Smith')}()), 'The <code>dequeue</code> method should remove and return the front element of the queue');
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.dequeue() === 'Smith')}()), 'The <code>dequeue</code> method should remove and return the front element of the queue');
   - text: The <code>front</code> method should return value of the front element of the queue
     testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()), 'The <code>front</code> method should return value of the front element of the queue');
   - text: The <code>size</code> method should return the length of the queue
