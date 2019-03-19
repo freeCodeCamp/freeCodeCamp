@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/c/c9yNVCe'
 ## Description
 <section id='description'>
 You can run the same code multiple times by using a loop.
-The most common type of JavaScript loop is called a "<code>for loop</code>" because it runs "for" a specific number of times.
+The most common type of JavaScript loop is called a <code>for loop</code> because it runs "for" a specific number of times.
 For loops are declared with three optional expressions separated by semicolons:
 <code>for ([initialization]; [condition]; [final-expression])</code>
 The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
