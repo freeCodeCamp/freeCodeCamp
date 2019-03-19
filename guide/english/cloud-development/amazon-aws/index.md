@@ -66,6 +66,7 @@ The roles are:
 * [AWS](https://aws.amazon.com/)
 * [Certifications](https://aws.amazon.com/certification/)
 * [Certification Preparation](https://aws.amazon.com/certification/certification-prep/)
+* [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Web_Services)
 * [Pricing](https://aws.amazon.com/pricing/?nc2=h_ql_pr)
 * [Simple Monthly Cost Calculator](http://calculator.s3.amazonaws.com/index.html)
 * [TCO Calculator](https://aws.amazon.com/tco-calculator/)
