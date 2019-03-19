@@ -33,7 +33,7 @@ tests:
     testString: assert(chainToSwitch("bob") === "Marley", '<code>chainToSwitch("bob")</code> should be "Marley"');
   - text: <code>chainToSwitch(42)</code> should be "The Answer"
     testString: assert(chainToSwitch(42) === "The Answer", '<code>chainToSwitch(42)</code> should be "The Answer"');
-  - text: "<code>chainToSwitch(1)</code> should be \"There is no #1\""
+  - text: <code>chainToSwitch(1)</code> should be \"There is no #1\"
     testString: "assert(chainToSwitch(1) === \"There is no #1\", '<code>chainToSwitch(1)</code> should be \"There is no #1\"');"
   - text: <code>chainToSwitch(99)</code> should be "Missed me by this much!"
     testString: assert(chainToSwitch(99) === "Missed me by this much!", '<code>chainToSwitch(99)</code> should be "Missed me by this much!"');
