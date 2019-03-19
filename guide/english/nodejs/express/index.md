@@ -24,7 +24,7 @@ If you are getting the version number instead of an error that means you have in
 
 ## Why use Expressjs?
 
-Before we start with mechanism of using Express as the backend framework, let us first explore why we should consider using it or the reasons for its popularity.
+Before we start with mechanism of using Express as the backend framework, let us first explore why we should consider using it and the reasons for its popularity.
 
 * Express lets you build single page, multi-page, and hybrid web and mobile applications. Other common backend use is to provide an API for a client (whether web or mobile).
 * It comes with a default template engine, Jade which helps to facilitate the flow of data into a website structure and does support other template engines.
