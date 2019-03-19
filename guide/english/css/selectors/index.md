@@ -41,7 +41,7 @@ Combinator | Purpose
 `+` | Adjacent sibling combinator. `.logo + h1` targets `h1` that is an immediate sibling to `.logo` class.
 `~` | General sibling combinator. `header ~ div` targets `div` elements that are siblings to `header` elements.
 
-This section details all of these electors.
+This section explains all of these electors in detail.
 
 #### More Information:
 You can learn more about selectors on these resources:
@@ -50,7 +50,7 @@ You can learn more about selectors on these resources:
 * [CSS Selectors Cheat Sheet on FreeCodeCamp Guides](https://guide.freecodecamp.org/css/tutorials/css-selectors-cheat-sheet)
 
 
-Selectors in CSS (cascading style sheets) are determined based on *specificity*, with this we are able to be more specific on our style rules and override other rules that may be targeting the same element but is not as specific. The way this specificty hierarchy works is based on weight, meaning a element Selector has a weight of 1 (one), a class selector has a weight of 10 (ten) and a id selector has a weight of One Hundred (100). We are able to combine different selectors together be more specific on the element we whant to change. 
+Selectors in CSS (cascading style sheets) are determined based on *specificity*, which means we are able to be more specific on our style rules and override other rules that may be targeting the same element but are not as specific. The way this hierarchy works is based on weight, meaning an element selector has a weight of 1, a class selector has a weight of 10 and an id selector has a weight of 100. We are able to combine different selectors together in order to specify the element we want to change. 
 
 As a example: 
 
@@ -62,7 +62,7 @@ As a example:
          color: red;
       }
    ```
-Our type selector p will select all p elements in our html document but it only has a weight of one. in contrast, the class selector has a weight of 11 for the reason we are combining a type selector with a class selector(this selector is matching all p elements with a class of red). 
+Our type selector p will select all p elements in our html document but it only has a weight of 1. in contrast, the class selector has a weight of 11 because we are combining a type selector with a class selector which matches all p elements with a class of red. 
 --* Directly targeted rules will always have precedence over rules which inherits elements from its ancestor. 
 --* Specifity is only applied when multiple declarations are targeting the same element, only then this rule is then applied.  
 --* specifity is usually why some of you style rules do not apply to elements when you would expect them to. 

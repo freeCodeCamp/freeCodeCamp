@@ -16,7 +16,7 @@ In the above example, the element with the class of <code>heart</code> has a <co
 ## Instructions
 <section id='instructions'>
 Transform the element on the screen to a heart. In the <code>heart::after</code> selector, change the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.
-Next, target the element with the class <code>heart</code> (just <code>heart</code>) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees. (<code>rotate()</code> works the same way that <code>skewX()</code> and <code>skewY()</code> do).
+Next, target the element with the class <code>heart</code> (just <code>heart</code>) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees.
 Finally, in the <code>heart::before</code> selector, set its <code>content</code> property to an empty string.
 </section>
 
