@@ -6,7 +6,7 @@ about: Reporting a software bug, in learning platform (not for content in guide 
 ---
 
 **Looking forward for reporting a security issue:**
-Please report security issues by sending an email to `security@freecodecamp.org` instead of raising a Github issue.
+Please report security issues by sending an email to `security@freecodecamp.org` instead of raising a GitHub issue.
 
 **Describe the bug**
 A clear and concise description of what the bug is.
