@@ -94,6 +94,24 @@ Because of this, an arrow function cannot be used as a constructor, hence there'
 (() => {}).hasOwnProperty('prototype');  // false
 ```
 
+### No arguments object
+
+Arrow functions provide no arguments object. Therefore, if the arguments object is used in an arrow function it will reference the arguments of the enclosing scope. For example,
+
+```
+const arguments = ["arg1", "arg2", "arg3"];
+
+const arrow = () => arguments[1];
+
+console.log(arrow("innerarg1", "innerarg2", "innerarg3"));//arg2-ignores local arguments goes to enclosed scope.
+
+function regular() {
+  console.log(arguments[1]);
+}
+console.log(regular("innerarg1", "innerarg2", "innerarg3"));//innerarg2-uses local arguments.
+
+```
+
 #### Further Reading
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>MDN link</a>
