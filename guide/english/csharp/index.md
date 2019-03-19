@@ -62,7 +62,7 @@ You can use C# to create Windows client applications, XML Web services, distribu
 
 The C# language is also used with the ASP.NET framework, developed by Microsoft Corp., specifically for creating web applications that are machine and browser independent. The broader .NET framework, also developed by Microsoft, is used for creating other types of applications such as desktop, mobile, server, and networking applications. The .NET Framework includes the .NET Base Class Libraries (BCL), ASP.NET, ADO.NET, Windows Forms, Windows Presentation Foundation (WPF), and eXtensible Markup Language(XML) libraries.
 
-More recently, Microsoft Corp. released .NET Core, which is an open-source, cross-platform framework. The original purpose of .NET Core was to allow developers to use the .NET eco-system to develop and run applications across various platforms (macOS for example). It supports Web applications(MVC), console-based applications, and unit tests. However, compared with the ASP.NET framework, it does not have a comprehensive list of APIs in it's Base Class Libraries(BCL).
+More recently, Microsoft Corp. released .NET Core, which is an open-source, cross-platform framework. The original purpose of .NET Core was to allow developers to use the .NET eco-system to develop and run applications across various platforms (macOS for example). It supports Web applications(MVC), console-based applications, and unit tests. However, compared with the ASP.NET framework, it does not have a comprehensive list of APIs in its Base Class Libraries(BCL).
 
 For more information on ASP.NET, see the topic ASP.NET in the [freeCodeCamp guide](https://guide.freecodecamp.org).
 
