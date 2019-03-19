@@ -18,8 +18,6 @@ import reallyWeirdErrorMessage from '../utils/reallyWeirdErrorMessage';
 import RedirectHome from '../components/RedirectHome';
 import { Loader } from '../components/helpers';
 
-import './show-certification.css';
-
 const propTypes = {
   cert: PropTypes.shape({
     username: PropTypes.string,
@@ -84,11 +82,7 @@ class ShowCertification extends Component {
     const { pending, complete, errored } = fetchState;
 
     if (pending) {
-      return (
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      );
+      return <Loader fullScreen={true} />;
     }
 
     if (!pending && errored) {
@@ -152,7 +146,10 @@ class ShowCertification extends Component {
             <div className='row signatures'>
               <Image
                 alt="Quincy Larson's Signature"
-                src='https://i.imgur.com/OJFVJKg.png'
+                src={
+                  'https://cdn.freecodecamp.org' +
+                  '/platform/english/images/quincy-larson-signature.svg'
+                }
               />
               <p>
                 <strong>Quincy Larson</strong>
