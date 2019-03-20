@@ -588,12 +588,6 @@ pre code {
   background: none;
   line-height: 1.42;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
-  white-space: pre;
-}
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
