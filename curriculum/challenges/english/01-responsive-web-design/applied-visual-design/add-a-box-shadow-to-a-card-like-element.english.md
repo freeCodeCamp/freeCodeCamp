@@ -14,7 +14,7 @@ The <code>box-shadow</code> property takes values for
   <li><code>offset-y</code> (how far to push the shadow vertically from the element),</li>
   <li><code>blur-radius</code>,</li>
   <li><code>spread-radius</code> and</li>
-  <li>a color value, in that order.</li>
+  <li><code>color</code>, in that order.</li>
 </ul>
 The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
 Multiple box-shadows can be created by using commas to separate properties of each <code>box-shadow</code> element.
