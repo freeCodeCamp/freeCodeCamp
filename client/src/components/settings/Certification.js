@@ -16,7 +16,8 @@ import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
 import { FullWidthRow, Spacer } from '../helpers';
-// import { Form } from '../formHelpers';
+import { Form } from '../formHelpers';
+
 import { maybeUrlRE } from '../../utils';
 
 import './certification.css';
@@ -113,6 +114,7 @@ class CertificationSettings extends Component {
     super(props);
 
     this.state = { ...initialState };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   createHandleLinkButtonClick = to => e => {
@@ -230,9 +232,6 @@ class CertificationSettings extends Component {
   );
 
   renderProjectsFor = (certName, isCert) => {
-    console.log(certName);
-    console.log(this.getUserIsCertMap());
-    console.log(this.getUserIsCertMap()[certName]);
     const { username, isHonest, createFlashMessage, verifyCert } = this.props;
     const { superBlock } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
@@ -277,30 +276,51 @@ class CertificationSettings extends Component {
       ]);
   };
 
-  renderLegacyCertifications = certName => (
-    <FullWidthRow key={certName}>
-      <Spacer />
-      <h3>{certName}</h3>
-      <Table>
-        <thead>
-          <tr>
-            <th>Project Name</th>
-            <th>Solution</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.renderLegacyProjectsFor(
-            certName,
-            this.getUserIsCertMap()[certName]
-          )}
-        </tbody>
-      </Table>
-    </FullWidthRow>
-  );
+  // legacy projects rendering
+
+  handleSubmit() {
+    console.log('handle');
+  }
+
+  renderLegacyCertifications = certName => {
+    const challengeTitles = legacyProjectMap[certName].map(item => item.title);
+    const { completedChallenges } = this.props;
+
+    const initialObject = {};
+    let fullform = 0;
+    legacyProjectMap[certName].forEach(element => {
+      let completedProject = find(completedChallenges, function(challenge) {
+        return challenge['id'] === element['id'];
+      });
+
+      if (!completedProject) {
+        initialObject[element.title] = '';
+      } else {
+        initialObject[element.title] = completedProject.solution;
+        fullform++;
+      }
+    });
+
+    console.log(fullform);
+
+    return (
+      <FullWidthRow key={certName}>
+        <Spacer />
+        <h3>{certName}</h3>
+        <Form
+          buttonText={'Claim Certification'}
+          formFields={challengeTitles}
+          id={certName}
+          initialValues={{
+            ...initialObject
+          }}
+          submit={this.handleSubmit}
+        />
+      </FullWidthRow>
+    );
+  };
 
   renderLegacyProjectsFor = (certName, isCert) => {
-    console.log(certName);
-    console.log(this.getUserIsCertMap()[certName]);
     const { username, isHonest, createFlashMessage, verifyCert } = this.props;
     const { superBlock } = first(legacyProjectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
@@ -318,6 +338,7 @@ class CertificationSettings extends Component {
               'honesty policy'
           });
     };
+
     return legacyProjectMap[certName]
       .map(({ title, id }) => (
         <tr className='project-row' key={id}>
