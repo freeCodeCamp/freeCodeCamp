@@ -284,6 +284,7 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
 ```
 
 
-Links for reference:
+## Links for reference:
 [Pointers - CS50](https://www.youtube.com/watch?v=XISnO2YhnsY)
+
 [Pointers in C and C++ - GeeksforGeeks](https://www.geeksforgeeks.org/pointers-in-c-and-c-set-1-introduction-arithmetic-and-array/)
