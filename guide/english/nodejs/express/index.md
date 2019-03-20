@@ -146,7 +146,7 @@ They are the endpoints defined in our server that helps to perform operations fo
 
 The last that gets executed in an Express server is the `app.listen()` function which starts our server.
 
-We will now start disussing sections that we haven't previously discussed about.
+We will now start discussing sections that we haven't previously discussed about.
 
 ## Routing
 
@@ -211,7 +211,7 @@ If we now start the server from command line using `node index.js` and try visit
 
 Middleware functions are those functions that have access to the request object (`req`), the response object (`res`), and the `next` function in the application’s request-response cycle. The objective of these functions is to modify request and response objects for tasks like parsing request bodies, adding response headers, make other changes to request-response cycle, end the request-response cycle and call the next middleware function.
 
-The `next` function is a function in the Express router which is used to execute the other middleware functions succeeding the current middleware. If a middleware function does include `next()` that means the request-response cycle is ended there. The name of the function `next()` here is totally arbitary and you can name it whatever you like but is important to stick to best practices and try to follow a few conventions, especially if you are working with other developers.
+The `next` function is a function in the Express router which is used to execute the other middleware functions succeeding the current middleware. It executes the next middleware function sitting in the middleware stack. If a middleware function does not include `next()` that means the request-response cycle is ended there. The name of the function `next()` here is totally arbitary and you can name it whatever you like but is important to stick to best practices and try to follow a few conventions, especially if you are working with other developers. For example , in passport strategies you will find `done()` function which is another name for the succeeding middleware.
 
 Also, when writing a custom middleware do not forget to add `next()` function to it. If you do not mention `next()` the request-response cycle will hang in middle of nowhere and you servr might cause the client to time out.
 
@@ -458,13 +458,13 @@ app.set('views', './views');
 
 Since we are using `app.set()` which indicates configuration within our server file, we must place them before we define any route or a middleware function.
 
-In the `views` direcotry, create file called `index.pug`.
+In the `views` directory, create file called `index.pug`.
 
 ```pug
 doctype html
   html
     head
-      tite="Hello from Pug"
+      title="Hello from Pug"
     body
       p.greetings Hello World!  
 ```
@@ -550,3 +550,8 @@ project-root/
 ```
 
 This is pattern is commonly known as MVC, model-view-controller. Simply because our database model, the UI of the application and the controllers (in our case, routes) are written and stored in separate files. This design pattern makes any web application easy to scale and helps make the code more maintainable.
+
+## More Resources
+
+- [Express official site](https://expressjs.com/)
+

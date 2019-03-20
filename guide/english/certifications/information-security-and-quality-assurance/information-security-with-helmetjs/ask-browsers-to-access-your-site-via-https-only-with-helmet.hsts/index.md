@@ -3,8 +3,14 @@ title: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
 ---
 ## Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/ask-browsers-to-access-your-site-via-https-only-with-helmet.hsts/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+- You want your `app` to `use` helmet's `hsts()` method.
+- Don't forget to give the methed the appropriate `maxAge` and `force` configurations.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+- In the `myApp.js` file, create a variable to use for the `maxAge` configuration by adding `var ninetyDaysInMilliseconds = 90*24*60*60*1000;` under the seventh instructions.
+- Then, on the next line add `app.use(helmet.hsts({ maxAge: ninetyDaysInMilliseconds, force: true }));`.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.

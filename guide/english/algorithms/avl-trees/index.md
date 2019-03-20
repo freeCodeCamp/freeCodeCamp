@@ -4,7 +4,7 @@ title: AVL Trees
 ## AVL Trees
 
 
-An AVL tree is a subtype of binary search tree.
+An AVL tree is a subtype of binary search tree. Named after it's inventors Adelson, Velskii and Landis, AVL trees have the property of dynamic self-balancing in addition to all the properties exhibited by binary search trees.
 
 A BST is a data structure composed of nodes. It has the following guarantees:
 
