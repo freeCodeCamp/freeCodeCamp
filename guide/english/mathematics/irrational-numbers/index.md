@@ -6,14 +6,13 @@ title: Irrational Numbers
 An irrational number is a real number that cannot be written as a fraction of integers, i.e., a number that is not rational. For example, [pi](https://en.wikipedia.org/wiki/Pi), [e](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and [sqrt(2)](https://en.wikipedia.org/wiki/Square_root_of_2) are all irrational.
 
 A common misconception is that a number that has an infinite decimal expansion must be irrational but this is completely false, for example, 1/3 = 0.333... is clearly rational but the decimal expansion has an infinite number of 3s. The correct characterization is that a real number that does not have a finite decimal expansion is irrational if the expansion does not eventually become a subsequence that repeats itself forever.
-```
-1 = 3*(1/3) = 3*(0.333...) = 0.999...
-```
-so arithmetic with infinite decimal expansions is more subtle than arithmetic with integers (`1` has both a finite and an infinite decimal expansion!) so more care needs to be taken if we want to be able to discuss them clearly. What can be said is that the infinite decimal expansion of an irrational number will not terminate, and will never become a subsequence of digits that simply repeats over and over. For example, the number
+
+The number
 ```
 1/2 = 0.5
 ```
-is not irrational as the decimal expansion terminates (or repeats with 0s). The number
+is not irrational as the decimal expansion terminates (or repeats with 0s).
+The number
 ```
 0.12543297051212121212...
 ```
