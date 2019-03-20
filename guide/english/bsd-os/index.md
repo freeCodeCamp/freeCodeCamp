@@ -18,6 +18,15 @@ Effectively, the BSD multi-tasking forced-interrupt part of timesharing gets in 
 
 BSD includes a 'Jails' system which is somewhat analogous to Linux Containers -- except with additional security and flexibility in implementation.
 
+### BSD Versions
+
+In contrast to the numerous Linux distributions, there are only four major open source BSDs. Each BSD project maintains its own source tree and its own kernel.
+
+1. FreeBSD
+2. NetBSD
+3. OpenBSD
+4. DragonFlyBSD
+
 ### More Information:
 
 [FreeBSD (Wikipedia.org)](https://en.wikipedia.org/wiki/FreeBSD)
