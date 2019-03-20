@@ -1,5 +1,5 @@
 ---
-title: Linking Your Account with Github
+title: Linking Your Account with GitHub
 localeTitle: 将您的帐户与Github链接
 ---
 2015年8月，我们推动了一些为我们的许多露营者带来麻烦的变化。
