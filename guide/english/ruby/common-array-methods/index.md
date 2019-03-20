@@ -72,7 +72,7 @@ array[5]
 ```
 
 #### .pop
-The .pop method will permantently remove the last element of an array and return this element:
+The .pop method will permanently remove the last element of an array and return this element:
 
 ``` ruby
 array.pop
@@ -80,7 +80,7 @@ array.pop
 ```
 
 #### .shift
-The .shift method will permantently remove the first element of an array and return this element:
+The .shift method will permanently remove the first element of an array and return this element:
 
 ``` ruby
 array.shift
