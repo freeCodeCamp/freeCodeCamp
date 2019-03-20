@@ -9,7 +9,8 @@ Though Grid Layout isn't fully supported by all browsers, it's the most advanced
 ### Basic Terminology
 
 #### Grid Container
-Element on which display: grid property is applied. Its direct children are becoming grid items.
+Element on which `display: grid;` property is applied. Its direct children become grid items.
+
 #### Grid Item
 Direct child of the grid container.
 
