@@ -68,7 +68,7 @@ Now we have `package.json` file, we can install Express by running the command:
 npm install --save express
 ```
 
-We can confirm that Express has correctly installed by two ways. First, there will be new section in `package.json` file named `dependencies` under which our Express exists:
+We can confirm that Express has correctly installed by two ways. First, there will be a new section in `package.json` file named `dependencies` under which our Express exists:
 
 ```json
 {
@@ -136,7 +136,7 @@ These statements are the custom application based settings that are defined afte
 
 **Middleware**
 
-These functions determine the flow of request-response cycle. They are executred after every incoming request. We can also define custom middleware functions. We have section on them below.
+These functions determine the flow of request-response cycle. They are executred after every incoming request. We can also define custom middleware functions. We have a section on them below.
 
 **Routes**
 
@@ -146,7 +146,7 @@ They are the endpoints defined in our server that helps to perform operations fo
 
 The last that gets executed in an Express server is the `app.listen()` function which starts our server.
 
-We will now start disussing sections that we haven't previously discussed about.
+We will now start discussing sections that we haven't previously discussed about.
 
 ## Routing
 
