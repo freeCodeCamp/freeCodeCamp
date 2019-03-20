@@ -10,6 +10,8 @@ localeTitle: 冲刺
 
 \- 在整个项目期间，图纸应保持相同的预定时间长度。 - 该团队致力于将用户故事分解为可在Sprint持续时间内完成的大小，而无需转移到下一个。 - “Sprint”和“Iteration”通常可互换使用。
 
+一般来说冲刺应该是两个礼拜到四个礼拜之间
+
 #### 更多信息：
 
 *   敏捷联盟的[迭代](https://www.agilealliance.org/glossary/iteration/)
