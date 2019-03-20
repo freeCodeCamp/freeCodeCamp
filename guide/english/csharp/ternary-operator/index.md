@@ -30,7 +30,7 @@ string str = hasFreeSweet ? "Free sweet!" : "No free sweet.";
 Console.WriteLine(str);
 ```
 
-## Output
+### Output
 ```csharp
 if hasFreeSweet == true
 > Free sweet!
@@ -46,7 +46,7 @@ To embed more ternary operations within another ternary operation, you only have
 
 Let's say we have a result `myResult` that is an `int` and can be 0, 1, or greater than 1.  And we would like to output `"Just Starting"` if `myResult` is 0, `"First Place"` if `myResult` is 1, and `"If you're not first, you're last."` if `myResult` is 2 or greater.  So, we need 3 outcomes for this ternary operation.  
 
-Example:
+## Example
 
 ```csharp
 //Initialize myResult with a 4
