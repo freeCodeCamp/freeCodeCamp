@@ -53,6 +53,9 @@ Blockchains, ideally, are just very sophisticated linked lists where each block 
 
 Consensus is an approach to decision making. It is a creative and dynamic way of reaching agreement between all members of a group. A transaction on blockchain can be executed only if all the parties on the network unanimously approve it.
 
+#### _* Proof of Work_
+
+The main feature that allows blockchain to be extremely secure is the use of proof of work. Most cryptocurrency states that the block with the longest chain is the "trusted" chain. The longest chain refers to one with the longest computational work put into it, or the one mined the most. If a malicious user decides to add a transaction in a ledger, it would change the entire block values, meaning the user would have to recompute the entire chain which would be computationally impossible or unincentive.
 
 ### Sources
 
