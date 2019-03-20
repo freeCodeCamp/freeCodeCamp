@@ -14,7 +14,7 @@ A positive integer is a <a href="https://en.wikipedia.org/wiki/Kaprekar number">
 Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.Example
 Kaprekar numbers:
 <ul>
-<li> <code>2223</code> is a Kaprekar number, as $2223 * 2223 = 4941729$, $4941729$ may be split to $494$ and $1729$, and $494 + 1729 = 2223$</li>
+<li> <code>2223</code> is a Kaprekar number, as <code>2223 * 2223 = 4941729</code>, <code>4941729</code> may be split to <code>494</code> and <code>1729</code>, and <code>494 + 1729 = 2223</code></li>
 <li>The series of Kaprekar numbers is known as <a href="http://rosettacode.org/wiki/oeis:A006886">A006886</a>, and begins as $1, 9, 45, 55, ...$</li>
 </ul>
 </section>
