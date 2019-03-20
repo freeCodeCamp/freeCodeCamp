@@ -3,7 +3,7 @@ title: Ternary operator
 ---
 
 # Ternary operator (`?:`)
-Ternary operator returns one of the two expressions based on a condition. It can be used as a shortcut for if...else statement.
+Ternary operator return one of the two expression based on the condition. It can be used as a shortcut for if...else statement.
 
 ## Syntax
 ```
@@ -22,22 +22,21 @@ Returned if `condition_expression` is false.
 ## Example
 ```csharp
 // initialize - set true or false here to view different result
-bool hasFreeSweets = false;
+bool hasFreeSweet = false;
 
-string str = hasFreeSweets ? "Free sweets!" : "No free sweets.";
+string str = hasFreeSweet ? "Free sweet!" : "No free sweet.";
 
 //output in console
 Console.WriteLine(str);
 ```
 
 ## Output
-
 ```csharp
-if hasFreeSweets == true
-> Free sweets!
+if hasFreeSweet == true
+> Free sweet!
 
-if hasFreeSweets == false
-> No free sweets.
+if hasFreeSweet == false
+> No free sweet.
 ```
 
 ## Complex Ternary Operations
@@ -53,7 +52,7 @@ Example:
 //Initialize myResult with a 4
 int myResult = 4;
 
-//Output to the console the results of having a 4 in myResult based on what I expect above.
+//Output to the console the results of having a 4 in myResult based on what is expected.
 //The extra parenthesis after "Just Starting" is for grouping 
 //and is not necessary for the code to execute as expected
 Console.WriteLine((myResult == 0)  ? "Just Starting" : 
@@ -66,6 +65,5 @@ Console.WriteLine((myResult == 0)  ? "Just Starting" :
 >If you're not first, you're last.
 ```
 
-Check out this Repl I made that shows the code in action.  Try changing the value in `myResult` to 0, 1, 999, etc. and see what happens to the output. [Complex Ternary Operations on Repl.it](https://repl.it/@heyitsmarcus/ComplexTernaryOperations?language=csharp)
 
-You can continue this pattern to embed as many ternary operations as you wish, although I'd recommend **against** using more than a couple ternary operations in your code as it will drastically reduce the readability if you need to have someone else read it, contribute to it, etc.
+You can continue this pattern to embed as many ternary operations as you wish, although it is **not recommended** to use more than a couple ternary operations in your code as it will drastically reduce the readability if you need to have someone else read it, contribute to it, etc.
