@@ -3,7 +3,8 @@ title: Ternary operator
 ---
 
 # Ternary operator (`?:`)
-Ternary operator returns one of the two expressions based on a condition. It can be used as a shortcut for if...else statement.
+
+The ternary operator returns one of the two expressions based on a condition. It can be used as a shortcut for if...else statement.
 
 ## Syntax
 ```
@@ -25,6 +26,23 @@ Returned if `condition_expression` is false.
 bool hasFreeSweets = false;
 
 string str = hasFreeSweets ? "Free sweets!" : "No free sweets.";
+
+//output in console
+Console.WriteLine(str);
+```
+
+## Equivalent if...else Statement
+```
+// initialize - set true or false here to view different result
+bool hasFreeSweet = false;
+
+string str;
+
+if(hasFreeSweet){
+    str = "Free sweet!";
+} else {
+    str = "No free sweet.";
+}
 
 //output in console
 Console.WriteLine(str);
