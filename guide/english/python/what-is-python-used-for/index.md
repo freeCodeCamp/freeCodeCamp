@@ -67,16 +67,14 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 * Scraping data from websites
 * Image Processing
 
-## Why Python has got such a wide range of usage?
+### Why python has such a wide range of usage?
+* Python has many packages to work with, some ranging from aerospace research to mathematics. 
+* Secondly for choosing to be a part of the open source community. Yes! Python is Open-source. 
+* For it's simple and elegant syntax.
+* There are many built-in functions of which python codes are small in size compared with other codes which are the same in context but written in a different language.
+* Python also supports Object-Oriented programming.
 
-* Python  has got many packages to work with, some ranging for aerospace research to mathematics. 
-*Secondly for choosing to be a part of the open source community.
-  Yes! Python is Open-source. 
-  * For it's simple and elegant syntax.
-  *There are many built-in functions because of which python codes are small in size than compared with other codes which       are same in context but written in different language.
-  * Python also supports Object-Oriented programming fashion.
-  Thus these things add on for the popularity of Python in various communities.
-
+These things add to the popularity of Python in various communities.
 
 #### Further Reading
 
