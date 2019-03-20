@@ -19,11 +19,11 @@ You need to check if an element is an array or not.
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
-If you are dealing with an array, then you need flatten it by getting the value inside of the array. This means if you have <a href='https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:"' target='_blank' rel='nofollow'>[4]] then instead of returning [4] you need to return 4\. If you get [[[4]]] then the same, you want the 4\. You can access it with arr[index1][index2] to go a level deeper.
+If you are dealing with an array, then you need flatten it by getting the value inside of the array. This means if you have `[[4]]` then instead of returning `[4]` you need to return `4`. If you get `[[[4]]]` then the same, you want the `4`. You can access it with `arr[index1][index2]` to go a level deeper.
 
 > _try to solve the problem now_
 
-## ![:speech_balloon:</a> Hint: 3
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
 
 You will definitely need recursion or another way to go beyond two level arrays to make the code flexible and not hard-coded to the answers needed. Have fun!
 
@@ -31,7 +31,7 @@ You will definitely need recursion or another way to go beyond two level arrays 
 
 ## Spoiler Alert!
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+![warning sign](https://discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
 
 **Solution ahead!**
 
@@ -99,6 +99,29 @@ You will definitely need recursion or another way to go beyond two level arrays 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-concat/14286' target='_blank' rel='nofollow'>Array.concat</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator' target='_blank' rel='nofollow'>Spread operator</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator' target='_blank' rel='nofollow'>Ternary Operator (`condition ? a : b`)</a>
+
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+
+    function steamrollArray(arr) {
+      while(arr.some(element => Array.isArray(element))) {
+        arr = arr.flat();
+      }
+      return arr;
+    }
+
+    steamrollArray([1, [2], [3, [[4]]]]);
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/ContentMiserlySweepsoftware' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Use `Array.some()` method to find out if the new array contains an array still, if it does flatten the array
+*   Repeats, until there is no more arrays inside arr.
+
+#### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some' target='_blank' rel='nofollow'>Array.some</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat' target='_blank' rel='nofollow'>Array.flat</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
