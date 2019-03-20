@@ -458,13 +458,13 @@ app.set('views', './views');
 
 Since we are using `app.set()` which indicates configuration within our server file, we must place them before we define any route or a middleware function.
 
-In the `views` direcotry, create file called `index.pug`.
+In the `views` directory, create file called `index.pug`.
 
 ```pug
 doctype html
   html
     head
-      tite="Hello from Pug"
+      title="Hello from Pug"
     body
       p.greetings Hello World!  
 ```
