@@ -10,6 +10,7 @@ One of the real advantages of CSS Grid Layout is being able to design responsive
 
 #### More Resources:
 - [A Complete Guide to CSS Grid Layout](http://chris.house/blog/a-complete-guide-css-grid-layout/)
+- [Basic concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
 - [Grid by Example](https://gridbyexample.com/)
 - [Wes Bos - Free CSS Grid Course](https://cssgrid.io/)
 - [YouTube - CSS Grid Playlist](https://www.youtube.com/watch?v=FEnRpy9Xfes&list=PLbSquHt1VCf1x_-1ytlVMT0AMwADlWtc1)
