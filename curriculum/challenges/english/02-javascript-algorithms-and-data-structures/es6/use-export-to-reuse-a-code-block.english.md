@@ -50,7 +50,7 @@ const bar = "foo";
 <div id='js-setup'>
 
 ```js
-window.exports = function(){};
+self.exports = function(){};
 ```
 
 </div>
@@ -62,6 +62,8 @@ window.exports = function(){};
 <section id='solution'>
 
 ```js
-// solution required
+"use strict";
+export const foo = "bar";
+export const bar = "foo";
 ```
 </section>

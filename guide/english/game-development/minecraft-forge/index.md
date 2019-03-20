@@ -22,7 +22,7 @@ Next up is picking your IDE (integrated development environment). Eclipse? `grad
 
 Hold your horses. There's much more to it. You'll have to texture an item of course, add code and so much more! In this article we'll only look at some simple sample code which I also use for my own mods. Here it is!
 
-`
+```
 @Mod.EventBusSubscriber
 @Mod(modid = Version.MOD_ID, name = Version.MOD_NAME, version = Version.VERSION)
 public class TheMod {
@@ -57,6 +57,6 @@ public class TheMod {
         proxy.postInit(event);
     }
 }
-`
+```
 
 Use this code as you please, make sure you edit for instance the proxy strings and more! This should give you a basic overview of what a basic mod class looks like.
