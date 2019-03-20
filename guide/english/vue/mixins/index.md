@@ -4,7 +4,7 @@ title: Mixins
 
 ## Mixins
 
-A constant Problem is that we use some small Functions in a lot of Vue components, instead of coping them into each of them we can create mixins. Those can be included and will then be merged into the current component.
+A constant problem is that we use some small functions in a lot of Vue components.  Instead of copying them into each of them, we can create mixins. Those can be included and will then be merged into the current component.
 
 ### Examples
 
