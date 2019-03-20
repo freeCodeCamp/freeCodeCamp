@@ -137,6 +137,7 @@ There are a few tools available to create SVG in the form of a drawing program.
 
 - <a href='https://www.inkscape.org/' target='_blank' rel='nofollow'>Inkscape</a> - It is an open source tool for state-of-the-art vector drawing with an easy to use graphical interface.
 - <a href='https://www.adobe.com/products/illustrator/' target='_blank' rel='nofollow'>Adobe Illustrator</a> - Adobe Illustrator is a commercial tool for Vector Imagery.
+- <a href='https://docs.google.com/drawings' target='_blank' rel='nofollow'>Google Drawings</a> - Google Drawings is a simple web based software allowing you to export your vectors as SVGs.
 
 For more tools, refer to <a href='https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
 
