@@ -2,14 +2,26 @@
 title: Pointers
 ---
 # Pointers in C
-By now you should be aware that C is a low-level language, and nothing shows that better than pointers. Pointers are variables that get you the variable value by "pointing" to a memory location rather than storing the value of the variable itself. Pointers are actually the values of memory adress in hex, like adresses of your own house, i.e. pointer would be the address of your house while the value of which pointers points to would be the house itself. This allows for some handy tricks, and is also what gives us access to arrays and file handling, among other things.
 
-#
-```
-type *var-name;
-```
+By now you should be aware that C is a low-level language, and nothing shows that better than pointers. Pointers are variables that "point" to the memory location that a value is stored in, rather than storing the value of the variable itself. This allows for some handy tricks, and is also what gives us access to arrays and file handling, among other things. Similar to variables in other languages, pointers are type-specific and are declared using * before the pointer name.
+
+![pointer_example](http://2.bp.blogspot.com/-5qusRuPI8J0/VLo9HmgEaRI/AAAAAAAADkw/VGzXBUQUdCU/s1600/Pointers%2Bin%2BC%2BProgramming.png)
 
 ## Making and Using a Pointer
+You can declare a C pointer using the following syntax:
+```c
+type *var-name;
+```
+This creates a pointer of type `type`. The location of * is irrelevant so long as it remains between the pointer type and name:
+```c
+type* var-name;
+``` 
+or
+```c
+type * var-name;
+```
+would also suffice.
+
 ```c
 #include <stdio.h>
 
@@ -34,9 +46,9 @@ value of my_double_variable: 10.100000
 value of my_pointer: 11.100000
 ```
 
-In this code, there are two declarations. The first is a typical variable initialization which creates a `double` and sets it equal to 10.1. New in our declarations is the usage of `*`. The asterisk (`*`) is usually used for multiplication, but when we use it by placing it in front of a variable it tells C that this is a pointer variable.  
+In this code, there are two declarations. The first is a typical variable initialization which creates a `double` and sets it equal to 10.1. The following line is a declaration of a pointer (which currently points to nothing, or NULL).
 
-The next line tells the compiler where that somewhere else actually is. By using `&` in this way, it becomes the 'dereferencing operator', and returns the memory location of the variable it's looking at.
+The next line assigns pointer `my_pointer` to memory address of `my_double_variable` using the dereferencing operator `&`. This operator simply returns the address of the value stored in the variable it is used on. It is important to note that the pointer cannot simply be assigned to `my_double_variable` as it must point instead to the memory address where the value of `my_double_variable` is stored.
 
 With that in mind, let's take another look at this chunk of code:
 ```c
@@ -114,7 +126,7 @@ When, the value of pointers are changed, the value in the pointed memory locatio
 Hence, changes made to *n1 and *n2 are reflected in num1 and num2 in the main function.
 
 
-### POINTERS AS PARAMETERS TO FUNCTION
+### Pointers as Parameters in a Function
 when we pass any parameter to function we are making a copy of the parameter. let see with the example
 ```C
 #include <stdio.h>
