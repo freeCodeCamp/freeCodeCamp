@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/Knight%27s_tour">Problem</a>: you have a <code>w</code> x <code>h</code> chessboard, empty but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is <i>not</i> a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
+<a href="https://en.wikipedia.org/wiki/Knight%27s_tour">Knight's Tour</a>Problem: You have an empty <code>w</code> * <code>h</code> chessboard, but for a single knight on some square. The knight must perform a sequence of legal moves that result in the knight visiting every square on the chessboard exactly once. Note that it is <i>not</i> a requirement that the tour be "closed"; that is, the knight need not end within a single move of its start position.
 </section>
 
 ## Instructions
