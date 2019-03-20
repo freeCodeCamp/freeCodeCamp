@@ -22,7 +22,7 @@ for (init; condition; increment )
 }
 ```
 
-It is allowed to place the increment inside the for loop like in a while loop. Meaning a syntax like this can also work.
+The increment can also placed inside the for loop i.e. in its body- 
 
 ```
 for ( init; condition;) 
@@ -32,7 +32,8 @@ for ( init; condition;)
 }
 ```
 
-It is also allowed to ignore the init variables. For example:
+It is also allowed to ignore the init variables if and only if they are declared beforehand. For example :
+
 ```
 int a = 1;
 for (; a <= 10 ;)
@@ -42,15 +43,14 @@ for (; a <= 10 ;)
 }
 ```
 
-However, you can't pass zero arguments, since empty condition is defaulted as false, and so the `for` loop won't run at all.
+The condition must be declared inside the parenthesis `()` in the for loop because the empty condition always returns false, which will prevent the loop from running.
 
 ### init
 This step allows you to declare and initialize any loop control variables. This step is performed first and only once.  
 Note that the variables declared in init can only be used inside the brackets of the For Loop.
 
 ### condition
-
-Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps outside the loop.
+Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next block of code outside the loop.
 
 ### increment
 The increment statement is used to alter the loop variable by using simple increment operations and executes after the completion of the body of the loop.
