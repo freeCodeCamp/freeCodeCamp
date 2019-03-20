@@ -36,10 +36,10 @@ Your html link now:
 ```html
 <a href="mailto:?subject=Great%20news&body=I%20am%20becoming%20a%20developer">Send mail!</a>
 ```
-In this instance we have left mailto empty (mailto:?) which will open the user's email client and the user will add the recipient's email address themselves.
+In this instance we have left mailto empty (mailto:?) which will open the user's email client and the user will add the recipient's email address.
 
 #### Adding more recipients:
-Separete each email address with a comma to add additional recipients.
+Separate each email address with a comma to add additional recipients.
 
 Additional parameters, such as cc and bcc, are preceded by `&`.
 
