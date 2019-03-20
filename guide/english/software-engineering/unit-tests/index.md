@@ -17,6 +17,7 @@ A unit is often seen as the smallest piece of your code that can be accurately t
 - **Quality** - As unit testing forces you to think about and use your own API, it enforces good/extendable interfaces and patterns. It can point out any tight coupling or over-complexity which should be addressed. Bad code is usually much harder to test 
 - **Industry Standard** -  Unit testing is a common discipline these days, and is a requirement for a large portion of software companies
 - **Fewer bugs** - Substantial research suggests that applying testing to an application can reduce production bug density by 40% — 80%.
+- **Cost Reduction** - It's a very early phase in software testing so eventually it reduces cost of Testing as defects are captured in the early stage.
 
 ### Example(In Javascript)
 Suppose there is a function written in file **add.js**

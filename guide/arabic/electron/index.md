@@ -19,7 +19,7 @@ localeTitle: الإلكترون
 *   [Skype](https://www.skype.com/) (تطبيق الدردشة المرئية الشهير من Microsoft)
 *   [سلاك](https://slack.com/) (تطبيق مراسلة للفرق)
 *   [Discord](https://discordapp.com) (تطبيق مراسلة مشهور للاعبين)
-*   [سطح مكتب Github](https://desktop.github.com/) (عميل [Gitub Desktop](https://desktop.github.com/) الرسمي)
+*   [سطح مكتب GitHub](https://desktop.github.com/) (عميل [Gitub Desktop](https://desktop.github.com/) الرسمي)
 
 ### مراجع معلومات إضافية
 
