@@ -19,7 +19,7 @@ You may read it as "get the field <code>x</code> and copy the value into <code>a
 
 ## Instructions
 <section id='instructions'>
-Use destructuring to obtain the average temperature for tomorrow from the input object <code>avgTemperatures</code>, and assign value with key <code>tomorrow</code> to <code>tempOfTomorrow</code> in line.
+Use destructuring to obtain the average temperature for tomorrow from the input object <code>AVG_TEMPERATURES</code>, and assign value with key <code>tomorrow</code> to <code>tempOfTomorrow</code> in line.
 </section>
 
 ## Tests
@@ -29,13 +29,10 @@ Use destructuring to obtain the average temperature for tomorrow from the input 
 tests:
   - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>
     testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79);
-  - text: Shouldn't include key <code>today</code> after assignment of <code>tempOfTomorrow</code>.
-    testString: getUserInput => assert(!code.match(\s*const\s*{\s*tomorrow\s*:\s*tempOfTomorrow\s*,\s*today\s*:\s*\w*\s*}\s*=\s*avgTemperatures\s*;?));
-  - text: Shouldn't include key <code>today</code> before assignment of <code>tempOfTomorrow</code>
-    testString: getUserInput => assert(! code.match(\s*const\s*{\s*\s*today\s*:\s*\w*\s*,\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures\s*;?));
   - text: destructuring with reassignment was used
-    testString: getUserInput => 
-    assert(code.match(\s*const\s*{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures\s*;?));
+    testString: getUserInput => assert(code.match(/{[\S\s]*\w+\s*:[\S\s]*\w+\s*}\s*=\s*(avgTemperatures|AVG_TEMPERATURES)/));
+  - text: The key <code>tomorrow</code> was destructured from <code>AVG_TEMPERATURES</code>
+    testString: getUserInput => assert(code.match(/{[\S\s]*tomorrow\s*:\s*tempOfTomorrow[\S\s]*}\s*=\s*(avgTemperatures|AVG_TEMPERATURES)/)); 
 
 ```
 
