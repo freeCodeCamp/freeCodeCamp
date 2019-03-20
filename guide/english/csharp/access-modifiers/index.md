@@ -13,17 +13,16 @@ Here are the 3 most common access modifiers:
 
 ## Examples
 ```csharp
-  public class Person
-  {
-    public string FirstName { get; set;} // these can be accessed from anywhere
-    public string LastName { get; set;}
+public class Person
+{
+  public string FirstName { get; set;} // these can be accessed from anywhere
+  public string LastName { get; set;}
     
-    protected string SecretMessage { get; set;} // this can be accessed from this class or any derived classes
+  protected string SecretMessage { get; set;} // this can be accessed from this class or any derived classes
     
-    private int PersonId { get; set;} // this can only be accessed from this class
-  }
+  private int PersonId { get; set;} // this can only be accessed from this class
+}
 ```
 
 ## Sources
-- https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/access-modifiers
-
+- [Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/access-modifiers)
