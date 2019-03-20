@@ -144,7 +144,7 @@ array
 #### .unshift
 The `.unshift` method adds an element to the beginning of an array and return the array:
 
-```
+``` ruby
 array = [0, 1, 2, 3, 4]
 => [0, 1, 2, 3, 4]
 
@@ -239,6 +239,9 @@ array = [1, 2, [3, 4, 5], [6, 7]]
 => [1, 2, [3, 4, 5], [6, 7]]
 
 new_array = array.flatten
+=> [1, 2, 3, 4, 5, 6, 7]
+
+new_array
 => [1, 2, 3, 4, 5, 6, 7]
 
 array
