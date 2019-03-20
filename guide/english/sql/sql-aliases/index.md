@@ -6,7 +6,7 @@ title: SQL Aliases
 
 ## Using AS to assign meaningful or simpler names
 
-You can use AS to assign a name to a column of data you are selecting or that has been calculated.
+You can use "AS" to assign a name to a column of data you are selecting or that has been calculated.
 
 ```sql
 
@@ -14,7 +14,7 @@ SELECT user_only_num1 AS AgeOfServer, (user_only_num1 - warranty_period) AS NonW
 
 ```
 
-This results in output as below.
+This results in output below.
 
 ```text
 
@@ -33,7 +33,7 @@ This results in output as below.
 +-------------+------------------------+
 
 ```
-You can also use AS to assign a name to a table to make it easier to reference in joins.
+You can also use "AS" to assign a name to a table to make it easier to reference in joins.
 
 ```sql
 SELECT ord.product, ord.ord_number, ord.price, cust.cust_name, cust.cust_number FROM customer_table AS cust
