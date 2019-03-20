@@ -3,11 +3,11 @@ title: ExpressJS
 ---
 ## ExpressJS
 
-When it comes to building web applications using Node.js, creating a server can take a lot of time. Over the years Node.js has matured enough due to the support from community. Using Node.js as a backend for web applications and websites help the developers to start working on their application or product quickly. In this tutorial, we are going to look into Expressjs which is a Node.js framework for web development that comes with features like routing and rendering and support for REST APIs.
+When it comes to building web applications using Node.js, creating a server can take a lot of time. Over the years Node.js has matured enough due to the support from the community. Using Node.js as a backend for web applications and websites help the developers to start working on their application or product quickly. In this tutorial, we are going to look into Expressjs which is a Node.js framework for web development that comes with features like routing and rendering and support for REST APIs.
 
 ## What is Express?
 
-Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not enforces its own philosophy that an application or API should be built in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
+Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not enforce its own philosophy that a application or API should be built in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
 
 Express was developed by TJ Holowaychuk and is now maintained by Node.js foundation and open source developers. To get started with the development using Express, you need to have Node.js and npm installed. You can install [Node.js](https://nodejs.org/en/) on your local machine and along with it comes the command line utility `npm` that will help us to install plugins or as called dependencies later on in our project.
 
