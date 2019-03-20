@@ -14,9 +14,9 @@ Developers start an SVG graphic with the `<svg>` tag and XML namespace like so:
 ```
 The sample also includes a `version` attribute. The `version` attribute is optional but it is recommended for compliance with XML specifications.
 
-This sample won't display anything, it merely established a viewport. You can add `height` and `width` attributes to set a display size for the viewport, this essentially establishes a canvas for you to work in.
+This sample won't display anything, it merely establishes a viewport. You can add `height` and `width` attributes to set a display size for the viewport. This essentially establishes a canvas for you to work in.
 
-With a viewport in place you can add basic graphics, text, and path elements.
+With a viewport in place, you can add basic graphics, text, and path elements.
 
 ```svg
 <svg version="1.1"
@@ -36,7 +36,7 @@ With a viewport in place you can add basic graphics, text, and path elements.
 
 You can see the output and play with the code in <a href='https://codepen.io/SgiobairOg/pen/OxbNpW' target='_blank' rel='nofollow'>this codepen</a>. 
 
-In the opening `svg` tag we add a width attribute to set the width of the viewport to 100% of the container width, you can use percentages or pixel widths. The opening svg tag also has `viewbox` attribute which defines a window through which elements of your svg are visible, in this case, the viewbox spans from (0,0) to (600,300). In SVG space the X-axis starts with zero on the left and increases to the right; the Y-axis starts with zero at the top and increases towards the bottom.
+In the opening `svg` tag we add a width attribute to set the width of the viewport to 100% of the container width, so you can use percentages or pixel widths. The opening svg tag also has `viewbox` attribute which defines a window through which elements of your svg are visible. In this case, the viewbox spans from (0,0) to (600,300). In SVG space, the X-axis starts with zero on the left and increases to the right; the Y-axis starts with zero at the top and increases towards the bottom.
 
 The first new tag is the `<rect />` tag which defines a rectangle in the SVG viewport. In this case we define a square which is 10 units from the top and left and 100 units tall and wide. The `fill` attribute sets the fill color for the shape.
 
@@ -82,14 +82,11 @@ context.fillRect (10, 10, 100, 50) ;
 
 ![](http://www.crwflags.com/fotw/images/s/sly@stt.gif)
 
-After creating the context object, the example draws a red rectangle 100
-pixels wide and 50 pixels high, with its top-left corner at coordinates
-(10,10).
+After creating the context object, the example draws a red rectangle 100 pixels wide and 50 pixels high, with its top-left corner at coordinates (10,10).
 
 ### Drawing a pie chart
 
-The results variable contains an array of objects that represent the
-survey responses.
+The results variable contains an array of objects that represent the survey responses.
 ```javascript
 var results = [{ name: "Satisfied", count: 1043, color: "lightblue"},
                { name: "Neutral", count: 563, color: "lightgreen"},
@@ -129,7 +126,7 @@ This draws the following chart:
 
 ## Editors
 
-* [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge
+* [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge.
 
 ## Tools to create SVG
 
