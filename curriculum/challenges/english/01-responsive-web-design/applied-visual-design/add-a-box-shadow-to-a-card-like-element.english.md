@@ -8,7 +8,16 @@ videoUrl: 'https://scrimba.com/c/cvVZdUd'
 ## Description
 <section id='description'>
 The <code>box-shadow</code> property applies one or more shadows to an element.
-The <code>box-shadow</code> property takes values for <code>offset-x</code> (how far to push the shadow horizontally from the element), <code>offset-y</code> (how far to push the shadow vertically from the element), <code>blur-radius</code>, <code>spread-radius</code> and a color value, in that order. The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
+The <code>box-shadow</code> property takes values for 
+<ul>
+  <li><code>offset-x</code> (how far to push the shadow horizontally from the element),</li>
+  <li><code>offset-y</code> (how far to push the shadow vertically from the element),</li>
+  <li><code>blur-radius</code>,</li>
+  <li><code>spread-radius</code> and</li>
+  <li><code>color</code>, in that order.</li>
+</ul>
+The <code>blur-radius</code> and <code>spread-radius</code> values are optional.
+Multiple box-shadows can be created by using commas to separate properties of each <code>box-shadow</code> element.
 Here's an example of the CSS to create multiple shadows with some blur, at mostly-transparent black colors:
 <blockquote>box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);</blockquote>
 </section>
