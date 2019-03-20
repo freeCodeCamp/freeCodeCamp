@@ -23,7 +23,7 @@ Just to name a few advantages of WordPress:
 * Has mobile app (Android and iOS), which can be used to post and manage their Wordpress webpage.
 * Wordpress sites can be hosted on any server running the LAMP stack
 * WordPress themes make it possible for non-designers to create a customized website
-* Wordpress site is very scalable, you can start an as simple blog then end up with complex online stores, membership, and affiliate program
+* Wordpress sites are very scalable, you can start as simple blog then end up with complex online stores, membership, and affiliate program
 
 As a CMS, WordPress allows you to control and manage the content of your website with a very easy system, such as the WordPress dashboard panel. A dashboard lets you do work on your website without needing to program anything. You can add or delete images and edit text on your webpage fast and easily.
 
@@ -35,7 +35,7 @@ If you would like to meet new people who are interested in Wordpress there are m
 
 ### WordPress as a Blogging Platform
 
-Blogging is a foundational feature of WordPress. One of the primary things it allows you to do is create individual "posts", and designate the main blog page that displays them in chronological order.
+Blogging is a foundational feature of WordPress. One of the primary things it allows you to do is create individual "posts", and designate a main blog page that displays them in chronological order.
 
 It supports many useful publishing features out of the box, like the ability to add images, save drafts, enable comments, and organize your posts with tags and categories. And it includes an admin dashboard for managing posts, media, site menus, settings, and more.
 
@@ -48,8 +48,8 @@ What makes WordPress particularly powerful is that it's possible to create other
 
 ### Templates
 
-WordPress does not require work from scratch. For ease of new developers, there are tons of free templates available on the internet which can be used by a basic developer. 
-Few websites which provide these free templates are:
+WordPress does not require work from scratch. For ease of new developers, there are tons of free templates available on the internet which can be used by a beginner developer. 
+Few websites which are providing these free templates are:
 
 - [AThemes](https://athemes.com/collections/free-wordpress-themes/)
 - [WordPress](https://wordpress.org/themes/)
@@ -113,7 +113,7 @@ Here are some examples of big name brands using WordPress:
 * [The Walt Disney Company](https://www.thewaltdisneycompany.com/)
 
 Note: WordPress's ease of use may encourage new users to forget about website security. However, the popularity of WordPress increases the activity of malware and other issues. 
-It is important to choose extremely difficult or random passwords for the administrators and for the database. These guards against random brute-force attacks. 
+It is important to choose extremely difficult or random passwords for the administrators and for the database. This guards against random brute-force attacks. 
 Using tools such as [Jetpack](https://jetpack.com/) and an [SSL certificate](https://www.verisign.com/en_US/website-presence/website-optimization/ssl-certificates/index.xhtml) increases your protection against unwanted attacks.
 
 ## Get Started With Wordpress
@@ -149,7 +149,7 @@ In Directory: -Leave Here Empty-
 
 ### Site Settings
 Site Name: My Blog
-Site Description: Awesome blog about cycling and sightseeing!
+Site Description: Awesome blog about cycling and sight-seeing!
 Enable Multisite (WPMU): -NO-
 
 ### Admin Account
