@@ -3,11 +3,11 @@ title: ExpressJS
 ---
 ## ExpressJS
 
-When it comes to build web applications using Node.js, creating a server can take a lot of time. Over the years Node.js has matured enough due to the support from community. Using Node.js as a backend for web applications and websites help the developers to start working on their application or product quickly. In this tutorial, we are going to look into Expressjs which is a Node.js framework for web development that comes with features like routing and rendering and support for REST APIs.
+When it comes to building web applications using Node.js, creating a server can take a lot of time. Over the years Node.js has matured enough due to the support from community. Using Node.js as a backend for web applications and websites help the developers to start working on their application or product quickly. In this tutorial, we are going to look into Expressjs which is a Node.js framework for web development that comes with features like routing and rendering and support for REST APIs.
 
 ## What is Express?
 
-Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not enforces its own philosophy that a application or API should be built in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
+Express is the most popular Node.js framework because it requires minimum setup to start an application or an API and is fast, and unopinionated at the same time. In other words, it does not enforces its own philosophy that an application or API should be built in a specific way, unlike Rails and Django. Its flexibility can be calculated by the number of `npm` modules available which makes it pluggable at the same time. If you have basic knowledge of HTML, CSS, and JavaScript and how Node.js works in general, in no time you will be able to get started with Expressjs.
 
 Express was developed by TJ Holowaychuk and is now maintained by Node.js foundation and open source developers. To get started with the development using Express, you need to have Node.js and npm installed. You can install [Node.js](https://nodejs.org/en/) on your local machine and along with it comes the command line utility `npm` that will help us to install plugins or as called dependencies later on in our project.
 
@@ -24,7 +24,7 @@ If you are getting the version number instead of an error that means you have in
 
 ## Why use Expressjs?
 
-Before we start with mechanism of using Express as the backend framework, let us first explore why we should consider it using or the reasons of its popularity.
+Before we start with mechanism of using Express as the backend framework, let us first explore why we should consider using it and the reasons for its popularity.
 
 * Express lets you build single page, multi-page, and hybrid web and mobile applications. Other common backend use is to provide an API for a client (whether web or mobile).
 * It comes with a default template engine, Jade which helps to facilitate the flow of data into a website structure and does support other template engines.
@@ -36,7 +36,7 @@ Whenever we create a project using `npm`, our project must have a `package.json`
 
 ### Creating package.json
 
-A JSON (JavaScript Object Notation) file is contains every information about any Express project. The number of modules installed, the name of the project, the version, and other meta information. To add Expressjs as a module in our project, first we need to create a project directory and then create a package.json file.
+A JSON (JavaScript Object Notation) file contains every information about any Express project. The number of modules installed, the name of the project, the version, and other meta information. To add Expressjs as a module in our project, first we need to create a project directory and then create a package.json file.
 
 ```shell
 mkdir express-app-example
@@ -346,7 +346,7 @@ app.use(
 );
 ```
 
-### morgan
+#### morgan
 
 The morgan middleware keeps track of all the requests and other important information depending on the output format specified.
 
@@ -361,6 +361,32 @@ app.use(logger('common'));
 ```
 
 `common` is a predfined format case which you can use in the application. There are other predefined formats such as tiny and dev, but you can define you own custom format too using the string parameters that are available to us by morgan.
+
+#### dotenv
+
+The dotenv middleware loads environmental variables from a `.env` file into `process.env`.  An `.env` file can be used to store sensitive information such as API keys and database credentials.  `dotenv` allows for a zero-configuration way to access the information stored in `.env`.  
+**Note:** You should NEVER include your `.env` file in your public repo.  Be sure to add `.env` to your `.gitignore` file.
+
+```shell
+npm install --save dotenv
+```
+
+```sh
+# .env file
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=s1mpl3
+```
+```js
+/* index.js file */
+require('dotenv').config();
+const db = require('db');
+db.connect({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASS
+});
+```
 
 A list of most used middleware functions is available at this [link](https://expressjs.com/en/resources/middleware.html).
 
@@ -493,10 +519,9 @@ The output will be the same as previous case.
 
 ## Project Structure of an Express App
 
-Since Express does not enforces much on the developer using it, sometimes it can get a bit overwhelming to what project structure one should follow. It does not has a defined structure officially but most common use case that any Node.js based application follows is to separate different tasks in different modules. This means to have separate JavaScript files.
+Because Express does not enforce a particular hierarchy, it can occasionally be overwhelming which project structure to follow.  The most common structure is a separation of tasks into different modules.
 
-Let us go through a typical strucutre of an Express based web application.
-
+An example of a typical structure for an Express-based web application:
 ```
 project-root/
    node_modules/          // This is where the packages installed are stored
@@ -524,4 +549,9 @@ project-root/
    package.json
 ```
 
-This is pattern is commonly known as MVC, model-view-controller. Simply because our database model, the UI of the application and the controllers (in our case, routes) are written and stored in separate files. This design pattern that makes any web application easy to scale if you want to introduce more routes or static files in the future and the code is maintainable.
+This is pattern is commonly known as MVC, model-view-controller. Simply because our database model, the UI of the application and the controllers (in our case, routes) are written and stored in separate files. This design pattern makes any web application easy to scale and helps make the code more maintainable.
+
+## More Resources
+
+- [Express official site](https://expressjs.com/)
+
