@@ -247,7 +247,7 @@ int main()
     return 0;
 }
 ```
-## Output
+#### Output
 ```
 ->10
   10
