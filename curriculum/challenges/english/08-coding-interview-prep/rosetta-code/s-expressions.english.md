@@ -59,9 +59,9 @@ for examples of native data structures.)
 tests:
   - text: <code>parseSexpr</code> is a function.
     testString: assert(typeof parseSexpr === 'function', '<code>parseSexpr</code> is a function.');
-  - text: <code>parseSexpr('(data1 data2 data3)')</code> should return ['data1', 'data2', 'data3']")
+  - text: <code>parseSexpr('(data1 data2 data3)')</code> should return <code>['data1', 'data2', 'data3']</code>
     testString: assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution, "<code>parseSexpr('(data1 data2 data3)')</code> should return ['data1', 'data2', 'data3']");
-  - text: <code>parseSexpr('(data1 data2 data3)')</code> should return an array with 3 elements")
+  - text: <code>parseSexpr('(data1 data2 data3)')</code> should return an array with 3 elements.
     testString: assert.deepEqual(parseSexpr(basicSExpr), basicSolution, "<code>parseSexpr('(data1 data2 data3)')</code> should return an array with 3 elements");
 
 ```

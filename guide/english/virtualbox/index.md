@@ -6,7 +6,7 @@ title: VirtualBox
 
 Oracle VM VirtualBox is a powerful cross-platform virtualization product intended for enterprise or personal use. VirtualBox is freely available as Open Source Software under the GNU General Public Licence (GPL) version 2.
 
-VirtualBox extends the capabilties of your existing computer so that it can run multiple operating systems, you can even run VirtualBox inside a virtual machine, to run another Operating system, all on the same PC, the only limits are disk space and memory.
+VirtualBox extends the capabilities of your existing computer so that it can run multiple operating systems, you can even run VirtualBox inside a virtual machine, to run another Operating system, all on the same PC, the only limits are disk space and memory.
 
 VirtualBox is a simple solution to: 
 - Running multiple operating systems simultaneously.
@@ -58,17 +58,16 @@ There are 32 bit and 64 bit versions of the software available for download. Con
 ### Setup
 - Sometimes you may need to enable virtualization from your BIOS settings. Learn how to access BIOS settings [here.](https://www.lifewire.com/how-to-enter-bios-2624481)
 - To set up your first Virtual Machine, download the .iso file from your desired Operating System site. 
-- Next you will hit the "New" button in VirtualBox, and name your VM with any name you like. 
-- The application will run you though several more configurations. Most importantly, note how much storage you select for 
-  the drive. This is the maximum size the machine file can be, which will take up storage on your device. Also, not how
-  much memory you provide the machine, because these resources will be unavailable to your host OS while running the VM. 
+- Next, you will hit the "New" button in VirtualBox, and name your VM with any name you like. 
+- The application will run you through several more configurations. Most importantly, note how much storage you select for 
+  the drive. This is the maximum size the machine file can be, which will take up storage on your device. Also, not how much memory you provide the machine because these resources will be unavailable to your host OS while running the VM. 
   
 For more information visit the 
 [VirtualBox Manual Chapter 1](https://www.virtualbox.org/manual/ch01.html)
 
 ### Run the Machine
 - Select your new VM, click settings, and navigate to the Storage tab. 
-- Next click the Disk shaped "Adds optical drive" Button on the "Controller IDE" line.
+- Next, click the Disk shaped "Adds optical drive" Button on the "Controller IDE" line.
 - Choose your .iso file
 - Close settings and hit Start!
 - Now your machine will run and install the operating system on the virtual drive. 
@@ -80,7 +79,7 @@ Congratulations! You've run your first Virtual Machine in VirtualBox.
 Visit the [VirtualBox Manual](https://www.virtualbox.org/manual/UserManual.html) for even more information about using and configuring machines.
  
 ### Configuring the machine to work with USB devices such as Bluetooth dongles, wireless adapters, SDR's, etc.:
-- Ensure your USB device is plugged in to your computer
+- Ensure your USB device is plugged into your computer
 - With the virtual machine powered off, select the machine in the VM manager.
 - Select settings at the top
 - Select USB
@@ -88,8 +87,8 @@ Visit the [VirtualBox Manual](https://www.virtualbox.org/manual/UserManual.html)
 - Select the proper radio button for the USB device is marked;
   - "USB 1.1 (OHCI Controller)", "USB 2.0 (EHCI Controller)", "USB 3.0 (xHCI Controller", most of your devices should work with the USB 2.0 option. Verify USB type before selecting.
   - On the right side, click the USB icon with the green + symbol.
-  - Select your USB device. (If you aren't sure which is which, unplug the device, select a blank area to get rid of the drop down menu, select the icon again, and repeat with the device plugged in to see the difference. You should consult the device's manual or manufacturers website to see what drivers your device uses)
-  - Power on your device, and you should be able to use whatever applications you need the device for, seamlessly.
+  - Select your USB device. (If you aren't sure which is which, unplug the device, select a blank area to get rid of the drop-down menu, select the icon again, and repeat with the device plugged in to see the difference. You should consult the device's manual or manufacturers website to see what drivers your device uses)
+  - Power on your device and you should be able to use whatever applications you need the device for, seamlessly.
  
 There will be no need to configure drivers on your virtual machine so long as your device is recognized by the host machine.
 

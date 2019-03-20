@@ -16,7 +16,7 @@ Classes allow us to model everyday objects in the world around us in software. Y
 
 When you write C# code, typically it is because you need a program that does something useful. In the case of a business need, you follow requirements that the business needs. Say your business comes to you and asks you for an electronic database of books. They need to be able to store book titles, authors, compute statistics like the number of checkouts in a given month, or a monthly average. The requirements describe the program that needs to be developed. How do you write a program for the given requirements? Generally, we use classes to create abstractions for the different nouns that we need to work with, a noun such as a book, author, or title. 
 
-An important concept in C# is that the class definition is used to create instances of objects. You can think of it like a blueprint for creating instances of objects. The class definition allows the creation of objects that store a reference to that object. For example, say we want to create a new book object. The line of code looks like this:  
+An important concept in C# is that the class definition is used to create instances of objects. You can think of it as a blueprint for creating instances of objects. The class definition allows the creation of objects that store a reference to that object. For example, say we want to create a new book object. The line of code looks like this:  
 
 ```
 <code>
@@ -62,7 +62,7 @@ You can use C# to create Windows client applications, XML Web services, distribu
 
 The C# language is also used with the ASP.NET framework, developed by Microsoft Corp., specifically for creating web applications that are machine and browser independent. The broader .NET framework, also developed by Microsoft, is used for creating other types of applications such as desktop, mobile, server, and networking applications. The .NET Framework includes the .NET Base Class Libraries (BCL), ASP.NET, ADO.NET, Windows Forms, Windows Presentation Foundation (WPF), and eXtensible Markup Language(XML) libraries.
 
-More recently, Microsoft Corp. released .NET Core, which is an open-source, cross-platform framework. The original purpose of .NET Core was to allow developers to use the .NET eco-system to develop and run applications across various platforms (macOS for example). It supports Web applications(MVC), console based applications, and unit-tests. However, compared with the ASP.NET framework, it does not have a comprehensive list of APIs in its Base Class Libraries(BCL).
+More recently, Microsoft Corp. released .NET Core, which is an open-source, cross-platform framework. The original purpose of .NET Core was to allow developers to use the .NET eco-system to develop and run applications across various platforms (macOS for example). It supports Web applications(MVC), console-based applications, and unit tests. However, compared with the ASP.NET framework, it does not have a comprehensive list of APIs in its Base Class Libraries(BCL).
 
 For more information on ASP.NET, see the topic ASP.NET in the [freeCodeCamp guide](https://guide.freecodecamp.org).
 
