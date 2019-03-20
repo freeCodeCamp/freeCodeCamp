@@ -8,7 +8,7 @@ challengeType: 5
 <section id='description'>
 A positive integer is a <a href="https://en.wikipedia.org/wiki/Kaprekar number">Kaprekar number</a> if:
 <ul>
-<li>It is 1</li>
+<li>It is 1, or,</li>
 <li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number. </li>
 </ul>
 Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.Example
