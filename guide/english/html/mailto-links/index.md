@@ -22,6 +22,7 @@ If you want to add a specific subject to that mail, be careful to add `%20` or `
 
 Similarly, you can add a specific message in the body portion of the email:
 Again, spaces have to be replaced by `%20` or `+`.
+
 After the subject parameter, any additional parameter must be preceded by `&`.
 
 Example: To enable a user to send an email to their friends about their progress at Free Code Camp:
