@@ -10,7 +10,7 @@ localeTitle: Условные операторы
 
 ```PHP
 <?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
  } 
 ```
@@ -19,9 +19,9 @@ localeTitle: Условные операторы
 
 ```PHP
 <?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
+ } elseif ($_GET['name'] == "freecodecampguide"){ 
   echo "You viewed the freeCodeCamp Guide Page!"; 
  } 
 ```
@@ -30,9 +30,9 @@ localeTitle: Условные операторы
 
 ```PHP
 <?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
+ } elseif ($_GET['name'] == "freecodecampguide"){ 
   echo "You viewed the freeCodeCamp Guide Page!"; 
  } else { 
   echo "You viewed a page that does not exist yet!"; 
@@ -45,4 +45,6 @@ localeTitle: Условные операторы
 
 #### Дополнительная информация:
 
-*   [Руководство по управляющим конструкциям php.net](https://secure.php.net/manual/en/control-structures.elseif.php)
+
+*   [Руководство по управлению структурой php.net](https://secure.php.net/manual/en/control-structures.elseif.php)
+
