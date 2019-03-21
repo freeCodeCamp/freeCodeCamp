@@ -11,7 +11,7 @@ In PHP, there are two types of arrays: Indexed arrays and Associative arrays. Ea
 ### Indexed Array Example
 An indexed array is a list of ordered values. Each of these values in the array is assigned an index number. Indexes for arrays always start at `0` for the first value and then increase by one from there.
 
-```PHP
+```php
 <?php
 $shopping_list = array("eggs", "milk", "cheese");
 ```
@@ -20,7 +20,7 @@ $shopping_list = array("eggs", "milk", "cheese");
 ### Associative Array Example
 An associative array is a list of values that are accessed via a key instead of index numbers. The key can be any value but it must be unique to the array. 
 
-```PHP
+```php
 <?php
 $student_scores = array("Joe" => 83, "Frank" => "93", "Benji" => "90");
 ```
@@ -28,7 +28,7 @@ $student_scores = array("Joe" => 83, "Frank" => "93", "Benji" => "90");
 
 ### Multidimensional Array Example
 A multidimensional array is an array that contains other arrays. This lets you create complex data structures that can model a very complex group of data.
-```PHP
+```php
 <?php
 $students = 
   array(
@@ -42,5 +42,16 @@ Now you can get the first student's `first_name` with:
 ```PHP
 $students[0]['first_name']
 ```
+
+### Get The Length of an Array - The count() Function
+The `"count()"` function is used to return the length (the number of elements) of an array:
+```php
+<?php
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo count($cars);
+?>
+```
+
 #### More Information:
 * <a href="https://secure.php.net/manual/en/language.types.array.php" rel="nofollow">php.net arrays manual</a>
