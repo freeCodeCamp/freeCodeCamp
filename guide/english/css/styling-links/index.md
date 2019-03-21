@@ -22,7 +22,7 @@ The `<a href="">` property is responsible for creating URLs and can be modified 
 1. Underline
 2. Blue color
 
-You can change these by adding changing the `color` and `text-decoration` properties.
+You can change these by adding or changing the `color` and `text-decoration` properties.
 
 ```css
    color: black;
@@ -75,5 +75,6 @@ a:active {
 } 
 ```
 
-
-
+#### More Information:
+ 
+ -  [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links)
