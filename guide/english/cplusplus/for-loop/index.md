@@ -15,18 +15,16 @@ For loop is an entry controlled loop unlike do-while loop.
 
 ## Syntax
 
-```
-for (init; condition; increment ) 
-{
+```c++
+for (init; condition; increment ) {
    update_statement(s);
 }
 ```
 
 The increment can also placed inside the for loop i.e. in its body- 
 
-```
-for ( init; condition;) 
-{
+```c++
+for ( init; condition;) {
    update_statement(s);
    increment;
 }
@@ -34,10 +32,9 @@ for ( init; condition;)
 
 It is also allowed to ignore the init variables if and only if they are declared beforehand. For example :
 
-```
+```c++
 int a = 1;
-for (; a <= 10 ;)
-{
+for (; a <= 10 ;) {
     cout << a << '\n';
     a++;
 }
@@ -61,7 +58,7 @@ The update statement is used to alter the loop variable by using simple operatio
 You will often see an increment operation as the update statement (e.g. i++, count++). This is often seen as one of the distinguishing features and possible name sources for the C++ language.
 
 ## Implementation
-```C++
+```c++
 #include <iostream>
 using std::cout; // Here we use the scope resolution operator to define the scope of the standard functions as std
 using std::endl;
@@ -132,14 +129,14 @@ C++ also has what we call "range-based" `for` loops which iterate through all th
 ### Syntax
 
 ```c++
-for ( element: container )
+for ( element: container ) {
    statement(s);
 }
 ```
 
 ```c++
 int[5] array = { 1, 2, 3, 4, 5 }
-for ( int i: array )
+for ( int i: array ) {
    cout << i << endl;
 }
 ```
@@ -153,14 +150,36 @@ Output:
 5
 ```
 
+## Iterator-based for-loop
+Iterator based for loops are also possible in C++ and functionality for them exists in many of the data structures found within the STL. Unlike for-each loops, iterator based loops allow for mutating the contents of the container during iteration. This is rather useful when one needs to remove or insert values while looping over data.
+
+### Syntax
+```c++
+// Create a vector
+std::vector<int> vec;
+
+// Populate the vector
+vec.push_back(1);
+vec.push_back(2);
+vec.push_back(3);
+
+// Iterate over the vector using the 'it' object.
+for(std::vector<string>::iterator it = vec.begin(); it != vec.end(); it++) {
+    // Print the value held by the iterator (this is the object or primitive contained within 
+    // the vector, in this case, an int).
+    cout<< *it << endl;  // prints d.
+}
+```
+
 ## Applications of the for loops
 
 ### Use as infinite loops
 
 This C-style for-loop is commonly the source of an infinite loop since the fundamental steps of iteration are completely in the control of the programmer. In fact, when infinite loops are intended, this type of for-loop can be used (with empty expressions), such as:
-```
-for (;;)
+```c++
+for (;;) {
    //loop body
+}
 ```
 
 ## Additional Resources
