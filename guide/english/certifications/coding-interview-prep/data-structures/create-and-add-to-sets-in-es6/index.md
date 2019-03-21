@@ -33,7 +33,18 @@ Use the length attribute on the values of the Set.
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
-     set.add(["Taco","Cat","Awesome"]);
+```js
+function checkSet() {
+  var set = new Set([1, 2, 3, 3, 2, 1, 2, 3, 1]);
+  set.add("Taco");
+  set.add("Cat");
+  set.add("Awesome");
+  console.log(Array.from(set));
+  return set;
+}
+
+checkSet();
+```
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/HighlevelImperfectDiscussion' target='_blank' rel='nofollow'>Run Code</a>
 
