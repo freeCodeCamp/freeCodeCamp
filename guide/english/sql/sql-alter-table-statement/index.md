@@ -6,7 +6,7 @@ title: SQL Alter Table Statement
 ## Introduction
 
 This guide will introduce you to and attempt to explain some of the basics of the SQL alter table functions within a relational database.
-**IMPORTANT Safety Tip:  ALWAYS backup your data before making changes!**
+ALTER TABLE statement is used to add, remove, change datatype or rename columns. It can be also used to add or remove the constraints of the table.**IMPORTANT Safety Tip:  ALWAYS backup your data before making changes!**
 
 We will be using MySQL for all examples throughout this freeCodeCamp SQL guide. The reasons for selecting MySQL are 1) it is very commonly used on websites for the backend database, 2) it's free, and is fun and easy to use.
 
@@ -34,7 +34,9 @@ Rename some columns:
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table03.JPG?raw=true)
 
 Remove a column:
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table04.JPG?raw=true)
+```sql
+ALTER TABLE table_name DROP COLUMN column_name;
+```
 
 You can also use the alter table workbench tool. Just RIGHT click on the table you want to change and change as you wish.
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table05.JPG?raw=true)
