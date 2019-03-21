@@ -122,9 +122,11 @@ On a small screen (such as a phone or tablet) the navbar is going to take up too
 ```
 
 #### Navbar Examples
+```html
 <!-- A drop-down cannot be shown in the example unless we include Bootstrap's javascript file. -->
 <!-- The id attributes are set in the example so clicking the links won't go to top of the page. -->
-`navbar navbar-default`
+Navbar Default:
+
 <nav class="navbar navbar-default" id="navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -143,8 +145,10 @@ On a small screen (such as a phone or tablet) the navbar is going to take up too
     </ul>
   </div>
 </nav>
+```
+```html
+Navbar Inverse:
 
-`navbar navbar-inverse`
 <nav class="navbar navbar-inverse" id="navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -163,6 +167,7 @@ On a small screen (such as a phone or tablet) the navbar is going to take up too
     </ul>
   </div>
 </nav>
+```
 
 #### More Information:
 [BootStrap navbar documentation](https://getbootstrap.com/docs/4.0/components/navbar/)
