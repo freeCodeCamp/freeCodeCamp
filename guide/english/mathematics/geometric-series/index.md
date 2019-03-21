@@ -7,7 +7,7 @@ A geometric series is a sum of numbers, such as
 ```
 1 + 1/2 + 1/4 + 1/8 + 1/16 + ...
 ```
-where each consecutive pair of terms in the sum has the same ratio. In the example above we have `1/(1/2) = 2`, `(1/2)/(1/4) = 2`, etc... While seemingly fairly simple this type of sum is found extensively in many areas including [geometry of real numbers](https://en.wikipedia.org/wiki/Cantor_set), [fractals](https://en.wikipedia.org/wiki/Geometric_series#Fractal_geometry), [probability](https://math.stackexchange.com/questions/1164163/introduction-to-probability-dice), [economics](https://en.wikipedia.org/wiki/Annuity#Proof_of_annuity-immediate_formula), converting rational numbers from decimal form to fraction form (see below) and more.
+where the first term is not zero and each consecutive pair of terms in the sum has the same ratio, called the *common ratio*. In the example above we have `1/(1/2) = 2`, `(1/2)/(1/4) = 2`, etc... While seemingly fairly simple this type of sum is found extensively in many areas including [geometry of real numbers](https://en.wikipedia.org/wiki/Cantor_set), [fractals](https://en.wikipedia.org/wiki/Geometric_series#Fractal_geometry), [probability](https://math.stackexchange.com/questions/1164163/introduction-to-probability-dice), [economics](https://en.wikipedia.org/wiki/Annuity#Proof_of_annuity-immediate_formula), converting rational numbers from decimal form to fraction form (see below) and more.
 
 We will show how to sum a geometric series when possible, give the formulas and then give some examples of this below.
 
