@@ -27,7 +27,7 @@ Popular AWS services include:
 * Databases including both SQL and NoSQL
 * S3 (Simple Storage Service)
 * SQS (Simple Queue Service)
-* Games development via the Amazon Lumberyard game development engine and subsequent hosting platform.
+* Games development via the Amazon Lumberyard game development engine and subsequent hosting platform
 * DynamoDB (Amazon Dynamo Data Base)
 * CloudWatch (Metrics and Alarms)
 * CodeDeploy (Deployments)  
@@ -35,6 +35,7 @@ Popular AWS services include:
 * Application Monitoring tools
 * Mobile development tools and platforms
 * Amazon Alexa development area
+* Simple Notification Service (SNS)
 * CloudFormation (Infrastructure as Code)
 
 #### AWS Certifications 
@@ -65,3 +66,7 @@ The roles are:
 * [AWS](https://aws.amazon.com/)
 * [Certifications](https://aws.amazon.com/certification/)
 * [Certification Preparation](https://aws.amazon.com/certification/certification-prep/)
+* [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Web_Services)
+* [Pricing](https://aws.amazon.com/pricing/?nc2=h_ql_pr)
+* [Simple Monthly Cost Calculator](http://calculator.s3.amazonaws.com/index.html)
+* [TCO Calculator](https://aws.amazon.com/tco-calculator/)

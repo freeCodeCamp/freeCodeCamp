@@ -5,7 +5,7 @@
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
+        <td><a href="/docs/arabic/README.md"> عربي </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>

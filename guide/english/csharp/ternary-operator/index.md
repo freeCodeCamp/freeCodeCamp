@@ -3,7 +3,8 @@ title: Ternary operator
 ---
 
 # Ternary operator (`?:`)
-Ternary operator returns one of the two expressions based on a condition. It can be used as a shortcut for if...else statement.
+
+The ternary operator returns one of the two expressions based on a condition. It can be used as a shortcut for if...else statement.
 
 ## Syntax
 ```
@@ -37,6 +38,7 @@ if hasFreeSweet == true
 
 if hasFreeSweet == false
 > No free sweet.
+
 ```
 
 ## Complex Ternary Operations
