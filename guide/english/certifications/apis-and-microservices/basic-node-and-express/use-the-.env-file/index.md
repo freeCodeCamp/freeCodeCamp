@@ -16,7 +16,7 @@ All we need to do now is check what the value of the environment variable is, wh
 
 ```javascript
    if (process.env.VAR_NAME === "allCaps") {
-    resonse = "Hello World".toUpperCase();
+    response = "Hello World".toUpperCase();
    } else {
     response = "Hello World";
    }
