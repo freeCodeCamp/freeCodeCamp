@@ -7,7 +7,8 @@ title: If Else Statement
 The If-Else statement executes a block of code depending on whether your precondition is fullfilled or not.
 
 ## Example
-```
+
+```c#
 
 if(boolean expression)
 {
@@ -42,7 +43,7 @@ Price is equal to 30.
 ```
 ## Shorten If Else Statement
 
-We can use operator :? which is great for short if else statements.
+We can use the ternary :? which is great for short if else statements.
 For example:
 ```C#
 int Price=30;
