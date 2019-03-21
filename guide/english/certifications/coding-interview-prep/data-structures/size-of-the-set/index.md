@@ -65,8 +65,6 @@ function Set() {
 }
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/SereneScholarlyAnalyst' target='_blank' rel='nofollow'>Run Code</a>
-
 ### Code Explanation:
 
 *   The number of items is achieved by attaining the collection using the "values" function and getting the length attribute of it.
@@ -81,4 +79,3 @@ function Set() {
 
 ### Resources:
 - [Wikipedia](https://en.wikipedia.org/wiki/Set_(abstract_data_type))
->>>>>>> feat: added solution

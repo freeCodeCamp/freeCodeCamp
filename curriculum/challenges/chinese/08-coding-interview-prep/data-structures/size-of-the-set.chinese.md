@@ -77,9 +77,6 @@ function Set() {
 <section id='solution'>
 
 ```js
-<<<<<<< HEAD:curriculum/challenges/chinese/08-coding-interview-prep/data-structures/size-of-the-set.chinese.md
-// solution required
-=======
 function Set() {
     var collection = [];
     this.has = function(element) {
@@ -111,6 +108,5 @@ function Set() {
         return this.values().length;
     };
 }
->>>>>>> fix: added instructions and solution:curriculum/challenges/english/08-coding-interview-prep/data-structures/size-of-the-set.english.md
 ```
 </section>
