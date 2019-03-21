@@ -232,6 +232,7 @@ class CertificationSettings extends Component {
   );
 
   renderProjectsFor = (certName, isCert) => {
+    console.log(isCert);
     const { username, isHonest, createFlashMessage, verifyCert } = this.props;
     const { superBlock } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
@@ -278,55 +279,36 @@ class CertificationSettings extends Component {
 
   // legacy projects rendering
 
-  handleSubmit() {
-    console.log('handle');
+  handleSubmit(values) {
+    console.log(values);
   }
 
   renderLegacyCertifications = certName => {
+    const { username, isHonest, createFlashMessage, verifyCert } = this.props;
+    const { superBlock } = first(legacyProjectMap[certName]);
+    const certLocation = `/certification/${username}/${superBlock}`;
     const challengeTitles = legacyProjectMap[certName].map(item => item.title);
     const { completedChallenges } = this.props;
-
+    const isCertClaimed = this.getUserIsCertMap()[certName];
     const initialObject = {};
-    let fullform = 0;
+    let filledforms = 0;
     legacyProjectMap[certName].forEach(element => {
       let completedProject = find(completedChallenges, function(challenge) {
         return challenge['id'] === element['id'];
       });
-
       if (!completedProject) {
         initialObject[element.title] = '';
       } else {
         initialObject[element.title] = completedProject.solution;
-        fullform++;
+        filledforms++;
       }
     });
 
-    console.log(fullform);
+    const fullForm = filledforms === challengeTitles.length;
 
-    return (
-      <FullWidthRow key={certName}>
-        <Spacer />
-        <h3>{certName}</h3>
-        <Form
-          buttonText={'Claim Certification'}
-          formFields={challengeTitles}
-          id={certName}
-          initialValues={{
-            ...initialObject
-          }}
-          submit={this.handleSubmit}
-        />
-      </FullWidthRow>
-    );
-  };
-
-  renderLegacyProjectsFor = (certName, isCert) => {
-    const { username, isHonest, createFlashMessage, verifyCert } = this.props;
-    const { superBlock } = first(legacyProjectMap[certName]);
-    const certLocation = `/certification/${username}/${superBlock}`;
     const createClickHandler = superBlock => e => {
       e.preventDefault();
-      if (isCert) {
+      if (isCertClaimed) {
         return navigate(certLocation);
       }
       return isHonest
@@ -339,123 +321,45 @@ class CertificationSettings extends Component {
           });
     };
 
-    return legacyProjectMap[certName]
-      .map(({ title, id }) => (
-        <tr className='project-row' key={id}>
-          <td className='project-title col-sm-8'>
-            <h3>{title}</h3>
-          </td>
-          <td className='project-solution col-sm-4'>
-            {this.getLegacyProjectSolution(id, title)}
-          </td>
-        </tr>
-      ))
-      .concat([
-        <tr key={`cert-${superBlock}-button`}>
-          <td colSpan={2}>
+    const buttonStyle = {
+      marginBottom: '1.45rem'
+    };
+
+    return (
+      <FullWidthRow key={certName}>
+        <Spacer />
+        <h3>{certName}</h3>
+        <Form
+          buttonText={fullForm ? 'Claim Certification' : 'Save Progress'}
+          enableSubmit={fullForm}
+          formFields={challengeTitles}
+          hideButton={isCertClaimed}
+          id={certName}
+          initialValues={{
+            ...initialObject
+          }}
+          submit={this.handleSubmit}
+        />
+        {isCertClaimed ? (
+          <div className={'col-xs-12'}>
             <Button
-              block={true}
+              bsSize='sm'
               bsStyle='primary'
+              className={'col-xs-12'}
               href={certLocation}
               onClick={createClickHandler(superBlock)}
+              style={buttonStyle}
+              target='_blank'
             >
-              {isCert ? 'Show Certification' : 'Claim Certification'}
+              Show Certification
             </Button>
-          </td>
-        </tr>
-      ]);
-  };
-
-  getLegacyProjectSolution = (projectId, projectTitle) => {
-    const { completedChallenges } = this.props;
-    const completedProject = find(
-      completedChallenges,
-      ({ id }) => projectId === id
-    );
-    if (!completedProject) {
-      return null;
-    }
-    const { solution, githubLink, files } = completedProject;
-    const onClickHandler = () =>
-      this.setState({
-        solutionViewer: {
-          projectTitle,
-          files,
-          solution,
-          isOpen: true
-        }
-      });
-    if (files && files.length) {
-      return (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={onClickHandler}
-        >
-          Show Code
-        </Button>
-      );
-    }
-    if (githubLink) {
-      return (
-        <div className='solutions-dropdown'>
-          <DropdownButton
-            block={true}
-            bsStyle='primary'
-            className='btn-invert'
-            id={`dropdown-for-${projectId}`}
-            title='Show Solutions'
-          >
-            <MenuItem
-              bsStyle='primary'
-              href={solution}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              Front End
-            </MenuItem>
-            <MenuItem
-              bsStyle='primary'
-              href={githubLink}
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              Back End
-            </MenuItem>
-          </DropdownButton>
-        </div>
-      );
-    }
-    if (maybeUrlRE.test(solution)) {
-      return (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          href={solution}
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          Show Solution
-        </Button>
-      );
-    }
-    return (
-      <Button
-        block={true}
-        bsStyle='primary'
-        className='btn-invert'
-        onClick={onClickHandler}
-      >
-        Show Code
-      </Button>
+          </div>
+        ) : null}
+      </FullWidthRow>
     );
   };
 
   render() {
-    // console.log(this.props.completedChallenges);
-    // console.log(getUserIsCertMap);
     const {
       solutionViewer: { files, solution, isOpen, projectTitle }
     } = this.state;
