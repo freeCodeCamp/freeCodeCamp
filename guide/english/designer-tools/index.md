@@ -56,4 +56,4 @@ In this section, you can see popular Firefox plug-ins used by designers.
 
 In this section, you can see popular Chrome plug-ins used by designers.
 
-- [ColorZilla] (https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp)
+- [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp)
