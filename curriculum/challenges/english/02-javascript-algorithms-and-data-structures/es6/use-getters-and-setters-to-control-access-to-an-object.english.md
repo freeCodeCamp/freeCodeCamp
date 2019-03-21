@@ -38,7 +38,7 @@ tests:
   - text: <code>class</code> keyword was used.
     testString: getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');
   - text: <code>Thermostat</code> can be instantiated.
-    testString: assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code> can be instantiated.');
+    testString: assert((() => {const t = new Thermostat(32);return typeof t === 'object' && t.temperature === 0;})(), '<code>Thermostat</code> can be instantiated.');
 
 ```
 
@@ -75,17 +75,17 @@ temp = thermos.temperature; // 26 in C
 
 ```js
 function makeClass() {
-  "use strict";
+  'use strict';
   /* Alter code below this line */
   class Thermostat {
-    constructor(fahrenheit) {
-      this._tempInCelsius = 5/9 * (fahrenheit - 32);
+    constructor(temperature) {
+     this._temperature = (5 / 9) * (temperature - 32);
     }
-    get tempInCelsius(){
-      return _tempInCelsius;
+    get temperature() {
+     return this._temperature;
     }
-    set tempInCelsius(newTemp){
-      this._tempInCelsius = newTemp;
+    set temperature(temperature) {
+     this._temperature = temperature;
     }
   }
   /* Alter code above this line */
