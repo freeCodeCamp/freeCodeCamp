@@ -23,11 +23,11 @@ f(x) := f(x - 1) + f(x - 2) | x > 1
 Now, defining a function with itself will leave you with a few problems. The biggest is that if you define a function with itself, how are you supposed to know/determine when the function stops? 
 
 Here's a simple example:
-```JavaScript
+```js
 function foo(x){
-    y = x + 1;
-    console.log(y);
-    foo(y);
+  y = x + 1;
+  console.log(y);
+  foo(y);
 }
 ```
 
@@ -36,24 +36,24 @@ In order to determine a stopping point, you need to add a base case.
 
 A base case is a point at which the function does not call the recursive step. 
 
-```JavaScript
+```js
 function foo(x){
-   if(x > 5){
+  if(x > 5){
     return x
-    }
-    y = x + 1;
-    console.log(y);
-    foo(y);
+  }
+  y = x + 1;
+  console.log(y);
+  foo(y);
 }
 ```
 This is now equivalent to:
 
-```JavaScript
+```js
 function foo(x){
-    while(y < 5){
-        y = x + 1;
-        console.log(y);
-    }
+  while(y < 5){
+    y = x + 1;
+    console.log(y);
+  }
 }
 ```
 
@@ -63,7 +63,5 @@ It should also be noted that recursion may look cool and allow you to shrink a l
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-https://en.wikipedia.org/wiki/Recursion
-
-https://introcs.cs.princeton.edu/java/23recursion/
+- https://en.wikipedia.org/wiki/Recursion
+- https://introcs.cs.princeton.edu/java/23recursion/
