@@ -29,7 +29,7 @@ tests:
   - text: <code>reusableFunction</code> should output "Hi World" to the dev console
     testString: assert(hiWorldWasLogged, '<code>reusableFunction</code> should output "Hi World" to the dev console');
   - text: Call <code>reusableFunction</code> after you define it
-    testString: assert(/^\s*reusableFunction\(\)\s*;/m.test(code), 'Call <code>reusableFunction</code> after you define it');
+    testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code), 'Call <code>reusableFunction</code> after you define it');
 
 ```
 
