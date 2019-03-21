@@ -9,7 +9,7 @@ In this article we will tell you some of the coolest tricks, to debug using the 
 
 Before jumping into debugging let's leak out some secret facts about that _awesome code checking engine_ at FCC.
 
-We use a customized <a href='http://codemirror.net/mode/javascript/index.html' target='_blank' rel='nofollow'>CodeMirror</a>, as the code editor. A <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval' target='_blank' rel='nofollow'>`eval()` function</a> is used to evaluate the JavaScript code represented as a string from the editor. When `eval()` is called, browsers will natively execute your code. We will learn more why this secret is important in later sections of this article.
+We use a customized <a href='https://microsoft.github.io/monaco-editor' target='_blank' rel='nofollow'>Monaco Editor</a>, as the code editor. A <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval' target='_blank' rel='nofollow'>`eval()` function</a> is used to evaluate the JavaScript code represented as a string from the editor. When `eval()` is called, browsers will natively execute your code. We will learn more why this secret is important in later sections of this article.
 
 ## Now moving on to the tricks:
 
