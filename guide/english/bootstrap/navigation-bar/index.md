@@ -169,5 +169,32 @@ Navbar Inverse:
 </nav>
 ```
 
+#### Сollapsing the navbar
+You can make the navbar collapse into a hamburger button using the `.navbar-expand-sm|md|lg|xl` to define the screen size you want your regular navbar to appear and using the attributes `data-toggle` to set the action when toggled and `data-target` to define what will be shown when you toggle that element you can make bootstrap create a stylish and responsive navbar
+For example:
+  <nav class="navbar navbar-expand-sm">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">LoopLAB</a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a href="# class="nav-link">Create</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Share</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 #### More Information:
 [BootStrap navbar documentation](https://getbootstrap.com/docs/4.0/components/navbar/)
