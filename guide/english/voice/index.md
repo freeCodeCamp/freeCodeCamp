@@ -5,7 +5,7 @@ title: Voice
 # Voice
 Speech recognition allows users affected by accessibility difficulties (such as permanent visual impairment or temporary impairment while driving) the ability to navigate content on a website or input text data (such as a form). 
 
-Speech synthesis provides websites the ability to provide information to users by reading text.
+Speech synthesis provides websites the ability to provide information to users by reading the text.
 
 
 ## Javascript Web Speech API
@@ -18,7 +18,7 @@ The Web Speech API uses the device's native microphone system. When an utterance
 
 ### How to use the Speech Recognition API
 
-Here is a simple example of using the Speech Recognition API. Note that the API is initated with the `new SpeechRecognition()` constructor and starts when `recognition.start();` is called. It creates a transcript from what is received and then that is appended to the `<p class="transcript">` element. [Click here for a working demo of this code](https://codepen.io/ashwoodall/pen/MPeyRm).
+Here is a simple example of using the Speech Recognition API. Note that the API is initiated with the `new SpeechRecognition()` constructor and starts when `recognition.start();` is called. It creates a transcript from what is received and then that is appended to the `<p class="transcript">` element. [Click here for a working demo of this code](https://codepen.io/ashwoodall/pen/MPeyRm).
 
 This is the HTML that the transcript is appended to:
 
@@ -57,7 +57,7 @@ recognition.start();
 ```
 
 ## Alexa
-Alexa is Amazon’s cloud-based voice service available on tens of millions of devices from Amazon and third-party device manufacturers. With Alexa you can build natural voice experiences that offer customers a more intuitive way to interact with the technology they use every day.
+Alexa is Amazon’s cloud-based voice service available on tens of millions of devices from Amazon and third-party device manufacturers. With Alexa, you can build natural voice experiences that offer customers a more intuitive way to interact with the technology they use every day.
 Alexa is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information such as news.
 
 ### Amazon Echo Device Range
@@ -70,7 +70,7 @@ Alexa is capable of voice interaction, music playback, making to-do lists, setti
 
 ## Far Field Microphones
 Speech recognition systems often use multiple microphones to reduce the impact of reverberation and noise. 
-The Echo mics are arranged in a hexagonal layout with one microphone at each vertex and one in the center. The delay between each microphone receiving the signal enables the device to identify the source of the voice and cancel out noise coming from other directions. This is a phenomenon known as beamforming.
+The Echo mics are arranged in a hexagonal layout with one microphone at each vertex and one in the center. The delay between each microphone receiving the signal enables the device to identify the source of the voice and cancel out the noise coming from other directions. This is a phenomenon known as beamforming.
 
 While state-of-the-art speech recognition systems perform reasonably well in close-talking microphone conditions performance degrades in conditions where the microphone is far from the user.
 
@@ -81,10 +81,10 @@ The audio captured by the Echo will be influenced by:
 4) the output audio against the wall of the room.
 
 ## Software
-The software components within the platform include both Natural Language Understanding (NLU) as well as Automated Speech Recognition (ASR).  These software components can be leveraged by custom written "skills" by independent software developers who are then certified to a set of standards by Amazon. There are already more than 20k of these custom skills available through their app store.
+The software components within the platform include both Natural Language Understanding (NLU) as well as Automated Speech Recognition (ASR). These software components can be leveraged by custom written "skills" by independent software developers who are then certified to a set of standards by Amazon. There are already more than 20k of these custom skills available through their app store.
 
 ## IBM Watson Speech-to-Text API
-The IBM Watson Speech-to-Text API uses machine learning to accurately predict speech in real time. Currently seven different languages are supported as well as live voice and pre-recorded audio. The API can be used for free; paid versions are also available for larger scale apps. 
+The IBM Watson Speech-to-Text API uses machine learning to accurately predict speech in real time. Currently, seven different languages are supported as well as live voice and pre-recorded audio. The API can be used for free; paid versions are also available for larger scale apps. 
 
 ## Siri
 Apple's iOS 12 update introduced [Siri](https://en.wikipedia.org/wiki/Siri) Shortcuts, which supports the use of third-party applications through Apple's digital voice assistant. Siri Shortcuts allows developers to add shortcuts and personalized phrases to Siri through their applications by, for example, letting the user record a voice phrase for a particular action and adding that phrase to Siri.
