@@ -169,7 +169,11 @@ var myModule = (function() = {
  myModule.method2(); // I am method 2, I am a private variable 
 ```
 
+
+El patrón de módulo es muy común en JavaScript. Uno de usos más grande es en la biblioteca (Redux). Es una de las bibliotecas más populares para la administración de estado. En la cual cierres previenen leer o escribir fuera de la función dispatch(). 
+
 Los cierres son útiles para capturar nuevas instancias de variables privadas contenidas en el entorno "recordado", y solo se puede acceder a esas variables a través de la función o los métodos devueltos.
+
 
 ### Más información:
 
