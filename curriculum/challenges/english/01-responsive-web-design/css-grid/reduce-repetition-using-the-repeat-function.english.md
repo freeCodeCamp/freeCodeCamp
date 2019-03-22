@@ -15,7 +15,7 @@ You can also repeat multiple values with the repeat function and insert the func
 <blockquote>grid-template-columns: repeat(2, 1fr 50px) 20px;</blockquote>
 This translates to:
 <blockquote>grid-template-columns: 1fr 50px 1fr 50px 20px;</blockquote>
-<strong>Note</strong><br><code>1fr 50px</code> is repeated twice followed by 20px.
+<strong>Note:</strong> The <code>1fr 50px</code> is repeated twice followed by 20px.
 </section>
 
 ## Instructions

@@ -13,7 +13,7 @@ Your cat photo currently has sharp corners. We can round out those corners with 
 ## Instructions
 <section id='instructions'>
 You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.
-Note: this challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class.
+<strong>Note:</strong> this challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class.
 </section>
 
 ## Tests
