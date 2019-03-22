@@ -92,9 +92,9 @@ System.out.println(s1.equalsIgnoreCase(s2));    //true
 
 ## Object Equality
 
-The java Object class provides two methods for comparing objects which are `equals(Object obj)` and `hashcode()`. 
+The java `Object` class provides two methods for comparing objects which are `equals(Object obj)` and `hashcode()`. 
 
-As discussed above `equals(Object obj)` method indicates the object passed in argument is equal to the current instance. The default implementation of this method interprets that two objects are equal if and only if the memory address of the objects are same.
+As discussed above, the `equals(Object obj)` method indicates if the object passed in argument is equal to the current instance. The default implementation of this method interprets that two objects are equal if and only if the memory address of the objects are same.
 
 The `hashCode()` method returns an integer that represents the memory location of the object and this will be unique for each and every new instance.
 
@@ -109,9 +109,9 @@ public static void main (String[]args) {
   System.out.println(emp1.equals(emp2)); //output :- false        
 }
 ```
-The example prints `false` because both the employee objects (though they have same attribute id which is `1`) are stored in different memory locations. Hence, they are not considered to be equal.
+The example prints `false` because both the employee objects (though they have same attribute `id` which is `1`) are stored in different memory locations. Hence, they are not considered to be equal.
 
-The above limitation can be resolved by overriding the equals method of Employee object.
+The above limitation can be resolved by overriding the `equals()` method of the `Employee` object.
 
 ``` java
 @Override
@@ -133,13 +133,13 @@ public boolean equals(Object obj) {
 }
 ```
 
-Now, the following example will print true as we are comparing the objects on the attribute `id` of the Employee object.
+Now, the following example will print `true` as we are comparing the objects on the `id` attribute of the `Employee` object.
 
 ``` java
 public static void main (String[]args) {
   Employee emp1 = new Employee(1,"foo");
   Employee emp2 = new Employee(1,"foo");
-  System.out.println(emp1.equals(emp2)); //output :- true        
+  System.out.println(emp1.equals(emp2)); //output : true        
 }
 ```
 
