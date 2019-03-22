@@ -39,6 +39,10 @@ To remove a nonempty folder for example, type:
 rm -rf folder
 ```
 
+### Wildcards
+
+The `rm` command can be used in conjunction with an asterisk to delete multiple items matching a specific set of criteria. For example, you could use `rm test*` to remove all files in a directory starting with "test" regardless of whatever text follows that string. You can also use an asterisk by itself to purge all files in the current directory using `rm *`.
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
 * [Man pages](http://man7.org/linux/man-pages/man1/rm.1.html)
