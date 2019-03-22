@@ -38,10 +38,10 @@ Removes all file ending with .txt
 
 There are few commonly used arguments:
 
-- `-r` , means to recursively delete all the folders inside a directory.
-- `-f` , means to forcefully delete any folder or file.
-- `-i` , will ask before deleting the file.
-- `-v` , will explain what was deleted.
+- `-r` means to recursively delete all the folders inside a directory.
+- `-f` means to forcefully delete any folder or file.
+- `-i` will ask before deleting the file.
+- `-v` will explain what was deleted.
 
 ### Warning
 This command is capable of deleting many files at once with ease. This can be beneficial, but also dangerous. Use at your own risk.
@@ -52,7 +52,6 @@ rm -rf folder
 ```
 
 ### Wildcards
-
 The `rm` command can be used in conjunction with an asterisk to delete multiple items matching a specific set of criteria. For example, you could use `rm test*` to remove all files in a directory starting with "test" regardless of whatever text follows that string. You can also use an asterisk by itself to purge all files in the current directory using `rm *`.
 
 ### More Information:
