@@ -22,7 +22,17 @@ rm <file name or file path>
 rm -R <folder name or folder path>
 ```
 
-You will be prompted with **'rm: remove regular file ‘hello’?'** and will need to respond **'y'** before the file can be deleted. Use this command with caution because 'rm' is a permanent action.
+**Delete Files of a certain type**
+
+```bash
+rm -R *file_extension
+```
+- `*` accounts for the part to ignore, `file_extension` is the type to remove
+Example:
+```bash
+rm -R *.txt
+```
+Removes all file ending with .txt
 
 There are few commonly used arguments:
 
