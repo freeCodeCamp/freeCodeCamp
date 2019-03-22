@@ -196,6 +196,25 @@ In the case that only one argument was passed, do not worry about how to prompt 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-some/14304' target='_blank' rel='nofollow'>Array.prototype.some</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from' target='_blank' rel='nofollow'>Array.from</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 2:
+```javascript
+function addTogether(a, b) {
+  if (typeof a !== 'number') {
+    return undefined;
+  }
+  const sum = b => (typeof b === 'number' ? a + b : undefined);
+  return typeof b === 'undefined' ? b => sum(b) : sum(b);
+}
+// test here
+addTogether(2,3);
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/SvelteWelloffLogin' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Return `undefined` if first argument is not a `number` or second argument is defined, but not a `number`.
+*   Return sum of the arguments if both are provided otherwise return a sum function.
+
 > **NOTE:** Please add your username only if you have added any **relevant main contents** to the wiki page. (Please don't remove any existing usernames.)
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
