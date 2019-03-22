@@ -14,7 +14,7 @@ Adding one to a number is not very exciting, but we can apply these principles w
 
 ## Instructions
 <section id='instructions'>
-Rewrite the code so the global array <code>bookList</code> is not changed inside either function. The <code>add</code> function should add the given <code>bookName</code> to the end of an array. The <code>remove</code> function should remove the given <code>bookName</code> from an array. Both functions should return an array, and any new parameters should be added before the <code>bookName</code> one.
+Rewrite the code so the global array <code>bookList</code> is not changed inside either function. The <code>add</code> function should add the given <code>bookName</code> to the end of an array. The <code>remove</code> function should remove the given <code>bookName</code> from an array. Both functions should return an array, and any new parameters should be added before the <code>bookName</code> parameter.
 </section>
 
 ## Tests
@@ -45,13 +45,14 @@ tests:
 var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 /* This function should add a book to the list and return the list */
-// New parameters should come before the bookName one
+// New parameters should come before bookName
 
 // Add your code below this line
 function add (bookName) {
 
-  return bookList.push(bookName);
-
+  bookList.push(bookName);
+  return bookList;
+  
   // Add your code above this line
 }
 
@@ -60,9 +61,11 @@ function add (bookName) {
 
 // Add your code below this line
 function remove (bookName) {
-  if (bookList.indexOf(bookName) >= 0) {
+  var book_index = bookList.indexOf(bookName);
+  if (book_index >= 0) {
 
-    return bookList.splice(0, 1, bookName);
+    bookList.splice(book_index, 1);
+    return bookList;
 
     // Add your code above this line
     }
