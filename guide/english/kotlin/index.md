@@ -107,7 +107,7 @@ If all goes well, the console window would open to show you the output.
 ![eclipse run app](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/output.png)
 
 * ## Using the standalone compiler on the terminal
-If you are someone who prefers doing things in a more manual way and does not want to tie yourself down to an editor/IDE you might wanna use the Kotlin compiler.
+If you are someone who prefers doing things in a more manual way and do not want to tie yourself down to an editor/IDE you might wanna use the Kotlin compiler.
 
 ### Downloading the compiler
 
