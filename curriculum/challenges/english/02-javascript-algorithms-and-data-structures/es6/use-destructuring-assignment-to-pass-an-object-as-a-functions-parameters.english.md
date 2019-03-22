@@ -30,7 +30,7 @@ tests:
   - text: <code>half(stats)</code> should be <code>28.015</code>
     testString: assert(half(stats) === 28.015);
   - text: Destructuring should be used.
-    testString: assert(code.match(/\(\s*\{\s*\w+\s*,\s*\w+\s*\}\s*\)/g));
+    testString: assert(code.replace(/\s/g, '').match(/half=\({\w+,\w+}\)/));
   - text: Destructured parameter should be used.
     testString: assert(!code.match(/stats\.max|stats\.min/));
 
