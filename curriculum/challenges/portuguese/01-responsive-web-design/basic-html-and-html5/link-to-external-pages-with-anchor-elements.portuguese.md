@@ -7,7 +7,7 @@ localeTitle: Link para páginas externas com elementos âncora
 ---
 
 ## Description
-<section id="description"> Você pode usar elementos de <code>a</code> (<i>anchor</i>) para vincular a conteúdo fora da sua página da web. <i>anchor</i> elementos <code>a</code> precisam de um endereço da Web de destino chamado atributo <code>href</code> . Eles também precisam de texto âncora. Aqui está um exemplo: <code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> Então o seu navegador irá exibir o texto <strong>&quot;este links para freecodecamp.org&quot;</strong> como um link que você pode clicar. E esse link levará você ao endereço da Web <strong>https://www.freecodecamp.org</strong> . </section>
+<section id="description"> Você pode usar elementos de <code>anchor</code> para vincular a conteúdo fora da sua página da web. <code>anchor</code> elementos <code>anchor</code> precisam de um endereço da Web de destino chamado atributo <code>href</code> . Eles também precisam de texto âncora. Aqui está um exemplo: <code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> Então o seu navegador irá exibir o texto <strong>&quot;este links para freecodecamp.org&quot;</strong> como um link que você pode clicar. E esse link levará você ao endereço da Web <strong>https://www.freecodecamp.org</strong> . </section>
 
 ## Instructions
 <section id="instructions"> Crie <code>a</code> elemento que vincule a <code>http://freecatphotoapp.com</code> e tenha &quot;cat photos&quot; como <code>anchor text</code> . </section>

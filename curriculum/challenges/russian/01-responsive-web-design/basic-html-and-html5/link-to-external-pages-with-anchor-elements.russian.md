@@ -8,7 +8,7 @@ localeTitle: Ссылка на внешние страницы с элемент
 
 ## Description
 
-<section id="description"> Вы можете использовать элементы <code>a</code> (<i>anchor</i>) для ссылки на контент вне вашей веб-страницы. Элементам <code>a</code> нужен адрес веб-сайта назначения, называемый атрибутом <code>href</code>. Им также нужен якорный текст. Вот пример: <code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> Затем ваш браузер отобразит текст <strong>«это ссылки на freecodecamp.org»</strong> в качестве ссылки, которую вы можете щелкнуть. И эта ссылка приведет вас к веб-адресу <strong>https://www.freecodecamp.org</strong> . </section>
+<section id="description"> Вы можете использовать элементы <code>anchor</code> для ссылки на контент вне вашей веб-страницы. Элементам <code>anchor</code> нужен адрес веб-сайта назначения, называемый атрибутом <code>href</code>. Им также нужен якорный текст. Вот пример: <code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> Затем ваш браузер отобразит текст <strong>«это ссылки на freecodecamp.org»</strong> в качестве ссылки, которую вы можете щелкнуть. И эта ссылка приведет вас к веб-адресу <strong>https://www.freecodecamp.org</strong> . </section>
 
 ## Instructions
 Создайте элемент, который ссылается на <code>http://freecatphotoapp.com</code> и имеет «фотографии котят» в качестве его якорного текста.
