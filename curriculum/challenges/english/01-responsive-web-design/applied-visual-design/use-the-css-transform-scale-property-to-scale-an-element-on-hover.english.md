@@ -11,7 +11,7 @@ The <code>transform</code> property has a variety of functions that lets you sca
 Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:
 <blockquote>p:hover {<br>&nbsp;&nbsp;transform: scale(2.1);<br>}</blockquote>
    
-  <strong>NOTE:</strong> Applying a transform to a <code>div</code> element will also affect any child elements contained in the div.
+  <strong>Note:</strong> Applying a transform to a <code>div</code> element will also affect any child elements contained in the div.
 </section>
 
 ## Instructions
