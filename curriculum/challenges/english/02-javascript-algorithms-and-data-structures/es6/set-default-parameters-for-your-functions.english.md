@@ -23,11 +23,11 @@ Modify the function <code>increment</code> by adding default parameters so that 
 ```yml
 tests:
   - text: The result of <code>increment(5, 2)</code> should be <code>7</code>.
-    testString: assert(increment(5, 2) === 7, 'The result of <code>increment(5, 2)</code> should be <code>7</code>.');
+    testString: assert(increment(5, 2) === 7);
   - text: The result of <code>increment(5)</code> should be <code>6</code>.
-    testString: assert(increment(5) === 6, 'The result of <code>increment(5)</code> should be <code>6</code>.');
-  - text: default parameter <code>1</code> was used for <code>value</code>.
-    testString: getUserInput => assert(getUserInput('index').match(/value\s*=\s*1/g), 'default parameter <code>1</code> was used for <code>value</code>.');
+    testString: assert(increment(5) === 6);
+  - text: Default parameter <code>1</code> was used for <code>value</code>.
+    testString: assert(code.match(/value\s*=\s*1/g));
 
 ```
 
@@ -39,9 +39,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function increment(number, value) {
-  return number + value;
-}
+const increment = (number, value) => number + value;
 
 console.log(increment(5, 2)); // returns 7
 console.log(increment(5)); // returns 6
@@ -57,8 +55,6 @@ console.log(increment(5)); // returns 6
 <section id='solution'>
 
 ```js
-function increment(number, value = 1) {
-  return number + value;
-}
+const increment = (number, value = 1) => number + value;
 ```
 </section>

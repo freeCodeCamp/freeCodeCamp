@@ -13,7 +13,7 @@ Setter functions are meant to modify (set) the value of an object's private vari
 <blockquote>class Book {<br>&nbsp;&nbsp;constructor(author) {<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// getter<br>&nbsp;&nbsp;get writer(){<br>&nbsp;&nbsp;&nbsp;&nbsp;return this._author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// setter<br>&nbsp;&nbsp;set writer(updatedAuthor){<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = updatedAuthor;<br>&nbsp;&nbsp;}<br>}<br>const lol = new Book('anonymous');<br>console.log(lol.writer);&nbsp;&nbsp;// anonymous<br>lol.writer = 'wut';<br>console.log(lol.writer);&nbsp;&nbsp;// wut</blockquote>
 Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.
 Getters and setters are important, because they hide internal implementation details.
-<strong>Note:</strong><br>It is a convention to precede the name of a private variable with an underscore (<code>_</code>). The practice itself does not make a variable private.
+<strong>Note:</strong> It is a convention to precede the name of a private variable with an underscore (<code>_</code>). The practice itself does not make a variable private.
 </section>
 
 ## Instructions
@@ -32,11 +32,11 @@ In other words, you are abstracting implementation details from the consumer.
 ```yml
 tests:
   - text: <code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.
-    testString: assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function','<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.');
-  - text: <code>class</code> keyword was used.
-    testString: getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');
-  - text: <code>Thermostat</code> can be instantiated.
-    testString: assert((() => {const t = new Thermostat(32);return typeof t === 'object' && t.temperature === 0;})(), '<code>Thermostat</code> can be instantiated.');
+    testString: assert(typeof Thermostat === 'function' && typeof Thermostat.constructor === 'function');
+  - text: <code>class</code> keyword should be used.
+    testString: assert(code.match(/class/g));
+  - text: <code>Thermostat</code> should be able to be instantiated.
+    testString: assert((() => {const t = new Thermostat(32);return typeof t === 'object' && t.temperature === 0;})());
 
 ```
 
@@ -74,10 +74,10 @@ class Thermostat {
   constructor(fahrenheit) {
     this._tempInCelsius = 5/9 * (fahrenheit - 32);
   }
-  get tempInCelsius(){
-    return _tempInCelsius;
+  get temperature(){
+    return this._tempInCelsius;
   }
-  set tempInCelsius(newTemp){
+  set temperature(newTemp){
     this._tempInCelsius = newTemp;
   }
 }
