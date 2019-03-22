@@ -30,15 +30,15 @@ Give each of the <code>radio</code> and <code>checkbox</code> inputs the <code>v
 ```yml
 tests:
   - text: One of your radio buttons should have the <code>value</code> attribute of <code>indoor</code>.
-    testString: assert($('label > input[type="radio"]').filter("[value='indoor']").length > 0);
+    testString: assert($('label:contains("Indoor") > input[type="radio"]').filter("[value='indoor']").length > 0);
   - text: One of your radio buttons should have the <code>value</code> attribute of <code>outdoor</code>.
-    testString: assert($('label > input[type="radio"]').filter("[value='outdoor']").length > 0);
+    testString: assert($('label:contains("Outdoor") > input[type="radio"]').filter("[value='outdoor']").length > 0);
   - text: One of your checkboxes should have the <code>value</code> attribute of <code>loving</code>.
-    testString: assert($('label > input[type="checkbox"]').filter("[value='loving']").length > 0);
+    testString: assert($('label:contains("Loving") > input[type="checkbox"]').filter("[value='loving']").length > 0);
   - text: One of your checkboxes should have the <code>value</code> attribute of <code>lazy</code>.
-    testString: assert($('label > input[type="checkbox"]').filter("[value='lazy']").length > 0);
+    testString: assert($('label:contains("Lazy") > input[type="checkbox"]').filter("[value='lazy']").length > 0);
   - text: One of your checkboxes should have the <code>value</code> attribute of <code>energetic</code>.
-    testString: assert($('label > input[type="checkbox"]').filter("[value='energetic']").length > 0);
+    testString: assert($('label:contains("Energetic") > input[type="checkbox"]').filter("[value='energetic']").length > 0);
 ```
 
 </section>
