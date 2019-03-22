@@ -232,7 +232,6 @@ class CertificationSettings extends Component {
   );
 
   renderProjectsFor = (certName, isCert) => {
-    console.log(isCert);
     const { username, isHonest, createFlashMessage, verifyCert } = this.props;
     const { superBlock } = first(projectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
@@ -304,6 +303,14 @@ class CertificationSettings extends Component {
       }
     });
 
+    const options = challengeTitles.reduce(
+      (options, current) => {
+        options.types[current] = 'url';
+        return options;
+      },
+      { types: {} }
+    );
+
     const fullForm = filledforms === challengeTitles.length;
 
     const createClickHandler = superBlock => e => {
@@ -338,6 +345,7 @@ class CertificationSettings extends Component {
           initialValues={{
             ...initialObject
           }}
+          options={options}
           submit={this.handleSubmit}
         />
         {isCertClaimed ? (
