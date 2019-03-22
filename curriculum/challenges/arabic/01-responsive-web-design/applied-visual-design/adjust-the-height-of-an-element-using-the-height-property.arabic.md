@@ -7,7 +7,8 @@ localeTitle: ضبط ارتفاع عنصر باستخدام خاصية الارت
 ---
 
 ## Description
-<section id="description"> يمكنك تحديد ارتفاع عنصر باستخدام خاصية <code>height</code> في CSS ، على غرار خاصية <code>width</code> . في ما يلي مثال يغير ارتفاع الصورة إلى 20 بكسل: <blockquote style=";text-align:right;direction:rtl"> img { <br> الارتفاع: 20 بكسل ؛ <br> } </blockquote></section>
+<section id="description">
+يمكنك تحديد ارتفاع عنصر باستخدام خاصية <code>height</code> في CSS، على غرار خاصية <code>width</code>. في ما يلي مثال يغير ارتفاع الصورة إلى 20 بكسل: <blockquote>img {<br>&nbsp;&nbsp;height: 20px;<br>}</blockquote></section>
 
 ## Instructions
 <section id="instructions"> إضافة خاصية <code>height</code> إلى علامة <code>h4</code> وتعيينها إلى 25 بكسل. </section>
