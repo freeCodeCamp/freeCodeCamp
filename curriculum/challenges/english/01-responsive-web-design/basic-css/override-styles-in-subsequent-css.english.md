@@ -17,7 +17,7 @@ Create an additional CSS class called <code>blue-text</code> that gives an eleme
 Apply the <code>blue-text</code> class to your <code>h1</code> element in addition to your <code>pink-text</code> class, and let's see which one wins.
 Applying multiple class attributes to a HTML element is done with a space between them like this:
 <code>class="class1 class2"</code>
-Note: It doesn't matter which order the classes are listed in the HTML element.
+<strong>Note:</strong> It doesn't matter which order the classes are listed in the HTML element.
 However, the order of the <code>class</code> declarations in the <code>&#60;style&#62;</code> section are what is important. The second declaration will always take precedence over the first. Because <code>.blue-text</code> is declared second, it overrides the attributes of <code>.pink-text</code>
 </section>
 

@@ -13,7 +13,7 @@ You can use the <code>hr</code> tag to add a horizontal line across the width of
 ## Instructions
 <section id='instructions'>
 Add an <code>hr</code> tag underneath the <code>h4</code> which contains the card title.
-<strong>Note</strong><br>In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag.
+<strong>Note:</strong> In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag.
 </section>
 
 ## Tests

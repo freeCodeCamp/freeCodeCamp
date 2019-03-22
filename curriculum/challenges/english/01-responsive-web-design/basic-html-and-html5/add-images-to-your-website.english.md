@@ -12,7 +12,7 @@ An example of this would be:
 <code>&#60img src="https://www.your-image-source.com/your-image.jpg"&#62</code>
 Note that <code>img</code> elements are self-closing.
 All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
-Note: If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
+<strong>Note:</strong> If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
 Ideally the <code>alt</code> attribute should not contain special characters unless needed.
 Let's add an <code>alt</code> attribute to our <code>img</code> example above:
 <code>&#60img src="https://www.your-image-source.com/your-image.jpg" alt="Author standing on a beach with two thumbs up."&#62</code>

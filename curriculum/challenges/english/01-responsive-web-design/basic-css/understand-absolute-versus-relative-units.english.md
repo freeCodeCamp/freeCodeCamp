@@ -10,7 +10,7 @@ videoUrl: 'https://scrimba.com/c/cN66JSL'
 The last several challenges all set an element's margin or padding with pixels (<code>px</code>). Pixels are a type of length unit, which is what tells the browser how to size or space an item. In addition to <code>px</code>, CSS has a number of different length unit options that you can use.
 The two main types of length units are absolute and relative. Absolute units tie to physical units of length. For example, <code>in</code> and <code>mm</code> refer to inches and millimeters, respectively. Absolute length units approximate the actual measurement on a screen, but there are some differences depending on a screen's resolution.
 Relative units, such as <code>em</code> or <code>rem</code>, are relative to another length value. For example, <code>em</code> is based on the size of an element's font. If you use it to set the <code>font-size</code> property itself, it's relative to the parent's <code>font-size</code>.
-<strong>Note</strong><br>There are several relative unit options that are tied to the size of the viewport. They are covered in the Responsive Web Design Principles section.
+<strong>Note:</strong> There are several relative unit options that are tied to the size of the viewport. They are covered in the Responsive Web Design Principles section.
 </section>
 
 ## Instructions

@@ -11,7 +11,7 @@ In the last challenge, you learned that including an <code>alt</code> attribute 
 In situations when an image is already explained with text content, or does not add meaning to a page, the <code>img</code> still needs an <code>alt</code> attribute, but it can be set to an empty string. Here's an example:
 <code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>
 Background images usually fall under the 'decorative' label as well. However, they are typically applied with CSS rules, and therefore not part of the markup screen readers process.
-<strong>Note</strong><br>For images with a caption, you may still want to include <code>alt</code> text, since it helps search engines catalog the content of the image.
+<strong>Note:</strong> For images with a caption, you may still want to include <code>alt</code> text, since it helps search engines catalog the content of the image.
 </section>
 
 ## Instructions
