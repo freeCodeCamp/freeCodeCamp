@@ -9,7 +9,7 @@ Ruby was created by Yukihiro "Matz" Matsumoto and is an <a href='https://github.
 When someone says Ruby is an interpreted scripting language, it means the Ruby program is executed line by line. This
 means even if some failure occurs (i.e. at line number 11), the first 10 lines will still be executed.
 
-So Ruby is a dynamic programming language. That means operation can be peformed at runtime.  If you declare a variable to store some number, then at run time, you use the same variable to store a string value like your name. For any non-dynamic or static programming language, this will generate error.  However, since Ruby is dynamic, it will make the change to store the string value to the variable at run time.
+So Ruby is a dynamic programming language. That means operation can be performed at runtime.  If you declare a variable to store some number, then at run time, you use the same variable to store a string value like your name. For any non-dynamic or static programming language, this will generate an error.  However, since Ruby is dynamic, it will make the change to store the string value to the variable at run time.
 
 It's also known to have one of the <a href="https://www.ruby-lang.org/en/community/">largest and friendliest communities</a> among programming languages. 
 
@@ -119,7 +119,7 @@ Ruby has several frameworks (gems) for quickly scaffolding applications. The mos
 
 ## Ruby Framework for mobile development
 
-To write cross-platform native apps in Ruby, RUBY MOTION is used to develop cross-platform native apps for iOS, Android and OS X using the Ruby programming langauge.
+To write cross-platform native apps in Ruby, RUBY MOTION is used to develop cross-platform native apps for iOS, Android and OS X using the Ruby programming language.
 More resources here: http://www.rubymotion.com/
 
 
