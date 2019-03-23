@@ -59,6 +59,18 @@ These CSS styles hide the link by default and only display the link when it is r
 </header>  
 ```
 
+### Accessible Main Content Structure
+- Role "main" is added to the ```main``` tag to signify to screen readers that this tag is the ```main``` content section. Needing to add the role on the ```main``` is depreciated in HTML5 but should still be added in order to support as many screen readers as possible.
+
+- This role is added to the ```main``` element when it is the main content section of the page. If there is more than one ```main``` element then each element will need an ```aria-labelledby``` attribute or an ```aria-label```.
+
+- More information can be found at the [https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/landmarks/main.html](W3C Website documentation for Role "main").
+
+```html
+<main role="main">
+</main>  
+```
+
 #### More Information
 
 - [MDN: Accessible Tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced#Tables_for_visually_impaired_users)
