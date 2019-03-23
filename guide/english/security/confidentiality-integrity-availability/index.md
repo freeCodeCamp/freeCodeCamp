@@ -2,10 +2,10 @@
 title: Confidentiality Integrity Availability
 ---
 ## Confidentiality, Integrity, Availability (CIA)
-Confidentiality, Integrity, and Availability or the CIA triad is the most fundamental concept in cyber security. It serves as guiding principles or goals for information security for organizations and individuals to keep information safe from prying eyes.
+Confidentiality, Integrity, and Availability, also known as the CIA triad, are the primary goals of security. All security measures are meant to provide one or more of these goals and all risks are accessed against these goals.
 
 ### Confidentiality
-Confidentiality is about ensuring access to data is restricted to only the intended audience and not others. As you may expect, the more sensitive the information is, the more stringent the security measures should be.  Many privacy laws rely on confidentiality security controls to enforce legal requirements.
+Confidentiality ensures access to data is restricted to the intended audience. As you may expect, the more sensitive the information is, the more stringent the security measures should be.
 
 Some measures to keep information confidential are:
 - Encryption
@@ -15,18 +15,18 @@ Some measures to keep information confidential are:
 - Security tokens
 
 ### Integrity
-Integrity refers to maintaining the accuracy, and completeness of data. In other words, it is about protecting data from being modified by unauthorized parties, accidentally by authorized parties, or by non-human-caused events such as electromagnetic pulse or server crash. For example, a hacker may intercept data and modify it before sending it on to the intended recipient.
+Integrity ensures the accuracy and completeness of data and systems. In other words, it is about protecting data, networks and systems from being modified by unauthorized parties, accidentally by authorized parties, or by non-human-caused events such as electromagnetic pulse or server crash. For example, a hacker may intercept data and modify it before sending it on to the intended recipient.
 
 Measures to maintain the integrity of information include:
-- Encryption
-- Hashing 
+- Hashing
+- Configuration Management
 - User Access Controls
 - Checksums
 - Version Control
 - Backups
 
 ### Availability
-Lastly, information must be available when it is needed. To ensure high data availability, you must maintain a correctly functioning hardware and software and provide adequate bandwidth. But these measures alone are not enough because there are external forces at play; data availability can further be compromised by:
+Availability ensures reliable and timely access to data, networks and systems when needed. To ensure high data availability, you must maintain a correctly functioning hardware and software and provide adequate bandwidth. But these measures alone are not enough because there are external forces at play; data availability can further be compromised by:
 - Denial of Service (DoS)
 - Power outages
 - Natural disasters
