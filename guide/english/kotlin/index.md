@@ -134,7 +134,7 @@ Another simple way of installing the Kotlin compiler on macOS, Linux, Cygwin, Fr
 
 ```$ curl -s https://get.sdkman.io | bash```
 
-Follow the instructions on the screen and once SDKMAN! is a setup issue the following command inside terminal
+Follow the instructions on the screen and once SDKMAN! is setup, issue the following command inside terminal
 
 
 ```$ sdk install kotlin```
