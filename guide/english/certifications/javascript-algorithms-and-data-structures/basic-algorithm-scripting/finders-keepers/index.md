@@ -46,7 +46,7 @@ function findElement(arr, func) {
 * The pre-defined function already checks each number for us, so if it is "true", we return that num.
 * If none of the numbers in the array pass the function's test, we return undefined.
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Intermediate Code Solution:
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:")  Intermediate Code Solution:
 ```javascript
 function findElement(arr, func) {
   return arr.find(func);
