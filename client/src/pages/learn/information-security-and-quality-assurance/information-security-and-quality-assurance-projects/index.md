@@ -5,7 +5,7 @@ superBlock: Information Security and Quality Assurance
 ---
 ## Introduction to the Information Security and Quality Assurance Projects
 
-Now it’s time to put your newly learned skills to work! By working on these projects, you would have the opportunity of applying all the skills, principles, and concepts from the Information Security and Quality Assurance sections.
+Now it’s time to put your newly learned skills to work! By working on these projects, you will have the opportunity of applying all the skills, principles, and concepts from the Information Security and Quality Assurance sections.
 
 In this section you get the chance to:
 * Build a Metric-Imperial Converter
