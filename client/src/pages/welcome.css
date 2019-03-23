@@ -20,3 +20,11 @@ p.stats {
 p.stats span {
   color: #006400;
 }
+
+.night p.stats span {
+  color: #67d269;
+}
+
+.night .quote-partial .blockquote  {
+  background-color: #333;
+}

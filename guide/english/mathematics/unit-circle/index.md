@@ -3,13 +3,10 @@ title: Unit Circle
 ---
 ## Unit Circle
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/unit-circle/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A unit circle is a circle with an r (radius) of value 1. It is frequently used, centered at coordinates 0,0, in the cartesian coordinate system as a part of trigonometry.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The interior of a unit circle, not including the outer circle,  is called the open unit disk, when the circle itself is also included it is referred to as the closed unit disk.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+### More Informaction
+https://en.wikipedia.org/wiki/Unit_circle
 
