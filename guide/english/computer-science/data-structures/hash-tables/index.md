@@ -116,7 +116,7 @@ Another way you can resolve hash collisions is using open addressing. In this me
 
 ![an example of open addressing in a hash table](https://github.com/TomerPacific/fccGuideImages/blob/master/380px-Hash_table_5_0_1_1_1_1_0_SP.svg.png?raw=true)
 
-The major setback of open addressing lies in the fact that when needing to look for values, they might not be in the place you expect them to be (the key mapping). Therefore you have to traverse parts of the hash table in order to find the value you are looking for, thus resulting in increased time complexity.
+The major setback of open addressing lies in the fact that when needing to look for values, they might not be in the place you expect them to be (the key mapping). Therefore you have to traverse parts of the hash table in order to find the value you are looking for, thus resulting in increased time complexity. Open addressing also results in most of the entries being clustered together in a specific locality, thereby resulting in inefficient memory usage.
 
 #### Time Complexity
 It is very important to note that hash tables have amortised constant complexity i.e. on an average case the complexity will be O(1). 
