@@ -12,6 +12,8 @@ title: common terms every Linux user should know.
 
 * <strong>GUI:</strong>  stands for graphic user interface. It is the part of the Linux system that comprises windows, icon, pictures (graphics in general), that make point and click possible.
 
+* <strong>Flavors:</strong>  Unix has Flavours and linux is one of them, just like linux has a lot of distros which are maintained by different organisations.
+
 * <strong>Terminal:</strong>  is an application that is used to access the Linux shell.
 
 * <strong>Kernel:</strong>  this the core of the Linux system – what you could call a “brain”. The kernel controls the resources of a computer and determines how they are used by interacting directly with the computer hardware.
