@@ -46,6 +46,16 @@ function findElement(arr, func) {
 * The pre-defined function already checks each number for us, so if it is "true", we return that num.
 * If none of the numbers in the array pass the function's test, we return undefined.
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Intermediate Code Solution:
+```javascript
+function findElement(arr, func) {
+  return arr.find(func);
+}
+```
+
+#### Relevant Links
+
+*   [Array.prototype.find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
@@ -61,17 +71,6 @@ function findElement(arr, func) {
 2. Use the function in the 2nd parameter as the callback function in arr.map()
 3. Acquire the index of the first number that meets the condition in the function.
 4. Use that index to display the first available number that meets the condition.
-
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 2:
-```javascript
-function findElement(arr, func) {
-  return arr.find(func);
-}
-```
-
-#### Relevant Links
-
-*   [Array.prototype.find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
