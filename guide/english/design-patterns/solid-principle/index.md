@@ -1,7 +1,7 @@
 ---
 title: SOLID Principle
 ---
-SOLID Principle
+## SOLID Principle
 
 A key programming princple which consists of the following conventions:
 (S)ingle Responsibility Principle
