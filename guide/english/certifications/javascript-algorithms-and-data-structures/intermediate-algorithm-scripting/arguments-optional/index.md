@@ -92,7 +92,6 @@ In the case that only one argument was passed, do not worry about how to prompt 
     // test here
     addTogether(2,3);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -149,7 +148,6 @@ In the case that only one argument was passed, do not worry about how to prompt 
     // test here
     addTogether(2,3);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLoA/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -182,7 +180,6 @@ In the case that only one argument was passed, do not worry about how to prompt 
     // test here
     addTogether(2,3);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLoB/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -208,7 +205,6 @@ function addTogether(a, b) {
 // test here
 addTogether(2,3);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/SvelteWelloffLogin' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
