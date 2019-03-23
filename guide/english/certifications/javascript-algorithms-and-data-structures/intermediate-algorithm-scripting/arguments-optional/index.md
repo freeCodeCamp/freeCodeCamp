@@ -195,12 +195,12 @@ In the case that only one argument was passed, do not worry about how to prompt 
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 2:
 ```javascript
-function addTogether(a, b) {
-  if (typeof a !== 'number') {
+function addTogether(first, second) {
+  if (typeof first !== 'number') {
     return undefined;
   }
-  const sum = b => (typeof b === 'number' ? a + b : undefined);
-  return typeof b === 'undefined' ? b => sum(b) : sum(b);
+  const sum = second => (typeof second === 'number' ? first + second : undefined);
+  return typeof second === 'undefined' ? second => sum(second) : sum(second);
 }
 // test here
 addTogether(2,3);
