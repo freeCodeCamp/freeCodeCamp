@@ -61,8 +61,8 @@ Dynamic arrays are those arrays, whose size is not known at compile time and we 
 Elements of an array are accessed using their index. The index of the first element in the array is zero and the second element's index is 1 and so on. You can think of the index of an element as the unit "distance" from the beginning of the array, that is the first element is 0 units from the start.  
 Examples using the number array from above:  
 ```C++
-int x = numbers[0]; // x is assigned 1. index 0 is the first position
-numbers[2] = 55; // Sets the third position (index 2) to the new value 55
+int x = numbers[0]; // = 1. [0] == first position
+numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
 

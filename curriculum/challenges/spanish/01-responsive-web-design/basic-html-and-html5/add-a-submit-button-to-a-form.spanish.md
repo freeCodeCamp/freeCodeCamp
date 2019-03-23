@@ -7,7 +7,7 @@ localeTitle: Agregar un botón de envío a un formulario
 ---
 
 ## Description
-<section id="description"> Agreguemos un botón <code>submit</code> a su formulario. Al hacer clic en este botón, los datos de su formulario se enviarán a la URL que especificó con el atributo <code>action</code> de su formulario. Aquí hay un ejemplo de botón <code>submit</code>: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
+<section id="description"> Agreguemos un botón tipo <code>submit</code> a tu formulario. Al hacer clic en este botón, los datos de tu formulario se enviarán a la URL que especificaste con el atributo <code>action</code> de tu formulario. Aquí hay un ejemplo de botón de envío: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Agregue un botón tipo <code>submit</code> con &quot;Submit&quot; como su texto, como el último elemento de su elemento <code>form</code>.</section>
@@ -17,13 +17,13 @@ localeTitle: Agregar un botón de envío a un formulario
 
 ```yml
 tests:
-  - text: Su formulario debe tener un botón en su interior.
+  - text: Tu formulario debe tener un botón en su interior.
     testString: 'assert($("form").children("button").length > 0, "Your form should have a button inside it.");'
-  - text: Su botón de envío debe tener el atributo <code>type</code> establecido para <code>submit</code> .
+  - text: Tu botón de envío debe tener el <code>type</code> atributo establecido para <code>submit</code> .
     testString: 'assert($("button").attr("type") === "submit", "Your submit button should have the attribute <code>type</code> set to <code>submit</code>.");'
-  - text: Su botón de enviar solo debe tener el texto "Submit".
+  - text: Tu botón de enviar solo debe tener el texto "Submit".
     testString: 'assert($("button").text().match(/^\s*submit\s*$/gi), "Your submit button should only have the text "Submit".");'
-  - text: Asegúrese de que su elemento <code>button</code> tenga una etiqueta de cierre.
+  - text: Asegúrate de que el elemento <code>button</code> tenga una etiqueta de cierre.
     testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure your <code>button</code> element has a closing tag.");'
 
 ```

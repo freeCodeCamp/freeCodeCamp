@@ -582,27 +582,11 @@ code {
   border-radius: 3px;
   font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
     'Liberation Mono', Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: .2em .3em;
 }
 pre code {
   background: none;
   line-height: 1.42;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: ' ';
-  white-space: pre;
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: '';
 }
 @media only screen and (max-width: 480px) {
   html {

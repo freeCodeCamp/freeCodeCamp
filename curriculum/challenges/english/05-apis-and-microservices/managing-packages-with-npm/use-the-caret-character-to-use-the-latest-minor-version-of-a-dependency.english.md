@@ -15,7 +15,7 @@ This would allow updates to any 1.x.x version of the package.
 ## Instructions
 <section id='instructions'>
 Use the caret (<code>^</code>) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
-<strong>Note:</strong> The version numbers themselves not should be changed.
+<strong>Note:</strong> The version numbers themselves should not be changed.
 </section>
 
 ## Tests

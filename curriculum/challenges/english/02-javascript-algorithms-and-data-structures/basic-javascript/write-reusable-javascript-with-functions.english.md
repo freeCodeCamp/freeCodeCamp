@@ -28,9 +28,9 @@ tests:
   - text: <code>reusableFunction</code> should be a function
     testString: assert(typeof reusableFunction === 'function', '<code>reusableFunction</code> should be a function');
   - text: <code>reusableFunction</code> should output "Hi World" to the dev console
-    testString: assert("Hi World" === logOutput, '<code>reusableFunction</code> should output "Hi World" to the dev console');
+    testString: assert(hiWorldWasLogged, '<code>reusableFunction</code> should output "Hi World" to the dev console');
   - text: Call <code>reusableFunction</code> after you define it
-    testString: assert(/^\s*reusableFunction\(\)\s*;/m.test(code), 'Call <code>reusableFunction</code> after you define it');
+    testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code), 'Call <code>reusableFunction</code> after you define it');
 
 ```
 
@@ -60,10 +60,12 @@ ourReusableFunction();
 
 ```js
 var logOutput = "";
-var originalConsole = console
+var originalConsole = console;
+var nativeLog = console.log;
+var hiWorldWasLogged = false;
 function capture() {
-    var nativeLog = console.log;
     console.log = function (message) {
+        if(message === 'Hi World')  hiWorldWasLogged = true;
         if(message && message.trim) logOutput = message.trim();
         if(nativeLog.apply) {
           nativeLog.apply(originalConsole, arguments);
@@ -75,7 +77,7 @@ function capture() {
 }
 
 function uncapture() {
-  console.log = originalConsole.log;
+  console.log = nativeLog;
 }
 
 capture();

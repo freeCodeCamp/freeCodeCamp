@@ -2,7 +2,10 @@
 title: For Loop
 ---
 
+# For Loop
+
 A `for` loop is a repetitive statement that is used to check for some condition and then, based upon the condition a block of code, is executed repeatedly until the specified condition is satisfied.
+It is typically used when the number of iterations are known; contrasting to that of a while loop where, generally, the number of iterations is unknown.
 
 The `for` loop is distinguished from other looping statements through an explicit loop counter or loop variable which allows the body of the loop to know the exact sequencing of each iteration.
 
@@ -12,42 +15,39 @@ For loop is an entry controlled loop unlike do-while loop.
 
 ## Syntax
 
-```
-for (init; condition; increment ) 
-{
+```c++
+for (init; condition; increment ) {
    update_statement(s);
 }
 ```
 
-It is allowed to place the increment inside the for loop like in a while loop. Meaning a syntax like this can also work.
+The increment can also placed inside the for loop i.e. in its body- 
 
-```
-for ( init; condition;) 
-{
+```c++
+for ( init; condition;) {
    update_statement(s);
    increment;
 }
 ```
 
-It is also allowed to ignore the init variables. For example:
-```
+It is also allowed to ignore the init variables if and only if they are declared beforehand. For example :
+
+```c++
 int a = 1;
-for (; a <= 10 ;)
-{
+for (; a <= 10 ;) {
     cout << a << '\n';
     a++;
 }
 ```
 
-However, you can't pass zero arguments, since empty condition is defaulted as false, and so the `for` loop won't run at all.
+The condition must be declared inside the parenthesis `()` in the for loop because the empty condition always returns false, which will prevent the loop from running.
 
 ### init
 This step allows you to declare and initialize any loop control variables. This step is performed first and only once.  
 Note that the variables declared in init can only be used inside the brackets of the For Loop.
 
 ### condition
-
-Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps outside the loop.
+Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next block of code outside the loop.
 
 ### increment
 The increment statement is used to alter the loop variable by using simple increment operations and executes after the completion of the body of the loop.
@@ -57,17 +57,15 @@ The update statement is used to alter the loop variable by using simple operatio
 
 You will often see an increment operation as the update statement (e.g. i++, count++). This is often seen as one of the distinguishing features and possible name sources for the C++ language.
 
-## IMPLEMENTATION:
-
-```C++
+## Implementation
+```c++
 #include <iostream>
 using std::cout; // Here we use the scope resolution operator to define the scope of the standard functions as std
 using std::endl;
 
 int main () {
    // for loop execution
-   for( int a = 10; a < 20; a = a + 1 ) 
-   { // The loop will run till the value of a is less than 20
+   for( int a = 10; a < 20; a++ ) { // The loop will run till the value of a is less than 20
       cout << "value of a: " << a << endl;
    }
 
@@ -94,14 +92,13 @@ The body of the for loop need not be enclosed in braces if the loop iterates ove
 
 ### Example
 ```c++
-   #include<iostream.h>
-   using std::cout;
+#include<iostream.h>
+using std::cout;
    
-   int main () {
+int main () {
    // Single line for loop
-   for( int a = 10; a < 20; a = a + 1 ) 
+   for( int a = 10; a < 20; a++ ) 
       cout << "value of a: " << a << endl;
-   
 
    return 0;
 }
@@ -132,14 +129,14 @@ C++ also has what we call "range-based" `for` loops which iterate through all th
 ### Syntax
 
 ```c++
-for ( element: container )
+for ( element: container ) {
    statement(s);
 }
 ```
 
 ```c++
 int[5] array = { 1, 2, 3, 4, 5 }
-for ( int i: array )
+for ( int i: array ) {
    cout << i << endl;
 }
 ```
@@ -153,5 +150,38 @@ Output:
 5
 ```
 
+## Iterator-based for-loop
+Iterator based for loops are also possible in C++ and functionality for them exists in many of the data structures found within the STL. Unlike for-each loops, iterator based loops allow for mutating the contents of the container during iteration. This is rather useful when one needs to remove or insert values while looping over data.
+
+### Syntax
+```c++
+// Create a vector
+std::vector<int> vec;
+
+// Populate the vector
+vec.push_back(1);
+vec.push_back(2);
+vec.push_back(3);
+
+// Iterate over the vector using the 'it' object.
+for(std::vector<string>::iterator it = vec.begin(); it != vec.end(); it++) {
+    // Print the value held by the iterator (this is the object or primitive contained within 
+    // the vector, in this case, an int).
+    cout<< *it << endl;  // prints d.
+}
+```
+
+## Applications of the for loops
+
+### Use as infinite loops
+
+This C-style for-loop is commonly the source of an infinite loop since the fundamental steps of iteration are completely in the control of the programmer. In fact, when infinite loops are intended, this type of for-loop can be used (with empty expressions), such as:
+```c++
+for (;;) {
+   //loop body
+}
+```
+
 ## Additional Resources
 - [Range for-loop](https://guide.freecodecamp.org/cplusplus/range-for-loop)
+- [More on For Loops](http://www.cplusplus.com/doc/tutorial/control/)

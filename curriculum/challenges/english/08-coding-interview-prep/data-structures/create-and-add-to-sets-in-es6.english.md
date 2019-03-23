@@ -47,7 +47,7 @@ function checkSet() {
   // change code below this line
 
   // change code above this line
-  console.log(set);
+  console.log(Array.from(set));
   return set;
 }
 

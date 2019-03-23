@@ -6,7 +6,6 @@ The Flexbox model provides for an efficient way to lay out, align, and distribut
 
 The most important idea behind the Flexbox model is that the parent container can alter its items' width/height/order to best fill the available space. A flex container expands items to fill available free space, or shrinks them to prevent overflow.<sup>1</sup>
 
-
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 #### Basic usage
 Flexbox can be used to center any amount of given elements inside one element. Given the following HTML structure:
@@ -58,17 +57,20 @@ There are three slightly more interesting options for `justify-content` you migh
 
 Note that when you apply a display "flex" on the parent container, it will only affect direct children properties. You can nest flexboxes as well. 
 
+The `flex-flow` property is shorthand for `flex-direction` and `flex-wrap` in that order.
 
 #### More Information
 
-- To get a complete understanding of Flexbox, read <a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af" target='_blank' rel="nofollow">Understanding Flexbox Everything you need to know</a> on the FreeCodeCamp Medium page.
+- To get a complete understanding of Flexbox, read <a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af" target='_blank' rel="nofollow noopener">Understanding Flexbox Everything you need to know</a> on the FreeCodeCamp Medium page.
 
-- For an interactive guide go through <a href="https://medium.freecodecamp.org/the-ultimate-guide-to-flexbox-learning-through-examples-8c90248d4676" target="_blank" rel="nofollow">The Ultimate Guide to Flexbox — Learning Through Examples</a>
+- For an interactive guide go through <a href="https://medium.freecodecamp.org/the-ultimate-guide-to-flexbox-learning-through-examples-8c90248d4676" target="_blank" rel="nofollow noopener">The Ultimate Guide to Flexbox — Learning Through Examples</a>
 
 - A great visual guide to Flexbox is provided by [JavaScript Teacher](https://medium.freecodecamp.org/@js_tut) on the FreeCodeCamp Medium page: [The Complete Illustrated Flexbox Tutorial](https://medium.freecodecamp.org/the-complete-illustrated-flexbox-tutorial-d35c085dbf35).
 
-- Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
+- Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow noopener">CSS-Tricks</a>
+
+- Also check out <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="nofollow noopener">Flexbox on MDN</a> to get a understanding of the fundementals.
 
 - I suggest working out while playing the game [Flexbox Froggy](http://flexboxfroggy.com)- [Guide](https://github.com/thomaspark/flexboxfroggy)
 
-- <a href="https://flexbox.io/" target="_blank" rel="nofolow">A simple, free 20 video course that will help you master CSS Flexbox! by Wes Bos</a>
+- <a href="https://flexbox.io/" target="_blank" rel="nofolow noopener">A simple, free 20 video course that will help you master CSS Flexbox! by Wes Bos</a>
