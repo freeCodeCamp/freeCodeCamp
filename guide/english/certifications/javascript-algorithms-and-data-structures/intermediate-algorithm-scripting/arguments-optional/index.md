@@ -109,54 +109,21 @@ In the case that only one argument was passed, do not worry about how to prompt 
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 ```javascript
-    function addTogether() {
-      var args = new Array(arguments.length);
-      //Storing the arguments in an array
-      for(var i = 0; i < args.length; ++i) {
-          args[i] = arguments[i];
-        }
-     //Check for the arguments length
-     if(args.length == 2){
-        //If there are two arguments,check for the type of both arguments
-        //Use typeof to check the type of the argument(both should be numbers)
-        if(typeof args[0] !== 'number' || typeof args[1] !=='number' ){
-          return undefined;
-          }
-        return args[0]+args[1];
-       }
-     //When only one argument is provided
-     if(args.length == 1){
-         a= args[0];
-         //Check the  argument using typeof 
-        if(typeof a!=='number'){
-            return undefined;
-          }
-        else{
-           //Making use of closures 
-           return function(b){
-           //Checking the second argument 
-             if(typeof b !=='number'){
-               return undefined;
-               }
-             else
-               return a+b;
-              };
-          }
-        }
-    }
-
-    // test here
-    addTogether(2,3);
+function addTogether(first, second) {
+  if (typeof first !== 'number') {
+    return undefined;
+  }
+  const sum = second => (typeof second === 'number' ? first + second : undefined);
+  return typeof second === 'undefined' ? second => sum(second) : sum(second);
+}
+// test here
+addTogether(2,3);
 ```
 
 ### Code Explanation:
 
-*   First store the arguments in an array by creating an array using the constructor method.
-*   Adds each argument to the new array.
-*   Then check for the length of the new array as we need to know if we have enough or not.
-*   Check for the type of the arguments using `typeof` as they both should be numbers.
-*   Returns undefined if any of them is not a number, or returns the sum of them if they are.
-*   If there was only one argument, we still check the type after storing it in a new variable and returning a new function or undefined.
+*   Return `undefined` if first argument is not a `number` or second argument is defined, but not a `number`.
+*   Return sum of the arguments if both are provided otherwise return a sum function.
 
 #### Relevant Links
 
@@ -193,23 +160,6 @@ In the case that only one argument was passed, do not worry about how to prompt 
 *   [Array.prototype.some](https://forum.freecodecamp.com/t/javascript-array-prototype-some/14304)
 *   [Array.from](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 2:
-```javascript
-function addTogether(first, second) {
-  if (typeof first !== 'number') {
-    return undefined;
-  }
-  const sum = second => (typeof second === 'number' ? first + second : undefined);
-  return typeof second === 'undefined' ? second => sum(second) : sum(second);
-}
-// test here
-addTogether(2,3);
-```
-
-### Code Explanation:
-
-*   Return `undefined` if first argument is not a `number` or second argument is defined, but not a `number`.
-*   Return sum of the arguments if both are provided otherwise return a sum function.
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
