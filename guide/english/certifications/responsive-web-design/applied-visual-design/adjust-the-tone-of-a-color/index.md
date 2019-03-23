@@ -3,8 +3,52 @@ title: Adjust the Tone of a Color
 ---
 ## Adjust the Tone of a Color
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/adjust-the-tone-of-a-color/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```html
+<style>
+  header {
+    background-color: hsl(180, 90%, 35%);
+    color: #FFFFFF;
+  }
+  
+  nav {
+    background-color: hsl(180, 80%, 25%);
+  }
+  
+  h1 {
+    text-indent: 10px;
+    padding-top: 10px;
+  }
+  
+  nav ul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+  
+<header>
+  <h1>Cooking with FCC!</h1>
+  <nav>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Classes</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+#### Explanation
+
+The `background-color: hsl(180, 80%, 25%);` declaration uses the same hue i.e. `180` as required by the challenge and sets the saturation and lightness at `80%` and `25%` respectively for all `nav` elements.

@@ -21,13 +21,6 @@ math.log(100, 10) #outputs 2
 math.log(2, 2) #outputs 1
 ```
 
-
-#### Sources:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-* https://betterexplained.com/articles/using-logs-in-the-real-world/
-* https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/a/intro-to-logarithms
-
-
 ### Definition of logarithm
 
 The logarithm of a number __x__, written _log(__x__)_, usually means the number you have to use as power over 10 to get __x__. Let's say you wanna find _log(10)_. This means you wanna find the number you have to raise 10 to to get 10. This gives us an equation: 
@@ -50,4 +43,8 @@ _ln(e) = 1_, instead of _log(10) = 1_.
 So, we are instead finding the power you need to raise _e_ to in _ln(__x__)_.
 
 
-
+#### More Information
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+* https://betterexplained.com/articles/using-logs-in-the-real-world/
+* https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/a/intro-to-logarithms
+* https://mathinsight.org/logarithm_basics
