@@ -138,4 +138,24 @@ while keep_playing == "True":
     elif pmove == "scissors" and cmove =="paper":
         print ("Player wins")  
 
+
+```
+Nested if else condition
+Sometime we need to check another condition once one condition is satisfied.
+For Example: If you wanted to check the range between which the given number falls.You will need to use nested if-else conditon
+```python
+x=63
+if x<=100:
+   if x>=90:
+     print("number fall between 100 and 90")
+   elif x>=80 & x<90:
+     print(Number is greater than 80 but less than 90")
+   else:
+       print("number is less than 80")
+else:
+   print("number is greater than 100")
+```   
+output:
+```
+number is less than  80
 ```
