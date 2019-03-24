@@ -33,9 +33,8 @@ int cucumber; // global variable "cucumber"
 
 ## Using goto, continue, etc.
 
-This is a usual discussion among programmers. Just like global variables, these types of statements are usually considered bad practice.
-
-They are considered bad because they lead to ["spaghetti code"](https://en.wikipedia.org/wiki/Spaghetti_code). When we program we want a linear flow, when using those statements the flow is modified and lead to a "twisted and tangled" flow.
+This is a usual discussion among programmers, just like global variables, these types of statements are usually considered bad practice.
+They are considered bad because they lead to ["spaghetti code"](https://en.wikipedia.org/wiki/Spaghetti_code). When we program, we want a linear flow, when using those statements the flow is modified and leads to a "twisted and tangled" flow.
 
 Goto was used in the past when while, for, if functions, however, with the introduction of those structured programming was created.
 In general avoid using goto unless you are sure it will make your code cleaner and easier to read. An example might be using it in nested loops.
@@ -74,8 +73,7 @@ for (int i = 1; i <= 5; i++)
 ## Declare constants and types at the top
 
 They are usually declared after libraries, this makes them be together and easier to read.
-
-For local variables it happens the same, declare them at the top (Other people prefer it declaring them as later as possible in order to save memory see: [cplusplus.com](http://www.cplusplus.com/forum/general/33612/)
+For local variables it happens the same, declare them at the top (Other people prefer declaring them as later as possible in order to save memory. See: [cplusplus.com](http://www.cplusplus.com/forum/general/33612/)
 
 ## Use only one return function at the end
 
@@ -107,3 +105,9 @@ for (int i = 1; i <= 5; i++)
 * #### Use proper indentations, so that it is easy to read and debug the code, for you, as well as for others.
 
 * #### Write const in caps, datatypes starting with T and variables in lower case.
+
+```cpp
+const int MAX= 100;             //Constant
+typedef int TVector[MAX];       //Data type
+TVector vector;                 //Vector
+```
