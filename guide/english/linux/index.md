@@ -17,8 +17,7 @@ of which are from the GNU project.
 The GNU operating system is a completely free software system, upward-compatible with Unix. GNU stands for “GNU's Not Unix”.
 The project to develop the GNU system is called the “GNU Project”. The GNU Project was conceived in 1983 as a way of bringing back the cooperative spirit that prevailed in the computing community in earlier days—to make cooperation possible once again by removing the obstacles to cooperation imposed by the owners of proprietary software. *The GNU operating system and the Linux kernel are separate software projects that do complementary jobs. Typically they are packaged in a GNU/Linux distribution and used together*. More at [Overview of the GNU system](https://www.gnu.org/gnu/gnu-linux-faq.en.html#why)
 
-The development of Linux is one of the most prominent examples of free and open-source software collaboration. The underlying source
-the code may be used, modified and distributed commercially or non-commercially by anyone under the terms of its respective licenses, such
+The development of Linux is one of the most prominent examples of free and open-source software collaboration. The underlying source code may be used, modified and distributed commercially or non-commercially by anyone under the terms of its respective licenses, such
 as the GNU General Public License.
 
 Linux was first started as a clone of the MINIX operating system. Open source contributors added onto the kernel and expanded its
@@ -30,7 +29,7 @@ There are also many versions of Linux designed to be run on personal computers, 
 different versions of Linux (called distributions or distros for short) allow the user varying degrees of personalization and control of the operating
 system. This means that users can choose their Linux distributions based on their wants and needs.
 
-There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, to be able to use it efficiently you will need to know how to use the command line. Since it used for ethical hacking and pen testing you will have to perform certain malicious hacks which might brick your system. Therefore, one should have complete knowledge about the command line interface, so, that you can fix errors if occurred and knew what you have done and hence it is not advised for beginners.
+There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, and to be able to use it efficiently, you will need to know how to use the command line. Since it used for ethical hacking and pen testing, you will have to perform certain malicious hacks which might brick your system. Therefore, one should have complete knowledge about the command line interface, so that you can fix errors if they occur and know what you have done, hence it is not advised for beginners.
 
 Other popular distributions of Linux include:
 
