@@ -12,15 +12,15 @@ Create the class, Thermostat. You're going to put your constructor, getter, and 
 
 ## Hint 2:
 
-Give the constructor a parameter (which you can name anything you want). Set the parameter to an attribute of the same name. Remember, you are initially setting things in Farenheit temperature.
+Give the constructor a parameter (which you can name anything you want). Set the parameter to an attribute of the same name. Remember, you are initially setting things in Fahrenheit temperature.
 
 ## Hint 3:
 
-Create a get method that converts the Farenheit attribute to Celsius. Use the formula given to you.
+Create a get method that converts the Fahrenheit attribute to Celsius. Use the formula given to you.
 
 ## Hint 4:
 
-Create a set method of the same name as the get method. It should have a parameter that accepts celsius temperature. Convert it to farenheit, and set it to the attribute.
+Create a set method of the same name as the get method. It should have a parameter that accepts celsius temperature. Convert it to fahrenheit, and set it to the attribute.
 
 ## Spoiler Alert - Solution Ahead!
 
@@ -32,14 +32,14 @@ function makeClass() {
   /* Alter code below this line */
   
   class Thermostat{
-    constructor(farenheit){
-      this.farenheit = farenheit;
+    constructor(fahrenheit){
+      this.fahrenheit = fahrenheit;
     }
     get temperature(){
-      return 5 / 9 * (this.farenheit - 32);
+      return 5 / 9 * (this.fahrenheit - 32);
     }
     set temperature(celsius){
-      this.farenheit = celsius * 9.0 / 5 + 32;
+      this.fahrenheit = celsius * 9.0 / 5 + 32;
     }
   }
   

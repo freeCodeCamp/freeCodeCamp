@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Mejora la compatibilidad con los fallbacks del navegador
 ---
 
-## Description
+## Descripción
 <section id="description"> Cuando trabaje con CSS, es probable que tenga problemas de compatibilidad con el navegador en algún momento. Esta es la razón por la que es importante proporcionar interrupciones en el navegador para evitar posibles problemas. Cuando su navegador analiza el CSS de una página web, ignora cualquier propiedad que no reconozca o admita. Por ejemplo, si usa una variable CSS para asignar un color de fondo en un sitio, Internet Explorer ignorará el color de fondo porque no admite las variables CSS. En ese caso, el navegador utilizará cualquier valor que tenga para esa propiedad. Si no puede encontrar ningún otro valor establecido para esa propiedad, volverá al valor predeterminado, que generalmente no es ideal. Esto significa que si desea proporcionar un respaldo de navegador, es tan fácil como proporcionar otro valor más ampliamente soportado inmediatamente antes de su declaración. De esa manera, un navegador antiguo tendrá algo en lo que basarse, mientras que un navegador más nuevo simplemente interpretará cualquier declaración que se presente más adelante en la cascada. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Parece que se está utilizando una variable para establecer el color de fondo de la clase <code>.red-box</code> . Mejoremos la compatibilidad de nuestro navegador agregando otra declaración de <code>background</code> justo antes de la declaración existente y establezcamos su valor en rojo. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -51,7 +51,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
