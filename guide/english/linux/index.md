@@ -29,7 +29,7 @@ There are also many versions of Linux designed to be run on personal computers, 
 different versions of Linux (called distributions or distros for short) allow the user varying degrees of personalization and control of the operating
 system. This means that users can choose their Linux distributions based on their wants and needs.
 
-There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, and to be able to use it efficiently, you will need to know how to use the command line. Since it used for ethical hacking and pen testing, you will have to perform certain malicious hacks which might brick your system. Therefore, one should have complete knowledge about the command line interface, so that you can fix errors if they occur and know what you have done, hence it is not advised for beginners.
+There is also Kali Linux which is used for advanced penetration testing and auditing. It has over 700 tools, and to be able to use it efficiently, you will need to know how to use the command line. Since it is used for ethical hacking and pen testing, you will have to perform certain malicious hacks which might brick your system. Therefore, one should have complete knowledge about the command line interface, so that you can fix errors if they occur and know what you have done, hence it is not advised for beginners.
 
 Other popular distributions of Linux include:
 
