@@ -94,7 +94,8 @@ While the examples above are simple, you can create complex conditions using <a 
 ***Inline python if-else statement***
 
 We can also use if-else statements with inline python functions.
-The following example should check if the number is greater or equal than 50, if yes return True:
+
+The following example should check if the number is greater or equal to 50, if yes return `True`:
 
 ```python 
 x = 89
