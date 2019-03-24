@@ -16,6 +16,17 @@ Make sure you create good variable names, for example, if you are creating a gam
 
 Also, PLEASE, use comments, I'm not even kidding, just try to read some old projects you did without comments... now imagine being someone else who didn't even code it.
 
+Comments can be created with either //, line comment, or /* */, block comment.  // will comment out anything that follows it on that line, and /* */ will make anything between * * a comments.  
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// This is a line comment
+/* This is all contained in
+a block comment*/
+```
+
 ## Global variables
 
 Global variables can be easy to use, and with little code it might look like a great solution. But, when the code gets larger and larger, it becomes harder to know when they are being used.
