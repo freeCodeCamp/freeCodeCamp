@@ -29,6 +29,8 @@ public class Bar implements javax.ejb.EntityBean {
 
 Therefore a Java Object qualifies as a POJO only when it is free from the above modifications. It therefore follows that a POJO is not 'bound by any restrictions' other those prescribed by the formal Java language specification.
 
+POJO is usually used to describe a class that doesn't need to be a subclass of anything, or implement specific interfaces, or follow a specific pattern. It has properties, getters and setters for respective properties. It may also override Object.toString() and Object.equals().
+
 
 #### More Information:
 [Wikipedia - POJOs](https://en.wikipedia.org/wiki/Plain_old_Java_object)
