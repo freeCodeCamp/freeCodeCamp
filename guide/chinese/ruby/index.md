@@ -128,4 +128,4 @@ Ruby有几个用于快速搭建应用程序的框架（gem）。到目前为止�
 
 ## 学习Ruby之后会怎么样？
 
-每种编程语言都扮演着重要的角色。您可以为许多开源项目做出贡献，或者在掌握了Ruby之后可以申请一些大公司。许多大型互联网网站，如Basecamp，Airbnb，Bleacher Report，Fab.com，Scribd，Groupon，Gumroad，Hulu，Kickstarter，Pitchfork，Sendgrid，Soundcloud，Square，Yammer，Crunchbase，Slideshare，Funny or Die，Zendesk，Github， Shopify建立在Ruby之上，因此有很多选择。 此外，许多初创公司正在招聘RUby on Rails技能的人，因为没有多少程序员试图学习Ruby。所以，你可能有一个明确的工作在一家初创公司工作。 因此，Ruby是初学者友好的，并且非常难以发现你有很多空缺可以作为开发人员工作。
+每种编程语言都扮演着重要的角色。您可以为许多开源项目做出贡献，或者在掌握了Ruby之后可以申请一些大公司。许多大型互联网网站，如Basecamp，Airbnb，Bleacher Report，Fab.com，Scribd，Groupon，Gumroad，Hulu，Kickstarter，Pitchfork，Sendgrid，Soundcloud，Square，Yammer，Crunchbase，Slideshare，Funny or Die，Zendesk，GitHub， Shopify建立在Ruby之上，因此有很多选择。 此外，许多初创公司正在招聘RUby on Rails技能的人，因为没有多少程序员试图学习Ruby。所以，你可能有一个明确的工作在一家初创公司工作。 因此，Ruby是初学者友好的，并且非常难以发现你有很多空缺可以作为开发人员工作。
