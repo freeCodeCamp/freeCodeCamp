@@ -4,12 +4,11 @@ title: Clean Code Guidelines
 
 # Clean Code Guidelines
 
-When coding, the coding style you follow can be really important. Specially when you are working with a team or you plan on sharing your 
-code.
-Most of these guidelines are standard and can be applied to most of the programming languages, however, here you have applications and 
-snippets with c++ code, so you can familiarize with it easier.
+When coding, the coding style you follow can be really important like when you are working with a team or you plan on sharing your code.
+Most of these guidelines are standard and can be applied to most programming languages, however, here you have applications and 
+snippets with C++ code, so you can familiarize with it easier.
 Remember that these are only recommendations for achieving clarity, which can be a personal preference, so take these pieces of advice 
-into account but don't take them to the letter. Sometimes breaking some of these rules can lead to cleaner code.
+into account, but do not take them to the letter. Sometimes breaking some of these rules can lead to cleaner code.
 
 ## Use good variable names and make comments
 
@@ -19,9 +18,9 @@ Also, PLEASE, use comments, I'm not even kidding, just try to read some old proj
 
 ## Global variables
 
-Global variables can be easy to use, and with little code it might look like a great solution. But, when the code gets larger and larger, it becomes harder to know when are they being used.
+Global variables can be easy to use, and with little code it might look like a great solution. But, when the code gets larger and larger, it becomes harder to know when they are being used.
 
-Instead of using global variables you could use variables declared in functions which can help you telling what values are being passed 
+Instead of using global variables you could use variables declared in functions which can help you tell what values are being passed 
 and identifying errors faster.
 
 ```cpp
@@ -34,12 +33,9 @@ int cucumber; // global variable "cucumber"
 
 ## Using goto, continue, etc.
 
+This is a usual discussion among programmers. Just like global variables, these types of statements are usually considered bad practice.
 
-This is a usual discussion among programmers, just like global variables, these types of statements are usually considered bad practice.
-
-They are considered bad because they lead to ["spaghetti code"](https://en.wikipedia.org/wiki/Spaghetti_code). When we program we want a
-
-linear flow, when using those statements the flow is modified and lead to a "twisted and tangled" flow.
+They are considered bad because they lead to ["spaghetti code"](https://en.wikipedia.org/wiki/Spaghetti_code). When we program we want a linear flow, when using those statements the flow is modified and lead to a "twisted and tangled" flow.
 
 Goto was used in the past when while, for, if functions, however, with the introduction of those structured programming was created.
 In general avoid using goto unless you are sure it will make your code cleaner and easier to read. An example might be using it in nested loops.
@@ -87,7 +83,7 @@ Just like we said before, we tend to make only one entry and exit to make the fl
 
 ## Use curly braces even when writing one-liners
 
-Making it systematically will help you doing it faster and in case you want to change the code in the future you will be able to do it without worries.
+Making it systematically will help you do it faster and in case you want to change the code in the future, you will be able to do it without worries.
 
 Instead of:
 ```cpp
@@ -111,11 +107,3 @@ for (int i = 1; i <= 5; i++)
 * #### Use proper indentations, so that it is easy to read and debug the code, for you, as well as for others.
 
 * #### Write const in caps, datatypes starting with T and variables in lower case.
-
-
-
-```cpp
-const int MAX= 100;             //Constant
-typedef int TVector[MAX];       //Data type
-TVector vector;                 //Vector
-```
