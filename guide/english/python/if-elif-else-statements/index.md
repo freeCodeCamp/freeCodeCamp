@@ -102,8 +102,7 @@ True
 Nested if else condition
 Sometime we need to check another condition once one condition is satisfied.
 For Example: If you wanted to check the range between which the given number falls.You will need to use nested if-else conditon
-```
-python
+```python
 x=63
 if x<=100:
    if x>=90:
@@ -114,7 +113,8 @@ if x<=100:
        print("number is less than 80")
 else:
    print("number is greater than 100")
-   
-"""
-output:number is less than  80
-"""
+```   
+output:
+```
+number is less than  80
+```
