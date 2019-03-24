@@ -23,7 +23,7 @@ Kotlin works with **JDK 1.6+** so make sure you get the correct version installe
 
 
 * ## IntelliJ IDEA
-The quickest way to get Kotlin running on your machine is using it alongside the **IntelliJ IDEA** IDE. This is the recommended IDE for Kotlin because of the tooling support that is provided by Jetbrains. You can grab the <a href='http://www.jetbrains.com/idea/download/index.html'>Community Edition</a> of IntelliJ from JetBrains.
+The quickest way to get Kotlin running on your machine is using it alongside the **IntelliJ IDEA** IDE. This is the recommended IDE for Kotlin because of the tooling support that is provided by JetBrains. You can grab the <a href='http://www.jetbrains.com/idea/download/index.html'>Community Edition</a> of IntelliJ from JetBrains.
 
 Once you have installed IntelliJ, you can get started with your first project in Kotlin without any further configurations.
 
@@ -97,7 +97,7 @@ fun main (args: Array<String>) {
 
 ![eclipse hello world ](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/hello-world.png)
 
-Now that you are done typing out the Hello World code, go ahead and run it. To run the file, right click anywhere inside the editor and click on ***Run As -> Kotlin Application***
+Now that you are done typing out the Hello World code, go ahead and run it. To run the file, right-click anywhere inside the editor and click on ***Run As -> Kotlin Application***
 
 
 ![eclipse run app](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/run-as.png)
@@ -111,7 +111,7 @@ If you are someone who prefers doing things in a more manual way and do not want
 
 ### Downloading the compiler
 
-With every release of Kotlin, Jetbrains ship a standalone compiler which can be downloaded from the <a href='https://github.com/JetBrains/kotlin/releases/tag/v1.1.51'>GitHub releases</a>. Version 1.1.51 happens to be the latest at the time of this writing.
+With every release of Kotlin, JetBrains ship a standalone compiler which can be downloaded from the <a href='https://github.com/JetBrains/kotlin/releases/tag/v1.1.51'>GitHub releases</a>. Version 1.1.51 happens to be the latest at the time of this writing.
 
 </br>
 
@@ -134,7 +134,7 @@ Another simple way of installing the Kotlin compiler on macOS, Linux, Cygwin, Fr
 
 ```$ curl -s https://get.sdkman.io | bash```
 
-Follow the instructions on screen and once SDKMAN! is setup issue the follwoing command inside terminal
+Follow the instructions on the screen and once SDKMAN! is setup, issue the following command inside terminal
 
 
 ```$ sdk install kotlin```
@@ -169,5 +169,5 @@ Congratulations you have successfully set up the Kotlin compiler and development
 
 ## Documentation
 
-One of the greatest things about Kotlin is its comprehensive and well structured documentation. Even if you are new to programming, you will find yourself right at home with the docs. They do a pretty amazing job at laying it all out in a well structured manner. You can check out the official documentation at <a href='https://kotlinlang.org/docs/reference/'>this link</a>.
+One of the greatest things about Kotlin is its comprehensive and well-structured documentation. Even if you are new to programming, you will find yourself right at home with the docs. They do a pretty amazing job at laying it all out in a well-structured manner. You can check out the official documentation at <a href='https://kotlinlang.org/docs/reference/'>this link</a>.
 
