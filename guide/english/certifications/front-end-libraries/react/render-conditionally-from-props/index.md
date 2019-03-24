@@ -5,7 +5,7 @@ title: Render Conditionally from Props
 This is a bit tricky challenge but easy though.
 
 ## Solution
-Change `handleClick()` with proper increament statement.
+Change `handleClick()` with proper increment statement.
 
 ```react.js
 handleClick() {
