@@ -9,7 +9,7 @@ A packet looks like this:
 
 ![packet](https://www.computerhope.com/jargon/p/packet.jpg)
 
-The Network Layer breaks down the data into small packets, each with it's unique identifier. They are then passed onto the Transportation Layer which transports them to the destination through several intermidiate nodes like routers and switches, using the *Transmission Control Protocol* (TCP) and *Internet Protocol*(IP). TCP deals with the actual routing while IP helps in logical addressing of devices (IP address) to keep a track of which node to send the packet next to.
+The Network Layer breaks down the data into small packets, each with it's unique identifier. They are then passed onto the Transportation Layer which transports them to the destination through several intermidiate nodes like routers and switches, using the *Transmission Control Protocol* (TCP) and *Internet Protocol*(IP). TCP deals with the actual routing to an application while IP helps in logical addressing of devices (IP address) to keep a track of which node to send the packet next to.
 
 Once the packets reach the destination, an acknowledgement is sent back. If for any reason a packet is dropped, it can be requisitioned again from the source node.    
 
