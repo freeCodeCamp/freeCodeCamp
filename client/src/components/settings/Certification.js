@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { find, first } from 'lodash';
 import {
   Table,
@@ -11,6 +13,7 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
+import { updateLegacyCertificate } from '../../redux/settings';
 import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
 
 import SectionHeader from './SectionHeader';
@@ -21,6 +24,9 @@ import { Form } from '../formHelpers';
 import { maybeUrlRE } from '../../utils';
 
 import './certification.css';
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ updateLegacyCertificate }, dispatch);
 
 const propTypes = {
   completedChallenges: PropTypes.arrayOf(
@@ -45,6 +51,7 @@ const propTypes = {
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
+  updateLegacyCertificate: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
 };
@@ -279,7 +286,8 @@ class CertificationSettings extends Component {
   // legacy projects rendering
 
   handleSubmit(values) {
-    console.log(values);
+    const { updateLegacyCertificate } = this.props;
+    updateLegacyCertificate(values);
   }
 
   renderLegacyCertifications = certName => {
@@ -405,4 +413,7 @@ class CertificationSettings extends Component {
 CertificationSettings.displayName = 'CertificationSettings';
 CertificationSettings.propTypes = propTypes;
 
-export default CertificationSettings;
+export default connect(
+  null,
+  mapDispatchToProps
+)(CertificationSettings);
