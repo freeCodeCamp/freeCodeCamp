@@ -6,7 +6,7 @@ title: Compare Scopes of the var and let Keywords
 
 ## Problem Explanation:
 
-_Fix the code so that `i` declared in the if statement is a separate variable than `i` declared in the first line of the function._
+Change the code so that the variable `i` declared in the if block is separately scoped than the variable `i` declared at the beginning of the function.
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
