@@ -2,13 +2,15 @@
 title: Kotlin
 ---
 
-**What is Kotlin?**
+# Kotlin
 
-<a href='https://kotlinlang.org/'>Kotlin</a> is a programming language developed by <a href='https://www.jetbrains.com'>Jetbrains</a>, the company behind some of the world's most popular IDEs like <a href='https://www.jetbrains.com/idea/'>IntelliJ</a> and <a href='https://www.jetbrains.com/pycharm/'>Pycharm</a>.
+## What is Kotlin?
 
- It serves as a replacement for Java and runs on the JVM. It has been in development since 2011 and version 1.0 was released in August 2016. 
+[Kotlin](https://kotlinlang.org/) is a [statically typed](https://en.wikipedia.org/wiki/Type_system#Static_type_checking) programming language developed by [Jetbrains](https://www.jetbrains.com), the company behind some of the world's most popular IDEs like [IntelliJ](https://www.jetbrains.com/idea/) and [Pycharm](https://www.jetbrains.com/pycharm/).
+
+Kotlin serves as a replacement for Java and runs on the JVM. It has been in development since 2011 and version 1.0 was released in August 2016. 
  
- The developer community has embraced Kotlin to such an extent that Google announced first class support for the language for Android Development at <a href='https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/'>Google I/O 2017</a>.
+The developer community has embraced Kotlin to such an extent that Google announced first class support for the language for Android Development at <a href='https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/'>Google I/O 2017</a>.
 
 ## Version
 As of this writing, the latest stable release of Kotlin happens to be <a href='https://blog.jetbrains.com/kotlin/2018/09/kotlin-1-2-70-is-out/'>version 1.2.71</a>
@@ -166,6 +168,11 @@ $ java -jar hello.jar
 Hello, World!
 ```
 Congratulations you have successfully set up the Kotlin compiler and development environment on your system. We will cover all of the intricacies and fun parts of Kotlin in this guide, but you can get a headstart if you want by going to the <a href='https://try.kotlinlang.org/'>Try Kotlin</a> website and going through the exercises there.
+
+### Kotlin scripts
+
+Yout can also put Kotlin code in file with extension .kts without main function and run it as a script.
+```$ kotlinc -script hello.kts```
 
 ## Documentation
 
