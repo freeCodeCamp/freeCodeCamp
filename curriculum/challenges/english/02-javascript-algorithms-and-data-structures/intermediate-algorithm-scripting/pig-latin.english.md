@@ -35,10 +35,10 @@ tests:
     testString: assert.deepEqual(translatePigLatin("algorithm"), "algorithmway", '<code>translatePigLatin("algorithm")</code> should return "algorithmway".');
   - text: <code>translatePigLatin("eight")</code> should return "eightway".
     testString: assert.deepEqual(translatePigLatin("eight"), "eightway", '<code>translatePigLatin("eight")</code> should return "eightway".');
-  - text: Should handle words where the first vowel comes in the end of the word.
+  - text: Should handle words where the first vowel comes in the middle of the word.  <code>translatePigLatin("schwartz")</code> should return "artzschway". 
     testString: assert.deepEqual(translatePigLatin("schwartz"), "artzschway", 'Should handle words where the first vowel comes in the end of the word.');
-  - text: Should handle words without vowels.
-    testString: assert.deepEqual(translatePigLatin("rhythm"), "rhythmay", 'Should handle words without vowels.');
+  - text: Should handle words without vowels. <code>translatePigLatin("rhythm")</code> should return "rhythmay".
+    testString: assert.deepEqual(translatePigLatin("rhythm"), "rhythmay");
 
 ```
 
