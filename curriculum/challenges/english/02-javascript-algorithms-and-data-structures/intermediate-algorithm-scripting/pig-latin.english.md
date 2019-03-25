@@ -38,7 +38,7 @@ tests:
   - text: Should handle words where the first vowel comes in the middle of the word.  <code>translatePigLatin("schwartz")</code> should return "artzschway". 
     testString: assert.deepEqual(translatePigLatin("schwartz"), "artzschway", 'Should handle words where the first vowel comes in the end of the word.');
   - text: Should handle words without vowels. <code>translatePigLatin("rhythm")</code> should return "rhythmay".
-    testString: assert.deepEqual(translatePigLatin("rhythm"), "rhythmay", 'Should handle words without vowels.');
+    testString: assert.deepEqual(translatePigLatin("rhythm"), "rhythmay");
 
 ```
 
