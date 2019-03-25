@@ -1,6 +1,7 @@
 import Stripe from 'stripe';
 import keys from '../../config/secrets';
 import debug from 'debug';
+import request from 'request';
 
 const log = debug('fcc:boot:donate');
 
@@ -62,6 +63,40 @@ export default function donateBoot(app, done) {
     });
   }
 
+  function onVerifyreCAPTCHA({ body, connection }, res, next) {
+
+    if (!body || !connection) {
+      return res.status(200).send({ error: 'Captcha validation failed' });
+    }
+
+    const { captchaResponse } = body;
+    const { remoteAddress } = connection;
+
+    if (!captchaResponse || !remoteAddress) {
+      return res.status(400).send({ error: 'Captcha validation failed' });
+    }
+
+    log('captchaResponse : ', captchaResponse);
+    log('remoteAddress   : ', remoteAddress);
+
+    const verificationURL =
+    'https://www.google.com/recaptcha/api/siteverify?secret=' +
+    keys.recaptcha +
+    '&response=' +
+    captchaResponse +
+    '&remoteip=' +
+    remoteAddress;
+
+    return request(verificationURL, function(error, response, body) {
+      body = JSON.parse(body);
+      if (error || !body || !body.success) {
+        return res.status(400).send({ error: 'Captcha validation failed' });
+      }
+      return next();
+    });
+
+  }
+
   function createStripeDonation(req, res, next) {
     const { body } = req;
 
@@ -75,8 +110,9 @@ export default function donateBoot(app, done) {
       token: { email, id }
     } = body;
 
-    log(amount);
-    log(email);
+    log('amount          : ', amount);
+    log('email           : ', email);
+
     const fccUserPromise = new Promise((resolve, reject) =>
       User.findOrCreate(
         { where: { email } },
@@ -143,17 +179,21 @@ export default function donateBoot(app, done) {
 
   const pubKey = keys.stripe.public;
   const secKey = keys.stripe.secret;
+  const recapKey = keys.recaptcha;
   const secretInvalid = !secKey || secKey === 'sk_from_stipe_dashboard';
   const publicInvalid = !pubKey || pubKey === 'pk_from_stipe_dashboard';
+  const recapInvalid = !recapKey || recapKey === 'recaptcha_secret_from_google';
 
-  if (secretInvalid || publicInvalid) {
+  if (secretInvalid || publicInvalid || recapInvalid) {
     if (process.env.NODE_ENV === 'production') {
-      throw new Error('Stripe API keys are required to boot the server!');
+      throw new Error(
+        'Stripe API keys and reCAPTCHA keys are required to boot the server!'
+      );
     }
-    log('No Stripe API keys were found, moving on...');
+    log('No Stripe API or reCAPTCHA keys were found, moving on...');
     done();
   } else {
-    api.post('/charge-stripe', createStripeDonation);
+    api.post('/charge-stripe', onVerifyreCAPTCHA, createStripeDonation);
     donateRouter.use('/donate', api);
     app.use(donateRouter);
     app.use('/external', donateRouter);

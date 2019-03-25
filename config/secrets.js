@@ -49,5 +49,7 @@ module.exports = {
   stripe: {
     public: process.env.STRIPE_PUBLIC,
     secret: process.env.STRIPE_SECRET
-  }
+  },
+
+  recaptcha: process.env.RECAPTCHA_SECRET
 };
