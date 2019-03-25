@@ -167,6 +167,11 @@ Hello, World!
 ```
 Congratulations you have successfully set up the Kotlin compiler and development environment on your system. We will cover all of the intricacies and fun parts of Kotlin in this guide, but you can get a headstart if you want by going to the <a href='https://try.kotlinlang.org/'>Try Kotlin</a> website and going through the exercises there.
 
+### Kotlin scripts
+
+Yout can also put Kotlin code in file with extension .kts without main function and run it as a script.
+```$ kotlinc -script hello.kts```
+
 ## Documentation
 
 One of the greatest things about Kotlin is its comprehensive and well-structured documentation. Even if you are new to programming, you will find yourself right at home with the docs. They do a pretty amazing job at laying it all out in a well-structured manner. You can check out the official documentation at <a href='https://kotlinlang.org/docs/reference/'>this link</a>.
