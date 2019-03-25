@@ -29,13 +29,13 @@ The <code>Vegetable</code> lets you create a vegetable object, with a property <
 ```yml
 tests:
   - text: <code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.
-    testString: assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', '<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.');
-  - text: <code>class</code> keyword was used.
-    testString: getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');
-  - text: <code>Vegetable</code> can be instantiated.
-    testString: assert(() => {const a = new Vegetable("apple"); return typeof a === 'object';},'<code>Vegetable</code> can be instantiated.');
+    testString: assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function');
+  - text: <code>class</code> keyword should be used.
+    testString: assert(code.match(/class/g));
+  - text: <code>Vegetable</code> should be able to be instantiated.
+    testString: assert(() => {const a = new Vegetable("apple"); return typeof a === 'object';});
   - text: <code>carrot.name</code> should return <code>carrot</code>.
-    testString: assert(carrot.name=='carrot','<code>carrot.name</code> should return <code>carrot</code>.');
+    testString: assert(carrot.name=='carrot');
 
 ```
 
@@ -47,14 +47,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
+/* Alter code below this line */
 
-  /* Alter code above this line */
-  return Vegetable;
-}
-const Vegetable = makeClass();
+/* Alter code above this line */
+
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // => should be 'carrot'
 ```
@@ -69,19 +65,11 @@ console.log(carrot.name); // => should be 'carrot'
 <section id='solution'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
-  class Vegetable {
-    constructor(name){
-      this.name = name;
-    }
+class Vegetable {
+  constructor(name) {
+    this.name = name;
   }
-  /* Alter code above this line */
-  return Vegetable;
 }
-const Vegetable = makeClass();
 const carrot = new Vegetable('carrot');
-console.log(carrot.name); // => should be 'carrot'
 ```
 </section>
