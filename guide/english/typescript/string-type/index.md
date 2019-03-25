@@ -18,12 +18,12 @@ let greeting: string = `Hello, ${firstName} ${lastName}, thank you for attending
 ```
 
 ## Built-in methods
-In Typescript's type you can use some built-in functions. Each type has common and unique methods.
-Below you can read about the most used ones of the string type's methods.
+In Typescript you can use some built-in functions for specific types. Each type has common and unique methods.
+Below you can read about the most used common methods for the string type.
 
 ### split('separator', limit)
-With split function, you can split your string at a specified separator. You can set a limit number, thats says how many splits have to do.
-The splitted string returns in an array type.
+With the split function, you can split your string at a specified separator. You can set a limit number, that says how many splits to find and place in the returned array.
+The split string returns in an array type.
 ```typescript
 let names: string = 'Sarah,Lily,John,Paula,Harvey';
 let array: string[] = names.split(',');
@@ -33,18 +33,18 @@ let array2: string[] = names.split(',',2);
 ```
 
 ### substr(startAt,length)
-This method return with a substring, which stars at the `startAt` character of original string, and it's length is `length`.
+This method returns a substring of length `length`, which starts at the `startAt` index of the original string.
 ```typescript
 let names: string = 'Harvey Specter';
-let substr: string = names.substr(3,10);
+let substr: string = names.substr(2,10);
 //substr = 'rvey Spect'
 ```
 
 ### substring(startAt,endAt)
-This method is similar to substr(), but has different parameters. The second paramter is also an index about the original string, not a length number.
+This method is similar to substr(), but the second parameter `endAt` is the index of the first character to be excluded from the substring. That is, the substring does not include the character at index `endAt`.
 ```typescript
 let names: string = 'Harvey Specter';
-let substring: string = names.substring(3,10);
+let substring: string = names.substring(2,10);
 //substring = 'rvey Spe'
 ```
  

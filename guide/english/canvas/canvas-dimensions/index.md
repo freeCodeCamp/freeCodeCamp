@@ -10,7 +10,7 @@ The `width` and `height` attributes will control the size of the canvas. These a
 
 In the above pen, both `canvas` elements have the same dimensions set through CSS. However, one has twice the height set through the `height` attribute, thus leading the exact same rectangle to become rendered at half the height.
 
-This can cause problems when you want to make a dynamically sized canvas. For instnace, you may want to make a full-screen canvas, or use a canvas as a thumbnail.
+This can cause problems when you want to make a dynamically sized canvas. For instance, you may want to make a full-screen canvas, or use a canvas as a thumbnail.
 
 In order to make the size of the drawing context match the rendered size of the `canvas` element, we have to force this in realtime. One common practice is to put the following handler in the `onResize` listener.
 

@@ -2,31 +2,50 @@
 title: PHP Install
 ---
 
-### What Do I Need for Installation?
-To start using PHP, you can:
+## What Do I Need for Installation?
 
-Find a web host with PHP and MySQL support.
-Install a web server on your own PC, and then install PHP and MySQL. 
-You can check out the following links to get a PHP server and MYSQL for creating a local envinonment for PHP to run:
-Web Server: https://httpd.apache.org/download.cgi
-Database: https://www.mysql.com/downloads/
+Any computer! PHP is very versatile and can run in many different environments.
 
-### PHP Parser Installation
-Before you proceed it is important to make sure that you have proper environment setup on your machine to develop your web programs using PHP.
+### Manual Install:
 
-Type the following address into your browser's address box.
-```shell
-http://127.0.0.1/info.php
-```
-If this displays a page showing your PHP installation related information then it means you have PHP and Webserver installed properly.
+#### Windows
+1. Download the zip from [windows.php.net/download](https://windows.php.net/download#php-7.2) and unzip it (ex `C:\PHP`)
+2. Add php to the windows PATH (for example append `;C:\PHP`)
+3. Copy and rename either `php.ini - development` or `php.ini - production` to `php.ini`
 
-### Set Up PHP on Your Own PC
+If you are using IIS for your webserver, this is a good resource:
 
-However, if your server does not support PHP, you must:
-install a web server
-install PHP
-install a database, such as MySQ.
+- [Microsoft Docs - Windows installation and integration with IIS](https://docs.microsoft.com/en-us/iis/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php#12)
 
-### More information
-The official PHP website (PHP.net) has installation instructions for PHP: http://php.net/manual/en/install.php
-To get both web server and databse in a single package use this link: https://www.mamp.info/en/
+#### MacOS
+_Type the commands in a terminal_
+1. Install homebrew `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+2. Install php `brew install php`
+
+#### Linux
+This varies a bit with each distribution
+
+- _debian/ubuntu_ `sudo apt-get install php -y`
+- _fedora/rhl/centos_ `dnf install php php-common`
+
+There are many good resources for this, like:
+
+- [TecMint - install the LAMP stack on Fedora](https://www.tecmint.com/install-lamp-apache-mariadb-and-php-on-fedora-23/)
+- [Digital Ocean - How to install the LEMP stack on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04)
+
+### Install Bundles
+There are also several popular install bundles for PHP technology stacks which are multi-platform.
+- [XAMPP Installer - Apache Server, MariaDB, PHP, and Perl](https://www.apachefriends.org/index.html) _window, linux, macOS_
+- [MAMP Webserver](https://www.mamp.info) _windows, macOS_
+- [WAMP Server](http://www.wampserver.com/en/) _windows_
+
+### Find a webhost with free PHP services.
+It is [common](https://www.google.com/search?q=free+php+web+hosting) for free webhosting services to offer support for PHP.
+
+## Once PHP is installed:
+If you installed PHP with a webserver, often a default route is set for `localhost/info.php` or `127.0.0.1/info.php`.  If PHP has been integrated properly, it should display a description of the current PHP installation.  If your server will be public, you should delete `info.php` as it contains private details about your installation, system.
+
+If you did not install PHP with a webserver, several tools integrate well with the library for the ability to locally run, debug, host your PHP scripts and applications. [VS Code's](https://code.visualstudio.com/) extension [PHP Server](https://marketplace.visualstudio.com/items?itemName=brapifra.phpserver) allows your to develop and host locally.
+
+## Resources
+- The official PHP website (PHP.net) has installation instructions for PHP: http://php.net/manual/en/install.php

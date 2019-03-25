@@ -20,7 +20,7 @@ const reducer = (state = defaultState, action) => {
     login: true
     } 
     } else {
-      return defaultState
+      return state
   };
   // change code above this line
 };

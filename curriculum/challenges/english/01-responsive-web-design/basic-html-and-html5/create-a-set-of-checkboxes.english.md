@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
 ## Description
 <section id='description'>
 Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.
-Checkboxes are a type of <code>input</code>
+Checkboxes are a type of <code>input</code>.
 Each of your checkboxes can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will automatically associate the checkbox input with the label element surrounding it.
 All related checkbox inputs should have the same <code>name</code> attribute.
 It is considered best practice to explicitly define the relationship between a checkbox <code>input</code> and its corresponding <code>label</code> by setting the <code>for</code> attribute on the <code>label</code> element to match the <code>id</code> attribute of the associated <code>input</code> element.
@@ -33,8 +33,10 @@ tests:
   - text: Make sure each of your <code>label</code> elements has a closing tag.
     testString: assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.');
   - text: Give your checkboxes the <code>name</code> attribute of <code>personality</code>.
-    testString: assert($('label > input[type="checkbox"]').filter("[name='personality']").length > 2, 'Give your checkboxes the <code>name</code> attribute of <code>personality</code>.');
-
+    testString: assert($('label > input[type="checkbox"]').filter('[name="personality"]').length > 2, 'Give your checkboxes the <code>name</code> attribute of <code>personality</code>.');
+  - text: Each of your checkboxes should be added within the <code>form</code> tag.
+    testString: assert($('label').parent().get(0).tagName.match('FORM'), 'Each of your checkboxes should be added within the <code>form</code> tag.');
+    
 ```
 
 </section>
