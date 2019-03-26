@@ -4,9 +4,9 @@ title: Boolean
 
 ## Boolean
 
-Booleans are a primitive datatype commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`.
+Boolean is a primitive data type commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`.
 
-In Javascript, there is often implicit type coercion to boolean. If for example you have an if statement which checks a certain expression, that expression will be coerced to a boolean: 
+In Javascript, there is often implicit type coercion to boolean. If, for example, you have an if statement which checks a certain expression, that expression will be coerced to a boolean: 
 
 ```javascript
 var a = 'a string';
@@ -19,7 +19,7 @@ There are only a few values that will be coerced to false:
 - false (not really coerced as it already is false)
 - null
 - undefined
-- NaN
+- NaN (stands for "Not a number")
 - 0
 - '' or "" (empty string)
 
@@ -49,11 +49,11 @@ console.log(c && a); // 'word'
 ```
 As you can see, the *or* operator checks the first operand. If this is true or truthy, it returns it immediately (which is why we get 'word' in the first case & true in the second case). If it is not true or truthy, it returns the second operand (which is why we get 'word' in the third case). 
 
-With the and operator it works in a similar way, but for 'and' to be true, both operands need to be truthy. So it will always return the second operand if both are true/truthy, otherwise it will return false. That is why in the fourth case we get true and in the last case we get 'word'. 
+The *and* operator works in a similar way, but for 'and' to be true, both operands need to be truthy. So it will always return the second operand if both are true/truthy, otherwise it will return false. That is why in the fourth case we get true and in the last case we get 'word'. 
 
 ## The Boolean Object
 
-There is also a native JavaScript object that wraps around a value. The value passed as the first parameter is converted to a boolean value, if necessary. If value is omitted, 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false. All other values, including any object or the string "false", create an object with an initial value of true.
+There is also a native JavaScript object that wraps around a value. The value passed as the first parameter is converted to a boolean value, if necessary. If a value is omitted, 0, -0, null, false, NaN, undefined, or the empty string (""), the object has an initial value of false. All other values, including any object or the string "false", create an object with an initial value of true.
 
 Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object.
 

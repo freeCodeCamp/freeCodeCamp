@@ -10,7 +10,7 @@ videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
 You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using <code>grid-template-areas</code> on the container like this:
 <blockquote>grid-template-areas:<br>&nbsp;&nbsp;"header header header"<br>&nbsp;&nbsp;"advert content content"<br>&nbsp;&nbsp;"footer footer footer";</blockquote>
 The code above merges the top three cells together into an area named <code>header</code>, the bottom three cells into a <code>footer</code> area, and it makes two areas in the middle row; <code>advert</code> and <code>content</code>.
-<strong>Note</strong><br>Every word in the code represents a cell and every pair of quotation marks represent a row.
+<strong>Note:</strong> Every word in the code represents a cell and every pair of quotation marks represent a row.
 In addition to custom labels, you can use a period (<code>.</code>) to designate an empty cell in the grid.
 </section>
 

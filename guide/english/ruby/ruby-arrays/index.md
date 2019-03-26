@@ -9,6 +9,12 @@ An array represents a list of values. The individual values are often called "el
 my_array = [1, 2, 3, 4, 5]
 ```
 
+You can also create an empty array by using the 'new' method in the 'Array' class:
+
+```ruby
+my_array = Array.new
+```
+
 That first example is an array of numbers, but a Ruby array can contain values of different types, even other arrays:
 
 ```ruby

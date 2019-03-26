@@ -41,7 +41,7 @@ You will have to check if the current value is already on the array to be return
       // Creates an empty array to store our final result.
       var finalArray = [];
 
-      // Loop through the arguments object to truly made the program work with two or more arrays
+      // Loop through the arguments object to truly make the program work with two or more arrays
       // instead of 3.
       for (var i = 0; i < arguments.length; i++) {
         var arrayArguments = arguments[i];
@@ -185,9 +185,8 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 ### Code Explanation:
 
-*   We first use `concat()` with an empty array `<a href='http://exploringjs.com/es6/ch_maps-sets.html#_set' target='_blank' rel='nofollow'>]` as a starting point and the spread operator `...` to create an array out of the Arguments object and to flatten it at the same time
+*   We first use `concat()` with an empty array as a starting point and the spread operator `...` to create an array out of the Arguments object and to flatten it at the same time
 *   then we use the new ES2015 **Set** object to store only unique values
-*   (to learn more about Sets, read [here</a>)
 
 #### Relevant Links
 
