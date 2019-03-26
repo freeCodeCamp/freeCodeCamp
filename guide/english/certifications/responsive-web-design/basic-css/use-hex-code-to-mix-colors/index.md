@@ -3,41 +3,7 @@ title: Use Hex Code to Mix Colors
 ---
 ## Use Hex Code to Mix Colors
 
-## Problem
-```html
-<style>
-  .red-text {
-    color: black;
-  }
-  .green-text {
-    color: black;
-  }
-  .dodger-blue-text {
-    color: black;
-  }
-  .orange-text {
-    color: black;
-  }
-</style>
-```
-
-## Objective
-Within the `<style>` element, we need to change black within the `color` element in these classes:
-* `.red-text`
-* `.green-text`
-* `.dodger-blue-text`
-* `.orange-text`
-
-We are provided with a table where the table shows the hex code of the colours for these required classes shown here:
-
-| Colour | Hex Code |
-|:--------:|:-----:|
-|Dodger Blue|#1E90FF
-|Green|#00FF00
-|Orange|#FFA500
-|Red|#FF0000
-
-## Example
+## Hint
 In order to change the color of a class within the style element, we simply replace the color itself with the hexcode shown below.
 
 ### Before
