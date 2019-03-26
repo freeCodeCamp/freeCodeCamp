@@ -75,7 +75,7 @@ The items stored could be something like:
 ```
 With this it would make the components more coupled to the Redux state and less generic and reusable.
 
-Also it would impact the performance of the application, because the mapStateToProps function gets called alot during the lifecycle of the application and using it for this type of calculation is not a good practice.
+Also it would impact the performance of the application, because the mapStateToProps function gets called a lot during the lifecycle of the application and using it for this type of calculation is not a good practice.
 
 ## Selector function in action
 
