@@ -13,7 +13,6 @@ Assign the first two elements to two random variables.
 
 Set the remaining part of the array to `...arr`.
 
----
 ## Hint 3:
 
 Use destructuring to create the `arr` variable:
