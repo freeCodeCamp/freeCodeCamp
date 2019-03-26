@@ -44,13 +44,8 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
   </tr>
   <tr>
     <td align="center">/</td>
-    <td>Performs Division on the operands. <br>Divides the left operand by the right operand</td> 
-    <td>12 / 3 = 4</td>
-  </tr>
-  <tr>
-    <td>Note: When two integers are used, the result differs between Python 2 and Python 3.</td> 
-    <td>5 / 2 = 2 in Python 2</td>
-    <td>5 / 2 = 2.5 in Python 3</td>
+    <td>Performs 'Floating Point' Division on the operands. <br>Divides the left operand by the right operand <br> (Note: When two INTEGERS are used, the result differs between Python 2 and Python 3.)</td> 
+    <td>12 / 3 = 4 <br> 5 / 2 = 2 (Python 2) <br> 5 / 2 = 2.5 (Python 3)</td>
   </tr>
   <tr>
     <td align="center">%</td>
@@ -64,8 +59,8 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
   </tr>
   <tr>
     <td align="center">//</td>
-    <td>Performs a Floor Division operation. <br>Returns the integral part of the quotient obtained after diving the left operand by the right operand</td> 
-    <td>18 // 5 = 3</td>
+    <td>Performs a 'Floor/Integer' Division operation. <br>Returns the integral part of the quotient obtained after diving the left operand by the right operand</td> 
+    <td>18 // 5 = 3.0</td>
   </tr>
 </table>
 
@@ -85,33 +80,33 @@ A comparison or relational operator is used to compare two operands to determine
   </tr>
   <tr>
     <td align="center">></td>
-    <td>Returns True if the left operand is greater than the right operand<br>Returns False otherwise</td> 
-    <td>12 > 3 returns True</td>
+    <td>Returns 'True' if the left operand is greater than the right operand<br>Returns 'False' otherwise</td> 
+    <td>12 > 3 returns 'True'</td>
   </tr>
   <tr>
     <td align="center"><</td>
-    <td>Returns True if the right operand is greater than the left operand<br>Returns False otherwise</td> 
-    <td>12 < 3 returns False</td>
+    <td>Returns 'True' if the right operand is greater than the left operand<br>Returns 'False' otherwise</td> 
+    <td>12 < 3 returns 'False'</td>
   </tr>
   <tr>
     <td align="center">==</td>
-    <td>Returns True if both the operands are equal<br>Returns False otherwise</td> 
-    <td>12 == 3 returns False</td>
+    <td>Returns 'True' if both the operands are equal<br>Returns 'False' otherwise</td> 
+    <td>12 == 3 returns 'False'</td>
   </tr>
   <tr>
     <td align="center">>=</td>
-    <td>Returns True if the left operand is greater than or equal to the right operand<br>Returns False otherwise</td> 
-    <td>12 >= 3 returns True</td>
+    <td>Returns 'True' if the left operand is greater than or equal to the right operand<br>Returns 'False' otherwise</td> 
+    <td>12 >= 3 returns 'True'</td>
   </tr>
   <tr>
     <td align="center"><=</td>
-    <td>Returns True if the right operand is greater than or equal to the left operand<br>Returns False otherwise</td> 
-    <td>12 <= 3 returns False</td>
+    <td>Returns 'True' if the right operand is greater than or equal to the left operand<br>Returns 'False' otherwise</td> 
+    <td>12 <= 3 returns 'False'</td>
   </tr>
   <tr>
     <td align="center">!=</td>
-    <td>Returns True if both the operands are not equal<br>Returns False otherwise</td> 
-    <td>12 != 3 returns True</td>
+    <td>Returns 'True' if both the operands are not equal<br>Returns 'False' otherwise</td> 
+    <td>12 != 3 returns 'True'</td>
   </tr>
 </table>
 
