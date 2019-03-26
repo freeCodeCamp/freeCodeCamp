@@ -154,7 +154,7 @@ switch (n)
 {
     case constant1:
         // code to be executed if n is equal to constant1;
-        break;
+        break; // break is used to quit from switch statement without executing next case or default
 
     case constant2:
         // code to be executed if n is equal to constant2;
