@@ -12,7 +12,7 @@ title: Caesars Cipher
 #### Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charcodeat/15933' target='_blank' rel='nofollow'>String.prototype.charCodeAt</a>
-*   <a>String.fromCharCode</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode' target='_blank' rel='nofollow'>String.fromCharCode</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
