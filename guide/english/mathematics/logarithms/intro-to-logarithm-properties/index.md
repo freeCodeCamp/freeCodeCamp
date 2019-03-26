@@ -1,7 +1,7 @@
 ---
-title: Intro to Logarithm Properties
+title: Introduction to Logarithm Properties
 ---
-## Intro to Logarithm Properties
+## Introduction to Logarithm Properties
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/intro-to-logarithm-properties/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
@@ -11,5 +11,3 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
