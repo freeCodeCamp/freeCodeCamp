@@ -79,15 +79,14 @@ export default function donateBoot(app, done) {
     log('captchaResponse : ', captchaResponse);
     log('remoteAddress   : ', remoteAddress);
 
-    const verificationURL =
-    'https://www.google.com/recaptcha/api/siteverify?secret=' +
-    keys.recaptcha +
-    '&response=' +
-    captchaResponse +
-    '&remoteip=' +
-    remoteAddress;
-
-    return request.post(verificationURL, function(error, response, body) {
+    return request.post({
+      url: 'https://www.google.com/recaptcha/api/siteverify',
+      form: {
+        secret: keys.recaptcha,
+        response: captchaResponse,
+        remoteip: remoteAddress
+      }
+    }, function(error, response, body) {
       body = JSON.parse(body);
       if (error || !body || !body.success) {
         return res.status(400).send({ error: 'Captcha validation failed' });
