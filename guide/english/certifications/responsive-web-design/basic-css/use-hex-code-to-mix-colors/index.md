@@ -47,40 +47,8 @@ From the Problem above, we need to change `black` from the `color` element in th
 </style>
 ```
 
-We will follow the same steps for the rest of the classes shown here:
-
-### Before changing `color` of other classes
-```html
-<style>
-  .green-text {
-    color: black; 
-}
-  .dodger-blue-text {
-    color: black; 
-} 
-  .orange-text {
-    color: black; 
-}  
-</style>
-```
-
-### After changing `color` of other classes
-```html
-<style>
-  .green-text {
-    color: #00FF00; 
-}
-  .dodger-blue-text {
-    color: #1E90FF; 
-} 
-  .orange-text {
-    color: #FFA500; 
-}  
-</style>
-```
-
 ## Final Solution
-Hence, the final solution reveals that we have changed the `color` element of these text classes with hex codes shown below:
+After changing `color` of other classes, the final solution reveals that we have changed the `color` element of these text classes with hex codes shown below:
 ```html
 <style>
   .red-text {
@@ -96,12 +64,3 @@ Hence, the final solution reveals that we have changed the `color` element of th
     color: #FFA500;
   }
 </style>
-
-<h1 class="red-text">I am red!</h1>
-
-<h1 class="green-text">I am green!</h1>
-
-<h1 class="dodger-blue-text">I am dodger blue!</h1>
-
-<h1 class="orange-text">I am orange!</h1>
-```
