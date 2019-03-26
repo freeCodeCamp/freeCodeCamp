@@ -1,24 +1,12 @@
 ---
-title: Cylinder Volume and Surface Area
+title: Surface Area of a Cylinder
 ---
-## Cylinder Volume and Surface Area
+## Surface Area of a Cylinder
 
 A cylinder is a 3-dimensional object  with a circular base and straight, parallel sides.<br>
 To find the volume and surface area, all we need is the radius (r), height (h), and pi (π).
 
 ![img](https://images.tutorvista.com/cms/images/131/1.png)
-
-
-#### Volume
-The volume of a cylinder is calculated by multiplying the area of the base by the height.<br>
-Because the base of a cylinder is a circle, we must find the area using the following formula:
-
-  Area of a Circle = πr<sup>2</sup>
-
-We then multiply this by the the height of the cylinder to get the formula for the total area:
-
-  Volume = πr<sup>2</sup>h
-
 
 #### Surface Area
 
@@ -40,5 +28,4 @@ We can now put this all together to get our surface area formula, but remember t
   Surface Area = 2πr<sup>2</sup> + 2πrh
 
 #### More Information:
-<a href="https://www.khanacademy.org/math/basic-geo/basic-geo-volume-sa/volume-cones/v/cylinder-volume-and-surface-area" target="_blank">Khan Academy</a>
-
+[https://www.khanacademy.org/math/basic-geo/basic-geo-volume-sa/volume-cones/v/cylinder-volume-and-surface-area](Khan Academy)
