@@ -1,57 +1,84 @@
-import { takeEvery, select, call } from 'redux-saga/effects';
+import { takeEvery, select, call, put } from 'redux-saga/effects';
 
 import { putUpdateLegacyCertificate } from '../../utils/ajax';
-// import { completedChallengesSelector } from './';
+import { completedChallengesSelector } from '../';
+import { legacyProjectMap } from '../../resources/certProjectMap';
+import { createFlashMessage } from '../../components/Flash/redux';
+import {
+  updateLegacyCertificateComplete,
+  updateLegacyCertificateError
+} from './';
 
-// import {
-//   updateLegacyCertificateComplete,
-//   updateLegacyCertificateError
-// } from './';
-// import { createFlashMessage } from '../../components/Flash/redux';
+const completedChallenges = state => completedChallengesSelector(state);
 
-// import { putUserUpdateEmail } from '../../utils/ajax';
-// import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
-
-const getProject = state => state;
-
-// completedChallengesSelector(state);
-
-function* updateLegacyCertificateSaga(values) {
-  console.log(values);
-  let project = yield select(getProject);
-  console.log(project);
-
-  const info = {
-    projects: {
-      'legacy-front-end': {
-        bd7158d8c242eddfaeb5bd13: 'https://gigi.io/freeCodeCamp/pe/MJjp',
-        bd7158d8c442eddfaeb5bd17: 'https://gigi.io/freeCodeCamp/pe/MJjp',
-        bd7158d8c442eddfaeb5bd18: 'https://gigi.io/freeCodeCamp/pe/MJjp',
-        bd7158d8c442eedfaeb5bd1c: 'https://gigi.io/freeCodeCamp/pe/MJjp'
+function* updateLegacyCertificateSaga({ payload }) {
+  // find which certificate the challenges belong to
+  let legacyCert;
+  let certs = Object.keys(legacyProjectMap);
+  let loopBreak = false;
+  for (let i of certs) {
+    for (let j of legacyProjectMap[i]) {
+      if (j.title === Object.keys(payload)[0]) {
+        console.log(j.title);
+        loopBreak = true;
+        legacyCert = i;
+        break;
       }
+    }
+    if (loopBreak) {
+      break;
+    }
+  }
+  // make an object with keys as challenge ids and values as solutions
+  let idsToSolutions = {};
+  for (let i of Object.keys(payload)) {
+    for (let j of legacyProjectMap[legacyCert]) {
+      if (i === j.title) {
+        console.log(payload[i]);
+        idsToSolutions[j.id] = payload[i];
+        break;
+      }
+    }
+  }
+  // find how many challnegs have been updated and how many are new
+  let completed = yield select(completedChallenges);
+  let newSubmissions = 0;
+  let challengesToUpdate = {};
+  let newChalleneFound = true;
+  for (let j of Object.keys(idsToSolutions)) {
+    for (let i of completed) {
+      if (i.id === j) {
+        if (idsToSolutions[j] !== i.solution) {
+          challengesToUpdate[j] = idsToSolutions[j];
+        }
+        newChalleneFound = false;
+        break;
+      }
+    }
+    if (newChalleneFound && idsToSolutions[j] !== '') {
+      challengesToUpdate[j] = idsToSolutions[j];
+      newSubmissions++;
+    }
+    newChalleneFound = true;
+  }
+  console.log(newSubmissions);
+
+  // shape the body of the http calls so it is consumable by api
+  const body = {
+    projects: {
+      [legacyCert]: challengesToUpdate
     }
   };
 
-  const response = yield call(putUpdateLegacyCertificate, info);
-
-  console.log(response);
-
-  /* if (!email || !isEmail(email)) {
-    yield put(createFlashMessage(reallyWeirdErrorMessage));
-    return;
-  }
   try {
-    const { data: response } = yield call(putUserUpdateEmail, email);
+    const response = yield call(putUpdateLegacyCertificate, body);
     yield put(
-      updateMyEmailComplete({
-        ...response,
-        payload: { email, isEmailVerified: false }
-      })
+      updateLegacyCertificateComplete({ updatedChallenges: challengesToUpdate })
     );
     yield put(createFlashMessage(response));
   } catch (e) {
-    yield put(updateMyEmailError(e));
-  }*/
+    yield put(updateLegacyCertificateError(e));
+  }
 }
 
 export function createUpdateLegacyCertificateSaga(types) {
