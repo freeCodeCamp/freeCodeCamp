@@ -266,20 +266,20 @@ A membership operator is used to identify membership in any sequence (e.g. lists
 a = [1,2,3,4,5]
   
 #Is 3 in the list a?
-print 3 in a # prints True 
+print( 3 in a ) # prints True 
   
 #Is 12 not in list a?
-print 12 not in a # prints True
+print( 12 not in a ) # prints True
   
 str = "Hello World"
   
 #Does the string str contain World?
-print "World" in str # prints True
+print( "World" in str ) # prints True
   
 #Does the string str contain world? (note: case sensitive)
-print "world" in str # prints False  
+print( "world" in str ) # prints False  
 
-print "code" not in str # prints True
+print( "code" not in str ) # prints True
 ```
 #### Identity Operators
 
@@ -297,30 +297,30 @@ Please note that two values being equal does not necessarily require they be ide
 a = 3
 b = 3  
 c = 4
-print a is b # prints True
-print a is not b # prints False
-print a is not c # prints True
+print( a is b ) # prints True
+print( a is not b ) # prints False
+print( a is not c ) # prints True
 
 x = 1
 y = x
 z = y
-print z is 1 # prints True
-print z is x # prints True
-print y is x # prints True
+print( z is 1 ) # prints True
+print( z is x ) # prints True
+print( y is x ) # prints True
 
 str1 = "FreeCodeCamp"
 str2 = "FreeCodeCamp"
 
-print str1 is str2 # prints True
-print "Code" is str2 # prints False
+print( str1 is str2 ) # prints True
+print( "Code" is str2 ) # prints False
 
 a = [10,20,30]
 b = [10,20,30]
 
-print a is b # prints False (since lists are mutable in Python)  
+print( a is b ) # prints False (since lists are mutable in Python)  
 
-print(str1[:4]) 
+print( str1[:4] ) 
 # Above code gives the output as Free
-print(str[4:])
+print( str[4:] )
 # Above code gives the output as CodeCamp
 ```
