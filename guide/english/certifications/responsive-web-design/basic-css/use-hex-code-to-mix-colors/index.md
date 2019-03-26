@@ -47,7 +47,7 @@ From the Problem above, we need to change `black` from the `color` element in th
 </style>
 ```
 
-## Final Solution
+### Final Solution
 After changing `color` of other classes, the final solution reveals that we have changed the `color` element of these text classes with hex codes shown below:
 ```html
 <style>
