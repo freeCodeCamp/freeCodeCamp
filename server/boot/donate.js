@@ -66,7 +66,7 @@ export default function donateBoot(app, done) {
   function onVerifyreCAPTCHA({ body, connection }, res, next) {
 
     if (!body || !connection) {
-      return res.status(200).send({ error: 'Captcha validation failed' });
+      return res.status(400).send({ error: 'Captcha validation failed' });
     }
 
     const { captchaResponse } = body;
@@ -87,7 +87,7 @@ export default function donateBoot(app, done) {
     '&remoteip=' +
     remoteAddress;
 
-    return request(verificationURL, function(error, response, body) {
+    return request.post(verificationURL, function(error, response, body) {
       body = JSON.parse(body);
       if (error || !body || !body.success) {
         return res.status(400).send({ error: 'Captcha validation failed' });
