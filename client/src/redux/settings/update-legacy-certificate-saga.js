@@ -1,13 +1,11 @@
 import { takeEvery, select, call, put } from 'redux-saga/effects';
 
 import { putUpdateLegacyCertificate } from '../../utils/ajax';
-import { completedChallengesSelector } from '../';
+import { completedChallengesSelector, submitComplete } from '../';
 import { legacyProjectMap } from '../../resources/certProjectMap';
 import { createFlashMessage } from '../../components/Flash/redux';
-import {
-  updateLegacyCertificateComplete,
-  updateLegacyCertificateError
-} from './';
+import standardErrorMessage from '../../utils/reallyWeirdErrorMessage';
+import { updateLegacyCertificateError } from './';
 
 const completedChallenges = state => completedChallengesSelector(state);
 
@@ -29,6 +27,7 @@ function* updateLegacyCertificateSaga({ payload }) {
       break;
     }
   }
+
   // make an object with keys as challenge ids and values as solutions
   let idsToSolutions = {};
   for (let i of Object.keys(payload)) {
@@ -40,9 +39,9 @@ function* updateLegacyCertificateSaga({ payload }) {
       }
     }
   }
+
   // find how many challnegs have been updated and how many are new
   let completed = yield select(completedChallenges);
-  let newSubmissions = 0;
   let challengesToUpdate = {};
   let newChalleneFound = true;
   for (let j of Object.keys(idsToSolutions)) {
@@ -57,27 +56,32 @@ function* updateLegacyCertificateSaga({ payload }) {
     }
     if (newChalleneFound && idsToSolutions[j] !== '') {
       challengesToUpdate[j] = idsToSolutions[j];
-      newSubmissions++;
     }
     newChalleneFound = true;
   }
-  console.log(newSubmissions);
 
-  // shape the body of the http calls so it is consumable by api
+  // shape the body of the http call so it is consumable by api
   const body = {
     projects: {
       [legacyCert]: challengesToUpdate
     }
   };
 
+  // shape to update completed  challenges
+  let reduxShape = [];
+  for (let obj in challengesToUpdate) {
+    if (challengesToUpdate.hasOwnProperty(obj)) {
+      reduxShape.push({ id: obj, solution: challengesToUpdate[obj] });
+    }
+  }
+
   try {
-    const response = yield call(putUpdateLegacyCertificate, body);
-    yield put(
-      updateLegacyCertificateComplete({ updatedChallenges: challengesToUpdate })
-    );
+    const { data: response } = yield call(putUpdateLegacyCertificate, body);
+    yield put(submitComplete({ challArray: reduxShape }));
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(updateLegacyCertificateError(e));
+    yield put(createFlashMessage(standardErrorMessage));
   }
 }
 

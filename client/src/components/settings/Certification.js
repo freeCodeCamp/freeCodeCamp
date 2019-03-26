@@ -299,14 +299,14 @@ class CertificationSettings extends Component {
     const isCertClaimed = this.getUserIsCertMap()[certName];
     const initialObject = {};
     let filledforms = 0;
-    legacyProjectMap[certName].forEach(element => {
+    legacyProjectMap[certName].forEach(project => {
       let completedProject = find(completedChallenges, function(challenge) {
-        return challenge['id'] === element['id'];
+        return challenge['id'] === project['id'];
       });
       if (!completedProject) {
-        initialObject[element.title] = '';
+        initialObject[project.title] = '';
       } else {
-        initialObject[element.title] = completedProject.solution;
+        initialObject[project.title] = completedProject.solution;
         filledforms++;
       }
     });

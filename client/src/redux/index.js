@@ -291,7 +291,12 @@ export const reducer = handleActions(
         error: payload
       }
     }),
-    [types.submitComplete]: (state, { payload: { id } }) => {
+    [types.submitComplete]: (state, { payload: { id, challArray } }) => {
+      let submitedchallneges = [{ id }];
+      if (challArray) {
+        submitedchallneges = challArray;
+      }
+      console.log(...submitedchallneges);
       const { appUsername } = state;
       return {
         ...state,
@@ -301,7 +306,27 @@ export const reducer = handleActions(
           [appUsername]: {
             ...state.user[appUsername],
             completedChallenges: uniqBy(
-              [...state.user[appUsername].completedChallenges, { id }],
+              [
+                ...submitedchallneges,
+                ...state.user[appUsername].completedChallenges
+              ],
+              'id'
+            )
+          }
+        }
+      };
+    },
+    [settingsTypes.updateLegacyCertificateComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        completionCount: state.completionCount + 1,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            completedChallenges: uniqBy(
+              [...state.user[appUsername].completedChallenges, payload],
               'id'
             )
           }
