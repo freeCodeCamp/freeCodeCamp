@@ -14,17 +14,17 @@ Si `x` es falso u omitido, esto devuelve `False` ; De lo contrario, devuelve `Tr
 
 ## Ejemplo de código
 ```
-print(bool(4 > 2)) # Returns True as 4 is greater than 2 
- print(bool(4 < 2)) # Returns False as 4 is not less than 2 
- print(bool(4 == 4)) # Returns True as 4 is equal to 4 
- print(bool(4 != 4)) # Returns False as 4 is equal to 4 so inequality doesn't holds 
- print(bool(4)) # Returns True as 4 is a non-zero value 
- print(bool(-4)) # Returns True as -4 is a non-zero value 
- print(bool(0)) # Returns False as it is a zero value 
- print(bool('dskl')) # Returns True as the string is a non-zero value 
- print(bool([1, 2, 3])) # Returns True as the list is a non-zero value 
- print(bool((2,3,4))) # Returns True as tuple is a non-zero value 
- print(bool([])) # Returns False as list is empty and equal to 0 according to truth value testing 
+print(bool(4 > 2)) # Regresa True (Verdad) porque 4 es mayor que 2
+ print(bool(4 < 2)) # Regresa False (Falso) porque 4 no es menor que 2
+ print(bool(4 == 4)) # Regresa True (Verdad) porque 4 es igual a 4
+ print(bool(4 != 4)) # Regresa False (False) porque 4 es igual a 4 y la desigualdad no se sostiene.
+ print(bool(4)) # Regresa True (Verdad) porque 4 es un valor verdadero (no es igual a 0)
+ print(bool(-4)) # Regresa True (Verdad) porque -4 es un valor verdadero (no es igual a 0)
+ print(bool(0)) # Regresa False (Falso) porque 0 es un valor Falso en Python.
+ print(bool('dskl')) # Regresa True (Verdad) porque una cadena de caracteres (string) es un valor existente no-falso.
+ print(bool([1, 2, 3])) # Regresa True (Verdad) porque una lista con valores es un valor existente no-falso.
+ print(bool((2,3,4))) # Regresa True (Verdad) porque una tupla con valores es un valor existente no-falso.
+ print(bool([])) # Regresa False (Falso) porque una lista vacia es un valor Falso en Python.
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/CVCS/2)
