@@ -77,7 +77,7 @@ const tags = (
 
 ### All Tags Must Be Closed
 
-In HTML, there are self-closing tags such as `img`, `br`, `input`, and `hr`. 
+In HTML, there are self-closing tags such as `img`, `br`, `input`, and `hr`.
 
 This means that either of these methods are valid:
 
@@ -107,7 +107,7 @@ const email = <input type="email" />;
 
 ### JSX Map Functionality
 
-You can use the built-in Javascript map functionality in JSX. This will allow you to iterate over a given list in your React application. 
+You can use the built-in Javascript map functionality in JSX. This will allow you to iterate over a given list in your React application.
 
 ```javascript
 const list = [
@@ -147,4 +147,5 @@ There you got it! We used JSX's map to convert a list of book details to HTML el
 ### More Information
 
 - [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+- [See JSX and Equivalent HTML Side-By-Side](https://babeljs.io/repl)
 - [More Info On Using Maps](https://reactjs.org/docs/lists-and-keys.html)
