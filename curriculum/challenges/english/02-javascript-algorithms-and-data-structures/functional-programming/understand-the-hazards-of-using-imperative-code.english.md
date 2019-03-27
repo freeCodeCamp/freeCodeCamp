@@ -14,14 +14,12 @@ JavaScript offers many predefined methods that handle common tasks so you don't 
 Consider the scenario: you are browsing the web in your browser, and want to track the tabs you have opened. Let's try to model this using some simple object-oriented code.
 A Window object is made up of tabs, and you usually have more than one Window open. The titles of each open site in each Window object is held in an array. After working in the browser (opening new tabs, merging windows, and closing tabs), you want to print the tabs that are still open. Closed tabs are removed from the array and new tabs (for simplicity) get added to the end of it.
 The code editor shows an implementation of this functionality with functions for <code>tabOpen()</code>, <code>tabClose()</code>, and <code>join()</code>. The array <code>tabs</code> is part of the Window object that stores the name of the open pages.
-<h4>Instructions<h4>
-Run the code in the editor. It's using a method that has side effects in the program, causing incorrect output. The final list of open tabs should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code> but the output will be slightly different.
-Work through the code and see if you can figure out the problem, then advance to the next challenge to learn more.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Run the code in the editor. It's using a method that has side effects in the program, causing incorrect output. The final list of open tabs should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code> but the output will be slightly different.
+Work through the code and see if you can figure out the problem, then advance to the next challenge to learn more.
 </section>
 
 ## Tests

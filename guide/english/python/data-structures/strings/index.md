@@ -20,7 +20,25 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
                 File "<stdin>", line 1, in <module>
         TypeError: 'str' object does not support item assignment
         
-  
+        Instead, you can convert the string into a list, modify the list element (string character) you wish to change, and then join  the list elements back to a string, like so:
+        
+        >>> foo = "my string"
+        >>> foo_list_form = list(foo)
+        >>> foo_list_form[0] = "a"
+        >>> foo = ' '.join(foo_list_form)
+        >>> print(foo)
+        ay string # The required output
+*   Indexable: You can access any character of `str` object by specifying its index. And as it supports slicing like in `list` and `tuple` objects.
+    
+        >>> foo = "my string"
+        >>> foo[3]
+        's'
+        >>> foo[3:]
+        'string'
+        >>> foo[::-1]
+        'gnirts ym'
+        
+        
 If we have a string `S`, we can access its length with the command `len(S)`.  
 ```python
 >>> S = 'Hero'
@@ -78,7 +96,7 @@ Feel free to experiment with different combinations to get comfortable with slic
 ```  
 The `+` and `*` operators are said to be `overloaded` because they behave differently for different types of objects.  
 Using the `+` operator on strings leads to `concatenation`, while the `*` operator results in `repetition`.  
-  
+
 ## Reference:
 
 <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>Text Sequence Type _str_</a>
