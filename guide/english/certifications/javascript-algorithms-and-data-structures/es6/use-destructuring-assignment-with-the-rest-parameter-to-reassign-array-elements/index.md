@@ -38,8 +38,8 @@ function removeFirstTwo(list) {
   // change code above this line
   return arr;
 }
-```
 
+```
 
 ## Spoiler Alert - Solution Ahead!
 You can use random variables to omit the first two values:
