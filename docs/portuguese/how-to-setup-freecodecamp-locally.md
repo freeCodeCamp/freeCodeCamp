@@ -4,7 +4,7 @@
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
     </tr>
@@ -32,7 +32,7 @@ Isso é essencial, pois assim você pode trabalhar com sua cópia do freeCodeCam
 2. Clique no botão "Fork" no canto superior direito da tela ([Mais detalhes aqui](https://help.github.com/articles/fork-a-repo/))
 3. Depois do _fork_ do repositório, você será levado à sua cópia do freeCodeCamp em `https://github.com/SEU_USUARIO/freeCodeCamp`
 
-![GIF - Como dar fork no freeCodeCamp no Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
+![GIF - Como dar fork no freeCodeCamp no GitHub](/docs/images/github/how-to-fork-freeCodeCamp.gif)
 
 ## Preparando o ambiente de desenvolvimento
 

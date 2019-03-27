@@ -1,6 +1,6 @@
 ---
-title: Use Github Static Pages to Host Your Front End Projects
-localeTitle: Use páginas estáticas do Github para hospedar seus projetos front-end
+title: Use GitHub Static Pages to Host Your Front End Projects
+localeTitle: Use páginas estáticas do GitHub para hospedar seus projetos front-end
 ---
 **Benefícios**
 
@@ -13,11 +13,11 @@ Eu amo o Codepen.io, é uma ferramenta maravilhosa e fácil de usar para experim
 *   Versão do Git
 *   Experiência aprimorada de imóveis na tela
 
-## Git para o Github
+## Git para o GitHub
 
-Como eu já estou salvando localmente e usando o git para controle de versão, imaginei que poderia fazer o upload para o Github. Além disso, o Github tem um fantástico serviço gratuito para projetos front-end chamados [Github Pages](https://pages.github.com/) . Basta atualizar seu repositório e suas alterações estão ativas.
+Como eu já estou salvando localmente e usando o git para controle de versão, imaginei que poderia fazer o upload para o GitHub. Além disso, o GitHub tem um fantástico serviço gratuito para projetos front-end chamados [GitHub Pages](https://pages.github.com/) . Basta atualizar seu repositório e suas alterações estão ativas.
 
-Como isso funciona é simples. O Github verifica se o seu repositório tem uma ramificação chamada `gh-pages` e serve qualquer código que esteja naquela ramificação. Não há coisas de back-end aqui, mas HTML, CSS e JS funcionam como um encanto.
+Como isso funciona é simples. O GitHub verifica se o seu repositório tem uma ramificação chamada `gh-pages` e serve qualquer código que esteja naquela ramificação. Não há coisas de back-end aqui, mas HTML, CSS e JS funcionam como um encanto.
 
 ## Primeiras coisas primeiro
 
