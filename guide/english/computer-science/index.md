@@ -35,9 +35,9 @@ Computer science is categorized into several fields. The following are among the
 - <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">Human Computer Interaction</a>
   - Brain Computer Interface
 - Systems
-  - Distributed Systems
-  - Operating Systems
-  - Database Systems
+  - [Distributed Systems](https://en.wikipedia.org/wiki/Distributed_computing)
+  - [Operating Systems](https://en.wikipedia.org/wiki/Operating_system)
+  - [Database Systems](https://en.wikipedia.org/wiki/Database)
 - <a href="https://www.studytonight.com/data-structures/introduction-to-data-structures">Algorithms and Data Structures</a>
   - Primitive Data Structures
   - Abstract Data Structures
