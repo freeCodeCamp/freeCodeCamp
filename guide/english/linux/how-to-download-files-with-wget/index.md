@@ -35,4 +35,12 @@ wget ftp://ftp.gnu.org/gnu/wget/wget-1.19.5.tar.gz.sig
 ```
 wget --limit-rate=100k http://ftp.gnu.org/gnu/wget/wget-1.19.5.tar.gz
 ```
+### Download all listed files within a directory and its sub-directories (does not download embedded page elements):                                                                                
+```                                                                                                                                                                                                  
+wget --mirror --no-parent https://ftp.gnu.org/gnu/
+```
+### Download the contents of an URL via authenticated FTP:                                                                                                                                          
+```                                                                                                                                                                                                
+wget --ftp-user=username --ftp-password=password ftp://example.com
+```
 You can play with remaining features of the ``wget`` utility
