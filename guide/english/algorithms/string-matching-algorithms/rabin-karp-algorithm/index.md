@@ -43,6 +43,6 @@ while (end of text or brute force comparison == true)
 * ***Plagiarism Detection***
 
 #### More Information:
-<a href='https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm/' target='_blank' rel='nofollow'>Rabin-Karp on Wikipedia</a>
+<a href='https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm' target='_blank' rel='nofollow'>Rabin-Karp on Wikipedia</a>
 
 

@@ -18,7 +18,7 @@ To create Padding as a class for a specific Element, use:
 ```css
 .example-Padding {
   padding: 10px
-{
+}
 ```
 To apply this class to the appropriate field, use:
 ```html
