@@ -12,7 +12,7 @@ To serve a static webpage from the "views" folder you can use code such as:
 ```javascript
  const express = require("express");
  const app = express();
- app.use(express.static(__dirname + "/views"));
+ app.use(express.static(__dirname + "/public"));
 ```
 
 
