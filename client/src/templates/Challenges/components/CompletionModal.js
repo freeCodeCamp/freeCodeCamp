@@ -39,6 +39,7 @@ const mapDispatchToProps = function(dispatch) {
     close: () => dispatch(closeModal('completion')),
     handleKeypress: e => {
       if (e.keyCode === 13 && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
         dispatch(submitChallenge());
       }
     },
@@ -120,11 +121,11 @@ export class CompletionModal extends Component {
         onHide={close}
         onKeyDown={isOpen ? handleKeypress : noop}
         show={isOpen}
-        >
+      >
         <Modal.Header
           className='challenge-list-header fcc-modal'
           closeButton={true}
-          >
+        >
           <Modal.Title className='text-center'>{message}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='completion-modal-body'>
@@ -138,7 +139,7 @@ export class CompletionModal extends Component {
             bsSize='large'
             bsStyle='primary'
             onClick={submitChallenge}
-            >
+          >
             Submit and go to next challenge{' '}
             <span className='hidden-xs'>(Ctrl + Enter)</span>
           </Button>
@@ -147,10 +148,10 @@ export class CompletionModal extends Component {
               block={true}
               bsSize='lg'
               bsStyle='primary'
-              className='btn-primary-invert'
+              className='btn-invert'
               download={`${dashedName}.json`}
               href={this.state.downloadURL}
-              >
+            >
               Download my solution
             </Button>
           ) : null}

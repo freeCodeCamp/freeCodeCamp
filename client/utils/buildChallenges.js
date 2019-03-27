@@ -17,10 +17,11 @@ const arrToString = arr =>
 
 exports.localeChallengesRootDir = getChallengesDirForLang(locale);
 
-exports.replaceChallengeNode =
-  async function replaceChallengeNode(fullFilePath) {
-    return prepareChallenge(await createChallenge(fullFilePath));
-  };
+exports.replaceChallengeNode = async function replaceChallengeNode(
+  fullFilePath
+) {
+  return prepareChallenge(await createChallenge(fullFilePath));
+};
 
 exports.buildChallenges = async function buildChallenges() {
   const curriculum = await getChallengesForLang(locale);

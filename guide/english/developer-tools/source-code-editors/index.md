@@ -43,7 +43,7 @@ Brackets is a relatively new open-source editor by Adobe. It is very user friend
   
 ### Atom
 
-![Atom Icon](https://logo.clearbit.com/atom.io)
+![Atom Icon](https://i.imgur.com/ToWQjHO.png)
 
 Atom is an <a href='https://github.com/atom/atom' target='_blank' rel='nofollow'>open source</a> editor, developed by <a href='https://github.com/' target='_blank' rel='nofollow'>GitHub</a>. Like Sublime Text, Atom is quite popular. It is very configurable ("hackable", as they say) but advanced features may be overwhelming to new users. There is also plenty of <a href='http://readwrite.com/2014/05/20/github-atom-5-tips-getting-started-tutorial-corey-johnson/' target='_blank' rel='nofollow'>helpful</a> <a href='http://flight-manual.atom.io/' target='_blank' rel='nofollow'>documentation</a> <a href='http://stackoverflow.com/search?q=atom' target='_blank' rel='nofollow'>available</a> online.
 
@@ -54,12 +54,11 @@ Atom is an <a href='https://github.com/atom/atom' target='_blank' rel='nofollow'
 
 ### Visual Studio Code
 
-![Visual Studio Code Icon](https://logo.clearbit.com/code.visualstudio.com)
+![Visual Studio Code Icon](https://i.imgur.com/eULdyep.png)
 
 Visual Studio Code (a.k.a vsc or vscode) is a very popular, open source editor, developed by <a href="https://www.microsoft.com" target="_blank" rel="nofollow">Microsoft</a> and fast becoming widely used by developers of all languages. Like Atom and Sublime, Visual Studio Code has a wide range of <a href="https://marketplace.visualstudio.com/VSCode" target="_blank" rel="nofollow">extensions</a> and <a href="https://marketplace.visualstudio.com/search?target=VSCode&category=Themes&sortBy=Downloads" target="_blank" rel="nofollow">themes</a> available to help customise and perfect your experience using it, however VSC is highly configurable "out-the-box". There is also a very active development team behind VSCode, with new features and bug fixes being added by the Visual Studio Code team <a href="https://code.visualstudio.com/updates" target="_blank" rel="nofollow">every month</a>.
 
 <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>code.visualstudio.com</a>
-
 
 ### Notepad++
 

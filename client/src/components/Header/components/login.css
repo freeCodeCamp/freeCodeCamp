@@ -1,4 +1,4 @@
-.signup-btn.btn {
+.signup-btn {
   background-color: #ffac33;
   background-image: linear-gradient(#ffcc4d, #ffac33);
   -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#ffac33,  GradientType=0)';
@@ -8,7 +8,8 @@
   padding: 4px 12px;
 }
 .signup-btn:hover,
-.signup-btn:focus {
+.signup-btn:focus,
+.signup-btn:active:hover {
   background-color: #e99110;
   background-image: linear-gradient(#ffcc4d, #e99110);
   -ms-filter: 'progid:DXImageTransform.Microsoft.gradient(startColorstr=#ffcc4d,  endColorstr=#e99110,  GradientType=0)';

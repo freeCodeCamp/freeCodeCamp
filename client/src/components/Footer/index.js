@@ -1,37 +1,21 @@
 import React from 'react';
-import { Link as GatsbyLink } from 'gatsby';
+import PropTypes from 'prop-types';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+
+import Link from '../helpers/Link';
 
 import './footer.css';
+
+const propTypes = {
+  children: PropTypes.any
+};
 
 const ColHeader = ({ children, ...other }) => (
   <div className='col-header' {...other}>
     {children}
   </div>
 );
-
-const Link = ({ children, to, external, ...other }) => {
-  if (!external && (/^\/(?!\/)/).test(to)) {
-    return (
-      <GatsbyLink to={to} {...other}>
-        {children}
-      </GatsbyLink>
-    );
-  }
-
-  return (
-    <a href={to} {...other} rel='noopener noreferrer' target='_blank'>
-      {children}
-      <FontAwesomeIcon
-        className='external-link-icon'
-        icon={faExternalLinkAlt}
-        size='xs'
-      />
-    </a>
-  );
-};
+ColHeader.propTypes = propTypes;
 
 function Footer() {
   return (
@@ -53,7 +37,7 @@ function Footer() {
             <p>
               Donations to freeCodeCamp go toward our education initiatives, and
               help pay for servers, services, and staff. You can&nbsp;
-              <Link className='inline' href='https://donate.freecodecamp.org'>
+              <Link className='inline' external={true} to='/donate'>
                 make a tax-deductible donation here
               </Link>
               .
@@ -61,11 +45,11 @@ function Footer() {
           </Col>
           <Col sm={2} xs={6}>
             <ColHeader>Our Nonprofit</ColHeader>
-            <Link to='https://about.freecodecamp.org'>About</Link>
-            <Link to='https://donate.freecodecamp.org'>Donate</Link>
+            <Link to='/about'>About</Link>
+            <Link to='/donate'>Donate</Link>
             <Link to='https://shop.freecodecamp.org'>Shop</Link>
-            <Link to='https://sponsors.freecodecamp.org'>Sponsors</Link>
-            <Link to='mailto:team@freecodecamp.org'>Contact email</Link>
+            <Link to='/sponsors'>Sponsors</Link>
+            <a href='mailto:team@freecodecamp.org'>Email Us</a>
           </Col>
           <Col sm={2} xs={6}>
             <ColHeader>Our Community</ColHeader>
@@ -83,23 +67,16 @@ function Footer() {
             </Link>
             <Link to='https://gitter.im/FreeCodeCamp/home'>Gitter</Link>
             <Link to='https://github.com/freeCodeCamp/'>GitHub</Link>
-            <Link to='https://support.freecodecamp.org'>Support</Link>
-            <Link to='https://code-of-conduct.freecodecamp.org'>
-              Code of Conduct
-            </Link>
-            <Link to='https://privacy.freecodecamp.org'>Privacy Policy</Link>
-            <Link to='https://terms-of-service.freecodecamp.org'>
-              Terms of Service
-            </Link>
+            <Link to='/support'>Support</Link>
+            <Link to='/academic-honesty'>Academic Honesty</Link>
+            <Link to='/code-of-conduct'>Code of Conduct</Link>
+            <Link to='/privacy-policy'>Privacy Policy</Link>
+            <Link to='/terms-of-service'>Terms of Service</Link>
           </Col>
           <Col lg={3} sm={2} xs={12}>
             <ColHeader>Our Learning Resources</ColHeader>
-            <Link target='_blank' to='/learn'>
-              Curriculum
-            </Link>
-            <Link target='_blank' to='/guide'>
-              Guide
-            </Link>
+            <Link to='/learn'>Learn</Link>
+            <Link to='/guide'>Guide</Link>
             <Link to='https://www.youtube.com/freecodecamp'>Youtube</Link>
             <Link to='https://podcast.freecodecamp.org'>Podcast</Link>
             <Link to='https://twitter.com/freecodecamp'>Twitter</Link>

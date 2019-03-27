@@ -6,10 +6,9 @@ videoUrl: ''
 localeTitle: Usar valores RGB para elementos de color
 ---
 
-
 ## Descripción
+<section id="description"> Otra forma de representar colores en CSS es mediante el uso de valores <code>RGB</code> . El valor RGB para negro se ve así: <code>rgb(0, 0, 0)</code> El valor RGB para blanco se ve así: <code>rgb(255, 255, 255)</code> En lugar de usar seis dígitos hexadecimales como lo hace con el código hexadecimal, con <code>RGB</code> tú especificas el brillo de cada color con un número entre 0 y 255. Si hace los cálculos, los dos dígitos de un color son 16 veces 16, lo que nos da 256 valores totales. Entonces, <code>RGB</code> , que comienza a contar desde cero, tiene exactamente el mismo número de valores posibles que el código hexadecimal. Aquí hay un ejemplo de cómo cambiarías el fondo del cuerpo a naranja usando su código RGB. 
 
-<section id="description"> Otra forma de representar colores en CSS es mediante el uso de valores <code>RGB</code> . El valor RGB para negro se ve así: <code>rgb(0, 0, 0)</code> El valor RGB para blanco se ve así: <code>rgb(255, 255, 255)</code> En lugar de usar seis dígitos hexadecimales como lo hace con el código hexadecimal, con <code>RGB</code> usted Especifique el brillo de cada color con un número entre 0 y 255. Si hace los cálculos, los dos dígitos de un color son 16 veces 16, lo que nos da 256 valores totales. Entonces, <code>RGB</code> , que comienza a contar desde cero, tiene exactamente el mismo número de valores posibles que el código hexadecimal. Aquí hay un ejemplo de cómo cambiarías el fondo del cuerpo a naranja usando su código RGB. 
 ```css
 body {
   background-color: rgb (255, 165, 0); 

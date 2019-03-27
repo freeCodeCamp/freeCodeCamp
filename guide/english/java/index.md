@@ -2,13 +2,13 @@
 title: Java
 ---
 
-**What is Java?**
+## What is Java?
 
 
 <a href='https://www.oracle.com/java/index.html' target='_blank' rel='nofollow'>Java</a> is an object-oriented programming language developed by <a href='https://en.wikipedia.org/wiki/Sun_Microsystems' target='_blank' rel='nofollow'>Sun Microsystems</a> in 1995, which was later acquired by <a href='http://www.oracle.com/index.html' target='_blank' rel='nofollow'>Oracle</a>. It is now a full platform with lots of standard APIs, open source APIs, tools, a huge developer community, and is used to build the most trusted enterprise solutions by big and small companies alike. <a href='https://www.android.com/' target='_blank' rel='nofollow'>Android</a> application development is done fully with Java and its ecosystem. To know more about Java, read <a href='https://java.com/en/download/faq/whatis_java.xml' target='_blank' rel='nofollow'>this</a> and <a href='http://tutorials.jenkov.com/java/what-is-java.html' target='_blank' rel='nofollow'>this</a>.
 
 ## OBJECT-ORIENTED PROGRAMMING LANGUAGE
-JAVA is one of the OBJECT ORIENTED PROGRAMMING LANGUAGES, unlike C and FORTAN which are procedural languages. The OBJECT ORIENTED concept of programming makes it much more efficient than procedural languages. Basically, object orientation breaks the program into parts, which is decided by the programmer. Then the complete program is stored in the permanent memory and when it is executed only that part is brought to dynamic memory which is called by the programmer. Each such part is called a `class` and when it is called in the dynamic memory it is called an `object`.
+JAVA is one of the object-oriented programming languages, unlike C and FORTRAN which are procedural languages. The object-oriented concept of programming makes it much more efficient than procedural languages. Basically, object orientation breaks the program into parts, which is decided by the programmer. Then the complete program is stored in the permanent memory, and when it is executed, only that part is brought to dynamic memory which is called by the programmer. Each such part is called a `class` and when it is called in the dynamic memory, it is called an `object`.
 
 ## Version
 
@@ -20,7 +20,7 @@ Java is also divided into several "Editions" :
 *   <a href='http://www.oracle.com/technetwork/java/javaee/overview/index.html' target='_blank' rel='nofollow'>EE</a> - Enterprise Edition - for developing and executing Java components that run embedded in a Java server
 *   <a href='http://www.oracle.com/technetwork/java/embedded/javame/overview/index.html' target='_blank' rel='nofollow'>ME</a> - Micro Edition - for developing and executing Java applications on mobile phones and embedded devices
 
-## Installation : JDK or JRE ?
+## Installation : JDK or JRE?
 
 
 Download the latest Java binaries from the <a href='http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html' target='_blank' rel='nofollow'>official website</a>. Here you may be faced with a question: which one should I download, JDK or JRE? JRE stands for Java Runtime Environment, which is the platform dependent Java Virtual Machine to run Java code. JDK stands for Java Development Kit, which consists of most of the development tools, most importantly the compiler `javac`, and also the JRE. So, for an average user JRE would be sufficient, but for Java development, we need to download the JDK.
@@ -84,9 +84,10 @@ Verify Java has been properly installed in your system by opening Command Prompt
 
 ## JVM
 
-Ok now since we are done with the installations, let's begin to understand first the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is the code we write gets compiled to bytecode and interpreted to run. We write the code in .java files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecodes</a> which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically have a .class extension.
 
-Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitely. This adds a huge bonus of security.
+After finishing the installation, we can begin to understand the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is, the code we write gets compiled to bytecode and interpreted to run. We write the code in `.java` files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecode</a> which is run on a Java Virtual Machine or JVM for execution. The bytecode typically has a `.class` extension.
+
+Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a virtual machine called the JVM (Java Virtual Machine). This virtual machine exposes several APIs for low-level machine interactions you can make, but other than that, you cannot play with machine instructions explicitly. This adds a huge bonus of security.
 
 Also, once your bytecode is compiled it can run on any Java VM. This Virtual Machine is machine dependent, i.e it has different implementations for Windows, Linux and Mac. But your program is guaranteed to run in any system thanks to this VM. This philosophy is called <a href='https://en.wikipedia.org/wiki/Write_once,_run_anywhere' target='_blank' rel='nofollow'>"Write Once, Run Anywhere"</a>.
 
@@ -116,7 +117,9 @@ Now open the terminal / Command Prompt. Change your current directory in the ter
 
     $ javac HelloWorld.java
 
-Now run the file using `java` command!
+If your program compiled successfully, you can see the bytecode file or class file  `HelloWorld.class` generated by the java compiler `javac` in the same folder.  
+
+Now run the file using `java` command! Please note that the `.class` extension is not used while running the class file.
 
     $ java HelloWorld
     Hello, World
@@ -139,3 +142,6 @@ Also, here is a list of free IDEs for Java coding:
 * <a href='https://sourceforge.net/projects/jsource/' target='_blank' rel='nofollow'>jSource</a>
 * <a href='http://www.drjava.org/' target='_blank' target='_nofollow'>DrJava</a>
 * <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk-netbeans-jsp-3413139-esa.html' target='_blank' rel ='nofollow'>JDK8 bundled with Netbeans 8.2</a>
+
+### Video Tutorial
+* [Derek Banas: Java Programming](https://www.youtube.com/watch?v=WPvGqX-TXP0)

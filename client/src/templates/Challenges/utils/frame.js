@@ -25,6 +25,24 @@ const createHeader = (id = mainId) => `
       window.__err = err;
       return true;
     };
+    document.addEventListener('click', function(e) {
+      let element = e.target;
+      while(element && element.nodeName !== 'A') {
+        element = element.parentElement;
+      }
+      if (element) {
+        const href = element.getAttribute('href');
+        if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
+          e.preventDefault();
+        }
+      }
+    }, false);
+    document.addEventListener('submit', function(e) {
+      const action = e.target.getAttribute('action');
+      if (!action || !action.match(/https?:\\/\\//)) {
+        e.preventDefault();
+      }
+    }, false);
   </script>
 `;
 
@@ -66,7 +84,7 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args);
+    proxyLogger(args.map(arg => JSON.stringify(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
@@ -80,7 +98,7 @@ const initTestFrame = frameReady => ctx => {
       resolve();
     }
   });
-  contentLoaded.then(async() => {
+  contentLoaded.then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern

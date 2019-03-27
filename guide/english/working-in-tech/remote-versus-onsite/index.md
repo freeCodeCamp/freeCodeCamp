@@ -47,7 +47,7 @@ Remote work can be a great tool for a business as a contingency plan in the even
 
 Some companies also have a physical office where you can go to work if you'd like, but allow you to work wherever. Recently there has been more movement from large companies, such as IBM, toward moving employees back to onsite employment. However, many large organizations are still very flexible and willing to let you work from home, or another convenient location.
 
-With teams that are not 100% remote (some onsite and some remote) this can sometimes create a disconnected between those working in the office and those working from home. For example, communication needs to be top priority to make sure no one is left out of an impromptu meeting or decision. 
+With teams that are not 100% remote (some onsite and some remote) this can sometimes create a disconnect between those working in the office and those working from home. For example, communication needs to be top priority to make sure no one is left out of an impromptu meeting or decision. 
 
 ### Multiple Teams 
 

@@ -69,6 +69,11 @@ Most common operations available on List are,
 8. IsEmpty - Check whether the List is empty or not.
 9. Reverse - Reversing a linear linked list.
 
+#### Doubly/Singly Linked List Time Complexity
+| **Access** | **Search** | **Insertion** | **Deletion** |   |
+|--------|--------|-----------|----------|---|
+| O(n)   | O(n)   | O(1)      | O(1)     | 
+
 #### Implementation of a Simple Linked List in C++
 ```cpp
 #include<iostream>

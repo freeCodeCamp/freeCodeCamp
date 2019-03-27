@@ -10,7 +10,7 @@ challengeType: 0
 Names for <code>partials</code> start with the underscore (<code>_</code>) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file. Also, Sass files end with the <code>.scss</code> file extension. To bring the code in the <code>partial</code> into another Sass file, use the <code>@import</code> directive.
 For example, if all your <code>mixins</code> are saved in a <code>partial</code> named "_mixins.scss", and they are needed in the "main.scss" file, this is how to use them in the main file:
 <blockquote>// In the main.scss file<br><br>@import 'mixins'</blockquote>
-Note that the underscore is not needed in the <code>import</code> statement - Sass understands it is a <code>partial</code>. Once a <code>partial</code> is imported into a file, all variables, <code>mixins</code>, and other code are available to use.
+Note that the underscore and file extension are not needed in the <code>import</code> statement - Sass understands it is a <code>partial</code>. Once a <code>partial</code> is imported into a file, all variables, <code>mixins</code>, and other code are available to use.
 </section>
 
 ## Instructions

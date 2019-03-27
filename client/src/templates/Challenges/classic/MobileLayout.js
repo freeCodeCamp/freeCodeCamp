@@ -58,7 +58,7 @@ class MobileLayout extends Component {
           defaultActiveKey={1}
           id='challenge-page-tabs'
           onSelect={moveToTab}
-          >
+        >
           <TabPane eventKey={1} title='Instructions'>
             {instructions}
           </TabPane>

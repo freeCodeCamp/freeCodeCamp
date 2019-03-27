@@ -29,7 +29,7 @@ function NoArticles() {
           }
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           write one?
         </a>
       </span>
@@ -67,24 +67,19 @@ class NavPanel extends Component {
             'caret ' + (isExpanded ? 'caretStyle expanded' : 'caretStyle')
           }
         />
-        <Link onClick={this.handleTitleClick} to={path}>{title}</Link>
+        <Link onClick={this.handleTitleClick} to={path}>
+          {title}
+        </Link>
       </div>
     );
   }
 
   renderBody() {
     const { hasChildren, children, isExpanded } = this.props;
-    const childrenWithChildren = children.filter(child => child.props.children);
-    const uniqueChildren = children.filter(
-      child =>
-        !childrenWithChildren.some(
-          (potentialDupe, index) => index > 0 && potentialDupe.key === child.key
-        )
-    );
     return (
       <div className={isExpanded ? 'body' : ''}>
         <ul className='navPanelUl'>
-          {hasChildren ? uniqueChildren : <NoArticles />}
+          {hasChildren ? children : <NoArticles />}
         </ul>
       </div>
     );
@@ -97,7 +92,7 @@ class NavPanel extends Component {
         bsClass='panelStyle panel'
         id={`${dashedName}-panel`}
         role='listitem'
-        >
+      >
         <Panel.Heading>{this.renderHeader()}</Panel.Heading>
         {isExpanded ? <Panel.Body>{this.renderBody()}</Panel.Body> : null}
       </Panel>

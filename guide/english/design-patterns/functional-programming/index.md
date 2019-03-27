@@ -55,7 +55,7 @@ Using parameters creates function-specific scope.
   function double(number) {
     return number * 2;
   }
-  console.log(count(1)); // 2
+  console.log(count(1)); // 1
   console.log(double(1)); // 2
   ```
 Using shared, global variables means that changes might be unpredictable, especially when variables are shared between multiple files.

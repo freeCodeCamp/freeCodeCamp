@@ -9,7 +9,8 @@ title: Motions
 First in VIM we can use the arrow keys if we like to move around the text file, but it is not the best way to do so,
 and we lost the advantage of combined commands that VIM provides.
 
-Instead of that, the default and best way to move through the text is using the keys `h`(left), `j`(down), `k`(up) and `l`(right).
+Instead, the default and best way to move through the text is using the keys `h`(left), `j`(down), `k`(up) and `l`(right).
+
 
 ```
      ^ 
@@ -55,8 +56,7 @@ When these motions are combined with other commands you can do things like:
 
 ### Search motions
 
-Another way to move to the position you like is using search motions. The search motions consist of the 
-motion + a character to search
+Another way to move to the position you like is using search motions. The search motions consist of the motion + a character to search
   
   - `fx` -> move to the next `x`
   - `tx` -> move to first position before the next `x`

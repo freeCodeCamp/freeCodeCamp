@@ -38,8 +38,8 @@ Developers use semantic elements to enhance the following:
 * `<meter>` defines a scalar measurement within a known range (a gauge)
 * `<progress>` defines the progress of a task
 * `<rp>` defines what to show in browsers that do not support ruby annotations
-* `<rt>` defines an explanation/pronunciation of characters (for east asian typography)
-* `<ruby>` defines a ruby annotation (for east asian typography)
+* `<rt>` defines an explanation/pronunciation of characters (for East Asian typography)
+* `<ruby>` defines a ruby annotation (for East Asian typography)
 * `<summary>` defines a visible heading for a `<details>` element
 * `<time>` defines a date/time
 * `<wbr>` defines a possible line-break <sup>2</sup>

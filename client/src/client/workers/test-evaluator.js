@@ -4,7 +4,10 @@ import __toString from 'lodash/toString';
 
 const oldLog = self.console.log.bind(self.console);
 self.console.log = function proxyConsole(...args) {
-  self.postMessage({ type: 'LOG', data: String(args) });
+  self.postMessage({
+    type: 'LOG',
+    data: args.map(arg => JSON.stringify(arg)).join(' ')
+  });
   return oldLog(...args);
 };
 
@@ -35,7 +38,9 @@ self.onmessage = async e => {
     if (typeof testResult === 'function') {
       await testResult(fileName => __toString(e.data.sources[fileName]));
     }
-    self.postMessage({ pass: true });
+    self.postMessage({
+      pass: true
+    });
   } catch (err) {
     self.postMessage({
       err: {

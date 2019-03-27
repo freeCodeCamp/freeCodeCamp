@@ -64,7 +64,3 @@ Relevant Links:
 * :warning: DO NOT add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.
 * Add an explanation of your solution.
 * Categorize the solution in one of the following categories — Basic, Intermediate and Advanced.  :traffic_light:
-* Please add your username only if you have added any relevant main contents. (  :warning: DO NOT remove any existing usernames)
-
-See  :point_right: [Wiki Challenge Solution Template](https://forum.freecodecamp.org/t/freecodecamp-algorithm-challenge-template-guide/14272) for reference.
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->

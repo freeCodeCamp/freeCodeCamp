@@ -44,6 +44,10 @@ title: JavaScript Tutorials and Other Resources
 *   [JavaScript.com by Pluralsight](https://www.javascript.com/learn)
 *   [SoloLearn JavaScript Tutorial](https://www.sololearn.com/Course/JavaScript/)
 *   [GeeksforGeeks](https://www.geeksforgeeks.org/javascript-tutorial/)
+*   [Udacity Intro to JavaScript](https://eu.udacity.com/course/intro-to-javascript--ud803)
+*   [Tutorial to React](https://reactjs.org/tutorial/tutorial.html)
+*   [Introduction to Babel](https://flaviocopes.com/babel/)
+*   [Khan Academy - Intro to JS](https://www.khanacademy.org/computing/computer-programming/programming)
 
 ## Video Tutorials
 
@@ -83,9 +87,12 @@ title: JavaScript Tutorials and Other Resources
     
 *   [Brackets](http://brackets.io)
 
+    Lightweight text editor featuring inline editors, live previews, and allows you to quick edit and live highlight with your LESS and SCSS files.
+
 *   [Sublime Text](https://www.sublimetext.com)
     Sublime Text is a cross-platform editor featuring a Python API. Free to download and evaluate, but requires a license for continued use.
 
+    A cross-platform editor with a Python API. It features many shortcuts, key bindings and visual customization.
   
 ## Online Editors
 
@@ -121,17 +128,21 @@ title: JavaScript Tutorials and Other Resources
 ## Blogs
 
 *   [JavaScript on Medium](https://medium.com/topic/javascript)
+*   [The Cost Of JavaScript In 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
 *   [Codementor JavaScript Tutorials and Insights](https://www.codementor.io/community/topic/javascript)
 *   [2ality](https://www.2ality.com)
 *   [David Walsh](https://davidwalsh.name)
 *   [SuperheroJS](http://superherojs.com)
 *   [The 50 Best Websites to Learn JavaScript](http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/)
 *   [Perfection Kills](http://perfectionkills.com) - Not been updated since 2015
+*   [Top mentioned Javascript books of Reddit, Hacker News and Stack Overflow](https://medium.com/@jadeydi/best-javascript-books-should-be-read-which-are-recommended-by-hundreds-people-eeb87353f10d)
 
 
 ## Podcasts
 
 *   [JavaScript Jabber](https://devchat.tv/js-jabber)
+*   [Syntax FM](https://syntax.fm/)
+*   [Fulstack Radio](http://www.fullstackradio.com//)
 
 
 ## Free JavaScript Books

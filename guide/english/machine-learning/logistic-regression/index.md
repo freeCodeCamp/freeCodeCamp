@@ -31,10 +31,13 @@ J(θ)=(1/m)∑Cost(hθ(x(i)),y(i)) , where summation is from i=1 to m.
 Where hθ(x) is = hypothetic value calculated in accordance with attributes and weights which are calculated and balanced via algorithm such as gradient descent. 
  y = is the corresponding value from observation data set 
 
-Here cost function is not a proper sigmoid function in use but in place, two log functions which performs with greater efficiency without 
-penalizing the learning algorithms are used.
-Cost(hθ(x),y)=−log(hθ(x))           if y = 1
-Cost(hθ(x),y)=−log(1−hθ(x))         if y = 0
+Here cost function is not a proper sigmoid function in use but in place, two log functions which performs with greater efficieny without penalizing the learning algorithms are used.
+* Cost(hθ(x),y)=−log(hθ(x))           if y = 1
+* Cost(hθ(x),y)=−log(1−hθ(x))         if y = 0
+
+Which we can simplify as:
+
+Cost(hθ(x),y) = −log(hθ(x)) − log(1 − hθ(x))
 
 Refer to this article for clearing your basics https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
 

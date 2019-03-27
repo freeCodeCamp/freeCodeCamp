@@ -6,18 +6,16 @@ import { Provider } from 'react-redux';
 import headComponents from './src/head';
 import { createStore } from './src/redux/createStore';
 
-import GuideNavContextProvider from './src/contexts/GuideNavigationContext';
-import DefaultLayout from './src/components/layouts/Default';
-import GuideLayout from './src/components/layouts/GuideLayout';
+import {
+  CertificationLayout,
+  DefaultLayout,
+  GuideLayout
+} from './src/components/layouts';
 
 const store = createStore();
 
 export const wrapRootElement = ({ element }) => {
-  return (
-    <Provider store={store}>
-      <GuideNavContextProvider>{element}</GuideNavContextProvider>
-    </Provider>
-  );
+  return <Provider store={store}>{element}</Provider>;
 };
 
 wrapRootElement.propTypes = {
@@ -35,12 +33,18 @@ export const wrapPageElement = ({ element, props }) => {
       </DefaultLayout>
     );
   }
-  if ((/^\/guide(\/.*)*/).test(pathname)) {
+  if (/^\/certification(\/.*)*/.test(pathname)) {
+    return <CertificationLayout>{element}</CertificationLayout>;
+  }
+  if (/^\/guide(\/.*)*/.test(pathname)) {
     return (
-      <DefaultLayout>
+      <DefaultLayout onGuide={true}>
         <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );
+  }
+  if (/^\/learn(\/.*)*/.test(pathname)) {
+    return <DefaultLayout showFooter={false}>{element}</DefaultLayout>;
   }
   return <DefaultLayout>{element}</DefaultLayout>;
 };
