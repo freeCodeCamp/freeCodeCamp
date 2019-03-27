@@ -136,17 +136,8 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='https://guide.freecodecamp.org/javascript/regular-expressions-reference'>Regular Expressions Reference</a>
 *   <a href='https://guide.freecodecamp.org/miscellaneous/regular-expressions-resources/'>Regular Expressions Resources</a>
 
-### ![:trophy:](https://forum.freecodecamp.com/images/emoji/emoji_one/trophy.png?v=3 ":trophy:") Credits:
-
-If you found this page useful, you may say thanks to the contributors by copying and pasting the following line in the main chat:
-
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad @finally_static @rulamon for your help with Algorithm: Pig Latin`**
-
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

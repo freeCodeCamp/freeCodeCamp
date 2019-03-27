@@ -46,3 +46,7 @@ By using `let` you can declare variables in relation to their scope.
 - ["let" - *MDN Javascript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
  - [Rauschmayer, Axel. "Variables and scoping in ECMAScript 6". *2ality.com*, 2015-02-07.](http://2ality.com/2015/02/es6-scoping.html) Accessed 11 Dec 2018. 
   - [Bos, Wes. "Quick Tip: Use let with for Loops in JavaScript". *wesbos.com*, 16 Aug 2016.](https://wesbos.com/for-of-es6/) Accessed 11 Dec 2018. 
+
+*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
+*   Add an explanation of your solution.
+*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
