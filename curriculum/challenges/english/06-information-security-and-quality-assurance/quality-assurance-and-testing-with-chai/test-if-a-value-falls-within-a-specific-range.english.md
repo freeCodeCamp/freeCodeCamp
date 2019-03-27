@@ -7,16 +7,15 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-.approximately
-.approximately(actual, expected, range, [message])
-actual = expected +/- range
-Choose the minimum range (3rd parameter) to make the test always pass
-it should be less than 1
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+<code>.approximately</code>
+<code>.approximately(actual, expected, range, [message])</code>
+<code>actual = expected +/- range</code>
+Choose the minimum range (3rd parameter) to make the test always pass. It should be less than 1.
 </section>
 
 ## Tests

@@ -7,7 +7,7 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-.isBelow() => a < b , .isAtLeast =>  a >= b
+<code>.isBelow() => a < b</code> , <code>.isAtLeast =>  a >= b</code>.
 </section>
 
 ## Instructions

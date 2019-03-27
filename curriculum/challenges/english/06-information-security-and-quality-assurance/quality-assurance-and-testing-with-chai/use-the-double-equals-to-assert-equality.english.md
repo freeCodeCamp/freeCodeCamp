@@ -7,8 +7,8 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-.equal(), .notEqual()
-.equal() compares objects using '=='
+<code>.equal()</code>, <code>.notEqual()</code>.
+<code>.equal()</code> compares objects using <code>'=='</code>.
 </section>
 
 ## Instructions

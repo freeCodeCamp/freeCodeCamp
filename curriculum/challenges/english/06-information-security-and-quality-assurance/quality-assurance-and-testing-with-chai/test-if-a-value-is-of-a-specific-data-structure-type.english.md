@@ -7,13 +7,13 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-#typeOf asserts that value’s type is the given string, as determined by Object.prototype.toString.
-Use #typeOf or #notTypeOf where appropriate
+<code>#typeOf</code> asserts that value’s type is the given string, as determined by <code>Object.prototype.toString</code>.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>#typeOf</code> or <code>#notTypeOf</code> where it is appropriate.
 </section>
 
 ## Tests
