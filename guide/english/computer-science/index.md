@@ -24,6 +24,12 @@ Computer science is categorized into several fields. The following are among the
   - Machine Learning
   - Computer Vision
 - <a href="https://en.wikipedia.org/wiki/Software_engineering">Software Engineering</a>
+  - Software requirements
+  - Software design
+  - Software construction
+  - Software testing
+  - Software maintenance
+  - Software configuration management
 - <a href="https://en.wikipedia.org/wiki/Data_science">Data Sciences</a>
   - Big Data
 - <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">Human Computer Interaction</a>
