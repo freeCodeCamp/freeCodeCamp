@@ -11,7 +11,8 @@ const {
   FORUM_LOCATION: forum,
   NEWS_LOCATION: news,
   LOCALE: locale,
-  STRIPE_PUBLIC: stripePublicKey
+  STRIPE_PUBLIC: stripePublicKey,
+  LOCAL_EMAIL_AUTH: isLocalEmailAuth
 } = process.env;
 
 const locations = {
@@ -21,4 +22,8 @@ const locations = {
   newsLocation: news
 };
 
-module.exports = Object.assign(locations, { locale, stripePublicKey });
+module.exports = Object.assign(locations, {
+  locale,
+  stripePublicKey,
+  isLocalEmailAuth
+});

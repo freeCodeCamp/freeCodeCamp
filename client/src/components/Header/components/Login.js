@@ -6,7 +6,7 @@ import { navigate as gatsbyNavigate } from 'gatsby';
 import { Button } from '@freecodecamp/react-bootstrap';
 
 import { hardGoTo, isSignedInSelector } from '../../../redux';
-import { apiLocation } from '../../../../config/env.json';
+import { apiLocation, isLocalEmailAuth } from '../../../../config/env.json';
 
 import { gtagReportConversion } from '../../../analytics/gtag';
 
@@ -25,9 +25,15 @@ const mapDispatchToProps = dispatch => ({
 const createOnClick = (navigate, isSignedIn) => e => {
   e.preventDefault();
   gtagReportConversion();
+
   if (isSignedIn) {
     return gatsbyNavigate('/welcome');
   }
+
+  if (isLocalEmailAuth) {
+    return navigate(`${apiLocation}/local-auth-page`);
+  }
+
   return navigate(`${apiLocation}/signin`);
 };
 

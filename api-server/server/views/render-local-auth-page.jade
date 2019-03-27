@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Login Page
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='/render-local-auth-page.css', rel='stylesheet')
+  body
+    input#form-switch(type='checkbox')
+    form#login-form(action='', method='post')
+      input(type='text', placeholder='Username', required='')
+      input(type='password', placeholder='Password', required='')
+      button(type='submit') Login
+      br
+      br
+      label(for='form-switch')
+        span Register
+    form#register-form(action='', method='post')
+      input(type='text', placeholder='Username', required='')
+      input(type='email', placeholder='Email', required='')
+      input(type='password', placeholder='Password', required='')
+      input(type='password', placeholder='Re Password', required='')
+      button(type='submit') Register
+      br
+      br
+      label(for='form-switch') Already Member ? Sign In Now..
+
+

@@ -34,6 +34,15 @@ module.exports = function enableAuthentication(app) {
       saveAuthCookies,
       loginSuccessRedirect
     );
+  } else if (process.env.LOCAL_EMAIL_AUTH === 'true') {
+    api.get('/local-auth-page', ifUserRedirect, (req, res) =>
+      res.render('render-local-auth-page')
+    );
+    api.post('/local-signin', ifUserRedirect, passport.authenticate('local'));
+    api.post('/local-signup', ifUserRedirect, (req, res) => {
+      console.log('Todo: Implement Signup');
+      res.status(200).send();
+    });
   } else {
     api.get(
       '/signin',
