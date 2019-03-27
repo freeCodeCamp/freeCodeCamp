@@ -43,4 +43,10 @@ wget --mirror --no-parent https://ftp.gnu.org/gnu/
 ```                                                                                                                                                                                                
 wget --ftp-user=username --ftp-password=password ftp://example.com
 ```
+
+### Download files in background
+```
+wget -b /wget/log.txt ftp://ftp.gnu.org/gnu/wget/wget-1.10.1.tar.gz.sig
+```
+
 You can play with remaining features of the ``wget`` utility
