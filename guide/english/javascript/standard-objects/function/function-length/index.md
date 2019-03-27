@@ -37,3 +37,4 @@ console.log(withDefaults.length); // 1
 ```
 
 More Information on `Function.length` can be found on [Mozilla's MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length).
+

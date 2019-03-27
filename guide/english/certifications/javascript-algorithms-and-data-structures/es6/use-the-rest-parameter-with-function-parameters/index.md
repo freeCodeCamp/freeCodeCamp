@@ -7,12 +7,12 @@ title: Use the Rest Parameter with Function Parameters
 [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters "Mozilla Developer Network")
 
 ### Spread operator compared to rest parameter
-[Stack overflow](https://stackoverflow.com/questions/33898512/spread-operator-vs-rest-parameter-in-es2015-es6 "Stack Overflow")
+[Stack overflow](https://stackoverflow.com/questions/33898512/spread-operator-vs-rest-parameter-in-es2015-es6 "Stack Overflow") 
 
 ### Video explaining spread and rest
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=iLx4ma8ZqvQ
-" target="_blank"><img src="http://img.youtube.com/vi/iLx4ma8ZqvQ/0.jpg"
+" target="_blank"><img src="http://img.youtube.com/vi/iLx4ma8ZqvQ/0.jpg" 
 alt="Image of youtube video link spread and rest parameter " width="240" height="180" border="10" /></a>
 
 ### Example
