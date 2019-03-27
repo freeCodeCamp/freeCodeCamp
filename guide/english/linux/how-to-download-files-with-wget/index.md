@@ -38,7 +38,7 @@ wget --limit-rate=100k http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
 
 ### Download a file with the ability to resume or continue if the download is interrupted
 ```
-wget -c https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+wget --continue https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
 ```
 
 You can play with remaining features of the ``wget`` utility
