@@ -70,4 +70,4 @@ button:hover span{
 In the example above, when a user moves their mouse over the button element, the span element's color would change to green.
 
 ## Additional Resources
-- [MDN Pseudo-classes Docs(https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+- [MDN Pseudo-classes Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
