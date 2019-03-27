@@ -7,11 +7,11 @@ PHP scripts are executed on the server.
 
 Before you continue you should have a basic understanding of the following:
 
-### HTML
-### CSS
-### JavaScript
+### HTML - A webpage's blueprint
+### CSS - A webpage's design plan and instruction
+### JavaScript - A webpages power worker, that makes it function dynamically. 
 PHP files can contain Text, HTML, CSS, JavaScript, and PHP code.
-A PHP script is executed on the server, and the plain HTML result is sent back to the browser.
+A PHP script is executed on the server, and is returned to the user on the browser as just HTML markup, with some styling.
 
 A PHP script starts with `<?php` and ends with `?>`:
 ```php
@@ -40,7 +40,7 @@ require 'filename.php';
 ?>
 ```
 
-Below, we have an example of a simple PHP file, with a PHP script that uses a built-in PHP function "echo" to output the text "Hello World!" on a web page:
+Below, we have an example of a simple PHP file, with a PHP script that uses a built-in PHP function "echo" to output(echo out) the text "Hello World!" on a web page:
 
 ```php
 <!DOCTYPE html>
