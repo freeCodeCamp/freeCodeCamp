@@ -1,17 +1,18 @@
 ---
 title: Hover Selector
 ---
-## Hover Selector
+
+# Hover Selector
 
 The CSS `:hover` selector is one of many pseudo-classes that are used to style elements. 
 
-The :hover selector is used to select elements when you mouse over them.
+The `:hover` selector is used to select elements when you mouse over them.
 
-The :hover selector can be used on all elements, not only on links. The hover selector will apply certain defined styles to the element when you hover mouse over the element and revert back to the normal style when you move mouse away from the element.
+The `:hover` selector can be used on all elements, not only on links. The hover selector will apply certain defined styles to the element when you hover mouse over the element and revert back to the normal style when you move mouse away from the element.
 
-Use the :link selector to style links to unvisited pages, the :visited selector to style links to visited pages, and the :active selector to style the active link.
+Use the `:link` selector to style links to unvisited pages, the `:visited` selector to style links to visited pages, and the `:active` selector to style the active link.
 
-Note: :hover MUST come after :link and :visited (if they are present) in the CSS definition, in order to be effective! It should be specifically in this order.
+`:hover` MUST come after :link and :visited (if they are present) in the CSS definition, in order to be effective! It should be specifically in this order:
 
 1. link
 2. visited
@@ -19,7 +20,7 @@ Note: :hover MUST come after :link and :visited (if they are present) in the CSS
 4. active
 
 CSS Syntax
-```
+```css
 :hover {
     css declarations;
 }
@@ -45,7 +46,7 @@ When a user hovers over the button with their mouse the rule with the `:hover` s
 
 The above code will immediately change the style and it won't look great. You can add transition to make change smooth. Remember that you have to apply the transition property to the element not on the hover state.
 
-```
+```css
 button {
   color: white;
   background-color: green;
@@ -53,7 +54,20 @@ button {
 }
 ```
 
-#### More Information:
-<a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes' target='_blank' rel='nofollow'>MDN `:hover` Docs</a>
+You can also use the hover selector on an element to affect another element.
 
-You can find many more pseudo-classes in this article on Mozillia's <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes' target='_blank' rel='nofollow'>MDN Pseudo-classes Docs</a>.
+```css
+button {
+  color: white;
+  background-color: green;
+}
+
+button:hover span{
+  color: green;
+}
+```
+
+In the example above, when a user moves their mouse over the button element, the span element's color would change to green.
+
+## Additional Resources
+- [MDN Pseudo-classes Docs(https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)

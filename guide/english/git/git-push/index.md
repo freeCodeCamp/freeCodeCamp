@@ -41,7 +41,7 @@ in which:
 - `REMOTE-NAME` is the name of the remote repository you want to push to
 
 ### Push to a specific branch with force parameter
-If you want to ignore the local changes made to Git repository at Github(Which most of developers do for a hot fix to development server) then you can use --force command to push by ignoring those changs.
+If you want to ignore the local changes made to Git repository at GitHub(Which most of developers do for a hot fix to development server) then you can use --force command to push by ignoring those changs.
 
 ```bash
 git push --force <REMOTE-NAME> <BRANCH-NAME>
@@ -56,6 +56,12 @@ By default `git push` will trigger the `--verify` toggle.  This means that git w
 ```bash
 git push --no-verify
 ```
+
+### Points to Note
+
+`git push --force` should be used very carefully. This command basically overrides the remote repository with any code that you have in the local. In the meanwhile if anyone else had commited to the remote repository then their code will be completely overwritten. 
+
+In some cases it makes sense to use force push to get the job done. But always evaluate the risks before running a force push command.
 
 
 ### More Information:
