@@ -371,3 +371,25 @@ echo json_encode($jack->getFavDrinks());
 ```
  
 This way of implementing and using class methods to retrieve and update class properties is called encapsulation in Object Oriented Programming. We can also set visibility for class methods just like how we did it for class properties.
+
+### MAGIC METHODS
+
+There are some special methods that Php uses for its own purpose.
+
+Suppose you want to threat an object as a string. You can do that by overriding `__toString()` method into related class:
+
+```
+<?php
+
+class Foo {
+    public function __toString() {
+        return 'foo';
+    }
+}
+
+$foo = new Foo();
+echo $foo;
+// "foo"
+```
+
+There are many more other [magic methods](http://php.net/manual/en/language.oop5.magic.php).
