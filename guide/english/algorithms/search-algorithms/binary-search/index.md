@@ -92,7 +92,7 @@ Binary Search Trees are very powerful because of their O(log n) search times, se
 
 The code for recursive binary search is shown below:
 
-### Javascript implementation
+### JavaScript implementation
 
 ```javascript
 function binarySearch(arr, item, low, high) {
@@ -120,9 +120,9 @@ var numbers = [1,2,3,4,5,6,7];
 print(binarySearch(numbers, 5, 0, numbers.length-1));
 ```
 
-Here is another implementation in Javascript:
+Here is another implementation in JavaScript:
 
-```Javascript
+```JavaScript
 function binary_search(a, v) {
     function search(low, high) {
         if (low === high) {

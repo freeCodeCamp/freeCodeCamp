@@ -96,7 +96,7 @@ The algorithm shown below is a slightly optimized version to avoid swapping the 
          arr[i+1] = key
 ```
 
-Here is a detailed implementation in Javascript:
+Here is a detailed implementation in JavaScript:
 
 ```
 function insertion_sort(A) {

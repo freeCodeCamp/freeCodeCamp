@@ -8,7 +8,7 @@ Speech recognition allows users affected by accessibility difficulties (such as 
 Speech synthesis provides websites the ability to provide information to users by reading the text.
 
 
-## Javascript Web Speech API
+## JavaScript Web Speech API
 
 The [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) enables you to incorporate voice data into web apps using both speech recognition and speech synthesis. 
 

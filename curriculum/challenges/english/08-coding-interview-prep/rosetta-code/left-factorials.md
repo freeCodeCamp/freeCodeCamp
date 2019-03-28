@@ -73,7 +73,7 @@ function leftFactorial(n) {
         return 1;
 
     // Note: for n>=20, the result may not be correct.
-    // This is because Javascript uses 53 bit integers and
+    // This is because JavaScript uses 53 bit integers and
     // for n>=20 result becomes too large.
 
     let res = 2, fact = 2;

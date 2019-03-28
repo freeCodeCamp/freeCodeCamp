@@ -57,7 +57,7 @@ console.log(increment(5)); // returns NaN
 
 Relevant Links: 
 
-[Javascript default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+[JavaScript default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
 
 # :clipboard: NOTES FOR CONTRIBUTIONS:
 

@@ -29,5 +29,5 @@ var new_s = s.myMap(function(item){
 ```
 
 ### Useful Links
-[this. Javascript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)<br/>
-[this. Javascript W3Schools](https://www.w3schools.com/js/js_this.asp)
+[this. JavaScript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)<br/>
+[this. JavaScript W3Schools](https://www.w3schools.com/js/js_this.asp)

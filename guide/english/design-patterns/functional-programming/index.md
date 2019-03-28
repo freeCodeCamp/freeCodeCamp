@@ -10,7 +10,7 @@ title: Functional Programming
 
 ### Why Functional Programming?
 
-Functional programming (sometimes abbreviated as FP) has had a resurgence among Javascript developers recently because of the focus on functional programming principles in popular libraries such as [Redux](https://redux.js.org/).
+Functional programming (sometimes abbreviated as FP) has had a resurgence among JavaScript developers recently because of the focus on functional programming principles in popular libraries such as [Redux](https://redux.js.org/).
 
 Although functional programming can be intimidating for some beginning developers, knowing some of the basics can be very useful regardless of what libraries you use. Specifically thinking about times when to use declarative programming and pure functions—for example, to keep code clean, easy to read, easy to test, and easy to maintain—helps as you move towards larger projects where you might be working with multiple developers and want a good [code smell](https://guide.freecodecamp.org/agile/code-smells/). It's also something often asked about briefly in coding interviews, so even knowing a few basic principles can be very helpful. This article represents only the most bare-bones overview; more research is recommended.
 

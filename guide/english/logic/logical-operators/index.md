@@ -85,7 +85,7 @@ For binary operators, a condensed form of truth table is also used, where the ro
 | T | T | T |
 
 ## Additional Resources
-- [Logical Operators in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
+- [Logical Operators in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 - [Logical Operators in PHP](http://php.net/manual/en/language.operators.logical.php)
 - [Logical Operators in C++](http://en.cppreference.com/w/cpp/language/operator_logical)
 - [Wikipedia, Truth table](https://en.wikipedia.org/wiki/Truth_table)

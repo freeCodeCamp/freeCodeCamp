@@ -42,7 +42,7 @@ Step 4: **Repeat Steps 2 and 3 until `a mod b` is greater than 0**
 Step 5: **GCD = b**  
 Step 6: Finish  
 
-Javascript Code to Perform GCD-
+JavaScript Code to Perform GCD-
 ```javascript
 function gcd(a, b) {
   var R;
@@ -55,7 +55,7 @@ function gcd(a, b) {
 }
 ```
 
-Javascript Code to Perform GCD using Recursion-
+JavaScript Code to Perform GCD using Recursion-
 ```javascript
 function gcd(a, b) {
   if (b == 0)

@@ -13,7 +13,7 @@ A linked list is a simple data structure, but it can be used to implement more c
 
 
 Linked List |  (Introduction)
-Like arrays, Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at contiguous location; the elements are linked using pointers or like in the example using Javascript, a reference to the next node.
+Like arrays, Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at contiguous location; the elements are linked using pointers or like in the example using JavaScript, a reference to the next node.
 
 If you want to understand Linked Lists, it helps to understand **Arrays**.
 
@@ -320,7 +320,7 @@ Types:
 
 2) (Doubly) In a 'doubly linked list', each node contains, besides the next-node link, a second link field pointing to the 'previous' node in the sequence. The two links may be called 'forward('s') and 'backwards', or 'next' and 'prev'('previous').
 
-Example in Javascript:
+Example in JavaScript:
 ```
 function LinkedList () {
 		this.head = null;
