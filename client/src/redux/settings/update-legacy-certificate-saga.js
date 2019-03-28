@@ -1,73 +1,21 @@
-import { takeEvery, select, call, put } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 
-import { putUpdateLegacyCertificate } from '../../utils/ajax';
-import { completedChallengesSelector, submitComplete } from '../';
-import { legacyProjectMap } from '../../resources/certProjectMap';
+import { putUpdateLegacyCert } from '../../utils/ajax';
+import { submitComplete } from '../';
 import { createFlashMessage } from '../../components/Flash/redux';
-import standardErrorMessage from '../../utils/reallyWeirdErrorMessage';
-import { updateLegacyCertificateError } from './';
+import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
+import { updateLegacyCertError } from './';
 
-const completedChallenges = state => completedChallengesSelector(state);
-
-function* updateLegacyCertificateSaga({ payload }) {
-  // find which certificate the challenges belong to
-  let legacyCert;
-  let certs = Object.keys(legacyProjectMap);
-  let loopBreak = false;
-  for (let i of certs) {
-    for (let j of legacyProjectMap[i]) {
-      if (j.title === Object.keys(payload)[0]) {
-        console.log(j.title);
-        loopBreak = true;
-        legacyCert = i;
-        break;
-      }
-    }
-    if (loopBreak) {
-      break;
-    }
-  }
-
-  // make an object with keys as challenge ids and values as solutions
-  let idsToSolutions = {};
-  for (let i of Object.keys(payload)) {
-    for (let j of legacyProjectMap[legacyCert]) {
-      if (i === j.title) {
-        console.log(payload[i]);
-        idsToSolutions[j.id] = payload[i];
-        break;
-      }
-    }
-  }
-
-  // find how many challnegs have been updated and how many are new
-  let completed = yield select(completedChallenges);
-  let challengesToUpdate = {};
-  let newChalleneFound = true;
-  for (let j of Object.keys(idsToSolutions)) {
-    for (let i of completed) {
-      if (i.id === j) {
-        if (idsToSolutions[j] !== i.solution) {
-          challengesToUpdate[j] = idsToSolutions[j];
-        }
-        newChalleneFound = false;
-        break;
-      }
-    }
-    if (newChalleneFound && idsToSolutions[j] !== '') {
-      challengesToUpdate[j] = idsToSolutions[j];
-    }
-    newChalleneFound = true;
-  }
-
+function* updateLegacyCertSaga({
+  payload: { superBlock, challengesToUpdate }
+}) {
   // shape the body of the http call so it is consumable by api
   const body = {
     projects: {
-      [legacyCert]: challengesToUpdate
+      [superBlock]: challengesToUpdate
     }
   };
-
-  // shape to update completed  challenges
+  // shape to update completed challenges in redux store
   let reduxShape = [];
   for (let obj in challengesToUpdate) {
     if (challengesToUpdate.hasOwnProperty(obj)) {
@@ -76,17 +24,16 @@ function* updateLegacyCertificateSaga({ payload }) {
   }
 
   try {
-    const { data: response } = yield call(putUpdateLegacyCertificate, body);
+    const { data: response } = yield call(putUpdateLegacyCert, body);
     yield put(submitComplete({ challArray: reduxShape }));
     yield put(createFlashMessage(response));
+    console.log(response);
   } catch (e) {
-    yield put(updateLegacyCertificateError(e));
-    yield put(createFlashMessage(standardErrorMessage));
+    yield put(updateLegacyCertError(e));
+    yield put(createFlashMessage(reallyWeirdErrorMessage));
   }
 }
 
-export function createUpdateLegacyCertificateSaga(types) {
-  return [
-    takeEvery(types.updateLegacyCertificate, updateLegacyCertificateSaga)
-  ];
+export function createUpdateLegacyCertSaga(types) {
+  return [takeEvery(types.updateLegacyCert, updateLegacyCertSaga)];
 }

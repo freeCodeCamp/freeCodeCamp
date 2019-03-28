@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { find, first } from 'lodash';
+import { find, first, values, isString } from 'lodash';
 import {
   Table,
   Button,
@@ -13,7 +13,7 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
-import { updateLegacyCertificate } from '../../redux/settings';
+import { updateLegacyCert } from '../../redux/settings';
 import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
 
 import SectionHeader from './SectionHeader';
@@ -22,11 +22,12 @@ import { FullWidthRow, Spacer } from '../helpers';
 import { Form } from '../formHelpers';
 
 import { maybeUrlRE } from '../../utils';
+import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
 
 import './certification.css';
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ updateLegacyCertificate }, dispatch);
+  bindActionCreators({ updateLegacyCert }, dispatch);
 
 const propTypes = {
   completedChallenges: PropTypes.arrayOf(
@@ -51,7 +52,7 @@ const propTypes = {
   isInfosecQaCert: PropTypes.bool,
   isJsAlgoDataStructCert: PropTypes.bool,
   isRespWebDesignCert: PropTypes.bool,
-  updateLegacyCertificate: PropTypes.func.isRequired,
+  updateLegacyCert: PropTypes.func.isRequired,
   username: PropTypes.string,
   verifyCert: PropTypes.func.isRequired
 };
@@ -106,6 +107,13 @@ const isCertMapSelector = createSelector(
     'Legacy Back End': isBackEndCert
   })
 );
+
+const honestyInfoMessage = {
+  type: 'info',
+  message:
+    'To claim a certification, you must first accept our academic ' +
+    'honesty policy'
+};
 
 const initialState = {
   solutionViewer: {
@@ -249,12 +257,7 @@ class CertificationSettings extends Component {
       }
       return isHonest
         ? verifyCert(superBlock)
-        : createFlashMessage({
-            type: 'info',
-            message:
-              'To claim a certification, you must first accept our academic ' +
-              'honesty policy'
-          });
+        : createFlashMessage(honestyInfoMessage);
     };
     return projectMap[certName]
       .map(({ link, title, id }) => (
@@ -284,18 +287,83 @@ class CertificationSettings extends Component {
   };
 
   // legacy projects rendering
+  handleSubmit(formChalObj) {
+    const {
+      isHonest,
+      createFlashMessage,
+      verifyCert,
+      updateLegacyCert
+    } = this.props;
+    let legacyTitle;
+    let superBlock;
+    let certs = Object.keys(legacyProjectMap);
+    let loopBreak = false;
+    for (let certTitle of certs) {
+      for (let chalTitle of legacyProjectMap[certTitle]) {
+        if (chalTitle.title === Object.keys(formChalObj)[0]) {
+          superBlock = chalTitle.superBlock;
+          loopBreak = true;
+          legacyTitle = certTitle;
+          break;
+        }
+      }
+      if (loopBreak) {
+        break;
+      }
+    }
 
-  handleSubmit(values) {
-    const { updateLegacyCertificate } = this.props;
-    updateLegacyCertificate(values);
+    // make an object with keys as challenge ids and values as solutions
+    let idsToSolutions = {};
+    for (let i of Object.keys(formChalObj)) {
+      for (let j of legacyProjectMap[legacyTitle]) {
+        if (i === j.title) {
+          idsToSolutions[j.id] = formChalObj[i];
+          break;
+        }
+      }
+    }
+
+    // filter the new solutions that need to be updated
+    const completedChallenges = this.props.completedChallenges;
+    let challengesToUpdate = {};
+    let newChalleneFound = true;
+    let oldSubmissions = 0;
+    for (let submittedChal of Object.keys(idsToSolutions)) {
+      for (let i of completedChallenges) {
+        if (i.id === submittedChal) {
+          if (idsToSolutions[submittedChal] !== i.solution) {
+            challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
+          }
+          oldSubmissions++;
+          newChalleneFound = false;
+          break;
+        }
+      }
+      if (newChalleneFound && idsToSolutions[submittedChal] !== '') {
+        challengesToUpdate[submittedChal] = idsToSolutions[submittedChal];
+      }
+      newChalleneFound = true;
+    }
+
+    const valuesSaved = values(formChalObj)
+      .filter(Boolean)
+      .filter(isString);
+
+    const isProjectSectionComplete = valuesSaved.length === oldSubmissions;
+
+    if (isProjectSectionComplete) {
+      return isHonest
+        ? verifyCert(superBlock)
+        : createFlashMessage(honestyInfoMessage);
+    }
+    return updateLegacyCert({ challengesToUpdate, superBlock });
   }
 
   renderLegacyCertifications = certName => {
-    const { username, isHonest, createFlashMessage, verifyCert } = this.props;
+    const { username, createFlashMessage, completedChallenges } = this.props;
     const { superBlock } = first(legacyProjectMap[certName]);
     const certLocation = `/certification/${username}/${superBlock}`;
     const challengeTitles = legacyProjectMap[certName].map(item => item.title);
-    const { completedChallenges } = this.props;
     const isCertClaimed = this.getUserIsCertMap()[certName];
     const initialObject = {};
     let filledforms = 0;
@@ -321,19 +389,12 @@ class CertificationSettings extends Component {
 
     const fullForm = filledforms === challengeTitles.length;
 
-    const createClickHandler = superBlock => e => {
+    const createClickHandler = certLocation => e => {
       e.preventDefault();
       if (isCertClaimed) {
         return navigate(certLocation);
       }
-      return isHonest
-        ? verifyCert(superBlock)
-        : createFlashMessage({
-            type: 'info',
-            message:
-              'To claim a certification, you must first accept our academic ' +
-              'honesty policy'
-          });
+      return createFlashMessage(reallyWeirdErrorMessage);
     };
 
     const buttonStyle = {
@@ -341,7 +402,7 @@ class CertificationSettings extends Component {
     };
 
     return (
-      <FullWidthRow key={certName}>
+      <FullWidthRow key={superBlock}>
         <Spacer />
         <h3>{certName}</h3>
         <Form
@@ -349,7 +410,7 @@ class CertificationSettings extends Component {
           enableSubmit={fullForm}
           formFields={challengeTitles}
           hideButton={isCertClaimed}
-          id={certName}
+          id={superBlock}
           initialValues={{
             ...initialObject
           }}
@@ -363,7 +424,7 @@ class CertificationSettings extends Component {
               bsStyle='primary'
               className={'col-xs-12'}
               href={certLocation}
-              onClick={createClickHandler(superBlock)}
+              onClick={createClickHandler(certLocation)}
               style={buttonStyle}
               target='_blank'
             >

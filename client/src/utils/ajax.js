@@ -45,7 +45,7 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
-export function putUpdateLegacyCertificate(body) {
+export function putUpdateLegacyCert(body) {
   return post('/update-my-projects', body);
 }
 

@@ -316,7 +316,7 @@ export const reducer = handleActions(
         }
       };
     },
-    [settingsTypes.updateLegacyCertificateComplete]: (state, { payload }) => {
+    [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
       const { appUsername } = state;
       return {
         ...state,
