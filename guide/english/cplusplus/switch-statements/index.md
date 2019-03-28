@@ -5,6 +5,7 @@ title: Switch Statement
 A switch statement allows a variable to be tested for equality against a list of values. Each value is called a case, and the variable being switched on is checked for each case.
 
 Syntax:
+```cpp
 switch(expression) {
    case constant-expression  :
       statement(s);
@@ -17,7 +18,7 @@ switch(expression) {
    default : //Optional
       statement(s);
 }
-
+```
 The following rules apply to a switch statement −
 
 The expression used in a switch statement must have an integral or enumerated type(int,char,enum), or be of a class type in which the class has a single conversion function to an integral or enumerated type.
@@ -72,10 +73,13 @@ int main () {
 
    return 0;
 }
+```
 
+```
 Output:
 You passed
 Your grade is D
+```
 
-###Sources
+### Sources
 https://www.tutorialspoint.com
