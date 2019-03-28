@@ -20,7 +20,7 @@ switch(expression) {
 
 The following rules apply to a switch statement −
 
-The expression used in a switch statement must have an integral or enumerated type, or be of a class type in which the class has a single conversion function to an integral or enumerated type.
+The expression used in a switch statement must have an integral or enumerated type(int,char,enum), or be of a class type in which the class has a single conversion function to an integral or enumerated type.
 
 You can have any number of case statements within a switch. Each case is followed by the value to be compared to and a colon.
 
@@ -32,7 +32,10 @@ When a break statement is reached, the switch terminates, and the flow of contro
 
 Not every case needs to contain a break. If no break appears, the flow of control will fall through to subsequent cases until a break is reached.
 
-A switch statement can have an optional default case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No break is needed in the default case.
+A switch statement can have an optional default case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No break is needed in the default case. The position of default block doesn't matter, it is automatically executed if no match is found.
+
+Two case labels cannot have the same value. 
+
 
 Example:
 ```C++
