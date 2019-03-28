@@ -32,8 +32,7 @@ When a break statement is reached, the switch terminates, and the flow of contro
 
 Not every case needs to contain a break. If no break appears, the flow of control will fall through to subsequent cases until a break is reached.
 
-A switch statement can have an optional default case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No break is needed in the default case.
-The position of default block doesn't matter ,it is automatically executed if no match is found.
+A switch statement can have an optional default case, which must appear at the end of the switch. The default case can be used for performing a task when none of the cases is true. No break is needed in the default case. The position of default block doesn't matter, it is automatically executed if no match is found.
 
 Two case labels cannot have the same value. 
 
