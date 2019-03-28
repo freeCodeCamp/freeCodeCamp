@@ -64,11 +64,14 @@ int main () {
    cout << "Your grade is " << grade << endl;
 
    return 0;
-}```
+}
+```
 
+```
 Output:
 You passed
 Your grade is D
+```
 
-###Sources
+### Sources
 https://www.tutorialspoint.com
