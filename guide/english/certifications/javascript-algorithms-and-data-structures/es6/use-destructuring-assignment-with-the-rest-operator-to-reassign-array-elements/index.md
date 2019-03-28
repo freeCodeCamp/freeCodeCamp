@@ -60,6 +60,7 @@ function removeFirstTwo(list) {
 You can also exclude the first two elements of the `arr` array using `,,`.
 
 ```javascript
+const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   "use strict";
   // change code below this line
