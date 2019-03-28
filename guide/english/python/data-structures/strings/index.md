@@ -1,10 +1,17 @@
 ---
 title: The Python Strings
 ---
-Python allows `str` objects, or _strings_, to be expressed in a few different ways:
+# Strings
+Python allows `str` objects, or [_strings_](https://docs.python.org/2/library/string.html), to be expressed in a few different ways:
 
-*   Single quotes: `'Single quote strings can have "double" quotes inside.'`
-*   Double quotes: `"Double quote strings can have 'single' quotes inside."`
+*   Single quotes: 
+
+        `'Single quote strings can have "double" quotes inside.'`
+        
+*   Double quotes: 
+
+        `"Double quote strings can have 'single' quotes inside."`
+        
 *   Triple quoted:
 
         """Triple quoted strings can span multiple lines.
@@ -20,7 +27,7 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
                 File "<stdin>", line 1, in <module>
         TypeError: 'str' object does not support item assignment
         
-        Instead, you can convert the string into a list, modify the list element (string character) you wish to change, and then join  the list elements back to a string, like so:
+    Instead, you can convert the string into a list, modify the list element (string character) you wish to change, and then join  the list elements back to a string, like so:
         
         >>> foo = "my string"
         >>> foo_list_form = list(foo)
@@ -99,4 +106,4 @@ Using the `+` operator on strings leads to `concatenation`, while the `*` operat
 
 ## Reference:
 
-<a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>Text Sequence Type _str_</a>
+<a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>Python Documentation - Text Sequence Type _str_</a>
