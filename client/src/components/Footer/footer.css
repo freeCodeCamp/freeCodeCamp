@@ -1,0 +1,28 @@
+.footer {
+  background-color: #f1f5f8;
+  font-size: 0.9em;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.footer .col-header {
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.footer a:not([class*='inline']) {
+  display: block;
+}
+
+.night .footer {
+  color: #606f7b;
+  background: #222;
+}
+
+.night .footer a {
+  color: #006400;
+}
+
+.night .footer a:hover {
+  color: #606f7b;
+}

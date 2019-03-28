@@ -51,3 +51,9 @@ In this section, you can see popular Firefox plug-ins used by designers.
 
 - [Color Picker](https://addons.mozilla.org/en-us/firefox/addon/colorzilla/?src=collection&collection_id=90e68e6a-f13f-5921-3412-5228262ca9db)
 - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+
+### For Chrome
+
+In this section, you can see popular Chrome plug-ins used by designers.
+
+- [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp)
