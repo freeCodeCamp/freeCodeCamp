@@ -5,23 +5,22 @@ title: Global Variables
 Global variables are declared outside of a function for accessibility throughout the program, while local variables are stored within a function using `var` for use only within that function's [scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope). If you declare a variable without using `var`, even if it's inside a function, it will still be seen as global:
 
 ```javascript
-var x = 5; //global
+var x = 5; //global variable
 function someThing(y) {
-var z = x + y;
-console.log(z);
+    var z = x + y;
+    console.log(z);
 }
 
 function someThing(y) {
-x = 5; //still global!
-var z = x + y;
-console.log(z);
+    x = 5; //still a global variable!
+    var z = x + y;
+    console.log(z);
 }
 
-
 function someThing(y) {
-var x = 5; //local
-var z = x + y;
-console.log(z);
+    var x = 5; //local variable
+    var z = x + y;
+    console.log(z);
 }
 ```
 A global variable is also an object of the current scope, such as the browser window:
@@ -37,7 +36,7 @@ console.log(window.dog); //Fluffy
 It’s a best practice to minimize global variables. Since the variable can be accessed anywhere in the program, they can cause strange behavior.
 
 References:
-* [var -Javascript|MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+* [var -JavaScript|MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 * [You Don't Know JavaScript: Scopes & Closures](https://github.com/getify/You-Dont-Know-JS/tree/master/scope%20%26%20closures)
 
 Additional Info:
