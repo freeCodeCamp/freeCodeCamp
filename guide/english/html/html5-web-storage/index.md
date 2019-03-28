@@ -3,7 +3,7 @@ title: HTML5 Web Storage
 ---
 ## HTML5 Web Storage
 
-Web storage allows web applications to store up to 5MB of information in browser storage per origin (per domain and protocol).
+With web storage, web applications can store data locally within the user's browser. Web storage allows web applications to store up to 5MB of information in browser storage per origin (per domain and protocol).
 
 ### Types of Web Storage
 
@@ -28,6 +28,9 @@ sessionStorage.setItem("foo", "bar");
 // Get Item
 sessionStorage.getItem("foo"); //returns "bar"
 ```
+Example explained:
+Create a localStorage name/value pair with name="foo" and value="bar"
+Retrieve the value of "foo" and insert it into the element with id="foo"
 
 Since the current implementation only supports string-to-string mappings, you need to serialize and de-serialize other data structures. 
 

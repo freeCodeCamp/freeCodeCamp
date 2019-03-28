@@ -3,7 +3,7 @@ title: Backlog Emergence and Refinement
 ---
 ## Backlog Emergence and Refinement
 
-Product backlog refinement is an on going process that needs to be in sync with the product discovery process. Generally, a Scrum team will collaboratively refine product backlog items for the next two to three sprints.
+Product backlog refinement is an ongoing process that needs to be in sync with the product discovery process. Generally, a Scrum team will collaboratively refine product backlog items for the next two to three sprints.
 
 A product owner (individual responsible for clarifying a sprint's goal) defines the scope of the upcoming sprints by identifying and triaging the most valuable user stories in the product backlog. A product owner is more than a glorified project manager of the product backlog, and performs more roles than simply user stories on behalf of stakeholders.
 

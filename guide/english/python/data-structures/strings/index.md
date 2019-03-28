@@ -19,8 +19,25 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
         Traceback (most recent call last):
                 File "<stdin>", line 1, in <module>
         TypeError: 'str' object does not support item assignment
+*   Indexable: You can access any character of `str` object by specifying its index. And as it supports slicing like in `list` and `tuple` objects.
+    
+        >>> foo = "my string"
+        >>> foo[3]
+        's'
+        >>> foo[3:]
+        'string'
+        >>> foo[::-1]
+        'gnirts ym'
         
-
+    Instead, you can convert the string into a list, modify the list element (string character) you wish to change, and then join  the list elements back to a string, like so:
+        
+        >>> foo = "my string"
+        >>> foo_list_form = list(foo)
+        >>> foo_list_form[0] = "a"
+        >>> foo = ' '.join(foo_list_form)
+        >>> print(foo)
+        ay string # The required output
+        
 ## Reference:
 
 <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>Text Sequence Type _str_</a>
