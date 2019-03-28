@@ -40,3 +40,5 @@ localeTitle: Web开发人员的辅助功能工具
 #### 更多资源
 
 您可以在明尼苏达大学德卢斯分校的[这份名单](http://www.d.umn.edu/itss/training/online/webdesign/tools.html)上找到更多可访问网页设计的工具。
+
+##### 更改

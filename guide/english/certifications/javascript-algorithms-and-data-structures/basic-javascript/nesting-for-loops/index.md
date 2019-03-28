@@ -93,9 +93,4 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 <li>:warning: <strong>DO NOT</strong> add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.</li>
   <li>Add an explanation of your solution.</li>
 <li>Categorize the solution in one of the following categories — Basic, Intermediate and Advanced. :traffic_light:</li>
-<li>Please add your username only if you have added any relevant main contents. (:warning: <em><strong>DO NOT</strong></em> remove any existing usernames)</li>
   </ul>
-  
-See :point_right: <a href="http://forum.freecodecamp.com/t/algorithm-article-template/14272"> Wiki Challenge Solution Template</a> for reference.
-
-

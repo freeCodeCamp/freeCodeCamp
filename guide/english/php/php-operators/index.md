@@ -50,3 +50,7 @@ echo 1 <=> 0; // returns 1
 echo 1 <=> 1; // returns 0
 echo 1 <=> 2; // returns -1
 ```
+
+#### More Information:
+- <a href='http://php.net/manual/en/language.operators.arithmetic.php' target='_blank' rel='nofollow'>Arithmetic Operators</a></li>
+- <a href='http://php.net/manual/en/language.operators.assignment.php' target='_blank' rel='nofollow'>Assignment Operators</a></li>
