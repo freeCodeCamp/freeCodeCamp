@@ -14,10 +14,10 @@ Like most of the file handling functions, before conducting any file operation w
   
 ?>
 ```
-$fileHandler is the file handling variable, the function to write should pass this variables as parameter.
+$fileHandler is the file handling variable, the function to write should pass this variable as an argument.
 
 ## fwrite()
-This is the function to add content to your file. This function should contain two variable, the first one should be the file handling variable and the second should be the content you wish to add to the file.
+This is the function to add content to your file. This function should contain two variables, the first one should be the file handling variable and the second should be the content you wish to add to the file.
 ```PHP
 <?php
 
