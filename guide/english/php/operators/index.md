@@ -13,6 +13,17 @@ The usual “<” and “>” can also be used for comparison and “+=” can b
 
 Most notable is the use of the “.” to concatenate strings and “.=” to append one string to the end of another. 
 
+New to PHP 7.0.X is the Spaceship operator (<=>).
+The spaceship operator returns -1, 0 or 1 when $a is less than, equal to, or greater than $b.
+
+```php
+<?php
+
+echo 1 <=> 1; // 0
+echo 1 <=> 2; // -1
+echo 2 <=> 1; // 1
+
+```
 ### Ternary Operators
 
 If you need a very short, simple, easy maintaining that work just like if else statement then php give you ternary operator. A very poweful but easy operator. It looks like this - (?:). Simple, right? Lets get to examle.
@@ -34,5 +45,5 @@ $message = 'Hello '.($user == !NULL ? $user : 'Guest');
 ```
 Both of them do exactly same thing. But the later one is easy for maintainance.
 
-For more information visit [PHP Shorthand If/Else Using Ternary Operators (?:)
-](https://davidwalsh.name/php-shorthand-if-else-ternary-operators)
+#### More Resources
+- [PHP Shorthand If/Else Using Ternary Operators (?:)](https://davidwalsh.name/php-shorthand-if-else-ternary-operators)

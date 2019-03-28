@@ -2,7 +2,6 @@
 id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
 challengeType: 1
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
 videoUrl: ''
 localeTitle: Доступ к массиву данных с индексами
 ---
