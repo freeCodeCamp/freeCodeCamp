@@ -2,11 +2,6 @@
 title: Meta Scrum
 ---
 ## Meta Scrum
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/agile/meta-scrum/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 A Meta Scrum is a virtual team composed of Product Owners from other scrum teams that are working on different aspects of a larger project. The Product Owners will coordinate Epics, product releases, and product lines. The Meta Scrum can also include company leadership and other key Stakeholders.

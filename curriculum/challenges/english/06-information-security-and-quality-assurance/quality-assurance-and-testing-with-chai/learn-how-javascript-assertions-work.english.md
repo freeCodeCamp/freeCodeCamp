@@ -7,12 +7,12 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-Use assert.isNull() or assert.isNotNull() to make the tests pass.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.isNull()</code> or <code>assert.isNotNull()</code> to make the tests pass.
 </section>
 
 ## Tests
