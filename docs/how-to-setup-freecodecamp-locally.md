@@ -453,3 +453,5 @@ npm run seed
 # Restart the application
 npm run develop
 ```
+
+If you can't sign in, and instead, you see a banner with an error message saying that it'll be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
