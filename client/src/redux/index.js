@@ -296,7 +296,6 @@ export const reducer = handleActions(
       if (challArray) {
         submitedchallneges = challArray;
       }
-      console.log(...submitedchallneges);
       const { appUsername } = state;
       return {
         ...state,

@@ -27,7 +27,6 @@ function* updateLegacyCertSaga({
     const { data: response } = yield call(putUpdateLegacyCert, body);
     yield put(submitComplete({ challArray: reduxShape }));
     yield put(createFlashMessage(response));
-    console.log(response);
   } catch (e) {
     yield put(updateLegacyCertError(e));
     yield put(createFlashMessage(reallyWeirdErrorMessage));
