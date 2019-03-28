@@ -4,16 +4,9 @@ title: Cards
 # Bootstrap 4 Cards
 ------
 
-*  Using Bootstrap 4 you can create cards.
-
-*  Cards are bordered boxes with a bit of padding around the content inside them, which can be used to conveniently display a specific set of information.
-
 *  Using cards, you will be able to create beautiful, responsive elements such as blog posts, gallery items, shop products and much more. Cards are a key feature for a content-rich website and provide an easy solution for both design and responsiveness.
 
-
 ** To create a basic Bootstrap 4 card, you need to create a `<div>` container with the class `.card` and inside it another `<div>` container with the class of `.card-body` **
-
-
 
 ###### Code example:
 
@@ -68,9 +61,9 @@ This is some text within a card body.
 
 * There are two classes for this purpose: card-img-top, which places an image on the top of the card, and card-img-bottom, which places the image on the bottom, both of them fitting them to the rounded border of the card neatly.
 
-* These classes have to be used with the ```<img>``` tag inside a card to work properly.
+* These classes have to be used with the `<img>` tag inside a card to work properly.
 
-* Keep in mind, that if you want an image to span the entire width, you would add the image container outside of the ```<div>``` container with the card-body class.
+* Keep in mind, that if you want an image to span the entire width, you would add the image container outside of the `<div>` container with the card-body class.
 
 ###### This is how it will look in an html doc
 
@@ -92,7 +85,7 @@ This is some text within a card body.
 
 ### Cards Overlay
 ----
-* For making an image into the background of the card and displaying the text on top of it you need to use the class card-img-overlay on the content, which you want to display over the image, instead of using the card-body class.
+* For making an image into the background of the card and displaying the text on top of it you need to use the class `.card-img-overlay` on the content, which you want to display over the image, instead of using the `.card-body` class.
 
 ###### This is how it will look in an html doc
 
@@ -106,9 +99,11 @@ This is some text within a card body.
 ```
 ### Card is balanced with the image
 
+###### This is how it will look in an html doc
+
 ```html
 <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <img class="card-img-top" src="path/to/image/picture.png" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
@@ -116,9 +111,6 @@ This is some text within a card body.
 <!--You must set the image height on all cards -->
 ```
 
-
 #### More Information
 
 - [Bootstrap cards](https://getbootstrap.com/docs/4.1/components/card/)
-
-

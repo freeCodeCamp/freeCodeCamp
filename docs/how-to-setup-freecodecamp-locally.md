@@ -1,5 +1,7 @@
 # Set up freeCodeCamp locally
 
+As of 8 March 2019, please consider helping us test our new guide on how to [setup freeCodeCamp locally using Docker](/docs/how-to-setup-freecodecamp-locally-using-docker.md) instead of using this guide. It *should* result in fewer or no error but we won't know until enough devs try it.
+
 Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to be contributing regularly.
 
 Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
@@ -226,6 +228,16 @@ Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs t
 
 Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
+## How to Sign in when working locally
+
+Your local setup automatically populates a local user in the database. Clicking the sign in button will automatically authenticate you into the local application.
+
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a 404 page for the user portfolio when working locally. 
+
+Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
+
+![Image - How to sign in when working locally](https://user-images.githubusercontent.com/1884376/52650951-48922e80-2f11-11e9-9eee-360a25ad28ad.gif)
+
 ## Quick commands reference when working locally
 
 [Here is a quick reference](/docs/README.md) to a list of commands that you may need locally from time to time:
@@ -412,32 +424,7 @@ Follow these steps:
 
 ## Proposing a Pull Request (PR)
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
-
-    ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
-
-2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
-
-    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.
-
-    ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
-
-3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
-
-4. In the body of your PR include a more detailed summary of the changes you made and why.
-
-    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
-
-    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
-
-    - If the PR is meant to fix an existing bug/issue then, at the end of
-      your PR's description, append the keyword `closes` and #xxxx (where xxxx
-      is the issue number). Example: `closes #1337`. This tells GitHub to
-      automatically close the existing issue, if the PR is accepted and merged.
-
-5. Indicate if you have tested on a local copy of the site or not.
-
-    This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
+After you've committed your changes, check here for [how to open a Pull Request](/docs/how-to-open-a-pull-request.md).
 
 ## Getting Help
 

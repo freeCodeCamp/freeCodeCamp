@@ -7,7 +7,7 @@ localeTitle: Agregar un margen negativo a un elemento
 ---
 
 ## Descripción
-<section id="description"> El <code>margin</code> es una propiedad que controla la cantidad de espacio entre el <code>border</code> de un elemento y los elementos circundantes. Si establece el <code>margin</code> en un valor negativo, el elemento aumentará de tamaño. </section>
+<section id="description"> El margen <code>margin</code> es una propiedad que controla la cantidad de espacio entre el <code>border</code> de un elemento y los elementos alrededor. Si establece el <code>margin</code> en un valor negativo, el elemento aumentará de tamaño. </section>
 
 ## Instrucciones
 <section id="instructions"> Intente establecer el <code>margin</code> en un valor negativo como el del cuadro rojo. Cambie el <code>margin</code> del cuadro azul a <code>-15px</code> , para que llene todo el ancho horizontal del cuadro amarillo que lo rodea. </section>
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,7 +76,9 @@ tests:
 
 </section>
 
-## Solución
+
+## Solición
+
 <section id='solution'>
 
 ```js

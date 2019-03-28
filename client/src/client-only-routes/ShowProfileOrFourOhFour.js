@@ -25,10 +25,10 @@ const propTypes = {
   showLoading: PropTypes.bool
 };
 
-const createRequestedUserSelector = () => (state, { maybeUser }) =>
-  userByNameSelector(maybeUser)(state);
-const createIsSessionUserSelector = () => (state, { maybeUser }) =>
-  maybeUser === usernameSelector(state);
+const createRequestedUserSelector = () => (state, { maybeUser = '' }) =>
+  userByNameSelector(maybeUser.toLowerCase())(state);
+const createIsSessionUserSelector = () => (state, { maybeUser = '' }) =>
+  maybeUser.toLowerCase() === usernameSelector(state);
 
 const makeMapStateToProps = () => (state, props) => {
   const requestedUserSelector = createRequestedUserSelector();
@@ -59,11 +59,7 @@ class ShowFourOhFour extends Component {
     if (showLoading) {
       // We don't know if /:maybeUser is a user or not, we will show the loader
       // until we get a response from the API
-      return (
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      );
+      return <Loader fullScreen={true} />;
     }
     if (isEmpty(requestedUser)) {
       // We have a response from the API, but there is nothing in the store

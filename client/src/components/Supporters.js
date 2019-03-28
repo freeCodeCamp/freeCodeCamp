@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button, ProgressBar } from '@freecodecamp/react-bootstrap';
 
-import FullWidthRow from '../components/helpers/FullWidthRow';
-import Spacer from '../components/helpers/Spacer';
+import { FullWidthRow, Spacer } from '../components/helpers';
 
 import './supporters.css';
 
@@ -37,6 +36,7 @@ function Supporters({ isDonating, activeDonations }) {
         <FullWidthRow>
           <div id='supporter-progress-wrapper'>
             <ProgressBar max={supporterGoal} now={activeDonations} />
+            <Spacer />
             <div id='progress-label-wrapper'>
               <span className='progress-label'>
                 {donationsLocale} supporters out of {supportersLocale} supporter
@@ -70,12 +70,7 @@ function Supporters({ isDonating, activeDonations }) {
       </FullWidthRow>
       {isDonating ? null : (
         <FullWidthRow>
-          <Button
-            bsSize='lg'
-            bsStyle='primary'
-            href='https://donate.freecodecamp.org'
-            target='_blank'
-          >
+          <Button bsSize='lg' bsStyle='primary' href='/donate' target='_blank'>
             Click here to become a Supporter
           </Button>
         </FullWidthRow>

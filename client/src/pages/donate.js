@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { StripeProvider, Elements } from 'react-stripe-elements';
@@ -56,7 +55,7 @@ class DonatePage extends Component {
   render() {
     return (
       <Fragment>
-        <Helmet title='Support the freeCodeCamp.org nonprofit' />
+        <Helmet title='Support our nonprofit | freeCodeCamp.org' />
         <Spacer />
         <Row>
           <Col sm={8} smOffset={2} xs={12}>

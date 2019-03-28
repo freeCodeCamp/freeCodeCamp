@@ -4,9 +4,7 @@ import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
-import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
-import FullWidthRow from '../helpers/FullWidthRow';
-import Spacer from '../helpers/Spacer';
+import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
 import Camper from './components/Camper';
 import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
@@ -34,7 +32,7 @@ const propTypes = {
 function TakeMeToTheChallenges() {
   return (
     <CurrentChallengeLink>
-      <Button block={true} bsSize='lg' bsStyle='primary'>
+      <Button block={true} bsSize='lg' bsStyle='primary' className='btn-invert'>
         Take me to the Challenges
       </Button>
     </CurrentChallengeLink>
@@ -45,7 +43,7 @@ function renderIsLocked(username) {
   return (
     <Fragment>
       <Helmet>
-        <title>{username} | freeCodeCamp.org</title>
+        <title>Profile | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size={2} />
       <Grid>
@@ -64,6 +62,7 @@ function renderIsLocked(username) {
         </FullWidthRow>
         <FullWidthRow>
           <TakeMeToTheChallenges />
+          <Spacer />
         </FullWidthRow>
       </Grid>
     </Fragment>
@@ -132,7 +131,7 @@ function Profile({ user, isSessionUser }) {
   return (
     <Fragment>
       <Helmet>
-        <title>{username} | freeCodeCamp.org</title>
+        <title>Profile | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size={2} />
       <Grid>

@@ -41,16 +41,20 @@ title: JavaScript Tutorials and Other Resources
 *   [The Modern JavaScript Tutorial](https://javascript.info/)
 *   [Introduction to JavaScript: First Steps](https://www.educative.io/collection/5679346740101120/5720605454237696)
 *   [JavaScript for Cats](http://jsforcats.com/)
-*   [Javascript.com by Pluralsight](https://www.javascript.com/learn)
+*   [JavaScript.com by Pluralsight](https://www.javascript.com/learn)
 *   [SoloLearn JavaScript Tutorial](https://www.sololearn.com/Course/JavaScript/)
 *   [GeeksforGeeks](https://www.geeksforgeeks.org/javascript-tutorial/)
+*   [Udacity Intro to JavaScript](https://eu.udacity.com/course/intro-to-javascript--ud803)
+*   [Tutorial to React](https://reactjs.org/tutorial/tutorial.html)
+*   [Introduction to Babel](https://flaviocopes.com/babel/)
+*   [Khan Academy - Intro to JS](https://www.khanacademy.org/computing/computer-programming/programming)
 
 ## Video Tutorials
 
 *   [Derek Banas - Learn JS In One Video](https://www.youtube.com/watch?v=fju9ii8YsGs)
 *   [Derek Banas - Object Oriented JavaScript](https://www.youtube.com/watch?v=O8wwnhdkPE4)
 *   [JavaScript Fundamentals for Absolute Beginners 2018](https://www.youtube.com/watch?v=YMvzfQSI6pQ)
-*   [Udemy - Javascript Understanding the Weird Parts (_first 3.5 hrs_)](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts)
+*   [Udemy - JavaScript Understanding the Weird Parts (_first 3.5 hrs_)](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts)
 *   [Functional programming in JavaScript](https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
 *   [Douglas Crockford's Videos](https://www.youtube.com/watch?v=v2ifWcnQs6M&index=1&list=PL62E185BB8577B63D)
 *   [Gordon Zhu - Practical JavaScript](https://watchandcode.com/p/practical-javascript)
@@ -71,7 +75,7 @@ title: JavaScript Tutorials and Other Resources
 
 *   [WebStorm](https://www.jetbrains.com/webstorm)
 
-    A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by JetBrains and modelled after their IntelliJ Java IDE.
+    A full-feature IDE for JavaScript, including code completion and support for live linting, version control, and testing. Made by JetBrains and modelled after their IntelliJ Java IDE.
 
 *   <a href='http://brackets.io' target='_blank' rel='nofollow'>Brackets</a>
 
@@ -83,9 +87,12 @@ title: JavaScript Tutorials and Other Resources
     
 *   [Brackets](http://brackets.io)
 
+    Lightweight text editor featuring inline editors, live previews, and allows you to quick edit and live highlight with your LESS and SCSS files.
+
 *   [Sublime Text](https://www.sublimetext.com)
     Sublime Text is a cross-platform editor featuring a Python API. Free to download and evaluate, but requires a license for continued use.
 
+    A cross-platform editor with a Python API. It features many shortcuts, key bindings and visual customization.
   
 ## Online Editors
 
@@ -121,17 +128,21 @@ title: JavaScript Tutorials and Other Resources
 ## Blogs
 
 *   [JavaScript on Medium](https://medium.com/topic/javascript)
+*   [The Cost Of JavaScript In 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
 *   [Codementor JavaScript Tutorials and Insights](https://www.codementor.io/community/topic/javascript)
 *   [2ality](https://www.2ality.com)
 *   [David Walsh](https://davidwalsh.name)
 *   [SuperheroJS](http://superherojs.com)
 *   [The 50 Best Websites to Learn JavaScript](http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/)
 *   [Perfection Kills](http://perfectionkills.com) - Not been updated since 2015
+*   [Top mentioned Javascript books of Reddit, Hacker News and Stack Overflow](https://medium.com/@jadeydi/best-javascript-books-should-be-read-which-are-recommended-by-hundreds-people-eeb87353f10d)
 
 
 ## Podcasts
 
 *   [JavaScript Jabber](https://devchat.tv/js-jabber)
+*   [Syntax FM](https://syntax.fm/)
+*   [Fulstack Radio](http://www.fullstackradio.com//)
 
 
 ## Free JavaScript Books
@@ -140,7 +151,7 @@ title: JavaScript Tutorials and Other Resources
     
     6 books on JavaScript by Kyle Simpson. From beginner to advanced. 
     
-*   [Eloquent Javascript](https://eloquentjavascript.net/)  
+*   [Eloquent JavaScript](https://eloquentjavascript.net/)  
 
     Fantastic, thorough introduction to the basics and features of JavaScript, complete with in-browser interactive code
     
@@ -154,8 +165,8 @@ title: JavaScript Tutorials and Other Resources
 
 *   [Learning JavaScript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book)
 *   [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-*   [Javascript Allonge Six](https://leanpub.com/javascriptallongesix/read)
+*   [JavaScript Allonge Six](https://leanpub.com/javascriptallongesix/read)
 *   [The JavaScript Way](https://github.com/bpesquet/thejsway)
 *   [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet)
-*   [Speaking Javascript](http://speakingjs.com/es5)
+*   [Speaking JavaScript](http://speakingjs.com/es5)
 *   [Exploring ES6](http://exploringjs.com/es6)

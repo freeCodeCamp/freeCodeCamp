@@ -26,7 +26,7 @@ header {
   align-items: center;
 }
 
-#top-nav img {
+#top-nav .nav-logo {
   max-height: 25px;
   min-width: 35px;
   margin: 0 5px;
@@ -41,41 +41,22 @@ header {
   background-color: #006400;
 }
 
-#top-right-nav a,
-#top-right-nav img {
-  max-height: var(--header-height);
-}
-
-#top-right-nav > li > a {
-  padding: 8px 15px;
-}
-
 #top-right-nav li {
   margin: 0;
 }
 
-#top-right-nav a {
+.top-right-nav-link {
+  max-height: var(--header-height);
   color: #fff;
   font-size: 18px;
+  padding: 8px 15px;
 }
 
-#top-right-nav a:hover,
-#top-right-nav a:focus {
+.top-right-nav-link:hover,
+.top-right-nav-link:focus,
+.top-right-nav-link:active {
   background-color: #fff;
   color: #006400;
-}
-
-#top-right-nav li.user-state-link,
-#top-right-nav li.user-state-link:hover,
-#top-right-nav li.user-state-link:focus,
-#top-right-nav li.user-state-link > a,
-#top-right-nav li.user-state-link > a:hover,
-#top-right-nav li.user-state-link > a:focus {
-  background-color: #006400;
-}
-
-#top-right-nav a:hover,
-#top-right-nav a:focus {
   text-decoration: none;
 }
 
@@ -175,7 +156,26 @@ header {
 }
 
 #top-nav .menu-button {
-  display: none;
+  color: white;
+  background-color: transparent;
+  margin: 0 20px 0 12px;
+  padding: 2px 14px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+#top-nav .menu-button-open {
+  background: white;
+  color: #006400;
+}
+
+#top-right-nav .signup-btn,
+#top-right-nav .settings-link {
+  margin: 0 15px;
+}
+
+#top-right-nav .user-avatar {
+  max-height: calc(var(--header-height) - 4px);
 }
 
 @media (max-width: 734px) {
@@ -183,23 +183,9 @@ header {
     padding: 0;
   }
 
-  #top-nav .menu-button {
-    display: block;
-    margin: 0 20px 0 12px;
-    padding: 2px 14px;
-    border: 1px solid #fff;
-    border-radius: 3px;
-    cursor: pointer;
-    color: #fff;
-  }
-
-  .opened #top-right-nav {
-    top: var(--header-height);
-  }
-
   #top-right-nav {
     position: absolute;
-    top: -300px;
+    top: var(--header-height);
     flex-direction: column;
     width: 100vw;
     height: min-content;
@@ -207,17 +193,23 @@ header {
     padding: 10px 0;
   }
 
-  #top-nav img {
+  #top-nav .nav-logo {
     margin: 0 0 0 10px;
   }
 }
 
 @media (max-width: 420px) {
-  #top-nav img {
+  #top-nav .nav-logo {
     margin: 0 0 0 5px;
   }
 
   #top-nav .menu-button {
     margin: 0 10px 0 4px;
+  }
+
+  .ais-Hits {
+    background-color: #fff;
+    left: 0.5em;
+    top: 2.4em;
   }
 }

@@ -1,20 +1,43 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import Media from 'react-media';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
+import Media from 'react-responsive';
 import FCCSearch from 'react-freecodecamp-search';
 
 import NavLogo from './components/NavLogo';
 import UserState from './components/UserState';
+import { Link } from '../helpers';
 
 import './header.css';
+
+import {
+  toggleDisplayMenu,
+  displayMenuSelector
+} from '../layouts/components/guide/redux';
+
+const mapStateToProps = createSelector(
+  displayMenuSelector,
+  displayMenu => ({
+    displayMenu
+  })
+);
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ toggleDisplayMenu }, dispatch);
+
+const propTypes = {
+  disableMenuButtonBehavior: PropTypes.bool,
+  disableSettings: PropTypes.bool,
+  displayMenu: PropTypes.bool,
+  mediaBreakpoint: PropTypes.string.isRequired,
+  toggleDisplayMenu: PropTypes.func.isRequired
+};
 
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isMenuOpened: false
-    };
     this.menuButtonRef = React.createRef();
   }
 
@@ -26,69 +49,97 @@ class Header extends Component {
     document.removeEventListener('click', this.handleClickOutside);
   }
 
-  toggleClass = () => {
-    this.setState({
-      isMenuOpened: !this.state.isMenuOpened
-    });
-  };
-
   handleClickOutside = event => {
     if (
-      this.state.isMenuOpened &&
+      !this.props.disableMenuButtonBehavior &&
+      this.props.displayMenu &&
+      this.menuButtonRef.current &&
       !this.menuButtonRef.current.contains(event.target)
     ) {
-      this.toggleClass();
+      this.props.toggleDisplayMenu();
     }
   };
 
   handleMediaChange = matches => {
-    if (!matches && this.state.isMenuOpened) {
-      this.toggleClass();
+    if (!matches && this.props.displayMenu) {
+      this.props.toggleDisplayMenu();
     }
   };
 
   render() {
-    const { disableSettings } = this.props;
+    const {
+      disableMenuButtonBehavior,
+      disableSettings,
+      displayMenu,
+      mediaBreakpoint,
+      toggleDisplayMenu
+    } = this.props;
     return (
-      <header className={this.state.isMenuOpened ? 'opened' : null}>
+      <header>
         <nav id='top-nav'>
           <Link className='home-link' to='/'>
             <NavLogo />
           </Link>
           {disableSettings ? null : <FCCSearch />}
-          <ul id='top-right-nav'>
-            <li>
-              <Link to='/learn'>Learn</Link>
-            </li>
-            <li>
-              <a href='/forum' rel='noopener noreferrer' target='_blank'>
-                Forum
-              </a>
-            </li>
-            <li>
-              <a href='/news' rel='noopener noreferrer' target='_blank'>
-                News
-              </a>
-            </li>
-            <li className='user-state-link'>
-              <UserState disableSettings={disableSettings} />
-            </li>
-          </ul>
-          <span
-            className='menu-button'
-            onClick={this.toggleClass}
-            ref={this.menuButtonRef}
-          >
-            Menu
-          </span>
-          <Media onChange={this.handleMediaChange} query='(max-width: 734px)' />
+          <Media maxWidth={mediaBreakpoint} onChange={this.handleMediaChange}>
+            {matches => [
+              matches && (
+                <button
+                  aria-expanded={displayMenu}
+                  className={
+                    'menu-button' + (displayMenu ? ' menu-button-open' : '')
+                  }
+                  key='menu-button'
+                  onClick={toggleDisplayMenu}
+                  ref={this.menuButtonRef}
+                >
+                  Menu
+                </button>
+              ),
+              (!matches || (displayMenu && !disableMenuButtonBehavior)) && (
+                <ul id='top-right-nav' key='top-right-nav'>
+                  <li>
+                    <Link className='top-right-nav-link' to='/learn'>
+                      Learn
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className='top-right-nav-link'
+                      external={true}
+                      to='/forum'
+                    >
+                      Forum
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className='top-right-nav-link'
+                      external={true}
+                      to='/news'
+                    >
+                      News
+                    </Link>
+                  </li>
+                  <li>
+                    <UserState disableSettings={disableSettings} />
+                  </li>
+                </ul>
+              )
+            ]}
+          </Media>
         </nav>
       </header>
     );
   }
 }
 
-Header.propTypes = {
-  disableSettings: PropTypes.bool
+Header.propTypes = propTypes;
+Header.defaultProps = {
+  mediaBreakpoint: '734px'
 };
-export default Header;
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

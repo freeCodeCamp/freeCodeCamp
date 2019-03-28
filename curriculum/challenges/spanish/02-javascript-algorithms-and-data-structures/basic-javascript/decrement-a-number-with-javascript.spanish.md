@@ -7,7 +7,7 @@ localeTitle: Disminuir un número con JavaScript
 ---
 
 ## Description
-<section id="description"> Puede <dfn>disminuir</dfn> o disminuir fácilmente una variable por una con el operador <code>--</code> . <code>i--;</code> es el equivalente de <code>i = i - 1;</code> <strong>Nota</strong> <br> La línea entera se convierte en <code>i--;</code> , eliminando la necesidad del signo igual. </section>
+<section id="description"> Usted puede <dfn>disminuir</dfn> o reducir fácilmente una variable por uno (1) con el operador <code>--</code> . <code>i--;</code> es el equivalente de <code>i = i - 1;</code><strong>Nota</strong> <br> La línea entera se convierte en <code>i--;</code> , eliminando la necesidad del signo igual. </section>
 
 ## Instructions
 <section id="instructions"> Cambie el código para usar el operador <code>--</code> en <code>myVar</code> . </section>

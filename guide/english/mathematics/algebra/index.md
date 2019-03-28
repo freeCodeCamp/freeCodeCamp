@@ -14,6 +14,7 @@ Linear algebra: the study of vector spaces and linear mappings.
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Wikipedia article](https://en.wikipedia.org/wiki/Algebra)  
 [Learn algebra on Khan Academy](https://www.khanacademy.org/math/algebra-home)
+[Learn  Algebra on Math Planet](https://www.mathplanet.com/education/pre-algebra/introducing-algebra)
 
 #### Resources:  
 - [Definition](https://www.merriam-webster.com/dictionary/algebra)  
