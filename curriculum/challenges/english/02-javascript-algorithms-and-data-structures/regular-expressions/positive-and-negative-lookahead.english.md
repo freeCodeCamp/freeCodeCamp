@@ -34,6 +34,8 @@ tests:
     testString: assert(!pwRegex.test("ast12"));
   - text: Your regex should not match the string <code>banan1</code>
     testString: assert(!pwRegex.test("banan1"));
+  - text: Your regex should not match the string if it starts with a number
+    testString: assert(!pwRegex.test("0ban12")||!pwRegex.test("1ban12")||!pwRegex.test("2ban12")||!pwRegex.test("3ban12")||!pwRegex.test("4ban12")||!pwRegex.test("5ban12")||!pwRegex.test("6ban12")||!pwRegex.test("7ban12")||!pwRegex.test("8ban12")||!pwRegex.test("9ban12")||);
   - text: Your regex should match the string <code>bana12</code>
     testString: assert(pwRegex.test("bana12"));
   - text: Your regex should match the string <code>abc123</code>
