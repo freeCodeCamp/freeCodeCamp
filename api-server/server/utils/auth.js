@@ -37,6 +37,7 @@ function createProfileAttributesFromGithub(profile) {
   return {
     name,
     username: username.toLowerCase(),
+    displayUsername: username,
     location,
     bio,
     website,

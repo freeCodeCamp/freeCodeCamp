@@ -52,6 +52,7 @@ const propTypes = {
         files: PropTypes.array
       })
     ),
+    displayUsername: PropTypes.string,
     email: PropTypes.string,
     githubProfile: PropTypes.string,
     is2018DataVisCert: PropTypes.bool,
@@ -130,6 +131,7 @@ function ShowSettings(props) {
     toggleNightMode,
     user: {
       completedChallenges,
+      displayUsername,
       email,
       is2018DataVisCert,
       isApisMicroservicesCert,
@@ -203,7 +205,9 @@ function ShowSettings(props) {
             </Button>
           </FullWidthRow>
           <Spacer />
-          <h1 className='text-center'>{`Account Settings for ${username}`}</h1>
+          <h1 className='text-center'>{`Account Settings for ${
+            displayUsername ? displayUsername : username
+          }`}</h1>
           <About
             about={about}
             currentTheme={theme}
@@ -213,7 +217,7 @@ function ShowSettings(props) {
             points={points}
             submitNewAbout={submitNewAbout}
             toggleNightMode={toggleNightMode}
-            username={username}
+            username={displayUsername ? displayUsername : username}
           />
           <Spacer />
           <Privacy />

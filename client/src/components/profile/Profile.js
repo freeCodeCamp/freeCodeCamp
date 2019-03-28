@@ -25,7 +25,8 @@ const propTypes = {
       showPortfolio: PropTypes.bool,
       showTimeLine: PropTypes.bool
     }),
-    username: PropTypes.string
+    username: PropTypes.string,
+    displayUsername: PropTypes.string
   })
 };
 
@@ -122,7 +123,8 @@ function Profile({ user, isSessionUser }) {
     picture,
     portfolio,
     about,
-    yearsTopContributor
+    yearsTopContributor,
+    displayUsername
   } = user;
 
   if (isLocked) {
@@ -138,6 +140,7 @@ function Profile({ user, isSessionUser }) {
         {isSessionUser ? renderSettingsButton() : null}
         <Camper
           about={showAbout && about}
+          displayUsername={displayUsername}
           githubProfile={githubProfile}
           isGithub={isGithub}
           isLinkedIn={isLinkedIn}
@@ -160,6 +163,7 @@ function Profile({ user, isSessionUser }) {
           <Timeline
             className='timelime-container'
             completedMap={completedChallenges}
+            displayUsername={displayUsername}
             username={username}
           />
         ) : null}

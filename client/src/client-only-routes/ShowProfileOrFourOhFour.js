@@ -20,6 +20,7 @@ const propTypes = {
   maybeUser: PropTypes.string,
   requestedUser: PropTypes.shape({
     username: PropTypes.string,
+    displayUsername: PropTypes.string,
     profileUI: PropTypes.object
   }),
   showLoading: PropTypes.bool

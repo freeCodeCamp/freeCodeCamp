@@ -20,6 +20,7 @@ import BlockSaveButton from '../helpers/form/BlockSaveButton';
 import FullWidthRow from '../helpers/FullWidthRow';
 
 const propTypes = {
+  displayUsername: PropTypes.string,
   isValidUsername: PropTypes.bool,
   submitNewUsername: PropTypes.func.isRequired,
   username: PropTypes.string,
@@ -59,6 +60,7 @@ class UsernameSettings extends Component {
     this.state = {
       isFormPristine: true,
       formValue: props.username,
+      formDisplayValue: props.displayUsername,
       characterValidation: { valid: false, error: null },
       submitClicked: false
     };
@@ -87,21 +89,23 @@ class UsernameSettings extends Component {
     e.preventDefault();
     const { submitNewUsername } = this.props;
     const {
-      formValue,
+      formDisplayValue,
       characterValidation: { valid }
     } = this.state;
 
     return this.setState({ submitClicked: true }, () =>
-      valid ? submitNewUsername(formValue) : null
+      valid ? submitNewUsername(formDisplayValue) : null
     );
   }
 
   handleChange(e) {
     e.preventDefault();
     const { username, validateUsername } = this.props;
-    const newValue = e.target.value.toLowerCase();
+    const newDisplayUsernameValue = e.target.value;
+    const newValue = newDisplayUsernameValue.toLowerCase();
     return this.setState(
       {
+        formDisplayValue: newDisplayUsernameValue,
         formValue: newValue,
         isFormPristine: username === newValue,
         characterValidation: this.validateFormInput(newValue)
@@ -162,7 +166,7 @@ class UsernameSettings extends Component {
   render() {
     const {
       isFormPristine,
-      formValue,
+      formDisplayValue,
       characterValidation: { valid, error },
       submitClicked
     } = this.state;
@@ -179,7 +183,7 @@ class UsernameSettings extends Component {
               <FormControl
                 name='username-settings'
                 onChange={this.handleChange}
-                value={formValue}
+                value={formDisplayValue}
               />
             </FormGroup>
           </FullWidthRow>

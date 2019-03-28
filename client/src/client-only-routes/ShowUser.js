@@ -23,6 +23,7 @@ import {
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
 const propTypes = {
+  displayUsername: PropTypes.string,
   email: PropTypes.string,
   isSignedIn: PropTypes.bool,
   reportUser: PropTypes.func.isRequired,

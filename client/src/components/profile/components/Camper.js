@@ -10,6 +10,7 @@ import './camper.css';
 
 const propTypes = {
   about: PropTypes.string,
+  displayUsername: PropTypes.string,
   githubProfile: PropTypes.string,
   isGithub: PropTypes.bool,
   isLinkedIn: PropTypes.bool,
@@ -47,6 +48,7 @@ function joinArray(array) {
 function Camper({
   name,
   username,
+  displayUsername,
   location,
   points,
   picture,
@@ -66,7 +68,7 @@ function Camper({
       <Row>
         <Col className='avatar-container' xs={12}>
           <Image
-            alt={username + "'s avatar"}
+            alt={displayUsername + "'s avatar"}
             className='avatar'
             responsive={true}
             src={picture}
@@ -85,7 +87,12 @@ function Camper({
         website={website}
       />
       <br />
-      <h2 className='text-center username'>@{username}</h2>
+      <h2 className='text-center username'>
+        @{displayUsername ? displayUsername : username}
+      </h2>
+      <h2 className='text-center username'>
+        @Username(for testing only): {username}
+      </h2>
       {name && <p className='text-center name'>{name}</p>}
       {location && <p className='text-center location'>{location}</p>}
       {about && <p className='bio text-center'>{about}</p>}

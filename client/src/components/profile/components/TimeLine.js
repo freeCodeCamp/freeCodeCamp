@@ -41,6 +41,7 @@ const propTypes = {
       )
     })
   ),
+  displayUsername: PropTypes.string,
   fetchIdToNameMap: PropTypes.func.isRequired,
   idToNameMap: PropTypes.objectOf(PropTypes.string),
   username: PropTypes.string
@@ -104,7 +105,7 @@ class Timeline extends Component {
   }
 
   render() {
-    const { completedMap, idToNameMap, username } = this.props;
+    const { completedMap, idToNameMap, username, displayUsername } = this.props;
     const { solutionToView: id, solutionOpen } = this.state;
     if (isEmpty(idToNameMap)) {
       return null;
@@ -143,7 +144,9 @@ class Timeline extends Component {
           >
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
-                {`${username}'s Solution to ${blockNameify(idToNameMap[id])}`}
+                {`${
+                  displayUsername ? displayUsername : username
+                }'s Solution to ${blockNameify(idToNameMap[id])}`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
