@@ -143,7 +143,7 @@ How many continued fractions for N ≤ 10000 have an odd period?
 ```yml
 tests:
   - text: <code>euler64()</code> should return 1322.
-    testString: 'assert.strictEqual(euler64(), 1322, "<code>euler64()</code> should return 1322.");'
+    testString: assert.strictEqual(euler64(), 1322, '<code>euler64()</code> should return 1322.');
 
 ```
 

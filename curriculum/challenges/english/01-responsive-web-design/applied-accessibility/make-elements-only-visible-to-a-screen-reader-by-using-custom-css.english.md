@@ -11,7 +11,7 @@ Have you noticed that all of the applied accessibility challenges so far haven't
 However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.
 Here's an example of the CSS rules that accomplish this:
 <blockquote>.sr-only {<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;left: -10000px;<br>&nbsp;&nbsp;width: 1px;<br>&nbsp;&nbsp;height: 1px;<br>&nbsp;&nbsp;top: auto;<br>&nbsp;&nbsp;overflow: hidden;<br>}</blockquote>
-<strong>Note</strong><br>The following CSS approaches will NOT do the same thing:
+<strong>Note:</strong> The following CSS approaches will NOT do the same thing:
 <ul>
 <li><code>display: none;</code> or <code>visibility: hidden;</code> hides content for everyone, including screen reader users</li>
 <li>Zero values for pixel sizes, such as <code>width: 0px; height: 0px;</code> removes that element from the flow of your document, meaning screen readers will ignore it</li>
@@ -29,13 +29,13 @@ Camper Cat created a really cool stacked bar chart for his training page, and pu
 ```yml
 tests:
   - text: Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.
-    testString: 'assert($(".sr-only").css("position") == "absolute", "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.");'
+    testString: assert($('.sr-only').css('position') == 'absolute', 'Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.');
   - text: Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.
-    testString: 'assert($(".sr-only").css("left") == "-10000px", "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.");'
+    testString: assert($('.sr-only').css('left') == '-10000px', 'Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.');
   - text: Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.
-    testString: 'assert(code.match(/width:\s*?1px/gi), "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
+    testString: assert(code.match(/width:\s*?1px/gi), 'Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.');
   - text: Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.
-    testString: 'assert(code.match(/height:\s*?1px/gi), "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
+    testString: assert(code.match(/height:\s*?1px/gi), 'Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.');
 
 ```
 

@@ -1,5 +1,5 @@
 ---
-  title : Features of BlockTech
+title: Features of BlockTech
 localeTitle: BlockTech的特点
 ---
 ## 区块链技术的特点

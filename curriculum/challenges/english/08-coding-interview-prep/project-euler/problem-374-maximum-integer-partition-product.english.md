@@ -39,7 +39,7 @@ Give your answer modulo 982451653, the 50 millionth prime.
 ```yml
 tests:
   - text: <code>euler374()</code> should return 334420941.
-    testString: 'assert.strictEqual(euler374(), 334420941, "<code>euler374()</code> should return 334420941.");'
+    testString: assert.strictEqual(euler374(), 334420941, '<code>euler374()</code> should return 334420941.');
 
 ```
 

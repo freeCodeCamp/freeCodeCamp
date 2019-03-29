@@ -13,7 +13,7 @@ You can use the <code>hr</code> tag to add a horizontal line across the width of
 ## Instructions
 <section id='instructions'>
 Add an <code>hr</code> tag underneath the <code>h4</code> which contains the card title.
-<strong>Note</strong><br>In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag.
+<strong>Note:</strong> In HTML, <code>hr</code> is a self-closing tag, and therefore doesn't need a separate closing tag.
 </section>
 
 ## Tests
@@ -22,9 +22,9 @@ Add an <code>hr</code> tag underneath the <code>h4</code> which contains the car
 ```yml
 tests:
   - text: Your code should add an <code>hr</code> tag to the markup.
-    testString: 'assert($("hr").length == 1, "Your code should add an <code>hr</code> tag to the markup.");'
+    testString: assert($('hr').length == 1, 'Your code should add an <code>hr</code> tag to the markup.');
   - text: The <code>hr</code> tag should come between the title and the paragraph.
-    testString: 'assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), "The <code>hr</code> tag should come between the title and the paragraph.");'
+    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), 'The <code>hr</code> tag should come between the title and the paragraph.');
 
 ```
 

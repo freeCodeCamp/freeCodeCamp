@@ -1,5 +1,8 @@
-##localeTitle: undefined
- HTTP
+---
+title: HTTP
+localeTitle: HTTP
+---
+## HTTP
 
 Node.js有一组内置模块，无需进一步安装即可使用。类似地， **HTTP模块**包含通过超文本传输​​协议（HTTP）传输数据所需的一组功能。
 
@@ -8,7 +11,7 @@ HTTP模块可以创建一个HTTP服务器，该服务器侦听服务器端口并
 要包含模块，请使用`require()`函数和模块名称。
 
 ```javascript
-const http = require('http'); 
+const http = require('http');
 ```
 
 ## Node.js作为Web服务器
@@ -16,16 +19,16 @@ const http = require('http');
 `createServer()`方法用于创建HTTP服务器。 `res.writeHead()`方法的第一个参数是状态代码， `200`表示一切正常，第二个参数是包含响应头的对象。
 
 ```javascript
-const http = require('http'); 
- 
- //create a server object: 
- http.createServer((req, res) => { 
-  res.writeHead(200, {'Content-Type': 'text/plain'}); 
-  res.write('Hello World!'); //write a response to the client 
-  res.end(); //end the response 
- }).listen(8000); //the server object listens on port 8000 
- 
- console.log("Server is listening on port no : 8000"); 
+const http = require('http');
+
+ //create a server object:
+ http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+ }).listen(8000); //the server object listens on port 8000
+
+ console.log("Server is listening on port no : 8000");
 ```
 
 ### 执行步骤：
