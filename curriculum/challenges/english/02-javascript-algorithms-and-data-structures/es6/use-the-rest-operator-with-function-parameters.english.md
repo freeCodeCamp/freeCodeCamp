@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 In order to help us create more flexible functions, ES6 introduces the <dfn>rest operator</dfn> for function parameters. With the rest operator, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
 Check out this code:
-<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return "You have passed " + args.length + " arguments.";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>
+<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return "You have passed " + args.length + " arguments.";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments.<br>console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>
 The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.
 </section>
 
@@ -44,7 +44,7 @@ tests:
 
 ```js
 const sum = (x, y, z) => {
-  const args = [ x, y, z ];
+  const args = [x, y, z];
   return args.reduce((a, b) => a + b, 0);
 }
 console.log(sum(1, 2, 3)); // 6
