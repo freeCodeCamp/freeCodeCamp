@@ -39,6 +39,31 @@ You will need to use everything you know about string manipulation to get the la
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
     function translatePigLatin(str) {
+      let consonantRegex = /^[^aeiou]+/;
+      let myConsonants = str.match(consonantRegex);
+      return (myConsonants !== null) ? str.replace(consonantRegex, "").concat(myConsonants).concat("ay") : str.concat("way");
+    }
+
+    translatePigLatin("consonant");
+
+
+### Code Explanation:
+*   start at beginning and get longest match of everything not a vowel (consonants)
+*   if regex pattern found, it saves the match; else, it returns null
+
+*   if regex pattern found (starts with consonants), it deletes match, adds the match to the end, and adds "ay" to the end
+*   if regex pattern not found (starts with vowels), it just adds "way" to the ending
+
+#### Relevant Links
+
+*   <a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-numbers-and-letters-of-the-alphabet/" target='_blank' rel='nofollow'>Regex Match</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-conditional-ternary-operator/' target='_blank' rel='nofollow'>Ternary Operator</a>
+*   <a href='https://guide.freecodecamp.org/javascript/standard-objects/string/string-prototype-concat/' target='_blank' rel='nofollow'>concat()</a>
+
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+
+    function translatePigLatin(str) {
       // Create variables to be used
       var pigLatin = '';
       var regex = /[aeiou]/gi;
