@@ -12,13 +12,11 @@ To set up Passport for use in your project, you will need to add it as a depende
 In addition, add Express-session as a dependency now as well. Express-session has a ton of advanced features you can use but for now we're just going to use the basics! <code>"express-session": "^1.15.0"</code>
 You will need to set up the session settings now and initialize Passport. Be sure to first create the variables 'session' and 'passport' to require 'express-session' and 'passport' respectively.
 To set up your express app to use use the session we'll define just a few basic options. Be sure to add 'SESSION_SECRET' to your .env file and give it a random value. This is used to compute the hash used to encrypt your cookie!
-<blockquote>
-app.use(session({<br>
-  secret: process.env.SESSION_SECRET,<br>
-  resave: true,<br>
-  saveUninitialized: true,<br>
-}));
-</blockquote>
+<pre>app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+}));</pre>
 As well you can go ahead and tell your express app to <b>use</b> 'passport.initialize()' and 'passport.session()'. (For example, <code>app.use(passport.initialize());</code>)
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/338a9c5a326923c3826a666d430e65c3'>here</a>.
 </section>
