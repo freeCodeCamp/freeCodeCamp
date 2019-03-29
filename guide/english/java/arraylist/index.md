@@ -53,18 +53,21 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
 
 **Modify/update element at specified index**
-   ```java
-   variable_name.set(index_number, element);
+
+  ```java
+  variable_name.set(index_number,element);
   ```
   
 **Get the size of the list**
-   ```java
-   variable_name.size();
+ 
+ ```java
+  variable_name.size();
   ```
   
 **Get a sublist of the list**
-   ```java
-   variable_name.subList(int fromIndex, int toIndex);
+ 
+ ```java
+  variable_name.subList(int fromIndex, int toIndex);
   ```
   
 **Reverse elements in list**  
@@ -75,15 +78,15 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
   
 **Sort elements in ascending order**
-```java
+  ```java
   Collections.sort(variable_name);
   ```
   
 **Sort elements in descending order**
-   ```java
-  Collections.sort(variable_name, Collections.reverseOrder());
- ```
 
+  ```java
+  Collections.sort(variable_name, Collections.reverseOrder());
+  ```
 
 **Creating Array from ArrayList**
 
@@ -99,10 +102,9 @@ for(Object obj : arr) {
 }
 ```
     
-  An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways, but it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
-
+An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways, but it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
-  So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
+So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
  
  ## Basic Big O for ArrayList Methods:
  

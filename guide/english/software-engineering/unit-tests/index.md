@@ -19,7 +19,7 @@ A unit is often seen as the smallest piece of your code that can be accurately t
 - **Fewer bugs** - Substantial research suggests that applying testing to an application can reduce production bug density by 40% — 80%.
 - **Cost Reduction** - It's a very early phase in software testing so eventually it reduces cost of Testing as defects are captured in the early stage.
 
-### Example(In Javascript)
+### Example(In JavaScript)
 Suppose there is a function written in file **add.js**
 ```javascript
 var add = function(number1, number2){

@@ -133,5 +133,5 @@ There are limitations to this for example, the int 3 and the string '3' will be 
 See the guide on [Closures](https://guide.freecodecamp.org/javascript/closures) for more information on how `multiplyByTwo` keeps a reference to `num1` in the example above.
 
 - [More info about Closures](https://eloquentjavascript.net/05_higher_order.html)
-- [Eloquent Javascript](https://eloquentjavascript.net/05_higher_order.html)
+- [Eloquent JavaScript](https://eloquentjavascript.net/05_higher_order.html)
 - [Medium Article](https://medium.freecodecamp.org/higher-order-functions-in-javascript-d9101f9cf528)
