@@ -17,7 +17,7 @@ end
 There are many many different ways in which you can execute a for loop or loop in Ruby, another such example would be:
 
 ```
-element.each do |element|
+array.each do |element|
   puts element
 end
 ```
@@ -27,5 +27,5 @@ This would achieve exactly the same results as the aforementioned for loop, it i
 To go one step further, we can write the above loop in the following way:
 
 ```
-element.each do { |element| puts element }
+array.each do |element| puts element end
 ```
