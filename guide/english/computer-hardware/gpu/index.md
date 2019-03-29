@@ -1,7 +1,10 @@
 ---
 title: GPU
 ---
-## GPU
+
+# GPU
+
+![block diagram of gpu](https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Generic_block_diagram_of_a_GPU.svg/650px-Generic_block_diagram_of_a_GPU.svg.png "By ScotXW - Own work, CC0, https://commons.wikimedia.org/w/index.php?curid=61055349")
 
 GPU stands for Graphics Processing Unit. Although they are not nessesary for a computer to function, many computers have a dedicated graphics card for better performence rendering videos or playing video games.
 
