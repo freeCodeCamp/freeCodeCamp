@@ -3,9 +3,9 @@ title: Nesting For Loops
 ---
 ## Nesting For Loops
 
-<strong>Remember to use Read-Search-Ask if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")</strong>
+<strong>Remember to use Read-Search-Ask if you get stuck. Try to pair program and write your own code/</strong>
 
-![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") <strong>Problem Explanation:</strong>
+<strong>Problem Explanation:</strong>
 
 If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays.
 
