@@ -9,17 +9,20 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 Creating the logout logic is easy. The route should just unauthenticate the user and redirect to the home page instead of rendering any view.
 In passport, unauthenticating a user is as easy as just calling <code>req.logout();</code> before redirecting.
-<pre>app.route('/logout')
-  .get((req, res) => {
-      req.logout();
-      res.redirect('/');
-  });</pre>
+<blockquote>
+app.route('/logout')<br>
+  .get((req, res) => {<br>
+      req.logout();<br>
+      res.redirect('/');<br>
+  });
+</blockquote>
 You may have noticed that we're not handling missing pages (404), the common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
-<pre>app.use((req, res, next) => {
-  res.status(404)
-    .type('text')
-    .send('Not Found');
-});</pre>
+<blockquote>app.use((req, res, next) => {<br>
+  res.status(404)<br>
+    .type('text')<br>
+    .send('Not Found');<br>
+});
+</blockquote>
 Submit your page when you think you've got it right.
 </section>
 
