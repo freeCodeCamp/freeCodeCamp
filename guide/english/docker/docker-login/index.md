@@ -6,9 +6,9 @@ title: Docker Login
 
 `docker Login` allow us to login into private Docker registry.
 
-The command should be run like this:
+The command can be used like this:
 
-```
+```shell
 docker login -u <username> <private registry url>  
 ```
 
