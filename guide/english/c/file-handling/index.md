@@ -4,7 +4,7 @@ title: File Handling
 ## File Handling
 
 ### Introduction
-If you've written the C `helloworld` program before, you've already done file INPUT/OUTPUT(Genrally reffered as IO) in C!  Congratulations! ![:tada:](https://forum.freecodecamp.com/images/emoji/emoji_one/tada.png?v=3 ":tada:")
+If you've written the C `helloworld` program before, you've already done file INPUT/OUTPUT(Genrally reffered as IO) in C!  Congratulations!
 
 ```c
 /* A simple hello world in C. */
@@ -252,7 +252,7 @@ Hello, Logan!
 Hello, Carol!
 ```
 
-Super awesome, right! ![:smile:](https://forum.freecodecamp.com/images/emoji/emoji_one/smile.png?v=3 ":smile:")
+Super awesome, right!
 
 ### More Information:
 - <a href='https://en.wikibooks.org/wiki/C_Programming/File_IO' target='_blank' rel='nofollow'>Wikibooks page on file IO</a>

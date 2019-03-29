@@ -31,7 +31,7 @@ Or
 
 ## Reference Guide
 
-This is by no means an exhaustive list but the links below will be able to give you more entities if the ones below do not work for your needs. Happy Coding ![:computer:](https://forum.freecodecamp.com/images/emoji/emoji_one/computer.png?v=3 ":computer:")
+This is by no means an exhaustive list but the links below will be able to give you more entities if the ones below do not work for your needs. Happy Coding.
 
 
 | Character | Entity Name | Entity Number |	Description |

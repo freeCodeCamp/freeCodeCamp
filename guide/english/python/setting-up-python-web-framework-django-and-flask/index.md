@@ -31,7 +31,7 @@ $ django-admin startproject myproject
 $ cd myproject
 $ python manage.py runserver
 ```
-Go to `http://localhost:8000`! ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:")
+Go to `http://localhost:8000`!
 
 We have successfully installed the web-framework of our need. However, it's not yet complete. Most web applications are content and data driven - so we need a data storage. Or, a Database, if you will.
 

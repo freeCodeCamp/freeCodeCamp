@@ -36,19 +36,19 @@ This outputs each sub-element in <code>arr</code> one at a time. Note that for t
   <li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-arrays">Accessing Nested Arrays</a></li>
 </ul>
 
-![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+### Hint: 1
 
 Make sure to check with <code>length</code> and not the overall array.
 
 <em>try to solve the problem now</em>
 
-![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint 2<br>
+### Hint 2
 
 Use both <code>i</code> and <code>j</code> when multiplying the product.
 
 <em>try to solve the problem now</em>
 
-![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint 3<br>
+### Hint 3
 
 Remember to use <code>arr[i]</code> when you multiply the sub-arrays with the <code>product</code> variable.
 
@@ -60,7 +60,7 @@ Remember to use <code>arr[i]</code> when you multiply the sub-arrays with the <c
 <br>
 <strong>Solution Ahead!</strong>
 
-![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") <strong>Basic Code Solution:</strong>
+<strong>Basic Code Solution:</strong>
 ```
 function multiplyAll(arr) {
   var product = 1;
@@ -78,7 +78,7 @@ function multiplyAll(arr) {
 multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops/">Run Code</a></strong>
+<strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops/">Run Code</a></strong>
 
 <strong>Code Explanation:</strong>
 
@@ -88,8 +88,8 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
   <li>The two sub-arrays to multiply are <code>arr[i]</code> and <code>j</code>.</li>
 </ul>
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") <strong>NOTES FOR CONTRIBUTIONS:</strong>
+## <strong>NOTES FOR CONTRIBUTIONS:</strong>
 
-* ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") <strong>DO NOT</strong> add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.
+* <strong>DO NOT</strong> add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.
 * Add an explanation of your solution.
-* Categorize the solution in one of the following categories — Basic, Intermediate and Advanced. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+* Categorize the solution in one of the following categories — Basic, Intermediate and Advanced.
