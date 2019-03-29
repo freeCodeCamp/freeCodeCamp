@@ -89,6 +89,32 @@ LEFT JOIN `student-contact-info` AS b ON a.studentID = b.studentID;
 9 rows in set (0.00 sec)
 ```
 
+### Full (Outer) Join
+In this type, we're going to try to return everything from both tables. If there is no match, we'll get NULL(empty) at that place.
+
+```sql
+SELECT a.studentID, a.FullName, a.sat_score
+b.`studentEmailAddr`, b.`student-phone-cell` 
+FROM student AS a
+FULL JOIN `student-contact-info` AS b ON a.studentID = b.studentID;
+```
+```text
++-----------+------------------------+-----------+----------------------------------+--------------------+
+| studentID | FullName               | sat_score | studentEmailAddr                 | student-phone-cell |
++-----------+------------------------+-----------+----------------------------------+--------------------+
+|         1 | Monique Davis          |       400 | Monique.Davis@freeCodeCamp.org   | 555-555-5551       |
+|         2 | Teri Gutierrez         |       800 | Teri.Gutierrez@freeCodeCamp.org  | 555-555-5552       |
+|         3 | Spencer Pautier        |      1000 | Spencer.Pautier@freeCodeCamp.org | 555-555-5553       | 
+|         4 | Louis Ramsey           |      1200 | Louis.Ramsey@freeCodeCamp.org    | 555-555-5554       |
+|         5 | Alvin Greene           |      1200 | Alvin.Green@freeCodeCamp.org     | 555-555-5555       |
+|         6 | Sophie Freeman         |      1200 | Sophie.Freeman@freeCodeCamp.org  | 555-555-5556       |
+|         7 | Edgar Frank "Ted" Codd |      2400 | Maximo.Smith@freeCodeCamp.org    | 555-555-5557       |
+|         8 | Donald D. Chamberlin   |      2400 | Michael.Roach@freeCodeCamp.ort   | 555-555-5558       |
+|         9 | Raymond F. Boyce       |      2400 |              NULL                |        NULL        |  
++-----------+------------------------+-----------+----------------------------------+--------------------+
+
+```
+
 ### Complete table listings for reference
 Student table listings
 
