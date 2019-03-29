@@ -35,13 +35,15 @@ scp -i <location of servers private key> <user1>@<host1>:<location of remote fil
 scp -r root@hostname:/source_folder/* /destination_folder/
 ```
 
-## Limiting scp Bandwidth when copying. (This is time-saving when a huge amount of data is to be copied over slow internet)
+## Limiting scp Bandwidth when copying
+
 * Bandwidth is specified in Kbit/sec, e.g., to limit the speed upto 20 Kbyte/sec, set the `bandwidthlimit` to 8*20 (=160)
+* This is time-saving when a huge amount of data is to be copied over slow internet
 ```shell
 scp -l bandwidthlimit root@hostname:/source_folder/* /destination_folder/
 ```
 
-## If the exact file location of remote server is not known, the `ssh` command can be useful. 
+## Unknown exact file location on remote server
 
 * `ssh` to the remote server
 * Go to the file location using `cd`
