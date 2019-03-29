@@ -1,7 +1,8 @@
 ---
 title: Go Methods
 localeTitle: 去方法
----## 去方法
+---
+## 去方法
 
 Golang类型可以有方法。方法是具有特殊参数的函数，即_接收器_ 。
 

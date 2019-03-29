@@ -1,7 +1,8 @@
 ---
 title: Typecasting
 localeTitle: Typecasting
----## Typecasting
+---
+## Typecasting
 
 Converter um tipo de dados em outro tipo de dados é conhecido como conversão de tipo. Desde a Java é uma linguagem de programação Orientada a Objetos e suporta **Inheritance** e **Polymorphism** . É fácil que a variável de referência super class esteja apontando para o objeto subClass.
 

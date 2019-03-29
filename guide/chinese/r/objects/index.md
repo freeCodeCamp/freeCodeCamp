@@ -1,7 +1,8 @@
 ---
 title: Objects in R
 localeTitle: R中的对象
----## 对象
+---
+## 对象
 
 R允许通过将数据存储在R对象中来保存数据。
 

@@ -1,7 +1,8 @@
 ---
 title: PHP Syntax and Comments
 localeTitle: PHP语法和注释
----### PHP语法
+---
+### PHP语法
 
 PHP语法的结构有点像：
 

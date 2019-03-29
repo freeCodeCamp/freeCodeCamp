@@ -1,7 +1,8 @@
 ---
 title: Function Composition
 localeTitle: Composición de funciones
----## Composición de funciones
+---
+## Composición de funciones
 
 La composición de funciones es la aplicación puntual de una función al resultado de otra. Los desarrolladores lo hacen de forma manual todos los días cuando el nido funciona:
 

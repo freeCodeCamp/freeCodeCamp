@@ -1,7 +1,8 @@
 ---
 title: While Loop
 localeTitle: Mientras bucle
----# Mientras bucle
+---
+# Mientras bucle
 
 El bucle while ejecuta un bloque de código hasta que una condición especificada es falsa. Debido a que la prueba de la expresión while tiene lugar antes de cada ejecución del bucle, un bucle while se ejecuta cero o más veces. Esto difiere del bucle do, que se ejecuta una o más veces porque la prueba de la expresión tiene lugar después de la ejecución del bucle. 1
 

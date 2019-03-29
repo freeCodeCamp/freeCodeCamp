@@ -1,7 +1,8 @@
 ---
 title: React Redux Basic Setup
 localeTitle: رد فعل Redux الإعداد الأساسي
----## رد فعل Redux الإعداد الأساسي
+---
+## رد فعل Redux الإعداد الأساسي
 
 في هذا الدليل ، سيعرض على القارئ كيفية إعداد تطبيق React و Redux بسيط.
 

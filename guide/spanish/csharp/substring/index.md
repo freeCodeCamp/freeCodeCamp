@@ -1,7 +1,8 @@
 ---
 title: Substring
 localeTitle: Subcadena
----# Subcadena
+---
+# Subcadena
 
 `Substring` extrae una parte de un valor de cadena. Se utiliza con 2 parámetros enteros, el primero es la ubicación del primer carácter (comienza con el índice 0) y el segundo es la longitud del carácter deseado.
 

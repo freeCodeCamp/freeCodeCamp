@@ -1,7 +1,8 @@
 ---
 title: IDE and Printing different text 
 localeTitle: IDE和打印不同的文本
----# IDE简介和打印不同的文本：
+---
+# IDE简介和打印不同的文本：
 
 *   在上一篇文章中，有一些编程所需软件的下载链接。像这样的软件被称为IDE。 **IDE代表集成开发环境**
 

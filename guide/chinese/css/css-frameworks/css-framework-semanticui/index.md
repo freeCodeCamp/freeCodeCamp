@@ -1,7 +1,8 @@
 ---
 title: CSS Framework Semantic UI
 localeTitle: CSS框架语义UI
----# CSS框架语义UI
+---
+# CSS框架语义UI
 
 语义UI是最流行的CSS框架之一，用于为Web开发响应式移动优先项目。
 

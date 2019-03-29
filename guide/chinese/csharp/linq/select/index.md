@@ -1,7 +1,8 @@
 ---
 title: Select
 localeTitle: 选择
----# 选择
+---
+# 选择
 
 从数据集中投射数据。
 

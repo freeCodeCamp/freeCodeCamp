@@ -1,7 +1,8 @@
 ---
 title: Osmotic Communications
 localeTitle: 渗透通讯
----## 渗透通讯
+---
+## 渗透通讯
 
 **渗透通信**是成功实施敏捷项目的重要因素之一。
 

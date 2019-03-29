@@ -1,7 +1,8 @@
 ---
 title: To Dictionary
 localeTitle: 到字典
----# ToDictionary
+---
+# ToDictionary
 
 从DataSet中创建一个Dictionary;
 

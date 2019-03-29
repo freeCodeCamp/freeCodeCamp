@@ -1,7 +1,8 @@
 ---
 title: Mousedown Method
 localeTitle: Método Mousedown
----# Método Mousedown
+---
+# Método Mousedown
 
 O evento mousedown ocorre quando o botão esquerdo do mouse é pressionado. Para acionar o evento mousedown para o elemento selecionado, use esta sintaxe: `$(selector).mousedown();`
 

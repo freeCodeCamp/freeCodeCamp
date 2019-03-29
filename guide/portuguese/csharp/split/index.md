@@ -1,7 +1,8 @@
 ---
 title: Split
 localeTitle: Dividido
----# Método Dividido
+---
+# Método Dividido
 
 O método `String.Split` analisa uma string: Como entrada, recebe um caractere indicando o separador e gera uma matriz de subcadeias.
 

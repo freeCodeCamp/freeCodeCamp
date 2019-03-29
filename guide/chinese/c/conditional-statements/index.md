@@ -1,7 +1,8 @@
 ---
 title: Conditional Statements
 localeTitle: 条件陈述
----# C中的条件语句
+---
+# C中的条件语句
 
 条件语句也称为分支语句。他们之所以这么称呼，是因为该计划选择跟随一个或另一个分支。
 

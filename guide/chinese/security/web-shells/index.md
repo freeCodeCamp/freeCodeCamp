@@ -1,7 +1,8 @@
 ---
 title: Web Shell
 localeTitle: Web Shell
----## Web Shell
+---
+## Web Shell
 
 ### 什么是Web Shell？
 

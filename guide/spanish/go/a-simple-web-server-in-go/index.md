@@ -1,7 +1,8 @@
 ---
 title: A simple web server in Go
 localeTitle: Un servidor web simple en Go
----El lenguaje de programación Go es conocido por tener un servidor web incorporado. En este artículo aprenderá cómo puede hacer fácilmente su propio servidor web con Go. ¡No necesitarás ningún otro paquete además de los que ya están incorporados!
+---
+El lenguaje de programación Go es conocido por tener un servidor web incorporado. En este artículo aprenderá cómo puede hacer fácilmente su propio servidor web con Go. ¡No necesitarás ningún otro paquete además de los que ya están incorporados!
 
 Primero, entra en tu editor de texto. Luego cree un archivo llamado `webserver.go` e ingrese el siguiente código:
 

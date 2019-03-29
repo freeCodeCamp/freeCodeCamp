@@ -1,7 +1,8 @@
 ---
 title: Operators
 localeTitle: Los operadores
----# Operadores:
+---
+# Operadores:
 
 *   Los operadores le permiten realizar operaciones en sus datos.
 *   Los datos que se están operando se denominan _operandos_ .

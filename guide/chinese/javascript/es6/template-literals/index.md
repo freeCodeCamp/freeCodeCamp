@@ -1,7 +1,8 @@
 ---
 title: Template Literals
 localeTitle: 模板文字
----## 模板文字
+---
+## 模板文字
 
 ## 介绍：
 

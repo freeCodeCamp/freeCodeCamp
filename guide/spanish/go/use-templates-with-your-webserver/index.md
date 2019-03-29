@@ -1,7 +1,8 @@
 ---
 title: Using templates with your web server
 localeTitle: Usando plantillas con su servidor web
----Cuando tenga un servidor web, es posible que desee insertar datos en sus respuestas. Veamos un código:
+---
+Cuando tenga un servidor web, es posible que desee insertar datos en sus respuestas. Veamos un código:
 
 ```go
 package main 

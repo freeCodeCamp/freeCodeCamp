@@ -1,7 +1,8 @@
 ---
 title: Dunning Kruger Effect
 localeTitle: Dunning Kruger Effect
----## Dunning Kruger (DK) Efeito
+---
+## Dunning Kruger (DK) Efeito
 
 ### Definição da Wikipedia
 

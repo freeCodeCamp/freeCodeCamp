@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: 你好，世界
----## 你好，世界 ！！
+---
+## 你好，世界 ！！
 
 每个语言学习都从传统的Hello World示例开始。在这里，您将使用相同的HelloWorld程序介绍React。
 

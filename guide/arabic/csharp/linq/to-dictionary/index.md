@@ -1,7 +1,8 @@
 ---
 title: To Dictionary
 localeTitle: إلى قاموس
----# ToDictionary
+---
+# ToDictionary
 
 Greates قاموس من DataSet؛
 

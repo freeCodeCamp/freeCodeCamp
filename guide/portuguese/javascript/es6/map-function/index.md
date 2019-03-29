@@ -1,7 +1,8 @@
 ---
 title: Map Function
 localeTitle: Função Mapa
----## A função do mapa
+---
+## A função do mapa
 
 A função `map()` é usada para criar uma nova matriz a partir de uma existente, aplicando uma função a cada um dos elementos da primeira matriz.
 

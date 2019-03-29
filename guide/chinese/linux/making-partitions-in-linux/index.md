@@ -1,7 +1,8 @@
 ---
 title: Partitions
 localeTitle: 分区
----## PARTITIONS
+---
+## PARTITIONS
 
 *   如果不在硬盘中创建分区，我们就无法创建文件夹。
     

@@ -1,7 +1,8 @@
 ---
 title: New String Functions
 localeTitle: 新的字符串函数
----## 新的字符串函数
+---
+## 新的字符串函数
 
 以下四个函数在ES6中添加了新的字符串。
 

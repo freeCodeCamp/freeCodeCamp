@@ -1,7 +1,8 @@
 ---
 title: C++ If Statement
 localeTitle: Declaração de C ++ If
----# A instrução IF.
+---
+# A instrução IF.
 
 **O que faz uma declaração if?**
 

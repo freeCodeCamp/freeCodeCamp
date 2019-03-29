@@ -1,7 +1,8 @@
 ---
 title: Map, Reduce, Filter
 localeTitle: Mapa, Reducir, Filtrar
----# Mapa, Reducir y Filtrar
+---
+# Mapa, Reducir y Filtrar
 
 La mayoría de los ingenieros trabajan con listas para procesar la lista de pedidos / usuarios, etc. El análisis de las listas puede complicarse y desordenarse rápidamente si se usan varios bucles for y loops anidados. Por lo tanto, estos métodos anteriores pueden simplificar el uso de las operaciones de lista.
 

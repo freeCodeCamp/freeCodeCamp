@@ -1,7 +1,8 @@
 ---
 title: Mousedown Method
 localeTitle: طريقة موسى
----# طريقة موسى
+---
+# طريقة موسى
 
 يحدث الحدث mousedown عند الضغط على زر الماوس الأيسر. لتشغيل حدث mousedown للعنصر المحدد ، استخدم بناء الجملة هذا: `$(selector).mousedown();`
 

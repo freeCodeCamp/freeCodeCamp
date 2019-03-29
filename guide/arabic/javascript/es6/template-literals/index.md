@@ -1,7 +1,8 @@
 ---
 title: Template Literals
 localeTitle: قالب حرفية
----## قالب حرفية
+---
+## قالب حرفية
 
 ## المقدمة:
 

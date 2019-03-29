@@ -1,7 +1,8 @@
 ---
 title: Multithreading
 localeTitle: Multithreading
----## Multithreading
+---
+## Multithreading
 
 Multithreading é um processo de execução de vários processos simultaneamente. Java inicia o programa com um thread principal e outros threads são incluídos no thread principal sempre que qualquer usuário o cria. thread principal é o primeiro thread do usuário em qualquer programa Java. Além disso, a JVM garante que todos os encadeamentos do usuário sejam fechados antes do término do programa.
 

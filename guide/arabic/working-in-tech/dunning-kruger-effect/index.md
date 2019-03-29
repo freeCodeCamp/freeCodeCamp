@@ -1,7 +1,8 @@
 ---
 title: Dunning Kruger Effect
 localeTitle: تأثير Dunning Kruger
----## Dunning Kruger (DK) Effect
+---
+## Dunning Kruger (DK) Effect
 
 ### تعريف ويكيبيديا
 

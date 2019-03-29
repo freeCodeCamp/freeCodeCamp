@@ -1,7 +1,8 @@
 ---
 title: Bash Man
 localeTitle: Bash Man
----## Homem
+---
+## Homem
 
 Man, a abreviatura de **man** ual, é um comando bash usado para exibir manuais de referência on-line do comando fornecido.
 

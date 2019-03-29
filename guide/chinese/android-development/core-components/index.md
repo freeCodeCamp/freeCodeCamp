@@ -1,7 +1,8 @@
 ---
 title: Android core components
 localeTitle: Android核心组件
----# Android核心组件
+---
+# Android核心组件
 
 核心组件是Android应用程序所必需的基本元素。他们每个人都有自己的目的和生命周期，但并非所有人都是独立的。他们是：
 

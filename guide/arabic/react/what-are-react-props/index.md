@@ -1,7 +1,8 @@
 ---
 title: React TypeChecking with PropTypes
 localeTitle: React TypeChecking مع PropTypes
----## رد فعل PropTypes
+---
+## رد فعل PropTypes
 
 هذه هي بمثابة طريقة للتحقق من الكتابة مع تطبيق يميل إلى النمو ، مع هذا قاعدة كبيرة جدا من الأخطاء يميل إلى تصحيح مع استخدام هذه الميزة.
 

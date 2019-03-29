@@ -1,7 +1,8 @@
 ---
 title: Partitions
 localeTitle: Particiones
----## PARTICIONES
+---
+## PARTICIONES
 
 *   Sin crear particiones en el disco duro, no podemos crear carpetas.
     

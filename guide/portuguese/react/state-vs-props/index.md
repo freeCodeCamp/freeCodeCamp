@@ -1,7 +1,8 @@
 ---
 title: State vs Props
 localeTitle: State vs Props
----## State vs Props
+---
+## State vs Props
 
 Quando começamos a trabalhar com os componentes do React, ouvimos frequentemente dois termos. Eles são `state` e `props` . Então, neste artigo, vamos explorar o que são e como eles diferem.
 

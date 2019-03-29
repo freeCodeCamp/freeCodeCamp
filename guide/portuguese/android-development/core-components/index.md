@@ -1,7 +1,8 @@
 ---
 title: Android core components
 localeTitle: Componentes principais do Android
----# Componentes principais do Android
+---
+# Componentes principais do Android
 
 Os componentes principais são os elementos essenciais dos quais um aplicativo para o Android consiste. Cada um deles tem seu próprio propósito e ciclo de vida, mas nem todos são independentes. Eles são:
 

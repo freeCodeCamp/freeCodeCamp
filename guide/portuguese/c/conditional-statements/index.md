@@ -1,7 +1,8 @@
 ---
 title: Conditional Statements
 localeTitle: Declarações Condicionais
----# Declarações Condicionais em C
+---
+# Declarações Condicionais em C
 
 As declarações condicionais também são conhecidas como instruções de ramificação. Eles são assim chamados porque o programa escolhe seguir um ramo ou outro.
 

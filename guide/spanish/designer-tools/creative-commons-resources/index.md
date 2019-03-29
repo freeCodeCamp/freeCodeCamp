@@ -1,7 +1,8 @@
 ---
 title: Creative Commons Resources
 localeTitle: Recursos de Creative Commons
----## ¿Qué son los Creative Commons?
+---
+## ¿Qué son los Creative Commons?
 
 La licencia de Creative Commons fue creada por el académico, abogado y activista político Lawrence Lessig. Las opciones de licencia de Creative Commons se crearon en una reacción a la ley de derechos de autor. Creyendo que el proceso creativo involucra construir sobre otras ideas y contenido, las leyes de derechos de autor impiden esta forma de desarrollo creativo. Si bien se necesitan leyes de derechos de autor, sus efectos que se extienden al impacto de los individuos y su desarrollo creativo se han considerado como una violación sin precedentes. La oposición a los derechos de autor ha sido descrita como el copyleft. Creative Commons es una piedra angular para el copyleft y el soporte del dominio público. Con el fin de ayudar a solucionar este problema de la ley de derechos de autor y desarrollar un desarrollo creativo, se introdujo Creative Commons para permitir a los creadores solicitar una licencia legal que permita a otros utilizar su trabajo. Las opciones de licencia de Creative Commons son fáciles de entender para el laico y se pueden crear respondiendo solo dos preguntas:
 

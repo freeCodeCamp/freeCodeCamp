@@ -1,7 +1,8 @@
 ---
 title: PHP Syntax and Comments
 localeTitle: Sintaxe PHP e Comentários
----### Sintaxe PHP
+---
+### Sintaxe PHP
 
 A estrutura de uma sintaxe do PHP se parece com:
 

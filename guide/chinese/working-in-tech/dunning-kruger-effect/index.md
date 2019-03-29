@@ -1,7 +1,8 @@
 ---
 title: Dunning Kruger Effect
 localeTitle: 催款克鲁格效应
----## 邓宁克鲁格（DK）效应
+---
+## 邓宁克鲁格（DK）效应
 
 ### 维基百科的定义
 

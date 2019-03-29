@@ -1,7 +1,8 @@
 ---
 title: Select
 localeTitle: Seleccionar
----# Seleccionar
+---
+# Seleccionar
 
 Proyecta datos desde el conjunto de datos.
 

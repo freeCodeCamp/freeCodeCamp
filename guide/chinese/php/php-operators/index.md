@@ -1,7 +1,8 @@
 ---
 title: PHP Operators
 localeTitle: PHP运算符
----## PHP运算符
+---
+## PHP运算符
 
 这是一个存根。 [帮助我们的社区扩展它](https://github.com/freecodecamp/guides/tree/master/src/pages/php/php-operators/index.md) 。
 

@@ -1,7 +1,8 @@
 ---
 title: React Redux Basic Setup
 localeTitle: React Redux Basic Setup
----## React Redux Basic Setup
+---
+## React Redux Basic Setup
 
 在本指南中，将向读者介绍如何设置简单的React和Redux应用程序。
 

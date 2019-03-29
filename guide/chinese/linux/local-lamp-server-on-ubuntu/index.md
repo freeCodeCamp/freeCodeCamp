@@ -1,7 +1,8 @@
 ---
 title: local-lamp-server-on-ubuntu
 localeTitle: 当地灯服务器上的Ubuntu
----## Ubuntu上的本地LAMP服务器
+---
+## Ubuntu上的本地LAMP服务器
 
 本简要指南的目的是引导您完成在本地Ubuntu Linux计算机或虚拟机上设置LAMP（Linux，Apache，MySQL，PHP）服务器的过程。这将允许开发人员使用PHP和MySQL（使用phpMyAdmin）进行开发。这是Wordpress开发所必需的常见堆栈。
 

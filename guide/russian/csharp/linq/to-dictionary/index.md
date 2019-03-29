@@ -1,7 +1,8 @@
 ---
 title: To Dictionary
 localeTitle: В словарь
----# ToDictionary
+---
+# ToDictionary
 
 Сочетает словарь из DataSet;
 

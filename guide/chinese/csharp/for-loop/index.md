@@ -1,7 +1,8 @@
 ---
 title: For Loop
 localeTitle: 对于循环
----# 对于循环
+---
+# 对于循环
 
 for循环重复执行代码块，直到指定的条件表达式求值为false。
 

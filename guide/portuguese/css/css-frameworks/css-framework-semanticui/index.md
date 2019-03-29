@@ -1,7 +1,8 @@
 ---
 title: CSS Framework Semantic UI
 localeTitle: IU semântica de estrutura de CSS
----# IU semântica de estrutura de CSS
+---
+# IU semântica de estrutura de CSS
 
 A Semantic UI é uma das estruturas CSS mais populares para o desenvolvimento de primeiros projetos móveis e responsivos para a web.
 

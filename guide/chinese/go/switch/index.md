@@ -1,7 +1,8 @@
 ---
 title: Switch in Go
 localeTitle: 切换到Go
----# 切换到Go
+---
+# 切换到Go
 
 Go的switch语句是`if`的替代语句。它使用以下语法：
 

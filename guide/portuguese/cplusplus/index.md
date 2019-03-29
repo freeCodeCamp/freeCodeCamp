@@ -1,7 +1,8 @@
 ---
 title: C++
 localeTitle: C ++
----# Olá Mundo! - Seu primeiro programa C ++
+---
+# Olá Mundo! - Seu primeiro programa C ++
 
 ## O que é o C ++?
 

@@ -1,7 +1,8 @@
 ---
 title: Typecasting
 localeTitle: Encasillado
----## Encasillado
+---
+## Encasillado
 
 La conversión de un tipo de datos a otro tipo de datos se conoce como conversión de tipos. Ya que Java es un lenguaje de programación orientado a objetos y es compatible con **herencia** y **polimorfismo** . Es fácil que la variable de referencia de súper clase apunte al objeto de subclase.
 

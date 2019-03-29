@@ -1,7 +1,8 @@
 ---
 title: Life Cycle Methods Of A Component
 localeTitle: Métodos de Ciclo de Vida de um Componente
----## Métodos de Ciclo de Vida de um Componente
+---
+## Métodos de Ciclo de Vida de um Componente
 
 Quando começamos a trabalhar com componentes, precisamos executar várias ações para atualizar o estado ou executar algumas ações quando algo muda nesse componente. Neste cenário, os métodos de ciclo de vida de um componente são úteis !! Então, vamos mergulhar neles neste artigo.
 

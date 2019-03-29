@@ -1,7 +1,8 @@
 ---
 title: Switch in Go
 localeTitle: Cambiar en go
----# Cambiar en go
+---
+# Cambiar en go
 
 La declaración de cambio de Go es una alternativa a `if` . Utiliza la siguiente sintaxis:
 

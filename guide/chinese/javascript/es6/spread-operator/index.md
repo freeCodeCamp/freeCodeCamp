@@ -1,7 +1,8 @@
 ---
 title: Spread Operator
 localeTitle: 传播运营商
----## 传播运营商
+---
+## 传播运营商
 
 扩展运算符（ `...` ）允许获取集合的元素。
 

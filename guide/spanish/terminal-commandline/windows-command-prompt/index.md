@@ -1,7 +1,8 @@
 ---
 title: Windows Command Prompt
 localeTitle: Símbolo del sistema de Windows
----# Usando el símbolo del sistema en Windows
+---
+# Usando el símbolo del sistema en Windows
 
 Windows, MacOS y Linux tienen interfaces de línea de comandos. La línea de comando predeterminada de Windows es el símbolo del sistema. El símbolo del sistema permite a los usuarios utilizar su computadora sin señalar y hacer clic con el mouse. El símbolo del sistema es una pantalla negra donde los usuarios escriben comandos para usar su computadora. Las mismas tareas que se pueden hacer apuntando y haciendo clic con el mouse también se pueden hacer con el símbolo del sistema. La diferencia es que muchas tareas, como crear carpetas y eliminar archivos, se pueden hacer más rápido en el símbolo del sistema. Además, les permite a los usuarios configurar su computadora y ejecutar programas que de otra manera no podrían hacer al señalar y hacer clic.
 

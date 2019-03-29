@@ -1,7 +1,8 @@
 ---
 title: for-of loop
 localeTitle: bucle for-of
----## for-of Loop
+---
+## for-of Loop
 
 for-of loop se puede utilizar para recorrer cosas que no son matrices, pero son iterables como una colección DOM, cadena, conjunto, argumentos o mapa.
 

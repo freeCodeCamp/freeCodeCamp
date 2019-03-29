@@ -1,7 +1,8 @@
 ---
 title: New String Functions
 localeTitle: Nuevas funciones de cadena
----## Nuevas funciones de cadena
+---
+## Nuevas funciones de cadena
 
 Las siguientes cuatro funciones se agregan nuevas a las cadenas en ES6.
 

@@ -1,7 +1,8 @@
 ---
 title: New String Functions
 localeTitle: Novas funções de string
----## Novas funções de string
+---
+## Novas funções de string
 
 Após quatro funções são adicionadas novas para seqüências de caracteres no ES6.
 

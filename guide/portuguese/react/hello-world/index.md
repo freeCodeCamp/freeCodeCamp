@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: Olá Mundo
----## Olá Mundo !!
+---
+## Olá Mundo !!
 
 Cada aprendizagem de línguas começa com o exemplo do Hello World Tradicional. Aqui, você é apresentado ao React com o mesmo programa HelloWorld.
 

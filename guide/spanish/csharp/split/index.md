@@ -1,7 +1,8 @@
 ---
 title: Split
 localeTitle: División
----# Método de división
+---
+# Método de división
 
 El método `String.Split` analiza una cadena: como entrada, toma un carácter que indica el separador y genera una matriz de cadenas secundarias.
 

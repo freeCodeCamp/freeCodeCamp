@@ -1,7 +1,8 @@
 ---
 title: Installing Rust
 localeTitle: 安装Rust
----# 安装Rust
+---
+# 安装Rust
 
 使用`rustup`是Rust安装的首选。 `rustup`为您的系统安装和管理Rust。
 

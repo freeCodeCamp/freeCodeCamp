@@ -1,7 +1,8 @@
 ---
 title: Literal Improvements
 localeTitle: 文字改进
----# 文字改进
+---
+# 文字改进
 
 C＃7.0允许\_作为**_数字_**文字中的**_数字分隔符_**出现：
 ```

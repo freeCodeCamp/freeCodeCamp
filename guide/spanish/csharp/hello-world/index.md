@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: Hola Mundo
----# Hola Mundo
+---
+# Hola Mundo
 
 Para escribir un texto en la consola usamos `Console.WriteLine()` . Este método toma una cadena como entrada.
 

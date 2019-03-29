@@ -1,7 +1,8 @@
 ---
 title: CSS Framework Semantic UI
 localeTitle: CSS Framework Semantic UI
----# CSS Framework Semantic UI
+---
+# CSS Framework Semantic UI
 
 واجهة المستخدم الدلالية هي واحدة من أكثر أطر CSS شعبية لتطوير المشاريع الأولى المتجاوبة والمتنقلة للويب.
 

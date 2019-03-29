@@ -1,7 +1,8 @@
 ---
 title: Rest API Design
 localeTitle: Rest API设计
----### 历史
+---
+### 历史
 
 REST代表**Re** presentational **S** tate **T** ransfer协议。 Roy Fielding在2000年的博士论文中定义了REST。
 

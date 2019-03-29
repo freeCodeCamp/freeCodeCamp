@@ -1,7 +1,8 @@
 ---
 title: Getters & Setters
 localeTitle: Getters & Setters
----# Getters & Setters
+---
+# Getters & Setters
 
 O typescript também suporta a propriedade `get` e `set` . Get e Set Properties são na verdade chamados Accessors. Os acessores de uma propriedade contêm instruções executáveis ​​associadas à obtenção (leitura) ou configuração (gravação) da propriedade. As declarações podem conter o acessador get ou o acessador set ou ambos.
 

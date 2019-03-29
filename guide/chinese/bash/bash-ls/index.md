@@ -1,7 +1,8 @@
 ---
 title: Bash ls
 localeTitle: 巴什ls
----## 巴什ls
+---
+## 巴什ls
 
 `ls`是类Unix操作系统上的命令，用于列出目录的内容，例如文件夹和文件名。
 

@@ -1,7 +1,8 @@
 ---
 title: Spread Operator
 localeTitle: Operador de spread
----## Operador de spread
+---
+## Operador de spread
 
 O operador de spread ( `...` ), permite obter os elementos de uma coleção.
 

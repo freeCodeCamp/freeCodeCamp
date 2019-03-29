@@ -1,7 +1,8 @@
 ---
 title: local-lamp-server-on-ubuntu
 localeTitle: local-lamp-server-on-ubuntu
----## Servidor local de LAMP en Ubuntu
+---
+## Servidor local de LAMP en Ubuntu
 
 El propósito de esta breve guía es guiarlo a través del proceso de configuración de un servidor LAMP (Linux, Apache, MySQL, PHP) en una máquina local o máquina virtual de Ubuntu Linux. Esto permitirá a un desarrollador desarrollar utilizando PHP y MySQL (con phpMyAdmin). Esta es una pila común que es necesaria para el desarrollo de Wordpress.
 

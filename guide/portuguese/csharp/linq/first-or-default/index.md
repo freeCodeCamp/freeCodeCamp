@@ -1,7 +1,8 @@
 ---
 title: First Or Default
 localeTitle: Primeiro ou padrão
----# FirstOrDefault
+---
+# FirstOrDefault
 
 Retorna o primeiro elemento que satisfaz uma condição dada opcional. Se nenhum elemento for encontrado, o `default()` do objeto será retornado
 

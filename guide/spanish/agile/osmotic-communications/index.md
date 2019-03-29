@@ -1,7 +1,8 @@
 ---
 title: Osmotic Communications
 localeTitle: Comunicaciones osmoticas
----## Comunicaciones osmoticas
+---
+## Comunicaciones osmoticas
 
 **Las comunicaciones osmóticas** son uno de los factores importantes de un proyecto ágil exitoso.
 

@@ -1,7 +1,8 @@
 ---
 title: Literal Improvements
 localeTitle: Mejoras literales
----# Mejoras literales
+---
+# Mejoras literales
 
 C # 7.0 permite que \_ ocurra como un **_separador de dígitos_** dentro de números literales:
 ```

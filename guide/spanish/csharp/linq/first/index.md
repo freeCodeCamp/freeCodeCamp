@@ -1,7 +1,8 @@
 ---
 title: First
 localeTitle: primero
----# primero
+---
+# primero
 
 Devuelve el primer elemento que satisface una condición dada opcional. Si no se encuentra ningún elemento, lanza una `InvalidOperationException` ;
 

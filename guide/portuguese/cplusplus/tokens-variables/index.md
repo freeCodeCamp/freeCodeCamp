@@ -1,7 +1,8 @@
 ---
 title: Tokens Part 1
 localeTitle: Tokens Parte 1
----### O que são tokens?
+---
+### O que são tokens?
 
 Tokens são as menores unidades de um programa que são importantes para o compilador. Existem diferentes tipos de tokens:
 

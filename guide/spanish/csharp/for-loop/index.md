@@ -1,7 +1,8 @@
 ---
 title: For Loop
 localeTitle: En bucle
----# En bucle
+---
+# En bucle
 
 El bucle for ejecuta un bloque de código repetidamente hasta que una expresión condicional especificada se evalúa como falsa.
 

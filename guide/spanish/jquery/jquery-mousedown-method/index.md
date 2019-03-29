@@ -1,7 +1,8 @@
 ---
 title: Mousedown Method
 localeTitle: Método de Mousedown
----# Método de Mousedown
+---
+# Método de Mousedown
 
 El evento de mousedown ocurre cuando se presiona el botón izquierdo del ratón. Para desencadenar el evento mousedown para el elemento seleccionado, use esta sintaxis: `$(selector).mousedown();`
 

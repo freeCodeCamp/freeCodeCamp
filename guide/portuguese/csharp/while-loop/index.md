@@ -1,7 +1,8 @@
 ---
 title: While Loop
 localeTitle: While Loop
----# While Loop
+---
+# While Loop
 
 O loop while executa um bloco de código até que uma condição especificada seja falsa. Como o teste da expressão while ocorre antes de cada execução do loop, um loop while executa zero ou mais vezes. Isso difere do loop do, que é executado uma ou mais vezes porque o teste da expressão ocorre após a execução do loop. 1
 

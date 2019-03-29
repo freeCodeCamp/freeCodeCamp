@@ -1,7 +1,8 @@
 ---
 title: Function Composition
 localeTitle: Função Composição
----## Composição função
+---
+## Composição função
 
 A composição da função é a aplicação pontual de uma função ao resultado de outra. Os desenvolvedores fazem isso de maneira manual todos os dias quando o ninho funciona:
 

@@ -1,7 +1,8 @@
 ---
 title: IDE and Printing different text 
 localeTitle: IDE e impressão de texto diferente
----# Introdução a um IDE e impressão de texto diferente:
+---
+# Introdução a um IDE e impressão de texto diferente:
 
 *   No último artigo, alguns links para download de software necessários para a programação. Um software como esse é conhecido como IDE. **IDE significa Integrated Development Environment**
 

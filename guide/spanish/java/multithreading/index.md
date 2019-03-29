@@ -1,7 +1,8 @@
 ---
 title: Multithreading
 localeTitle: Multihilo
----## Multihilo
+---
+## Multihilo
 
 El subprocesamiento múltiple es un proceso de ejecución de múltiples procesos simultáneamente. Java inicia el programa con un hilo principal y se agregan más hilos al hilo principal cada vez que cualquier usuario lo crea. El hilo principal es el primer hilo de usuario en cualquier programa Java. Además, JVM se asegura de que todos los subprocesos del usuario estén cerrados antes de que finalice el programa.
 

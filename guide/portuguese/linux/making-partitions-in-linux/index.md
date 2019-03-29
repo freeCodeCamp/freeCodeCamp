@@ -1,7 +1,8 @@
 ---
 title: Partitions
 localeTitle: Partições
----## PARTIÇÕES
+---
+## PARTIÇÕES
 
 *   Sem criar partições no disco rígido, não podemos criar pastas.
     

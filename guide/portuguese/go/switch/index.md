@@ -1,7 +1,8 @@
 ---
 title: Switch in Go
 localeTitle: Mudar em Go
----# Mudar em Go
+---
+# Mudar em Go
 
 A instrução switch do Go é uma alternativa para `if` . Ele usa a seguinte sintaxe:
 

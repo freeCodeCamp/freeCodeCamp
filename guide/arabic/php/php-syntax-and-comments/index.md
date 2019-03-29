@@ -1,7 +1,8 @@
 ---
 title: PHP Syntax and Comments
 localeTitle: بناء جملة PHP وتعليقات
----### بناء php
+---
+### بناء php
 
 هيكل بنية PHP يشبه إلى حد ما:
 

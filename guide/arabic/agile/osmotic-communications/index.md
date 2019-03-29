@@ -1,7 +1,8 @@
 ---
 title: Osmotic Communications
 localeTitle: Osmotic Communications
----## Osmotic Communications
+---
+## Osmotic Communications
 
 **تعد شركة Osmotic Communications** واحدة من العوامل الهامة لمشروع رشيق ناجح.
 

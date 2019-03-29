@@ -1,7 +1,8 @@
 ---
 title: Bash ls
 localeTitle: Bash ls
----## Bash ls
+---
+## Bash ls
 
 `ls` é um comando em sistemas operacionais do tipo Unix para listar o conteúdo de um diretório, por exemplo, nomes de pastas e arquivos.
 

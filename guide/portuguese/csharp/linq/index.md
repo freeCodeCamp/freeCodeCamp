@@ -1,7 +1,8 @@
 ---
 title: LINQ
 localeTitle: LINQ
----# LINQ (consulta integrada de idioma)
+---
+# LINQ (consulta integrada de idioma)
 
 O LINQ (Language Integrated Query) é um modelo e uma metodologia de programação da Microsoft que, essencialmente, adiciona recursos de consulta formal às linguagens de programação baseadas no Microsoft .NET. O LINQ oferece uma sintaxe compacta, expressiva e inteligível para manipular dados. O valor real do LINQ vem da sua capacidade de aplicar a mesma consulta a um banco de dados SQL, um DataSet, uma lista, um dicionário etc.
 

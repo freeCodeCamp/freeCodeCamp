@@ -1,7 +1,8 @@
 ---
 title: if else Statements
 localeTitle: 如果是其他声明
----## 介绍
+---
+## 介绍
 
 `if`指定的条件为**true** ， `if`语句执行语句。如果条件为**false** ，则可以使用`else`语句执行另一个语句。
 

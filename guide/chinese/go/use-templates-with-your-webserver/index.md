@@ -1,7 +1,8 @@
 ---
 title: Using templates with your web server
 localeTitle: 在Web服务器上使用模板
----如果您有Web服务器，则可能需要在响应中插入数据。我们来看一些代码：
+---
+如果您有Web服务器，则可能需要在响应中插入数据。我们来看一些代码：
 
 ```go
 package main 

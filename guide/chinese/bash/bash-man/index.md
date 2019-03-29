@@ -1,7 +1,8 @@
 ---
 title: Bash Man
 localeTitle: Bash Man
----## 人
+---
+## 人
 
 Man， **man** ual的缩写，是一个bash命令，用于显示给定命令的在线参考手册。
 

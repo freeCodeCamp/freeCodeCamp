@@ -1,7 +1,8 @@
 ---
 title: Receive data with your web server
 localeTitle: Recibe datos con tu servidor web
----Una vez que haya configurado su servidor web y se haya asegurado de que pueda ofrecer algún contenido útil, es posible que desee hacerlo más interactivo permitiéndole aceptar datos. Empecemos escribiendo un código:
+---
+Una vez que haya configurado su servidor web y se haya asegurado de que pueda ofrecer algún contenido útil, es posible que desee hacerlo más interactivo permitiéndole aceptar datos. Empecemos escribiendo un código:
 
 ```go
 package main 

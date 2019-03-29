@@ -1,7 +1,8 @@
 ---
 title: Bash Cat
 localeTitle: Gato bash
----## Gato bash
+---
+## Gato bash
 
 Cat é um dos comandos mais usados ​​nos sistemas operacionais Unix.
 

@@ -1,7 +1,8 @@
 ---
 title: For Loop
 localeTitle: Para loop
----# Para loop
+---
+# Para loop
 
 O loop for executa um bloco de código repetidamente até que uma expressão condicional especificada seja avaliada como falsa.
 

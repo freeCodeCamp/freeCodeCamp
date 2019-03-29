@@ -1,7 +1,8 @@
 ---
 title: Some Function
 localeTitle: Alguma função
----## A função alguns
+---
+## A função alguns
 
 A função `some()` é usada para verificar se pelo menos um elemento de uma matriz atende a uma determinada condição. A função retorna `true` se a condição for satisfeita por um elemento e false se algum dos elementos atender a condição
 

@@ -1,7 +1,8 @@
 ---
 title: Partitions
 localeTitle: الأقسام
----## PARTITIONS
+---
+## PARTITIONS
 
 *   بدون إنشاء أقسام في القرص الصلب ، لا يمكننا إنشاء مجلد.
     

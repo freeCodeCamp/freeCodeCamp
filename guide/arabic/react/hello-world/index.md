@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: مرحبا بالعالم
----## مرحبا بالعالم !!
+---
+## مرحبا بالعالم !!
 
 يبدأ كل تعلم لغة بمثال Traditional Hello World. هنا ، يمكنك التعرف على React مع نفس برنامج HelloWorld.
 

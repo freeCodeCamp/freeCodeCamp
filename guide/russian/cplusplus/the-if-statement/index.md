@@ -1,7 +1,8 @@
 ---
 title: C++ If Statement
 localeTitle: C ++ If Statement
----# Утверждение IF.
+---
+# Утверждение IF.
 
 **Что делает оператор if?**
 

@@ -1,7 +1,8 @@
 ---
 title: Web Shell
 localeTitle: Web shell
----## Web shell
+---
+## Web shell
 
 ### ¿Qué es un shell web?
 

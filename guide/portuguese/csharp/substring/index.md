@@ -1,7 +1,8 @@
 ---
 title: Substring
 localeTitle: Substring
----# Substring
+---
+# Substring
 
 `Substring` extrai uma parte de um valor de string. É usado com 2 parâmetros inteiros, o primeiro é a localização do primeiro caractere (começa com o índice 0) e o segundo é o tamanho do caractere desejado.
 

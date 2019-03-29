@@ -1,7 +1,8 @@
 ---
 title: PHP Operators
 localeTitle: Operadores PHP
----## Operadores PHP
+---
+## Operadores PHP
 
 Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/php/php-operators/index.md) .
 

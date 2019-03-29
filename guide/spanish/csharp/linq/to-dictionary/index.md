@@ -1,7 +1,8 @@
 ---
 title: To Dictionary
 localeTitle: Al diccionario
----# Al diccionario
+---
+# Al diccionario
 
 Greates un diccionario del conjunto de datos;
 

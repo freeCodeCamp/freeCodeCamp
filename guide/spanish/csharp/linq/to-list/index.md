@@ -1,7 +1,8 @@
 ---
 title: To List
 localeTitle: Listar
----# Listar
+---
+# Listar
 
 Genera una lista dadas las consultas del conjunto de datos.
 

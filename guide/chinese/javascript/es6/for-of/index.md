@@ -1,7 +1,8 @@
 ---
 title: for-of loop
 localeTitle: for-of循环
----## for-of Loop
+---
+## for-of Loop
 
 for-of循环可用于迭代不是数组但可迭代的东西，如DOM集合，字符串，集合，参数或映射。
 

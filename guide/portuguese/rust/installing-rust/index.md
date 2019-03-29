@@ -1,7 +1,8 @@
 ---
 title: Installing Rust
 localeTitle: Instalando Rust
----# Instalando Rust
+---
+# Instalando Rust
 
 Usar `rustup` é preferido para a instalação Rust. `rustup` instala e gerencia o Rust para o seu sistema.
 

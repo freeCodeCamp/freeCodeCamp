@@ -1,7 +1,8 @@
 ---
 title: local-lamp-server-on-ubuntu
 localeTitle: محلي مصباح خادم على أساس أوبونتو
----## خادم LAMP المحلي على Ubuntu
+---
+## خادم LAMP المحلي على Ubuntu
 
 الغرض من هذا الدليل الموجز هو أن تأخذك خلال عملية إعداد خادم LAMP (Linux ، Apache ، MySQL ، PHP) على جهاز Ubuntu Linux المحلي أو الجهاز الظاهري. هذا سيسمح للمطور بالتطوير باستخدام PHP و MySQL (مع phpMyAdmin). هذا هو مكدس شائع ضروري لتطوير وورد.
 

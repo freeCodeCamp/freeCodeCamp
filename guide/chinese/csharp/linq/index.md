@@ -1,7 +1,8 @@
 ---
 title: LINQ
 localeTitle: LINQ
----# LINQ（语言集成查询）
+---
+# LINQ（语言集成查询）
 
 LINQ（语言集成查询）是一种Microsoft编程模型和方法，它基本上将正式查询功能添加到基于Microsoft .NET的编程语言中。 LINQ为操作数据提供了紧凑，富有表现力和可理解的语法。 LINQ的真正价值在于它能够将相同的查询应用于SQL数据库，数据集，列表，字典等。
 

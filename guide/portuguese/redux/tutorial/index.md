@@ -1,7 +1,8 @@
 ---
 title: React Redux Basic Setup
 localeTitle: React Redux Basic Setup
----## React Redux Basic Setup
+---
+## React Redux Basic Setup
 
 Neste guia, será apresentado ao leitor como configurar um aplicativo simples React e Redux.
 

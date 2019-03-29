@@ -1,7 +1,8 @@
 ---
 title: Installing Rust
 localeTitle: Instalando óxido
----# Instalando óxido
+---
+# Instalando óxido
 
 El uso de `rustup` es preferido para la instalación de Rust. `rustup` instala y administra Rust para su sistema.
 

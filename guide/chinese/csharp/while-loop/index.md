@@ -1,7 +1,8 @@
 ---
 title: While Loop
 localeTitle: 而Loop
----# 而Loop
+---
+# 而Loop
 
 while循环执行代码块，直到指定的条件为false。因为while表达式的测试是在每次执行循环之前进行的，所以while循环执行零次或多次。这与do循环不同，do循环执行一次或多次，因为表达式的测试发生在循环执行之后。 1
 

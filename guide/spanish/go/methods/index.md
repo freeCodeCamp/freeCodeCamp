@@ -1,7 +1,8 @@
 ---
 title: Go Methods
 localeTitle: Ir metodos
----## Ir metodos
+---
+## Ir metodos
 
 Los tipos de golang pueden tener métodos. Un método es una función con un argumento especial, el _receptor_ .
 

@@ -1,7 +1,8 @@
 ---
 title: State vs Props
 localeTitle: Estado vs apoyos
----## Estado vs apoyos
+---
+## Estado vs apoyos
 
 Cuando empezamos a trabajar con componentes React, con frecuencia escuchamos dos términos. Son `state` y `props` . Entonces, en este artículo exploraremos qué son esos y en qué se diferencian.
 

@@ -1,7 +1,8 @@
 ---
 title: Spread Operator
 localeTitle: Operador de propagación
----## Operador de propagación
+---
+## Operador de propagación
 
 El operador de propagación ( `...` ), permite obtener los elementos de una colección.
 

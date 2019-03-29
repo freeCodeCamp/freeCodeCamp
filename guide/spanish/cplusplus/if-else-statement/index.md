@@ -1,7 +1,8 @@
 ---
 title: If-Else Statement
 localeTitle: Declaración If-Else
----## ¿Qué hace una declaración If-Else?
+---
+## ¿Qué hace una declaración If-Else?
 
 *   La instrucción If-Else es una extensión de la instrucción simple If.
 *   En la declaración simple If, ​​si el valor de la expresión de prueba es falso, omitimos el código de bloqueo y continuamos con nuestra siguiente declaración.

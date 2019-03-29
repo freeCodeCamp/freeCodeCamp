@@ -1,7 +1,8 @@
 ---
 title: PHP Syantax and Comments
 localeTitle: PHP Syantax والتعليقات
----### PHP Syantx
+---
+### PHP Syantx
 
 تبدو بنية PHP syantax نوعًا ما:
 

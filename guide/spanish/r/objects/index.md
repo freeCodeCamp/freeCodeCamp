@@ -1,7 +1,8 @@
 ---
 title: Objects in R
 localeTitle: Objetos en R
----## Objetos
+---
+## Objetos
 
 R permite guardar los datos almacenándolos dentro de un objeto R.
 

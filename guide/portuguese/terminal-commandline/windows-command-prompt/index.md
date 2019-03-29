@@ -1,7 +1,8 @@
 ---
 title: Windows Command Prompt
 localeTitle: Prompt de Comando do Windows
----# Usando o prompt de comando no Windows
+---
+# Usando o prompt de comando no Windows
 
 Windows, MacOS e Linux possuem interfaces de linha de comando. A linha de comando padrão do Windows é o prompt de comando. O prompt de comando permite que os usuários usem seu computador sem apontar e clicar com um mouse. O prompt de comando é uma tela preta na qual os usuários digitam comandos para usar o computador. As mesmas tarefas que podem ser feitas apontando e clicando com um mouse também podem ser feitas com o prompt de comando. A diferença é que muitas tarefas, como criar pastas e excluir arquivos, podem ser feitas mais rapidamente no prompt de comando. Além disso, permite que os usuários configurem seu computador e executem programas que, de outra forma, não poderiam fazer apontando e clicando.
 

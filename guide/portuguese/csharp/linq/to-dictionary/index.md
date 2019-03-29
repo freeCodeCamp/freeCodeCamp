@@ -1,7 +1,8 @@
 ---
 title: To Dictionary
 localeTitle: Para o dicionário
----# ToDictionary
+---
+# ToDictionary
 
 Greates um dicionário do DataSet;
 

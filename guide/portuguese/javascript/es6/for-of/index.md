@@ -1,7 +1,8 @@
 ---
 title: for-of loop
 localeTitle: loop for-of
----## for-of Loop
+---
+## for-of Loop
 
 for-of loop pode ser usado para iterar sobre as coisas que não são arrays, mas são iteráveis ​​como uma coleção DOM, string, set, argumentos ou mapa.
 

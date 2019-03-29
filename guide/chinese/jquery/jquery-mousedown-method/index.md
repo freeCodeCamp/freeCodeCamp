@@ -1,7 +1,8 @@
 ---
 title: Mousedown Method
 localeTitle: Mousedown方法
----# Mousedown方法
+---
+# Mousedown方法
 
 按下鼠标左键时会发生mousedown事件。 要触发所选元素的mousedown事件，请使用以下语法： `$(selector).mousedown();`
 

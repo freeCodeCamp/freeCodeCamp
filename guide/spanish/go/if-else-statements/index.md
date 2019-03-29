@@ -1,7 +1,8 @@
 ---
 title: if else Statements
 localeTitle: si más declaraciones
----## Introducción
+---
+## Introducción
 
 La sentencia `if` ejecuta una sentencia si una condición especificada es **verdadera** . Si la condición es **falsa** , se puede ejecutar `else` instrucción utilizando la instrucción `else` .
 

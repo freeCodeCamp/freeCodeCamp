@@ -1,7 +1,8 @@
 ---
 title: CSS Framework Semantic UI
 localeTitle: CSS Framework Semantic UI
----# CSS Framework Semantic UI
+---
+# CSS Framework Semantic UI
 
 La IU semántica es uno de los marcos de trabajo CSS más populares para el desarrollo de primeros proyectos móviles adaptables para la web.
 

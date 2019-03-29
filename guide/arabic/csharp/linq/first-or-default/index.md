@@ -1,7 +1,8 @@
 ---
 title: First Or Default
 localeTitle: أولا أو افتراضي
----# FirstOrDefault
+---
+# FirstOrDefault
 
 إرجاع العنصر الأول الذي يفي بشرط معين اختياري. إذا تم العثور على أي عنصر ، يتم إرجاع `default()` للكائن
 

@@ -1,7 +1,8 @@
 ---
 title: Rest API Design
 localeTitle: Design da API de descanso
----### História
+---
+### História
 
 RESTO significa **Re** protocolo **T** ransferência **S** tate apresentação. Roy Fielding definiu REST em sua dissertação de doutorado no ano 2000.
 

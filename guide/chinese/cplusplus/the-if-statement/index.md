@@ -1,7 +1,8 @@
 ---
 title: C++ If Statement
 localeTitle: C ++ If Statement
----# IF声明。
+---
+# IF声明。
 
 **if语句有什么作用？**
 

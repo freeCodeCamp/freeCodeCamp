@@ -1,7 +1,8 @@
 ---
 title: PHP Operators
 localeTitle: مشغلي PHP
----## مشغلي PHP
+---
+## مشغلي PHP
 
 هذا هو كعب. [ساعد مجتمعنا على توسيعه](https://github.com/freecodecamp/guides/tree/master/src/pages/php/php-operators/index.md) .
 
