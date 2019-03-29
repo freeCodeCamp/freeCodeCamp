@@ -119,7 +119,7 @@ Acceptance testing can also validate if a completed epic/story/task fulfills the
   - FitNesse, a fork of Fit
 - iMacros
 - ItsNat Java Ajax web framework with built-in, server based, functional web testing capabilities.
-- Mocha, a popular web acceptance test framework based on Javascript and Node.js
+- Mocha, a popular web acceptance test framework based on JavaScript and Node.js
 - Ranorex
 - Robot Framework
 - Selenium

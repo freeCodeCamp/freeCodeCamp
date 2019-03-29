@@ -60,7 +60,7 @@ You can see that `ng generate`expedites Angular’s [boilerplate code](https://e
 
 #### ng build
 
-The `ng serve` command runs the project using `lite-server` webserver installed with other dependencies during the the creation of project with `ng new`. If you want to serve your Angular web application with your own webserver like Apache or Nginx, then you will have to build all the source Typescript files with `ng build`.
+The `ng serve` command runs the project using `lite-server` webserver installed with other dependencies during the the creation of project with `ng new`. If you want to serve your Angular web application with your own webserver like Apache or Nginx, then you will have to build all the source TypeScript files with `ng build`.
 
 `ng build` produces a development build with all source maps, JavaScript files, CSS and HTML files and puts it in the `[name-of-app] -> dist` directory. This directory contains the `index.html` file which is the entry point to the Angular application. The content of this folder can be directly put into the web root of any web server to deploy. You don't need `ng serve` anymore.
 

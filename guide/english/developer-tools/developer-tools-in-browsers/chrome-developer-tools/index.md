@@ -4,7 +4,7 @@ title: Chrome Developer Tools
 
 ## Chrome Firefox Development Tools
 
-Chrome and Firefox Developer tools assist web developers in analyzing the HTML, CSS and Javascript on a web page. They are useful for debugging, optimizing code, inspecting elements and much more.
+Chrome and Firefox Developer tools assist web developers in analyzing the HTML, CSS and JavaScript on a web page. They are useful for debugging, optimizing code, inspecting elements and much more.
 
 **Features:**
 * **Page Inspector:**  View and edit page content and layout.

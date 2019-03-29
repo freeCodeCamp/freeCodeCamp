@@ -11,10 +11,10 @@ You can nest links within other text elements.
 <blockquote>&#60;p&#62;<br> Here's a &#60;a target="_blank" href="http://freecodecamp.org"&#62; link to freecodecamp.org&#60;/a&#62; for you to follow.<br>&#60;/p&#62;</blockquote>
 Let's break down the example:
 Normal text is wrapped in the <code>p</code> element:<br> <code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>
-Next is the <code>anchor</code> element <code>&#60;a&#62;</code> (which requires a closing tag <code>&#60;/a&#62;</code>):<br>  <code>&#60;a&#62; ... &#60;/a&#62;</code>
+Next is the <i>anchor</i> element <code>&#60;a&#62;</code> (which requires a closing tag <code>&#60;/a&#62;</code>):<br>  <code>&#60;a&#62; ... &#60;/a&#62;</code>
 <code>target</code> is an anchor tag attribute that specifies where to open the link and the value <code>"_blank"</code> specifies to open the link in a new tab
 <code>href</code> is an anchor tag attribute that contains the URL address of the link:<br>  <code>&#60;a href="http://freecodecamp.org"> ... &#60;/a&#62;</code>
-The text, <strong>"link to freecodecamp.org"</strong>, within the <code>anchor</code> element called <code>anchor text</code>, will display a link to click:<br>  <code>&#60;a href=" ... "&#62;link to freecodecamp.org&#60;/a&#62;</code>
+The text, <strong>"link to freecodecamp.org"</strong>, within the <code>a</code> element called <code>anchor text</code>, will display a link to click:<br>  <code>&#60;a href=" ... "&#62;link to freecodecamp.org&#60;/a&#62;</code>
 The final output of the example will look like this:<br><p>Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.</p>
 </section>
 

@@ -147,4 +147,5 @@ There you got it! We used JSX's map to convert a list of book details to HTML el
 ### More Information
 
 - [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+- [See JSX and HTML Equivalent Side-By-Side](https://babeljs.io/repl)
 - [More Info On Using Maps](https://reactjs.org/docs/lists-and-keys.html)

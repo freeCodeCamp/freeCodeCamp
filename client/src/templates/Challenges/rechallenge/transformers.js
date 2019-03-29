@@ -95,7 +95,7 @@ async function transformSASS(element) {
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
-      style.innerHTML = await sassWorker.execute(style.innerHTML, 5000);
+      style.innerHTML = await sassWorker.execute(style.innerHTML, 5000).done;
     })
   );
 }

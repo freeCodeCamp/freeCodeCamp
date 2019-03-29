@@ -30,7 +30,7 @@ tests:
   - text: Remove the style attribute from your <code>h2</code> element.
     testString: assert(!$("h2").attr("style"), 'Remove the style attribute from your <code>h2</code> element.');
   - text: Create a <code>style</code> element.
-    testString: assert($("style") && $("style").length > 1, 'Create a <code>style</code> element.');
+    testString: assert($("style") && $("style").length >= 1, 'Create a <code>style</code> element.');
   - text: Your <code>h2</code> element should be blue.
     testString: assert($("h2").css("color") === "rgb(0, 0, 255)", 'Your <code>h2</code> element should be blue.');
   - text: Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.
@@ -90,7 +90,42 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  h2 {
+    color: blue;
+  }
+</style>
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
 ```
 </section>

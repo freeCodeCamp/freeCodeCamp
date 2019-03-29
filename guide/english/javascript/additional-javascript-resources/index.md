@@ -41,7 +41,7 @@ title: JavaScript Tutorials and Other Resources
 *   [The Modern JavaScript Tutorial](https://javascript.info/)
 *   [Introduction to JavaScript: First Steps](https://www.educative.io/collection/5679346740101120/5720605454237696)
 *   [JavaScript for Cats](http://jsforcats.com/)
-*   [Javascript.com by Pluralsight](https://www.javascript.com/learn)
+*   [JavaScript.com by Pluralsight](https://www.javascript.com/learn)
 *   [SoloLearn JavaScript Tutorial](https://www.sololearn.com/Course/JavaScript/)
 *   [GeeksforGeeks](https://www.geeksforgeeks.org/javascript-tutorial/)
 *   [Udacity Intro to JavaScript](https://eu.udacity.com/course/intro-to-javascript--ud803)
@@ -54,7 +54,7 @@ title: JavaScript Tutorials and Other Resources
 *   [Derek Banas - Learn JS In One Video](https://www.youtube.com/watch?v=fju9ii8YsGs)
 *   [Derek Banas - Object Oriented JavaScript](https://www.youtube.com/watch?v=O8wwnhdkPE4)
 *   [JavaScript Fundamentals for Absolute Beginners 2018](https://www.youtube.com/watch?v=YMvzfQSI6pQ)
-*   [Udemy - Javascript Understanding the Weird Parts (_first 3.5 hrs_)](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts)
+*   [Udemy - JavaScript Understanding the Weird Parts (_first 3.5 hrs_)](https://www.youtube.com/watch?v=Bv_5Zv5c-Ts)
 *   [Functional programming in JavaScript](https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84)
 *   [Douglas Crockford's Videos](https://www.youtube.com/watch?v=v2ifWcnQs6M&index=1&list=PL62E185BB8577B63D)
 *   [Gordon Zhu - Practical JavaScript](https://watchandcode.com/p/practical-javascript)
@@ -75,7 +75,7 @@ title: JavaScript Tutorials and Other Resources
 
 *   [WebStorm](https://www.jetbrains.com/webstorm)
 
-    A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by JetBrains and modelled after their IntelliJ Java IDE.
+    A full-feature IDE for JavaScript, including code completion and support for live linting, version control, and testing. Made by JetBrains and modelled after their IntelliJ Java IDE.
 
 *   <a href='http://brackets.io' target='_blank' rel='nofollow'>Brackets</a>
 
@@ -151,7 +151,7 @@ title: JavaScript Tutorials and Other Resources
     
     6 books on JavaScript by Kyle Simpson. From beginner to advanced. 
     
-*   [Eloquent Javascript](https://eloquentjavascript.net/)  
+*   [Eloquent JavaScript](https://eloquentjavascript.net/)  
 
     Fantastic, thorough introduction to the basics and features of JavaScript, complete with in-browser interactive code
     
@@ -165,8 +165,8 @@ title: JavaScript Tutorials and Other Resources
 
 *   [Learning JavaScript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book)
 *   [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
-*   [Javascript Allonge Six](https://leanpub.com/javascriptallongesix/read)
+*   [JavaScript Allonge Six](https://leanpub.com/javascriptallongesix/read)
 *   [The JavaScript Way](https://github.com/bpesquet/thejsway)
 *   [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet)
-*   [Speaking Javascript](http://speakingjs.com/es5)
+*   [Speaking JavaScript](http://speakingjs.com/es5)
 *   [Exploring ES6](http://exploringjs.com/es6)
