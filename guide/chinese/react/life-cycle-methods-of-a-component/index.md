@@ -1,4 +1,4 @@
----
+[](---)
 title: Life Cycle Methods Of A Component
 localeTitle: 组件的生命周期方法
 ---
