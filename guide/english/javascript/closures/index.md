@@ -4,7 +4,7 @@ title: Closures
 
 # Closures
 
-A closure is the combination of a function and the lexical environment (scope) within which that function was declared. Closures are a fundamental and powerful property of Javascript. This article discusses the 'how' and 'why' about Closures:
+A closure is the combination of a function and the lexical environment (scope) within which that function was declared. Closures are a fundamental and powerful property of JavaScript. This article discusses the 'how' and 'why' about Closures:
 
 
 
@@ -97,7 +97,7 @@ In this example, we won't be able to access `balance` from anywhere outside of t
 
 <b>Emulating block-scoped variables.</b>
 
-Javascript did not have a concept of block-scoped variables. Meaning that when defining a variable inside a forloop for example, this variable is visible from outside the forloop as well. So how can closures help us solve this problem ? Let's take a look.
+JavaScript did not have a concept of block-scoped variables. Meaning that when defining a variable inside a forloop for example, this variable is visible from outside the forloop as well. So how can closures help us solve this problem ? Let's take a look.
 
 ```javascript
     var funcs = [];
@@ -145,7 +145,7 @@ Closures have many special applications that are useful when creating large java
 
 <b>Emulating private variables.</b>
 
-Unlike many other languages, Javascript does not have a mechanism which allows you to create encapsulated instance variables within an object. Having public instance variables can cause a lot of problems when building medium to large programs. However with closures, this problem can be mitigated.
+Unlike many other languages, JavaScript does not have a mechanism which allows you to create encapsulated instance variables within an object. Having public instance variables can cause a lot of problems when building medium to large programs. However with closures, this problem can be mitigated.
 
 Much like in the previous example, you can build functions which return object literals with methods that have access to the object's local variables without exposing them. Thus, making them effectively private.
 
@@ -204,7 +204,7 @@ for(var i = 0; i <= 10; ++i) {
 ```
 While running the above function, it'll print the 10th power for all the iterations. The reason behind this scenario is, the for loop is iterating over the values and calls the readFile function asynchronouly; when the callback function gets the data, the value of the variable <b>pw</b> already becomes <b>10</b> and that is why the all the loop iteration uses the power as last values.
 
-To mitigate this we can use closure function. We can keep the codes inside the loop in a closure function and then the variable <b>pw</b> will be inside the scope of closure function and it will be fixed for an iteration. While running a callback function for iteration fifth, it won't be overridden by the values of other iteration as the `var pw` will be scoped inside the closure function. This concept is called Immediately Invoked Function Expressions in Javascript
+To mitigate this we can use closure function. We can keep the codes inside the loop in a closure function and then the variable <b>pw</b> will be inside the scope of closure function and it will be fixed for an iteration. While running a callback function for iteration fifth, it won't be overridden by the values of other iteration as the `var pw` will be scoped inside the closure function. This concept is called Immediately Invoked Function Expressions in JavaScript
 
 ```
 for(var i = 0; i <= 10; ++i) {
@@ -225,4 +225,4 @@ for(var i = 0; i <= 10; ++i) {
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures' target='_blank' rel='nofollow'>MDN</a>
 <br />
-<a href='https://medium.freecodecamp.org/lets-learn-javascript-closures-66feb44f6a44' target='_blank' rel='nofollow'>Javascript Closures</a>
+<a href='https://medium.freecodecamp.org/lets-learn-javascript-closures-66feb44f6a44' target='_blank' rel='nofollow'>JavaScript Closures</a>

@@ -15,7 +15,7 @@ The class syntax simply replaces the constructor function creation:
 Notice that the <code>class</code> keyword declares a new function, and a constructor was added, which would be invoked when <code>new</code> is called - to create a new object.<br>
 <strong>Notes:</strong><br><ul>
 <li> UpperCamelCase should be used by convention for ES6 class names, as in <code>SpaceShuttle</code> used above.</li>
-<li> The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the Javascript Algorithms And Data Structures Certification.</li></ul>
+<li> The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.</li></ul>
 </section>
 
 ## Instructions
