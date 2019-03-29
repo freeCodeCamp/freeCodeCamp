@@ -30,7 +30,7 @@ tests:
   - text: Your page should have two radio button elements.
     testString: assert($('input[type="radio"]').length > 1, 'Your page should have two radio button elements.');
   - text: Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.
-    testString: assert($('label > input[type="radio"]').filter("[name='indoor-outdoor']").length > 1, 'Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.');
+    testString: assert($('input[type="radio"]').filter("[name='indoor-outdoor']").length > 1, 'Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.');
   - text: Each of your two radio button elements should be nested in its own <code>label</code> element.
     testString: assert($('label > input[type="radio"]:only-child').length > 1, 'Each of your two radio button elements should be nested in its own <code>label</code> element.');
   - text: Make sure each of your <code>label</code> elements has a closing tag.

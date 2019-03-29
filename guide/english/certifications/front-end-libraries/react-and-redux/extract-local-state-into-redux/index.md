@@ -3,7 +3,24 @@ title: Extract Local State into Redux
 ---
 ## Extract Local State into Redux
 
-```javascript
+### Hint 1
+You need to change the following sections:
+* default state declarations: remove `messages`
+* `submitMessage`: use `props`
+* `render`: the unordered list should use `props` instead of `this.state.messages`
+
+### Hint 2
+Replace `this.state.messages` with `this.props.messages`.
+
+### Hint 3
+The `submitMessage` function still needs to set the state of the `input`.
+
+
+### Solution
+<details>
+  <summary>Spoiler!</summary>
+  
+```jsx
 // Redux:
 const ADD = 'ADD';
 
@@ -106,4 +123,6 @@ class AppWrapper extends React.Component {
     );
   }
 };
-```
+  ```
+
+</details>

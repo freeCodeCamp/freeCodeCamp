@@ -21,7 +21,7 @@ Here is a summary for those who don't have time to watch the full 90 minutes:
 
 **--Challenges--**
 
--[@SaintPeter](/users/saintpeter) is creating ~60 new Javascript Challenges.
+-[@SaintPeter](/users/saintpeter) is creating ~60 new JavaScript Challenges.
 
 -Also creating new 'checkpoints' that will act like mini-Algorithms during the Challenges. They will be 'blank page' challenges that are intended to ease campers in the transition from Challenges to Algorithms.
 

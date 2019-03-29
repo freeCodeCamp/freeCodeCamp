@@ -90,19 +90,12 @@ export function getTestRunner(buildData, proxyLogger, document) {
 function getJSTestRunner({ build, sources }, proxyLogger) {
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator');
+  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
 
-  return async (testString, testTimeout) => {
-    try {
-      testWorker.on('LOG', proxyLogger);
-      return await testWorker.execute(
-        { build, testString, code, sources },
-        testTimeout
-      );
-    } finally {
-      testWorker.killWorker();
-      testWorker.remove('LOG', proxyLogger);
-    }
+  return (testString, testTimeout) => {
+    return testWorker
+      .execute({ build, testString, code, sources }, testTimeout)
+      .on('LOG', proxyLogger).done;
   };
 }
 

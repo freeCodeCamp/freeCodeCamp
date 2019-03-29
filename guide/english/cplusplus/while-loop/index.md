@@ -2,7 +2,7 @@
 title: While-loop
 ---
 
-A while loop statement repeatedly executes a target statement as long as a given condition is true.
+A while loop statement repeatedly executes a target statement as long as a given condition is true. It is often used when the number of iterations is unknown.
 
 Syntax:
 ```C++
