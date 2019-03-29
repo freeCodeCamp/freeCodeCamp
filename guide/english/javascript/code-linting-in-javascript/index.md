@@ -14,7 +14,7 @@ Linters will go through your code, and highlight
 
 Linters can be installed using `npm` or another package manager. Linters can be used from the command line by passing in files. Linters are also available as plugins for tools and sometimes they are directly integrated into editors.
 
-Here are some popular Javascript Linters:
+Here are some popular JavaScript Linters:
 
 [JSLint](http://www.javascriptlint.com/online_lint.php) 
 

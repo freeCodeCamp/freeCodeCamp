@@ -29,7 +29,7 @@ tests:
   - text: Your code should set an index variable to 1 to start.
     testString: assert(code.match(/\$.*:\s*?1;/gi), 'Your code should set an index variable to 1 to start.');
   - text: Your code should increment the counter variable.
-    testString: assert(code.match(/\$(.*):\s*?\$\1\s*?\+\s*?1;/gi), 'Your code should increment the counter variable.');
+    testString: assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi), 'Your code should increment the counter variable.');
   - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.
     testString: assert($('.text-1').css('font-size') == '5px', 'Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.');
   - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 10px.

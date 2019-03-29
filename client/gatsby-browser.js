@@ -41,7 +41,7 @@ export const wrapPageElement = ({ element, props }) => {
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
     return (
-      <DefaultLayout onGuide={true}>
+      <DefaultLayout disableMenuButtonBehavior={true} mediaBreakpoint='991px'>
         <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );
@@ -57,3 +57,5 @@ wrapPageElement.propTypes = {
   location: PropTypes.objectOf({ pathname: PropTypes.string }),
   props: PropTypes.any
 };
+
+export const disableCorePrefetching = () => true;

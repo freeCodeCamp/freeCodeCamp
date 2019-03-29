@@ -18,7 +18,7 @@ Generic font family names are not case-sensitive. Also, they do not need quotes 
 <section id='instructions'>
 To begin with, apply the <code>monospace</code> font to the <code>h2</code> element, so that it now has two fonts - <code>Lobster</code> and <code>monospace</code>.
 In the last challenge, you imported the <code>Lobster</code> font using the <code>link</code> tag. Now comment out that import of the <code>Lobster</code> font(using the HTML comments you learned before) from Google Fonts so that it isn't available anymore. Notice how your <code>h2</code> element degrades to the <code>monospace</code> font.
-<strong>Note</strong><br>If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
+<strong>Note:</strong> If you have the Lobster font installed on your computer, you won't see the degradation because your browser is able to find the font.
 </section>
 
 ## Tests

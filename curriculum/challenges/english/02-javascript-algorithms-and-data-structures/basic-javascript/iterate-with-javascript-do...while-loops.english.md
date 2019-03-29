@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cDqWGcp'
 
 ## Description
 <section id='description'>
-The next type of loop you will learn is called a "<code>do...while</code>" loop.  It is called a <code>do...while</code> loop because it will first "<code>do</code>" one pass of the code inside the loop no matter what, and then continue to run the loop "<code>while</code>" the specified condition evaluates to <code>true</code>.
+The next type of loop you will learn is called a <code>do...while</code> loop.  It is called a <code>do...while</code> loop because it will first <code>do</code> one pass of the code inside the loop no matter what, and then continue to run the loop <code>while</code> the specified condition evaluates to <code>true</code>.
 <blockquote>var ourArray = [];<br>var i = 0;<br>do {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>} while (i < 5);</blockquote>
 The example above behaves similar to other types of loops, and the resulting array will look like <code>[0, 1, 2, 3, 4]</code>. However, what makes the <code>do...while</code> different from other loops is how it behaves when the condition fails on the first check. Let's see this in action:
 Here is a regular <code>while</code> loop that will run the code in the loop as long as <code>i < 5</code>:

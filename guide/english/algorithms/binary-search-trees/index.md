@@ -5,7 +5,7 @@ title: Binary Search Trees
 ![Binary Search Tree](https://cdn-images-1.medium.com/max/1320/0*x5o1G1UpM1RfLpyx.png)
 
 A tree is a data structure composed of nodes that has the following characteristics:
-1. Each tree has a root node (at the top) - containing some value (can be any datatype).
+1. Each tree has a root node at the top (also known as Parent Node) containing some value (can be any datatype).
 2. The root node has zero or more child nodes.
 3. Each child node has zero or more child nodes, and so on. This creates a subtree in the tree. Every node has its own subtree made up of its children and their children, etc. This means that every node on its own can be a tree.
 
@@ -32,7 +32,7 @@ The BST is built on the idea of the <a href='https://guide.freecodecamp.org/algo
 Initially an empty tree without any nodes is created. The variable/identifier which must point to the root node is initialized with a `NULL` value.
 
 #### Search
-You always start searching the tree at the root node and go down from there. You compare the data in each node with the one you are looking for. If the compared node doesn't match then you either proceed to the right child or the left child, which depends on the outcome of the following comparison: If the node that you are searching for is lower than the one you were comparing it with, you proceed to to the left child, otherwise (if it's larger) you go to the right child. Why? Because the BST is structured (as per its definition), that the right child is always larger than the parent and the left child is always lesser.
+You always start searching the tree at the root node and go down from there. You compare the data in each node with the one you are looking for. If the compared node doesn't match then you either proceed to the right child or the left child, which depends on the outcome of the following comparison: If the node that you are searching for is lower than the one you were comparing it with, you proceed to the left child, otherwise (if it's larger) you go to the right child. Why? Because the BST is structured (as per its definition), that the right child is always larger than the parent and the left child is always lesser.
 
 ###### Breadth-first search (BFS)
 Breadth first search is an algorithm used to traverse a BST. It begins at the root node and travels in a lateral manner (side to side), searching for the desired node. This type of search can be described as O(n) given that each node is visited once and the size of the tree directly correlates to the length of the search.
@@ -76,7 +76,7 @@ Where `n` is the number of nodes in the BST.
 
 ### Implementation of BST
 
-Here's a definiton for a BST node having some data, referencing to its left and right child nodes.
+Here's a definition for a BST node having some data, referencing to its left and right child nodes.
 
 ```c
 struct node {
@@ -332,31 +332,34 @@ void postOrder(struct node* root) {
 ### Following are common types of Binary Trees:
 Full Binary Tree/Strict Binary Tree: A Binary Tree is full or strict if every node has exactly 0 or 2 children.
 
-               18
+              18
+             /   \
            /       \  
          15         30  
-        /  \        /  \
-      40    50    100   40
+        /  \       /  \
+      40    50   100   40
 
 In Full Binary Tree, number of leaf nodes is equal to number of internal nodes plus one.
  
 Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible
  
                18
-           /       \  
+             /    \
+           /        \  
          15         30  
-        /  \        /  \
-      40    50    100   40
+        /  \       /  \
+      40    50   100   40
      /  \   /
-    8   7  9 
+    8    7 9 
 
 Perfect Binary Tree A Binary tree is Perfect Binary Tree in which all internal nodes have two children and all leaves are at the same level.
 
               18
-           /       \  
-         15         30  
-        /  \        /  \
-      40    50    100   40
+             /  \
+           /      \  
+         15        30  
+        /  \      /  \
+      40    50  100   40
 
 ### Augumenting a BST
 Sometimes we need to store some additional information with the traditional data structures to make our tasks easier.

@@ -15,8 +15,8 @@ const mapStateToProps = createSelector(
 
 function SignedIn({ picture }) {
   return (
-    <Link to='/settings'>
-      <img alt='' height='38px' src={picture} />
+    <Link className='settings-link' to='/settings'>
+      <img alt='' className='user-avatar' src={picture} />
     </Link>
   );
 }

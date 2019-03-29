@@ -28,9 +28,11 @@ Use destructuring to obtain the average temperature for tomorrow from the input 
 ```yml
 tests:
   - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>
-    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, '<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>');
+    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79);
   - text: destructuring with reassignment was used
-    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),'destructuring with reassignment was used');
+    testString: getUserInput => assert(code.match(/{[\S\s]*\w+\s*:[\S\s]*\w+\s*}\s*=\s*(avgTemperatures|AVG_TEMPERATURES)/));
+  - text: The key <code>tomorrow</code> was destructured from <code>AVG_TEMPERATURES</code>
+    testString: getUserInput => assert(code.match(/{[\S\s]*tomorrow\s*:\s*tempOfTomorrow[\S\s]*}\s*=\s*(avgTemperatures|AVG_TEMPERATURES)/)); 
 
 ```
 

@@ -3,8 +3,29 @@ title: Use a CSS Linear Gradient to Create a Striped Element
 ---
 ## Use a CSS Linear Gradient to Create a Striped Element
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/use-a-css-linear-gradient-to-create-a-striped-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```html
+<style>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+  div{ 
+    border-radius: 20px;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      yellow 40px,
+      black 40px,
+      black 80px
+    );
+  }
+
+</style>
+
+<div></div>
+```
+
+#### Resources
+
+* [MDN | Repeating Linear Gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/repeating-linear-gradient)

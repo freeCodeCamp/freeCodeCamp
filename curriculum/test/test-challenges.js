@@ -108,8 +108,15 @@ async function runTests() {
         logLevel: 0
       });
       browser = await puppeteer.launch({
-        args: ['--no-sandbox']
-        // dumpio: true
+        args: [
+          // Required for Docker version of Puppeteer
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          // This will write shared memory files into /tmp instead of /dev/shm,
+          // because Docker’s default for /dev/shm is 64MB
+          '--disable-dev-shm-usage'
+          // dumpio: true
+        ]
       });
       global.Worker = createPseudoWorker(await newPageContext(browser));
       page = await newPageContext(browser);
@@ -326,13 +333,13 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
   const { build, sources } = await buildJSChallenge({ files });
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator');
+  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
   return async ({ text, testString }) => {
     try {
       const { pass, err } = await testWorker.execute(
         { testString, build, code, sources },
         5000
-      );
+      ).done;
       if (!pass) {
         throw new AssertionError(`${text}\n${err.message}`);
       }
@@ -341,8 +348,6 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
         ? `${text}\n${err}`
         : (err.message = `${text}
         ${err.message}`);
-    } finally {
-      testWorker.killWorker();
     }
   };
 }

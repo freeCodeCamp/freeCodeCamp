@@ -105,6 +105,21 @@ There are also selectors that act as filters - they will usually start with colo
 $("li:first").css("color", "green");
 ```
 
+
+### Attribute Selector
+There are selectors that return elements which matches certain combinations of Attributes like _Attribute contains_, _Attribute ends with_, _Attribute starts with_ etc. Here's an example of an unordered list with some list items. The jQuery selector below the list selects the `<li>` element in the list--the "One" list item as it has `data*` attribute as `"India"` as its value--and then uses the `.css` method to turn the text green.
+
+```html
+   <ul>
+      <li data-country="India">Mumbai</li>
+      <li data-country="China">Beijing</li>
+      <li data-country="United States">New York</li>
+   </ul>
+```
+```javascript
+$("li[data-country='India']").css("color", "green");
+```
+
 **Note:** Don't forget that applying css in JavaScript is not a good practice. You should always give your styles in css files.
 
 Another filtering selector, `:contains(text)`, selects elements that have a certain text. Place the text you want to match in the parentheses. Here's an example with two paragraphs. The jQuery selector takes the word "Moto" and changes its color to yellow.

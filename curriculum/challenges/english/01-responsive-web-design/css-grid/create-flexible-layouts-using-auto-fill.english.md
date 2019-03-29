@@ -10,7 +10,7 @@ videoUrl: 'https://scrimba.com/p/pByETK/cmzdycW'
 The repeat function comes with an option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>, like this:
 <blockquote>repeat(auto-fill, minmax(60px, 1fr));</blockquote>
 When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one.
-<strong>Note</strong><br>If your container can't fit all your items on one row, it will move them down to a new one.
+<strong>Note:</strong> If your container can't fit all your items on one row, it will move them down to a new one.
 </section>
 
 ## Instructions
