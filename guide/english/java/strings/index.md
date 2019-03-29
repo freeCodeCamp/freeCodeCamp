@@ -184,14 +184,14 @@ My
 ```
 
 
-#### String UpperCase and LowerCase Conversion Functions
+#### String Case Conversion
 
-1. toLowerCase()- This function will convert the whole string into lower case characters.
+1. `.toLowerCase()` - This method will convert the string into lower case characters.
    Example:
    ```java
-   String text1="Welcome99";
-   String text2="WELCOME";
-   String text3="well";
+   String text1 = "Welcome99";
+   String text2 = "WELCOME";
+   String text3 = "well";
    System.out.println(text1.toLowerCase());
    System.out.println(text2.toLowerCase());
    System.out.println(text3.toLowerCase());
@@ -202,13 +202,13 @@ My
    welcome
    well
    ```
-2. toUpperCase()- This function will convert the whole string into upper case characters.
+2. `.toUpperCase()` - This method will convert the string into upper case characters.
    Example:
 
    ```java
-   String text1="Welcome99";
-   String text2="WELCOME";
-   String text3="well";
+   String text1 = "Welcome99";
+   String text2 = "WELCOME";
+   String text3 = "well";
    System.out.println(text1.toUpperCase());
    System.out.println(text2.toUpperCase());
    System.out.println(text3.toUpperCase());
