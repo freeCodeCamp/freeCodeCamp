@@ -1,6 +1,6 @@
 # Set up freeCodeCamp locally
 
-As of 8 March 2019, please consider helping us test our new guide on how to [setup freeCodeCamp locally using Docker](/docs/how-to-setup-freecodecamp-locally-using-docker.md) instead of using this guide. It *should* result in fewer, if not zero, errors, but we won't know until enough devs try it.
+As of 8 March 2019, please consider helping us test our new guide on how to [setup freeCodeCamp locally using Docker](/docs/how-to-setup-freecodecamp-locally-using-docker.md) instead of using this guide. It *should* result in fewer, if not zero, errors but we won't know until enough devs try it.
 
 Follow these guidelines for getting freeCodeCamp locally on your system. This is highly recommended if you want to contribute regularly.
 
