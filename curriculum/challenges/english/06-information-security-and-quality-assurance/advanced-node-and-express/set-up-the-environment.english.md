@@ -12,7 +12,7 @@ The first thing needing to be handled is listening for a new connection from the
 For listening for connections on our server, add the following between the comments in your project:
 <blockquote>
 io.on('connection', socket => {<br>
-  console.log('A user has connected');<br>
+&nbsp;&nbsp;console.log('A user has connected');<br>
 });
 </blockquote>
 Now for the client to connect, you just need to add the following to your client.js which is loaded by the page after you've authenticated:

@@ -14,9 +14,9 @@ You will need to set up the session settings now and initialize Passport. Be sur
 To set up your express app to use use the session we'll define just a few basic options. Be sure to add 'SESSION_SECRET' to your .env file and give it a random value. This is used to compute the hash used to encrypt your cookie!
 <blockquote>
 app.use(session({<br>
-  secret: process.env.SESSION_SECRET,<br>
-  resave: true,<br>
-  saveUninitialized: true,<br>
+&nbsp;&nbsp;secret: process.env.SESSION_SECRET,<br>
+&nbsp;&nbsp;resave: true,<br>
+&nbsp;&nbsp;saveUninitialized: true,<br>
 }));
 </blockquote>
 As well you can go ahead and tell your express app to <b>use</b> 'passport.initialize()' and 'passport.session()'. (For example, <code>app.use(passport.initialize());</code>)

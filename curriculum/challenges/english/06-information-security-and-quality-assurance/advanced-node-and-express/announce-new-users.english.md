@@ -13,14 +13,14 @@ Now your client will have all the necessary information to correctly display the
 An implementation of this could look like the following:<br>
 <blockquote>
 socket.on('user', function(data){<br>
-  $('#num-users').text(data.currentUsers+' users online');<br>
-  var message = data.name;<br>
-  if(data.connected) {<br>
-    message += ' has joined the chat.';<br>
-  } else {<br>
-    message += ' has left the chat.';<br>
-  }<br>
-  $('#messages').append($('&#60;li&#62;').html('&#60;b&#62;'+ message +'&#60;\/b&#62;'));<br>
+&nbsp;&nbsp;$('#num-users').text(data.currentUsers+' users online');<br>
+&nbsp;&nbsp;var message = data.name;<br>
+&nbsp;&nbsp;if(data.connected) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;message += ' has joined the chat.';<br>
+&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;message += ' has left the chat.';<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;$('#messages').append($('&#60;li&#62;').html('&#60;b&#62;'+ message +'&#60;\/b&#62;'));<br>
 });
 </blockquote>
 Submit your page when you think you've got it right.

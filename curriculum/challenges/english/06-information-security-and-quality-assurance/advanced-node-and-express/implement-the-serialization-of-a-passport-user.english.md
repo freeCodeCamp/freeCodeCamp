@@ -12,12 +12,12 @@ To do this, add MongoDB as a dependency and require it in your server. (<code>co
 Now we want to the connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish you will want to encompass your serialization and your app listener in the following:
 <blockquote>
 mongo.connect(process.env.DATABASE, (err, db) => {<br>
-    if(err) {<br>
-        console.log('Database error: ' + err);<br>
-    } else {<br>
-        console.log('Successful database connection');<br>
+&nbsp;&nbsp;if(err) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Database error: ' + err);<br>
+&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log('Successful database connection');<br>
 <br>
-        //serialization and app.listen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//serialization and app.listen<br>
 <br>
 }});
 </blockquote>

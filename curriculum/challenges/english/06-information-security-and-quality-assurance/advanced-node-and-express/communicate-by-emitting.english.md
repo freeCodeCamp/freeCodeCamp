@@ -14,7 +14,7 @@ Finally after incrementing the count, you should emit the event(still within the
 <hr>Now you can implement a way for your client to listen for this event! Similarly to listening for a connection on the server you will use the <em>on</em> keyword.
 <blockquote>
 socket.on('user count', function(data){<br>
-  console.log(data);<br>
+&nbsp;&nbsp;console.log(data);<br>
 });
 </blockquote>
 Now try loading up your app and authenticate and you should see in your client console '1' representing the current user count! Try loading more clients up and authenticating to see the number go up.

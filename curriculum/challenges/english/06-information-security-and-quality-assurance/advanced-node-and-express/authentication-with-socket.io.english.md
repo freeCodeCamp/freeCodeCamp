@@ -12,10 +12,10 @@ Currently, you cannot determine who is connected to your web socket. While 'req.
 Now we just have to tell Socket.IO to use it and set the options. Be sure this is added before the existing socket code and not in the existing connection listener. For your server it should look as follows:
 <blockquote>
 io.use(passportSocketIo.authorize({<br>
-  cookieParser: cookieParser,<br>
-  key:          'express.sid',<br>
-  secret:       process.env.SESSION_SECRET,<br>
-  store:        sessionStore<br>
+&nbsp;&nbsp;cookieParser: cookieParser,<br>
+&nbsp;&nbsp;key:          'express.sid',<br>
+&nbsp;&nbsp;secret:       process.env.SESSION_SECRET,<br>
+&nbsp;&nbsp;store:        sessionStore<br>
 }));
 </blockquote>
 You can also optionally pass 'success' and 'fail' with a function that will be called after the authentication process completes when a client trys to connect.

@@ -14,9 +14,9 @@ On your remixed project, create 2 routes accepting GET requests: /auth/github an
 An example of how '/auth/github/callback' should look is similar to how we handled a normal login in our last project:
 <blockquote>
 app.route('/login')<br>
-  .post(passport.authenticate('local', { failureRedirect: '/' }), (req,res) => {<br>
-    res.redirect('/profile');<br>
-  });
+&nbsp;&nbsp;.post(passport.authenticate('local', { failureRedirect: '/' }), (req,res) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/profile');<br>
+&nbsp;&nbsp;});
 </blockquote>
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/28ea2cae7e1dc6a53d7f0c42d987313b'>here</a>.
 </section>

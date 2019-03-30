@@ -11,16 +11,17 @@ Creating the logout logic is easy. The route should just unauthenticate the user
 In passport, unauthenticating a user is as easy as just calling <code>req.logout();</code> before redirecting.
 <blockquote>
 app.route('/logout')<br>
-  .get((req, res) => {<br>
-      req.logout();<br>
-      res.redirect('/');<br>
-  });
+&nbsp;&nbsp;.get((req, res) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;req.logout();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/');<br>
+});
 </blockquote>
 You may have noticed that we're not handling missing pages (404), the common way to handle this in Node is with the following middleware. Go ahead and add this in after all your other routes:
-<blockquote>app.use((req, res, next) => {<br>
-  res.status(404)<br>
-    .type('text')<br>
-    .send('Not Found');<br>
+<blockquote>
+app.use((req, res, next) => {<br>
+&nbsp;&nbsp;res.status(404)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.type('text')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.send('Not Found');<br>
 });
 </blockquote>
 Submit your page when you think you've got it right.

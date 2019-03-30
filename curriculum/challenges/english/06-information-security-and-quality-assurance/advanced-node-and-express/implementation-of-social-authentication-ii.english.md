@@ -12,14 +12,14 @@ To set up the GitHub strategy, you have to tell <b>passport</b> to <b>use</b> an
 Here's how your new strategy should look at this point:
 <blockquote>
 passport.use(new GitHubStrategy({<br>
-    clientID: process.env.GITHUB_CLIENT_ID,<br>
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,<br>
-    callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/<br>
-  },<br>
-  function(accessToken, refreshToken, profile, cb) {<br>
-      console.log(profile);<br>
-      //Database logic here with callback containing our user object<br>
-  }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clientID: process.env.GITHUB_CLIENT_ID,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clientSecret: process.env.GITHUB_CLIENT_SECRET,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;function(accessToken, refreshToken, profile, cb) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(profile);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//Database logic here with callback containing our user object<br>
+&nbsp;&nbsp;}<br>
 ));
 </blockquote>
 Your authentication won't be successful yet, and actually throw an error, without the database logic and callback, but it should log to your console your GitHub profile if you try it!

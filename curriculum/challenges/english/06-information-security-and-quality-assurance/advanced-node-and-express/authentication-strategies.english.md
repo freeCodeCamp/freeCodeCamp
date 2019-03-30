@@ -12,15 +12,15 @@ Add <em>passport-local</em> as a dependency and add it to your server as follows
 Now you will have to tell passport to <b>use</b> an instantiated LocalStartegy object with a few settings defined. Make sure this as well as everything from this point on is encapsulated in the database connection since it relies on it!
 <blockquote>
 passport.use(new LocalStrategy(<br>
-  function(username, password, done) {<br>
-    db.collection('users').findOne({ username: username }, function (err, user) {<br>
-      console.log('User '+ username +' attempted to log in.');<br>
-      if (err) { return done(err); }<br>
-      if (!user) { return done(null, false); }<br>
-      if (password !== user.password) { return done(null, false); }<br>
-      return done(null, user);<br>
-    });<br>
-  }<br>
+&nbsp;&nbsp;function(username, password, done) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;db.collection('users').findOne({ username: username }, function (err, user) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('User '+ username +' attempted to log in.');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (err) { return done(err); }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!user) { return done(null, false); }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (password !== user.password) { return done(null, false); }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return done(null, user);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;}<br>
 ));
 </blockquote><br>
 This is defining the process to take when we try to authenticate someone locally. First it tries to find a user in our database with the username entered, then it checks for the password to match, then finally if no errors have popped up that we checked for, like an incorrect password, the users object is returned and they are authenticated.
