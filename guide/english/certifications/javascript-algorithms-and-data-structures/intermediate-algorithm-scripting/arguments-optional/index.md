@@ -16,9 +16,9 @@ It can be quite complicated to understand what needs to be done. There are alway
 
 ### Relevant Links
 
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array' target='_blank' rel='nofollow'>Arrays</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof' target='_blank' rel='nofollow'>typeof</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>arguments object</a>
+*   [Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+*   [Typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
+*   [Arguments Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
@@ -92,7 +92,6 @@ In the case that only one argument was passed, do not worry about how to prompt 
     // test here
     addTogether(2,3);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -105,65 +104,31 @@ In the case that only one argument was passed, do not worry about how to prompt 
 
 #### Relevant Links
 
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof' target='_blank' rel='nofollow'>typeof</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>arguments object</a>
+*   [Typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
+*   [Arguments Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 ```javascript
-    function addTogether() {
-      var args = new Array(arguments.length);
-      //Storing the arguments in an array
-      for(var i = 0; i < args.length; ++i) {
-          args[i] = arguments[i];
-        }
-     //Check for the arguments length
-     if(args.length == 2){
-        //If there are two arguments,check for the type of both arguments
-        //Use typeof to check the type of the argument(both should be numbers)
-        if(typeof args[0] !== 'number' || typeof args[1] !=='number' ){
-          return undefined;
-          }
-        return args[0]+args[1];
-       }
-     //When only one argument is provided
-     if(args.length == 1){
-         a= args[0];
-         //Check the  argument using typeof 
-        if(typeof a!=='number'){
-            return undefined;
-          }
-        else{
-           //Making use of closures 
-           return function(b){
-           //Checking the second argument 
-             if(typeof b !=='number'){
-               return undefined;
-               }
-             else
-               return a+b;
-              };
-          }
-        }
-    }
-
-    // test here
-    addTogether(2,3);
+function addTogether(first, second) {
+  if (typeof first !== 'number') {
+    return undefined;
+  }
+  const sum = second => (typeof second === 'number' ? first + second : undefined);
+  return typeof second === 'undefined' ? second => sum(second) : sum(second);
+}
+// test here
+addTogether(2,3);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLoA/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   First store the arguments in an array by creating an array using the constructor method.
-*   Adds each argument to the new array.
-*   Then check for the length of the new array as we need to know if we have enough or not.
-*   Check for the type of the arguments using `typeof` as they both should be numbers.
-*   Returns undefined if any of them is not a number, or returns the sum of them if they are.
-*   If there was only one argument, we still check the type after storing it in a new variable and returning a new function or undefined.
+*   Return `undefined` if first argument is not a `number` or second argument is defined, but not a `number`.
+*   Return sum of the arguments if both are provided otherwise return a sum function.
 
 #### Relevant Links
 
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof' target='_blank' rel='nofollow'>typeof</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>arguments object</a>
+*   [Typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
+*   [Arguments Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 ```javascript
@@ -182,7 +147,6 @@ In the case that only one argument was passed, do not worry about how to prompt 
     // test here
     addTogether(2,3);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLoB/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -192,9 +156,9 @@ In the case that only one argument was passed, do not worry about how to prompt 
 
 #### Relevant Links
 
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-reduce/14299' target='_blank' rel='nofollow'>Array.prototype.reduce</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-some/14304' target='_blank' rel='nofollow'>Array.prototype.some</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from' target='_blank' rel='nofollow'>Array.from</a>
+*   [Array.prototype.reduce](https://forum.freecodecamp.com/t/javascript-array-prototype-reduce/14299)
+*   [Array.prototype.some](https://forum.freecodecamp.com/t/javascript-array-prototype-some/14304)
+*   [Array.from](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
