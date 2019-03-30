@@ -14,11 +14,11 @@ The program is run by updating the integer $n$ as follows:
   <li>repeat this rule until no fraction in the list produces an integer when multiplied by $n$, then halt.</li>
 </ul>
 Conway gave a program for primes in FRACTRAN:
-<span style="margin-left: 2em;">$17/91$, $78/85$, $19/51$, $23/38$, $29/33$, $77/29$, $95/23$, $77/19$, $1/17$, $11/13$, $13/11$, $15/14$, $15/2$, $55/1$</span>
-Starting with $n=2$, this FRACTRAN program will change $n$ to $15=2\times (15/2)$, then $825=15\times (55/1)$, generating the following sequence of integers:
-<span style="margin-left: 2em;">$2$, $15$, $825$, $725$, $1925$, $2275$, $425$, $390$, $330$, $290$, $770$, $\ldots$</span>
+<span style="margin-left: 1em;">$\dfrac{17}{91}$, $\dfrac{78}{85}$, $\dfrac{19}{51}$, $\dfrac{23}{38}$, $\dfrac{29}{33}$, $\dfrac{77}{29}$, $\dfrac{95}{23}$, $\dfrac{77}{19}$, $\dfrac{1}{17}$, $\dfrac{11}{13}$, $\dfrac{13}{11}$, $\dfrac{15}{14}$, $\dfrac{15}{2}$, $\dfrac{55}{1}$</span>
+Starting with $n=2$, this FRACTRAN program will change $n$ to $15=2\times (\frac{15}{2})$, then $825=15\times (\frac{55}{1})$, generating the following sequence of integers:
+<span style="margin-left: 1em;">$2$, $15$, $825$, $725$, $1925$, $2275$, $425$, $390$, $330$, $290$, $770$, $\ldots$</span>
 After 2, this sequence contains the following powers of 2:
-<span style="margin-left: 2em;">$2^2=4$, $2^3=8$, $2^5=32$, $2^7=128$, $2^{11}=2048$, $2^{13}=8192$, $2^{17}=131072$, $2^{19}=524288$, $\ldots$</span>
+<span style="margin-left: 1em;">$2^2=4$, $2^3=8$, $2^5=32$, $2^7=128$, $2^{11}=2048$, $2^{13}=8192$, $2^{17}=131072$, $2^{19}=524288$, $\ldots$</span>
 which are the prime powers of 2.
 </section>
 
