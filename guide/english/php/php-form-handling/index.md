@@ -137,7 +137,7 @@ Take for example this form:
     </form>
     
   </body>
-</html
+</html>
 ```
 
 When this is submitted to `process.php` via the POST method, it performs a transformation on the data to turn each name value followed by '[]' into either an array, or a keyed array.
