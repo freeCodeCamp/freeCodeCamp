@@ -13,7 +13,7 @@ As a reminder, this project is being built upon the following starter project on
 ## Instructions
 <section id='instructions'>
 Use <code>assert.isOk()</code> or <code>assert.isNotOk()</code> to make the tests pass.
-<code>.isOk(truthy)</code> and <code>.isNotOk(falsey)</code> will pass.
+<code>isOk(truthy)</code> and <code>isNotOk(falsey)</code> will pass.
 </section>
 
 ## Tests

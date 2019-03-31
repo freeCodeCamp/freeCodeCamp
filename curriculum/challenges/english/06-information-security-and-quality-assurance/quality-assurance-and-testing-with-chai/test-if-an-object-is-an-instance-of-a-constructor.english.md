@@ -13,7 +13,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Use <code>#instanceOf</code> or <code>#notInstanceOf</code> where it is appropriate.
+Use <code>assert.instanceOf()</code> or <code>assert.notInstanceOf()</code> to make the tests pass. 
 </section>
 
 ## Tests

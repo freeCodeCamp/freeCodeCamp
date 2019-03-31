@@ -13,7 +13,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Use <code>#typeOf</code> or <code>#notTypeOf</code> where it is appropriate.
+Use <code>assert.typeOf()</code> or <code>assert.notTypeOf()</code> to make the tests pass.
 </section>
 
 ## Tests
