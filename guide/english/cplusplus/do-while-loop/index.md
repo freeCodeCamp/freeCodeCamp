@@ -9,7 +9,7 @@ The `do while` loop has the following form:
 do 
 {
   // do something;	
-} while(expression);
+} while(condition);
 	
 ```
 
@@ -24,7 +24,7 @@ Do something first and then test if we have to continue. The result is that the 
 
 
 ```cpp
-#include <iostream>
+#include <iostream.h>
 	using namespace std;
 
 	int main()
