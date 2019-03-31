@@ -42,6 +42,7 @@ function Footer() {
               </Link>
               .
             </p>
+            <p>freeCodeCamp &#169; {new Date().getFullYear()}</p>
           </Col>
           <Col sm={2} xs={6}>
             <ColHeader>Our Nonprofit</ColHeader>
