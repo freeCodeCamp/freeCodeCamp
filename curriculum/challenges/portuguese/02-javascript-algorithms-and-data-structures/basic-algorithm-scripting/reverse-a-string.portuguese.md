@@ -56,6 +56,10 @@ reverseString("hello");
 <section id='solution'>
 
 ```js
-// solution required
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString("hello");
 ```
 </section>

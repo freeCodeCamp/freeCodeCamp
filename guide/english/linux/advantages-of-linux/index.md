@@ -5,13 +5,16 @@ title: Advantages of Linux
 
 Linux updates happen through the global collaboration of developers. Bugs are documented and resolved much quicker with this type of support. Also, since the developers are also the end-users they have the proper motivation to make sure it meets user's needs and that it is designed to run well.
 
+## Open Source.
+All of the code that makes any Linux distribution work is freely available for anyone to review. This gives an added layer of transparency and guarantees that it would be difficult for someone to commit code with malicious purposes. This allows for constant code review by experienced programmers and developers to ensure the best available experience for the user as the operating system is continuously refined.
+
 ## Less risk.
 
-Software is only as good as the support its given. Imagine this: a piece of software is created by the company XYZ and later down the road, they go bankrupt or get bought by another company that decides to cut its support. The software would never see improvements or fixes and therefore its usefulness would inevitably erode and die. Linux is owned and operated by no single entity or company, so this situation cannot happen. More than that anyone is free to pick it up and contribute as well. The risk of losing support for Linux is very unlikely due to its overwhelming popularity and use.
+Software is only as good as the support it's given. Imagine this: a piece of software is created by the company XYZ and later down the road, they go bankrupt or get bought by another company that decides to cut its support. The software would never see improvements or fixes and therefore its usefulness would inevitably erode and die. Linux is owned and operated by no single entity or company, so this situation cannot happen. More than that anyone is free to pick it up and contribute as well. The risk of losing support for Linux is very unlikely due to its overwhelming popularity and use.
 
 ## Lightweight.
 
-Linux's requirements for running on a system are much lower than that of Windows or Mac. With the right Linux distribution a user can have a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
+Linux's requirements for running on a system are much lower than that of Windows or Mac. The right Linux distribution can allow a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
 
 ## Variety.
 
@@ -25,7 +28,7 @@ Linux has an active community of those willing to share their knowledge and help
 
 In addition to documentation, there are plenty of helpful and welcoming communities for newcomers to ask questions such as <a href='https://askubuntu.com/' target='_blank' rel='nofollow'>Ask Ubuntu</a> and <a href='https://www.reddit.com/r/linuxquestions/' target='_blank' rel='nofollow'> Reddit's r/linuxquestions</a>.
 
-There are self-paced certifications that can be taken that are recognized in the IT industry (<a href='https://certification.comptia.org/certifications/linux' target='_blank' rel='nofollow'>CompTIA's Linux+</a> and <a href='https://www.lpi.org' target='_blank' rel='nofollow'>LPI's LPIC tests</a>). Although not required, learning <a href='https://en.wikipedia.org/wiki/C_(programming_language' target='_blank' rel='nofollow'>C</a>) gives the ability for a user to review the Linux code to see what they are running.
+There are self-paced certifications that can be taken that are recognized in the IT industry (<a href='https://certification.comptia.org/certifications/linux' target='_blank' rel='nofollow'>CompTIA's Linux+</a> and <a href='https://www.lpi.org' target='_blank' rel='nofollow'>LPI's LPIC tests</a>). Although not required, learning <a href='https://en.wikipedia.org/wiki/C_(programming_language)' target='_blank' rel='nofollow'>C</a> gives the ability for a user to review the Linux code to see what they are running.
 
 ## Business support.
 
@@ -37,7 +40,7 @@ Linux has driver support for NTFS and HFS+ filesystems (used by Windows and Macs
 
 ## Better hardware support.
 
-For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easilly installed via the software repository of a distribution or by manually installing the provided binaries.
+For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easily installed via the software repository of a distribution or by manually installing the provided binaries.
 
 ## Software Availability/Compatibility.
 

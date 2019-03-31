@@ -3,8 +3,26 @@ title: Use Attribute Selectors to Style Elements
 ---
 ## Use Attribute Selectors to Style Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-attribute-selectors-to-style-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+You can also apply styling to elements by their attribute values.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### For Example
+1. If you want to style all the checkboxes on the page, you can do.
+    ```
+    [type='checkbox'] {
+      // CSS styling
+    }
+    ```
+2. This also works with custom attribute, lets say you have two elements with attribute named `foo`.
+    ```
+    <p foo="bar">foo bar</p>
+    <p foo="baz">foo baz</p>
+    ```
+    You can use attribute to style them differently.
+    ```
+    [foo='bar'] {
+      color: red;
+    }
+    [foo='baz'] {
+      color: purple;
+    }
+    ```
