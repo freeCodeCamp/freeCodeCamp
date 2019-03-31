@@ -1,5 +1,5 @@
 ---
-title: type casting
+title: Type Casting
 ---
 
 ## Type Casting in PHP
