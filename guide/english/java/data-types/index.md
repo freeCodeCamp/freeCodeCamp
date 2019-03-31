@@ -182,7 +182,7 @@ for(int i=0;i<input.length();i++){
 //if the character at index i on the string is a letter or a space, move on to the next index
 if(Character.isLetter(input.charAt(i)) || input.charAt(i)==' '){ 
     
-    continue; //continues the remainder of the for loop if the conditions in the if statement are met
+    continue; // Skips to the next iteration of the for loop
 }
 
 output = output + input.charAt(i); //the number is added onto the output
