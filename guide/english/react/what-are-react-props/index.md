@@ -3,7 +3,7 @@ title: React TypeChecking with PropTypes
 ---
 ## React PropTypes
 
-These serve as a method of typechecking as an application tends go grow, with this a very big base of bugs tends to be corrected with the use of this feature.
+These serve as a method of typechecking. As an application grows, it tends to gather a fair amount of bugs. Typechecking with PropTypes can prevent those.
 
 ## How to get PropTypes
 
@@ -23,7 +23,7 @@ Also on the contrary of the component state, that can be manipulated as needed, 
 
 It's value cannot be changed by the component. 
 
-## Proptypes available
+## PropTypes available
 
 Bellow is a code example with the different validators provided by the package, and how to inject them in the component.
 
@@ -121,4 +121,4 @@ MyComponent.defaultProps = {
 
 For more information about PropTypes and other docs on React.
 
-Go to the [Official Site](https://reactjs.org/) and read the docs, or the [Github Repo](https://github.com/facebook/react/)
+Go to the [Official Site](https://reactjs.org/) and read the docs, or the [GitHub Repo](https://github.com/facebook/react/)
