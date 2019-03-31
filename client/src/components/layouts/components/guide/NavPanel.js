@@ -38,27 +38,18 @@ function NoArticles() {
 }
 
 class NavPanel extends Component {
-  constructor() {
-    super();
-
-    this.renderHeader = this.renderHeader.bind(this);
-    this.handleHeaderClick = this.handleHeaderClick.bind(this);
-    this.handleTitleClick = this.handleTitleClick.bind(this);
-    this.renderBody = this.renderBody.bind(this);
-  }
-
-  handleHeaderClick() {
+  handleHeaderClick = () => {
     const { path, handleClick } = this.props;
     handleClick(path);
-  }
+  };
 
-  handleTitleClick() {
+  handleTitleClick = () => {
     const { toggleDisplaySideNav, onNavigate } = this.props;
     toggleDisplaySideNav();
     onNavigate();
-  }
+  };
 
-  renderHeader() {
+  renderHeader = () => {
     const { isExpanded, path, title } = this.props;
     return (
       <div className='title' onClick={this.handleHeaderClick}>
@@ -72,9 +63,9 @@ class NavPanel extends Component {
         </Link>
       </div>
     );
-  }
+  };
 
-  renderBody() {
+  renderBody = () => {
     const { hasChildren, children, isExpanded } = this.props;
     return (
       <div className={isExpanded ? 'body' : ''}>
@@ -83,7 +74,7 @@ class NavPanel extends Component {
         </ul>
       </div>
     );
-  }
+  };
 
   render() {
     const { isExpanded, dashedName } = this.props;
