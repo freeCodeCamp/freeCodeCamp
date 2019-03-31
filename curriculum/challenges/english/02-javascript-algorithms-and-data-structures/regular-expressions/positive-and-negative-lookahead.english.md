@@ -18,7 +18,7 @@ A more practical use of <code>lookaheads</code> is to check two or more patterns
 
 ## Instructions
 <section id='instructions'>
-Use <code>lookaheads</code> in the <code>pwRegex</code> to match passwords that are greater than 5 characters long and have two consecutive digits.
+Use <code>lookaheads</code> in the <code>pwRegex</code> to match passwords that are greater than 5 characters long, do not begin with numbers, and have two consecutive digits.
 </section>
 
 ## Tests
@@ -69,7 +69,7 @@ let result = pwRegex.test(sampleWord);
 
 
 ```js
-var pwRegex = /(?=\w{5})(?=\D*\d{2})/;
+var pwRegex = /(?=\w{6})(?=\D*\d{2})/;
 ```
 
 </section>

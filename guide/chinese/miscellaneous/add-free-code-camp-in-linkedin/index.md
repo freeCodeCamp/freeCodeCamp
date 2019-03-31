@@ -1,5 +1,5 @@
 ---
-title: Add Free Code Camp in Linkedin
+title: Add Free Code Camp in LinkedIn
 localeTitle: 在Linkedin中添加免费代码营
 ---
 LinkedIn将Free Code Camp视为一所大学。

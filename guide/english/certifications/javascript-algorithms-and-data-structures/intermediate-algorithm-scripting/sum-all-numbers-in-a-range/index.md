@@ -63,29 +63,28 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
-    function sumAll(arr) {
+    const sumAll = (arr) => {
       // Buckle up everything to one!
-
-      // Using ES6 arrow function (one-liner)
-      var sortedArr = arr.sort((a,b) => a-b);
-      var firstNum = arr[0];
-      var lastNum = arr[1];
+      const startNum = arr[0];
+      const endNum = arr[1];
+      
+      // Get the count of numbers between the two numbers by subtracting them and add 1 to the absolute value.
+      // ex. There are |1-4| + 1 = 4, (1, 2, 3, 4), 4 numbers between 1 and 4.
+      const numCount = Math.abs(startNum - endNum) + 1
+      
       // Using Arithmetic Progression summing formula
-
-      var sum = (lastNum - firstNum + 1) * (firstNum + lastNum) / 2;
+      const sum = (startNum + endNum) * numCount / 2;
       return sum;
-    }
+    };
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLm7/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   Firstly, we create a variable called `sortedArr` which sorts it from the lowest to the highest value.
-*   `firstNum` is equal to the first number and `lastNum` is equal to the second number.
-*   Next, using the Arithmetic Progression summing formula we let `sum` equal `(lastNum - firstNum + 1) * (firstNum + lastNum) / 2`.
-*   Finally, we return `sum`.
-
-The line `var sortedArr = arr.sort((a,b) => a-b);` is probably what will have you more confused. This would be the same as creating a function that returns `a-b` for the `sort()` which is the standard way to sort numbers from smallest to largest. Instead using arrow or fat arrow function, we are able to do all that in one single line thus allowing us to write less.
+*   The formula for calculating the sum of a continuous range is "(startNum + endNum) * numCount / 2".
+*   arr[0] and arr[1] can either be startNum or endNum, order doesn't matter.
+*   We can get the count of numbers in range by "Math.abs(arr[0] - arr[1]) + 1".
+*   Applying the formula by plugging in the numbers.
 
 #### Relevant Links
 
@@ -123,6 +122,3 @@ The line `var sortedArr = arr.sort((a,b) => a-b);` is probably what will have yo
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.
