@@ -25,15 +25,15 @@ using namespace std;
 
 int main()
 {
-    int counter, howmuch;
+  int counter, howmuch;
 
-    cin >> howmuch;
-    counter = 0;
-    do {
-        counter++;
-        cout << counter << '\n';
-    } while (counter < howmuch);
-    return 0;
+  cin >> howmuch;
+  counter = 0;
+  do {
+    counter++;
+    cout << counter << '\n';
+  } while (counter < howmuch);
+  return 0;
 }
 ```
 
@@ -41,11 +41,11 @@ A common mistake with do-while loops is attempting to use a variable that is loc
 ```cpp
 int main()
 {
-    do {
-        // This will not compile because the counter is in the scope of the do, whereas the while conditional is outside.
-        int counter = 10;
-    } while (counter < 10);
-    return 0;
+  do {
+    // This will not compile because the counter is in the scope of the do, whereas the while conditional is outside.
+    int counter = 10;
+  } while (counter < 10);
+  return 0;
 }
 
 ```
