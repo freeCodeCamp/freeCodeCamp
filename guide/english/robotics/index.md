@@ -3,7 +3,7 @@ title: Robotics
 ---
 ## Robotics
 
-Robotics is about the systems that make up robots. There is no universally applicable definition of a robot. One generally accepted definition is: _A robot is a programmable physical machine that follows the sense, think, act paradigm_. More specifically, a robot needs to sense its environment, use that information as an input to make decisions and then act accordingly. Each system in this paradigm is often a study in itself. There are a multitude of varieties of robot types and component systems. Each robot usually is dedicated to a set of processes with clear objectives.
+Robotics is about the systems that make up robots. There is no universally applicable definition of a robot. One generally accepted definition is: _A robot is a programmable physical machine that follows the sense, think, act paradigm_. More specifically, a robot needs to sense its environment, use that information as an input to make decisions, and then act accordingly; each system in this paradigm is often a study in itself. There are a multitude of varieties of robot types and component systems. Each robot usually is dedicated to a set of processes with clear objectives.
 
 ### Sense
 
