@@ -21,7 +21,7 @@ Commonly used options:
 - `-r` use timestamp from first file to second file.
 - `-a` In case you want to only change the access time, use the -a command line option.
 - `-m` Similarly, if the requirement is to only change the modification time, use the -m command line option.
-
+- `-h` Is useful if you only want to change the symbolic link, instead of the referenced file.
 
 ### Example
 ```
