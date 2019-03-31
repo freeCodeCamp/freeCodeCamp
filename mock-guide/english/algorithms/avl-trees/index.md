@@ -45,7 +45,7 @@ An AVL tree is a binary search tree which has the following properties:
 ->The sub-trees of every node differ in height by at most one.
 ->Every sub-tree is an AVL tree.
 
-AVL tree checks the height of the left and the right sub-trees and assures that the difference is not more than 1. This difference is called the Balance Factor.
+AVL tree checks the height of the left and the right sub-trees and assures that the difference is neither more than 1 nor less than -1. This difference is called the Balance Factor. Therefore for a balanced AVL tree the balancing factor should have values -1/0/1.
 The height of an AVL tree is always O(Logn) where n is the number of nodes in the tree.
 
 AVL Tree Rotations:-
