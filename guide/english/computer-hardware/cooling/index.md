@@ -27,7 +27,7 @@ Cooling devices are available for individual parts on the computer. The two most
 * Cable Management - Having a rat's nest of cables can disrupt airflow and make your computer run hotter. It is recommended to take some time to cable manage after building a computer, as it can increase the lifespan of your computer in the future. There are various accessories that can help with cable management. Some examples are zip ties, velcro ties and cable sleeves.
 
 ## Thermal Paste
-Thermal paste is a thermally conductive compound which is used as an interface between the CPU and the heatsink itself. Thermal paste trying to eliminate the number of air gaps or space between the heatsink and CPU in order to maximize the amount of heat transfer between the two.
+Thermal paste is a thermally conductive compound which is used as an interface between the CPU and the heatsink itself. Thermal paste aims to eliminate the number of air gaps or space between the heatsink and CPU in order to maximize the amount of heat transfer between the two.
 ### Types of Thermal Paste
 Thermal paste comes in different varieties which have different amounts of thermal conductivity. From least to greatest thermal conductivity, here are the different types of thermal compound: 
 * Silicon Carbide
