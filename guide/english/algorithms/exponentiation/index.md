@@ -56,3 +56,6 @@ int power(int x, unsigned int y, int p) {
 } 
 ```
 Time Complexity: O(Log y).
+
+#### More Information:
+- [Basic Fundamentals](https://mathinsight.org/exponentiation_basic_rules)
