@@ -30,3 +30,8 @@ This statement will deallocate the memory previously allocated. C does not come 
 * Allocating memory allows objects to exist beyond the scope of the current block.
 * C passes by value instead of reference. Using malloc to assign memory, and then pass the pointer to another function, is more efficient than having the function recreate the structure.
 
+
+Difference between malloc() and calloc()
+1. Malloc() does not assignes the created memory to zero where as calloc() assignes the memory created to zero.
+2. malloc() is best suitable for Character data and calloc() for Numeric data.
+3. Malloc() can give garbage value if it deals in numeric data as it does not assignes the meory to zero.
