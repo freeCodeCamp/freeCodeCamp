@@ -8,27 +8,59 @@ The `<table>` tag allows you to display a table on your webpage.
 ### Example
 ```html
 <table>
-  <tr>
-    <td>Row 1, Cell 1</td>
-    <td>Row 1, Cell 2</td>
-  </tr>
-  <tr>
-    <td>Row 2, Cell 1</td>
-    <td>Row 2, Cell 2</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Job Role</th>
+      <th>Location</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sherlock Holmes</td>
+      <td>Detective</td>
+      <td>London</td>
+    </tr>
+    <tr>
+      <td>Harry Potter</td>
+      <td>Wizard</td>
+      <td>Godric's Hollow</td>
+    </tr>
+    <tr>
+      <td>Winnie the Pooh</td>
+      <td>Honey Taster</td>
+      <td>Five Hundred Acre Wood</td>
+    </tr>
+  </tbody>
 </table>
 ```
 This code block would produce the following output:
 
 <table>
-  <tr>
-    <td>Row 1, Cell 1</td>
-    <td>Row 1, Cell 2</td>
-  </tr>
-  <tr>
-    <td>Row 2, Cell 1</td>
-    <td>Row 2, Cell 2</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Job Role</th>
+      <th>Location</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sherlock Holmes</td>
+      <td>Detective</td>
+      <td>London</td>
+    </tr>
+    <tr>
+      <td>Harry Potter</td>
+      <td>Wizard</td>
+      <td>Godric's Hollow</td>
+    </tr>
+    <tr>
+      <td>Winnie the Pooh</td>
+      <td>Honey Taster</td>
+      <td>Five Hundred Acre Wood</td>
+    </tr>
+  </tbody>
 </table>
 
 

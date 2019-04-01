@@ -10,7 +10,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/c4Ep9Am'
 HTML5 introduces more descriptive HTML tags. These include <code>header</code>, <code>footer</code>, <code>nav</code>, <code>video</code>, <code>article</code>, <code>section</code> and others.
 These tags make your HTML easier to read, and also help with Search Engine Optimization (SEO) and accessibility.
 The <code>main</code> HTML5 tag helps search engines and other developers find the main content of your page.
-<strong>Note</strong><br>Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
+<strong>Note:</strong> Many of the new HTML5 tags and their benefits are covered in the Applied Accessibility section.
 </section>
 
 ## Instructions

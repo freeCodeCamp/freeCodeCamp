@@ -31,6 +31,8 @@ In this section, we'll have guides to a wide variety of tools used by designers.
 
 ### Painting - Great for artists.
 
+[Adobe XD] (https://www.adobe.com/products/xd.html)
+
 [Clip Studio Paint](https://www.clipstudio.net/en)
 
 [Krita](https://krita.org/en/homepage/)
@@ -49,3 +51,9 @@ In this section, we'll have guides to a wide variety of tools used by designers.
 ### Firefox
 - [Color Picker](https://addons.mozilla.org/en-us/firefox/addon/colorzilla/?src=collection&collection_id=90e68e6a-f13f-5921-3412-5228262ca9db)
 - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+
+### For Chrome
+
+In this section, you can see popular Chrome plug-ins used by designers.
+
+- [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp)

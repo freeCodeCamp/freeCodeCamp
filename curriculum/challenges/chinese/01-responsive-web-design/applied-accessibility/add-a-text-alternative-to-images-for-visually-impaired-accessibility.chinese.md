@@ -3,7 +3,6 @@ id: 587d774c367417b2b2512a9c
 title: Add a Text Alternative to Images for Visually Impaired Accessibility
 challengeType: 0
 videoUrl: ''
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-alt-text-to-an-image-for-accessibility'
 localeTitle: 为视力受损的辅助功能添加图像替代文字
 ---
 

@@ -2,18 +2,17 @@
 id: bad87fee1348bd9aedf08824
 title: Add Different Padding to Each Side of an Element
 challengeType: 0
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-different-padding-to-each-side-of-an-element'
 videoUrl: ''
-localeTitle: Añadir diferente relleno a cada lado de un elemento
+localeTitle: Añadir padding diferente a cada lado de un elemento
 ---
 
-## Description
-<section id="description"> A veces querrá personalizar un elemento para que tenga diferentes cantidades de <code>padding</code> en cada uno de sus lados. CSS le permite controlar el <code>padding</code> de los cuatro lados individuales de un elemento con las propiedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> y <code>padding-left</code> . </section>
+## Descripción
+<section id="description"> A veces desearás personalizar un elemento para que tenga diferentes valores de <code>padding</code> en cada uno de sus lados. CSS  permite controlar el <code>padding</code> de los cuatro lados individuales de un elemento con las propiedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> y <code>padding-left</code> . </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Dale a la caja azul un <code>padding</code> de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -84,7 +83,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
