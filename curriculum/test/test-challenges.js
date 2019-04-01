@@ -83,6 +83,11 @@ let page;
 runTests();
 
 async function runTests() {
+  process.on('unhandledRejection', err => {
+    spinner.stop();
+    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+  });
+
   let testLangs = [...supportedLangs];
   if (process.env.TEST_CHALLENGES_FOR_LANGS) {
     const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(',').map(
