@@ -82,7 +82,7 @@ Got it? ![:wink:](https://forum.freecodecamp.com/images/emoji/emoji_one/wink.png
 
 **Solution ahead!**
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Code Solution:
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
     function factorialize(num) {
       if (num === 0) { return 1; }
@@ -103,11 +103,36 @@ Notice at the first line we have the terminal condition, i.e a condition to chec
 *   <a href='https://en.wikipedia.org/wiki/Factorial' target='_blank' rel='nofollow'>Factorialization</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators' target='_blank' rel='nofollow'>Arithmetic Operators</a>
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+
+    function factorialize(num, factorial = 1) {
+      if (num == 0) {
+        return factorial;
+      } else {
+        return factorialize(num - 1, factorial * num);
+      }
+    }
+
+    factorialize(5);
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/CrimsonVerifiableDownload' target='_blank' rel='nofollow'>Run Code</a>
+
+## Code Explanation:
+
+In this solution, we use <a href='https://stackoverflow.com/questions/33923/what-is-tail-recursion' target='_blank' rel='nofollow'>Tail Recursion</a> to optimize the the memory use.
+
+In traditional head recursion, the typical model is that you perform your recursive calls first, and then you take the return value of the recursive call and calculate the result. In this manner, you don't get the result of your calculation until you have returned from every recursive call.
+
+In tail recursion, you perform your calculations first, and then you execute the recursive call, passing the results of your current step to the next recursive step. This results in the last statement being in the form of (return (recursive-function params)).
+
+In this solution, with each evaluation of the recursive call, the factorial is updated. This is different from the head-recursive solution where all evaluation calculations are stored on the stack until the base case is reached. 
+
+### Relevant Links
+
+*   <a href='https://www.geeksforgeeks.org/tail-recursion/' target='_blank' rel='nofollow'>Tail Recursion</a>
+
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

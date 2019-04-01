@@ -42,7 +42,7 @@ challengeType: 5
 
 ```yml
 tests:
-  - text: <code>brain(bye)</code> should retuen a string
+  - text: <code>brain(bye)</code> should return a string
     testString: assert(typeof brain(bye) === 'string', '<code>brain(bye)</code> should return a string');
   - text: <code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"
     testString: assert.equal(brain("++++++[>++++++++++<-]>+++++."),"A", '<code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"');
