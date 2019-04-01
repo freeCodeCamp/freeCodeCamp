@@ -5,8 +5,7 @@ title: Designer Tools
 
 In this section, we'll have guides to a wide variety of tools used by designers.
 
-### UI
-Great for static content. 
+### UI - Great for static content. 
 
 [Sketch](https://www.sketchapp.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/sketch/index.md)
 
@@ -16,15 +15,13 @@ Great for static content.
 
 [Figma](https://www.figma.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Figma/index.md)
 
-### Interaction
-Better for complicated interactions.
+### Interaction - Better for complicated interactions.
 
 [Adobe Experience Design](www.adobe.com/products/experience-design.html) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Experience-design/index.md)
 
 [Framer](https://framer.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/framer/index.md)
 
-### Wireframes and prototyping
-Ideal for click-through prototypes.
+### Wireframes and prototyping - Ideal for click-through prototypes.
 
 [InVision](https://www.invisionapp.com/)
 
@@ -32,10 +29,9 @@ Ideal for click-through prototypes.
 
 [Moqups](https://moqups.com/)
 
-[Adobe XD] (https://www.adobe.com/products/xd.html)
+### Painting - Great for artists.
 
-### Painting
-Great for artists.
+[Adobe XD] (https://www.adobe.com/products/xd.html)
 
 [Clip Studio Paint](https://www.clipstudio.net/en)
 
@@ -46,11 +42,13 @@ Great for artists.
 [Autodesk Sketchbook](https://www.sketchbook.com/)
 
 ## Plug-ins
+### Chrome
+- [Sizzy](https://sizzy.co/)
+  - Responsive web design testing site.
+- [Checkbot](https://www.checkbot.io/)
+  - Tool to find dead or broken links, duplicate titles, and more.
 
-### For Firefox
-
-In this section, you can see popular Firefox plug-ins used by designers.
-
+### Firefox
 - [Color Picker](https://addons.mozilla.org/en-us/firefox/addon/colorzilla/?src=collection&collection_id=90e68e6a-f13f-5921-3412-5228262ca9db)
 - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
 
