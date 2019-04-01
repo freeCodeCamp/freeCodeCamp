@@ -9,7 +9,7 @@ Some algorithms are used to find a specific node or the path between two given n
 
 ### Why Graph Algorithms are Important
 
-A graphs are very useful data structures which can be to model various problems. These algorithms have direct applications on Social Networking sites, State Machine modeling and many more.
+Graphs are very useful data structures which can be to model various problems. These algorithms have direct applications on Social Networking sites, State Machine modeling and many more.
 
 ### Some Common Graph Algorithms
 Some of the most common graph algorithms are:
