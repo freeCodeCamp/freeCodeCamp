@@ -7,7 +7,7 @@ localeTitle: Наследовать стили из элемента тела
 ---
 
 ## Description
-<section id="description"> Теперь мы доказали, что каждая HTML-страница имеет элемент <code>body</code> , а ее элемент <code>body</code> также может быть с CSS. Помните, вы можете стилизовать свой элемент <code>body</code> же, как любой другой элемент HTML, и все ваши другие элементы наследуют стили вашего <code>body</code> . </section>
+<section id="description"> Теперь мы доказали, что каждая HTML-страница имеет элемент <code>body</code> , а ее элемент <code>body</code> также может быть связан с CSS. Помните, вы можете стилизовать свой элемент <code>body</code> же, как любой другой элемент HTML, и все ваши другие элементы наследуют стили вашего <code>body</code> . </section>
 
 ## Instructions
 <section id="instructions"> Во-первых, создайте элемент <code>h1</code> с текстом <code>Hello World</code> Затем дадим все элементы на вашей странице цвета <code>green</code> , добавив <code>color: green;</code> к объявлению стиля вашего <code>body</code> . Наконец, придайте вашему <code>body</code> элемент семейства шрифтов <code>monospace</code> , добавив <code>font-family: monospace;</code> к объявлению стиля вашего <code>body</code> . </section>

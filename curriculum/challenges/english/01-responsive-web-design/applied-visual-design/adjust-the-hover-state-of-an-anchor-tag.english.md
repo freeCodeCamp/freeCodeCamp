@@ -25,7 +25,7 @@ tests:
   - text: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.
     testString: assert($('a').css('color') == 'rgb(0, 0, 0)', 'The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');
   - text: The anchor tag should have a <code>color</code> of blue on hover.
-    testString: assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), 'The anchor tag should have a <code>color</code> of blue on hover.');
+    testString: assert(code.match(/a:hover\s*?{\s*?color:\s*?(blue|rgba\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?,\s*?1\s*?\)|#00F|rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\))\s*?;\s*?}/gi), 'The anchor tag should have a <code>color</code> of blue on hover.');
 
 ```
 
@@ -57,7 +57,18 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: rgba(0,0,255,1);
+  }
+
+
+
+</style>
+<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 ```
 </section>
