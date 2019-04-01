@@ -5,7 +5,6 @@ trigger:
     - production-*
 pr: none
 
-name: 'freeCodeCamp-dev-CD'
 pool:
   name: Hosted macOS
   demands: npm
@@ -16,24 +15,10 @@ steps:
   inputs:
     versionSpec: 10.x
 
-- script: |
-   echo -----------------------------------
-   echo Installing npm dependencies - Start
-   echo -----------------------------------
-   npm ci
-   echo -----------------------------------
-   echo Installing npm dependencies - End
-   echo -----------------------------------
+- script: npm ci
   displayName: 'Install npm dependencies'
 
-- script: |
-   echo -----------------------------------
-   echo Building client component - Start
-   echo -----------------------------------
-   npm run build
-   echo -----------------------------------
-   echo  Building client component - End
-   echo -----------------------------------
+- script: npm run build
   workingDirectory: client
   displayName: 'Build the client'
   env:
@@ -46,17 +31,10 @@ steps:
     STRIPE_PUBLIC_KEY: $(STRIPE_PUBLIC_KEY)
 
 - script: |
-   echo -----------------------------------
-   echo Publishing files to netlify - Start
-   echo -----------------------------------
    npm install netlify-cli -g
    netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir ./public
-   echo -----------------------------------
-   echo Publishing files to netlify - End
-   echo -----------------------------------
   workingDirectory: client
   displayName: 'Publish to Netlify'
   env:
     NETLIFY_SITE_ID: $(NETLIFY_SITE_ID)
     NETLIFY_ACCESS_TOKEN: $(NETLIFY_ACCESS_TOKEN)
-
