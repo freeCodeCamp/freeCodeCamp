@@ -8,13 +8,13 @@ challengeType: 2
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
+<code>isTrue(true)</code> and <code>isNotTrue(everything else)</code> will pass.
+<code>isFalse()</code> and <code>isNotFalse()</code> also exist.
 </section>
 
 ## Instructions
 <section id='instructions'>
 Use <code>assert.isTrue()</code> or <code>assert.isNotTrue()</code> to make the tests pass.
-<code>isTrue(true)</code> and <code>isNotTrue(everything else)</code> will pass.
-<code>isFalse()</code> and <code>isNotFalse()</code> also exist.
 </section>
 
 ## Tests

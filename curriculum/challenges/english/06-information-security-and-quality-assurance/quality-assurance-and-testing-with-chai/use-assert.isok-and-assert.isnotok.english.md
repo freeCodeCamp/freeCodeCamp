@@ -8,12 +8,12 @@ challengeType: 2
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
+<code>isOk(truthy)</code> and <code>isNotOk(falsey)</code> will pass.
 </section>
 
 ## Instructions
 <section id='instructions'>
 Use <code>assert.isOk()</code> or <code>assert.isNotOk()</code> to make the tests pass.
-<code>isOk(truthy)</code> and <code>isNotOk(falsey)</code> will pass.
 </section>
 
 ## Tests
