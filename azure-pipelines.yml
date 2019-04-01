@@ -29,3 +29,15 @@ steps:
       FORUM_LOCATION: $(FORUM_LOCATION)
       ROLLBAR_CLIENT_ID: $(ROLLBAR_CLIENT_ID)
       STRIPE_PUBLIC_KEY: $(STRIPE_PUBLIC_KEY)
+
+  - task: CopyFiles@2
+    displayName: 'Copy build to staging area'
+    inputs:
+      contents: 'public\**'
+      targetFolder: $(Build.ArtifactStagingDirectory)
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish build artificats'
+    inputs:
+      pathtoPublish: $(Build.ArtifactStagingDirectory)
+      artifactName: dev-build
