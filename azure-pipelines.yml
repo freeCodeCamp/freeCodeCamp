@@ -1,0 +1,62 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - production-*
+pr: none
+
+name: 'freeCodeCamp-dev-CD'
+pool:
+  name: Hosted macOS
+  demands: npm
+
+steps:
+- task: NodeTool@0
+  displayName: 'Use Node 10.x'
+  inputs:
+    versionSpec: 10.x
+
+- script: |
+   echo -----------------------------------
+   echo Installing npm dependencies - Start
+   echo -----------------------------------
+   npm ci
+   echo -----------------------------------
+   echo Installing npm dependencies - End
+   echo -----------------------------------
+  displayName: 'Install npm dependencies'
+
+- script: |
+   echo -----------------------------------
+   echo Building client component - Start
+   echo -----------------------------------
+   npm run build
+   echo -----------------------------------
+   echo  Building client component - End
+   echo -----------------------------------
+  workingDirectory: client
+  displayName: 'Build the client'
+  env:
+    NODE_ENV: production
+    LOCALE: $(LOCALE)
+    NEWS_LOCATION: $(NEWS_LOCATION)
+    API_LOCATION: $(API_LOCATION)
+    FORUM_LOCATION: $(FORUM_LOCATION)
+    ROLLBAR_CLIENT_ID: $(ROLLBAR_CLIENT_ID)
+    STRIPE_PUBLIC_KEY: $(STRIPE_PUBLIC_KEY)
+
+- script: |
+   echo -----------------------------------
+   echo Publishing files to netlify - Start
+   echo -----------------------------------
+   npm install netlify-cli -g
+   netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --dir ./public
+   echo -----------------------------------
+   echo Publishing files to netlify - End
+   echo -----------------------------------
+  workingDirectory: client
+  displayName: 'Publish to Netlify'
+  env:
+    NETLIFY_SITE_ID: $(NETLIFY_SITE_ID)
+    NETLIFY_ACCESS_TOKEN: $(NETLIFY_ACCESS_TOKEN)
+
