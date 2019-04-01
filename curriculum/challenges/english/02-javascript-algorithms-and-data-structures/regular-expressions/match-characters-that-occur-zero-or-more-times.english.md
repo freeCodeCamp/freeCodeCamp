@@ -13,7 +13,7 @@ The character to do this is the <code>asterisk</code> or <code>star</code>: <cod
 
 ## Instructions
 <section id='instructions'>
-Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match all the upper and lowercase <code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags, and it should not match any of the other quotes.
+For this challenge, <code>chewieQuote</code> has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match an uppercase <code>"A"</code> character immediately followed by zero or more lowercase <code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags or character classes, and it should not match any of the other quotes.
 </section>
 
 ## Tests
@@ -22,15 +22,17 @@ Create a regex <code>chewieRegex</code> that uses the <code>*</code> character t
 ```yml
 tests:
   - text: Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.
-    testString: assert(/\*/.test(chewieRegex.source), 'Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.');
-  - text: Your regex <code>chewieRegex</code> should match 16 characters.
-    testString: assert(result[0].length === 16, 'Your regex <code>chewieRegex</code> should match 16 characters.');
-  - text: Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.
-    testString: assert(result[0] === 'Aaaaaaaaaaaaaaaa', 'Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.');
-  - text: Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>
-    testString: assert(!"He made a fair move. Screaming about it can\'t help you.".match(chewieRegex), 'Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>');
-  - text: Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>
-    testString: assert(!"Let him have it. It\'s not wise to upset a Wookiee.".match(chewieRegex), 'Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>');
+    testString: assert(/\*/.test(chewieRegex.source));
+  - text: Your regex should match <code>"A"</code> in <code>chewieQuote</code>.
+    testString: assert(result[0][0] === 'A');
+  - text: Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code> in <code>chewieQuote</code>.
+    testString: assert(result[0] === 'Aaaaaaaaaaaaaaaa');
+  - text: Your regex <code>chewieRegex</code> should match 16 characters in <code>chewieQuote</code>.
+    testString: assert(result[0].length === 16);
+  - text: Your regex should not match any characters in "He made a fair move. Screaming about it can't help you."
+    testString: assert(!"He made a fair move. Screaming about it can't help you.".match(chewieRegex));
+  - text: Your regex should not match any characters in "Let him have it. It's not wise to upset a Wookiee."
+    testString: assert(!"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex));
 
 ```
 
@@ -42,14 +44,20 @@ tests:
 <div id='js-seed'>
 
 ```js
-let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-let chewieRegex = /change/; // Change this line
+let chewieRegex = /change/; // Only change this line
 let result = chewieQuote.match(chewieRegex);
 ```
 
 </div>
 
+## Before Test
+<div id='js-setup'>
 
+```js
+const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+```
+
+</div>
 
 </section>
 
@@ -57,7 +65,6 @@ let result = chewieQuote.match(chewieRegex);
 <section id='solution'>
 
 ```js
-  let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
   let chewieRegex = /Aa*/;
   let result = chewieQuote.match(chewieRegex);
 ```
