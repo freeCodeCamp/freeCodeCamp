@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08812
 title: Add Images to Your Website
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-images-to-your-website'
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
 ---
 
@@ -13,7 +12,7 @@ An example of this would be:
 <code>&#60img src="https://www.your-image-source.com/your-image.jpg"&#62</code>
 Note that <code>img</code> elements are self-closing.
 All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
-Note: If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
+<strong>Note:</strong> If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
 Ideally the <code>alt</code> attribute should not contain special characters unless needed.
 Let's add an <code>alt</code> attribute to our <code>img</code> example above:
 <code>&#60img src="https://www.your-image-source.com/your-image.jpg" alt="Author standing on a beach with two thumbs up."&#62</code>
@@ -68,17 +67,13 @@ tests:
 ## Solution
 <section id='solution'>
 
-<div id='html-seed'>
-
 ```html
 <h2>CatPhotoApp</h2>
 <main>
-  <img src="https://bit.ly/fcc-relaxing-cat" alt="cat_img"></img>
-
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
-
-</div>
 ```
+
 </section>

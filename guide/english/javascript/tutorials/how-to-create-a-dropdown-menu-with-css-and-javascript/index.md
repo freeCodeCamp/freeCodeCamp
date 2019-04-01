@@ -3,7 +3,7 @@ title: How to Create a Dropdown Menu with CSS and JavaScript
 ---
 
 ## How to Create a Dropdown Menu with CSS and JavaScript
-In this tutorial you will learn how to create a simple dropdown menu with vanilla Javascript, HTML and CSS. We will walk through the HTML, CSS and Javascript code, but paying more attention to the programming, since this is a JS tutorial. We'll use just plain JS and CSS, with no frameworks or preprocessors. The only (kind-of) exception will be importing the [Font Awesome](https://fontawesome.com/) CSS file because we'll use one of its icons.
+In this tutorial you will learn how to create a simple dropdown menu with vanilla JavaScript, HTML and CSS. We will walk through the HTML, CSS and JavaScript code, but paying more attention to the programming, since this is a JS tutorial. We'll use just plain JS and CSS, with no frameworks or preprocessors. The only (kind-of) exception will be importing the [Font Awesome](https://fontawesome.com/) CSS file because we'll use one of its icons.
 
 This is targeted to developers that have an average understanding of HTML, CSS and JS. I tried to make it as clean as possible, but I won't focus too much on details here. I hope you all enjoy.
 
@@ -130,7 +130,7 @@ body{
 ```
 
 #### JavaScript:
-Now we'll see how the Javascript part is implemented. We'll first go through the function definitions 
+Now we'll see how the JavaScript part is implemented. We'll first go through the function definitions 
 and then the code that calls these functions to make the dropdown actions happen.
 
 Basically, there are 3 actions that take place depending on what the user interaction is, as their listeners are added to the DOM elements:
@@ -141,7 +141,7 @@ Basically, there are 3 actions that take place depending on what the user intera
 I'd like to make it clear that we are using arrow functions( `() => {}` ) and the `const` keyword, which are ES6 features. You're probably good if you're using a recent version of your browser, but keep that in mind.
 
 #### 1. Clicking on the dropdown element
-```Javascript
+```JavaScript
 function toggleClass(elem,className){
 	if (elem.className.indexOf(className) !== -1){
 		elem.className = elem.className.replace(className,'');
@@ -179,7 +179,7 @@ When the dropdown element is clicked, it opens(if it is closed) or closes(if it 
 
 
 #### 2. Selecting one of the dropdown options
-```Javascript
+```JavaScript
 function handleOptionSelected(e){
 	toggleClass(e.target.parentNode, 'hide');			
 
@@ -199,7 +199,7 @@ function handleOptionSelected(e){
 }
 ```
 #### 3. Changing the currently selected option
-```Javascript
+```JavaScript
 function handleTitleChange(e){
 	const result = document.getElementById('result');
 
@@ -210,7 +210,7 @@ function handleTitleChange(e){
 The function `handleTitleChange` is bound to the custom `change` event on the `.title` element, to change the `#result` element content whenever the title element changes. This event's triggering is done on the previous section.
 
 #### Main code
-```Javascript
+```JavaScript
 
 //get elements
 const dropdownTitle = document.querySelector('.dropdown .title');

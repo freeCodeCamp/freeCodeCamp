@@ -36,6 +36,12 @@ Price as a function of size is a continuous output, so this is a regression prob
 
 (b) Classification - for categorical response values, where the data can be separated into specific “classes”. For example given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
 
+#### Example 3:
+
+(a) Regression - Predicting people's income based on years of higher education.
+
+(b) Classification - Object classification in images. Given an image, the algorithm can determine which objects are present, such as "dog", "vase", or "car".
+
 #### Suggested Reading:
 
 - https://en.wikipedia.org/wiki/Supervised_learning

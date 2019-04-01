@@ -17,8 +17,8 @@ acronym also changed to what it stands for today: 'PHP: Hypertext Preprocessor'.
 
 ## What is PHP used for?
 
-As of October 2017, PHP is used on [78.9% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). It is
-typically used on websites to generate web page content dynamically. Use-cases include:
+As of October 2018, PHP is used on [80% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). 
+It is typically used on websites to generate web page content dynamically. Use-cases include:
 
 * Websites and web applications (server-side scripting)
 * Command line scripting
@@ -126,3 +126,4 @@ PHP is [well documented](http://php.net/docs.php). The [official docs](http://ph
 - [Tizag.com PHP Tutorial](http://www.tizag.com/phpT/): still-relevant tutorials for getting started with PHP
 - [Awesome PHP](https://github.com/ziadoz/awesome-php): a curated list of PHP libraries, resources, and "shiny things"
 - [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP, comes with a free getting starting guide.
+- [PHP: The Right Way](https://phptherightway.com/): An all-around quick reference book.

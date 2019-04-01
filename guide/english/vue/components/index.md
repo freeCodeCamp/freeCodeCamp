@@ -41,6 +41,7 @@ you want to bind a component attribute to a variable, you can prepend a `:` to t
 attribute name instead of using the full form `v-bind`.
 
 With this code, we did a lot of new things:
+
 * we created a new component called `feature-card`
 * we defined the `feature-card` component's default **structure** with the `template` attribute
 * we defined a list of properties that the component accepts with the `props`
@@ -78,8 +79,7 @@ If you're lost, here is what the outputted html from the example above would loo
 </div>
 ```
 
-The purpose of Vue.js components is this: expand your web page building toolbox with your own shiny new
-tools.
+The purpose of Vue.js components is this: expand your web page building toolbox with your own shiny new tools
 
 ### Props
 
@@ -91,11 +91,13 @@ Vue.component('feature-card', {
   template: '<h3>{{ title }}</h3>'
 })
 ```
+
 A component can have as many props as you’d like and by default and _any value_ can be passed to _any prop_. In the template above, you’ll see that we can access this value on the component instance, just like with data.
 
 >As mentioned above, because any value can be passed into a prop, it's often a good idea to validate the correct data is being passed in. You can do this in a few different ways, including [Vue's built in Prop Validation](https://vuejs.org/v2/guide/components-props.html#Prop-Validation "Prop validation on the Vue website")
 
 Once a prop is registered, you can pass data to it as a custom attribute, like this:
+
 ```html
 <blog-post title="My journey with Vue"></blog-post>
 <blog-post title="Blogging with Vue"></blog-post>
@@ -104,11 +106,11 @@ Once a prop is registered, you can pass data to it as a custom attribute, like t
 
 ### Single File Components
 
-Instead of declaring many components in a single file resulting in a long spagetti code. You may want to modularize your components by having different files. (ie. more info: https://vuejs.org/v2/guide/single-file-components.html)
+Instead of declaring many components in a single file resulting in a long spaghetti code. You may want to modularize your components by having different files. (ie. more info: [Single File Components](https://vuejs.org/v2/guide/single-file-components.html))
 
-Enclose your template in a <template> tag, script the structure of the component in the <script> tag and style your components in the <style scoped> tag.
+Enclose your template in a `<template>` tag, script the structure of the component in the `<script>` tag and style your components in the `<style scoped>` tag.
 
-```
+```html
 <template>
   <p>{{ greeting }} World!</p>
 </template>

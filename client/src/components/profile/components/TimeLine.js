@@ -123,6 +123,7 @@ class Timeline extends Component {
               <tr>
                 <th>Challenge</th>
                 <th className='text-center'>Completed</th>
+                <th />
               </tr>
             </thead>
             <tbody>
@@ -139,7 +140,7 @@ class Timeline extends Component {
             aria-labelledby='contained-modal-title'
             onHide={this.closeSolution}
             show={solutionOpen}
-            >
+          >
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
                 {`${username}'s Solution to ${blockNameify(idToNameMap[id])}`}

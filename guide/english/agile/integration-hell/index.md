@@ -1,9 +1,9 @@
 ---
 title: Integration Hell
 ---
-## Integration Hell
 
-Integration Hell is a slang term for when all the members of a development team goes through the process of implementing their code at random times with no way to incorporate the different pieces of code into one seamless string of code. The development team will have to spend several hours or days testing and tweaking the code to get it all to work.
+## Integration Hell
+Integration Hell is a slang term for when all the members of a development team go through the process of implementing their code at random times with no way to incorporate the different pieces of code into one seamless string of code. The development team will have to spend several hours or days testing and tweaking the code to get it all to work.
 
 In practice, the longer components are developed in isolation, the more the interfaces tend to diverge from what is expected. When the components are finally integrated at the end of the project, it would take a great deal more time than allocated, often leading to deadline pressures and difficult integration. This painful integration work at the end of the project is the eponymous hell.
 

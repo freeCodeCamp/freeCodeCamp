@@ -18,6 +18,12 @@ You may remove multiple images at the same time. The first thing you will want t
 
 Write Images IDs in the command followed by the spaces between them.
 
+### Remove Specific images using image name
+
+Using `grep` command we can filter the images what we need to remove and then we can pass this output into `docker rmi` command.
+
+`docker rmi -f $(docker images | grep <image name>)`
+
 ### Remove all images at once
 
 To remove all images there is a simple command to do that. `docker rmi $(docker images -q)`

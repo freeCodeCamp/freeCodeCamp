@@ -32,13 +32,14 @@ docker-compose -f docker-compose.yml up
 docker-compose -f docker-compose.yml up -d
 ```
 
-* Command to run containers after building the images again (note: first time we run docker containers build will happen automatically)
+
+* Command to run containers after building the images again (Note: docker containers automatically builds at the first time)
 
 ```
 docker-compose -f docker-compose.yml --build -d
 ```
 
-* Command to stop containers when we run in detached mode
+* Command to stop containers when running in detached mode
 
 ```
 docker-compose -f docker-compose.yml down

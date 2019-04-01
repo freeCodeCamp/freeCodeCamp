@@ -19,7 +19,7 @@ localeTitle: Непрозрачность фона
   opacity:1; 
  } 
  
- OR 
+ или 
  
  .class-name { 
   opacity:1.0; 
@@ -32,7 +32,7 @@ localeTitle: Непрозрачность фона
 .class-name { 
   opacity:0.5; 
  } 
- Opacity value can be anything between 0 and 1; 
+ Значение непрозрачности может быть любым от 0 до 1;
 ```
 
 **Прозрачный**
@@ -42,7 +42,7 @@ localeTitle: Непрозрачность фона
   opacity:0; 
  } 
  
- OR 
+ или
  
  .class-name { 
   opacity:0.0; 

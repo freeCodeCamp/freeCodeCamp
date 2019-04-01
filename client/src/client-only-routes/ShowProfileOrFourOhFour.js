@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
 
 import Loader from '../components/helpers/Loader';
-import Layout from '../components/layouts/Default';
 import {
   userByNameSelector,
   userProfileFetchStateSelector,
@@ -23,14 +22,13 @@ const propTypes = {
     username: PropTypes.string,
     profileUI: PropTypes.object
   }),
-  showLoading: PropTypes.bool,
-  splat: PropTypes.string
+  showLoading: PropTypes.bool
 };
 
-const createRequestedUserSelector = () => (state, { maybeUser }) =>
-  userByNameSelector(maybeUser)(state);
-const createIsSessionUserSelector = () => (state, { maybeUser }) =>
-  maybeUser === usernameSelector(state);
+const createRequestedUserSelector = () => (state, { maybeUser = '' }) =>
+  userByNameSelector(maybeUser.toLowerCase())(state);
+const createIsSessionUserSelector = () => (state, { maybeUser = '' }) =>
+  maybeUser.toLowerCase() === usernameSelector(state);
 
 const makeMapStateToProps = () => (state, props) => {
   const requestedUserSelector = createRequestedUserSelector();
@@ -49,32 +47,19 @@ const mapDispatchToProps = dispatch =>
 
 class ShowFourOhFour extends Component {
   componentDidMount() {
-    const { requestedUser, maybeUser, splat, fetchProfileForUser } = this.props;
-    if (!splat && isEmpty(requestedUser)) {
-      console.log(requestedUser);
+    const { requestedUser, maybeUser, fetchProfileForUser } = this.props;
+    if (isEmpty(requestedUser)) {
       return fetchProfileForUser(maybeUser);
     }
     return null;
   }
 
   render() {
-    const { isSessionUser, requestedUser, showLoading, splat } = this.props;
-    if (splat) {
-      // the uri path for this component is /:maybeUser/:splat
-      // if splat is defined then we on a route that is not a profile
-      // and we should just 404
-      return <FourOhFourPage />;
-    }
+    const { isSessionUser, requestedUser, showLoading } = this.props;
     if (showLoading) {
       // We don't know if /:maybeUser is a user or not, we will show the loader
       // until we get a response from the API
-      return (
-        <Layout>
-          <div className='loader-wrapper'>
-            <Loader />
-          </div>
-        </Layout>
-      );
+      return <Loader fullScreen={true} />;
     }
     if (isEmpty(requestedUser)) {
       // We have a response from the API, but there is nothing in the store
