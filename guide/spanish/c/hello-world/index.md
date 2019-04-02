@@ -10,7 +10,7 @@ Para escribir por la consola, puede usar la función `printf()` que se encuentra
 
 int main (void) {
 ```
- printf("hola, mundo!\n");  //las linias que empiezan con estos caractere se llaman comentarios.. 
+ printf("hello, world\n");  //Las lineas que empiezan con las dobles barras con comentarios...
  
  return 0; 
 ```
@@ -27,7 +27,7 @@ int main (void) {
     
 *   El printf () es una función de librería para enviar resultados formateados a la pantalla. En este programa, el printf () muestra el texto hola, mundo! en la pantalla.
     
-*   El retorno 0; declaración es el "estado de salida" del programa. En términos simples, el programa termina con esta declaración.
+*   El return 0; declaración es el "estado de salida" del programa. En términos simples, el programa termina con esta declaración.
     
     ## Salida:
     

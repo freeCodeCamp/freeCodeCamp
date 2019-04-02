@@ -7,7 +7,7 @@ Semantic UI is one of the most popular CSS framework for developing responsive, 
 
 ## Getting Started
 
-Here is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Semantic UI library. We have used a CDN in this example, but you can checkout other ways of installing Semantic UI <a href='https://semantic-ui.com/introduction/getting-started.html' target='_blank' rel='nofollow'>here</a>.
+Here is a simple HTML template which includes the latest compiled and minified CSS and JavaScript for the Semantic UI library. We have used a CDN in this example, but you can checkout other ways of installing Semantic UI <a href='https://semantic-ui.com/introduction/getting-started.html' target='_blank' rel='nofollow'>here</a>.
 ```html
     <!DOCTYPE html>
     <html lang="en">
