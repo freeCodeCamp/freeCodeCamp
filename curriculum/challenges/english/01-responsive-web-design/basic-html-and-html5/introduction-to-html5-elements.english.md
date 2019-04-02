@@ -17,7 +17,7 @@ Example usage, a <code>main</code> element with two child elements nested inside
 ## Instructions
 <section id='instructions'>
 Create a second <code>p</code> element after the existing <code>p</code> element with the following kitty ipsum text: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code>
-Create a <code>main</code> element and nest the two <code>p</code> elements inside the <code>main</code> element.
+Then, create a <code>main</code> element and nest the two <code>p</code> elements inside the <code>main</code> element.
 </section>
 
 ## Tests
