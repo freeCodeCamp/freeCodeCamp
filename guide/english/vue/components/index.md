@@ -8,10 +8,9 @@ A classic problem that web developers face is having to write loads and loads of
 
 Sometimes all you want is a quick way to be able to use the same code in several different places at once and for everything to just work. Well, Vue.js gives you this ability with Components.
 
-Suppose you're developing a landing page for your company's product and you need to display its 4 main features. The designs show a set of cards following the same structure, with an icon, a title and a short description.
+Suppose you're developing a landing page for your company's product and you need to display the 4 main features of it following the same structure of a card-like object, with a icon, a title, and a short description.
 
 Let's make a component for that:
-=======
 
 ```javascript
 Vue.component('feature-card', {
@@ -47,9 +46,7 @@ With this code, we did a lot of new things:
 * we defined a list of properties that the component accepts with the `props`
   list
 
-After defining a component, whenever we desire to reuse it on our web page, we
-can do so as a kind of 'custom' html element. In our example, we can use the tag
-`<feature-card>`, which is the component's name wrapped in < and >:
+After defining a component, whenever we desire to reuse it on our web page, we can do so as a kind of 'custom' html element. In our example, we can use the tag `<feature-card>`, which is the component's name wrapped in < and >:
 
 ```html
 <div id="app">
@@ -62,8 +59,7 @@ can do so as a kind of 'custom' html element. In our example, we can use the tag
 </div>
 ```
 
-In this case, we used the `<feature-card>` element (our new Vue component), as well
-as setting `iconSrc` and `featureTitle` as they are valid attributes.
+In this case, we called the `<feature-card>` as it was an existing tag, as well as set the `iconSrc` or `featureTitle` as they were valid attributes. The purpose of Vue.js components is to increment your toolbox with your own tools.
 
 If you're lost, here is what the outputted html from the example above would look like:
 
