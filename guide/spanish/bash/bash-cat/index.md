@@ -4,7 +4,7 @@ localeTitle: Bash Cat
 ---
 ## Bash Cat
 
-Cat es uno de los comandos más utilizados en los sistemas operativos Unix.
+<code>cat</code> es uno de los comandos más utilizados en los sistemas operativos Unix.
 
 Cat se utiliza para leer un archivo de forma secuencial e imprimirlo por la salida estándar. El nombre deriva de su función de con**cat**enar archivos.
 
@@ -17,9 +17,9 @@ cat [opciones] [nombre_fichero]
 Opciones más utilizadas:
 
 *   `-b` , número de líneas de salida no en blanco
-*   `-n` , `-n` todas las líneas de salida
-*   `-s` , exprime múltiples líneas en blanco adyacentes
-*   `-v` , muestra caracteres no imprimibles, excepto las pestañas y el carácter de final de línea
+*   `-n` , número de todas las líneas de salida
+*   `-s` , suprime múltiples líneas en blanco adyacentes
+*   `-v` , muestra caracteres ocultos, excepto los tabuladores y el carácter de final de línea
 
 ### Ejemplo
 
