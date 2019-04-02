@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHtml5,
   faCss3Alt,
