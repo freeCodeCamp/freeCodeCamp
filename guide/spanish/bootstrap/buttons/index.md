@@ -26,65 +26,65 @@ También puede usar los botones con los elementos `<a>` e `<input>` como se mues
 
 #### Lista de clases de botones:
 
-Esta es una lista de las clases CSS que bootstrap proporciona para los botones.
+Esta es una lista de las clases CSS que Bootstrap proporciona para los botones.
 
-`.btn` Este es el botón básico de bootstrap.
+`.btn` Este es el botón básico de Bootstrap.
 
-BASIC
+Básico
 
-`.btn-default` Este es el botón predeterminado de bootstrap.
+`.btn-default` Este es el botón predeterminado de Bootstrap.
 
-Defecto
+Predeterminado
 
-`.btn-primary` Este es el botón principal de bootstrap.
+`.btn-primary` Este es el botón primario de Bootstrap.
 
 Primario
 
-`.btn-success` Este es el botón de éxito de bootstrap.
+`.btn-success` Este es el botón de éxito de Bootstrap.
 
 Éxito
 
-`.btn-info` Este es el botón de información de bootstrap.
+`.btn-info` Este es el botón de información de Bootstrap.
 
 Información
 
-`.btn-warning` Este es el botón de advertencia de bootstrap.
+`.btn-warning` Este es el botón de advertencia de Bootstrap.
 
 Advertencia
 
-`.btn-danger` Este es el botón de peligro de bootstrap.
+`.btn-danger` Este es el botón de peligro de Bootstrap.
 
 Peligro
 
-`.btn-link` Este es el botón de enlace de bootstrap.
+`.btn-link` Este es el botón de enlace de Bootstrap.
 
-Enlazar
+Enlace
 
-`.btn-light` Este es el botón de luz de bootstrap.
+`.btn-light` Este es el botón claro de Bootstrap.
 
-Ligero
+Claro
 
 #### Tamaños de botones de Bootstrap:
 
 Esta es una lista de las clases de CSS para diferentes tamaños de botones.
 
-`.btn-lg` Este es el botón grande de bootstrap.
+`.btn-lg` Este es el botón grande de Bootstrap.
 
 Grande
 
-`.btn-sm` Este es el pequeño botón de bootstrap.
+`.btn-sm` Este es el botón pequeño de Bootstrap.
 
-Pequeña
+Pequeño
 
-`.btn-xs` Este es el botón extra pequeño de bootstrap.
+`.btn-xs` Este es el botón extra pequeño de Bootstrap.
 
 Extra Pequeño
 
-#### Botones de la correa de arranque:
+#### Botones delineados de Bootstrap:
 
-También es posible tener botones delineados en lugar de totalmente coloreados. Esto se logra colocando el `outline` corrección intermedia entre la clase de botón que desea. Un ejemplo de uso sería el siguiente:
+También es posible tener botones delineados en lugar de totalmente coloreados. Esto se logra colocando la palabra `outline` entre la clase de botón que desea. Un ejemplo de uso sería el siguiente:
 
-`<button type="button" class="btn btn-outline-primary">Primary</button>`
+`<button type="button" class="btn btn-outline-primary">Primario</button>`
 
 Los botones descritos son una parte de Bootstrap desde la versión 4, asegúrese de estar usando la versión correcta si no puede hacer que funcionen.
 
