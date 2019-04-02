@@ -39,17 +39,17 @@ See also <a href="http://vimeo.com/45140590">Jim Weirich: Adventures in Function
 ```yml
 tests:
   - text: Y must return a function
-    testString: 'assert.equal(typeof Y(f => n => n), "function", "Y must return a function");'
+    testString: assert.equal(typeof Y(f => n => n), 'function', 'Y must return a function');
   - text: factorial(1) must return 1.
-    testString: 'assert.equal(factorial(1), 1, "factorial(1) must return 1.");'
+    testString: assert.equal(factorial(1), 1, 'factorial(1) must return 1.');
   - text: factorial(2) must return 2.
-    testString: 'assert.equal(factorial(2), 2, "factorial(2) must return 2.");'
+    testString: assert.equal(factorial(2), 2, 'factorial(2) must return 2.');
   - text: factorial(3) must return 6.
-    testString: 'assert.equal(factorial(3), 6, "factorial(3) must return 6.");'
+    testString: assert.equal(factorial(3), 6, 'factorial(3) must return 6.');
   - text: factorial(4) must return 24.
-    testString: 'assert.equal(factorial(4), 24, "factorial(4) must return 24.");'
+    testString: assert.equal(factorial(4), 24, 'factorial(4) must return 24.');
   - text: factorial(10) must return 3628800.
-    testString: 'assert.equal(factorial(10), 3628800, "factorial(10) must return 3628800.");'
+    testString: assert.equal(factorial(10), 3628800, 'factorial(10) must return 3628800.');
 
 ```
 
@@ -81,7 +81,7 @@ var factorial = Y(function(f) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));
 ```
 
 </div>

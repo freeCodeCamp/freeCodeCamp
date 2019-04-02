@@ -24,7 +24,7 @@ How many ways are there to write the number 1/2 as a sum of inverse squares usin
 ```yml
 tests:
   - text: <code>euler152()</code> should return 301.
-    testString: 'assert.strictEqual(euler152(), 301, "<code>euler152()</code> should return 301.");'
+    testString: assert.strictEqual(euler152(), 301, '<code>euler152()</code> should return 301.');
 
 ```
 

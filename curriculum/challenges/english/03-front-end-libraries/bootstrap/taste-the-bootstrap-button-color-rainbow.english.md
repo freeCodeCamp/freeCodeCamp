@@ -7,7 +7,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 The <code>btn-primary</code> class is the main color you'll use in your app. It is useful for highlighting actions you want your user to take.
-Replace Bootstrap's <code>btn-default</code> class by <code>btn-primary</code> in your button.
+Replace Bootstrap's <code>btn-default</code> class with <code>btn-primary</code> in your button.
 Note that this button will still need the <code>btn</code> and <code>btn-block</code> classes.
 </section>
 
@@ -22,11 +22,11 @@ Note that this button will still need the <code>btn</code> and <code>btn-block</
 ```yml
 tests:
   - text: Your button should have the class <code>btn-primary</code>.
-    testString: 'assert($("button").hasClass("btn-primary"), "Your button should have the class <code>btn-primary</code>.");'
+    testString: assert($("button").hasClass("btn-primary"), 'Your button should have the class <code>btn-primary</code>.');
   - text: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.
-    testString: 'assert($("button").hasClass("btn-block") && $("button").hasClass("btn"), "Your button should still have the <code>btn</code> and <code>btn-block</code> classes.");'
+    testString: assert($("button").hasClass("btn-block") && $("button").hasClass("btn"), 'Your button should still have the <code>btn</code> and <code>btn-block</code> classes.');
   - text: Make sure all your <code>button</code> elements have a closing tag.
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');
 
 ```
 

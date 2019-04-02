@@ -7,10 +7,19 @@ localeTitle: Añadir columnas con cuadrícula-plantilla-columnas
 ---
 
 ## Description
-<section id="description"> Simplemente crear un elemento de cuadrícula no te lleva muy lejos. También es necesario definir la estructura de la cuadrícula. Para agregar algunas columnas a la cuadrícula, use la propiedad <code>grid-template-columns</code> en un contenedor de cuadrícula como se muestra a continuación: <blockquote> .envase { <br> pantalla: rejilla; <br> rejilla-plantilla-columnas: 50px 50px; <br> } </blockquote> Esto le dará a su cuadrícula dos columnas de 50px de ancho cada una. El número de parámetros dados a la propiedad <code>grid-template-columns</code> indica el número de columnas en la cuadrícula, y el valor de cada parámetro indica el ancho de cada columna. </section>
+<section id="description"> Crear un elemento de cuadrícula no te llevará muy lejos. También es necesario definir la estructura de la cuadrícula. Para agregar algunas columnas a la cuadrícula, use la propiedad <code>grid-template-columns</code> en un contenedor de cuadrícula como se muestra a continuación: 
+  
+ ```html
+.container { 
+  display: grid; 
+  grid-template-columns: 50px 50px;
+} 
+```
+ 
+Esto le dará a tu cuadrícula dos columnas de 50px de ancho cada una. El número de parámetros dados a la propiedad <code>grid-template-columns</code> indica el número de columnas en la cuadrícula, y el valor de cada parámetro indica el ancho de cada columna. </section>
 
 ## Instructions
-<section id="instructions"> Entregue al contenedor de la cuadrícula tres columnas de <code>100px</code> ancho cada una. </section>
+<section id="instructions"> Definir al contenedor de la cuadrícula tres columnas de <code>100px</code> de ancho cada una. </section>
 
 ## Tests
 <section id='tests'>
@@ -18,7 +27,7 @@ localeTitle: Añadir columnas con cuadrícula-plantilla-columnas
 ```yml
 tests:
   - text: <code>container</code> clase <code>container</code> debe tener una propiedad de <code>grid-template-columns</code> con tres unidades de <code>100px</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.");'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi), "<code>container</code> La clase debe tener una propiedad <code>grid-template-columns</code> cons tres unidades de <code>100px</code>.");'
 
 ```
 
@@ -42,10 +51,10 @@ tests:
     width: 100%;
     background: LightGray;
     display: grid;
-    /* add your code below this line */
+    /* agrega tu código abajo de esta línea */
 
 
-    /* add your code above this line */
+    /* agrega tu código arriba de esta línea */
   }
 </style>
 

@@ -1,0 +1,52 @@
+---
+title: Docker
+---
+![alt text](https://www.docker.com/sites/default/files/horizontal.png)
+## Docker
+
+Docker, written in Go, is an open platform to build, ship, and run distributed applications. It was first released in 2013 and is developed by Docker, Inc.
+
+Docker is used to run packages called "containers". Containers are isolated from each other and from the OS (Operating System). These are more lightweight than virtual machines as they do not use the host machine to run an operating system.
+
+Containerization, which is a way of deploying and running applications, runs isolated services which run natively on the Linux kernel. Memory can be set manually for each container in Docker.
+
+Docker is used to simplify configurations while ensuring a smooth continuous integration and deployment flow. Specific containers can be specified for development, staging, and production environments. A true implementation of a container in production, according to the Docker manual, is to run it as a service, using the  `docker-compose.yml` file for setup. This is a YAML file that defines how Docker containers should behave in production.
+
+One of Docker's biggest advantages is that it can be used by a team using different operating systems to build projects without needing to worry about software conflicts.
+
+### Installation
+
+* Ubuntu: [Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package)
+          There are multiple ways to install the docker but the most convinient way is to use "Script".
+
+* RedHat: `yum install docker-ce`
+
+* Windows: [Download](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+
+* MacOS: [Download](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+
+* Linux: `sudo apt-get install docker-ce`
+
+* CentOS: [Instruction](https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions)
+
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+
+## Kitematic
+
+Kitematic is a built-in easy management tool for Docker (Windows & IOS Versions) available on version 1.8 and newer.
+This tool is usefull for easily managing and maintaining your Containers on Docker via a GUI interface and can be used to quickly browse for and set up new containers available on the Docker store.
+
+To Install/Enable just click the Kitematic option found under the pop-up mune when right-clicking the Docker quick launch icon.
+
+More information can be found here: https://kitematic.com/
+
+#### More Information:
+
+* For download and documentation check the docker official site: [Docker official site](https://www.docker.com)
+* For more on containerization, checkout [Search IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
+* A Docker 101 course [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
+* Online Docker [Classroom](https://training.play-with-docker.com/)
+

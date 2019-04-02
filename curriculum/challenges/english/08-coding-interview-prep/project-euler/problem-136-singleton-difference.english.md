@@ -23,7 +23,7 @@ How many values of n less than fifty million have exactly one solution?
 ```yml
 tests:
   - text: <code>euler136()</code> should return 2544559.
-    testString: 'assert.strictEqual(euler136(), 2544559, "<code>euler136()</code> should return 2544559.");'
+    testString: assert.strictEqual(euler136(), 2544559, '<code>euler136()</code> should return 2544559.');
 
 ```
 

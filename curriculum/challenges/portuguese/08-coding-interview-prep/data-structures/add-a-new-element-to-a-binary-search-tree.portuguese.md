@@ -7,7 +7,8 @@ localeTitle: Adicionar um novo elemento a uma árvore de pesquisa binária
 ---
 
 ## Description
-<section id="description"> Agora que temos uma ideia do básico, vamos escrever um método mais complexo. Neste desafio, criaremos um método para adicionar novos valores à nossa árvore de pesquisa binária. O método deve ser chamado de <code>add</code> e deve aceitar um valor inteiro para adicionar à árvore. Tome cuidado para manter a invariante de uma árvore de pesquisa binária: o valor em cada filho da esquerda deve ser menor ou igual ao valor pai e o valor em cada filho da direita deve ser maior ou igual ao valor pai. Aqui, vamos fazer com que nossa árvore não possa conter valores duplicados. Se tentarmos adicionar um valor que já existe, o método deve retornar <code>null</code> . Caso contrário, se a adição for bem sucedida, <code>undefined</code> deve ser retornado. Dica: as árvores são estruturas de dados naturalmente recursivas! </section>
+<section id="description"> Agora que temos uma boa ideia do básico, vamos escrever um método mais complexo. Neste desafio, criaremos um método para adicionar novos valores à nossa árvore de pesquisa binária. O método deve ser chamado de <code>add</code> e deve aceitar um valor inteiro para adicionar à árvore. Tome cuidado para manter a invariante de uma árvore de pesquisa binária: o valor em cada filho da esquerda deve ser menor ou igual ao valor pai, e o valor em cada filho da direita deve ser maior ou igual ao valor pai. Aqui, vamos fazer com que nossa árvore não possa conter valores duplicados. Se tentarmos adicionar um valor que já existe, o método deve retornar <code>null</code> . Caso contrário, se a adição for bem sucedida, <code>undefined</code> deve ser retornado. 
+Dica: as árvores são estruturas de dados naturalmente recursivas! </section>
 
 ## Instructions
 <section id="instructions">
