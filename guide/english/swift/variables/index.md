@@ -5,7 +5,7 @@ title: Variables
 
 A variable associates a name with a value of a particular type. There are two main ways to create variables in Swift. `let` and `var`. To declare constants use the `let` keyword. To declare mutable variables use the `var` keyword.
 
-The benefit of having two ways to store variables in Swift is to prevent errors of changing variables that should be constant.
+The benefit of having two ways to store variables in Swift is to prevent errors caused by modifying a variable that should be constant.
 
  ```Swift
   let daysInAWeek = 7

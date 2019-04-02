@@ -9,7 +9,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cra98AJ'
 <section id='description'>
 The challenges so far have covered specific HTML elements and their uses. However, there are a few elements that give overall structure to your page, and should be included in every HTML document.
 At the top of your document, you need to tell the browser which version of HTML your page is using. HTML is an evolving language, and is updated regularly. Most major browsers support the latest specification, which is HTML5. However, older web pages may use previous versions of the language.
-You tell the browser this information by adding the <code>&lt;!DOCTYPE ...&gt;</code> tag on the first line, where the "<code>...</code>" part is the version of HTML. For HTML5, you use <code>&lt;!DOCTYPE html&gt;</code>.
+You tell the browser this information by adding the <code>&lt;!DOCTYPE ...&gt;</code> tag on the first line, where the <code>...</code> part is the version of HTML. For HTML5, you use <code>&lt;!DOCTYPE html&gt;</code>.
 The <code>!</code> and uppercase <code>DOCTYPE</code> is important, especially for older browsers. The <code>html</code> is not case sensitive.
 Next, the rest of your HTML code needs to be wrapped in <code>html</code> tags. The opening <code>&lt;html&gt;</code> goes directly below the <code>&lt;!DOCTYPE html&gt;</code> line, and the closing <code>&lt;/html&gt;</code> goes at the end of the page.
 Here's an example of the page structure:

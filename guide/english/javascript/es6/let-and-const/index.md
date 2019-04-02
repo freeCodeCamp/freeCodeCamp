@@ -73,14 +73,14 @@ console.log(c); // ReferenceError: c is not defined
 Consider another example.
 ```
 const LANGUAGES = ['Js', 'Ruby', 'Python', 'Go'];
-LANGUAGES = "Javascript"; // shows error.
+LANGUAGES = "JavaScript"; // shows error.
 LANGUAGES.push('Java'); // Works fine.
 console.log(LANGUAGES); // ['Js', 'Ruby', 'Python', 'Go', 'Java']
 ```
 
 This may be little confusing.
 
-Consider in this way. Whenever you define a const variable, Javascript references the address of the value to the variable. In our example the variable ‘LANGUAGES’ actually references to the memory allocated to the array. So you cannot change the variable to reference some other memory location later. Throughout the program it only references to the array.
+Consider in this way. Whenever you define a const variable, JavaScript references the address of the value to the variable. In our example the variable ‘LANGUAGES’ actually references to the memory allocated to the array. So you cannot change the variable to reference some other memory location later. Throughout the program it only references to the array.
 
 ## Further Reading
 

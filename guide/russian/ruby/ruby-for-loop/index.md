@@ -8,22 +8,22 @@ localeTitle: Цикл For в Ruby
 
 Перебор элементов массива это всего лишь один из примеров использования цикла for:
 ```
-for element in array do 
-  puts element 
- end 
+for element in array do
+  puts element
+ end
 ```
 
 В Ruby сучетсвют другие циклы и итераторы которыми можно заменить for. Например:
 ```
-element.each do |element| 
-  puts element 
- end 
+array.each do |element|
+  puts element
+ end
 ```
 
 Результат выполнения этого блока кода будет идентичен примеру с циклом for, но выглядит более аккуратно так как использует встроенный метод Array.
 
 Также этот пример можно переписать в одну строку:
 ```
-element.each do { |element| puts element } 
+array.each do |element| puts element end
 
 ```

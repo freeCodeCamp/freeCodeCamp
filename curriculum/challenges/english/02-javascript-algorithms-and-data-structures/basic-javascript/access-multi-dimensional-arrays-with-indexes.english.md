@@ -26,7 +26,7 @@ tests:
   - text: <code>myData</code> should be equal to <code>8</code>.
     testString: assert(myData === 8, '<code>myData</code> should be equal to <code>8</code>.');
   - text: You should be using bracket notation to read the correct value from <code>myArray</code>.
-    testString: assert(/myArray\[2\]\[1\]/g.test(code) && !/myData\s*=\s*(?:.*[-+*/%]|\d)/g.test(code), 'You should be using bracket notation to read the correct value from <code>myArray</code>.');
+    testString: assert(/myData=myArray\[2\]\[1\]/.test(code.replace(/\s/g, '')));
 
 ```
 

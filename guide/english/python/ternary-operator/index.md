@@ -2,9 +2,9 @@
 title: Python Ternary Operater
 ---
 # Ternary operator in Python
-Ternary operations in Python, often also referred to as conditional expressions allow the programmer to perform an evaluation and return a value based on the truth of the given condition.
+Ternary operations in Python, also often referred to as conditional expressions, allow the programmer to perform an evaluation and return a value based on the truth of the given condition.
 
-The ternary operator differs from a standard `if`, `else`, `elif` structure in the sense that it is not a control flow structure, and behaves more like other operators such as `==` or `!=` in the Python language.
+The ternary operator differs from a standard `if`/`elif`/`else` structure in the sense that it is not a control flow structure, and behaves more like other operators such as `==` or `!=` in the Python language.
 
 ### Example
 In this example, the string `Even` is returned if the `val` variable is even, otherwise the string `Odd` is returned. The returned string is then assigned to the `is_even` variable and printed to the console.

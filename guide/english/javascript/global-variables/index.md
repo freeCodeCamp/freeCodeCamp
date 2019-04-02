@@ -36,7 +36,7 @@ console.log(window.dog); //Fluffy
 It’s a best practice to minimize global variables. Since the variable can be accessed anywhere in the program, they can cause strange behavior.
 
 References:
-* [var -Javascript|MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+* [var -JavaScript|MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 * [You Don't Know JavaScript: Scopes & Closures](https://github.com/getify/You-Dont-Know-JS/tree/master/scope%20%26%20closures)
 
 Additional Info:

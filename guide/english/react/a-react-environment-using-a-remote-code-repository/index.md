@@ -5,7 +5,7 @@ title: A React Environment Using a Remote Code Repository
 This is how to create a non-production React environment utilizing a remote code repository.
 We will use the cdnjs.cloudflare.com 16.0.0 react, react-dom, and babel-standalone 6.26.0
 to accomplish this.
-babel-polyfill is used for older browsers compatibility.
+babel-polyfill is used for older browsers' compatibility.
 
  ```html
 <!DOCTYPE html>
