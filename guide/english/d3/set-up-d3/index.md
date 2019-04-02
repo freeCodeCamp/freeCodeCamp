@@ -4,7 +4,7 @@ title: Set Up D3
   
 ## HTML Setup
 
-For now, you will just use a text file and the web browser. You will start with with a static page of HTML. Then you will add d3.js.
+For now, you will just use a text file and the web browser. You will start with a static page of HTML. Then you will add d3.js.
 Create a folder named d3js_projects. Create an HTML file in the folder named project_1.html.
 
 Start with a basic HTML webpage:
