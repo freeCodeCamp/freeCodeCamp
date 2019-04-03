@@ -17,20 +17,20 @@ localeTitle: Переопределить объявления классов с
 
 ```yml
 tests:
-  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code> .
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code> .
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: Дайте элементу <code>h1</code> идентификатор <code>orange-text</code> .
-    testString: 'assert($("h1").attr("id") === "orange-text", "Give your <code>h1</code> element the id of <code>orange-text</code>.");'
-  - text: Должен быть только один элемент <code>h1</code> .
-    testString: 'assert(($("h1").length === 1), "There should be only one <code>h1</code> element.");'
-  - text: Создайте объявление CSS для вашего идентификатора <code>orange-text</code>
-    testString: 'assert(code.match(/#orange-text\s*{/gi), "Create a CSS declaration for your <code>orange-text</code> id");'
-  - text: Не <code>h1</code> никаких атрибутов <code>style</code> .
-    testString: 'assert(!code.match(/<h1.*style.*>/gi), "Do not give your <code>h1</code> any <code>style</code> attributes.");'
+  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code>.
+    testString: assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");
+  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code>.
+    testString: assert$("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");
+  - text: Дайте элементу <code>h1</code> идентификатор <code>orange-text</code>.
+    testString: assert($("h1").attr("id") === "orange-text", "Give your <code>h1</code> element the id of <code>orange-text</code>.");
+  - text: Должен быть только один элемент <code>h1</code>.
+    testString: assert(($("h1").length === 1), "There should be only one <code>h1</code> element.");
+  - text: Создайте объявление CSS для вашего идентификатора <code>orange-text</code>.
+    testString: assert(code.match(/#orange-text\s*{/gi), "Create a CSS declaration for your <code>orange-text</code> id");
+  - text: Не <code>h1</code> никаких атрибутов <code>style</code>.
+    testString: assert(!code.match(/<h1.*style.*>/gi), "Do not give your <code>h1</code> any <code>style</code> attributes.");
   - text: Ваш элемент <code>h1</code> должен быть оранжевым.
-    testString: 'assert($("h1").css("color") === "rgb(255, 165, 0)", "Your <code>h1</code> element should be orange.");'
+    testString: assert($("h1").css("color") === "rgb(255, 165, 0)", "Your <code>h1</code> element should be orange.");
 
 ```
 
