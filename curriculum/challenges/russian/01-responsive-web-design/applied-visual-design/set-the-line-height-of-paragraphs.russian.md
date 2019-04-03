@@ -18,7 +18,7 @@ localeTitle: Задайте высоту строки абзацев
 ```yml
 tests:
   - text: Ваш код должен установить <code>line-height</code> тега <code>p</code> до 25 пикселей.
-    testString: 'assert($("p").css("line-height") == "25px", "Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.");'
+    testString: assert($("p").css("line-height") == "25px", "Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.");
 
 ```
 
