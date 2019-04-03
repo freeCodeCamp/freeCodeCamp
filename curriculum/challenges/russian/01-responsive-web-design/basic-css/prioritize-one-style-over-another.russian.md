@@ -17,12 +17,12 @@ localeTitle: Приоритет одного стиля над другим
 
 ```yml
 tests:
-  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code> .
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: Ваш <code>&lt;style&gt;</code> должен иметь класс CSS с <code>pink-text</code> который изменяет <code>color</code> .
-    testString: 'assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g), "Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.");'
+  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code>.
+    testString: assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");
+  - text: Ваш <code>&lt;style&gt;</code> должен иметь класс CSS с <code>pink-text</code> который изменяет <code>color</code>.
+    testString: assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g), "Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.");
   - text: Ваш элемент <code>h1</code> должен быть розовым.
-    testString: 'assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");'
+    testString: assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");
 
 ```
 
