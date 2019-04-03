@@ -18,7 +18,7 @@ localeTitle: Используйте свойство преобразовани�
 ```yml
 tests:
   - text: Элемент с <code>bottom</code> id должен быть перекошен на 24 градуса по оси X.
-    testString: 'assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g), "The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.");'
+    testString: assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g), "The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.");
 
 ```
 
