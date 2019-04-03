@@ -17,14 +17,14 @@ localeTitle: Переопределить стили в последующем C
 
 ```yml
 tests:
-  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code> .
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code> .
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: И <code>blue-text</code> и <code>pink-text</code> должны принадлежать одному и тому же элементу <code>h1</code> .
-    testString: 'assert($(".pink-text").hasClass("blue-text"), "Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.");'
+  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code>.
+    testString: assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");
+  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code>.
+    testString: assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");
+  - text: И <code>blue-text</code> и <code>pink-text</code> должны принадлежать одному и тому же элементу <code>h1</code>.
+    testString: assert($(".pink-text").hasClass("blue-text"), "Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.");
   - text: Ваш элемент <code>h1</code> должен быть синим.
-    testString: 'assert($("h1").css("color") === "rgb(0, 0, 255)", "Your <code>h1</code> element should be blue.");'
+    testString: assert($("h1").css("color") === "rgb(0, 0, 255)", "Your <code>h1</code> element should be blue.");
 
 ```
 
