@@ -20,19 +20,19 @@ localeTitle: Улучшаем доступность аудиоконтента
 ```yml
 tests:
   - text: В вашем коде должен быть один <code>audio</code> тег.
-    testString: 'assert($("audio").length === 1, "Your code should have one <code>audio</code> tag.");'
-  - text: 'Убедитесь, что ваш <code>audio</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/audio>/g).length === 1 && code.match(/<audio.*>[\s\S]*<\/audio>/g), "Make sure your <code>audio</code> element has a closing tag.");'
+    testString: assert($("audio").length === 1, "Your code should have one <code>audio</code> tag.");
+  - text: Убедитесь, что ваш <code>audio</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/audio>/g).length === 1 && code.match(/<audio.*>[\s\S]*<\/audio>/g), "Make sure your <code>audio</code> element has a closing tag.");
   - text: <code>audio</code> тег должен иметь атрибут <code>controls</code> .
-    testString: 'assert($("audio").attr("controls"), "The <code>audio</code> tag should have the <code>controls</code> attribute.");'
+    testString: assert($("audio").attr("controls"), "The <code>audio</code> tag should have the <code>controls</code> attribute.");
   - text: Ваш код должен иметь один тег <code>source</code> .
-    testString: 'assert($("source").length === 1, "Your code should have one <code>source</code> tag.");'
+    testString: assert($("source").length === 1, "Your code should have one <code>source</code> tag.");
   - text: Ваш тег <code>source</code> должен находиться внутри <code>audio</code> тегов.
-    testString: 'assert($("audio").children("source").length === 1, "Your <code>source</code> tag should be inside the <code>audio</code> tags.");'
+    testString: assert($("audio").children("source").length === 1, "Your <code>source</code> tag should be inside the <code>audio</code> tags.");
   - text: Значение атрибута <code>src</code> в теге <code>source</code> должно точно соответствовать ссылке в инструкциях.
-    testString: 'assert($("source").attr("src") === "https://s3.amazonaws.com/freecodecamp/screen-reader.mp3", "The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.");'
+    testString: assert($("source").attr("src") === "https://s3.amazonaws.com/freecodecamp/screen-reader.mp3", "The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.");
   - text: Ваш код должен включать атрибут <code>type</code> в тег <code>source</code> со значением audio / mpeg.
-    testString: 'assert($("source").attr("type") === "audio/mpeg", "Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.");'
+    testString: assert($("source").attr("type") === "audio/mpeg", "Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.");
 
 ```
 
