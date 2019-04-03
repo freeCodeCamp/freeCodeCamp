@@ -24,9 +24,9 @@ localeTitle: Оборачивание контента в элемент article
 ```yml
 tests:
   - text: Ваш код должен содержать три тега <code>article</code>.
-    testString: 'assert($("article").length == 3, "Your code should have three <code>article</code> tags.");'
+    testString: assert($("article").length == 3, "Your code should have three <code>article</code> tags.");
   - text: У вашего кода не должно быть никаких тегов <code>div</code>.
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+    testString: assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");
 
 ```
 
