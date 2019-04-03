@@ -41,10 +41,11 @@ It's important to note that when using onclick we can add just one listener func
 In the above example, when a user clicks on the `paragraph` element in the `html`, they will see an alert showing `onclick Event triggered`. 
 
 ### Preventing default action
-However if we attach `onclick` to links (HTML's `a` tag) we might want to prevent a default action from occurring:
+
+By attaching `onclick` to links (HTML's `a` tag), we can also prevent the default click action from occurring.
 
 ```javascript
-<a href="https://guide.freecodecamp.org" onclick="myAlert()">Guides</a>
+<a href="https://guide.freecodecamp.org" onclick="myAlert(event)">Guides</a>
 
 <script>
   function myAlert(event) {
