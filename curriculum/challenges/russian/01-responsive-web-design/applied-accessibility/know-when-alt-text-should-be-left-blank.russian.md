@@ -18,9 +18,9 @@ localeTitle: 'Знать, когда Alt-текст должен остават�
 ```yml
 tests:
   - text: Ваш тег <code>img</code> должен иметь атрибут <code>alt</code>.
-    testString: 'assert(!($("img").attr("alt") == undefined), "Your <code>img</code> tag should have an <code>alt</code> attribute.");'
+    testString: assert(!($("img").attr("alt") == undefined), "Your <code>img</code> tag should have an <code>alt</code> attribute.");
   - text: Атрибут <code>alt</code> должен быть установлен в пустую строку.
-    testString: 'assert($("img").attr("alt") == "", "The <code>alt</code> attribute should be set to an empty string.");'
+    testString: assert($("img").attr("alt") == "", "The <code>alt</code> attribute should be set to an empty string.");
 
 ```
 
