@@ -18,7 +18,7 @@ localeTitle: Анимационные элементы по переменным
 ```yml
 tests:
   - text: Правило <code>@keyframes</code> для класса <code>star-1</code> должно быть 50%.
-    testString: 'assert(code.match(/twinkle-1\s*?{\s*?50%/g), "The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.");'
+    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g), "The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.");
 
 ```
 
