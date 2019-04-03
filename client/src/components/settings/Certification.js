@@ -13,7 +13,6 @@ import {
 import { Link, navigate } from 'gatsby';
 import { createSelector } from 'reselect';
 
-import { updateLegacyCert } from '../../redux/settings';
 import { projectMap, legacyProjectMap } from '../../resources/certProjectMap';
 
 import SectionHeader from './SectionHeader';
@@ -25,6 +24,7 @@ import { maybeUrlRE } from '../../utils';
 import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
 
 import './certification.css';
+import { updateLegacyCert } from '../../redux/settings';
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ updateLegacyCert }, dispatch);
@@ -124,7 +124,7 @@ const initialState = {
   }
 };
 
-class CertificationSettings extends Component {
+export class CertificationSettings extends Component {
   constructor(props) {
     super(props);
 
@@ -424,6 +424,7 @@ class CertificationSettings extends Component {
               bsStyle='primary'
               className={'col-xs-12'}
               href={certLocation}
+              id={'button-' + superBlock}
               onClick={createClickHandler(certLocation)}
               style={buttonStyle}
               target='_blank'
