@@ -19,15 +19,15 @@ localeTitle: Стиль нескольких элементов с классо�
 ```yml
 tests:
   - text: Ваш элемент <code>h2</code> должен быть красным.
-    testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
-  - text: Ваш элемент <code>h2</code> должен иметь <code>red-text</code> .
-    testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");'
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");
+  - text: Ваш элемент <code>h2</code> должен иметь <code>red-text</code>.
+    testString: assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");
   - text: Ваш первый элемент <code>p</code> должен быть красным.
-    testString: 'assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)", "Your first <code>p</code> element should be red.");'
+    testString: assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)", "Your first <code>p</code> element should be red.");
   - text: Ваш второй и третий элементы <code>p</code> не должны быть красными.
-    testString: 'assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"), "Your second and third <code>p</code> elements should not be red.");'
+    testString: assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"), "Your second and third <code>p</code> elements should not be red.");
   - text: Ваш первый элемент <code>p</code> должен иметь <code>red-text</code> класса.
-    testString: 'assert($("p:eq(0)").hasClass("red-text"), "Your first <code>p</code> element should have the class <code>red-text</code>.");'
+    testString: assert($("p:eq(0)").hasClass("red-text"), "Your first <code>p</code> element should have the class <code>red-text</code>.");
 
 ```
 
