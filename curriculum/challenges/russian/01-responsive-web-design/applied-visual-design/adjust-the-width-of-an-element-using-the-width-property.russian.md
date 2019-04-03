@@ -17,8 +17,8 @@ localeTitle: Настройка ширины элемента с помощью 
 
 ```yml
 tests:
-  - text: 'Ваш код должен изменить свойство <code>width</code> карточки на 245 пикселей, используя селектор класса <code>fullCard</code> .'
-    testString: 'assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), "Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.");'
+  - text: Ваш код должен изменить свойство <code>width</code> карточки на 245 пикселей, используя селектор класса <code>fullCard</code>.
+    testString: assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), "Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.");
 
 ```
 
