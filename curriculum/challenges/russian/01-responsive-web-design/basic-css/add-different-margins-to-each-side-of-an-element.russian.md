@@ -17,14 +17,14 @@ localeTitle: Добавление разных полей в каждую сто
 
 ```yml
 tests:
-  - text: Ваш <code>blue-box</code> класс должен дать верхнюю часть элементов <code>40px</code> из <code>margin</code> .
-    testString: 'assert($(".blue-box").css("margin-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.");'
-  - text: Ваш класс <code>blue-box</code> должен предоставить право элементов <code>20px</code> <code>margin</code> .
-    testString: 'assert($(".blue-box").css("margin-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.");'
-  - text: Ваш класс с <code>blue-box</code> должен дать нижнюю часть <code>20px</code> <code>margin</code> .
-    testString: 'assert($(".blue-box").css("margin-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.");'
-  - text: Ваш класс с <code>blue-box</code> должен оставить слева от элементов <code>40px</code> <code>margin</code> .
-    testString: 'assert($(".blue-box").css("margin-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.");'
+  - text: Ваш <code>blue-box</code> класс должен дать верхнюю часть элементов <code>40px</code> из <code>margin</code>.
+    testString: assert($(".blue-box").css("margin-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.");
+  - text: Ваш класс <code>blue-box</code> должен предоставить право элементов <code>20px</code> <code>margin</code>.
+    testString: assert($(".blue-box").css("margin-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.");
+  - text: Ваш класс с <code>blue-box</code> должен дать нижнюю часть <code>20px</code> <code>margin</code>.
+    testString: assert($(".blue-box").css("margin-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.");
+  - text: Ваш класс с <code>blue-box</code> должен оставить слева от элементов <code>40px</code> <code>margin</code>.
+    testString: assert($(".blue-box").css("margin-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.");
 
 ```
 
