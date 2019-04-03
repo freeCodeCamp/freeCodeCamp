@@ -18,7 +18,7 @@ localeTitle: Установите размер шрифта текста абз�
 ```yml
 tests:
   - text: Ваш тег <code>p</code> должен иметь <code>font-size</code> 16 пикселей.
-    testString: 'assert($("p").css("font-size") == "16px", "Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.");'
+    testString: assert($("p").css("font-size") == "16px", "Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.");
 
 ```
 
