@@ -17,8 +17,8 @@ localeTitle: Улучшение совместимости с отказами �
 
 ```yml
 tests:
-  - text: '<code>.red-box</code> должно включать <code>.red-box</code> с <code>background</code> установленным на красный, непосредственно перед существующей декларацией <code>background</code> .'
-    testString: 'assert(code.match(/.red-box\s*{[^}]*background:\s*(red|#ff0000|#f00|rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*;\s*background:\s*var\(\s*--red-color\s*\);/gi), "Your <code>.red-box</code> rule should include a fallback with the <code>background</code> set to red immediately before the existing <code>background</code> declaration.");'
+  - text: <code>.red-box</code> должно включать <code>.red-box</code> с <code>background</code> установленным на красный, непосредственно перед существующей декларацией <code>background</code>.
+    testString: assert(code.match(/.red-box\s*{[^}]*background:\s*(red|#ff0000|#f00|rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*;\s*background:\s*var\(\s*--red-color\s*\);/gi), "Your <code>.red-box</code> rule should include a fallback with the <code>background</code> set to red immediately before the existing <code>background</code> declaration.");
 
 ```
 
