@@ -17,8 +17,8 @@ localeTitle: Установите идентификатор элемента
 
 ```yml
 tests:
-  - text: Дайте элементу <code>form</code> идентификатор <code>cat-photo-form</code> .
-    testString: 'assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");'
+  - text: Дайте элементу <code>form</code> идентификатор <code>cat-photo-form</code>.
+    testString: assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");
 
 ```
 
