@@ -17,12 +17,12 @@ localeTitle: Блокировка элемента для его родител�
 
 ```yml
 tests:
-  - text: 'Элемент <code>#searchbar</code> должен иметь <code>absolute</code> <code>position</code> .'
-    testString: 'assert($("#searchbar").css("position") == "absolute", "The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.");'
-  - text: 'Ваш код должен использовать <code>top</code> смещение CSS 50 пикселей в элементе <code>#searchbar</code> .'
-    testString: 'assert($("#searchbar").css("top") == "50px", "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");'
-  - text: 'Ваш код должен использовать <code>right</code> смещение CSS 50 пикселей в элементе <code>#searchbar</code> .'
-    testString: 'assert($("#searchbar").css("right") == "50px", "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");'
+  - text: Элемент <code>#searchbar</code> должен иметь <code>absolute</code> <code>position</code>.
+    testString: assert($("#searchbar").css("position") == "absolute", "The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.");
+  - text: Ваш код должен использовать <code>top</code> смещение CSS 50 пикселей в элементе <code>#searchbar</code>.
+    testString: assert($("#searchbar").css("top") == "50px", "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");
+  - text: Ваш код должен использовать <code>right</code> смещение CSS 50 пикселей в элементе <code>#searchbar</code>.
+    testString: assert($("#searchbar").css("right") == "50px", "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");
 
 ```
 
