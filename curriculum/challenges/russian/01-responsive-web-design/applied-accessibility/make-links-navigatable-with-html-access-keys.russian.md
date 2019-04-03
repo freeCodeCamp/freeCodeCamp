@@ -18,13 +18,13 @@ localeTitle: Сделать ссылки навигационными с клю�
 ```yml
 tests:
   - text: Ваш код должен добавить атрибут <code>accesskey</code> к тегу <code>a</code> с <code>id</code> «first».
-    testString: 'assert($("#first").attr("accesskey"), "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "first".");'
+    testString: assert($("#first").attr("accesskey"), "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "first".");
   - text: Ваш код должен добавить атрибут <code>accesskey</code> к тегу <code>a</code> с <code>id</code> «второй».
-    testString: 'assert($("#second").attr("accesskey"), "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "second".");'
-  - text: 'Ваш код должен установить атрибут <code>accesskey</code> в теге <code>a</code> с <code>id</code> «first» до «g». Обратите внимание, что дело имеет значение.'
-    testString: 'assert($("#first").attr("accesskey") == "g", "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "first" to "g". Note that case matters.");'
-  - text: 'Ваш код должен установить атрибут <code>accesskey</code> в теге <code>a</code> с <code>id</code> «second» до «c». Обратите внимание, что дело имеет значение.'
-    testString: 'assert($("#second").attr("accesskey") == "c", "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "second" to "c". Note that case matters.");'
+    testString: assert($("#second").attr("accesskey"), "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "second".");
+  - text: Ваш код должен установить атрибут <code>accesskey</code> в теге <code>a</code> с <code>id</code> «first» до «g». Обратите внимание, что дело имеет значение.
+    testString: assert($("#first").attr("accesskey") == "g", "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "first" to "g". Note that case matters.");
+  - text: Ваш код должен установить атрибут <code>accesskey</code> в теге <code>a</code> с <code>id</code> «second» до «c». Обратите внимание, что дело имеет значение.
+    testString: assert($("#second").attr("accesskey") == "c", "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "second" to "c". Note that case matters.");
 
 ```
 
