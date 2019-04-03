@@ -1,6 +1,6 @@
 ---
-title: Linking Your Account with Github
-localeTitle: Связывание вашей учетной записи с Github
+title: Linking Your Account with GitHub
+localeTitle: Связывание вашей учетной записи с GitHub
 ---
 В августе 2015 года мы подтолкнули некоторые изменения, вызвавшие проблемы для многих наших туристов.
 
