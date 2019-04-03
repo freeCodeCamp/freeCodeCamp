@@ -18,9 +18,9 @@ localeTitle: Использование tabindex для добавления ф�
 ```yml
 tests:
   - text: Ваш код должен добавить атрибут <code>tabindex</code> к тегу <code>p</code> который содержит инструкции формы.
-    testString: 'assert($("p").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.");'
+    testString: assert($("p").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.");
   - text: Ваш код должен установить атрибут <code>tabindex</code> в теге <code>p</code> равным 0.
-    testString: 'assert($("p").attr("tabindex") == "0", "Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.");'
+    testString: assert($("p").attr("tabindex") == "0", "Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.");
 
 ```
 
