@@ -23,13 +23,13 @@ localeTitle: Добавить возможность выбора даты
 tests:
 
   - text: Вы должны добавить один тег <code>input</code> для поля выбора даты.
-    testString: 'assert($("input").length == 2, "Your code should add one <code>input</code> tag for the date selector field.");'
+    testString: assert($("input").length == 2, "Your code should add one <code>input</code> tag for the date selector field.");
   - text: Тег <code>input</code> должен иметь атрибут <code>type</code> со значением date.
-    testString: 'assert($("input").attr("type") == "date", "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.");'
+    testString: assert($("input").attr("type") == "date", "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.");
   - text: Ваш тег <code>input</code> должен иметь атрибут <code>id</code> со значением pickdate.
-    testString: 'assert($("input").attr("id") == "pickdate", "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.");'
+    testString: assert($("input").attr("id") == "pickdate", "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.");
   - text: Ваш тег <code>input</code> должен иметь атрибут <code>name</code> со значением date.
-    testString: 'assert($("input").attr("name") == "date", "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.");'
+    testString: assert($("input").attr("name") == "date", "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.");
 
 ```
 
