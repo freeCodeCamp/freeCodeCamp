@@ -4,17 +4,17 @@ title: Confirm the Ending
 isRequired: true
 challengeType: 5
 videoUrl: ''
-localeTitle: Confirmar el final
+localeTitle: Confirmar la terminación
 ---
 
-## Description
-<section id="description"> Compruebe si una cadena (primer argumento, <code>str</code> ) termina con la cadena de destino dada (segundo argumento, <code>target</code> ). Este desafío <em>se</em> puede resolver con el método <code>.endsWith()</code> , que se introdujo en ES2015. Pero para el propósito de este desafío, nos gustaría que utilices uno de los métodos de subcadena de JavaScript. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. </section>
+## Descripción
+<section id="description"> Compruebe si una cadena (primer argumento, <code>str</code> ) termina con la cadena de destino dada (segundo argumento, <code>target</code> ). Este desafío <em>se</em> se puede resolver con el método <code>.endsWith()</code> , que se introdujo en ES2015. Pero para el propósito de este desafío, nos gustaría que utilices uno de los métodos de subcadena de JavaScript. Recuerda usar la técnica de <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Leer-Buscar-Preguntar</a> si te atascas. Escribe tu propio código. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -68,7 +68,7 @@ confirmEnding("Bastian", "n");
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

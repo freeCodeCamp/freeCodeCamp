@@ -2,14 +2,14 @@
 title: Bash touch
 ---
 
-## Bash command: touch
+# Bash command: touch
 
-Touch is used to change the timestamps of files.
-An empty file is created if does not already exist.
+Creates empty file if filename does not exist or modifies timestamps of existing files to current time.
 
-### Usage
+This command can create multiple empty files in one line of code.
 
-```bash
+## Usage
+```
 touch [options] filename
 ```
 
@@ -18,9 +18,9 @@ Commonly used options:
 - `-r` use timestamp from first file to second file.
 - `-a` In case you want to only change the access time, use the -a command line option.
 - `-m` Similarly, if the requirement is to only change the modification time, use the -m command line option.
+- `-h` Is useful if you only want to change the symbolic link, instead of the referenced file.
 
-### Examples
-
+## Examples
 ```bash
 touch -t YYYYMMDDHHMM.SS filename
 ```
@@ -31,7 +31,7 @@ touch -r file1 file2
 touch -am file3
 ```
 
-#### More Information:
-
-* [Wikipedia](https://en.wikipedia.org/wiki/Touch_(Unix))
-* [Man pages](http://man7.org/linux/man-pages/man1/touch.1.html)
+## Additional Resources
+- [Wikipedia](https://en.wikipedia.org/wiki/Touch_(Unix))
+- [Man pages](http://man7.org/linux/man-pages/man1/touch.1.html)
+- [Examples and options to use with the touch command](https://ss64.com/bash/touch.html)
