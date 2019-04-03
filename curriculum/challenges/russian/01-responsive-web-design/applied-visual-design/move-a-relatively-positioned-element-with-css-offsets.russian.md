@@ -17,10 +17,10 @@ localeTitle: Перемещение Относительно Позициони�
 
 ```yml
 tests:
-  - text: 'Ваш код должен использовать смещение CSS для относительно позиционирования <code>h2</code> 10px вверх. Другими словами, переместите его на расстоянии 10 пикселей от <code>bottom</code> где он обычно сидит.'
-    testString: 'assert($("h2").css("bottom") == "10px", "Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.");'
-  - text: 'Ваш код должен использовать смещение CSS, чтобы относительно позиционировать <code>h2</code> 15px вправо. Другими словами, переместите его на 15 пикселей <code>left</code> от места, где он обычно сидит.'
-    testString: 'assert($("h2").css("left") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.");'
+  - text: Ваш код должен использовать смещение CSS для относительно позиционирования <code>h2</code> 10px вверх. Другими словами, переместите его на расстоянии 10 пикселей от <code>bottom</code> где он обычно сидит.
+    testString: assert($("h2").css("bottom") == "10px", "Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.");
+  - text: Ваш код должен использовать смещение CSS, чтобы относительно позиционировать <code>h2</code> 15px вправо. Другими словами, переместите его на 15 пикселей <code>left</code> от места, где он обычно сидит.
+    testString: assert($("h2").css("left") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.");
 
 ```
 
