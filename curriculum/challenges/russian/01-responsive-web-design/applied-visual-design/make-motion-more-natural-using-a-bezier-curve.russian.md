@@ -17,8 +17,8 @@ localeTitle: 'Сделать движение более естественны�
 
 ```yml
 tests:
-  - text: 'Значение свойства <code>animation-timing-function</code> для элемента с <code>green</code> идентификатором должно быть функцией <code>cubic-bezier</code> с значениями x1, y1, x2, y2, как указано.'
-    testString: 'assert($("#green").css("animation-timing-function") == "cubic-bezier(0.311, 0.441, 0.444, 1.649)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.'
+  - text: Значение свойства <code>animation-timing-function</code> для элемента с <code>green</code> идентификатором должно быть функцией <code>cubic-bezier</code> с значениями x1, y1, x2, y2, как указано.
+    testString: assert($("#green").css("animation-timing-function") == "cubic-bezier(0.311, 0.441, 0.444, 1.649)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.
 
 ```
 
