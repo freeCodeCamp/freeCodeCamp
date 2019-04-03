@@ -17,10 +17,10 @@ localeTitle: Понять абсолютные и относительные е�
 
 ```yml
 tests:
-  - text: Класс <code>red-box</code> должен иметь свойство <code>padding</code> .
-    testString: 'assert($(".red-box").css("padding-top") != "0px" && $(".red-box").css("padding-right") != "0px" && $(".red-box").css("padding-bottom") != "0px" && $(".red-box").css("padding-left") != "0px", "Your <code>red-box</code> class should have a <code>padding</code> property.");'
-  - text: Ваш <code>red-box</code> класс должен дать элементы 1.5em из <code>padding</code> .
-    testString: 'assert(code.match(/\.red-box\s*?{\s*?.*?\s*?.*?\s*?padding:\s*?1\.5em/gi), "Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.");'
+  - text: Класс <code>red-box</code> должен иметь свойство <code>padding</code>.
+    testString: assert($(".red-box").css("padding-top") != "0px" && $(".red-box").css("padding-right") != "0px" && $(".red-box").css("padding-bottom") != "0px" && $(".red-box").css("padding-left") != "0px", "Your <code>red-box</code> class should have a <code>padding</code> property.");
+  - text: Ваш <code>red-box</code> класс должен дать элементы 1.5em из <code>padding</code>.
+    testString: assert(code.match(/\.red-box\s*?{\s*?.*?\s*?.*?\s*?padding:\s*?1\.5em/gi), "Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.");
 
 ```
 
