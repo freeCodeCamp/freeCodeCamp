@@ -18,17 +18,17 @@ localeTitle: 'Узнайте, как работают CSS-файлы и аним
 ```yml
 tests:
   - text: Элемент с идентификатором <code>rect</code> должен иметь свойство <code>animation-name</code> со значением радуги.
-    testString: 'assert($("#rect").css("animation-name") == "rainbow", "The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.");'
+    testString: assert($("#rect").css("animation-name") == "rainbow", "The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.");
   - text: Элемент с идентификатором <code>rect</code> должен иметь свойство <code>animation-duration</code> со значением 4s.
-    testString: 'assert($("#rect").css("animation-duration") == "4s", "The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.");'
+    testString: assert($("#rect").css("animation-duration") == "4s", "The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.");
   - text: Правило <code>@keyframes</code> должно использовать <code>animation-name</code> радуги.
-    testString: 'assert(code.match(/@keyframes\s+?rainbow\s*?{/g), "The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.");'
+    testString: assert(code.match(/@keyframes\s+?rainbow\s*?{/g), "The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.");
   - text: Правило <code>@keyframes</code> для радуги должно использовать <code>background-color</code> синего цвета при 0%.
-    testString: 'assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.");'
+    testString: assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.");
   - text: Правило <code>@keyframes</code> для радуги должно использовать зеленый <code>background-color</code> на 50%.
-    testString: 'assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.");'
+    testString: assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.");
   - text: Правило <code>@keyframes</code> для радуги должно использовать <code>background-color</code> желтого цвета на 100%.
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.");'
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.");
 
 ```
 
