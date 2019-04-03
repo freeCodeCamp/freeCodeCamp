@@ -18,7 +18,7 @@ localeTitle: Изменение позиции перекрывающихся э
 ```yml
 tests:
   - text: Элемент с классом <code>first</code> должен иметь значение <code>z-index</code> 2.
-    testString: 'assert($(".first").css("z-index") == "2", "The element with class <code>first</code> should have a <code>z-index</code> value of 2.");'
+    testString: assert($(".first").css("z-index") == "2", "The element with class <code>first</code> should have a <code>z-index</code> value of 2.");
 
 ```
 
