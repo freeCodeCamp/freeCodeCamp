@@ -24,7 +24,7 @@ localeTitle: 'Будьте внимательны к пользователям,
 ```yml
 tests:
   - text: Ваш код должен изменить цвет <code>color</code> текста для <code>button</code> на синий.
-    testString: 'assert($("button").css("color") == "rgb(0, 51, 102)", "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.");'
+    testString: assert($("button").css("color") == "rgb(0, 51, 102)", "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.");
 
 ```
 
