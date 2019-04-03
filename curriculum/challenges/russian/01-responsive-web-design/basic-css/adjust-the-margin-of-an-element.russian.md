@@ -17,8 +17,8 @@ localeTitle: Отрегулируйте маржу элемента
 
 ```yml
 tests:
-  - text: Ваш класс с <code>blue-box</code> должен давать элементы <code>20px</code> <code>margin</code> .
-    testString: 'assert($(".blue-box").css("margin-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.");'
+  - text: Ваш класс с <code>blue-box</code> должен давать элементы <code>20px</code> <code>margin</code>.
+    testString: assert($(".blue-box").css("margin-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.");
 
 ```
 
