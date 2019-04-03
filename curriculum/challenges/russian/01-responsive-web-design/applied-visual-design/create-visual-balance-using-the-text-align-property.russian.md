@@ -18,9 +18,9 @@ localeTitle: Создание визуального баланса Исполь
 ```yml
 tests:
   - text: Ваш код должен использовать свойство text-align для тега <code>h4</code> чтобы установить его в центр.
-    testString: 'assert($("h4").css("text-align") == "center", "Your code should use the text-align property on the <code>h4</code> tag to set it to center.");'
+    testString: assert($("h4").css("text-align") == "center", "Your code should use the text-align property on the <code>h4</code> tag to set it to center.");
   - text: Ваш код должен использовать свойство text-align на тэге <code>p</code> чтобы установить его для оправдания.
-    testString: 'assert($("p").css("text-align") == "justify", "Your code should use the text-align property on the <code>p</code> tag to set it to justify.");'
+    testString: assert($("p").css("text-align") == "justify", "Your code should use the text-align property on the <code>p</code> tag to set it to justify.");
 
 ```
 
