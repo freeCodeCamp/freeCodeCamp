@@ -17,14 +17,14 @@ localeTitle: Сделать экранную навигацию проще с з
 
 ```yml
 tests:
-  - text: Ваш код должен иметь один тег <code>header</code> .
-    testString: 'assert($("header").length == 1, "Your code should have one <code>header</code> tag.");'
-  - text: Ваши теги <code>header</code> должны обернуться вокруг <code>h1</code> .
-    testString: 'assert($("header").children("h1").length == 1, "Your <code>header</code> tags should wrap around the <code>h1</code>.");'
-  - text: У вашего кода не должно быть никаких тегов <code>div</code> .
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 'Убедитесь, что ваш элемент <code>header</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length, "Make sure your <code>header</code> element has a closing tag.");'
+  - text: Ваш код должен иметь один тег <code>header</code>.
+    testString: assert($("header").length == 1, "Your code should have one <code>header</code> tag.");
+  - text: Ваши теги <code>header</code> должны обернуться вокруг <code>h1</code>.
+    testString: assert($("header").children("h1").length == 1, "Your <code>header</code> tags should wrap around the <code>h1</code>.");
+  - text: У вашего кода не должно быть никаких тегов <code>div</code>.
+    testString: assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");
+  - text: Убедитесь, что ваш элемент <code>header</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length, "Make sure your <code>header</code> element has a closing tag.");
 
 ```
 
