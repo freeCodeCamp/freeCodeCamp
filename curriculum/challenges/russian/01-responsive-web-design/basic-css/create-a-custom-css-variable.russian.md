@@ -17,8 +17,8 @@ localeTitle: Создание пользовательской переменн�
 
 ```yml
 tests:
-  - text: класс <code>penguin</code> должен объявить переменную <code>--penguin-skin</code> и назначить ее <code>gray</code> .
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");'
+  - text: класс <code>penguin</code> должен объявить переменную <code>--penguin-skin</code> и назначить ее <code>gray</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");
 
 ```
 
