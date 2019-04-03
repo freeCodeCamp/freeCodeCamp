@@ -18,9 +18,9 @@ localeTitle: Улучшить читаемость с помощью текст�
 ```yml
 tests:
   - text: Ваш код должен изменить <code>color</code> текста для <code>body</code> на темный серый цвет.
-    testString: 'assert($("body").css("color") == "rgb(99, 99, 99)", "Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.");'
+    testString: assert($("body").css("color") == "rgb(99, 99, 99)", "Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.");
   - text: Ваш код не должен изменять <code>background-color</code> для <code>body</code> .
-    testString: 'assert($("body").css("background-color") == "rgb(255, 255, 255)", "Your code should not change the <code>background-color</code> for the <code>body</code>.");'
+    testString: assert($("body").css("background-color") == "rgb(255, 255, 255)", "Your code should not change the <code>background-color</code> for the <code>body</code>.");
 
 ```
 
