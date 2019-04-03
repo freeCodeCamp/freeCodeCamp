@@ -17,10 +17,10 @@ localeTitle: Изменение относительного положения 
 
 ```yml
 tests:
-  - text: Элемент <code>h2</code> должен иметь свойство <code>position</code> заданное <code>relative</code> .
-    testString: 'assert($("h2").css("position") == "relative", "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.");'
+  - text: Элемент <code>h2</code> должен иметь свойство <code>position</code> заданное <code>relative</code>.
+    testString: assert($("h2").css("position") == "relative", "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.");
   - text: Ваш код должен использовать смещение CSS для относительно позиционирования <code>h2</code> 15px от <code>top</code> где он обычно сидит.
-    testString: 'assert($("h2").css("top") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.");'
+    testString: assert($("h2").css("top") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.");
 
 ```
 
