@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cyLPJuM'
 
 ## Description
 <section id='description'>
-The <code>transform</code> property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.
+The <code>transform</code> property has a variety of functions that let you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.
 Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:
 <blockquote>p:hover {<br>&nbsp;&nbsp;transform: scale(2.1);<br>}</blockquote>
    
