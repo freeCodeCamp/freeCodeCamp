@@ -17,10 +17,10 @@ localeTitle: Прикрепите значение возврата к пере�
 
 ```yml
 tests:
-  - text: Примените запасное значение <code>black</code> к свойству <code>background</code> класса <code>penguin-top</code> .
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.");'
-  - text: Примените запасное значение <code>black</code> к свойству <code>background</code> класса <code>penguin-bottom</code> .
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
+  - text: Примените запасное значение <code>black</code> к свойству <code>background</code> класса <code>penguin-top</code>.
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.");
+  - text: Примените запасное значение <code>black</code> к свойству <code>background</code> класса <code>penguin-bottom</code>.
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.");
 
 ```
 
