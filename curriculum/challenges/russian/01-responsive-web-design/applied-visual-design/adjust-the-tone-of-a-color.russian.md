@@ -18,7 +18,7 @@ localeTitle: Отрегулируйте тон цвета
 ```yml
 tests:
   - text: Элемент <code>nav</code> должен иметь <code>background-color</code> настроенного голубого тона с использованием <code>hsl()</code>.
-    testString: 'assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), "The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.");'
+    testString: assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), "The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.");
 
 ```
 
