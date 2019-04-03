@@ -17,10 +17,10 @@ localeTitle: Сделать круговые изображения с ради�
 
 ```yml
 tests:
-  - text: 'Ваше изображение должно иметь радиус границы <code>50%</code> , что делает его идеально круговым.'
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 48, "Your image should have a border radius of <code>50%</code>, making it perfectly circular.");'
-  - text: Обязательно используйте процентное значение <code>50%</code> .
-    testString: 'assert(code.match(/50%/g), "Be sure to use a percentage value of <code>50%</code>.");'
+  - text: Ваше изображение должно иметь радиус границы <code>50%</code> , что делает его идеально круговым.
+    testString: assert(parseInt($("img").css("border-top-left-radius")) > 48, "Your image should have a border radius of <code>50%</code>, making it perfectly circular.");
+  - text: Обязательно используйте процентное значение <code>50%</code>.
+    testString: assert(code.match(/50%/g), "Be sure to use a percentage value of <code>50%</code>.");
 
 ```
 
