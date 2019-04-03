@@ -18,9 +18,9 @@ localeTitle: Используйте тег em для текста курсива
 ```yml
 tests:
   - text: Ваш код должен добавить тег <code>em</code> в разметку.
-    testString: 'assert($("em").length == 1, "Your code should add an <code>em</code> tag to the markup.");'
-  - text: Тег <code>em</code> должен обертывать содержимое тега <code>p</code> но не сам тег <code>p</code> .
-    testString: 'assert($("p").children().length == 1 && $("em").children().length == 2, "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.");'
+    testString: assert($("em").length == 1, "Your code should add an <code>em</code> tag to the markup.");
+  - text: Тег <code>em</code> должен обертывать содержимое тега <code>p</code> но не сам тег <code>p</code>.
+    testString: assert($("p").children().length == 1 && $("em").children().length == 2, "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.");
 
 ```
 
