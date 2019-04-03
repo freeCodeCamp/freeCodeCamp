@@ -17,12 +17,12 @@ localeTitle: Используйте тег s для текста зачерки�
 
 ```yml
 tests:
-  - text: Ваш код должен добавить к метке один тег <code>s</code> .
-    testString: 'assert($("s").length == 1, "Your code should add one <code>s</code> tag to the markup.");'
+  - text: Ваш код должен добавить к метке один тег <code>s</code>.
+    testString: assert($("s").length == 1, "Your code should add one <code>s</code> tag to the markup.");
   - text: Тег <code>s</code> должен обтекать текст Google в теге <code>h4</code> . Он не должен содержать слово «Алфавит».
-    testString: 'assert($("s").text().match(/Google/gi) && !$("s").text().match(/Alphabet/gi), "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.");'
-  - text: 'Включите слово «Алфавит» в тег <code>h4</code> , без форматирования зачеркиванием.'
-    testString: 'assert($("h4").html().match(/Alphabet/gi), "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.");'
+    testString: assert($("s").text().match(/Google/gi) && !$("s").text().match(/Alphabet/gi), "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.");
+  - text: Включите слово «Алфавит» в тег <code>h4</code> , без форматирования зачеркиванием.
+    testString: assert($("h4").html().match(/Alphabet/gi), "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.");
 
 ```
 
