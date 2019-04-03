@@ -17,8 +17,8 @@ localeTitle: Отрегулируйте прокладку элемента
 
 ```yml
 tests:
-  - text: Ваш класс <code>blue-box</code> должен давать элементы <code>20px</code> <code>padding</code> .
-    testString: 'assert($(".blue-box").css("padding-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.");'
+  - text: Ваш класс <code>blue-box</code> должен давать элементы <code>20px</code> <code>padding</code>.
+    testString: assert($(".blue-box").css("padding-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.");
 
 ```
 
