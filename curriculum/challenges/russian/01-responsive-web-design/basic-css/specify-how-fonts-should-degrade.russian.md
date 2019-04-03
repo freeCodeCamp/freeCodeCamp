@@ -17,14 +17,14 @@ localeTitle: 'Укажите, как шрифты должны ухудшать�
 
 ```yml
 tests:
-  - text: Ваш элемент h2 должен использовать шрифт <code>Lobster</code> .
-    testString: 'assert($("h2").css("font-family").match(/^"?lobster/i), "Your h2 element should use the font <code>Lobster</code>.");'
-  - text: 'Ваш h2-элемент должен деградировать до <code>monospace</code> шрифта, если <code>Lobster</code> недоступен.'
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?,\s*monospace\s*;\s*\}/gi.test(code), "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.");'
-  - text: 'Прокомментируйте свой звонок в Google для шрифта <code>Lobster</code> , поставив <code>&lt;!--</code> перед ним.'
-    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.");'
-  - text: 'Обязательно закройте свой комментарий, добавив <code>--&gt;</code> .'
-    testString: 'assert(new RegExp("[^fc]-->", "gi").test(code), "Be sure to close your comment by adding <code>--&#62;</code>.");'
+  - text: Ваш элемент h2 должен использовать шрифт <code>Lobster</code>.
+    testString: assert($("h2").css("font-family").match(/^"?lobster/i), "Your h2 element should use the font <code>Lobster</code>.");
+  - text: Ваш h2-элемент должен деградировать до <code>monospace</code> шрифта, если <code>Lobster</code> недоступен.
+    testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?,\s*monospace\s*;\s*\}/gi.test(code), "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.");
+  - text: Прокомментируйте свой звонок в Google для шрифта <code>Lobster</code> , поставив <code>&lt;!--</code> перед ним.
+    testString: assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.");
+  - text: Обязательно закройте свой комментарий, добавив <code>--&gt;</code>.
+    testString: assert(new RegExp("[^fc]-->", "gi").test(code), "Be sure to close your comment by adding <code>--&#62;</code>.");
 
 ```
 
