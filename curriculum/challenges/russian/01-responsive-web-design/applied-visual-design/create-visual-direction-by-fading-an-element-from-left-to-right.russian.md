@@ -17,8 +17,8 @@ localeTitle: 'Создать визуальное направление, зат
 
 ```yml
 tests:
-  - text: 'Правило <code>keyframes</code> для fade должно установить свойство <code>opacity</code> 0,1 на 50%.'
-    testString: 'assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi), "The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.");'
+  - text: Правило <code>keyframes</code> для fade должно установить свойство <code>opacity</code> 0,1 на 50%.
+    testString: assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi), "The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.");
 
 ```
 
