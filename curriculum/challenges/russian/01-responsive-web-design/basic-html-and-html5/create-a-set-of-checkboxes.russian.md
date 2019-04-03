@@ -18,13 +18,13 @@ localeTitle: Создать набор флажков
 ```yml
 tests:
   - text: На вашей странице должно быть три элемента флажка.
-    testString: 'assert($("input[type="checkbox"]").length > 2, "Your page should have three checkbox elements.");'
-  - text: Каждый из трех элементов флажка должен быть вложен в свой собственный элемент <code>label</code> .
-    testString: 'assert($("label > input[type="checkbox"]:only-child").length > 2, "Each of your three checkbox elements should be nested in its own <code>label</code> element.");'
-  - text: 'Убедитесь, что каждый из ваших элементов <code>label</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, "Make sure each of your <code>label</code> elements has a closing tag.");'
-  - text: Дайте Флажки на <code>name</code> атрибута <code>personality</code> .
-    testString: 'assert($("label > input[type="checkbox"]").filter("[name="personality"]").length > 2, "Give your checkboxes the <code>name</code> attribute of <code>personality</code>.");'
+    testString: assert($("input[type="checkbox"]").length > 2, "Your page should have three checkbox elements.");
+  - text: Каждый из трех элементов флажка должен быть вложен в свой собственный элемент <code>label</code>.
+    testString: assert($("label > input[type="checkbox"]:only-child").length > 2, "Each of your three checkbox elements should be nested in its own <code>label</code> element.");
+  - text: Убедитесь, что каждый из ваших элементов <code>label</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, "Make sure each of your <code>label</code> elements has a closing tag.");
+  - text: Дайте Флажки на <code>name</code> атрибута <code>personality</code>.
+    testString: assert($("label > input[type="checkbox"]").filter("[name="personality"]").length > 2, "Give your checkboxes the <code>name</code> attribute of <code>personality</code>.");
 
 ```
 
