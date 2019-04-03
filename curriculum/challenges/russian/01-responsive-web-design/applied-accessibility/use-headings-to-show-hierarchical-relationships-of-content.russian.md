@@ -17,10 +17,10 @@ localeTitle: Использовать заголовки для отображе
 
 ```yml
 tests:
-  - text: Ваш код должен иметь шесть тегов <code>h3</code> .
-    testString: 'assert($("h3").length === 6, "Your code should have six <code>h3</code> tags.");'
-  - text: В вашем коде не должно быть тегов <code>h5</code> .
-    testString: 'assert($("h5").length === 0, "Your code should not have any <code>h5</code> tags.");'
+  - text: Ваш код должен иметь шесть тегов <code>h3</code>.
+    testString: assert($("h3").length === 6, "Your code should have six <code>h3</code> tags.");
+  - text: В вашем коде не должно быть тегов <code>h5</code>.
+    testString: assert($("h5").length === 0, "Your code should not have any <code>h5</code> tags.");
 
 ```
 
