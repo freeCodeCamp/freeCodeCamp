@@ -26,8 +26,8 @@ localeTitle: Добавьте текстовое описание для изо�
 
 ```yml
 tests:
-  - text: 'Ваш тег <code>img</code> должен иметь атрибут <code>alt</code>, и он не должен быть пустым.'
-    testString: 'assert($("img").attr("alt"), "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.");'
+  - text: Ваш тег <code>img</code> должен иметь атрибут <code>alt</code>, и он не должен быть пустым.
+    testString: assert($("img").attr("alt"), "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.");
 
 ```
 
