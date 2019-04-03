@@ -18,17 +18,17 @@ localeTitle: Отрегулируйте оттенок цвета
 ```yml
 tests:
   - text: Ваш код должен использовать <code>hsl()</code> чтобы объявить зеленый цвет.
-    testString: 'assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color green.");'
+    testString: assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color green.");
   - text: Ваш код должен использовать <code>hsl()</code> для объявления цвета морской волны.
-    testString: 'assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color cyan.");'
+    testString: assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color cyan.");
   - text: Ваш код должен использовать <code>hsl()</code> для объявления синего цвета.
-    testString: 'assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color blue.");'
+    testString: assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color blue.");
   - text: '<code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> зеленый.'
-    testString: 'assert($(".green").css("background-color") == "rgb(0, 255, 0)", "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.");'
-  - text: '<code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> морской волны.'
-    testString: 'assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");'
-  - text: '<code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> синий.'
-    testString: 'assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");'
+    testString: assert($(".green").css("background-color") == "rgb(0, 255, 0)", "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.");
+  - text: <code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> морской волны.
+    testString: assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");
+  - text: <code>div</code> элемент с классом <code>green</code> должен иметь <code>background-color</code> синий.
+    testString: assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");
 
 ```
 
