@@ -18,7 +18,7 @@ localeTitle: Создание текстуры путем добавления �
 ```yml
 tests:
   - text: Элемент вашего <code>body</code> должен иметь свойство <code>background</code> установленное в <code>url()</code> с указанной ссылкой.
-    testString: 'assert(code.match(/background:\s*?url\(\s*("|"|)https:\/\/i\.imgur\.com\/MJAkxbh\.png\1\s*\)/gi), "Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.");'
+    testString: assert(code.match(/background:\s*?url\(\s*("|"|)https:\/\/i\.imgur\.com\/MJAkxbh\.png\1\s*\)/gi), "Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.");
 
 ```
 
