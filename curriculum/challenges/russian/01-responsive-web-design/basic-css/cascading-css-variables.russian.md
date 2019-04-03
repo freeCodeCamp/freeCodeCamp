@@ -17,8 +17,8 @@ localeTitle: Каскадные переменные CSS
 
 ```yml
 tests:
-  - text: 'объявите переменную <code>--penguin-belly</code> в <code>:root</code> и назначьте ее <code>pink</code> .'
-    testString: 'assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.");'
+  - text: объявите переменную <code>--penguin-belly</code> в <code>:root</code> и назначьте ее <code>pink</code>.
+    testString: assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.");
 
 ```
 
