@@ -18,7 +18,7 @@ localeTitle: Используйте свойство CSS Transform Property skew
 ```yml
 tests:
   - text: Элемент с <code>top</code> id должен быть перекошен на -10 градусов по оси Y.
-    testString: 'assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g), "The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.");'
+    testString: 'ssert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g), "The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.");
 
 ```
 
