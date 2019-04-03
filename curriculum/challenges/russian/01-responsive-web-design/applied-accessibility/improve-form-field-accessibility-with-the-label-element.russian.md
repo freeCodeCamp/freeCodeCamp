@@ -17,10 +17,10 @@ localeTitle: Улучшить доступность поля формы с по
 
 ```yml
 tests:
-  - text: 'Ваш код должен иметь атрибут <code>for</code> в теге <code>label</code>, который не является пустым.'
-    testString: 'assert($("label").attr("for"), "Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.");'
-  - text: 'Значение атрибута <code>for</code> должно соответствовать значению <code>id</code> электронной почты <code>input</code>.'
-    testString: 'assert($("label").attr("for") == "email", "Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.");'
+  - text: Ваш код должен иметь атрибут <code>for</code> в теге <code>label</code>, который не является пустым.
+    testString: assert($("label").attr("for"), "Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.");
+  - text: Значение атрибута <code>for</code> должно соответствовать значению <code>id</code> электронной почты <code>input</code>.
+    testString: assert($("label").attr("for") == "email", "Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.");
 
 ```
 
