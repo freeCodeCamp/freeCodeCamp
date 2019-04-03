@@ -35,5 +35,18 @@ let numbers = [-12, 160, 0, -3, 51];
 let minNum = Math.min(...numbers);
 console.log(minNum);//-12
 ```
+# SPOILER WARNING: SOLUTION AHEAD
+### The Solution
 
+> Unpacking the arr1 using the spread operator and then copying those values to arr2
+
+```javascript
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+(function() {
+  "use strict";
+  arr2 = [...arr1]; // change this line
+})();
+console.log(arr2);
+```
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->

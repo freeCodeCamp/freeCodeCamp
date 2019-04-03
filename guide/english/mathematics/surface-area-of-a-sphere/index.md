@@ -3,13 +3,15 @@ title: Surface Area of a Sphere
 ---
 ## Surface Area of a Sphere
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/surface-area-of-a-sphere/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The surface area **A** of a sphere with radius **r** may be calculated by the following formula:
+#### A = 4&pi;r&sup2;
+where **&pi;** is the ratio of a circle's circumference to its diameter (<em>&pi;</em> &approx; 3.14159).
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Example:
+*Problem:* Given a sphere with a radius of 11 inches, find its surface area.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+*Solution:* A = 4&times;*&pi;*&times;11&sup2; &approx; 1520.5 square inches
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+- [Wikipedia](https://en.wikipedia.org/wiki/Sphere)
