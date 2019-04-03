@@ -18,7 +18,7 @@ localeTitle: 'Анимация элементов, постоянно испол
 ```yml
 tests:
   - text: Свойство <code>animation-iteration-count</code> должно иметь значение бесконечное.
-    testString: 'assert($("#ball").css("animation-iteration-count") == "infinite", "The <code>animation-iteration-count</code> property should have a value of infinite.");'
+    testString: assert($("#ball").css("animation-iteration-count") == "infinite", "The <code>animation-iteration-count</code> property should have a value of infinite.");
 
 ```
 
