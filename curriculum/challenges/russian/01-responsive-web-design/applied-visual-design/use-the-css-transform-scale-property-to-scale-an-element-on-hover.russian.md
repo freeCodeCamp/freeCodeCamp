@@ -17,8 +17,8 @@ localeTitle: Используйте свойство масштабирован�
 
 ```yml
 tests:
-  - text: 'Размер элемента <code>div</code> должен масштабироваться в 1,1 раза, когда пользователь на него нависает.'
-    testString: 'assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi), "The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.");'
+  - text: Размер элемента <code>div</code> должен масштабироваться в 1,1 раза, когда пользователь на него нависает.
+    testString: assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi), "The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.");
 
 ```
 
