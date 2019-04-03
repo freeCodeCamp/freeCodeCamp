@@ -17,8 +17,8 @@ localeTitle: Уменьшить непрозрачность элемента
 
 ```yml
 tests:
-  - text: 'Ваш код должен установить свойство <code>opacity</code> 0,7 в тегах привязки, выбрав класс <code>links</code> .'
-    testString: 'assert.approximately(parseFloat($(".links").css("opacity")), 0.7, 0.1, "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.");'
+  - text: Ваш код должен установить свойство <code>opacity</code> 0,7 в тегах привязки, выбрав класс <code>links</code>.
+    testString: assert.approximately(parseFloat($(".links").css("opacity")), 0.7, 0.1, "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.");
 
 ```
 
