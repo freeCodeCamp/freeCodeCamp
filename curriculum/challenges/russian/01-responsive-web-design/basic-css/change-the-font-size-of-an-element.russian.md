@@ -18,7 +18,7 @@ localeTitle: Изменение размера шрифта элемента
 ```yml
 tests:
   - text: Между тегами <code>style</code> дайте <code>p</code> элементам <code>font-size</code> <code>16px</code> . Увеличение браузера и текста должно составлять 100%.
-    testString: 'assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), "Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.");'
+    testString: assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), "Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.");
 
 ```
 
