@@ -18,9 +18,9 @@ localeTitle: Отметьте радио кнопки и флажки по ум�
 ```yml
 tests:
   - text: Ваш первый переключатель в вашей форме должен быть отмечен по умолчанию.
-    testString: 'assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");'
+    testString: assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");
   - text: Ваш первый флажок в вашей форме должен быть отмечен по умолчанию.
-    testString: 'assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");'
+    testString: assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");
 
 ```
 
