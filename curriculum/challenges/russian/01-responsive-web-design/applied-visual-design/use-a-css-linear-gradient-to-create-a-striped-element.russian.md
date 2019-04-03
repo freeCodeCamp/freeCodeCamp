@@ -18,17 +18,17 @@ localeTitle: Используйте линейный градиент CSS для
 ```yml
 tests:
   - text: Угол <code>repeating-linear-gradient()</code> должен быть 45deg.
-    testString: 'assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi), "The angle of the <code>repeating-linear-gradient()</code> should be 45deg.");'
+    testString: assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi), "The angle of the <code>repeating-linear-gradient()</code> should be 45deg.");
   - text: Угол <code>repeating-linear-gradient()</code> должен превышать 90 градусов
-    testString: 'assert(!code.match(/90deg/gi), "The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg");'
-  - text: Остановка цвета в 0 пикселях должна быть <code>yellow</code> .
-    testString: 'assert(code.match(/yellow\s+?0(px)?/gi), "The color stop at 0 pixels should be <code>yellow</code>.");'
-  - text: Одна остановка цвета на 40 пикселей должна быть <code>yellow</code> .
-    testString: 'assert(code.match(/yellow\s+?40px/gi), "One color stop at 40 pixels should be <code>yellow</code>.");'
-  - text: Вторая остановка цвета на 40 пикселей должна быть <code>black</code> .
-    testString: 'assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi), "The second color stop at 40 pixels should be <code>black</code>.");'
-  - text: Последняя остановка цвета на 80 пикселей должна быть <code>black</code> .
-    testString: 'assert(code.match(/black\s+?80px/gi), "The last color stop at 80 pixels should be <code>black</code>.");'
+    testString: assert(!code.match(/90deg/gi), "The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg");
+  - text: Остановка цвета в 0 пикселях должна быть <code>yellow</code>.
+    testString: assert(code.match(/yellow\s+?0(px)?/gi), "The color stop at 0 pixels should be <code>yellow</code>.");
+  - text: Одна остановка цвета на 40 пикселей должна быть <code>yellow</code>.
+    testString: assert(code.match(/yellow\s+?40px/gi), "One color stop at 40 pixels should be <code>yellow</code>.");
+  - text: Вторая остановка цвета на 40 пикселей должна быть <code>black</code>.
+    testString: assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi), "The second color stop at 40 pixels should be <code>black</code>.");
+  - text: Последняя остановка цвета на 80 пикселей должна быть <code>black</code>.
+    testString: assert(code.match(/black\s+?80px/gi), "The last color stop at 80 pixels should be <code>black</code>.");
 
 ```
 
