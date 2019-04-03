@@ -18,9 +18,9 @@ localeTitle: Используйте тег u для подчеркивания �
 ```yml
 tests:
   - text: Ваш код должен добавить тег <code>u</code> в разметку.
-    testString: 'assert($("u").length === 1, "Your code should add a <code>u</code> tag to the markup.");'
+    testString: assert($("u").length === 1, "Your code should add a <code>u</code> tag to the markup.");
   - text: Тег <code>u</code> должен обернуться вокруг текста «Ph.D. students».
-    testString: 'assert($("u").text() === "Ph.D. students", "The <code>u</code> tag should wrap around the text "Ph.D. students".");'
+    testString: assert($("u").text() === "Ph.D. students", "The <code>u</code> tag should wrap around the text "Ph.D. students".");
 
 ```
 
