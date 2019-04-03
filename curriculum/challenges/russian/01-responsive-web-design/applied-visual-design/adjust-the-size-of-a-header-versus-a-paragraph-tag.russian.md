@@ -18,7 +18,7 @@ localeTitle: Отрегулируйте размер заголовка в ср�
 ```yml
 tests:
   - text: Ваш код должен добавить свойство <code>font-size</code> к элементу <code>h4</code> установленному в 27 пикселей.
-    testString: 'assert($("h4").css("font-size") == "27px", "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.");'
+    testString: assert($("h4").css("font-size") == "27px", "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.");
 
 ```
 
