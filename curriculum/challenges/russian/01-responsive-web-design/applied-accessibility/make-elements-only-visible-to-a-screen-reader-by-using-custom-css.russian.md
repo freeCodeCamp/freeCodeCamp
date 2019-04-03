@@ -18,13 +18,13 @@ localeTitle: Сделать элементы доступными только �
 ```yml
 tests:
   - text: Ваш код должен установить для свойства <code>sr-only</code> свойство <code>position</code> значение абсолютное.
-    testString: 'assert($(".sr-only").css("position") == "absolute", "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.");'
+    testString: assert($(".sr-only").css("position") == "absolute", "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.");
   - text: Ваш код должен установить свойство <code>left</code> класса <code>sr-only</code> равным -10000px.
-    testString: 'assert($(".sr-only").css("left") == "-10000px", "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.");'
+    testString: assert($(".sr-only").css("left") == "-10000px", "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.");
   - text: Ваш код должен установить свойство <code>width</code> класса <code>sr-only</code> равным 1 пикселю.
-    testString: 'assert(code.match(/width:\s*?1px/gi), "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
+    testString: assert(code.match(/width:\s*?1px/gi), "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.");
   - text: Ваш код должен установить свойство <code>height</code> класса <code>sr-only</code> равным 1 пикселю.
-    testString: 'assert(code.match(/height:\s*?1px/gi), "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
+    testString: assert(code.match(/height:\s*?1px/gi), "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.");
 
 ```
 
