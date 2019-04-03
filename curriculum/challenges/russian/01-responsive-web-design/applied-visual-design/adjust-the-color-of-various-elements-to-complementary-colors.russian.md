@@ -17,14 +17,14 @@ localeTitle: Отрегулируйте цвет различных элемен
 
 ```yml
 tests:
-  - text: 'Элемент <code>header</code> должен иметь <code>background-color</code> # 09A7A1.'
-    testString: 'assert($("header").css("background-color") == "rgb(9, 167, 161)", "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.");'
-  - text: 'Элемент нижнего <code>footer</code> должен иметь <code>background-color</code> # 09A7A1.'
-    testString: 'assert($("footer").css("background-color") == "rgb(9, 167, 161)", "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.");'
-  - text: 'Элемент <code>h2</code> должен иметь <code>color</code> # 09A7A1.'
-    testString: 'assert($("h2").css("color") == "rgb(9, 167, 161)", "The <code>h2</code> element should have a <code>color</code> of #09A7A1.");'
-  - text: 'Элемент <code>button</code> должен иметь <code>background-color</code> # FF790E.'
-    testString: 'assert($("button").css("background-color") == "rgb(255, 121, 14)", "The <code>button</code> element should have a <code>background-color</code> of #FF790E.");'
+  - text: Элемент <code>header</code> должен иметь <code>background-color</code> # 09A7A1.
+    testString: assert($("header").css("background-color") == "rgb(9, 167, 161)", "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.");
+  - text: Элемент нижнего <code>footer</code> должен иметь <code>background-color</code> # 09A7A1.
+    testString: assert($("footer").css("background-color") == "rgb(9, 167, 161)", "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.");
+  - text: Элемент <code>h2</code> должен иметь <code>color</code> # 09A7A1.
+    testString: assert($("h2").css("color") == "rgb(9, 167, 161)", "The <code>h2</code> element should have a <code>color</code> of #09A7A1.");
+  - text: Элемент <code>button</code> должен иметь <code>background-color</code> # FF790E.'
+    testString: 'assert($("button").css("background-color") == "rgb(255, 121, 14)", "The <code>button</code> element should have a <code>background-color</code> of #FF790E.");
 
 ```
 
