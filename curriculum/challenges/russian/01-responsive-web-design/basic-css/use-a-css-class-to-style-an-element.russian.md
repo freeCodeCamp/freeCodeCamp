@@ -18,13 +18,13 @@ localeTitle: Используйте класс CSS для стилизации �
 ```yml
 tests:
   - text: Ваш элемент <code>h2</code> должен быть красным.
-    testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
-  - text: Ваш элемент <code>h2</code> должен иметь <code>red-text</code> .
-    testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");'
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");
+  - text: Ваш элемент <code>h2</code> должен иметь <code>red-text</code>.
+    testString: assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");
   - text: В вашей таблице стилей должен быть объявлен класс <code>red-text</code> и его цвет будет красным.
-    testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.");'
-  - text: 'Не используйте встроенные объявления стиля, такие как <code>style=&quot;color: red&quot;</code> в вашем элементе <code>h2</code> .'
-    testString: 'assert($("h2").attr("style") === undefined, "Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.");'
+    testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.");
+  - text: Не используйте встроенные объявления стиля, такие как <code>style=&quot;color: red&quot;</code> в вашем элементе <code>h2</code>.
+    testString: assert($("h2").attr("style") === undefined, "Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.");
 
 ```
 
