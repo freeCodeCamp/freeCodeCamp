@@ -18,11 +18,11 @@ localeTitle: Стиль элемента тела HTML
 ```yml
 tests:
   - text: Дайте вашему <code>body</code> элемент <code>background-color</code> черного цвета.
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Give your <code>body</code> element the <code>background-color</code> of black.");'
-  - text: 'Убедитесь, что правило CSS правильно отформатировано как с открывающимися, так и закрывающимися фигурными скобками.'
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule is properly formatted with both opening and closing curly brackets.");'
-  - text: 'Убедитесь, что правило CSS заканчивается точкой с запятой.'
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule ends with a semi-colon.");'
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", "Give your <code>body</code> element the <code>background-color</code> of black.");
+  - text: Убедитесь, что правило CSS правильно отформатировано как с открывающимися, так и закрывающимися фигурными скобками.
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule is properly formatted with both opening and closing curly brackets.");
+  - text: Убедитесь, что правило CSS заканчивается точкой с запятой.
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule ends with a semi-colon.");
 
 ```
 
