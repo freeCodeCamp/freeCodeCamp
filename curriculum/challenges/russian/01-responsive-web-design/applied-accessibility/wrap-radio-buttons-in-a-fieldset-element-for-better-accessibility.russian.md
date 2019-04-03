@@ -18,15 +18,15 @@ localeTitle: Обтекание переключателей в элементе
 ```yml
 tests:
   - text: Ваш код должен иметь тег <code>fieldset</code> вокруг установленного переключателя.
-    testString: 'assert($("fieldset").length == 1, "Your code should have a <code>fieldset</code> tag around the radio button set.");'
-  - text: 'Убедитесь, что ваш элемент <code>fieldset</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, "Make sure your <code>fieldset</code> element has a closing tag.");'
-  - text: 'Ваш код должен иметь тег <code>legend</code> вокруг текста, спрашивающий, какой уровень ниндзя является пользователем.'
-    testString: 'assert($("legend").length == 1, "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.");'
+    testString: assert($("fieldset").length == 1, "Your code should have a <code>fieldset</code> tag around the radio button set.");
+  - text: Убедитесь, что ваш элемент <code>fieldset</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, "Make sure your <code>fieldset</code> element has a closing tag.");
+  - text: Ваш код должен иметь тег <code>legend</code> вокруг текста, спрашивающий, какой уровень ниндзя является пользователем.
+    testString: assert($("legend").length == 1, "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.");
   - text: У вашего кода не должно быть никаких тегов <code>div</code>.
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 'В вашем коде больше нет тега <code>p</code> вокруг текста, спрашивающего, какой уровень ниндзя является пользователем.'
-    testString: 'assert($("p").length == 4, "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.");'
+    testString: assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");
+  - text: В вашем коде больше нет тега <code>p</code> вокруг текста, спрашивающего, какой уровень ниндзя является пользователем.
+    testString: assert($("p").length == 4, "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.");
 
 ```
 
