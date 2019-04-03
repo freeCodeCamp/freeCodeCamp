@@ -18,9 +18,9 @@ localeTitle: Добавить закругленные углы при помо�
 ```yml
 tests:
   - text: Элемент изображения должен иметь класс «толсто-зеленая граница».
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
-  - text: Ваше изображение должно иметь радиус границы <code>10px</code>
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
+    testString: assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");
+  - text: Ваше изображение должно иметь радиус границы <code>10px</code>.
+    testString: assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");
 
 ```
 
