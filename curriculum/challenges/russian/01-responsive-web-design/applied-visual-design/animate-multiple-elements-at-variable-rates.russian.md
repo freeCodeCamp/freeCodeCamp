@@ -18,11 +18,11 @@ localeTitle: Анимация нескольких элементов при п�
 ```yml
 tests:
   - text: Свойство <code>animation-duration</code> для звезды с классом <code>star-1</code> должно оставаться на уровне 1 с.
-    testString: 'assert($(".star-1").css("animation-duration") == "1s", "The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.");'
-  - text: 'Свойство <code>animation-duration</code> для звезды с классом <code>star-2</code> должно быть 0,9 с.'
-    testString: 'assert($(".star-2").css("animation-duration") == "0.9s", "The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.");'
-  - text: 'Свойство <code>animation-duration</code> для звезды с классом <code>star-3</code> должно быть 1,1 с.'
-    testString: 'assert($(".star-3").css("animation-duration") == "1.1s", "The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.");'
+    testString: assert($(".star-1").css("animation-duration") == "1s", "The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.");
+  - text: Свойство <code>animation-duration</code> для звезды с классом <code>star-2</code> должно быть 0,9 с.
+    testString: assert($(".star-2").css("animation-duration") == "0.9s", "The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.");
+  - text: Свойство <code>animation-duration</code> для звезды с классом <code>star-3</code> должно быть 1,1 с.
+    testString: assert($(".star-3").css("animation-duration") == "1.1s", "The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.");
 
 ```
 
