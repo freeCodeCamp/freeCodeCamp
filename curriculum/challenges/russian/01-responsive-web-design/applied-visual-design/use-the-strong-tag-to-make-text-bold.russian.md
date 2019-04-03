@@ -18,11 +18,11 @@ localeTitle: 'Используйте сильный тег, чтобы сдел�
 ```yml
 tests:
   - text: Ваш код должен добавить один <code>strong</code> тег к разметке.
-    testString: 'assert($("strong").length == 1, "Your code should add one <code>strong</code> tag to the markup.");'
-  - text: <code>strong</code> тег должен находиться внутри тега <code>p</code> .
-    testString: 'assert($("p").children("strong").length == 1, "The <code>strong</code> tag should be inside the <code>p</code> tag.");'
+    testString: assert($("strong").length == 1, "Your code should add one <code>strong</code> tag to the markup.");
+  - text: <code>strong</code> тег должен находиться внутри тега <code>p</code>.
+    testString: assert($("p").children("strong").length == 1, "The <code>strong</code> tag should be inside the <code>p</code> tag.");
   - text: <code>strong</code> бирка должна охватывать слова «Стэнфордский университет».
-    testString: 'assert($("strong").text().match(/^Stanford University$/gi), "The <code>strong</code> tag should wrap around the words "Stanford University".");'
+    testString: assert($("strong").text().match(/^Stanford University$/gi), "The <code>strong</code> tag should wrap around the words "Stanford University".");
 
 ```
 
