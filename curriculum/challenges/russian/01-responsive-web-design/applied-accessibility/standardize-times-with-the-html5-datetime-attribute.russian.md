@@ -17,14 +17,14 @@ localeTitle: Стандартизировать время с атрибутом
 
 ```yml
 tests:
-  - text: 'Ваши теги <code>time</code> должны обтекать текст «Четверг, 15 сентября &lt;sup&gt; th &lt;/ sup&gt;».'
-    testString: 'assert($("time").text().match(/Thursday, September 15th/g), "Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".");'
+  - text: Ваши теги <code>time</code> должны обтекать текст «Четверг, 15 сентября &lt;sup&gt; th &lt;/ sup&gt;».
+    testString: assert($("time").text().match(/Thursday, September 15th/g), "Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".");
   - text: Ваш тег <code>time</code> должен иметь атрибут <code>datetime</code> который не является пустым.
-    testString: 'assert($("time").attr("datetime"), "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.");'
+    testString: assert($("time").attr("datetime"), "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.");
   - text: Ваш атрибут <code>datetime</code> должен быть установлен в значение 2016-09-15.
-    testString: 'assert($("time").attr("datetime") === "2016-09-15", "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.");'
-  - text: 'Убедитесь, что ваш элемент <code>time</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, "Make sure your <code>time</code> element has a closing tag.");'
+    testString: assert($("time").attr("datetime") === "2016-09-15", "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.");
+  - text: Убедитесь, что ваш элемент <code>time</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, "Make sure your <code>time</code> element has a closing tag.");
 
 ```
 
