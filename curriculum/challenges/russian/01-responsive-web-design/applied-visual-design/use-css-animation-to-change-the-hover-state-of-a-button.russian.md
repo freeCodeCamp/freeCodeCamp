@@ -18,9 +18,9 @@ localeTitle: Использование анимации CSS для измене
 ```yml
 tests:
   - text: Правило @keyframes должно использовать фоновый цвет <code>animation-name</code> .
-    testString: 'assert(code.match(/@keyframes\s+?background-color\s*?{/g), "The @keyframes rule should use the <code>animation-name</code> background-color.");'
-  - text: 'В разделе <code>@keyframes</code> должно быть одно правило, которое изменяет <code>background-color</code> на <code>#4791d0</code> на 100%.'
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), "There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.");'
+    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g), "The @keyframes rule should use the <code>animation-name</code> background-color.");
+  - text: В разделе <code>@keyframes</code> должно быть одно правило, которое изменяет <code>background-color</code> на <code>#4791d0</code> на 100%.
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), "There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.");
 
 ```
 
