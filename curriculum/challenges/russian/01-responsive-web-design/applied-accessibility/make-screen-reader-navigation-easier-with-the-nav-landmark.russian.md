@@ -17,14 +17,14 @@ localeTitle: Сделать навигацию с помощью экрана л
 
 ```yml
 tests:
-  - text: В вашем коде должен быть один тег <code>nav</code> .
-    testString: 'assert($("nav").length == 1, "Your code should have one <code>nav</code> tag.");'
+  - text: В вашем коде должен быть один тег <code>nav</code>.
+    testString: assert($("nav").length == 1, "Your code should have one <code>nav</code> tag.");
   - text: Теги вашего <code>nav</code> должны быть обернуты вокруг <code>ul</code> и элементов списка.
-    testString: 'assert($("nav").children("ul").length == 1, "Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.");'
-  - text: У вашего кода не должно быть никаких тегов <code>div</code> .
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 'Убедитесь, что ваш элемент <code>nav</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length, "Make sure your <code>nav</code> element has a closing tag.");'
+    testString: assert($("nav").children("ul").length == 1, "Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.");
+  - text: У вашего кода не должно быть никаких тегов <code>div</code>.
+    testString: assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");
+  - text: Убедитесь, что ваш элемент <code>nav</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length, "Make sure your <code>nav</code> element has a closing tag.");
 
 ```
 
