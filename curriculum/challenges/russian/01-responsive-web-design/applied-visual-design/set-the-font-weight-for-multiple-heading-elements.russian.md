@@ -18,17 +18,17 @@ localeTitle: Установите вес шрифта для нескольки�
 ```yml
 tests:
   - text: Ваш код должен установить свойство <code>font-weight</code> для тега <code>h1</code> равным 800.
-    testString: 'assert($("h1").css("font-weight") == "800", "Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.");'
+    testString: assert($("h1").css("font-weight") == "800", "Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.");
   - text: Ваш код должен установить свойство <code>font-weight</code> для тега <code>h2</code> равным 600.
-    testString: 'assert($("h2").css("font-weight") == "600", "Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.");'
+    testString: assert($("h2").css("font-weight") == "600", "Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.");
   - text: Ваш код должен установить свойство <code>font-weight</code> для тега <code>h3</code> равным 500.
-    testString: 'assert($("h3").css("font-weight") == "500", "Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.");'
+    testString: assert($("h3").css("font-weight") == "500", "Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.");
   - text: Ваш код должен установить свойство <code>font-weight</code> для тега <code>h4</code> равным 400.
-    testString: 'assert($("h4").css("font-weight") == "400", "Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.");'
+    testString: assert($("h4").css("font-weight") == "400", "Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.");
   - text: Ваш код должен установить свойство <code>font-weight</code> для тега <code>h5</code> равным 300.
-    testString: 'assert($("h5").css("font-weight") == "300", "Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.");'
+    testString: assert($("h5").css("font-weight") == "300", "Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.");
   - text: Ваш код должен установить свойство <code>font-weight</code> для тега <code>h6</code> равным 200.
-    testString: 'assert($("h6").css("font-weight") == "200", "Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.");'
+    testString: assert($("h6").css("font-weight") == "200", "Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.");
 
 ```
 
