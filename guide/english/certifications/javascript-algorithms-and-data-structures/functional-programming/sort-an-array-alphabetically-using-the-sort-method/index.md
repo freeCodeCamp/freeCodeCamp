@@ -11,7 +11,7 @@ In the example given we see how to write a function which will return a new arra
 
 function reverseAlpha(arr) {
   return arr.sort(function(a, b) {
-    return a < b;
+    return a !== b ? a > b ? -1 : 1 : 0;
   });
 }
 reverseAlpha(['l', 'h', 'z', 'b', 's']);
