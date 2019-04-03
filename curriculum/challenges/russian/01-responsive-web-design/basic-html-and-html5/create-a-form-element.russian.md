@@ -17,12 +17,12 @@ localeTitle: Создание элемента формы
 
 ```yml
 tests:
-  - text: Вставьте элемент ввода текста в элемент <code>form</code> .
-    testString: 'assert($("form") && $("form").children("input") && $("form").children("input").length > 0, "Nest your text input element within a <code>form</code> element.");'
-  - text: 'Убедитесь, что ваша <code>form</code> имеет атрибут <code>action</code> который установлен в <code>/submit-cat-photo</code>'
-    testString: 'assert($("form").attr("action") === "/submit-cat-photo", "Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>");'
-  - text: 'Убедитесь, что ваш элемент <code>form</code> имеет хорошо сформированные открытые и закрытые метки.'
-    testString: 'assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length, "Make sure your <code>form</code> element has well-formed open and close tags.");'
+  - text: Вставьте элемент ввода текста в элемент <code>form</code>.
+    testString: assert($("form") && $("form").children("input") && $("form").children("input").length > 0, "Nest your text input element within a <code>form</code> element.");
+  - text: Убедитесь, что ваша <code>form</code> имеет атрибут <code>action</code> который установлен в <code>/submit-cat-photo</code>
+    testString: assert($("form").attr("action") === "/submit-cat-photo", "Make sure your <code>form</code> has an <code>action</code> attribute which is set to <code>/submit-cat-photo</code>");
+  - text: Убедитесь, что ваш элемент <code>form</code> имеет хорошо сформированные открытые и закрытые метки.
+    testString: assert(code.match(/<\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\/form>/g).length === code.match(/<form [^<]*>/g).length, "Make sure your <code>form</code> element has well-formed open and close tags.");
 
 ```
 
