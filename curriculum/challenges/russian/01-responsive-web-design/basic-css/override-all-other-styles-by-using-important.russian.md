@@ -17,18 +17,18 @@ localeTitle: 'Переопределите все остальные стили,
 
 ```yml
 tests:
-  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code> .
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code> .
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: Ваш элемент <code>h1</code> должен иметь идентификатор <code>orange-text</code> .
-    testString: 'assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");'
-  - text: 'Ваш элемент <code>h1</code> должен иметь встроенный стиль <code>color: white</code> .'
-    testString: 'assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi), "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.");'
-  - text: 'В объявлении класса <code>pink-text</code> должно быть ключевое слово <code>!important</code> Important, чтобы переопределить все другие объявления.'
-    testString: 'assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g), "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.");'
+  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code>.
+    testString: assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");
+  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code>.
+    testString: assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");
+  - text: Ваш элемент <code>h1</code> должен иметь идентификатор <code>orange-text</code>.
+    testString: assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");
+  - text: Ваш элемент <code>h1</code> должен иметь встроенный стиль <code>color: white</code>.
+    testString: assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi), "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.");
+  - text: В объявлении класса <code>pink-text</code> должно быть ключевое слово <code>!important</code> Important, чтобы переопределить все другие объявления.
+    testString: assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g), "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.");
   - text: Ваш элемент <code>h1</code> должен быть розовым.
-    testString: 'assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");'
+    testString: assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");
 
 ```
 
