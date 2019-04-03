@@ -17,12 +17,12 @@ localeTitle: Задайте цвет фона элементу div
 
 ```yml
 tests:
-  - text: Дайте вашему элементу <code>div</code> класс <code>silver-background</code> .
-    testString: 'assert($("div").hasClass("silver-background"), "Give your <code>div</code> element the class <code>silver-background</code>.");'
+  - text: Дайте вашему элементу <code>div</code> класс <code>silver-background</code>.
+    testString: assert($("div").hasClass("silver-background"), "Give your <code>div</code> element the class <code>silver-background</code>.");
   - text: Ваш элемент <code>div</code> должен иметь серебряный фон.
-    testString: 'assert($("div").css("background-color") === "rgb(192, 192, 192)", "Your <code>div</code> element should have a silver background.");'
-  - text: Определите класс с именем <code>silver-background</code> в элементе <code>style</code> и присвойте значение <code>silver</code> свойству <code>background-color</code> .
-    testString: 'assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/), "Define a class named <code>silver-background</code> within the <code>style</code> element and assign the value of <code>silver</code> to the <code>background-color</code> property.");'
+    testString: assert($("div").css("background-color") === "rgb(192, 192, 192)", "Your <code>div</code> element should have a silver background.");
+  - text: Определите класс с именем <code>silver-background</code> в элементе <code>style</code> и присвойте значение <code>silver</code> свойству <code>background-color</code>.
+    testString: assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/), "Define a class named <code>silver-background</code> within the <code>style</code> element and assign the value of <code>silver</code> to the <code>background-color</code> property.");
 
 ```
 
