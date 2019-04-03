@@ -17,8 +17,8 @@ localeTitle: Изменение семейства шрифтов элемент
 
 ```yml
 tests:
-  - text: Ваши элементы <code>p</code> должны использовать шрифт <code>monospace</code> .
-    testString: 'assert($("p").not(".red-text").css("font-family").match(/monospace/i), "Your <code>p</code> elements should use the font <code>monospace</code>.");'
+  - text: Ваши элементы <code>p</code> должны использовать шрифт <code>monospace</code>.
+    testString: assert($("p").not(".red-text").css("font-family").match(/monospace/i), "Your <code>p</code> elements should use the font <code>monospace</code>.");
 
 ```
 
