@@ -18,7 +18,7 @@ localeTitle: Центрировать элемент горизонтально 
 ```yml
 tests:
   - text: У <code>div</code> должен быть установлен <code>margin</code> в auto.
-    testString: 'assert(code.match(/margin:\s*?auto;/g), "The <code>div</code> should have a <code>margin</code> set to auto.");'
+    testString: assert(code.match(/margin:\s*?auto;/g), "The <code>div</code> should have a <code>margin</code> set to auto.");
 
 ```
 
