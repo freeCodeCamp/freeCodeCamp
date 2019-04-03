@@ -18,15 +18,15 @@ localeTitle: Комментарий HTML
 ```yml
 tests:
   - text: Прокомментируйте свой элемент <code>h1</code> чтобы он не был виден на вашей странице.
-    testString: 'assert(($("h1").length === 0), "Comment out your <code>h1</code> element so that it is not visible on your page.");'
-  - text: 'Оставьте свой <code>h2</code> элемент раскомментированным, чтобы он был виден на вашей странице.'
-    testString: 'assert(($("h2").length > 0), "Leave your <code>h2</code> element uncommented so that it is visible on your page.");'
+    testString: assert(($("h1").length === 0), "Comment out your <code>h1</code> element so that it is not visible on your page.");
+  - text: Оставьте свой <code>h2</code> элемент раскомментированным, чтобы он был виден на вашей странице.
+    testString: assert(($("h2").length > 0), "Leave your <code>h2</code> element uncommented so that it is visible on your page.");
   - text: Прокомментируйте свой элемент <code>p</code> чтобы он не был виден на вашей странице.
-    testString: 'assert(($("p").length === 0), "Comment out your <code>p</code> element so that it is not visible on your page.");'
-  - text: Не забудьте закрыть каждый из ваших комментариев с помощью <code>--&gt;</code> .
-    testString: 'assert(code.match(/[^fc]-->/g).length > 1, "Be sure to close each of your comments with <code>--&#62;</code>.");'
+    testString: assert(($("p").length === 0), "Comment out your <code>p</code> element so that it is not visible on your page.");
+  - text: Не забудьте закрыть каждый из ваших комментариев с помощью <code>--&gt;</code>.
+    testString: assert(code.match(/[^fc]-->/g).length > 1, "Be sure to close each of your comments with <code>--&#62;</code>.");
   - text: Не изменяйте порядок <code>h1</code> <code>h2</code> или <code>p</code> в коде.
-    testString: 'assert((code.match(/<([a-z0-9]){1,2}>/g)[0]==="<h1>" && code.match(/<([a-z0-9]){1,2}>/g)[1]==="<h2>" && code.match(/<([a-z0-9]){1,2}>/g)[2]==="<p>") , "Do not change the order of the <code>h1</code> <code>h2</code> or <code>p</code> in the code.");'
+    testString: assert((code.match(/<([a-z0-9]){1,2}>/g)[0]==="<h1>" && code.match(/<([a-z0-9]){1,2}>/g)[1]==="<h2>" && code.match(/<([a-z0-9]){1,2}>/g)[2]==="<p>") , "Do not change the order of the <code>h1</code> <code>h2</code> or <code>p</code> in the code.");
 
 ```
 
