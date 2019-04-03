@@ -17,8 +17,8 @@ localeTitle: Изменение переменной для определенн
 
 ```yml
 tests:
-  - text: Класс <code>penguin</code> должен переназначить переменную <code>--penguin-belly</code> на <code>white</code> .
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");'
+  - text: Класс <code>penguin</code> должен переназначить переменную <code>--penguin-belly</code> на <code>white</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");
 
 ```
 
