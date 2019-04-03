@@ -19,10 +19,10 @@ localeTitle: Отрегулируйте состояние ссылок при �
 
 ```yml
 tests:
-  - text: '<code>color</code> метки привязки должен оставаться черным, добавьте только правила CSS для состояния <code>:hover</code>.'
-    testString: 'assert($("a").css("color") == "rgb(0, 0, 0)", "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.");'
+  - text: <code>color</code> метки привязки должен оставаться черным, добавьте только правила CSS для состояния <code>:hover</code>.
+    testString: assert($("a").css("color") == "rgb(0, 0, 0)", "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.");
   - text: Якорная метка должна иметь <code>color</code> синего цвета при наведении.
-    testString: 'assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), "The anchor tag should have a <code>color</code> of blue on hover.");'
+    testString: assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), "The anchor tag should have a <code>color</code> of blue on hover.");
 
 ```
 
