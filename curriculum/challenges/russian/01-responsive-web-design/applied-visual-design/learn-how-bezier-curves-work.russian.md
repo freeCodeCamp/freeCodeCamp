@@ -18,9 +18,9 @@ localeTitle: 'Узнайте, как работают кривые Безье'
 ```yml
 tests:
   - text: Значение свойства <code>animation-timing-function</code> для элемента с <code>ball1</code> должно быть линейно-эквивалентной функцией кубического безье.
-    testString: 'assert($("#ball1").css("animation-timing-function") == "cubic-bezier(0.25, 0.25, 0.75, 0.75)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.");'
+    testString: assert($("#ball1").css("animation-timing-function") == "cubic-bezier(0.25, 0.25, 0.75, 0.75)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.");
   - text: Значение свойства <code>animation-timing-function</code> для элемента с id <code>ball2</code> не должно меняться.
-    testString: 'assert($("#ball2").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.");'
+    testString: assert($("#ball2").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.");
 
 ```
 
