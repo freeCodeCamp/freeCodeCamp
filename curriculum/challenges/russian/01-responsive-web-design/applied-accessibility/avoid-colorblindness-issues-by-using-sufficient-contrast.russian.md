@@ -20,9 +20,9 @@ localeTitle: 'Избегайте недостаточной контрастно
 ```yml
 tests:
   - text: Ваш код должен только изменить значение яркости для свойства <code>color</code> текста на значение 15%.
-    testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.");'
+    testString: assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.");
   - text: Ваш код должен только изменить значение яркости для свойства <code>background-color</code> на значение 55%.
-    testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.");'
+    testString: assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.");
 
 ```
 
