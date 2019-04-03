@@ -17,10 +17,10 @@ localeTitle: Нажатие элементов влево или вправо с
 
 ```yml
 tests:
-  - text: Элемент с id <code>left</code> должен иметь значение <code>float</code> <code>left</code> .
-    testString: 'assert($("#left").css("float") == "left", "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.");'
-  - text: Элемент с <code>right</code> id должен иметь значение <code>float</code> <code>right</code> .
-    testString: 'assert($("#right").css("float") == "right", "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.");'
+  - text: Элемент с id <code>left</code> должен иметь значение <code>float</code> <code>left</code>.
+    testString: assert($("#left").css("float") == "left", "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.");
+  - text: Элемент с <code>right</code> id должен иметь значение <code>float</code> <code>right</code>.
+    testString: assert($("#right").css("float") == "right", "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.");
 
 ```
 
