@@ -17,14 +17,14 @@ localeTitle: Импорт шрифта Google
 
 ```yml
 tests:
-  - text: Импортируйте шрифт <code>Lobster</code> .
-    testString: 'assert(new RegExp("googleapis", "gi").test(code), "Import the <code>Lobster</code> font.");'
-  - text: Ваш элемент <code>h2</code> должен использовать шрифт <code>Lobster</code> .
-    testString: 'assert($("h2").css("font-family").match(/lobster/i), "Your <code>h2</code> element should use the font <code>Lobster</code>.");'
+  - text: Импортируйте шрифт <code>Lobster</code>.
+    testString: assert(new RegExp("googleapis", "gi").test(code), "Import the <code>Lobster</code> font.");
+  - text: Ваш элемент <code>h2</code> должен использовать шрифт <code>Lobster</code>.
+    testString: assert($("h2").css("font-family").match(/lobster/i), "Your <code>h2</code> element should use the font <code>Lobster</code>.");
   - text: С помощью селектора <code>h2</code> CSS измените шрифт.
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?\s*;\s*\}/gi.test(code), "Use an <code>h2</code> CSS selector to change the font.");'
-  - text: Ваш элемент <code>p</code> все равно должен использовать шрифт <code>monospace</code> .
-    testString: 'assert($("p").css("font-family").match(/monospace/i), "Your <code>p</code> element should still use the font <code>monospace</code>.");'
+    testString: assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?\s*;\s*\}/gi.test(code), "Use an <code>h2</code> CSS selector to change the font.");
+  - text: Ваш элемент <code>p</code> все равно должен использовать шрифт <code>monospace</code>.
+    testString: assert($("p").css("font-family").match(/monospace/i), "Your <code>p</code> element should still use the font <code>monospace</code>.");
 
 ```
 
