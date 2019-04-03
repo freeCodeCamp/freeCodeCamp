@@ -18,7 +18,7 @@ localeTitle: Отрегулируйте высоту элемента с пом�
 ```yml
 tests:
   - text: Ваш код должен изменить свойство <code>h4</code> <code>height</code> на значение 25 пикселей.
-    testString: 'assert($("h4").css("height") == "25px", "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.");'
+    testString: assert($("h4").css("height") == "25px", "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.");
 
 ```
 
