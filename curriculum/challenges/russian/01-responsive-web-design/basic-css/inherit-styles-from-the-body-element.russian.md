@@ -17,20 +17,20 @@ localeTitle: Наследовать стили из элемента тела
 
 ```yml
 tests:
-  - text: Создайте элемент <code>h1</code> .
-    testString: 'assert(($("h1").length > 0), "Create an <code>h1</code> element.");'
-  - text: Ваш элемент <code>h1</code> должен иметь текст <code>Hello World</code> .
-    testString: 'assert(($("h1").length > 0 && $("h1").text().match(/hello world/i)), "Your <code>h1</code> element should have the text <code>Hello World</code>.");'
-  - text: 'Убедитесь, что ваш элемент <code>h1</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length, "Make sure your <code>h1</code> element has a closing tag.");'
-  - text: Дайте элементу своего <code>body</code> свойство <code>color</code> <code>green</code> .
-    testString: 'assert(($("body").css("color") === "rgb(0, 128, 0)"), "Give your <code>body</code> element the <code>color</code> property of <code>green</code>.");'
-  - text: Дайте вашему элементу <code>body</code> свойство <code>font-family</code> <code>monospace</code> .
-    testString: 'assert(($("body").css("font-family").match(/monospace/i)), "Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.");'
-  - text: Ваш элемент <code>h1</code> должен наследовать шрифт <code>monospace</code> от вашего элемента <code>body</code> .
-    testString: 'assert(($("h1").length > 0 && $("h1").css("font-family").match(/monospace/i)), "Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.");'
-  - text: Ваш элемент <code>h1</code> должен наследовать зеленый цвет от вашего элемента <code>body</code> .
-    testString: 'assert(($("h1").length > 0 && $("h1").css("color") === "rgb(0, 128, 0)"), "Your <code>h1</code> element should inherit the color green from your <code>body</code> element.");'
+  - text: Создайте элемент <code>h1</code>.
+    testString: assert(($("h1").length > 0), "Create an <code>h1</code> element.");
+  - text: Ваш элемент <code>h1</code> должен иметь текст <code>Hello World</code>.
+    testString: assert(($("h1").length > 0 && $("h1").text().match(/hello world/i)), "Your <code>h1</code> element should have the text <code>Hello World</code>.");
+  - text: Убедитесь, что ваш элемент <code>h1</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length, "Make sure your <code>h1</code> element has a closing tag.");
+  - text: Дайте элементу своего <code>body</code> свойство <code>color</code> <code>green</code>.
+    testString: assert(($("body").css("color") === "rgb(0, 128, 0)"), "Give your <code>body</code> element the <code>color</code> property of <code>green</code>.");
+  - text: Дайте вашему элементу <code>body</code> свойство <code>font-family</code> <code>monospace</code>.
+    testString: assert(($("body").css("font-family").match(/monospace/i)), "Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.");
+  - text: Ваш элемент <code>h1</code> должен наследовать шрифт <code>monospace</code> от вашего элемента <code>body</code>.
+    testString: assert(($("h1").length > 0 && $("h1").css("font-family").match(/monospace/i)), "Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.");
+  - text: Ваш элемент <code>h1</code> должен наследовать зеленый цвет от вашего элемента <code>body</code>.
+    testString: assert(($("h1").length > 0 && $("h1").css("color") === "rgb(0, 128, 0)"), "Your <code>h1</code> element should inherit the color green from your <code>body</code> element.");
 
 ```
 
