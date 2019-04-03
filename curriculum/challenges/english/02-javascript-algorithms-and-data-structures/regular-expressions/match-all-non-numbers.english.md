@@ -62,6 +62,8 @@ let result = numString.match(noNumRegex).length;
 <section id='solution'>
 
 ```js
-// solution required
+let numString = "Your sandwich will be $5.00";
+let noNumRegex = /\D/g; // Change this line
+let result = numString.match(noNumRegex).length;
 ```
 </section>

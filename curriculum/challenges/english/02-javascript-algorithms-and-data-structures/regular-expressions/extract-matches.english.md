@@ -53,6 +53,8 @@ let result = extractStr; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
 ```
 </section>

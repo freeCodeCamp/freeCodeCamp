@@ -53,6 +53,8 @@ let result = lastRegex.test(caboose);
 <section id='solution'>
 
 ```js
-// solution required
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
 ```
 </section>
