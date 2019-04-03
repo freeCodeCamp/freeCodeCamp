@@ -44,19 +44,21 @@ const propTypes = {
 
 export class SidePanel extends Component {
   componentDidMount() {
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        processEscapes: true,
-        processClass: 'rosetta-code'
-      }
-    });
-    MathJax.Hub.Queue([
-      'Typeset',
-      MathJax.Hub,
-      document.querySelector('.rosetta-code')
-    ]);
-    this.props.initConsole('');
+    if (MathJax) {
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          processEscapes: true,
+          processClass: 'rosetta-code'
+        }
+      });
+      MathJax.Hub.Queue([
+        'Typeset',
+        MathJax.Hub,
+        document.querySelector('.rosetta-code')
+      ]);
+      this.props.initConsole('');
+    }
   }
 
   render() {
