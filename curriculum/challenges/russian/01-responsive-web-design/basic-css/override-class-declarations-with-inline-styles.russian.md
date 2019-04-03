@@ -17,16 +17,16 @@ localeTitle: Переопределить объявления классов с
 
 ```yml
 tests:
-  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code> .
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code> .
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: Ваш элемент <code>h1</code> должен иметь идентификатор <code>orange-text</code> .
-    testString: 'assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");'
+  - text: Ваш элемент <code>h1</code> должен иметь класс <code>pink-text</code>.
+    testString: assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");
+  - text: Ваш элемент <code>h1</code> должен иметь <code>blue-text</code>.
+    testString: assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");
+  - text: Ваш элемент <code>h1</code> должен иметь идентификатор <code>orange-text</code>.
+    testString: assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");
   - text: Дайте вашему элементу <code>h1</code> встроенный стиль.
-    testString: 'assert(document.querySelector("h1[style]"), "Give your <code>h1</code> element an inline style.");'
+    testString: assert(document.querySelector("h1[style]"), "Give your <code>h1</code> element an inline style.");
   - text: Ваш элемент <code>h1</code> должен быть белым.
-    testString: 'assert($("h1").css("color") === "rgb(255, 255, 255)", "Your <code>h1</code> element should be white.");'
+    testString: assert($("h1").css("color") === "rgb(255, 255, 255)", "Your <code>h1</code> element should be white.");
 
 ```
 
