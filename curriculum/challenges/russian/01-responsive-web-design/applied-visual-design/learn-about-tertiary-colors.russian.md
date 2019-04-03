@@ -18,11 +18,11 @@ localeTitle: Узнайте о третичных цветах
 ```yml
 tests:
   - text: Элемент <code>div</code> с <code>orange</code> класса должен иметь оранжевый <code>background-color</code> .
-    testString: 'assert($(".orange").css("background-color") == "rgb(255, 125, 0)", "The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.");'
+    testString: assert($(".orange").css("background-color") == "rgb(255, 125, 0)", "The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.");
   - text: Элемент <code>div</code> с классом <code>cyan</code> должен иметь <code>background-color</code> cyan.
-    testString: 'assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");'
+    testString: assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");
   - text: Элемент <code>div</code> с классом <code>raspberry</code> должен иметь <code>background-color</code> малины.
-    testString: 'assert($(".raspberry").css("background-color") == "rgb(255, 0, 125)", "The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.");'
+    testString: assert($(".raspberry").css("background-color") == "rgb(255, 0, 125)", "The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.");
 
 ```
 
