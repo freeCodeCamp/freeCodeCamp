@@ -18,7 +18,7 @@ localeTitle: Создать линейный градиент линейного
 ```yml
 tests:
   - text: Элемент <code>div</code> должен иметь <code>background</code> с <code>linear-gradient</code> с заданным направлением и цветами.
-    testString: 'assert(code.match(/background:\s*?linear-gradient\(35deg,\s*?(#CCFFFF|#CFF),\s*?(#FFCCCC|#FCC)\);/gi), "The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.");'
+    testString: assert(code.match(/background:\s*?linear-gradient\(35deg,\s*?(#CCFFFF|#CFF),\s*?(#FFCCCC|#FCC)\);/gi), "The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.");
 
 ```
 
