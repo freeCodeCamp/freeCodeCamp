@@ -17,10 +17,10 @@ localeTitle: Узнайте о дополнительных цветах
 
 ```yml
 tests:
-  - text: Элемент <code>div</code> с <code>blue</code> должен иметь синий <code>background-color</code> .
-    testString: 'assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");'
-  - text: Элемент <code>div</code> с <code>yellow</code> классом должен иметь желтый <code>background-color</code> .
-    testString: 'assert($(".yellow").css("background-color") == "rgb(255, 255, 0)", "The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.");'
+  - text: Элемент <code>div</code> с <code>blue</code> должен иметь синий <code>background-color</code>.
+    testString: assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");
+  - text: Элемент <code>div</code> с <code>yellow</code> классом должен иметь желтый <code>background-color</code>.
+    testString: assert($(".yellow").css("background-color") == "rgb(255, 255, 0)", "The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.");
 
 ```
 
