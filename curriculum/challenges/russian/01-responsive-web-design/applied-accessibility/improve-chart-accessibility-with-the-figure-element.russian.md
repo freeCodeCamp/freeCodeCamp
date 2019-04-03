@@ -20,19 +20,19 @@ localeTitle: Улучшите читаемость диаграммы
 ```yml
 tests:
   - text: Ваш код должен иметь один <code>figure</code> тег.
-    testString: 'assert($("figure").length == 1, "Your code should have one <code>figure</code> tag.");'
+    testString: assert($("figure").length == 1, "Your code should have one <code>figure</code> tag.");
   - text: В вашем коде должен быть один тег <code>figcaption</code> .
-    testString: 'assert($("figcaption").length == 1, "Your code should have one <code>figcaption</code> tag.");'
+    testString: assert($("figcaption").length == 1, "Your code should have one <code>figcaption</code> tag.");
   - text: У вашего кода не должно быть никаких тегов <code>div</code> .
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+    testString: assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");
 
   - text: Ваш код не должен иметь каких - либо <code>p</code> - тегов.
 
-    testString: 'assert($("p").length == 0, "Your code should not have any <code>p</code> tags.");'
+    testString: assert($("p").length == 0, "Your code should not have any <code>p</code> tags.");
   - text: <code>figcaption</code> должен быть дочерним элементом тега <code>figure</code> .
-    testString: 'assert($("figure").children("figcaption").length == 1, "The <code>figcaption</code> should be a child of the <code>figure</code> tag.");'
-  - text: 'Убедитесь, что ваш <code>figure</code> элемент имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, "Make sure your <code>figure</code> element has a closing tag.");'
+    testString: assert($("figure").children("figcaption").length == 1, "The <code>figcaption</code> should be a child of the <code>figure</code> tag.");
+  - text: Убедитесь, что ваш <code>figure</code> элемент имеет закрывающий тег.
+    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, "Make sure your <code>figure</code> element has a closing tag.");
 
 ```
 
