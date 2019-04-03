@@ -17,12 +17,12 @@ localeTitle: Используйте кривую Безье для переме�
 
 ```yml
 tests:
-  - text: 'Значение свойства <code>animation-timing-function</code> элемента с <code>red</code> id должно быть функцией <code>cubic-bezier</code> с значениями x1, y1, x2, y2, установленными соответственно 0, 0, 0,58, 1.'
-    testString: 'assert($("#red").css("animation-timing-function") == "cubic-bezier(0, 0, 0.58, 1)", "The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .");'
+  - text: Значение свойства <code>animation-timing-function</code> элемента с <code>red</code> id должно быть функцией <code>cubic-bezier</code> с значениями x1, y1, x2, y2, установленными соответственно 0, 0, 0,58, 1.
+    testString: assert($("#red").css("animation-timing-function") == "cubic-bezier(0, 0, 0.58, 1)", "The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .");
   - text: Элемент с <code>red</code> идентификатором должен больше не обладать свойством <code>animation-timing-function</code> линейным.
-    testString: 'assert($("#red").css("animation-timing-function") !== "linear", "The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.");'
+    testString: assert($("#red").css("animation-timing-function") !== "linear", "The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.");
   - text: Значение свойства <code>animation-timing-function</code> для элемента с <code>blue</code> не должно изменяться.
-    testString: 'assert($("#blue").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.");'
+    testString: assert($("#blue").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.");
 
 ```
 
