@@ -18,9 +18,9 @@ localeTitle: Создание горизонтальной линии с исп�
 ```yml
 tests:
   - text: Ваш код должен добавить метку <code>hr</code> к разметке.
-    testString: 'assert($("hr").length == 1, "Your code should add an <code>hr</code> tag to the markup.");'
+    testString: assert($("hr").length == 1, "Your code should add an <code>hr</code> tag to the markup.");
   - text: Тег <code>hr</code> должен находиться между заголовком и абзацем.
-    testString: 'assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), "The <code>hr</code> tag should come between the title and the paragraph.");'
+    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), "The <code>hr</code> tag should come between the title and the paragraph.");
 
 ```
 
