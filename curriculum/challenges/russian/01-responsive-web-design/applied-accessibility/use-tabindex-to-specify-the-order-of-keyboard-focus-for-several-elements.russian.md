@@ -26,14 +26,14 @@ Camper Cat имеет поле поиска на странице Вдохнов
 
 ```yml
 tests:
-  - text: 'Ваш код должен добавить к тегу <code>input</code> атрибут <code>tabindex</code>.'
-    testString: 'assert($("#search").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.");'
-  - text: 'Ваш код должен добавить атрибут <code>tabindex</code> в тег submit <code>input</code>.'
-    testString: 'assert($("#submit").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.");'
-  - text: 'Ваш код должен установить атрибут <code>tabindex</code> в теге <code>input</code> для поиска <значение> к значению 1.'
-    testString: 'assert($("#search").attr("tabindex") == "1", "Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.");'
-  - text: 'Ваш код должен установить атрибут <code>tabindex</code> в теге отправки <code>input</code> значение 2.'
-    testString: 'assert($("#submit").attr("tabindex") == "2", "Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.");'
+  - text: Ваш код должен добавить к тегу <code>input</code> атрибут <code>tabindex</code>.
+    testString: assert($("#search").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.");
+  - text: Ваш код должен добавить атрибут <code>tabindex</code> в тег submit <code>input</code>.'
+    testString: 'assert($("#submit").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.");
+  - text: Ваш код должен установить атрибут <code>tabindex</code> в теге <code>input</code> для поиска <значение> к значению 1.'
+    testString: 'assert($("#search").attr("tabindex") == "1", "Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.");
+  - text: Ваш код должен установить атрибут <code>tabindex</code> в теге отправки <code>input</code> значение 2.
+    testString: assert($("#submit").attr("tabindex") == "2", "Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.");
 
 ```
 
