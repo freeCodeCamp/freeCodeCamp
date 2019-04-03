@@ -18,9 +18,9 @@ localeTitle: Изменение цвета текста
 ```yml
 tests:
   - text: Ваш элемент <code>h2</code> должен быть красным.
-    testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
-  - text: 'Ваше объявление <code>style</code> должно заканчиваться на <code>;</code> ,'
-    testString: 'assert(code.match(/<h2\s+style\s*=\s*(\"|")\s*color\s*:\s*(?:rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|red|#ff0000|#f00|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*\;(\"|")>\s*CatPhotoApp\s*<\/h2>/)," Your <code>style</code> declaration should end with a <code>;</code> .");'
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");
+  - text: Ваше объявление <code>style</code> должно заканчиваться на <code>;</code>.
+    testString: assert(code.match(/<h2\s+style\s*=\s*(\"|")\s*color\s*:\s*(?:rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|red|#ff0000|#f00|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*\;(\"|")>\s*CatPhotoApp\s*<\/h2>/)," Your <code>style</code> declaration should end with a <code>;</code> .");
 
 ```
 
