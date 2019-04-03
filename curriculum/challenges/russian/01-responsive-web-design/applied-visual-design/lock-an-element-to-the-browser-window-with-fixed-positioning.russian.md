@@ -17,12 +17,12 @@ localeTitle: Блокировка элемента в окне браузера 
 
 ```yml
 tests:
-  - text: '<code>#navbar</code> элемент должен иметь <code>position</code> набор для <code>fixed</code> .'
-    testString: 'assert($("#navbar").css("position") == "fixed", "The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.");'
-  - text: 'Ваш код должен использовать <code>top</code> сдвиг CSS в 0 пикселей в элементе <code>#navbar</code> .'
-    testString: 'assert($("#navbar").css("top") == "0px", "Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");'
-  - text: 'Ваш код должен использовать <code>left</code> сдвиг CSS в 0 пикселей на элементе <code>#navbar</code> .'
-    testString: 'assert($("#navbar").css("left") == "0px", "Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");'
+  - text: <code>#navbar</code> элемент должен иметь <code>position</code> набор для <code>fixed</code>.
+    testString: assert($("#navbar").css("position") == "fixed", "The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.");
+  - text: Ваш код должен использовать <code>top</code> сдвиг CSS в 0 пикселей в элементе <code>#navbar</code>.
+    testString: assert($("#navbar").css("top") == "0px", "Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");
+  - text: Ваш код должен использовать <code>left</code> сдвиг CSS в 0 пикселей на элементе <code>#navbar</code>.
+    testString: assert($("#navbar").css("left") == "0px", "Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");
 
 ```
 
