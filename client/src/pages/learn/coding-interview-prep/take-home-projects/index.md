@@ -5,7 +5,7 @@ superBlock: Coding Interview Prep
 ---
 ## Introduction to the Coding Interview Take Home Projects
 
-Programming interviews have always been stressful. One of the solutions is giving the applicant a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but it is the most preferred interviewing process for the interviewers.
+Programming interviews have always been stressful. One of the solutions is giving the applicant a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.
 
 The interview after the project submission could be a discussion about the applicant’s design decisions, scalability, and what the applicant might have done differently. This approach is more effective when the applicant doesn’t have a lot of publicly available past projects.
 
