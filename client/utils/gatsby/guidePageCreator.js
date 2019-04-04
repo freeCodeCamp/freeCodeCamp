@@ -24,7 +24,7 @@ exports.createGuideArticlePages = createPage => ({
     meta.featureImage = featureImage
       ? featureImage.properties.src
       : 'https://s3.amazonaws.com/freecodecamp' +
-        '/reecodecamp-square-logo-large.jpg';
+        '/freecodecamp-square-logo-large.jpg';
 
     const description = head(select(htmlAst, 'element[tagName=p]'));
     meta.description = description ? description.children[0].value : '';
