@@ -5,7 +5,9 @@ title: Git Stash
 
 Git has an area called the stash where you can temporarily store a snapshot of your changes without committing them to the repository. It's separate from the working directory, the staging area, or the repository.
 
-This functionality is useful when you've made changes to a branch that you aren't ready to commit, but you need to switch to another branch.
+This functionality is useful when you've made changes to a branch that you aren't ready to commit, but you need to switch to another branch. This is where git stash comes in handy. This takes a working tree and files it away in a location which can be retrieved at a later stage. The stash can then be popped to get the changes back as they were prior to the stash taking place.
+
+
 
 ### Stash Changes
 To save your changes in the stash, run the command:
@@ -16,7 +18,7 @@ git stash save "optional message for yourself"
 
 This saves your changes and reverts the working directory to what it looked like for the latest commit. Stashed changes are available from any branch in that repository. You can optionally use `git stash` to stash your changes without any message, and git will give it a default name.  
 
-Note that changes you want to stash need to be on tracked files. If you created a new file and try to stash your changes, you may get the error `No local changes to save`. To tell git to track a new file you created, run the command:
+Note that changes you want to stash need to be on tracked files. If you created a new file and try to stash your changes, you may get the error `No local changes to save`. To stash all changes, including untracked files, you can add the `-u` option (or `--include-untracked`). To tell git to track a new file you created, run the command:
 
 ```shell
 git add <name of the new file>
