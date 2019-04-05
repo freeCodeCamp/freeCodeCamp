@@ -18,19 +18,19 @@ localeTitle: Сравнение с Менеджером оператора
 ```yml
 tests:
   - text: <code>testLessThan(0)</code> должен вернуть «Менее 25»
-    testString: 'assert(testLessThan(0) === "Under 25", "<code>testLessThan(0)</code> should return "Under 25"");'
-  - text: '<code>testLessThan(24)</code> должен вернуть «Менее 25 лет»,'
-    testString: 'assert(testLessThan(24) === "Under 25", "<code>testLessThan(24)</code> should return "Under 25"");'
-  - text: '<code>testLessThan(25)</code> должен вернуть «Менее 55»,'
-    testString: 'assert(testLessThan(25) === "Under 55", "<code>testLessThan(25)</code> should return "Under 55"");'
+    testString: assert(testLessThan(0) === "Under 25", "<code>testLessThan(0)</code> should return "Under 25"");
+  - text: <code>testLessThan(24)</code> должен вернуть «Менее 25 лет»,
+    testString: assert(testLessThan(24) === "Under 25", "<code>testLessThan(24)</code> should return "Under 25"");
+  - text: <code>testLessThan(25)</code> должен вернуть «Менее 55»,
+    testString: assert(testLessThan(25) === "Under 55", "<code>testLessThan(25)</code> should return "Under 55"");
   - text: <code>testLessThan(54)</code> должен вернуть «Менее 55»
-    testString: 'assert(testLessThan(54) === "Under 55", "<code>testLessThan(54)</code> should return "Under 55"");'
-  - text: '<code>testLessThan(55)</code> должен возвращать «55 или более»,'
-    testString: 'assert(testLessThan(55) === "55 or Over", "<code>testLessThan(55)</code> should return "55 or Over"");'
-  - text: '<code>testLessThan(99)</code> должен возвращать «55 или более»,'
-    testString: 'assert(testLessThan(99) === "55 or Over", "<code>testLessThan(99)</code> should return "55 or Over"");'
+    testString: assert(testLessThan(54) === "Under 55", "<code>testLessThan(54)</code> should return "Under 55"");
+  - text: <code>testLessThan(55)</code> должен возвращать «55 или более»,
+    testString: assert(testLessThan(55) === "55 or Over", "<code>testLessThan(55)</code> should return "55 or Over"");
+  - text: <code>testLessThan(99)</code> должен возвращать «55 или более»,
+    testString: assert(testLessThan(99) === "55 or Over", "<code>testLessThan(99)</code> should return "55 or Over"");
   - text: Вы должны использовать оператор <code>&lt;</code> по крайней мере дважды
-    testString: 'assert(code.match(/val\s*<\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&lt;</code> operator at least twice");'
+    testString: assert(code.match(/val\s*<\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&lt;</code> operator at least twice");
 
 ```
 
