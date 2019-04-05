@@ -18,17 +18,17 @@ localeTitle: Ссылка на внутренние разделы страни�
 ```yml
 tests:
   - text: На вашей странице должен быть только один тег привязки.
-    testString: 'assert($("a").length == 1, "There should be only one anchor tag on your page.");'
+    testString: assert($("a").length == 1, "There should be only one anchor tag on your page.");
   - text: На вашей странице должен быть только один <code>footer</code> тег.
-    testString: 'assert($("footer").length == 1, "There should be only one <code>footer</code> tag on your page.");'
-  - text: 'Тег <code>a</code> должен иметь атрибут <code>href</code> установленный на «#footer».'
-    testString: 'assert($("a").eq(0).attr("href") == "#footer", "The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".");'
+    testString: assert($("footer").length == 1, "There should be only one <code>footer</code> tag on your page.");
+  - text: Тег <code>a</code> должен иметь атрибут <code>href</code> установленный на «#footer».
+    testString: assert($("a").eq(0).attr("href") == "#footer", "The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".");
   - text: Тег <code>a</code> должен не иметь <code>target</code> атрибута
-    testString: 'assert(typeof $("a").eq(0).attr("target") == typeof undefined || $("a").eq(0).attr("target") == true, "The <code>a</code> tag should not have a <code>target</code> attribute");'
+    testString: assert(typeof $("a").eq(0).attr("target") == typeof undefined || $("a").eq(0).attr("target") == true, "The <code>a</code> tag should not have a <code>target</code> attribute");
   - text: Текст должен быть «Перейти к низу». <code>a</code>
-    testString: 'assert($("a").eq(0).text().match(/Jump to Bottom/gi), "The <code>a</code> text should be "Jump to Bottom".");'
+    testString: assert($("a").eq(0).text().match(/Jump to Bottom/gi), "The <code>a</code> text should be "Jump to Bottom".");
   - text: Тег <code>footer</code> должен иметь атрибут <code>id</code> установленный в «нижний колонтитул».
-    testString: 'assert($("footer").eq(0).attr("id") == "footer", "The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".");'
+    testString: assert($("footer").eq(0).attr("id") == "footer", "The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".");
 
 ```
 
