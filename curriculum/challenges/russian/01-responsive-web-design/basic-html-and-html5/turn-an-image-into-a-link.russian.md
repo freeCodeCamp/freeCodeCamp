@@ -17,12 +17,12 @@ localeTitle: Превратите изображение в ссылку
 
 ```yml
 tests:
-  - text: Вложите существующий элемент <code>img</code> в элемент <code>a</code> .
-    testString: 'assert($("a").children("img").length > 0, "Nest the existing <code>img</code> element within an <code>a</code> element.");'
-  - text: 'Ваш элемент должен быть мертвой ссылкой <code>a</code> с значением <code>href</code> атрибута равным <code>#</code> .'
-    testString: 'assert(new RegExp("#").test($("a").children("img").parent().attr("href")), "Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.");'
-  - text: 'Убедитесь, что каждый из ваших элементов <code>a</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
+  - text: Вложите существующий элемент <code>img</code> в элемент <code>a</code>.
+    testString: assert($("a").children("img").length > 0, "Nest the existing <code>img</code> element within an <code>a</code> element.");
+  - text: Ваш элемент должен быть мертвой ссылкой <code>a</code> с значением <code>href</code> атрибута равным <code>#</code>.
+    testString: assert(new RegExp("#").test($("a").children("img").parent().attr("href")), "Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.");
+  - text: Убедитесь, что каждый из ваших элементов <code>a</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");
 
 ```
 
