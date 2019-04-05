@@ -17,12 +17,12 @@ localeTitle: Удалить элементы HTML
 
 ```yml
 tests:
-  - text: Удалите элемент <code>h1</code> .
-    testString: 'assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi), "Delete your <code>h1</code> element.");'
+  - text: Удалите элемент <code>h1</code>.
+    testString: assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi), "Delete your <code>h1</code> element.");
   - text: Оставьте свой элемент <code>h2</code> на странице.
-    testString: 'assert(code.match(/<h2>[\w\W]*<\/h2>/gi), "Leave your <code>h2</code> element on the page.");'
+    testString: assert(code.match(/<h2>[\w\W]*<\/h2>/gi), "Leave your <code>h2</code> element on the page.");
   - text: Оставьте свой элемент <code>p</code> на странице.
-    testString: 'assert(code.match(/<p>[\w\W]*<\/p>/gi), "Leave your <code>p</code> element on the page.");'
+    testString: assert(code.match(/<p>[\w\W]*<\/p>/gi), "Leave your <code>p</code> element on the page.");
 
 ```
 
