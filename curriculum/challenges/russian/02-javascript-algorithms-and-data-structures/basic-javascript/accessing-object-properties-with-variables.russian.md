@@ -18,17 +18,17 @@ localeTitle: Доступ к свойствам объектов с переме
 ```yml
 tests:
   - text: <code>playerNumber</code> должен быть числом
-    testString: 'assert(typeof playerNumber === "number", "<code>playerNumber</code> should be a number");'
+    testString: assert(typeof playerNumber === "number", "<code>playerNumber</code> should be a number");
   - text: Переменный <code>player</code> должен быть строкой
-    testString: 'assert(typeof player === "string", "The variable <code>player</code> should be a string");'
-  - text: 'Ценность <code>player</code> должна быть «Монтана»,'
-    testString: 'assert(player === "Montana", "The value of <code>player</code> should be "Montana"");'
+    testString: assert(typeof player === "string", "The variable <code>player</code> should be a string");
+  - text: Ценность <code>player</code> должна быть «Монтана»,
+    testString: assert(player === "Montana", "The value of <code>player</code> should be "Montana"");
   - text: Для доступа к <code>testObj</code> вы должны использовать нотацию в виде <code>testObj</code>
-    testString: 'assert(/testObj\s*?\[.*?\]/.test(code),"You should use bracket notation to access <code>testObj</code>");'
+    testString: assert(/testObj\s*?\[.*?\]/.test(code),"You should use bracket notation to access <code>testObj</code>");
   - text: Вы не должны назначать значение <code>Montana</code> для переменной <code>player</code> напрямую.
-    testString: 'assert(!code.match(/player\s*=\s*"|\"\s*Montana\s*"|\"\s*;/gi),"You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.");'
+    testString: assert(!code.match(/player\s*=\s*"|\"\s*Montana\s*"|\"\s*;/gi),"You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.");
   - text: Вы должны использовать переменную <code>playerNumber</code> в нотации вашего кронштейна
-    testString: 'assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code),"You should be using the variable <code>playerNumber</code> in your bracket notation");'
+    testString: assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code),"You should be using the variable <code>playerNumber</code> in your bracket notation");
 
 ```
 
