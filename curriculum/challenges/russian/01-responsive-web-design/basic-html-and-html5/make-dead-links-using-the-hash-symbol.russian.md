@@ -17,8 +17,8 @@ localeTitle: Создание мертвых ссылок с использов�
 
 ```yml
 tests:
-  - text: 'Ваш элемент должен быть мертвой ссылке с значением <code>a</code> <code>href</code> атрибута установлено значение «#».'
-    testString: 'assert($("a").attr("href") === "#", "Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".");'
+  - text: Ваш элемент должен быть мертвой ссылке с значением <code>a</code> <code>href</code> атрибута установлено значение «#».
+    testString: assert($("a").attr("href") === "#", "Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".");
 
 ```
 
