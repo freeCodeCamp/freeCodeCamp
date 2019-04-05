@@ -17,10 +17,10 @@ localeTitle: Создание медиа-запроса
 
 ```yml
 tests:
-  - text: 'Ваш элемент <code>p</code> должен иметь <code>font-size</code> 10px, когда <code>height</code> устройства меньше или равна 800px.'
-    testString: 'assert($("p").css("font-size") == "10px", "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");'
+  - text: Ваш элемент <code>p</code> должен иметь <code>font-size</code> 10px, когда <code>height</code> устройства меньше или равна 800px.
+    testString: assert($("p").css("font-size") == "10px", "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");
   - text: <code>@media</code> запрос <code>@media</code> для устройств с <code>height</code> меньшей или равной 800 пикселей.
-    testString: 'assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");'
+    testString: assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");
 
 ```
 
