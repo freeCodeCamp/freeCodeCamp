@@ -17,14 +17,14 @@ localeTitle: Заголовок с элементом h2
 
 ```yml
 tests:
-  - text: Создайте элемент <code>h2</code> .
-    testString: 'assert(($("h2").length > 0), "Create an <code>h2</code> element.");'
-  - text: 'Убедитесь, что ваш элемент <code>h2</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "Make sure your <code>h2</code> element has a closing tag.");'
+  - text: Создайте элемент <code>h2</code>.
+    testString: assert(($("h2").length > 0), "Create an <code>h2</code> element.");
+  - text: Убедитесь, что ваш элемент <code>h2</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "Make sure your <code>h2</code> element has a closing tag.");
   - text: Ваш элемент <code>h2</code> должен иметь текст «CatPhotoApp».
-    testString: 'assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "Your <code>h2</code> element should have the text "CatPhotoApp".");'
+    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "Your <code>h2</code> element should have the text "CatPhotoApp".");
   - text: Ваш элемент <code>h1</code> должен иметь текст «Hello World».
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
+    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");
 
 ```
 
