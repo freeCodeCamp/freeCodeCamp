@@ -17,8 +17,8 @@ localeTitle: Создание гибких макетов с использов�
 
 ```yml
 tests:
-  - text: 'Класс <code>container2</code> должен иметь свойство <code>grid-template-columns</code> с <code>repeat</code> и <code>auto-fit</code> , которое заполняет сетку столбцами с минимальной шириной <code>60px</code> и максимальной длиной <code>1fr</code> .'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), "<code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.");'
+  - text: Класс <code>container2</code> должен иметь свойство <code>grid-template-columns</code> с <code>repeat</code> и <code>auto-fit</code> , которое заполняет сетку столбцами с минимальной шириной <code>60px</code> и максимальной длиной <code>1fr</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fit\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), "<code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.");
 
 ```
 
