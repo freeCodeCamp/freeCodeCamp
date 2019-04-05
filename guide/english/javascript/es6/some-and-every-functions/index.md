@@ -1,5 +1,5 @@
 ---
-title: Some Function
+title: Some and Every Functions
 ---
 
 ## The Some Function
