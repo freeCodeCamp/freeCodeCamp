@@ -17,14 +17,14 @@ localeTitle: Используйте свойство flex-basis для уста�
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-1</code> должен иметь свойство <code>flex-basis</code> .'
-    testString: 'assert($("#box-1").css("flex-basis") != "auto", "The <code>#box-1</code> element should have a <code>flex-basis</code> property.");'
-  - text: '<code>#box-1</code> элемент должен иметь <code>flex-basis</code> значение <code>10em</code> .'
-    testString: 'assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g), "The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.");'
-  - text: 'Элемент <code>#box-2</code> должен иметь свойство <code>flex-basis</code> .'
-    testString: 'assert($("#box-2").css("flex-basis") != "auto", "The <code>#box-2</code> element should have the <code>flex-basis</code> property.");'
-  - text: '<code>#box-2</code> элемент должен иметь <code>flex-basis</code> значение <code>20em</code> .'
-    testString: 'assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g), "The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.");'
+  - text: Элемент <code>#box-1</code> должен иметь свойство <code>flex-basis</code>.
+    testString: assert($("#box-1").css("flex-basis") != "auto", "The <code>#box-1</code> element should have a <code>flex-basis</code> property.");
+  - text: <code>#box-1</code> элемент должен иметь <code>flex-basis</code> значение <code>10em</code>.
+    testString: assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g), "The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.");
+  - text: Элемент <code>#box-2</code> должен иметь свойство <code>flex-basis</code>.
+    testString: assert($("#box-2").css("flex-basis") != "auto", "The <code>#box-2</code> element should have the <code>flex-basis</code> property.");
+  - text: <code>#box-2</code> элемент должен иметь <code>flex-basis</code> значение <code>20em</code>.
+    testString: assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g), "The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.");
 
 ```
 
