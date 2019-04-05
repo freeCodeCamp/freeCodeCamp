@@ -18,9 +18,9 @@ localeTitle: Добавление переменных в строки
 ```yml
 tests:
   - text: <code>someAdjective</code> должен быть установлен в строку длиной не менее 3 символов
-    testString: 'assert(typeof someAdjective !== "undefined" && someAdjective.length > 2, "<code>someAdjective</code> should be set to a string at least 3 characters long");'
+    testString: assert(typeof someAdjective !== "undefined" && someAdjective.length > 2, "<code>someAdjective</code> should be set to a string at least 3 characters long");
   - text: Добавить <code>someAdjective</code> в <code>myStr</code> используя оператор <code>+=</code>
-    testString: 'assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0, "Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator");'
+    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0, "Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator");
 
 ```
 
