@@ -17,8 +17,8 @@ localeTitle: Добавление строк с grid-template-rows
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>grid-template-rows</code> с двумя единицами <code>50px</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.");'
+  - text: класс <code>container</code> должен иметь свойство <code>grid-template-rows</code> с двумя единицами <code>50px</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.");
 
 ```
 
