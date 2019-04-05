@@ -7,7 +7,7 @@ localeTitle: Iterar con JavaScript mientras bucles
 ---
 
 ## Description
-<section id="description"> Puede ejecutar el mismo código varias veces utilizando un bucle. El primer tipo de bucle vamos a aprender se llama un &quot; <code>while</code> &quot; bucle porque funciona &quot;mientras que&quot; una condición especificada es verdadera y se detiene una vez que la condición ya no es cierto. <blockquote> var ourArray = []; <br> var i = 0; <br> mientras (i &lt;5) { <br> nuestroArray.push (i); <br> i ++; <br> } </blockquote> Intentemos que funcione un bucle while empujando los valores a una matriz. </section>
+<section id="description"> Puede ejecutar el mismo código varias veces utilizando un bucle. El primer tipo de bucle vamos a aprender se llama un <code>while</code> bucle porque funciona &quot;mientras que&quot; una condición especificada es verdadera y se detiene una vez que la condición ya no es cierto. <blockquote> var ourArray = []; <br> var i = 0; <br> mientras (i &lt;5) { <br> nuestroArray.push (i); <br> i ++; <br> } </blockquote> Intentemos que funcione un bucle while empujando los valores a una matriz. </section>
 
 ## Instructions
 <section id="instructions"> Empuje los números de 0 a 4 para <code>myArray</code> usando un <code>while</code> de bucle. </section>
