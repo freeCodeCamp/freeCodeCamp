@@ -17,8 +17,8 @@ localeTitle: Использование сетки без создания ша�
 
 ```yml
 tests:
-  - text: Класс <code>item5</code> должен иметь свойство <code>grid-area</code> которое имеет значение <code>3/1/4/4</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.");'
+  - text: Класс <code>item5</code> должен иметь свойство <code>grid-area</code> которое имеет значение <code>3/1/4/4</code>.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.");
 
 ```
 
