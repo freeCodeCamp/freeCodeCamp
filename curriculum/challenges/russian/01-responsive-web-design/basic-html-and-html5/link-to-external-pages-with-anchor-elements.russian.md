@@ -21,12 +21,11 @@ localeTitle: Ссылка на внешние страницы с элемент
 tests:
 
   - text: Ваш элемент <code>a</code> должен иметь <code>якорный текст</code> «cat photos».
-
-    testString: 'assert((/cat photos/gi).test($("a").text()), "Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".");'
-  - text: 'Вам нужно создать <code>a</code> элемент, являющийся ссылкой на <code>http://freecatphotoapp .com</code>'
-    testString: 'assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")), "You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>");'
-  - text: 'Убедитесь, что элемент <code>a</code> имеет закрывающий тег'
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure your <code>a</code> element has a closing tag.");'
+    testString: assert((/cat photos/gi).test($("a").text()), "Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".");
+  - text: Вам нужно создать <code>a</code> элемент, являющийся ссылкой на <code>http://freecatphotoapp .com</code>
+    testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")), "You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>");
+  - text: Убедитесь, что элемент <code>a</code> имеет закрывающий тег
+    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure your <code>a</code> element has a closing tag.");
 
 ```
 
