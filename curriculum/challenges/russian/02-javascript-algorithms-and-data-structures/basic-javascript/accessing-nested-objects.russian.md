@@ -17,10 +17,10 @@ localeTitle: Доступ к вложенным объектам
 
 ```yml
 tests:
-  - text: <code>gloveBoxContents</code> должен равняться &quot;картам&quot;
-    testString: 'assert(gloveBoxContents === "maps", "<code>gloveBoxContents</code> should equal "maps"");'
+  - text: <code>gloveBoxContents</code> должен равняться "картам"
+    testString: assert(gloveBoxContents === "maps", "<code>gloveBoxContents</code> should equal "maps"");
   - text: Используйте обозначения точек и скобок для доступа к <code>myStorage</code>
-    testString: 'assert(/=\s*myStorage\.car\.inside\[\s*("|")glove box\1\s*\]/g.test(code), "Use dot and bracket notation to access <code>myStorage</code>");'
+    testString: assert(/=\s*myStorage\.car\.inside\[\s*("|")glove box\1\s*\]/g.test(code), "Use dot and bracket notation to access <code>myStorage</code>");
 
 ```
 
