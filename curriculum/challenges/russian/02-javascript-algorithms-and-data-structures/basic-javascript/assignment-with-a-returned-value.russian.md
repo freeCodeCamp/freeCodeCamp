@@ -18,9 +18,9 @@ localeTitle: Назначение с возвращенной стоимость
 ```yml
 tests:
   - text: <code>processed</code> должна иметь значение <code>2</code>
-    testString: 'assert(processed === 2, "<code>processed</code> should have a value of <code>2</code>");'
+    testString: assert(processed === 2, "<code>processed</code> should have a value of <code>2</code>");
   - text: Вы должны назначить <code>processArg</code> для <code>processed</code>
-    testString: 'assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), "You should assign <code>processArg</code> to <code>processed</code>");'
+    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), "You should assign <code>processArg</code> to <code>processed</code>");
 
 ```
 
