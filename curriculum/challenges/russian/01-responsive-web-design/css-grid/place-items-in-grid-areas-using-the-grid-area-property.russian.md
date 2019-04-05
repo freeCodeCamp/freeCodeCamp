@@ -17,8 +17,8 @@ localeTitle: Поместите объекты в области сетки Ис
 
 ```yml
 tests:
-  - text: Класс <code>item5</code> должен иметь свойство <code>grid-area</code> которое имеет значение <code>item5</code> <code>footer</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.");'
+  - text: Класс <code>item5</code> должен иметь свойство <code>grid-area</code> которое имеет значение <code>item5</code> <code>footer</code>.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.");
 
 ```
 
