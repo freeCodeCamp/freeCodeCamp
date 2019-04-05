@@ -18,9 +18,9 @@ localeTitle: Сделать отзывчивость типографии
 ```yml
 tests:
   - text: Ваш тег <code>h2</code> должен иметь <code>width</code> 80vw.
-    testString: 'assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g), "Your <code>h2</code> tag should have a <code>width</code> of 80vw.");'
+    testString: assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g), "Your <code>h2</code> tag should have a <code>width</code> of 80vw.");
   - text: Ваш тег <code>p</code> должен иметь <code>width</code> 75vmin.
-    testString: 'assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g), "Your <code>p</code> tag should have a <code>width</code> of 75vmin.");'
+    testString: assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g), "Your <code>p</code> tag should have a <code>width</code> of 75vmin.");
 
 ```
 
