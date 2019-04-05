@@ -17,24 +17,24 @@ localeTitle: Создание упорядоченного списка
 
 ```yml
 tests:
-  - text: 'У вас должен быть упорядоченный список для «Топ-3 вещей, которые ненавидят кошки:»'
-    testString: 'assert((/Top 3 things cats hate:/i).test($("ol").prev().text()), "You should have an ordered list for "Top 3 things cats hate:"");'
-  - text: 'У вас должен быть неупорядоченный список «Вещи, которые любят кошки»:'
-    testString: 'assert((/Things cats love:/i).test($("ul").prev().text()), "You should have an unordered list for "Things cats love:"");'
-  - text: У вас должен быть только один элемент <code>ul</code> .
-    testString: 'assert.equal($("ul").length, 1, "You should have only one <code>ul</code> element.");'
-  - text: У вас должен быть только один элемент <code>ol</code> .
-    testString: 'assert.equal($("ol").length, 1, "You should have only one <code>ol</code> element.");'
-  - text: У вас должно быть три элемента <code>li</code> в вашем элементе <code>ul</code> .
-    testString: 'assert.equal($("ul li").length, 3, "You should have three <code>li</code> elements within your <code>ul</code> element.");'
-  - text: У вас должно быть три элемента <code>li</code> внутри вашего элемента <code>ol</code> .
-    testString: 'assert.equal($("ol li").length, 3, "You should have three <code>li</code> elements within your <code>ol</code> element.");'
-  - text: 'Убедитесь, что ваш элемент <code>ul</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/ul>/g) && code.match(/<\/ul>/g).length === code.match(/<ul>/g).length, "Make sure your <code>ul</code> element has a closing tag.");'
-  - text: 'Убедитесь, что ваш элемент <code>ol</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length, "Make sure your <code>ol</code> element has a closing tag.");'
-  - text: 'Убедитесь, что ваш элемент <code>li</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length, "Make sure your <code>li</code> element has a closing tag.");'
+  - text: У вас должен быть упорядоченный список для «Топ-3 вещей, которые ненавидят кошки:»
+    testString: assert((/Top 3 things cats hate:/i).test($("ol").prev().text()), "You should have an ordered list for "Top 3 things cats hate:"");
+  - text: У вас должен быть неупорядоченный список «Вещи, которые любят кошки»:
+    testString: assert((/Things cats love:/i).test($("ul").prev().text()), "You should have an unordered list for "Things cats love:"");
+  - text: У вас должен быть только один элемент <code>ul</code>.
+    testString: assert.equal($("ul").length, 1, "You should have only one <code>ul</code> element.");
+  - text: У вас должен быть только один элемент <code>ol</code>.
+    testString: assert.equal($("ol").length, 1, "You should have only one <code>ol</code> element.");
+  - text: У вас должно быть три элемента <code>li</code> в вашем элементе <code>ul</code>.
+    testString: assert.equal($("ul li").length, 3, "You should have three <code>li</code> elements within your <code>ul</code> element.");
+  - text: У вас должно быть три элемента <code>li</code> внутри вашего элемента <code>ol</code>.
+    testString: assert.equal($("ol li").length, 3, "You should have three <code>li</code> elements within your <code>ol</code> element.");
+  - text: Убедитесь, что ваш элемент <code>ul</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/ul>/g) && code.match(/<\/ul>/g).length === code.match(/<ul>/g).length, "Make sure your <code>ul</code> element has a closing tag.");
+  - text: Убедитесь, что ваш элемент <code>ol</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length, "Make sure your <code>ol</code> element has a closing tag.");
+  - text: Убедитесь, что ваш элемент <code>li</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length, "Make sure your <code>li</code> element has a closing tag.");
 
 ```
 
