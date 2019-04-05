@@ -17,8 +17,8 @@ localeTitle: Предельный размер элемента Использо
 
 ```yml
 tests:
-  - text: '<code>container</code> класс должен иметь <code>grid-template-columns</code> свойство, которое установлено повторить 3 колонки с минимальной шириной <code>90px</code> и максимальной шириной <code>1fr</code> .'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?minmax\s*?\(\s*?90px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.");'
+  - text: <code>container</code> класс должен иметь <code>grid-template-columns</code> свойство, которое установлено повторить 3 колонки с минимальной шириной <code>90px</code> и максимальной шириной <code>1fr</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?minmax\s*?\(\s*?90px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.");
 
 ```
 
