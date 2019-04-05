@@ -18,9 +18,9 @@ localeTitle: Используйте значения RGB для цветных �
 ```yml
 tests:
   - text: Элемент вашего <code>body</code> должен иметь черный фон.
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Your <code>body</code> element should have a black background.");'
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", "Your <code>body</code> element should have a black background.");
   - text: Используйте <code>rgb</code> чтобы дать вашему <code>body</code> цвет черного.
-    testString: 'assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig), "Use <code>rgb</code> to give your <code>body</code> element a color of black.");'
+    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig), "Use <code>rgb</code> to give your <code>body</code> element a color of black.");
 
 ```
 
