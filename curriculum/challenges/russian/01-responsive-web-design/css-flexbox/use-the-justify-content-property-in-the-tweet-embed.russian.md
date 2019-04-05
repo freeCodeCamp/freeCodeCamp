@@ -17,8 +17,8 @@ localeTitle: Используйте свойство justify-content в Tweet Em
 
 ```yml
 tests:
-  - text: 'Элемент <code>.profile-name</code> должен иметь свойство <code>justify-content</code> установленное для любого из этих значений: center, flex-start, flex-end, space-between или space-around.'
-    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.");'
+  - text: Элемент <code>.profile-name</code> должен иметь свойство <code>justify-content</code> установленное для любого из этих значений: center, flex-start, flex-end, space-between или space-around.
+    testString: assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.");
 
 ```
 
