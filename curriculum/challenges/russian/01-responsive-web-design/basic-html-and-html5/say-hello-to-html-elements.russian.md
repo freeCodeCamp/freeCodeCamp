@@ -18,7 +18,7 @@ localeTitle: Произнести Hello to HTML Elements
 ```yml
 tests:
   - text: Ваш элемент <code>h1</code> должен иметь текст «Hello World».
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
+    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");
 
 ```
 
