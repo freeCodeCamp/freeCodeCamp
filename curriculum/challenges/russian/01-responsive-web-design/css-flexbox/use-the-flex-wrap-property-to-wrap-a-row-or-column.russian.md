@@ -17,8 +17,8 @@ localeTitle: Используйте свойство flex-wrap для оберт
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-container</code> должен иметь свойство <code>flex-wrap</code> установленное на значение wrap.'
-    testString: 'assert($("#box-container").css("flex-wrap") == "wrap", "The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.");'
+  - text: Элемент <code>#box-container</code> должен иметь свойство <code>flex-wrap</code> установленное на значение wrap.
+    testString: assert($("#box-container").css("flex-wrap") == "wrap", "The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.");
 
 ```
 
