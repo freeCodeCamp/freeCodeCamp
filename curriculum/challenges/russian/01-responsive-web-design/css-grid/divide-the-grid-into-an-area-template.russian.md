@@ -17,8 +17,8 @@ localeTitle: Разделите сетку в шаблон области
 
 ```yml
 tests:
-  - text: 'класс <code>container</code> должен иметь свойство <code>grid-template-areas</code> подобное представлению, но имеет <code>.</code> вместо области <code>advert</code> .'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.");'
+  - text: класс <code>container</code> должен иметь свойство <code>grid-template-areas</code> подобное представлению, но имеет <code>.</code> вместо области <code>advert</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.");
 
 ```
 
