@@ -17,8 +17,8 @@ localeTitle: Выравните элементы используя свойст
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-container</code> должен иметь свойство <code>justify-content</code> заданное значением center.'
-    testString: 'assert($("#box-container").css("justify-content") == "center", "The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.");'
+  - text: Элемент <code>#box-container</code> должен иметь свойство <code>justify-content</code> заданное значением center.
+    testString: assert($("#box-container").css("justify-content") == "center", "The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.");
 
 ```
 
