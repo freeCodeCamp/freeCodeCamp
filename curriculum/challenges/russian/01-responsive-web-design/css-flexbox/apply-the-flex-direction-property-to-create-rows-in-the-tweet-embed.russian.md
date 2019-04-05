@@ -18,9 +18,9 @@ localeTitle: Примените свойство flex-direction для созд�
 ```yml
 tests:
   - text: <code>header</code> должен иметь свойство <code>flex-direction</code> заданное для строки.
-    testString: 'assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>header</code> should have a <code>flex-direction</code> property set to row.");'
+    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>header</code> should have a <code>flex-direction</code> property set to row.");
   - text: <code>footer</code> должен иметь свойство <code>flex-direction</code> заданное для строки.
-    testString: 'assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>footer</code> should have a <code>flex-direction</code> property set to row.");'
+    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>footer</code> should have a <code>flex-direction</code> property set to row.");
 
 ```
 
