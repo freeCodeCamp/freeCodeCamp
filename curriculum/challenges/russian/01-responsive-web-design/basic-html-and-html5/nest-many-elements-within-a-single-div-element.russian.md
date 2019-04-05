@@ -17,14 +17,14 @@ localeTitle: Гнездо Много элементов в одном элеме
 
 ```yml
 tests:
-  - text: Гнездо ваших элементов <code>p</code> внутри вашего элемента <code>div</code> .
-    testString: 'assert($("div").children("p").length > 1, "Nest your <code>p</code> elements inside your <code>div</code> element.");'
-  - text: Вставьте свой элемент <code>ul</code> внутри элемента <code>div</code> .
-    testString: 'assert($("div").children("ul").length > 0, "Nest your <code>ul</code> element inside your <code>div</code> element.");'
-  - text: Гнездо вашего элемента <code>ol</code> внутри вашего элемента <code>div</code> .
-    testString: 'assert($("div").children("ol").length > 0, "Nest your <code>ol</code> element inside your <code>div</code> element.");'
-  - text: 'Убедитесь, что ваш элемент <code>div</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length, "Make sure your <code>div</code> element has a closing tag.");'
+  - text: Гнездо ваших элементов <code>p</code> внутри вашего элемента <code>div</code>.
+    testString: assert($("div").children("p").length > 1, "Nest your <code>p</code> elements inside your <code>div</code> element.");
+  - text: Вставьте свой элемент <code>ul</code> внутри элемента <code>div</code>.
+    testString: assert($("div").children("ul").length > 0, "Nest your <code>ul</code> element inside your <code>div</code> element.");
+  - text: Гнездо вашего элемента <code>ol</code> внутри вашего элемента <code>div</code>.
+    testString: assert($("div").children("ol").length > 0, "Nest your <code>ol</code> element inside your <code>div</code> element.");
+  - text: Убедитесь, что ваш элемент <code>div</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length, "Make sure your <code>div</code> element has a closing tag.");
 
 ```
 
