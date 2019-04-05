@@ -17,10 +17,10 @@ localeTitle: Копирование элементов массива Испол
 
 ```yml
 tests:
-  - text: '<code>forecast</code> должен вернуться <code>[&quot;warm&quot;, &quot;sunny&quot;]</code>'
-    testString: 'assert.deepEqual(forecast(["cold", "rainy", "warm", "sunny", "cool", "thunderstorms"]), ["warm", "sunny"], "<code>forecast</code> should return <code>["warm", "sunny"]");'
+  - text: <code>forecast</code> должен вернуться <code>[&quot;warm&quot;, &quot;sunny&quot;]</code>
+    testString: assert.deepEqual(forecast(["cold", "rainy", "warm", "sunny", "cool", "thunderstorms"]), ["warm", "sunny"], "<code>forecast</code> should return <code>["warm", "sunny"]");
   - text: Функция <code>forecast</code> должна использовать метод <code>slice()</code>
-    testString: 'assert(/\.slice\(/.test(code), "The <code>forecast</code> function should utilize the <code>slice()</code> method");'
+    testString: assert(/\.slice\(/.test(code), "The <code>forecast</code> function should utilize the <code>slice()</code> method");
 
 ```
 
