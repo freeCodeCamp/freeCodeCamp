@@ -18,9 +18,9 @@ localeTitle: Используйте изображение Retina для дис�
 ```yml
 tests:
   - text: Ваш тег <code>img</code> должен иметь <code>width</code> 100 пикселей.
-    testString: 'assert($("img").css("width") == "100px", "Your <code>img</code> tag should have a <code>width</code> of 100 pixels.");'
+    testString: assert($("img").css("width") == "100px", "Your <code>img</code> tag should have a <code>width</code> of 100 pixels.");
   - text: Ваш тег <code>img</code> должен иметь <code>height</code> 100 пикселей.
-    testString: 'assert($("img").css("height") == "100px", "Your <code>img</code> tag should have a <code>height</code> of 100 pixels.");'
+    testString: assert($("img").css("height") == "100px", "Your <code>img</code> tag should have a <code>height</code> of 100 pixels.");
 
 ```
 
