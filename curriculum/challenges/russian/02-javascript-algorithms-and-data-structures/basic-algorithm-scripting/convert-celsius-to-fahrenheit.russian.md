@@ -20,17 +20,17 @@ localeTitle: Преобразование Цельсия в Фаренгейт
 ```yml
 tests:
   - text: <code>convertToF(0)</code> должен возвращать число
-    testString: 'assert(typeof convertToF(0) === "number", "<code>convertToF(0)</code> should return a number");'
+    testString: assert(typeof convertToF(0) === "number", "<code>convertToF(0)</code> should return a number");
   - text: <code>convertToF(-30)</code> должен возвращать значение <code>-22</code>
-    testString: 'assert(convertToF(-30) === -22, "<code>convertToF(-30)</code> should return a value of <code>-22</code>");'
+    testString: assert(convertToF(-30) === -22, "<code>convertToF(-30)</code> should return a value of <code>-22</code>");
   - text: <code>convertToF(-10)</code> должен возвращать значение <code>14</code>
-    testString: 'assert(convertToF(-10) === 14, "<code>convertToF(-10)</code> should return a value of <code>14</code>");'
+    testString: assert(convertToF(-10) === 14, "<code>convertToF(-10)</code> should return a value of <code>14</code>");
   - text: <code>convertToF(0)</code> должно возвращать значение <code>32</code>
-    testString: 'assert(convertToF(0) === 32, "<code>convertToF(0)</code> should return a value of <code>32</code>");'
+    testString: assert(convertToF(0) === 32, "<code>convertToF(0)</code> should return a value of <code>32</code>");
   - text: <code>convertToF(20)</code> должно возвращать значение <code>68</code>
-    testString: 'assert(convertToF(20) === 68, "<code>convertToF(20)</code> should return a value of <code>68</code>");'
+    testString: assert(convertToF(20) === 68, "<code>convertToF(20)</code> should return a value of <code>68</code>");
   - text: <code>convertToF(30)</code> должен вернуть значение <code>86</code>
-    testString: 'assert(convertToF(30) === 86, "<code>convertToF(30)</code> should return a value of <code>86</code>");'
+    testString: assert(convertToF(30) === 86, "<code>convertToF(30)</code> should return a value of <code>86</code>");
 
 ```
 
