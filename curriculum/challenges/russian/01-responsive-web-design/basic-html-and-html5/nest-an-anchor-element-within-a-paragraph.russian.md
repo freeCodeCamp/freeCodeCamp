@@ -17,22 +17,22 @@ localeTitle: Гнездо анкерного элемента в абзаце
 
 ```yml
 tests:
-  - text: 'Вам нужно <code>a</code> элемент , который связывает с «http://freecatphotoapp.com».'
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "http://freecatphotoapp.com".");'
+  - text: Вам нужно <code>a</code> элемент , который связывает с «http://freecatphotoapp.com».
+    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "http://freecatphotoapp.com".");
   - text: Ваш элемент должен иметь якорный текст «кошачьи фотографии» <code>a</code>
-    testString: 'assert($("a").text().match(/cat\sphotos/gi), "Your <code>a</code> element should have the anchor text of "cat photos"");'
-  - text: 'Создать новый <code>p</code> элемент вокруг вашего <code>a</code> элементе. Там должно быть , по крайней мере , 3 всего <code>p</code> теги в вашем HTML коде.'
-    testString: 'assert($("p") && $("p").length > 2, "Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.");'
+    testString: assert($("a").text().match(/cat\sphotos/gi), "Your <code>a</code> element should have the anchor text of "cat photos"");
+  - text: Создать новый <code>p</code> элемент вокруг вашего <code>a</code> элементе. Там должно быть , по крайней мере , 3 всего <code>p</code> теги в вашем HTML коде.
+    testString: assert($("p") && $("p").length > 2, "Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.");
   - text: Ваш элемент должен быть вложен в вашем новом <code>a</code> <code>p</code> элемент.
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");'
+    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");
   - text: Ваш элемент <code>p</code> должен иметь текст «Просмотреть больше» (с пробелом после него).
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");'
+    testString: assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");
   - text: Ваш элемент <em>не</em> должен иметь текст «Больше». <code>a</code>
-    testString: 'assert(!$("a").text().match(/View\smore/gi), "Your <code>a</code> element should <em>not</em> have the text "View more".");'
-  - text: 'Убедитесь, что каждый из ваших <code>p</code> элементов имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<p/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure each of your <code>p</code> elements has a closing tag.");'
-  - text: 'Убедитесь , что каждый из ваших <code>a</code> элементы закрывающий тег.'
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
+    testString: assert(!$("a").text().match(/View\smore/gi), "Your <code>a</code> element should <em>not</em> have the text "View more".");
+  - text: Убедитесь, что каждый из ваших <code>p</code> элементов имеет закрывающий тег.
+    testString: assert(code.match(/<\/p>/g) && code.match(/<p/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure each of your <code>p</code> elements has a closing tag.");
+  - text: Убедитесь , что каждый из ваших <code>a</code> элементы закрывающий тег.
+    testString: assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");
 
 ```
 
