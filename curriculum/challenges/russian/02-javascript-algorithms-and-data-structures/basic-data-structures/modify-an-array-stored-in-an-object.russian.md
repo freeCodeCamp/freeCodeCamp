@@ -17,12 +17,12 @@ localeTitle: 'Измените массив, хранящийся в объек�
 
 ```yml
 tests:
-  - text: '<code>user</code> объект имеет <code>name</code> , <code>age</code> и ключи <code>data</code>'
-    testString: 'assert("name" in user && "age" in user && "data" in user, "The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys");'
+  - text: <code>user</code> объект имеет <code>name</code> , <code>age</code> и ключи <code>data</code>
+    testString: assert("name" in user && "age" in user && "data" in user, "The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys");
   - text: Функция <code>addFriend</code> принимает объект <code>user</code> и строку <code>friend</code> как аргументы и добавляет друга в массив <code>friends</code> в <code>user</code> объекте
-    testString: 'assert((function() { let L1 = user.data.friends.length; addFriend(user, "Sean"); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), "The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object");'
-  - text: '<code>addFriend(user, &quot;Pete&quot;)</code> должен вернуться <code>[&quot;Sam&quot;, &quot;Kira&quot;, &quot;Tomo&quot;, &quot;Pete&quot;]</code>'
-    testString: 'assert.deepEqual((function() { delete user.data.friends; user.data.friends = ["Sam", "Kira", "Tomo"]; return addFriend(user, "Pete") })(), ["Sam", "Kira", "Tomo", "Pete"], "<code>addFriend(user, "Pete")</code> should return <code>["Sam", "Kira", "Tomo", "Pete"]</code>");'
+    testString: assert((function() { let L1 = user.data.friends.length; addFriend(user, "Sean"); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), "The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object");
+  - text: <code>addFriend(user, &quot;Pete&quot;)</code> должен вернуться <code>[&quot;Sam&quot;, &quot;Kira&quot;, &quot;Tomo&quot;, &quot;Pete&quot;]</code>
+    testString: assert.deepEqual((function() { delete user.data.friends; user.data.friends = ["Sam", "Kira", "Tomo"]; return addFriend(user, "Pete") })(), ["Sam", "Kira", "Tomo", "Pete"], "<code>addFriend(user, "Pete")</code> should return <code>["Sam", "Kira", "Tomo", "Pete"]</code>");
 
 ```
 
