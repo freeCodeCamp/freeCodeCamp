@@ -17,8 +17,8 @@ localeTitle: Использование grid-column для управления 
 
 ```yml
 tests:
-  - text: '<code>item5</code> класс должен иметь <code>grid-column</code> свойство , которое имеет значение <code>2 / 4</code> .'
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.");'
+  - text: <code>item5</code> класс должен иметь <code>grid-column</code> свойство , которое имеет значение <code>2 / 4</code>.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.");
 
 ```
 
