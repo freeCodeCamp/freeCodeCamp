@@ -17,12 +17,12 @@ localeTitle: Информировать элемент абзаца
 
 ```yml
 tests:
-  - text: Создайте элемент <code>p</code> .
-    testString: 'assert(($("p").length > 0), "Create a <code>p</code> element.");'
+  - text: Создайте элемент <code>p</code>.
+    testString: assert(($("p").length > 0), "Create a <code>p</code> element.");
   - text: Ваш элемент <code>p</code> должен иметь текст «Hello Paragraph».
-    testString: 'assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), "Your <code>p</code> element should have the text "Hello Paragraph".");'
-  - text: 'Убедитесь, что ваш элемент <code>p</code> имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure your <code>p</code> element has a closing tag.");'
+    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), "Your <code>p</code> element should have the text "Hello Paragraph".");
+  - text: Убедитесь, что ваш элемент <code>p</code> имеет закрывающий тег.
+    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure your <code>p</code> element has a closing tag.");
 
 ```
 
