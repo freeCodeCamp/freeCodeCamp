@@ -17,8 +17,8 @@ localeTitle: Выравнивание элемента по горизонтал
 
 ```yml
 tests:
-  - text: класс <code>item2</code> должен иметь свойство <code>justify-self</code> которое имеет значение <code>center</code> .
-    testString: 'assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.");'
+  - text: класс <code>item2</code> должен иметь свойство <code>justify-self</code> которое имеет значение <code>center</code>.
+    testString: assert(code.match(/.item2\s*?{[\s\S]*justify-self\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.");
 
 ```
 
