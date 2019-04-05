@@ -18,7 +18,7 @@ localeTitle: Примените свойство flex-direction для созд�
 ```yml
 tests:
   - text: Элемент <code>.profile-name</code> должен иметь свойство <code>flex-direction</code>со значением установленным в column.
-    testString: 'assert($(".profile-name").css("flex-direction") == "column", "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.");'
+    testString: assert($(".profile-name").css("flex-direction") == "column", "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.");
 
 ```
 
