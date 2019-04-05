@@ -17,22 +17,22 @@ localeTitle: Сравнение с более высоким или равным
 
 ```yml
 tests:
-  - text: '<code>testGreaterOrEqual(0)</code> должен возвращать «Менее 10»,'
-    testString: 'assert(testGreaterOrEqual(0) === "Less than 10", "<code>testGreaterOrEqual(0)</code> should return "Less than 10"");'
-  - text: '<code>testGreaterOrEqual(9)</code> должен вернуть «Менее 10»,'
-    testString: 'assert(testGreaterOrEqual(9) === "Less than 10", "<code>testGreaterOrEqual(9)</code> should return "Less than 10"");'
-  - text: '<code>testGreaterOrEqual(10)</code> должен возвращать «10 или более»,'
-    testString: 'assert(testGreaterOrEqual(10) === "10 or Over", "<code>testGreaterOrEqual(10)</code> should return "10 or Over"");'
-  - text: '<code>testGreaterOrEqual(11)</code> должен вернуть «10 или более»,'
-    testString: 'assert(testGreaterOrEqual(11) === "10 or Over", "<code>testGreaterOrEqual(11)</code> should return "10 or Over"");'
-  - text: '<code>testGreaterOrEqual(19)</code> должен возвращать «10 или более»,'
-    testString: 'assert(testGreaterOrEqual(19) === "10 or Over", "<code>testGreaterOrEqual(19)</code> should return "10 or Over"");'
-  - text: '<code>testGreaterOrEqual(100)</code> должен возвращать «20 или более»,'
-    testString: 'assert(testGreaterOrEqual(100) === "20 or Over", "<code>testGreaterOrEqual(100)</code> should return "20 or Over"");'
-  - text: '<code>testGreaterOrEqual(21)</code> должен возвращать «20 или более»,'
-    testString: 'assert(testGreaterOrEqual(21) === "20 or Over", "<code>testGreaterOrEqual(21)</code> should return "20 or Over"");'
-  - text: 'Вы должны использовать оператор <code>&gt;=</code> по крайней мере, дважды'
-    testString: 'assert(code.match(/val\s*>=\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&gt;=</code> operator at least twice");'
+  - text: <code>testGreaterOrEqual(0)</code> должен возвращать «Менее 10»,
+    testString: assert(testGreaterOrEqual(0) === "Less than 10", "<code>testGreaterOrEqual(0)</code> should return "Less than 10"");
+  - text: <code>testGreaterOrEqual(9)</code> должен вернуть «Менее 10»,
+    testString: assert(testGreaterOrEqual(9) === "Less than 10", "<code>testGreaterOrEqual(9)</code> should return "Less than 10"");
+  - text: <code>testGreaterOrEqual(10)</code> должен возвращать «10 или более»,
+    testString: assert(testGreaterOrEqual(10) === "10 or Over", "<code>testGreaterOrEqual(10)</code> should return "10 or Over"");
+  - text: <code>testGreaterOrEqual(11)</code> должен вернуть «10 или более»,
+    testString: assert(testGreaterOrEqual(11) === "10 or Over", "<code>testGreaterOrEqual(11)</code> should return "10 or Over"");
+  - text: <code>testGreaterOrEqual(19)</code> должен возвращать «10 или более»,
+    testString: assert(testGreaterOrEqual(19) === "10 or Over", "<code>testGreaterOrEqual(19)</code> should return "10 or Over"");
+  - text: <code>testGreaterOrEqual(100)</code> должен возвращать «20 или более»,
+    testString: assert(testGreaterOrEqual(100) === "20 or Over", "<code>testGreaterOrEqual(100)</code> should return "20 or Over"");
+  - text: <code>testGreaterOrEqual(21)</code> должен возвращать «20 или более»,
+    testString: assert(testGreaterOrEqual(21) === "20 or Over", "<code>testGreaterOrEqual(21)</code> should return "20 or Over"");
+  - text: Вы должны использовать оператор <code>&gt;=</code> по крайней мере, дважды
+    testString: assert(code.match(/val\s*>=\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&gt;=</code> operator at least twice");
 
 ```
 
