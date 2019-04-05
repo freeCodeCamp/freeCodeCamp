@@ -17,10 +17,10 @@ localeTitle: Использовать свойство align-self
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-1</code> должен иметь свойство <code>align-self</code> равное значению центра.'
-    testString: 'assert($("#box-1").css("align-self") == "center", "The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.");'
-  - text: 'Элемент <code>#box-2</code> должен иметь свойство <code>align-self</code> равное значению flex-end.'
-    testString: 'assert($("#box-2").css("align-self") == "flex-end", "The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.");'
+  - text: Элемент <code>#box-1</code> должен иметь свойство <code>align-self</code> равное значению центра.
+    testString: assert($("#box-1").css("align-self") == "center", "The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.");
+  - text: Элемент <code>#box-2</code> должен иметь свойство <code>align-self</code> равное значению flex-end.
+    testString: assert($("#box-2").css("align-self") == "flex-end", "The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.");
 
 ```
 
