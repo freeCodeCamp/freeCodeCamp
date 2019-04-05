@@ -17,10 +17,10 @@ localeTitle: Используйте свойство flex-shrink для сокр
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-1</code> должен иметь свойство <code>flex-shrink</code> установленное в значение 1.'
-    testString: 'assert($("#box-1").css("flex-shrink") == "1", "The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.");'
-  - text: 'Элемент <code>#box-2</code> должен иметь свойство <code>flex-shrink</code> равное 2.'
-    testString: 'assert($("#box-2").css("flex-shrink") == "2", "The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.");'
+  - text: Элемент <code>#box-1</code> должен иметь свойство <code>flex-shrink</code> установленное в значение 1.
+    testString: assert($("#box-1").css("flex-shrink") == "1", "The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.");
+  - text: Элемент <code>#box-2</code> должен иметь свойство <code>flex-shrink</code> равное 2.
+    testString: assert($("#box-2").css("flex-shrink") == "2", "The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.");
 
 ```
 
