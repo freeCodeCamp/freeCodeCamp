@@ -17,14 +17,14 @@ localeTitle: Добавление элементов с помощью splice ()
 
 ```yml
 tests:
-  - text: '<code>htmlColorNames</code> должны возвращать <code>[&quot;DarkSalmon&quot;, &quot;BlanchedAlmond&quot;, &quot;LavenderBlush&quot;, &quot;PaleTurqoise&quot;, &quot;FireBrick&quot;]</code>'
-    testString: 'assert.deepEqual(htmlColorNames(["DarkGoldenRod", "WhiteSmoke", "LavenderBlush", "PaleTurqoise", "FireBrick"]), ["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"], "<code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>");'
+  - text: <code>htmlColorNames</code> должны возвращать <code>[&quot;DarkSalmon&quot;, &quot;BlanchedAlmond&quot;, &quot;LavenderBlush&quot;, &quot;PaleTurqoise&quot;, &quot;FireBrick&quot;]</code>
+    testString: assert.deepEqual(htmlColorNames(["DarkGoldenRod", "WhiteSmoke", "LavenderBlush", "PaleTurqoise", "FireBrick"]), ["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"], "<code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>");
   - text: Функция <code>htmlColorNames</code> должна использовать метод <code>splice()</code>
-    testString: 'assert(/.splice/.test(code), "The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method");'
-  - text: Вы не должны использовать <code>shift()</code> или <code>unshift()</code> .
-    testString: 'assert(!/shift|unshift/.test(code), "You should not use <code>shift()</code> or <code>unshift()</code>.");'
+    testString: assert(/.splice/.test(code), "The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method");
+  - text: Вы не должны использовать <code>shift()</code> или <code>unshift()</code>.
+    testString: assert(!/shift|unshift/.test(code), "You should not use <code>shift()</code> or <code>unshift()</code>.");
   - text: Не следует использовать нотацию массива.
-    testString: 'assert(!/\[\d\]\s*=/.test(code), "You should not use array bracket notation.");'
+    testString: assert(!/\[\d\]\s*=/.test(code), "You should not use array bracket notation.");
 
 ```
 
