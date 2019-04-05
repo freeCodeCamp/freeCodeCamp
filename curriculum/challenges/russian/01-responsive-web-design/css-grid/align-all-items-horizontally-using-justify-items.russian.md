@@ -17,8 +17,8 @@ localeTitle: Выравнивание всех элементов по гори�
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>justify-items</code> которое имеет значение <code>center</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.");'
+  - text: класс <code>container</code> должен иметь свойство <code>justify-items</code> которое имеет значение <code>center</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.");
 
 ```
 
