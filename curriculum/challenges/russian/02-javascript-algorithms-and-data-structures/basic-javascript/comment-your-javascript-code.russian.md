@@ -17,10 +17,10 @@ localeTitle: Комментарий
 
 ```yml
 tests:
-  - text: 'Создайте комментарий стиля <code>//</code> , содержащий не менее пяти букв.'
-    testString: 'assert(code.match(/(\/\/)...../g), "Create a <code>//</code> style comment that contains at least five letters.");'
-  - text: 'Создайте комментарий <code>/* */</code> style, содержащий не менее пяти букв.'
-    testString: 'assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), "Create a <code>/* */</code> style comment that contains at least five letters.");'
+  - text: Создайте комментарий стиля <code>//</code> , содержащий не менее пяти букв.
+    testString: assert(code.match(/(\/\/)...../g), "Create a <code>//</code> style comment that contains at least five letters.");
+  - text: Создайте комментарий <code>/* */</code> style, содержащий не менее пяти букв.
+    testString: assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), "Create a <code>/* */</code> style comment that contains at least five letters.");
 
 ```
 
