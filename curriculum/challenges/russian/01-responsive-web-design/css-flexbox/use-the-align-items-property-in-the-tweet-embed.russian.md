@@ -18,7 +18,7 @@ localeTitle: Использовать свойство align-items в Tweet Embe
 ```yml
 tests:
   - text: Элемент <code>.follow-btn</code> должен иметь свойство <code>align-items</code> заданное значением центра.
-    testString: 'assert($(".follow-btn").css("align-items") == "center", "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.");'
+    testString: assert($(".follow-btn").css("align-items") == "center", "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.");
 
 ```
 
