@@ -17,10 +17,10 @@ localeTitle: Доступ к массиву данных с индексами
 
 ```yml
 tests:
-  - text: Переменная <code>myData</code> должна равняться первому значению <code>myArray</code> .
-    testString: 'assert((function(){if(typeof myArray !== "undefined" && typeof myData !== "undefined" && myArray[0] === myData){return true;}else{return false;}})(), "The variable <code>myData</code> should equal the first value of <code>myArray</code>.");'
+  - text: Переменная <code>myData</code> должна равняться первому значению <code>myArray</code>.
+    testString: assert((function(){if(typeof myArray !== "undefined" && typeof myData !== "undefined" && myArray[0] === myData){return true;}else{return false;}})(), "The variable <code>myData</code> should equal the first value of <code>myArray</code>.");
   - text: Данные в переменной <code>myArray</code> должны быть доступны с использованием нотации в виде скобок.
-    testString: 'assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})(), "The data in variable <code>myArray</code> should be accessed using bracket notation.");'
+    testString: assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})(), "The data in variable <code>myArray</code> should be accessed using bracket notation.");
 
 ```
 
