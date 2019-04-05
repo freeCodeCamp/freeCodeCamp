@@ -17,16 +17,16 @@ localeTitle: Использовать по часовой стрелке для 
 
 ```yml
 tests:
-  - text: Ваш <code>blue-box</code> класс должен дать верхнюю часть элементов <code>40px</code> из <code>padding</code> .
-    testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.");'
-  - text: Ваш класс с <code>blue-box</code> должен давать право на элементы <code>20px</code> <code>padding</code> .
-    testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.");'
-  - text: Ваш класс <code>blue-box</code> должен дать основание элементов <code>20px</code> <code>padding</code> .
-    testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.");'
-  - text: Ваш <code>blue-box</code> класс должен дать слева от элементов <code>40px</code> из <code>padding</code> .
-    testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.");'
-  - text: 'Вы должны использовать обозначение по часовой стрелке, чтобы установить заполнение класса <code>blue-box</code> .'
-    testString: 'assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), "You should use the clockwise notation to set the padding of <code>blue-box</code> class.");'
+  - text: Ваш <code>blue-box</code> класс должен дать верхнюю часть элементов <code>40px</code> из <code>padding</code>.
+    testString: assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.");
+  - text: Ваш класс с <code>blue-box</code> должен давать право на элементы <code>20px</code> <code>padding</code>.
+    testString: assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.");
+  - text: Ваш класс <code>blue-box</code> должен дать основание элементов <code>20px</code> <code>padding</code>.
+    testString: assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.");
+  - text: Ваш <code>blue-box</code> класс должен дать слева от элементов <code>40px</code> из <code>padding</code>.
+    testString: assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.");
+  - text: Вы должны использовать обозначение по часовой стрелке, чтобы установить заполнение класса <code>blue-box</code>.
+    testString: assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), "You should use the clockwise notation to set the padding of <code>blue-box</code> class.");
 
 ```
 
