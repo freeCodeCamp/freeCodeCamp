@@ -17,10 +17,10 @@ localeTitle: Используйте свойство Order для переупо
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-1</code> должен иметь свойство <code>order</code> равное 2.'
-    testString: 'assert($("#box-1").css("order") == "2", "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.");'
-  - text: 'Элемент <code>#box-2</code> должен иметь свойство <code>order</code> равное 1.'
-    testString: 'assert($("#box-2").css("order") == "1", "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.");'
+  - text: Элемент <code>#box-1</code> должен иметь свойство <code>order</code> равное 2.
+    testString: assert($("#box-1").css("order") == "2", "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.");
+  - text: Элемент <code>#box-2</code> должен иметь свойство <code>order</code> равное 1.
+    testString: assert($("#box-2").css("order") == "1", "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.");
 
 ```
 
