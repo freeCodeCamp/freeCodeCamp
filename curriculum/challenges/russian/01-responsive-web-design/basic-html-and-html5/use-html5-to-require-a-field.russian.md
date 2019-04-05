@@ -18,7 +18,7 @@ localeTitle: Использовать HTML5 для запроса поля
 ```yml
 tests:
   - text: Элемент <code>input</code> текста должен иметь <code>required</code> атрибут.
-    testString: 'assert($("input").prop("required"), "Your text <code>input</code> element should have the <code>required</code> attribute.");'
+    testString: assert($("input").prop("required"), "Your text <code>input</code> element should have the <code>required</code> attribute.");
 
 ```
 
