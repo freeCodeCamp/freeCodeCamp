@@ -17,10 +17,10 @@ localeTitle: Используйте свойство flex-grow для расши
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert($("#box-1").css("flex-grow") == "1", "The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.");'
-  - text: 'Элемент <code>#box-2</code> должен иметь свойство <code>flex-grow</code> равное 2.'
-    testString: 'assert($("#box-2").css("flex-grow") == "2", "The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.");'
+  - text: #
+    testString: assert($("#box-1").css("flex-grow") == "1", "The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.");
+  - text: Элемент <code>#box-2</code> должен иметь свойство <code>flex-grow</code> равное 2.
+    testString: assert($("#box-2").css("flex-grow") == "2", "The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.");
 
 ```
 
