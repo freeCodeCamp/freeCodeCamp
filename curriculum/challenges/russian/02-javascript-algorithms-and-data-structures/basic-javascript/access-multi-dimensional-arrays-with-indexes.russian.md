@@ -17,10 +17,10 @@ localeTitle: Доступ к многомерным массивам с инде
 
 ```yml
 tests:
-  - text: <code>myData</code> должен быть равен <code>8</code> .
-    testString: 'assert(myData === 8, "<code>myData</code> should be equal to <code>8</code>.");'
+  - text: <code>myData</code> должен быть равен <code>8</code>.
+    testString: assert(myData === 8, "<code>myData</code> should be equal to <code>8</code>.");
   - text: Для чтения правильного значения из <code>myArray</code> вы должны использовать условное обозначение.
-    testString: 'assert(/myArray\[2\]\[1\]/g.test(code) && !/myData\s*=\s*(?:.*[-+*/%]|\d)/g.test(code), "You should be using bracket notation to read the correct value from <code>myArray</code>.");'
+    testString: assert(/myArray\[2\]\[1\]/g.test(code) && !/myData\s*=\s*(?:.*[-+*/%]|\d)/g.test(code), "You should be using bracket notation to read the correct value from <code>myArray</code>.");
 
 ```
 
