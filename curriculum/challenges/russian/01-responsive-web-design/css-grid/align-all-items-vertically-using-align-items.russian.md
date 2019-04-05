@@ -17,8 +17,8 @@ localeTitle: 'Выровнять все элементы по вертикали
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>align-items</code> которое имеет значение <code>end</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.");'
+  - text: класс <code>container</code> должен иметь свойство <code>align-items</code> которое имеет значение <code>end</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*align-items\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.");
 
 ```
 
