@@ -17,8 +17,8 @@ localeTitle: Создание текстового поля
 
 ```yml
 tests:
-  - text: Ваше приложение должно иметь <code>input</code> элемент типа <code>text</code> .
-    testString: 'assert($("input[type=text]").length > 0, "Your app should have an <code>input</code> element of type <code>text</code>.");'
+  - text: Ваше приложение должно иметь <code>input</code> элемент типа <code>text</code>.
+    testString: assert($("input[type=text]").length > 0, "Your app should have an <code>input</code> element of type <code>text</code>.");
 
 ```
 
