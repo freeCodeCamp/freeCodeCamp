@@ -5,6 +5,14 @@ superBlock: Coding Interview Prep
 ---
 ## Introduction to the Coding Interview Take Home Projects
 
-When applying for a job as a developer, there's a good chance the hiring team will give you something called a "take-home project". As the name suggests, it's something that you're supposed to do on your own, without the interviewer looking over your shoulder. Unlike other parts of the coding interview, which often focus more on theoretical knowledge and less on actual app development - a take-home project is usually the best place to show your skills in practice.
+Programming interviews have always been stressful. One of the solutions is giving the applicant a take home project to be completed outside of the interview. These types of interviews usually require a lot of work, but they're a great way for employers to see how you might perform on the job.
 
-In this section you'll be able to work on examples of such projects!
+The interview after the project submission could be a discussion about the applicant’s design decisions, scalability, and what the applicant might have done differently. This approach is more effective when the applicant doesn’t have a lot of publicly available past projects.
+
+In this section you get the chance to work on many Take Home Projects like:
+*  Show Local Weather using Weather API and Geolocation
+*  Build a Wikipedia Viewer using Wikipedia's API
+*  Build a Pinterest Clone using Masonry.js library 
+and many more!
+
+By the end of this section, you will have plenty of Take Home Projects under your belt. This will boost your confidence and prepare you for Take Home Project Interviews. Have fun and remember to use the [Read-Search-Ask](https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.

@@ -3,7 +3,7 @@ title: Chain Search Query Helpers to Narrow Search Results
 ---
 ## Chain Search Query Helpers to Narrow Search Results
 
-1. To create but not execut a find query
+1. To create but not execute a find query
 ```javascript
 Model.find( {name: 'Leah'} )
 ```
@@ -33,7 +33,7 @@ yourArray.select( {name: 0, age: 1} ) // Here: 0 means false and thus hide name 
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-6. To exec this query, you can either:</br>
+6. To execute this query, you can either:</br>
 &nbsp;&nbsp;1) Callback:
 ```javascript
 YourQuery.exec(function(err, docs) {
@@ -53,5 +53,3 @@ Person.find({age: 55}).sort({name: -1}).limit(5).select( {favoriteFoods: 0} ).ex
   //do something here
 })
 ```
-</br>
-</br>
