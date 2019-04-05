@@ -17,14 +17,14 @@ localeTitle: Uncomment HTML
 
 ```yml
 tests:
-  - text: 'Сделайте свой элемент <code>h1</code> видимым на своей странице, раскомментируя его.'
-    testString: 'assert($("h1").length > 0, "Make your <code>h1</code> element visible on your page by uncommenting it.");'
-  - text: 'Сделайте свой элемент <code>h2</code> видимым на своей странице, раскомментируя его.'
-    testString: 'assert($("h2").length > 0, "Make your <code>h2</code> element visible on your page by uncommenting it.");'
-  - text: 'Сделайте свой элемент <code>p</code> видимым на своей странице, раскомментируя его.'
-    testString: 'assert($("p").length > 0, "Make your <code>p</code> element visible on your page by uncommenting it.");'
-  - text: 'Обязательно удалите все трейлинг-теги комментариев, т. Е. <code>--&gt;</code> .'
-    testString: 'assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,"")), "Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.");'
+  - text: Сделайте свой элемент <code>h1</code> видимым на своей странице, раскомментируя его.
+    testString: assert($("h1").length > 0, "Make your <code>h1</code> element visible on your page by uncommenting it.");
+  - text: Сделайте свой элемент <code>h2</code> видимым на своей странице, раскомментируя его.
+    testString: assert($("h2").length > 0, "Make your <code>h2</code> element visible on your page by uncommenting it.");
+  - text: Сделайте свой элемент <code>p</code> видимым на своей странице, раскомментируя его.
+    testString: assert($("p").length > 0, "Make your <code>p</code> element visible on your page by uncommenting it.");
+  - text: Обязательно удалите все трейлинг-теги комментариев, т. Е. <code>--&gt;</code>.
+    testString: assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,"")), "Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.");
 
 ```
 
