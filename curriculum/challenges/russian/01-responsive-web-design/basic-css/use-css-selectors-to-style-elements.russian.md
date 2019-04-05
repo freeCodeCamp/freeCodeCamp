@@ -18,16 +18,16 @@ localeTitle: Используйте селекторы CSS для изменен
 
 ```yml
 tests:
-  - text: Удалите атрибут стиля из вашего элемента <code>h2</code> .
-    testString: 'assert(!$("h2").attr("style"), "Remove the style attribute from your <code>h2</code> element.");'
-  - text: Создайте элемент <code>style</code> .
-    testString: 'assert($("style") && $("style").length > 1, "Create a <code>style</code> element.");'
+  - text: Удалите атрибут стиля из вашего элемента <code>h2</code>.
+    testString: assert(!$("h2").attr("style"), "Remove the style attribute from your <code>h2</code> element.");
+  - text: Создайте элемент <code>style</code>.
+    testString: assert($("style") && $("style").length > 1, "Create a <code>style</code> element.");
   - text: Ваш элемент <code>h2</code> должен быть синим.
-    testString: 'assert($("h2").css("color") === "rgb(0, 0, 255)", "Your <code>h2</code> element should be blue.");'
-  - text: 'Убедитесь, что объявление вашей таблицы стилей <code>h2</code> действительно с точкой с запятой и закрывающей скобкой.'
-    testString: 'assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g), "Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.");'
-  - text: 'Убедитесь, что все ваши элементы <code>style</code> действительны и имеют закрывающий тег.'
-    testString: 'assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length, "Make sure all your <code>style</code> elements are valid and have a closing tag.");'
+    testString: assert($("h2").css("color") === "rgb(0, 0, 255)", "Your <code>h2</code> element should be blue.");
+  - text: Убедитесь, что объявление вашей таблицы стилей <code>h2</code> действительно с точкой с запятой и закрывающей скобкой.
+    testString: assert(code.match(/h2\s*\{\s*color\s*:.*;\s*\}/g), "Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.");
+  - text: Убедитесь, что все ваши элементы <code>style</code> действительны и имеют закрывающий тег.
+    testString: assert(code.match(/<\/style>/g) && code.match(/<\/style>/g).length === (code.match(/<style((\s)*((type|media|scoped|title|disabled)="[^"]*")?(\s)*)*>/g) || []).length, "Make sure all your <code>style</code> elements are valid and have a closing tag.");
 
 ```
 
