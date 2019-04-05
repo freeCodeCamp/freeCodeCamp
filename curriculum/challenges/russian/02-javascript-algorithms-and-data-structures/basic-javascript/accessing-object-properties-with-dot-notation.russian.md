@@ -17,16 +17,16 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(typeof hatValue === "string" , "<code>hatValue</code> should be a string");'
+  - text: #
+    testString: assert(typeof hatValue === "string" , "<code>hatValue</code> should be a string");
   - text: Значение <code>hatValue</code> должно быть <code>&quot;ballcap&quot;</code>
-    testString: 'assert(hatValue === "ballcap" , "The value of <code>hatValue</code> should be <code>"ballcap"</code>");'
+    testString: assert(hatValue === "ballcap" , "The value of <code>hatValue</code> should be <code>"ballcap"</code>");
   - text: <code>shirtValue</code> должна быть строкой
-    testString: 'assert(typeof shirtValue === "string" , "<code>shirtValue</code> should be a string");'
+    testString: assert(typeof shirtValue === "string" , "<code>shirtValue</code> should be a string");
   - text: Значение <code>shirtValue</code> должно быть <code>&quot;jersey&quot;</code>
-    testString: 'assert(shirtValue === "jersey" , "The value of <code>shirtValue</code> should be <code>"jersey"</code>");'
+    testString: assert(shirtValue === "jersey" , "The value of <code>shirtValue</code> should be <code>"jersey"</code>");
   - text: Вы должны использовать точную нотацию дважды
-    testString: 'assert(code.match(/testObj\.\w+/g).length > 1, "You should use dot notation twice");'
+    testString: assert(code.match(/testObj\.\w+/g).length > 1, "You should use dot notation twice");
 
 ```
 
