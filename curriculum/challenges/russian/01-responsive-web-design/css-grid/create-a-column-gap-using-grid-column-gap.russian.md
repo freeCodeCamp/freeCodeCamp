@@ -17,8 +17,8 @@ localeTitle: Создание промежутка у столбца с помо
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>grid-column-gap</code> которое имеет значение <code>20px</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.");'
+  - text: класс <code>container</code> должен иметь свойство <code>grid-column-gap</code> которое имеет значение <code>20px</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.");
 
 ```
 
