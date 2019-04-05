@@ -20,15 +20,15 @@ localeTitle: Факториализация номера
 ```yml
 tests:
   - text: <code>factorialize(5)</code> должен возвращать число.
-    testString: 'assert(typeof factorialize(5) === "number", "<code>factorialize(5)</code> should return a number.");'
+    testString: assert(typeof factorialize(5) === "number", "<code>factorialize(5)</code> should return a number.");
   - text: <code>factorialize(5)</code> должен вернуть 120.
-    testString: 'assert(factorialize(5) === 120, "<code>factorialize(5)</code> should return 120.");'
+    testString: assert(factorialize(5) === 120, "<code>factorialize(5)</code> should return 120.");
   - text: <code>factorialize(10)</code> должен вернуть 3628800.
-    testString: 'assert(factorialize(10) === 3628800, "<code>factorialize(10)</code> should return 3628800.");'
+    testString: assert(factorialize(10) === 3628800, "<code>factorialize(10)</code> should return 3628800.");
   - text: <code>factorialize(20)</code> должен возвращать 2432902008176640000.
-    testString: 'assert(factorialize(20) === 2432902008176640000, "<code>factorialize(20)</code> should return 2432902008176640000.");'
+    testString: assert(factorialize(20) === 2432902008176640000, "<code>factorialize(20)</code> should return 2432902008176640000.");
   - text: <code>factorialize(0)</code> должен возвращать 1.
-    testString: 'assert(factorialize(0) === 1, "<code>factorialize(0)</code> should return 1.");'
+    testString: assert(factorialize(0) === 1, "<code>factorialize(0)</code> should return 1.");
 
 ```
 
