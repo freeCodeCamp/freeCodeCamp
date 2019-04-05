@@ -18,15 +18,15 @@ localeTitle: Используйте массив для хранения кол�
 ```yml
 tests:
   - text: yourArray - массив
-    testString: 'assert.strictEqual(Array.isArray(yourArray), true, "yourArray is an array");'
+    testString: assert.strictEqual(Array.isArray(yourArray), true, "yourArray is an array");
   - text: <code>yourArray</code> имеет <code>yourArray</code> не менее 5 элементов
-    testString: 'assert.isAtLeast(yourArray.length, 5, "<code>yourArray</code> is at least 5 elements long");'
+    testString: assert.isAtLeast(yourArray.length, 5, "<code>yourArray</code> is at least 5 elements long");
   - text: <code>yourArray</code> содержит как минимум одно <code>boolean</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "boolean").length >= 1, "<code>yourArray</code> contains at least one <code>boolean</code>");'
+    testString: assert(yourArray.filter( el => typeof el === "boolean").length >= 1, "<code>yourArray</code> contains at least one <code>boolean</code>");
   - text: <code>yourArray</code> содержит хотя бы одно <code>number</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "number").length >= 1, "<code>yourArray</code> contains at least one <code>number</code>");'
+    testString: assert(yourArray.filter( el => typeof el === "number").length >= 1, "<code>yourArray</code> contains at least one <code>number</code>");
   - text: <code>yourArray</code> содержит хотя бы одну <code>string</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "string").length >= 1, "<code>yourArray</code> contains at least one <code>string</code>");'
+    testString: assert(yourArray.filter( el => typeof el === "string").length >= 1, "<code>yourArray</code> contains at least one <code>string</code>");
 
 ```
 
