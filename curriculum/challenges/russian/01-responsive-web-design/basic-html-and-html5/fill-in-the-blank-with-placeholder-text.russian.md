@@ -17,8 +17,8 @@ localeTitle: Заполните пустое поле с текстом запо
 
 ```yml
 tests:
-  - text: Ваш элемент <code>p</code> должен содержать первые несколько слов предоставленного <code>kitty ipsum text</code> .
-    testString: 'assert.isTrue((/Kitty(\s)+ipsum/gi).test($("p").text()), "Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.");'
+  - text: Ваш элемент <code>p</code> должен содержать первые несколько слов предоставленного <code>kitty ipsum text</code>.
+    testString: assert.isTrue((/Kitty(\s)+ipsum/gi).test($("p").text()), "Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.");
 
 ```
 
