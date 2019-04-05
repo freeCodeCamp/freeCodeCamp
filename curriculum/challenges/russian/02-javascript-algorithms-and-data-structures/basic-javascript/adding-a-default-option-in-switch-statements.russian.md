@@ -10,7 +10,7 @@ localeTitle: Добавление опции по умолчанию в опер
 <section id="description"> В операторе <code>switch</code> вы не сможете указывать все возможные значения в качестве операторов <code>case</code> . Вместо этого вы можете добавить оператор по <code>default</code> который будет выполняться, если не найдено совпадающих операторов <code>case</code> . Думайте об этом как финальном <code>else</code> утверждении в качестве , <code>if/else</code> цепи. В последнем случае должен использоваться оператор по <code>default</code> . <blockquote> switch (num) { <br> значение case1: <br> statement1; <br> ломать; <br> значение case2: <br> оператор2; <br> ломать; <br> ... <br> по умолчанию: <br> defaultStatement; <br> ломать; <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Напишите оператор switch, чтобы задать <code>answer</code> для следующих условий: <br> <code>"a"</code> - "яблоко" <br> <code>"b"</code> - "птица" <br> <code>"c"</code> - "cat" <br> <code>default</code> - "stuff" </section>
+<section id="instructions"> Напишите оператор switch, чтобы задать <code>answer</code> для следующих условий: <br> <code>a</code> - "яблоко" <br> <code>b</code> - "птица" <br> <code>c</code> - "cat" <br> <code>default</code> - "stuff" </section>
 
 ## Tests
 <section id='tests'>
