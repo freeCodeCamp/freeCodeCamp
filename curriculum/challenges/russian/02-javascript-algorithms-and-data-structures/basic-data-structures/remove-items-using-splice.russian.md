@@ -18,9 +18,9 @@ localeTitle: Удаление элементов с помощью splice ()
 ```yml
 tests:
   - text: <code>sumOfTen</code> должен вернуть 10
-    testString: 'assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, "<code>sumOfTen</code> should return 10");'
+    testString: assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, "<code>sumOfTen</code> should return 10");
   - text: Функция <code>sumOfTen</code> должна использовать метод <code>splice()</code>
-    testString: 'assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1, "The <code>sumOfTen</code> function should utilize the <code>splice()</code> method");'
+    testString: assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1, "The <code>sumOfTen</code> function should utilize the <code>splice()</code> method");
 
 ```
 
