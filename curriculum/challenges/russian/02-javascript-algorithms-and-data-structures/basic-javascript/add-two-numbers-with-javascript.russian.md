@@ -18,9 +18,9 @@ localeTitle: Сложить два числа с JavaScript
 ```yml
 tests:
   - text: <code>sum</code> должна равняться <code>20</code>
-    testString: 'assert(sum === 20, "<code>sum</code> should equal <code>20</code>");'
+    testString: assert(sum === 20, "<code>sum</code> should equal <code>20</code>");
   - text: Используйте оператор <code>+</code>
-    testString: 'assert(/\+/.test(code), "Use the <code>+</code> operator");'
+    testString: assert(/\+/.test(code), "Use the <code>+</code> operator");
 
 ```
 
