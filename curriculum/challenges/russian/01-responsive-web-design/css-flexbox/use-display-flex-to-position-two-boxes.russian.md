@@ -17,8 +17,8 @@ localeTitle: 'Использовать дисплей: сгибать до по�
 
 ```yml
 tests:
-  - text: '<code>#box-container</code> должен иметь свойство <code>display</code> заданное значением flex.'
-    testString: 'assert($("#box-container").css("display") == "flex", "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.");'
+  - text: <code>#box-container</code> должен иметь свойство <code>display</code> заданное значением flex.
+    testString: assert($("#box-container").css("display") == "flex", "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.");
 
 ```
 
