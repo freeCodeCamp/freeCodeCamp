@@ -17,16 +17,16 @@ localeTitle: Добавление пар ключей к объектам JavaSc
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(typeof foods === "object", "<code>foods</code> is an object");'
-  - text: ''
-    testString: 'assert(foods.bananas === 13, "The <code>foods</code> object has a key <code>"bananas"</code> with a value of <code>13</code>");'
+  - text: #
+    testString: assert(typeof foods === "object", "<code>foods</code> is an object");
+  - text: #
+    testString: assert(foods.bananas === 13, "The <code>foods</code> object has a key <code>"bananas"</code> with a value of <code>13</code>");
   - text: Объект <code>foods</code> имеет ключевой <code>&quot;grapes&quot;</code> со значением <code>35</code>
-    testString: 'assert(foods.grapes === 35, "The <code>foods</code> object has a key <code>"grapes"</code> with a value of <code>35</code>");'
-  - text: ''
-    testString: 'assert(foods.strawberries === 27, "The <code>foods</code> object has a key <code>"strawberries"</code> with a value of <code>27</code>");'
-  - text: ''
-    testString: 'assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1, "The key-value pairs should be set using dot or bracket notation");'
+    testString: assert(foods.grapes === 35, "The <code>foods</code> object has a key <code>"grapes"</code> with a value of <code>35</code>");
+  - text: #
+    testString: assert(foods.strawberries === 27, "The <code>foods</code> object has a key <code>"strawberries"</code> with a value of <code>27</code>");
+  - text: #
+    testString: assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1, "The key-value pairs should be set using dot or bracket notation");
 
 ```
 
