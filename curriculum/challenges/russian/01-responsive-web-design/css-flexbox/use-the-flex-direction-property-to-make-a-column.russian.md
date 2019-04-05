@@ -17,8 +17,8 @@ localeTitle: Используйте свойство flex-direction для со�
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-container</code> должен иметь свойство <code>flex-direction</code> заданное в столбце.'
-    testString: 'assert($("#box-container").css("flex-direction") == "column", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.");'
+  - text: Элемент <code>#box-container</code> должен иметь свойство <code>flex-direction</code> заданное в столбце.
+    testString: assert($("#box-container").css("flex-direction") == "column", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.");
 
 ```
 
