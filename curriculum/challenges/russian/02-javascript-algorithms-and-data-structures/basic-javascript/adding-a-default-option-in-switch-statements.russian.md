@@ -33,7 +33,6 @@ tests:
     testString: assert(switchOfStuff("string-to-trigger-default-case") === "stuff", "You should use a <code>default</code> statement");
   - text: У вас должно быть как минимум 3 заявления о <code>break</code>
     testString: assert(code.match(/break/g).length > 2, "You should have at least 3 <code>break</code> statements");
-
 ```
 
 </section>
