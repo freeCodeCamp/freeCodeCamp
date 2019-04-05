@@ -17,12 +17,12 @@ localeTitle: 'Проверьте, имеет ли объект свойство'
 
 ```yml
 tests:
-  - text: 'Объект <code>users</code> содержит только ключи <code>Alan</code> , <code>Jeff</code> , <code>Sarah</code> и <code>Ryan</code>'
-    testString: 'assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4, "The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>");'
-  - text: 'Функция <code>isEveryoneHere</code> возвращает <code>true</code> если <code>Alan</code> , <code>Jeff</code> , <code>Sarah</code> и <code>Ryan</code> являются свойствами объекта <code>users</code>'
-    testString: 'assert(isEveryoneHere(users) === true, "The function <code>isEveryoneHere</code> returns <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object");'
-  - text: 'Функция <code>isEveryoneHere</code> возвращает <code>false</code> если <code>Alan</code> , <code>Jeff</code> , <code>Sarah</code> и <code>Ryan</code> не являются объектами объекта <code>users</code>'
-    testString: 'assert((function() { delete users.Alan; delete users.Jeff; delete users.Sarah; delete users.Ryan; return isEveryoneHere(users) })() === false, "The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are not properties on the <code>users</code> object");'
+  - text: Объект <code>users</code> содержит только ключи <code>Alan</code> , <code>Jeff</code> , <code>Sarah</code> и <code>Ryan</code>
+    testString: assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4, "The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>");
+  - text: Функция <code>isEveryoneHere</code> возвращает <code>true</code> если <code>Alan</code> , <code>Jeff</code> , <code>Sarah</code> и <code>Ryan</code> являются свойствами объекта <code>users</code>
+    testString: assert(isEveryoneHere(users) === true, "The function <code>isEveryoneHere</code> returns <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object");
+  - text: Функция <code>isEveryoneHere</code> возвращает <code>false</code> если <code>Alan</code> , <code>Jeff</code> , <code>Sarah</code> и <code>Ryan</code> не являются объектами объекта <code>users</code>
+    testString: assert((function() { delete users.Alan; delete users.Jeff; delete users.Sarah; delete users.Ryan; return isEveryoneHere(users) })() === false, "The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are not properties on the <code>users</code> object");
 
 ```
 
