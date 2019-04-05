@@ -18,19 +18,19 @@ localeTitle: Введение в элементы HTML5
 ```yml
 tests:
   - text: Вам нужны 2 <code>p</code> элемента с текстом Китти Ipsum.
-    testString: 'assert($("p").length > 1, "You need 2 <code>p</code> elements with Kitty Ipsum text.");'
-  - text: 'Убедитесь, что каждый из ваших <code>p</code> элементов имеет закрывающий тег.'
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure each of your <code>p</code> elements has a closing tag.");'
-  - text: ''
-    testString: 'assert.isTrue((/Purr\s+jump\s+eat/gi).test($("p").text()), "Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.");'
+    testString: assert($("p").length > 1, "You need 2 <code>p</code> elements with Kitty Ipsum text.");
+  - text: Убедитесь, что каждый из ваших <code>p</code> элементов имеет закрывающий тег.
+    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure each of your <code>p</code> elements has a closing tag.");
+  - text: #
+    testString: assert.isTrue((/Purr\s+jump\s+eat/gi).test($("p").text()), "Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.");
   - text: Ваш код должен иметь один <code>main</code> элемент.
-    testString: 'assert($("main").length === 1, "Your code should have one <code>main</code> element.");'
+    testString: assert($("main").length === 1, "Your code should have one <code>main</code> element.");
   - text: <code>main</code> элемент должен содержать два элемента абзаца в качестве детей.
-    testString: 'assert($("main").children("p").length === 2, "The <code>main</code> element should have two paragraph elements as children.");'
+    testString: assert($("main").children("p").length === 2, "The <code>main</code> element should have two paragraph elements as children.");
   - text: <code>main</code> тег открытия должен появиться перед тегом первого абзаца.
-    testString: 'assert(code.match(/<main>\s*?<p>/g), "The opening <code>main</code> tag should come before the first paragraph tag.");'
+    testString: assert(code.match(/<main>\s*?<p>/g), "The opening <code>main</code> tag should come before the first paragraph tag.");
   - text: Закрывающий <code>main</code> тег должен появиться после второго тега абзаца закрытия.
-    testString: 'assert(code.match(/<\/p>\s*?<\/main>/g), "The closing <code>main</code> tag should come after the second closing paragraph tag.");'
+    testString: assert(code.match(/<\/p>\s*?<\/main>/g), "The closing <code>main</code> tag should come after the second closing paragraph tag.");
 
 ```
 
