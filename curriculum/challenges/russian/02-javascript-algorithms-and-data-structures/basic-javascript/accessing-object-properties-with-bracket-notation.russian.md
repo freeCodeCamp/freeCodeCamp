@@ -18,15 +18,15 @@ localeTitle: Доступ к объектным свойствам с помощ
 ```yml
 tests:
   - text: <code>entreeValue</code> должен быть строкой
-    testString: 'assert(typeof entreeValue === "string" , "<code>entreeValue</code> should be a string");'
-  - text: Значение <code>entreeValue</code> должно быть <code>&quot;hamburger&quot;</code>
-    testString: 'assert(entreeValue === "hamburger" , "The value of <code>entreeValue</code> should be <code>"hamburger"</code>");'
+    testString: assert(typeof entreeValue === "string" , "<code>entreeValue</code> should be a string");
+  - text: Значение <code>entreeValue</code> должно быть <code>hamburger</code>
+    testString: assert(entreeValue === "hamburger" , "The value of <code>entreeValue</code> should be <code>"hamburger"</code>");
   - text: <code>drinkValue</code> должен быть строкой
-    testString: 'assert(typeof drinkValue === "string" , "<code>drinkValue</code> should be a string");'
-  - text: Значение <code>drinkValue</code> должно быть <code>&quot;water&quot;</code>
-    testString: 'assert(drinkValue === "water" , "The value of <code>drinkValue</code> should be <code>"water"</code>");'
+    testString: assert(typeof drinkValue === "string" , "<code>drinkValue</code> should be a string");
+  - text: Значение <code>drinkValue</code> должно быть <code>water</code>
+    testString: assert(drinkValue === "water" , "The value of <code>drinkValue</code> should be <code>"water"</code>");
   - text: Вы должны дважды использовать скобки
-    testString: 'assert(code.match(/testObj\s*?\[("|")[^""]+\1\]/g).length > 1, "You should use bracket notation twice");'
+    testString: assert(code.match(/testObj\s*?\[("|")[^""]+\1\]/g).length > 1, "You should use bracket notation twice");
 
 ```
 
