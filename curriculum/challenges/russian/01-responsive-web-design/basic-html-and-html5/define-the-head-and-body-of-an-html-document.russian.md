@@ -17,18 +17,18 @@ localeTitle: Определение заголовка и тела докуме�
 
 ```yml
 tests:
-  - text: На странице должен быть только один элемент <code>head</code> .
-    testString: 'assert($("head").length == 1, "There should be only one <code>head</code> element on the page.");'
-  - text: На странице должен быть только один элемент <code>body</code> .
-    testString: 'assert($("body").length == 1, "There should be only one <code>body</code> element on the page.");'
-  - text: Элемент <code>head</code> должен быть дочерним элементом <code>html</code> .
-    testString: 'assert($("html").children("head").length == 1, "The <code>head</code> element should be a child of the <code>html</code> element.");'
-  - text: Элемент <code>body</code> должен быть дочерним элементом <code>html</code> .
-    testString: 'assert($("html").children("body").length == 1, "The <code>body</code> element should be a child of the <code>html</code> element.");'
-  - text: Элемент <code>head</code> должен обернуть элемент <code>title</code> .
-    testString: 'assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi), "The <code>head</code> element should wrap around the <code>title</code> element.");'
-  - text: Элемент <code>body</code> должен обернуть оба элемента <code>h1</code> и <code>p</code> .
-    testString: 'assert($("body").children("h1").length == 1 && $("body").children("p").length == 1, "The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.");'
+  - text: На странице должен быть только один элемент <code>head</code>.
+    testString: assert($("head").length == 1, "There should be only one <code>head</code> element on the page.");
+  - text: На странице должен быть только один элемент <code>body</code>.
+    testString: assert($("body").length == 1, "There should be only one <code>body</code> element on the page.");
+  - text: Элемент <code>head</code> должен быть дочерним элементом <code>html</code>.
+    testString: assert($("html").children("head").length == 1, "The <code>head</code> element should be a child of the <code>html</code> element.");
+  - text: Элемент <code>body</code> должен быть дочерним элементом <code>html</code>.
+    testString: assert($("html").children("body").length == 1, "The <code>body</code> element should be a child of the <code>html</code> element.");
+  - text: Элемент <code>head</code> должен обернуть элемент <code>title</code>.
+    testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi), "The <code>head</code> element should wrap around the <code>title</code> element.");
+  - text: Элемент <code>body</code> должен обернуть оба элемента <code>h1</code> и <code>p</code>.
+    testString: assert($("body").children("h1").length == 1 && $("body").children("p").length == 1, "The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.");
 
 ```
 
