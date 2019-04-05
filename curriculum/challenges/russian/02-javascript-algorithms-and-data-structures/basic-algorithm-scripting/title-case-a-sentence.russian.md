@@ -19,14 +19,14 @@ localeTitle: Название Случайное предложение
 
 ```yml
 tests:
-  - text: '<code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> должен возвращать строку.'
-    testString: 'assert(typeof titleCase("I"m a little tea pot") === "string", "<code>titleCase("I&#39;m a little tea pot")</code> should return a string.");'
-  - text: '<code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> должен вернуться, <code>I&#39;m A Little Tea Pot</code> .'
-    testString: 'assert(titleCase("I"m a little tea pot") === "I"m A Little Tea Pot", "<code>titleCase("I&#39;m a little tea pot")</code> should return <code>I&#39;m A Little Tea Pot</code>.");'
-  - text: <code>titleCase(&quot;sHoRt AnD sToUt&quot;)</code> должен возвращать <code>Short And Stout</code> .
-    testString: 'assert(titleCase("sHoRt AnD sToUt") === "Short And Stout", "<code>titleCase("sHoRt AnD sToUt")</code> should return <code>Short And Stout</code>.");'
-  - text: ''
-    testString: 'assert(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") === "Here Is My Handle Here Is My Spout", "<code>titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")</code> should return <code>Here Is My Handle Here Is My Spout</code>.");'
+  - text: <code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> должен возвращать строку.
+    testString: assert(typeof titleCase("I"m a little tea pot") === "string", "<code>titleCase("I&#39;m a little tea pot")</code> should return a string.");
+  - text: <code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> должен вернуться, <code>I&#39;m A Little Tea Pot</code>.
+    testString: assert(titleCase("I"m a little tea pot") === "I"m A Little Tea Pot", "<code>titleCase("I&#39;m a little tea pot")</code> should return <code>I&#39;m A Little Tea Pot</code>.");
+  - text: <code>titleCase(&quot;sHoRt AnD sToUt&quot;)</code> должен возвращать <code>Short And Stout</code>.
+    testString: assert(titleCase("sHoRt AnD sToUt") === "Short And Stout", "<code>titleCase("sHoRt AnD sToUt")</code> should return <code>Short And Stout</code>.");
+  - text: #
+    testString: assert(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") === "Here Is My Handle Here Is My Spout", "<code>titleCase("HERE IS MY HANDLE HERE IS MY SPOUT")</code> should return <code>Here Is My Handle Here Is My Spout</code>.");
 
 ```
 
