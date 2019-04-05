@@ -17,10 +17,10 @@ localeTitle: Доступ к вложенным массивам
 
 ```yml
 tests:
-  - text: <code>secondTree</code> должен равняться &quot;сосне&quot;
-    testString: 'assert(secondTree === "pine", "<code>secondTree</code> should equal "pine"");'
+  - text: <code>secondTree</code> должен равняться "сосне"
+    testString: assert(secondTree === "pine", "<code>secondTree</code> should equal "pine"");
   - text: Используйте обозначения точек и скобок для доступа к <code>myPlants</code>
-    testString: 'assert(/=\s*myPlants\[1\].list\[1\]/.test(code), "Use dot and bracket notation to access <code>myPlants</code>");'
+    testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code), "Use dot and bracket notation to access <code>myPlants</code>");
 
 ```
 
