@@ -18,11 +18,11 @@ localeTitle: Сделать изображение отзывчивым
 ```yml
 tests:
   - text: Ваш тег <code>img</code> должен иметь <code>max-width</code> равную 100%.
-    testString: 'assert(code.match(/max-width:\s*?100%;/g), "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.");'
-  - text: Ваш тег <code>img</code> должен иметь установленный для <code>display</code> .
-    testString: 'assert($("img").css("display") == "block", "Your <code>img</code> tag should have a <code>display</code> set to block.");'
+    testString: assert(code.match(/max-width:\s*?100%;/g), "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.");
+  - text: Ваш тег <code>img</code> должен иметь установленный для <code>display</code>.
+    testString: assert($("img").css("display") == "block", "Your <code>img</code> tag should have a <code>display</code> set to block.");
   - text: Ваш тег <code>img</code> должен иметь <code>height</code> установленную в auto.
-    testString: 'assert(code.match(/height:\s*?auto;/g), "Your <code>img</code> tag should have a <code>height</code> set to auto.");'
+    testString: assert(code.match(/height:\s*?auto;/g), "Your <code>img</code> tag should have a <code>height</code> set to auto.");
 
 ```
 
