@@ -19,24 +19,24 @@ localeTitle: Мутации
 
 ```yml
 tests:
-  - text: '<code>mutation([&quot;hello&quot;, &quot;hey&quot;])</code> должна возвращать false.'
-    testString: 'assert(mutation(["hello", "hey"]) === false, "<code>mutation(["hello", "hey"])</code> should return false.");'
-  - text: '<code>mutation([&quot;hello&quot;, &quot;Hello&quot;])</code> должна возвращать true.'
-    testString: 'assert(mutation(["hello", "Hello"]) === true, "<code>mutation(["hello", "Hello"])</code> should return true.");'
-  - text: ''
-    testString: 'assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true, "<code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.");'
-  - text: ''
-    testString: 'assert(mutation(["Mary", "Army"]) === true, "<code>mutation(["Mary", "Army"])</code> should return true.");'
-  - text: ''
-    testString: 'assert(mutation(["Mary", "Aarmy"]) === true, "<code>mutation(["Mary", "Aarmy"])</code> should return true.");'
-  - text: ''
-    testString: 'assert(mutation(["Alien", "line"]) === true, "<code>mutation(["Alien", "line"])</code> should return true.");'
-  - text: '<code>mutation([&quot;floor&quot;, &quot;for&quot;])</code> должна возвращать true.'
-    testString: 'assert(mutation(["floor", "for"]) === true, "<code>mutation(["floor", "for"])</code> should return true.");'
-  - text: ''
-    testString: 'assert(mutation(["hello", "neo"]) === false, "<code>mutation(["hello", "neo"])</code> should return false.");'
-  - text: '<code>mutation([&quot;voodoo&quot;, &quot;no&quot;])</code> возвращает false.'
-    testString: 'assert(mutation(["voodoo", "no"]) === false, "<code>mutation(["voodoo", "no"])</code> should return false.");'
+  - text: <code>mutation([&quot;hello&quot;, &quot;hey&quot;])</code> должна возвращать false.
+    testString: assert(mutation(["hello", "hey"]) === false, "<code>mutation(["hello", "hey"])</code> should return false.");
+  - text: <code>mutation([&quot;hello&quot;, &quot;Hello&quot;])</code> должна возвращать true.
+    testString: assert(mutation(["hello", "Hello"]) === true, "<code>mutation(["hello", "Hello"])</code> should return true.");
+  - text: #
+    testString: assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true, "<code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.");
+  - text: #
+    testString: assert(mutation(["Mary", "Army"]) === true, "<code>mutation(["Mary", "Army"])</code> should return true.");
+  - text: #
+    testString: assert(mutation(["Mary", "Aarmy"]) === true, "<code>mutation(["Mary", "Aarmy"])</code> should return true.");
+  - text: #
+    testString: assert(mutation(["Alien", "line"]) === true, "<code>mutation(["Alien", "line"])</code> should return true.");
+  - text: <code>mutation([&quot;floor&quot;, &quot;for&quot;])</code> должна возвращать true.
+    testString: assert(mutation(["floor", "for"]) === true, "<code>mutation(["floor", "for"])</code> should return true.");
+  - text: #
+    testString: assert(mutation(["hello", "neo"]) === false, "<code>mutation(["hello", "neo"])</code> should return false.");
+  - text: <code>mutation([&quot;voodoo&quot;, &quot;no&quot;])</code> возвращает false.
+    testString: assert(mutation(["voodoo", "no"]) === false, "<code>mutation(["voodoo", "no"])</code> should return false.");
 
 ```
 
