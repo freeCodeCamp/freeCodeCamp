@@ -17,8 +17,8 @@ localeTitle: Создание промежутка между строк с ис
 
 ```yml
 tests:
-  - text: 'класс <code>container</code> должен иметь свойство <code>grid-row-gap</code> со значением 5px.'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.");'
+  - text: класс <code>container</code> должен иметь свойство <code>grid-row-gap</code> со значением 5px.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.");
 
 ```
 
