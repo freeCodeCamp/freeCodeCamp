@@ -17,8 +17,8 @@ localeTitle: Создайте свой первый CSS Grid
 
 ```yml
 tests:
-  - text: класс <code>container</code> должен иметь свойство <code>display</code> со значением <code>grid</code> .
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.");'
+  - text: класс <code>container</code> должен иметь свойство <code>display</code> со значением <code>grid</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.");
 
 ```
 
