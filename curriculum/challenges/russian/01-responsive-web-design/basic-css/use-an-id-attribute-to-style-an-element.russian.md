@@ -17,14 +17,14 @@ localeTitle: Использовать атрибут id для стилиров�
 
 ```yml
 tests:
-  - text: Дайте элементу <code>form</code> идентификатор <code>cat-photo-form</code> .
-    testString: 'assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");'
-  - text: Элемент <code>form</code> должен иметь зеленый <code>background-color</code> .
-    testString: 'assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", "Your <code>form</code> element should have the <code>background-color</code> of green.");'
-  - text: 'Убедитесь, что ваш элемент <code>form</code> имеет атрибут <code>id</code> .'
-    testString: 'assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, "Make sure your <code>form</code> element has an <code>id</code> attribute.");'
-  - text: Не придайте вашей <code>form</code> никаких атрибутов <code>class</code> или <code>style</code> .
-    testString: 'assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.");'
+  - text: Дайте элементу <code>form</code> идентификатор <code>cat-photo-form</code>.
+    testString: assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");
+  - text: Элемент <code>form</code> должен иметь зеленый <code>background-color</code>.
+    testString: assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", "Your <code>form</code> element should have the <code>background-color</code> of green.");
+  - text: Убедитесь, что ваш элемент <code>form</code> имеет атрибут <code>id</code>.
+    testString: assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, "Make sure your <code>form</code> element has an <code>id</code> attribute.");
+  - text: Не придайте вашей <code>form</code> никаких атрибутов <code>class</code> или <code>style</code>.
+    testString: assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.");
 
 ```
 
