@@ -18,19 +18,19 @@ localeTitle: Добавьте суперсилы Flex во вставку тви
 ```yml
 tests:
   - text: Ваш <code>header</code> должен иметь свойство <code>display</code> установленное в flex.
-    testString: 'assert($("header").css("display") == "flex", "Your <code>header</code> should have a <code>display</code> property set to flex.");'
+    testString: assert($("header").css("display") == "flex", "Your <code>header</code> should have a <code>display</code> property set to flex.");
   - text: Ваш <code>footer</code> должен иметь свойство <code>display</code> установленное в flex.
-    testString: 'assert($("footer").css("display") == "flex", "Your <code>footer</code> should have a <code>display</code> property set to flex.");'
+    testString: assert($("footer").css("display") == "flex", "Your <code>footer</code> should have a <code>display</code> property set to flex.");
   - text: Ваш <code>h3</code> должен иметь свойство <code>display</code> установленное в flex.
-    testString: 'assert($("h3").css("display") == "flex", "Your <code>h3</code> should have a <code>display</code> property set to flex.");'
+    testString: assert($("h3").css("display") == "flex", "Your <code>h3</code> should have a <code>display</code> property set to flex.");
   - text: Ваш <code>h4</code> должен иметь свойство <code>display</code> установленное в flex.
-    testString: 'assert($("h4").css("display") == "flex", "Your <code>h4</code> should have a <code>display</code> property set to flex.");'
+    testString: assert($("h4").css("display") == "flex", "Your <code>h4</code> should have a <code>display</code> property set to flex.");
   - text: Ваше <code>.profile-name</code> должно иметь свойство <code>display</code> установленное в flex.
-    testString: 'assert($(".profile-name").css("display") == "flex", "Your <code>.profile-name</code> should have a <code>display</code> property set to flex.");'
+    testString: assert($(".profile-name").css("display") == "flex", "Your <code>.profile-name</code> should have a <code>display</code> property set to flex.");
   - text: Ваш <code>.follow-btn</code> должен иметь свойство <code>display</code> <code>.follow-btn</code> установленное в flex.
-    testString: 'assert($(".follow-btn").css("display") == "flex", "Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.");'
+    testString: assert($(".follow-btn").css("display") == "flex", "Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.");
   - text: У вашего <code>.stats</code> должно быть свойство <code>display</code> установленное в flex.
-    testString: 'assert($(".stats").css("display") == "flex", "Your <code>.stats</code> should have a <code>display</code> property set to flex.");'
+    testString: assert($(".stats").css("display") == "flex", "Your <code>.stats</code> should have a <code>display</code> property set to flex.");
 
 ```
 
