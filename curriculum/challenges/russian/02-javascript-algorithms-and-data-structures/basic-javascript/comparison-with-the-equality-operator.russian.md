@@ -18,13 +18,13 @@ localeTitle: Сравнение с оператором равенства
 ```yml
 tests:
   - text: <code>testEqual(10)</code> должен вернуть «Не <code>testEqual(10)</code> »
-    testString: 'assert(testEqual(10) === "Not Equal", "<code>testEqual(10)</code> should return "Not Equal"");'
-  - text: <code>testEqual(12)</code> должен возвращать &quot;Equal&quot;
-    testString: 'assert(testEqual(12) === "Equal", "<code>testEqual(12)</code> should return "Equal"");'
-  - text: <code>testEqual(&quot;12&quot;)</code> должен возвращать &quot;Equal&quot;
-    testString: 'assert(testEqual("12") === "Equal", "<code>testEqual("12")</code> should return "Equal"");'
+    testString: assert(testEqual(10) === "Not Equal", "<code>testEqual(10)</code> should return "Not Equal"");
+  - text: <code>testEqual(12)</code> должен возвращать "Equal"
+    testString: assert(testEqual(12) === "Equal", "<code>testEqual(12)</code> should return "Equal"");
+  - text: <code>testEqual("12")</code> должен возвращать "Equal"
+    testString: assert(testEqual("12") === "Equal", "<code>testEqual("12")</code> should return "Equal"");
   - text: Вы должны использовать оператор <code>==</code>
-    testString: 'assert(code.match(/==/g) && !code.match(/===/g), "You should use the <code>==</code> operator");'
+    testString: assert(code.match(/==/g) && !code.match(/===/g), "You should use the <code>==</code> operator");
 
 ```
 
