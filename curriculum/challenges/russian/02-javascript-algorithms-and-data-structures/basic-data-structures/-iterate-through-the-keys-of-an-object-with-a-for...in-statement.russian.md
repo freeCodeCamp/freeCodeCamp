@@ -18,9 +18,9 @@ localeTitle: Итерация через ключи объекта с помощ
 ```yml
 tests:
   - text: <code>users</code> объект содержит пользователей <code>Jeff</code> и <code>Ryan</code> с <code>online</code> настройкой <code>true</code> и пользователи <code>Alan</code> и <code>Sarah</code> с <code>online</code> настройкой на <code>false</code>
-    testString: 'assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, "The <code>users</code> object contains users <code>Jeff</code> and <code>Ryan</code> with <code>online</code> set to <code>true</code> and users <code>Alan</code> and <code>Sarah</code> with <code>online</code> set to <code>false</code>");'
-  - text: 'Функция <code>countOnline</code> возвращает количество пользователей, у которых свойство <code>online</code> установлено <code>countOnline</code> <code>true</code>'
-    testString: 'assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, "The function <code>countOnline</code> returns the number of users with the <code>online</code> property set to <code>true</code>");'
+    testString: assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, "The <code>users</code> object contains users <code>Jeff</code> and <code>Ryan</code> with <code>online</code> set to <code>true</code> and users <code>Alan</code> and <code>Sarah</code> with <code>online</code> set to <code>false</code>");
+  - text: Функция <code>countOnline</code> возвращает количество пользователей, у которых свойство <code>online</code> установлено <code>countOnline</code> <code>true</code>
+    testString: assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, "The function <code>countOnline</code> returns the number of users with the <code>online</code> property set to <code>true</code>");
 
 ```
 
