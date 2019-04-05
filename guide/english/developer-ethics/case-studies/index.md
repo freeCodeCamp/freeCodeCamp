@@ -3,7 +3,7 @@ title: Case Studies
 ---
 ## Case Studies
 
-The Markkula Center for Applied Ethics at Santa Clara University published a large collection of case studies to help sensitize practicing software developers and students to the various types of ethical dilemmas they may face.
+The Markkula Center for Applied Ethics at Santa Clara University published a large collection of case studies to help expose practicing software developers and students to the various types of ethical dilemmas they may face.
 
 Cases:
 
