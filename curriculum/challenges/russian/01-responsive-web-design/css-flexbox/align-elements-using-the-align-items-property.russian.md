@@ -17,8 +17,8 @@ localeTitle: Выравнивание элементов используя св
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-container</code> должен иметь свойство <code>align-items</code> заданное значением center.'
-    testString: 'assert($("#box-container").css("align-items") == "center", "The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.");'
+  - text: Элемент <code>#box-container</code> должен иметь свойство <code>align-items</code> заданное значением center.
+    testString: assert($("#box-container").css("align-items") == "center", "The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.");
 
 ```
 
