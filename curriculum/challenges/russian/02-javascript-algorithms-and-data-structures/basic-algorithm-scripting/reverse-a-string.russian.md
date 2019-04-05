@@ -20,13 +20,13 @@ localeTitle: Обратить строку
 ```yml
 tests:
   - text: <code>reverseString(&quot;hello&quot;)</code> должен возвращать строку.
-    testString: 'assert(typeof reverseString("hello") === "string", "<code>reverseString("hello")</code> should return a string.");'
-  - text: <code>reverseString(&quot;hello&quot;)</code> должно стать <code>&quot;olleh&quot;</code> .
-    testString: 'assert(reverseString("hello") === "olleh", "<code>reverseString("hello")</code> should become <code>"olleh"</code>.");'
-  - text: <code>reverseString(&quot;Howdy&quot;)</code> должен стать <code>&quot;ydwoH&quot;</code> .
-    testString: 'assert(reverseString("Howdy") === "ydwoH", "<code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.");'
-  - text: <code>reverseString(&quot;Greetings from Earth&quot;)</code> должен возвращать <code>&quot;htraE morf sgniteerG&quot;</code> .
-    testString: 'assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG", "<code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.");'
+    testString: assert(typeof reverseString("hello") === "string", "<code>reverseString("hello")</code> should return a string.");
+  - text: <code>reverseString(&quot;hello&quot;)</code> должно стать <code>&quot;olleh&quot;</code>.
+    testString: assert(reverseString("hello") === "olleh", "<code>reverseString("hello")</code> should become <code>"olleh"</code>.");
+  - text: <code>reverseString(&quot;Howdy&quot;)</code> должен стать <code>&quot;ydwoH&quot;</code>.
+    testString: assert(reverseString("Howdy") === "ydwoH", "<code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.");
+  - text: <code>reverseString(&quot;Greetings from Earth&quot;)</code> должен возвращать <code>&quot;htraE morf sgniteerG&quot;</code>.
+    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG", "<code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.");
 
 ```
 
