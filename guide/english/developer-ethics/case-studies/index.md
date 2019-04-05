@@ -23,6 +23,4 @@ Cases:
 
 
 #### More Information
-* [The IEEE-CS/ACM Joint Task Force on Software Engineering Ethics and Professional Practices.](https://www.computer.org/education/code-of-ethics).
-
 * [The Markkula Center's homepage.](https://www.scu.edu/ethics/)
