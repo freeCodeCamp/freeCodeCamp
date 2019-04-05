@@ -17,8 +17,8 @@ localeTitle: Используйте свойство flex-direction для со�
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-container</code> должен иметь свойство <code>flex-direction</code> заданное для обратного преобразования строки.'
-    testString: 'assert($("#box-container").css("flex-direction") == "row-reverse", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.");'
+  - text: Элемент <code>#box-container</code> должен иметь свойство <code>flex-direction</code> заданное для обратного преобразования строки.
+    testString: assert($("#box-container").css("flex-direction") == "row-reverse", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.");
 
 ```
 
