@@ -2,7 +2,7 @@
 id: 56592a60ddddeae28f7aa8e1
 title: Access Multi-Dimensional Arrays With Indexes
 challengeType: 1
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
+videoUrl: 'https://scrimba.com/c/ckND4Cq'
 ---
 
 ## Description
@@ -26,7 +26,7 @@ tests:
   - text: <code>myData</code> should be equal to <code>8</code>.
     testString: assert(myData === 8, '<code>myData</code> should be equal to <code>8</code>.');
   - text: You should be using bracket notation to read the correct value from <code>myArray</code>.
-    testString: assert(/myArray\[2\]\[1\]/g.test(code) && !/myData\s*=\s*(?:.*[-+*/%]|\d)/g.test(code), 'You should be using bracket notation to read the correct value from <code>myArray</code>.');
+    testString: assert(/myData=myArray\[2\]\[1\]/.test(code.replace(/\s/g, '')));
 
 ```
 

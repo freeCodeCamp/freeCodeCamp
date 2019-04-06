@@ -3,11 +3,6 @@ title: Object Assign
 ---
 ## Object Assign
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/object/object-assign/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 The `Object.assign()` method is used to 1) add properties and values to an existing object, 2) make a new copy of an existing object, or 3) combine multiple existing objects into a single object. The `Object.assign()` method requires one targetObject as a parameter and can accept an unlimited number of sourceObjects as additional parameters.
 
 Important to note here is that the targetObject parameter will always be modified. If that parameter points to an existing object, then that object will be both modified and copied. If, however, you wish to create a copy of an object without modifying that original object, you can pass an empty object `{}` as the first (or targetObject) parameter and the object to be copied as the second (or sourceObject) parameter.

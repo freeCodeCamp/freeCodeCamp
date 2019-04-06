@@ -1,16 +1,31 @@
 ---
 id: 587d7fa5367417b2b2512bbd
 title: Extend One Set of CSS Styles to Another Element
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: Extiende un conjunto de estilos CSS a otro elemento
 ---
 
 ## Description
-<section id="description"> Sass tiene una característica llamada <code>extend</code> que facilita tomar prestadas las reglas de CSS de un elemento y construirlas sobre otro. Por ejemplo, el siguiente bloque de reglas CSS <code>.panel</code> una clase <code>.panel</code> . Tiene un <code>background-color</code> , <code>height</code> y <code>border</code> . <blockquote> .panel{ <br> color de fondo: rojo; <br> altura: 70px; <br> borde: 2px verde sólido; <br> } </blockquote> Ahora quieres otro panel llamado <code>.big-panel</code> . Tiene las mismas propiedades base que el <code>.panel</code> , pero también necesita un <code>width</code> y <code>font-size</code> . Es posible copiar y pegar las reglas CSS iniciales de <code>.panel</code> , pero el código se vuelve repetitivo a medida que agrega más tipos de paneles. La directiva <code>extend</code> es una forma sencilla de reutilizar las reglas escritas para un elemento, y luego agregar más para otro: <blockquote> .big-panel { <br> @extend .panel; <br> ancho: 150px; <br> tamaño de letra: 2em; <br> } </blockquote> El <code>.big-panel</code> tendrá las mismas propiedades que <code>.panel</code> además de los nuevos estilos. </section>
+<section id="description"> Sass tiene una característica llamada <code>extend</code> que facilita tomar prestadas las reglas de CSS de un elemento y construirlas sobre otro. Por ejemplo, el siguiente bloque de reglas CSS <code>.panel</code> una clase <code>.panel</code> . Tiene un <code>background-color</code> , <code>height</code> y <code>border</code> . 
+
+```css
+.panel{ 
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+```
+Ahora quieres otro panel llamado <code>.big-panel</code> . Tiene las mismas propiedades base que el <code>.panel</code> , pero también necesita un <code>width</code> y <code>font-size</code> . Es posible copiar y pegar las reglas CSS iniciales de <code>.panel</code> , pero el código se vuelve repetitivo a medida que agrega más tipos de paneles. La directiva <code>extend</code> es una forma sencilla de reutilizar las reglas escritas para un elemento, y luego agregar más para otro: 
+
+```css
+.big-panel { 
+  @extend .panel; 
+  width: 150px;
+  font-size: 2em;
+}
+```
+El <code>.big-panel</code> tendrá las mismas propiedades que <code>.panel</code> además de los nuevos estilos. </section>
 
 ## Instructions
 <section id="instructions"> Cree una clase <code>.info-important</code> que extienda <code>.info</code> y que también tenga un <code>background-color</code> definido en magenta. </section>
