@@ -31,6 +31,38 @@ free( arrayPtr );
 ```
 This statement will deallocate the memory previously allocated. C does not come with a `garbage collector` like some other languages, such as Java. As a result, memory not properly freed will continue to be allocated after the program is closed.
 
+### Example
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num, i, *ptr, sum = 0;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &num);
+
+    ptr = (int*) malloc(num * sizeof(int));  //memory is allocated using malloc
+    if(ptr == NULL)                     
+    {
+        printf("Error! memory not allocated.");
+        exit(0);
+    }
+
+    printf("Enter elements of array: ");
+    for(i = 0; i < num; ++i)
+    {
+        scanf("%d", ptr + i);
+        sum += *(ptr + i);
+    }
+
+    printf("Sum = %d", sum);
+    free(ptr);
+    return 0;
+}
+```
+
 # Before you go on...
 ## A Review
 * Malloc is used for dynamic memory allocation and is useful when you don't know the amount of memory needed during compile time.
