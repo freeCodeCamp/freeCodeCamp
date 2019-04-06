@@ -2,8 +2,8 @@
 title: Lambda Expressions
 ---
 ## Lambda Expressions
-Lambda Expressions are ideally used when we have something simple to be done and we are more interested in quickly getting the job done rather than formally naming the function. Lambda expressions are a short, concise way to declare small and anonymous functions (it is not necessary to provide a name for lambda functions).
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/python/lambda-expressions/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+
+Lambda Expressions are used when an operation only has to be performed once, meaning that there is no need for defining a function as it will not be used again. Lambda expressions also known as anonymous functions, as they are not named (defined). 
 
 Lambda functions can contain only one expression, so they are not well suited for functions with control-flow statements.
 
