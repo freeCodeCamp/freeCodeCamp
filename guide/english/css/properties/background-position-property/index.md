@@ -14,7 +14,7 @@ body {
 }
 ```
 
-By default, background-position property is set to `0% 0%`.
+By default, the background-position property is set to `0% 0%`.
 
 **Property values:**
 
@@ -30,7 +30,7 @@ Other permitted property values are `initial` and `inherit`.
 
 `inherit`: Inherits the value from parent element.
 
-**Note:** When only one value is given to background-property then the other is, by default, set to `center`.
+**Note:** When only one value is given to background-property, then the other is, by default, set to `center`.
 
 **Other Resources:**
 
