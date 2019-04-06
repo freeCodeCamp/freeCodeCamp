@@ -6,7 +6,7 @@ title: Factorials
 
 ### Definition of Factorial
 
-The factorial is to multiply it by every intiger lower then it ending at one. If the initial number is negative the result is infinity.
+The factorial is to multiply it by every integer lower then it ending at one. If the initial number is negative the result is infinity.
 
 A factorial of <span class="texhtml"> n </span>, a non-negative integer, is defined as:
 
