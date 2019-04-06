@@ -183,7 +183,7 @@ n is equal to 5 and m is equal to 10!
 
 Here's the first set of parenthesis: `n > m || n == 5`. This will be true if n is greater than m, or if n is equal to 5. n is not greater than m, but n is equal to 5. Because one of these things are true, and they are joined by an or, this statement will be true and the code within will be printed. The important point to note here is that, when using an OR (||) in code, if the first condition before the || is true, then it will not check for the condition present after ||. In the code above since n = 5 is not greater than m = 10, the condition n==5 is checked and is evaluated to true.
 
-Because the previous code was executed, it won't check the other else statements- those only get checked if the ones previous don't get checked. Just for the sake of exercise, though, consider what the rest of the code would be checking. `n == 5 && m == 10` will be true if n is equal to 5 and m is equal to 10. This is true, but if n was 6 it would no longer be true and the code within that else would not be run.
+Because the previous code was executed, it won't check the other else statements - those only get checked if the ones previous don't get checked. Just for the sake of exercise, though, consider what the rest of the code would be checking. `n == 5 && m == 10` will be true if n is equal to 5 and m is equal to 10. This is true, but if n was 6 it would no longer be true and the code within that else would not be run.
 
 `!(n == 6)` uses parenthesis to make the operation more obvious. Just like in math, parenthesis can be used for order of operations: things within the parenthesis will be performed before things that are not within parenthesis. So in this case, `n == 6` will be evaluated, and is false. The `!`, 'not', flips this from false to true, so this operation returns true. Like before, however, it will not run only because one of the previous statements was true that this is attached to would have already run.
 
@@ -233,6 +233,7 @@ int main() {
 ```
 
 What will be the Output? "NO! I am boss"? if you are guessing this output then you are wrong.
+
 Why did this happen? because in the if statement you used "=" instead of "==" operator.
 "==" is comparator . 
 
