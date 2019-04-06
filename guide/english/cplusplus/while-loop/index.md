@@ -51,6 +51,28 @@ value of a: 18
 value of a: 19
 ```
 
+Example of Skipped Loop Body:
+```C++
+#include<iostream>
+using namespace std;
+
+int main(){
+   //Local variable declaration
+   int age=10;
+   
+   //while loop execution
+   while(age>21) {
+   cout<<"The citizen is an adult."<<endl;
+   }
+   
+   return 0;
+}
+```
+
+Output:
+
+```
+```
 
 ### Sources
-- www.tutorialspoint.com
+* www.tutorialspoint.com
