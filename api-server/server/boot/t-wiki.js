@@ -5,8 +5,6 @@ module.exports = function(app) {
   app.use(router);
 
   function showForum(req, res) {
-    res.redirect(
-      'http://forum.freecodecamp.org/'
-    );
+    res.redirect('http://forum.freecodecamp.org/');
   }
 };

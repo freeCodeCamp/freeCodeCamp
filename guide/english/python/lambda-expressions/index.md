@@ -4,15 +4,13 @@ title: Lambda Expressions
 ## Lambda Expressions
 
 Lambda Expressions are used when an operation only has to be performed once, meaning that there is no need for defining a function as it will not be used again. Lambda expressions also known as anonymous functions, as they are not named (defined). 
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/python/lambda-expressions/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-Lambda Expressions in Python are a short way to declare small and anonymous functions (it is not necessary to provide a name for lambda functions). Lambda functions behave just like regular functions declared with the `def` keyword. They come in handy when you want to define a small function in a concise way. They can contain only one expression, so they are not best suited for functions with control-flow statements.
-master
+Lambda functions can contain only one expression, so they are not best suited for functions with control-flow statements.
 
 #### Syntax of Lambda Function
 `lambda arguments: expression`
 
-Lambda functions can have any number of arguments but only one expression
+Lambda functions can have any number of arguments but only one expression.
 
 #### Example code
 ```py
@@ -38,15 +36,25 @@ lambda_func(3) # Returns 9
 ```
 ### Intermediate
 ```py
-lambda_func = lambda x: True if x**2 >= 10 else False
-lambda_func(3) # Returns False
-lambda_func(4) # Returns True
+lambda_func = lambda x: True if x**2 >= 10 else False  # Function that returns True if the square of x >= 10
+lambda_func(3) # Returns False (3**2 = 9, which is < 10)
+lambda_func(4) # Returns True (4**2 = 16, which is >= 10)
 ```
 ### Complex
 ```py
 my_dict = {"A": 1, "B": 2, "C": 3}
-sorted(my_dict, key=lambda x: my_dict[x]%3) # Returns ['C', 'A', 'B']
+sorted(my_dict, key=lambda x: my_dict[x]%3) # Returns ['C', 'A', 'B']  # sort dict by the values % 3 (remainders from division by 3)
 ```
+
+### Passing lambda as fuction parameter
+```py
+def apply(x, y, fun):
+  return fun(x, y)
+  
+res = apply(3, 5, lambda x, y: x + y)
+print(res) # Output: 8
+```
+
 ### Use-case
 
 Let's say you want to filter out odd numbers from a `list`. You could use a `for` loop:
@@ -63,7 +71,7 @@ print(filtered)      # Python 2: print filtered
 # [1, 3, 5, 7, 9]
  ```
 
-You could write this as a one liner with list-comprehensions
+You could write this as a one-liner with list-comprehensions
 
 ```python
 filtered = [x for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] if x % 2 != 0]
