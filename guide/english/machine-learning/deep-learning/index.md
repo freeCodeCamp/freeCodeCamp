@@ -42,6 +42,10 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://github.com/gluon-api/gluon-api/">Gluon</a>
 * <a href="http://deeplearning.net/software/theano/">Theano</a>
 
+### Deep learning in Android & Web  
+We can now add our pretrained model in our android application and perform classification in real-time. Similarly, we can create REST APIs using Flask/Django and add our pretrained model there as well.
+* [Flask with PyTorch](https://github.com/WenmuZhou/flask_pytorch)
+* [Tensorflow with Android](https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample)
 
 ### Courses:
 * <a href="http://course.fast.ai/">Deep Learning Course Part 1 Fast.AI</a>
@@ -56,3 +60,7 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/">A Beginner's Guide To Understanding Convolutional Neural Networks</a>
 * <a href="https://www.youtube.com/playlist?list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu">Deep Learning SIMPLIFIED - DeepLearning.TV</a>
 * <a href="http://neuralnetworksanddeeplearning.com"> Neural Networks and Deep Learning</a>
+
+### Learning Resources for deep learning 
+* <a href="https://www.coursera.org/specializations/deep-learning">Deep Learning Speciliazation</a> 
+
