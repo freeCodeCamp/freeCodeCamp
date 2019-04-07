@@ -4,6 +4,9 @@ title: Map State to Props
 ## Map State to Props
 
 ### Solution
+<details>
+  <summary>Spoiler!</summary>
+
 ```jsx
 const state = [];
 
@@ -14,6 +17,8 @@ const mapStateToProps = (state)=>{
   }
 }
 ```
+
+</details>
 
 <a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/front-end-libraries/react-and-redux/map-state-to-props/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
