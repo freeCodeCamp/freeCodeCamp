@@ -23,6 +23,9 @@ You may wanna add the following ```<div>``` into render content to check if the 
 spread operator ```...``` can be used for array concatenation in ```submitMessage()``` method declaration.
 
 ### Solution
+<details>
+  <summary>Spoiler!</summary>
+
 ```jsx
 class DisplayMessages extends React.Component {
   constructor(props) {
@@ -65,6 +68,8 @@ class DisplayMessages extends React.Component {
   }
 };
 ```
+
+</details>
 
 <a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/front-end-libraries/react-and-redux/manage-state-locally-first/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
