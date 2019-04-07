@@ -4,7 +4,9 @@ title: Use Provider to Connect Redux to React
 ## Use Provider to Connect Redux to React
 
 ### Hint 1
+Render a React Component!
 
+### Hint 2
 You do not need to wrap the `Provider` in any `<div>` tags.
 
 ### Solution
