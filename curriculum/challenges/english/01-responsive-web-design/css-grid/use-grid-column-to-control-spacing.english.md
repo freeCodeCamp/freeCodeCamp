@@ -15,6 +15,12 @@ To control the amount of columns an item will consume, you can use the <code>gri
 Here's an example:
 <blockquote>grid-column: 1 / 3;</blockquote>
 This will make the item start at the first vertical line of the grid on the left and span to the 3rd line of the grid, consuming two columns.
+
+Additionally, using a ending value of <code>-1</code> will cause the item to span to the end of the grid, regardless of the number of columns.
+Here's an example:
+<blockquote>grid-column: 1 / -1;</blockquote>
+
+This will make the item start at the first vertical line of the grid on the left and span to the end of the grid, consuming all columns.
 </section>
 
 ## Instructions
@@ -27,8 +33,8 @@ Make the item with the class <code>item5</code> consume the last two columns of 
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.
-    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), '<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.');
+  - text: <code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code> or <code>2 / -1</code>.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?(4|-1)\s*?;[\s\S]*}/gi), '<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.');
 
 ```
 
