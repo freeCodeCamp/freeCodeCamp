@@ -8,7 +8,7 @@ Bind the method calls in component attributes with ```this```, e.g.
 ```jsx
 <input onChange={this.handleChange.bind(this)} value={this.state.input}/>
 ```
-or the binding can be done before ```render()```
+or the binding can be done beforehand
 
 ### Hint 2
 Pass ```event``` to ```handleChange()``` method declaration and note that ```event.target.value``` stores the input value.
@@ -55,8 +55,8 @@ class DisplayMessages extends React.Component {
         <input onChange={this.handleChange.bind(this)} value={this.state.input}/>
         <button onClick={this.submitMessage.bind(this)}>Submit</button>
         <ul>
-          {this.state.messages.map((x)=>{
-            return <li>{x}</li>
+          {this.state.messages.map((x, i)=>{
+            return <li key={i}>{x}</li>
           })}
         </ul>
         { /* change code above this line */ }
