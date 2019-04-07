@@ -3,7 +3,13 @@ title: Connect Redux to React
 ---
 ## Connect Redux to React
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/connect-redux-to-react/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
+```jsx
+// change code below this line
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps) (Presentational)
+```
+
+<a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/front-end-libraries/react-and-redux/connect-redux-to-react/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
