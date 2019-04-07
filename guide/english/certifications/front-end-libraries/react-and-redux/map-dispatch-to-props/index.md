@@ -4,6 +4,9 @@ title: Map Dispatch to Props
 ## Map Dispatch to Props
 
 ### Solution
+<details>
+  <summary>Spoiler!</summary>
+  
 ```jsx
 const addMessage = (message) => {
   return {
@@ -21,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 ```
+</details>
 
 <a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/front-end-libraries/react-and-redux/map-dispatch-to-props/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
