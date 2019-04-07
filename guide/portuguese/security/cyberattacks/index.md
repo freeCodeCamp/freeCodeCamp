@@ -10,13 +10,13 @@ Os ataques cibernéticos podem ser direcionados e não direcionados, e os mecani
 
 Um ataque cibernético também pode ser não segmentado. O exemplo clássico de tais ataques é o phishing, em que os cibercriminosos enviam e-mails para um grande grupo de pessoas que se disfarçam como uma organização legítima para incentivar os usuários a compartilhar informações confidenciais ou visitar um site falso. Alternativamente, o hacker poderia comprometer um site legítimo e plantar um malware (software malicioso) pelo qual os visitantes seriam infectados. Em 2017, um site do governo ucraniano foi infectado por um malware que apaga os discos rígidos dos visitantes.
 
-Um dos maiores ataques cibernéticos até hoje é o hack do Yahoo, isso afetou todos os 3 bilhões de contas de usuários. O hack foi perigoso, pois expunha nomes de usuários, endereços de e-mail, números de telefone, DOB, senhas criptografadas e questões de segurança não criptografadas. Este ataque prova que não importa quão grande seja uma empresa, ninguém pode ser 100% que seus dados estão seguros.
+Um dos maiores ataques cibernéticos até hoje é o hack do Yahoo, isso afetou todos os 3 bilhões de contas de usuários. O hack foi perigoso, pois expunha nomes de usuários, endereços de e-mail, números de telefone, DOB, senhas criptografadas e questões de segurança não criptografadas. Este ataque prova que não importa quão grande seja uma empresa, ninguém pode afirmar que seus dados estão 100% seguros.
 
 ## Tipos comuns de ataques cibernéticos
 
 *   Malware
 *   Phishing
-*   Ataque de injeção de SQL
+*   Ataque de injeção de SQL (SQL Injection)
 *   Exploração de Vulnerabilidade
 *   Scripts entre sites (XSS)
 *   Ataques por senha
@@ -25,11 +25,11 @@ Um dos maiores ataques cibernéticos até hoje é o hack do Yahoo, isso afetou t
 *   Reutilização de credenciais
 *   Software desonesto
 *   Envenenamento ARP (Rede Pentest)
-*   Senha Bruteforce
+*   Força Bruta
 *   Inclusão de arquivos locais / remotos (Web App Pentest)
 *   Referência de Objeto Indireto (IDOR)
 *   Negação Distribuída de Serviço (DDoS)
-*   Ataque de Tróia
+*   Cavalo de Tróia (Trojan Horse)
 *   Wifi-Phishing
 *   Envenenamento de DNS
 *   Spoofing por e-mail
