@@ -5,7 +5,7 @@ title: Typeof
 
 `typeof` is a JavaScript keyword that will return the type of a variable when you call it. You can use this to validate function parameters or check if variables are defined. There are other uses as well.
 
-The `typeof` operator is useful because it is an easy way to check the type of a variable in your code. This is important because JavaScript is a is a <a href='https://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed' target='_blank' rel='nofollow'>dynamically typed language</a>. This means that you aren't required to assign types to variables when you create them. Because a variable is not restricted in this way, its type can change during the runtime of a program.
+The `typeof` operator is useful because it is an easy way to check the type of a variable in your code. This is important because JavaScript is a <a href='https://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed' target='_blank' rel='nofollow'>dynamically typed language</a>. This means that you aren't required to assign types to variables when you create them. Because a variable is not restricted in this way, its type can change during the runtime of a program.
 
 For example:
 ```javascript
@@ -25,6 +25,8 @@ x = 'string';
 console.log(typeof x) // string
 x = { key: 'value' };
 console.log(typeof x) // object
+x = true;
+console.log(type of x) // boolean
 ```
 
 This can be useful for checking the type of a variable in a function and continuing as appropriate.
@@ -81,10 +83,14 @@ Even thought this is a useful validation method, we have to be careful because j
 ```javascript
 var x = [1,2,3,4]; 
 console.log(typeof x)  // object
-
 console.log(typeof null)  // object
-
 ```
+
+The last example above is a well-known JavaScript 'mistake' and a fix was proposed in ECMAScript, which would have resulted in: 
+```javascript
+typeof null === 'null' // true
+```
+But due to major legacy issues it had to be rejected.
 
 
 ### More Information:

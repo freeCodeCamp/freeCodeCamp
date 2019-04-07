@@ -20,7 +20,7 @@ $("p").hover(function(){
     $(this).css("background-color", "pink");
 });
 ```
-So this means that hover on paragraph will change it's background color to yellow and the opposite will change back to pink.
+So this means that hover on paragraph will change its background color to yellow and the opposite will change back to pink.
 
 ### More Information
 More information can be found [here].
