@@ -42,6 +42,12 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://github.com/gluon-api/gluon-api/">Gluon</a>
 * <a href="http://deeplearning.net/software/theano/">Theano</a>
 
+
+### Courses:
+* <a href="http://course.fast.ai/">Deep Learning Course Part 1 Fast.AI</a>
+* <a href="http://course.fast.ai/part2.html">Deep Learning Course Part 2 Fast.AI</a>
+* <a href="https://www.kaggle.com/learn/deep-learning">Kaggle Deep Learning Course</a>
+
 ### More Information:
 * <a href="http://www.deeplearningbook.org">Deep Learning Textbook</a>
 * <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep Learning</a>
