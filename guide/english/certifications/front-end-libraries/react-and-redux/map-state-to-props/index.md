@@ -3,7 +3,19 @@ title: Map State to Props
 ---
 ## Map State to Props
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react-and-redux/map-state-to-props/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
+```jsx
+const state = [];
+
+// change code below this line
+const mapStateToProps = (state)=>{
+  return {
+    messages: state
+  }
+}
+```
+
+<a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/front-end-libraries/react-and-redux/map-state-to-props/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
