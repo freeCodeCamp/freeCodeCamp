@@ -3,7 +3,7 @@ title: OAuth2 Protocol
 ---
 ## OAuth 2.0
 
-<a href='https://tools.ietf.org/html/rfc6749' target='_blank' rel='nofollow'>OAuth 2.0</a> is a industry standard authorization protocol, which enables third party application a limited access to resources on behalf of resource owner (users of the system)
+<a href='https://tools.ietf.org/html/rfc6749' target='_blank' rel='nofollow'>OAuth 2.0</a> is an industry standard authorization protocol, which enables third party applications limited access to resources on behalf of a resource owner (users of the system).
 
 OAuth is widely being used in many major internet companies like Google, Facebook, Slack etc
 
