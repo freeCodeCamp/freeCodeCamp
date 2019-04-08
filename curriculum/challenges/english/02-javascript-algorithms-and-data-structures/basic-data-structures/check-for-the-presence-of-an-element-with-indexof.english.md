@@ -23,8 +23,8 @@ For example:
 tests:
   - text: <code>quickCheck(["squash", "onions", "shallots"], "mushrooms")</code> should return <code>false</code>
     testString: assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false, '<code>quickCheck(["squash", "onions", "shallots"], "mushrooms")</code> should return <code>false</code>');
-  - text: <code>quickCheck(["squash", "onions", "shallots"], "onions")</code> should return <code>true</code>
-    testString: assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'onions'), true, '<code>quickCheck(["squash", "onions", "shallots"], "onions")</code> should return <code>true</code>');
+  - text: <code>quickCheck(["onions", "squash", "shallots"], "onions")</code> should return <code>true</code>
+    testString: assert.strictEqual(quickCheck(['onions', 'squash', 'shallots'], 'onions'), true, '<code>quickCheck(["onions", "squash", "shallots"], "onions")</code> should return <code>true</code>');
   - text: <code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>
     testString: assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true, '<code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>');
   - text: <code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>
