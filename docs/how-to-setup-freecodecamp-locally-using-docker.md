@@ -141,7 +141,7 @@ Make sure the command line tool (Cmd, PowerShell or Git Bash for Windows, etc.) 
 
 We regularly develop on popular and latest operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. Its recommended to lookup your specific issue on resources like: Google, Stack Overflow or Stack Exchange. Chances are that someone has faced the same issue and there is already an answer to your specific query.
 
-If you are on a different OS, and/or are still running into issues, reach out to [contributors community on our public forum](https://www.freeCodeCamp.org/c/contributors) or the [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
+If you are on a different OS, and/or are still running into issues, reach out to [contributors community on our public forum](https://www.freeCodeCamp.org/forum/c/contributors) or the [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
 
 Please avoid creating GitHub issues for pre-requisite software and use the forum and chat room instead.
 
