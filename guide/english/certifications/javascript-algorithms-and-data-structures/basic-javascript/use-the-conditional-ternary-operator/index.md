@@ -25,7 +25,7 @@ Use ternary operator to check for equality.
 
 ```javascript
 function checkEqual(a, b) {
-  return a === b ? "Equal" : "Not Equal";
+  return a == b ? "Equal" : "Not Equal";
 }
 ```
 
