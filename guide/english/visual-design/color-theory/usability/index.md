@@ -6,10 +6,10 @@ title: Color and Usability
 Like the variances in [representation of color by visual displays](/visual-design/color-theory/index.md), human eyes and brain interpret colors in a variety of ways.
 
 About one in twenty people have color blindness.[2]
-That's almost a billion people!
+That's almost a 376 million people!
 Color blindness is when a range of different colors are interpreted as hues of one color.
 Sometimes a person does not know that they experience color blindness, because the colors "look normal" to them.
-This has serious implications for contrasting colors between letters and their backgrounds, and for alerts, where color coveys a context of importance for example.
+This has serious implications for contrasting colors between letters and their backgrounds, and for alerts, where color conveys a context of importance for example.
 Even something as simple as conveying 'stop' and 'go' is problematic, since the most common form of color blindness is where red and green appear the same.
 
 
@@ -52,6 +52,10 @@ The good news is that there is still lots of flexibility available in choosing a
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+#### Useful color scheme picker websites:
+
+1. [Adobe Color](https://color.adobe.com)
+2. [Paletton](http://paletton.com)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
