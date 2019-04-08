@@ -51,7 +51,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+    <h3 class="text-primary text-center">jQuery Playground</h3>
+</div>
 ```
 </section>
