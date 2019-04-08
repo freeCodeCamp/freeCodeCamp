@@ -29,7 +29,7 @@ for (let i=0; i<100; i++) {
 In our draw loop, we render these particles.
 
 ```js
-function draw() {
+const draw = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let i=0; i<particles.length; i++) {
     // update state
@@ -41,14 +41,14 @@ function draw() {
   }
 
   window.requestAnimationFrame(draw);
-}
+};
 window.requestAnimationFrame(draw);
 ```
 
 Now, all we need to do is update velocity and acceleration each frame. We will add the acceleration to the velocity and add the velocity to the position.
 
 ```js
-function draw() {
+const draw = () => {
   for (let i=0; i<particles.length; i++) {
     // update state
     particles[i].x += particles[i].vx;
@@ -60,14 +60,14 @@ function draw() {
   }
 
   window.requestAnimationFrame(draw);
-}
+};
 window.requestAnimationFrame(draw);
 ```
 
 That's it! All we need to do to is create a force somewhere. Let's do it with a click listener.
 
 ```js
-canvas.addEventListener('click', function(e) {
+canvas.addEventListener('click', e => {
   const clickX = e.clientX - canvas.offsetLeft;
   const clickY = e.clientY - canvas.offsetTop;
   for (let i=0; i<particles.length; i++) {
