@@ -94,7 +94,7 @@ Denoting Larry's score by L and Robin's score by R, what is the expected value o
 ```yml
 tests:
   - text: <code>euler298()</code> should return 1.76882294.
-    testString: 'assert.strictEqual(euler298(), 1.76882294, "<code>euler298()</code> should return 1.76882294.");'
+    testString: assert.strictEqual(euler298(), 1.76882294, '<code>euler298()</code> should return 1.76882294.');
 
 ```
 
