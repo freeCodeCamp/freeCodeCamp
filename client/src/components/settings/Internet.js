@@ -96,7 +96,7 @@ class InternetSettings extends Component {
             <FormGroup
               controlId='internet-github'
               validationState={this.getValidationStateFor(githubProfile)}
-              >
+            >
               <ControlLabel>
                 <strong>GitHub</strong>
               </ControlLabel>
@@ -109,7 +109,7 @@ class InternetSettings extends Component {
             <FormGroup
               controlId='internet-linkedin'
               validationState={this.getValidationStateFor(linkedin)}
-              >
+            >
               <ControlLabel>
                 <strong>LinkedIn</strong>
               </ControlLabel>
@@ -122,7 +122,7 @@ class InternetSettings extends Component {
             <FormGroup
               controlId='internet-picture'
               validationState={this.getValidationStateFor(twitter)}
-              >
+            >
               <ControlLabel>
                 <strong>Twitter</strong>
               </ControlLabel>
@@ -135,7 +135,7 @@ class InternetSettings extends Component {
             <FormGroup
               controlId='internet-website'
               validationState={this.getValidationStateFor(website)}
-              >
+            >
               <ControlLabel>
                 <strong>Personal Website</strong>
               </ControlLabel>

@@ -17,9 +17,11 @@ But, how would you write the code for finding the index of the second smallest v
 
 * An easy way is to notice that the smallest value has already been swapped into index 0, so the problem reduces to finding the smallest element in the array starting at index 1.
 
+Selection sort always takes the same number of key comparisons — N(N − 1)/2.
 
 ### Implementation in C/C++
 
+#### Iterative Implementation
 ```C
 for(int i = 0; i < n-1; i++)
 {
@@ -39,11 +41,35 @@ for(int i = 0; i < n-1; i++)
 }
 ```
 
-### Implementation in Javascript
+#### Recursive Implementation
+```C
+int minIndex(int a[], int i, int j) 
+{ 
+    if (i == j) return i;
 
-``` Javascript
+    int k = minIndex(a, i + 1, j);
+
+    return (a[i] < a[k])? i : k; 
+} 
+  
+
+void recurSelectionSort(int a[], int n, int index = 0) 
+{ 
+    
+    if (index == n) return;
+
+    int k = minIndex(a, index, n-1);
+
+    if (k != index) swap(a[k], a[index]);
+
+    recurSelectionSort(a, n, index + 1);
+}
+```
+
+### Implementation in JavaScript
+```js
 function selection_sort(A) {
-    var len = array_length(A);
+    var len = A.length;
     for (var i = 0; i < len - 1; i = i + 1) {
         var j_min = i;
         for (var j = i + 1; j < len; j = j + 1) {
@@ -76,6 +102,30 @@ def seletion_sort(arr):
                   min_i = j
          arr[i], arr[min_i] = arr[min_i], arr[i]
 ```
+### Implementation in Java
+```java
+public void selectionsort(int array[])
+{
+    int n = array.length;            //method to find length of array 
+    for (int i = 0; i < n-1; i++)
+    {
+        int index = i;
+        int min = array[i];          // taking the min element as ith element of array
+        for (int j = i+1; j < n; j++)
+        {
+            if (array[j] < array[index])
+            {
+                index = j;
+                min = array[j];
+            }
+        }
+        int t = array[index];         //Interchange the places of the elements
+        array[index] = array[i];
+        array[i] = t;
+    }
+}
+```
+    
 
 ### Implementation in MATLAB
 ```MATLAB
@@ -96,19 +146,16 @@ end
 ```
 
 ### Properties
-
 * Space Complexity: <b>O(n)</b>
 * Time Complexity: <b>O(n<sup>2</sup>)</b>
 * Sorting in Place: <b>Yes</b>
 * Stable: <b>No</b>
 
 ### Visualization
-
 * [USFCA](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
 * [HackerEarth](https://www.hackerearth.com/practice/algorithms/sorting/selection-sort/visualize/)
 
 ### References
-
 * [Wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
 * [KhanAcademy](https://www.khanacademy.org/computing/computer-science/algorithms#sorting-algorithms)
 * [MyCodeSchool](https://www.youtube.com/watch?v=GUDLRan2DWM)
