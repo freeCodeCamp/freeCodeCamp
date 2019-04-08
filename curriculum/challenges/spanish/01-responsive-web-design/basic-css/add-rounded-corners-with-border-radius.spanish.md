@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08814
 title: Add Rounded Corners with border-radius
 challengeType: 0
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-rounded-corners-a-border-radius'
 videoUrl: ''
 localeTitle: Añadir esquinas redondeadas con radio de borde
 ---
@@ -10,18 +9,20 @@ localeTitle: Añadir esquinas redondeadas con radio de borde
 ## Descripción
 <section id="description"> Tu foto de gato tiene actualmente esquinas afiladas. Podemos redondear esas esquinas con una propiedad CSS llamada <code>border-radius</code> . </section>
 
-## Instrucciones
-<section id="instructions"> Puede especificar un <code>border-radius</code> con píxeles. Dale a tu foto de gato un <code>border-radius</code> de <code>10px</code> de <code>10px</code> . Nota: este desafío permite múltiples soluciones posibles. Por ejemplo, puede agregar <code>border-radius</code> <code>.thick-green-border</code> clase <code>.thick-green-border</code> o a la clase <code>.smaller-image</code> . </section>
+
+## Instructions
+<section id="instructions"> Puede especificar un <code>border-radius</code> con píxeles. Dale a tu foto de gato un <code>border-radius</code> de <code>10px</code>. Nota: este desafío permite múltiples soluciones posibles. Por ejemplo, puede agregar un <code>border-radius</code> a la clase <code>.thick-green-border</code> o a la clase <code>.smaller-image</code> . </section>
+
 
 ## Pruebas
 <section id='tests'>
 
 ```yml
 tests:
-  - text: El elemento de su imagen debe tener la clase "borde verde grueso".
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
-  - text: Tu imagen debe tener un radio de <code>10px</code> de <code>10px</code>
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
+  - text: El elemento de su imagen debería tener la clase "thick-green-border".
+    testString: 'assert($("img").hasClass("thick-green-border"), "El elemento de su imagen debería tener la clase "thick-green-border".");'
+  - text: Su imagen debería tener un radio de borde de <code>10px</code>.
+    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Su imagen debería tener un radio de borde de <code>10px</code>");'
 
 ```
 

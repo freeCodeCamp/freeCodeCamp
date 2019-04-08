@@ -2,8 +2,8 @@
 [![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
-[![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp[)
+[![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 
 ## Welcome to freeCodeCamp.org's open source codebase and curriculum!
 
@@ -37,60 +37,67 @@ Here are our six core certifications:
 
 #### 1. Responsive Web Design Certification
 
-- Basic HTML and HTML5
-- Basic CSS
-- Applied Visual Design
-- Applied Accessibility
-- Responsive Web Design Principles
-- CSS Flexbox
-- CSS Grid <br />
+- [Basic HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
+- [Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
+- [Applied Visual Design](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
+- [Applied Accessibility](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
+- [Responsive Web Design Principles](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
+- [CSS Flexbox](https://learn.freecodecamp.org/responsive-web-design/css-flexbox)
+- [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
+  <br />
   <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
 #### 2. JavaScript Algorithms and Data Structures Certification
 
-- Basic JavaScript
-- ES6
-- Regular Expressions
-- Debugging
-- Basic Data Structures
-- Algorithm Scripting
-- Object-Oriented Programming
-- Functional Programming <br />
+- [Basic JavaScript](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript)
+- [ES6](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6)
+- [Regular Expressions](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions)
+- [Debugging](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging)
+- [Basic Data Structures](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-data-structures)
+- [Algorithm Scripting](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-algorithm-scripting)
+- [Object Oriented Programming](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/object-oriented-programming)
+- [Functional Programming](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/functional-programming)
+- [Intermediate Algorithm Scripting](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
+  <br />
   <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesar's Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
 
-- Bootstrap
-- jQuery
-- Sass
-- React
-- Redux
-- React and Redux <br />
+- [Bootstrap](https://learn.freecodecamp.org/front-end-libraries/bootstrap)
+- [jQuery](https://learn.freecodecamp.org/front-end-libraries/jquery)
+- [Sass](https://learn.freecodecamp.org/front-end-libraries/sass)
+- [React](https://learn.freecodecamp.org/front-end-libraries/react)
+- [Redux](https://learn.freecodecamp.org/front-end-libraries/redux)
+- [React and Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
+  <br />
   <br />
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
 #### 4. Data Visualization Certification
 
-- Data Visualization with D3
-- JSON APIs and Ajax <br />
+- [Data Visualization with D3](https://learn.freecodecamp.org/data-visualization/data-visualization-with-d3)
+- [JSON APIs and Ajax](https://learn.freecodecamp.org/data-visualization/json-apis-and-ajax)
+  <br />
   <br />
   **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
 #### 5. APIs and Microservices Certification
 
-- Managing Packages with Npm
-- Basic Node and Express
-- MongoDB and Mongoose <br />
+- [Managing Packages with Npm](https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm)
+- [Basic Node and Express](https://learn.freecodecamp.org/apis-and-microservices/basic-node-and-express)
+- [MongoDB and Mongoose](https://learn.freecodecamp.org/apis-and-microservices/mongodb-and-mongoose)
+  <br />
   <br />
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
 #### 6. Information Security and Quality Assurance Certification
 
-- Information Security with HelmetJS
-- Quality Assurance and Testing with Chai
-- Advanced Node and Express <br />
+- [Information Security with HelmetJS](https://learn.freecodecamp.org/information-security-and-quality-assurance/information-security-with-helmetjs)
+- [Quality Assurance and Testing with Chai](https://learn.freecodecamp.org/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai)
+- [Advanced Node and Express](https://learn.freecodecamp.org/information-security-and-quality-assurance/advanced-node-and-express)
+  <br />
   <br />
   **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
 
@@ -114,6 +121,7 @@ Our community also has:
 
 - A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
+- A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
@@ -135,9 +143,9 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### License
 
-Copyright © 2018 freeCodeCamp.org
+Copyright © 2019 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
-- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
+- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
+- The learning resources in the [`/curriculum`](/curriculum) and [`/guide`](/guide) directories including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.

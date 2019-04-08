@@ -1,6 +1,6 @@
 <table>
     <tr>
-        <td> Read these guidelines in </td>
+        <td> Ler estes guias em </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
@@ -39,8 +39,8 @@ Uma rápida referência aos comandos que irá precisar, quando estiver trabalhan
 
 | comando | descrição |
 | ------- | ----------- |
-| `npm run bootstrap` | Faz <i>bootstrap</i> dos diferentes serviços |
-| `npm run seed` | Faz <i>parse</i> de todos os ficheiros de <i>challenge markdown</i> e insere-os no MongoDB. |
+| `npm run bootstrap` | Faz o arranque (<i>bootstrap</i>) dos diferentes serviços |
+| `npm run seed` | Processa todos os ficheiros dos Desafios de Código e insere-os no MongoDB. |
 | `npm run develop` | Inicia o API Server do freeCodeCamp e Apps Cliente. |
 | `npm test` |  Executa todos os testes JS no sistema, incluindo cliente, servidor, <i>lint</i> e testes de desafio. |
 | `npm run test:client` | Executa o <i>test suite</i>  do cliente. |

@@ -3,6 +3,7 @@ title: Getting Started
 ---
 ## Choosing a distribution.
 
+
 There are various types of Linux distributions to choose from nowadays, choosing one is a major concern in the Linux world. Taking in consideration easy to use OSs, the top dogs in this category are:
 * [Ubuntu](https://www.ubuntu.com/) - Derivative of the stable Debian system, Ubuntu thrives in the a easy to use and up to date environment.
 * [Mint](https://linuxmint.com/) - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution remind of Windows, this can be a nice characteristic for users comming from Windows. 
@@ -16,6 +17,7 @@ Some other choices include:
 * [Gentoo](https://www.gentoo.org/)
 * [Suse](https://www.suse.com/)
 
+
 ## Installing.
 
 
@@ -27,8 +29,8 @@ Remember to read all the steps carefully and leave some space in your HDD for th
 
 ## The Dreaded Terminal.
 
-Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily tasks easy to automate.
 
+Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily tasks easy to automate.
 
 In Debian/Ubuntu and derivatives, the shortcut to open the CLI (Command Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
 

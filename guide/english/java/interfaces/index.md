@@ -3,7 +3,11 @@ title: Interfaces
 ---
 # Interfaces
 
-Interface in Java is a bit like the Class, but with a significant difference : an `interface` can _only_ have method signatures, fields and default methods. Since Java 8, you can also create [default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html). In the next block you can see an example of interface :
+Interface in Java is a bit like the Class, but with a significant difference : an `interface` can _only_ have method signatures, fields and default methods. Since Java 8, you can also create [default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html). 
+
+Classes that  implement an interface are thought to be signing a contract and agreeing to perform the specific behaviors listed in the interface. If the classes that implement an interface do not implement all the methods of the interface, then such a class needs to be defined as `abstract`.
+
+In the next block you can see an example of interface :
 
 ```java
 public interface Vehicle {
@@ -30,7 +34,7 @@ public class Car implements Vehicle {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItd/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItd/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Now, there is a **ground rule** : The Class must implement **all** of the methods in the Interface. The methods must have _the exact same_ signature (name, parameters and exceptions) as described in the interface. The class _does not_ need to declare the fields though, only the methods.
 
@@ -46,7 +50,7 @@ Vehicle tesla = new Car();
 tesla.start(); // starting engine ...
 ```
 
-An Interface **can not** contain a constructor methods,therefore,you **can not** create an instance of an Interface itself. You must create an instance of some class implementing an Interface to reference it. Think of interfaces as a blank contract form, or a template.
+An Interface **can not** contain a constructor methods,therefore,you **can not** create an instance of an Interface itself. You must create an instance of some class implementing an Interface to reference it. Think of interfaces as a blank contract form, or a template. 
 
 What can you do with this feature? Polymorphism! You can use only interfaces to refer to object instances!
 
@@ -74,7 +78,7 @@ Starter.startEngine(tesla); // starting engine ...
 Starter.startEngine(tata); // starting truck engine ...
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItm/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItm/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ## But how about multiple interfaces?
 
@@ -103,7 +107,7 @@ public class Smartphone implements GPS,Radio {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIto/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIto/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ## Some features of Interfaces
 
@@ -153,7 +157,7 @@ Smartphone motoG = new Smartphone();
 motog.getRoughCoordinates(); // Fetching rough coordinates...
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItp/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItp/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### But, what happens if two interfaces have the same method signature?
 
@@ -190,7 +194,7 @@ Smartphone motoG = new Smartphone();
 motoG.next(); // Next from MusicPlayer
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIts/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIts/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ## Static Methods in Interfaces
 
@@ -221,7 +225,7 @@ class Main {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIts/9' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIts/9' target='_blank' rel='nofollow'>Run Code</a>
 
 ## Inheriting an Interface
 
@@ -257,7 +261,7 @@ public class SmartPhone implements MusicPlayer {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIty/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CIty/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Whoops, did I forget `next()` ? See, since it was a `default` method, I didn't had to provide an implementation at all. (Won't work for JDK < 8)
 

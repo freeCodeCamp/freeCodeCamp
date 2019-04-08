@@ -28,6 +28,9 @@ Second, the Welcome component is called with the value ```name="Faisal Arkan"```
 
 The value `name="Faisal Arkan"` will be assigned to `{props.name}` from `function Welcome(props)` and returns a component `<h1>Hello, Faisal Arkan</h1>` which is saved into the const variable `element`. The component can then be rendered via `ReactDOM.render(element, document.getElementById('root'));`. `document.getElementById('root')` in this case is the target location you would like the `element` component to be rendered.
 
+##### Important note:
+User defined components (stateful or stateless) must always start with a capital letter as React considers components starting with lowercase letters as DOM tags. For example, ```<Foo />``` will be considered a user defined component but ```<foo />``` will be considered DOM tags similar to  ```<div />```, ```<span />``` or ```<p />``` tags. This is explaned in detail [here](https://reactjs.org/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized)
+
 ### Other ways to declare components
 
 There are many ways to declare components when using React.js, but there are two kinds of components, ***stateless*** components and ***stateful*** components.

@@ -13,13 +13,12 @@ To select an element with a specific ID, write a hash (#) character, followed by
 ```
 You can combine the ID selector with other types of selectors to style a very specific element.
 ```css
-section#about:hover { color: blue; }
+section#about:hover { color: blue; } /* applies style to hover state of section element with an ID of 'about' */
 
-div.classname#specified_id { color: green; }
+div.classname#specified_id { color: green; } /* applies style to a div element with a class name of 'classname' and an ID of 'specified_id' */
 ```
 ### Note about IDs
-
-ID should be avoided when styling if possible. As it has high specificity and it can be overriden only if you inline styles, or add styles into ```<style>```. The weight of ID overrides class selectors and type selectors.
+ID should be avoided when styling if possible. As it has high specificity and it can be overriden only if you use inline styles, or add styles into ```<style>``` tags in the HTML. The weight of IDs override class selectors and type selectors.
 
 Remember, the ID selector must match an HTML element's ID attribute.
 ```html

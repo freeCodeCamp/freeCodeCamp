@@ -91,7 +91,7 @@ int main()
   int a = 8, b = 5;
   bool c = (a > b); // c = true
   ```
-- `<` Less than - True when the first operand is smaller then the second.
+- `<` Less than - True when the first operand is smaller than the second.
   ```C
   int a = 5, b = 8;
   bool c = (a < b); // c = true

@@ -22,9 +22,9 @@ Al ordenar este conjunto de datos en un orden descendente (DESC), los candidatos
 SELECT Candidate, Election_year, sum(Total_$), count(*) 
  FROM combined_party_data 
  WHERE Election_year = 2016 
- GROUP BY Candidate, Election_year -- this tells the DBMS to summarize by these two columns 
- HAVING sum(Total_$) > 20000000  -- limits the rows presented from the summary of money ($20 Million USD) 
- ORDER BY sum(Total_$) DESC; -- orders the presented rows with the largest ones first. 
+ GROUP BY Candidate, Election_year -- indica al DBMS que agregue por estas dos columnas, en este caso suma Total_$ y cuenta el número de filas en las que coinciden Candidate y Election_year
+ HAVING sum(Total_$) > 20000000  -- limita las filas que se muestran a aquellas que superan los 20M (una vez sumados los datos según la claúsula GROUP BY) 
+ ORDER BY sum(Total_$) DESC; -- ordena las filas resultantes, con la suma más grande primero
 ```
 
 ```text

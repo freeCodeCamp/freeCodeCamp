@@ -76,12 +76,12 @@ Long data type is a 64-bit signed two's complement integer.
 
     Example: long a = 100000L, long b = -600000L; 
 
-    By default all integer type variable is "int". So long num=600851475143  will give an error.
+    By default all integer type values are "int". So long num=600851475143  will give an error.
     But it can be specified as long by appending the suffix L (or l)
 
 ## Floating­ Point​:
 
-These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Float is actually avoided in case of precise data such as currency or research data.
+These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Floating point is actually avoided in case of precise data such as currency or research data.
 
 ### float:
 
@@ -168,7 +168,7 @@ class demo{
 
 ## String:
 
-String is not a primitive data type, but it lets you store multiple character data types in an array and has many methods that can be used. It is used quite commonly when the user types in data and you have to manipulate it. 
+String is not a primitive data type, it is an object, but it lets you store multiple character data types in an array and has many methods that can be used. It is used quite commonly when the user types in data and needs to manipulate it later on. 
 
 In the example below, we try to remove all of the letters from the string and output it:
 
@@ -182,7 +182,7 @@ for(int i=0;i<input.length();i++){
 //if the character at index i on the string is a letter or a space, move on to the next index
 if(Character.isLetter(input.charAt(i)) || input.charAt(i)==' '){ 
     
-    continue;
+    continue; // Skips to the next iteration of the for loop
 }
 
 output = output + input.charAt(i); //the number is added onto the output

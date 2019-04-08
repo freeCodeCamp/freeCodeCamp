@@ -37,6 +37,7 @@ There are several online tools that can be used to do scrum for your team:
 - [Basecamp](https://basecamp.com)
 - [Airtable](https://airtable.com)
 - [SmartSheet](https://www.smartsheet.com)
+- [JIRA](https://www.atlassian.com/software/jira)
 
 Here are some more resources:
 

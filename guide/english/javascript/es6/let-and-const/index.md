@@ -29,6 +29,19 @@ console.log(c); // 10
 console.log(a); // 50
 ```
 
+### Differences with `var`
+
+Hoisting - `let` variables are not initialized until their definition is evaluated:
+
+```js
+function action() {
+  console.log(a); // undefined
+  console.log(b); // ReferenceError
+  var a = 1;
+  let b = 2;
+}
+```
+
 ## Const
 
 Const is used to assign a constant value to the variable, and the value cannot be changed. It is fixed. 
@@ -60,11 +73,16 @@ console.log(c); // ReferenceError: c is not defined
 Consider another example.
 ```
 const LANGUAGES = ['Js', 'Ruby', 'Python', 'Go'];
-LANGUAGES = "Javascript"; // shows error.
+LANGUAGES = "JavaScript"; // shows error.
 LANGUAGES.push('Java'); // Works fine.
 console.log(LANGUAGES); // ['Js', 'Ruby', 'Python', 'Go', 'Java']
 ```
 
 This may be little confusing.
 
-Consider in this way. Whenever you define a const variable, Javascript references the address of the value to the variable. In our example the variable ‘LANGUAGES’ actually references to the memory allocated to the array. So you cannot change the variable to reference some other memory location later. Throughout the program it only references to the array.
+Consider in this way. Whenever you define a const variable, JavaScript references the address of the value to the variable. In our example the variable ‘LANGUAGES’ actually references to the memory allocated to the array. So you cannot change the variable to reference some other memory location later. Throughout the program it only references to the array.
+
+## Further Reading
+
+* [MDN - let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+* [MDN - const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)

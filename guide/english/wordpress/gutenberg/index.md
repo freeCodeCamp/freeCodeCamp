@@ -10,7 +10,7 @@ Official Site: [https://wordpress.org/gutenberg/](https://wordpress.org/gutenber
 
 ## Block Boilerplate
 
-Developer [Ahmad Awais](https://ahmadawais.com/) has developed a boilerplate and startup toolkit that can be used to help spin up your own custom Gutenberg blocks. You can learn more about this toolkit in Ahmad's Github repo here: [https://github.com/ahmadawais/create-guten-block](https://github.com/ahmadawais/create-guten-block)
+Developer [Ahmad Awais](https://ahmadawais.com/) has developed a boilerplate and startup toolkit that can be used to help spin up your own custom Gutenberg blocks. You can learn more about this toolkit in Ahmad's GitHub repo here: [https://github.com/ahmadawais/create-guten-block](https://github.com/ahmadawais/create-guten-block)
 
 ## Block Libraries
 
