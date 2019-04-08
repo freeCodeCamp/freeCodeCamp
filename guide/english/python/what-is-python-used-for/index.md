@@ -49,17 +49,17 @@ Python could also be used by parse pages source codes and retrieve its data. Usi
 * Web & Internet Development
 * Educational Advancment
 * Scientific Studies/Computing
-* Desktop development
+* Desktop Development
 * Numeric Computing
-* Software development
-* Business Application development
+* Software Development
+* Business Application Development
 * Machine Learning
 * IOT
 * Game Development
 * Rapid Prototyping
 * Browser Automation
-* Data analysis
-* Scraping data from websites
+* Data Analysis
+* Scraping Data from Websites
 * Image Processing
 
 ### Why python has such a wide range of usage?
