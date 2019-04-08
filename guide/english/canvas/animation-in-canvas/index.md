@@ -6,10 +6,10 @@ title: Animation
 To animate things in `canvas`, use `window.requestAnimationFrame` to set up a draw loop.
 
 ```js
-function draw() {
+const draw = () => {
   /* code goes here */
   window.requestAnimationFrame(draw);
-}
+};
 window.requestAnimationFrame(draw);
 ```
 
@@ -21,7 +21,7 @@ const ctx = canvas.getContext('2d');
 
 const y = 50;
 let x = 0;
-function draw() {
+const draw = () => {
   // reset canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -34,7 +34,7 @@ function draw() {
   ctx.fill();
 
   window.requestAnimationFrame(draw);
-}
+};
 window.requestAnimationFrame(draw);
 ```
 
