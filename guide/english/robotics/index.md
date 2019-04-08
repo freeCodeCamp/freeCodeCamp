@@ -19,9 +19,9 @@ Once the robot makes its decision, it needs to act accordingly. For this purpose
 
 ## Laws of Robotics
 
-It was Isaac Asimov who popularized the term robotics. He invented the three laws of robotics with is still in effect today:
+It was Isaac Asimov who popularized the term robotics. He gave the three laws of robotics with is still in effect today:
 
-* A robot may not harm a human  through action or inaction, allow a human to come to harm.
+* A robot may not harm a human through action or inaction, allow a human to come to harm.
 * A robot must obey the orders given by human beings, except when such orders conflict with the First Law.
 * A robot must protect its own existence as long as it does not conflict with the First or Second Laws.
 
