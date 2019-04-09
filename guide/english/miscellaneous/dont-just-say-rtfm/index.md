@@ -23,6 +23,6 @@ If the OP was really lazy:
 
 *   Your question is answered in the manual: (link) For future reference, please always remember to look in the manual first. Thanks!
 
-And if the person did not look in the manual then you cna say : 
+And if the person did not look in the manual then you can say : 
 
 *   You can ask your question in the Contact menu (link).
