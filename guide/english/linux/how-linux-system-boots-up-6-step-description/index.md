@@ -27,7 +27,7 @@ Operating system is defined as the low-level software that supports a computerâ€
 
 
 - MBR stands for Master Boot Record.
-- It is located in the 1st sector of the bootable disk. Typically /dev/hda, or /dev/sda. Why itâ€™s sda and hda ? refer here for more.
+- It is located in the 1st sector of the bootable disk. Typically /dev/hda, or /dev/sda.
 - MBR is less than 512 bytes in size. This has three components 1) primary boot loader info in 1st 446 bytes 2) partition table info in next 64 bytes 3) mbr validation check in last 2 bytes.
 - It contains information about GRUB (or LILO in old systems).
 - So, in simple terms MBR loads and executes the GRUB boot loader.
