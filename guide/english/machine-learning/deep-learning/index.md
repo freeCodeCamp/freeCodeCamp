@@ -2,14 +2,14 @@
 title: Deep Learning
 ---
 ## Deep Learning
-Deep Learning refers to a technique in Machine Learning where you have a lots of artificial neural networks stacked together in some architecture.
+Deep Learning refers to a technique in Machine Learning where you have a lot of artificial neural networks stacked together in some architecture.
 
-To the uninitiated, an artificial neuron is basically a mathematical function of some sort. And neural nets are neurons connected to each other.  So in deep learning, you have lots of mathematical functions stacked on top (or on the side) of each other in some architecture. Each of the mathematical functions may have its own parameters (for an instance, an equation of a line `y = mx + c` has 2 parameters `m` and `c`) which need to be learned (during training). Once learned for a given task (say for classifying cats and dogs), this stack of mathematical functions (neurons) is ready to do its work of classifying images of cats and dogs.
+To the uninitiated, an artificial neuron is basically a mathematical function of some sort. And neural nets are neurons connected to each other.  So in deep learning, you have lots of mathematical functions stacked on top (or on the side) of each other in some architecture. Each of the mathematical functions may have its own parameters (for an instance, an equation of a line `y = mx + c` has 2 parameters `m` and `c`) which need to be learnt (during training). Once learnt for a given task (say for classifying cats and dogs), this stack of mathematical functions (neurons) is ready to do its work of classifying images of cats and dogs.
 
 ![Cat or a dog?](https://image.slidesharecdn.com/deeplearningfromanoviceperspective-150811155203-lva1-app6891/95/deep-learning-from-a-novice-perspective-3-638.jpg?cb=1439308391)
 
 ### Why is it a big deal?
-Coming up with set of rules manually for some of the tasks can very tricky (though theoretically possible). For instance, if you try to write a manual set of rules in order to classify an image (basically bunch of pixel values) of whether it belongs to a cat or dog, you'll see why it is tricky. Add to that the fact that dogs and cats come in variety of shapes, sizes and colors, and, not to mention, the images can have different backgrounds. You can quickly understand why coding such a simple problem can be problematic.
+Coming up with a set of rules manually for some of the tasks can be very tricky (though theoretically possible). For instance, if you try to write a manual set of rules in order to classify an image (basically bunch of pixel values) of whether it belongs to a cat or dog, you'll see why it is tricky. Add to that the fact that dogs and cats come in variety of shapes, sizes and colors, and, not to mention, the images can have different backgrounds. You can quickly understand why coding such a simple problem can be problematic.
 
 Deep Learning helps tackle this problem of figuring out the set of rules that can classify an image as that of a cat or a dog, automatically! All it needs is bunch of images that are already correctly classified as that of a cat or a dog and it'll be able to learn the required set of rules. Magic!
 
@@ -42,6 +42,16 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://github.com/gluon-api/gluon-api/">Gluon</a>
 * <a href="http://deeplearning.net/software/theano/">Theano</a>
 
+### Deep learning in Android & Web  
+We can now add our pretrained model in our android application and perform classification in real-time. Similarly, we can create REST APIs using Flask/Django and add our pretrained model there as well.
+* [Flask with PyTorch](https://github.com/WenmuZhou/flask_pytorch)
+* [Tensorflow with Android](https://github.com/MindorksOpenSource/AndroidTensorFlowMachineLearningExample)
+
+### Courses:
+* <a href="http://course.fast.ai/">Deep Learning Course Part 1 Fast.AI</a>
+* <a href="http://course.fast.ai/part2.html">Deep Learning Course Part 2 Fast.AI</a>
+* <a href="https://www.kaggle.com/learn/deep-learning">Kaggle Deep Learning Course</a>
+
 ### More Information:
 * <a href="http://www.deeplearningbook.org">Deep Learning Textbook</a>
 * <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep Learning</a>
@@ -50,3 +60,7 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/">A Beginner's Guide To Understanding Convolutional Neural Networks</a>
 * <a href="https://www.youtube.com/playlist?list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu">Deep Learning SIMPLIFIED - DeepLearning.TV</a>
 * <a href="http://neuralnetworksanddeeplearning.com"> Neural Networks and Deep Learning</a>
+
+### Learning Resources for deep learning 
+* <a href="https://www.coursera.org/specializations/deep-learning">Deep Learning Speciliazation</a> 
+
