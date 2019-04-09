@@ -132,7 +132,7 @@ Make sure the command line tool you use (Cmd, PowerShell or Git Bash for Windows
 #### I am having issues with installing the recommended prerequisites. What should I do?
 We regularly develop on the latest or most popular operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. It is recommended to lookup your specific issue on resources such as Google, Stack Overflow and Stack Exchange. Chances are good that someone has faced the same issue and there is already an answer to your specific query.
 
-If you are on a different OS and/or are still running into issues, reach out to the [contributors community on our public forum](https://www.freeCodeCamp.org/c/contributors) or the [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
+If you are on a different OS and/or are still running into issues, reach out to the [contributors community on our public forum](https://www.freeCodeCamp.org/forum/c/contributors) or the [contributor's chat room](https://gitter.im/freeCodeCamp/Contributors).
 
 Please avoid creating GitHub issues for prerequisite issues. They are out of the scope of this project.
 
