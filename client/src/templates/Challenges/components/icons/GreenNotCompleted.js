@@ -12,7 +12,7 @@ function GreenNotCompleted(props) {
         width='50'
         xmlns='http://www.w3.org/2000/svg'
         {...props}
-        >
+      >
         <g>
           <title>Not Passed</title>
           <circle
