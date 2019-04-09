@@ -11,10 +11,6 @@ The way in which data mining works is through the use of models, built by data s
 ## Uses
 Data mining has many uses, some of which include: banking, retail, astronomy, medicine and government security. It can also be used for deep learning, which involves the training of virtual 'neural networks' for specific tasks. A notable use of this was by the DeepMind team, who created the system AlphaGo, which beat the go world champion 4-1 in a series heralded as a historic breakthrough for artifical intelligence. AlphaGo involved the use of thousands of previous game records to train the neural network (i.e data mining). 
 
-<img src='https://timedotcom.files.wordpress.com/2016/03/go-lee-sedol.jpg'>
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='https://docs.oracle.com/cd/B28359_01/datamine.111/b28129/process.htm#CHDFJEJI'>Oracle Data Mining article</a>
