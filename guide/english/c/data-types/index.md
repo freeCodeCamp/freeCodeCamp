@@ -25,7 +25,7 @@ The amount of memory that a single `int` takes depends on the hardware. However,
 Like all of these other data types, there is an `unsigned` variant that can be used. The `unsigned int` can be positive and zero but not negative, so it can store values from 0 to 65,535, or more depending on hardware.
 
 #### Short integers: `short`
-This doesn't get often used, but it's good to know that it exists. Like int, it can store -32768 to 32767. Unlike int, however, this is the extent of its ability. Anywhere you can use `short`, you can use `int`.
+This doesn't get used often, but it's good to know that it exists. Like int, it can store -32768 to 32767. Unlike int, however, this is the extent of its ability. Anywhere you can use `short`, you can use `int`.
 
 #### Longer integers: `long`
 The `long` data type stores integers like `int`, but gives a wider range of values at the cost of taking more memory. Long stores at least 32 bits, giving it a range of -2,147,483,648 to 2,147,483,647. Alternatively, use `unsigned long` for a range of 0 to 4,294,967,295.
