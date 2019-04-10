@@ -96,7 +96,7 @@ The algorithm shown below is a slightly optimized version to avoid swapping the 
          arr[i+1] = key
 ```
 
-Here is a detailed implementation in Javascript:
+Here is a detailed implementation in JavaScript:
 
 ```
 function insertion_sort(A) {
@@ -170,7 +170,10 @@ void insertionSort(int arr[], int n)
 
 ### Properties:
 * Space Complexity: O(1)
-* Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively
+* Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively.
+     - Best Case: array is already sorted
+     - Average Case: array is randomly sorted
+     - Worst Case: array is reversely sorted. 
 * Sorting In Place: Yes
 * Stable: Yes
 
@@ -180,3 +183,4 @@ void insertionSort(int arr[], int n)
 - [SortInsertion - GeeksforGeeks, YouTube](https://www.youtube.com/watch?v=wObxd4Kx8sE)
 - [Insertion Sort Visualization](https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/visualize/)
 - [Insertion Sort - MyCodeSchool](https://www.youtube.com/watch?v=i-SKeOcBwko)
+- [Insertion Sort - VisuAlgo](https://visualgo.net/en/sorting)

@@ -39,7 +39,7 @@ Examples:
 
 Or… 
 
-**This task will be complete by January 10th.**
+**This task will be completed by January 10th.**
 
 Or… 
 
@@ -47,7 +47,11 @@ Or…
 
 ### More Information:
 
-- [Agile Constraints](http://www.brighthubpm.com/agile/50212-the-agile-triangle-value-quality-and-constraints/)
+- [Agile Constraints](http://www.brighthubpm.com/agile/50212-the-agile-triangle-value-quality-and-constraints/) 
 
-- [How do you estimate on an Agile project?](http://info.thoughtworks.com/rs/thoughtworks2/images/twebook-perspectives-estimation_1.pdf)
+- [How do you estimate on an Agile project?](http://info.thoughtworks.com/rs/thoughtworks2/images/twebook-perspectives-estimation_1.pdf)  
+- [The secrets behind story points and agile estimation](https://www.atlassian.com/agile/project-management/estimation)
+
+My addition
+-[The Theory of Constraints in Agile](https://www.leadingagile.com/2018/03/the-theory-of-constraints-in-agile/)
 

@@ -3,9 +3,8 @@ title: Semantic HTML Elements
 ---
 
 ## Semantic HTML Elements
-The `<em>` element marks text as being emphasized above the text around it. Typically, the browser renders this in *italics*, but you can add other styles using CSS.
 
-Semantic HTML elements provide meaning to browsers, developers, and users of a site. In contrast to elements like `<div>` or `<span>`, semantic elements like `<header>` and `<footer>` more clearly explain the purpose of each section of a website.
+Semantic HTML elements provide meaning to browsers, developers, and users of a site. In contrast to elements like `<div>` or `<span>`, semantic elements like `<header>` and `<footer>` more clearly explain the purpose of each section of a website and make the website structure easier to understand.
 
 ### Why Use Semantic Elements?
 
@@ -39,8 +38,8 @@ Developers use semantic elements to enhance the following:
 * `<meter>` defines a scalar measurement within a known range (a gauge)
 * `<progress>` defines the progress of a task
 * `<rp>` defines what to show in browsers that do not support ruby annotations
-* `<rt>` defines an explanation/pronunciation of characters (for east asian typography)
-* `<ruby>` defines a ruby annotation (for east asian typography)
+* `<rt>` defines an explanation/pronunciation of characters (for East Asian typography)
+* `<ruby>` defines a ruby annotation (for East Asian typography)
 * `<summary>` defines a visible heading for a `<details>` element
 * `<time>` defines a date/time
 * `<wbr>` defines a possible line-break <sup>2</sup>

@@ -22,14 +22,15 @@ The code editor has a JSX element similar to what you created in the last challe
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: assert(JSX.type === 'div', 'The constant <code>JSX</code> should return a <code>div</code> element.');
+    testString: assert(JSX.type === 'div');
   - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
-    testString: assert(JSX.props.children[0].type === 'h1', 'The <code>div</code> should contain an <code>h1</code> tag as the first element.');
+    testString: assert(JSX.props.children[0].type === 'h1');
   - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
-    testString: assert(JSX.props.children[1].type === 'p', 'The <code>div</code> should contain a <code>p</code> tag as the second element.');
-  - text: The <code>JSX</code> should include a comment.
-    testString: getUserInput => assert(getUserInput('index').includes('/*') && getUserInput('index').includes('*/'), 'The <code>JSX</code> should include a comment.');
-
+    testString: assert(JSX.props.children[1].type === 'p');
+  - text: The existing <code>h1</code> and <code>p</code> elements should not be modified.
+    testString: assert(JSX.props.children[0].props.children === 'This is a block of JSX' && JSX.props.children[1].props.children === 'Here\'s a subtitle');     
+  - text: The <code>JSX</code> should use valid comment syntax.
+    testString: assert(/<div>[\s\S]*{\s*\/\*[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code));
 ```
 
 </section>

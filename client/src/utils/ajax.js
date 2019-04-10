@@ -40,10 +40,22 @@ export function getUsernameExists(username) {
   return get(`/api/users/exists?username=${username}`);
 }
 
+export function getArticleById(shortId) {
+  return get(`/n/${shortId}`);
+}
+
 /** POST **/
 
 export function postReportUser(body) {
   return post('/user/report-user', body);
+}
+
+export function postDeleteAccount(body) {
+  return post('/account/delete', body);
+}
+
+export function postResetProgress(body) {
+  return post('/account/reset-progress', body);
 }
 
 /** PUT **/

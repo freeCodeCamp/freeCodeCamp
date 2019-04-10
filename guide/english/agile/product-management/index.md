@@ -3,7 +3,7 @@ title: Product Management
 ---
 ## Product Management
 
-Product Management is an organisational function that assumes responsibility for the entire lifecycle of the products that are being sold. As a business function, Product Management is held accountable for creating customer value and measurable benefits to the business. 
+Product Management is an organizational function that assumes responsibility for the entire lifecycle of the products that are being sold. As a business function, Product Management is held accountable for creating customer value and measurable benefits to the business. 
 
 There are a few core responsibilities common to most product management roles inside both established enterprise companies and at startups. Most often, product management is responsible for understanding customer requirements, defining and prioritizing them, and working with the engineering team to build them. Setting strategy and defining the roadmap is often considered to be inbound work and bringing the product to market is often considered to be "outbound."
 
@@ -46,7 +46,8 @@ Product management continues to expand as a profession. Demand for qualified pro
 
 Most Product Managers have been in different roles earlier in their careers. Very often software engineers, sales engineers, or professional services consultant grow into the role of Product Manager. However, in some companies (e.g. Google, Facebook, etc.), junior Product Managers are recruited straight out of school and supported by career programs that teach them while on the job.   
 
-#### More Information:
-Wikipedia page: https://en.wikipedia.org/wiki/Product_management
+#### More Information
+- [Wikipedia](https://en.wikipedia.org/wiki/Product_management)
+- [Product Management Overview](https://www.atlassian.com/agile/product-management)
 
 

@@ -5,26 +5,27 @@ title: If / Elif / Else Statements
 ## If / Elif / Else Statements
 
 The `if`/`elif`/`else` structure is a common way to control the flow of a program, allowing you to execute specific blocks of code depending on the value of some data. If the condition following the keyword `if` evaluates as `True`, the block of code will execute:
+
 Note that parenthesis are not used before and after the condition check such as in other languages.
 
 ```python
 if True:
   print('If block will execute!')
 ```
-
 ```python
 x = 5
 
 if x > 4:
   print("The condition was true!") #this statement executes
 ```
-> **Tips** : You can use **1** as alternative to **True** and **0** as an alternative to **False**
+> **Tips** : You can use any number or string or character as alternative to **True** and only **0** and **None** as an alternative to **False**
 
-_Example_:
+Example:
 ```python
 if 1:   # 1 evaluates to true
   print('If block will execute!')
  ```
+
 ***Else statement***
 
 You can optionally add an `else` response that will execute if the condition is `False`:
@@ -34,7 +35,7 @@ if not True:
 else:
   print('Else statement will execute!')
 ```
-Or you can also see this example
+Or you can also see this example:
 ```python
 y = 3
 
@@ -43,7 +44,6 @@ if y > 4:
 else:
   print("The condition wasn't true!") #this statement executes
 ```
-
 *Note that there is no condition following the `else` keyword - it catches all situations where the condition was `False`*
 
 ***Elif statement***
@@ -67,7 +67,7 @@ else:
 
 ***Nested if statement***
 
-We can also create nested if statements for decision making. Before preceding please refer to the <a href='https://guide.freecodecamp.org/python/code-blocks-and-indentation' target='_blank' rel='nofollow'>indentation guide once</a> before preceding. 
+We can also create nested `if` statements for decision making. Before preceding, please, refer to the <a href='https://guide.freecodecamp.org/python/code-blocks-and-indentation' target='_blank' rel='nofollow'>indentation guide once</a>. 
 
 Let's take an example of finding a number which is even and also greater than '10':
 ```python 
@@ -85,6 +85,7 @@ Output
 ```python
 This number is even and is greater than 10
 ```
+
 This was just a simple example of a nested if statement. Please feel free to explore more online.
 
 While the examples above are simple, you can create complex conditions using <a href='https://guide.freecodecamp.org/python/comparisons' target='_blank' rel='nofollow'>boolean comparisons</a> and <a href='https://guide.freecodecamp.org/python/boolean-operations' target='_blank' rel='nofollow'>boolean operators</a>.
@@ -93,7 +94,8 @@ While the examples above are simple, you can create complex conditions using <a 
 ***Inline python if-else statement***
 
 We can also use if-else statements with inline python functions.
-The following example should check if the number is greater or equal than 50, if yes return True:
+
+The following example should check if the number is greater or equal to 50, if yes return `True`:
 
 ```python 
 x = 89
@@ -136,5 +138,24 @@ while keep_playing == "True":
     elif pmove == "scissors" and cmove =="paper":
         print ("Player wins")  
 
-```
 
+```
+Nested if else condition
+Sometime we need to check another condition once one condition is satisfied.
+For Example: If you wanted to check the range between which the given number falls.You will need to use nested if-else conditon
+```python
+x=63
+if x<=100:
+   if x>=90:
+     print("number fall between 100 and 90")
+   elif x>=80 & x<90:
+     print(Number is greater than 80 but less than 90")
+   else:
+       print("number is less than 80")
+else:
+   print("number is greater than 100")
+```   
+output:
+```
+number is less than  80
+```

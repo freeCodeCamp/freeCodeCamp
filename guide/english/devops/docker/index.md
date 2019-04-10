@@ -91,9 +91,14 @@ The Docker daemon is what actually executes commands sent to the Docker Client�
 
 ### Dockerfile
 A Dockerfile is where you write the instructions to build a Docker image. These instructions can be:
-**RUN apt-get y install some-package**: to install a software package
-**EXPOSE 8000**: to expose a port
-**ENV ANT_HOME /usr/local/apache-ant** to pass an environment variable and so forth. Once you’ve got your Dockerfile set up, you can use the docker build command to build an image from it. Here’s an example of a Dockerfile:
+  
+  * **RUN apt-get -y install some-package**: to install a software package
+  * **EXPOSE 8000**: to expose a port
+  * **ENV ANT_HOME /usr/local/apache-ant** to pass an environment variable and so forth.
+  
+Once you’ve got your Dockerfile set up, you can use the docker build command to build an image from it. 
+
+Here’s an example of a Dockerfile:
 
 ```
 # Start with ubuntu 14.04
@@ -180,6 +185,25 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["npm", "start"]
+
+```
+
+### Docker detached
+
+Docker detached is where you can run a docker container in the background.  If you run a docker container in detached mode you can later view the logs and attach to it and run input and recieve output.
+
+```
+To run docker detached 
+
+docker run -d IMAGE
+
+To see running docker container
+
+docker ps -a
+
+To attach to docker container
+
+docker attach CONTAINER ID
 
 ```
 

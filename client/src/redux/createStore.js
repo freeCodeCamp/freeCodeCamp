@@ -11,7 +11,11 @@ import { isBrowser } from '../../utils';
 
 const clientSide = isBrowser();
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware({
+  context: {
+    document: clientSide ? document : {}
+  }
+});
 const epicMiddleware = createEpicMiddleware({
   dependencies: {
     window: clientSide ? window : {},
