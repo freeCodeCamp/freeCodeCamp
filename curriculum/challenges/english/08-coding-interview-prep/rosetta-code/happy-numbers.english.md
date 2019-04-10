@@ -22,31 +22,31 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>happy</code> is a function.
-    testString: 'assert(typeof happy === "function", "<code>happy</code> is a function.");'
+    testString: assert(typeof happy === 'function', '<code>happy</code> is a function.');
   - text: <code>happy(1)</code> should return a boolean.
-    testString: 'assert(typeof happy(1) === "boolean", "<code>happy(1)</code> should return a boolean.");'
+    testString: assert(typeof happy(1) === 'boolean', '<code>happy(1)</code> should return a boolean.');
   - text: <code>happy(1)</code> should return true.
-    testString: 'assert(happy(1), "<code>happy(1)</code> should return true.");'
+    testString: assert(happy(1), '<code>happy(1)</code> should return true.');
   - text: <code>happy(2)</code> should return false.
-    testString: 'assert(!happy(2), "<code>happy(2)</code> should return false.");'
+    testString: assert(!happy(2), '<code>happy(2)</code> should return false.');
   - text: <code>happy(7)</code> should return true.
-    testString: 'assert(happy(7), "<code>happy(7)</code> should return true.");'
+    testString: assert(happy(7), '<code>happy(7)</code> should return true.');
   - text: <code>happy(10)</code> should return true.
-    testString: 'assert(happy(10), "<code>happy(10)</code> should return true.");'
+    testString: assert(happy(10), '<code>happy(10)</code> should return true.');
   - text: <code>happy(13)</code> should return true.
-    testString: 'assert(happy(13), "<code>happy(13)</code> should return true.");'
+    testString: assert(happy(13), '<code>happy(13)</code> should return true.');
   - text: <code>happy(19)</code> should return true.
-    testString: 'assert(happy(19), "<code>happy(19)</code> should return true.");'
+    testString: assert(happy(19), '<code>happy(19)</code> should return true.');
   - text: <code>happy(23)</code> should return true.
-    testString: 'assert(happy(23), "<code>happy(23)</code> should return true.");'
+    testString: assert(happy(23), '<code>happy(23)</code> should return true.');
   - text: <code>happy(28)</code> should return true.
-    testString: 'assert(happy(28), "<code>happy(28)</code> should return true.");'
+    testString: assert(happy(28), '<code>happy(28)</code> should return true.');
   - text: <code>happy(31)</code> should return true.
-    testString: 'assert(happy(31), "<code>happy(31)</code> should return true.");'
-  - text: '<code>happy(32)</code> should return true:.'
-    testString: 'assert(happy(32), "<code>happy(32)</code> should return true:.");'
+    testString: assert(happy(31), '<code>happy(31)</code> should return true.');
+  - text: <code>happy(32)</code> should return true:.
+    testString: assert(happy(32), '<code>happy(32)</code> should return true:.');
   - text: <code>happy(33)</code> should return false.
-    testString: 'assert(!happy(33), "<code>happy(33)</code> should return false.");'
+    testString: assert(!happy(33), '<code>happy(33)</code> should return false.');
 
 ```
 

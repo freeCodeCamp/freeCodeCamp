@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Alterar texto dentro de um elemento usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Usando jQuery, você pode alterar o texto entre as tags de início e fim de um elemento. Você pode até mesmo alterar a marcação HTML. jQuery tem uma função chamada <code>.html()</code> que permite adicionar tags HTML e texto dentro de um elemento. Qualquer conteúdo anteriormente dentro do elemento será completamente substituído pelo conteúdo que você fornecer usando essa função. Aqui está como você iria reescrever e enfatizar o texto do nosso título: <code>$(&quot;h3&quot;).html(&quot;&lt;em&gt;jQuery Playground&lt;/em&gt;&quot;);</code> O jQuery também possui uma função similar chamada <code>.text()</code> que apenas altera o texto sem adicionar tags. Em outras palavras, essa função não avaliará nenhuma tag HTML passada a ela, mas a tratará como o texto com o qual você deseja substituir o conteúdo existente. Altere o botão com o ID <code>target4</code> , enfatizando seu texto. Confira este <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/em" target="_blank">link</a> para saber mais sobre a diferença entre <code>&lt;i&gt;</code> e <code>&lt;em&gt;</code> e seus usos. Observe que, embora a tag <code>&lt;i&gt;</code> tenha sido usada tradicionalmente para enfatizar o texto, ela já foi cooptada para uso como tag para ícones. A tag <code>&lt;em&gt;</code> agora é amplamente aceita como a tag para ênfase. Ou trabalharemos para este desafio. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -46,7 +46,7 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Apenas altere o código acima dessa linha. -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -78,7 +78,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

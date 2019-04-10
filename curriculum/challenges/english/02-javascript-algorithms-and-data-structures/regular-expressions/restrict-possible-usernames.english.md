@@ -24,17 +24,23 @@ Change the regex <code>userCheck</code> to fit the constraints listed above.
 ```yml
 tests:
   - text: Your regex should match <code>JACK</code>
-    testString: 'assert(userCheck.test("JACK"), "Your regex should match <code>JACK</code>");'
+    testString: assert(userCheck.test("JACK"), 'Your regex should match <code>JACK</code>');
   - text: Your regex should not match <code>J</code>
-    testString: 'assert(!userCheck.test("J"), "Your regex should not match <code>J</code>");'
+    testString: assert(!userCheck.test("J"), 'Your regex should not match <code>J</code>');
+  - text: Your regex should match <code>Jo</code>
+    testString: assert(userCheck.test("Jo"), 'Your regex should match <code>Jo</code>');
   - text: Your regex should match <code>Oceans11</code>
-    testString: 'assert(userCheck.test("Oceans11"), "Your regex should match <code>Oceans11</code>");'
+    testString: assert(userCheck.test("Oceans11"), 'Your regex should match <code>Oceans11</code>');
   - text: Your regex should match <code>RegexGuru</code>
-    testString: 'assert(userCheck.test("RegexGuru"), "Your regex should match <code>RegexGuru</code>");'
+    testString: assert(userCheck.test("RegexGuru"), 'Your regex should match <code>RegexGuru</code>');
   - text: Your regex should not match <code>007</code>
-    testString: 'assert(!userCheck.test("007"), "Your regex should not match <code>007</code>");'
+    testString: assert(!userCheck.test("007"), 'Your regex should not match <code>007</code>');
   - text: Your regex should not match <code>9</code>
-    testString: 'assert(!userCheck.test("9"), "Your regex should not match <code>9</code>");'
+    testString: assert(!userCheck.test("9"), 'Your regex should not match <code>9</code>');
+  - text: Your regex should not match <code>A1</code>
+    testString: assert(!userCheck.test("A1"), 'Your regex should not match <code>A1</code>');
+  - text: Your regex should not match <code>BadUs3rnam3</code>
+    testString: assert(!userCheck.test("BadUs3rnam3"), 'Your regex should not match <code>BadUs3rnam3</code>');
 
 ```
 
@@ -61,6 +67,7 @@ let result = userCheck.test(username);
 <section id='solution'>
 
 ```js
-// solution required
+const userCheck = /^[A-Za-z]{2,}\d*$/;
 ```
+
 </section>
