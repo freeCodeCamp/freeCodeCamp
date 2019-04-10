@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08802
 title: Uncomment HTML
 challengeType: 0
 videoUrl: ''
-localeTitle: Uncomment HTML
+localeTitle:Раскомментируйте HTML
 ---
 
 ## Description
