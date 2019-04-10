@@ -2,7 +2,7 @@
 id: 587d778d367417b2b2512aaa
 title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/c8azdfM'
+videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
 ---
 
 ## Description
