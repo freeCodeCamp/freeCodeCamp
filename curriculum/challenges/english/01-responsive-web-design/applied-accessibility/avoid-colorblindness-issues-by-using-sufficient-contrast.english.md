@@ -68,7 +68,7 @@ tests:
 <section id='solution'>
 
 
-```js
+```html
 <head>
   <style>
   body {
