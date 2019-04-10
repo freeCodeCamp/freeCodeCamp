@@ -28,7 +28,7 @@ Add a media query, so that the <code>p</code> tag has a <code>font-size</code> o
 tests:
   - text: Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.
     testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\)/g));
-  - text: Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.
+  - text: Your <code>p</code> element should have a <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.
     testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\){p{font-size:10px;?}}/g));
   - text: Your <code>p</code> element should have an initial <code>font-size</code> of 20px when the device <code>height</code> is more than 800px.
     testString: assert($("style").text().replace(/\s/g ,'').replace(/@media.*}/g, '').match(/p{font-size:20px;?}/g));
