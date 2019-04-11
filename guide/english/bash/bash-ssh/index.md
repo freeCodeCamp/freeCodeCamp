@@ -4,12 +4,13 @@ title: Bash ssh (Secure SHell)
 
 ## Bash command: ssh
 
-
 SSH (**S**ecure **SH**ell) is a secure method of remotely connecting to a Linux machine. 
 
 The basic syntax of the command is `ssh username@hostname`. 
 
 **Used to connect to a remote computer** It's full form is 'Secure Shell'. It's purpose is to connect to another remote computer using tcp. The address of the remote computer can be provided using an IP address or, if provided, an identifier.
+
+SSH is a replacement for Telnet as well as any remote shell program that predates it. The main benefit it offers over other remote shells is that it is cryptographically secured by default, a now necessary feature as systems are more often than not connected via untrusted networks.
 
 If the remote computer requires user login, the form `ssh username@remote_address` can be used, which will then prompt for the user password on successful connection.
 
