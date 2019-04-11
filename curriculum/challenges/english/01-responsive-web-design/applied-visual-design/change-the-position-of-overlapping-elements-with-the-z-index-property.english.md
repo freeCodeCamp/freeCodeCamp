@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cM94aHk'
 
 ## Description
 <section id='description'>
-When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.
+When elements are positioned to overlap (i.e. using <code>position: absolute | relative | fixed | sticky</code>), the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.
 </section>
 
 ## Instructions

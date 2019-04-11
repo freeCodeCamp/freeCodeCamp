@@ -19,7 +19,7 @@ Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-
 Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.
 Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:
 <blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>
-Note: It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
+<strong>Note:</strong> It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
 </section>
 
 ## Tests

@@ -7,7 +7,7 @@ title: Learn how a Stack Works
 - Stacks are an abstract data structures.
 - They follow LIFO (Last In First Out) or FILO (First In Last Out) principle.
 - Stack's insertion and deletion operations are of **O(1)** time complexity.
-- In Javascript, arrays can be treated as a Stack since `.push()` and `.pop()` methods have time complexity of **O(1)**.
+- In JavaScript, arrays can be treated as a Stack since `.push()` and `.pop()` methods have time complexity of **O(1)**.
 - In this challenge we need to `.pop()` and then `.push()` into the stack.
 
 ### Solution:

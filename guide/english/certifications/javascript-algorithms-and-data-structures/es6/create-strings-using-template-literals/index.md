@@ -32,7 +32,7 @@ It's required to use template literals to return a list as every element in the 
 ```const resultDisplayArray = arr.map(item => `<li class="text-warning">${item}</li>`);```
 
 ## No map() solution
-Despite it's a less flexible solution, if you know the number of elements in advance, you can enumerate them as in
+Despite being a less flexible solution, if you know the number of elements in advance, you can enumerate them as in
 
 ```const resultDisplayArray = [`<li class="text-warning">${arr[0]}</li>`,
   `<li class="text-warning">${arr[1]}</li>`
