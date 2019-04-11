@@ -48,4 +48,4 @@
 | `npm run test:client` | クライアントテストスーツの実行|
 | `npm run test:curriculum` | カリキュラムテストスーツの実行|
 | `npm run test:server` | サーバーテストスーツの実行|
-| `npm run commit` | An interactive tool to help you build a good commit message. 良いコミットメッセージをビルドするための相互ツール|
+| `npm run commit` | 良いコミットメッセージをビルドするための相互ツール|
