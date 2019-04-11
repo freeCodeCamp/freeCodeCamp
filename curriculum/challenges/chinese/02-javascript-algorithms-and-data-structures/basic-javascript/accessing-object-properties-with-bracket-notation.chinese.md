@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244c8
 title: Accessing Object Properties with Bracket Notation
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/accessing-objects-properties-with-bracket-notation'
 videoUrl: ''
 localeTitle: 使用括号表示法访问对象属性
 ---
