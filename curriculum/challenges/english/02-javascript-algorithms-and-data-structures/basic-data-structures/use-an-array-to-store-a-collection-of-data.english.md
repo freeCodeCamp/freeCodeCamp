@@ -57,6 +57,6 @@ let yourArray; // change this line
 <section id='solution'>
 
 ```js
-// solution required
+let yourArray = ['a string', 100, true, ['one', 2], 'another string'];
 ```
 </section>
