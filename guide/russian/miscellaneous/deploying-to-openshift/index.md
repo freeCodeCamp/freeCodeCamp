@@ -30,7 +30,7 @@ localeTitle: Развертывание в Openshift
 
 *   Заполните наш URL Git и название нашей ветки.
 
-![Где вы можете найти свой Git URL-адрес и имя вашего филиала в Github](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
+![Где вы можете найти свой Git URL-адрес и имя вашего филиала в GitHub](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
 
 ![Заполните URL-адрес Git и название вашего филиала.](//discourse-user-assets.s3.amazonaws.com/original/2X/9/989e44c1af80c9b8f26883a3d897f377b3a27ca4.jpg)
 

@@ -21,7 +21,7 @@ tests:
     testString: 'assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi), "Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.");'
   - text: Debe haber un elemento <code>html</code> .
     testString: 'assert($("html").length == 1, "There should be one <code>html</code> element.");'
-  - text: Las etiquetas <code>html</code> deben envolver alrededor de un elemento <code>h1</code> .
+  - text: Las etiquetas <code>html</code> deben envolver un elemento <code>h1</code> .
     testString: 'assert(code.match(/<html>\s*?<h1>\s*?.*?\s*?<\/h1>\s*?<\/html>/gi), "The <code>html</code> tags should wrap around one <code>h1</code> element.");'
 
 ```
