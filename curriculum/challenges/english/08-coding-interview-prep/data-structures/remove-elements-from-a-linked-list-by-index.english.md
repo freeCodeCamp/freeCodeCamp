@@ -112,6 +112,90 @@ function LinkedList() {
 <section id='solution'>
 
 ```js
-// solution required
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){ // {1}
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function(){
+    return length;
+  };
+
+  this.head = function(){
+    return head;
+  };
+
+  this.add = function(element){
+    var node = new Node(element);
+    if(head === null){
+        head = node;
+    } else {
+        var currentNode = head;
+
+        while(currentNode.next){
+            currentNode  = currentNode.next;
+        }
+
+        currentNode.next = node;
+    }
+
+    length++;
+  };
+
+  this.remove = function(element){
+    var currentNode = head;
+    var previousNode;
+    if(currentNode.element === element){
+        head = currentNode.next;
+    } else {
+        while(currentNode.element !== element) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+
+        previousNode.next = currentNode.next;
+    }
+
+    length --;
+  };
+  
+  this.removeAt = function(index) {
+    var currentNode = head;
+    var previous = head;
+    var count = 0;
+    
+    if (index >= length || index < 0 || length == 0) {
+        return null;
+    }
+
+    if (index === 0) {
+        previous = head;
+        head = currentNode.next;
+        length--;
+        return head.element;
+    } else {
+
+        while (count < index - 1) {
+            previous = currentNode;
+            currentNode = currentNode.next;
+            count++;
+        }
+
+        var removed = previous.next;
+        previous.next = currentNode.next;
+        length--;
+
+        return removed.element;
+    }
+
+
+};
+
+  
+}
 ```
 </section>
