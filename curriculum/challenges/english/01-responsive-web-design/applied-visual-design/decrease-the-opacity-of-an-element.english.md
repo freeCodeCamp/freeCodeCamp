@@ -105,7 +105,7 @@ tests:
   .links {
     text-align: left;
     color: black;
-    
+    opacity: 0.7;
   }
   #thumbnail {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -123,9 +123,7 @@ tests:
   .cardText {
     margin-bottom: 30px;
   }
-  a {
-    opacity: 0.7;
-  }
+
 </style>
 <div class="fullCard" id="thumbnail">
   <div class="cardContent">
