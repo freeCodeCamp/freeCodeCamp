@@ -24,9 +24,9 @@ We've defined a function, <code>sumOfTen</code>, which takes an array as an argu
 ```yml
 tests:
   - text: <code>sumOfTen</code> should return 10
-    testString: 'assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, "<code>sumOfTen</code> should return 10");'
+    testString: assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, '<code>sumOfTen</code> should return 10');
   - text: The <code>sumOfTen</code> function should utilize the <code>splice()</code> method
-    testString: 'assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1, "The <code>sumOfTen</code> function should utilize the <code>splice()</code> method");'
+    testString: assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1, 'The <code>sumOfTen</code> function should utilize the <code>splice()</code> method');
 
 ```
 
@@ -59,6 +59,9 @@ console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
 <section id='solution'>
 
 ```js
-// solution required
+function sumOfTen(arr) {
+  arr.splice(2,2);
+  return arr.reduce((a, b) => a + b);
+}
 ```
 </section>

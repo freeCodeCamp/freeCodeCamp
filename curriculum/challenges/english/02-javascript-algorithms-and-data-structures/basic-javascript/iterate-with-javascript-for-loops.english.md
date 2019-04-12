@@ -2,12 +2,13 @@
 id: cf1111c1c11feddfaeb5bdef
 title: Iterate with JavaScript For Loops
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c9yNVCe'
 ---
 
 ## Description
 <section id='description'>
 You can run the same code multiple times by using a loop.
-The most common type of JavaScript loop is called a "<code>for loop</code>" because it runs "for" a specific number of times.
+The most common type of JavaScript loop is called a <code>for loop</code> because it runs "for" a specific number of times.
 For loops are declared with three optional expressions separated by semicolons:
 <code>for ([initialization]; [condition]; [final-expression])</code>
 The <code>initialization</code> statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
@@ -29,9 +30,9 @@ Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>my
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: 'assert(code.match(/for\s*\(/g).length > 1, "You should be using a <code>for</code> loop for this.");'
-  - text: '<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.'
-    testString: 'assert.deepEqual(myArray, [1,2,3,4,5], "<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.");'
+    testString: assert(code.match(/for\s*\(/g).length > 1, 'You should be using a <code>for</code> loop for this.');
+  - text: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.
+    testString: assert.deepEqual(myArray, [1,2,3,4,5], '<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');
 
 ```
 
@@ -65,7 +66,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if (typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>

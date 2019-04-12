@@ -1,7 +1,7 @@
 ---
 id: 5900f5231000cf542c510034
 challengeType: 5
-title: 'Problem 438: Integer part of polynomial equation"s solutions'
+title: 'Problem 438: Integer part of polynomial equation''s solutions'
 ---
 
 ## Description
@@ -32,7 +32,7 @@ Find ∑S(t) for n = 7.
 ```yml
 tests:
   - text: <code>euler438()</code> should return 2046409616809.
-    testString: 'assert.strictEqual(euler438(), 2046409616809, "<code>euler438()</code> should return 2046409616809.");'
+    testString: assert.strictEqual(euler438(), 2046409616809, '<code>euler438()</code> should return 2046409616809.');
 
 ```
 

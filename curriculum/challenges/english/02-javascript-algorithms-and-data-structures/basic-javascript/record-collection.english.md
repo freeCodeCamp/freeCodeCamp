@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244cf
 title: Record Collection
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c4mpysg'
 ---
 
 ## Description
@@ -14,9 +15,9 @@ There are several rules for handling incomplete data:
 If <code>prop</code> is <code>"tracks"</code> but the album doesn't have a <code>"tracks"</code> property, create an empty array before adding the new value to the album's corresponding property.
 If <code>prop</code> is <code>"tracks"</code> and <code>value</code> isn't empty (<code>""</code>), push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.
 If <code>value</code> is empty (<code>""</code>), delete the given <code>prop</code> property from the album.
-<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href="javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank">accessing object properties with variables</a>.
+<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank">accessing object properties with variables</a>.
 Push is an array method you can read about on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank">Mozilla Developer Network</a>.
-You may refer back to <a href="javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher.
+You may refer back to <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher.
 </section>
 
 ## Instructions
@@ -29,20 +30,20 @@ You may refer back to <a href="javascript-algorithms-and-data-structures/basic-j
 
 ```yml
 tests:
-  - text: 'After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>'
-    testString: 'collection = collectionCopy; assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA", "After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>");'
-  - text: 'After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.'
-    testString: 'assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me", "After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.");'
-  - text: 'After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set'
-    testString: 'updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"), "After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set");'
-  - text: 'After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.'
-    testString: 'assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love", "After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.");'
-  - text: 'After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.'
-    testString: 'assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999", "After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.");'
-  - text: 'After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set'
-    testString: 'updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"), "After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set");'
-  - text: 'After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>'
-    testString: 'assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide", "After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>");'
+  - text: After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>
+    testString: collection = collectionCopy; assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA", 'After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>');
+  - text: After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.
+    testString: assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me", 'After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.');
+  - text: After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set
+    testString: updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"), 'After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set');
+  - text: After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.
+    testString: assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love", 'After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.');
+  - text: After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.
+    testString: assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999", 'After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.');
+  - text: After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set
+    testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"), 'After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set');
+  - text: After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>
+    testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide", 'After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>');
 
 ```
 
@@ -102,7 +103,7 @@ updateRecords(5439, "artist", "ABBA");
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+;(function(x) { return "collection = \n" + JSON.stringify(x, '\n', 2); })(collection);
 ```
 
 </div>

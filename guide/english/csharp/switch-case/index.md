@@ -60,6 +60,45 @@ switch(myColor) {
 ```
 This will execute the same lines of code if myColor is either Red or Blue.
 
+## When clause
+
+Starting with C# 7.0 you can use `when` clause to specify additional condition that must be satisfied. When clause is optional and is used right after specific case.
+
+```csharp
+Dog dog = new Dog
+{
+    Name = "Charlie",
+    Breed = "Affenpinscher",
+    Age = 3
+};
+
+switch (dog)
+{
+    case Dog d when d.Breed == "Affenpinscher" && d.Age >= 6:
+        Console.WriteLine($"{dog.Name} is considered a senior dog.");
+        break;
+    case Dog d when d.Breed == "Affenpinscher" && d.Age >= 2:
+        Console.WriteLine($"{dog.Name} is considered an adult dog.");
+        break;
+    case Dog d when d.Breed == "Affenpinscher":
+        Console.WriteLine($"{dog.Name} is considered a puppy.");
+        break;
+    case Dog d when d.Breed == "Chihuahua" && d.Age >= 4:
+        Console.WriteLine($"{dog.Name} is considered a senior dog.");
+        break;
+    case Dog d when d.Breed == "Chihuahua" && d.Age >= 2:
+        Console.WriteLine($"{dog.Name} is considered an adult dog.");
+        break;
+    case Dog d when d.Breed == "Chihuahua":
+        Console.WriteLine($"{dog.Name} is considered a puppy.");
+        break;
+    default:
+        Console.WriteLine($"We have no information according {dog.Breed} breed.");
+        break;
+}
+```
+As you see in the above example after `when` keyword you should specify logical condition (an instruction that returns bool value).
+
 ## Pattern matching using switch case
 
 We can use switch to not only match certain values, but also match certain data type. This is called pattern matching
