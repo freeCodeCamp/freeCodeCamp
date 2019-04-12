@@ -11,7 +11,7 @@ Here’s the setup:
 function chainToSwitch(val) {
   var answer = "";
   // Only change code below this line
-  switch(val) {
+  switch (val) {
     case "bob":
         answer = "Marley";
         break;
@@ -58,14 +58,14 @@ We need to change the chained ```if/else if``` statements into a ```switch``` st
  Next, we need to create simple ```switch``` statement:
 
  ```javascript
- switch(val) {
+ switch (val) {
  }
  ```
 
  and add in this ```switch``` statement ```case``` - for all ```if/else if``` statement (just copy it from our commented code above):
 
   ```javascript
-  switch(val) {
+  switch (val) {
     case "bob":
         answer = "Marley";
         break;
@@ -93,7 +93,7 @@ We need to change the chained ```if/else if``` statements into a ```switch``` st
  function chainToSwitch(val) {
   var answer = "";
   // Only change code below this line
-  switch(val) {
+  switch (val) {
     case "bob":
         answer = "Marley";
         break;
