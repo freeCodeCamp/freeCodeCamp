@@ -132,9 +132,17 @@ title: Convert HTML Entities
 ### Code Explanation:
 
 *   Create a object to use the Lookup functionality to easily find the characters.
-*   Split the original string by characters and use map to check for the changed html entity or use the same one. Alternatively you could use Regex `str.replace(/&|<|>|"|'/gi`.
-*   The a function is added which is what returns the converted entity or the original one if there is no conversion. If you go the regex route then you just have to return the matched hits. `return html[entity];`
+*   Split the original string by characters and use map to check for the changed html entity or use the same one.
+*   The a function is added which is what returns the converted entity or the original one if there is no conversion.
 *   Lastly we join all the characters once again.
+
+Alternatively, instead of using `split()` you could use a regex like this one:
+
+```javascript
+return str.replace(new RegExp("([&<>\"'])", "g"), match => htmlEntities[match]);
+```
+
+As second argument for `replace()` pass a function with the matched character as a parameter. Then return the correspondant entity from `htmlEntities`.
 
 **Note** that if you went the regex route then you don't need to join anything, just make sure you return the whole operation or save it to a variable and then return it.
 
