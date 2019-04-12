@@ -3,14 +3,14 @@ id: 587d781b367417b2b2512abe
 title: Add a box-shadow to a Card-like Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Agregar una sombra de cuadro a un elemento similar a una tarjeta
+localeTitle: Agregar un cuadrado de sombra a un elemento tipo tarjeta
 ---
 
 ## Description
-<section id="description"> La propiedad <code>box-shadow</code> aplica una o más sombras a un elemento. La propiedad <code>box-shadow</code> toma valores para <code>offset-x</code> (la distancia para empujar la sombra horizontalmente desde el elemento), <code>offset-y</code> (la distancia para empujar la sombra verticalmente desde el elemento), <code>blur-radius</code> <code>spread-radius</code> y un color. Valor, en ese orden. Los valores de <code>spread-radius</code> <code>blur-radius</code> <code>spread-radius</code> son opcionales. Este es un ejemplo del CSS para crear múltiples sombras con un poco de desenfoque, en su mayoría en colores negros transparentes: <blockquote> box-shadow: 0 10px 20px rgba (0,0,0,0.19), 0 6px 6px rgba (0,0,0,0.23); </blockquote></section>
+<section id="description"> La propiedad <code>box-shadow</code> aplica una o más sombras a un elemento. La propiedad <code>box-shadow</code> toma los valores de <code>offset-x</code> (cuánto empujar la sombra horizontalmente desde el elemento), <code>offset-y</code> (cuánto empujar la sombra verticalmente desde el elemento), <code>blur-radius</code> <code>spread-radius</code> y un valor de color, en ese orden. Los valores de <code>spread-radius</code> <code>blur-radius</code> <code>spread-radius</code> son opcionales. Este es un CSS de ejemplo para crear múltiples sombras con un poco de desenfoque,  en colores negros en su mayoría transparentes: <blockquote> box-shadow: 0 10px 20px rgba (0,0,0,0.19), 0 6px 6px rgba (0,0,0,0.23); </blockquote></section>
 
 ## Instructions
-<section id="instructions"> El elemento ahora tiene un id de <code>thumbnail</code> . Con este selector, use los valores de CSS de ejemplo anteriores para colocar una <code>box-shadow</code> en la tarjeta. </section>
+<section id="instructions"> El elemento ahora tiene un id de <code>thumbnail</code> . Con este selector, use los valores del CSS del ejemplo anterior para colocar una <code>box-shadow</code> en la tarjeta. </section>
 
 ## Tests
 <section id='tests'>

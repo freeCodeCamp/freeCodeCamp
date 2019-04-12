@@ -58,6 +58,8 @@ Most cryptographic hash functions are designed to take a string of any length as
 
 A cryptographic hash function must be able to withstand all known types of cryptanalytic attack.
 
+Some hashing techniques include: SHA (Secure Hash Algorithm), HAVAL, MD5 (message-digest algorithm), TIGER, and Whirlpool.
+
 ### Cryptography Hashing
 A cryptographic hash function is a type of hash function that is designed to also be a one-way function (a function that takes too much time and resources to brute force). The main purpose of hashes deal with message intregrity, so the same message always results in the same hash.
 

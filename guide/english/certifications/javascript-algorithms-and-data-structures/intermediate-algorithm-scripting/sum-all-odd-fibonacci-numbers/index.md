@@ -80,7 +80,7 @@ As you get the next odd one, don't forget to add it to a global variable that ca
         // Create an array of fib numbers till num
         const arrFib = [1, 1];
         let nextFib = 0;
-        
+
         // We put the new Fibonacci numbers to the front so we
         // don't need to calculate the length of the array on each
         // iteration
@@ -88,34 +88,33 @@ As you get the next odd one, don't forget to add it to a global variable that ca
             arrFib.unshift(nextFib);
         }
 
-        // Sum only the odd numbers and return the value
-        return arrFib.reduce((acc, curr) => {
-            return acc + curr * (curr % 2);
-        });
+        // We filter the array to get the odd numbers and reduce them to get their sum.
+        return arrFib.filter(x => x % 2 != 0).reduce((a, b) => a + b);
     }
 
     // test here
     sumFibs(4);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@kr3at0/SumAllOddFibonacciNumbers' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/ImpassionedFineConnection' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
 *   Create an array of fibonacci numbers till **num**.
-*   Use `reduce()` method to find the sum of odd members of array.
+*   Use `filter()` method to filter out even numbers.
+*   Use `reduce()` method to sum the remaining (odd) values.
 *   Return the sum.
 
 #### Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-push/14298' target='_blank' rel='nofollow'>JS Array Prototype Push</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>JS For Loops Explained</a>
+*   <a href='https://www.freecodecamp.org/forum/t/javascript-array-prototype-filter/14289' target='_blank' rel='nofollow'>JS Array Prototype Filter</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-reduce/14299' target='_blank' rel='nofollow'>JS Array Prototype Reduce</a>
+
+
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.
