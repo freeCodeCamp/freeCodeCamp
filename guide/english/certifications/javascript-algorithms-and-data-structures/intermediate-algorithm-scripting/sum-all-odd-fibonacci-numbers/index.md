@@ -80,7 +80,7 @@ As you get the next odd one, don't forget to add it to a global variable that ca
         // Create an array of fib numbers till num
         const arrFib = [1, 1];
         let nextFib = 0;
-        
+
         // We put the new Fibonacci numbers to the front so we
         // don't need to calculate the length of the array on each
         // iteration
@@ -88,7 +88,7 @@ As you get the next odd one, don't forget to add it to a global variable that ca
             arrFib.unshift(nextFib);
         }
 
-        // We return the array, filtering and summing (reducing) odd numbers at once. 
+        // We filter the array to get the odd numbers and reduce them to get their sum.
         return arrFib.filter(x => x % 2 != 0).reduce((a, b) => a + b);
     }
 
