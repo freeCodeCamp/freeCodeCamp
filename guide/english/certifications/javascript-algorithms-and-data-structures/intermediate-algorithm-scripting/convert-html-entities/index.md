@@ -40,7 +40,7 @@ function convertHTML(str) {
 
   var temp = str.split('');
 
-  // Since we are only checking for a few HTML elements I used a switch
+  // Since we are only checking for a few HTML elements, use a switch
 
   for (var i = 0; i < temp.length; i++) {
     switch (temp[i]) {
@@ -82,8 +82,6 @@ convertHTML("Dolce & Gabbana");
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join' target='_blank' rel='nofollow'>arr.join()</a>
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch' target='_blank' rel='nofollow'>switch statement</a>
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnP/0' target='_blank' rel='nofollow'>Run Code</a>
-
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
 ```javascript
@@ -103,8 +101,6 @@ function convertHTML(str) {
 // test here
 convertHTML("Dolce & Gabbana");
 ```
-
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/WoozyDelightfulSoftwareengineer' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 *   Create an object to use the Lookup functionality and easily find the characters.
@@ -136,7 +132,6 @@ function convertHTML(str) {
 // test here
 convertHTML("Dolce & Gabbana");
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnR/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
