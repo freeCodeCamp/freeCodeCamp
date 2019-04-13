@@ -15,6 +15,14 @@ Remember the structure of a `for` loop:
 - The `[final-expression]` is executed along the `statement` if `[condition]` resolves to `true`.
 > _try to solve the problem now_
 
+#### Hint 2
+Remember how accumulators work:
+`var x += i`
+   
+- The variable `x` is going to act as the accumulator.
+- The variable `i` is the one which value will be stored (and accumulated) inside `x`
+- The expression `+=` is an just abreviation of `x = x + i`
+> _try to solve the problem now_
 
 ## Spoiler alert!
 
@@ -23,11 +31,11 @@ Remember the structure of a `for` loop:
 ## Code solution:
 
 ```javascript
+var total = 0;
 for (var i = 0; i < myArr.length; i++) {
   total += myArr[i];
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-iterate-for-loop).
 
 ### Code explanation
 - Inititialization: `i` gets a value of `0` and its used as a counter.
@@ -50,7 +58,6 @@ for (var y = myArr.length - 1; y >= 0; y--) {
   total += myArr[y];
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-iterate-for-loop).
 
 ### Code explanation
 This works similarly to the last solution but it's faster<sup><a href="#cite1">1</a></sup> although it might not meet your requirements if order is important.
