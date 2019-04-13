@@ -7,7 +7,7 @@ The X intercept(s) are the point(s) on the X axis where the graph of the functio
 
 The Y intercept is the point at which the graph of the function crosses the Y axis. It occurs where ```x = 0```. 
 
-A function can have multiple X intercepts, but can only have a single Y intercept. 
+A function can have multiple X intercepts, but can only have a single Y intercept. Why is only a single Y intercept allowed? By definition, a function can only have one output, y, for each unique input, x. Thus, a graph would violate this definition if ```x = 0``` produced more than one output, y.
 
 To find the X intercept(s), set ```y = 0``` and solve the equation for x. 
 
