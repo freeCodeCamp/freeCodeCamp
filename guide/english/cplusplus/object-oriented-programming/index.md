@@ -32,7 +32,7 @@ When a program is executed the objects interact by sending messages to one anoth
 Each object contains data and code to manipulate the data. Objects can interact without having to know details of each others data or code. It is sufficient to know the type of message accepted and type of response returned by the objects.
 
 ### Class: 
-Class is a blueprint of data and functions or methods. Class does not take any space.
+Class is a blueprint of data and functions or methods. Class does not take any space. A class has three access modifiers- private, public and protected. The default access modifier is private.
 ```cpp
 class class_name
 {
