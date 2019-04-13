@@ -161,7 +161,7 @@ This step will install the dependencies required for the application to run:
 
 ```sh
 # Install NPM dependencies
-npm ci
+npm i
 ```
 
 #### Step 3: Start MongoDB
