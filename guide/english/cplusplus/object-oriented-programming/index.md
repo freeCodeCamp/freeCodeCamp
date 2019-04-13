@@ -4,12 +4,12 @@ title: Object Oriented Programming using C++
 
 ## Object Oriented Programming using C++
 
-Object oriented programming, OOP for short, aims to implement real world entities like inheritance, hiding and polymorphism in programming. The main aim of OOP is to bind together the data and the functions that operates on them so that no other part of code can access this data except that function.
+Object oriented programming, OOP for short, aims to represent real world entities in software, using mechanisms such as inheritance, hiding and polymorphism. The main aim of OOP is to bind together the data and the functions that operate on them so that software objects have control over how their data is accessed.
 
-Let us learn about different characteristics of an Object Oriented Programming language:
+Let us learn about the different characteristics of an Object Oriented Programming language:
 
 ### Object:
-Objects are basic run-time entities in an object oriented system, objects are instances of a class these are defined user defined data types.
+Objects are basic run-time entities in an object oriented system. Objects are instances of a class. Classes are user-defined data types.
 
 ```cpp
 class person
