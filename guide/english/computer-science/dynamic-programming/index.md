@@ -44,7 +44,7 @@ def fib(n)
     return lookup[n]
 }
 ```
-Caching computed solutions in a lookup table, and query it before go recursion will let the program have a running time of O(N).
+Caching computed solutions in a lookup table, and querying it before going for recursion will let the program have a running time of O(N).
 
 #### More Information:
 
