@@ -4,12 +4,12 @@ title: Object Oriented Programming using C++
 
 ## Object Oriented Programming using C++
 
-Object oriented programming, OOP for short, aims to implement real world entities like inheritance, hiding and polymorphism in programming. The main aim of OOP is to bind together the data and the functions that operates on them so that no other part of code can access this data except that function.
+Object oriented programming, OOP for short, aims to represent real world entities in software, using mechanisms such as inheritance, hiding and polymorphism. The main aim of OOP is to bind together the data and the functions that operate on them so that software objects have control over how their data is accessed.
 
-Let us learn about different characteristics of an Object Oriented Programming language:
+Let us learn about the different characteristics of an Object Oriented Programming language:
 
 ### Object:
-Objects are basic run-time entities in an object oriented system, objects are instances of a class these are defined user defined data types.
+Objects are basic run-time entities in an object oriented system. Objects are instances of a class. Classes are user-defined data types.
 
 ```cpp
 class person
@@ -32,7 +32,7 @@ When a program is executed the objects interact by sending messages to one anoth
 Each object contains data and code to manipulate the data. Objects can interact without having to know details of each others data or code. It is sufficient to know the type of message accepted and type of response returned by the objects.
 
 ### Class: 
-Class is a blueprint of data and functions or methods. Class does not take any space.
+Class is a blueprint of data and functions or methods. Class does not take any space. A class has three access modifiers- private, public and protected. The default access modifier is private.
 ```cpp
 class class_name
 {
@@ -55,6 +55,26 @@ Data abstraction refers to providing only needed information to the outside worl
 
 ### Inheritance:
 Inheritance is the process by which objects of one class acquire the properties of objects of another class. It supports the concept of hierarchical classification. Inheritance provides reusability. This means that we can add additional features to an existing class without modifying it.
+
+Here is an example of using inheritance to create a hierarchy, which can be refered to as an 'IS A' relationship between the classes.
+```
+class animal { 
+    private:
+    public:
+        void sleep();
+    protected: 
+        int amt_legs;
+};
+
+class cat: public animal {
+    private:
+    public:
+        void purr();
+    protected:
+        char * color_of_fur;
+};
+```
+In the above code, the `cat` class derives from the `animal` class, which means that a cat IS AN animal, plus some other features. The `cat` class explicitly has a variable for the color of its fur and a function for purring, but it also implicitly has a variable for the amount of legs it has and a function for sleeping.
 
 ### Polymorphism:
 Polymorphism means ability to take more than one form. An operation may exhibit different behaviors in different instances. The behavior depends on the types of data used in the operation.

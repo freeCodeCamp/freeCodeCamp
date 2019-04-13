@@ -14,7 +14,7 @@ localeTitle: 使用.env文件
 
 ```javascript
    if (process.env.VAR_NAME === "allCaps") { 
-    resonse = "Hello World".toUpperCase(); 
+    response = "Hello World".toUpperCase(); 
    } else { 
     response = "Hello World"; 
    } 
