@@ -54,7 +54,7 @@ Wrapping up (combining) of data and functions into a single unit is known as enc
 Data abstraction refers to providing only needed information to the outside world and hiding implementation details. For example, consider a class Complex with public functions as getReal() and getImag(). We may implement the class as an array of size 2 or as two variables. The advantage of abstraction is, we can change implementation at any point, users of Complex class won't be affected as our method interface remains same. 
 
 ### Inheritance:
-Inheritance is the process by which objects of one class acquire the properties of objects of another class. It supports the concept of hierarchical classification. Inheritance provides reusability of code. This means that we can add additional features to an existing class without modifying it.
+Inheritance is the process by which objects of one class acquire the properties of objects of another class. It supports the concept of hierarchical classification. Inheritance provides reusability of code. This means that we can add additional features to an existing class without modifying it. C++ supports single and multiple inheritance where a class can inherit from a single parent class or multiple parent classes. This is in stark contrast to Java which does not support multiple inheritance.
 
 Here is an example of using inheritance to create a hierarchy, which can be refered to as an 'IS A' relationship between the classes.
 ```
@@ -82,7 +82,7 @@ Polymorphism means ability to take more than one form. An operation may exhibit 
 C++ supports operator overloading and function overloading. Operator overloading is the process of making an operator to exhibit different behaviors in different instances. Function overloading is using a single function name to perform different types of tasks. Polymorphism is extensively used in implementing inheritance.
 
 ### Dynamic Binding:
-In dynamic binding, the code to be executed in response to function call is decided at runtime. C++ has virtual functions to support this.
+In dynamic binding, the code to be executed in response to function call is decided at runtime. C++ has virtual functions to support this. Dynamic binding is also known as late binding or runtime polymorphism.
 
 ### Message Passing: 
 Objects communicate with one another by sending and receiving information to each other. A message for an object is a request for execution of a procedure and therefore will invoke a function in the receiving object that generates the desired results. Message passing involves specifying the name of the object, the name of the function and the information to be sent.
