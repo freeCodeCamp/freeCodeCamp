@@ -17,9 +17,9 @@ localeTitle: Добавить новые объекты в объект JavaScri
 
 ```yml
 tests:
-  - text: Добавьте свойство <code>&quot;bark&quot;</code> в <code>myDog</code>.
+  - text: Добавьте свойство <code>bark</code> в <code>myDog</code>.
     testString: assert(myDog.bark !== undefined, "Add the property <code>"bark"</code> to <code>myDog</code>.");
-  - text: Не добавляйте <code>&quot;bark&quot;</code> в раздел настройки
+  - text: Не добавляйте <code>bark</code> в раздел настройки
     testString: assert(!/bark[^\n]:/.test(code), "Do not add <code>"bark"</code> to the setup section");
 
 ```
