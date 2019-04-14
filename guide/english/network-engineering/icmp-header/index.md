@@ -11,6 +11,9 @@ ICMP for IPv4 is encapsulated within an IPv4 packet and contains a data section 
 
 ICMP packets for IPv4 may not exceed 576 bytes in length, including headers.
 
+##### Network Address Translation [NAT]
+* During traffic flow, packets are sent out in order to remap an IP address to modify to another address. This process only works with IPv4. Lastly, this is process ensures that IPv4 addresses will not run out by IP modification on a normal basis. 
+
 ##### Type [8-bits]
   * Type field refers to the type of ICMP message
   * Some useful ICMP types include:
