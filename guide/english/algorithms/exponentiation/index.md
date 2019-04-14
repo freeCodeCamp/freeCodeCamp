@@ -38,7 +38,7 @@ int power(int x, unsigned int y) {
 
 ## Modular Exponentiation
 
-Given three numbers x, y and p, compute (x^y) % p
+Given three numbers x, y, and p, compute (x^y) % p
 
 ```C
 int power(int x, unsigned int y, int p) { 
@@ -56,3 +56,6 @@ int power(int x, unsigned int y, int p) {
 } 
 ```
 Time Complexity: O(Log y).
+
+#### More Information:
+- [Basic Fundamentals](https://mathinsight.org/exponentiation_basic_rules)
