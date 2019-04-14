@@ -4,7 +4,7 @@ title: File Handling
 ## File Handling
 
 ### Introduction
-If you've written the C `helloworld` program before, you've already done file INPUT/OUTPUT(Genrally reffered as IO) in C!  Congratulations! :tada:
+If you've written the C `helloworld` program before, you've already done file INPUT/OUTPUT(Genrally reffered as IO) in C!  Congratulations!
 
 ```c
 /* A simple hello world in C. */
@@ -56,32 +56,32 @@ C provides a number of build-in function to perform basic file operation
 ### Opening a file
 
   The **fopen()** creates a file or opens an existing file
-  
+
   ```c
   fp = fopen(const char filename,const char mode);
   ```
-  
-  In C there are many mode for opening a file 
-  
+
+  In C there are many mode for opening a file
+
   **r**  **-**   **open a file in reading mode**
   ..//Provide access only to read a file but not to write it.
-  
+
   **w**  **-**   **opens or create a text file in writing mode**
   ..//Provides access only to write on file not to read it.
-  
+
   **a**  **-**   **opens a file in append mode**
   ..//Provides acces to append more words in file.
-  
+
   **r+**  **-**   **opens a file in both reading and writing mode**
-  
+
   **a+**  **-**   **opens a file in both reading and writing mode**
-  
+
   **w+**  **-**   **opens a file in both reading and writing mode**
-  
+
   **b**  **-**   **opens a file in binary mode**
-  
+
   Here's an  example of reading and writing data to a file
-  
+
   ```c
   #include<stdio.h>
 #include<conio.h>
@@ -96,10 +96,10 @@ main()
  }
  fclose(fp);
  fp = fopen("hello.txt", "r");
- 
+
  while( (ch = getc(fp)! = EOF)
     printf("%c",ch);
-    
+
  fclose(fp);
 }
 ```
@@ -252,7 +252,7 @@ Hello, Logan!
 Hello, Carol!
 ```
 
-Super awesome, right! :smile:
+Super awesome, right!
 
 ### More Information:
 - <a href='https://en.wikibooks.org/wiki/C_Programming/File_IO' target='_blank' rel='nofollow'>Wikibooks page on file IO</a>

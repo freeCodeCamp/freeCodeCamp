@@ -8,7 +8,7 @@ title: ASPNET
 ASP.Net is a web development platform provided by Microsoft. It is used for creating web-based applications and websites using HTML, CSS, and JavaScript as front end. 
 Server-side programming languages like C# and VB .NET may be used to code the back end.
 
-ASP.NET offers different frameworks for creating web applications: For e.g ASP.NET Web Forms, ASP.NET Web Pages, ASP.NET MVC.
+ASP.NET offers different frameworks for creating web applications: e.g ASP.NET Web Forms, ASP.NET Web Pages, ASP.NET MVC.
 
 #### ASP.NET Web Forms
 ASP.NET Web Forms is the oldest part of ASP.NET for building websites. The workflow is based on events and the pages are created using large number of components that are available for rapid application development, HTML language and any server-side language supported by the .NET common language runtime, such as Microsoft Visual Basic and Microsoft Visual C#. Websites are compiled on the server side and the HTML code is send to the browser.
@@ -40,5 +40,7 @@ ASP.NET MVC is a framework for building web applications based on MVC pattern (m
 - [ASP .NET MVC Tutorials](https://www.tutorialspoint.com/asp.net_mvc/)
 - [ASP .NET MVC Interview Questions](https://medium.com/dot-net-tutorial/top-50-asp-net-mvc-interview-questions-with-answers-1fd9b1638c61)
 
-ASP.Net development is now available on Mac and Linux, Checkout more here:
+ASP.Net development is now available on Mac and Linux.
+
+Checkout more here:
 - [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/start-mvc?view=aspnetcore-2.1)
