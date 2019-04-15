@@ -17,7 +17,7 @@ for (const fruit of fruits)
 The above snippet is going to return us the items in the array above.
 
 ## for-of loop in knowing index
-What if we want to know the index of each item too.In that case we can iterate over fruits.entries() which gives us the ArrayIterator.
+What if we want to know the index of each item too. In that case we can iterate over fruits.entries() which gives us the ArrayIterator.
 
 ```javascript
 for (const fruit of fruits.entries())
@@ -94,3 +94,7 @@ for (const para of paragraphs)
     // We can add event listeners to each para here
 }
 ```
+
+#### More Information
+
+[ES6 In Depth: Iterators and the for-of loop](https://hacks.mozilla.org/2015/04/es6-in-depth-iterators-and-the-for-of-loop/)
