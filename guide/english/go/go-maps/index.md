@@ -52,7 +52,7 @@ var m = map[string]bool{
 }
 
 m["Go"] // true
-m["JavaScript"] = true // Set Javascript to true
+m["JavaScript"] = true // Set JavaScript to true
 delete(m, "JavaScript") // Delete "JavaScript" key and value
 language, ok = m["C++"] // ok is false, language is bool's zero-value (false)
 ```

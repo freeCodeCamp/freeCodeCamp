@@ -118,7 +118,7 @@ This problem does not involve rearranging the input into different combinations 
 
 *   First define an object with all pair possibilities, this allows us to easily find by key or value.
 *   Split `str` into a characters array so we can use each letter to find its pair.
-*   Use the map function to map each character in the array to an array with the character and it's matching pair, creating a 2D array.
+*   Use the map function to map each character in the array to an array with the character and its matching pair, creating a 2D array.
 
 #### Relevant Links
 
@@ -131,6 +131,3 @@ This problem does not involve rearranging the input into different combinations 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

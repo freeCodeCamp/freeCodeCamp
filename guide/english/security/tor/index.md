@@ -22,9 +22,22 @@ Tor has gotten a lot of negative attention because of its criminal use case. Cri
 
 Edward Snowden, the NSA whistleblower, has mentioned Tor favorably as a very well put-together program. Famously, an internal NSA memo that was leaked referred to it as "the king of high-secure, low-latency internet anonymity There are no contenders to the throne in waiting".
 
-Tor has many other usecases. Journalists reporting from areas where their lives may be endangered by the nature of the stories they are breaking, whistleblowers, and people living in oppressive regimes all fit into Tor's more benign usecases, along with anyone more interested in online anonymity. This is important because everyday things cause us to lose more and more of what little privacy we have left, things like TOR ensure a brighter future.
+Tor has many other use cases. Journalists reporting from areas where their lives may be endangered by the nature of the stories they are breaking, whistleblowers, and people living in oppressive regimes all fit into Tor's more benign use cases, along with anyone more interested in online anonymity. This is important because everyday things cause us to lose more and more of what little privacy we have left, things like TOR ensure a brighter future.
+
+
+<p align="center">
+  <img alt="OONI Logo" src="https://ooni.torproject.org/images/ooni-header-mascot.png" width="300">
+</p>
+
+## OONI 
+
+The Tor Project is dedicated to helping people who are unable to connect to the free and open internet.  The Open Observatory of Network Interference is a free and open source project that can be used to detect instances of censorship.  
+
+The OONI probe application can be ran on a repressive network to determine the extent of the censorship.  For example, some OONI tests send data over an unencrypted channel and compare the data to see if it has been tampered with.  Other tests check for DNS spoofing and transparent proxy servers.  This data is combined from sources around the world to gain a greater understanding of current censorship events.  
+
 
 #### More Information:
 
 <a href='https://www.torproject.org' target='_blank' rel='nofollow'>The Tor Project</a><br />
-<a href='https://www.theguardian.com/world/2013/oct/04/nsa-gchq-attack-tor-network-encryption' target='_blank' rel='nofollow'>NSA and GCHQ try to crack Tor</a>
+<a href='https://www.theguardian.com/world/2013/oct/04/nsa-gchq-attack-tor-network-encryption' target='_blank' rel='nofollow'>NSA and GCHQ try to crack Tor</a></br>
+<a href='https://ooni.torproject.org/' target='_blank' rel='nofollow'> OONI -Open Observatory of Network Interference </a>

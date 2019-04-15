@@ -3,13 +3,24 @@ title: How to Find the Median Value
 ---
 ## How to Find the Median Value
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/how-to-find-the-median-value/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The median is the middle value of the sorted number set.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+#### Example 1
+Find the median value for the set below.<br/>
+<em>244 191 160 187 180</em>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+##### Step 1. Sort the numbers in order.
+After it is sorted, you will have <em>160 180 187 191 244</em>.
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+##### Step 2. Find the median value.
+Once the numbers are ordered, the median is the value in the middle. In this case, the median is <em>187</em>.
 
+#### Example 2
+Find the median value for the set below.<br/>
+<em>205 211 183 211 180 194</em>
 
+##### Step 1. Sort the numbers in order.<br/>
+After it is sorted, you will have <em>180 183 194 205 211 211</em>.
+
+##### Step 2. Find the median value.<br/>
+In this case, there are two middle numbers (<em>194</em> and <em>205</em>). To find the median, we will look for the average of the two middle values. The median is (<em>194</em> + <em>205</em>) / 2 = <em>199.5</em>.
