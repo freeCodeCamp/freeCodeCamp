@@ -1,6 +1,6 @@
 ---
 id: 
-title: Check If Tree Is Binary Search TRee
+title: Check If Tree Is Binary Search Tree
 challengeType: 1
 ---
 
@@ -10,7 +10,7 @@ challengeType: 1
 
 ## Instructions
 <section id='instructions'>
-Write a method that checks if a tree is a binary search tree.
+In this challenge, we will create a utility for our tree. Write a method <code>isBinarySearchTree</code> which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not
 </section>
 
 ## Tests
