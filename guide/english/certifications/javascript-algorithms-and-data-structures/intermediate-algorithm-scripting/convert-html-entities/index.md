@@ -95,7 +95,7 @@ function convertHTML(str) {
     "'" :"&apos;"
   }
   // Using a regex, replace characters with it's corresponding html entity
-  return str.replace(new RegExp("([&<>\"'])", "g"), match => htmlEntities[match]);
+  return str.replace(/([&<>\"'])/g, match => htmlEntities[match]);
 }
 
 // test here
