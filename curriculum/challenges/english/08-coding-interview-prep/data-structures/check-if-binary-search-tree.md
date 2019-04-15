@@ -1,16 +1,18 @@
 ---
 id: 
-title: Check If Tree Is Binary Search Tree
+title: Check if Tree is Binary Search Tree
 challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
+<section id='description'>
+Since you already know what a binary search tree is, this challenge will establish how it is you can tell that a tree is a binary search tree or not.
+The main distinction of a binary search tree is that the nodes are ordered in an organized fashion. Nodes have at most 2 child nodes that are placed to the right and the left based on if the node's value is greater than or equal to (right) or less than (left) the parent node.
 </section>
 
 ## Instructions
 <section id='instructions'>
-In this challenge, we will create a utility for our tree. Write a method <code>isBinarySearchTree</code> which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not
+In this challenge, you will create a utility for your tree. Write a JavaScript method <code>isBinarySearchTree</code> which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not.
 </section>
 
 ## Tests
@@ -38,7 +40,7 @@ tests:
 
 ```js
 
-}
+
 ```
 
 </div>
