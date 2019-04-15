@@ -51,14 +51,22 @@ tests:
 <section id='solution'>
 
 ```js
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+class BinarySearchTree {
+  constructor(value) {
+    this.root = null;
+  }
 }
 
-function isBinarySearchTree(root) {// root is an object of class Node
-  if (root == null) {
+
+isBinarySearchTree() {// root is an object of class Node
+  if (this.root == null) {
     return null;
   } else {
     let isBST = true;
@@ -80,7 +88,7 @@ function isBinarySearchTree(root) {// root is an object of class Node
         };
       };
     };
-    checkTree(root);
+    checkTree(this.root);
     return isBST;
   }
 }
