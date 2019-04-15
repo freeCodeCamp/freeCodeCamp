@@ -57,8 +57,8 @@ function Node(value) {
   this.right = null;
 }
 
-function isBinarySearchTree() {
-  if (this.root == null) {
+function isBinarySearchTree(root) {// root is an object of class Node
+  if (root == null) {
     return null;
   } else {
     let isBST = true;
@@ -80,7 +80,7 @@ function isBinarySearchTree() {
         };
       };
     };
-    checkTree(this.root);
+    checkTree(root);
     return isBST;
   }
 }
