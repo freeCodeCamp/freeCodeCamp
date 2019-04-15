@@ -12,7 +12,7 @@ The <code>hsl()</code> option in CSS also makes it easy to adjust the tone of a 
 
 ## Instructions
 <section id='instructions'>
-All elements have a default <code>background-color</code> of <code>transparent</code>. Our <code>nav</code> element currently appears have a <code>cyan</code> background, because the element behind it has a <code>background-color</code> set to <code>cyan</code>. Add a <code>background-color</code> to the <code>nav</code> element so it uses the same <code>cyan</code> hue, but has <code>80% saturation</code> and <code>25% lightness</code> values to change its tone and shade.
+All elements have a default <code>background-color</code> of <code>transparent</code>. Our <code>nav</code> element currently appears to have a <code>cyan</code> background, because the element behind it has a <code>background-color</code> set to <code>cyan</code>. Add a <code>background-color</code> to the <code>nav</code> element so it uses the same <code>cyan</code> hue, but has <code>80% saturation</code> and <code>25% lightness</code> values to change its tone and shade.
 </section>
 
 ## Tests
