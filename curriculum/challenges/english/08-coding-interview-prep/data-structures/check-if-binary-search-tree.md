@@ -53,13 +53,21 @@ tests:
 <section id='solution'>
 
 ```js
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+}
+class BinarySearchTree {
+  constructor(value) {
+    this.root = null;
+  }
 }
 
-function isBinarySearchTree() {
+
+isBinarySearchTree() {// root is an object of class Node
   if (this.root == null) {
     return null;
   } else {
