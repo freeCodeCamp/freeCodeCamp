@@ -3,13 +3,18 @@ title: String.prototype.toString
 ---
 ## String.prototype.toString
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-tostring/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `toString()` method returns the String object's primitive string value.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Examples:
+```js
+var x = new String("hi");
+console.log(typeof x); // outputs 'object'
+console.log(x);        // outputs 'String {"hi"}'
+console.log(typeof x.toString()); // outputs 'string'
+console.log(x.toString());        // outputs 'hi'
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Note that `String.prototype.toString()` returns the same thing as [String.prototype.valueOf()](https://guide.freecodecamp.org/javascript/standard-objects/string/string-prototype-valueof/).
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- [String.prototype.toString() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toString)

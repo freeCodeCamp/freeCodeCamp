@@ -3,13 +3,18 @@ title: String.prototype.valueOf
 ---
 ## String.prototype.valueOf
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-valueof/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `valueOf()` method returns the String object's primitive string value.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Examples:
+```js
+var x = new String("hi");
+console.log(typeof x); // outputs 'object'
+console.log(x);        // outputs 'String {"hi"}'
+console.log(typeof x.valueOf()); // outputs 'string'
+console.log(x.valueOf());        // outputs 'hi'
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Note that `String.prototype.valueOf()` returns the same thing as [String.prototype.toString()](https://guide.freecodecamp.org/javascript/standard-objects/string/string-prototype-tostring/).
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- [String.prototype.valueOf() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/valueOf)
