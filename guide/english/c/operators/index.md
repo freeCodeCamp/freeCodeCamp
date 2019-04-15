@@ -2,6 +2,7 @@
 title: Operators
 ---
 # Operators in C
+Operators in C specifies the Mathematical, Conditional and Logical Operations to be Performed. Operators can be used with varibles and constants to form an expression.
 
 ## 1. Arithmetic Operators
 
