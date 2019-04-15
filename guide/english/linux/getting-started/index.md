@@ -19,11 +19,11 @@ Some other choices include:
 
 
 ## Installing.
-
-
 Most Linux distributions are extremely easy to install, all information is shown between each step of the installation.
 
 One important step to look out for is when deciding where to install your new Linux distro. For first-time users it's better to choose the "Guided" option as it will do all the work for you.
+
+If you are trying to install a more complicated distrubution like Arch Linux, it is recommended you follow guides in the [wiki](https://wiki.archlinux.org/). Not only does the wiki contain great guides about Arch Linux, but also guides for many different Linux applications.
 
 Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say about 30Gb minimum is nice to have.
 
