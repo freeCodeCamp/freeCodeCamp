@@ -12,11 +12,7 @@ The main distinction of a binary search tree is that the nodes are ordered in an
 
 ## Instructions
 <section id='instructions'>
-<<<<<<< HEAD
-In this challenge, you will create a utility for your tree. Write a JavaScript method <code>isBinarySearchTree</code> which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not.
-=======
 In this challenge, you will create a utility for your tree. Write a JavaScript method <code>isBinarySearchTree</code> which takes a tree as an input and returns a boolean value for whether the tree is a binary search tree or not. Use recursion whenever possible.
->>>>>>> d8de75d3712b4bada4928da2ec304086211babbc
 </section>
 
 ## Tests
@@ -43,10 +39,6 @@ tests:
 <div id='js-seed'>
 
 ```js
-<<<<<<< HEAD
-
-
-=======
 var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
     this.value = value;
@@ -61,7 +53,6 @@ function isBinarySearchTree(tree) {
     this.root = null;
     // change code below this line
 }
->>>>>>> d8de75d3712b4bada4928da2ec304086211babbc
 ```
 
 </div>
@@ -74,49 +65,6 @@ function isBinarySearchTree(tree) {
 <section id='solution'>
 
 ```js
-<<<<<<< HEAD
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-}
-class BinarySearchTree {
-  constructor(value) {
-    this.root = null;
-  }
-}
-
-
-isBinarySearchTree() {// root is an object of class Node
-  if (this.root == null) {
-    return null;
-  } else {
-    let isBST = true;
-    function checkTree(node) {
-      if (node.left != null) {
-        const left = node.left;
-        if (left.value > node.value) {
-          isBST = false;
-        } else {
-          checkTree(left);
-        }
-      }
-      if (node.right != null) {
-        const right = node.right;
-        if (right.value < node.value) {
-          isBST = false;
-        } else {
-          checkTree(right);
-        };
-      };
-    };
-    checkTree(this.root);
-    return isBST;
-  }
-}
-=======
 function Node(value) {
     this.value = value;
     this.left = null;
@@ -153,7 +101,6 @@ function isBinarySearchTree(tree) {
       return isBST;
     }
   }
->>>>>>> d8de75d3712b4bada4928da2ec304086211babbc
 
 ```
 </section>
