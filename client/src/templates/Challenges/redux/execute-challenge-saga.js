@@ -93,9 +93,7 @@ function* executeTests(testRunner) {
         throw err;
       }
     } catch (err) {
-      newTest.message = text
-        .replace(/<code>(.*?)<\/code>/g, '$1')
-        .replace(/<wbr>/g, '');
+      newTest.message = text;
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
