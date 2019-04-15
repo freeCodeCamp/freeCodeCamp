@@ -47,7 +47,7 @@ app.get('/api/whoami/', (req, res) => {
     software: req.get('user-agent'),
   };
 
-  res.json(responseObject);
+res.json(responseObject);
 ```
 
 ### Code Explanation:
