@@ -3,7 +3,7 @@ title: Insertion Sort
 ---
 ## Insertion Sort
 
-Insertion sort is the simplest and efficient sorting algorithm for small number of elements.
+Insertion sort is a simple sorting algorithm for a small number of elements.
 
 ### Example:
  In Insertion sort, you compare the `key` element with the previous elements. If the previous elements are greater than the `key` element, then you move the previous element to the next position.
@@ -83,7 +83,7 @@ Step 5 :
 ```
 ![[ 1 2 3 4 5 8 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/6.png?raw=true)
 
-The below algorithm is slightly optimized version to avoid swapping `key` element in every iteration. Here, the `key` element will be swapped at the end of the iteration (step).
+The algorithm shown below is a slightly optimized version to avoid swapping the `key` element in every iteration. Here, the `key` element will be swapped at the end of the iteration (step).
 
 ```Algorithm
     InsertionSort(arr[])
@@ -96,7 +96,7 @@ The below algorithm is slightly optimized version to avoid swapping `key` elemen
          arr[i+1] = key
 ```
 
-Here is a detaied implementation in Javascript:
+Here is a detailed implementation in JavaScript:
 
 ```
 function insertion_sort(A) {
@@ -115,7 +115,7 @@ function insertion_sort(A) {
 }
 ```
 
-A quick implementation in Swift is as shown below :
+A quick implementation in Swift is shown below :
 
 ```swift
   var array = [8, 3, 5, 1, 4, 2]
@@ -170,7 +170,10 @@ void insertionSort(int arr[], int n)
 
 ### Properties:
 * Space Complexity: O(1)
-* Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively
+* Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively.
+     - Best Case: array is already sorted
+     - Average Case: array is randomly sorted
+     - Worst Case: array is reversely sorted. 
 * Sorting In Place: Yes
 * Stable: Yes
 
@@ -180,3 +183,4 @@ void insertionSort(int arr[], int n)
 - [SortInsertion - GeeksforGeeks, YouTube](https://www.youtube.com/watch?v=wObxd4Kx8sE)
 - [Insertion Sort Visualization](https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/visualize/)
 - [Insertion Sort - MyCodeSchool](https://www.youtube.com/watch?v=i-SKeOcBwko)
+- [Insertion Sort - VisuAlgo](https://visualgo.net/en/sorting)
