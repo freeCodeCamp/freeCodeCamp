@@ -51,7 +51,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-const List= (props) => {
+const List = (props) => {
   { /* change code below this line */ }
   return <p>{}</p>
   { /* change code above this line */ }
