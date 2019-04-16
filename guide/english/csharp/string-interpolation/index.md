@@ -24,3 +24,6 @@ int a = 3;
 int b = 454;
 string result = $"{a}+{b} = {a+b}";
 ```
+
+### More Information
+* [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)

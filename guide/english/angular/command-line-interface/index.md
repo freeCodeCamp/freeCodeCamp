@@ -28,6 +28,8 @@ Recognize that `ng` is the basic building block of the CLI. All your commands wi
 
 * ng update
 
+* ng add (Angular 6)
+
 The key terms for each of these are quite telling. Together, they comprise what you will need to hit the ground running with Angular. Of course, there are many more. All commands are outlined in the [CLI's GitHub Documentation<sup>1</sup>](https://github.com/angular/angular-cli/wiki#additional-commands). You will likely find that the commands listed above will cover the necessary bases.
 
 #### ng new
@@ -58,7 +60,7 @@ You can see that `ng generate`expedites Angular’s [boilerplate code](https://e
 
 #### ng build
 
-The `ng serve` command runs the project using `lite-server` webserver installed with other dependencies during the the creation of project with `ng new`. If you want to serve your Angular web application with your own webserver like Apache or Nginx, then you will have to build all the source Typescript files with `ng build`.
+The `ng serve` command runs the project using `lite-server` webserver installed with other dependencies during the the creation of project with `ng new`. If you want to serve your Angular web application with your own webserver like Apache or Nginx, then you will have to build all the source TypeScript files with `ng build`.
 
 `ng build` produces a development build with all source maps, JavaScript files, CSS and HTML files and puts it in the `[name-of-app] -> dist` directory. This directory contains the `index.html` file which is the entry point to the Angular application. The content of this folder can be directly put into the web root of any web server to deploy. You don't need `ng serve` anymore.
 
@@ -75,6 +77,12 @@ In angular cli ng update do automatic updation on all the angular and npm packag
 Here is the syntax and options can be used with `ng update`.
 
 `ng update [package]`
+
+#### ng add
+
+ng add will use npm to download new dependencies and invoke an installation script.
+
+`ng add <package>`
 
 **Options**
 - dry-run

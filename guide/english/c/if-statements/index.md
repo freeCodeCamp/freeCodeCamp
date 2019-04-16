@@ -183,11 +183,15 @@ n is equal to 5 and m is equal to 10!
 
 Here's the first set of parenthesis: `n > m || n == 5`. This will be true if n is greater than m, or if n is equal to 5. n is not greater than m, but n is equal to 5. Because one of these things are true, and they are joined by an or, this statement will be true and the code within will be printed. The important point to note here is that, when using an OR (||) in code, if the first condition before the || is true, then it will not check for the condition present after ||. In the code above since n = 5 is not greater than m = 10, the condition n==5 is checked and is evaluated to true.
 
-Because the previous code was executed, it won't check the other else statements- those only get checked if the ones previous don't get checked. Just for the sake of exercise, though, consider what the rest of the code would be checking. `n == 5 && m == 10` will be true if n is equal to 5 and m is equal to 10. This is true, but if n was 6 it would no longer be true and the code within that else would not be run.
+Because the previous code was executed, it won't check the other else statements - those only get checked if the ones previous don't get checked. Just for the sake of exercise, though, consider what the rest of the code would be checking. `n == 5 && m == 10` will be true if n is equal to 5 and m is equal to 10. This is true, but if n was 6 it would no longer be true and the code within that else would not be run.
 
 `!(n == 6)` uses parenthesis to make the operation more obvious. Just like in math, parenthesis can be used for order of operations: things within the parenthesis will be performed before things that are not within parenthesis. So in this case, `n == 6` will be evaluated, and is false. The `!`, 'not', flips this from false to true, so this operation returns true. Like before, however, it will not run only because one of the previous statements was true that this is attached to would have already run.
 
 Finally, does `n > 5` evaluate to true? The answer is no, because n *is* 5, and so it is not greater than 5. As a result, this code will not evaluate to true. In order to make this evaluate to true, the `>=` operator should be used.
+
+Short-circuiting in logical operators: The AND and OR operators exhibit "short-circuit" operation. That is, the second expression is not evaluated if the result can be deduced solely by evaluating the first expression. 
+
+In an AND operator, if the first expression is evaluated to false, the result is false, even if the second expression is true. Similarly, in an OR operator, if the first expression is true, the second need not be evaluated as the result would be true.
 
 ## A Detail about C Comparisons
 Earlier you read that the comparisons are checking if something is true or false, but that's really only half true. Remember that C is about being light and close to the hardware- in hardware, it's easy to check if something is 0, and anything else takes more work. Because of this, what the comparisons are really doing is checking if something is false, which is assigned the value of 0, or checking if it isn't false (any other value).
@@ -229,6 +233,7 @@ int main() {
 ```
 
 What will be the Output? "NO! I am boss"? if you are guessing this output then you are wrong.
+
 Why did this happen? because in the if statement you used "=" instead of "==" operator.
 "==" is comparator . 
 

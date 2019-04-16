@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 As seen in the previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.
 Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.
-<blockquote>let obj = {<br>&nbsp;&nbsp;name:"FreeCodeCamp",<br>&nbsp;&nbsp;review:"Awesome"<br>};<br>Object.freeze(obj);<br>obj.review = "bad"; //will be ignored. Mutation not allowed<br>obj.newProp = "Test"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: "FreeCodeCamp", review:"Awesome"}</blockquote>
+<blockquote>let obj = {<br>&nbsp;&nbsp;name:"FreeCodeCamp",<br>&nbsp;&nbsp;review:"Awesome"<br>};<br>Object.freeze(obj);<br>obj.review = "bad"; // will be ignored. Mutation not allowed<br>obj.newProp = "Test"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: "FreeCodeCamp", review:"Awesome"}</blockquote>
 </section>
 
 ## Instructions
@@ -51,7 +51,7 @@ function freezeObj() {
   // change code above this line
   try {
     MATH_CONSTANTS.PI = 99;
-  } catch( ex ) {
+  } catch(ex) {
     console.log(ex);
   }
   return MATH_CONSTANTS.PI;
@@ -80,7 +80,7 @@ function freezeObj() {
   // change code above this line
   try {
     MATH_CONSTANTS.PI = 99;
-  } catch( ex ) {
+  } catch(ex) {
     console.log(ex);
   }
   return MATH_CONSTANTS.PI;

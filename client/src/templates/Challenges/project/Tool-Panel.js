@@ -32,19 +32,19 @@ export class ToolPanel extends Component {
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-invert'
+            className='btn-invert'
             href={guideUrl}
             target='_blank'
-            >
+          >
             Get a hint
           </Button>
         )}
         <Button
           block={true}
           bsStyle='primary'
-          className='btn-primary-invert'
+          className='btn-invert'
           onClick={openHelpModal}
-          >
+        >
           Ask for help
         </Button>
       </div>
@@ -55,35 +55,7 @@ export class ToolPanel extends Component {
 ToolPanel.displayName = 'ProjectToolPanel';
 ToolPanel.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToolPanel);
-
-/**
- *
- * <Fragment>
-        <ProjectForm isFrontEnd={isFrontEnd} openModal={openCompletionModal} />
-        <ButtonSpacer />
-        {guideUrl && (
-          <Fragment>
-            <Button
-              block={true}
-              bsStyle='primary'
-              className='btn-primary-ghost btn-big'
-              href={guideUrl}
-              target='_blank'
-              >
-              Get a hint
-            </Button>
-            <ButtonSpacer />
-          </Fragment>
-        )}
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-primary-ghost btn-big'
-          onClick={openHelpModal}
-          >
-          Ask for help on the forum
-        </Button>
-        <ButtonSpacer />
-      </Fragment>
- */
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToolPanel);

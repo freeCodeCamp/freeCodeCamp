@@ -101,6 +101,18 @@
       "Cramer's rule"
     ],
     [
+      "5a23c84252665b21eecc7e03",
+      "Cumulative standard deviation"
+    ],
+    [
+      "5a23c84252665b21eecc7e05",
+      "CUSIP"
+    ],
+    [
+      "5a23c84252665b21eecc7e06",
+      "Cut a rectangle"
+    ],
+    [
       "59669d08d75b60482359409f",
       "Date format"
     ],
@@ -131,6 +143,10 @@
     [
       "59f4eafba0343628bb682785",
       "Discordian date"
+    ],
+    [
+      "5a23c84252665b21eecc7e1e",
+      "Dot product"
     ],
     [
       "599c333915e0ea32d04d4bec",
@@ -297,6 +313,38 @@
       "Josephus problem"
     ],
     [
+      "5a23c84252665b21eecc7ecb",
+      "K-d tree"
+    ],
+    [
+      "5a23c84252665b21eecc7eca",
+      "Kaprekar numbers"
+    ],
+    [
+      "5a23c84252665b21eecc7ed5",
+      "Knight's tour"
+    ],
+    [
+      "5a23c84252665b21eecc7edb",
+      "Largest int from concatenated ints"
+    ],
+    [
+      "5a23c84252665b21eecc7edc",
+      "Last Friday of each month"
+    ],
+    [
+      "5a23c84252665b21eecc7ede",
+      "Leap year"
+    ],
+    [
+      "5a23c84252665b21eecc7edf",
+      "Least common multiple"
+    ],
+    [
+      "5a23c84252665b21eecc7ee0",
+      "Left factorials"
+    ],
+    [
       "59da22823d04c95919d46269",
       "Sailors, coconuts and a monkey problem"
     ],
@@ -333,10 +381,6 @@
       "Sorting algorithms/Bogosort"
     ],
     [
-      "5a23c84252665b21eecc8003",
-      "Sorting algorithms/Bubble sort"
-    ],
-    [
       "5a23c84252665b21eecc8004",
       "Sorting algorithms/Cocktail sort"
     ],
@@ -345,24 +389,8 @@
       "Sorting algorithms/Comb sort"
     ],
     [
-      "5a23c84252665b21eecc8006",
-      "Sorting algorithms/Counting sort"
-    ],
-    [
       "5a23c84252665b21eecc8007",
       "Sorting algorithms/Gnome sort"
-    ],
-    [
-      "5a23c84252665b21eecc8008",
-      "Sorting algorithms/Heapsort"
-    ],
-    [
-      "5a23c84252665b21eecc8009",
-      "Sorting algorithms/Insertion sort"
-    ],
-    [
-      "5a23c84252665b21eecc800a",
-      "Sorting algorithms/Merge sort"
     ],
     [
       "5a23c84252665b21eecc800b",
@@ -371,18 +399,6 @@
     [
       "5a23c84252665b21eecc800c",
       "Sorting algorithms/Permutation sort"
-    ],
-    [
-      "5a23c84252665b21eecc800d",
-      "Sorting algorithms/Quicksort"
-    ],
-    [
-      "5a23c84252665b21eecc800e",
-      "Sorting algorithms/Radix sort"
-    ],
-    [
-      "5a23c84252665b21eecc800f",
-      "Sorting algorithms/Selection sort"
     ],
     [
       "5a23c84252665b21eecc8010",

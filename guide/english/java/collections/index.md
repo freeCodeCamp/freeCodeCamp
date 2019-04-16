@@ -38,7 +38,7 @@ Other important interfaces extending the collection interface are:
 	A collection containing only unique elements.
 
 - `Queue`:
-	Implement the queue behaviour where elements are added only in the beginning and removed from the end.
+	Implement the queue behavior where elements are added only in the beginning and removed from the end.
 
 - `List`:
 	This collection handles a list/sequence of objects.

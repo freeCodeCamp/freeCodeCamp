@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 In the last challenge, you learned about <code>export default</code> and its uses. It is important to note that, to import a default export, you need to use a different <code>import</code> syntax.
 In the following example, we have a function, <code>add</code>, that is the default export of a file, <code>"math_functions"</code>. Here is how to import it:
-<blockquote>import add from "math_functions";<br>add(5,4); //Will return 9</blockquote>
+<blockquote>import add from "math_functions";<br>add(5,4); // Will return 9</blockquote>
 The syntax differs in one key place - the imported value, <code>add</code>, is not surrounded by curly braces, <code>{}</code>. Unlike exported values, the primary method of importing a default export is to simply write the value's name after <code>import</code>.
 </section>
 
@@ -22,8 +22,8 @@ In the following code, please import the default export, <code>subtract</code>, 
 
 ```yml
 tests:
-  - text: Properly imports <code>export default</code> method.
-    testString: getUserInput => assert(getUserInput('index').match(/import\s+subtract\s+from\s+"math_functions"/g), 'Properly imports <code>export default</code> method.');
+  - text: You need to properly import <code>subtract</code> from <code>"math_functions"</code>.
+    testString: getUserInput => assert(getUserInput('index').match(/import\s+subtract\s+from\s+('|")math_functions\1/g), 'You need to properly import <code>subtract</code> from <code>"math_functions"</code>.');
 
 ```
 

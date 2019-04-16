@@ -8,6 +8,9 @@ The ```opacity``` property allows you to make an image transparent by lowering h
 ```Opacity``` takes a value between 0.0 and 1.0.
 
 1.0 is the default value for any image. It is fully opaque.
+(default)
+
+Note: When using the opacity property to add transparency to the background of an element, all of its child elements become transparent as well. This can make the text inside a fully transparent element hard to read. If you do not want to apply opacity to child elements, use RGBA color values instead.
 
 Example:
 ```css

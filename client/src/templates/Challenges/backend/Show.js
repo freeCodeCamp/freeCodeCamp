@@ -7,6 +7,7 @@ import { graphql } from 'gatsby';
 
 import {
   executeChallenge,
+  challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
   initTests,
@@ -42,12 +43,15 @@ const reduxFormPropTypes = {
 };
 
 const propTypes = {
+  challengeMounted: PropTypes.func.isRequired,
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
+  initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   tests: PropTypes.array,
   title: PropTypes.string,
+  updateChallengeMeta: PropTypes.func.isRequired,
   ...reduxFormPropTypes
 };
 
@@ -67,6 +71,7 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToActions = {
+  challengeMounted,
   executeChallenge,
   initTests,
   updateChallengeMeta
@@ -89,6 +94,7 @@ export class BackEnd extends Component {
 
   componentDidMount() {
     const {
+      challengeMounted,
       initTests,
       updateChallengeMeta,
       data: {
@@ -101,6 +107,7 @@ export class BackEnd extends Component {
     } = this.props;
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, challengeType });
+    challengeMounted(challengeMeta.id);
     window.addEventListener('resize', this.updateDimensions);
   }
 
@@ -119,6 +126,7 @@ export class BackEnd extends Component {
       }
     } = prevProps;
     const {
+      challengeMounted,
       initTests,
       updateChallengeMeta,
       data: {
@@ -133,6 +141,7 @@ export class BackEnd extends Component {
     if (prevTitle !== currentTitle) {
       initTests(tests);
       updateChallengeMeta({ ...challengeMeta, challengeType });
+      challengeMounted(challengeMeta.id);
     }
   }
 
@@ -161,42 +170,35 @@ export class BackEnd extends Component {
       <LearnLayout>
         <Grid>
           <Row>
-            <Col xs={12}>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer />
-              <div>
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
-                <ChallengeDescription
-                  description={description}
-                  instructions={instructions}
-                />
-              </div>
-              <div>
-                <Form
-                  buttonText={buttonCopy + '(Ctrl + Enter)'}
-                  formFields={formFields}
-                  id={backendNS}
-                  options={options}
-                  submit={executeChallenge}
-                />
-                <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
-              </div>
-              <div>
-                <br />
-                <Output
-                  defaultOutput={`/**
-  *
-  * Test output will go here
-  *
-  *
-  */`}
-                  dimensions={this.state}
-                  height={150}
-                  output={output}
-                />
-              </div>
-              <div>
-                <TestSuite tests={tests} />
-              </div>
+              <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+              <ChallengeDescription
+                description={description}
+                instructions={instructions}
+              />
+              <Form
+                buttonText={`${buttonCopy} (Ctrl + Enter)`}
+                formFields={formFields}
+                id={backendNS}
+                options={options}
+                submit={executeChallenge}
+              />
+              <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
+              <br />
+              <Output
+                defaultOutput={`/**
+*
+* Test output will go here
+*
+*
+*/`}
+                dimensions={this.state}
+                height={150}
+                output={output}
+              />
+              <TestSuite tests={tests} />
+
               <Spacer />
             </Col>
             <CompletionModal />
@@ -225,7 +227,6 @@ export const query = graphql`
   query BackendChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
-      guideUrl
       description
       instructions
       challengeType

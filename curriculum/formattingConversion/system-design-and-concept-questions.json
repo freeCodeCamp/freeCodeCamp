@@ -569,7 +569,7 @@
             "<pre><code class='language-javascript'>Vanilla Javascript</code></pre>",
             "<pre><code class='language-javascript'>React.js</code></pre>",
             "<pre><code class='language-javascript'>Node.js</code></pre>",
-            "<pre><code class='language-javascript'>Jquery</code></pre>"
+            "<pre><code class='language-javascript'>jQuery</code></pre>"
           ],
           "answer": 2,
           "explanation": "<code>require()</code> is built into Node.js in order to load modules for use with an application."
@@ -590,7 +590,7 @@
           "subtitle": "JavaScript framework",
           "question": "In which Javascript framework will you find the ng style of attributes?",
           "choices": [
-            "<pre><code class='language-javascript'>Jquery</code></pre>",
+            "<pre><code class='language-javascript'>jQuery</code></pre>",
             "<pre><code class='language-javascript'>React</code></pre>",
             "<pre><code class='language-javascript'>Angular</code></pre>",
             "<pre><code class='language-javascript'>Ember</code></pre>"
