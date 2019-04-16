@@ -45,7 +45,7 @@ function textToData(sectionIds) {
               const lines = child.value.split('\n');
               if (lines.filter(Boolean).length > 0) {
                 lines.forEach((line, index) => {
-                  if (/^\s*$/.test(line)) {
+                  if (line === '') {
                     currentParagraph = null;
                   } else {
                     if (!currentParagraph || index > 0) {
