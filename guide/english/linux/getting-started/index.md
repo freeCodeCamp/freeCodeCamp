@@ -76,7 +76,9 @@ pwd
 ```
 
 ## WSL
-If you are only interested in learning to use the Linux command line, and currently working on a Windows 10 machine, you have the option of accessing a terminal through *Windows Subsystem for Linux (WSL)*.  Check out articles at [linux.com](https://www.linux.com/blog/learn/2018/2/how-get-started-using-wsl-windows-10 "How to Get Started Using WSL in Windows 10")(https://www.computerhope.com/issues/ch001879.htm "How to Install WSL on Windows 10") to get started down this path!
+If you are only interested in learning to use the Linux command line, and currently working on a Windows 10 machine, you have the option of accessing a terminal through *Windows Subsystem for Linux (WSL)*.  Check out articles below to get started down this path!
+- [How to Get Started Using WSL in Windows 10](https://www.linux.com/blog/learn/2018/2/how-get-started-using-wsl-windows-10 "How to Get Started Using WSL in Windows 10")
+- [How to Install WSL on Windows 10](https://www.computerhope.com/issues/ch001879.htm "How to Install WSL on Windows 10") 
 
 #### More Information
-- ["The Linux Command Line" By William Shotts](http://linuxcommand.org/tlcl.php) 
+- ["The Linux Command Line" By William Shotts](http://linuxcommand.org/tlcl.php)
