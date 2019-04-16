@@ -9,7 +9,7 @@ To insert an image you define the source and an alternative text wich is display
 
 `src` - This attribute provides the url to image present either on your desktop/laptop or to be included from some other website. Remember the link provided should not be broken otherwise the image will not be produced on your webpage.
 
-`alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image. It is also used by screen reader applications to read the web page content, which is very helpful for visually impaired users.
+`alt` - This attribute is used to overcome the problem of a broken image or the incapability of your browser not being able to produce the image on the webpage. This attribute, as the name suggests, provides an "alternative" to the image which is some text describing the image.
 
 ### Example
 

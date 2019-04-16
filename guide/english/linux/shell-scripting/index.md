@@ -34,3 +34,11 @@ Hello World!
 ```
 
 More info about shell-scripting can be found [here](https://www.shellscript.sh/)
+
+
+//changes
+script file extension is not necessary
+In linux, script can be executed even without .sh extension.
+for example test.sh can be executed if we leave it as test.
+If we keep our script in user/bin then we can use script anywhere.
+

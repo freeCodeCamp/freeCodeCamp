@@ -20,20 +20,17 @@ Sample Code of Image Slider is below :
 
 <style>
   
-.carousel-indicators li
-{
-background-color:red;
+.carousel-indicators li {
+  background-color: red;
 } 
 
-.carousel-indicators .active
-{
-background-color:blue;
+.carousel-indicators .active {
+  background-color: blue;
 }
 
-.carousel-indicators .item
-{
-height:700 px;
-width :800 px;
+.carousel-indicators .item {
+  height: 700 px;
+  width: 800 px;
 }
 </style>
 

@@ -69,8 +69,8 @@ Generally the part which is inside the curly braces is considered as the body of
 ```C
 #include<stdio.h>
 int main() {
-    int a=5,i;
-    for(i=1;i<=5;i++)
+    int a = 5, i;
+    for (i = 1; i <= 5; i++)
     printf("%d ",i);
     return 0;
 }
@@ -83,10 +83,10 @@ Output:
 ```C
 #include<stdio.h>
 int main() {
-    int a=5,i;
-    for(i=1;i<=5;i++)
-    if(i%2==0)
-    printf("%d ",i);
+    int a = 5, i;
+    for (i = 1;i <= 5; i++)
+    if (i % 2 == 0)
+    printf("%d ", i);
     return 0;
 }
 ```
@@ -98,10 +98,10 @@ Output:
 ```C
 #include<stdio.h>
 int main() {
-    int a=5,i;
-    for(i=1;i<=5;i++)
-        for(j=1;j<=2;j++)
-            printf("%d ",i);
+    int a = 5, i;
+    for (i = 1; i <= 5; i++)
+        for (j = 1; j <=2 ; j++)
+            printf("%d ", i);
     return 0;
 }
 ```
@@ -146,7 +146,7 @@ int main()
 {
   int i, k, levels, space;
   printf("Enter the number of levels in pyramid:");
-  scanf("%d",&levels);
+  scanf("%d", &levels);
 
   space = levels;
 
@@ -231,14 +231,14 @@ When "break" statement is executed, the loop stops executing all other statement
 #include <stdio.h>
 
 int main(void) {
-    int n = 5,i;
-   for(i=0;i<n;i++)
+   int n = 5, i;
+   for(i = 0; i < n; i++)
    {
    printf("%d\n",i);
     if(n == 3) 
         break;
-        }
-    return 0;
+   }
+   return 0;
 }
 ```
 output:
@@ -253,14 +253,14 @@ When "continue" statement is executed, the loop execution is skipped for that ti
 #include <stdio.h>
 
 int main(void) {
-    int n = 5,i;
-   for(i=0;i<n;i++)
+   int n = 5, i;
+   for (i = 0; i < n; i++)
    {
-   printf("%d\n",i);
-    if(n == 3) 
-        continue;
-        }
-    return 0;
+     printf("%d\n", i);
+     if(n == 3) 
+       continue;
+   }
+   return 0;
 }
 ```
 output:

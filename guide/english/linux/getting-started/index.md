@@ -16,18 +16,40 @@ Some other choices include:
 * [Gentoo](https://www.gentoo.org/)
 * [Suse](https://www.suse.com/)
 
-## Installing.
+### Ubuntu
+One of the leading Linux distributions. It is also the perfect distro to begin your Linux journey.
+Ubuntu is also known as the Linux for human beings now this is because Ubuntu has put lot of effort on universal usability. Ubuntu doesn’t require the user to be technically sound to use it in their daily life’s.
+
+Ubuntu also offers a very convenient installation; the installer speaks in your major language with clear and easy steps. The installer provides simple options to make your life as easy as possible:
+-	Install Ubuntu removing the older OS (The complete switch to the Linux life)
+-	Install Ubuntu alongside the existing OS (A handy way to use Linux in your daily life but you can easily switch back to    
+  Windows to perform duties not possible in Linux)
+-	Configure partitions (For users who are more technically sound)
+
+#### (Beginner tip: Select the second option if you are not sure about what to do.)
+
+Ubuntu’s user interface is called Unity. It is as simple and productive as it gets. Running and favourite apps are displayed in the dock on the right side (This is called the Dash) and app search is bind to the Windows button. 
+
+### Linux Mint Cinnamon
+As described above Linux Mint is a distro that remind people of Windows, this reminder can help people to start their journey into the world of Linux. 
+
+Linux Mint features the Cinnamon desktop environment. This desktop environment makes all the software are very accessibly grouped under categories. Linux mint is fast and run fine on older type of computers. 
+
+The Linux mint distro is based on the rock-solid Ubuntu base, it also uses the same software repository as Ubuntu. Before software is pushed it get extensive testing this means that users will not have to deal with unexpected crashes and glitches that some new software are prone to.
+
+Linux Mint Cinnamon is for this couple reasons a great start for people new to Linux world.
 
 
+## Installing
 Most Linux distributions are extremely easy to install, all information is shown between each step of the installation.
 
 One important step to look out for is when deciding where to install your new Linux distro. For first-time users it's better to choose the "Guided" option as it will do all the work for you.
 
+If you are trying to install a more complicated distrubution like Arch Linux, it is recommended you follow guides in the [wiki](https://wiki.archlinux.org/). Not only does the wiki contain great guides about Arch Linux, but also guides for many different Linux applications.
+
 Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say about 30Gb minimum is nice to have.
 
-## The Dreaded Terminal.
-
-
+## The Dreaded Terminal
 Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily tasks easy to automate.
 
 In Debian/Ubuntu and derivatives, the shortcut to open the CLI (Command Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
@@ -42,7 +64,7 @@ Using the cd command alone will change the current directory to your user home d
 
 ls (List) - This command list the content in the current directory. It can also be used to list file information.
 
-```unix
+```sh
 ls
 ```
 Now we can see our directories in our home.
@@ -50,10 +72,9 @@ Now we can see our directories in our home.
 
 pwd (Print Working Directory) - This command lists the directory you are currently in.
 
-```unix
+```sh
 pwd
 ```
 
 #### More Information
-
 - ["The Linux Command Line" By William Shotts](http://linuxcommand.org/tlcl.php) 

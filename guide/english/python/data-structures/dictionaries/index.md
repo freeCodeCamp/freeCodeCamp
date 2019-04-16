@@ -100,7 +100,19 @@ The **`in`** keyword can be used to check whether a key exist in the dict or not
     >>> club_names = list(teams.values())    
     >>> club_names
     [1910, 1875]
+```
+**`get`** is a built-in *method* that can be used to get values from a dictionary by providing the key. This method is very useful if you need to check existance of values for a particular key. You can also use it to return default values in case a key-value pair is missing in the dictionary. 
+
+```python
+    >>> players = {'ronaldo': 'portugal', 'kaka': 'brazil', 'messi': 'argentina'}
+    >>> players.get('ronaldo')
+    portugal
+    >>> players.get('joe')
+    None
+    >>> players.get('joe', 'Missing Key')
+    Missing Key
 ```  
+
 **`has_key`** is a built-in *method* that can be used to check if a *key* exists in the dictionary.
 ```python
     >>> items = {'a': 'apple', 'b': 'banana', 'c': 'cat'}
@@ -121,6 +133,7 @@ Yet another way of creating dictionary is using the **`dict()`** method:
     >>> dict( totti = 38, zidane = 43 )
     {'zidane': 43, 'totti': 38}
 ``` 
+
 Dict comprehensions can be used as well to create dictionaries from arbitrary key and value expressions:  
 ```python
     >>> {x: x**2 for x in (2, 4, 6)}
@@ -149,9 +162,11 @@ To loop over both keys and values you can use the following:
     2
     3
 ```
+
 **Looping in Dictionary for Python Version 3**
 
 Use **`items()`** instead of **iteeritems()**: 
+
 ```python
     >>> for key, item in d.items():
     ...     print(key, items)
@@ -160,6 +175,7 @@ Use **`items()`** instead of **iteeritems()**:
     y 2
     z 3
 ```
+
 
 To loop over just the values in the dictionary, do this in Python 3.x:
 ```python
@@ -170,3 +186,4 @@ To loop over just the values in the dictionary, do this in Python 3.x:
     2
     3
 ```
+

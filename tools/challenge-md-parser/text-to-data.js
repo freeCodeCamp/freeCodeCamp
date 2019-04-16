@@ -62,7 +62,12 @@ function textToData(sectionIds) {
               }
             }
           });
-          const textArray = toHTML({ ...node, children: newChildren });
+          const hasData = newChildren.some(
+            node => node.type !== 'text' || !/^\s*$/.test(node.value)
+          );
+          const textArray = hasData
+            ? toHTML({ ...node, children: newChildren })
+            : '';
           file.data = {
             ...file.data,
             [sectionId]: textArray

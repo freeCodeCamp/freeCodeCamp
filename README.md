@@ -121,6 +121,7 @@ Our community also has:
 
 - A [forum](https://www.freecodecamp.org/forum) where you can usually get programming help or project feedback within hours.
 - A [YouTube channel](https://youtube.com/freecodecamp) with free courses on Python, SQL, Android, and a wide variety of other technologies.
+- A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
@@ -146,5 +147,5 @@ Copyright © 2019 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
-- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
+- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
+- The learning resources in the [`/curriculum`](/curriculum) and [`/guide`](/guide) directories including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.

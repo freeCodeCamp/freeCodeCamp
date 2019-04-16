@@ -9,7 +9,11 @@ challengeType: 1
 The <code>sort</code> method sorts the elements of an array according to the callback function.
 For example:
 <blockquote>function ascendingOrder(arr) {<br>&nbsp;&nbsp;return arr.sort(function(a, b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return a - b;<br>&nbsp;&nbsp;});<br>}<br>ascendingOrder([1, 5, 2, 3, 4]);<br>// Returns [1, 2, 3, 4, 5]<br><br>function reverseAlpha(arr) {<br>&nbsp;&nbsp;return arr.sort(function(a, b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return a === b ? 0 : a < b ? 1 : -1;<br>&nbsp;&nbsp;});<br>}<br>reverseAlpha(['l', 'h', 'z', 'b', 's']);<br>// Returns ['z', 's', 'l', 'h', 'b']</blockquote>
-Note: It's encouraged to provide a callback function to specify how to sort the array items. JavaScript's default sorting method is by string Unicode point value, which may return unexpected results.
+JavaScript's default sorting method is by string Unicode point value, which may return unexpected results. Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such a callback function, normally called <code>compareFunction</code>, is supplied, the array elements are sorted according to the return value of the <code>compareFunction</code>:
+If <code>compareFunction(a,b)</code> returns a value less than 0 for two elements <code>a</code> and <code>b</code>, then <code>a</code> will come before <code>b</code>.
+If <code>compareFunction(a,b)</code> returns a value greater than 0 for two elements <code>a</code> and <code>b</code>, then <code>b</code> will come before <code>a</code>.
+If <code>compareFunction(a,b)</code> returns a value equal to 0 for two elements <code>a</code> and <code>b</code>, then <code>a</code> and <code>b</code> will remain unchanged.
+
 </section>
 
 ## Instructions

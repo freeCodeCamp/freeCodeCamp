@@ -12,16 +12,17 @@ title: common terms every Linux user should know.
 
 * <strong>GUI:</strong>  stands for graphic user interface. It is the part of the Linux system that comprises windows, icon, pictures (graphics in general), that make point and click possible.
 
+* <strong>Flavors:</strong>  Unix has Flavours and linux is one of them, just like linux has a lot of distros which are maintained by different organisations.
+
 * <strong>Terminal:</strong>  is an application that is used to access the Linux shell.
 
 * <strong>Kernel:</strong>  this the core of the Linux system – what you could call a “brain”. The kernel controls the resources of a computer and determines how they are used by interacting directly with the computer hardware.
 
 * <strong>Tux:</strong>  it is the official mascot of Linux. That is the penguin that is usually associated with Linux – if you’ve seen the yellow and black penguin online, then you have seen tux.
 
-* <strong>Root:</strong> also known as the super-user, is the "default" username for the administrator of a linux machine. It is usually represented on the linux terminal with the <strong>"#"</strong> symbol. 
+* <strong>User:</strong> since Linux is a multi-user based system, it 's common to have different users, each other with his own account. Are called users also, some services running in background. Informations about the users of the system are located in the “/etc/passwd” file. 
 
 * <strong>Commands:</strong> are text inputs or instruction given to the linux machine (by typing it in the terminal) to tell it what to do (that is, for a required outcome).  
-
 
 * <strong>Repository:</strong>  a repository (or “repo” for short) is a collection of software packages for a distro usually hosted online. Software programs can be installed from both the default repositories provided by the distro and third-party ones when they’re added to the package manager.
 

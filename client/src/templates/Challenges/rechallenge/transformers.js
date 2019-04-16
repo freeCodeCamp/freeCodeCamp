@@ -46,9 +46,7 @@ export const testJS$JSX = overSome(testJS, testJSX);
 export const replaceNBSP = cond([
   [
     testHTML$JS$JSX,
-    partial(vinyl.transformContents, contents =>
-      contents.replace(NBSPReg, ' ')
-    )
+    partial(vinyl.transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]
 ]);
@@ -97,7 +95,7 @@ async function transformSASS(element) {
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
-      style.innerHTML = await sassWorker.execute(style.innerHTML, 5000);
+      style.innerHTML = await sassWorker.execute(style.innerHTML, 5000).done;
     })
   );
 }

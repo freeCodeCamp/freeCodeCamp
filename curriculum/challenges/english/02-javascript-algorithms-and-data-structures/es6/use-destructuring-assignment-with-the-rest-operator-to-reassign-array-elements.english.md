@@ -24,11 +24,11 @@ Use destructuring assignment with the rest operator to perform an effective <cod
 ```yml
 tests:
   - text: <code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>
-    testString: assert(arr.every((v, i) => v === i + 3) && arr.length === 8,'<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>');
+    testString: assert(arr.every((v, i) => v === i + 3) && arr.length === 8);
   - text: <code>Array.slice()</code> should not be used.
-    testString: getUserInput => assert(!getUserInput('index').match(/slice/g), '<code>Array.slice()</code> should not be used.');
+    testString: getUserInput => assert(!getUserInput('index').match(/slice/g));
   - text: Destructuring on <code>list</code> should be used.
-    testString: getUserInput => assert(getUserInput('index').match(/\s*\[\s*,\s*,\s*\.\.\.\s*arr\s*\]\s*=\s*list\s*/g), 'Destructuring on <code>list</code> should be used.');
+    testString: assert(code.replace(/\s/g, '').match(/\[(([_$a-z]\w*)?,){1,}\.\.\.arr\]=list/i));
 
 ```
 

@@ -4,7 +4,7 @@ title: Structures
 ## Structures in C
 
 ### What are Structures?
-* A **structure** is a user-defined type in C. It is based on the idea that certain times, programmer wants to manage not just primitive data-types but also programmer-defined data-types.
+* A **structure** is a user-defined type in C. It is based on the idea that at certain times, a programmer wants to manage not just primitive data-types, but also programmer-defined data-types.
 * **Structure**, as the name suggests, consists of various primitive data-types, like character, integers, floating point variables, arrays, etc.
 * **Structure** can also contain various other user-defined data types. You would learn about nested-structures next.
 * **Structures** form the basis of **_object-oriented-programming_** as the concept of *class* originates from structures.

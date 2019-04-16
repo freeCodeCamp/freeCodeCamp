@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedd08830
 title: Add a Submit Button to a Form
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-a-submit-button-to-a-form'
 videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
 ---
 
@@ -67,18 +66,12 @@ tests:
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-<div id='html-seed'>
-
-```js
-// solution required
+```html
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
@@ -103,6 +96,5 @@ tests:
   </form>
 </main>
 ```
-  
-</div>
+
 </section>

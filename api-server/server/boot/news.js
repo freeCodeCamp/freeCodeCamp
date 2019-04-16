@@ -32,9 +32,7 @@ function createShortLinkHandler(app) {
         if (!article) {
           return res.redirect('/news');
         }
-        const {
-          slugPart
-        } = article;
+        const { slugPart } = article;
         const slug = `/news/${slugPart}`;
         return res.redirect(slug);
       }
