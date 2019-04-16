@@ -14,7 +14,7 @@ Some other choices include:
 * [Debian](https://www.debian.org/) - Created with completely free software. Many popular, "easy to use" derivatives are based off of Debian.
 * [Arch](https://www.archlinux.org/) - An extremely customizable distribution. Not recommended for beginners.
 * [Gentoo](https://www.gentoo.org/)
-* [Suse](https://www.suse.com/)
+* [Suse](https://www.suse.com/) - One of the earliest distributions.  
 
 ### Ubuntu
 One of the leading Linux distributions. It is also the perfect distro to begin your Linux journey.
@@ -38,7 +38,6 @@ Linux Mint features the Cinnamon desktop environment. This desktop environment m
 The Linux mint distro is based on the rock-solid Ubuntu base, it also uses the same software repository as Ubuntu. Before software is pushed it get extensive testing this means that users will not have to deal with unexpected crashes and glitches that some new software are prone to.
 
 Linux Mint Cinnamon is for this couple reasons a great start for people new to Linux world.
-
 
 ## Installing
 Most Linux distributions are extremely easy to install, all information is shown between each step of the installation.
@@ -76,5 +75,10 @@ pwd (Print Working Directory) - This command lists the directory you are current
 pwd
 ```
 
+## WSL
+If you are only interested in learning to use the Linux command line, and currently working on a Windows 10 machine, you have the option of accessing a terminal through *Windows Subsystem for Linux (WSL)*.  Check out articles below to get started down this path!
+- [How to Get Started Using WSL in Windows 10](https://www.linux.com/blog/learn/2018/2/how-get-started-using-wsl-windows-10 "How to Get Started Using WSL in Windows 10")
+- [How to Install WSL on Windows 10](https://www.computerhope.com/issues/ch001879.htm "How to Install WSL on Windows 10") 
+
 #### More Information
-- ["The Linux Command Line" By William Shotts](http://linuxcommand.org/tlcl.php) 
+- ["The Linux Command Line" By William Shotts](http://linuxcommand.org/tlcl.php)
