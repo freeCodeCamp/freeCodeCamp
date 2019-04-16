@@ -3,10 +3,9 @@ title: Getting Started
 ---
 ## Choosing a distribution.
 
-
-There are various types of Linux distributions to choose from nowadays, choosing one is a major concern in the Linux world. Taking in consideration easy to use OSs, the top dogs in this category are:
-* [Ubuntu](https://www.ubuntu.com/) - Derivative of the stable Debian system, Ubuntu thrives in the a easy to use and up to date environment.
-* [Mint](https://linuxmint.com/) - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution remind of Windows, this can be a nice characteristic for users comming from Windows. 
+There are various types of Linux distributions to choose from nowadays, and choosing one is the first step to getting started in the Linux world. Taking into consideration ease of use, the top dogs in this category are:
+* [Ubuntu](https://www.ubuntu.com/) - Derivative of the stable Debian system, Ubuntu thrives as an easy to use and up-to-date environment.
+* [Mint](https://linuxmint.com/) - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The default Mint distribution is reminiscent of Microsoft Windows, which can help to ease the transion for users coming from that environment. 
 * [Trisquel](https://trisquel.info/) - A distribution  derived from Ubuntu that focuses on only utilizing fully free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
 
 Some other choices include:
@@ -16,7 +15,6 @@ Some other choices include:
 * [Arch](https://www.archlinux.org/) - An extremely customizable distribution. Not recommended for beginners.
 * [Gentoo](https://www.gentoo.org/)
 * [Suse](https://www.suse.com/)
-
 
 ### Ubuntu
 One of the leading Linux distributions. It is also the perfect distro to begin your Linux journey.
@@ -28,7 +26,7 @@ Ubuntu also offers a very convenient installation; the installer speaks in your 
   Windows to perform duties not possible in Linux)
 -	Configure partitions (For users who are more technically sound)
 
-### (Beginner tip: Select the second option if you are not sure about what to do.)
+#### (Beginner tip: Select the second option if you are not sure about what to do.)
 
 Ubuntu’s user interface is called Unity. It is as simple and productive as it gets. Running and favourite apps are displayed in the dock on the right side (This is called the Dash) and app search is bind to the Windows button. 
 
@@ -42,7 +40,7 @@ The Linux mint distro is based on the rock-solid Ubuntu base, it also uses the s
 Linux Mint Cinnamon is for this couple reasons a great start for people new to Linux world.
 
 
-## Installing.
+## Installing
 Most Linux distributions are extremely easy to install, all information is shown between each step of the installation.
 
 One important step to look out for is when deciding where to install your new Linux distro. For first-time users it's better to choose the "Guided" option as it will do all the work for you.
@@ -51,9 +49,7 @@ If you are trying to install a more complicated distrubution like Arch Linux, it
 
 Remember to read all the steps carefully and leave some space in your HDD for the new distro, I would say about 30Gb minimum is nice to have.
 
-## The Dreaded Terminal.
-
-
+## The Dreaded Terminal
 Linux's terminal is not to be feared, actually it is quite easy to use with some practice and it can make our daily tasks easy to automate.
 
 In Debian/Ubuntu and derivatives, the shortcut to open the CLI (Command Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
@@ -68,7 +64,7 @@ Using the cd command alone will change the current directory to your user home d
 
 ls (List) - This command list the content in the current directory. It can also be used to list file information.
 
-```unix
+```sh
 ls
 ```
 Now we can see our directories in our home.
@@ -76,10 +72,9 @@ Now we can see our directories in our home.
 
 pwd (Print Working Directory) - This command lists the directory you are currently in.
 
-```unix
+```sh
 pwd
 ```
 
 #### More Information
-
 - ["The Linux Command Line" By William Shotts](http://linuxcommand.org/tlcl.php) 
