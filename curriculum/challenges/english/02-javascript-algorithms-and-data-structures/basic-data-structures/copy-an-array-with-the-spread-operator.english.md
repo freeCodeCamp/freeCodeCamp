@@ -30,7 +30,7 @@ tests:
   - text: <code>copyMachine(["it works"], 3)</code> should return <code>[["it works"], ["it works"], ["it works"]]</code>
     testString: assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']], '<code>copyMachine(["it works"], 3)</code> should return <code>[["it works"], ["it works"], ["it works"]]</code>');
   - text: The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>
-    testString: assert.notStrictEqual(copyMachine.toString().indexOf('.concat(_toConsumableArray(arr))'), -1, 'The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>');
+    testString: assert.notStrictEqual(code.toString().indexOf('newArr.push([...arr])'), -1, 'The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>');
 
 ```
 
@@ -67,6 +67,16 @@ console.log(copyMachine([true, false, true], 2));
 <section id='solution'>
 
 ```js
-// solution required
+function copyMachine(arr,num){
+	let newArr=[];
+	while(num >=1){
+	// change code below this line 
+	newArr.push([...arr]);
+	//change code above this line
+	num--;
+	}
+	return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
 ```
 </section>
