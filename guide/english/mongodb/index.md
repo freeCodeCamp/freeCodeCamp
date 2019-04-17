@@ -47,6 +47,7 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
 3. Aggregation queries are at times non-intutive
 
 ### Sample Document Structure
+```
 {
    "_id":ObjectId("52ffc33cd85242f436123532"),
    "name": "Rich Rick",
@@ -67,6 +68,7 @@ MongoDB in applications built with javascript is mainly used with Mongoose which
       }
    ]
 }
+```
 
 ### More Information
 [What is Mongo DB?](https://www.mongodb.com/what-is-mongodb)
