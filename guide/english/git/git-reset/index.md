@@ -38,7 +38,7 @@ The options for `MODE` are:
 
 ### Points to Note
 
-Be very careful when using `--hard` option with reset since it resets your commit, staging area and your working directory. If this option is not used properly then one can end up losing the code that is written.
+Be very careful when using the `--hard` option with `git reset` since it resets your commit, staging area and your working directory. If this option is not used properly then one can end up losing the code that is written.
 
 ### More Information:
 - [Git reset documentation](https://git-scm.com/docs/git-reset)
