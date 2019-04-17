@@ -224,15 +224,15 @@ int main()
     int a;
     scanf("%d",&a);
     if(a>=90)
-    printf("A");
+       printf("A");
     if(a>=70 && a<90)
-    printf("B");
+       printf("B");
     if(a>=50 && a<70)
-    printf("C");
+       printf("C");
     if(a>=30 && a<50)
-    printf("D");
+       printf("D");
     if(a<30)
-    printf("Fail");
+       printf("Fail");
     return 0;
 }
 ```
@@ -244,15 +244,15 @@ int main()
     int a;
     scanf("%d",&a);
     if(a>=90)
-    printf("A");
-    else if(a>=70)
-    printf("B");
-    else if(a>=50)
-    printf("C");
-    else if(a>=30)
-    printf("D");
-    else
-    printf("Fail");
+       printf("A");
+       else if(a>=70)
+          printf("B");
+          else if(a>=50)
+             printf("C");
+             else if(a>=30)
+                printf("D");
+                   else
+                   printf("Fail");
     return 0;
 }
 ```
