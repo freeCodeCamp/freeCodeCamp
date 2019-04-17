@@ -72,7 +72,7 @@ function isSorted(arr) {
 ```js
 function bubbleSort(array) {
   for (let i = 0; i < array.length; i++) {
-      let swapped = false;
+    let swapped = false;
     for (let j = 1; j < array.length; j++) {
       if (array[j - 1] > array[j]) {
         let temp = array[j-1];
@@ -82,7 +82,7 @@ function bubbleSort(array) {
       }
     }
     if (swapped === false) {
-        break;
+      break;
     }
   }
   return array;
