@@ -20,14 +20,10 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 
 ```yml
 tests:
-  - text: Your <code>LinkedList</code> class should have a <code>add</code> method.
-    testString: assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>add</code> method.');
-  - text: Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()), 'Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.');
-  - text: The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()), 'The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.');
-  - text: The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()), 'The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.');
+  - text: Your Binary Search Tree should return an object of <code>{ root: null }</code>.
+    testString: assert((function(){var test = new BinarySearchTree(); return (test.root === null)}()), 'Your Binary Search Tree should return an object of <code>{ root: null }.');
+  - text: Your Binary Search Tree should return true when cheked with <code>isBinarySearchTree()</code>.
+    testString: assert((function(){var test = new BinarySearchTree(); test.push(3); test.push(4); test.push(5); return iBinarySearchTree(test)}()), 'Your Binary Search Tree should return true when cheked with <code>isBinarySearchTree()</code>.');
 
 ```
 
@@ -53,6 +49,41 @@ function isBinarySearchTree(tree) {
     this.root = null;
     // change code below this line
 }
+
+// Do not edit below. For testing purposes.
+BinarySearchTree.prototype.push = function(val){
+   var root = this.root;
+
+   if(!root){
+      this.root = new Node(val);
+      return;
+   }
+
+   var currentNode = root;
+   var newNode = new Node(val); 
+
+   while(currentNode){
+      if(val < currentNode.value){
+          if(!currentNode.left){
+             currentNode.left = newNode;
+             break;
+          }
+          else{
+             currentNode = currentNode.left;
+        }
+     }
+     else{
+         if(!currentNode.right){
+            currentNode.right = newNode;
+            break;
+         }
+         else{
+            currentNode = currentNode.right;
+         }
+     }
+  }
+
+}
 ```
 
 </div>
@@ -72,7 +103,6 @@ function Node(value) {
 }
 function BinarySearchTree() {
     this.root = null;
-    // change code below this line
 }
 function isBinarySearchTree(tree) {
     if (this.root == null) {
