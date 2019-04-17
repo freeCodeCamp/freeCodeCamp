@@ -24,6 +24,10 @@ Agile planning is always continuous and should be revised at least every three m
  
  5. Daily Planning: What did I do yesterday? What will I do today? What is blocking me? This daily meeting keeps the team on track to accomplish the sprint goal, and over time, bring the product vision in to reality. 
 
-#### More Information:
+### Visual Representation
 
-<a href='https://www.scrumalliance.org/why-scrum/agile-atlas/agile-atlas-common-practices/planning/january-2014/five-levels-of-agile-planning' target='_blank' rel='nofollow'>Five Levels of Agile Planning</a>
+![12-col-grid](https://www.scrumdesk.com/wp-content/uploads/5-levels-of-agile-planning.jpg)
+
+#### More Information
+
+[Scaling Agile Processes: Five Levels of Agile Planning](https://www.pragmaticmarketing.com/resources/articles/scaling-agile-processes-five-levels-of-planning)

@@ -13,7 +13,7 @@ To underline text, you can use the <code>u</code> tag. This is often used to sig
 ## Instructions
 <section id='instructions'>
 Wrap the <code>u</code> tag only around the text "Ph.D. students".
-<strong>Note</strong><br>Try to avoid using the <code>u</code> tag when it could be confused for a link. Anchor tags also have a default underlined formatting.
+<strong>Note:</strong> Try to avoid using the <code>u</code> tag when it could be confused for a link. Anchor tags also have a default underlined formatting.
 </section>
 
 ## Tests
