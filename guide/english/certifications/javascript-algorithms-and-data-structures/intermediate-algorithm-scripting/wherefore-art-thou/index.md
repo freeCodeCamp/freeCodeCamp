@@ -113,18 +113,9 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
       // "What's in a name? that which we call a rose
       // By any other name would smell as sweet.”
       // -- by William Shakespeare, Romeo and Juliet
-      var srcKeys = Object.keys(source);
-
-      // filter the collection
-      return collection.filter(function (obj) {
-        return srcKeys
-          .map(function(key) {
-            return obj.hasOwnProperty(key) && obj[key] === source[key];
-          })
-          .reduce(function(a, b) {
-            return a && b;
-          });
-      });
+      
+      var propsArr = Object.getOwnPropertyNames(source);
+      return collection.filter(obj => propsArr.every(prop => obj.hasOwnProperty(prop) && source[prop] == obj[prop])
     }
 
     // test here
@@ -134,10 +125,9 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 
 ### Code Explanation:
 
-*   We start by filtering through `collection` using `Array.filter()`.
-*   Next, we map through all keys and return Boolean values based on the check conditions: both the key and its corresponding value must exist within the object we are filtering through.
-*   Then we reduce the mapped Boolean values to a single Boolean that indicates whether all srcKeys pass the conditions checked above.
-*   This single Boolean will be used to filter through the collection.
+*   We start by assigning `propArr` all properties located in `source`.
+*   Then, we start filtering through `collection` using `Array.filter()`.
+*   Next, we go through each `prop` stored in `propArr` using `Array.every()` and return a single Boolean value to the callback function `Array.filter()` based on the check conditions: all properties and its corresponding values from `source` must exist within the object we are filtering through.
 
 #### Relevant Links
 
