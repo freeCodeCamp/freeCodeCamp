@@ -103,3 +103,23 @@ $herbie = new Car();
 echo $herbie->model;
 ?>
 ```
+
+### PHP Resource
+
+A resource is a special variable, holding a reference to an external resource. Resources are created and used by special functions. See the [official PHP documentation](http://php.net/manual/en/resource.php) for a listing of all these functions and the corresponding resource types. You can use [get_resource_type()](http://php.net/manual/en/function.get-resource-type.php) function to see resource type.
+
+**Example:**
+```php
+<?php
+// prints: mysql link
+$c = mysql_connect();
+echo get_resource_type($c) . "\n";
+
+// prints: stream
+$fp = fopen("foo", "w");
+echo get_resource_type($fp) . "\n";
+
+// prints: domxml document
+$doc = new_xmldoc("1.0");
+echo get_resource_type($doc->doc) . "\n";
+```
