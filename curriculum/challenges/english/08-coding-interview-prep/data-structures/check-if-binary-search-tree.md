@@ -20,11 +20,10 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 
 ```yml
 tests:
-  - text: Your Binary Search Tree should return an object of <code>{ root: null }</code>.
-    testString: assert((function(){var test = new BinarySearchTree(); return (test.root === null)}()), 'Your Binary Search Tree should return an object of <code>{ root: null }.');
-  - text: Your Binary Search Tree should return true when cheked with <code>isBinarySearchTree()</code>.
-    testString: assert((function(){var test = new BinarySearchTree(); test.push(3); test.push(4); test.push(5); return iBinarySearchTree(test)}()), 'Your Binary Search Tree should return true when cheked with <code>isBinarySearchTree()</code>.');
-
+  - text: Your Binary Search Tree should return an object of <code>{null}</code>.
+    testString: assert((function(){var test = new BinarySearchTree(); return (test.root === null)}()), 'Your Binary Search Tree should return an object of <code>{null}.');
+  - text: Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code> and the tree is a Binary Search Tree.
+    testString: assert((function(){var test = new BinarySearchTree(); test.push(3); test.push(4); test.push(5); return isBinarySearchTree(test)}()), 'Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.');
 ```
 
 </section>
