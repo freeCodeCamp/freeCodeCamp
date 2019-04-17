@@ -113,7 +113,7 @@ This step is always printed
 
 
 ### Use of if...else if...else ladder
-If we have to make decisions based on more than one conditions using if else. We use else if condition as follows -
+If we have to make decisions based on more than one condition using if-else, we can use the `else if` condition as follows -
 ```cpp
 #include<iostream>
 using namespace std;
@@ -143,12 +143,12 @@ Enter your score:
 Good performance
 ```
 ### Another example of if...else if...else ladder
-Suppose we have the user input two numbers and we are going to display if either number is greater than the other. And if neither is greater than the other, then we print the statement "Both are equal".
+Suppose we ask the user to input two numbers then display greater than or equal.
 
 In this scenario, we will need an if...else if...else ladder statement. The program will look like this :
 
-```
-#include<iostream>
+```cpp
+#include <iostream>
 using namespace std;
 
 int main()
