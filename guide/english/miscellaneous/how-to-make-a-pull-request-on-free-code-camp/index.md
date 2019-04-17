@@ -58,7 +58,7 @@ nothing to commit, working directory clean
 
 ## Common Steps
 
-1.  Once the edits have been committed, you will be prompted to create a pull request on your fork's Github Page.
+1.  Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
 2.  By default, all pull requests should be against the FCC main repo, `staging` branch.
 3.  Make a clear title for your PR which succinctly indicates what is being fixed. Do not add the issue number in the title. Examples: `Add Test Cases to Algorithm Drop It` `Correct typo in Challenge Size Your Images`
 4.  In the body of your PR include a more detailed summary of the changes you made and why.
