@@ -12,7 +12,7 @@ function phoneticLookup(val) {
   var result = "";
 
   // Only change code below this line
-  switch(val) {
+  switch (val) {
     case "alpha": 
       result = "Adams";
       break;

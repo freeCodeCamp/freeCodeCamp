@@ -31,4 +31,4 @@ Alguns plugins úteis para você começar são:
 
 #### Mais Informações:
 
-*   [Repositório do Github](https://github.com/VundleVim/Vundle.Vim)
+*   [Repositório do GitHub](https://github.com/VundleVim/Vundle.Vim)

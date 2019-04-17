@@ -22,7 +22,7 @@ All drawing calls after this will be made from the `ctx` object. The `ctx` repre
 
 There are a few available drawing contexts, including `webgl`. WebGL is really an entirely different technology, so we will only focus on 2D drawing.
 
-Paths are the building block of drawing in `canvas`. See the '[Paths](/articles/canvas/paths)' page for more.
+Paths are the building block of drawing in `canvas`. See the '[Paths](https://guide.freecodecamp.org/canvas/paths)' page for more.
 
 #### More Information:
 
