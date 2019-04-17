@@ -15,7 +15,7 @@ When React encounters a custom HTML tag that references another component (a com
 
 ## Instructions
 <section id='instructions'>
-In the code editor, there is a simple functional component called <code>ChildComponent</code> and a React component called <code>ParentComponent</code>. Compose the two together by rendering the <code>ChildComponent</code> within the <code>ParentComponent</code>. Make sure to close the <code>ChildComponent</code> tag with a forward slash.
+In the code editor, there is a simple functional component called <code>ChildComponent</code> and a class component called <code>ParentComponent</code>. Compose the two together by rendering the <code>ChildComponent</code> within the <code>ParentComponent</code>. Make sure to close the <code>ChildComponent</code> tag with a forward slash.
 <strong>Note:</strong>&nbsp;<code>ChildComponent</code> is defined with an ES6 arrow function because this is a very common practice when using React. However, know that this is just a function. If you aren't familiar with the arrow function syntax, please refer to the JavaScript section.
 </section>
 
@@ -25,11 +25,11 @@ In the code editor, there is a simple functional component called <code>ChildCom
 ```yml
 tests:
   - text: The React component should return a single <code>div</code> element.
-    testString: 'assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.type() === "div"; })(), "The React component should return a single <code>div</code> element.");'
+    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.type() === 'div'; })(), 'The React component should return a single <code>div</code> element.');
   - text: The component should return two nested elements.
-    testString: 'assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.children().length === 2; })(), "The component should return two nested elements.");'
+    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.children().length === 2; })(), 'The component should return two nested elements.');
   - text: The component should return the ChildComponent as its second child.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ParentComponent)); return mockedComponent.find("ParentComponent").find("ChildComponent").length === 1; })(), "The component should return the ChildComponent as its second child.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ParentComponent)); return mockedComponent.find('ParentComponent').find('ChildComponent').length === 1; })(), 'The component should return the ChildComponent as its second child.');
 
 ```
 
@@ -74,7 +74,7 @@ class ParentComponent extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ParentComponent />, document.getElementById('root'))
 ```
 
 </div>

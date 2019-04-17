@@ -25,7 +25,9 @@ A continuación se muestra un ejemplo básico de una función de flecha:
  var multiply = (x, y) => x * y; 
 ```
 
-Ya no necesita la `function` y `return` palabras clave, ni siquiera los corchetes.
+Como se puede ver en el ejemplo, **si la lógica de la función se escribe en una línea** se pueden evitar usar los corchetes y esto implicitamente significa que la función esta devolviendo ese resultado. Por lo tanto, tampoco hace falta escribir la palabra `return`. 
+
+Si se incluyen corchetes (cuando el contenido de la función se escribe en varias líneas), es necesario declarar el `return`.
 
 ### Un simplificado `this`
 

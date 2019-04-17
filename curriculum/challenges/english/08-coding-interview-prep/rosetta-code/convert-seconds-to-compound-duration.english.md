@@ -9,7 +9,7 @@ challengeType: 5
 Task:
 <p>Implement a function which:</p>
 takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and
-returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., "<code>1 min, 40 sec</code>").
+returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).
 <p>Demonstrate that it passes the following three test-cases:</p><p style="font-size:115%; margin:1em 0 0 0">Test Cases</p>
 <table>
 <tbody>
@@ -67,7 +67,7 @@ The following five units should be used:
 </tr>
 </tbody>
 </table>
-However, only include quantities with non-zero values in the output (e.g., return "<code>1 d</code>" and not "<code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>").Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>)Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+However, only include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>)Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
 <p><hr style="margin:1em 0;"/></p>
 </section>
 
@@ -82,13 +82,13 @@ However, only include quantities with non-zero values in the output (e.g., retur
 ```yml
 tests:
   - text: <code>convertSeconds</code> is a function.
-    testString: 'assert(typeof convertSeconds === "function", "<code>convertSeconds</code> is a function.");'
-  - text: '<code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.'
-    testString: 'assert.equal(convertSeconds(testCases[0]), results[0], "<code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.");'
+    testString: assert(typeof convertSeconds === 'function', '<code>convertSeconds</code> is a function.');
+  - text: <code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.
+    testString: assert.equal(convertSeconds(testCases[0]), results[0], '<code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.');
   - text: <code>convertSeconds(86400)</code> should return <code>1 d</code>.
-    testString: 'assert.equal(convertSeconds(testCases[1]), results[1], "<code>convertSeconds(86400)</code> should return <code>1 d</code>.");'
-  - text: '<code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.'
-    testString: 'assert.equal(convertSeconds(testCases[2]), results[2], "<code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.");'
+    testString: assert.equal(convertSeconds(testCases[1]), results[1], '<code>convertSeconds(86400)</code> should return <code>1 d</code>.');
+  - text: <code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.
+    testString: assert.equal(convertSeconds(testCases[2]), results[2], '<code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.');
 
 ```
 
@@ -113,7 +113,8 @@ function convertSeconds (sec) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [7259, 86400, 6000000];
+const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
 ```
 
 </div>

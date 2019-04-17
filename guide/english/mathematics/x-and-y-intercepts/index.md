@@ -7,7 +7,7 @@ Consider a function `y = f(x)` and its graph. The `x`-intercept(s) of `f(x)` are
 
 The `y`-intercept(s) are the point(s) at which the graph of the function crosses the `y` axis, i.e., they are points of the form `(0,y)` occuring when `y = f(0)`.
 
-A function can have no `x`-intercepts, e.g., [`y = x^2 + 1`](https://www.wolframalpha.com/input/?i=plot+y+%3D+x%5E2+%2B+1) , or multiple `x`-intercepts, e.g., [`y = x^2 - 1`](https://www.wolframalpha.com/input/?i=plot+y+%3D+x%5E2+-+1) has `x`-intercepts `(1,0)` and `(-1,0)`. A polynomial function of degree `n` can have [(at most)](https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra) `n` `x`-intercepts, while the function [`y = sin(x)`](https://www.wolframalpha.com/input/?i=plot+y+%3D+sin(x)) has an infinite number of `x`-intercepts, namely `(n*pi,0)` for any integer `n`. However, a function can have at most one `y`-intercept,  `(0,f(0))`. It is possible to have no `y`-intercepts, e.g., the function [`y = sqrt(x) + 1`](https://www.wolframalpha.com/input/?i=plot+y+%3D+sqrt(x)+%2B+1) does not have a `y`-intercept as plugging in `y=0` gives `sqrt(x)+1=0` or `sqrt(x)=-1`, and no (real) values of `x` have a negative square root.
+A function can have multiple X intercepts, but can only have a single Y intercept. Why is only a single Y intercept allowed? By definition, a function can only have one output, y, for each unique input, x. Thus, a graph would violate this definition if ```x = 0``` produced more than one output, y.
 
 To find the `x`-intercept(s) of a function, set `y = 0` and solve the equation for `x`. To find the `y` intercept, set `x = 0` and solve the equation for `y`. 
 

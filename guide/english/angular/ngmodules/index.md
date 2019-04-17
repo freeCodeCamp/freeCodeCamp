@@ -153,7 +153,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-// Javascript module system is strict about where it imports. It can only import at the top of files.
+// JavaScript module system is strict about where it imports. It can only import at the top of files.
 
 // Angular NgModule uses those tokens in its metadata settings
 @NgModule({ // import { NgModule } from '@angular/core';

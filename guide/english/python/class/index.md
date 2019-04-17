@@ -24,9 +24,9 @@ The simplest form of class definition looks like this:
 ```python
 class ClassName:
     <statement-1>
-        ...
-        ...
-        ...
+      #  ...
+      #  ...
+      #  ...
     <statement-N>
  ```
 
@@ -74,7 +74,7 @@ class Complex:
     def __init__(self, realpart, imagpart):
         self.r = realpart
         self.i = imagpart
-              ...
+            # ...
 
 x = Complex(3.0, -4.5)
 >>> x.r, x.i
@@ -86,17 +86,33 @@ x = Complex(3.0, -4.5)
 Every programming language which follows OOPs (Object Oriented Programming) concept has some mechanism of data hiding.In python if some variable needs to be hidden from the outside world we use the concept of private variables by using `__` before he variable name.
 
 for example:
-```
+```python
 class Foo:
     def __init__(self):
         self.__privatenum = 3011
- 
 
-Now if we try to access __privatenum outside the class we will get error:
+# Now if we try to access __privatenum outside the class we will get error:
 x = Foo()
 x.__privatenum  # gives following error : 'Foo' object has no attribute '__privatenum'
- 
 ```
 
+#### Delete Objects:
 
+Objectes can be deleted by using ```del``` keyword.
+
+## Simple class and Object Implementation
+```python
+class Friend:
+    def __init__(self,first,last,state):
+        self.fname = first
+        self.lname = last
+        self.state = state
+        self.email = first+"."+state+"@nith.com"
+    def show(self):
+        return '{} {} {} {}'.format(self.fname,self.lname,self.state,self.email)
+
+fr1 = Friend("Nilesh","Bharti","Bihar")
+fr1.show()
+del fr1
+```
 

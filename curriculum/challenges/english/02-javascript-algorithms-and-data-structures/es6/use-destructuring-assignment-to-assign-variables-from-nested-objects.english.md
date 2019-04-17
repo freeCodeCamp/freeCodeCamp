@@ -8,8 +8,8 @@ challengeType: 1
 <section id='description'>
 We can similarly destructure <em>nested</em> objects into variables.
 Consider the following code:
-<blockquote>const a = {<br>&nbsp;&nbsp;start: { x: 5, y: 6},<br>&nbsp;&nbsp;end: { x: 6, y: -9 }<br>};<br>const { start : { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>
-In the example above, the variable <code>start</code> is assigned the value of <code>a.start</code>, which is also an object.
+<blockquote>const a = {<br>&nbsp;&nbsp;start: { x: 5, y: 6 },<br>&nbsp;&nbsp;end: { x: 6, y: -9 }<br>};<br>const { start: { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>
+In the example above, the variable <code>startX</code> is assigned the value of <code>a.start.x</code>.
 </section>
 
 ## Instructions
@@ -23,9 +23,9 @@ Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorr
 ```yml
 tests:
   - text: <code>maxOfTomorrow</code> equals <code>84.6</code>
-    testString: 'assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, "<code>maxOfTomorrow</code> equals <code>84.6</code>");'
+    testString: assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, '<code>maxOfTomorrow</code> equals <code>84.6</code>');
   - text: nested destructuring was used
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),"nested destructuring was used");'
+    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),'nested destructuring was used');
 
 ```
 

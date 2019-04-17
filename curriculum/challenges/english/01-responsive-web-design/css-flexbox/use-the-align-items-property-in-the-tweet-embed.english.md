@@ -21,7 +21,7 @@ Add the CSS property <code>align-items</code> to the header's <code>.follow-btn<
 ```yml
 tests:
   - text: The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.
-    testString: 'assert($(".follow-btn").css("align-items") == "center", "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.");'
+    testString: assert($('.follow-btn').css('align-items') == 'center', 'The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.');
 
 ```
 
@@ -64,7 +64,6 @@ tests:
   }
   header h3, header h4 {
     display: flex;
-
     margin: 0;
   }
   #inner p {

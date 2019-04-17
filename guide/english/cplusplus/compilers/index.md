@@ -48,7 +48,7 @@ It is as simple as clicking the build and run buttons, they will create a file i
 1. Open a Developer Command Prompt - For this step, you will need to have Microsoft Visual Studio or some other IDE that 
 enables you to compile your program from the command line. You can also search online for C++ compilers.
 
-2. Navigate to the source code directly
+2. Navigate to the source code directly.
 
 3. Run the Compiler on your source code (assuming you are using the Microsoft Visual Studio compiler)
 `cl /EHsc helloWorld.cpp`
@@ -56,25 +56,25 @@ enables you to compile your program from the command line. You can also search o
 This will now create an object file and automatically link it for you. If you look in that same folder, you will see a 
 hellWorld.exe executable file (note the exe extension) is now present.
 
-4. Type `helloWorld` into the prompt to run the executable
+4. Type `helloWorld` into the prompt to run the executable.
 
 Alternatively, many IDEs allow for quick building and viewing of your program. This may be easier since your version of 
 windows may not come pre packaged with a compiler utility. 
 
 ### If you are on Linux or OSX -- 
-1. Open up a terminal window and navigate to the source code directory
-2. Run the Compiler on your source code
+1. Open up a terminal window and navigate to the source code directory.
+2. Run the Compiler on your source code.
 `g++ helloWorld.cpp -o helloWorld`
 
 This will create an object file and automatically link it for you. Look in the folder and you will see a helloWorld.exe 
 executable file (note the exe extension). 
 
-3. Type `./helloWorld` in the terminal window to run the executable file
+3. Type `./helloWorld` in the terminal window to run the executable file.
 
 g++ is the standard Linux compiler and is a great utility. It comes packaged with the operating system.
 
 NOTE:
-to compile and execute your code directly, run
+To compile and execute your code directly, run
 `g++ -o helloWorld helloWorld.cpp; ./helloWorld`
 so when you need to compile and run your code multiple times,
 up arrow-enter 
@@ -82,8 +82,8 @@ up arrow-enter
 ### Adding Flags
 You can also add flags to the compiler to your custom and favor. For example:
 `g++ -O2 helloWorld.cpp -o helloWorld`
-Some common flags is :
-1. -O2 : Optimize your code, so it may run faster
+Some common flags are :
+1. -O2 : Optimize your code, so it may run faster.
 2. -std=c++11 : use c++11 instead of c++98 which is defaulted.
 3. -Wall: prompt some warning about some common mistakes which can bug your program.
 4. -Wextra: prompt some extra warning.

@@ -24,9 +24,9 @@ Replace the word <code>black</code> in our <code>body</code> element's backgroun
 ```yml
 tests:
   - text: Give your <code>body</code> element the background-color of black.
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Give your <code>body</code> element the background-color of black.");'
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", 'Give your <code>body</code> element the background-color of black.');
   - text: Use the <code>hex code</code> for the color black instead of the word <code>black</code>.
-    testString: 'assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi), "Use the <code>hex code</code> for the color black instead of the word <code>black</code>.");'
+    testString: assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi), 'Use the <code>hex code</code> for the color black instead of the word <code>black</code>.');
 
 ```
 

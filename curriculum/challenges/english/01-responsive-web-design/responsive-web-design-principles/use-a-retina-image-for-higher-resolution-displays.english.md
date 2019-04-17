@@ -25,9 +25,9 @@ Set the <code>width</code> and <code>height</code> of the <code>img</code> tag t
 ```yml
 tests:
   - text: Your <code>img</code> tag should have a <code>width</code> of 100 pixels.
-    testString: 'assert($("img").css("width") == "100px", "Your <code>img</code> tag should have a <code>width</code> of 100 pixels.");'
+    testString: assert($('img').css('width') == '100px', 'Your <code>img</code> tag should have a <code>width</code> of 100 pixels.');
   - text: Your <code>img</code> tag should have a <code>height</code> of 100 pixels.
-    testString: 'assert($("img").css("height") == "100px", "Your <code>img</code> tag should have a <code>height</code> of 100 pixels.");'
+    testString: assert($('img').css('height') == '100px', 'Your <code>img</code> tag should have a <code>height</code> of 100 pixels.');
 
 ```
 
@@ -55,7 +55,14 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  img { 
+    height: 100px; 
+    width: 100px; 
+  }
+</style>
+
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
 ```
 </section>
