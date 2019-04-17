@@ -241,9 +241,56 @@ It will compare between two variables but "=' is assignment operator
 when we said i=4, we simply assigning value 4 to the integer i, and since in "C" every NON-ZERO value is true so
 if(i=4) is true statement and instructions under this will executed
 
+## Tip
+For some cases it is better to use "else if" ladder than "if" ladder.
+For an example we have to determine grades of students based upon their marks. Like 'A' for >=90, 'B' when mark is <=70 and less than 90,'C' when mark is <=50 and less than 70,'D' when mark is <=30 and less than 50, other wise fail.
+## Using 'if' ladder
+```C
+#include<stdio.h>
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    if(a>=90)
+       printf("A");
+    if(a>=70 && a<90)
+       printf("B");
+    if(a>=50 && a<70)
+       printf("C");
+    if(a>=30 && a<50)
+       printf("D");
+    if(a<30)
+       printf("Fail");
+    return 0;
+}
+```
+## Using 'else if' ladder
+```C
+#include<stdio.h>
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    if(a>=90)
+       printf("A");
+       else if(a>=70)
+          printf("B");
+          else if(a>=50)
+             printf("C");
+             else if(a>=30)
+                printf("D");
+                   else
+                   printf("Fail");
+    return 0;
+}
+```
+
+Both of the codes will give same output but in case of 1st one for any value of 'a', each and every if statement will be checked and for which case it will be true that output will be printed. But in case of 'else if' ladder after finding the correct condition the control will go to 'return 0' and will end the program, so the rest of the conditions will not be checked and that is perfectly ok, because we don't need to check after the correct condition has been found. This trick will be useful for optimizing the code. That's why for some cases it is  better to use 'else if' ladder.
+
 # Before you go on...
 ## A review
 * 'if' statements check if expression is true, then it run the code within the curly brackets.
+* An 'if' can perform alone but an 'else' or an 'else if' without a preveious 'if' will give compilation error 
 * 'else' can be added to the end of an 'if', and will run only if the previous if(s) statement were false.
 * 'else if' can also be added to the end of an 'if', and will run only if the previous if(s) statement were false.
 * Everything in a computer is represented by numbers, so every comparison in C can be done by treating values like numbers- even true, false, and characters.
