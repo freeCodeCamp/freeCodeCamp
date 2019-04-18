@@ -13,7 +13,7 @@ HTTP Strict Transport Security (HSTS) is a web security policy which helps to pr
 
 ## Instructions
 <section id='instructions'>
-Configure <code>helmet.hsts()</code> to use HTTPS for the next 90 days. Pass the config object <code>{maxAge: timeInMilliseconds, force: true}</code>. Glitch already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Glitch header, after inspecting it for testing.
+Configure <code>helmet.hsts()</code> to use HTTPS for the next 90 days. Pass the config object <code>{maxAge: timeInSeconds, force: true}</code>. Glitch already has hsts enabled. To override its settings you need to set the field "force" to true in the config object. We will intercept and restore the Glitch header, after inspecting it for testing.
 Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TSL Certificate.
 </section>
 
@@ -24,8 +24,8 @@ Note: Configuring HTTPS on a custom website requires the acquisition of a domain
 tests:
   - text: helmet.hsts() middleware should be mounted correctly
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'hsts'); assert.property(data.headers, 'strict-transport-security'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: maxAge should be equal to 7776000 ms (90 days)
-    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.match(data.headers['strict-transport-security'], /^max-age=777600000;?/); }, xhr => { throw new Error(xhr.responseText); })
+  - text: maxAge should be equal to 7776000 s (90 days)
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.match(data.headers['strict-transport-security'], /^max-age=7776000;?/); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
