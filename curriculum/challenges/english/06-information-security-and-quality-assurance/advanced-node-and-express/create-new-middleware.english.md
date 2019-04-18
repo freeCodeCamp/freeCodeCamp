@@ -14,7 +14,7 @@ function ensureAuthenticated(req, res, next) {<br>
 &nbsp;&nbsp;if (req.isAuthenticated()) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;return next();<br>
 &nbsp;&nbsp;}<br>
-&nbsp;&nbsp; res.redirect('/');<br>
+&nbsp;&nbsp;res.redirect('/');<br>
 };
 </blockquote>
 Now add <em>ensureAuthenticated</em> as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.
