@@ -8,17 +8,14 @@ According to [this issue discussed on freeCodeCamp's git repo](https://github.co
 Here's how to set up a new node/express project anonymously:
 
 1. In the glitch project you opened from the introduction page, go to the top left corner for "project options" and click on "New Project".
-![step1](https://github.com/InaSLew/tutorialScreenshots/blob/master/step1.jpg)
 
 2. Click on "hello-express" to start a new node/express project
-![step2](https://github.com/InaSLew/tutorialScreenshots/blob/master/step2.jpg)
 
 3. We're not done yet; go to `server.js` on __YOUR glitch project__, and replace everything in there with this `server.js` on [freeCodeCamo's repo](https://github.com/freeCodeCamp/boilerplate-npm/blob/gomix/server.js)
 
 4. Then, go to `package.json` on __YOUR glitch project__, and again, replace everything in thEre with the `package.json` on [freeCodeCamp's repo](https://github.com/freeCodeCamp/boilerplate-npm/blob/gomix/package.json)
 
-5. Finally, to submit your solution, go to "Share", click on "app" and copy the link to your app. Submit this link when your solution is ready.
-![step3](https://github.com/InaSLew/tutorialScreenshots/blob/master/step3.jpg)
+5. Finally, to submit your solution, go to "Share", click on the "App" tab and copy the link to your app. Submit this link when your solution is ready.
 
 Now, you're ready to solve the challenges :sparkles:
 
@@ -28,6 +25,8 @@ Remember, you're writing JSON, so make sure you use
 3. the correct number of commas
 
  ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️  SPOILER ALERT. DO NOT SCROLL DOWN IF YOU WISH TO KEEP TRYING ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️
+ 
+ 
  
  
  
