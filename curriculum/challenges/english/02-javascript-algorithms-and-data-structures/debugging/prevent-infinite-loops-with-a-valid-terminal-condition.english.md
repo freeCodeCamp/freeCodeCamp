@@ -59,6 +59,5 @@ function myFunc() {
    console.log("Still going!");
  }
 }
-
 ```
 </section>
