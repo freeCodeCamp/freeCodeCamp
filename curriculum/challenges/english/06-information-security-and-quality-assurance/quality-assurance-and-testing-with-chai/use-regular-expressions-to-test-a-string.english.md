@@ -7,11 +7,12 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-<code>#match</code> asserts that the actual value matches the second argument regular expression.
+<code>match()</code> asserts that the actual value matches the second argument regular expression.
 </section>
 
 ## Instructions
 <section id='instructions'>
+Use <code>assert.match()</code> to make the tests pass. 
 
 </section>
 
