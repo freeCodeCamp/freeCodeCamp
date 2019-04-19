@@ -2,8 +2,6 @@
 title: Anaconda
 ---
 
-![alt text](https://www.anaconda.com/wp-content/themes/anaconda/images/logo-dark.png)
-
 # Anaconda
 
 **Anaconda** is a package manager, environment manager and Python distribution with a collection of over [1,500 open source packages](https://docs.anaconda.com/anaconda/packages/pkg-docs/), and it offers [free community support](https://groups.google.com/a/anaconda.com/forum/?fromgroups#!forum/anaconda). Anaconda is platform-agnostic, so you can use it whether you are on Windows, macOS or Linux.
