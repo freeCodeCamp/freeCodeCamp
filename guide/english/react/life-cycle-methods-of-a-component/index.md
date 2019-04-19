@@ -57,7 +57,7 @@ Note:
 
 > "Even in version 17, it will still be possible to use them, but they will be aliased with an “UNSAFE_” prefix to indicate that they might cause issues. We have also prepared an [automated script to rename them](https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles) in existing code."<sup>1</sup>
 
-In other words, these previouse lifecycles methods will still be available as:
+In other words, these previously lifecycle methods will still be available as:
 * `UNSAFE_componentWillMount`
 * `UNSAFE_componentWillReceiveProps`
 * `UNSAFE_componentWillUpdate`

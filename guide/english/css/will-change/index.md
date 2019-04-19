@@ -6,7 +6,7 @@ The will-change property allows you to tell the browser what manipulations will 
 
 ```css
 .container {
-will-change: transform;
+  will-change: transform;
 }
 ```
 
@@ -24,6 +24,8 @@ The key thing to note is that will-change will create a new overlay context only
 If you used ```will-change: display```, then a new overlay context will not be created, since no value of the display property creates a new overlay context.
 
 Let's look at another example: ```opacity```. Opacity with a value of 1 does not create a new overlay context, but with a lower value (for example, 0.9) will create. While will-change: opacity will in any case create a new overlay context.
+
+Tip: Be careful when you use this property. You should only be using it when you are 100% sure the element will change, as overusing this property will use a lot of resources. In some cases it can be really useful to only apply will-change when the user hovers the parent of the element.
 
 #### More Information:
 - [will-change on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change)
