@@ -30,6 +30,7 @@ letter of the option. So ``--name`` and ``-n`` are the same, and
 
 For full usage of each command, including abbreviations, see
 [Command reference](https://conda.io/docs/commands.html).
+You can also type ``conda`` or ``conda help`` to access the list of commands and help text for each command available.
 
 
 ### Sources
