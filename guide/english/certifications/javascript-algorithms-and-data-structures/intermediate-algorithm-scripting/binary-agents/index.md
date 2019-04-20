@@ -147,6 +147,29 @@ Make sure that each time you transcode a character from binary to decimal, you r
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>Array.prototype.map</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution Alternative:
+```javascript
+function binaryAgent(str) {
+  const re = /\d{8}\s*/g;
+  return str.replace(re, bin => String.fromCharCode(parseInt(bin, 2)));
+}
+
+// test here
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/PointlessUltimateAddition' target='_blank' rel='nofollow'>Run Code</a>
+
+# Code Explanation
+
+*   Create regular expression `re`. Here, it will match with any 8-digit number followed by zero or more whitespace(s).
+*   Pass in `re` as the first argument of `str.replace()`, and anonymous callback function as the second one.
+*   In the callback function, `String.fromCharCode()` takes an UTF-16 code(integer) and returns a string corresponding to the code.
+*   You can pass in one or two arguments to `parseInt()`. Here You will pass in two. The first one should be a number(`bin` in this case) and the second one be the base of the first number you passed in(2 in this case). It will return a decimal number equivalents to the number you passed in.
+
+## Relevant Links
+
+*   <a href='https://www.freecodecamp.org/forum/t/javascript-string-prototype-replace/15942' target='_blank' rel='nofollow'>String.prototype.replace()</a>
+
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
