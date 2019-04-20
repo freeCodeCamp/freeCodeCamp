@@ -16,7 +16,7 @@ You may use any name following the <code>import * as </code>portion of the state
 
 ## Instructions
 <section id='instructions'>
-The code in this file requires the contents of another file, <code>"capitalize_strings"</code>, that is in the same directory as the current file. Add the appropriate <code>import *</code> statement to the top of the file, using the object provided.
+The code in this file requires the contents of another file, <code>"capitalize_strings"</code>, that is in the same directory as the current file. Add the appropriate <code>import * as</code> statement to the top of the file. You can name the object that receives the imported values whatever you'd like.
 </section>
 
 ## Tests
