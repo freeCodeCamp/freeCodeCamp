@@ -7,12 +7,15 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-<code>#include (or #notInclude)</code> works for strings too!!
-It asserts that the actual string contains the expected substring.
+
+<code>include()</code> and <code>notInclude()</code> work for strings too!
+<code>include()</code> asserts that the actual string contains the expected substring.
 </section>
 
 ## Instructions
 <section id='instructions'>
+Use <code>assert.include()</code> or <code>assert.notInclude()</code> to make the tests pass.
+
 
 </section>
 

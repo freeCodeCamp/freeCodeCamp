@@ -8,12 +8,14 @@ challengeType: 2
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
+<code>isOk()</code> will test for a truthy value and <code>isNotOk()</code> will test for a falsy value.
+Truthy reference: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+Falsy reference: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
 </section>
 
 ## Instructions
 <section id='instructions'>
 Use <code>assert.isOk()</code> or <code>assert.isNotOk()</code> to make the tests pass.
-<code>.isOk(truthy)</code> and <code>.isNotOk(falsey)</code> will pass.
 </section>
 
 ## Tests
