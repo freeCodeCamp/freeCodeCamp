@@ -18,3 +18,7 @@ if (!Date.now) {
   };
 }
 ```
+
+### Further Reading:
+
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now' target='_blank' rel='nofollow'>MDN link</a>
