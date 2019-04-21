@@ -10,7 +10,9 @@ The steps involved in Quick Sort are:
 - Partitioning: Sort the array in such a manner that all elements less than the pivot are to the left, and all elements greater than the pivot are to the right.
 - Call Quicksort recursively, taking into account the previous pivot to properly subdivide the left and right arrays. (A more detailed explanation can be found in the comments below)
 
-A quick implementation in JavaScript:
+## Exmaple Implementations in Various Languages
+
+### A Quick-Sort Implementation in JavaScript:
 
 ```javascript
 const arr = [6, 2, 5, 3, 8, 7, 1, 4]
@@ -72,7 +74,8 @@ const swap = (arr, firstIndex, secondIndex) => {
 quickSort(arr, 0, arr.length - 1)
 console.log(arr)
 ```
-A quick sort implementation in C
+
+### A Quick-Sort Implementation in C
 ```C
 #include<stdio.h>  
 void swap(int* a, int* b) 
@@ -129,6 +132,39 @@ int main()
 } 
 ```
 
+### A Quick-Sort Implementation in MATLAB
+```matlab
+a = [9,4,7,3,8,5,1,6,2];
+
+sorted = quicksort(a,1,length(a));
+
+function [unsorted] =  quicksort(unsorted, low, high)
+    if low < high
+        [pInd, unsorted] = partition(unsorted, low, high);
+        unsorted = quicksort(unsorted, low, pInd-1);
+        unsorted = quicksort(unsorted, pInd+1, high);
+    end
+
+end
+
+function [pInd, unsorted] = partition(unsorted, low, high)
+    i = low-1;
+    for j = low:1:high-1
+        if unsorted(j) <= unsorted(high)
+            i = i+1;
+            unsorted([i,j]) = unsorted([j,i]);
+            
+        end
+    end
+    unsorted([i+1,high]) = unsorted([high,i+1]);
+    pInd = i+1;
+
+end
+
+```
+
+The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(nlong(n)) space. Quick sort achieves this by changing the order of elements within the given array. Compare this with the <a href='https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort' target='_blank' rel='nofollow'>merge sort</a> algorithm which creates 2 arrays, each length n/2, in each function call.
+
 ## Complexity
 
 | Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
@@ -137,7 +173,7 @@ int main()
 
 The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(n log(n)) space.
 
-#### More Information:
+## More Information
 
 - <a href='https://en.wikipedia.org/wiki/Quicksort' target='_blank' rel='nofollow'>Wikipedia</a>
 
