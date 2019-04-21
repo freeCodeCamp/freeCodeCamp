@@ -1,8 +1,8 @@
 ---
 title: jQuery Hover Method
-localeTitle: Метод JQuery Hover
+localeTitle: Метод jQuery Hover
 ---
-# Метод JQuery Hover
+# Метод jQuery Hover
 
 Метод hquery hover представляет собой комбинацию событий `mouseenter` и `mouseleave` . Синтаксис таков:
 ```

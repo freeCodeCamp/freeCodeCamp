@@ -73,7 +73,7 @@ Approximate round trip times in milliseconds:
 -->
 
 ## Scanning Tools
-There are many tools available to scan but one of the most common is `nmap`. It's a useful tool with functions such as getting information about live hosts on a network, services that are running, and the types and versions of the operating system being used.
+There are many tools available to scan but one of the most common is `nmap` (Network Mapper) which is a open source utility to assist with network discovery and security auditing. There is also a  graphical user interface called Zenmap. These are useful tools with functions allowing a user to obtain information about live hosts on a network, services that are running, and the types and versions of the operating system being used.
 
 ## More Information:
 - How to Ping in Linux https://www.wikihow.com/Ping-in-Linux
@@ -81,6 +81,6 @@ There are many tools available to scan but one of the most common is `nmap`. It'
 
 ## Sources
 <ol>
-  <li>Summarizing The Five Phases of Penetration Testing. (2015, May 06). Retrieved October 26, 2017, from https://www.cybrary.it/2015/05/summarizing-the-five-phases-of-penetration-testing/<li>
+  <li>Summarizing The Five Phases of Penetration Testing. (2015, May 06). Retrieved October 26, 2017, from https://www.cybrary.it/2015/05/summarizing-the-five-phases-of-penetration-testing/</li>
   <li>Engebretson, P. (2013). The Basics of Hacking and Penetration Testing: Ethical Hacking and Penetration Testing Made Easy Ed. 2. Syngress.</li>
 </ol>
