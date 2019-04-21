@@ -129,7 +129,7 @@ export class CertificationSettings extends Component {
     super(props);
 
     this.state = { ...initialState };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmitLegacy = this.handleSubmitLegacy.bind(this);
   }
 
   createHandleLinkButtonClick = to => e => {
@@ -287,7 +287,7 @@ export class CertificationSettings extends Component {
   };
 
   // legacy projects rendering
-  handleSubmit(formChalObj) {
+  handleSubmitLegacy(formChalObj) {
     const {
       isHonest,
       createFlashMessage,
@@ -415,7 +415,7 @@ export class CertificationSettings extends Component {
             ...initialObject
           }}
           options={options}
-          submit={this.handleSubmit}
+          submit={this.handleSubmitLegacy}
         />
         {isCertClaimed ? (
           <div className={'col-xs-12'}>
@@ -437,6 +437,100 @@ export class CertificationSettings extends Component {
     );
   };
 
+  renderFullStack = () => {
+    const {
+      isFullStackCert,
+      username,
+      isHonest,
+      createFlashMessage,
+      verifyCert,
+      is2018DataVisCert,
+      isApisMicroservicesCert,
+      isFrontEndLibsCert,
+      isInfosecQaCert,
+      isJsAlgoDataStructCert,
+      isRespWebDesignCert
+    } = this.props;
+
+    const fullStackClaimable =
+      is2018DataVisCert &&
+      isApisMicroservicesCert &&
+      isFrontEndLibsCert &&
+      isInfosecQaCert &&
+      isJsAlgoDataStructCert &&
+      isRespWebDesignCert;
+
+    const superBlock = 'full-stack-certificate';
+    const certLocation = `/certification/${username}/${superBlock}`;
+
+    const buttonStyle = {
+      marginBottom: '30px',
+      padding: '6px 12px',
+      fontSize: '18px'
+    };
+
+    const createClickHandler = superBlock => e => {
+      e.preventDefault();
+      if (isFullStackCert) {
+        return navigate(certLocation);
+      }
+      return isHonest
+        ? verifyCert(superBlock)
+        : createFlashMessage(honestyInfoMessage);
+    };
+
+    return (
+      <FullWidthRow key={superBlock}>
+        <Spacer />
+        <h3>Full Stack Certification</h3>
+        <div>
+          <p>
+            Once you've earned the following freeCodeCamp certifications, you'll
+            be able to claim The Full Stack Developer Certification:
+          </p>
+          <ul>
+            <li>Responsive Web Design</li>
+            <li>Algorithms and Data Structures</li>
+            <li>Front End Libraries</li>
+            <li>Data Visualization</li>
+            <li>APIs and Microservices</li>
+            <li>Information Security and Quality Assurance</li>
+          </ul>
+        </div>
+
+        <div className={'col-xs-12'}>
+          {fullStackClaimable ? (
+            <Button
+              bsSize='sm'
+              bsStyle='primary'
+              className={'col-xs-12'}
+              href={certLocation}
+              id={'button-' + superBlock}
+              onClick={createClickHandler(certLocation)}
+              style={buttonStyle}
+              target='_blank'
+            >
+              {isFullStackCert ? 'Show Certification' : 'Claim Certification'}
+            </Button>
+          ) : (
+            <Button
+              bsSize='sm'
+              bsStyle='primary'
+              className={'col-xs-12'}
+              disabled={true}
+              id={'button-' + superBlock}
+              style={buttonStyle}
+              target='_blank'
+            >
+              Claim Certification
+            </Button>
+          )}
+        </div>
+        <Spacer />
+      </FullWidthRow>
+    );
+  };
+
   render() {
     const {
       solutionViewer: { files, solution, isOpen, projectTitle }
@@ -445,6 +539,7 @@ export class CertificationSettings extends Component {
       <section id='certifcation-settings'>
         <SectionHeader>Certifications</SectionHeader>
         {certifications.map(this.renderCertifications)}
+        {this.renderFullStack()}
         <SectionHeader>Legacy Certifications</SectionHeader>
         {legacyCertifications.map(this.renderLegacyCertifications)}
         {isOpen ? (
