@@ -4,7 +4,7 @@ title: Hello World in Kotlin
 
 A Hello World program is a very simple program that outputs the string "Hello World!". It is often used to show the basic syntax of a programming language.
 
-In this tutorial we are going to analyse the syntax of a Hello World program written in Kotlin.
+In this tutorial, we are going to analyse the syntax of a Hello World program written in Kotlin.
 
 If you still haven't installed Kotlin you should check this tutorial: https://guide.freecodecamp.org/kotlin
 
@@ -45,7 +45,7 @@ Multi-line comment
 fun main(args : Array<String>) {...}
 ```
 
-The main function is a mandatory function that tells the compiler where it should start executing our code. It takes an array of strings as parameter and returns the type Unit which corresponds to the type ```void``` in languages like Java.
+The main function is a mandatory function that tells the compiler where it should start executing our code. It takes an array of strings as the parameter and returns the type Unit which corresponds to the type ```void``` in languages like Java.
 As we can see, functions are declared with the use of the keyword ```fun``` and its body should be written inside curly braces. 
 
 Functions without a explicitly declared return type will return the type ```Unit```, therefore, the above code is equivalent to

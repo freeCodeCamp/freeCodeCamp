@@ -18,7 +18,7 @@ The details of each of the data types is given below :
 
 ## Integers:
 
-These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consist both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
+These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consists of both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
 
 ### byte:
 
@@ -76,12 +76,12 @@ Long data type is a 64-bit signed two's complement integer.
 
     Example: long a = 100000L, long b = -600000L; 
 
-    By default all integer type variable is "int". So long num=600851475143  will give an error.
+    By default all integer type values are "int". So long num=600851475143  will give an error.
     But it can be specified as long by appending the suffix L (or l)
 
 ## Floating­ Point​:
 
-These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Float is actually avoided in case of precise data such as currency or research data.
+These are also called real numbers and are used for expressions involving fractional precision. These are of two types: `float`, `double`. Floating point is actually avoided in case of precise data such as currency or research data.
 
 ### float:
 
@@ -110,7 +110,7 @@ double data type is a double-precision 64-bit [IEEE 754 floating point](http://s
     Default value: 0.0d.
 
     Example: double d1 = 123.400778;
-
+    
 ## Character:
 
 We use this data type to store characters. This is not the same as the char in C/C++. Java uses a `UNICODE`, internationally accepted character set. Char in Java is 16­bits long while that in C/C++ is 8­bits.
@@ -168,7 +168,7 @@ class demo{
 
 ## String:
 
-String is not a primitive data type, but it lets you store multiple character data types in an array and has many methods that can be used. It is used quite commonly when the user types in data and you have to manipulate it. 
+String is not a primitive data type, it is an object, but it lets you store multiple character data types in an array and has many methods that can be used. It is used quite commonly when the user types in data and needs to manipulate it later on. 
 
 In the example below, we try to remove all of the letters from the string and output it:
 
@@ -182,7 +182,7 @@ for(int i=0;i<input.length();i++){
 //if the character at index i on the string is a letter or a space, move on to the next index
 if(Character.isLetter(input.charAt(i)) || input.charAt(i)==' '){ 
     
-    continue;
+    continue; // Skips to the next iteration of the for loop
 }
 
 output = output + input.charAt(i); //the number is added onto the output
@@ -196,4 +196,20 @@ System.out.println(output);
 Output: 
 ```
 10198442
+```
+
+### Casting
+
+It is also important to note that it is possible to store different data types into one another. However, you would have to let the compiler know that you have acknowledge the possible loss of data by casting the variable.  
+    
+For example: 
+```java
+double d = 1.23
+
+int i = (int)d;  
+System.out.println(i);
+```
+Output: 
+```
+1
 ```

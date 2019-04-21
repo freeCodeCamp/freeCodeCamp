@@ -3,14 +3,16 @@ title: Quick Sort
 ---
 ## Quick Sort
 
-Quick sort is an efficient divide and conquer sorting algorithm. Average case time complexity of Quick Sort is O(nlog(n)) with worst case time complexity being O(n^2).
+Quick sort is an efficient divide and conquer sorting algorithm. Average case time complexity of Quick Sort is O(nlog(n)) with worst case time complexity being O(n^2) depending on the selection of the pivot element, which divides the current array into two sub arrays. For instance, the time complexity of Quick Sort is approximately O(nlog(n)) when the selection of pivot divides original array into two nearly equal sized sub arrays. On the other hand, if the algorithm, which selects of pivot element of the input arrays, consistently outputs 2 sub arrays with a large difference in terms of array sizes, quick sort algorithm can achieve the worst case time complexity of O(n^2).
 
 The steps involved in Quick Sort are:
 - Choose an element to serve as a pivot, in this case, the last element of the array is the pivot.
 - Partitioning: Sort the array in such a manner that all elements less than the pivot are to the left, and all elements greater than the pivot are to the right.
 - Call Quicksort recursively, taking into account the previous pivot to properly subdivide the left and right arrays. (A more detailed explanation can be found in the comments below)
 
-A quick implementation in JavaScript:
+## Exmaple Implementations in Various Languages
+
+### A Quick-Sort Implementation in JavaScript:
 
 ```javascript
 const arr = [6, 2, 5, 3, 8, 7, 1, 4]
@@ -72,7 +74,8 @@ const swap = (arr, firstIndex, secondIndex) => {
 quickSort(arr, 0, arr.length - 1)
 console.log(arr)
 ```
-A quick sort implementation in C
+
+### A Quick-Sort Implementation in C
 ```C
 #include<stdio.h>  
 void swap(int* a, int* b) 
@@ -129,9 +132,8 @@ int main()
 } 
 ```
 
-### Implementation in MATLAB
-```MATLAB
-
+### A Quick-Sort Implementation in MATLAB
+```matlab
 a = [9,4,7,3,8,5,1,6,2];
 
 sorted = quicksort(a,1,length(a));
@@ -160,9 +162,18 @@ function [pInd, unsorted] = partition(unsorted, low, high)
 end
 
 ```
+
 The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(nlong(n)) space. Quick sort achieves this by changing the order of elements within the given array. Compare this with the <a href='https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort' target='_blank' rel='nofollow'>merge sort</a> algorithm which creates 2 arrays, each length n/2, in each function call.
 
-#### More Information:
+## Complexity
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Quick sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n<sup>2</sup>       | log(n)    | No        |  Quicksort is usually done in-place with O(log(n)) stack space |
+
+The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(n log(n)) space.
+
+## More Information
 
 - <a href='https://en.wikipedia.org/wiki/Quicksort' target='_blank' rel='nofollow'>Wikipedia</a>
 
