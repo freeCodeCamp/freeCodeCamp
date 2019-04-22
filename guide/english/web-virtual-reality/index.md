@@ -22,6 +22,7 @@ This section contains articles related to Virtual Reality Application Developmen
 * Google Cardboard - https://vr.google.com/cardboard/
 * Google Daydream - https://vr.google.com/daydream/
 * Oculus - https://www.oculus.com/
+* Pimax - https://pimaxvr.com/
 * Samsung Gear VR - https://www.samsung.com/global/galaxy/gear-vr/
   * https://samsungvr.com/
 * HTC - https://www.vive.com/us/
