@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf06756
 title: Override Class Declarations with Inline Styles
 challengeType: 0
 videoUrl: ''
-localeTitle: Переопределить объявления классов со встроенными стилями
+localeTitle: Переопределить объявления классов при помощи встроенных стилей
 ---
 
 ## Description
