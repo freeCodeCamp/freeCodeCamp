@@ -460,7 +460,7 @@ export class CertificationSettings extends Component {
       isJsAlgoDataStructCert &&
       isRespWebDesignCert;
 
-    const superBlock = 'full-stack-certificate';
+    const superBlock = 'full-stack';
     const certLocation = `/certification/${username}/${superBlock}`;
 
     const buttonStyle = {
@@ -506,7 +506,7 @@ export class CertificationSettings extends Component {
               className={'col-xs-12'}
               href={certLocation}
               id={'button-' + superBlock}
-              onClick={createClickHandler(certLocation)}
+              onClick={createClickHandler(superBlock)}
               style={buttonStyle}
               target='_blank'
             >
