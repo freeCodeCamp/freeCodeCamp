@@ -3,11 +3,11 @@ id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавить текст заполнителя в текстовое поле
+localeTitle: Добавить текст для placeholder в текстовое поле
 ---
 
 ## Description
-<section id="description"> Текст-заполнитель - это то, что отображается в вашем элементе <code>input</code> до того, как ваш пользователь ввел что-либо. Вы можете создать текст заполнителя следующим образом: <code>&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</code> </section>
+<section id="description"> Текст placeholder'а - это то, что отображается в вашем элементе <code>input</code> до того, как ваш пользователь ввел что-либо. Вы можете создать текст placeholder'а следующим образом: <code>&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Задайте значение <code>placeholder</code> вашего <code>input</code> текста «URL-адрес кота». </section>
