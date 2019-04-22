@@ -8,7 +8,7 @@ forumTopicId: 301397
 
 ## Description
 <section id='description'>
-<strong>Warning:</strong>&nbsp;This lifecycle method is deprecated since its usage can lead to bugs and inconsistencies.
+  <strong>Warning:</strong>&nbsp;<code>componentWillReceiveProps()</code> and <code>componentWillUpdate()</code> are deprecated since their usage can lead to bugs and inconsistencies. They were replaced to, respectively, <code>UNSAFE_componentWillReceiveProps()</code> and <code>UNSAFE_componentWillUpdate()</code> and they should be avoided in new code.
 Another lifecycle method is <code>UNSAFE_componentWillReceiveProps()</code> which is called whenever a component is receiving new props. This method receives the new props as an argument, which is usually written as <code>nextProps</code>. You can use this argument and compare with <code>this.props</code> and perform actions before the component updates. For example, you may call <code>setState()</code> locally before the update is processed.
 Another method is <code>componentDidUpdate()</code>, and is called immediately after a component re-renders. Note that rendering and mounting are considered different things in the component lifecycle. When a page first loads, all components are mounted and this is where methods like <code>componentWillMount()</code> and <code>componentDidMount()</code> are called. After this, as state changes, components re-render themselves. The next challenge covers this in more detail.
 </section>
@@ -16,7 +16,7 @@ Another method is <code>componentDidUpdate()</code>, and is called immediately a
 ## Instructions
 <section id='instructions'>
 The child component <code>Dialog</code> receives <code>message</code> props from its parent, the <code>Controller</code> component. Write the <code>UNSAFE_componentWillReceiveProps()</code> method in the <code>Dialog</code> component and have it log <code>this.props</code> and <code>nextProps</code> to the console. You'll need to pass <code>nextProps</code> as an argument to this method and although it's possible to name it anything, name it <code>nextProps</code> here.
-Next, add <code>componentDidUpdate()</code> in the <code>Dialog</code> component, and log a statement that says the component has updated. This method works similar to <code>componentWillUpdate()</code>, which is provided for you. Now click the button to change the message and watch your browser console. The order of the console statements show the order the methods are called.
+Next, add <code>componentDidUpdate()</code> in the <code>Dialog</code> component, and log a statement that says the component has updated. This method works similar to <code>UNSAFE_componentWillUpdate()</code>, which is provided for you. Now click the button to change the message and watch your browser console. The order of the console statements show the order the methods are called.
 <strong>Note:</strong>&nbsp;You'll need to write the lifecycle methods as normal functions and not as arrow functions to pass the tests (there is also no advantage to writing lifecycle methods as arrow functions).
 </section>
 
@@ -48,7 +48,7 @@ class Dialog extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentWillUpdate() {
+  UNSAFE_componentWillUpdate() {
     console.log('Component is about to update...');
   }
   // change code below this line
@@ -106,7 +106,7 @@ class Dialog extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentWillUpdate() {
+  UNSAFE_componentWillUpdate() {
     console.log('Component is about to update...');
   }
   // change code below this line
