@@ -18,12 +18,53 @@ We will cover:
 
 We'll be using MySQL for the demontration. Check the manual for this function in other Database Managers.
 
-We'll drop the view called `students_dropMe_v`, which was created just for this purpose.
+we'll use student table in this tutorial. 
+```sql
+select studentID,FullName,sat_score from student;
+
+```
+Result :
+```text
++------------+---------------------+-----------+
+| studentID  | FullName            | sat_score |
++------------+---------------------+-----------+
+| 1          | Vincent Uvalle      |  400      |
+| 2          | Merle Veres         |  800      |
+| 3          | Donte Emmons        |  1000     |
+| 4          | Demetrius Mccaster  |  1200     |
+| 5          | Tim Goudy           |  1400     |
+| 6          | Stephan Monfort     |  1600     |
+| 7          | Maximo Backstrom    |  1800     |
+| 8          | Dean Pickel         |  200      |
++------------+---------------------+-----------+
+```
+First of all let's create a view.
+```sql
+create view [Failures] AS
+select studentID, FullName , sat_score
+from student
+where sat_score <= 400;
+
+```
+Let's see what Failures view consists of
+```sql
+select * from [Failures]
+
+```
+Result :
+```text
++------------+---------------------+-----------+
+| studentID  | FullName            | sat_score |
++------------+---------------------+-----------+
+| 1          | Vincent Uvalle      |  400      |
+| 8          | Dean Pickel         |  200      |
++------------+---------------------+-----------+
+```
 
 ### Basic Syntax
 
 ```sql
-DROP VIEW [IF EXISTS]
+drop view [IF EXISTS]
     view_name [, view_name] ...
 ```
 
@@ -32,16 +73,12 @@ DROP VIEW [IF EXISTS]
 The if exists portion will "trap" errors, should the view not exist.
 
 ```sql
-drop view if exists students_dropMe_v;
+drop view if exists [Failures];
 ```
-
-The view after creation:
-
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/drop-view01.JPG)
-
-Above command executed and views shown:
-
-![image-2](https://github.com/SteveChevalier/guide-images/blob/master/drop-view02.JPG)
+Result : 
+```text
+Failures table dropped successfully.
+```
 
 ### Using the Workbench
 
@@ -50,19 +87,7 @@ From the workbench:
 2) select drop view from the menu
 3) Select either either a) run SQL to review the SQL statement to be executed or b) drop new 
 
-![image-3](https://github.com/SteveChevalier/guide-images/blob/master/drop-view03.JPG)
-
 *As with all of these SQL things there is MUCH MORE to them than what's in this introductory guide.  I hope this at least gives you enough to get started.  
 
 Please see the manual for your database manager and have fun trying different options yourself.*
 
-### Extra
-
-Here's the SQL I used to create the table that we just dropped:
-
-```sql
-create view `students_dropMe_v` as
-select FullName, programOfStudy 
-from student 
-where programOfStudy = 'Programming';
-```

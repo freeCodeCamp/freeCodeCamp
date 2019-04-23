@@ -6,40 +6,164 @@ title: SQL Alter Table Statement
 ## Introduction
 
 This guide will introduce you to and attempt to explain some of the basics of the SQL alter table functions within a relational database.
-ALTER TABLE statement is used to add, remove, change datatype or rename columns. It can be also used to add or remove the constraints of the table.**IMPORTANT Safety Tip:  ALWAYS backup your data before making changes!**
+ALTER TABLE statement is used to add, remove, change datatype or rename columns. It can be also used to add or remove the constraints of the table.
+**IMPORTANT Safety Tip:  ALWAYS backup your data before making changes!**
 
-We will be using MySQL for all examples throughout this freeCodeCamp SQL guide. The reasons for selecting MySQL are 1) it is very commonly used on websites for the backend database, 2) it's free, and is fun and easy to use.
+We will be using MySQL for all examples throughout this freeCodeCamp SQL guide. The reasons for selecting MySQL are 
+1) it is very commonly used on websites for the backend database, 
+2) it's free, and is fun and easy to use.
 
 ## Covered in this Guide 
 We will use the tables created in the “CREATE TABLE” guide.  Feel free to review that guide if you are not familiar with creating a table.
-* Altering the created table will alter it in several different ways. 
-* We'll change its name and modify columns
-* Add columns (while adding columns we will also review several of the most important column types and their use).
-* Drop columns (meaning remove the column).
-* Creating a table by importing a CSV file and altering that table.
-* Creating and modifying tables with MySQL workbench tools.
+* Adding a new column 
+* Change column name
+* Change column definition
+* Remove a Column
+* Rename the Table
 
-Most of this will be done using SQL statements in the MySQL workbench scripting tool but we will also review how to alter a table using the workbench interface instead of with SQL statements.
 
-## The table before alterations:
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table01a.JPG?raw=true)
+## Alter Table:
 
-Add date and email address columns (a date and a character column):
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table01.JPG?raw=true)
-
-Add a numeric column (note that it was added in a specific location in the table):
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table02.JPG?raw=true)
-
-Rename some columns:
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table03.JPG?raw=true)
-
-Remove a column:
+We will use the student table created in the “CREATE TABLE” guide.
+To view all column names and their description of student Table, we will use below command through out this guide.
 ```sql
-ALTER TABLE table_name DROP COLUMN column_name;
-```
+desc student;
 
-You can also use the alter table workbench tool. Just RIGHT click on the table you want to change and change as you wish.
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table05.JPG?raw=true)
+```
+Result : 
+
+```text
++--------------------+----------------------+--------------+-------------+------------+
+| column_name        | column_default       | is_nullable  | column_type | key        |
++--------------------+----------------------+--------------+-------------+------------+
+| studentID          | NULL                 | NO           | int(11)     | PRI        |
+| FullName           | NULL                 | YES          | varchar(90) |            |
+| studentIO          | NULL                 | YES          | int(3)      |            |
+| sat_score          | NULL                 | YES          | int(4)      |            |
+| timeStampA         | CURRENT TIMESTAMP    | NO           | timestamp   |            |
+| timeStampB         | 0000-00-00 00:00:00  | NO           | timestamp   |            |
++--------------------+----------------------+--------------+-------------+------------+
+```
+* Adding a new column :
+  Let's add a new column, emailAddress.
+  ```sql
+  alter table student add column emailAddress varchar(30) NULL ;
+
+  ```
+  Result : 
+  ```sql
+  desc student;
+  
+  ```
+  ```text
+  +--------------------+----------------------+--------------+-------------+------------+
+  | column_name        | column_default       | is_nullable  | column_type | key        |
+  +--------------------+----------------------+--------------+-------------+------------+
+  | studentID          | NULL                 | NO           | int(11)     | PRI        |
+  | FullName           | NULL                 | YES          | varchar(90) |            |
+  | studentIO          | NULL                 | YES          | int(3)      |            |
+  | sat_score          | NULL                 | YES          | int(4)      |            |
+  | timeStampA         | CURRENT TIMESTAMP    | NO           | timestamp   |            |
+  | timeStampB         | 0000-00-00 00:00:00  | NO           | timestamp   |            |
+  | emailAddress       | NULL                 | YES          | varchar(30) |            |
+  +--------------------+----------------------+--------------+-------------+------------+
+  ```
+* Change column name :
+  Let's Change the column name sat_score to satScore .
+  ```sql
+  alter table student change sat_score satScore int(4) NULL ;
+
+  ```
+  Result : 
+  ```sql
+  desc student;
+
+  ```
+  ```text
+  +--------------------+----------------------+--------------+-------------+------------+
+  | column_name        | column_default       | is_nullable  | column_type | key        |
+  +--------------------+----------------------+--------------+-------------+------------+
+  | studentID          | NULL                 | NO           | int(11)     | PRI        |
+  | FullName           | NULL                 | YES          | varchar(90) |            |
+  | studentIO          | NULL                 | YES          | int(3)      |            |
+  | satScore           | NULL                 | YES          | int(4)      |            |
+  | timeStampA         | CURRENT TIMESTAMP    | NO           | timestamp   |            |
+  | timeStampB         | 0000-00-00 00:00:00  | NO           | timestamp   |            |
+  | emailAddress       | NULL                 | YES          | varchar(30) |            |
+  +--------------------+----------------------+--------------+-------------+------------+
+  ```
+* Change column definition :
+  Let's Change the emailAddress field size from varchar(30) to varchar(50).
+  ```sql
+  alter table student change emailAddress emailAddress varchar(50) NULL ;
+
+  ```
+  Result : 
+  ```sql
+  desc student;
+
+  ```
+  ```text
+  +--------------------+----------------------+--------------+-------------+------------+
+  | column_name        | column_default       | is_nullable  | column_type | key        |
+  +--------------------+----------------------+--------------+-------------+------------+
+  | studentID          | NULL                 | NO           | int(11)     | PRI        |
+  | FullName           | NULL                 | YES          | varchar(90) |            |
+  | studentIO          | NULL                 | YES          | int(3)      |            |
+  | satScore           | NULL                 | YES          | int(4)      |            |
+  | timeStampA         | CURRENT TIMESTAMP    | NO           | timestamp   |            |
+  | timeStampB         | 0000-00-00 00:00:00  | NO           | timestamp   |            |
+  | emailAddress       | NULL                 | YES          | varchar(50) |            |
+  +--------------------+----------------------+--------------+-------------+------------+
+  ```
+
+* Remove a Column :
+  Let's remove emailAddress column which we added earlier.
+  ```sql
+  alter table student drop column emailAddress ;
+
+  ```
+  Result :
+  ```sql
+  desc student;
+
+  ```
+  ```text
+  +--------------------+----------------------+--------------+-------------+------------+
+  | column_name        | column_default       | is_nullable  | column_type | key        |
+  +--------------------+----------------------+--------------+-------------+------------+
+  | studentID          | NULL                 | NO           | int(11)     | PRI        |
+  | FullName           | NULL                 | YES          | varchar(90) |            |
+  | studentIO          | NULL                 | YES          | int(3)      |            |
+  | satScore           | NULL                 | YES          | int(4)      |            |
+  | timeStampA         | CURRENT TIMESTAMP    | NO           | timestamp   |            |
+  | timeStampB         | 0000-00-00 00:00:00  | NO           | timestamp   |            |
+  +--------------------+----------------------+--------------+-------------+------------+
+  ```
+* Rename the Table :
+  Let's rename the table student to students. 
+  ```sql
+  alter table student rename to students ;
+
+  ```
+  Result :
+  we can also use describe command (alternative to desc) to see table description.
+  ```sql
+  describe students
+
+  ```
+  ```text
+  +--------------------+----------------------+--------------+-------------+------------+
+  | column_name        | column_default       | is_nullable  | column_type | column_key |
+  +--------------------+----------------------+--------------+-------------+------------+
+  | studentID          | NULL                 | NO           | int(11)     | PRI        |
+  | FullName           | NULL                 | YES          | varchar(90) |            |
+  | studentIO          | NULL                 | YES          | int(3)      |            |
+  | satScore           | NULL                 | YES          | int(4)      |            |
+  | timeStampA         | CURRENT TIMESTAMP    | NO           | timestamp   |            |
+  | timeStampB         | 0000-00-00 00:00:00  | NO           | timestamp   |            |
+  +--------------------+----------------------+--------------+-------------+------------+
+  ```
 
 There is much more that can be done, check the manual of your database management software to learn more.
 
