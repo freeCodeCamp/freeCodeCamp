@@ -37,7 +37,7 @@ tests:
   - text: An empty tree returns a height of <code>-1</code>.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; return (test.findMaxHeight() == -1); })(), 'An empty tree returns a height of <code>-1</code>.');
   - text: The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), 'The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.');
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return !test.isBalanced(); })(), 'The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.');
 
 ```
 
@@ -110,55 +110,78 @@ BinarySearchTree.prototype = {
 
 ```js
 var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
-
 function Node(value) {
-	this.value = value;
-	this.left = null;
-	this.right = null;
+    this.value = value;
+    this.left = null;
+    this.right = null;
 }
-
 function BinarySearchTree() {
-	this.root = null;
-	// change code below this line
-	this.findMinHeight = function(root = this.root) {
-		if (root === null) {
-			return -1;
-		} else if (root.left === null && root.right === null) {
-			return 0;
-		} else if (root.left == null) {
-			return (this.findMinHeight(root.right) + 1);
-		} else if (root.right == null) {
-			return (this.findMinHeight(root.left) + 1);
-		} else {
-			return Math.min(this.findMinHeight(root.left), this.findMinHeight(root.right)) + 1;
-		}
-	}
-	this.findMaxHeight = function(root = this.root) {
-		if (root === null) {
-			return -1;
-		} else if (root.left === null && root.right === null) {
-			return 0;
-		} else if (root.left == null) {
-			return (this.findMaxHeight(root.right) + 1);
-		} else if (root.right == null) {
-			return (this.findMaxHeight(root.left) + 1);
-		} else {
-			return Math.max(this.findMaxHeight(root.left), this.findMaxHeight(root.right)) + 1;
-		}
-	}
-	this.isBalanced = function(root = this.root) {
-		if (root === null || root.left === null || root.right === null) {
-			return false;
-		}
-		let l = this.findMaxHeight(root.left);
-		let r = this.findMaxHeight(root.right);
-		let difference = Math.abs(r - l);
-		if (difference <= 1 && this.isBalanced(root.left) && this.isBalanced(root.right)) {
-			return false;
-		}
-		return true;
-	}
-	// change code above this line
+    this.root = null;
+    // change code below this line
+    // change code above this line
+    this.findMinHeight = function(root = this.root) {
+        // empty tree.
+        if(root === null) {
+            return -1;
+        }
+        // leaf node.
+        if(root.left === null && root.right === null) {
+            return 0;
+        }
+        if(root.left === null){
+            return this.findMinHeight(root.right) + 1;
+        }
+        if(root.right === null){
+            return this.findMinHeight(root.left) + 1;
+        }
+        const lHeight = this.findMinHeight(root.left);
+        const rHeight = this.findMinHeight(root.right);
+        return Math.min(lHeight, rHeight) + 1;
+    };
+    this.findMaxHeight = function(root = this.root) {
+        // empty tree.
+        if(root === null) {
+            return -1;
+        }
+        // leaf node.
+        if(root.left === null && root.right === null) {
+            return 0;
+        }
+        if(root.left === null){
+            return this.findMaxHeight(root.right) + 1;
+        }
+        if(root.right === null){
+            return this.findMaxHeight(root.left) + 1;
+        }
+        const lHeight = this.findMaxHeight(root.left);
+        const rHeight = this.findMaxHeight(root.right);
+        return Math.max(lHeight, rHeight) + 1;
+    };
+    this.isBalanced = function(root = this.root) {
+
+        if(root === null) {
+            return true;
+        }
+
+        if(root.left === null && root.right === null){
+            return true;
+        }
+
+        if(root.left === null) {
+            return this.findMaxHeight(root.right) <= 0; 
+        }
+
+        if(root.right === null) {
+             return this.findMaxHeight(root.left) <= 0; 
+        }
+
+        const lHeight = this.findMaxHeight(root.left);
+        const rHeight = this.findMaxHeight(root.right);
+        if(Math.abs(lHeight - rHeight) > 1){
+            return false;
+        }
+        return this.isBalanced(root.left) && this.isBalanced(root.right);
+    };
 }
 ```
 </section>
