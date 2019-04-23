@@ -88,7 +88,7 @@ const hasCorrectSpacing = () => {
   const contTwoPlusThreePlusGapWidth = $('.item2').width() * 2 + 10;
   const item5Width = $('.item5').width();
   const diff = Math.abs(contTwoPlusThreePlusGapWidth - item5Width);
-  /* max expected diff assumes browser width increments of 0.01px */
+  /* To avoid rounding errors the largest allowed diff is set at 0.01px */
   return diff <= 0.01; 
 };
 </script>
