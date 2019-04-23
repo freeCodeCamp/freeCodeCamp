@@ -77,7 +77,7 @@ function selectionSort(array) {
         minimumIndex = j;
       }
     }
-    let value = arr[minimumIndex];
+    let value = array[minimumIndex];
     array[minimumIndex] = array[i]; 
     array[i] = value; 
   } 
