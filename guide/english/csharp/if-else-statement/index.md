@@ -2,50 +2,50 @@
 title: If Else Statement
 ---
 
-# If Else Statement 
+# If...Else Statement 
 
-The If-Else statement executes a block of code depending on whether your precondition is fullfilled or not.
+The If...Else statement executes different blocks of code depending on the truthfulness of the specified condition.
 
-## Example
 
-```c#
-
-if(boolean expression)
+## Syntax
+```C#
+if (boolean expression)
 {
-// execute this code block if expression evalutes to true
+   // execute this code block if expression evalutes to true
 }
 else
 {
-// always execute this code block when above if expression is false
-}
-
-
-int Price = 30;
-
-If (Price == 30)
-{
-  Console.WriteLine("Price is equal to 30.");
-}
-
-Else 
-{
-  Console.WriteLine("Price is not equal to 30.");
+   // always execute this code block when above if expression is false
 }
 ```
 
+## Example
+```C#
+int Price = 30;
 
+if (Price == 30)
+{
+    Console.WriteLine("Price is equal to 30.");
+}
+else 
+{
+    Console.WriteLine("Price is not equal to 30.");
+}
+```
 
-Since we already declared our int Price to be 30, this will be the expected output.
+Since we already declared our integer `Price` to be 30, this will be the expected output.
 
-## Output
+### Output
 ```
 Price is equal to 30.
 ```
-## Shorten If Else Statement
 
-We can use the ternary :? which is great for short if else statements.
+## Shortened If...Else Statement
+
+We can use the ternary `:?` which is great for short if...else statements.
+
 For example:
 ```C#
-int Price=30;
-(Price==30)?Console.WriteLine("Price is Equal to 30."):Console.WriteLine("Price is Not Equal to 30.")
+int Price = 30;
+(Price == 30) ? Console.WriteLine("Price is Equal to 30.") : Console.WriteLine("Price is Not Equal to 30.")
 ```
