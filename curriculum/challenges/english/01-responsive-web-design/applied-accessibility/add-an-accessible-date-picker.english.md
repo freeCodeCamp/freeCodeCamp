@@ -2,7 +2,7 @@
 id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cD9DJHr'
+videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 ---
 
 ## Description
@@ -77,7 +77,23 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Mortal Kombat Tournament Survey</h2>
+      <form>
+        <p>Tell us the best date for the competition</p>
+        <label for="pickdate">Preferred Date:</label>
+        <input type="date" id="pickdate" name="date">
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
 ```
 </section>
