@@ -7,11 +7,11 @@ The motherboard is the connecting layer that allows a computer's components to i
 
 A motherboard provides power and connectivity to the computer's components, and acts as the switchboard for all inter-component communications. If the CPU needs to process information that is stored in RAM, for example, the motherboard provides a connection between the CPU and RAM, called the memory bus, to allow for data access. A motherboard includes buses for expansion cards (including the GPU), RAM, and hard drives.
 
-Motherboards are manufactured by companies such as INTEL, ASUS, ACER, GIGABYTE, IBM, SIMMTRONICS and many more.
+Common manufacturers of motherboards include INTEL, ASUS, ACER, GIGABYTE, IBM, SIMMTRONICS and many more.
 
 ## Parts of a Motherboard
 
-If you were to open up your computer and take out the motherboard, you would probably get pretty confused about all the different parts. Depending on the make and model of your computer, it might look something like this.
+If you were to open up your computer and take out the motherboard, you would probably be pretty confused about all the different parts. Depending on the make and model of your computer, it might look something like this.
 
 ![Motherboard](https://fthmb.tqn.com/mmTUdCN6UBGIKlkEggGq4fpV-3k=/768x0/filters:no_upscale()/gig-57c732ed3df78c71b60e7aa5.jpg)
 
