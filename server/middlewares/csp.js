@@ -38,6 +38,7 @@ export default function csp() {
         'https://www.googletagmanager.com',
         'https://www.googleadservices.com',
         'https://googleads.g.doubleclick.net',
+        'https://stats.g.doubleclick.net',
         '*.gstatic.com',
         'https://*.cloudflare.com',
         '*.cloudflare.com',
