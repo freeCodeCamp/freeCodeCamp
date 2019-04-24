@@ -25,6 +25,7 @@ To understand how computers work, you don't need to know every single part of th
 - A second chip controls the input and output (I/O) functions. It is not connected directly to the CPU but to the Northbridge. This I/O controller is referred to as the Southbridge. The Northbridge and Southbridge combined are referred to as the chipset.
 - Several connectors provide the physical interface between input and output devices and the motherboard. The Southbridge handles these connections.
 - Slots for one or more hard drives to store files. The most common types of connections are Integrated Drive Electronics (IDE) and Serial Advanced Technology Attachment (SATA).
+- A CMOS chip that contains BIOS configuration, date and time. The CMOS battery supplies power so that the configuration of these does not get lost every time the computer shuts down. 
 - A read-only memory (ROM) chip, which contains the firmware, or startup instructions for the computer system. This was previously a system known as BIOS but has been replaced on more modern machines by UEFI
 - A slot for a video or graphics card. There are a number of different types of slots, including the Accelerated Graphics Port (AGP) and Peripheral Component Interconnect Express (PCIe).
 Additional slots to connect hardware in the form of Peripheral Component Interconnect (PCI) slots.
