@@ -3,11 +3,20 @@ title: Error Exceptions
 ---
 ## Error Exceptions
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/php/errors/exceptions/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Similar to other programming languages, you generally want to throw Exceptions when some sort of error occurs. Consider the following example of a `withdraw()` function in a theoretical `BankAccount` class where the balance goes below 0:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```php
+function withdraw($amount) {
+    $newBalance = $this->balance - $amount;
+    if ($newBalance < 0) {
+        throw new Exception('Balance would go below zero');
+    }
+    return $newBalance;
+}
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+In this case, if the value of ```$this->balance``` was 5 and ```$amount``` was 10, you wouldn't want to authorize the withdrawal. By throwing an Exception, you ensure that the withdrawal doesn't take place if there is not enough money in the account.
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+#### More Information
+
+- [PHP Manual: Exceptions](http://php.net/manual/en/language.exceptions.php)

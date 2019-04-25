@@ -10,6 +10,8 @@ Bootstrap collapse is provided as seperate plugin called collapse.js, which mean
 
 Bootstrap collapse can be used with a couple of elements, a button, anchor tag or panel. To use collapse you need at least two elements, one element will control the hide or reveal state of the other element. 
 
+The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will animate the height from its current value to 0. Given how CSS handles animations, you cannot use padding on a `.collapse` element. Instead, use the class as an independent wrapping element.
+
 The collapse plugin works by changing the class on the collapsible element. There are three possible classes:
 
 * .collapse - this class hides the element
@@ -45,7 +47,7 @@ The element to collapse must contain the class `.collapse`.
 </div>
 
 ```
-In the example above we use a button and an anchor tag to control a div element. The button and anchor which are the controlling elements need two things, an attribute to specify that the controlling element is for collapsing and another attribute to specify which element it controls (hides or reveals). 
+In the example above, we use a button and an anchor tag to control a div element. The button and anchor which are the controlling elements need two things, an attribute to specify that the controlling element is for collapsing and another attribute to specify which element it controls (hides or reveals). 
 
 They both have a *data-toggle* attribute with the value *collapse* which specify that they are to be used for collapsing an element. The anchor tag uses a *href* attribute to specify the element it controls, while the button uses a *data-target* attribute to specify the element it controls. 
 
