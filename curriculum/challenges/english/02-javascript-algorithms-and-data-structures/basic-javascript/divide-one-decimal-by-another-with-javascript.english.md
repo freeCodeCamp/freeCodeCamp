@@ -2,6 +2,7 @@
 id: bd7993c9ca9feddfaeb7bdef
 title: Divide One Decimal by Another with JavaScript
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cBZe9AW'
 ---
 
 ## Description
@@ -37,8 +38,6 @@ tests:
 
 ```js
 var quotient = 0.0 / 2.0; // Fix this line
-
-
 ```
 
 </div>
@@ -59,6 +58,6 @@ var quotient = 0.0 / 2.0; // Fix this line
 <section id='solution'>
 
 ```js
-// solution required
+var quotient = 4.4 / 2.0;
 ```
 </section>
