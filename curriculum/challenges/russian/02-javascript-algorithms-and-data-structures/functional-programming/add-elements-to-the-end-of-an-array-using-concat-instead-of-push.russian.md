@@ -3,16 +3,16 @@ id: 587d7da9367417b2b2512b67
 title: Add Elements to the End of an Array Using concat Instead of push
 challengeType: 1
 videoUrl: ''
-localeTitle: Добавление элементов в конец массива Использование concat Вместо push
+localeTitle: Добавление элементов в конец массива используя concat вместо push
 ---
 
-## Description
-<section id="description"> Функциональное программирование - это создание и использование не мутирующих функций. Последняя проблема ввела метод <code>concat</code> как способ объединить массивы в новую, не изменяя исходные массивы. Сравните <code>concat</code> с методом <code>push</code> . <code>Push</code> добавляет элемент в конец того же самого массива, на который он вызывается, который мутирует этот массив. Вот пример: <blockquote> var arr = [1, 2, 3]; <br> arr.push ([4, 5, 6]); <br> // arr изменяется на [1, 2, 3, [4, 5, 6]] <br> // Не функциональный способ программирования </blockquote> <code>Concat</code> предлагает способ добавления новых элементов в конец массива без каких-либо мутирующих побочных эффектов. </section>
+## Описание
+<section id="description"> Функциональное программирование - это создание и использование не мутирующих функций. Предыдущая проблема ввела метод <code>concat</code> как способ объединить массивы, не изменяя исходные. Сравните <code>concat</code> с методом <code>push</code> . <code>Push</code> добавляет элемент в конец того же самого массива, на котором он вызывается, изменяя этот массив. Вот пример: <blockquote> var arr = [1, 2, 3]; <br> arr.push ([4, 5, 6]); <br> // arr изменяется на [1, 2, 3, [4, 5, 6]] <br> // Не функциональный способ программирования </blockquote> <code>Concat</code> предлагает способ добавления новых элементов в конец массива без каких-либо мутирующих побочных эффектов. </section>
 
-## Instructions
+## Указания
 <section id="instructions"> Измените функцию <code>nonMutatingPush</code> чтобы она использовала <code>concat</code> для добавления <code>newItem</code> в конец <code>original</code> вместо <code>push</code> . Функция должна возвращать массив. </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -56,7 +56,7 @@ nonMutatingPush(first, second);
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
