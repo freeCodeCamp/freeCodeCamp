@@ -3,13 +3,14 @@ title: Pythagorean Triples
 ---
 ## Pythagorean Triples
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/pythagorean-triples/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A pythagorean triple is a set of three numbers, a, b, and c, that satisfies the equation `a^2 + b^2 = c^2`. When a triangle is made with side lengths equal to a, b, and c, it will be a right triangle.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The smallest pythagorean triple is 3,4,5. There is an infinite number of these pythagorean triples. They can be constructed using the following process:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+When m and n are positive integers such that m is less than n:
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+- a = `n^2 - m^2`
+- b = `2nm`
+- c = `n^2 + m^2`
 
-
+Then a, b, and c will form a pythagorean triple. The formula above is known as Euclid's formula.

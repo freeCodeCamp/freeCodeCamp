@@ -12,7 +12,7 @@ Agora, um editor normalmente publica mensagens com uma _chave de roteamento_ par
 
 ## Começando
 
-Vamos elaborar um exemplo muito simples em que um script do editor publica uma mensagem para o Rabbit, contendo um URL, e um script do consumidor escuta o Rabbit, pega o URL publicado, chama e exibe os resultados. Você pode encontrar a amostra finalizada no [Github](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise) .
+Vamos elaborar um exemplo muito simples em que um script do editor publica uma mensagem para o Rabbit, contendo um URL, e um script do consumidor escuta o Rabbit, pega o URL publicado, chama e exibe os resultados. Você pode encontrar a amostra finalizada no [GitHub](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise) .
 
 Primeiro, vamos inicializar um projeto npm:
 

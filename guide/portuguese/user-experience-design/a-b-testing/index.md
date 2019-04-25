@@ -10,4 +10,4 @@ Qualquer site quer que os visitantes se convertam de apenas visitantes para algo
 
 #### Mais Informações:
 
-Para mais informações sobre testes A/B, por favor leia [O Guia Completo para Teste A / B](https://vwo.com/ab-testing/) e [Um refrescante no teste A / B.](https://hbr.org/2017/06/a-refresher-on-ab-testing) [O que é o teste A / B?](https://www.optimizely.com/ab-testing/)
+Para mais informações sobre testes A / B, por favor leia [O Guia Completo para Teste A / B](https://vwo.com/ab-testing/)(em inglês) e [Um refrescante no teste A / B.](https://hbr.org/2017/06/a-refresher-on-ab-testing)(em inglês) [O que é o teste A / B?](https://www.optimizely.com/ab-testing/)(em inglês)

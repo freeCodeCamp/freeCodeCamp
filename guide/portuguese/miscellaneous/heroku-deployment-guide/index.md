@@ -12,7 +12,7 @@ localeTitle: Guia de implantação do Heroku
     
 5.  Você será levado a um painel para esse aplicativo. Clique na guia Implantar.
     
-6.  Lá você ficará satisfeito em saber que pode se conectar a um repositório do github. Na seção Método de Implantação, escolha Github e autentique-se entrando no Github.
+6.  Lá você ficará satisfeito em saber que pode se conectar a um repositório do github. Na seção Método de Implantação, escolha GitHub e autentique-se entrando no GitHub.
     
 7.  Logo abaixo, preencha o nome do repositório do github. (Isso obviamente exige que você tenha enviado um repo para o github da cloud9 ou da sua máquina local ... e que você o configurou corretamente. Mais sobre isso abaixo.)
     
