@@ -31,7 +31,7 @@ Note that inlining is only a request to the compiler, not a command. The compile
 ``` c++
 #include<iostream>
 
-using std::cout;
+using namespace std;
 
 class MathOperation{
 
@@ -84,8 +84,7 @@ int main(){
 The following program demonstrates this concept:
 ```cpp
 #include <iostream>
-using std::cout;
-using std::cin;
+using namespace std;
 class operation
 {
     int a,b,add,sub,mul;
@@ -126,7 +125,7 @@ inline void operation :: product()
 inline void operation ::division()
 {
     div = a/b;
-    cout << "Division of two numbers: " <<a/b << "\n" ;
+    cout << "Division of two numbers: " << a/b << "\n" ;
 }
  
 int main()
