@@ -60,6 +60,10 @@ console.log(popShift(['challenge', 'is', 'not', 'complete']));
 <section id='solution'>
 
 ```js
-// solution required
+function popShift(arr) {
+  let popped = arr.pop(); // change this line
+  let shifted = arr.shift(); // change this line
+  return [shifted, popped];
+}
 ```
 </section>
