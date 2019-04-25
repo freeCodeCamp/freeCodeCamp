@@ -14,10 +14,13 @@ import Spacer from '../helpers/Spacer';
 import ToggleSetting from './ToggleSetting';
 import SectionHeader from './SectionHeader';
 
-const mapStateToProps = createSelector(userSelector, user => ({
-  ...user.profileUI,
-  user
-}));
+const mapStateToProps = createSelector(
+  userSelector,
+  user => ({
+    ...user.profileUI,
+    user
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ submitProfileUI }, dispatch);
@@ -106,7 +109,7 @@ class PrivacySettings extends Component {
           <Form inline={true} onSubmit={this.handleSubmit}>
             <ToggleSetting
               action='My profile'
-              explain='Your certifications will be disabled'
+              explain='Your certifications will be disabled, if set to private.'
               flag={isLocked}
               flagName='isLocked'
               offLabel='Public'
@@ -130,7 +133,7 @@ class PrivacySettings extends Component {
               toggleFlag={this.toggleFlag('showLocation')}
             />
             <ToggleSetting
-              action='My &quot;about me&quot;'
+              action='My "about me"'
               flag={!showAbout}
               flagName='showAbout'
               offLabel='Public'
@@ -155,7 +158,7 @@ class PrivacySettings extends Component {
             />
             <ToggleSetting
               action='My certifications'
-              explain='Your certifications will be disabled'
+              explain='Your certifications will be disabled, if set to private.'
               flag={!showCerts}
               flagName='showCerts'
               offLabel='Public'
@@ -172,7 +175,7 @@ class PrivacySettings extends Component {
             />
             <ToggleSetting
               action='My time line'
-              explain='Your certifications will be disabled'
+              explain='Your certifications will be disabled, if set to private.'
               flag={!showTimeLine}
               flagName='showTimeLine'
               offLabel='Public'
@@ -203,7 +206,7 @@ class PrivacySettings extends Component {
             href={`data:text/json;charset=utf-8,${encodeURIComponent(
               JSON.stringify(user)
             )}`}
-            >
+          >
             Download your data
           </Button>
         </FullWidthRow>

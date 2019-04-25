@@ -3,13 +3,13 @@ title: Use && for a More Concise Conditional
 ---
 ## Use && for a More Concise Conditional
 The example given is 
-```
+```jsx
 {condition && <p>markup</p>} 
 ```
 which is demonstrated below using the condition of the this.state.dinnerCooked boolean.
 If the boolean is true the markup included in the {} with the condition will display, if not it will not display
 
-```
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -25,6 +25,7 @@ class MyComponent extends React.Component {
     );
   }
 };
+```
 
 ## Hint:
 
