@@ -1,5 +1,6 @@
 ---
 title: Padding
+
 localeTitle: Внутренний отступ
 ---
 
@@ -51,3 +52,4 @@ padding: 5px 1em 0 1em;
 * [W3C CSS Level 1](https://www.w3.org/TR/CSS1/#padding)
 * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
 * [CSS Tricks](https://css-tricks.com/almanac/properties/p/padding/)
+
