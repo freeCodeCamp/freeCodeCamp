@@ -3,7 +3,7 @@ id: bd7123c9c441eddfaeb4bdef
 title: Comment Your JavaScript Code
 challengeType: 1
 videoUrl: ''
-localeTitle: Комментарий
+localeTitle: Комментарии в коде
 ---
 
 ## Description
@@ -23,9 +23,9 @@ localeTitle: Комментарий
 
 ```yml
 tests:
-  - text: 'Создайте комментарий вида <code>//</code>, содержащий не менее пяти букв.'
+  - text: 'Создайте однострочный комментарий <code>//</code> , содержащий не менее пяти букв.'
     testString: 'assert(code.match(/(\/\/)...../g), "Create a <code>//</code> style comment that contains at least five letters.");'
-  - text: 'Создайте комментарий вида <code>/* */</code>, содержащий не менее пяти букв.'
+  - text: 'Создайте многострочный комментарий <code>/* */</code> , содержащий не менее пяти букв.'
     testString: 'assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), "Create a <code>/* */</code> style comment that contains at least five letters.");'
 
 ```
@@ -51,6 +51,9 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// Однострочный комментарий
+/*
+Многострочный комментарий
+*/
 ```
 </section>
