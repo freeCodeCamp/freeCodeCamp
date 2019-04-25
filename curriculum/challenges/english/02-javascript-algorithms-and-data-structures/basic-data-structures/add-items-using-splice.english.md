@@ -61,6 +61,9 @@ console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'Pal
 <section id='solution'>
 
 ```js
-// solution required
+function htmlColorNames(arr) {
+  arr.splice(0,2,'DarkSalmon', 'BlanchedAlmond');
+  return arr;
+}
 ```
 </section>
