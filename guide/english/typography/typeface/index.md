@@ -24,5 +24,5 @@ Most common typeface styles include:
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+[Web Style Guide - Typefaces](https://www.webstyleguide.com/wsg3/8-typography/4-web-typefaces.html)
 

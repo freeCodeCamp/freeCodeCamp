@@ -3,7 +3,7 @@ id: bad87fee1348bd9aedf08826
 title: Use Clockwise Notation to Specify the Padding of an Element
 challengeType: 0
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'استخدم علامة Clockwise لتحديد Padding of Alement'
 ---
 
 ## Description
