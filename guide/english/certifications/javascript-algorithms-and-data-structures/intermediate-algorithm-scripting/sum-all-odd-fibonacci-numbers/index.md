@@ -68,7 +68,7 @@ As you get the next odd one, don't forget to add it to a global variable that ca
 
 #### Relevant Links
 
-*   <a>JS while Loop</a>
+*   <a href='https://www.freecodecamp.org/forum/t/javascript-while-loop/14668' target='_blank' rel='nofollow'>JS while Loop</a>
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
@@ -107,7 +107,7 @@ As you get the next odd one, don't forget to add it to a global variable that ca
 #### Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-push/14298' target='_blank' rel='nofollow'>JS Array Prototype Push</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>JS For Loops Explained</a>
+*   <a href='https://www.freecodecamp.org/forum/t/javascript-for-loops-explained/14670' target='_blank' rel='nofollow'>JS For Loops Explained</a>
 *   <a href='https://www.freecodecamp.org/forum/t/javascript-array-prototype-filter/14289' target='_blank' rel='nofollow'>JS Array Prototype Filter</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-reduce/14299' target='_blank' rel='nofollow'>JS Array Prototype Reduce</a>
 
