@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08812
 title: Add Images to Your Website
 challengeType: 0
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-images-to-your-website'
 videoUrl: ''
 localeTitle: Добавьте изображения на свой сайт
 ---
@@ -20,7 +19,7 @@ localeTitle: Добавьте изображения на свой сайт
 tests:
   - text: Ваша страница должна иметь элемент изображения.
     testString: 'assert($("img").length > 0, "Your page should have an image element.");'
-  - text: У вашего изображения должен быть атрибут <code>src</code> который указывает на изображение котенка.
+  - text: У вашего изображения должен быть атрибут <code>src</code>, который указывает на изображение котенка.
     testString: 'assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), "Your image should have a <code>src</code> attribute that points to the kitten image.");'
   - text: Элемент изображения <strong>должен</strong> иметь атрибут <code>alt</code> .
     testString: 'assert(code.match(/alt\s*?=\s*?(\"|\").*(\"|\")/), "Your image element <strong>must</strong> have an <code>alt</code> attribute.");'

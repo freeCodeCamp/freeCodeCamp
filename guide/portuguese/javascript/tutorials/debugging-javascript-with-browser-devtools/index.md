@@ -10,7 +10,7 @@ Neste artigo, contaremos alguns dos truques mais legais para depurar usando as f
 
 Antes de entrar na depuração, vamos divulgar alguns fatos secretos sobre o _incrível mecanismo de verificação de código_ da FCC.
 
-Nós usamos um [CodeMirror](http://codemirror.net/mode/javascript/index.html) personalizado, como o editor de código. Uma [função `eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) é usada para avaliar o código JavaScript representado como uma string do editor. Quando `eval()` é chamado, os navegadores executam seu código nativamente. Vamos aprender mais por que esse segredo é importante nas próximas seções deste artigo.
+Nós usamos um [Monaco Editor](https://microsoft.github.io/monaco-editor) personalizado, como o editor de código. Uma [função `eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) é usada para avaliar o código JavaScript representado como uma string do editor. Quando `eval()` é chamado, os navegadores executam seu código nativamente. Vamos aprender mais por que esse segredo é importante nas próximas seções deste artigo.
 
 ## Agora seguindo para os truques:
 

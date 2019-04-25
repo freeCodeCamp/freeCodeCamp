@@ -1,7 +1,7 @@
 ---
-title: Javascript Algorithms and Data Structures Projects
+title: JavaScript Algorithms and Data Structures Projects
 ---
-## Javascript Algorithms and Data Structures Projects
+## JavaScript Algorithms and Data Structures Projects
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
