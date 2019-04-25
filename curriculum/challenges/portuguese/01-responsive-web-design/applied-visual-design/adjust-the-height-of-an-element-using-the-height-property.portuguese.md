@@ -7,7 +7,7 @@ localeTitle: Ajustar a altura de um elemento usando a propriedade height
 ---
 
 ## Description
-<section id="description"> Você pode especificar a altura de um elemento usando a propriedade <code>height</code> em CSS, semelhante à propriedade <code>width</code> . Aqui está um exemplo que muda a altura de uma imagem para 20px: <blockquote> img { <br> altura: 20px; <br> } </blockquote></section>
+<section id="description"> Você pode especificar a altura de um elemento usando a propriedade <code>height</code> em CSS, semelhante à propriedade <code>width</code> . Aqui está um exemplo que muda a altura de uma imagem para 20px: <blockquote> img { <br> height: 20px; <br> } </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Adicione uma propriedade <code>height</code> à tag <code>h4</code> e defina-a para 25px. </section>

@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08823
 title: Add a Negative Margin to an Element
 challengeType: 0
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
 localeTitle: Добавить отрицательные поля к элементу
 ---
@@ -81,6 +80,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// впишите ваш код решения
 ```
 </section>
