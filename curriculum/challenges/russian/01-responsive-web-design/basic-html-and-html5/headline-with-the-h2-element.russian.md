@@ -6,20 +6,20 @@ videoUrl: ''
 localeTitle: Заголовок с элементом h2
 ---
 
-## Description
-<section id="description"> В течение следующих нескольких уроков мы построим простое HTML5 веб-приложение по частям. Сначала мы добавим элемент <code>h2</code> , который создаст заголовок второго уровня на нашей веб-странице. Этот элемент сообщает браузеру о структуре вашего веб-сайта. Элементы <code>h1</code> часто используются для основных заголовков, а элементы <code>h2</code> обычно используются для подзаголовков. Элементы <code>h3</code> , <code>h4</code> , <code>h5</code> и <code>h6</code> существуют для обозначения разных уровней подзаголовков. </section>
+## Описание
+<section id="description"> В течение следующих нескольких уроков мы по частям построим HTML5 веб-приложение с картинками котят. Элемент <code>h2</code>, который вы добавите на этом шаге, добавит заголовок второго уровня на веб-страницу. Этот элемент сообщает браузеру информацию о структуре вашего веб-сайта. Элементы <code>h1</code> часто используются для основных заголовков, а элементы <code>h2</code> обычно используются для подзаголовков. Существуют также элементы <code>h3</code> , <code>h4</code> , <code>h5</code> и <code>h6</code> для обозначения разных уровней подзаголовков. </section>
 
-## Instructions
-<section id="instructions"> Добавьте тег <code>h2</code> с текстом «CatPhotoApp», чтобы создать второй HTML элемент под элементом «Hello World» <code>h1</code> . </section>
+## Инструкции
+<section id="instructions"> Добавьте тег <code>h2</code> с текстом «CatPhotoApp», чтобы создать второй <code>element</code>(элемент) HTML под <code>element</code>(элементом) <code>h1</code> с текстом «Hello World» . </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
 tests:
   - text: Создайте элемент <code>h2</code> .
     testString: 'assert(($("h2").length > 0), "Create an <code>h2</code> element.");'
-  - text: 'Убедитесь, что ваш элемент <code>h2</code> имеет закрывающий тег.'
+  - text: 'Убедитесь, что ваш элемент <code>h2</code> имеет конечный тег.'
     testString: 'assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "Make sure your <code>h2</code> element has a closing tag.");'
   - text: Ваш элемент <code>h2</code> должен иметь текст «CatPhotoApp».
     testString: 'assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "Your <code>h2</code> element should have the text "CatPhotoApp".");'
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Исходной код
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -46,7 +46,7 @@ tests:
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
