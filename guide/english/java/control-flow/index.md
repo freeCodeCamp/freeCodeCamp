@@ -98,4 +98,15 @@ if( cash < 25 ){
 ```
 In this example, `meetFriendsAtSportsBar()` will be executed.
 
-![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJZi/1' target='_blank' rel='nofollow'>Run Code</a>
+* `ternary operator`
+
+The ternary operator is a nice alternative to simple `if...else` structures. It is an expression taking 3 operands that allows you to write in one line what you would otherwise have written in 4-6 lines. This expression returns a value, so it can be used in assignments or as a continionnal parameter when calling a function.
+```java
+(condition) ? valueIfTrue : valueIfFalse
+```
+```java
+int number = 15;
+String s = number > 10 ? "high" : "low";
+
+System.out.println(number > 10 ? "high" : "low");
+```

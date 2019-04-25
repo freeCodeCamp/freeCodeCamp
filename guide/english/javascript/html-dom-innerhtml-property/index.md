@@ -1,8 +1,8 @@
 ---
-title: HTML Dom Innerhtml Property
+title: HTML DOM innerHTML Property
 ---
-## HTML Dom Innerhtml Property
-The `innerHTML` prop return the HTML content inside a selected element and also let you define a new HTML content.
+## HTML DOM innerHTML Property
+The `innerHTML` property returns the HTML content inside a selected element and also lets you define a new HTML content.
 
 ***GET ELEMENT CONTENT***
 
@@ -37,11 +37,11 @@ The HTML now will be like
 
 ***SECURITY CONSIDERATIONS***
 
-The value that's set to `innerHTML` should come from trusted sources, since Javascript will put anything inside that element and it will be run as plain HTML.
+The value that's set to `innerHTML` should come from trusted sources, since JavaScript will put anything inside that element and it will be run as plain HTML.
 
 Example:
 
-Setting a "`<script>alert();</script>`" value will cause the Javascript "alert()" function to be fired:
+Setting a "`<script>alert();</script>`" value will cause the JavaScript "alert()" function to be fired:
 
 ```javascript
 
