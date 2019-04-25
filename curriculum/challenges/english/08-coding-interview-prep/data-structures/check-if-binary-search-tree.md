@@ -22,8 +22,9 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 <section id='tests'>
 
 ```yml
-- text: Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.
-  testString: assert((function(){var test = new BinarySearchTree(); test.push(3); test.push(4); test.push(5); return iBinarySearchTree(test)}()), 'Your Binary Search Tree should return true when cheked with <code>isBinarySearchTree()</code>.');
+tests:
+  - text: Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.push(3); test.push(4); test.push(5); return isBinarySearchTree(test) == true})(), 'Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.');
 ```
 
 </section>
@@ -35,7 +36,7 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 <div id='js-seed'>
 
 ```js
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
   this.value = value;
   this.left = null;
@@ -43,14 +44,19 @@ function Node(value) {
 }
 function BinarySearchTree() {
   this.root = null;
-  // change code below this line
 }
 function isBinarySearchTree(tree) {
-  this.root = null;
   // change code below this line
+  // change code above this line
 }
+```
 
-// Do not edit below. For testing purposes.
+</div>
+
+### After Test
+<div id='js-teardown'>
+
+```js
 BinarySearchTree.prototype.push = function(val) {
   var root = this.root;
 
@@ -91,6 +97,7 @@ BinarySearchTree.prototype.push = function(val) {
 <section id='solution'>
 
 ```js
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
   this.value = value;
   this.left = null;
@@ -100,7 +107,7 @@ function BinarySearchTree() {
   this.root = null;
 }
 function isBinarySearchTree(tree) {
-  if (this.root == null) {
+  if (tree.root == null) {
     return null;
   } else {
     let isBST = true;
@@ -122,10 +129,10 @@ function isBinarySearchTree(tree) {
         }
       }
     }
-    checkTree(this.root);
+    checkTree(tree.root);
     return isBST;
   }
-}
+};
 ```
 
 </section>
