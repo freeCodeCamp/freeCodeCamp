@@ -19,10 +19,12 @@ function ensureAuthenticated(req, res, next) {<br>
 </blockquote>
 Now add <em>ensureAuthenticated</em> as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.
 <blockquote>
-app.route('/profile')<br>
-&nbsp;&nbsp;.get(ensureAuthenticated, (req,res) => {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;res.render(process.cwd() + '/views/pug/profile');<br>
-&nbsp;&nbsp;});
+app<br>
+&nbsp;.route('/profile')<br>
+&nbsp;.get(ensureAuthenticated, (req,res) => {<br>
+&nbsp;&nbsp;res.render(process.cwd() + '/views/pug/profile');<br>
+&nbsp;}<br>
+);
 </blockquote>
 Submit your page when you think you've got it right.
 </section>

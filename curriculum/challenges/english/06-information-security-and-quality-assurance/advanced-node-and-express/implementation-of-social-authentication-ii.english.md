@@ -12,10 +12,10 @@ To set up the GitHub strategy, you have to tell <b>passport</b> to <b>use</b> an
 Here's how your new strategy should look at this point:
 <blockquote>
 passport.use(new GitHubStrategy({<br>
-&nbsp;&nbsp;&nbsp;&nbsp;clientID: process.env.GITHUB_CLIENT_ID,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;clientSecret: process.env.GITHUB_CLIENT_SECRET,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/<br>
-&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;clientID: process.env.GITHUB_CLIENT_ID,<br>
+&nbsp;&nbsp;clientSecret: process.env.GITHUB_CLIENT_SECRET,<br>
+&nbsp;&nbsp;callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/<br>
+},<br>
 &nbsp;&nbsp;function(accessToken, refreshToken, profile, cb) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;console.log(profile);<br>
 &nbsp;&nbsp;&nbsp;&nbsp;//Database logic here with callback containing our user object<br>
