@@ -71,6 +71,6 @@ public int Sum(int a, int b) {
 
 After running the above program, the code executes and outputs:
 
-```csharp
+```text
 Your sum is: 4
 ```
