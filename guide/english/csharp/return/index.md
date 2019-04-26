@@ -40,7 +40,7 @@ class Calc
 ## What Can Be Returned?
 It's important to realize what can be returned in a method.  The type you return must match the type you initialize with the method you're calling.  
 
-Let's take a look at a **wrong** example:
+Let's take a look at an example which **does not work**:
 
 ```csharp
 public static void Main (string[] args) {
