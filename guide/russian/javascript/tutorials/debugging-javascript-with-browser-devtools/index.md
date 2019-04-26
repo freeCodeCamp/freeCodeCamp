@@ -10,7 +10,7 @@ localeTitle: Отладка JavaScript с помощью браузера Devtoo
 
 Прежде чем перейти к отладке, вы можете пропустить некоторые секретные факты об этом _замечательном механизме проверки кода_ в FCC.
 
-Мы используем настраиваемый [CodeMirror](http://codemirror.net/mode/javascript/index.html) , как редактор кода. Функция [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) используется для оценки кода JavaScript, представленного в виде строки из редактора. Когда вызывается `eval()` , браузеры будут выполнять ваш код. Мы узнаем больше, почему этот секрет важен в последующих разделах этой статьи.
+Мы используем настраиваемый [Monaco Editor](https://microsoft.github.io/monaco-editor) , как редактор кода. Функция [`eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) используется для оценки кода JavaScript, представленного в виде строки из редактора. Когда вызывается `eval()` , браузеры будут выполнять ваш код. Мы узнаем больше, почему этот секрет важен в последующих разделах этой статьи.
 
 ## Теперь перейдем к трюкам:
 

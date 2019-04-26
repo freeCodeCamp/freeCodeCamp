@@ -3,21 +3,21 @@ id: 587d78ab367417b2b2512af0
 title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: ''
-localeTitle: 'Использовать дисплей: сгибать до положения двух ящиков'
+localeTitle: 'Используйте display: flex для позиционирования двух прямоугольников'
 ---
 
 ## Description
-<section id="description"> В этом разделе используются чередующиеся стили вызовов, чтобы показать, как использовать CSS для гибкого позиционирования элементов. Во-первых, задача будет объяснять теорию, тогда практическая задача, использующая простой компонент твита, будет применять концепцию flexbox. Размещение <code>display: flex;</code> свойств CSS <code>display: flex;</code> на элементе позволяет использовать другие свойства flex для создания отзывчивой страницы. </section>
+<section id="description"> Задачи этого раздела призваны научить использовать CSS для "гибкого" позиционирования элементов. Вначале будет объяснена теорию. Затем нужно будет практически применить концепцию flexbox для оформления простого компонента твита. Применение CSS свойства <code>display: flex;</code> к элементу позволяет затем использовать другие свойства flex для создания отзывчивого дизайна страницы. </section>
 
 ## Instructions
-<section id="instructions"> Добавьте <code>display</code> свойства CSS в <code>#box-container</code> и установите его значение в flex. </section>
+<section id="instructions"> Добавьте CSS свойство <code>display</code> элементу <code>#box-container</code> и установите его значение равным flex. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>#box-container</code> должен иметь свойство <code>display</code> заданное значением flex.'
+  - text: 'Для элемента <code>#box-container</code> должно быть задано свойство <code>display</code> со значением flex.'
     testString: 'assert($("#box-container").css("display") == "flex", "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.");'
 
 ```

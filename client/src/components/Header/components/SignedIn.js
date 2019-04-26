@@ -6,14 +6,17 @@ import { createSelector } from 'reselect';
 
 import { userSelector } from '../../../redux';
 
-const mapStateToProps = createSelector(userSelector, ({ picture }) => ({
-  picture
-}));
+const mapStateToProps = createSelector(
+  userSelector,
+  ({ picture }) => ({
+    picture
+  })
+);
 
 function SignedIn({ picture }) {
   return (
-    <Link to='/settings'>
-      <img alt='' height='38px' src={picture} />
+    <Link className='settings-link' to='/settings'>
+      <img alt='' className='user-avatar' src={picture} />
     </Link>
   );
 }
