@@ -31,12 +31,11 @@ To understand how computers work, you don't need to know every single part of th
 Additional slots to connect hardware in the form of Peripheral Component Interconnect (PCI) slots.
 
 ## Types of Motherboards
-
-Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. Some of the different types of ATX are micro-ATX (sometimes shown as µATX), mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX. There are also a number of other variations.
+Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX for desktop computers. A smaller variant of the ATX motherboard form factor is known as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).  For laptops and portable computers, the ATX form factor may be modified to fit in a smaller and slimmer case, though a similar set of chips, ports and sockets may remain.  Additionally, many popular single board computers (SBCs) such as the Raspberry Pi have their own unique motherboard form factor not based on the ATX standard. There are also a number of other variations.
 
 Additionally there can be even smaller boards like the raspberry pi, which are 65mm by 35mm and have all processing units integrated to the board. There are many others that are even more specific in function, such as an Aurdino board. These are typically limited in I/O, have no expansion slots aside from whatever expansion is offered via USB ports, and some display ports like HDMI or similar variants. These are used for small emulator projects, running small servers, or as an alternative to slim client devices in an office. 
 
-## Different types of motherboards:
+### Different Types of Motherboards
 - AT Motherboards
 The oldest of the main boards, these motherboards were used in earlier 286/386 or 486 computers. The AT means the board consists of advanced technology(AT) power connectors. There are two power connectors of 6 pin each mounted on the AT motherboards. The AT motherboards were available in the early 80’s.
 
@@ -54,7 +53,6 @@ The ATX motherboards started in 90’s and are still available. The ATX connecto
 ![Pentium 4 motherboard](http://www.it4nextgen.com/wp-content/uploads/2016/08/main-board-p4.jpg)
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://www.computerhope.com/jargon/m/mothboar.htm' target='_blank' rel='nofollow'>Motherboard</a>
 * <a href='https://en.wikipedia.org/wiki/Chipset' target='_blank' rel='nofollow'>Chipset (wikipedia)</a>
 * <a href='http://www.it4nextgen.com/motherboard-components/'>Motherboard (IT4nextgen)</a>
