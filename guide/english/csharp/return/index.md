@@ -57,7 +57,6 @@ If you copy and paste the above code into a C# compiler and attempt to run it, y
 
 In this case, to correct this mistake, we either need to change this `Sum` function to `return` a `string` or keep it as an `int` type and handle the flavor text of the answer outside of the method.  I'm going to go with the latter, and handle this as an `int` return type and add in that text "Your sum is: " to the calling method.
 
-[Run the following program on Repl.it](https://repl.it/@heyitsmarcus/Using-Return-for-Custom-Classes)
 
 ```csharp
 public static void Main (string[] args) {
