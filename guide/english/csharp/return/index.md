@@ -38,7 +38,7 @@ class Calc
 ```
 
 ## What Can Be Returned?
-It's important to realize what can be `return`ed in a method.  The type you return must match the type you initialize with the method you're calling.  
+It's important to realize what can be returned in a method.  The type you return must match the type you initialize with the method you're calling.  
 
 Let's take a look at a **wrong** example:
 
