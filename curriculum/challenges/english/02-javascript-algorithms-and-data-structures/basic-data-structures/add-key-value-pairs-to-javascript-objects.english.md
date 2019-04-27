@@ -7,11 +7,30 @@ challengeType: 1
 ## Description
 <section id='description'>
 At their most basic, objects are just collections of <dfn>key-value pairs</dfn>, or in other words, pieces of data mapped to unique identifiers that we call <dfn>properties</dfn> or <dfn>keys</dfn>. Let's take a look at a very simple example:
-<blockquote>let FCC_User = {<br>&nbsp;&nbsp;username: 'awesome_coder',<br>&nbsp;&nbsp;followers: 572,<br>&nbsp;&nbsp;points: 1741,<br>&nbsp;&nbsp;completedProjects: 15<br>};</blockquote>
+
+```
+let FCC_User = {
+  username: 'awesome_coder',
+  followers: 572,
+  points: 1741,
+  completedProjects: 15
+};
+```
+
 The above code defines an object called <code>FCC_User</code> that has four <dfn>properties</dfn>, each of which map to a specific value. If we wanted to know the number of <code>followers</code> <code>FCC_User</code> has, we can access that property by writing:
-<blockquote>let userData = FCC_User.followers;<br>// userData equals 572</blockquote>
+
+```
+let userData = FCC_User.followers;
+// userData equals 572
+```
+
 This is called <dfn>dot notation</dfn>. Alternatively, we can also access the property with brackets, like so:
-<blockquote>let userData = FCC_User['followers']<br>// userData equals 572</blockquote>
+
+```
+let userData = FCC_User['followers']
+// userData equals 572
+```
+
 Notice that with <dfn>bracket notation</dfn>, we enclosed <code>followers</code> in quotes. This is because the brackets actually allow us to pass a variable in to be evaluated as a property name (hint: keep this in mind for later!). Had we passed <code>followers</code> in without the quotes, the JavaScript engine would have attempted to evaluate it as a variable, and a <code>ReferenceError: followers is not defined</code> would have been thrown.
 </section>
 

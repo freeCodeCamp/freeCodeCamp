@@ -6,27 +6,20 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. In the example below, there is a <code>users</code> object and the loop iterates through it to display the user's name to the console.
-<blockquote>
-const users = {<br>
-&nbsp;&nbsp;Alan: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;age: 30<br>
-&nbsp;&nbsp;},<br>
-&nbsp;&nbsp;Jeff: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;age: 45<br>
-&nbsp;&nbsp;},<br>
-&nbsp;&nbsp;Sarah: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;age: 18<br>
-&nbsp;&nbsp;}<br>
-&nbsp;&nbsp;Ryan: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;age: 24<br>
-&nbsp;&nbsp;}<br>
-};<br><br>
-for (let user in users) {<br>
-&nbsp;&nbsp;console.log(user);<br>
-}<br><br>
-// logs:<br>Alan<br>Jeff<br>Sarah<br>Ryan
-</blockquote>
+Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our <code>users</code> object, this could look like:
+
+```js
+for (let user in users) {
+  console.log(user);
+}
+
+// logs:
+Alan
+Jeff
+Sarah
+Ryan
+```
+
 In this statement, we defined a variable <code>user</code>, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console.
 <strong>NOTE:</strong> Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
 </section>
