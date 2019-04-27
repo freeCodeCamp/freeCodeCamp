@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedf08835
 title: Create a Set of Checkboxes
 challengeType: 0
 videoUrl: ''
-localeTitle: Создать набор флажков
+localeTitle: Создайте чекбоксы
 ---
 
 ## Description
-<section id="description"> Формы обычно используют <code>checkboxes</code> для вопросов, которые могут иметь более одного ответа. Флажки - это тип <code>input</code> Каждый из ваших флажков может быть вложен в свой собственный элемент <code>label</code> . Обернув элемент <code>input</code> внутри элемента <code>label</code> он автоматически свяжет флажок с элементом метки, окружающим его. Все связанные с ним флажки должны иметь одинаковый атрибут <code>name</code> . Считается , что лучше практика явно определить отношения между CheckBox <code>input</code> и соответствующим <code>label</code> , установив <code>for</code> атрибута на <code>label</code> элемента в соответствии с <code>id</code> атрибута соответствующего <code>input</code> элемента. Вот пример флажка: <code>&lt;label for=&quot;loving&quot;&gt;&lt;input id=&quot;loving&quot; type=&quot;checkbox&quot; name=&quot;personality&quot;&gt; Loving&lt;/label&gt;</code> </section>
+<section id="description"> В формах обычно используют <code>checkboxes</code>'ы для вопросов, которые могут иметь более одного ответа. Чекбокс - это тип <code>input</code> Каждый из ваших чекбоксов может быть вложен в свой собственный элемент <code>label</code> . Обернув элемент <code>input</code> элементом <code>label</code> вы автоматически свяжете этот чекбокс с элементом <code>label</code>, который окружает его. Все связанные с ним флажки должны иметь одинаковый атрибут <code>name</code> . Считается лучшей практикой явно определить отношения между <code>input</code> с типом чекбокс и соответствующим <code>label</code>, установив атрибут <code>for</code> на <code>label</code> элемента в соответствии с <code>id</code> атрибута соответствующего <code>input</code> элемента. Вот пример чекбокса: <code>&lt;label for=&quot;loving&quot;&gt;&lt;input id=&quot;loving&quot; type=&quot;checkbox&quot; name=&quot;personality&quot;&gt; Loving&lt;/label&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Добавьте в свою форму набор из трех флажков. Каждый флажок должен быть вложен в свой собственный элемент <code>label</code> . Все три должны разделить <code>name</code> атрибута <code>personality</code> . </section>
+<section id="instructions"> Добавьте в свою форму набор из трех чекбоксов. Каждый чекбокс должен быть вложен в свой собственный элемент <code>label</code> . Всем трем чекбоксам присвойте атрибут <code>name</code> со значением <code>personality</code>. </section>
 
 ## Tests
 <section id='tests'>

@@ -44,7 +44,7 @@ The file d3.v5.min.js is saved in the same folder as the HTML file so that it ca
  
  Source File Setup Test
  
- To test our D3.js setup we open the inspect element tool kit. In the Element tab of the Webkit Inspector, we open all of the elements so that we can see the whole HTML structure. We then hover over the d3.vs.min.js src.
+ To test our D3.js setup we open the inspect element tool kit. In the Element tab of the Webkit Inspector, we open all of the elements so that we can see the whole HTML structure. We then hover over the d3.v5.min.js src.
  
  ![](https://d1gg5jm9r4jrt6.cloudfront.net/d3.js.installation.check.png)
  
@@ -117,3 +117,4 @@ The file d3.v5.min.js is saved in the same folder as the HTML file so that it ca
  ```
     
  #### More Information
+   * D3 version numbers make all the difference.  The primary version of D3 for sometime was version 3 and there are many example using D3v3 - D3 version 3.14 to be precise.  Since then D3v4 arrived and D3v5 is currently being distributed from the D3 GitHub site.  There are enough differences between these versions that code could behave in an unexpected way or not at all.  Always know what version you are working with and you will have fewer headaches.
