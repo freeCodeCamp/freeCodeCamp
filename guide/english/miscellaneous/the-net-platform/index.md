@@ -18,7 +18,7 @@ First let's begin with a brief overview of the .NET platform, and get some jargo
 
 *   Class libraries : It contains thousands of in-built classes for your application's use, for example [`System.IO`</a>.aspx) for reading/writing data streams, <a href='https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.118' target='_blank' rel='nofollow'>`HttpClient`</a>.aspx) sends data over network, <a href='http://www.asp.net/' target='_blank' rel='nofollow'>`ASP.NET`</a> for web applications, <a href='https://msdn.microsoft.com/en-us/library/h43ks021(v=vs.110' target='_blank' rel='nofollow'>`ADO.NET`</a>.aspx)for data access to relational databases (like Microsoft SQL Server and MySQL), and <a href='https://msdn.microsoft.com/en-us/library/ms735119(v=vs.90' target='_blank' rel='nofollow'>Windows Communication Foundation (WCF)</a>.aspx) for service-oriented applications which communicates over established protocols like HTTP, REST, SOAP and TCP etc.
 
-*   The C# Programming Language (_pronounced "C-sharp"_) : C# has a syntax similar to Java, C++, and Javascript. It is:
+*   The C# Programming Language (_pronounced "C-sharp"_) : C# has a syntax similar to Java, C++, and JavaScript. It is:
 
     1.  used to write applications, services and reusable libraries.
     2.  designed to work with .NET platform.
