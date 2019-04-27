@@ -7,7 +7,12 @@ challengeType: 1
 ## Description
 <section id='description'>
 In the first object challenge we mentioned the use of bracket notation as a way to access property values using the evaluation of a variable. For instance, imagine that our <code>foods</code> object is being used in a program for a supermarket cash register. We have some function that sets the <code>selectedFood</code> and we want to check our <code>foods</code> object for the presence of that food. This might look like:
-<blockquote>let selectedFood = getCurrentFood(scannedItem);<br>let inventory = foods[selectedFood];</blockquote>
+
+```
+let selectedFood = getCurrentFood(scannedItem);
+let inventory = foods[selectedFood];
+```
+
 This code will evaluate the value stored in the <code>selectedFood</code> variable and return the value of that key in the <code>foods</code> object, or <code>undefined</code> if it is not present. Bracket notation is very useful because sometimes object properties are not known before runtime or we need to access them in a more dynamic way.
 </section>
 

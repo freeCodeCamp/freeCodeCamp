@@ -8,7 +8,15 @@ challengeType: 1
 <section id='description'>
 Since arrays can be changed, or <em>mutated</em>, at any time, there's no guarantee about where a particular piece of data will be on a given array, or if that element even still exists. Luckily, JavaScript provides us with another built-in method, <code>indexOf()</code>, that allows us to quickly and easily check for the presence of an element on an array. <code>indexOf()</code> takes an element as a parameter, and when called, it returns the position, or index, of that element, or <code>-1</code> if the element does not exist on the array.
 For example:
-<blockquote>let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];<br><br>fruits.indexOf('dates') // returns -1<br>fruits.indexOf('oranges') // returns 2<br>fruits.indexOf('pears') // returns 1, the first index at which the element exists</blockquote>
+
+```
+let fruits = ['apples', 'pears', 'oranges', 'peaches', 'pears'];
+
+fruits.indexOf('dates') // returns -1
+fruits.indexOf('oranges') // returns 2
+fruits.indexOf('pears') // returns 1, the first index at which the element exists
+```
+
 </section>
 
 ## Instructions
