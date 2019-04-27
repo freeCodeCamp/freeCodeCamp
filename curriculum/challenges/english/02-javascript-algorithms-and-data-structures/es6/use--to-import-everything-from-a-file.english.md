@@ -6,7 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-Suppose you have a file and you wish to import all of its contents into the current file. This can be done with the <code>import *</code> syntax.
+Suppose you have a file and you wish to import all of its contents into the current file. This can be done with the <code>import * as</code> syntax.
 Here's an example where the contents of a file named <code>"math_functions"</code> are imported into a file in the same directory:
 <blockquote>import * as myMathModule from "math_functions";<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote>
 And breaking down that code:
@@ -16,7 +16,7 @@ You may use any name following the <code>import * as </code>portion of the state
 
 ## Instructions
 <section id='instructions'>
-The code in this file requires the contents of another file, <code>"capitalize_strings"</code>, that is in the same directory as the current file. Add the appropriate <code>import *</code> statement to the top of the file, using the object provided.
+The code in this file requires the contents of another file, <code>"capitalize_strings"</code>, that is in the same directory as the current file. Add the appropriate <code>import * as</code> statement to the top of the file.
 </section>
 
 ## Tests

@@ -62,7 +62,18 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Deep Thoughts with Master Camper Cat</h1>
+<article>
+  <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+  <p>To Come...</p>
+</article>
+
+<img src="samuraiSwords.jpeg" alt="">
+
+<article>
+  <h2>Is Chuck Norris a Cat Person?</h2>
+  <p>To Come...</p>
+</article>
 ```
 </section>
