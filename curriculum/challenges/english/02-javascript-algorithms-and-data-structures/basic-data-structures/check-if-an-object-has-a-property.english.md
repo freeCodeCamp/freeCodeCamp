@@ -7,7 +7,13 @@ challengeType: 1
 ## Description
 <section id='description'>
 Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the <code>hasOwnProperty()</code> method and the other uses the <code>in</code> keyword. If we have an object <code>users</code> with a property of <code>Alan</code>, we could check for its presence in either of the following ways:
-<blockquote>users.hasOwnProperty('Alan');<br>'Alan' in users;<br>// both return true</blockquote>
+
+```
+users.hasOwnProperty('Alan');
+'Alan' in users;
+// both return true
+```
+
 </section>
 
 ## Instructions

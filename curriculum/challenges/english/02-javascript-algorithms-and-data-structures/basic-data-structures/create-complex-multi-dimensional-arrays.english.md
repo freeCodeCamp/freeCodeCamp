@@ -8,12 +8,43 @@ challengeType: 1
 <section id='description'>
 Awesome! You have just learned a ton about arrays! This has been a fairly high level overview, and there is plenty more to learn about working with arrays, much of which you will see in later sections. But before moving on to looking at <dfn>Objects</dfn>, lets take one more look, and see how arrays can become a bit more complex than what we have seen in previous challenges.
 One of the most powerful features when thinking of arrays as data structures, is that arrays can contain, or even be completely made up of other arrays. We have seen arrays that contain arrays in previous challenges, but fairly simple ones. However, arrays can contain an infinite depth of arrays that can contain other arrays, each with their own arbitrary levels of depth, and so on. In this way, an array can very quickly become very complex data structure, known as a <dfn>multi-dimensional</dfn>, or nested array. Consider the following example:
-<blockquote>let nestedArray = [ // top, or first level - the outer most array<br>&nbsp;&nbsp;['deep'], // an array within an array, 2 levels of depth<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;['deeper'], ['deeper'] // 2 arrays nested 3 levels deep<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['deepest'], ['deepest'] // 2 arrays nested 4 levels deep<br>&nbsp;&nbsp;&nbsp;&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['deepest-est?'] // an array nested 5 levels deep<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;]<br>];</blockquote>
+
+```
+let nestedArray = [ // top, or first level - the outer most array
+  ['deep'], // an array within an array, 2 levels of depth
+  [
+    ['deeper'], ['deeper'] // 2 arrays nested 3 levels deep
+  ],
+  [
+    [
+      ['deepest'], ['deepest'] // 2 arrays nested 4 levels deep
+    ],
+    [
+      [
+        ['deepest-est?'] // an array nested 5 levels deep
+      ]
+    ]
+  ]
+];
+```
+
 While this example may seem convoluted, this level of complexity is not unheard of, or even unusual, when dealing with large amounts of data.
 However, we can still very easily access the deepest levels of an array this complex with bracket notation:
-<blockquote>console.log(nestedArray[2][1][0][0][0]);<br>// logs: deepest-est?</blockquote>
+
+```
+console.log(nestedArray[2][1][0][0][0]);
+// logs: deepest-est?
+```
+
 And now that we know where that piece of data is, we can reset it if we need to:
-<blockquote>nestedArray[2][1][0][0][0] = 'deeper still';<br><br>console.log(nestedArray[2][1][0][0][0]);<br>// now logs: deeper still</blockquote>
+
+```
+nestedArray[2][1][0][0][0] = 'deeper still';
+
+console.log(nestedArray[2][1][0][0][0]);
+// now logs: deeper still
+```
+
 </section>
 
 ## Instructions
