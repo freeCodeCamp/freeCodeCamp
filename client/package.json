@@ -75,7 +75,7 @@
     "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build",
     "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli --env.production --config ./webpack-workers.js --progress",
     "predevelop": "npm run prebuild",
-    "develop": "gatsby develop",
+    "develop": "node --inspect=0.0.0.0:9228 node_modules/gatsby-cli develop",
     "format:gatsby": "prettier-eslint --write --trailing-comma none --single-quote './gatsby-*.js'",
     "format:src": "prettier-eslint --write --trailing-comma none --single-quote './src/**/*.js'",
     "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
