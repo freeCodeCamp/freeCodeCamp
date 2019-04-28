@@ -21,8 +21,6 @@ $ sudo systemctl status nginx # will check if the server is running as the insta
 
 ## Installation of Nginx on CentOS 7
 
-`apt-get -y install nginx`
-
 Add Nginx repository and install:
 
 ```sh
