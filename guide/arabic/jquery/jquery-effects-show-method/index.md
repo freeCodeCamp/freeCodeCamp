@@ -39,4 +39,4 @@ localeTitle: طريقة jQuery تظهر طريقة
 
 #### معلومات اكثر:
 
-طريقة JQuery Show () على [الموقع الرسمي](http://api.jquery.com/show/)
+طريقة jQuery Show () على [الموقع الرسمي](http://api.jquery.com/show/)

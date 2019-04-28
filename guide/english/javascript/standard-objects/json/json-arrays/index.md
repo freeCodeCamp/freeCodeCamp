@@ -3,11 +3,11 @@ title: JSON Arrays
 ---
 ## JSON Arrays
 
-JSON Arrays are no different from normal array object that you use in Javascript. Its an array object which contains multiple `JSON Objects`.
+JSON Arrays are no different from normal array object that you use in JavaScript. Its an array object which contains multiple `JSON Objects`.
 
 Here is an example of a JSON Array:
 
-```Javascript
+```JavaScript
     var aMyPlaylist = [{
         artist: "Ed Sheeran",
         track: "Supermarket flowers",
