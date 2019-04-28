@@ -2,21 +2,21 @@
 id: bad87fee1348bd9aedd08845
 title: Add Font Awesome Icons to our Buttons
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
+  - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome is a convenient library of icons. These icons can be webfonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
 You can include Font Awesome in any app by adding the following code to the top of your HTML:
-<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous"&#62;</code>
+<code>&#60;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"&#62;</code>
 In this case, we've already added it for you to this page behind the scenes.
 The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:
-<code>&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;</code>
+<code>&lt;i class="fas fa-info-circle"&gt;&lt;/i&gt;</code>
 Note that the <code>span</code> element is also acceptable for use with icons.
-Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>; make sure to keep the text "Like" next to the icon.
+Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>; make sure to keep the text "Like" next to the icon.
 </section>
 
 ## Instructions
@@ -29,10 +29,10 @@ Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giv
 
 ```yml
 tests:
-  - text: Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.
-    testString: assert($("i").is(".fa.fa-thumbs-up") || $("span").is(".fa.fa-thumbs-up"), 'Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.');
+  - text: Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
+    testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"), 'Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.');
   - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
-    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fa.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fa.fa-thumbs-up")), 'Your <code>fa-thumbs-up</code> icon should be located within the Like button.');
+    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")), 'Your <code>fa-thumbs-up</code> icon should be located within the Like button.');
   - text: Nest your <code>i</code> element within your <code>button</code> element.
     testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0, 'Nest your <code>i</code> element within your <code>button</code> element.');
   - text: Make sure your icon element has a closing tag.
@@ -143,7 +143,7 @@ tests:
   <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
-      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+      <button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i> Like</button>
     </div>
     <div class="col-xs-4">
       <button class="btn btn-block btn-info">Info</button>

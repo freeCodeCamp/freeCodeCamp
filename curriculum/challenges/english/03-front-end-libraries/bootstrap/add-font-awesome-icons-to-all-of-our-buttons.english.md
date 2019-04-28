@@ -2,14 +2,14 @@
 id: bad87fee1348bd9aedc08845
 title: Add Font Awesome Icons to all of our Buttons
 required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
+  - link: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css'
     raw: true
 challengeType: 0
 ---
 
 ## Description
 <section id='description'>
-Font Awesome is a convenient library of icons. These icons are vector graphics, stored in the <code>.svg</code> file format. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
+Font Awesome is a convenient library of icons. These icons can be web fonts or vector graphics. These icons are treated just like fonts. You can specify their size using pixels, and they will assume the font size of their parent HTML elements.
 Use Font Awesome to add an <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button.
 Note: The <code>span</code> element is an acceptable alternative to the <code>i</code> element for the directions below.
 </section>
@@ -24,12 +24,12 @@ Note: The <code>span</code> element is an acceptable alternative to the <code>i<
 
 ```yml
 tests:
-  - text: You should add a <code>&#60;i class="fa fa-info-circle"&#62;&#60;/i&#62;</code> within your info button element.
-    testString: assert($(".btn-info > i").is(".fa.fa-info-circle") || $(".btn-info > span").is(".fa.fa-info-circle"), 'You should add a <code>&#60;i class="fa fa-info-circle"&#62;&#60;/i&#62;</code> within your info button element.');
-  - text: You should add a <code>&#60;i class="fa fa-trash"&#62;&#60;/i&#62;</code> within your delete button element.
-    testString: assert($(".btn-danger > i").is(".fa.fa-trash") || $(".btn-danger > span").is(".fa.fa-trash"), 'You should add a <code>&#60;i class="fa fa-trash"&#62;&#60;/i&#62;</code> within your delete button element.');
-  - text: Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class="fa fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.
-    testString: assert(code.match(/<\/i>|<\/span/g) && code.match(/<\/i|<\/span>/g).length > 2 && ($(".btn-primary > i").is(".fa.fa-thumbs-up") || $(".btn-primary > span").is(".fa.fa-thumbs-up")), 'Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class="fa fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.');
+  - text: You should add a <code>&#60;i class="fas fa-info-circle"&#62;&#60;/i&#62;</code> within your info button element.
+    testString: assert($(".btn-info > i").is(".fas.fa-info-circle") || $(".btn-info > span").is(".fas.fa-info-circle"), 'You should add a <code>&#60;i class="fas fa-info-circle"&#62;&#60;/i&#62;</code> within your info button element.');
+  - text: You should add a <code>&#60;i class="fas fa-trash"&#62;&#60;/i&#62;</code> within your delete button element.
+    testString: assert($(".btn-danger > i").is(".fas.fa-trash") || $(".btn-danger > span").is(".fas.fa-trash"), 'You should add a <code>&#60;i class="fas fa-trash"&#62;&#60;/i&#62;</code> within your delete button element.');
+  - text: Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class="fas fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.
+    testString: assert(code.match(/<\/i>|<\/span/g) && code.match(/<\/i|<\/span>/g).length > 2 && ($(".btn-primary > i").is(".fas.fa-thumbs-up") || $(".btn-primary > span").is(".fas.fa-thumbs-up")), 'Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class="fas fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.');
 
 ```
 
@@ -67,7 +67,7 @@ tests:
   <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
-      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+      <button class="btn btn-block btn-primary">Like</button>
     </div>
     <div class="col-xs-4">
       <button class="btn btn-block btn-info">Info</button>
@@ -136,13 +136,13 @@ tests:
   <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
-      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+      <button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i> Like</button>
     </div>
     <div class="col-xs-4">
-      <button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>
+      <button class="btn btn-block btn-info"><i class="fas fa-info-circle"></i> Info</button>
     </div>
     <div class="col-xs-4">
-      <button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>
+      <button class="btn btn-block btn-danger"><i class="fas fa-trash"></i> Delete</button>
     </div>
   </div>
   <p>Things cats <span class="text-danger">love:</span></p>
