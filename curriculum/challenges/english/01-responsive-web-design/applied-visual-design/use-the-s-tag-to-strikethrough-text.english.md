@@ -87,7 +87,7 @@ tests:
 <section id='solution'>
 
 ```html
- <style>
+<style>
   h4 {
     text-align: center;
     height: 25px;
