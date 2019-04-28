@@ -92,7 +92,6 @@ tests:
 
 ```html
 <style>
-<style>
   .heart {
     position: absolute;
     margin: auto;
