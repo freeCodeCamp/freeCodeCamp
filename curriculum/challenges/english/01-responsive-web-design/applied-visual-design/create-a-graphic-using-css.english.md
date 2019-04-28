@@ -41,20 +41,19 @@ tests:
 
 ```html
 <style>
-.center
-{
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  border-radius: 0px;
-  box-shadow: 25px 10px 10px 10px green;
-}
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 0px;
+    box-shadow: 25px 10px 10px 10px green;
+  }
 
 </style>
 <div class="center"></div>
@@ -70,8 +69,24 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".center {background-color: transparent; border-radius: 50%; box-shadow: 25px 10px 0px 0 blue;}"
+```html
+<style>
+  .center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0 0 blue;
+  }
+</style>
+<div class="center"></div>
+
 ```
 
 </section>

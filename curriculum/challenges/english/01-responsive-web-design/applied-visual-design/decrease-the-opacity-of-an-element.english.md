@@ -123,7 +123,6 @@ tests:
   .cardText {
     margin-bottom: 30px;
   }
-
 </style>
 <div class="fullCard" id="thumbnail">
   <div class="cardContent">
