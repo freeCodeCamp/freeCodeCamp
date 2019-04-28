@@ -21,7 +21,7 @@ class Calc
   {
     int a = 4;
     int b = 3;
-    int sum = Sum(a, b);
+    int result = Sum(a, b);
     Console.WriteLine($"The sum of {a} and {b} is {result}");
     
     // To keep the console from closing

@@ -76,7 +76,7 @@ $ python3.5
  $ 
 ```
 
-## El zen de pitón
+## El zen de Python
 
 Algunos de los principios que influyeron en el diseño de Python se incluyen como un huevo de Pascua y se pueden leer usando el comando en el modo interactivo de intérprete de Python:
 ```
@@ -102,6 +102,31 @@ Algunos de los principios que influyeron en el diseño de Python se incluyen com
  If the implementation is hard to explain, it's a bad idea. 
  If the implementation is easy to explain, it may be a good idea. 
  Namespaces are one honking great idea -- let's do more of those! 
+```
+
+### Traduccion
+```
+ El Zen of Python, por Tim Peters 
+ 
+ Bello es mejor que feo.
+ Explicito es mejor que implicito.
+ Simple es mejor que complejo.
+ Complejo es mejor que complicado.
+ Plano es mejor que incrustado.
+ Esparso es mejor que denso.
+ La facilidad de lectura cuenta.
+ Los casos especiales no son lo suficientemente especiales para romper las reglas.
+ Aunque la practicalidad le gana a la pureza.
+ Los errores nunca deben pasar silenciosamente.
+ Al menos que sean explicitamente silenciados.
+ Ante la ambiguedad, no caer en la tentacion de adivinar.
+ Debe existir una-- y preferentemente solo una-- manera obvia de hacerlo
+ Aunque esa manera no sea tan obvia al principio al menos que seas holandes.
+ Ahora es mejor que nunca.
+ Aunque nunca es mejor que *justo* ahora la mayoria del tiempo.
+ Si la implementacion es dificil de explicar, es una mala idea.
+ Si la implementacion es facil de explicar, talvez sea una buena idea.
+ Los espacios nombrados son una idea resonante -- hagamos mas de esos!
 ```
 
 ## Pros y contras de Python

@@ -2,30 +2,29 @@
 id: bad87fee1348bd9aedf08823
 title: Add a Negative Margin to an Element
 challengeType: 0
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
-localeTitle: Добавить отрицательную маржу к элементу
+localeTitle: Добавить отрицательные поля к элементу
 ---
 
-## Description
-<section id="description"> Элемент по <code>margin</code> контролирует объем пространства между элементом в <code>border</code> и окружающих элементами. Если вы установите элемент <code>margin</code> отрицательного значение, то элемент будет расти больше. </section>
+## Описание
+<section id="description">Значение <code>margin</code> (поле) элемента контролирует объем пространства между значением <code>border</code> (границей) элемента и окружающими элементами. Если вы установите значение <code>margin</code> отрицательным, то размер элемента увеличится. </section>
 
-## Instructions
-<section id="instructions"> Попытайтесь установить <code>margin</code> на отрицательное значение, подобное значению для красного квадрата. Измените <code>margin</code> синего <code>-15px</code> на <code>-15px</code> , чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
+## Инструкции
+<section id="instructions"> Попытайтесь установить значение <code>margin</code> отрицательным, как у красного окна. Установите <code>margin</code> синего окна равным <code>-15px</code>, чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш класс <code>blue-box</code> должен давать элементы <code>-15px</code> от <code>margin</code> .
+  - text: Ваш класс <code>blue-box</code> должен иметь значение <code>margin</code> равное <code>-15px</code>.
     testString: 'assert($(".blue-box").css("margin-top") === "-15px", "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Исходной код
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,10 +76,10 @@ tests:
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
-// solution required
+// впишите ваш код решения
 ```
 </section>

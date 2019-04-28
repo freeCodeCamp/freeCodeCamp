@@ -3,7 +3,7 @@ title: Chain Search Query Helpers to Narrow Search Results
 ---
 ## Chain Search Query Helpers to Narrow Search Results
 
-1. To create but not execut a find query
+1. To create but not execute a find query
 ```javascript
 Model.find( {name: 'Leah'} )
 ```
@@ -33,7 +33,7 @@ yourArray.select( {name: 0, age: 1} ) // Here: 0 means false and thus hide name 
 ```
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-6. To exec this query, you can either:</br>
+6. To execute this query, you can either:</br>
 &nbsp;&nbsp;1) Callback:
 ```javascript
 YourQuery.exec(function(err, docs) {
@@ -53,11 +53,3 @@ Person.find({age: 55}).sort({name: -1}).limit(5).select( {favoriteFoods: 0} ).ex
   //do something here
 })
 ```
-</br>
-</br>
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/chain-search-query-helpers-to-narrow-search-results/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->

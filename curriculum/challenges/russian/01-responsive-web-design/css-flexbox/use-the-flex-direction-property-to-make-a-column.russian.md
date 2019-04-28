@@ -7,17 +7,17 @@ localeTitle: Используйте свойство flex-direction для со�
 ---
 
 ## Description
-<section id="description"> Последние две проблемы использовали свойство <code>flex-direction</code> заданное для строки. Это свойство также может создавать столбец путем вертикальной укладки дочерних элементов гибкого контейнера. </section>
+<section id="description"> В предыдущих задачах свойство <code>flex-direction</code> использовалось для создание рядов. С помощью этого свойства также можно создавать столбцы, размещая дочерние элементы "гибкого" контейнера вертикально один под другим. </section>
 
 ## Instructions
-<section id="instructions"> Добавьте свойство <code>flex-direction</code> свойства CSS в элемент <code>#box-container</code> и дайте ему значение столбца. </section>
+<section id="instructions"> Добавьте CSS свойство <code>flex-direction</code> к элементу <code>#box-container</code> и задайте ему значение column. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'Элемент <code>#box-container</code> должен иметь свойство <code>flex-direction</code> заданное в столбце.'
+  - text: 'Элемент <code>#box-container</code> должен иметь свойство <code>flex-direction</code> со значением column.'
     testString: 'assert($("#box-container").css("flex-direction") == "column", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.");'
 
 ```
