@@ -29,6 +29,25 @@ $ sudo yum install nginx
 $ sudo systemctl start nginx # will start the server
 ```
 
+## Key file locations for Debian based distributions (Ubuntu included)
+
+/etc/nginx/nginx.conf
+
+- This is where you will find the global configuration values, what user the nginx process runs as, how many workers it has etc.
+
+/etc/nginx/sites-available/*
+
+- As one nginx instance can run multiple sites with separate configurations this is the directory where you will have the separate configuration files. Usually there is a file named 'default', but any file in this directory that can be parsed by nginx is available.
+
+/etc/nginx/sites-enabled/*
+
+- This is the directory that holds the site configurations that are actually live (enabled), you should not move files here directly, rather sym-link the files from the sites-available directory. Making a linked file in this directory does not make it live, for that you need to restart nginx or have it reload the config. Usually done via systemd.
+
+/var/log/nginx
+
+- Default location for nginx logs.
+
+
 #### More Information
 
 [An Introduction to NGINX for Developers](https://medium.freecodecamp.org/an-introduction-to-nginx-for-developers-62179b6a458f)  
