@@ -15,7 +15,8 @@ Font Awesome is a convenient library of icons. These icons can be web fonts or v
 ## Instructions
 <section id='instructions'>
 Use Font Awesome to add an <code>info-circle</code> icon to your info button and a <code>trash</code> icon to your delete button.
-Note: The <code>span</code> element is an acceptable alternative to the <code>i</code> element for the directions below.
+
+<strong>Note:</strong> The <code>span</code> element is an acceptable alternative to the <code>i</code> element for the directions below.
 </section>
 
 ## Tests
