@@ -17,10 +17,12 @@ localeTitle: Crear una consulta de medios
 
 ```yml
 tests:
-  - text: Tu elemento <code>p</code> debe tener el <code>font-size</code> de 10 px cuando la <code>height</code> del dispositivo sea menor o igual a 800 px.
-    testString: 'assert($("p").css("font-size") == "10px", "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");'
   - text: Declara una consulta <code>@media</code> para dispositivos con una <code>height</code> menor o igual a 800px.
-    testString: 'assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");'
+    testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");'
+  - text: Tu elemento <code>p</code> debe tener el <code>font-size</code> de 10 px cuando la <code>height</code> del dispositivo sea menor o igual a 800 px.
+    testString: 'assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\){p{font-size:10px;?}}/g), "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");'
+  - text: Tu elemento <code>p</code> debe tener el inicial <code>font-size</code> de 20 px cuando la <code>height</code> del dispositivo sea maior a 800 px.
+    testString: assert($("style").text().replace(/\s/g ,'').replace(/@media.*}/g, '').match(/p{font-size:20px;?}/g), Your <code>p</code> element should have an initial <code>font-size</code> of 20px when the device <code>height</code> is more than 800px);
 ```
 
 </section>
