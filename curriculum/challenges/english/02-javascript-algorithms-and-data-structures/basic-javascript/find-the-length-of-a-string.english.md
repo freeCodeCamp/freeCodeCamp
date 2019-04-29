@@ -58,16 +58,6 @@ lastNameLength = lastName;
 
 </div>
 
-
-### After Test
-<div id='js-teardown'>
-
-```js
-if(typeof lastNameLength !== "undefined"){(function(){return lastNameLength;})();}
-```
-
-</div>
-
 </section>
 
 ## Solution
