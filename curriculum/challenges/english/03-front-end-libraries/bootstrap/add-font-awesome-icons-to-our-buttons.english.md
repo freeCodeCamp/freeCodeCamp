@@ -16,12 +16,11 @@ In this case, we've already added it for you to this page behind the scenes.
 The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:
 <code>&lt;i class="fas fa-info-circle"&gt;&lt;/i&gt;</code>
 Note that the <code>span</code> element is also acceptable for use with icons.
-Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>; make sure to keep the text "Like" next to the icon.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giving it an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>. Make sure to keep the text "Like" next to the icon.
 </section>
 
 ## Tests
@@ -30,14 +29,13 @@ Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giv
 ```yml
 tests:
   - text: Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
-    testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"), 'Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.');
+    testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
   - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
-    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")), 'Your <code>fa-thumbs-up</code> icon should be located within the Like button.');
+    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
   - text: Nest your <code>i</code> element within your <code>button</code> element.
-    testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0, 'Nest your <code>i</code> element within your <code>button</code> element.');
+    testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
   - text: Make sure your icon element has a closing tag.
-    testString: assert(code.match(/<\/i>|<\/span>/g), 'Make sure your icon element has a closing tag.');
-
+    testString: assert(code.match(/<\/i>|<\/span>/g));
 ```
 
 </section>
