@@ -31,4 +31,4 @@ Vundle является коротким для пакета Vim и являет
 
 #### Дополнительная информация:
 
-*   [Репозиторий Github](https://github.com/VundleVim/Vundle.Vim)
+*   [Репозиторий GitHub](https://github.com/VundleVim/Vundle.Vim)

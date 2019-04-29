@@ -11,6 +11,7 @@ Bootstrap supports the following form controls:
 3. checkbox
 4. radio
 5. select
+6. range
 
 ## Example Code Snippets
 
@@ -117,6 +118,21 @@ The following example contains a dropdown list (select list):
 </div>
 ```
 
+#### 6. Range
+
+Select lists are used if you want to allow the user to pick from multiple options.
+
+The following example contains a dropdown list (select list):
+
+```html
+<form>
+  <div class="form-group">
+    <label for="formControlRange">Example Range input</label>
+    <input type="range" class="form-control-range" id="formControlRange">
+  </div>
+</form>
+```
+
 ## How to make Bootstrap Inputs Accessible
 
 Input fields should have labels or some other form of identifier such as WAI-ARIA tags to meet the Web
@@ -136,6 +152,7 @@ that this label is definitely for this input field which will minimize confusion
 a screen reader to visit a web site.
 
 
-### More Information:
+### More Informations:
+[Forms - Bootstrap](https://getbootstrap.com/docs/4.1/components/forms/)
 Code examples are from [W3Schools - Bootstrap Form Inputs](https://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp).
 

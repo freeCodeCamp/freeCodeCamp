@@ -3,10 +3,12 @@ title: Hash Tables
 ---
 
 ## Hash Tables
-Hash table (or Hash Map) is a data structure that can map keys to values.A hash table uses a hash function to compute an index 
-into an array of buckets, from which the desired values can be found.Time complexity of a well defined Hash function can be O(1).
+Hash table (or Hash Map) is a data structure that can map keys to values. A hash table uses a hash function to compute an index 
+into an array of buckets, from which the desired values can be found. Time complexity of a well defined Hash function can be O(1).
 
 A hash table (hash map) is a data structure which implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index into an array of buckets or slots, from which the desired value can be found.
+
+Depending on the language implementation of hash tables can be given different names. For example, in Python their implementation is called a dictionary.
 
 ![an example of a hash table](https://github.com/TomerPacific/fccGuideImages/blob/master/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png?raw=true)
 
@@ -114,7 +116,7 @@ Another way you can resolve hash collisions is using open addressing. In this me
 
 ![an example of open addressing in a hash table](https://github.com/TomerPacific/fccGuideImages/blob/master/380px-Hash_table_5_0_1_1_1_1_0_SP.svg.png?raw=true)
 
-The major setback of open addressing lies in the fact that when needing to look for values, they might not be in the place you expect them to be (the key mapping). Therefore you have to traverse parts of the hash table in order to find the value you are looking for, thus resulting in increased time complexity.
+The major setback of open addressing lies in the fact that when needing to look for values, they might not be in the place you expect them to be (the key mapping). Therefore you have to traverse parts of the hash table in order to find the value you are looking for, thus resulting in increased time complexity. Open addressing also results in most of the entries being clustered together in a specific locality, thereby resulting in inefficient memory usage.
 
 #### Time Complexity
 It is very important to note that hash tables have amortised constant complexity i.e. on an average case the complexity will be O(1). 
