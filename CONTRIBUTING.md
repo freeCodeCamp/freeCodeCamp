@@ -42,7 +42,7 @@ You can help us to:
 
 - [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Translate guide articles and coding challenges](#translate-guide-articles-and-coding-challenges)
+- [Translate guide articles](#translate-guide-articles)
 
 - [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
@@ -72,17 +72,20 @@ You can help expand them and make their wording clearer. You can update the user
 
 If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
-### Translate guide articles and coding challenges
+### Translate guide articles
 
-You can help us translate our Guide articles and Coding challenges for a language that you speak. Currently, we have translated versions in:
+You can help us translate our Guide articles for a language that you speak. Currently, we have translated versions in:
 
-- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
-- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
-- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
-- [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
-- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
+- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/arabic)
+- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/chinese)
+- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese)
+- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/russian)
+- [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/spanish)
+
 
 We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
+
+Note that once we have finished [Version 7.0 of the freeCodeCamp curriculum](https://www.freecodecamp.org/forum/t/help-us-build-version-7-0-of-the-freecodecamp-curriculum/263546) we plan to translate it as well.
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
