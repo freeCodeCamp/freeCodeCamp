@@ -25,7 +25,7 @@ tests:
   - text: 'You should not change the variable declarations in the <code>// Setup</code> section.'
     testString: assert(code.match(/var lastNameLength = 0;/) && code.match(/var lastName = "Lovelace";/));   
   - text: <code>lastNameLength</code> should be equal to eight.
-    testString: assert(typeof lastNameLength !== 'undefined' && typeof lastNameLength === 'number' && lastNameLength === 8); 
+    testString: assert(typeof lastNameLength !== 'undefined' && lastNameLength === 8); 
   - text: 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.'
     testString: assert(code.match(/=\s*lastName\.length/g) && !code.match(/lastName\s*=\s*8/));
 
