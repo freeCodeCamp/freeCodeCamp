@@ -59,7 +59,11 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+</style>
 ```
 </section>

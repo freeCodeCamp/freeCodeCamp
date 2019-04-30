@@ -16,7 +16,7 @@ In the above example, the element with the class of <code>heart</code> has a <co
 ## Instructions
 <section id='instructions'>
 Transform the element on the screen to a heart. In the <code>heart::after</code> selector, change the <code>background-color</code> to pink and the <code>border-radius</code> to 50%.
-Next, target the element with the class <code>heart</code> (just <code>heart</code>) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees. (<code>rotate()</code> works the same way that <code>skewX()</code> and <code>skewY()</code> do).
+Next, target the element with the class <code>heart</code> (just <code>heart</code>) and fill in the <code>transform</code> property. Use the <code>rotate()</code> function with -45 degrees.
 Finally, in the <code>heart::before</code> selector, set its <code>content</code> property to an empty string.
 </section>
 
@@ -45,40 +45,40 @@ tests:
 
 ```html
 <style>
-.heart {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: pink;
-  height: 50px;
-  width: 50px;
-  transform: ;
-}
-.heart::after {
-  background-color: blue;
-  content: "";
-  border-radius: 25%;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 0px;
-  left: 25px;
-}
-.heart::before {
-  content: ;
-  background-color: pink;
-  border-radius: 50%;
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: -25px;
-  left: 0px;
-}
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: ;
+  }
+  .heart::after {
+    background-color: blue;
+    content: "";
+    border-radius: 25%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: ;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
 </style>
-<div class = "heart"></div>
+<div class="heart"></div>
 ```
 
 </div>
@@ -90,9 +90,42 @@ tests:
 ## Solution
 <section id='solution'>
 
-
-```js
-var code = ".heart {transform: rotate(-45deg);} .heart::after {background-color: pink; border-radius: 50%;} .heart::before {content: \"\"; border-radius: 50%;}"
+```html
+<style>
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+  }
+  .heart::after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart::before {
+    content: "";
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+</style>
+<div class="heart"></div>
 ```
 
 </section>
