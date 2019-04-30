@@ -3,53 +3,85 @@ title: Find the Minimum and Maximum Height of a Binary Search Tree
 ---
 ## Find the Minimum and Maximum Height of a Binary Search Tree
 
-Every modern web browser includes a powerful suite of developer tools. These tools do a range of things, from inspecting currently-loaded HTML, CSS and JavaScript to showing which assets the page has requested and how long they took to load. Some of the main features are listed below:
+### Solution
 
-* Access to  a browser console
-* Test Responsive and Device-specific Viewports
-* Edit the DOM
-* Debugging
-* Analyse network activity
-* Understand security issues
+```js
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+}
+function BinarySearchTree() {
+    this.root = null;
+    // change code below this line
+    // change code above this line
+    this.findMinHeight = function(root = this.root) {
+        // empty tree.
+        if(root === null) {
+            return -1;
+        }
+        // leaf node.
+        if(root.left === null && root.right === null) {
+            return 0;
+        }
+        if(root.left === null){
+            return this.findMinHeight(root.right) + 1;
+        }
+        if(root.right === null){
+            return this.findMinHeight(root.left) + 1;
+        }
+        const lHeight = this.findMinHeight(root.left);
+        const rHeight = this.findMinHeight(root.right);
+        return Math.min(lHeight, rHeight) + 1;
+    };
+    this.findMaxHeight = function(root = this.root) {
+        // empty tree.
+        if(root === null) {
+            return -1;
+        }
+        // leaf node.
+        if(root.left === null && root.right === null) {
+            return 0;
+        }
+        if(root.left === null){
+            return this.findMaxHeight(root.right) + 1;
+        }
+        if(root.right === null){
+            return this.findMaxHeight(root.left) + 1;
+        }
+        const lHeight = this.findMaxHeight(root.left);
+        const rHeight = this.findMaxHeight(root.right);
+        return Math.max(lHeight, rHeight) + 1;
+    };
+    this.isBalanced = function(root = this.root) {
 
-and much more...
+        if(root === null) {
+            return true;
+        }
 
-## How to Open Development Tools
-### Keyboard
-```
-Ctrl + Shift + I
-```
-### Menu bar
-#### Firefox
-```
-Tools ➤ Web Developer ➤ Toggle Tools
-```
-#### Chrome / Chromium
-```
-Tools ➤ Developer Tools
-```
-#### Safari
-```
-Develop ➤ Show Web Inspector.
-```
-If you can't see the Develop menu, go to
-```Safari ➤ Preferences ➤ Advanced```
-and check the ```Show Develop menu``` in menu bar checkbox.
+        if(root.left === null && root.right === null){
+            return true;
+        }
 
-#### Opera
+        if(root.left === null) {
+            return this.findMaxHeight(root.right) <= 0; 
+        }
+
+        if(root.right === null) {
+             return this.findMaxHeight(root.left) <= 0; 
+        }
+
+        const lHeight = this.findMaxHeight(root.left);
+        const rHeight = this.findMaxHeight(root.right);
+        if(Math.abs(lHeight - rHeight) > 1){
+            return false;
+        }
+        return this.isBalanced(root.left) && this.isBalanced(root.right);
+    };
+}
 ```
-Developer ➤ Web Inspector
-```
-### Context menu
-```Right-click``` an item on a webpage (Ctrl-click on the Mac), and choose ```Inspect Element``` from the context menu that appears.
 
-This method straight-away highlights the code of the element you right-clicked.
 
-## More Information:
-
-Mozilla Developer Network Web Docs: <a href='https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools' target='_blank' rel='nofollow'>What are browser developer tools?</a>
-
-Google Developers: <a href='https://developers.google.com/web/tools/chrome-devtools/
-' target='_blank' rel='nofollow'>Chrome Dev Tools</a>
 
 
