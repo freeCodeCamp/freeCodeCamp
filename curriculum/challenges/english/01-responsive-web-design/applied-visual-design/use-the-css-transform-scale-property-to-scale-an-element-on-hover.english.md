@@ -10,7 +10,7 @@ videoUrl: 'https://scrimba.com/c/cyLPJuM'
 The <code>transform</code> property has a variety of functions that let you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.
 Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:
 <blockquote>p:hover {<br>&nbsp;&nbsp;transform: scale(2.1);<br>}</blockquote>
-   
+
   <strong>Note:</strong> Applying a transform to a <code>div</code> element will also affect any child elements contained in the div.
 </section>
 
@@ -66,8 +66,24 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = "div:hover {transform: scale(1.1);}"
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+    background: linear-gradient(
+      53deg,
+      #ccfffc,
+      #ffcccf
+    );
+  }
+  div:hover {
+    transform: scale(1.1);
+  }
+</style>
+<div></div>
+
 ```
 
 </section>

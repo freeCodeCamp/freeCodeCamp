@@ -49,9 +49,12 @@ tests:
 ## Solution
 <section id='solution'>
 
-
-```js
-var code = "body {background: url('https://i.imgur.com/MJAkxbh.png')}"
+```html
+<style>
+  body {
+    background: url("https://i.imgur.com/MJAkxbh.png");
+  }
+</style>
 ```
 
 </section>
