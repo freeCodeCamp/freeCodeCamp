@@ -136,6 +136,12 @@ header {
     margin-right: 50px;
     width: 25%;
   }
+  #top-nav .menu-button {
+    display: none;
+  }
+  #top-right-nav {
+    display: flex;
+  }
 }
 
 #top-nav .menu-button {
@@ -174,6 +180,11 @@ header {
     height: min-content;
     min-height: 160px;
     padding: 10px 0;
+    display: none;
+  }
+
+  #top-right-nav.nav-expanded {
+    display: flex;
   }
 
   #top-nav .nav-logo {

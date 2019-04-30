@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
-import Media from 'react-responsive';
 import FCCSearch from 'react-freecodecamp-search';
 
 import NavLogo from './components/NavLogo';
@@ -31,7 +30,6 @@ const propTypes = {
   disableMenuButtonBehavior: PropTypes.bool,
   disableSettings: PropTypes.bool,
   displayMenu: PropTypes.bool,
-  mediaBreakpoint: PropTypes.string.isRequired,
   toggleDisplayMenu: PropTypes.func.isRequired
 };
 
@@ -60,18 +58,11 @@ class Header extends Component {
     }
   };
 
-  handleMediaChange = matches => {
-    if (!matches && this.props.displayMenu) {
-      this.props.toggleDisplayMenu();
-    }
-  };
-
   render() {
     const {
       disableMenuButtonBehavior,
       disableSettings,
       displayMenu,
-      mediaBreakpoint,
       toggleDisplayMenu
     } = this.props;
     return (
@@ -81,53 +72,45 @@ class Header extends Component {
             <NavLogo />
           </Link>
           {disableSettings ? null : <FCCSearch />}
-          <Media maxWidth={mediaBreakpoint} onChange={this.handleMediaChange}>
-            {matches => [
-              matches && (
-                <button
-                  aria-expanded={displayMenu}
-                  className={
-                    'menu-button' + (displayMenu ? ' menu-button-open' : '')
-                  }
-                  key='menu-button'
-                  onClick={toggleDisplayMenu}
-                  ref={this.menuButtonRef}
+          <button
+            aria-expanded={displayMenu}
+            className={'menu-button' + (displayMenu ? ' menu-button-open' : '')}
+            key='menu-button'
+            onClick={toggleDisplayMenu}
+            ref={this.menuButtonRef}
+          >
+            Menu
+          </button>
+          {!disableMenuButtonBehavior && (
+            <ul
+              className={displayMenu ? 'nav-expanded' : ''}
+              id='top-right-nav'
+              key='top-right-nav'
+            >
+              <li>
+                <Link className='top-right-nav-link' to='/learn'>
+                  Learn
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className='top-right-nav-link'
+                  external={true}
+                  to='/forum'
                 >
-                  Menu
-                </button>
-              ),
-              (!matches || (displayMenu && !disableMenuButtonBehavior)) && (
-                <ul id='top-right-nav' key='top-right-nav'>
-                  <li>
-                    <Link className='top-right-nav-link' to='/learn'>
-                      Learn
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className='top-right-nav-link'
-                      external={true}
-                      to='/forum'
-                    >
-                      Forum
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className='top-right-nav-link'
-                      external={true}
-                      to='/news'
-                    >
-                      News
-                    </Link>
-                  </li>
-                  <li>
-                    <UserState disableSettings={disableSettings} />
-                  </li>
-                </ul>
-              )
-            ]}
-          </Media>
+                  Forum
+                </Link>
+              </li>
+              <li>
+                <Link className='top-right-nav-link' external={true} to='/news'>
+                  News
+                </Link>
+              </li>
+              <li>
+                <UserState disableSettings={disableSettings} />
+              </li>
+            </ul>
+          )}
         </nav>
       </header>
     );
@@ -135,9 +118,6 @@ class Header extends Component {
 }
 
 Header.propTypes = propTypes;
-Header.defaultProps = {
-  mediaBreakpoint: '734px'
-};
 
 export default connect(
   mapStateToProps,
