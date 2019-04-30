@@ -52,7 +52,8 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+// The main.scss file
+@import 'variables'
 ```
 </section>
