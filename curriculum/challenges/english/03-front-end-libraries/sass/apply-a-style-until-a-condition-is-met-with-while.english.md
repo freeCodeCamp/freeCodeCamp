@@ -1,9 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bbb
 title: Apply a Style Until a Condition is Met with @while
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 ---
 
@@ -32,7 +29,7 @@ tests:
   - text: Your code should set an index variable to 1 to start.
     testString: assert(code.match(/\$.*:\s*?1;/gi), 'Your code should set an index variable to 1 to start.');
   - text: Your code should increment the counter variable.
-    testString: assert(code.match(/\$(.*):\s*?\$\1\s*?\+\s*?1;/gi), 'Your code should increment the counter variable.');
+    testString: assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi), 'Your code should increment the counter variable.');
   - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.
     testString: assert($('.text-1').css('font-size') == '5px', 'Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.');
   - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 10px.
@@ -91,7 +88,24 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style type='text/sass'>
+$x: 1;
+@while $x <= 10 {
+    .text-#{$x} { font-size: 5px * $x; }
+    $x: $x + 1;
+}
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+<p class="text-6">Hello</p>
+<p class="text-7">Hello</p>
+<p class="text-8">Hello</p>
+<p class="text-9">Hello</p>
+<p class="text-10">Hello</p>
 ```
 </section>

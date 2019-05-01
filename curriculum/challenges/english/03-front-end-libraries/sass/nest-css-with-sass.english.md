@@ -1,9 +1,6 @@
 ---
 id: 587d7dbd367417b2b2512bb5
 title: Nest CSS with Sass
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 ---
 
@@ -67,7 +64,22 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style type='text/sass'>
+  .blog-post {
+    h1 {
+      text-align: center;
+      color: blue;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<div class="blog-post">
+  <h1>Blog Title</h1>
+  <p>This is a paragraph</p>
+</div>
 ```
 </section>

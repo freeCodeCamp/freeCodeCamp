@@ -3,14 +3,14 @@ id: bad87fee1348bd9acdf08812
 title: Size Your Images
 challengeType: 0
 videoUrl: ''
-localeTitle: Размер ваших изображений
+localeTitle: Управляйте размером ваших изображений
 ---
 
 ## Description
-<section id="description"> CSS имеет свойство под названием <code>width</code> которое управляет шириной элемента. Как и в случае с шрифтами, мы будем использовать <code>px</code> (pixels), чтобы указать ширину изображения. Например, если мы хотим создать класс CSS с именем <code>larger-image</code> который дал бы HTML-элементам ширину 500 пикселей, мы будем использовать: <blockquote> &lt;Стиль&gt; <br> .larger-image { <br> ширина: 500 пикселей; <br> } <br> &lt;/ Стиль&gt; </blockquote></section>
+<section id="description"> CSS имеет свойство под названием <code>width</code>, которое управляет шириной элемента. Как и в случае с шрифтами, мы будем использовать пиксели <code>px</code> (pixels), чтобы указать ширину изображения. Например, если мы хотим создать класс CSS с именем <code>larger-image</code>, который дал бы HTML-элементам ширину 500 пикселей, мы будем использовать: <blockquote> &lt;style&gt; <br> .larger-image { <br> width: 500px; <br> } <br> &lt;/ style&gt; </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Создайте класс с <code>smaller-image</code> и используйте его для изменения размера изображения, чтобы оно было всего 100 пикселей в ширину. <strong>Заметка</strong> <br> Из-за различий в реализации браузера вам может потребоваться 100% масштабирование для прохождения тестов по этой проблеме. </section>
+<section id="instructions"> Создайте класс <code>smaller-image</code> и используйте его для изменения размера изображения, чтобы оно было всего 100 пикселей в ширину. <strong>Заметка</strong> <br> Из-за различий в реализации браузера, вам может потребоваться 100% масштабирование для прохождения тестов в этом задании. </section>
 
 ## Tests
 <section id='tests'>

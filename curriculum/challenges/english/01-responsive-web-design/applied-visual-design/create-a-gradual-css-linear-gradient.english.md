@@ -17,7 +17,6 @@ Example:
 ## Instructions
 <section id='instructions'>
 Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>background</code>, and set it from a direction of 35 degrees to change the color from <code>#CCFFFF</code> to <code>#FFCCCC</code>.
-<strong>Note</strong><br>While there are other ways to specify a color value, like <code>rgb()</code> or <code>hsl()</code>, use hex values for this challenge.
 </section>
 
 ## Tests
@@ -26,7 +25,7 @@ Use a <code>linear-gradient()</code> for the <code>div</code> element's <code>ba
 ```yml
 tests:
   - text: The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.
-    testString: assert(code.match(/background:\s*?linear-gradient\(35deg,\s*?(#CCFFFF|#CFF),\s*?(#FFCCCC|#FCC)\);/gi), 'The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');
+    testString: assert($('div').css('background-image').match(/linear-gradient\(35deg, rgb\(204, 255, 255\), rgb\(255, 204, 204\)\)/gi));
 
 ```
 
@@ -39,8 +38,7 @@ tests:
 
 ```html
 <style>
-
-  div{
+  div {
     border-radius: 20px;
     width: 70%;
     height: 400px;
@@ -62,9 +60,17 @@ tests:
 ## Solution
 <section id='solution'>
 
-
-```js
-var code = "<style> div{border-radius: 20px; width: 70%; height: 400px; margin: 50px auto; background: linear-gradient(35deg, #cff, #fcc);}</style><div></div>"
+```html
+<style>
+  div {
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin: 50px auto;
+    background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+  }
+</style>
+<div></div>
 ```
 
 </section>
