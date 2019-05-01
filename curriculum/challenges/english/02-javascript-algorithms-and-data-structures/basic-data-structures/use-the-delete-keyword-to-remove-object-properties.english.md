@@ -10,7 +10,7 @@ Now you know what objects are and their basic features and advantages. In short,
 In earlier challenges, we have both added to and modified an object's key-value pairs. Here we will see how we can <em>remove</em> a key-value pair from an object.
 Let's revisit our <code>foods</code> object example one last time. If we wanted to remove the <code>apples</code> key, we can remove it by using the <code>delete</code> keyword like this:
 
-```
+```js
 delete foods.apples;
 ```
 
