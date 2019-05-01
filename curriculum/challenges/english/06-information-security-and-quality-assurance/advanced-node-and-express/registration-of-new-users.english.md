@@ -38,8 +38,7 @@ app.route('/register')<br>
 &nbsp;&nbsp;&nbsp;&nbsp;(req, res, next) => {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/profile');<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
-&nbsp;&nbsp;);<br>
-);
+&nbsp;&nbsp;);
 </blockquote>
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/6c47bee7df34df9f11820803608071ed'>here</a>.
 </section>

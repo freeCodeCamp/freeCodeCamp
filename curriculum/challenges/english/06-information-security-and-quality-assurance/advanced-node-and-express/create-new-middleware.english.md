@@ -23,8 +23,7 @@ app<br>
 &nbsp;.route('/profile')<br>
 &nbsp;.get(ensureAuthenticated, (req,res) => {<br>
 &nbsp;&nbsp;res.render(process.cwd() + '/views/pug/profile');<br>
-&nbsp;}<br>
-);
+&nbsp;});
 </blockquote>
 Submit your page when you think you've got it right.
 </section>
