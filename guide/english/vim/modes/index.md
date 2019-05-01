@@ -20,8 +20,7 @@ certain key presses can:
 - **k**   move one row up            
 - **l**   move one character right   
 
-As many vim commands, row movement can be prefixed by a number to move s
-everal lines at a time:                                                 
+As many vim commands, row movement can be prefixed by a number to move several lines at a time:                                                 
 - **4j**  move 4 rows down                                              
 - **6k**  move 6 rows up                                                
                                                                         

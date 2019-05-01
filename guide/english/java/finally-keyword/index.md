@@ -42,5 +42,7 @@ try {
 
 The above code works fine even though the catch statement is not used.
 
+Note: If program exits abnormally (ie. `System.exit()` or process aborts), `finally` block will not be executed.
+
 #### More Information:
 - [Oracle Java Docs : Finally keyword](https://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.20.2)

@@ -7,11 +7,11 @@ The `git checkout` command switches between branches or restores working tree fi
 
 ### Checkout a specific commit
 
-to checkout a specific commit, run the command:
+To checkout a specific commit, run the command:
 ```shell
 git checkout specific-commit-id
 ```
-we can get the specific commit id's by running: 
+We can get the specific commit id's by running: 
 ```shell
 git log
 ```
@@ -21,6 +21,13 @@ To checkout an existing branch, run the command:
 git checkout BRANCH-NAME
 ```
 Generally, Git won't let you checkout another branch unless your working directory is clean, because you would lose any working directory changes that aren't committed. You have three options to handle your changes: 1) trash them, 2) <a href='https://guide.freecodecamp.org/git/git-commit/' target='_blank' rel='nofollow'>commit them</a>, or 3) <a href='https://guide.freecodecamp.org/git/git-stash/' target='_blank' rel='nofollow'>stash them</a>.
+
+### Checkout Previous Branch
+To checkout previous branch, run the command:
+```shell
+git checkout -
+```
+`git checkout -` is a shorthand for `git checkout @{-1}`.
 
 ### Checkout a New Branch
 To create and checkout a new branch with a single command, you can use:

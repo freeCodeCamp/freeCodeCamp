@@ -10,6 +10,7 @@ In regular expressions, a <code>greedy</code> match finds the longest possible p
 You can apply the regex <code>/t[a-z]*i/</code> to the string <code>"titanic"</code>. This regex is basically a pattern that starts with <code>t</code>, ends with <code>i</code>, and has some letters in between.
 Regular expressions are by default <code>greedy</code>, so the match would return <code>["titani"]</code>. It finds the largest sub-string possible to fit the pattern.
 However, you can use the <code>?</code> character to change it to <code>lazy</code> matching. <code>"titanic"</code> matched against the adjusted regex of <code>/t[a-z]*?i/</code> returns <code>["ti"]</code>.
+<strong>Note</strong><br>Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
 </section>
 
 ## Instructions

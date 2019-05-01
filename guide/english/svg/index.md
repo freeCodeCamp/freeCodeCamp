@@ -14,18 +14,17 @@ Developers start an SVG graphic with the `<svg>` tag and XML namespace like so:
 ```
 The sample also includes a `version` attribute. The `version` attribute is optional but it is recommended for compliance with XML specifications.
 
-This sample won't display anything, it merely established a viewport. You can add `height` and `width` attributes to set a display size for the viewport, this essentially establishes a canvas for you to work in.
+This sample won't display anything, it merely establishes a viewport. You can add `height` and `width` attributes to set a display size for the viewport. This essentially establishes a canvas for you to work in.
 
-With a viewport in place you can add basic graphics, text, and path elements.
+With a viewport in place, you can add basic graphics, text, and path elements.
 
 ```svg
-<svg
-     version="1.1"
+<svg version="1.1"
      width="100%"
      viewbox="0 0 600 300"
-     xmlns="http://www.w3.org/2000/svg">
+     xmlns="http://www.w3.org/2000/svg" >
   <rect x="10" y="10" width="100" height="100" fill="#f7b2c1" />
-  <circle cx="240" cy="60" r="50" fill="#c1b2f7" stroke="#b2c1f7" stroke-width="15"/>
+  <circle cx="240" cy="60" r="50" fill="#c1b2f7" stroke="#b2c1f7" stroke-width="15" />
   <text x="450" y="70" font-size="20" text-anchor="middle">SVG Text is browser readable!</text>
   <g stroke="#b2c1f7"> <!-- g is for group -->
     <path stroke-width="2" d="M10 170 l590 0" />
@@ -37,7 +36,7 @@ With a viewport in place you can add basic graphics, text, and path elements.
 
 You can see the output and play with the code in <a href='https://codepen.io/SgiobairOg/pen/OxbNpW' target='_blank' rel='nofollow'>this codepen</a>. 
 
-In the opening `svg` tag we add a width attribute to set the width of the viewport to 100% of the container width, you can use percentages or pixel widths. The opening svg tag also has `viewbox` attribute which defines a window through which elements of your svg are visible, in this case, the viewbox spans from (0,0) to (600,300). In SVG space the X-axis starts with zero on the left and increases to the right; the Y-axis starts with zero at the top and increases towards the bottom.
+In the opening `svg` tag we add a width attribute to set the width of the viewport to 100% of the container width, so you can use percentages or pixel widths. The opening svg tag also has `viewbox` attribute which defines a window through which elements of your svg are visible. In this case, the viewbox spans from (0,0) to (600,300). In SVG space, the X-axis starts with zero on the left and increases to the right; the Y-axis starts with zero at the top and increases towards the bottom.
 
 The first new tag is the `<rect />` tag which defines a rectangle in the SVG viewport. In this case we define a square which is 10 units from the top and left and 100 units tall and wide. The `fill` attribute sets the fill color for the shape.
 
@@ -68,60 +67,56 @@ Canvas graphics can be drawn onto a <canvas> element. You can give such an eleme
 The <canvas> tag is intended to support different styles of drawing. To get access to an actual drawing interface, we first need to create a context, which is an object whose methods provide the drawing interface. There are currently two widely supported drawing styles: "2d" for two-dimensional graphics and "webgl" for three-dimensional graphics through the OpenGL interface.
 
 A context is created through the getContext method on the <canvas> element.
+```html
+<!-- before canvas -->
+<canvas width ="120" height ="60"></canvas>
+
+<!-- after canvas -->
+<script>
+var canvas = document.querySelector("canvas");
+var context = canvas.getContext("2d");
+context.fillStyle = "red";
+context.fillRect (10, 10, 100, 50) ;
+</script>
 ```
-<p > Before canvas . </p >
-< canvas width ="120" height ="60" > </ canvas >
-<p > After canvas . </p >
-< script >
-var canvas = document . querySelector (" canvas ") ;
-var context = canvas . getContext ("2 d ") ;
-context . fillStyle = " red ";
-context . fillRect (10 , 10 , 100 , 50) ;
-</ script >
-```
+
 ![](http://www.crwflags.com/fotw/images/s/sly@stt.gif)
 
-After creating the context object, the example draws a red rectangle 100
-pixels wide and 50 pixels high, with its top-left corner at coordinates
-(10,10).
+After creating the context object, the example draws a red rectangle 100 pixels wide and 50 pixels high, with its top-left corner at coordinates (10,10).
 
 ### Drawing a pie chart
 
-The results variable contains an array of objects that represent the
-survey responses.
-```
-var results = [
-{ name : " Satisfied " , count : 1043 , color : " lightblue "} ,
-{ name : " Neutral " , count : 563 , color : " lightgreen "} ,
-{ name : " Unsatisfied " , count : 510 , color : " pink "} ,
-{ name : " No comment " , count : 175 , color : " silver "}
-];
+The results variable contains an array of objects that represent the survey responses.
+```javascript
+var results = [{ name: "Satisfied", count: 1043, color: "lightblue"},
+               { name: "Neutral", count: 563, color: "lightgreen"},
+               { name: "Unsatisfied", count: 510, color: "pink"},
+               { name: "No comment", count: 175, color: "silver"}];
 ```
 To draw a pie chart, we draw a number of pie slices, each made up of an arc and a pair of lines to the center of that arc. We can compute the angle taken up by each arc by dividing a full circle (2 π ) by the total number of responses and then multiplying that number (the angle per response) by the number of people who picked a given choice.
-```
-< canvas width ="200" height ="200" > </ canvas >
-< script >
-var cx = document . querySelector (" canvas ") . getContext ("2 d ") ;
-var total = results . reduce ( function ( sum , choice ) {
-return sum + choice . count ;
-} , 0) ;
-
+```html
+<canvas width="200" height="200"> </canvas>
+<script>
+var cx = document.querySelector("canvas").getContext("2d");
+var total = results.reduce(function(sum, choice){ 
+                              return sum + choice.count;
+                           }, 0);
 // Start at the top
 
-var currentAngle = -0.5 * Math . PI ;
-results . forEach ( function ( result ) {
-var sliceAngle = ( result . count / total ) * 2 * Math . PI ;
-cx . beginPath () ;
-// center =100 ,100 , radius =100
-// from current angle , clockwise by slice ' s angle
-cx . arc (100 , 100 , 100 ,
-currentAngle , currentAngle + sliceAngle );
-currentAngle += sliceAngle ;
-cx . lineTo (100 , 100) ;
-cx . fillStyle = result . color ;
-cx . fill () ;
-}) ;
-</ script >
+var currentAngle = -0.5 * Math.PI ;
+results.forEach(function(result){
+                    var sliceAngle = (result.count / total) * 2 * Math.PI ;
+                    cx.beginPath();
+                    // center = 100, 100
+                    // radius =100
+                    // from current angle, clockwise by slice's angle
+                    cx.arc(100, 100, 100, currentAngle, currentAngle + sliceAngle);
+                    currentAngle += sliceAngle;
+                    cx.lineTo(100, 100);
+                    cx.fillStyle = result.color;
+                    cx.fill();
+               });
+</script>
 ```
 This draws the following chart:
 ![](https://pbs.twimg.com/media/CTDvkA8UwAAdJg5.png)
@@ -131,7 +126,7 @@ This draws the following chart:
 
 ## Editors
 
-* [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge
+* [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge.
 
 ## Tools to create SVG
 
@@ -139,6 +134,7 @@ There are a few tools available to create SVG in the form of a drawing program.
 
 - <a href='https://www.inkscape.org/' target='_blank' rel='nofollow'>Inkscape</a> - It is an open source tool for state-of-the-art vector drawing with an easy to use graphical interface.
 - <a href='https://www.adobe.com/products/illustrator/' target='_blank' rel='nofollow'>Adobe Illustrator</a> - Adobe Illustrator is a commercial tool for Vector Imagery.
+- <a href='https://docs.google.com/drawings' target='_blank' rel='nofollow'>Google Drawings</a> - Google Drawings is a simple web based software allowing you to export your vectors as SVGs.
 
 For more tools, refer to <a href='https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
 

@@ -6,18 +6,22 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-In the next few exercises we are going to create a function to emulate a data structure called a "Set". A Set is like an array, but it cannot contain duplicate values. The typical use for a Set is to simply check for the presence of an item. This can be implemented with an object, for instance:
-<blockquote>var set = new Object();<br>set.foo = true;<br>// See if foo exists in our set:<br>console.log(set.foo) // true</blockquote>
-In the next few exercises, we will build a full featured Set from scratch.
-For this exercise, create a function that will add a value to our set collection as long as the value does not already exist in the set. For example:
-<blockquote>this.add = function(element) {<br>  //some code to add value to the set<br>}</blockquote>
-The function should return <code>true</code> if the value is successfully added and <code>false</code> otherwise.
+In this exercise we are going to create a class named <code>Set</code> to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item. 
+We can see how ES6 set object works in the example below-
+<blockquote>const set1 = new Set([1, 2, 3, 5, 5, 2, 0]);<br>console.log(set1);<br>// output: {1, 2, 3, 5, 0}<br>console.log(set1.has(1));<br>// output: true<br>console.log(set1.has(6));<br>// output: false</blockquote>
+First, we will create an add method that adds a value to our set collection as long as the value does not already exist in the set.
+Then we will create a remove method that removes a value from the set collection if it already exists.
+And finally, we will create a size method that returns the number of elements inside the set collection.
 </section>
 
 ## Instructions
 <section id='instructions'>
+Create an <code>add</code> method that adds a unique value to the set collection and returns <code>true</code> if the value was successfully added and <code>false</code> otherwise.
 
+Create a <code>remove</code> method that accepts a value and checks if it exists in the set. If it does, then this method should remove it from the set collection, and return <code>true</code>. Otherwise, it should return <code>false</code>.
+Create a <code>size</code> method that returns the size of the set collection.
 </section>
+
 
 ## Tests
 <section id='tests'>
@@ -32,6 +36,16 @@ tests:
     testString: assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'Your <code>add</code> method should return <code>true</code> when a value has been successfully added.');
   - text: Your <code>add</code> method should return <code>false</code> when a duplicate value is added.
     testString: assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');
+  - text: Your <code>Set</code> class should have a <code>remove</code> method.
+    testString: assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'Your <code>Set</code> class should have a <code>remove</code> method.');
+  - text: Your <code>remove</code> method should only remove items that are present in the set.
+    testString: assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'Your <code>remove</code> method should only remove items that are present in the set.');
+  - text: Your <code>remove</code> method should remove the given item from the set.
+    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'Your <code>remove</code> method should remove the given item from the set.');
+  - text: Your <code>Set</code> class should have a <code>size</code> method.
+    testString: assert((function(){var test = new Set(); return (typeof test.size === 'function')}()), 'Your <code>Set</code> class should have a <code>size</code> method.');
+  - text: The <code>size</code> method should return the number of elements in the collection.
+    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'The <code>size</code> method should return the number of elements in the collection.');
 
 ```
 
@@ -43,24 +57,32 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Set() {
-    // the var collection will hold our set
-    var collection = [];
+class Set {
+    constructor() {
+    // collection will hold our set
+    this.collection = [];
+    }
     // this method will check for the presence of an element and return true or false
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
+    has(element) {
+        return this.collection.indexOf(element) !== -1;
+    }
     // this method will return all the values in the set
-    this.values = function() {
-        return collection;
-    };
+    values() {
+        return this.collection;
+    }
     // change code below this line
+
+    // write your add method here
+
+    // write your remove method here
+
+    // write your size method here
+
     // change code above this line
 }
 ```
 
 </div>
-
 
 
 </section>
@@ -70,17 +92,35 @@ function Set() {
 
 
 ```js
-function Set() {
-    var collection = [];
-    this.has = function(element) {
-        return (collection.indexOf(element) !== -1);
-    };
-    this.values = function() {
-        return collection;
-    };
-    this.add = function(el) {
-        return this.has(el) ? false : Boolean(collection.push(el));
+class Set {
+  constructor() {
+    this.collection = [];
+  }
+  has(element) {
+    return this.collection.indexOf(element) !== -1;
+  }
+  values() {
+    return this.collection;
+  }
+  add(element) {
+    if (!this.has(element)) {
+      this.collection.push(element);
+      return true;
+    } else {
+      return false;
     }
+  }
+  remove(element) {
+    if (this.has(element)) {
+      let i = this.collection.indexOf(element);
+      this.collection.splice(i, 1);
+      return true;
+    }
+    return false;
+  }
+  size() {
+    return this.collection.length;
+  }
 }
 ```
 

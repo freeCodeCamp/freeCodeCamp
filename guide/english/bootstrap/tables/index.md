@@ -67,7 +67,7 @@ In order to achieve the bordered table use `.table-bordered` in addition to `.ta
 ---
 #### Table Hover
 
-In order to achieve the hover row effect on tables, use `.table-bordered` in addition to `.table` on any `<table>` element.
+In order to achieve the hover row effect on tables, use `.table-hover` in addition to `.table` on any `<table>` element.
 
     <table class="table table-hover">
       ...
@@ -102,7 +102,7 @@ In order to achieve the responsive table by wrapping any `.table` table in a `.t
 
 ---
 
-Developers are able to change the style of each individual row and/or cell by using **contextual classes**.
+Developers are able to change the style of each individual row `<tr>` and/or cell `<td>` by using **contextual classes**.
 
 - `.active` -	Applies the hover color to a particular row or cell
 - `.success` -	Indicates a successful or positive action
@@ -129,3 +129,5 @@ Developers are able to change the style of each individual row and/or cell by us
 ![Contextual Class Table](https://github.com/TroyB12/Pictures/blob/master/Table%20Contextual%20Classes.PNG)
 
 ---
+# More Information 
+- [Bootstrap Tables](https://getbootstrap.com/docs/4.1/content/tables/)

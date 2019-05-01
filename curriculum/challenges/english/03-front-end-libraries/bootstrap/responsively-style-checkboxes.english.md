@@ -9,13 +9,12 @@ challengeType: 0
 
 ## Description
 <section id='description'>
-You can use Bootstrap's <code>col-xs-*</code> classes on <code>form</code> elements, too! This way, our checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.
-Nest all three of your checkboxes in a <code>&#60;div class="row"&#62;</code> element. Then nest each of them in a <code>&#60;div class="col-xs-4"&#62;</code> element.
+  Since Bootstrap's <code>col-xs-*</code> classes are applicable to all <code>form</code> elements, you can use them on your checkboxes too! This way, the checkboxes will be evenly spread out across the page, regardless of how wide the screen resolution is.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Nest all three of your checkboxes in a <code>&#60;div class="row"&#62;</code> element. Then nest each of them in a <code>&#60;div class="col-xs-4"&#62;</code> element.
 </section>
 
 ## Tests

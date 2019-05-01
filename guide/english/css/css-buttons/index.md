@@ -17,15 +17,15 @@ CSS Buttons are a great way to add functional design features to your page.
 
 You can change several properties of a button in order to change its appearance.
 
-* To add shadows to the button use `box-shadow` property.
+* To add shadows to the button, use `box-shadow` property.
 
-* To add transparency to a button for a disabled effect use the property `opacity`.
+* To add transparency to a button for a disabled effect, use the property `opacity`.
 
-* To remove the margins and create a button group add `float:left/right` property.
+* To remove the margins and create a button group, add `float:left/right` property.
 
 * To create a button group but with the borders, use `float` property and add a `border property`.
 
-* To create a vertical group of buttons use display:`block property`.
+* To create a vertical group of buttons, use display:`block property`.
 
 ### Button Color
 
@@ -119,7 +119,7 @@ button {
 
 To animate a button on click use 'button:active':
 
-```
+```css
 .button {
   display: inline-block;
   padding: 15px 25px;
@@ -145,7 +145,26 @@ To animate a button on click use 'button:active':
 }
 ```
 
-#### More Information:
-* https://www.w3schools.com/css/css3_buttons.asp
-* https://www.w3schools.com/howto/howto_css_animate_buttons.asp
+### Button Links
 
+In many cases buttons will have to link to an url. As we can't add an href attribute to the HTML button element without some JavaScript workarounds we need to style our link like a button. This way we have a working <a> element disguised as a button, yet we can still use this class to style buttons. For example:
+        
+```
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  min-height: 40px;
+  padding: 20px 10px;
+  background-color: lightblue;
+}
+
+// Prevent visited links from turning purple
+.btn:visited {
+  color: black;
+}
+```
+
+#### More Information:
+
+- [W3 Schools - CSS Buttons](https://www.w3schools.com/css/css3_buttons.asp)
+- [W3 Schools - CSS Buttons Animate](https://www.w3schools.com/howto/howto_css_animate_buttons.asp)

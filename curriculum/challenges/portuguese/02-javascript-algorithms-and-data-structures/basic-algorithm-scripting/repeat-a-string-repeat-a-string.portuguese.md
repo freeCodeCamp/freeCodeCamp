@@ -63,6 +63,12 @@ repeatStringNumTimes("abc", 3);
 <section id='solution'>
 
 ```js
-// solution required
+function repeatStringNumTimes(str, num) {
+  let result = '';
+  for(let i = 0; i < num; i++) {
+    result += str;
+  }
+  return result;
+}
 ```
 </section>
