@@ -22,3 +22,8 @@
   font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
   color: #c7254e;
 }
+
+.challenge-instructions pre code {
+  white-space: pre-wrap;
+  line-height: 1.42;
+}
