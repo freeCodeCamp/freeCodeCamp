@@ -131,6 +131,12 @@ header {
   margin-right: 10px;
 }
 
+@media (max-width: 992px) {
+  #top-nav .menu-button.menu-button-guide {
+    display: block;
+  }
+}
+
 @media (min-width: 735px) {
   .logoContainer {
     margin-right: 50px;

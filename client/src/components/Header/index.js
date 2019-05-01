@@ -30,6 +30,7 @@ const propTypes = {
   disableMenuButtonBehavior: PropTypes.bool,
   disableSettings: PropTypes.bool,
   displayMenu: PropTypes.bool,
+  guide: PropTypes.bool,
   toggleDisplayMenu: PropTypes.func.isRequired
 };
 
@@ -63,6 +64,7 @@ class Header extends Component {
       disableMenuButtonBehavior,
       disableSettings,
       displayMenu,
+      guide,
       toggleDisplayMenu
     } = this.props;
     return (
@@ -74,7 +76,9 @@ class Header extends Component {
           {disableSettings ? null : <FCCSearch />}
           <button
             aria-expanded={displayMenu}
-            className={'menu-button' + (displayMenu ? ' menu-button-open' : '')}
+            className={`menu-button${displayMenu ? ' menu-button-open' : ''}${
+              guide ? ' menu-button-guide' : ''
+            }`}
             key='menu-button'
             onClick={toggleDisplayMenu}
             ref={this.menuButtonRef}

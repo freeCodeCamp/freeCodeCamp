@@ -66,11 +66,11 @@ const propTypes = {
       message: PropTypes.string
     })
   ),
+  guide: PropTypes.bool,
   hasMessages: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
-  mediaBreakpoint: PropTypes.string,
   onlineStatusChange: PropTypes.func.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool
@@ -137,12 +137,12 @@ class DefaultLayout extends Component {
     const {
       children,
       disableSettings,
+      guide,
       hasMessages,
       flashMessages = [],
       removeFlashMessage,
       landingPage,
       showFooter = true,
-      mediaBreakpoint,
       disableMenuButtonBehavior,
       isOnline,
       isSignedIn
@@ -165,7 +165,7 @@ class DefaultLayout extends Component {
         <Header
           disableMenuButtonBehavior={disableMenuButtonBehavior}
           disableSettings={disableSettings}
-          mediaBreakpoint={mediaBreakpoint}
+          guide={guide}
         />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
