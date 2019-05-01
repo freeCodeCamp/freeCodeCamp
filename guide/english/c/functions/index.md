@@ -2,7 +2,8 @@
 title: Functions
 ---
 # Functions in C
-Sometimes you have a chunk of code that you need to use over and over, but at different times and places in your code. You could copy and paste it over and over, but that's not a great solution- your file size ends up being bigger, your code is harder to debug, and your code is harder to read. Instead, use a function: functions are like mini-programs that exist within your code. You can pass them variables to use, and they can give back data.
+Sometimes you have a chunk of code that you need to use over and over, but at different times and places in your code. You could copy and paste it over and over, but that's not a great solution- your file size ends up being bigger, your code is harder to debug, and your code is harder to read. Instead, use a function: functions are like mini-programs that exist within your code. You can pass them variables to use, and they can give back data. They are also sometimes called a procedure, a subroutine, a routine, a method, or a subprogram [1].
+
 ## An Example
 Here's a simple example of a function that divides two numbers. It's not very useful since we have `/`, but it shows the different parts of a function.
 ```C
@@ -23,10 +24,40 @@ int main(void) {
     return 0;
 }
 ```
+## WHAT DOES THE main() FUNCTION DO ?
+Suppose a program is divided into hundreds of mini programs (each such mini program is called 'function'). Now the programmer wants that certain functions are used only when they are called or told to run. But it is quite confusing for the compiler to know which function to skip and which to run. So, the idea of the <b>main()</b> function was created, in which only a single function is executed by the compiler and is the <b>main()</b> function. All the other function calls are to be made inside of the <b>main()</b> function wherever neccessary. Any other piece of code (functions) is not accessible unless it is called in inside the <b>main()</b> function.
 
-Notice that like `main`, `divides` has a similar format. That's because `main` is also a function- it's just special because C looks for it first. `divides` also comes before `main`. This is important because `main` calls `divides`. Calling a function means that its code is being used. Code must be compiled before it gets used, and C compiles line by line from the top, so in order for a function to be called, it must be written out before it is called like in this example. If `divides` came after `main`, it would fail because the compiler doesn't know that `divides` exists yet. You may also use a function prototype before main to allow you to place `divides` after main. A function prototype is identical to the function with the same variables and return type, except they braces are omitted and replaced with a semicolon like so:
+Notice that like `main`, `divides` has a similar format. That's because `main` is also a function- it's just special because C looks for it first. `divides` also comes before `main`. This is important because `main` calls `divides`. Calling a function means that its code is being used. Code must be compiled before it gets used, and C compiles line by line from the top, so in order for a function to be called, it must be written out before it is called like in this example. If `divides` came after `main`, it would fail because the compiler doesn't know that `divides` exists yet.
+
+This would seem to imply that you need to declare all your functions before getting to `main`. However, in reality when your code gets very long, it would be much easier to read if `main` is easily accessible at the top. Also, you may easily run into a case where functions call one another and you can't easily arrange the order in which you declare them! This is where function prototype comes in.
+
+A function prototype before `main` to allow you to place `divides` after `main`. It helps the C compiler to know what functions are expected, even if they are not declared yet. A function prototype is identical to the function with the same variables and return type, except they braces are omitted and replaced with a semicolon like so:
+
 ```C
 int divides(int a, int b);
+```
+
+In full, this would be written as:
+```C
+#include <stdio.h>
+
+// function prototype
+int divides(int a, int b);
+
+int main(void) {
+    int first = 5;
+    int second = 10; //MUST NOT BE ZERO;
+
+    int result = divides(first, second);
+
+    printf("first divided by second is %i\n", result);
+
+    return 0;
+}
+
+int divides(int a, int b) {
+    return a / b;
+}
 ```
 
 Also notice that `divides` and `main` are not sharing brackets and are not in each other's brackets. They are meant to be separate, even though one calls the other.
@@ -48,16 +79,15 @@ Now let's take a look at what's inside the brackets:
 ```C
 return a / b;
 ```
-This is pretty straightforward, because this is such a simple function. `a` is divided by `b`, and that value is returned. You've seen `return` before in the `main` function, but now instead of ending our program, it ends the method and gives the value to whatever called it.
+This is pretty straightforward, because this is such a simple function. `a` is divided by `b`, and that value is returned. You've seen `return` before in the `main` function, but now instead of ending our program, it ends the function and gives the value to whatever called it.
 
 So to recap what this function does- it gets two integers, divides them, and gives them back to whatever called it.
 
-###Parameters of a function
+### Parameters of a function
 Parameters are used to pass arguements to the function.
 Their are two types of parameters:
-Parameter Written In Function Definition is Called “Formal Parameter”.
-Parameter Written In Function Call is Called “Actual Parameter”.They are also known as arguments.They are passed to the function definition and a copy is created in the form of formal parameters.
-
+1. Parameter Written In Function Definition is Called “Formal Parameter”.
+2. Parameter Written In Function Call is Called “Actual Parameter”. They are also known as arguments. They are passed to the function definition and a copy is created in the form of formal parameters.
 
 ## A more complex example
 That one was a single line function. You'll see them when there's a pretty simple operation that needs to be performed over and over, or an operation that ends up being one long line. By making it a function, the code ends up being more readable and manageable.
@@ -83,6 +113,14 @@ With that, the conditions for a being greater than b, and b being greater than a
 ## A word on 'scope'
 Scope is a thing to be aware of. It refers to the areas in your code where a variable is accessible. When you pass a variable to a function, the function gets its own copy to use. This means that adjusting the variable in the function will not adjust it anywhere else. Similarly, if you haven't passed a variable to a function, it doesn't have it and can't use it.
 
+One of the ways to change value outside of function is using &:
+```C
+//After calling the function, the s value outside of the function will be updated
+void sumOfTwoNums(int a, int b, int &s) {
+    s = a + b;
+}
+```
+
 You may have observed a similar issue with things like if statements and any of the loops. If you declare a variable within brackets, it won't be accessible outside of those brackets. This is true for functions in the same way, but there are some ways to get around it:
 * Make a global variable by declaring it outside of any functions
  * This makes your code messier and is generally not recommended. It should be avoided whenever possible
@@ -95,7 +133,7 @@ Ideally, you'll always pass into your functions as parameters, but you may not a
 
 ## Recursion in C
 When function is called within the same function, it is known as recursion in C. The function which calls the same function, is known as recursive function.
-```
+```c
 int factorial (int n)
 {
     if ( n < 0)
@@ -105,6 +143,40 @@ int factorial (int n)
     return (n * factorial (n -1));
 }   
 ```
+<!-- Some minor additional info on Recursion -MR -->
+The recursion continues until some condition is met to prevent it.
+To prevent infinite recursion, an if...else statement or similar approach can be used where one branch makes the recursive call and the other doesn't.
+
+Recursion makes program more elegant and clean. All algorithms can be defined recursively, which makes it easier to visualize and prove. 
+If the speed of the program is important then you may not want to use recursion as it uses more memory and can slow the program down.
+
+
+## Defining a function after main program
+There can be instances when you provide the function definition after the main program. In those cases the function should be declared before the main program with arguments and should be ended with semi-colon(;). Later the function can be defined after the main program.
+
+```C
+#include <stdio.h>
+
+int divides(int a, int b);
+
+int main(void) {
+    int first = 5;
+    int second = 10; //MUST NOT BE ZERO;
+
+    int result = divides(first, second);
+
+    printf("first divided by second is %i\n", result);
+
+    return 0;
+}
+
+int divides(int a, int b) {
+    return a / b;
+}
+
+```
+
+NOTE: In recurssion a base codition is mandatory. Otherwise the function executes infinitely.There can be more than one base condition In the above case the bese conditions are if(n<0) and if(n==0) .
 
 # Before you go on...
 ## A review
@@ -115,3 +187,7 @@ int factorial (int n)
 * `return` ends the function and gives back a value. You can have several in one function, but as soon as you hit one the function ends there.
 * When you pass a variable to a function, it has its own copy to use - changing something in a function doesn't change it outside the function.
 * Variables declared inside a function are only visible inside that function, unless they are declared static.
+
+### Reference
+
+[1] [Wikipedia Subroutine](https://en.wikipedia.org/wiki/Subroutine)

@@ -16,7 +16,7 @@ Here's an example:
 
 ## Instructions
 <section id='instructions'>
-Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons, and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the <code>div</code> tag surrounding the radio buttons to a <code>fieldset</code> tag, and change the <code>p</code> tag inside it to a <code>legend</code>.
+Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the <code>div</code> tag surrounding the radio buttons to a <code>fieldset</code> tag, and change the <code>p</code> tag inside it to a <code>legend</code>.
 </section>
 
 ## Tests
@@ -25,15 +25,15 @@ Camper Cat wants information about the ninja level of his users when they sign u
 ```yml
 tests:
   - text: Your code should have a <code>fieldset</code> tag around the radio button set.
-    testString: 'assert($("fieldset").length == 1, "Your code should have a <code>fieldset</code> tag around the radio button set.");'
+    testString: assert($('fieldset').length == 1, 'Your code should have a <code>fieldset</code> tag around the radio button set.');
   - text: Make sure your <code>fieldset</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, "Make sure your <code>fieldset</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, 'Make sure your <code>fieldset</code> element has a closing tag.');
   - text: Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.
-    testString: 'assert($("legend").length == 1, "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.");'
+    testString: assert($('legend').length == 1, 'Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.');
   - text: Your code should not have any <code>div</code> tags.
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
   - text: Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.
-    testString: 'assert($("p").length == 4, "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.");'
+    testString: assert($('p').length == 4, 'Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.');
 
 ```
 
@@ -99,7 +99,49 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <section>
+    <form>
+      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+
+
+      <!-- Add your code below this line -->
+      <fieldset>
+        <legend>What level ninja are you?</legend>
+        <input id="newbie" type="radio" name="levels" value="newbie">
+        <label for="newbie">Newbie Kitten</label><br>
+        <input id="intermediate" type="radio" name="levels" value="intermediate">
+        <label for="intermediate">Developing Student</label><br>
+        <input id="master" type="radio" name="levels" value="master">
+        <label for="master">Master</label>
+      </fieldset>
+      <!-- Add your code above this line -->
+
+
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </section>
+  <article>
+    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>
+    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Is Chuck Norris a Cat Person?</h2>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+  </article>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
 ```
 </section>

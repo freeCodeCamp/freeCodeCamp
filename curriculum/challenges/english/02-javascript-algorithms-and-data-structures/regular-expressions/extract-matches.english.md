@@ -22,11 +22,11 @@ Apply the <code>.match()</code> method to extract the word <code>coding</code>.
 ```yml
 tests:
   - text: The <code>result</code> should have the word <code>coding</code>
-    testString: 'assert(result.join() === "coding", "The <code>result</code> should have the word <code>coding</code>");'
+    testString: assert(result.join() === "coding", 'The <code>result</code> should have the word <code>coding</code>');
   - text: Your regex <code>codingRegex</code> should search for <code>coding</code>
-    testString: 'assert(codingRegex.source === "coding", "Your regex <code>codingRegex</code> should search for <code>coding</code>");'
+    testString: assert(codingRegex.source === "coding", 'Your regex <code>codingRegex</code> should search for <code>coding</code>');
   - text: You should use the <code>.match()</code> method.
-    testString: 'assert(code.match(/\.match\(.*\)/), "You should use the <code>.match()</code> method.");'
+    testString: assert(code.match(/\.match\(.*\)/), 'You should use the <code>.match()</code> method.');
 
 ```
 

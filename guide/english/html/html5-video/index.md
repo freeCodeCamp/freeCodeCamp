@@ -5,6 +5,7 @@ title: HTML5 Video
 
 
 Before HTML5, in order to have a video play in a webpage, you would need to use a plugin, like Adobe Flash Player. With the introduction of HTML5, you can now place it directly into the page itself.
+This now makes it possible to have videos playign in pages designed to be viewed on mobile devices, as plugins like Adobe Flash Player do not work on mobile.
 The HTML <video> tag is used to embed video in web documents. It may contain one or more video sources, represented using the src attribute or the [source](<source>) element.
   
   

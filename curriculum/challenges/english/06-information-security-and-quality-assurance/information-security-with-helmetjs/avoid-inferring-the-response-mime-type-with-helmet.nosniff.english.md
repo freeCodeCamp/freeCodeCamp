@@ -21,7 +21,7 @@ Browsers can use content or MIME sniffing to adapt to different datatypes coming
 ```yml
 tests:
   - text: helmet.noSniff() middleware should be mounted correctly
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "nosniff"); assert.equal(data.headers["x-content-type-options"], "nosniff"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nosniff'); assert.equal(data.headers['x-content-type-options'], 'nosniff'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

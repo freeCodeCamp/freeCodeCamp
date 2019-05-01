@@ -22,11 +22,11 @@ Use the anchor character (<code>$</code>) to match the string <code>"caboose"</c
 ```yml
 tests:
   - text: You should search for <code>"caboose"</code> with the dollar sign <code>$</code> anchor in your regex.
-    testString: 'assert(lastRegex.source == "caboose$", "You should search for <code>"caboose"</code> with the dollar sign <code>$</code> anchor in your regex.");'
+    testString: assert(lastRegex.source == "caboose$", 'You should search for <code>"caboose"</code> with the dollar sign <code>$</code> anchor in your regex.');
   - text: Your regex should not use any flags.
-    testString: 'assert(lastRegex.flags == "", "Your regex should not use any flags.");'
+    testString: assert(lastRegex.flags == "", 'Your regex should not use any flags.');
   - text: You should match <code>"caboose"</code> at the end of the string <code>"The last car on a train is the caboose"</code>
-    testString: 'assert(lastRegex.test("The last car on a train is the caboose"), "You should match <code>"caboose"</code> at the end of the string <code>"The last car on a train is the caboose"</code>");'
+    testString: assert(lastRegex.test("The last car on a train is the caboose"), 'You should match <code>"caboose"</code> at the end of the string <code>"The last car on a train is the caboose"</code>');
 
 ```
 

@@ -7,7 +7,7 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
-Right now we're not loading an actually users object since we haven't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistent connection for the full life-cycle of the app.
+Right now we're not loading an actual user object since we haven't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistent connection for the full life-cycle of the app.
 To do this, add MongoDB as a dependency and require it in your server. (<code>const mongo = require('mongodb').MongoClient;</code>)
 Now we want to the connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish you will want to encompass your serialization and your app listener in the following:
 <pre>mongo.connect(process.env.DATABASE, (err, db) => {
@@ -34,9 +34,9 @@ Submit your page when you think you've got it right. If you're running into erro
 ```yml
 tests:
   - text: Database connection is present
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /mongo.connect/gi, "You should have created a connection to your database"); assert.match(data, /mongo.connect[^]*app.listen[^]*}[^]*}/gi, "You should have your app.listen nested at within your database connection at the bottom"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 'Deserialization is now correctly using the DB and <code>done(null, null)</code> is erased'
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.notMatch(data, /null,( |)null/gi, "The callback in deserializeUser of (null, null) should be completely removed for the db block uncommented out"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /mongo.connect/gi, 'You should have created a connection to your database'); assert.match(data, /mongo.connect[^]*app.listen[^]*}[^]*}/gi, 'You should have your app.listen nested at within your database connection at the bottom'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: Deserialization is now correctly using the DB and <code>done(null, null)</code> is erased
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.notMatch(data, /null,( |)null/gi, 'The callback in deserializeUser of (null, null) should be completely removed for the db block uncommented out'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 

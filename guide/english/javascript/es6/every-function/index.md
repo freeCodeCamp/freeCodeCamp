@@ -2,6 +2,8 @@
 title: Every Function
 ---
 
+## Every Function
+
 The `every()` function is used for verifying if all the elements of an array meet the given condition. The function returns `true` if the condition is met by all elements, and false at least one element did not meet the condition
 
 The original syntax of the every function is:
@@ -24,3 +26,5 @@ if (arr.every(el => el % 2 == 0)) {
 Also note that the result of `every()` in an empty array will always return true, no matter what the condition is.
 
 `every()` is a method of the `Array` object, so to pass that function to an iterable object it is necessary to be sure that the object is an Array.
+
+For more information, please visit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
