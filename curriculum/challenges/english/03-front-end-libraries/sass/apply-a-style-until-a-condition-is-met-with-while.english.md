@@ -26,7 +26,7 @@ There should be 5 different classes from <code>text-1</code> to <code>text-5</co
 tests:
   - text: Your code should use the <code>@while</code> directive.
     testString: assert(code.match(/@while /g));
-   - text: Your code should use an index variable which starts at an index of 1.
+  - text: Your code should use an index variable which starts at an index of 1.
     testString: assert(code.match(/\$.*:\s*?1;/gi));
   - text: Your code should increment the counter variable.
     testString: assert(code.match(/\$(.*)\s*?:\s*\$\1\s*\+\s*1\s*;/gi));
