@@ -24,7 +24,7 @@ let ourVariable = ourArray[0];
 
 In addition to accessing the value associated with an index, you can also <em>set</em> an index to a value using the same notation:
 
-```
+```js
 ourArray[1] = "not b anymore";
 // ourArray now equals ["a", "not b anymore", "c"];
 ```

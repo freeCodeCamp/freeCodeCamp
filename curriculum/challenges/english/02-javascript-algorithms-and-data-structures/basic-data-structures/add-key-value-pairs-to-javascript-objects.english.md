@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 At their most basic, objects are just collections of <dfn>key-value pairs</dfn>, or in other words, pieces of data mapped to unique identifiers that we call <dfn>properties</dfn> or <dfn>keys</dfn>. Let's take a look at a very simple example:
 
-```
+```js
 let FCC_User = {
   username: 'awesome_coder',
   followers: 572,
@@ -19,14 +19,14 @@ let FCC_User = {
 
 The above code defines an object called <code>FCC_User</code> that has four <dfn>properties</dfn>, each of which map to a specific value. If we wanted to know the number of <code>followers</code> <code>FCC_User</code> has, we can access that property by writing:
 
-```
+```js
 let userData = FCC_User.followers;
 // userData equals 572
 ```
 
 This is called <dfn>dot notation</dfn>. Alternatively, we can also access the property with brackets, like so:
 
-```
+```js
 let userData = FCC_User['followers']
 // userData equals 572
 ```
