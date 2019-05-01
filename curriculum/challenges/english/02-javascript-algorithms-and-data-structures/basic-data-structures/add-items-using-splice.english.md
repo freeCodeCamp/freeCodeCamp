@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 Remember in the last challenge we mentioned that <code>splice()</code> can take up to three parameters? Well, we can go one step further with <code>splice()</code> &mdash; in addition to removing elements, we can use that third parameter, which represents one or more elements, to <em>add</em> them as well. This can be incredibly useful for quickly switching out an element, or a set of elements, for another. For instance, let's say you're storing a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:
 
-```
+```js
 function colorChange(arr, index, newColor) {
   arr.splice(index, 1, newColor);
   return arr;

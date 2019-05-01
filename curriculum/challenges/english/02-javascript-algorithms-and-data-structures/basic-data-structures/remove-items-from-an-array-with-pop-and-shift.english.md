@@ -9,7 +9,7 @@ challengeType: 1
 Both <code>push()</code> and <code>unshift()</code> have corresponding methods that are nearly functional opposites: <code>pop()</code> and <code>shift()</code>. As you may have guessed by now, instead of adding, <code>pop()</code> <em>removes</em> an element from the end of an array, while <code>shift()</code> removes an element from the beginning. The key difference between <code>pop()</code> and <code>shift()</code> and their cousins <code>push()</code> and <code>unshift()</code>, is that neither method takes parameters, and each only allows an array to be modified by a single element at a time.
 Let's take a look:
 
-```
+```js
 let greetings = ['whats up?', 'hello', 'see ya!'];
 
 greetings.pop();
@@ -21,7 +21,7 @@ greetings.shift();
 
 We can also return the value of the removed element with either method like this:
 
-```
+```js
 let popped = greetings.pop();
 // returns 'hello'
 // greetings now equals []

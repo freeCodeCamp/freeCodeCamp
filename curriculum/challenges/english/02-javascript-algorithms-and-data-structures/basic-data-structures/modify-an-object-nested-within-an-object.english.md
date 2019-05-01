@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:
 
-```
+```js
 let nestedObject = {
   id: 28802695164,
   date: 'December 31, 2016',
