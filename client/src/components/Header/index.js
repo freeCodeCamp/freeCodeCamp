@@ -86,36 +86,32 @@ class Header extends Component {
           >
             Menu
           </button>
-          {!disableMenuButtonBehavior && (
-            <ul
-              className={displayMenu ? 'nav-expanded' : ''}
-              id='top-right-nav'
-              key='top-right-nav'
-            >
-              <li>
-                <Link className='top-right-nav-link' to='/learn'>
-                  Learn
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className='top-right-nav-link'
-                  external={true}
-                  to='/forum'
-                >
-                  Forum
-                </Link>
-              </li>
-              <li>
-                <Link className='top-right-nav-link' external={true} to='/news'>
-                  News
-                </Link>
-              </li>
-              <li>
-                <UserState disableSettings={disableSettings} />
-              </li>
-            </ul>
-          )}
+          <ul
+            className={`${displayMenu ? ' nav-expanded' : ''}${
+              disableMenuButtonBehavior ? ' nav-guide' : ''
+            }`}
+            id='top-right-nav'
+            key='top-right-nav'
+          >
+            <li>
+              <Link className='top-right-nav-link' to='/learn'>
+                Learn
+              </Link>
+            </li>
+            <li>
+              <Link className='top-right-nav-link' external={true} to='/forum'>
+                Forum
+              </Link>
+            </li>
+            <li>
+              <Link className='top-right-nav-link' external={true} to='/news'>
+                News
+              </Link>
+            </li>
+            <li>
+              <UserState disableSettings={disableSettings} />
+            </li>
+          </ul>
         </nav>
       </header>
     );

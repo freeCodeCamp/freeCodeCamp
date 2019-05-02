@@ -135,6 +135,14 @@ header {
   #top-nav .menu-button.menu-button-guide {
     display: block;
   }
+
+  #top-right-nav.nav-guide {
+    display: none;
+  }
+
+  #top-right-nav.nav-expanded.nav-guide {
+    display: none;
+  }
 }
 
 @media (min-width: 735px) {
