@@ -3,14 +3,14 @@ id: bad87fee1348bd9aedf0887a
 title: Headline with the h2 Element
 challengeType: 0
 videoUrl: ''
-localeTitle: العنوان مع عنصر h2
+localeTitle: العنوان مع العنصر h2
 ---
 
 ## Description
 undefined
 
 ## Instructions
-<section id="instructions"> إضافة علامة <code>h2</code> تقول &quot;CatPhotoApp&quot; لإنشاء <code>element</code> HTML ثاني أسفل عنصر <code>h1</code> &quot;Hello World&quot;. </section>
+<section id="instructions"> إضافة علامة <code>h2</code> تقول &quot;CatPhotoApp&quot; لإنشاء <code>element</code> HTML ثاني أسفل العنصر <code>h1</code> &quot;Hello World&quot;. </section>
 
 ## Tests
 <section id='tests'>
@@ -23,7 +23,7 @@ tests:
     testString: 'assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "Make sure your <code>h2</code> element has a closing tag.");'
   - text: ''
     testString: 'assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "Your <code>h2</code> element should have the text "CatPhotoApp".");'
-  - text: يجب أن يحتوي عنصر <code>h1</code> على النص &quot;Hello World&quot;.
+  - text: يجب أن يحتوي العنصر <code>h1</code> على النص &quot;Hello World&quot;.
     testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
 
 ```

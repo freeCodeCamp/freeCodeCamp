@@ -60,6 +60,8 @@ let result = timRegex.test(timStr);
 <section id='solution'>
 
 ```js
-// solution required
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
 ```
 </section>

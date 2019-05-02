@@ -14,13 +14,13 @@ Semantic UI class is simply added to a button element, various example were give
 * Standard Button
 
 Standard Semantic UI button
-```
+```html
 <button class="ui button">Standard Button</button>
 ```
 * Emphasis Button
 
 A button with a different level of emphasis
-```
+```html
 <button class="ui primary button">
 ```
 Other emphasis classes are `secondary`, `positive`, and `negative`
@@ -28,7 +28,7 @@ Other emphasis classes are `secondary`, `positive`, and `negative`
 * Animated Button
 
 A button with animation, showing hidden contents
-```
+```html
 <div class="ui animated fade button" tabindex="0">
   <div class="visible content">Sign-up for a Pro account</div>
   <div class="hidden content">$12.99 a month</div>
@@ -39,7 +39,7 @@ The property `tabindex="0"` above makes the button keyboard focusable, since the
 * Labeled Button
 
 A button alongside a label
-```
+```html
 <div class="ui labeled button" tabindex="0">
   <div class="ui button"><i class="heart icon"></i> Like</div>
   <a class="ui basic label">2,048</a>
@@ -50,7 +50,7 @@ the element `<i>` is used to specify an icon, here it is a heart icon `<i class=
 * Icon Button
 
 A Semantic UI button can be just an icon
-```
+```html
 <button class="ui icon button">
   <i class="camera icon"></i>
 </button>
@@ -60,7 +60,7 @@ The above is just a camera icon
 #### Groups
 
 Semantic UI buttons can exist in a group
-```
+```html
 <div class="ui buttons">
   <button class="ui button">One</button>
   <button class="ui button">Two</button>
@@ -71,7 +71,7 @@ Semantic UI buttons can exist in a group
 #### Content
 
 Semantic UI buttons can contain conditionals
-```
+```html
 <div class="ui buttons">
   <button class="ui positive button">Yes</button>
   <div class="or" data-text="or"></div>
@@ -82,14 +82,14 @@ Semantic UI buttons can contain conditionals
 #### States
 
 Semantic UI buttons can exist in different states, `active`, `disabled`, `loading`. Simply add a state name to the `class` attribute` of `<button>` element.
-```
+```html
 <button class="ui loading button">Loading</button>
 ```
 
 #### Variations
 
 Semantic UI buttons exist in variety of sizes, `mini`, `tiny`, `small`, `medium`, `large`, `big`, `huge`, and `massive`.
-```
+```html
 <button class="ui massive button">Massive Button</button>
 ```
 
