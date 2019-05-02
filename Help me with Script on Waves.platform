@@ -1,0 +1,49 @@
+{-#STDLIB_VERSION 2#-} 
+{-#CONTENT_TYPE EXPRESSION#-} 
+let heightDiff = 1166 
+let priceDiffConst = 12341234 
+let expirationHours = 24 
+let maxExpiration = (((expirationHours * 60) * 60) * 1000) 
+let startHeight = 1474898 
+let cycles = ((height - startHeight) / heightDiff) 
+let priceDiff = (priceDiffConst * cycles) 
+let startBuyPrice = 44444444 
+let minBuyPrice = (startBuyPrice + priceDiff) 
+let startSellPrice = 44444444 
+let minSellPrice = (startSellPrice + priceDiff) 
+let expirationError = "Order life must be <= 24 hours" 
+let buyPriceError = (((("Buy price must be <= " + toString(minBuyPrice)) + " wavelets in Cycle # ") + toString(cycles)) + ". Wait next Cycle") 
+let sellPriceError = (((("Sell price must be >= " + toString(minSellPrice)) + " wavelets in Cycle # ") + toString(cycles)) + ". Wait next Cycle") 
+let $match0 = tx 
+if (_isInstanceOf($match0, "MassTransferTransaction"))
+then { 
+let e = $match0 
+let sell = sigVerify(e.sellOrder.bodyBytes, getElement(e.sellOrder.proofs, 0), e.sellOrder.senderPublicKey) 
+let buy = sigVerify(e.buyOrder.bodyBytes, getElement(e.buyOrder.proofs, 0), e.buyOrder.senderPublicKey) 
+if (if (sell) 
+then buy 
+else false) 
+then true 
+else if (sell) 
+then if (((e.sellOrder.expiration - e.sellOrder.timestamp) > maxExpiration)) 
+then throw(expirationError) 
+else if (if ((minSellPrice > e.sellOrder.price)) 
+then true 
+else isDefined(e.sellOrder.assetPair.priceAsset)) 
+then throw(sellPriceError) 
+else true 
+else if (buy) 
+then if (if ((e.buyOrder.price > minBuyPrice)) 
+then true 
+else isDefined(e.buyOrder.assetPair.priceAsset)) 
+then throw(buyPriceError) 
+else true 
+else false 
+} 
+else if (if (_isInstanceOf($match0, "MassTransferTransaction")) 
+then true 
+else if (_isInstanceOf($match0, "BurnTransaction")) 
+then true 
+else _isInstanceOf($match0, "TransferTransaction")) 
+then true 
+else true
