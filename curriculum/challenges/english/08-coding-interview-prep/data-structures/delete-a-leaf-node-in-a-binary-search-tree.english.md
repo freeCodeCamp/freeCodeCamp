@@ -12,7 +12,6 @@ Leaf Node: The target to delete has zero children.
 One Child: The target to delete only has one child.
 Two Children: The target to delete has two child nodes.
 Removing a leaf node is easy, we simply remove it. Deleting a node with one child is also relatively easy, we simply remove it and link its parent to child of the node we deleted. Removing a node with two children is more difficult, however, because this creates two child nodes that need to be reconnected to the parent tree. We'll see how to deal with this case in the third challenge. Additionally, you need to be mindful of some edge cases when handling deletion. What if the tree is empty? What if the node to delete is the root node? What if there are only two elements in the tree? For now, let's handle the first case where we delete a leaf node.
-
 </section>
 
 ## Instructions
@@ -23,7 +22,6 @@ We will handle the second and third cases in the next challenges. Good luck!
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml
@@ -39,11 +37,9 @@ tests:
   - text: The <code>remove</code> method removes leaf nodes from the tree
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');
 ```
-
 </section>
 
 ## Challenge Seed
-
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -147,7 +143,6 @@ BinarySearchTree.prototype = {
 ```
 
 </div>
-
 </section>
 
 ## Solution
@@ -157,5 +152,4 @@ BinarySearchTree.prototype = {
 ```js
 // solution required
 ```
-
 </section>

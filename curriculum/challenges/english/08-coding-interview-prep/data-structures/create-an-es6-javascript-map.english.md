@@ -5,7 +5,6 @@ challengeType: 1
 ---
 
 ## Description
-
 <section id='description'>
 The new version of JavaScript provides us with a built-in Map object which provides much of the functionality we wrote by hand in the last challenge. This Map object, although similar to regular JavaScript objects, provides some useful functionality that normal objects lack. For example, an ES6 Map tracks the insertion order of items that are added to it. Here is a more complete overview of its methods:
 <code>.has(key)</code> returns true or false based on the presence of a key
@@ -18,13 +17,11 @@ The new version of JavaScript provides us with a built-in Map object which provi
 </section>
 
 ## Instructions
-
 <section id='instructions'>
 Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair <code>freeCodeCamp</code>, <code>Awesome!</code> to it.
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml
@@ -34,11 +31,9 @@ tests:
   - text: myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.
     testString: assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');
 ```
-
 </section>
 
 ## Challenge Seed
-
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,17 +41,13 @@ tests:
 ```js
 // change code below this line
 ```
-
 </div>
-
 </section>
 
 ## Solution
-
 <section id='solution'>
 
 ```js
 // solution required
 ```
-
 </section>

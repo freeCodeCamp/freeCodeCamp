@@ -40,6 +40,7 @@ Create an adjacency matrix of an undirected graph with five nodes. This matrix s
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -54,9 +55,7 @@ tests:
     testString: assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1), 'There should be an edge between the third and fifth node.');
   - text: There should be an edge between the fourth and fifth node.
     testString: assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'There should be an edge between the fourth and fifth node.');
-
 ```
-
 </section>
 
 ## Challenge Seed
@@ -65,22 +64,24 @@ tests:
 <div id='js-seed'>
 
 ```js
-var adjMatUndirected = [
-];
+var adjMatUndirected = [];
 ```
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
-
 ```js
-var adjMatUndirected = [[0, 0, 1, 1, 0],[0, 0, 0, 0, 0],[1, 0, 0, 0, 1],[1, 0, 0, 0, 1],[0, 0, 1, 1, 0]];
+var adjMatUndirected = [
+  [0, 0, 1, 1, 0],
+  [0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [0, 0, 1, 1, 0]
+];
 ```
-
 </section>

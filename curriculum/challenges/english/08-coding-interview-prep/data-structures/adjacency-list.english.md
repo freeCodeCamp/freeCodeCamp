@@ -5,6 +5,7 @@ challengeType: 1
 ---
 
 ## Description
+
 <section id='description'>
 Graphs can be represented in different ways. Here we describe one way, which is called an <dfn>adjacency list</dfn>.
 An adjacency list is essentially a bulleted list where the left side is the node and the right side lists all the other nodes it's connected to. Below is a representation of an adjacency list.
@@ -33,11 +34,13 @@ var undirectedGArr = [
 </section>
 
 ## Instructions
+
 <section id='instructions'>
 Create a social network as an undirected graph with 4 nodes/people named <code>James</code>, <code>Jill</code>, <code>Jenny</code>, and <code>Jeff</code>. There are edges/relationships between James and Jeff, Jill and Jenny, and Jeff and Jenny.
 </section>
 
 ## Tests
+
 <section id='tests'>
 
 ```yml
@@ -50,35 +53,34 @@ tests:
     testString: assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1, 'There should be an edge between <code>Jill</code> and <code>Jenny</code>.');
   - text: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.
     testString: assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, 'There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');
-
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
 
 ```js
-var undirectedAdjList = {
-};
+var undirectedAdjList = {};
 ```
 
 </div>
 
-
-
 </section>
 
 ## Solution
-<section id='solution'>
 
+<section id='solution'>
 
 ```js
 var undirectedAdjList = {
-"James": ["Jeff"],"Jill": ["Jenny"],"Jenny": ["Jill", "Jeff"],
-"Jeff": ["James", "Jenny"]
+  James: ['Jeff'],
+  Jill: ['Jenny'],
+  Jenny: ['Jill', 'Jeff'],
+  Jeff: ['James', 'Jenny']
 };
 ```
 

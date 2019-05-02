@@ -93,8 +93,6 @@ class Set {
 ```
 
 </div>
-
-
 </section>
 
 ## Solution
@@ -133,5 +131,4 @@ class Set {
   }
 }
 ```
-
 </section>
