@@ -27,7 +27,7 @@ let userData = FCC_User.followers;
 This is called <dfn>dot notation</dfn>. Alternatively, we can also access the property with brackets, like so:
 
 ```js
-let userData = FCC_User['followers']
+let userData = FCC_User['followers'];
 // userData equals 572
 ```
 

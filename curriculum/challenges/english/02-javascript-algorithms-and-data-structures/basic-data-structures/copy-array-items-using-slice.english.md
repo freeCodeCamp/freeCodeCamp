@@ -14,7 +14,6 @@ let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
 let todaysWeather = weatherConditions.slice(1, 3);
 // todaysWeather equals ['snow', 'sleet'];
 // weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
-
 ```
 
 In effect, we have created a new array by extracting elements from an existing array.
