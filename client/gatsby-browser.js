@@ -41,7 +41,7 @@ export const wrapPageElement = ({ element, props }) => {
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
     return (
-      <DefaultLayout disableMenuButtonBehavior={true} guide={true}>
+      <DefaultLayout disableMenuButtonBehavior={true}>
         <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );

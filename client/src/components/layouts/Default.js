@@ -66,7 +66,6 @@ const propTypes = {
       message: PropTypes.string
     })
   ),
-  guide: PropTypes.bool,
   hasMessages: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
@@ -137,7 +136,6 @@ class DefaultLayout extends Component {
     const {
       children,
       disableSettings,
-      guide,
       hasMessages,
       flashMessages = [],
       removeFlashMessage,
@@ -165,7 +163,6 @@ class DefaultLayout extends Component {
         <Header
           disableMenuButtonBehavior={disableMenuButtonBehavior}
           disableSettings={disableSettings}
-          guide={guide}
         />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
