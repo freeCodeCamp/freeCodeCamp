@@ -32,7 +32,6 @@ tests:
     testString: assert.deepStrictEqual(squareList([4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2]), [16, 1764, 36]);
   - text: <code>squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3])</code> should return <code>[9, 100, 49]</code>.
     testString: assert.deepStrictEqual(squareList([-3.7, -5, 3, 10, 12.5, 7, -4.5, -17, 0.3]), [9, 100, 49]);  
-
 ```
 
 </section>
