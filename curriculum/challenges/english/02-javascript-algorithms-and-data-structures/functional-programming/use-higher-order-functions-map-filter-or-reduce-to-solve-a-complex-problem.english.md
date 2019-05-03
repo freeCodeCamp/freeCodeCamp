@@ -6,7 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-Now that you have worked through a few challenges using higher-order functions like <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>, you get to work on a slightly more complex problem allowing you to choose which higher-order function(s) best solves it.
+Now that you have worked through a few challenges using higher-order functions like <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>, you now get to apply them to solve a more complex challenge.
 </section>
 
 ## Instructions
