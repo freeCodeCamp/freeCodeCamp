@@ -34,7 +34,7 @@ tests:
   - text: The <code>head</code> element should wrap around the <code>title</code> element.
     testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi), 'The <code>head</code> element should wrap around the <code>title</code> element.');
   - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> .
-    testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>\s*<body>\s*?(((<h1>\s*?.*?\s*?<\/h1>\s*?)(<p>(.*\s*)*?<\/p>\s*?))|((<p>\s*?.*?\s*?<\/p>\s*?)(<h1>(.*\s*)*?<\/h1>\s*?)))<\/body>/gi), 'The <code>body</code> element should wrap around both the <code>h1</code>and <code>p</code> elements');		
+    testString: assert(code.match(/<body>\s*?(((<h1>\s*?.*?\s*?<\/h1>\s*?)(<p>(.*\s*)*?<\/p>\s*?))|((<p>\s*?.*?\s*?<\/p>\s*?)(<h1>(.*\s*)*?<\/h1>\s*?)))<\/body>/gi), 'The <code>body</code> element should wrap around both the <code>h1</code>and <code>p</code> elements');		
 
 ```
 
