@@ -180,7 +180,7 @@ Breakpoints that are based on content as opposed to device are less complicated.
 
 You can also set a minimum and maximum width, which lets you experiment with different ranges. This one triggers roughly between smart-phone and larger desktop and monitor sizes
 
-```code
+```css
 @media only screen and (min-width: 700px) and (max-width: 1500px) {
   something {
     something: something;

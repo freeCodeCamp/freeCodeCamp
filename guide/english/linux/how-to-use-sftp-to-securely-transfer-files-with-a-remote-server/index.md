@@ -7,39 +7,39 @@ This article is a quick tutorial on how to use Secure File Transfer Protocol (SF
 ### Testing SSH
 If you haven't already, test that you are able to SSH into the server. SFTP uses the Secure Shell (SSH) protocol, so if you are unable to SSH you probably won't be able to SFTP either.
 
-```unix
+```shell
 ssh your_username@hostname_or_ip_address
 ```
 ### Start SFTP Session
 This uses the same syntax as SSH and opens a session in which you can transfer files.
-```unix
+```shell
 sftp your_username@hostname_or_ip_address
 ```
 To list helpful commands:
-```unix
+```shell
 help
 ```
 ### Transfer files and folders
 
 To download a file:
-```unix
+```shell
 get <filename>
 ```
 To download a folder and its contents, use the "-r" flag (also works for uploading):
-```unix
+```shell
 get -r <foldername>
 ```
 To upload a file:
-```unix
+```shell
 put <filename>
 ```
 
 ### Change folders
 To change the local folder:
-```unix
+```shell
 lcd <path/to/folder>
 ```
 To change the remote folder:
-```unix
+```shell
 cd <path/to/folder>
 ```

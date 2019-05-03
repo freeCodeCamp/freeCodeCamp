@@ -6,7 +6,7 @@ title: Use body-parser to Parse POST Requests
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 The body-parser should already be added to your project if you used the provided boilerplate, but if not it should be there as:
 
-```code
+```json
 "dependencies": {
     "body-parser": "^1.4.3",
     ...

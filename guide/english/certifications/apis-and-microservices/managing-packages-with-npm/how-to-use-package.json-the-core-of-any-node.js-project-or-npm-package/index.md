@@ -11,6 +11,6 @@ Note that there is an issue with Glitch, where the link that clones the specific
 
 You should go over to the `package.json` file in your project. As mentioned in the instructional section of the lesson, JSON is written in key pairs like this:
 
-```code
+```json
 "author": "Jane Doe",
 ```

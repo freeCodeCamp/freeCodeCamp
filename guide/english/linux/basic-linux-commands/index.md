@@ -101,7 +101,7 @@ When starting out with Linux, there are some basic commands everyone should know
 29. **locate**
 - Used to locate a file in the system  
      Example:
-     ```sh
+     ```shell
      locate sample.txt
      /home/rajasimha/Desktop/sample.txt
      ```

@@ -12,7 +12,7 @@ A partir de la versión 15.5 de React, esta característica se movió a un paque
 
 Para usarlo, se requiere que se agregue al proyecto como una dependencia emitiendo el siguiente comando en una consola.
 
-```sh
+```shell
 npm install --save prop-types 
 ```
 

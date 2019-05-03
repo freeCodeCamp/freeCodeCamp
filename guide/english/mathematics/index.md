@@ -16,7 +16,7 @@ There is this concept in mathematics: "each generating function has a sequence a
 In this section we'll show you how to include the standard math library in different languages including a short example of how you can use it.
 
 #### C#
-``` cs
+```csharp
 using System.Math;
 
 public class Calculator {
