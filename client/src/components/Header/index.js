@@ -12,31 +12,34 @@ import { Link } from '../helpers';
 import './header.css';
 
 import {
-  toggleDisplayMenu,
+  toggleDisplayMenu as toggleGuideMenu,
   displayMenuSelector
 } from '../layouts/components/guide/redux';
 
 const mapStateToProps = createSelector(
   displayMenuSelector,
-  displayMenu => ({
-    displayMenu
+  displayGuideMenu => ({
+    displayGuideMenu
   })
 );
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleDisplayMenu }, dispatch);
+  bindActionCreators({ toggleGuideMenu }, dispatch);
 
 const propTypes = {
   disableMenuButtonBehavior: PropTypes.bool,
   disableSettings: PropTypes.bool,
-  displayMenu: PropTypes.bool,
-  toggleDisplayMenu: PropTypes.func.isRequired
+  displayGuideMenu: PropTypes.bool,
+  toggleGuideMenu: PropTypes.func.isRequired
 };
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.menuButtonRef = React.createRef();
+    this.state = {
+      displayTopMenu: false
+    };
   }
 
   componentDidMount() {
@@ -50,24 +53,35 @@ class Header extends Component {
   handleClickOutside = event => {
     if (
       !this.props.disableMenuButtonBehavior &&
-      this.props.displayMenu &&
+      this.state.displayTopMenu &&
       this.menuButtonRef.current &&
       !this.menuButtonRef.current.contains(event.target)
     ) {
-      this.props.toggleDisplayMenu();
+      this.toggleTopMenu();
     }
+  };
+
+  toggleTopMenu = () => {
+    this.setState({ displayTopMenu: !this.state.displayTopMenu });
   };
 
   render() {
     const {
       disableMenuButtonBehavior,
       disableSettings,
-      displayMenu,
-      toggleDisplayMenu
+      displayGuideMenu,
+      toggleGuideMenu
     } = this.props;
     // On the guide, the menu button behaves differently from the rest of the
     // site. disableMenuButtonBehavior=true is used for guide pages to make sure
     // that only menu button clicks toggle between side nav and article.
+    const displayMenu = disableMenuButtonBehavior
+      ? displayGuideMenu
+      : this.state.displayTopMenu;
+
+    const toggleDisplayMenu = disableMenuButtonBehavior
+      ? toggleGuideMenu
+      : this.toggleTopMenu;
     return (
       <header>
         <nav id='top-nav'>
