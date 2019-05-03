@@ -1,11 +1,11 @@
 ---
 title: Python Abs Function
 ---
-`abs()` is a built-in function in Python 3, to compute the absolute value of any number. The absolute value of a number "means only how far a number is from 0" <sup>1</sup> It takes one argument `x`. The argument can be an integer, a floating point value or a  <a href='https://docs.python.org/3.0/library/cmath.html' target='_blank' rel='nofollow'>complex number</a>, in case of complex number its <a href='http://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex9-2009-1.pdf' target='_blank' rel='nofollow'>modulus</a> is returned.
+`abs()` is a built-in function in Python 3, to compute the absolute value of any number. The absolute value of a number "means only how far a number is from 0" <sup>1</sup> It takes one argument `x`. The argument can be an integer, a decimal or a  <a href='https://docs.python.org/3.0/library/cmath.html' target='_blank' rel='nofollow'>complex number</a>, in case of complex number its <a href='http://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex9-2009-1.pdf' target='_blank' rel='nofollow'>modulus</a> is returned.
 
 ## Argument
 
-It takes one argument `x` - an integer, or float, or a complex number.
+It takes one argument `x` - an integer, or decimal, or a complex number.
 
 ## Syntax
 
@@ -13,7 +13,7 @@ abs(x)
 
 ## Return Value
 
-The return value is an integer or a float. Even if complex number is passed, it would return its magnitude, computed as per complex number algebra. 
+The return value is a positive number. Even if complex number is passed, it would return its magnitude, computed as per complex number algebra. 
 
 ## Code Sample
 ```python
