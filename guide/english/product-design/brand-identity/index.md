@@ -4,6 +4,8 @@ title: Brand Identity
 
 ## Brand Identity
 
+Brand identity is how a business presents itself to, and wants to be perceived by, its consumers.
+
 Brand identity is the face of a brand. While a brand is an emotional and even philosophical concept, brand identity is the visual component of a brand that represents those larger ideas.
 
 Brand identity includes logos, typography, colors, packaging, and messaging, and it complements and reinforces the existing reputation of a brand. Successful brand identity attracts new customers while making existing customers feel at home. It’s both outward- and inward-facing.

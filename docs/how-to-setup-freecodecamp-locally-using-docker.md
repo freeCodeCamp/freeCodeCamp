@@ -176,7 +176,7 @@ Each of the above commands will take a little time to complete and you should wa
 Next you need to install a few npm packages outside of docker. You can skip this step if you are only running the app locally and will not use git.
 
 ```shell
-npm install --ignore-scripts
+npm ci --ignore-scripts
 ```
 
 All of the above needs to be run only the first time you set up the local dev environment.
@@ -214,7 +214,7 @@ npm run docker:develop
 
 Your local setup automatically populates a local user in the database. Clicking the sign in button will automatically authenticate you into the local application.
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a 404 page for the user portfolio when working locally. 
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a 404 page for the user portfolio when working locally.
 
 Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
 
@@ -438,25 +438,3 @@ Follow these steps:
 If you are stuck, and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
 
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
-
-### Troubleshooting
-
-If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
-
-```shell
-# We use a mono repo and have multiple components (server, client, tools, plugins, etc.)
-# Use this command to clean up all dependencies in all of the components
-npm run clean
-
-# Reinstall npm packages
-npm install
-
-# Bootstrap the project
-npm run bootstrap
-
-# Seed the database
-npm run seed
-
-# Restart the application
-npm run develop
-```
