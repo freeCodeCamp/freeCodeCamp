@@ -40,7 +40,6 @@ Create an adjacency matrix of an undirected graph with five nodes. This matrix s
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml
@@ -60,7 +59,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -68,11 +66,9 @@ var adjMatUndirected = [];
 ```
 
 </div>
-
 </section>
 
 ## Solution
-
 <section id='solution'>
 
 ```js

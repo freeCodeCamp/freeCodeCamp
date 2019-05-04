@@ -43,9 +43,7 @@ tests:
 </section>
 
 ## Challenge Seed
-
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -68,7 +66,6 @@ var HashTable = function() {
 </div>
 
 ### Before Test
-
 <div id='js-setup'>
 
 ```js
@@ -84,11 +81,9 @@ var hash = string => {
 ```
 
 </div>
-
 </section>
 
 ## Solution
-
 <section id='solution'>
 
 ```js

@@ -41,7 +41,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -86,9 +85,6 @@ function LinkedList() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution

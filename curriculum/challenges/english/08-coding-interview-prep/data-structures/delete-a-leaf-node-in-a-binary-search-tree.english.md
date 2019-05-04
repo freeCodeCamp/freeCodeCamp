@@ -41,7 +41,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -61,7 +60,6 @@ function BinarySearchTree() {
 </div>
 
 ### After Test
-
 <div id='js-teardown'>
 
 ```js
@@ -146,7 +144,6 @@ BinarySearchTree.prototype = {
 </section>
 
 ## Solution
-
 <section id='solution'>
 
 ```js

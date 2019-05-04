@@ -34,7 +34,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -50,11 +49,9 @@ function BinarySearchTree() {
   // change code above this line
 }
 ```
-
 </div>
 
 ### After Test
-
 <div id='js-teardown'>
 
 ```js

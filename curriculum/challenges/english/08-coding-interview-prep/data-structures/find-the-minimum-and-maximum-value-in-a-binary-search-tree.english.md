@@ -15,13 +15,11 @@ Binary search trees are very common and useful data structures because they prov
 </section>
 
 ## Instructions
-
 <section id='instructions'>
 We'll start simple. We've defined the skeleton of a binary search tree structure here in addition to a function to create nodes for our tree. Observe that each node may have a left and right value. These will be assigned child subtrees if they exist. In our binary search tree, define two methods, <code>findMin</code> and <code>findMax</code>. These methods should return the minimum and maximum value held in the binary search tree (don't worry about adding values to the tree for now, we have added some in the background). If you get stuck, reflect on the invariant that must be true for binary search trees: each left subtree is less than or equal to its parent and each right subtree is greater than or equal to its parent. Let's also say that our tree can only store integer values. If the tree is empty, either method should return <code>null</code>.
 </section>
 
 ## Tests
-
 <section id='tests'>
 
 ```yml
@@ -64,7 +62,6 @@ function BinarySearchTree() {
 </div>
 
 ### After Test
-
 <div id='js-teardown'>
 
 ```js
@@ -101,7 +98,6 @@ BinarySearchTree.prototype = {
 ```
 
 </div>
-
 </section>
 
 ## Solution
