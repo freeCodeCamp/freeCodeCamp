@@ -91,16 +91,6 @@ As we just saw, you can add more initial variables, conditions, and steps to a `
 
 Even though this type of `for` loop isn't recommended for production code, you may come across this wild bit of code in your digital travels, so it is important to be aware of it.
 
-A `for` loop without any expressions inside of it sort of looks like a person who's crying or a mime. Sometimes, I can't decide:
-
-**Do NOT run this code just yet unless you want your program to become one of Batman's coldest nemesis: Dr. Freeze.**
-
-```csharp
-for (; ;) {
-    //code here
-}
-```
-
 A `for` loop with no `condition` acts as an infinite loop. If you leave off the initialized variables and the steps of the `for` loop, you can still break out of the for loop with a reachable condition, so long as it is present in the middle of the `for` loop.  When there is no condition present, there is no way for the `for` loop to know when it needs to stop unless you explicitly tell it to.  
 
 Let's look at a simple `for` loop that's been restructured as an infinite loop that we explicitly tell to stop:
