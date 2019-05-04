@@ -49,8 +49,6 @@ For example, if I have a `for` loop that starts off with `int i` and I want to a
 
 Let's look at an example with 2 initialized variables in the `for` loop using also 2 separate steps, where `i` will be increasing by 1 with `i++` and `j` will be increasing by 2 using `j += 2`. 
 
-[Run the following code here at Repl.it](https://repl.it/@heyitsmarcus/MultipleInitandSteps?language=csharp):
-
 ```csharp
 for (int i = 0, j = 1; i < 100; i++, j += 2) {
   Console.Write("i is: {0}, j is {1}", i, j);
@@ -71,8 +69,6 @@ i is: 4, j is 9
 Since the condition in a for loop is a boolean expression, you can use boolean logic on that condition to create more open conditions or stricter conditions based on more than one variable.
 
 Let's look back at the previous for loop, but I'm going to put in one more condition.  I want to stop this `for` loop from iterating if `i` reaches 100 or `j` becomes 100.  I'm going to do this by using `&&` (and) logic to say `as long as i is less than 100 and j is less than 100, keep stepping through this loop`. 
-
-[Run the following code here at Repl.it](https://repl.it/@heyitsmarcus/MultipleForConditions?language=csharp) 
 
 ```csharp
 for (int i = 0, j = 1; i < 100 && j < 100; i++, j += 2) {
@@ -108,8 +104,6 @@ for (; ;) {
 A `for` loop with no `condition` acts as an infinite loop. If you leave off the initialized variables and the steps of the `for` loop, you can still break out of the for loop with a reachable condition, so long as it is present in the middle of the `for` loop.  When there is no condition present, there is no way for the `for` loop to know when it needs to stop unless you explicitly tell it to.  
 
 Let's look at a simple `for` loop that's been restructured as an infinite loop that we explicitly tell to stop:
-
-[Run the following code here at Repl.it](https://repl.it/@heyitsmarcus/InfiniteForLoops?language=csharp)
 
 ```csharp
 //variable must be initialized outside of the loop
