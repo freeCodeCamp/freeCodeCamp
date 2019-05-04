@@ -61,7 +61,7 @@ function findElement(arr, func) {
 
 ```javascript
 function findElement(arr, func) {
- return arr[(arr.map(func)).indexOf(true)];
+  return arr.filter(elem => func(elem))[0];
 }
 ```
 
