@@ -230,8 +230,9 @@ const IndexPage = () => (
         <Link className='large-p underlined-link' external={true} to='/donate'>
           make a tax-deductible donation here
         </Link>
+        .
       </p>
-      .<Spacer />
+      <Spacer />
       <BigCallToAction />
       <Spacer />
       <Spacer />
