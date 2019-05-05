@@ -127,28 +127,11 @@ header {
 
 /* Navbar logo */
 
-.logo-glyph {
-  height: 30px;
-  width: auto;
-}
-
-.logo {
-  display: none;
-}
-
 .logoContainer {
   margin-right: 10px;
 }
 
 @media (min-width: 735px) {
-  .logo-glyph {
-    display: none;
-  }
-
-  .logo {
-    display: block;
-  }
-
   .logoContainer {
     margin-right: 50px;
     width: 25%;
