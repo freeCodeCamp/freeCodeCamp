@@ -5,7 +5,11 @@ import { isEmpty } from 'lodash';
 
 const Suggestion = ({ handleSubmit, hit }) => {
   return isEmpty(hit) || isEmpty(hit.objectID) ? null : (
-    <div className='fcc_suggestion_item' onClickCapture={handleSubmit}>
+    <a
+      className='fcc_suggestion_item'
+      href='/search'
+      onClick={e => handleSubmit(e, hit.query)}
+    >
       <span className='hit-name'>
         {hit.objectID.includes('default-hit-') ? (
           <Highlight attribute='query' hit={hit} tagName='strong' />
@@ -13,7 +17,7 @@ const Suggestion = ({ handleSubmit, hit }) => {
           <Highlight attribute='query' hit={hit} />
         )}
       </span>
-    </div>
+    </a>
   );
 };
 
