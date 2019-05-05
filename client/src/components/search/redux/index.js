@@ -48,7 +48,6 @@ export const reducer = handleActions(
       indexName: payload
     }),
     [types.updateSearchQuery]: (state, { payload }) => {
-      console.log('query payload', payload);
       return {
         ...state,
         query: payload

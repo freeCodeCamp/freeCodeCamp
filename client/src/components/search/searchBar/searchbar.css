@@ -57,6 +57,7 @@
   justify-content: center;
 }
 .fcc_suggestion_item {
+  display: block;
   padding: 1rem;
   color: #333;
 }

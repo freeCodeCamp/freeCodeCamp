@@ -10,7 +10,8 @@ import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
   toggleSearchDropdown,
-  toggleSearchFocused
+  toggleSearchFocused,
+  updateSearchQuery
 } from '../redux';
 import SearchHits from './SearchHits';
 
@@ -21,7 +22,8 @@ const propTypes = {
   isDropdownEnabled: PropTypes.bool,
   isSearchFocused: PropTypes.bool,
   toggleSearchDropdown: PropTypes.func.isRequired,
-  toggleSearchFocused: PropTypes.func.isRequired
+  toggleSearchFocused: PropTypes.func.isRequired,
+  updateSearchQuery: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
@@ -34,7 +36,10 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleSearchDropdown, toggleSearchFocused }, dispatch);
+  bindActionCreators(
+    { toggleSearchDropdown, toggleSearchFocused, updateSearchQuery },
+    dispatch
+  );
 
 const placeholder = 'Search 8,000+ lessons, articles, and videos';
 
@@ -42,10 +47,10 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      dropdownOverride: true
-    };
     this.searchBarRef = React.createRef();
+    this.handleChange = this.handleChange.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -59,19 +64,29 @@ class SearchBar extends Component {
     document.removeEventListener('click', this.handlePageClick);
   }
 
-  handlePageClick = e => {
+  handleChange() {
+    const { isSearchFocused, toggleSearchFocused } = this.props;
+    if (!isSearchFocused) {
+      toggleSearchFocused(true);
+    }
+  }
+
+  handlePageClick(e) {
     const { toggleSearchFocused } = this.props;
     const isSearchFocusedClick = this.searchBarRef.current.contains(e.target);
     return toggleSearchFocused(isSearchFocusedClick);
-  };
+  }
 
-  handleSearch = e => {
+  handleSearch(e, query) {
     e.preventDefault();
-    const { toggleSearchDropdown } = this.props;
+    const { toggleSearchDropdown, updateSearchQuery } = this.props;
     // disable the search dropdown
     toggleSearchDropdown(false);
+    if (query) {
+      updateSearchQuery(query);
+    }
     return navigate('/search');
-  };
+  }
 
   render() {
     const { isDropdownEnabled, isSearchFocused } = this.props;
@@ -86,6 +101,7 @@ class SearchBar extends Component {
             Search
           </label>
           <SearchBox
+            onChange={this.handleChange}
             onSubmit={this.handleSearch}
             showLoadingIndicator={true}
             translations={{ placeholder }}

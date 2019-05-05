@@ -44,6 +44,10 @@ class WithInstantSearch extends Component {
     if (pathname !== prevPathname || isDropdownEnabled !== enableDropdown) {
       toggleSearchDropdown(enableDropdown);
     }
+    const { query, updateSearchQuery } = this.props;
+    if (query && pathname !== prevPathname && enableDropdown) {
+      updateSearchQuery('');
+    }
   }
 
   getSearchEnableDropdown = () => !this.props.pathname.startsWith('/search');
