@@ -120,11 +120,13 @@ Software required for both Docker and Local builds:
 | npm (comes bundled with Node)| `6.x`   | Does not have LTS releases, we use the version bundled with Node LTS |
 
 **Docker Build additional prerequisite:**
+
 | Prerequisite | Version | Notes |
 | ------------ | ------- | ----- |
-| [Docker CE](https://docs.docker.com/install/) | `Stable` |       |
+| [Docker CE](https://docs.docker.com/install/) | `Stable` | - |
 
 **Local Build additional prerequisite:**
+
 | Prerequisite | Version | Notes |
 | ------------ | ------- | ----- |
 | [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Release Notes](https://docs.mongodb.com/manual/release-notes/), Note: We are currently on `3.6`, an [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275). |
