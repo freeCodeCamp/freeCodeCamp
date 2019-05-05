@@ -13,11 +13,11 @@ localeTitle:  Итерация через ключи объекта с помо
 ### Пример 1:
 
 ```javascript
-for (let user in obj) { 
-    if(obj.user.online === true) { 
-      //code 
-    } 
-  } 
+for (let user in obj) {
+  if(obj.user.online === true) {
+    //code
+  }
+}
 ```
 
 *   В примере 2 показано, как использовать нотацию с `[square-bracket]` код будет выполнен.
@@ -25,11 +25,11 @@ for (let user in obj) {
 ### Пример 2:
 
 ```javascript
-for (let user in obj) { 
-    if(obj[user]online === true) { 
-      //code 
-    } 
-  } 
+for (let user in obj) {
+  if(obj[user].online === true) {
+    //code
+  }
+}
 ```
 
 ### Решение:
