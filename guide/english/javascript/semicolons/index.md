@@ -1,7 +1,7 @@
 ---
 title: Semicolons
 ---
-Semicolons are not required in Javascript. This is because Javascript has a feature called "Automatic Semicolon Insertion" or ASI for short. ASI puts semicolons in your Javascript for you. It is always active by default and it's a part of the language and can not be disabled.
+Semicolons are not required in JavaScript. This is because JavaScript has a feature called "Automatic Semicolon Insertion" or ASI for short. ASI puts semicolons in your JavaScript for you. It is always active by default and it's a part of the language and can not be disabled.
 
 ASI has a set of rules it uses to determine where it should insert semicolons. If there is already a semicolon in place, it won't change anything. See <a href='http://stackoverflow.com/a/2846298/3467946' target='_blank' rel='nofollow'>this StackOverflow answer</a> for more information on how ASI works.
 
@@ -18,7 +18,7 @@ A consistent coding style makes code more readable. Decide whether you will or w
 
 ## Errors you might run into
 
-When Javascript was first made it was meant to aid beginners to get into programming. Nobody wants to be searching for a dang semi-colon in their code when they first start programming. So the choice of semi-colons was implemented, as stated above they are technically there. 
+When JavaScript was first made it was meant to aid beginners to get into programming. Nobody wants to be searching for a dang semi-colon in their code when they first start programming. So the choice of semi-colons was implemented, as stated above they are technically there. 
 
 For example:
 ```javasctipt 
@@ -32,7 +32,7 @@ let z = foo(10);
 z(10)// TypeError z is not a function
 // Because of Automatic Semicolon Insertion, our inner function does not exist.
 ```
-Javascript will implement semi-colons where they are expected. 
+JavaScript will implement semi-colons where they are expected. 
 
 ### Other resources
 

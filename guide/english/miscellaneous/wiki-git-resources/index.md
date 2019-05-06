@@ -39,7 +39,7 @@ Git is a free and open source distributed version control system designed to han
 *   <a href='http://cbx33.github.io/gitt/' target='_blank' rel='nofollow'>Git In The Trenches</a> - Git In The Trenches, or GITT is designed to be a book that focusses on teaching people to use Git by associating with scenarios that are experienced by a fictional company called Tamagoyaki Inc. Download this book in PDF, mobi, or ePub form for free.
 *   <a href='https://git-scm.com/docs/gittutorial' target='_blank' rel='nofollow'>Official Git Tutorial</a> - This tutorial explains how to import a new project into Git, make changes to it, and share changes with other developers.
 *   <a href='https://git-scm.com/docs/user-manual.html' target='_blank' rel='nofollow'>Official Git User Manual</a> - This manual is designed to be readable by someone with basic UNIX command-line skills, but no previous knowledge of Git.
-*   <a href='https://try.github.io' target='_blank' rel='nofollow'>Try Git Tutorial by Github and CodeSchool</a> - This tutorial is a quick 15 minutes sprint to get started with Git within the browser.
+*   <a href='https://try.github.io' target='_blank' rel='nofollow'>Try Git Tutorial by GitHub and CodeSchool</a> - This tutorial is a quick 15 minutes sprint to get started with Git within the browser.
 
 ## Other Resources
 

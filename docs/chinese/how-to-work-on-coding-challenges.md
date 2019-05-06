@@ -1,14 +1,27 @@
+<table>
+    <tr>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+    </tr>
+</table>
+
 ＃如何处理编码挑战
 
 ###在GitHub上更改
 
-每个挑战都存储在自己的降价文件中。这使得从GitHub中编辑挑战变得容易。
+每个挑战都存储在自己的markdown文件中。这使得从GitHub中编辑挑战变得容易。
 
-您无需在本地系统上运行任何操作即可进行更改。
+您不需运行本地系统，即可进行更改。
 
-在GitHub界面中找到要修改的文件后，单击铅笔图标开始编辑文件。这将自动创建项目的分支，如果您还没有。
+在GitHub界面中找到要修改的文件后，单击铅笔图标开始编辑文件。如果您还没有这个项目的分支，将会自动创建一个新的分支。
 
-您还可以克隆项目并在计算机上进行本地编辑。如需帮助，请阅读主要[贡献指南]（/ CONTRIBUTING.md）。
+您还可以复制项目并在计算机上进行本地编辑。如需帮助，请阅读主要[贡献指南](/CONTRIBUTING.md)。
 
 ###挑战模板
 

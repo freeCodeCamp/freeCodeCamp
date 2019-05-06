@@ -10,7 +10,7 @@ title: queue
 
 The data type you store within a queue goes within angle brackets next to the queue keyword. For example, if you would like to store a collection of integers the queue would be `std::queue<int> queue_name`
 
-### Queue LIFO Explanation
+### Queue FIFO Explanation
 
 `queue` allows us to push/enqueue and pop/dequeue in specific order. **Push** means inserting an object at the front of the queue. **Pop** means pulling out the "oldest" object from end of the queue. So when you push it is at the front and when you pop you extract the oldest element.
 
