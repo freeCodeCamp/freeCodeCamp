@@ -5,13 +5,16 @@ title: Advantages of Linux
 
 Linux updates happen through the global collaboration of developers. Bugs are documented and resolved much quicker with this type of support. Also, since the developers are also the end-users they have the proper motivation to make sure it meets user's needs and that it is designed to run well.
 
+## Open Source.
+All of the code that makes any Linux distribution work is freely available for anyone to review. This gives an added layer of transparency and guarantees that it would be difficult for someone to commit code with malicious purposes. This allows for constant code review by experienced programmers and developers to ensure the best available experience for the user as the operating system is continuously refined.
+
 ## Less risk.
 
-Software is only as good as the support its given. Imagine this: a piece of software is created by the company XYZ and later down the road, they go bankrupt or get bought by another company that decides to cut its support. The software would never see improvements or fixes and therefore its usefulness would inevitably erode and die. Linux is owned and operated by no single entity or company, so this situation cannot happen. More than that anyone is free to pick it up and contribute as well. The risk of losing support for Linux is very unlikely due to its overwhelming popularity and use.
+Software is only as good as the support it's given. Imagine this: a piece of software is created by the company XYZ and later down the road, they go bankrupt or get bought by another company that decides to cut its support. The software would never see improvements or fixes and therefore its usefulness would inevitably erode and die. Linux is owned and operated by no single entity or company, so this situation cannot happen. More than that anyone is free to pick it up and contribute as well. The risk of losing support for Linux is very unlikely due to its overwhelming popularity and use.
 
 ## Lightweight.
 
-Linux's requirements for running on a system are much lower than that of Windows or Mac. With the right Linux distribution a user can have a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
+Linux's requirements for running on a system are much lower than that of Windows or Mac. The right Linux distribution can allow a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
 
 ## Variety.
 

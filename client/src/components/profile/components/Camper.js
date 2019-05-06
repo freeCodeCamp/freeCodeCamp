@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row, Image } from '@freecodecamp/react-bootstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
 
 import SocialIcons from './SocialIcons';
@@ -81,6 +81,7 @@ function Camper({
         isWebsite={isWebsite}
         linkedin={linkedin}
         twitter={twitter}
+        username={username}
         website={website}
       />
       <br />

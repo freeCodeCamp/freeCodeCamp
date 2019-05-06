@@ -2,7 +2,7 @@
 title: Arrow Functions
 ---
 
-Arrow functions are a new ES6 syntax for writing JavaScript function expressions. The shorter syntax saves time, as well as simplifying the function scope.
+Arrow functions are a new ES6 syntax for writing JavaScript function expressions. The shorter syntax saves time and simplifies the function scope.
 
 ## What are arrow functions?
 
@@ -85,9 +85,33 @@ An arrow function does not have its own `arguments` object. For example, if you 
 const myFunc = (...n) => {
   console.log('The first argument is', n[0]);
 }
-
 myFunc(10,20,30,40,40); // output: The first argument is 10
 ```
+
+Because of this, an arrow function cannot be used as a constructor, hence there's no need for a `prototype` property.
+
+```javascript
+(() => {}).hasOwnProperty('prototype');  // false
+```
+
+### No arguments object
+
+Arrow functions provide no arguments object. Therefore, if the arguments object is used in an arrow function it will reference the arguments of the enclosing scope. For example,
+
+```
+const arguments = ["arg1", "arg2", "arg3"];
+
+const arrow = () => arguments[1];
+
+console.log(arrow("innerarg1", "innerarg2", "innerarg3"));//arg2-ignores local arguments goes to enclosed scope.
+
+function regular() {
+  console.log(arguments[1]);
+}
+console.log(regular("innerarg1", "innerarg2", "innerarg3"));//innerarg2-uses local arguments.
+
+```
+
 #### Further Reading
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>MDN link</a>

@@ -2,11 +2,46 @@
 title: Roman Numerals
 ---
 ## Roman Numerals
+  
+I = 1 <br>
+V = 5 <br>
+X = 10 <br>
+L = 50 <br>
+C = 100 <br>
+D = 500 <br>
+M = 1000 <br>
 
-The [numeric system](https://en.wikipedia.org/wiki/Numeric_system) represented by **Roman numerals** originated in [ancient Rome](https://en.wikipedia.org/wiki/Ancient_Rome) and remained the usual way of writing numbers throughout Europe well into the [Late Middle Ages](https://en.wikipedia.org/wiki/Late_Middle_Ages). Numbers in this system are represented by combinations of letters from the [Latin alphabet](https://en.wikipedia.org/wiki/Latin_alphabet). Roman numerals, as used today, are based on seven symbols.
+How to Remember:<br>
+"M e D i C a L X a V I e r".<br>
+It has the roman numerals in descending order from 1000 to 1.
 
-<img src="https://www.dadsworksheets.com/charts/roman-numerals-chart/roman-numerals-1-100.jpg" title="Roman Numerals" />
+When a symbol appears after a larger (or equal) symbol, it is added:
+<pre>
+<b>Example:</b>
+II = 2, (1 + 1 = 2)
+VI = 6, (5 + 1 = 6)
+XI = 11, (10 + 1 = 11)
+</pre>
+
+But if a symbol appears before a larger symbol, it is subtracted:
+<pre>
+<b>Example:</b>
+IV = 4, (5 - 1 = 4)
+IX = 9, (10 - 1 = 9)
+</pre>
+
+Don't use the same symbol more than three times in a row:
+<pre>
+<b>Example:</b>
+III = 3
+VIII = 8
+XXX = 30
+LXXX = 80
+CCC = 300
+DCCC = 800
+MMM = 3000
+</pre>
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
 [Wikipedia: Roman numerals](https://en.wikipedia.org/wiki/Roman_numerals)

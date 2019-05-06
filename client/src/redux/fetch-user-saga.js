@@ -16,18 +16,21 @@ function* fetchSessionUser() {
   }
   try {
     const {
-      data: { user = {}, result = '' }
+      data: { user = {}, result = '', sessionMeta = {} }
     } = yield call(getSessionUser);
     const appUser = user[result] || {};
-    yield put(fetchUserComplete({ user: appUser, username: result }));
+    yield put(
+      fetchUserComplete({ user: appUser, username: result, sessionMeta })
+    );
   } catch (e) {
     yield put(fetchUserError(e));
   }
 }
 
-function* fetchOtherUser({ payload: maybeUser }) {
+function* fetchOtherUser({ payload: maybeUser = '' }) {
   try {
-    const { data } = yield call(getUserProfile, maybeUser);
+    const maybeUserLC = maybeUser.toLowerCase();
+    const { data } = yield call(getUserProfile, maybeUserLC);
 
     const { entities: { user = {} } = {}, result = '' } = data;
     const otherUser = user[result] || {};

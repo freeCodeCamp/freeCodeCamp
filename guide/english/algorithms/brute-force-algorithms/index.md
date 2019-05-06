@@ -12,7 +12,9 @@ Some more examples of brute force algorithms are:
 - A 5-digit password, in the worst case scenario, would take 10<sup>5</sup> tries to crack.
 - A brute-force algorithm to find the divisors of a natural number n would enumerate all integers from 1 to n, and check whether each of them divides n without remainder.
 
-The time complexity of brute force is <b> O(n*m) </b>. So, if we were to search for a string of 'n' characters in a string of 'm' characters using brute force, it would take us n * m tries.
+The time complexity of brute force is <b> O(n*m) </b>. So, if we were to search for a string of 'n' characters in a string of 'm' characters using brute force, it would take  O(n*m) time.
+
+Generally, brute force approaches should be avoided for more optimal algorithms, especially when the functions using these algorithms will scale to larger and larger numbers. The difference between brute force and optimized algorithms may not be immediately apparent when dealing with smaller numbers and lesser chunks of time, but the difference between a brute-force O(n^3) algorithm and an optimized O(nlog(n)) algorithm becomes very apparent for problems of larger scales. 
 
 #### More Information:
 

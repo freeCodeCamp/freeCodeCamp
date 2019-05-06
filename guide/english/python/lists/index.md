@@ -122,7 +122,36 @@ Also, we can do this:
 ```
 **Mutable:**
 
-`lists` are mutable containers. Mutable containers are containers that allow changes to which objects are contained by the container. **TODO: ADD MORE?**
+`lists` are mutable containers. Mutable containers are containers that allow changes to which objects are contained by the container. 
+
+We can modify the contents of a list after we have created it, which isn't possible in the case of immutable containers, like tuples.
+
+```python
+>>> L = [1, 2, 3, 4, 6]
+>>> L[4] = 5
+>>> print(L)
+[1, 2, 3, 4, 5]
+```
+We see that the 4th element in the list `L` has been modified. This property of lists is quite convenient, but it can also be deceiving if we don't keep track of what we're doing.
+Suppose we create a list and assign a value to it.
+```python
+>>> List_old = [1, 2, 3]
+```
+Python binds the `List_old` list to the value `[1, 2, 3]`. Now, we define a new list named `List_new` and assign to it the value `List_old`.
+```python
+>>> List_new = List_old
+```
+This binds `List_new` to the same object that `List_old` was bound to, i.e., `[1, 2, 3]`.
+
+![listmutability](https://user-images.githubusercontent.com/27547933/47269591-e4241b80-d57d-11e8-8487-3653bed30b5f.jpg)
+
+Since both the lists are pointing to the same object, if we modify one, the other gets modified as well.
+```python
+>>> List_new.append(9)
+>>> print(List_old)
+[1, 2, 3, 4, 5, 9]
+```
+We see that adding the value *9* to `List_new` also adds the same value to `List_old`.
 
 _Re-arranging elements in a list_
 

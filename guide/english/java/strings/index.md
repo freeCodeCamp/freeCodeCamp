@@ -18,7 +18,7 @@ true
 You can create a String Object in the following ways:
 
 1. `String str = "I am a String"; //as a String literal`
-1. `String str = "I am a " + "String"; //as a constant expression`
+1. `String str = "I" + " am" + " a" + " String"; //as a constant expression (note that spaces are in the quotes)`
 1. `String str = new String("I am a String"); //as a String Object using the constructor`
 
 You might be thinking: What's the difference between the three?
@@ -82,8 +82,10 @@ s3: example
 ```
 
 #### Comparing Strings 
+
 If you want to compare the value of two String variables, you can't use `==`. This is due to the fact that this will compare the references of the variables
 and not the values that are linked to them. To compare the stored values of the Strings you use the `.equals()` method.
+
 
 ```java
 boolean equals(Object obj)
@@ -217,6 +219,43 @@ The result will be:
 ```
 Free
 ```
+
+
+#### String Case Conversion
+
+1. `.toLowerCase()` - This method will convert the string into lower case characters.
+   Example:
+   ```java
+   String text1 = "Welcome99";
+   String text2 = "WELCOME";
+   String text3 = "well";
+   System.out.println(text1.toLowerCase());
+   System.out.println(text2.toLowerCase());
+   System.out.println(text3.toLowerCase());
+   ```
+   The output will be:-
+   ```
+   welcome99
+   welcome
+   well
+   ```
+2. `.toUpperCase()` - This method will convert the string into upper case characters.
+   Example:
+
+   ```java
+   String text1 = "Welcome99";
+   String text2 = "WELCOME";
+   String text3 = "well";
+   System.out.println(text1.toUpperCase());
+   System.out.println(text2.toUpperCase());
+   System.out.println(text3.toUpperCase());
+   ```
+   The output will be:-
+   ```
+   WELCOME99
+   WELCOME
+   WELL
+   ```
 
 **More Information:**
 - [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)

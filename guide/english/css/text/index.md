@@ -92,6 +92,17 @@ p {
 }
 ```
 
+  
+#### Text overflow
+
+``` css
+p {
+    text-overflow: ellipsis;
+}
+```
+
+The `text-overflow` property is used to specify how hidden overflowed content is ended, to communicate to users that the content has been cut off. For the property to work, it must be used with two other CSS properties: overflow and white-space. For example, `overflow: hidden` and `white-space: nowrap`.
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 - [W3Schools CSS text](https://w3schools.com/css/css_text.asp)

@@ -8,7 +8,7 @@ title: Vertical Align CSS
 For example, you can use ```vertical-align``` like this to align an image:
 ```
 img {
-    vertical-align: top;
+  vertical-align: top;
 }
 ```
 These are the valid values for ```vertical-align```:
@@ -19,7 +19,7 @@ These are the valid values for ```vertical-align```:
 * ```top``` - This aligns the element so that the top of this element is in align with the top of the tallest element on the line
 * ```bottom``` - This aligns the element so that the bottom of this element is in align with the bottom of the lowest element on the line
 * ```middle``` - This aligns the element so that it is in the middle of the parent element
-* ```text=top``` - This aligns the top of this element so that it is aligned with the top of the parent element's top
+* ```text-top``` - This aligns the top of this element so that it is aligned with the top of the parent element's top
 * ```text-bottom``` - This aligns the bottom of this element so that it is aligned with the bottom of the parent element's text
 
 #### More Information:

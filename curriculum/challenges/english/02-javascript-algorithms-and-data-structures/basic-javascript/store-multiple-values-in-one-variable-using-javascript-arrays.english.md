@@ -2,6 +2,7 @@
 id: bd7993c9c69feddfaeb8bdef
 title: Store Multiple Values in one Variable using JavaScript Arrays
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/crZQWAm'
 ---
 
 ## Description

@@ -75,7 +75,7 @@ $("#alert").click();
 
 Now, whenever the page loads, the click event will be triggered when we enter or reload the page, and show the assigned alert.
 
-Also you should prefer to use .on('click',...) over .click(...) because the former can use less memory and work for dynamically added elements.
+Also you should prefer to use ```.on("click",...)``` over ```.click(...)``` because the former can use less memory and work for dynamically added elements.
 
 <a href='https://jsfiddle.net/gspk6gxt/' target='_blank' rel='nofollow'>jsFiddle</a>
 

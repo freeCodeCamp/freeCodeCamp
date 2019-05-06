@@ -89,7 +89,9 @@ export class ProjectForm extends Component {
     }
   }
   handleSubmit(values) {
-    const { keysDown: { Control, Enter } } = this.state;
+    const {
+      keysDown: { Control, Enter }
+    } = this.state;
     if ((Control && Enter) || !Enter) {
       this.props.openModal('completion');
       this.props.updateProjectForm(values);

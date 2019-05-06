@@ -9,10 +9,7 @@ This list was created by compiling common issues and questions when working on t
 
 3.  Use the chrome javascript debugger console in conjunction with something like the netbeans IDE or sublime text to write your code. Both are free to download. The freeCodeCamp code editor is great but you can get a lot more feedback on your code's behaviour by using chrome's JS debugger and a bunch of **console.log(myVariableGoesHere);**
 
-4. Posting your code in Gitter is as simple as adding a line consisting of only 3 backtics **`** then your code in a new line and another line with 3 more backtics.`
-
-5. Ask for help in Gitter! I can personally relate to staring at a problem for hours, then seeing the solution as soon as I try to explain it to someone, or having someone say something like "typo on line 6" as soon as they see it. Take advantage of message boards and social media groups as well as in-person peers to attempt to have a fresh set of eyes glance over your work. 
-
+4. Use your resources. Stack overflow is your friend, and so is Google. However, don't limit yourself to just non-human resources. Sometimes talking about your code to a real person is enough to get you back on track, or spur some new ideas.
 
 References
 

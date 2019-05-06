@@ -9,17 +9,22 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 As in, any user can just go to /profile whether they authenticated or not by typing in the url. We want to prevent this by checking if the user is authenticated first before rendering the profile page. This is the perfect example of when to create a middleware.
 The challenge here is creating the middleware function <code>ensureAuthenticated(req, res, next)</code>, which will check if a user is authenticated by calling passports isAuthenticated on the <em>request</em> which in turn checks for <em>req.user</em> is to be defined. If it is then <em>next()</em> should be called, otherwise we can just respond to the request with a redirect to our homepage to login. An implementation of this middleware is:
-<pre>function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-      return next();
-  }
-  res.redirect('/');
-};</pre>
+<blockquote>
+function ensureAuthenticated(req, res, next) {<br>
+&nbsp;&nbsp;if (req.isAuthenticated()) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return next();<br>
+&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;res.redirect('/');<br>
+};
+</blockquote>
 Now add <em>ensureAuthenticated</em> as a middleware to the request for the profile page before the argument to the get request containing the function that renders the page.
-<pre>app.route('/profile')
-  .get(ensureAuthenticated, (req,res) => {
-       res.render(process.cwd() + '/views/pug/profile');
-  });</pre>
+<blockquote>
+app<br>
+&nbsp;.route('/profile')<br>
+&nbsp;.get(ensureAuthenticated, (req,res) => {<br>
+&nbsp;&nbsp;res.render(process.cwd() + '/views/pug/profile');<br>
+&nbsp;});
+</blockquote>
 Submit your page when you think you've got it right.
 </section>
 

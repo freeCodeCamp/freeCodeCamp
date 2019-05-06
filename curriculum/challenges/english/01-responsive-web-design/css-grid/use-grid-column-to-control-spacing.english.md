@@ -27,8 +27,10 @@ Make the item with the class <code>item5</code> consume the last two columns of 
 
 ```yml
 tests:
-  - text: <code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.
-    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), '<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.');
+  - text: <code>item5</code> class should have a <code>grid-column</code> property.
+    testString: assert($('style').text().replace(/\s/g, '').match(/\.item5{.*grid-column:.*}/g));
+  - text: <code>item5</code> class should have a <code>grid-column</code> property which results in the <code>div</code> with the <code>item5</code> consuming the last two columns of the grid.
+    testString: assert(hasCorrectSpacing());
 
 ```
 
@@ -77,7 +79,22 @@ tests:
 
 </div>
 
+### Before Test
+<div id='html-setup'>
 
+```html
+<script>
+const hasCorrectSpacing = () => {
+  const contTwoPlusThreePlusGapWidth = $('.item2').width() * 2 + 10;
+  const item5Width = $('.item5').width();
+  const diff = Math.abs(contTwoPlusThreePlusGapWidth - item5Width);
+  /* To avoid rounding errors the largest allowed diff is set at 0.01px */
+  return diff <= 0.01; 
+};
+</script>
+```
+
+</div> 
 
 </section>
 
@@ -85,8 +102,37 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = ".item5 {grid-column: 2 / 4;}"
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+
+  .item5 {
+    background: PaleGreen;
+    grid-column: 2 / 4;
+  }
+
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+</style>
+
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
 ```
 
 </section>

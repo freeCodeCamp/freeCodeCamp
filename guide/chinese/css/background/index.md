@@ -22,7 +22,7 @@ background属性允许您使用图像和颜色为网页创建背景。
 
 ![fullbackground](https://user-images.githubusercontent.com/26467304/31036038-845567f2-a538-11e7-8e6c-8a52bb0d44b8.png)
 
-以下是为两个元素设置颜色的示例。这将设置标题的背景 到紫色，页面的其余部分为蓝色。
+以下是为两个元素设置颜色的示例。这将设置标题的背景为紫色，页面的其余部分为蓝色。
 
 ```css
   body { 

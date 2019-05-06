@@ -60,7 +60,7 @@ Unions are declared in the same was as structs, but are different because only o
 typedef union{
       int circle;
       int triangle;
-      int ovel;
+      int oval;
 }shape;
 ```
 You should use `union` in such case where only one condition will be applied and only one variable will be used.

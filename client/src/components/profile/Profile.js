@@ -4,10 +4,7 @@ import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
-import Layout from '../layouts/Default';
-import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
-import FullWidthRow from '../helpers/FullWidthRow';
-import Spacer from '../helpers/Spacer';
+import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
 import Camper from './components/Camper';
 import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
@@ -35,7 +32,7 @@ const propTypes = {
 function TakeMeToTheChallenges() {
   return (
     <CurrentChallengeLink>
-      <Button block={true} bsSize='lg' bsStyle='primary'>
+      <Button block={true} bsSize='lg' bsStyle='primary' className='btn-invert'>
         Take me to the Challenges
       </Button>
     </CurrentChallengeLink>
@@ -44,9 +41,9 @@ function TakeMeToTheChallenges() {
 
 function renderIsLocked(username) {
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
-        <title>{username} | freeCodeCamp.org</title>
+        <title>Profile | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size={2} />
       <Grid>
@@ -65,9 +62,10 @@ function renderIsLocked(username) {
         </FullWidthRow>
         <FullWidthRow>
           <TakeMeToTheChallenges />
+          <Spacer />
         </FullWidthRow>
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 
@@ -82,7 +80,7 @@ function renderSettingsButton() {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              >
+            >
               Update my settings
             </Button>
           </Link>
@@ -131,9 +129,9 @@ function Profile({ user, isSessionUser }) {
     return renderIsLocked(username);
   }
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
-        <title>{username} | freeCodeCamp.org</title>
+        <title>Profile | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size={2} />
       <Grid>
@@ -166,7 +164,7 @@ function Profile({ user, isSessionUser }) {
           />
         ) : null}
       </Grid>
-    </Layout>
+    </Fragment>
   );
 }
 
