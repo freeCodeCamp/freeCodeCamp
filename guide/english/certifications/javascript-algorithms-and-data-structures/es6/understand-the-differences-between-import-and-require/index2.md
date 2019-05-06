@@ -18,6 +18,6 @@ Fill in the blanks: `import { function_name } from "file_name"`. Your function n
 
 ```javascript
 "use strict";
-import { capitalizeString } from "string-functions";
+import { capitalizeString } from "string_functions";
 capitalizeString("hello!");
 ```
