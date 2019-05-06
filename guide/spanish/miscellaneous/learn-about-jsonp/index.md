@@ -23,6 +23,6 @@ Esto activa una devolución de llamada automática después de que los datos se 
 ### Más información:
 
 *   [Wikipidea / JSONP](https://en.wikipedia.org/wiki/JSONP)
-*   [JSONP y JQuery](https://learn.jquery.com/ajax/working-with-jsonp)
-*   [Más JSONP con JQuery](http://api.jquery.com/jquery.getjson/#jsonp)
+*   [JSONP y jQuery](https://learn.jquery.com/ajax/working-with-jsonp)
+*   [Más JSONP con jQuery](http://api.jquery.com/jquery.getjson/#jsonp)
 *   [Ajax y JSONP](http://stackoverflow.com/questions/5943630/basic-example-of-using-ajax-with-jsonp)

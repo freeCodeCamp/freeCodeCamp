@@ -3,7 +3,7 @@ title: C++ STL Sets
 ---
 
 ## Introduction of sets in C++ STL library
-Sets are a type of associative containers in which each element has to be unique.The value of the element cannot be modified once it is added to the set, though it is possible to remove and add the modified value of that element. They are implemented using red-black tree.
+Sets are a type of associative container in which each element has to be unique. The value of the element cannot be modified once it is added to the set, though it is possible to remove and add the modified value of that element. They are implemented using [red-black tree](https://guide.freecodecamp.org/algorithms/red-black-trees/).
 
 ## Benefits of using sets
 1. It stores only unique values.
@@ -13,8 +13,11 @@ Sets are a type of associative containers in which each element has to be unique
 
 Example:
 ```c++
-#include<bits/stdc++.h>
-using namespace std;
+#include<iostream>
+#include <set>
+using std::set;
+using std::cout;
+using std::endl;
 int main()
 {
   set <int> s;
@@ -25,13 +28,14 @@ int main()
   s.insert(2);    //inserting same element 2
   s.insert(6);
   for(auto i:s)
-    cout<<i<<" ";
-  cout<<s.size()<<endl; //gives the size of set
+    cout << i << " ";
+  cout << s.size() << endl; //gives the size of set
 
   s.erase(5);     // erasing element 5 from set s
 return 0;
 }
 ```
+[Try this code out yourself!](https://wandbox.org/permlink/XIFK4d9suQdGniFm)
 
 Creating a set object
 ```c++
@@ -46,8 +50,8 @@ s.insert(value_to_be_inserted);
 Accessing set elements
 ```c++
 set <int>::iterator it;
-for(it=s.begin(); it!=s.end(); ++it)
-  cout<<*it;
+for(it = s.begin(); it != s.end(); ++it)
+  cout << *it;
 ```
 
 

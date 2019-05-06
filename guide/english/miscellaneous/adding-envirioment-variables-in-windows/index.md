@@ -12,3 +12,7 @@ title: Adding Envirioment Variables in Windows
 ### Via Command Line
 
 Refer to <a href='http://superuser.com/a/284351/275797' target='_blank' rel='nofollow'>this answer</a> on Super User.
+
+### If Using Node
+
+Add the [dotenv](https://www.npmjs.com/package/dotenv) package to your application. You can then store your environment variables in a `.env` file. Be sure to remember to add `*.env` to your `.gitignore` file.
