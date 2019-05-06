@@ -1,8 +1,12 @@
 ---
 title: SQL Group By Statement
-localeTitle: Grupo SQL por declaración
+localeTitle: Group By en declaración SQL
 ---
-## Grupo SQL por Statemet
+## Group By en declaración SQL
+
+### Declaración Group By
+
+La declaración GROUP BY generalmente es usada cuando se usan funciones de agregación (Conteos, Máximos, Mínimos, Sumas, Promedios) para agrupar el resultado por una o más columnas y que su resultado sea resumido.
 
 ### Ejemplo de uso
 
@@ -18,9 +22,9 @@ Al ordenar este conjunto de datos en un orden descendente (DESC), los candidatos
 SELECT Candidate, Election_year, sum(Total_$), count(*) 
  FROM combined_party_data 
  WHERE Election_year = 2016 
- GROUP BY Candidate, Election_year -- this tells the DBMS to summarize by these two columns 
- HAVING sum(Total_$) > 20000000  -- limits the rows presented from the summary of money ($20 Million USD) 
- ORDER BY sum(Total_$) DESC; -- orders the presented rows with the largest ones first. 
+ GROUP BY Candidate, Election_year -- indica al DBMS que agregue por estas dos columnas, en este caso suma Total_$ y cuenta el número de filas en las que coinciden Candidate y Election_year
+ HAVING sum(Total_$) > 20000000  -- limita las filas que se muestran a aquellas que superan los 20M (una vez sumados los datos según la claúsula GROUP BY) 
+ ORDER BY sum(Total_$) DESC; -- ordena las filas resultantes, con la suma más grande primero
 ```
 
 ```text
@@ -37,6 +41,10 @@ SELECT Candidate, Election_year, sum(Total_$), count(*)
  +--------------------------------------------------+---------------+-------------------+----------+ 
  7 rows in set (0.01 sec) 
 ```
+### Errores comunes al usar Group By
+
+Al usar la clausula GROUP BY el error más frecuente en el que se puede caer es poner más campos en la agrupación que en el select, haciendo que nuestros datos no sean del todo resumidos y se repitan en algunas ocasiones.
+
 
 Al igual que con todas estas cosas de SQL, hay MUCHO MÁS que lo que está en esta guía introductoria.
 
