@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244c7
 title: Accessing Object Properties with Dot Notation
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cGryJs8'
 ---
 
 ## Description
@@ -23,15 +24,15 @@ Read in the property values of <code>testObj</code> using dot notation. Set the 
 ```yml
 tests:
   - text: <code>hatValue</code> should be a string
-    testString: 'assert(typeof hatValue === "string" , "<code>hatValue</code> should be a string");'
+    testString: assert(typeof hatValue === 'string' , '<code>hatValue</code> should be a string');
   - text: The value of <code>hatValue</code> should be <code>"ballcap"</code>
-    testString: 'assert(hatValue === "ballcap" , "The value of <code>hatValue</code> should be <code>"ballcap"</code>");'
+    testString: assert(hatValue === 'ballcap' , 'The value of <code>hatValue</code> should be <code>"ballcap"</code>');
   - text: <code>shirtValue</code> should be a string
-    testString: 'assert(typeof shirtValue === "string" , "<code>shirtValue</code> should be a string");'
+    testString: assert(typeof shirtValue === 'string' , '<code>shirtValue</code> should be a string');
   - text: The value of <code>shirtValue</code> should be <code>"jersey"</code>
-    testString: 'assert(shirtValue === "jersey" , "The value of <code>shirtValue</code> should be <code>"jersey"</code>");'
+    testString: assert(shirtValue === 'jersey' , 'The value of <code>shirtValue</code> should be <code>"jersey"</code>');
   - text: You should use dot notation twice
-    testString: 'assert(code.match(/testObj\.\w+/g).length > 1, "You should use dot notation twice");'
+    testString: assert(code.match(/testObj\.\w+/g).length > 1, 'You should use dot notation twice');
 
 ```
 
@@ -63,7 +64,7 @@ var shirtValue = testObj;    // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
 ```
 
 </div>

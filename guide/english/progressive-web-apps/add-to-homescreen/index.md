@@ -4,7 +4,7 @@ title: Add To Homescreen
 
 ## Add To Homescreen
 
- * Another important file after service worker in PWA is manifest.json, Which helps your webapp to get installed on the users homescreen like a native mobile app. This file contains the informations of your web app to work standalone similar to native mobile apps. The manifest is explained in detail below.
+ * Another important file in addition to service worker in PWA is manifest.json, Which helps your webapp to get installed on the user's homescreen like a native mobile app. This file contains the informations of your web app to work standalone similar to native mobile apps. The manifest is explained in detail below.
 
 ### Browser Support for Add To Homescreen
 
@@ -16,7 +16,7 @@ You can see the latest status of browser support of this feature [here](https://
 
 ### On Android
 
-On Android, the "add to homescreen" banner comes up automatically if you meet the following requirements given below. 
+On Android, the "add to homescreen" banner comes up automatically if you meet the requirements given below. 
 
 This is what it should look like on Android:
 
@@ -99,13 +99,13 @@ This is what it should look like on Android:
 * `short name` is the short name of the web app. (It will be shown below the icon of your application)
 * `theme_color` is the color of the top of the browser.
 * `background_color` is the background color of the launch screen.
-* `display` is the way the web app should display once launched on the phone.Right now there of 4 different options available now. They are,
-    * `fullscreen` - Tkes the whole space of your mobile screen.
-    * `standalone` - This option will make your app to work like a native mobile application. this makes the application to open on a new window, and place your application icon launcher on the mobile.
+* `display` is the way the web app should display once launched on the phone. Right now there are 4 different options available. They are:
+    * `fullscreen` - Takes the whole space of your mobile screen.
+    * `standalone` - This option will make your app work like a native mobile application. This makes the application to open on a new window, and place your application icon launcher on the mobile.
     * `minimal-ui` - This option is similar to standalone but with less UI Options
     * `browser` - This is the default one. This will open the link in your browser as a new window
 * `start_url` define the starting url of the website.
-* `icons` is an array that store all the images location, sizes and type.
+* `icons` is an array that stores all image locations, sizes and types.
 
 ### On other devices
 
@@ -131,7 +131,7 @@ On iOS, the "add to homescreen" button must be added manually. Add the following
 
 **Windows**
 
-On windows phone, add the following meta tags to the head section of your HTML:
+On Windows phone, add the following meta tags to the head section of your HTML:
 
 ```html
 <meta name="msapplication-TileImage" content="/assets/images/icons/icon-144x144.png">

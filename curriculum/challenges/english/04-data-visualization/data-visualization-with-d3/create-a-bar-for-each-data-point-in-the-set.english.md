@@ -1,8 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 ---
 
@@ -25,13 +23,13 @@ Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> met
 ```yml
 tests:
   - text: Your document should have 9 <code>rect</code> elements.
-    testString: 'assert($("rect").length == 9, "Your document should have 9 <code>rect</code> elements.");'
+    testString: assert($('rect').length == 9, 'Your document should have 9 <code>rect</code> elements.');
   - text: Your code should use the <code>data()</code> method.
-    testString: 'assert(code.match(/\.data/g), "Your code should use the <code>data()</code> method.");'
+    testString: assert(code.match(/\.data/g), 'Your code should use the <code>data()</code> method.');
   - text: Your code should use the <code>enter()</code> method.
-    testString: 'assert(code.match(/\.enter/g), "Your code should use the <code>enter()</code> method.");'
+    testString: assert(code.match(/\.enter/g), 'Your code should use the <code>enter()</code> method.');
   - text: Your code should use the <code>append()</code> method.
-    testString: 'assert(code.match(/\.append/g), "Your code should use the <code>append()</code> method.");'
+    testString: assert(code.match(/\.append/g), 'Your code should use the <code>append()</code> method.');
 
 ```
 

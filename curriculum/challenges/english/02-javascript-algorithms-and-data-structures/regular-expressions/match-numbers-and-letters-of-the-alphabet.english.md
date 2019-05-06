@@ -23,11 +23,11 @@ Create a single regex that matches a range of letters between <code>h</code> and
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should match 17 items.
-    testString: 'assert(result.length == 17, "Your regex <code>myRegex</code> should match 17 items.");'
+    testString: assert(result.length == 17, 'Your regex <code>myRegex</code> should match 17 items.');
   - text: Your regex <code>myRegex</code> should use the global flag.
-    testString: 'assert(myRegex.flags.match(/g/).length == 1, "Your regex <code>myRegex</code> should use the global flag.");'
+    testString: assert(myRegex.flags.match(/g/).length == 1, 'Your regex <code>myRegex</code> should use the global flag.');
   - text: Your regex <code>myRegex</code> should use the case insensitive flag.
-    testString: 'assert(myRegex.flags.match(/i/).length == 1, "Your regex <code>myRegex</code> should use the case insensitive flag.");'
+    testString: assert(myRegex.flags.match(/i/).length == 1, 'Your regex <code>myRegex</code> should use the case insensitive flag.');
 
 ```
 
@@ -54,6 +54,9 @@ let result = myRegex; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+
 ```
 </section>
