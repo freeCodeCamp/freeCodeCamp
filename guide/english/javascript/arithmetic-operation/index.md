@@ -1,7 +1,7 @@
 ---
 title: Arithmetic Operation
 ---
-JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` and `%`. The operators are for addition, subtraction, multiplication, division and remainder respectively.
+JavaScript provides five arithmetic operators: `+`, `-`, `*`, `/` and `%`. The operators are for addition, subtraction, multiplication, division and remainder, respectively.
 
 ## Addition
 
@@ -9,9 +9,21 @@ JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` 
 
 `a + b`
 
+**Caution**
+<br>
+The `+` serves as an arithmetic operator and for concatenating strings. Take extra caution when dealing with numbers versus string data types.
+
+If `a` and `b` data types are both numbers, their value will add.
+<br>
+If `a` is a number and `"b"` is a string, their value will concatenate into a string.
+<br>
+If `"a"` and `"b"` are both strings, their value will concatenate into a string.
+
 **Usage**
 
     2 + 3          // returns 5
+    5 + "3"        // returns "53"
+    "10" + "40"    // returns "1040"
     true + 2       // interprets true as 1 and returns 3
     false + 5      // interprets false as 0 and returns 5
     true + "bar"   // concatenates the boolean value and returns "truebar"
@@ -128,5 +140,19 @@ Also referred to as the "modulus" or "modulo" operator.
     a -= b; //a = 5, b = 4
 
 _!Important!_ You **cannot** perform any sort of operations on `Infinity`.
+
+## Exponentiation
+
+**Syntax**
+
+`a ** b`
+
+**Usage**
+    
+    3 ** 2;           // returns 9
+    3 ** 0;           // returns 1
+    3 ** -Infinity;   // returns 0
+    
+_!Important!_ As you can see, you **cannot** perform any sort of operations on `Infinity`.
 
 Source: The amazing [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)

@@ -1,7 +1,7 @@
 ---
 title: Arguments
 ---
-The arguments object is an **array-like object** _(in that the structure of the object is similar to that of an array however it should not be considered an array as it has all the functionality of an object)_ that stores all of the arguments that you passed to a function and is proprietary to that function in particular. If you were to pass 3 arguments to a function, say `storeNames()`, those 3 arguments would be stored inside an object called **arguments** and it would look like this when we pass the arguments `storeNames("Mulder", "Scully", "Alex Krycek")` to our function:
+The arguments object is an **array-like object** _(in that the structure of the object is similar to that of an array; however, it should not be considered an array as it has all the functionality of an object)_ that stores all of the arguments that you passed to a function and is proprietary to that function in particular. If you were to pass 3 arguments to a function, say `storeNames()`, those 3 arguments would be stored inside an object called **arguments** and it would look like this when we pass the arguments `storeNames("Mulder", "Scully", "Alex Krycek")` to our function:
 
 *   First, we declare a function and make it return the arguments object.
 
@@ -51,7 +51,7 @@ console.log(getGrades(90, 100, 75, 40, 89, 95));
 
 ### Optimization issues with Array.slice()
 
-There is a little problem, it's not recommended to use slice in the arguments object (optimization reasons)...
+There is a little problem; it's not recommended to use slice in the arguments object (optimization reasons)...
 
 > **Important**: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object.
 > 

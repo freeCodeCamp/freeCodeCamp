@@ -57,7 +57,7 @@ void flood_fill(int pos_x, int pos_y, int target_color, int color)
 
 As seen above, my starting point is (4,4). After calling the function for the start coordinates **x = 4** and **y = 4**,
 I can start checking if there is no wall or color on the spot. If that is valid i mark the spot with one **"color"** 
-and start checking the other adiacent squares.
+and start checking the other adjacent squares.
 
 Going south we will get to point (5,4) and the function runs again.
 
