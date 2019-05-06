@@ -6,7 +6,6 @@ videoUrl: ''
 localeTitle: 探索var和let关键字之间的差异
 ---
 
-## Description
 <section id="description">使用<code>var</code>关键字声明变量的最大问题之一是您可以在没有错误的情况下覆盖变量声明。
 <blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// 输出 'David'</blockquote>
 正如您在上面的代码中看到的那样， <code>camper</code>变量最初被声明为<code>James</code> ，然后被重写为<code>David</code> 。在小型应用程序中，您可能不会遇到此类问题，但是当您的代码变大时，您可能会意外覆盖您不打算覆盖的变量。因为这种行为不会引发错误，所以搜索和修复错误变得更加困难。 <br>在ES6中引入了一个名为<code>let</code>的新关键字，用<code>var</code>关键字解决了这个潜在的问题。如果要在上面代码的变量声明中用<code>let</code>替换<code>var</code> ，结果将是一个错误。 

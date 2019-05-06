@@ -10,13 +10,13 @@ Uscript es el lenguaje de script nativo del motor, utilizado para crear código 
 
 Desde 2015, Unreal Engine ha sido de uso gratuito, y Epic cobra una regalía del 5% sobre las ventas de títulos producidos con el motor. Epic hace que la mayoría de su código base esté disponible gratuitamente a través de su Github, aunque la fuente para plataformas cerradas como Playstation 4 y Xbox One solo está disponible para desarrolladores de plataformas registrados.
 
-### Versiones irreales
+### Versiones de Unreal Engine
 
 Unreal ha pasado por 4 revisiones importantes. Aunque algunos códigos son comunes entre versiones, cada versión principal es un motor independiente y los proyectos no se pueden mover entre ellos. Dentro de cada versión principal del motor, hay varias versiones menores.
 
 *   Unreal Engine 1 Lanzado en 1998 y dirigido a PC con Windows, Linux, Mac, PlayStation 2 y Dreamcast. El motor fue escrito en C ++, y fácilmente modificable usando el lenguaje Unreal Script.
     
-*   Motor irreal 2 Lanzado en 2002 y destinado a Windows PC, Linux, Mac, Playstation 2 y Xbox. El motor fue escrito en C ++, utilizó el lenguaje Unreal Script.
+*   Unreal Engine 2 Lanzado en 2002 y destinado a Windows PC, Linux, Mac, Playstation 2 y Xbox. El motor fue escrito en C ++, utilizó el lenguaje Unreal Script.
     
 *   Unreal Engine 3 Lanzado en 2004 y destinado a Windows PC, Linux, Mac, iOS, Playstation 3 y Xbox 360. El desarrollo se divide entre Unreal Script y C ++, con una interfaz de scripts visual adicional llamada Kismet.
     
@@ -26,10 +26,10 @@ Unreal ha pasado por 4 revisiones importantes. Aunque algunos códigos son comun
 ### Juegos populares hechos en Unreal
 
 *   Batman Arkham City
-*   Efecto masivo
+*   Mass Effect
 *   Bioshock
 *   Borderlands
-*   Engranajes de guerra
+*   Gears of War
 
 #### Más información:
 

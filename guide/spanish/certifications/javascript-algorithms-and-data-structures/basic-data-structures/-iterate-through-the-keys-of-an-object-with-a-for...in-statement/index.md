@@ -13,11 +13,11 @@ Método:
 ### Ejemplo 1:
 
 ```javascript
-for (let user in obj) { 
-    if(obj.user.online === true) { 
-      //code 
-    } 
-  } 
+for (let user in obj) {
+  if(obj.user.online === true) {
+    //code
+  }
+}
 ```
 
 *   El ejemplo 2 demuestra cómo usar la notación `[square-bracket]` se ejecutará el código.
@@ -25,11 +25,11 @@ for (let user in obj) {
 ### Ejemplo 2:
 
 ```javascript
-for (let user in obj) { 
-    if(obj[user]online === true) { 
-      //code 
-    } 
-  } 
+for (let user in obj) {
+  if(obj[user].online === true) {
+    //code
+  }
+}
 ```
 
 ### Solución:
