@@ -3,7 +3,7 @@ title: Robotics
 ---
 ## Robotics
 
-Robotics is about the systems that make up robots. There is no universally applicable definition of a robot. One generally accepted definition is: _A robot is a programmable physical machine that follows the sense, think, act paradigm_. More specifically, a robot needs to sense its environment, use that information as an input to make decisions and then act accordingly. Each system in this paradigm is often a study in itself. There are a multitude of varieties of robot types and component systems. Each robot usually is dedicated to a set of processes with clear objectives.
+Robotics is about the systems that make up robots. There is no universally applicable definition of a robot. One generally accepted definition is: _A robot is a programmable physical machine that follows the sense, think, act paradigm_. More specifically, a robot needs to sense its environment, use that information as an input to make decisions, and then act accordingly; each system in this paradigm is often a study in itself. There are a multitude of varieties of robot types and component systems. Each robot usually is dedicated to a set of processes with clear objectives.
 
 ### Sense
 
@@ -29,9 +29,9 @@ First, you need to have good amount of patience to ace in Robotics.
 
 1) Start by using an easy programming language that can help you understand how robots work. A good place to start is [Lego Mindstorms](https://www.lego.com/en-us/mindstorms) where you can use a basic representation of programming to make your robot do things. If you don't want to buy [Lego Mindstorms](https://www.lego.com/en-us/mindstorms), that's okay! However, it does help understand the basics of robotics, which will help you better understand the advanced machines you'll work with in the future.
 2) Be good at any one programming language to have a good grip over code.
-3) Learn RaspberryPi or Arduino for the proper understanding of electronics and logic.
-  Now the difference between RaspberryPi and Arduino is:
-  RaspberryPi is a SBC(Single-Board-Computer) whereas  Arduino is only a Microcontroller.
+3) Learn Raspberry Pi or Arduino for the proper understanding of electronics and logic.
+  Now the difference between Raspberry Pi and Arduino is:
+  Raspberry Pi is a SBC(Single-Board-Computer) whereas  Arduino is only a Microcontroller.
   So the difference between the above stuff is quite important.
 4) Inverse Kinematics is very important for the designing part. 
   Here is a good resource to learn [Inverse kinematics](https://www.intechopen.com/books/industrial_robotics_theory_modelling_and_control/robot_kinematics__forward_and_inverse_kinematics).

@@ -30,6 +30,7 @@ GameMaker offers a variety of different products, each one with its own perks:
 * Ubuntu
 * HTML5
 * Android
+* Windows Phone
 * iOS
 * Amazon Fire TV
 * Android TV

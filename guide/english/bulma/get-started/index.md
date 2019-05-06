@@ -7,7 +7,7 @@ There are several ways to get started with Bulma.
 
 * Installing the Bulma package with <b>npm</b>
 * Using a <b>CDN</b> to link to the Bulma stylesheet.
-* Use the <b>Github Repository</b> to get the latest development version.
+* Use the <b>GitHub Repository</b> to get the latest development version.
 
 1) Using npm
 ```terminal
@@ -58,3 +58,7 @@ For Bulma to work correctly, you need to make your webpage responsive.
 
 ### Bulma-start
 ```bulma-start``` is a tiny ```npm``` package that includes the npm dependencies you need to build your own website with Bulma.
+
+### Further References:
+- [Bulma Documentation](https://bulma.io/documentation)
+- [Vue.js based on Bulma](https://buefy.github.io/documentation)

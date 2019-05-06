@@ -1,8 +1,10 @@
-.tool-panel-group button, .tool-panel-group a {
+.tool-panel-group button,
+.tool-panel-group a {
   font-size: 1.1rem;
 }
 
-.tool-panel-group-mobile button, .tool-panel-group-mobile a {
+.tool-panel-group-mobile button,
+.tool-panel-group-mobile a {
   font-size: 16px;
 }
 
@@ -10,8 +12,8 @@
   display: flex;
   flex-direction: row-reverse;
   padding: 0 2px;
-  background: #fff;
 }
+
 .tool-panel-group-mobile .btn-block + .btn-block {
   margin: 0 2px 0 0;
 }

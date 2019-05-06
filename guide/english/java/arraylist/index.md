@@ -9,20 +9,18 @@ title: ArrayList
   ```java
   import java.util.ArrayList;  // is more efficient than importing all of java.util
   ```
+  
+Always import the most specific package in order to save memory size and performance time.
+  
+`ArrayList` is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It should be initialized to have a specific size or it will have the default size of 10 units. 
 
-  
-  Always import the most specific package in order to save memory size and performance time.
-  
-  
-  `ArrayList` is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It should be initialized to have a specific size or it will have the default size of 10 units. 
-  
   
   ```java
   ArrayList<String> names = new ArrayList<>();
   ArrayList<Integer> ages = new ArrayList<>(5);
   ```
   
-  In the above snippet, the angle breackets `<>` take a generic data type as argument specifying data type of the elements in the ArrayList. The first ArrayList `names` is specified as containing *String* elements. Thus, it will only be allowed to contain String elements. Its size is not specified so it will have a default size of 10. The second ArrayList `ages` has specified that it will only hold integers. But ArrayList cannot hold primitives, it only holds objects. Thus to make it store integers, floats, etc., we can use wrapper classes. `names` will have a specified size of 5.
+In the above snippet, the angle brackets `<>` take a generic data type as argument specifying data type of the elements in the ArrayList. The first ArrayList `names` is specified as containing *String* elements. Thus, it will only be allowed to contain String elements. Its size is not specified so it will have a default size of 10. The second ArrayList `ages` has specified that it will only hold integers. But ArrayList cannot hold primitives, it only holds objects. Thus to make it store integers, floats, etc., we can use wrapper classes. `names` will have a specified size of 5.
   
 Since ArrayList implements *List*, an ArrayList can be created using the following syntax:
   ```java
@@ -53,18 +51,21 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
 
 **Modify/update element at specified index**
-   ```java
-   variable_name.set(index_number, element);
+
+  ```java
+  variable_name.set(index_number,element);
   ```
   
 **Get the size of the list**
-   ```java
-   variable_name.size();
+ 
+ ```java
+  variable_name.size();
   ```
   
 **Get a sublist of the list**
-   ```java
-   variable_name.subList(int fromIndex, int toIndex);
+ 
+ ```java
+  variable_name.subList(int fromIndex, int toIndex);
   ```
   
 **Reverse elements in list**  
@@ -75,15 +76,15 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
   
 **Sort elements in ascending order**
-```java
+  ```java
   Collections.sort(variable_name);
   ```
   
 **Sort elements in descending order**
-   ```java
-  Collections.sort(variable_name, Collections.reverseOrder());
- ```
 
+  ```java
+  Collections.sort(variable_name, Collections.reverseOrder());
+  ```
 
 **Creating Array from ArrayList**
 
@@ -99,10 +100,9 @@ for(Object obj : arr) {
 }
 ```
     
-  An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways, but it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
-
+An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways, but it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
-  So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
+So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
  
  ## Basic Big O for ArrayList Methods:
  

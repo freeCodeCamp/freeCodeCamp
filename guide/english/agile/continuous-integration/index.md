@@ -13,7 +13,7 @@ The following basic steps are necessary to do the most standard current approach
 
 1. Maintain a central repo and an active `master` branch.
 
-There has to be a code repository for everyone to merge into and pull changes from. This can be on Github or any number of code-storage services.
+There has to be a code repository for everyone to merge into and pull changes from. This can be on GitHub or any number of code-storage services.
 
 2. Automate the build.
 

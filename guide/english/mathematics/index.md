@@ -1,21 +1,16 @@
 ---
 title: Mathematics
 ---
-## Mathematics
 
+## Mathematics
 In this section, we have guides for a wide variety of mathematical concepts.
 
 ### Mathematics in programming
-
-Although it is good practice to create mathematical functions yourself, there are math libraries available for use in many programming languages. These 
-have predetermined functions you can utilize to execute calculations. In programming, you typically cover topics like these in upper division courses on
-the theory of computation, the design of algorithms, and computer language design.
+Although it is good practice to create mathematical functions yourself, there are math libraries available for use in many programming languages. These have predetermined functions you can utilize to execute calculations. In programming, you typically cover topics like these in upper division courses on the theory of computation, the design of algorithms, and computer language design.
 
 #### Fibonacci sequence (generating functions)
-
-We all know that the recursion excercise begins with solving a Fibonacci sequence. It is also the first example which shows the power of Dynamic Programming. So, it is the special case of a class of mathematics known as generating functions. So, what we will be discussing here applies in general to all generating functions.
-
-There is a concept in mathematics: "Each generating function has a sequence and each sequence has a generating function". But, the problem arises in the second part. It is not always easy to find the generating in general. To remember this, I draw an analogy to non-terminating rational number: "If you know the number in decimal form, it is not easy to find the corresponding fractional form, but if we know the fraction, it is always easy to find the decimal form". So, we generally study some quite beautiful generating functions, in terms of their sequence. Why? Because, we know that sequences can easily be handled by a lot of algorithmic paradigms. Some famous sequences known are fibonacci, hadamard (similar to catalan), etc.
+We all know that the recursion exercise begins with solving a Fibonacci sequence. It is the first example which shows the power of Dynamic Programming, and a special case of a class of mathematics known as generating functions. So, what we will be discussing here applies in general to all generating functions.
+There is this concept in mathematics: "each generating function has a sequence and each sequence has a generating function". But, the problem arises in the second part. It is not always easy to find the generating function. To remember this, I draw a analogy to non-terminating rational number: "if you know the number in decimal form, it is not easy to find the corresponding fractional form, but if we know the fraction, it is always easy to find the decimal form". So, we generally study some quite beautiful generating functions, in terms of their sequence. Why? Because, we know that sequences can easily be handled by a lot of algorithmic paradigms. Some famous sequences known are Fibonacci, Hadamard (similar to Catalan), etc.
 
 ### Including math libraries
 In this section we'll show you how to include the standard math library in different languages including a short example of how you can use it.

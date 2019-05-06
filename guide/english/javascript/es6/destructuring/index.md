@@ -4,7 +4,7 @@ title: Destructuring Assignment
 
 ## Destructuring Assignment
 
-Destructuring Assignment syntax is a Javascript expression that makes it possible to unpack values or properties from arrays or objects.
+Destructuring Assignment syntax is a JavaScript expression that makes it possible to unpack values or properties from arrays or objects.
 
 Lets say that you have an array that contains a first name and last name as its two values, but you want to reassign those values to something more descriptive. You can use Destructuring to accomplish this.
 
@@ -31,6 +31,32 @@ console.log(firstName, lastName); // John Smith
 ```
 
 The examples above show the benefit of using the ES6 Destructuring Assignment.
+
+A variable can be assigned a default, in the case that the value unpacked from the array is undefined.
+
+```javascript
+const address = ['Rue Cler', 'Paris'];
+[street, city, country = 'France'] = address;
+console.log(country); // 'France'
+```
+
+**Array Destructuring with rest**
+
+When destructuring an array, you can unpack and assign the remaining part of it to a variable using the rest pattern:
+```js
+const [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
+```
+
+You can skip some values by putting comma
+
+```javascript
+const address = ['Rue Cler', 'Paris', 'France'];
+const [street, , country] = address;
+or
+const [street] = address;
+```
 
 You can also use Destructuring on objects using a similar syntax
 
@@ -64,18 +90,16 @@ const {first: firstName, last: lastName} = fullName;
 console.log(firstName, lastName); // John Smith
 ```
 
-You can also use Destructuring on nested objects.
-
+A variable can be assigned a default, in the case that the value unpacked from the object is undefined.
 ```js
-const person = {firstName: "John", lastName: "Smith", address: {city: "Istanbul", country: "Turkey"}};
-const {address: {city, country}} = person;
+const person = {
+  age: 22
+};
 
-console.log(city, country); // Istanbul Turkey
+const {name: firstName = 'Anonymous', age} = person;
 ```
 
-**Array Destructuring with rest**
-
-When destructuring an array, you can unpack and assign the remaining part of it to a variable using the rest pattern:
+Destructuring an array with rest, you can unpack and assign the remaining part of it to a variable using the rest pattern:
 ```js
 const [a, ...b] = [1, 2, 3];
 console.log(a); // 1

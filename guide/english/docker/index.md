@@ -16,18 +16,32 @@ One of Docker's biggest advantages is that it can be used by a team using differ
 
 ### Installation
 
-* Ubuntu: `sudo apt install docker`
+* Ubuntu: [Docker on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package)
+          There are multiple ways to install the docker but the most convinient way is to use "Script".
 
 * RedHat: `yum install docker-ce`
 
-* Windows / macOS: [Download](https://www.docker.com/get-started)
+* Windows: [Download](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-* Linux:
+* MacOS: [Download](https://store.docker.com/editions/community/docker-ce-desktop-mac)
+
+* Linux: `sudo apt-get install docker-ce`
+
+* CentOS: [Instruction](https://docs.docker.com/install/linux/docker-ce/centos/#uninstall-old-versions)
 
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
+
+## Kitematic
+
+Kitematic is a built-in easy management tool for Docker (Windows & IOS Versions) available on version 1.8 and newer.
+This tool is usefull for easily managing and maintaining your Containers on Docker via a GUI interface and can be used to quickly browse for and set up new containers available on the Docker store.
+
+To Install/Enable just click the Kitematic option found under the pop-up mune when right-clicking the Docker quick launch icon.
+
+More information can be found here: https://kitematic.com/
 
 #### More Information:
 

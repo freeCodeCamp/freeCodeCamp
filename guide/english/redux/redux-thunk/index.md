@@ -64,7 +64,7 @@ const store = createStore(
 ```
 
 ### References
-* [Redux Thunk Github Repo](https://github.com/reduxjs/redux-thunk)
+* [Redux Thunk GitHub Repo](https://github.com/reduxjs/redux-thunk)
 * [Redux Middleware](https://redux.js.org/advanced/middleware)
 
 ### Sources

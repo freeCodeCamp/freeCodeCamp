@@ -5,6 +5,9 @@ It is generally good practice for you not to mix tabs and spaces when coding in 
 
 That being said, it is a good idea to follow the formatting convention that your team agreed to use. Be consistent when you code - choose either to indent using tabs or spaces and follow your chosen convention throughout your program. Many code editors and IDEs allow you to specify how many spaces you want in a tab to ensure consistency.
 
+### Tabs or Spaces?
+In the community-driven [PEP 8 - Style Guide For Python](https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces) it states that spaces are the preferred way to indent your code. Tabs should only be used to remain consistent with code that already uses tabs. As stated above, never mix tabs and spaces as this can cause errors when invoking a command line interpreter. You might ask, how many spaces? The guide covers that too, and says you should use 4 per indentation level.
+
 #### Code Blocks and Indentation
 One of the most distinctive features of Python is its use of indentation to mark blocks of code. Consider the if-statement from our simple password-checking program:
 
@@ -17,16 +20,16 @@ else:
 print('All done!')
 ```
 
-The lines print('Logging on ...') and print('Incorrect password.') are two separate code blocks. These ones happen to be only a single line long, but Python lets you write code blocks consisting of any number of statements.
+The lines print('Logging on ...') and print('Incorrect password.') are two separate code blocks. These happen to be only a single line long, but Python lets you write code blocks consisting of any number of statements.
 
 To indicate a block of code in Python, you must indent each line of the block by the same amount. The two blocks of code in our example if-statement are both indented four spaces, which is a typical amount of indentation for Python.
 
-In most other programming languages, indentation is used only to help make the code look pretty. But in Python, it is required for indicating what block of code a statement belongs to. For instance, the final print('All done!') is not indented, and so is not part of the else-block.
+In most other programming languages, indentation is used only to help make the code look pretty. But in Python, it is required for indicating what block of code a statement belongs to. For instance, the final print('All done!') is not indented, and so it is not part of the else-block.
 
-Programmers familiar with other languages often bristle at the thought that indentation matters: Many programmers like the freedom to format their code how they please. However, Python indentation rules are quite simple, and most programmers already use indentation to make their code readable. Python simply takes this idea one step further and gives meaning to the indentation.
+Programmers familiar with other languages often bristle at the thought that indentation matters. Many programmers like the freedom to format their code how they please. However, Python indentation rules are quite simple, and most programmers already use indentation to make their code readable. Python simply takes this idea one step further and gives meaning to the indentation.
 
 #### If/elif-statements
-An if/elif-statement is a generalized if-statement with more than one condition. It is used for making complex decisions. For example, suppose an airline has the following “child” ticket rates: Kids 2 years old or younger fly for free, kids older than 2 but younger than 13 pay a discounted child fare, and anyone 13 years or older pays a regular adult fare. The following program determines how much a passenger should pay:
+An if/elif-statement is a generalized if-statement with more than one condition. It is used for making complex decisions. For example, suppose an airline has the following “child” ticket rates: kids 2 years old or younger fly for free, kids older than 2 but younger than 13 pay a discounted child fare, and anyone 13 years or older pays a regular adult fare. The following program determines how much a passenger should pay:
 
 ```python
 # airfare.py

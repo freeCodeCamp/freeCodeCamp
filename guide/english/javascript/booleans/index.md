@@ -6,7 +6,7 @@ title: Boolean
 
 Boolean is a primitive data type commonly used in computer programming languages. By definition, a boolean has two possible values: `true` or `false`.
 
-In Javascript, there is often implicit type coercion to boolean. If, for example, you have an if statement which checks a certain expression, that expression will be coerced to a boolean: 
+In JavaScript, there is often implicit type coercion to boolean. If, for example, you have an if statement which checks a certain expression, that expression will be coerced to a boolean: 
 
 ```javascript
 var a = 'a string';

@@ -23,36 +23,16 @@ For instance:
 </html>
 ```
 The `<a href>` attribute is supported by all browsers.
-Different URL Forms
-The URL may be:
-
-Fully Qualified (include a protocol)
-https://html.com
-https://html.com
-URL with a relative (unspecified) protocol
-//html.com
-Browser-specific protocol
-chrome://settings/
-Relative to the current page
-next
-Relative to the current domain
-/
-/wp-content/uploads/flamingo.jpg
-Values of the href Attribute
-Value Name	Notes
-url	The URL (URI) of the linked resource.
-
-
-Read more: https://html.com/attributes/a-href/#ixzz5VX8eY5eg
 
 ### Syntax
-<a href="URL">
+`<a href="URL">`
 
 URL: The URL of the link.
+
 Possible values:
-  - An absolute URL - points to another web site (like <a href="https://www.freecodecamp.org">)
-  - A relative URL - points to a file within a web site (like href="index.html")
-  - Link to an element with a specified id within the page (like hred="#id-name")
+  - An absolute URL - points to another web site (like `<a href="https://www.freecodecamp.org">link text</a>`)
+  - A relative URL - points to a file within a web site (like `<a href="index.html">link text</a>`)
+  - Link to an element with a specified id within the page (like `<a href="#id-name">link text</a>`)
 
 #### More attributes:
  `hreflang` : Specifies the language of the linked resource.

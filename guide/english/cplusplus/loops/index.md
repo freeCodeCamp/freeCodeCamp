@@ -86,8 +86,7 @@ Now let's discuss how the for loop works.
  
  So, in this way the for loop works
  
- If you want to print even numbers from 1 to 1000 then your program will look like this
- 
+ If you want to print even numbers from 1 to 1000 then your program will look like this:
  
 ``` c++
 for (int i = 0;i<=1000;i=i+2)
@@ -99,7 +98,7 @@ for (int i = 0;i<=1000;i=i+2)
 * The difference between the first program and second is the increment part. The rest of the code is the same. This program will print 0 and
    then add 2 to it and print 2 on console and so on upto value of i becomes equal to 1000.
    
-   Our final program to print even numbers from 0 to 1000 will look like this.
+   Our next program to print even numbers from 0 to 1000 will look like this:
    
  ``` c++
  #include<iostream>
@@ -113,3 +112,21 @@ int main()
 	return 0;
 }
  ```
+Another type of for loop is the [Range-based for loop](https://en.cppreference.com/w/cpp/language/range-for). 
+
+ ``` c++
+ #include<iostream>
+using namespace std;
+int main()
+{
+        int a[5] = {1, 2, 3, 4, 5};
+	for (int &i : a)
+	{
+	  cout << i << endl;
+	}
+	return 0;
+}
+ ```
+
+
+ 

@@ -3,7 +3,8 @@ title: Class
 ---
 
 ## Class
-A class in C# is defined as a reference type. In order to instatiate a variable of a reference type, you must specify the `new` keyword, otherwise the variable will have the default value of `null`. See below for an example.
+
+A class in C# is defined as a reference type. In order to instantiate a variable of a reference type you must specify the `new` keyword, otherwise the variable will have the default value of `null`. See below for an example.
 
 ```csharp
 // The value of variableOne is null at this point.

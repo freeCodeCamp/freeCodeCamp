@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { navigate } from 'gatsby';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -9,7 +8,6 @@ import Helmet from 'react-helmet';
 
 import { Loader, Spacer } from '../components/helpers';
 import CurrentChallengeLink from '../components/helpers/CurrentChallengeLink';
-import Layout from '../components/layouts/Default';
 import Supporters from '../components/Supporters';
 import {
   userSelector,
@@ -18,6 +16,8 @@ import {
   activeDonationsSelector
 } from '../redux';
 import { randomQuote } from '../utils/get-words';
+import createRedirect from '../components/createRedirect';
+import RedirectHome from '../components/RedirectHome';
 
 import './welcome.css';
 
@@ -53,6 +53,7 @@ const mapStateToProps = createSelector(
   })
 );
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const RedirectAcceptPrivacyTerm = createRedirect('/accept-privacy-terms');
 
 function Welcome({
   fetchState: { pending, complete },
@@ -69,30 +70,22 @@ function Welcome({
   activeDonations
 }) {
   if (pending && !complete) {
-    return (
-      <Layout>
-        <div className='loader-wrapper'>
-          <Loader />
-        </div>
-      </Layout>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!isSignedIn) {
-    navigate('/');
-    return null;
+    return <RedirectHome />;
   }
 
   if (isSignedIn && !acceptedPrivacyTerms) {
-    navigate('/accept-privacy-terms');
-    return null;
+    return <RedirectAcceptPrivacyTerm />;
   }
 
   const { quote, author } = randomQuote();
   return (
-    <Layout>
+    <Fragment>
       <Helmet>
-        <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
+        <title>Welcome | freeCodeCamp.org</title>
       </Helmet>
       <main>
         <Grid className='text-center'>
@@ -146,18 +139,18 @@ function Welcome({
           </Row>
           <Spacer />
           <Row>
-            <Col sm={8} smOffset={2} xs={12}>
-            <CurrentChallengeLink>
-              <Button block={true} bsStyle='primary' className='btn-cta-big'>
-                Go to my next challenge
-              </Button>
-            </CurrentChallengeLink>
+            <Col sm={6} smOffset={3} xs={12}>
+              <CurrentChallengeLink>
+                <Button block={true} bsStyle='primary' className='btn-cta-big'>
+                  Go to my next challenge
+                </Button>
+              </CurrentChallengeLink>
             </Col>
           </Row>
           <Spacer size={4} />
         </Grid>
       </main>
-    </Layout>
+    </Fragment>
   );
 }
 

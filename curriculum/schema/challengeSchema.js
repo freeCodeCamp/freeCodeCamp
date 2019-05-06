@@ -1,6 +1,8 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
+const { challengeTypes } = require('../../client/utils/challengeTypes');
+
 function getSchemaForLang(lang) {
   let schema = Joi.object().keys({
     block: Joi.string(),
@@ -12,7 +14,11 @@ function getSchemaForLang(lang) {
       .required(),
     checksum: Joi.number(),
     dashedName: Joi.string(),
-    description: Joi.string().required(),
+    description: Joi.when('challengeType', {
+      is: challengeTypes.step,
+      then: Joi.string().allow(''),
+      otherwise: Joi.string().required()
+    }),
     fileName: Joi.string(),
     files: Joi.array().items(
       Joi.object().keys({
@@ -37,7 +43,7 @@ function getSchemaForLang(lang) {
     videoUrl: Joi.string().allow(''),
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
-    instructions: Joi.string().required(),
+    instructions: Joi.string().allow(''),
     isBeta: Joi.bool(),
     isComingSoon: Joi.bool(),
     isLocked: Joi.bool(),

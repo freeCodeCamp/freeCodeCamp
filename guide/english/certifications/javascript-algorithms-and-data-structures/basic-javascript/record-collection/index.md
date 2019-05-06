@@ -55,7 +55,7 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 
     function updateRecords(id, prop, value) {
       if (prop === "tracks" && value !== "") {
-       if(collection[id][prop]) {
+       if (collection[id][prop]) {
         collection[id][prop].push(value);
        }
        else {

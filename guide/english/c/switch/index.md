@@ -10,6 +10,10 @@ It's a list of possibilities, with an action for each possibility, and an option
 
 We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case, which means if you have no break statement in code, when first case is detected to be true, all the other cases below the one that is detected to be true (including itself) will be executed, which is often undesirable.
 
+Each case must be a digit or a character i.e.. a constant but not a variable.
+
+Note:- `break` and `continue` are applicable only with for, while and switch code blocks.
+
 ## Syntax of switch...case
 
 ```c
@@ -66,7 +70,7 @@ int main() {
         case '/':
             printf("%.1lf / %.1lf = %.1lf",a, b, a/b);
             break;
-        // Operator is doesn't match any case constant (+, -, *, /)
+        // If the operator doesn't match any case constant (+, -, *, /)
         default:
             printf("Error! operator is not correct");
     }
@@ -159,7 +163,7 @@ Hello World 4
 
 ## Example
     
-   C program to check for head/tail using nested switch case statement 
+C program to check for head/tail using nested switch case statement 
 ```c
 #include<stdio.h>
 int main()
@@ -216,6 +220,52 @@ Enter second choice-t
 2 Tails
 ```
 
+## Switch-Case Fall-through
+
+As was previously mentioned, switch statement's use of case allows for fall though.  This fall-through possibility can add to the readability of your code and allows for simplified logic. 
+
+#### Fall-through Example
+
+```c
+# include <stdio.h>
+
+int main() {
+
+    char* valueString;
+    
+    printf("Animals of Alaska\n");
+    valueString = "Kodiak";
+    
+    printf("A %s is a type of ", valueString);    
+    
+    switch (valueString) {
+        case "Black Bear":
+        case "Kodiak":
+        case "Brown Bear":
+            printf("bear!\n");
+            break;
+        case "Salmon":
+        case "King Salmon":
+        case "Halbut":
+            printf("fish!\n");
+            break;
+        case "Qalupalik":
+        case "Tornit":
+        case "Tizheruk":
+            printf("mythical Alaskan creature! Watch out!\n");
+        // valueString doesn't match our list of animals
+        default:
+            printf("Error! This animal is not known!\n");
+    }
+}
+```
+
+#### Output
+```c
+-> Animals of Alaska
+-> A Kodiak is a type of bear!
+->
+```
 
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
@@ -224,3 +274,5 @@ Enter second choice-t
 * Speed: A switch statement might prove to be faster than ifs provided number of cases are good. If there are only few cases, it might not effect the speed in any case. Prefer switch if the number of cases are more than 5 otherwise, you may use if-else too.
 * If a switch contains more than five items, it’s implemented using a lookup table or a hash list. This means that all items get the same access time, compared to a list of if:s where the last item takes much more time to reach as it has to evaluate every previous condition first.
 * Clarity in readability: A switch looks much cleaner when you have to combine cases. Ifs  are quite vulnerable to errors too. Missing an else statement can land you up in havoc. Adding/removing labels is also easier with a switch and makes your code significantly easier to change and maintain.
+* Default case: In a switch statement, the requirement of a default case is necessary otherwise the program will crash for a non label match category. This situation doesn't exist in if statements as the else part is considered as the default case handler
+* Break statement: After each label, a break keyword is required due to lack of namespace distinction.
