@@ -8,7 +8,7 @@ Vundle es la abreviatura de Vim bundle y es un administrador de complementos de 
 
 Te permite ...
 
-*   manténgase al tanto y configure sus complementos directamente en `~/.vimrc` (un [archivo](https://stackoverflow.com/questions/164847/what-is-in-your-vimrc) para personalizar Vim)
+*   mantener al tanto y configurar sus complementos directamente en `~/.vimrc` (un [archivo](https://stackoverflow.com/questions/164847/what-is-in-your-vimrc) para personalizar Vim)
 *   instalar complementos configurados (también conocido como scripts / bundle)
 *   actualizar complementos configurados
 *   buscar por nombre todos los scripts Vim disponibles

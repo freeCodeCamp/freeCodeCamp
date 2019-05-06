@@ -2,15 +2,15 @@
 title: Data Types in C
 ---
 # Data Types in C
-There are several different ways to store data in C, and they are all unique from each other. The types of data that information can be stored as are called data types. C is much less forgiving about data types than other languages. As a result, it's important to make sure that you understand the existing data types, their abilities, and their limitations.
+There are several ways to store data in C, and they are all unique from each other. The types of data that information can be stored as are called data types. C is much less forgiving about data types than other languages. As a result, it's important to make sure that you understand the existing data types, their abilities, and their limitations.
 
 One quirk of C's data types is that they depend entirely on the hardware that you're running your code on. An `int` on your laptop will be smaller than an `int` on a supercomputer, so knowing the limitations of the hardware you're working on is important. This is also why the data types are defined as being minimums- an `int` value, as you will learn, is at minimum -32768 to 32767: on certain machines, it will be able to store even more values than this.
 
-There are two categories that we can break this into: integers, and floating point numbers. Integers are whole numbers. They can be positive, negative, or zero. Numbers like -321, 497, 19345, and -976812 are all perfectly valid integers, but 4.5 is not because 4.5 is not a whole number.
+There are two categories that we can break this into: integers, and floating-point numbers. Integers are whole numbers. They can be positive, negative, or zero. Numbers like -321, 497, 19345, and -976812 are all perfectly valid integers, but 4.5 is not because 4.5 is not a whole number.
 
 Floating point numbers are numbers with a decimal. Like integers, -321, 497, 19345, and -976812 are all valid, but now 4.5, 0.0004, -324.984, and other non-whole numbers are valid too.
 
-C allows us to choose between several different options with our data types because they are all stored in different ways on the computer. As a result, it is important to be aware of the abilities and limitations of each data type to choose the most appropriate one.
+C allows us to choose between several options with our data types because they are all stored in different ways on the computer. As a result, it is important to be aware of the abilities and limitations of each data type to choose the most appropriate one.
 
 ## Integer data types
 
@@ -112,8 +112,8 @@ A pointer of type void * represents the address of an object, but not its type. 
  * short, which is a less commonly used but still available integer data type
  * long, which gives a wide range of integer values
  * long long, which gives an overkill range of integer values but is still sometimes useful.
-* We also have some options for our floating point values:
- * float is the basic floating point value, storing 6 decimal places
+* We also have some options for our floating-point values:
+ * float is the basic floating-point value, storing 6 decimal places
  * double takes double the memory and gives 15 decimal places
  * long double takes even more memory and gives 19 decimal places
 * Picking the right data type is important and gives the programmer a lot of control over the program at a low level.

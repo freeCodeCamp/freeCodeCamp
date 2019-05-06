@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import { first } from 'lodash';
-import Media from 'react-media';
+import Media from 'react-responsive';
 
 import LearnLayout from '../../../components/layouts/Learn';
 import Editor from './Editor';
@@ -20,7 +20,6 @@ import ResetModal from '../components/ResetModal';
 import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
 
-import { randomCompliment } from '../utils/get-words';
 import { createGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
@@ -32,7 +31,6 @@ import {
   initTests,
   updateChallengeMeta,
   challengeMounted,
-  updateSuccessMessage,
   consoleOutputSelector
 } from '../redux';
 
@@ -51,8 +49,7 @@ const mapDispatchToProps = dispatch =>
       createFiles,
       initTests,
       updateChallengeMeta,
-      challengeMounted,
-      updateSuccessMessage
+      challengeMounted
     },
     dispatch
   );
@@ -79,8 +76,7 @@ const propTypes = {
       testString: PropTypes.string
     })
   ),
-  updateChallengeMeta: PropTypes.func.isRequired,
-  updateSuccessMessage: PropTypes.func.isRequired
+  updateChallengeMeta: PropTypes.func.isRequired
 };
 
 const MAX_MOBILE_WIDTH = 767;
@@ -112,7 +108,6 @@ class ShowClassic extends Component {
       createFiles,
       initTests,
       updateChallengeMeta,
-      updateSuccessMessage,
       data: {
         challengeNode: {
           files,
@@ -126,7 +121,6 @@ class ShowClassic extends Component {
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
-    updateSuccessMessage(randomCompliment());
     challengeMounted(challengeMeta.id);
   }
 
@@ -141,7 +135,6 @@ class ShowClassic extends Component {
       createFiles,
       initTests,
       updateChallengeMeta,
-      updateSuccessMessage,
       data: {
         challengeNode: {
           files,
@@ -153,7 +146,6 @@ class ShowClassic extends Component {
       pageContext: { challengeMeta }
     } = this.props;
     if (prevTitle !== currentTitle) {
-      updateSuccessMessage(randomCompliment());
       createFiles(files);
       initTests(tests);
       updateChallengeMeta({
@@ -163,6 +155,11 @@ class ShowClassic extends Component {
       });
       challengeMounted(challengeMeta.id);
     }
+  }
+
+  componentWillUnmount() {
+    const { createFiles } = this.props;
+    createFiles({});
   }
 
   getChallenge = () => this.props.data.challengeNode;
@@ -252,7 +249,7 @@ class ShowClassic extends Component {
         <Helmet
           title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
         />
-        <Media defaultMatches={false} query={{ maxWidth: MAX_MOBILE_WIDTH }}>
+        <Media maxWidth={MAX_MOBILE_WIDTH}>
           {matches =>
             matches ? (
               <MobileLayout

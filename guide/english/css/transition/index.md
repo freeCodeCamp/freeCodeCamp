@@ -4,7 +4,7 @@ title: Transition
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 ## Transition
 
-The `transition` property allows you to change property values smoothly (from one value to another), over a given duration. 
+The `transition` property allows you to change property values smoothly (from one value to another), over a given duration. For example the code below sets the transistion time to 300 milliseconds. 
 ```css 
   transition: all 300ms;
 ```

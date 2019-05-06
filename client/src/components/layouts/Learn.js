@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
-import DonationModal from '../Donation';
+import DonateModal from '../Donation';
 
 import 'prismjs/themes/prism.css';
 import 'react-reflex/styles.css';
@@ -11,7 +11,7 @@ function LearnLayout({ children }) {
   return (
     <Fragment>
       <main id='learn-app-wrapper'>{children}</main>
-      <DonationModal />
+      <DonateModal />
     </Fragment>
   );
 }

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHtml5,
   faCss3Alt,
@@ -12,7 +12,7 @@ import {
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import Helmet from 'react-helmet';
 
-import { Spacer } from '../components/helpers';
+import { Link, Spacer } from '../components/helpers';
 import Login from '../components/Header/components/Login';
 
 import './index.css';
@@ -227,16 +227,12 @@ const IndexPage = () => (
       <p className='large-p'>
         Donations to freeCodeCamp go toward our education initiatives, and help
         pay for servers, services, and staff. You can{' '}
-        <a
-          className='large-p underlined-link'
-          href='https://donate.freecodecamp.org/'
-          rel='noopener noreferrer'
-          target='_blank'
-          >
+        <Link className='large-p underlined-link' external={true} to='/donate'>
           make a tax-deductible donation here
-        </a>
+        </Link>
+        .
       </p>
-      .<Spacer />
+      <Spacer />
       <BigCallToAction />
       <Spacer />
       <Spacer />

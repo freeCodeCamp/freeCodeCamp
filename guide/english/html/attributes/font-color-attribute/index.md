@@ -42,3 +42,11 @@ In this example we can see how to set green colour to the text enclosed in a `<f
   </body>
 </html>
 ```
+4. HSL attribute
+```html
+<html>
+  <body>
+    <font color="hsl(80, 90%, 75%)">Font color example using color attribute</font>
+  </body>
+</html>
+```

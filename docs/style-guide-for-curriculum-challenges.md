@@ -111,7 +111,7 @@ Keep paragraphs short (around 1-4 sentences). People are more likely to read sev
 
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way, the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Don't use outbound links. These interrupt the flow. And campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's wiki article on the forum.
+Don't use outbound links. These interrupt the flow. And campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
 You can add diagrams if absolutely necessary.
 
@@ -126,7 +126,7 @@ Here are specific formatting guidelines for challenge text and examples:
 - Single line code examples go in `<code>` tags
 - Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
 - A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
-- Additional information in the form of a note should be formatted `<strong>Note</strong><br>Rest of note text...`
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - Use double quotes where applicable
 
 ## Formatting seed code
@@ -144,15 +144,15 @@ Here are specific formatting guidelines for the challenge seed code:
 
 The challenge solution must be in proper markdown tags. The code must be wrapped in `section` tags with an id of `solution`.
 
-```
+````
 <section id='solution'>
 
-three backticks + html or js
+```html or ```js
  [ SOLUTION CODE]
-three backticks
+```
 
 </section>
-```
+````
 
 Example:
 

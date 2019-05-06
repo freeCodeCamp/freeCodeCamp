@@ -5,7 +5,7 @@ title: Basic Linux Commands
 
 When starting out with Linux, there are some basic commands everyone should know.
 
- 1. **cd** - change directory 
+1. **cd** - change directory 
 - `cd` followed by a directory or file path will take you inside that directory (folder).
 
 2. **ls** - list command
@@ -97,6 +97,14 @@ When starting out with Linux, there are some basic commands everyone should know
 
 28. **chmod** - change permission
 - Use 'chmod' to make a file executable and to change the permissions granted to it in Linux. For the example , imagine you have a file named `myFile.txt` . But it can't executable because you not have a permission to this file , you can use the command `chmod +x myFile.txt` or `chmod 755 myFile.txt`.
+
+29. **locate**
+- Used to locate a file in the system  
+     Example:
+     ```sh
+     locate sample.txt
+     /home/rajasimha/Desktop/sample.txt
+     ```
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.

@@ -5,7 +5,7 @@ title: Margins
 
 The `margin` CSS property sets the margin area on all four sides of an element. This property can be used to generate space around content (outside the border). It is a shorthand to set all individual margins at once: `margin-top`, `margin-right`, `margin-bottom`, and `margin-left`. Values are defined in the clockwise direction.
 
-Margin values are set using lengths or percentages or `auto` or `inherit` keyword, and may accept zero or negative values. The initial, or default, value for all margin properties is 0. While you can use `inherit` keyword but it can not be used along with a length value.
+Margin values are set using lengths or percentages or `auto` or `inherit` keyword, and may accept zero or negative values. The initial or default value for all margin properties is 0. While you can use `inherit` keyword, it can not be used along with a length value.
 
 ## Syntax
 ```css
@@ -34,6 +34,17 @@ margin: 1em 2em 2em;
 margin: 5px 1em 0 1em;
 ```
 
+Alternatively, you can style the margins by themselves:
+```css
+margin-top: 1em;
+
+margin-right: 1em;
+
+margin-bottom: 1em;
+
+margin-left: 1em;
+```
+
 ## Where in box model
 The margin property in CSS defines the outermost portion of the box model, creating space around an element's content, outside of any defined paddings and/or borders.
 
@@ -59,10 +70,10 @@ An element can be aligned to the center by making it a block element and changin
  - `%` implies relative to the parent element.
 
 ## Browser Support
-It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
+It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+, etc).
 
 ### More Information
-- <a href='https://www.w3.org/TR/css3-box/#the-margin' target='_blank' rel='nofollow'>W3C Working Draft</a>
+- <a href='https://www.w3.org/TR/css-box-3/#margins' target='_blank' rel='nofollow'>W3C Working Draft</a>
 - <a href='https://www.w3.org/TR/CSS2/box.html#propdef-margin' target='_blank' rel='nofollow'>W3C CSS Level 2</a>
 - <a href='https://www.w3.org/TR/CSS1/#margin' target='_blank' rel='nofollow'>W3C CSS Level 1</a>
 - <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/margin' target='_blank' rel='nofollow'>MDN Web Docs</a>

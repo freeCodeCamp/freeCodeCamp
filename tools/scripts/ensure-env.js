@@ -53,6 +53,7 @@ fs.access(migrationMapPath, err => {
       })
       .catch(err => {
         console.error(err);
+        // eslint-disable-next-line
         process.exit(1);
       });
   }

@@ -11,10 +11,11 @@ This is to be noted, that the <code>class</code> syntax is just a syntax, and no
 In ES5, we usually define a constructor function, and use the <code>new</code> keyword to instantiate an object.
 <blockquote>var SpaceShuttle = function(targetPlanet){<br>&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>}<br>var zeus = new SpaceShuttle('Jupiter');</blockquote>
 The class syntax simply replaces the constructor function creation:
-<blockquote>class SpaceShuttle {<br>&nbsp;&nbsp;constructor(targetPlanet){<br>&nbsp;&nbsp;&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>&nbsp;&nbsp;}<br>}<br>const zeus = new SpaceShuttle('Jupiter');</blockquote>
+<blockquote>class SpaceShuttle {<br>&nbsp;&nbsp;constructor(targetPlanet) {<br>&nbsp;&nbsp;&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>&nbsp;&nbsp;}<br>}<br>const zeus = new SpaceShuttle('Jupiter');</blockquote>
 Notice that the <code>class</code> keyword declares a new function, and a constructor was added, which would be invoked when <code>new</code> is called - to create a new object.<br>
-<strong>Note</strong><br>
-UpperCamelCase should be used by convention for ES6 class names, as in <code>SpaceShuttle</code> used above.
+<strong>Notes:</strong><br><ul>
+<li> UpperCamelCase should be used by convention for ES6 class names, as in <code>SpaceShuttle</code> used above.</li>
+<li> The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.</li></ul>
 </section>
 
 ## Instructions
@@ -29,13 +30,13 @@ The <code>Vegetable</code> lets you create a vegetable object, with a property <
 ```yml
 tests:
   - text: <code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.
-    testString: assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function', '<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.');
-  - text: <code>class</code> keyword was used.
-    testString: getUserInput => assert(getUserInput('index').match(/class/g),'<code>class</code> keyword was used.');
-  - text: <code>Vegetable</code> can be instantiated.
-    testString: assert(() => {const a = new Vegetable("apple"); return typeof a === 'object';},'<code>Vegetable</code> can be instantiated.');
+    testString: assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function');
+  - text: <code>class</code> keyword should be used.
+    testString: assert(code.match(/class/g));
+  - text: <code>Vegetable</code> should be able to be instantiated.
+    testString: assert(() => {const a = new Vegetable("apple"); return typeof a === 'object';});
   - text: <code>carrot.name</code> should return <code>carrot</code>.
-    testString: assert(carrot.name=='carrot','<code>carrot.name</code> should return <code>carrot</code>.');
+    testString: assert(carrot.name=='carrot');
 
 ```
 
@@ -47,14 +48,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
+/* Alter code below this line */
 
-  /* Alter code above this line */
-  return Vegetable;
-}
-const Vegetable = makeClass();
+/* Alter code above this line */
+
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // => should be 'carrot'
 ```
@@ -69,19 +66,11 @@ console.log(carrot.name); // => should be 'carrot'
 <section id='solution'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
-  class Vegetable {
-    constructor(name){
-      this.name = name;
-    }
+class Vegetable {
+  constructor(name) {
+    this.name = name;
   }
-  /* Alter code above this line */
-  return Vegetable;
 }
-const Vegetable = makeClass();
 const carrot = new Vegetable('carrot');
-console.log(carrot.name); // => should be 'carrot'
 ```
 </section>

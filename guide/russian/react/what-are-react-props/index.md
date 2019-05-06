@@ -122,4 +122,4 @@ MyComponent.defaultProps = {
 
 Для получения дополнительной информации о PropTypes и других документах в React.
 
-Перейдите на [официальный сайт](https://reactjs.org/) и прочитайте документы, или [Github Repo](https://github.com/facebook/react/)
+Перейдите на [официальный сайт](https://reactjs.org/) и прочитайте документы, или [GitHub Repo](https://github.com/facebook/react/)

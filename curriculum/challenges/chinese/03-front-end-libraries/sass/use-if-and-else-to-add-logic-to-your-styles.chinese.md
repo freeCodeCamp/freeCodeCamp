@@ -10,7 +10,10 @@ localeTitle: 使用@if和@else将逻辑添加到您的样式
 <section id="description"> Sass中的<code>@if</code>指令对于测试特定情况很有用 - 它就像JavaScript中的<code>if</code>语句一样。 <blockquote> @mixin make-bold（$ bool）{ <br> @if $ bool == true { <br> font-weight：bold; <br> } <br> } </blockquote>就像在JavaScript中一样， <code>@else if</code>和<code>@else</code>测试更多条件： <blockquote> @mixin text-effect（$ val）{ <br> @if $ val == danger { <br>红色; <br> } <br> @else if $ val == alert { <br>颜色：黄色; <br> } <br> @else if $ val == success { <br>颜色：绿色; <br> } <br> @else { <br>颜色：黑色; <br> } <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions">创建一个名为<code>border-stroke</code>的<code>mixin</code> ，它接受一个参数<code>$val</code> 。 <code>mixin</code>应使用<code>@if</code> ， <code>@else if</code>和<code>@else</code>检查以下条件： <blockquote>光 -  1px纯黑色<br>中等 -  3px纯黑色<br>重 -  6px纯黑色<br>没有 - 没有边界</blockquote></section>
+<section id="instructions">创建一个名为<code>border-stroke</code>的<code>mixin</code> ，它接受一个参数<code>$val</code> 。 <code>mixin</code>应使用<code>@if</code> ， <code>@else if</code>和<code>@else</code>检查以下条件：
+<blockquote>光 - 1px纯黑色<br>中等 - 3px纯黑色<br>重 - 6px纯黑色 </blockquote>
+如果<code>$val</code>不是<code>light</ code>，<code>medium</code>，或者<code>heavy</code>，则边框应该设置为<code>none</code>。
+</section>
 
 ## Tests
 <section id='tests'>

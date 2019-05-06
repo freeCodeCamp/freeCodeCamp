@@ -23,9 +23,9 @@ Just to name a few advantages of WordPress:
 * Has mobile app (Android and iOS), which can be used to post and manage their Wordpress webpage.
 * Wordpress sites can be hosted on any server running the LAMP stack
 * WordPress themes make it possible for non-designers to create a customized website
-* Wordpress site are very scalable, you can start as simple blog then end up with complex online stores, membership, and affiliate program
+* Wordpress sites are very scalable, you can start as simple blog then end up with complex online stores, membership, and affiliate program
 
-As a CMS, WordPress allows you to control and manage content of your website with a very easy system, such as the WordPress dashboard panel. A dashboard lets you to do work on your website without needing to program anything. You can add or delete images and edit text on your webpage fast and easily.
+As a CMS, WordPress allows you to control and manage the content of your website with a very easy system, such as the WordPress dashboard panel. A dashboard lets you do work on your website without needing to program anything. You can add or delete images and edit text on your webpage fast and easily.
 
 Whether it is page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
@@ -33,7 +33,7 @@ Whether it is page transitions or a customized contact form, WordPress users are
 
 If you would like to meet new people who are interested in Wordpress there are many meetups around the world including huge events called WordCamp which can be a great place to network. 
 
-### WordPress as Blogging Platform
+### WordPress as a Blogging Platform
 
 Blogging is a foundational feature of WordPress. One of the primary things it allows you to do is create individual "posts", and designate a main blog page that displays them in chronological order.
 
@@ -44,12 +44,12 @@ It supports many useful publishing features out of the box, like the ability to 
 
 In addition to posts, WordPress also comes with the ability to create "pages" — any non-chronological page on your site, like an "About" or "Contact" page. 
 
-What makes WordPress particularly powerful is that it's possible to create other custom page  types as well. You could, for example, create your own classifieds site with a "listings" page type, or a book review site with a "review" page type, and even assign custom data fields and taxonomies to these as well. Using a combination of plugins and custom coding, you can adopt WordPress as a content management system for all kinds of uses.
+What makes WordPress particularly powerful is that it's possible to create other custom page types as well. You could, for example, create your own classifieds site with a "listings" page type, or a book review site with a "review" page type, and even assign custom data fields and taxonomies to these as well. Using a combination of plugins and custom coding, you can adopt WordPress as a content management system for all kinds of uses.
 
 ### Templates
 
-WordPress does not require work from scratch. For ease of new developers there are tons of free templates available on internet which can be used by basic developer. 
-Few websites which provides these free templates are:
+WordPress does not require work from scratch. For ease of new developers, there are tons of free templates available on the internet which can be used by a beginner developer. 
+Few websites which are providing these free templates are:
 
 - [AThemes](https://athemes.com/collections/free-wordpress-themes/)
 - [WordPress](https://wordpress.org/themes/)
@@ -63,7 +63,7 @@ Themes typically provide an overall framework for the design and functionality o
 
 Plugins extend WordPress functionality in specific ways, adding features like mailing list integrations, contact forms, enhanced security, or custom data fields. As with themes, there's a huge number of plugins available, many of them free, or with both free and pro versions available, covering almost any feature you might think of.
 
-While free themes offer a range of beautiful designs, WordPress premium themes for web projects beyond the basics may cost between $10 to $200 with an average around $59. Also, most plugins are available in free or premium versions.
+While free themes offer a range of beautiful designs, WordPress premium themes for web projects beyond the basics may cost between $10 to $200 with an average of around $59. Also, most plugins are available in free or premium versions.
 
 The following are some of the popular and useful plugins in WordPress:
 - Yoast SEO: Improve WordPress SEO
@@ -73,9 +73,9 @@ The following are some of the popular and useful plugins in WordPress:
 - Mailchimp
 - WooCommerce: Create eCommerce using WordPress
 - Elementor: Open source page builder
-- WP Super Cache: Increase load speed for static website
+- WP Super Cache: Increase load speed for a static website
 
-Examples of Popular Drag and drop themes that makes a WordPress website easy to build are:
+Examples of Popular Drag and drop themes that make a WordPress website easy to build are:
 - Avada theme
 - [Divi by Elegant Themes](https://www.elegantthemes.com/)
 - [Genesis Framework](https://my.studiopress.com/themes/genesis/)
@@ -117,7 +117,7 @@ It is important to choose extremely difficult or random passwords for the admini
 Using tools such as [Jetpack](https://jetpack.com/) and an [SSL certificate](https://www.verisign.com/en_US/website-presence/website-optimization/ssl-certificates/index.xhtml) increases your protection against unwanted attacks.
 
 ## Get Started With Wordpress
-This guide will cover how to setup a basic Wordpress website. If anything is
+This guide will cover how to set up a basic Wordpress website. If anything is
 missing I will go back and add more content.
 
 ### Domain
@@ -137,7 +137,7 @@ So, now it is time to link your domain and server. You should be able to browse
 the FAQ of the domain provider or ask them to do it for you.
 Your hosting provider will give you a nameserver and you can use that DNS
 server address for your domain. Go to DNS Zone editor and make sure you
-follow the exact steps your domain provider requries.
+follow the exact steps your domain provider requires.
 
 ## Installing Wordpress
 If you have cPanel, go on to Softaculous and select Wordpress. It will automatically install Wordpress for your domain name.
@@ -149,12 +149,12 @@ In Directory: -Leave Here Empty-
 
 ### Site Settings
 Site Name: My Blog
-Site Description: Awesome blog about cycling and sight seeing!
+Site Description: Awesome blog about cycling and sight-seeing!
 Enable Multisite (WPMU): -NO-
 
 ### Admin Account
 Admin Username: -Enter your desired admin username here-
-Admin Passowrd: -Make sure the admin password is difficult- (https://strongpasswordgenerator.com/)
+Admin Password: -Make sure the admin password is difficult- (https://strongpasswordgenerator.com/)
 
 ### Choose Language
 Select Language: -Pick Your Desired Language-
@@ -165,9 +165,9 @@ Limit Login Attempts (Loginizer): -NO-
 ### Advanced Options
 -Default are OK-
 -Click Install-
-Email Installation Details To: -youremail-
+Email Installation Details To: -your email-
 
-After confirming installation your will be on the WordPress Dashboard.
+After confirming installation you will be on the WordPress Dashboard.
 
 ## Installation (Development Environment)
 
@@ -178,7 +178,7 @@ After confirming installation your will be on the WordPress Dashboard.
     ```sh
     mv ~Downloads/<insert WordPress directory here) /srv/http
     ```
-4. For **development purposes**, change the user permissions fo the WordPress folder to 777. This can be done using the following command:
+4. For **development purposes**, change the user permissions for the WordPress folder to 777. This can be done using the following command:
     ```sh
     sudo chmod -R 777 /srv/http/<insert WordPress directory here)
     ```

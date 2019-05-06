@@ -2,10 +2,6 @@
   overflow: hidden !important;
 }
 
-.desktop-layout {
-  height: calc(100vh - var(--header-height));
-}
-
 .monaco-menu .action-label {
   color: #a2bd9b;
   letter-spacing: 0.02em;
