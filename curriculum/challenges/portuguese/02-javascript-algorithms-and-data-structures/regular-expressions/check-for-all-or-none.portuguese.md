@@ -6,11 +6,12 @@ videoUrl: ''
 localeTitle: Verificar tudo ou nada
 ---
 
-## Descrição
-<section id="description"> Às vezes, os padrões que você deseja pesquisar podem ter partes que podem ou não existir. No entanto, pode ser importante verifica-las. Você pode especificar a possível existência de um elemento com um ponto de interrogação <code>?</code> . Isso verifica a presença de zero ou um dos elementos anteriores. Você pode pensar neste símbolo como querendo dizer que o elemento anterior é opcional. Por exemplo, existem pequenas diferenças entre o inglês americano e o britânico e você pode usar o ponto de interrogação para combinar as duas grafias. <blockquote> deixe americano = &quot;color&quot;; <br> deixe british = &quot;colour&quot;; <br> deixe rainbowRegex = /colou?r/; <br> rainbowRegex.test (americano); // Retorna true <br> rainbowRegex.test (britânico); // Retorna true </blockquote></section>
+## Description
+<section id="description"> Eventualmente, os padrões que você deseja pesquisar contém partes que podem ou não existir. No entanto, pode ser importante verificar por elas. Você pode especificar a possível existência de um elemento com um ponto de interrogação <code>?</code>. Isso verifica zero ou um dos elementos anteriores. Você pode pensar neste símbolo como uma forma de dizer que o elemento anterior é opcional. Por exemplo, existem pequenas diferenças no inglês americano e britânico e você pode usar o ponto de interrogação para combinar com as duas grafias. <blockquote>let americano = "color";<br>let britanico = "colour";<br>let rainbowRegex= /colou?r/;<br>rainbowRegex.test(americano); // Retorna true<br>rainbowRegex.test(britanico); // Retorna true</blockquote>
+</section>
 
-## Instruções
-<section id="instructions"> Altere o regex <code>favRegex</code> para coincidir com a versão da palavra tanto em inglês americano (favorito) como em inglês britânico (favorito). </section>
+## Instructions
+<section id="instructions"> Altere o regex <code>favRegex</code> para coincidir com as versões em inglês americano (favorite) e inglês britânico (favourite) da palavra. </section>
 
 ## Testes
 <section id='tests'>
