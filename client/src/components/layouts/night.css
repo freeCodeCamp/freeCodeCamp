@@ -44,8 +44,8 @@
 
 .night .challenge-instructions pre,
 .night .challenge-instructions pre code {
-  color: #c7254e;
-  background: #222;
+  background-color: #242424;
+  color: #02a902;
 }
 
 .night code {
