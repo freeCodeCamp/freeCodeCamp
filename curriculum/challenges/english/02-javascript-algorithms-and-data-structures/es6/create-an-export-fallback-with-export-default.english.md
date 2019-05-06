@@ -23,8 +23,8 @@ The following function should be the fallback value for the module. Please add t
 
 ```yml
 tests:
-  - text: Proper used of <code>export</code> fallback.
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+default\s+function\s+subtract\(x,y\)\s+{return\s+x\s-\s+y;}/g), "Proper used of <code>export</code> fallback.");'
+  - text: Your code should use <code>export</code> fallback.
+    testString: getUserInput => assert(getUserInput('index').match(/export\s+default\s+function\s+subtract\(x,y\)\s+{return\s+x\s-\s+y;}/g), 'Your code should use <code>export</code> fallback.');
 
 ```
 
@@ -46,11 +46,10 @@ function subtract(x,y) {return x - y;}
 <div id='js-setup'>
 
 ```js
-window.exports = function(){};
+self.exports = function(){};
 ```
 
 </div>
-
 
 </section>
 
@@ -58,6 +57,7 @@ window.exports = function(){};
 <section id='solution'>
 
 ```js
-// solution required
+export default function subtract(x,y) {return x - y;}
 ```
+
 </section>

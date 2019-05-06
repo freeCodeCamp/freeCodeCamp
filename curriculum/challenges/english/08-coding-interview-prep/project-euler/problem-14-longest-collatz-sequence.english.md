@@ -27,15 +27,15 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 ```yml
 tests:
   - text: <code>longestCollatzSequence(14)</code> should return 9.
-    testString: 'assert.strictEqual(longestCollatzSequence(14), 9, "<code>longestCollatzSequence(14)</code> should return 9.");'
+    testString: assert.strictEqual(longestCollatzSequence(14), 9, '<code>longestCollatzSequence(14)</code> should return 9.');
   - text: <code>longestCollatzSequence(5847)</code> should return 3711.
-    testString: 'assert.strictEqual(longestCollatzSequence(5847), 3711, "<code>longestCollatzSequence(5847)</code> should return 3711.");'
+    testString: assert.strictEqual(longestCollatzSequence(5847), 3711, '<code>longestCollatzSequence(5847)</code> should return 3711.');
   - text: <code>longestCollatzSequence(46500)</code> should return 35655.
-    testString: 'assert.strictEqual(longestCollatzSequence(46500), 35655, "<code>longestCollatzSequence(46500)</code> should return 35655.");'
+    testString: assert.strictEqual(longestCollatzSequence(46500), 35655, '<code>longestCollatzSequence(46500)</code> should return 35655.');
   - text: <code>longestCollatzSequence(54512)</code> should return 52527.
-    testString: 'assert.strictEqual(longestCollatzSequence(54512), 52527, "<code>longestCollatzSequence(54512)</code> should return 52527.");'
+    testString: assert.strictEqual(longestCollatzSequence(54512), 52527, '<code>longestCollatzSequence(54512)</code> should return 52527.');
   - text: <code>longestCollatzSequence(1000000)</code> should return 837799.
-    testString: 'assert.strictEqual(longestCollatzSequence(1000000), 837799, "<code>longestCollatzSequence(1000000)</code> should return 837799.");'
+    testString: assert.strictEqual(longestCollatzSequence(1000000), 837799, '<code>longestCollatzSequence(1000000)</code> should return 837799.');
 
 ```
 

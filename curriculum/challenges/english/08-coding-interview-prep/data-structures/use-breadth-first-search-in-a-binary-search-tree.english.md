@@ -22,19 +22,19 @@ Instructions: Let's create a breadth-first search method in our tree called <cod
 ```yml
 tests:
   - text: The <code>BinarySearchTree</code> data structure exists.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() }; return (typeof test == "object")})(), "The <code>BinarySearchTree</code> data structure exists.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');
   - text: The binary search tree has a method called <code>levelOrder</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.levelOrder == "function")})(), "The binary search tree has a method called <code>levelOrder</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.levelOrder == 'function')})(), 'The binary search tree has a method called <code>levelOrder</code>.');
   - text: The binary search tree has a method called <code>reverseLevelOrder</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.reverseLevelOrder == "function")})(), "The binary search tree has a method called <code>reverseLevelOrder</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.reverseLevelOrder == 'function')})(), 'The binary search tree has a method called <code>reverseLevelOrder</code>.');
   - text: The <code>levelOrder</code> method returns an array of the tree node values explored in level order.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== "function") { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.levelOrder().join("") == "719038102546"); })(), "The <code>levelOrder</code> method returns an array of the tree node values explored in level order.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.levelOrder().join('') == '719038102546'); })(), 'The <code>levelOrder</code> method returns an array of the tree node values explored in level order.');
   - text: The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== "function") { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.reverseLevelOrder().join("") == "791108305264"); })(), "The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.reverseLevelOrder().join('') == '791108305264'); })(), 'The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.');
   - text: The <code>levelOrder</code> method returns <code>null</code> for an empty tree.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== "function") { return false; }; return (test.levelOrder() == null); })(), "The <code>levelOrder</code> method returns <code>null</code> for an empty tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; return (test.levelOrder() == null); })(), 'The <code>levelOrder</code> method returns <code>null</code> for an empty tree.');
   - text: The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== "function") { return false; }; return (test.reverseLevelOrder() == null); })(), "The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; return (test.reverseLevelOrder() == null); })(), 'The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.');
 
 ```
 
@@ -66,7 +66,36 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+BinarySearchTree.prototype = {
+    add: function(value) {
+        var node = this.root;
+        if (node == null) {
+          this.root = new Node(value);
+          return;
+        } else {
+            function searchTree(node) {
+                if (value < node.value) {
+                    if (node.left == null) {
+                        node.left = new Node(value);
+                        return;
+                    } else if (node.left != null) {
+                        return searchTree(node.left)
+                    };
+                } else if (value > node.value) {
+                    if (node.right == null) {
+                        node.right = new Node(value);
+                        return;
+                    } else if (node.right != null) {
+                        return searchTree(node.right);
+                    };
+                } else {
+                    return null;
+                };
+            };
+            return searchTree(node);
+        };
+    }
+};
 ```
 
 </div>

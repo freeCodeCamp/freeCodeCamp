@@ -23,9 +23,9 @@ Apply the regex <code>myRegex</code> on the string <code>myString</code> using t
 ```yml
 tests:
   - text: You should use <code>.test()</code> to test the regex.
-    testString: 'assert(code.match(/myRegex.test\(\s*myString\s*\)/), "You should use <code>.test()</code> to test the regex.");'
+    testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), 'You should use <code>.test()</code> to test the regex.');
   - text: Your result should return <code>true</code>.
-    testString: 'assert(result === true, "Your result should return <code>true</code>.");'
+    testString: assert(result === true, 'Your result should return <code>true</code>.');
 
 ```
 
@@ -52,6 +52,8 @@ let result = myRegex; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
 ```
 </section>

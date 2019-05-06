@@ -1,5 +1,5 @@
 ---
-title:While-loop
+title: While-loop
 localeTitle: undefined
 ---
 Una instrucción de bucle while ejecuta repetidamente una instrucción de destino siempre que una condición dada sea verdadera.
@@ -11,21 +11,21 @@ Un punto clave del bucle while es que tal vez el bucle no se ejecute nunca. Cuan
 Ejemplo:
 
 ```C++
-#include <iostream> 
- using namespace std; 
- 
- int main () { 
-   // Local variable declaration: 
-   int a = 10; 
- 
-   // while loop execution 
-   while( a < 20 ) { 
-      cout << "value of a: " << a << endl; 
-      a++; 
-   } 
- 
-   return 0; 
- } 
+#include <iostream>
+ using namespace std;
+
+ int main () {
+   // Local variable declaration:
+   int a = 10;
+
+   // while loop execution
+   while( a < 20 ) {
+      cout << "value of a: " << a << endl;
+      a++;
+   }
+
+   return 0;
+ }
 ```
 
 Salida:

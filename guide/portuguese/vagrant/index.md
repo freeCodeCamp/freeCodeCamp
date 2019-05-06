@@ -1,11 +1,12 @@
 ---
 title: Vagrant 
-localeTitle: Vagabundo
+localeTitle: Vagrant
 ---
-## Vagabundo
+## Vagrant
 
-Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md) .
-
-[Este guia de estilo rápido ajudará a garantir que sua solicitação de recebimento seja aceita](https://github.com/freecodecamp/guides/blob/master/README.md) .
+Vagrant é uma feramenta de automação que auxilia a criação e gestão de maquinas virtuais sendo facil de usar e permite configurar um ambiente virtual rapidamente. A instalação e a sua configuração podem ser partilhadas usando um Vagrantfile de forma que varios membros de uma equipa trabalhem num mesmo ambiente mesmo que correndo em computadores diferentes. 
 
 #### Mais Informações:
+
+- [Documentação Oficial](https://www.vagrantup.com/docs/index.html)
+- [Como você pode iniciar](https://www.vagrantup.com/intro/getting-started/index.html)

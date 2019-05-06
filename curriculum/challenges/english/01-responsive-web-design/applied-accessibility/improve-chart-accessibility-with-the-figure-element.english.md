@@ -24,17 +24,17 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 ```yml
 tests:
   - text: Your code should have one <code>figure</code> tag.
-    testString: 'assert($("figure").length == 1, "Your code should have one <code>figure</code> tag.");'
+    testString: assert($('figure').length == 1, 'Your code should have one <code>figure</code> tag.');
   - text: Your code should have one <code>figcaption</code> tag.
-    testString: 'assert($("figcaption").length == 1, "Your code should have one <code>figcaption</code> tag.");'
+    testString: assert($('figcaption').length == 1, 'Your code should have one <code>figcaption</code> tag.');
   - text: Your code should not have any <code>div</code> tags.
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
   - text: Your code should not have any <code>p</code> tags.
-    testString: 'assert($("p").length == 0, "Your code should not have any <code>p</code> tags.");'
+    testString: assert($('p').length == 0, 'Your code should not have any <code>p</code> tags.');
   - text: The <code>figcaption</code> should be a child of the <code>figure</code> tag.
-    testString: 'assert($("figure").children("figcaption").length == 1, "The <code>figcaption</code> should be a child of the <code>figure</code> tag.");'
+    testString: assert($('figure').children('figcaption').length == 1, 'The <code>figcaption</code> should be a child of the <code>figure</code> tag.');
   - text: Make sure your <code>figure</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, "Make sure your <code>figure</code> element has a closing tag.");'
+    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, 'Make sure your <code>figure</code> element has a closing tag.');
 
 ```
 
@@ -98,7 +98,47 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <header>
+    <h1>Training</h1>
+    <nav>
+      <ul>
+        <li><a href="#stealth">Stealth &amp; Agility</a></li>
+        <li><a href="#combat">Combat</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+
+      <!-- Add your code below this line -->
+      <figure>
+        <!-- Stacked bar chart will go here -->
+        <br>
+        <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
+      </figure>
+      <!-- Add your code above this line -->
+
+    </section>
+    <section id="stealth">
+      <h2>Stealth &amp; Agility Training</h2>
+      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
+      <article><h3>No training is NP-complete without parkour</h3></article>
+    </section>
+    <section id="combat">
+      <h2>Combat Training</h2>
+      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
+      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+    </section>
+    <section id="weapons">
+      <h2>Weapons Training</h2>
+      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
+      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
 ```
 </section>

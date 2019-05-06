@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244d0
 title: Comparison with the Equality Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cKyVMAL'
 ---
 
 ## Description
@@ -25,13 +26,13 @@ Add the <code>equality operator</code> to the indicated line so that the functio
 ```yml
 tests:
   - text: <code>testEqual(10)</code> should return "Not Equal"
-    testString: 'assert(testEqual(10) === "Not Equal", "<code>testEqual(10)</code> should return "Not Equal"");'
+    testString: assert(testEqual(10) === "Not Equal", '<code>testEqual(10)</code> should return "Not Equal"');
   - text: <code>testEqual(12)</code> should return "Equal"
-    testString: 'assert(testEqual(12) === "Equal", "<code>testEqual(12)</code> should return "Equal"");'
+    testString: assert(testEqual(12) === "Equal", '<code>testEqual(12)</code> should return "Equal"');
   - text: <code>testEqual("12")</code> should return "Equal"
-    testString: 'assert(testEqual("12") === "Equal", "<code>testEqual("12")</code> should return "Equal"");'
+    testString: assert(testEqual("12") === "Equal", '<code>testEqual("12")</code> should return "Equal"');
   - text: You should use the <code>==</code> operator
-    testString: 'assert(code.match(/==/g) && !code.match(/===/g), "You should use the <code>==</code> operator");'
+    testString: assert(code.match(/==/g) && !code.match(/===/g), 'You should use the <code>==</code> operator');
 
 ```
 

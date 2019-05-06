@@ -24,11 +24,11 @@ The code editor has the <code>mapStateToProps()</code> and <code>mapDispatchToPr
 ```yml
 tests:
   - text: The <code>Presentational</code> component should render.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("Presentational").length === 1; })(), "The <code>Presentational</code> component should render.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render.');
   - text: The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find("Presentational").props(); return props.messages === "__INITIAL__STATE__"; })(), "The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })(), 'The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.');
   - text: The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find("Presentational").props(); return typeof props.submitNewMessage === "function"; })(), "The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.');
 
 ```
 
@@ -82,7 +82,20 @@ const connect = ReactRedux.connect;
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+
+const store = Redux.createStore(
+  (state = '__INITIAL__STATE__', action) => state
+);
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <ReactRedux.Provider store = {store}>
+        <ConnectedComponent/>
+      </ReactRedux.Provider>
+    );
+  }
+};
+ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
 </div>

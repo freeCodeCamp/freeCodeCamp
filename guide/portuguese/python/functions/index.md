@@ -17,9 +17,9 @@ Uma das grandes vantagens de usar funções em seu código é que ele reduz o n�
 No Python, uma definição de função possui os seguintes recursos:
 
 1.  A palavra-chave `def`
-2.  um nome de função
-3.  parantesia '()' e dentro dos parâmetros de entrada da parantesia, embora os parâmetros de entrada sejam opcionais.
-4.  um cólon ':'
+2.  o nome da função
+3.  parênteses '()' contendo parâmetros de entrada da função, que são opcionais ao defini-la.
+4.  um sinal de dois pontos ':'
 5.  algum bloco de código para executar
 6.  uma declaração de retorno (opcional)
 
@@ -43,7 +43,7 @@ No Python, uma definição de função possui os seguintes recursos:
  multiply(3, 5)  # prints 15 to the console 
 ```
 
-Funções são blocos de código que podem ser reutilizados simplesmente chamando a função. Isso permite a reutilização de código simples e elegante sem reescrever explicitamente seções de código. Isso torna o código mais legível, facilita a depuração e limita os erros de digitação.
+Funções são blocos de código que podem ser reutilizados simplesmente ao realizar o chamado da função. Isso permite a reutilização de código de forma simples e elegante sem reescrever explicitamente seções de código. Isso torna o código mais legível, facilita a depuração e limita os erros de digitação.
 
 Funções em Python são criadas usando a palavra-chave `def` , seguida por um nome de função e parâmetros de função dentro de parênteses.
 
@@ -107,7 +107,7 @@ s = sum
     
     ```
     
-*   O bloco de código que a função executará inclui todas as instruções recuadas dentro da função.
+*   O bloco de código que a função executará inclui todas as instruções contidas na função.
     
     ```python
     def myFunc(): 
@@ -119,7 +119,7 @@ s = sum
     
     ```
     
-*   Variáveis ​​definidas dentro de uma função só existem dentro do escopo dessa função.
+*   Variáveis definidas dentro de uma função só existem dentro do escopo dessa função.
     
     ```python
     def double(num): 
@@ -131,7 +131,7 @@ s = sum
     
     ```
     
-    \-Python interpreta o bloco de função somente quando a função é chamada e não quando a função é definida. Assim, mesmo que o bloco de definição de função contenha algum tipo de erro, o interpretar de python mostrará isso apenas quando a função for chamada.
+    \-Python interpreta o bloco de função somente quando a função é chamada e não quando a função é definida. Assim, mesmo que o bloco de definição de função contenha algum tipo de erro, o interpretador de python mostrará isso apenas quando a função for chamada.
     
 
 ### Mais Informações:
