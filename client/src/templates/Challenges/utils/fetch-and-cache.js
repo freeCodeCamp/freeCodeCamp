@@ -58,7 +58,6 @@ export function createFetchLink() {
     }
     const link = await axios
       .get({ url: href, crossDomain })
-      .then(thing => { console.log(thing); return thing;})
       .then(res => {
         if (res.status !== 200) {
           throw new Error('Request error: ' + res.status);
@@ -67,7 +66,7 @@ export function createFetchLink() {
       .then(({ data }) => data)
       .then(styles => `<style>${styles}</style>`)
       .catch(() => '');
-      cache.set(href, link);
+    cache.set(href, link);
     return link;
   };
 }

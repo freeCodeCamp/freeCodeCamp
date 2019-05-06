@@ -56,6 +56,8 @@ console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
 <section id='solution'>
 
 ```js
-// solution required
+function forecast(arr) {
+  return arr.slice(2,4);
+}
 ```
 </section>

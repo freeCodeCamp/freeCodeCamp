@@ -13,11 +13,11 @@ localeTitle:  使用for ... in Statement中的对象键迭代
 ### 例1：
 
 ```javascript
-for (let user in obj) { 
-    if(obj.user.online === true) { 
-      //code 
-    } 
-  } 
+for (let user in obj) {
+  if(obj.user.online === true) {
+    //code
+  }
+}
 ```
 
 *   示例2演示了如何使用`[square-bracket]`表示法执行代码。
@@ -25,11 +25,11 @@ for (let user in obj) {
 ### 例2：
 
 ```javascript
-for (let user in obj) { 
-    if(obj[user]online === true) { 
-      //code 
-    } 
-  } 
+for (let user in obj) {
+  if(obj[user].online === true) {
+    //code
+  }
+}
 ```
 
 ### 解：

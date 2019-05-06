@@ -39,6 +39,31 @@ You will need to use everything you know about string manipulation to get the la
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
     function translatePigLatin(str) {
+      let consonantRegex = /^[^aeiou]+/;
+      let myConsonants = str.match(consonantRegex);
+      return (myConsonants !== null) ? str.replace(consonantRegex, "").concat(myConsonants).concat("ay") : str.concat("way");
+    }
+
+    translatePigLatin("consonant");
+
+
+### Code Explanation:
+*   start at beginning and get longest match of everything not a vowel (consonants)
+*   if regex pattern found, it saves the match; else, it returns null
+
+*   if regex pattern found (starts with consonants), it deletes match, adds the match to the end, and adds "ay" to the end
+*   if regex pattern not found (starts with vowels), it just adds "way" to the ending
+
+#### Relevant Links
+
+*   <a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/regular-expressions/match-numbers-and-letters-of-the-alphabet/" target='_blank' rel='nofollow'>Regex Match</a>
+*   <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-the-conditional-ternary-operator/' target='_blank' rel='nofollow'>Ternary Operator</a>
+*   <a href='https://guide.freecodecamp.org/javascript/standard-objects/string/string-prototype-concat/' target='_blank' rel='nofollow'>concat()</a>
+
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+
+    function translatePigLatin(str) {
       // Create variables to be used
       var pigLatin = '';
       var regex = /[aeiou]/gi;
@@ -66,7 +91,6 @@ You will need to use everything you know about string manipulation to get the la
     // test here
     translatePigLatin("consonant");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmt/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -87,92 +111,58 @@ You will need to use everything you know about string manipulation to get the la
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-substr/15945' target='_blank' rel='nofollow'>JS String Prototype Substr</a>
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
-
+    
     function translatePigLatin(str) {
-      function check(obj) {
-          return ['a','i','u','e','o'].indexOf(str.charAt(obj)) == -1 ? check(obj + 1) : obj;
-      }
+      if (str.match(/^[aeiou]/)) return str + "way";
 
-      return str.substr(check(0)).concat((check(0) === 0 ? 'w' : str.substr(0, check(0))) + 'ay');
+      const consonantCluster = str.match(/^[^aeiou]+/)[0];
+      return str.substring(consonantCluster.length) + consonantCluster + "ay";
     }
-
+    
     // test here
     translatePigLatin("consonant");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmw/0' target='_blank' rel='nofollow'>Run Code</a>
-
 ### Code Explanation:
 
-*   This is a declarative as well as recursive approach to this problem.
-*   `check()` is a function which checks for first letter of string to be in the array of vowels, `['a','i','u','e','o']`.
-*   In case of consonants, `check()` calls itself on the next characters until finding the first vowel.
-*   It'll return the index of whatever it finds to be the last initial consonant i.e., Schmidtsville's would be 3.
-*   Then, letters up until that index are removed from the string and concatenated with either that same chunk of removed string or **w** accordingly, and then **ay** regardless.
+*   First, check to see if the string begins with a vowel.
+    * The regex looks at the beginning of the string `^` for one of the specified characters `[aeiou]` 
+    * If it does, you only need to return the original string with "way" appended on the end.
+*   If the string does not start with a vowel, we want to build a string which contains every consonant before the first vowel in the provided string.
+    * To do this, look at the beginning of a string `^` for one or more characters `+` NOT specified `[^aeiou]`.
+    * If there is a match (and in this case, there always will be), `match()` returns an Array with the matched string as the first element, which is all we want. Grab it with `[0]`.
+*   Now, we can start building our Pig Latin string to return. This can be built in three parts:
+    * The first part contains all of the characters in the original string, starting from the first vowel. We can easily get these characters by creating a substring of the original string, with its starting index being the first vowel.
+    * The second part contains the consonant string we just built. (If you add the second and first parts of this string together, you will get the original string.)
+    * The final part contains "ay".
 
 #### Relevant Links
 
-*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charat/15932' target='_blank' rel='nofollow'>JS String Prototype CharAt</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-concat/15935' target='_blank' rel='nofollow'>JS String Prototype Concat</a>
+*   <a>JS Regex Resources</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match' target='_blank' rel='nofollow'>String.prototype.match()</a>
+*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-substr/15945' target='_blank' rel='nofollow'>JS String Prototype Substr</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function translatePigLatin(str) {
-        var strArr = [];
-        var tmpChar;
-
-        // check if the char is consonant using RegEx
-        function isConsonant(char) {
-            return !/[aeiou]/.test(char);
-        }
-
-        // return initial str + "way" if it starts with vowel
-        // if not - convert str to array
-        if (!isConsonant(str.charAt(0)))
-            return str + "way";
-        else
-            strArr = str.split("");
-
-        // push all consonats to the end of the array
-        while (isConsonant(strArr[0])) {
-            tmpChar = strArr.shift();
-            strArr.push(tmpChar);
-        }
-     // convert array to string and concatenate "ay" at the end  
-     return strArr.join("")+"ay";
+      return str.replace(/^[aeiou]\w*/, "$&way").replace(/(^[^aeiou]+)(\w*)/, "$2$1ay");
     }
 
     // test here
     translatePigLatin("consonant");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmv/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   `isConsonant()` is used to check if a character is a consonant.
-*   If first character is vowel, add **way** to end of string and return it.
-*   If first character is not a vowel:
-    *   Split string into array using `split()`.
-    *   Push all consonants to end of array with help of `shift()` and `push()`.
-    *   Convert array to string using `join()` and add **ay** to end of string. Return it.
+*   Use `replace()` on the string, using a regular expression to check if the first letter is a consonant and adding **way** at the end in this case. If the first letter is a consonant nothing will happen at this point.
+*   Use `replace()` again to check for consonants at the beginning of the word and to move it or them to the end of the word and add **ay** at the end.
 
 #### Relevant Links
 
-*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>JS String Prototype Split</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-shift/14301' target='_blank' rel='nofollow'>JS Array Prototype Shift</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-push/14298' target='_blank' rel='nofollow'>JS Array Prototype Push</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>JS Array Prototype Join</a>
-
-### ![:trophy:](https://forum.freecodecamp.com/images/emoji/emoji_one/trophy.png?v=3 ":trophy:") Credits:
-
-If you found this page useful, you may say thanks to the contributors by copying and pasting the following line in the main chat:
-
-**`Thanks @Rafase282 @sabahang @aganita @Hallaathrad for your help with Algorithm: Pig Latin`**
+*   <a href='https://guide.freecodecamp.org/javascript/regular-expressions-reference'>Regular Expressions Reference</a>
+*   <a href='https://guide.freecodecamp.org/miscellaneous/regular-expressions-resources/'>Regular Expressions Resources</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.
