@@ -3,7 +3,7 @@ id: 587d778f367417b2b2512aac
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
 challengeType: 0
 videoUrl: ''
-localeTitle: Evitar problemas de daltonismo usando o contraste suficiente
+localeTitle: Evitar problemas de daltonismo usando suficiente contraste
 ---
 
 ## Descrição
@@ -17,16 +17,16 @@ localeTitle: Evitar problemas de daltonismo usando o contraste suficiente
 
 ```yml
 tests:
-  - text: Seu código só deve alterar o valor de luminosidade da propriedade da <code>color</code> do texto para um valor de 15%.
-    testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.");'
-  - text: Seu código só deve alterar o valor de luminosidade da propriedade <code>background-color</code> para um valor de 55%.
-    testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.");'
+  - text: O seu código só deve alterar o valor de luminosidade da propriedade da <code>color</code> do texto para um valor de 15%.
+    testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "O seu código só deve alterar o valor de luminosidade da propriedade da <code>color</code> do texto para um valor de 15%.");'
+  - text: O seu código só deve alterar o valor de luminosidade da propriedade <code>background-color</code> para um valor de 55%.
+    testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "O seu código só deve alterar o valor de luminosidade da propriedade <code>background-color</code> para um valor de 55%.");'
 
 ```
 
 </section>
 
-## Desafio
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -42,12 +42,12 @@ tests:
 </head>
 <body>
   <header>
-    <h1>Deep Thoughts with Master Camper Cat</h1>
+    <h1>Pensamentos Profundos com o Mestre Gato Campista</h1>
   </header>
   <article>
-    <h2>A Word on the Recent Catnip Doping Scandal</h2>
-    <p>The influence that catnip has on feline behavior is well-documented, and its use as an herbal supplement in competitive ninja circles remains controversial. Once again, the debate to ban the substance is brought to the public's attention after the high-profile win of Kittytron, a long-time proponent and user of the green stuff, at the Claw of Fury tournament.</p>
-    <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
+    <h2>Umas Palavras Acerca do Recente Escândalo de Dopagem com Erva-dos-Gatos</h2>
+    <p>Está muito bem documentada a influência que a erva-dos-gatos tem no comportamento dos felinos, e continua a ser controverso o seu uso como suplemento herbal no meio competitivo dos ninjas. Mais uma vez, o debate acerca de banir a substância foi trazido à atenção do público, depois da incomparável vitória de Kittytron, um há muito tempo proponente e consumidor desse material verde, no torneio Garra da Fúria.</p>
+    <p>Tal como tenho afirmado no passado, eu acredito fortemente que os verdadeiros dotes de ninja têm que vir do seu interior e sem influências externas. O meu uso de erva-dos-gatos irá continuar a ser puramente recreacional.</p>
   </article>
 </body>
 
