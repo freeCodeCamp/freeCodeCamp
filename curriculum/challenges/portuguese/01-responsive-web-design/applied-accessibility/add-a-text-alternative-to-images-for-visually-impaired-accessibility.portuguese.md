@@ -7,25 +7,25 @@ guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/add-alt-text-t
 localeTitle: Adicionar um texto alternativo a imagens para acessibilidade a deficientes visuais
 ---
 
-## Description
-<section id="description"> É provável que você já tenha visto um atributo <code>alt</code> em uma tag <code>img</code> em outros desafios. <code>Alt</code> ou "texto alternativo" descreve o conteúdo de uma imagem e fornece uma alternativa de texto caso a imagem não possa ser carregada ou visualizada por um usuário. Ele também é usado pelos mecanismos de pesquisa para entender o que uma imagem contém para incluí-la nos resultados da pesquisa. Veja um exemplo: <code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code> Pessoas com deficiência visual utilizam leitores de tela para converter o conteúdo da Web em uma interface de áudio. Para imagens, esses leitores fazem uso do atributo <code>alt</code> para ler seu conteúdo e fornecer informações importantes (que não estariam disponíveis caso fossem apresentadas apenas visualmente) para o usuário. Um bom texto <code>alt</code> é curto, mas descritivo, e destina-se a transmitir brevemente o significado da imagem. Você deve sempre incluir um atributo <code>alt</code> em sua imagem. Por especificação HTML5, esse atributo é considerado obrigatório. </section>
+## Descrição
+<section id="description"> É provável que você tenha visto um atributo <code>alt</code> em uma etiqueta <code>img</code> em outros desafios. O atributo <code>alt</code> descreve o conteúdo da imagem e fornece uma alternativa de texto. Isso ajuda no caso de a imagem não carregar ou não ser vista por um usuário. Esse texto alternativo também é usado pelos mecanismos de pesquisa para determinar o que uma imagem contém para incluí-la nos resultados da pesquisa. Veja um exemplo: <code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Log&oacute;tipo da Empresa&quot;&gt;</code> As pessoas com deficiência visual dependem dos leitores de tela para converter o conteúdo da Web numa interface de áudio. Eles não receberão as informações se estas forem apresentadas apenas visualmente. Para imagens, os leitores de tela podem aceder ao atributo <code>alt</code> e ler o seu conteúdo para fornecer informações importantes. Um bom texto <code>alt</code> é curto, mas descritivo, e destina-se a transmitir rápidamente o significado da imagem. Você deve sempre incluir um atributo <code>alt</code> na sua imagem. Segundo a especificação HTML5, isso agora é considerado obrigatório. </section>
 
-## Instructions
-<section id="instructions"> Camper Cat é tanto um ninja programador quanto um ninja normal, e está construindo um site para compartilhar seu conhecimento. A foto do perfil que ele quer usar mostra suas habilidades e deve ser apreciada por todos os visitantes do site. Adicione um atributo <code>alt</code> na tag <code>img</code> , que explica que o Camper Cat está praticando karatê. (O atributo <code>src</code> da imagem não é um link para um arquivo de verdade, então você deve ver o texto <code>alt</code> na tela.) </section>
+## Instruções
+<section id="instructions"> O Gato Campista é tanto um ninja codificador quanto um ninja, e está construindo um site para compartilhar o seu conhecimento. A foto do perfil que ele quer usar mostra suas habilidades e deve ser apreciada por todos os visitantes do site. Adicione um atributo <code>alt</code> na etiqueta <code>img</code>, que explica que o Gato Campista está praticando karatê. (O atributo <code>src</code> da imagem não tem um link para um arquivo real, por isso você deve ver o texto <code>alt</code> na tela.) </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Sua tag <code>img</code> deve ter um atributo <code>alt</code> e ele não deve estar vazio.
-    testString: 'assert($("img").attr("alt"), "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.");'
+  - text: A sua etiqueta <code>img</code> deve ter um atributo <code>alt</code> e não deve estar vazia.
+    testString: 'assert($("img").attr("alt"), "A sua etiqueta <code>img</code> deve ter um atributo <code>alt</code> e não deve estar vazia.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
