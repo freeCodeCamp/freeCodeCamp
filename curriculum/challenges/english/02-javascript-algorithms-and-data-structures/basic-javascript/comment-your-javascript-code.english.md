@@ -2,6 +2,7 @@
 id: bd7123c9c441eddfaeb4bdef
 title: Comment Your JavaScript Code
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c7ynnTp'
 ---
 
 ## Description
@@ -26,9 +27,9 @@ Try creating one of each type of comment.
 ```yml
 tests:
   - text: Create a <code>//</code> style comment that contains at least five letters.
-    testString: 'assert(code.match(/(\/\/)...../g), "Create a <code>//</code> style comment that contains at least five letters.");'
+    testString: assert(code.match(/(\/\/)...../g), 'Create a <code>//</code> style comment that contains at least five letters.');
   - text: Create a <code>/* */</code> style comment that contains at least five letters.
-    testString: 'assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), "Create a <code>/* */</code> style comment that contains at least five letters.");'
+    testString: assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), 'Create a <code>/* */</code> style comment that contains at least five letters.');
 
 ```
 

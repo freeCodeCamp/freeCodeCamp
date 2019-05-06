@@ -109,3 +109,5 @@ $herbie = new Car();
 echo $herbie->model;
 ?>
 ```
+
+You can also use a predefined generic empty class `stdClass`. It's usefull for anonymous objects, dynamic properties or casting other types to object.

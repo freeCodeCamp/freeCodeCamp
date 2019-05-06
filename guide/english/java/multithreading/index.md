@@ -38,15 +38,19 @@ Threads can further be divided into two classes:
  *   User Threads
  *   Daemon Threads
     
-    
-A thread can be created in 2 ways:
+## Creation
+
+A thread can be created in 3 ways:
 1. implementing Runnable interface:
 There is only one method in Runnable interface i.e. public void run(). Implementing this method will make sure that whenever this thread starts the code inside run() executes.
 
 2. extending thread class.
 This class also contains public void run() which we need to override in order to run our own code. The disadvantage of using this method is that we have a superclass in Thread and cannot extend any other class which we may want to.
 
-The code for both can be found here: http://ide.geeksforgeeks.org/k7GjcA. 
+3. implementing Callable interface:
+There is one method in Callable interface i.e. V call(). Implementing this method will make sure that whenever this thread starts the code inside call() executes. The Callable interface provides an edge over Runnable interface as it returns some values as well as can throw exceptions as opposed to Runnable interface
+
+The code for the first two can be found here: http://ide.geeksforgeeks.org/k7GjcA. 
 
 You will notice that if this code is ran multiple times, the results may differ. and that is decided by the OS upon which it is run. The OS can pick any thread from a runnable state and can run it. We have NO CONTROL over that. If there are multiple threads in runnable state (ready to run), anyone can be picked. It even does not depend upon priority.
 

@@ -22,26 +22,67 @@ SELECT a.studentID, a.FullName, a.programOfStudy,
  FROM student AS a 
  INNER JOIN `student-contact-info` AS b ON a.studentID = b.studentID; 
 ```
-
-«Регистрация» данных \`\` \`текст + ----------- + ------------------------ + ------------ ------ + -------------------- + -------------------- + | studentID | FullName | программаОфстудии | студенческая телефонная ячейка | student-US-zipcode | + ----------- + ------------------------ + ------------ ------ + -------------------- + -------------------- + | 1 | Моник Дэвис | Литература | 555-555-5551 | 97111 | | 2 | Тери Гутьеррес | Программирование | 555-555-5552 | 97112 | | 3 | Спенсер Потье | Программирование | 555-555-5553 | 97113 | | 4 | Луи Рэмси | Программирование | 555-555-5554 | 97114 | | 5 | Элвин Грин | Программирование | 555-555-5555 | 97115 | | 6 | Софи Фримен | Программирование | 555-555-5556 | 97116 | | 7 | Эдгар Фрэнк «Тед» Кодд | Компьютерные науки | 555-555-5557 | 97117 | | 8 | Дональд Д. Чемберлен | Компьютерные науки | 555-555-5558 | 97118 | + ----------- + ------------------------ + ------------ ------ + -------------------- + -------------------- +
+"Объединённая" информация 
+``` text
++-----------+------------------------+------------------+--------------------+--------------------+
+| studentID | FullName               | programOfStudy   | student-phone-cell | student-US-zipcode |
++-----------+------------------------+------------------+--------------------+--------------------+
+|         1 | Monique Davis          | Literature       | 555-555-5551       |              97111 |
+|         2 | Teri Gutierrez         | Programming      | 555-555-5552       |              97112 |
+|         3 | Spencer Pautier        | Programming      | 555-555-5553       |              97113 |
+|         4 | Louis Ramsey           | Programming      | 555-555-5554       |              97114 |
+|         5 | Alvin Greene           | Programming      | 555-555-5555       |              97115 |
+|         6 | Sophie Freeman         | Programming      | 555-555-5556       |              97116 |
+|         7 | Edgar Frank "Ted" Codd | Computer Science | 555-555-5557       |              97117 |
+|         8 | Donald D. Chamberlin   | Computer Science | 555-555-5558       |              97118 |
++-----------+------------------------+------------------+--------------------+--------------------+
 ```
-### Complete table listings for reference 
+### Полный список таблиц для справки
  
- Student table SQL 
+Student table SQL 
+
+```sql
+SELECT a.studentID, a.FullName, sat_score, a.programOfStudy, schoolEmailAdr 
+FROM student AS a;
 ```
 
-SQL SELECT a.studentID, a.FullName, sat\_score, a.programOfStudy, schoolEmailAdr ОТ студента AS a;
-```
 student or LEFT table 
-```
-
-текст + ----------- + ------------------------ + ----------- + ------------------ + ------------------------ + | studentID | FullName | sat\_score | программаОфстудии | schoolEmailAdr | + ----------- + ------------------------ + ----------- + ------------------ + ------------------------ + | 1 | Моник Дэвис | 400 | Литература | Monique@someSchool.edu | | 2 | Тери Гутьеррес | 800 | Программирование | Teri@someSchool.edu | | 3 | Спенсер Потье | 1000 | Программирование | Spencer@someSchool.edu | | 4 | Луи Рэмси | 1200 | Программирование | Louis@someSchool.edu | | 5 | Элвин Грин | 1200 | Программирование | Alvin@someSchool.edu | | 6 | Софи Фримен | 1200 | Программирование | Sophie@someSchool.edu | | 7 | Эдгар Фрэнк «Тед» Кодд | 2400 | Компьютерные науки | Edgar@someSchool.edu | | 8 | Дональд Д. Чемберлен | 2400 | Компьютерные науки | Donald@someSchool.edu | | 9 | Раймонд Ф. Бойс | 2400 | Компьютерные науки | Raymond@someSchool.edu | + ----------- + ------------------------ + ----------- + ------------------ + ------------------------ + 9 строк в наборе (0,00 сек)
+```text
++-----------+------------------------+-----------+------------------+------------------------+
+| studentID | FullName               | sat_score | programOfStudy   | schoolEmailAdr         |
++-----------+------------------------+-----------+------------------+------------------------+
+|         1 | Monique Davis          |       400 | Literature       | Monique@someSchool.edu |
+|         2 | Teri Gutierrez         |       800 | Programming      | Teri@someSchool.edu    |
+|         3 | Spencer Pautier        |      1000 | Programming      | Spencer@someSchool.edu |
+|         4 | Louis Ramsey           |      1200 | Programming      | Louis@someSchool.edu   |
+|         5 | Alvin Greene           |      1200 | Programming      | Alvin@someSchool.edu   |
+|         6 | Sophie Freeman         |      1200 | Programming      | Sophie@someSchool.edu  |
+|         7 | Edgar Frank "Ted" Codd |      2400 | Computer Science | Edgar@someSchool.edu   |
+|         8 | Donald D. Chamberlin   |      2400 | Computer Science | Donald@someSchool.edu  |
+|         9 | Raymond F. Boyce       |      2400 | Computer Science | Raymond@someSchool.edu |
++-----------+------------------------+-----------+------------------+------------------------+
+9 rows in set (0.00 sec)
 
 ```sql
 SELECT * FROM `student-contact-info` AS b; 
 ```
 
-контактный стол для студентов или правая таблица `text +-----------+----------------------------------+--------------------+--------------------+ | studentID | studentEmailAddr | student-phone-cell | student-US-zipcode | +-----------+----------------------------------+--------------------+--------------------+ | 1 | Monique.Davis@freeCodeCamp.org | 555-555-5551 | 97111 | | 2 | Teri.Gutierrez@freeCodeCamp.org | 555-555-5552 | 97112 | | 3 | Spencer.Pautier@freeCodeCamp.org | 555-555-5553 | 97113 | | 4 | Louis.Ramsey@freeCodeCamp.org | 555-555-5554 | 97114 | | 5 | Alvin.Green@freeCodeCamp.org | 555-555-5555 | 97115 | | 6 | Sophie.Freeman@freeCodeCamp.org | 555-555-5556 | 97116 | | 7 | Maximo.Smith@freeCodeCamp.org | 555-555-5557 | 97117 | | 8 | Michael.Roach@freeCodeCamp.ort | 555-555-5558 | 97118 | +-----------+----------------------------------+--------------------+--------------------+ 8 rows in set (0.00 sec)`
+student contact table or RIGHT table
+``` text
++-----------+----------------------------------+--------------------+--------------------+
+| studentID | studentEmailAddr                 | student-phone-cell | student-US-zipcode |
++-----------+----------------------------------+--------------------+--------------------+
+|         1 | Monique.Davis@freeCodeCamp.org   | 555-555-5551       |              97111 |
+|         2 | Teri.Gutierrez@freeCodeCamp.org  | 555-555-5552       |              97112 |
+|         3 | Spencer.Pautier@freeCodeCamp.org | 555-555-5553       |              97113 |
+|         4 | Louis.Ramsey@freeCodeCamp.org    | 555-555-5554       |              97114 |
+|         5 | Alvin.Green@freeCodeCamp.org     | 555-555-5555       |              97115 |
+|         6 | Sophie.Freeman@freeCodeCamp.org  | 555-555-5556       |              97116 |
+|         7 | Maximo.Smith@freeCodeCamp.org    | 555-555-5557       |              97117 |
+|         8 | Michael.Roach@freeCodeCamp.ort   | 555-555-5558       |              97118 |
++-----------+----------------------------------+--------------------+--------------------+
+8 rows in set (0.00 sec)
+```
 
 ### Вывод
 

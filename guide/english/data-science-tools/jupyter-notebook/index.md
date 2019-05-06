@@ -3,9 +3,9 @@ title: Jupyter Notebook
 ---
 ## Jupyter Notebook
 
-Jupyter Notebook is an open-source web application. It allows you to create and share documents that contain live code, equations, visualizations and narrative text.
+Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text.
 
-The Jupyter Notebook helps you create and share documents containing live code, equations, visualizations and rich text.   
+Jupyter Notebook helps you create and share documents containing live code, equations, visualizations, and rich text.   
  
 You can use it for:
 * data cleaning and transformation
@@ -15,22 +15,23 @@ You can use it for:
 * machine learning
 
 <img src="https://github.com/indianmoody/images/blob/master/guide_fcc/guides_jupyter_snap.jpeg" width="400" height="300" />
-See your results as you go step by step. Just like in this image.
+See your results as you go step by step, just like in this image.
 
 ## What Is A Jupyter Notebook?
 
-In this case, "notebook" or "notebook documents" denote documents that contain both code and rich text elements, such as figures, links, equations. Because of the mix of code and text elements, these documents are the ideal place to bring together an analysis description and its results as well as they can be executed perform the data analysis in real time.
+In this case, "notebook" or "notebook documents" denote documents that contain both code and rich text elements, such as figures, links, and equations. Because of the mix of code and text elements, these notebook documents are the ideal place to bring together an analysis description with its results, which can be executed to perform data analysis in real time.
 
-"Jupyter" is a loose acronym meaning Julia, Python, and R. These programming languages were the first target languages of the Jupyter application, but nowadays, the notebook technology also supports many other languages. 
+The name "Jupyter" is a loose acronym combining Julia, Python, and R, which were the first target programming languages of the Jupyter application. The notebook technology now supports many other languages.
+
 And there you have it: the Jupyter Notebook.
 
 ## What does it do? 
 
-As a server-client application, the Jupyter Notebook App allows you to edit and run your notebooks via a web browser. The application can be executed on a PC without Internet access or it can be installed on a remote server, where you can access it through the Internet.
+As a server-client application, the Jupyter Notebook App allows you to edit and run your notebooks via a web browser. The application can be executed on a PC without Internet access, or it can be installed on a remote server, where you can access it through the Internet.
 
-Its two main components are the kernels and a dashboard.
+Its two main components are kernels and a dashboard.
 
-A kernel is a program that runs and introspects the user’s code. The Jupyter Notebook App has a kernel for Python code, but there are also kernels available for other programming languages. The dashboard of the application not only shows you the notebook documents that you have made and can reopen but can also be used to manage the kernels: you can which ones are running and shut them down if necessary.
+A kernel is a program that runs and inpects the user’s code. The Jupyter Notebook App has a kernel for Python code, but there are also kernels available for other programming languages. The application dashboard not only shows you the notebook documents that you have made and can reopen, but can also be used to manage the kernels: you can select which ones are running and shut them down if necessary.
 
 ## Installation
 You can use Anaconda or Pip to install Jupyter notebook.
@@ -42,11 +43,11 @@ For steps to do so, refer to the official guide
 
 =======
 ### Features
-* No need to run your complete code file every time. Just run individual Notebook cell to evaluate specific piece of code.
+* No need to run your complete code file every time. Just run individual Notebook cell to evaluate a specific piece of code.
 * The Notebook has support for over 40 programming languages, including Python, R, Julia, and Scala.
-* Notebooks can be shared with others using email, Dropbox, GitHub and the Jupyter Notebook Viewer.
+* Notebooks can be shared with others using email, Dropbox, GitHub, and the Jupyter Notebook Viewer.
 * Your code can produce rich, interactive output: HTML, images, videos, LaTeX, and custom MIME types.
-* Leverage big data tools, such as Apache Spark, from Python, R and Scala. Explore that same data with pandas, scikit-learn, ggplot2, TensorFlow.
+* Leverage big data tools, such as Apache Spark, Python, R, and Scala. Explore that same data with pandas, scikit-learn, ggplot2, or TensorFlow.
 
 The Jupyter notebook combines two components:
 
@@ -64,8 +65,7 @@ These documents are produced by the Jupyter Notebook App.
 As a server-client application, the Jupyter Notebook App allows you to edit and run your notebooks via a web browser.  
 The application can be executed on a PC without Internet access or it can be installed on a remote server, where you can access it through the Internet.  
 
-
-Its two main components are the kernels and a dashboard.
+Its two main components are kernels and a dashboard.
 
 ### Kernels
 A kernel is a program that runs and introspects the user’s code. The Jupyter Notebook App has a kernel for Python code, but there are also kernels available for other programming languages.

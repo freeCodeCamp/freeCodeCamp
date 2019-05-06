@@ -16,6 +16,8 @@ React components have several special methods that provide opportunities to perf
 <code>componentDidUpdate()</code>
 <code>componentWillUnmount()</code>
 The next several lessons will cover some of the basic use cases for these lifecycle methods.
+  
+##### Note: The ``` componentWillMount ``` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 </section>
 
 ## Instructions
@@ -29,9 +31,9 @@ The <code>componentWillMount()</code> method is called before the <code>render()
 ```yml
 tests:
   - text: <code>MyComponent</code> should render a <code>div</code> element.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").length === 1; })(), "<code>MyComponent</code> should render a <code>div</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').length === 1; })(), '<code>MyComponent</code> should render a <code>div</code> element.');
   - text: <code>console.log</code> should be called in <code>componentWillMount</code>.
-    testString: 'assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,""); return lifecycle.includes("console.log("); })(), "<code>console.log</code> should be called in <code>componentWillMount</code>.");'
+    testString: assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })(), '<code>console.log</code> should be called in <code>componentWillMount</code>.');
 
 ```
 
@@ -65,7 +67,7 @@ class MyComponent extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
 </div>

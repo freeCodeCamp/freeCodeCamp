@@ -25,11 +25,11 @@ Add style rules for the <code>img</code> tag to make it responsive to the size o
 ```yml
 tests:
   - text: Your <code>img</code> tag should have a <code>max-width</code> set to 100%.
-    testString: 'assert(code.match(/max-width:\s*?100%;/g), "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.");'
+    testString: assert(code.match(/max-width:\s*?100%;/g), 'Your <code>img</code> tag should have a <code>max-width</code> set to 100%.');
   - text: Your <code>img</code> tag should have a <code>display</code> set to block.
-    testString: 'assert($("img").css("display") == "block", "Your <code>img</code> tag should have a <code>display</code> set to block.");'
+    testString: assert($('img').css('display') == 'block', 'Your <code>img</code> tag should have a <code>display</code> set to block.');
   - text: Your <code>img</code> tag should have a <code>height</code> set to auto.
-    testString: 'assert(code.match(/height:\s*?auto;/g), "Your <code>img</code> tag should have a <code>height</code> set to auto.");'
+    testString: assert(code.match(/height:\s*?auto;/g), 'Your <code>img</code> tag should have a <code>height</code> set to auto.');
 
 ```
 
@@ -57,7 +57,15 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+ img {
+   max-width: 100%;
+   display: block;
+   height: auto;
+ }
+</style>
+
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
 </section>

@@ -13,32 +13,32 @@ localeTitle: Verificar tudo ou nada
 ## Instructions
 <section id="instructions"> Altere o regex <code>favRegex</code> para coincidir com as versões em inglês americano (favorite) e inglês britânico (favourite) da palavra. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
-tests:
+testes:
   - text: Seu regex deve usar o símbolo opcional <code>?</code> .
-    testString: 'assert(favRegex.source.match(/\?/).length > 0, "Your regex should use the optional symbol, <code>?</code>.");'
+    testString: 'assert(favRegex.source.match(/\?/).length > 0, "Seu regex deve usar o símbolo opcional, <code>?</code>.");'
   - text: Seu regex deve coincidir com <code>&quot;favorite&quot;</code>
-    testString: 'assert(favRegex.test("favorite"), "Your regex should match <code>"favorite"</code>");'
+    testString: 'assert(favRegex.test("favorite"), "Seu regex deve coincidir com <code>"favorite"</code>");'
   - text: Seu regex deve coincidir com <code>&quot;favourite&quot;</code>
-    testString: 'assert(favRegex.test("favourite"), "Your regex should match <code>"favourite"</code>");'
-  - text: Seu regex não deve corresponder a <code>&quot;fav&quot;</code>
-    testString: 'assert(!favRegex.test("fav"), "Your regex should not match <code>"fav"</code>");'
+    testString: 'assert(favRegex.test("favourite"), "Seu regex deve coincidir com <code>"favourite"</code>");'
+  - text: Seu regex não deve coincidir com <code>&quot;fav&quot;</code>
+    testString: 'assert(!favRegex.test("fav"), "Seu regex não deve coincidir com <code>"fav"</code>");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
 
 ```js
 let favWord = "favorite";
-let favRegex = /change/; // Change this line
+let favRegex = /change/; // Altere esta linha
 let result = favRegex.test(favWord);
 
 ```
@@ -49,10 +49,10 @@ let result = favRegex.test(favWord);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
-// solution required
+// solução necessária
 ```
 </section>
