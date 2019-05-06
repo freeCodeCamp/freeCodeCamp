@@ -8,7 +8,7 @@ LINQ (Language Integrated Query) is a Microsoft programming model and methodolog
 
 ## Example
 
-LINQ can be used to filter, transform, search data and a lot more of complex tasks. Let's say we have the following list of objects:
+LINQ can be used to filter, transform, search data and a lot more complex tasks. Let's say we have the following list of objects:
 
 ```csharp
 var fruits = new List<Fruit>() {
@@ -34,7 +34,7 @@ var qntRed = fruits.Where(Color == "Red").Count(); // 2
 // Create a list of yellow fruits
 var yellowFruits = fruits.Where(f => f.Color == "Yellow").ToList(); // { Pineapple, Mango }
 
-// Orders list by quantity from most to less
+// Orders list by quantity from most to least
 var orderedFruits = fruits.OrderByDescending(f => f.Quantity).ToList(); // {Grape, Strawberry, Orange, Apple, Mango, Pineapple}
 
 // Sum the quantity of fruits
