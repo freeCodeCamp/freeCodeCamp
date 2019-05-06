@@ -25,7 +25,7 @@ Find ∑ L for the twelve smallest isosceles triangles for which h = b ± 1 and 
 ```yml
 tests:
   - text: <code>euler138()</code> should return 1118049290473932.
-    testString: 'assert.strictEqual(euler138(), 1118049290473932, "<code>euler138()</code> should return 1118049290473932.");'
+    testString: assert.strictEqual(euler138(), 1118049290473932, '<code>euler138()</code> should return 1118049290473932.');
 
 ```
 

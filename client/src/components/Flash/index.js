@@ -15,7 +15,7 @@ function Flash({ messages, onClose }) {
       className='flash-message'
       key={id}
       onDismiss={createDismissHandler(onClose, id)}
-      >
+    >
       <div dangerouslySetInnerHTML={{ __html: message }} />
     </Alert>
   ));

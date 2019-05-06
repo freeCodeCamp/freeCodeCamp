@@ -22,13 +22,13 @@ Use the <code>every</code> method inside the <code>checkPositive</code> function
 ```yml
 tests:
   - text: Your code should use the <code>every</code> method.
-    testString: 'assert(code.match(/\.every/g), "Your code should use the <code>every</code> method.");'
-  - text: '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.'
-    testString: 'assert(!checkPositive([1, 2, 3, -4, 5]), "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.");'
-  - text: '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.'
-    testString: 'assert(checkPositive([1, 2, 3, 4, 5]), "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.");'
-  - text: '<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.'
-    testString: 'assert(!checkPositive([1, -2, 3, -4, 5]), "<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.");'
+    testString: assert(code.match(/\.every/g), 'Your code should use the <code>every</code> method.');
+  - text: <code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.
+    testString: assert(!checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.');
+  - text: <code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.
+    testString: assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');
+  - text: <code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.
+    testString: assert(!checkPositive([1, -2, 3, -4, 5]), '<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.');
 
 ```
 
@@ -59,6 +59,11 @@ checkPositive([1, 2, 3, -4, 5]);
 <section id='solution'>
 
 ```js
-// solution required
+function checkPositive(arr) {
+  // Add your code below this line
+  return arr.every(num => num > 0);
+  // Add your code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
 ```
 </section>

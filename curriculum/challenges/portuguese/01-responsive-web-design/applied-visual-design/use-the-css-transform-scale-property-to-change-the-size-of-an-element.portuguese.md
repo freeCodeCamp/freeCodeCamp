@@ -7,7 +7,7 @@ localeTitle: Use a propriedade de escala de transformação de CSS para alterar 
 ---
 
 ## Description
-<section id="description"> Para alterar a escala de um elemento, o CSS possui a propriedade <code>transform</code> , junto com sua função <code>scale()</code> . O exemplo de código a seguir dobra o tamanho de todos os elementos de parágrafo na página: <blockquote> p { <br> transformar: escala (2); <br> } </blockquote></section>
+<section id="description"> Para alterar a escala de um elemento, o CSS possui a propriedade <code>transform</code> , junto com sua função <code>scale()</code> . O exemplo de código a seguir dobra o tamanho de todos os elementos de parágrafo na página: <blockquote>p {<br>&nbsp;&nbsp;transform:scale(2);<br>}</blockquote></section>
 
 ## Instructions
 <section id="instructions"> Aumente o tamanho do elemento com o id de <code>ball2</code> para 1,5 vezes o tamanho original. </section>

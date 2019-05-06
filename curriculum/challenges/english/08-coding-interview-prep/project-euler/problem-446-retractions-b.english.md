@@ -29,7 +29,7 @@ Find F(107) (mod 1 000 000 007)
 ```yml
 tests:
   - text: <code>euler446()</code> should return 907803852.
-    testString: 'assert.strictEqual(euler446(), 907803852, "<code>euler446()</code> should return 907803852.");'
+    testString: assert.strictEqual(euler446(), 907803852, '<code>euler446()</code> should return 907803852.');
 
 ```
 

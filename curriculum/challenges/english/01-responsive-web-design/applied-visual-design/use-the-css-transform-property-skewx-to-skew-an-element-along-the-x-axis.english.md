@@ -23,7 +23,7 @@ Skew the element with the id of <code>bottom</code> by 24 degrees along the X-ax
 ```yml
 tests:
   - text: The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.
-    testString: 'assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g), "The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.");'
+    testString: assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g), 'The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.');
 
 ```
 
@@ -63,9 +63,23 @@ tests:
 ## Solution
 <section id='solution'>
 
-
-```js
-var code = "#bottom {background-color: blue; transform: skewX(24deg);}"
+```html
+<style>
+  div {
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+  }
+  #bottom {
+    background-color: blue;
+    transform: skewX(24deg);
+  }
+</style>
+<div id="top"></div>
+<div id="bottom"></div>
 ```
 
 </section>

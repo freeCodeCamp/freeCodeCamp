@@ -28,5 +28,5 @@ O Spark tornou-se uma ferramenta padrão na caixa de ferramentas de muitos cient
 
 #### Mais Informações
 
-*   [Página do Spark Github](https://github.com/apache/spark)
+*   [Página do Spark GitHub](https://github.com/apache/spark)
 *   [Wikipedia](https://en.wikipedia.org/wiki/Apache_Spark)

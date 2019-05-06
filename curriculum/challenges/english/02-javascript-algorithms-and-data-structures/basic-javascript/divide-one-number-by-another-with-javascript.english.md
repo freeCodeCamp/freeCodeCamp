@@ -2,6 +2,7 @@
 id: cf1111c1c11feddfaeb6bdef
 title: Divide One Number by Another with JavaScript
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cqkbdAr'
 ---
 
 ## Description
@@ -25,9 +26,9 @@ Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2<
 ```yml
 tests:
   - text: Make the variable <code>quotient</code> equal to 2.
-    testString: 'assert(quotient === 2, "Make the variable <code>quotient</code> equal to 2.");'
+    testString: assert(quotient === 2, 'Make the variable <code>quotient</code> equal to 2.');
   - text: Use the <code>/</code> operator
-    testString: 'assert(/\d+\s*\/\s*\d+/.test(code), "Use the <code>/</code> operator");'
+    testString: assert(/\d+\s*\/\s*\d+/.test(code), 'Use the <code>/</code> operator');
 
 ```
 
@@ -51,7 +52,7 @@ var quotient = 66 / 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'quotient = '+z;})(quotient);
 ```
 
 </div>

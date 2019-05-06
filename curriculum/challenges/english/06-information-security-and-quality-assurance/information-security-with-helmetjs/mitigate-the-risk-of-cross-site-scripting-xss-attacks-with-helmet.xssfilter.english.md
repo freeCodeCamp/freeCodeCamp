@@ -25,7 +25,7 @@ It still has limited support.
 ```yml
 tests:
   - text: helmet.xssFilter() middleware should be mounted correctly
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "xXssProtection"); assert.property(data.headers, "x-xss-protection"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'xXssProtection'); assert.property(data.headers, 'x-xss-protection'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 

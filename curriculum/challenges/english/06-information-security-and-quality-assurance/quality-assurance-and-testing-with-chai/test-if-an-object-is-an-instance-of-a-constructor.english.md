@@ -7,13 +7,13 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-#instanceOf asserts that an object is an instance of a constructor.
-Use #instanceOf or #notInstanceOf where appropriate
+<code>#instanceOf</code> asserts that an object is an instance of a constructor.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.instanceOf()</code> or <code>assert.notInstanceOf()</code> to make the tests pass. 
 </section>
 
 ## Tests
@@ -22,15 +22,15 @@ Use #instanceOf or #notInstanceOf where appropriate
 ```yml
 tests:
   - text: All tests should pass
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
   - text: Choose the right assertion - instanceOf vs. notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[0].method, "notInstanceOf", "myCar is not an instance of Plane"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[0].method, 'notInstanceOf', 'myCar is not an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })
   - text: Choose the right assertion - instanceOf vs. notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[1].method, "instanceOf", "airlinePlane is an instance of Plane"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[1].method, 'instanceOf', 'airlinePlane is an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })
   - text: Choose the right assertion - instanceOf vs. notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[2].method, "instanceOf", "everything is an Object in JavaScript..."); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[2].method, 'instanceOf', 'everything is an Object in JavaScript...'); }, xhr => { throw new Error(xhr.responseText); })
   - text: Choose the right assertion - instanceOf vs. notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[3].method, "notInstanceOf", "myCar.wheels is not an instance of String"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[3].method, 'notInstanceOf', 'myCar.wheels is not an instance of String'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
