@@ -3,11 +3,11 @@ id: 5a94fe7769fb03452672e463
 title: Use Media Queries to Create Responsive Layouts
 challengeType: 0
 videoUrl: ''
-localeTitle: 使用媒体查询创建具有回应性的布局
+localeTitle: 使用media queries创建响应式布局
 ---
 
 ## Description
-<section id="description">您可以使用CSS Grid的媒体查询来赐予您的网站回应性。媒体查询可以用于重新排列网格区域，更改网格尺寸的大小以及重新排列项目。在预览中，当视口宽度为300px或更大时，网格列数将会从1变为2.然后广告区域会完全占据左列。 </section>
+<section id="description">您可以使用CSS Grid的media queries来使您的网站布局具有响应式的特征。media queries可以用于重新排列网格区域，更改网格尺寸的大小以及重新排列项目。在预览中，当视口宽度为300px或更大时，网格列数将会从1变为2.然后广告区域会完全占据左列。 </section>
 
 ## Instructions
 <section id="instructions">当视口宽度为<code>400px</code>或更大时，使标题区域完全占据顶行，页脚区域完全占据底行。 </section>
