@@ -27,7 +27,7 @@ Add the appropriate <code>import</code> statement that will allow the current fi
 ```yml
 tests:
   - text: Use a valid <code>import</code> statement
-    testString: getUserInput => assert(getUserInput('index').match(/import\s*\{\s*capitalizeString\s*\}\s*from\s*("|')(\.\/string_functions|string_functions)\1(;\s|\s|\/\/)/g));
+    testString: getUserInput => assert(getUserInput('index').match(/import\s*\{\s*capitalizeString\s*\}\s*from\s*("|')(\.\/string_functions|string_functions)\1(|\/\/|;\s|\s)/g));
 ```
 
 </section>
