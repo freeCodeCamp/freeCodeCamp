@@ -28,7 +28,7 @@ class NotFoundPage extends Component {
 
   render() {
     return (
-      <div className='notfound-page-wrapper'>
+      <main className='notfound-page-wrapper'>
         <Helmet title='Page Not Found | freeCodeCamp' />
         <img alt='404 Not Found' src={notFoundLogo} />
         <h1>NOT FOUND</h1>
@@ -52,7 +52,7 @@ class NotFoundPage extends Component {
         <Link className='btn-curriculum' to='/learn'>
           View the Curriculum
         </Link>
-      </div>
+      </main>
     );
   }
 }
