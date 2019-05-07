@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar bordas ao redor de seus elementos
 ---
 
-## Description
+## Descrição
 <section id="description"> As bordas CSS têm propriedades como <code>style</code> , <code>color</code> e <code>width</code> Por exemplo, se quisermos criar uma borda vermelha de 5 pixels em torno de um elemento HTML, poderíamos usar essa classe: <blockquote> &lt;style&gt; <br> .thin-red-border { <br> border-color: vermelho; <br> largura da borda: 5 px; <br> estilo de borda: sólido; <br> } <br> &lt;/ style&gt; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma classe chamada <code>thick-green-border</code> . Essa classe deve adicionar uma borda verde sólida de 10 pixels em torno de um elemento HTML. Aplique a turma à sua foto de gato. Lembre-se de que você pode aplicar várias classes a um elemento usando seu atributo de <code>class</code> , separando cada nome de classe com um espaço. Por exemplo: <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -98,7 +98,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
