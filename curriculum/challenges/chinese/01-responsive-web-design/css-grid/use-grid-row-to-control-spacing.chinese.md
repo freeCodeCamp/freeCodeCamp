@@ -10,7 +10,7 @@ localeTitle: 使用网格行控制间距
 <section id="description">当然，像网格列一样，您也可以使一个项目同时占据多个网格行。您可以使用<code>grid-row</code>属性来定义项目开始和结束的网格行。 </section>
 
 ## Instructions
-<section id="instructions">rang带有<code>item5</code>class选择器的元素占有最后两排网格行。 </section>
+<section id="instructions">让带有<code>item5</code>class选择器的元素占有最后两排网格行。 </section>
 
 ## Tests
 <section id='tests'>
