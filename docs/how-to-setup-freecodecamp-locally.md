@@ -3,8 +3,6 @@ Follow these guidelines for getting freeCodeCamp locally on your system. This is
 
 Some of the contribution workflows, like previewing pages for the guide or the coding challenges, debugging and fixing bugs in codebase, requires you to have freeCodeCamp running locally.
 
-The new Docker setup procedure *should* result in fewer, if not zero, errors during the setup process and make it easier for you. We use Docker to install and run many of the software dependencies which means that you don't have to install services like MongoDB or MailHog on your computer or worry about ensuring you are using the correct version.
-
 ## Fork the repository on GitHub
 ['Forking'](https://help.github.com/articles/about-forks/) is a step where you get your own copy of freeCodeCamp's main repository (a.k.a _repo_) on GitHub.
 
@@ -107,7 +105,13 @@ There are currently two methods to run freeCodeCamp locally:
 - Docker (recommended)
 - Local
 
-Only **one** of these methods is necessary. If you are having issues using one method, try using the other. If you do run into issues with either method, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our GitHub [issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
+You are required to follow any **one** of the above methods.
+
+The Docker setup will ideally result in fewer errors during the installation process and aims to have the best developer experience. We use Docker to install and run the additional software dependencies behind the scenes. This should make it hassle-free and consistent experience across most device/OS types.
+
+If you are having issues using one method, try using the other. If you do run into issues with either method, first perform a web search for your issue and see if it has already been answered. If you cannot find a solution, please search our GitHub [issues](https://github.com/freeCodeCamp/freeCodeCamp/issues) page for a solution and report the issue if it has not yet been reported.
+
+And as always, feel free to hop on to our [Contributors Chat room](https://gitter.im/FreeCodeCamp/Contributors), for quick queries.
 
 ### Installing prerequisites
 Start by installing the prerequisite software:
@@ -124,6 +128,7 @@ Software required for both Docker and Local builds:
 | Prerequisite | Version | Notes |
 | ------------ | ------- | ----- |
 | [Docker CE](https://docs.docker.com/install/) | `Stable` | - |
+| [Docker Compose](https://docs.docker.com/compose/install/) | `Stable` | Must be installed separately if not using macOS or Windows |
 
 **Local Build additional prerequisite:**
 
@@ -143,7 +148,7 @@ npm -v
 If you have a different version, please install the recommended version. We can only support installation issues for recommended versions.
 
 Windows users:  
->Make sure the command line tool you use (e.g., cmd, PowerShell, Git Bash for Windows, WSL) has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On Windows you should be able to launch as administrator by right-clicking the application and selecting `Launch as an Administrator`.
+> Make sure the command line tool you use (e.g., cmd, PowerShell, Git Bash for Windows, WSL) has the correct user privileges. If possible, you should launch the tool with Administrator's privilege. On Windows you should be able to launch as administrator by right-clicking the application and selecting `Launch as an Administrator`.
 
 #### I am having issues with installing the recommended prerequisites. What should I do?
 We regularly develop on the latest or most popular operating systems like macOS 10.12 or later, Ubuntu 16.04 or later and Windows 10. It is recommended to research your specific issue on resources such as Google, Stack Overflow and Stack Exchange. There is a good chance that someone has faced the same issue and there is already an answer to your specific query.
