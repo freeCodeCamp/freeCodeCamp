@@ -31,7 +31,7 @@ You may refer back to <a href="learn/javascript-algorithms-and-data-structures/b
 ```yml
 tests:
   - text: Do not modify the <code>collection</code> object
-    testString: assert(code.match(/var collection = {\s*"2548"[:] {\s*"album"[:] "Slippery When Wet",\s*"artist"[:] "Bon Jovi",\s*"tracks"[:] \[\s*"Let It Rock",\s*"You Give Love a Bad Name"\s*\]\s*},\s*"2468"[:] {\s*"album"[:] "1999",\s*"artist"[:] "Prince",\s*"tracks"[:] \[\s*"1999",\s*"Little Red Corvette"\s*\]\s*},\s*"1245"[:] {\s*"artist"[:] "Robert Palmer",\s*"tracks"[:] \[ \]\s*},\s*"5439"[:] {\s*"album"[:] "ABBA Gold"\s*}\s*};/g));
+    testString: assert(code.match(/var collection = {\s*2548[:] {\s*"album"[:] "Slippery When Wet",\s*"artist"[:] "Bon Jovi",\s*"tracks"[:] \[\s*"Let It Rock",\s*"You Give Love a Bad Name"\s*\]\s*},\s*2468[:] {\s*"album"[:] "1999",\s*"artist"[:] "Prince",\s*"tracks"[:] \[\s*"1999",\s*"Little Red Corvette"\s*\]\s*},\s*1245[:] {\s*"artist"[:] "Robert Palmer",\s*"tracks"[:] \[ \]\s*},\s*5439[:] {\s*"album"[:] "ABBA Gold"\s*}\s*};/g));
   - text: After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>
     testString: assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA");
   - text: After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.
@@ -46,7 +46,7 @@ tests:
     testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"));
   - text: After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>
     testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide");
-    
+
 ```
 
 </section>
@@ -59,7 +59,7 @@ tests:
 ```js
 // Setup
 var collection = {
-  "2548": {
+  2548: {
     "album": "Slippery When Wet",
     "artist": "Bon Jovi",
     "tracks": [
@@ -67,7 +67,7 @@ var collection = {
       "You Give Love a Bad Name"
     ]
   },
-  "2468": {
+  2468: {
     "album": "1999",
     "artist": "Prince",
     "tracks": [
@@ -75,11 +75,11 @@ var collection = {
       "Little Red Corvette"
     ]
   },
-  "1245": {
+  1245: {
     "artist": "Robert Palmer",
     "tracks": [ ]
   },
-  "5439": {
+  5439: {
     "album": "ABBA Gold"
   }
 };
@@ -117,27 +117,27 @@ updateRecords(5439, "artist", "ABBA");
 ```js
 var collection = {
   2548: {
-    album: "Slippery When Wet",
-    artist: "Bon Jovi",
-    tracks: [
+    "album": "Slippery When Wet",
+    "artist": "Bon Jovi",
+    "tracks": [
       "Let It Rock",
       "You Give Love a Bad Name"
     ]
   },
   2468: {
-    album: "1999",
-    artist: "Prince",
-    tracks: [
+    "album": "1999",
+    "artist": "Prince",
+    "tracks": [
       "1999",
       "Little Red Corvette"
     ]
   },
   1245: {
-    artist: "Robert Palmer",
-    tracks: [ ]
+    "artist": "Robert Palmer",
+    "tracks": [ ]
   },
   5439: {
-    album: "ABBA Gold"
+    "album": "ABBA Gold"
   }
 };
 
