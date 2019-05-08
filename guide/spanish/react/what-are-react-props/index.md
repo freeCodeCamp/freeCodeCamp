@@ -1,7 +1,8 @@
 ---
 title: React TypeChecking with PropTypes
-localeTitle: Reaccionar TypeChecking con PropTypes
----## Reaccionar PropTypes
+localeTitle: React TypeChecking con PropTypes
+---
+## React PropTypes
 
 Estos sirven como un método de verificación de tipos, ya que una aplicación tiende a crecer, con esto, una gran base de errores tiende a corregirse con el uso de esta función.
 

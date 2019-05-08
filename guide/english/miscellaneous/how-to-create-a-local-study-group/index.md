@@ -6,10 +6,11 @@ If you didn't see your city on <a href='https://www.freecodecamp.com/study-group
 This also applies to creating smaller, more cohesive groups for neighbourhoods and districts inside of the same city. Thus, groups should ideally represent areas where its members don't have to commute longer than 15-20 minutes to meet each other.  
 However, be aware people may want to join from other places, as they may intend on moving there, or see your group as a nice source of resources and feedback, etc.
 
-**Please, do not create groups for a whole State/province/department/county/etc. as they will not be added to the list.**
+**Please, do not create groups for a whole state/province/department/county/etc. as they will not be added to the list.**
 
 Assuming you've already signed into Facebook:  
-0 . (optional) While creating the group you'll need to add at least one person. You could add <a href='https://www.facebook.com/FCC.GroupChancellor' target='_blank' rel='nofollow'>Justin</a> as a friend, who's in charge of freeCodeCamp's local groups and can **assist you in managing your members, events, and any issues that may come up (such as spammers, etc.)**.  
+
+(This part is optional) While creating the group you'll need to add at least one person. You could add <a href='https://www.facebook.com/FCC.GroupChancellor' target='_blank' rel='nofollow'>Justin</a> as a friend, who's in charge of freeCodeCamp's local groups and can **assist you in managing your members, events, and any issues that may come up (such as spammers, etc.)**.  
 Also, he will probably not see be able to see any messages you may send until you "friend" him.
 
 Now, to the fun part! It's easy, just follow these steps:
