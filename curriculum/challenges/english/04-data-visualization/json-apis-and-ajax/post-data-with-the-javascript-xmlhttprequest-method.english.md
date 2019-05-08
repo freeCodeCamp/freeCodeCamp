@@ -8,7 +8,19 @@ challengeType: 6
 <section id='description'>
 In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.
 JavaScript's <code>XMLHttpRequest</code> method is also used to post data to a server. Here's an example:
-<blockquote>req=new XMLHttpRequest();<br>req.open("POST",url,true);<br>req.setRequestHeader('Content-Type','text/plain');<br>req.onreadystatechange=function(){<br>&nbsp;&nbsp;if(req.readyState==4 && req.status==200){<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=req.responseText;<br>&nbsp;&nbsp;}<br>};<br>req.send(userName);</blockquote>
+
+```js
+req=new XMLHttpRequest();
+req.open("POST",url,true);
+req.setRequestHeader('Content-Type','text/plain');
+req.onreadystatechange=function(){
+  if(req.readyState==4 && req.status==200){
+    document.getElementsByClassName('message')[0].innerHTML=req.responseText;
+  }
+};
+req.send(userName);
+```
+
 You've seen several of these methods before. Here the <code>open</code> method initializes the request as a "POST" to the given URL of the external resource, and uses the <code>true</code> Boolean to make it asynchronous.
 The <code>setRequestHeader</code> method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the <code>open</code> method, but before the <code>send</code> method. The two parameters are the name of the header and the value to set as the body of that header.
 Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 200 means it was a successful request. The document's HTML can be updated.

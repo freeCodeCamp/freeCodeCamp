@@ -8,7 +8,14 @@ challengeType: 6
 <section id='description'>
 The last challenge added only one rectangle to the <code>svg</code> element to represent a bar. Here, you'll combine what you've learned so far about <code>data()</code>, <code>enter()</code>, and SVG shapes to create and append a rectangle for each data point in <code>dataset</code>.
 A previous challenge showed the format for how to create and append a <code>div</code> for each item in <code>dataset</code>:
-<blockquote>d3.select("body").selectAll("div")<br>&nbsp;&nbsp;.data(dataset)<br>&nbsp;&nbsp;.enter()<br>&nbsp;&nbsp;.append("div")</blockquote>
+
+```js
+d3.select("body").selectAll("div")
+  .data(dataset)
+  .enter()
+  .append("div")
+```
+
 There are a few differences working with <code>rect</code> elements instead of <code>divs</code>. The <code>rects</code> must be appended to an <code>svg</code> element, not directly to the <code>body</code>. Also, you need to tell D3 where to place each <code>rect</code> within the <code>svg</code> area. The bar placement will be covered in the next challenge.
 </section>
 

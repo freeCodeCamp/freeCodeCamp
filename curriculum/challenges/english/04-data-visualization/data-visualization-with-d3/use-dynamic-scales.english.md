@@ -10,7 +10,30 @@ The D3 <code>min()</code> and <code>max()</code> methods are useful to help set 
 Given a complex data set, one priority is to set the scale so the visualization fits the SVG container's width and height. You want all the data plotted inside the SVG canvas so it's visible on the web page.
 The example below sets the x-axis scale for scatter plot data. The <code>domain()</code> method passes information to the scale about the raw data values for the plot. The <code>range()</code> method gives it information about the actual space on the web page for the visualization.
 In the example, the domain goes from 0 to the maximum in the set. It uses the <code>max()</code> method with a callback function based on the x values in the arrays. The range uses the SVG canvas' width (<code>w</code>), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG canvas.
-<blockquote>const dataset = [<br>&nbsp;&nbsp;[ 34,    78 ],<br>&nbsp;&nbsp;[ 109,   280 ],<br>&nbsp;&nbsp;[ 310,   120 ],<br>&nbsp;&nbsp;[ 79,    411 ],<br>&nbsp;&nbsp;[ 420,   220 ],<br>&nbsp;&nbsp;[ 233,   145 ],<br>&nbsp;&nbsp;[ 333,   96 ],<br>&nbsp;&nbsp;[ 222,   333 ],<br>&nbsp;&nbsp;[ 78,    320 ],<br>&nbsp;&nbsp;[ 21,    123 ]<br>];<br>const w = 500;<br>const h = 500;<br><br>// Padding between the SVG canvas boundary and the plot<br>const padding = 30;<br>const xScale = d3.scaleLinear()<br>&nbsp;&nbsp;.domain([0, d3.max(dataset, (d) => d[0])])<br>&nbsp;&nbsp;.range([padding, w - padding]);</blockquote>
+
+```js
+const dataset = [
+  [ 34,    78 ],
+  [ 109,   280 ],
+  [ 310,   120 ],
+  [ 79,    411 ],
+  [ 420,   220 ],
+  [ 233,   145 ],
+  [ 333,   96 ],
+  [ 222,   333 ],
+  [ 78,    320 ],
+  [ 21,    123 ]
+];
+const w = 500;
+const h = 500;
+
+// Padding between the SVG canvas boundary and the plot
+const padding = 30;
+const xScale = d3.scaleLinear()
+  .domain([0, d3.max(dataset, (d) => d[0])])
+  .range([padding, w - padding]);
+```
+
 The padding may be confusing at first. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG canvas). Including the padding in the <code>range()</code> method forces the plot to start at 30 along that line (instead of 0), and end at 470 (instead of 500).
 </section>
 
