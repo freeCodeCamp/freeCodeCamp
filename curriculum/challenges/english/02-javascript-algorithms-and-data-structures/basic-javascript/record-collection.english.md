@@ -46,6 +46,7 @@ tests:
     testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"));
   - text: After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>
     testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide");
+    
 ```
 
 </section>
