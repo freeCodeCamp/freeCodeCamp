@@ -9,9 +9,21 @@ videoUrl: 'https://scrimba.com/c/cWP24Ub'
 <section id='description'>
 The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.
 <strong>Example</strong>
-<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>
+
+```js
+5 % 2 = 1 because
+Math.floor(5 / 2) = 2 (Quotient)
+2 * 2 = 4
+5 - 4 = 1 (Remainder)
+```
+
 <strong>Usage</strong><br>In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by <code>2</code>.
-<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>
+
+```js
+17 % 2 = 1 (17 is Odd)
+48 % 2 = 0 (48 is Even)
+```
+
 <strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as  the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.
 </section>
 

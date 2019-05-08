@@ -9,9 +9,23 @@ challengeType: 1
 Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
 Here's an example to review how to do this:
 The regex <code>/z+/</code> matches the letter <code>z</code> when it appears one or more times in a row. It would find matches in all of the following strings:
-<blockquote>"z"<br>"zzzzzz"<br>"ABCzzzz"<br>"zzzzABC"<br>"abczzzzzzzzzzzzzzzzzzzzzabc"</blockquote>
+
+```js
+"z"
+"zzzzzz"
+"ABCzzzz"
+"zzzzABC"
+"abczzzzzzzzzzzzzzzzzzzzzabc"
+```
+
 But it does not find matches in the following strings since there are no letter <code>z</code> characters:
-<blockquote>""<br>"ABC"<br>"abcabc"</blockquote>
+
+```js
+""
+"ABC"
+"abcabc"
+```
+
 </section>
 
 ## Instructions

@@ -9,12 +9,29 @@ challengeType: 1
 
 In the previous challenge, <code>bird</code> had a public property <code>name</code>. It is considered public because it can be accessed and changed outside of <code>bird</code>'s definition.
 
-<blockquote>bird.name = "Duffy";</blockquote>
+
+```js
+bird.name = "Duffy";
+```
+
 
 Therefore, any part of your code can easily change the name of <code>bird</code> to any value. Think about things like passwords and bank accounts being easily changeable by any part of your codebase. That could cause a lot of issues.
 
 The simplest way to make this public property private is by creating a variable within the constructor function. This changes the scope of that variable to be within the constructor function versus available globally. This way, the variable can only be accessed and changed by methods also within the constructor function.
-<blockquote>function Bird() {<br>&nbsp;&nbsp;let hatchedEgg = 10; // private variable<br><br>&nbsp;&nbsp;/* publicly available method that a bird object can use */<br>&nbsp;&nbsp;this.getHatchedEggCount = function() { <br>&nbsp;&nbsp;&nbsp;&nbsp;return hatchedEgg;<br>&nbsp;&nbsp;};<br>}<br>let ducky = new Bird();<br>ducky.getHatchedEggCount(); // returns 10</blockquote>
+
+```js
+function Bird() {
+  let hatchedEgg = 10; // private variable
+
+  /* publicly available method that a bird object can use */
+  this.getHatchedEggCount = function() { 
+    return hatchedEgg;
+  };
+}
+let ducky = new Bird();
+ducky.getHatchedEggCount(); // returns 10
+```
+
 Here <code>getHachedEggCount</code> is a privileged method, because it has access to the private variable <code>hatchedEgg</code>. This is possible because <code>hatchedEgg</code> is declared in the same context as <code>getHachedEggCount</code>. In JavaScript, a function always has access to the context in which it was created. This is called <code>closure</code>.
 
 </section>

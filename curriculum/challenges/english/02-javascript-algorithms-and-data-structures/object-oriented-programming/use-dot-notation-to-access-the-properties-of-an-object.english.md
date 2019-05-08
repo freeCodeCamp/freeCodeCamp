@@ -7,7 +7,16 @@ challengeType: 1
 ## Description
 <section id='description'>
 The last challenge created an <code>object</code> with various <code>properties</code>, now you'll see how to access the values of those <code>properties</code>. Here's an example:
-<blockquote>let duck = {<br>&nbsp;&nbsp;name: "Aflac",<br>&nbsp;&nbsp;numLegs: 2<br>};<br>console.log(duck.name);<br>// This prints "Aflac" to the console</blockquote>
+
+```js
+let duck = {
+  name: "Aflac",
+  numLegs: 2
+};
+console.log(duck.name);
+// This prints "Aflac" to the console
+```
+
 Dot notation is used on the <code>object</code> name, <code>duck</code>, followed by the name of the <code>property</code>, <code>name</code>, to access the value of "Aflac".
 </section>
 

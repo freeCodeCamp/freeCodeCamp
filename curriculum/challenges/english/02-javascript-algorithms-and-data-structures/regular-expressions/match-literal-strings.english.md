@@ -7,9 +7,22 @@ challengeType: 1
 ## Description
 <section id='description'>
 In the last challenge, you searched for the word <code>"Hello"</code> using the regular expression <code>/Hello/</code>. That regex searched for a literal match of the string <code>"Hello"</code>. Here's another example searching for a literal match of the string <code>"Kevin"</code>:
-<blockquote>let testStr = "Hello, my name is Kevin.";<br>let testRegex = /Kevin/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
+
+```js
+let testStr = "Hello, my name is Kevin.";
+let testRegex = /Kevin/;
+testRegex.test(testStr);
+// Returns true
+```
+
 Any other forms of <code>"Kevin"</code> will not match. For example, the regex <code>/Kevin/</code> will not match <code>"kevin"</code> or <code>"KEVIN"</code>.
-<blockquote>let wrongRegex = /kevin/;<br>wrongRegex.test(testStr);<br>// Returns false</blockquote>
+
+```js
+let wrongRegex = /kevin/;
+wrongRegex.test(testStr);
+// Returns false
+```
+
 A future challenge will show how to match those other forms as well.
 </section>
 

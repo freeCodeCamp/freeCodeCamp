@@ -8,7 +8,17 @@ videoUrl: 'https://scrimba.com/c/caeJ2hm'
 ## Description
 <section id='description'>
 If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.
-<blockquote>if (num > 15) {<br>&nbsp;&nbsp;return "Bigger than 15";<br>} else if (num < 5) {<br>&nbsp;&nbsp;return "Smaller than 5";<br>} else {<br>&nbsp;&nbsp;return "Between 5 and 15";<br>}</blockquote>
+
+```js
+if (num > 15) {
+  return "Bigger than 15";
+} else if (num < 5) {
+  return "Smaller than 5";
+} else {
+  return "Between 5 and 15";
+}
+```
+
 </section>
 
 ## Instructions

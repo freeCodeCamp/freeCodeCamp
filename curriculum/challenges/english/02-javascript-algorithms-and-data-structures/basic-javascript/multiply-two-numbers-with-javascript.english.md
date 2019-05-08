@@ -11,7 +11,11 @@ We can also multiply one number by another.
 JavaScript uses the <code>*</code> symbol for multiplication of two numbers.
 
 <strong>Example</strong>
-<blockquote>myVar = 13 * 13; // assigned 169</blockquote>
+
+```js
+myVar = 13 * 13; // assigned 169
+```
+
 
 </section>
 

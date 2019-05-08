@@ -11,7 +11,11 @@ We can also subtract one number from another.
 JavaScript uses the <code>-</code> symbol for subtraction.
 
 <strong>Example</strong>
-<blockquote>myVar = 12 - 6; // assigned 6</blockquote>
+
+```js
+myVar = 12 - 6; // assigned 6
+```
+
 
 </section>
 

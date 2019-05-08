@@ -8,9 +8,21 @@ challengeType: 1
 <section id='description'>
 Searching is useful. However, you can make searching even more powerful when it also changes (or replaces) the text you match.
 You can search and replace text in a string using <code>.replace()</code> on a string. The inputs for <code>.replace()</code> is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
-<blockquote>let wrongText = "The sky is silver.";<br>let silverRegex = /silver/;<br>wrongText.replace(silverRegex, "blue");<br>// Returns "The sky is blue."</blockquote>
+
+```js
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+// Returns "The sky is blue."
+```
+
 You can also access capture groups in the replacement string with dollar signs (<code>$</code>).
-<blockquote>"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');<br>// Returns "Camp Code"</blockquote>
+
+```js
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
+// Returns "Camp Code"
+```
+
 </section>
 
 ## Instructions

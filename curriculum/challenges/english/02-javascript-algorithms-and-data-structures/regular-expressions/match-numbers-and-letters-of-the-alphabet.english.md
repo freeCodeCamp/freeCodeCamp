@@ -9,7 +9,14 @@ challengeType: 1
 Using the hyphen (<code>-</code>) to match a range of characters is not limited to letters. It also works to match a range of numbers.
 For example, <code>/[0-5]/</code> matches any number between <code>0</code> and <code>5</code>, including the <code>0</code> and <code>5</code>.
 Also, it is possible to combine a range of letters and numbers in a single character set.
-<blockquote>let jennyStr = "Jenny8675309";<br>let myRegex = /[a-z0-9]/ig;<br>// matches all letters and numbers in jennyStr<br>jennyStr.match(myRegex);</blockquote>
+
+```js
+let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/ig;
+// matches all letters and numbers in jennyStr
+jennyStr.match(myRegex);
+```
+
 </section>
 
 ## Instructions

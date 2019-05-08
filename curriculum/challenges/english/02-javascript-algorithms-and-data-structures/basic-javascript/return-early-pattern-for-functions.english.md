@@ -9,7 +9,16 @@ videoUrl: 'https://scrimba.com/c/cQe39Sq'
 <section id='description'>
 When a <code>return</code> statement is reached, the execution of the current function stops and control returns to the calling location.
 <strong>Example</strong>
-<blockquote>function myFun() {<br>&nbsp;&nbsp;console.log("Hello");<br>&nbsp;&nbsp;return "World";<br>&nbsp;&nbsp;console.log("byebye")<br>}<br>myFun();</blockquote>
+
+```js
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+```
+
 The above outputs "Hello" to the console, returns "World", but <code>"byebye"</code> is never output, because the function exits at the <code>return</code> statement.
 </section>
 
