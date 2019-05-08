@@ -1,11 +1,10 @@
 ---
-title: Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
+title: Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
 ---
-## Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
+## Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+Remember that the rest parameter allows for variable numbers of arguments. In this challenge, you have to get rid of the first two elements of an array.
 
-Remember that the rest operator allows for variable numbers of arguments. In this challenge, you have to get rid of the first two elements of an array.
-
-## Hint 1: 
+## Hint 1:
 
 Assign the first two elements to two random variables.
 
@@ -39,8 +38,8 @@ function removeFirstTwo(list) {
   // change code above this line
   return arr;
 }
-```
 
+```
 
 ## Spoiler Alert - Solution Ahead!
 You can use random variables to omit the first two values:
@@ -67,7 +66,7 @@ const source = [1,2,3,4,5,6,7,8,9,10];
 function removeFirstTwo(list) {
   "use strict";
   // change code below this line
-  const [,,...arr] = list; // change this
+  const [a, b, ...arr] = list;
   // change code above this line
   return arr;
 }

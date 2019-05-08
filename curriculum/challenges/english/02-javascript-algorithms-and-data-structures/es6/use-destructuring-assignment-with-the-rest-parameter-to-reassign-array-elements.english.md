@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4c
-title: Use Destructuring Assignment with the Rest Operator to Reassign Array Elements
+title: Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
 challengeType: 1
 ---
 
@@ -9,13 +9,13 @@ challengeType: 1
 In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.
 The result is similar to <code>Array.prototype.slice()</code>, as shown below:
 <blockquote>const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];<br>console.log(a, b); // 1, 2<br>console.log(arr); // [3, 4, 5, 7]</blockquote>
-Variables <code>a</code> and <code>b</code> take the first and second values from the array. After that, because of rest operator's presence, <code>arr</code> gets rest of the values in the form of an array.
-The rest element only works correctly as the last variable in the list. As in, you cannot use the rest operator to catch a subarray that leaves out last element of the original array.
+Variables <code>a</code> and <code>b</code> take the first and second values from the array. After that, because of rest parameter's presence, <code>arr</code> gets rest of the values in the form of an array.
+The rest element only works correctly as the last variable in the list. As in, you cannot use the rest parameter to catch a subarray that leaves out last element of the original array.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use destructuring assignment with the rest operator to perform an effective <code>Array.prototype.slice()</code> so that <code>arr</code> is a sub-array of the original array <code>source</code> with the first two elements omitted.
+Use destructuring assignment with the rest parameter to perform an effective <code>Array.prototype.slice()</code> so that <code>arr</code> is a sub-array of the original array <code>source</code> with the first two elements omitted.
 </section>
 
 ## Tests
