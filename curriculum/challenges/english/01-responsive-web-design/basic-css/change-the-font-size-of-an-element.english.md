@@ -8,7 +8,13 @@ videoUrl: 'https://scrimba.com/c/c3bvDc8'
 ## Description
 <section id='description'>
 Font size is controlled by the <code>font-size</code> CSS property, like this:
-<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>
+
+```css
+h1 {
+  font-size: 30px;
+}
+```
+
 </section>
 
 ## Instructions
