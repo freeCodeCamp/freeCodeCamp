@@ -14,26 +14,31 @@ A model allows you to create instances of your objects, called documents.
 
 Glitch is a real server, and in real servers the interactions with the db happen in handler functions. These function are executed when some event happens (e.g. someone hits an endpoint on your API). We’ll follow the same approach in these exercises. The <code>done()</code> function is a callback that tells us that we can proceed after completing an asynchronous operation such as inserting, searching, updating or deleting. It’s following the Node convention and should be called as <code>done(null, data)</code> on success, or <code>done(err)</code> on error.
 Warning - When interacting with remote services, errors may occur!
-<blockquote>
-/* Example */<br><br>
-var someFunc = function(done) {<br>
-&nbsp;&nbsp;//... do something (risky) ...<br>
-&nbsp;&nbsp;if(error) return done(error);<br>
-&nbsp;&nbsp;done(null, result);<br>
+
+```js
+/* Example */
+
+var someFunc = function(done) {
+  //... do something (risky) ...
+  if(error) return done(error);
+  done(null, result);
 };
-</blockquote>
+```
+
 </section>
 
 ## Instructions
 <section id='instructions'>
 Create a person having this prototype :
-<blockquote>
-- Person Prototype -<br>
---------------------<br>
-name : string [required]<br>
-age :  number<br>
+
+```js
+- Person Prototype -
+--------------------
+name : string [required]
+age :  number
 favoriteFoods : array of strings (*)
-</blockquote>
+```
+
 
 Use the mongoose basic schema types. If you want you can also add
 more fields, use simple validators like required or unique,
