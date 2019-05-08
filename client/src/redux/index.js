@@ -39,7 +39,7 @@ const initialState = {
   userProfileFetchState: {
     ...defaultFetchState
   },
-  sessionMeta: {},
+  sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   isOnline: true
 };
@@ -165,12 +165,9 @@ export const userSelector = state => {
 };
 
 export const sessionMetaSelector = state => state[ns].sessionMeta;
-export const activeDonationsSelector = state => {
-  const activeDonations = Number(sessionMetaSelector(state).activeDonations);
-  return (
-    (isNaN(activeDonations) ? 0 : activeDonations) + Number(PAYPAL_SUPPORTERS)
-  );
-};
+export const activeDonationsSelector = state =>
+  Number(sessionMetaSelector(state).activeDonations) +
+  Number(PAYPAL_SUPPORTERS || 0);
 
 function spreadThePayloadOnUser(state, payload) {
   return {
