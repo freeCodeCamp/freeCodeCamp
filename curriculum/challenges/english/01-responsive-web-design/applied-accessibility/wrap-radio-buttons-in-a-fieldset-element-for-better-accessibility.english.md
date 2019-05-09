@@ -19,7 +19,7 @@ Here's an example:
     <input id="one" type="radio" name="items" value="one">
     <label for="one">Choice One</label><br>
     <input id="two" type="radio" name="items" value="two">
-    <label for="two">Choice Two</label>
+    <label for="two">Choice Two</label><br>
     <input id="three" type="radio" name="items" value="three">
     <label for="three">Choice Three</label>
   </fieldset>
