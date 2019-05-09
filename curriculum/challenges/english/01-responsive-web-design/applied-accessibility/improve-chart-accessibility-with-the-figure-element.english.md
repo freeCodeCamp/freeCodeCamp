@@ -14,7 +14,7 @@ Here's an example - note that the <code>figcaption</code> goes inside the <code>
 ```html
 <figure>
   <img src="roundhouseDestruction.jpeg" alt="Photo of Camper Cat executing a roundhouse kick">
-  
+  <br>
   <figcaption>
     Master Camper Cat demonstrates proper form of a roundhouse kick.
   </figcaption>
