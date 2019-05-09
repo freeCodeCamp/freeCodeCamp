@@ -8,13 +8,7 @@ challengeType: 6
 <section id='description'>
 In the previous challenge, you saw how to get JSON data from the freeCodeCamp Cat Photo API.
 Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:
-
-```js
-[ ] -> Square brackets represent an array
-{ } -> Curly brackets represent an object
-" " -> Double quotes represent a string. They are also used for key names in JSON
-```
-
+<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>" " -> Double quotes represent a string. They are also used for key names in JSON</blockquote>
 Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.
 On the right, click the "Get Message" button to load the freeCodeCamp Cat Photo API JSON into the HTML.
 The first and last character you see in the JSON data are square brackets <code>[ ]</code>. This means that the returned data is an array. The second character in the JSON data is a curly <code>{</code> bracket, which starts an object. Looking closely, you can see that there are three separate objects. The JSON data is an array of three objects, where each object contains information about a cat photo.
