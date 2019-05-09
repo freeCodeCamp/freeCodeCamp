@@ -1,8 +1,6 @@
 ---
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: Crear una barra para cada punto de datos en el conjunto

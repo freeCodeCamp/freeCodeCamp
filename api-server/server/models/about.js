@@ -1,6 +1,5 @@
 import { createActiveUsers } from '../utils/about.js';
 
-
 module.exports = function(About) {
   const activeUsers = createActiveUsers();
   let activeUsersForRendering = 0;
@@ -14,17 +13,14 @@ module.exports = function(About) {
 
   About.getActiveUsersForRendering = () => activeUsersForRendering;
 
-  About.remoteMethod(
-    'getActiveUsers',
-    {
-      http: {
-        path: '/get-active-users',
-        verb: 'get'
-      },
-      returns: {
-        type: 'number',
-        arg: 'activeUsers'
-      }
+  About.remoteMethod('getActiveUsers', {
+    http: {
+      path: '/get-active-users',
+      verb: 'get'
+    },
+    returns: {
+      type: 'number',
+      arg: 'activeUsers'
     }
-  );
+  });
 };
