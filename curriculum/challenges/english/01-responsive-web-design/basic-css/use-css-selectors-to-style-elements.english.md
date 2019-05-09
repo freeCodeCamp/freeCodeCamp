@@ -21,7 +21,9 @@ Inside that style block, you can create a <code>CSS selector</code> for all <cod
 
 ```html
 <style>
-  h2 {color: red;}
+  h2 {
+    color: red;
+  }
 </style>
 ```
 
