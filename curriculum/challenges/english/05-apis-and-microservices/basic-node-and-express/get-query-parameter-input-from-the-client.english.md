@@ -7,13 +7,7 @@ challengeType: 2
 ## Description
 <section id='description'>
 Another common way to get input from the client is by encoding the data after the route path, using a query string. The query string is delimited by a question mark (?), and includes field=value couples. Each couple is separated by an ampersand (&). Express can parse the data from the query string, and populate the object <code>req.query</code>. Some characters, like the percent (%), cannot be in URLs and have to be encoded in a different format before you can send them. If you use the API from JavaScript, you can use specific methods to encode/decode these characters.
-
-```js
-route_path: '/library'
-actual_request_URL: '/library?userId=546&bookId=6754' 
-req.query: {userId: '546', bookId: '6754'}
-```
-
+<blockquote>route_path: '/library'<br>actual_request_URL: '/library?userId=546&bookId=6754' <br>req.query: {userId: '546', bookId: '6754'}</blockquote>
 </section>
 
 ## Instructions
