@@ -9,18 +9,18 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 In the next example we'll see how to send data in a request payload (body).
 We are going to test a PUT request. The <code>'/travellers'</code> endpoint accepts a JSON object taking the structure :
- 
-```js
+
+```json
 {
-  surname: [last name of a traveller of the past]
+  "surname": [last name of a traveller of the past]
 }
 ```
 
 The route responds with :
  
-```js
+```json
 {
-  name: [first name], surname:[last name], dates: [birth - death years]
+  "name": [first name], "surname": [last name], "dates": [birth - death years]
 }
 ```
 
@@ -32,12 +32,12 @@ See the server code for more details.
 <section id='instructions'>
 Send <br>
 
-```js
+```json
 {
-  surname: 'Colombo'
+  "surname": "Colombo"
 }
 ```
- 
+
 Replace <code>assert.fail()</code> and make the test pass.
 Check for 1) <code>status</code>, 2) <code>type</code>, 3) <code>body.name</code>, 4) <code>body.surname</code>.
 Follow the assertion order above, We rely on it.

@@ -24,7 +24,7 @@ passport.use(new LocalStrategy(
   }
 ));
 ```
-<br>
+
 This is defining the process to take when we try to authenticate someone locally. First it tries to find a user in our database with the username entered, then it checks for the password to match, then finally if no errors have popped up that we checked for, like an incorrect password, the users object is returned and they are authenticated.
 Many strategies are set up using different settings, general it is easy to set it up based on the README in that strategies repository though. A good example of this is the GitHub strategy where we don't need to worry about a username or password because the user will be sent to GitHub's auth page to authenticate and as long as they are logged in and agree then GitHub returns their profile for us to use.
 In the next step we will set up how to actually call the authentication strategy to validate a user based on form data! Submit your page when you think you've got it right up to this point.
