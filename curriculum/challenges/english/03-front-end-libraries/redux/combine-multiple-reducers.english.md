@@ -11,7 +11,7 @@ When the state of your app begins to grow more complex, it may be tempting to di
 In order to let us combine multiple reducers together, Redux provides the <code>combineReducers()</code> method. This method accepts an object as an argument in which you define properties which associate keys to specific reducer functions. The name you give to the keys will be used by Redux as the name for the associated piece of state.
 Typically, it is a good practice to create a reducer for each piece of application state when they are distinct or unique in some way. For example, in a note-taking app with user authentication, one reducer could handle authentication while another handles the text and notes that the user is submitting. For such an application, we might write the <code>combineReducers()</code> method like this:
 
-```jsx
+```js
 const rootReducer = Redux.combineReducers({
   auth: authenticationReducer,
   notes: notesReducer
