@@ -10,21 +10,23 @@ In the previous examples, you received data from an external resource. You can a
 JavaScript's <code>XMLHttpRequest</code> method is also used to post data to a server. Here's an example:
 
 ```js
-req=new XMLHttpRequest();
-req.open("POST",url,true);
-req.setRequestHeader('Content-Type','text/plain');
-req.onreadystatechange=function(){
-  if(req.readyState==4 && req.status==200){
-    document.getElementsByClassName('message')[0].innerHTML=req.responseText;
+const xhr = new XMLHttpRequest();
+xhr.open('POST', url, true);
+xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 201){
+    const serverResponse = JSON.parse(xhr.response);
+    document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;
   }
 };
-req.send(userName);
+const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
+xhr.send(body);
 ```
 
 You've seen several of these methods before. Here the <code>open</code> method initializes the request as a "POST" to the given URL of the external resource, and uses the <code>true</code> Boolean to make it asynchronous.
 The <code>setRequestHeader</code> method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the <code>open</code> method, but before the <code>send</code> method. The two parameters are the name of the header and the value to set as the body of that header.
-Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 200 means it was a successful request. The document's HTML can be updated.
-Finally, the <code>send</code> method sends the request with the <code>userName</code> value, which was given by the user in the <code>input</code> field.
+Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 201 means it was a successful request. The document's HTML can be updated.
+Finally, the <code>send</code> method sends the request with the <code>body</code> value, which the <code>userName</code> key was given by the user in the <code>input</code> field.
 </section>
 
 ## Instructions
@@ -42,13 +44,13 @@ tests:
   - text: Your code should use the <code>open</code> method to initialize a "POST" request to the server.
     testString: assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g), 'Your code should use the <code>open</code> method to initialize a "POST" request to the server.');
   - text: Your code should use the <code>setRequestHeader</code> method.
-    testString: assert(code.match(/\.setRequestHeader\(\s*?('|")Content-Type\1\s*?,\s*?('|")text\/plain\2\s*?\)/g), 'Your code should use the <code>setRequestHeader</code> method.');
+    testString: assert(code.match(/\.setRequestHeader\(\s*?('|")Content-Type\1\s*?,\s*?('|")application\/json;\s*charset=UTF-8\2\s*?\)/g), 'Your code should use the <code>setRequestHeader</code> method.');
   - text: Your code should have an <code>onreadystatechange</code> event handler set to a function.
     testString: assert(code.match(/\.onreadystatechange\s*?=/g), 'Your code should have an <code>onreadystatechange</code> event handler set to a function.');
-  - text: Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.
-    testString: assert(code.match(/document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?.+?\.responseText/g), 'Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.');
+  - text: Your code should get the element with class <code>message</code> and change its text content to the <code>responseText</code>.
+    testString: assert(code.match(/document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?.+?\.userName\s*?\+\s*?.+?\.suffix/g), 'Your code should get the element with class <code>message</code> and change its text content to the <code>serverResponse</code>.');
   - text: Your code should use the <code>send</code> method.
-    testString: assert(code.match(/\.send\(\s*?userName\s*?\)/g), 'Your code should use the <code>send</code> method.');
+    testString: assert(code.match(/\.send\(\s*?body\s*?\)/g), 'Your code should use the <code>send</code> method.');
 
 ```
 
@@ -61,10 +63,11 @@ tests:
 
 ```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('sendMessage').onclick=function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('sendMessage').onclick = function(){
 
-      var userName=document.getElementById('name').value;
+      var userName = document.getElementById('name').value;
+      var url = 'https://jsonplaceholder.typicode.com/posts';
       // Add your code below this line
 
 

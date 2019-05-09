@@ -14,9 +14,10 @@ Deployed contracts can be viewed on platforms such as [Etherscan](www.etherscan.
 Smart Contracts allows the transfer of goods and services without the need for a independent third party. Logic and rules are built into the smart contract that define the permissions and processes associated with a particular agreement and enforce the obligations attached to it. This provides an opportunity to remove middlemen that are traditionally required to interact with physical property or financial service instruments.
 
 ## Blockchain Technologies Supporting Smart Contracts
-Two of the most common technologies used are:
+Some of the most common technologies used are:
 - Ethereum - Created to be a blockchain for smart contracts. The smart contracts run in the Ethereum Virtual Machine (EVM), which can be thought of as a  decentralized computer. Ethereum smart contracts can be written in Solidity, Serpent or Vyper, which are then compiled to byte-code and fed to the EVM.
 - Hyperledger - An initiative hosted by the Linux Foundation for private blockchains and tends to be more business-oriented. There are several projects under the Hyperledger name, most of them with Smart Contract capabilities. Ethereum Smart Contracts can be run in Hyperledger too.
+- Corda - A new Operating System for Financial Services
 
 There are many other blockchain projects offering (or promising) smart contract capabilities  - e.g., EOS, NEO or ICON. They may compete with Ethereum for market adoption (still very low globally) in the future.
 
