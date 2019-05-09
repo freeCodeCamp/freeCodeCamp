@@ -186,7 +186,8 @@ function [pInd, unsorted] = partition(unsorted, low, high)
 end
 
 ```
-###Implementation in Java
+### Implementation in Java
+
 ```java
 public class Quicksort {
 
