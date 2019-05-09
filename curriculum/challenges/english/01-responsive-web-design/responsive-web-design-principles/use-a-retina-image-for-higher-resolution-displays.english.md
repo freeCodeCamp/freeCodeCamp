@@ -12,7 +12,7 @@ With the increase of internet connected devices, their sizes and specifications 
 The simplest way to make your images properly appear on High-Resolution Displays, such as the MacBook Pros "retina display" is to define their <code>width</code> and <code>height</code> values as only half of what the original file is.
 Here is an example of an image that is only using half of the original height and width:
 
-```css
+```html
 <style>
   img { height: 250px; width: 250px; }
 </style>
