@@ -20,7 +20,6 @@ Here's an example:
     <label for="one">Choice One</label><br>
     <input id="two" type="radio" name="items" value="two">
     <label for="two">Choice Two</label>
-
     <input id="three" type="radio" name="items" value="three">
     <label for="three">Choice Three</label>
   </fieldset>
