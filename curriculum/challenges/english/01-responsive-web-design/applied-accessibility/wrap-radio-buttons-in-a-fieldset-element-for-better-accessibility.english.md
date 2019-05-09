@@ -18,7 +18,6 @@ Here's an example:
     <legend>Choose one of these three items:</legend>
     <input id="one" type="radio" name="items" value="one">
     <label for="one">Choice One</label>
-
     <input id="two" type="radio" name="items" value="two">
     <label for="two">Choice Two</label>
 
