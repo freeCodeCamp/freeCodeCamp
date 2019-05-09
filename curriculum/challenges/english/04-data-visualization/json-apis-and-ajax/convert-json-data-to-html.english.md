@@ -30,7 +30,7 @@ json.forEach(function(val) {
 Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it.
 Here is some example JSON
 
-```js
+```json
 [
   {
     "id":0,
