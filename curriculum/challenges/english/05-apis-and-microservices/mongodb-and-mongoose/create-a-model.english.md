@@ -30,15 +30,13 @@ var someFunc = function(done) {
 ## Instructions
 <section id='instructions'>
 Create a person having this prototype :
-
-```js
-- Person Prototype -
---------------------
-name : string [required]
-age :  number
+<blockquote>
+- Person Prototype -<br>
+--------------------<br>
+name : string [required]<br>
+age :  number<br>
 favoriteFoods : array of strings (*)
-```
-
+</blockquote>
 
 Use the mongoose basic schema types. If you want you can also add
 more fields, use simple validators like required or unique,
