@@ -11,7 +11,7 @@ You can nest links within other text elements.
 
 ```html
 <p>
- Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
+  Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
 </p>
 ```
 
