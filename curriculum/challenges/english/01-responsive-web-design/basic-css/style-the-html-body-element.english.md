@@ -16,7 +16,7 @@ Every HTML page has a <code>body</code> element.
 We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.
 We can do this by adding the following to our <code>style</code> element:
 
-```html
+```css
 body {
   background-color: black;
 }
