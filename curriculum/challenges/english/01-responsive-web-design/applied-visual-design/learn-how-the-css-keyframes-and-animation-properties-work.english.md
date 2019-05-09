@@ -17,6 +17,7 @@ To animate an element, you need to know about the animation properties and the <
   animation-name: colorful;
   animation-duration: 3s;
 }
+
 @keyframes colorful {
   0% {
     background-color: blue;
