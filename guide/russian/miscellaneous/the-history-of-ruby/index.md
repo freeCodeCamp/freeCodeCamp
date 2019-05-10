@@ -16,6 +16,6 @@ Ruby был задуман 24 февраля 1993 года. В 1999 году в 
 
 Сегодня Ruby on Rails считается сплошной веб-картой; и он стал пионером множества отличных практик в веб-разработке.
 
-Аналогично, многие [популярные сайты](https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails) закодированы в Ruby on Rails, таких как Github, Airbnb, Groupon и т. Д.
+Аналогично, многие [популярные сайты](https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails) закодированы в Ruby on Rails, таких как GitHub, Airbnb, Groupon и т. Д.
 
 Существуют различные [реализации](https://github.com/cogitator/ruby-implementations/wiki/List-of-Ruby-implementations) Ruby. JRuby (Ruby on JVM), Ruby MRI (также называемый CRuby) и IronRuby (Ruby для .NET и Silverlight) - одни из самых популярных.

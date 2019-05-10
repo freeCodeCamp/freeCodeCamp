@@ -4,7 +4,7 @@ localeTitle: O que é o Minecraft Forge?
 ---
 Se você está lendo este artigo, provavelmente já conhece o Minecraft. Usamos o Forge para manipular o jogo Minecraft para fazer o que queremos. Isso pode ser qualquer coisa, desde novas criaturas legais até novos sistemas inteiros no jogo.
 
-Forge é uma API modding. O Minecraft Forge (ou Forge for short) é uma camada entre o nosso código e o próprio Minecraft. Não podemos pedir diretamente ao Minecraft para adicionar itens e fazer coisas legais especiais. É por isso que precisamos de uma API (interface de programação de aplicativos) para lidar com nossa lógica e fazer com que o Minecraft a reconheça.
+Forge é uma API modding. O Minecraft Forge (ou Forge em resumo) é uma camada entre o nosso código e o próprio Minecraft. Não podemos pedir diretamente ao Minecraft para adicionar itens e fazer coisas legais especiais. É por isso que precisamos de uma API (interface de programação de aplicativos) para lidar com nossa lógica e fazer com que o Minecraft a reconheça.
 
 ## Parece legal! Como eu começo?
 
