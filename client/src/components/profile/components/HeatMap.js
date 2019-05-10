@@ -77,7 +77,6 @@ function HeatMap({ calendar, streak }) {
             return `colour-scale-${value.count}`;
           }}
           endDate={endOfCalendar}
-          gutterSize={2}
           startDate={startOfCalendar}
           tooltipDataAttrs={value => {
             let valueCount = '';
