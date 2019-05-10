@@ -6,12 +6,12 @@ title: C++ Arrays
 An array is a series of elements of the same data type which are stored in contiguous memory locations and can be referenced individually.  
 
 For example, an array containing 5 integer values called numbers is declared like so:  
-```C++
+```cpp
 int numbers [5];
 ```
 
 Initialization:  
-```C++
+```cpp
 //Initialization with entries:
 int numbers [5] = {1, 2, 3, 4, 5};
 
@@ -35,7 +35,7 @@ Dynamic arrays are those arrays, whose size is not known at compile time and we 
 ### Access:  
 Elements from an array can be accessed via reference of their position in the array. (Start counting from 0).  
 Example:  
-```C++
+```cpp
 x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
@@ -45,7 +45,7 @@ numbers[2] = 55; // Sets the third position (3) to the new number 55
 
 An array's name functions as an immutable pointer to the array's first element. If we have:
 
-```C++
+```cpp
 int arr[3] = {10,45,3}
 int * ptrarr;
 ptrarr = arr;
@@ -54,7 +54,7 @@ for(int i=0; i<3; i++)
 ```
 we'll get the following output:
 
-```C++
+```cpp
 10 from array, and 10 from pointer
 45 from array, and 45 from pointer
 3 from array, and 3 from pointer
