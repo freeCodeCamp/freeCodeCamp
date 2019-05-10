@@ -264,7 +264,7 @@ int main(void) {
 }
 ```
 output:
-```output
+```shell
 1
 2
 4
