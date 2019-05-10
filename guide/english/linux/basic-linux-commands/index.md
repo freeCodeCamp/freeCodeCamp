@@ -55,7 +55,7 @@ When starting out with linux, there are some basic commands everyone should know
 15. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
 - use `grep` to find a file, a directory, some text in the file/directory.  
 **Example:**
-```sh
+```shell
  $ ps ax | grep -w login
  25291 s000  Ss     0:00.11 login -pf <user>
  25467 s000  R+     0:00.00 grep -w login
