@@ -132,14 +132,14 @@ Corre el código anterior para ver qué pasa y asegúrate de jugar con los opera
 
 C proporciona una biblioteca matemática ( `math.h` ) que proporciona múltiples funciones matemáticas útiles. Como ejemplo, la potencia de un número se puede calcular como:
 
-``` C
+```C
 #include<math.h>
 int result = pow(2, 3) // will result in 2*2*2 or 8 
 ```
 
 Algunas otras funciones de la biblioteca ( `math.h` ) que pueden resultar útiles son:
 
-``` C
+```C
 #include <math.h> 
 double angle = cos(90.00); // Gives us 0.00 
 int result = sqrt(16); // Gives us 4 
@@ -147,7 +147,7 @@ double result = log(10.00) // Gives us 2.30 (note this is ln(10), not log base 1
 ```
 
 // código C para ilustrar // El uso de la función ceil.
-``` C
+```C
 #include <stdio.h>
 #include <math.h>
 
