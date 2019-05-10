@@ -108,7 +108,7 @@ public class bubble-sort {
 }
 ```
 ### Example in C++
-```c++
+```cpp
 // Recursive Implementation
 void bubblesort(int arr[], int n)
 {
@@ -147,7 +147,7 @@ func bubbleSort(_ inputArray: [Int]) -> [Int] {
 } 
 ```
 ### Example in Python
-```py
+```python
 
 def bubblesort( A ):
   for i in range( len( A ) ):
@@ -162,21 +162,6 @@ def swap( A, x, y ):
 
 Bubblesort can be optimized by stopping the algorithm at a point when no swapping occurred. As this suggests that the elements have been sorted. Here is a java code snippet below:
 
-
-public void sort(int[] a) {
-		
-		for(int i =0; i<a.length;i++) {
-			boolean swapped = false;
-			for(int j=a.length-1; j>i;j--) {
-				if(a[j] < a[j-1]) {
-					swap(a,j,j-1);
-					swapped = true;
-				}
-			}
-			if(!swapped)
-				break;
-		}
-	}
 ```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
