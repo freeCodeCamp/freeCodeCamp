@@ -15,7 +15,7 @@ title: Map
 
 Here is an example:
 
-```c++
+```cpp
 #include <iostream>
 #include <map>
 
@@ -66,7 +66,7 @@ size of map is 1
 ## Insertion 
 Inserting data with insert member function.
 
-```c++
+```cpp
 myMap.insert(make_pair("earth", 1));
 myMap.insert(make_pair("moon", 2));
 ```
@@ -80,7 +80,7 @@ If "sun" is already mapped before, this action will override the value mapped to
 ## Erase
 Erasing data with erase function
 
-```
+```cpp
 map<int, int > myMap;
 myMap[10] = 1000;
 cout << "before erase, size of map is " << myMap.size() << '\n';
@@ -97,7 +97,7 @@ after erase, size of map is 0
 ## Accessing map value
 
 To access map values, simply call Map[key]. For example:
-```
+```cpp
 map<string, int > M;
 M["abc"] = 1;
 M["def"] = 2;
@@ -114,7 +114,7 @@ value of def is 2
 ## Accessing map elements
 
 To access map elements, you have to create iterator for it. Here is an example as stated before.
-```c++
+```cpp
 map<char, int>::iterator it;
 for(it=first.begin(); it!=first.end(); ++it){
   cout << it->first << " => " << it->second << '\n';
@@ -127,9 +127,11 @@ N.B: All code in example are in C++11 version. You can learn more about C++ vers
 
 
 ##iterator
-example-
+example:
+```cpp
 map<int,string>::iterator it;
 for(m.begin();it!=m.end();it++)
 {
-   cout<<it->first<<it->second<<endl;
-   }
+  cout<<it->first<<it->second<<endl;
+}
+```
