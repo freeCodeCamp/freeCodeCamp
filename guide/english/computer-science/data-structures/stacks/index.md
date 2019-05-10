@@ -19,7 +19,7 @@ Implementation of a stack is possible using arrays, linked lists or other dynami
 
 The following is a simple array implementation of the stack data structure with its most common operations.
 
-```C++
+```cpp
 //Stack implementation using array in C++
 //You can also include<stack> and then use the C++ STL Library stack class.
 
