@@ -80,7 +80,7 @@ int main()
 
 ### O código deve ser algo como isto:
 https://cdn-media-1.freecodecamp.org/imgr/
-![Img](https://i.imgur.com/d1liGwI.png)
+![Img](https://cdn-media-1.freecodecamp.org/imgr/d1liGwI.png)
 
 Os programadores usam um programa Hello World (como este) como um ritual no uso de uma nova linguagem de programação. É um símbolo de boa sorte.  
 _Você terminou de codificar seu primeiro programa C ++ e entendeu a maior parte do código que você escreveu / digitou. PARABÉNS!_

@@ -76,7 +76,7 @@ localeTitle: C ++
 
 ### يجب أن يظهر الرمز على النحو التالي:
 https://cdn-media-1.freecodecamp.org/imgr/
-![IMG](https://i.imgur.com/d1liGwI.png)
+![IMG](https://cdn-media-1.freecodecamp.org/imgr/d1liGwI.png)
 
 يستخدم المبرمجون برنامج Hello World (مثل هذا البرنامج) كطقس يستخدم لغة برمجة جديدة. إنه رمز لحسن الحظ.  
 _لقد انتهيت من برمجة برنامج C ++ الأول وفهمت معظم الشفرة التي كتبتها / كتبت. تهانينا!_
