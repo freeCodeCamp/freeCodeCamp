@@ -6,12 +6,12 @@ title: C++ Arrays
 An array is a series of elements of the same data type which are stored in contiguous memory locations and can be referenced individually.  
 
 For example, an array containing 5 integer values called numbers is declared like so:  
-```C++
+```cpp
 int numbers [5];
 ```
 
 Initializiation:  
-```C++
+```cpp
 //Initialization with entries:
 int numbers [5] = {1, 2, 3, 4, 5};
 
@@ -37,7 +37,7 @@ e.g : int * numbers = new int[5];
 ### Access:  
 Elements from an array can be accessed via reference of their position in the array. (Start counting from 0).  
 Example:  
-```C++
+```cpp
 x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
