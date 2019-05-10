@@ -23,7 +23,7 @@ T(n) = 2T(n/2) + n
      
 Counting the number of repetitions of n in the sum at the end, we see that there are lg n + 1 of them.  Thus the running time is n(lg n + 1) = n lg n + n. We observe that n lg n + n < n lg n + n lg n = 2n lg n for n>0, so the running time is O(n lg n).     
 
-```Algorithm
+```
 MergeSort(arr[], left,  right):
 If right > l:
      1. Find the middle point to divide the array into two halves:
@@ -178,7 +178,7 @@ int main()
 
 ```
 ### Implementation in C++
-```csharp
+```cpp
 void merge(int arr[], int l, int m, int r) 
 { 
     int i, j, k; 
