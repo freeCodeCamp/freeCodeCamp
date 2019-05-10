@@ -44,7 +44,7 @@ This example performs a four-second font size transition with a two-second delay
 }
 ```
 
-![Without CSS Transition](https://imgur.com/Yl0Bxwn)
+![Without CSS Transition](https://cdn-media-1.freecodecamp.org/imgr/Yl0Bxwn.gif)
 
 Without a transition, this element will double in width as soon as the user hovers over it. But we might want a smoother movement. We can add a transition like so:
 
@@ -57,7 +57,7 @@ Without a transition, this element will double in width as soon as the user hove
 }
 ```
 
-![With CSS Transition](https://imgur.com/wgscRNa)
+![With CSS Transition](https://cdn-media-1.freecodecamp.org/imgr/wgscRNa.gif)
 
 The `transition` CSS property is short-hand for several possible properties:
 
