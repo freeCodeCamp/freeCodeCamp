@@ -72,7 +72,6 @@ public int[] bubSort(int []ar)
 }
 ```
 ### Example in C++
-
 ```cpp
 #include <iostream>
 using namespace std;
@@ -110,7 +109,7 @@ func bubbleSort(_ inputArray: [Int]) -> [Int] {
 } 
 ```
 ### Example in Python
-```py
+```python
 def bubblesort( A ):
   for i in range( len( A ) ):
     for k in range( len( A ) - 1, i, -1 ):
