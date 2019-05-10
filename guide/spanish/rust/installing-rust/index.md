@@ -14,7 +14,7 @@ Visite el [sitio web de rustup](https://rustup.rs) y descargue el `rustup-init.e
 
 Abra su terminal y escriba este comando:
 
-```sh
+```shell
 curl https://sh.rustup.rs -sSf | sh 
 ```
 
@@ -24,7 +24,7 @@ Esto buscará el instalador de `rustup` y, a su vez, `rustup` todo lo que necesi
 
 La instalación de `rustup` instalará todas las cosas relevantes para la oxidación, pero lo más importante es que se instale el compilador y el administrador de paquetes. Para verificar que todo está instalado, ejecute este comando:
 
-```sh
+```shell
 cargo version 
 ```
 
