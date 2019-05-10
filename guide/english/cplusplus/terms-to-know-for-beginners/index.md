@@ -37,7 +37,7 @@ int main()
 The above code returns an error because at line 2, we have used a colon(:) instead of a semicolon(;)
 So, let's debug the error:
 
-```C++
+```cpp
 #include <iostream>
 using namespace std ;
 int main()
@@ -113,12 +113,12 @@ This is because we did not add the quotation marks for the second print statemen
 
 #### Example of using comments:
 
- ```cpp
+```cpp
      cout << "Hello Comment" << endl; //cout<<"Hello Comment"<<endl; , Single Line Comment.
      
     /* This is an example of a multi line comment. No output is generated for this .
     I now end the comment.  :) */
- ```
+```
 
 The output will be :
 
