@@ -45,7 +45,6 @@ int main()
     cout << "I Love freeCodeCamp ! ";
     return 0;
 }
-
 ```
 
 Note that now the program runs perfectly.
@@ -116,12 +115,12 @@ This is because we did not add the quotation marks for the second print statemen
 
 #### Example of using comments:
 
- ```cpp
+```cpp
      cout << "Hello Comment" << endl; // Prints "Hello Comment", This is a Single Line Comment.
      
     /* This is an example of a multi line comment. No output is generated for this .
     I now end the comment.  :) */
- ```
+```
 
 The output will be :
 
@@ -132,22 +131,38 @@ It should be noted that while comments do add an extra level of readability to o
 
 As you may notice, the comments are ignored during program execution and do not show up on checking the output of the program.
  
-#### Operators 
+### Operators 
 
 Operators are symbols that helps us to perform specific mathematical and logical computations on operands. We can say that an operator operates the operands.
 
+#### Variable Designation
+* `*` Dereference
+* `&` Address (of operand)
+#### Compare two or more expressions
 * `==` equal to
 * `!=`  not equal to
 * `<` less than
 * `>` greater than
 * `<=` less than or equal to
 * `>=` greater than or equal to
+
+#### Math Operators
 * `+` add two operands
 * `-` subtract two operands
 * `*` multiply two operands
 * `/` divide two operands
 * `++` increment
 * `--` decrement
+
+#### Logical Operators
+* `||` Logical OR
+* `&&` Logical AND
+
+#### Assigns the right expression/value to the left variable/pointer
+* `=` Assignment
+* `+= , -=` Addition/subtraction assignment
+* `*= , /=` Multiplication/Division assignment
+
 
 ```cpp
     (7 == 5); 
@@ -159,4 +174,4 @@ This evaluates to false
 ```
 This evaluates to true
 
-<a href='https://repl.it/L4ox' target='_blank' rel='nofollow'>A summation of all the print statements used in this article. Feel free to tweak around woth the code ! :) </a>
+<a href='https://repl.it/L4ox' target='_blank' rel='nofollow'>A summation of all the print statements used in this article. Feel free to tweak around with the code ! :) </a>
