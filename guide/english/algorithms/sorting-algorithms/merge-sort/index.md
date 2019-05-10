@@ -7,7 +7,9 @@ Merge Sort is a <a href='https://guide.freecodecamp.org/algorithms/divide-and-co
 
 Since this is a recursion based algorithm, we have a recurrence relation for it. A recurrence relation is simply a way of representing a problem in terms of its subproblems. 
 
-``` T(n) = 2 * T(n / 2) + O(n) ```
+```
+T(n) = 2 * T(n / 2) + O(n)
+```
 
 Putting it in plain english, we break down the subproblem into two parts at every step and we have some linear amount of work that we have to do for merging the two sorted halves together at each step. 
 
@@ -23,7 +25,7 @@ T(n) = 2T(n/2) + n
      
 Counting the number of repetitions of n in the sum at the end, we see that there are lg n + 1 of them.  Thus the running time is n(lg n + 1) = n lg n + n. We observe that n lg n + n < n lg n + n lg n = 2n lg n for n>0, so the running time is O(n lg n).     
 
-```Algorithm
+```
 MergeSort(arr[], left,  right):
 If right > l:
      1. Find the middle point to divide the array into two halves:
@@ -181,7 +183,8 @@ int main()
  
 We accept the array size and the array entries from the user as command line arguments and sort the array and output it.
 
-```#include <bits/stdc++.h>
+```cpp
+#include <bits/stdc++.h>
 using namespace std;
 // example of merge sort in C++
 // merge function take two intervals
