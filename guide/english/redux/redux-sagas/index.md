@@ -49,12 +49,12 @@ Start by adding the library to the project.
 
 With npm by issuing the command:
 
-```shell
+```sh
     npm install --save redux-saga
 ```
 Or with yarn:
 
-```shell
+```sh
     yarn add redux-saga
 ```
 

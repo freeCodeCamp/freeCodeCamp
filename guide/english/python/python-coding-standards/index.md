@@ -19,7 +19,7 @@ We love sticking to conventions. The python user community has come up with a se
 
 Here's how you check if your python code meets he standards.
 
-```shell
+```console
 :~$ pip install pep8
 :~$ pep8 --first myCode.py
 ```

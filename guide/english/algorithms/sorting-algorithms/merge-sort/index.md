@@ -23,7 +23,7 @@ T(n) = 2T(n/2) + n
      
 Counting the number of repetitions of n in the sum at the end, we see that there are lg n + 1 of them.  Thus the running time is n(lg n + 1) = n lg n + n. We observe that n lg n + n < n lg n + n lg n = 2n lg n for n>0, so the running time is O(n lg n). Another simple way to remember the time complexity O(n lg n) of merge sort is that it takes roughly log<sub>2</sub><sup>n</sup> steps to split an array of size n to multiple arrays of size one. After each split, the algorithm have to merge 2 sorted arrays into one which can take n steps in total. As a result, the time complexity for merge sort is O(n lg n).
 
-```
+```Algorithm
 MergeSort(arr[], left,  right):
 If right > l:
      1. Find the middle point to divide the array into two halves:
@@ -182,7 +182,7 @@ int main()
 Let us consider array A = {2,5,7,8,9,12,13}
 and array B = {3,5,6,9,15} and we want array C to be in ascending order as well.
 
-```cpp
+```c++
 void mergesort(int A[],int size_a,int B[],int size_b,int C[])
 {
      int token_a,token_b,token_c;

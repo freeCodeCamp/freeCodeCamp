@@ -9,12 +9,12 @@ Declaration:
 dataType arrayName[arraySize];
 
 For example, an array containing 5 integer values called numbers is declared like so:  
-```cpp
+```C++
 int numbers [5];
 ```
 
 Initializiation:  
-```cpp
+```C++
 //Initialization with values:
 int numbers [5] = {1, 2, 3, 4, 5};
 //When initializing an array with values, the first value will be stored as the first element, the second value will be stored as the second element, ect... so the first element in this array is the value 1, and the third element is the value 3.
@@ -40,7 +40,7 @@ int numbers [] = {1, 2, 3, 4, 5};
 The simplest form of the multidimensional array is the two-dimensional array. A two-dimensional array is, in essence, a list of one-dimensional arrays. To declare a two-dimensional integer array of size `x*y`, you would write something as follows −
 `type arrayName [ x ][ y ]`;
 
-```cpp
+```C++
 int a[3][4] = {  
    {0, 1, 2, 3} ,   /*  initializers for row indexed by 0 */
    {4, 5, 6, 7} ,   /*  initializers for row indexed by 1 */
@@ -60,7 +60,7 @@ Dynamic arrays are those arrays, whose size is not known at compile time and we 
 ### Access:  
 Elements of an array are accessed using their index. The index of the first element in the array is zero and the second element's index is 1 and so on. You can think of the index of an element as the unit "distance" from the beginning of the array, that is the first element is 0 units from the start.  
 Examples using the number array from above:  
-```cpp
+```C++
 int x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
@@ -71,7 +71,7 @@ An array is a collection of variables of similar data type that are stored in co
 
 
 How to insert and print array elements:
-```cpp
+```C++
 int vnum[5] = {1, 2, 3, 4, 5}
 
 // change 4th element to 9

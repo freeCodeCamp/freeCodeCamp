@@ -24,7 +24,7 @@ foreach (element in iterable-item)
 
 ### Salida:
 
-```shell
+```sh
 > We have Jim 
  > We have Jane 
  > We have Jack 

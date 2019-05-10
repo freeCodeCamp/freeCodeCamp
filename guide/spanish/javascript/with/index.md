@@ -10,7 +10,7 @@ La declaración de JavaScript `with` es una forma abreviada de editar varias pro
 
 ### Sintaxis
 
-```js
+```syntax
 with (expression) 
   statement 
 ```

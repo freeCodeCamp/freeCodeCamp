@@ -129,7 +129,7 @@ int main() {
 ```
 
 #OUTPUT
-```shell
+```sh
 enter integer value
 1
 enter float value

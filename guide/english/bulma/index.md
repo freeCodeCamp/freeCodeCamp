@@ -25,7 +25,7 @@ You can use npm to install the Bulma package (recommendede), you can link the Bu
 
 Just type the following in your terminal:
 
-```shell
+```terminal
 $ npm install bulma
 ```
 

@@ -14,7 +14,7 @@ En Linux, los comandos son dados (escritos) en el terminal. Aunque la aplicació
 
 Para comenzar a usar abrir el terminal (para Ubuntu, simplemente mantenga presionado Ctrl + Alt + T) y será recibido por una serie de caracteres organizados en este formato;
 
-```shell
+```linux
 user_name@machine_name:~$ 
 ```
 

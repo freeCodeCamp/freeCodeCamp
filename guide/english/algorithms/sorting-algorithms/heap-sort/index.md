@@ -64,7 +64,7 @@ public class Heapsort {
 }
 ```
 Implementation in C++
-```cpp
+```C++
 #include <iostream>
 using namespace std;
 void heapify(int arr[], int n, int i) 
