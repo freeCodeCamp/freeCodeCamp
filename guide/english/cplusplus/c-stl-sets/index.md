@@ -12,7 +12,7 @@ Sets are a type of associative containers in which each element has to be unique
 4. There are many inbuilt functions in class defining sets that ease the programming.
 
 Example:
-```c++
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 int main()
@@ -34,17 +34,17 @@ return 0;
 ```
 
 Creating a set object
-```c++
+```cpp
 set <int> s;
 ```
 
 Insertion
-```c++
+```cpp
 s.insert(value_to_be_inserted);
 ```
 
 Accessing set elements
-```c++
+```cpp
 set <int>::iterator it;
 for(it=s.begin(); it!=s.end(); ++it)
   cout<<*it;
