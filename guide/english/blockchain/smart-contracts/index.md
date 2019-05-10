@@ -8,8 +8,9 @@ First conceived in  [1994](http://www.fon.hum.uva.nl/rob/Courses/InformationInSp
 
 A smart contract is a computer code running on top of a blockchain containing a set of rules under which the parties to that smart contract agree to interact with each other. If and when the pre-defined rules are met, the agreement is automatically enforced. The smart contract code facilitates, verifies, and enforces the negotiation or performance of an agreement or transaction. It is the simplest form of decentralized automation.
 
-Deployed contracts can be viewed on platforms such as [Etherscan](www.etherscan.io).
-
+Smart contracts can be used to create Decentralized Apps or Dapps that live on a host blockchain.
+The most famous Dapp is perhaps the game CryptoKitties which exploded in popularity towards the end of 2017. 
+The network that CryptoKitties lives on, Ethereum, faced heavy congestion as a result. 
 
 ## Applications of Smart Contacts
 Smart Contracts allows the transfer of goods and services without the need for a independent third party. Logic and rules are built into the smart contract that define the permissions and processes associated with a particular agreement and enforce the obligations attached to it. This provides an opportunity to remove middlemen that are traditionally required to interact with physical property or financial service instruments.
