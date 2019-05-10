@@ -19,7 +19,7 @@ There is a concept in mathematics that "Each generating function has a sequence 
 In this section we'll show you how to include the standard math library in different languages including a short example of how you can use it.
 
 #### C#
-``` cs
+```csharp
 using System.Math;
 
 public class Calculator {
@@ -44,12 +44,12 @@ Documentation reference: <a href='https://msdn.microsoft.com/en-us/library/syste
 
 #### JavaScript
 With Node.js
-``` javascript
+```javascript
 var math = require( 'mathjs' );
 ```
 
 In the browser
-``` html
+```html
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -67,14 +67,14 @@ In the browser
 Documentation reference: <a href='http://mathjs.org/docs/index.html' target='_blank' rel='nofollow'>Math.js documentation</a>
 
 #### C++
-``` cpp
+```cpp
 #include <math.h>
 ```
 
 Documentation reference: <a href='http://www.cplusplus.com/reference/cmath/' target='_blank' rel='nofollow'>cplusplus reference</a>
 
 #### Python
-``` python
+```python
 >>> import math
 >>> math.sqrt(9)      //takes only positive roots into consideration
 3.0
