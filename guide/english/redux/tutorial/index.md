@@ -12,7 +12,7 @@ It's based on the principle that a [Node.js](https://nodejs.org/) application is
 Assuming that all is setup and working correctly there are some packages that need to be added in order for Redux work with React.
 
 Open a terminal inside the project folder that was created and issue the following command 
-```sh
+```shell
 npm install --save react react react-dom react-redux react-router redux
 ```
 What the command above does is install the packages locally and add a reference to the the package.json file under dependencies.
