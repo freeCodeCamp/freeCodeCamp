@@ -80,11 +80,14 @@ function HeatMap({ calendar, streak }) {
           gutterSize={2}
           startDate={startOfCalendar}
           tooltipDataAttrs={value => {
+            let valueCount = '';
+            if (value.count === 1) {
+              valueCount = `${value.count} item on `;
+            } else if (value.count > 1) {
+              valueCount = `${value.count} items on `;
+            }
             return {
-              'data-tip': `${value.count} items on ${format(
-                value.date,
-                'MMMM Do, YYYY'
-              )}`
+              'data-tip': `${valueCount}${format(value.date, 'MMMM Do, YYYY')}`
             };
           }}
           values={calendarValues}
