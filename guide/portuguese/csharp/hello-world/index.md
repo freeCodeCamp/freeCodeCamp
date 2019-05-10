@@ -31,7 +31,7 @@ using System;
 
 ## Saída:
 
-```sh
+```shell
 > Hello World! 
  > Press any key to exit. 
 
