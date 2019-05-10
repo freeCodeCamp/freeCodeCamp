@@ -52,7 +52,9 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-
+.underlined-link {
+  text-decoration: underline;
+}
 @media (min-width: 991px) and (max-width: 1199px) {
   .testimonial-copy {
     height: 150px;
