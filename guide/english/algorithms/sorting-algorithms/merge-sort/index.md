@@ -7,7 +7,9 @@ Merge Sort is a <a href='https://guide.freecodecamp.org/algorithms/divide-and-co
 
 Since this is a recursion based algorithm, we have a recurrence relation for it. A recurrence relation is simply a way of representing a problem in terms of its subproblems. 
 
-``` T(n) = 2 * T(n / 2) + O(n) ```
+```
+T(n) = 2 * T(n / 2) + O(n) 
+```
 
 Putting it in plain english, we break down the subproblem into two parts at every step and we have some linear amount of work that we have to do for merging the two sorted halves together at each step. 
 
@@ -23,7 +25,7 @@ T(n) = 2T(n/2) + n
      
 Counting the number of repetitions of n in the sum at the end, we see that there are lg n + 1 of them.  Thus the running time is n(lg n + 1) = n lg n + n. We observe that n lg n + n < n lg n + n lg n = 2n lg n for n>0, so the running time is O(n lg n).     
 
-```Algorithm
+```
 MergeSort(arr[], left,  right):
 If right > l:
      1. Find the middle point to divide the array into two halves:
@@ -182,7 +184,7 @@ int main()
 Let us consider array A = {2,5,7,8,9,12,13}
 and array B = {3,5,6,9,15} and we want array C to be in ascending order as well.
 
-```c++
+```cpp
 void mergesort(int A[],int size_a,int B[],int size_b,int C[])
 {
      int token_a,token_b,token_c;
@@ -254,7 +256,7 @@ print(arr, inversions)
 ```
 
 ### Implementaion in MATLAB
-```MATLAB
+```matlab
 
 a = [9,4,7,3,8,5,1,6,2];
 
