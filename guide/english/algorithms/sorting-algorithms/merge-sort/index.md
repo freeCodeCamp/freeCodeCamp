@@ -178,7 +178,7 @@ int main()
 
 ```
 ### Implementation in C++
- 
+```csharp
 void merge(int arr[], int l, int m, int r) 
 { 
     int i, j, k; 
@@ -236,8 +236,6 @@ void mergeSort(int arr[], int l, int r)
         merge(arr, l, m, r); 
     } 
 } 
-
-}
 ```
 
 ### Implementation in Python
