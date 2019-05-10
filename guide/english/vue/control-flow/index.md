@@ -13,8 +13,7 @@ required a text at least 8 characters long: if the user input is shorter than 8,
 than an error message should appear; but if the input is longer than 8, the
 message disappears.
 
-But let's make a simpler example. We want to condition the exibition of a
-message to a counter:
+But let's make a simpler example. We want a condition that determines what is displayed, using a counter:
 
 ```html
 <div id="app">
@@ -47,6 +46,7 @@ Let's alter a little bit our first example to get this straight.
 
 ```html
 <div id="app">
+  <button type="button" @click="counter = counter + 1">Click Me!</button>
   <p v-if="counter > 10">
     This message is only rendered when the counter is greater than 10
   </p>
@@ -101,7 +101,7 @@ let app = new Vue({
 ```
 
 Way easier than inserting a lot of `<li>`. And notice that whenever the `list`
-changes, the result will change acordingly. Try it out: open the console and
+changes, the result will change accordingly. Try it out: open the console and
 `push` some string to the `list` with
 
 ```javascript

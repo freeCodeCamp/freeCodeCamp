@@ -1,8 +1,6 @@
 ---
 id: 587d7fac367417b2b2512bdc
 title: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 ---
 
@@ -46,7 +44,7 @@ tests:
 ```html
 <body>
   <script>
-    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
     // Add your code below this line
 
     const output = undefined; // Change this line
