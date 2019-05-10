@@ -12,7 +12,7 @@ Sets are a type of associative container in which each element has to be unique.
 4. There are many inbuilt functions in class defining sets that ease the programming.
 
 Example:
-```c++
+```cpp
 #include<iostream>
 #include <set>
 using std::set;
