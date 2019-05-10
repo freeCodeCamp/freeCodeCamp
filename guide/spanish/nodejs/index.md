@@ -32,7 +32,7 @@ import time
 
 **Node.js**
 
-```node
+```js
 function my_io_task() { 
     setTimeout(function() { 
       console.log('done'); 
