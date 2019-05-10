@@ -15,7 +15,7 @@ title: Map
 
 Here is an example:
 
-```c++
+```cpp
 #include <iostream>
 #include <map>
 
@@ -48,11 +48,13 @@ d => 40
 ```
 
 ## Creating map object
-` map<string, int> myMap; `
+```
+map<string, int> myMap; 
+```
 
 ## Get Size 
 Get size of map with size function
-```
+```cpp
 map<int, int > myMap;
 myMap[100] = 3
 count << "size of map is " << myMap.size() << '\n';
@@ -66,21 +68,23 @@ size of map is 1
 ## Insertion 
 Inserting data with insert member function.
 
-```c++
+```cpp
 myMap.insert(make_pair("earth", 1));
 myMap.insert(make_pair("moon", 2));
 ```
 
 We can also insert data in std::map using operator [] i.e.
 
-`myMap["sun"] = 3;`
+```cp
+myMap["sun"] = 3;
+```
 
 If "sun" is already mapped before, this action will override the value mapped to key.
 
 ## Erase
 Erasing data with erase function
 
-```
+```cpp
 map<int, int > myMap;
 myMap[10] = 1000;
 cout << "before erase, size of map is " << myMap.size() << '\n';
@@ -97,7 +101,7 @@ after erase, size of map is 0
 ## Accessing map value
 
 To access map values, simply call Map[key]. For example:
-```
+```cpp
 map<string, int > M;
 M["abc"] = 1;
 M["def"] = 2;
@@ -114,7 +118,7 @@ value of def is 2
 ## Accessing map elements
 
 To access map elements, you have to create iterator for it. Here is an example as stated before.
-```c++
+```cpp
 map<char, int>::iterator it;
 for(it=first.begin(); it!=first.end(); ++it){
   cout << it->first << " => " << it->second << '\n';
