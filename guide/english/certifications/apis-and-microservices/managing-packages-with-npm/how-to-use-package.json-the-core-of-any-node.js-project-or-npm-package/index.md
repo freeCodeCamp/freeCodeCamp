@@ -32,7 +32,7 @@ Remember, you're writing JSON, so make sure you use
  
  
  
- ```javascript
+ ```json
      
 {
 	"name": "fcc-learn-npm-package-json",
