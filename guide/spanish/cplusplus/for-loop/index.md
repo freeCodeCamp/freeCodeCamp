@@ -9,14 +9,14 @@ El bucle for se distingue de otras declaraciones de bucle a través de un contad
 Por lo tanto, un bucle for es una estructura de control de repetición que le permite escribir de manera eficiente un bucle que necesita ejecutarse un número específico de veces.
 
 ## Sintaxis
-```
+```cpp
 for ( init; condition; increment ) { 
    statement(s); 
  } 
 ```
 
 Se permite colocar el incremento en el bucle for como en un bucle while. Significar una sintaxis como esta también puede funcionar.
-```
+```cpp
 for ( init; condition;) { 
    statement(s); 
    increment; 
@@ -37,7 +37,7 @@ La instrucción de actualización se usa para alterar la variable del bucle medi
 
 ## IMPLEMENTACIÓN:
 
-```
+```cpp
 #include <iostream> 
  using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std:: 
  
@@ -68,7 +68,7 @@ La instrucción de actualización se usa para alterar la variable del bucle medi
  ##Bucle for en una sola linea
  Al igual que if y while, si después de una instrucción for no hay un bloque formado por { ... } se iterará sobre la siguiente instrucción.
  ##Ejemplo 
-```
+```cpp
 #include <iostream>
 #using namespace std;
 
@@ -85,7 +85,7 @@ Esto generaría la misma salida que el programa anterior. es decir Salida: valor
  C++ también permite iterar sobre un contenedor usando rangos. En el bucle se especifican el contenedor a recorrer (un std::vector por ejemplo) y una variable con el valor del elemento del contenedor. También permite usar referencias. 
  
  ## Sintaxis 
-```
+```cpp
 
 para (elemento: contenedor) declaración (es); 
 
@@ -95,7 +95,7 @@ Salida: 1 2 3 4 5
 ```
 
 Si se desea usar la referencia del elemento del contenedor, por ejemplo para asignarlo simplemente sería:
-```
+```cpp
  int array[] = {1, 2, 3, 4, 5};
  for(int& i : array) {
      i += 1;
