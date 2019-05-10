@@ -34,7 +34,7 @@ Algunas aplicaciones creadas usando Electron incluyen:
 *   [Skype](https://www.skype.com/) (la popular aplicación de video chat de Microsoft)
 *   [Slack](https://slack.com/) (Una aplicación de mensajería para equipos)
 *   [Discord](https://discordapp.com) (una popular aplicación de mensajería para jugadores)
-*   [Github Desktop](https://desktop.github.com/) (Cliente de escritorio Github oficial)
+*   [GitHub Desktop](https://desktop.github.com/) (Cliente de escritorio GitHub oficial)
 
 ### Código de referencia
 - [Electron y React](https://github.com/electron-react-boilerplate/electron-react-boilerplate)

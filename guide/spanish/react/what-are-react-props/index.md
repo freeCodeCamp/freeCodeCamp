@@ -123,4 +123,4 @@ import React,{Component} from 'react';
 
 Para obtener más información sobre PropTypes y otros documentos sobre React.
 
-Vaya al [sitio oficial](https://reactjs.org/) y lea los documentos, o [Github Repo](https://github.com/facebook/react/)
+Vaya al [sitio oficial](https://reactjs.org/) y lea los documentos, o [GitHub Repo](https://github.com/facebook/react/)
