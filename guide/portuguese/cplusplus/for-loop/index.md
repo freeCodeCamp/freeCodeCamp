@@ -9,14 +9,14 @@ O loop for é distinguido de outras instruções de loop através de um contador
 Portanto, um loop for é uma estrutura de controle de repetição que permite escrever com eficiência um loop que precisa executar um número específico de vezes.
 
 ## Sintaxe
-```
+```cpp
 for ( inicialização; condição; atualização ) { 
    statement(s); 
  } 
 ```
 
 É permitido colocar o incremento dentro do loop for como em um loop while. Ou seja, uma sintaxe como essa também pode funcionar.
-```
+```cpp
 for ( inicialização; condição;) { 
    statement(s); 
    atualização; 
@@ -37,7 +37,7 @@ A instrução de atualização é usada para alterar a variável de loop declara
 
 ## IMPLEMENTAÇÃO:
 
-```C++
+```cpp
 #include <iostream> 
  using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std:: 
  
@@ -65,7 +65,7 @@ A instrução de atualização é usada para alterar a variável de loop declara
  ##Single lined loop 
  The body of the for loop need not be enclosed in braces if the loop iterates over only one satatement. 
  ##Example 
-```
+```cpp
 
 c ++ #incluir usando namespace std;
 
@@ -82,7 +82,7 @@ Isso geraria a mesma saída do programa anterior. ou seja Saída: Valor de a: 10
  C++ também tem o que chamamos de loop for baseado em intervalo, que itera por todos os elementos de um container (ex. array). 
  
  ## Sintaxe
-```
+```cpp
 
 for (elemento: container) afirmações); {
 
