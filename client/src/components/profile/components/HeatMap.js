@@ -68,8 +68,6 @@ function HeatMap({ calendar, streak }) {
       <FullWidthRow>
         <CalendarHeatMap
           classForValue={value => {
-            console.log('value');
-            console.log(value);
             if (value.count < 1) {
               return 'colour-empty';
             }
