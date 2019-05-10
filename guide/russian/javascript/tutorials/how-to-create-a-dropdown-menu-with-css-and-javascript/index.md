@@ -14,15 +14,15 @@ localeTitle: Как создать раскрывающееся меню с CSS 
 
 Начальный экран:
 
-![](https://i.imgur.com/jrnu6mE.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png)
 
 Откроется окно:
 
-![](https://i.imgur.com/gszPtRa.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png)
 
 Выпадающее меню с выбранной опцией:
 
-![](https://i.imgur.com/TKXxZGF.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png)
 
 #### HTML:
 

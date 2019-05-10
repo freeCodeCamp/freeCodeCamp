@@ -1,7 +1,8 @@
 ---
 title: Tokens Part 1
 localeTitle: Tokens parte 1
----### ¿Qué son los tokens?
+---
+### ¿Qué son los tokens?
 
 Los tokens son las unidades más pequeñas de un programa que son importantes para el compilador. Hay diferentes tipos de fichas:
 
@@ -21,7 +22,7 @@ Los tokens son las unidades más pequeñas de un programa que son importantes pa
 ### ¿Qué son las variables?
 
 *   Definición de libro de texto: las variables se denominan ubicaciones de memoria cuyos datos pueden modificarse.
-    
+    https://cdn-media-1.freecodecamp.org/imgr/
 *   Pero me gustaría que pensaras en una variable como algo así como una caja, algo como esto: ![Img](https://i.imgur.com/YdbgWHL.png)
     
 
@@ -176,7 +177,7 @@ Ejemplo:
 Si una variable no está inicializada, contiene un valor de basura. Por ejemplo:
 
 Así que en términos de cajas, puedes imaginar esto como ...
-
+https://cdn-media-1.freecodecamp.org/imgr/
 ![Img](https://i.imgur.com/YdbgWHL.png)
 
 \`\` \`cpp #incluir utilizando namespace std; int main () { int a cout << "Valor de basura en a:" << a << endl; // declarando la variable llamada 'a' de tipo entero a = 5; // inicializando variable. cout << "Nuevo valor en a" << a << endl;

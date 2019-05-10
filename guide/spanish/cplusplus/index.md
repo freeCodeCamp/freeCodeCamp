@@ -1,7 +1,8 @@
 ---
 title: C++
 localeTitle: C ++
----# Hola Mundo! - Tu primer programa de C ++
+---
+# Hola Mundo! - Tu primer programa de C ++
 
 ## ¿Qué es C ++?
 
@@ -78,7 +79,7 @@ int main()
 *   No olvide decirle a la computadora que este es el final de la función main (). Para hacer esto, agregue la llave de cierre "}". Encontrará un error antes de la ejecución del programa si no incluye el **}** .
 
 ### El código debe verse algo como esto:
-
+https://cdn-media-1.freecodecamp.org/imgr/
 ![Img](https://i.imgur.com/d1liGwI.png)
 
 Los programadores utilizan un programa Hello World (como este) como un ritual en el uso de un nuevo lenguaje de programación. Es un símbolo de buena suerte.  

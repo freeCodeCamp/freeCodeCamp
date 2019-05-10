@@ -8,27 +8,27 @@ localeTitle: بحث خطي
 
 ابحث عن الرقم 13 في القائمة المحددة.
 
-![بحث خطي 1](https://i.imgur.com/ThkzYEV.jpg)
+![بحث خطي 1](https://cdn-media-1.freecodecamp.org/imgr/ThkzYEV.jpg)
 
 أنت تنظر فقط إلى القائمة وهناك!
 
-![بحث خطي 2](https://i.imgur.com/K7HfCly.jpg)
+![بحث خطي 2](https://cdn-media-1.freecodecamp.org/imgr/K7HfCly.jpg)
 
 الآن ، كيف تخبر كمبيوتر للعثور عليه.
 
 لا يمكن للكمبيوتر النظر إلى أكثر من قيمة في نفس الوقت. لذلك يأخذ عنصر واحد من الصفيف والتحقق مما إذا كان هو نفسه ما كنت أبحث عنه.
 
-![بحث خطي 3](https://i.imgur.com/ZOSxeZD.jpg)
+![بحث خطي 3](https://cdn-media-1.freecodecamp.org/imgr/ZOSxeZD.jpg)
 
 العنصر الأول لم يتطابق. لذلك انتقل إلى المرحلة التالية.
 الوقت
-![بحث خطي 4](https://i.imgur.com/SwKsPxD.jpg)
+![بحث خطي 4](https://cdn-media-1.freecodecamp.org/imgr/SwKsPxD.jpg)
 
 وما إلى ذلك وهلم جرا…
 
 يتم ذلك حتى يتم العثور على تطابق أو حتى يتم التحقق من كافة العناصر.
 
-![بحث خطي 5](https://i.imgur.com/3AaViff.jpg)
+![بحث خطي 5](https://cdn-media-1.freecodecamp.org/imgr/3AaViff.jpg)
 
 في هذه الخوارزمية ، يمكنك التوقف عند العثور على العنصر ، ومن ثم لن تكون هناك حاجة للنظر إلى أبعد من ذلك.
 
