@@ -108,7 +108,7 @@ public class bubble-sort {
 }
 ```
 ### Example in C++
-```c++
+```cpp
 // Recursive Implementation
 void bubblesort(int arr[], int n)
 {
@@ -162,6 +162,7 @@ def swap( A, x, y ):
 
 ```
 ### Example in Ruby
+```ruby
 def bubble_sort(arr)
         sorted = false
         until sorted
