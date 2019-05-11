@@ -80,7 +80,6 @@ delete[] dynamic;
 ```
 
 ### Access:  
-
 Elements of an array are accessed using their index. The index of the first element in the array is zero and the second element's index is 1 and so on. You can think of the index of an element as the unit "distance" from the beginning of the array, that is the first element is 0 units from the start.  
 Examples using the number array from above:  
 ```cpp
@@ -89,9 +88,25 @@ numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
 
-### What is the difference between arrays and pointers?
+### Relationship to pointers
 An array is a collection of variables of similar data type that are stored in contiguous memory locations whereas the pointer is a variable that stores the memory address of another variable i.e. a pointer is a variable that points to the location of another variable.
 
+An array's name functions as an immutable pointer to the array's first element. If we have:
+
+```cpp
+int arr[3] = {10,45,3}
+int * ptrarr;
+ptrarr = arr;
+for(int i=0; i<3; i++)
+   cout << arr[i] << " from array, and " << *(ptrarr + i) << " from pointer\n";
+```
+we'll get the following output:
+
+```cpp
+10 from array, and 10 from pointer
+45 from array, and 45 from pointer
+3 from array, and 3 from pointer
+```
 
 How to insert and print array elements:
 ```cpp
