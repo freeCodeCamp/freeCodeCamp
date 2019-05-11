@@ -18,13 +18,13 @@ Cada desafío está almacenado en su propio archivo markdown. De esa forma resul
 
 Puedes realizar los cambios sin tener que ejecutar nada desde tu sistema local.
 
-Después de que encuentres el archivo que quieras modificar desde la interfaz de GitHub, haz clic en el icono de lápiz para comenzar a editar el archivo. Esto automáticamente creara una bifurcación del proyecto, si es que no tienes una todavía.
+Después de que encuentres el archivo que quieras modificar desde la interfaz de GitHub, hace clic en el icono de lápiz para comenzar a editar el archivo. Esto automáticamente creara una bifurcación del proyecto, si es que no tienes una todavía.
 
 También puedes clonar el proyecto y editarlo de manera local en tu ordenador. Si necesitas ayuda al respecto, dale un vistazo a la [guía principal de contribución](/CONTRIBUTING.md).
 
 ### Patrón de los Desafíos.
 
-He aquí un patrón de cómo se verán los archivos markdown correspondientes a los desafíos.
+He aquí un patrón de cómo se verán los archivos reduccion correspondientes a los desafíos.
 
 ````md
 ---
@@ -37,7 +37,7 @@ videoUrl: 'URL del video explicatorio'
 
 ## Descripción
 <section id='description'>
-Una descripción del desafío y de los requerimientos aprobatorios
+Una descripción del desafío y de los requisitos aprobacion
 </section>
 
 ## Instrucciones
