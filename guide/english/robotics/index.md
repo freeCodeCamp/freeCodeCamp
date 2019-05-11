@@ -7,15 +7,15 @@ Robotics is about the systems that make up robots. There is no universally appli
 
 ### Sense
 
-A robot has to sense its environment. For this, it uses different types of sensors. A _sensor_ can be defined as an input device which converts physical parameters into (usually) electrical signals. Cameras in your smartphone are a type of sensors, they convert light into electrical bits of information. A digital thermometer is a sensor that converts heat (temperature) into a electrical signal that can be displayed as a celsius value on its screen. There are always limitations to the accuracy of the output of a sensor, so the output from the sensor is usually further processed to compensate for the errors.
+A robot has to sense its environment. For this, it uses different types of sensors. A _sensor_ can be defined as `an input device which converts physical parameters into (usually) electrical signals`. Cameras in your smartphone are types of sensors. They convert light into electrical bits of information. A digital thermometer is a sensor that converts heat (temperature) into a electrical signal that can be displayed as a celsius value on its screen. There are always limitations to the accuracy of the output of a sensor, so the output from the sensor is usually further processed to compensate for the errors.
 
 ### Think
 
-A robot has to make decisions based on the input it receives from the environment and the way it is programmed. Autonomous functions are those which can be performed by a robot without any human input. Robots usually have a mixture of autonomous and controlled functions (fully autonomous robots are getting common these days). They have an onboard computer that facilitates the computation needed for the decision making process of a robot. For example, commercial consumer [quadcopters](https://en.wikipedia.org/wiki/Quadcopter) are offering a feature where the copter can be asked to follow a moving object. It uses the input from the camera, performs [image processing](https://en.wikipedia.org/wiki/Digital_image_processing) to distinguish the object from the environment and uses [controlled systems](https://en.wikipedia.org/wiki/Control_system) to follow the object. And all of this is done without any human input (ie after the copter is programmed).
+A robot has to make decisions based on the input it receives from the environment and the way it is programmed. Autonomous functions are those which can be performed by a robot without any human input. Robots usually have a mixture of autonomous and controlled functions (fully autonomous robots are getting common these days). They have an onboard computer that facilitates the computation needed for the decision making process of a robot. For example, commercial consumer [quadcopters](https://en.wikipedia.org/wiki/Quadcopter) is offering a feature where the copter can be asked to follow a moving object. It uses the input from the camera, performs [image processing](https://en.wikipedia.org/wiki/Digital_image_processing) to distinguish the object from the environment and uses [controlled systems](https://en.wikipedia.org/wiki/Control_system) to follow the object. And all of this is done without any human input (i.e. after the copter is programmed).
 
 ### Act
 
-Once the robot makes its decision, it needs to act accordingly. For this purpose, it uses actuators. An _actuator_ is a device that converts energy into motion. Actuators can be classified according to the type of input energy they require. The two most commmon types of actuators are electrical (which use electrical energy to generate motion) and pneumatic (which use air pressure to generate motion). For example, a motor is an actuator that converts electrical energy into rotatory motion. There are always limitations to the accuracy and degree of control of an actuator, hence [control systems](https://en.wikipedia.org/wiki/Control_system) are used in order to compensate those limitations.
+Once the robot makes its decision, it needs to act accordingly. For this purpose, it uses actuators. An _actuator_ is `a device that converts energy into motion`. Actuators can be classified according to the type of input energy they require. The two most commmon types of actuators are electrical (which use electrical energy to generate motion) and pneumatic (which use air pressure to generate motion). For example, a motor is an actuator that converts electrical energy into rotatory motion. There are always limitations to the accuracy and degree of control of an actuator, hence [control systems](https://en.wikipedia.org/wiki/Control_system) are used in order to compensate those limitations.
 
 ### The Three Laws of Robotics
 ##### *-- Handbook of Robotics, 56th Edition, 2058 A.D.*
@@ -23,9 +23,9 @@ Once the robot makes its decision, it needs to act accordingly. For this purpose
 1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.
 2. A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
 3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
-## Essential things for Robotics.
+## Essential skills for Robotics.
 
-First, you need to have good amount of patience to ace in Robotics.
+First, you need to have good amount of patience to excel at Robotics.
 
 1) Start by using an easy programming language that can help you understand how robots work. A good place to start is [Lego Mindstorms](https://www.lego.com/en-us/mindstorms) where you can use a basic representation of programming to make your robot do things. If you don't want to buy [Lego Mindstorms](https://www.lego.com/en-us/mindstorms), that's okay! However, it does help understand the basics of robotics, which will help you better understand the advanced machines you'll work with in the future.
 2) Be good at any one programming language to have a good grip over code.
@@ -46,4 +46,3 @@ Putting together, these resources are good enough to kick start your journey wit
 - [Sensors (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
 - [Actuator (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
 - [Lego Mindstorms (lego.com/en-us/mindstorms)](https://www.lego.com/en-us/mindstorms)
-
