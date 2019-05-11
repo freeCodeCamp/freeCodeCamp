@@ -14,7 +14,7 @@ Returning to the conga line example, a new person wants to join the line, but he
 ## Instructions
 <section id='instructions'>
 Create an <code>addAt(index,element)</code> method that adds an element at a given index. Return false if an element was unable to be added.
-Note: Remember to check if the given index is a negative or is longer than the length of the linked list.
+<strong>Note:</strong> Remember to check if the given index is a negative or is longer than the length of the linked list.
 </section>
 
 ## Tests
