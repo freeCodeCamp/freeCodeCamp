@@ -13,9 +13,8 @@ For example, an array containing 5 integer values called numbers is declared lik
 int numbers [5];
 ```
 
-Initializiation:  
+Initialization with values:
 ```cpp
-//Initialization with values:
 int numbers [5] = {1, 2, 3, 4, 5};
 //When initializing an array with values, the first value will be stored as the first element, the second value will be stored as the second element, ect... so the first element in this array is the value 1, and the third element is the value 3.
 
