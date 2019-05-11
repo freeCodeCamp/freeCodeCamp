@@ -14,7 +14,7 @@ router.get('/:number', async (request, response) => {
   if (!index && index !== 0) {
     response.json({
       ok: true,
-      message: 'Unable to find that open PR #.',
+      message: `Unable to find an open PR with #${refNumber}.`,
       results: []
     });
     return;
