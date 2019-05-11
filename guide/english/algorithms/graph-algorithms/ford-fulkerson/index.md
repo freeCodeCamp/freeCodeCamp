@@ -28,26 +28,26 @@ Time Complexity: O(V*E^2)
 inf = 1e10
 
 def maximum_flow(graph, source, sink):
-    max_flow = 0
-    parent = bfs(graph, source, sink)
-    while path:
-        limit = inf
-        v = sink
-        while v != source:
-            u = parent[s]
-            path_flow = min(limit, graph[u][v])
-            v = parent[v]
-        max_flow += path_flow
+  max_flow = 0
+  parent = bfs(graph, source, sink)
+  while path:
+    limit = inf
+    v = sink
+    while v != source:
+        u = parent[s]
+        path_flow = min(limit, graph[u][v])
+        v = parent[v]
+    max_flow += path_flow
 
-        v = sink
-        while v != source:
-            u = parent[v]
-            graph[u][v] -= path_flow
-            graph[v][u] += path_flow
-            v = parent[v]
+    v = sink
+    while v != source:
+        u = parent[v]
+        graph[u][v] -= path_flow
+        graph[v][u] += path_flow
+        v = parent[v]
 
-        path = bfs(graph, source, sink)
-    return max_flow
+    path = bfs(graph, source, sink)
+  return max_flow
 ```
 
 #### More Information:
