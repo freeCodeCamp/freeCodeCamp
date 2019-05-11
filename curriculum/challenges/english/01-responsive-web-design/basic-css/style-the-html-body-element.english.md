@@ -54,7 +54,11 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+body {
+  background-color: black;
+}
+</style>
 ```
 </section>
