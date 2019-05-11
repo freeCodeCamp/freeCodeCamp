@@ -136,7 +136,7 @@ When function is called within the same function, it is known as recursion in C.
 ```c
 int factorial (int n)
 {
-    if ( n < 0)
+    if (n < 0)
         return -1; /*Wrong value*/
     if (n == 0)
         return 1; /*Terminating condition*/
