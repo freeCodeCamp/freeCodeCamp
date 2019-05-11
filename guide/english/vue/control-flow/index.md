@@ -93,7 +93,7 @@ let app = new Vue({
 });
 ```
 
-Way easier than inserting a lot of `<li>`! And notice that whenever the `list` changes, the resulting html will change acordingly. Try it out: open the console and `push` some string to the `list` with
+Way easier than inserting a lot of `<li>`! And notice that whenever the `list` changes, the resulting html will change accordingly. Try it out: open the console and `push` some string to the `list` with
 
 ```javascript
 app.list.push("something else");
