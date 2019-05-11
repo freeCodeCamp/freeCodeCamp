@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 We can similarly destructure <em>nested</em> objects into variables.
 Consider the following code:
-<blockquote>const a = {<br>&nbsp;&nbsp;start: { x: 5, y: 6},<br>&nbsp;&nbsp;end: { x: 6, y: -9 }<br>};<br>const { start : { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>
+<blockquote>const a = {<br>&nbsp;&nbsp;start: { x: 5, y: 6 },<br>&nbsp;&nbsp;end: { x: 6, y: -9 }<br>};<br>const { start: { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>
 In the example above, the variable <code>startX</code> is assigned the value of <code>a.start.x</code>.
 </section>
 

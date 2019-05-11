@@ -430,8 +430,25 @@ function createShowCert(app) {
 
       if (user[certType]) {
         const { completedChallenges = [] } = user;
-        const { completedDate = new Date() } =
-          _.find(completedChallenges, ({ id }) => certId === id) || {};
+        const certChallenge = _.find(
+          completedChallenges,
+          ({ id }) => certId === id
+        );
+        let { completedDate = new Date() } = certChallenge || {};
+
+        // the challange id has been rotated for isDataVisCert
+        // so we need to check for id 561add10cb82ac38a17513b3
+        if (certType === 'isDataVisCert' && !certChallenge) {
+          console.log('olderId');
+          let oldDataVisIdChall = _.find(
+            completedChallenges,
+            ({ id }) => '561add10cb82ac38a17513b3' === id
+          );
+
+          if (oldDataVisIdChall) {
+            completedDate = oldDataVisIdChall.completedDate || completedDate;
+          }
+        }
 
         const { username, name } = user;
         return res.json({

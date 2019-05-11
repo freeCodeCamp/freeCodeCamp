@@ -21,6 +21,7 @@ In Python, a function definition has the following features:
 4. A colon ':'
 5. Some block of code to execute (that must be indented relative to the definition statement)
 6. A return statement (optional)
+7. [docstring](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/python/docstring/index.md) (optional)
 
 ```python
 # a function with no parameters or returned values
@@ -39,7 +40,15 @@ helloWithName("Ada")  # calls the function, 'Hello Ada!' is printed to the conso
 def multiply(val1, val2):
   return val1 * val2
 
-multiply(3, 5)  # prints 15 to the console
+print(multiply(3, 5))  # prints 15 to the console
+
+# a function with a sample docstring, multiple parameters and a return statement
+def addValues(val1, val2): 
+  """ Returns the sum of two numbers """
+  return val1 + val2
+
+print(addValues(4, 7))  # prints 11 to the console
+  
 ```
 
 Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
@@ -161,4 +170,7 @@ We need to find the factorial of 5 (`5!`)
 5. The final return value will be the product of all values between `1` and `5` (e.g. `1 * 2 * 3 * 4 * 5`) or `120`.
 
 ### More Information:
-- <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>
+- [Python 3 Docs: Defining Functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions)
+- [Python 3 Docs: Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
+
+

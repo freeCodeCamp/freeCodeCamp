@@ -126,7 +126,7 @@ Here are specific formatting guidelines for challenge text and examples:
 - Single line code examples go in `<code>` tags
 - Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
 - A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
-- Additional information in the form of a note should be formatted `<strong>Note</strong><br>Rest of note text...`
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - Use double quotes where applicable
 
 ## Formatting seed code
@@ -144,15 +144,15 @@ Here are specific formatting guidelines for the challenge seed code:
 
 The challenge solution must be in proper markdown tags. The code must be wrapped in `section` tags with an id of `solution`.
 
-```
+````
 <section id='solution'>
 
-three backticks + html or js
+```html or ```js
  [ SOLUTION CODE]
-three backticks
+```
 
 </section>
-```
+````
 
 Example:
 

@@ -3,82 +3,54 @@ title: PHP Operators
 ---
 ## PHP Operators
 
-<p>Operators are used to perform operations on variables and values.</p>
-<p>PHP divides the operators in the following groups:</p>
-<ul>
-  <li>Arithmetic operators</li>
-  <li>Assignment operators</li>
-  <li>Comparison operators</li>
-  <li>Increment/Decrement operators</li>
-  <li>Logical operators</li>
-  <li>String operators</li>
-  <li>Array operators</li>
-</ul>
-<h3>PHP Arithmetic Operators</h3>
-<p>The PHP arithmetic operators are used with numeric values to perform common arithmetical operations, such as addition, subtraction, multiplication etc.</p>
-<table>
-  <tr>
-    <th>Operator</th>
-    <th>Name</th>
-    <th>Example</th>
-    <th>Result</th>
-  </tr>
-  <tr>
-    <td>+</td>
-    <td>Addition</td>
-    <td>$a + $b</td>
-    <td>Sum of $a and $b</td>
-  </tr>
-  <tr>
-    <td>-</td>
-    <td>Subtraction</td>
-    <td>$a - $b</td>
-    <td>Difference of $a and $b</td>
-  </tr>
-  <tr>
-    <td>*</td>
-    <td>Multiplication</td>
-    <td>$a * $b</td>
-    <td>Product of $a and $b</td>
-  </tr>
-  
-  <tr>
-    <td>/</td>
-    <td>Division</td>
-    <td>$a / $b</td>
-    <td>Quotient of $a and $b</td>
-  </tr>
-  <tr>
-    <td>%</td>
-    <td>Modulus</td>
-    <td>$a % $b</td>
-    <td>Remainder of $a divided by $b</td>
-  </tr>
-  <tr>
-    <td>**</td>
-    <td>Exponentiation</td>
-    <td>$a ** $b</td>
-    <td>Result of raising $a to the $b'th power </td>
-  </tr>
-</table>
+Operators are used to perform operations on variables and values.
 
-### PHP Assignment Operators
+PHP divides the operators in the following groups:
 
-The assignment operator is `=`. The operand on the left side gets assigned the value of the expression on the right.
+- Arithmetic operators
+- Assignment operators
+- Comparison operators
+- Increment/Decrement operators
+- Logical operators
+- String operators
+- Array operators
 
-#### Example
+### PHP Arithmetic Operators
+The PHP arithmetic operators are used with numeric values to perform common arithmetical operations, such as addition, subtraction, multiplication etc.
 
+Operator | Name           | Example  | Result
+-------- | -------------- | -------- | ---
+\+       | Addition       | $a + $b  | Sum of $a and $b
+\-       | Subtraction    | $a - $b  | Difference of $a and $b
+\*       | Multiplication | $a * $b  | Product of $a and $b
+\/       | Division       | $a / $b  | Quotient of $a and $b
+\%       | Modulus        | $a % $b  | Remainder of $a divided by $b
+\**      | Exponentiation | $a ** $b | Result of raising $a to the $b'th power
+
+### PHP Comparison Operators
+The PHP comparison operators are used to compare two values
+
+Operator | Name                     | Example   | Result
+-------- | ------------------------ | --------- | ---
+==       | Equal                    | $a == $b  | Returns **true** if $a is equal to $b
+===      | Identical                | $a === $b | Returns **true** if $a is equal to $b, and they are the same type 
+!=       | Not equal                | $a != $b  | Returns **true** if $a is not equal to $b
+<>       | Not equal                | $a <> $b  | Returns **true** if $a is not equal to $b
+!==      | Not identical            | $a !== $b | Returns **true** if $a is not equal to $b, or they are different types
+\>       | Greater than             | $a > $b   | Returns **true** if $a is greater than $b
+\<       | Less than                | $a < $b   | Returns **true** if $a is less than $b
+\>=      | Greater than or equal to | $a >= $b  | Returns **true** if $a is greater than or equal to $b
+\<=      | Less than or equal to    | $a <= $b  | Returns **true** if $a is less than or equal to $b
+\<=>     | Spaceship                | $a <=> $b | Returns an **integer** less than, equal to, or greater than zero when $a is respectively less than, equal to, or greater than $b.
+
+**Note:** Spaceship operator is available as of PHP 7+
+#### Spaceship example
 ```php
-<?php
-
-  $a = 7; // $a set to 7.
-  
- ?>  
+echo 1 <=> 0; // returns 1
+echo 1 <=> 1; // returns 0
+echo 1 <=> 2; // returns -1
 ```
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
 - <a href='http://php.net/manual/en/language.operators.arithmetic.php' target='_blank' rel='nofollow'>Arithmetic Operators</a></li>
 - <a href='http://php.net/manual/en/language.operators.assignment.php' target='_blank' rel='nofollow'>Assignment Operators</a></li>
-

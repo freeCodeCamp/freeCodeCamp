@@ -58,7 +58,7 @@ After you've counted the cards, use an `if` statement to check the value of **co
 ```javascript
     function cc(card) {
       // Only change code below this line
-      switch(card){
+      switch (card){
         case 2:
         case 3:
         case 4:

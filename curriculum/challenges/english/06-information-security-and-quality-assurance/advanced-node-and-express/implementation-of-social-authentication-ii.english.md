@@ -9,16 +9,19 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-socialauth/'>GitHub</a>.
 The last part of setting up your GitHub authentication is to create the strategy itself. For this, you will need to add the dependency of 'passport-github' to your project and require it as GithubStrategy like <code>const GitHubStrategy = require('passport-github').Strategy;</code>.
 To set up the GitHub strategy, you have to tell <b>passport</b> to <b>use</b> an instantiated <b>GitHubStrategy</b>, which accepts 2 arguments: An object (containing <em>clientID</em>, <em>clientSecret</em>, and <em>callbackURL</em>) and a function to be called when a user is successfully authenticated which we will determine if the user is new and what fields to save initially in the user's database object. This is common across many strategies but some may require more information as outlined in that specific strategy's github README; for example, Google requires a <em>scope</em> as well which determines what kind of information your request is asking returned and asks the user to approve such access. The current strategy we are implementing has its usage outlined <a>here</a>, but we're going through it all right here on freeCodeCamp!
-Here's how your new strategy should look at this point: <pre>passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/
-  },
-  function(accessToken, refreshToken, profile, cb) {
-      console.log(profile);
-      //Database logic here with callback containing our user object
-  }
-));</pre>
+Here's how your new strategy should look at this point:
+<blockquote>
+passport.use(new GitHubStrategy({<br>
+&nbsp;&nbsp;clientID: process.env.GITHUB_CLIENT_ID,<br>
+&nbsp;&nbsp;clientSecret: process.env.GITHUB_CLIENT_SECRET,<br>
+&nbsp;&nbsp;callbackURL: /*INSERT CALLBACK URL ENTERED INTO GITHUB HERE*/<br>
+},<br>
+&nbsp;&nbsp;function(accessToken, refreshToken, profile, cb) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log(profile);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;//Database logic here with callback containing our user object<br>
+&nbsp;&nbsp;}<br>
+));
+</blockquote>
 Your authentication won't be successful yet, and actually throw an error, without the database logic and callback, but it should log to your console your GitHub profile if you try it!
 Submit your page when you think you've got it right.
 </section>

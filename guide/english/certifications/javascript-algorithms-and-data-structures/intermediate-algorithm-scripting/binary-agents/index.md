@@ -41,13 +41,13 @@ Make sure that each time you transcode a character from binary to decimal, you r
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 ```javascript
     function binaryAgent(str) {
-      biString = str.split(' ');
-      uniString = [];
+      var biString = str.split(' ');
+      var uniString = [];
 
     /*using the radix (or base) parameter in parseInt, we can convert the binary
       number to a decimal number while simultaneously converting to a char*/
 
-      for(i=0;i < biString.length;i++){
+      for(var i=0;i < biString.length;i++){
         uniString.push(String.fromCharCode(parseInt(biString[i], 2)));
       }
 

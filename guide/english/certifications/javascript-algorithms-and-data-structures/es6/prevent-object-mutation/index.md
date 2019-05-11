@@ -31,7 +31,7 @@ _You need to freeze the `MATH_CONSTANTS` object so that no one is able to alter 
       
       try {
         MATH_CONSTANTS.PI = 99;
-      } catch( ex ) {
+      } catch(ex) {
         console.log(ex);
       }
       return MATH_CONSTANTS.PI;

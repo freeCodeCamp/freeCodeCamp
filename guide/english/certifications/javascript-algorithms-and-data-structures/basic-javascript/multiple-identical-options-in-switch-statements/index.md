@@ -7,7 +7,7 @@ title: Multiple Identical Options in Switch Statements
 
 _If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like this:_
 ```javascript
-switch(val) {
+switch (val) {
   case 1:
   case 2:
   case 3:
@@ -37,7 +37,7 @@ You will need to have a case statement for each number in the range._
 function sequentialSizes(val) {
   var answer = "";
   // Only change code below this line
-  switch(val) {
+  switch (val) {
     case 1:
     case 2:
     case 3:
@@ -67,7 +67,7 @@ sequentialSizes(1);
 function sequentialSizes(val) {
   var answer = "";
   // Only change code below this line
-  switch(val){
+  switch (val){
     case 1: case 2: case 3:
       answer = "Low";
       break;

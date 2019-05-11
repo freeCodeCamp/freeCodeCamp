@@ -7,12 +7,12 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-<code>.deepEqual()</code>, <code>.notDeepEqual()</code>.
-<code>.deepEqual()</code> asserts that two object are deep equal.
+<code>deepEqual()</code> asserts that two object are deep equal.
 </section>
 
 ## Instructions
 <section id='instructions'>
+Use <code>assert.deepEqual()</code> or <code>assert.notDeepEqual()</code> to make the tests pass.
 
 </section>
 

@@ -156,3 +156,4 @@ int main ()
 * If only integers are involved, an integer will be returned
 * If a floating point number is involved in an operation, that part of the operation becomes floating point
 * C provides a `math.h` library with multiple functions like `pow` for calculating the power of a number. 
+* Don't forget to include the library at the top of the file or the compiler will complain.

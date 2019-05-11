@@ -3,11 +3,11 @@ title: Nesting For Loops
 ---
 ## Nesting For Loops
 
-<strong>Remember to use Read-Search-Ask if you get stuck. Try to pair program :busts_in_silhouette: and write your own code :pencil:</strong>
+<strong>Remember to use Read-Search-Ask if you get stuck. Try to pair program and write your own code/</strong>
 
-:checkered_flag: <strong>Problem Explanation:</strong>
+<strong>Problem Explanation:</strong>
 
-If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. 
+If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays.
 
 Here is an example:
 
@@ -35,20 +35,20 @@ This outputs each sub-element in <code>arr</code> one at a time. Note that for t
   <li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-through-an-array-with-a-for-loop">Iterate Through An Array With A For Loop</a></li>
   <li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-arrays">Accessing Nested Arrays</a></li>
 </ul>
-  
-:speech_balloon: Hint: 1
+
+### Hint: 1
 
 Make sure to check with <code>length</code> and not the overall array.
 
 <em>try to solve the problem now</em>
 
-:speech_balloon: Hint 2<br>
+### Hint 2
 
 Use both <code>i</code> and <code>j</code> when multiplying the product.
 
 <em>try to solve the problem now</em>
 
-:speech_balloon: Hint 3<br>
+### Hint 3
 
 Remember to use <code>arr[i]</code> when you multiply the sub-arrays with the <code>product</code> variable.
 
@@ -60,7 +60,7 @@ Remember to use <code>arr[i]</code> when you multiply the sub-arrays with the <c
 <br>
 <strong>Solution Ahead!</strong>
 
-:beginner: <strong>Basic Code Solution:</strong>
+<strong>Basic Code Solution:</strong>
 ```
 function multiplyAll(arr) {
   var product = 1;
@@ -78,7 +78,7 @@ function multiplyAll(arr) {
 multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 ```
-:rocket: <strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops/">Run Code</a></strong>
+<strong><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops/">Run Code</a></strong>
 
 <strong>Code Explanation:</strong>
 
@@ -88,9 +88,8 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
   <li>The two sub-arrays to multiply are <code>arr[i]</code> and <code>j</code>.</li>
 </ul>
 
-:clipboard: <strong>NOTES FOR CONTRIBUTIONS:</strong>
-<ul>
-<li>:warning: <strong>DO NOT</strong> add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.</li>
-  <li>Add an explanation of your solution.</li>
-<li>Categorize the solution in one of the following categories — Basic, Intermediate and Advanced. :traffic_light:</li>
-  </ul>
+## <strong>NOTES FOR CONTRIBUTIONS:</strong>
+
+* <strong>DO NOT</strong> add solutions that are similar to any existing solutions. If you think it is similar but better, then try to merge (or replace) the existing similar solution.
+* Add an explanation of your solution.
+* Categorize the solution in one of the following categories — Basic, Intermediate and Advanced.

@@ -135,7 +135,9 @@ To order your list, precede each line with a number.
 
 ## Images
 
-For including images, if they aren't already hosted somewhere else on the web, you will need to put them online yourself using a platform like [Imgur](https://imgur.com/) or [Flickr](https://www.flickr.com). You can also host images by committing them to a git repository and pushing it to GitHub. Then you can right-click the image and copy its URL.
+We do not recommend adding images to an article unless absolutely necessary. Images hurt Web Accessibility, they are difficult to maintain and may get outdated. They are also slow to load on poor connections, thus, hurt web performance.
+
+For including images in an article under compelling reasons, if they aren't already hosted somewhere else on the web, you will need to put them online yourself using a platform like [Imgur](https://imgur.com/) or [Flickr](https://www.flickr.com). You can also host images by committing them to a git repository and pushing it to GitHub. Then you can right-click the image and copy its URL.
 
 We don't allow hosting images directly in the git repository because it would make it far too big (people pulling it to their local system to make changes would end up downloading all the images), and because it is easier to change an image by just changing the URL in an article than by putting the new image in the repository.
 
@@ -149,7 +151,7 @@ Then the images should show up when you click the <kcd>Preview</kcd> tab.
 
 You can also add diagrams, graphics, or visualizations as necessary.
 
-You can even embed relevant YouTube videos and interactive [REPL.it](https://repl.it/) code editors.
+You can even embed relevant YouTube videos.
 
 Don't use emojis or emoticons in the Guide. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
 

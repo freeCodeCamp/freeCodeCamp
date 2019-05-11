@@ -8,11 +8,11 @@ title: IDE and Printing different text
 
 ## IDEs mainly consist of 3 kinds of software :
 
-**1 Editor :** A slightly modified text editor to make coding easy. An example of an editor for coding is Notepad++.
+**1. Editor :** A slightly modified text editor to make coding easy. An example of an editor for coding is Notepad++.
 
-**2 Debugger :** Software that helps you find errors in your program , and resolve them before execution. Imagine FaceBook crashing on loading an application or a game crashing all of a sudden. To prevent faulty execution of a program, the debugger is a programmer's best friend.
+**2. Debugger :** Software that helps you find errors in your program , and resolve them before execution. Imagine FaceBook crashing on loading an application or a game crashing all of a sudden. To prevent faulty execution of a program, the debugger is a programmer's best friend.
 
-**3 Compiler :** A compiler is the part of the computer which converts your high level program code to machine code : 0s & 1s ; so that the computer's Central Processing Unit (CPU) can understand the commands and execute them. From now on, we will be using the word **compiler** frequently.
+**3. Compiler :** A compiler is the part of the computer which converts your high level program code to machine code : 0s & 1s ; so that the computer's Central Processing Unit (CPU) can understand the commands and execute them. From now on, we will be using the word **compiler** frequently.
 
 *Q : Try searching for an IDE on Google and run your first program on it . Check the output*
 
@@ -37,7 +37,7 @@ int main()
 The above code returns an error because at line 2, we have used a colon(:) instead of a semicolon(;)
 So, let's debug the error:
 
-```C++
+```cpp
 #include <iostream>
 using namespace std ;
 int main()
@@ -45,7 +45,6 @@ int main()
     cout << "I Love freeCodeCamp ! ";
     return 0;
 }
-
 ```
 
 Note that now the program runs perfectly.
@@ -72,9 +71,11 @@ They are used to print certain special characters a compiler cannot display.
 * `\"` to print a double inverted comma
 * `\n` to print on a new line
 * `\t` for a horizontal tab
+* `\v` for a vertical tab
 * `\f` for a new page
 * `\\` for a backslash
 * `\?` for a question mark
+* `\a` plays an audible bell
 
 ##### Now, let's try printing numbers and special characters with some escape sequences:
 
@@ -108,17 +109,18 @@ This is because we did not add the quotation marks for the second print statemen
 
 **The different types of comments and Syntax of a comment**:
 
-  1 `//`  ~ _Single Line Comments_  : The length of these comments is 1 line (the line it is typed on) .
-  2 `/* */` ~ _Multi Line Comments_ : These comments can take up a space of more than one line.
+  1 `//`  ~ _Single Line Comments_  : The length of these comments is 1 line (the line it is typed on).
+  
+  2 `/* */` ~ _Multi Line Comments_ : These comments can take up a space of more than one line. This type of comment can also be used inside conditional statements/loops.
 
 #### Example of using comments:
 
- ```cpp
-     cout << "Hello Comment" << endl; //cout<<"Hello Comment"<<endl; , Single Line Comment.
+```cpp
+     cout << "Hello Comment" << endl; // Prints "Hello Comment", This is a Single Line Comment.
      
     /* This is an example of a multi line comment. No output is generated for this .
     I now end the comment.  :) */
- ```
+```
 
 The output will be :
 
@@ -129,7 +131,10 @@ It should be noted that while comments do add an extra level of readability to o
 
 As you may notice, the comments are ignored during program execution and do not show up on checking the output of the program.
  
-## Operators 
+### Operators 
+
+Operators are symbols that helps us to perform specific mathematical and logical computations on operands. We can say that an operator operates the operands.
+
 #### Variable Designation
 * `*` Dereference
 * `&` Address (of operand)
@@ -140,8 +145,19 @@ As you may notice, the comments are ignored during program execution and do not 
 * `>` greater than
 * `<=` less than or equal to
 * `>=` greater than or equal to
+
+#### Math Operators
+* `+` add two operands
+* `-` subtract two operands
+* `*` multiply two operands
+* `/` divide two operands
+* `++` increment
+* `--` decrement
+
+#### Logical Operators
 * `||` Logical OR
 * `&&` Logical AND
+
 #### Assigns the right expression/value to the left variable/pointer
 * `=` Assignment
 * `+= , -=` Addition/subtraction assignment
@@ -149,12 +165,12 @@ As you may notice, the comments are ignored during program execution and do not 
 
 
 ```cpp
-    (7==5); 
+    (7 == 5); 
 ```
 This evaluates to false
 
 ```cpp 
-    (7!=5); 
+    (7 != 5); 
 ```
 This evaluates to true
 
