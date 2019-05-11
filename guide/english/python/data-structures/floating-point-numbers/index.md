@@ -1,7 +1,7 @@
 ---
 title: Python Floating Point Numbers
 ---
-# Floating Point Numbers
+# Python Floating Point Numbers
 
 Some general information about floating point numbers and how they work in Python, can be found <a href='https://docs.python.org/3/tutorial/floatingpoint.html' target='_blank' rel='nofollow'>here</a>.
 
