@@ -19,7 +19,7 @@ See your results as you go step by step, just like in this image.
 
 ## What Is A Jupyter Notebook?
 
-In this case, "notebook" or "notebook documents" denote documents that contain both code and rich text elements, such as figures, links, equations. Because of the mix of code and text elements, these documents are the ideal place to bring together an analysis description and its results as well as they can be executed perform the data analysis in real time.
+In this case, "notebook" or "notebook documents" denote documents that contain both code and rich text elements, such as figures, links, and equations. Because of the mix of code and text elements, these notebook documents are the ideal place to bring together an analysis description with its results, which can be executed to perform data analysis in real time.
 
 The name "Jupyter" is a loose acronym combining Julia, Python, and R, which were the first target programming languages of the Jupyter application. The notebook technology now supports many other languages.
 
