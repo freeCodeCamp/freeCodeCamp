@@ -29,7 +29,10 @@ exports.createNavigationNode = function createNavigationNode(node) {
 
   const nodeDir = path.resolve(fileAbsolutePath).replace(indexMdRe, '');
   const dashedName = nodeDir.split(path.sep).slice(-1)[0];
-  const nodePath = nodeDir.split(pagesDir)[1].split(path.sep).join('/');
+  const nodePath = nodeDir
+    .split(pagesDir)[1]
+    .split(path.sep)
+    .join('/');
   const parentPath = nodePath
     .split('/')
     .slice(0, -1)
