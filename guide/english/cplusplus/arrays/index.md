@@ -56,6 +56,11 @@ There are two types of arrays based on way the array is declared.
 Those arrays whose size is defined before compile time like in the examples above, are called static arrays. In these arrays we can't change their size, once they are declared.
 e.g : int numbers [5];
 
+```cpp
+//The number of elements must be specified at compile time.
+int fixed[5] = {1, 2, 3, 4, 5};
+```
+
 **2**. Dynamic array:
 Dynamic arrays are those arrays, whose size is not known at compile time and we can define their size at run time as need arises. These arrays are created by using **new** keyword and a pointer variable which points to the newly allocated memory location of the array. We can also free up the memory allocated once the array is not required anymore by using the **delete** keyword.
 
@@ -64,7 +69,19 @@ e.g :
 int * numbers = new int[5];
 ```
 
+```cpp
+int size;
+std::cout << "Enter array size: ";
+std::cin >> size;
+//The number of elements can be specified at runtime.
+int *dynamic = new int[size];
+
+//Dynamic arrays must be deleted when they are no longer required.
+delete[] dynamic;
+```
+
 ### Access:  
+
 Elements of an array are accessed using their index. The index of the first element in the array is zero and the second element's index is 1 and so on. You can think of the index of an element as the unit "distance" from the beginning of the array, that is the first element is 0 units from the start.  
 Examples using the number array from above:  
 ```cpp
