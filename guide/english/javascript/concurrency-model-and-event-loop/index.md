@@ -4,7 +4,7 @@ title: Concurrency Model and Event Loop
 ## Concurrency Model and Event Loop
 
 
-Javascript runtime is single threaded which means that it can execute one piece of code at a time. In order to understand the concurrency model and the event loop in Javascript we have to first get around with some common terms that are associated with it. First let's learn what is a call stack.
+JavaScript runtime is single threaded which means that it can execute one piece of code at a time. In order to understand the concurrency model and the event loop in JavaScript we have to first get around with some common terms that are associated with it. First let's learn what is a call stack.
 
 A call stack is a simple data structure that records where in the code we are currently. So if we step into a function that is a function invocation it is pushed to the call stack and when we return from a function it is popped out of the stack. 
 
@@ -31,7 +31,7 @@ multiply executes and it returns with the multiplied value. Finally the squared 
 
 So to summarize whenever a function is invoked it is pushed into the call stack where it executes. Finally when the function is done with it's execution and is returning either implicitly or explicitly it will be popped off the stack. The call stack just records at what point in time which funciton was executing. It keeps track of which function is currently executing.
 
-Now we know from this that Javascript can execute one thing at a time but that's not the case with the Browser. The Browser has it's own set of API's like setTimeout, XMLHttpRequests which are not specified in the Javascript runtime. In fact if you look through the source code of V8, the popular Javascript runtime that powers browsers like Google Chrome you won't find any definitions for it. It's because these special web API's exist in the browser environment not inside the javascript environment and you can say that these apis introduces concurrency into the mix. Let's look at a diagram to understand the whole picture.
+Now we know from this that JavaScript can execute one thing at a time but that's not the case with the Browser. The Browser has it's own set of API's like setTimeout, XMLHttpRequests which are not specified in the JavaScript runtime. In fact if you look through the source code of V8, the popular JavaScript runtime that powers browsers like Google Chrome you won't find any definitions for it. It's because these special web API's exist in the browser environment not inside the javascript environment and you can say that these apis introduces concurrency into the mix. Let's look at a diagram to understand the whole picture.
 
 ![Concurrency and Event Loop Model](https://i.imgur.com/rnQEY7o.png)
 

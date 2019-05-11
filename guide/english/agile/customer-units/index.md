@@ -3,7 +3,7 @@ title: Customer Units
 ---
 ## Customer Units
 
-In Agile, Customer units is a people and role that represent the voice, the expectation from customers/market targetted by a product. 
+In Agile, Customer units is a people and role that represent the voice, the expectation from customers/market targeted by a product. 
 
 Customer units responsible for user experience product, a vision of a product, road map of product, creating and maintaining product backlog, and anything.
 
