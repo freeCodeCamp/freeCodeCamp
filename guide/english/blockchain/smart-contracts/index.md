@@ -17,7 +17,7 @@ Smart Contracts allows the transfer of goods and services without the need for a
 
 ## Blockchain Technologies Supporting Smart Contracts
 Some of the most common technologies used are:
-- Ethereum - Created to be a blockchain for smart contracts. The smart contracts run in the Ethereum Virtual Machine (EVM), which can be thought of as a  decentralized computer. Ethereum smart contracts can be written in Solidity, Serpent or Vyper, which are then compiled to byte-code and fed to the EVM.
+- Ethereum - Created to be a blockchain for smart contracts. The smart contracts run in the Ethereum Virtual Machine (EVM), which can be thought of as a  decentralized computer. Ethereum smart contracts can be written in languages such as Solidity, Serpent, Vyper, or Go which are then compiled to byte-code and fed to the EVM.
 - Hyperledger - An initiative hosted by the Linux Foundation for private blockchains and tends to be more business-oriented. There are several projects under the Hyperledger name, most of them with Smart Contract capabilities. Ethereum Smart Contracts can be run in Hyperledger too.
 - Corda - A new Operating System for Financial Services
 
