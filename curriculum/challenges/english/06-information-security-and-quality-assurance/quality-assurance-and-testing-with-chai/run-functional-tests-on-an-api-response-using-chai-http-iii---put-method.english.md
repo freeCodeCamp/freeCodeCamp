@@ -8,20 +8,30 @@ challengeType: 2
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 In the next example we'll see how to send data in a request payload (body).
-We are going to test a PUT request. The '/travellers' endpoint accepts
-a JSON object taking the structure :
- {surname: [last name of a traveller of the past]} ,
+We are going to test a PUT request. The <code>'/travellers'</code> endpoint accepts a JSON object taking the structure :
+ <blockquote>
+ {<br>
+   &nbsp;surname: [last name of a traveller of the past]<br>
+ } </blockquote>
 The route responds with :
- {name: [first name], surname:[last name], dates: [birth - death years]}
-see the server code for more details.
-Send {surname: 'Colombo'}. Replace assert.fail() and make the test pass.
-Check for 1) status, 2) type, 3) body.name, 4) body.surname
-Follow the assertion order above, We rely on it.
+ <blockquote>
+ {<br>
+   &nbsp;name: [first name], surname:[last name], dates: [birth - death years]<br>
+ }</blockquote>
+See the server code for more details.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Send <br>
+<blockquote>
+{<br>
+  &nbsp;surname: 'Colombo'<br>
+}</blockquote> 
+Replace <code>assert.fail()</code> and make the test pass.
+Check for 1) <code>status</code>, 2) <code>type</code>, 3) <code>body.name</code>, 4) <code>body.surname</code>.
+Follow the assertion order above, We rely on it.
 </section>
 
 ## Tests

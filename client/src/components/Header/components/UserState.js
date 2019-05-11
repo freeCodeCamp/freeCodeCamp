@@ -36,7 +36,7 @@ function UserState(props) {
         className='user-state-spinner'
         color='white'
         fadeIn='none'
-        height='40px'
+        height='38px'
         name='line-scale'
       />
     );

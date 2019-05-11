@@ -32,5 +32,5 @@ Você pode adicionar mais plugins à sua instalação do Vim.
 
 #### Mais Informações:
 
-*   [Repositório Github](https://github.com/junegunn/vim-plug) - Vim-Plug
+*   [Repositório GitHub](https://github.com/junegunn/vim-plug) - Vim-Plug
 *   [VimAwesome](https://vimawesome.com/) - Explore os plugins do Vim

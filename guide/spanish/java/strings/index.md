@@ -1,8 +1,8 @@
 ---
 title: Strings
-localeTitle: Instrumentos de cuerda
+localeTitle: Cadena de caracteres
 ---
-# Instrumentos de cuerda
+# Cadena de caracteres
 
 Las cadenas son secuencias de caracteres. En Java, una `String` es un `Object` . Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
 
@@ -18,10 +18,9 @@ true
 
 Puede crear un objeto de cadena de las siguientes maneras:
 
-1.  `String str = "I am a String"; //as a String literal`
-2.  `String str = "I am a " + "String"; //as a constant expression`
-3.  `String str = new String("I am a String"); //as a String Object using the constructor`
-
+1.  `String str = "I am a String"; //como un literal de cadena`
+2.  `String str = "I am a " + "String"; //como una expresión constante`
+3.  `String str = new String("I am a String"); //como un objeto de cadena usando el constructor`
 Usted podría estar pensando: ¿Cuál es la diferencia entre los tres?
 
 Bueno, usar la `new` palabra clave garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Cuerda Los literales y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como el de arriba es casi siempre una opción peor.
@@ -41,9 +40,9 @@ Cuando creas un literal de cadena, la JVM verifica internamente, lo que se conoc
 Puede probar esto usando la comparación de objetos rápida, tragar `==` y los `equals()` implementados `equals()` .
 
 ```java
-System.out.println(str == str2); // This prints 'true' 
- System.out.println(str == str3); // This prints 'false' 
- System.out.println(str.equals(str3)); // This prints 'true' 
+System.out.println(str == str2); // esto impreme 'true' 
+ System.out.println(str == str3); // esto impreme 'false' 
+ System.out.println(str.equals(str3)); // esto impreme 'true' 
 ```
 
 Aquí hay otro ejemplo sobre cómo crear una cadena en Java usando los diferentes métodos:
@@ -52,10 +51,10 @@ Aquí hay otro ejemplo sobre cómo crear una cadena en Java usando los diferente
 public class StringExample{ 
  
    public static void main(String args[]) { 
-      String s1 = "java";  // creating string by Java string literal 
+      String s1 = "java";  // creando cadena por literal de cadena de Java 
       char ch[] = {'s','t','r','i','n','g','s'}; 
-      String s2 = new String(ch);  // converting char array to string 
-      String s3 = new String("example");  // creating Java string by new keyword 
+      String s2 = new String(ch);  // convertir la char array a una cadena
+      String s3 = new String("example");  // creando una cadena Java por una nueva palabra clave 
       System.out.println(s1); 
       System.out.println(s2); 
       System.out.println(s3); 
@@ -77,8 +76,8 @@ Devuelve true si dos objetos son iguales y false de lo contrario.
 String str = "Hello world"; 
  String str2 = "Hello world"; 
  
- System.out.println(str == str2); // This prints false 
- System.out.println(str.equals(str2); // This prints true 
+ System.out.println(str == str2); // Esto impreme falso 
+ System.out.println(str.equals(str2); // Esto impreme  cierto 
 ```
 
 La primera comparación es falsa porque "==" mira las referencias y no son lo mismo.
@@ -114,7 +113,7 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
 
 ```java
 String a = "Hello"; 
- int len = a.length();  // len is 5 
+ int len = a.length();  // len es 5 
 ```
 
 #### Otros métodos de comparación que también se pueden usar en la Cadena son:
@@ -124,7 +123,7 @@ String a = "Hello";
 ```java
 String a = "HELLO"; 
  String b = "hello"; 
- System.out.println(a.equalsIgnoreCase(b));   // It will print true 
+ System.out.println(a.equalsIgnoreCase(b));   // Esto va a impremir 'true' 
 ```
 
 2.  compareTo: compara el valor lexicográficamente y devuelve un entero.
@@ -134,7 +133,7 @@ String a = "Sam";
  String b = "Sam"; 
  String c = "Ram"; 
  System.out.println(a.compareTo(b));       // 0 
- System.out.prinltn(a.compareTo(c));       // 1 since (a>b) 
- System.out.println(c.compareTo(a));       // -1 since (c<a) 
+ System.out.prinltn(a.compareTo(c));       // 1 porque (a>b) 
+ System.out.println(c.compareTo(a));       // -1 porque (c<a) 
 
 ```
