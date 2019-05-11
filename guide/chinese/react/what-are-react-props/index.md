@@ -1,7 +1,8 @@
 ---
 title: React TypeChecking with PropTypes
 localeTitle: 使用PropTypes进行React TypeChecking
----## 反应PropTypes
+---
+## 反应PropTypes
 
 当应用程序趋于增长时，这些可以作为一种类型检查的方法，通过使用此功能，可以纠正非常大的错误基础。
 
@@ -122,4 +123,4 @@ import React,{Component} from 'react';
 
 有关React上PropTypes和其他文档的更多信息。
 
-访问[官方网站](https://reactjs.org/)并阅读文档或[Github Repo](https://github.com/facebook/react/)
+访问[官方网站](https://reactjs.org/)并阅读文档或[GitHub Repo](https://github.com/facebook/react/)

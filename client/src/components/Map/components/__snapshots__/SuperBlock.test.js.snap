@@ -4,7 +4,8 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
 <li
   className="superblock open"
 >
-  <div
+  <button
+    aria-expanded={true}
     className="map-title"
     onClick={[Function]}
   >
@@ -12,7 +13,7 @@ exports[`<SuperBlock /> expanded snapshot: superBlock-expanded 1`] = `
     <h4>
       Super Block One Certification (300 hours)
     </h4>
-  </div>
+  </button>
   <ul>
     <Connect(Block)
       blockDashedName="block-a"
@@ -141,7 +142,8 @@ exports[`<SuperBlock /> not expanded snapshot: superBlock-not-expanded 1`] = `
 <li
   className="superblock "
 >
-  <div
+  <button
+    aria-expanded={false}
     className="map-title"
     onClick={[Function]}
   >
@@ -149,6 +151,6 @@ exports[`<SuperBlock /> not expanded snapshot: superBlock-not-expanded 1`] = `
     <h4>
       Super Block One Certification (300 hours)
     </h4>
-  </div>
+  </button>
 </li>
 `;

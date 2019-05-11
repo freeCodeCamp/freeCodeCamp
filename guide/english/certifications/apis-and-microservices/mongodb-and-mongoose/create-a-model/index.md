@@ -1,10 +1,41 @@
 ---
 title: Create a Model
 ---
-## Create a Model
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/create-a-model/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+There are 3 things to do in this challenge. You can click each item to see the code.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<details>
+  <summary>Assign Mongoose Schema to a variable. This is not necessary but will make your code easier to read.</summary>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```javascript
+const Schema = mongoose.Schema;
+```
+</details>
+
+See the [Mongoose docs](https://mongoosejs.com/docs/guide.html) first where is a lot of useful stuff. 
+When you are building schema you can use either of three options for name validation
+```js
+name: String
+name: {type: String}
+name: {type: String, required: true} //preferred
+```
+
+<details>
+  <summary>Create Person schema.</summary>
+
+```javascript
+const personSchema = new Schema({
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods:   [String]
+});
+```
+**Note**: If you choose to skip the first step, you have to use `mongoose.Schema` instead of `Schema`.
+</details>
+<details>
+  <summary>Create Person model from the schema.</summary>
+
+```javascript
+const Person = mongoose.model('Person', personSchema);
+```
+</details>
