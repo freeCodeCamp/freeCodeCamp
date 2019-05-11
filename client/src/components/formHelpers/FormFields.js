@@ -6,10 +6,9 @@ import {
   Col,
   ControlLabel,
   FormControl,
+  FormGroup,
   HelpBlock
 } from '@freecodecamp/react-bootstrap';
-
-import './form-fields.css';
 
 const propTypes = {
   errors: PropTypes.objectOf(PropTypes.string),
@@ -48,15 +47,12 @@ function FormFields(props) {
           const key = kebabCase(name);
           const type = name in types ? types[name] : 'text';
           return (
-            <div className='inline-form-field' key={key}>
-              <Col sm={3} xs={12}>
+            <Col key={key} xs={12}>
+              <FormGroup>
                 {type === 'hidden' ? null : (
                   <ControlLabel htmlFor={key}>{startCase(name)}</ControlLabel>
                 )}
-              </Col>
-              <Col sm={9} xs={12}>
                 <FormControl
-                  bsSize='lg'
                   componentClass={type === 'textarea' ? type : 'input'}
                   id={key}
                   name={name}
@@ -72,8 +68,8 @@ function FormFields(props) {
                     <Alert bsStyle='danger'>{errors[name]}</Alert>
                   </HelpBlock>
                 ) : null}
-              </Col>
-            </div>
+              </FormGroup>
+            </Col>
           );
         })}
     </div>

@@ -13,20 +13,20 @@ The Scrum Master is a servant-leader for the Scrum Team. The Scrum Master helps 
 - Helping the team maintain their burndown chart
 - Setting up retrospectives, sprint reviews or sprint planning sessions
 - Shielding the team from interruptions during the sprint
-- Removing obstacles that affect the team
-- Walking the product owner through more technical user stories
+- Making sure that obstacles that affect the team are removed, by doing it themselves or helping the team learn how to handle the obstacle
+- Assisting the product owner with understanding the practice of writing, splitting, and prioritizing user stories
 - Encouraging collaboration between the Scrum team and product owner . 
 
-Typically a Scrummaster will ask the following qustions: 
+Typically a Scrum Master will ask the following qustions: 
 1. What did you do yesterday?
 2. What are you going to do today?
-3. Is there anything stopping your progress?
+3. Is there anything slowing downn or stopping your progress?
 
-Scrum masters are part of an Agile team. They can be developers or other functional members (wearing multiple hats) or functioning individually as a sole role in a team. Their main objective is to enhance the development using the Scrum framework.
+Scrum Masters are part of an Agile team. They can be developers or other functional members (wearing multiple hats) or functioning individually as a sole role in a team. Their main objective is to enhance the development using the Scrum framework.
 
-Often their role is to: guide the sprint planning, monitor daily standup, conduct retrospectives, ensure velocity is present, help Scoping of Sprints.
+Often their role is to: guide the sprint planning, monitor daily standup, conduct retrospectives, ensure velocity is present, help scoping of Sprints, helping the Product Owner and team to construct and split user stories. 
 
 #### More Information:
 
 - <a href="https://www.scrum.org/resources/what-is-a-scrum-master" target="_blank" rel="nofollow">What is a Scrum Master</a>
-- <a href="https://www.scrum.org/resources/scrum-guide" rel="nofollow">Scrum Guide</a> 
+- <a href="https://www.scrumguides.org/index.html" rel="nofollow">Scrum Guide</a> 
