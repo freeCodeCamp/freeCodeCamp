@@ -1,15 +1,16 @@
+---
+title: String.prototype.padStart
+---
 ## String.prototype.padStart
 
-padStart() is a JavaScript string method that pads the start (left) of the current string with another string to the specified final string length.
+The padStart() method is a JavaScript string method that pads the start (left) of the current string with another string to the specified final string length.
 
 **Syntax**
-
 ```javascript
   string_to_be_padded.padStart(resulting_length, pad_string)
 ```
 
-## Examples
-
+**Example**
 ```javascript
   var str1 = '1';
   var str2 = '2';
