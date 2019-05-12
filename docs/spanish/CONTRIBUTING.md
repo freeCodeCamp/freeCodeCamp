@@ -15,13 +15,13 @@
 
 ¡Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Estamos agradecidos por tus contribuciones y nos complace darte la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Estamos muy agradecidos por tus contribuciones y nos complace darte la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómate un momento para leerlo. Sólo son 196 palabras.
 
 ¡Feliz contribución 🎉!
 
-## Aquí hay algunas maneras divertidas en que puedes ayudar:
+## Aquí hay algunas maneras divertidas en las que puedes ayudar:
 
 Puedes optar por contribuir a cualquier área de tu interés:
 
@@ -44,9 +44,9 @@ Puedes ayudarnos a:
 
 - [📝 Investigar, escribir y actualizar nuestras guías.](#investiga-escribe-y-actualiza-nuestros-artículos-de-guía)
 
-- [💻 Crear, actualizar y corregir errores en nuestros desafíos de codificación.](#crear-actualizar-y-corregir-errores-en-nuestros-desafíos-de-codificación)
+- [💻 Crear, actualizar y corregir errores en nuestros desafíos de código.](#crear-actualizar-y-corregir-errores-en-nuestros-desafíos-de-codificación)
 
-- [🌐 Traducir guías y desafíos de codificación.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
+- [🌐 Traducir artículos de guía y desafíos de código.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
 
 - [🛠 Corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
 
@@ -82,7 +82,7 @@ Puedes ayudar a expandirlos y hacer que su redacción sea más clara. Puedes act
 
 ### Traducir artículos de guía y desafíos de codificación
 
-Puedes ayudarnos a traducir nuestros artículos de guía y desafíos de codificación a un idioma que hables. Actualmente tenemos versiones traducidas en:
+Puedes ayudarnos a traducir nuestros artículos de Guía y desafíos de código para un idioma que hables. Actualmente tenemos versiones traducidas en:
 
 - [Chino (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
 - [Ruso (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
@@ -121,7 +121,7 @@ Si estás seguro de que es un error nuevo, siga adelante y crea un nuevo problem
 Ten en cuenta que cualquier problema que se registre para resolver dudas sobre la codificación de un desafío se cerrará. El rastreador de problemas es estrictamente para los temas y discusiones relacionados con el código base. Deberías [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de reportar un problema en caso de duda.
 **¿Cómo puedo reportar un problema de seguridad?**
 
-Por favor, no crees issues de GitHub para problemas de seguridad. En su lugar, envía un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
+Por favor, no crees Issues de GitHub para problemas de seguridad. En su lugar, envía un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
 
 **Estoy atascado en algo que no está en esta documentación. ¿Cómo puedo obtener ayuda?**
 
