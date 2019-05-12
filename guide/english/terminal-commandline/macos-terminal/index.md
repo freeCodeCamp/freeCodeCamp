@@ -5,7 +5,7 @@ title: Mac OS Terminal
 
 # Using the Terminal in Mac OS
 
-Most of the time users interact through a Graphical User Interface to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. But, you can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
+Most of the time users interact through a Graphical User Interface (GUI) to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. But, you can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
 
 ### Opening the Terminal and Navigating Directories
 
