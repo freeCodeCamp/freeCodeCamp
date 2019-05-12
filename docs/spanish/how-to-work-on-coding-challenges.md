@@ -4,7 +4,7 @@
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
     </tr>
@@ -24,7 +24,7 @@ También puedes clonar el proyecto y editarlo de manera local en tu ordenador. S
 
 ### Patrón de los Desafíos.
 
-He aquí un patrón de cómo se verán los archivos markdown correspondientes a los desafíos.
+He aquí un patrón de cómo se verán los archivos reduccion correspondientes a los desafíos.
 
 ````md
 ---
@@ -37,7 +37,7 @@ videoUrl: 'URL del video explicatorio'
 
 ## Descripción
 <section id='description'>
-Una descripción del desafío y de los requerimientos aprobatorios
+Una descripción del desafío y de los requisitos aprobacion
 </section>
 
 ## Instrucciones

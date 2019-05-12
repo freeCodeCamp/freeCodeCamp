@@ -11,7 +11,7 @@ C++ provides a data structure, `array`, which stores a fixed-size sequential col
 
 #### Declaration of `array`
 
-    int intarray<a href='https://repl.it/CWZE/3' target='_blank' rel='nofollow'>10]; // Declares an array of integer type of size 10 with elements having random values. Index ranges from 0 to 9(i.e. size-1).
+    int intarray[10]; // Declares an array of integer type of size 10 with elements having random values. Index ranges from 0 to 9(i.e. size-1).
     int intarray[10] = { 0 }; // Declares an array of integer of size 10 with all elements having value 0
 
     // Choose one the two declarations and then move ahead.
@@ -38,7 +38,13 @@ C++ provides a data structure, `array`, which stores a fixed-size sequential col
     std::cout << sizeof(intarray)/sizeof(intarray[0]) << std::endl; // Returns the length of the array i.e. 10.
     std::cout << sizeof(intarray[0]) << std::endl; // Returns length in bytes of one array item i.e. 4 as it is an integer
 
-:rocket: [Run Code</a> ## Arrays in Python Python doesn't have a native `array` data structure. An `array` in Python should not be confused with `list`. The major difference between a `list` and an `array` in Python is that a `list` can have different types of values whereas an `array` should have all the values of same type. #### Declaration of `array`  
+:rocket: [Run Code](https://repl.it/CWZE/3) 
+
+## Arrays in Python 
+
+Python doesn't have a native `array` data structure. An `array` in Python should not be confused with `list`. The major difference between a `list` and an `array` in Python is that a `list` can have different types of values whereas an `array` should have all the values of same type. 
+
+#### Declaration of `array`  
 
     from array import array
     intarray = array('i') # Declares an array of integer type
@@ -76,6 +82,6 @@ C++ provides a data structure, `array`, which stores a fixed-size sequential col
     intarray.reverse() # Reverse the order of the items in the array
     intarray.pop(1) # Removes the item with the index 1 from the array and returns it
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CWJB' target='_blank' rel='nofollow'>Run Code</a>
+:rocket: [Run Code](https://repl.it/CWJB)
 
 <a href='https://docs.python.org/3.5/library/array.html' target='_blank' rel='nofollow'>Official Docs</a>

@@ -37,6 +37,11 @@ Java также разделен на несколько «Изданий»:
 
 `bash $ rpm -ivh jdk-8uversion-linux-x64.rpm`
 
+*   [Archlinux] Пользователи Archlinux и основанных на нём диструбитивов могут установить последний jdk от Oracle через AUR:
+https://aur.archlinux.org/packages/jdk/
+
+`yaourt -S jdk`
+
 *   Пользователи имеют возможность установить версию с открытым исходным кодом Java, OpenJDK или Oracle JDK. Хотя OpenJDK находится в активной разработке и синхронизируется с Oracle JDK, они просто отличаются [лицензированием](http://openjdk.java.net/faq/) . Однако немногие разработчики жалуются на стабильность Open JDK. Инструкции для **Ubuntu** :
 
 Открытая установка JDK:  
