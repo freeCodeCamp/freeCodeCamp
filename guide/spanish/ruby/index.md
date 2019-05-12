@@ -6,8 +6,6 @@ localeTitle: Rubí
 
 Ruby fue creado por Yukihiro "Matz" Matsumoto y es un lenguaje de script de [código abierto](https://github.com/ruby/ruby) , dinámico e interpretado para una programación rápida y fácil orientada a objetos. Lo que significa:
 
-También se sabe que tiene una de las [comunidades más grandes y amigables](https://www.ruby-lang.org/en/community/) entre los lenguajes de programación.
-
 *   Posibilidad de realizar llamadas al sistema operativo directamente.
 *   Retroalimentación inmediata durante el desarrollo.
 *   Las declaraciones de variables son innecesarias.
@@ -15,6 +13,8 @@ También se sabe que tiene una de las [comunidades más grandes y amigables](htt
 *   Todo es un objeto
 *   Tiene funcionalidad "mixin" por módulo.
 *   Iteradores y cierres.
+
+También se sabe que tiene una de las [comunidades más grandes y amigables](https://www.ruby-lang.org/en/community/) entre los lenguajes de programación.
 
 Si no está familiarizado con algunos de los conceptos anteriores, siga leyendo y no se preocupe. Ruby se centra en la simplicidad y la productividad con una elegante sintaxis que es natural de leer y fácil de escribir, como:
 
@@ -39,7 +39,7 @@ Si no está familiarizado con algunos de los conceptos anteriores, siga leyendo 
 
 ## Versión
 
-La versión estable actual es [2.5.1](https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-5-1-released/) .
+La versión estable actual es [2.5.3](https://www.ruby-lang.org/en/news/2018/10/18/ruby-2-5-3-released/) .
 
 ## Instalación
 
@@ -128,4 +128,4 @@ Para escribir aplicaciones nativas multiplataforma en Ruby, RUBY MOTION se utili
 
 ## ¿Qué después de aprender Ruby?
 
-Cada lenguaje de programación juega un papel importante. Puede contribuir a muchos proyectos de código abierto o puede solicitar algunas de las grandes empresas después de tener un buen conocimiento de Ruby. Como muchos sitios grandes de Internet como Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, Github, Shopify está construido en Ruby, así que hay muchas opciones para ti. Además, muchas empresas nuevas están contratando personas que tienen habilidades en RUby on Rails, ya que no hay muchos programadores que intenten aprender a Ruby. Por lo tanto, es posible que tenga un corte claro para trabajar en una empresa de nueva creación. Entonces, Ruby es amigable para los principiantes y es un conjunto de habilidades bastante difícil para encontrar que tienes un buen número de vacantes para trabajar como desarrollador.
+Cada lenguaje de programación juega un papel importante. Puede contribuir a muchos proyectos de código abierto o puede solicitar algunas de las grandes empresas después de tener un buen conocimiento de Ruby. Como muchos sitios grandes de Internet como Basecamp, Airbnb, Bleacher Report, Fab.com, Scribd, Groupon, Gumroad, Hulu, Kickstarter, Pitchfork, Sendgrid, Soundcloud, Square, Yammer, Crunchbase, Slideshare, Funny or Die, Zendesk, GitHub, Shopify está construido en Ruby, así que hay muchas opciones para ti. Además, muchas empresas nuevas están contratando personas que tienen habilidades en RUby on Rails, ya que no hay muchos programadores que intenten aprender a Ruby. Por lo tanto, es posible que tenga un corte claro para trabajar en una empresa de nueva creación. Entonces, Ruby es amigable para los principiantes y es un conjunto de habilidades bastante difícil para encontrar que tienes un buen número de vacantes para trabajar como desarrollador.

@@ -1,7 +1,7 @@
 ---
 title: Create an Npm Module
 ---
-An NPM module is a set of Javascript functionality bundled into a distributable package. <a href='http://www.npmjs.com' target='_blank' rel='nofollow'>NPM</a> maintains the registry of all available packages, and is also the tool used to install packages from its registry.
+An NPM module is a set of JavaScript functionality bundled into a distributable package. <a href='http://www.npmjs.com' target='_blank' rel='nofollow'>NPM</a> maintains the registry of all available packages, and is also the tool used to install packages from its registry.
 
 The beauty of NPM is that you can assemble packages other people have created to create something new, and someone later on could use the package you create. If you have some code that you want to share with the world, publishing a module to NPM is easy.
 
