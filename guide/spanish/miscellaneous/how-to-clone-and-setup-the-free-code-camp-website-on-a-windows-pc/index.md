@@ -34,7 +34,7 @@ Descargue e instale los 4 requisitos previos. Al instalar Python y Node, es impo
 
 **Los siguientes comandos todos _tienen_ que ser ejecutado en Git Bash**
 
-1.  Sigue las instrucciones aquí en [**freeCodeCamp en Github**](https://github.com/FreeCodeCamp/freecodecamp) y clona el proyecto.
+1.  Sigue las instrucciones aquí en [**freeCodeCamp en GitHub**](https://github.com/FreeCodeCamp/freecodecamp) y clona el proyecto.
 2.  Asegúrate de estar en el directorio que clonaste con GitHub (de manera predeterminada, esto es freecodecamp).
 3.  Ejecutar `cp sample.env .env`
 4.  Ejecutar `npm install`

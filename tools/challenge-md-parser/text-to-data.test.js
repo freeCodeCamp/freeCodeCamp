@@ -54,6 +54,13 @@ describe('text-to-data', () => {
     expect(file.data[expectedField].includes(expectedText)).toBe(true);
   });
 
+  // eslint-disable-next-line max-len
+  it('should add an empty string relating to the section id without data to `file.data`', () => {
+    const plugin = textToData([otherExpectedField]);
+    plugin(mockAST, file);
+    expect(file.data[otherExpectedField]).toEqual('');
+  });
+
   it('should preserve nested html', () => {
     const plugin = textToData([expectedField]);
     plugin(mockAST, file);

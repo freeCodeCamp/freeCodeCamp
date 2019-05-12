@@ -1,18 +1,23 @@
 ---
 title: Autofocus Attribute
-localeTitle: Атрибут автофокусировки
+localeTitle: Атрибут autofocus
 ---
-## Автофокус Атрибут | HTML5
+## Атрибут autofocus | HTML5
 
 Атрибут **autofocus** является логическим атрибутом.
 
 Когда он присутствует, он указывает, что элемент должен автоматически получать фокус ввода при загрузке страницы.
 
-Только один элемент формы в документе может иметь атрибут **автофокусировки** . Он не может применяться к `<input type="hidden">` .
+Только один элемент формы в документе может иметь атрибут **Autofocus** . Он не может применяться к полям `<input type="hidden">` .
 
 ### Относится к
 
-| Элемент | Атрибут | | : - | : - | | `<button>` | автофокус | | `<input>` | автофокус | | `<select>` | автофокус | | `<textarea>` | автофокус |
+| Элемент | Атрибут |
+| :-- | :-- |
+| `<button>` | autofocus |
+| `<input>` | autofocus |
+| `<select>` | autofocus |
+| `<textarea>` | autofocus |
 
 ### пример
 
@@ -30,6 +35,6 @@ localeTitle: Атрибут автофокусировки
 
 #### Дополнительная информация:
 
-[Атрибут HTML автофокуса](https://www.w3schools.com/tags/att_autofocus.asp) на w3schools.com
+[HTML autofocus Attribute](https://www.w3schools.com/tags/att_autofocus.asp) на w3schools.com
 
-[<input> атрибут автофокусировки](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) на веб-документах MDN
+[<input> autofocus attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) на MDN web docs
