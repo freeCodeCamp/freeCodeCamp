@@ -23,5 +23,6 @@ The Flexbox Layout aims at providing a more efficient way to lay out, align and 
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-<a href='https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35' target='_blank' rel='nofollow'>This is a great article</a> to read up to understand more about flexbox
-This is a highly recommended practical guide that illustrate the different flex properties applied to the flex container and th flex items:  <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a>
+- <a href='https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35' target='_blank' rel='nofollow'>This is a great article</a> to read up to understand more about flexbox
+- This is a highly recommended practical <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">guide</a>
+- <a href='https://flexboxfroggy.com/#it'>Flexboxes Playground - play to learn </a>

@@ -9,10 +9,12 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 Right now everything you have is in your server.js file. This can lead to hard to manage code that isn't very expandable.
 Create 2 new files: Routes.js and Auth.js
-Both should start with the following code: <pre>module.exports = function (app, db) {
-
-
-}</pre>
+Both should start with the following code:
+<blockquote>
+module.exports = function (app, db) {<br>
+<br>
+}
+</blockquote>
 Now in the top of your server file, require these files like such: <code>const routes = require('./routes.js');</code>
 Right after you establish a successful connect with the database instantiate each of them like such: <code>routes(app, db)</code>
 Finally, take all of the routes in your server and paste them into your new files and remove them from your server file. Also take the ensureAuthenticated since we created that middleware function for routing specifically. You will have to now correctly add the dependencies in that are used, such as <code>const passport = require('passport');</code>, at the very top above the export line in your routes.js file.

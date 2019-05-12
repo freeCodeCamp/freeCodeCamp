@@ -1,14 +1,14 @@
 ---
 title: Docker
-localeTitle: Estibador
+localeTitle: Docker
 ---
-## Estibador
+## Docker
 
 [Docker](https://www.docker.com/) es una plataforma de contenedor ampliamente utilizada para Linux, Windows y Mac, así como para proveedores de nube como AWS y Azure.
 
 Un caso de uso común sería empaquetar una aplicación y todos sus requisitos en un contenedor. El contenedor se puede utilizar durante el desarrollo, pasar al control de calidad / pruebas y a la producción / operaciones. Esto elimina la mentalidad de "funciona en mi máquina", ya que el contenedor _es_ efectivamente la máquina, sin importar en qué hardware real se esté ejecutando.
 
-Una vez que haya terminado de configurar su computadora y de instalar la ventana acoplable, simplemente puede probar su Docker ejecutando el comando:
+Una vez que haya terminado de configurar su computadora y de instalar Docker, simplemente puede probar su funcionamiento ejecutando el comando:
 
 ```shell
 $ docker run hello-world 
@@ -23,7 +23,7 @@ $ docker run hello-world
  ... 
 ```
 
-Si no tiene una imagen de hello-world localmente, Docker la descargará automáticamente a su máquina. Puede enumerar la imagen que se descargó o creó en su máquina ejecutando el comando:
+Si no tiene una imagen de hello-world localmente, Docker la descargará automáticamente a su máquina. Puede ver la imagen que se descargó o creó en su máquina ejecutando el comando:
 
 ```shell
 $ docker image ls 
