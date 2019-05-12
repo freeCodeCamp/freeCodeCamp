@@ -28,3 +28,18 @@ sort textfile.txt | uniq
 ```
 
 will first sort each line in the file alpahabetically and then print only the unique entries. This is only scratching the surface of the massive power of pipes though.
+
+## Bash Redirect StdOut & StdErr
+Another great use case is redirection of stdout(1) and stderr(2) streams.  
+
+To simply hide the output, redirect the corresponding stream to null.  The below example displays no stdout stream to the console.  All stderr output will still be visible.
+
+somecommand 1>null
+
+The more common use is to hide any stderr output from the console.  This example hides all stderr output.
+
+somecommand 2>null
+
+You can also hide all output using the '&' symbol.
+
+sommecommand &>null
