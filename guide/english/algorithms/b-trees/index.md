@@ -25,3 +25,10 @@ Traversal is also similar to Inorder traversal of Binary Tree. We start from the
 
 Insertion:
 We insert into the bottom of a B-tree, similar to binary search trees. First, find an appropriate place at the bottom of the tree to insert a given key, and perform the insertion (also adding an additional empty child). If the node is too big (it has m keys and m + 1 (empty) children), split the node. 
+
+Time Analysis for B-Tree:
+
+Suppose a B-tree has n elements and M is the maximum number of children a node can have. What is the maximum depth the tree could have? What is the minimum depth the tree could have?
+
+- The worst-case depth (maximum depth) of a B-tree is: logM/2 n.
+- The best-case depth (minimum depth) of a B-tree is: logM n.
