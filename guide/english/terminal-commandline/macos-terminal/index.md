@@ -33,19 +33,25 @@ cd <directory_name>
 
 `cd` stands for "Change Directory". ```cd``` is then followed by the directory's name you wish to switch into.
 
+Typing only `cd` will move to the home directory works same as `cd ~`
+
 Here is a list of common commands:
 
 Command | Usage
 ------------ | -------------
-`pwd` | Print Working Directory (Where Am I? )
-`ls` | List contents of current directory
-`mkdir <directory_name>` | Create a new directory
-`rmdir` | Remove directory
-`touch <file_name>` | Create a new file
-`cp <file_to_be_copied> <name_for_copied_file>` | Copy a file 
-`mv` | Rename a file/directory
-`rm <filename>` | Remove a file 
-`rm -rf <directory_name>` | Forcibly remove a directory 
+pwd | Print Working Directory (Where Am I? )
+ls | List contents of current directory
+ls -a | List contents of current directory including hidden files
+mkdir | Create a new directory
+touch | Create a new file
+cp| Copy a file 
+rm | Remove a file 
+rm -rf | Remove a directory 
+sudo | Run command with the security privileges of the superuser
+clear | Clear the screen
+nano [file] | Opens the file using nano editor
+vim [file] | Opens the file using vim editor
+reset | resets the terminal display
 
 ### Usage Examples
 
@@ -105,8 +111,13 @@ kill <pid>
 #### Previewing file
 If you would like to preview a file, type the command `cat <name of document>` and you would be able to preview a text document through the terminal.
 
+#### Search your command history as you type
 
-## iTerm2
+```control+R```
+
+Hold down `control` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command.
+
+# iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
 
