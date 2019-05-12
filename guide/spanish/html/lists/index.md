@@ -1,6 +1,6 @@
 ---
 title: Lists
-localeTitle: Liza
+localeTitle: Listas
 ---
 # Listas
 
