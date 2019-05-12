@@ -2,6 +2,7 @@
 id: 599a789b454f2bbd91a3ff4d
 title: Practice comparing different values
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cm8PqCa'
 ---
 
 ## Description

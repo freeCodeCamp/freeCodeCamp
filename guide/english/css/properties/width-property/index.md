@@ -3,7 +3,7 @@ title: Width Property
 ---
 ## Width Property
 
-The width property sets the width of an element. It can be a keyword value, a length value (any value followed by a CSS unit like px or em), percentage, or it can be inherited by it's parent. By default, it's value is auto.
+The width property sets the width of an element. It can be a keyword value, a length value (any value followed by a CSS unit like px or em), percentage, or it can be inherited by its parent. By default, its value is auto.
 
 **Note**: The width property does not include padding, borders, or margins; it sets the width of the area inside the padding, border, and margin of the element!
 

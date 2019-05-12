@@ -3,8 +3,26 @@ title: Learn about Tertiary Colors
 ---
 ## Learn about Tertiary Colors
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/learn-about-tertiary-colors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Tertiary colours are combinations of primary and secondary colours. There are six tertiary colors; red-orange, yellow-orange, yellow-green, blue-green, blue-violet, and red-violet.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+They are made by full saturation of a primary colour with half saturation of a secondary colour with no other colours.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+```css
+.orange {
+  background-color: #FF7D00;
+}
+  
+.cyan {
+  background-color: #00FFFF;
+}
+  
+.raspberry {
+  background-color: #FF007D;
+}
+```
+
+### References
+
+* [Wikipedia](https://en.wikipedia.org/wiki/Tertiary_color)

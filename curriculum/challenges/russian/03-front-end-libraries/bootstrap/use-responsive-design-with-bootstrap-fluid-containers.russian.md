@@ -3,11 +3,13 @@ id: bad87fee1348bd9acde08712
 title: Use Responsive Design with Bootstrap Fluid Containers
 challengeType: 0
 videoUrl: ''
-localeTitle: Используйте адаптивный дизайн с контейнерами для загрузочных жидкостей
+localeTitle: Используйте адаптивный дизайн с подвижными контейнерами Bootstrap
 ---
 
 ## Description
-undefined
+В секциях HTML5 и CSS в freeCodeCamp мы создали Приложение для фотографий кошек. Давайте вернемся к нему. В этот раз мы стилизуем его используя, популярный адаптивный фреймворк CSS - Bootstrap.
+
+Bootstrap определит насколько широк ваш экран и ответит измением размера ваших HTML элементов. Отсюда и название `адаптивный дизайн`.
 
 ## Instructions
 undefined
@@ -17,11 +19,11 @@ undefined
 
 ```yml
 tests:
-  - text: ''
+  - text: 'Элемент <code>div</code> должен иметь класс <code>container-fluid</code>.'
     testString: 'assert($("div").hasClass("container-fluid"), "Your <code>div</code> element should have the class <code>container-fluid</code>.");'
-  - text: ''
+  - text: 'Убедитесь, что ваш элемент <code>div</code> имеет закрывающий тег'
     testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure your <code>div</code> element has a closing tag.");'
-  - text: ''
+  - text: 'Убедитесь, что вы вставили все элементы HTML после закрывающего тега <code>style</code> в <code>.container-fluid</code>.'
     testString: 'assert($(".container-fluid").children().length >= 8, "Make sure you have nested all HTML elements after the closing <code>style</code> tag in <code>.container-fluid</code>.");'
 
 ```

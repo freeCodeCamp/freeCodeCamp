@@ -11,7 +11,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.include()</code> or <code>assert.notInclude()</code> to make the tests pass. 
 </section>
 
 ## Tests
