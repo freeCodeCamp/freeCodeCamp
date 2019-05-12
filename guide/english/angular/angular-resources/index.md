@@ -26,6 +26,7 @@ A collection of helpful Angular resources
 *   <a href='https://angular.io/' target='_blank' rel='nofollow'>Angular</a> - The Angular Homepage
 *   <a href='https://angular.io/guide/styleguide' target='_blank' rel='nofollow'>Angular Style Guide</a> - Detailed best practices for Angular Development
 *   <a href='https://material.angular.io/' target='_blank' rel='nofollow'>Angular Material</a> - Excellent UI Framework that was built for Angular
+* <a href='https://github.com/mdbootstrap/Angular-Bootstrap-Boilerplate' target='_blank' rel='nofollow'>Angular Bootstrap Boilerplate</a> - Free, responsive CRUD application starter with NgRx state management, Firebase backend and material design
 
 ### Specific-topic Pages
 

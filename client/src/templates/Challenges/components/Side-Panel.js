@@ -13,9 +13,12 @@ import { initConsole, challengeTestsSelector } from '../redux';
 import { createSelector } from 'reselect';
 import './side-panel.css';
 
-const mapStateToProps = createSelector(challengeTestsSelector, tests => ({
-  tests
-}));
+const mapStateToProps = createSelector(
+  challengeTestsSelector,
+  tests => ({
+    tests
+  })
+);
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(

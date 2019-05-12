@@ -6,5 +6,5 @@ export function createGuideUrl(slug = '') {
 
 export function isGoodXHRStatus(status) {
   const statusInt = parseInt(status, 10);
-  return statusInt >= 200 && statusInt < 400;
+  return (statusInt >= 200 && statusInt < 400) || statusInt === 402;
 }

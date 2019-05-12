@@ -10,8 +10,20 @@
   text-shadow: none;
 }
 
+.night .reset-modal-header .close {
+  color: #222;
+}
+
 @media screen and (max-width: 767px) {
   .reset-modal .btn-lg {
     font-size: 16px;
   }
+}
+
+.night .reset-modal-body,
+.night .reset-modal-footer {
+  background-color: #333;
+}
+.night .reset-modal-footer {
+  border-top-color: #222;
 }

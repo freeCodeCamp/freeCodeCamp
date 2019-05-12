@@ -15,8 +15,7 @@ You can create a paragraph element like this:
 ## Instructions
 <section id='instructions'>
 Create a <code>p</code> element below your <code>h2</code> element, and give it the text "Hello Paragraph".
-Note:
-As a convention, all HTML tags are written in lowercase, for example <code>&#60;p&#62;&#60;/p&#62;</code> and not <code>&#60;P&#62;&#60;/P&#62;</code>.
+<strong>Note:</strong> As a convention, all HTML tags are written in lowercase, for example <code>&#60;p&#62;&#60;/p&#62;</code> and not <code>&#60;P&#62;&#60;/P&#62;</code>.
 </section>
 
 ## Tests
@@ -54,7 +53,9 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+<p>Hello Paragraph</p>
 ```
 </section>

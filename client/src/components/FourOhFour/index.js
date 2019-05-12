@@ -38,13 +38,13 @@ class NotFoundPage extends Component {
               We couldn&#x27;t find what you were looking for, but here is a
               quote:
             </p>
-            <div className='quote-wrapper'>
+            <blockquote className='quote-wrapper'>
               <p className='quote'>
                 <span>&#8220;</span>
                 {this.state.randomQuote.quote}
               </p>
               <p className='author'>- {this.state.randomQuote.author}</p>
-            </div>
+            </blockquote>
           </div>
         ) : (
           <Spinner color='#006400' name='ball-clip-rotate-multiple' />

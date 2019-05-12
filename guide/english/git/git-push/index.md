@@ -41,7 +41,7 @@ in which:
 - `REMOTE-NAME` is the name of the remote repository you want to push to
 
 ### Push to a specific branch with force parameter
-If you want to ignore the local changes made to Git repository at Github(Which most of developers do for a hot fix to development server) then you can use --force command to push by ignoring those changs.
+If you want to ignore the local changes made to Git repository at GitHub(Which most of developers do for a hot fix to development server) then you can use --force command to push by ignoring those changs.
 
 ```bash
 git push --force <REMOTE-NAME> <BRANCH-NAME>

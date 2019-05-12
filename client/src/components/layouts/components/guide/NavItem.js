@@ -20,7 +20,7 @@ class NavItem extends React.Component {
     const { isStubbed, path, title } = this.props;
     return (
       <li>
-        <Link data-navitem='true' onClick={this.handleClick} to={path}>
+        <Link onClick={this.handleClick} to={path}>
           <span className={'navItemTitle' + (isStubbed ? ' stubbed' : '')}>
             {title}
           </span>

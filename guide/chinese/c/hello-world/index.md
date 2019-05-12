@@ -3,6 +3,7 @@ title: Hello World C
 localeTitle: Hello World C
 ---
 
+
 ## Hello, World
 
 要在控制台上显示文字，您可以使用库`stdio.h`中的函数`printf()`
@@ -32,3 +33,4 @@ localeTitle: Hello World C
  ```
  >Hello World!
  ```
+

@@ -13,15 +13,13 @@ function ChallengeDescription({ description, instructions, section }) {
   return (
     <div className={`challenge-instructions ${section}`}>
       <div dangerouslySetInnerHTML={{ __html: description }} />
-      {instructions ? (
+      {instructions && (
         <Fragment>
           <hr />
           <div dangerouslySetInnerHTML={{ __html: instructions }} />
-          <hr />
         </Fragment>
-      ) : (
-        <hr />
       )}
+      <hr />
     </div>
   );
 }

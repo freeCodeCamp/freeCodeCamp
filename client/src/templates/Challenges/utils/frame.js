@@ -25,6 +25,24 @@ const createHeader = (id = mainId) => `
       window.__err = err;
       return true;
     };
+    document.addEventListener('click', function(e) {
+      let element = e.target;
+      while(element && element.nodeName !== 'A') {
+        element = element.parentElement;
+      }
+      if (element) {
+        const href = element.getAttribute('href');
+        if (!href || href[0] !== '#' && !href.match(/^https?:\\/\\//)) {
+          e.preventDefault();
+        }
+      }
+    }, false);
+    document.addEventListener('submit', function(e) {
+      const action = e.target.getAttribute('action');
+      if (!action || !action.match(/https?:\\/\\//)) {
+        e.preventDefault();
+      }
+    }, false);
   </script>
 `;
 
@@ -66,21 +84,30 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args);
+    proxyLogger(args.map(arg => JSON.stringify(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
 };
 
-const writeTestDepsToDocument = frameReady => ctx => {
-  const { sources, loadEnzyme } = ctx;
-  // default for classic challenges
-  // should not be used for modern
-  ctx.document.__source = sources && 'index' in sources ? sources['index'] : '';
-  // provide the file name and get the original source
-  ctx.document.__getUserInput = fileName => toString(sources[fileName]);
-  ctx.document.__frameReady = frameReady;
-  ctx.document.__loadEnzyme = loadEnzyme;
+const initTestFrame = frameReady => ctx => {
+  const contentLoaded = new Promise(resolve => {
+    if (ctx.document.readyState === 'loading') {
+      ctx.document.addEventListener('DOMContentLoaded', resolve);
+    } else {
+      resolve();
+    }
+  });
+  contentLoaded.then(async () => {
+    const { sources, loadEnzyme } = ctx;
+    // default for classic challenges
+    // should not be used for modern
+    const code = sources && 'index' in sources ? sources['index'] : '';
+    // provide the file name and get the original source
+    const getUserInput = fileName => toString(sources[fileName]);
+    await ctx.document.__initTestFrame({ code, getUserInput, loadEnzyme });
+    frameReady();
+  });
   return ctx;
 };
 
@@ -107,7 +134,7 @@ export const createTestFramer = (document, frameReady, proxyConsole) =>
   flow(
     createFrame(document, testId),
     mountFrame(document),
-    writeTestDepsToDocument(frameReady),
+    writeContentToFrame,
     buildProxyConsole(proxyConsole),
-    writeContentToFrame
+    initTestFrame(frameReady)
   );

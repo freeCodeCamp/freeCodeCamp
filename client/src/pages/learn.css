@@ -5,11 +5,12 @@
   align-items: center;
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 @media screen and (max-width: 630px) {
   .learn-page-wrapper {
-    padding: 0 25px;
+    padding: 0 15px;
   }
 }
 

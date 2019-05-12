@@ -56,6 +56,7 @@ const metaKeywords = [
 
 const propTypes = {
   children: PropTypes.node.isRequired,
+  disableMenuButtonBehavior: PropTypes.bool,
   disableSettings: PropTypes.bool,
   fetchUser: PropTypes.func.isRequired,
   flashMessages: PropTypes.arrayOf(
@@ -69,8 +70,10 @@ const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
+  mediaBreakpoint: PropTypes.string,
   onlineStatusChange: PropTypes.func.isRequired,
-  removeFlashMessage: PropTypes.func.isRequired
+  removeFlashMessage: PropTypes.func.isRequired,
+  showFooter: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -138,6 +141,9 @@ class DefaultLayout extends Component {
       flashMessages = [],
       removeFlashMessage,
       landingPage,
+      showFooter = true,
+      mediaBreakpoint,
+      disableMenuButtonBehavior,
       isOnline,
       isSignedIn
     } = this.props;
@@ -153,10 +159,14 @@ class DefaultLayout extends Component {
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
-          >
+        >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <Header disableSettings={disableSettings} />
+        <Header
+          disableMenuButtonBehavior={disableMenuButtonBehavior}
+          disableSettings={disableSettings}
+          mediaBreakpoint={mediaBreakpoint}
+        />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (
@@ -164,7 +174,7 @@ class DefaultLayout extends Component {
           ) : null}
           {children}
         </div>
-        <Footer />
+        {showFooter && <Footer />}
       </Fragment>
     );
   }

@@ -3,3 +3,15 @@
     font-size: 16px;
   }
 }
+
+.night .help-modal-header .close {
+  color: #fff;
+}
+
+.night .help-modal-body,
+.night .help-modal-header {
+  background-color: #333;
+}
+.night .help-modal-header {
+  border-bottom-color: #222;
+}

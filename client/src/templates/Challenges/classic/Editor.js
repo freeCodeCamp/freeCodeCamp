@@ -85,10 +85,6 @@ class Editor extends Component {
     this._editor = null;
   }
 
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.focusEditor);
-  }
-
   editorWillMount = monaco => {
     defineMonacoThemes(monaco);
   };
@@ -96,7 +92,6 @@ class Editor extends Component {
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
     this._editor.focus();
-    document.addEventListener('keyup', this.focusEditor);
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -106,13 +101,6 @@ class Editor extends Component {
       ],
       run: this.props.executeChallenge
     });
-  };
-
-  focusEditor = e => {
-    // e key to focus editor
-    if (e.keyCode === 69) {
-      this._editor.focus();
-    }
   };
 
   onChange = editorValue => {

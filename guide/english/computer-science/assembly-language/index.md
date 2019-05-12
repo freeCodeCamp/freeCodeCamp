@@ -14,7 +14,7 @@ Some of the more common ISAS in use today include MIPS, ARM, Intel x86, RISC-V.
 
 Assemblers decompose Assembly instructions into their respective binary representations and replace the generic addresses of assembly code with explicit register and memory addresses of your computer.
 
-Code where execution time and control is crucial can be written directly in assembler. This however comes at the cost of prolonging development time, and making development harder. It should also be noted that there has been a large amount of research going into making compilers optimize the code that is generated automatically. 
+Where execution time and control is crucial, code can be written directly in assembler. However, this comes at the cost of prolonging development time, making development harder. It should also be noted that there has been a large amount of research going into making compilers optimize the code that is generated automatically. 
 
 Assembly language is primarily used in the following situations:
 * There is a need to use CPU instructions not available in higher-level languages. 

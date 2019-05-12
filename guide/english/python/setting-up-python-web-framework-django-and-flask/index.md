@@ -17,7 +17,7 @@ Before we install Django we will get you to install an extremely useful tool to 
 
 So, let's create a virtual environment (also called a virtualenv). Virtualenv will isolate your Python/Django setup on a per-project basis. This means that any changes you make to one website won't affect any others you're also developing. Neat, right?
 
-For more information on virtual environments see the relevent section <a href='https://guide.freecodecamp.org/python/virtual-environments/' target='_blank' rel='nofollow'>here<a>.
+For more information on virtual environments see the relevent section <a href='https://guide.freecodecamp.org/python/virtual-environments/' target='_blank' rel='nofollow'>here</a>.
 
 ## Wrapping Up
 
@@ -31,7 +31,7 @@ $ django-admin startproject myproject
 $ cd myproject
 $ python manage.py runserver
 ```
-Go to `http://localhost:8000`! :rocket:
+Go to `http://localhost:8000`!
 
 We have successfully installed the web-framework of our need. However, it's not yet complete. Most web applications are content and data driven - so we need a data storage. Or, a Database, if you will.
 
@@ -39,4 +39,4 @@ In next article, we would be discussing how to install PostgreSQL and use it wit
 
 A point to ponder - we have been using `pip` heavily, but we have barely said anything about it. Well, for now, it's just a package manager like `npm`. It has some differences with `npm`; but, you don't need to worry about that now. If you are interested, do check out the <a href='http://pip-python3.readthedocs.org/en/latest/index.html' target='_blank' rel='nofollow'>official `pip` documentation</a>.
 
-_If you have suggestions or questions, come join us on <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank' rel='nofollow'>gitter</a>_.
+<em>If you have suggestions or questions, come join us on <a href='https://gitter.im/FreeCodeCamp/home' target='_blank' rel='nofollow'>gitter</a></em>.

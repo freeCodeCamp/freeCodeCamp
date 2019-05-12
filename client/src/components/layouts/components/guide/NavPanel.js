@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Panel } from '@freecodecamp/react-bootstrap';
-import { navigate } from 'gatsby';
+import { Link } from 'gatsby';
 
 const propTypes = {
   children: PropTypes.any,
@@ -29,7 +29,7 @@ function NoArticles() {
           }
           rel='noopener noreferrer'
           target='_blank'
-          >
+        >
           write one?
         </a>
       </span>
@@ -53,14 +53,13 @@ class NavPanel extends Component {
   }
 
   handleTitleClick() {
-    const { path, toggleDisplaySideNav, onNavigate } = this.props;
+    const { toggleDisplaySideNav, onNavigate } = this.props;
     toggleDisplaySideNav();
-    navigate(path);
     onNavigate();
   }
 
   renderHeader() {
-    const { isExpanded, title } = this.props;
+    const { isExpanded, path, title } = this.props;
     return (
       <div className='title' onClick={this.handleHeaderClick}>
         <span
@@ -68,24 +67,19 @@ class NavPanel extends Component {
             'caret ' + (isExpanded ? 'caretStyle expanded' : 'caretStyle')
           }
         />
-        <span onClick={this.handleTitleClick}>{title}</span>
+        <Link onClick={this.handleTitleClick} to={path}>
+          {title}
+        </Link>
       </div>
     );
   }
 
   renderBody() {
     const { hasChildren, children, isExpanded } = this.props;
-    const childrenWithChildren = children.filter(child => child.props.children);
-    const uniqueChildren = children.filter(
-      child =>
-        !childrenWithChildren.some(
-          (potentialDupe, index) => index > 0 && potentialDupe.key === child.key
-        )
-    );
     return (
       <div className={isExpanded ? 'body' : ''}>
         <ul className='navPanelUl'>
-          {hasChildren ? uniqueChildren : <NoArticles />}
+          {hasChildren ? children : <NoArticles />}
         </ul>
       </div>
     );
@@ -98,7 +92,7 @@ class NavPanel extends Component {
         bsClass='panelStyle panel'
         id={`${dashedName}-panel`}
         role='listitem'
-        >
+      >
         <Panel.Heading>{this.renderHeader()}</Panel.Heading>
         {isExpanded ? <Panel.Body>{this.renderBody()}</Panel.Body> : null}
       </Panel>

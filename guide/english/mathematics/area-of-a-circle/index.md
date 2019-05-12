@@ -71,18 +71,18 @@ The holes are 0.4 m wide and 1 m deep, how much concrete should Max order for ea
 
 The holes are circular (in cross section) because they are drilled out using an auger.
 The diameter is 0.4m, so the Area is:
-A = (π/4) × D2
-A = (3.14159.../4) × 0.42
-A = 0.7854... × 0.16
-A = 0.126 m2 (to 3 decimals)
+A = (π/4) × D<sup>2</sup> </br>
+A = (3.14159.../4) × 0.4<sup>2</sup> </br>
+A = 0.7854... × 0.16 </br>
+A = 0.126 m<sup>2</sup> (to 3 decimals) </br>
 And the holes are 1 m deep, so:
-Volume = 0.126 m2 × 1 m = 0.126 m3
-So Max should order 0.126 cubic meters of concrete to fill each hole.
+Volume = 0.126 m<sup>2</sup> × 1 m = 0.126 m<sup>3</sup> </br>
+Hence, Max should order 0.126 cubic meters of concrete to fill each hole.
  
 Note: Max could have estimated the area by:
-1. Calculating a square hole: 0.4 × 0.4 = 0.16 m2
-2. Taking 80% of that (estimates a circle): 80% × 0.16 m2 = 0.128 m2
-3. And the volume of a 1 m deep hole is: 0.128 m3
+1. Calculating a square hole: 0.4 × 0.4 = 0.16 m<sup>2</sup>
+2. Taking 80% of that (estimates a circle): 80% × 0.16 m<sup>2</sup> = 0.128 m<sup>2</sup>
+3. And the volume of a 1 m deep hole is: 0.128 m<sup>3</sup>
 
 #### Something more about circle
  * ARC- An arc is part of the circumference of a circle.

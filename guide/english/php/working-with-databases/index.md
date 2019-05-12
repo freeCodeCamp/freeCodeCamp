@@ -14,9 +14,26 @@ PHP Data Objects (PDO) and MySQLi Object Orientated along with the now deprecate
 With PHP there are many features built into the core functionality of the language that make links to a 
 database simple and easy.
 
-Some Examples from Mysqli are-
+### Example of MYSQL Connection
+Here we are connecting to a database on the phpmyadmin structure, with no password, and database named `db_name`.
 
 ```php
 $con=mysqli_connect("localhost","root","","db_name") or die("Invalid User or Password...cannot connect");
 ```
-Here we are connecting to a database on the phpmyadmin structure, with no password, and database named `db_name`.
+
+### Example of PDO Connection
+```
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "password";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=someDB", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully"; 
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
+```

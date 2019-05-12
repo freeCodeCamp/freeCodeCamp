@@ -40,7 +40,7 @@ The content between the opening and closing `<iframe>` tags is used as alternati
 ```
 
 ### Targeting an Iframe in a Link
-Any `<a>` link can target the content of an `<iframe>` element. Rather than redirect the browser window to the linked webpage, it will redirect the `<iframe>`. For this to work, the `target` attribute of the `<a>` element must match the `name` attribute of the `<iframe>`.
+Any `<a>` link can target the content of an `<iframe>` element. Rather than redirecting the browser window to the linked webpage, it will redirect the `<iframe>`. For this to work, the `target` attribute of the `<a>` element must match the `name` attribute of the `<iframe>`.
 
 ```html
 <iframe width="560" height="315" src="about:blank" frameborder="0" name="iframe-redir"></iframe>
@@ -50,7 +50,7 @@ Any `<a>` link can target the content of an `<iframe>` element. Rather than redi
 
 This example will show a blank `<iframe>` initially, but when you click the link above it will redirect the `<iframe>` to show a YouTube video.
 
-### Javascript and Iframes
+### JavaScript and Iframes
 Documents embedded in an `<iframe>` can run JavaScript within their own context (without affecting the parent webpage) as normal.
 
 Any script interaction between the parent webpage and the content of the embedded `<iframe>` is subject to the same-origin policy. This means that if you load the content of the `<iframe>` from a different domain, the browser will block any attempt to access that content with JavaScript.
