@@ -30,7 +30,7 @@ Estas são as etapas que você precisa seguir para implantar no [OpenShift](http
 
 *   Preencha o nosso URL do Git e o nome da nossa agência
 
-![Onde você pode encontrar o seu URL Git e o nome da sua filial no Github](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
+![Onde você pode encontrar o seu URL Git e o nome da sua filial no GitHub](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1a720934d9c2fd79a4aaa14b4ca07e6c1df7f2ce.jpg)
 
 ![Preencha o seu URL do Git e o nome da sua agência](//discourse-user-assets.s3.amazonaws.com/original/2X/9/989e44c1af80c9b8f26883a3d897f377b3a27ca4.jpg)
 
