@@ -14,7 +14,7 @@ Los siguientes pasos básicos son necesarios para realizar el enfoque actual má
 
 1.  Mantener un repositorio central y una rama `master` activa.
 
-Tiene que haber un repositorio de código para que todos puedan unirse y extraer los cambios. Esto puede ser en Github o en cualquier número de servicios de almacenamiento de código.
+Tiene que haber un repositorio de código para que todos puedan unirse y extraer los cambios. Esto puede ser en GitHub o en cualquier número de servicios de almacenamiento de código.
 
 2.  Automatiza la construcción.
 

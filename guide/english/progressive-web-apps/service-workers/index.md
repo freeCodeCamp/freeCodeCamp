@@ -3,7 +3,7 @@ title: Service Workers
 ---
 ## Service Workers
 
-Service Worker is a script that works on browser background without user interaction independently. Also, It resembles a proxy that works on the user side. With this script, you can track network traffic of the page, manage push notifications and develop “offline first” web applications with Cache API.
+A Service Worker is a script that works in the browser background without user interaction independently. Also, It resembles a proxy that works on the user side. With this script, you can track network traffic of the page, manage push notifications and develop “offline first” web applications with Cache API.
 
 ### What can we do with Service Worker?
 

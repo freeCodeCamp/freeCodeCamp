@@ -3,11 +3,6 @@ title: Page Layout
 ---
 ## Page Layout
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/typography/page-layout/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 #### Page Layout:
 Page layout is the term used to describe how each page of your document will appear when it is printed. In any Word processor (Microsoft Word, LibreOffice Writer etc), page layout includes elements such as the margins, the number of columns, how headers and footers appear, and a host of other considerations. As you design your pages, you can use the tools that any Word processor puts at your disposal in this regard. We have many features under page layout like:
 

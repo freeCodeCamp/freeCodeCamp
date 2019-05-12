@@ -3,11 +3,19 @@ title: Inheritance
 ---
 ## Inheritance
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/area-of-a-parallelogram/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Because Python is an opject oriented programing language, classes created in Python are able to inherit attributes and methods from other classes.  For example:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```python
+class ParentClass():
+    pass
+    
+class ChildClass(ParentClass):
+    pass
+    
+````
+In the very basic example, the `ChildClass` class will inherit from `ParentClass` and use code defined under that class.  
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Python is also able to support multiple inheritance, so child classes can inherit from multiple classes. 
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
