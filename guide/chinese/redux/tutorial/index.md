@@ -14,7 +14,6 @@ localeTitle: React Redux Basic Setup
 
 在已创建的项目文件夹中打开一个终端并发出以下命令
 ```shell
-```sh
 npm install --save react react react-dom react-redux react-router redux 
 ```
 
