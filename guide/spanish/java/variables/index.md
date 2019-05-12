@@ -33,7 +33,7 @@ Puede _asignar_ un valor a la variable de forma simultánea cuando lo declara (l
  boolean isOpen = false; 
  char c = 'a'; // Note the single quotes 
  
- // Las variables también pueden ser declaradas en una sentencia, y asignarles el valor en otra
+ // Las variables también pueden declararse en una sentencia, y asignarse valores más adelante.
  int j; 
  j = 10; 
  
