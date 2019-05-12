@@ -11,10 +11,10 @@ exports[`<DynamicForm /> snapshot 1`] = `
 >
   <div>
     <div
-      className="inline-form-field"
+      className="col-xs-12"
     >
       <div
-        className="col-sm-3 col-xs-12"
+        className="form-group"
       >
         <label
           className="control-label"
@@ -22,12 +22,8 @@ exports[`<DynamicForm /> snapshot 1`] = `
         >
           Name
         </label>
-      </div>
-      <div
-        className="col-sm-9 col-xs-12"
-      >
         <input
-          className="form-control input-lg"
+          className="form-control"
           id="name"
           name="name"
           onChange={[Function]}

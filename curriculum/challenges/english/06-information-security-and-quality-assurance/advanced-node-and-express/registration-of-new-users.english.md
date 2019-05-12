@@ -10,32 +10,36 @@ As a reminder, this project is being built upon the following starter project on
 Now we need to allow a new user on our site to register an account. On the res.render for the home page add a new variable to the object passed along- <code>showRegistration: true</code>. When you refresh your page, you should then see the registration form that was already created in your index.pug file! This form is set up to <b>POST</b> on <em>/register</em> so this is where we should set up to accept the POST and create the user object in the database.
 The logic of the registration route should be as follows: Register the new user > Authenticate the new user > Redirect to /profile
 The logic of step 1, registering the new user, should be as follows: Query database with a findOne command > if user is returned then it exists and redirect back to home <em>OR</em> if user is undefined and no error occurs then 'insertOne' into the database with the username and password and as long as no errors occur then call <em>next</em> to go to step 2, authenticating the new user, which we've already written the logic for in our POST /login route.
-<pre>app.route('/register')
-  .post((req, res, next) => {
-      db.collection('users').findOne({ username: req.body.username }, function (err, user) {
-          if(err) {
-              next(err);
-          } else if (user) {
-              res.redirect('/');
-          } else {
-              db.collection('users').insertOne(
-                {username: req.body.username,
-                 password: req.body.password},
-                (err, doc) => {
-                    if(err) {
-                        res.redirect('/');
-                    } else {
-                        next(null, user);
-                    }
-                }
-              )
-          }
-      })},
-    passport.authenticate('local', { failureRedirect: '/' }),
-    (req, res, next) => {
-        res.redirect('/profile');
-    }
-);</pre>
+<blockquote>
+app.route('/register')<br>
+&nbsp;&nbsp;.post((req, res, next) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;db.collection('users').findOne({ username: req.body.username }, function(err, user) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (err) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next(err);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (user) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;db.collection('users').insertOne({<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;username: req.body.username,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;password: req.body.password<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(err, doc) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (err) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next(null, user);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;})<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;passport.authenticate('local', { failureRedirect: '/' }),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(req, res, next) => {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.redirect('/profile');<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;);
+</blockquote>
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/6c47bee7df34df9f11820803608071ed'>here</a>.
 </section>
 

@@ -6,17 +6,17 @@ localeTitle: Tipo de
 
 `typeof` é uma palavra-chave JavaScript que retornará o tipo de uma variável quando você a chamar. Você pode usar isso para validar parâmetros de função ou verificar se variáveis ​​estão definidas. Existem outros usos também.
 
-O operador `typeof` é útil porque é uma maneira fácil de verificar o tipo de uma variável em seu código. Isso é importante porque o JavaScript é uma [linguagem digitada dinamicamente](https://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed) . Isso significa que você não é obrigado a atribuir tipos a variáveis ​​ao criá-los. Como uma variável não é restrita dessa maneira, seu tipo pode mudar durante o tempo de execução de um programa.
+O operador `typeof` é útil porque é uma maneira fácil de verificar o tipo de uma variável em seu código. Isso é importante porque o JavaScript é uma [linguagem dinamicamente tipada](https://stackoverflow.com/questions/2690544/what-is-the-difference-between-a-strongly-typed-language-and-a-statically-typed) . Isso significa que você não é obrigado a atribuir tipos a variáveis ​​ao criá-los. Como uma variável não é restrita dessa maneira, seu tipo pode mudar durante o tempo de execução de um programa.
 
 Por exemplo:
 
-```javascript
+```js
 var x = 12345; // number 
- x = 'string'; // string 
- x = { key: 'value' }; // object 
+x = 'string'; // string 
+x = { key: 'value' }; // object 
 ```
 
-Como você pode ver no exemplo acima, uma variável em JavaScript pode alterar os tipos durante a execução de um programa. Isso pode ser difícil de controlar como um programador, e é aí que o operador `typeof` é útil.
+Como você pode ver no exemplo acima, uma variável em JavaScript pode ter outro tipo durante a execução de um programa. Isso pode ser difícil de controlar como um programador, e é aí que o operador `typeof` é útil.
 
 O operador `typeof` retorna uma string que representa o tipo atual de uma variável. Você pode usá-lo digitando `typeof(variable)` ou `typeof variable` . Voltando ao exemplo anterior, você pode usá-lo para verificar o tipo da variável `x` em cada estágio:
 
@@ -56,7 +56,7 @@ function(x){
 ```
 
 A saída do operador `typeof` pode nem sempre ser o que você espera quando você verifica um número.  
-Os números podem se transformar no valor [NaN (não um número)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) por vários motivos.
+Os números podem se transformar no valor [NaN (não é um número)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) por vários motivos.
 
 ```javascript
 console.log(typeof NaN); //"number" 
@@ -81,7 +81,7 @@ function isNumber(data) {
  } 
 ```
 
-Mesmo pensando que este é um método de validação útil, temos que ter cuidado, porque o JavaScript tem algumas partes estranhas e uma delas é o resultado do `typeof` instruções específicas. Por exemplo, em JavaScript muitas coisas são apenas `objects` assim você encontrará.
+Mesmo pensando que este é um método de validação útil, temos que ter cuidado, porque o JavaScript tem algumas partes estranhas e uma delas é o resultado do `typeof` em instruções específicas. Por exemplo, em JavaScript muitas coisas são apenas `objects` assim você encontrará.
 
 ```javascript
 var x = [1,2,3,4]; 

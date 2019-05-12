@@ -3,13 +3,12 @@ title: Alignment
 ---
 ## Alignment
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/agile/alignment/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Historically, software development followed a waterfall process which starkly contrasts the agile methodologies that are becoming increasingly used by IT organizations. This contrast has created issues within organizations as teams move to align more closely with agile principles.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+In waterfall style delivery, requirements are defined in full and upfront prior to beginning development work. An agile team needs to align with changing business requirements to enable the organization to meet changing market demands. Instead of completing all planning up front, the planning remains continuous so that the team remains aligned with the overall business vision.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Teams must also measure alignment with agile principles within themselves. This is typically accomplished through the sprint retrospective, where team members identify what went well during the previous sprint as well as areas of improvement. 
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+<a href="https://www.scrumalliance.org/community/articles/2014/january/measuring-alignment-with-the-principles-of-agile">Measuring Agile Alignment</a>
 
