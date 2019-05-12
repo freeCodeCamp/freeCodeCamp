@@ -19,6 +19,6 @@ padStart() is a JavaScript string method that pads the start (left) of the curre
 ```
 
 #### More Information:
-[String.prototype.padStart() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+- [String.prototype.padStart() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
 
 
