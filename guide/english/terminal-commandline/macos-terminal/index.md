@@ -46,7 +46,10 @@ mkdir | Create a new directory
 touch | Create a new file
 cp| Copy a file 
 rm | Remove a file 
-rm -rf | Remove a directory 
+cat | concatenate and print files
+ps | list all running processes
+find | find files and directories
+rm -rf | Remove a directory recursively
 sudo | Run command with the security privileges of the superuser
 clear | Clear the screen
 nano [file] | Opens the file using nano editor
