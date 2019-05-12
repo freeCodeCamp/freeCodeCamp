@@ -2,7 +2,7 @@
 title: Greedy Algorithms
 ---
 ## What is a Greedy Algorithm
-You must have heard about a lot of algorithmic design techniques while sifting through some of the articles here. Some of them are :
+You must have heard about a lot of algorithmic design techniques while sifting through some of the articles here. Some of them are:
 * Brute Force
 * Divide and Conquer
 * Greedy Programming
@@ -26,7 +26,7 @@ Analyzing the run time for greedy algorithms will generally be much easier than 
 
 ## Interval Scheduling Problem
 
-Let's dive into an interesting problem that you can encounter in almost any industry or any walk of life. Some instances of the problem are as follows :
+Let's dive into an interesting problem that you can encounter in almost any industry or any walk of life. Some instances of the problem are as follows:
 
 * You are given a set of N schedules of lectures for a single day at a university. The schedule for a specific lecture is of the form (s_time, f_time) where s_time represents the start time for that lecture and similarly the f_time represents the finishing time. Given a list of N lecture schedules, we need to select maximum set of lectures to be held out during the day such that **none of the lectures overlap with one another i.e. if lecture Li and Lj are included in our selection then the start time of j >= finish time of i or vice versa**.
 
@@ -76,8 +76,8 @@ end
 Greedy Algorithms can help you find solutions to a lot of seemingly tough problems. The only problem with them is that you might come up with the correct solution but you might not be able to verify if its the correct one. All the greedy problems share a common property that a local optima can eventually lead to a global minima without reconsidering the set of choices already considered.
 
 Greedy Algorithms help us solve a lot of different kinds of problems. Stay tuned for upcoming tutorials on each one of these.
-1. Shortest Path Problem.
-2. Minimum Spanning Tree Problem in a Graph.
+1. Shortest Path Problem. (<a href="https://www.youtube.com/watch?v=gdmfOwyQlcI">Youtube Tutorial</a>)
+2. Minimum Spanning Tree Problem in a Graph. (<a href="https://www.youtube.com/watch?v=4ZlRH0eK-qQ">Youtube Tutorial</a>)
 3. Huffman Encoding Problem.
 4. K Centers Problem
 
@@ -89,3 +89,9 @@ Greedy Algorithms help us solve a lot of different kinds of problems. Stay tuned
 <a href="https://www.youtube.com/watch?v=poWB2UCuozA" target="_blank">
   <img src="http://img.youtube.com/vi/poWB2UCuozA/0.jpg" alt="Greedy Problems" width="240" height="180" border="10" />
 </a>
+
+<a href="https://www.youtube.com/watch?v=tKwnms5iRBU" target="_blank">
+  <img src="http://img.youtube.com/vi/tKwnms5iRBU/0.jpg" alt="Greedy Problems" width="240" height="180" border="10" />
+</a>
+
+

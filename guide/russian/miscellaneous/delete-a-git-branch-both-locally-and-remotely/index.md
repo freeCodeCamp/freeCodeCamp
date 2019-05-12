@@ -17,7 +17,7 @@ localeTitle: Удалите сектор Git как локально, так и 
 
 ## Рабочий процесс Delete:
 
-`AwesomeRepo` , у вас есть репо, называемое `AwesomeRepo` , и его размещение в Github в таком месте, как `https://github.com/my_username/AwesomeRepo` .
+`AwesomeRepo` , у вас есть репо, называемое `AwesomeRepo` , и его размещение в GitHub в таком месте, как `https://github.com/my_username/AwesomeRepo` .
 
 Также предположим, что у него есть ветви вроде:  
 `master`  

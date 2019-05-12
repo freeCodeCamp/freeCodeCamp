@@ -17,7 +17,7 @@ Here is the same function from above rewritten to use this new syntax:
 
 ## Instructions
 <section id='instructions'>
-Use simple fields with object literals to create and return a <code>Person</code> object.
+Use simple fields with object literals to create and return a <code>Person</code> object with <code>name</code>, <code>age</code> and <code>gender</code> properties.
 </section>
 
 ## Tests
@@ -25,10 +25,10 @@ Use simple fields with object literals to create and return a <code>Person</code
 
 ```yml
 tests:
-  - text: 'the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
-    testString: 'assert(() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);}, ''the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'');'
-  - text: No <code>:</code> were used.
-    testString: getUserInput => assert(!getUserInput('index').match(/:/g), 'No <code>:</code> were used.');
+  - text: 'The output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
+    testString: 'assert((() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);})(), ''The output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'');'
+  - text: No <code>key:value</code> were used.
+    testString: getUserInput => assert(!getUserInput('index').match(/:/g), 'No <code>key:value</code> were used.');
 
 ```
 
@@ -63,6 +63,13 @@ console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper obje
 <section id='solution'>
 
 ```js
-// solution required
+const createPerson = (name, age, gender) => {
+  "use strict";
+  return {
+    name,
+    age,
+    gender
+  };
+};
 ```
 </section>
