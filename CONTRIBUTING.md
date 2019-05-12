@@ -42,7 +42,7 @@ You can help us to:
 
 - [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [Translate guide articles](#translate-guide-articles)
+- [🌐 Translate guide articles](#translate-guide-articles)
 
 - [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
