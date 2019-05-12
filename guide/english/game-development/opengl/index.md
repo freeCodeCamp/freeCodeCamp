@@ -12,7 +12,7 @@ Mesa 3D is an open-source implementation of OpenGL. It can do pure software rend
 
 ## Prerequisites
 
-No special prerequisite is needed to follow most tutorials. Experience with any programming langage ( C, Java, Lisp, Javascript) is better to fully understand the code, but not needed; it will merely be more complicated to learn two things at the same time.
+No special prerequisite is needed to follow most tutorials. Experience with any programming langage ( C, Java, Lisp, JavaScript) is better to fully understand the code, but not needed; it will merely be more complicated to learn two things at the same time.
 
 ## Installing OpenGL on Linux
 Mesa is the GL library used. Ubuntu 16.04 includes Mesa 11.2 which supports OpenGL 4.1. Just install the `libgl1-mesa-dev` and `mesa-common-dev` packages to install the development files for it.
@@ -20,7 +20,9 @@ Mesa is the GL library used. Ubuntu 16.04 includes Mesa 11.2 which supports Open
 If you really need 4.5, you will likely need to develop against the propreitary AMD or NVidia drivers, and you will need a card which actually supports 4.5 to run any software you create using that version of the API.
 
 
-#### More Information: 
+#### More Information
 
-[OpenGL Wiki](https://en.wikipedia.org/wiki/OpenGL)
-[OpenGL Tutorials](http://www.opengl-tutorial.org/)
+- [OpenGL Offical Website](https://www.opengl.org/)
+- [OpenGL Wiki](https://en.wikipedia.org/wiki/OpenGL)
+- [OpenGL Tutorials](http://www.opengl-tutorial.org/)
+

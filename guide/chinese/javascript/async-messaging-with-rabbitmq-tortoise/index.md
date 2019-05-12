@@ -12,7 +12,7 @@ RabbitMQ恰好是目前使用AMQ协议的最简单，性能最高的消息代理
 
 ## 入门
 
-我们将编写一个非常简单的示例，其中发布者脚本向Rabbit发布消息，其中包含URL，消费者脚本侦听Rabbit，获取已发布的U​​RL，调用它并显示结果。您可以在[Github](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise)上找到完成的样本。
+我们将编写一个非常简单的示例，其中发布者脚本向Rabbit发布消息，其中包含URL，消费者脚本侦听Rabbit，获取已发布的U​​RL，调用它并显示结果。您可以在[GitHub](https://github.com/rudimk/freecodecamp-guides-rabbitmq-tortoise)上找到完成的样本。
 
 首先，让我们初始化一个npm项目：
 

@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244bc
 title: Shopping List
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c9MEKHZ'
 ---
 
 ## Description
@@ -63,14 +64,14 @@ var hasNumber = false;
     if(myList.length > 0) {
       hasString = true;
       hasNumber = true;
-      myList.forEach(function(elem) {
-        if(typeof elem[0] !== 'string') {
+      for (var elem of myList) {
+        if(!elem || !elem[0] || typeof elem[0] !== 'string') {
           hasString = false;
         }
-        if(typeof elem[1] !== 'number') {
+        if(!elem || typeof elem[1] !== 'number') {
           hasNumber = false;
         }
-      });
+      }
     }
     count = myList.length;
     return JSON.stringify(myList);
