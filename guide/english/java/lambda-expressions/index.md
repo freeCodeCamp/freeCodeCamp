@@ -24,7 +24,7 @@ A lambda expression is composed of three parts — function parameters, the `->`
 
 The `Stream` API was also introduced in Java 8, and can be used to allow chaining of sequential and aggregate operations. Stream operations are either intermediate or terminal in nature.
 
-Normally, the Stream API is used in conjunction with lambda expressions to produce concise code.
+The stream API isn't technically a lambda function, but is used in conjunction with lambda expressions to produce concise code.
 
 In this small example you can see that one of the utilities of a stream is to receive a certain property of all objects in a list and return it in another list using intermediate and terminal operations.
 
