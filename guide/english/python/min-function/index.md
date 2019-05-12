@@ -1,7 +1,7 @@
 ---
 title: Python Min Function
 ---
-`min()` is a built-in function in Python 3\. It returns the smallest item in an iterable or the smallest of two or more arguments.
+`min()` is a built-in function in Python 3\. It returns the smallest item in an iterable, or the smallest of two or more arguments.
 
 ## Arguments
 
@@ -21,8 +21,7 @@ Invalid Arguments:
 
 ## Return Value
 
-The smallest item in the iterable is returned. If two or more positional arguments are provided, the smallest of the positional arguments  
-is returned. If the iterable is empty and default is not provided, a ValueError is raised.
+The smallest item in the iterable is returned. If two or more positional arguments are provided, the smallest of the positional arguments is returned. If the iterable is empty and default is not provided, a ValueError is raised.
 
 ## Code Sample
 
