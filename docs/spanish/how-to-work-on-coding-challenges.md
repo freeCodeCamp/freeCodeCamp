@@ -10,7 +10,7 @@
     </tr>
 </table>
 
-# Cómo trabajar en los Desafíos de Programación
+# Cómo trabajar en los desafíos de programación
 
 ### Editando en GitHub
 
@@ -18,7 +18,7 @@ Cada desafío está almacenado en su propio archivo markdown. De esa forma resul
 
 Puedes realizar los cambios sin tener que ejecutar nada desde tu sistema local.
 
-Después de que encuentres el archivo que quieras modificar desde la interfaz de GitHub, hace clic en el icono de lápiz para comenzar a editar el archivo. Esto automáticamente creara una bifurcación del proyecto, si es que no tienes una todavía.
+Después de que encuentres el archivo que quieras modificar desde la interfaz de GitHub, haz clic en el icono de lápiz para comenzar a editar el archivo. Esto automáticamente creará una bifurcación del proyecto, si es que no tienes una todavía.
 
 También puedes clonar el proyecto y editarlo de manera local en tu ordenador. Si necesitas ayuda al respecto, dale un vistazo a la [guía principal de contribución](/CONTRIBUTING.md).
 
@@ -98,8 +98,8 @@ Solución en código del desafío.
 
 Creando y Editando Desafíos:
 
-1. [Guía de Diseño de Desafíos](style-guide-for-curriclum-challenges.md) - como crear y formatear desafíos
+1. [Guía de Diseño de Desafíos](style-guide-for-curriclum-challenges.md) - Cómo crear y formatear desafíos
 
-2. [Tipos de desafíos](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - significado del valor numérico de 'challengeType' (enum).
+2. [Tipos de desafíos](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - Significado del valor numérico de 'challengeType' (enum).
 
-3. [Contribuyendo a freeCodeCamp - Escribiendo Pruebas de Desafío en ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video siguiendo a [Ethan Arrowood](https://twitter.com/ArrowoodTech) mientras contribuye a la version antigua del currículo 
+3. [Contribuyendo a freeCodeCamp - Escribiendo Pruebas de Desafío en ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - Un video siguiendo a [Ethan Arrowood](https://twitter.com/ArrowoodTech) mientras contribuye a la versión antigua del currículo. 
