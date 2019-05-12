@@ -46,7 +46,7 @@ tests:
 function LinkedList() {
   var length = 0;
   var head = null;
-  var currentNode = null;
+
   var Node = function(element){
     this.element = element;
     this.next = null;
@@ -65,7 +65,7 @@ function LinkedList() {
     if(head === null){
         head = node;
     } else {
-        currentNode = head;
+        var currentNode = head;
 
         while(currentNode.next){
             currentNode  = currentNode.next;
