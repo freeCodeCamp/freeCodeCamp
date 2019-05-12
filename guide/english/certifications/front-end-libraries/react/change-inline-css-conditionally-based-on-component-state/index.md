@@ -5,7 +5,7 @@ title: Change Inline CSS Conditionally Based on Component State
 
 ## Hint 1:
 
-You are going to be checking the length of ```this.state.input``` so use it's ```.length``` property.
+You are going to be checking the length of ```this.state.input``` so use its ```.length``` property.
 
 ```
 this.state.input.length

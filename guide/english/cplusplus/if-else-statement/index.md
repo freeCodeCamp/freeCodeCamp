@@ -62,11 +62,11 @@ else
 //Program to check whether number entered by user is positive or negative
 #include <iostream>
 using namespace std;
+
 int main()  
 {
   int no;
   cout << "Enter a number: " << endl;
-
   cin >> no;
   
   // condition to check if number is positive or negative
@@ -113,22 +113,25 @@ This step is always printed
 
 
 ### Use of if...else if...else ladder
-If we have to make decisions based on more than one conditions using if else. We use else if condition as follows -
+If we have to make decisions based on more than one condition using if-else, we can use the `else if` condition as follows -
 ```cpp
 #include<iostream>
+using namespace std;
+
 int main()
 {
     int score;
-    std::cout<<"Enter your score: \n";
-    std::cin>>score;
-    if(score>=90)
-        std::cout<<"Top performance.";
-    else if(score<90 && score>=70)
-        std::cout<<"Good performance";
-    else if(score<70 && score>=45)
-        std::cout<<"Average performance";
-    else if(score<45 && score>=30)
-        std::cout<<"You can improve it.";
+    cout << "Enter your score: \n";
+    cin >> score;
+    
+    if (score >= 90)
+        cout << "Top performance.";
+    else if (score < 90 && score >= 70)
+        cout << "Good performance";
+    else if (score < 70 && score >= 45)
+        cout << "Average performance";
+    else if (score < 45 && score >= 30)
+        cout << "You can improve it.";
    return 0;
 }
 ```
@@ -140,13 +143,14 @@ Enter your score:
 Good performance
 ```
 ### Another example of if...else if...else ladder
-Suppose we have the user input two numbers and we are going to display if either number is greater than the other. And if neither is greater than the other, then we print the statement "Both are equal".
+Suppose we ask the user to input two numbers then display greater than or equal.
 
-In this scinerio we will need an if...else if...else ladder statement. The program will look like this :
+In this scenario, we will need an if...else if...else ladder statement. The program will look like this :
 
-```
-#include<iostream>
+```cpp
+#include <iostream>
 using namespace std;
+
 int main()
 {
 	int number1,number2;
@@ -155,11 +159,11 @@ int main()
 	cout << "Enter second number: \n";
 	cin >> number2;
 
-	if(number1 > number2)     // Checks if the first number is greater than the second number
+	if (number1 > number2)     // Checks if the first number is greater than the second number
 	{
 		cout << "Number 1 is greater.";
 	}
-	else if(number2 > number1)    // Checks if the second number is greater than the first number
+	else if (number2 > number1)    // Checks if the second number is greater than the first number
 	{
 		cout << "Number 2 is greater.";
 	}

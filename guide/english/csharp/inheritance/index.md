@@ -18,6 +18,8 @@ Inheritance is one way. The base class does not inherit the features of the deri
 
 Inheritance is transitive. A Base class of 'Animal' can have a derived class of 'Dog' and this can have a derived class of 'Terrier'. The Terrier class will inherit both the features of the Dog class and the Animal class.
 
+C# does not support multiple inheritance. A class can only inherit from a single class.
+
 # The `:` symbol
 
 In C# the `:` symbol is used to denote inheritance. This is called when creating the derived class.

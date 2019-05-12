@@ -64,6 +64,11 @@ nonMutatingPush(first, second);
 <section id='solution'>
 
 ```js
-// solution required
+function nonMutatingPush(original, newItem) {
+  return original.concat(newItem);
+}
+var first = [1, 2, 3];
+var second = [4, 5];
+nonMutatingPush(first, second);
 ```
 </section>
