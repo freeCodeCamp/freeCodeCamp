@@ -55,6 +55,8 @@ let result = waldoRegex.test(waldoIsHiding);
 <section id='solution'>
 
 ```js
-// solution required
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /Waldo/; // Change this line
+let result = waldoRegex.test(waldoIsHiding);
 ```
 </section>
