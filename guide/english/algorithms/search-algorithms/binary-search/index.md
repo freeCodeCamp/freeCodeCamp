@@ -17,7 +17,10 @@ Because we know that names in the phonebook are sorted alphabetically, we could 
 3. Otherwise, throw away the half of the phonebook that does not contain the name
 4. Repeat until you find the name or there are no more pages left in the phonebook
 
+[![Binary vs Linear Search](https://www.mathwarehouse.com/programming/images/binary-vs-linear-search/binary-and-linear-search-animations.gif)]
+
 Time complexity: As we dispose off one part of the search case during every step of binary search, and perform the search operation on the other half, this results in a worst case time complexity of *O*(*log<sub>2</sub>N*).
+The best case occurs when the element to be found is in the middle of the list. The best case time complexity is *O*(*1*).
 
 Space complexity: Binary search takes constant or *O*(*1*) space meaning that we don't do any input size related  variable defining.
 
@@ -26,19 +29,19 @@ for small sets linear search is better but in larger ones it is way more efficie
 In detail, how many times can you divide N by 2 until you have 1? This is essentially saying, do a binary search (half the elements) until you found it. In a formula this would be this:
 
 ```
-1 = N / 2x
+1 = N / 2^x
 ```
 
-Multiply by 2x:
+Multiply by 2<sup>x</sup>:
 
 ```
-2x = N
+2^x = N
 ```
 
 Now do the log2:
 
 ```
-log2(2x)    = log2 N
+log2(2^x)   = log2 N
 x * log2(2) = log2 N
 x * 1       = log2 N
 ```
@@ -85,29 +88,29 @@ The two base cases for recursion would be:
 * Item is found
 
 The Power of Binary Search in Data Systems (B+ trees):
-Binary Search Trees are very powerful because of their O(log n) search times, second to the hashmap data structure which uses a hasing key to search for data in O(1). It is important to understand how the log n run time comes from the height of a binary search tree. If each node splits into two nodes, (binary), then the depth of the tree is log n (base 2).. In order to improve this speed in Data System, we use B+ trees because they have a larger branching factor, and therefore more height. I hope this short article helps expand your mind about how binary search is used in practical systems.
+Binary Search Trees are very powerful because of their O(log n) search times, second to the hashmap data structure which uses a hashing key to search for data in O(1). It is important to understand how the log n run time comes from the height of a binary search tree. If each node splits into two nodes, (binary), then the depth of the tree is log n (base 2).. In order to improve this speed in Data System, we use B+ trees because they have a larger branching factor, and therefore more height. I hope this short article helps expand your mind about how binary search is used in practical systems.
 
 The code for recursive binary search is shown below:
 
-### Javascript implementation
+### JavaScript implementation
 
 ```javascript
 function binarySearch(arr, item, low, high) {
     if (low > high) { // No more elements in the array.
         return null;
     }
-    
+
     // Find the middle of the array.
     var mid = Math.ceil((low + high) / 2);
 
     if (arr[mid] === item) { // Found the item!
         return mid;
     }
-    
+
     if (item < arr[mid]) { // Item is in the half from low to mid-1.
         return binarySearch(arr, item, low, mid-1);
     }
-    
+
     else { // Item is in the half from mid+1 to high.
         return binarySearch(arr, item, mid+1, high);
     }
@@ -117,18 +120,18 @@ var numbers = [1,2,3,4,5,6,7];
 print(binarySearch(numbers, 5, 0, numbers.length-1));
 ```
 
-Here is another implementation in Javascript:
+Here is another implementation in JavaScript:
 
-```Javascript
+```JavaScript
 function binary_search(a, v) {
     function search(low, high) {
         if (low === high) {
             return a[low] === v;
         } else {
             var mid = math_floor((low + high) / 2);
-            return (v === a[mid]) 
+            return (v === a[mid])
                    ||
-                   (v < a[mid]) 
+                   (v < a[mid])
                    ? search(low, mid - 1)
                    : search(mid + 1, high);
         }
@@ -163,17 +166,17 @@ end
 ### Example in C
 
 ```C
-int binarySearch(int a[], int l, int r, int x) { 
-   if (r >= l){ 
-        int mid = l + (r - l)/2; 
-        if (a[mid] == x)   
-            return mid; 
-        if (arr[mid] > x)  
-            return binarySearch(arr, l, mid-1, x); 
-        return binarySearch(arr, mid+1, r, x); 
-   } 
-   return -1; 
-} 
+int binarySearch(int a[], int l, int r, int x) {
+   if (r >= l){
+        int mid = (l + (r - l))/2;
+        if (a[mid] == x)
+            return mid;
+        if (arr[mid] > x)
+            return binarySearch(arr, l, mid-1, x);
+        return binarySearch(arr, mid+1, r, x);
+   }
+   return -1;
+}
 ```
 
 ### Python implementation
@@ -181,14 +184,14 @@ int binarySearch(int a[], int l, int r, int x) {
 ```Python
 def binary_search(arr, l, r, target):
     if r >= l:
-        mid = l + (r - l)/2
+        mid = (l + (r - l))/2
         if arr[mid] == target:
             return mid
         elif arr[mid] > target:
             return binary_search(arr, l, mid-1, target)
-        else: 
+        else:
             return binary_search(arr, mid+1, r, target)
-    else: 
+    else:
         return -1
 ```
 
@@ -197,40 +200,41 @@ def binary_search(arr, l, r, target):
 
 Recursive approach!
 
-```C++ - Recursive approach
-int binarySearch(int arr[], int start, int end, int x) 
-{ 
-   if (end >= start) 
-   { 
-        int mid = start + (end - start)/2; 
-        if (arr[mid] == x)   
-            return mid; 
+```C++ -
+// Recursive approach in C++
+int binarySearch(int arr[], int start, int end, int x)
+{
+   if (end >= start)
+   {
+        int mid = (start + (end - start))/2;
+        if (arr[mid] == x)
+            return mid;
 
-        if (arr[mid] > x)  
-            return binarySearch(arr, start, mid-1, x); 
-  
-        return binarySearch(arr, mid+1, end, x); 
-   } 
-   return -1; 
+        if (arr[mid] > x)
+            return binarySearch(arr, start, mid-1, x);
+
+        return binarySearch(arr, mid+1, end, x);
+   }
+   return -1;
 }
 ```
 
 Iterative approach!
 
 ```C++
-int binarySearch(int arr[], int start, int end, int x) 
-{ 
-    while (start <= end) 
-    { 
-        int mid = start + (end - start)/2; 
-        if (arr[mid] == x) 
-            return mid; 
-        if (arr[mid] < x) 
-            start = mid + 1; 
+int binarySearch(int arr[], int start, int end, int x)
+{
+    while (start <= end)
+    {
+        int mid = (start + (end - start))/2;
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] < x)
+            start = mid + 1;
         else
-            end = mid - 1; 
-    } 
-    return -1; 
+            end = mid - 1;
+    }
+    return -1;
 }
 ```
 
@@ -252,14 +256,14 @@ func binarySearch(for number: Int, in numbers: [Int]) -> Int? {
     return nil // the given number was not found
 }
 ```
-### Example in Java 
-```Java 
+### Example in Java
+```Java
 // Iterative Approach in Java
 int binarySearch(int[] arr, int start, int end, int element)
 {
     while(start <= end)
     {
-        int mid = ( start + end ) / 2;
+        int mid = start + ( end - start ) / 2;
         if(arr[mid] == element)
             return mid;
         if(arr[mid] < element)
@@ -270,17 +274,21 @@ int binarySearch(int[] arr, int start, int end, int element)
    return -1;
 }
 ```
-```Java 
+```Java
 // Recursive Approach in Java
 int binarySearch(int[] arr, int start,int end , int element)
 {
-    int mid = ( start + end ) / 2;
+  if (end >= start)
+  {
+    int mid = start + ( end - start ) / 2;
     if(arr[mid] ==  element)
         return mid;
     if(arr[mid] < element)
         return binarySearch( arr , mid + 1 , end , element );
     else
         return binarySearch( arr, start, mid - 1 , element);
+  }
+  return -1;
 }
 
 ```
