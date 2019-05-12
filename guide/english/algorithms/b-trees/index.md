@@ -32,7 +32,3 @@ Suppose a B-tree has n elements and M is the maximum number of children a node c
 
 - The worst-case depth (maximum depth) of a B-tree is: logM/2 n.
 - The best-case depth (minimum depth) of a B-tree is: logM n.
-
-Worst-Case Times for B-Trees:
-
-- Adding or removing an element in a B-tree with n elements is O(log n).
