@@ -14,7 +14,6 @@ Visite o [site](https://rustup.rs) do [rustup](https://rustup.rs) e baixe o `rus
 
 Abra seu terminal e digite este comando:
 ```shell
-```sh
 curl https://sh.rustup.rs -sSf | sh 
 ```
 
