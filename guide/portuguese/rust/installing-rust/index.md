@@ -23,7 +23,6 @@ Isso irá buscar o instalador do `rustup` e, por sua vez, buscará tudo o que vo
 
 Instalar `rustup` irá instalar todas as coisas relevantes para ferrugem, mas o mais relevante é instalar o compilador e o gerenciador de pacotes. Para verificar se tudo está instalado, execute este comando:
 ```shell
-```sh
 cargo version 
 ```
 
