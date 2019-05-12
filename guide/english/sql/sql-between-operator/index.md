@@ -8,9 +8,9 @@ x <= element <= y, the SQL Query Optimizer will recognize this command faster, a
 
 This operator is used in a WHERE clause or in a GROUP BY HAVING clause.
 
-Rows are selected that have a value greater than the minimum value and less than the maximum value.  
+Rows are selected that have a value greater than or equal to the minimum value and less than or equal to the maximum value.  
 
-It's important to keep in mind that the values entered in the command are **excluded** from the result. We get just what is between them.
+It's important to keep in mind that the values entered in the command are **included** in the result.
 
 Here is the syntax for using the function in a WHERE Clause:
 

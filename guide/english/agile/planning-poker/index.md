@@ -9,7 +9,7 @@ Planning poker is an estimation and planning technique in the Agile development 
 ### Process
 The planning poker is done for one user story at a time.
 
-Each estimator holds an identical set of poker cards consisting of cards with various values. The card values are usually from the Fibonacci Sequence. The unit used for the values can be the number of days, story points, or any other kind of estimation unit agreed on by the team.
+Each estimator holds an identical set of poker cards consisting of cards with various values. The card values are usually from the [Fibonacci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number). The unit used for the values can be the number of days, story points, or any other kind of estimation unit agreed on by the team.
 
 The product owner (PO) or stakeholder explains the story that is to be estimated.
 

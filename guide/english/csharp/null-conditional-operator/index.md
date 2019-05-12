@@ -25,7 +25,7 @@ However, in C# 6.0 null-conditional operators were introduced, so now the above 
 be represented as follows:
 
 ```csharp
-Address address = student?.Address;
+Address address = employee?.Address;
 ```
 
 If employee is null, address will simply be assigned null, and no NullReferenceExeception will occur.
@@ -33,7 +33,7 @@ This becomes more useful with deeper object graphs, as you can handle a chain of
 
 For example:
 ```csharp
-string city = student?.Address?.City;
+string city = employee?.Address?.City;
 ```
 
 Null-conditional operators are short-circuiting, so as soon as one check of conditional member access
