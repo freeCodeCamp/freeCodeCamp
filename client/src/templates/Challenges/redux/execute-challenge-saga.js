@@ -57,6 +57,8 @@ export function* executeChallengeSaga() {
     yield put(updateConsole('// tests completed'));
     yield put(logsToConsole('// console output'));
   } catch (e) {
+    const testError = yield executeTests(e);
+    yield put(updateTests(testError));
     yield put(updateConsole(e));
   } finally {
     consoleProxy.close();
