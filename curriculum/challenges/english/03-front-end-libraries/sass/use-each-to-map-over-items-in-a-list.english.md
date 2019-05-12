@@ -1,9 +1,6 @@
 ---
 id: 587d7dbf367417b2b2512bba
 title: Use @each to Map Over Items in a List
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 ---
 
@@ -66,14 +63,51 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.
+
+### List Data type
+```html
+<style type='text/sass'>
+
+  @each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+  }
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
 ```
+
+### Map Data type
+```html
+<style type='text/sass'>
+
+  $colors: (color1: blue, color2: black, color3: red);
+
+  @each $key, $color in $colors {
+    .#{$color}-bg {background-color: $color;}
+  }
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```
+
 </section>

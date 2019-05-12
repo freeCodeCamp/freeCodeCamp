@@ -27,7 +27,7 @@ tests:
   - text: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.
     testString: assert(store.getState().login === false, 'The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');
   - text: The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.
-    testString: 'getUserInput => assert((function() {  let noWhiteSpace = getUserInput(''index'').replace(/\s/g,''); return noWhiteSpace.includes(''store.dispatch(loginAction())'') || noWhiteSpace.includes(''store.dispatch({type: \''LOGIN\''})'') === true })(), ''The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.'');'
+    testString: "getUserInput => assert((function() {  let noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })(), 'The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.');"
 
 ```
 

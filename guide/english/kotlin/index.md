@@ -2,14 +2,15 @@
 title: Kotlin
 ---
 
-**What is Kotlin?**
+# Kotlin
 
-<a href='https://kotlinlang.org/'>Kotlin</a> is a programming language developed by <a href='https://www.jetbrains.com'>Jetbrains</a>, the company behind some of the world's most popular IDEs like IntelliJ and Pycharm.
+## What is Kotlin?
 
- It serves as a replacement for Java and runs on the JVM. It has been in development for close to 6 years and it hit 1.0 just a year ago. 
+[Kotlin](https://kotlinlang.org/) is a [statically typed](https://en.wikipedia.org/wiki/Type_system#Static_type_checking) programming language developed by [Jetbrains](https://www.jetbrains.com), the company behind some of the world's most popular IDEs like [IntelliJ](https://www.jetbrains.com/idea/) and [Pycharm](https://www.jetbrains.com/pycharm/).
+
+Kotlin serves as a replacement for Java and runs on the JVM. It has been in development since 2011 and version 1.0 was released in August 2016. 
  
- The developer community has embraced Kotlin to such an extent that Google announced first class support for the language for Android Development at <a href='https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/'>Google I/O 2017</a>.
-
+The developer community has embraced Kotlin to such an extent that Google announced first class support for the language for Android Development at <a href='https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/'>Google I/O 2017</a>.
 
 ## Version
 As of this writing, the latest stable release of Kotlin happens to be <a href='https://blog.jetbrains.com/kotlin/2018/09/kotlin-1-2-70-is-out/'>version 1.2.71</a>
@@ -24,11 +25,11 @@ Kotlin works with **JDK 1.6+** so make sure you get the correct version installe
 
 
 * ## IntelliJ IDEA
-The quickest way to get Kotlin running on your machines is by using it alongside **IntelliJ IDEA**. This is the recommended IDE for Kotlin because of the tooling support that is provided by Jetbrains. You can grab the <a href='http://www.jetbrains.com/idea/download/index.html'>Community Edition</a> of IntelliJ from <a href='https://www.jetbrains.com'>JetBrains</a>.
+The quickest way to get Kotlin running on your machine is using it alongside the **IntelliJ IDEA** IDE. This is the recommended IDE for Kotlin because of the tooling support that is provided by JetBrains. You can grab the <a href='http://www.jetbrains.com/idea/download/index.html'>Community Edition</a> of IntelliJ from JetBrains.
 
-Once you have installed IntelliJ you can basically get started with your first project in Kotlin without any further configurations.
+Once you have installed IntelliJ, you can get started with your first project in Kotlin without any further configurations.
 
-Create a **New Project** and make sure you select the Java Module. Select the Kotlin checkbox on that screen 
+Create a **New Project** and make sure you select the Java Module. Select the Kotlin checkbox on that screen. 
 
 ![new project screen](https://kotlinlang.org/assets/images/tutorials/getting-started/new_project_step1.png)
 
@@ -45,7 +46,7 @@ In order to verify your installation, create a new Kotlin file in the **src** fo
 
 ![project structure ](https://kotlinlang.org/assets/images/tutorials/getting-started/new_file.png)
 
-Once you have the file created, type out the following cremonial Hello World code. Don't worry if it doesn't make sense right away, it will be dealt with in detail later on in the guide.
+Once you have the file created, type out the following ceremonial Hello World code. Don't worry if it doesn't make sense right away, it will be dealt with in detail later on in the guide.
 
 ``` 
 fun main (args: Array<String>) {
@@ -98,7 +99,7 @@ fun main (args: Array<String>) {
 
 ![eclipse hello world ](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/hello-world.png)
 
-Now that you are done typing out the Hello World code, go ahead and run it. To run the file, right click anywhere inside the editor and click on ***Run As -> Kotlin Application***
+Now that you are done typing out the Hello World code, go ahead and run it. To run the file, right-click anywhere inside the editor and click on ***Run As -> Kotlin Application***
 
 
 ![eclipse run app](https://kotlinlang.org/assets/images/tutorials/getting-started-eclipse/run-as.png)
@@ -112,8 +113,7 @@ If you are someone who prefers doing things in a more manual way and do not want
 
 ### Downloading the compiler
 
-With every release of Kotlin, Jetbrains ship a standalone compiler which can be downloaded from the <a href='https://github.com/JetBrains/kotlin/releases/tag/v1.1.51'>GitHub releases</a>. Version 1.1.51 happens to be the latest at the time of this writing.
-
+With every release of Kotlin, JetBrains ship a standalone compiler which can be downloaded from the <a href='https://github.com/JetBrains/kotlin/releases/tag/v1.1.51'>GitHub releases</a>. Version 1.1.51 happens to be the latest at the time of this writing.
 
 </br>
 
@@ -136,7 +136,7 @@ Another simple way of installing the Kotlin compiler on macOS, Linux, Cygwin, Fr
 
 ```$ curl -s https://get.sdkman.io | bash```
 
-Follow the instructions on screen and once SDKMAN! is setup issue the follwoing command inside terminal
+Follow the instructions on the screen and once SDKMAN! is setup, issue the following command inside terminal
 
 
 ```$ sdk install kotlin```
@@ -169,7 +169,12 @@ Hello, World!
 ```
 Congratulations you have successfully set up the Kotlin compiler and development environment on your system. We will cover all of the intricacies and fun parts of Kotlin in this guide, but you can get a headstart if you want by going to the <a href='https://try.kotlinlang.org/'>Try Kotlin</a> website and going through the exercises there.
 
+### Kotlin scripts
+
+Yout can also put Kotlin code in file with extension .kts without main function and run it as a script.
+```$ kotlinc -script hello.kts```
+
 ## Documentation
 
-One of the greatest things about Kotlin is it's comprehensive and well structured documentation. Even if you are new to programming, you will find yourself right at home with the docs. They do a pretty amazing job at laying it all out in a well structured manner. You can check out the official documentation at <a href='https://kotlinlang.org/docs/reference/'>this link</a>.
+One of the greatest things about Kotlin is its comprehensive and well-structured documentation. Even if you are new to programming, you will find yourself right at home with the docs. They do a pretty amazing job at laying it all out in a well-structured manner. You can check out the official documentation at <a href='https://kotlinlang.org/docs/reference/'>this link</a>.
 
