@@ -14,7 +14,6 @@ Assumindo que tudo esteja configurado e funcionando corretamente, existem alguns
 
 Abra um terminal dentro da pasta do projeto que foi criada e emita o seguinte comando
 ```shell
-```sh
 npm install --save react react react-dom react-redux react-router redux 
 ```
 
