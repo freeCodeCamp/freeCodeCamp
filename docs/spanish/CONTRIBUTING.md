@@ -25,7 +25,7 @@ Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp
 
 Puedes optar por contribuir a cualquier área de tu interés:
 
-1. [Contribuir en esta base de código abierto.](#contribute-to-this-open-source-codebase)
+1. [Contribuir a esta base de código fuente abierto.](#contribute-to-this-open-source-codebase)
 
     Ayúdanos a crear o editar [artículos de guía](https://www.freecodecamp.org/guide), [desafíos de codificación](https://www.freecodecamp.org/learn) o a corregir errores en la plataforma de aprendizaje.
 
@@ -38,19 +38,19 @@ Puedes optar por contribuir a cualquier área de tu interés:
 
 ## Contribuye a esta base de código abierto
 
-Tenemos una gran base de código abierto de los miles de [desafíos de codificación](https://www.freecodecamp.org/learn) y [artículos de guía](https://www.freecodecamp.org/guide). Estos desafíos y artículos conforman el contenido de aprendizaje disponible en la plataforma de aprendizaje de freeCodeCamp.org.
+Tenemos una gran base de código abierto con miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y [Guías](https://www.freecodecamp.org/guide).
 
 Puedes ayudarnos a:
 
-- [📝 Investigar, escribir y actualizar nuestros artículos de guía.](#investiga-escribe-y-actualiza-nuestros-artículos-de-guía)
+- [📝 Investigar, escribir y actualizar nuestras guías.](#investiga-escribe-y-actualiza-nuestros-artículos-de-guía)
 
 - [💻 Crear, actualizar y corregir errores en nuestros desafíos de codificación.](#crear-actualizar-y-corregir-errores-en-nuestros-desafíos-de-codificación)
 
-- [🌐 Traducir artículos de guía y desafíos de codificación.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
+- [🌐 Traducir guías y desafíos de codificación.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
 
 - [🛠 Corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
 
-### Investiga, escribe y actualiza nuestros artículos de guía
+### Investiga, escribe y actualiza nuestras guías
 
 **¿Qué son los artículos de guía?**
 
@@ -88,13 +88,9 @@ Puedes ayudarnos a traducir nuestros artículos de guía y desafíos de codifica
 - [Ruso (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
 - [Árabe (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Español](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
-- [Portugués](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
+- [Português](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
 
-La mayoría de estas versiones están traducidas automáticamente. Nos encantaria que pudieras ayudarnos a mejorar la calidad de estas traducciones.
-
-**Si deseas trabajar en ello, sigue estas pautas:**
-
-**[POR HACER/TODO]** Estamos en el proceso de actualizar documentos para el flujo de trabajo de traducción. Sigue [`#18313`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18313) para ver el progreso.
+Nos encantaría tu ayuda para mejorar la calidad de estas traducciones. Millones de personas usan la versión en inglés de freeCodeCamp.org, y esperamos que millones más también usen estas versiones traducidas.
 
 ### Ayúdanos a corregir errores en la plataforma de aprendizaje de freeCodeCamp.org
 
@@ -110,22 +106,19 @@ Contribuir a esto requiere cierta comprensión de las API, la sintaxis de ES6 y 
 
 Esencialmente, esperamos cierta familiaridad básica con algunas de las tecnologías, herramientas y librerías mencionadas anteriormente. Dicho esto, no es necesario que seas un experto en ello.
 
-Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclararlas. En caso de duda, puedes contactar con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) de nuestro equipo de desarrollo de la plataforma.
+Siéntete libre de hacernos preguntas, en los hilos relacionados con problemas, y estaremos encantados de aclarar. En caso de duda, puede comunicarse con Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) o Stuart Taylor[`@bouncey`](https://github.com/bouncey) de nuestra equipo de desarrollo de la plataforma para ayudarte con esto.
 
-**Si deseas trabajar en ello, sigue estas pautas:**
-
-#### [cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
+Si deseas trabajar en mejorar nuestra base de código, aqui tienes [cómo configurar freeCodeCamp localmente.](/docs/how-to-setup-freecodecamp-locally.md)
 
 ## Preguntas frecuentes
 
-**¿Cómo puedo reportar un error, que no está registrado?**
+**¿Cómo puedo reportar un error, que no está publicado?**
 
 Si crees que has encontrado un error, primero lee el artículo ["Ayuda, he encontrado un error"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) y sigue las instrucciones.
 
-Si estás seguro de que es un error nuevo, sigue adelante y crea un nuevo problema (issue) en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error. Tenemos una plantilla de problemas predefinida para ayudarte a con esto.
+Si estás seguro de que es un error nuevo, siga adelante y crea un nuevo problema o Issue en GitHub. Asegúrate de incluir la mayor cantidad de información posible para que podamos reproducir el error. Tenemos una plantilla de problemas predefinida para ayudarte a documentar esto.
 
 Ten en cuenta que cualquier problema que se registre para resolver dudas sobre la codificación de un desafío se cerrará. El rastreador de problemas es estrictamente para los temas y discusiones relacionados con el código base. Deberías [buscar ayuda en el foro](https://www.freecodecamp.org/forum) antes de reportar un problema en caso de duda.
-
 **¿Cómo puedo reportar un problema de seguridad?**
 
 Por favor, no crees issues de GitHub para problemas de seguridad. En su lugar, envía un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
@@ -147,7 +140,7 @@ Lee nuestra [Guía de cómo contribuir al código abierto](https://github.com/fr
 
 Los moderadores de nuestra comunidad [evalúan](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemas y solicitudes y los etiquetan según la prioridad, la gravedad y otros factores. Puedes [encontrar un glosario completo de sus significados aquí](https://github.com/freecodecamp/freecodecamp/labels).
 
-Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesitan permiso antes de trabajar en ellos.
+Debes revisar los problemas **`Help Wanted`** o **`first timers welcome`** para una búsqueda rápida de lo que está disponible para que trabajes. Estos están libres para todos y no necesita permisos antes de trabajar en ellos.
 
 Si estos temas carecen de claridad sobre lo que debe hacerse, no dudes en hacer preguntas en los comentarios.
 
