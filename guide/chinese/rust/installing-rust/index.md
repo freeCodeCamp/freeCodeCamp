@@ -23,7 +23,6 @@ curl https://sh.rustup.rs -sSf | sh
 
 安装`rustup`将安装与rust相关的所有内容，但最重要的是这意味着安装编译器和包管理器。要验证是否已安装所有内容，请运行以下命令：
 ```shell
-```sh
 cargo version 
 ```
 
