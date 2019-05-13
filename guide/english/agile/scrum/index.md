@@ -5,10 +5,17 @@ title: Scrum
 
 Scrum is one of the methodologies under the Agile umbrella. The name is derived from a method of resuming play in the sport of rugby, in which the entire team moves together to make ground. Similarly, a scrum in Agile involves all parts of the team working on the same set of goals. In the scrum method, a prioritized list of tasks is presented to the team, and over the course of a "sprint" (usually two weeks), those tasks are completed, in order, by the team. This ensures that the highest-priority tasks or deliverables are completed before time or funds run out. 
 
-### Components of a Scrum
+## Scrum Components
 
-Scrum is one of the methodologies under the Agile umbrella. It originates from 'scrummage' which is a term used in rugby to denote players huddling together to get possession of the ball.
-The practice revolves around 
+Scrum is often described as a repetitive as well as cumulative agenda in agile software development environments.  Where project management is the focus, scrum effectively aids in the production process.
+
+The Scrum process is made up of the following items:
+
+- Theme
+- Epic 
+- Stories
+- Scrum tasks
+
 
 - A set of roles (delivery team, product owner, and scrum master)
 - Ceremonies (sprint planning, daily standup, sprint review, sprint retrospective, and backlog grooming)

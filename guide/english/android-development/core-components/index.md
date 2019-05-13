@@ -45,13 +45,17 @@ An activity facilitates the following key interactions between system and app:
 
 > Called when an activity is no longer visible to the user. You will next receive either onRestart(), onDestroy(), or nothing, depending on subsequent user activity.
 
->Note that this method may never be called, in low memory situations where the system does not have enough memory to keep your activity's process running after its onPause() method is called.
+> Note that this method may never be called, in low memory situations where the system does not have enough memory to keep your activity's process running after its onPause() method is called.
 
 * onDestroy():
 
 > The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method.
+
 This call is often used when the user hits the back button, or closes the instance of the app.
+
 Interestingly, when app display changes orientation (e.g., from landscape to portrait or the other way around), `onDestroy()` and `onCreate()` are called. This means that the Activity is recreated. This comes in handy in applications with different defined rules for landscape and portrait modes, or with different views defined for tablets and phones in these modes.
+
+This method also cleanup the resources such as threads so that application runs smooth.
 
 #### Sample code to understand Activity Lifecycle
 
