@@ -62,7 +62,7 @@ class Header extends Component {
   };
 
   toggleTopMenu = () => {
-    this.setState({ displayTopMenu: !this.state.displayTopMenu });
+    this.setState(state => ({ displayTopMenu: !state.displayTopMenu }));
   };
 
   render() {
