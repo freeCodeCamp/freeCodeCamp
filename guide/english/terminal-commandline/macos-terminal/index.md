@@ -7,7 +7,7 @@ title: Mac OS Terminal
 
 Most of the time users interact through a Graphical User Interface (GUI) to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. But, you can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
 
-### Opening the Terminal and Navigating Directories
+## Opening the Terminal and Navigating Directories
 
 Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. It should have the computer's name (ABC's Macbook), followed by the User name (ABC), and then a '$'. If you are in the root directory, the last character will be a '#'.
 
@@ -120,7 +120,9 @@ If you would like to preview a file, type the command `cat <name of document>` a
 
 Hold down `control` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command.
 
-# iTerm2
+## Alternative Terminals
+
+### iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
 
@@ -138,7 +140,7 @@ Just download iTerm2 from the official [website](https://www.iterm2.com/download
 
 This [guide](https://medium.com/the-code-review/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c) shows you how you can improve terminal productivity, and have a bit more customization options.
 
-## Hyper
+### Hyper
 
 Another alternative is Hyper, an Electron-based terminal
 
@@ -147,3 +149,6 @@ Another alternative is Hyper, an Electron-based terminal
 - [Download](https://hyper.is/#installation)
 - [Documentation](https://hyper.is/)
 - [Awesome Hyper](https://github.com/bnb/awesome-hyper)
+
+## Terminal Fun
+[Bandit Wargame](http://overthewire.org/wargames/bandit/) can help you learn to use the terminal while also sharpening your white-hat hacking skills. It's a great way to get familiar with the Command Line Interface (CLI)  and continually hone your skills.
