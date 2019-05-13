@@ -14,7 +14,7 @@ Since you know what a queue is, this challenge will go over a queue again.
 <section id='instructions'>
 In this challenge, you will create a method that takes in a queue and reverses it.
 For example, if I put in a queue that with the integers 
-1,2,3,4,5, the output will then be 5,4,3,2,1.s
+1,2,3,4,5, the output will then be 5,4,3,2,1.
 
 </section>
 
@@ -24,7 +24,9 @@ For example, if I put in a queue that with the integers
 ```yml
 tests:
   - text: Your <code>data</code> should be a reverse of itself.
-    testString: assert(JSON.stringify(testQueue.data) === JSON.stringify([5,4,3,2,1]) );
+    testString: assert(JSON.stringify(testQueue.data) === JSON.stringify([5,4,3,2,1]), 'Your <code>data</code> should be a reverse of itself' );
+  - text: Your stringed <code>data</code> should be a reverse of itself.
+    testString: assert((function(){var testQueueString = new Queue(['hello', 'world']); testQueueString.reverse(); return JSON.stringify(testQueueString.data) === JSON.stringify(['world', 'hello'])}()), 'Your stringed <code>data</code> should be a reverse of itself' );
 ```
 
 </section>
@@ -35,8 +37,8 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Queue() {
-  this.data = [1,2,3,4,5]; // Reverse this into [5,4,3,2,1]
+function Queue(data) {
+  this.data = data; // Data can be any array-based value, such as [1,2,3,4,5]
   this.tempQueue = [] // Feel free to use this is so desired
 }
 // Write your code below here
@@ -56,8 +58,8 @@ testQueue.reverse()
 <section id='solution'>
 
 ```js
-function Queue() {
-  this.data = [1,2,3,4,5];
+function Queue(data) {
+  this.data = data;
   this.tempQueue = []
 }
 
@@ -70,7 +72,7 @@ Queue.prototype.reverse = function() {
   this.tempQueue = []
 }
 
-let testQueue = new Queue
+let testQueue = new Queue([1,2,3,4,5])
 testQueue.reverse()
 ```
 </section>
