@@ -94,7 +94,6 @@ class Header extends Component {
             className={`menu-button${displayMenu ? ' menu-button-open' : ''}${
               disableMenuButtonBehavior ? ' menu-button-guide' : ''
             }`}
-            key='menu-button'
             onClick={toggleDisplayMenu}
             ref={this.menuButtonRef}
           >
