@@ -10,7 +10,7 @@ UnrealScript é a linguagem de script nativa do mecanismo, usada para criar cód
 
 No Game Developers Conference em 2012, a Epic anunciou que o UnrealScript seria removido do Unreal Engine 4 em favor do C++, a programação visual será suportada pelo sistema de Blueprints Visual Scripting, uma substituição do anterior Kismet para programação visual.
 
-Desde 2015, o Unreal Engine está livre para usar, com a Epic cobrando royalties de 5% sobre as vendas de títulos produzidos usando o mecanismo. A Epic disponibiliza a maioria de sua base de códigos livremente através de seu Github, embora a fonte para plataformas fechadas, como o Playstation 4 e o Xbox One, esteja disponível apenas para desenvolvedores de plataformas registradas.
+Desde 2015, o Unreal Engine está livre para usar, com a Epic cobrando royalties de 5% sobre as vendas de títulos produzidos usando o mecanismo. A Epic disponibiliza a maioria de sua base de códigos livremente através de seu GitHub, embora a fonte para plataformas fechadas, como o Playstation 4 e o Xbox One, esteja disponível apenas para desenvolvedores de plataformas registradas.
 
 ### Versões Unreal
 
