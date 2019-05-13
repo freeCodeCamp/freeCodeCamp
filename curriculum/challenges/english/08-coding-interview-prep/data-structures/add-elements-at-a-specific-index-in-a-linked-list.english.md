@@ -92,75 +92,63 @@ function LinkedList() {
 <section id='solution'>
 
 ```js
+
+
 function LinkedList() {
   var length = 0;
   var head = null;
-
-  var Node = function(element){
+  var Node = function (element) {
     this.element = element;
     this.next = null;
   };
-
-  this.size = function(){
+  this.size = function () {
     return length;
   };
-
-  this.head = function(){
+  this.head = function () {
     return head;
   };
-
-  this.add = function(element){
+  this.add = function (element) {
     var node = new Node(element);
-    if (head === null){
-        head = node;
+    if (head === null) {
+      head = node;
     } else {
       var currentNode = head;
-
       while (currentNode.next) {
         currentNode = currentNode.next;
       }
-
       currentNode.next = node;
     }
     length++;
   };
-
-this.addAt = function(index, element) {
+  this.addAt = function (index, element) {
     if (index > length || index < 0) {
-
-        return false;
+      return false;
     }
     if (!head) {
-        head = new Node(data);
+      head = new Node(data);
     } else {
-        var parent = null;
-        var current = head;
-        var i = 0;
-
-        while (current && i < index) {
-            parent = current;
-            current = current.next;
-            i++;
-        }
-
-        if (current) {
-
-            var child = new Node(current.element);
-            child.next = current.next;
-
-            current.element = element;
-            current.next = child;
-            length++;
-        } else {
-
-            parent.next = new Node(element);
-            length++;
-        }
+      var parent = null;
+      var current = head;
+      var i = 0;
+      while (current && i < index) {
+        parent = current;
+        current = current.next;
+        i++;
+      }
+      if (current) {
+        var child = new Node(current.element);
+        child.next = current.next;
+        current.element = element;
+        current.next = child;
+        length++;
+      } else {
+        parent.next = new Node(element);
+        length++;
+      }
     }
-
-
+  }
 }
 
-}
+
 ```
 </section>
