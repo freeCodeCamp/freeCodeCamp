@@ -52,7 +52,6 @@ class Header extends Component {
 
   handleClickOutside = event => {
     if (
-      !this.props.disableMenuButtonBehavior &&
       this.state.displayTopMenu &&
       this.menuButtonRef.current &&
       !this.menuButtonRef.current.contains(event.target)
