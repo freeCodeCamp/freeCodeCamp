@@ -105,7 +105,6 @@ class Header extends Component {
               disableMenuButtonBehavior ? ' nav-guide' : ''
             }`}
             id='top-right-nav'
-            key='top-right-nav'
           >
             <li>
               <Link className='top-right-nav-link' to='/learn'>
