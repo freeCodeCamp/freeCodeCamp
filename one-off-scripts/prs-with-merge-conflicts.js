@@ -1,12 +1,13 @@
 /*
-This script was created to find all open PRs that potentially have merge
-conflicts.
+This script was created to find all open PRs that  have merge
+conflicts and then add a the 'status: merge conflict' label to any PR
+which does not already have the label.
 
 To run the script for a specific language, call the script with the language
 name as the first argument.
 
-Note: If any PR displayed in the console shows "unknown", you will need to rerun
-the script again.
+Note: It is possible that it could take more than 4 seconds for GitHub to
+determine if a PR is mergeable.  If that happens, the PR will not be labeled.
 */
 
 const { owner, repo, octokitConfig, octokitAuth } = require('../lib/constants');
@@ -14,6 +15,7 @@ const octokit = require('@octokit/rest')(octokitConfig);
 
 const { getPRs, getUserInput } = require('../lib/get-prs');
 const { ProcessingLog, rateLimiter } = require('../lib/utils');
+const { addLabels } = require('../lib/pr-tasks');
 const { validLabels } = require('../lib/validation/valid-labels');
 
 octokit.authenticate(octokitAuth);
@@ -37,6 +39,7 @@ log.start();
   const { openPRs } = await getPRs(totalPRs, firstPR, lastPR, prPropsToGet);
   if (openPRs.length) {
     let count = 0;
+    let mergeConflictCount = 0;
     for (let i = 0; i < openPRs.length; i++) {
       let { labels, number } = openPRs[i];
 
@@ -60,8 +63,9 @@ log.start();
         }
         
         if (mergeableState === 'dirty' && !hasMergeConflictLabel) {
-          log.add(number, { number, mergeableState });
-          console.log(`${number} (${mergeableState}) - might need a merge conflict label`);
+          mergeConflictCount++;
+          addLabels(number, ['status: merge conflict'], log);
+          await rateLimiter();
         }
         
         if (count > 4000) {
@@ -69,7 +73,7 @@ log.start();
         }
       }
     }
-    console.log(`There were ${count} PRs with potential merge conflicts out of ${count} PRs received from GitHub`);
+    console.log(`There were ${mergeConflictCount} PRs with potential merge conflicts out of ${count} PRs received from GitHub`);
   } else {
     throw 'There were no open PRs received from Github';
   }
