@@ -15,13 +15,7 @@ Quotes are not the only characters that can be <dfn>escaped</dfn> inside a strin
 ## Instructions
 <section id='instructions'>
 Assign the following three lines of text into the single variable <code>myStr</code> using escape sequences.
-
-```js
-FirstLine
-    \SecondLine
-ThirdLine
-```
-
+<blockquote>FirstLine<br/>&nbsp;&nbsp;&nbsp;&nbsp;\SecondLine<br/>ThirdLine</blockquote>
 You will need to use escape sequences to insert special characters correctly. You will also need to follow the spacing as it looks above, with no spaces between escape sequences or words.
 Here is the text with the escape sequences written out.
 <q>FirstLine<code>newline</code><code>tab</code><code>backslash</code>SecondLine<code>newline</code>ThirdLine</q>

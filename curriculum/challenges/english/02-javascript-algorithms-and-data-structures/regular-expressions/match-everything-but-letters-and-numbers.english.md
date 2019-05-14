@@ -15,7 +15,6 @@ let numbers = "42%";
 let sentence = "Coding!";
 numbers.match(shortHand); // Returns ["%"]
 sentence.match(shortHand); // Returns ["!"]
-
 ```
 
 </section>

@@ -10,13 +10,7 @@ videoUrl: 'https://scrimba.com/c/cy87mf3'
 <code>If</code> statements are used to make decisions in code. The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions and they may only be <code>true</code> or <code>false</code>.
 When the condition evaluates to <code>true</code>, the program executes the statement inside the curly braces. When the Boolean condition evaluates to <code>false</code>, the statement inside the curly braces will not execute.
 <strong>Pseudocode</strong>
-
-```js
-if (<i>condition is true</i>) {
-  <i>statement is executed</i>
-}
-```
-
+<blockquote>if (<i>condition is true</i>) {<br>&nbsp;&nbsp;<i>statement is executed</i><br>}</blockquote>
 <strong>Example</strong>
 
 ```js
