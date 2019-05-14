@@ -8,7 +8,13 @@ videoUrl: 'https://scrimba.com/c/c2MZVSg'
 ## Description
 <section id='description'>
 To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:
-<blockquote>p {<br>&nbsp;&nbsp;transform: scale(2);<br>}</blockquote>
+
+```css
+p {
+  transform: scale(2);
+}
+```
+
 </section>
 
 ## Instructions

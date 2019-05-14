@@ -10,7 +10,18 @@ videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
 Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to show the importance of a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect.
 However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.
 Here's an example of the CSS rules that accomplish this:
-<blockquote>.sr-only {<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;left: -10000px;<br>&nbsp;&nbsp;width: 1px;<br>&nbsp;&nbsp;height: 1px;<br>&nbsp;&nbsp;top: auto;<br>&nbsp;&nbsp;overflow: hidden;<br>}</blockquote>
+
+```css
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+```
+
 <strong>Note:</strong> The following CSS approaches will NOT do the same thing:
 <ul>
 <li><code>display: none;</code> or <code>visibility: hidden;</code> hides content for everyone, including screen reader users</li>

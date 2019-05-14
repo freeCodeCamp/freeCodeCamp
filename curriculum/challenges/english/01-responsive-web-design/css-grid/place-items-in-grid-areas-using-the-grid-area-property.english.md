@@ -8,7 +8,13 @@ videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
 ## Description
 <section id='description'>
 After creating an area's template for your grid container, as shown in the previous challenge, you can place an item in your custom area by referencing the name you gave it. To do this, you use the <code>grid-area</code> property on an item like this:
-<blockquote>.item1 { grid-area: header; }</blockquote>
+
+```css
+.item1 {
+  grid-area: header;
+}
+```
+
 This lets the grid know that you want the <code>item1</code> class to go in the area named <code>header</code>. In this case, the item will use the entire top row because that whole row is named as the header area.
 </section>
 
