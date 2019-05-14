@@ -164,9 +164,9 @@ class DefaultLayout extends Component {
               <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
             ) : null}
             {children}
+            {showFooter && <Footer />}
           </div>
         </WithInstantSearch>
-        {showFooter && <Footer />}
       </Fragment>
     );
   }
