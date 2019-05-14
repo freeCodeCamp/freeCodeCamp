@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cQd27Hr'
 
 ## Description
 <section id='description'>
-To create a CSS Variable, you just need to give it a <code>name</code> with <code>two dashes</code> in front of it and assign it a <code>value</code> like this:
+To create a CSS variable, you just need to give it a <code>name</code> with <code>two dashes</code> in front of it and assign it a <code>value</code> like this:
 
 ```css
 --penguin-skin: gray;
@@ -19,7 +19,7 @@ Now you can use that variable elsewhere in your CSS to change the value of other
 
 ## Instructions
 <section id='instructions'>
-In the <code>penguin</code> class, create a variable name <code>--penguin-skin</code> and give it a value of <code>gray</code>
+In the <code>penguin</code> class, create a variable name <code>--penguin-skin</code> and give it a value of <code>gray</code>.
 </section>
 
 ## Tests
