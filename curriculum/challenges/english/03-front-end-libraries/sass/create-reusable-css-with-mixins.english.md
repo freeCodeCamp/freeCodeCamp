@@ -8,13 +8,37 @@ challengeType: 0
 <section id='description'>
 In Sass, a <code>mixin</code> is a group of CSS declarations that can be reused throughout the style sheet.
 Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. Consider "box-shadow":
-<blockquote>div {<br>&nbsp;&nbsp;-webkit-box-shadow: 0px 0px 4px #fff;<br>&nbsp;&nbsp;-moz-box-shadow: 0px 0px 4px #fff;<br>&nbsp;&nbsp;-ms-box-shadow: 0px 0px 4px #fff;<br>&nbsp;&nbsp;box-shadow: 0px 0px 4px #fff;<br>}</blockquote>
+
+```scss
+div {
+  -webkit-box-shadow: 0px 0px 4px #fff;
+  -moz-box-shadow: 0px 0px 4px #fff;
+  -ms-box-shadow: 0px 0px 4px #fff;
+  box-shadow: 0px 0px 4px #fff;
+}
+```
+
 It's a lot of typing to re-write this rule for all the elements that have a <code>box-shadow</code>, or to change each value to test different effects.
 <code>Mixins</code> are like functions for CSS. Here is how to write one:
-<blockquote>@mixin box-shadow($x, $y, $blur, $c){ <br>&nbsp;&nbsp;-webkit-box-shadow: $x, $y, $blur, $c;<br>&nbsp;&nbsp;-moz-box-shadow: $x, $y, $blur, $c;<br>&nbsp;&nbsp;-ms-box-shadow: $x, $y, $blur, $c;<br>&nbsp;&nbsp;box-shadow: $x, $y, $blur, $c;<br>}</blockquote>
+
+```scss
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x, $y, $blur, $c;
+  -moz-box-shadow: $x, $y, $blur, $c;
+  -ms-box-shadow: $x, $y, $blur, $c;
+  box-shadow: $x, $y, $blur, $c;
+}
+```
+
 The definition starts with <code>@mixin</code> followed by a custom name. The parameters (the <code>$x</code>, <code>$y</code>, <code>$blur</code>, and <code>$c</code> in the example above) are optional.
 Now any time a <code>box-shadow</code> rule is needed, only a single line calling the <code>mixin</code> replaces having to type all the vendor prefixes. A <code>mixin</code> is called with the <code>@include</code> directive:
-<blockquote>div {<br>&nbsp;&nbsp;@include box-shadow(0px, 0px, 4px, #fff);<br>}</blockquote>
+
+```scss
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+```
+
 </section>
 
 ## Instructions
