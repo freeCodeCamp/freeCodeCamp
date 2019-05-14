@@ -93,6 +93,14 @@ const SupportPage = () => {
               </Link>
               .
             </p>
+            <h4>I cannot pass a challenge, but I think my code is correct</h4>
+            <p>
+              Some browser extensions can interfere with challenge tests. If you
+              are using any, try disabling them and running the tests again. If
+              the problem remains, click the challenge's 'Ask for Help' button
+              to post on the forum. You will need to create a forum account if
+              you don't already have one.
+            </p>
             <h4>I have a support question that isn't answered here.</h4>
             <p>
               You can ask for help on our forum, and the freeCodeCamp volunteer
