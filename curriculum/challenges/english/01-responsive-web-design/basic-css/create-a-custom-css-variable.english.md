@@ -7,7 +7,6 @@ videoUrl: 'https://scrimba.com/c/cQd27Hr'
 
 ## Description
 <section id='description'>
-
 To create a CSS variable, you just need to give it a <code>name</code> with <code>two dashes</code> in front of it and assign it a <code>value</code> like this:
 
 ```css
