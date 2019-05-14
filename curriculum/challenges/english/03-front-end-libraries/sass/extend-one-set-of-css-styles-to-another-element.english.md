@@ -8,11 +8,27 @@ challengeType: 0
 <section id='description'>
 Sass has a feature called <code>extend</code> that makes it easy to borrow the CSS rules from one element and build upon them in another.
 For example, the below block of CSS rules style a <code>.panel</code> class. It has a <code>background-color</code>, <code>height</code> and <code>border</code>.
-<blockquote>.panel{<br>&nbsp;&nbsp;background-color: red;<br>&nbsp;&nbsp;height: 70px;<br>&nbsp;&nbsp;border: 2px solid green;<br>}</blockquote>
+
+```scss
+.panel{
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+```
+
 Now you want another panel called <code>.big-panel</code>. It has the same base properties as <code>.panel</code>, but also needs a <code>width</code> and <code>font-size</code>.
 It's possible to copy and paste the initial CSS rules from <code>.panel</code>, but the code becomes repetitive as you add more types of panels.
 The <code>extend</code> directive is a simple way to reuse the rules written for one element, then add more for another:
-<blockquote>.big-panel{<br>&nbsp;&nbsp;@extend .panel;<br>&nbsp;&nbsp;width: 150px;<br>&nbsp;&nbsp;font-size: 2em;<br>}</blockquote>
+
+```scss
+.big-panel{
+  @extend .panel;
+  width: 150px;
+  font-size: 2em;
+}
+```
+
 The <code>.big-panel</code> will have the same properties as <code>.panel</code> in addition to the new styles.
 </section>
 
