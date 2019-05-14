@@ -8,12 +8,15 @@ challengeType: 2
 <section id='description'>
 One of the biggest reasons to use a package manager, is their powerful dependency management. Instead of manually having to make sure that you get all dependencies whenever you set up a project on a new computer, npm automatically installs everything for you. But how can npm know exactly what your project needs? Meet the <code>dependencies</code> section of your package.json file.
 In this section, packages your project requires are stored using the following format:
-<blockquote>
-"dependencies": {<br>
-&nbsp;&nbsp;"package-name": "version",</br>
-&nbsp;&nbsp;"express": "4.14.0"</br>
-}<br>
-</blockquote>
+
+```json
+"dependencies": {
+  "package-name": "version",
+  "express": "4.14.0"
+}
+
+```
+
 </section>
 
 ## Instructions
