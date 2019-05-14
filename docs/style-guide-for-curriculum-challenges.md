@@ -93,7 +93,7 @@ Once you have your id, put it into the markdown file as the `id` field at the to
 id: 5a474d78df58bafeb3535d34
 title: Challenge Title
 ```
-  
+
 
 ## Writing tests
 
@@ -124,8 +124,13 @@ Here are specific formatting guidelines for challenge text and examples:
 - Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
 - The first instance of a keyword when it's being defined, or general keywords (i.e. "object" or "immutable") go in `<dfn>` tags
 - Single line code examples go in `<code>` tags
-- Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
-- A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
+- Multi-line code examples go in fenced code blocks
+````
+```lang
+[code goes here]
+```
+````
+ where `lang` is one of the languages supported by [Prism](https://prismjs.com/#supported-languages).
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - Use double quotes where applicable
 
@@ -158,7 +163,7 @@ Example:
 
 ````
 <section id='solution'>
-  
+
 ```html
 <style>
   #container p {
@@ -176,9 +181,9 @@ Example:
 
 ## Why do we have all these rules?
 
-Our goal is to develop a fun and clear interactive learning experience. 
+Our goal is to develop a fun and clear interactive learning experience.
 
-Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience. 
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
 
 We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
 
