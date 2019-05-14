@@ -5,7 +5,6 @@ import CalendarHeatMap from 'react-calendar-heatmap';
 import ReactTooltip from 'react-tooltip';
 import addDays from 'date-fns/add_days';
 import addMonths from 'date-fns/add_months';
-import startOfMonth from 'date-fns/start_of_month';
 import startOfDay from 'date-fns/start_of_day';
 import format from 'date-fns/format';
 
@@ -24,18 +23,13 @@ const propTypes = {
 };
 
 function HeatMap({ calendar, streak }) {
-  const now = Date.now();
-  const startOfToday = startOfDay(now);
-  const startOfThisMonth = startOfMonth(startOfToday);
-  const startOfSixMonthsAgo = addMonths(startOfThisMonth, -6);
+  const startOfToday = startOfDay(Date.now());
+  const sixMonthsAgo = addMonths(startOfToday, -6);
+  const startOfCalendar = format(addDays(sixMonthsAgo, -1), 'YYYY-MM-DD');
   const endOfCalendar = format(startOfToday, 'YYYY-MM-DD');
-  const startOfCalendar = format(
-    addDays(startOfSixMonthsAgo, -1),
-    'YYYY-MM-DD'
-  );
 
   let calendarData = {};
-  let dayCounter = startOfSixMonthsAgo;
+  let dayCounter = sixMonthsAgo;
 
   while (dayCounter <= startOfToday) {
     calendarData[format(dayCounter, 'YYYY-MM-DD')] = 0;
@@ -68,7 +62,7 @@ function HeatMap({ calendar, streak }) {
       <FullWidthRow>
         <CalendarHeatMap
           classForValue={value => {
-            if (value.count < 1) {
+            if (!value || value.count < 1) {
               return 'colour-empty';
             }
             if (value.count > 4) {
@@ -80,9 +74,9 @@ function HeatMap({ calendar, streak }) {
           startDate={startOfCalendar}
           tooltipDataAttrs={value => {
             let valueCount = '';
-            if (value.count === 1) {
+            if (value && value.count === 1) {
               valueCount = `${value.count} item on `;
-            } else if (value.count > 1) {
+            } else if (value && value.count > 1) {
               valueCount = `${value.count} items on `;
             }
             return {
