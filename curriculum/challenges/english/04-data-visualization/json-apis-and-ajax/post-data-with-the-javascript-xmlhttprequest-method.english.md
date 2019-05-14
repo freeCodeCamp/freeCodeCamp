@@ -8,7 +8,21 @@ challengeType: 6
 <section id='description'>
 In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.
 JavaScript's <code>XMLHttpRequest</code> method is also used to post data to a server. Here's an example:
-<blockquote>const xhr = new XMLHttpRequest();<br>xhr.open('POST', url, true);<br>xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');<br>xhr.onreadystatechange = function () {<br>&nbsp;&nbsp;if (xhr.readyState === 4 && xhr.status === 201){<br>&nbsp;&nbsp;&nbsp;&nbsp;const serverResponse = JSON.parse(xhr.response);<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;<br>&nbsp;&nbsp;}<br>};<br>const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });<br>xhr.send(body);</blockquote>
+
+```js
+const xhr = new XMLHttpRequest();
+xhr.open('POST', url, true);
+xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 201){
+    const serverResponse = JSON.parse(xhr.response);
+    document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;
+  }
+};
+const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
+xhr.send(body);
+```
+
 You've seen several of these methods before. Here the <code>open</code> method initializes the request as a "POST" to the given URL of the external resource, and uses the <code>true</code> Boolean to make it asynchronous.
 The <code>setRequestHeader</code> method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the <code>open</code> method, but before the <code>send</code> method. The two parameters are the name of the header and the value to set as the body of that header.
 Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 201 means it was a successful request. The document's HTML can be updated.
