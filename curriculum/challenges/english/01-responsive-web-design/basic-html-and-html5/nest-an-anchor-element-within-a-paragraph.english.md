@@ -8,7 +8,13 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 ## Description
 <section id='description'>
 You can nest links within other text elements.
-<blockquote>&#60;p&#62;<br> Here's a &#60;a target="_blank" href="http://freecodecamp.org"&#62; link to freecodecamp.org&#60;/a&#62; for you to follow.<br>&#60;/p&#62;</blockquote>
+
+```html
+<p>
+  Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.
+</p>
+```
+
 Let's break down the example:
 Normal text is wrapped in the <code>p</code> element:<br> <code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>
 Next is the <i>anchor</i> element <code>&#60;a&#62;</code> (which requires a closing tag <code>&#60;/a&#62;</code>):<br>  <code>&#60;a&#62; ... &#60;/a&#62;</code>
