@@ -9,7 +9,13 @@ videoUrl: 'https://scrimba.com/c/cyLP8Sr'
 <section id='description'>
 The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.
 The following code skews the paragraph element by -32 degrees along the X-axis.
-<blockquote>p {<br>&nbsp;&nbsp;transform: skewX(-32deg);<br>}</blockquote>
+
+```css
+p {
+  transform: skewX(-32deg);
+}
+```
+
 </section>
 
 ## Instructions

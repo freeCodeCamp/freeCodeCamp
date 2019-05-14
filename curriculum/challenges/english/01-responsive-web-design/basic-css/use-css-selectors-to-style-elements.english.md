@@ -11,9 +11,22 @@ With CSS, there are hundreds of CSS <code>properties</code> that you can use to 
 When you entered <code>&#60;h2 style="color: red;"&#62;CatPhotoApp&#60;/h2&#62;</code>, you were styling that individual <code>h2</code> element with <code>inline CSS</code>, which stands for <code>Cascading Style Sheets</code>.
 That's one way to specify the style of an element, but there's a better way to apply <code>CSS</code>.
 At the top of your code, create a <code>style</code> block like this:
-<blockquote>&#60;style&#62;<br>&#60;/style&#62;</blockquote>
+
+```html
+<style>
+</style>
+```
+
 Inside that style block, you can create a <code>CSS selector</code> for all <code>h2</code> elements. For example, if you wanted all <code>h2</code> elements to be red, you would add a style rule that looks like this:
-<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;h2 {color: red;}<br>&#60;/style&#62;</blockquote>
+
+```html
+<style>
+  h2 {
+    color: red;
+  }
+</style>
+```
+
 Note that it's important to have both opening and closing curly braces (<code>{</code> and <code>}</code>) around each element's style rule(s). You also need to make sure that your element's style definition is between the opening and closing style tags. Finally, be sure to add a semicolon to the end of each of your element's style rules.
 </section>
 

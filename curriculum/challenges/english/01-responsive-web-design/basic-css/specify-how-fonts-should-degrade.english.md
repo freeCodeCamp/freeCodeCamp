@@ -10,7 +10,13 @@ videoUrl: 'https://scrimba.com/c/cpVKBfQ'
 There are several default fonts that are available in all browsers. These generic font families include <code>monospace</code>, <code>serif</code> and <code>sans-serif</code>
 When one font isn't available, you can tell the browser to "degrade" to another font.
 For example, if you wanted an element to use the <code>Helvetica</code> font, but degrade to the <code>sans-serif</code> font when <code>Helvetica</code> isn't available, you will specify it as follows:
-<blockquote>p {<br>&nbsp;&nbsp;font-family: Helvetica, sans-serif;<br>}</blockquote>
+
+```css
+p {
+  font-family: Helvetica, sans-serif;
+}
+```
+
 Generic font family names are not case-sensitive. Also, they do not need quotes because they are CSS keywords.
 </section>
 

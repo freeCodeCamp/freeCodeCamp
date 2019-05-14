@@ -10,17 +10,19 @@ As a reminder, this project is being built upon the following starter project on
 Right now we're not loading an actual user object since we haven't set up our database. This can be done many different ways, but for our project we will connect to the database once when we start the server and keep a persistent connection for the full life-cycle of the app.
 To do this, add MongoDB as a dependency and require it in your server. (<code>const mongo = require('mongodb').MongoClient;</code>)
 Now we want to the connect to our database then start listening for requests. The purpose of this is to not allow requests before our database is connected or if there is a database error. To accomplish you will want to encompass your serialization and your app listener in the following:
-<blockquote>
-mongo.connect(process.env.DATABASE, (err, db) => {<br>
-&nbsp;&nbsp;if(err) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;console.log('Database error: ' + err);<br>
-&nbsp;&nbsp;} else {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;console.log('Successful database connection');<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;//serialization and app.listen<br>
-<br>
-}});
-</blockquote>
+
+```js
+mongo.connect(process.env.DATABASE, (err, db) => {
+  if(err) {
+    console.log('Database error: ' + err);
+  } else {
+    console.log('Successful database connection');
+
+    //serialization and app.listen
+  }
+});
+```
+
 You can now uncomment the block in deserializeUser and remove your <code>done(null, null)</code>. Be sure to set <em>DATABASE</em> in your .env file to your database's connection string (for example: <code>DATABASE=mongodb://admin:pass@mlab.com:12345/my-project</code>). You can set up a free database on <a href='https://mlab.com/welcome/'>mLab</a>. Congratulations- you've finished setting up serialization!
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/e192e809a1d27cb80dc2c6d3467b7477'>here</a>.
 </section>

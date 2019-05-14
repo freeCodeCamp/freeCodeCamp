@@ -10,11 +10,23 @@ videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
 When you used <code>grid-template-columns</code> and <code>grid-template-rows</code> to define the structure of a grid, you entered a value for each row or column you created.
 Let's say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the <code>repeat</code> function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
 Here's an example that would create the 100 row grid, each row at 50px tall.
-<blockquote>grid-template-rows: repeat(100, 50px);</blockquote>
+
+```css
+grid-template-rows: repeat(100, 50px);
+```
+
 You can also repeat multiple values with the repeat function and insert the function amongst other values when defining a grid structure. Here's what that looks like:
-<blockquote>grid-template-columns: repeat(2, 1fr 50px) 20px;</blockquote>
+
+```css
+grid-template-columns: repeat(2, 1fr 50px) 20px;
+```
+
 This translates to:
-<blockquote>grid-template-columns: 1fr 50px 1fr 50px 20px;</blockquote>
+
+```css
+grid-template-columns: 1fr 50px 1fr 50px 20px;
+```
+
 <strong>Note:</strong> The <code>1fr 50px</code> is repeated twice followed by 20px.
 </section>
 

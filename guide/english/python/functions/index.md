@@ -17,7 +17,7 @@ In Python, a function definition has the following features:
 
 1. The keyword `def`
 2. A function name
-3. Paranthesis'()', and within paranthesis input parameters,although the input parameters are optional
+3. Parentheses '()', and within paranthesis input parameters,although the input parameters are optional
 4. A colon ':'
 5. Some block of code to execute (that must be indented relative to the definition statement)
 6. A return statement (optional)
@@ -51,11 +51,11 @@ print(addValues(4, 7))  # prints 11 to the console
   
 ```
 
-Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
+Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code more readable, easily debugged, and error-proof. 
 
 Functions in Python are created using the `def` keyword, followed by a function name and function parameters inside parentheses.
 
-A function always returns a value. The `return` keyword is used by the function to return a value, if you don't want to return any value, the default value `None` will returned. 
+A function always returns a value,The `return` keyword is used by the function to return a value, if you don't want to return any value, the default value `None` will be returned. 
 
 The function name is used to call the function, passing the needed parameters inside parentheses.
 
@@ -75,7 +75,7 @@ def sum(a, b):
   print("This print action will never be reached")
 ```
 
-You can define default values for the parameters, that way Python will interpretate that the value of that parameter is the default one if none is given.
+You can define default values for the parameters so that Python will interpret those values as the default values if none are given.
 
 ```python
 def sum(a, b=3):
@@ -85,7 +85,7 @@ result = sum(1)
 # result = 4
 ```
 
-You can pass the parameters in the order you want, using the name of the parameter.
+You can pass the parameters in a desired order, using the name of the parameter.
 
 ```python
 result = sum(b=2, a=2)
@@ -101,7 +101,7 @@ result2 = sum(b=2, 3)
 #Will raise SyntaxError
 ```
 
-Functions are also Objects, so you can assign them to a variable, and use that variable like a function.
+Functions are also objects, so you can assign them to a variable, and use that variable like a function.
 
 ```python
 s = sum
@@ -121,7 +121,7 @@ result = s(1, 2)
   print(multiply('a', 'b'))  # TypeError: Python can't multiply two strings
   ```
 
-- The block of code that the function will run includes all statements indented within the function.
+- The block of code that the function will run includes all statements indented within said function.
 
   ```python
   def myFunc():
@@ -142,9 +142,8 @@ result = s(1, 2)
   print(x)  # error - x is not defined
   print(double(4))  # prints 8
   ```
-  
-- Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
 
+- Python interprets the function block only when the function is called and not when the function is defined. So even if the function definition block contains some sort of error, the python interpreter will only reveal this when the function is called. 
 
 ### Recursion
 Using functions in our programs can help to explicitly handle the execution of specific type of algorithms.

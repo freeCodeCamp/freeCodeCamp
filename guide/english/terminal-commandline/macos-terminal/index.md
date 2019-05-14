@@ -5,9 +5,9 @@ title: Mac OS Terminal
 
 # Using the Terminal in Mac OS
 
-Most of the time users interact through a Graphical User Interface to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. But, you can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
+Most of the time users interact through a Graphical User Interface (GUI) to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. You can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
 
-### Opening the Terminal and Navigating Directories
+## Opening the Terminal and Navigating Directories
 
 Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. It should have the computer's name (ABC's Macbook), followed by the User name (ABC), and then a '$'. If you are in the root directory, the last character will be a '#'.
 
@@ -33,19 +33,28 @@ cd <directory_name>
 
 `cd` stands for "Change Directory". ```cd``` is then followed by the directory's name you wish to switch into.
 
+Typing only `cd` will move to the home directory works same as `cd ~`
+
 Here is a list of common commands:
 
 Command | Usage
 ------------ | -------------
-`pwd` | Print Working Directory (Where Am I? )
-`ls` | List contents of current directory
-`mkdir <directory_name>` | Create a new directory
-`rmdir` | Remove directory
-`touch <file_name>` | Create a new file
-`cp <file_to_be_copied> <name_for_copied_file>` | Copy a file 
-`mv` | Rename a file/directory
-`rm <filename>` | Remove a file 
-`rm -rf <directory_name>` | Forcibly remove a directory 
+pwd | Print Working Directory (Where Am I? )
+ls | List contents of current directory
+ls -a | List contents of current directory including hidden files
+mkdir | Create a new directory
+touch | Create a new file
+cp| Copy a file 
+rm | Remove a file 
+cat | concatenate and print files
+ps | list all running processes
+find | find files and directories
+rm -rf | Remove a directory recursively
+sudo | Run command with the security privileges of the superuser
+clear | Clear the screen
+nano [file] | Opens the file using nano editor
+vim [file] | Opens the file using vim editor
+reset | resets the terminal display
 
 ### Usage Examples
 
@@ -148,8 +157,20 @@ export PS1="\h \[\033[34m\]\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 `source ~/.bashrc`
 
+- [Change computer hostname](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Setting-the-Mac-hostname-or-computer-name-from-the-terminal.html)
+- [Show git branch in terminal command prompt](https://www.shellhacks.com/show-git-branch-terminal-command-prompt/)
+- [Bash prompt escape sequences](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html)
+- [More bash configurations](https://gist.github.com/justintv/168835)
 
-## iTerm2
+#### Search your command history as you type
+
+```control+R```
+
+Hold down `control` and press `R` to invoke "reverse-i-search." Type a letter - like s - and you'll get a match for the most recent command in your history that starts with s. Keep typing to narrow your match. When you hit the jackpot, press Enter to execute the suggested command.
+
+## Alternative Terminals
+
+### iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
 
@@ -167,7 +188,7 @@ Just download iTerm2 from the official [website](https://www.iterm2.com/download
 
 This [guide](https://medium.com/the-code-review/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c) shows you how you can improve terminal productivity, and have a bit more customization options.
 
-## Hyper
+### Hyper
 
 Another alternative is Hyper, an Electron-based terminal
 
@@ -176,7 +197,6 @@ Another alternative is Hyper, an Electron-based terminal
 - [Download](https://hyper.is/#installation)
 - [Documentation](https://hyper.is/)
 - [Awesome Hyper](https://github.com/bnb/awesome-hyper)
-- [Change computer hostname](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Setting-the-Mac-hostname-or-computer-name-from-the-terminal.html)
-- [Show git branch in terminal command prompt](https://www.shellhacks.com/show-git-branch-terminal-command-prompt/)
-- [Bash prompt escape sequences](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html)
-- [More bash configurations](https://gist.github.com/justintv/168835)
+
+## Terminal Fun
+[Bandit Wargame](http://overthewire.org/wargames/bandit/) can help you learn to use the terminal while also sharpening your white-hat hacking skills. It's a great way to get familiar with the Command Line Interface (CLI)  and continually hone your skills.
