@@ -10,7 +10,13 @@ videoUrl: 'https://scrimba.com/c/cakyZfL'
 One cool thing about <code>id</code> attributes is that, like classes, you can style them using CSS.
 However, an <code>id</code> is not reusable and should only be applied to one element. An <code>id</code> also has a higher specificity (importance) than a class so if both are applied to the same element and have conflicting styles, the styles of the <code>id</code> will be applied.
 Here's an example of how you can take your element with the <code>id</code> attribute of <code>cat-photo-element</code> and give it the background color of green. In your <code>style</code> element:
-<blockquote>#cat-photo-element {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>
+
+```css
+#cat-photo-element {
+  background-color: green;
+}
+```
+
 Note that inside your <code>style</code> element, you always reference classes by putting a <code>.</code> in front of their names. You always reference ids by putting a <code>#</code> in front of their names.
 </section>
 

@@ -11,7 +11,13 @@ videoUrl: 'https://scrimba.com/c/cPp79S3'
 Determining whether content can stand alone is usually a judgement call, but there are a couple simple tests you can use. Ask yourself if you removed all surrounding context, would that content still make sense? Similarly for text, would the content hold up if it were in an RSS feed?
 Remember that folks using assistive technologies rely on organized, semantically meaningful markup to better understand your work.
 <strong>Note about <code>section</code> and <code>div</code></strong><br>The <code>section</code> element is also new with HTML5, and has a slightly different semantic meaning than <code>article</code>. An <code>article</code> is for standalone content, and a <code>section</code> is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the <code>article</code>, then each chapter is a <code>section</code>. When there's no relationship between groups of content, then use a <code>div</code>.
-<blockquote>&lt;div&gt; - groups content<br>&lt;section&gt; - groups related content<br>&lt;article&gt; - groups independent, self-contained content<br></blockquote>
+
+```html
+<div> - groups content
+<section> - groups related content
+<article> - groups independent, self-contained content
+```
+
 </section>
 
 ## Instructions

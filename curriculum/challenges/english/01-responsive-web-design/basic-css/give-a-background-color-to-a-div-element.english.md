@@ -9,7 +9,13 @@ videoUrl: 'https://scrimba.com/c/cdRKMCk'
 <section id='description'>
 You can set an element's background color with the <code>background-color</code> property.
 For example, if you wanted an element's background color to be <code>green</code>, you'd put this within your <code>style</code> element:
-<blockquote>.green-background {<br>&nbsp;&nbsp;background-color: green;<br>}</blockquote>
+
+```css
+.green-background {
+  background-color: green;
+}
+```
+
 </section>
 
 ## Instructions
