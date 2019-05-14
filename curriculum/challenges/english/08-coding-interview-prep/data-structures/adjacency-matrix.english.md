@@ -8,15 +8,7 @@ challengeType: 1
 <section id='description'>
 Another way to represent a graph is to put it in an <dfn>adjacency matrix</dfn>.
 An <dfn>adjacency matrix</dfn> is a two-dimensional (2D) array where each nested array has the same number of elements as the outer array. In other words, it is a matrix or grid of numbers, where the numbers represent the edges. Zeros mean there is no edge or relationship.
-
-```js
-    1 2 3
-    -----
-1 | 0 1 1
-2 | 1 0 0
-3 | 1 0 0
-```
-
+<blockquote>    1 2 3<br>   ------<br>1 | 0 1 1<br>2 | 1 0 0<br>3 | 1 0 0</blockquote>
 Above is a very simple, undirected graph where you have three nodes, where the first node is connected to the second and third node. <strong>Note</strong>: The numbers to the top and left of the matrix are just labels for the nodes.
 Below is a JavaScript implementation of the same thing.
 
