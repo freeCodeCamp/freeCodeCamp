@@ -164,40 +164,30 @@ function LinkedList() {
 
     length--;
   };
-
   this.removeAt = function (index) {
     var currentNode = head;
     var previous = head;
     var count = 0;
-
     if (index >= length || index < 0 || length == 0) {
       return null;
     }
-
     if (index === 0) {
       previous = head;
       head = currentNode.next;
       length--;
       return head.element;
     } else {
-
       while (count < index - 1) {
         previous = currentNode;
         currentNode = currentNode.next;
         count++;
       }
-
       var removed = previous.next;
       previous.next = currentNode.next;
       length--;
-
       return removed.element;
     }
-
-
   };
-
-
 }
 
 
