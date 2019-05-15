@@ -26,7 +26,7 @@ export default function prodErrorHandler() {
 
     const redirectTo = handled.redirectTo || `${homeLocation}/`;
     const message =
-      handled.message || 'Oops! Something went wrong. Please try again later';
+      handled.message || 'Oops! Something went wrong. Please try again';
 
     if (isDev) {
       console.error(err);

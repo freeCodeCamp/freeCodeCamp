@@ -202,10 +202,15 @@ function createPostReportUserProfile(app) {
     log(username);
     log(report);
 
-    if (!username || !report || report === '') {
+    if (!username) {
       return res.json({
         type: 'danger',
-        message: 'Oops, something is not right please re-check your submission.'
+        message: 'Please enter a valid username.'
+      });
+    } else if (!report || report === '') {
+      return res.json({
+        type: 'danger',
+        message: 'Your report cannot be empty. Please add information.'
       });
     }
     return Email.send$(
