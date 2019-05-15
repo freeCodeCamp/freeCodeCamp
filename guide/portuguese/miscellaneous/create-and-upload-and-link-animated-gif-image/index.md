@@ -8,4 +8,4 @@ localeTitle: Criar e Carregar e Vincular Imagem Gif Animada
     *   Cortar, redimensionar e otimizar quantas vezes ou conforme necessário.
 4.  Faça o download do GIF animado.
 5.  Envie a imagem para [imgur.com](http://imgur.com) .
-6.  Link image usando `![image title](https://i.imgur.com/RqgGcf5.gif)` .
+6.  Link image usando `![image title](https://cdn-media-1.freecodecamp.org/imgr/RqgGcf5.gif)` .
