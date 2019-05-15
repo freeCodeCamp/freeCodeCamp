@@ -29,7 +29,7 @@ Then:
 
 The absolute value of the determinant is equal to the area of the parallelogram. 
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png" width="300"> <a href="https://i.stack.imgur.com/gCaz3.png">Here</a> is an interesting visual proof of this property.
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png" width="300"> <a href="https://cdn-media-1.freecodecamp.org/imgr/gCaz3.png">Here</a> is an interesting visual proof of this property.
 
 Note: If the determinant equals zero, there are no solutions (intersections) to the system (aka the lines are parallel). 
 
