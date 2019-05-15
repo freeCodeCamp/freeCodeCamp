@@ -7,27 +7,27 @@ Suppose you are given a list or an array of items. You are searching for a parti
 
 Find the number 13 in the given list.
 
-![Linear Search 1](https://i.imgur.com/ThkzYEV.jpg)
+![Linear Search 1](https://cdn-media-1.freecodecamp.org/imgr/ThkzYEV.jpg)
 
 You just look at the list and there it is!
 
-![Linear Search 2](https://i.imgur.com/K7HfCly.jpg)
+![Linear Search 2](https://cdn-media-1.freecodecamp.org/imgr/K7HfCly.jpg)
 
 Now, how do you tell a computer to find it.
 
 A computer cannot look at more than the value at a given instant of time. So it takes one item from the array and checks if it is the same as what you are looking for.
 
-![Linear Search 3](https://i.imgur.com/ZOSxeZD.jpg)
+![Linear Search 3](https://cdn-media-1.freecodecamp.org/imgr/ZOSxeZD.jpg)
 
 The first item did not match. So move onto the next one.
 
-![Linear Search 4](https://i.imgur.com/SwKsPxD.jpg)
+![Linear Search 4](https://cdn-media-1.freecodecamp.org/imgr/SwKsPxD.jpg)
 
 And so on...
 
 This is done till a match is found or until all the items have been checked.
 
-![Linear Search 5](https://i.imgur.com/3AaViff.jpg)
+![Linear Search 5](https://cdn-media-1.freecodecamp.org/imgr/3AaViff.jpg)
 
 In this algorithm, you can stop when the item is found and then there is no need to look further.
 

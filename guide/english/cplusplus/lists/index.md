@@ -10,7 +10,7 @@ List elements point to its next element so all elements are ordered in sequence 
 How? You may ask. They do this not by indexing but using a special tool called iterators. Iterators are like special pointers
 whose job is to maintain the order of the list elements kind of like the link between two train cars. Here is a nice visual 
 of how Lists are organized compared to Vectors and Arrays. 
-![img](https://imgur.com/SiU8uTe.png)
+![img](https://cdn-media-1.freecodecamp.org/imgr/SiU8uTe.png)
 
 Traversal in a list is slow as compared to Vectors and Arrays, but once a position has been found, insertion and deletion are quick.
 

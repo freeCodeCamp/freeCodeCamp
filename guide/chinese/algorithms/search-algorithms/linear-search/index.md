@@ -8,27 +8,27 @@ localeTitle: 线性搜索
 
 找到给定列表中的数字13。
 
-![线性搜索1](https://i.imgur.com/ThkzYEV.jpg)
+![线性搜索1](https://cdn-media-1.freecodecamp.org/imgr/ThkzYEV.jpg)
 
 你只要查看清单就可以了！
 
-![线性搜索2](https://i.imgur.com/K7HfCly.jpg)
+![线性搜索2](https://cdn-media-1.freecodecamp.org/imgr/K7HfCly.jpg)
 
 现在，您如何告诉计算机找到它。
 
 计算机在给定的时刻不能看到超过该值的值。因此它从数组中获取一个项目并检查它是否与您要查找的内容相同。
 
-![线性搜索3](https://i.imgur.com/ZOSxeZD.jpg)
+![线性搜索3](https://cdn-media-1.freecodecamp.org/imgr/ZOSxeZD.jpg)
 
 第一项不匹配。所以转到下一个。
 
-![线性搜索4](https://i.imgur.com/SwKsPxD.jpg)
+![线性搜索4](https://cdn-media-1.freecodecamp.org/imgr/SwKsPxD.jpg)
 
 等等…
 
 这样做直到找到匹配或直到检查完所有项目。
 
-![线性搜索5](https://i.imgur.com/3AaViff.jpg)
+![线性搜索5](https://cdn-media-1.freecodecamp.org/imgr/3AaViff.jpg)
 
 在此算法中，您可以在找到项目时停止，然后无需进一步查看。
 

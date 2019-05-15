@@ -42,7 +42,7 @@ Let's say you have a C++ file called `helloWorld.cpp` ...
 #### Using and IDE like CodeBlocks
 
 It is as simple as clicking the build and run buttons, they will create a file in the project folder.
-![img](https://i.imgur.com/FwZuFGy.png)
+![img](https://cdn-media-1.freecodecamp.org/imgr/FwZuFGy.png)
 
 #### Using Command Prompt
 1. Open a Developer Command Prompt - For this step, you will need to have Microsoft Visual Studio or some other IDE that 

@@ -56,27 +56,27 @@ This is the binary search algorithm. It is elegant and efficient but for it to w
 
 Find 5 in the given array of numbers using binary search.
 
-![Binary Search 1](https://i.imgur.com/QAuugOL.jpg)
+![Binary Search 1](https://cdn-media-1.freecodecamp.org/imgr/QAuugOL.jpg)
 
 Mark low, high and mid positions in the array.
 
-![Binary Search 2](https://i.imgur.com/1710fEx.jpg)
+![Binary Search 2](https://cdn-media-1.freecodecamp.org/imgr/1710fEx.jpg)
 
 Compare the item you are looking for with the middle element.
 
-![Binary Search 3](https://i.imgur.com/jr4icze.jpg)
+![Binary Search 3](https://cdn-media-1.freecodecamp.org/imgr/jr4icze.jpg)
 
 Throw away the left half and look in the right half.
 
-![Binary Search 4](https://i.imgur.com/W57lGsk.jpg)
+![Binary Search 4](https://cdn-media-1.freecodecamp.org/imgr/W57lGsk.jpg)
 
 Again compare with the middle element.
 
-![Binary Search 5](https://i.imgur.com/5Twm8NE.jpg)
+![Binary Search 5](https://cdn-media-1.freecodecamp.org/imgr/5Twm8NE.jpg)
 
 Now, move to the left half.
 
-![Binary Search 6](https://i.imgur.com/01xetay.jpg)
+![Binary Search 6](https://cdn-media-1.freecodecamp.org/imgr/01xetay.jpg)
 
 The middle element is the item we were looking for!
 
