@@ -14,7 +14,7 @@ localeTitle: Linux命令行的剖析
 
 要开始使用打开终端（对于Ubuntu只需按住Ctrl + Alt + T），你会受到以这种格式排列的一系列字符的欢迎;
 
-```linux
+```shell
 user_name@machine_name:~$ 
 ```
 

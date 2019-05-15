@@ -123,7 +123,7 @@ public class bubble-sort {
 
 ### Рекурсивная реализация Bubble Sort.
 
-```c++
+```cpp
 void bubblesort(int arr[], int n) 
  { 
     if(n==1)    //Исходный случай 

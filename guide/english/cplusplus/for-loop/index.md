@@ -15,7 +15,7 @@ For loop is an entry controlled loop unlike do-while loop.
 
 ## Syntax
 
-```c++
+```cpp
 for (init; condition; increment ) {
    update_statement(s);
 }
@@ -23,7 +23,7 @@ for (init; condition; increment ) {
 
 The increment can also placed inside the for loop i.e. in its body- 
 
-```c++
+```cpp
 for ( init; condition;) {
    update_statement(s);
    increment;
@@ -32,7 +32,7 @@ for ( init; condition;) {
 
 It is also allowed to ignore the init variables if and only if they are declared beforehand. For example :
 
-```c++
+```cpp
 int a = 1;
 for (; a <= 10 ;) {
     cout << a << '\n';
@@ -58,7 +58,7 @@ The update statement is used to alter the loop variable by using simple operatio
 You will often see an increment operation as the update statement (e.g. i++, count++). This is often seen as one of the distinguishing features and possible name sources for the C++ language.
 
 ## Implementation
-```c++
+```cpp
 #include <iostream>
 using std::cout; // Here we use the scope resolution operator to define the scope of the standard functions as std
 using std::endl;
@@ -74,7 +74,7 @@ int main () {
 ```
 
 Output:
-```output
+```shell
 value of a: 10
 value of a: 11
 value of a: 12
@@ -91,7 +91,7 @@ value of a: 19
 The body of the for loop need not be enclosed in braces if the loop iterates over only one statement.
 
 ### Example
-```c++
+```cpp
 #include<iostream.h>
 using std::cout;
    
@@ -107,7 +107,7 @@ int main () {
 This would generate the same output as the previous program.
 
 Output:
-```output
+```shell
 value of a: 10
 value of a: 11
 value of a: 12
@@ -128,13 +128,13 @@ C++ also has what we call "range-based" `for` loops which iterate through all th
 
 ### Syntax
 
-```c++
+```cpp
 for ( element: container ) {
    statement(s);
 }
 ```
 
-```c++
+```cpp
 int[5] array = { 1, 2, 3, 4, 5 }
 for ( int i: array ) {
    cout << i << endl;
@@ -142,7 +142,7 @@ for ( int i: array ) {
 ```
 
 Output:
-```output
+```shell
 1
 2
 3
@@ -154,7 +154,7 @@ Output:
 Iterator based for loops are also possible in C++ and functionality for them exists in many of the data structures found within the STL. Unlike for-each loops, iterator based loops allow for mutating the contents of the container during iteration. This is rather useful when one needs to remove or insert values while looping over data.
 
 ### Syntax
-```c++
+```cpp
 // Create a vector
 std::vector<int> vec;
 
@@ -176,7 +176,7 @@ for(std::vector<string>::iterator it = vec.begin(); it != vec.end(); it++) {
 ### Use as infinite loops
 
 This C-style for-loop is commonly the source of an infinite loop since the fundamental steps of iteration are completely in the control of the programmer. In fact, when infinite loops are intended, this type of for-loop can be used (with empty expressions), such as:
-```c++
+```cpp
 for (;;) {
    //loop body
 }
