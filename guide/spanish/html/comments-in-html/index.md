@@ -24,7 +24,7 @@ Los comentarios comienzan con `<!--` y finalizan con `-->` , y pueden abarcar va
  <html> 
     <body> 
         <h1>FreeCodeCamp web</h1> 
-        <!-- Deja espacio entre <h1> y <p> para mejor entender el codigo.--> 
+        <!-- Deja espacio entre <h1> y <p> para entender mejor el codigo. --> 
         <p>FreeCodeCamp is an open-source project that needs your help</p> 
             <!-- For readability of code use proper indentation --> 
     </body> 
