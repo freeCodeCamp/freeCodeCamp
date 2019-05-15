@@ -30,7 +30,7 @@ This is an array which contains one object inside. The object has various pieces
 Objects hold data in a property, which has a key-value format. In the example above, <code>"artist": "Daft Punk"</code> is a property that has a key of <code>"artist"</code> and a value of <code>"Daft Punk"</code>.
 <a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.
 
-```js
+```json
 {
   "artist": "Daft Punk",
   "title": "Homework",
