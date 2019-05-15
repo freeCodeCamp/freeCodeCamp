@@ -9,10 +9,16 @@ challengeType: 0
 When a form gets submitted, the data is sent to the server and includes entries for the options selected. Inputs of type <code>radio</code> and <code>checkbox</code> report their values from the <code>value</code> attribute.
 
 For example:
-<blockquote>
-&#60;label for="indoor"&#62; <br>&nbsp;&nbsp;&#60;input id="indoor" value="indoor" type="radio" name="indoor-outdoor"&#62;Indoor <br>&#60;/label&#62;<br>
-&#60;label for="outdoor"&#62; <br>&nbsp;&nbsp;&#60;input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor"&#62;Outdoor <br>&#60;/label&#62;
-</blockquote>
+
+```html
+<label for="indoor"> 
+  <input id="indoor" value="indoor" type="radio" name="indoor-outdoor">Indoor 
+</label>
+<label for="outdoor"> 
+  <input id="outdoor" value="outdoor" type="radio" name="indoor-outdoor">Outdoor 
+</label>
+```
+
 
 Here, you have two <code>radio</code> inputs. When the user submits the form with the <code>indoor</code> option selected, the form data will include the line: <code>indoor-outdoor=indoor</code>. This is from the <code>name</code> and <code>value</code> attributes of the "indoor" input.
 

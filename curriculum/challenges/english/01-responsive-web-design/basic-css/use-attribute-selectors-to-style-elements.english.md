@@ -10,7 +10,13 @@ videoUrl: 'https://scrimba.com/c/cnpymfJ'
 You have been given <code>id</code> or <code>class</code> attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.
 Let's bring out CatPhotoApp again to practice using CSS Selectors.
 For this challenge, you will use the <code>[attr=value]</code> attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute <code>type</code> and a corresponding value of <code>radio</code>:
-<blockquote>[type='radio'] {<br>&nbsp;&nbsp;margin: 20px 0px 20px 0px;<br>}</blockquote>
+
+```css
+[type='radio'] {
+  margin: 20px 0px 20px 0px;
+}
+```
+
 </section>
 
 ## Instructions

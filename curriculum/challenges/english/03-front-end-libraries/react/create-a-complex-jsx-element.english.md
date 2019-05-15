@@ -13,9 +13,23 @@ This one parent element would wrap all of the other levels of nested elements.
 For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.
 Here's an example:
 <b>Valid JSX:</b>
-<blockquote>&lt;div&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph Three&lt;/p&gt;<br>&lt;/div&gt;</blockquote>
+
+```jsx
+<div>
+  <p>Paragraph One</p>
+  <p>Paragraph Two</p>
+  <p>Paragraph Three</p>
+</div>
+```
+
 <b>Invalid JSX:</b>
-<blockquote>&lt;p&gt;Paragraph One&lt;/p&gt;<br>&lt;p&gt;Paragraph Two&lt;/p&gt;<br>&lt;p&gt;Paragraph Three&lt;/p&gt;<br></blockquote>
+
+```jsx
+<p>Paragraph One</p>
+<p>Paragraph Two</p>
+<p>Paragraph Three</p>
+```
+
 </section>
 
 ## Instructions
