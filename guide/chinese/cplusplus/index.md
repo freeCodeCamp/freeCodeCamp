@@ -1,7 +1,8 @@
 ---
 title: C++
 localeTitle: C ++
----# 你好，世界！ - 您的第一个C ++程序
+---
+# 你好，世界！ - 您的第一个C ++程序
 
 ## 什么是C ++？
 
@@ -78,8 +79,8 @@ int main()
 *   不要忘记告诉计算机这是main（）函数的结束。要执行此操作，请添加结束大括号“}”。如果不包含**}，**则在程序执行前会遇到错误。
 
 ### 代码看起来应该是这样的：
-
-![图](https://i.imgur.com/d1liGwI.png)
+https://cdn-media-1.freecodecamp.org/imgr/
+![图](https://cdn-media-1.freecodecamp.org/imgr/d1liGwI.png)
 
 程序员使用Hello World程序（就像这个程序）作为使用新编程语言的仪式。这是好运的象征。  
 _您已经完成了第一个C ++程序的编码，并且已经理解了您编写/键入的大部分代码。恭喜！_
