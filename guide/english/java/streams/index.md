@@ -88,5 +88,22 @@ List<String> result2 = Arrays.asList("de", "abc", "f", "abc")
 // result: abc de
 ```
 
+```java
+// Examples of extracting properties from a list of objects
+// Let's say we have a List<Person> personList
+// Each Person object has a property, age of type Integer with a getter, getAge
+// To get a list of age from the List<Person> personList
+// In a typical foor loop:
+
+List<Integer> ageList = new ArrayList<>();
+for(Person person: personList){         
+    ageList.add(person.getAge());
+}
+
+//Using streams to achieve the same result as above
+List<Integer> ageList = personList.stream().map(Person::getAge).collect(Collectors.toList());
+
+```
+
 ### Sources
 1. [Processing Data with Java SE 8 Streams, Part 1](http://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html)
