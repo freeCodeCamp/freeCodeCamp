@@ -3,7 +3,7 @@ title: Streams
 ---
 # Streams
 
-In Java 8 Streams got added as a new feature the Java toolbox. Streams allow you to quickly and cleanly process Collections.  
+In Java 8 Streams were added as a new feature the Java toolbox. Streams allow you to quickly and cleanly process Collections. Many functions of the Stream API allow for the use of Lambda expressions, which makes working with Streams an even more fluent process.
 
 Please read the chapter about lambdas and functional programming before continuing.
 
@@ -27,7 +27,7 @@ These operations convert the Stream Objects somehow.
 
 ### Terminal Operations
 These operations receive the Stream Objects and end the Stream.
-- `Stream.collect(Collector<In,?,Out> collector)`: collect all Objects in Stream into Object
+- `Stream.collect(Collector<In,?,Out> collector)`: collect all Objects in Stream with the specified Function. (for example java.util.stream.Collectors.toList) 
 - `Stream.forEach(Consumer<In> consumer)`: consume all Objects in Stream using the consumer function
 - `Stream.count()`: count all Objects in Stream
 - `Stream.findFirst()`: return the first Object of the Stream and stop
