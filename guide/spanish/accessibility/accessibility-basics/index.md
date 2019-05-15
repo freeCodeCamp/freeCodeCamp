@@ -2,15 +2,15 @@
 title: Accessibility Basics
 localeTitle: Conceptos básicos de accesibilidad
 ---
-> "'Las Artes Oscuras son muchas, variadas, siempre cambiantes y eternas. Pelear contra ellas es como luchar contra un monstruo de muchas cabezas, que, cada vez que se corta un cuello, brota una cabeza aún más feroz e inteligente que antes. Estás luchando contra lo que no está fijo, mutando, indestructible.  ".
+> "Las Artes Oscuras son muchas, variadas, siempre cambiantes y eternas. Luchar contra ellas es como luchar contra un monstruo con muchas cabezas, que, cada vez que se corta un cuello, brota una cabeza aún más feroz e inteligente que antes. Estás luchando contra algo que es fijo, mutante, indestructible ".
 > 
 > \--Profesor Severus Snape, Serie de libros de Harry Potter 
 
 El rol de la accesibilidad en el desarrollo es esencialmente entender la perspectiva y las necesidades del usuario, y saber que la web y las aplicaciones son una solución para las personas con discapacidades.
 
-Actualmente se inventan cada vez nuevas tecnologías para facilitar la vida de los desarrolladores, así como de los usuarios. Hasta que punto esto es bueno, es un debate para otro momento, por ahora basta con decir que la caja de herramientas de un desarrollador, especialmente un desarrollador web, es tan cambiante como las llamadas "artes oscuras" según nuestro amigo, Snape.
+En esta época, se inventan cada vez más tecnologías para facilitar la vida de los desarrolladores, así como de los usuarios. Hasta qué punto esto es bueno, es un debate para otro momento, por ahora basta con decir que la caja de herramientas de un desarrollador, especialmente un desarrollador web, es tan cambiante como las llamadas "artes oscuras" de las que habla nuestro amigo Snape.
 
-Una herramienta en esa caja de herramientas debe ser la accesibilidad. Es una herramienta que, idealmente, debería usarse como uno de los primeros pasos para escribir cualquier forma de contenido web. Sin embargo, esta herramienta a menudo no está presente en la caja de herramientas de la mayoría de los desarrolladores. Esto podría deberse a un simple caso de no saber que existe o incluso, en casos extremos, nisiquiera preocuparse por ello.
+Una de las herramientas de esa caja debe ser la accesibilidad. Es una herramienta que, idealmente, debería usarse en uno de los primeros pasos para escribir cualquier forma de contenido web. Sin embargo, esta herramienta a menudo no está tan bien presentada en la caja de herramientas de la mayoría de los desarrolladores. Esto podría deberse a un simple caso de no saber que existe incluso en casos extremos, como no preocuparse por ello.
 
 En mi vida como usuario, y más tarde como desarrollador, que se beneficia de la accesibilidad en cualquier forma de contenido, he visto ambos extremos de ese espectro. Si estás leyendo este artículo, supongo que estás en una de las siguientes categorías:
 
