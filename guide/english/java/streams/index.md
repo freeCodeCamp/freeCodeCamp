@@ -30,9 +30,12 @@ These operations receive the Stream Objects and end the Stream.
 - `Stream.collect(Collector<In,?,Out> collector)`: collect all Objects in Stream with the specified Function. (for example java.util.stream.Collectors.toList) 
 - `Stream.forEach(Consumer<In> consumer)`: consume all Objects in Stream using the consumer function
 - `Stream.count()`: count all Objects in Stream
+- `Stream.min(Comparator<In> comparator)`: finds the smallest element with the given comparator
+- `Stream.max(Comparator<In> comparator)`: finds the biggest element with the given comparator
 - `Stream.findFirst()`: return the first Object of the Stream and stop
-- `Stream.anyMatch(Predicate<In> predicate)`: return true if any Object in the Stream tests true for the Predicate
-- `Stream.allMatch(Predicate<In> predicate)`: return true if all Object in the Stream test true for the Predicate
+- `Stream.anyMatch(Predicate<In> predicate)`: returns true if any Object in the Stream tests true for the Predicate
+- `Stream.allMatch(Predicate<In> predicate)`: returns true if all Object in the Stream test true for the Predicate
+- `Stream.noneMatch(Predicate<In> predicate)`: returns true if none of the Objects in the Stream test true for the Predicate
 
 ## Examples
 
@@ -102,7 +105,23 @@ for(Person person: personList){
 
 //Using streams to achieve the same result as above
 List<Integer> ageList = personList.stream().map(Person::getAge).collect(Collectors.toList());
+```
 
+You can also create Parallel streams if you have a function that takes a long time to complete.
+```java
+List<Integer> result3 = Arrays.asList(14, 31, 76)
+        .parallelStream()
+        .map(num -> veryLongFunc(num))
+        .collect(Collectors.toList());
+```
+
+If you already have a stream and you want to make it parallel you can use `.parallel()`.
+```java
+Stream inputNumbers = Stream.of(13, 12, 87, 21);
+List<Integer> result4 = inputNumbers
+        .parallel()
+        .map(num -> veryLongFunc(num))
+        .collect(Collectors.toList());
 ```
 
 ### Sources
