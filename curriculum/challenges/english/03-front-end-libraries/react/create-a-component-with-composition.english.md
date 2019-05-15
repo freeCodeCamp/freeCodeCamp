@@ -9,7 +9,17 @@ isRequired: false
 <section id='description'>
 Now we will look at how we can compose multiple React components together. Imagine you are building an App and have created three components, a <code>Navbar</code>, <code>Dashboard</code>, and <code>Footer</code>.
 To compose these components together, you could create an <code>App</code> <i>parent</i> component which renders each of these three components as <i>children</i>. To render a component as a child in a React component, you include the component name written as a custom HTML tag in the JSX. For example, in the <code>render</code> method you could write:
-<blockquote>return (<br> &lt;App&gt;<br>&nbsp;&nbsp;&lt;Navbar /&gt;<br>&nbsp;&nbsp;&lt;Dashboard /&gt;<br>&nbsp;&nbsp;&lt;Footer /&gt;<br> &lt;/App&gt;<br>)</blockquote>
+
+```jsx
+return (
+ <App>
+  <Navbar />
+  <Dashboard />
+  <Footer />
+ </App>
+)
+```
+
 When React encounters a custom HTML tag that references another component (a component name wrapped in <code>&lt; /&gt;</code> like in this example), it renders the markup for that component in the location of the tag. This should illustrate the parent/child relationship between the <code>App</code> component and the <code>Navbar</code>, <code>Dashboard</code>, and <code>Footer</code>.
 </section>
 

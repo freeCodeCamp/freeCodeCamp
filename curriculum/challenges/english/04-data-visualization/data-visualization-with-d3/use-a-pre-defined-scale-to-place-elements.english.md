@@ -8,7 +8,12 @@ challengeType: 6
 <section id='description'>
 With the scales set up, it's time to map the scatter plot again. The scales are like processing functions that turn the x and y raw data into values that fit and render correctly on the SVG canvas. They keep the data within the screen's plotting area.
 You set the coordinate attribute values for an SVG shape with the scaling function. This includes <code>x</code> and <code>y</code> attributes for <code>rect</code> or <code>text</code> elements, or <code>cx</code> and <code>cy</code> for <code>circles</code>. Here's an example:
-<blockquote>shape<br>&nbsp;&nbsp;.attr("x", (d) => xScale(d[0]))</blockquote>
+
+```js
+shape
+  .attr("x", (d) => xScale(d[0]))
+```
+
 Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the <code>text()</code> method for a tooltip or label.
 </section>
 

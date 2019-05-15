@@ -13,11 +13,15 @@ This exercise is similar to the preceding. Look at it for the details.
 
 ## Instructions
 <section id='instructions'>
-Send <br>
-<blockquote>
-{<br>
-  &nbsp;surname: 'da Verrazzano'<br>
-}</blockquote>. Replace <code>assert.fail()</code> and make the test pass.
+Send 
+
+```json
+{
+  "surname": "da Verrazzano"
+}
+```
+
+Replace <code>assert.fail()</code> and make the test pass.
 Check for 1) <code>status</code>, 2) <code>type</code>, 3) <code>body.name</code>, 4) <code>body.surname</code>.
 Follow the assertion order above, We rely on it.
 </section>

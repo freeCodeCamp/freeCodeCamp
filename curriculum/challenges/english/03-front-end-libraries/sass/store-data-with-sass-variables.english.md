@@ -9,7 +9,18 @@ challengeType: 0
 One feature of Sass that's different than CSS is it uses variables. They are declared and set to store data, similar to JavaScript.
 In JavaScript, variables are defined using the <code>let</code> and <code>const</code> keywords. In Sass, variables start with a <code>$</code> followed by the variable name.
 Here are a couple examples:
-<blockquote>$main-fonts: Arial, sans-serif;<br>$headings-color: green;<br><br>//To use variables:<br>h1 {<br>&nbsp;&nbsp;font-family: $main-fonts;<br>&nbsp;&nbsp;color: $headings-color;<br>}</blockquote>
+
+```scss
+$main-fonts: Arial, sans-serif;
+$headings-color: green;
+
+//To use variables:
+h1 {
+  font-family: $main-fonts;
+  color: $headings-color;
+}
+```
+
 One example where variables are useful is when a number of elements need to be the same color. If that color is changed, the only place to edit the code is the variable value.
 </section>
 
