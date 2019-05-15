@@ -51,7 +51,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -61,15 +60,15 @@ let result = ohRegex.test(ohStr);
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/; // Change this line
+let result = ohRegex.test(ohStr);
 ```
+
 </section>
