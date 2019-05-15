@@ -22,15 +22,15 @@ The `display` property specifies the type of box used for an HTML element. There
 
 ```css
 .myBox {
-    display: block;
+  display: block;
 }
 
 .myContainer {
-    display: flex;
+  display: flex;
 }
 
 .inlineList ul > li {
-    display: inline;
+  display: inline;
 }
 ```
 
