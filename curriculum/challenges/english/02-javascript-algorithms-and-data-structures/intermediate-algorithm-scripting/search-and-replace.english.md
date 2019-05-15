@@ -25,16 +25,16 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 
 ```yml
 tests:
-  - text: '<code>myReplace("Let us go to the store", "store", "mall")</code> should return "Let us go to the mall".'
-    testString: 'assert.deepEqual(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall", "<code>myReplace("Let us go to the store", "store", "mall")</code> should return "Let us go to the mall".");'
-  - text: '<code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".'
-    testString: 'assert.deepEqual(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch", "<code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".");'
-  - text: '<code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".'
-    testString: 'assert.deepEqual(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error", "<code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".");'
-  - text: '<code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".'
-    testString: 'assert.deepEqual(myReplace("His name is Tom", "Tom", "john"), "His name is John", "<code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".");'
-  - text: '<code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code> should return "Let us get back to more Algorithms".'
-    testString: 'assert.deepEqual(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms", "<code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code> should return "Let us get back to more Algorithms".");'
+  - text: <code>myReplace("Let us go to the store", "store", "mall")</code> should return "Let us go to the mall".
+    testString: assert.deepEqual(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall", '<code>myReplace("Let us go to the store", "store", "mall")</code> should return "Let us go to the mall".');
+  - text: <code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".
+    testString: assert.deepEqual(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch", '<code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".');
+  - text: <code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".
+    testString: assert.deepEqual(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error", '<code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".');
+  - text: <code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".
+    testString: assert.deepEqual(myReplace("His name is Tom", "Tom", "john"), "His name is John", '<code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".');
+  - text: <code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code> should return "Let us get back to more Algorithms".
+    testString: assert.deepEqual(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms", '<code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code> should return "Let us get back to more Algorithms".');
 
 ```
 

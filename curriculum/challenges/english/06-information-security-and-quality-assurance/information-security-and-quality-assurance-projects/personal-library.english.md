@@ -28,13 +28,13 @@ tests:
     testString: ''
   - text: I can post a title to /api/books to add a book and returned will be the object with the title and a unique _id.
     testString: ''
-  - text: 'I can get /api/books to retrieve an array of all books containing title, _id, and commentcount.'
+  - text: I can get /api/books to retrieve an array of all books containing title, _id, and commentcount.
     testString: ''
-  - text: 'I can get /api/books/{id} to retrieve a single object of a book containing _title, _id, & an array of comments (empty array if no comments present).'
+  - text: I can get /api/books/{id} to retrieve a single object of a book containing _title, _id, & an array of comments (empty array if no comments present).
     testString: ''
-  - text: 'I can post a comment to /api/books/{id} to add a comment to a book and returned will be the books object similar to get /api/books/{id} including the new comment.'
+  - text: I can post a comment to /api/books/{id} to add a comment to a book and returned will be the books object similar to get /api/books/{id} including the new comment.
     testString: ''
-  - text: 'I can delete /api/books/{_id} to delete a book from the collection. Returned will be "delete successful" if successful.'
+  - text: I can delete /api/books/{_id} to delete a book from the collection. Returned will be 'delete successful' if successful.
     testString: ''
   - text: If I try to request a book that doesn't exist I will be returned 'no book exists'.
     testString: ''

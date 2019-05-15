@@ -3,7 +3,7 @@ import nanoId from 'nanoid';
 
 import { createTypes } from '../../../utils/createTypes';
 
-const ns = 'flash';
+export const ns = 'flash';
 
 const initialState = {
   messages: []

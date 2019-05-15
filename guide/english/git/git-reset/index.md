@@ -36,5 +36,9 @@ The options for `MODE` are:
 - `--merge`: resets the index and updates the files in the working tree that are different between `commit` and HEAD, but keeps those which are different between the index and working tree 
 - `--keep`: resets index entries and updates files in the working tree that are different between `commit` and HEAD. If a file that is different between `commit` and HEAD has local changes, the reset is aborted
 
+### Points to Note
+
+Be very careful when using the `--hard` option with `git reset` since it resets your commit, staging area and your working directory. If this option is not used properly then one can end up losing the code that is written.
+
 ### More Information:
 - [Git reset documentation](https://git-scm.com/docs/git-reset)

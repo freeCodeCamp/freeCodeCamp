@@ -2,7 +2,7 @@
 id: 56533eb9ac21ba0edf2244cc
 title: Accessing Nested Objects
 challengeType: 1
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/accessing-nested-objects-in-json'
+videoUrl: 'https://scrimba.com/c/cRnRnfa'
 ---
 
 ## Description
@@ -23,9 +23,9 @@ Access the <code>myStorage</code> object and assign the contents of the <code>gl
 ```yml
 tests:
   - text: <code>gloveBoxContents</code> should equal "maps"
-    testString: 'assert(gloveBoxContents === "maps", "<code>gloveBoxContents</code> should equal "maps"");'
+    testString: assert(gloveBoxContents === "maps", '<code>gloveBoxContents</code> should equal "maps"');
   - text: Use dot and bracket notation to access <code>myStorage</code>
-    testString: 'assert(/=\s*myStorage\.car\.inside\[\s*("|")glove box\1\s*\]/g.test(code), "Use dot and bracket notation to access <code>myStorage</code>");'
+    testString: assert(/=\s*myStorage\.car\.inside\[\s*("|')glove box\1\s*\]/g.test(code), 'Use dot and bracket notation to access <code>myStorage</code>');
 
 ```
 
@@ -61,7 +61,12 @@ var gloveBoxContents = undefined; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x) { 
+  if(typeof x != 'undefined') { 
+    return "gloveBoxContents = " + x;
+  }
+  return "gloveBoxContents is undefined";
+})(gloveBoxContents);
 ```
 
 </div>

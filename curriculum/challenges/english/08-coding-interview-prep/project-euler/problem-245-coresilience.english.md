@@ -30,7 +30,7 @@ Find the sum of all composite integers 1 < n ≤ 2×1011, for which C(n) is a un
 ```yml
 tests:
   - text: <code>euler245()</code> should return 288084712410001.
-    testString: 'assert.strictEqual(euler245(), 288084712410001, "<code>euler245()</code> should return 288084712410001.");'
+    testString: assert.strictEqual(euler245(), 288084712410001, '<code>euler245()</code> should return 288084712410001.');
 
 ```
 

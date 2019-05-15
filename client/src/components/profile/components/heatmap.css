@@ -1,0 +1,33 @@
+.streak-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  color: #006400;
+}
+
+.streak strong {
+  color: #333;
+}
+
+.night .streak strong {
+  color: #ccc;
+}
+.react-calendar-heatmap .colour-empty {
+  fill: #eee;
+}
+.react-calendar-heatmap .colour-scale-1 {
+  fill: #d6e685;
+}
+.react-calendar-heatmap .colour-scale-2 {
+  fill: #8cc665;
+}
+.react-calendar-heatmap .colour-scale-3 {
+  fill: #44a340;
+}
+.react-calendar-heatmap .colour-scale-4 {
+  fill: #1e6823;
+}
+.react-calendar-heatmap .colour-scale-a-lot {
+  fill: #006400;
+}

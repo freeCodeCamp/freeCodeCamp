@@ -90,7 +90,7 @@ expect(object)
   .throw /not a function/ 
 ```
 
-## Chai-JQuery
+## Chai-jQuery
 ```
     global.jQuery = ...; 
     chai.use(require('chai-jquery')); 

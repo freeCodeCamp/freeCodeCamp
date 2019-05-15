@@ -39,4 +39,4 @@ The global object also contains the properties `NaN`, `undefined` and `Infinity`
 
 # References
 
-1.  MSDN: <a href='https://msdn.microsoft.com/en-us/library/52f50e9t' target='_blank' rel='nofollow'>Global Object (Javascript)</a>
+1.  MSDN: <a href='https://msdn.microsoft.com/en-us/library/52f50e9t' target='_blank' rel='nofollow'>Global Object (JavaScript)</a>
