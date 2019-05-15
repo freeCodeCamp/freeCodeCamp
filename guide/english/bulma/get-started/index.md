@@ -10,7 +10,7 @@ There are several ways to get started with Bulma.
 * Use the <b>GitHub Repository</b> to get the latest development version.
 
 1) Using npm
-```terminal
+```shell
 $ npm install bulma
 ```
 2) Use the cdnjs CDN

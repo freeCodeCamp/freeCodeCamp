@@ -7,7 +7,7 @@ This is a bit tricky challenge but easy though.
 ## Solution
 Change `handleClick()` with proper increment statement.
 
-```react.js
+```jsx
 handleClick() {
   this.setState({
     counter: this.state.counter + 1
@@ -15,7 +15,7 @@ handleClick() {
 }
 ```
 In `render()` method use `Math.random()` as mentioned in the challenge description and write a ternary expression to pass `props` in the **Results** component.
-```react.js
+```jsx
  let expression = Math.random() > .5;
     
 {(expression == 1)? <Results fiftyFifty="You win!"/> : <Results fiftyFifty="You lose!"/> }
@@ -23,7 +23,7 @@ In `render()` method use `Math.random()` as mentioned in the challenge descripti
 ```
 
 Then render the `fiftyFifty` props in the Results component.
-```react.js
+```jsx
   <h1>
   {
     this.props.fiftyFifty

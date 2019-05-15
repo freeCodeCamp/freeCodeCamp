@@ -55,7 +55,7 @@ In Debian/Ubuntu and derivatives, the shortcut to open the CLI (Command Line Int
 
 cd (Change Directory) - The cd command is one of the commands you will use the most at the command line in Linux. It allows you to change your working directory. You use it to move around within the hierarchy of your file system.
 
-```unix
+```shell
 cd
 ```
 
@@ -63,7 +63,7 @@ Using the cd command alone will change the current directory to your user home d
 
 ls (List) - This command list the content in the current directory. It can also be used to list file information.
 
-```sh
+```shell
 ls
 ```
 Now we can see our directories in our home.
@@ -71,7 +71,7 @@ Now we can see our directories in our home.
 
 pwd (Print Working Directory) - This command lists the directory you are currently in.
 
-```sh
+```shell
 pwd
 ```
 
