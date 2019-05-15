@@ -14,7 +14,7 @@ Los comentarios comienzan con `<!--` y finalizan con `-->` , y pueden abarcar va
 
 ```html
 
-<!-- You can comment out a large number of lines like this. 
+<!-- Puedes commentar varias lineas como estas. 
  Author: xyz 
  Date: xx/xx/xxxx 
  Purpose: abc 
