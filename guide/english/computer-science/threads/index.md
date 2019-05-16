@@ -32,8 +32,8 @@ if __name__ == "__main__":
     for i in range(1, 11):
         threading.Thread(target=print_number, args=(i,)).start()
 ````
-Java Implementation
-````
+## Java Implementation
+````java
 class print_thread implements Runnable
 {
     int n=0;
