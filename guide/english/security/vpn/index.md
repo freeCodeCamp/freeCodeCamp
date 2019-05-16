@@ -3,9 +3,9 @@ title: VPNs
 ---
 ## VPNs
 
-VPN (Virtual Private Network) is a technology that lets you browse the web anonymously and safely. It creates tunnels between two hosts using various types of encryption protocols, such as SSL/TLS. Users can share data as if they were connected directly (no one else can see their connection details). VPN can be also used to bypass geo-blocking or censorship. VPN may be considered as Tor alternative.
+A VPN (Virtual Private Network) is a service that lets you access the web safely and privately by routing your connection through a  server and hiding your online actions. So how does it work?...
 
-VPN is a private network that uses a public network to create an encrypted connection for users, thus ensuring security and privacy. It was widely adopted by businesses to allow its employees to be able to connect to the company’s network remotely, and later adopted as a software product for everyday customers. 
+The software encrypts your data, even before your Internet Service Provider or the coffee shop WiFi provider sees it. The data then goes to the VPN, and from the VPN server to your online destination — anything from your bank website to a video sharing website to a search engine. The online destination sees your data as coming from the VPN server and its location, and not from your computer and your location.
 
 A common analogy of how VPN works is an island. In short, VPNs serve as an island for its customers on the way to its destination. When the client reaches its destination, you can’t tell where is the original source of the client - you only know that it came from the island. To extend this analogy, we say that we actually have a network of islands, and we can only travel between them in a provided submarine, and no one can see what’s going on inside the submarine.
 
@@ -28,3 +28,4 @@ In practice, this mechanism is often implemented with IPSec which is a widely us
 [Overview of IPSec](https://www.routeralley.com/guides/ipsec_overview.pdf) 
 
 [Virtual Private Network](https://en.wikipedia.org/wiki/Virtual_private_network) - Wikipedia
+

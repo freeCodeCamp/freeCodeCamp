@@ -174,7 +174,7 @@ int binarySearch(int a[], int l, int r, int x) {
 
 ### C / C ++实现
 
-```C++
+```cpp
 int binary_search(int arr[], int l, int r, int target) 
  { 
    if (r >= l) 
@@ -208,7 +208,7 @@ def binary_search(arr, l, r, target):
 
 ### C ++中的示例
 
-```c++
+```cpp
 // Binary Search using iteration 
  int binary_search(int arr[], int beg, int end, int num) 
  { 
@@ -225,7 +225,7 @@ def binary_search(arr, l, r, target):
  } 
 ```
 
-```c++
+```cpp
 // Binary Search using recursion 
  int binary_search(int arr[], int beg, int end, int num) 
  { 

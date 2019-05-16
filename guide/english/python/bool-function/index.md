@@ -50,10 +50,11 @@ There are three Boolean Operators they are `and`, `or`, and `not`.
     print(bool(-4)) # Returns True as -4 is a non-zero value
     print(bool(0)) # Returns False as it is a zero value
     print(bool('dskl')) # Returns True as the string is a non-zero value
+    print(bool('')) # Returns False as the string is a zero value
     print(bool([1, 2, 3])) # Returns True as the list is a non-zero value
     print(bool((2,3,4))) # Returns True as tuple is a non-zero value
     print(bool([])) # Returns False as list is empty and equal to 0 according to truth value testing
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CVCS/2' target='_blank' rel='nofollow'>Run Code</a>
+<a href='https://repl.it/CVCS/2' target='_blank' rel='nofollow'>Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#bool' target='_blank' rel='nofollow'>Official Docs</a>

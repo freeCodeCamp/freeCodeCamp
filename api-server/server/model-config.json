@@ -39,23 +39,11 @@
     "dataSource": "mail",
     "public": false
   },
-  "flyer": {
-    "dataSource": "db",
-    "public": true
-  },
-  "job": {
-    "dataSource": "db",
-    "public": true
-  },
   "nonprofit": {
     "dataSource": "db",
     "public": true
   },
   "pledge": {
-    "dataSource": "db",
-    "public": true
-  },
-  "promo": {
     "dataSource": "db",
     "public": true
   },
@@ -66,10 +54,6 @@
   "RoleMapping": {
     "dataSource": "db",
     "public": false
-  },
-  "story": {
-    "dataSource": "db",
-    "public": true
   },
   "userCredential": {
     "dataSource": "db",
