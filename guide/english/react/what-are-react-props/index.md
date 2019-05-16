@@ -11,7 +11,7 @@ Starting with React version 15.5 this feature was moved to a separate package na
 
 In order to use it, it's required to be added to the project as a dependency by issuing the following command in a console.
 
-```sh
+```shell
 npm install --save prop-types
 ```
 After that a whole range of validators that can be used to make sure the data the developer is going to recieve is actually valid.

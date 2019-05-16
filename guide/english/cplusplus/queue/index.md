@@ -146,7 +146,8 @@ int main ()
 Returns whether the `queue` is empty ,i.e. whether your queue size is zero.
 It returns `true` if queue's size 0 else returns `false` 
 
-```cpp//Empty operation in Queue
+```cpp
+//Empty operation in Queue
 #include <iostream>       // std::cout
 #include <queue>          // std::stack
 

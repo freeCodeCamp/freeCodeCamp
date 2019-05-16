@@ -1,5 +1,5 @@
 ---
-title: Write Higher Order Arrow Functions
+title: Use Higher-Order Functions map, filter, or reduce to Solve a Complex Problem 
 ---
 ![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
@@ -32,35 +32,26 @@ We need to compute and square values from the `realNumberArray` and store them i
 **Solution ahead!**
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Code solution:
-```javascript
-    const squareList = (arr) => {
-      "use strict";
-      const squaredIntegers = arr.filter((num) => num > 0 && num % parseInt(num) === 0).map((num) => Math.pow(num, 2));
-      return squaredIntegers;
-    };
-
-    // test your code
-    const squaredIntegers = squareList(realNumberArray);
-    console.log(squaredIntegers);
+```js
+const squareList = (arr) => arr
+  .filter((num) => num > 0 && num % parseInt(num) === 0)
+  .map((num) => Math.pow(num, 2));
 ```
-- [Run code at codepen.io](https://codepen.io/dylantyates/pen/WyWoYJ)
+
 ### Code explanation:
 
 Uses the operator `filter()` and `map()` functions to square all positive integers in a given array.
 
-
 ## Alternative code solution:
-```javascript
-
-  // change code below this line
-  const squaredIntegers = arr.filter((param) => Number.isInteger(param) && param >= 0).map(x => x * x);
-  // change code above this line
-
+```js
+const squareList = (arr) => {
+  return arr.reduce((sqrIntegers, num) => {
+    return Number.isInteger(num) && num > 0
+      ? sqrIntegers.concat(num * num)
+      : sqrIntegers;
+  }, []);
+};
 ```
-- [Run code at repl.it](https://repl.it/@AdrianSkar/ES6-Write-higher-order-arrow-functions)
-### Code explanation
-This does basically the same but uses the `isInteger()` method to check the numbers.
-
 
 ### Resources
 

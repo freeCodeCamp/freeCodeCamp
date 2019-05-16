@@ -17,7 +17,7 @@ Traversal in a list is slow as compared to Vectors and Arrays, but once a positi
 ## How to declare a List
 
 Possible declarations of a list:
-```c++
+```cpp
 #include <list>
 
 int main()

@@ -13,7 +13,7 @@ Começando com o React versão 15.5, esse recurso foi movido para um pacote sepa
 
 Para usá-lo, é necessário que ele seja adicionado ao projeto como uma dependência, digitando o seguinte comando em um console.
 
-```sh
+```shell
 npm install --save prop-types 
 ```
 

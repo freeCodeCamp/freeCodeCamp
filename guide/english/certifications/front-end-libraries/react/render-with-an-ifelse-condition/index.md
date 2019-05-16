@@ -9,7 +9,7 @@ Inside of the render method of the component, write if/else statements that each
 First, wrap the current return method inside of an if statement and set the condition to check if the variable 'display' is true. Remember, you access state using `this.state`.
 
 ### Solution
-```react.js
+```jsx
 if (this.state.display === true) {
   return (
     <div>
@@ -21,7 +21,7 @@ if (this.state.display === true) {
 ```
 
 Next, create an else statement that returns the same JSX **without** the `h1` element. 
-```react.js
+```jsx
 else {
   return (
     <div>

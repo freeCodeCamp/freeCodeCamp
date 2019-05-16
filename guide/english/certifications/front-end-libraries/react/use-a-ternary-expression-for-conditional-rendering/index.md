@@ -13,7 +13,7 @@ condition ? expressionIfTrue : expressionIfFalse
 Here is sample solution of using ternary expression.
 First you need declare state in constructor like this
 
-```react.js
+```jsx
 constructor(props) {
     super(props);
     // change code below this line
@@ -27,7 +27,7 @@ constructor(props) {
   }
 ```
 Then the ternary operator 
-```react.js
+```jsx
 {
     /* change code here */
     (this.state.userAge >= 18) ? buttonTwo : (this.state.userAge== '')? buttonOne: buttonThree

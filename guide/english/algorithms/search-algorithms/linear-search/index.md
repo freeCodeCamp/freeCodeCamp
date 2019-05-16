@@ -88,7 +88,7 @@ end
 ```
 ### Example in C++
 
-```c++
+```cpp
 int linear_search(int arr[],int n,int num)
 {
 	for(int i=0;i<n;i++){
@@ -121,7 +121,7 @@ func linearSearch(for number: Int, in array: [Int]) -> Int? {
 ```
 
 ### Example in Java
-```Java 8
+```java
 int linearSearch(int[] arr, int element)
 {
         for(int i=0;i<arr.length;i++)
