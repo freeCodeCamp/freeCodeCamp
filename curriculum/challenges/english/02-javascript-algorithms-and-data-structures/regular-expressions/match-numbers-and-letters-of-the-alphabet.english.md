@@ -54,6 +54,9 @@ let result = myRegex; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+
 ```
 </section>

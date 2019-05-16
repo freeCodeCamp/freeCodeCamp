@@ -22,12 +22,12 @@ Refactor the function <code>setGear</code> inside the object <code>bicycle</code
 
 ```yml
 tests:
-  - text: Traditional function expression was not used.
-    testString: assert(!getUserInput('index').match(/function/),'Traditional <code>function</code> expression was not used.');
-  - text: <code>setGear</code> is a declarative function.
-    testString: assert(typeof bicycle.setGear === 'function' && getUserInput('index').match(/setGear\s*\(.+\)\s*\{/), '<code>setGear</code> is a declarative function.');
-  - text: <code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.
-    testString: assert((new bicycle.setGear(48)).gear === 48, '<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.');
+  - text: Traditional function expression should not be used.
+    testString: getUserInput => assert(!removeJSComments(code).match(/function/));
+  - text: <code>setGear</code> should be a declarative function.
+    testString: assert(typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/));
+  - text: <code>bicycle.setGear(48)</code> should change the <code>gear</code> value to 48.
+    testString: assert((new bicycle.setGear(48)).gear === 48);
 
 ```
 
@@ -43,7 +43,6 @@ tests:
 const bicycle = {
   gear: 2,
   setGear: function(newGear) {
-    "use strict";
     this.gear = newGear;
   }
 };
@@ -54,7 +53,14 @@ console.log(bicycle.gear);
 
 </div>
 
+### After Test
+<div id='js-teardown'>
 
+```js
+const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+```
+
+</div>
 
 </section>
 
@@ -62,6 +68,13 @@ console.log(bicycle.gear);
 <section id='solution'>
 
 ```js
-// solution required
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
 ```
+
 </section>
