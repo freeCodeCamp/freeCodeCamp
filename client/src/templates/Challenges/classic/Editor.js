@@ -7,9 +7,11 @@ import MonacoEditor from 'react-monaco-editor';
 import { executeChallenge, updateFile, saveEditorContent } from '../redux';
 import { userSelector } from '../../../redux';
 import { createSelector } from 'reselect';
+import { createFlashMessage } from '../../../components/Flash/redux';
 
 const propTypes = {
   contents: PropTypes.string,
+  createFlashMessage: PropTypes.func.isRequired,
   dimensions: PropTypes.object,
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
@@ -29,7 +31,8 @@ const mapDispatchToProps = dispatch =>
     {
       executeChallenge,
       updateFile,
-      saveEditorContent
+      saveEditorContent,
+      createFlashMessage
     },
     dispatch
   );
@@ -114,7 +117,13 @@ class Editor extends Component {
         /* eslint-disable no-bitwise */
         monaco.KeyMod.chord(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S)
       ],
-      run: this.props.saveEditorContent
+      run: () => {
+        this.props.saveEditorContent();
+        this.props.createFlashMessage({
+          type: 'success',
+          message: 'Saved! Your code was saved to localStorage'
+        });
+      }
     });
   }
 
