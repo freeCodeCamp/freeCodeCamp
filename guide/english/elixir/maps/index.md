@@ -15,7 +15,7 @@ iex(2)> %{1 => "one", 2 => "two", 3 => "three"}
 
 ```
 
-Maps can be accessed with Map.get/3 or Map.fetch/2) or with through the map[] syntax:
+Maps can be accessed with `Map.get/3` or `Map.fetch/2` or with through the `map[]` syntax:
 ```
 iex(1)> map=%{1 => "one", 2 => "two"}
 %{1 => "one", 2 => "two"}
