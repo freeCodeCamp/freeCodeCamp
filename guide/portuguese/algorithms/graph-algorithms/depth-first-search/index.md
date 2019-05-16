@@ -12,7 +12,7 @@ Profundidade A primeira pesquisa é um dos algoritmos gráficos mais simples. El
 
 ### Implementation (C++14)
 
- ```c++
+ ```cpp
 #include <iostream> 
 #include <vector> 
 #include <queue>  
@@ -91,7 +91,7 @@ int main()
  A DFS é completa num numero finito de nós. Trabalhando melhor em arvores esparssas.
  
  ### Implementation of DFS in C++ 
-```c++
+```cpp
 #include<iostream>
 #include<vector>
 #include<queue>

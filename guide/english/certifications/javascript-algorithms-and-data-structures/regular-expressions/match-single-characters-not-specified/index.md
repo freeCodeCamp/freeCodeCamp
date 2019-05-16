@@ -16,7 +16,7 @@ If so, then double check you're adding the appropriate flags:
 
 ### Hint 2:
 Be sure to check whether your number range is correct -- the challenge asks us to negate all numbers from 0 to 9. This can be done using the negate caret placed immediately after the first opening bracket of your regexp.
-```javacsript
+```js
 let numbersRegExp = /[^0-9]/ig;
 ```
 

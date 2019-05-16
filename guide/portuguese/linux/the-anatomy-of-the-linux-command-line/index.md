@@ -14,7 +14,7 @@ No Linux, os comandos são fornecidos (digitados) no terminal. Embora o aplicati
 
 Para começar a usar o terminal aberto (para o Ubuntu, simplesmente segure o Ctrl + Alt + T) e você será recebido por uma série de personagens organizados neste formato;
 
-```linux
+```shell
 user_name@machine_name:~$ 
 ```
 

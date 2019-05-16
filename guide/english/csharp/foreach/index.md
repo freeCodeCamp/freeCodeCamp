@@ -27,7 +27,7 @@ foreach(string name in Names)
 ```
 
 ### Output:
-```sh
+```shell
 > We have Jim
 > We have Jane
 > We have Jack

@@ -6,7 +6,7 @@ title: Expand Your Project with External Packages from npm
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 You should go over to the `package.json` file in your project. Dependencies follow a similar convention as this:
 
-```code
+```json
 "dependencies": {
     "express": "^4.16.4",
     "helmet": "^3.14.0"

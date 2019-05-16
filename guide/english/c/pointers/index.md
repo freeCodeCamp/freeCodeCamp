@@ -328,7 +328,7 @@ void main() {
 }
 ```
 The output becomes
-```output
+```shell
 The value of integer variable is = 10
 ```
 
