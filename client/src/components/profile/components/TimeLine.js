@@ -68,15 +68,20 @@ class Timeline extends Component {
   }
 
   renderCompletion(completed) {
-    const { idToNameMap } = this.props;
+    // eslint-disable-next-line react/prop-types
+    const { idToNameMap, idToSlugMap } = this.props;
     const { id, completedDate } = completed;
     const challengeDashedName = idToNameMap[id];
+    let slug = `/challenges/${challengeDashedName}`;
+
+    if (idToSlugMap[id]) {
+      slug = idToSlugMap[id];
+    }
+
     return (
       <tr key={id}>
         <td>
-          <a href={`/challenges/${challengeDashedName}`}>
-            {blockNameify(challengeDashedName)}
-          </a>
+          <a href={slug}>{blockNameify(challengeDashedName)}</a>
         </td>
         <td className='text-center'>
           <time dateTime={format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ')}>

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 
 import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
 import Camper from './components/Camper';
@@ -91,7 +91,8 @@ function renderSettingsButton() {
   );
 }
 
-function Profile({ user, isSessionUser }) {
+// eslint-disable-next-line react/prop-types
+function Profile({ user, isSessionUser, data }) {
   const {
     profileUI: {
       isLocked = true,
@@ -128,6 +129,13 @@ function Profile({ user, isSessionUser }) {
   if (isLocked) {
     return renderIsLocked(username);
   }
+
+  let idToSlugMap = {};
+
+  for (let item of data.allChallengeNode.edges) {
+    idToSlugMap[item.node.id] = item.node.fields.slug;
+  }
+
   return (
     <Fragment>
       <Helmet>
@@ -160,6 +168,7 @@ function Profile({ user, isSessionUser }) {
           <Timeline
             className='timelime-container'
             completedMap={completedChallenges}
+            idToSlugMap={idToSlugMap}
             username={username}
           />
         ) : null}
@@ -171,4 +180,28 @@ function Profile({ user, isSessionUser }) {
 Profile.displayName = 'Profile';
 Profile.propTypes = propTypes;
 
-export default Profile;
+// eslint-disable-next-line react/display-name
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query ProfileQuery {
+        allChallengeNode(
+          sort: { fields: [superOrder, order, challengeOrder] }
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+                blockName
+              }
+              id
+              block
+              title
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Profile data={data} {...props} />}
+  />
+);
