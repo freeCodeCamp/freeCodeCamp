@@ -177,7 +177,6 @@ int 9a;
 如果未初始化变量，则它包含垃圾值。例如：
 
 所以就盒子而言，你可以把它想象成 -
-https://cdn-media-1.freecodecamp.org/imgr/
 ![图](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
 
 \`\`\`CPP ＃包括 使用命名空间std; int main（） { int a; cout <<“垃圾值中的一个：”<< a << endl; //声明类型为integer的名为'a'的变量 一个= 5; //初始化变量。 cout <<“一个新的价值”<< a << endl;
