@@ -5,8 +5,9 @@ import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import FCCSearch from 'react-freecodecamp-search';
 
+import MenuButton from './components/MenuButton';
+import MenuLinks from './components/MenuLinks';
 import NavLogo from './components/NavLogo';
-import UserState from './components/UserState';
 import { Link } from '../helpers';
 
 import './header.css';
@@ -88,41 +89,17 @@ class Header extends Component {
             <NavLogo />
           </Link>
           {disableSettings ? null : <FCCSearch />}
-          <button
-            aria-expanded={displayMenu}
-            className={`menu-button${displayMenu ? ' menu-button-open' : ''}${
-              disableMenuButtonBehavior ? ' menu-button-guide' : ''
-            }`}
-            onClick={toggleDisplayMenu}
-            ref={this.menuButtonRef}
-          >
-            Menu
-          </button>
-          <ul
-            className={`${displayMenu ? ' nav-expanded' : ''}${
-              disableMenuButtonBehavior ? ' nav-guide' : ''
-            }`}
-            id='top-right-nav'
-          >
-            <li>
-              <Link className='top-right-nav-link' to='/learn'>
-                Learn
-              </Link>
-            </li>
-            <li>
-              <Link className='top-right-nav-link' external={true} to='/forum'>
-                Forum
-              </Link>
-            </li>
-            <li>
-              <Link className='top-right-nav-link' external={true} to='/news'>
-                News
-              </Link>
-            </li>
-            <li>
-              <UserState disableSettings={disableSettings} />
-            </li>
-          </ul>
+          <MenuButton
+            disableMenuButtonBehavior={disableMenuButtonBehavior}
+            displayMenu={displayMenu}
+            menuButtonRef={this.menuButtonRef}
+            toggleDisplayMenu={toggleDisplayMenu}
+          />
+          <MenuLinks
+            disableMenuButtonBehavior={disableMenuButtonBehavior}
+            disableSettings={disableSettings}
+            displayMenu={displayMenu}
+          />
         </nav>
       </header>
     );
