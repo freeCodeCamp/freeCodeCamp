@@ -123,8 +123,23 @@ Here are specific formatting guidelines for challenge text and examples:
 
 - Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
 - The first instance of a keyword when it's being defined, or general keywords (i.e. "object" or "immutable") go in `<dfn>` tags
-- Single line code examples go in `<code>` tags
-- Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+
+````
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+````
+- Multi-line code blocks **must be preceded by an empty line**.  The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages).  To complete the code block, you must start a newline only has three backticks.
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml`.
+See example below:
+````
+The following is an example of code:
+
+```{language}
+
+[YOUR CODE HERE]
+
+```
+````
 - A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - Use double quotes where applicable
