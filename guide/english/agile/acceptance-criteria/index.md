@@ -24,6 +24,9 @@ If the team is following Test Driven Development (TDD), Acceptance Criteria may 
 
 The Acceptance Criteria will be the beginning of the test plan for the QA team. It is what is required for the story to go live, the QA team may still apply exploratory testing to pick up potential defects. Regardless of the team's test methodology, it should have a pass-fail definition of what it means to complete this increment of work.
 
+From the Customer's perspective the Acceptance criteria defines the behavior the customer expects. From a Software Engineer's perspective the Acceptance Criteria tells the Delivery Team how the code should behave. Avoid writing the **"How"** of the User Story; keep to the **"What"**. In short the Delivery Team defines a set of criteria which when met allows a story to be marked as "Done" or "Accepted".
+If the team is following Test Driven Development (TDD), it may provide the framework for the automated tests.
+The Acceptance Criteria will be the beginnings of the test plan for the QA team.
 
 Most importantly, if the story does not meet each of the Acceptance Criteria, then the Product Owner should not be accepting the story at the end of the iteration.
 
