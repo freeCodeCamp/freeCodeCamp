@@ -10,7 +10,7 @@ Este artículo es un tutorial rápido sobre cómo utilizar el Protocolo seguro d
 
 Si aún no lo has hecho, prueba que puedes SSH en el servidor. SFTP usa el protocolo Secure Shell (SSH), por lo que si no puede SSH, probablemente tampoco podrá SFTP.
 
-```unix
+```shell
 ssh your_username@hostname_or_ip_address 
 ```
 
@@ -18,13 +18,13 @@ ssh your_username@hostname_or_ip_address
 
 Esto usa la misma sintaxis que SSH y abre una sesión en la que puede transferir archivos.
 
-```unix
+```shell
 sftp your_username@hostname_or_ip_address 
 ```
 
 Para listar comandos útiles:
 
-```unix
+```shell
 help 
 ```
 
@@ -32,19 +32,19 @@ help
 
 Para descargar un archivo:
 
-```unix
+```shell
 get <filename> 
 ```
 
 Para descargar una carpeta y su contenido, use la bandera "-r" (también funciona para cargar):
 
-```unix
+```shell
 get -r <foldername> 
 ```
 
 Para subir un archivo:
 
-```unix
+```shell
 put <filename> 
 ```
 
@@ -52,13 +52,13 @@ put <filename>
 
 Para cambiar la carpeta local:
 
-```unix
+```shell
 lcd <path/to/folder> 
 ```
 
 Para cambiar la carpeta remota:
 
-```unix
+```shell
 cd <path/to/folder> 
 
 ```

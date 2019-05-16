@@ -14,7 +14,7 @@ array.prototype.map takes a function as in input and returns an array. The retur
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Intermediate Code Solution:
 ```javascript
-  rating = watchList.map( (item) => ({"title":item["Title"], "rating":item["imdbRating"]}) );
+  const rating = watchList.map(item => ({title: item["Title"], rating: item["imdbRating"]}));
 ```
  ### Code Explanation:
 Using ES6 notation, each item in array is processed to extract title and rating.

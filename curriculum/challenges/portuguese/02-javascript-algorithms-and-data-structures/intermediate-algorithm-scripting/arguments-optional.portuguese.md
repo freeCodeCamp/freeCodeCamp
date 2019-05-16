@@ -3,7 +3,6 @@ id: a97fd23d9b809dac9921074f
 title: Arguments Optional
 isRequired: true
 challengeType: 5
-guideUrl: 'https://portuguese.freecodecamp.org/guide/certificates/arguments-optional'
 videoUrl: ''
 localeTitle: Argumentos Opcional
 ---

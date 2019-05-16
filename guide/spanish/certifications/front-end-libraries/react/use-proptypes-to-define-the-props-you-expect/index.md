@@ -6,7 +6,7 @@ localeTitle: Use PropTypes para definir los beneficios que espera
 
 Este desafío tiene que establecer un `propTypes` para el componente `Items` .
 
-```react.js
+```jsx
 const Items = (props) => { 
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1> 
  }; 
@@ -14,7 +14,7 @@ const Items = (props) => {
 
 Para establecer un propTypes, la sintaxis a seguir es
 
-```react.js
+```jsx
 itemName.propTypes = { 
   props: PropTypes.dataType.isRequired 
  }; 
@@ -22,7 +22,7 @@ itemName.propTypes = {
 
 Siguiendo la sintaxis, el siguiente código debe establecerse debajo del código dado para la `quantity` accesorios del componente `Items`
 
-```react.js
+```jsx
 Items.propTypes = { 
   quantity: PropTypes.number.isRequired 
  }; 

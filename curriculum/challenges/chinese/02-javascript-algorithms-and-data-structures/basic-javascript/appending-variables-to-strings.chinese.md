@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244ed
 title: Appending Variables to Strings
 challengeType: 1
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/appending-variables-to-strings'
 videoUrl: ''
 localeTitle: 将变量附加到字符串
 ---

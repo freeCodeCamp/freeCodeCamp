@@ -12,23 +12,29 @@ localeTitle:  يتكرر عبر مفاتيح كائن مع لـ ... في بيا
 
 ### مثال 1:
 
- `for (let user in obj) { 
-    if(obj.user.online === true) { 
-      //code 
-    } 
-  } 
-` 
+```javascript
+
+for (let user in obj) {
+  if(obj.user.online === true) {
+    //code
+  }
+}
+
+```
 
 *   يوضح المثال 2 كيفية استخدام الترميز `[square-bracket]` في تنفيذ الشفرة.
 
 ### المثال 2:
 
- `for (let user in obj) { 
-    if(obj[user]online === true) { 
-      //code 
-    } 
-  } 
-` 
+```javascript
+
+for (let user in obj) {
+  if(obj[user].online === true) {
+    //code
+  }
+}
+
+```
 
 ### حل:
 

@@ -52,6 +52,8 @@ let result = myRegex; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
 ```
 </section>
