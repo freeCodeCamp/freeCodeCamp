@@ -22,7 +22,7 @@ Nos encanta pegarnos a las convenciones. La comunidad de usuarios de Python ha c
 
 Así es como verificas si tu código de Python cumple con los estándares.
 
-```console
+```shell
 :~$ pip install pep8 
  :~$ pep8 --first myCode.py 
 ```
