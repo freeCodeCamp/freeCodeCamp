@@ -7,17 +7,21 @@ localeTitle: Ссылка на внешние страницы с элемент
 ---
 
 ## Description
+
 <section id="description"> Вы можете использовать элементы <code>anchor</code> для ссылки на контент вне вашей веб-страницы. Элементам <code>anchor</code> нужен адрес веб-сайта назначения, называемый атрибутом <code>href</code>. Им также нужен якорный текст. Вот пример: <code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> Затем ваш браузер отобразит текст <strong>«это ссылки на freecodecamp.org»</strong> в качестве ссылки, которую вы можете щелкнуть. И эта ссылка приведет вас к веб-адресу <strong>https://www.freecodecamp.org</strong> . </section>
 
 ## Instructions
 Создайте элемент, который ссылается на <code>http://freecatphotoapp.com</code> и имеет «фотографии котят» в качестве его якорного текста.
+
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш элемент должен иметь <code>a</code> в качестве <code>anchor text</code> должен иметь «фотографии котят».
+
+  - text: Ваш элемент <code>a</code> должен иметь <code>якорный текст</code> «cat photos».
+
     testString: 'assert((/cat photos/gi).test($("a").text()), "Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".");'
   - text: 'Вам нужно создать <code>a</code> элемент, являющийся ссылкой на <code>http://freecatphotoapp .com</code>'
     testString: 'assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")), "You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>");'

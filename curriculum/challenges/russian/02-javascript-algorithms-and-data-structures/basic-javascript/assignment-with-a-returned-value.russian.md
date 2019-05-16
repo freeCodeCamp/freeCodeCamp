@@ -2,7 +2,6 @@
 id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/assignment-with-a-returned-value'
 videoUrl: ''
 localeTitle: Назначение с возвращенной стоимостью
 ---

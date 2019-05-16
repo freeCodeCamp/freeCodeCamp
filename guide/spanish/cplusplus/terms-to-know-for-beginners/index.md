@@ -1,7 +1,8 @@
 ---
 title: IDE and Printing different text 
 localeTitle: IDE y la impresión de diferentes textos
----# Introducción a un IDE e impresión de diferentes textos:
+---
+# Introducción a un IDE e impresión de diferentes textos:
 
 *   En el último artículo, algunos enlaces de descarga de software requeridos para la programación. Software como este es conocido como un IDE. **IDE significa Ambiente de Desarrollo Integrado**
 
@@ -33,8 +34,7 @@ Un programa de muestra:
 ```
 
 El código anterior devuelve un error porque en la línea 2, hemos usado dos puntos (:) en lugar de un punto y coma (;) Entonces, vamos a depurar el error:
-
-```C++
+```cpp
 #include <iostream> 
  using namespace std ; 
  int main() 

@@ -53,7 +53,7 @@ project_root
   - /project_root/index.js 
     - Is the entry point for the app it will contain the entry point for which store, and it will render the the App.jsx file.
 
-Bellow is an example of the code that will be declared on the file
+Below is an example of the code that will be declared in the file:
 
 ```javascript
 import React from 'react';
@@ -111,7 +111,7 @@ class App extends Component{
  */
 const mapStateToProps=state=>{
     return {
-        ArrayValue:state.example.exapleArray,
+        ArrayValue:state.example.exampleArray,
         StringMessage:state.example.exampleString,
         bookApploggedIn:state.example.exampleBool,
         ObjectValue:state.example.exampleObject
@@ -144,6 +144,15 @@ export default connect(mapStateToProps,mapDispatchToProps)(App);
 The example above demonstrates how the base App component is setup and how it will interact with the redux architecture.
 
 Also how to dispatch a defined action from the component which will be passed down to the store and make the changes on the application reducer.
+
+`mapStateToProps` takes a second argument, `ownProps`, which are the props of the component. This can be useful for mapping props from the store based on the component's exisiting props. For example
+```javascript
+const mapStateToProps = (state, ownProps) => {
+    if (ownProps.userId) {
+        return { friends: state.friends[ownProps.userId }
+    }
+}
+```
 
 ## Declaration of the Application Actions
 

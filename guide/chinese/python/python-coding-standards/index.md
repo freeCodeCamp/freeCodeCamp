@@ -22,7 +22,7 @@ localeTitle: 编码标准
 
 这是你如何检查你的python代码是否符合他的标准。
 
-```console
+```shell
 :~$ pip install pep8 
  :~$ pep8 --first myCode.py 
 ```

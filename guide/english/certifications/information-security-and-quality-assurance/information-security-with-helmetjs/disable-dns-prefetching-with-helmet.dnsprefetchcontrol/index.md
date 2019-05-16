@@ -3,8 +3,12 @@ title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 ---
 ## Disable DNS Prefetching with helmet.dnsPrefetchControl()
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/disable-dns-prefetching-with-helmet.dnsprefetchcontrol/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+- You want your `app` to `use` helmet's `dnsPrefetchControl()` method.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+- In the `myApp.js` file add `app.use(helmet.dnsPrefetchControl());` under the eighth instructions.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.
