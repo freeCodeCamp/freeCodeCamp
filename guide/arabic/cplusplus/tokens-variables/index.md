@@ -22,7 +22,6 @@ localeTitle: توكنز الجزء الأول
 ### ما هي المتغيرات؟
 
 *   تعريف الكتب: تُسمى المتغيرات أسماء الذاكرة التي يمكن تغيير بياناتها.
-    https://cdn-media-1.freecodecamp.org/imgr/
 *   لكنني أود منك أن تفكر في متغير ليصبح شيئًا مثل مربع ، شيء من هذا القبيل: ![IMG](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
     
 
@@ -171,7 +170,6 @@ localeTitle: توكنز الجزء الأول
 إذا لم يتم تهيئة متغير ، فإنه يحتوي على قيمة للقمامة. فمثلا:
 
 لذلك من حيث المربعات ، يمكنك تخيل هذا على أنه -
-https://cdn-media-1.freecodecamp.org/imgr/
 ![IMG](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
 
 \`\` \`حزب الشعب الكمبودي #تتضمن استخدام اسم للمحطة؛ انت مين() { كثافة العمليات cout << "Garbage value in a:" << a << endl؛ // يعلن المتغير المسمى 'a' من عدد صحيح و= 5؛ // تهيئة المتغير. cout << "New value in a" << a << endl؛
