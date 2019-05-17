@@ -2,6 +2,9 @@
 title: Linear Regression
 ---
 ## Linear Regression
+
+[Linear Regression](https://masmlblog.wordpress.com/2017/10/31/the-linear-regression-algorithm/) is a **discriminative** machine learning algorithm to relate the dependent variable, i.e ‘Y’ on the independent variables i.e ‘Xi‘. Unlike generative models, it does not allow the user to generate samples from the distribution of X and Y. Linear regression is a **supervised** learning algorithm, i.e labelled dataset is needed to train it for the model to be able to make predictions on its own.
+
 Linear regression is a type of regression, or one of the several regression techniques which are used to find the best fitting line for the given set of points in the given dataset.
 Linear regression helps us predict score of a variable X from the scores on other variables Y. When the variables Y are plotted, linear regression finds the best-fitting straight line through the points. The best-fitting line is called a regression line.
 This is done by taking a line equation and comparing it with the points and the required result and then calibrated in such a way that the difference/distance between the points and the line, or simply error, is kept to the minimum. This way of calibrating is called Least Squared Error method.
@@ -34,6 +37,8 @@ def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_i
     return [b, m]
 
 gradient_descent_runner(wheat_and_bread, 1, 1, 0.01, 100)
+
+
 ```
 
 Code example is from <a href='http://blog.floydhub.com/coding-the-history-of-deep-learning/' target='_blank' rel='nofollow'>this article</a>. It also explains gradient descent and other essential concepts for deep learning.
@@ -46,21 +51,28 @@ Apply directly by using scikit library, thus making linear regression easy to us
 import pandas as pd
 from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LinearRegression as lr
+from sklearn import metrics
+
+# Load the data
 train = pd.read_csv('../input/train.csv')
 test = pd.read_csv('../input/test.csv') 
+
+# Separate the features and labels
 X = train.iloc[:, 0:4].values
 y = train.iloc[:, 4].values
+
+# Split the data into train and test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
-X_train
+
+# Build the model
 model = lr()
 model.fit(X_train, y_train)
-print(model.score(X_train,y_train))
+print("Training score: ", model.score(X_train,y_train))
+print("Gradient: ", model.coef_)
+print("y-intercept: ", model.intercept_)
+
+# Evaluating the model on test data
 y_pred_class = model.predict(X_test)
-model.score(X_train,y_train)
-print(model.coef_)
-print(model.intercept_)
-# calculate accuracy
-from sklearn import metrics
 print(metrics.accuracy_score(y_test, y_pred_class))
 ```
 
@@ -69,3 +81,5 @@ How would you know if your regression model is accurate or not? Well, one method
 
 ## More Information:
 [scikit learn](http://scikit-learn.org/stable/documentation.html)
+[Article on regression] https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
+
