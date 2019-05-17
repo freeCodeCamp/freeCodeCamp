@@ -39,9 +39,11 @@ function HeatMap({ calendar, streak }) {
   for (let timestamp in calendar) {
     if (calendar.hasOwnProperty(timestamp)) {
       timestamp = Number(timestamp * 1000) || null;
-      const startOfTimestampDay = format(startOfDay(timestamp), 'YYYY-MM-DD');
-      calendarData[startOfTimestampDay] =
-        calendarData[startOfTimestampDay] + 1 || 1;
+      if (timestamp) {
+        const startOfTimestampDay = format(startOfDay(timestamp), 'YYYY-MM-DD');
+        calendarData[startOfTimestampDay] =
+          calendarData[startOfTimestampDay] + 1 || 1;
+      }
     }
   }
 
