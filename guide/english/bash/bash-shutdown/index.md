@@ -2,20 +2,25 @@
 title: Bash shutdown
 ---
 
-Bash Command: shutdown
+## Bash Command: shutdown
 
-`shutdown` - typing the shutdown command will schedule your system to be shutdown at a given point in time.
+Typing the shutdown command will schedule your system to be shutdown at a given point in time.
 
-Options:
+### Usage
 
-+m  , will specify the minutes until shutdown.
+```bash
+shutdown [options] when [message]
+``` 
 
--h  , will specify the hours until shutdown.
+Most used options:
+* `+m`, will specify the minutes until shutdown.
 
--r  , will trigger a restart of the system after shutting it down.
+* `-h`, will specify the hours until shutdown.
 
-message , will display a message of your chosing prior to shutting it down.
+* `-r`, will trigger a restart of the system after shutting it down.
 
-Syntax:
+Adding a message to the end of the command will display a message of your chosing prior to shutting it down.
 
-shutdown -h +m message
+#### More information:
+
+* SS64: https://ss64.com/bash/shutdown.html

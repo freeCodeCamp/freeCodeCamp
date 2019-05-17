@@ -9,7 +9,7 @@ This one can be a little tricky because JSX is very similar to HTML but **NOT th
 Let's walkthrough the steps so that you understand the difference. 
 First set your style tag to a **JavaScript object**.
 
-```react.js
+```jsx
 class Colorful extends React.Component {
   render() {
     return (
@@ -24,7 +24,7 @@ Now you have your style tag set to an empty object. Notice how there are two set
 
 Second, let's set the color to red. 
 
-```react.js
+```jsx
 class Colorful extends React.Component {
   render() {
     return (
@@ -39,7 +39,7 @@ class Colorful extends React.Component {
 Finally, let's set the font size to 72px. 
 
 ### Spoiler
-```react.js
+```jsx
 class Colorful extends React.Component {
   render() {
     return (

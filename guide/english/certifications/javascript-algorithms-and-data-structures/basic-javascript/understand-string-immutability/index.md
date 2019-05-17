@@ -3,8 +3,19 @@ title: Understand String Immutability
 ---
 ## Understand String Immutability
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/understand-string-immutability/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Problem Explanation
+Correct the assignment to ```myStr``` so it contains the string value of ```Hello World``` using the approach shown in the example above.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Hint
+Instead of  ```Jello World ```, ```myStr``` should be assigned ```Hello World```.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+ ## Spoiler Alert! Solution ahead.
+**Solution**
+```javascript
+// Setup
+var myStr = "Jello World";
+ // Only change code below this line
+ myStr = "Hello World";
+```
+ ## Code Explanation
+String literals such as ```"Jello World"``` cannot be changed by the individual letter (hence being *immutable*), so the variable containing the incorrect string must be replaced with the desired string using the assignment operator ```=```

@@ -1,5 +1,5 @@
 ---
-title: Use Github Static Pages to Host Your Front End Projects
+title: Use GitHub Static Pages to Host Your Front End Projects
 localeTitle: 使用Github静态页面来托管您的前端项目
 ---
 **优点**
@@ -15,7 +15,7 @@ localeTitle: 使用Github静态页面来托管您的前端项目
 
 ## Git到Github
 
-由于我已经在本地保存，并使用git进行版本控制，我想也可以上传到Github。此外，Github还为前端项目提供了一个非常棒的免费服务，称为[Github Pages](https://pages.github.com/) 。只需更新您的仓库，您的更改即会生效。
+由于我已经在本地保存，并使用git进行版本控制，我想也可以上传到Github。此外，Github还为前端项目提供了一个非常棒的免费服务，称为[GitHub Pages](https://pages.github.com/) 。只需更新您的仓库，您的更改即会生效。
 
 它的工作原理很简单。 Github检查您的存储库是否有一个名为`gh-pages`的分支，并提供位于该分支中的任何代码。这里没有后端内容，但HTML，CSS和JS就像魅力一样。
 
