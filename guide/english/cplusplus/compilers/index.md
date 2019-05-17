@@ -94,4 +94,4 @@ There are a number of different types of compilers. The two listed are the two t
 or Linux/OSX.
 
 ### Sources
-1. ["Using the GNU Compiler Collection(GCC): Standards." 25 April, 2019. Accessed: 17 May, 2019. ](https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Standards.html#Standards)
+1. ["Using the GNU Compiler Collection(GCC): Standards." GNU Project. 25 April, 2019. Accessed: 17 May, 2019. ](https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Standards.html#Standards)
