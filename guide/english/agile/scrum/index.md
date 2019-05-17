@@ -51,3 +51,4 @@ Here are some more resources:
 - [Why Scrum](https://www.scrumalliance.org/why-scrum) from The Scrum Alliance
 - [Scrum Guide](http://www.scrumguides.org/scrum-guide.html) from Scrum.org
 - [Doing vs Being Agile](http://agilitrix.com/2016/04/doing-agile-vs-being-agile/)
+- [YouTube - Introduction to Scrum](https://www.youtube.com/watch?v=9TycLR0TqFA)
