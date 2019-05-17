@@ -23,7 +23,7 @@ The practice revolves around
 ## Roles
 - Product Owner(PO): The ONLY accountable person to the Management (or any stakeholders). The PO decides what goes in or out of the Product Backlog, for making decisions in a timely manner, and for providing information in a timely manner.
 - Delivery Team: The Delivery Team is required to work in accordance with the tasks set by their PO in the product backlog and deliver the required deliverable at the end of the sprint.
-- Scrum Masters (SM): - Scrum Masters are the Team Lead and have to strictly adhere to the Scrum Guide and make the team understand adhere to it as well. It is the Scrum Master's job to ensure that all Scrum ceremonies are being conducted on time and participated by all the required people as per the Scrum Guide. The SM has to ensure that the Daily Scrum is conducted regularly and actively participated by the team.
+- Scrum Masters (SM): - Scrum Masters are the Team Lead and have to strictly adhere to the Scrum Guide and make the team understand the need to adhere to it as well. It is the Scrum Master's job to ensure that all Scrum ceremonies are being conducted on time and participated by all the required people as per the Scrum Guide. The SM has to ensure that the Daily Scrum is conducted regularly and actively participated by the team.
 
 #### More Information:
 
