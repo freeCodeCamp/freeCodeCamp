@@ -3,8 +3,42 @@ title: Create a Linear Scale with D3
 ---
 ## Create a Linear Scale with D3
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/create-a-linear-scale-with-d3/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In this D3 challenge you are required to change the scale variable to create a linear scale. Then set the output variable to the scale called with an input argument of 50.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint 1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+The syntax for creating a scale is:
+```javascript
+const scale = d3.scaleLinear();
+```
+
+### Hint 2
+
+The `const` scale is a method, which accepts a value.
+
+### Hint 3
+
+The scaling factor should be set to `50`.
+
+### Hint 4
+
+The scaling factor is set like this:
+```javascript
+const output = scale(scalingFactor);
+```
+Where `scalingFactor` is a number.
+
+### Solution
+
+To solve this challenge, the `scale` variable has to be re-initialized with a D3 scale ans the scaling factor in the output has to be set to `50`, to do this, change you code to look like this:
+```javascript
+<body>
+  <script>
+    const scale = d3.scaleLinear();
+    const output = scale(50);
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+```

@@ -1,16 +1,16 @@
 ---
 title: PHP 5 echo and print Statements
-localeTitle: PHP 5 declaraciones de eco e impresión
+localeTitle: PHP 5 declaraciones de echo y print
 ---
-En PHP hay dos formas básicas de obtener salida: echo e imprimir.
+En PHP hay dos formas básicas de mostrar salida: echo o print.
 
-En este tutorial usamos eco (e imprimimos) en casi todos los ejemplos. Por lo tanto, este capítulo contiene un poco más de información sobre esas dos declaraciones de salida.
+En este tutorial usamos echo (o print) en casi todos los ejemplos. Por lo tanto, este capítulo contiene un poco más de información sobre esas dos declaraciones de salida.
 
-### PHP echo e imprimir declaraciones
+### PHP declaraciones echo e imprimir declaraciones
 
-El eco y la impresión son más o menos lo mismo. Ambos se utilizan para enviar datos a la pantalla.
+La declaraciones echo y print son parecidas. Ambos se utilizan para enviar datos a la pantalla.
 
-Las diferencias son pequeñas: el eco no tiene valor de retorno, mientras que la impresión tiene un valor de retorno de 1, por lo que se puede usar en expresiones. echo puede tomar múltiples parámetros (aunque tal uso es raro) mientras que la impresión puede tomar un argumento. El eco es ligeramente más rápido que la impresión.
+Las diferencias son pequeñas: el echo no tiene valor de retorno, mientras que print tiene un valor de retorno de 1, por lo que se puede usar en expresiones. echo puede tomar múltiples parámetros (aunque tal uso es raro) mientras que la impresión puede tomar un argumento. El eco es ligeramente más rápido que la impresión.
 
 ### El PHP echo Statement
 
@@ -52,7 +52,7 @@ El siguiente ejemplo muestra cómo generar texto y variables con la declaración
 
 ### La declaración de impresión de PHP
 
-La declaración de impresión se puede utilizar con o sin paréntesis: imprimir o imprimir ().
+La declaración de impresión se puede utilizar con o sin paréntesis: print o print().
 
 #### Mostrar texto
 

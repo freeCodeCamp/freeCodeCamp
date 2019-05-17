@@ -9,7 +9,13 @@ isRequired: false
 <section id='description'>
 In the last challenge, you created a Redux store to handle the messages array and created an action for adding new messages. The next step is to provide React access to the Redux store and the actions it needs to dispatch updates. React Redux provides its <code>react-redux</code> package to help accomplish these tasks.
 React Redux provides a small API with two key features: <code>Provider</code> and <code>connect</code>. Another challenge covers <code>connect</code>. The <code>Provider</code> is a wrapper component from React Redux that wraps your React app. This wrapper then allows you to access the Redux <code>store</code> and <code>dispatch</code> functions throughout your component tree. <code>Provider</code> takes two props, the Redux store and the child components of your app. Defining the <code>Provider</code> for an App component might look like this:
-<blockquote>&lt;Provider store={store}&gt;<br>&nbsp;&nbsp;&lt;App/&gt;<br>&lt;/Provider&gt;</blockquote>
+
+```jsx
+<Provider store={store}>
+  <App/>
+</Provider>
+```
+
 </section>
 
 ## Instructions

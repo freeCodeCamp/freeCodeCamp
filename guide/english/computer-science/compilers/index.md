@@ -4,7 +4,7 @@ title: Compilers
 ## Compilers
 
 ### Programming
-At its heart, a barebones computer (aka a stored program computer) is nothing but a machine which knows how to read steps written in a fixed instruction set and execute the same. The set of instructions a computer understands is very specific to it. This is also known as machine language (**opcodes**). Machine Language is often referred to as Binary Code.
+At its heart, a barebones computer (A.K.A. a stored program computer) is nothing but a machine which knows how to read steps written in a fixed instruction set and execute the same. The set of instructions a computer understands is very specific to it. This is also known as machine language (**opcodes**). Machine Language is often referred to as Binary Code.
 
 Humans interact with computers using **Programs**. A program is simply a sequence of opcodes provided to the computer along with data that is necessary for executing the opcodes. 
 
@@ -14,11 +14,17 @@ ADD 10, 20  // ADD is the Opcode
             // and 10, 20 are the two operands(data) 
             // needed for the ADD instruction to be executed successfully
 ```
-Humans develop programs to solve complex problems. Looking at how simple opcodes are, if we try to develop programs using opcodes alone, it will be very cumbersome and difficult to debug. To solve this problem, high level languages like C/C++, Python, Java, Javascript, etc were developed. 
+Humans develop programs to solve complex problems. Looking at how simple opcodes are, if we try to develop programs using opcodes alone, it will be very cumbersome and difficult to debug. To solve this problem, high level languages like C/C++, Python, Java, JavaScript, etc were developed. 
 
 Now, high level languages aren't suitable for execution by computers. Hence, the need arose for a translator that can digest the high-level language programs and convert them to machine language instructions suitable for execution by a computer.
 
 #### [HUMANS] -> [Highlevel language programs] -> [Translator] -> [Machine Language] -> [Computer]
+
+#### [TRANSLATOR] consists of [Preprocessor], [Compiler], [Assembler], [Loader/Linker] 
+
+**Preprocessor** is responsible for Micro expansion, file inclusion.
+
+**Loader** is responsible for Allocation, Re-allocation, linking, Loading.
 
 A **compiler** is a type of translator program, that translates high level languages into binary code, which is nothing but 1s and 0s. When you run your source code, a compiler translates all the code first, then produces the binary code. Then the computer takes the binary code and runs it.
 
