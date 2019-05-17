@@ -104,16 +104,16 @@ std::string second_item = a[2]; // gets "element"
 
 Looping over elements in a C++ `std::vector` is pretty different from looping over elements in a vector in JavaScript or Ruby. Due to C++ being a thin abstraction of C, you can only loop over elements using these nifty little variables called iterators to access each element.
 Iterators often come in the form of pointers which are variables that store the memory address of another variable. You can learn more about pointers [here](https://www.tutorialspoint.com/cplusplus/cpp_pointers.htm).
-However, because iterators act as pointers (or vice-versa), in order to see what they point to, you need to dereference it into a variable of the appropirate type. 
+However, because iterators act as pointers (or vice-versa), in order to see what they point to, you need to dereference it into a variable of the appropriate type. 
 How do we do this?
 HERE. WE. GO!
 ```cpp
 std::vector<std::string> a{"test", "element", "access"};
 for(auto it = v.begin(); it != v.end(); it++) { //notice use of auto keyword
-    cout<<*it<<endl; //Will print out string that the iterator is currently ppointing to
+    cout<<*it<<endl; //Will print out string that the iterator is currently pointing to
 }
 ```
-From here, you can do all sorts of cool stuff, like manipulating the vector or mess around with it's order as you please!
+From here, you can do all sorts of cool stuff, like manipulating the vector or mess around with its order as you please!
 
 ### Some useful member functions
 The standard template library (STL) also provide different *methods* for you:
@@ -127,6 +127,8 @@ std::vector.front(); // returns the first element of the vector.
 std::vector.back(); // returns the last element of the vector.
 std::vector.push_back(n); // inserts the element "n" to the end of the vector.
 std::vector.pop_back(n); // removes the last element of the vector
+std::vector.resize(n); // resizes a vector so that it contains the specified number of elements.
+std::vector.assign(i,n); // assigns new contents to the vector and replaces its current contents.
 ```
 
 ### Vector Iterator
@@ -194,24 +196,27 @@ int main(){
 }
 ```
 In C++11, you can also sort with lambda function, which can be useful.
-```cpp11
-#include<bits/stdc++.h>
+```cpp
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main(){
     vector<int > v {3, 1, 2};
     sort(v.begin(), v.end(), [] (int i, int j) -> bool {
         return i < j;
     } );
+    
     cout << "Vector Contents Sorted In Ascending Order:\n";
-    for (int e : v)
-    cout << e << " ";
+    for (int e : v){
+      cout << e << " ";
+    }
+    
     return 0;
 }
 ```
 ### Sorting Vector In Descending Order
 Sorting Vector in descending order can be done with the help of third argument namely greater<int>() in Sort() in C++.
+    
 ``` cpp
 #include <iostream>
 #include <vector>
@@ -223,7 +228,28 @@ int main(){
  vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
  sort(v.begin(), v.end(), greater<int>());
  
- cout << "Vector Contents Sorted In Ascending Order:\n";
+ cout << "Vector Contents Sorted In Descending Order:\n";
+ for(int e : v){
+  cout << e << " ";
+ }
+ 
+ return 0;
+}
+```
+An alternative way to do this.
+
+``` cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(){
+ 
+ vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
+ sort(v.rbegin(), v.rend());
+ 
+ cout << "Vector Contents Sorted In Descending Order:\n";
  for(int e : v){
  cout << e << " ";
  }
@@ -232,4 +258,4 @@ int main(){
 }
 ```
 
-You can also sort in descending using lamda like the one above.
+You can also sort in descending using lambda like the one above.

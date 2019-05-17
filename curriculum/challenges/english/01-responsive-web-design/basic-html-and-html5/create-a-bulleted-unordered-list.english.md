@@ -10,7 +10,14 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 HTML has a special element for creating <code>unordered lists</code>, or bullet point style lists.
 Unordered lists start with an opening <code>&#60;ul&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, unordered lists close with a <code>&#60;/ul&#62;</code>
 For example:
-<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>
+
+```html
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+```
+
 would create a bullet point style list of "milk" and "cheese".
 </section>
 
@@ -32,7 +39,8 @@ tests:
     testString: assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, 'Make sure your <code>ul</code> element has a closing tag.');
   - text: Make sure your <code>li</code> elements have closing tags.
     testString: assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length, 'Make sure your <code>li</code> elements have closing tags.');
-
+  - text: Make sure your <code>li</code> elements don’t contain an empty string or only white-space.
+    testString: assert($("ul li").filter((_, item) => !$(item).text().trim()).length === 0, 'Make sure your <code>li</code> elements don\’t contain an empty string or only white-space.');
 ```
 
 </section>
@@ -63,7 +71,19 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <ul>
+    <li>milk</li>
+    <li>mice</li>
+    <li>catnip</li>
+  </ul>
+</main>
 ```
+
 </section>

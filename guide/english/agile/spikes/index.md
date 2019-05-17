@@ -5,7 +5,7 @@ title: Spikes
 
 Not everything your team works on during the Sprint are User Stories. Sometimes, a user story cannot be effectively estimated or research is required. Maybe help is needed to decide between different architectures, to rule out some risks, or it may be a Proof of Concept (POC) to demonstrate a capability.
 
-In these cases, a Spike is added to the Sprint Backlog. The Acceptance Criteria for the Spike should be an answer to the question being posed. If the experiment is more difficult than anticipated, then maybe the answer is negative. (That's why the Spike should be limited in time.) 
+In these cases, a Spike is added to the Sprint Backlog. The Acceptance Criteria for the Spike should be an answer to the question being posed. If the experiment is more difficult than anticipated, then maybe the answer is negative (that's why the Spike should be limited in time). 
 
 The time and energy invested in the Spike are intentionally limited so that the work can be completed within the Sprint while other User Stories are minimally impacted. The Spike does not usually receive a Story Point Estimate, but is given a fixed number of hours to be worked on.
 

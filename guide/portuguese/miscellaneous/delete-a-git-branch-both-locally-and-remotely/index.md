@@ -17,7 +17,7 @@ Normalmente, quando o trabalho é concluído em um recurso e é recomendável ex
 
 ## O fluxo de trabalho Excluir:
 
-Digamos que você tenha um `AwesomeRepo` chamado `AwesomeRepo` e `AwesomeRepo` hospedado no Github, em um local como `https://github.com/my_username/AwesomeRepo` .
+Digamos que você tenha um `AwesomeRepo` chamado `AwesomeRepo` e `AwesomeRepo` hospedado no GitHub, em um local como `https://github.com/my_username/AwesomeRepo` .
 
 Também vamos supor que tem os ramos como:  
 `master`  

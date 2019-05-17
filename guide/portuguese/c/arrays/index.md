@@ -6,7 +6,7 @@ localeTitle: Matrizes
 
 ## Problemas
 
-Antes de tentar explicar quais são os arrays, vamos ver o código onde queremos imprimir 10 números dados pelo usuário na ordem inversa.
+Antes de tentar explicar quais são os arrays(vetores), vamos ver o código onde queremos imprimir 10 números dados pelo usuário na ordem inversa.
 
 ```C
 #include <stdio.h> 
@@ -28,7 +28,7 @@ Então, isso parece um pouco entediante. Até agora, todas as variáveis ​​c
 
 ## Matrizes em C
 
-Matrizes são contêineres com um determinado tamanho. Eles contêm variáveis ​​do **mesmo tipo** . Você pode acessar uma variável armazenada na matriz com seu _índice_ . Vamos ver um código:
+Matrizes são contêineres com um determinado tamanho. Eles contêm variáveis ​​do **mesmo tipo** . Você pode acessar uma variável armazenada na matriz com seu _índice_ . Uma matriz pode ser considerada um array de arrays. Vamos ver um código:
 
 ```C
 #include <stdio.h> 
@@ -52,7 +52,8 @@ int arr[4] = {1, 2, 3, 88};
 Aqui você criou uma `array` de `ints` (Integers), chamada `arr` . Esta matriz tem 4 elementos: `1` , `2` , `3` , `88` . Observe a sintaxe!
 
 ```C
-datatype name[number of elements] 
+tipoDado nome[número de elementos]
+Ex: Int cidades[20]
 ```
 
 O primeiro elemento desta matriz é `1` , o segundo é `2` etc.
@@ -87,7 +88,7 @@ Aqui um int é criado chamado `var` , e é inicializado no 0º elemento de arr. 
 C também suporta matrizes multidimensionais.
 
 ```C
-datatype name[size1][size2]...[sizeN] 
+tipoDado nome[tamanho1][tamanho2]...[tamanhoN] 
 ```
 
 Matrizes bidimensionais são comuns e podem ser inicializadas usando a seguinte sintaxe. Pode-se pensar logicamente no primeiro índice como linhas e no segundo índice como colunas. Este exemplo tem 2 linhas e 5 colunas.
@@ -112,16 +113,16 @@ Dois loops for aninhados podem ser usados ​​para imprimir o conteúdo de um 
  
  
  int main() { 
-    const int rows = 2, cols = 5; 
+    const int linhas = 2, cols = 5; 
  
-    int arr[rows][cols] = { 
+    int arr[linhas][cols] = { 
             {0, 1, 2, 3, 4}, 
             {5, 6, 7, 8, 9} 
     }; 
  
-    for (int row = 0; row < rows; row++) { 
+    for (int linha = 0; linha < linhas; linha++) { 
         for (int col = 0; col < cols; col++) { 
-            printf("%5d", arr[row][col]); 
+            printf("%5d", arr[linha][col]); 
         } 
         puts(""); 
     } 
@@ -142,22 +143,22 @@ Para armazenar strings / caracteres múltiplos, usamos `char arrays` em C, porqu
 Igual a:
 
 ```C
-char string[6] = "Hello"; //here you get Hello\0, which is why we need an array with the length of 6 
+char string[6] = "Hello"; //Aqui você tera Hello\0, que é o porque nós precisamos de um array de tamanho 6
 ```
 
 Assim como com os arrays int no exemplo acima, existem várias maneiras de atribuir valores a matrizes de caracteres:
 
 ```C
-char string[] = "I do not want to count the chars in this."; 
+char string[] = "Eu não quero contar os caracteres aqui."; 
  char string2[] = {'C','h','a','r',' ','b','y',' ','c','h','a','r','\0'}; 
- char string3[] = "This is a string" 
-                 "with two lines"; 
+ char string3[] = "Isso é uma String" 
+                 "com duas linhas"; 
 ```
 
 Equivalente à abordagem acima, você também pode criar um ponteiro para uma matriz char:
 
 ```C
-char* string = "I do not want to count the chars in this."; 
+char* string = "Eu não quero contar os caracteres aqui."; 
 ```
 
 ## Erros típicos, dicas

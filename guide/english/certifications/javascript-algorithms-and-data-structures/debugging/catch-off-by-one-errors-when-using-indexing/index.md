@@ -49,7 +49,7 @@ Make `i` start at 0. Also the loop **should not** be executed for i == 5. In oth
 ```javascript
   for (let i = 0; i < len; i++) {
 ```
-**Happy Coding!** :computer:
+**Happy Coding!**
 ### Resources
 - [For statements challenge at FreeCodeCamp](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-for-loops)
 - [For statements at MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for_statement)

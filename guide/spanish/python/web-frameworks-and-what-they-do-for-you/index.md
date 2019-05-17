@@ -44,7 +44,7 @@ Comenzó como un envoltorio simple alrededor de Werkzeug y Jinja y se ha convert
 
 Flask ofrece sugerencias, pero no impone ninguna dependencia ni diseño del proyecto. Es responsabilidad del desarrollador elegir las herramientas y bibliotecas que desea utilizar. La comunidad proporciona muchas extensiones que facilitan la adición de nuevas funciones.
 
-Flask fue creado en 2004 por un grupo internacional de pitones llamado "Pocoo", como una broma de April Fools que luego se convirtió en algo "real". Según Wikpedia, fue el framework web Python más utilizado en Github. Es un micro-marco gratuito y de código abierto escrito en Python ( [ver en GitHub](https://github.com/freeCodeCamp/guide/tree/master/src/pages/javascript) ). Como dice la Wikipedia,
+Flask fue creado en 2004 por un grupo internacional de pitones llamado "Pocoo", como una broma de April Fools que luego se convirtió en algo "real". Según Wikpedia, fue el framework web Python más utilizado en GitHub. Es un micro-marco gratuito y de código abierto escrito en Python ( [ver en GitHub](https://github.com/freeCodeCamp/guide/tree/master/src/pages/javascript) ). Como dice la Wikipedia,
 
 Flask está clasificado como microframework porque no requiere herramientas o bibliotecas particulares. No tiene una capa de abstracción de base de datos, validación de formularios ni ningún otro componente en el que las bibliotecas de terceros preexistentes proporcionen funciones comunes.
 
