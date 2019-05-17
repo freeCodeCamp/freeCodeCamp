@@ -8,7 +8,13 @@ challengeType: 1
 <section id='description'>
 The <code>join</code> method is used to join the elements of an array together to create a string. It takes an argument for the delimiter that is used to separate the array elements in the string.
 Here's an example:
-<blockquote>var arr = ["Hello", "World"];<br>var str = arr.join(" ");<br>// Sets str to "Hello World"</blockquote>
+
+```js
+var arr = ["Hello", "World"];
+var str = arr.join(" ");
+// Sets str to "Hello World"
+```
+
 </section>
 
 ## Instructions

@@ -9,7 +9,11 @@ videoUrl: 'https://scrimba.com/c/cNpM8AN'
 <section id='description'>
 In JavaScript, when the <code>+</code> operator is used with a <code>String</code> value, it is called the <dfn>concatenation</dfn> operator. You can build a new string out of other strings by <dfn>concatenating</dfn> them together.
 <strong>Example</strong>
-<blockquote>'My name is Alan,' + ' I concatenate.'</blockquote>
+
+```js
+'My name is Alan,' + ' I concatenate.'
+```
+
 <strong>Note</strong><br>Watch out for spaces. Concatenation does not add spaces between concatenated strings, so you'll need to add them yourself.
 </section>
 

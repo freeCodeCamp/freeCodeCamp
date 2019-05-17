@@ -9,9 +9,19 @@ videoUrl: 'https://scrimba.com/c/cWPVaUR'
 <section id='description'>
 In JavaScript, <code>String</code> values are <dfn>immutable</dfn>, which means that they cannot be altered once created.
 For example, the following code:
-<blockquote>var myStr = "Bob";<br>myStr[0] = "J";</blockquote>
+
+```js
+var myStr = "Bob";
+myStr[0] = "J";
+```
+
 cannot change the value of <code>myStr</code> to "Job", because the contents of <code>myStr</code> cannot be altered. Note that this does <em>not</em> mean that <code>myStr</code> cannot be changed, just that the individual characters of a <dfn>string literal</dfn> cannot be changed. The only way to change <code>myStr</code> would be to assign it with a new string, like this:
-<blockquote>var myStr = "Bob";<br>myStr = "Job";</blockquote>
+
+```js
+var myStr = "Bob";
+myStr = "Job";
+```
+
 </section>
 
 ## Instructions

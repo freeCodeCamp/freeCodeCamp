@@ -9,7 +9,16 @@ videoUrl: 'https://scrimba.com/c/cd62NhM'
 <section id='description'>
 Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.
 Here is a function <code>myTest</code> with a local variable called <code>loc</code>.
-<blockquote>function myTest() {<br>&nbsp;&nbsp;var loc = "foo";<br>&nbsp;&nbsp;console.log(loc);<br>}<br>myTest(); // logs "foo"<br>console.log(loc); // loc is not defined</blockquote>
+
+```js
+function myTest() {
+  var loc = "foo";
+  console.log(loc);
+}
+myTest(); // logs "foo"
+console.log(loc); // loc is not defined
+```
+
 <code>loc</code> is not defined outside of the function.
 </section>
 
