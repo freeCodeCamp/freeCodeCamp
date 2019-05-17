@@ -66,4 +66,4 @@ print(metrics.accuracy_score(y_test, y_pred_class))
 
 Resources
 
-* Implementing Linear Regression with sklearn Tutorial https://towardsdatascience.com/implementing-supervised-learning-algorithm-by-sklearn-linear-regression-96ffbdb29961
+[Medium article - Implementing Linear Regression with sklearn Tutorial](https://towardsdatascience.com/implementing-supervised-learning-algorithm-by-sklearn-linear-regression-96ffbdb29961)
