@@ -6,33 +6,29 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-In the previous challenge, you learned about <code>import</code> and how it can be leveraged to import small amounts of code from large files. In order for this to work, though, we must utilize one of the statements that goes with <code>import</code>, known as <dfn>export</dfn>. When we want some code - a function, or a variable - to be usable in another file, we must export it in order to import it into another file. Like <code>import</code>, <code>export</code> is a non-browser feature.
-The following is what we refer to as a <dfn>named export</dfn>. With this, we can import any code we export into another file with the <code>import</code> syntax you learned in the last lesson. Here's an example:
+Imagine you have a function, <code>capitalizeFirstLetter</code>, that simply takes in a string, and returns the string with the first letter capitalized. You want to use this function in three different javascript files. In order to share the function with the files, you need to first <code>export</code> it.
 
 ```js
-const capitalizeString = (string) => {
+export const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-export { capitalizeString } // How to export functions.
-export const foo = "bar"; // How to export variables.
 ```
 
-Alternatively, if you would like to compact all your <code>export</code> statements into one line, you can take this approach:
+The above is a common way to export a single function, but you can achieve the same thing like this:
 
 ```js
-const capitalizeString = (string) => {
+const capitalizeFirstLetter = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
-const foo = "bar";
-export { capitalizeString, foo }
+
+export { capitalizeFirstLetter };
 ```
 
-Either approach is perfectly acceptable.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables.
+Create and export a variable named </code></code>
 </section>
 
 ## Tests

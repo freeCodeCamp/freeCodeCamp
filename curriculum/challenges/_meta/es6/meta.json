@@ -93,12 +93,16 @@
       "Use getters and setters to Control Access to an Object"
     ],
     [
-      "587d7b8c367417b2b2512b55",
-      "Understand the Differences Between import and require"
+      "5cddbfd622f1a59093ec611d",
+      "Create a Module Script"
     ],
     [
       "587d7b8c367417b2b2512b56",
       "Use export to Reuse a Code Block"
+    ],
+    [
+      "587d7b8c367417b2b2512b55",
+      "Share Javascript Code Using import"
     ],
     [
       "587d7b8c367417b2b2512b57",
