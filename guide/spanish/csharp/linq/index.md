@@ -1,7 +1,8 @@
 ---
 title: LINQ
 localeTitle: LINQ
----# LINQ (Language Integrated Query)
+---
+# LINQ (Language Integrated Query)
 
 LINQ (Language Integrated Query) es un modelo y metodología de programación de Microsoft que esencialmente agrega capacidades de consulta formales a los lenguajes de programación basados ​​en Microsoft .NET. LINQ ofrece una sintaxis compacta, expresiva e inteligible para manipular datos. El valor real de LINQ proviene de su capacidad para aplicar la misma consulta a una base de datos SQL, un DataSet, una lista, un diccionario, etc.
 
@@ -23,28 +24,28 @@ var fruits = new List<Fruit>() {
 Entonces podemos hacer cosas como:
 
 ```csharp
-// Get the name of the first fruit 
+// Obtener el nombre de la primer fruta
  var firstName = fruits.Select(f => f.Name).First(); // Orange 
  
- // Count how many fruits are red 
+ // Conteo de las frutas rojas
  var qntRed = fruits.Where(Color == "Red").Count(); // 2 
  
- // Create a list of yellow fruits 
+ // Lista de las frutas amarillas 
  var yellowFruits = fruits.Where(f => f.Color == "Yellow").ToList(); // { Pineapple, Mango } 
  
- // Orders list by quantity from most to less 
+ // Ordenar la lista de mayor a menor cantidad
  var orderedFruits = fruits.OrderByDescending(f => f.Quantity).ToList(); // {Grape, Strawberry, Orange, Apple, Mango, Pineapple} 
  
- // Sum the quantity of fruits 
+ // Suma de las cantidades de las frutas
  var quantity = fruits.Sum(f => f.Quantity); // 53 
  
- // Check if there are any green fruits 
+ // Consultar si hay frutas verdes
  var hasGreen = fruits.Any(f => f.Color == "Green"); // false 
  
- // Group fruits by color into a dictionary 
+ // Agrupar frutas por color en un diccionario
  var fruitsByColor = fruits.GroupBy(g => g.Color).ToDictionary(k => k.Key, v => v.ToList()); // Dictionary of list of fruits by color 
  
- // linq operations can be concatenated and are not performed as long as data is needed 
+ // Las operaciones linq pueden ser concatenadas y no se realizan hasta que la informacion es requerida
  var logs = new List<Log>; 
  
  if (filterBySeverity) 
