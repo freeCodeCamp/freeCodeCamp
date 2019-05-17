@@ -91,8 +91,7 @@ function renderSettingsButton() {
   );
 }
 
-// eslint-disable-next-line react/prop-types
-function Profile({ user, isSessionUser, data }) {
+function Profile({ user, isSessionUser }) {
   const {
     profileUI: {
       isLocked = true,
@@ -130,78 +129,76 @@ function Profile({ user, isSessionUser, data }) {
     return renderIsLocked(username);
   }
 
-  let idToSlugMap = {};
-
-  for (let item of data.allChallengeNode.edges) {
-    idToSlugMap[item.node.id] = item.node.fields.slug;
-  }
-
   return (
-    <Fragment>
-      <Helmet>
-        <title>Profile | freeCodeCamp.org</title>
-      </Helmet>
-      <Spacer size={2} />
-      <Grid>
-        {isSessionUser ? renderSettingsButton() : null}
-        <Camper
-          about={showAbout && about}
-          githubProfile={githubProfile}
-          isGithub={isGithub}
-          isLinkedIn={isLinkedIn}
-          isTwitter={isTwitter}
-          isWebsite={isWebsite}
-          linkedin={linkedin}
-          location={showLocation && location}
-          name={showName && name}
-          picture={picture}
-          points={showPoints && points}
-          twitter={twitter}
-          username={username}
-          website={website}
-          yearsTopContributor={yearsTopContributor}
-        />
-        {showHeatMap ? <HeatMap calendar={calendar} streak={streak} /> : null}
-        {showCerts ? <Certifications username={username} /> : null}
-        {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
-        {showTimeLine ? (
-          <Timeline
-            className='timelime-container'
-            completedMap={completedChallenges}
-            idToSlugMap={idToSlugMap}
-            username={username}
-          />
-        ) : null}
-      </Grid>
-    </Fragment>
+    <StaticQuery
+      query={graphql`
+        query ProfileQuery {
+          allChallengeNode(
+            sort: { fields: [superOrder, order, challengeOrder] }
+          ) {
+            edges {
+              node {
+                fields {
+                  slug
+                }
+                id
+              }
+            }
+          }
+        }
+      `}
+      render={data => {
+        const idToSlugMap = data.allChallengeNode.edges.reduce(
+          (a, b) => Object.assign(a, { [b.node.id]: b.node.fields.slug }),
+          {}
+        );
+        return (
+          <Fragment>
+            <Helmet>
+              <title>Profile | freeCodeCamp.org</title>
+            </Helmet>
+            <Spacer size={2} />
+            <Grid>
+              {isSessionUser ? renderSettingsButton() : null}
+              <Camper
+                about={showAbout && about}
+                githubProfile={githubProfile}
+                isGithub={isGithub}
+                isLinkedIn={isLinkedIn}
+                isTwitter={isTwitter}
+                isWebsite={isWebsite}
+                linkedin={linkedin}
+                location={showLocation && location}
+                name={showName && name}
+                picture={picture}
+                points={showPoints && points}
+                twitter={twitter}
+                username={username}
+                website={website}
+                yearsTopContributor={yearsTopContributor}
+              />
+              {showHeatMap ? (
+                <HeatMap calendar={calendar} streak={streak} />
+              ) : null}
+              {showCerts ? <Certifications username={username} /> : null}
+              {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
+              {showTimeLine ? (
+                <Timeline
+                  className='timelime-container'
+                  completedMap={completedChallenges}
+                  idToSlugMap={idToSlugMap}
+                  username={username}
+                />
+              ) : null}
+            </Grid>
+          </Fragment>
+        );
+      }}
+    />
   );
 }
 
 Profile.displayName = 'Profile';
 Profile.propTypes = propTypes;
 
-// eslint-disable-next-line react/display-name
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query ProfileQuery {
-        allChallengeNode(
-          sort: { fields: [superOrder, order, challengeOrder] }
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-                blockName
-              }
-              id
-              block
-              title
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Profile data={data} {...props} />}
-  />
-);
+export default Profile;

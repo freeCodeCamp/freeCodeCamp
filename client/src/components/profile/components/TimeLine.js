@@ -43,6 +43,7 @@ const propTypes = {
   ),
   fetchIdToNameMap: PropTypes.func.isRequired,
   idToNameMap: PropTypes.objectOf(PropTypes.string),
+  idToSlugMap: PropTypes.objectOf(PropTypes.string),
   username: PropTypes.string
 };
 
@@ -68,7 +69,6 @@ class Timeline extends Component {
   }
 
   renderCompletion(completed) {
-    // eslint-disable-next-line react/prop-types
     const { idToNameMap, idToSlugMap } = this.props;
     const { id, completedDate } = completed;
     const challengeDashedName = idToNameMap[id];
