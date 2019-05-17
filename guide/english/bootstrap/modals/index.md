@@ -6,7 +6,7 @@ Modals are popups for providing important information before continuing further.
 
 To create such dialogs/pop-ups on the top of current page Bootstrap provides Modal plugin.
 
-#### Code Example :
+#### Code Example (Bootstrap v4.1) :
 
 ```html
 <!DOCTYPE html>
@@ -14,45 +14,45 @@ To create such dialogs/pop-ups on the top of current page Bootstrap provides Mod
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
 
 <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
  </head>
   
   <body>
     
-<!-- Triggering the modal popup -->
-   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Open Modal</button>
-   
-  <!-- Modal popup -->
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal popup-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
   
-   <div class="modal fade" id="myModal">
-       <div class="modal-dialog">
-
-  <!-- Modal Content -->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button  type="button" data-dismiss="modal" class="close">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
-              </div>
-
-              <div class="modal-body">
-                Do you wish to continue?
-              </div>
-
-              <div class="modal-footer">
-                <button class="btn btn-default"  data-dismiss="modal">close</button>
-              </div>
-
-            </div>
-        </div>
-
-   </div>
-
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
  </body>
 </html>
 
@@ -82,11 +82,9 @@ j) `.modal-footer` class styles the footer of the modal.
   
   
 #### More Information : 
-<a href='https://bootstrapbay.com/blog/working-bootstrap-modal/' target='_blank' rel='nofollow'>Bootstrap Modal</a>
-
-If you want to explore ****Bootstrap 4.1 Latest **** :
-<a href='https://getbootstrap.com/docs/4.1/components/modal/' target='_blank' rel='nofollow'>Bootstrap Modal v4.0</a>
-
+[Bootstrap Modal](https://bootstrapbay.com/blog/working-bootstrap-modal/)
+[Bootstrap Modal v3.3](https://getbootstrap.com/docs/3.3/javascript/)
+[Bootstrap Modal v4.0](https://getbootstrap.com/docs/4.1/components/modal/)
 
 
 

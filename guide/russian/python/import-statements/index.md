@@ -13,16 +13,17 @@ localeTitle: Операции импорта Python
 
 ## Использование стандартных библиотек
 
-Пример. Подробно вы можете прочитать о методах / функциях всех стандартных библиотек в официальных документах Python.
-```
+Пример. Подробно вы можете прочитать о методах и функциях всех стандартных библиотек в официальных документах Python. ( https://docs.python.org/3/)
+
+```python
 import time 
  for i in range(100): 
     time.sleep(1)   # Waits for 1 second and then executes the next command 
     print(str(i) + ' seconds have passed')  # prints the number of seconds passed after the program was started 
 ```
-
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ": Ракета:") [Код запуска](https://repl.it/CS6C)
-```
+
+```python
 # To calculate the execution time of a part of program 
  import time 
  start = time.time() 
@@ -30,20 +31,20 @@ import time
  end = time.time() 
  print('Execution time:' , end-start) 
 ```
-
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ": Ракета:") [Код запуска](https://repl.it/CS6C/1)
-```
+
+```python
 # Using math Module 
  import math 
  print(math.sqrt(100))   # prints 10 
 ```
-
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ": Ракета:") [Код запуска](https://repl.it/CS6C/2)
 
 ## Использование сторонних модулей
 
-Модули сторонних разработчиков не поставляются в комплекте с python, но мы должны установить его извне с помощью менеджеров пакетов, таких как [`pip`](https://bootstrap.pypa.io/get-pip.py) и [`easy install`](https://bootstrap.pypa.io/ez_setup.py)
-```
+Модули сторонних разработчиков не поставляются в комплекте с python, но мы можем установить его извне с помощью менеджеров пакетов, таких как [`pip`](https://bootstrap.pypa.io/get-pip.py) и [`easy install`](https://bootstrap.pypa.io/ez_setup.py)
+```python
+# Например - "pip install requests" - установка модуля "requests"
 # To make http requests 
  import requests 
  rq = requests.get(target_url) 
@@ -54,8 +55,9 @@ import time
 
 ## Структурировать программы
 
-Мы хотим создать программу, которая имеет различные функции относительно простых чисел. Итак, начнем. Мы определим все функции в `prime_functions.py`
-```
+Мы хотим создать программу, которая имеет различные функции относительно простых чисел. Итак, начнем. Мы определим все функции в `prime_functions.py`:
+
+```python
 # prime_functions.py 
  from math import ceil, sqrt 
  def isPrime(a): 
@@ -84,7 +86,8 @@ import time
 Теперь мы хотим использовать функции, которые мы только что создали в `prime_functions.py` чтобы мы создали новый файл `playground.py` для использования этих функций.
 
 > _Обратите внимание, что эта программа слишком проста для создания двух отдельных файлов, это просто для демонстрации. Но когда есть большие сложные программы, создание разных файлов действительно полезно._
-```
+
+```python
 # playground.py 
  import prime_functions 
  print(prime_functions.isPrime(29)) # returns True 

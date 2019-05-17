@@ -3,21 +3,21 @@ id: 5a9036ee38fddaf9a66b5d36
 title: Create a Row Gap using grid-row-gap
 challengeType: 0
 videoUrl: ''
-localeTitle: Создание пробела в строке с использованием разрыва сетки
+localeTitle: Создание промежутка между строк с использованием grid-row-gap
 ---
 
 ## Description
-<section id="description"> Вы можете добавить пробел между строками сетки, используя <code>grid-row-gap</code> таким же образом, что вы добавили промежуток между столбцами в предыдущем вызове. </section>
+<section id="description"> Вы можете добавить промежуток между строками грида, используя <code>grid-row-gap</code> таким же образом, что вы добавили промежуток между столбцами в предыдущем упражнении. </section>
 
 ## Instructions
-<section id="instructions"> Создайте пробел для строк высотой 5 <code>5px</code> . </section>
+<section id="instructions"> Задайте промежуток для строк высотой <code>5px</code> . </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
+  - text: 'класс <code>container</code> должен иметь свойство <code>grid-row-gap</code> со значением 5px.'
     testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.");'
 
 ```

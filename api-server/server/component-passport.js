@@ -1,42 +1,21 @@
 import passport from 'passport';
+// eslint-disable-next-line
 import {
+  // prettier ignore
   PassportConfigurator
 } from '@freecodecamp/loopback-component-passport';
 import url from 'url';
-import jwt from 'jsonwebtoken';
 import dedent from 'dedent';
 
-import { homeLocation } from '../../config/env.json';
-import { jwtSecret } from '../../config/secrets';
+import { getUserById } from './utils/user-stats';
+import { homeLocation } from '../../config/env';
 import passportProviders from './passport-providers';
-import { createCookieConfig } from './utils/cookieConfig';
+import { setAccessTokenToResponse } from './utils/getSetAccessToken';
 
 const passportOptions = {
   emailOptional: true,
   profileToUser: null
 };
-
-const fields = {
-  progressTimestamps: false
-};
-
-function getCompletedCertCount(user) {
-  return [
-    'isApisMicroservicesCert',
-    'is2018DataVisCert',
-    'isFrontEndLibsCert',
-    'isInfosecQaCert',
-    'isJsAlgoDataStructCert',
-    'isRespWebDesignCert'
-  ].reduce((sum, key) => (user[key] ? sum + 1 : sum), 0);
-}
-
-function getLegacyCertCount(user) {
-  return ['isFrontEndCert', 'isBackEndCert', 'isDataVisCert'].reduce(
-    (sum, key) => (user[key] ? sum + 1 : sum),
-    0
-  );
-}
 
 PassportConfigurator.prototype.init = function passportInit(noSession) {
   this.app.middleware('session:after', passport.initialize());
@@ -50,62 +29,15 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
   // Serialization and deserialization is only required if passport session is
   // enabled
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
-  });
+  passport.serializeUser((user, done) => done(null, user.id));
 
-  passport.deserializeUser((id, done) => {
-    this.userModel.findById(id, { fields }, (err, user) => {
-      if (err || !user) {
-        return done(err, user);
-      }
-
-      return this.app.dataSources.db.connector
-        .collection('user')
-        .aggregate([
-          { $match: { _id: user.id } },
-          { $project: { points: { $size: '$progressTimestamps' } } }
-        ])
-        .get(function(err, [{ points = 1 } = {}]) {
-          if (err) {
-            console.error(err);
-            return done(err);
-          }
-          user.points = points;
-          let completedChallengeCount = 0;
-          let completedProjectCount = 0;
-          if ('completedChallenges' in user) {
-            completedChallengeCount = user.completedChallenges.length;
-            user.completedChallenges.forEach(item => {
-              if (
-                'challengeType' in item &&
-                (item.challengeType === 3 || item.challengeType === 4)
-              ) {
-                completedProjectCount++;
-              }
-            });
-          }
-          user.completedChallengeCount = completedChallengeCount;
-          user.completedProjectCount = completedProjectCount;
-          user.completedCertCount = getCompletedCertCount(user);
-          user.completedLegacyCertCount = getLegacyCertCount(user);
-          user.completedChallenges = [];
-          return done(null, user);
-        });
-    });
+  passport.deserializeUser(async (id, done) => {
+    const user = await getUserById(id).catch(done);
+    return done(null, user);
   });
 };
 
 export function setupPassport(app) {
-  // NOTE(Bouncey): Not sure this is doing much now
-  // Loopback complains about userCredentialModle when this
-  // setup is remoed from server/server.js
-  //
-  // I have split the custom callback in to it's own export that we can use both
-  // here and in boot:auth
-  //
-  // Needs more investigation...
-
   const configurator = new PassportConfigurator(app);
 
   configurator.setupModels({
@@ -131,19 +63,44 @@ export function setupPassport(app) {
   });
 }
 
+export const saveResponseAuthCookies = () => {
+  return (req, res, next) => {
+    const user = req.user;
+
+    if (!user) {
+      return res.redirect('/signin');
+    }
+
+    const { accessToken } = user;
+
+    setAccessTokenToResponse({ accessToken }, req, res);
+    return next();
+  };
+};
+
+export const loginRedirect = () => {
+  return (req, res) => {
+    const successRedirect = req => {
+      if (!!req && req.session && req.session.returnTo) {
+        delete req.session.returnTo;
+        return `${homeLocation}/welcome`;
+      }
+      return `${homeLocation}/welcome`;
+    };
+
+    let redirect = url.parse(successRedirect(req), true);
+    delete redirect.search;
+
+    redirect = url.format(redirect);
+    return res.redirect(redirect);
+  };
+};
+
 export const createPassportCallbackAuthenticator = (strategy, config) => (
   req,
   res,
   next
 ) => {
-  // https://stackoverflow.com/q/37430452
-  const successRedirect = req => {
-    if (!!req && req.session && req.session.returnTo) {
-      delete req.session.returnTo;
-      return `${homeLocation}/welcome`;
-    }
-    return config.successRedirect || `${homeLocation}/welcome`;
-  };
   return passport.authenticate(
     strategy,
     { session: false },
@@ -155,9 +112,7 @@ export const createPassportCallbackAuthenticator = (strategy, config) => (
       if (!user || !userInfo) {
         return res.redirect('/signin');
       }
-      let redirect = url.parse(successRedirect(req), true);
-
-      delete redirect.search;
+      const redirect = `${homeLocation}/welcome`;
 
       const { accessToken } = userInfo;
       const { provider } = config;
@@ -178,19 +133,10 @@ we recommend using your email address: ${user.email} to sign in instead.
             `
           );
         }
-        const cookieConfig = {
-          ...createCookieConfig(req),
-          maxAge: accessToken.ttl
-        };
-        const jwtAccess = jwt.sign({ accessToken }, jwtSecret);
-        res.cookie('jwt_access_token', jwtAccess, cookieConfig);
-        res.cookie('access_token', accessToken.id, cookieConfig);
-        res.cookie('userId', accessToken.userId, cookieConfig);
+        setAccessTokenToResponse({ accessToken }, req, res);
         req.login(user);
       }
-
-      redirect = url.format(redirect);
-      return res.redirect(redirect);
+      return res.redirectWithFlash(redirect);
     }
   )(req, res, next);
 };
