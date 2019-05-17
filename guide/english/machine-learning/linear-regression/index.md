@@ -81,5 +81,7 @@ How would you know if your regression model is accurate or not? Well, one method
 
 ## More Information:
 [scikit learn](http://scikit-learn.org/stable/documentation.html)
-[Article on regression] https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
+[Article on regression](https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/)
+[Medium article - Implementing Linear Regression with sklearn Tutorial](https://towardsdatascience.com/implementing-supervised-learning-algorithm-by-sklearn-linear-regression-96ffbdb29961)
+
 
