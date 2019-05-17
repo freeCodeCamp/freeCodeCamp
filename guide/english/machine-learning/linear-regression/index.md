@@ -76,6 +76,10 @@ y_pred_class = model.predict(X_test)
 print(metrics.accuracy_score(y_test, y_pred_class))
 ```
 
+## Metrics  
+How would you know if your regression model is accurate or not? Well, one method is to calculate the R-squared score of your model. [R-squared score](http://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit) (also known as coefficient of determination) is a statistical measure of how close the data are to the fitted regression line.
 
-You can refer to this article for deeper insight into regression  
-https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
+## More Information:
+[scikit learn](http://scikit-learn.org/stable/documentation.html)
+[Article on regression] https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
+
