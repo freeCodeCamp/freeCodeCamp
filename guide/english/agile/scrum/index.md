@@ -28,13 +28,14 @@ The Scrum process is made up of the following items:
 - Product Backlog: It is the list of tasks a Team is supposed to finish within the current Sprint. It is decided by the Product Owner, in agreement with the Management as well as Delivery Team.
 
 ## Roles
-- **Product Owner(PO)**: The ONLY Accountable person to the Management. PO decides what goes in or out of the Product Backlog.
-- **Delivery Team**: They are required to work in accordance with the tasks set by their PO in the product backlog and deliver the required deliverable at the end of the sprint.
-- **Scrum Masters**: - Scrum Master's has to strictly adhere to Scrum Guide and make the team understand the need to adhere to Scrum guide when following Scrum. It is a Scrum Master's job to ensure all Scrum ceremonies being conducted on time and participated by all the required people as per the scrum guide. The SM has to ensure that the Daily Scrum is conducted regularly and actively participated by the team.
+- **Product Owner(PO)**: The ONLY accountable person to the Management (or any stakeholders). The PO decides what goes in or out of the Product Backlog, for making decisions in a timely manner, and for providing information in a timely manner.
+- **Delivery Team**: The Delivery Team is required to work in accordance with the tasks set by their PO in the product backlog and deliver the required deliverable at the end of the sprint.
+- **Scrum Masters(SM)**: - Scrum Masters are the Team Lead and have to strictly adhere to the Scrum Guide and make the team understand the need to adhere to it as well. It is the Scrum Master's job to ensure that all Scrum ceremonies are being conducted on time and participated by all the required people as per the Scrum Guide. The SM has to ensure that the Daily Scrum is conducted regularly and actively participated by the team.
+
 
 #### More Information:
 
-There are several online tools that can be used to do scrum for your team:
+There are several online tools that can be used to implement Scrum on your team:
 
 - [Scrum Do](https://www.scrumdo.com/) 
 - [Asana](http://www.asana.com)
@@ -50,4 +51,6 @@ Here are some more resources:
 - [Why Scrum](https://www.scrumalliance.org/why-scrum) from The Scrum Alliance
 - [Scrum Guide](http://www.scrumguides.org/scrum-guide.html) from Scrum.org
 - [Doing vs Being Agile](http://agilitrix.com/2016/04/doing-agile-vs-being-agile/)
+- [Roles on Agile Teams: From Small to Large Teams](http://www.ambysoft.com/essays/agileRoles.html)
 - [YouTube - Introduction to Scrum](https://www.youtube.com/watch?v=9TycLR0TqFA)
+
