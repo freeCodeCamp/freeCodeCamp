@@ -16,7 +16,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.
+Remember that Arrays have zero-based numbering, which means the last index of the array is <code>length - 1</code>. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code> i </code> is at <code>length - 1</code>.
 </section>
 
 ## Instructions
