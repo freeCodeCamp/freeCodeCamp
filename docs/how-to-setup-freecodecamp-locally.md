@@ -474,8 +474,9 @@ If you are stuck, and need help, let us know by asking in the ['Contributors' ca
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
 
 ### Troubleshooting
-If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, try the following if you are using docker:
+If the app launches but you are encountering UI errors such as fonts not being loaded or the code editor not displaying properly, see the following depending on your local setup:
 
+**Docker Build:**
 ```sh
 # We use a mono repo and have multiple components (server, client, tools, plugins, etc.)
 # Use this command to clean up all dependencies in all of the components
@@ -491,8 +492,7 @@ npm run docker:seed
 npm run docker:develop
 ```
 
-If you are not using docker, the process is very similar, but uses different versions of each command:
-
+**Local Build:**
 ```sh
 npm run clean
 npm ci
