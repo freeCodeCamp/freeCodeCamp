@@ -4,7 +4,7 @@ localeTitle: Objeto de proceso
 ---
 ## Objeto de proceso
 
-El objeto de `process` en Node.js es un objeto global al que se puede acceder desde cualquier módulo sin necesidad de hacerlo. Hay muy pocos objetos o propiedades globales proporcionados en Node.js y el `process` es uno de ellos. Es un componente esencial en el ecosistema Node.js ya que proporciona varios conjuntos de información sobre el tiempo de ejecución de un programa. Para explorar usaremos una de sus propiedades que se llama `process.versions` . Esta propiedad nos dice la información sobre la versión de Node.js que hemos instalado. Tiene que ser usado con la bandera `-p` .
+El objeto de `process` en Node.js es un objeto global al que se puede acceder desde cualquier módulo sin necesidad de requerirlo. Hay muy pocos objetos o propiedades globales proporcionados en Node.js y el `process` es uno de ellos. Es un componente esencial en el ecosistema Node.js ya que proporciona varios conjuntos de información sobre el tiempo de ejecución de un programa. Para explorar usaremos una de sus propiedades que se llama `process.versions` . Esta propiedad nos dice la información sobre la versión de Node.js que hemos instalado. Tiene que ser usado con la bandera `-p` .
 
 ```shell
 $ node  -p "process.versions" 
@@ -38,7 +38,7 @@ node -p "process.release"
   headersUrl: 'https://nodejs.org/download/release/v8.11.2/node-v8.11.2-headers.tar.gz' } 
 ```
 
-Estos son algunos de los diferentes comandos que podemos usar en una línea de comandos para acceder a la información, de lo contrario, ningún módulo puede proporcionar. Este objeto de `process` es una instancia de la clase EventEmitter y contiene sus propios eventos predefinidos, como `exit` que se puede usar para saber cuándo un programa en Node.js ha completado su ejecución. Ejecute el siguiente programa y podrá observar que el resultado aparece con el código de estado `0` . En Node.js, este código de estado significa que un programa se ha ejecutado correctamente.
+Estos son algunos de los diferentes comandos que podemos usar en una línea de comandos para acceder a la información, de lo contrario, ningún módulo puede proporcionar. Este objeto de `process` es una instancia de la clase EventEmitter y contiene sus propios eventos predefinidos, como `exit` que se puede usar para saber cuándo un programa en Node.js ha completado su ejecución. Ejecute el siguiente programa y podrá observar que el resultado aparece con el código de estado `0`. En Node.js, este código de estado significa que un programa se ha ejecutado correctamente.
 
 ```js
 process.on('exit', code => { 
@@ -62,9 +62,9 @@ Execution Completed
 
 *   process.stdin: un flujo legible
 *   process.stdout: un flujo grabable
-*   process.stderr: un flujo wriatable para reconocer errores
+*   process.stderr: un flujo grabable para reconocer errores
 
-Usando `argv` siempre puede acceder a los argumentos que se pasan en una línea de comando. `argv` es una matriz que tiene el propio Nodo como primer elemento y la ruta absoluta del archivo como segundo elemento. A partir del tercer elemento puede tener tantos argumentos.
+Usando `argv` siempre puede acceder a los argumentos que se pasan en una línea de comando. `argv` es una matriz que tiene el propio Node como primer elemento y la ruta absoluta del archivo como segundo elemento. A partir del tercer elemento puede tener tantos argumentos.
 
 Pruebe el siguiente programa para obtener más información sobre cómo puede usar estas diversas propiedades y funciones.
 
