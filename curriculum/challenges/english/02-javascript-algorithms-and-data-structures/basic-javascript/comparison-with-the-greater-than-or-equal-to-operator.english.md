@@ -12,10 +12,10 @@ Like the equality operator, <code>greater than or equal to</code> operator will 
 <strong>Examples</strong>
 
 ```js
-6  >=  6  // true
-7  >= '3' // true
-2  >=  3  // false
-'7' >=  9  // false
+6   >=  6   // true
+7   >= '3'  // true
+2   >=  3   // false
+'7' >=  9   // false
 ```
 
 </section>

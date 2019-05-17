@@ -11,10 +11,10 @@ The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares th
 <strong>Examples</strong>
 
 ```js
-4 <= 5  // true
+4   <= 5  // true
 '7' <= 7  // true
-5 <= 5  // true
-3 <= 2  // false
+5   <= 5  // true
+3   <= 2  // false
 '8' <= 4  // false
 ```
 

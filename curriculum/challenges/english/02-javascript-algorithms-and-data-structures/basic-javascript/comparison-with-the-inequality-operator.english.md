@@ -11,7 +11,7 @@ The inequality operator (<code>!=</code>) is the opposite of the equality operat
 <strong>Examples</strong>
 
 ```js
-1 != 2      // true
+1 !=  2     // true
 1 != "1"    // false
 1 != '1'    // false
 1 != true   // false

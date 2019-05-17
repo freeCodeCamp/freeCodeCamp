@@ -12,8 +12,8 @@ If the values being compared have different types, they are considered unequal, 
 <strong>Examples</strong>
 
 ```js
-3 === 3   // true
-3 === '3' // false
+3 ===  3   // true
+3 === '3'  // false
 ```
 
 In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.

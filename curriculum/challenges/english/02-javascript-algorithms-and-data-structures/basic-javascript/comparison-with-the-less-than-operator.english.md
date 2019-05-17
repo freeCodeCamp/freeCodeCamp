@@ -11,10 +11,10 @@ The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two
 <strong>Examples</strong>
 
 ```js
-2 < 5  // true
+2   < 5  // true
 '3' < 7  // true
-5 < 5  // false
-3 < 2  // false
+5   < 5  // false
+3   < 2  // false
 '8' < 4  // false
 ```
 

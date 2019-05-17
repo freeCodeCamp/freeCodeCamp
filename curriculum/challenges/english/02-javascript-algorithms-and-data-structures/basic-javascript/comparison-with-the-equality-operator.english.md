@@ -23,10 +23,10 @@ If <code>myVal</code> is equal to <code>10</code>, the equality operator returns
 In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
 
 ```js
-1   ==  1    // true
-1   ==  2    // false
-1   == '1'   // true
-"3"  ==  3    // true
+1   ==  1   // true
+1   ==  2   // false
+1   == '1'  // true
+"3" ==  3   // true
 ```
 
 </section>

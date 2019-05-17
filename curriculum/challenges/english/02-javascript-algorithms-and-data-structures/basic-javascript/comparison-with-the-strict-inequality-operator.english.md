@@ -11,9 +11,9 @@ The strict inequality operator (<code>!==</code>) is the logical opposite of the
 <strong>Examples</strong>
 
 ```js
-3 !== 3   // false
-3 !== '3' // true
-4 !== 3   // true
+3 !==  3   // false
+3 !== '3'  // true
+4 !==  3   // true
 ```
 
 </section>
