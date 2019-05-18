@@ -3,8 +3,22 @@ title: Match Whitespace
 ---
 ## Match Whitespace
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/match-whitespace/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To finish this challenge, it's necessary to use the __/s__ character class in your regexp pattern.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+__\s__ matches a single white space character. (including space, tab, form feed, line feed and other Unicode spaces. 
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+For example: 
+```javascript
+/\s\w*/ 
+// matches " bar" in "foo bar".
+```
+
+__important:__ Characters are case sensitive in regexp. __\S__ matches a single character other than white space.
+
+
+### Spoiiler Alert: Solution ahead
+```javascript
+let sample = "Whitespace is important in separating words";
+let countWhiteSpace = /\s/g; // Change this line
+let result = sample.match(countWhiteSpace);
+```

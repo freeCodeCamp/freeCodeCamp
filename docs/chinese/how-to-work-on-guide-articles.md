@@ -1,3 +1,16 @@
+<table>
+    <tr>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+    </tr>
+</table>
+
 #如何在指南文章工作
 在您的帮助下，我们可以创造将帮助成千上万人学会未来几年编码的一个全面参考工具。 💛
 您能：

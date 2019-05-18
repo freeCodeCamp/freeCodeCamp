@@ -7,7 +7,7 @@ Bootstrap is the most popular CSS framework for developing responsive, mobile fi
 
 ## Getting Started - Latest version: 4.1
 
-Below is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Bootstrap library. We have used a CDN in this example, please see <a href='https://getbootstrap.com/docs/4.1/getting-started/download/' target='_blank' rel='nofollow'>the official documentation</a> for other ways of installing the latest version of Bootstrap.
+Below is a simple HTML template which includes the latest compiled and minified CSS and JavaScript for the Bootstrap library. We have used a CDN in this example, please see <a href='https://getbootstrap.com/docs/4.1/getting-started/download/' target='_blank' rel='nofollow'>the official documentation</a> for other ways of installing the latest version of Bootstrap.
 
 ```html
     <!DOCTYPE html>
@@ -37,8 +37,8 @@ Below is a simple HTML template which includes the latest compiled and minified 
 
 ## Getting started - Bootstrap 3
 
-Bootstrap 3 isn't the latest stable version of Bootstrap, but it's still the most widely used version. You will find it in a lot of templates, wordpress themes, projects and many more. With that in mind, it's clear it is still useful to know how to use it.
-Don't hesitate to go trhough the excellent <a href="https://getbootstrap.com/docs/3.3/getting-started/" target="_blank" rel="nofollow">Bootstrap Documentation</a>.
+Bootstrap 3 isn't the latest stable version of Bootstrap, but it's still the most widely used version. You will find it in a lot of templates, WordPress themes, projects and many more. With that in mind, it's clear it is still useful to know how to use it.
+Don't hesitate to go through the excellent <a href="https://getbootstrap.com/docs/3.3/getting-started/" target="_blank" rel="nofollow">Bootstrap Documentation</a>.
 
 ```html
 <!DOCTYPE html>

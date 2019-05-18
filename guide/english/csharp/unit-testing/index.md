@@ -29,7 +29,7 @@ Unit testing is also closely used in conjunction with test driven development.
 ## Example code
 The code below is testing whether the ```MultiplyPointsMethod``` in the ```Multiply Points Class``` will output ```600``` from an input of 6.
 
-```cs
+```csharp
 [TestMethod]
 		public void BonusPointsOutputTestWithInt6()
 		{

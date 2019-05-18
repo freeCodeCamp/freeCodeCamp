@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244d5
 title: Comparison with the Greater Than Or Equal To Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c6KBqtV'
 ---
 
 ## Description
@@ -9,7 +10,14 @@ challengeType: 1
 The <code>greater than or equal to</code> operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.
 Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.
 <strong>Examples</strong>
-<blockquote> 6  >=  6  // true<br> 7  >= '3' // true<br> 2  >=  3  // false<br>'7' >=  9  // false</blockquote>
+
+```js
+6   >=  6   // true
+7   >= '3'  // true
+2   >=  3   // false
+'7' >=  9   // false
+```
+
 </section>
 
 ## Instructions
