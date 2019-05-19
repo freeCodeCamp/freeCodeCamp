@@ -4,14 +4,11 @@ import PropTypes from 'prop-types';
 import { Link } from '../../helpers';
 import UserState from '../components/UserState';
 
+import './menuLinks.css';
+
 function MenuLinks(props) {
   return (
-    <ul
-      className={`${props.displayMenu ? ' nav-expanded' : ''}${
-        props.disableMenuButtonBehavior ? ' nav-guide' : ''
-      }`}
-      id='top-right-nav'
-    >
+    <ul className={props.className} id='top-right-nav'>
       <li>
         <Link className='top-right-nav-link' to='/learn'>
           Learn
@@ -36,9 +33,8 @@ function MenuLinks(props) {
 
 MenuLinks.displayName = 'MenuLinks';
 MenuLinks.propTypes = {
-  disableMenuButtonBehavior: PropTypes.bool.isRequired,
-  disableSettings: PropTypes.bool.isRequired,
-  displayMenu: PropTypes.bool.isRequired
+  className: PropTypes.string,
+  disableSettings: PropTypes.bool
 };
 
 export default MenuLinks;

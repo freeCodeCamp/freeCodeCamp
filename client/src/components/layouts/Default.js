@@ -56,7 +56,6 @@ const metaKeywords = [
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  disableMenuButtonBehavior: PropTypes.bool,
   disableSettings: PropTypes.bool,
   fetchUser: PropTypes.func.isRequired,
   flashMessages: PropTypes.arrayOf(
@@ -70,6 +69,7 @@ const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
+  navigationMenu: PropTypes.element,
   onlineStatusChange: PropTypes.func.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool
@@ -141,7 +141,7 @@ class DefaultLayout extends Component {
       removeFlashMessage,
       landingPage,
       showFooter = true,
-      disableMenuButtonBehavior,
+      navigationMenu,
       isOnline,
       isSignedIn
     } = this.props;
@@ -161,8 +161,8 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <Header
-          disableMenuButtonBehavior={disableMenuButtonBehavior}
           disableSettings={disableSettings}
+          navigationMenu={navigationMenu}
         />
         <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
