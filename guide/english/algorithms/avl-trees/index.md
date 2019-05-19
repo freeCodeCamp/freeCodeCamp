@@ -63,6 +63,16 @@ The LR Rotation is combination of single left rotation followed by single right 
 ->Right Left Rotation (RL Rotation)
 The RL Rotation is combination of single right rotation followed by single left rotation. In RL Rotation, first every node moves one position to right then one position to left from the current position.
 
+Time Analysis Of AVL Tree:
+
+AVL tree is binary search tree with additional property that difference between height of left sub-tree and right sub-tree of any node can’t be more than 1. 
+
+Algorithm		Average	 Worst case
+Space		   O ( n ) {\displaystyle O(n)} O(n)	O ( n ) {\displaystyle O(n)} O(n)
+Search		O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)	O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)
+Insert		O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)	O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)
+Delete		O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)	O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)
+
 Application of AVL Trees
 
 AVL trees are beneficial in the cases where you are designing some database where insertions and deletions are not that frequent but you have to frequently look-up for the items present in there.
