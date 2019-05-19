@@ -79,6 +79,7 @@ int main()
 *   Não se esqueça de informar ao computador que este é o fim da função main (). Para fazer isso, você adiciona a chave de fechamento "}". Você encontrará um erro antes da execução do programa se você não incluir o **}** .
 
 ### O código deve ser algo como isto:
+
 ![Img](https://cdn-media-1.freecodecamp.org/imgr/d1liGwI.png)
 
 Os programadores usam um programa Hello World (como este) como um ritual no uso de uma nova linguagem de programação. É um símbolo de boa sorte.  
