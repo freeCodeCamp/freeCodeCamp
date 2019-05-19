@@ -14,7 +14,7 @@ Since you know what a queue is, this challenge will go over a queue again.
 <section id='instructions'>
 In this challenge, you will create a method that takes in a queue and reverses it.
 For example, if I put in a queue that with the integers 
-1,2,3,4,5, the output will then be 5,4,3,2,1.
+<code>1,2,3,4,5</code> the output will then be<code>5,4,3,2,1</code>
 
 </section>
 
