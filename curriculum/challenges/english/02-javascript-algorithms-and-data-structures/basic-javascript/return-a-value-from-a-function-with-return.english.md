@@ -9,7 +9,14 @@ videoUrl: 'https://scrimba.com/c/cy87wue'
 <section id='description'>
 We can pass values into a function with <dfn>arguments</dfn>. You can use a <code>return</code> statement to send a value back out of a function.
 <strong>Example</strong>
-<blockquote>function plusThree(num) {<br>&nbsp;&nbsp;return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>
+
+```js
+function plusThree(num) {
+  return num + 3;
+}
+var answer = plusThree(5); // 8
+```
+
 <code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.
 </section>
 

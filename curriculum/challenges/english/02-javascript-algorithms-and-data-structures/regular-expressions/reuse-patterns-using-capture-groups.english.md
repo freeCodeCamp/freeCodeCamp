@@ -10,7 +10,14 @@ Some patterns you search for will occur multiple times in a string. It is wastef
 You can search for repeat substrings using <code>capture groups</code>. Parentheses, <code>(</code> and <code>)</code>, are used to find repeat substrings. You put the regex of the pattern that will repeat in between the parentheses.
 To specify where that repeat string will appear, you use a backslash (<code>\</code>) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be <code>\1</code> to match the first group.
 The example below matches any word that occurs twice separated by a space:
-<blockquote>let repeatStr = "regex regex";<br>let repeatRegex = /(\w+)\s\1/;<br>repeatRegex.test(repeatStr); // Returns true<br>repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]</blockquote>
+
+```js
+let repeatStr = "regex regex";
+let repeatRegex = /(\w+)\s\1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
+```
+
 Using the <code>.match()</code> method on a string will return an array with the string it matches, along with its capture group.
 </section>
 

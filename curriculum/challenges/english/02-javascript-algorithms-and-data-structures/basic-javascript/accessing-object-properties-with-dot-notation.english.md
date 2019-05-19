@@ -10,7 +10,16 @@ videoUrl: 'https://scrimba.com/c/cGryJs8'
 There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.
 Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
 Here is a sample of using dot notation (<code>.</code>) to read an object's property:
-<blockquote>var myObj = {<br>&nbsp;&nbsp;prop1: "val1",<br>&nbsp;&nbsp;prop2: "val2"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>
+
+```js
+var myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+var prop1val = myObj.prop1; // val1
+var prop2val = myObj.prop2; // val2
+```
+
 </section>
 
 ## Instructions

@@ -8,11 +8,22 @@ challengeType: 1
 <section id='description'>
 ES6 adds some nice support for easily defining object literals.
 Consider the following code:
-<blockquote>const getMousePosition = (x, y) => ({<br>&nbsp;&nbsp;x: x,<br>&nbsp;&nbsp;y: y<br>});</blockquote>
+
+```js
+const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+```
+
 <code>getMousePosition</code> is a simple function that returns an object containing two fields.
 ES6 provides the syntactic sugar to eliminate the redundancy of having to write <code>x: x</code>. You can simply write <code>x</code> once, and it will be converted to<code>x: x</code> (or something equivalent) under the hood.
 Here is the same function from above rewritten to use this new syntax:
-<blockquote>const getMousePosition = (x, y) => ({ x, y });</blockquote>
+
+```js
+const getMousePosition = (x, y) => ({ x, y });
+```
+
 </section>
 
 ## Instructions

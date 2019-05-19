@@ -7,17 +7,34 @@ challengeType: 1
 ## Description
 <section id='description'>
 One of the biggest problems with declaring variables with the <code>var</code> keyword is that you can overwrite variable declarations without an error.
-<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// logs 'David'</blockquote>
+
+```js
+var camper = 'James';
+var camper = 'David';
+console.log(camper);
+// logs 'David'
+```
+
 As you can see in the code above, the <code>camper</code> variable is originally declared as <code>James</code> and then overridden to be <code>David</code>.
 In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite.
 Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>
 A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.
 If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.
-<blockquote>let camper = 'James';<br>let camper = 'David'; // throws an error</blockquote>
+
+```js
+let camper = 'James';
+let camper = 'David'; // throws an error
+```
+
 This error can be seen in the console of your browser.
 So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.
 Note the <code>"use strict"</code>. This enables Strict Mode, which catches common coding mistakes and "unsafe" actions. For instance:
-<blockquote>"use strict";<br>x = 3.14; // throws an error because x is not declared</blockquote>
+
+```js
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+
 </section>
 
 ## Instructions

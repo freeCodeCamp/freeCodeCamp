@@ -9,7 +9,13 @@ videoUrl: 'https://scrimba.com/c/cnqmVtJ'
 <section id='description'>
 An easy way to append data to the end of an array is via the <code>push()</code> function.
 <code>.push()</code> takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
-<blockquote>var arr = [1,2,3];<br>arr.push(4);<br>// arr is now [1,2,3,4]</blockquote>
+
+```js
+var arr = [1,2,3];
+arr.push(4);
+// arr is now [1,2,3,4]
+```
+
 </section>
 
 ## Instructions

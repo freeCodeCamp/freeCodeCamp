@@ -9,7 +9,16 @@ videoUrl: 'https://scrimba.com/c/c9yEJT4'
 <section id='description'>
 After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.
 For example, let's look at <code>ourDog</code>:
-<blockquote>var ourDog = {<br>&nbsp;&nbsp;"name": "Camper",<br>&nbsp;&nbsp;"legs": 4,<br>&nbsp;&nbsp;"tails": 1,<br>&nbsp;&nbsp;"friends": ["everything!"]<br>};</blockquote>
+
+```js
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"]
+};
+```
+
 Since he's a particularly happy dog, let's change his name to "Happy Camper". Here's how we update his object's name property:
 <code>ourDog.name = "Happy Camper";</code> or
 <code>ourDog["name"] = "Happy Camper";</code>

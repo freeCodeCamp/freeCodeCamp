@@ -9,7 +9,23 @@ challengeType: 1
 A new feature of ES6 is the <dfn>template literal</dfn>. This is a special type of string that makes creating complex strings easier.
 Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
 Consider the code below:
-<blockquote>const person = {<br>&nbsp;&nbsp;name: "Zodiac Hasbro",<br>&nbsp;&nbsp;age: 56<br>};<br><br>// Template literal with multi-line and string interpolation<br>const greeting = `Hello, my name is ${person.name}!<br>I am ${person.age} years old.`;<br><br>console.log(greeting); // prints<br>// Hello, my name is Zodiac Hasbro!<br>// I am 56 years old.<br></blockquote>
+
+```js
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+
+```
+
 A lot of things happened there.
 Firstly, the example uses backticks (<code>`</code>), not quotes (<code>'</code> or <code>"</code>), to wrap the string.
 Secondly, notice that the string is multi-line, both in the code and the output. This saves inserting <code>\n</code> within strings.

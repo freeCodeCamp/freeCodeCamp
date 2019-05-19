@@ -7,15 +7,35 @@ challengeType: 1
 ## Description
 <section id='description'>
 In the previous challenge, you created a <code>supertype</code> called <code>Animal</code> that defined behaviors shared by all animals:
-<blockquote>function Animal() { }<br>Animal.prototype.eat = function() {<br>&nbsp;&nbsp;console.log("nom nom nom");<br>};</blockquote>
+
+```js
+function Animal() { }
+Animal.prototype.eat = function() {
+  console.log("nom nom nom");
+};
+```
+
 This and the next challenge will cover how to reuse <code>Animal's</code> methods inside <code>Bird</code> and <code>Dog</code> without defining them again. It uses a technique called <code>inheritance</code>.
 This challenge covers the first step: make an instance of the <code>supertype</code> (or parent).
 You already know one way to create an instance of <code>Animal</code> using the <code>new</code> operator:
-<blockquote>let animal = new Animal();</blockquote>
+
+```js
+let animal = new Animal();
+```
+
 There are some disadvantages when using this syntax for <code>inheritance</code>, which are too complex for the scope of this challenge. Instead, here's an alternative approach without those disadvantages:
-<blockquote>let animal = Object.create(Animal.prototype);</blockquote>
+
+```js
+let animal = Object.create(Animal.prototype);
+```
+
 <code>Object.create(obj)</code> creates a new object, and sets <code>obj</code> as the new object's <code>prototype</code>. Recall that the <code>prototype</code> is like the "recipe" for creating an object. By setting the <code>prototype</code> of <code>animal</code> to be <code>Animal's</code> <code>prototype</code>, you are effectively giving the <code>animal</code> instance the same "recipe" as any other instance of <code>Animal</code>.
-<blockquote>animal.eat(); // prints "nom nom nom"<br>animal instanceof Animal; // => true</blockquote>
+
+```js
+animal.eat(); // prints "nom nom nom"
+animal instanceof Animal; // => true
+```
+
 </section>
 
 ## Instructions

@@ -7,11 +7,33 @@ challengeType: 1
 ## Description
 <section id='description'>
 In the following example, the <code>Bird</code> constructor defines two properties: <code>name</code> and <code>numLegs</code>:
-<blockquote>function Bird(name) {<br>&nbsp;&nbsp;this.name  = name;<br>&nbsp;&nbsp;this.numLegs = 2;<br>}<br><br>let duck = new Bird("Donald");<br>let canary = new Bird("Tweety");</blockquote>
+
+```js
+function Bird(name) {
+  this.name  = name;
+  this.numLegs = 2;
+}
+
+let duck = new Bird("Donald");
+let canary = new Bird("Tweety");
+```
+
 <code>name</code> and <code>numLegs</code> are called <code>own</code> properties, because they are defined directly on the instance object. That means that <code>duck</code> and <code>canary</code> each has its own separate copy of these properties.
 In fact every instance of <code>Bird</code> will have its own copy of these properties.
 The following code adds all of the <code>own</code> properties of <code>duck</code> to the array <code>ownProps</code>:
-<blockquote>let ownProps = [];<br><br>for (let property in duck) {<br>&nbsp;&nbsp;if(duck.hasOwnProperty(property)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;ownProps.push(property);<br>&nbsp;&nbsp;}<br>}<br><br>console.log(ownProps); // prints [ "name", "numLegs" ]</blockquote>
+
+```js
+let ownProps = [];
+
+for (let property in duck) {
+  if(duck.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
+
+console.log(ownProps); // prints [ "name", "numLegs" ]
+```
+
 </section>
 
 ## Instructions

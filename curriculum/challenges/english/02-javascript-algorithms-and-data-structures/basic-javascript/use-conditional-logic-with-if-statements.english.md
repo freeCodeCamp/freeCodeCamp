@@ -12,7 +12,18 @@ When the condition evaluates to <code>true</code>, the program executes the stat
 <strong>Pseudocode</strong>
 <blockquote>if (<i>condition is true</i>) {<br>&nbsp;&nbsp;<i>statement is executed</i><br>}</blockquote>
 <strong>Example</strong>
-<blockquote>function test (myCondition) {<br>&nbsp;&nbsp;if (myCondition) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return "It was true";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return "It was false";<br>}<br>test(true);  // returns "It was true"<br>test(false); // returns "It was false"</blockquote>
+
+```js
+function test (myCondition) {
+  if (myCondition) {
+     return "It was true";
+  }
+  return "It was false";
+}
+test(true);  // returns "It was true"
+test(false); // returns "It was false"
+```
+
 When <code>test</code> is called with a value of <code>true</code>, the <code>if</code> statement evaluates <code>myCondition</code> to see if it is <code>true</code> or not. Since it is <code>true</code>, the function returns <code>"It was true"</code>. When we call <code>test</code> with a value of <code>false</code>, <code>myCondition</code> is <em>not</em> <code>true</code> and the statement in the curly braces is not executed and the function returns <code>"It was false"</code>.
 </section>
 

@@ -8,7 +8,18 @@ challengeType: 1
 <section id='description'>
 Using character classes, you were able to search for all letters of the alphabet with <code>[a-z]</code>. This kind of character class is common enough that there is a shortcut for it, although it includes a few extra characters as well.
 The closest character class in JavaScript to match the alphabet is <code>\w</code>. This shortcut is equal to <code>[A-Za-z0-9_]</code>. This character class matches upper and lowercase letters plus numbers. Note, this character class also includes the underscore character (<code>_</code>).
-<blockquote>let longHand = /[A-Za-z0-9_]+/;<br>let shortHand = /\w+/;<br>let numbers = "42";<br>let varNames = "important_var";<br>longHand.test(numbers); // Returns true<br>shortHand.test(numbers); // Returns true<br>longHand.test(varNames); // Returns true<br>shortHand.test(varNames); // Returns true</blockquote>
+
+```js
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numbers = "42";
+let varNames = "important_var";
+longHand.test(numbers); // Returns true
+shortHand.test(numbers); // Returns true
+longHand.test(varNames); // Returns true
+shortHand.test(varNames); // Returns true
+```
+
 These shortcut character classes are also known as <code>shorthand character classes</code>.
 </section>
 
