@@ -127,7 +127,7 @@ var averageRating =
       // Use map to convert their ratings from strings to numbers
       .map(film => Number(film.imdbRating))
       // Use reduce to add together their ratings
-      .reduce((rating1, rating2) => rating1 + rating2) 
+      .reduce((sumOfRatings, rating) => sumOfRatings + rating) 
       // Divide by the number of Nolan films to get the average rating
       / watchList.filter(film => film.Director === "Christopher Nolan").length;
 
