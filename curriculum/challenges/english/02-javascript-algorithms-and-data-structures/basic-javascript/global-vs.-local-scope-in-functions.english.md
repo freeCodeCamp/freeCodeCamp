@@ -9,7 +9,15 @@ videoUrl: 'https://scrimba.com/c/c2QwKH2'
 <section id='description'>
 It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.
 In this example:
-<blockquote>var someVar = "Hat";<br>function myFun() {<br>&nbsp;&nbsp;var someVar = "Head";<br>&nbsp;&nbsp;return someVar;<br>}</blockquote>
+
+```js
+var someVar = "Hat";
+function myFun() {
+  var someVar = "Head";
+  return someVar;
+}
+```
+
 The function <code>myFun</code> will return <code>"Head"</code> because the <code>local</code> version of the variable is present.
 </section>
 

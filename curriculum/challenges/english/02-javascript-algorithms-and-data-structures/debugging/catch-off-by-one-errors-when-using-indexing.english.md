@@ -8,7 +8,24 @@ challengeType: 1
 <section id='description'>
 <code>Off by one errors</code> (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. JavaScript indexing starts at zero, not one, which means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an "index out of range" reference error or print <code>undefined</code>.
 When you use string or array methods that take index ranges as arguments, it helps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not. Here are some examples of off by one errors:
-<blockquote>let alphabet = "abcdefghijklmnopqrstuvwxyz";<br>let len = alphabet.length;<br>for (let i = 0; i <= len; i++) {<br>&nbsp;&nbsp;// loops one too many times at the end<br>&nbsp;&nbsp;console.log(alphabet[i]);<br>}<br>for (let j = 1; j < len; j++) {<br>&nbsp;&nbsp;// loops one too few times and misses the first character at index 0<br>&nbsp;&nbsp;console.log(alphabet[j]);<br>}<br>for (let k = 0; k < len; k++) {<br>&nbsp;&nbsp;// Goldilocks approves - this is just right<br>&nbsp;&nbsp;console.log(alphabet[k]);<br>}</blockquote>
+
+```js
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
+let len = alphabet.length;
+for (let i = 0; i <= len; i++) {
+  // loops one too many times at the end
+  console.log(alphabet[i]);
+}
+for (let j = 1; j < len; j++) {
+  // loops one too few times and misses the first character at index 0
+  console.log(alphabet[j]);
+}
+for (let k = 0; k < len; k++) {
+  // Goldilocks approves - this is just right
+  console.log(alphabet[k]);
+}
+```
+
 </section>
 
 ## Instructions

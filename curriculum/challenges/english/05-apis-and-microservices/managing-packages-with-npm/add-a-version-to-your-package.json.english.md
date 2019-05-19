@@ -9,7 +9,7 @@ challengeType: 2
 A <code>version</code> is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
 
 ```json
-"version": "1.2",
+"version": "1.2.0",
 ```
 
 </section>

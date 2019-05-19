@@ -82,12 +82,16 @@ up arrow-enter
 ### Adding Flags
 You can also add flags to the compiler to your custom and favor. For example:
 `g++ -O2 helloWorld.cpp -o helloWorld`
+
 Some common flags are :
 1. -O2 : Optimize your code, so it may run faster.
-2. -std=c++11 : use c++11 instead of c++98 which is defaulted.
+2. -std=c++11 : use c++11 instead of gnu++14 (the GNU implementation of the C++14 standard) which is defaulted.<sup>1</sup>
 3. -Wall: prompt some warning about some common mistakes which can bug your program.
 4. -Wextra: prompt some extra warning.
 ____________
 
 There are a number of different types of compilers. The two listed are the two that are usually packaged with the Windows
 or Linux/OSX.
+
+### Sources
+1. ["Using the GNU Compiler Collection(GCC): Standards." GNU Project. 25 April, 2019. Accessed: 17 May, 2019. ](https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Standards.html#Standards)

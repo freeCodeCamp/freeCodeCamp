@@ -8,7 +8,16 @@ challengeType: 1
 <section id='description'>
 So far, you have only been checking if a pattern exists or not within a string. You can also extract the actual matches you found with the <code>.match()</code> method.
 To use the <code>.match()</code> method, apply the method on a string and pass in the regex inside the parentheses. Here's an example:
-<blockquote>"Hello, World!".match(/Hello/);<br>// Returns ["Hello"]<br>let ourStr = "Regular expressions";<br>let ourRegex = /expressions/;<br>ourStr.match(ourRegex);<br>// Returns ["expressions"]</blockquote>
+
+```js
+"Hello, World!".match(/Hello/);
+// Returns ["Hello"]
+let ourStr = "Regular expressions";
+let ourRegex = /expressions/;
+ourStr.match(ourRegex);
+// Returns ["expressions"]
+```
+
 </section>
 
 ## Instructions

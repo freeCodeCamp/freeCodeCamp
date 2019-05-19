@@ -8,7 +8,17 @@ challengeType: 1
 <section id='description'>
 The <code>split</code> method splits a string into an array of strings. It takes an argument for the delimiter, which can be a character to use to break up the string or a regular expression. For example, if the delimiter is a space, you get an array of words, and if the delimiter is an empty string, you get an array of each character in the string.
 Here are two examples that split one string by spaces, then another by digits using a regular expression:
-<blockquote>var str = "Hello World";<br>var bySpace = str.split(" ");<br>// Sets bySpace to ["Hello", "World"]<br><br>var otherString = "How9are7you2today";<br>var byDigits = otherString.split(/\d/);<br>// Sets byDigits to ["How", "are", "you", "today"]</blockquote>
+
+```js
+var str = "Hello World";
+var bySpace = str.split(" ");
+// Sets bySpace to ["Hello", "World"]
+
+var otherString = "How9are7you2today";
+var byDigits = otherString.split(/\d/);
+// Sets byDigits to ["How", "are", "you", "today"]
+```
+
 Since strings are immutable, the <code>split</code> method makes it easier to work with them.
 </section>
 

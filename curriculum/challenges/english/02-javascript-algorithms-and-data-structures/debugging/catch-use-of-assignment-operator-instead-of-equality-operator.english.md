@@ -10,7 +10,17 @@ Branching programs, i.e. ones that do different things if certain conditions are
 This logic is spoken (in English, at least) as "if x equals y, then ..." which can literally translate into code using the <code>=</code>, or assignment operator. This leads to unexpected control flow in your program.
 As covered in previous challenges, the assignment operator (<code>=</code>) in JavaScript assigns a value to a variable name. And the <code>==</code> and <code>===</code> operators check for equality (the triple <code>===</code> tests for strict equality, meaning both value and type are the same).
 The code below assigns <code>x</code> to be 2, which evaluates as <code>true</code>. Almost every value on its own in JavaScript evaluates to <code>true</code>, except what are known as the "falsy" values: <code>false</code>, <code>0</code>, <code>""</code> (an empty string), <code>NaN</code>, <code>undefined</code>, and <code>null</code>.
-<blockquote>let x = 1;<br>let y = 2;<br>if (x = y) {<br>&nbsp;&nbsp;// this code block will run for any value of y (unless y were originally set as a falsy)<br>} else {<br>&nbsp;&nbsp;// this code block is what should run (but won't) in this example<br>}</blockquote>
+
+```js
+let x = 1;
+let y = 2;
+if (x = y) {
+  // this code block will run for any value of y (unless y were originally set as a falsy)
+} else {
+  // this code block is what should run (but won't) in this example
+}
+```
+
 </section>
 
 ## Instructions

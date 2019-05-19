@@ -9,7 +9,13 @@ videoUrl: 'https://scrimba.com/c/cL6dqfy'
 <section id='description'>
 In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.
 Here's an example of a function:
-<blockquote>function functionName() {<br>&nbsp;&nbsp;console.log("Hello World");<br>}</blockquote>
+
+```js
+function functionName() {
+  console.log("Hello World");
+}
+```
+
 You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:
 <code>functionName();</code>
 Each time the function is called it will print out the message <code>"Hello World"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.

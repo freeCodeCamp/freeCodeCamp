@@ -8,7 +8,13 @@ challengeType: 1
 <section id='description'>
 The <code>slice</code> method returns a copy of certain elements of an array. It can take two arguments, the first gives the index of where to begin the slice, the second is the index for where to end the slice (and it's non-inclusive). If the arguments are not provided, the default is to start at the beginning of the array through the end, which is an easy way to make a copy of the entire array. The <code>slice</code> method does not mutate the original array, but returns a new one.
 Here's an example:
-<blockquote>var arr = ["Cat", "Dog", "Tiger", "Zebra"];<br>var newArray = arr.slice(1, 3);<br>// Sets newArray to ["Dog", "Tiger"]</blockquote>
+
+```js
+var arr = ["Cat", "Dog", "Tiger", "Zebra"];
+var newArray = arr.slice(1, 3);
+// Sets newArray to ["Dog", "Tiger"]
+```
+
 </section>
 
 ## Instructions

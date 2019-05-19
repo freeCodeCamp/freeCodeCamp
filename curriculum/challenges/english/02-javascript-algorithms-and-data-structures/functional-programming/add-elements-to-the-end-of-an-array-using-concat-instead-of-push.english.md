@@ -8,7 +8,14 @@ challengeType: 1
 <section id='description'>
 Functional programming is all about creating and using non-mutating functions.
 The last challenge introduced the <code>concat</code> method as a way to combine arrays into a new one without mutating the original arrays. Compare <code>concat</code> to the <code>push</code> method. <code>Push</code> adds an item to the end of the same array it is called on, which mutates that array. Here's an example:
-<blockquote>var arr = [1, 2, 3];<br>arr.push([4, 5, 6]);<br>// arr is changed to [1, 2, 3, [4, 5, 6]]<br>// Not the functional programming way</blockquote>
+
+```js
+var arr = [1, 2, 3];
+arr.push([4, 5, 6]);
+// arr is changed to [1, 2, 3, [4, 5, 6]]
+// Not the functional programming way
+```
+
 <code>Concat</code> offers a way to add new items to the end of an array without any mutating side effects.
 </section>
 
