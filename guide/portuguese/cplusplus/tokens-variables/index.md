@@ -22,6 +22,7 @@ Tokens são as menores unidades de um programa que são importantes para o compi
 ### O que são variáveis?
 
 *   Definição de livro de texto: As variáveis ​​são nomeadas locais de memória cujos dados podem ser alterados.
+
 *   Mas eu gostaria que você pensasse em uma variável para ser algo como uma caixa, algo assim: ![Img](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
     
 
@@ -176,6 +177,7 @@ Exemplo:
 Se uma variável não for inicializada, ela contém um valor de lixo. Por exemplo:
 
 Então, em termos de caixas, você pode imaginar isso como -
+
 ![Img](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
 
 \`\` \`cpp #incluir usando namespace std; int main () { int a; cout << "Valor do lixo em a:" << a << endl; // declarando a variável chamada 'a' do tipo inteiro a = 5; // initializing variable. cout << "Novo valor em um" << a << endl;
