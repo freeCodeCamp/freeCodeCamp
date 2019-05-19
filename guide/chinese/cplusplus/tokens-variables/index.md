@@ -23,7 +23,6 @@ localeTitle: 代币第1部分
 
 *   教科书定义：变量是指定数据可以更改的内存位置。
 
-    https://cdn-media-1.freecodecamp.org/imgr/
 *   但我希望你把变量想象成一个类似于盒子的东西，如下所示： ![图](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
     
 
