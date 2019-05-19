@@ -9,8 +9,8 @@ An AVL tree is a subtype of binary search tree. Named after it's inventors Adels
 A BST is a data structure composed of nodes. It has the following guarantees:
 
 1. Each tree has a root node (at the top).
-2. The root node has zero or more child nodes.
-3. Each child node has zero or more child nodes, and so on.
+2. The root node has zero, one or two child nodes.
+3. Each child node has zero, one or two child nodes, and so on.
 4. Each node has up to two children.
 5. For each node, its left descendents are less than the current node, which is less than the right descendents.
 
@@ -39,6 +39,7 @@ You will do an insertion similar to a normal Binary Search Tree insertion. After
 
 #### More Information:
 [YouTube - AVL Tree](https://www.youtube.com/watch?v=7m94k2Qhg68)
+[AVL Tree Wiki](https://en.wikipedia.org/wiki/AVL_tree)
 
 An AVL tree is a self-balancing binary search tree.
 An AVL tree is a binary search tree which has the following properties:
@@ -61,3 +62,7 @@ In RR Rotation every node moves one position to right from the current position.
 The LR Rotation is combination of single left rotation followed by single right rotation. In LR Rotation, first every node moves one position to left then one position to right from the current position.
 ->Right Left Rotation (RL Rotation)
 The RL Rotation is combination of single right rotation followed by single left rotation. In RL Rotation, first every node moves one position to right then one position to left from the current position.
+
+Application of AVL Trees
+
+AVL trees are beneficial in the cases where you are designing some database where insertions and deletions are not that frequent but you have to frequently look-up for the items present in there.
