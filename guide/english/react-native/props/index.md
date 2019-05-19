@@ -34,7 +34,7 @@ This also works the same way in functional components:
 // in functional components, props will be received as a parameter 'props'
 const Header = (props) => {
   return (
-    <Text>{props.title}</Text>
+    <Text>{props.text}</Text>
   );
 };
 

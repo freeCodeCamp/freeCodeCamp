@@ -9,7 +9,7 @@ The dot product of vectors is also know as the “scalar” product.
 #### Formula
 If <span class="texhtml"><strong>a</strong></span> and <span class="texhtml"><strong>b</strong></span> are two vectors meeting at a point, whose moduli are |<span class="texhtml"><strong>a</strong></span>| and |<span class="texhtml"><strong>b</strong></span>| respectively and <span class="texhtml"><strong>θ</strong></span> is the angle between them, then the “dot” or “scalar” product of the two vectors is given as:
 
-<span class="texhtml"><strong>a.b</strong></span> = <span class="texhtml">|<strong>a</strong>|</span><span class="texhtml">|<strong>a</strong>|</span> cosθ
+<span class="texhtml"><strong>a.b</strong></span> = <span class="texhtml">|<strong>a</strong>|</span><span class="texhtml">|<strong>b</strong>|</span> cosθ
 
 Also, if the two vectors (<span class="texhtml"><strong>a</strong></span> and <span class="texhtml"><strong>b</strong></span>) are given in terms of their [unit vectors](https://en.wikipedia.org/wiki/Unit_vector), where
  
