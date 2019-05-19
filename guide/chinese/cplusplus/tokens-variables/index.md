@@ -22,6 +22,7 @@ localeTitle: 代币第1部分
 ### 什么是变量？
 
 *   教科书定义：变量是指定数据可以更改的内存位置。
+
     https://cdn-media-1.freecodecamp.org/imgr/
 *   但我希望你把变量想象成一个类似于盒子的东西，如下所示： ![图](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
     
@@ -177,6 +178,7 @@ int 9a;
 如果未初始化变量，则它包含垃圾值。例如：
 
 所以就盒子而言，你可以把它想象成 -
+
 ![图](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
 
 \`\`\`CPP ＃包括 使用命名空间std; int main（） { int a; cout <<“垃圾值中的一个：”<< a << endl; //声明类型为integer的名为'a'的变量 一个= 5; //初始化变量。 cout <<“一个新的价值”<< a << endl;
