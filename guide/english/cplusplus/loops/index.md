@@ -9,7 +9,7 @@ title: Loops
 Now let's discuss something known as loop. Suppose you want to print the even numbers from 1 to 1000 on the screen. One way 
 to do this is to write the following lines
 
-``` c++
+```cpp
 cout << 0 << endl;
 cout << 2 << endl;
 cout << 4 << endl;
@@ -30,7 +30,7 @@ While and do while loops allow you to run the loop until a condition finishes.
 The difference between While and Do while is that Do while loop always executes at least once.
 The very use of Do while loop can be seen in the scenarios when the number of times that the loop will run depends upon the first iteration of the loop.
 Here you can see an example:
-``` c++
+```cpp
 while (condition){
     // Code that will execute while condition is true
 }
@@ -44,7 +44,7 @@ For loops are usually used when you know how many times the code will execute.
 The flow can be seen in this [graph](https://www.tutorialspoint.com/cplusplus/images/cpp_for_loop.jpg).
 
 They are declared this way:
-``` c++
+```cpp
 for ( initialize a variable; check a condition; increment the initialized variable ) {
    //Code to execute
 }
@@ -52,7 +52,7 @@ for ( initialize a variable; check a condition; increment the initialized variab
 
 Let's write a program which will print numbers from 0 to 1000 including 1000 on the screen using a for loop.
 
-``` c++
+```cpp
 for (int i = 0;i<=1000;i++)
 {
   cout << i << endl;
@@ -77,7 +77,7 @@ Now let's discuss how the for loop works.
     ` for(int i=0;i<=1000;i++) `
  * If there is only one statement inside the loop then the curly bracket is optional but its better to write loop code 
    within brackets so that you don't get confused.
-    ``` c++
+    ```cpp
     for(int i=0;i<=1000;i++)
     	{
         }
@@ -86,10 +86,9 @@ Now let's discuss how the for loop works.
  
  So, in this way the for loop works
  
- If you want to print even numbers from 1 to 1000 then your program will look like this
+ If you want to print even numbers from 1 to 1000 then your program will look like this:
  
- 
-``` c++
+```cpp
 for (int i = 0;i<=1000;i=i+2)
 {
   cout << i << endl;
@@ -99,9 +98,9 @@ for (int i = 0;i<=1000;i=i+2)
 * The difference between the first program and second is the increment part. The rest of the code is the same. This program will print 0 and
    then add 2 to it and print 2 on console and so on upto value of i becomes equal to 1000.
    
-   Our final program to print even numbers from 0 to 1000 will look like this.
+   Our next program to print even numbers from 0 to 1000 will look like this:
    
- ``` c++
+ ```cpp
  #include<iostream>
 using namespace std;
 int main()
@@ -113,3 +112,21 @@ int main()
 	return 0;
 }
  ```
+Another type of for loop is the [Range-based for loop](https://en.cppreference.com/w/cpp/language/range-for). 
+
+ ```cpp
+ #include<iostream>
+using namespace std;
+int main()
+{
+        int a[5] = {1, 2, 3, 4, 5};
+	for (int &i : a)
+	{
+	  cout << i << endl;
+	}
+	return 0;
+}
+ ```
+
+
+ 

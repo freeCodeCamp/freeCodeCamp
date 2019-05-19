@@ -17,7 +17,10 @@ Because we know that names in the phonebook are sorted alphabetically, we could 
 3. Otherwise, throw away the half of the phonebook that does not contain the name
 4. Repeat until you find the name or there are no more pages left in the phonebook
 
+[![Binary vs Linear Search](https://www.mathwarehouse.com/programming/images/binary-vs-linear-search/binary-and-linear-search-animations.gif)]
+
 Time complexity: As we dispose off one part of the search case during every step of binary search, and perform the search operation on the other half, this results in a worst case time complexity of *O*(*log<sub>2</sub>N*).
+The best case occurs when the element to be found is in the middle of the list. The best case time complexity is *O*(*1*).
 
 Space complexity: Binary search takes constant or *O*(*1*) space meaning that we don't do any input size related  variable defining.
 
@@ -89,7 +92,7 @@ Binary Search Trees are very powerful because of their O(log n) search times, se
 
 The code for recursive binary search is shown below:
 
-### Javascript implementation
+### JavaScript implementation
 
 ```javascript
 function binarySearch(arr, item, low, high) {
@@ -117,9 +120,9 @@ var numbers = [1,2,3,4,5,6,7];
 print(binarySearch(numbers, 5, 0, numbers.length-1));
 ```
 
-Here is another implementation in Javascript:
+Here is another implementation in JavaScript:
 
-```Javascript
+```JavaScript
 function binary_search(a, v) {
     function search(low, high) {
         if (low === high) {
@@ -197,7 +200,7 @@ def binary_search(arr, l, r, target):
 
 Recursive approach!
 
-```C++ -
+```cpp
 // Recursive approach in C++
 int binarySearch(int arr[], int start, int end, int x)
 {
@@ -218,7 +221,7 @@ int binarySearch(int arr[], int start, int end, int x)
 
 Iterative approach!
 
-```C++
+```cpp
 int binarySearch(int arr[], int start, int end, int x)
 {
     while (start <= end)
@@ -260,7 +263,7 @@ int binarySearch(int[] arr, int start, int end, int element)
 {
     while(start <= end)
     {
-        int mid = ( start + end ) / 2;
+        int mid = start + ( end - start ) / 2;
         if(arr[mid] == element)
             return mid;
         if(arr[mid] < element)
@@ -275,18 +278,18 @@ int binarySearch(int[] arr, int start, int end, int element)
 // Recursive Approach in Java
 int binarySearch(int[] arr, int start,int end , int element)
 {
-    if(start <= end)
-    {
-        int mid = ( start + end ) / 2;
-        if(arr[mid] ==  element)
-                return mid;
-        if(arr[mid] < element)
-                return binarySearch( arr , mid + 1 , end , element );
-        else
-                return binarySearch( arr, start, mid - 1 , element);
-     }
-     return -1;
- }
+  if (end >= start)
+  {
+    int mid = start + ( end - start ) / 2;
+    if(arr[mid] ==  element)
+        return mid;
+    if(arr[mid] < element)
+        return binarySearch( arr , mid + 1 , end , element );
+    else
+        return binarySearch( arr, start, mid - 1 , element);
+  }
+  return -1;
+}
 
 ```
 

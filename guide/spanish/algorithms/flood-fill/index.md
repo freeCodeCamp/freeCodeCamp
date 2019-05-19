@@ -27,7 +27,7 @@ El cuadrado rojo es el punto de partida y los cuadrados grises son los llamados 
 
 Para más detalles, aquí hay un código que describe la función:
 
-```c++
+```cpp
 int wall = -1; 
  
  void flood_fill(int pos_x, int pos_y, int target_color, int color) 
@@ -80,7 +80,7 @@ En una matriz bidimensional se le da un número n de **"islas"** . Intenta encon
 
 Tienes la siguiente entrada:
 
-```c++
+```cpp
 2 4 4 
  0 0 0 1 
  0 0 1 1 

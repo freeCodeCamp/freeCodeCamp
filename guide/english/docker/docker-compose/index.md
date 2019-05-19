@@ -2,21 +2,17 @@
 title: Docker compose
 ---
 
-## Docker compose
+## Docker Compose
 
-Docker-Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. 
+Docker Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application's services. 
 
-The steps to use docker-compose are
+The steps to use docker-compose are:
 
-```
-1)Create a Dockerfile which defines the image and can be producible everywhere
-```
-```
-2)Create a docker-compose.yml file to run the services
-```
-```
-3)Use docker-compose up to start the sevices specified in the docker-compose.yml file
-```
+1. Create a Dockerfile which defines the image and can be producible everywhere.
+
+2. Create a docker-compose yml file to run the services.
+
+3. Use docker-compose up to start the sevices specified in docker-compose.yml file.
 
 #### Basic commands in docker-compose
 
@@ -32,13 +28,14 @@ docker-compose -f docker-compose.yml up
 docker-compose -f docker-compose.yml up -d
 ```
 
-* Command to run containers after building the images again (note: first time we run docker containers build will happen automatically)
+
+* Command to run containers after building the images again (Note: docker containers automatically builds at the first time)
 
 ```
 docker-compose -f docker-compose.yml --build -d
 ```
 
-* Command to stop containers when we run in detached mode
+* Command to stop containers when running in detached mode
 
 ```
 docker-compose -f docker-compose.yml down

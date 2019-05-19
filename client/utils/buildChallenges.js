@@ -7,6 +7,7 @@ const {
 } = require('../../curriculum/getChallenges');
 const utils = require('./');
 const { locale } = require('../config/env.json');
+const { blockNameify } = require('./blockNameify');
 
 const dasherize = utils.dasherize;
 const nameify = utils.nameify;
@@ -16,10 +17,11 @@ const arrToString = arr =>
 
 exports.localeChallengesRootDir = getChallengesDirForLang(locale);
 
-exports.replaceChallengeNode =
-  async function replaceChallengeNode(fullFilePath) {
-    return prepareChallenge(await createChallenge(fullFilePath));
-  };
+exports.replaceChallengeNode = async function replaceChallengeNode(
+  fullFilePath
+) {
+  return prepareChallenge(await createChallenge(fullFilePath));
+};
 
 exports.buildChallenges = async function buildChallenges() {
   const curriculum = await getChallengesForLang(locale);
@@ -56,9 +58,6 @@ function prepareChallenge(challenge) {
     );
   }
   challenge.block = dasherize(challenge.block);
-  challenge.superBlock = challenge.superBlock
-    .split('-')
-    .map(word => _.capitalize(word))
-    .join(' ');
+  challenge.superBlock = blockNameify(challenge.superBlock);
   return challenge;
 }

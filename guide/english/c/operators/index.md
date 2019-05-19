@@ -2,9 +2,11 @@
 title: Operators
 ---
 # Operators in C
+Operators in C specifies the Mathematical, Conditional and Logical Operations to be Performed. Operators can be used with varibles and constants to form an expression.
 
 ## 1. Arithmetic Operators
-- `+` Adds to operands (values)
+
+- `+` Adds two operands (values) 
      ```C
      int a = 6;
      int c = a + 1; // c = 7
@@ -48,13 +50,14 @@ title: Operators
      int c = --a; // prefix operator; a = 5, c = 5
      ```
 
- C Program to demonstrate the working of arithmetic operators
+ - C Program to demonstrate the working of arithmetic operators
 ```C
 #include <stdio.h>
+
 int main()
 {
-    int a = 9,b = 4, c;
-
+    int a = 9, b = 4, c;
+    
     c = a+b;
     printf("a+b = %d \n",c);
 
@@ -90,7 +93,7 @@ int main()
   int a = 8, b = 5;
   bool c = (a > b); // c = true
   ```
-- `<` Less than - True when the first operand is smaller then the second.
+- `<` Less than - True when the first operand is smaller than the second.
   ```C
   int a = 5, b = 8;
   bool c = (a < b); // c = true

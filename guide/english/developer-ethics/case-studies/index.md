@@ -3,27 +3,24 @@ title: Case Studies
 ---
 ## Case Studies
 
-The Software Engineering Ethics Research Institute of the Department of Computer and Information Sciences at East Tennessee State University published a series of  Case Studies to help sensitize practicing software developers and students to the various types of ethical dilemmas they may face. [The International Standard for Professional Software 
-Development and Ethical Responsibility](http://seeri.etsu.edu/TheSECode.htm) forms the basis for much of the analysis in each case.
+The Markkula Center for Applied Ethics at Santa Clara University published a large collection of case studies to help expose practicing software developers and students to the various types of ethical dilemmas they may face.
 
 Cases:
 
-* [**Big Brother Spyware**](http://seeri.etsu.edu/SECodeCases/ethicsC/BigBrother.htm) – Raises the issues of the tension between privacy, security, and whistleblowing in a post 11 September environment.
+* [**Privacy, Technology, and School Shootings**](https://www.scu.edu/ethics/privacy/case-study-on-online-privacy/) - Schools are increasingly monitoring students' online activity.
 
-* [**Computerized Patient Records**](http://seeri.etsu.edu/SECodeCases/ethicsC/Computerized%20Patient%20Records.htm) – The case uses patient records to examine the developer’s responsibility for information security. It evaluates a series of alternatives.
+* [**Disclosing Software Vulnerabilities**](https://www.scu.edu/ethics/focus-areas/business-ethics/resources/the-vulnerability-disclosure-debate/)
 
-* [**Death By Wire**](http://seeri.etsu.edu/SECodeCases/ethicsC/DeathByWire.htm) – The case address issues that arise from the shift of control from mechanically based systems to purely electronic/computer systems. It explores a situation where this process has been extended to heavy vehicles. It also looks at what happens when control of safety-critical equipments is turned over to a computer.
+* [**Shipping Defective Products to Customers**](https://www.scu.edu/ethics/focus-areas/more/engineering-ethics/engineering-ethics-cases/to-ship-or-not-to-ship/)
 
-* [**Digital Wallets and Whistle Blowing**](http://seeri.etsu.edu/SECodeCases/ethicsC/DigitalWallets.htm) – This is based on a real case involving security and includes an analysis of the decision related to when and how to whistle blow.
+* [**Time-Sharing Space**](https://www.scu.edu/ethics/focus-areas/more/engineering-ethics/engineering-ethics-cases/time-sharing-space/) - An intern suspects a fellow intern is being condescending due to her gender.
 
-* [**For Girls Only**](http://seeri.etsu.edu/SECodeCases/ethicsC/ForGirlsOnly.htm) – This case looks at a real case of gender bias in the development of software.
+* [**Copyright Concerns**](https://www.scu.edu/ethics/focus-areas/more/engineering-ethics/engineering-ethics-cases/copyright-concerns/) - An employee develops software with some code that they had previously written while employed at another company.
 
-* [**Nano-Technology: Swallow That Chip**](http://seeri.etsu.edu/SECodeCases/ethicsC/NanoTechnology.htm) – This case uses the vehicle of nano-technology to explore ways to address privacy and security issues that face software developers...
+* [**Unintended Effects**](https://www.scu.edu/ethics/focus-areas/more/engineering-ethics/engineering-ethics-cases/unintended-effects/) - A manager believes his company is providing the wrong form of technology to an in-need community.
 
-* [**Patriot Missile Case**](http://seeri.etsu.edu/SECodeCases/ethicsC/PatriotMissile.htm) – This piece examines the importance of configuration management and effective design as they relate to the Patriot Missile Disaster.
-
-* [**Therac-25**](http://users.csc.calpoly.edu/~jdalbey/SWE/Papers/THERAC25.html) – This case highlights the danger of software-based controls on life-threatening systems.
+* [**Insurmountable Differences**](https://www.scu.edu/ethics/focus-areas/more/engineering-ethics/engineering-ethics-cases/insurmountable-differences/) - Responding to racially motivated remarks in the workplace.
 
 
 #### More Information
-Additional information is available through the [Software Engineering Ethics Research Institute](http://seeri.etsu.edu)
+* [The Markkula Center's homepage.](https://www.scu.edu/ethics/)

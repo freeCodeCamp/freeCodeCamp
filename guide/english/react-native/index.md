@@ -14,7 +14,7 @@ It can be used to build applications on Windows devices, desktop OS’s, and App
 - [Reasons to choose React Native](#reasons-to-choose-react-native)
 - [How to Get Started with React Native](#how-to-get-started-with-react-native)
 
-### What is React Native
+### What is React Native?
 
 React Native falls in-between native and hybrid applications on the mobile app spectrum. The user interface you create is entirely native and the overall performance of the application is nearly as good as writing a native app using languages such as Swift or Java. It also gives you the flexibility to embed web views (webpages) or native code (Java/Kotlin for Android, Objective C/Swift for iOS) inside your applications wherever you want.
 
@@ -36,5 +36,5 @@ It follows the same pattern as React, where the views (what you see on the scree
 There are three quick easy ways to get started with React Native. Depending on your situation, one can be a better option for you.
 
 1. [Create React Native App](https://www.npmjs.com/package/create-react-native-app)- Similar to Create React App it get up in running using the terminal.
-1. [Expo](https://expo.io) - Best for prototyping apps or useful if an app is in an earlier stage. Using Expo you can even create an quick app using drag and drop features from snack.expo.io in the broswer.
-1. [Ignite CLI](https://github.com/infinitered/ignite) - Empower devleopers to easily create a new React Native app with plug ins. Ignite CLI also enables developers to easily setup best practices. 
+1. [Expo](https://expo.io) - Best for prototyping apps or useful if an app is in an earlier stage. Using Expo you can even create an quick app using drag and drop features from snack.expo.io in the browser.
+1. [Ignite CLI](https://github.com/infinitered/ignite) - Empowers developers to easily create a new React Native app with plug ins. Ignite CLI also enables developers to easily setup best practices. 

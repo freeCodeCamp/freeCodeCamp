@@ -3,12 +3,12 @@ title: Breakpoints
 ---
 ## Overview
 
-A CSS Breakpoint is a specific point in which a website's layout changes, based on a [Media Query](https://guide.freecodecamp.org/css/css3-media-queries) 
+A CSS Breakpoint is a specific point in which a website's layout changes, based on a [Media Query](https://guide.freecodecamp.org/css/css3-media-queries)
 becoming active.
 
 Generally, you specify a breakpoint when you want to re-adapt the website's layout to the browser viewport's size; mostly, to the viewport's width.
 
-For example, if your website content looks great on a narrow viewport (like on a smart-phone browser), but it starts to look bad on bigger screens (e.g. maybe the fonts' size are too small and difficult to read), then you might want to introduce a new breakpoint for bigger screens that makes the fonts bigger:
+For example, if your website content looks great on a narrow viewport (like on a smart-phone browser), but it starts to look bad on bigger screens (e.g. maybe the fonts' sizes are too small and difficult to read), then you might want to introduce a new breakpoint for bigger screens that makes the fonts bigger:
 
 CSS Breakpoints can be considered to be the heart of responsive webdesign because they define how the content behaves or is arranged at
 a different device width/scale allowing you to show the best possible layout to the user.
@@ -17,7 +17,7 @@ a different device width/scale allowing you to show the best possible layout to 
 
 ## Setting Break Points
 
-Breakpoints are broadly set on basis of either of the following.
+Breakpoints are broadly set on basis of either of the following:
 
 - Breakpoints based on device width.
 - Breakpoints based on content.
@@ -26,7 +26,7 @@ Breakpoints are broadly set on basis of either of the following.
 
 It's quite apparent that all of our devices do not have the same screen widths/sizes. It is now a design decision to include a set of particular devices and code the css rules accordingly. We already have enough devices to worry about, and when a new one comes out with a different width, going back to your CSS and adding a new breakpoint all over again is time-consuming.
 
-Here's an example 
+Here's an example
 
 ```
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
@@ -93,7 +93,7 @@ and (orientation: landscape) {
 
 ### Breakpoints based on Content
 
-This is the most preferred choice while making or writing the breakpoint rules. Because it is easier to adjust your content according a particular layout only when it requires a change.
+This is the most preferred choice while making or writing the breakpoint rules. Because it is easier to adjust your content according to a particular layout only when it requires a change.
 ```
 @media only screen (min-width: 768px){
 ...
@@ -102,7 +102,7 @@ This is the most preferred choice while making or writing the breakpoint rules. 
 > This breakpoint means the CSS will apply when the device width is 768px and above.
 
 
-#### You can also set a range with breakpoints,  so the CSS will only apply within those limits.
+#### You can also set a range with breakpoints, so the CSS will only apply within those limits.
 ```
 @media only screen and (min-width: 768px) and (max-width: 959px){
 
@@ -111,7 +111,7 @@ This is the most preferred choice while making or writing the breakpoint rules. 
 }
 ```
 
-**Note** 
+**Note**
 Always try to create breakpoints based on your own content, not devices. Break them to a logical width rather than a random width and keep them to a manageable number, so modifying remains simple and clear.
 
 
@@ -119,16 +119,16 @@ Always try to create breakpoints based on your own content, not devices. Break t
 
 What we have started with is from the greater than 1200px, a common laptop screen's width. You may also have noticed that we mentioned 'greater than', meaning that we are in a way using something like an '**if-then**' statement.
 
-Let's turn it into CSS code: 
+Let's turn it into CSS code:
 
 ```css
 .text1 {
-    font-size: 16px;
+  font-size: 16px;
 }
 @media (min-width: 1200px) {
-    .text1 {
-        font-size: 20px;
-    }
+  .text1 {
+    font-size: 20px;
+  }
 }
 ```
 
@@ -137,14 +137,14 @@ Let's turn it into CSS code:
 **Tip**: you may see on a common CSS Framework called 'Bootstrap', that they have adopted **'min-width' and up** in their Bootstrap v4.0, as compared to their old Bootstrap v3.0 using **'max-width' and down**.
 This is only a **preference**, and there is nothing wrong with saying '*this* size and less than' versus '*this* size and greater than'.
 
-It is perfectly fine to use `@media (max-width) {}` . Here is an example: 
+It is perfectly fine to use `@media (max-width) {}` . Here is an example:
 
 ```css
 .text1 {
-    font-size: 20px;
+  font-size: 20px;
 }
 @media (max-width: 1199px) {
-    font-size: 16px;
+  font-size: 16px;
 }
 ```
 
@@ -180,7 +180,7 @@ Breakpoints that are based on content as opposed to device are less complicated.
 
 You can also set a minimum and maximum width, which lets you experiment with different ranges. This one triggers roughly between smart-phone and larger desktop and monitor sizes
 
-```code
+```css
 @media only screen and (min-width: 700px) and (max-width: 1500px) {
   something {
     something: something;

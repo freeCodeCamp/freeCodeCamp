@@ -48,3 +48,24 @@ We can define a function inside another function!
 
 If a function is defined inside another function, the inner function can only be called inside the function in which it was defined.
 
+### Another Example
+
+```python 
+>>> def print_letters_blank(name): # define the function, give a argument if necessary 
+    
+    # loop to print out each letter in the name
+    for letter in name:
+        print(letter)
+
+>>> print_letters_blank("John") # call the function 
+>>> print_letters_blank("Sarah") # call the function again, but with a different argument 
+J
+o
+h
+n
+S
+a
+r
+a
+h
+```

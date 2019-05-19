@@ -13,7 +13,7 @@ exports.createGuideArticlePages = createPage => ({
   node: {
     htmlAst,
     excerpt,
-    fields: { slug },
+    fields: { slug, component },
     id
   }
 }) => {
@@ -24,7 +24,7 @@ exports.createGuideArticlePages = createPage => ({
     meta.featureImage = featureImage
       ? featureImage.properties.src
       : 'https://s3.amazonaws.com/freecodecamp' +
-        '/reecodecamp-square-logo-large.jpg';
+        '/freecodecamp-square-logo-large.jpg';
 
     const description = head(select(htmlAst, 'element[tagName=p]'));
     meta.description = description ? description.children[0].value : '';
@@ -32,7 +32,13 @@ exports.createGuideArticlePages = createPage => ({
 
   return createPage({
     path: `/guide${slug}`,
-    component: guideArticle,
+    component: !component
+      ? guideArticle
+      : path.resolve(
+          __dirname,
+          '../../src/templates/Guide/components/',
+          component
+        ),
     context: {
       id,
       meta

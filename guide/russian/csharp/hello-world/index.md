@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: Привет мир
----# Привет мир
+---
+# Привет мир
 
 Чтобы написать текст на консоли, мы используем `Console.WriteLine()` . Этот метод принимает строку как ввод.
 
@@ -28,8 +29,7 @@ using System;
 ```
 
 ## Вывод:
-
-```sh
+```shell
 > Hello World! 
  > Press any key to exit. 
 

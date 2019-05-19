@@ -2,9 +2,8 @@
 title: Rest API Design
 ---
 
-
 ### History
-REST stands for **Re**presentational **S**tate **T**ransfer protocol. Roy Fielding defined REST in his Phd dissertation in year 2000.
+REST stands for **Re**presentational **S**tate **T**ransfer protocol. Roy Fielding defined REST in his [Phd dissertation](https://www.ics.uci.edu/~fielding/pubs/dissertation/fielding_dissertation.pdf) in the year 2000.
  
 ### What is it?
 REST was developed to provide a uniform interface for
@@ -36,8 +35,16 @@ resources via hyperlinks.
 
 *Note while PUT operations either client or server can generate id's*
 
-- #### Nouns are good, Verbs are bad
+- #### Versioning as Part of URL Design
+  - Use the prefix **V#** to indicate the version of your URL like `api/v1/people` or `api/V2/people`.
+  - Never use a dot notion as prefix like `api/v1.2/people` to indiate your version. By doing that it will confuse the developer using the API. When there is frequent updates or depreciation of API versions.
 
+- #### Limiting PUT and POST requests
+  - Due to similarity of PUT to POST operation, which could be easily exploited to create a new record. 
+  - Use POST requests to **create** records, whereas PUT request to be **updating** of existing records.
+  - Create a checker function to check for PUT request that is used to **create** new records. 
+
+- #### Nouns are good, Verbs are bad
   - Use nouns to refer resources like `cars`, `fruits` etc.
   - Use verbs for action declarations `convertMilesToKms`, `getNutritionalValues`
 
@@ -97,48 +104,66 @@ resources via hyperlinks.
 
 
 
-  Little more on **2xx**!
+Little more on **2xx**!
 
-  - **201 Resource Created.**
-      POST `/cars`  should return HTTP 201 created with `location` header stating how to access the resource
-      E.g. `location` : `api.com/cars/124` in header
+- **201 Resource Created.**
+  - POST `/cars`  should return HTTP 201 created with `location` header stating how to access the resource
+  - Example: `location` : `api.com/cars/124` in header
 
-  - **202 - Accepted**
+- **202 - Accepted**
+  - Use this if the task is huge to run. Tell the client, it has accepted the request and will/is process/processing
+  - No payload is returned 
 
-      Use this if the task is huge to run. Tell the client, it has accepted the request and will/is process/processing
-      No payload is returned 
+- **204 - No content**
+  - Used when deleted `DELETE cars/124`
+  - Returns no content. But can also return `200 OK` if API intends to send the deleted resource for further processing.
+      
+The useful **3xx**!
+- **304 - Not Modified**
+  - Useful status code to tell you that the browser saw no change in delta from the file it just received and the one it had cached, so it used the cached version instead.
 
-  -   **204 - No content**
+The frustrating **4xx** resources!
+- **400** Bad Request. More on that below.
+- **403** Forbidden. Server has denied the credentials for your request.
+- **404** Not Found. The server either does not have the webpage, or you made a typo in the URL.
 
-      Used when deleted `DELETE cars/124`
-      Returns no content. But can also return `200 OK` if API intends to send the deleted resource for further processing.
+The lesser known **400** suggests that you are passing wrong parameter. The response can also pass information that describes what is wrong.
 
-  The dangerous **5xx** resources!
+Example:
+```shell
+DELETE /cars/MH09234
+```
+returns `400` or message 
+```shell
+Expecting int car id /car/id got string car/MH09234
+```
 
-  - **500** Internal Server Error
-  - **501** Not implemented. Server lacks the ability to fulfil the request
-  - **504** Gateway Timeout. Server didn't receive timely response
+The dangerous **5xx** resources!
+- **500** Internal Server Error
+- **501** Not Implemented. Server lacks the ability to fulfil the request
+- **504** Gateway Timeout. Server didn't receive timely response
 
-  Less known **4xx** suggests that you are passing wrong parameter. Can also pass information that is wrong. E.g.
-
-  `DELETE /cars/MH09234`
-
-  returns `4xx` or message 
-  `Expecting int car id /car/id got string car/MH09234 `
+### Supported file types in REST APIs  
+REST APIs not only support `xml`, but also support `html`, `json` and `csv`, among other formats. [Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)   
 
 ### REST API Development Environment and Testing:
-
 Postman is widely used and famous for manual and automated REST/RESTful API Tests.
+
 Link: [Get Postman](https://www.getpostman.com/)
 
 A detailed explanation has been given on Quick Code blog on how to use Postman for the best usage:
+
 [Top Tutorials To Learn POSTMAN For REST API Testing](https://medium.com/quick-code/top-tutorials-to-learn-postman-for-rest-api-testing-3bdf9788e0ba)
 
+### API Specification
+Having a clear and precise API specification is very important.
+
+The most popular standard for the API specification is [OpenAPI Specification.](https://github.com/OAI/OpenAPI-Specification)
+
+[Swagger Tool](https://swagger.io/) is commonly used for describing the APIs.
+
 #### More Information
-
-
 * [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
 * [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
 * [HTTP status codes](https://httpstatuses.com/)
 * [Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)
-

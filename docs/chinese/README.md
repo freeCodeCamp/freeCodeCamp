@@ -1,7 +1,7 @@
 <table>
     <tr>
-        <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td>  此指南可阅读的语言版本 </td>
+        <td><a href="/docs/README.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
         <td><a href="/docs/arabic/README.md"> عربي </a></td>
@@ -13,11 +13,13 @@
 
 # Documentation快速参考
 
-你好 👋!
+您好 👋!
 
-该目录包含有关贡献 freeCodeCamp.org 的所有文档
+该目录包含有关贡献于 freeCodeCamp.org 的所有文档
+
 
 ## [如果您已经开始，请先阅读此内容。](/docs/chinese/CONTRIBUTING.md)
+
 
 ---
 
@@ -33,7 +35,8 @@
 1. 创建指南文章的样式指南。
 2. 创建编码挑战的样式指南。
 
-## 快速命令在本地工作时引用
+
+##在本地工作时引用的快速命令
 
 在本地工作时快速参考您需要的命令。
 

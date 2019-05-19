@@ -10,8 +10,8 @@
     </tr>
 </table>
 
-# Contribution Guidelines
+# Правила для внесения своего вклада в проекты
 
-Hello 👋 !
+Привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Эти инструкции еще не были переведены. Чтобы узнать больше, пройдите по:[`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)

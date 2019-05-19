@@ -47,8 +47,9 @@ const Component2 = () => {
 2.  React é declarativo para a maior parte em que estamos mais preocupados com o que fazer, em vez de como fazer uma tarefa específica. A programação declarativa é um paradigma de programação que expressa a lógica de uma computação sem descrever seu fluxo de controle. A programação declarativa vem com certas vantagens, como redução de efeitos colaterais (ocorre quando modificamos qualquer estado ou transformamos algo ou fazemos uma requisição de API), minimizando a mutabilidade (muito abstraído), melhor legibilidade, menores erros.
     
 3.  Fluxo de dados unidirecional. A interface do usuário no React é, na verdade, a função do estado que significa que, à medida que o estado é atualizado, ele também atualiza a interface do usuário. Portanto, nossa interface do usuário progride conforme o estado muda.
-   
-## Vantagens do React
+
+
+## Vantagens de React
 
 Algumas razões para usar o React são:
 
@@ -130,7 +131,9 @@ Você está livre para usar versões mais atualizadas dessas bibliotecas à medi
 
 o que você está fazendo aqui? O elemento HTML `<script>` é usado para incorporar ou referenciar um script executável. O atributo "src" aponta para os arquivos de script externos da biblioteca React, da biblioteca ReactDOM e da biblioteca Babel. É como se você tivesse um barbeador elétrico. Literalmente não é bom para você, não importa o quão sofisticado o barbeador elétrico, a menos que você possa conectá-lo à parede e obter acesso à eletricidade. Nosso código React que escreveremos não será bom para nós se nosso navegador não puder se conectar a essas bibliotecas para entender e interpretar o que estamos fazendo. É assim que nossa aplicação vai ganhar o poder do React, será como inserimos o React no Dom. A razão pela qual temos React e ReactDOM como duas bibliotecas diferentes é porque há casos de uso como o React Native, onde a renderização para o DOM não é necessária para o desenvolvimento móvel, então a biblioteca foi dividida para que as pessoas decidissem pelo que precisavam no projeto em que estão trabalhando. Como precisaremos do nosso React para chegar ao DOM, usaremos os dois scripts. O Babel é como aproveitamos o script ECMA além do ES5 e lidamos com algo chamado JSX (JavaScript como XML) que usaremos no React. Vamos dar uma olhada mais profunda na magia de Babel em uma próxima lição :) Certo, concluímos as etapas 1 e 2. Configuramos nosso código de placa de caldeira e configuramos nosso ambiente de desenvolvedor.
 
-### 3 - Renderizador React ao DOM
+
+### 3 - Render React ao DOM
+
 
 Nossos próximos dois passos serão escolher nosso local no DOM para o qual queremos renderizar nosso conteúdo React. E usar outra tag de script para nosso conteúdo React dentro do corpo. Geralmente, como uma boa separação de interesses, isso seria em seu próprio arquivo, em seguida, vinculado a este documento html. Faremos isso mais tarde nas próximas lições. Por enquanto, vamos deixar isso acontecer dentro do corpo do documento html em que estamos atualmente. Agora vamos ver como é simples escolher um local no DOM para renderizar nosso conteúdo React. Nós vamos dentro do corpo. E a melhor prática não é apenas lançar o React na tag body a ser exibida, mas criar um elemento separado, geralmente um div, que você pode tratar como um elemento raiz para inserir o conteúdo do React.
 
@@ -140,7 +143,9 @@ Nossos próximos dois passos serão escolher nosso local no DOM para o qual quer
  </body> 
 ```
 
+
 Vamos criar um simples elemento `<div>` e dar a ele um id de "app". Seremos capazes de segmentar esse local para inserir nosso conteúdo React da mesma forma que você pode usar CSS para segmentar um ID para o estilo de sua escolha. Qualquer conteúdo reagente será renderizado nas tags div com o ID do aplicativo. Enquanto isso, deixaremos um texto dizendo que "O React ainda não foi renderizado" Se vemos isso quando visualizamos nossa página, isso significa que em algum lugar perdemos a renderização React. Agora, vamos em frente e criar uma tag de script dentro do nosso corpo, onde vamos criar com React pela primeira vez. A sintaxe que vamos precisar para a nossa tag de script é adicionar um atributo de “type”. Isso especifica o tipo de mídia do script. Acima de nós, usamos um atributo src que apontava para os arquivos de script externos da biblioteca React, da biblioteca ReactDOM e da biblioteca Babel.
+
 
 ```javascript
 <body> 
@@ -222,9 +227,8 @@ Então, vamos fazer uma rápida recapitulação. Na nossa tag head pegamos as ta
 
 ### Mais Informações:
 
-*   [Página de Reação](https://reactjs.org/)
+*   [Página do React](https://reactjs.org/)
 *   [Twitter de Dan Abramov](https://twitter.com/dan_abramov)
-*   [Tutoriais de React em Egghead.io](https://egghead.io/browse/frameworks/react)
 
 ### Fontes
 

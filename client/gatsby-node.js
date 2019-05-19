@@ -4,14 +4,13 @@ const { createFilePath } = require('gatsby-source-filesystem');
 
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
+const { getGithubPath } = require('./utils/getGithubPath');
 const {
   createChallengePages,
   createBlockIntroPages,
   createSuperBlockIntroPages,
-  createGuideArticlePages,
-  createNewsArticle
+  createGuideArticlePages
 } = require('./utils/gatsby');
-const { createArticleSlug } = require('./utils/news');
 
 const createByIdentityMap = {
   guideMarkdown: createGuideArticlePages,
@@ -32,19 +31,20 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 
   if (node.internal.type === 'MarkdownRemark') {
-    let slug = createFilePath({ node, getNode });
+    const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
+      const {
+        fileAbsolutePath,
+        frontmatter: { component = '' }
+      } = node;
       createNodeField({ node, name: 'slug', value: slug });
+      createNodeField({ node, name: 'component', value: component });
+      createNodeField({
+        node,
+        name: 'githubPath',
+        value: getGithubPath(fileAbsolutePath)
+      });
     }
-  }
-  if (node.internal.type === 'NewsArticleNode') {
-    const {
-      author: { username },
-      slugPart,
-      shortId
-    } = node;
-    const slug = createArticleSlug({ username, shortId, slugPart });
-    createNodeField({ node, name: 'slug', value: slug });
   }
 };
 
@@ -85,6 +85,8 @@ exports.createPages = function createPages({ graphql, actions }) {
                 fields {
                   slug
                   nodeIdentity
+                  component
+                  githubPath
                 }
                 frontmatter {
                   block
@@ -94,19 +96,6 @@ exports.createPages = function createPages({ graphql, actions }) {
                 htmlAst
                 id
                 excerpt
-              }
-            }
-          }
-          allNewsArticleNode(
-            sort: { fields: firstPublishedDate, order: DESC }
-          ) {
-            edges {
-              node {
-                id
-                shortId
-                fields {
-                  slug
-                }
               }
             }
           }
@@ -150,11 +139,6 @@ exports.createPages = function createPages({ graphql, actions }) {
           return null;
         });
 
-        // Create news article pages
-        result.data.allNewsArticleNode.edges.forEach(
-          createNewsArticle(createPage)
-        );
-
         return null;
       })
     );
@@ -172,8 +156,8 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
           /* eslint-disable max-len */
           exclude: modulePath => {
             return (
-              (/node_modules/).test(modulePath) &&
-              !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
+              /node_modules/.test(modulePath) &&
+              !/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/.test(
                 modulePath
               )
             );
@@ -192,7 +176,8 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         ),
         STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
         ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
-        ENVIRONMENT: JSON.stringify(process.env.NODE_ENV || 'development')
+        ENVIRONMENT: JSON.stringify(process.env.NODE_ENV || 'development'),
+        PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
       }),
       new RmServiceWorkerPlugin()
     ]

@@ -17,7 +17,7 @@ class MongoIds {
     The id for ${title} is already assigned
     `);
     }
-    this.knownIds = [ ...this.knownIds, id ];
+    this.knownIds = [...this.knownIds, id];
   }
 }
 
