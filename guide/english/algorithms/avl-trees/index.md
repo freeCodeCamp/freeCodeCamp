@@ -4,13 +4,13 @@ title: AVL Trees
 ## AVL Trees
 
 
-An AVL tree is a subtype of binary search tree.
+An AVL tree is a subtype of binary search tree. Named after it's inventors Adelson, Velskii and Landis, AVL trees have the property of dynamic self-balancing in addition to all the properties exhibited by binary search trees.
 
 A BST is a data structure composed of nodes. It has the following guarantees:
 
 1. Each tree has a root node (at the top).
-2. The root node has zero or more child nodes.
-3. Each child node has zero or more child nodes, and so on.
+2. The root node has zero, one or two child nodes.
+3. Each child node has zero, one or two child nodes, and so on.
 4. Each node has up to two children.
 5. For each node, its left descendents are less than the current node, which is less than the right descendents.
 
@@ -39,6 +39,7 @@ You will do an insertion similar to a normal Binary Search Tree insertion. After
 
 #### More Information:
 [YouTube - AVL Tree](https://www.youtube.com/watch?v=7m94k2Qhg68)
+[AVL Tree Wiki](https://en.wikipedia.org/wiki/AVL_tree)
 
 An AVL tree is a self-balancing binary search tree.
 An AVL tree is a binary search tree which has the following properties:
@@ -72,3 +73,6 @@ Search		O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)	O ( log ⁡ n ) {\di
 Insert		O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)	O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)
 Delete		O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)	O ( log ⁡ n ) {\displaystyle O(\log n)} O(\log n)
 
+Application of AVL Trees
+
+AVL trees are beneficial in the cases where you are designing some database where insertions and deletions are not that frequent but you have to frequently look-up for the items present in there.

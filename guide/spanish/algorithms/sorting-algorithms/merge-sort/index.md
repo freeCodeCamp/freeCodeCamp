@@ -23,7 +23,7 @@ T(n) = 2T(n/2) + n
 
 Contando el número de repeticiones de n en la suma al final, vemos que hay lg n + 1 de ellas. Por lo tanto, el tiempo de ejecución es n (lg n + 1) = n lg n + n. Observamos que n lg n + n <n lg n + n lg n = 2n lg n para n> 0, por lo que el tiempo de ejecución es O (n lg n).
 
-```Algorithm
+```
 MergeSort(arr[], left,  right): 
  If right > l: 
      1. Find the middle point to divide the array into two halves: 

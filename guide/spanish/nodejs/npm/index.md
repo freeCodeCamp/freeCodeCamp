@@ -10,7 +10,7 @@ Para utilizar estos módulos (o paquetes) en Node.js, necesitamos poder instalar
 
 ## Instalando NPM
 
-Para instalar `npm` , tenemos que descargar los binarios de Nodejs en su entorno local. Los binarios de Node.js incluyen la última versión de npm. Para verificar que:
+Para instalar `npm` , tenemos que descargar los binarios de Nodejs en su entorno local. Los binarios de Node.js incluyen la última versión de npm. Para verificar esto:
 
 ```shell
 npm -v 
@@ -76,7 +76,7 @@ Ahora puedes usar este módulo en tu archivo js como sigue
 const express = require('express'); 
 ```
 
-Los módulos locales se dividen en dos tipos de dependencias: `devDepenednecies` y `dependencies` . La diferencia entre estos dos, es que las devDependencies son módulos que solo se requieren durante el desarrollo, mientras que las dependencias son módulos que también se requieren en tiempo de ejecución. Para guardar una dependencia como devDependency en la instalación necesitamos hacer una `npm install --save-dev` , en lugar de solo una `npm install --save` .
+Los módulos locales se dividen en dos tipos de dependencias: `devDependencies` y `dependencies` . La diferencia entre estos dos, es que las devDependencies son módulos que solo se requieren durante el desarrollo, mientras que las dependencias son módulos que también se requieren en tiempo de ejecución. Para guardar una dependencia como devDependency en la instalación necesitamos hacer una `npm install --save-dev` , en lugar de solo una `npm install --save` .
 
 Una buena forma abreviada de instalar una dependencia de desarrollo que me gusta usar es `npm i -D` . La abreviatura para guardar una dependencia regular es `-S` lugar de `-D` .
 
@@ -116,13 +116,13 @@ $ npm outdated
  underscore    1.8.2   1.8.3   1.8.3  project 
 ```
 
-La columna Actual nos muestra la versión que está instalada localmente. La última columna nos dice la última versión del paquete. Y la columna Wanted nos dice la última versión del paquete que podemos actualizar sin romper nuestro código existente.
+La columna Current nos muestra la versión que está instalada localmente. La última columna nos dice la última versión del paquete. Y la columna Wanted nos dice la última versión del paquete que podemos actualizar sin romper nuestro código existente.
 
 ## Gestionando dependencias con package.json
 
-Si no usa una `npm install express` específica e instala un módulo como `npm install express` , instalará el módulo en la carpeta `node_modules` localmente, pero el `package.json` que mantiene registros de todas las dependencias que estamos usando en un proyecto no se actualizará con nuestra adición. Por lo tanto, el paquete será específico para el desarrollo, no se instalará en el entorno runtimme. Asegúrese de que siempre use una marca adecuada y mantenga actualizado el archivo `package.json` .
+Si no usa una `npm install express` específica e instala un módulo como `npm install express`, instalará el módulo en la carpeta `node_modules` localmente, pero el `package.json` que mantiene registros de todas las dependencias que estamos usando en un proyecto no se actualizará con nuestra adición. Por lo tanto, el paquete será específico para el desarrollo, no se instalará en el entorno runtime. Asegúrese de que siempre use una marca adecuada y mantenga actualizado el archivo `package.json`.
 
-Cuando instala paquetes localmente, necesita un archivo package.json. Para generar uno puedes hacerlo usando el comando `npm init` . Se generarán algunas preguntas que, al presionar Intro, puede mantener los valores predeterminados.
+Cuando instala paquetes localmente, necesita un archivo package.json. Para generar uno puedes hacerlo usando el comando `npm init`. Se generarán algunas preguntas que, al presionar Intro, puede mantener los valores predeterminados.
 
 ```shell
 $ npm init 
@@ -288,7 +288,7 @@ Yarn es también un gestor de paquetes JavaScript desarrollado y mantenido por F
 npm install -g yarn 
 ```
 
-El hilo no pretende reemplazar npm, más bien como mejorarlo. Utiliza el mismo archivo package.json y guarda las dependencias en la carpeta `node_modules/` . Para inicializar un proyecto, utilizarás:
+Yarn no pretende reemplazar npm, más bien mejorarlo. Utiliza el mismo archivo package.json y guarda las dependencias en la carpeta `node_modules/`. Para inicializar un proyecto, utilizarás:
 
 ```shell
 yarn init 
@@ -314,7 +314,7 @@ Para las dependencias de desarrollo, las dependencias de igual y las dependencia
 yarn add gulp --dev 
 ```
 
-Se ahorrará un trago bajo devDependencies. Para actualizar o eliminar un paquete, simplemente reemplace el comando agregar con una actualización o eliminar seguido del nombre del paquete.
+Guardará gulp bajo devDependencies. Para actualizar o eliminar un paquete, simplemente reemplace el comando add con upgrade o  remove seguido del nombre del paquete.
 
 ```shell
 # upgrade a gulp from 3.9.1 to version 4 
@@ -324,16 +324,16 @@ Se ahorrará un trago bajo devDependencies. Para actualizar o eliminar un paquet
  yarn remove gulp 
 ```
 
-Después de cada instalación, actualización o eliminación, Yarn actualiza un archivo yarn.lock que realiza un seguimiento de la versión exacta del paquete instalada en el directorio node\_modules. Característica similar se ha actualizado en npm. Ahora hay un `package-lock.json` que se comporta exactamente de la misma manera que `yarn.lock` en las versiones más recientes de npm.
+Después de cada instalación, actualización o eliminación, Yarn actualiza un archivo yarn.lock que realiza un seguimiento de la versión exacta del paquete instalada en el directorio node\_modules. Una característica similar se ha actualizado en npm. Ahora hay un `package-lock.json` que se comporta exactamente de la misma manera que `yarn.lock` en las versiones más recientes de npm.
 
 ### Números de versión del paquete, y lo que significan
 
 Una primera versión de un paquete npm es siempre 1.0.0
 
-Corrección de errores, o cambios menores incrementan el tercer dígito, hense 1.0.0 se convertiría en 1.0.1
+Corrección de errores, o cambios menores incrementan el tercer dígito, por lo que 1.0.0 se convertiría en 1.0.1
 
-Las nuevas características que no rompen las versiones anteriores de un paquete incrementan el segundo dígito, hense 1.0.0 se convertiría en 1.1.0
+Las nuevas características que no rompen las versiones anteriores de un paquete incrementan el segundo dígito, por lo tanto 1.0.0 se convertiría en 1.1.0
 
-Todos los cambios que rompen las versiones anteriores de un paquete incrementan el primer dígito, hense 1.0.0 se convertiría en 2.0.0
+Todos los cambios que rompen las versiones anteriores de un paquete incrementan el primer dígito, así que 1.0.0 se convertiría en 2.0.0
 
 ¡Es importante recordar esto cuando actualice paquetes para mantener su proyecto estable!

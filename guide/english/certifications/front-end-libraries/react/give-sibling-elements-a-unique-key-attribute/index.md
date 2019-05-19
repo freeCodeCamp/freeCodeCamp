@@ -8,7 +8,7 @@ It is just almost same as previous [challenge](https://learn.freecodecamp.org/fr
 ## Solution
 Just add `key` attribute to the `<li>` tag to make unique 
 
-```react.js
+```jsx
 const renderFrameworks = frontEndFrameworks.map((item) =>
   <li key={item+1}>{item}</li>
 );

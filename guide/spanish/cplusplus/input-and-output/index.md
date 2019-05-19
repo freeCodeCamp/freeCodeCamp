@@ -10,7 +10,7 @@ Para imprimir cosas en la consola, o leerlas, utiliza `cout` y `cin` , que se de
 
 El programa "Hello World" usa `cout` para imprimir "Hello World!" a la consola:
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  
@@ -30,24 +30,24 @@ Las primeras dos líneas en la parte superior son necesarias para que uses `cout
 
 Casi todo se puede poner en una secuencia: cadenas, números, variables, expresiones, etc. Aquí se muestran algunos ejemplos de inserciones de secuencias válidas:
 
-```C++
+```cpp
 // Notice we can use the number 42 and not the string "42". 
  cout << "The meaning of life is " << 42 << endl;` // Output: The meaning of life is 42 
 ```
 
-```C++
+```cpp
 string name = "Tim"; 
  cout << "Except for you, " << name << endl;`// Output: Except for you, Tim 
 ```
 
-```C++
+```cpp
 string name = "Tim"; 
  cout << name; 
  cout << " is a great guy!" << endl;` 
  // Output: Tim is a great guy! 
 ```
 
-```C++
+```cpp
 int a = 3; 
  cout << a*2 + 18/a << endl;`// Output: 12 
 ```
@@ -56,7 +56,7 @@ int a = 3;
 
 C ++ siempre _te_ pone en control, y solo hace exactamente lo que le dices que haga. Esto a veces puede ser sorprendente, como en el siguiente ejemplo:
 
-```C++
+```cpp
 string name = "Sarah"; 
  cout << "Good morning" << name << "how are you today? << endl; 
 ```
@@ -65,7 +65,7 @@ Podría esperar que se imprima "Buenos días, Sarah, ¿cómo estás hoy?", Pero 
 
 Los saltos de línea no ocurren por sí mismos, tampoco. Podría pensar que esto imprimiría una receta en cuatro líneas:
 
-```C++
+```cpp
 cout << "To make bread, you need:"; 
  cout << "* One egg"; 
  cout << "* One water"; 
@@ -76,7 +76,7 @@ pero la salida es en realidad todo en una línea: "Para hacer pan, necesitas: \*
 
 Podría arreglar esto agregando `endl` s después de cada línea, porque como se `endl` anteriormente, `endl` inserta un carácter de nueva línea en la secuencia de salida. Sin embargo, también obliga a vaciar el búfer, lo que nos hace perder un poco de rendimiento, ya que podríamos haber impreso todas las líneas de una sola vez. Por lo tanto, lo mejor sería agregar caracteres de nueva línea al final de las líneas, y solo usar `endl` al final:
 
-```C++
+```cpp
 cout << "To make bread, you need:\n"; 
  cout << "* One egg\n"; 
  cout << "* One water\n"; 
@@ -89,7 +89,7 @@ Si solo imprime una receta pequeña, el tiempo que guarda es minúsculo y no val
 
 Para leer desde la consola, utiliza el _flujo de entrada_ `cin` de la misma manera que lo haría con `cout` , pero en lugar de poner las cosas en `cin` , las "saca". El siguiente programa lee dos números del usuario y los suma:
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  
@@ -112,7 +112,7 @@ Vale la pena señalar que `cin` detendrá todo el programa para esperar a que el
 
 El operador de extracción `<<` se puede encadenar. Este es el mismo programa que la última vez, pero escrito de una manera más concisa:
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  

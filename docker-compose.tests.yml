@@ -1,0 +1,44 @@
+# Docker Compose file for FreeCodeCamp tests
+#
+# Before run tests, bootstrap project with commands from a docker-compose.yml
+#
+# Bootstrap with:
+#  npm run docker:test:init
+#
+# Note, bootstrap takes a long time.
+#
+# Run with:
+#   npm run docker:test -- -c "npm run test"
+# or
+#   npm run docker:test -- -c "npm run test:curriculum"
+#   npm run docker:test -- -c "npm run test:client"
+#   npm run docker:test -- -c "npm run test:server"
+#
+# If need to test one challenge:
+#   npm run docker:test -- -c "cd curriculum && npm run test -- -f 'Title of Challenge'"
+#
+version: '3'
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - client_node_modules:/app/client/node_modules
+      - server_node_modules:/app/api-server/node_modules
+      - curriculum_node_modules:/app/curriculum/node_modules
+      - challenge_md_parser_node_modules:/app/tools/challenge-md-parser/node_modules
+      - seed_node_modules:/app/tools/scripts/seed/node_modules
+      - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
+    working_dir: /app
+
+volumes:
+  node_modules:
+  client_node_modules:
+  server_node_modules:
+  curriculum_node_modules:
+  challenge_md_parser_node_modules:
+  seed_node_modules:
+  client_plugin_nav_data_node_modules:
