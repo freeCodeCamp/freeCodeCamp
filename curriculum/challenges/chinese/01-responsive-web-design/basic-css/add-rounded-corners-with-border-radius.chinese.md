@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08814
 title: Add Rounded Corners with border-radius
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-rounded-corners-a-border-radius'
 videoUrl: ''
 localeTitle: 添加带有border-radius的圆角
 ---

@@ -7,13 +7,13 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-Replace assert.fail(). Test the status and the text.response. Make the test pass.
-Don't send a name in the query, the endpoint with responds with 'hello Guest'.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Replace <code>assert.fail()</code>. Test the status and the text.response. Make the test pass.
+Don't send a name in the query, the endpoint with responds with <code>'hello Guest'</code>.
 </section>
 
 ## Tests

@@ -21,7 +21,7 @@ C ++已经在`<queue>`库中实现了`<queue>` ，但如果您正在使用其他
 
 C ++代码：
 
-```c++
+```cpp
 int dl[] = {-1, 0, 1, 0}; // these arrays will help you travel in the 4 directions more easily 
  int dc[] = {0, 1, 0, -1}; 
  
