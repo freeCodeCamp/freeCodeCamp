@@ -31,7 +31,7 @@ not x | if x is false, then True, else False | (3)
     False
 ```
 ### `and`:
-``
+```
     >>> True and False    # Second argument is evaluated.
     False
     >>> False and True    # Short-circuted at first argument.
@@ -45,6 +45,17 @@ not x | if x is false, then True, else False | (3)
     False
     >>> not False
     True
+```
+
+## How python sees True and False
+
+For python `True==1` and `False==0`
+
+```python
+1 and False //False
+0 and 1 //False
+1 and True //True
+1 or 0 //True
 ```
 
 ## Other boolean-operations:
@@ -202,3 +213,4 @@ xnor ( not (x or y) or (x and y) ) |  |
     False
     >>> not(not(False or False) or (False and False)) # Second argument is evaluated.
     True
+```
