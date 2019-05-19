@@ -8,4 +8,4 @@ localeTitle: 创建并上传和链接动画Gif图像
     *   裁剪，调整大小和优化次数或根据需要进行。
 4.  下载动画GIF。
 5.  上传图片到[imgur.com](http://imgur.com) 。
-6.  链接图像使用`![image title](https://cdn-media-1.freecodecamp.org/imgr/RqgGcf5.gif)` 。
+6.  链接图像使用`![image title](https://i.imgur.com/RqgGcf5.gif)` 。
