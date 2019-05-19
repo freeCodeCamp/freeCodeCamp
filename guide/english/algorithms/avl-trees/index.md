@@ -39,6 +39,7 @@ You will do an insertion similar to a normal Binary Search Tree insertion. After
 
 #### More Information:
 [YouTube - AVL Tree](https://www.youtube.com/watch?v=7m94k2Qhg68)
+[AVL Tree Wiki](https://en.wikipedia.org/wiki/AVL_tree)
 
 An AVL tree is a self-balancing binary search tree.
 An AVL tree is a binary search tree which has the following properties:
