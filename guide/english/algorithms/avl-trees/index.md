@@ -9,8 +9,8 @@ An AVL tree is a subtype of binary search tree. Named after it's inventors Adels
 A BST is a data structure composed of nodes. It has the following guarantees:
 
 1. Each tree has a root node (at the top).
-2. The root node has zero or more child nodes.
-3. Each child node has zero or more child nodes, and so on.
+2. The root node has zero, one or two child nodes.
+3. Each child node has zero, one or two child nodes, and so on.
 4. Each node has up to two children.
 5. For each node, its left descendents are less than the current node, which is less than the right descendents.
 
