@@ -7,4 +7,4 @@ title: Create and Upload and Link Animated Gif Image
     *   Crop, Resize and Optimize as many times or as required.
 4.  Download animated GIF.
 5.  Upload image to <a href='http://imgur.com' target='_blank' rel='nofollow'>imgur.com</a>.
-6.  Link image using `![image title](https://cdn-media-1.freecodecamp.org/imgr/RqgGcf5.gif)`.
+6.  Link image using `![image title](https://i.imgur.com/RqgGcf5.gif)`.
