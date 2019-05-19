@@ -8,4 +8,4 @@ localeTitle: Crea y sube y vincula imágenes gif animadas.
     *   Recortar, redimensionar y optimizar tantas veces como sea necesario.
 4.  Descargar animado GIF.
 5.  Subir imagen a [imgur.com](http://imgur.com) .
-6.  Enlace de la imagen usando `![image title](https://i.imgur.com/RqgGcf5.gif)` .
+6.  Enlace de la imagen usando `![image title](https://cdn-media-1.freecodecamp.org/imgr/RqgGcf5.gif)` .
