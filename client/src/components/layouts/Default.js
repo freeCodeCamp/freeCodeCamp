@@ -68,8 +68,7 @@ const propTypes = {
   hasMessages: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
-  landingPage: PropTypes.bool,
-  navigationMenu: PropTypes.element,
+  navigationMenu: PropTypes.element.isRequired,
   onlineStatusChange: PropTypes.func.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool
@@ -139,7 +138,6 @@ class DefaultLayout extends Component {
       hasMessages,
       flashMessages = [],
       removeFlashMessage,
-      landingPage,
       showFooter = true,
       navigationMenu,
       isOnline,
@@ -164,7 +162,9 @@ class DefaultLayout extends Component {
           disableSettings={disableSettings}
           navigationMenu={navigationMenu}
         />
-        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
+        <div
+          className={`default-layout ${disableSettings ? 'landing-page' : ''}`}
+        >
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (
             <Flash messages={flashMessages} onClose={removeFlashMessage} />

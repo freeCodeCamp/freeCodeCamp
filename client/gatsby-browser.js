@@ -11,6 +11,7 @@ import {
   GuideLayout
 } from './src/components/layouts';
 import GuideNavMenu from './src/components/layouts/components/guide/NavMenu';
+import DefaultNavMenu from './src/components/Header/components/NavMenu';
 
 const store = createStore();
 
@@ -32,7 +33,10 @@ export const wrapPageElement = ({ element, props }) => {
   } = props;
   if (pathname === '/') {
     return (
-      <DefaultLayout disableSettings={true} landingPage={true}>
+      <DefaultLayout
+        disableSettings={true}
+        navigationMenu={<DefaultNavMenu disableSettings={true} />}
+      >
         {element}
       </DefaultLayout>
     );
@@ -48,9 +52,15 @@ export const wrapPageElement = ({ element, props }) => {
     );
   }
   if (/^\/learn(\/.*)*/.test(pathname)) {
-    return <DefaultLayout showFooter={false}>{element}</DefaultLayout>;
+    return (
+      <DefaultLayout navigationMenu={<DefaultNavMenu />} showFooter={false}>
+        {element}
+      </DefaultLayout>
+    );
   }
-  return <DefaultLayout>{element}</DefaultLayout>;
+  return (
+    <DefaultLayout navigationMenu={<DefaultNavMenu />}>{element}</DefaultLayout>
+  );
 };
 
 wrapPageElement.propTypes = {

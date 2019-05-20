@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FCCSearch from 'react-freecodecamp-search';
 
-import NavigationMenu from './components/NavMenu';
 import NavLogo from './components/NavLogo';
 import { Link } from '../helpers';
 
@@ -22,11 +21,7 @@ function Header(props) {
           <NavLogo />
         </Link>
         {disableSettings ? null : <FCCSearch />}
-        {navigationMenu ? (
-          navigationMenu
-        ) : (
-          <NavigationMenu disableSettings={disableSettings} />
-        )}
+        {navigationMenu}
       </nav>
     </header>
   );
