@@ -65,12 +65,13 @@ Make the variable created store the current value and append the word to it.
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
     function repeatStringNumTimes(str, num) {
-      if(num < 0)
+      if (num < 1) {
         return "";
-      if(num === 1)
+      } else if (num === 1) {
         return str;
-      else
+      } else {
         return str + repeatStringNumTimes(str, num - 1);
+      }
     }
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/21' target='_blank' rel='nofollow'>Run Code</a>
