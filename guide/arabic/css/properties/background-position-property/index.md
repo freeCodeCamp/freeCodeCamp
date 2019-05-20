@@ -8,13 +8,14 @@ localeTitle: موقع الخلفية الملكية
 
 **مثال:**
 
- `/* setting background-image of HTML doc */ 
+ ```css
+ /* setting background-image of HTML doc */ 
  body { 
   background-image: url('https://i.imgur.com/6Z2VStD.png'); 
   background-repeat: no-repeat; 
   background-position: right top; 
  } 
-` 
+` ```
 
 بشكل افتراضي ، يتم تعيين الخاصية background-position إلى `0% 0%` .
 
