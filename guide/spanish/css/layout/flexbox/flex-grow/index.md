@@ -8,11 +8,11 @@ La propiedad flex-grow es una propiedad flexbox que le permite especificar la as
 
 Te va a convertir tu contenedor de esta
 
-![](https://i.imgur.com/lFJaBUfh.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/lFJaBUfh.png)
 
 # **a esto**
 
-![](https://i.imgur.com/4X8ITZih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4X8ITZih.png)
 
 ¿Lo que acaba de suceder?
 
@@ -49,7 +49,7 @@ Veamos un ejemplo.
 
 Primero vamos a crear dos párrafos y habilitar la visualización: flex;
 
-![](https://i.imgur.com/wPqUgsih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/wPqUgsih.png)
 
 Note algunas cosas
 
@@ -60,7 +60,7 @@ Ese espacio vacío es el "espacio libre" que se asignará a cada uno de los dife
 
 Para ver esto en acción, démosle al primero una clase de "diez" y una propiedad de flex-grow de 1. También le demos al segundo una clase de "veinte" y una propiedad de flex-grow de 2.
 
-![](https://i.imgur.com/7n0V1G4h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/7n0V1G4h.png)
 
 Note algunas cosas
 
@@ -69,6 +69,6 @@ Note algunas cosas
 
 A medida que cambiamos el tamaño de la pantalla, también encontramos que el primero se reduce al doble de la velocidad del segundo.
 
-![](https://i.imgur.com/pa4grM8h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/pa4grM8h.png)
 
 #### Más información:

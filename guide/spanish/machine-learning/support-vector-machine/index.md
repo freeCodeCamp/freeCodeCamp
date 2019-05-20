@@ -6,13 +6,13 @@ localeTitle: Máquinas de vectores soporte
 
 Una Máquina de vectores de soporte (SVM) es un clasificador discriminativo definido formalmente por un hiperplano separador. En otras palabras, dados los datos de entrenamiento etiquetados (aprendizaje supervisado), el algoritmo genera un hiperplano óptimo que categoriza nuevos ejemplos. Para ello, minimiza el margen entre los puntos de datos cerca del hiperplano.
 
-![SVM vs regresión logística](https://i.imgur.com/KUeOSK3.png)
+![SVM vs regresión logística](https://cdn-media-1.freecodecamp.org/imgr/KUeOSK3.png)
 
 Una función de costo SVM busca aproximar la función logística con un lineal por tramos. Este algoritmo ML se usa para problemas de clasificación y es parte del subconjunto de algoritmos de aprendizaje supervisado.
 
 ### La función de costo
 
-![Función de costo SVM](https://i.imgur.com/SOhv2jZ.png)
+![Función de costo SVM](https://cdn-media-1.freecodecamp.org/imgr/SOhv2jZ.png)
 
 La función de costo se utiliza para entrenar a la SVM. Al minimizar el valor de J (theta), podemos garantizar que el SVM sea lo más preciso posible. En la ecuación, las funciones cost1 y cost0 se refieren al costo de un ejemplo donde y = 1 y el costo de un ejemplo donde y = 0. El costo, para los SVM, está determinado por las funciones del kernel (similitud).
 
