@@ -67,7 +67,7 @@ Make the variable created store the current value and append the word to it.
     function repeatStringNumTimes(str, num) {
       if (num < 1) {
         return "";
-      } if (num === 1) {
+      } else if (num === 1) {
         return str;
       } else {
         return str + repeatStringNumTimes(str, num - 1);
