@@ -22,7 +22,7 @@ Dot notation is used on the <code>object</code> name, <code>duck</code>, followe
 
 ## Instructions
 <section id='instructions'>
-Print both <code>properties</code> of the <code>dog</code> object below to your console.
+Print both <code>properties</code> of the <code>dog</code> object to your console.
 </section>
 
 ## Tests
