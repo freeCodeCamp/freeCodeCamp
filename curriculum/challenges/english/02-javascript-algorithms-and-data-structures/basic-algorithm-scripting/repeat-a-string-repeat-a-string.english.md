@@ -22,21 +22,21 @@ Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>repeatStringNumTimes("*", 3)</code> should return <code>"***"</code>.
-    testString: assert(repeatStringNumTimes("*", 3) === "***", '<code>repeatStringNumTimes("*", 3)</code> should return <code>"***"</code>.');
+    testString: assert(repeatStringNumTimes("*", 3) === "***");
   - text: <code>repeatStringNumTimes("abc", 3)</code> should return <code>"abcabcabc"</code>.
-    testString: assert(repeatStringNumTimes("abc", 3) === "abcabcabc", '<code>repeatStringNumTimes("abc", 3)</code> should return <code>"abcabcabc"</code>.');
+    testString: assert(repeatStringNumTimes("abc", 3) === "abcabcabc");
   - text: <code>repeatStringNumTimes("abc", 4)</code> should return <code>"abcabcabcabc"</code>.
-    testString: assert(repeatStringNumTimes("abc", 4) === "abcabcabcabc", '<code>repeatStringNumTimes("abc", 4)</code> should return <code>"abcabcabcabc"</code>.');
+    testString: assert(repeatStringNumTimes("abc", 4) === "abcabcabcabc");
   - text: <code>repeatStringNumTimes("abc", 1)</code> should return <code>"abc"</code>.
-    testString: assert(repeatStringNumTimes("abc", 1) === "abc", '<code>repeatStringNumTimes("abc", 1)</code> should return <code>"abc"</code>.');
+    testString: assert(repeatStringNumTimes("abc", 1) === "abc");
   - text: <code>repeatStringNumTimes("*", 8)</code> should return <code>"********"</code>.
-    testString: assert(repeatStringNumTimes("*", 8) === "********", '<code>repeatStringNumTimes("*", 8)</code> should return <code>"********"</code>.');
+    testString: assert(repeatStringNumTimes("*", 8) === "********");
   - text: <code>repeatStringNumTimes("abc", -2)</code> should return <code>""</code>.
-    testString: assert(repeatStringNumTimes("abc", -2) === "", '<code>repeatStringNumTimes("abc", -2)</code> should return <code>""</code>.');
-  - text: The built-in <code>repeat()</code> method should not be used
-    testString: assert(!/\.repeat/g.test(code), 'The built-in <code>repeat()</code>-method should not be used');
+    testString: assert(repeatStringNumTimes("abc", -2) === "");
+  - text: The built-in <code>repeat()</code> method should not be used.
+    testString: assert(!/\.repeat/g.test(code));
   - text:  <code>repeatStringNumTimes("abc", 0)</code> should return <code>""</code>.
-    testString: assert(repeatStringNumTimes("abc", 0) === "", '<code>repeatStringNumTimes("abc", 0)</code> should return <code>""</code>.');
+    testString: assert(repeatStringNumTimes("abc", 0) === "");
     
 ```
 
