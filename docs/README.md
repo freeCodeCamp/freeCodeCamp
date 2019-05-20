@@ -52,3 +52,12 @@ pm2 start --no-autorestart probot/server/tools/update-db.js --cron "*/10 * * * *
 
 This will start the script in the "no restart" mode and re-run it every 10 minutes.
 Some useful links to calculate a Cron expression: <https://crontab.guru/every-10-minutes>
+
+### Starting the express server (via probot)
+
+```
+pm2 start "npm start" --name "contribute-app"
+```
+
+> **Note:** Start only one instance of this app, you can't have multiple probot apps running. Starting multiple instances will crash the app.
+
