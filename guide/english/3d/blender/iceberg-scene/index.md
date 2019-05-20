@@ -13,9 +13,9 @@ title: Blender Water Shader Effect
 3. Translucent BSDF Shader :	Color ~= 2B9489 (a bit dark greenish blue)
 4. Transparent BSDF Shader :	Color ~= 3173C0 (bluish)
 
-![Imgur](https://i.imgur.com/msFhj0x.png) 
+![Imgur](https://cdn-media-1.freecodecamp.org/imgr/msFhj0x.png) 
 #### Basic Render of the Above Node Layout
-![Imgur](https://i.imgur.com/ZI8P3Qx.png)
+![Imgur](https://cdn-media-1.freecodecamp.org/imgr/ZI8P3Qx.png)
 
 #### More information
 [Blender Tutorial - Creating a Water Material in Cycles](http://www.youtube.com/watch?feature=player_embedded&v=4m2ldp-2fJc)
