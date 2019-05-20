@@ -5,7 +5,7 @@
     "presolver": "probot/index.js"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap --ci",
     "build": "lerna run build",
     "postinstall": "npm run bootstrap",
     "test": "run-p test:*",
