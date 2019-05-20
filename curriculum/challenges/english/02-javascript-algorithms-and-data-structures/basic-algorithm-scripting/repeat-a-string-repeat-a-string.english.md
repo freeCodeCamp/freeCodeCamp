@@ -35,6 +35,9 @@ tests:
     testString: assert(repeatStringNumTimes("abc", -2) === "", '<code>repeatStringNumTimes("abc", -2)</code> should return <code>""</code>.');
   - text: The built-in <code>repeat()</code> method should not be used
     testString: assert(!/\.repeat/g.test(code), 'The built-in <code>repeat()</code>-method should not be used');
+  - text:  <code>repeatStringNumTimes("abc", 0)</code> should return <code>""</code>.
+    testString: assert(repeatStringNumTimes("abc", 0) === "abc", '<code>repeatStringNumTimes("abc", 0)</code> should return <code>""
+    
 ```
 
 </section>
