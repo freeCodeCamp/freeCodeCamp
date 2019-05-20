@@ -163,7 +163,7 @@ int main()
   RESULT = 00110
   ```
 
-## 5. Assignment Operators
+## 5. Assignment Operators: Assigns a value to given variable.
 - `=`
   ```C
   int a = 7; // 'a' is going to be equal to 7
