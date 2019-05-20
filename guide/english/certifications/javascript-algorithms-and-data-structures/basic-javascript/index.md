@@ -3,11 +3,12 @@ title: Basic JavaScript
 ---
 ## Basic JavaScript
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Javascript (often abbreviated as "JS") , invented by "Brendan Eich" , is a high level,dynamic programming language which when combined with HTML can convert static websites into Dynamic Websites(having some functionality).It is one of the most versitile language of all time , finding applications in almost all the domains from Machine Learning to Data Scarping and Web Development , but most of its uses are in the Web Development.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+
+1. [Wikipedia | JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+2. [MDN Web Docs | JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+3. [w3schools.com | JavaScript Tutorial](https://www.w3schools.com/js/)
