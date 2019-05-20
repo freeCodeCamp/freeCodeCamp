@@ -148,7 +148,7 @@ Make sure that each time you transcode a character from binary to decimal, you r
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>Array.prototype.map</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternative Advanced Code Solution:
-```javascript
+```js
        const binaryAgent = str => str.replace(/\d+./g, char => String.fromCharCode(`0b${char}`));
        
        binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
