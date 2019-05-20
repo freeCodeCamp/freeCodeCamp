@@ -33,9 +33,8 @@ tests:
     testString: assert(repeatStringNumTimes("*", 8) === "********", '<code>repeatStringNumTimes("*", 8)</code> should return <code>"********"</code>.');
   - text: <code>repeatStringNumTimes("abc", -2)</code> should return <code>""</code>.
     testString: assert(repeatStringNumTimes("abc", -2) === "", '<code>repeatStringNumTimes("abc", -2)</code> should return <code>""</code>.');
-  - text: The built-in <code>repeat()</code>-method should not be used
+  - text: The built-in <code>repeat()</code> method should not be used
     testString: assert(!/\.repeat/g.test(code), 'The built-in <code>repeat()</code>-method should not be used');
-
 ```
 
 </section>
@@ -66,7 +65,7 @@ repeatStringNumTimes("abc", 3);
 
 ```js
 function repeatStringNumTimes(str, num) {
-  if (num < 0) return '';
+  if (num < 1) return '';
   return num === 1 ? str : str + repeatStringNumTimes(str, num-1);
 }
 
