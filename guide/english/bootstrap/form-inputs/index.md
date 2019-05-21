@@ -149,7 +149,7 @@ This can be done by utlizing the `for` parameter in the HTML:
 
 The label `for` attribute **always** references the input field by its **ID**. This tells the screen reader
 that this label is definitely for this input field which will minimize confusion for any users who are using
-a screen reader to visit a web site.
+a screen reader to visit a web site. In the above example, if a user clicks on the actual word "Enter email", then the user will be able to type. If the 'for' attribute was not attached to the label, then if a user clicks on the words 'Enter email,' nothing would happen. The user would have to click on the actual email input field to be able to type.
 
 
 ### More Informations:

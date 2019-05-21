@@ -42,6 +42,15 @@ Its main features are:
 *   Debugging - Be able to debug using break points, call stacks and an interactive console.
 *   Built-in Git support - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
+*   Customizable - Everything from the editing space to the sidebar, and even features can be turned on or off 
+    with a simple setting layout
+
+Tips:
+*   You can also change the name(s) of your integrated terminal(s) with:  
+<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> on Windows  
+and  
+<kbd>⌘ CMD</kbd>+<kbd>SHIFT</kbd>+<kbd>P</kbd> on macOS  
+followed by typing "Terminal:Rename" hit <kbd>ENTER</kbd> and then type the desired namefor your currently open integrated terminal
 
 **A few extensions that make your life easier and more interesting while using Visual Studio Code are:**
 - [VS Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) - invite someone into your editor and code together
@@ -51,12 +60,14 @@ Its main features are:
 - [Auto Close tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) - automatically adds HTML/XML close tag
 - [Auto rename tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag) - automatically rename paired HTML/XML tag
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - for making sure your code conforms to ESLint formatting
+- [Prettier: Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) - autocompletes filenames
 - [TODO highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight) - Highlight TODO, FIXME and other annotations within your code
 - [Code Snippets](https://marketplace.visualstudio.com/search?term=snippets&target=VSCode&category=All%20categories&sortBy=Relevance) - snippets for anything you need
+- [VSCode Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim) - Vim keybindings for VSCode (recommended for users used to the Vim environment). 
 - [A collection of awesome VS Code extensions](https://github.com/viatsko/awesome-vscode)
+- [Integrating Prettier + ESLint + Airbnb Style Guide in VSCode](https://blog.echobind.com/integrating-prettier-eslint-airbnb-style-guide-in-vscode-47f07b5d7d6a)
 
 ## [Notepad++](https://notepad-plus-plus.org)<img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Notepad%2B%2B_Logo.png" width="50px">
 
 Notepad++ is a free, open source code editor, that runs in the Microsoft Windows Environment. It was developed in 2003, by Dan Ho. It is written in <a href='www.cplusplus.com' target='_blank' rel='nofollow'>C++</a> (the name comes from that). Notepad++ supports tabbed editing, wich allows working with multiple open files in a single window, and also can be use as a plain text editor.
-

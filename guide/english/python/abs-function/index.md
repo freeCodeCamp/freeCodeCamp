@@ -19,6 +19,7 @@ The return value would be a positive number or zero. Even if a complex number is
 print(abs(3.4)) # prints 3.4
 print(abs(-6)) # prints 6
 print(abs(3 + 4j)) # prints 5.0, because |3 + 4j| = 5
+print(abs(-4.6))  # prints 4.6 
 print(abs(3 + 4 - 6 * 3.4)) # prints 13.4, because |3 + 4 - (6 * 3.4)| = |3 + 4 - 20.4| = |-13.4| = 13.4
 print(abs(3 - 4j - 3 - 4j)) # prints 8.0, because |(3 - 3) + (- 4j - 4j)| = 8.0
 ```
@@ -29,4 +30,5 @@ print(abs(3 - 4j - 3 - 4j)) # prints 8.0, because |(3 - 3) + (- 4j - 4j)| = 8.0
 <a href='https://docs.python.org/3/library/functions.html#abs' target='_blank' rel='nofollow'>Official Docs</a>
 
 ### Sources
+
 1. <a href='https://www.mathsisfun.com/numbers/absolute-value.html' target='_blank'>Math Is Fun. Accessed: October 25, 2017</a>

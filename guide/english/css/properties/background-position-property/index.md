@@ -8,7 +8,7 @@ The background-property sets the position from where the background image should
 ```css
 /* setting background-image of HTML doc */
 body {
-  background-image: url('https://i.imgur.com/6Z2VStD.png');
+  background-image: url('https://cdn-media-1.freecodecamp.org/imgr/6Z2VStD.png');
   background-repeat: no-repeat;
   background-position: right top;
 }
