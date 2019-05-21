@@ -4,6 +4,7 @@ import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
 import { graphql } from 'gatsby';
+import normalizeUrl from 'normalize-url';
 
 import {
   executeChallenge,
@@ -11,6 +12,7 @@ import {
   challengeTestsSelector,
   consoleOutputSelector,
   initTests,
+  updateBackendFormValues,
   updateChallengeMeta,
   updateProjectFormValues,
   backendNS
@@ -55,6 +57,7 @@ const propTypes = {
   output: PropTypes.string,
   tests: PropTypes.array,
   title: PropTypes.string,
+  updateBackendFormValues: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
   updateProjectFormValues: PropTypes.func.isRequired,
   ...reduxFormPropTypes
@@ -79,6 +82,7 @@ const mapDispatchToActions = {
   challengeMounted,
   executeChallenge,
   initTests,
+  updateBackendFormValues,
   updateChallengeMeta,
   updateProjectFormValues
 };
@@ -96,6 +100,7 @@ export class BackEnd extends Component {
     super(props);
     this.state = {};
     this.updateDimensions = this.updateDimensions.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -151,6 +156,13 @@ export class BackEnd extends Component {
     }
   }
 
+  handleSubmit(values) {
+    const { updateBackendFormValues, executeChallenge } = this.props;
+    values.solution = normalizeUrl(values.solution);
+    updateBackendFormValues(values);
+    executeChallenge();
+  }
+
   render() {
     const {
       data: {
@@ -174,6 +186,7 @@ export class BackEnd extends Component {
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
     const blockNameTitle = `${blockName} - ${title}`;
+
     return (
       <LearnLayout>
         <Grid>
@@ -191,7 +204,7 @@ export class BackEnd extends Component {
                   formFields={formFields}
                   id={backendNS}
                   options={options}
-                  submit={executeChallenge}
+                  submit={this.handleSubmit}
                 />
               ) : (
                 <ProjectForm
