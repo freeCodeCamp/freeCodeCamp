@@ -49,6 +49,7 @@ export const types = createTypes(
     'initTests',
     'initConsole',
     'initLogs',
+    'updateBackendFormValues',
     'updateConsole',
     'updateChallengeMeta',
     'updateFile',
@@ -125,6 +126,9 @@ export const updateTests = createAction(types.updateTests);
 
 export const initConsole = createAction(types.initConsole);
 export const initLogs = createAction(types.initLogs);
+export const updateBackendFormValues = createAction(
+  types.updateBackendFormValues
+);
 export const updateChallengeMeta = createAction(types.updateChallengeMeta);
 export const updateFile = createAction(types.updateFile);
 export const updateConsole = createAction(types.updateConsole);
@@ -171,7 +175,8 @@ export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 
-export const backendFormValuesSelector = state => state.form[backendNS] || {};
+export const backendFormValuesSelector = state =>
+  state[ns].backendFormValues || {};
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
 
@@ -187,7 +192,7 @@ export const challengeDataSelector = state => {
       files: challengeFilesSelector(state)
     };
   } else if (challengeType === challengeTypes.backend) {
-    const { solution: { value: url } = {} } = backendFormValuesSelector(state);
+    const { solution: url = {} } = backendFormValuesSelector(state);
     challengeData = {
       ...challengeData,
       url
@@ -305,6 +310,10 @@ export const reducer = handleActions(
         testString
       })),
       consoleOut: ''
+    }),
+    [types.updateBackendFormValues]: (state, { payload }) => ({
+      ...state,
+      backendFormValues: payload
     }),
     [types.updateProjectFormValues]: (state, { payload }) => ({
       ...state,
