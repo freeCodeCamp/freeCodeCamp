@@ -14,7 +14,7 @@ localeTitle: معدّلات الوصول
 
 #### مرجع جدول بيانات الوصول:
 
-![جدول تعديلات الوصول](https://i.imgur.com/zoMspyn.png)
+![جدول تعديلات الوصول](https://cdn-media-1.freecodecamp.org/imgr/zoMspyn.png)
 
 #### معدل الوصول الخاص
 

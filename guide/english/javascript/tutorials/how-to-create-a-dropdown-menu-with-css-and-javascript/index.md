@@ -12,17 +12,17 @@ This is how the code result looks like:
 
 Initial screen: 
 
-<img src="https://i.imgur.com/jrnu6mE.png" width="200px"></img>
+<img src="https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png" width="200px"></img>
 
 
 Dropdown opened: 
 
-<img src="https://i.imgur.com/gszPtRa.png" width="200px"></img>
+<img src="https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png" width="200px"></img>
 
 
 Dropdown with option selected: 
 
-<img src="https://i.imgur.com/TKXxZGF.png" width="200px"></img>
+<img src="https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png" width="200px"></img>
 
 
 #### HTML:
