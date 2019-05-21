@@ -156,7 +156,7 @@ Make sure that each time you transcode a character from binary to decimal, you r
 
 ## Code Explanation
 
-*   Find all groups of one digit followed by one other character
+*   Find all groups of one or more digits followed by one other character
 *   Replace with a string created from the specified sequence of UTF-16 code units
 
 ## Relevant Links
