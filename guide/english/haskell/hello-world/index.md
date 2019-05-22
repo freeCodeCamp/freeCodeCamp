@@ -22,3 +22,4 @@ main :: IO ()
 main = printer hello
 
 ```
+> Function compositions are a better way to write multiple nested functions in Haskell. In the above example, putStrLn.show is equivalent to (putStrLn (show)).

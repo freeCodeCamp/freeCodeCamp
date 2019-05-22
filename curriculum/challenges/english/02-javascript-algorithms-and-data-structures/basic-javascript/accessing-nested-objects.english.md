@@ -31,7 +31,7 @@ ourStorage.desk.drawer; // "stapler"
 
 ## Instructions
 <section id='instructions'>
-Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use bracket notation for properties with a space in their name.
+Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use dot notation for all properties where possible, otherwise use bracket notation.
 </section>
 
 ## Tests
