@@ -8,10 +8,10 @@ challengeType: 1
 <section id='description'>
 Functional programming is a style of programming where solutions are simple, isolated functions, without any side effects outside of the function scope.
 <code>INPUT -> PROCESS -> OUTPUT</code>
-Functional programming is about:
-1) Isolated functions - there is no dependence on the state of the program, which includes global variables that are subject to change
-2) Pure functions - the same input always gives the same output
-3) Functions with limited side effects - any changes, or mutations, to the state of the program outside the function are carefully controlled
+Functional programming emphasizes:
+1) Isolated functions – There is no dependence on the state of the program, which includes global variables that are subject to change
+2) Pure functions – The same input always produces the same output
+3) Functions with limited side effects – Any changes, or mutations, to the state of the program outside the function are carefully controlled
 </section>
 
 ## Instructions
