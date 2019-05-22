@@ -40,12 +40,12 @@ synopsys
 <small>Note: the above data would be un-orderable if, for example, <code>dw04</code> is added to the list of dependencies of <code>dw01</code>.</small>
 <b>C.f.:</b>
 <ul>
-  <li><a href="http://rosettacode.org/wiki/Topological sort/Extracted top item" title="Topological sort/Extracted top item" target="_blank">Topological sort/Extracted top item</a>.</li>
+  <li><a href="https://rosettacode.org/wiki/Topological sort/Extracted top item" title="Topological sort/Extracted top item" target="_blank">Topological sort/Extracted top item</a>.</li>
 </ul>
 There are two popular algorithms for topological sorting:
 <ul>
   <li><a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting" target="_blank">Kahn's 1962 topological sort</a></li>
-  <li><a href="http://www.embeddedrelated.com/showarticle/799.php" title="link: http://www.embeddedrelated.com/showarticle/799.php" target="_blank">depth-first search</a></li>
+  <li><a href="https://www.embeddedrelated.com/showarticle/799.php" target="_blank">depth-first search</a></li>
 </ul>
 </section>
 

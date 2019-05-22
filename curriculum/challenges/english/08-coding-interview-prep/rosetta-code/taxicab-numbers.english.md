@@ -24,9 +24,9 @@ Taxicab numbers are also known as:
 Write a function that returns the lowest <code>n</code> taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
 <b>See also:</b>
 <ul>
-  <li><a href="http://oeis.org/A001235" target="_blank">A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
-  <li><a href="http://mathworld.wolfram.com/Hardy-RamanujanNumber.html" target="_blank">Hardy-Ramanujan Number</a> on MathWorld.</li>
-  <li><a href="http://mathworld.wolfram.com/TaxicabNumber.html" target="_blank">taxicab number</a> on MathWorld.</li>
+  <li><a href="https://oeis.org/A001235" target="_blank">A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
+  <li><a href="https://mathworld.wolfram.com/Hardy-RamanujanNumber.html" target="_blank">Hardy-Ramanujan Number</a> on MathWorld.</li>
+  <li><a href="https://mathworld.wolfram.com/TaxicabNumber.html" target="_blank">taxicab number</a> on MathWorld.</li>
   <li><a href="https://en.wikipedia.org/wiki/Taxicab_number" target="_blank">taxicab number</a> on Wikipedia.</li>
 </ul>
 </section>

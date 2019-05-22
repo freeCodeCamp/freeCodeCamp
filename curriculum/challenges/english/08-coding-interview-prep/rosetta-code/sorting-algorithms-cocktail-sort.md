@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The cocktail shaker sort is an improvement on the <a href="http://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>. The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from <a href="https://en.wikipedia.org/wiki/Cocktail sort" target="_blank">wikipedia</a>):</p>
+The cocktail shaker sort is an improvement on the <a href="https://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>. The improvement is basically that values "bubble" both directions through the array, because on each iteration the cocktail shaker sort bubble sorts once forwards and once backwards. Pseudocode for the algorithm (from <a href="https://en.wikipedia.org/wiki/Cocktail sort" target="_blank">wikipedia</a>):</p>
 <pre>
 <b>function</b> <i>cocktailSort</i>( A : list of sortable items )
   <b>do</b>

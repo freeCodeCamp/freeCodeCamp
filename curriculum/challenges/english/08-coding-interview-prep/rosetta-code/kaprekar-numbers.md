@@ -15,7 +15,7 @@ Note that a split resulting in a part consisting purely of 0s is not valid, as 0
 Kaprekar numbers:
 <ul>
 <li> <code>2223</code> is a Kaprekar number, as <code>2223 * 2223 = 4941729</code>, <code>4941729</code> may be split to <code>494</code> and <code>1729</code>, and <code>494 + 1729 = 2223</code></li>
-<li>The series of Kaprekar numbers is known as <a href="http://rosettacode.org/wiki/oeis:A006886">A006886</a>, and begins as <code>1, 9, 45, 55, ...</code></li>
+<li>The series of Kaprekar numbers is known as <a href="https://rosettacode.org/wiki/oeis:A006886">A006886</a>, and begins as <code>1, 9, 45, 55, ...</code></li>
 </ul>
 </section>
 

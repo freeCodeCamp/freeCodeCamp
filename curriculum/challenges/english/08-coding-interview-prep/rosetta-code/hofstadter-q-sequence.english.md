@@ -8,7 +8,7 @@ challengeType: 5
 <section id='description'>
 The <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp: Hofstadter_sequence#Hofstadter_Q_sequence" target="_blank">Hofstadter Q sequence</a> is defined as:
 <span style="left-margin: 2em;">$Q(1)=Q(2)=1, \\ Q(n)=Q\big(n-Q(n-1)\big)+Q\big(n-Q(n-2)), \quad n>2.$</span>
-It is defined like the <a href="http://rosettacode.org/wiki/Fibonacci sequence" title="Fibonacci sequence" target="_blank">Fibonacci sequence</a>, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
+It is defined like the <a href="https://rosettacode.org/wiki/Fibonacci sequence" title="Fibonacci sequence" target="_blank">Fibonacci sequence</a>, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
 </section>
 
 ## Instructions

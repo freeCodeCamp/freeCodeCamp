@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The <a href="http://en.wikipedia.org/wiki/24_Game" target="_blank">24 Game</a> tests a person's mental arithmetic.
+The <a href="https://en.wikipedia.org/wiki/24_Game" target="_blank">24 Game</a> tests a person's mental arithmetic.
 The aim of the game is to arrange four numbers in a way that when evaluated, the result is 24
 </section>
 

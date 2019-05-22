@@ -22,10 +22,10 @@ No maximum value for <b>n</b> should be assumed.
 <b>References</b>
 <ul>
   <li>
-    Sloane's <a href="http://oeis.org/A005228" title="link: http://oeis.org/A005228" target="_blank">A005228</a> and <a href="http://oeis.org/A030124" title="link: http://oeis.org/A030124" target="_blank">A030124</a>.
+    Sloane's <a href="https://oeis.org/A005228" target="_blank">A005228</a> and <a href="https://oeis.org/A030124" target="_blank">A030124</a>.
   </li>
   <li>
-    <a href="http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" title="link: http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" target="_blank">Wolfram MathWorld</a>
+    <a href="https://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" target="_blank">Wolfram MathWorld</a>
   </li>
   <li>
     Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" target="_blank">Hofstadter Figure-Figure sequences</a>.

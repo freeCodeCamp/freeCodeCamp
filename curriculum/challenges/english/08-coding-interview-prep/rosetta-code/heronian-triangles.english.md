@@ -10,7 +10,7 @@ challengeType: 5
 <span style="margin-left: 2em;"><big>$A = \sqrt{s(s-a)(s-b)(s-c)},$</big></span>
 where <big>s</big> is half the perimeter of the triangle; that is,
 <span style="margin-left: 2em;"><big>$s=\frac{a+b+c}{2}.$</big></span>
-<a href="http://www.had2know.com/academics/heronian-triangles-generator-calculator.html" title="link: http://www.had2know.com/academics/heronian-triangles-generator-calculator.html" target="_blank">Heronian triangles</a> are triangles whose sides and area are all integers.
+<a href="https://www.had2know.com/academics/heronian-triangles-generator-calculator.html" target="_blank">Heronian triangles</a> are triangles whose sides and area are all integers.
 An example is the triangle with sides <b>3, 4, 5</b> whose area is <b>6</b> (and whose perimeter is <b>12</b>).
 Note that any triangle whose sides are all an integer multiple of <b>3, 4, 5</b>; such as <b>6, 8, 10,</b> will also be a Heronian triangle.
 Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor

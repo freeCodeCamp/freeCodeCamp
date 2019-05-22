@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<a href="http://rosettacode.org/wiki/eso:Subleq" target="_blank">Subleq</a> is an example of a <a href="https://en.wikipedia.org/wiki/One_instruction_set_computer" target="_blank">One-Instruction Set Computer (OISC)</a>.
+<a href="https://rosettacode.org/wiki/eso:Subleq" target="_blank">Subleq</a> is an example of a <a href="https://en.wikipedia.org/wiki/One_instruction_set_computer" target="_blank">One-Instruction Set Computer (OISC)</a>.
 It is named after its only instruction, which is <b>SU</b>btract and <b>B</b>ranch if <b>L</b>ess than or <b>EQ</b>ual
 to zero.
 Your task is to create an interpreter which emulates such a machine.

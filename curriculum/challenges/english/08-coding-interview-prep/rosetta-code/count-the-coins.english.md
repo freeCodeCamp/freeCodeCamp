@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-There are four types of common coins in <a href="https://en.wikipedia.org/wiki/United_States" title="link: https://en.wikipedia.org/wiki/United_States">US</a> currency:
+There are four types of common coins in <a href="https://en.wikipedia.org/wiki/United_States" target="_blank">US</a> currency:
 <ul>
   <li>quarters (25 cents)</li>
   <li>dimes (10 cents)</li>
@@ -29,7 +29,7 @@ There are four types of common coins in <a href="https://en.wikipedia.org/wiki/U
 Implement a function to determine how many ways there are to make change for a dollar using these common coins (1 dollar = 100 cents)
 <b>Reference:</b>
 <ul>
-  <li><a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52" title="link: http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52">an algorithm from MIT Press</a>.</li>
+  <li><a href="https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52" target="_blank">an algorithm from MIT Press</a>.</li>
 </ul>
 </section>
 

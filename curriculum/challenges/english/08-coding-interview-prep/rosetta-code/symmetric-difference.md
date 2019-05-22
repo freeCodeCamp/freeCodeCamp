@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Given two <a href="http://rosettacode.org/wiki/set" target="_blank">set</a>s <i>A</i> and <i>B</i>, compute $(A \setminus B) \cup (B \setminus A).$
+Given two <a href="https://rosettacode.org/wiki/set" target="_blank">set</a>s <i>A</i> and <i>B</i>, compute $(A \setminus B) \cup (B \setminus A).$
 That is, enumerate the items that are in <i>A</i> or <i>B</i> but not both. This set is called the <a href="https://en.wikipedia.org/wiki/Symmetric difference" target="_blank">symmetric difference</a> of <i>A</i> and <i>B</i>.
 In other words: $(A \cup B) \setminus (A \cap B)$ (the set of items that are in at least one of <i>A</i> or <i>B</i> minus the set of items that are in both <i>A</i> and <i>B</i>).
 </section>

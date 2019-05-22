@@ -25,7 +25,7 @@ The hailstone sequence is also known as hailstone numbers (because the values ar
 </ol>
 <b>See also:</b>
 <ul>
-  <li><a href="http://xkcd.com/710" title="link: http://xkcd.com/710" target="_blank">xkcd</a> (humourous).</li>
+  <li><a href="https://xkcd.com/710" target="_blank">xkcd</a> (humourous).</li>
 </ul>
 </section>
 

@@ -9,7 +9,7 @@ challengeType: 5
 A Mersenne number is a number in the form of 2<sup>P</sup>-1.
 If P is prime, the Mersenne number may be a Mersenne prime
 (if P is not prime, the Mersenne number is also not prime).
-In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a,  potentially lengthy, <a href="http://rosettacode.org/wiki/Lucas-Lehmer test" title="Lucas-Lehmer test" target="_blank">Lucas-Lehmer test</a>.
+In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a,  potentially lengthy, <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" title="Lucas-Lehmer test" target="_blank">Lucas-Lehmer test</a>.
 There are very efficient algorithms for determining if a number divides 2<sup>P</sup>-1 (or equivalently, if 2<sup>P</sup> mod (the number) = 1).
 Some languages already have built-in implementations of this exponent-and-mod operation (called modPow or similar).
 The following is how to implement this modPow yourself:
@@ -32,7 +32,7 @@ Since 2<sup>23</sup> mod 47 = 1, 47 is a factor of 2<sup>P</sup>-1.
 Since we've shown that 47 is a factor, 2<sup>23</sup>-1 is not prime.
 Further properties of Mersenne numbers allow us to refine the process even more.
 Any factor q of 2<sup>P</sup>-1 must be of the form 2kP+1, k being a positive integer or zero. Furthermore, q must be 1 or 7 mod 8.
-Finally any potential factor q must be <a href="http://rosettacode.org/wiki/Primality by Trial Division" title="Primality by Trial Division" target="_blank">prime</a>.
+Finally any potential factor q must be <a href="https://rosettacode.org/wiki/Primality by Trial Division" title="Primality by Trial Division" target="_blank">prime</a>.
 As in other trial division algorithms, the algorithm stops when 2kP+1 > sqrt(N).These primality tests only work on Mersenne numbers where P is prime. For example, M<sub>4</sub>=15 yields no factors using these techniques, but factors into 3 and 5, neither of which fit 2kP+1.
 </section>
 
