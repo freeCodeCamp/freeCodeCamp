@@ -7,7 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.
-Generators are often built on top of coroutines or objects so that the internal state of the object is handled “naturally”.
+Generators are often built on top of coroutines or objects so that the internal state of the object is handled "naturally".
 Generators are often used in situations where a sequence is potentially infinite, and where it is possible to construct the next value of the sequence with only minimal state.
 </section>
 

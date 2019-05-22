@@ -14,7 +14,7 @@ US  New York
 US  Birmingham
 UK  Birmingham
 </pre>
-Similarly, stable sorting on just the first column would generate “UK London” as the first item and “US Birmingham” as the last item (since the order of the elements having the same first word – “UK” or “US” – would be maintained).
+Similarly, stable sorting on just the first column would generate "UK London" as the first item and "US Birmingham" as the last item (since the order of the elements having the same first word – "UK" or "US" – would be maintained).
 </section>
 
 ## Instructions

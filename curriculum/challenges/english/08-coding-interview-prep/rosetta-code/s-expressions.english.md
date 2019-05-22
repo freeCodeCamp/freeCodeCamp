@@ -14,10 +14,10 @@ challengeType: 5
 Write a simple reader/parser for S-Expressions that handles quoted and unquoted strings, integers and floats.
 The function should read a single but nested S-Expression from a string and return it as a (nested) array.
 Newlines and other whitespace may be ignored unless contained within a quoted string.
-“<tt>()</tt>”  inside quoted strings are not interpreted, but treated as part of the string.
-Handling escaped quotes inside a string is optional; thus “<tt>(foo"bar)</tt>” maybe treated as a string “<tt>foo"bar</tt>”, or as an error.
-For this, the reader need not recognize “<tt>\</tt>” for escaping, but should, in addition, recognize numbers if the language has appropriate datatypes.
-Note that with the exception of “<tt>()"</tt>” (“<tt>\</tt>” if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
+"<tt>()</tt>"  inside quoted strings are not interpreted, but treated as part of the string.
+Handling escaped quotes inside a string is optional; thus "<tt>(foo"bar)</tt>" maybe treated as a string "<tt>foo"bar</tt>", or as an error.
+For this, the reader need not recognize "<tt>\</tt>" for escaping, but should, in addition, recognize numbers if the language has appropriate datatypes.
+Note that with the exception of "<tt>()"</tt>" ("<tt>\</tt>" if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
 The reader should be able to read the following input
 <pre>
 ((data "quoted data" 123 4.5)
