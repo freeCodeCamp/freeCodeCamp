@@ -6,9 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<i>FreeCell</i> is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for <a href="http://rosettacode.org/wiki/DOS" title="DOS">DOS</a>, then <a href="http://rosettacode.org/wiki/Windows" title="Windows">Windows</a>. This version introduced 32000 numbered deals. (The <a href="http://www.solitairelaboratory.com/fcfaq.html" title="link: http://www.solitairelaboratory.com/fcfaq.html">FreeCell FAQ</a> tells this history.)
-As the game became popular, Jim Horne disclosed <a href="http://www.solitairelaboratory.com/mshuffle.txt" title="link: http://www.solitairelaboratory.com/mshuffle.txt">the algorithm</a>, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
-The algorithm uses this <a href="http://rosettacode.org/wiki/linear congruential generator" title="linear congruential generator">linear congruential generator</a> from Microsoft C:
+<i>FreeCell</i> is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for <a href="https://rosettacode.org/wiki/DOS" title="DOS">DOS</a>, then <a href="https://rosettacode.org/wiki/Windows" title="Windows">Windows</a>. This version introduced 32000 numbered deals. (The <a href="https://www.solitairelaboratory.com/fcfaq.html">FreeCell FAQ</a> tells this history.)
+As the game became popular, Jim Horne disclosed <a href="https://www.solitairelaboratory.com/mshuffle.txt">the algorithm</a>, and other implementations of FreeCell began to reproduce the Microsoft deals. These deals are numbered from 1 to 32000. Newer versions from Microsoft have 1 million deals, numbered from 1 to 1000000; some implementations allow numbers outside that range.
+The algorithm uses this <a href="https://rosettacode.org/wiki/linear congruential generator" title="linear congruential generator">linear congruential generator</a> from Microsoft C:
 <ul>
   <li>$state_{n + 1} \equiv 214013 \times state_n + 2531011 \pmod{2^{31}}$</li>
   <li>$rand_n = state_n \div 2^{16}$</li>
@@ -17,7 +17,7 @@ The algorithm uses this <a href="http://rosettacode.org/wiki/linear congruential
 The algorithm follows:
 <ol>
   <li>Seed the RNG with the number of the deal.
-  <li>Create an <a href="http://rosettacode.org/wiki/array" title="array">array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
+  <li>Create an <a href="https://rosettacode.org/wiki/array" title="array">array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.</li>
   <li>Until the array is empty:</li>
   <li>Choose a random card at index &equiv; next random number (mod array length).</li>
     <ul>
@@ -61,7 +61,7 @@ The algorithm follows:
 ## Instructions
 <section id='instructions'>
 Write a function to take a deal number and deal cards in the same order as this algorithm. The function must return a two dimensional array representing the FreeCell board.
-Deals can also be checked against <a href="http://freecellgamesolutions.com/" title="link: http://freecellgamesolutions.com/">FreeCell solutions to 1000000 games</a>. (Summon a video solution, and it displays the initial deal.)
+Deals can also be checked against <a href="https://freecellgamesolutions.com/">FreeCell solutions to 1000000 games</a>. (Summon a video solution, and it displays the initial deal.)
 </section>
 
 ## Tests

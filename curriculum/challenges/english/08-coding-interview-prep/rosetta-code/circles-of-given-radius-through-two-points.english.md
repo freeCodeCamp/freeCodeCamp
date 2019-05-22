@@ -35,7 +35,7 @@ Implement a function that takes two points and a radius and returns the two circ
 0.1234, 0.9876    0.1234, 0.9876    0.0
 </pre>
 <b>Ref:</b>
-<a href="http://mathforum.org/library/drmath/view/53027.html" title="link: http://mathforum.org/library/drmath/view/53027.html">Finding the Center of a Circle from 2 Points and Radius</a> from Math forum @ Drexel
+<a href="https://mathforum.org/library/drmath/view/53027.html" target="_blank">Finding the Center of a Circle from 2 Points and Radius</a> from Math forum @ Drexel
 </section>
 
 ## Tests

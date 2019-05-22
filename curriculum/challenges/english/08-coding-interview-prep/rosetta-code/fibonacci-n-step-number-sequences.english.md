@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-These number series are an expansion of the ordinary <a href="http://rosettacode.org/wiki/Fibonacci sequence" title="Fibonacci sequence" target="_blank">Fibonacci sequence</a> where:
+These number series are an expansion of the ordinary <a href="https://rosettacode.org/wiki/Fibonacci sequence" title="Fibonacci sequence" target="_blank">Fibonacci sequence</a> where:
 <ol>
   <li>For $n = 2$ we have the Fibonacci sequence; with initial values $[1, 1]$ and $F_k^2 = F_{k-1}^2 + F_{k-2}^2$</li>
   <li>For $n = 3$ we have the tribonacci sequence; with initial values $[1, 1, 2]$ and $F_k^3 = F_{k-1}^3 + F_{k-2}^3 + F_{k-3}^3$</li>

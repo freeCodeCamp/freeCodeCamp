@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Gnome sort is a sorting algorithm which is similar to <a href="http://rosettacode.org/wiki/Insertion sort" target="_blank">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="http://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
+Gnome sort is a sorting algorithm which is similar to <a href="https://rosettacode.org/wiki/Insertion sort" target="_blank">Insertion sort</a>, except that moving an element to its proper place is accomplished by a series of swaps, as in <a href="https://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
 The pseudocode for the algorithm is:
 <pre>
 <b>function</b> <i>gnomeSort</i>(a[0..size-1])

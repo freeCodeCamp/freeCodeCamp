@@ -7,8 +7,8 @@ challengeType: 5
 ## Description
 <section id='description'>
 Implement a <i>comb sort</i>.
-The <b>Comb Sort</b> is a variant of the <a href="http://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
-Like the <a href="http://rosettacode.org/wiki/Shell sort" target="_blank">Shell sort</a>, the Comb Sort increases the gap used in comparisons and exchanges.
+The <b>Comb Sort</b> is a variant of the <a href="https://rosettacode.org/wiki/Bubble Sort" target="_blank">Bubble Sort</a>.
+Like the <a href="https://rosettacode.org/wiki/Shell sort" target="_blank">Shell sort</a>, the Comb Sort increases the gap used in comparisons and exchanges.
 Dividing the gap by $(1-e^{-\varphi})^{-1} \approx 1.247330950103979$ works best, but 1.3 may be more practical.
 Some implementations use the insertion sort once the gap is less than a certain amount.
 <b>Also see</b>
@@ -32,9 +32,9 @@ Pseudocode:
       gap := 1
     <b>end if</b>
     i := 0
-    swaps := 0 <i>//see <a href="http://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a> for an explanation</i>
+    swaps := 0 <i>//see <a href="https://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a> for an explanation</i>
     <i>//a single "comb" over the input list</i>
-    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href="http://rosettacode.org/wiki/Shell sort">Shell sort</a> for similar idea</i>
+    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href="https://rosettacode.org/wiki/Shell sort">Shell sort</a> for similar idea</i>
       <b>if</b> input[i] > input[i+gap]
         <b>swap</b>(input[i], input[i+gap])
         swaps := 1 <i>// Flag a swap has occurred, so the</i>

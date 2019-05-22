@@ -11,7 +11,7 @@ This task is a variation of the <a href='https://en.wikipedia.org/wiki/The Nine 
 In detail, to specify what is meant by a  “name”:
 <ul>
   <li>The integer 1 has 1 name “1”.</li>
-  <li>The integer 2 has 2 names “1+1”, and “2”.</li>
+  <li>The integer 2 has 2 names “1+1” and “2”.</li>
   <li>The integer 3 has 3 names “1+1+1”, “2+1”,  and “3”.</li>
   <li>The integer 4 has 5 names “1+1+1+1”, “2+1+1”, “2+2”, “3+1”, “4”.</li>
   <li>The integer 5 has 7 names “1+1+1+1+1”, “2+1+1+1”, “2+2+1”, “3+1+1”, “3+2”, “4+1”, “5”.</li>
@@ -26,7 +26,7 @@ This can be visualized in the following form:
 1   3   3   2   1   1
 </pre>
 Where row  $n$  corresponds to integer  $n$,  and each column  $C$  in row  $m$  from left to right corresponds to the number of names beginning with $C$.
-Optionally note that the sum of the  $n$-th  row  $P(n)$  is the   <a href="http://mathworld.wolfram.com/PartitionFunctionP.html" title="link: http://mathworld.wolfram.com/PartitionFunctionP.html">integer partition function</a>.
+Optionally note that the sum of the  $n$-th  row  $P(n)$  is the   <a href="https://mathworld.wolfram.com/PartitionFunctionP.html" title="link: https://mathworld.wolfram.com/PartitionFunctionP.html">integer partition function</a>.
 </section>
 
 ## Instructions

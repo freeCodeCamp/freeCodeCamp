@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The  Fibonacci Word  may be created in a manner analogous to the  Fibonacci Sequence <a href="http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" title="link: http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" target="_blank">as described here</a>:
+The  Fibonacci Word  may be created in a manner analogous to the  Fibonacci Sequence <a href="https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" target="_blank">as described here</a>:
 <pre>
 Define  F_Word<sub>1</sub>  as  <b>1</b>
 Define  F_Word<sub>2</sub>  as  <b>0</b>

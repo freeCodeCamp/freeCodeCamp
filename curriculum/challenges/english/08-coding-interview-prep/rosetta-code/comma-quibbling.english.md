@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Comma quibbling is a task originally set by Eric Lippert in his <a href="http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" title="link: http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" target="_blank">blog</a>.
+Comma quibbling is a task originally set by Eric Lippert in his <a href="https://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" target="_blank">blog</a>.
 </section>
 
 ## Instructions

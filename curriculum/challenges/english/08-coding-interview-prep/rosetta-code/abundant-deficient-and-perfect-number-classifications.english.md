@@ -6,16 +6,18 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-These define three classifications of positive integers based on their <a href='http://rosettacode.org/wiki/Proper divisors' title='Proper divisors' target='_blank'>proper divisors</a>.
+These define three classifications of positive integers based on their <a href='https://rosettacode.org/wiki/Proper divisors' title='Proper divisors' target='_blank'>proper divisors</a>.
 Let $P(n)$ be the sum of the proper divisors of <b>n</b> where proper divisors are all positive integers <b>n</b> other than <b>n</b> itself.
-<pre>
-If <code style='border: 1px solid #ddd;'> P(n) < n </code> then <b>n</b> is classed as <b>deficient</b>
-If <code style='border: 1px solid #ddd;'> P(n) === n </code> then <b>n</b> is classed as <b>perfect</b>
-If <code style='border: 1px solid #ddd;'> P(n) > n </code> then <b>n</b> is classed as <b>abundant</b>
-</pre>
-Example:
-<b>6</b> has proper divisors of <b>1</b>, <b>2</b>, and <b>3</b>.
-<b>1 + 2 + 3 = 6</b>, so <b>6</b> is classed as a perfect number.
+
+If <code>P(n) < n</code> then <code>n</code> is classed as <code>deficient</code>
+
+If <code>P(n) === n</code> then <code>n</code> is classed as <code>perfect</code>
+
+If <code>P(n) > n</code> then <code>n</code> is classed as <code>abundant</code>
+
+<strong>Example</strong>:
+<strong>6</strong> has proper divisors of <strong>1</strong>, <strong>2</strong>, and <strong>3</strong>.
+<strong>1 + 2 + 3 = 6</strong>, so <strong>6</strong> is classed as a perfect number.
 </section>
 
 ## Instructions

@@ -14,7 +14,7 @@ Otherwise, when k-d trees are used with high-dimensional data, most of the point
 
 ## Instructions
 <section id='instructions'>
-Write a function to perform a nearest neighbour search using k-d tree. The function takes two parameters: an array of k-dimensional points, and a single k-dimensional point whose nearest neighbour should be returned by the function. A k-dimensional point will be given as an array of k elements.
+Write a function to perform a nearest neighbor search using k-d tree. The function takes two parameters: an array of k-dimensional points, and a single k-dimensional point whose nearest neighbor should be returned by the function. A k-dimensional point will be given as an array of k elements.
 </section>
 
 ## Tests

@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Two integers $N$ and $M$ are said to be <a href='https://en.wikipedia.org/wiki/Amicable numbers' title='wp: Amicable numbers' target='_blank'>amicable pairs</a> if $N \neq M$ and the sum of the <a href="http://rosettacode.org/wiki/Proper divisors" title="Proper divisors">proper divisors</a> of $N$ ($\mathrm{sum}(\mathrm{propDivs}(N))$) $= M$ as well as $\mathrm{sum}(\mathrm{propDivs}(M)) = N$.
+Two integers $N$ and $M$ are said to be <a href='https://en.wikipedia.org/wiki/Amicable numbers' title='wp: Amicable numbers' target='_blank'>amicable pairs</a> if $N \neq M$ and the sum of the <a href="https://rosettacode.org/wiki/Proper divisors" title="Proper divisors">proper divisors</a> of $N$ ($\mathrm{sum}(\mathrm{propDivs}(N))$) $= M$ as well as $\mathrm{sum}(\mathrm{propDivs}(M)) = N$.
 <b>Example:</b>
 <b>1184</b> and <b>1210</b> are an amicable pair, with proper divisors:
 <ul>
