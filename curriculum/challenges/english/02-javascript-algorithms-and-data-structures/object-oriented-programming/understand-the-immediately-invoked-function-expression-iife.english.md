@@ -15,12 +15,12 @@ A common pattern in JavaScript is to execute a function as soon as it is declare
 // Outputs "Chirp, chirp!" immediately
 ```
 
-Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <code>immediately invoked function expression</code> or <code>IIFE</code>.
+Note that the function has no name and is not stored in a variable. The two parentheses <code>()</code> at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an **immediately invoked function expression** or **IIFE**.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Rewrite the function <code>makeNest</code> and remove its call so instead it's an anonymous <code>immediately invoked function expression</code> (<code>IIFE</code>).
+Rewrite the function <code>makeNest</code> and remove its call so instead it's an anonymous immediately invoked function expression (IIFE).
 </section>
 
 ## Tests
