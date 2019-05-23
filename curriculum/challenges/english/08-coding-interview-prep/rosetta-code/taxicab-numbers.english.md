@@ -25,8 +25,6 @@ Write a function that returns the lowest <code>n</code> taxicab numbers. For eac
 <b>See also:</b>
 <ul>
   <li><a href="https://oeis.org/A001235" target="_blank">A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
-  <li><a href="https://mathworld.wolfram.com/Hardy-RamanujanNumber.html" target="_blank">Hardy-Ramanujan Number</a> on MathWorld.</li>
-  <li><a href="https://mathworld.wolfram.com/TaxicabNumber.html" target="_blank">taxicab number</a> on MathWorld.</li>
   <li><a href="https://en.wikipedia.org/wiki/Taxicab_number" target="_blank">taxicab number</a> on Wikipedia.</li>
 </ul>
 </section>

@@ -11,9 +11,9 @@ Informally this value, or its limit when  <b>n</b>  tends to infinity, is also c
 For this task, use:
 <span style="margin-left: 2em;">$S_n = \sum_{k=1}^n \frac{1}{k^2}$</span>
 and compute  $S_{1000}$
-This approximates the   <a href="https://en.wikipedia.org/wiki/Riemann zeta function">zeta function</a>  for  S=2,  whose exact value
+ This approximates the   <a href="https://en.wikipedia.org/wiki/Riemann zeta function" target="_blank">zeta function</a>  for  S=2,  whose exact value
 <span style="margin-left: 2em;">$\zeta(2) = {\pi^2\over 6}$</span>
-is the solution of the <a href="https://en.wikipedia.org/wiki/Basel problem">Basel problem</a>.
+ is the solution of the <a href="https://en.wikipedia.org/wiki/Basel problem" target="_blank">Basel problem</a>.
 </section>
 
 ## Instructions

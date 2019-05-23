@@ -19,14 +19,15 @@ The Chief of the Police doesn't like odd numbers and wants to have an even numbe
 
 ## Instructions
 <section id='instructions'>
-Write a program which outputs all valid combinations:
-<blockquote>
-[2, 3, 7] [2, 4, 6] [2, 6, 4]<br>
-[2, 7, 3] [4, 1, 7] [4, 2, 6]<br>
-[4, 3, 5] [4, 5, 3] [4, 6, 2]<br>
-[4, 7, 1] [6, 1, 5] [6, 2, 4]<br>
+Write a program which outputs all valid combinations as an array.
+
+```js
+[2, 3, 7] [2, 4, 6] [2, 6, 4]
+[2, 7, 3] [4, 1, 7] [4, 2, 6]
+[4, 3, 5] [4, 5, 3] [4, 6, 2]
+[4, 7, 1] [6, 1, 5] [6, 2, 4]
 [6, 4, 2] [6, 5, 1]
-</blockquote>
+```
 </section>
 
 ## Tests

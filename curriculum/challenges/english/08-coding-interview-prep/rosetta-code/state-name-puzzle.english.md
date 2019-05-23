@@ -6,10 +6,10 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-This task is inspired by <a href="https://drdobbs.com/windows/198701685" target="_blank">Mark Nelson's DDJ Column "Wordplay"</a> and one of the weekly puzzle challenges from Will Shortz on NPR Weekend Edition <a href="https://www.npr.org/templates/story/story.php?storyId=9264290"target="_blank">[1]</a> and originally attributed to David Edelheit.
+This task is inspired by Mark Nelson's DDJ Column "Wordplay" and one of the weekly puzzle challenges from Will Shortz on NPR Weekend Edition <a href="https://www.npr.org/templates/story/story.php?storyId=9264290" target="_blank">[1]</a> and originally attributed to David Edelheit.
 The challenge was to take the names of two U.S. States, mix them all together, then rearrange the letters to form the names of two <i>different</i> U.S. States (so that all four state names differ from one another).
 What states are these?
-The problem was reissued on  <a href="https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle" target="_blank">the Unicon Discussion Web</a> which includes several solutions with analysis.  Several techniques may be helpful and you may wish to refer to <a href="https://en.wikipedia.org/wiki/Goedel_numbering">Gödel numbering</a>, <a href="https://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relations</a>, and <a href="https://en.wikipedia.org/wiki/Equivalence_classes" target="_blank">equivalence classes</a>.  The basic merits of these were discussed in the Unicon Discussion Web.
+The problem was reissued on  <a href="https://tapestry.tucson.az.us/twiki/bin/view/Main/StateNamesPuzzle" target="_blank">the Unicon Discussion Web</a> which includes several solutions with analysis.  Several techniques may be helpful and you may wish to refer to <a href="https://en.wikipedia.org/wiki/Goedel_numbering" target="_blank">Gödel numbering</a>, <a href="https://en.wikipedia.org/wiki/Equivalence_relation" target="_blank">equivalence relations</a>, and <a href="https://en.wikipedia.org/wiki/Equivalence_classes" target="_blank">equivalence classes</a>.  The basic merits of these were discussed in the Unicon Discussion Web.
 A second challenge in the form of a set of fictitious new states was also presented.
 </section>
 

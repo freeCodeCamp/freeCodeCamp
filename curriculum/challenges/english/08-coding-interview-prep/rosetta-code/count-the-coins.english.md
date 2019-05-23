@@ -27,10 +27,6 @@ There are four types of common coins in <a href="https://en.wikipedia.org/wiki/U
 ## Instructions
 <section id='instructions'>
 Implement a function to determine how many ways there are to make change for a dollar using these common coins (1 dollar = 100 cents)
-<b>Reference:</b>
-<ul>
-  <li><a href="https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52" target="_blank">an algorithm from MIT Press</a>.</li>
-</ul>
 </section>
 
 ## Tests

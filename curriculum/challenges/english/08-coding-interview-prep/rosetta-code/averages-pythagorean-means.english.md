@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Compute all three of the <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Pythagorean means' title='wp: Pythagorean means'>Pythagorean means</a> of the set of integers <big>1</big> through <big>10</big> (inclusive).
+Compute all three of the <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Pythagorean means' title='wp: Pythagorean means' target="_blank">Pythagorean means</a> of the set of integers <big>1</big> through <big>10</big> (inclusive).
 Show that <big>$A(x_1,\ldots,x_n) \geq G(x_1,\ldots,x_n) \geq H(x_1,\ldots,x_n)$</big> for this set of positive integers.
 <ul>
   <li>The most common of the three means, the <a class='rosetta__link--rosetta' href='https://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean' target='_blank'>arithmetic mean</a>, is the sum of the list divided by its length:<br>
@@ -22,7 +22,8 @@ Show that <big>$A(x_1,\ldots,x_n) \geq G(x_1,\ldots,x_n) \geq H(x_1,\ldots,x_n)$
 <section id='instructions'>
 When writing your function, assume the input is an ordered array of all inclusive numbers.
 For the answer, please output an object in the following format:
-<pre>
+
+```js
 {
   values: {
     Arithmetic: 5.5,
@@ -31,7 +32,8 @@ For the answer, please output an object in the following format:
   },
   test: 'is A >= G >= H ? yes'
 }
-</pre>
+```
+
 </section>
 
 ## Tests
