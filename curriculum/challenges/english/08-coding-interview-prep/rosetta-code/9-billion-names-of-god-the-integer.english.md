@@ -26,7 +26,7 @@ This can be visualized in the following form:
 1   3   3   2   1   1
 </pre>
 Where row  $n$  corresponds to integer  $n$,  and each column  $C$  in row  $m$  from left to right corresponds to the number of names beginning with $C$.
-Optionally note that the sum of the  $n$-th  row  $P(n)$  is the   <a href="https://mathworld.wolfram.com/PartitionFunctionP.html" title="link: https://mathworld.wolfram.com/PartitionFunctionP.html">integer partition function</a>.
+Optionally note that the sum of the  $n$-th  row  $P(n)$  is the integer partition function.
 </section>
 
 ## Instructions

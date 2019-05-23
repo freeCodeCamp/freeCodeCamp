@@ -12,7 +12,7 @@ The <a href="https://mvanier.livejournal.com/2897.html" target="_blank">Y combin
 
 ## Instructions
 <section id='instructions'>
-Define the stateless Y combinator function and use it to compute <a href="https://en.wikipedia.org/wiki/Factorial" title="wp: factorial">factorial</a>. The <code>factorial(N)</code> function is already given to you.
+Define the stateless Y combinator function and use it to compute <a href="https://en.wikipedia.org/wiki/Factorial" title="wp: factorial" target="_blank">factorial</a>. The <code>factorial(N)</code> function is already given to you.
 <b>See also:</b>
 <ul>
   <li><a href="https://vimeo.com/45140590" target="_blank">Jim Weirich: Adventures in Functional Programming</a>.</li>

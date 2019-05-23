@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-In <a href="https://en.wikipedia.org/wiki/linear algebra" title="wp: linear algebra">linear algebra</a>, <a href="https://en.wikipedia.org/wiki/Cramer's rule" title="wp: Cramer's rule">Cramer's rule</a> is an explicit formula for the solution of a <a href="https://en.wikipedia.org/wiki/system of linear equations" title="wp: system of linear equations">system of linear equations</a> with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.
+In <a href="https://en.wikipedia.org/wiki/linear algebra" title="wp: linear algebra" target="_blank">linear algebra</a>, <a href="https://en.wikipedia.org/wiki/Cramer's rule" title="wp: Cramer's rule" target="_blank">Cramer's rule</a> is an explicit formula for the solution of a <a href="https://en.wikipedia.org/wiki/system of linear equations" title="wp: system of linear equations" target="_blank">system of linear equations</a> with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.
 Given
 <big>
   $\left\{\begin{matrix}a_1x + b_1y + c_1z&= {\color{red}d_1}\\a_2x + b_2y + c_2z&= {\color{red}d_2}\\a_3x + b_3y + c_3z&= {\color{red}d_3}\end{matrix}\right.$

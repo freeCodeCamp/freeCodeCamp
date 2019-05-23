@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Provide a function to find the closest two points among a set of given points in two dimensions,  i.e. to solve the  <a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem">Closest pair of points problem</a>  in the  <i>planar</i>  case.
+Provide a function to find the closest two points among a set of given points in two dimensions,  i.e. to solve the  <a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="blank">Closest pair of points problem</a>  in the  <i>planar</i>  case.
 The straightforward solution is a  O(n<sup>2</sup>) algorithm (which we can call <i>brute-force algorithm</i>); the pseudo-code (using indexes) could be simply:
 <pre>
 <b>bruteForceClosestPair</b> of P(1), P(2), ... P(N)
@@ -26,7 +26,7 @@ The straightforward solution is a  O(n<sup>2</sup>) algorithm (which we can call
   <b>return</b> minDistance, minPoints
 <b>endif</b>
 </pre>
-A better algorithm is based on the recursive divide & conquer approach, as explained also at <a href="https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case" title="wp: Closest pair of points problem#Planar_case">Wikipedia's Closest pair of points problem</a>, which is O(<i>n</i> log <i>n</i>); a pseudo-code could be:
+A better algorithm is based on the recursive divide and conquer approach, as explained also at <a href="https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case" title="wp: Closest pair of points problem#Planar_case" target="_blank">Wikipedia's Closest pair of points problem</a>, which is <code>O(nlog(n))</code> a pseudo-code could be:
 <pre>
 <b>closestPair</b> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
@@ -63,11 +63,10 @@ A better algorithm is based on the recursive divide & conquer approach, as expla
 For the input, expect the argument to be an array of objects (points) with <code>x</code> and <code>y</code> members set to numbers. For the output, return an object containing the key:value pairs for  <code>distance</code> and <code>pair</code> (the pair of two closest points).
 <b>References and further readings:</b>
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem">Closest pair of points problem</a></li>
-  <li><a href="https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html">Closest Pair (McGill)</a></li>
-  <li><a href="https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf">Closest Pair (UCSB)</a></li>
-  <li><a href="https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf">Closest pair (WUStL)</a></li>
-  <li><a href="https://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt">Closest pair (IUPUI)</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="_blank">Closest pair of points problem</a></li>
+  <li><a href="https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html" target="_blank">Closest Pair (McGill)</a></li>
+  <li><a href="https://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf" target="_blank">Closest Pair (UCSB)</a></li>
+  <li><a href="https://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf" target="_blank">Closest pair (WUStL)</a></li>
  </ul>
 </section>
 

@@ -25,7 +25,7 @@ Test your function with the following series of inputs showing your output here 
   <li>["ABC", "DEF"]</li>
   <li>["ABC", "DEF", "G", "H"]</li>
 </ul>
-Note: Assume words are non-empty strings of uppercase characters for this task.
+<strong>Note:</strong> Assume words are non-empty strings of uppercase characters for this task.
 </section>
 
 ## Tests

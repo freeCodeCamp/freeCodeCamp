@@ -32,9 +32,9 @@ Pseudocode:
       gap := 1
     <b>end if</b>
     i := 0
-    swaps := 0 <i>//see <a href="https://rosettacode.org/wiki/Bubble Sort">Bubble Sort</a> for an explanation</i>
+    swaps := 0 <i>//see <a href="https://rosettacode.org/wiki/Sorting_algorithms/Bubble_sort" target="_blank">Bubble Sort</a> for an explanation</i>
     <i>//a single "comb" over the input list</i>
-    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href="https://rosettacode.org/wiki/Shell sort">Shell sort</a> for similar idea</i>
+    <b>loop until</b> i + gap >= input<b>.size</b> <i>//see <a href="https://rosettacode.org/wiki/Sorting_algorithms/Shell_sort" target="_blank">Shell sort</a> for similar idea</i>
       <b>if</b> input[i] > input[i+gap]
         <b>swap</b>(input[i], input[i+gap])
         swaps := 1 <i>// Flag a swap has occurred, so the</i>

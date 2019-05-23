@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz">FizzBuzz</a> that works for any list of factors, along with their words.
+Write a generalized version of <a href="https://rosettacode.org/wiki/FizzBuzz" target="_blank">FizzBuzz</a> that works for any list of factors, along with their words.
 This is basically a "fizzbuzz" implementation where the rules of the game are supplied to the user. Create a function to implement this. The function should take two parameters.
 The first will be an array with the FizzBuzz rules. For example: <code>[ [3, "Fizz"] , [5, "Buzz"] ]</code>.
 This indcates that <code>Fizz</code> should be printed if the number is a multiple of 3 and <code>Buzz</code> if it is a multiple of 5. If it is a multiple of both then the strings should be concatenated in the order specified in the array. In this case, <code>FizzBuzz</code> if the number is a multiple of 3 and 5.

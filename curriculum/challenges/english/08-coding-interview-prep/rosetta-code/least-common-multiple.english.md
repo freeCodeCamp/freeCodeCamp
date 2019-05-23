@@ -8,7 +8,7 @@ challengeType: 5
 <section id='description'>
 The least common multiple of 12 and 18 is 36, because 12 is a factor (12 &times; 3 = 36), and 18 is a factor (18 &times; 2 = 36), and there is no positive integer less than 36 that has both factors.  As a special case, if either  <i>m</i>  or  <i>n</i>  is zero, then the least common multiple is zero.
 One way to calculate the least common multiple is to iterate all the multiples of  <i>m</i>,  until you find one that is also a multiple of  <i>n</i>.
-If you already have  <i>gcd</i>  for <a href="https://rosettacode.org/wiki/greatest common divisor">greatest common divisor</a>,  then this formula calculates  <i>lcm</i>.
+If you already have  <i>gcd</i>  for <a href="https://rosettacode.org/wiki/greatest common divisor" target="_blank">greatest common divisor</a>,  then this formula calculates  <i>lcm</i>.
 \( \operatorname{lcm}(m, n) = \frac{|m \times n|}{\operatorname{gcd}(m, n)} \)
 </section>
 

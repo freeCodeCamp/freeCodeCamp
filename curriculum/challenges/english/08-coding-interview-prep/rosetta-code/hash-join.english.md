@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-An <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_(SQL)#Inner_join" target="_blank">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Nested loop join">nested loop join</a> algorithm, but a more scalable alternative is the <a href="https://en.wikipedia.org/wiki/hash join" title="wp: hash join" target="_blank">hash join</a> algorithm.
+An <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_(SQL)#Inner_join" target="_blank">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Nested loop join" target="_blank">nested loop join</a> algorithm, but a more scalable alternative is the <a href="https://en.wikipedia.org/wiki/hash join" title="wp: hash join" target="_blank">hash join</a> algorithm.
 The "hash join" algorithm consists of two steps:
 <ol>
   <li><b>Hash phase:</b> Create a <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap" target="_blank">multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
