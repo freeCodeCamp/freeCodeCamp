@@ -268,7 +268,7 @@ Congratulations  🎉🎉🎉! You now have a copy of freeCodeCamp's entire lear
 ## How to Sign in when working locally
 Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
 
-However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a `404` page for the user portfolio when working locally. 
+However, accessing the user portfolio page is a little tricky. In development, Gatsby takes over serving the client side pages and hence you will get a `404` page for the user portfolio when working locally.
 
 Simply clicking the `Preview Custom 404 Page` button will forward you to the correct page.
 
@@ -474,23 +474,29 @@ If you are stuck, and need help, let us know by asking in the ['Contributors' ca
 There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem. Provide this error message in your problem description so others can more easily identify the issue and help you find a resolution.
 
 ### Troubleshooting
-If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
+If the app launches but you are encountering UI errors such as fonts not being loaded or the code editor not displaying properly, see the following depending on your local setup:
 
+**Docker Build:**
 ```sh
 # We use a mono repo and have multiple components (server, client, tools, plugins, etc.)
 # Use this command to clean up all dependencies in all of the components
-npm run clean
+npm run docker:clean
 
 # Reinstall npm packages
-npm install
-
-# Bootstrap the project
-npm run bootstrap
+npm run docker:install
 
 # Seed the database
-npm run seed
+npm run docker:seed
 
 # Restart the application
+npm run docker:develop
+```
+
+**Local Build:**
+```sh
+npm run clean
+npm ci
+npm run seed
 npm run develop
 ```
 
