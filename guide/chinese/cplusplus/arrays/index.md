@@ -8,13 +8,13 @@ localeTitle: C ++数组
 
 例如，包含5个称为数字的整数值的数组声明如下：
 
-```C++
+```cpp
 int numbers [5]; 
 ```
 
 Initializiation：
 
-```C++
+```cpp
 //Initialization with entries: 
  int numbers [5] = {1, 2, 3, 4, 5}; 
  
@@ -34,7 +34,7 @@ Initializiation：
 可以通过引用它们在数组中的位置来访问数组中的元素。 （从0开始计数）。  
 例：
 
-```C++
+```cpp
 x = numbers[0]; // = 1. [0] == first position 
  numbers[2] = 55; // Sets the third position (3) to the new number 55 
  //numbers[] is now: {1, 2, 55, 4, 5} 

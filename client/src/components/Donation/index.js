@@ -1,1 +1,1 @@
-export { default } from './Donation';
+export { default } from './components/DonateModal';

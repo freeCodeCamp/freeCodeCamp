@@ -48,7 +48,7 @@ localeTitle: تحديث المخزون
         // A helper method to return the index of a specified product (undefined if not found) 
         var getProductIndex = function (name) { 
             for (var i = 0; i < this.length; i++) { 
-                if (this<a href='https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:"' target='_blank' rel='nofollow'>i][1] === name) { 
+                if (this[i][1] === name) { 
                     return i; 
                 } 
             } 
@@ -131,7 +131,7 @@ localeTitle: تحديث المخزون
       // All inventory must be accounted for or you're fired! 
  
       var index; 
-      var arrCurInvName = <a href='https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:"' target='_blank' rel='nofollow'>]; // Names of arr1's items 
+      var arrCurInvName = []; // Names of arr1's items 
       var arrNeInvName = []; // Names of arr2's items 
  
       // Same as using two for loops, this takes care of increasing the number of stock quantity. 

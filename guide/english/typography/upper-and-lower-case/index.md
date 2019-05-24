@@ -7,7 +7,7 @@ Uppercase (UC) is alternatively referred to as caps and capital. It is a typefac
 Many languages have two different written representations of their letters, **upper case** and **lower case**, also known as majuscule and minuscule forms. 
 
 Upper case and lower case letters are often mixed in the same piece of text. The use of cases is decided by grammar, but a variety of [case styles](https://en.wikipedia.org/wiki/Letter_case#Case_styles) also exists. 
-Certain case styles are common in computer programming, referred to as [naming conventions](https://guide.freecodecamp.org/javascript/naming-convention-for-javascript), like CamelCase and snake_case.
+Certain case styles are common in computer programming, referred to as [naming conventions](https://guide.freecodecamp.org/javascript/naming-convention-for-javascript), like camelCase and snake_case.
 
 ## Uppercase:
 A B C D E F G H I J K L M N O P Q R S T U V W X Y Z

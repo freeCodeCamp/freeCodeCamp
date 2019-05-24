@@ -21,9 +21,9 @@ For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d',
 ```yml
 tests:
   - text: Your <code>Set</code> class should have a <code>difference</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.difference === 'function')})(), 'Your <code>Set</code> class should have a <code>difference</code> method.');
-  - text: The proper collection was returned
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && DeepEqual(differenceSetAB.values(), [ 'a', 'b' ])})(), 'The proper collection was returned');
+    testString: assert((function(){var test = new Set(); return (typeof test.difference === 'function')})());
+  - text: Your <code>difference</code> method should return the proper collection.
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && DeepEqual(differenceSetAB.values(), [ 'a', 'b' ])})());
 
 ```
 

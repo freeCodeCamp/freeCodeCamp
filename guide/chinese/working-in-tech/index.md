@@ -2,7 +2,7 @@
 title: Working in Tech
 localeTitle: 在Tech。工作
 ---
-## 在Tech。工作
+## Tech工作
 
 各种与技术相关的领域，例如网站开发，设计，数据科学和产品管理，往往被归结为全面的术语“技术”。
 

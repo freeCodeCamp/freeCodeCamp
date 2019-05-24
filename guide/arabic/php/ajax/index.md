@@ -23,7 +23,7 @@ localeTitle: AJAX
 
 **HTML DOM** : عند تحميل صفحة الويب ، يقوم المتصفح بإنشاء نموذج كائن المستند للصفحة.
 
-![](https://i.imgur.com/pfC7QFH.png "كيف تعمل AJAX")
+![](https://cdn-media-1.freecodecamp.org/imgr/pfC7QFH.png "كيف تعمل AJAX")
 
 **إنشاء كائن XMLHttpRequest:**
 

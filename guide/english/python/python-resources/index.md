@@ -36,6 +36,9 @@ title: Python Resources
 *   <a href='https://pythonprogramming.net' target='_blank' rel='nofollow'> Set of Starter Projects with Videos </a> - From the basics onward.
 *   <a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target='_blank' rel='nofollow'>The Flask Mega Tutorial (Miguel Grinberg)</a>
 *   <a href="https://www.pythonforengineers.com/python-for-scientists-and-engineer" target='_blank' rel='nofollow'>Python for Scientists and Engineers (Shantnu Tiwari)</a>
+*   <a href="https://www.py4e.com/" target='_blank' rel='nofollow'>Python for Everybody</a>
+*   <a href="https://www.udemy.com/python-complete/?start=0" target='_blank' rel='nofollow'>The Complete Python 3 Course: Beginner to Advanced!</a>
+
 ## Challenges
 
 *   <a href='https://github.com/gregmalcolm/python_koans' target='_blank' rel='nofollow'>Python Koans</a>
@@ -52,6 +55,7 @@ title: Python Resources
 *   <a href='https://codesignal.com/' target='_blank' rel='nofollow'>CodeSignal - Prepare for interviews & further your programming skills</a>
 *   <a href="https://www.codewars.com/" target='_blank' rel='nofollow'>CodeWars</a>
 *   <a href="https://www.codechef.com/" target='_blank' rel='nofollow'>CodeChef</a>
+*   <a href="https://www.hackerrank.com/domains/tutorials/30-days-of-code" target='_blank' rel='nofollow'>Hackerrank</a>
 
 ## Community
 
