@@ -32,7 +32,7 @@ let ducky = new Bird();
 ducky.getHatchedEggCount(); // returns 10
 ```
 
-Here <code>getHachedEggCount</code> is a privileged method, because it has access to the private variable <code>hatchedEgg</code>. This is possible because <code>hatchedEgg</code> is declared in the same context as <code>getHachedEggCount</code>. In JavaScript, a function always has access to the context in which it was created. This is called <code>closure</code>.
+Here <code>getHatchedEggCount</code> is a privileged method, because it has access to the private variable <code>hatchedEgg</code>. This is possible because <code>hatchedEgg</code> is declared in the same context as <code>getHatchedEggCount</code>. In JavaScript, a function always has access to the context in which it was created. This is called <code>closure</code>.
 
 </section>
 
