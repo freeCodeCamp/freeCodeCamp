@@ -17,19 +17,19 @@ localeTitle: Encontre um ou mais criminosos em uma perseguição policial
 
 ```yml
 tests:
-  - text: Sua expressão regular deve corresponder a <code>one</code> criminoso (&quot; <code>C</code> &quot;) em <code>&quot;C&quot;</code>
+  - text: Sua expressão regular deve corresponder a <code>one</code> criminoso ( <code>C</code> ) em <code>C</code>
     testString: 'assert("C".match(reCriminals) && "C".match(reCriminals)[0] == "C", "Sua expressão regular deve corresponder a <code>one</code> criminoso ("<code>C</code>") em <code>"C"</code>");'
   - text: Sua expressão regular deve coincidir com <code>two</code> criminosos (&quot; <code>CC</code> &quot;) em <code>&quot;CC&quot;</code>
-    testString: 'assert("CC".match(reCriminals) && "CC".match(reCriminals)[0] == "CC", "Sua expressão regular deve corresponder a <code>two</code> criminosos ("<code>CC</code>") em <code>"CC"</code>");'
-  - text: Sua expressão regular deve corresponder a <code>three</code> criminosos (&quot; <code>CCC</code> &quot;) em <code>&quot;P1P5P4CCCP2P6P3&quot;</code>
+    testString: 'assert("CC".match(reCriminals) && "CC".match(reCriminals)[0] == "CC", "Sua expressão regular deve corresponder a <code>two</code> criminosos (<code>CC</code>) em <code>CC</code>);'
+  - text: Sua expressão regular deve corresponder a <code>three</code> criminosos ( <code>CCC</code> ) em <code>P1P5P4CCCP2P6P3</code>
     testString: 'assert("P1P5P4CCCP2P6P3".match(reCriminals) && "P1P5P4CCCP2P6P3".match(reCriminals)[0] == "CCC", "Sua expressão regular deve corresponder a <code>three</code> criminosos ("<code>CCC</code>") em <code>"P1P5P4CCCP2P6P3"</code>");'
-  - text: Sua expressão regular deve corresponder a <code>five</code> criminosos (&quot; <code>CCCCC</code> &quot;) em <code>&quot;P6P2P7P4P5CCCCCP3P1&quot;</code>
+  - text: Sua expressão regular deve corresponder a <code>five</code> criminosos ( <code>CCCCC</code> ) em <code>P6P2P7P4P5CCCCCP3P1</code>
     testString: 'assert("P6P2P7P4P5CCCCCP3P1".match(reCriminals) && "P6P2P7P4P5CCCCCP3P1".match(reCriminals)[0] == "CCCCC", "Sua expressão regular deve corresponder a <code>five</code> criminosos ("<code>CCCCC</code>") em <code>"P6P2P7P4P5CCCCCP3P1"</code>");'
   - text: Sua expressão regular não deve corresponder a nenhum criminoso em <code>&quot;&quot;</code>
     testString: 'assert(!reCriminals.test(""), "Sua expressão regular não deve corresponder a nenhum criminoso <code>""</code>");'
-  - text: Sua expressão regular não deve corresponder a nenhum criminoso em <code>&quot;P1P2P3&quot;</code>
+  - text: Sua expressão regular não deve corresponder a nenhum criminoso em <code>P1P2P3</code>
     testString: 'assert(!reCriminals.test("P1P2P3"), "Sua expressão regular não deve corresponder a nenhum criminoso em <code>"P1P2P3"</code>");'
-  - text: Sua expressão regular deve corresponder a <code>fifty</code> criminosos (&quot; <code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code> &quot;) em <code>&quot;P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3&quot;</code> .
+  - text: Sua expressão regular deve corresponder a <code>fifty</code> criminosos ( <code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code> ) em <code>P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3</code> .
     testString: 'assert("P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals) && "P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3".match(reCriminals)[0] == "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC", "Sua expressão regular deve corresponder a <code>fifty</code> criminosos ("<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>") em <code>"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3"</code>.");'
 
 ```
