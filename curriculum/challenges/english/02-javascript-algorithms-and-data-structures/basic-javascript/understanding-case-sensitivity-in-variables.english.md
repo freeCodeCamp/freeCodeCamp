@@ -12,7 +12,13 @@ In JavaScript all variables and function names are case sensitive. This means th
 <h4>Best Practice</h4>
 Write variable names in JavaScript in <dfn>camelCase</dfn>. In <dfn>camelCase</dfn>, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.
 <strong>Examples:</strong>
-<blockquote>var someVariable;<br>var anotherVariableName;<br>var thisVariableNameIsSoLong;</blockquote>
+
+```js
+var someVariable;
+var anotherVariableName;
+var thisVariableNameIsSoLong;
+```
+
 </section>
 
 ## Instructions

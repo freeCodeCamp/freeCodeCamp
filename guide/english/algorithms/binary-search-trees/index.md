@@ -66,13 +66,14 @@ Successors can be described as the node that would come right after the the curr
 - Trie (Radix tree)
 
 ### Runtime
-**Data structure: Array**
-- Worst-case performance: `O(log n)`
+**Data structure: BST**
+- Worst-case performance: `O(n)`
 - Best-case performance: `O(1)`
 - Average performance: `O(log n)`
 - Worst-case space complexity: `O(1)`
 
 Where `n` is the number of nodes in the BST.
+Worst case is O(n) since BST can be unbalanced.
 
 ### Implementation of BST
 

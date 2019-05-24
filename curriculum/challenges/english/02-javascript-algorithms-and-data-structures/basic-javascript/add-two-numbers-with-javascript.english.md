@@ -11,7 +11,11 @@ videoUrl: 'https://scrimba.com/c/cM2KBAG'
 Now let's try to add two numbers using JavaScript.
 JavaScript uses the <code>+</code> symbol as an addition operator when placed between two numbers.
 <strong>Example:</strong>
-<blockquote>myVar = 5 + 10; // assigned 15</blockquote>
+
+```js
+myVar = 5 + 10; // assigned 15
+```
+
 </section>
 
 ## Instructions

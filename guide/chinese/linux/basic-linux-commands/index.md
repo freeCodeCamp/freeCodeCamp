@@ -63,7 +63,7 @@ localeTitle: 基本Linux命令
 15. **grep** -  grep搜索任何给定的输入文件，选择与一个或多个模式匹配的行。
 - 使用`grep`查找文件，目录，文件/目录中的一些文本。
 **例子:**
-```sh
+```shell
  $ ps ax | grep -w login
  25291 s000  Ss     0:00.11 login -pf <user>
  25467 s000  R+     0:00.00 grep -w login

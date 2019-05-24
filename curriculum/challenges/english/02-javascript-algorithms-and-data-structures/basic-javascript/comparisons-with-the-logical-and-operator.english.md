@@ -9,9 +9,25 @@ videoUrl: 'https://scrimba.com/c/cvbRVtr'
 <section id='description'>
 Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.
 The same effect could be achieved by nesting an if statement inside another if:
-<blockquote>if (num > 5) {<br>&nbsp;&nbsp;if (num < 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Yes";<br>&nbsp;&nbsp;}<br>}<br>return "No";</blockquote>
+
+```js
+if (num > 5) {
+  if (num < 10) {
+    return "Yes";
+  }
+}
+return "No";
+```
+
 will only return "Yes" if <code>num</code> is greater than <code>5</code> and less than <code>10</code>. The same logic can be written as:
-<blockquote>if (num > 5 && num < 10) {<br>&nbsp;&nbsp;return "Yes";<br>}<br>return "No";</blockquote>
+
+```js
+if (num > 5 && num < 10) {
+  return "Yes";
+}
+return "No";
+```
+
 </section>
 
 ## Instructions

@@ -10,6 +10,8 @@ To get here from other modes you can type `ctrl + c` or `escape`.
 
 To edit text and move around in a familiar way press `i`, for "insert" mode. Try to move around with the arrow keys in "insert" mode - see the "Navigation" section below for details.
 
+To select text press `v` to switch to "visual" mode, then with `shift + arrows` select the desired text and press `d` to cut or `y` to yank (copy).
+
 Depending on the configuration, you may enter a file browser by typing and entering the command `:e .` in "normal" mode. The 'e' stands for edit, and the period for the file or directory.
 
 ## Navigation

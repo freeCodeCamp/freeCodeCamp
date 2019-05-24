@@ -9,7 +9,13 @@ videoUrl: 'https://scrimba.com/c/cKekkUy'
 <section id='description'>
 The strict inequality operator (<code>!==</code>) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns <code>false</code> where strict equality would return <code>true</code> and <em>vice versa</em>. Strict inequality will not convert data types.
 <strong>Examples</strong>
-<blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote>
+
+```js
+3 !==  3   // false
+3 !== '3'  // true
+4 !==  3   // true
+```
+
 </section>
 
 ## Instructions

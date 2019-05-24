@@ -7,9 +7,28 @@ challengeType: 1
 ## Description
 <section id='description'>
 There is one crucial side effect of manually setting the prototype to a new object. It erases the <code>constructor</code> property! This property can be used to check which constructor function created the instance, but since the property has been overwritten, it now gives false results:
-<blockquote>duck.constructor === Bird; // false -- Oops <br> duck.constructor === Object; // true, all objects inherit from Object.prototype <br> duck instanceof Bird; // true, still works</blockquote>
+
+```js
+duck.constructor === Bird; // false -- Oops
+duck.constructor === Object; // true, all objects inherit from Object.prototype
+duck instanceof Bird; // true, still works
+```
+
 To fix this, whenever a prototype is manually set to a new object, remember to define the <code>constructor</code> property:
-<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;constructor: Bird, // define the constructor property<br>&nbsp;&nbsp;numLegs: 2,<br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("nom nom nom");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("My name is " + this.name); <br>&nbsp;&nbsp;}<br>};</blockquote>
+
+```js
+Bird.prototype = {
+  constructor: Bird, // define the constructor property
+  numLegs: 2,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name); 
+  }
+};
+```
+
 </section>
 
 ## Instructions

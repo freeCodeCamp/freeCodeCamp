@@ -13,7 +13,17 @@ JSON syntax looks very similar to JavaScript object literal notation. JSON has o
 These properties and their values are often referred to as "key-value pairs".
 However, JSON transmitted by APIs are sent as <code>bytes</code>, and your application receives it as a <code>string</code>. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The <code>JSON.parse</code> method parses the string and constructs the JavaScript object described by it.
 You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:
-<blockquote>req=new XMLHttpRequest();<br>req.open("GET",'/json/cats.json',true);<br>req.send();<br>req.onload=function(){<br>&nbsp;&nbsp;json=JSON.parse(req.responseText);<br>&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);<br>};</blockquote>
+
+```js
+req=new XMLHttpRequest();
+req.open("GET",'/json/cats.json',true);
+req.send();
+req.onload=function(){
+  json=JSON.parse(req.responseText);
+  document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);
+};
+```
+
 Here's a review of what each piece is doing. The JavaScript <code>XMLHttpRequest</code> object has a number of properties and methods that are used to transfer data. First, an instance of the <code>XMLHttpRequest</code> object is created and saved in the <code>req</code> variable.
 Next, the <code>open</code> method initializes a request - this example is requesting data from an API, therefore is a "GET" request. The second argument for <code>open</code> is the URL of the API you are requesting data from. The third argument is a Boolean value where <code>true</code> makes it an asynchronous request.
 The <code>send</code> method sends the request. Finally, the <code>onload</code> event handler parses the returned data and applies the <code>JSON.stringify</code> method to convert the JavaScript object into a string. This string is then inserted as the message text.

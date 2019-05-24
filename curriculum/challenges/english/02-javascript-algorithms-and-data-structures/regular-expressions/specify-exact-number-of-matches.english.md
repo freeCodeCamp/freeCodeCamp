@@ -9,7 +9,17 @@ challengeType: 1
 You can specify the lower and upper number of patterns with <code>quantity specifiers</code> using curly brackets. Sometimes you only want a specific number of matches.
 To specify a certain number of patterns, just have that one number between the curly brackets.
 For example, to match only the word <code>"hah"</code> with the letter <code>a</code> <code>3</code> times, your regex would be <code>/ha{3}h/</code>.
-<blockquote>let A4 = "haaaah";<br>let A3 = "haaah";<br>let A100 = "h" + "a".repeat(100) + "h";<br>let multipleHA = /ha{3}h/;<br>multipleHA.test(A4); // Returns false<br>multipleHA.test(A3); // Returns true<br>multipleHA.test(A100); // Returns false</blockquote>
+
+```js
+let A4 = "haaaah";
+let A3 = "haaah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleHA = /ha{3}h/;
+multipleHA.test(A4); // Returns false
+multipleHA.test(A3); // Returns true
+multipleHA.test(A100); // Returns false
+```
+
 </section>
 
 ## Instructions

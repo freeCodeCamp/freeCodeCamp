@@ -13,7 +13,7 @@ To upload an application to playstore you need to follow the following steps:
 ## Post Obtaining license you need to follow some steps before generating an apk.
 
 1. Every apk must be generated in release mode. The mode can be found in Build variant
-![](https://i.imgur.com/oQc1SKK.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/oQc1SKK.png)
 
 
 2. In build.gradle of the application ensure that the **version code** is unique for every apk build. Playstore will use this number to keep a track of seperate apk versions.

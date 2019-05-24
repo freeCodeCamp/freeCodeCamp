@@ -39,7 +39,7 @@ Series is the basic data-type in pandas. A Series is very similar to an array (N
 pd.Series([1,2,3])
 ```
 output:
-```output
+```shell
 0    1
 1    2
 2    3
@@ -49,7 +49,7 @@ dtype: int64
 np.array([1,2,3])
 ```
 output:
-```output
+```shell
 array([1, 2, 3])
 ```
 

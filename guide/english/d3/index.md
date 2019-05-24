@@ -12,7 +12,6 @@ title: D3
 **D3.js** version 1.0.0 was released back in 18 February 2011.
 
 ## Why D3.js?
-
 For those already familiar with HTML and CSS, *D3* is quick to learn. Unlike **Processing**, **Raphaël**, or **Protovis**, *D3's* vocabulary of graphical marks comes directly from web standards: HTML, SVG, and CSS - https://d3js.org/
 
 ## Get Started
@@ -46,7 +45,7 @@ There are over [20,000 **D3.js** examples](https://github.com/d3/d3/wiki/Gallery
 
 ![](https://i1.wp.com/pbiswas101.files.wordpress.com/2018/07/force.gif?w=400&h=100)
 
-With just some basic knowledge of the latest HTML5 features such as SVG and Canvas, you can dive into a world where a library like **D3.js** can bring data to life!
+ So, with just some basic knowledge of the latest HTML5 features such as SVG, and canvas, you can dive into a world where libraries like **D3.js** bring data to life!
 
 ### Contribution
 -  https://github.com/d3/

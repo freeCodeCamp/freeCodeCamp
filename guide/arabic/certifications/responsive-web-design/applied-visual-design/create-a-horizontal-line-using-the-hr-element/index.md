@@ -21,7 +21,7 @@ localeTitle: إنشاء خط أفقي باستخدام عنصر hr
 
 أيًا كان التنسيق الذي تختاره ، سيؤدي إلى إنشاء خط أفقي كما في [هذا الدرس](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/create-a-horizontal-line-using-the-hr-element/) على [freeCodeCamp](https://www.freecodecamp.org/) . في ما يلي لقطة شاشة من هذا الدرس تظهر عنصر `hr` مضمّن في div.
 
-![مثال hr](https://i.imgur.com/RMTqXPw.png)
+![مثال hr](https://cdn-media-1.freecodecamp.org/imgr/RMTqXPw.png)
 
 ## مصادر:
 

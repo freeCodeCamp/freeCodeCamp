@@ -7,9 +7,27 @@ challengeType: 1
 ## Description
 <section id='description'>
 When defining functions within objects in ES5, we have to use the keyword <code>function</code> as follows:
-<blockquote>const person = {<br>&nbsp;&nbsp;name: "Taylor",<br>&nbsp;&nbsp;sayHello: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>
+
+```js
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+
 With ES6, You can remove the <code>function</code> keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
-<blockquote>const person = {<br>&nbsp;&nbsp;name: "Taylor",<br>&nbsp;&nbsp;sayHello() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>
+
+```js
+const person = {
+  name: "Taylor",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+
 </section>
 
 ## Instructions
@@ -23,9 +41,9 @@ Refactor the function <code>setGear</code> inside the object <code>bicycle</code
 ```yml
 tests:
   - text: Traditional function expression should not be used.
-    testString: getUserInput => assert(!getUserInput('index').match(/function/));
+    testString: getUserInput => assert(!removeJSComments(code).match(/function/));
   - text: <code>setGear</code> should be a declarative function.
-    testString: getUserInput => assert(typeof bicycle.setGear === 'function' && getUserInput('index').match(/setGear\s*\(.+\)\s*\{/));
+    testString: assert(typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/));
   - text: <code>bicycle.setGear(48)</code> should change the <code>gear</code> value to 48.
     testString: assert((new bicycle.setGear(48)).gear === 48);
 
@@ -49,6 +67,15 @@ const bicycle = {
 // change code above this line
 bicycle.setGear(3);
 console.log(bicycle.gear);
+```
+
+</div>
+
+### After Test
+<div id='js-teardown'>
+
+```js
+const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
 ```
 
 </div>

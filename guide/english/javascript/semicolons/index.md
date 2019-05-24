@@ -21,7 +21,7 @@ A consistent coding style makes code more readable. Decide whether you will or w
 When JavaScript was first made it was meant to aid beginners to get into programming. Nobody wants to be searching for a dang semi-colon in their code when they first start programming. So the choice of semi-colons was implemented, as stated above they are technically there. 
 
 For example:
-```javasctipt 
+```js 
 function foo(x) {
   return
     function(y) {

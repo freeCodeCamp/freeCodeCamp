@@ -200,7 +200,7 @@ def binary_search(arr, l, r, target):
 
 Recursive approach!
 
-```C++ -
+```cpp
 // Recursive approach in C++
 int binarySearch(int arr[], int start, int end, int x)
 {
@@ -221,7 +221,7 @@ int binarySearch(int arr[], int start, int end, int x)
 
 Iterative approach!
 
-```C++
+```cpp
 int binarySearch(int arr[], int start, int end, int x)
 {
     while (start <= end)

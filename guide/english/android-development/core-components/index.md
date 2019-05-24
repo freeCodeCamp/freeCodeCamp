@@ -45,13 +45,17 @@ An activity facilitates the following key interactions between system and app:
 
 > Called when an activity is no longer visible to the user. You will next receive either onRestart(), onDestroy(), or nothing, depending on subsequent user activity.
 
->Note that this method may never be called, in low memory situations where the system does not have enough memory to keep your activity's process running after its onPause() method is called.
+> Note that this method may never be called, in low memory situations where the system does not have enough memory to keep your activity's process running after its onPause() method is called.
 
 * onDestroy():
 
 > The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method.
+
 This call is often used when the user hits the back button, or closes the instance of the app.
+
 Interestingly, when app display changes orientation (e.g., from landscape to portrait or the other way around), `onDestroy()` and `onCreate()` are called. This means that the Activity is recreated. This comes in handy in applications with different defined rules for landscape and portrait modes, or with different views defined for tablets and phones in these modes.
+
+This method also cleanup the resources such as threads so that application runs smooth.
 
 #### Sample code to understand Activity Lifecycle
 
@@ -162,6 +166,7 @@ There are three kinds of services:
 - _Foreground_ services: they are strictly related to the user's interaction (for example music playback), so it's harder for the system to kill them.
 - _Background_ services: they are not directly related to the user's activities, so they can be killed if more RAM is needed.
 - _Bound_ services: offers a client-server interface that allows components to interact with the service, send requests, receive results, and even do so across processes with interprocess communication (IPC).
+- _Intent_ services: An IntentService is meant to handle individual autonomous calls. Unlike a service, which can concurrently handle multiple calls, an IntentService is more like a work queue processor – work is queued up and an IntentService processes each job one at a time on a single worker thread. Typically, an IntentService is not bound to an Activity or a Fragment.
 
 #### [Services Lifecycle](https://developer.android.com/guide/components/services#Lifecycle)
 ![Services Lifecycle](https://developer.android.com/images/service_lifecycle.png)

@@ -67,17 +67,17 @@ class DonateOtherPage extends Component {
         }
         target='_blank'
       >
-        <input defaultValue='_s-xclick' name='cmd' type='hidden' />{' '}
+        <input name='cmd' type='hidden' value='_s-xclick' />{' '}
         <input
-          defaultValue={item.defaultValueHash}
           name='hosted_button_id'
           type='hidden'
+          value={item.defaultValueHash}
         />{' '}
         <input
           className='btn btn-cta signup-btn btn-block'
-          defaultValue={item.defaultValue}
           name='submit'
           type='submit'
+          value={item.defaultValue}
         />
       </form>
     );
