@@ -173,8 +173,8 @@ class DefaultLayout extends Component {
             <Flash messages={flashMessages} onClose={removeFlashMessage} />
           ) : null}
           {children}
+          {showFooter && <Footer />}
         </div>
-        {showFooter && <Footer />}
       </Fragment>
     );
   }
