@@ -119,6 +119,6 @@ En el siguiente tutorial cubriremos algunos pasos más avanzados, que incluyen:
 
 [Sitio web de webpack](https://webpack.js.org/)
 
-[Webpack Github](https://github.com/webpack/webpack)
+[Webpack GitHub](https://github.com/webpack/webpack)
 
-[webpack-dev-server Github](https://github.com/webpack/webpack-dev-server)
+[webpack-dev-server GitHub](https://github.com/webpack/webpack-dev-server)

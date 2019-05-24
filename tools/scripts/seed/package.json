@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
-    "@freecodecamp/curriculum": "0.0.0-next.4",
     "debug": "^4.0.1",
     "dotenv": "^6.0.0",
     "jest": "^23.6.0",

@@ -1,8 +1,6 @@
 ---
 id: 587d7fa7367417b2b2512bc6
 title: Add Inline Styling to Elements
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 videoUrl: ''
 localeTitle: إضافة التصميم الداخلي للعناصر

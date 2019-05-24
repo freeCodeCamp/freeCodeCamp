@@ -241,5 +241,5 @@ function handleTitleChange(e){
 ## Больше информации
 
 *   [Введение ES6](https://guide.freecodecamp.org/javascript/es6)
-*   [Функции стрелок](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [Let и Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [Функции стрелок](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [Let и Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)

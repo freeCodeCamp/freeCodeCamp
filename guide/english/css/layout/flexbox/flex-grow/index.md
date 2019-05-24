@@ -7,11 +7,11 @@ The flex-grow property is a flexbox property that allows you to specify the allo
 
 It'll turn your container from this
 
-<img src = "https://i.imgur.com/lFJaBUfh.png">
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/lFJaBUfh.png">
 
 <b><h1>to this</h1></b>
 
-<img src = "https://i.imgur.com/4X8ITZih.png">
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/4X8ITZih.png">
 
 What just happened?
 
@@ -47,7 +47,7 @@ Let's see an example.
 
 First let's create two paragraphs and enable display: flex;
 
-<img src = "https://i.imgur.com/wPqUgsih.png">
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/wPqUgsih.png">
 
 Notice a few things
 
@@ -58,7 +58,7 @@ That empty space is the "free space" that will be allocated to each of the diffe
 
 To see this in action, let's give the first one a class of "ten" and a flex-grow property of 1. Let's also give the second one a class of "twenty" and a flex-grow property of 2.
 
-<img src = "https://i.imgur.com/7n0V1G4h.png">
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/7n0V1G4h.png">
 
 Notice a few things
 
@@ -67,7 +67,7 @@ Notice a few things
 
 As we resize the screen, we also find that the first one shrinks at twice the speed of the second one.
 
-<img src = "https://i.imgur.com/pa4grM8h.png">
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/pa4grM8h.png">
 
 #### More Information:
 

@@ -12,7 +12,7 @@ localeTitle: 使用If / Else条件渲染
 
 ### 解
 
-```react.js
+```jsx
 if (this.state.display === true) { 
   return ( 
     <div> 
@@ -25,7 +25,7 @@ if (this.state.display === true) {
 
 接下来，创建一个else语句，返回**不带** `h1`元素的相同JSX。
 
-```react.js
+```jsx
 else { 
   return ( 
     <div> 
