@@ -3,13 +3,14 @@ title: Evaluating Polynomials Synthetic Division
 ---
 ## Evaluating Polynomials Synthetic Division
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/evaluating-polynomials-synthetic-division/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In algebra, synthetic division is a method of performing Euclidean division of polynomials, with less writing and fewer calculations than occur with polynomial long division. It is mostly taught for division by binomials of the form
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The advantages of synthetic division are that it allows one to calculate without writing variables, it uses few calculations, and it takes significantly less space on paper than long division. Also, the subtractions in long division are converted to additions by switching the signs at the very beginning, preventing sign errors.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+<img src = 'https://mathbitsnotebook.com/Algebra2/Polynomials/synpicN.jpg'/>
+
+<a href='https://mathbitsnotebook.com/Algebra2/Polynomials/POPolySynDivide.html'>Image Source</a>
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+* [Wikipedia](https://en.wikipedia.org/wiki/Synthetic_division)
+* [Khan Academy Intro Link](https://www.khanacademy.org/math/algebra2/arithmetic-with-polynomials/synthetic-division-of-polynomials/v/synthetic-division)

@@ -12,7 +12,7 @@ Basta criar uma tag `<h1>` e renderizar `this.state.name` entre a tag.
 
 ## Solução
 
-```react.js
+```jsx
 class MyComponent extends React.Component { 
   constructor(props) { 
     super(props); 

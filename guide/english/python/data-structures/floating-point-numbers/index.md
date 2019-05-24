@@ -12,7 +12,7 @@ Float objects can be created using using <a href='https://docs.python.org/3/refe
 
     >>> 3.14
     3.14
-    >>> 314\.    # Trailing zero(s) not required.
+    >>> 314.    # Trailing zero(s) not required.
     314.0
     >>> .314    # Leading zero(s) not required.
     0.314
@@ -34,7 +34,7 @@ Numeric literals do not contain a sign, however creating negative float objects 
     >>> type(-3.141592653589793)
     <class 'float'>
 
-Likewise, positive float objects can be prefixed with a unary `+ (`plus) operator with no space before the literal. Usually `+` is omitted:
+Likewise, positive float objects can be prefixed with a unary `+` (plus) operator with no space before the literal. Usually `+` is omitted:
 
     >>> +3.141592653589793
     3.141592653589793
@@ -51,7 +51,7 @@ Note that leading and trailing zero(s) are valid for floating point literals
     10000000000.0
 
 ## Float objects using float constructors
-The <a href='https://docs.python.org/3/library/functions.html#float' target='_blank' rel='nofollow'>`float` constructor</a> is another way to create `float` objects.
+The <a href='https://docs.python.org/3/library/functions.html#float' target='_blank' rel='nofollow'>`float`</a> constructor is another way to create `float` objects.
 
 Creating `float` objects with floating point literals is preferred when possible:
 
