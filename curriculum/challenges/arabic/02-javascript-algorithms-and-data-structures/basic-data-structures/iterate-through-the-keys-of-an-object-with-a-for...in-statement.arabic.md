@@ -1,6 +1,6 @@
 ---
 id: 587d7b7d367417b2b2512b1d
-title: ' Iterate Through the Keys of an Object with a for...in Statement'
+title: 'Iterate Through the Keys of an Object with a for...in Statement'
 challengeType: 1
 videoUrl: ''
 localeTitle: يتكرر عبر مفاتيح كائن مع لـ ... في بيان

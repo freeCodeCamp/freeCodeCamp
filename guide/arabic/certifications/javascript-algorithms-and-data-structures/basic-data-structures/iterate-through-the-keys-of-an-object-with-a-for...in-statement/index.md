@@ -1,5 +1,5 @@
 ---
-title:  Iterate Through the Keys of an Object with a for...in Statement
+title: Iterate Through the Keys of an Object with a for...in Statement
 localeTitle:  يتكرر عبر مفاتيح كائن مع لـ ... في بيان
 ---
 ## يتكرر عبر مفاتيح كائن مع لـ ... في بيان
