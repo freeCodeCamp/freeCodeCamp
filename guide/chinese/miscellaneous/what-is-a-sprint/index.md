@@ -16,7 +16,7 @@ _冲刺_背后的意识形态允许更大的时间线容易地分解成更小，
 
 此外，在一些组织中，开发人员将每天开会讨论项目进度，需求和障碍。这些会议有时被称为SCRUM会议或每日站立会议。有时会邀请一个或多个人听，但他们只是作为观察员出席。
 
-![sprint schedule](https://i.imgur.com/l8EAw1L.png "冲刺计划的例子")
+![sprint schedule](https://cdn-media-1.freecodecamp.org/imgr/l8EAw1L.png "冲刺计划的例子")
 
 以上是冲刺计划的一个例子，该计划已经在六个30天的冲刺中进行了规划。您可以看到六个冲刺中的每一个都有一个Sprint Dev，但是从Sprint 2开始就标记为**Sprint＃Increment** 。
 
