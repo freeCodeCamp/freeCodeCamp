@@ -57,7 +57,7 @@ function(x){
 The output of the `typeof` operator might not always be what you expect when you check for a number.  
 Numbers can turn in to the value [NaN (Not A Number)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN) for multiple reasons.  
 ```javascript
-console.log(typeof NaN); //"number"
+console.log(typeof NaN); // number
 ```
   
 Maybe you tried to multiply a number with an object because you forgot to access the number inside the object.
