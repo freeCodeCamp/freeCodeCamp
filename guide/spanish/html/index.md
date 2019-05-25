@@ -4,7 +4,11 @@ localeTitle: HTML
 ---
 # HTML
 
-El lenguaje de marcado de hipertexto (HTML) es un lenguaje de marcado utilizado para construir documentos en línea y es la base de la mayoría de los sitios web de la actualidad. Los lenguajes de marcado como HTML nos permiten 1) crear enlaces a otros documentos, 2) estructurar el contenido de nuestro documento y 3) atribuir contexto y significado al contenido de nuestro documento.
+El lenguaje de marcado de hipertexto (HTML) es un lenguaje de marcado utilizado para construir documentos en línea y es la base de la mayoría de los sitios web de la actualidad. Los lenguajes de marcado como HTML nos permiten 
+
+1. crear enlaces a otros documentos, 
+2. estructurar el contenido de nuestro documento y 
+3. atribuir contexto y significado al contenido de nuestro documento.
 
 Un documento HTML tiene dos aspectos. Contiene información estructurada (marcado) y enlaces de texto (hipertexto) a otros documentos. Estructuramos nuestras páginas utilizando [elementos HTML](#) . Son constructos del lenguaje que proporciona [estructura](#) y [significado](#) en nuestro documento para el navegador y la Elemento enlaces a otros documentos a través de internet.
 
@@ -57,3 +61,7 @@ Desde los primeros días de la web, ha habido muchas versiones de HTML.
 *   [Elementos HTML](https://guide.freecodecamp.org/html/elements)
 *   [HTML semantico](https://guide.freecodecamp.org/html/html5-semantic-elements)
 *   [Atributos HTML](https://guide.freecodecamp.org/html/attributes)
+
+##### El Significado del HTML para la Web
+De la mano del científico  Tim Berners Lee en 1991 nace HTML en el CERN,  Laboratorio Europeo de Física Nuclear de Ginebra en Suiza, como un entramado inmerso entre la idea de interconectar contenido entre diferentes ordenadores de manera de tener una sola fuente de información.   Este proyecto que inicialmente surgio como respuesta a una necesidad interna de un grupo de investigacion, transformo y dio un cambio disruptivo a la cultura del conocimiento en el que hoy en dia no podemos encontrar límites en su expansion colectiva.  Solo se necesita un dispositivo electronico capaz de interpretar en lenguaje de marcadao y una conexion a Internet. 
+

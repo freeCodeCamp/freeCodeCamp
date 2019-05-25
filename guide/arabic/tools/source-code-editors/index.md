@@ -49,7 +49,7 @@ Brackets هو محرر مفتوح المصدر جديد نسبياً من Adobe.
 
 [افايلبلي](http://stackoverflow.com/search?q=atom) على الانترنت.
 
-## [كود الاستوديو المرئي](https://code.visualstudio.com/) ![رمز رمز الاستوديو المرئي](https://i.imgur.com/b4vFsKa.png)
+## [كود الاستوديو المرئي](https://code.visualstudio.com/) ![رمز رمز الاستوديو المرئي](https://cdn-media-1.freecodecamp.org/imgr/b4vFsKa.png)
 
 ![لقطة شاشة Visual Studio Code](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 
