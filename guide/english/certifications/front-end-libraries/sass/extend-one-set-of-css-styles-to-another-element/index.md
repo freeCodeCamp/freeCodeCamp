@@ -13,17 +13,17 @@ Use `@extend` to extend the `info` class into `info-important` like:
 
 ```html
 <style type='text/sass'>
-  h3{
+  h3 {
     text-align: center;
   }
-  .info{
+  .info {
     width: 200px;
     border: 1px solid black;
     margin: 0 auto;
   }
-  .info-important{
-  @extend .info;
-  background-color: magenta;
+  .info-important {
+    @extend .info;
+    background-color: magenta;
   }  
 </style>
 <h3>Posts</h3>
