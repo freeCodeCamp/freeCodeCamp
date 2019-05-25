@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Adicione uma margem negativa a um elemento
 ---
 
-## Descricão
+## Descrição
 <section id="description"> A propriedade <code>margin</code> de um elemento controla a quantidade de espaço entre a borda(<code>border</code>) do elemento e os elementos adjacentes. Se você definir a propriedade <code>margin</code> de um elemento como um valor negativo, o elemento ficará maior. </section>
 
 ## Instruções
