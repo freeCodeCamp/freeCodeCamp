@@ -12,16 +12,16 @@ title: Control Flow
 ```kotlin
 var min: Int
 if (a < b) {
-    min = a
+  min = a
 } else {
-    min = b
+  min = b
 }
 ```
 
 `else` can also be omitted if not needed
 ```kotlin
 if (a < b) {
-    print("a is smaller")
+  print("a is smaller")
 }
 ```
 
@@ -32,22 +32,22 @@ The else branch is evaluated if none of the other branch conditions are satisfie
 It has powerfull matching branches which support complex evaluations of input argument  
 ```kotlin
 when (obj) {
-   1          -> "One"
-   1, 2       -> "One or Two"
-   "Hello"    -> "Greeting"
-   is Long    -> "Long"
-   !is String -> "Not a string"
-   else       -> "Unknown"
+  1          -> "One"
+  1, 2       -> "One or Two"
+  "Hello"    -> "Greeting"
+  is Long    -> "Long"
+  !is String -> "Not a string"
+  else       -> "Unknown"
 }
 ```
 
 Range evaluation
 ```kotlin
 when (x) {
-    in 1..100 -> print("x is in the range")
-    in validNumbers -> print("x is valid")
-    !in 10..200 -> print("x is outside the range")
-    else -> print("none of the above")
+  in 1..100 -> print("x is in the range")
+  in validNumbers -> print("x is valid")
+  !in 10..200 -> print("x is outside the range")
+  else -> print("none of the above")
 }
 ```
 
@@ -57,14 +57,14 @@ when (x) {
 ```kotlin
 val fruits = listOf("apple", "banana", "kiwi")
 for (fruit in fruits) {
-   println(fruit)
+  println(fruit)
 }
 ```
 
 Iterating through range of numbers
 ```kotlin
 for (i in 1..5) {
-    println(i)
+  println(i)
 }
 ```
 
@@ -73,11 +73,11 @@ for (i in 1..5) {
 `while` and `do..while` are used like in most programming languages
 ```kotlin
 while (a > 0) {
-    a--
+  a--
 }
 
 do {
-    val b = provideData()
+  val b = provideData()
 } while (b != null)
 ```
 
