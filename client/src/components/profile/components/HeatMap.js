@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import CalendarHeatMap from 'react-calendar-heatmap';
 import ReactTooltip from 'react-tooltip';
 import addDays from 'date-fns/add_days';
@@ -53,14 +52,7 @@ function HeatMap({ calendar, streak }) {
   }));
 
   return (
-    <FullWidthRow id='cal-heatmap-container'>
-      <Helmet>
-        <script
-          src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js'
-          type='text/javascript'
-        />
-        <link href='/css/cal-heatmap.css' rel='stylesheet' />
-      </Helmet>
+    <FullWidthRow>
       <FullWidthRow>
         <CalendarHeatMap
           classForValue={value => {
@@ -75,19 +67,27 @@ function HeatMap({ calendar, streak }) {
           endDate={endOfCalendar}
           startDate={startOfCalendar}
           tooltipDataAttrs={value => {
-            let valueCount = '';
+            let valueCount;
             if (value && value.count === 1) {
-              valueCount = `${value.count} item on `;
+              valueCount = `${value.count} item`;
             } else if (value && value.count > 1) {
-              valueCount = `${value.count} items on `;
+              valueCount = `${value.count} items`;
+            } else {
+              valueCount = 'No items';
             }
             return {
-              'data-tip': `${valueCount}${format(value.date, 'MMMM Do, YYYY')}`
+              'data-tip': `<strong>${valueCount}</strong> on ${new Date(
+                value.date
+              ).toLocaleDateString('default', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}`
             };
           }}
           values={calendarValues}
         />
-        <ReactTooltip className='react-tooltip' />
+        <ReactTooltip className='react-tooltip' effect='solid' html={true} />
       </FullWidthRow>
       <Spacer />
       <FullWidthRow>
