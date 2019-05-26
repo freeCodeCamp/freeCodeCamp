@@ -5,7 +5,7 @@ title: Dynamic Programming
 ## Dynamic Programming
 
 Dynamic Programming(DP) is a programming technique for solving problems where the computations of its subproblems overlap: you write your program in a way that avoids recomputing already solved problems.
-This technique, it's usually applied in conjunction with memoization which is an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
+This technique is usually applied in conjunction with memoization which is an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
 
 An example with Fibonacci's series which is defined as:
 
@@ -13,7 +13,7 @@ An example with Fibonacci's series which is defined as:
 
 This is the tree to find F(5):
 
-![Fibonacci serie's tree](https://i.stack.imgur.com/59Rpw.png)
+![Fibonacci serie's tree](https://cdn-media-1.freecodecamp.org/imgr/59Rpw.png)
 
 To compute F(5) it will need to compute many times the same F(i). Using recursion:
 
@@ -44,7 +44,11 @@ def fib(n)
     return lookup[n]
 }
 ```
-Caching computed solutions in a lookup table, and query it before go recursion will let the program have a running time of O(N).
+Caching computed solutions in a lookup table, and querying it before going for recursion will let the program have a running time of O(N).
+
+#### Tabulation vs Memoization
+
+In addition to *memoization* (used in the previous example), there is also *tabulation*, which uses a bottom-up approach rather than memoization's top-down approach. Tabulation always tabulates every potential value, while memoization only calculates, or memoizes, the needed values. Tabulation avoids any recursion, however, so both are useful for different situations. Read more about tabulation vs. memoization [here](https://www.geeksforgeeks.org/tabulation-vs-memoizatation/).
 
 #### More Information:
 

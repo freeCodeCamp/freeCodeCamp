@@ -2,6 +2,7 @@
 id: cf1111c1c11feddfaeb6bdef
 title: Divide One Number by Another with JavaScript
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cqkbdAr'
 ---
 
 ## Description
@@ -10,7 +11,11 @@ We can also divide one number by another.
 JavaScript uses the <code>/</code> symbol for division.
 
 <strong>Example</strong>
-<blockquote>myVar = 16 / 2; // assigned 8</blockquote>
+
+```js
+myVar = 16 / 2; // assigned 8
+```
+
 
 </section>
 

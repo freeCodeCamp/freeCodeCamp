@@ -3,14 +3,14 @@ id: 5a9036ee38fddaf9a66b5d35
 title: Create a Column Gap Using grid-column-gap
 challengeType: 0
 videoUrl: ''
-localeTitle: Создание разрыва столбца Использование разрыва сетки-столбца
+localeTitle: Создание промежутка у столбца с помощью grid-column-gap
 ---
 
 ## Description
-<section id="description"> До сих пор в сетках, которые вы создали, столбцы были тесно связаны друг с другом. Иногда вам нужен промежуток между колоннами. Чтобы добавить промежуток между столбцами, используйте свойство <code>grid-column-gap</code> следующим образом: <blockquote> сетка-столбик-зазор: 10 пикселей; </blockquote> Это создает 10px пустого пространства между всеми нашими столбцами. </section>
+<section id="description"> До сих пор в гридах, которые вы создавали, столбцы были рядом друг с другом. Иногда вам нужен промежуток между столбцами. Чтобы добавить промежуток между столбцами, используйте свойство <code>grid-column-gap</code> следующим образом: <blockquote> grid-column-gap: 10px; </blockquote> Пример задаёт 10px пустого пространства между всеми нашими столбцами. </section>
 
 ## Instructions
-<section id="instructions"> Дайте столбцам в сетке пробел <code>20px</code> . </section>
+<section id="instructions"> Задайте столбцам в гриде промежуток <code>20px</code> . </section>
 
 ## Tests
 <section id='tests'>

@@ -17,7 +17,7 @@ Algunas operaciones básicas de la pila son:
 
 La implementación de una pila es posible utilizando matrices o listas vinculadas. La siguiente es una implementación de matriz simple de la estructura de datos de pila con sus operaciones más comunes.
 
-```C++
+```cpp
 //Stack implementation using array in C++ 
  //You can also include<stack> and then use the C++ STL Library stack class. 
  

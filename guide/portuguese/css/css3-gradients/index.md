@@ -24,7 +24,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ##### Gradiente linear - de cima para baixo (este é o padrão)
 
-O exemplo a seguir mostra um gradiente linear que começa no topo. Começa vermelho, fazendo a transição para amarelo: ![gradiente linear padrão](https://i.imgur.com/2uGfleD.jpg)
+O exemplo a seguir mostra um gradiente linear que começa no topo. Começa vermelho, fazendo a transição para amarelo: ![gradiente linear padrão](https://cdn-media-1.freecodecamp.org/imgr/2uGfleD.jpg)
 
 #### Exemplo
 ```
@@ -55,11 +55,11 @@ O exemplo a seguir mostra um gradiente linear que começa no topo. Começa verme
  </html> 
 ```
 
-![gradiente linear padrão](https://i.imgur.com/CvtXCMd.jpg)
+![gradiente linear padrão](https://cdn-media-1.freecodecamp.org/imgr/CvtXCMd.jpg)
 
 ##### Gradiente Linear - da esquerda para a direita
 
-O exemplo a seguir mostra um gradiente linear que começa a partir da esquerda. Começa vermelho, fazendo a transição para amarelo: ![esquerda para a direita](https://i.imgur.com/e4dRvZR.jpg)
+O exemplo a seguir mostra um gradiente linear que começa a partir da esquerda. Começa vermelho, fazendo a transição para amarelo: ![esquerda para a direita](https://cdn-media-1.freecodecamp.org/imgr/e4dRvZR.jpg)
 
 #### Exemplo
 ```
@@ -90,7 +90,7 @@ O exemplo a seguir mostra um gradiente linear que começa a partir da esquerda. 
  </html> 
 ```
 
-![esquerda para a direita](https://i.imgur.com/k4FSyXz.jpg)
+![esquerda para a direita](https://cdn-media-1.freecodecamp.org/imgr/k4FSyXz.jpg)
 
 #### Gradiente Linear - Diagonal
 
@@ -98,7 +98,7 @@ Você pode fazer um gradiente na diagonal, especificando as posições iniciais 
 
 O exemplo a seguir mostra um gradiente linear que começa no canto superior esquerdo (e vai para o canto inferior direito). Começa vermelho, fazendo a transição para amarelo:
 
-![diagonal](https://i.imgur.com/YvtbUBH.jpg)
+![diagonal](https://cdn-media-1.freecodecamp.org/imgr/YvtbUBH.jpg)
 
 #### Exemplo
 ```
@@ -129,7 +129,7 @@ O exemplo a seguir mostra um gradiente linear que começa no canto superior esqu
  </html> 
 ```
 
-![diagonal-exp](https://i.imgur.com/8gKRhAp.jpg)
+![diagonal-exp](https://cdn-media-1.freecodecamp.org/imgr/8gKRhAp.jpg)
 
 #### Mais Informações:
 
