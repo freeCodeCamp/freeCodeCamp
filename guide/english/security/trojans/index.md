@@ -23,7 +23,8 @@ As a developer it is particularly important to be aware of Trojans and how they 
 
 ### What does a Trojan look like?
 
-It can look like anything. Mostly files downloaded from untrusted website.
+It can look like anything. Mostly files downloaded from untrusted website. They also can be represented
+by popups or fake download buttons when trying to install software from a website.
 
 ### How do I protect myself against Trojans?
 

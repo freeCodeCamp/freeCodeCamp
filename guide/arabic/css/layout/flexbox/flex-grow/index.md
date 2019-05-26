@@ -8,11 +8,11 @@ localeTitle: فليكس النمو
 
 سيحول الحاوية من هذا
 
-![](https://i.imgur.com/lFJaBUfh.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/lFJaBUfh.png)
 
 # **الى هذا**
 
-![](https://i.imgur.com/4X8ITZih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4X8ITZih.png)
 
 ماذا حدث للتو؟
 
@@ -47,7 +47,7 @@ CSS
 
 دعونا أولا إنشاء فقرتين وتمكين العرض: فليكس.
 
-![](https://i.imgur.com/wPqUgsih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/wPqUgsih.png)
 
 لاحظ بعض الأشياء
 
@@ -58,7 +58,7 @@ CSS
 
 لرؤية هذا في العمل ، دعونا نعطي أول واحد فئة من "عشرة" وخصائص مرنة تنمو من 1. دعونا أيضا إعطاء الفئة الثانية فئة "عشرين" وملكية مرنة تنمو من 2.
 
-![](https://i.imgur.com/7n0V1G4h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/7n0V1G4h.png)
 
 لاحظ بعض الأشياء
 
@@ -67,6 +67,6 @@ CSS
 
 كلما قمنا بتغيير حجم الشاشة ، نجد أيضًا أن الشاشة الأولى تتقلص بمعدل ضعف سرعة الثانية.
 
-![](https://i.imgur.com/pa4grM8h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/pa4grM8h.png)
 
 #### معلومات اكثر:
