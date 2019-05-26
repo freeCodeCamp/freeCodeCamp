@@ -9,7 +9,7 @@ It is most commonly used for accessing remote servers. Usually these servers are
 
 From a networking perspective SSH may, dependent on the server and client software, allow for more advanced features such as XServer forwarding for remote access of graphical applications or network tunneling to allow for what is effectively a Virtual Private Network (VPN).
 
-While SSH has 'Secure' in its name, its prevalence makes it an attractive target to attackers. As such it is often configured to use more elaborate methods than simple passwords. Most commonly this is done with keys in a public and private key cryptography system. The exact cryptographic method can vary as well, with RSA being the most common.
+While SSH has 'Secure' in its name, its prevalence makes it an attractive target to attackers. As such it is often configured to use more elaborate methods than simple passwords. Most commonly this is done with keys in a public and private key cryptography system. The exact cryptographic method can vary as well, with RSA being the most common.  The security of an SSH server's authentication method can be further augmented by employing a second (or third) authentication factor, such as a TOTP authentication code generated from a hardware or software based token, or utilizing a token generator app on a smartphone. In this way, should one's username and password be compromised, the SSH server cannot be accessed without this second (or third) factor of authenticaion be compromised too.
 
 As with most network services SSH has a standard network port, 22; however, as SSH is an attractive target for those wishing to do harm, it is often moved to an arbitrary port as a very simple security measure.
 
