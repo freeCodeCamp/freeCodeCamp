@@ -30,7 +30,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 3. 帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
 
-##贡献予开源代码库
+## 贡献予开源代码库
 
 我们有数以千计的[编码挑战](https://learn.freecodecamp.org)和[指南文章](https://guide.freecodecamp.org)集中在这个庞大的开源代码库中。
 
