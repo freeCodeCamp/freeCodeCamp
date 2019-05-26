@@ -75,7 +75,7 @@ def linear_search(target, array)
 
 ### Ejemplo en C ++
 
-```c++
+```cpp
 int linear_search(int arr[],int n,int num) 
  { 
     for(int i=0;i<n;i++){ 

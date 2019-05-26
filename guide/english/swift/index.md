@@ -60,6 +60,11 @@ project or application, no matter how small!
 
 * [RayWenderlich.com](https://www.raywenderlich.com/) : Has many great tutorials for Swift and iOS development.
 * [Hacking with Swift](https://www.hackingwithswift.com/read) : A complete Swift tutorial, taking you from a beginner to advanced using hands-on projects.
+* [CodewithChris.com](https://codewithchris.com/xcode-tutorial/) : Xcode work environment education
+* [Stanford course](https://www.youtube.com/watch?v=71pyOB4TPRE&list=PLPA-ayBrweUzGFmkT_W65z64MoGnKRZMq) : Excellent course held by the professor at Stanford university 
+* [Basic app](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html#//apple_ref/doc/uid/TP40015214-CH2-SW1) : Applying Swift knowledge in order to create a basic app that involves adding, listing, rating, deleting items
+* [Main Swift documentation](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html): Good documentation regarding syntax
+* [Main Swift book](https://itunes.apple.com/us/book/the-swift-programming-language-swift-4-0-3/id881256329?mt=11) : Main Swift book available on iTunes
 
 ### Sources
 
