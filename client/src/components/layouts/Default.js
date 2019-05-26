@@ -68,7 +68,7 @@ const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
-  navigationMenu: PropTypes.element.isRequired,
+  navigationMenu: PropTypes.element,
   onlineStatusChange: PropTypes.func.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool

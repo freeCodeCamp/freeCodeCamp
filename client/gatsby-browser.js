@@ -31,11 +31,7 @@ export const wrapPageElement = ({ element, props }) => {
     location: { pathname }
   } = props;
   if (pathname === '/') {
-    return (
-      <DefaultLayout disableSettings={true} landingPage={true}>
-        {element}
-      </DefaultLayout>
-    );
+    return <DefaultLayout landingPage={true}>{element}</DefaultLayout>;
   }
   if (/^\/certification(\/.*)*/.test(pathname)) {
     return <CertificationLayout>{element}</CertificationLayout>;
