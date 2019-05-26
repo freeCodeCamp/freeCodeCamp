@@ -13,6 +13,8 @@ While SSH has 'Secure' in its name, its prevalence makes it an attractive target
 
 As with most network services SSH has a standard network port, 22; however, as SSH is an attractive target for those wishing to do harm, it is often moved to an arbitrary port as a very simple security measure.
 
+It's important to note that SSHv1 is insecure, and allows for traffic to be decrypted using man-in-the-middle attacks.
+
 Finally, it's worth mentioning that SSH is far from tolerant of network instability and there are options out there which can either improve this or replace SSH outright.
 
 ### How to Use SSH
