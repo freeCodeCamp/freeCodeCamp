@@ -35,7 +35,20 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+### first method
+in the console you can install helmet by typing:
+```console
+npm install helmet
+```
+### second method
+in Glitch you can click on _add package_ button and type *helmet*
+
+### third method
+add a new line in package.json file
+``` package.json
+	"dependencies": {
+    .... 
+		"helmet": "^3.18.0"
+	},
 ```
 </section>
