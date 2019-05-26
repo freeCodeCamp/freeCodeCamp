@@ -10,7 +10,7 @@ localeTitle: Criar uma consulta de mídia
 <section id="description"> Media Queries são uma nova técnica introduzida no CSS3 que altera a apresentação do conteúdo com base em diferentes tamanhos de viewport(telas). A janela de visualização é uma área visível de um usuário de uma página da Web e é diferente dependendo do dispositivo usado para acessar o site. Media queries consistem em um tipo de mídia e, se esse tipo de mídia corresponder ao tipo de dispositivo em que o documento é exibido, os estilos serão aplicados. Você pode ter tantos seletores e estilos dentro de sua Media querie quanto desejar. Veja um exemplo de uma Media querie que retorna o conteúdo quando a largura do dispositivo é menor ou igual a 100px: <code>@media (max-width: 100px) { /* CSS Rules */ }</code> e a consulta de mídia a seguir retorna o conteúdo quando o a altura do dispositivo é maior ou igual a 350px: @media <code>@media (min-height: 350px) { /* CSS Rules */ }</code> Lembre-se, o CSS dentro da Media querie é aplicado somente se o tipo de mídia corresponder ao do dispositivo que está sendo usado. </section>
 
 ## Instruções
-<section id="instructions"> Adicione uma Media querie para que a tag <code>p</code> tenha um <code>font-size</code> de <code>font-size</code> de 10px quando a altura do dispositivo for menor ou igual a 800px. </section>
+<section id="instructions"> Adicione uma consulta de mídia para que a tag <code>p</code> tenha um <code>font-size</code> de 10px quando a altura do dispositivo for menor ou igual a 800px. </section>
 
 ## Testes
 <section id='tests'>
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -37,7 +37,7 @@ tests:
     font-size: 20px;
   }
 
-  /* Add media query below */
+  /* Adicione a media querie abaixo */
 
 </style>
 
@@ -55,6 +55,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// Solução necessária
 ```
 </section>
