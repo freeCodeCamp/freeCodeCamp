@@ -36,17 +36,18 @@ export function* executeChallengeSaga() {
   }
 
   const consoleProxy = yield channel();
-  let testResults;
 
   try {
     yield put(initLogs());
     yield put(initConsole('// running tests'));
-    const tests = yield select(challengeTestsSelector);
-    // initialize testResults as failing in case the build fails.
-    testResults = tests.map(test => {
-      test.err = 'build failed';
-      return test;
-    });
+    // reset tests to initial state
+    const tests = (yield select(challengeTestsSelector)).map(
+      ({ text, testString }) => {
+        return { text, testString };
+      }
+    );
+    yield put(updateTests(tests));
+
     yield fork(logToConsole, consoleProxy);
     const proxyLogger = args => consoleProxy.put(args);
 
@@ -59,13 +60,12 @@ export function* executeChallengeSaga() {
       proxyLogger,
       document
     );
-    testResults = yield executeTests(testRunner, tests);
+    const testResults = yield executeTests(testRunner, tests);
 
     yield put(updateTests(testResults));
     yield put(updateConsole('// tests completed'));
     yield put(logsToConsole('// console output'));
   } catch (e) {
-    yield put(updateTests(testResults));
     yield put(updateConsole(e));
   } finally {
     consoleProxy.close();
@@ -88,8 +88,7 @@ function* buildChallengeData(challengeData) {
   }
 }
 
-function* executeTests(testRunner, tests) {
-  const testTimeout = 5000;
+function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
   for (const { text, testString } of tests) {
     const newTest = { text, testString };
