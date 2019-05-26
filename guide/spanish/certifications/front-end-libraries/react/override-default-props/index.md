@@ -6,7 +6,7 @@ localeTitle: Anular apoyos predeterminados
 
 Este desafío tiene que anular el valor predeterminado de la `quantity` de accesorios para el componente Artículos. Donde el valor predeterminado de `quantity` se establece en `0` .
 
-```react.js
+```jsx
 const Items = (props) => { 
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1> 
  } 
@@ -18,13 +18,13 @@ const Items = (props) => {
 
 Para anular un valor de propiedades predeterminado, la sintaxis que se debe seguir es
 
-```react.js
+```jsx
 <Component propsName={Value}/> 
 ```
 
 Siguiendo la sintaxis, el siguiente código debe ser declarado debajo del código dado
 
-```react.js
+```jsx
 <Items quantity={50}/> 
 ```
 

@@ -3,8 +3,16 @@ title: Use the JavaScript Console to Check the Value of a Variable
 ---
 ## Use the JavaScript Console to Check the Value of a Variable
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/debugging/use-the-javascript-console-to-check-the-value-of-a-variable/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Solution
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```js
+let a = 5;
+let b = 1;
+a++;
+// Add your code below this line
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+let sumAB = a + b;
+console.log(sumAB);
+
+console.log(a);
+```

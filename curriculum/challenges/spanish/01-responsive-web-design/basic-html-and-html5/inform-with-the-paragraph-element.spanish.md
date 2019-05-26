@@ -7,7 +7,7 @@ localeTitle: Informar con el elemento de párrafo
 ---
 
 ## Description
-<section id="description"> <code>p</code> elementos <code>p</code> son el elemento preferido para el texto de párrafo en sitios web. <code>p</code> es la abreviatura de &quot;párrafo&quot;. Puedes crear un elemento de párrafo como este: <code>&lt;p&gt;I&#39;m ap tag!&lt;/p&gt;</code> </section>
+<section id="description"> Los elementos <code>p</code> son el elemento preferido para el texto de los párrafos en sitios web. <code>p</code> es la abreviatura de &quot;párrafo&quot;. Puedes crear un elemento de párrafo como este: <code>&lt;p&gt;¡Soy una etiqueta p!&lt;/p&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Crea un elemento <code>p</code> debajo de tu elemento <code>h2</code> y dale el texto &quot;Hola Párrafo&quot;. </section>
@@ -34,7 +34,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h1>Hello World</h1>
+<h1>Hola Mundo</h1>
 <h2>CatPhotoApp</h2>
 
 ```

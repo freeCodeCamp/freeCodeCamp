@@ -32,7 +32,7 @@ You will better understand this Algorithm by seeing it in action.
 Assuming you want to calculate the GCD of  1220 and 516, lets apply the Euclidean Algorithm-  
 
 Assuming you want to calculate the GCD of  1220 and 516, lets apply the Euclidean Algorithm-
-![Euclidean Example](https://i.imgur.com/aa8oGgP.png)  
+![Euclidean Example](https://cdn-media-1.freecodecamp.org/imgr/aa8oGgP.png)  
 
 Pseudo Code of the Algorithm-  
 Step 1: **Let `a, b` be the two numbers**  
@@ -42,7 +42,7 @@ Step 4: **Repeat Steps 2 and 3 until `a mod b` is greater than 0**
 Step 5: **GCD = b**  
 Step 6: Finish  
 
-Javascript Code to Perform GCD-
+JavaScript Code to Perform GCD-
 ```javascript
 function gcd(a, b) {
   var R;
@@ -55,7 +55,7 @@ function gcd(a, b) {
 }
 ```
 
-Javascript Code to Perform GCD using Recursion-
+JavaScript Code to Perform GCD using Recursion-
 ```javascript
 function gcd(a, b) {
   if (b == 0)
@@ -65,6 +65,62 @@ function gcd(a, b) {
 }
 ```
 
+C code to perform GCD using recursion
+```c
+int gcd(int a, int b) 
+{ 
+    // Everything divides 0  
+    if (a == 0) 
+       return b; 
+    if (b == 0) 
+       return a; 
+  
+    // base case 
+    if (a == b) 
+        return a; 
+  
+    // a is greater 
+    if (a > b) 
+        return gcd(a-b, b); 
+    return gcd(a, b-a); 
+}
+```
+
+C++ Code to Perform GCD-
+```csharp
+int gcd(int a,int b) {
+  int R;
+  while ((a % b) > 0)  {
+    R = a % b;
+    a = b;
+    b = R;
+  }
+  return b;
+}
+```
+
+Python Code to Perform GCD using Recursion
+```Python
+def gcd(a, b):
+  if b == 0:
+    return a:
+  else:
+    return gcd(b, (a % b))
+```
+
+Java Code to Perform GCD using Recursion
+```Java
+static int gcd(int a, int b)
+{
+  if(b == 0)
+  {
+    return a;
+  }
+  return gcd(b, a % b);
+}
+
+```
+
 You can also use the Euclidean Algorithm to find GCD of more than two numbers.
 Since, GCD is associative, the following operation is valid- `GCD(a,b,c) == GCD(GCD(a,b), c)`
 
@@ -72,3 +128,41 @@ Calculate the GCD of the first two numbers, then find GCD of the result and the 
 Example- `GCD(203,91,77) == GCD(GCD(203,91),77) == GCD(7, 77) == 7`
 
 You can find GCD of `n` numbers in the same way.
+
+### Extended Euclidean algorithm
+This is an extension of Euclidean algorithm. It also calculates the coefficients x, y such that 
+
+ax+by = gcd(a,b)
+
+x and y are also known as coefficients of Bézout's identity.
+
+c code for Extended Euclidean algorithm
+
+```c
+struct Triplet{
+	int gcd;
+	int x;
+	int y;
+};
+Triplet gcdExtendedEuclid(int a,int b){
+	//Base Case
+	if(b==0){
+		Triplet myAns;
+		myAns.gcd = a;
+		myAns.x = 1;
+		myAns.y = 0;
+		return myAns;
+
+	}
+	Triplet smallAns = gcdExtendedEuclid(b,a%b);
+	//Extended euclid says
+
+	Triplet myAns;
+	myAns.gcd = smallAns.gcd;
+	myAns.x  = smallAns.y;
+	myAns.y = (smallAns.x - ((a/b)*(smallAns.y)));
+	return myAns;	
+}
+```
+
+

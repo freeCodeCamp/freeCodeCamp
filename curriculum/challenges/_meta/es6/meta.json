@@ -37,16 +37,12 @@
       "Write Arrow Functions with Parameters"
     ],
     [
-      "587d7b88367417b2b2512b45",
-      "Write Higher Order Arrow Functions"
-    ],
-    [
       "587d7b88367417b2b2512b46",
       "Set Default Parameters for Your Functions"
     ],
     [
       "587d7b88367417b2b2512b47",
-      "Use the Rest Operator with Function Parameters"
+      "Use the Rest Parameter with Function Parameters"
     ],
     [
       "587d7b89367417b2b2512b48",
@@ -66,7 +62,7 @@
     ],
     [
       "587d7b8a367417b2b2512b4c",
-      "Use Destructuring Assignment with the Rest Operator to Reassign Array Elements"
+      "Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements"
     ],
     [
       "587d7b8a367417b2b2512b4d",
