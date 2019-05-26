@@ -82,7 +82,7 @@ You will definitely need recursion or another way to go beyond two level arrays 
       return flat.some(Array.isArray) ? steamrollArray(flat) : flat;
     }
 
-    flattenArray([1, [2], [3, [[4]]]]);
+    steamrollArray([1, [2], [3, [[4]]]]);
 
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLni/0' target='_blank' rel='nofollow'>Run Code</a>
 
