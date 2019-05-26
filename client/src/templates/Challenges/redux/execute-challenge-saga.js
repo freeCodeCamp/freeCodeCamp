@@ -42,9 +42,7 @@ export function* executeChallengeSaga() {
     yield put(initConsole('// running tests'));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
-      ({ text, testString }) => {
-        return { text, testString };
-      }
+      ({ text, testString }) => ({ text, testString })
     );
     yield put(updateTests(tests));
 
