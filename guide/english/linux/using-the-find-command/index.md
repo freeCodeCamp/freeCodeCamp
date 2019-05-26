@@ -46,7 +46,7 @@ find . -type f -name "*.txt" -exec rm -f {} \;
 ### Find last 30 days modified files
 To find all the files which are modified 30 days back.
 ```bash
-# find / -mtime 30
+find / -mtime 30
 ```
 
 ### Find files with size between 100MB – 200MB
