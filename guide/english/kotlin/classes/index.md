@@ -25,9 +25,9 @@ class Person(name: String) { ... }
 Secondary constructor: using `constructor` keyword inside class body  
 ```kotlin
 class Person {
-    constructor(parent: Person) {
-        parent.children.add(this)
-    }
+  constructor(parent: Person) {
+    parent.children.add(this)
+  }
 }
 ```
 
