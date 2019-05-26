@@ -56,12 +56,12 @@ class ShowFourOhFour extends Component {
 
   render() {
     const { isSessionUser, requestedUser, showLoading } = this.props;
-    if (showLoading) {
-      // We don't know if /:maybeUser is a user or not, we will show the loader
-      // until we get a response from the API
-      return <Loader fullScreen={true} />;
-    }
     if (isEmpty(requestedUser)) {
+      if (showLoading) {
+        // We don't know if /:maybeUser is a user or not, we will show
+        // the loader until we get a response from the API
+        return <Loader fullScreen={true} />;
+      }
       // We have a response from the API, but there is nothing in the store
       // for /:maybeUser. We can derive from this state the /:maybeUser is not
       // a user the API recognises, so we 404
