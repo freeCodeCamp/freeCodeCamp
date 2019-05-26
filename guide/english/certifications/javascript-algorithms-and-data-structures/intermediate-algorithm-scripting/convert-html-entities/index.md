@@ -1,6 +1,9 @@
 ---
 title: Convert HTML Entities
 ---
+
+# Convert HTML Entities
+
 ![HTML entities &'<>"](//discourse-user-assets.s3.amazonaws.com/original/2X/f/fc44d1dfbd3910e574cdedb0f05162f65b4cb7c4.jpg)
 
 ![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
@@ -35,39 +38,39 @@ title: Convert HTML Entities
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 ```javascript
-    function convertHTML(str) {
-      // Split by character to avoid problems.
+function convertHTML(str) {
+  // Split by character to avoid problems.
 
-      var temp = str.split('');
+  var temp = str.split('');
 
-      // Since we are only checking for a few HTML elements I used a switch
+  // Since we are only checking for a few HTML elements, use a switch
 
-      for (var i = 0; i < temp.length; i++) {
-        switch (temp[i]) {
-          case '<':
-            temp[i] = '&lt;';
-            break;
-          case '&':
-            temp[i] = '&amp;';
-            break;
-          case '>':
-            temp[i] = '&gt;';
-            break;
-          case '"':
-            temp[i] = '&quot;';
-            break;
-          case "'":
-            temp[i] = "&apos;";
-            break;
-        }
-      }
-
-      temp = temp.join('');
-      return temp;
+  for (var i = 0; i < temp.length; i++) {
+    switch (temp[i]) {
+      case '<':
+        temp[i] = '&lt;';
+        break;
+      case '&':
+        temp[i] = '&amp;';
+        break;
+      case '>':
+        temp[i] = '&gt;';
+        break;
+      case '"':
+        temp[i] = '&quot;';
+        break;
+      case "'":
+        temp[i] = "&apos;";
+        break;
     }
+  }
 
-    //test here
-    convertHTML("Dolce & Gabbana");
+  temp = temp.join('');
+  return temp;
+}
+
+//test here
+convertHTML("Dolce & Gabbana");
 ```
 ### Code Explanation:
 
@@ -82,27 +85,31 @@ title: Convert HTML Entities
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join' target='_blank' rel='nofollow'>arr.join()</a>
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch' target='_blank' rel='nofollow'>switch statement</a>
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnP/0' target='_blank' rel='nofollow'>Run Code</a>
-
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
-    function convertHTML(str) {
-    //Chaining of replace method with different arguments
-      str = str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,"&apos;");
-    return str;
-    }
+```javascript
+function convertHTML(str) {
+  // Use Object Lookup to declare as many HTML entities as needed.
+  const htmlEntities = {
+    "&" : '&amp;',
+    "<" : "&lt;",
+    ">" : "&gt;",
+    '"' : "&quot;",
+    "'" :"&apos;"
+  }
+  // Using a regex, replace characters with it's corresponding html entity
+  return str.replace(/([&<>\"'])/g, match => htmlEntities[match]);
+}
 
-    // test here
-    convertHTML("Dolce & Gabbana");
-
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnQ/0' target='_blank' rel='nofollow'>Run Code</a>
+// test here
+convertHTML("Dolce & Gabbana");
+```
 
 ### Code Explanation:
-
-*   **str** is assigned to a new version of **str** that will contain the original string with all HTML entities converted
-*   The **first parameters** in `replace()` contains a regular expression that matches all instances of each HTML entity in **str**
-*   Replace all those instances with the corresponding HTML strings given in the **second parameter** of `replace()`
-*   Finally, the new **str** is returned
+*   Create an object to use the Lookup functionality and easily find the characters.
+*   Use `replace()` to replace characters with regex. 
+*   The first argument for `replace()` is a regex that catches all the target characters and puts them into a capturing group.
+*   The second arguments for `replace()` is a function with the matched character as a parameter. It returns the correspondant entity from `htmlEntities`.
 
 #### Relevant Links
 
@@ -110,30 +117,30 @@ title: Convert HTML Entities
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp' target='_blank' rel='nofollow'>Regular Expressions</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
-```javascript
-    function convertHTML(str) {
-      // Use Object Lookup to declare as many HTML entities as needed.
-      const htmlEntities={
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;',
-        '\'':"&apos;"
-      };
-      //Use map function to return a filtered str with all entities changed automatically.
-      return str.split('').map(entity => htmlEntities[entity] || entity).join('');
-    }
 
-    // test here
-    convertHTML("Dolce & Gabbana");
+```javascript
+function convertHTML(str) {
+  // Use Object Lookup to declare as many HTML entities as needed.
+  const htmlEntities={
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    '\'':"&apos;"
+  };
+  //Use map function to return a filtered str with all entities changed automatically.
+  return str.split('').map(entity => htmlEntities[entity] || entity).join('');
+}
+
+// test here
+convertHTML("Dolce & Gabbana");
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnR/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   Create a object to use the Lookup functionality to easily find the characters.
-*   Split the original string by characters and use map to check for the changed html entity or use the same one. Alternatively you could use Regex `str.replace(/&|<|>|"|'/gi`.
-*   The a function is added which is what returns the converted entity or the original one if there is no conversion. If you go the regex route then you just have to return the matched hits. `return html[entity];`
+*   Create an object to use the Lookup functionality and easily find the characters.
+*   Split the original string by characters and use map to check for the changed html entity or use the same one.
+*   The a function is added which is what returns the converted entity or the original one if there is no conversion.
 *   Lastly we join all the characters once again.
 
 **Note** that if you went the regex route then you don't need to join anything, just make sure you return the whole operation or save it to a variable and then return it.
