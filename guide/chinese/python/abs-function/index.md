@@ -16,8 +16,8 @@ localeTitle: Python Abs函数
 
 ```python
 print(abs(3.4)) # prints 3.4 
- print(abs(-6)) # prints 6 
- print(abs(3 + 4j)) # prints 5, because |3 + 4j| = 5 
+print(abs(-6)) # prints 6 
+print(abs(3 + 4j)) # prints 5, because |3 + 4j| = 5 
 ```
 
 [🚀运行代码](https://repl.it/CL8k/0)
