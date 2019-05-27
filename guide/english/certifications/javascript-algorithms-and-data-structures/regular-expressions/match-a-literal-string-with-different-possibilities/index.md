@@ -14,7 +14,7 @@ Inside the string literal, place the pet names, each seperated by the `|` symbol
 
 ## Solution:
 
-```javascriot
+```js
 let petString = "James has a pet cat.";
 let petRegex = /dog|cat|bird|fish/;
 let result = petRegex.test(petString);
