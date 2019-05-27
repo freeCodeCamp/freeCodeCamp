@@ -9,7 +9,15 @@ videoUrl: 'https://scrimba.com/c/cNVR7Am'
 <section id='description'>
 The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.
 <strong>Examples</strong>
-<blockquote>4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>5 &lt;= 5  // true<br>3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>
+
+```js
+4   <= 5  // true
+'7' <= 7  // true
+5   <= 5  // true
+3   <= 2  // false
+'8' <= 4  // false
+```
+
 </section>
 
 ## Instructions

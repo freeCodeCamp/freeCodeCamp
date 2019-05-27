@@ -8,13 +8,27 @@ challengeType: 1
 <section id='description'>
 ES6 introduces the <dfn>spread operator</dfn>, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
 The ES5 code below uses <code>apply()</code> to compute the maximum value in an array:
-<blockquote>var arr = [6, 89, 3, 45];<br>var maximus = Math.max.apply(null, arr); // returns 89</blockquote>
+
+```js
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr); // returns 89
+```
+
 We had to use <code>Math.max.apply(null, arr)</code> because <code>Math.max(arr)</code> returns <code>NaN</code>. <code>Math.max()</code> expects comma-separated arguments, but not an array.
 The spread operator makes this syntax much better to read and maintain.
-<blockquote>const arr = [6, 89, 3, 45];<br>const maximus = Math.max(...arr); // returns 89</blockquote>
+
+```js
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+
 <code>...arr</code> returns an unpacked array. In other words, it <em>spreads</em> the array.
 However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:
-<blockquote>const spreaded = ...arr; // will throw a syntax error</blockquote>
+
+```js
+const spreaded = ...arr; // will throw a syntax error
+```
+
 </section>
 
 ## Instructions

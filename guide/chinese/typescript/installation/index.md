@@ -4,7 +4,7 @@ localeTitle: 安装
 ---
 ## 安装
 
-![安装](https://i.imgur.com/9ILjA1q.jpg)
+![安装](https://cdn-media-1.freecodecamp.org/imgr/9ILjA1q.jpg)
 
 要自己开始，您需要的两件事是TypeScript编译器和支持TypeScript的编辑器。
 
@@ -47,7 +47,7 @@ touch tsconfig.json
 
 ### 快速示例
 
-![乘法](https://i.imgur.com/V5nP3xj.jpg)
+![乘法](https://cdn-media-1.freecodecamp.org/imgr/V5nP3xj.jpg)
 
 在上面的屏幕截图中，您可以看到两个文件 - `multiplication.js`和`multiplication.ts` 。
 

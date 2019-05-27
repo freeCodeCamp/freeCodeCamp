@@ -9,7 +9,14 @@ videoUrl: 'https://scrimba.com/c/cm8n7T9'
 <section id='description'>
 For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.
 We'll start at <code>i = 0</code> and loop while <code>i &#60; 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.
-<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 10; i += 2) {<br>&nbsp;&nbsp;ourArray.push(i);<br>}</blockquote>
+
+```js
+var ourArray = [];
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+```
+
 <code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.
 Let's change our <code>initialization</code> so we can count by odd numbers.
 </section>

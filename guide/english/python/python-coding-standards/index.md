@@ -6,6 +6,7 @@ title: Coding standards
 * Why coding standards?
 * Intro to PEP 8
 * Commands
+* Alternative tools
 
 ### Why coding standards?
 The global python community is rapidly growing, and almost everyone uses python. This is where readability of code and uniform standards matter. *Anyone on the planet should be able to read your code and understand what it does*. There are a lot of aspects to understanding other's code, for example comments about what a function does, logically dividing tasks among modules and functions, good variable names, etc.
@@ -19,9 +20,16 @@ We love sticking to conventions. The python user community has come up with a se
 
 Here's how you check if your python code meets he standards.
 
-```console
+```shell
 :~$ pip install pep8
 :~$ pep8 --first myCode.py
 ```
 
 This will give all those lines which violate the standards, along with a short description of the fixes.
+
+### Alternative tools
+Beside `pep8`, there are some other tools with same functionalities:
+* [pylint](https://www.pylint.org)
+* [flake8](http://flake8.pycqa.org)
+* [pydocstyle](https://github.com/PyCQA/pydocstyle)
+Please check their usages.

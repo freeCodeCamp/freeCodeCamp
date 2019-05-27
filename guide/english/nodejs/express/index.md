@@ -371,7 +371,7 @@ The dotenv middleware loads environmental variables from a `.env` file into `pro
 npm install --save dotenv
 ```
 
-```sh
+```shell
 # .env file
 DB_HOST=localhost
 DB_USER=root

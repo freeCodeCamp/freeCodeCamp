@@ -38,8 +38,7 @@ tests:
 
 ```html
 <style>
-
-  div{
+  div {
     border-radius: 20px;
     width: 70%;
     height: 400px;
@@ -61,9 +60,17 @@ tests:
 ## Solution
 <section id='solution'>
 
-
-```js
-var code = "<style> div{border-radius: 20px; width: 70%; height: 400px; margin: 50px auto; background: linear-gradient(35deg, #cff, #fcc);}</style><div></div>"
+```html
+<style>
+  div {
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin: 50px auto;
+    background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+  }
+</style>
+<div></div>
 ```
 
 </section>

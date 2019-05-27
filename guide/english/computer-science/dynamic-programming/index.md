@@ -13,7 +13,7 @@ An example with Fibonacci's series which is defined as:
 
 This is the tree to find F(5):
 
-![Fibonacci serie's tree](https://i.stack.imgur.com/59Rpw.png)
+![Fibonacci serie's tree](https://cdn-media-1.freecodecamp.org/imgr/59Rpw.png)
 
 To compute F(5) it will need to compute many times the same F(i). Using recursion:
 

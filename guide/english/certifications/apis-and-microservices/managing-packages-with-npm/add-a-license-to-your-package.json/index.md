@@ -6,7 +6,7 @@ title: Add a License to Your package.json
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 You should go over to the `package.json` file in your project. Licenses follow a similar convention as this:
 
-```code
+```json
 "license": "ExampleLicense"
 ```
 

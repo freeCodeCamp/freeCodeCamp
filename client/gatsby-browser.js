@@ -10,6 +10,7 @@ import {
   DefaultLayout,
   GuideLayout
 } from './src/components/layouts';
+import GuideNavMenu from './src/components/layouts/components/guide/NavMenu';
 
 const store = createStore();
 
@@ -30,18 +31,14 @@ export const wrapPageElement = ({ element, props }) => {
     location: { pathname }
   } = props;
   if (pathname === '/') {
-    return (
-      <DefaultLayout disableSettings={true} landingPage={true}>
-        {element}
-      </DefaultLayout>
-    );
+    return <DefaultLayout landingPage={true}>{element}</DefaultLayout>;
   }
   if (/^\/certification(\/.*)*/.test(pathname)) {
     return <CertificationLayout>{element}</CertificationLayout>;
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
     return (
-      <DefaultLayout disableMenuButtonBehavior={true} mediaBreakpoint='991px'>
+      <DefaultLayout navigationMenu={<GuideNavMenu />}>
         <GuideLayout>{element}</GuideLayout>
       </DefaultLayout>
     );

@@ -8,12 +8,14 @@ challengeType: 2
 <section id='description'>
 Earlier, you were introduced to the <code>express.static()</code> middleware function. Now it’s time to see what middleware is, in more detail. Middleware functions are functions that take 3 arguments: the request object, the response object, and the next function in the application’s request-response cycle. These functions execute some code that can have side effects on the app, and usually add information to the request or response objects. They can also end the cycle by sending a response when some condition is met. If they don’t send the response when they are done, they start the execution of the next function in the stack. This triggers calling the 3rd argument, <code>next()</code>.
 Look at the following example:
-<blockquote>
-function(req, res, next) {<br>
-&nbsp;&nbsp;console.log("I'm a middleware...");<br>
-&nbsp;&nbsp;next();<br>
+
+```js
+function(req, res, next) {
+  console.log("I'm a middleware...");
+  next();
 }
-</blockquote>
+```
+
 Let’s suppose you mounted this function on a route. When a request matches the route, it displays the string “I’m a middleware…”, then it executes the next function in the stack. 
 In this exercise, you are going to build root-level middleware. As you have seen in challenge 4, to mount a middleware function at root level, you can use the <code>app.use(&lt;mware-function&gt;)</code> method. In this case, the function will be executed for all the requests, but you can also set more specific conditions. For example, if you want a function to be executed only for POST requests, you could use <code>app.post(&lt;mware-function&gt;)</code>. Analogous methods exist for all the HTTP verbs (GET, DELETE, PUT, …).
 </section>

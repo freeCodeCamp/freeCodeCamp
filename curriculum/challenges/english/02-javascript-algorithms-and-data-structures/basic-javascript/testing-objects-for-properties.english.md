@@ -9,7 +9,16 @@ videoUrl: 'https://scrimba.com/c/cm8Q7Ua'
 <section id='description'>
 Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.
 <strong>Example</strong>
-<blockquote>var myObj = {<br>&nbsp;&nbsp;top: "hat",<br>&nbsp;&nbsp;bottom: "pants"<br>};<br>myObj.hasOwnProperty("top");    // true<br>myObj.hasOwnProperty("middle"); // false</blockquote>
+
+```js
+var myObj = {
+  top: "hat",
+  bottom: "pants"
+};
+myObj.hasOwnProperty("top");    // true
+myObj.hasOwnProperty("middle"); // false
+```
+
 </section>
 
 ## Instructions

@@ -11,9 +11,26 @@ You may have heard the term <code>object</code> before.
 Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.
 Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.
 Here's a sample cat object:
-<blockquote>var cat = {<br>&nbsp;&nbsp;"name": "Whiskers",<br>&nbsp;&nbsp;"legs": 4,<br>&nbsp;&nbsp;"tails": 1,<br>&nbsp;&nbsp;"enemies": ["Water", "Dogs"]<br>};</blockquote>
+
+```js
+var cat = {
+  "name": "Whiskers",
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water", "Dogs"]
+};
+```
+
 In this example, all the properties are stored as strings, such as - <code>"name"</code>, <code>"legs"</code>, and <code>"tails"</code>. However, you can also use numbers as properties. You can even omit the quotes for single-word string properties, as follows:
-<blockquote>var anotherObject = {<br>&nbsp;&nbsp;make: "Ford",<br>&nbsp;&nbsp;5: "five",<br>&nbsp;&nbsp;"model": "focus"<br>};</blockquote>
+
+```js
+var anotherObject = {
+  make: "Ford",
+  5: "five",
+  "model": "focus"
+};
+```
+
 However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.
 </section>
 

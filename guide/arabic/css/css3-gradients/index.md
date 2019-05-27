@@ -24,7 +24,7 @@ localeTitle: تدرجات CSS3
 
 ##### التدرج الخطي - من الأعلى إلى الأسفل (هذا هو الإعداد الافتراضي)
 
-يوضح المثال التالي تدرج خطي يبدأ من الأعلى. يبدأ باللون الأحمر ، مع الانتقال إلى الأصفر: ![الافتراضي الخطية التدرج](https://i.imgur.com/2uGfleD.jpg)
+يوضح المثال التالي تدرج خطي يبدأ من الأعلى. يبدأ باللون الأحمر ، مع الانتقال إلى الأصفر: ![الافتراضي الخطية التدرج](https://cdn-media-1.freecodecamp.org/imgr/2uGfleD.jpg)
 
 #### مثال
 
@@ -55,11 +55,11 @@ localeTitle: تدرجات CSS3
  </html> 
 ` 
 
-![الافتراضي الخطية التدرج](https://i.imgur.com/CvtXCMd.jpg)
+![الافتراضي الخطية التدرج](https://cdn-media-1.freecodecamp.org/imgr/CvtXCMd.jpg)
 
 ##### التدرج الخطي - من اليسار إلى اليمين
 
-يوضح المثال التالي تدرج خطي يبدأ من اليسار. يبدأ باللون الأحمر ، مع الانتقال إلى الأصفر: ![من اليسار إلى اليمين](https://i.imgur.com/e4dRvZR.jpg)
+يوضح المثال التالي تدرج خطي يبدأ من اليسار. يبدأ باللون الأحمر ، مع الانتقال إلى الأصفر: ![من اليسار إلى اليمين](https://cdn-media-1.freecodecamp.org/imgr/e4dRvZR.jpg)
 
 #### مثال
 
@@ -90,7 +90,7 @@ localeTitle: تدرجات CSS3
  </html> 
 ` 
 
-![من اليسار إلى اليمين](https://i.imgur.com/k4FSyXz.jpg)
+![من اليسار إلى اليمين](https://cdn-media-1.freecodecamp.org/imgr/k4FSyXz.jpg)
 
 #### التدرج الخطي - قطري
 
@@ -98,7 +98,7 @@ localeTitle: تدرجات CSS3
 
 يوضح المثال التالي تدرج خطي يبدأ من أعلى اليسار (ويذهب إلى أسفل اليمين). يبدأ باللون الأحمر ، مع الانتقال إلى الأصفر:
 
-![قطري](https://i.imgur.com/YvtbUBH.jpg)
+![قطري](https://cdn-media-1.freecodecamp.org/imgr/YvtbUBH.jpg)
 
 #### مثال
 
@@ -129,7 +129,7 @@ localeTitle: تدرجات CSS3
  </html> 
 ` 
 
-![قطري-إكسب](https://i.imgur.com/8gKRhAp.jpg)
+![قطري-إكسب](https://cdn-media-1.freecodecamp.org/imgr/8gKRhAp.jpg)
 
 #### معلومات اكثر:
 
