@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import Helmet from 'react-helmet';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
 import ReactGA from '../analytics/index.js';
@@ -87,7 +86,6 @@ class DonateOtherPage extends Component {
   render() {
     return (
       <Fragment>
-        <Helmet title='Other ways to donate | freeCodeCamp.org' />
         <Spacer />
         <Grid>
           <Row>
@@ -212,9 +210,7 @@ class DonateOtherPage extends Component {
               </h3>
               <Spacer />
               <div className='text-center'>
-                <Link to='/donate'>
-                  Or donate using a Credit or Debit Card.
-                </Link>
+                <Link to='/donate'>Return to Credit/Debit Form</Link>
               </div>
               <Spacer />
             </Col>
