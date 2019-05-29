@@ -13,10 +13,10 @@ Method:
 ```javascript
 
 for (let user in obj) {
-    if(obj.user.online === true) {
-      //code
-    }
+  if(obj.user.online === true) {
+    //code
   }
+}
 
 ```
 
@@ -27,10 +27,10 @@ for (let user in obj) {
 ```javascript
 
 for (let user in obj) {
-    if(obj[user]online === true) {
-      //code
-    }
+  if(obj[user].online === true) {
+    //code
   }
+}
 
 ```
 

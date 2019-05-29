@@ -8,7 +8,22 @@ challengeType: 1
 <section id='description'>
 Sometimes when working with arrays, it is very handy to be able to iterate through each item to find one or more elements that we might need, or to manipulate an array based on which data items meet a certain set of criteria. JavaScript offers several built in methods that each iterate over arrays in slightly different ways to achieve different results (such as <code>every()</code>, <code>forEach()</code>, <code>map()</code>, etc.), however the technique which is most flexible and offers us the greatest amount of control is a simple <code>for</code> loop.
 Consider the following:
-<blockquote>function greaterThanTen(arr) {<br>&nbsp;&nbsp;let newArr = [];<br>&nbsp;&nbsp;for (let i = 0; i < arr.length; i++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;if (arr[i] > 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newArr.push(arr[i]);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return newArr;<br>}<br><br>greaterThanTen([2, 12, 8, 14, 80, 0, 1]);<br>// returns [12, 14, 80]</blockquote>
+
+```js
+function greaterThanTen(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 10) {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr;
+}
+
+greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
+// returns [12, 14, 80]
+```
+
 Using a <code>for</code> loop, this function iterates through and accesses each element of the array, and subjects it to a simple test that we have created. In this way, we have easily and programmatically determined which data items are greater than <code>10</code>, and returned a new array containing those items.
 </section>
 
@@ -65,6 +80,16 @@ console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
 <section id='solution'>
 
 ```js
-// solution required
+function filteredArray(arr, elem) {
+  let newArr = [];
+  // change code below this line
+  for (let i = 0; i<arr.length; i++) {
+    if (arr[i].indexOf(elem) < 0) {
+      newArr.push(arr[i]);
+    }
+  }
+  // change code above this line
+  return newArr;
+}
 ```
 </section>

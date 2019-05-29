@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08823
 title: Add a Negative Margin to an Element
 challengeType: 0
-guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
 localeTitle: أضف هامشًا سلبيًا إلى عنصر
 ---

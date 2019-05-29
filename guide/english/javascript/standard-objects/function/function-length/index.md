@@ -18,9 +18,9 @@ console.log(oneArg.length); // 1
 
 ### ES2015 Syntax
 
-ES2015, or ES6 as it is commonly called, introduced the rest operator and default function parameters. Both of these additions change the way the `length` property works.
+ES2015, or ES6 as it is commonly called, introduced the rest parameter and default function parameters. Both of these additions change the way the `length` property works.
 
-If either the rest operator or default parameters are used in a function declaration the `length` property will only include the number of arguments before a rest operator or a default parameter.
+If either the rest parameter or default parameters are used in a function declaration the `length` property will only include the number of arguments before a rest parameter or a default parameter.
 
 ```javascript
 function withRest(...args) { }

@@ -3,7 +3,7 @@ title: Collections
 ---
 # Collections
 
-A Collection in Java is a group of objects which can be ordered (List) or unordered (Set). The `Collection` interface is at the top of the hierarchy and all other classes and interfaces extend from this interface. It is located in the `java.util` package.
+A Collection in Java is a group of objects which can be ordered (List) or unordered (Set). The `Collection` interface is at the top of the hierarchy and all other classes and interfaces extend from this interface. It is located in the `java.util` package. It provides many interfaces like `Set`, `List`, `Queue`, `Deque` etc. and classes like `ArrayList`, `Vector`, `LinkedList`, `PriorityQueue`, `HashSet`, `LinkedHashSet` etc.
 
 The `Collection` interface also extends the `Iterable` interface, which means that every collection in java must be iterable. This in turn means that a `for-each` loop can be used to fetch elements from a collection in a sequence.
 
@@ -38,7 +38,7 @@ Other important interfaces extending the collection interface are:
 	A collection containing only unique elements.
 
 - `Queue`:
-	Implement the queue behaviour where elements are added only in the beginning and removed from the end.
+	Implement the queue behavior where elements are added only in the beginning and removed from the end.
 
 - `List`:
 	This collection handles a list/sequence of objects.
