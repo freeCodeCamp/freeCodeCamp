@@ -210,7 +210,7 @@ class DonateOther extends Component {
               </h3>
               <Spacer />
               <div className='text-center'>
-                <Link to='/donate'>Return to Credit/Debit Form</Link>
+                <Link to='/donate'>Donate using a Credit or Debit card</Link>
               </div>
               <Spacer />
             </Col>
