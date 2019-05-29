@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
-import ReactGA from '../analytics/index.js';
-import { Link, Spacer } from '../components/helpers';
+import ReactGA from '../../../analytics/index.js';
+import { Link, Spacer } from '../../helpers';
 
 const paypalMonthlyDonations = [
   {
@@ -50,7 +50,7 @@ const paypalOneTimeDonation = {
   defaultValue: 'Make a one-time donation'
 };
 
-class DonateOtherPage extends Component {
+class DonateOther extends Component {
   renderForm(item) {
     return (
       <form
@@ -222,6 +222,6 @@ class DonateOtherPage extends Component {
   /* eslint-enable max-len */
 }
 
-DonateOtherPage.displayName = 'DonateOtherPage';
+DonateOther.displayName = 'DonateOther';
 
-export default DonateOtherPage;
+export default DonateOther;

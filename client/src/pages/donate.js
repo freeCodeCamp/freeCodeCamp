@@ -6,6 +6,7 @@ import { Row, Col, Button } from '@freecodecamp/react-bootstrap';
 import { stripePublicKey } from '../../config/env.json';
 
 import Spacer from '../components/helpers/Spacer';
+import DonateOther from '../components/Donation/components/DonateOther';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
@@ -89,7 +90,7 @@ class DonatePage extends Component {
             <Spacer />
           </Col>
         </Row>
-        {showOtherOptions && <DonateOtherPage />}
+        {showOtherOptions && <DonateOther />}
       </Fragment>
     );
   }
