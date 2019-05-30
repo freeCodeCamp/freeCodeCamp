@@ -6,7 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-Imagine you have a function, <code>capitalizeFirstLetter</code>, that simply takes in a string, and returns the string with the first letter capitalized. You want to use this function in three different javascript files. In order to share the function with the files, you need to first <code>export</code> it.
+Imagine you have a function, <code>capitalizeFirstLetter</code>, that simply takes in a string and returns the string with the first letter capitalized. You want to use this function in several different javascript files. In order to share the function with the files, you need to first <code>export</code> it.
 
 ```js
 export const capitalizeFirstLetter = (string) => {
@@ -24,6 +24,7 @@ const capitalizeFirstLetter = (string) => {
 export { capitalizeFirstLetter };
 ```
 
+After you export a function like this, you can import it in another file to use without having to rewrite the function.
 </section>
 
 ## Instructions
@@ -52,8 +53,7 @@ tests:
 
 ```js
 "use strict";
-const foo = "bar";
-const bar = "foo";
+
 ```
 
 </div>
