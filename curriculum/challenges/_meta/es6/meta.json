@@ -99,14 +99,17 @@
     [
       "587d7b8c367417b2b2512b56",
       "Use export to Share a Code Block"
+<<<<<<< HEAD
     ],
     [
       "587d7b8c367417b2b2512b55",
       "Reuse Javascript Code Using import"
+=======
+>>>>>>> fix/rename-lessons
     ],
     [
       "587d7b8c367417b2b2512b55",
-      "Share Javascript Code Using import"
+      "Reuse Javascript Code Using import"
     ],
     [
       "587d7b8c367417b2b2512b57",
