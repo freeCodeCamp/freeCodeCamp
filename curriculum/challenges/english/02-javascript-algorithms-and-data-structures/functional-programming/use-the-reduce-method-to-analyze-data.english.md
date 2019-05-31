@@ -292,14 +292,17 @@ var watchList = [
                 }
 ];
 
-function getRating(watchList){
-  var averageRating;
-  const rating = watchList
-                  .filter(obj => obj.Director === "Christopher Nolan")
-                  .map(obj => Number(obj.imdbRating));
-  averageRating = rating.reduce((accum, curr) => accum + curr)/rating.length;
-  return averageRating;
-}
+var resultObj = watchList.reduce((acc, elem) => {
+  if(elem.Director === "Christopher Nolan") {
+    acc.size += 1;
+    acc.totalAverage += Number(elem.imdbRating * 1);
+  }
+  return acc;
+
+}, {size: 0, totalAverage: 0});
+
+var averageRating = resultObj.totalAverage / resultObj.size;
+
 
 ```
 </section>
