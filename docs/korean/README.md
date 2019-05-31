@@ -20,7 +20,7 @@
 
 이 디렉터리에는 freeCodeCamp.org에 기여하는 방법이 포함되어 있습니다.
 
-## [첫 번째이시면 여기를 먼저 읽어주세요.](CONTRIBUTING.md)
+## [처음이시면 여기를 먼저 읽어주세요.](CONTRIBUTING.md)
 
 ---
 
