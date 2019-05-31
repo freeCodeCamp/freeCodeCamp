@@ -136,13 +136,13 @@ tests:
   <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
-      <button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i> Like</button>
+      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
     </div>
     <div class="col-xs-4">
-      <button class="btn btn-block btn-info"><i class="fas fa-info-circle"></i> Info</button>
+      <button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>
     </div>
     <div class="col-xs-4">
-      <button class="btn btn-block btn-danger"><i class="fas fa-trash"></i> Delete</button>
+      <button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>
     </div>
   </div>
   <p>Things cats <span class="text-danger">love:</span></p>
