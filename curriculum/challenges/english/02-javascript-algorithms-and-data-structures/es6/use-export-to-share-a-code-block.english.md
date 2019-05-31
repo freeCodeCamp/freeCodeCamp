@@ -79,5 +79,4 @@ export const lowercaseString = (string) => {
   return string.toLowerCase()
 }
 ```
-
 </section>
