@@ -127,6 +127,7 @@ class Editor extends Component {
           language={modeMap[ext]}
           onChange={this.onChange}
           options={this.options}
+          role={'application'}
           theme={editorTheme}
           value={contents}
         />
