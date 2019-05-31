@@ -14,7 +14,7 @@ You can include Font Awesome in any app by adding the following code to the top 
 <code>&#60;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"&#62;</code>
 In this case, we've already added it for you to this page behind the scenes.
 The <code>i</code> element was originally used to make other elements italic, but is now commonly used for icons. You can add the Font Awesome classes to the <code>i</code> element to turn it into an icon, for example:
-<code>&lt;i class="fas fa-info-circle"&gt;&lt;/i&gt;</code>
+<code>&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;</code>
 Note that the <code>span</code> element is also acceptable for use with icons.
 </section>
 
@@ -28,10 +28,10 @@ Use Font Awesome to add a <code>thumbs-up</code> icon to your like button by giv
 
 ```yml
 tests:
-  - text: Add an <code>i</code> element with the classes <code>fas</code> and <code>fa-thumbs-up</code>.
-    testString: assert($("i").is(".fas.fa-thumbs-up") || $("span").is(".fas.fa-thumbs-up"));
+  - text: Add an <code>i</code> element with the classes <code>fa</code> and <code>fa-thumbs-up</code>.
+    testString: assert($("i").is(".fa.fa-thumbs-up") || $("span").is(".fa.fa-thumbs-up"));
   - text: Your <code>fa-thumbs-up</code> icon should be located within the Like button.
-    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fas.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fas.fa-thumbs-up")));
+    testString: assert(($("i.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > i").is(".fa.fa-thumbs-up")) || ($("span.fa-thumbs-up").parent().text().match(/Like/gi) && $(".btn-primary > span").is(".fa.fa-thumbs-up")));
   - text: Nest your <code>i</code> element within your <code>button</code> element.
     testString: assert($("button").children("i").length > 0 || $("button").children("span").length > 0);
   - text: Make sure your icon element has a closing tag.
@@ -141,7 +141,7 @@ tests:
   <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
   <div class="row">
     <div class="col-xs-4">
-      <button class="btn btn-block btn-primary"><i class="fas fa-thumbs-up"></i> Like</button>
+      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
     </div>
     <div class="col-xs-4">
       <button class="btn btn-block btn-info">Info</button>
