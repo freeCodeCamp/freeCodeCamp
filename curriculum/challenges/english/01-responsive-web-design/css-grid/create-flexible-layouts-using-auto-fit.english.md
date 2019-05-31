@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/p/pByETK/c3dPph8'
 ## Description
 <section id='description'>
 <code>auto-fit</code> works almost identically to <code>auto-fill</code>. The only difference is that when the container's size exceeds the size of all the items combined, <code>auto-fill</code> keeps inserting empty rows or columns and pushes your items to the side, while <code>auto-fit</code> collapses those empty rows or columns and stretches your items to fit the size of the container.
-<strong>Note</strong><br>If your container can't fit all your items on one row, it will move them down to a new one.
+<strong>Note:</strong> If your container can't fit all your items on one row, it will move them down to a new one.
 </section>
 
 ## Instructions
@@ -47,7 +47,7 @@ tests:
     width: 100%;
     background: LightGray;
     display: grid;
-    grid-template-columns: repeat( auto-fill, minmax(60px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }

@@ -2,7 +2,7 @@
 title: Target HTML Elements with Selectors Using jQuery
 localeTitle: Alvo de elementos HTML com seletores usando jQuery
 ---
-*   Os seletores JQuery permitem selecionar e manipular elementos HTML.
+*   Os seletores jQuery permitem selecionar e manipular elementos HTML.
 *   Esses seletores começam com o cifrão e parênteses: $ ()
 *   Você pode "encontrar" (ou selecionar) elementos HTML com base em seus nomes, id, classes, tipos, atributos, valores de atributos e muito mais.
 

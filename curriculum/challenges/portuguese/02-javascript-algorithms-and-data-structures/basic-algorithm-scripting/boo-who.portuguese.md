@@ -69,6 +69,10 @@ booWho(null);
 <section id='solution'>
 
 ```js
-// solution required
+function booWho(bool) {
+  return typeof bool === 'boolean';
+}
+
+booWho(null);
 ```
 </section>

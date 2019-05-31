@@ -32,6 +32,7 @@ As a rule of thumb:
 * Don't shy away from using a lot of descriptive class names `.footer-nav-link`
 * Try to use the child selector instead if you want to select a direct child of an element `.image-container > img`
 * Avoid using universal selectors `* { }`
+* Remove unnecessary white spaces and consider minifying your CSS
 
 ### Is this really all necessary?
 This may have been a problem 20 years ago when computers weren't as fast as they are today. Please don't avoid descendant selectors in the future completely. But keep in mind that your goal is to write maintainable CSS, so a little thinking might be appropriate.
