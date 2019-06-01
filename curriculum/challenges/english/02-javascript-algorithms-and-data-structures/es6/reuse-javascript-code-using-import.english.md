@@ -59,7 +59,7 @@ lowercaseString("WORLD!");
 <section id='solution'>
 
 ```js
-import { capitalizeString } from './string_functions';
+import { uppercaseString, lowercaseString } from './string_functions';
 // add code above this line
 
 uppercaseString("hello");
