@@ -40,7 +40,6 @@ tests:
 <div id='html-seed'>
 
 ```html
-
 <html>
   <body>
     <!-- add your code below -->
@@ -48,11 +47,9 @@ tests:
     <!-- add your code above -->
   </body>
 </html>
-
 ```
 
 </div>
-
 </section>
 
 ## Solution
@@ -66,7 +63,6 @@ tests:
     <!-- add your code above -->
   </body>
 </html>
-
 ```
 
 </section>
