@@ -12,7 +12,7 @@ localeTitle: 为兄弟元素提供唯一的键属性
 
 只需将`key`属性添加到`<li>`标记即可使其唯一
 
-```react.js
+```jsx
 const renderFrameworks = frontEndFrameworks.map((item) => 
   <li key={item+1}>{item}</li> 
  ); 

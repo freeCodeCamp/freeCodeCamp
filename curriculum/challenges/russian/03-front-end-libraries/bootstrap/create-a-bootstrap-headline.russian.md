@@ -22,11 +22,11 @@ tests:
     testString: 'assert($("h3") && $("h3").length > 0, "Add a <code>h3</code> element to your page.");'
   - text: 'Убедитесь, что ваш элемент <code>h3</code> имеет закрывающий тег.'
     testString: 'assert(code.match(/<\/h3>/g) && code.match(/<h3/g) && code.match(/<\/h3>/g).length === code.match(/<h3/g).length, "Make sure your <code>h3</code> element has a closing tag.");'
-  - text: 'Ваш элемент <code>h3</code> должен быть окрашен, применяя <code>text-primary</code> класса <code>text-primary</code>'
+  - text: 'Ваш элемент <code>h3</code> должен стать цветным, применяя <code>text-primary</code> класса <code>text-primary</code>'
     testString: 'assert($("h3").hasClass("text-primary"), "Your <code>h3</code> element should be colored by applying the class <code>text-primary</code>");'
   - text: 'Ваш элемент <code>h3</code> должен быть центрирован, применяя <code>text-center</code> класса'
     testString: 'assert($("h3").hasClass("text-center"), "Your <code>h3</code> element should be centered by applying the class <code>text-center</code>");'
-  - text: Ваш элемент <code>h3</code> должен иметь текстовую <code>jQuery Playground</code> .
+  - text: Ваш элемент <code>h3</code> должен иметь текстовый формат <code>jQuery Playground</code> .
     testString: 'assert.isTrue((/jquery(\s)+playground/gi).test($("h3").text()), "Your <code>h3</code> element should have the text <code>jQuery Playground</code>.");'
 
 ```
