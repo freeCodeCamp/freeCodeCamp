@@ -7,12 +7,12 @@ Now you know what your options with data types are. Let's apply it with a simple
 ```C
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int my_first_variable = 12;
     double my_second_variable = 983.9;
 
-    printf("My int is %i\n", my_first_variable);
-    printf("My double is %f\n", my_second_variable);
+    printf("My int is %d\n", my_first_variable);
+    printf("\nMy double is %f\n", my_second_variable);
 
     return 0;
 }
@@ -32,11 +32,11 @@ In fact, it would be this way in other languages. However, in C this is not typi
 
 After the variables are created, we start actually using them:
 ```C
-    printf("My int is %i\n", my_first_variable);
+    printf("My int is %d\n", my_first_variable);
     printf("My double is %f\n", my_second_variable);
 ```
 
-This is the same printf() that you used earlier, but now it has a few different features. First, notice that there are now two things within the parenthesis: the text to be printed to the screen, and the variable. Also notice the `%i` and the `%f`. This is called a *format specifier*, and is used to specify what format something should be printed in. Whenever printf() comes across one of these, it will try to insert the variable given into that point.
+This is the same printf() that you used earlier, but now it has a few different features. First, notice that there are now two things within the parenthesis: the text to be printed to the screen, and the variable. Also notice the `%d` and the `%f`. This is called a *format specifier*, and is used to specify what format something should be printed in. Whenever printf() comes across one of these, it will try to insert the variable given into that point.
 
 Because the data types of our variables are represented in a computer in several different ways, there are several different ways for C to display them:
 
@@ -65,7 +65,7 @@ Now let's start changing the values within our variables. Here's the same exampl
 ```C
 #include <stdio.h>
 
-int main(void) {
+int main() {
     int my_first_variable = 12;
     double my_second_variable = 983.9;
 
