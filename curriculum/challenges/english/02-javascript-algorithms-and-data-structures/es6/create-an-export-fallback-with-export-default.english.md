@@ -11,12 +11,12 @@ There is another <code>export</code> syntax you need to know, known as <dfn>expo
 Here is a quick example of <code>export default</code>:
 
 ```js
-export default function add(x,y) {
+export default function add(x, y) {
   return x + y;
 }
 ```
 
-Note: Since <code>export default</code> is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use <code>export default</code> with <code>var</code>, <code>let</code>, or <code>const</code>
+Since <code>export default</code> is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use <code>export default</code> with <code>var</code>, <code>let</code>, or <code>const</code>
 </section>
 
 ## Instructions
@@ -30,40 +30,31 @@ The following function should be the fallback value for the module. Please add t
 ```yml
 tests:
   - text: Your code should use <code>export</code> fallback.
-    testString: getUserInput => assert(getUserInput('index').match(/export\s+default\s+function\s+subtract\(x,y\)\s+{return\s+x\s-\s+y;}/g), 'Your code should use <code>export</code> fallback.');
-
+    testString: assert(code.match(/export\s+default\s+function\s+subtract\s*\(\s*x,\s*y\s*\)\s*{/g));
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
-"use strict";
-function subtract(x,y) {return x - y;}
+function subtract(x, y) {
+  return x - y;
+}
 ```
 
 </div>
-
-### Before Test
-<div id='js-setup'>
-
-```js
-self.exports = function(){};
-```
-
-</div>
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-export default function subtract(x,y) {return x - y;}
+export default function subtract(x, y) {
+  return x - y;
+}
 ```
 
 </section>
