@@ -19,10 +19,10 @@ To compute F(5), the recursive method will compute the same value multiple times
 
 For example:
 
-F(0) is called 3 times </br>
-F(1) is called 4 times </br>
-F(2) is called 3 times </br>
-F(3) is called 2 times </br>
+F(0) is called 3 times
+F(1) is called 4 times 
+F(2) is called 3 times
+F(3) is called 2 times
 
 Recursive approach:
 ```python
