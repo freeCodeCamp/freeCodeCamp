@@ -6,7 +6,7 @@ localeTitle: Получить статус из магазина Redux
 
 `getState()` данные из хранилища с помощью `getState()` .
 
-```react.js
+```jsx
 let currentState = store.getState(); 
 
 ```

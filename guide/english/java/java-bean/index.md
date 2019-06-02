@@ -2,12 +2,55 @@
 title: Java Bean
 ---
 ## Java Bean
+Java Beans are Java classes that follow the following rules:
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+1) implement the `java.io.Serializable` interface
+2) have private properties with public getters and setters
+3) have a public no-argument constructor
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+A simple Java Bean is implemented below:
+``` java
+public class ExampleBean implements java.io.Serializable { 
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+  // private properties
+  private String name;
+  private Boolean programmer;
+
+  // no-argument constructor
+  public ExampleBean() {
+  }
+ 	
+  // public getters and setters
+  public String getName(){
+      return this.name; 
+  }
+
+  public void setName(String name){
+      this.name = name;
+  }
+
+  public Boolean isProgrammer(){
+      return this.age;
+  }
+
+  public void setProgrammer(Boolean programmer){
+      this.programmer = programmer;
+  }
+}
+```
+
+Java Beans, frequently refered as beans, are meant to be reusable software components that anyone can use without having to know and understand their inner implementation. They can be used by a bean editor in order to be customized and assemble an application.
+
+The advantages:
+ * standardized way that enforces reusability
+ * customization with bean editors
+ * persistence and ability to be transfered within network
+
+The disadvantages:
+ * lots of boilerplate with getters and setters
+ * lack of immutability by design
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+- Oracle <a href='https://docs.oracle.com/javase/tutorial/javabeans/index.html' target='_blank' rel='nofollow'>docs</a>
+- What <a href='https://stackoverflow.com/questions/5520533/what-is-the-significance-of-java-io-serializable-class' target='_blank' rel='nofollow'>Serializable</a> means
+- Java Beans <a href='https://stackoverflow.com/questions/1727603/places-where-javabeans-are-used' target='_blank' rel='nofollow'>usage</a>

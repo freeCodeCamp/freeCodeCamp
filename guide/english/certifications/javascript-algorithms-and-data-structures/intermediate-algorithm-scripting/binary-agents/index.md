@@ -7,12 +7,12 @@ title: Binary Agents
 
 ## Problem Explanation:
 
-This problem is very straight forward, you will get a string that will represent a sentence in binary code, and you need to translate that into words. There is not direct way to do this so you will have to translate twice.
+This problem is very straight forward - you start with a string that represents a sentence in binary code, and you need to translate that into words. There is not a direct way to do this so you will have to translate twice.
 
 ### Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charcodeat/15933' target='_blank' rel='nofollow'>String.prototype.charCodeAt</a>
-*   <a>String.fromCharCode</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode' target='_blank' rel='nofollow'>String.fromCharCode</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
@@ -22,7 +22,7 @@ You should first convert from **binary** to **decimal** before translating those
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
-Things are easier when focusing on smaller parts, divide the input to focus on one letter at the time.
+Things are easier when focusing on smaller parts, divide the input to focus on one letter at a time.
 
 > _try to solve the problem now_
 
@@ -41,13 +41,13 @@ Make sure that each time you transcode a character from binary to decimal, you r
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 ```javascript
     function binaryAgent(str) {
-      biString = str.split(' ');
-      uniString = [];
+      var biString = str.split(' ');
+      var uniString = [];
 
     /*using the radix (or base) parameter in parseInt, we can convert the binary
       number to a decimal number while simultaneously converting to a char*/
 
-      for(i=0;i < biString.length;i++){
+      for(var i=0;i < biString.length;i++){
         uniString.push(String.fromCharCode(parseInt(biString[i], 2)));
       }
 
@@ -63,10 +63,10 @@ Make sure that each time you transcode a character from binary to decimal, you r
 # Code Explanation:
 
 *   Separate the string into an array of strings separated by whitespace.
-*   Create some variables that will be needed along the way, the names are self explanatory for the most part.
+*   Create some variables that you will use along the way - the names are self explanatory for the most part.
 *   Iterate through each binary string in the new array.
-*   Convert to decimal by using parseInt(_binary_, 2) (with the second parameter we tell in which base our numbers currently are)
-*   At the end, we return out converted message.
+*   Convert to decimal by using `parseInt(_binary_, 2)`. Use the second parameter to specify the base of the input numbers.
+*   At the end, return the converted message.
 
 ## Relevant Links
 
@@ -147,11 +147,28 @@ Make sure that each time you transcode a character from binary to decimal, you r
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>Array.prototype.map</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternative Advanced Code Solution:
+```js
+  const binaryAgent = str => str.replace(/\d+./g, char => String.fromCharCode(`0b${char}`));
+       
+  binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+```
+
+## Code Explanation
+
+*   Find all groups of one or more digits followed by one other character
+*   Replace with a string created from the specified sequence of UTF-16 code units
+*   Use `0b` to lead the code unit to express that a binary integer literal is being converted. 
+
+## Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode' target='_blank' rel='nofollow'>String.fromCharCode()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace' target='_blank' rel='nofollow'>String.prototype.replace()</a>
+*   <a href='https://codegolf.stackexchange.com/questions/35096/convert-a-string-of-binary-characters-to-the-ascii-equivalents' target='_blank' rel='nofollow'>Convert a string of binary characters to the ASCII equivalents</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Numeric_literals' target='_blank' rel='nofollow'>Grammar and types/Numeric Literals</a>
+
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

@@ -12,7 +12,7 @@ Angular (versiones 2.x y posteriores) es un marco de código abierto basado en T
 
 Google lanzó la versión inicial de AngularJS el 20 de octubre de 2010. El lanzamiento estable de AngularJS fue el 18 de diciembre de 2017 de la versión 1.6.8. El lanzamiento de Angular 2.0 tuvo lugar el 22 de septiembre de 2014 en la conferencia ng-Europe. Una de las características de Angular 2.0 es la carga dinámica.
 
-Después de algunas modificaciones, Angular 4.0 fue lanzado en diciembre de 2016. Angular 4 es compatible con versiones anteriores de Angular 2.0. La biblioteca HttpClient es una de las características de Angular 4.0. El lanzamiento de Angular 5 se realizó el 1 de noviembre de 2017. El soporte para aplicaciones web progresivas fue una de las mejoras en Angular 4.0. El lanzamiento de Angular 6 fue en mayo de 2018. La última versión estable es [6.1.9](https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6)
+Después de algunas modificaciones, Angular 4.0 fue lanzado en diciembre de 2016. Angular 4 es compatible con versiones anteriores de Angular 2.0. La biblioteca HttpClient es una de las características de Angular 4.0. El lanzamiento de Angular 5 se realizó el 1 de noviembre de 2017. El soporte para aplicaciones web progresivas fue una de las mejoras en Angular 5.0. El lanzamiento de Angular 6 fue en mayo de 2018. La última versión estable es [6.1.9](https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6)
 
 **Instalar** :
 

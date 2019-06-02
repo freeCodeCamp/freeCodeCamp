@@ -3,7 +3,7 @@ title: Special Right Triangles Intro
 ---
 ## Special Right Triangles Intro
 
-Special right triangles a a type of right triangle where the two non-right angles share a special relationship.
+Special right triangles are a type of right triangle where the two non-right angles share a special relationship.
 
 There are two types of special right triangles: a 45-45-90, and a 30-60-90.
 

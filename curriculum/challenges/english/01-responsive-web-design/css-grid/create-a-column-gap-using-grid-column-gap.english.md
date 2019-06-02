@@ -8,7 +8,11 @@ videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
 ## Description
 <section id='description'>
 So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the <code>grid-column-gap</code> property like this:
-<blockquote>grid-column-gap: 10px;</blockquote>
+
+```css
+grid-column-gap: 10px;
+```
+
 This creates 10px of empty space between all of our columns.
 </section>
 

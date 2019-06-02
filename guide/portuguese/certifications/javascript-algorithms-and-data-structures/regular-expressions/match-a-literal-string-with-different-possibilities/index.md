@@ -14,7 +14,7 @@ Dentro da string literal, coloque os nomes dos animais de estimação, cada um s
 
 ## Solução:
 
-```javascriot
+```js
 let petString = "James has a pet cat."; 
  let petRegex = /dog|cat|bird|fish/; 
  let result = petRegex.test(petString); 

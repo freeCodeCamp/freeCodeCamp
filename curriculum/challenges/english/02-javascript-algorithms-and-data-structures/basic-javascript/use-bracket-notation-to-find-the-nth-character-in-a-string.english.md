@@ -2,6 +2,7 @@
 id: bd7123c9c450eddfaeb5bdef
 title: Use Bracket Notation to Find the Nth Character in a String
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cWPVJua'
 ---
 
 ## Description
