@@ -121,14 +121,16 @@ const testCases = [
 
 ```js
 function isBalanced (str) {
-  if (str === '') return true;
-  let a = str;
-  let b;
-  do {
-    b = a;
-    a = a.replace(/\[\]/g, '');
-  } while (a !== b);
-  return !a;
+  str = str.split('');
+  let stack = [];
+  for(let i = 0; i < str.length; i++){
+    if(str[i] === '['){
+      stack.push('[');
+    }else if(str[i] === ']' && stack[stack.length - 1] === '['){
+      stack.pop();
+    }
+  }
+  return stack.length === 0 ? true : false;
 }
 
 ```
