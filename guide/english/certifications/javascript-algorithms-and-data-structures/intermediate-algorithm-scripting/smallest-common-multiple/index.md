@@ -187,6 +187,46 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment' target='_blank' rel='nofollow'>Prefix increment operator ++</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternate Advanced Code Solution:
+```
+const smallestCommons = arr => {
+  const MIN = Math.min(...arr);
+  const MAX = Math.max(...arr);
+  
+  // Fill a new array with values as min increments by one to max
+  const smallestCommon = Array(MAX - MIN + 1)
+    .fill()
+    .map((item, index) => MIN + index)
+    // Reduce to the smallest common multiple
+    .reduce(lcm);
+
+  return smallestCommon;
+};
+
+/* Determine the smallest common multiple by repeatedly adding the 
+*  current value until it is divisible by the sum
+*/
+const lcm = (sum, curr) => {
+  let common = curr;
+  while (common % sum !== 0) {
+    common += curr;
+  }
+  return common;
+};
+    
+smallestCommons([1,5]);
+```    
+### Code Explanation:
+
+*   Create a new array filled with all numbers between the starting min and max.
+*   Immediately determine the LCM by reducing the array.
+*   Skipping the loops and sorting needed to calculate the GCD first is significantly more efficient in Firefox 65 (up to 9.69%). However, in Chrome it is marginal efficiency (+/- 1%).
+
+#### Relevant Links
+
+*   <a href='https://learnersbucket.com/examples/algorithms/find-the-lcm-of-two-numbers-in-javascript/' target='_blank' rel='nofollow'>Find the LCM of two numbers in javascript</a>
+*   <a href='https://davidwalsh.name/fill-array-javascript' target='_blank' rel='nofollow'>Fill an Array with Sequential Values</a>
+
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
