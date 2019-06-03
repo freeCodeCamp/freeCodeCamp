@@ -12,7 +12,7 @@ localeTitle: 在用户界面中渲染状态
 
 ## 解
 
-```react.js
+```jsx
 class MyComponent extends React.Component { 
   constructor(props) { 
     super(props); 

@@ -14,7 +14,7 @@ Gulon Scene Builder هو تطبيق يستخدم لتصميم واجهة الم�
 
 #### Screeenshots:
 
-![المشهد باني واجهة المستخدم](https://i.imgur.com/3d9SqBR.png)
+![المشهد باني واجهة المستخدم](https://cdn-media-1.freecodecamp.org/imgr/3d9SqBR.png)
 
 ### FXML
 

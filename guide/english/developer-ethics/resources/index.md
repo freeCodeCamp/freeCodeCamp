@@ -20,11 +20,11 @@ Stay aware, and think through what you would do if faced with a similar situatio
 
 3. Start conversations with your peers now
 
-Ethics is highly influenced by office culture, so lead by example. Be that person in your organization who talks about ethics openly, and advocates for a more ethical culture when possible. Pyschology Today has tips about [building an ethical culture](https://www.psychologytoday.com/blog/do-the-right-thing/201507/six-ways-create-culture-ethics-in-any-organization).
+Ethics is highly influenced by office culture, so lead by example. Be that person in your organization who talks about ethics openly, and advocates for a more ethical culture when possible. Psychology Today has tips about [building an ethical culture](https://www.psychologytoday.com/blog/do-the-right-thing/201507/six-ways-create-culture-ethics-in-any-organization).
 
 4. Don't give up
 
-It can be easy to become disheartened when a new ethical breach happens - but don't. Creating an ethical future for developers will take all of us. 
+Don't become disheartened when a new ethical breach happens. Creating an ethical future for developers will take all of us. 
 
 5. Know your "why"
 

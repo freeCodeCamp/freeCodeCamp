@@ -11,7 +11,7 @@ title: Heroku Deployment Guide
 
 2.  You'll be taken to a dashboard for that app. Click on the Deploy tab.
 
-3.  There you'll be pleased to find that you can connect to a github repo. In the Deployment Method section, choose Github and authenticate by signing into Github.
+3.  There you'll be pleased to find that you can connect to a github repo. In the Deployment Method section, choose GitHub and authenticate by signing into GitHub.
 
 4.  Right below that, fill in your github repo name. (This of course requires that you've pushed a repo to github from either cloud9 or your local machine...and that you've correctly configured it. More on that below.)
 

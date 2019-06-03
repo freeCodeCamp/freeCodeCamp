@@ -1,15 +1,27 @@
 ---
 title: Functions
-localeTitle: функции
+localeTitle: Функции
 ---
-## функции
+## Функции
 
-Функции в Swift состоят из параметра и типа возврата. Функции могут быть созданы с использованием этой базовой структуры: \`\` \`Swift func sayHello (nameOfPerson: String) -> String { let hello = "Hello", + nameOfPerson + "." печать (привет) }
+Функции в Swift состоят из параметров и возвращаемого типа. Функции могут быть созданы с использованием этой базовой структуры: 
+```Swift
+func sayHello(nameOfPerson: String) -> String {
+  let hello = "Привет, " + nameOfPerson + "."
+  print(hello)
+ }
 
-sayHello (nameOfPerson: «Стив») ` `` In this example, the function sayHello takes in a string name and prints out the phrase` «Hello, Steve.» \`.
+sayHello (nameOfPerson: "Стив")
+```
+В данном примере, функция `sayHello` принимает строку, содержащюю имя, как параметр и печатает фразу `«Привет, Стив.»`.
 
 ## Параметры функции
 
-Функции не требуют ввода входных параметров или возвращаемых типов. Однако для этого требуются скобки после именования функций. \`\` \`Swift func helloSteve () { print («Привет, Стив»). }
+Функции не требуют ввода входных параметров или возвращаемых типов. Однако скобки после имен функций являются обязательными. 
+```Swift
+func helloSteve () { 
+  print ("Привет, Стив.")
+}
 
-helloSteve () // Это выдает «Привет, Стив». \`\` \`
+helloSteve () // Это выводит «Привет, Стив.»
+```

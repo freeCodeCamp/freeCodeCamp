@@ -14,7 +14,7 @@ Gulon Scene Builder - это приложение, используемое дл
 
 #### Screeenshots:
 
-![Пользовательский интерфейс Scene Builder](https://i.imgur.com/3d9SqBR.png)
+![Пользовательский интерфейс Scene Builder](https://cdn-media-1.freecodecamp.org/imgr/3d9SqBR.png)
 
 ### FXML
 
