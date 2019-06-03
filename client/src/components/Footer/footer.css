@@ -15,6 +15,10 @@
   display: block;
 }
 
+.footer a:hover {
+  background-color: #E0E0E0;
+}
+
 .night .footer {
   color: #606f7b;
   background: #222;
@@ -26,4 +30,5 @@
 
 .night .footer a:hover {
   color: #606f7b;
+  background-color: #2A2A2A;
 }
