@@ -37,7 +37,7 @@ eventEmitter.emit(eventName, optionalData);
 And the ability to attach a listener function and define the name of a specific event is done by `.on`.
 
 ```js
-eventEmitter.emit(eventName, callback);
+eventEmitter.on(eventName, callback);
 ```
 
 We will mimic the new functions we just learned about with an example. Create a new file called `eventemitter.js` and paste the following code:

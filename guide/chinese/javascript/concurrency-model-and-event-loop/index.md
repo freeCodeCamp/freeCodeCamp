@@ -33,7 +33,7 @@ function multiply(x,y) {
 
 现在我们知道Javascript可以一次执行一件事但是浏览器不是这样。浏览器拥有自己的一组API，如setTimeout，XMLHttpRequests，它们未在Javascript运行时中指定。事实上，如果你仔细查看V8的源代码，那么为谷歌Chrome浏览器提供支持的流行Javascript运行时，你将找不到任何定义。这是因为这些特殊的Web API存在于浏览器环境中而不是javascript环境中，你可以说这些apis引入了并发性。让我们看一个图来理解整个图片。
 
-![并发和事件循环模型](https://i.imgur.com/rnQEY7o.png)
+![并发和事件循环模型](https://cdn-media-1.freecodecamp.org/imgr/rnQEY7o.png)
 
 引入了更多术语
 

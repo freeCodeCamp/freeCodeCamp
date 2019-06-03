@@ -27,7 +27,7 @@ Find the 200th prime-proof sqube containing the contiguous sub-string "200".
 ```yml
 tests:
   - text: <code>euler200()</code> should return 229161792008.
-    testString: 'assert.strictEqual(euler200(), 229161792008, "<code>euler200()</code> should return 229161792008.");'
+    testString: assert.strictEqual(euler200(), 229161792008, '<code>euler200()</code> should return 229161792008.');
 
 ```
 

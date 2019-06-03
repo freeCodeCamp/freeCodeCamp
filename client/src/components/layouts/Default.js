@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
+import fontawesome from '@fortawesome/fontawesome';
 
 import ga from '../../analytics';
 import {
@@ -19,10 +20,15 @@ import { isBrowser } from '../../../utils';
 import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
+import Footer from '../Footer';
 
 import './global.css';
 import './layout.css';
 import './night.css';
+
+fontawesome.config = {
+  autoAddCss: false
+};
 
 const metaKeywords = [
   'javascript',
@@ -50,7 +56,6 @@ const metaKeywords = [
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  disableSettings: PropTypes.bool,
   fetchUser: PropTypes.func.isRequired,
   flashMessages: PropTypes.arrayOf(
     PropTypes.shape({
@@ -63,8 +68,10 @@ const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
+  navigationMenu: PropTypes.element,
   onlineStatusChange: PropTypes.func.isRequired,
-  removeFlashMessage: PropTypes.func.isRequired
+  removeFlashMessage: PropTypes.func.isRequired,
+  showFooter: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
@@ -127,11 +134,12 @@ class DefaultLayout extends Component {
   render() {
     const {
       children,
-      disableSettings,
       hasMessages,
       flashMessages = [],
       removeFlashMessage,
       landingPage,
+      showFooter = true,
+      navigationMenu,
       isOnline,
       isSignedIn
     } = this.props;
@@ -147,15 +155,18 @@ class DefaultLayout extends Component {
             },
             { name: 'keywords', content: metaKeywords.join(', ') }
           ]}
-        />
-        <Header disableSettings={disableSettings} />
-        <div className={landingPage && 'landing-page'}>
+        >
+          <style>{fontawesome.dom.css()}</style>
+        </Helmet>
+        <Header disableSettings={landingPage} navigationMenu={navigationMenu} />
+        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
           <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
           {hasMessages ? (
             <Flash messages={flashMessages} onClose={removeFlashMessage} />
           ) : null}
           {children}
         </div>
+        {showFooter && <Footer />}
       </Fragment>
     );
   }
