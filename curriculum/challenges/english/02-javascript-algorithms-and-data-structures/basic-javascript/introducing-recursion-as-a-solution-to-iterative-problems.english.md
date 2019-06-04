@@ -8,15 +8,20 @@ videoUrl: 'https://medium.freecodecamp.org/how-recursion-works-explained-with-fl
 ## Description
 <section id='description'>
 Recursion is the programming concept of using a function that calls itself in order to 
-accomplish a task. For example: <blockquote>function fillArrayWithZeros(myArray, n) {
-<br>&nbsp;if(n <= 0) {
-<br>&nbsp;&nbsp;return;
-<br>&nbsp;}
-<br>&nbsp;myArray.push(0);
-<br>&nbsp;fillArrayWithZeros(myArray, n - 1);<br>}
- </blockquote>
- This function returns an array filled with n 0's inside of it. 
- Recursion has two fundamental parts: the base case, and the recursive loop. The base case tells the recursive function when to stop (in this example, when n is equal to zero), and the recursive loop tells the function when to call itself, and with what parameters (in this example: calling itself with n-1 when n is greater than zero). 
+accomplish a task. For example:
+
+```js
+function fillArrayWithZeros(myArray, n) {
+  if(n <= 0) {
+    ;return;
+  }
+  myArray.push(0);
+  fillArrayWithZeros(myArray, n - 1);
+}
+```
+
+The above function returns an array filled with n 0's inside of it. 
+Recursion has two fundamental parts: the base case, and the recursive loop. The base case tells the recursive function when to stop (in this example, when n is equal to zero), and the recursive loop tells the function when to call itself, and with what parameters (in this example: calling itself with n-1 when n is greater than zero). 
  Check out the video link at the top of the page to take a more in-depth look at how recursion works.
 </section>
 
