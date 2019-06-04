@@ -25,7 +25,7 @@ Write a <code>removeAt(index)</code> method that removes and returns a node at a
 tests:
   - text: Your <code>LinkedList</code> class should have a <code>removeAt</code> method.
     testString: assert((function(){var test = new LinkedList(); return (typeof test.removeAt === 'function')}()));
-  - text: Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list.
+  - text: Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list by one.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.removeAt(1); return test.size() === 2}()));
   - text: Your <code>removeAt</code> method should remove the element at the specified index from the linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.add('bird');test.removeAt(1); return JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"kitten","next":{"element":"bird","next":null}}}'}())); 
