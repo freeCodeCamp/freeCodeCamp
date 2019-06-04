@@ -9,7 +9,13 @@ challengeType: 1
 Do you remember the ES6 spread operator <code>...</code>?
 <code>...</code> can take iterable objects in ES6 and turn them into arrays.
 Let's create a Set, and check out the spread function.
-<blockquote>var set = new Set([1,2,3]);<br>var setToArr = [...set]<br>console.log(setToArr) // returns [ 1, 2, 3 ]</blockquote>
+
+```js
+var set = new Set([1,2,3]);
+var setToArr = [...set]
+console.log(setToArr) // returns [ 1, 2, 3 ]
+```
+
 </section>
 
 ## Instructions

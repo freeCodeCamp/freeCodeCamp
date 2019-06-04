@@ -11,10 +11,26 @@ An <dfn>adjacency matrix</dfn> is a two-dimensional (2D) array where each nested
 <blockquote>    1 2 3<br>   ------<br>1 | 0 1 1<br>2 | 1 0 0<br>3 | 1 0 0</blockquote>
 Above is a very simple, undirected graph where you have three nodes, where the first node is connected to the second and third node. <strong>Note</strong>: The numbers to the top and left of the matrix are just labels for the nodes.
 Below is a JavaScript implementation of the same thing.
-<blockquote>var adjMat = [<br>  [0, 1, 1],<br>  [1, 0, 0],<br>  [1, 0, 0]<br>];</blockquote>
+
+```js
+var adjMat = [
+  [0, 1, 1],
+  [1, 0, 0],
+  [1, 0, 0]
+];
+```
+
 Unlike an adjacency list, each "row" of the matrix has to have the same number of elements as nodes in the graph. Here we have a three by three matrix, which means we have three nodes in our graph.
 A directed graph would look similar. Below is a graph where the first node has an edge pointing toward the second node, and then the second node has an edge pointing to the third node.
-<blockquote>var adjMatDirected = [<br>  [0, 1, 0],<br>  [0, 0, 1],<br>  [0, 0, 0]<br>];</blockquote>
+
+```js
+var adjMatDirected = [
+  [0, 1, 0],
+  [0, 0, 1],
+  [0, 0, 0]
+];
+```
+
 Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unweighted</dfn> edges where just the presence and lack of edge is binary (<code>0</code> or <code>1</code>). You can have different weights depending on your application.
 </section>
 
