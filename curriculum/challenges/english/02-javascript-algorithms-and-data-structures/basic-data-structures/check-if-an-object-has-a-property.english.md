@@ -26,18 +26,18 @@ We've created an object, <code>users</code>, with some users in it and a functio
 
 ```yml
 tests:
-  - text: 'The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>'
-    testString: 'assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4, "The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>");'
-  - text: 'The function <code>isEveryoneHere</code> returns <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object'
-    testString: 'assert(isEveryoneHere(users) === true, "The function <code>isEveryoneHere</code> returns <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object");'
-  - text: 'The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Alan</code> is not a property on the <code>users</code> object'
-    testString: 'assert((function() { delete users.Alan; return isEveryoneHere(users) })() === false, "The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Alan</code> is not a property on the <code>users</code> object");'
-  - text: 'The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Jeff</code> is not a property on the <code>users</code> object'
-    testString: 'assert((function() { delete users.Jeff; return isEveryoneHere(users) })() === false, "The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Jeff</code> is not a property on the <code>users</code> object");'
-  - text: 'The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Sarah</code> is not a property on the <code>users</code> object'
-    testString: 'assert((function() { delete users.Sarah; return isEveryoneHere(users) })() === false, "The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Sarah</code> is not a property on the <code>users</code> object");'
-  - text: 'The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Ryan</code> is not a property on the <code>users</code> object'
-    testString: 'assert((function() { delete users.Ryan; return isEveryoneHere(users) })() === false, "The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Ryan</code> is not a property on the <code>users</code> object");'
+  - text: The <code>users</code> object should only contain the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>
+    testString: assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4);
+  - text: The function <code>isEveryoneHere</code> should return <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object
+    testString: assert(isEveryoneHere(users) === true);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Alan</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Alan; return isEveryoneHere(users) })() === false);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Jeff</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Jeff; return isEveryoneHere(users) })() === false);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Sarah</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Sarah; return isEveryoneHere(users) })() === false);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Ryan</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Ryan; return isEveryoneHere(users) })() === false);
 ```
 
 </section>
