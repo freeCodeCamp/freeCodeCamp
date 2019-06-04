@@ -127,6 +127,7 @@ Here are specific formatting guidelines for challenge text and examples:
 - Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
 - A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text.  Second note text.`. 
 - Use double quotes where applicable
 
 ## Formatting seed code
