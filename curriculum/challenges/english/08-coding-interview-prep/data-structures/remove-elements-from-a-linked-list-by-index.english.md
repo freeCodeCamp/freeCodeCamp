@@ -15,8 +15,7 @@ Just like our <code>remove(element)</code> method, we need to be careful not to 
 ## Instructions
 <section id='instructions'>
 Write a <code>removeAt(index)</code> method that removes and returns a node at a given <code>index</code>. The method should return <code>null</code> if the given <code>index</code> is either negative, or greater than or equal to the <code>length</code> of the linked list.
-Note
-Remember to keep count of the <code>currentIndex</code>.
+<strong>Note:</strong> Remember to keep count of the <code>currentIndex</code>.
 </section>
 
 ## Tests
@@ -97,6 +96,64 @@ function LinkedList() {
 <section id='solution'>
 
 ```js
-// solution required
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function (element) { // {1}
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function () {
+    return length;
+  };
+
+  this.head = function () {
+    return head;
+  };
+
+  this.add = function (element) {
+    var node = new Node(element);
+    if (head === null) {
+      head = node;
+    } else {
+      var currentNode = head;
+
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
+
+      currentNode.next = node;
+    }
+
+    length++;
+  };
+
+  this.removeAt = function (index) {
+    var currentNode = head;
+    var previous = head;
+    var count = 0;
+    if (index >= length || index < 0) {
+      return null;
+    }
+    if (index === 0) {
+      var removed = head.element;
+      head = currentNode.next;
+      length--;
+      return removed;
+    } else {
+      while (count < index) {
+        previous = currentNode;
+        currentNode = currentNode.next;
+        count++;
+      }
+      var removed = previous.next.element;
+      previous.next = currentNode.next;
+      length--;
+      return removed;
+    }
+  };
+}
 ```
 </section>
