@@ -140,7 +140,6 @@ The following is an example of code:
 
 ```
 ````
-- A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - Use double quotes where applicable
 
