@@ -128,8 +128,8 @@ Here are specific formatting guidelines for challenge text and examples:
 ````
 Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
 ````
-- Multi-line code blocks **must be preceded by an empty line**.  The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages).  To complete the code block, you must start a newline only has three backticks.
-**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml`.
+- Multi-line code blocks **must be preceded by an empty line**.  The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages).  To complete the code block, you must start a newline which only has three backticks and **another empty line**.
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
 See example below:
 ````
 The following is an example of code:
@@ -139,6 +139,7 @@ The following is an example of code:
 [YOUR CODE HERE]
 
 ```
+
 ````
 - Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
 - Use double quotes where applicable
