@@ -15,7 +15,7 @@ If the element we wish to remove is the <code>head</code> element, we reassign t
 ## Instructions
 <section id='instructions'>
 Write a <code>remove</code> method that takes an element and removes it from the linked list.
-Note
+<strong>Note:</strong>
 The <code>length</code> of the list should decrease by one every time an element is removed from the linked list.
 </section>
 
