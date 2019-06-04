@@ -141,7 +141,7 @@ function LinkedList() {
       currentNode = currentNode.next;
     }
     
-    if (currentNode.next === null) {
+    if (currentNode.next === null && currentNode.element !== element) {
       return;
     }
     else if (previous) {
