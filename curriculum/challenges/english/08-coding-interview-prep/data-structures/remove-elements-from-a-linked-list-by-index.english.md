@@ -33,7 +33,7 @@ tests:
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); var removedItem = test.removeAt(0); return test.head() === null && test.size() === 0 && removedItem === 'cat';}()));        
   - text: Your <code>removeAt</code> method should return the element of the removed node.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return test.removeAt(1) === 'dog'}()));
-  - text: Your <code>removeAt</code> method should return <code>null</code> and the list not change if the given index is less than <code>0</code>
+  - text: Your <code>removeAt</code> method should return <code>null</code> and the linked list should not change if the given index is less than <code>0</code>.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  var removedItem = test.removeAt(-1); return removedItem === null && JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"dog","next":{"element":"kitten","next":null}}}'}()));
   - text: Your <code>removeAt</code> method should return <code>null</code> and the list should not change if the given index is equal or more than the <code>length</code> of the linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  var removedItem = test.removeAt(3); return removedItem === null && JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"dog","next":{"element":"kitten","next":null}}}'}()));
