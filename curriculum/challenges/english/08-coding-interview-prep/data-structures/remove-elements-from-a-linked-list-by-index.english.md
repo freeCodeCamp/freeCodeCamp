@@ -29,7 +29,7 @@ tests:
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.removeAt(1); return test.size() === 2}()));
   - text: Your <code>removeAt</code> method should remove the element at the specified index from the linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.add('bird');test.removeAt(1); return JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"kitten","next":{"element":"bird","next":null}}}'}())); 
-  - text: When only one element is present in the linked list, your <code>removeAt</code> method should return the element at specified index, remove the element, and reduce the length of the linked list.
+  - text: When only one element is present in the linked list, your <code>removeAt</code> method should remove and return the element at specified index, and reduce the length of the linked list.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); var removedItem = test.removeAt(0); return test.head() === null && test.size() === 0 && removedItem === 'cat';}()));        
   - text: Your <code>removeAt</code> method should return the element of the removed node.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return test.removeAt(1) === 'dog'}()));
@@ -140,8 +140,6 @@ function LinkedList() {
     if (index === 0) {
       var removed = head.element;
       head = currentNode.next;
-      length--;
-      return removed;
     } else {
       while (count < index) {
         previous = currentNode;
@@ -150,9 +148,9 @@ function LinkedList() {
       }
       var removed = previous.next.element;
       previous.next = currentNode.next;
-      length--;
-      return removed;
     }
+    length--;
+    return removed;
   };
 }
 ```
