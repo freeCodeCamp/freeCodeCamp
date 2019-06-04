@@ -14,9 +14,19 @@ You can create a set with a value:
 You can create a set with an array:
 <code>var set = new Set([1, 2, 3]);</code>
 Once you have created a set, you can add the values you wish using the <code>add</code> method:
-<blockquote>var set = new Set([1, 2, 3]);<br>set.add([4, 5, 6]);</blockquote>
+
+```js
+var set = new Set([1, 2, 3]);
+set.add([4, 5, 6]);
+```
+
 As a reminder, a set is a data structure that cannot contain duplicate values:
-<blockquote>var set = new Set([1, 2, 3, 1, 2, 3]);<br>// set contains [1, 2, 3] only</blockquote>
+
+```js
+var set = new Set([1, 2, 3, 1, 2, 3]);
+// set contains [1, 2, 3] only
+```
+
 </section>
 
 ## Instructions

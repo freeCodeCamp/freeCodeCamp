@@ -7,12 +7,21 @@ localeTitle: Adicionar imagens ao seu site
 ---
 
 ## Descrição
-<section id="description"> Você pode adicionar imagens ao seu site usando o elemento <code>img</code> e apontar para o URL de uma imagem específica usando o atributo <code>src</code> . Um exemplo disso seria: <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot;&gt;</code> Note que os elementos <code>img</code> são de fechamento automático. Todos os elementos <code>img</code> <strong>devem</strong> ter um atributo <code>alt</code> . O texto dentro de um atributo <code>alt</code> é usado para leitores de tela para melhorar a acessibilidade e é exibido se a imagem não for carregada. Nota: Se a imagem é puramente decorativa, usar um atributo <code>alt</code> vazio é uma prática recomendada. Idealmente, o atributo <code>alt</code> não deve conter caracteres especiais, a menos que seja necessário. Vamos adicionar um atributo <code>alt</code> ao nosso exemplo de <code>img</code> acima: <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot; alt=&quot;Author standing on a beach with two thumbs up.&quot;&gt;</code> </section>
+<section id="description"> Você pode adicionar imagens ao seu site usando o elemento <code>img</code> e apontar para o URL de uma imagem específica usando o atributo <code>src</code> Um exemplo disso seria: 
+ 
+ <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot;&gt;</code> 
+ 
+Note que os elementos <code>img</code> são de fechamento automático. 
+Todos os elementos <code>img</code> <strong>devem</strong> ter um atributo <code>alt</code> . O texto dentro de um atributo <code>alt</code> é usado para leitores de tela para melhorar a acessibilidade e é exibido se a imagem não for carregada.
+
+Nota: Se a imagem é puramente decorativa, usar um atributo <code>alt</code> vazio é uma prática recomendada. Idealmente, o atributo <code>alt</code> não deve conter caracteres especiais, a menos que seja necessário. Vamos adicionar um atributo <code>alt</code> ao nosso exemplo de <code>img</code> acima: <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot; alt=&quot;Author standing on a beach with two thumbs up.&quot;&gt;</code> </section>
 
 ## Instruções
-<section id="instructions"> Vamos tentar adicionar uma imagem ao nosso site: Insira uma tag <code>img</code> antes do elemento <code>h2</code> . Agora defina o atributo <code>src</code> para que aponte para este URL: <code>https://bit.ly/fcc-relaxing-cat</code> Por fim, não se esqueça de dar à sua imagem um texto <code>alt</code> . </section>
+<section id="instructions"> Vamos tentar adicionar uma imagem ao nosso site: 
+ 
+ Insira uma tag <code>img</code> antes do elemento <code>h2</code> . Agora defina o atributo <code>src</code> para que aponte para este URL: <code>https://bit.ly/fcc-relaxing-cat</code> Por fim, não se esqueça de dar à sua imagem um texto <code>alt</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +37,7 @@ tests:
 
 </section>
 
-## Desafio semente 
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
