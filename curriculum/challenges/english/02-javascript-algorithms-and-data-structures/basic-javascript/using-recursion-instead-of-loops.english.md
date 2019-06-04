@@ -19,6 +19,7 @@ function countToN(n) {
   }
 }
 ```
+
 The above function returns an array of consecutive integers starting with <code>1</code> through the number passed to the the function.
 Recursion has two fundamental parts: the base case, and the recursive loop. The base case tells the recursive function when to stop (in this example: when <code>n</code> is equal to <code>1</code>) and the recursive loop tells the function when to call itself, and with what parameters (in this example: calling itself with <code>n - 1</code>).
 </section>
