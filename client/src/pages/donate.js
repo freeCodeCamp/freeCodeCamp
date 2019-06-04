@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { StripeProvider, Elements } from 'react-stripe-elements';
-import { Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Link } from 'gatsby';
 
 import { stripePublicKey } from '../../config/env.json';
 
@@ -66,28 +67,32 @@ class DonatePage extends Component {
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
         <Spacer />
-        <Row>
-          <Col sm={8} smOffset={2} xs={12}>
-            <h2 className='text-center'>Become a Supporter</h2>
-            <DonateText />
-          </Col>
-          <Col sm={6} smOffset={3} xs={12}>
-            <hr />
-            <StripeProvider stripe={stripe}>
-              <Elements>
-                <DonateForm />
-              </Elements>
-            </StripeProvider>
-            <div className='text-center'>
-              <PoweredByStripe />
+        <Grid>
+          <Row>
+            <Col sm={8} smOffset={2} xs={12}>
+              <h2 className='text-center'>Become a Supporter</h2>
+              <DonateText />
+            </Col>
+            <Col sm={6} smOffset={3} xs={12}>
+              <hr />
+              <StripeProvider stripe={stripe}>
+                <Elements>
+                  <DonateForm />
+                </Elements>
+              </StripeProvider>
+              <div className='text-center'>
+                <PoweredByStripe />
+                <Spacer />
+                <Button onClick={this.toggleOtherOptions}>
+                  {`${
+                    showOtherOptions ? 'Hide' : 'Show'
+                  } other ways to donate.`}
+                </Button>
+              </div>
               <Spacer />
-              <Button onClick={this.toggleOtherOptions}>
-                {`${showOtherOptions ? 'Hide' : 'Show'} other ways to donate.`}
-              </Button>
-            </div>
-            <Spacer />
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+        </Grid>
         {showOtherOptions && <DonateOther />}
       </Fragment>
     );
