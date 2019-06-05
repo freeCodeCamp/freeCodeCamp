@@ -30,7 +30,7 @@ tests:
   - text: The finished <code>input</code> element should not have a closing tag.
     testString: assert(!code.match(/<input.*\/?>.*<\/input>/gi), 'The finished <code>input</code> element should not have a closing tag.');
   - text: The finished <code>input</code> element should have valid syntax.
-    testString: assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[\^'">\s]+))?)+\s*|\s*)\/?>/gi), 'The finished <code>input</code> element should have valid syntax.');
+    testString: assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[\^'">\s]+))?)+\s*|\s*)\/?>/gi) && !code.match(/<input.*\/?>\S+/gi), 'The finished <code>input</code> element should have valid syntax.');
 
 ```
 
