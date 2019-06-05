@@ -99,11 +99,14 @@ const store = Redux.createStore(reducer);
  let count = 0;
 // change code below this line
 
-store.subscribe( () =>
- {
- count++;
- }
-);
+const incrementCount = () => count++;
+store.subscribe(incrementCount);
+
+//store.subscribe( () =>
+ //{
+ //count++;
+ //}
+//);
 
 // change code above this line
 
