@@ -25,13 +25,15 @@ The <code>length</code> of the list should decrease by one every time an element
 ```yml
 tests:
   - text: Your <code>LinkedList</code> class should have a <code>remove</code> method.
-    testString: assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>remove</code> method.');
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()));
   - text: Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()));
   - text: Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})(), 'Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})());
   - text: Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})(), 'Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.');
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})());
+  - text: Your <code>remove</code> method should not change the linked list if the element does not exist in the linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('elephant'); return JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"dog","next":{"element":"kitten","next":null}}}'})());
 
 ```
 
@@ -87,74 +89,70 @@ function LinkedList() {
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-
 ```js
-class Node {
-  constructor (element) {
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function(element){
     this.element = element;
     this.next = null;
-  }
-}
+  };
 
-class LinkedList {
-  constructor () {
-    this._length = 0;
-    this._head = null;
-  }
+  this.size = function(){
+    return length;
+  };
 
-  head () {
-    return this._head;
-  }
+  this.head = function(){
+    return head;
+  };
 
-  size () {
-    return this._length;
-  }
-
-  add (element) {
-    const node = new Node(element);
-
-    if (this._head === null) {
-      this._head = node;
+  this.add = function(element){
+    var node = new Node(element);
+    if(head === null){
+        head = node;
     } else {
-      let current = this._head;
+        var currentNode = head;
 
-      while (current.next !== null) {
-        current = current.next;
-      }
+        while(currentNode.next){
+            currentNode  = currentNode.next;
+        }
 
-      current.next = node;
+        currentNode.next = node;
     }
 
-    ++this._length;
-  }
+    length++;
+  };
 
-  remove (element) {
-    if (this._head === null) return;
-
-    let previous;
-    let current = this._head;
-
-    while (current.next !== null && current.element !== element) {
-      previous = current;
-      current = current.next;
+  this.remove = function(element){
+    if (head === null) {
+      return;
     }
+    var previous;
+    var currentNode = head;
 
-    if (previous) {
-      previous.next = current.next;
+    while (currentNode.next !== null && currentNode.element !== element) {
+      previous = currentNode;
+      currentNode = currentNode.next;
+    }
+    
+    if (currentNode.next === null && currentNode.element !== element) {
+      return;
+    }
+    else if (previous) {
+      previous.next = currentNode.next;
     } else {
-      this._head = current.next;
+      head = currentNode.next;
     }
 
-    --this._length;
-  }
-}
+    length--;
+  };
+} 
 ```
 
 </section>
