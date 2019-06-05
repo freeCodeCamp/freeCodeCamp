@@ -9,7 +9,7 @@ challengeType: 1
 Before we move on to another data structure, let's get a couple of last bits of practice with linked lists.
 Let's write a <code>removeAt</code> method that removes the <code>element</code> at a given <code>index</code>. The method should be called <code>removeAt(index)</code>. To remove an <code>element</code> at a certain <code>index</code>, we'll need to keep a running count of each node as we move along the linked list.
 A common technique used to iterate through the elements of a linked list involves a <dfn>'runner'</dfn>, or sentinel, that 'points' at the nodes that your code is comparing. In our case, starting at the <code>head</code> of our list, we start with a <code>currentIndex</code> variable that starts at <code>0</code>. The <code>currentIndex</code> should increment by one for each node we pass.
-Just like our <code>remove(element)</code> method, we need to be careful not to orphan the rest of our list when we remove the node in our removeAt(index) method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.
+Just like our <code>remove(element)</code> method, which we covered in a previous lesson, we need to be careful not to orphan the rest of our list when we remove the node in our removeAt(index) method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.
 </section>
 
 ## Instructions
@@ -79,23 +79,6 @@ function LinkedList() {
     length++;
   };
 
-  this.remove = function(element){
-    var currentNode = head;
-    var previousNode;
-    if(currentNode.element === element){
-        head = currentNode.next;
-    } else {
-        while(currentNode.element !== element) {
-            previousNode = currentNode;
-            currentNode = currentNode.next;
-        }
-
-        previousNode.next = currentNode.next;
-    }
-
-    length --;
-  };
-
   // Only change code below this line
 
   // Only change code above this line
@@ -148,44 +131,28 @@ function LinkedList() {
     length++;
   };
 
-  this.remove = function (element) {
-    var currentNode = head;
-    var previousNode;
-    if (currentNode.element === element) {
-      head = currentNode.next;
-    } else {
-      while (currentNode.element !== element) {
-        previousNode = currentNode;
-        currentNode = currentNode.next;
-      }
-
-      previousNode.next = currentNode.next;
-    }
-
-    length--;
-  };
   this.removeAt = function (index) {
     var currentNode = head;
     var previous = head;
     var count = 0;
-    if (index >= length || index < 0 || length == 0) {
+    if (index >= length || index < 0) {
       return null;
     }
     if (index === 0) {
-      previous = head;
+      var removed = head.element;
       head = currentNode.next;
       length--;
-      return head.element;
+      return removed;
     } else {
-      while (count < index - 1) {
+      while (count < index) {
         previous = currentNode;
         currentNode = currentNode.next;
         count++;
       }
-      var removed = previous.next;
+      var removed = previous.next.element;
       previous.next = currentNode.next;
       length--;
-      return removed.element;
+      return removed;
     }
   };
 }

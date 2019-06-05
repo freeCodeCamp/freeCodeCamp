@@ -128,28 +128,22 @@ function LinkedList() {
     if (index > length || index < 0) {
       return false;
     }
-    if (!head) {
-      head = new Node(data);
+    var newNode = new Node(element);
+    var currentNode = head;
+    if (index === 0) {
+      head = newNode;
     } else {
-      var parent = null;
-      var current = head;
+      var previousNode = null;
       var i = 0;
-      while (current && i < index) {
-        parent = current;
-        current = current.next;
+      while (currentNode && i < index) {
+        previousNode = currentNode;
+        currentNode = currentNode.next;
         i++;
       }
-      if (current) {
-        var child = new Node(current.element);
-        child.next = current.next;
-        current.element = element;
-        current.next = child;
-        length++;
-      } else {
-        parent.next = new Node(element);
-        length++;
-      }
+      previousNode.next = newNode;
     }
+    newNode.next = currentNode;
+    length++;
   }
 }
 
