@@ -25,7 +25,7 @@
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
-
+  text-shadow: none;
 }
 
 .night pre[class*="language-"] code[class*="language-"] {
