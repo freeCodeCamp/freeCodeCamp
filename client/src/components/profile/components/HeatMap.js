@@ -69,11 +69,11 @@ function HeatMap({ calendar, streak }) {
           tooltipDataAttrs={value => {
             let valueCount;
             if (value && value.count === 1) {
-              valueCount = `${value.count} item`;
+              valueCount = `${value.count} point`;
             } else if (value && value.count > 1) {
-              valueCount = `${value.count} items`;
+              valueCount = `${value.count} points`;
             } else {
-              valueCount = 'No items';
+              valueCount = 'No points';
             }
             return {
               'data-tip': `<strong>${valueCount}</strong> on ${new Date(
@@ -93,10 +93,10 @@ function HeatMap({ calendar, streak }) {
       <FullWidthRow>
         <div className='streak-container'>
           <span className='streak'>
-            <strong>Longest Streak:</strong> {streak.longest || 1}
+            <strong>Longest Streak:</strong> {streak.longest || 0}
           </span>
           <span className='streak'>
-            <strong>Current Streak:</strong> {streak.current || 1}
+            <strong>Current Streak:</strong> {streak.current || 0}
           </span>
         </div>
       </FullWidthRow>
