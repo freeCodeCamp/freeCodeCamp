@@ -14,3 +14,7 @@ You should go over to the `package.json` file in your project. As mentioned in t
 ```code
 "author": "Jane Doe",
 ```
+
+### When using Glitch
+- Submitting the 'Edit' page, for example ```https://glitch.com/edit/#!/<projectName>?path=package.json:#:##``` will not work.
+- Click the 'Show' button (on the top left), click the "In a New Window" and submit the url of the new page, for example ```https://appname.glitch.me/```
