@@ -220,7 +220,8 @@ smallestCommons([1,5]);
 
 *   Create a new array filled with all numbers between the starting min and max.
 *   Immediately determine the LCM by reducing the array.
-*   Skipping the loops and sorting needed to calculate the GCD first is significantly more efficient in Firefox 65 (up to 9.69%). However, in Chrome it is marginal efficiency (+/- 1%).
+
+**Note:** Skipping the loops and sorting needed to calculate the GCD first is significantly more efficient in Firefox 65 (up to 9.69%). However, in Chrome it is marginal efficiency (+/- 1%).
 
 #### Relevant Links
 
