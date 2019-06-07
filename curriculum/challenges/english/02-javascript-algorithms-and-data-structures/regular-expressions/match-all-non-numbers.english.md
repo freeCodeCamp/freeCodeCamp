@@ -47,9 +47,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-let numString = "Your sandwich will be $5.00";
+let movieName = "2001: A Space Odyssey";
 let noNumRegex = /change/; // Change this line
-let result = numString.match(noNumRegex).length;
+let result = movieName.match(noNumRegex).length;
 ```
 
 </div>
@@ -62,8 +62,8 @@ let result = numString.match(noNumRegex).length;
 <section id='solution'>
 
 ```js
-let numString = "Your sandwich will be $5.00";
+let movieName = "2001: A Space Odyssey";
 let noNumRegex = /\D/g; // Change this line
-let result = numString.match(noNumRegex).length;
+let result = movieName.match(noNumRegex).length;
 ```
 </section>
