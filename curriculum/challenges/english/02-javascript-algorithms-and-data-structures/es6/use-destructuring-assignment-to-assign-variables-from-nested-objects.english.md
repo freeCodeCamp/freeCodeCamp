@@ -6,24 +6,36 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-We can similarly destructure <em>nested</em> objects into variables.
-Consider the following code:
+You can use the same principles from the previous two lessons to destructure values from nested objects.
+
+Using a similar object from previous examples:
 
 ```js
-const a = {
-  start: { x: 5, y: 6 },
-  end: { x: 6, y: -9 }
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
 };
-const { start: { x: startX, y: startY }} = a;
-console.log(startX, startY); // 5, 6
 ```
 
-In the example above, the variable <code>startX</code> is assigned the value of <code>a.start.x</code>.
+Here's how to extract the values into variables with the same name as they have in the object:
+
+```js
+const { johnDoe: { age, email }} = user;
+```
+
+And here's how you can assign new variable names when destructuring a nested object like this:
+
+```js
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+```
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorrow</code> and assign it to <code>maxOfTomorrow</code>.
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>lowToday</code> and <code>highToday</code> the values of <code>today.low</code> and <code>tomorrow.high</code> from the <code>LOCAL_FORECAST</code> object.
 </section>
 
 ## Tests
@@ -31,41 +43,39 @@ Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorr
 
 ```yml
 tests:
-  - text: <code>maxOfTomorrow</code> equals <code>84.6</code>
-    testString: assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, '<code>maxOfTomorrow</code> equals <code>84.6</code>');
-  - text: nested destructuring was used
-    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),'nested destructuring was used');
-
+  - text: You should remove the ES5 assignment syntax.
+    testString: assert(!code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) && !code.match(/highToday = LOCAL_FORECAST\.today.high/g))
+  - text: You should use destructuring to create the <code>lowToday</code> variable.
+    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST/g));
+  - text: You should use destructuring to create the <code>highToday</code> variable.
+    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST/g));
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
 const LOCAL_FORECAST = {
-  today: { min: 72, max: 83 },
-  tomorrow: { min: 73.3, max: 84.6 }
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
 };
 
-function getMaxOfTmrw(forecast) {
-  "use strict";
-  // change code below this line
-  const maxOfTomorrow = undefined; // change this line
-  // change code above this line
-  return maxOfTomorrow;
-}
+// change code below this line
+  
+const lowToday = LOCAL_FORECAST.today.low;
+const highToday = LOCAL_FORECAST.today.high;
 
-console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
+// change code above this line
+
+console.log(lowToday); // should be 64
+console.log(highToday); // should be 77
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
@@ -73,18 +83,18 @@ console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
 
 ```js
 const LOCAL_FORECAST = {
-  today: { min: 72, max: 83 },
-  tomorrow: { min: 73.3, max: 84.6 }
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
 };
 
-function getMaxOfTmrw(forecast) {
-  "use strict";
-  // change code below this line
-   const {tomorrow : {max : maxOfTomorrow}} = forecast; // change this line
-  // change code above this line
-  return maxOfTomorrow;
-}
+// change code below this line
+  
+const { today { low: lowToday, high: highToday }} = LOCAL_FORECAST;
 
-console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
+// change code above this line
+
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
 ```
 </section>
