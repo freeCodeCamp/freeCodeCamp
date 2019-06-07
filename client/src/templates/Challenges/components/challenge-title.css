@@ -1,17 +1,14 @@
 .challenge-title-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 1.45rem;
 }
 
 .challenge-title {
-  display: inline;
   padding: 0 15px;
-  margin: 0;
-  flex-grow: 2;
 }
 
 .challenge-title-wrap > Button {
-  flex-grow: 1;
+  align-self: flex-start;
 }
