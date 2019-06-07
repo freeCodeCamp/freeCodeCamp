@@ -38,7 +38,7 @@ The recursive version of <code>multiply</code> breaks down like this. In the sim
 ## Instructions
 <section id='instructions'>
 
-Write a recursive function, <code>sum(arr, n)</code>, that sums the 0th to nth elements of an array, <code>arr</code>.
+Write a recursive function, <code>sum(arr, n)</code>, that creates the sum of the first <code>n</code> elements of an array <code>arr</code>.
 
 </section>
 
