@@ -7,7 +7,7 @@ videoUrl: 'https://www.freecodecamp.org/news/how-recursion-works-explained-with-
 
 ## Description
 <section id='description'>
-Recursion is the concept that a solution can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the 0th to nth elements of an array. Using a <code>for</code> loop, you could do this:
+Recursion is the concept that a solution can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first <code>n</code> elements in an array to create the product of the elements. Using a <code>for</code> loop, you could do this:
 
 ```js
   function multiply(arr, n) {
