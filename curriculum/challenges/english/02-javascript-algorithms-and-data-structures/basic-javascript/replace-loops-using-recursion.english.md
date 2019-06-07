@@ -31,7 +31,9 @@ However, notice that <code>multiply(arr, n) == multiply(arr, n - 1) * arr[n]</co
   }
 ```
 
-The recursive version of <code>multiply</code> breaks down like this. In the simplest case, where <code>n = 0</code>, it returns the result, <code>arr[0]</code>. For larger values of <code>n</code>, it calls itself, but with <code>n - 1</code>. That function call is evaluated in the same way, calling <code>multiply</code> again until <code>n = 0</code>.  At this point, all the functions can return and the original <code>multiply</code> returns the answer.  
+The recursive version of <code>multiply</code> breaks down like this. In the <dfn>base case</dfn>, where <code>n <= 0</code>, it returns the result, <code>arr[0]</code>. For larger values of <code>n</code>, it calls itself, but with <code>n - 1</code>. That function call is evaluated in the same way, calling <code>multiply</code> again until <code>n = 0</code>.  At this point, all the functions can return and the original <code>multiply</code> returns the answer.  
+
+<strong>Note:</strong> Recursive functions must have a base case when they return without calling the function again (in this example, when <code>n <= 0</code>), otherwise they can never finish executing.
 
 </section>
 
