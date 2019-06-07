@@ -4,13 +4,7 @@ import { Provider } from 'react-redux';
 
 import { createStore } from './src/redux/createStore';
 import AppMountNotifier from './src/components/AppMountNotifier';
-
-import {
-  CertificationLayout,
-  DefaultLayout,
-  GuideLayout
-} from './src/components/layouts';
-import GuideNavMenu from './src/components/layouts/components/guide/NavMenu';
+import layoutSelector from './utils/gatsby/layoutSelector';
 
 const store = createStore();
 
@@ -26,33 +20,6 @@ wrapRootElement.propTypes = {
   element: PropTypes.any
 };
 
-export const wrapPageElement = ({ element, props }) => {
-  const {
-    location: { pathname }
-  } = props;
-  if (pathname === '/') {
-    return <DefaultLayout landingPage={true}>{element}</DefaultLayout>;
-  }
-  if (/^\/certification(\/.*)*/.test(pathname)) {
-    return <CertificationLayout>{element}</CertificationLayout>;
-  }
-  if (/^\/guide(\/.*)*/.test(pathname)) {
-    return (
-      <DefaultLayout navigationMenu={<GuideNavMenu />}>
-        <GuideLayout>{element}</GuideLayout>
-      </DefaultLayout>
-    );
-  }
-  if (/^\/learn(\/.*)*/.test(pathname)) {
-    return <DefaultLayout showFooter={false}>{element}</DefaultLayout>;
-  }
-  return <DefaultLayout>{element}</DefaultLayout>;
-};
-
-wrapPageElement.propTypes = {
-  element: PropTypes.any,
-  location: PropTypes.objectOf({ pathname: PropTypes.string }),
-  props: PropTypes.any
-};
+export const wrapPageElement = layoutSelector;
 
 export const disableCorePrefetching = () => true;
