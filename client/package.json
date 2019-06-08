@@ -63,6 +63,7 @@
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
     "rxjs": "^6.4.0",
+    "sanitize-html": "^1.20.0",
     "sass.js": "^0.10.13",
     "store": "^2.0.12",
     "validator": "^10.11.0",
