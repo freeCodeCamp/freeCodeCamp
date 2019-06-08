@@ -13,7 +13,7 @@ import {
   onlineStatusChange,
   isOnlineSelector
 } from '../../redux';
-import { flashMessagesSelector, removeFlashMessage } from '../Flash/redux';
+import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
 import { isBrowser } from '../../../utils';
 
@@ -58,14 +58,12 @@ const metaKeywords = [
 const propTypes = {
   children: PropTypes.node.isRequired,
   fetchUser: PropTypes.func.isRequired,
-  flashMessages: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      type: PropTypes.string,
-      message: PropTypes.string
-    })
-  ),
-  hasMessages: PropTypes.bool,
+  flashMessage: PropTypes.shape({
+    id: PropTypes.string,
+    type: PropTypes.string,
+    message: PropTypes.string
+  }),
+  hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
@@ -78,12 +76,12 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  flashMessagesSelector,
+  flashMessageSelector,
   isOnlineSelector,
-  (isSignedIn, flashMessages, isOnline) => ({
+  (isSignedIn, flashMessage, isOnline) => ({
     isSignedIn,
-    flashMessages,
-    hasMessages: !!flashMessages.length,
+    flashMessage,
+    hasMessage: !!flashMessage.message,
     isOnline
   })
 );
@@ -128,8 +126,8 @@ class DefaultLayout extends Component {
   render() {
     const {
       children,
-      hasMessages,
-      flashMessages = [],
+      hasMessage,
+      flashMessage,
       isOnline,
       isSignedIn,
       landingPage,
@@ -162,8 +160,8 @@ class DefaultLayout extends Component {
             className={`default-layout ${landingPage ? 'landing-page' : ''}`}
           >
             <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
-            {hasMessages ? (
-              <Flash messages={flashMessages} onClose={removeFlashMessage} />
+            {hasMessage && flashMessage ? (
+              <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
             ) : null}
             {children}
           </div>
