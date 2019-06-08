@@ -89,6 +89,12 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+$x: 1;
+@while $x <= 10 {
+    .text-#{$x} {
+        font-size: 5*$x;
+    }
+    $x: $x + 1;
+}
 ```
 </section>
