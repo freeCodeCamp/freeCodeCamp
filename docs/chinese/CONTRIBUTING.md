@@ -60,7 +60,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 如果您找不到关于您想要撰写的主题的存根，则可以开一个PR，创建有关存根并包含您的草稿文章。
 
-如果您想帮助改进指南文章，请参阅[如何编辑指南文章](/docs/how-to-work-on-guide-articles.md)。
+如果您想帮助改进指南文章，请参阅[如何编辑指南文章](/docs/chinese/how-to-work-on-guide-articles.md)。
 
 ### 创建，更新编码挑战和修复其中的错误
 
@@ -100,7 +100,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 如果您对于以上相关问有任何疑问，请在相关的主题上向我们提问，我们将很乐意的为您澄清。您可以联系我们的平台开发团队中的Mrugesh Mohapatra [`@isedadead`](https://github.com/raisedadead) 或Stuart Taylor [`@bouncey`](https://github.com/bouncey) 为您提供帮助。
 
-如果您想帮助我们改进代码库，请参阅[如何在本地启动freeCodeCamp](/docs/how-to-setup-freecodecamp-locally.md)。
+如果您想帮助我们改进代码库，请参阅[如何在本地启动freeCodeCamp](/docs/chinese/how-to-setup-freecodecamp-locally.md)。
 
 ## 常见的疑问
 
