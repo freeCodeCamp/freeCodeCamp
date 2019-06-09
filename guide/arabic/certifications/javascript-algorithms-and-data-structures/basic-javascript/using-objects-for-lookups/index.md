@@ -6,44 +6,46 @@ localeTitle: استخدام كائنات لعمليات البحث
 
 هنا هو المثال:
 
- `// Setup 
- function phoneticLookup(val) { 
-  var result = ""; 
- 
-  // Only change code below this line 
-  switch(val) { 
-    case "alpha": 
-      result = "Adams"; 
-      break; 
-    case "bravo": 
-      result = "Boston"; 
-      break; 
-    case "charlie": 
-      result = "Chicago"; 
-      break; 
-    case "delta": 
-      result = "Denver"; 
-      break; 
-    case "echo": 
-      result = "Easy"; 
-      break; 
-    case "foxtrot": 
-      result = "Frank"; 
-  } 
- 
-  // Only change code above this line 
-  return result; 
- } 
- 
- // Change this value to test 
- phoneticLookup("charlie"); 
-` 
+```javascript
+// Setup
+function phoneticLookup(val) {
+  var result = "";
+
+  // Only change code below this line
+  switch(val) {
+    case "alpha":
+      result = "Adams";
+      break;
+    case "bravo":
+      result = "Boston";
+      break;
+    case "charlie":
+      result = "Chicago";
+      break;
+    case "delta":
+      result = "Denver";
+      break;
+    case "echo":
+      result = "Easy";
+      break;
+    case "foxtrot":
+      result = "Frank";
+  }
+
+  // Only change code above this line
+  return result;
+}
+
+// Change this value to test
+phoneticLookup("charlie");
+``` 
 
 وإليك الحل: نحن لا نغير أي شيء هنا:
 
- `function phoneticLookup(val) { 
-  var result = ""; 
-` 
+```javascript
+function phoneticLookup(val) {
+  var result = "";
+``` 
 
 نحن بحاجة إلى تحويل بيان التبديل إلى كائن. نقل كل قيم `case` إلى خصائص الكائن:
 
