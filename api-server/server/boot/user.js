@@ -210,7 +210,7 @@ function createPostReportUserProfile(app) {
     } else if (!report || report === '') {
       return res.json({
         type: 'danger',
-        message: 'Your report cannot be empty. Please add information.'
+        message: 'Your report cannot be empty. Please add details for us to be able to address your concern.'
       });
     }
     return Email.send$(
