@@ -21,16 +21,18 @@ localeTitle: أرقام المباراة ورسائل الأبجدية
 
 هل تذكر تمكين إشارات regexp مثل "i" لتجاهل الحالة و "g" لإرجاع قيم متعددة؟ إذا كان الأمر كذلك ، فهل تقوم بتضمين كل من مطابقة الأحرف للأرقام والحروف؟
 
- `let regexp = /[a-z1-100]/ig 
- // above code returns all characters from A to Z, along with all numbers from 1 to 100 
- // this includes the letter A and Z and the numbers 1 and 100 
-` 
+```javascript
+let regexp = /[a-z1-100]/ig
+// above code returns all characters from A to Z, along with all numbers from 1 to 100
+// this includes the letter A and Z and the numbers 1 and 100
+``` 
 
 ### تنبيه المفسد - الحل إلى الأمام
 
 ## حل
 
- `let quoteSample = "Blueberry 3.141592653s are delicious."; 
- let myRegex = /[h-s2-6]/ig; // Change this line 
- let result = quoteSample.match(myRegex); // Change this line 
-`
+```javascript
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/ig; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+```

@@ -102,8 +102,9 @@ localeTitle: تسعى وتدمر
 
 ## الحل المتقدم للكود:
 
- `const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i)); 
-` 
+```javascript
+const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i));
+``` 
 
 ### شرح الشفرة:
 
