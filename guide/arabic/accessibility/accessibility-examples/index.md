@@ -16,9 +16,9 @@ localeTitle: أمثلة على سهولة الوصول
 
 1.  إنشاء "تخطي صلة الملاحة" التي تعيش مباشرة تحت افتتاح `body` علامة.
 
- `
-<a tabindex="0" class="skip-link" href="#main-content">Skip to Main Content</a> 
-` 
+```html
+<a tabindex="0" class="skip-link" href="#main-content">Skip to Main Content</a>
+``` 
 
 `tabindex="0"` يضاف للتأكد من أن الوصلة هي لوحة المفاتيح قابلة للتركيز على جميع المتصفحات. يمكن العثور على مزيد من المعلومات حول إمكانية الوصول إلى لوحة المفاتيح على [webaim.org](https://webaim.org/techniques/keyboard/tabindex) .
 
