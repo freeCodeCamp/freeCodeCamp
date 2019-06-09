@@ -1,5 +1,6 @@
 // import { inspect } from 'util';
 // import _ from 'lodash/fp';
+import dedent from 'dedent';
 import accepts from 'accepts';
 
 import { homeLocation } from '../../../config/env';
@@ -26,7 +27,8 @@ export default function prodErrorHandler() {
 
     const redirectTo = handled.redirectTo || `${homeLocation}/`;
     const message =
-      handled.message || 'Oops! Something went wrong. Please try again in a moment.';
+      handled.message || dedent`
+    Oops! Something went wrong. Please try again in a moment.`;
 
     if (isDev) {
       console.error(err);

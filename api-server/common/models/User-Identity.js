@@ -50,9 +50,9 @@ export default function(UserIdent) {
         new Error('invalid or empty email recieved from auth0'),
         {
           message: dedent`
-          ${provider} did not return a valid email address.
-          Please try again with a different account that has an
-    email associated with it or modify permissions to allow us to view your email.
+    ${provider} did not return a valid email address.
+    Please try again with a different account that has an
+    email associated with it your update your settings on ${provider}, for us to be able to retrieve your email.
           `,
           type: 'info',
           redirectTo: '/'
