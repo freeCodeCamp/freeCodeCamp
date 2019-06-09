@@ -8,15 +8,19 @@
 
 .footer .col-header {
   padding-bottom: 5px;
+  padding-left: 5px;
   font-weight: bold;
 }
 
 .footer a:not([class*='inline']) {
   display: block;
+  padding-left: 5px
 }
 
 .footer a:hover {
-  background-color: #E0E0E0;
+  outline-offset: 1px;
+  outline: 1px dashed #A0A0A0;
+  background-color: #ffbe41;
 }
 
 .night .footer {
@@ -30,5 +34,6 @@
 
 .night .footer a:hover {
   color: #606f7b;
-  background-color: #2A2A2A;
+  outline-offset: 1px;
+  outline: 1px dashed #A0A0A0;
 }
