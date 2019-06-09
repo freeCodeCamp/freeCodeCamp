@@ -10,32 +10,35 @@ localeTitle: Array.prototype.concat
 
 ### بناء الجملة
 
- `const newArray = array.concat(value1, value2, value3...); 
-` 
+```javascript
+const newArray = array.concat(value1, value2, value3...);
+``` 
 
 ### أمثلة
 
 #### تسلسل صفيفتين
 
- `var cold = ['Blue', 'Green', 'Purple']; 
- var warm = ['Red', 'Orange', 'Yellow']; 
- 
- var result = cold.concat(warm); 
- 
- console.log(result); 
- // results in ['Blue', 'Green', 'Purple', 'Red', 'Orange', 'Yellow']; 
-` 
+```javascript
+var cold = ['Blue', 'Green', 'Purple'];
+var warm = ['Red', 'Orange', 'Yellow'];
+
+var result = cold.concat(warm);
+
+console.log(result);
+// results in ['Blue', 'Green', 'Purple', 'Red', 'Orange', 'Yellow'];
+``` 
 
 #### قيمة متسلسلة إلى صفيف
 
- `const odd = [1, 3, 5, 7, 9]; 
- const even = [0, 2, 4, 6, 8]; 
- 
- const oddAndEvenAndTen = odd.concat(even, 10); 
- 
- console.log(oddAndEvenAndTen); 
- // results in [1, 3, 5, 7, 9, 0, 2, 4, 6, 8, 10]; 
-` 
+```javascript
+const odd = [1, 3, 5, 7, 9];
+const even = [0, 2, 4, 6, 8];
+
+const oddAndEvenAndTen = odd.concat(even, 10);
+
+console.log(oddAndEvenAndTen);
+// results in [1, 3, 5, 7, 9, 0, 2, 4, 6, 8, 10];
+``` 
 
 #### معلومات اكثر:
 
