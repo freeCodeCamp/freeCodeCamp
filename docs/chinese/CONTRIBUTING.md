@@ -16,7 +16,7 @@
 
 freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很感谢与欢迎您的贡献。
 
-我们严格执行[“行为准则”]（https://www.freecodecamp.org/code-of-conduct）。请您花一点时间阅读它。它只有196个字。
+我们严格执行[“行为准则”](https://www.freecodecamp.org/code-of-conduct)。请您花一点时间阅读它。它只有196个字。
 
 祝您贡献愉快🎉！
 
@@ -56,11 +56,11 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 我们欢迎您撰写这些文章的帮助。作为作者你不必是一个主题的专家 - 整个指南是开源的，所以即使你犯了错误，另一个贡献者最终会纠正它。
 
-您可以在我们的[指南网站]（https://www.freecodecamp.org/guide）上找到一个“存根文章”，写下您的文章，然后建立pull request以替换存根文章。 [pull request]（https://help.github.com/articles/about-pull-requests/）是您建议更改的方式。它让其他人了解您的更改，审核并采用它们。
+您可以在我们的[指南网站](https://www.freecodecamp.org/guide)上找到一个“存根文章”，写下您的文章，然后建立pull request以替换存根文章。 [pull request](https://help.github.com/articles/about-pull-requests/)是您建议更改的方式。它让其他人了解您的更改，审核并采用它们。
 
 如果您找不到关于您想要撰写的主题的存根，则可以开一个PR，创建有关存根并包含您的草稿文章。
 
-如果您想帮助改进指南文章，请参阅[如何编辑指南文章]（/docs/how-to-work-on-guide-articles.md）。
+如果您想帮助改进指南文章，请参阅[如何编辑指南文章](/docs/how-to-work-on-guide-articles.md)。
 
 ### 创建，更新编码挑战和修复其中的错误
 
