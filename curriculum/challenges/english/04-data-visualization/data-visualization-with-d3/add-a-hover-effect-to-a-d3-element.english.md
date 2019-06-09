@@ -87,6 +87,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+.attr('class', 'bar')
 ```
 </section>
