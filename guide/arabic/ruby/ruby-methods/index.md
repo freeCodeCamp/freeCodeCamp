@@ -16,24 +16,27 @@ localeTitle: طرق روبي
 
 #### طريقة بسيطة
 
- `def my_method 
-  code goes here 
- end 
-` 
+```
+def my_method
+  code goes here
+end
+``` 
 
 #### معلمة قبول الطريقة
 
- `def my_method (param1, param2) 
-  param1 + param2 
- end 
-` 
+```
+def my_method (param1, param2)
+  param1 + param2
+end
+``` 
 
 #### طريقة paramter المعرفة مسبقًا (تُستخدم المعلمات المحددة مسبقًا عند عدم تقديم أي منها)
 
- `def my_method (param1 = parameter1, param2 = parameter2) 
-  parm1 + parm2 
- end 
-` 
+```
+def my_method (param1 = parameter1, param2 = parameter2)
+  parm1 + parm2
+end
+``` 
 
 ## العودة في أساليب
 
