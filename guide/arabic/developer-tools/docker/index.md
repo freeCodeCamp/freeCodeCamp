@@ -34,10 +34,11 @@ Docker هو برنامج مفتوح المصدر يهدف إلى تسهيل نش
 
 بمجرد تثبيت حاول هذا
 
- `$ docker run hello-world 
- 
- Hello from Docker! 
-` 
+```
+$ docker run hello-world
+
+Hello from Docker!
+``` 
 
 تظهر هذه الرسالة أن التثبيت الخاص بك يبدو أنه يعمل بشكل صحيح.
 

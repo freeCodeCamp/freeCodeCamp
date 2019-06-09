@@ -8,16 +8,18 @@ localeTitle: حلقة الوصل
 
 بناء الجملة العام:
 
- `target:link 
-` 
+```css
+target:link
+``` 
 
 ## مثال
 
- `/* Selects any <a> that has not been visited yet */ 
- a:link { 
-    color: red; 
- } 
-` 
+```css
+/* Selects any <a> that has not been visited yet */
+a:link {
+    color: red;
+}
+``` 
 
 #### معلومات اكثر:
 
