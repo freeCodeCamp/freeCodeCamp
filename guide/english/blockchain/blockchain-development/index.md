@@ -28,9 +28,9 @@ We have similar goals with blockchain technology. One major use for blockchain i
 
 
 ### Resources
--[Bitcoin Developer Guide](#https://bitcoin.org/en/developer-guide)
+-[Bitcoin Developer Guide](https://bitcoin.org/en/developer-guide)
 
--[Ethereum Development Tutorial](#https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial)
+-[Ethereum Development Tutorial](https://github.com/ethereum/wiki/wiki/Ethereum-Development-Tutorial)
 
--[Solidity Documentation](#https://solidity.readthedocs.io/en/v0.5.3/)
+-[Solidity Documentation](https://solidity.readthedocs.io/en/v0.5.3/)
 
