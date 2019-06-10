@@ -8,6 +8,7 @@
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
