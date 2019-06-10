@@ -4,16 +4,16 @@ title: Blockchain Development
 
 #### Blockchain engineering can break down into several subcategories, each with their own set of tools and goals:
 
-1. Blockchain Development
-2. Development on Blockchain
+1. Development **_of_** Blockchain
+2. Development **_on_** Blockchain
 3. Blockchain Applications
 
-#### BLOCKCHAIN DEVELOPMENT
+#### DEVELOPMENT **_OF_** BLOCKCHAIN
 One facet of blockchain engineering is the actual development of blockchain technology. This includes doing things like contributing to the codebase of a major chain to, say, change their consensus protocol, or building a new blockchain entirely. This task is best thought of as language-agnostic, which is the case in many situations. Because blockchain is a digital ledger, however, it’s more of a concept than a “program”. This means that one can build “a blockchain” using any language. For example, Ethereum can be (and has been) written in Python, Go, Java, etc., and each one of these versions is called an ‘implementation’. All of them communicate with the Ethereum network despite existing in their own language and running their own client code.
 
 A person interested in getting into this side of blockchain engineering can do things like learn about the philosophies underpinning blockchain technology and use their chosen language to build a new protocol from the ground up, or pick an implementation of an existing blockchain and use the correct language to contribute to the codebase. You could even build a new implementation of an existing protocol in a language that hasn’t been used yet!
 
-#### DEVELOPMENT ON BLOCKCHAIN
+#### DEVELOPMENT **_ON_** BLOCKCHAIN
 Separate and distinct from this is doing development work on a given blockchain platform. Just because a chain has been implemented and runs on nodes around the world doesn’t mean that there is nothing else we can do with it. Blockchain has the power to run smart contracts (self-executable contracts, written in and triggered by code), run decentralized applications (dApps), even power entire protocols like the world wide web. Just as we use programs to write programs (for example, you likely use an IDE to write mobile apps), we can use blockchain to write blockchain “programs”. But building the IDE is very different from building the mobile app, and blockchain is no different.
 Take, for example, a project like Bitcoin. Bitcoin was originally implemented in C++ (and is now in Java, Python, etc.), but this is nothing more than a client that runs the protocol. But what if you want to use smart contracts (a popular feature of many blockchain protocols)? Or build a dApp? This is a different task with a different set of tools. 
 The best way to think about this is to think of blockchains as a platform. To take a more concrete example than IDEs, most people are familiar with a tool like Microsoft Excel. Excel first existed as an idea (“a relational spreadsheet”), and was then implemented as a real program using such languages as assembler, C, C++, etc. (although, for simplicity’s sake, I’ll pretend that Excel only has a C++ implementation). This maps onto blockchain in that the idea of a “digital ledger” has been implemented using various languages like Python or Go. But there are also things that can be done with Excel that require languages beyond C++. Formulas use their own language, and despite the fact that Excel has been implemented in C++, using C++ to write a vLookup or summation formula would not go well. This is because using these aspects of Excel requires a completely different syntax!
