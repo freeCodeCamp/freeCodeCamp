@@ -132,7 +132,6 @@ class DefaultLayout extends Component {
       isSignedIn,
       landingPage,
       navigationMenu,
-      pathname,
       removeFlashMessage,
       showFooter = true
     } = this.props;
@@ -151,7 +150,7 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <WithInstantSearch pathname={pathname}>
+        <WithInstantSearch>
           <Header
             disableSettings={landingPage}
             navigationMenu={navigationMenu}

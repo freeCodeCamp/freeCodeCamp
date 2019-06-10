@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { Index, PoweredBy } from 'react-instantsearch-dom';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
@@ -18,6 +19,7 @@ class SearchPage extends Component {
   render() {
     return (
       <Fragment>
+        <Helmet title='Search | freeCodeCamp.org' />
         <Index indexName='challenges' />
         <Index indexName='guides' />
         <Index indexName='youtube' />
