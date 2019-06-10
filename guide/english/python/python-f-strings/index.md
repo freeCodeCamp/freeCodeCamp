@@ -59,6 +59,7 @@ print(func)
 ```
 The sum of 3 + 5 is 8
 ```
+
 ### Joining the contents of a collection within a string:
 
 #### Input
@@ -74,9 +75,10 @@ print(list_str)
 ```
 List of fruits: Apple, Banana, Pear
 ```
+
 ### Convert an integer to 8-bit binary
 
-### Input
+#### Input
 
 ```python
 num = 42
@@ -84,13 +86,14 @@ num = 42
 print(f'The binary of {num} is {num:08b}')
 ```
 
-### Output
+#### Output
 ```
 The binary of 42 is 00101010
 ```
-# Using object with f-strings
 
-# Input
+### Using Object with f-strings
+
+#### Input
 
 ```python
 class Book:
@@ -107,7 +110,7 @@ book = Book("A Clash of Kings", "George R. R. Martin")
 print(f"{book}")
 ```
 
-# Output
+##### Output
 ```
 A Clash of Kings by George R. R. Martin
 ```
