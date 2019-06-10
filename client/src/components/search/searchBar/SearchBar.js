@@ -85,7 +85,7 @@ class SearchBar extends Component {
     if (query) {
       updateSearchQuery(query);
     }
-    return navigate('/search');
+    return navigate(`/search${query ? `?query=${query}` : ''}`);
   }
 
   render() {
