@@ -37,7 +37,7 @@ Find .
 ```yml
 tests:
   - text: <code>euler331()</code> should return 467178235146843500.
-    testString: 'assert.strictEqual(euler331(), 467178235146843500, "<code>euler331()</code> should return 467178235146843500.");'
+    testString: assert.strictEqual(euler331(), 467178235146843500, '<code>euler331()</code> should return 467178235146843500.');
 
 ```
 

@@ -1,5 +1,8 @@
-##localeTitle: undefined
- نظام الملفات
+---
+title: File System
+localeTitle: نظام الملفات
+---
+## نظام الملفات
 
 تسمح لك وحدة نظام الملفات Node.js بالعمل مع نظام الملفات على جهاز الكمبيوتر الخاص بك.
 
@@ -7,8 +10,8 @@
 
 من أجل تضمين وحدة نمطية ، استخدم الدالة `require()` مع اسم الوحدة.
 
- `const fs = require('fs'); 
-` 
+ `const fs = require('fs');
+`
 
 الاستخدام الشائع لوحدة نظام الملفات:
 
@@ -24,16 +27,16 @@
 
 رمز Node.js لقراءة الملف من جهاز الكمبيوتر وإرجاع المحتوى إلى وحدة التحكم.
 
- `const fs = require('fs'); 
- fs.readFile('input.txt', 'utf-8', (err, data) => { 
-  if(err){ 
-  console.log(err); 
-  } 
-  else{ 
-  console.log("Content present in input.txt file : " + data.toString()); 
-  } 
- }); 
-` 
+ `const fs = require('fs');
+ fs.readFile('input.txt', 'utf-8', (err, data) => {
+  if(err){
+  console.log(err);
+  }
+  else{
+  console.log("Content present in input.txt file : " + data.toString());
+  }
+ });
+`
 
 يقرأ الكود أعلاه ملف _input.txt_ من جهاز الكمبيوتر ويعيد المحتوى إلى وحدة التحكم.
 
@@ -52,16 +55,16 @@ _ملاحظة_ : يجب أن يكون ملف input.txt موجودًا في نف�
 
 رمز Node.js لكتابة المحتوى في ملف.
 
- `const fs = require('fs'); 
- fs.writeFile('output.txt', "New content added", (err, data) => { 
-    if(err){ 
-        console.log(err); 
-    } 
-    else{ 
-        console.log("The file is saved"); 
-    } 
- }); 
-` 
+ `const fs = require('fs');
+ fs.writeFile('output.txt', "New content added", (err, data) => {
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("The file is saved");
+    }
+ });
+`
 
 تعمل الشفرة الموضحة أعلاه على إنشاء ملف _output.txt_ ومحتوى إضافة محتوى _جديد تمت إضافته_ إليه.
 

@@ -174,7 +174,7 @@ CSS断点可以被认为是响应式网页设计的核心，因为它们定义�
 
 您还可以设置最小和最大宽度，让您使用不同的范围进行实验。这个大致触发了smar-phone和更大的桌面和显示器尺寸
 
-```code
+```css
 @media only screen and (min-width: 700px) and (max-width: 1500px) { 
   something { 
     something: something; 

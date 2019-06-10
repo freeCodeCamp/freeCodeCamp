@@ -5,41 +5,41 @@ title: Bubble Sort
 
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
 
-This is a very slow sorting algorithm compared to algorithms like quicksort, with worst-case complexity O(n^2). However, the tradeoff is that bubble sort is one of the easiest sorting algorithms to implement from scratch.
+This is a very slow sorting algorithm compared to algorithms like quicksort, with worst-case complexity O(n^2). However, the tradeoff is that bubble sort is one of the easiest sorting algorithms to implement from scratch. As a result, bubble sort algorithm is commonly taught as the first sorting algorthim in Algorithm and Data structure classes. From technical perspective, bubble sort is reasonable for sorting small-sized arrays or specially when executing sort algorithms on computers with remarkably limited memory resources.
 
 ### Example:
 
 #### First Pass:
-( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
+( **5 1** 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
 
-( 1 5 4 2 8 ) –> ( 1 4 5 2 8 ), Swap since 5 > 4
+( 1 **5 4** 2 8 ) –> ( 1 4 5 2 8 ), Swap since 5 > 4
 
-( 1 4 5 2 8 ) –> ( 1 4 2 5 8 ), Swap since 5 > 2
+( 1 4 **5 2** 8 ) –> ( 1 4 2 5 8 ), Swap since 5 > 2
 
-( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+( 1 4 2 **5 8** ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
 
 
 #### Second Pass:
 
-( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )
+( **1 4** 2 5 8 ) –> ( 1 4 2 5 8 )
 
-( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2
+( 1 **4 2** 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2
 
-( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 **4 5** 8 ) –> ( 1 2 4 5 8 )
 
-( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 **5 8** ) –> ( 1 2 4 5 8 )
 
 Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
 
 #### Third Pass:
 
-( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( **1 2** 4 5 8 ) –> ( 1 2 4 5 8 )
 
-( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 **2 4** 5 8 ) –> ( 1 2 4 5 8 )
 
-( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 **4 5** 8 ) –> ( 1 2 4 5 8 )
 
-( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 **5 8** ) –> ( 1 2 4 5 8 )
 
 #### Properties
 - Space complexity: O(1)
@@ -55,11 +55,11 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 
 ### Example in JavaScript
 ```js
-let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9];
-let sorted = false
+let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9],
+    sorted = false;
 
 while(!sorted) {
-  sorted = true
+  sorted = true;
   for(var i=0; i < arr.length; i++) {
     if(arr[i] < arr[i-1]) {
       let temp = arr[i];
@@ -72,7 +72,7 @@ while(!sorted) {
 ```
 ### Example in Java.
 ```java
-public class bubble-sort {
+public class BubbleSort {
     static void sort(int[] arr) {
         int n = arr.length;
         int temp = 0;
@@ -149,20 +149,76 @@ func bubbleSort(_ inputArray: [Int]) -> [Int] {
 ### Example in Python
 ```py
 
-def bubblesort( A ):
-  for i in range( len( A ) ):
-    for k in range( len( A ) - 1, i, -1 ):
-      if ( A[k] < A[k - 1] ):
-        swap( A, k, k - 1 )
- 
-def swap( A, x, y ):
-  tmp = A[x]
-  A[x] = A[y]
-  A[y] = tmp
+def bubbleSort(arr): 
+    n = len(arr) 
+    for i in range(n):
+        for j in range(0, n-i-1):
+                if arr[j] > arr[j+1] : 
+                        arr[j], arr[j+1] = arr[j+1], arr[j]
+    print(arr)
 
 ```
+
+### Example in PHP
+```php
+
+function bubble_sort($arr) {
+    $size = count($arr)-1;
+    for ($i=0; $i<$size; $i++) {
+        for ($j=0; $j<$size-$i; $j++) {
+            $k = $j+1;
+            if ($arr[$k] < $arr[$j]) {
+                // Swap elements at indices: $j, $k
+                list($arr[$j], $arr[$k]) = array($arr[$k], $arr[$j]);
+            }
+        }
+    }
+    return $arr;// return the sorted array
+}
+
+$arr = array(1,3,2,8,5,7,4,0);
+print("Before sorting");
+print_r($arr);
+
+$arr = bubble_sort($arr);
+print("After sorting by using bubble sort");
+print_r($arr);
+
+```
+
+### Example in C
+```c
+#include <stdio.h>
+
+int BubbleSort(int array[], int n);
+
+int main(void) {
+  int arr[] = {10, 2, 3, 1, 4, 5, 8, 9, 7, 6};
+  BubbleSort(arr, 10);
+
+  for (int i = 0; i < 10; i++) {
+    printf("%d", arr[i]);
+  }
+  return 0;
+}
+int BubbleSort(int array[], n)
+{
+for (int i = 0 ; i < n - 1; i++)
+  {
+    for (int j = 0 ; j < n - i - 1; j++)     //n is length of array
+    {
+      if (array[j] > array[j+1])      // For decreasing order use 
+      {
+        int swap   = array[j];
+        array[j]   = array[j+1];
+        array[j+1] = swap;
+      }
+    }
+  }
+}
+```
+
 ### More Information
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 - [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
 - [Bubble Sort Algorithm - CS50](https://youtu.be/Ui97-_n5xjo)
 - [Bubble Sort Algorithm - GeeksForGeeks (article)](http://www.geeksforgeeks.org/bubble-sort)

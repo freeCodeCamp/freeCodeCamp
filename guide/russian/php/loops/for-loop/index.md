@@ -52,7 +52,7 @@ localeTitle: Для цикла
 
 Это приведет к выводу:
 
-```txt
+```shell
 int(1) int(2) int(3) NULL 
 ```
 
