@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { StripeProvider, Elements } from 'react-stripe-elements';
-import { Row, Col } from '@freecodecamp/react-bootstrap';
-import { Link } from 'gatsby';
+import { Row, Col, Button } from '@freecodecamp/react-bootstrap';
 
 import { stripePublicKey } from '../../config/env.json';
 
 import Spacer from '../components/helpers/Spacer';
+import DonateOther from '../components/Donation/components/DonateOther';
 import DonateForm from '../components/Donation/components/DonateForm';
 import DonateText from '../components/Donation/components/DonateText';
 import PoweredByStripe from '../components/Donation/components/poweredByStripe';
@@ -17,9 +17,11 @@ class DonatePage extends Component {
   constructor(...props) {
     super(...props);
     this.state = {
-      stripe: null
+      stripe: null,
+      showOtherOptions: false
     };
     this.handleStripeLoad = this.handleStripeLoad.bind(this);
+    this.toggleOtherOptions = this.toggleOtherOptions.bind(this);
   }
   componentDidMount() {
     if (window.Stripe) {
@@ -52,7 +54,14 @@ class DonatePage extends Component {
     }));
   }
 
+  toggleOtherOptions() {
+    this.setState(({ showOtherOptions }) => ({
+      showOtherOptions: !showOtherOptions
+    }));
+  }
+
   render() {
+    const { showOtherOptions, stripe } = this.state;
     return (
       <Fragment>
         <Helmet title='Support our nonprofit | freeCodeCamp.org' />
@@ -64,19 +73,22 @@ class DonatePage extends Component {
           </Col>
           <Col sm={6} smOffset={3} xs={12}>
             <hr />
-            <StripeProvider stripe={this.state.stripe}>
+            <StripeProvider stripe={stripe}>
               <Elements>
                 <DonateForm />
               </Elements>
             </StripeProvider>
             <div className='text-center'>
-              <Link to='/donate-other'>Other ways to donate.</Link>
-              <Spacer />
               <PoweredByStripe />
+              <Spacer />
+              <Button onClick={this.toggleOtherOptions}>
+                {`${showOtherOptions ? 'Hide' : 'Show'} other ways to donate.`}
+              </Button>
             </div>
             <Spacer />
           </Col>
         </Row>
+        {showOtherOptions && <DonateOther />}
       </Fragment>
     );
   }

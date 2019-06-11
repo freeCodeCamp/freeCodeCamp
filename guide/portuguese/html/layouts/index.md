@@ -8,7 +8,7 @@ Os layouts organizam diferentes áreas da página da web.
 
 Quase todas as páginas da web que vemos podem ser divididas em caixas, que podem ser organizadas em ordem específica para criar essa página da web. A imagem abaixo é um desses exemplos.
 
-![Exemplo de Website Design - www.codementor.io](http://i.imgur.com/Z1DSMYC.png)
+![Exemplo de Website Design - www.codementor.io](https://cdn-media-1.freecodecamp.org/imgr/Z1DSMYC.png)
 
 > Os sites geralmente exibem conteúdo em várias colunas (como uma revista ou jornal).
 

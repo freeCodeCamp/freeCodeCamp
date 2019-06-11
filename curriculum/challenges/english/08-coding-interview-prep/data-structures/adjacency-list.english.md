@@ -11,9 +11,25 @@ An adjacency list is essentially a bulleted list where the left side is the node
 <blockquote>Node1: Node2, Node3<br>Node2: Node1<br>Node3: Node1</blockquote>
 Above is an undirected graph because <code>Node1</code> is connected to <code>Node2</code> and <code>Node3</code>, and that information is consistent with the connections <code>Node2</code> and <code>Node3</code> show. An adjacency list for a directed graph would mean each row of the list shows direction. If the above was directed, then <code>Node2: Node1</code> would mean there the directed edge is pointing from <code>Node2</code> towards <code>Node1</code>.
 We can represent the undirected graph above as an adjacency list by putting it within a JavaScript object.
-<blockquote>var undirectedG = {<br>  Node1: ["Node2", "Node3"],<br>  Node2: ["Node1"],<br>  Node3: ["Node1"]<br>};</blockquote>
+
+```js
+var undirectedG = {
+  Node1: ["Node2", "Node3"],
+  Node2: ["Node1"],
+  Node3: ["Node1"]
+};
+```
+
 This can also be more simply represented as an array where the nodes just have numbers rather than string labels.
-<blockquote>var undirectedGArr = [<br>  [1, 2], # Node1<br>  [0],    # Node2<br>  [0]     # Node3<br>];</blockquote>
+
+```js
+var undirectedGArr = [
+  [1, 2], // Node1
+  [0],    // Node2
+  [0]     // Node3
+];
+```
+
 </section>
 
 ## Instructions
