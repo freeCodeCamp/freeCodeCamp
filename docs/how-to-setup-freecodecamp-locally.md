@@ -178,6 +178,7 @@ The keys in the `.env` file are *not* required to be changed to run the app loca
 Keep in mind if you want to use additional services, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
 **Docker Build:** If using the Docker build and the Docker installation instructed you to use Docker Toolbox (applies to older versions of macOS and Windows), you need to change `DOCKER_HOST_LOCATION` in your `.env` file var to the output from the `docker-machine ip` command. If you use any Docker supported flavor of Linux or if you use Docker Desktop (new versions of macOS and Windows 10) you can leave `DOCKER_HOST_LOCATION` to the default value.
+For more information about Docker Toolbox configuration for Windows 10 Home, read this [little guide](/docs/how-to-use-docker-toolbox-to-setup-freecodecamp-locally.md).
 
 #### Step 2: Install dependencies
 
