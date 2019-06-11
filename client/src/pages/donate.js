@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import Helmet from 'react-helmet';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
-import { Link } from 'gatsby';
 
 import { stripePublicKey } from '../../config/env.json';
 
@@ -69,11 +68,11 @@ class DonatePage extends Component {
         <Spacer />
         <Grid>
           <Row>
-            <Col sm={8} smOffset={2} xs={12}>
+            <Col sm={10} smOffset={1} xs={12}>
               <h2 className='text-center'>Become a Supporter</h2>
               <DonateText />
             </Col>
-            <Col sm={6} smOffset={3} xs={12}>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <hr />
               <StripeProvider stripe={stripe}>
                 <Elements>
