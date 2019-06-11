@@ -55,6 +55,7 @@ class DonateOther extends Component {
     return (
       <form
         action='https://www.paypal.com/cgi-bin/webscr'
+        key={item.defaultValueHash}
         method='post'
         onSubmit={() =>
           ReactGA.event({
