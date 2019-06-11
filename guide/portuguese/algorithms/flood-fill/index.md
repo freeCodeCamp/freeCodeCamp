@@ -27,7 +27,7 @@ O quadrado vermelho é o ponto de partida e os quadrados cinzentos são as chama
 
 Para mais detalhes, aqui está um trecho de código descrevendo a função:
 
-```c++
+```cpp
 int wall = -1; 
  
  void flood_fill(int pos_x, int pos_y, int target_color, int color) 
@@ -80,7 +80,7 @@ Em uma matriz bidimensional, você recebe um número de **"ilhas"** . Tente enco
 
 Você tem a seguinte entrada:
 
-```c++
+```cpp
 2 4 4 
  0 0 0 1 
  0 0 1 1 

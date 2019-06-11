@@ -35,7 +35,7 @@ The most used modern VCS (Git, Mercurial...) are Distributed Version Control Sys
 
 - SVN/Subversion
 
-*SVM* is an old SCM that succeeded *CVS*.
+*SVN* is an old SCM that succeeded *CVS*.
 Eventually *SVN* was deprecated by the wide adoption of Distributed Version Control System like *Git* and *Mercurial*
 
 ### More Information:

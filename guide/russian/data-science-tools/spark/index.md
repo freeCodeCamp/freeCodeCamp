@@ -28,5 +28,5 @@ Spark стал стандартным инструментом во многих
 
 #### Больше информации
 
-*   [Страница Spark Github](https://github.com/apache/spark)
+*   [Страница Spark GitHub](https://github.com/apache/spark)
 *   [Википедия](https://en.wikipedia.org/wiki/Apache_Spark)

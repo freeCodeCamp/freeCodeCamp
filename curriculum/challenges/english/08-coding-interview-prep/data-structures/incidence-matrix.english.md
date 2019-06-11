@@ -14,9 +14,27 @@ Each column will represent a unique edge. Also, each edge connects two nodes. To
 Here is an example of an <code>incidence matrix</code> with 4 edges and 4 nodes. Remember, the columns are the edges and rows are the nodes themselves.
 <blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
 Below is a JavaScript implementation of the same thing.
-<blockquote>var incMat = [<br>  [0, 1, 1, 1],<br>  [1, 1, 0, 0],<br>  [1, 0, 0, 1],<br>  [0, 0, 1, 0]<br>];</blockquote>
+
+```js
+var incMat = [
+  [0, 1, 1, 1],
+  [1, 1, 0, 0],
+  [1, 0, 0, 1],
+  [0, 0, 1, 0]
+];
+```
+
 To make a directed graph, use <code>-1</code> for an edge leaving a particular node and <code>1</code> for an edge entering a node.
-<blockquote>var incMatDirected = [<br>  [ 0, -1,  1, -1],<br>  [-1,  1,  0,  0],<br>  [ 1,  0,  0,  1],<br>  [ 0,  0, -1,  0]<br>];</blockquote>
+
+```js
+var incMatDirected = [
+  [ 0, -1,  1, -1],
+  [-1,  1,  0,  0],
+  [ 1,  0,  0,  1],
+  [ 0,  0, -1,  0]
+];
+```
+
 Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unweighted</dfn> edges where just the presence and lack of edge is binary (<code>0</code> or <code>1</code>). You can have different weights depending on your application. A different weight is represented as numbers greater than 1.
 </section>
 
