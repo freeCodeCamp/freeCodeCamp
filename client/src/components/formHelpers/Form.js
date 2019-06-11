@@ -51,7 +51,12 @@ export function DynamicForm({
       onSubmit={handleSubmit(submit)}
       style={{ width: '100%' }}
     >
-      <FormFields errors={errors} fields={fields} options={options} />
+      <FormFields
+        errors={errors}
+        fields={fields}
+        formId={id}
+        options={options}
+      />
       <BlockSaveWrapper>
         {hideButton ? null : (
           <BlockSaveButton

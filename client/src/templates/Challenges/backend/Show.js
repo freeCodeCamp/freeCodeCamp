@@ -12,6 +12,7 @@ import {
   consoleOutputSelector,
   initTests,
   updateChallengeMeta,
+  updateProjectFormValues,
   backendNS
 } from '../redux';
 import { createGuideUrl } from '../utils';
@@ -24,6 +25,7 @@ import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import ProjectToolPanel from '../project/Tool-Panel';
+import ProjectForm from '../project/ProjectForm';
 import {
   createFormValidator,
   isValidURL,
@@ -31,6 +33,8 @@ import {
   Form
 } from '../../../components/formHelpers';
 import Spacer from '../../../components/helpers/Spacer';
+
+import { backend } from '../../../../utils/challengeTypes';
 
 import '../components/test-frame.css';
 
@@ -52,6 +56,7 @@ const propTypes = {
   tests: PropTypes.array,
   title: PropTypes.string,
   updateChallengeMeta: PropTypes.func.isRequired,
+  updateProjectFormValues: PropTypes.func.isRequired,
   ...reduxFormPropTypes
 };
 
@@ -74,7 +79,8 @@ const mapDispatchToActions = {
   challengeMounted,
   executeChallenge,
   initTests,
-  updateChallengeMeta
+  updateChallengeMeta,
+  updateProjectFormValues
 };
 
 const formFields = ['solution'];
@@ -150,6 +156,7 @@ export class BackEnd extends Component {
       data: {
         challengeNode: {
           fields: { blockName, slug },
+          challengeType,
           title,
           description,
           instructions
@@ -158,7 +165,8 @@ export class BackEnd extends Component {
       output,
       tests,
       submitting,
-      executeChallenge
+      executeChallenge,
+      updateProjectFormValues
     } = this.props;
 
     // TODO: Should be tied to user.isSignedIn
@@ -177,13 +185,21 @@ export class BackEnd extends Component {
                 description={description}
                 instructions={instructions}
               />
-              <Form
-                buttonText={`${buttonCopy} (Ctrl + Enter)`}
-                formFields={formFields}
-                id={backendNS}
-                options={options}
-                submit={executeChallenge}
-              />
+              {challengeType === backend ? (
+                <Form
+                  buttonText={`${buttonCopy}`}
+                  formFields={formFields}
+                  id={backendNS}
+                  options={options}
+                  submit={executeChallenge}
+                />
+              ) : (
+                <ProjectForm
+                  isFrontEnd={false}
+                  onSubmit={executeChallenge}
+                  updateProjectForm={updateProjectFormValues}
+                />
+              )}
               <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
               <br />
               <Output

@@ -192,10 +192,15 @@ export const challengeDataSelector = state => {
       ...challengeData,
       url
     };
-  } else if (
-    challengeType === challengeTypes.frontEndProject ||
-    challengeType === challengeTypes.backendEndProject
-  ) {
+  } else if (challengeType === challengeTypes.backEndProject) {
+    const values = projectFormValuesSelector(state);
+    const { solution: url } = values;
+    challengeData = {
+      ...challengeData,
+      ...values,
+      url
+    };
+  } else if (challengeType === challengeTypes.frontEndProject) {
     challengeData = {
       ...challengeData,
       ...projectFormValuesSelector(state)
