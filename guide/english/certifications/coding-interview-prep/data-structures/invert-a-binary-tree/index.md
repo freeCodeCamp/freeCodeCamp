@@ -5,7 +5,6 @@ title: Invert a Binary Tree
 
 
 
-
 ## Hint: 1
 
 Create a invert(node = this.root) method in the BinarySearchTree constructor function.
