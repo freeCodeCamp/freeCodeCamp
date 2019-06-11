@@ -2,7 +2,6 @@
 title: Invert a Binary Tree
 ---
 ## Invert a Binary Tree
-Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program 
 
 ### Problem Explanation:
 
