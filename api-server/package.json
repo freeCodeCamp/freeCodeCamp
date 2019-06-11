@@ -90,7 +90,7 @@
     "commitizen": "^2.9.6",
     "cz-freecodecamp": "^1.0.1",
     "husky": "^0.14.3",
-    "jest": "^23.6.0",
+    "jest": "^24.8.0",
     "joi": "^13.1.2",
     "joi-objectid": "^2.0.0",
     "loopback-component-explorer": "^6.3.1",

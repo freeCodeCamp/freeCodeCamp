@@ -594,5 +594,8 @@ pre code {
   }
 }
 .default-layout {
+  display: flex;
+  flex-direction: column;
   margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
 }

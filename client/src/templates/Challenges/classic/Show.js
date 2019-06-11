@@ -250,33 +250,30 @@ class ShowClassic extends Component {
           title={`Learn ${this.getBlockNameTitle()} | freeCodeCamp.org`}
         />
         <Media maxWidth={MAX_MOBILE_WIDTH}>
-          {matches =>
-            matches ? (
-              <MobileLayout
-                editor={this.renderEditor()}
-                guideUrl={this.getGuideUrl()}
-                hasPreview={this.hasPreview()}
-                instructions={this.renderInstructionsPanel({
-                  showToolPanel: false
-                })}
-                preview={this.renderPreview()}
-                testOutput={this.renderTestOutput()}
-                videoUrl={this.getVideoUrl()}
-              />
-            ) : (
-              <DesktopLayout
-                challengeFile={this.getChallengeFile()}
-                editor={this.renderEditor()}
-                hasPreview={this.hasPreview()}
-                instructions={this.renderInstructionsPanel({
-                  showToolPanel: true
-                })}
-                preview={this.renderPreview()}
-                resizeProps={this.resizeProps}
-                testOutput={this.renderTestOutput()}
-              />
-            )
-          }
+          <MobileLayout
+            editor={this.renderEditor()}
+            guideUrl={this.getGuideUrl()}
+            hasPreview={this.hasPreview()}
+            instructions={this.renderInstructionsPanel({
+              showToolPanel: false
+            })}
+            preview={this.renderPreview()}
+            testOutput={this.renderTestOutput()}
+            videoUrl={this.getVideoUrl()}
+          />
+        </Media>
+        <Media minWidth={MAX_MOBILE_WIDTH + 1}>
+          <DesktopLayout
+            challengeFile={this.getChallengeFile()}
+            editor={this.renderEditor()}
+            hasPreview={this.hasPreview()}
+            instructions={this.renderInstructionsPanel({
+              showToolPanel: true
+            })}
+            preview={this.renderPreview()}
+            resizeProps={this.resizeProps}
+            testOutput={this.renderTestOutput()}
+          />
         </Media>
         <CompletionModal />
         <HelpModal />

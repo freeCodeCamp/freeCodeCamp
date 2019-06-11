@@ -1,20 +1,20 @@
 ---
 id: 5a9d7295424fe3d0e10cad14
-title: Cascading CSS variables
+title: Inherit CSS Variables
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLZZhZ'
 ---
 
 ## Description
 <section id='description'>
-When you create a variable, it is available for you to use inside the element in which you create it. It also is available for any elements nested within it. This effect is known as <dfn>cascading</dfn>.
-Because of cascading, CSS variables are often defined in the <dfn>:root</dfn> element.
-<code>:root</code> is a <dfn>pseudo-class</dfn> selector that matches the root element of the document, usually the <code>html</code> element. By creating your variables in <code>:root</code>, they will be available globally and can be accessed from any other selector later in the style sheet.
+When you create a variable, it is available for you to use inside the selector in which you create it. It also is available in any of that selector's descendants. This happens because CSS variables are inherited, just like ordinary properties.
+To make use of inheritance, CSS variables are often defined in the <dfn>:root</dfn> element.
+<code>:root</code> is a <dfn>pseudo-class</dfn> selector that matches the root element of the document, usually the <code>html</code> element. By creating your variables in <code>:root</code>, they will be available globally and can be accessed from any other selector in the style sheet.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Define a variable named <code>--penguin-belly</code> in the <code>:root</code> selector and give it the value of <code>pink</code>. You can then see how the value will cascade down to change the value to pink, anywhere that variable is used.
+Define a variable named <code>--penguin-belly</code> in the <code>:root</code> selector and give it the value of <code>pink</code>. You can then see that the variable is inherited and that all the child elements which use it get pink backgrounds.
 </section>
 
 ## Tests

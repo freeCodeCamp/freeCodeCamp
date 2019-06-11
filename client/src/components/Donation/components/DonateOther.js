@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import Helmet from 'react-helmet';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 
-import ReactGA from '../analytics/index.js';
-import { Link, Spacer } from '../components/helpers';
+import ReactGA from '../../../analytics/index.js';
+import { Link, Spacer } from '../../helpers';
 
 const paypalMonthlyDonations = [
   {
@@ -51,7 +50,7 @@ const paypalOneTimeDonation = {
   defaultValue: 'Make a one-time donation'
 };
 
-class DonateOtherPage extends Component {
+class DonateOther extends Component {
   renderForm(item) {
     return (
       <form
@@ -87,7 +86,6 @@ class DonateOtherPage extends Component {
   render() {
     return (
       <Fragment>
-        <Helmet title='Other ways to donate | freeCodeCamp.org' />
         <Spacer />
         <Grid>
           <Row>
@@ -212,9 +210,7 @@ class DonateOtherPage extends Component {
               </h3>
               <Spacer />
               <div className='text-center'>
-                <Link to='/donate'>
-                  Or donate using a Credit or Debit Card.
-                </Link>
+                <Link to='/donate'>Donate using a Credit or Debit card</Link>
               </div>
               <Spacer />
             </Col>
@@ -226,6 +222,6 @@ class DonateOtherPage extends Component {
   /* eslint-enable max-len */
 }
 
-DonateOtherPage.displayName = 'DonateOtherPage';
+DonateOther.displayName = 'DonateOther';
 
-export default DonateOtherPage;
+export default DonateOther;
