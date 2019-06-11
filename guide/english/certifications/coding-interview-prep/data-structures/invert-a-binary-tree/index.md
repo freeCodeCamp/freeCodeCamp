@@ -4,7 +4,6 @@ title: Invert a Binary Tree
 ## Invert a Binary Tree
 
 
-To solve this problem, you should use a function to invert a binary tree.  A temp variable can possibly be used and a stack can work as well but doing so may require more memory.
 
 
 ## Hint: 1
