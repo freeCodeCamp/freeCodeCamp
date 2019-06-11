@@ -69,7 +69,7 @@ function HeatMap({ calendar, streak }) {
           tooltipDataAttrs={value => {
             let valueCount;
             if (value && value.count === 1) {
-              valueCount = `${value.count} point`;
+              valueCount = '1 point';
             } else if (value && value.count > 1) {
               valueCount = `${value.count} points`;
             } else {
@@ -78,7 +78,7 @@ function HeatMap({ calendar, streak }) {
             return {
               'data-tip': `<strong>${valueCount}</strong> on ${new Date(
                 value.date
-              ).toLocaleDateString('default', {
+              ).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric'
