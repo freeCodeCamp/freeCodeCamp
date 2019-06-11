@@ -32,7 +32,12 @@ function ChallengeTitle({
   return (
     <div className='challenge-title-wrap'>
       {showPrevNextBtns ? (
-        <Button bsStyle='primary' onClick={() => navigate(prevChallengePath)}>
+        <Button
+          aria-label='Previous lesson'
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={() => navigate(prevChallengePath)}
+        >
           &lt;
         </Button>
       ) : null}
@@ -42,7 +47,9 @@ function ChallengeTitle({
       </h2>
       {showPrevNextBtns ? (
         <Button
+          aria-label='Next lesson'
           bsStyle='primary'
+          className='btn-invert'
           onClick={() => navigate(introPath ? introPath : nextChallengePath)}
         >
           &gt;
