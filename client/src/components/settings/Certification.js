@@ -231,7 +231,7 @@ export class CertificationSettings extends Component {
   renderCertifications = certName => (
     <FullWidthRow key={certName}>
       <Spacer />
-      <h3>{certName}</h3>
+      <h3 className='text-center'>{certName}</h3>
       <Table>
         <thead>
           <tr>
@@ -404,7 +404,7 @@ export class CertificationSettings extends Component {
     return (
       <FullWidthRow key={superBlock}>
         <Spacer />
-        <h3>{certName}</h3>
+        <h3 className='text-center'>{certName}</h3>
         <Form
           buttonText={fullForm ? 'Claim Certification' : 'Save Progress'}
           enableSubmit={fullForm}
