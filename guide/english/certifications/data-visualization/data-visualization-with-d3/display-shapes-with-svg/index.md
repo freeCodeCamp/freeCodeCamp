@@ -3,11 +3,6 @@ title: Display Shapes with SVG
 ---
 ## Display Shapes with SVG
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/display-shapes-with-svg/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 This challenge can be approached in a similar fashion to the previous one; with the difference being that, this time, you must add a specified shape **within** the appended SVG node. SVG supports several shape definitions, but in this instance, we will use **rect**.
 
 ## Hint 1
