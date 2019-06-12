@@ -6,7 +6,7 @@ localeTitle: Mecanografiado
 
 ### Visión de conjunto
 
-![Mecanografiado](https://i.imgur.com/uRLunzU.png)
+![Mecanografiado](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
 
 Por lo que es probable que sepa, JavaScript está expandiendo su huella cada día y es abrumador y sorprendente lo que puede hacer con el lenguaje hoy en día.
 
@@ -16,7 +16,7 @@ Este es un problema reconocido por Microsoft desde el principio y se les ocurri�
 
 Puede obtener más información sobre las diferencias de sintaxis en [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript) .
 
-![Características clave](https://i.imgur.com/pZij95O.jpg)
+![Características clave](https://cdn-media-1.freecodecamp.org/imgr/pZij95O.jpg)
 
 En esencia, TypeScript está tratando de ayudar a que JavaScript alcance nuevas alturas y se vuelva muy escalable y se puede resaltar con las siguientes características:
 
@@ -41,7 +41,7 @@ Para obtener más información sobre el uso de una impresora con TypeScript, con
 
 ### Patio de recreo
 
-![Patio de recreo](https://i.imgur.com/vlV7ZFr.png)
+![Patio de recreo](https://cdn-media-1.freecodecamp.org/imgr/vlV7ZFr.png)
 
 Si desea probar TypeScript sin instalarlo, visite el [PlayScript Playground](http://www.typescriptlang.org/play/index.html) .
 

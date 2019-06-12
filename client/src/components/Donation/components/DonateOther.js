@@ -55,6 +55,7 @@ class DonateOther extends Component {
     return (
       <form
         action='https://www.paypal.com/cgi-bin/webscr'
+        key={item.defaultValueHash}
         method='post'
         onSubmit={() =>
           ReactGA.event({
@@ -89,7 +90,7 @@ class DonateOther extends Component {
         <Spacer />
         <Grid>
           <Row>
-            <Col md={6} mdOffset={3} sm={10} smOffset={1} xs={12}>
+            <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
               <h2 className='text-center'>
                 Other ways you can support our nonprofit
               </h2>

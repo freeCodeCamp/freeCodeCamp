@@ -84,11 +84,11 @@ Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Po
 
 Você pode nos ajudar a traduzir nossos Artigos de guia e Desafios de código para uma língua que você fala. Atualmente, nós temos versões traduzidas em:
 
-- Chinês (中文)
-- Russo (русский)
-- Árabe (عربي)
-- Espanhol (Español)
-- Português (Português)
+- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/arabic)
+- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/chinese)
+- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese)
+- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/russian)
+- [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/spanish)
 
 A maioria dessas versões são traduções de máquina. Nós vamos amar sua ajuda em melhorar a qualidade dessas traduções.
 
