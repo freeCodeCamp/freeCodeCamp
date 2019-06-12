@@ -75,4 +75,5 @@ Queue.prototype.reverse = function() {
 let testQueue = new Queue([1,2,3,4,5])
 testQueue.reverse()
 ```
+
 </section>
