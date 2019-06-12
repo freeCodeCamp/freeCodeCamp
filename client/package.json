@@ -34,7 +34,7 @@
     "gatsby-remark-prismjs": "^3.2.11",
     "gatsby-source-filesystem": "^2.0.38",
     "gatsby-transformer-remark": "^2.3.12",
-    "jquery": "3.3.1",
+    "jquery": "3.4.0",
     "lodash": "^4.17.11",
     "loop-protect": "^2.1.6",
     "monaco-editor-webpack-plugin": "^1.7.0",
