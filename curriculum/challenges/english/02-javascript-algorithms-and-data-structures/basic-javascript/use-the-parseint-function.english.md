@@ -64,4 +64,5 @@ function convertToInteger(str) {
   return parseInt(str);
 }
 ```
+
 </section>

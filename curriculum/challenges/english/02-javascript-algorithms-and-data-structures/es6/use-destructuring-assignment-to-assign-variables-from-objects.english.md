@@ -89,4 +89,5 @@ const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
 console.log(highToday); // should be 77
 console.log(highTomorrow); // should be 80
 ```
+
 </section>

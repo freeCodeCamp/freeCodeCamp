@@ -79,4 +79,5 @@ const squareList = (arr) => {
   return squaredIntegers;
 };
 ```
+
 </section>

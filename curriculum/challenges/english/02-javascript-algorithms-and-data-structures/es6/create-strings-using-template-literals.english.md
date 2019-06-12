@@ -115,4 +115,5 @@ function makeList(arr) {
  **/
 const resultDisplayArray = makeList(result.failure);
 ```
+
 </section>

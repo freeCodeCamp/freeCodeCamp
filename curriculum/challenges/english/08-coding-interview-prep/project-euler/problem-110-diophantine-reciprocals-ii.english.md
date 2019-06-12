@@ -55,4 +55,5 @@ diophantineTwo();
 ```js
 // solution required
 ```
+
 </section>

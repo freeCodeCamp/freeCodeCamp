@@ -133,4 +133,5 @@ function checkScope() {
   return i;
 }
 ```
+
 </section>

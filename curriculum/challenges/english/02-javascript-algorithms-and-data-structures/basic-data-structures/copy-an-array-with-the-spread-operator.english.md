@@ -93,4 +93,5 @@ function copyMachine(arr,num){
 }
 console.log(copyMachine([true, false, true], 2));
 ```
+
 </section>

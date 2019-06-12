@@ -76,4 +76,5 @@ function sliceArray(anim, beginSlice, endSlice) {
 var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 sliceArray(inputAnim, 1, 3);
 ```
+
 </section>

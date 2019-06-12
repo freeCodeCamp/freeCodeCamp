@@ -83,4 +83,5 @@ delete foods.strawberries;
 
 console.log(foods);
 ```
+
 </section>

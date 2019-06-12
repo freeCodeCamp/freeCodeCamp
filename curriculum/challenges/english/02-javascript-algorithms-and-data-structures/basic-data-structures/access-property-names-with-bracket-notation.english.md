@@ -90,4 +90,5 @@ function checkInventory(scannedItem) {
   return foods[scannedItem];
 }
 ```
+
 </section>
