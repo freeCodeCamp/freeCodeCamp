@@ -67,6 +67,29 @@ int main() {
     return 0;
 }
 ```
+### Stack implementation using STL in C++
+```cpp
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() {
+    stack<int> s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout << "The size of the stack is: " << s.size() << endl;
+    cout << "Top of the stack is: " << s.top() << endl;
+    cout << "The stack is: " << endl;
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    cout << endl;
+}
+```
+
 
 #### Using Arrays as Stacks
 
