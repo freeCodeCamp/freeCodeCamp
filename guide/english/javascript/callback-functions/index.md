@@ -1,11 +1,11 @@
 ---
 title: Callback Functions
 ---
-This article gives a brief introduction to the concept and usage of callback functions in the Javascript programming language.
+This article gives a brief introduction to the concept and usage of callback functions in the JavaScript programming language.
 
 ## Functions are Objects
 
-The first thing we need to know is that in Javascript, functions are first-class objects. As such, we can work with them in the same way we work with other objects, like assigning them to variables and passing them as arguments into other functions. This is important, because it's the latter technique that allows us to extend functionality in our applications.
+The first thing we need to know is that in JavaScript, functions are first-class objects. As such, we can work with them in the same way we work with other objects, like assigning them to variables and passing them as arguments into other functions. This is important, because it's the latter technique that allows us to extend functionality in our applications.
 
 ## Callback Functions
 
@@ -41,7 +41,7 @@ createQuote("eat your vegetables!", function(quote){
 });
 ```
 
-Incidentally, you don't _have_ to use the word "callback" as the name of your argument, Javascript just needs to know that it's the correct argument name. Based on the above example, the below function will behave in exactly the same manner.
+Incidentally, you don't _have_ to use the word "callback" as the name of your argument, JavaScript just needs to know that it's the correct argument name. Based on the above example, the below function will behave in exactly the same manner.
 
 ```javascript
 function createQuote(quote, functionToCall) { 

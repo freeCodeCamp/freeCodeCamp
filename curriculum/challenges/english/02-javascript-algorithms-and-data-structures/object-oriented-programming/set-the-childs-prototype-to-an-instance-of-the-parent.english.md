@@ -8,9 +8,18 @@ challengeType: 1
 <section id='description'>
 In the previous challenge you saw the first step for inheriting behavior from the <code>supertype</code> (or parent) <code>Animal</code>: making a new instance of <code>Animal</code>.
 This challenge covers the next step: set the <code>prototype</code> of the <code>subtype</code> (or child)&mdash;in this case, <code>Bird</code>&mdash;to be an instance of <code>Animal</code>.
-<blockquote>Bird.prototype = Object.create(Animal.prototype);</blockquote>
+
+```js
+Bird.prototype = Object.create(Animal.prototype);
+```
+
 Remember that the <code>prototype</code> is like the "recipe" for creating an object. In a way, the recipe for <code>Bird</code> now includes all the key "ingredients" from <code>Animal</code>.
-<blockquote>let duck = new Bird("Donald");<br>duck.eat(); // prints "nom nom nom"</blockquote>
+
+```js
+let duck = new Bird("Donald");
+duck.eat(); // prints "nom nom nom"
+```
+
 <code>duck</code> inherits all of <code>Animal</code>'s properties, including the <code>eat</code> method.
 </section>
 

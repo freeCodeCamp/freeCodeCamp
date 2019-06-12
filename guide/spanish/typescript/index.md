@@ -6,7 +6,7 @@ localeTitle: TypeScript
 
 ### Descripción
 
-![TypeScript](https://i.imgur.com/uRLunzU.png)
+![TypeScript](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
 
 Es muy probable que sepas que JavaScript está expandiendo su huela cada día y es abrumador y sorprendente lo que se puede hacer con este lenguaje hoy en día.
 
@@ -16,7 +16,7 @@ Este es un problema reconocido por Microsoft desde muy temprano y por lo tanto s
 
 Puedes obtener más información sobre las diferencias de sintaxis en [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript) .
 
-![Características clave](https://i.imgur.com/pZij95O.jpg)
+![Características clave](https://cdn-media-1.freecodecamp.org/imgr/pZij95O.jpg)
 
 En esencia, TypeScript está tratando de ayudar a que JavaScript alcance nuevas alturas y se vuelva muy escalable y se puede resaltar con las siguientes características:
 
@@ -41,7 +41,7 @@ Para obtener más información sobre el uso de un Linter con TypeScript, consult
 
 ### Playground
 
-![Playground](https://i.imgur.com/vlV7ZFr.png)
+![Patio de recreo](https://cdn-media-1.freecodecamp.org/imgr/vlV7ZFr.png)
 
 Si deseas probar TypeScript sin instalarlo, visita el [Playground de TypeScript](http://www.typescriptlang.org/play/index.html) .
 
