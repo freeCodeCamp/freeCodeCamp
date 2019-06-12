@@ -77,4 +77,5 @@ function isSorted(arr) {
 ```js
 // solution required
 ```
+
 </section>

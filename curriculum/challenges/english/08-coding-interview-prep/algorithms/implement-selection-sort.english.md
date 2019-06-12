@@ -84,4 +84,5 @@ function selectionSort(array) {
     return array;
 } 
 ```
+
 </section>

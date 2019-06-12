@@ -88,4 +88,5 @@ function bubbleSort(array) {
   return array;
 }
 ```
+
 </section>
