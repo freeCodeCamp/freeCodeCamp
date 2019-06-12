@@ -11,6 +11,8 @@ title: Reinforcement Learning
 
 Reinforcement Learning refers to a field of Machine Learning that applies to agents that you reinforce by giving them reward and punishment. It gives a nice gradual learning and can simplify the learning of agent in tasks where you cannot determine a proper error value.
 
+Reinforcement learning lies *in between* supervised and unsupervised learning. While the former has a label and the latter does not, reinforcement learning has *sparse time delay labels* (rewards). It revolves around creating a mathematical framework that encapsulates the idea of an AI interacting with an environment and *time* acting as a dimension and learning through **trial and error**.
+
 Example:
 A bot is given a task to play Space Invaders, it tries to learn to play it by interacting with game and in return getting a reward for the points that it scored at end of the game. Greater the reward, greater are its chances of doing the similar gameplay. In that way, it learns how to play the game and perform in the best possible way.
 
@@ -19,13 +21,19 @@ In industries robot uses deep reinforcement learning to pick a device from one b
 The best example, and one which you will hear a lot in this field, is AlphaGo developed by Google. This uses reinforcement learning to learn the patterns, rules and semantics of the board game, Go. This bot defeated the World No. 1 Go player, Lee Sedol, in what was the first time a computer program defeated a professional player. AlphaGo won by 4-1 in a five game series. This was a huge victory for AI and kickstarted the field of Reinforcement learning. 
 
 ## List of Common Algorithms
-Q-Learning
-Temporal Difference (TD)
-Deep Adversarial Networks
+1. Temporal Difference (TD)
+    * Q-Learning
+    * SARSA
+2. Policy Gradient and Actor-Critic Methods
+    * A3C
+    * DDPG
+    * REINFORCE
 
 ## Use cases:
 Some applications of the reinforcement learning algorithms are computer played board games (Chess, Go), robotic hands, and self-driving cars.
 
 ## More information:
 * [David Silver's RL course](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html)
+* [UC Berkeley's RL course](http://rail.eecs.berkeley.edu/deeprlcourse/)
+* [RL using Tensorflow](https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0)
 

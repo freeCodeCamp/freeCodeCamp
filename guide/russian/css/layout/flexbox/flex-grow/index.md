@@ -8,11 +8,11 @@ localeTitle: Flex-расти
 
 Он превратит ваш контейнер из этого
 
-![](https://i.imgur.com/lFJaBUfh.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/lFJaBUfh.png)
 
 # **к этому**
 
-![](https://i.imgur.com/4X8ITZih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4X8ITZih.png)
 
 Что сейчас произошло?
 
@@ -49,7 +49,7 @@ body {
 
 Сначала давайте создадим два абзаца и включим отображение: flex;
 
-![](https://i.imgur.com/wPqUgsih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/wPqUgsih.png)
 
 Обратите внимание на несколько вещей
 
@@ -60,7 +60,7 @@ body {
 
 Чтобы увидеть это в действии, давайте первый класс класса «десять» и свойство flex-grow 1. Давайте также дадим второй класс «двадцать» и свойство flex-grow 2.
 
-![](https://i.imgur.com/7n0V1G4h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/7n0V1G4h.png)
 
 Обратите внимание на несколько вещей
 
@@ -69,6 +69,6 @@ body {
 
 По мере изменения размера экрана мы также обнаруживаем, что первая сжимается в два раза быстрее второй.
 
-![](https://i.imgur.com/pa4grM8h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/pa4grM8h.png)
 
 #### Дополнительная информация:

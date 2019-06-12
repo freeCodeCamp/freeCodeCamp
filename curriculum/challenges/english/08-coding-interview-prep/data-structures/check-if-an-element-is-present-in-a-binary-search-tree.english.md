@@ -22,13 +22,13 @@ Instructions: In this challenge, we will create a utility for our tree. Write a 
 ```yml
 tests:
   - text: The <code>BinarySearchTree</code> data structure exists.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() }; return (typeof test == "object")})(), "The <code>BinarySearchTree</code> data structure exists.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');
   - text: The binary search tree has a method called <code>isPresent</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == "function")})(), "The binary search tree has a method called <code>isPresent</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == 'function')})(), 'The binary search tree has a method called <code>isPresent</code>.');
   - text: The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== "function") { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })(), "The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })(), 'The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.');
   - text: <code>isPresent</code> handles cases where the tree is empty.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== "function") { return false; }; return test.isPresent(5) == false; })(), "<code>isPresent</code> handles cases where the tree is empty.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })(), '<code>isPresent</code> handles cases where the tree is empty.');
 
 ```
 
@@ -60,7 +60,36 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+BinarySearchTree.prototype = {
+    add: function(value) {
+        var node = this.root;
+        if (node == null) {
+          this.root = new Node(value);
+          return;
+        } else {
+            function searchTree(node) {
+                if (value < node.value) {
+                    if (node.left == null) {
+                        node.left = new Node(value);
+                        return;
+                    } else if (node.left != null) {
+                        return searchTree(node.left)
+                    };
+                } else if (value > node.value) {
+                    if (node.right == null) {
+                        node.right = new Node(value);
+                        return;
+                    } else if (node.right != null) {
+                        return searchTree(node.right);
+                    };
+                } else {
+                    return null;
+                };
+            };
+            return searchTree(node);
+        };
+    }
+};
 ```
 
 </div>
@@ -71,6 +100,24 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  this.isPresent = function (value) {
+    var current = this.root
+    while (current) {
+      if (value === current.value) {
+        return true;
+      }
+      current = value < current.value ? current.left : current.right;
+    }
+    return false;
+  }
+}
 ```
 </section>

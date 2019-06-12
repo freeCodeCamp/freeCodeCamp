@@ -28,5 +28,5 @@ Some useful plugins to get you started are :
 
 
 #### More Information:
-- <a href='https://github.com/VundleVim/Vundle.Vim' target='_blank' rel='nofollow'>Github Repository</a>
+- <a href='https://github.com/VundleVim/Vundle.Vim' target='_blank' rel='nofollow'>GitHub Repository</a>
 

@@ -14,7 +14,7 @@ localeTitle: 匹配具有不同可能性的文字字符串
 
 ## 解：
 
-```javascriot
+```js
 let petString = "James has a pet cat."; 
  let petRegex = /dog|cat|bird|fish/; 
  let result = petRegex.test(petString); 

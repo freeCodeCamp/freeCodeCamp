@@ -2,7 +2,9 @@
   "packages": [
     "api-server",
     "client",
+    "client/plugins/*",
     "curriculum",
+    "search-indexing",
     "tools/challenge-md-parser",
     "tools/scripts/seed"
   ],
