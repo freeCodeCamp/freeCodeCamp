@@ -8,7 +8,13 @@ isRequired: false
 ## Description
 <section id='description'>
 The previous challenges covered component <code>state</code> and how to initialize state in the <code>constructor</code>. There is also a way to change the component's <code>state</code>. React provides a method for updating component <code>state</code> called <code>setState</code>. You call the <code>setState</code> method within your component class like so: <code>this.setState()</code>, passing in an object with key-value pairs. The keys are your state properties and the values are the updated state data. For instance, if we were storing a <code>username</code> in state and wanted to update it, it would look like this:
-<blockquote>this.setState({<br>&nbsp;&nbsp;username: 'Lewis'<br>});</blockquote>
+
+```jsx
+this.setState({
+  username: 'Lewis'
+});
+```
+
 React expects you to never modify <code>state</code> directly, instead always use <code>this.setState()</code> when state changes occur. Also, you should note that React may batch multiple state updates in order to improve performance. What this means is that state updates through the <code>setState</code> method can be asynchronous. There is an alternative syntax for the <code>setState</code> method which provides a way around this problem. This is rarely needed but it's good to keep it in mind! Please consult the <a target="_blank" href="https://facebook.github.io/react/docs/state-and-lifecycle.html">React documentation</a> for further details.
 </section>
 

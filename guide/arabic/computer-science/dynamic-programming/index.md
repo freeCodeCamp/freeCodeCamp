@@ -12,7 +12,7 @@ localeTitle: برمجة ديناميكية
 
 هذه هي الشجرة للعثور على F (5):
 
-![شجرة فيبوناتشي سيري](https://i.stack.imgur.com/59Rpw.png)
+![شجرة فيبوناتشي سيري](https://cdn-media-1.freecodecamp.org/imgr/59Rpw.png)
 
 لحساب F (5) ستحتاج إلى حساب عدة مرات نفس F (i). استخدام العودية:
 
