@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Location } from '@reach/router';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
+import qs from 'query-string';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -15,7 +17,7 @@ import { createSelector } from 'reselect';
 const propTypes = {
   children: PropTypes.any,
   isDropdownEnabled: PropTypes.bool,
-  pathname: PropTypes.string.isRequired,
+  location: PropTypes.object.isRequired,
   query: PropTypes.string,
   toggleSearchDropdown: PropTypes.func.isRequired,
   updateSearchQuery: PropTypes.func.isRequired
@@ -31,33 +33,71 @@ const mapDispatchToProps = {
   updateSearchQuery
 };
 
-class WithInstantSearch extends Component {
+const searchStateToUrl = ({ pathname }, query) =>
+  `${pathname}${query ? `?${qs.stringify({ query })}` : ''}`;
+
+const urlToSearchState = ({ search }) => qs.parse(search.slice(1));
+
+class InstantSearchRoot extends Component {
   componentDidMount() {
     const { toggleSearchDropdown } = this.props;
-    toggleSearchDropdown(this.getSearchEnableDropdown());
+    toggleSearchDropdown(!this.isSearchPage());
+    this.setQueryFromURL();
   }
 
   componentDidUpdate(prevProps) {
-    const { pathname, toggleSearchDropdown, isDropdownEnabled } = this.props;
-    const { pathname: prevPathname } = prevProps;
-    const enableDropdown = this.getSearchEnableDropdown();
-    if (pathname !== prevPathname || isDropdownEnabled !== enableDropdown) {
+    const { location, toggleSearchDropdown, isDropdownEnabled } = this.props;
+
+    const enableDropdown = !this.isSearchPage();
+    if (isDropdownEnabled !== enableDropdown) {
       toggleSearchDropdown(enableDropdown);
     }
-    const { query, updateSearchQuery } = this.props;
-    if (query && pathname !== prevPathname && enableDropdown) {
-      updateSearchQuery('');
+
+    if (location !== prevProps.location) {
+      const { query, updateSearchQuery } = this.props;
+      if (this.isSearchPage()) {
+        this.setQueryFromURL();
+      } else if (query) {
+        updateSearchQuery('');
+      }
     }
   }
 
-  getSearchEnableDropdown = () => !this.props.pathname.startsWith('/search');
+  isSearchPage = () => this.props.location.pathname.startsWith('/search');
+
+  setQueryFromURL = () => {
+    if (this.isSearchPage()) {
+      const { updateSearchQuery, location, query } = this.props;
+      const { query: queryFromURL } = urlToSearchState(location);
+      if (query !== queryFromURL) {
+        updateSearchQuery(queryFromURL);
+      }
+    }
+  };
 
   onSearchStateChange = ({ query }) => {
     const { updateSearchQuery, query: propsQuery } = this.props;
     if (propsQuery === query || typeof query === 'undefined') {
-      return null;
+      return;
     }
-    return updateSearchQuery(query);
+    updateSearchQuery(query);
+    this.updateBrowserHistory(query);
+  };
+
+  updateBrowserHistory = query => {
+    if (this.isSearchPage()) {
+      clearTimeout(this.debouncedSetState);
+
+      this.debouncedSetState = setTimeout(() => {
+        if (this.isSearchPage()) {
+          window.history.pushState(
+            { query },
+            null,
+            searchStateToUrl(this.props.location, query)
+          );
+        }
+      }, 400);
+    }
   };
 
   render() {
@@ -77,10 +117,25 @@ class WithInstantSearch extends Component {
   }
 }
 
-WithInstantSearch.displayName = 'WithInstantSearch';
-WithInstantSearch.propTypes = propTypes;
+InstantSearchRoot.displayName = 'InstantSearchRoot';
+InstantSearchRoot.propTypes = propTypes;
 
-export default connect(
+const InstantSearchRootConnected = connect(
   mapStateToProps,
   mapDispatchToProps
-)(WithInstantSearch);
+)(InstantSearchRoot);
+
+const WithInstantSearch = ({ children }) => (
+  <Location>
+    {({ location }) => (
+      <InstantSearchRootConnected location={location}>
+        {children}
+      </InstantSearchRootConnected>
+    )}
+  </Location>
+);
+
+WithInstantSearch.displayName = 'WithInstantSearch';
+WithInstantSearch.propTypes = { children: PropTypes.any };
+
+export default WithInstantSearch;

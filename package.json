@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "scripts": {
     "bootstrap": "lerna bootstrap --ci",
-    "clean": "lerna clean && shx rm -rf node_modules",
+    "clean": "npm-run-all clean:client clean:all-deps",
+    "clean:all-deps": "lerna clean && shx rm -rf node_modules",
+    "clean:client": "cd ./client && gatsby clean",
     "develop": "npm-run-all ensure-env -p develop:*",
     "develop:client": "cd ./client && npm run develop",
     "develop:server": "cd ./api-server && node development-entry.js",
