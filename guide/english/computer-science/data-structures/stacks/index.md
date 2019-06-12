@@ -12,12 +12,15 @@ Some basics operations of stack are:
 2. Pop() - Removes the top item (often times, it is a good idea to implement this function so that it returns the element it removed)
 3. isEmpty() - Check whether the stack is empty or not (returns a boolean)
 4. Size() - Return the number of items in the stack
+5. Top() - Return the item at the top of the stack without popping.
 (All the operations can be done in O(1) time - depending on the implementation)
+Implementation of a stack is possible using arrays, linked lists or other dynamic collections such as array lists (Java) or vectors (C++). When dealing with dynamic collections, it is important to insert items at the end to prevent shifting and maintain an O(1) runtime on each operation. 
 
-Implementation of a stack is possible using either arrays or linked lists. The following is a simple array implementation of the stack data structure with its most common operations.
+The following is a simple array implementation of the stack data structure with its most common operations.
 
-### Stack implementation using array in C++
 ```cpp
+//Stack implementation using array in C++
+//You can also include<stack> and then use the C++ STL Library stack class.
 
 #include <bits/stdc++.h>
 
