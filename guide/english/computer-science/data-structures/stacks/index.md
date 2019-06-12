@@ -16,9 +16,8 @@ Some basics operations of stack are:
 
 Implementation of a stack is possible using either arrays or linked lists. The following is a simple array implementation of the stack data structure with its most common operations.
 
-```C++
-//Stack implementation using array in C++
-//You can also include<stack> and then use the C++ STL Library stack class.
+### Stack implementation using array in C++
+```cpp
 
 #include <bits/stdc++.h>
 
@@ -65,6 +64,29 @@ int main() {
     return 0;
 }
 ```
+### Stack implementation using STL in C++
+```cpp
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() {
+    stack<int> s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout << "The size of the stack is: " << s.size() << endl;
+    cout << "Top of the stack is: " << s.top() << endl;
+    cout << "The stack is: " << endl;
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    cout << endl;
+}
+```
+
 
 #### Using Arrays as Stacks
 
