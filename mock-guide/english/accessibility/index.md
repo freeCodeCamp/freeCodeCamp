@@ -4,25 +4,25 @@ title: Accessibility
 ## Accessibility
 <strong>Web accessibility means that people with disabilities can use the Web</strong>.
 
-More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web, and that they can
+More specifically, Web accessibility means that people with disabilities can perceive, understand, navigate, and interact with the Web and that they can
 contribute to the Web. Web accessibility also benefits others, including [older people](https://www.w3.org/WAI/bcase/soc.html#of) with changing abilities
 due to aging.
 
-Web accessibility encompasses all disabilities that  affect access to the Web, including visual, auditory, physical, speech, cognitive, and neurological
+Web accessibility encompasses all disabilities that affect access to the Web, including visual, auditory, physical, speech, cognitive, and neurological
 disabilities. The document [How People with Disabilities Use the Web](http://www.w3.org/WAI/intro/people-use-web/Overview.html) describes how different
 disabilities affect Web use and includes scenarios of people with disabilities using the Web.
 
-Web accessibility also **benefits** people *without* disabilities. For example, a key  principle of Web accessibility is designing Web sites and software
+Web accessibility also **benefits** people *without* disabilities. For example, a key principle of Web accessibility is designing Web sites and software
 that are flexible to meet different user needs, preferences, and situations. This **flexibility** also benefits people *without* disabilities in certain
 situations, such as people using a slow Internet connection, people with "temporary disabilities" such as a broken arm, and people with changing abilities
 due to aging. The document [Developing a Web Accessibility Business Case for Your Organization](https://www.w3.org/WAI/bcase/Overview) describes many
 different benefits of Web accessibility, including **benefits for organizations**.
 
-Web accessibility should also include the people who don't have access to the internet or to computers.
+Web accessibility should also include people who don't have access to the internet or to computers.
 
 A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/)
 from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite.
-Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
+Where WAI tackles the semantics of html to more easily navigate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
 AJAX, more accessible. 
 
 The use of images and graphics on websites can decrease accessibility for those with visual impairments. However, this doesn't mean designers should avoid
