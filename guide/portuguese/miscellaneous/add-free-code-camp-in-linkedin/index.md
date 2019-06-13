@@ -1,6 +1,6 @@
 ---
-title: Add Free Code Camp in Linkedin
-localeTitle: Adicione o Code Camp grátis no Linkedin
+title: Add Free Code Camp in LinkedIn
+localeTitle: Adicione o Code Camp grátis no LinkedIn
 ---
 O LinkedIn reconhece o Free Code Camp como uma universidade.
 

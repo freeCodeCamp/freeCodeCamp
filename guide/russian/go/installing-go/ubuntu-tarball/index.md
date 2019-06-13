@@ -10,7 +10,7 @@ localeTitle: Установка Go в Ubuntu с помощью tarball
 
 Прежде чем продолжить, убедитесь, что знаете, ваша система 32 или 64 бит. Если вы не знаете, выполните следующую команду, чтобы узнать:
 
-```sh
+```shell
 $ lscpu | grep Architecture 
 ```
 
@@ -52,7 +52,7 @@ $ wget https://storage.googleapis.com/golang/go1.9.1.linux-386.tar.gz
 
 Чтобы проверить, успешно ли установлен go, используйте:
 
-```sh
+```shell
 $ go version 
  > go version go1.9.1 linux/amd64 
 ```

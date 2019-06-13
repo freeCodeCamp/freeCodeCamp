@@ -51,7 +51,7 @@ no qual:
 
 ### Empurrar para um ramo específico com o parâmetro force
 
-Se você deseja ignorar as mudanças locais feitas no repositório Git no Github (que a maioria dos desenvolvedores faz para um hot fix no servidor de desenvolvimento), então você pode usar o comando --force para empurrar, ignorando essas alterações.
+Se você deseja ignorar as mudanças locais feitas no repositório Git no GitHub (que a maioria dos desenvolvedores faz para um hot fix no servidor de desenvolvimento), então você pode usar o comando --force para empurrar, ignorando essas alterações.
 
 ```bash
 git push --force <REMOTE-NAME> <BRANCH-NAME> 

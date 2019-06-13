@@ -4,7 +4,7 @@ localeTitle: التركيب
 ---
 ## التركيب
 
-![التركيب](https://i.imgur.com/9ILjA1q.jpg)
+![التركيب](https://cdn-media-1.freecodecamp.org/imgr/9ILjA1q.jpg)
 
 لتبدأ بنفسك ، فإن الأمرين اللذين ستحتاجهما هما مترجم TypeScript ومحرر يدعم TypeScript.
 
@@ -44,7 +44,7 @@ _إلى ملاحظة_ يمكنك تكوين عملية تجميع TypeScript ه�
 
 ### مثال سريع
 
-![عمليه الضرب](https://i.imgur.com/V5nP3xj.jpg)
+![عمليه الضرب](https://cdn-media-1.freecodecamp.org/imgr/V5nP3xj.jpg)
 
 في لقطة الشاشة أعلاه ، يمكنك رؤية ملفين - `multiplication.js` و `multiplication.ts` .
 

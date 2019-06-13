@@ -2,14 +2,15 @@
 title: Font Weight and Style
 ---
 ## Font Weight and Style
+The font-weight is used to define the thickness of characters. It is used in HTML (outdated) and CSS. It can be determined in two different ways.
 
-Font-weight can be written as text values:
+* Font-weight can be written as text values:
 ```
 font-weight: normal;
 font-weight: bold;
 ```
 
-Or as a numerical value from `100` to `900` (in multiples of 100):
+* Or as a numerical value from `100` to `900` (in multiples of 100):
 ```
 font-weight: 400;  /* equal to 'normal' above */
 font-weight: 700; /* equal to 'bold' above */
@@ -37,3 +38,8 @@ font-weight: lighter;
 font-weight: bolder; 
 ```
 
+##### Additional Information
+
+* [Font Size And Weight Matters](https://type-ed.com/resources/rag-right/2017/11/13/font-weight-size)
+
+* [How To Set Weights And Styles With The @font-face Declaration](https://www.smashingmagazine.com/2013/02/setting-weights-and-styles-at-font-face-declaration/)

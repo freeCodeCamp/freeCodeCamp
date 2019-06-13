@@ -14,11 +14,11 @@ But, **void with operand 0 is preferred**.
 
 **Two ways of using operand 0 -> void(0) or void 0.** Either of them is fine.
 
-#### When to use Javascript void (0) ?
+#### When to use JavaScript void (0) ?
 When on link click, you don't want the browser to load a new page or refresh the same page( depending on the URL specified ). 
 Instead,perform the JavaScript attached to that link.
 
-#### Sample Example 1 with Javascript void (0) :
+#### Sample Example 1 with JavaScript void (0) :
 
 ```html
 <html>
@@ -32,7 +32,7 @@ When clicked on ClickMe link,an alert pops up as below :
 
 ![Output1](https://github.com/srawat19/-Guide_Images/blob/master/voidOutput1.PNG?raw=true)
 
-#### Sample Example 2 with Javascript void (0) :
+#### Sample Example 2 with JavaScript void (0) :
 
 ```html
 <html>
@@ -45,7 +45,7 @@ When clicked on ClickMe link,an alert pops up as below :
 When you double click the link,an alert will popup without any page refresh.
 
 
-#### Sample Example 3 with Javascript void (0) :
+#### Sample Example 3 with JavaScript void (0) :
 
 ```html
 <html>
@@ -59,7 +59,7 @@ ondblclick="alert('Hello !! You will see me and not get redirected to google.com
 When you double click the link,an alert will popup,closing it will also not redirect to google.com.
 
 
-#### Sample Example without Javascript void (0) :
+#### Sample Example without JavaScript void (0) :
 
 ```html
 <html>

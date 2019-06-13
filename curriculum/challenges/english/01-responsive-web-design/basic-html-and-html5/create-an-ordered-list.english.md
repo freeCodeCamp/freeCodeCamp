@@ -8,9 +8,17 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cQ3B8TM'
 ## Description
 <section id='description'>
 HTML has another special element for creating <code>ordered lists</code>, or numbered lists.
-Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists close with a <code>&#60;/ol&#62;</code>
+Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists are closed with the <code>&#60;/ol&#62;</code> tag.
+
 For example:
-<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>
+
+```html
+<ol>
+  <li>Garfield</li>
+  <li>Sylvester</li>
+</ol>
+```
+
 would create a numbered list of "Garfield" and "Sylvester".
 </section>
 
@@ -42,6 +50,10 @@ tests:
     testString: assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length, 'Make sure your <code>ol</code> element has a closing tag.');
   - text: Make sure your <code>li</code> element has a closing tag.
     testString: assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.');
+  - text: The <code>li</code> elements in your unordered list should not be empty.
+    testString: $('ul li').each((i, val) => assert(val.textContent.replace(/\s/g, ''), 'Your <code>li</code> elements in your unordered list should not be empty.'));
+  - text: The <code>li</code> elements in your ordered list should not be empty.
+    testString: $('ol li').each((i, val) => assert(!!val.textContent.replace(/\s/g, ''), 'Your <code>li</code> elements in your ordered list should not be empty.'));
 
 ```
 
@@ -79,7 +91,25 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>hate 1</li>
+    <li>hate 2</li>
+    <li>hate 3</li>
+  </ol>
+</main>
 ```
 </section>

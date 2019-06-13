@@ -6,7 +6,7 @@ localeTitle: Машинопись
 
 ### обзор
 
-![Машинопись](https://i.imgur.com/uRLunzU.png)
+![Машинопись](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
 
 Так что, как вы, скорее всего, знаете, JavaScript расширяет свой след каждый день, и это одновременно и потрясающее, и потрясающее, что вы можете делать с языком в наши дни.
 
@@ -16,7 +16,7 @@ localeTitle: Машинопись
 
 Вы можете узнать больше о различиях синтаксиса в [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript) .
 
-![Ключевая особенность](https://i.imgur.com/pZij95O.jpg)
+![Ключевая особенность](https://cdn-media-1.freecodecamp.org/imgr/pZij95O.jpg)
 
 По сути, TypeScript пытается помочь JavaScript достичь новых высот и стать очень масштабируемым и может выделяться следующими функциями:
 
@@ -41,7 +41,7 @@ localeTitle: Машинопись
 
 ### Детская площадка
 
-![Детская площадка](https://i.imgur.com/vlV7ZFr.png)
+![Детская площадка](https://cdn-media-1.freecodecamp.org/imgr/vlV7ZFr.png)
 
 Если вы хотите попробовать TypeScript без его установки, посетите [Playground](http://www.typescriptlang.org/play/index.html) .
 

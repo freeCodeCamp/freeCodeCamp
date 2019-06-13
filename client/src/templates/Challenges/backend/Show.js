@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
 import { graphql } from 'gatsby';
 
 import {
   executeChallenge,
+  challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
   initTests,
   updateChallengeMeta,
+  updateProjectFormValues,
   backendNS
 } from '../redux';
 import { createGuideUrl } from '../utils';
@@ -22,6 +25,7 @@ import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import ProjectToolPanel from '../project/Tool-Panel';
+import ProjectForm from '../project/ProjectForm';
 import {
   createFormValidator,
   isValidURL,
@@ -29,6 +33,8 @@ import {
   Form
 } from '../../../components/formHelpers';
 import Spacer from '../../../components/helpers/Spacer';
+
+import { backend } from '../../../../utils/challengeTypes';
 
 import '../components/test-frame.css';
 
@@ -41,12 +47,16 @@ const reduxFormPropTypes = {
 };
 
 const propTypes = {
+  challengeMounted: PropTypes.func.isRequired,
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
+  initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   tests: PropTypes.array,
   title: PropTypes.string,
+  updateChallengeMeta: PropTypes.func.isRequired,
+  updateProjectFormValues: PropTypes.func.isRequired,
   ...reduxFormPropTypes
 };
 
@@ -66,9 +76,11 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToActions = {
+  challengeMounted,
   executeChallenge,
   initTests,
-  updateChallengeMeta
+  updateChallengeMeta,
+  updateProjectFormValues
 };
 
 const formFields = ['solution'];
@@ -80,8 +92,15 @@ const options = {
 };
 
 export class BackEnd extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.updateDimensions = this.updateDimensions.bind(this);
+  }
+
   componentDidMount() {
     const {
+      challengeMounted,
       initTests,
       updateChallengeMeta,
       data: {
@@ -94,6 +113,16 @@ export class BackEnd extends Component {
     } = this.props;
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, challengeType });
+    challengeMounted(challengeMeta.id);
+    window.addEventListener('resize', this.updateDimensions);
+  }
+
+  updateDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
   }
 
   componentDidUpdate(prevProps) {
@@ -103,6 +132,7 @@ export class BackEnd extends Component {
       }
     } = prevProps;
     const {
+      challengeMounted,
       initTests,
       updateChallengeMeta,
       data: {
@@ -117,6 +147,7 @@ export class BackEnd extends Component {
     if (prevTitle !== currentTitle) {
       initTests(tests);
       updateChallengeMeta({ ...challengeMeta, challengeType });
+      challengeMounted(challengeMeta.id);
     }
   }
 
@@ -125,6 +156,7 @@ export class BackEnd extends Component {
       data: {
         challengeNode: {
           fields: { blockName, slug },
+          challengeType,
           title,
           description,
           instructions
@@ -133,7 +165,8 @@ export class BackEnd extends Component {
       output,
       tests,
       submitting,
-      executeChallenge
+      executeChallenge,
+      updateProjectFormValues
     } = this.props;
 
     // TODO: Should be tied to user.isSignedIn
@@ -143,43 +176,51 @@ export class BackEnd extends Component {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <LearnLayout>
-        <Spacer />
-        <div>
-          <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
-          <ChallengeDescription
-            description={description}
-            instructions={instructions}
-          />
-        </div>
-        <div>
-          <Form
-            buttonText={buttonCopy + '(Ctrl + Enter)'}
-            formFields={formFields}
-            id={backendNS}
-            options={options}
-            submit={executeChallenge}
-          />
-          <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
-        </div>
-        <div>
-          <br />
-          <Output
-            defaultOutput={`/**
-  *
-  * Test output will go here
-  *
-  *
-  */`}
-            height={150}
-            output={output}
-          />
-        </div>
-        <div>
-          <TestSuite tests={tests} />
-        </div>
-        <Spacer />
-        <CompletionModal />
-        <HelpModal />
+        <Grid>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer />
+              <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+              <ChallengeDescription
+                description={description}
+                instructions={instructions}
+              />
+              {challengeType === backend ? (
+                <Form
+                  buttonText={`${buttonCopy}`}
+                  formFields={formFields}
+                  id={backendNS}
+                  options={options}
+                  submit={executeChallenge}
+                />
+              ) : (
+                <ProjectForm
+                  isFrontEnd={false}
+                  onSubmit={executeChallenge}
+                  updateProjectForm={updateProjectFormValues}
+                />
+              )}
+              <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
+              <br />
+              <Output
+                defaultOutput={`/**
+*
+* Test output will go here
+*
+*
+*/`}
+                dimensions={this.state}
+                height={150}
+                output={output}
+              />
+              <TestSuite tests={tests} />
+
+              <Spacer />
+            </Col>
+            <CompletionModal />
+            <HelpModal />
+          </Row>
+        </Grid>
       </LearnLayout>
     );
   }
@@ -202,7 +243,6 @@ export const query = graphql`
   query BackendChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
-      guideUrl
       description
       instructions
       challengeType
