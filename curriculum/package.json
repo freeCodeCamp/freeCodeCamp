@@ -62,7 +62,8 @@
     "rx": "^4.1.0",
     "semantic-release": "^15.13.3",
     "through2": "^3.0.1",
-    "validator": "^10.4.0"
+    "validator": "^10.4.0",
+    "yargs": "^13.2.4"
   },
   "keywords": [
     "challenges",
