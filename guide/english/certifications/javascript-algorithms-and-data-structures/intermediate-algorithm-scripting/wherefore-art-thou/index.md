@@ -149,7 +149,7 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 
 function whatIsInAName(collection, source) {
   return collection.filter(a =>
-    		Object.keys(source).every(key => a[key] === source[key])
+    Object.keys(source).every(key => a[key] === source[key])
 			);
     }
 
