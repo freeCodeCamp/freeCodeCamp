@@ -53,8 +53,8 @@ const AboutPage = () => {
             <p>
               If you add up all the people who use our learning platform, read
               our{' '}
-              <Link to='https://medium.freecodecamp.org'>
-                Medium publication
+              <Link to='https://www.freecodecamp.org/news'>
+                news
               </Link>
               , watch our{' '}
               <Link to='https://youtube.com/freecodecamp'>YouTube channel</Link>
