@@ -148,7 +148,7 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
 function whatIsInAName(collection, source) {
-        return collection.filter(a =>
+  return collection.filter(a =>
     		Object.keys(source).every(key => a[key] === source[key])
 			);
     }
