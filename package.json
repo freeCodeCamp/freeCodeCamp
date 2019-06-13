@@ -74,6 +74,10 @@
     "*.js": [
       "eslint --fix",
       "git add"
+    ],
+    "*.md": [
+      "node ./curriculum/tools/lint",
+      "git add"
     ]
   },
   "husky": {
