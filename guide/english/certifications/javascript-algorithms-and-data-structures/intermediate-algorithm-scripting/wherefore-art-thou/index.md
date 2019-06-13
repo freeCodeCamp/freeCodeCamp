@@ -156,7 +156,6 @@ function whatIsInAName(collection, source) {
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmj/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
