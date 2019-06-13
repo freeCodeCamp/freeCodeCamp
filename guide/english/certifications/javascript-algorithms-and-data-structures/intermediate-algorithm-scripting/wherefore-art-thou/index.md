@@ -12,7 +12,7 @@ Write an algorithm that will take an `array` for the first argument and return a
 *   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for' target='_blank' rel='nofollow'>For Loops</a>
 *   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
-<a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys' target='_blank' rel='nofollow'>Object.keys()</a>
+*	<a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys' target='_blank' rel='nofollow'>Object.keys()</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
@@ -144,6 +144,31 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 *   <a>Array.prototype.filter()</a>
 *   <a>Array.prototype.reduce()</a>
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+
+    function whatIsInAName(collection, source) {
+        return collection.filter(a =>
+    		Object.keys(source).every(key => a[key] === source[key])
+			);
+    }
+
+    whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmj/0' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Because the resulting array should be a subset of `collection`, we use `Array.filter`
+*   Following this, the condition is only to return an array that contains objects whose key and key value are the same as in `source`, or in other words; for every key value pair `source` has, check if `collection` has any objects with the same key value pair.
+*   Using `Array.every` function we can quickly check that for every key value pair in `source` there is an object in `collection` that has the same key value pairs. 
+*   This condition is sufficient to fulfill the problem condition
+
+#### Relevant Links
+
+*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
+*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every' target='_blank' rel='nofollow'>Array.prototype.every()</a>
+*	<a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys' target='_blank' rel='nofollow'>Object.keys()</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
