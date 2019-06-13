@@ -1,7 +1,7 @@
 const markdownlint = require('markdownlint');
 
 const lintYAML = require('./markdown-yaml');
-const lintConfig = require('./.markdownlintrc.js');
+const lintConfig = require('./.markdownlintrc');
 const argv = require('yargs').argv;
 
 const isMDRE = /.*\.md$/;

@@ -75,7 +75,7 @@
       "eslint --fix",
       "git add"
     ],
-    "*.md": [
+    "./curriculum/challenges/**/*.md": [
       "node ./curriculum/tools/lint",
       "git add"
     ]
