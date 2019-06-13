@@ -9,9 +9,9 @@ Write an algorithm that will take an `array` for the first argument and return a
 
 #### Relevant Links
 
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for' target='_blank' rel='nofollow'>For Loops</a>
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
-*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for' target='_blank' rel='nofollow'>For Loops</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
+* <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
 * <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys' target='_blank' rel='nofollow'>Object.keys()</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
@@ -71,9 +71,9 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 
 #### Relevant Links
 
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for' target='_blank' rel='nofollow'>For Loops</a>
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
-*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for' target='_blank' rel='nofollow'>For Loops</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
+* <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
@@ -103,9 +103,9 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 
 #### Relevant Links
 
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every' target='_blank' rel='nofollow'>Array.prototype.every()</a>
-*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every' target='_blank' rel='nofollow'>Array.prototype.every()</a>
+* <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
@@ -141,15 +141,15 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 
 #### Relevant Links
 
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce' target='_blank' rel='nofollow'>Array.prototype.reduce()</a>
-*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce' target='_blank' rel='nofollow'>Array.prototype.reduce()</a>
+* <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty' target='_blank' rel='nofollow'>Object.hasOwnProperty()</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 ```
 function whatIsInAName(collection, source) {
-  return collection.filter(a =>
-    Object.keys(source).every(key => a[key] === source[key])
+  return collection.filter(cObj =>
+    Object.keys(source).every(key => cObj[key] === source[key])
   );
 }
 
@@ -168,7 +168,7 @@ whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: 
 
 * <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter' target='_blank' rel='nofollow'>Array.prototype.filter()</a>
 * <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every' target='_blank' rel='nofollow'>Array.prototype.every()</a>
-*   <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys' target='_blank' rel='nofollow'>Object.keys()</a>
+* <a href= 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys' target='_blank' rel='nofollow'>Object.keys()</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
