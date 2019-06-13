@@ -20,11 +20,14 @@
     "docker:test:init": "docker-compose -f docker-compose.tests.yml run -u root --rm tests bash change_volumes_owner.sh",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/build/ensure-env.js",
     "format": "npm run lint:js -- --fix",
+    "format:other": "npm run prettier -- --write",
     "hooks:install": "node node_modules/husky/husky.js install",
     "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
     "lint": "npm-run-all -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:js": "eslint .",
+    "lint:other": "npm run prettier -- --debug-check",
+    "prettier": "prettier \"**/*.{md,css}\"",
     "postinstall": "npm run bootstrap",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
@@ -71,14 +74,18 @@
     "slugg": "^1.2.1"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "./curriculum/challenges/**/*.md": [
-      "node ./curriculum/tools/lint",
-      "git add"
-    ]
+    "linters": {
+      "*.js": [
+        "eslint --fix",
+        "git add"
+      ],
+      "*.md": "node ./curriculum/tools/lint",
+      "*.{md,css}": [
+        "prettier --write",
+        "git add"
+      ]
+    },
+    "concurrent": false
   },
   "husky": {
     "hooks": {
