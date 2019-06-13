@@ -24,30 +24,31 @@ Notre programme complet de développement Web est entièrement gratuit et à vot
 
 ### Certifications
 
-freeCodeCamp.org offre plusieurs certifications de développeur gratuites. Chacune de ces certifications implique la création obligatoire de 5 projets d'applications Web, ainsi que des centaines de défis de codage facultatifs pour vous aider à préparer ces projets. Nous estimons que chaque certification prendra environ 300 heures à un programmeur débutant.
+freeCodeCamp.org propose plusieurs certifications gratuites de développeur. Chacune de ces certifications implique la création obligatoire de 5 projets d'applications Web, ainsi que des centaines de défis de codage facultatifs pour vous aider à préparer ces projets. Nous estimons que chaque certification prendra environ 300 heures à un programmeur débutant.
 
-Chacun de ces 30 projets du programme freeCodeCamp.org a ses propres scénarios d'utilisation agiles et ses tests automatisés. Ceux-ci vous aident à construire votre projet progressivement et à garantir que vous avez validé tous les scénarios utilisateurs avant de le soumettre.
+Chacun de ces 30 projets du programme freeCodeCamp.org a ses propres scénarios d'utilisation agiles et ses tests automatisés. Ces derniers vous aident à construire votre projet progressivement et garantissent que vous avez validé tous les scénarios utilisateurs avant de le soumettre.
 
-Vous pouvez extraire ces suites de tests via [le CDN de freeCodeCamp](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Cela signifie que vous pouvez construire ces projets sur des sites Web tels que CodePen et Glitch - ou même sur l'environnement local de développement de votre ordinateur .
+Vous pouvez extraire ces suites de tests via [le CDN de freeCodeCamp](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). Autrement dit, vous pouvez construire ces projets sur des sites Web tels que CodePen et Glitch - ou même sur l'environnement local de développement de votre ordinateur.
 
-L'obtention des certifications est définitive. Vous pourrez toujours y accéder depuis votre LinkedIn ou votre CV. Et lorsque vos employeurs potentiels ou vos clients indépendants cliquent sur ce lien, ils voient une certification vérifiée qui vous est propre.
+Une fois une certification obtenue, vous la gardez à vie. Vous pourrez y accéder depuis votre profil LinkedIn ou votre CV. Lorsque vos employeurs potentiels ou vos clients indépendants cliquent sur le lien, ils voient une certification vérifiée qui vous est propre.
 
-La seule exception à cette règle est que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant sans citation le code ou les projets d'autres personnes), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire: nous révoquons leurs certifications et banissons ces personnes.
+La seule exception à cette règle est que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant sans citation le code ou les projets d'autres personnes), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire. Nous révoquons leurs certifications et banissons ces personnes.
 
-Voici nos six certifications principales:
+Voici nos six certifications principales :
 
 #### 1. Certification Responsive Web Design
 
-- Introduction à HTML et HTML5
-- Introduction à CSS
-- Conception visuelle appliquée
-- Accessibilité appliquée
-- Principes de conception Web réactifs
-- CSS Flexbox
-- CSS Grid <br />
+- [Introduction à HTML et HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5)
+- [Introduction à CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css)
+- [Conception visuelle appliquée](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design)
+- [Accessibilité appliquée](https://learn.freecodecamp.org/responsive-web-design/applied-accessibility)
+- [Principes de conception Web réactifs](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-principles)
+- [CSS Flexbox](https://learn.freecodecamp.org/responsive-web-design/css-flexbox)
+- [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
+  <br />
   <br />
 
-    **Projets**: page Hommage, formulaire d'enquête, page de destination du produit, page de documentation technique, page Web du portfolio personnel
+  **Projets** : page d'hommage, formulaire d'enquête, page de promotion, page de documentation technique, portfolio personnel.
 
 #### 2. Certification des algorithmes JavaScript et des structures de données
 
