@@ -162,7 +162,7 @@ whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: 
 *   Because the resulting array should be a subset of `collection`, we use `Array.filter`
 *  Following this, the condition is only to return an array that contains objects whose key and key value are the same as in `source`, or in other words; for every key-value pair `source` has, check if `collection` has any objects with the same key value pair.
 * Using the `Array.every` function we can quickly check that for every key-value pair in `source` there is an object in `collection` that has the same key value pairs. 
-*   This condition is sufficient to fulfill the problem condition
+* This condition is sufficient to fulfill the problem condition
 
 #### Relevant Links
 
