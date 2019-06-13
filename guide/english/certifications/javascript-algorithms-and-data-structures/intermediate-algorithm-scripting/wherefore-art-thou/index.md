@@ -150,7 +150,7 @@ Check equivalence of `Object` in `collection` with `Object` passed as second par
 function whatIsInAName(collection, source) {
   return collection.filter(a =>
     Object.keys(source).every(key => a[key] === source[key])
-			);
+  );
     }
 
     whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
