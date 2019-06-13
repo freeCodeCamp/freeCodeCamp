@@ -1,4 +1,5 @@
 import {
+  delay,
   put,
   select,
   call,
@@ -7,7 +8,7 @@ import {
   fork,
   getContext
 } from 'redux-saga/effects';
-import { delay, channel } from 'redux-saga';
+import { channel } from 'redux-saga';
 
 import {
   challengeDataSelector,

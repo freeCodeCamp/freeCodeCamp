@@ -13,6 +13,7 @@ import {
 } from '../redux';
 import FourOhFourPage from '../components/FourOhFour';
 import Profile from '../components/profile/Profile';
+import { isBrowser } from '../../utils/index';
 
 const propTypes = {
   fetchProfileForUser: PropTypes.func.isRequired,
@@ -45,16 +46,19 @@ const makeMapStateToProps = () => (state, props) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ fetchProfileForUser }, dispatch);
 
-class ShowFourOhFour extends Component {
+class ShowProfileOrFourOhFour extends Component {
   componentDidMount() {
     const { requestedUser, maybeUser, fetchProfileForUser } = this.props;
     if (isEmpty(requestedUser)) {
-      return fetchProfileForUser(maybeUser);
+      fetchProfileForUser(maybeUser);
     }
-    return null;
   }
 
   render() {
+    if (!isBrowser()) {
+      return null;
+    }
+
     const { isSessionUser, requestedUser, showLoading } = this.props;
     if (isEmpty(requestedUser)) {
       if (showLoading) {
@@ -74,10 +78,10 @@ class ShowFourOhFour extends Component {
   }
 }
 
-ShowFourOhFour.displayName = 'ShowFourOhFour';
-ShowFourOhFour.propTypes = propTypes;
+ShowProfileOrFourOhFour.displayName = 'ShowProfileOrFourOhFour';
+ShowProfileOrFourOhFour.propTypes = propTypes;
 
 export default connect(
   makeMapStateToProps,
   mapDispatchToProps
-)(ShowFourOhFour);
+)(ShowProfileOrFourOhFour);

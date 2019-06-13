@@ -61,7 +61,8 @@ const buildFunctions = {
   [challengeTypes.bonfire]: buildJSChallenge,
   [challengeTypes.html]: buildDOMChallenge,
   [challengeTypes.modern]: buildDOMChallenge,
-  [challengeTypes.backend]: buildBackendChallenge
+  [challengeTypes.backend]: buildBackendChallenge,
+  [challengeTypes.backEndProject]: buildBackendChallenge
 };
 
 export async function buildChallenge(challengeData) {
