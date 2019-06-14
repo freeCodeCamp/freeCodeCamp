@@ -57,4 +57,5 @@ You can find many more tools for accessible web design on [this list made by the
 
 For information on creating and verifying accessibility for PDF documents, see the [Adobe XI Pro Guide](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html)
 
-[This accessibility inspector by mozilla](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector) is built into Firefox can help check the accessibility of a webpage.
+[This accessibility inspector by mozilla](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector), which is built into Firefox, can help check the accessibility of a webpage.
+
