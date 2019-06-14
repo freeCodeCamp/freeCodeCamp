@@ -9,34 +9,34 @@ challengeType: 5
 An <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_(SQL)#Inner_join" target="_blank">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Nested loop join" target="_blank">nested loop join</a> algorithm, but a more scalable alternative is the <a href="https://en.wikipedia.org/wiki/hash join" title="wp: hash join" target="_blank">hash join</a> algorithm.
 The "hash join" algorithm consists of two steps:
 <ol>
-  <li><b>Hash phase:</b> Create a <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap" target="_blank">multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <li><strong>Hash phase:</strong> Create a <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap" target="_blank">multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
   <ul>
     <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
     <li>Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.</li>
   </ul>
-  <li><b>Join phase:</b> Scan the other table, and find matching rows by looking in the multimap created before.</li>
+  <li><strong>Join phase:</strong> Scan the other table, and find matching rows by looking in the multimap created before.</li>
 </ol>
 In pseudo-code, the algorithm could be expressed as follows:
 <pre>
-<b>let</b> <i>A</i> = the first input table (or ideally, the larger one)
-<b>let</b> <i>B</i> = the second input table (or ideally, the smaller one)
-<b>let</b> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
-<b>let</b> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
-<b>let</b> <i>M<sub>B</sub></i> = a multimap for mapping from single values to multiple rows of table <i>B</i> (starts out empty)
-<b>let</b> <i>C</i> = the output table (starts out empty)
-<b>for each</b> row <i>b</i> in table <i>B</i>:
-  <b>place</b> <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>b(j<sub>B</sub>)</i>
-<b>for each</b> row <i>a</i> in table <i>A</i>:
-  <b>for each</b> row <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>a(j<sub>A</sub>)</i>:
-    <b>let</b> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
-    <b>place</b> row <i>c</i> in table <i>C</i>
+<strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
+<strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
+<strong>let</strong> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
+<strong>let</strong> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
+<strong>let</strong> <i>M<sub>B</sub></i> = a multimap for mapping from single values to multiple rows of table <i>B</i> (starts out empty)
+<strong>let</strong> <i>C</i> = the output table (starts out empty)
+<strong>for each</strong> row <i>b</i> in table <i>B</i>:
+  <strong>place</strong> <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>b(j<sub>B</sub>)</i>
+<strong>for each</strong> row <i>a</i> in table <i>A</i>:
+  <strong>for each</strong> row <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>a(j<sub>A</sub>)</i>:
+    <strong>let</strong> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
+    <strong>place</strong> row <i>c</i> in table <i>C</i>
 </pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
 Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
-<h4><b>Input</b></h4>
+<h4><strong>Input</strong></h4>
 <table>
 <tr>
 <td style="padding: 4px; margin: 5px;">
@@ -114,7 +114,7 @@ Implement the "hash join" algorithm as a function and demonstrate that it passes
 </td>
 <td style="padding: 4px; margin: 5px;">
 </td></tr></table>
-<h4><b>Output</b></h4>
+<h4><strong>Output</strong></h4>
 <table>
 <tr>
 <th style="padding: 4px; margin: 5px;"> A_age </th>

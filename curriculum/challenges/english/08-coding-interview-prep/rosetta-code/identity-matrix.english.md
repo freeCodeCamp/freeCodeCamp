@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-An <i>identity matrix</i> is a square matrix of size \( n \times n \), where the diagonal elements are all <b>1</b>s (ones), and all the other elements are all <b>0</b>s (zeroes).
+An <i>identity matrix</i> is a square matrix of size \( n \times n \), where the diagonal elements are all <code>1</code>s (ones), and all the other elements are all <code>0</code>s (zeroes).
 <ul>
   <li style="list-style: none;">\(\displaystyle I_{n}=\begin{bmatrix} 1 & 0 & 0 \cr 0 & 1 & 0 \cr 0 & 0 & 1 \cr \end{bmatrix}\)</li>
 </ul>

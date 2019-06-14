@@ -7,7 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 A &nbsp; <a href="https://en.wikipedia.org/wiki/Hardy–Ramanujan number" title="wp: Hardy–Ramanujan number" target="_blank">taxicab number</a> (the definition that is being used here) is a positive integer that can be expressed as the sum of two positive cubes in more than one way.
-The first taxicab number is <b>1729</b>, which is:
+The first taxicab number is <code>1729</code>, which is:
 <span style="margin-left: 2em;">1<sup>3</sup> &nbsp; + &nbsp; 12<sup>3</sup> &nbsp; &nbsp; &nbsp; and</span>
 <span style="margin-left: 2em;">9<sup>3</sup> &nbsp; + &nbsp; 10<sup>3</sup>.</span>
 Taxicab numbers are also known as:
@@ -22,7 +22,7 @@ Taxicab numbers are also known as:
 ## Instructions
 <section id='instructions'>
 Write a function that returns the lowest <code>n</code> taxicab numbers. For each of the taxicab numbers, show the number as well as its constituent cubes.
-<b>See also:</b>
+<strong>See also:</strong>
 <ul>
   <li><a href="https://oeis.org/A001235" target="_blank">A001235 taxicab numbers</a> on The On-Line Encyclopedia of Integer Sequences.</li>
   <li><a href="https://en.wikipedia.org/wiki/Taxicab_number" target="_blank">taxicab number</a> on Wikipedia.</li>

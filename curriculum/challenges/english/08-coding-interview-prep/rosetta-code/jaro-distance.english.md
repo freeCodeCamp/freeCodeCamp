@@ -6,8 +6,8 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that <b>0</b> equates to no similarity and <b>1</b> is an exact match. 
-<b>Definition</b>
+The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that <code>0</code> equates to no similarity and <code>1</code> is an exact match. 
+<strong>Definition</strong>
 The Jaro distance  \( d_j \)  of two given strings  \(s_1\)  and  \(s_2\) is
 \begin{align}d_j = \begin{cases}0&amp;  & \text{if }m=0 \\\\{\frac {1}{3}}\left({\frac {m}{|s_{1}|}}+{\frac {m}{|s_{2}|}}+{\frac {m-t}{m}}\right)&amp; & \text{otherwise}\end{cases}\end{align}
 Where:
@@ -17,7 +17,7 @@ Where:
 </uL>
 Two characters from  \(s_1\)   and  \(s_2\)   respectively, are considered <i>matching</i> only if they are the same and not farther than  \(\left\lfloor\frac{\max(|s_1|,|s_2|)}{2}\right\rfloor-1\).
 Each character of  \(s_1\)   is compared with all its matching characters in  \(s_2\) . The number of matching (but different sequence order) characters divided by 2 defines the number of <i>transpositions</i>.
-<b>Example</b>
+<strong>Example</strong>
 Given the strings  \(s_1\)   <i>DWAYNE</i>  and  \(s_2\)   <i>DUANE</i>  we find:
 <ul>
   <li>\(m = 4\)</li>

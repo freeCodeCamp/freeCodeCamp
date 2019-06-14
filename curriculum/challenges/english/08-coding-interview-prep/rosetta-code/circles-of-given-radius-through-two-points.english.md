@@ -7,7 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
-<b>Exceptions:</b>
+<strong>Exceptions:</strong>
 <ul>
   <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
   <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
@@ -19,13 +19,13 @@ Given two points on a plane and a radius, usually two circles of given radius ca
 ## Instructions
 <section id='instructions'>
 Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
-<b>For edge cases, return the following:</b>
+<strong>For edge cases, return the following:</strong>
 <ul>
   <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
   <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
   <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
 </ul>
-<b>Sample inputs:</b>
+<strong>Sample inputs:</strong>
 <pre>
       p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0

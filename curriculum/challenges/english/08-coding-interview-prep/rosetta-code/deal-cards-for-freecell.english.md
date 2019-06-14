@@ -27,8 +27,8 @@ The algorithm follows:
     </ul>
   <li>Deal all 52 cards, face up, across 8 columns. The first 8 cards go in 8 columns, the next 8 cards go on the first 8 cards, and so on.</li>
 </ol>
-<b>Example:</b>
-<b>Order to deal cards</b>
+<strong>Example:</strong>
+<strong>Order to deal cards</strong>
 <pre> 1  2  3  4  5  6  7  8
  9 10 11 12 13 14 15 16
 17 18 19 20 21 22 23 24
@@ -36,7 +36,7 @@ The algorithm follows:
 33 34 35 36 37 38 39 40
 41 42 43 44 45 46 47 48
 49 50 51 52</pre>
-<b>Game #1</b>
+<strong>Game #1</strong>
 
 ```js
 [
@@ -49,7 +49,7 @@ The algorithm follows:
   ['6S', '9C', '2H', '6H']
 ]
 ```
-<b>Game #617</b>
+<strong>Game #617</strong>
 
 ```js
 [

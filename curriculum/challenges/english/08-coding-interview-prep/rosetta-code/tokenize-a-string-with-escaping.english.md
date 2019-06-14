@@ -9,9 +9,9 @@ challengeType: 5
 Write a function or program that can split a string at each non-escaped occurrence of a separator character.
 It should accept three input parameters:
 <ul>
-  <li>The <b>string</b></li>
-  <li>The <b>separator character</b></li>
-  <li>The <b>escape character</b></li>
+  <li>The <strong>string</strong></li>
+  <li>The <strong>separator character</strong></li>
+  <li>The <strong>escape character</strong></li>
 </ul>
 It should output a list of strings.
 Rules for splitting:

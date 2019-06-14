@@ -13,11 +13,10 @@ Factorial of a number is given by:
 </pre>
 For example:
 <ul>
-  <li><big>3! = 3 * 2 * 1 = 6</big></li>
-  <li><big>4! = 4 * 3 * 2 * 1 = 24</big></li>
+  <li><code>3! = 3 * 2 * 1 = 6</code></li>
+  <li><code>4! = 4 * 3 * 2 * 1 = 24</code></li>
 </ul>
-<b>Note:</b>
-0! = 1
+<strong>Note:</strong> <code>0! = 1</code>
 </section>
 
 ## Instructions

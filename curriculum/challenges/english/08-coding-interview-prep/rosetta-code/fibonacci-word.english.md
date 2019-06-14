@@ -8,16 +8,16 @@ challengeType: 5
 <section id='description'>
 The  Fibonacci Word  may be created in a manner analogous to the  Fibonacci Sequence <a href="https://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" target="_blank">as described here</a>:
 <pre>
-Define  F_Word<sub>1</sub>  as  <b>1</b>
-Define  F_Word<sub>2</sub>  as  <b>0</b>
-Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <b>01</b>
+Define  F_Word<sub>1</sub>  as  <strong>1</strong>
+Define  F_Word<sub>2</sub>  as  <strong>0</strong>
+Form   F_Word<sub>3</sub>  as  F_Word<sub>2</sub>   concatenated with  F_Word<sub>1</sub>   i.e.:  <strong>01</strong>
 Form   F_Word<sub>n</sub>  as  F_Word<sub>n-1</sub>  concatenated with  F_word<sub>n-2</sub>
 </pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-Write a function to return the Fibonacci Words upto <b>N</b>. <b>N</b> will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: <code>{ N: 1, Length: 1, Entropy: 0, Word: '1' }</code>.
+Write a function to return the Fibonacci Words up to <code>n</code>. <code>n</code> will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form: <code>{ N: 1, Length: 1, Entropy: 0, Word: '1' }</code>.
 </section>
 
 ## Tests
@@ -26,11 +26,11 @@ Write a function to return the Fibonacci Words upto <b>N</b>. <b>N</b> will be p
 ```yml
 tests:
   - text: <code>fibWord</code> is a function.
-    testString: assert(typeof fibWord === 'function', '<code>fibWord</code> is a function.');
+    testString: assert(typeof fibWord === 'function');
   - text: <code>fibWord(5)</code> should return an array.
-    testString: assert(Array.isArray(fibWord(5)),'<code>fibWord(5)</code> should return an array.');
-  - text: <code>fibWord(5)</code> should return <code>'+JSON.stringify(ans)+'</code>.
-    testString: assert.deepEqual(fibWord(5),ans,'<code>fibWord(5)</code> should return <code>'+JSON.stringify(ans)+'</code>.');
+    testString: assert(Array.isArray(fibWord(5)));
+  - text: <code>fibWord(5)</code> should return <code>[{ N:1, Length:1, Entropy:0, Word:"1" },{ N:2, Length:1, Entropy:0, Word:"0" },{ N:3, Length:2, Entropy:1, Word:"01" },{ N:4, Length:3, Entropy:0.9182958340544896, Word:"010" },{ N:5, Length:5, Entropy:0.9709505944546688, Word:"01001" }]</code>.
+    testString: assert.deepEqual(fibWord(5),ans);
 
 ```
 

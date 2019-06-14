@@ -11,11 +11,11 @@ challengeType: 5
 where <big>s</big> is half the perimeter of the triangle; that is,
 <span style="margin-left: 2em;"><big>$s=\frac{a+b+c}{2}.$</big></span>
 Heronian triangles are triangles whose sides and area are all integers.
-An example is the triangle with sides <b>3, 4, 5</b> whose area is <b>6</b> (and whose perimeter is <b>12</b>).
-Note that any triangle whose sides are all an integer multiple of <b>3, 4, 5</b>; such as <b>6, 8, 10,</b> will also be a Heronian triangle.
+An example is the triangle with sides <code>3, 4, 5</code> whose area is <code>6</code> (and whose perimeter is <code>12</code>).
+Note that any triangle whose sides are all an integer multiple of <code>3, 4, 5</code>; such as <code>6, 8, 10,</code> will also be a Heronian triangle.
 Define a Primitive Heronian triangle as a Heronian triangle where the greatest common divisor
-of all three sides is <b>1</b> (unity).
-This will exclude, for example, triangle <b>6, 8, 10.</b>
+of all three sides is <code>1</code> (unity).
+This will exclude, for example, triangle <code>6, 8, 10.</code>
 </section>
 
 ## Instructions

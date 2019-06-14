@@ -6,14 +6,14 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The  <a href="https://en.wikipedia.org/wiki/Farey sequence" title="wp: Farey sequence" target="_blank">Farey sequence</a>   <b>F<sub>n</sub></b> of order <b>n</b> is the sequence of completely reduced fractions between <b>0</b> and <b>1</b> which, when in lowest terms, have denominators less than or equal to <b>n</b>, arranged in order of increasing size.
+The  <a href="https://en.wikipedia.org/wiki/Farey sequence" title="wp: Farey sequence" target="_blank">Farey sequence</a>   <code>F<sub>n</sub></code> of order <code>n</code> is the sequence of completely reduced fractions between <code>0</code> and <code>1</code> which, when in lowest terms, have denominators less than or equal to <code>n</code>, arranged in order of increasing size.
 The <i>Farey sequence</i> is sometimes incorrectly called a <i>Farey series</i>.
 Each Farey sequence:
 <ul>
   <li>starts with the value  0,  denoted by the fraction  $ \frac{0}{1} $</li>
   <li>ends with the value  1,  denoted by the fraction  $ \frac{1}{1}$.</li>
 </ul>
-The Farey sequences of orders <b>1</b> to <b>5</b> are:
+The Farey sequences of orders <code>1</code> to <code>5</code> are:
 <ul>
   <li style="list-style: none;">${\bf\it{F}}_1 = \frac{0}{1}, \frac{1}{1}$</li>
   <li style="list-style: none;">${\bf\it{F}}_2 = \frac{0}{1}, \frac{1}{2}, \frac{1}{1}$</li>
@@ -25,7 +25,7 @@ The Farey sequences of orders <b>1</b> to <b>5</b> are:
 
 ## Instructions
 <section id='instructions'>
-Write a function that returns the Farey sequence of order <b>n</b>. The function should have one parameter that is <b>n</b>. It should return the sequence as an array.
+Write a function that returns the Farey sequence of order <code>n</code>. The function should have one parameter that is <code>n</code>. It should return the sequence as an array.
 </section>
 
 ## Tests

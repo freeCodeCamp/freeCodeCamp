@@ -7,7 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 Implement basic element-wise matrix-matrix and scalar-matrix operations.
-<b>Implement:</b>
+<strong>Implement:</strong>
 <ul>
   <li>addition</li>
   <li>subtraction</li>

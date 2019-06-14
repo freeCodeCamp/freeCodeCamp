@@ -9,12 +9,12 @@ challengeType: 5
 Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
 The generator should be able to:
 <ul>
-  <li>Show the first <b>n</b> prime numbers.</li>
-  <li>Show the prime numbers in a range.</li>
-  <li>Show the number of primes in a range.</li>
-  <li>Show the <b>n<sup>th</sup></b> prime number.</li>
+  <li>Show the first <code>n</code> prime numbers</li>
+  <li>Show the prime numbers in a range</li>
+  <li>Show the number of primes in a range</li>
+  <li>Show the <code>n<sup>th</sup></code> prime number</li>
 </ul>
-The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array.
+The function should have two parameters. The first will receive <code>n</code> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
 </section>
 
 ## Instructions

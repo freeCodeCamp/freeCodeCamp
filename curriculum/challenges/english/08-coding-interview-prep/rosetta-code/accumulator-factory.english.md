@@ -12,9 +12,9 @@ A problem posed by <a href='https://en.wikipedia.org/wiki/Paul_Graham_(programme
 ## Instructions
 <section id='instructions'>
 Create a function that takes a number $n$ and generates accumulator functions that return the sum of every number ever passed to them.
-<b>Rules:</b>
+<strong>Rules:</strong>
 Do not use global variables.
-<b>Hint:</b>
+<strong>Hint:</strong>
 Closures save outer state.
 </section>
 

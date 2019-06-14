@@ -7,7 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 The Harshad or Niven numbers are positive integers ≥ 1 that are divisible by the sum of their digits.
-For example, <b>42</b> is a <a href="https://rosettacode.org/wiki/Harshad_or_Niven_series" title="Harshad or Niven series" target="_blank">Harshad number</a> as <b>42</b> is divisible by <b>(4 + 2)</b> without remainder.
+For example, <code>42</code> is a <a href="https://rosettacode.org/wiki/Harshad_or_Niven_series" title="Harshad or Niven series" target="_blank">Harshad number</a> as <code>42</code> is divisible by <code>(4 + 2)</code> without remainder.
 Assume that the series is defined as the numbers in increasing order.
 </section>
 

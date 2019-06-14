@@ -7,7 +7,7 @@ challengeType: 5
 ## Description
 <section id='description'>
 A <a href="https://en.wikipedia.org/wiki/Happy_number" target="_blank">happy number</a> is defined by the following process:
-Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals <b>1</b> (where it will stay), or it loops endlessly in a cycle which does not include <b>1</b>. Those numbers for which this process ends in <b>1</b> are happy numbers, while those that do not end in <b>1</b> are unhappy numbers.
+Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals <code>1</code> (where it will stay), or it loops endlessly in a cycle which does not include <code>1</code>. Those numbers for which this process ends in <code>1</code> are happy numbers, while those that do not end in <code>1</code> are unhappy numbers.
 </section>
 
 ## Instructions

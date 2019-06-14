@@ -6,17 +6,16 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A Mersenne number is a number in the form of 2<sup>P</sup>-1.
-If P is prime, the Mersenne number may be a Mersenne prime
-(if P is not prime, the Mersenne number is also not prime).
+A Mersenne number is a number in the form of <code>2<sup>P</sup>-1</code>.
+If <code>P</code> is prime, the Mersenne number may be a Mersenne prime. (If <code>P</code> is not prime, the Mersenne number is also not prime.)
 In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a,  potentially lengthy, <a href="https://rosettacode.org/wiki/Lucas-Lehmer test" title="Lucas-Lehmer test" target="_blank">Lucas-Lehmer test</a>.
-There are very efficient algorithms for determining if a number divides 2<sup>P</sup>-1 (or equivalently, if 2<sup>P</sup> mod (the number) = 1).
+There are very efficient algorithms for determining if a number divides <code>2<sup>P</sup>-1</code> (or equivalently, if <code>2<sup>P</sup> mod (the number) = 1</code>).
 Some languages already have built-in implementations of this exponent-and-mod operation (called modPow or similar).
 The following is how to implement this modPow yourself:
-For example, let's compute 2<sup>23</sup> mod 47.
-Convert the exponent 23 to binary, you get 10111. Starting with <tt>square</tt> = 1, repeatedly square it.
-Remove the top bit of the exponent, and if it's 1 multiply <tt>square</tt> by the base of the exponentiation (2), then compute <tt>square</tt> modulo 47.
-Use the result of the modulo from the last step as the initial value of <tt>square</tt> in the next step:
+For example, let's compute <code>2<sup>23</sup> mod 47</code>.
+Convert the exponent 23 to binary, you get 10111. Starting with <code><tt>square</tt> = 1</code>, repeatedly square it.
+Remove the top bit of the exponent, and if it's 1 multiply <code><tt>square</tt></code> by the base of the exponentiation (2), then compute <code><tt>square</tt> modulo 47</code>.
+Use the result of the modulo from the last step as the initial value of <code><tt>square</tt></code> in the next step:
 <pre>
 Remove   Optional
 square        top bit  multiply by 2  mod 47
@@ -27,18 +26,18 @@ square        top bit  multiply by 2  mod 47
 32*32 = 1024  1     1  1024*2 = 2048    27
 27*27 = 729   1        729*2 = 1458      1
 </pre>
-Since 2<sup>23</sup> mod 47 = 1, 47 is a factor of 2<sup>P</sup>-1.
-(To see this, subtract 1 from both sides: 2<sup>23</sup>-1 = 0 mod 47.)
-Since we've shown that 47 is a factor, 2<sup>23</sup>-1 is not prime.
+Since <code>2<sup>23</sup> mod 47 = 1</code>, 47 is a factor of <code>2<sup>P</sup>-1</code>.
+(To see this, subtract 1 from both sides: <code>2<sup>23</sup>-1 = 0 mod 47</code>.)
+Since we've shown that 47 is a factor, <code>2<sup>23</sup>-1</code> is not prime.
 Further properties of Mersenne numbers allow us to refine the process even more.
-Any factor q of 2<sup>P</sup>-1 must be of the form 2kP+1, k being a positive integer or zero. Furthermore, q must be 1 or 7 mod 8.
-Finally any potential factor q must be <a href="https://rosettacode.org/wiki/Primality by Trial Division" title="Primality by Trial Division" target="_blank">prime</a>.
-As in other trial division algorithms, the algorithm stops when 2kP+1 > sqrt(N).These primality tests only work on Mersenne numbers where P is prime. For example, M<sub>4</sub>=15 yields no factors using these techniques, but factors into 3 and 5, neither of which fit 2kP+1.
+Any factor <code>q</code> of <code>2<sup>P</sup>-1</code> must be of the form <code>2kP+1</code>, <code>k</code> being a positive integer or zero. Furthermore, <code>q</code> must be <code>1</code> or <code>7 mod 8</code>.
+Finally any potential factor <code>q</code> must be <a href="https://rosettacode.org/wiki/Primality by Trial Division" title="Primality by Trial Division" target="_blank">prime</a>.
+As in other trial division algorithms, the algorithm stops when <code>2kP+1 > sqrt(N)</code>.These primarily tests only work on Mersenne numbers where <code>P</code> is prime. For example, <code>M<sub>4</sub>=15</code> yields no factors using these techniques, but factors into 3 and 5, neither of which fit <code>2kP+1</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Using the above method find a factor of  2<sup>929</sup>-1 (aka M929)
+Using the above method find a factor of  <code>2<sup>929</sup>-1</code> (aka M929)
 </section>
 
 ## Tests

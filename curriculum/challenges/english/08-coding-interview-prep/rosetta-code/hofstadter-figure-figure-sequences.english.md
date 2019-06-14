@@ -17,9 +17,9 @@ Sequence <big>$S$</big> starts:
 
 ## Instructions
 <section id='instructions'>
-Create two functions named <b>ffr</b> and <b>ffs</b>  that when given <b>n</b> return <b>R(n)</b> or <b>S(n)</b> respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
-No maximum value for <b>n</b> should be assumed.
-<b>References</b>
+Create two functions named <code>ffr</code> and <code>ffs</code>  that when given <code>n</code> return <code>R(n)</code> or <code>S(n)</code> respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
+No maximum value for <code>n</code> should be assumed.
+<strong>References</strong>
 <ul>
   <li>
     Sloane's <a href="https://oeis.org/A005228" target="_blank">A005228</a> and <a href="https://oeis.org/A030124" target="_blank">A030124</a>.

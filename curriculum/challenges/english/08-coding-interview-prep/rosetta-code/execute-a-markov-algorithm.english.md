@@ -15,11 +15,11 @@ Rules have the syntax:
 [whitespace] ::= ([tab] | [space]) [[whitespace]]
 </pre>
 There is one rule per line.
-If there is a <b>.</b> (period) present before the  [replacement], then this is a terminating rule in which case the interpreter must halt execution.
+If there is a <code>.</code> (period) present before the  [replacement], then this is a terminating rule in which case the interpreter must halt execution.
 A ruleset consists of a sequence of rules, with optional comments.
 <big><big>Rulesets</big></big>
 Use the following tests on entries:
-<b>Ruleset 1:</b>
+<strong>Ruleset 1:</strong>
 <pre>
 # This rules file is extracted from Wikipedia:
 # http://en.wikipedia.org/wiki/Markov_Algorithm
@@ -34,7 +34,7 @@ Sample text of:
 <code>I bought a B of As from T S.</code>
 Should generate the output:
 <code>I bought a bag of apples from my brother.</code>
-<b>Ruleset 2:</b>
+<strong>Ruleset 2:</strong>
 A test of the terminating rule
 <pre>
 # Slightly modified from the rules on Wikipedia
@@ -49,7 +49,7 @@ Sample text of:
 <code>I bought a B of As from T S.</code>
 Should generate:
 <code>I bought a bag of apples from T shop.</code>
-<b>Ruleset 3:</b>
+<strong>Ruleset 3:</strong>
 This tests for correct substitution order and may trap simple regexp based replacement routines if special regexp characters are not escaped.
 <pre>
 #BNF Syntax testing rules
@@ -68,7 +68,7 @@ Sample text of:
 <code>I bought a B of As W my Bgage from T S.</code>
 Should generate:
 <code>I bought a bag of apples with my money from T shop.</code>
-<b>Ruleset 4:</b>
+<strong>Ruleset 4:</strong>
 This tests for correct order of scanning of rules, and may trap replacement routines that scan in the wrong order.  It implements a general unary multiplication engine.  (Note that the input expression must be placed within underscores in this implementation.)
 <pre>
 ### Unary Multiplication Engine, for testing Markov Algorithm implementations
@@ -101,9 +101,9 @@ Sample text of:
 <code>_1111*11111_</code>
 should generate the output:
 <code>11111111111111111111</code>
-<b>Ruleset 5:</b>
-A simple <a href="http://en.wikipedia.org/wiki/Turing_machine" title="link: http://en.wikipedia.org/wiki/Turing_machine" target="_blank">Turing machine</a>,
-implementing a three-state <a href="http://en.wikipedia.org/wiki/Busy_beaver" title="link: http://en.wikipedia.org/wiki/Busy_beaver" target="_blank">busy beaver</a>.The tape consists of <b>0</b>s and <b>1</b>s, the states are <b>A</b>, <b>B</b>, <b>C</b> and <b>H</b> (for <b>H</b>alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
+<strong>Ruleset 5:</strong>
+A simple <a href="http://en.wikipedia.org/wiki/Turing_machine" title="link: http://en.wikipedia.org/wiki/Turing_machine" target="_blank">Turing machine</a>, implementing a three-state <a href="http://en.wikipedia.org/wiki/Busy_beaver" title="link: http://en.wikipedia.org/wiki/Busy_beaver" target="_blank">busy beaver</a>.
+The tape consists of <code>0</code>s and <code>1</code>s, the states are <code>A</code>, <code>B</code>, <code>C</code> and <code>H</code> (for <code>H</code>alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
 Besides demonstrating that the Markov algorithm is Turing-complete, it also made me catch a bug in the C++ implementation which wasn't caught by the first four rulesets.
 <pre>
 #Turing machine: three-state busy beaver
