@@ -3,20 +3,20 @@ title: Algorithm Performance
 ---
 
 ## Algorithm Performance
-To understand the performance of algorithms, first we need to know the big-O notation.
+To understand the performance of algorithms, first, we need to know the big-O notation.
 
 ### The Big-O Notation
-In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
+In mathematics, the big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
-A function's limiting behavior is how the function acts as it approaches a specific value (usually trends towards infinity).
+A function's limiting behavior is how the function acts as it approaches a specific value (usual trends towards infinity).
 
-In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
+In short, the big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
 In algorithm design, we usually use big-O notation because we can see how good or bad an algorithm's performance will be.  From a denotative perspective, big-O denotes the runtime in the worst possible case scenario.  However, in many instances, people use it as a synonym for average expected runtime.  
 
 In mathematics, the big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
-In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.  In programming, big-O notation compares the growth/decline of the runtime in respects to the size of the input.  
+In short, the big-O notation is used to describe the growth or decline of a function, usually with respect to another function.  In programming, big-O notation compares the growth/decline of the runtime in respects to the size of the input.  
 
 NOTE: x^2 is equivalent to x * x or 'x-squared'
 
@@ -25,12 +25,12 @@ The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x 
 
 Effectively, we say that a function f(x) that is O(g(x)) grows slower than g(x) does.
 
-Comparatively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
+Comparatively, in computer science and software development, we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
 
 **Space Complexity** of an algorithm refers to its memory footprint with respect to the input size.
 
 Specifically, when using big-O notation we are describing the efficiency of the algorithm with respect to an input: _n_, usually as _n_ approaches infinity.  
-When examining algorithms, we generally want a lower time and space complexity. The time complexity of o(1) is indicative of constant time.
+When examining algorithms, we generally want a lower time and space complexity. The time complexity of o(1) is indicative of the constant time.
 
 Through the comparison and analysis of algorithms, we are able to create more efficient applications.
 
@@ -52,7 +52,7 @@ The following 3 notations are mostly used to represent the time complexity of al
 
 <img src = "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AlgoAnalysis-2.png"/>
 
-3. **Ω Notation**: Ω notation provides a lower bound to algorithm. it shows fastest possible answer for that algorithm.
+3. **Ω Notation**: Ω notation provides a lower bound to algorithm. it shows the fastest possible answer for that algorithm.
     >Ω (g(n)) = {f(n): there exist positive constants c and n0 such that 0 <= cg(n) <= f(n) for all n >= n0}.
     
 <img src = "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AlgoAnalysis-3.png"/>
@@ -93,7 +93,7 @@ As an example, we can examine the time complexity of the <a href='https://github
 Looking at this code, we can see that in the best case scenario where the array is already sorted, the program will only make _n_ comparisons as no swaps will occur.  
 Therefore we can say that the best case time complexity of bubble sort is O(_n_).
 
-Examining the worst case scenario where the array is in reverse order, the first iteration will make _n_ comparisons while the next will have to make _n_ - 1 comparisons and so on until only 1 comparison must be made.  
+Examining the worst case scenario where the array is in reverse order, the first iteration will make _n_ comparisons while the next will have to make _n_ - 1 comparison and so on until only 1 comparison must be made.  
 The big-O notation for this case is therefore _n_ * [(_n_ - 1) / 2] which = 0.5*n*^2 - 0.5*n* = O(_n_^2) as the _n_^2 term dominates the function which allows us to ignore the other term in the function.
 
 We can confirm this analysis using this handy big-O cheat sheet</a> that features the big-O time complexity of many commonly used data structures and algorithms
