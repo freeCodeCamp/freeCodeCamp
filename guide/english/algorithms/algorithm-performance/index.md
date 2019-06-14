@@ -3,12 +3,12 @@ title: Algorithm Performance
 ---
 
 ## Algorithm Performance
-To understand the performance of algorithms, first, we need to know the big-O notation.
+To understand the performance of algorithms, you first need to know the big-O notation.
 
 ### The Big-O Notation
 In mathematics, the big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
-A function's limiting behavior is how the function acts as it approaches a specific value (usual trends towards infinity).
+A function's limiting behavior is how the function acts as it approaches a specific value (usually trends towards infinity).
 
 In short, the big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
@@ -30,7 +30,7 @@ Comparatively, in computer science and software development, we can use big-O no
 **Space Complexity** of an algorithm refers to its memory footprint with respect to the input size.
 
 Specifically, when using big-O notation we are describing the efficiency of the algorithm with respect to an input: _n_, usually as _n_ approaches infinity.  
-When examining algorithms, we generally want a lower time and space complexity. The time complexity of o(1) is indicative of the constant time.
+When examining algorithms, we generally want a lower time and space complexity. The time complexity of o(1) is indicative of constant time.
 
 Through the comparison and analysis of algorithms, we are able to create more efficient applications.
 
@@ -93,7 +93,7 @@ As an example, we can examine the time complexity of the <a href='https://github
 Looking at this code, we can see that in the best case scenario where the array is already sorted, the program will only make _n_ comparisons as no swaps will occur.  
 Therefore we can say that the best case time complexity of bubble sort is O(_n_).
 
-Examining the worst case scenario where the array is in reverse order, the first iteration will make _n_ comparisons while the next will have to make _n_ - 1 comparison and so on until only 1 comparison must be made.  
+Examining the worst case scenario where the array is in reverse order, the first iteration will make _n_ comparisons while the next will have to make _n_ - 1 comparisons and so on until only 1 comparison must be made.  
 The big-O notation for this case is therefore _n_ * [(_n_ - 1) / 2] which = 0.5*n*^2 - 0.5*n* = O(_n_^2) as the _n_^2 term dominates the function which allows us to ignore the other term in the function.
 
 We can confirm this analysis using this handy big-O cheat sheet</a> that features the big-O time complexity of many commonly used data structures and algorithms
