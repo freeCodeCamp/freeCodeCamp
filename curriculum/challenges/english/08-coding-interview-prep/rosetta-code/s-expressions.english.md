@@ -16,14 +16,14 @@ The function should read a single but nested S-Expression from a string and retu
 Newlines and other whitespace may be ignored unless contained within a quoted string.
 "<tt>()</tt>"  inside quoted strings are not interpreted, but treated as part of the string.
 Handling escaped quotes inside a string is optional; thus "<tt>(foo"bar)</tt>" may be treated as a string "<tt>foo"bar</tt>", or as an error.
-For this, the reader need not recognize "<tt>\</tt>" for escaping, but should, in addition, recognize numbers if the language has appropriate datatypes.
+For this, the reader need not recognize "<tt>\</tt>" for escaping, but should, in addition, recognize numbers if the language has appropriate data types.
 Note that with the exception of "<tt>()"</tt>" ("<tt>\</tt>" if escaping is supported) and whitespace there are no special characters. Anything else is allowed without quotes.
 The reader should be able to read the following input
 <pre>
 ((data "quoted data" 123 4.5)
 (data (!@# (4.5) "(more" "data)")))
 </pre>
-and turn it into a native datastructure. (see the <a href="https://rosettacode.org/wiki/S-Expressions#Pike" title="#Pike" target="_blank">Pike</a>, <a href="https://rosettacode.org/wiki/S-Expressions#Python" title="#Python" target="_blank">Python</a> and <a href="https://rosettacode.org/wiki/S-Expressions#Ruby" title="#Ruby" target="_blank">Ruby</a> implementations for examples of native data structures.)
+and turn it into a native data structure. (See the <a href="https://rosettacode.org/wiki/S-Expressions#Pike" title="#Pike" target="_blank">Pike</a>, <a href="https://rosettacode.org/wiki/S-Expressions#Python" title="#Python" target="_blank">Python</a> and <a href="https://rosettacode.org/wiki/S-Expressions#Ruby" title="#Ruby" target="_blank">Ruby</a> implementations for examples of native data structures.)
 </section>
 
 ## Tests

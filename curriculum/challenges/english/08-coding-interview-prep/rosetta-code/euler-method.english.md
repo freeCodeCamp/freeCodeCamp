@@ -32,7 +32,7 @@ The iterative solution rule is then:
   <li><big>$y_{n+1} = y_n + h \, f(t_n, y_n)$</big></li>
 </ul>
 where <big>$h$</big> is the step size, the most relevant parameter for accuracy of the solution.  A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.
-<b>Example: Newton's Cooling Law</b>
+<strong>Example: Newton's Cooling Law</strong>
 Newton's cooling law describes how an object of initial temperature <big>$T(t_0) = T_0$</big> cools down in an environment of temperature  <big>$T_R$</big>:
 <ul style="list-style: none;">
   <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
@@ -52,17 +52,17 @@ The analytical solution, which we will compare to the numerical approximation, i
 <section id='instructions'>
 Implement a routine of Euler's method and then to use it to solve the given example of Newton's cooling law with it for three different step sizes of:
 <ul>
-  <li>2 s</li>
-  <li>5 s and</li>
-  <li>10 s</li>
+  <li><code>2 s</code></li>
+  <li><code>5 s</code> and</li>
+  <li><code>10 s</code></li>
 </ul>
 and to compare with the analytical solution.
-<b>Initial values:</b>
+<strong>Initial values:</strong>
 <ul>
-  <li>initial temperature  <big>$T_0$</big>  shall be  100 °C</li>
-  <li>room temperature  <big>$T_R$</big>  shall be  20 °C</li>
-  <li>cooling constant   <big>$k$</big>   shall be  0.07</li>
-  <li>time interval to calculate shall be from  0s to 100 s</li>
+  <li>initial temperature <big>$T_0$</big> shall be <code>100 °C</code></li>
+  <li>room temperature <big>$T_R$</big> shall be <code>20 °C</code></li>
+  <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
+  <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
 </ul> 
 </section>
 

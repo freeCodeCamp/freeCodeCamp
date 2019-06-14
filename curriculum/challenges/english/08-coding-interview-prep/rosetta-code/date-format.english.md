@@ -8,8 +8,8 @@ challengeType: 5
 <section id='description'>
 Return an array with the current date in the formats:
 <ul>
-  <li><b>2007-11-23</b> and</li>
-  <li><b>Sunday, November 23, 2007</b></li>
+  <li>2007-11-23</li>
+  <li>Sunday, November 23, 2007</li>
 </ul>
 Example output: <code>['2007-11-23', 'Sunday, November 23, 2007']</code>
 </section>

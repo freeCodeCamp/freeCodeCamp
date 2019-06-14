@@ -6,9 +6,9 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Given non-negative integers <big><b>m</b></big> and <big><b>n</b></big>, generate all size <big><b>m</b></big> combinations of the integers from <big><b>0</b></big> (zero) to <big><b>n-1</b></big> in sorted order (each combination is sorted and the entire table is sorted).
-<b>Example:</b>
-<big><b>3</b></big> comb <big><b>5</b></big> is:
+Given non-negative integers <code>m</code> and <code>n</code>, generate all size <code>m</code> combinations of the integers from <code>0</code> (zero) to <code>n-1</code> in sorted order (each combination is sorted and the entire table is sorted).
+<strong>Example:</strong>
+<code>3</code> comb <code>5</code> is:
 <pre>
 0 1 2
 0 1 3

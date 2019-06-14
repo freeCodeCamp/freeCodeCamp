@@ -33,7 +33,7 @@ The <a href="https://en.wikipedia.org/wiki/Lucas number" title="wp: Lucas number
 
 ## Instructions
 <section id='instructions'>
-Write a function to generate Fibonacci n-step number sequences and Lucas sequences. The first parameter will be n. The second parameter will be the number of elements to be returned. The third parameter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is "f" then return the Fibonacci sequence and if it is "l", then return the Lucas sequence. The sequences must be returned as an array.
+Write a function to generate Fibonacci $n$-step number sequences and Lucas sequences. The first parameter will be $n$. The second parameter will be the number of elements to be returned. The third parameter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is <code>"f"</code> then return the Fibonacci sequence and if it is <code>"l"</code>, then return the Lucas sequence. The sequences must be returned as an array.
 </section>
 
 ## Tests

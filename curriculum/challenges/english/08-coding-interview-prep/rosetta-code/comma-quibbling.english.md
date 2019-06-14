@@ -13,10 +13,10 @@ Comma quibbling is a task originally set by Eric Lippert in his <a href="https:/
 <section id='instructions'>
 Write a function to generate a string output which is the concatenation of input words from a list/sequence where:
 <ol>
-  <li>An input of no words produces the output string of just the two brace characters "{}".</li>
-  <li>An input of just one word, e.g. ["ABC"], produces the output string of the word inside the two braces, e.g. "{ABC}".</li>
-  <li>An input of two words, e.g. ["ABC", "DEF"], produces the output string of the two words inside the two braces with the words separated by the string " and ", e.g. "{ABC and DEF}".</li>
-  <li>An input of three or more words, e.g. ["ABC", "DEF", "G", "H"], produces the output string of all but the last word separated by ", " with the last word separated by " and " and all within braces; e.g. "{ABC, DEF, G and H}".</li>
+  <li>An input of no words produces the output string of just the two brace characters (<code>"{}"</code>)</li>
+  <li>An input of just one word, e.g. <code>["ABC"]</code>, produces the output string of the word inside the two braces, e.g. <code>"{ABC}"</code></li>
+  <li>An input of two words, e.g. <code>["ABC", "DEF"]</code>, produces the output string of the two words inside the two braces with the words separated by the string <code>" and "</code>, e.g. <code>"{ABC and DEF}"</code></li>
+  <li>An input of three or more words, e.g. <code>["ABC", "DEF", "G", "H"]</code>, produces the output string of all but the last word separated by <code>", "</code> with the last word separated by <code>" and "</code> and all within braces; e.g. <code>"{ABC, DEF, G and H}"</code></li>
 </ol>
 Test your function with the following series of inputs showing your output here on this page:
 <ul>

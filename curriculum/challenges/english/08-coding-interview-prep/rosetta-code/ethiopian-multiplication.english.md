@@ -7,15 +7,15 @@ challengeType: 5
 ## Description
 <section id='description'>
 Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.
-<b>Method:</b>
+<strong>Method:</strong>
 <ol>
-  <li>Take two numbers to be multiplied and write them down at the top of two columns.</li>
-  <li>In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of 1.</li>
-  <li>In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows 1.</li>
-  <li>Examine the table produced and discard any row where the value in the left column is even.</li>
+  <li>Take two numbers to be multiplied and write them down at the top of two columns</li>
+  <li>In the left-hand column repeatedly halve the last number, discarding any remainders, and write the result below the last in the same column, until you write a value of <code>1</code></li>
+  <li>In the right-hand column repeatedly double the last number and write the result below. stop when you add a result in the same row as where the left hand column shows <code>1</code></li>
+  <li>Examine the table produced and discard any row where the value in the left column is even</li>
   <li>Sum the values in the right-hand column that remain to produce the result of multiplying the original two numbers together</li>
 </ol>
-<b>For example:</b> 17 &times; 34
+<strong>For example:</strong> <code>17 &times; 34</code>
 <pre>
 17   34
 </pre>
@@ -53,7 +53,7 @@ Sum the remaining numbers in the right-hand column:
    ====
     578
 </pre>
-So 17 multiplied by 34, by the Ethiopian method is 578.
+So <code>17</code> multiplied by <code>34</code>, by the Ethiopian method is <code>578</code>.
 </section>
 
 ## Instructions
@@ -62,7 +62,7 @@ The task is to define three named functions/methods/procedures/subroutines:
 <ol>
   <li>one to halve an integer,</li>
   <li>one to double an integer, and</li>
-  <li>one to state if an integer is even.</li>
+  <li>one to state if an integer is even</li>
 </ol>
 Use these functions to create a function that does Ethiopian multiplication.
 </section>

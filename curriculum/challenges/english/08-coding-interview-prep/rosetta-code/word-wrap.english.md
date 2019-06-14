@@ -16,7 +16,7 @@ Write a function that can wrap this text to any number of characters. As an exam
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
 algorithm. If your language provides this, you get easy extra credit, but you
 must reference documentation indicating that the algorithm is something better
-than a simple minimimum length algorithm.
+than a simple minimum length algorithm.
 </pre>
 </section>
 

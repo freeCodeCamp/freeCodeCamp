@@ -38,7 +38,7 @@ std_cell_lib     ieee std_cell_lib
 synopsys
 </pre>
 <small>Note: the above data would be un-orderable if, for example, <code>dw04</code> is added to the list of dependencies of <code>dw01</code>.</small>
-<b>C.f.:</b>
+<strong>C.f.:</strong>
 <ul>
   <li><a href="https://rosettacode.org/wiki/Topological sort/Extracted top item" title="Topological sort/Extracted top item" target="_blank">Topological sort/Extracted top item</a>.</li>
 </ul>

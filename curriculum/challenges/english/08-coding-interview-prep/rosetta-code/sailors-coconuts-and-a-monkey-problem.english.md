@@ -15,9 +15,9 @@ In the morning (after the surreptitious and separate action of each of the five 
 ## Instructions
 <section id='instructions'>
 Create a function that returns the minimum possible size of the initial pile of coconuts collected during the day for <code>N</code> sailors.
-<b>Note:</b>
+<strong>Note:</strong>
 Of course the tale is told in a world where the collection of any amount of coconuts in a day and multiple divisions of the pile, etc. can occur in time fitting the story line, so as not to affect the mathematics.
-<b>C.f:</b>
+<strong>C.f:</strong>
 <ul>
   <li><a href="https://www.youtube.com/watch?v=U9qU20VmvaU" target="_blank"> Monkeys and Coconuts - Numberphile</a> (Video) Analytical solution.</li>
   <li><a href="https://oeis.org/A002021" target="_blank">A002021 Pile of coconuts problem</a> The On-Line Encyclopedia of Integer Sequences. (Although some of its references may use the alternate form of the tale).</li>

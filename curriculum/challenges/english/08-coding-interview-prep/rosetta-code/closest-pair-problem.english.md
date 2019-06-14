@@ -9,31 +9,31 @@ challengeType: 5
 Provide a function to find the closest two points among a set of given points in two dimensions,  i.e. to solve the  <a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="blank">Closest pair of points problem</a>  in the  <i>planar</i>  case.
 The straightforward solution is a  O(n<sup>2</sup>) algorithm (which we can call <i>brute-force algorithm</i>); the pseudo-code (using indexes) could be simply:
 <pre>
-<b>bruteForceClosestPair</b> of P(1), P(2), ... P(N)
-<b>if</b> N < 2 <b>then</b>
-  <b>return</b> ∞
-<b>else</b>
+<strong>bruteForceClosestPair</strong> of P(1), P(2), ... P(N)
+<strong>if</strong> N < 2 <strong>then</strong>
+  <strong>return</strong> ∞
+<strong>else</strong>
   minDistance ← |P(1) - P(2)|
   minPoints ← { P(1), P(2) }
-  <b>foreach</b> i ∈ [1, N-1]
-    <b>foreach</b> j ∈ [i+1, N]
-      <b>if</b> |P(i) - P(j)| < minDistance <b>then</b>
+  <strong>foreach</strong> i ∈ [1, N-1]
+    <strong>foreach</strong> j ∈ [i+1, N]
+      <strong>if</strong> |P(i) - P(j)| < minDistance <strong>then</strong>
         minDistance ← |P(i) - P(j)|
         minPoints ← { P(i), P(j) }
-      <b>endif</b>
-    <b>endfor</b>
-  <b>endfor</b>
-  <b>return</b> minDistance, minPoints
-<b>endif</b>
+      <strong>endif</strong>
+    <strong>endfor</strong>
+  <strong>endfor</strong>
+  <strong>return</strong> minDistance, minPoints
+<strong>endif</strong>
 </pre>
 A better algorithm is based on the recursive divide and conquer approach, as explained also at <a href="https://en.wikipedia.org/wiki/Closest pair of points problem#Planar_case" title="wp: Closest pair of points problem#Planar_case" target="_blank">Wikipedia's Closest pair of points problem</a>, which is <code>O(nlog(n))</code> a pseudo-code could be:
 <pre>
-<b>closestPair</b> of (xP, yP)
+<strong>closestPair</strong> of (xP, yP)
   where xP is P(1) .. P(N) sorted by x coordinate, and
   yP is P(1) .. P(N) sorted by y coordinate (ascending order)
-<b>if</b> N ≤ 3 <b>then</b>
-  <b>return</b> closest points of xP using brute-force algorithm
-<b>else</b>
+<strong>if</strong> N ≤ 3 <strong>then</strong>
+  <strong>return</strong> closest points of xP using brute-force algorithm
+<strong>else</strong>
   xL ← points of xP from 1 to ⌈N/2⌉
   xR ← points of xP from ⌈N/2⌉+1 to N
   xm ← xP(⌈N/2⌉)<sub>x</sub>
@@ -42,26 +42,26 @@ A better algorithm is based on the recursive divide and conquer approach, as exp
   (dL, pairL) ← closestPair of (xL, yL)
   (dR, pairR) ← closestPair of (xR, yR)
   (dmin, pairMin) ← (dR, pairR)
-  <b>if</b> dL < dR <b>then</b>
+  <strong>if</strong> dL < dR <strong>then</strong>
     (dmin, pairMin) ← (dL, pairL)
-  <b>endif</b>
+  <strong>endif</strong>
   yS ← { p ∈ yP : |xm - p<sub>x</sub>| &lt; dmin }
   nS ← number of points in yS
   (closest, closestPair) ← (dmin, pairMin)
-  <b>for</b> i <b>from</b> 1 <b>to</b> nS - 1
+  <strong>for</strong> i <strong>from</strong> 1 <strong>to</strong> nS - 1
     k ← i + 1
-    <b>while</b> k ≤ nS <b>and</b> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> < dmin
-      <b>if</b> |yS(k) - yS(i)| < closest <b>then</b>
+    <strong>while</strong> k ≤ nS <strong>and</strong> yS(k)<sub>y</sub> - yS(i)<sub>y</sub> < dmin
+      <strong>if</strong> |yS(k) - yS(i)| < closest <strong>then</strong>
         (closest, closestPair) ← (|yS(k) - yS(i)|, {yS(k), yS(i)})
-      <b>endif</b>
+      <strong>endif</strong>
       k ← k + 1
-    <b>endwhile</b>
-  <b>endfor</b>
-  <b>return</b> closest, closestPair
-<b>endif</b>
+    <strong>endwhile</strong>
+  <strong>endfor</strong>
+  <strong>return</strong> closest, closestPair
+<strong>endif</strong>
 </pre>
 For the input, expect the argument to be an array of objects (points) with <code>x</code> and <code>y</code> members set to numbers. For the output, return an object containing the key:value pairs for  <code>distance</code> and <code>pair</code> (the pair of two closest points).
-<b>References and further readings:</b>
+<strong>References and further readings:</strong>
 <ul>
   <li><a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Closest pair of points problem" target="_blank">Closest pair of points problem</a></li>
   <li><a href="https://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html" target="_blank">Closest Pair (McGill)</a></li>

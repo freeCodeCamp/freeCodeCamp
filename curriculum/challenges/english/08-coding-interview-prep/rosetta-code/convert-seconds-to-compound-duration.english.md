@@ -33,7 +33,7 @@ Demonstrate that it passes the following three test-cases:
 | second | <code>sec</code> | --- |
   </li>
   <li>
-    However, <b>only</b> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
   </li>
   <li>
     Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).

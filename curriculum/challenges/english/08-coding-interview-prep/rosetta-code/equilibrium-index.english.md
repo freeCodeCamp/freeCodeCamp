@@ -17,16 +17,16 @@ For example, in a sequence  <big>$A$</big>:
   <li><big>$A_5 =  3$</big></li>
   <li><big>$A_6 =  0$</big></li>
 </ul>
-3  is an equilibrium index, because:
+<code>3</code> is an equilibrium index, because:
 <ul style="list-style: none;">
   <li><big>$A_0 + A_1 + A_2 = A_4 + A_5 + A_6$</big></li>
 </ul>
-6  is also an equilibrium index, because:
+<code>6</code> is also an equilibrium index, because:
 <ul style="list-style: none;">
   <li><big>$A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0$</big></li>
 </ul>
 (sum of zero elements is zero)
-7  is not an equilibrium index, because it is not a valid index of sequence <big>$A$</big>.
+<code>7</code> is not an equilibrium index, because it is not a valid index of sequence <big>$A$</big>.
 </section>
 
 ## Instructions
