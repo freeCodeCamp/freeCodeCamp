@@ -34,7 +34,7 @@ function findGreaterOrEqual(a, b) {
 }
 ```
 
-However, this should be used with care - using multiple <code>conditional operators</code> without proper indentation may make your code hard to read:
+However, this should be used with care as using multiple <code>conditional operators</code> without proper indentation may make your code hard to read. For example:
 
 ```js
 function (a, b) {
