@@ -5,6 +5,7 @@
   "private": true,
   "main": "development-entry.js",
   "scripts": {
+    "develop": "node development-entry.js",
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./server/server.js",
     "build": "babel server --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
     "commit": "git-cz",
