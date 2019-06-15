@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cM9P4t2'
 
 ## Description
 <section id='description'>
-In the last challenge, you learned that including an <code>alt</code> attribute on img tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only. In these cases <code>alt</code> text may seem redundant or unnecessary.
+In the last challenge, you learned that including an <code>alt</code> attribute when using <code>img</code> tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only. In these cases <code>alt</code> text may seem redundant or unnecessary.
 In situations when an image is already explained with text content, or does not add meaning to a page, the <code>img</code> still needs an <code>alt</code> attribute, but it can be set to an empty string. Here's an example:
 <code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>
 Background images usually fall under the 'decorative' label as well. However, they are typically applied with CSS rules, and therefore not part of the markup screen readers process.
