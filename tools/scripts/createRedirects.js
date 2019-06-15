@@ -63,7 +63,7 @@ const template = `#api redirect
 /forum/*                                      #{{FORUM}}/:splat 200
 /privacy                                      #{{FORUM}}/t/free-code-camp-privacy-policy/19545 301
 /nonprofit-project-instructions               #{{FORUM}}/t/how-free-code-camps-nonprofits-projects-work/19547 301
-/how-nonprofit-projects-work                  https://medium.freecodecamp.org/open-source-for-good-1a0ea9f32d5a 301
+/how-nonprofit-projects-work                  https://www.freecodecamp.org/news/open-source-for-good-1a0ea9f32d5a 301
 
 `;
 /* eslint-enable max-len */
