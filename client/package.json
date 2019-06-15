@@ -75,6 +75,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "clean": "gatsby clean",
     "prebuild": "npm run build:workers && node ../tools/scripts/ensure-env.js",
     "build": "node --max_old_space_size=7168 node_modules/gatsby-cli build",
     "build:workers": "node --max_old_space_size=7168 node_modules/webpack-cli --env.production --config ./webpack-workers.js --progress",
