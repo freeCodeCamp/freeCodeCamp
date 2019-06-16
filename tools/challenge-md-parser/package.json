@@ -1,6 +1,7 @@
 {
   "name": "@freecodecamp/challenge-md-parser",
-  "version": "1.0.0",
+  "private": true,
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "publishConfig": {

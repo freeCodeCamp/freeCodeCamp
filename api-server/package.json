@@ -1,6 +1,7 @@
 {
   "name": "@freecodecamp/api-server",
-  "version": "0.1.0",
+  "private": true,
+  "version": "0.0.1",
   "repository": "freecodecamp/freecodecamp",
   "private": true,
   "main": "development-entry.js",

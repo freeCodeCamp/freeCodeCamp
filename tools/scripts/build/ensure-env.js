@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const debug = require('debug');
 
-const env = require('../../config/env');
+const env = require('../../../config/env');
 
-const { getChallengesForLang } = require('../../curriculum/getChallenges');
-const { createPathMigrationMap } = require('./seed/createPathMigrationMap');
+const { getChallengesForLang } = require('../../../curriculum/getChallenges');
+const { createPathMigrationMap } = require('../seed/createPathMigrationMap');
 
 const { createRedirects } = require('./createRedirects');
 
@@ -20,10 +20,10 @@ const {
   newsLocation: news
 } = env;
 
-const apiPath = path.resolve(__dirname, '../../api-server');
-const clientPath = path.resolve(__dirname, '../../client');
+const apiPath = path.resolve(__dirname, '../../../api-server');
+const clientPath = path.resolve(__dirname, '../../../client');
 const clientStaticPath = path.resolve(clientPath, 'static');
-const globalConfigPath = path.resolve(__dirname, '../../config');
+const globalConfigPath = path.resolve(__dirname, '../../../config');
 
 if (NODE_ENV === 'production') {
   const redirects = createRedirects({ api, news, forum });
