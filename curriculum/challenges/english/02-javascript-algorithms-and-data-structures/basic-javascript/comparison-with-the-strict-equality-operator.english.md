@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244d1
 title: Comparison with the Strict Equality Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cy87atr'
 ---
 
 ## Description
@@ -9,7 +10,12 @@ challengeType: 1
 Strict equality (<code>===</code>) is the counterpart to the equality operator (<code>==</code>). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
 If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
 <strong>Examples</strong>
-<blockquote>3 === 3   // true<br>3 === '3' // false</blockquote>
+
+```js
+3 ===  3   // true
+3 === '3'  // false
+```
+
 In the second example, <code>3</code> is a <code>Number</code> type and <code>'3'</code> is a <code>String</code> type.
 </section>
 

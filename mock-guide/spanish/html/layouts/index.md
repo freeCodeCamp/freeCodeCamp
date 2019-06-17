@@ -8,7 +8,7 @@ Los diseños organizan diferentes áreas de la página web.
 
 Casi todas las páginas web que vemos pueden dividirse en cuadros, que se pueden organizar en un orden específico para crear esa página web. La imagen de abajo es uno de esos ejemplos.
 
-![Muestra de Diseño de Sitio Web - www.codementor.io](http://i.imgur.com/Z1DSMYC.png)
+![Muestra de Diseño de Sitio Web - www.codementor.io](https://cdn-media-1.freecodecamp.org/imgr/Z1DSMYC.png)
 
 > Los sitios web a menudo muestran el contenido en varias columnas (como una revista o un periódico).
 

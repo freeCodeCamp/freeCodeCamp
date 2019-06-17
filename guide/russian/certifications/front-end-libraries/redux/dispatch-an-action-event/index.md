@@ -6,7 +6,7 @@ localeTitle: Отправка события
 
 Отправляйте действие LOGIN в хранилище Redux, вызывая метод отправки и передавая действие, созданное `loginAction()` .
 
-```react.js
+```jsx
 store.dispatch(loginAction()); 
 
 ```

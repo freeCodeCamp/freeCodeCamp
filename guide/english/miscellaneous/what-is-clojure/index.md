@@ -3,7 +3,7 @@ title: What Is Clojure
 ---
 ## Clojure is a dialect of Lisp.
 
-Lisps are an entirely separate family of languages to C-like languages such as C#, Javascript, Python or Ruby. This means Lisps might look odd to programmers who are more familiar with these languages. Essentially, being a Lisp means that everything in Clojure is a list containing data (even function calls!), it has dynamic typing, and you can define _macros_ that let you manipulate your own code. Here's a simple example of some Clojure for you to examine:
+Lisps are an entirely separate family of languages to C-like languages such as C#, JavaScript, Python or Ruby. This means Lisps might look odd to programmers who are more familiar with these languages. Essentially, being a Lisp means that everything in Clojure is a list containing data (even function calls!), it has dynamic typing, and you can define _macros_ that let you manipulate your own code. Here's a simple example of some Clojure for you to examine:
 
        (defn hello-world [] (println "Hello world!"))
 
@@ -26,7 +26,7 @@ While not being able to change variables might sound nightmarish, it's a lot eas
 
 ## Clojure runs on the Java Virtual Machine.
 
-The JVM is the virtual machine that interprets Java bytecode and uses it to run a program. This means Clojure works almost seamlessly with code designed for Java (although it does look a bit odd), and it also means that it runs quite quickly compared to some other Lisps. While it's quite a bit slower than Java, it's still a lot faster than Python, Ruby or Javascript.
+The JVM is the virtual machine that interprets Java bytecode and uses it to run a program. This means Clojure works almost seamlessly with code designed for Java (although it does look a bit odd), and it also means that it runs quite quickly compared to some other Lisps. While it's quite a bit slower than Java, it's still a lot faster than Python, Ruby or JavaScript.
 
       (.indexOf [1 2 3 4] 2) ;; .indexOf is a Java method!
       ; => 1

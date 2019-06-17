@@ -1,0 +1,26 @@
+
+#top-nav .menu-button {
+  color: white;
+  background-color: transparent;
+  margin: 0 20px 0 12px;
+  padding: 2px 14px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+#top-nav .menu-button-open {
+  background: white;
+  color: #006400;
+}
+
+@media (min-width: 735px) {
+  #top-nav .top-menu-button {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  #top-nav .menu-button {
+    margin: 0 10px 0 4px;
+  }
+}
