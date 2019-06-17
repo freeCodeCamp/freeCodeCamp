@@ -27,7 +27,7 @@ After a Promise is returned, if the request was successful, the <code>then</code
 
 The <code>then</code> method also returns a Promise, which is handled by the next <code>then</code> method. The argument in the second <code>then</code> is the JSON object you are looking for! 
 
-Now, you select the element you want to insert the data in by using <code>document.getElementById()</code>. Then you modify the HTML code of the element by inserting a string created from the JSON object returned from the request.
+Now, it selects the element that will receive the data by using <code>document.getElementById()</code>. Then it modifies the HTML code of the element by inserting a string created from the JSON object returned from the request.
 </section>
 
 ## Instructions
