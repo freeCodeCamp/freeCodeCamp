@@ -202,26 +202,10 @@ function createPostReportUserProfile(app) {
     log(username);
     log(report);
 
-    if (!username && (!report || report === '')) {
+    if (!username || !report || report === '') {
       return res.json({
         type: 'danger',
-        message: dedent`
-    Please enter a valid username and add
-    details for us to be able to address your concern.
-        `
-      });
-    } else if ((!report || report === '') && username) {
-      return res.json({
-        type: 'danger',
-        message: dedent`
-    Your report cannot be empty. Please add details
-    for us to be able to address your concern.
-        `
-      });
-    } else if (!username) {
-      return res.json({
-        type: 'danger',
-        message: 'Please enter a valid username.'
+        message: 'Check if you have provided a username and a report'
       });
     }
     return Email.send$(
