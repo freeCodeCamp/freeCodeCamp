@@ -18,7 +18,8 @@ fetch('/json/cats.json')
 	})
 
 ```
-Let's analyze each piece of this code. 
+
+Take a look at each piece of this code. 
 
 The first line is the one that makes the request. So, <code>fetch(URL)</code> makes a GET request to the URL specified. The method returns a Promise.
 
