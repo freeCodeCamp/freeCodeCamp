@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
-import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
-import normalizeUrl from 'normalize-url';
 
 import {
   executeChallenge,
@@ -28,53 +27,44 @@ import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import ProjectToolPanel from '../project/Tool-Panel';
 import ProjectForm from '../project/ProjectForm';
-import {
-  createFormValidator,
-  isValidURL,
-  makeRequired,
-  Form
-} from '../../../components/formHelpers';
+import { Form } from '../../../components/formHelpers';
 import Spacer from '../../../components/helpers/Spacer';
+import { ChallengeNode } from '../../../redux/propTypes';
+import { isSignedInSelector } from '../../../redux';
 
 import { backend } from '../../../../utils/challengeTypes';
 
 import '../components/test-frame.css';
 
-// provided by redux form
-const reduxFormPropTypes = {
-  fields: PropTypes.object,
-  handleSubmit: PropTypes.func.isRequired,
-  resetForm: PropTypes.func.isRequired,
-  submitting: PropTypes.bool
-};
-
 const propTypes = {
   challengeMounted: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    challengeNode: ChallengeNode
+  }),
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
   initTests: PropTypes.func.isRequired,
+  isSignedIn: PropTypes.bool,
   output: PropTypes.string,
+  pageContext: PropTypes.shape({
+    challengeMeta: PropTypes.object
+  }),
   tests: PropTypes.array,
   title: PropTypes.string,
   updateBackendFormValues: PropTypes.func.isRequired,
   updateChallengeMeta: PropTypes.func.isRequired,
-  updateProjectFormValues: PropTypes.func.isRequired,
-  ...reduxFormPropTypes
-};
-
-const fields = ['solution'];
-
-const fieldValidators = {
-  solution: makeRequired(isValidURL)
+  updateProjectFormValues: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
   consoleOutputSelector,
   challengeTestsSelector,
-  (output, tests) => ({
+  isSignedInSelector,
+  (output, tests, isSignedIn) => ({
     tests,
-    output
+    output,
+    isSignedIn
   })
 );
 
@@ -158,7 +148,6 @@ export class BackEnd extends Component {
 
   handleSubmit(values) {
     const { updateBackendFormValues, executeChallenge } = this.props;
-    values.solution = normalizeUrl(values.solution);
     updateBackendFormValues(values);
     executeChallenge();
   }
@@ -176,13 +165,12 @@ export class BackEnd extends Component {
       },
       output,
       tests,
-      submitting,
+      isSignedIn,
       executeChallenge,
       updateProjectFormValues
     } = this.props;
 
-    // TODO: Should be tied to user.isSignedIn
-    const buttonCopy = submitting
+    const buttonCopy = isSignedIn
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
     const blockNameTitle = `${blockName} - ${title}`;
@@ -242,12 +230,7 @@ export class BackEnd extends Component {
 BackEnd.displayName = 'BackEnd';
 BackEnd.propTypes = propTypes;
 
-export default reduxForm(
-  {
-    form: 'BackEndChallenge',
-    fields,
-    validate: createFormValidator(fieldValidators)
-  },
+export default connect(
   mapStateToProps,
   mapDispatchToActions
 )(BackEnd);
