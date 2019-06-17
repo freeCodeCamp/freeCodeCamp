@@ -39,6 +39,50 @@ You will need to use everything you know about string manipulation to get the la
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
     function translatePigLatin(str) {
+      // define vowels in an array.
+      let vowels = ['a', 'e', 'i', 'o', 'u'];
+
+      /* check the first letter of the string against the vowel array using includes() and charAt() and add the ending if the word begins with a vowel. */
+      if (vowels.includes(str.charAt(0))) {
+        str = str + 'way';
+      } else { /* use a for loop and includes() to find the first instance of a vowel in the input string and then use slice() to create two strings, from and up to the instance. */
+          for (let i = 0; i < str.length; i++) {
+            if (vowels.includes(str[i])) {
+              let igPay = str.slice(i);
+              let atinLay = str.slice(0, i);
+              // combine the slices in the new order.
+              str = igPay + atinLay;
+              break;
+            }
+          }
+        /* add 'ay' to the end of the string, completing the challenge whether your loop found a vowel or not. */
+        str = str + 'ay';
+      }
+      return str;
+    }
+    translatePigLatin("consonant");
+    
+### Code Explanation:
+*   Create an array of vowels.
+*   Use includes() and charAt() to check the first letter of the string against the vowel array and add the ending to the string if the first character is a vowel.
+*   Use a for loop with the includes() method to find the first character in the string which matches a character in your vowel array.
+*   Use slice to create two new strings from the character up to and beginning with the first vowel.
+*   Redefine the input string as a combination of the strings you obtained through your slicing.
+*   Break out of the loop.
+*   Add the ending to your string.
+*   Return your string.
+
+#### Relevant Links
+
+*   <a href="https://guide.freecodecamp.org/javascript/standard-objects/string/string-prototype-charat/" target="_blank" rel="nofollow">charAt()</a>
+*   <a href="https://guide.freecodecamp.org/javascript/loops/for-loop/" target="_blank" rel="nofollow">For Loops</a>
+*   <a href="https://guide.freecodecamp.org/javascript/standard-objects/array/array-prototype-includes/" target="_blank" rel="nofollow">includes()</a>
+*   <a href="https://guide.freecodecamp.org/javascript/standard-objects/string/string-prototype-slice/" target="_blank" rel="nofollow">Slice</a>
+
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+
+    function translatePigLatin(str) {
       let consonantRegex = /^[^aeiou]+/;
       let myConsonants = str.match(consonantRegex);
       return (myConsonants !== null) ? str.replace(consonantRegex, "").concat(myConsonants).concat("ay") : str.concat("way");
