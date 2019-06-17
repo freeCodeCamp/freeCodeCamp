@@ -153,7 +153,7 @@ The copy constructor is a constructor which creates an object by initializing it
 2. Copy an object to pass it as an argument to a function.
 3. Copy an object to return it from a function.
 Here is a program that shows a simple use of copy constructor:
-```Java
+```java
 class Complex {
  
     private double re, im;
@@ -178,7 +178,7 @@ class Complex {
 ## Refer to constructor from current class 
 Constructor can also be invoked from another constructor inside of same class. Invocation of one constructor inside of another constructor is being performed by using this keyword which contains all parameteres which signutare of 1st constructor holds. For more clear explanation example is given below:
 
-```Java
+```java
 class Car { 
     String brand;
     String model;
