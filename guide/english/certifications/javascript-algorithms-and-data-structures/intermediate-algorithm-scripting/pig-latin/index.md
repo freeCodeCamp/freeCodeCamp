@@ -166,3 +166,23 @@ You will need to use everything you know about string manipulation to get the la
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+## Issue description
+
+// The intermediate solution given on https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/pig-latin/ is missing one step in recurrsion functioning. 
+
+## Issue Solution
+function check() should include terminating condition for obj otherwise it will through error "Maximum call stack size exceeded": 
+
+The code after correction should look like this:
+
+## Code Solution After Removal of Issue
+function translatePigLatin(str) {
+function check(obj){
+  if(obj==str.length)      //Terminating Condition
+  return str.length;
+  else
+  return ['a','e','i','o','u'].indexOf(str.charAt(obj))==-1?check(obj+1):obj;
+ }
+ return str.substr(check(0)).concat((check(0)==0?'w':str.substr(0,check(0)))+'ay');
+
+}
