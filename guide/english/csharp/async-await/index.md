@@ -4,13 +4,23 @@ title: Async / Await
 
 # Async / Await Keywords
 
-The `async`/`await` keywords in C# provide convenient ways of managing resource-intensive applications, which are more common in front-end languages such as Javascript libraries. Methods that return `Task<T>` types can be crowned with the `async` keyword, and when calling these methods in a UI handler or service workflow, we can use the `await` on the methods to tell C# to yield the control back to its caller until the background job is finished. By yielding the control on resources-intensive calls, we are able to allow UI to be more responsive and make the service more elastic.
+The `async`/`await` keywords in C# provide convenient ways of managing resource-intensive applications, which are more common in front-end languages such as JavaScript libraries. Methods that return `Task<T>` types can be crowned with the `async` keyword, and when calling these methods in a UI handler or service workflow, we can use the `await` on the methods to tell C# to yield the control back to its caller until the background job is finished. By yielding the control on resources-intensive calls, we are able to allow UI to be more responsive and make the service more elastic.
 
 The core of the `async` and `await` are the `Task<T>` class. When using it along with the `async` keyword as the return type of a method, we indicate that the method has promised to return an object of the `T` type (for methods that wouldn't return any value, use `Task` as the return type instead). `Task<T>` is a sophisticated topic of its own, for more information, please refer to the official documents: [Task Class](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=netframework-4.7.1).
 
-Once encountering `async` methods, the work will be queued in a thread-pool for execution, while the caller will continue its execution without waiting on the return values from the `async` methods. However, in most occasions, our UI and service rely on the values returned from the `async` methods: for example, when we query a local database using the `async` methods, we would eventually want to know what are the query results and act on them, synchronously. This is where the `await` keyword shall be used: if using the `await` keyword when invoking an `async` method, the caller will pause the execution until a result is returned from the `async` method, and mean while, the parent method will continue execution without waiting on the caller to finish. With that said, any method that uses `await` keyword have to be an `async` function itself -- this is enforced by the C# compiler as well, if using Visual Studio to write your C# code, the IDE will warn you if a method violate the `async-await` contract.
+Once encountering `async` methods, the work will be queued in a thread-pool for execution, while the caller will continue its execution without waiting on return values. However, in most cases our UI and service rely on the values returned from asychronous method calls. This is where the `await` keyword comes in. If an asynchronous method call is preceded by the `await` keyword, control will then be returned to the parent method while the result from that asynchronous method is being computed. Additionally, any methods that contain the `await` keyword must be `async` methods themselves, which is enforced by the compiler. Such a method is declared with the access control modifier followed by async and finally the return type, as in: 
 
-To learn more about using the promise model to handle asynchrony, check out this wikipedia page: [Achieving Asynchrony through Promises](https://en.wikipedia.org/wiki/Futures_and_promises)
+```csharp
+  public async Task<string> DoSomethingAsync() 
+  { 
+    /* Async code containing the 'await' keyword. 
+       This method will return a string as denoted by Task<string> above. */ 
+  }
+```
+
+**Note that it is convention in C# for an asynchronous method such as `DoSomethingAsync()` to contain `Async` at the end of its name.**
+
+To learn more about using the promise model to handle asynchrony, check out this Wikipedia page: [Achieving Asynchrony through Promises](https://en.wikipedia.org/wiki/Futures_and_promises)
 
 ## Examples
 
@@ -41,20 +51,25 @@ public async Task<int> CalcDamage(Player player)
   //   Boss based on the damage types, Boss stats (from static data),
   //   player stats, etc.
   // ...
+  await Task.Delay(1000); // extemely time consuming calculation
+  return 3;               // that calculates a very accurate damage thats not hardcoded at all
 }
 
-public static async Task<int> CalcTotalDamage(IEnumerable<Player> group)
+public async Task<int> CalcTotalDamage(IEnumerable<Player> players)
 {
-  var totalDamage = 0;
-  foreach (Player player in group)
+  var tasks = new List<Task<int>>();
+  foreach (Player player in players)
   {
     // each of the async methods are queued in the thread-pool and move on.
-    totalDamage += CalcDamage(player);
+    var t = CalcDamage(player);
+    // storing reference to the task
+    tasks.Add(t);
   }
 
   // total damage done must be calculated from all players in the group
   //   before we return the result.
-  return await Task.WhenAll(totalDamage);
+  var completeTask = await Task.WhenAll(tasks);
+  return completeTask.Sum();
 }
 ```
 

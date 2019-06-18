@@ -34,7 +34,7 @@ localeTitle: جبر المنطق
 
 ![alt text][AND]
 
-[AND]: https://i.imgur.com/qQGOiyC.png "AND"
+[AND]: https://cdn-media-1.freecodecamp.org/imgr/qQGOiyC.png "AND"
 
 `OR`
 
@@ -57,7 +57,7 @@ localeTitle: جبر المنطق
 
 ![alt text][OR]
 
-[OR]: https://i.imgur.com/uDbypks.png "OR"
+[OR]: https://cdn-media-1.freecodecamp.org/imgr/uDbypks.png "OR"
 
 `NOT`
 
@@ -99,11 +99,11 @@ localeTitle: جبر المنطق
 
 ![alt text][NOT]
 
-[NOT]: https://i.imgur.com/u7dfnuA.png "NOT"
+[NOT]: https://cdn-media-1.freecodecamp.org/imgr/u7dfnuA.png "NOT"
 
 ![alt text][NOT AND NOT OR]
 
-[NOT AND NOT OR]: https://i.imgur.com/6x8Z0pj.png "NOT AND NOT OR"
+[NOT AND NOT OR]: https://cdn-media-1.freecodecamp.org/imgr/6x8Z0pj.png "NOT AND NOT OR"
 
 
 

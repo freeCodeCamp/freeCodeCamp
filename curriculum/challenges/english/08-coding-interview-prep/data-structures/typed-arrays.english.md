@@ -13,12 +13,33 @@ However, in the world of high performance and different element types, sometimes
 <dfn>Typed arrays</dfn> are the answer to this problem. You are now able to say how much memory you want to give an array. Below is a basic overview of the different types of arrays available and the size in bytes for each element in that array.
 <table class='table table-striped'><tr><th>Type</th><th>Each element size in bytes</th></tr><tr><td><code>Int8Array</code></td><td>1</td></tr><tr><td><code>Uint8Array</code></td><td>1</td></tr><tr><td><code>Uint8ClampedArray</code></td><td>1</td></tr><tr><td><code>Int16Array</code></td><td>2</td></tr><tr><td><code>Uint16Array</code></td><td>2</td></tr><tr><td><code>Int32Array</code></td><td>4</td></tr><tr><td><code>Uint32Array</code></td><td>4</td></tr><tr><td><code>Float32Array</code></td><td>4</td></tr><tr><td><code>Float64Array</code></td><td>8</td></tr></table>
 There are two ways in creating these kind of arrays. One way is to create it directly. Below is how to create a 3 length <code>Int16Array</code>.
-<blockquote>var i8 = new Int16Array(3);<br>console.log(i8);<br>// Returns [0, 0, 0]</blockquote>
+
+```js
+var i8 = new Int16Array(3);
+console.log(i8);
+// Returns [0, 0, 0]
+```
+
 You can also create a <dfn>buffer</dfn> to assign how much data (in bytes) you want the array to take up.
 <strong>Note</strong><br>To create typed arrays using buffers, you need to assign the number of bytes to be a multiple of the bytes listed above.
-<blockquote>// Create same Int16Array array differently<br>var byteSize = 6; // Needs to be multiple of 2<br>var buffer = new ArrayBuffer(byteSize);<br>var i8View = new Int16Array(buffer);<br>buffer.byteLength; // Returns 6<br>i8View.byteLength; // Returns 6<br>console.log(i8View); // Returns [0, 0, 0]</blockquote>
+
+```js
+// Create same Int16Array array differently
+var byteSize = 6; // Needs to be multiple of 2
+var buffer = new ArrayBuffer(byteSize);
+var i8View = new Int16Array(buffer);
+buffer.byteLength; // Returns 6
+i8View.byteLength; // Returns 6
+console.log(i8View); // Returns [0, 0, 0]
+```
+
 <dfn>Buffers</dfn> are general purpose objects that just carry data. You cannot access them normally. To access them, you need to first create a <dfn>view</dfn>.
-<blockquote>i8View[0] = 42;<br>console.log(i8View); // Returns [42, 0, 0]</blockquote>
+
+```js
+i8View[0] = 42;
+console.log(i8View); // Returns [42, 0, 0]
+```
+
 <strong>Note</strong><br>Typed arrays do not have some of the methods traditional arrays have such as <code>.pop()</code> or <code>.push()</code>. Typed arrays also fail <code>Array.isArray()</code> that checks if something is an array. Although simpler, this can be an advantage for less-sophisticated JavaScript engines to implement them.
 </section>
 

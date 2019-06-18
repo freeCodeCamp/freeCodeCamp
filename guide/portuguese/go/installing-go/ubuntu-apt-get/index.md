@@ -8,7 +8,7 @@ Usar o Gerenciador de Pacotes do Ubuntu (apt-get) é a maneira mais fácil de in
 
 > Como desta escrita, a versão do go do Ubuntu Xenial é 1.6.1, enquanto o mais recente versão estável é 1.9.1
 
-```sh
+```shell
 $ sudo apt-get update 
  $ sudo apt-get install golang-go 
 ```
@@ -17,7 +17,7 @@ $ sudo apt-get update
 
 Para verificar se foi instalado com sucesso, use:
 
-```sh
+```shell
 $ go version 
  > go version go1.9.1 linux/amd64 
 ```

@@ -3,13 +3,8 @@ title: Optical Alignment
 ---
 ## Optical Alignment
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/typography/optical-alignment/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+In typography, text that is properly [kerned](https://freecodecamp.org/guide/typography/kerning-and-tracking/) typically appears evenly spaced and legible. However, in some fonts and in some settings (especially logotypes) letter pairs can appear as though there is uneven space between them despite the actual measurements being identical. The process of adjusting the kerning between two letters so that they appear equal is called _optically aligning_ them. Though it may seem unintuitive, your human eye is much better at perceiving small differences than a computer is, and optically aligning text will provide a smoother transition from letter to letter.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+- [Optical Adjustment by Luke Jones](https://medium.com/@lukejones/optical-adjustment-b55492a1165c)

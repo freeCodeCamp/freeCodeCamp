@@ -12,7 +12,7 @@ localeTitle: Отображать с условием If / Else
 
 ### Решение
 
-```react.js
+```jsx
 if (this.state.display === true) { 
   return ( 
     <div> 
@@ -25,7 +25,7 @@ if (this.state.display === true) {
 
 Затем создайте оператор else, который возвращает тот же JSX **без** элемента `h1` .
 
-```react.js
+```jsx
 else { 
   return ( 
     <div> 

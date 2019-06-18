@@ -33,7 +33,9 @@ export function DynamicForm({
   errors,
   fields,
   handleSubmit,
-  fields: { _meta: { allPristine } },
+  fields: {
+    _meta: { allPristine }
+  },
 
   // HOC
   buttonText,
@@ -48,8 +50,13 @@ export function DynamicForm({
       id={`dynamic-${id}`}
       onSubmit={handleSubmit(submit)}
       style={{ width: '100%' }}
-      >
-      <FormFields errors={errors} fields={fields} options={options} />
+    >
+      <FormFields
+        errors={errors}
+        fields={fields}
+        formId={id}
+        options={options}
+      />
       <BlockSaveWrapper>
         {hideButton ? null : (
           <BlockSaveButton
@@ -57,7 +64,7 @@ export function DynamicForm({
               (allPristine && !enableSubmit) ||
               !!Object.keys(errors).filter(key => errors[key]).length
             }
-            >
+          >
             {buttonText ? buttonText : null}
           </BlockSaveButton>
         )}
