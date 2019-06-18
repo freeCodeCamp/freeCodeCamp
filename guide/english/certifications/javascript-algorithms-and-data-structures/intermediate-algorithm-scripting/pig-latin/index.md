@@ -112,28 +112,23 @@ You will need to use everything you know about string manipulation to get the la
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
     
-    function translatePigLatin(str) {
-      if (str.match(/^[aeiou]/)) return str + "way";
-
-      const consonantCluster = str.match(/^[^aeiou]+/)[0];
-      return str.substring(consonantCluster.length) + consonantCluster + "ay";
-    }
-    
-    // test here
-    translatePigLatin("consonant");
+   function translatePigLatin(str) {
+   function check(obj){
+   if(obj==str.length)     
+   return str.length;
+   else
+   return ['a','e','i','o','u'].indexOf(str.charAt(obj))==-1?check(obj+1):obj;
+   }
+   return str.substr(check(0)).concat((check(0)==0?'w':str.substr(0,check(0)))+'ay');
+   }
 
 ### Code Explanation:
 
-*   First, check to see if the string begins with a vowel.
-    * The regex looks at the beginning of the string `^` for one of the specified characters `[aeiou]` 
-    * If it does, you only need to return the original string with "way" appended on the end.
-*   If the string does not start with a vowel, we want to build a string which contains every consonant before the first vowel in the provided string.
-    * To do this, look at the beginning of a string `^` for one or more characters `+` NOT specified `[^aeiou]`.
-    * If there is a match (and in this case, there always will be), `match()` returns an Array with the matched string as the first element, which is all we want. Grab it with `[0]`.
-*   Now, we can start building our Pig Latin string to return. This can be built in three parts:
-    * The first part contains all of the characters in the original string, starting from the first vowel. We can easily get these characters by creating a substring of the original string, with its starting index being the first vowel.
-    * The second part contains the consonant string we just built. (If you add the second and first parts of this string together, you will get the original string.)
-    * The final part contains "ay".
+* This is a declarative as well as recursive approach to this problem.
+* check() is a function which checks for first letter of string to be in the array of vowels, ['a','i','u','e','o'].
+* In case of consonants, check() calls itself on the next characters until finding the first vowel. If check() does get any vowel then it will return length of string which will be our terminating condition.
+* It’ll return the index of whatever it finds to be the last initial consonant i.e., Schmidtsville’s would be 3.
+* Then, letters up until that index are removed from the string and concatenated with either that same chunk of removed string or w     accordingly, and then ay regardless.
 
 #### Relevant Links
 
@@ -166,23 +161,4 @@ You will need to use everything you know about string manipulation to get the la
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-## Issue description
 
-// The intermediate solution given on https://guide.freecodecamp.org/certifications/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting/pig-latin/ is missing one step in recurrsion functioning. 
-
-## Issue Solution
-function check() should include terminating condition for obj otherwise it will through error "Maximum call stack size exceeded": 
-
-The code after correction should look like this:
-
-## Code Solution After Removal of Issue
-function translatePigLatin(str) {
-function check(obj){
-  if(obj==str.length)      //Terminating Condition
-  return str.length;
-  else
-  return ['a','e','i','o','u'].indexOf(str.charAt(obj))==-1?check(obj+1):obj;
- }
- return str.substr(check(0)).concat((check(0)==0?'w':str.substr(0,check(0)))+'ay');
-
-}
