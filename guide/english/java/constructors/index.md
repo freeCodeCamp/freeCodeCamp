@@ -154,9 +154,10 @@ The copy constructor is a constructor which creates an object by initializing it
 1. Initialize an object from another of the same type.
 2. Copy an object to pass it as an argument to a function.
 3. Copy an object to return it from a function.
-   Here is a program that shows a simple use of copy constructor:
 
-```Java
+Here is a program that shows a simple use of copy constructor:
+```java
+
 class Complex {
  
     private double re, im;
@@ -178,7 +179,33 @@ class Complex {
 }
 ```
 
-- [run the full code](https://repl.it/MwnJ)
+## Refer to constructor from current class 
+Constructor can also be invoked from another constructor inside of same class. Invocation of one constructor inside of another constructor is being performed by using this keyword which contains all parameteres which signutare of 1st constructor holds. For more clear explanation example is given below:
+
+```java
+class Car { 
+    String brand;
+    String model;
+    int seats;
+    
+    // 1st constructor
+    public Car(String brand, String model) {
+        this.brand = brand;
+        this.model = model; 
+    }
+    
+    // 2nd constructor
+    public Car(String brand, String model, int seats) {
+        this(brand, model); // invoking 1st constructor by passing parameters stated inside of this constructors signature
+        this.seats = seats;
+    }
+    
+}
+```
+
+
+
+[run the full code](https://repl.it/MwnJ)
 
 ## Constructor Chaining
 A chaining constructor is when a constructor calls another constructor from the same class.It can be used for multiple ways to create one Object which can be useful.
