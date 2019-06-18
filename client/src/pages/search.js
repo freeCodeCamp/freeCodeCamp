@@ -2,11 +2,14 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import { Index, PoweredBy } from 'react-instantsearch-dom';
+import { Index, PoweredBy as PoweredByAlgolia } from 'react-instantsearch-dom';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { updateSearchQuery } from '../components/search/redux';
 import SearchPageHits from '../components/search/searchPage/SearchPageHits';
+import Spacer from '../components/helpers/Spacer';
+
+import './search.css';
 
 const propTypes = { updateSearchQuery: PropTypes.func.isRequired };
 
@@ -29,7 +32,9 @@ class SearchPage extends Component {
               <main>
                 <SearchPageHits />
               </main>
-              <PoweredBy />
+              <Spacer />
+              <PoweredByAlgolia className='powered-by-wrapper' />
+              <Spacer />
             </Col>
           </Row>
         </Grid>

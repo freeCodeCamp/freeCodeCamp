@@ -52,11 +52,7 @@ const AboutPage = () => {
             <h4>How big is the freeCodeCamp community?</h4>
             <p>
               If you add up all the people who use our learning platform, read
-              our{' '}
-              <Link to='https://medium.freecodecamp.org'>
-                Medium publication
-              </Link>
-              , watch our{' '}
+              our <Link to='/news'>news articles</Link>, watch our{' '}
               <Link to='https://youtube.com/freecodecamp'>YouTube channel</Link>
               , and post on{' '}
               <Link external={true} to='/forum'>
