@@ -9,6 +9,6 @@
   padding: 0 15px;
 }
 
-.challenge-title-wrap > Button {
+.challenge-title-wrap > a {
   align-self: flex-start;
 }
