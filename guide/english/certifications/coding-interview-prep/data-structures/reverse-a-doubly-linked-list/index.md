@@ -1,19 +1,17 @@
 ---
 title: Reverse a Doubly Linked List
 ---
+
 ## Reverse a Doubly Linked List
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/reverse-a-doubly-linked-list/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 ### Method:
 - Reverse the doubly linked list, and update previous and next variables for each member node accordingly.
 - Define privileged methods add() and reverse().
 - add() will find the end of the list and append new entries at this location.
 - reverse() will swap entries one pair at a time using a temporary variable.
+
 ### Solution:
+
 ```js
 var Node = function(data, prev) {
   this.data = data;
@@ -66,6 +64,6 @@ var DoublyLinkedList = function() {
   // change code above this line
 };
 ```
-- [Run Code](https://repl.it/@nwin/reverse-a-doubly-linked-list?language=javascript)
+
 ### Reference:
 - [Wikipedia](https://en.wikipedia.org/wiki/Doubly_linked_list)
