@@ -25,7 +25,7 @@ Here's how to extract the values into variables with the same name as they have 
 const { johnDoe: { age, email }} = user;
 ```
 
-And here's how you can assign new variable names when destructuring a nested object like this:
+And here's how you can assign new variable names when destructuring a nested object:
 
 ```js
 const { johnDoe: { age: userAge, email: userEmail }} = user;
