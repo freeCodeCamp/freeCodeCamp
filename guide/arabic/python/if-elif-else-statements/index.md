@@ -62,7 +62,6 @@ _ملاحظة فقط الشرط الأول أن يقيم كما `true` سيتم 
 لنأخذ مثالاً على العثور على رقم أكبر من "10"
 
 ```python
-python
 x = 34
 if x %  2 == 0:  # this is how you create a comment and now, checking for even.
   if x > 10:
