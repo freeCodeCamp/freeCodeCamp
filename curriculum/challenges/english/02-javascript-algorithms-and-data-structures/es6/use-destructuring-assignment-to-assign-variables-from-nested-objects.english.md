@@ -35,7 +35,7 @@ const { johnDoe: { age: userAge, email: userEmail }} = user;
 
 ## Instructions
 <section id='instructions'>
-Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>lowToday</code> and <code>highToday</code> the values of <code>today.low</code> and <code>tomorrow.high</code> from the <code>LOCAL_FORECAST</code> object.
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>lowToday</code> and <code>highToday</code> the values of <code>today.low</code> and <code>today.high</code> from the <code>LOCAL_FORECAST</code> object.
 </section>
 
 ## Tests
