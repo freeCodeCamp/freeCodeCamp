@@ -14,8 +14,9 @@ localeTitle: التركيب
 
 سيقوم هذا الأمر بتثبيت حزمة TypeScript كاعتمادية في مشروعك باستخدام [`npm`](https://www.npmjs.com/) وهو مدير حزم شائع.
 
- `npm i typescript 
-` 
+```bash
+npm i typescript
+``` 
 
 _ملاحظة:_ هناك [عدة خيارات](https://docs.npmjs.com/cli/install) `npm` حسب المكان الذي تريد تثبيت TypeScript فيه.
 
@@ -28,15 +29,17 @@ _ملاحظة:_ هناك [عدة خيارات](https://docs.npmjs.com/cli/instal
 
 ### تجميع ملف واحد لأسفل إلى جافا سكريبت
 
- `tsc multiplication.ts 
-` 
+```bash
+tsc multiplication.ts
+``` 
 
 _إلى ملاحظة_ يمكنك تكوين عملية تجميع TypeScript هذه كبرنامج نصي npm مخصص في `package.json` الخاص بك.
 
 ### خيارات الإعداد
 
- `touch tsconfig.json 
-` 
+```bash
+touch tsconfig.json
+``` 
 
 هناك أيضًا خيار إنشاء ملف [`tsconfig.json`](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) يحدد ملفات الجذر وخيارات المترجم.
 
@@ -52,32 +55,34 @@ _إلى ملاحظة_ يمكنك تكوين عملية تجميع TypeScript ه�
 
 > `multiplication.ts`
 
- `let a: number = 10; 
- let b: number = 2; 
- 
- function showProduct(first: number, second: number): void { 
-  console.info("Mathematical! The result is " + first * second + "."); 
- } 
- 
- showProduct(a, b); 
- 
- // Mathematical! The result is 20. 
-` 
+```typescript
+let a: number = 10;
+let b: number = 2;
+
+function showProduct(first: number, second: number): void {
+  console.info("Mathematical! The result is " + first * second + ".");
+}
+
+showProduct(a, b);
+
+// Mathematical! The result is 20.
+``` 
 
 وبمجرد أن تنتهي من إنشاء `multiplication.ts` ، ويمكنني أن ترجمة ذلك الى جافا سكريبت باستخدام `tsc` القيادة التي تقف على ترجمة نسخة مطبوعة على الآلة الكاتبة.
 
 > `multiplication.js`
 
- `var a = 10; 
- var b = 2; 
- 
- function showProduct(first, second) { 
-    console.info("Mathematical! The result is " + first * second + "."); 
- } 
- 
- showProduct(a, b); 
- 
- // Mathematical! The result is 20. 
-` 
+```javascript
+var a = 10;
+var b = 2;
+
+function showProduct(first, second) {
+    console.info("Mathematical! The result is " + first * second + ".");
+}
+
+showProduct(a, b);
+
+// Mathematical! The result is 20.
+``` 
 
 بام - لقد جمعت بنجاح TypeScript إلى JavaScript!
