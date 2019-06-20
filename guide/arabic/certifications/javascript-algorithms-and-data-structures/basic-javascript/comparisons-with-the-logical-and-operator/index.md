@@ -26,20 +26,21 @@ localeTitle: مقارنات مع عامل التشغيل && (المنطقية AN
 
 ## حل الرمز الأساسي:
 
- `function testLogicalAnd(val) { 
-  // Only change code below this line 
- 
-  if (val <= 50 && val >= 25) { 
-      return "Yes"; 
-  } 
- 
-  // Only change code above this line 
-  return "No"; 
- } 
- 
- // Change this value to test 
- testLogicalAnd(10); 
-` 
+```javascript
+function testLogicalAnd(val) {
+  // Only change code below this line
+
+  if (val <= 50 && val >= 25) {
+      return "Yes";
+  }
+
+  // Only change code above this line
+  return "No";
+}
+
+// Change this value to test
+testLogicalAnd(10);
+``` 
 
 
 ### تفسير الشفرة

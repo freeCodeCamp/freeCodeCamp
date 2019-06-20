@@ -20,15 +20,16 @@ _أضف عامل المساواة إلى الخط المحدد بحيث تقوم
 
 ## حل الرمز الأساسي:
 
- `function testEqual(val) { 
-  if (val == 12) { // Change this line 
-    return "Equal"; 
-  } 
-  return "Not equal"; 
- } 
- // Change this value to test 
- testEqual(10); 
-` 
+```javascript
+function testEqual(val) {
+  if (val == 12) { // Change this line
+    return "Equal";
+  }
+  return "Not equal";
+}
+// Change this value to test
+testEqual(10);
+``` 
 
 
 ### تفسير الشفرة

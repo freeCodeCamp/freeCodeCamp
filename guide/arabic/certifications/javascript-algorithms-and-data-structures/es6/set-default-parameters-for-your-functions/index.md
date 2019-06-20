@@ -8,15 +8,16 @@ localeTitle: تعيين المعلمات الافتراضية لوظائفك
 
 ### : checkered\_flag: مشكلة التفسير:
 
- `const increment = (function() { 
-  "use strict"; 
-  return function increment(number, value) { 
-    return number + value; 
-  }; 
- })(); 
- console.log(increment(5, 2)); // returns 7 
- console.log(increment(5)); // returns NaN 
-` 
+```javascript
+const increment = (function() {
+  "use strict";
+  return function increment(number, value) {
+    return number + value;
+  };
+})();
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns NaN
+``` 
 
 سنقوم بتعديل دالة الزيادة بحيث يتم زيادة معلمة **الرقم** بمقدار 1 بشكل افتراضي ، عن طريق تعيين **القيمة** إلى 1 إذا لم يتم تمرير **قيمة للقيمة** إلى دالة الزيادة.
 
@@ -40,15 +41,16 @@ localeTitle: تعيين المعلمات الافتراضية لوظائفك
 
 ## : مبتدئ: حل الرمز الأساسي:
 
- `const increment = (function() { 
-  "use strict"; 
-  return function increment(number, value = 1) { 
-    return number + value; 
-  }; 
- })(); 
- console.log(increment(5, 2)); // returns 7 
- console.log(increment(5)); // returns NaN 
-` 
+```javascript
+const increment = (function() {
+  "use strict";
+  return function increment(number, value = 1) {
+    return number + value;
+  };
+})();
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns NaN
+``` 
 
 
 ## شرح الشفرة
