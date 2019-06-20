@@ -22,10 +22,11 @@ FXML هي لغة ترميز مبنية على XML تستخدم لتعريف ال
 
 #### مثال:
 
- `<HBox spacing="10" alignment="bottom_right" > // Creates an HBox Object 
-        <Button text="Sign In"/> // Nested inside the HBox is a Button object with the text 'Sign In' 
- </HBox> 
-` 
+```XML
+<HBox spacing="10" alignment="bottom_right" > // Creates an HBox Object
+        <Button text="Sign In"/> // Nested inside the HBox is a Button object with the text 'Sign In'
+</HBox>
+``` 
 
 ### المراجع:
 
