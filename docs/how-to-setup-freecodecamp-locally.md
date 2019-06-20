@@ -178,8 +178,31 @@ The keys in the `.env` file are *not* required to be changed to run the app loca
 Keep in mind if you want to use additional services, you'll have to acquire your own API keys for those services and edit the entries accordingly in the `.env` file.
 
 **Docker Build:** If using the Docker build and the Docker installation instructed you to use Docker Toolbox (applies to older versions of macOS and Windows), you need to change `DOCKER_HOST_LOCATION` in your `.env` file var to the output from the `docker-machine ip` command. If you use any Docker supported flavor of Linux or if you use Docker Desktop (new versions of macOS and Windows 10) you can leave `DOCKER_HOST_LOCATION` to the default value.
-For more information about Docker Toolbox configuration for Windows 10 Home, read this [little guide](/docs/how-to-use-docker-toolbox-to-setup-freecodecamp-locally.md).
 
+---
+
+*Tip for Windows Home user:*\
+In this case, you have to use Docker Toolbox.
+Your forked freeCodeCamp folder must then be located in the folder `C:\Users\user_name\`. 
+If you don't want docker folders to be stored on your `C:` drive, you can move them to your `D:` drive (for example).
+- Create two folders on `D:` drive (with powershell or cmd)
+```powershell
+mkdir .docker 
+mkdir docker-projects
+```
+- Then, from `C:\Users\user_name`, in a powershell console (not cmd), create two junction links (You may need to be admin and/or in developer mode to do that):
+```powershell
+cmd mklink .docker /J D:\.docker
+cmd mklink docker-projects /J D:\docker-projects
+```
+Cut and paste your forked freeCodeCamp folder in the docker-projects folder and, before runnig the commands in the next steps, go from this former directory
+```bash
+# Launch first Docker Quickstart Terminal as admin, and wait...
+cd ~
+cd docker-projects/freeCodeCamp/
+```
+
+---
 #### Step 2: Install dependencies
 
 This step will install the dependencies required for the application to run:
@@ -265,6 +288,22 @@ Once ready, open a web browser and visit <http://localhost:8000>. If the app loa
 If you visit <http://localhost:3000/explorer> you should see the available APIs.
 
 Congratulations  🎉🎉🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+
+---
+
+*Tip for Windows Home user (using Docker Toolbox):*\
+To view the app in your browser, go to the adress indicated:
+```shell
+You can now view @freecodecamp/client in the browser.
+client_1        |
+client_1        |   Local:            http://0.0.0.0:8000/
+```
+
+Replace `0.0.0.0` between `http://` and `:8000/` by the IP indicated in Step 1.
+
+Repeat only this step 4 to run the next sessions (you can then launch Docker Quickstart Terminal as normal user).
+
+---
 
 ## How to Sign in when working locally
 Your local setup automatically populates a local user in the database. Clicking the `Sign In` button will automatically authenticate you into the local application.
