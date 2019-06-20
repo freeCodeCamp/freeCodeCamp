@@ -8,8 +8,9 @@ localeTitle: Array.prototype.toLocaleString
 
 ##### بناء الجملة:
 
- `arr.toLocaleString(); 
-` 
+```
+arr.toLocaleString();
+``` 
 
 ##### المعلمات
 
@@ -22,25 +23,27 @@ localeTitle: Array.prototype.toLocaleString
 
 ## أمثلة
 
- `var number = 12345; 
- var date = new Date(); 
- var myArray = [number, date, 'foo']; 
- var myString = myArray.toLocaleString(); 
- 
- console.log(myString); 
- // OUTPUT '12345,10/25/2017, 4:20:02 PM,foo' 
-` 
+```javascript
+var number = 12345;
+var date = new Date();
+var myArray = [number, date, 'foo'];
+var myString = myArray.toLocaleString();
+
+console.log(myString);
+// OUTPUT '12345,10/25/2017, 4:20:02 PM,foo'
+``` 
 
 يمكن عرض مخرجات مختلفة بناء على اللغة ومعرف المنطقة (اللغة).
 
- `var number = 54321; 
- var date = new Date(); 
- var myArray = [number, date, 'foo']; 
- var myJPString = myArray.toLocaleString('ja-JP'); 
- 
- console.log(myJPString); 
- // OUTPUT '54321,10/26/2017, 5:20:02 PM,foo' 
-` 
+```javascript
+var number = 54321;
+var date = new Date();
+var myArray = [number, date, 'foo'];
+var myJPString = myArray.toLocaleString('ja-JP');
+
+console.log(myJPString);
+// OUTPUT '54321,10/26/2017, 5:20:02 PM,foo'
+``` 
 
 ### معلومات اكثر:
 
