@@ -76,13 +76,10 @@ var i32View;
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
-
 
 ```js
 var buffer = new ArrayBuffer(64);
