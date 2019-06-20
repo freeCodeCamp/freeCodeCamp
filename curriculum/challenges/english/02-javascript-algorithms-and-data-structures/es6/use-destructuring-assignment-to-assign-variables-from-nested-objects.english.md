@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 You can use the same principles from the previous two lessons to destructure values from nested objects.
 
-Using a similar object from previous examples:
+Using an object similar to previous examples:
 
 ```js
 const user = {
