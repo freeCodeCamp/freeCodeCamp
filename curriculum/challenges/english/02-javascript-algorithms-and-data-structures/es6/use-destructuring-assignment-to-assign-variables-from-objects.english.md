@@ -6,7 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-Destructuring allows you to assign a new variable name when extracting values by putting the new name after a colon when assigning the value.
+Destructuring allows you to assign a new variable name when extracting values. You can do this by putting the new name after a colon when assigning the value.
 
 Using the same object from the last example:
 
