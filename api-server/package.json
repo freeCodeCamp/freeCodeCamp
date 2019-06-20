@@ -5,6 +5,7 @@
   "private": true,
   "main": "development-entry.js",
   "scripts": {
+    "develop": "node development-entry.js",
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./server/server.js",
     "build": "babel server --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
     "commit": "git-cz",
@@ -90,7 +91,7 @@
     "commitizen": "^2.9.6",
     "cz-freecodecamp": "^1.0.1",
     "husky": "^0.14.3",
-    "jest": "^23.6.0",
+    "jest": "^24.8.0",
     "joi": "^13.1.2",
     "joi-objectid": "^2.0.0",
     "loopback-component-explorer": "^6.3.1",

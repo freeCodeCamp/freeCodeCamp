@@ -50,35 +50,29 @@ tests:
     testString: assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1, 'There should be an edge between <code>Jill</code> and <code>Jenny</code>.');
   - text: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.
     testString: assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, 'There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');
-
 ```
-
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
-var undirectedAdjList = {
-};
+var undirectedAdjList = {};
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-
 ```js
 var undirectedAdjList = {
-"James": ["Jeff"],"Jill": ["Jenny"],"Jenny": ["Jill", "Jeff"],
-"Jeff": ["James", "Jenny"]
+  James: ['Jeff'],
+  Jill: ['Jenny'],
+  Jenny: ['Jill', 'Jeff'],
+  Jeff: ['James', 'Jenny']
 };
 ```
 

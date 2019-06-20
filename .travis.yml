@@ -31,6 +31,6 @@ jobs:
 
     - stage: Artifacts builds
       if: branch = master && type != pull_request
-      script: bash tools/ci-scripts/trigger-build.sh
+      script: bash tools/scripts/builds/trigger-build.sh
       install: skip
       before_script: skip

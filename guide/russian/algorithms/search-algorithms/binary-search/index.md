@@ -50,27 +50,27 @@ _O_ ( _log 2 N_ ) такова, что на каждом шаге половин
 
 Найдите 5 в заданном массиве чисел, используя двоичный поиск.
 
-![Двоичный поиск 1](https://i.imgur.com/QAuugOL.jpg)
+![Двоичный поиск 1](https://cdn-media-1.freecodecamp.org/imgr/QAuugOL.jpg)
 
 Отметьте низкие, высокие и средние позиции в массиве.
 
-![Двоичный поиск 2](https://i.imgur.com/1710fEx.jpg)
+![Двоичный поиск 2](https://cdn-media-1.freecodecamp.org/imgr/1710fEx.jpg)
 
 Сравните элемент, который вы ищете, с помощью среднего элемента.
 
-![Двоичный поиск 3](https://i.imgur.com/jr4icze.jpg)
+![Двоичный поиск 3](https://cdn-media-1.freecodecamp.org/imgr/jr4icze.jpg)
 
 Выбросьте левую половину и посмотрите в правую половину.
 
-![Двоичный поиск 4](https://i.imgur.com/W57lGsk.jpg)
+![Двоичный поиск 4](https://cdn-media-1.freecodecamp.org/imgr/W57lGsk.jpg)
 
 Снова сравните с средним элементом.
 
-![Двоичный поиск 5](https://i.imgur.com/5Twm8NE.jpg)
+![Двоичный поиск 5](https://cdn-media-1.freecodecamp.org/imgr/5Twm8NE.jpg)
 
 Теперь перейдите в левую половину.
 
-![Двоичный поиск 6](https://i.imgur.com/01xetay.jpg)
+![Двоичный поиск 6](https://cdn-media-1.freecodecamp.org/imgr/01xetay.jpg)
 
 Средний элемент - это тот элемент, который мы искали!
 

@@ -10,6 +10,13 @@
 .night .landing-page #top-right-nav li > a, .night #top-right-nav li > span {
   color: #fff;
 }
+.night .landing-page a {
+  color: #006400;
+}
+.night .landing-page a:hover {
+  color: #001800;
+}
+
 /* End night mode override */
 
 .black-text {
