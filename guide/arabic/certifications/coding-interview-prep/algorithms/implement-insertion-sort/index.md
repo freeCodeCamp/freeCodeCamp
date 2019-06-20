@@ -31,7 +31,6 @@ localeTitle: تنفيذ فرز الإدراج
  } 
 ` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Insertion-Sort)
 
 ### المراجع:
 

@@ -51,7 +51,6 @@ _`num < 5` - عودة "صغيرة" `num < 10` - عودة "صغير" `num < 15` -
  } 
 ` 
 
-تشغيل الكود في [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Chaining-ifelse-statements)
 
 ### تفسير الشفرة
 

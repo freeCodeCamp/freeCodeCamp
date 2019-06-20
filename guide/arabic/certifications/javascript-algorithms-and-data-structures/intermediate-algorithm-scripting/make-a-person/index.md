@@ -88,7 +88,6 @@ localeTitle: اصنع شخصا
  bob.getFullName(); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLov/0)
 
 ### شرح الشفرة:
 

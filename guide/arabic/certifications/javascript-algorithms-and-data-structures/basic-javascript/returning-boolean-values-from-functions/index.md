@@ -44,7 +44,6 @@ _فيكس وظيفة هو `isLess` من إزالة العبارة `if...else` ._
  isLess(10, 15); 
 ` 
 
-تشغيل الكود في [repl.it.](https://repl.it/@AdrianSkar/Basic-Js-Returning-boolean-from-function)
 
 ### مصادر
 

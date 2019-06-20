@@ -63,7 +63,6 @@ localeTitle: استخدام كائنات لعمليات البحث
 
 جافا سكريبت result = lookup \[val\]؛ \`\` \`
 
-تشغيل الكود في [repl.it.](https://repl.it/@AdrianSkar/Using-objects-for-lookups)
 
 ### مصادر
 

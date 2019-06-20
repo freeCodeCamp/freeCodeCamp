@@ -82,7 +82,6 @@ _ملحوظة: ستحتاج إلى بيان حالة لكل رقم في النط
  sequentialSizes(1); 
 ` 
 
-تشغيل الكود في [repl.it.](https://repl.it/@AdrianSkar/Basic-JS-Multiple-opts-in-switch)
 
 ### تفسير الشفرة
 

@@ -65,7 +65,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnM/0)
 
 ### شرح الشفرة:
 
@@ -121,7 +120,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnO/0)
 
 ### شرح الشفرة:
 
@@ -154,7 +152,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnN/0)
 
 ### شرح الشفرة:
 
@@ -184,7 +181,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CcWk/0)
 
 ### شرح الشفرة:
 

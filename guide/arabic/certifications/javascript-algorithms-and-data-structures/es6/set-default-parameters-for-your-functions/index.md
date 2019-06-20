@@ -50,7 +50,6 @@ localeTitle: تعيين المعلمات الافتراضية لوظائفك
  console.log(increment(5)); // returns NaN 
 ` 
 
-: صاروخ: [تشغيل التعليمات البرمجية](https://repl.it/@RyanPisuena/PleasingFumblingThings)
 
 ## شرح الشفرة
 

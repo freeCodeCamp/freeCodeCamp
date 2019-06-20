@@ -23,7 +23,6 @@ localeTitle: مضاعفات 3 و 5
  } 
 ` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Project-Euler-Problem-1-Multiples-of-3-and-5)
 
 ### مرجع:
 

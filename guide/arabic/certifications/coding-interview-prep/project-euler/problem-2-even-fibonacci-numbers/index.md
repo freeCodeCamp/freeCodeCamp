@@ -54,7 +54,6 @@ localeTitle: حتى أرقام فيبوناتشي
  } 
 ` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
 
 ### المراجع:
 
