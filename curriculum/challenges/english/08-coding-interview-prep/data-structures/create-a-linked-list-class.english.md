@@ -101,11 +101,12 @@ function LinkedList() {
       head = new Node(element);
     } 
     else {
-      let headCopy = head;
-      while (headCopy.next != null) {
-        headCopy = headCopy.next; //headCopy.next is now the last node of linked list
+      let currentNode = head;
+      while (currentNode.next != null) {
+        // currentNode.next will be last node of linked list after loop
+        currentNode = currentNode.next;
       }
-      headCopy.next = new Node(element);
+      currentNode.next = new Node(element);
     }
     length++;
     // Only change code above this line
