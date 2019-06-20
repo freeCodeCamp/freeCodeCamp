@@ -18,23 +18,24 @@ localeTitle: ياقوت
 
 إذا كنت غير معتاد على بعض المفاهيم أعلاه ، فاقرأ ، ولا تقلق. يركز روبي على البساطة والإنتاجية من خلال تركيبه الأنيق الذي يكون طبيعيًا للقراءة والكتابة بسهولة ، مثل:
 
- `# Quick example of Ruby with Object Oriented Programming 
- class Greeter 
-  def initialize(name) 
-    @name = name.capitalize 
-  end 
- 
-  def salute 
-    puts "Hello #{@name}!" 
-  end 
- end 
- 
- # Create a new object 
- g = Greeter.new("world") 
- 
- # Output "Hello World!" 
- g.salute 
-` 
+```ruby
+# Quick example of Ruby with Object Oriented Programming
+class Greeter
+  def initialize(name)
+    @name = name.capitalize
+  end
+
+  def salute
+    puts "Hello #{@name}!"
+  end
+end
+
+# Create a new object
+g = Greeter.new("world")
+
+# Output "Hello World!"
+g.salute
+``` 
 
 ## الإصدار
 
