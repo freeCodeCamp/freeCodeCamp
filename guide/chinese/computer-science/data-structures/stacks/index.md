@@ -17,7 +17,7 @@ localeTitle: 堆栈
 
 使用数组或链表可以实现堆栈。以下是具有最常见操作的堆栈数据结构的简单数组实现。
 
-```C++
+```cpp
 //Stack implementation using array in C++ 
  //You can also include<stack> and then use the C++ STL Library stack class. 
  

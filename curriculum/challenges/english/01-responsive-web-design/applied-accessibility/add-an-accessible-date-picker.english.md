@@ -2,7 +2,7 @@
 id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
-videoUrl: 'https://scrimba.com/c/cD9DJHr'
+videoUrl: 'https://scrimba.com/c/cR3bRbCV'
 ---
 
 ## Description
@@ -11,7 +11,12 @@ Forms often include the <code>input</code> field, which can be used to create se
 You may have noticed the <code>text</code> and <code>submit</code> input types in prior challenges, and HTML5 introduced an option to specify a <code>date</code> field. Depending on browser support, a date picker shows up in the <code>input</code> field when it's in focus, which makes filling in a form easier for all users.
 For older browsers, the type will default to <code>text</code>, so it helps to show users the expected date format in the label or as placeholder text just in case.
 Here's an example:
-<blockquote>&lt;label for=&quot;input1&quot;&gt;Enter a date:&lt;/label&gt;<br>&lt;input type=&quot;date&quot; id=&quot;input1&quot; name=&quot;input1&quot;&gt;<br></blockquote>
+
+```html
+<label for="input1">Enter a date:</label>
+<input type="date" id="input1" name="input1">
+```
+
 </section>
 
 ## Instructions
@@ -77,7 +82,23 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Mortal Kombat Tournament Survey</h2>
+      <form>
+        <p>Tell us the best date for the competition</p>
+        <label for="pickdate">Preferred Date:</label>
+        <input type="date" id="pickdate" name="date">
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
 ```
 </section>

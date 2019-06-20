@@ -1,12 +1,17 @@
 import { auth0 } from '../../config/secrets';
-import { homeLocation } from '../../config/env.json';
+import { homeLocation, apiLocation } from '../../config/env';
 
 const { clientID, clientSecret, domain } = auth0;
 
 const successRedirect = `${homeLocation}/welcome`;
-const failureRedirect = '/signin';
+const failureRedirect = `${homeLocation}/signin`;
 
 export default {
+  devlogin: {
+    authScheme: 'mock',
+    provider: 'dev',
+    module: 'passport-mock-strategy'
+  },
   local: {
     provider: 'local',
     module: 'passport-local',
@@ -24,8 +29,8 @@ export default {
     clientID,
     clientSecret,
     domain,
-    cookieDomain: 'freeCodeCamp.org',
-    callbackURL: '/auth/auth0/callback',
+    cookieDomain: process.env.COOKIE_DOMAIN || 'localhost',
+    callbackURL: `${apiLocation}/auth/auth0/callback`,
     authPath: '/auth/auth0',
     callbackPath: '/auth/auth0/callback',
     useCustomCallback: true,

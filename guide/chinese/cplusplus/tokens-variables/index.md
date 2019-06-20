@@ -1,7 +1,8 @@
 ---
 title: Tokens Part 1
 localeTitle: 代币第1部分
----### 什么是令牌？
+---
+### 什么是令牌？
 
 标记是程序的最小单元，对编译器很重要。有不同种类的令牌：
 
@@ -21,8 +22,8 @@ localeTitle: 代币第1部分
 ### 什么是变量？
 
 *   教科书定义：变量是指定数据可以更改的内存位置。
-    
-*   但我希望你把变量想象成一个类似于盒子的东西，如下所示： ![图](https://i.imgur.com/YdbgWHL.png)
+
+*   但我希望你把变量想象成一个类似于盒子的东西，如下所示： ![图](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
     
 
 所以，例如： 我正在转移到一个新的地方，我需要把我的东西安排在盒子里。因此，我想到了两件事情， **盒子里会存储什么样的东西，所以盒子的大小是已知的（数据类型）** ， **我如何识别盒子？（命名变量）**  
@@ -177,7 +178,7 @@ int 9a;
 
 所以就盒子而言，你可以把它想象成 -
 
-![图](https://i.imgur.com/YdbgWHL.png)
+![图](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
 
 \`\`\`CPP ＃包括 使用命名空间std; int main（） { int a; cout <<“垃圾值中的一个：”<< a << endl; //声明类型为integer的名为'a'的变量 一个= 5; //初始化变量。 cout <<“一个新的价值”<< a << endl;
 

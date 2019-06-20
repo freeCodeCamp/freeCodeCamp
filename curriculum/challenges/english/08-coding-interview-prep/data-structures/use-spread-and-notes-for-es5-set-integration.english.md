@@ -9,7 +9,13 @@ challengeType: 1
 Do you remember the ES6 spread operator <code>...</code>?
 <code>...</code> can take iterable objects in ES6 and turn them into arrays.
 Let's create a Set, and check out the spread function.
-<blockquote>var set = new Set([1,2,3]);<br>var setToArr = [...set]<br>console.log(setToArr) // returns [ 1, 2, 3 ]</blockquote>
+
+```js
+var set = new Set([1,2,3]);
+var setToArr = [...set]
+console.log(setToArr) // returns [ 1, 2, 3 ]
+```
+
 </section>
 
 ## Instructions
@@ -24,7 +30,7 @@ Now you've successfully learned how to use the ES6 <code>Set()</code> object, go
 ```yml
 tests:
   - text: Your Set was returned correctly!
-    testString: assert(function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ]}, 'Your Set was returned correctly!');
+    testString: 'assert((function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); return DeepEqual(test, [ 1, 2, 3, 4, 5, 6, 7 ]);})(), "Your Set was returned correctly!");'
 
 ```
 
