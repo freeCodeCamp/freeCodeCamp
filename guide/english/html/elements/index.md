@@ -1,7 +1,8 @@
 ---
 title: Elements
 ---
-# html elements
+
+# Elements
 
 Elements are the building blocks of HTML that describe the structure and content of a web page. They are the _markup_ part of HyperText Markup Language (HTML).
 
