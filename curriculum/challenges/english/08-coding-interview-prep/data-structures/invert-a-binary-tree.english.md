@@ -39,14 +39,14 @@ tests:
 ```js
 var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 function BinarySearchTree() {
-    this.root = null;
-    // change code below this line
-    // change code above this line
+  this.root = null;
+  // change code below this line
+  // change code above this line
 }
 ```
 
@@ -114,6 +114,28 @@ BinarySearchTree.prototype = {
 <section id='solution'>
 
 ```js
-// solution required
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // change code below this line
+  this.invert = function(node = this.root) {
+    if (node) {
+      const temp = node.left;
+      node.left = node.right;
+      node.right = temp;
+      this.invert(node.left);
+      this.invert(node.right);
+    }
+    return node;
+  }
+    // change code above this line
+}
+
 ```
+
 </section>
