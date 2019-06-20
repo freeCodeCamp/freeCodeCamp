@@ -8,10 +8,11 @@ localeTitle: إعادة استخدام الأنماط باستخدام مجمو�
 
 كود المقدمة أدناه:
 
- `let testString = "test test test "; 
- let reRegex =/(test)\s\1/; 
- let result = reRegex.test(testString); 
-` 
+```javascript
+let testString = "test test test ";
+let reRegex =/(test)\s\1/;
+let result = reRegex.test(testString);
+``` 
 
 سوف تتطابق `result` مع `test test` فقط لأن `\1` في هذا المثال تشير إلى نفس النص الذي تم مؤخرًا تطابقه مع المجموعة الأولى `(test)` .
 
@@ -27,10 +28,11 @@ localeTitle: إعادة استخدام الأنماط باستخدام مجمو�
 
 نظرا للرمز أدناه:
 
- `let testString = "test test test "; 
- let reRegex =/(test)(\s)\1\2\1/; 
- let result = reRegex.test(testString); 
-` 
+```javascript
+let testString = "test test test ";
+let reRegex =/(test)(\s)\1\2\1/;
+let result = reRegex.test(testString);
+``` 
 
 سيطابق `test test test` كامل `test test test` بسبب: `\1` يكرر (اختبار) `\2` يكرر (\\ s)
 
@@ -38,10 +40,11 @@ localeTitle: إعادة استخدام الأنماط باستخدام مجمو�
 
 الكود أدناه:
 
- `let testString = "test test test test test test"; 
- let reRegex =/(test)(\s)\1\2\1/g; 
- let result = reRegex.test(testString); 
-` 
+```javascript
+let testString = "test test test test test test";
+let reRegex =/(test)(\s)\1\2\1/g;
+let result = reRegex.test(testString);
+``` 
 
 نظرًا لأننا استخدمنا `\g` ، فلن يعود التعبير المعتاد الخاص بنا بعد أول مباراة كاملة ( `test test test` ) ويطابق كل التكرار.
 
@@ -49,7 +52,8 @@ localeTitle: إعادة استخدام الأنماط باستخدام مجمو�
 
 ## حل:
 
- `let repeatNum = "42 42 42"; 
- let reRegex =  /^(\d+)\s\1\s\1$/; 
- let result = reRegex.test(repeatNum); 
-`
+```javascript
+let repeatNum = "42 42 42";
+let reRegex =  /^(\d+)\s\1\s\1$/;
+let result = reRegex.test(repeatNum);
+```

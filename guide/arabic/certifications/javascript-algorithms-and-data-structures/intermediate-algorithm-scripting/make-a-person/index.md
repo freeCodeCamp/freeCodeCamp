@@ -41,10 +41,11 @@ localeTitle: اصنع شخصا
 
 إذا كنت تواجه مشاكل في كتابة أساليب `setter` ، في ما يلي نموذج لأسلوب `set` :
 
- `this.setFullName = function(input) { 
-  // Insert your code here 
- } 
-` 
+```js
+this.setFullName = function(input) {
+  // Insert your code here
+}
+``` 
 
 > _حاول أن تحل المشكلة الآن_
 
@@ -56,37 +57,38 @@ localeTitle: اصنع شخصا
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":مبتدئ:") الحل الأساسي للكود:
 
- `var Person = function(firstAndLast) { 
-  var fullName = firstAndLast; 
- 
-  this.getFirstName = function() { 
-    return fullName.split(" ")[0]; 
-  }; 
- 
-  this.getLastName = function() { 
-    return fullName.split(" ")[1]; 
-  }; 
- 
-  this.getFullName = function() { 
-    return fullName; 
-  }; 
- 
-  this.setFirstName = function(name) { 
-    fullName = name + " " + fullName.split(" ")[1]; 
-  }; 
- 
-  this.setLastName = function(name) { 
-    fullName = fullName.split(" ")[0] + " " + name; 
-  }; 
- 
-  this.setFullName = function(name) { 
-    fullName = name; 
-  }; 
- }; 
- 
- var bob = new Person('Bob Ross'); 
- bob.getFullName(); 
-` 
+```js
+var Person = function(firstAndLast) {
+  var fullName = firstAndLast;
+
+  this.getFirstName = function() {
+    return fullName.split(" ")[0];
+  };
+
+  this.getLastName = function() {
+    return fullName.split(" ")[1];
+  };
+
+  this.getFullName = function() {
+    return fullName;
+  };
+
+  this.setFirstName = function(name) {
+    fullName = name + " " + fullName.split(" ")[1];
+  };
+
+  this.setLastName = function(name) {
+    fullName = fullName.split(" ")[0] + " " + name;
+  };
+
+  this.setFullName = function(name) {
+    fullName = name;
+  };
+};
+
+var bob = new Person('Bob Ross');
+bob.getFullName();
+``` 
 
 
 ### شرح الشفرة:
