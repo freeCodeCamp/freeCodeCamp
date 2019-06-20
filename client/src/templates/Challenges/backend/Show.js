@@ -97,23 +97,7 @@ export class BackEnd extends Component {
   }
 
   componentDidMount() {
-    const {
-      challengeMounted,
-      initConsole,
-      initTests,
-      updateChallengeMeta,
-      data: {
-        challengeNode: {
-          fields: { tests },
-          challengeType
-        }
-      },
-      pageContext: { challengeMeta }
-    } = this.props;
-    initConsole('');
-    initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, challengeType });
-    challengeMounted(challengeMeta.id);
+    this.initializeComponent();
     window.addEventListener('resize', this.updateDimensions);
   }
 
@@ -132,25 +116,33 @@ export class BackEnd extends Component {
       }
     } = prevProps;
     const {
+      data: {
+        challengeNode: { title: currentTitle }
+      }
+    } = this.props;
+    if (prevTitle !== currentTitle) {
+      this.initializeComponent();
+    }
+  }
+
+  initializeComponent() {
+    const {
       challengeMounted,
       initConsole,
       initTests,
       updateChallengeMeta,
       data: {
         challengeNode: {
-          title: currentTitle,
           fields: { tests },
           challengeType
         }
       },
       pageContext: { challengeMeta }
     } = this.props;
-    if (prevTitle !== currentTitle) {
-      initConsole('');
-      initTests(tests);
-      updateChallengeMeta({ ...challengeMeta, challengeType });
-      challengeMounted(challengeMeta.id);
-    }
+    initConsole('');
+    initTests(tests);
+    updateChallengeMeta({ ...challengeMeta, challengeType });
+    challengeMounted(challengeMeta.id);
   }
 
   handleSubmit(values) {

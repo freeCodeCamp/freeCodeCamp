@@ -105,6 +105,31 @@ class ShowClassic extends Component {
 
   componentDidMount() {
     const {
+      data: {
+        challengeNode: { title }
+      }
+    } = this.props;
+    this.initializeComponent(title);
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      data: {
+        challengeNode: { title: prevTitle }
+      }
+    } = prevProps;
+    const {
+      data: {
+        challengeNode: { title: currentTitle }
+      }
+    } = this.props;
+    if (prevTitle !== currentTitle) {
+      this.initializeComponent(currentTitle);
+    }
+  }
+
+  initializeComponent(title) {
+    const {
       challengeMounted,
       createFiles,
       initConsole,
@@ -113,7 +138,6 @@ class ShowClassic extends Component {
       data: {
         challengeNode: {
           files,
-          title,
           fields: { tests },
           challengeType
         }
@@ -125,41 +149,6 @@ class ShowClassic extends Component {
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
     challengeMounted(challengeMeta.id);
-  }
-
-  componentDidUpdate(prevProps) {
-    const {
-      data: {
-        challengeNode: { title: prevTitle }
-      }
-    } = prevProps;
-    const {
-      challengeMounted,
-      createFiles,
-      initConsole,
-      initTests,
-      updateChallengeMeta,
-      data: {
-        challengeNode: {
-          files,
-          title: currentTitle,
-          fields: { tests },
-          challengeType
-        }
-      },
-      pageContext: { challengeMeta }
-    } = this.props;
-    if (prevTitle !== currentTitle) {
-      initConsole('');
-      createFiles(files);
-      initTests(tests);
-      updateChallengeMeta({
-        ...challengeMeta,
-        title: currentTitle,
-        challengeType
-      });
-      challengeMounted(challengeMeta.id);
-    }
   }
 
   componentWillUnmount() {
