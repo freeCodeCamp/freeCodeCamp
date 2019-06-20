@@ -28,6 +28,7 @@ import {
   createFiles,
   challengeFilesSelector,
   challengeTestsSelector,
+  initConsole,
   initTests,
   updateChallengeMeta,
   challengeMounted,
@@ -47,6 +48,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       createFiles,
+      initConsole,
       initTests,
       updateChallengeMeta,
       challengeMounted
@@ -63,6 +65,7 @@ const propTypes = {
   files: PropTypes.shape({
     key: PropTypes.string
   }),
+  initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
@@ -106,6 +109,7 @@ class ShowClassic extends Component {
     const {
       challengeMounted,
       createFiles,
+      initConsole,
       initTests,
       updateChallengeMeta,
       data: {
@@ -118,6 +122,7 @@ class ShowClassic extends Component {
       },
       pageContext: { challengeMeta }
     } = this.props;
+    initConsole('');
     createFiles(files);
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, title, challengeType });
@@ -133,6 +138,7 @@ class ShowClassic extends Component {
     const {
       challengeMounted,
       createFiles,
+      initConsole,
       initTests,
       updateChallengeMeta,
       data: {
@@ -146,6 +152,7 @@ class ShowClassic extends Component {
       pageContext: { challengeMeta }
     } = this.props;
     if (prevTitle !== currentTitle) {
+      initConsole('');
       createFiles(files);
       initTests(tests);
       updateChallengeMeta({

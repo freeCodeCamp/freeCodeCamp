@@ -10,6 +10,7 @@ import {
   challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
+  initConsole,
   initTests,
   updateBackendFormValues,
   updateChallengeMeta,
@@ -44,6 +45,7 @@ const propTypes = {
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
+  initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   output: PropTypes.string,
@@ -71,6 +73,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToActions = {
   challengeMounted,
   executeChallenge,
+  initConsole,
   initTests,
   updateBackendFormValues,
   updateChallengeMeta,
@@ -96,6 +99,7 @@ export class BackEnd extends Component {
   componentDidMount() {
     const {
       challengeMounted,
+      initConsole,
       initTests,
       updateChallengeMeta,
       data: {
@@ -106,6 +110,7 @@ export class BackEnd extends Component {
       },
       pageContext: { challengeMeta }
     } = this.props;
+    initConsole('');
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, challengeType });
     challengeMounted(challengeMeta.id);
@@ -128,6 +133,7 @@ export class BackEnd extends Component {
     } = prevProps;
     const {
       challengeMounted,
+      initConsole,
       initTests,
       updateChallengeMeta,
       data: {
@@ -140,6 +146,7 @@ export class BackEnd extends Component {
       pageContext: { challengeMeta }
     } = this.props;
     if (prevTitle !== currentTitle) {
+      initConsole('');
       initTests(tests);
       updateChallengeMeta({ ...challengeMeta, challengeType });
       challengeMounted(challengeMeta.id);
