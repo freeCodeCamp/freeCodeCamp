@@ -12,17 +12,17 @@ localeTitle: يوم
 
 #### مثال:
 
- `
-  <a href= "https://guide.freecodecamp.org/">freeCodeCamp</a> 
-` 
+```html
+  <a href= "https://guide.freecodecamp.org/">freeCodeCamp</a>
+``` 
 
 يمكن أيضًا تحويل الصورة إلى ارتباط بإحاطة العلامة `<img>` في علامة `<a>` .
 
 #### مثال:
 
- `
-  <a href= "https://guide.freecodecamp.org/"><img src="logo.svg"></a> 
-` 
+```html
+  <a href= "https://guide.freecodecamp.org/"><img src="logo.svg"></a>
+``` 
 
 من الممكن أيضًا تحديد هدف العلامة `<a>` . يتم ذلك باستخدام السمة `target` . تحتوي السمة `target` على القيم التالية متاحة `_blank|_self|_parent|_top|framename` .
 
@@ -30,9 +30,9 @@ localeTitle: يوم
 
 #### مثال:
 
- `
-  <a href= "https://guide.freecodecamp.org/" target="_blank">freeCodeCamp</a> 
-` 
+```html
+  <a href= "https://guide.freecodecamp.org/" target="_blank">freeCodeCamp</a>
+``` 
 
 [freeCodeCamp](https://guide.freecodecamp.org/) يتم إنشاء هذا الارتباط بالطريقة نفسها التي يقترحها مثال التعليمة البرمجية. انقر فوقه لمعرفة كيف يعمل.
 
