@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from '../../../components/helpers/Link';
+import { navigate } from 'gatsby';
+import { Button } from '@freecodecamp/react-bootstrap';
 
 import './challenge-title.css';
 
@@ -31,26 +32,28 @@ function ChallengeTitle({
   return (
     <div className='challenge-title-wrap'>
       {showPrevNextBtns ? (
-        <Link
+        <Button
           aria-label='Previous lesson'
-          className='btn-invert btn btn-primary'
-          to={prevChallengePath}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={() => navigate(prevChallengePath)}
         >
           &lt;
-        </Link>
+        </Button>
       ) : null}
       <h2 className='text-center challenge-title'>
         {children || 'Happy Coding!'}
         {icon}
       </h2>
       {showPrevNextBtns ? (
-        <Link
+        <Button
           aria-label='Next lesson'
-          className='btn-invert btn btn-primary'
-          to={introPath ? introPath : nextChallengePath}
+          bsStyle='primary'
+          className='btn-invert'
+          onClick={() => navigate(introPath ? introPath : nextChallengePath)}
         >
           &gt;
-        </Link>
+        </Button>
       ) : null}
     </div>
   );
