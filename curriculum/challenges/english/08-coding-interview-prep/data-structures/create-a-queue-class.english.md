@@ -13,7 +13,7 @@ The two main methods of a queue class is the enqueue and the dequeue method. The
 
 ## Instructions
 <section id='instructions'>
-Write an enqueue method that pushes an element to the tail of the queue, a dequeue method that removes and returns the front element, a front method that lets us see the front element, a size method that shows the length, and an isEmpty method to check if the queue is empty.
+Write an <code>enqueue</code> method that pushes an element to the tail of the queue, a <code>dequeue</code> method that removes and returns the front element, a <code>front</code> method that lets us see the front element, a <code>size</code> method that shows the length, and an <code>isEmpty</code> method to check if the queue is empty.
 </section>
 
 ## Tests

@@ -12,7 +12,7 @@ Heap sort works by taking an unsorted array, adding each item in the array into 
 
 ## Instructions
 <section id='instructions'>
-Let's implement heap sort with a min heap. Feel free to adapt your max heap code here. Create an object MinHeap with insert, remove, and sort methods. The sort method should return an array of all the elements in the min heap sorted from smallest to largest.
+Let's implement heap sort with a min heap. Feel free to adapt your max heap code here. Create an object <code>MinHeap</code> with <code>insert</code>, <code>remove</code>, and <code>sort</code> methods. The <code>sort</code> method should return an array of all the elements in the min heap sorted from smallest to largest.
 </section>
 
 ## Tests
