@@ -10,7 +10,7 @@ localeTitle: Null-coalescing Operator
 
 بما أن `name` `null` ، فسيتم تعيين `name` `clientName` "John Doe".
 
-```cs
+```csharp
 string name = null;
 
 string clientName = name ?? "John Doe";
@@ -18,7 +18,7 @@ string clientName = name ?? "John Doe";
 Console.WriteLine(clientName);
 ``` 
 
-```cs
+```csharp
 > John Doe
 ``` 
 
@@ -26,7 +26,7 @@ Console.WriteLine(clientName);
 
 نظرًا لأن `name` ليس `null` ، فسيتم تعيين `name` `clientName` ، وهو "Jane Smith".
 
-```cs
+```csharp
 string name = "Jane Smith";
 
 string clientName = name ?? "John Doe";
@@ -34,7 +34,7 @@ string clientName = name ?? "John Doe";
 Console.WriteLine(clientName);
 ``` 
 
-```cs
+```csharp
 > Jane Smith
 ``` 
 
@@ -52,7 +52,7 @@ Console.WriteLine(clientName);
 
 ومع ذلك ، يمكن تبسيط ذلك إلى حد كبير باستخدام مشغل التوليف الفارغ.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe";
 ``` 
 
@@ -60,13 +60,13 @@ string clientName = name ?? "John Doe";
 
 من الممكن أيضًا استخدام المشغل الشرطي لاختبار وجود قيمة `null` وتعيين قيمة مختلفة.
 
-```cs
+```csharp
 string clientName = name != null ? name : "John Doe";
 ``` 
 
 مرة أخرى ، يمكن تبسيط ذلك باستخدام مشغل التوليف الفارغ.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe";
 ``` 
 
