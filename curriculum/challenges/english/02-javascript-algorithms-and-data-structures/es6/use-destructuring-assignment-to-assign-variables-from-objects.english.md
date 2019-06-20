@@ -37,9 +37,9 @@ tests:
   - text: You should remove the ES5 assignment syntax.
     testString: assert(!code.match(/highToday = HIGH_TEMPERATURES\.today/g) && !code.match(/highTomorrow = HIGH_TEMPERATURES\.tomorrow/g))
   - text: You should use destructuring to create the <code>highToday</code> variable.
-    testString: assert(code.match(/(var|const|let)\s*{\s*(today:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES/g));
+    testString: assert(code.match(/(var|const|let)\s*{\s*(today:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
   - text: You should use destructuring to create the <code>highTomorrow</code> variable.
-    testString: assert(code.match(/(var|const|let)\s*{\s*(tomorrow:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES/g));
+    testString: assert(code.match(/(var|const|let)\s*{\s*(tomorrow:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
 ```
 
 </section>
