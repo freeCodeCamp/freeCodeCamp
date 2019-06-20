@@ -32,7 +32,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 3. 帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
 
-##贡献予开源代码库
+## 贡献予开源代码库
 
 我们有数以千计的[编码挑战](https://learn.freecodecamp.org)和[指南文章](https://guide.freecodecamp.org)集中在这个庞大的开源代码库中。
 
@@ -40,11 +40,11 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 - [📝 研究，编写和更新我们的指南文章](#研究编写和更新我们的指南文章)
 
-- [💻 创建，更新编码挑战和修复其中的错误](创建更新编码挑战和修复其中的错误)
+- [💻 创建，更新编码挑战和修复其中的错误](#创建更新编码挑战和修复其中的错误)
 
 - [🌐 翻译指南文章和编码挑战](#翻译指南文章和编码挑战)
 
-- [🛠 帮助我们修复freeCodeCamp.org学习平台中的错误](#帮助我们修复freeCodeCamp.org学习平台中的错误)
+- [🛠 帮助我们修复freeCodeCamp.org学习平台中的错误](#帮助我们修复freecodecamporg学习平台中的错误)
 
 ### 研究，编写和更新我们的指南文章
 
