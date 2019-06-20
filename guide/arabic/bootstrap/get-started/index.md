@@ -14,18 +14,18 @@ Bootstrap هو إطار مجاني ومفتوح المصدر تم تطويره �
 
 تعد إضافة bootstrap إلى صفحتك عملية سريعة ، فما عليك سوى إضافة ما يلي إلى `<head>` العلامات في شفرتك.
 
- `
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
-` 
+```html
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+``` 
 
 سوف تحتاج أيضا إلى إضافة ما يلي بين `body` العلامات في التعليمات البرمجية. باستخدام Bootstrap ، ستستخدم علامات `<div>` عند استخدام العديد من ميزات Bootstrap ، وستحتوي كل علامة على مجموعة فريدة من الفئات المطبقة التي تسمح للعلامة بتنفيذ مهمتها. ستعرض الأقسام الأخرى من دليل Bootstrap هذا المزيد من الأمثلة عن كيفية استخدام Bootstrap `<div>` . (العلامات `<div>` ليست حصرية لـ Bootstrap ، ومع ذلك فإن Bootstrap تستفيد منها.). وفيما يلي التعليمات البرمجية التي سوف شأنه أن يضيف إلى `body` العلامات في التعليمات البرمجية لإنهاء بدء العمل. ضع في اعتبارك أنه أثناء إنشاء الحاوية ، ستظل الصفحة فارغة حتى تضيف محتوى إلى الحاوية.
 
- `
-<div class="alert alert-success" role="alert"> 
-    <strong>Congratulations!</strong> 
-    <p>Bootstrap is now working on this page</p> 
- </div> 
-` 
+```html
+<div class="alert alert-success" role="alert">
+    <strong>Congratulations!</strong>
+    <p>Bootstrap is now working on this page</p>
+</div>
+``` 
 
 **تهانينا!**
 
