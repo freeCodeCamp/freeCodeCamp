@@ -55,15 +55,12 @@
     "lint-staged": "^7.2.0",
     "live-server": "^1.2.1",
     "lodash": "^4.17.11",
-    "markdownlint": "^0.15.0",
     "mocha": "5.2.0",
     "puppeteer": "1.11.0",
     "readdirp-walk": "^1.6.0",
     "rx": "^4.1.0",
     "semantic-release": "^15.13.3",
-    "through2": "^3.0.1",
-    "validator": "^10.4.0",
-    "yargs": "^13.2.4"
+    "validator": "^10.4.0"
   },
   "keywords": [
     "challenges",
