@@ -22,7 +22,7 @@ multipleA.test(A2); // Returns false
 
 ## Instructions
 <section id='instructions'>
-Change the regex <code>ohRegex</code> to match the phrase <code>"Oh no"</code> only when it has <code>3</code> to <code>6</code> letter <code>h</code>'s.
+Change the regex <code>ohRegex</code> to match the entire phrase <code>"Oh no"</code> only when it has <code>3</code> to <code>6</code> letter <code>h</code>'s.
 </section>
 
 ## Tests
