@@ -1,12 +1,12 @@
 ---
 title: Improve Compatibility with Browser Fallbacks
 ---
-## Improve Compatibility with Browser Fallbacks
+# Improve Compatibility with Browser Fallbacks
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Problem Explanation
 We need to add a fallback to the ```background``` property of the ```.black-box`` class.
 
-### Example
+**Example:**
 
 ```css
   :root {
@@ -19,7 +19,9 @@ We need to add a fallback to the ```background``` property of the ```.black-box`
   }
 ```
 
-## Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Add a fallback to the ```background``` property before the existing background declaration:
 
@@ -34,4 +36,5 @@ Add a fallback to the ```background``` property before the existing background d
     height: 100px;
   }
 ```
+</details>
 

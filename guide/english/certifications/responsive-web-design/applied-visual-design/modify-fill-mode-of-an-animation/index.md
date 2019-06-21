@@ -1,9 +1,11 @@
 ---
 title: Modify Fill Mode of an Animation
 ---
-## Modify Fill Mode of an Animation
+# Modify Fill Mode of an Animation
 
-### Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -26,3 +28,5 @@ title: Modify Fill Mode of an Animation
 </style>
 <button>Register</button>
 ```
+
+</details>

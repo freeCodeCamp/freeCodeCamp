@@ -1,12 +1,12 @@
 ---
 title: Connect Redux to React
 ---
-## Connect Redux to React
+# Connect Redux to React
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
-  
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```jsx
 const addMessage = (message) => {
   return {
@@ -43,5 +43,4 @@ const connect = ReactRedux.connect;
 
 const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps) (Presentational)
 ```
-
 </details>

@@ -5,7 +5,7 @@ title: Use model.findOne() to Return a Single Matching Document from Your Databa
 
 ## Solutions
 
-<details><summary>Solution #1 (Click to Show/Hide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Code for `myApp.js`
 

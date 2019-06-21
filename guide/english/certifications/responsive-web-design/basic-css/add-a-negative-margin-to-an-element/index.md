@@ -1,8 +1,9 @@
 ---
 title: Add a Negative Margin to an Element
 ---
-## Add a Negative Margin to an Element
+# Add a Negative Margin to an Element
 
+## Problem Explanation
 Margin is the spacing between the border of an element and other elements on the page.
   
   •There is spacing from the top, right, bottom, and left. 

@@ -1,9 +1,11 @@
 ---
 title: Remove Classes from an Element with jQuery
 ---
-## Remove Classes from an Element with jQuery
+# Remove Classes from an Element with jQuery
 
-## Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <script>
@@ -37,3 +39,5 @@ title: Remove Classes from an Element with jQuery
   </div>
 </div>
 ```
+
+</details>

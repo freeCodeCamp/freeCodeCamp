@@ -1,7 +1,9 @@
 ---
 title: Add Axes to a Visualization
 ---
-## Add Axes to a Visualization
+# Add Axes to a Visualization
+
+## Hints
 
 ### Hint 1
 
@@ -11,10 +13,10 @@ Set the y-axis variable using `const yAxis = d3.axisLeft(yScale);`.
 
 Append the y-axis using `svg.append()`.
 
-### Spoiler Alert | Solution Ahead
-### Solution
+## Solutions
 
-To solve the challenge, use:
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```html
 <body>
   <script>
@@ -77,3 +79,4 @@ To solve the challenge, use:
   </script>
 </body>
 ```
+</details>

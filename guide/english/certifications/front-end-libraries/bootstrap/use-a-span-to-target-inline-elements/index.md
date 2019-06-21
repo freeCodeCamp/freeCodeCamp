@@ -1,7 +1,7 @@
 ---
 title: Use a span to Target Inline Elements
 ---
-## Use a span to Target Inline Elements
+# Use a span to Target Inline Elements
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/use-a-span-to-target-inline-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

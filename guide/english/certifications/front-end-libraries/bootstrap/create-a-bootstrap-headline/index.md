@@ -1,7 +1,7 @@
 ---
 title: Create a Bootstrap Headline
 ---
-## Create a Bootstrap Headline
+# Create a Bootstrap Headline
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/create-a-bootstrap-headline/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

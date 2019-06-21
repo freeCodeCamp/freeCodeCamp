@@ -1,8 +1,9 @@
 ---
 title: Override Class Declarations by Styling ID Attributes
 ---
-## Override Class Declarations by Styling ID Attributes
+# Override Class Declarations by Styling ID Attributes
 
+## Problem Explanation
 In order to understand overriding in CSS, you must first understand the principle of precendence in CSS.
 
 The key rule to remember is that CSS is read from the bottom to top.

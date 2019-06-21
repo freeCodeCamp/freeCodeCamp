@@ -1,9 +1,12 @@
 ---
 title: Add id Attributes to Bootstrap Elements
 ---
-## Add id Attributes to Bootstrap Elements
+# Add id Attributes to Bootstrap Elements
 
+## Problem Explanation
 The last challenge had you adding a class to your button elements, this time you have to add id(s) to the div(s) which have the well class.
+
+## Hints
 
 ### Hint 1
 
@@ -25,9 +28,9 @@ Use different id(s) for both wells.
 
 Give the well on the left the id of ``` left-well ``` and the well on the right the id of ``` right-well ```.
 
-### Solution
+## Solutions
 
-Since you have to add id(s) to both the wells and have both with a unique id, the following is the solution:
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <div class="container-fluid">
@@ -50,3 +53,4 @@ Since you have to add id(s) to both the wells and have both with a unique id, th
   </div>
 </div>
 ```
+</details>

@@ -1,9 +1,11 @@
 ---
 title: Learn about Complementary Colors
 ---
-## Learn about Complementary Colors
+# Learn about Complementary Colors
 
-### Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -25,3 +27,5 @@ title: Learn about Complementary Colors
 <div class="blue"></div>
 <div class="yellow"></div>
 ```
+
+</details>

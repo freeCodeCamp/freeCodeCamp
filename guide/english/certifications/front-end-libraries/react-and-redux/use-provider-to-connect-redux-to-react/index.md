@@ -1,7 +1,9 @@
 ---
 title: Use Provider to Connect Redux to React
 ---
-## Use Provider to Connect Redux to React
+# Use Provider to Connect Redux to React
+
+## Hints
 
 ### Hint 1
 Render a React Component!
@@ -9,11 +11,11 @@ Render a React Component!
 ### Hint 2
 You do not need to wrap the `Provider` in any `<div>` tags.
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
+## Solutions
   
-  ```jsx
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```jsx
   // Redux Code:
   const ADD = 'ADD';
 
@@ -98,5 +100,6 @@ You do not need to wrap the `Provider` in any `<div>` tags.
     }
     // Above is the code required to pass the test
   };
-  ```
+```
+
 </details>

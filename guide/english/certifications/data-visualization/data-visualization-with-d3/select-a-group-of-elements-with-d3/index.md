@@ -1,13 +1,17 @@
 ---
 title: Select a Group of Elements with D3
 ---
-## Select a Group of Elements with D3
+# Select a Group of Elements with D3
 
-### Hint
+## Hints
+
+### Hint 1
 
 Use the ``` selectAll() ``` method and chain it with the ``` text() ``` method.
 
-### Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <body>
@@ -21,3 +25,4 @@ Use the ``` selectAll() ``` method and chain it with the ``` text() ``` method.
   </script>
 </body>
 ```
+</details>

@@ -1,7 +1,9 @@
 ---
 title: Add a Tooltip to a D3 Element
 ---
-## Add a Tooltip to a D3 Element
+# Add a Tooltip to a D3 Element
+
+## Hints
 
 ### Hint 1
 
@@ -19,7 +21,9 @@ Chain the ` .append() ` and ` .text() ` methods.
 
 Use a callback function in the ` .text() ` method.
 
-### Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Chain the following lines of code with your ` svg.selectAll("rect") ` method.
 
@@ -27,3 +31,4 @@ Chain the following lines of code with your ` svg.selectAll("rect") ` method.
   .append("title")
   .text(d=>d);
 ```
+</details>

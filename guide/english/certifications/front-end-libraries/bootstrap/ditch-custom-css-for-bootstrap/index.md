@@ -1,17 +1,21 @@
 ---
 title: Ditch Custom CSS for Bootstrap
 ---
-## Ditch Custom CSS for Bootstrap
+# Ditch Custom CSS for Bootstrap
 
+## Problem Explanation
 The challenge has you doing a lot of things, remove CSS styles, elements and add classes in place of old ones.
 
-### Hint
+## Hints
+
+### Hint 1
 
 Check if you have completed all of the required tasks for the challenge.
 
-### Solution
+## Solutions
 
-Change all the code in your document to:
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
@@ -69,3 +73,4 @@ Change all the code in your document to:
   </form>
 </div>
 ```
+</details>

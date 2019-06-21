@@ -1,8 +1,9 @@
 ---
 title: Create a Redux Store
 ---
-## Create a Redux Store
+# Create a Redux Store
 
+## Problem Explanation
 There are three parts to this challenge.
 
 1. Declare a `store` variable.
@@ -11,7 +12,7 @@ There are three parts to this challenge.
 
 ### Step 1. Declare a variable.
 
-```javascript
+```
 const yourVariableName;
 ```
 
@@ -19,7 +20,7 @@ const yourVariableName;
 
 ```javascript
 const yourVariableName = yourMethodName();
-```
+
 
 Hint: Keep in mind that the `createStore()` method is available from the Redux object. For example: `Redux.createStore()`
 

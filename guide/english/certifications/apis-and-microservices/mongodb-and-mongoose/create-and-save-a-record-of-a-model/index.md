@@ -5,7 +5,7 @@ title: Create and Save a Record of a Model
 
 ## Hints
 
-### Hint #1
+### Hint 1
 
 You need to do the following:
 1. Create a model of a person, using the schema from exercise 2
@@ -15,7 +15,7 @@ You need to do the following:
 
 ## Solutions
 
-<details><summary>Solution #1 (Click to Show/Hide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Code for `myApp.js`
   

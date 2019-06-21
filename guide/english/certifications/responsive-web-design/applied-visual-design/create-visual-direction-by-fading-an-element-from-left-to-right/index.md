@@ -1,9 +1,12 @@
 ---
 title: Create Visual Direction by Fading an Element from Left to Right
 ---
-## Create Visual Direction by Fading an Element from Left to Right
+# Create Visual Direction by Fading an Element from Left to Right
 
-### Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 
 ```html
 <style>
@@ -35,3 +38,4 @@ title: Create Visual Direction by Fading an Element from Left to Right
 
 <div id="ball"></div>
 ```
+</details>

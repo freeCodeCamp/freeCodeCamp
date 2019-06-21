@@ -1,12 +1,13 @@
 ---
 title: Use the Lifecycle Method componentDidMount
 ---
-## Use the Lifecycle Method componentDidMount
+# Use the Lifecycle Method componentDidMount
 
+## Problem Explanation
 This challenges introduces the ``` componentDidMount ``` Lifecycle method. This is used to set state after a giventime period.
 
 The syntax for the method is:
-```javascript
+```jsx
 componentDidMount() {
     setTimeout( () => {
       this.setState({
@@ -18,18 +19,22 @@ componentDidMount() {
 ```
 where ``` one ``` and ``` two ``` are states you want to set after ``` interval ```ms.
 
-### Hint
+## Hints
+
+### Hint 1
 
 Use
 ```javascript
-this.state.stateName
+this.state.stateName;
 ```
 and change ``` stateName ``` as required.
 
-### Solution
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Change
-```javascript
+```jsx
 render() {
     return (
       <div>
@@ -41,7 +46,7 @@ render() {
 
 to 
 
-```javascript
+```jsx
 render() {
     return (
       <div>
@@ -50,3 +55,4 @@ render() {
     );
   }
 ```
+</details>

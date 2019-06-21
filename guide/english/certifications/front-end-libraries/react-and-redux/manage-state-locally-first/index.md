@@ -1,7 +1,9 @@
 ---
 title: Manage State Locally First
 ---
-## Manage State Locally First
+# Manage State Locally First
+
+## Hints
 
 ### Hint 1
 Bind the method calls in component attributes with ```this```, e.g.
@@ -22,9 +24,9 @@ You may wanna add the following ```<div>``` into render content to check if the 
 ### Hint 4
 spread operator ```...``` can be used for array concatenation in ```submitMessage()``` method declaration.
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```jsx
 class DisplayMessages extends React.Component {
@@ -68,5 +70,4 @@ class DisplayMessages extends React.Component {
   }
 };
 ```
-
 </details>

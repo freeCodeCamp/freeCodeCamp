@@ -1,7 +1,7 @@
 ---
 title: Use a custom CSS Variable
 ---
-## Use a custom CSS Variable
+# Use a custom CSS Variable
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-a-custom-css-variable/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

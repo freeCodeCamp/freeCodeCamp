@@ -1,11 +1,12 @@
 ---
 title: Use @each to Map Over Items in a List
 ---
-## Use @each to Map Over Items in a List
+# Use @each to Map Over Items in a List
 
+## Problem Explanation
 The @each directive loops over a list and for each iteration the variable is assigned the value in the list.
 
-## Example:
+**Example:**
 
 ```html
 <style type='text/sass'>
@@ -21,9 +22,11 @@ The @each directive loops over a list and for each iteration the variable is ass
 <div class="white-font"></div>
 <div class="black-font"></div>
 <div class="blue-font"></div>
-```
 
-## Solution
+
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style type='text/sass'>
@@ -42,7 +45,7 @@ The @each directive loops over a list and for each iteration the variable is ass
 <div class="blue-bg"></div>
 <div class="black-bg"></div>
 <div class="red-bg"></div>
-```
+
 
 The solution above will generate the following CSS:
 
@@ -64,3 +67,4 @@ div {
   width: 200px;
 }
 ```
+</details>

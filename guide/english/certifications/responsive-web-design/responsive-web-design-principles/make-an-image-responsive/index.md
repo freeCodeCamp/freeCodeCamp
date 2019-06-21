@@ -1,7 +1,11 @@
 ---
 title: Make an Image Responsive
 ---
-## Make an Image Responsive
+# Make an Image Responsive
+
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Following the instructions:
 
@@ -18,3 +22,5 @@ the style becomes:
 }
 </style>
 ```
+
+</details>

@@ -1,9 +1,9 @@
 ---
 title: Create a Priority Queue Class
 ---
-## Create a Priority Queue Class
+# Create a Priority Queue Class
 
-### Method:
+## Problem Explanation
 - Priority Queue is an Abstract Data Type.
 - It can be implemented using other Data Structures but is commonly implemented using a Heap.
 - Each node contains a priority. When we enqueue a node to the queue, it's "bubbled up" to its place in the queue.
@@ -18,7 +18,9 @@ title: Create a Priority Queue Class
   | Priority Queue |   1    |    1   |   logn    |    logn   |
 
 
-### Solution:
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```js
 //function which swaps elements in array, using ES6 syntax
 function swap(arr, i, j) {
@@ -121,5 +123,7 @@ class PriorityQueue {
 }
 ```
 
-### References:
+#### Relevant Links
 - [Wikipedia](https://en.wikipedia.org/wiki/Priority_queue)
+
+</details>

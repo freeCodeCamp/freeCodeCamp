@@ -1,9 +1,11 @@
 ---
 title: Learn About Self-Closing JSX Tags
 ---
-## Learn About Self-Closing JSX Tags
+# Learn About Self-Closing JSX Tags
 
-## Hint 1:
+## Hints
+
+### Hint 1
 ```js
 const JSX = (
   <div>
@@ -11,14 +13,18 @@ const JSX = (
     <h2>Welcome to React!</h2> <br > // ?
     <p>Be sure to close all tags!</p>
     <hr >  // ?
-    remove comment and change code above this line */} // Remember that comments in JSX have parentheses.
+    remove comment and change code above this line */}{" "}
+    // Remember that comments in JSX have parentheses.
   </div>
 );
-
 ```
 
-## Solution 
-```js
+
+## Solutions 
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```jsx
 const JSX = (
   <div>
     
@@ -29,3 +35,4 @@ const JSX = (
   </div>
 );
 ```
+</details>

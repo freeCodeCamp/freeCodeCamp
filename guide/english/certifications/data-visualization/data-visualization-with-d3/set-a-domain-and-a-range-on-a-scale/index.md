@@ -1,7 +1,9 @@
 ---
 title: Set a Domain and a Range on a Scale
 ---
-## Set a Domain and a Range on a Scale
+# Set a Domain and a Range on a Scale
+
+## Hints
 
 ### Hint 1
 
@@ -11,12 +13,13 @@ Use the `.domain()` and `.range()` functions.
 
 Both the the `.domain()` and `.range()` functions accept an array of two elements.
 
-## Spoiler Alert | Solution Ahead
-### Solution
+## Solutions
 
 The `domain` and `range` functions can be chained, and the following is the solution:
 
-```javascript
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
 <body>
   <script>
     const scale = d3.scaleLinear()
@@ -29,3 +32,5 @@ The `domain` and `range` functions can be chained, and the following is the solu
   </script>
 </body>
 ```
+
+</details>

@@ -1,8 +1,9 @@
 ---
 title: Give a Background Color to a div Element
 ---
-## Give a Background Color to a div Element
+# Give a Background Color to a div Element
 
+## Problem Explanation
 You can change the `background` `color` to a `div` Element (or section) by one of two ways.
 
 <b>The First Method:</b>

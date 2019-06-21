@@ -1,7 +1,9 @@
 ---
 title: Extract Local State into Redux
 ---
-## Extract Local State into Redux
+# Extract Local State into Redux
+
+## Hints
 
 ### Hint 1
 You need to change the following sections:
@@ -16,10 +18,10 @@ Replace `this.state.messages` with `this.props.messages`.
 The `submitMessage` function still needs to set the state of the `input`.
 
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
+## Solutions
   
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```jsx
 // Redux:
 const ADD = 'ADD';
@@ -123,6 +125,5 @@ class AppWrapper extends React.Component {
     );
   }
 };
-  ```
-
+```
 </details>
