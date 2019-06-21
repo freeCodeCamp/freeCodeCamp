@@ -62,7 +62,7 @@ To help, find a `stub article` on our [Guide website](https://guide.freecodecamp
 
 If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
 
-If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).
+**If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).**
 
 ### Create, Update and Fix Bugs in our coding challenges
 
@@ -101,9 +101,17 @@ Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot 
 
 Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
 
-Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
+**If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).**
 
-If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
+Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach out to our platform dev team to help you with this:
+
+| Name            | GitHub | Twitter |
+|:----------------|:-------|:--------|
+| Mrugesh Mohapatra | [`@raisedadead`](https://github.com/raisedadead) | [`@raisedadead`](https://twitter.com/raisedadead)|
+| Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
+| Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
+
+> **Email: `dev at freecodecamp dot org`**
 
 ## Frequently Asked Questions
 
