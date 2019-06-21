@@ -2,7 +2,7 @@ const yaml = require('js-yaml');
 
 module.exports = {
   names: ['yaml-linter'],
-  description: 'YAML code blocks must be valid',
+  description: 'YAML code blocks should be valid',
   tags: ['yaml'],
   function: function rule(params, onError) {
     params.tokens
