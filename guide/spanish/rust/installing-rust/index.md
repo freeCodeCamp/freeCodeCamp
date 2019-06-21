@@ -1,7 +1,8 @@
 ---
 title: Installing Rust
 localeTitle: Instalando óxido
----# Instalando óxido
+---
+# Instalando óxido
 
 El uso de `rustup` es preferido para la instalación de Rust. `rustup` instala y administra Rust para su sistema.
 
@@ -12,7 +13,7 @@ Visite el [sitio web de rustup](https://rustup.rs) y descargue el `rustup-init.e
 ## Instalación de Rust en otros sistemas operativos (Mac OS X, Linux, BSD, Unix)
 
 Abre tu terminal y escribe este comando:
-
+```shell
 ```sh
 curl https://sh.rustup.rs -sSf | sh 
 ```
@@ -22,7 +23,7 @@ Esto buscará el instalador de `rustup` y, a su vez, `rustup` todo lo que necesi
 # Verificando instalación
 
 La instalación de `rustup` instalará todas las cosas relevantes para la oxidación, pero lo más importante es que se instale el compilador y el administrador de paquetes. Para verificar que todo está instalado, ejecute este comando:
-
+```shell
 ```sh
 cargo version 
 ```

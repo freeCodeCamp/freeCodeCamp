@@ -12,6 +12,6 @@ docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 إنشاء وبدء حاوية
 
-```sh
+```shell
 $ docker create -t -i fedora bash
 ```
