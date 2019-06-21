@@ -25,6 +25,7 @@
     "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
     "lint": "npm-run-all -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
+    "lint:guide": "cd ./tools/lint-guide/ && gulp lint",
     "lint:js": "eslint .",
     "lint:other": "npm run prettier -- --debug-check",
     "prettier": "prettier \"**/*.{md,css}\"",
@@ -62,10 +63,11 @@
     "lerna": "^3.14.1",
     "lint-staged": "^8.1.5",
     "lodash": "^4.17.11",
-    "markdownlint-cli": "^0.14.1",
+    "markdownlint": "^0.15.0",
     "npm-run-all": "^4.1.5",
     "ora": "^3.2.0",
     "prettier": "^1.16.4",
+    "prismjs": "^1.16.0",
     "readdirp-walk": "^1.7.0",
     "shortid": "^2.2.14",
     "shx": "^0.3.2",
@@ -79,7 +81,7 @@
         "eslint --fix",
         "git add"
       ],
-      "*.md": "node ./curriculum/tools/lint",
+      "*.md": "node ./tools/lint/lint.js",
       "*.{md,css}": [
         "prettier --write",
         "git add"
@@ -91,5 +93,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "gulp": "^4.0.2"
   }
 }
