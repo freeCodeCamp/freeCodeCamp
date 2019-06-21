@@ -26,7 +26,7 @@ $ export PATH=$PATH:/usr/local/go/bin
 
 للتحقق مما إذا تم تشغيل go بنجاح ، استخدم:
 
-```sh
+```shell
 $ go version
 ``` 
 

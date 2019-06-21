@@ -97,7 +97,12 @@ Example: `history`
 
 28. **locate**
 - Used to locate a file in the system  
-Example: `locate sample.txt`
+Example:
+
+```shell
+locate sample.txt
+/home/rajasimha/Desktop/sample.txt
+```
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.

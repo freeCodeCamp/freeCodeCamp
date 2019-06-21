@@ -10,7 +10,7 @@ localeTitle: تثبيت Go في Ubuntu باستخدام tarball
 
 قبل المتابعة تأكد من معرفة ما إذا كان النظام الخاص بك هو 32 أو 64 بت. إذا كنت لا تعرف ، فقم بتشغيل الأمر التالي لمعرفة ما يلي:
 
-```sh
+```shell
 $ lscpu | grep Architecture
 ``` 
 
@@ -54,7 +54,7 @@ $ export PATH=$PATH:/usr/local/go/bin
 
 للتحقق مما إذا تم تشغيل go بنجاح ، استخدم:
 
-```sh
+```shell
 $ go version
 > go version go1.9.1 linux/amd64
 ``` 
