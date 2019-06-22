@@ -42,13 +42,11 @@ tests:
 ```js
 function insertionSort(array) {
   // change code below this line
-
-  // change code above this line
   return array;
+  // change code above this line
 }
 
-// test array:
-// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
+insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </div>
@@ -72,6 +70,18 @@ function isSorted(arr) {
 <section id='solution'>
 
 ```js
-// solution required
+function insertionSort (array) {
+  for (let currentIndex = 0; currentIndex < array.length; currentIndex++) {
+    let current = array[currentIndex];
+    let j = currentIndex - 1;
+    while (j > -1 && array[j] > current) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = current;
+  }
+  return array;
+}
 ```
+
 </section>

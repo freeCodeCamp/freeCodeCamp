@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const debug = require('debug');
 
-const { getChallengesForLang } = require('../../curriculum/getChallenges');
-const { createPathMigrationMap } = require('./seed/createPathMigrationMap');
+const { getChallengesForLang } = require('../../../curriculum/getChallenges');
+const { createPathMigrationMap } = require('../seed/createPathMigrationMap');
 
 const log = debug('fcc:tools:ensure-env');
 

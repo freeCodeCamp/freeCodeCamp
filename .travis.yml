@@ -29,8 +29,3 @@ jobs:
     - stage: Unit and Integration tests
       script: npm test
 
-    - stage: Artifacts builds
-      if: branch = master && type != pull_request
-      script: bash tools/scripts/builds/trigger-build.sh
-      install: skip
-      before_script: skip

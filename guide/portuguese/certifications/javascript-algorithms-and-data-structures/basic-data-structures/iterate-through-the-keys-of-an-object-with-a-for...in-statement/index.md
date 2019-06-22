@@ -1,16 +1,16 @@
 ---
-title:  Iterate Through the Keys of an Object with a for...in Statement
-localeTitle:  使用for ... in Statement中的对象键迭代
+title: Iterate Through the Keys of an Object with a for...in Statement
+localeTitle:  Iterar através das chaves de um objeto com um para ... em declaração
 ---
-## 使用for ... in Statement中的对象键迭代
+## Iterar através das chaves de um objeto com um para ... em declaração
 
-方法：
+Método:
 
-*   注意： `dot-notation`会导致此挑战出错。
-*   必须使用`[square-bracket]`表示法来调用变量属性名称。
-*   以下代码无效。
+*   Nota: `dot-notation` causará erros neste desafio.
+*   `[square-bracket]` notação `[square-bracket]` deve ser usada para chamar um nome de propriedade variável.
+*   O código a seguir não funcionará.
 
-### 例1：
+### Exemplo 1:
 
 ```javascript
 for (let user in obj) {
@@ -20,9 +20,9 @@ for (let user in obj) {
 }
 ```
 
-*   示例2演示了如何使用`[square-bracket]`表示法执行代码。
+*   O exemplo 2 demonstra como usar a notação `[square-bracket]` o código será executado.
 
-### 例2：
+### Exemplo 2:
 
 ```javascript
 for (let user in obj) {
@@ -32,7 +32,7 @@ for (let user in obj) {
 }
 ```
 
-### 解：
+### Solução:
 
 ```javascript
 let users = { 

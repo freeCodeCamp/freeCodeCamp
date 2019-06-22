@@ -6,18 +6,19 @@ localeTitle: المتغيرات في C
 
 الآن أنت تعرف ما هي خياراتك مع أنواع البيانات. دعونا نطبقها مع مثال بسيط هنا:
 
- `#include <stdio.h> 
- 
- int main(void) { 
-    int my_first_variable = 12; 
-    double my_second_variable = 983.9; 
- 
-    printf("My int is %i\n", my_first_variable); 
-    printf("My double is %f\n", my_second_variable); 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
+
+int main(void) {
+    int my_first_variable = 12;
+    double my_second_variable = 983.9;
+
+    printf("My int is %i\n", my_first_variable);
+    printf("My double is %f\n", my_second_variable);
+
+    return 0;
+}
+``` 
 
 هناك الكثير من الأشياء الجديدة لإلقاء نظرة هنا! كنت قد رأيت بالفعل `#include` `int main(void)` ، لذلك هذا لا يستحق المسكن. ما هو الجديد هو `int my_first_variable = 12;` .
 
@@ -27,8 +28,9 @@ localeTitle: المتغيرات في C
 
 الاسم الفعلي للمتغير ليس مهمًا. يمكن أن يكون ما تشاء ، طالما أنه ليس أيًا من الكلمات التي احتفظ بها C للغة الفعلية ، ولا يمكن أن يتضمن سوى الأرقام والحروف ، وليس أي مسافات. لا يمكن أن يبدأ اسم المتغير برقم. بالمقابل ، يستخدم C أسماء متغيرات واضحة تستبدل الشرطات السفلية للمسافات. يمكن أيضًا أن يكون المتغير camelCase ، مثل هذا:
 
- `double myFirstVariable = 983.9 
-` 
+```C
+double myFirstVariable = 983.9
+``` 
 
 في الواقع ، سيكون بهذه الطريقة بلغات أخرى. ومع ذلك ، في C لا يتم ذلك عادة.
 
@@ -56,22 +58,23 @@ localeTitle: المتغيرات في C
 
 الآن دعونا نبدأ بتغيير القيم داخل المتغيرات الخاصة بنا. إليك الأمثلة نفسها من قبل ، لكن مع بضعة أسطر أخرى:
 
- `#include <stdio.h> 
- 
- int main(void) { 
-    int my_first_variable = 12; 
-    double my_second_variable = 983.9; 
- 
-    printf("My int is %i\n", my_first_variable); 
-    printf("My double is %f\n", my_second_variable); 
- 
-    my_second_variable = -18.2 + my_first_variable; 
- 
-    printf("Now my double is %f\n", my_second_variable); 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
+
+int main(void) {
+    int my_first_variable = 12;
+    double my_second_variable = 983.9;
+
+    printf("My int is %i\n", my_first_variable);
+    printf("My double is %f\n", my_second_variable);
+
+    my_second_variable = -18.2 + my_first_variable;
+
+    printf("Now my double is %f\n", my_second_variable);
+
+    return 0;
+}
+``` 
 
 يوجد الآن سطر يقرأ `my_second_variable = -18.2 + my_first_variable;` . تعين هذه المعادلة قيمة جديدة للمتغير الموجود على اليسار. في كل مرة يتم فيها تعيين قيمة جديدة ، يجب أن يكون المتغير الذي يتم تعيينه إليه على اليسار دائمًا ، ويجب أن يكون دائمًا موجودًا بمفرده. سيجد برنامجك نتيجة للجانب الأيمن ، ويعينه للمتغير الموجود على اليسار. في هذه الحالة ، أضفنا _أول_ متغير لي إلى -18.2. المتغير _الأول_ هو 12 ، و -18.2 + 12 هو -6.2 ، بحيث يصبح المتغير _الثاني_ -6.2 بعد هذه الخطوة. سوف نحصل على المزيد من الرياضيات في القليل!
 
@@ -79,9 +82,10 @@ localeTitle: المتغيرات في C
 
 عند طباعة العوامات والتضاعف ، نحتاج في كثير من الأحيان إلى الدقة بعد النقطة العشرية. اذا كان لدينا
 
- `float var1 = 15.3; 
- printf("%f"); 
-` 
+```C
+float var1 = 15.3;
+printf("%f");
+``` 
 
 نحصل على `15.300000` . لذلك ، لنفترض أننا نريد مكانين فقط بعد العلامة العشرية لتقديم `15.30` . سنستخدم٪ .2f. لاحظ أننا نستخدم الفاصلة العشرية أمام عدد المنازل العشرية التي نرغب فيها متبوعة بالعلامة f ، ونشير إلى أننا نريد طباعة طافية أو مزدوجة.
 

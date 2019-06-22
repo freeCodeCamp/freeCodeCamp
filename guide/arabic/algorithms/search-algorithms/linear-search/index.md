@@ -57,19 +57,20 @@ localeTitle: بحث خطي
 
 ### مثال في روبي
 
- `def linear_search(target, array) 
-  counter = 0 
- 
-  while counter < array.length 
-    if array[counter] == target 
-      return counter 
-    else 
-      counter += 1 
-    end 
-  end 
-  return nil 
- end 
-` 
+```ruby
+def linear_search(target, array)
+  counter = 0
+
+  while counter < array.length
+    if array[counter] == target
+      return counter
+    else
+      counter += 1
+    end
+  end
+  return nil
+end
+``` 
 
 ### مثال في C ++
 
@@ -103,26 +104,27 @@ localeTitle: بحث خطي
 
 يحتوي هذا الصفيف على 3 مرات من 5s ونريد إرجاع الفهارس (حيث توجد في المصفوفة) لجميعهم. وهذا ما يسمى بالبحث الخطي العالمي ، وستحتاج إلى ضبط شفرتك لإرجاع مصفوفة من نقاط الفهرسة التي يعثر فيها على عنصر الهدف. عند العثور على عنصر فهرس يطابق الهدف ، ستتم إضافة نقطة الفهرس (العداد) في مصفوفة النتائج. إذا لم يتطابق مع الرمز ، فستستمر في الانتقال إلى العنصر التالي في الصفيف بإضافة 1 إلى العداد.
 
- `def global_linear_search(target, array) 
-  counter = 0 
-  results = [] 
- 
-  while counter < array.length 
-    if array[counter] == target 
-      results << counter 
-      counter += 1 
-    else 
-      counter += 1 
-    end 
-  end 
- 
-  if results.empty? 
-    return nil 
-  else 
-    return results 
-  end 
- end 
-` 
+```ruby
+def global_linear_search(target, array)
+  counter = 0
+  results = []
+
+  while counter < array.length
+    if array[counter] == target
+      results << counter
+      counter += 1
+    else
+      counter += 1
+    end
+  end
+
+  if results.empty?
+    return nil
+  else
+    return results
+  end
+end
+``` 
 
 ## لماذا البحث الخطي غير فعال
 

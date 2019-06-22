@@ -51,8 +51,6 @@ function checkSet(set){
 
 </div>
 
-
-
 </section>
 
 ## Solution

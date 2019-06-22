@@ -1,5 +1,5 @@
 ---
-title:  Iterate Through the Keys of an Object with a for...in Statement
+title: Iterate Through the Keys of an Object with a for...in Statement
 localeTitle:  Iterar a través de las claves de un objeto con una for ... in Statement
 ---
 ## Iterar a través de las claves de un objeto con una for ... in Statement

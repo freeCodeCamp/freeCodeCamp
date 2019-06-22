@@ -1,5 +1,5 @@
 ---
-title:  Iterate Through the Keys of an Object with a for...in Statement
+title: Iterate Through the Keys of an Object with a for...in Statement
 localeTitle:  Итерация через ключи объекта с помощью for for ... in Statement
 ---
 ## Итерация через ключи объекта с помощью for for ... in Statement

@@ -27,8 +27,9 @@ localeTitle: AJAX
 
 **إنشاء كائن XMLHttpRequest:**
 
- `var xhttp = new XMLHttpRequest(); 
-` 
+```javascript
+var xhttp = new XMLHttpRequest();
+``` 
 
 **خصائص كائن XMLHttpRequest:**
 
@@ -50,52 +51,55 @@ localeTitle: AJAX
 
 **أساليب كائن XMLHttpRequest:** لإرسال طلب إلى خادم ويب ، نستخدم الأساليب open () و send () للكائن XMLHttpRequest.
 
- `xhttp.open("GET", "content.txt", true); 
- xhttp.send(); 
-` 
+```javascript
+xhttp.open("GET", "content.txt", true);
+xhttp.send();
+``` 
 
 **إنشاء تغيير وظيفةContent () باستخدام JavaScript:**
 
- `function changeContent() { 
-  var xhttp = new XMLHttpRequest(); 
-  xhttp.onreadystatechange = function() { 
-    if (this.readyState == 4 && this.status == 200) { 
-     document.getElementById("foo").innerHTML = this.responseText; 
-    } 
-  }; 
-  xhttp.open("GET", "content.txt", true); 
-  xhttp.send(); 
- } 
-` 
+```javascript
+function changeContent() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("foo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.txt", true);
+  xhttp.send();
+}
+``` 
 
 **مثال AJAX لتغيير محتوى صفحة الويب:**
 
- `<!DOCTYPE html> 
- <html> 
- <body> 
- 
- <div id="foo"> 
- <h2>The XMLHttpRequest Object</h2> 
- <button type="button" onclick="changeContent()">Change Content</button> 
- </div> 
- 
- <script> 
- function changeContent() { 
-  var xhttp = new XMLHttpRequest(); 
-  xhttp.onreadystatechange = function() { 
-    if (this.readyState == 4 && this.status == 200) { 
-      document.getElementById("foo").innerHTML = 
-      this.responseText; 
-    } 
-  }; 
-  xhttp.open("GET", "content.txt", true); 
-  xhttp.send(); 
- } 
- </script> 
- 
- </body> 
- </html> 
-` 
+```HTML
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="foo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="changeContent()">Change Content</button>
+</div>
+
+<script>
+function changeContent() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("foo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "content.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+``` 
 
 يجب أن يكون الملف `content.txt` موجودًا في الدليل الجذر لتطبيق الويب.
 

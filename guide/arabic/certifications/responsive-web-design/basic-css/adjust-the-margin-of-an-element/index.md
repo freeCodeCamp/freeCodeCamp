@@ -12,8 +12,9 @@ localeTitle: ضبط هامش عنصر
 
 هذا مثال على كيفية كتابته:
 
- `margin: 20px; 
-` 
+```css
+margin: 20px;
+``` 
 
 يمكنك بسهولة تغيير أو تعديل `Margin` `Element` عن طريق تغيير القيمة العددية:
 
@@ -32,6 +33,6 @@ localeTitle: ضبط هامش عنصر
   } 
 ` 
 
- `
-<h2 class="style-margin">Example</h2> 
-`
+```html
+<h2 class="style-margin">Example</h2>
+```

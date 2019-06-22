@@ -22,8 +22,9 @@ localeTitle: بناء جملة SQL
 
 يتم استخدام هذا لتحديد قاعدة البيانات التي تحتوي على جداول عبارات SQL الخاصة بك:
 
- `use fcc_sql_guides_database; -- select the guide sample database 
-` 
+```sql
+use fcc_sql_guides_database; -- select the guide sample database
+``` 
 
 ### اختر من جمل
 

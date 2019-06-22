@@ -22,9 +22,10 @@ localeTitle: كيفية إنشاء النوافذ المنبثقة
 
 X
 
- `### Step 2 CSS 
- We will choose our own style for the popup window. Notice: the popup div should be hidden at first, so in the style I will select display: none; 
-` 
+```
+### Step 2 CSS
+We will choose our own style for the popup window. Notice: the popup div should be hidden at first, so in the style I will select display: none;
+``` 
 
 المغلق .popup _main_ div { الموقع: ثابت العرض: 800 بكسل ؛ الارتفاع: 400 بكسل ؛ border: 2px solid black؛ border-radius: 5px؛ لون الخلفية: #fff؛ اليسار: 50 ٪. الهامش الأيسر: -400 بكسل ؛ أعلى: 50 ٪ ؛ الهامش العلوي: - 250 بكسل ؛ عرض لا شيء؛
 
@@ -34,8 +35,9 @@ X
 
 }
 
- `### Step 3 JavaScript 
-` 
+```
+### Step 3 JavaScript
+``` 
 
 شبيبة // بادئ ذي بدء ، سوف أقوم بتهيئة متغيراتي // اختر العناصر التي سنستخدمها من DOM // أقوم بإضافة حدث en في الزر الذي سيؤدي إلى تشغيل وظيفة من شأنها تغيير نمط العرض المنبثق من لا شيء إلى حظر
 

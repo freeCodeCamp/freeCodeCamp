@@ -32,25 +32,25 @@ Use <code>capture groups</code> in <code>reRegex</code> to match numbers that ar
 ```yml
 tests:
   - text: Your regex should use the shorthand character class for digits.
-    testString: assert(reRegex.source.match(/\\d/), 'Your regex should use the shorthand character class for digits.');
-  - text: Your regex should reuse the capture group twice.
-    testString: assert(reRegex.source.match(/\\\d/g).length === 2, 'Your regex should reuse the capture group twice.');
+    testString: assert(reRegex.source.match(/\\d/));
+  - text: Your regex should reuse a capture group twice.
+    testString: assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
   - text: Your regex should have two spaces separating the three numbers.
-    testString: assert(reRegex.source.match(/ |\\s/g).length === 2, 'Your regex should have two spaces separating the three numbers.');
+    testString: assert(reRegex.source.match(/ |\\s/g).length === 2 || reRegex.source.match(/\(\\s\)(?=.*\\(1|2))/g));
   - text: Your regex should match <code>"42 42 42"</code>.
-    testString: assert(reRegex.test("42 42 42"), 'Your regex should match <code>"42 42 42"</code>.');
+    testString: assert(reRegex.test("42 42 42"));
   - text: Your regex should match <code>"100 100 100"</code>.
-    testString: assert(reRegex.test("100 100 100"), 'Your regex should match <code>"100 100 100"</code>.');
+    testString: assert(reRegex.test("100 100 100"));
   - text: Your regex should not match <code>"42 42 42 42"</code>.
-    testString: assert.equal(("42 42 42 42").match(reRegex.source), null, 'Your regex should not match <code>"42 42 42 42"</code>.');
+    testString: assert.equal(("42 42 42 42").match(reRegex.source), null);
   - text: Your regex should not match <code>"42 42"</code>.
-    testString: assert.equal(("42 42").match(reRegex.source), null, 'Your regex should not match <code>"42 42"</code>.');
+    testString: assert.equal(("42 42").match(reRegex.source), null);
   - text: Your regex should not match <code>"101 102 103"</code>.
-    testString: assert(!reRegex.test("101 102 103"), 'Your regex should not match <code>"101 102 103"</code>.');
+    testString: assert(!reRegex.test("101 102 103"));
   - text: Your regex should not match <code>"1 2 3"</code>.
-    testString: assert(!reRegex.test("1 2 3"), 'Your regex should not match <code>"1 2 3"</code>.');
+    testString: assert(!reRegex.test("1 2 3"));
   - text: Your regex should match <code>"10 10 10"</code>.
-    testString: assert(reRegex.test("10 10 10"), 'Your regex should match <code>"10 10 10"</code>.');
+    testString: assert(reRegex.test("10 10 10"));
 
 ```
 
