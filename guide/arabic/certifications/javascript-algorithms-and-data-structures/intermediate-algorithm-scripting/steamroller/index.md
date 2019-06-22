@@ -62,7 +62,6 @@ localeTitle: أجاز
  steamrollArray([1, [2], [3, [[4]]]]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnh/0)
 
 ### شرح الشفرة:
 
@@ -87,7 +86,6 @@ localeTitle: أجاز
  flattenArray([1, [2], [3, [[4]]]]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLni/0)
 
 ### شرح الشفرة:
 
@@ -121,7 +119,6 @@ localeTitle: أجاز
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CpDy/4)
 
 ### شرح الشفرة:
 

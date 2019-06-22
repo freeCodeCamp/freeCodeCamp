@@ -60,16 +60,17 @@ localeTitle: خوارزميات الجشع
 
 4.  **أقرب وقت للتنفيذ أولاً** . هذا هو النهج الذي يمنحنا دائمًا أفضل الحلول لهذه المشكلة. لقد استمدنا الكثير من الأفكار من المقاربات السابقة وأخيرًا جاء هذا النهج. نقوم بتصنيف الفواصل حسب ترتيب متزايد لأوقات الانتهاء ثم نبدأ باختيار فترات من البداية. انظر إلى الرمز الزائف التالي لمزيد من الوضوح.
 
- `function interval_scheduling_problem(requests) 
-    schedule \gets \{\} 
-    while requests is not yet empty 
-        choose a request i_r \in requests that has the lowest finishing time 
-        schedule \gets schedule \cup \{i_r\} 
-        delete all requests in requests that are not compatible with i_r 
-    end 
-    return schedule 
- end 
-` 
+```
+function interval_scheduling_problem(requests)
+    schedule \gets \{\}
+    while requests is not yet empty
+        choose a request i_r \in requests that has the lowest finishing time
+        schedule \gets schedule \cup \{i_r\}
+        delete all requests in requests that are not compatible with i_r
+    end
+    return schedule
+end
+``` 
 
 ## متى نستخدم خوارزميات الجشع
 

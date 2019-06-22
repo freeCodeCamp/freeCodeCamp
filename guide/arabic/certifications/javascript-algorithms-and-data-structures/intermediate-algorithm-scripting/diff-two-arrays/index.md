@@ -65,7 +65,6 @@ localeTitle: الفرق صفيفتين
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLme/0)
 
 ### شرح الشفرة:
 
@@ -88,7 +87,6 @@ localeTitle: الفرق صفيفتين
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CNYb/0)
 
 ### شرح الشفرة:
 
@@ -113,7 +111,6 @@ localeTitle: الفرق صفيفتين
  diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CNYU/0)
 
 ### شرح الشفرة:
 

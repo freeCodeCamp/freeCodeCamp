@@ -10,8 +10,9 @@ localeTitle: تثبيت Go في Ubuntu باستخدام tarball
 
 قبل المتابعة تأكد من معرفة ما إذا كان النظام الخاص بك هو 32 أو 64 بت. إذا كنت لا تعرف ، فقم بتشغيل الأمر التالي لمعرفة ما يلي:
 
- `$ lscpu | grep Architecture 
-` 
+```sh
+$ lscpu | grep Architecture
+``` 
 
 إذا كنت ترى `Architecture: x86_64` النظام الخاص بك هو 64 بت ، وإلا إذا حصلت على `Architecture: i686` ، فإن النظام الخاص بك هو 32 بت. الآن بعد أن تعرفت على بنية النظام الخاص بك ، دعونا المضي قدما.
 
@@ -35,24 +36,27 @@ localeTitle: تثبيت Go في Ubuntu باستخدام tarball
 
 ##### انتقل 1.9.1 لأنظمة 64 بت:
 
- `$ wget https://storage.googleapis.com/golang/go1.9.1.linux-amd64.tar.gz 
- $ sudo tar -C /usr/local -xzf go1.9.1.linux-amd64.tar.gz 
- $ export PATH=$PATH:/usr/local/go/bin 
-` 
+```
+$ wget https://storage.googleapis.com/golang/go1.9.1.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.9.1.linux-amd64.tar.gz
+$ export PATH=$PATH:/usr/local/go/bin
+``` 
 
 ##### انتقل 1.9.1 لأنظمة 32bit:
 
- `$ wget https://storage.googleapis.com/golang/go1.9.1.linux-386.tar.gz 
- $ sudo tar -C /usr/local -xzf go1.9.1.linux-386.tar.gz 
- $ export PATH=$PATH:/usr/local/go/bin 
-` 
+```
+$ wget https://storage.googleapis.com/golang/go1.9.1.linux-386.tar.gz
+$ sudo tar -C /usr/local -xzf go1.9.1.linux-386.tar.gz
+$ export PATH=$PATH:/usr/local/go/bin
+``` 
 
 #### تحقق من التثبيت وإصدار من الذهاب
 
 للتحقق مما إذا تم تشغيل go بنجاح ، استخدم:
 
- `$ go version 
- > go version go1.9.1 linux/amd64 
-` 
+```sh
+$ go version
+> go version go1.9.1 linux/amd64
+``` 
 
 سيطبع هذا إلى إصدار وحدة التحكم ، بينما يتأكد في نفس الوقت من أن عملية التثبيت سارت بسلاسة.

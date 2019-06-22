@@ -33,25 +33,27 @@ localeTitle: التركيز
 
 بناء الجملة:
 
- `:focus 
-` 
+```css
+:focus
+``` 
 
 ## مثال
 
 HTML:
 
- `
-<form> 
-  <input type="text" value="The background will turn yellow when you click on it."> 
- </form> 
-` 
+```html
+<form>
+  <input type="text" value="The background will turn yellow when you click on it.">
+</form>
+``` 
 
 CSS:
 
- `input:focus { 
-   background-color: yellow; 
- } 
-` 
+```css
+input:focus {
+   background-color: yellow;
+}
+``` 
 
 #### معلومات اكثر:
 

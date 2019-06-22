@@ -8,35 +8,40 @@ localeTitle: عالمي
 
 ### كود النحو
 
- `* { 
-  css declarations; 
- } 
-` 
+```css
+* {
+  css declarations;
+}
+``` 
 
- `element * { 
-  css declarations; 
- } 
-` 
+```css
+element * {
+  css declarations;
+}
+``` 
 
 #### مثال الكود
 
 يطابق هذا المحدد جميع العناصر ويضبط لون الخط كمؤشر أخضر.
 
- `* { 
-  color: green; 
- } 
-` 
+```css
+* {
+  color: green;
+}
+``` 
 
 يحدد هذا المحدد جميع عناصر div ويضبط لون الخط كملف أخضر.
 
- `div * { 
-  color: green; 
- } 
-` 
+```css
+div * {
+  color: green;
+}
+``` 
 
 يحدد هذا المحدد جميع العناصر التي تبدأ قيمة سمة اللغة الخاصة بها بـ en.
 
- `* [lang^=en] { 
-  color: green; 
- } 
-`
+```css
+* [lang^=en] {
+  color: green;
+}
+```

@@ -8,16 +8,18 @@ localeTitle: Date.prototype.getFullYear
 
 ### بناء الجملة
 
- `dateObj.getFullYear() 
-` 
+```javascript
+dateObj.getFullYear()
+``` 
 
 ### مثال
 
- `var date = new Date(); 
- // creates a new Date() object with current date and time. 
- date.getFullYear() 
- // 2018 
-` 
+```javascript
+var date = new Date();
+// creates a new Date() object with current date and time.
+date.getFullYear()
+// 2018
+``` 
 
 #### معلومات اكثر:
 

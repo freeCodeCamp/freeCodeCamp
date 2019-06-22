@@ -20,21 +20,22 @@ localeTitle: فليكس النمو
 
 HTML
 
- `
-<p class = "ten">1</p> 
- <p class = "twenty">2</p> 
-` 
+```html
+<p class = "ten">1</p>
+<p class = "twenty">2</p>
+``` 
 
 CSS
 
- `body { 
-  display:flex; 
- } 
- 
- p { 
-  flex-grow: 1; 
- } 
-` 
+```css
+body {
+  display:flex;
+}
+
+p {
+  flex-grow: 1;
+}
+``` 
 
 حدث شيئان
 

@@ -1,5 +1,6 @@
 {
   "name": "@freecodecamp/search-indexing",
+  "private": true,
   "version": "0.0.1",
   "description": "A repository to hold all of our search assets",
   "main": "N/A",

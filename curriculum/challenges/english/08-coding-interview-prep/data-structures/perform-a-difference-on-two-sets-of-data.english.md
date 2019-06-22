@@ -97,14 +97,10 @@ function Set() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
-
 
 ```js
 function Set() {

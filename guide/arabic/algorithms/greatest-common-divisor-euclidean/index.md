@@ -45,26 +45,28 @@ GCD من 42 و 120 و 285 = 3 _(3 هو أكبر عدد يقسم 42 و 120 و 285
 
 شفرة جافا سكريبت لتنفيذ GCD-
 
- `function gcd(a, b) { 
-  var R; 
-  while ((a % b) > 0)  { 
-    R = a % b; 
-    a = b; 
-    b = R; 
-  } 
-  return b; 
- } 
-` 
+```javascript
+function gcd(a, b) {
+  var R;
+  while ((a % b) > 0)  {
+    R = a % b;
+    a = b;
+    b = R;
+  }
+  return b;
+}
+``` 
 
 شفرة جافا سكريبت لتنفيذ GCD باستخدام Recursion-
 
- `function gcd(a, b) { 
-  if (b == 0) 
-    return a; 
-  else 
-    return gcd(b, (a % b)); 
- } 
-` 
+```javascript
+function gcd(a, b) {
+  if (b == 0)
+    return a;
+  else
+    return gcd(b, (a % b));
+}
+``` 
 
 يمكنك أيضًا استخدام خوارزمية Euclidean للعثور على GCD لأكثر من رقمين. نظرًا لأن GCD هي علاقة ارتباطية ، فإن العملية التالية صالحة - `GCD(a,b,c) == GCD(GCD(a,b), c)`
 

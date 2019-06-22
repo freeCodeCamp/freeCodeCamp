@@ -14,13 +14,15 @@ Centi- (رمز c) هي بادئة وحدة في النظام المتري تدل
 
 في الصيغة التالية ، يتم تصنيف الوحدات مع أقواس \[\] حولها
 
- `[cm] / 100 = [m] 
-` 
+```
+[cm] / 100 = [m]
+``` 
 
 إذا أدخلت القيمة التي لديك ، دعنا نقول 50 سم ، فسيتم حسابها على النحو التالي:
 
- `50[cm] / 100 = 0.5[m] 
-` 
+```
+50[cm] / 100 = 0.5[m]
+``` 
 
 نتيجة حساب إرجاع قيمة 0.5 متر ، فإن كمية متر 50 سنتيمتر هو.
 
@@ -32,16 +34,17 @@ Centi- (رمز c) هي بادئة وحدة في النظام المتري تدل
 
 ### الترميز
 
- `function convertCentimeterToMeter (cm) { 
-  return ( cm / 100 ); 
- } 
- 
- // Set some example measurements 
- var lengthInCm = 300; 
- var lengthInM; 
- 
- lengthInM = convertCentimeterToMeter(lengthInCm); // 3 
-` 
+```js
+function convertCentimeterToMeter (cm) {
+  return ( cm / 100 );
+}
+
+// Set some example measurements
+var lengthInCm = 300;
+var lengthInM;
+
+lengthInM = convertCentimeterToMeter(lengthInCm); // 3
+``` 
 
 ### معلومات اكثر:
 
