@@ -6,10 +6,11 @@ localeTitle: روابط التصميم
 
 يمكن تنسيق الارتباطات مع أي خاصية CSS ، مثل `color` ، `font-family` ، و `font-size` ، و `padding` . هنا مثال سهل:
 
- `a { 
-    color: hotpink; 
- } 
-` 
+```css
+a {
+    color: hotpink;
+}
+``` 
 
 ## بالإضافة إلى ذلك ، يمكن تنسيق الوصلات بشكل مختلف اعتمادًا على الحالة التي توجد فيها.
 
@@ -40,11 +41,12 @@ localeTitle: روابط التصميم
 
 إليك بعض نماذج CSS باستخدام الحالات الأربع:
 
- `a:link { color: red; } 
- a:visited { color: blue; } 
- a:hover { color: green; } 
- a:active { color: blue; } 
-` 
+```css
+a:link { color: red; }
+a:visited { color: blue; }
+a:hover { color: green; }
+a:active { color: blue; }
+``` 
 
 **لاحظ** أن هناك بعض _قواعد الترتيب_ عندما تقوم بتعيين نمط حالات الارتباط.
 
@@ -55,23 +57,24 @@ localeTitle: روابط التصميم
     a: رابط - رابط طبيعي غير مرغوب فيه a: زار - رابط زاره المستخدم a: hover - رابط عندما يضغط المستخدم عليه ج: نشط - رابط لحظة النقر فوقه
     
 
- `/* unvisited link */ 
- a:link { 
-    color: red; 
- } 
- 
- /* visited link */ 
- a:visited { 
-    color: green; 
- } 
- 
- /* mouse over link */ 
- a:hover { 
-    color: hotpink; 
- } 
- 
- /* selected link */ 
- a:active { 
-    color: blue; 
- } 
-`
+```css
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+```

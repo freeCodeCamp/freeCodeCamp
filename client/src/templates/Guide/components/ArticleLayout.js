@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
 import Breadcrumbs from './Breadcrumbs';
+import GuideFooter from './GuideFooter';
 
 const propTypes = {
   children: PropTypes.any,
@@ -20,7 +21,7 @@ const ArticleLayout = props => {
     location: { pathname },
     data: {
       markdownRemark: {
-        fields: { slug },
+        fields: { slug, githubPath },
         frontmatter: { title }
       }
     },
@@ -29,7 +30,7 @@ const ArticleLayout = props => {
   return (
     <Fragment>
       <Helmet>
-        <title>{`${title} | freeCodeCamp Guide`}</title>
+        <title>{`${title} | freeCodeCamp.org`}</title>
         <link href={`https://www.freecodecamp.org${slug}`} rel='canonical' />
         <meta
           content={`https://www.freecodecamp.org${slug}`}
@@ -48,6 +49,7 @@ const ArticleLayout = props => {
       </Helmet>
       <Breadcrumbs path={pathname} />
       {children}
+      <GuideFooter githubPath={githubPath} />
     </Fragment>
   );
 };
@@ -61,6 +63,7 @@ export const fragmentQuery = graphql`
   fragment ArticleLayout on MarkdownRemark {
     fields {
       slug
+      githubPath
     }
     frontmatter {
       title

@@ -5,7 +5,7 @@ node_js:
 
 cache:
   directories:
-  - "$HOME/.npm"
+    - '$HOME/.npm'
 
 env:
   global:
@@ -18,19 +18,14 @@ before_install:
 install: npm ci
 
 before_script:
-  - git config --global user.email team+camperbot@freeCodeCamp.org
-  - git config --global user.name "CamperBot"
+  - npm run ensure-env
 
 jobs:
   include:
-    - stage: Unit and Integration tests
+    - stage: Lint javaScript
       script:
-        - npm run ensure-env
-        - npm test
+        - npm run lint
 
-    - stage: Artifacts builds
-      if: branch = master && type != pull_request
-      script: bash tools/ci-scripts/trigger-build.sh
-      install: skip
-      before_script: skip
+    - stage: Unit and Integration tests
+      script: npm test
 

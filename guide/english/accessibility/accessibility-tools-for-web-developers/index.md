@@ -47,7 +47,7 @@ Developers can utilize a screen reader to understand how a webpage can be made a
    JAWS(Job Access With Speech) is a computer screen reader program which is available as licensed software for Windows.
    
 - **[a11yproject](https://a11yproject.com/)**
-   This site provides pracical guides and examples for implementing accessible features and components during web development. The site contains how-tos, myths, tips, and recommended accessibility tools. The project is community driven and can be contributed to on Github.
+   This site provides practical guides and examples for implementing accessible features and components during web development. The site contains how-tos, myths, tips, and recommended accessibility tools. The project is community-driven and can be contributed to on Github.
    
 - **[ChromeVox](https://www.chromevox.com/)**
    ChromeVox is a Chrome Browser extension which can be used to render Webpages as text-to-speech.
@@ -55,6 +55,7 @@ Developers can utilize a screen reader to understand how a webpage can be made a
 #### More Resources
 You can find many more tools for accessible web design on [this list made by the University of Minnesota Duluth](https://www.d.umn.edu/itss/training/online/webdesign/tools.html).
 
-For information on creating and verfying accessibility for PDF documents, see the [Adobe XI Pro Guide](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html)
+For information on creating and verifying accessibility for PDF documents, see the [Adobe XI Pro Guide](https://helpx.adobe.com/acrobat/using/create-verify-pdf-accessibility.html)
 
-[This accessibility inspector by mozilla](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector) is built in to firefox can help check the accessibility of a webpage.
+[This accessibility inspector by mozilla](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector), which is built into Firefox, can help check the accessibility of a webpage.
+

@@ -12,7 +12,7 @@ localeTitle: React TypeChecking с помошью PropTypes
 
 Чтобы использовать его, он должен быть добавлен в проект в качестве зависимости, выпустив следующую команду в консоли.
 
-```sh
+```shell
 npm install --save prop-types 
 ```
 

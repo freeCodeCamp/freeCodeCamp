@@ -6,13 +6,13 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Model.remove() is useful to delete all the documents matching given criteria. Delete all the people whose name is “Mary”, using Model.remove(). Pass it to a query document with the “name” field set, and of course a callback.
-Note: Model.remove() doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the done() callback, since we use it in tests.
+<code>Model.remove()</code> is useful to delete all the documents matching given criteria. 
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Delete all the people whose name is “Mary”, using <code>Model.remove()</code>. Pass it to a query document with the <code>name</code> field set, and of course a callback.
+<strong>Note:</strong> The <code>Model.remove()</code> doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the <code>done()</code> callback, since we use it in tests.
 </section>
 
 ## Tests

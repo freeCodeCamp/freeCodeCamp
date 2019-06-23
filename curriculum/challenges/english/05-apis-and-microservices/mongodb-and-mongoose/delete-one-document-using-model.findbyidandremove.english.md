@@ -6,7 +6,7 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Delete one person by her _id. You should use one of the methods findByIdAndRemove() or findOneAndRemove(). They are like the previous update methods. They pass the removed document to the cb. As usual, use the function argument personId as search key.
+Delete one person by the person's <code>_id</code>. You should use one of the methods <code>findByIdAndRemove()</code> or <code>findOneAndRemove()</code>. They are like the previous update methods. They pass the removed document to the cb. As usual, use the function argument <code>personId</code> as the search key.
 </section>
 
 ## Instructions

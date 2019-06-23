@@ -10,7 +10,8 @@ localeTitle: استخدم العرض
 
 مثال:
 
- `#main-container {
+```CSS
+#main-container {
     display: flex;
- }
-`
+}
+```

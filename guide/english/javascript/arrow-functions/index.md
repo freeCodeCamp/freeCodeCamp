@@ -80,7 +80,7 @@ function Person(){
 
 var p = new Person();
 ```
-An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` operator:
+An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` parameter:
 ```javascript
 const myFunc = (...n) => {
   console.log('The first argument is', n[0]);
@@ -92,6 +92,24 @@ Because of this, an arrow function cannot be used as a constructor, hence there'
 
 ```javascript
 (() => {}).hasOwnProperty('prototype');  // false
+```
+
+### No arguments object
+
+Arrow functions provide no arguments object. Therefore, if the arguments object is used in an arrow function it will reference the arguments of the enclosing scope. For example,
+
+```
+const arguments = ["arg1", "arg2", "arg3"];
+
+const arrow = () => arguments[1];
+
+console.log(arrow("innerarg1", "innerarg2", "innerarg3"));//arg2-ignores local arguments goes to enclosed scope.
+
+function regular() {
+  console.log(arguments[1]);
+}
+console.log(regular("innerarg1", "innerarg2", "innerarg3"));//innerarg2-uses local arguments.
+
 ```
 
 #### Further Reading

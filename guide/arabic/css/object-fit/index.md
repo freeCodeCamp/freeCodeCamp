@@ -12,10 +12,11 @@ localeTitle: كائن صالح
 
 ## بناء الجملة
 
- `.element { 
-    object-fit: fill || contain || cover || none || scale-down; 
- } 
-` 
+```css
+.element {
+    object-fit: fill || contain || cover || none || scale-down;
+}
+``` 
 
 ## القيم
 

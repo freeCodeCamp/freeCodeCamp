@@ -57,12 +57,12 @@ Both Python 2 and Python 3 are great. Most Linux and macOS distributions come pr
 
 ## Installing Modules - Python2 vs. Python3
 To install modules for python 2, you can use the following:
-```sh
+```shell
 pip2 install [module-name]
 ```
 
 To install modules for python 3, you can use the following:
-```sh
+```shell
 pip3 install [module-name]
 ```
 

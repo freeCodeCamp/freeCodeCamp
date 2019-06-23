@@ -27,9 +27,10 @@ function* fetchSessionUser() {
   }
 }
 
-function* fetchOtherUser({ payload: maybeUser }) {
+function* fetchOtherUser({ payload: maybeUser = '' }) {
   try {
-    const { data } = yield call(getUserProfile, maybeUser);
+    const maybeUserLC = maybeUser.toLowerCase();
+    const { data } = yield call(getUserProfile, maybeUserLC);
 
     const { entities: { user = {} } = {}, result = '' } = data;
     const otherUser = user[result] || {};

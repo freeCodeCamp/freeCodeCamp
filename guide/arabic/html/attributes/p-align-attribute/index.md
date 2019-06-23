@@ -12,9 +12,9 @@ localeTitle: P محاذاة السمة
 
 ### بناء الجملة
 
- `
-<p align="position">Lorem Ipsum...</p> 
-` 
+```html
+<p align="position">Lorem Ipsum...</p>
+``` 
 
 ### سمات
 
@@ -25,13 +25,13 @@ localeTitle: P محاذاة السمة
 
 ### مثال
 
- `
-<html> 
- <body> 
- <p align="center">Paragraph align attribute example</p> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<body>
+<p align="center">Paragraph align attribute example</p>
+</body>
+</html>
+``` 
 
 #### معلومات اكثر:
 

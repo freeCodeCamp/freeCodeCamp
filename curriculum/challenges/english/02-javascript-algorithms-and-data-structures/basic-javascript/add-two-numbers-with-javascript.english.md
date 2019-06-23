@@ -9,9 +9,13 @@ videoUrl: 'https://scrimba.com/c/cM2KBAG'
 <section id='description'>
 <code>Number</code> is a data type in JavaScript which represents numeric data.
 Now let's try to add two numbers using JavaScript.
-JavaScript uses the <code>+</code> symbol as an addition operation when placed between two numbers.
+JavaScript uses the <code>+</code> symbol as an addition operator when placed between two numbers.
 <strong>Example:</strong>
-<blockquote>myVar = 5 + 10; // assigned 15</blockquote>
+
+```js
+myVar = 5 + 10; // assigned 15
+```
+
 </section>
 
 ## Instructions

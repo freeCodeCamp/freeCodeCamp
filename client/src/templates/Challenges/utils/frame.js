@@ -2,7 +2,6 @@ import { toString, flow } from 'lodash';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
-// console.log
 const mainId = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
 const testId = 'fcc-test-frame';
@@ -84,7 +83,7 @@ const mountFrame = document => ({ element, ...rest }) => {
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.console.log = function proxyConsole(...args) {
-    proxyLogger(args);
+    proxyLogger(args.map(arg => JSON.stringify(arg)).join(' '));
     return oldLog(...args);
   };
   return ctx;
@@ -98,7 +97,7 @@ const initTestFrame = frameReady => ctx => {
       resolve();
     }
   });
-  contentLoaded.then(async() => {
+  contentLoaded.then(async () => {
     const { sources, loadEnzyme } = ctx;
     // default for classic challenges
     // should not be used for modern

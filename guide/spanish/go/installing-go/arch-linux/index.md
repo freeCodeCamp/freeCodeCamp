@@ -6,7 +6,7 @@ localeTitle: Instalar Go en Arch Linux usando pacman
 
 Usar Arch Linux Package Manager (pacman) es la forma más fácil de instalar Go. Basado en la filosofía de Arch Linux de proporcionar nuevas versiones de software muy rápido, obtendrá una versión muy actual de go. Antes de que pueda instalar el paquete go, debe actualizar el sistema.
 
-```sh
+```shell
 $ sudo pacman -Syu 
  $ sudo pacman -S go 
 ```
@@ -15,7 +15,7 @@ $ sudo pacman -Syu
 
 Para comprobar si Go se instaló correctamente, use:
 
-```sh
+```shell
 $ go version 
  > go version go2.11.1 linux/amd64 
 ```

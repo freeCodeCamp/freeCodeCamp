@@ -1,6 +1,5 @@
 .btn-cta-big {
   max-height: 100%;
-  height: 70px;
   font-size: 40px;
   white-space: normal;
 }
@@ -32,4 +31,15 @@ h6 {
 
 a:hover, a:focus {
    text-decoration: none;
+}
+
+.fcc-modal {
+  background-color: #006400;
+  color: #fff;
+}
+
+.fcc-modal .close {
+  color: #fff;
+  font-size: 28px;
+  text-shadow: none;
 }

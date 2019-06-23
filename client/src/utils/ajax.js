@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-import { apiLocation } from '../../config/env.json';
-
-const base = `${apiLocation}/internal`;
+const base = '/internal';
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -47,10 +45,20 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
-
+export function putUpdateLegacyCert(body) {
+  return post('/update-my-projects', body);
+}
 
 export function postReportUser(body) {
   return post('/user/report-user', body);
+}
+
+export function postDeleteAccount(body) {
+  return post('/account/delete', body);
+}
+
+export function postResetProgress(body) {
+  return post('/account/reset-progress', body);
 }
 
 /** PUT **/

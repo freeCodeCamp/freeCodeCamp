@@ -18,7 +18,7 @@ let greeting: string = `Hello, ${firstName} ${lastName}, thank you for attending
 ```
 
 ## Built-in methods
-In Typescript you can use some built-in functions for specific types. Each type has common and unique methods.
+In TypeScript you can use some built-in functions for specific types. Each type has common and unique methods.
 Below you can read about the most used common methods for the string type.
 
 ### split('separator', limit)

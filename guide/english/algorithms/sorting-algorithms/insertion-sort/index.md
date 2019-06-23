@@ -85,7 +85,7 @@ Step 5 :
 
 The algorithm shown below is a slightly optimized version to avoid swapping the `key` element in every iteration. Here, the `key` element will be swapped at the end of the iteration (step).
 
-```Algorithm
+```
     InsertionSort(arr[])
       for j = 1 to arr.length
          key = arr[j]
@@ -96,7 +96,7 @@ The algorithm shown below is a slightly optimized version to avoid swapping the 
          arr[i+1] = key
 ```
 
-Here is a detailed implementation in Javascript:
+Here is a detailed implementation in JavaScript:
 
 ```
 function insertion_sort(A) {

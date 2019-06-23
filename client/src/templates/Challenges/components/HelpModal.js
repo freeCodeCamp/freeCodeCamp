@@ -37,7 +37,7 @@ export class HelpModal extends Component {
         <Modal.Header
           className='help-modal-header fcc-modal'
           closeButton={true}
-          >
+        >
           <Modal.Title className='text-center'>Ask for help?</Modal.Title>
         </Modal.Header>
         <Modal.Body className='help-modal-body text-center'>
@@ -48,7 +48,7 @@ export class HelpModal extends Component {
               rel='noopener noreferrer'
               target='_blank'
               title='Read, search, ask'
-              >
+            >
               Read-Search-Ask
             </a>
             &nbsp; method, then you can ask for help on the freeCodeCamp forum.
@@ -58,7 +58,7 @@ export class HelpModal extends Component {
             bsSize='lg'
             bsStyle='primary'
             onClick={createQuestion}
-            >
+          >
             Create a help post on the forum
           </Button>
           <Button
@@ -66,7 +66,7 @@ export class HelpModal extends Component {
             bsSize='lg'
             bsStyle='primary'
             onClick={closeHelpModal}
-            >
+          >
             Cancel
           </Button>
         </Modal.Body>

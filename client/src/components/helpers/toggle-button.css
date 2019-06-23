@@ -12,12 +12,12 @@
 }
 
 .toggle-not-active {
-  background-color: #dedede;
+  background-color: #ffffff;
   color: rgb(0, 49, 0);
 }
 
 .night .toggle-not-active {
-  background-color: #999;
+  background-color: #dedede;
   color: #333;
 }
 

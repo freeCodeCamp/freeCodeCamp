@@ -11,7 +11,7 @@ const {
   FORUM_LOCATION: forum,
   NEWS_LOCATION: news,
   LOCALE: locale,
-  STRIPE_PUBLIC: stripePublicKey,
+  STRIPE_PUBLIC: stripePublicKey
 } = process.env;
 
 const locations = {

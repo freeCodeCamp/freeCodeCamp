@@ -6,7 +6,7 @@ title: Manage npm Dependencies By Understanding Semantic Versioning
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 You should go over to the `package.json` file in your project. SemVer dependencies follow a similar convention like this:
 
-```code
+```json
 "dependencies": {
     "dependency1": "^major.minor.patch"
   },

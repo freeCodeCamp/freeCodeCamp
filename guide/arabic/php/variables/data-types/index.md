@@ -21,9 +21,10 @@ localeTitle: أنواع البيانات PHP
 
 #### مثال
 
- `$x = "Hello!"; 
- $y = 'Hello!'; 
-` 
+```php
+$x = "Hello!";
+$y = 'Hello!';
+``` 
 
 ## عدد صحيح
 
@@ -38,8 +39,9 @@ localeTitle: أنواع البيانات PHP
 
 #### مثال
 
- `$x = 5; 
-` 
+```php
+$x = 5;
+``` 
 
 ## تطفو
 
@@ -47,23 +49,26 @@ localeTitle: أنواع البيانات PHP
 
 #### مثال
 
- `$x = 5.01; 
-` 
+```php
+$x = 5.01;
+``` 
 
 ## منطقية
 
 Boolean يمثل حالتين محتملتين: TRUE أو FALSE. يتم استخدام Booleans غالبًا في الاختبارات الشرطية.
 
- `$x = true; 
- $y = false; 
-` 
+```php
+$x = true;
+$y = false;
+``` 
 
 ## مجموعة مصفوفة
 
 صفيف بتخزين قيم متعددة في متغير واحد.
 
- `$colours = array("Blue","Purple","Pink"); 
-` 
+```php
+$colours = array("Blue","Purple","Pink");
+``` 
 
 ## قيمة فارغة
 
@@ -73,11 +78,12 @@ Null هو نوع بيانات خاص يمكن أن يكون له قيمة واح
 
 **ملاحظة:** إذا تم إنشاء متغير بدون قيمة ، فسيتم تعيين قيمة فارغة له تلقائيًا.
 
- `<?php 
- $x = "Hello world!"; 
- $x = null; 
- ?> 
-` 
+```php
+<?php
+$x = "Hello world!";
+$x = null;
+?>
+``` 
 
 انتاج:  
 لا شيء
@@ -90,17 +96,18 @@ Null هو نوع بيانات خاص يمكن أن يكون له قيمة واح
 
 **مثال:**
 
- `<?php 
- class Car { 
-    function Car() { 
-        $this->model = "VW"; 
-    } 
- } 
- 
- // create an object 
- $herbie = new Car(); 
- 
- // show object properties 
- echo $herbie->model; 
- ?> 
-`
+```php
+<?php
+class Car {
+    function Car() {
+        $this->model = "VW";
+    }
+}
+
+// create an object
+$herbie = new Car();
+
+// show object properties
+echo $herbie->model;
+?>
+```

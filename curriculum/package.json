@@ -15,13 +15,9 @@
   "main": "lib.js",
   "scripts": {
     "develop": "gulp",
-    "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
-    "lint": "eslint ./**/*.js --fix",
-    "repack": "babel-node ./repack.js",
     "semantic-release": "semantic-release",
     "pretest": "cd ../client && npm run build:workers",
-    "test": "mocha --delay --reporter progress --bail",
-    "unpack": "babel-node ./unpack.js"
+    "test": "mocha --delay --reporter progress --bail"
   },
   "dependencies": {
     "invariant": "^2.2.4"
@@ -47,13 +43,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-preset-stage-3": "^6.24.1",
     "babel-standalone": "^6.26.0",
-    "browserify": "^16.2.3",
     "chai": "4.2.0",
-    "eslint": "^4.19.1",
-    "eslint-config-freecodecamp": "^1.1.1",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-prefer-object-spread": "^1.2.1",
-    "eslint-plugin-react": "^7.7.0",
     "fs-extra": "^6.0.1",
     "gulp": "^4.0.0",
     "joi": "^13.3.0",
@@ -65,8 +55,6 @@
     "live-server": "^1.2.1",
     "lodash": "^4.17.11",
     "mocha": "5.2.0",
-    "prettier": "^1.13.5",
-    "prettier-package-json": "^1.6.0",
     "puppeteer": "1.11.0",
     "readdirp-walk": "^1.6.0",
     "rx": "^4.1.0",
@@ -83,16 +71,6 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "lint-staged": {
-    "*.{js,json,css}": [
-      "prettier --write",
-      "git add"
-    ],
-    "package.json": [
-      "prettier-package-json --write",
-      "git add"
-    ]
   },
   "release": {
     "branch": "master",

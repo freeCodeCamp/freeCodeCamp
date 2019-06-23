@@ -86,7 +86,7 @@ The first expression gets evaluated if it's false, and the second gets evaluated
 
 **Note:** There is no `when/else`. `when` _only_ executes if the condition is true.
 
-`cond` allows you to combine many conditions into a single expression. It takes a sequence of logical expression and expression pairs and evaluate each logical expression in order. When it finds a logical expression that evaluates to `true`, it evaluates the second expression of the pair. After this, no other expressions are evaluated. This behavior is like short-circuit logic in Javascript. 
+`cond` allows you to combine many conditions into a single expression. It takes a sequence of logical expression and expression pairs and evaluate each logical expression in order. When it finds a logical expression that evaluates to `true`, it evaluates the second expression of the pair. After this, no other expressions are evaluated. This behavior is like short-circuit logic in JavaScript. 
 
     (cond (= 0 1) "I'm paired with a false expression and I don't evalute.."
           (= 1 1) "I'm the first expression paired with a true expression!"

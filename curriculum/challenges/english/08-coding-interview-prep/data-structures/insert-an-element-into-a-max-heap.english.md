@@ -48,7 +48,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -59,15 +58,30 @@ var MaxHeap = function() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+var MaxHeap = function() {
+	// change code below this line
+	this.heap = [undefined];
+	this.insert = (ele) => {
+		var index = this.heap.length;
+		var arr = [...this.heap];
+		arr.push(ele);
+		while (ele > arr[Math.floor(index / 2)]) {
+			arr[index] = arr[Math.floor(index / 2)];
+			arr[Math.floor(index / 2)] = ele;
+			index = arr[Math.floor(index / 2)];
+		}
+		this.heap = arr;
+	}
+	this.print = () => {
+		return this.heap
+	}
+	// change code above this line
+};
 ```
 </section>

@@ -11,7 +11,12 @@ In JavaScript, you can store a value in a variable with the <dfn>assignment</dfn
 <code>myVariable = 5;</code>
 This assigns the <code>Number</code> value <code>5</code> to <code>myVariable</code>.
 Assignment always goes from right to left. Everything to the right of the <code>=</code> operator is resolved before the value is assigned to the variable to the left of the operator.
-<blockquote>myVar = 5;<br>myNum = myVar;</blockquote>
+
+```js
+myVar = 5;
+myNum = myVar;
+```
+
 This assigns <code>5</code> to <code>myVar</code> and then resolves <code>myVar</code> to <code>5</code>  again and assigns it to <code>myNum</code>.
 </section>
 

@@ -30,11 +30,11 @@ export class VideoModal extends Component {
         dialogClassName='video-modal'
         onHide={closeVideoModal}
         show={isOpen}
-        >
+      >
         <Modal.Header
           className='video-modal-header fcc-modal'
           closeButton={true}
-          >
+        >
           <Modal.Title className='text-center'>Watch A Video</Modal.Title>
         </Modal.Header>
         <Modal.Body className='video-modal-body'>

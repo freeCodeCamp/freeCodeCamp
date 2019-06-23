@@ -6,17 +6,15 @@ challengeType: 2
 
 ## Description
 <section id='description'>
-Now you’ve tested a few ways you can manage dependencies of your project by using the package.json's dependencies-section. You’ve included external packages by adding them to the file and even told npm what types of versions you want by using special characters as the tilde (~) or the caret (^).
-But what if you want to remove an external package that you no longer need? You might already have guessed it - Just remove the corresponding "key": value-pair for that from your dependencies.
+You have now tested a few ways you can manage dependencies of your project by using the package.json's dependencies section. You have also included external packages by adding them to the file and even told npm what types of versions you want, by using special characters such as the tilde or the caret.
+But what if you want to remove an external package that you no longer need? You might already have guessed it, just remove the corresponding key-value pair for that package from your dependencies.
 This same method applies to removing other fields in your package.json as well
-Instructions
-Remove the package moment from your dependencies.
-Make sure you have the right amount of commas after removing it.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Remove the moment package from your dependencies.
+<strong>Note:</strong> Make sure you have the right amount of commas after removing it.
 </section>
 
 ## Tests

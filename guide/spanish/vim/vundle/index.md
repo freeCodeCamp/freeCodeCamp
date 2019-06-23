@@ -31,4 +31,4 @@ Algunos complementos útiles para comenzar son:
 
 #### Más información:
 
-*   [Repositorio Github](https://github.com/VundleVim/Vundle.Vim)
+*   [Repositorio GitHub](https://github.com/VundleVim/Vundle.Vim)

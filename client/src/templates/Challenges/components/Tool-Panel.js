@@ -21,7 +21,6 @@ const mapDispatchToProps = dispatch =>
   );
 
 const propTypes = {
-  className: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
   isMobile: PropTypes.bool,
@@ -32,7 +31,6 @@ const propTypes = {
 };
 
 function ToolPanel({
-  className,
   executeChallenge,
   isMobile,
   openHelpModal,
@@ -46,8 +44,8 @@ function ToolPanel({
       <div
         className={`tool-panel-group ${
           isMobile ? 'tool-panel-group-mobile' : ''
-        } ${className}`}
-        >
+        }`}
+      >
         <Button block={true} bsStyle='primary' onClick={executeChallenge}>
           {isMobile ? 'Run' : 'Run the Tests'}
         </Button>
@@ -56,7 +54,7 @@ function ToolPanel({
           bsStyle='primary'
           className='btn-invert'
           onClick={openResetModal}
-          >
+        >
           {isMobile ? 'Reset' : 'Reset All Code'}
         </Button>
         {guideUrl ? (
@@ -66,7 +64,7 @@ function ToolPanel({
             className='btn-invert'
             href={guideUrl}
             target='_blank'
-            >
+          >
             {isMobile ? 'Hint' : 'Get a hint'}
           </Button>
         ) : null}
@@ -76,7 +74,7 @@ function ToolPanel({
             bsStyle='primary'
             className='btn-invert'
             onClick={openVideoModal}
-            >
+          >
             {isMobile ? 'Video' : 'Watch a video'}
           </Button>
         ) : null}
@@ -85,7 +83,7 @@ function ToolPanel({
           bsStyle='primary'
           className='btn-invert'
           onClick={openHelpModal}
-          >
+        >
           {isMobile ? 'Help' : 'Ask for help'}
         </Button>
       </div>

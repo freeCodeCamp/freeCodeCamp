@@ -21,7 +21,7 @@ Most of the research has focused on the construction of formal software effort e
 
 Perhaps the most common estimation methods today are the parametric estimation models COCOMO, SEER-SEM and SLIM. They have their basis in estimation research conducted in the 1970s and 1980s and are since then updated with new calibration data, with the last major release being COCOMO II in the year 2000. The estimation approaches based on functionality-based size measures, e.g., function points, is also based on research conducted in the 1970s and 1980s, but are re-calibrated with modified size measures and different counting approaches, such as the use case points or object points in the 1990s and COSMIC in the 2000s.
 
-Actual time estimation is a time-based method of estimating development work.  
+Actual time estimation is a time-based method of estimating development work. It is used to find out the best approximate time period required to perform the complete work in measures like e.g.certain task will be finished by 31 october or it will take 24 hours for completion .It can be predicted by using time complexities as one of the criterion which can be helped to optimize the code further to reduce the time required. 
 
 It is critically important to be able to estimate the time-to-completion of an Agile project, unfortunately, it is also one of the most difficult parts of planning an Agile project. 
 

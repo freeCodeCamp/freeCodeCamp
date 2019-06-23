@@ -52,7 +52,6 @@ localeTitle: ابحث عن أطول كلمة في سلسلة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/5)
 
 ### شرح الشفرة:
 
@@ -76,7 +75,6 @@ localeTitle: ابحث عن أطول كلمة في سلسلة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/6)
 
 ### شرح الشفرة:
 
@@ -122,7 +120,6 @@ localeTitle: ابحث عن أطول كلمة في سلسلة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/7)
 
 ### شرح الشفرة:
 

@@ -18,8 +18,8 @@ function DonateCompletion({ processing, reset, success, error = null }) {
   const heading = processing
     ? 'We are processing your donation.'
     : success
-      ? 'Your donation was successful.'
-      : 'Something went wrong with your donation';
+    ? 'Your donation was successful.'
+    : 'Something went wrong with your donation';
   return (
     <Alert bsStyle={style} className='donation-completion'>
       <h4>{heading}</h4>
@@ -33,15 +33,9 @@ function DonateCompletion({ processing, reset, success, error = null }) {
           />
         )}
         {success && (
-          <p>
-            Thank you for supporting the freeCodeCamp.org community.
-          </p>
+          <p>Thank you for supporting the freeCodeCamp.org community.</p>
         )}
-        {error && (
-          <p>
-            {error}
-          </p>
-        )}
+        {error && <p>{error}</p>}
       </div>
       <p className='donation-completion-buttons'>
         {error && (

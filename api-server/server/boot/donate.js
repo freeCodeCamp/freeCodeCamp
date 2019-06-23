@@ -6,7 +6,6 @@ import keys from '../../../config/secrets';
 const log = debug('fcc:boot:donate');
 
 export default function donateBoot(app, done) {
-
   let stripe = false;
   const { User } = app.models;
   const api = app.loopback.Router();
@@ -21,11 +20,12 @@ export default function donateBoot(app, done) {
           name:
             'Monthly Donation to freeCodeCamp.org - ' +
             `Thank you ($${current / 100})`
-          },
-          currency: 'usd',
-          id: `monthly-donation-${current}`
+        },
+        currency: 'usd',
+        id: `monthly-donation-${current}`
       }
-    }), {}
+    }),
+    {}
   );
 
   function connectToStripe() {
@@ -59,8 +59,8 @@ export default function donateBoot(app, done) {
         throw err;
       }
       console.log(`${plan.id} created`);
-        return;
-      });
+      return;
+    });
   }
 
   function createStripeDonation(req, res) {
@@ -70,23 +70,26 @@ export default function donateBoot(app, done) {
       return res.status(400).send({ error: 'Amount Required' });
     }
 
-    const { amount, token: {email, id} } = body;
+    const {
+      amount,
+      token: { email, id }
+    } = body;
 
-    const fccUser = user ?
-            Promise.resolve(user) :
-            new Promise((resolve, reject) =>
-              User.findOrCreate(
-                { where: { email }},
-                { email },
-                (err, instance, isNew) => {
-                  log('is new user instance: ', isNew);
-                  if (err) {
-                    return reject(err);
-                  }
-                  return resolve(instance);
-                }
-              )
-            );
+    const fccUser = user
+      ? Promise.resolve(user)
+      : new Promise((resolve, reject) =>
+          User.findOrCreate(
+            { where: { email } },
+            { email },
+            (err, instance, isNew) => {
+              log('is new user instance: ', isNew);
+              if (err) {
+                return reject(err);
+              }
+              return resolve(instance);
+            }
+          )
+        );
 
     let donatingUser = {};
     let donation = {
@@ -96,42 +99,43 @@ export default function donateBoot(app, done) {
       startDate: new Date(Date.now()).toISOString()
     };
 
-    return fccUser.then(
-      user => {
+    return fccUser
+      .then(user => {
         donatingUser = user;
-        return stripe.customers
-          .create({
-            email,
-            card: id
-          });
-    })
-    .then(customer => {
-      donation.customerId = customer.id;
-      return stripe.subscriptions.create({
-        customer: customer.id,
-        items: [
-          {
-            plan: `monthly-donation-${amount}`
-          }
-        ]
-      });
-    })
-    .then(subscription => {
-      donation.subscriptionId = subscription.id;
-      return res.send(subscription);
-    })
-    .then(() => {
-      donatingUser.createDonation(donation).toPromise()
-        .catch(err => {
-          throw new Error(err);
+        return stripe.customers.create({
+          email,
+          card: id
         });
-    })
-    .catch(err => {
-      if (err.type === 'StripeCardError') {
-        return res.status(402).send({ error: err.message });
-      }
-      return res.status(500).send({ error: 'Donation Failed' });
-    });
+      })
+      .then(customer => {
+        donation.customerId = customer.id;
+        return stripe.subscriptions.create({
+          customer: customer.id,
+          items: [
+            {
+              plan: `monthly-donation-${amount}`
+            }
+          ]
+        });
+      })
+      .then(subscription => {
+        donation.subscriptionId = subscription.id;
+        return res.send(subscription);
+      })
+      .then(() => {
+        donatingUser
+          .createDonation(donation)
+          .toPromise()
+          .catch(err => {
+            throw new Error(err);
+          });
+      })
+      .catch(err => {
+        if (err.type === 'StripeCardError') {
+          return res.status(402).send({ error: err.message });
+        }
+        return res.status(500).send({ error: 'Donation Failed' });
+      });
   }
 
   const pubKey = keys.stripe.public;

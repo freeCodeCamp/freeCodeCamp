@@ -8,7 +8,20 @@ videoUrl: 'https://scrimba.com/c/caeJgsw'
 ## Description
 <section id='description'>
 <code>if/else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:
-<blockquote>if (<em>condition1</em>) {<br>&nbsp;&nbsp;<em>statement1</em><br>} else if (<em>condition2</em>) {<br>&nbsp;&nbsp;<em>statement2</em><br>} else if (<em>condition3</em>) {<br>&nbsp;&nbsp;<em>statement3</em><br>. . .<br>} else {<br>&nbsp;&nbsp;<em>statementN</em><br>}</blockquote>
+
+```js
+if (condition1) {
+  statement1
+} else if (condition2) {
+  statement2
+} else if (condition3) {
+  statement3
+. . .
+} else {
+  statementN
+}
+```
+
 </section>
 
 ## Instructions

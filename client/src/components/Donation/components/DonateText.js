@@ -19,15 +19,14 @@ const DonateText = ({ activeDonations }) => {
   return (
     <div className='text-center'>
       <p>
-        freeCodeCamp.org is a tiny nonprofit that's helping millions of
-        people learn to code for free.
+        freeCodeCamp.org is a tiny nonprofit that's helping millions of people
+        learn to code for free.
       </p>
       <p>
         Join <strong>{donationsLocale}</strong> supporters.
       </p>
       <p>
-        Your $5 / month donation will help keep tech education free and
-        open.
+        Your $5 / month donation will help keep tech education free and open.
       </p>
     </div>
   );

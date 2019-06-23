@@ -22,7 +22,9 @@ import '../Donation.css';
 
 const mapStateToProps = createSelector(
   isDonationModalOpenSelector,
-  show => ({ show })
+  show => ({
+    show
+  })
 );
 
 const mapDispatchToProps = dispatch =>
@@ -73,7 +75,9 @@ class DonateModal extends Component {
     };
     return (
       <div className='modal-close-btn-container'>
-        <Button bsStyle='link' onClick={handleClick}>Close</Button>
+        <Button bsStyle='link' onClick={handleClick}>
+          Close
+        </Button>
       </div>
     );
   }
@@ -84,25 +88,25 @@ class DonateModal extends Component {
       ga.modalview('/donation-modal');
     }
     return (
-        <StripeProvider stripe={this.state.stripe}>
-          <Elements>
-            <Modal bsSize='lg' className='donation-modal' show={show}>
-              <Modal.Header className='fcc-modal'>
-                <Modal.Title className='text-center'>
-                  Support Our NonProfit
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <DonateText />
-                <DonateForm />
-                {this.renderMaybe()}
-              </Modal.Body>
-              <Modal.Footer>
+      <StripeProvider stripe={this.state.stripe}>
+        <Elements>
+          <Modal bsSize='lg' className='donation-modal' show={show}>
+            <Modal.Header className='fcc-modal'>
+              <Modal.Title className='text-center'>
+                Support Our NonProfit
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <DonateText />
+              <DonateForm />
+              {this.renderMaybe()}
+            </Modal.Body>
+            <Modal.Footer>
               <PoweredByStripe />
-              </Modal.Footer>
-            </Modal>
-          </Elements>
-        </StripeProvider>
+            </Modal.Footer>
+          </Modal>
+        </Elements>
+      </StripeProvider>
     );
   }
 }

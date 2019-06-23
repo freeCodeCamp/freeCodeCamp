@@ -9,7 +9,14 @@ var dir = dir1 + '/' + dir2;
 fs.readdirSync('../../curriculum/challenges/english/' + dir).forEach(file => {
   if (file.includes('.md') && dir) {
     let originalFileName =
-      '../../curriculum/challenges/' + langFull + '/' + dir + '/' + file.slice(0, -10) + langFull + '.md';
+      '../../curriculum/challenges/' +
+      langFull +
+      '/' +
+      dir +
+      '/' +
+      file.slice(0, -10) +
+      langFull +
+      '.md';
 
     fs.exists(originalFileName, function(exists) {
       if (!exists) {
@@ -28,10 +35,12 @@ fs.readdirSync('../../curriculum/challenges/english/' + dir).forEach(file => {
 
 // Load in full text, description, instructions, and title
 function getFile(file, dir) {
-  let originalFileName = '../../curriculum/challenges/english/' + dir + '/' + file;
+  let originalFileName =
+    '../../curriculum/challenges/english/' + dir + '/' + file;
   let fileString = fs.readFileSync(originalFileName).toString();
 
-  // Add 'notranslate' class to code so Google Translate API will not translate code segments.
+  // Add 'notranslate' class to code so Google Translate API
+  // will not translate code segments.
   fileString = fileString.replace(/<code>/g, '<code class="notranslate">');
   fileString = fileString.replace(
     /<blockquote>/g,
@@ -67,7 +76,7 @@ function processFile(
 ) {
   const translateText = (text, target) => {
     return new Promise((resolve, reject) => {
-      if (typeof text == 'object' && Object.keys(text).length === 0) {
+      if (typeof text === 'object' && Object.keys(text).length === 0) {
         resolve(['']);
       } else {
         // Imports the Google Cloud client library
@@ -87,8 +96,6 @@ function processFile(
           })
           .catch(err => {
             reject(console.log('!!!!!', err));
-            if (err) {
-            }
           });
       }
     });
@@ -106,21 +113,23 @@ function processFile(
       let testsArray = tests.split('\n');
       let testsToTranslate = [];
 
-      testsArray.forEach((test, index) => {
+      testsArray.forEach(test => {
         if (test.includes('- text: ')) {
           testsToTranslate.push(test.slice(10));
         }
       });
-      translateText(testsToTranslate, lang).then(translation => {
-        let transIndex = 0;
-        testsArray.forEach((test, index) => {
-          if (test.includes('- text')) {
-            testsArray[index] = '  - text: ' + translation[transIndex];
-            transIndex++;
-          }
-        });
-        resolve(testsArray.join('\n'));
-      });
+      translateText(testsToTranslate, lang)
+        .then(translation => {
+          let transIndex = 0;
+          testsArray.forEach((test, index) => {
+            if (test.includes('- text')) {
+              testsArray[index] = '  - text: ' + translation[transIndex];
+              transIndex++;
+            }
+          });
+          resolve(testsArray.join('\n'));
+        })
+        .catch(reject);
     });
   };
 
@@ -147,7 +156,7 @@ function processFile(
       /<section id='tests'>(.|\n)*?<\/section>/,
       translations[3]
     );
-    fileString = fileString.replace(/ class=\"notranslate\"/g, ''); // remove 'notranslate' class
+    fileString = fileString.replace(/ class=\"notranslate\"/g, '');
     writeFile(fileString, file, dir);
   });
 }
@@ -163,7 +172,9 @@ function writeFile(fileString, file, dir) {
     langFull +
     '.md';
   fs.writeFile(fullFileName, fileString, function(err) {
-    if (err) throw err;
+    if (err) {
+      throw err;
+    }
     console.log('Saved!');
   });
 }

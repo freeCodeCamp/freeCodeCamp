@@ -14,7 +14,7 @@ import {
 import Helmet from 'react-helmet';
 import { createSelector } from 'reselect';
 
-import { ButtonSpacer, Spacer } from '../components/helpers';
+import { ButtonSpacer, Spacer, Link } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import createRedirect from '../components/createRedirect';
 
@@ -101,15 +101,11 @@ class AcceptPrivacyTerms extends Component {
                     id='terms-of-service'
                     inline={true}
                     onChange={this.createHandleChange('termsOfService')}
-                    >
+                  >
                     I accept the{' '}
-                    <a
-                      href='https://www.freecodecamp/terms'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                      >
+                    <Link external={true} to='/terms-of-service'>
                       terms of service
-                    </a>{' '}
+                    </Link>{' '}
                     (required)
                   </Checkbox>
                 </FormGroup>
@@ -123,15 +119,11 @@ class AcceptPrivacyTerms extends Component {
                     id='privacy-policy'
                     inline={true}
                     onChange={this.createHandleChange('privacyPolicy')}
-                    >
+                  >
                     I accept the{' '}
-                    <a
-                      href='https://www.freecodecamp/privacy'
-                      rel='noopener noreferrer'
-                      target='_blank'
-                      >
+                    <Link external={true} to='/privacy-policy'>
                       privacy policy
-                    </a>{' '}
+                    </Link>{' '}
                     (required)
                   </Checkbox>
                 </FormGroup>
@@ -145,7 +137,7 @@ class AcceptPrivacyTerms extends Component {
                     id='quincy-email'
                     inline={true}
                     onChange={this.createHandleChange('quincyEmail')}
-                    >
+                  >
                     I want weekly emails from Quincy, freeCodeCamp.org's
                     founder.
                   </Checkbox>
@@ -157,7 +149,7 @@ class AcceptPrivacyTerms extends Component {
                   className='big-cta-btn'
                   disabled={!privacyPolicy || !termsOfService}
                   type='submit'
-                  >
+                >
                   Continue to freeCodeCamp
                 </Button>
               </form>

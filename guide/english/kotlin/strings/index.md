@@ -21,8 +21,8 @@ val lastName = "Musk"
 In addition, notice the usage of `val` variable type, here is how it behaves
 
 ```kotlin
-firstName = "Mark" // can be changed
-lastName = "Zuckerberg" // cannot be changed
+var firstName = "Mark" // can be changed
+val lastName = "Zuckerberg" // cannot be changed
 lastName = 12 // Error: type mismatch
 ```
 
@@ -258,7 +258,7 @@ println(9 + 10)
 Output:
 
 ```shell
-"910"
+910 // Here 910 is a string value. 
 19
 ```
 

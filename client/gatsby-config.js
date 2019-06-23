@@ -6,7 +6,11 @@ const {
   localeChallengesRootDir
 } = require('./utils/buildChallenges');
 
-const { NODE_ENV: env, LOCALE: locale = 'english' } = process.env;
+const {
+  NODE_ENV: env,
+  LOCALE: locale = 'english',
+  API_PROXY: proxyUrl = 'http://localhost:3000'
+} = process.env;
 
 const selectedGuideDir = `../${
   env === 'production' ? 'guide' : 'mock-guide'
@@ -21,7 +25,7 @@ module.exports = {
   },
   proxy: {
     prefix: '/internal',
-    url: 'http://localhost:3000'
+    url: proxyUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',

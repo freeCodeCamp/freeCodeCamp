@@ -42,3 +42,4 @@ Instead of using the generic `<div>` for every other container, use the semantic
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)
+[HTML: Introduction](https://www.w3.org/TR/html401/struct/global.html)

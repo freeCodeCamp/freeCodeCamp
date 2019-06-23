@@ -70,11 +70,7 @@ function Welcome({
   activeDonations
 }) {
   if (pending && !complete) {
-    return (
-      <div className='loader-wrapper'>
-        <Loader />
-      </div>
-    );
+    return <Loader fullScreen={true} />;
   }
 
   if (!isSignedIn) {
@@ -89,7 +85,7 @@ function Welcome({
   return (
     <Fragment>
       <Helmet>
-        <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
+        <title>Welcome | freeCodeCamp.org</title>
       </Helmet>
       <main>
         <Grid className='text-center'>
@@ -143,7 +139,7 @@ function Welcome({
           </Row>
           <Spacer />
           <Row>
-            <Col sm={8} smOffset={2} xs={12}>
+            <Col sm={6} smOffset={3} xs={12}>
               <CurrentChallengeLink>
                 <Button block={true} bsStyle='primary' className='btn-cta-big'>
                   Go to my next challenge

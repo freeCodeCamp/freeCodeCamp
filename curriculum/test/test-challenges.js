@@ -83,6 +83,11 @@ let page;
 runTests();
 
 async function runTests() {
+  process.on('unhandledRejection', err => {
+    spinner.stop();
+    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+  });
+
   let testLangs = [...supportedLangs];
   if (process.env.TEST_CHALLENGES_FOR_LANGS) {
     const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(',').map(
@@ -108,8 +113,15 @@ async function runTests() {
         logLevel: 0
       });
       browser = await puppeteer.launch({
-        args: ['--no-sandbox']
-        // dumpio: true
+        args: [
+          // Required for Docker version of Puppeteer
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          // This will write shared memory files into /tmp instead of /dev/shm,
+          // because Docker’s default for /dev/shm is 64MB
+          '--disable-dev-shm-usage'
+          // dumpio: true
+        ]
       });
       global.Worker = createPseudoWorker(await newPageContext(browser));
       page = await newPageContext(browser);
@@ -280,9 +292,8 @@ async function createTestRunnerForDOMChallenge(
     files[0].contents = solution;
   }
 
-  const loadEnzyme = files[0].ext === 'jsx';
-
-  const { build, sources } = await buildDOMChallenge(files, {
+  const { build, sources, loadEnzyme } = await buildDOMChallenge({
+    files,
     required,
     template
   });
@@ -290,7 +301,7 @@ async function createTestRunnerForDOMChallenge(
   await context.reload();
   await context.setContent(build);
   await context.evaluate(
-    async(sources, loadEnzyme) => {
+    async (sources, loadEnzyme) => {
       const code = sources && 'index' in sources ? sources['index'] : '';
       const getUserInput = fileName => sources[fileName];
       await document.__initTestFrame({ code, getUserInput, loadEnzyme });
@@ -299,7 +310,7 @@ async function createTestRunnerForDOMChallenge(
     loadEnzyme
   );
 
-  return async({ text, testString }) => {
+  return async ({ text, testString }) => {
     try {
       const { pass, err } = await Promise.race([
         new Promise((_, reject) => setTimeout(() => reject('timeout'), 5000)),
@@ -324,16 +335,16 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
     files[0].contents = solution;
   }
 
-  const { build, sources } = await buildJSChallenge(files);
+  const { build, sources } = await buildJSChallenge({ files });
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator');
-  return async({ text, testString }) => {
+  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
+  return async ({ text, testString }) => {
     try {
       const { pass, err } = await testWorker.execute(
         { testString, build, code, sources },
         5000
-      );
+      ).done;
       if (!pass) {
         throw new AssertionError(`${text}\n${err.message}`);
       }
@@ -342,8 +353,6 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
         ? `${text}\n${err}`
         : (err.message = `${text}
         ${err.message}`);
-    } finally {
-      testWorker.killWorker();
     }
   };
 }

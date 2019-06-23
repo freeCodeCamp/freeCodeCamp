@@ -19,32 +19,37 @@ localeTitle: ابحث عن الحد الأدنى والحد الأقصى لار�
 
 ### لوحة المفاتيح
 
- `Ctrl + Shift + I 
-` 
+```
+Ctrl + Shift + I
+``` 
 
 ### شريط القوائم
 
 #### ثعلب النار
 
- `Tools ➤ Web Developer ➤ Toggle Tools 
-` 
+```
+Tools ➤ Web Developer ➤ Toggle Tools
+``` 
 
 #### كروم / الكروم
 
- `Tools ➤ Developer Tools 
-` 
+```
+Tools ➤ Developer Tools
+``` 
 
 #### رحلات السفاري
 
- `Develop ➤ Show Web Inspector. 
-` 
+```
+Develop ➤ Show Web Inspector.
+``` 
 
 إذا لم تتمكن من رؤية قائمة التطوير ، فانتقل إلى `Safari ➤ Preferences ➤ Advanced` وتحقق من مربع الاختيار `Show Develop menu` في شريط القائمة.
 
 #### دار الأوبرا
 
- `Developer ➤ Web Inspector 
-` 
+```
+Developer ➤ Web Inspector
+``` 
 
 ### قائمة السياق
 

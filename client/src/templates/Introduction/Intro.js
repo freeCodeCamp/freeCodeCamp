@@ -23,11 +23,13 @@ const propTypes = {
 };
 
 function renderMenuItems({ edges = [] }) {
-  return edges.map(({ node }) => node).map(({ title, fields: { slug } }) => (
-    <Link key={'intro-' + slug} to={slug}>
-      <ListGroupItem>{title}</ListGroupItem>
-    </Link>
-  ));
+  return edges
+    .map(({ node }) => node)
+    .map(({ title, fields: { slug } }) => (
+      <Link key={'intro-' + slug} to={slug}>
+        <ListGroupItem>{title}</ListGroupItem>
+      </Link>
+    ));
 }
 
 function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
@@ -42,7 +44,7 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
   return (
     <LearnLayout>
       <Helmet>
-        <title>{block} | freeCodeCamp</title>
+        <title>{block} | freeCodeCamp.org</title>
       </Helmet>
       <div className='intro-layout-container'>
         <FullWidthRow>
@@ -52,7 +54,10 @@ function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
           />
         </FullWidthRow>
         <FullWidthRow>
-          <Link className='btn btn-lg btn-primary btn-block' to={firstLessonPath}>
+          <Link
+            className='btn btn-lg btn-primary btn-block'
+            to={firstLessonPath}
+          >
             Go to the first lesson
           </Link>
           <ButtonSpacer />

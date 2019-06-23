@@ -22,7 +22,7 @@
 .donation-form {
   display: flex;
   flex-direction: column;
-  width:80%;
+  width: 80%;
   justify-content: center;
   margin: 0 auto;
 }
@@ -58,6 +58,10 @@
   font-weight: normal;
 }
 
+.donation-form .btn {
+  white-space: normal;
+}
+
 .modal-close-btn-container {
   display: flex;
   justify-content: center;
@@ -80,7 +84,6 @@
 .StripeElement--focus {
   border-color: #66afe9;
   outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(102, 175, 233, 0.6);
 }
-
-

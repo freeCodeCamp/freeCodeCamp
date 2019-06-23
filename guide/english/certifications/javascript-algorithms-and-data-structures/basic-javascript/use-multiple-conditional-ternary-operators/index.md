@@ -19,7 +19,7 @@ Here’s a full solution:
 
 ```javascript
 function checkSign(num) {
-  return (num > 0) ? "positive" : (num < -12) ? "negative" : "zero";
+  return (num > 0) ? "positive" : (num < 0) ? "negative" : "zero";
 }
 checkSign(10);
 ```

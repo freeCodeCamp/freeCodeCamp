@@ -14,15 +14,16 @@ Cross Site Request Forgery هي نقطة ضعف في التطبيق بسبب ع�
 
 للدفاع ضد هجوم موقع التزوير طلب التزوير ، يجب عليك التحقق من رمز مميز تم تغييره بشكل منتظم. `/admin/deletecomment.php?id=123` عنوان url `/admin/deletecomment.php?id=123` إلى `/admin/deletecomment.php?id=123&csrf-token=random-per-user-unique-string-here` .
 
- `<?php 
- // Checking a request's CSRF Token (if true the comment is deleted, if false the comment remains.) 
- session_start(); 
- if ($_GET['csrf-token'] == $_SESSION['csrf-token']){ 
-  return true; 
- } else { 
-  return false; 
- } 
-` 
+```PHP
+<?php
+// Checking a request's CSRF Token (if true the comment is deleted, if false the comment remains.)
+session_start();
+if ($_GET['csrf-token'] == $_SESSION['csrf-token']){
+  return true;
+} else {
+  return false;
+}
+``` 
 
 **نصائح:**
 
@@ -34,19 +35,21 @@ Cross Site Request Forgery هي نقطة ضعف في التطبيق بسبب ع�
 
 عند تحديد CSRF Token ، من المهم أن يكون من المستحيل تخمين المفتاح. يمكن أن تؤدي وظائف OpenSSL في PHP إلى إنشاء مفتاح عشوائي لك وتخزينه كمتغير جلسة عمل.
 
- `<?php 
- session_start(); 
- $_SESSION['csrf-token'] = bin2hex(openssl_random_pseudo_bytes(16)); 
-` 
+```PHP
+<?php
+session_start();
+$_SESSION['csrf-token'] = bin2hex(openssl_random_pseudo_bytes(16));
+``` 
 
 #### استخدام رمز CSRF لإكمال الطلبات الشرعية
 
 يمكنك تضمين متغير الجلسة الذي قمت بحفظه مسبقًا مع رمز CSRF الخاص بك في عنوان URL تأكد من أنه مسموح للمسؤول الشرعي بحذف التعليقات. بدون الرمز الصحيح سيتم حظر الطلب.
 
- `<?php 
- session_start(); 
- echo '<a href="/admin/?id=123&csrf-token='.$_SESSION['csrf-token'].'">Delete Comment</a>'; // Only the logged in user has access to the CSRF Token - the token isn't accessible to the attacker preventing their attack from being successful. 
-` 
+```PHP
+<?php
+session_start();
+echo '<a href="/admin/?id=123&csrf-token='.$_SESSION['csrf-token'].'">Delete Comment</a>'; // Only the logged in user has access to the CSRF Token - the token isn't accessible to the attacker preventing their attack from being successful.
+``` 
 
 #### معلومات اكثر:
 
