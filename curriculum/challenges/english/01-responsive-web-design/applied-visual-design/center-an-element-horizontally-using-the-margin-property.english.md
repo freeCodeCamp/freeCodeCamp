@@ -55,8 +55,16 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = "div {background-color: blue; height: 100px; width: 100px; margin: auto;}"
+```html
+<style>
+  div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+</style>
+<div></div>
 ```
 
 </section>

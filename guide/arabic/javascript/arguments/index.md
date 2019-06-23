@@ -9,8 +9,9 @@ localeTitle: الحجج
 \`\` \`جافا سكريبت  
 function storeNames () {return arguments؛ }
 
- `*   Then, when we execute that function with **n arguments**, 3 in this case, it will return the object to us and it will **look like** an array. We can convert it to an array, but more on that later... 
-` 
+```
+*   Then, when we execute that function with **n arguments**, 3 in this case, it will return the object to us and it will **look like** an array. We can convert it to an array, but more on that later...
+``` 
 
 جافا سكريبت // إذا قمنا بتنفيذ السطر التالي في وحدة التحكم: storeNames ("Mulder"، "Scully"، "Alex Kryceck")؛ // سيكون الناتج {'0': 'Mulder' ، '1': 'Scully' ، '2': 'Alex Kryceck'}
 
@@ -25,8 +26,9 @@ function storeNames () {return arguments؛ }
 
 // أو طريقة es6: var args = Array.from (الحجج)
 
- `Since **slice()** has two (the parameter **end** is optional) parameters, you can grab a certain portion of the arguments by specifying (using the _slice.call()_ method renders these two parameters optional, not just _end_) the beginning and the ending of your portion; check out the following code: 
-` 
+```
+Since **slice()** has two (the parameter **end** is optional) parameters, you can grab a certain portion of the arguments by specifying (using the _slice.call()_ method renders these two parameters optional, not just _end_) the beginning and the ending of your portion; check out the following code:
+``` 
 
 جافا سكريبت function getGrades () { var args = Array.prototype.slice.call (الحجج ، 1 ، 3) ؛ عودة الارجاع }
 
@@ -34,18 +36,19 @@ function storeNames () {return arguments؛ }
 
 // يجب أن يكون الناتج: // // \[100 ، 75\] <- لماذا؟ لأنه بدأ من الفهرس 1 وتوقف عند الفهرس 3 // لذلك ، لم يؤخذ في الاعتبار المؤشر 3 (40). // // إذا أزلنا المعلمة "3" ، لن نتركها سوى (الحجج ، 1) // كل حجة من الفهرس 1: \[100 ، 75 ، 40 ، 89 ، 95\].
 
- `### Optimization issues with Array.slice() 
- 
- There is a little problem, it's not recommended to use slice in the arguments object (optimization reasons)... 
- 
- > **Important**: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object. 
- > 
- > _by_ **_Mozilla Developer Network_** <a href='https://developer.mozilla.org/ca/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>(reference)<a> 
- 
- 
- 
- So, what other method is available to convert _arguments_ to an array? I recommend the for-loop (not the for-in loop), you can do it like this: 
-` 
+```
+### Optimization issues with Array.slice()
+
+There is a little problem, it's not recommended to use slice in the arguments object (optimization reasons)...
+
+> **Important**: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object.
+>
+> _by_ **_Mozilla Developer Network_** <a href='https://developer.mozilla.org/ca/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>(reference)<a>
+
+
+
+So, what other method is available to convert _arguments_ to an array? I recommend the for-loop (not the for-in loop), you can do it like this:
+``` 
 
 جافا سكريبت var args = \[\]؛ // صفيف فارغ ، في البداية. لـ (var i = 0؛ i <arguments.length؛ i ++) { args.push (الحجج \[أنا\]) } // Now 'args' هي مصفوفة تحمل وسائطك. \`\` \`
 

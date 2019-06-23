@@ -12,9 +12,10 @@ localeTitle: تعليق كود جافاسكريبت الخاص بك
 
 *   سيعلق تعليق slash-star-star-slash كل شيء بين `/*` و `*/` characters:
 
- `/* 
- This is 
- a multi-line comment 
- (comment block) 
- */ 
-`
+```javascript
+/*
+This is
+a multi-line comment
+(comment block)
+*/
+```

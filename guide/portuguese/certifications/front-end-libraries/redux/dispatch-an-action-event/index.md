@@ -6,7 +6,7 @@ localeTitle: Despachar um Evento de Ação
 
 Despache a ação LOGIN para o armazenamento Redux chamando o método de dispatch e passe a ação criada por `loginAction()` .
 
-```react.js
+```jsx
 store.dispatch(loginAction()); 
 
 ```

@@ -8,7 +8,15 @@ challengeType: 1
 <section id='description'>
 You've learned that you can use a shortcut to match alphanumerics <code>[A-Za-z0-9_]</code> using <code>\w</code>. A natural pattern you might want to search for is the opposite of alphanumerics.
 You can search for the opposite of the <code>\w</code> with <code>\W</code>. Note, the opposite pattern uses a capital letter. This shortcut is the same as <code>[^A-Za-z0-9_]</code>.
-<blockquote>let shortHand = /\W/;<br>let numbers = "42%";<br>let sentence = "Coding!";<br>numbers.match(shortHand); // Returns ["%"]<br>sentence.match(shortHand); // Returns ["!"]<br></blockquote>
+
+```js
+let shortHand = /\W/;
+let numbers = "42%";
+let sentence = "Coding!";
+numbers.match(shortHand); // Returns ["%"]
+sentence.match(shortHand); // Returns ["!"]
+```
+
 </section>
 
 ## Instructions
@@ -59,6 +67,8 @@ let result = quoteSample.match(nonAlphabetRegex).length;
 <section id='solution'>
 
 ```js
-// solution required
+let quoteSample = "The five boxing wizards_jump quickly.";
+let nonAlphabetRegex = /\W/g; // Change this line
+let result = quoteSample.match(nonAlphabetRegex).length;
 ```
 </section>

@@ -1,7 +1,8 @@
 ---
 title: Installing Rust
 localeTitle: Instalando Rust
----# Instalando Rust
+---
+# Instalando Rust
 
 Usar `rustup` é preferido para a instalação Rust. `rustup` instala e gerencia o Rust para o seu sistema.
 
@@ -12,8 +13,7 @@ Visite o [site](https://rustup.rs) do [rustup](https://rustup.rs) e baixe o `rus
 ## Instalando o Rust em outros sistemas operacionais (Mac OS X, Linux, BSD, Unix)
 
 Abra seu terminal e digite este comando:
-
-```sh
+```shell
 curl https://sh.rustup.rs -sSf | sh 
 ```
 
@@ -22,8 +22,7 @@ Isso irá buscar o instalador do `rustup` e, por sua vez, buscará tudo o que vo
 # Verificando instalação
 
 Instalar `rustup` irá instalar todas as coisas relevantes para ferrugem, mas o mais relevante é instalar o compilador e o gerenciador de pacotes. Para verificar se tudo está instalado, execute este comando:
-
-```sh
+```shell
 cargo version 
 ```
 

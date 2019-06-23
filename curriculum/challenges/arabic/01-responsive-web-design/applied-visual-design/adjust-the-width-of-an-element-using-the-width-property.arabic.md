@@ -7,7 +7,9 @@ localeTitle: ضبط عرض عنصر باستخدام خاصية العرض
 ---
 
 ## Description
-<section id="description"> يمكنك تحديد عرض عنصر باستخدام خاصية <code>width</code> في CSS. يمكن إعطاء القيم في وحدات الطول النسبي (مثل em) ، أو وحدات الطول المطلقة (مثل px) ، أو كنسبة مئوية من عنصر الأصل الذي يحتوي عليه. في ما يلي مثال يغير عرض الصورة إلى 220 بكسل: <blockquote style=";text-align:right;direction:rtl"> img { <br> العرض: 220 بكسل ؛ <br> } </blockquote></section>
+<section id="description">
+  يمكنك تحديد عرض عنصر باستخدام خاصية <code>width</code> في CSS. يمكن إعطاء القيم في وحدات الطول النسبي (مثل em) ، أو وحدات الطول المطلقة (مثل px) ، أو كنسبة مئوية من عنصر الأصل الذي يحتوي عليه. في ما يلي مثال يغير عرض الصورة إلى 220 بكسل: <blockquote> img {<br>height: 220px;<br>} </blockquote>
+</section>
 
 ## Instructions
 <section id="instructions"> إضافة خاصية <code>width</code> للبطاقة بأكملها وتعيينها إلى قيمة مطلقة تبلغ 245 بكسل. استخدم فئة <code>fullCard</code> لتحديد العنصر. </section>
