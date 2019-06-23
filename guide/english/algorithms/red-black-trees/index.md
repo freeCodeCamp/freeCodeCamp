@@ -8,8 +8,8 @@ Red-Black Tree is a self-balancing Binary Search Tree (BST) where every node fol
 1. Every node has two children, colored either red or black.
 2. Every tree leaf node is always black.
 3. Every red node has both of its children colored black.
-3. There are no two adjacent red nodes (A red node cannot have a red parent or red child).
-4. Every path from root to a tree leaf node has the same number of black nodes (called "black height").
+4. There are no two adjacent red nodes (A red node cannot have a red parent or red child).
+5. Every path from root to a tree leaf node has the same number of black nodes (called "black height").
 
 Reference-style: 
 ![alt text][fibonacci]
@@ -18,6 +18,9 @@ Reference-style:
 
 ### Why Red-Black Trees?
 Most of the BST operations (e.g., search, max, min, insert, delete.. etc) take O(h) time where h is the height of the BST. The cost of these operations may become O(n) for a skewed Binary tree. If we make sure that height of the tree remains O(Logn) after every insertion and deletion, then we can guarantee an upper bound of O(Logn) for all these operations. The height of a Red Black tree is always O(Logn) where n is the number of nodes in the tree.
+
+### Inserting into Red-Black Trees
+A node is initially inserted into a Red-Black Tree just like any Binary Search Tree. The new node is then given a color of red. After that node has been inserted, the tree must be validated to ensure none of the five properties have been violated. If a property has been violated, there are three potential cases requiring either a left-rotation, right-rotation, and/or a recoloring of the nodes. The cases are dependent on the "uncle" of the current node. Specifically, whether the "uncle" node is black or red. For more info on inserting, the three cases can be found [here](https://www.geeksforgeeks.org/red-black-tree-set-2-insert/).
 
 ### Comparison with AVL Tree
 The AVL trees are more balanced compared to Red Black Trees, but they may cause more rotations during insertion and deletion. So if your application involves many frequent insertions and deletions, then Red Black trees should be preferred. And if the insertions and deletions are less frequent and search is more frequent operation, then AVL tree should be preferred over Red Black Tree.

@@ -126,7 +126,7 @@ obj_0 = MyClass()
 
 ## Синглтон в iOS
 
-```Swift4
+```swift
 class Singleton { 
   static let sharedInstance = Singleton() 
  

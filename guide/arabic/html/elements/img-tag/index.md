@@ -6,9 +6,9 @@ localeTitle: img العلامة
 
 يمكن تضمين عنصر صورة HTML بسيط في مستند HTML كما يلي:
 
- `
-<img src="path/to/image/file" alt="this is a cool picture"> 
-` 
+```html
+<img src="path/to/image/file" alt="this is a cool picture">
+``` 
 
 `alt` توفر علامات النص البديل للصورة. استخدام واحد لعلامة `alt` مخصص للأشخاص ضعاف البصر الذين يستخدمون قارئ الشاشة ؛ يمكن قراءة علامة `alt` الخاصة بالصورة لفهم معنى الصورة.
 
@@ -16,17 +16,17 @@ localeTitle: img العلامة
 
 مثال:
 
- `
-<img src="https://example.com/image.png" alt="my picture"> 
-` 
+```html
+<img src="https://example.com/image.png" alt="my picture">
+``` 
 
 (هذا على افتراض أن ملف html موجود على https://example.com/index.html ، لذا فهو موجود في نفس المجلد مثل ملف الصورة)
 
 بالضبط مثل:
 
- `
-<img src="image.png" alt="my picture"> 
-` 
+```html
+<img src="image.png" alt="my picture">
+``` 
 
 #### معلومات اكثر:
 

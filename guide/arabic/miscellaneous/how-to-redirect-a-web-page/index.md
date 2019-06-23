@@ -22,7 +22,8 @@ localeTitle: كيفية إعادة توجيه صفحة ويب
   </form> 
 ` 
 
- `There is another option if you just want to change the page as soon as they reach that page: 
-` 
+```
+There is another option if you just want to change the page as soon as they reach that page:
+``` 
 
 جافا سكريبت window.location.assign ( "HTTPS: //www.yournewwebsite.fakewebsite")؛ \`\` \` استبدال موقع الويب بموقعك على الويب. ينبغي للمرء أن يذهب داخل ملف جافا سكريبت.

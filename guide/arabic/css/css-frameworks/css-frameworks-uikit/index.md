@@ -10,20 +10,20 @@ UIKit هو إطار أمامي خفيف الوزن ومعياري لتطوير �
 
 هنا هو قالب HTML بسيط يتضمن أحدث CSS المترجمة والمختصرة لمكتبة UIKit.
 
- `
-<!DOCTYPE html> 
- <html> 
-    <head> 
-        <title></title> 
-        <link rel="stylesheet" href="css/uikit.min.css" /> 
-        <script src="js/jquery.js"></script> 
-        <script src="js/uikit.min.js"></script> 
-        <script src="js/uikit-icons.min.js"></script> 
-    </head> 
-    <body> 
-    </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <script src="js/jquery.js"></script>
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+``` 
 
 لقد استخدمنا CDN في هذا المثال ، ولكن يمكنك التحقق من الطرق الأخرى لتثبيت UIKit [هنا](https://getuikit.com/docs/introduction) .
 

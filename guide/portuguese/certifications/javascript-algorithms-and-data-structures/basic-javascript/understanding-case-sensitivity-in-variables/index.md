@@ -12,3 +12,19 @@ var camelCase;
  var weWillStoreNumbersInThisVariable; 
 
 ```
+
+## Alerta de Spoiler: Solução à frente!
+
+## Solução:
+
+```javascript
+// Declarations
+var studlyCapVar;
+var properCamelCase;
+var titleCaseOver;
+
+// Assignments
+studlyCapVar = 10;
+properCamelCase = "A String";
+titleCaseOver = 9000;
+```

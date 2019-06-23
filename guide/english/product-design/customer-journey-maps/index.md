@@ -11,5 +11,4 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- [When and How to Create Customer Journey Maps by The Nielsen Norman Group](https://www.nngroup.com/articles/customer-journey-mapping/)
