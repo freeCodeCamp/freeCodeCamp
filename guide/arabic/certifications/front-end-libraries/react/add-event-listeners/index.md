@@ -10,42 +10,43 @@ localeTitle: اضافة المستمعين الحدث
 
 ملاحظة: document.addEventListener و document.removeEventListener سوف يأخذ في سلسلة مقتبسة عن الحدث الخاص به ، وعند تمريره في الدالة ، ستشير إليه handleKeyPress () باسم this.handleKeyPress. إذا قمت باستدعاء الدالة على هذا .handleKeyPress () ، سيقوم مستمع الحدث بتقييم الدالة أولاً وسيعيد قيمة غير معرفة.
 
- `class MyComponent extends React.Component { 
-  constructor(props) { 
-    super(props); 
-    this.state = { 
-      message: '' 
-    }; 
-    this.handleEnter = this.handleEnter.bind(this); 
-    this.handleKeyPress = this.handleKeyPress.bind(this); 
-  } 
-  // change code below this line 
-  componentDidMount() { 
-    document.addEventListener("keydown", this.handleKeyPress) 
-  } 
-  componentWillUnmount() { 
-    document.removeEventListener("keydown", this.handleKeyPress) 
-  } 
-  // change code above this line 
-  handleEnter() { 
-    this.setState({ 
-      message: this.state.message + 'You pressed the enter key! ' 
-    }); 
-  } 
-  handleKeyPress(event) { 
-    if (event.keyCode === 13) { 
-      this.handleEnter(); 
-    } 
-  } 
-  render() { 
-    return ( 
-      <div> 
-        <h1>{this.state.message}</h1> 
-      </div> 
-    ); 
-  } 
- }; 
-` 
+```javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleEnter = this.handleEnter.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+  // change code below this line
+  componentDidMount() {
+    document.addEventListener("keydown", this.handleKeyPress)
+  }
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.handleKeyPress)
+  }
+  // change code above this line
+  handleEnter() {
+    this.setState({
+      message: this.state.message + 'You pressed the enter key! '
+    });
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
+``` 
 
 ### مصادر
 

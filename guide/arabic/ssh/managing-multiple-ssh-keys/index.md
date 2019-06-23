@@ -24,25 +24,28 @@ localeTitle: إدارة عدة مفاتيح SSH
 
 لبدء عملك ، عليك استنساخ مستودع git باستخدام SSH:
 
- `git clone git@github.com:steve/raspberry-spy.git 
-` 
+```bash
+git clone git@github.com:steve/raspberry-spy.git
+``` 
 
 في هذه اللحظة ، سيكون GitHub مثل: "Yo ، هذا مستودع خاص! نحن بحاجة إلى تشفير حركة المرور باستخدام هذا المفتاح العام الذي أمتلكه هنا ومفتاحك الخاص"
 
 لقد قمت بإضافة المفتاح العام إلى ملف التعريف الخاص بك على GitHub ، ولكن SSH لديه بطريقة أو بأخرى معرفة أين يوجد المفتاح الخاص المقابل الخاص بك. نظرًا لأننا لا نملك أي فكرة عن المفتاح الخاص الذي يجب استخدامه عند استخدام SSH في `git@github.com` ، يحاول عميل SSH العثور على مفتاح في الموقع الافتراضي ، وهو `~/.ssh/id_rsa` - إنه أفضل تخمين له. إذا لم يكن هناك ملف في هذا الموقع ، فستتلقى خطأً:
 
- `Cloning into 'raspberry-spy'... 
- Permission denied (publickey). 
- fatal: Could not read from remote repository. 
- 
- Please make sure you have the correct access rights 
- and the repository exists. 
-` 
+```bash
+Cloning into 'raspberry-spy'...
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+``` 
 
 إذا كان لديك _بعض_ المفاتيح الخاصة المخزنة في الملف `~/.ssh/id_rsa` ، `~/.ssh/id_rsa` عميل SSH هذا المفتاح الخاص لتشفير الاتصالات. إذا كان هذا المفتاح مرتبطًا بكلمة مرور (كما ينبغي أن يكون) ، فستتم مطالبتك بكلمة مرور ، مثل:
 
- `Enter passphrase for key '/Users/steve/.ssh/id_rsa': 
-` 
+```bash
+Enter passphrase for key '/Users/steve/.ssh/id_rsa':
+``` 
 
 إذا أدخلت عبارة المرور الصحيحة وإذا كان هذا المفتاح الخاص هو بالفعل المفتاح الذي يتوافق مع المفتاح العام الذي أرفقته بملفك الشخصي ، فسيتم سداد كل شيء بشكل جيد وسيتم استنساخ المستودع بنجاح.
 
@@ -50,8 +53,9 @@ localeTitle: إدارة عدة مفاتيح SSH
 
 إذا كنت تريد استخدام مفتاح خاص سميته بشكل مختلف ، فيجب عليك إضافته يدويًا:
 
- `ssh-add ~/.ssh/_id_rsa 
-` 
+```bash
+ssh-add ~/.ssh/_id_rsa
+``` 
 
 بعد إدخال عبارة المرور ، يمكنك التحقق مما إذا كان المفتاح قد تمت إضافته إلى `ssh-agent` (عميل SSH) عن طريق تنفيذ `ssh-add -l` . يقوم هذا الأمر بإدراج جميع المفاتيح المتوفرة حاليًا لعميل SSH.
 
@@ -77,21 +81,23 @@ localeTitle: إدارة عدة مفاتيح SSH
 
 أول شيء سنقوم بحله باستخدام ملف `config` هذا هو تجنب الاضطرار إلى إضافة مفاتيح SSH ذات اسم مخصص باستخدام `ssh-add` . بفرض افتراض أن مفتاح SSH الخاص بك هو `~/.ssh/_id_rsa` ، أضف المتابعة إلى ملف `config` :
 
- `Host github.com 
-  HostName github.com 
-  User git 
-  IdentityFile ~/.ssh/_id_rsa 
-  IdentitiesOnly yes 
-` 
+```bash
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/_id_rsa
+  IdentitiesOnly yes
+``` 
 
 الآن تأكد من أن `~/.ssh/_id_rsa` ليس في `ssh-agent` بتنفيذ `ssh-add -D` . سيؤدي هذا الأمر إلى إزالة كافة المفاتيح من جلسة عمل `ssh-agent` النشطة حاليًا. يتم إعادة ضبط الجلسة في كل مرة تقوم فيها بتسجيل الخروج أو إعادة التشغيل (أو إذا قمت بقتل عملية `ssh-agent` يدوياً). يمكننا "محاكاة" إعادة التشغيل عن طريق تنفيذ الأمر المذكور.
 
 إذا حاولت استنساخ مستودع GitHub الخاص بك الآن ، فسيكون ذلك كما لو قمنا بإضافة المفتاح يدويًا (كما فعلنا من قبل). سيُطلب منك كلمة المرور:
 
- `git clone git@github.com:steve/raspberry-spy.git 
- Cloning into 'raspberry-spy'... 
- Enter passphrase for key '/Users/steve/.ssh/_id_rsa': 
-` 
+```bash
+git clone git@github.com:steve/raspberry-spy.git
+Cloning into 'raspberry-spy'...
+Enter passphrase for key '/Users/steve/.ssh/_id_rsa':
+``` 
 
 ستلاحظ أن المفتاح الذي نطالب بكلمة المرور الخاصة به هو نفس المفتاح الذي حددناه في ملف `config` بنا. بعد إدخال كلمة مرور مفتاح SSH الصحيحة ، سيتم استنساخ المستودع بنجاح.
 
@@ -101,32 +107,35 @@ localeTitle: إدارة عدة مفاتيح SSH
 
 هذا يفتح البوابات. عندما تقوم بإعادة هذا ، فإن ذهنك يتسابق ويفكر في كيفية انتهاء كل مشاكلك مع مفاتيح SSH. فيما يلي بعض أمثلة التكوين المفيدة:
 
- `Host bitbucket-corporate 
-        HostName bitbucket.org 
-        User git 
-        IdentityFile ~/.ssh/id_rsa_corp 
-        IdentitiesOnly yes 
-` 
+```bash
+Host bitbucket-corporate
+        HostName bitbucket.org
+        User git
+        IdentityFile ~/.ssh/id_rsa_corp
+        IdentitiesOnly yes
+``` 
 
 الآن يمكنك استخدام `git clone git@bitbucket-corporate:company/project.git`
 
- `Host bitbucket-personal 
-        HostName bitbucket.org 
-        User git 
-        IdentityFile ~/.ssh/id_rsa_personal 
-        IdentitiesOnly yes 
-` 
+```bash
+Host bitbucket-personal
+        HostName bitbucket.org
+        User git
+        IdentityFile ~/.ssh/id_rsa_personal
+        IdentitiesOnly yes
+``` 
 
 الآن يمكنك استخدام `git clone git@bitbucket-personal:steve/other-pi-project.git`
 
- `Host myserver 
-        HostName ssh.steve.com 
-        Port 1111 
-        IdentityFile ~/.ssh/id_rsa_personal 
-        IdentitiesOnly yes 
-        User steve 
-        IdentitiesOnly yes 
-` 
+```
+Host myserver
+        HostName ssh.steve.com
+        Port 1111
+        IdentityFile ~/.ssh/id_rsa_personal
+        IdentitiesOnly yes
+        User steve
+        IdentitiesOnly yes
+``` 
 
 الآن يمكنك SSH في الخادم الخاص بك باستخدام `ssh myserver` . كم ذلك رائع؟ لا تحتاج إلى إدخال المنفذ واسم المستخدم يدويًا في كل مرة تقوم فيها بتنفيذ الأمر `ssh` .
 
@@ -134,14 +143,16 @@ localeTitle: إدارة عدة مفاتيح SSH
 
 يمكنك أيضًا تحديد المفتاح المحدد الذي يجب استخدامه لمخزون معين ، وتجاوز أي شيء في `config` SSH. يمكن تحديد أمر SSH محدد عن طريق تعيين `sshCommand` تحت `core` في `<project>/.git/config` . مثال:
 
- `[core] 
-        sshCommand = ssh -i ~/.ssh/id_rsa_corp 
-` 
+```bash
+[core]
+        sshCommand = ssh -i ~/.ssh/id_rsa_corp
+``` 
 
 هذا ممكن مع git 2.10 أو في وقت لاحق. يمكنك أيضًا استخدام هذا الأمر لتجنب تعديل الملف يدويًا:
 
- `git config core.sshCommand 'ssh -i ~/.ssh/id_rsa_corp' 
-` 
+```bash
+git config core.sshCommand 'ssh -i ~/.ssh/id_rsa_corp'
+``` 
 
 ### إدارة كلمة المرور
 
@@ -149,8 +160,9 @@ localeTitle: إدارة عدة مفاتيح SSH
 
 ابدأ بإضافة مفتاحك إلى keychain عبر تمرير الخيار `-K` إلى الأمر `ssh-add` :
 
- `ssh-add -K ~/.ssh/id_rsa_whatever 
-` 
+```bash
+ssh-add -K ~/.ssh/id_rsa_whatever
+``` 
 
 يمكنك الآن رؤية مفتاح SSH في keychain. على MacOS ، يبدو الأمر كالتالي: ![Keychain Access](https://raw.githubusercontent.com/fvoska/guides/master/static/images/pages/ssh/managing-multiple-ssh-keys/keychain-access.png "الوصول إلى سلسلة المفاتيح")
 
@@ -158,10 +170,11 @@ localeTitle: إدارة عدة مفاتيح SSH
 
 اتضح أن هناك طارة واحدة أكثر من القفز. افتح ملف SSH `config` الخاص بك وقم بإضافة ما يلي:
 
- `Host * 
-  AddKeysToAgent yes 
-  UseKeychain yes 
-` 
+```bash
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+``` 
 
 الآن ، سوف تبحث SSH عن المفتاح في keychain وإذا وجدت أنه لن تتم مطالبتك بكلمة المرور. مفتاح سيضاف أيضا إلى `ssh-agent` . على MacOS ، سيعمل هذا على MacOS Sierra 10.12.2 أو ما بعده. في Linux ، يمكنك استخدام شيء ما مثل `gnome-keyring` وقد يعمل حتى بدون إجراء هذا التعديل الأخير على `config` SSH. أما بالنسبة لنظام التشغيل Windows - من يدري ، أليس كذلك؟
 

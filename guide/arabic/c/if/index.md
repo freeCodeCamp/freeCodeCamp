@@ -31,31 +31,33 @@ localeTitle: إذا
 
 ## مثال
 
- `#include <stdio.h> 
- 
- int main () { 
- 
-   // Local variable definition 
-   int a = 10; 
- 
-   // Check the boolean condition 
-   if(a < 5) { 
-      // If condition is true then print the following 
-      printf("a is less than 5!\n" ); 
-   } 
-   else { 
-      // If condition is false then print the following 
-      printf("a is not less than 5!\n" ); 
-   } 
- 
-   printf("Value of a is : %d\n", a); 
- 
-   return 0; 
- } 
-` 
+```
+#include <stdio.h>
+
+int main () {
+
+   // Local variable definition
+   int a = 10;
+
+   // Check the boolean condition
+   if(a < 5) {
+      // If condition is true then print the following
+      printf("a is less than 5!\n" );
+   }
+   else {
+      // If condition is false then print the following
+      printf("a is not less than 5!\n" );
+   }
+
+   printf("Value of a is : %d\n", a);
+
+   return 0;
+}
+``` 
 
 ## انتاج |
 
- `-> a is not less than 5! 
- -> Value of a is : 100 
-`
+```
+-> a is not less than 5!
+-> Value of a is : 100
+```

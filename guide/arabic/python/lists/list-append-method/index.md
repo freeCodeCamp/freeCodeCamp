@@ -8,15 +8,17 @@ localeTitle: قائمة طريقة إلحاق
 
 #### مثال للاستخدام
 
- `words = ["I", "love", "Python"] 
- words.append("very much") 
- print(words) 
-` 
+```py
+words = ["I", "love", "Python"]
+words.append("very much")
+print(words)
+``` 
 
 #### انتاج |
 
- `["I", "love", "Python", "very much"] 
-` 
+```
+["I", "love", "Python", "very much"]
+``` 
 
 كما قد تلاحظ أن العنصر `"very much"` يتم إلحاقه بالقائمة.
 

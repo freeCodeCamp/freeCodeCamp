@@ -8,10 +8,10 @@ title: Even Fibonacci Numbers
 - In this challenge we have to sum all the even numbers upto `nth` term in the sequence.
 - Example for `fiboEvenSum(10)`:
   + The sequence till 10th term is:
-  1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
+  1, 2, 3, 5, 8, 13, 21, 34, 55, 89
 
   + Sum of all even number in the above sequence is:
-  2 + 8 + 34 + 144 = 188
+  2 + 8 + 34 = 44
 
 ### Solution:
 
@@ -20,7 +20,7 @@ title: Even Fibonacci Numbers
 function fiboEvenSum(n) {
   let first = 1, second = 2, sum = 2, fibNum; // declaring and initializing variables
   if (n <= 1) return sum; // edge case
-  for (let i = 2; i <= n; i++){  // looping till n
+  for (let i = 3; i <= n; i++){  // looping till n
     fibNum = first + second;    // getting the ith fibonacci number
     first = second;
     second = fibNum;
@@ -33,8 +33,8 @@ function fiboEvenSum(n) {
 ```js
 // We use memoization technique to save ith fibonacci number to the fib array 
 function fiboEvenSum(n){
-  const fib = [1, 2]; 
-  let sumEven = fib[1];
+  const fib = [1, 1, 2]; 
+  let sumEven = fib[2];
   function fibonacci(n){
     if (n <= 1) return fib[n]; // base condition
     else if (fib[n]) return fib[n]; // if the number exists in the array we cache it and return
@@ -48,6 +48,6 @@ function fiboEvenSum(n){
   return sumEven;
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
+- [Run Code](https://repl.it/@scissorsneedfoo/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)

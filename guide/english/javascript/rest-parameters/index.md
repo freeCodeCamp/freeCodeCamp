@@ -3,7 +3,7 @@ title: Rest Parameters
 ---
 
 ## Rest Parameters
-In ES6, the rest paramter syntax `...` allows you to gather up an indefinite number of arguments into an array. 
+In ES6, the rest parameter syntax `...` allows you to gather up an indefinite number of arguments into an array.
 
 Even though they look the same, it does the opposite of the spread operator, which takes every item from an iterable and spreads them out into their individual values. 
 
@@ -18,7 +18,7 @@ myFunc( 1, 2, 3, 4, 5);       // [1,2,3,4,5]
 
 ```
 
-You can prefix a function's last parameter with `...` when you want to do something with the initial paramters and then treat all of the remaining parameters differently. 
+You can prefix a function's last parameter with `...` when you want to do something with the initial parameters and then treat all of the remaining parameters differently. 
 
 ```js
 function convertCurrency(rate, fee, ...amounts) {

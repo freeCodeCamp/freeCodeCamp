@@ -6,7 +6,8 @@ localeTitle: تجاوز الأساليب الموروثة
 
 # حل
 
- `Penguin.prototype.fly = function() { 
-    return  "Alas, this is a flightless bird."; 
- }; 
-`
+```javascript
+Penguin.prototype.fly = function() {
+    return  "Alas, this is a flightless bird.";
+};
+```

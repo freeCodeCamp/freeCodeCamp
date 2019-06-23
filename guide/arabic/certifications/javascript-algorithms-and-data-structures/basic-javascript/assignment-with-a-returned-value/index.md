@@ -8,5 +8,6 @@ localeTitle: التنازل مع القيمة المرتجعة
 
 هنا هو الحل الأساسي رمز:
 
- `processed = processArg(7); // Equal to 2 
-`
+```javascript
+processed = processArg(7); // Equal to 2
+```

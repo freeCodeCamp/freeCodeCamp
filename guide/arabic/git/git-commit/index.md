@@ -21,8 +21,9 @@ localeTitle: جايت كومت
 
 مثال على كيفية استخدام الخيار `-m` :
 
- `git commit -m "My message" 
-` 
+```shell
+git commit -m "My message"
+``` 
 
 يجب أن يبدو الإخراج في المحطة الطرفية كالتالي:
 
@@ -42,8 +43,9 @@ localeTitle: جايت كومت
 
 مثال على كيفية استخدام الخيار `-a` :
 
- `git commit -am “My new changes” 
-` 
+```shell
+git commit -am “My new changes”
+``` 
 
 يجب أن يبدو الإخراج في المحطة الطرفية كالتالي:
 
@@ -67,18 +69,20 @@ localeTitle: جايت كومت
 
 يتيح لك خيار `--amend` تغيير `--amend` الأخير. لنفترض أنك ارتكبت للتو وأنك ارتكبت خطأ في رسالة سجل الالتزام. يمكنك تعديل أحدث الالتزام باستخدام الأمر:
 
- `git commit --amend -m "an updated commit message" 
-` 
+```shell
+git commit --amend -m "an updated commit message"
+``` 
 
 إذا نسيت تضمين ملف في الالتزام:
 
- `git add FORGOTTEN-FILE-NAME 
- git commit --amend -m "an updated commit message" 
- 
- # If you don't need to change the commit message, use the --no-edit option 
- git add FORGOTTEN-FILE-NAME 
- git commit --amend --no-edit 
-` 
+```shell
+git add FORGOTTEN-FILE-NAME
+git commit --amend -m "an updated commit message"
+
+# If you don't need to change the commit message, use the --no-edit option
+git add FORGOTTEN-FILE-NAME
+git commit --amend --no-edit
+``` 
 
 تحدث الإلتزامات السابقة لأوانها طوال الوقت في سياق تطورك اليومي. من السهل نسيان تقديم ملف أو كيفية تنسيق رسالة الالتزام الخاصة بك بشكل صحيح. يعد علم `--amend` طريقة ملائمة لإصلاح هذه الأخطاء الصغيرة. سيحل هذا الأمر محل رسالة الالتزام القديمة مع الرسالة المحدثة المحددة في الأمر.
 
@@ -86,8 +90,9 @@ localeTitle: جايت كومت
 
 باستخدام `--amend` ، أحد `--amend` المفيدة التي يمكنك استخدامها هو `--author` والذي يمكنك من تغيير مؤلف آخر التزام قمت به. تخيل موقفًا لم تقم بإعداد اسمك أو بريدك الإلكتروني بشكل صحيح في تكوينات git ولكنك ارتكبت بالفعل التزامًا. مع العلم `--author` يمكنك ببساطة تغييرها دون إعادة التعيين الأخير.
 
- `git commit --amend --author="John Doe <johndoe@email.com>" 
-` 
+```
+git commit --amend --author="John Doe <johndoe@email.com>"
+``` 
 
 #### الخيار -v أو --verbose
 

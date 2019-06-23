@@ -16,7 +16,8 @@ localeTitle: استخدم التصدير لإعادة استخدام كتلة ت
 
 ## حل
 
- `"use strict"; 
- export const foo = "bar"; 
- export const bar = "foo"; 
-`
+```javascript
+"use strict";
+export const foo = "bar";
+export const bar = "foo";
+```

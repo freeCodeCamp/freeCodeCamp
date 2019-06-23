@@ -10,69 +10,76 @@ localeTitle: قوائم
 
 يتم إنشاء `list` فارغة باستخدام زوج من الأقواس المربعة:
 
- `>>> empty_list = [] 
- >>> type(empty_list) 
- <class 'list'> 
- >>> len(empty_list) 
- 0 
-` 
+```shell
+>>> empty_list = []
+>>> type(empty_list)
+<class 'list'>
+>>> len(empty_list)
+0
+``` 
 
 يمكن إنشاء `list` بعناصر من خلال تضمين قائمة عناصر مفصولة بفواصل مع أقواس مربعة. تسمح القوائم بأن تكون العناصر من أنواع مختلفة (غير متجانسة) ولكنها الأكثر شيوعًا من نوع واحد (متجانس):
 
- `>>> homogeneous_list = [1, 1, 2, 3, 5, 8] 
- >>> type(homogeneous_list) 
- <class 'list'> 
- >>> print(homogeneous_list) 
- [1, 1, 2, 3, 5, 8] 
- >>> len(homogeneous_list) 
- 6 
- >>> heterogeneous_list = [1, "Hello Campers!"] 
- >>> print(heterogeneous_list) 
- [1, "Hello Campers!"] 
- >>> len(heterogeneous_list) 
- 2 
-` 
+```shell
+>>> homogeneous_list = [1, 1, 2, 3, 5, 8]
+>>> type(homogeneous_list)
+<class 'list'>
+>>> print(homogeneous_list)
+[1, 1, 2, 3, 5, 8]
+>>> len(homogeneous_list)
+6
+>>> heterogeneous_list = [1, "Hello Campers!"]
+>>> print(heterogeneous_list)
+[1, "Hello Campers!"]
+>>> len(heterogeneous_list)
+2
+``` 
 
 يمكن أيضًا استخدام مُنشئ `list` لإنشاء `list` :
 
- `>>> empty_list = list()                            # Creates an empty list 
- >>> print(empty_list) 
- [] 
- >>> list_from_iterable = list("Hello campers!")    # Creates a list from an iterable. 
- >>> print(list_from_iterable) 
- ['H', 'e', 'l', 'l', 'o', ' ', 'c', 'a', 'm', 'p', 'e', 'r', 's', '!'] 
-` 
+```shell
+>>> empty_list = list()                            # Creates an empty list
+>>> print(empty_list)
+[]
+>>> list_from_iterable = list("Hello campers!")    # Creates a list from an iterable.
+>>> print(list_from_iterable)
+['H', 'e', 'l', 'l', 'o', ' ', 'c', 'a', 'm', 'p', 'e', 'r', 's', '!']
+``` 
 
 **الوصول إلى عناصر `list` :**
 
- `>>> my_list = [1, 2, 9, 16, 25] 
- >>> print(my_list) 
- [1, 2, 9, 16, 25] 
-` 
+```shell
+>>> my_list = [1, 2, 9, 16, 25]
+>>> print(my_list)
+[1, 2, 9, 16, 25]
+``` 
 
 _صفر مفهرسة_
 
- `>>> my_list[0] 
- 1 
- >>> my_list[1] 
- 2 
- >>> my_list[2] 
- 9 
-` 
+```shell
+>>> my_list[0]
+1
+>>> my_list[1]
+2
+>>> my_list[2]
+9
+``` 
 
 _التفاف حول الفهرسة_
 
- `>>> my_list[-1] 
- 25 
- >>> my_list[-2] 
- 16 
-` 
+```shell
+>>> my_list[-1]
+25
+>>> my_list[-2]
+16
+``` 
 
 _تفريغ قوائم python-3_
 
- `>>> print(*my_list) 
- 1 2 9 16 25 
-` 
+```shell
+>>> print(*my_list)
+1 2 9 16 25
+``` 
 
 **متقلب:**
 
@@ -82,12 +89,13 @@ _إعادة ترتيب العناصر في قائمة_
 
 يمكن استخراج عناصر من `list` وإعادة ترتيبها باستخدام `list` أخرى كمؤشر.
 
- `>>> my_list = [1, 2, 9, 16, 25, 34, 53, 21] 
- >>> my_index = [5, 2, 0] 
- >>> my_new_list = [my_list[i] for i in my_index] 
- >>> print(my_new_list) 
- [34, 9, 1] 
-` 
+```shell
+>>> my_list = [1, 2, 9, 16, 25, 34, 53, 21]
+>>> my_index = [5, 2, 0]
+>>> my_new_list = [my_list[i] for i in my_index]
+>>> print(my_new_list)
+[34, 9, 1]
+``` 
 
 **TODO: أي من هذه الأسئلة يجب مناقشته هنا:**
 

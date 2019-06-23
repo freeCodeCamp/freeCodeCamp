@@ -10,32 +10,35 @@ localeTitle: الحلقات
 
 \`\` \`ج + + cout << 0 << endl؛ cout << 2 << endl؛ cout << 4 << endl؛ .... .... .... cout << 1000 << endl؛
 
- `But the problem with this approach is that you have to write the same line again and again. And if suppose you have to print 
- prime numbers from 1 to 1000 then this will be more hectic. 
- Therefore, in order to solve such problems loops are introduced. 
- 
- There are different types of loop functions: 
- ### While and do while loops 
- 
- While and do while loops allow you to make the loop until a condition finishes. 
- The difference between While and Do while is that Do while always executes once. 
- Here you can see an example: 
-` 
+```
+But the problem with this approach is that you have to write the same line again and again. And if suppose you have to print
+prime numbers from 1 to 1000 then this will be more hectic.
+Therefore, in order to solve such problems loops are introduced.
+
+There are different types of loop functions:
+### While and do while loops
+
+While and do while loops allow you to make the loop until a condition finishes.
+The difference between While and Do while is that Do while always executes once.
+Here you can see an example:
+``` 
 
 ج ++ بينما (الشرط) { // القانون الذي سيتم تنفيذه في حين الشرط هو الصحيح } فعل { // سيتم التنفيذ مرة واحدة وحتى تصبح الحالة خاطئة } في حين (شرط) ؛
 
- `### For loops 
- 
- For loops are usually used when you know how many times the code will execute. 
- The flow can be seen in this [graph](https://www.tutorialspoint.com/cplusplus/images/cpp_for_loop.jpg). 
- 
- They are declared this way: 
-` 
+```
+### For loops
+
+For loops are usually used when you know how many times the code will execute.
+The flow can be seen in this [graph](https://www.tutorialspoint.com/cplusplus/images/cpp_for_loop.jpg).
+
+They are declared this way:
+``` 
 
 ج ++ لـ (تهيئة متغير ؛ تحقق من شرط ؛ زيادة المتغير الذي تم تهيئته) { // رمز التنفيذ }
 
- `Lets write a program which will print numbers from 0 to 1000 including 1000 on the screen using a for loop. 
-` 
+```
+Lets write a program which will print numbers from 0 to 1000 including 1000 on the screen using a for loop.
+``` 
 
 ج ++ لـ (int i = 0؛ i <= 1000؛ i ++) { cout << i << endl؛ }
 

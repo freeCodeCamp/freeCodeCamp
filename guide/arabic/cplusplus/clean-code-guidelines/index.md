@@ -18,12 +18,13 @@ localeTitle: تعليمات كود نظيفة
 
 بدلاً من استخدام المتغيرات العامة ، يمكنك استخدام المتغيرات التي تم الإعلان عنها في الوظائف والتي يمكن أن تساعدك في تحديد القيم التي يتم تمريرها وتحديد الأخطاء بشكل أسرع.
 
- `#include <iostream> 
- using namespace std; 
- 
- // Global variables are declared outside functions 
- int cucumber; // global variable "cucumber" 
-` 
+```cpp
+#include <iostream>
+using namespace std;
+
+// Global variables are declared outside functions
+int cucumber; // global variable "cucumber"
+``` 
 
 ## استخدام الانتقال والمتابعة وما إلى ذلك.
 
@@ -39,27 +40,29 @@ localeTitle: تعليمات كود نظيفة
 
 عادة ما تكون هناك أعمال حول هذا تبدو أكثر وضوحا وأقل إرباكا ، على سبيل المثال. بينما الحلقات. فعل:
 
- `int i=1; 
- while (i <= 5) 
- { 
-    if (i == 2) 
-        i = 4; 
- 
-    ++i; 
- } 
-` 
+```cpp
+int i=1;
+while (i <= 5)
+{
+    if (i == 2)
+        i = 4;
+
+    ++i;
+}
+``` 
 
 بدلا من:
 
- `for (int i = 1; i <= 5; i++) 
- { 
-    if (i == 2) 
-    { 
-       i = 4; 
-    } 
-    // Do work 
- } 
-` 
+```cpp
+for (int i = 1; i <= 5; i++)
+{
+    if (i == 2)
+    {
+       i = 4;
+    }
+    // Do work
+}
+``` 
 
 ## أعلن الثوابت وأنواع في الجزء العلوي
 
@@ -75,17 +78,19 @@ localeTitle: تعليمات كود نظيفة
 
 بدلا من:
 
- `for (int i = 1; i <= 5; i++) 
-    //CODE 
-` 
+```cpp
+for (int i = 1; i <= 5; i++)
+    //CODE
+``` 
 
 فعل:
 
- `for (int i = 1; i <= 5; i++) 
- { 
-    //CODE 
- } 
-` 
+```cpp
+for (int i = 1; i <= 5; i++)
+{
+    //CODE
+}
+``` 
 
 ## توصيات أخرى
 
@@ -96,7 +101,8 @@ localeTitle: تعليمات كود نظيفة
 *   \#### كتابة const في أحرف استهلالية ، أنواع البيانات تبدأ بـ T والمتغيرات في الحالة الصغيرة.
     
 
- `const int MAX= 100;             //Constant 
- typedef int TVector[MAX];       //Data type 
- TVector vector;                 //Vector 
-`
+```cpp
+const int MAX= 100;             //Constant
+typedef int TVector[MAX];       //Data type
+TVector vector;                 //Vector
+```
