@@ -73,7 +73,6 @@ localeTitle: مجموع كل الأعداد
  sumPrimes(10); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnZ/0)
 
 ### شرح الشفرة:
 
@@ -122,7 +121,6 @@ localeTitle: مجموع كل الأعداد
  sumPrimes(10); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLn0/0)
 
 ### شرح الشفرة:
 
@@ -157,7 +155,6 @@ localeTitle: مجموع كل الأعداد
  sumPrimes(977); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/DoOo/3)
 
 ### شرح الشفرة:
 

@@ -19,7 +19,7 @@ Siguiendo la definición anterior, la diferencia simétrica de los tres conjunto
 
 [](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
- [## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ": speech_balloon:") Sugerencia: 1
+ ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ": speech_balloon:") Sugerencia: 1
 
 El objeto de _argumentos_ es un objeto de tipo _Array_ que solo hereda la propiedad `Array.length` . Por lo tanto, considere convertirlo en una _matriz_ real.
 

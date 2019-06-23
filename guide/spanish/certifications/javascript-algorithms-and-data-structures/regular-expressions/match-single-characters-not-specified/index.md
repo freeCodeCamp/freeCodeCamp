@@ -24,7 +24,7 @@ Si es así, entonces vuelva a verificar que está agregando las banderas apropia
 
 Asegúrese de verificar si su rango de números es correcto: el desafío nos pide que neguemos todos los números del 0 al 99. Esto se puede hacer usando la carátula de negación colocada inmediatamente después del primer soporte de apertura de su expresión regular.
 
-```javacsript
+```js
 let numbersRegExp = /[^0-99]/ig; 
 ```
 

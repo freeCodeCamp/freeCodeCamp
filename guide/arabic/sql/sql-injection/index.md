@@ -10,9 +10,10 @@ localeTitle: حقن SQL
 
 المثال التالي هو أحد مقتطفات التعليمات البرمجية التي سيتم استرداد مستخدم من قاعدة بيانات تستند إلى `AccountId` .
 
- `passedInAccountId = getRequestString("AccountId"); 
- sql = "select * from Accounts where AccountId = " + passedInAccountId; 
-` 
+```
+passedInAccountId = getRequestString("AccountId");
+sql = "select * from Accounts where AccountId = " + passedInAccountId;
+``` 
 
 يمكن استخدام حقن SQL لخرق هذا الرمز عن طريق حقن `1=1;` بيان `AccountId` .
 

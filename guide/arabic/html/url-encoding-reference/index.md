@@ -24,9 +24,10 @@ localeTitle: مرجع ترميز Url
 
 #### مثال:
 
- `encodeURI(Free Code Camp); 
- // Free%20Code%20Camp 
-` 
+```js
+encodeURI(Free Code Camp);
+// Free%20Code%20Camp
+``` 
 
 #### معلومات اكثر:
 
