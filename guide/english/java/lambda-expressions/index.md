@@ -76,3 +76,7 @@ This is only one use of the Streams API used in Java 8. There are many other app
 - [Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
 - [Java 8 Stream API](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
 - [Java 8 Double Colon Operator](https://www.baeldung.com/java-8-double-colon-operator)
+
+
+### Debugging information :-
+lambda expressions cannot be debugged directly using F6 key along with normal code, instead by placing a debug point inside lambda and using F8 key to enter into it's code.
