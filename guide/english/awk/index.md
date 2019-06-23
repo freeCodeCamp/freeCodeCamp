@@ -15,7 +15,6 @@ BEGIN { print "Hello, world!" }
 ```
 The Code is self explanatory , the **BEGIN** keyword denotes the beginning of a awk program.
 
-Here's a artwork made by [Julia Evans](https://twitter.com/b0rk) to understand Awk : [Awk ArtWork by Julia Evans](https://pbs.twimg.com/media/DeLcVfSWAAAw6OZ.jpg)
 
 
 ### More Information:
