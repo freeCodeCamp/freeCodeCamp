@@ -28,6 +28,9 @@ Note that inlining is only a request to the compiler, not a command. The compile
 * When performance is important.
 * Instead of a macro.
 
+Note: All functions defined in the class are implicitly inline functions.
+
+
 ``` c++
 #include<iostream>
 
