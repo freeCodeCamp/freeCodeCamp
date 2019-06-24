@@ -26,4 +26,4 @@ class MyComponent extends React.Component {
 };
 ```
 
-Note that you don't need to put quotes around the text, because when you are working with JSX it is treated as HTML. Also check to make sure your spelling, case, and punctuation are correct! If all this code looks strange, go check out some of the great material on Javascript ES6 here on freeCodeCamp.
+Note that you don't need to put quotes around the text, because when you are working with JSX it is treated as HTML. Also check to make sure your spelling, case, and punctuation are correct! If all this code looks strange, go check out some of the great material on JavaScript ES6 here on freeCodeCamp.

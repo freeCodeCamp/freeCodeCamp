@@ -62,7 +62,6 @@ localeTitle: تحويل الأرقام الرومانية
  convertToRoman(36); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmf/0)
 
 ### شرح الشفرة:
 
@@ -128,7 +127,6 @@ localeTitle: تحويل الأرقام الرومانية
  convertToRoman(97); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/C1YV)
 
 ### شرح الشفرة:
 
@@ -185,7 +183,6 @@ localeTitle: تحويل الأرقام الرومانية
  convertToRoman(36); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/C1YV)
 
 ### شرح الشفرة:
 

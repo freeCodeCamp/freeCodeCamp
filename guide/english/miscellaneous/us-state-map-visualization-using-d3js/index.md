@@ -26,7 +26,7 @@ We want to draw a US Map and visualize this data such that, when we hover mouse 
 *   First , we will need to create a US map.
     1.  You can either create a map from scratch using sources like - <a href='https://intridea.github.io/stately/' target='_blank' rel='nofollow'>Stately.</a>
 
-    2.  Get a already created map from <a href='http://freehtml5maps.com' target='_blank' rel='nofollow'>freehtml5maps</a> or use this <a href='http://bl.ocks.org/NPashaP/raw/a74faf20b492ad377312/3513ad985b2fa93ea35f2fc864cb30540c298171/uStates.js' target='_blank' rel='nofollow'>Javascript</a>
+    2.  Get a already created map from <a href='http://freehtml5maps.com' target='_blank' rel='nofollow'>freehtml5maps</a> or use this <a href='http://bl.ocks.org/NPashaP/raw/a74faf20b492ad377312/3513ad985b2fa93ea35f2fc864cb30540c298171/uStates.js' target='_blank' rel='nofollow'>JavaScript</a>
 *   Add your map to the main javascript used for visualization
 
 For Example, `(script src="uStates.js")(/script) (!-- creates uStates. --)`

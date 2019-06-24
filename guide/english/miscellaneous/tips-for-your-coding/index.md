@@ -1,7 +1,7 @@
 ---
 title: Tips for Your Coding
 ---
-This list was created by compiling common issue and questions when working on the algorithm challenges, they should be helpful in general.
+This list was created by compiling common issues and questions when working on the algorithm challenges, they should be helpful in general.
 
 1.  If you don't know where to start, write some pseudocode. Plan out the logic you're trying to implement in your native language before you try to put it into code.
 
@@ -9,12 +9,10 @@ This list was created by compiling common issue and questions when working on th
 
 3.  Use the chrome javascript debugger console in conjunction with something like the netbeans IDE or sublime text to write your code. Both are free to download. The freeCodeCamp code editor is great but you can get a lot more feedback on your code's behaviour by using chrome's JS debugger and a bunch of **console.log(myVariableGoesHere);**
 
+4. Use your resources. Stack overflow is your friend, and so is Google. However, don't limit yourself to just non-human resources. Sometimes talking about your code to a real person is enough to get you back on track, or spur some new ideas.
+
 References
 
-*   <a href='https://developer.chrome.com/devtools/docs/console' target='_blank' rel='nofollow'>Chrome Console</a>
-*   <a href='http://www.sublimetext.com/' target='_blank' rel='nofollow'>Sublime Text</a>
-*   <a href='https://netbeans.org/downloads/' target='_blank' rel='nofollow'>Netbeans</a>
-
-    1.  Posting your code in gitter is as simple as adding a line consisting of only 3 backtics **`** then your code in a new line and another line with 3 more backtics.`
-
-    2.  Ask for help in gitter! I can personally relate to staring at a problem for hours, then seeing the solution as soon as I try to explain it to someone, or having someone say something like "typo on line 6" as soon as they see it.
+* <a href='https://developer.chrome.com/devtools/docs/console' target='_blank' rel='nofollow'>Chrome Console</a>
+* <a href='http://www.sublimetext.com/' target='_blank' rel='nofollow'>Sublime Text</a>
+* <a href='https://netbeans.org/downloads/' target='_blank' rel='nofollow'>Netbeans</a>

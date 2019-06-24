@@ -32,20 +32,21 @@ localeTitle: أرض
 
 #### package.json
 
- `{ 
-  "name": "project-name", 
-  "version": "0.1.0", 
-  "devDependencies": { 
-    "grunt": "latest", 
-    "grunt-contrib-htmlmin": "latest", 
-    "grunt-postcss": "latest", 
-    "autoprefixer": "latest", 
-    "cssnano": "latest", 
-    "grunt-contrib-uglify": "latest", 
-    "grunt-contrib-imagemin": "latest", 
-  } 
- } 
-` 
+```json
+{
+  "name": "project-name",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-htmlmin": "latest",
+    "grunt-postcss": "latest",
+    "autoprefixer": "latest",
+    "cssnano": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-imagemin": "latest",
+  }
+}
+``` 
 
 #### Gruntfile.js
 

@@ -18,15 +18,17 @@ localeTitle: نظام الشبكة
 
 الحاوية هي معظم العناصر الخارجية التي _ستحتوي على_ الشبكة الخاصة بك ، وتستخدم `container` عرض ثابتة في منتصف الشاشة (هامش إضافي على الشاشات الأكبر) أو `container-fluid` لعرض كامل.
 
- `<div class="container"></div> 
-` 
+```
+<div class="container"></div>
+``` 
 
 ###### صف
 
 استخدم `row` لتجميع الأعمدة الخاصة بك ، وهذا سيبقي كل شيء مصفوفًا بشكل صحيح ويساعدك في بناء شبكتك.
 
- `<div class="row"></div> 
-` 
+```
+<div class="row"></div>
+``` 
 
 ###### أعمدة
 
@@ -40,22 +42,24 @@ localeTitle: نظام الشبكة
 *   **كبير** `col-lg-1`
 *   **إضافي كبير** `col-xl-1`
 
- `<div class="col-sm-1"></div> 
-` 
+```
+<div class="col-sm-1"></div>
+``` 
 
 #### مثال
 
 شبكة بعرض كامل تحتوي على أربعة أعمدة ، كل منها يشغل صفًا كاملاً على شاشات xs ، ونصف صف على الشاشات sm و md ، وربع عرض الصف على الشاشات الكبيرة وما فوقها.
 
- `<div class="container-fluid"> 
-  <div class="row"> 
-    <div class="col-12 col-sm-6 col-lg-4">First Column</div> 
-    <div class="col-12 col-sm-6 col-lg-4">Second Column</div> 
-    <div class="col-12 col-sm-6 col-lg-4">Third Column</div> 
-    <div class="col-12 col-sm-6 col-lg-4">Forth Column</div> 
-  </div> 
- </div> 
-` 
+```
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-lg-4">First Column</div>
+    <div class="col-12 col-sm-6 col-lg-4">Second Column</div>
+    <div class="col-12 col-sm-6 col-lg-4">Third Column</div>
+    <div class="col-12 col-sm-6 col-lg-4">Forth Column</div>
+  </div>
+</div>
+``` 
 
 _لاحظ أنه لم يتم تعريف `col-md` و `col-xl` ، حيث لم يتم تعريف الحجم ، سيتم تعيينه افتراضيًا إلى الحجم الأصغر التالي الذي تم تحديده._
 
