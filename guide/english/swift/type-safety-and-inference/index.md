@@ -38,6 +38,7 @@ You declare an optional by appending a question mark at the end of the type decl
     let normalFloat: Float = 0.5    // This is an ordinary Float
     var normalString = "a string"   // and a String
 ``` 
+
 **Note:** since optionalFloat is not assigned a value it is given a default value of nil
 
 ### Unwrapping Optionals
