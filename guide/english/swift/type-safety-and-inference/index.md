@@ -16,6 +16,7 @@ Swift uses type inference. So if you write some code like the code in the exampl
 So we can clean up the code to look like the example below, and Swift can infer the type for use.
 
 #### Example:
+
 ```swift
     let iPhone = “iPhone”       // Inferred as String
     let yearIntroduced = 2007   // Inferred as Int
