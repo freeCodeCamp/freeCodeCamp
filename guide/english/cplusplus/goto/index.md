@@ -4,7 +4,7 @@ title: goto
 
 # Intro to the use of goto and labels
 
-goto is one of the most powerful piece of logic in C/C++. Crazy amount of optimization can be achieved using goto, provided it is used properly. **It is, however, discouraged for use in C++, since better ways of programming exist, and it [leads to spaghetti code](https://stackoverflow.com/questions/3517726/what-is-wrong-with-using-goto#3517746)**  
+goto is one of the most powerful pieces of logic in C/C++. Crazy amounts of optimization can be achieved using goto, provided it is used properly. **It is, however, discouraged for use in C++, since better ways of programming exist, and it [leads to spaghetti code](https://stackoverflow.com/questions/3517726/what-is-wrong-with-using-goto#3517746)**  
 It does exactly what it is named as. It goes to the mentioned occurence of the next label, wherever may it be.
 
 # Terminology
