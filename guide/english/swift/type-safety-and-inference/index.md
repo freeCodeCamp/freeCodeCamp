@@ -49,6 +49,7 @@ Optionals are considered a different type then its non-optional variant. For exa
     let normalInt = 10
     print(optionalInt) // Optional(5)
 ```
+
 If you try to utilize the optional variable like normal you will get an error.
 ```swift
     let sumError = normalInt + optionalInt //error!
