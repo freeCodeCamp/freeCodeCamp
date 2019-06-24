@@ -6,6 +6,7 @@ title: Type Safety, Inference, and Optionals
 Swift uses type inference. So if you write some code like the code in the example below it’s pretty obvious what each type is.
 
 #### Example:
+
 ```swift
     let iPhone: String = “iPhone”
     let yearIntroduced: Int = 2007
