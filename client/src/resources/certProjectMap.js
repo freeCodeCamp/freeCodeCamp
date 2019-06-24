@@ -10,6 +10,198 @@ const apiMicroBase =
 const infoSecBase =
   '/learn/information-security-and-quality-assurance/' +
   'information-security-and-quality-assurance-projects';
+const legacyFrontEndBase = '';
+const legacyBackEndBase = '';
+const legacyDataVisBase = '';
+
+export const legacyProjectMap = {
+  'Legacy Front End': [
+    {
+      id: 'bd7158d8c242eddfaeb5bd13',
+      title: 'Build a Personal Portfolio Webpage',
+      link: `${legacyFrontEndBase}/build-a-personal-portfolio-webpage`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd13',
+      title: 'Build a Random Quote Machine',
+      link: `${legacyFrontEndBase}/build-a-random-quote-machine`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd0f',
+      title: 'Build a Pomodoro Clock',
+      link: `${legacyFrontEndBase}/build-a-pomodoro-clock`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd17',
+      title: 'Build a Javascript Calculator',
+      link: `${legacyFrontEndBase}/build-a-javascript-calculator`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd10',
+      title: 'Show the Local Weather',
+      link: `${legacyFrontEndBase}/show-the-local-weather`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd1f',
+      title: 'Use the TwitchTV JSON API',
+      link: `${legacyFrontEndBase}/use-the-twitchtv-json-api`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd18',
+      title: 'Stylize Stories on Camper News',
+      link: `${legacyFrontEndBase}/stylize-stories-on-camper-news`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd19',
+      title: 'Build a Wikipedia Viewer',
+      link: `${legacyFrontEndBase}/build-a-wikipedia-viewer`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eedfaeb5bd1c',
+      title: 'Build a Tic Tac Toe Game',
+      link: `${legacyFrontEndBase}/build-a-tic-tac-toe-game`,
+      superBlock: 'legacy-front-end'
+    },
+    {
+      id: 'bd7158d8c442eddfaeb5bd1c',
+      title: 'Build a Simon Game',
+      link: `${legacyFrontEndBase}/build-a-simon-game`,
+      superBlock: 'legacy-front-end'
+    }
+  ],
+  'Legacy Back End': [
+    {
+      id: 'bd7158d8c443edefaeb5bdef',
+      title: 'Timestamp Microservice',
+      link: `${legacyBackEndBase}/timestamp-microservice`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bdff',
+      title: 'Request Header Parser Microservice',
+      link: `${legacyBackEndBase}/request-header-parser-microservice`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bd0e',
+      title: 'URL Shortener Microservice',
+      link: `${legacyBackEndBase}/url-shortener-microservice`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bdee',
+      title: 'Image Search Abstraction Layer',
+      link: `${legacyBackEndBase}/image-search-abstraction-layer`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443edefaeb5bd0f',
+      title: 'File Metadata Microservice',
+      link: `${legacyBackEndBase}/file-metadata-microservice`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bdef',
+      title: 'Build a Voting App',
+      link: `${legacyBackEndBase}/build-a-voting-app`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bdff',
+      title: 'Build a Nightlife Coordination App',
+      link: `${legacyBackEndBase}/build-a-nightlife-coordination-app`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bd0e',
+      title: 'Chart the Stock Market',
+      link: `${legacyBackEndBase}/chart-the-stock-market`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bd0f',
+      title: 'Manage a Book Trading Club',
+      link: `${legacyBackEndBase}/manage-a-book-trading-club`,
+      superBlock: 'legacy-back-end'
+    },
+    {
+      id: 'bd7158d8c443eddfaeb5bdee',
+      title: 'Build a Pinterest Clone',
+      link: `${legacyBackEndBase}/build-a-pinterest-clone`,
+      superBlock: 'legacy-back-end'
+    }
+  ],
+  'Legacy Data Visualization': [
+    {
+      id: 'bd7157d8c242eddfaeb5bd13',
+      title: 'Build a Markdown Previewer',
+      link: `${legacyDataVisBase}/build-a-markdown-previewer`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7156d8c242eddfaeb5bd13',
+      title: 'Build a Camper Leaderboard',
+      link: `${legacyDataVisBase}/build-a-camper-leaderboard`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7155d8c242eddfaeb5bd13',
+      title: 'Build a Recipe Box',
+      link: `${legacyDataVisBase}/build-a-recipe-box`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7154d8c242eddfaeb5bd13',
+      title: 'Build the Game of Life',
+      link: `${legacyDataVisBase}/build-the-game-of-life`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7153d8c242eddfaeb5bd13',
+      title: 'Build a Roguelike Dungeon Crawler Game',
+      link: `${legacyDataVisBase}/build-a-roguelike-dungeon-crawler-game`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7168d8c242eddfaeb5bd13',
+      title: 'Visualize Data with a Bar Chart',
+      link: `${legacyDataVisBase}/visualize-data-with-a-bar-chart`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7178d8c242eddfaeb5bd13',
+      title: 'Visualize Data with a Scatterplot Graph',
+      link: `${legacyDataVisBase}/visualize-data-with-a-scatterplot-graph`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7188d8c242eddfaeb5bd13',
+      title: 'Visualize Data with a Heat Map',
+      link: `${legacyDataVisBase}/visualize-data-with-a-heat-map`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7198d8c242eddfaeb5bd13',
+      title: 'Show National Contiguity with a Force Directed Graph',
+      link: `${legacyDataVisBase}/show-national-contiguity-with-a-force-directed-graph`,
+      superBlock: 'legacy-data-visualization'
+    },
+    {
+      id: 'bd7108d8c242eddfaeb5bd13',
+      title: 'Map Data Across the Globe',
+      link: `${legacyDataVisBase}/map-data-across-the-globe`,
+      superBlock: 'legacy-data-visualization'
+    }
+  ]
+};
 
 export const projectMap = {
   'Responsive Web Design': [

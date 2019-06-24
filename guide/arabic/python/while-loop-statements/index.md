@@ -8,11 +8,12 @@ localeTitle: في حين لووب البيانات
 
 البنية الأساسية هي:
 
- `counter = 0 
- while counter < 10: 
-   # Execute the block of code here as 
-   # long as counter is less than 10 
-` 
+```python
+counter = 0
+while counter < 10:
+   # Execute the block of code here as
+   # long as counter is less than 10
+``` 
 
 ويرد أدناه مثال على ذلك:
 
@@ -25,14 +26,15 @@ localeTitle: في حين لووب البيانات
 
 انتاج:
 
- `Today is Monday 
- Today is Tuesday 
- Today is Wednesday 
- Today is Thursday 
- Today is Friday 
- Today is Saturday 
- Today is Sunday 
-` 
+```
+Today is Monday
+Today is Tuesday
+Today is Wednesday
+Today is Thursday
+Today is Friday
+Today is Saturday
+Today is Sunday
+``` 
 
 شرح سطر بواسطة سطر التعليمات البرمجية أعلاه:
 

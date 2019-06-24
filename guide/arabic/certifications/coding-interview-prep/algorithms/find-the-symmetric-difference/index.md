@@ -84,7 +84,6 @@ Deem كتابة دالة مساعد تقوم بإرجاع الفرق المتم�
     } 
 `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
 
- [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [تشغيل الكود](https://repl.it/C4II/0)
 
 ### شرح الشفرة:
 
@@ -138,7 +137,6 @@ Deem كتابة دالة مساعد تقوم بإرجاع الفرق المتم�
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLoc/0)
 
 ### شرح الشفرة:
 
@@ -172,7 +170,6 @@ Deem كتابة دالة مساعد تقوم بإرجاع الفرق المتم�
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/@ashenm/Symmetric-Difference)
 
 ### شرح الشفرة:
 

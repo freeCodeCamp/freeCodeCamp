@@ -6,9 +6,10 @@ localeTitle: باش ام فى
 
 **ينقل الملفات والمجلدات.**
 
- `mv source target 
- mv source ... directory 
-` 
+```
+mv source target
+mv source ... directory
+``` 
 
 الوسيطة الأولى هي الملف الذي تريد نقله ، والثاني هو الموقع الذي تريد نقله إليه.
 

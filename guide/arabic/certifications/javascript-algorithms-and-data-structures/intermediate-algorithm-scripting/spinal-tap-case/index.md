@@ -56,7 +56,6 @@ localeTitle: حنفية شبكية
  spinalCase('This Is Spinal Tap'); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnS/0)
 
 ### شرح الشفرة:
 
@@ -77,7 +76,6 @@ localeTitle: حنفية شبكية
  spinalCase('This Is Spinal Tap'); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnT/0)
 
 ### شرح الشفرة:
 
@@ -99,7 +97,6 @@ localeTitle: حنفية شبكية
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/EUZV)
 
 ### شرح الشفرة:
 

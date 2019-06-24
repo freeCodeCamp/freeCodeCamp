@@ -10,24 +10,26 @@ localeTitle: انتاج |
 
 إنها الطريقة الأكثر شيوعًا واستخدامًا لإخراج البيانات. من الشائع أن يتم إدخال زوجين من هذه العبارات بين العبارات لتوضيح كيفية تدفق البيانات ومعالجتها. أيضا ، يمكنك استخدام `debugger` أو نقاط التوقف في devtools أن تفعل الشيء نفسه دون تلويث التعليمات البرمجية الخاصة بك.
 
- `var numbers  = [ 1, 2, 3, 4, 5, 6, 7]; 
- numbers.forEach(function(number){ 
-  console.log(number + ' is divisible by 2', number%2 == 0); 
- }); 
-` 
+```javascript
+var numbers  = [ 1, 2, 3, 4, 5, 6, 7];
+numbers.forEach(function(number){
+  console.log(number + ' is divisible by 2', number%2 == 0);
+});
+``` 
 
 #### `console.warn`
 
 كما خمنت بالاسم ، يُستخدم هذا لعرض التحذيرات ، ويميزها اللون الأصفر النموذجي عن الخطأ الأحمر & `console.log` .
 
- `function isAdult(age){ 
-  if(Number(age) < 18){ 
-    console.warn('You are not an adult'); 
-    return false; 
-   } 
-   return true; 
- } 
-` 
+```javascript
+function isAdult(age){
+  if(Number(age) < 18){
+    console.warn('You are not an adult');
+    return false;
+   }
+   return true;
+}
+``` 
 
 #### `console.error`
 
@@ -39,55 +41,56 @@ localeTitle: انتاج |
 
 _حاول تشغيل التعليمة البرمجية أدناه في وحدة التحكم الخاصة بك_
 
- `var data = { 
-  "colors": [ 
-    { 
-      "color": "black", 
-      "category": "hue", 
-      "type": "primary", 
-      "rgba": [255,255,255,1], 
-      "hex": "#000" 
-    }, 
-    { 
-      "color": "white", 
-      "category": "value", 
-      "rgba": [0,0,0,1], 
-      "hex": "#FFF" 
-    }, 
-    { 
-      "color": "red", 
-      "category": "hue", 
-      "type": "primary", 
-      "rgba": [255,0,0,1], 
-      "hex": "#FF0" 
-    }, 
-    { 
-      "color": "blue", 
-      "category": "hue", 
-      "type": "primary", 
-      "rgba": [0,0,255,1], 
-      "hex": "#00F" 
-    }, 
-    { 
-      "color": "yellow", 
-      "category": "hue", 
-      "type": "primary", 
-      "rgba": [255,255,0,1], 
-      "hex": "#FF0" 
-    }, 
-    { 
-      "color": "green", 
-      "category": "hue", 
-      "type": "secondary", 
-      "rgba": [0,255,0,1], 
-      "hex": "#0F0" 
- 
-    }, 
-  ] 
- } 
- 
- console.table(data.colors); 
-` 
+```javascript
+var data = {
+  "colors": [
+    {
+      "color": "black",
+      "category": "hue",
+      "type": "primary",
+      "rgba": [255,255,255,1],
+      "hex": "#000"
+    },
+    {
+      "color": "white",
+      "category": "value",
+      "rgba": [0,0,0,1],
+      "hex": "#FFF"
+    },
+    {
+      "color": "red",
+      "category": "hue",
+      "type": "primary",
+      "rgba": [255,0,0,1],
+      "hex": "#FF0"
+    },
+    {
+      "color": "blue",
+      "category": "hue",
+      "type": "primary",
+      "rgba": [0,0,255,1],
+      "hex": "#00F"
+    },
+    {
+      "color": "yellow",
+      "category": "hue",
+      "type": "primary",
+      "rgba": [255,255,0,1],
+      "hex": "#FF0"
+    },
+    {
+      "color": "green",
+      "category": "hue",
+      "type": "secondary",
+      "rgba": [0,255,0,1],
+      "hex": "#0F0"
+
+    },
+  ]
+}
+
+console.table(data.colors);
+``` 
 
 يمكنك أيضًا التحكم في نوع المخرجات الذي تريد رؤيته في وحدة التحكم.
 

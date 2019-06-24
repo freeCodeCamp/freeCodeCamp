@@ -10,7 +10,7 @@ localeTitle: Вход и выход
 
 Программа Hello World использует `cout` для печати «Hello World!». на консоль:
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  
@@ -30,24 +30,24 @@ localeTitle: Вход и выход
 
 Почти все можно поместить в поток: строки, числа, переменные, выражения и т. Д. Здесь приведены некоторые примеры действительных входов потока:
 
-```C++
+```cpp
 // Notice we can use the number 42 and not the string "42". 
  cout << "The meaning of life is " << 42 << endl;` // Output: The meaning of life is 42 
 ```
 
-```C++
+```cpp
 string name = "Tim"; 
  cout << "Except for you, " << name << endl;`// Output: Except for you, Tim 
 ```
 
-```C++
+```cpp
 string name = "Tim"; 
  cout << name; 
  cout << " is a great guy!" << endl;` 
  // Output: Tim is a great guy! 
 ```
 
-```C++
+```cpp
 int a = 3; 
  cout << a*2 + 18/a << endl;`// Output: 12 
 ```
@@ -56,7 +56,7 @@ int a = 3;
 
 C ++ всегда ставит _вас_ под контроль и делает именно то, что вы ему говорите. Иногда это может удивлять, как в следующем примере:
 
-```C++
+```cpp
 string name = "Sarah"; 
  cout << "Good morning" << name << "how are you today? << endl; 
 ```
@@ -65,7 +65,7 @@ string name = "Sarah";
 
 Разрывы строк не происходят сами по себе. Вы могли бы подумать, что это напечатает рецепт на четырех строках:
 
-```C++
+```cpp
 cout << "To make bread, you need:"; 
  cout << "* One egg"; 
  cout << "* One water"; 
@@ -76,7 +76,7 @@ cout << "To make bread, you need:";
 
 Вы можете исправить это, добавив `endl` s после каждой строки, потому что, как обсуждалось ранее, `endl` вставляет символ новой строки в выходной поток. Тем не менее, это также заставляет буфер очищаться, что лишает нас небольшой производительности, так как мы могли напечатать все строки за один раз. Поэтому лучше всего было бы добавить фактических символов новой строки в конце строк и использовать `endl` в конце:
 
-```C++
+```cpp
 cout << "To make bread, you need:\n"; 
  cout << "* One egg\n"; 
  cout << "* One water\n"; 
@@ -89,7 +89,7 @@ cout << "To make bread, you need:\n";
 
 Чтобы читать с консоли, вы используете _входной поток_ `cin` же, как и `cout` , но вместо того, чтобы помещать вещи в `cin` , вы «вынимаете их». Следующая программа считывает два числа от пользователя и добавляет их вместе:
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  
@@ -112,7 +112,7 @@ cout << "To make bread, you need:\n";
 
 Оператор экстракции `<<` может быть скован. Вот та же программа, что и в прошлый раз, но написана более кратким образом:
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  
