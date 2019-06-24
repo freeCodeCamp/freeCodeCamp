@@ -15,6 +15,7 @@ When starting out with Linux, there are some basic commands everyone should know
 
 3. **man** - manual command
 - Shows you the manual for the following command. This is very helpful when trying to figure out how an unfamiliar command works. For example, type `man ls` for everything you need to know about the ls command. Type `q` to exit.
+- You can search a term or phrase on entire manual pages database to discover which pages match on them using the parameter `-k`. For example, `man -k "open files"` search the term "open files" on the synopsis of all man pages.
 
 4. **pwd** - path
 - Type `pwd` to display the path to your current directory.
@@ -55,14 +56,14 @@ When starting out with Linux, there are some basic commands everyone should know
 15. **du** - estimate file space usage
 - Use 'du' to estimate file space usage. du is abbreviation of "disk usage". This command tool reports usage by given directory
 
-16. **ln** - link LINKNAME to TARGET file/directory
+16. **df -h** Checks disk space in human readable form
+
+17. **ln** - link LINKNAME to TARGET file/directory
 - Link is pointer which connects file name to actual bytes of data on the disk. More than one link can point on the same data.
 - Use `ln` to create a link to targeted file with linkname. Link to target is created in current working directory. By default ln creates [hard link](http://www.linfo.org/hard_link.html) and requires existance of TARGET file/directory. If we add `-s`(--symbolic) to the command, [symbolic link](https://www.computerhope.com/jargon/s/symblink.htm) will be created.
 
-17. **top** - shows the system load
+18. **top** - shows the system load
 - Use `top` to get information about running processes of your system, the amount or RAM they allocate and the CPU percentage that they use. 'Top' is interactive so do not forget to press `q` when you want to quit.
-
-18. **df -h** Checks disk space in human readable form
 - Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
 
 19. **grep** -  The grep searches any given input files, selecting lines that match one or more patterns.
@@ -76,35 +77,27 @@ When starting out with Linux, there are some basic commands everyone should know
 
 22. **find** - search for files in a directory hierarchy
 - `find` searches the directory tree rooted at each given file name by evaluating the given expression from left to right, according to the rules of precedence, until the outcome is known (the left hand side is false for and operations, true for or), at which point `find` moves on to the next file name.
-
-23. **man** - Show the manual for a command
- - Use `man` to see manual of any commmand.  It will show different ways a given command can be used  
-    Example: `man ls`
  
-24. **ps** - Show active processes
- - Use `ps` to see running processes, and their process IDs  
-     Example: `ps`
+23. **ps** - Show active processes
+- Use `ps` to see running processes, and their process IDs  
+Example: `ps`
  
-25. **history**
- - Use `history` to see previously entered commands  
-    Example: `history` 
+24. **history**
+- Use `history` to see previously entered commands 
+Example: `history` 
 
-26. **passwd** - changes user passwords
+25. **passwd** - changes user passwords
 - Use `passwd -h` to look at the options available for changing passwords.
 
-27. **whoami** - display current user
+26. **whoami** - display current user
 - Use this command to display the username of the current user to the console.
 
-28. **chmod** - change permission
+27. **chmod** - change permission
 - Use 'chmod' to make a file executable and to change the permissions granted to it in Linux. For the example , imagine you have a file named `myFile.txt` . But it can't executable because you not have a permission to this file , you can use the command `chmod +x myFile.txt` or `chmod 755 myFile.txt`.
 
-29. **locate**
+28. **locate**
 - Used to locate a file in the system  
-     Example:
-     ```sh
-     locate sample.txt
-     /home/rajasimha/Desktop/sample.txt
-     ```
+Example: `locate sample.txt`
 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.

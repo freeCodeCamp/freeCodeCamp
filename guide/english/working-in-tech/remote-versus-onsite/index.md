@@ -62,6 +62,14 @@ With teams that are not 100% remote (some onsite and some remote) this can somet
 
 Larger companies may have a different version of the "in-between", where they have a number of different teams working  onsite, but in multiple different locations. For example, a team working onsite in New York and another team working onsite in Chicago. You can hang out with other team members in an office, but you also use remote working techniques (Slack, Skype, etc) to stay in contact and in sync with the other teams. The teams may all be working on the same project, or developing something independently against the same application or platform.
 
+### Benefits of Onsite Work
+
+Working onsite does have its benefits. Immersion is one of the biggest advantages, especially for newer coders who haven't worked in a team enviroment before. Working onsite allows for immersion in both company culture as well as a valuable resource of learning tools, mentors, communication, and greater control over the project. 
+
+### Benefits of Remote Work
+
+Remote work or "telecommuting" also has its benefits. There are some who are more productive when they work independently; working with less noise and distractions that may be found in open-office environments. It has been suggested that working remotely is not only good for your health but also the environment primiarily because of the duration of the daily commute. The average commute can range anywhere from 15 minutes to 2 hours depending on where you live and traffic patterns. Working from home significantly reduces the carbon footprint generated from driving back and forth. 
+
 ### More Information:
 
 [Economics of Working Remotely](https://medium.freecodecamp.org/the-economics-of-working-remotely-28d4173e16e2)
