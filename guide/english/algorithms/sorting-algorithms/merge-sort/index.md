@@ -7,7 +7,9 @@ Merge Sort is a <a href='https://guide.freecodecamp.org/algorithms/divide-and-co
 
 Since this is a recursion based algorithm, we have a recurrence relation for it. A recurrence relation is simply a way of representing a problem in terms of its subproblems. 
 
-``` T(n) = 2 * T(n / 2) + O(n) ```
+```
+T(n) = 2 * T(n / 2) + O(n)
+```
 
 Putting it in plain english, we break down the subproblem into two parts at every step and we have some linear amount of work that we have to do for merging the two sorted halves together at each step. 
 
@@ -44,6 +46,7 @@ If right > l:
 * Sorting In Place: No in a typical implementation
 * Stable: Yes
 * Parallelizable :yes (Several parallel variants are discussed in the third edition of Cormen, Leiserson, Rivest, and Stein's Introduction to Algorithms.)
+* This sorting algorithm is better for linked lists than arrays as merge operation can be done without allocating extra space in a list. Learn more about it [here](https://www.geeksforgeeks.org/why-quick-sort-preferred-for-arrays-and-merge-sort-for-linked-lists/ "Merge Sort vs Quick Sort").
 
 ### Visualization:
 * <a href='https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html'>USFCA</a>
@@ -175,9 +178,10 @@ int main()
     printf("\nSorted array is \n"); 
     printArray(arr, arr_size); 
     return 0; 
-
 ```
+
 ### Implementation in C++
+
 ```cpp
 void merge(int arr[], int l, int m, int r) 
 { 
