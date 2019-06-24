@@ -19,16 +19,17 @@
     "docker:test": "docker-compose -f docker-compose.tests.yml run --rm tests bash",
     "docker:test:init": "docker-compose -f docker-compose.tests.yml run -u root --rm tests bash change_volumes_owner.sh",
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/build/ensure-env.js",
-    "format": "npm run lint:js -- --fix",
-    "format:other": "npm run prettier -- --write",
+    "format": "npm-run-all -p format:*",
+    "format:js": "npm run lint:js -- --fix",
+    "format:css": "npm run prettier -- --write",
     "hooks:install": "node node_modules/husky/husky.js install",
     "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
     "lint": "npm-run-all -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
     "lint:guide": "cd ./tools/lint-guide/ && gulp lint",
     "lint:js": "eslint .",
-    "lint:other": "npm run prettier -- --debug-check",
-    "prettier": "prettier \"**/*.{md,css}\"",
+    "lint:css": "npm run prettier -- --check",
+    "prettier": "prettier \"**/*.css\"",
     "postinstall": "npm run bootstrap",
     "seed": "npm-run-all -p seed:*",
     "seed:auth-user": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedAuthUser",
@@ -82,12 +83,11 @@
         "git add"
       ],
       "*.md": "node ./tools/lint/lint.js",
-      "*.{md,css}": [
+      "*.css": [
         "prettier --write",
         "git add"
       ]
-    },
-    "concurrent": false
+    }
   },
   "husky": {
     "hooks": {
