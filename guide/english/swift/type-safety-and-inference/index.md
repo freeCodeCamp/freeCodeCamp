@@ -55,6 +55,7 @@ If you try to utilize the optional variable like normal you will get an error.
 ```swift
     let sumError = normalInt + optionalInt //error!
 ```
+
 Instead you must first "unwrap" the optional before you can utilize the data. There are a couple of ways doing so: forced unwrapping it and optional binding.
 
 #### Forced Unwrapping
