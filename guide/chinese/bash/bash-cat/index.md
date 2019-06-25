@@ -7,7 +7,6 @@ localeTitle: Bash Cat
 
 Cat是Unix操作系统中最常用的命令之一。
 
-
 Cat用于按顺序读取文件并将其打印到标准输出。 这个名字是从它的功能（con**cat**enate files）而来。
 
 ### 用法
