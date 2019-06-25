@@ -18,18 +18,19 @@ localeTitle: استخدم بناء جملة class لتعريف دالة منشئ
 
 ## حل:
 
- `function makeClass() { 
-  "use strict"; 
-  /* Alter code below this line */ 
-  class Vegetable { 
-    constructor(name){ 
-      this.name = name; 
-    } 
-  } 
-  /* Alter code above this line */ 
-  return Vegetable; 
- } 
-` 
+```javascript
+function makeClass() {
+  "use strict";
+  /* Alter code below this line */
+  class Vegetable {
+    constructor(name){
+      this.name = name;
+    }
+  }
+  /* Alter code above this line */
+  return Vegetable;
+}
+``` 
 
 \=======
 

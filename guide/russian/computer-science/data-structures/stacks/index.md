@@ -17,7 +17,7 @@ localeTitle: Стеки
 
 Реализация стека возможна с использованием массивов или связанных списков. Ниже приведена простая реализация массива структуры данных стека с наиболее распространенными операциями.
 
-```C++
+```cpp
 //Stack implementation using array in C++ 
  //You can also include<stack> and then use the C++ STL Library stack class. 
  

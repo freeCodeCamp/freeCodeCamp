@@ -9,7 +9,7 @@ JavaScript's `with` statement is a shorthand way to edit several properties on o
 
 
 ### Syntax
-```syntax
+```js
 with (expression)
   statement
 ```

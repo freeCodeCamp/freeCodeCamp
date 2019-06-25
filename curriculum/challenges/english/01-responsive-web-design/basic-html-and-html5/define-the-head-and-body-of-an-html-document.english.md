@@ -10,7 +10,19 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cra9bfP'
 You can add another level of organization in your HTML document within the <code>html</code> tags with the <code>head</code> and <code>body</code> elements. Any markup with information about your page would go into the <code>head</code> tag. Then any markup with the content of the page (what displays for a user) would go into the <code>body</code> tag.
 Metadata elements, such as <code>link</code>, <code>meta</code>, <code>title</code>, and <code>style</code>, typically go inside the <code>head</code> element.
 Here's an example of a page's layout:
-<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- metadata elements --&gt;<br>&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- page contents --&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</blockquote>
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- metadata elements -->
+  </head>
+  <body>
+    <!-- page contents -->
+  </body>
+</html>
+```
+
 </section>
 
 ## Instructions
@@ -33,8 +45,8 @@ tests:
     testString: assert($('html').children('body').length == 1, 'The <code>body</code> element should be a child of the <code>html</code> element.');
   - text: The <code>head</code> element should wrap around the <code>title</code> element.
     testString: assert(code.match(/<head>\s*?<title>\s*?.*?\s*?<\/title>\s*?<\/head>/gi), 'The <code>head</code> element should wrap around the <code>title</code> element.');
-  - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.
-    testString: assert($('body').children('h1').length == 1 && $('body').children('p').length == 1, 'The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.');
+  - text: The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> .
+    testString: assert(code.match(/<body>\s*?(((<h1>\s*?.*?\s*?<\/h1>\s*?)(<p>(.*\s*)*?<\/p>\s*?))|((<p>\s*?.*?\s*?<\/p>\s*?)(<h1>(.*\s*)*?<\/h1>\s*?)))<\/body>/gi), 'The <code>body</code> element should wrap around both the <code>h1</code>and <code>p</code> elements');		
 
 ```
 

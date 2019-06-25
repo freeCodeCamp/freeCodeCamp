@@ -10,7 +10,15 @@ videoUrl: 'https://scrimba.com/p/pzrPu4/cz763UD'
 Making images responsive with CSS is actually very simple. Instead of applying an absolute width to an element:
 <code>img { width: 720px; }</code>
 You can use:
-<blockquote>img {<br>&nbsp;&nbsp;max-width: 100%;<br>&nbsp;&nbsp;display: block;<br>&nbsp;&nbsp;height: auto;<br>}</blockquote>
+
+```css
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+```
+
 The <code>max-width</code> property of 100% scales the image to fit the width of its container, but the image won't stretch wider than its original width. Setting the <code>display</code> property to block changes the image from an inline element (its default), to a block element on its own line. The <code>height</code> property of auto keeps the original aspect ratio of the image.
 </section>
 

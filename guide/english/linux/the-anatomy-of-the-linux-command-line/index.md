@@ -18,7 +18,7 @@ In Linux, commands are given (typed) in the terminal. Though the terminal applic
 
 To get started using open the terminal (for Ubuntu simply hold the Ctrl + Alt + T) and you're welcomed by a series of characters arranged in this format;
 
-```linux
+```shell
 user_name@machine_name:~$
 ``` 
 

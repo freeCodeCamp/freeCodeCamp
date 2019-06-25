@@ -14,15 +14,15 @@ Así es como se ve el resultado del código:
 
 Pantalla inicial:
 
-![](https://i.imgur.com/jrnu6mE.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png)
 
 Desplegable abierto:
 
-![](https://i.imgur.com/gszPtRa.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png)
 
 Desplegable con la opción seleccionada:
 
-![](https://i.imgur.com/TKXxZGF.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png)
 
 #### HTML:
 

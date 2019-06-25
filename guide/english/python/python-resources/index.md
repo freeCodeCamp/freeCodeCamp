@@ -35,6 +35,7 @@ title: Python Resources
 *   <a href='http://www.tutorialspoint.com/python/'>Tutorials Point - Python</a>
 *   <a href='https://pythonprogramming.net' target='_blank' rel='nofollow'> Set of Starter Projects with Videos </a> - From the basics onward.
 *   <a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target='_blank' rel='nofollow'>The Flask Mega Tutorial (Miguel Grinberg)</a>
+*   <a href="https://www.pythonforengineers.com/python-for-scientists-and-engineer" target='_blank' rel='nofollow'>Python for Scientists and Engineers (Shantnu Tiwari)</a>
 *   <a href="https://www.py4e.com/" target='_blank' rel='nofollow'>Python for Everybody</a>
 *   <a href="https://www.udemy.com/python-complete/?start=0" target='_blank' rel='nofollow'>The Complete Python 3 Course: Beginner to Advanced!</a>
 

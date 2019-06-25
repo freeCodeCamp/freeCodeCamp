@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import CalendarHeatMap from 'react-calendar-heatmap';
-import startOfMonth from 'date-fns/start_of_month';
+import ReactTooltip from 'react-tooltip';
+import addDays from 'date-fns/add_days';
+import addMonths from 'date-fns/add_months';
 import startOfDay from 'date-fns/start_of_day';
 import format from 'date-fns/format';
 
@@ -20,44 +21,42 @@ const propTypes = {
   })
 };
 
-const now = Date.now();
-const today = new Date(now);
-const sixMonthsInMillseconds = 15780000000;
-const sixMonthsAgoInMilliseconds = now - sixMonthsInMillseconds;
-const sixMonthsAgo = startOfMonth(sixMonthsAgoInMilliseconds);
-
 function HeatMap({ calendar, streak }) {
-  const dateValueMap = Object.keys(calendar)
-    .map(ts => Number(ts * 1000) || null)
-    .filter(Boolean)
-    .reduce((map, current) => {
-      const startOfCurrent = format(startOfDay(current), 'YYYY-MM-DD');
-      if (startOfCurrent in map) {
-        map[startOfCurrent] = map[startOfCurrent] + 1;
-      } else {
-        map[startOfCurrent] = 1;
-      }
-      return map;
-    }, {});
+  const startOfToday = startOfDay(Date.now());
+  const sixMonthsAgo = addMonths(startOfToday, -6);
+  const startOfCalendar = format(addDays(sixMonthsAgo, -1), 'YYYY-MM-DD');
+  const endOfCalendar = format(startOfToday, 'YYYY-MM-DD');
 
-  const calendarValues = Object.keys(dateValueMap).map(key => ({
+  let calendarData = {};
+  let dayCounter = sixMonthsAgo;
+
+  while (dayCounter <= startOfToday) {
+    calendarData[format(dayCounter, 'YYYY-MM-DD')] = 0;
+    dayCounter = addDays(dayCounter, 1);
+  }
+
+  for (let timestamp in calendar) {
+    if (calendar.hasOwnProperty(timestamp)) {
+      timestamp = Number(timestamp * 1000) || null;
+      if (timestamp) {
+        const startOfTimestampDay = format(startOfDay(timestamp), 'YYYY-MM-DD');
+        calendarData[startOfTimestampDay] =
+          calendarData[startOfTimestampDay] + 1 || 1;
+      }
+    }
+  }
+
+  const calendarValues = Object.keys(calendarData).map(key => ({
     date: key,
-    count: dateValueMap[key]
+    count: calendarData[key]
   }));
 
   return (
-    <FullWidthRow id='cal-heatmap-container'>
-      <Helmet>
-        <script
-          src='https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js'
-          type='text/javascript'
-        />
-        <link href='/css/cal-heatmap.css' rel='stylesheet' />
-      </Helmet>
+    <FullWidthRow>
       <FullWidthRow>
         <CalendarHeatMap
           classForValue={value => {
-            if (!value) {
+            if (!value || value.count < 1) {
               return 'colour-empty';
             }
             if (value.count > 4) {
@@ -65,19 +64,39 @@ function HeatMap({ calendar, streak }) {
             }
             return `colour-scale-${value.count}`;
           }}
-          endDate={today}
-          startDate={sixMonthsAgo}
+          endDate={endOfCalendar}
+          startDate={startOfCalendar}
+          tooltipDataAttrs={value => {
+            let valueCount;
+            if (value && value.count === 1) {
+              valueCount = '1 point';
+            } else if (value && value.count > 1) {
+              valueCount = `${value.count} points`;
+            } else {
+              valueCount = 'No points';
+            }
+            return {
+              'data-tip': `<strong>${valueCount}</strong> on ${new Date(
+                value.date
+              ).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}`
+            };
+          }}
           values={calendarValues}
         />
+        <ReactTooltip className='react-tooltip' effect='solid' html={true} />
       </FullWidthRow>
       <Spacer />
       <FullWidthRow>
         <div className='streak-container'>
           <span className='streak'>
-            <strong>Longest Streak:</strong> {streak.longest || 1}
+            <strong>Longest Streak:</strong> {streak.longest || 0}
           </span>
           <span className='streak'>
-            <strong>Current Streak:</strong> {streak.current || 1}
+            <strong>Current Streak:</strong> {streak.current || 0}
           </span>
         </div>
       </FullWidthRow>

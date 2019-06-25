@@ -73,7 +73,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+    align-items: center;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 200px;
+    font-size: 24px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 200px;
+    font-size: 18px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"><p>Hello</p></div>
+  <div id="box-2"><p>Goodbye</p></div>
+</div>
 ```
 </section>

@@ -16,20 +16,20 @@ HTML5 يقدم مجموعة من العناصر الدلالية. على الر�
 
 ## مثال بسيط على مستند HTML
 
- `
-<!DOCTYPE html> 
- <html> 
- <head> 
-  <title>Page Title</title> 
- </head> 
- <body> 
- 
-  <h1>My First Heading</h1> 
-  <p>My first paragraph.</p> 
- 
- </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+
+  <h1>My First Heading</h1>
+  <p>My first paragraph.</p>
+
+</body>
+</html>
+``` 
 
 DOCTYPE html: يحدد هذا المستند ليكون HTML5
 

@@ -10,7 +10,14 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cDKVPuv'
 HTML has a special element for creating <code>unordered lists</code>, or bullet point style lists.
 Unordered lists start with an opening <code>&#60;ul&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, unordered lists close with a <code>&#60;/ul&#62;</code>
 For example:
-<blockquote>&#60;ul&#62;<br>&nbsp;&nbsp;&#60;li&#62;milk&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;cheese&#60;/li&#62;<br>&#60;/ul&#62;</blockquote>
+
+```html
+<ul>
+  <li>milk</li>
+  <li>cheese</li>
+</ul>
+```
+
 would create a bullet point style list of "milk" and "cheese".
 </section>
 

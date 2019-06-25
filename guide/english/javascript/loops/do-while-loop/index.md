@@ -21,9 +21,12 @@ Here is the **syntax** for `do...while` loop:
 
     var i = 0;
     do {
+    
       i = i + 1;
       console.log(i);
-    } while (i < 5);
+    } 
+    
+    while (i < 5);
 
     Output:
     1

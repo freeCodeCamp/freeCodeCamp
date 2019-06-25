@@ -1,7 +1,8 @@
 ---
 title: C++
 localeTitle: C ++
----# Olá Mundo! - Seu primeiro programa C ++
+---
+# Olá Mundo! - Seu primeiro programa C ++
 
 ## O que é o C ++?
 
@@ -79,7 +80,7 @@ int main()
 
 ### O código deve ser algo como isto:
 
-![Img](https://i.imgur.com/d1liGwI.png)
+![Img](https://cdn-media-1.freecodecamp.org/imgr/d1liGwI.png)
 
 Os programadores usam um programa Hello World (como este) como um ritual no uso de uma nova linguagem de programação. É um símbolo de boa sorte.  
 _Você terminou de codificar seu primeiro programa C ++ e entendeu a maior parte do código que você escreveu / digitou. PARABÉNS!_

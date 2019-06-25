@@ -35,6 +35,14 @@ int power(int x, unsigned int y) {
         return x*temp*temp; 
 } 
 ```
+Why is this faster?
+
+Suppose we have x = 5, y = 4, we know that our answer is going to be (5 * 5 * 5 * 5). 
+
+If we break this down, we notice that we can write (5 * 5 * 5 * 5) as (5 * 5) * 2 and further, we can write (5 * 5) as 5 * 2.
+
+Through this observation, we can optimize our function to O(log n) by calculating power(x, y/2) only once and storing it. 
+
 
 ## Modular Exponentiation
 
@@ -49,7 +57,7 @@ int power(int x, unsigned int y, int p) {
             res = (res*x) % p; 
   
         // y must be even now 
-        y = y>>1; 
+        y = y >> 1; 
         x = (x*x) % p;   
     } 
     return res; 

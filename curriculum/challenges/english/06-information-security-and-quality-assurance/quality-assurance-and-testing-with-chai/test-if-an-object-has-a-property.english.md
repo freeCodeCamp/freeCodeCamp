@@ -13,7 +13,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-Use <code>#property</code> or <code>#notProperty</code> where it is appropriate.
+Use <code>assert.property()</code> or <code>assert.notProperty()</code> to make the tests pass. 
 </section>
 
 ## Tests

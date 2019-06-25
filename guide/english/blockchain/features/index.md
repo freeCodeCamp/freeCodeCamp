@@ -3,9 +3,9 @@ title: Features of BlockTech
 ---
 ## Features of Blockchain Technology
 
-Blockchain is usually thought of as Bitcoin and cryptocurrency. However, there are many other applications of this technology. We are barely scratching the surface of it. With all the hype around it, it's clear blockchain technology will play an important role in the future of applications and data. But what makes it unique?
+Blockchain is the underlying technology of Bitcoin and other cryptocurrencies. There are also many other areas in which this technology can be used. We have barely begun to scratch the surface of the technology's potential. With all the hype around it, it's evident that Blockchain Technology (BlockTech) is going to be huge. But what makes it unique?
 
-In this article, we are going to explore the key characteristic features of blockchain.
+In this article, we are going to explore the key features of BlockTech.
 
 #### _* Decentralized System_
 
@@ -13,20 +13,21 @@ In this article, we are going to explore the key characteristic features of bloc
 
 When something is controlled by a central authority, where the power to make decisions lies in the hands of the apex of the management, such system is called a centralized system. Banks, for example, are a centralized system, where it's the responsibility of the Governor to make decisions.
 
-On the contrary, when the power is vested in the hands of the people or the users, such system is said to be a decentralized system.
-The peer to peer network, Torrent, for example is a decentralised system, where the user has complete control.
+On the contrary, when the power is vested in the hands of the people or the users, such system is said to be a Decentralized System.
+
+The peer to peer network, Torrent, for example, is a decentralised system where the user has complete control.
 
 ![Decentralized Systems](https://raw.githubusercontent.com/Vagisha16/Hw3/master/blockchain_article_pic.jpg)
 
 #### _* Distributed Ledger_
 
-> Blockchains use Distributed Ledger Technology (DLT) to store and access data.
+> Blockchains use distributed Ledger Technology (DLT) to store and access data.
 
-When something is stored on a distributed ledger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledgers do not have a central database or administration functionality.
+When something is stored on a Distributed Ledger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledgers do not have a central database or administration functionality.
 
 ![Distributed Ledger](https://qph.fs.quoracdn.net/main-qimg-2e24c4949a63eefa9bbab1773e185cdd)
 
-When applied in a decentralized system like blockchain, each user has a copy of the ledger and participates in the transaction verification. This ensures security. Since the data is distributed, there is no centralized version of the data for the hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates any single point of failure.
+When applied in a decentralized system like Blockchain, each user has a copy of the ledger and may (depending on the blockchain) participate in the transaction verification. This gives Blockchain the propeerty of immutability and ensures security. Since the data is distributed there is no centralized version of the data for hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates a single point of failure.
 
 #### _* Secure Ecosystem (Cryptographic Hash)_
 

@@ -10,7 +10,7 @@ Este puede ser un poco complicado porque JSX es muy similar a HTML pero **NO es 
 
 Repasemos los pasos para que puedas entender la diferencia. Primero establece tu etiqueta de estilo en un **objeto JavaScript** .
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 
@@ -26,7 +26,7 @@ Ahora tienes tu etiqueta de estilo establecida en un objeto vacío. Observe cóm
 
 En segundo lugar, vamos a configurar el color en rojo.
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 
@@ -42,7 +42,7 @@ Finalmente, vamos a establecer el tamaño de la fuente a 72px.
 
 ### Alerón
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 

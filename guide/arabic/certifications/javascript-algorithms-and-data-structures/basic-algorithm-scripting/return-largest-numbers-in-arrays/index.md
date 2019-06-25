@@ -53,7 +53,6 @@ localeTitle: أكبر عدد من المصفوفات في المصفوفة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/734)
 
 ### شرح الشفرة:
 
@@ -82,7 +81,6 @@ localeTitle: أكبر عدد من المصفوفات في المصفوفة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/733)
 
 ### شرح الشفرة:
 
@@ -106,7 +104,6 @@ localeTitle: أكبر عدد من المصفوفات في المصفوفة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/17)
 
 ### شرح الشفرة:
 

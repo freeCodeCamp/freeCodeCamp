@@ -1,4 +1,5 @@
 import {
+  delay,
   put,
   select,
   call,
@@ -7,7 +8,7 @@ import {
   fork,
   getContext
 } from 'redux-saga/effects';
-import { delay, channel } from 'redux-saga';
+import { channel } from 'redux-saga';
 
 import {
   challengeDataSelector,
@@ -36,9 +37,16 @@ export function* executeChallengeSaga() {
   }
 
   const consoleProxy = yield channel();
+
   try {
     yield put(initLogs());
     yield put(initConsole('// running tests'));
+    // reset tests to initial state
+    const tests = (yield select(challengeTestsSelector)).map(
+      ({ text, testString }) => ({ text, testString })
+    );
+    yield put(updateTests(tests));
+
     yield fork(logToConsole, consoleProxy);
     const proxyLogger = args => consoleProxy.put(args);
 
@@ -51,7 +59,7 @@ export function* executeChallengeSaga() {
       proxyLogger,
       document
     );
-    const testResults = yield executeTests(testRunner);
+    const testResults = yield executeTests(testRunner, tests);
 
     yield put(updateTests(testResults));
     yield put(updateConsole('// tests completed'));
@@ -79,9 +87,7 @@ function* buildChallengeData(challengeData) {
   }
 }
 
-function* executeTests(testRunner) {
-  const tests = yield select(challengeTestsSelector);
-  const testTimeout = 5000;
+function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testResults = [];
   for (const { text, testString } of tests) {
     const newTest = { text, testString };
@@ -93,9 +99,7 @@ function* executeTests(testRunner) {
         throw err;
       }
     } catch (err) {
-      newTest.message = text
-        .replace(/<code>(.*?)<\/code>/g, '$1')
-        .replace(/<wbr>/g, '');
+      newTest.message = text;
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;

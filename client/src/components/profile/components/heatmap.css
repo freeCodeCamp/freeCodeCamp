@@ -31,3 +31,8 @@
 .react-calendar-heatmap .colour-scale-a-lot {
   fill: #006400;
 }
+
+.react-tooltip {
+  background-color: #006400 !important;
+  border: 1px solid black !important;
+}

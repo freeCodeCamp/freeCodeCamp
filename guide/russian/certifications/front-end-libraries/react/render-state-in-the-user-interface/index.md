@@ -12,7 +12,7 @@ localeTitle: Состояние визуализации в пользовате
 
 ## Решение
 
-```react.js
+```jsx
 class MyComponent extends React.Component { 
   constructor(props) { 
     super(props); 

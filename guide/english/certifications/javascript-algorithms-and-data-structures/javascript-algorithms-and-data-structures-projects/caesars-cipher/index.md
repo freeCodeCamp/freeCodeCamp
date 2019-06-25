@@ -1,18 +1,6 @@
 ---
 title: Caesars Cipher
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
-
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
-
-*   You need to write a function, which will take a string encoded with _Caesar cipher_ as a parameter and decode it.
-*   The one used here is ROT13 where the value of the letter is shifted by 13 places. e.g. 'A' ![:left_right_arrow:](https://forum.freecodecamp.com/images/emoji/emoji_one/left_right_arrow.png?v=3 ":left_right_arrow:") 'N', 'T' ![:left_right_arrow:](https://forum.freecodecamp.com/images/emoji/emoji_one/left_right_arrow.png?v=3 ":left_right_arrow:") 'G'.
-*   You have to shift it back 13 positions, such that 'N' ![:left_right_arrow:](https://forum.freecodecamp.com/images/emoji/emoji_one/left_right_arrow.png?v=3 ":left_right_arrow:") 'A'.
-
-#### Relevant Links
-
-*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charcodeat/15933' target='_blank' rel='nofollow'>String.prototype.charCodeAt</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode' target='_blank' rel='nofollow'>String.fromCharCode</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
@@ -40,27 +28,26 @@ Leave anything that doesn't come between A-Z as it is.
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 ```javascript
-    function rot13(str) {
-      // Split str into a character array
-      return str.split('')
-      // Iterate over each character in the array
-        .map.call(str, function(char) {
-          // Convert char to a character code
-          x = char.charCodeAt(0);
-          // Checks if character lies between A-Z
-          if (x < 65 || x > 90) {
-            return String.fromCharCode(x);  // Return un-converted character
-          }
-          //N = ASCII 78, if the character code is less than 78, shift forward 13 places
-          else if (x < 78) {
-            return String.fromCharCode(x + 13);
-          }
-          // Otherwise shift the character 13 places backward
-          return String.fromCharCode(x - 13);
-        }).join('');  // Rejoin the array into a string
-    }
+function rot13(str) {
+  // Split str into a character array
+  return str.split('')
+    // Iterate over each character in the array
+    .map.call(str, function(char) {
+      // Convert char to a character code
+      var x = char.charCodeAt(0);
+      // Checks if character lies between A-Z
+      if (x < 65 || x > 90) {
+        return String.fromCharCode(x);  // Return un-converted character
+      }
+      //N = ASCII 78, if the character code is less than 78, shift forward 13 places
+      else if (x < 78) {
+        return String.fromCharCode(x + 13);
+      }
+      // Otherwise shift the character 13 places backward
+      return String.fromCharCode(x - 13);
+    }).join('');  // Rejoin the array into a string
+}
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/38' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -72,33 +59,33 @@ Leave anything that doesn't come between A-Z as it is.
 
 #### Relevant Links
 
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>Array.prototype.map</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>String.prototype.split</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>Array.prototype.join</a>
+*   <a href='https://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>Array.prototype.map</a>
+*   <a href='https://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>String.prototype.split</a>
+*   <a href='https://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>Array.prototype.join</a>
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 ```javascript
-    // Solution with Regular expression and Array of ASCII character codes
-    function rot13(str) {
-      var rotCharArray = [];
-      var regEx = /[A-Z]/ ;
-      str = str.split("");
-      for (var x in str) {
-        if (regEx.test(str[x])) {
-          // A more general approach
-          // possible because of modular arithmetic
-          // and cyclic nature of rot13 transform
-          rotCharArray.push((str[x].charCodeAt() - 65 + 13) % 26 + 65);
-        } else {
-          rotCharArray.push(str[x].charCodeAt());
-        }
-      }
-      str = String.fromCharCode.apply(String, rotCharArray);
-      return str;
+// Solution with Regular expression and Array of ASCII character codes
+function rot13(str) {
+  var rotCharArray = [];
+  var regEx = /[A-Z]/;
+  str = str.split("");
+  for (var x in str) {
+    if (regEx.test(str[x])) {
+      // A more general approach
+      // possible because of modular arithmetic
+      // and cyclic nature of rot13 transform
+      rotCharArray.push((str[x].charCodeAt() - 65 + 13) % 26 + 65);
+    } else {
+      rotCharArray.push(str[x].charCodeAt());
     }
+  }
+  str = String.fromCharCode.apply(String, rotCharArray);
+  return str;
+}
 
-    // Change the inputs below to test
-    rot13("LBH QVQ VG!");
+// Change the inputs below to test
+rot13("LBH QVQ VG!");
 ```
 ### Code Explanation:
 
@@ -145,8 +132,6 @@ Leave anything that doesn't come between A-Z as it is.
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply' target='_blank' rel='nofollow'>Function.apply</a>
 *   <a href='https://forum.freecodecamp.com/t/regular-expressions-resources/15931' target='_blank' rel='nofollow'>Regex</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test' target='_blank' rel='nofollow'>Regex.test</a>
-
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/39' target='_blank' rel='nofollow'>Run Code</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 

@@ -10,12 +10,12 @@ localeTitle: علامة div
 
 فيما يلي مثال لكيفية عرض قسم بنفس اللون:
 
- `
-<div style="color:#ff0000"> 
-  <h3>my heading</h3> 
-  <p>my paragraph</p> 
- </div> 
-` 
+```html
+<div style="color:#ff0000">
+  <h3>my heading</h3>
+  <p>my paragraph</p>
+</div>
+``` 
 
 #### معلومات اكثر:
 

@@ -3,35 +3,38 @@ title: Sort an Array Alphabetically using the sort Method
 ---
 ## Sort an Array Alphabetically using the sort Method
 
-### Method
+Hint #1
 
-In the example given we see how to write a function which will return a new array in reverse alphabetical order. 
+You need to use a "compare function" as the callback function of the sort method.
 
-```javascript
+For example, the following is how you would sort an array in reverse alphabetical order.
 
-function reverseAlpha(arr) {
-  return arr.sort(function(a, b) {
-    return a !== b ? a > b ? -1 : 1 : 0;
+```js
+function reverseAlphabeticalOrder(arr) {
+  // Add your code below this line
+  return arr.sort(function(a,b) {
+    return a === b ? 0 : a < b ? 1 : -1;
   });
+  // Add your code above this line
 }
-reverseAlpha(['l', 'h', 'z', 'b', 's']);
+reverseAlphabeticalOrder(['l', 'h', 'z', 'b', 's']);
 // Returns ['z', 's', 'l', 'h', 'b']
-
 ```
 
-Using this logic, simply reverse engineer the function to return a new array in alphabetical order. 
+### Solution #1
 
-### Solution
+<details>
+<summary>Spoiler Alert - Only click here to see the solution</summary>
 
-```javascript
-
+```js
 function alphabeticalOrder(arr) {
   // Add your code below this line
   return arr.sort(function(a,b) {
-    return a !== b ? a < b ? -1 : 1 : 0;
+    return a === b ? 0 : a < b ? -1 : 1;
   });
   // Add your code above this line
 }
 alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
-
 ```
+
+</details>

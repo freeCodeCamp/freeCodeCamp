@@ -18,57 +18,64 @@ Yarn هو مدير حزم لرمزك. يسمح لك باستخدام ومشار�
 
 **بدء مشروع جديد**
 
- `yarn init 
-` 
+```
+yarn init
+``` 
 
 سيفتح الأمر `yarn init` نموذجًا تفاعليًا لإنشاء مشروع غزل. ينشئ `yarn init` `package.json` ملف `package.json` يخزن المعلومات حول مشروعك. سيتم فتح هذا النموذج التفاعلي بالأسئلة التالية:
 
- `name (your-project): 
- version (1.0.0): 
- description: 
- entry point (index.js): 
- git repository: 
- author: 
- license (MIT): 
-` 
+```
+name (your-project):
+version (1.0.0):
+description:
+entry point (index.js):
+git repository:
+author:
+license (MIT):
+``` 
 
 يمكنك إما كتابة الإجابات لكل خيار أو فقط اضغط على إدخال دون كتابة أي شيء لاستخدام الافتراضي أو ترك فارغ. يمكنك دائمًا الانتقال إلى محرر النصوص المفضل لديك لتغيير ملف `package.json` ، إذا لزم الأمر.
 
 يجب أن يكون ملف `package.json` الخاص بك مشابهاً لهذا:
 
- `{ 
-  "name": "your-new-project", 
-  "version": "1.0.0", 
-  "description": "A description of your new project.", 
-  "main": "index.js", 
-  "repository": { 
-    "url": "https://github.com/your-username/your-new-project", 
-    "type": "git" 
-  }, 
-  "author": "Your Name <your_name@example.com>", 
-  "license": "MIT" 
- } 
-` 
+```
+{
+  "name": "your-new-project",
+  "version": "1.0.0",
+  "description": "A description of your new project.",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/your-username/your-new-project",
+    "type": "git"
+  },
+  "author": "Your Name <your_name@example.com>",
+  "license": "MIT"
+}
+``` 
 
 **إضافة تبعية**
 
- `yarn add [package] 
-` 
+```
+yarn add [package]
+``` 
 
 **ترقية التبعية**
 
- `yarn upgrade [package] 
-` 
+```
+yarn upgrade [package]
+``` 
 
 **إزالة التبعية**
 
- `yarn remove [package] 
-` 
+```
+yarn remove [package]
+``` 
 
 **تثبيت جميع تبعيات المشروع**
 
- `yarn install 
-` 
+```
+yarn install
+``` 
 
 #### معلومات اكثر:
 

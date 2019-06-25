@@ -124,6 +124,15 @@
   .content {
     height: auto;
   }
+  #top-right-nav.guide-top-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  #top-nav .guide-menu-button {
+    display: none;
+  }
 }
 
 .content,

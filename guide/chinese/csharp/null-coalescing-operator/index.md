@@ -10,7 +10,7 @@ C＃中的null-coalescing运算符用于帮助将一个变量分配给另一个�
 
 由于`name`为`null` ， `clientName`将为`clientName`分配值“John Doe”。
 
-```cs
+```csharp
 string name = null; 
  
  string clientName = name ?? "John Doe"; 
@@ -18,7 +18,7 @@ string name = null;
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > John Doe 
 ```
 
@@ -26,7 +26,7 @@ string name = null;
 
 由于`name`不为`null` ， `clientName`将为`clientName`分配`name`的值，即“Jane Smith”。
 
-```cs
+```csharp
 string name = "Jane Smith"; 
  
  string clientName = name ?? "John Doe"; 
@@ -34,7 +34,7 @@ string name = "Jane Smith";
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > Jane Smith 
 ```
 
@@ -42,7 +42,7 @@ string name = "Jane Smith";
 
 您可以使用`if...else`语句来测试是否存在`null`并分配不同的值。
 
-```cs
+```csharp
 string clientName; 
  
  if (name != null) 
@@ -53,7 +53,7 @@ string clientName;
 
 但是，使用null-coalescing运算符可以大大简化这一点。
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 
@@ -61,13 +61,13 @@ string clientName = name ?? "John Doe";
 
 也可以使用条件运算符来测试`null`的存在并分配不同的值。
 
-```cs
+```csharp
 string clientName = name != null ? name : "John Doe"; 
 ```
 
 同样，这可以使用null-coalescing运算符进行简化。
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 

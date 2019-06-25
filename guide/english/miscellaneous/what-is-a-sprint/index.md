@@ -18,7 +18,7 @@ In addition, in some organizations developers will meet daily to discuss project
 2. What are you working on today?  
 3. Are you blocked?
 
-![sprint schedule](https://i.imgur.com/l8EAw1L.png "example of sprint schedule")
+![sprint schedule](https://cdn-media-1.freecodecamp.org/imgr/l8EAw1L.png "example of sprint schedule")
 
 The above is an example of a sprint plan which has been laid out in six 30 day sprints. You can see that there is a Sprint Dev in each of the six sprints but from Sprint 2 on there is something labeled as a **Sprint # Increment**.
 

@@ -62,7 +62,6 @@ localeTitle: قيصر تشفير
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/38)
 
 ### شرح الشفرة:
 
@@ -150,7 +149,6 @@ localeTitle: قيصر تشفير
 *   [رجإكس](https://forum.freecodecamp.com/t/regular-expressions-resources/15931)
 *   [Regex.test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/39)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotating_light:") الحل المتقدم للكود:
 

@@ -8,18 +8,19 @@ localeTitle: التركيب
 
 يمكنك ببساطة تضمين مكتبة React في صفحتك على الويب مثل 2 :
 
- `
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/cjs/react.production.min.js"></script> 
-` 
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/cjs/react.production.min.js"></script>
+``` 
 
 يريد المبرمجون الأذكياء توفير  طريقة أكثر عملية وإنتاجية: [إنشاء تطبيق React](https://github.com/facebookincubator/create-react-app)
 
- `npm install -g create-react-app 
- create-react-app my-app 
- 
- cd my-app 
- npm start 
-` 
+```bash
+npm install -g create-react-app
+create-react-app my-app
+
+cd my-app
+npm start
+``` 
 
 سيؤدي ذلك إلى تجهيز بيئة التطوير الخاصة بك محلياً بحيث يمكنك استخدام أحدث ميزات JavaScript ، وتوفير تجربة رائعة للمطورين ، وتحسين إنتاجيتك.
 

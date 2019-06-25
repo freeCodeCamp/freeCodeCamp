@@ -7,7 +7,7 @@ title: Share File Using Python SimpleHTTPserver
 2.  Open terminal in Ubuntu and make sure you have python installed in your PC.
 3.  If not installed then install it by typing in terminal "sudo apt-get install python" without quotes.
 4.  Goto the directory whose file you want to share by using cd(change directory) command.
-5.  Type this command "python -m simpleHTTPserver" without quotes.
+5.  Type this command "python -m SimpleHTTPServer" without quotes.
 6.  Open new terminal and type ifconfig and find your IP address.
 
 ## Now in the second computer

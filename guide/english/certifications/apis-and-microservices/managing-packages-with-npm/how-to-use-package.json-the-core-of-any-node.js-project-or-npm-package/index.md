@@ -24,9 +24,8 @@ Remember, you're writing JSON, so make sure you use
 2. `"key": value` format
 3. the correct number of commas
 
- ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️  SPOILER ALERT. DO NOT SCROLL DOWN IF YOU WISH TO KEEP TRYING ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️ ❗️
- 
-  
+SPOILER ALERT. DO NOT SCROLL DOWN IF YOU WISH TO KEEP TRYING
+   
  ```json
  {
   "name": "fcc-learn-npm-package-json",

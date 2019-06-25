@@ -9,7 +9,7 @@ title: BSD operating system
 
 Berkeley Software Distribution (BSD) is a group of related open source Unix-like operating systems (OS) with origins in early versions of Research Unix at Bell Labs.
 FreeBSD is the most popular member.
-
+BSD is developed by Berkeley Software Design, Inc., written in C language.
 BSD is configured for internet hosting, web hosting, and hosting many servers on one system.
 It is the first OS to have added an internet protocol.
 BSD OSes have a very strongly enforced time-sharing system, which makes them most useful where resources are shared between processes.

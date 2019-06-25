@@ -1,7 +1,7 @@
 ---
 title: Constructors
-
 ---
+
 Constructors are functions or methods in a program that creates an object of a class and can also initialize attributes for the object. The object is an instance of the class and can perform the methods/functions defined within the class.
 
 This includes **getter** (e.g., getName()) / **setter** (e.g., setName()) methods. Basically, every Java Class has a constructor which is the method called first when any object of the class is initialized. Think of it as the creation of a new attribute, not unlike the declaration of a new data type.
@@ -154,9 +154,10 @@ The copy constructor is a constructor which creates an object by initializing it
 1. Initialize an object from another of the same type.
 2. Copy an object to pass it as an argument to a function.
 3. Copy an object to return it from a function.
-   Here is a program that shows a simple use of copy constructor:
 
-```Java
+Here is a program that shows a simple use of copy constructor:
+```java
+
 class Complex {
  
     private double re, im;
@@ -178,13 +179,38 @@ class Complex {
 }
 ```
 
+## Refer to constructor from current class 
+Constructor can also be invoked from another constructor inside of same class. Invocation of one constructor inside of another constructor is being performed by using this keyword which contains all parameteres which signutare of 1st constructor holds. For more clear explanation example is given below:
+
+```java
+class Car { 
+    String brand;
+    String model;
+    int seats;
+    
+    // 1st constructor
+    public Car(String brand, String model) {
+        this.brand = brand;
+        this.model = model; 
+    }
+    
+    // 2nd constructor
+    public Car(String brand, String model, int seats) {
+        this(brand, model); // invoking 1st constructor by passing parameters stated inside of this constructors signature
+        this.seats = seats;
+    }
+    
+}
+```
+
+
+
 [run the full code](https://repl.it/MwnJ)
 
 ## Constructor Chaining
-
 A chaining constructor is when a constructor calls another constructor from the same class.It can be used for multiple ways to create one Object which can be useful.
 
-```Java
+```java
 class Number {
  
     int number;
@@ -209,5 +235,59 @@ class Number {
 }
 ```
 
-#### More Information:
+### Important things to note about Constructors in Java
+- It is not always necessary to have a constructor in Java. Java automatically make an empty constructor for you, BUT it is the case when you do not have a parameterized constructor.
+- If you have a parameterized constructor and you want to make an object with empty constructor (without any parameters) then it is not possible without creating an empty constructor yourself. <br /><br /> Lets look at this with an example:
+
+```java
+public class Test
+{
+
+}
+
+public static void main(String[] args) 
+{
+    Test b = new Test();    // It's ok, because we do not have a parametrized constructor
+}
+```
+
+But if there is a parametrized constructor and we wanted to make an object of that class without parametrized constructor, program will 
+not compile
+
+```java
+public class Test
+{
+    Test(int a)     // Parametrized Constructor
+    {
+    }
+}
+
+public static void main(String[] args) 
+{
+    // There will be an error on line below because we have a parametrized constructor and have not made an empty constructor ourselves 
+    Test b = new Test();   
+}
+```
+
+The above code should be changed to the following to compile properly:
+```java
+public class Test
+{
+    Test()      // Empty Constructor
+    {
+    } 
+    
+    Test(int a)     // Parametrized Constructor
+    {
+    }
+}
+
+public static void main(String[] args) 
+{
+    // Now this will compile properly 
+    Test b = new Test();   
+}
+```
+
+## Additional Resources
 - [Oracle Java Docs :Constructor Declarations](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.8)

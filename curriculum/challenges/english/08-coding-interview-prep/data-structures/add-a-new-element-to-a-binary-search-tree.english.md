@@ -29,126 +29,120 @@ tests:
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); const expectedResult = [ 1, 4, 7, 8, 34, 45, 73, 87 ]; const result = test.inOrder(); return (expectedResult.toString() === result.toString()); })(), 'The add method adds elements according to the binary search tree rules.');
   - text: Adding an element that already exists returns <code>null</code>
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); return test.add(4) == null; })(), 'Adding an element that already exists returns <code>null</code>');
-
 ```
-
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 function BinarySearchTree() {
-    this.root = null;
-    // change code below this line
-    // change code above this line
+  this.root = null;
+  // change code below this line
+  // change code above this line
 }
 ```
-
 </div>
-
 
 ### After Test
 <div id='js-teardown'>
 
 ```js
 BinarySearchTree.prototype = {
-    isBinarySearchTree() {
-        if (this.root == null) {
-            return null;
-        } else {
-            var check = true;
-            function checkTree(node) {
-                if (node.left != null) {
-                    var left = node.left;
-                    if (left.value > node.value) {
-                        check = false;
-                    } else {
-                        checkTree(left);
-                    }
-                }
-                if (node.right != null) {
-                    var right = node.right;
-                    if (right.value < node.value) {
-                        check = false;
-                    } else {
-                        checkTree(right);
-                    };
-                };
-            };
-            checkTree(this.root);
-            return check;
-        };
+  isBinarySearchTree() {
+    if (this.root == null) {
+      return null;
+    } else {
+      var check = true;
+      function checkTree(node) {
+        if (node.left != null) {
+          var left = node.left;
+          if (left.value > node.value) {
+            check = false;
+          } else {
+            checkTree(left);
+          }
+        }
+        if (node.right != null) {
+          var right = node.right;
+          if (right.value < node.value) {
+            check = false;
+          } else {
+            checkTree(right);
+          }
+        }
+      }
+      checkTree(this.root);
+      return check;
     }
+  }
 };
 BinarySearchTree.prototype = {
-    inOrder() {
-        if (!this.root) { return null; }
-        var result = new Array();
-        function traverseInOrder(node) {
-             node.left && traverseInOrder(node.left);
-             result.push(node.value);
-             node.right && traverseInOrder(node.right);
-        }
-        traverseInOrder(this.root);
-        return result;
+  inOrder() {
+    if (!this.root) {
+      return null;
     }
+    var result = new Array();
+    function traverseInOrder(node) {
+      node.left && traverseInOrder(node.left);
+      result.push(node.value);
+      node.right && traverseInOrder(node.right);
+    }
+    traverseInOrder(this.root);
+    return result;
+  }
 };
 ```
-
 </div>
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-
 ```js
 function Node(value) {
- this.value = value;
- this.left = null;
- this.right = null;
- }
- function BinarySearchTree() {
- this.root = null;
- this.add = function (element) {
- let current = this.root;
- if (!current) {
- this.root = new Node(element)
- return;
- } else {
- const searchTree = function (current) {
- if (current.value > element) {
- if (current.left) { //si existe
- return searchTree(current.left)
- } else {
- current.left = new Node(element);
- return;
- }
- } else if (current.value < element) {
-  if (current.right) {
- return searchTree(current.right)
- } else {
- current.right = new Node(element)
- return;
- }
- } else {
- return null;
- }
- }
- return searchTree(current);
- }
- }
- }
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  this.add = function(element) {
+    let current = this.root;
+    if (!current) {
+      this.root = new Node(element);
+      return;
+    } else {
+      const searchTree = function(current) {
+        if (current.value > element) {
+          if (current.left) {
+            //si existe
+            return searchTree(current.left);
+          } else {
+            current.left = new Node(element);
+            return;
+          }
+        } else if (current.value < element) {
+          if (current.right) {
+            return searchTree(current.right);
+          } else {
+            current.right = new Node(element);
+            return;
+          }
+        } else {
+          return null;
+        }
+      };
+      return searchTree(current);
+    }
+  };
+}
 ```
-
 </section>

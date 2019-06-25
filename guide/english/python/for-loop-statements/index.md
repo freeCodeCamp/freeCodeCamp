@@ -54,7 +54,7 @@ Give me a 'n'!
 
 Some ways in which For loops are used:
 
-**Iterate over the range() function**
+### Iterate over the range() function
 
 ```python
 for i in range(10):
@@ -94,13 +94,13 @@ Output:
 >
 ```
 
-**xrange() function**
+### xrange() function
 
 For the most part, xrange and range are the exact same in terms of functionality. They both provide a way to generate a list of integers for you to use, however you please. The only difference is that range returns a Python list object and xrange returns an xrange object. It means that xrange doesn't actually generate a static list at run-time like range does. It creates the values as you need them with a special technique called yielding. This technique is used with a type of object known as generators.
 
 One more thing to add. In Python 3.x, the xrange function does not exist anymore. The range function now does what xrange does in Python 2.x
 
-**Iterate over values in a list or tuple**
+### Iterate over values in a list or tuple
 
 ```python
 A = ["hello", 1, 65, "thank you", [2, 3]]
@@ -119,7 +119,7 @@ thank you
 [2, 3]
 >
 ```
-**Iterate over characters in a string**
+### Iterate over characters in a string
 ```python
 for char in "How fun!":
   print("Current char: "+char)
@@ -139,8 +139,7 @@ Current char: !
 >
 ```
 
-
-**Iterate over keys in a dictionary (aka hashmap)**
+### Iterate over keys in a dictionary (aka hashmap)
 
 ```python
 fruits_to_colors = {"apple": "#ff0000",
@@ -160,7 +159,8 @@ lemon #ffff00
 orange #ffa500
 >
 ```
-**Iterate over two lists of same size in a single loop with the zip() function**
+
+### Iterate over two lists of same size in a single loop with the zip() function
 
 ```python
 A = ["a", "b", "c"]
@@ -180,8 +180,7 @@ c e False
 >
 ```
 
-
-**Iterate over a list and get the corresponding index with the enumerate() function**
+### Iterate over a list and get the corresponding index with the enumerate() function
 
 ```python
 A = ["this", "is", "something", "fun"]
@@ -214,7 +213,8 @@ If you absolutely need to access the current index of your iteration, do **NOT**
 for index, item in enumerate(shopping_basket):
   print("Item", index, "is a", item)
 ```
-**for/else statements**
+
+### for/else statements
 Python permits you to use else with for loops. The else case is executed when none of the conditions within the loop were satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satisfied condition. If we do not break out then the else part will be executed.
 
 ```python
@@ -229,7 +229,7 @@ else:
 ```
 In the above case the output will be `today is not a week day` since the break within the loop will never be executed.
 
-**Iterate over a list using inline loop function**
+### Iterate over a list using inline loop function
 
 We could also iterate inline using python, for example if we need to uppercase all the words in a list from a list we could simply do the following:
 
@@ -246,11 +246,8 @@ Output:
 ['THIS', 'IS', 'AWESOME', 'SHINING', 'STAR']
 >
 ```
-A interesting fact is that for loop is a bit faster compared to while loop in python. Because in for loop range/xrange is used which is implemented in C(in python's library) whereas in while loop we make use of some incremental statement specifically at the end of sentence like (i+=1) which is interpreted. Thus for loop is faster than while loop. Reference:
-https://stackoverflow.com/questions/869229/why-is-looping-over-range-in-python-faster-than-using-a-while-loop
 
-
-**Nested Loops**
+### Nested Loops
 
 A nested loop is a loop inside a loop.
 
@@ -274,6 +271,10 @@ How ram
 How shyam
 >
 ```
+
+A interesting fact is that for loop is a bit faster compared to while loop in python. Because in for loop range/xrange is used which is implemented in C(in python's library) whereas in while loop we make use of some incremental statement specifically at the end of sentence like (i+=1) which is interpreted. Thus for loop is faster than while loop. Reference:
+https://stackoverflow.com/questions/869229/why-is-looping-over-range-in-python-faster-than-using-a-while-loop
+
 #### More Information:
 
 - <a href='https://docs.python.org/2.7/tutorial/controlflow.html#for-statements' target='_blank' rel='nofollow'>Python2 for loop documentation</a>

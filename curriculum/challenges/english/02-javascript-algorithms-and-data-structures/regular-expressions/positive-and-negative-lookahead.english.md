@@ -11,9 +11,24 @@ There are two kinds of <code>lookaheads</code>: <code>positive lookahead</code> 
 A <code>positive lookahead</code> will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as <code>(?=...)</code> where the <code>...</code> is the required part that is not matched.
 On the other hand, a <code>negative lookahead</code> will look to make sure the element in the search pattern is not there. A negative lookahead is used as <code>(?!...)</code> where the <code>...</code> is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
 Lookaheads are a bit confusing but some examples will help.
-<blockquote>let quit = "qu";<br>let noquit = "qt";<br>let quRegex= /q(?=u)/;<br>let qRegex = /q(?!u)/;<br>quit.match(quRegex); // Returns ["q"]<br>noquit.match(qRegex); // Returns ["q"]</blockquote>
+
+```js
+let quit = "qu";
+let noquit = "qt";
+let quRegex= /q(?=u)/;
+let qRegex = /q(?!u)/;
+quit.match(quRegex); // Returns ["q"]
+noquit.match(qRegex); // Returns ["q"]
+```
+
 A more practical use of <code>lookaheads</code> is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
-<blockquote>let password = "abc123";<br>let checkPass = /(?=\w{3,6})(?=\D*\d)/;<br>checkPass.test(password); // Returns true</blockquote>
+
+```js
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+checkPass.test(password); // Returns true
+```
+
 </section>
 
 ## Instructions

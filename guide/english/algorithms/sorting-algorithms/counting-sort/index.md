@@ -80,3 +80,30 @@ void countSort(int upperBound, int lowerBound, std::vector<int> numbersToSort) /
   std::cout << counts << std::endl;
 } 
 ```
+
+### Swift Implementation
+```swift
+func countingSort(_ array: [Int]) {
+  // Create an array to store the count of each element
+  let maxElement = array.max() ?? 0
+  var countArray = [Int](repeating: 0, count: Int(maxElement + 1))
+  
+  for element in array {
+    countArray[element] += 1
+  }
+  var z = 0
+  var sortedArray = [Int](repeating: 0, count: array.count)
+
+  for index in 1 ..< countArray.count {
+    //print index element required number of times
+    while countArray[index] > 0 {
+      sortedArray[z] = index
+      z += 1
+      countArray[index] -= 1
+    }
+  }
+  
+  print(sortedArray)
+}
+
+  ```

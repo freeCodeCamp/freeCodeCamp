@@ -13,7 +13,7 @@
 #
 # If plan to make a contribution to the project then install root node_modules
 # with:
-#  npm install --ignore-scripts
+#  npm ci --ignore-scripts
 #
 version: '3'
 services:
@@ -80,14 +80,14 @@ services:
       - seed_node_modules:/app/tools/scripts/seed/node_modules
       - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
     working_dir: /app/api-server
-    command: node development-entry.js
+    command: npm run develop
     ports:
       - '3000:3000'
       - '9229:9229'
   db:
     image: mongo:3.6
     ports:
-      - '27017:27017'
+      - '27016:27017'
     volumes:
       - dbdata:/data/db
   mailhog:

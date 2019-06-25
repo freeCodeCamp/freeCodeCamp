@@ -10,7 +10,7 @@ Convert the given string to a lowercase sentence with words joined by dashes.
 #### Relevant Links
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' target='_blank' rel='nofollow'>String global object</a>
-*   <a>JS Regex Resources</a>
+*   <a href='https://guide.freecodecamp.org/javascript/regular-expressions-reference/' target='_blank' rel='nofollow'>JS Regex Resources</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-replace/15942' target='_blank' rel='nofollow'>JS String Prototype Replace</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-tolowercase/15948' target='_blank' rel='nofollow'>JS String Prototype ToLowerCase</a>
 

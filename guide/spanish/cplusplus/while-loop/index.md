@@ -10,7 +10,7 @@ Un punto clave del bucle while es que tal vez el bucle no se ejecute nunca. Cuan
 
 Ejemplo:
 
-```C++
+```cpp
 #include <iostream>
  using namespace std;
 
