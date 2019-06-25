@@ -67,7 +67,7 @@ import java.util.Arrays;
 
 在C ++中实现
 
-```C++
+```cpp
 #include <iostream> 
  using namespace std; 
  void heapify(int arr[], int n, int i) 

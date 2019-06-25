@@ -1,7 +1,8 @@
 {
   "db": {
     "name": "db",
-    "connector": "mongodb"
+    "connector": "mongodb",
+    "allowExtendedOperators": true
   },
   "mail": {
     "name": "mail",

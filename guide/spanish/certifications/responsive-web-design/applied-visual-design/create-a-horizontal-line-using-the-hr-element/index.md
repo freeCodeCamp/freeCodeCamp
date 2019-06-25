@@ -23,7 +23,7 @@ Este elemento es de cierre automático, pero para ser amigable con los analizado
 
 Sea cual sea el formato que elija, se creará una línea horizontal como en [esta lección](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/create-a-horizontal-line-using-the-hr-element/) en [freeCodeCamp](https://www.freecodecamp.org/) . Aquí hay una captura de pantalla de esa lección que muestra un elemento `hr` contenido dentro de un div.
 
-![Ejemplo hr](https://i.imgur.com/RMTqXPw.png)
+![Ejemplo hr](https://cdn-media-1.freecodecamp.org/imgr/RMTqXPw.png)
 
 ## Recursos:
 

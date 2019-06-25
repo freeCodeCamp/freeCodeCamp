@@ -8,24 +8,26 @@ localeTitle: الصانعين
 
 عند كتابة فصل دراسي بدون أي مُنشئ ، ينشئ المحول البرمجي لـ Java مُنشئًا افتراضيًا:
 
- `public class Car { 
-    private String name; 
- } 
- 
- Car modelS = new Car(); 
-` 
+```java
+public class Car {
+    private String name;
+}
+
+Car modelS = new Car();
+``` 
 
 هذا التهيئة بدون معلمات هي طريقة استدعاء المُنشئ الافتراضي. يمكنك أيضًا الحصول على مُنشئ افتراضي مكتوب بهذه الطريقة:
 
- `public class Car { 
-    private String name; 
- 
-    // User Specified Default Constructor 
-    public Car() { 
-        name = "Tesla"; 
-    } 
- } 
-` 
+```java
+public class Car {
+    private String name;
+
+    // User Specified Default Constructor
+    public Car() {
+        name = "Tesla";
+    }
+}
+``` 
 
 ثم ، عند استدعاء `new Car()` ، سيتم الحصول على تهيئة `name` المتغير تلقائيًا إلى "Tesla" لمثيل كائن السيارة هذا.
 
@@ -43,25 +45,26 @@ localeTitle: الصانعين
 
 دعونا ننظر في مثال آخر. لنفترض أن شركة هوندا (الشركة المصنعة للسيارات) تريد أن يتم تسمية جميع سياراتها باسم `Honda <a name>` . من أجل تنفيذ ذلك ، قد نمثل هذا باستخدام فئة على النحو التالي:
 
- `public class Car { 
- 
-    private String name; 
- 
-    // Constructor. 
-    public Car(String model){ 
-        this.name = "Honda " + model; 
-    } 
- 
-    public String getName(){ 
-        return this.name; 
-    } 
- 
-    public static void main(String args[]){ 
-        Car car = new Car("Civic"); 
-        System.out.println( car.getName() ); 
-    } 
- } 
-` 
+```java
+public class Car {
+
+    private String name;
+
+    // Constructor.
+    public Car(String model){
+        this.name = "Honda " + model;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public static void main(String args[]){
+        Car car = new Car("Civic");
+        System.out.println( car.getName() );
+    }
+}
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CTJ4/1)
 
@@ -92,8 +95,9 @@ localeTitle: الصانعين
 لاحظ أن منشئ `private` . هذا يفرض حقيقة أنه لا يسمح لأي شخص آخر بإنشاء مثيل للبنك.  
 في الواقع ، إذا كنت في فصل آخر ، فحاول:
 
- `Bank account = new Bank(); // Throws a compilation error: Bank() has private access in Bank. 
-` 
+```java
+Bank account = new Bank(); // Throws a compilation error: Bank() has private access in Bank.
+``` 
 
 لذلك ، الطريقة الوحيدة للوصول إلى المثيل باستخدام `Bank.getInstance()` . تسمى مثل هذه الحالات `Singleton` منذ أن تحصل على مثيل واحد بالضبط (لكل VM لتكون دقيقة) طوال فترة تطبيقك.
 

@@ -62,7 +62,7 @@ If rad(n) is sorted for 1 ≤ n ≤ 100000, find E(10000).
 ```yml
 tests:
   - text: <code>euler124()</code> should return 21417.
-    testString: 'assert.strictEqual(euler124(), 21417, "<code>euler124()</code> should return 21417.");'
+    testString: assert.strictEqual(euler124(), 21417, '<code>euler124()</code> should return 21417.');
 
 ```
 

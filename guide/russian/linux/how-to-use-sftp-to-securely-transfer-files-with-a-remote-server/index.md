@@ -10,7 +10,7 @@ localeTitle: Как использовать SFTP для безопасной п
 
 Если вы еще этого не сделали, проверьте, что вы можете использовать SSH на сервере. SFTP использует протокол Secure Shell (SSH), поэтому, если вы не можете использовать SSH, вы, вероятно, тоже не сможете использовать SFTP.
 
-```unix
+```shell
 ssh your_username@hostname_or_ip_address 
 ```
 
@@ -18,13 +18,13 @@ ssh your_username@hostname_or_ip_address
 
 Он использует тот же синтаксис, что и SSH, и открывает сеанс, в котором вы можете передавать файлы.
 
-```unix
+```shell
 sftp your_username@hostname_or_ip_address 
 ```
 
 Чтобы указать полезные команды:
 
-```unix
+```shell
 help 
 ```
 
@@ -32,19 +32,19 @@ help
 
 Чтобы загрузить файл:
 
-```unix
+```shell
 get <filename> 
 ```
 
 Чтобы загрузить папку и ее содержимое, используйте флаг «-r» (также работает для загрузки):
 
-```unix
+```shell
 get -r <foldername> 
 ```
 
 Чтобы загрузить файл:
 
-```unix
+```shell
 put <filename> 
 ```
 
@@ -52,13 +52,13 @@ put <filename>
 
 Чтобы изменить локальную папку:
 
-```unix
+```shell
 lcd <path/to/folder> 
 ```
 
 Чтобы изменить удалённую папку:
 
-```unix
+```shell
 cd <path/to/folder> 
 
 ```

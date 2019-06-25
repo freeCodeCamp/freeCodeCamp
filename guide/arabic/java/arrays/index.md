@@ -8,25 +8,29 @@ localeTitle: المصفوفات
 
 **بناء الجملة:**
 
- `dataType[] arrayName;   // preferred way 
-` 
+```java
+dataType[] arrayName;   // preferred way
+``` 
 
 هنا ، يصف `java datatype[]` أن جميع المتغيرات التي تم ذكرها بعد ذلك سيتم إنشاء مثيل لها كمصفوفات من نوع البيانات المحدد. لذا ، إذا أردنا إنشاء مزيد من المصفوفات من نوع البيانات المماثل ، فكل ما علينا `java arrayName` هو إضافتها بعد `java arrayName` المحدد (لا تنسى فصلها عبر الفواصل فقط). ويرد مثال أدناه في القسم التالي للرجوع إليه.
 
- `dataType arrayName[];  //  works but not preferred way 
-` 
+```java
+dataType arrayName[];  //  works but not preferred way
+``` 
 
 هنا ، يصف `java datatype` فقط أن المتغيرات المذكورة بعد أن تنتمي إلى هذا النوع من البيانات. إلى جانب ذلك ، يصف `java []` بعد اسم المتغير أن المتغير هو صفيف من نوع البيانات المحدد (وليس مجرد قيمة أو كائن من هذا النوع من البيانات). لذا ، إذا أردنا إنشاء مزيد من المصفوفات من نوع البيانات المماثل ، فسوف نضيف أسماء المتغيرات بعد الاسم المحدد بالفعل ، مفصولة بفواصل وكل مرة سيتعين علينا إضافة `java []` بعد اسم المتغير وإلا فسيكون المتغير إنشاء مثيل كمتغير تخزين قيمة عادية (وليس صفيف). لفهم أفضل يتم إعطاء مثال في المقطع التالي.
 
 ## مقتطفات الشفرة للبناء أعلاه:
 
- `double[] list1, list2; // preferred way 
-` 
+```java
+double[] list1, list2; // preferred way
+``` 
 
 فوق المقتطف التعليمات البرمجية instantiates 2 صفائف من أسماء مزدوجة النوع list1 و list2.
 
- `double list1[], list2; // works but not preferred way 
-` 
+```java
+double list1[], list2; // works but not preferred way
+``` 
 
 فوق المقتطف الشفوي مصفوفة من نوع البيانات مزدوج المسمى list1 ومتغير بسيط من نوع البيانات مزدوج المسمى list2 (لا تخلط مع قائمة **name2** . أسماء المتغيرات لا علاقة لها بنوع المتغير).
 
@@ -34,74 +38,86 @@ localeTitle: المصفوفات
 
 ## إنشاء المصفوفات:
 
- `dataType[] arrayName = new dataType[arraySize]; 
-` 
+```java
+dataType[] arrayName = new dataType[arraySize];
+``` 
 
 ## مقتطفات الشفرة للبناء أعلاه:
 
- `double[] List = new double[10]; 
-` 
+```java
+double[] List = new double[10];
+``` 
 
 ## طريقة أخرى لإنشاء صفيف:
 
- `dataType[] arrayName = {value_0, value_1, ..., value_k}; 
-` 
+```java
+dataType[] arrayName = {value_0, value_1, ..., value_k};
+``` 
 
 ## مقتطفات الشفرة للبناء أعلاه:
 
- `double[] list = {1, 2, 3, 4}; 
- 
- The code above is equivalent to: 
- double[] list = new double[4]; 
- *IMPORTANT NOTE: Please note the difference between the types of brackets 
- that are used to represent arrays in two different ways. 
-` 
+```java
+double[] list = {1, 2, 3, 4};
+
+The code above is equivalent to:
+double[] list = new double[4];
+*IMPORTANT NOTE: Please note the difference between the types of brackets
+that are used to represent arrays in two different ways.
+``` 
 
 ## الوصول إلى المصفوفات:
 
- `arrayName[index]; // gives you the value at the specified index 
-` 
+```java
+arrayName[index]; // gives you the value at the specified index
+``` 
 
 ## مقتطفات الشفرة للبناء أعلاه:
 
- `System.out.println(list[1]); 
-` 
+```java
+System.out.println(list[1]);
+``` 
 
 انتاج:
 
- `2.0 
-` 
+```
+2.0
+``` 
 
 ## تعديل المصفوفات:
 
- `arrayName[index] = value; 
-` 
+```java
+arrayName[index] = value;
+``` 
 
 ملاحظة: لا يمكنك تغيير حجم أو نوع الصفيف بعد تهيئته. ملاحظة: يمكنك مع ذلك إعادة ضبط المصفوفة مثل ذلك
 
- `arrayName = new dataType[] {value1, value2, value3}; 
-` 
+```java
+arrayName = new dataType[] {value1, value2, value3};
+``` 
 
 ## حجم المصفوفات:
 
 من الممكن العثور على عدد العناصر في صفيف باستخدام "سمة الطول". تجدر الإشارة هنا إلى أن `java length` هو **سمة** لكل صفيف أي اسم متغير يخزن طول المتغير. يجب عدم الخلط بينه وبين **طريقة** الصفيف لأن الاسم هو نفس طريقة `java length()` المطابقة لفئات String.
 
- `int[] a = {4, 5, 6, 7, 8}; // declare array 
- System.out.println(a.length); //prints 5 
-` 
+```java
+int[] a = {4, 5, 6, 7, 8}; // declare array
+System.out.println(a.length); //prints 5
+``` 
 
 ## مقتطفات الشفرة للبناء أعلاه:
 
- `list[1] = 3; // now, if you access the array like above, it will output 3 rather than 2 
-` 
+```java
+list[1] = 3; // now, if you access the array like above, it will output 3 rather than 2
+``` 
 
 _مثال على الكود:_
 
- `int[] a = {4, 5, 6, 7, 8}; // declare array 
- for (int i = 0; i < a.length; i++){ // loop goes through each index 
-    System.out.println(a[i]); // prints the array 
- } 
-` 
+```java
+int[] a = {4, 5, 6, 7, 8}; // declare array
+for (int i = 0; i < a.length; i++){ // loop goes through each index
+    System.out.println(a[i]); // prints the array
+}
+``` 
 
 انتاج:
 
@@ -116,15 +132,16 @@ _مثال على الكود:_
 
 يمكن اعتبار صفائف ثنائية الأبعاد (صفائف ثنائية الأبعاد) كطاولة ذات صفوف وأعمدة. على الرغم من أن هذا التمثيل هو مجرد طريقة لتصور المجموعة لحل المشاكل بشكل أفضل. يتم تخزين القيم فعليًا في عناوين الذاكرة المتسلسلة فقط.
 
- `int M = 5; 
- int N = 5; 
- double[][] a = new double [M][N]; //M = rows N = columns 
- for(int i = 0; i < M; i++) { 
-    for (int j = 0; j < N; j++) { 
-        //Do something here at index 
-    } 
- } 
-` 
+```java
+int M = 5;
+int N = 5;
+double[][] a = new double [M][N]; //M = rows N = columns
+for(int i = 0; i < M; i++) {
+    for (int j = 0; j < N; j++) {
+        //Do something here at index
+    }
+}
+``` 
 
 ستنفذ هذه الحلقة M ^ N مرة وستبني هذا:
 
@@ -136,9 +153,10 @@ _مثال على الكود:_
 
 وبالمثل ، يمكن أيضًا إنشاء مصفوفة ثلاثية الأبعاد. يمكن تصوره كمكعبوب بدلاً من مستطيل (كما هو مذكور أعلاه) ، مقسم إلى مكعبات أصغر مع كل مكعب يخزن بعض القيمة. يمكن التهيئة الأولية:
 
- `int a=2, b=3, c=4; 
- int[][][] a=new int[a][b][c]; 
-` 
+```java
+int a=2, b=3, c=4;
+int[][][] a=new int[a][b][c];
+``` 
 
 بطريقة مماثلة ، يمكن للمرء أن مجموعة من أبعاد مثل ما هو / هي ترغب في ولكن تصور مجموعة من أكثر من 3 أبعاد يصعب تصور بطريقة معينة.
 
@@ -146,13 +164,14 @@ _مثال على الكود:_
 
 الصفائف الخشنة هي صفائف متعددة الأبعاد لها عدد محدد من الصفوف ولكن عدد الأعمدة متفاوت. يتم استخدام الصفائف الخشنة للحفاظ على استخدام الذاكرة للمصفوفة. فيما يلي مثال الكود:
 
- `int[][] array = new int[5][]; //initialize a 2D array with 5 rows 
- array[0] = new int[1]; //creates 1 column for first row 
- array[1] = new int[2]; //creates 2 columns for second row 
- array[2] = new int[5]; //creates 5 columns for third row 
- array[3] = new int[5]; //creates 5 columns for fourth row 
- array[4] = new int[5]; //creates 5 columns for fifth row 
-` 
+```java
+int[][] array = new int[5][]; //initialize a 2D array with 5 rows
+array[0] = new int[1]; //creates 1 column for first row
+array[1] = new int[2]; //creates 2 columns for second row
+array[2] = new int[5]; //creates 5 columns for third row
+array[3] = new int[5]; //creates 5 columns for fourth row
+array[4] = new int[5]; //creates 5 columns for fifth row
+``` 
 
 انتاج:
 

@@ -3,23 +3,23 @@ id: 587d78ab367417b2b2512af3
 title: Apply the flex-direction Property to Create Rows in the Tweet Embed
 challengeType: 0
 videoUrl: ''
-localeTitle: Примените свойство flex-direction для создания строк в вставке Tweet
+localeTitle: Примените свойство flex-direction для размещения составных частей компонента твит рядами
 ---
 
 ## Description
-<section id="description"> <code>header</code> и <code>footer</code> в чирикать встроить , например , иметь дочерние элементы , которые могут быть организованы в виде строк с использованием <code>flex-direction</code> свойства. Это говорит CSS, чтобы выровнять по горизонтали. </section>
+<section id="description"> Элементы <code>header</code> и <code>footer</code> компонента твит имеют дочерние элементы, которые можно разместить в ряд используя свойство <code>flex-direction</code>. Это CSS свойство выровняет их по горизонтали. </section>
 
 ## Instructions
-<section id="instructions"> Добавьте CSS свойство <code>flex-direction</code> как для <code>header</code> и <code>footer</code> и установите значение грести. </section>
+<section id="instructions"> Добавьте CSS свойство <code>flex-direction</code> к <code>header</code> и <code>footer</code> и задайте ему значение row. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>header</code> должен иметь свойство <code>flex-direction</code> заданное для строки.
+  - text: <code>header</code> должен иметь свойство <code>flex-direction</code> со значением row.
     testString: 'assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>header</code> should have a <code>flex-direction</code> property set to row.");'
-  - text: <code>footer</code> должен иметь свойство <code>flex-direction</code> заданное для строки.
+  - text: <code>footer</code> должен иметь свойство <code>flex-direction</code> со значением row.
     testString: 'assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>footer</code> should have a <code>flex-direction</code> property set to row.");'
 
 ```

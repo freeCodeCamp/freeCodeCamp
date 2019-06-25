@@ -12,10 +12,11 @@ localeTitle: الرياضيات عشوائي
 
 #### مثال
 
- `function randomInRange(min, max) { 
-  return Math.random() * (max - min) + min; 
- } 
-` 
+```js
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+``` 
 
 #### معلومات اكثر:
 

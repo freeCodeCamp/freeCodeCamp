@@ -24,13 +24,13 @@ Task:
 ```yml
 tests:
   - text: <code>getDateFormats</code> is a function.
-    testString: 'assert(typeof getDateFormats === "function", "<code>getDateFormats</code> is a function.");'
+    testString: assert(typeof getDateFormats === 'function', '<code>getDateFormats</code> is a function.');
   - text: Should return an object.
-    testString: 'assert(typeof getDateFormats() === "object", "Should return an object.");'
+    testString: assert(typeof getDateFormats() === 'object', 'Should return an object.');
   - text: Should returned an array with 2 elements.
-    testString: 'assert(getDateFormats().length === 2, "Should returned an array with 2 elements.");'
+    testString: assert(getDateFormats().length === 2, 'Should returned an array with 2 elements.');
   - text: Should return the correct date in the right format
-    testString: 'assert.deepEqual(getDateFormats(), dates, equalsMessage);'
+    testString: assert.deepEqual(getDateFormats(), dates, equalsMessage);
 
 ```
 
@@ -55,7 +55,17 @@ function getDateFormats () {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const getDateSolution = () => {
+  const date = new Date();
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;
+  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return [fmt1, fmt2];
+};
+
+const dates = getDateSolution();
+const equalsMessage = `message: <code>getDataFormats()</code> should return <code>["${dates[0]}", "${dates[1]}"]</code>.`;
 ```
 
 </div>

@@ -48,7 +48,6 @@ localeTitle: 编写高阶箭头函数
     console.log(squaredIntegers); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://codepen.io/dylantyates/pen/WyWoYJ)
 
 # 代码说明：
 

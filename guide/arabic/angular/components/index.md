@@ -26,19 +26,20 @@ localeTitle: المكونات
 
 المضي قدما وتثبيت [واجهة سطر الأوامر Angular (CLI)](https://cli.angular.io) . يمكنك معرفة المزيد حول هذا الموضوع من [هذه المقالة](https://guide.freecodecamp.org/angular/command-line-interface) . يعطي الأمر CLI `ng generate component [name-of-component]` الأمر التالي.
 
- `import { Component, OnInit } from '@angular/core'; 
- 
- @Component({ 
-  selector: 'app-example', 
-  templateUrl: './example.component.html', 
-  styleUrls: ['./example.component.css'] 
- }) 
- export class ExampleComponent implements OnInit { 
-  constructor() { } 
- 
-  ngOnInit() { } 
- } 
-` 
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html',
+  styleUrls: ['./example.component.css']
+})
+export class ExampleComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() { }
+}
+``` 
 
 هذا هو الهيكل الأساسي الأساسي الذي تنشأ منه جميع المكونات الرائعة. `@Component` الديكور `@Component` الجزء الأكثر أهمية. بدون ذلك ، يصبح المثال أعلاه فئة عامة. الزاوي يعتمد على ديكور لتمييز نوع تخطيطي.
 
@@ -71,49 +72,50 @@ localeTitle: المكونات
 
 ستقوم المكونات في كثير من الأحيان بتهيئة مجموعة من الأعضاء (أو المتغيرات) التي تقوم بتخزين البيانات. يتم استخدامها في جميع أنحاء المنطق فئة مكون للراحة. تغذي هذه المعلومات المنطق الناتج عن القالب وسلوكه. انظر المثال التالي.
 
- `// ./components/example/example.component.ts 
- 
- import { Component, OnInit } from '@angular/core'; 
- import { Post, DATA } from '../../data/posts.data'; 
- 
- @Component({ 
-  selector: 'app-example', 
-  templateUrl: './example.component.html' 
- }) 
- export class ExampleComponent implements OnInit { 
-  username: string; 
-  totalPosts: number; 
-  allPosts: Post[]; 
- 
-  deletePost(index: number): void { 
-    this.allPosts.splice(index, 1); 
-    this.totalPosts = this.allPosts.length; 
-  } 
- 
-  ngOnInit(): void { 
-    this.username = DATA.author; 
-    this.totalPosts = DATA.thePosts.length; 
-    this.allPosts = DATA.thePosts; 
-  } 
- } 
-` 
+```typescript
+// ./components/example/example.component.ts
 
- `
-<!-- ./components/example/example.component.html --> 
- 
- <h1>{{ username }}</h1> 
- <span>Change Name: </span><input [(ngModel)]="username"> 
- <h3>Posts: {{ totalPosts }}</h3> 
- <ul> 
- <hr/> 
- <div *ngFor="let post of allPosts; let i=index"> 
-  <button (click)="deletePost(i)">DELETE</button> 
-  <h6>{{ post.title }}</h6> 
-  <p>{{ post.body }}</p> 
-  <hr/> 
- </div> 
- </ul> 
-` 
+import { Component, OnInit } from '@angular/core';
+import { Post, DATA } from '../../data/posts.data';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html'
+})
+export class ExampleComponent implements OnInit {
+  username: string;
+  totalPosts: number;
+  allPosts: Post[];
+
+  deletePost(index: number): void {
+    this.allPosts.splice(index, 1);
+    this.totalPosts = this.allPosts.length;
+  }
+
+  ngOnInit(): void {
+    this.username = DATA.author;
+    this.totalPosts = DATA.thePosts.length;
+    this.allPosts = DATA.thePosts;
+  }
+}
+``` 
+
+```html
+<!-- ./components/example/example.component.html -->
+
+<h1>{{ username }}</h1>
+<span>Change Name: </span><input [(ngModel)]="username">
+<h3>Posts: {{ totalPosts }}</h3>
+<ul>
+<hr/>
+<div *ngFor="let post of allPosts; let i=index">
+  <button (click)="deletePost(i)">DELETE</button>
+  <h6>{{ post.title }}</h6>
+  <p>{{ post.body }}</p>
+  <hr/>
+</div>
+</ul>
+``` 
 
 لاحظ الطرق التي يتفاعل بها المكون مع بياناته. `../../data/posts.data` أولاً من `../../data/posts.data` قبل أن يبدأ بإعادة توجيهه إلى قالب العرض.
 
