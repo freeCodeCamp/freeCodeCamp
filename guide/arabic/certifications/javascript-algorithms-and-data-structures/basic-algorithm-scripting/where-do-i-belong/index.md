@@ -52,7 +52,6 @@ localeTitle: إلى أين أنتمي
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/36)
 
 ## شرح الشفرة:
 
@@ -77,7 +76,6 @@ localeTitle: إلى أين أنتمي
  getIndexToIns([40, 60], 50); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/2547)
 
 ## شرح الشفرة:
 
@@ -106,7 +104,6 @@ localeTitle: إلى أين أنتمي
  getIndexToIns([40, 60], 50); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/4135)
 
 ## شرح الشفرة:
 
@@ -125,7 +122,6 @@ localeTitle: إلى أين أنتمي
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/EB10/1)
 
 ## شرح الشفرة:
 
@@ -154,7 +150,6 @@ localeTitle: إلى أين أنتمي
  getIndexToIns([40, 60], 500); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/63)
 
 ## شرح الشفرة:
 
@@ -181,7 +176,6 @@ localeTitle: إلى أين أنتمي
  getIndexToIns([1,3,4],2); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/IUJE/0)
 
 ## شرح الشفرة:
 

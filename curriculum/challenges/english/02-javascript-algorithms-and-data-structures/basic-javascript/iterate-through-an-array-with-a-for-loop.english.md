@@ -2,12 +2,20 @@
 id: 5675e877dbd60be8ad28edc6
 title: Iterate Through an Array with a For Loop
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/caeR3HB'
 ---
 
 ## Description
 <section id='description'>
 A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:
-<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>&nbsp;&nbsp; console.log(arr[i]);<br>}</blockquote>
+
+```js
+var arr = [10,9,8,7,6];
+for (var i = 0; i < arr.length; i++) {
+   console.log(arr[i]);
+}
+```
+
 Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.
 </section>
 
@@ -22,13 +30,13 @@ Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <c
 ```yml
 tests:
   - text: <code>total</code> should be declared and initialized to 0
-    testString: 'assert(code.match(/var.*?total\s*=\s*0.*?;/), "<code>total</code> should be declared and initialized to 0");'
+    testString: assert(code.match(/(var|let|const)\s*?total\s*=\s*0.*?;?/), '<code>total</code> should be declared and initialized to 0');
   - text: <code>total</code> should equal 20
-    testString: 'assert(total === 20, "<code>total</code> should equal 20");'
+    testString: assert(total === 20, '<code>total</code> should equal 20');
   - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>
-    testString: 'assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/), "You should use a <code>for</code> loop to iterate through <code>myArr</code>");'
+    testString: assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/), 'You should use a <code>for</code> loop to iterate through <code>myArr</code>');
   - text: Do not set <code>total</code> to 20 directly
-    testString: 'assert(!code.match(/total[\s\+\-]*=\s*(\d(?!\s*[;,])|[1-9])/g), "Do not set <code>total</code> to 20 directly");'
+    testString: assert(!code.match(/total[\s\+\-]*=\s*(0(?!\s*[;,]?$)|[1-9])/gm), 'Do not set <code>total</code> to 20 directly');
 
 ```
 
@@ -63,7 +71,8 @@ var myArr = [ 2, 3, 4, 5, 6];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){if(typeof total !== 'undefined') { return "total = " + total; } else { return "total is undefined";}})()
+
 ```
 
 </div>

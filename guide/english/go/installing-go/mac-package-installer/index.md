@@ -11,7 +11,7 @@ From the [golang's download page](https://golang.org/dl/), get the Mac package i
 
 To check if go was successfully installed, open your terminal and use:
 
-```sh
+```shell
 $ go version
 ```
 This should print to the console the version of go, while at the same time making sure the installation went smoothly.

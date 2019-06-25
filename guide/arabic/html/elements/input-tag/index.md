@@ -6,9 +6,9 @@ localeTitle: علامة الإدخال
 
 يمكن تضمين علامة إدخال HTML في مستند HTML مثل:
 
- `
-<input type="text"> 
-` 
+```html
+<input type="text">
+``` 
 
 هذا يخلق منطقة يمكن للمستخدم من خلالها إدخال المعلومات بسهولة. ثم يتم إرسال هذه المعلومات إلى قاعدة البيانات الخلفية وتخزينها أو استخدامها إلى مزيد من أسفل داخل الموقع أو التطبيق.
 
@@ -45,27 +45,27 @@ localeTitle: علامة الإدخال
 
 مثال:
 
- `
-<input type="button"> 
- <input type="checkbox"> 
- <input type="color"> 
- <input type="email"> 
- <input type="password"> 
-` 
+```html
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="email">
+<input type="password">
+``` 
 
 المدخلات تأتي مع الكثير من الصفات المحددة سلفا.
 
 تتضمن بعض السمات الشائعة عادةً الإكمال التلقائي والفحص والعنصر النائب.
 
- `
-<input type="text" placeholder="This is a placeholder"> 
-` 
+```html
+<input type="text" placeholder="This is a placeholder">
+``` 
 
 في المثال أعلاه ، يتم عرض منطقة يمكن إدخال الإدخال فيها ، مع ذكر العنصر النائب "هذا هو عنصر نائب". بمجرد النقر فوق سطر الإدخال وضغط المفتاح ، يختفي العنصر النائب ويحل محله الإدخال الخاص بك.
 
- `
-<input type="checkbox" checked> 
-` 
+```html
+<input type="checkbox" checked>
+``` 
 
 في هذا المثال ، يظهر مربع اختيار ويتم تحديده افتراضيًا نظرًا للسمة "المحددة".
 

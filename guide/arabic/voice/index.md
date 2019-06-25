@@ -32,28 +32,29 @@ localeTitle: صوت
 
 وها هو JavaScript:
 
- `window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; 
- 
- const span = document.querySelector('[data-js="varValue"]'); 
- const main = document.querySelector('.main'); 
- const loader = document.querySelector('.loader'); 
- 
- const recognition = new SpeechRecognition(); 
- recognition.lang = 'en-US'; 
- 
- recognition.addEventListener('result', e => { 
-    const transcript = Array.from(e.results) 
-        .map(result => result[0].transcript) 
- 
-    span.textContent = transcript; 
-    loader.textContent = ''; 
- }); 
- 
- recognition.addEventListener('start', () => loader.textContent = 'Listening (enable your microphone)...'); 
- 
- recognition.addEventListener('end', recognition.start); 
- recognition.start(); 
-` 
+```javascript
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+const span = document.querySelector('[data-js="varValue"]');
+const main = document.querySelector('.main');
+const loader = document.querySelector('.loader');
+
+const recognition = new SpeechRecognition();
+recognition.lang = 'en-US';
+
+recognition.addEventListener('result', e => {
+    const transcript = Array.from(e.results)
+        .map(result => result[0].transcript)
+
+    span.textContent = transcript;
+    loader.textContent = '';
+});
+
+recognition.addEventListener('start', () => loader.textContent = 'Listening (enable your microphone)...');
+
+recognition.addEventListener('end', recognition.start);
+recognition.start();
+``` 
 
 ### اليكسا
 

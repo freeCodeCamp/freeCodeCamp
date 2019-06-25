@@ -50,6 +50,6 @@ $(".myclass").slideDown("fast"); //will expand the element with the identifier m
 
 
 #### More Information:
-JQuery hide() method on the <a href='http://api.jquery.com/hide/' target='_blank' rel='nofollow'>Official website</a>
+jQuery hide() method on the <a href='http://api.jquery.com/hide/' target='_blank' rel='nofollow'>Official website</a>
 
 

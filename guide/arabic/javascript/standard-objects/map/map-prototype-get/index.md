@@ -8,8 +8,9 @@ localeTitle: Map.prototype.get
 
 ## بناء الجملة
 
- `myMap.get(key); 
-` 
+```javascript
+myMap.get(key);
+``` 
 
 ## المعلمات
 
@@ -17,12 +18,13 @@ localeTitle: Map.prototype.get
 
 ## مثال
 
- `const myMap = new Map(); 
- myMap.set('foo',1); 
- myMap.set('bar',2); 
- myMap.set('baz',3); 
- 
- myMap.get('foo');   // returns 1 
- myMap.get('baz');   // returns 3 
- myMap.get('hihi');  // return undefined 
-`
+```javascript
+const myMap = new Map();
+myMap.set('foo',1);
+myMap.set('bar',2);
+myMap.set('baz',3);
+
+myMap.get('foo');   // returns 1
+myMap.get('baz');   // returns 3
+myMap.get('hihi');  // return undefined
+```

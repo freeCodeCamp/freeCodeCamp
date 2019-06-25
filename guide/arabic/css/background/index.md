@@ -43,19 +43,21 @@ localeTitle: خلفية
 
 يمكنك استخدام خاصية صورة الخلفية لتعيين صورة كخلفية لعنصر. يتم تكرار الصورة افتراضيًا بحيث تغطي العنصر بأكمله.
 
- `body { 
-  background-image: url("barn.jpg"); 
- } 
-` 
+```css
+body {
+  background-image: url("barn.jpg");
+}
+``` 
 
 ![صورة](https://user-images.githubusercontent.com/26467304/31036366-eb1fc260-a539-11e7-835d-e3f935a22c86.png)
 
 يمكنك أيضًا ربط الصور أو صور gif التي تعثر عليها عبر الإنترنت باستخدام رابطها (على سبيل المثال ، من صور Google البحث).
 
- `body { 
-  background-image: url("https://mdn.mozillademos.org/files/11983/starsolid.gif"); 
- } 
-` 
+```css
+body {
+  background-image: url("https://mdn.mozillademos.org/files/11983/starsolid.gif");
+}
+``` 
 
 ### صورة الخلفية - خاصية التكرار
 
@@ -63,29 +65,32 @@ localeTitle: خلفية
 
 إليك مثال يكرر الصورة عموديًا.
 
- `body { 
-  background-image: url("barn.jpg"); 
-  background-repeat: repeat-y; 
- } 
-` 
+```css
+body {
+  background-image: url("barn.jpg");
+  background-repeat: repeat-y;
+}
+``` 
 
 ![عمودي](https://user-images.githubusercontent.com/26467304/31039770-8962c7a6-a54e-11e7-9d25-4fb09760d219.PNG)
 
 يمكنك تكرار الصورة أفقيًا عن طريق تعيين الخاصية background-repeat إلى "repeat-x".
 
- `body { 
-  background-image: url("barn.jpg"); 
-  background-repeat: repeat-x; 
- } 
-` 
+```css
+body {
+  background-image: url("barn.jpg");
+  background-repeat: repeat-x;
+}
+``` 
 
 يمكنك أيضًا استخدام خاصية تكرار الخلفية لتعيين صورة لعدم تكرارها.
 
- `body { 
-  background-image: url("barn.jpg"); 
-  background-repeat: no-repeat; 
- } 
-` 
+```css
+body {
+  background-image: url("barn.jpg");
+  background-repeat: no-repeat;
+}
+``` 
 
 ![norepeat](https://user-images.githubusercontent.com/26467304/31039801-c8761efc-a54e-11e7-8bb9-ec5b88885a50.PNG)
 
@@ -93,12 +98,13 @@ localeTitle: خلفية
 
 يمكنك استخدام خاصية الموضع لتحديد مكان صورتك على صفحة الويب.
 
- `body { 
-  background-image: url("barn.jpg"); 
-  background-repeat: no-repeat; 
-  background-position: right top; 
- } 
-` 
+```css
+body {
+  background-image: url("barn.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+``` 
 
 ![موضع](https://user-images.githubusercontent.com/26467304/31039828-077d1038-a54f-11e7-8aa6-092253ca92b8.PNG)
 
@@ -106,13 +112,14 @@ localeTitle: خلفية
 
 يمكنك استخدام خاصية "إرفاق الخلفية" لتعيين صورة إلى موضع ثابت. يجعل موقع ثابت الصورة بحيث لا يتم التمرير مع باقي الصفحة.
 
- `body { 
-  background-image: url("barn.jpg"); 
-  background-repeat: no-repeat; 
-  background-position: right top; 
-  background-attachment: fixed; 
- } 
-` 
+```css
+body {
+  background-image: url("barn.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+``` 
 
 ![ثابت](https://user-images.githubusercontent.com/26467304/31039859-39612c92-a54f-11e7-93ca-9d7bcb938225.PNG)
 
@@ -128,10 +135,11 @@ localeTitle: خلفية
 
 يمكنك كتابة خصائص الخلفية على سطر واحد. وهذا ما يسمى خاصية الاختزال.
 
- `body { 
-  background: url("barn.jpg") no-repeat right top; 
- } 
-` 
+```css
+body {
+  background: url("barn.jpg") no-repeat right top;
+}
+``` 
 
 يمكنك ترك الممتلكات التي لا تحتاج إليها عند استخدام خاصية الاختزال ، ولكن الخصائص يجب استخدامها في ترتيب معين. الترتيب هو:
 
@@ -145,10 +153,11 @@ localeTitle: خلفية
 
 يمكنك تحديد صور خلفية متعددة في خاصية خلفية واحدة.
 
- `body { 
-  background: url("barn.jpg"), url("stars.jpg"), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); 
- } 
-` 
+```css
+body {
+  background: url("barn.jpg"), url("stars.jpg"), linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
+}
+``` 
 
 الصورة الأولى (أو التدرج) المحددة هي الأكثر في الأعلى ، والثانية تأتي بعدها ، وهكذا. إذا كان أحد العناصر غير صحيح بسبب عنوان URL الخاص به أو بناء الجملة الخاص به ، فسيتم تجاهل السطر بأكمله بواسطة المستعرض.
 

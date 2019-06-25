@@ -31,7 +31,7 @@ Give your answer modulo 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler445()</code> should return 659104042.
-    testString: 'assert.strictEqual(euler445(), 659104042, "<code>euler445()</code> should return 659104042.");'
+    testString: assert.strictEqual(euler445(), 659104042, '<code>euler445()</code> should return 659104042.');
 
 ```
 

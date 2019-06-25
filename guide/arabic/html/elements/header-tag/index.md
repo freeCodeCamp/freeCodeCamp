@@ -14,14 +14,14 @@ localeTitle: علامة رأس
 
 في ما يلي مثال على ذلك باستخدام العلامة `<header>` :
 
- `
-<article> 
-  <header> 
-    <h1>Heading of Page</h1> 
-  </header> 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> 
- </article> 
-` 
+```html
+<article>
+  <header>
+    <h1>Heading of Page</h1>
+  </header>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+</article>
+``` 
 
 #### معلومات اكثر:
 

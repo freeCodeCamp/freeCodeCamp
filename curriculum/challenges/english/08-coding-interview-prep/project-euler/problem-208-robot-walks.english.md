@@ -27,7 +27,7 @@ Given that the robot starts facing North, how many journeys of 70 arcs in length
 ```yml
 tests:
   - text: <code>euler208()</code> should return 331951449665644800.
-    testString: 'assert.strictEqual(euler208(), 331951449665644800, "<code>euler208()</code> should return 331951449665644800.");'
+    testString: assert.strictEqual(euler208(), 331951449665644800, '<code>euler208()</code> should return 331951449665644800.');
 
 ```
 
