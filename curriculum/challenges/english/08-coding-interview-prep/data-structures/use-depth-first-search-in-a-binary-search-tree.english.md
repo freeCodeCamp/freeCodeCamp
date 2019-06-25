@@ -45,6 +45,7 @@ tests:
   - text: The <code>postorder</code> method returns <code>null</code> for an empty tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; return (test.postorder() == null); })(), 'The <code>postorder</code> method returns <code>null</code> for an empty tree.');
 ```
+
 </section>
 
 ## Challenge Seed

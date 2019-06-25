@@ -38,10 +38,12 @@ Bird.prototype.eat = function() {
 ```
 
 If you have an instance <code>let duck = new Bird();</code> and you call <code>duck.eat()</code>, this is how JavaScript looks for the method on <code>duck’s</code> <code>prototype</code> chain:
+
 1. duck => Is eat() defined here? No.
 2. Bird => Is eat() defined here? => Yes. Execute it and stop searching.
 3. Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.
 4. Object => JavaScript stopped searching before reaching this level.
+
 </section>
 
 ## Instructions

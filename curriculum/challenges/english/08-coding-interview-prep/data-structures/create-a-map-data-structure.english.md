@@ -44,6 +44,7 @@ tests:
   - text: The clear method empties the map and the size method returns the number of items present in the map.
     testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('b','b'); test.add('c','d'); test.remove('asdfas'); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})(), 'The clear method empties the map and the size method returns the number of items present in the map.');
 ```
+
 </section>
 
 ## Challenge Seed

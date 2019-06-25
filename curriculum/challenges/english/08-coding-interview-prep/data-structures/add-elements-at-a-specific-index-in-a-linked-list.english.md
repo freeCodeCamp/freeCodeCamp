@@ -29,6 +29,7 @@ tests:
   - text: Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.
     testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return (test.addAt(4,'cat') === false); }()), 'Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.');
 ```
+
 </section>
 
 ## Challenge Seed
@@ -74,6 +75,7 @@ function LinkedList() {
   // Only change code above this line
 }
 ```
+
 </div>
 </section>
 

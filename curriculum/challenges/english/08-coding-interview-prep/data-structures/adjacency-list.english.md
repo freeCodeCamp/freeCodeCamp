@@ -51,6 +51,7 @@ tests:
   - text: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.
     testString: assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, 'There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');
 ```
+
 </section>
 
 ## Challenge Seed

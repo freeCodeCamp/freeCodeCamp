@@ -29,6 +29,7 @@ tests:
   - text: <code>isPresent</code> handles cases where the tree is empty.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })(), '<code>isPresent</code> handles cases where the tree is empty.');
 ```
+
 </section>
 
 ## Challenge Seed

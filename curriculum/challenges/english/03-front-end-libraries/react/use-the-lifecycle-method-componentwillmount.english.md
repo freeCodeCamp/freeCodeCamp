@@ -6,7 +6,9 @@ isRequired: false
 ---
 
 ## Description
+
 <section id='description'>
+
 React components have several special methods that provide opportunities to perform actions at specific points in the lifecycle of a component. These are called lifecycle methods, or lifecycle hooks, and allow you to catch components at certain points in time. This can be before they are rendered, before they update, before they receive props, before they unmount, and so on. Here is a list of some of the main lifecycle methods:
 <code>componentWillMount()</code>
 <code>componentDidMount()</code>
@@ -17,7 +19,7 @@ React components have several special methods that provide opportunities to perf
 <code>componentWillUnmount()</code>
 The next several lessons will cover some of the basic use cases for these lifecycle methods.
   
-##### Note: The ``` componentWillMount ``` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
+<strong>Note:</strong> The `componentWillMount` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 </section>
 
 ## Instructions

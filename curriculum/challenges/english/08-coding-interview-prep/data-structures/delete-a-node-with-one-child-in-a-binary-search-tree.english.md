@@ -34,6 +34,7 @@ tests:
   - text: Removing the root in a tree with two nodes sets the second to be the root.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })(), 'Removing the root in a tree with two nodes sets the second to be the root.');
 ```
+
 </section>
 
 ## Challenge Seed

@@ -11,8 +11,10 @@ For any triangle T in the plane, it can be shown that there is a unique ellipse 
 
 
 For a given n, consider triangles T such that:
+
 - the vertices of T have integer coordinates with absolute value ≤ n, and
 - the foci1 of the largest-area ellipse inside T are (√13,0) and (-√13,0).
+
 Let A(n) be the sum of the areas of all such triangles.
 
 

@@ -55,6 +55,7 @@ tests:
   - text: There should be an edge between the fourth and fifth node.
     testString: assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'There should be an edge between the fourth and fifth node.');
 ```
+
 </section>
 
 ## Challenge Seed
@@ -80,4 +81,5 @@ var adjMatUndirected = [
   [0, 0, 1, 1, 0]
 ];
 ```
+
 </section>

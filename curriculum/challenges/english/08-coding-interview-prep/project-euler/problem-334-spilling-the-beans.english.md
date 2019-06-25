@@ -13,49 +13,17 @@ A child plays a game, which allows only one kind of move: removing two beans fro
 For example, consider two adjacent bowls containing 2 and 3 beans respectively, all other bowls being empty. The following eight moves will finish the game:
 
 
-
+<!-- TODO Use MathJax and re-write from projecteuler.net -->
 You are given the following sequences:
-      t0 = 123456.
-
-
-      ti =
-
-
-
-
-
-         ti-12
-
-         ,
-
-
-
-         if ti-1 is even
-
-
-
-         ti-12
-
-
-
-         926252,
-
-
-         if ti-1 is odd
-
-
-
-
-
-      where ⌊x⌋ is the floor function
-
-
-
-
-      and  is the bitwise XOR operator.
-
-
-      bi = ( ti mod 211) + 1.
+t0 = 123456.
+ti = ti-12,
+if ti-1 is even
+ti-12
+926252,
+if ti-1 is odd
+where ⌊x⌋ is the floor function
+and  is the bitwise XOR operator.
+bi = ( ti mod 211) + 1.
 
 The first two terms of the last sequence are b1 = 289 and b2 = 145.
 If we start with b1 and b2 beans in two adjacent bowls, 3419100 moves would be required to finish the game.

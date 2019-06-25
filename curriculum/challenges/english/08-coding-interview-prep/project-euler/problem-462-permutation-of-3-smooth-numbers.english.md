@@ -13,10 +13,12 @@ We define F(N) as the number of permutations of S(N) in which each element comes
 
 
 This is one of the possible permutations for N = 20.
-- 1, 2, 4, 3, 9, 8, 16, 6, 18, 12.
-This is not a valid permutation because 12 comes before its divisor 6.
-- 1, 2, 4, 3, 9, 8, 12, 16, 6, 18.
 
+- 1, 2, 4, 3, 9, 8, 16, 6, 18, 12.
+
+This is not a valid permutation because 12 comes before its divisor 6.
+
+- 1, 2, 4, 3, 9, 8, 12, 16, 6, 18.
 
 We can verify that F(6) = 5, F(8) = 9, F(20) = 450 and F(1000) ≈ 8.8521816557e21.
 Find F(1018). Give as your answer its scientific notation rounded to ten digits after the decimal point.

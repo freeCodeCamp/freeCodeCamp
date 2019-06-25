@@ -41,6 +41,7 @@ tests:
   - text: The <code>clear</code> method should remove all element from the stack
     testString: assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); return (test.isEmpty())}()), 'The <code>clear</code> method should remove all element from the stack');
 ```
+
 </section>
 
 ## Challenge Seed
@@ -58,6 +59,7 @@ function Stack() {
   // Only change code above this line
 }
 ```
+
 </div>
 </section>
 

@@ -130,6 +130,7 @@ const centerAligned = '  Given        a        text     file    of     many     
 'justified,   right    justified\n' +
 '    or       center   justified within  its   column. ';
 ```
+
 </div>
 
 </section>

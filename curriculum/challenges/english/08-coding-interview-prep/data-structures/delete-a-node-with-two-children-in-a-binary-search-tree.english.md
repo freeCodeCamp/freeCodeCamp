@@ -39,6 +39,7 @@ tests:
   - text: The root can be removed on a tree of three nodes.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(100); test.add(50); test.add(300); test.remove(100); return (test.inorder().join('') == 50300); })(), 'The root can be removed on a tree of three nodes.');
 ```
+
 </section>
 
 ## Challenge Seed

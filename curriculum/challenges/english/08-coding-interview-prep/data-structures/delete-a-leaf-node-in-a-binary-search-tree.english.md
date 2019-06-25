@@ -37,6 +37,7 @@ tests:
   - text: The <code>remove</code> method removes leaf nodes from the tree
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');
 ```
+
 </section>
 
 ## Challenge Seed

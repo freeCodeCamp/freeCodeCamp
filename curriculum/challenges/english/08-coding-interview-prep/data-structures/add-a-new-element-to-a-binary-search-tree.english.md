@@ -30,6 +30,7 @@ tests:
   - text: Adding an element that already exists returns <code>null</code>
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); return test.add(4) == null; })(), 'Adding an element that already exists returns <code>null</code>');
 ```
+
 </section>
 
 ## Challenge Seed
@@ -49,6 +50,7 @@ function BinarySearchTree() {
   // change code above this line
 }
 ```
+
 </div>
 
 ### After Test
@@ -100,6 +102,7 @@ BinarySearchTree.prototype = {
   }
 };
 ```
+
 </div>
 </section>
 
@@ -145,4 +148,5 @@ function BinarySearchTree() {
   };
 }
 ```
+
 </section>

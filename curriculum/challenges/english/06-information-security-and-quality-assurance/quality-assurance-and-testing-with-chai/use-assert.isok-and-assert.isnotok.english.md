@@ -9,8 +9,8 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 
 <code>isOk()</code> will test for a truthy value and <code>isNotOk()</code> will test for a falsy value.
-Truthy reference: https://developer.mozilla.org/en-US/docs/Glossary/Truthy
-Falsy reference: https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+[Truthy reference](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)
+[Falsy reference](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
 </section>
 
 ## Instructions

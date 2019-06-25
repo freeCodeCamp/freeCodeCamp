@@ -99,6 +99,7 @@ tests:
 The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.
 
 ### List Data type
+
 ```html
 <style type='text/sass'>
 
@@ -118,6 +119,7 @@ The solution requires using the $color variable twice: once for the class name a
 ```
 
 ### Map Data type
+
 ```html
 <style type='text/sass'>
 

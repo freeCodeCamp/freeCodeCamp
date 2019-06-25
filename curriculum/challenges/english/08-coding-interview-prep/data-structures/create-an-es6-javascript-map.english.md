@@ -31,6 +31,7 @@ tests:
   - text: myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.
     testString: assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');
 ```
+
 </section>
 
 ## Challenge Seed
@@ -40,6 +41,7 @@ tests:
 ```js
 // change code below this line
 ```
+
 </div>
 </section>
 
