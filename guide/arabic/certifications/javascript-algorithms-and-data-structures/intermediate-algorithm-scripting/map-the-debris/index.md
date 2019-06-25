@@ -70,7 +70,6 @@ localeTitle: رسم خريطة الحطام
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLow/0)
 
 ### شرح الشفرة:
 
@@ -112,7 +111,6 @@ localeTitle: رسم خريطة الحطام
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLoy/0)
 
 ### شرح الشفرة:
 
@@ -143,7 +141,6 @@ localeTitle: رسم خريطة الحطام
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLoz/0)
 
 ### شرح الشفرة:
 

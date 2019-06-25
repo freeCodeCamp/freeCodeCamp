@@ -10,29 +10,33 @@ localeTitle: Null-coalescing Operator
 
 بما أن `name` `null` ، فسيتم تعيين `name` `clientName` "John Doe".
 
- `string name = null; 
- 
- string clientName = name ?? "John Doe"; 
- 
- Console.WriteLine(clientName); 
-` 
+```cs
+string name = null;
 
- `> John Doe 
-` 
+string clientName = name ?? "John Doe";
+
+Console.WriteLine(clientName);
+``` 
+
+```cs
+> John Doe
+``` 
 
 ## مثال 2
 
 نظرًا لأن `name` ليس `null` ، فسيتم تعيين `name` `clientName` ، وهو "Jane Smith".
 
- `string name = "Jane Smith"; 
- 
- string clientName = name ?? "John Doe"; 
- 
- Console.WriteLine(clientName); 
-` 
+```cs
+string name = "Jane Smith";
 
- `> Jane Smith 
-` 
+string clientName = name ?? "John Doe";
+
+Console.WriteLine(clientName);
+``` 
+
+```cs
+> Jane Smith
+``` 
 
 ## بديل إلى if… else Statement
 
@@ -48,20 +52,23 @@ localeTitle: Null-coalescing Operator
 
 ومع ذلك ، يمكن تبسيط ذلك إلى حد كبير باستخدام مشغل التوليف الفارغ.
 
- `string clientName = name ?? "John Doe"; 
-` 
+```cs
+string clientName = name ?? "John Doe";
+``` 
 
 ## بديل لمشغل (شرطي) شرطي
 
 من الممكن أيضًا استخدام المشغل الشرطي لاختبار وجود قيمة `null` وتعيين قيمة مختلفة.
 
- `string clientName = name != null ? name : "John Doe"; 
-` 
+```cs
+string clientName = name != null ? name : "John Doe";
+``` 
 
 مرة أخرى ، يمكن تبسيط ذلك باستخدام مشغل التوليف الفارغ.
 
- `string clientName = name ?? "John Doe"; 
-` 
+```cs
+string clientName = name ?? "John Doe";
+``` 
 
 ## المراجع
 

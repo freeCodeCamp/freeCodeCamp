@@ -6,8 +6,9 @@ localeTitle: انقر فوق الطريقة
 
 تقوم طريقة jQuery Click بتشغيل وظيفة عند النقر على عنصر. تُعرف الدالة باسم "معالج" لأنه يعالج الحدث النقر. وظائف يمكن التأثير على عنصر HTML المرتبط بالنقرة باستخدام طريقة jQuery Click أو يمكنهم تغيير شيء آخر تمامًا. الشكل الأكثر استخدامًا هو:
 
- `$("#clickMe").click(handler) 
-` 
+```javascript
+$("#clickMe").click(handler)
+``` 
 
 تأخذ طريقة النقر وظيفة المعالج كوسيطة وتقوم بتنفيذها في كل مرة يتم فيها النقر `#clickMe` عنصر `#clickMe` . الدالة معالج يتلقى المعلمة المعروفة باسم [eventObject](http://api.jquery.com/Types/#Event) والتي يمكن أن تكون مفيدة للتحكم في الإجراء.
 
@@ -15,27 +16,29 @@ localeTitle: انقر فوق الطريقة
 
 يعرض هذا الرمز تنبيهًا عندما ينقر المستخدم على زر:
 
- `
-<button id="alert">Click Here</button> 
-` 
+```html
+<button id="alert">Click Here</button>
+``` 
 
- `$("#alert").click(function () { 
-  alert("Hi! I'm an alert"); 
- }); 
-` 
+```javascript
+$("#alert").click(function () {
+  alert("Hi! I'm an alert");
+});
+``` 
 
 [jsFiddle](https://jsfiddle.net/pL63cL6m/)
 
 يحتوي [eventObject](http://api.jquery.com/Types/#Event) على بعض الأساليب المضمنة ، بما في ذلك `preventDefault()` ، الذي يقوم بما يقوله بالضبط - يتوقف الحدث الافتراضي لعنصر. نحن هنا نرسم علامة المرساة من العمل كرابط:
 
- `
-<a id="myLink" href="www.google.com">Link to Google</a> 
-` 
+```html
+<a id="myLink" href="www.google.com">Link to Google</a>
+``` 
 
- `$("#myLink").click(function (event) { 
-  event.preventDefault(); 
- }); 
-` 
+```javascript
+$("#myLink").click(function (event) {
+  event.preventDefault();
+});
+``` 
 
 [jsFiddle](https://jsfiddle.net/dy457gbh/)
 
@@ -43,25 +46,28 @@ localeTitle: انقر فوق الطريقة
 
 يمكن أيضًا أن تقبل وظيفة المعالج بيانات إضافية في شكل كائن:
 
- `jqueryElement.click(usefulInfo, handler) 
-` 
+```javascript
+jqueryElement.click(usefulInfo, handler)
+``` 
 
 يمكن أن تكون البيانات من أي نوع.
 
- `$("element").click({firstWord: "Hello", secondWord: "World"}, function(event){ 
-    alert(event.data.firstWord); 
-    alert(event.data.secondWord); 
- }); 
-` 
+```javascript
+$("element").click({firstWord: "Hello", secondWord: "World"}, function(event){
+    alert(event.data.firstWord);
+    alert(event.data.secondWord);
+});
+``` 
 
 يؤدي استدعاء طريقة النقر بدون دالة معالج إلى تشغيل حدث نقرة:
 
- `$("#alert").click(function () { 
-  alert("Hi! I'm an alert"); 
- }); 
- 
- $("#alert").click(); 
-` 
+```javascript
+$("#alert").click(function () {
+  alert("Hi! I'm an alert");
+});
+
+$("#alert").click();
+``` 
 
 الآن ، عندما يتم تحميل الصفحة ، سيتم تشغيل حدث النقر عند إدخال الصفحة أو إعادة تحميلها ، وإظهار التنبيه المحدد.
 
@@ -75,17 +81,19 @@ localeTitle: انقر فوق الطريقة
 
 على سبيل المثال ، مثال أسلوب النقر هذا:
 
- `$( "element" ).click(function() { 
-  alert("I've been clicked!"); 
- }); 
-` 
+```javascript
+$( "element" ).click(function() {
+  alert("I've been clicked!");
+});
+``` 
 
 يمكن تغييره في هذا المثال على سبيل المثال:
 
- `$( document ).on("click", "element", function() { 
-  alert("I've been clicked!"); 
- }); 
-` 
+```javascript
+$( document ).on("click", "element", function() {
+  alert("I've been clicked!");
+});
+``` 
 
 #### معلومات اكثر:
 

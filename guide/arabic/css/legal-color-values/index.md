@@ -27,23 +27,24 @@ localeTitle: قيم اللون القانونية
 
 هنا ألوان عرافة مختلفة. ابحث عن المثال المباشر على https://jsfiddle.net/qg9revp4/2/.
 
- `#divRed{ 
-  color: #ff0000; /* red */ 
- } 
- 
- #divGreen{ 
-  color: #00ff00; /* green */ 
- } 
- 
- #divBlue{ 
-  color: #0000ff; /* blue */ 
- } 
- 
- #divWhite{ 
-  color: #ffffff; /* white */ 
-  background: #000000; /* black background, so that the text is visible */ 
- } 
-` 
+```css
+#divRed{
+  color: #ff0000; /* red */
+}
+
+#divGreen{
+  color: #00ff00; /* green */
+}
+
+#divBlue{
+  color: #0000ff; /* blue */
+}
+
+#divWhite{
+  color: #ffffff; /* white */
+  background: #000000; /* black background, so that the text is visible */
+}
+``` 
 
 ### ألوان RGB
 
@@ -59,23 +60,24 @@ localeTitle: قيم اللون القانونية
 
 هنا ألوان RGB مختلفة. ابحث عن المثال الحي على https://jsfiddle.net/vspepeth/1/.
 
- `#divRed{ 
-  color: rgb(255, 0, 0); /* red */ 
- } 
- 
- #divGreen{ 
-  color: rgb(0, 255, 0); /* green */ 
- } 
- 
- #divBlue{ 
-  color: rgb(0, 0, 255); /* blue */ 
- } 
- 
- #divWhite{ 
-  color: rgb(255, 255, 255); /* white */ 
-  background: rgb(0, 0, 0); /* black background, so that the text is visible */ 
- } 
-` 
+```css
+#divRed{
+  color: rgb(255, 0, 0); /* red */
+}
+
+#divGreen{
+  color: rgb(0, 255, 0); /* green */
+}
+
+#divBlue{
+  color: rgb(0, 0, 255); /* blue */
+}
+
+#divWhite{
+  color: rgb(255, 255, 255); /* white */
+  background: rgb(0, 0, 0); /* black background, so that the text is visible */
+}
+``` 
 
 ### ألوان RGBA
 
@@ -91,23 +93,24 @@ localeTitle: قيم اللون القانونية
 
 هنا مختلف ألوان RGBA. ابحث عن المثال المباشر على https://jsfiddle.net/hq0ngwg2/1/.
 
- `#divRed{ 
-  color: rgba(255, 0, 0, 0.3); /* red with opacity */ 
- } 
- 
- #divGreen{ 
-  color: rgba(0, 255, 0, 0.7); /* green with opacity */ 
- } 
- 
- #divBlue{ 
-  color: rgba(0, 0, 255, 0.5); /* blue with opacity */ 
- } 
- 
- #divWhite{ 
-  color: rgba(255, 255, 255, 0.6); /* white with opacity */ 
-  background: rgba(0, 0, 0, 0.8); /* black background with opacity */ 
- } 
-` 
+```css
+#divRed{
+  color: rgba(255, 0, 0, 0.3); /* red with opacity */
+}
+
+#divGreen{
+  color: rgba(0, 255, 0, 0.7); /* green with opacity */
+}
+
+#divBlue{
+  color: rgba(0, 0, 255, 0.5); /* blue with opacity */
+}
+
+#divWhite{
+  color: rgba(255, 255, 255, 0.6); /* white with opacity */
+  background: rgba(0, 0, 0, 0.8); /* black background with opacity */
+}
+``` 
 
 ### ألوان HSL
 
@@ -134,19 +137,20 @@ HSL تعني الصباغة والتشبع والخفة. يتم تحديده ك�
 
 ابحث عن المثال المباشر على https://jsfiddle.net/g10zpL28/1/.
 
- `#div1 { 
-  background-color: hsl(240, 100%, 50%); /* blue */ 
- } 
- #div2 { 
-  background-color: hsl(195, 53%, 79%); /* light blue */ 
- } 
- #div3 { 
-  background-color: hsl(240, 100%, 25%); /* dark blue */ 
- } 
- #div4 { 
-  background-color: hsl(187, 75%, 86%); /* pastel blue */ 
- } 
-` 
+```css
+#div1 {
+  background-color: hsl(240, 100%, 50%); /* blue */
+}
+#div2 {
+  background-color: hsl(195, 53%, 79%); /* light blue */
+}
+#div3 {
+  background-color: hsl(240, 100%, 25%); /* dark blue */
+}
+#div4 {
+  background-color: hsl(187, 75%, 86%); /* pastel blue */
+}
+``` 
 
 ### ألوان HSLA
 
@@ -171,19 +175,20 @@ HSLA تعني التدرج والتشبع والخفة وقناة ألفا. تم
 
 فيما يلي أمثلة على ألوان HSLA. انظر لهم يعيشون في https://jsfiddle.net/2Lxscgfy/1/.
 
- `#div1 { 
-  background-color: hsla(240, 100%, 50%, 0.5); /* blue with transparency */ 
- } 
- #div2 { 
-  background-color: hsla(195, 53%, 79%, 0.8); /* light blue with transparency */ 
- } 
- #div3 { 
-  background-color: hsla(240, 100%, 25%, 0.3); /* dark blue with transparency */ 
- } 
- #div4 { 
-  background-color: hsla(187, 75%, 86%, 1.0); /* pastel blue with transparency */ 
- } 
-` 
+```css
+#div1 {
+  background-color: hsla(240, 100%, 50%, 0.5); /* blue with transparency */
+}
+#div2 {
+  background-color: hsla(195, 53%, 79%, 0.8); /* light blue with transparency */
+}
+#div3 {
+  background-color: hsla(240, 100%, 25%, 0.3); /* dark blue with transparency */
+}
+#div4 {
+  background-color: hsla(187, 75%, 86%, 1.0); /* pastel blue with transparency */
+}
+``` 
 
 ### أسماء اللون المعرفة مسبقا
 
@@ -195,22 +200,23 @@ HSLA تعني التدرج والتشبع والخفة وقناة ألفا. تم
 
 فيما يلي بعض أسماء الألوان المستخدمة. تحقق من المثال الحي على https://jsfiddle.net/rqygumpy/. ابحث عن القائمة الكاملة في [مستندات MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Color_keywords) .
 
- `#div1{ 
-  color: BlueViolet; 
- } 
- 
- #div2{ 
-  color: RebeccaPurple; 
- } 
- 
- #div3{ 
-  color: RoyalBlue; 
- } 
- 
- #div4{ 
-  color: Salmon; 
- } 
-` 
+```css
+#div1{
+  color: BlueViolet;
+}
+
+#div2{
+  color: RebeccaPurple;
+}
+
+#div3{
+  color: RoyalBlue;
+}
+
+#div4{
+  color: Salmon;
+}
+``` 
 
 #### معلومات اكثر:
 

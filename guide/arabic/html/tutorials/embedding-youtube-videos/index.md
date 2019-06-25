@@ -18,11 +18,11 @@ localeTitle: تضمين مقاطع الفيديو على Youtube
 *   عنصر `<frame>` (لا تنسى إغلاقه!)
 *   سمات `width` `height`
 
- `
-<iframe width="420" height="315" 
- src="https://www.youtube.com/watch?v=v8kFT4I31es"> 
- </iframe> 
-` 
+```html
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=v8kFT4I31es">
+</iframe>
+``` 
 
 يتم إدراج القيم المدرجة ، ولكن لا تتردد في تغييرها بالطريقة التي تريدها.
 
@@ -30,8 +30,8 @@ localeTitle: تضمين مقاطع الفيديو على Youtube
 
 ماذا يجب أن نفعل إذا كنا نرغب في جعل هذا اللاعب يبدأ اللعب تلقائيًا؟ ما عليك سوى الإضافة إلى قيمة الرابط `?autoplay=1` . ولكن كن حذرًا ، فقد يكون الأمر مزعجًا بالنسبة إلى الكثير من الأشخاص الذين يزورون صفحتك على الويب.
 
- `
-<iframe width="420" height="315" 
- src="https://www.youtube.com/watch?v=v8kFT4I31es?autoplay=1"> 
- </iframe> 
-`
+```html
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=v8kFT4I31es?autoplay=1">
+</iframe>
+```

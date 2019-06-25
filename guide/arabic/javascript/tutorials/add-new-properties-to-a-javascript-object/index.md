@@ -13,11 +13,13 @@ localeTitle: أضف خصائص جديدة إلى كائن JavaScript
 
 إليك كيفية استخدام تدرج قوس:
 
- `myObject['bark'] = "woof-woof"; 
-` 
+```javascript
+myObject['bark'] = "woof-woof";
+``` 
 
 باستخدام تدرج القوس ، يمكننا استخدام المتغيرات كأسماء للممتلكات:
 
- `var dynamicProperty = "bark"; 
- myObject[dynamicProperty] = "woof-woof"; 
-`
+```javascript
+var dynamicProperty = "bark";
+myObject[dynamicProperty] = "woof-woof";
+```

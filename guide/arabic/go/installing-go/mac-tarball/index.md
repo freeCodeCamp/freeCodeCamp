@@ -16,16 +16,18 @@ localeTitle: تثبيت Go in Mac OS X باستخدام tarball
 
 ##### تثبيت Go 1.9.1
 
- `$ curl -O https://storage.googleapis.com/golang/go1.9.1.darwin-amd64.tar.gz 
- $ sudo tar -C /usr/local -xzf go1.9.1.darwin-amd64.tar.gz 
- $ export PATH=$PATH:/usr/local/go/bin 
-` 
+```
+$ curl -O https://storage.googleapis.com/golang/go1.9.1.darwin-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.9.1.darwin-amd64.tar.gz
+$ export PATH=$PATH:/usr/local/go/bin
+``` 
 
 #### تحقق من التثبيت وإصدار من الذهاب
 
 للتحقق مما إذا تم تشغيل go بنجاح ، استخدم:
 
- `$ go version 
-` 
+```sh
+$ go version
+``` 
 
 يجب أن يطبع هذا إلى إصدار وحدة التحكم ، بينما يتأكد في نفس الوقت من أن عملية التثبيت سارت بسلاسة.
