@@ -3,7 +3,7 @@ title: Using Anonymous Functions for Private Namespacing in Your JavaScript Apps
 ---
 Let's take a look at what a namespace is when it comes to building JavaScript applications and some of the benefits from using a private namespace when building your apps.
 
-**Please note that this article references anonymous self-executing functions. If you're unaware of what this is, please read this excellent article by Noah Stokes: <a href='http://esbueno.noahstokes.com/post/77292606977/self-executing-anonymous-functions-or-how-to-write' target='_blank' rel='nofollow'>Self-Executing Anonymous Functions or How to Write Clean Javascript</a>. This article will go into detail about anonymous self-executing functions.**
+**Please note that this article references anonymous self-executing functions. If you're unaware of what this is, please read this excellent article by Noah Stokes: <a href='http://esbueno.noahstokes.com/post/77292606977/self-executing-anonymous-functions-or-how-to-write' target='_blank' rel='nofollow'>Self-Executing Anonymous Functions or How to Write Clean JavaScript</a>. This article will go into detail about anonymous self-executing functions.**
 
 ## What is a Namespace?
 
@@ -35,7 +35,7 @@ To break this down into simpler terms from a real life scenario, let's say you a
 
 ## Achieving a Private Namespace
 
-So, how do we achieve this **private namespace** in JavaScript? Use an anonymous self-executing function! If you didn't read the article by Noah Stokes, <a href='http://esbueno.noahstokes.com/post/77292606977/self-executing-anonymous-functions-or-how-to-write' target='_blank' rel='nofollow'>Self-Executing Anonymous Functions or How to Write Clean Javascript</a>, please do so now. This article will go into detail about anonymous self-executing functions.
+So, how do we achieve this **private namespace** in JavaScript? Use an anonymous self-executing function! If you didn't read the article by Noah Stokes, <a href='http://esbueno.noahstokes.com/post/77292606977/self-executing-anonymous-functions-or-how-to-write' target='_blank' rel='nofollow'>Self-Executing Anonymous Functions or How to Write Clean JavaScript</a>, please do so now. This article will go into detail about anonymous self-executing functions.
 
 Let's take a look at using that _points_ variable from earlier, but let's separate it into a **private namespace**:
 

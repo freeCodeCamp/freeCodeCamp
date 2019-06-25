@@ -1,7 +1,7 @@
 ---
-title: Basic Javascript
+title: Basic JavaScript
 ---
-## Basic Javascript
+## Basic JavaScript
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

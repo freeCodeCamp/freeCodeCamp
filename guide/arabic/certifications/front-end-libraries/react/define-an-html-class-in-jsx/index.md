@@ -15,9 +15,10 @@ localeTitle: تحديد فئة HTML في JSX
 
 ## حل
 
- `const JSX = ( 
-  <div className = "myDiv"> 
-    <h1>Add a class to this div</h1> 
-  </div> 
- ); 
-`
+```javascript
+const JSX = (
+  <div className = "myDiv">
+    <h1>Add a class to this div</h1>
+  </div>
+);
+```

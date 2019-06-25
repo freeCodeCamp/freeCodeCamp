@@ -10,9 +10,10 @@ localeTitle: العوامل الممرضة
 
 قم بتشغيل الأوامر التالية:
 
- `mkdir -p ~/.vim/autoload ~/.vim/bundle && \ 
- curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim 
-` 
+```
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+``` 
 
 * * *
 
@@ -20,15 +21,17 @@ localeTitle: العوامل الممرضة
 
 أضف هذا الأمر إلى ملفك .vimrc:
 
- `execute pathogen#infect() 
-` 
+```
+execute pathogen#infect()
+``` 
 
 إذا لم يكن لديك أي ملف .vimrc ، اكتب `vim ~/.vimrc` وقم بلصق هذا:
 
- `execute pathogen#infect() 
- syntax on 
- filetype plugin indent on 
-` 
+```
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+``` 
 
 هذا هو مثال أساسي جدا. في هذه اللحظة ، سيتم استخراج كل الإضافات إلى `~/.vim/bundle` وستتم إضافتها إلى _`runtimepath`_
 
@@ -38,9 +41,10 @@ localeTitle: العوامل الممرضة
 
 إذا كنت ترغب في تثبيت مكونات مثل NERDTree ، فقم ببساطة بتشغيل هذا:
 
- `cd ~/.vim/bundle 
- git clone https://github.com/scrooloose/nerdtree 
-` 
+```
+cd ~/.vim/bundle
+git clone https://github.com/scrooloose/nerdtree
+``` 
 
 سيتم إضافته إلى \_ `runtimepath` .
 

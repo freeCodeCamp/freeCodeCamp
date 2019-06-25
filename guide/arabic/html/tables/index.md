@@ -2,26 +2,21 @@
 title: Tables
 localeTitle: الجداول
 ---
-### تحديد جدول HTML
+### HTML إنشاء جدول في
 
-يتم تعريف جدول HTML مع العلامة.
+ينقسم الجدول إلى صفوف و أعمدة
 
-يتم تعريف كل صف الجدول بـ
+`<tr>` يتم تعريف كل صف الجدول بـ 
 
-العلامة. داخل الصف قد تكون هناك رؤوس جدول أو بيانات جدول.
+`<td>` يتم تعريف كل عمود الجدول بـ 
 
-*   يتم تعريف رأس الجدول مع
+عناصر أكثر تعقيدًا كـ HTML أيضًا قد يتضمن جدول 
 
-العلامة. بشكل افتراضي ، تكون عناوين الجدول غامقة ويتم توسيطها.*   يتم تعريف بيانات الجدول / الخلية مع
-
-العلامة.
-
-قد يتضمن جدول HTML أكثر تعقيدًا أيضًا عناصر `<caption>` و `<col>` و `<colgroup>` و `<thead>` و `<tfoot>` و `<tbody>` في ذلك.
+`<caption>` و `<col>` و `<colgroup>` و `<thead>` و `<tfoot>` و `<tbody>`
 
 ### مثال بسيط على الجدول
 
- `
-<table style="width:100%"> 
+<table border=1 style="width:100%"> 
   <tr> 
     <th>Firstname</th> 
     <th>Lastname</th> 
@@ -40,59 +35,30 @@ localeTitle: الجداول
  </table> 
 ` 
 
-[DEMO](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table)
+[DEMO](https://codepen.io/arachid/pen/jeeLoO)
 
-### مثال الجدول مع مزيد من المعلومات الدلالية
+### مثال آخر بسيط على الجدول
 
- `
-<!DOCTYPE html> 
-    <html> 
-    <body> 
-       <table> 
-      <thead> 
-        <tr> 
-          <th>Item</th> 
-          <th>Amount</th> 
-        </tr> 
-      </thead> 
-      <tfoot> 
-        <tr> 
-          <td>Apple</td> 
-          <td>10</td> 
-        </tr> 
-      </tfoot> 
-      <tbody> 
-        <tr> 
-          <td>Peach</td> 
-          <td>15</td> 
-        </tr> 
-        <tr> 
-          <td>Watermelon</td> 
-          <td>3</td> 
-        </tr> 
-      </tbody> 
-    </table> 
-    </body> 
-   </html> 
-` 
+<table border=1 style="width:100%"> 
+    <tr> 
+      <th>Item</th> 
+      <th>Item</th> 
+    </tr> 
+    <tr> 
+      <td>Apple</td> 
+      <td>10</td> 
+    </tr> 
+    <tr> 
+      <td>Peach</td> 
+      <td>15</td> 
+    </tr> 
+    <tr> 
+      <td>Watermelon</td> 
+      <td>3</td> 
+    </tr> 
+</table> 
 
-نتيجة:
-
-بند
-
-كمية
-
-تفاحة
-
-10
-
-خوخ
-
-15
-
-البطيخ
-
-3
+[DEMO](https://codepen.io/arachid/pen/jeeLgO)
 
 #### معلومات اكثر:
 

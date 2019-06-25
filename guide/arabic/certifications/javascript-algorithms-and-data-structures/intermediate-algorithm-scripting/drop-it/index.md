@@ -59,7 +59,6 @@ localeTitle: أسقطها
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLna/0)
 
 ### شرح الشفرة:
 
@@ -82,7 +81,6 @@ localeTitle: أسقطها
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnc/0)
 
 ### شرح الشفرة:
 
@@ -108,7 +106,6 @@ localeTitle: أسقطها
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnf/0)
 
 ### شرح الشفرة
 

@@ -16,6 +16,6 @@ localeTitle: تاريخ روبي
 
 اليوم ، تعتبر روبي أون ريلز إطاراً متيناً للويب ؛ وقد رائدة الكثير من الممارسات العظيمة في تطوير الويب.
 
-وبالمثل ، يتم ترميز العديد من [المواقع الشهيرة](https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails) في Ruby on Rails مثل Github و Airbnb و Groupon وغيرها.
+وبالمثل ، يتم ترميز العديد من [المواقع الشهيرة](https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails) في Ruby on Rails مثل GitHub و Airbnb و Groupon وغيرها.
 
 هناك العديد من [تطبيقات](https://github.com/cogitator/ruby-implementations/wiki/List-of-Ruby-implementations) روبي. JRuby (Ruby on the JVM) ، و Ruby MRI (تسمى أيضاً CRuby) و IronRuby (Ruby for .NET و Silverlight) هي بعض من أشهرها.

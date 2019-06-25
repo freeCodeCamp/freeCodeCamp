@@ -6,10 +6,10 @@ localeTitle: يوم واحد
 
 في HTML ، يتم استخدام العلامة `<s>` في نص يتوسطه خط. على سبيل المثال:
 
- `
-<p><s>This year is the year of the monkey.</s></p> 
- <p>This year is the year of the Rooster.</p> 
-` 
+```html
+<p><s>This year is the year of the monkey.</s></p>
+<p>This year is the year of the Rooster.</p>
+``` 
 
 #### معلومات اكثر:
 

@@ -10,7 +10,7 @@ JavaScript的`with`语句是在一个对象上编辑多个属性的简便方法�
 
 ### 句法
 
-```syntax
+```js
 with (expression) 
   statement 
 ```
