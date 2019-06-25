@@ -18,19 +18,19 @@ localeTitle: كيانات HTML
 
 كيان الشخصية يشبه هذا:
 
- `
-<!-- format &[entity_name]; --> 
- <!-- example for a less-than sign (<) --> 
- &lt; 
-` 
+```html
+<!-- format &[entity_name]; -->
+<!-- example for a less-than sign (<) -->
+&lt;
+``` 
 
 أو
 
- `
-<!-- &#[entity_number]; --> 
- <!-- example for a less-than sign (<) --> 
- &#60; 
-` 
+```html
+<!-- &#[entity_number]; -->
+<!-- example for a less-than sign (<) -->
+&#60;
+``` 
 
 ## دليل مرجعي
 

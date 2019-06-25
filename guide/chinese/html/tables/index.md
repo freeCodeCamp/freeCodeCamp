@@ -81,8 +81,10 @@ table, th, td {
     </body> 
    </html> 
 ```
+结果
+Item Amount
 
-结果：
+Apple 10
 
 | 项目 | 数量 |
 |----|----|

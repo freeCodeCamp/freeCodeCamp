@@ -47,7 +47,6 @@ localeTitle: تنفيذ فرز دمج
  } 
 ` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Merge-Sort)
 
 ### المراجع:
 

@@ -4,12 +4,14 @@ localeTitle: إنشاء حاوية جديدة
 ---
 إنشاء حاوية باستخدام Docker CLI
 
- `docker create [OPTIONS] IMAGE [COMMAND] [ARG...] 
-` 
+```yaml
+docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
+``` 
 
 # أمثلة
 
 إنشاء وبدء حاوية
 
- `$ docker create -t -i fedora bash 
-`
+```sh
+$ docker create -t -i fedora bash
+```

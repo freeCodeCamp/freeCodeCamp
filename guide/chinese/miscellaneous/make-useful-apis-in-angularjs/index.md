@@ -1,6 +1,6 @@
 ---
-title: Make Useful Apis in Angularjs
-localeTitle: 在Angularjs中制作有用的Apis
+title: Make Useful APIs in Angularjs
+localeTitle: 在Angularjs中制作有用的APIs
 ---
 但是，在此之前还有两件事要做，对你有用。假设您要显示与该页面请求的用户名相关的所有_内容_ ：您必须先
 

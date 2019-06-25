@@ -4,7 +4,7 @@ title: Front End Libraries Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Сертификат библиотек лицеев
+localeTitle: Сертификат Библиотеки Пользовательского Интерфейса
 ---
 
 ## Description

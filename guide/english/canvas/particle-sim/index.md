@@ -8,19 +8,19 @@ In this guide, we're going to build a basic particle simulation in Canvas using 
 We will want to set up an array of particles with accelerations and velocities. We will create 100 particles at random points on the canvas.
 
 ```js
-canvas = document.getElementById("canvas");
-ctx = canvas.getContext('2d');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
-var particles = [];
-for(var i=0; i<100; i++) {
+const particles = [];
+for (let i=0; i<100; i++) {
   particles.push(
     {
-      x:Math.random()*canvas.width,
-      y:Math.random()*canvas.height,
-      vx:0,
-      vy:0,
-      ax:0,
-      ay:0
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: 0,
+      vy: 0,
+      ax: 0,
+      ay: 0
     }
   );
 }
@@ -29,9 +29,9 @@ for(var i=0; i<100; i++) {
 In our draw loop, we render these particles.
 
 ```js
-function draw() {
+const draw = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for(var i=0; i<particles.length; i++) {
+  for (let i=0; i<particles.length; i++) {
     // update state
 
     // render state
@@ -41,49 +41,47 @@ function draw() {
   }
 
   window.requestAnimationFrame(draw);
-}
+};
 window.requestAnimationFrame(draw);
 ```
 
 Now, all we need to do is update velocity and acceleration each frame. We will add the acceleration to the velocity and add the velocity to the position.
 
 ```js
-function draw() {
-  for(var i=0; i<particles.length; i++) {
+const draw = () => {
+  for (let i=0; i<particles.length; i++) {
     // update state
-    particles[i].x+=particles[i].vx;
-    particles[i].y+=particles[i].vy;
-    particles[i].vx+=particles[i].ax;
-    particles[i].vy+=particles[i].ay;
+    particles[i].x += particles[i].vx;
+    particles[i].y += particles[i].vy;
+    particles[i].vx += particles[i].ax;
+    particles[i].vy += particles[i].ay;
   
     /* render code */
   }
 
   window.requestAnimationFrame(draw);
-}
+};
 window.requestAnimationFrame(draw);
 ```
 
 That's it! All we need to do to is create a force somewhere. Let's do it with a click listener.
 
 ```js
-canvas.addEventListener("click", function(e) {
-  var clickX = e.clientX-canvas.offsetLeft;
-  var clickY = e.clientY-canvas.offsetTop;
-  for(var i=0; i<particles.length; i++) {
-    var delx = particles[i].x-clickX;
-    var dely = particles[i].y-clickY;
-    var magnitudeSquared = Math.pow(delx, 2)+Math.pow(dely, 2);
-    
+canvas.addEventListener('click', e => {
+  const clickX = e.clientX - canvas.offsetLeft;
+  const clickY = e.clientY - canvas.offsetTop;
+  for (let i=0; i<particles.length; i++) {
+    const delx = particles[i].x - clickX;
+    const dely = particles[i].y - clickY;
+    const magnitudeSquared = Math.pow(delx, 2) + Math.pow(dely, 2);
     
     particles[i].ax = 0.1*delx/magnitudeSquared;
     particles[i].ay = 0.1*dely/magnitudeSquared;
-    
   }
 });
 ```
 
-This adds force via the inverse-square law. See [this page](#placeholder) for more details.
+This adds force via the [inverse-square law](https://en.wikipedia.org/wiki/Inverse-square_law).
 
 That's all! The final codepen:
 

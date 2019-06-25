@@ -16,7 +16,7 @@ localeTitle: 2 на 2 Определители
 
 Абсолютная величина определителя равна площади параллелограмма.
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [Вот](https://i.stack.imgur.com/gCaz3.png) интересное визуальное доказательство этого свойства.
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [Вот](https://cdn-media-1.freecodecamp.org/imgr/gCaz3.png) интересное визуальное доказательство этого свойства.
 
 Примечание. Если детерминант равен нулю, то в системе нет решений (пересечений) (так как прямые параллельны).
 

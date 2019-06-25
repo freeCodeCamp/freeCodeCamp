@@ -10,7 +10,7 @@ localeTitle: Представление встроенных стилей
 
 Давайте проведем шаги, чтобы вы поняли разницу. Сначала установите тэг стиля в **объект JavaScript** .
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 
@@ -26,7 +26,7 @@ class Colorful extends React.Component {
 
 Во-вторых, давайте установим красный цвет.
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 
@@ -42,7 +42,7 @@ class Colorful extends React.Component {
 
 ### Спойлер
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 

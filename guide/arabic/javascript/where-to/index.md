@@ -8,11 +8,11 @@ JavaScript هي لغة برمجة HTML والويب. في HTML ، يجب إدر�
 
 ### مثال
 
- `
-<script> 
-  window.alert("This JavaScript Works!"); 
- </script> 
-` 
+```html
+<script>
+  window.alert("This JavaScript Works!");
+</script>
+``` 
 
 تذكر أيضًا أنه يمكنك وضع أي عدد من علامات `<script>` في مستند HTML.
 
@@ -24,25 +24,25 @@ JavaScript هي لغة برمجة HTML والويب. في HTML ، يجب إدر�
 
 في هذا المثال ، يتم وضع JavaScript في قسم `<head>` من المستند. يتم إنشاء وظيفة **onClicked** ، والتي تسمى عند الضغط على زر.
 
- `
-<!DOCTYPE html> 
- <html> 
- <head> 
- <script> 
- function onClicked() { 
-    window.alert("Hi, there!"); 
- } 
- </script> 
- </head> 
- 
- <body> 
- 
- <h1>JavaScript Testing</h1> 
- <button type="button" onclick="onClicked()">Try it</button> 
- 
- </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function onClicked() {
+    window.alert("Hi, there!");
+}
+</script>
+</head>
+
+<body>
+
+<h1>JavaScript Testing</h1>
+<button type="button" onclick="onClicked()">Try it</button>
+
+</body>
+</html>
+``` 
 
 ### JavaScript في `<body>`
 
@@ -74,8 +74,9 @@ JavaScript هي لغة برمجة HTML والويب. في HTML ، يجب إدر�
 
 ##### script.js
 
- `window.alert("Hi!"); 
-` 
+```javascript
+window.alert("Hi!");
+``` 
 
 يمكن تضمين هذا البرنامج النصي في مستند HTML على النحو التالي:
 
