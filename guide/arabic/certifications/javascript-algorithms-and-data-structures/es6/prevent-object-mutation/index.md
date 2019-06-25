@@ -43,8 +43,6 @@ localeTitle: منع تحول الكائن
     const PI = freezeObj(); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://codepen.io/dylantyates/pen/OwVxYB)
-
 # شرح الشفرة:
 
 باستخدام Object.freeze () على `MATH_CONSTANTS` يمكننا تجنب التلاعب بها.

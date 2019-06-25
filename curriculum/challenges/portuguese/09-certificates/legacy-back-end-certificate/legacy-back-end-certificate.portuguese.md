@@ -4,7 +4,7 @@ title: Legacy Back End Certificate
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: Certificado Legacy Back End
+localeTitle: Certificado Back End Legado
 ---
 
 ## Description

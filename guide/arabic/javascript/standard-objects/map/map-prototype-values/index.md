@@ -8,19 +8,21 @@ localeTitle: Map.prototype.values
 
 ## بناء الجملة
 
- `myMap.values() 
-` 
+```javascript
+myMap.values()
+``` 
 
 ## مثال
 
- `const myMap = new Map(); 
- myMap.set('foo',1); 
- myMap.set('bar',2); 
- myMap.set('baz',3); 
- 
- 
- const iterator = myMap.values(); 
- console.log(iterator.next().value); // 1 
- console.log(iterator.next().value); // 2 
- console.log(iterator.next().value); // 3 
-`
+```javascript
+const myMap = new Map();
+myMap.set('foo',1);
+myMap.set('bar',2);
+myMap.set('baz',3);
+
+
+const iterator = myMap.values();
+console.log(iterator.next().value); // 1
+console.log(iterator.next().value); // 2
+console.log(iterator.next().value); // 3
+```

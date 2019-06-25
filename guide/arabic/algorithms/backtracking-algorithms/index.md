@@ -16,33 +16,35 @@ _يتم وضع الفارس على أول كتلة من لوحة فارغة ، �
 
 تقوم Naive Algorithm بتوليد جميع الجولات واحدة تلو الأخرى والتحقق مما إذا كانت الجولة التي تم إنشاؤها تفي بالقيود.
 
- `while there are untried tours 
- { 
-   generate the next tour 
-   if this tour covers all squares 
-   { 
-      print this path; 
-   } 
- } 
-` 
+```
+while there are untried tours
+{
+   generate the next tour
+   if this tour covers all squares
+   {
+      print this path;
+   }
+}
+``` 
 
 ### خوارزمية التراجع عن جولة نايت
 
 فيما يلي خوارزمية Backtracking لمشكلة جولة Knight.
 
- `If all squares are visited 
-    print the solution 
- Else 
-   a) Add one of the next moves to solution vector and recursively 
-   check if this move leads to a solution. (A Knight can make maximum 
-   eight moves. We choose one of the 8 moves in this step). 
-   b) If the move chosen in the above step doesn't lead to a solution 
-   then remove this move from the solution vector and try other 
-   alternative moves. 
-   c) If none of the alternatives work then return false (Returning false 
-   will remove the previously added item in recursion and if false is 
-   returned by the initial call of recursion then "no solution exists" ) 
-` 
+```
+If all squares are visited
+    print the solution
+Else
+   a) Add one of the next moves to solution vector and recursively
+   check if this move leads to a solution. (A Knight can make maximum
+   eight moves. We choose one of the 8 moves in this step).
+   b) If the move chosen in the above step doesn't lead to a solution
+   then remove this move from the solution vector and try other
+   alternative moves.
+   c) If none of the alternatives work then return false (Returning false
+   will remove the previously added item in recursion and if false is
+   returned by the initial call of recursion then "no solution exists" )
+``` 
 
 ### معلومات اكثر
 

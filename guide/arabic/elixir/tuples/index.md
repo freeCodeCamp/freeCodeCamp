@@ -6,23 +6,25 @@ localeTitle: الصفوف
 
 في الإكسير ، الصفوف هي بنية بيانات يمكنها الاحتفاظ بأي قيمة أو خليط من الأنواع. يتم تعريف المجموعات بواسطة الأقواس المتعرجة ، وتبدأ الفهارس الخاصة بها من 0. ولما كانت الصفوف يتم تخزينها بشكل متقارب في الذاكرة ، فإن الحصول على البيانات منها هو عملية سريعة جدًا.
 
- `iex> tuple = {:atom, "string"} 
- {:atom, "string"} 
- iex> elem(tuple, 0) 
- :atom 
-` 
+```elixir
+iex> tuple = {:atom, "string"}
+{:atom, "string"}
+iex> elem(tuple, 0)
+:atom
+``` 
 
 ## ثبات
 
 تعتبر الصفوف في Elixir غير قابلة للتغيير ، لذا فإن إجراء تعديلات سيؤدي إلى ظهور مجموعة جديدة تمامًا - مما يوفر النص الأصلي في الذاكرة.
 
- `iex> tuple = {:atom, "string"} 
- {:atom, "string"} 
- iex> put_elem(tuple, 1, true) 
- {:atom, true} 
- iex> tuple 
- {:atom, "string"} 
-` 
+```elixir
+iex> tuple = {:atom, "string"}
+{:atom, "string"}
+iex> put_elem(tuple, 1, true)
+{:atom, true}
+iex> tuple
+{:atom, "string"}
+``` 
 
 ## نمط مطابقة
 

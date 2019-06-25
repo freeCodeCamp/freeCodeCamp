@@ -14,7 +14,7 @@ Los comentarios comienzan con `<!--` y finalizan con `-->` , y pueden abarcar va
 
 ```html
 
-<!-- You can comment out a large number of lines like this. 
+<!-- Puedes commentar varias lineas como estas. 
  Author: xyz 
  Date: xx/xx/xxxx 
  Purpose: abc 
@@ -46,7 +46,7 @@ Los comentarios condicionales solo son reconocidos por la versión 5 de Internet
     <body> 
         <!--[if IE 9]> 
                 <h1>FreeCodeCamp web</h1> 
-            <p>FreeCodeCamp is an open-source project that needs your help</p> 
+            <p>FreeCodeCamp es un projecto de codigo abierto que neccesita tu ayuda</p> 
         <![endif]--> 
     </body> 
  </html> 

@@ -10,12 +10,13 @@ localeTitle: Math Trunc
 
 ### أمثلة
 
- `Math.trunc(0.1)   //  0 
- Math.trunc(1.3)   //  1 
- Math.trunc(-0.9)  // -0 
- Math.trunc(-1.5)  // -1 
- Math.trunc('foo') // NaN 
-` 
+```javascript
+Math.trunc(0.1)   //  0
+Math.trunc(1.3)   //  1
+Math.trunc(-0.9)  // -0
+Math.trunc(-1.5)  // -1
+Math.trunc('foo') // NaN
+``` 
 
 ### معلومات اكثر:
 

@@ -15,12 +15,13 @@ localeTitle: بوابة سحب
 
 بناء جملة هذا الأمر هو كما يلي:
 
- `# General format 
- git pull OPTIONS REPOSITORY REFSPEC 
- 
- # Pull from specific branch 
- git pull REMOTE-NAME BRANCH-NAME 
-` 
+```shell
+# General format
+git pull OPTIONS REPOSITORY REFSPEC
+
+# Pull from specific branch
+git pull REMOTE-NAME BRANCH-NAME
+``` 
 
 بحيث:
 

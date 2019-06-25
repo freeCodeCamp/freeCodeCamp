@@ -52,6 +52,8 @@ let result = hello; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let hello = "   Hello, World!  ";
+let wsRegex = /^(\s+)(.+[^\s])(\s+)$/;
+let result = hello.replace(wsRegex, '$2');
 ```
 </section>

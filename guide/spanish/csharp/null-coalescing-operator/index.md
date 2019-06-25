@@ -10,7 +10,7 @@ El operador de unión nula en C # se usa para ayudar a asignar una variable a ot
 
 Como el `name` es `null` , a `clientName` se le asignará el valor "John Doe".
 
-```cs
+```csharp
 string name = null; 
  
  string clientName = name ?? "John Doe"; 
@@ -18,7 +18,7 @@ string name = null;
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > John Doe 
 ```
 
@@ -26,7 +26,7 @@ string name = null;
 
 Dado que el `name` no es `null` , a `clientName` se le asignará el valor de `name` , que es "Jane Smith".
 
-```cs
+```csharp
 string name = "Jane Smith"; 
  
  string clientName = name ?? "John Doe"; 
@@ -34,7 +34,7 @@ string name = "Jane Smith";
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > Jane Smith 
 ```
 
@@ -42,7 +42,7 @@ string name = "Jane Smith";
 
 Podría usar una instrucción `if...else` para probar la presencia de `null` y asignar un valor diferente.
 
-```cs
+```csharp
 string clientName; 
  
  if (name != null) 
@@ -53,7 +53,7 @@ string clientName;
 
 Sin embargo, esto puede simplificarse enormemente utilizando el operador de fusión nula.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 
@@ -61,13 +61,13 @@ string clientName = name ?? "John Doe";
 
 También es posible utilizar el operador condicional para probar la presencia de `null` y asignar un valor diferente.
 
-```cs
+```csharp
 string clientName = name != null ? name : "John Doe"; 
 ```
 
 De nuevo, esto se puede simplificar utilizando el operador de unión nula.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 

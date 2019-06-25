@@ -23,12 +23,13 @@ localeTitle: Array.prototype.pop
 
 ## أمثلة
 
- `let array = [1, 2, 3, 4]; 
- array.pop(); // removes 4 
- console.log(array); // [1, 2, 3] 
- 
- [].pop() // undefined 
-` 
+```js
+let array = [1, 2, 3, 4];
+array.pop(); // removes 4
+console.log(array); // [1, 2, 3]
+
+[].pop() // undefined
+``` 
 
 #### معلومات اكثر:
 

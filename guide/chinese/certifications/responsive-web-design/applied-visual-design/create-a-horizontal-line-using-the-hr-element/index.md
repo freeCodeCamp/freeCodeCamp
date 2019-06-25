@@ -23,7 +23,7 @@ localeTitle: 使用hr元素创建水平线
 
 无论您选择哪种格式，都会在[freeCodeCamp的](https://www.freecodecamp.org/) [本课程中](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/create-a-horizontal-line-using-the-hr-element/)创建一条水平线。以下是该课程的屏幕截图，显示了div中包含的`hr`元素。
 
-![示例hr](https://i.imgur.com/RMTqXPw.png)
+![示例hr](https://cdn-media-1.freecodecamp.org/imgr/RMTqXPw.png)
 
 ## 资源：
 

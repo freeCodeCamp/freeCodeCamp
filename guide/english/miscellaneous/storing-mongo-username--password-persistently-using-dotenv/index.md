@@ -79,7 +79,7 @@ At the command line, environmental variables are defined for the current shell a
 
 <header class="source"><a href='http://stackoverflow.com/questions/35356692/best-practice-when-using-an-api-key-in-node-js' target='_blank' rel='nofollow'>stackoverflow.com</a></header>
 
-<article class="onebox-body"><a href='https://i.stack.imgur.com/jRaTj.jpg?s=128&g=1' target='_blank' rel='nofollow'>![Drake Main</a>](http://stackoverflow.com/users/4956243/drake-main) 
+<article class="onebox-body"><a href='https://cdn-media-1.freecodecamp.org/imgr/jRaTj.jpg' target='_blank' rel='nofollow'>![Drake Main</a>](http://stackoverflow.com/users/4956243/drake-main) 
 
 #### <a href='http://stackoverflow.com/questions/35356692/best-practice-when-using-an-api-key-in-node-js' target='_blank' rel='nofollow'>Best practice when using an API key in Node.js</a>
 

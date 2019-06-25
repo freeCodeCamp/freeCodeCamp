@@ -28,22 +28,24 @@ else {
 
 }
 
- `What you need to remember is the bracket that the if-else logic associate with, (argument) and {statement} 
- 
- **Try Yourself Now**  👩‍💻👨‍💻 
- 
- 
- 
- **Ternary operator** 
- 
- A more detailed explanation [here](https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff). Ternary operator is a lot more concise and quicker to remember for a simple true or false statement. Read [this](https://www.thoughtco.com/javascript-by-example-use-of-the-ternary-operator-2037394) 
-` 
+```
+What you need to remember is the bracket that the if-else logic associate with, (argument) and {statement}
+
+**Try Yourself Now**  👩‍💻👨‍💻
+
+
+
+**Ternary operator**
+
+A more detailed explanation [here](https://codeburst.io/javascript-the-conditional-ternary-operator-explained-cac7218beeff). Ternary operator is a lot more concise and quicker to remember for a simple true or false statement. Read [this](https://www.thoughtco.com/javascript-by-example-use-of-the-ternary-operator-2037394)
+``` 
 
 جافا سكريبت
 
 شرط ؟ القيمة إذا كانت صحيحة: value if false
 
- `For someone who still not sure here is a solution by using If-else statement 
-` 
+```
+For someone who still not sure here is a solution by using If-else statement
+``` 
 
 جافا سكريبت .style ("color"، (d) => { إذا ((د <20) { العودة "الحمراء" } else { العودة "الخضراء" } }) \`\` \`
