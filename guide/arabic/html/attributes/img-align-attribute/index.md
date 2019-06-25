@@ -29,9 +29,9 @@ top - محاذاة الصورة إلى الأعلى
 
 يمكننا أيضًا التوفيق في اليمين إذا أردنا:
 
- `
-<p>This is another example<img src="image.png" alt="Image" align="right"></p> 
-` 
+```html
+<p>This is another example<img src="image.png" alt="Image" align="right"></p>
+``` 
 
 **يرجى ملاحظة أن سمة align غير مدعومة في HTML5 ، ويجب عليك استخدام CSS بدلاً من ذلك. ومع ذلك ، لا تزال مدعومة من جميع المتصفحات الرئيسية.**
 

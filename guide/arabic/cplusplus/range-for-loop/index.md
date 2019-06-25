@@ -8,20 +8,22 @@ localeTitle: نطاق للحلقة
 
 مع التقليدية `for` حلقة:
 
- `std::vector<std::string> stringList {"one", "two", "three"}; 
- 
- for (size_t il; il < stringList.size(); il++ 
- { 
-  std::cout << stringList.at(il) << std::endl; 
- } 
-` 
+```cpp
+std::vector<std::string> stringList {"one", "two", "three"};
+
+for (size_t il; il < stringList.size(); il++
+{
+  std::cout << stringList.at(il) << std::endl;
+}
+``` 
 
 مع مجموعة المستندة `for` حلقة:
 
- `std::vector<std::string> stringList {"one", "two", "three"}; 
- 
- for (auto& singleString : stringList) 
- { 
-  std:cout << singleString << std::endl; 
- } 
-`
+```cpp
+std::vector<std::string> stringList {"one", "two", "three"};
+
+for (auto& singleString : stringList)
+{
+  std:cout << singleString << std::endl;
+}
+```

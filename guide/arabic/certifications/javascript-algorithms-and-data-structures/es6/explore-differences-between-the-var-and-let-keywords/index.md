@@ -36,7 +36,6 @@ localeTitle: استكشاف الاختلافات بين فار والسماح ل
     catTalk(); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://codepen.io/dylantyates/pen/eKqoGY)
 
 # شرح الشفرة:
 

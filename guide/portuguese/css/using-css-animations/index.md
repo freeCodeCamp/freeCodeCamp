@@ -63,7 +63,7 @@ Para a parte CSS:
  } 
 ```
 
-![Imgur](https://imgur.com/sczZjwm.gif)
+![Imgur](https://cdn-media-1.freecodecamp.org/imgr/sczZjwm.gif)
 
 #### Mais Informações:
 

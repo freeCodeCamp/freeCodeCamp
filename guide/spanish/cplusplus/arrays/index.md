@@ -8,15 +8,15 @@ Un arreglo es una serie de elementos del mismo tipo de datos que se almacenan en
 
 Por ejemplo, un arreglo que contiene 5 valores enteros llamados **numeros** se declara así:
 
-```C++
-int numeros[5]; 
+```cpp
+int numbers [5]; 
 ```
 
 Inicialización:
 
-```C++
- //Inicializando el arreglo con valores previos
- int numeros[] = {1, 2, 3, 4, 5}; 
+```cpp
+//Initialization with entries: 
+ int numbers [5] = {1, 2, 3, 4, 5}; 
  
  //Inicializando el arreglo sin datos
  int numeros[5]; 
@@ -31,9 +31,8 @@ Tenga en cuenta que los arreglos en C ++ no son permutables en tamaño, lo que s
 Se puede acceder a los elementos de un arreglo a través de la referencia a su índice. (Comience contando desde 0).  
 Ejemplo:
 
-```C++
-x = numbers[0]; // = 1. [0] == primera posición
- numbers[2] = 55; // Guarda en la tercera posición (índice 2) el valor de 55
- //numbers[] contiene ahora los siguientes valores: {1, 2, 55, 4, 5} 
-
+```cpp
+x = numbers[0]; // = 1. [0] == first position 
+ numbers[2] = 55; // Sets the third position (3) to the new number 55 
+ //numbers[] is now: {1, 2, 55, 4, 5} 
 ```

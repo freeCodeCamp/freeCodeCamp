@@ -21,21 +21,21 @@ jortSort is a function that takes a single array of comparable objects as its ar
 ```yml
 tests:
   - text: <code>jortsort</code> should be a function.
-    testString: 'assert(typeof jortsort=="function","<code>jortsort</code> should be a function.");'
-  - text: <code>jortsort("+JSON.stringify(tests[0])+")</code> should return a boolean.
-    testString: 'assert(typeof jortsort(tests[0].slice())=="boolean","<code>jortsort("+JSON.stringify(tests[0])+")</code> should return a boolean.");'
-  - text: <code>jortsort("+JSON.stringify(tests[0])+")</code> should return <code>true</code>.
-    testString: 'assert.equal(jortsort(tests[0].slice()),true,"<code>jortsort("+JSON.stringify(tests[0])+")</code> should return <code>true</code>.");'
-  - text: <code>jortsort("+JSON.stringify(tests[1])+")</code> should return <code>false</code>.
-    testString: 'assert.equal(jortsort(tests[1].slice()),false,"<code>jortsort("+JSON.stringify(tests[1])+")</code> should return <code>false</code>.");'
-  - text: <code>jortsort("+JSON.stringify(tests[2])+")</code> should return <code>false</code>.
-    testString: 'assert.equal(jortsort(tests[2].slice()),false,"<code>jortsort("+JSON.stringify(tests[2])+")</code> should return <code>false</code>.");'
-  - text: <code>jortsort("+JSON.stringify(tests[3])+")</code> should return <code>true</code>.
-    testString: 'assert.equal(jortsort(tests[3].slice()),true,"<code>jortsort("+JSON.stringify(tests[3])+")</code> should return <code>true</code>.");'
-  - text: <code>jortsort("+JSON.stringify(tests[4])+")</code> should return <code>false</code>.
-    testString: 'assert.equal(jortsort(tests[4].slice()),false,"<code>jortsort("+JSON.stringify(tests[4])+")</code> should return <code>false</code>.");'
-  - text: <code>jortsort("+JSON.stringify(tests[5])+")</code> should return <code>true</code>.
-    testString: 'assert.equal(jortsort(tests[5].slice()),true,"<code>jortsort("+JSON.stringify(tests[5])+")</code> should return <code>true</code>.");'
+    testString: assert(typeof jortsort=='function','<code>jortsort</code> should be a function.');
+  - text: <code>jortsort([1,2,3,4,5])</code> should return a boolean.
+    testString: assert(typeof jortsort([1,2,3,4,5])=='boolean','<code>jortsort([1,2,3,4,5])</code> should return a boolean.');
+  - text: <code>jortsort([1,2,3,4,5])</code> should return <code>true</code>.
+    testString: assert.equal(jortsort([1,2,3,4,5]),true,'<code>jortsort([1,2,3,4,5])</code> should return <code>true</code>.');
+  - text: <code>jortsort([1,2,13,4,5])</code> should return <code>false</code>.
+    testString: assert.equal(jortsort([1,2,13,4,5]),false,'<code>jortsort([1,2,13,4,5])</code> should return <code>false</code>.');
+  - text: <code>jortsort([12,4,51,2,4])</code> should return <code>false</code>.
+    testString: assert.equal(jortsort([12,4,51,2,4]),false,'<code>jortsort([12,4,51,2,4])</code> should return <code>false</code>.');
+  - text: <code>jortsort([1,2])</code> should return <code>true</code>.
+    testString: assert.equal(jortsort([1,2]),true,'<code>jortsort([1,2])</code> should return <code>true</code>.');
+  - text: <code>jortsort([5,4,3,2,1])</code> should return <code>false</code>.
+    testString: assert.equal(jortsort([5,4,3,2,1]),false,'<code>jortsort([5,4,3,2,1])</code> should return <code>false</code>.');
+  - text: <code>jortsort([1,1,1,1,1])</code> should return <code>true</code>.
+    testString: assert.equal(jortsort([1,1,1,1,1]),true,'<code>jortsort([1,1,1,1,1])</code> should return <code>true</code>.');
 
 ```
 
@@ -50,16 +50,6 @@ tests:
 function jortsort (array) {
   // Good luck!
 }
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>

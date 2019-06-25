@@ -46,7 +46,6 @@ localeTitle: إدخال بيانات أخرى
  testElse(4); 
 ` 
 
-[تشغيل الكود في repl.it](https://repl.it/@AdrianSkar/Introducing-else-statements)
 
 ### تفسير الشفرة
 

@@ -10,12 +10,13 @@ localeTitle: طرق سلسلة
 
 يتم إنشاء `string` فارغة باستخدام زوج من علامات الاقتباس أو apostrophes:
 
- `>>> new_string = '' 
- >>> type(new_string) 
- <class 'string'> 
- >>> len(new_string) 
- 0 
-` 
+```shell
+>>> new_string = ''
+>>> type(new_string)
+<class 'string'>
+>>> len(new_string)
+0
+``` 
 
 [Python Docs - المزيد على سلاسل](https://docs.python.org/3/tutorial/datastructures.html#more-on-strings)
 

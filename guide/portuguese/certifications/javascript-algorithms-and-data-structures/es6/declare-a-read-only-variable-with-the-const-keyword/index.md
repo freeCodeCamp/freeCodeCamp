@@ -47,7 +47,6 @@ Altere todas as variáveis ​​para `let` ou `const` e renomeie a `sentence` .
     printManyTimes("freeCodeCamp"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://codepen.io/dylantyates/pen/OwVxyx)
 
 # Explicação do código:
 

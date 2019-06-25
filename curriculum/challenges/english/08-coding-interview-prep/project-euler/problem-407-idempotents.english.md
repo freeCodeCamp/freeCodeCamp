@@ -28,7 +28,7 @@ Find ∑M(n) for 1 ≤ n ≤ 107.
 ```yml
 tests:
   - text: <code>euler407()</code> should return 39782849136421.
-    testString: 'assert.strictEqual(euler407(), 39782849136421, "<code>euler407()</code> should return 39782849136421.");'
+    testString: assert.strictEqual(euler407(), 39782849136421, '<code>euler407()</code> should return 39782849136421.');
 
 ```
 

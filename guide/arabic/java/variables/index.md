@@ -16,34 +16,36 @@ localeTitle: المتغيرات
 
 عادة ، يمكنك أن _تعلن_ (أي إنشاء) المتغيرات وفقا للبناء التالي: < _data-type_ > < _variableName_ >؛
 
- `// Primitive Data Type 
- int i; 
- 
- // Reference Data Type 
- Float myFloat; 
-` 
+```java
+// Primitive Data Type
+int i;
+
+// Reference Data Type
+Float myFloat;
+``` 
 
 يمكنك _تعيين_ قيمة للمتغير إما في نفس الوقت الذي تقوم فيه بالتصريح (الذي يسمى _التهيئة_ ) ، أو في أي مكان في الكود بعد أن تقوم بإعلانه. الرمز **\=** يستخدم لنفسه.
 
- `// Initialise the variable of Primitive Data Type 'int' to store the value 10 
- int i = 10; 
- double amount = 10.0; 
- boolean isOpen = false; 
- char c = 'a'; // Note the single quotes 
- 
- //Variables can also be declared in one statement, and assigned values later. 
- int j; 
- j = 10; 
- 
- // initiates an Float object with value 1.0 
- // variable myFloat now points to the object 
- Float myFloat = new Float(1.0); 
- 
- //Bytes are one of types in Java and can be 
- //represented with this code 
- int byteValue = 0B101; 
- byte anotherByte = (byte)0b00100001; 
-` 
+```java
+// Initialise the variable of Primitive Data Type 'int' to store the value 10
+int i = 10;
+double amount = 10.0;
+boolean isOpen = false;
+char c = 'a'; // Note the single quotes
+
+//Variables can also be declared in one statement, and assigned values later.
+int j;
+j = 10;
+
+// initiates an Float object with value 1.0
+// variable myFloat now points to the object
+Float myFloat = new Float(1.0);
+
+//Bytes are one of types in Java and can be
+//represented with this code
+int byteValue = 0B101;
+byte anotherByte = (byte)0b00100001;
+``` 
 
 كما يتضح من المثال أعلاه ، فإن متغيرات النوع البدائي تتصرف بشكل مختلف قليلاً عن متغيرات النوع المرجعي (& التفاف) - بينما المتغيرات الأولية _تخزن_ القيمة الفعلية ، _تشير_ المتغيرات المرجعية _إلى_ "كائن" يحتوي على القيمة الفعلية. يمكنك معرفة المزيد في الأقسام المرتبطة أدناه.
 

@@ -10,7 +10,7 @@ JavaScript `with` instrução é uma forma abreviada de editar várias proprieda
 
 ### Sintaxe
 
-```syntax
+```js
 with (expression) 
   statement 
 ```

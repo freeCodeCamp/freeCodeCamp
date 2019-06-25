@@ -1,5 +1,8 @@
-# localeTitle: undefined
-React راوتر للمبتدئين
+---
+title: React Router
+localeTitle: React Router
+---
+# React راوتر للمبتدئين
 
 # التركيب
 
@@ -21,8 +24,9 @@ React راوتر للمبتدئين
 
 # بيان الاستيراد
 
- `import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
-` 
+```javascript
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+```
 
 ## IndexRoute والروابط
 
@@ -34,10 +38,11 @@ React راوتر للمبتدئين
 
 الطريقة الأساسية للسماح للمستخدمين بالتنقل حول تطبيقك.  سيجعل علامة ارتساء يمكن الوصول إليها بالكامل مع href الصحيح. للقيام بذلك ، دعنا أولاً إنشاء مكون Nav. سيحتوي مكون Nav الخاص بنا على مكونات `<Link>` ، وسيبدو كما يلي:
 
- `const Nav = () => ( 
-  <div> 
-    <Link to='/'>Home</Link>&nbsp; 
-    <Link to='/address'>Address</Link> 
-  </div> 
- ) 
-`
+```javascript
+const Nav = () => (
+  <div>
+    <Link to='/'>Home</Link>&nbsp;
+    <Link to='/address'>Address</Link>
+  </div>
+)
+```

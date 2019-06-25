@@ -3,8 +3,69 @@ title: Use Dynamic Scales
 ---
 ## Use Dynamic Scales
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/use-dynamic-scales/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use the `.domain()` and `.range()` functions.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 2 
+
+Use a callback function on the `.domain()` function.
+
+### Hint 3
+
+Both the `.domain()` and `.range()` functions accept an array or two elements.
+
+### Hint 4
+
+Subtract padding from height to get SVG height including padding.
+
+### Solution
+
+To solve the solution by including all the hints, set the `yScale` variable to:
+
+```js
+const yScale = d3.scaleLinear()
+  .domain([0, d3.max(dataset, (d) => d[1])])
+  .range([h - padding, padding]);
+```
+
+The full solution now looks like:
+
+```html
+<body>
+  <script>
+    const dataset = [
+      [  34,   78 ],
+      [ 109,  280 ],
+      [ 310,  120 ],
+      [  79,  411 ],
+      [ 420,  220 ],
+      [ 233,  145 ],
+      [ 333,   96 ],
+      [ 222,  333 ],
+      [  78,  320 ],
+      [  21,  123 ]
+    ];
+    
+    const w = 500;
+    const h = 500;
+    
+    // Padding between the SVG canvas boundary and the plot
+    const padding = 30;
+    
+    // Create an x and y scale
+    
+    const xScale = d3.scaleLinear()
+      .domain([0, d3.max(dataset, (d) => d[0])])
+      .range([padding, w - padding]);
+    
+    const yScale = d3.scaleLinear()
+      .domain([0, d3.max(dataset, (d) => d[1])])
+      .range([h - padding, padding]);
+    const output = yScale(411);
+    d3.select("body")
+      .append("h2")
+      .text(output);
+  </script>
+</body>
+```

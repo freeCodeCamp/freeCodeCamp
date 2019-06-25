@@ -1,5 +1,5 @@
 ---
-title:Switch Statement
+title: Switch Statement
 localeTitle: undefined
 ---
 Una declaración de cambio permite que una variable se pruebe para determinar su igualdad frente a una lista de valores. Cada valor se llama un caso, y la variable que se está activando se comprueba para cada caso.
