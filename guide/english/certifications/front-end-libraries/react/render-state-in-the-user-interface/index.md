@@ -10,7 +10,7 @@ Just make a `<h1>` tag and render `this.state.name` between tag.
 
 ## Solution
 
-```react.js
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);

@@ -18,3 +18,5 @@ a multi-line comment
 (comment block) 
 */
 ```
+
+Comments are a great thing and are extremely valuable when used properly. As a professional developer, you'll often spend more time reading and working through other peoples code than writing your own. However, take care not to fall into the trap of over-commenting. The languages we use, like JavaScript, were created to be human readable. Take care not litter your code with unhelpful comments that simply restate what the code is doing. Instead, strive to write code that is self-documenting and leave comments explaining business logic, weird edge cases, etc.

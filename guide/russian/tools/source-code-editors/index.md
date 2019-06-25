@@ -49,7 +49,7 @@ Atom - это редактор с [открытым исходным кодом]
 
 [Доступно](http://stackoverflow.com/search?q=atom) онлайн.
 
-## [Код Visual Studio](https://code.visualstudio.com/) ![Иконка Visual Studio Code](https://i.imgur.com/b4vFsKa.png)
+## [Код Visual Studio](https://code.visualstudio.com/) ![Иконка Visual Studio Code](https://cdn-media-1.freecodecamp.org/imgr/b4vFsKa.png)
 
 ![Скриншот кода Visual Studio](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 

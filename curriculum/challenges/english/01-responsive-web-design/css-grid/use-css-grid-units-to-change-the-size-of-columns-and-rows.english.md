@@ -12,7 +12,11 @@ You can use absolute and relative units like <code>px</code> and <code>em</code>
 <code>auto</code>: sets the column or row to the width or height of its content automatically,
 <code>%</code>: adjusts the column or row to the percent width of its container.
 Here's the code that generates the output in the preview:
-<blockquote>grid-template-columns: auto 50px 10% 2fr 1fr;</blockquote>
+
+```css
+grid-template-columns: auto 50px 10% 2fr 1fr;
+```
+
 This snippet creates five columns. The first column is as wide as its content, the second column is 50px, the third column is 10% of its container, and for the last two columns; the remaining space is divided into three sections, two are allocated for the fourth column, and one for the fifth.
 </section>
 

@@ -12,29 +12,33 @@ EventEmitters هي واحدة من الأفكار الأساسية وراء بن
 
 للوصول إلى فئة EventEmitter في برنامج Node.js ، يجب عليك طلب وحدة `events` من واجهة برمجة التطبيقات Node.js. لإنشاء الكائن ، نقوم بإنشاء مثيل لفئة EventEmitter من خلال استدعاء دالة منشئه.
 
- `const events = require('events'); 
- 
- const eventEmitter = new events.EventEmitter(); 
-` 
+```js
+const events = require('events');
+
+const eventEmitter = new events.EventEmitter();
+``` 
 
 أو يمكنك مباشرة الوصول إلى فئة فرعية EventEmitter مثل:
 
- `const EventEmitter = require('events'); 
- 
- const eventEmitter = new EventEmitter(); 
-` 
+```js
+const EventEmitter = require('events');
+
+const eventEmitter = new EventEmitter();
+``` 
 
 توفر فئة EventEmitter العديد من الأساليب المحددة مسبقًا للعمل مع الأحداث. هذه الأساليب هي `.on` و `.emit` و `.error` . يمكن إجراء بث لحدث من دالة مما يؤدي إلى وظيفة رد اتصال يمكن الوصول إليها من خلال أي وظيفة أخرى في JavaScript. هذا مثل البث.
 
 يمكن تنفيذ القدرة على تشغيل حدث باتباع البنية:
 
- `eventEmitter.emit(eventName, optionalData); 
-` 
+```js
+eventEmitter.emit(eventName, optionalData);
+``` 
 
 ويتم ذلك القدرة على إرفاق ظيفة المستمع وتحديد اسم الحدث المحدد الذي `.on` .
 
- `eventEmitter.emit(eventName, callback); 
-` 
+```js
+eventEmitter.emit(eventName, callback);
+``` 
 
 سنقوم بمحاكاة الوظائف الجديدة التي تعلمناها للتو مع مثال. قم بإنشاء ملف جديد يسمى `eventemitter.js` وقم بلصق التعليمة البرمجية التالية:
 
@@ -54,9 +58,10 @@ EventEmitters هي واحدة من الأفكار الأساسية وراء بن
 
 الآن قم بتشغيل المثال أعلاه باستخدام الأمر `node` ويجب أن تحصل على الإخراج التالي.
 
- `callback runs 
- callback runs 
-` 
+```shell
+callback runs
+callback runs
+``` 
 
 نبدأ من خلال خلق مثيل eventEmitter نستطيع من خلالها الحصول على `.on` هذه الطريقة. تضيف طريقة `.on` الحدث عن طريق تحديد `invoke` الاسم الذي نستخدمه لاحقًا في `.emit` للاتصال باستدعاء وظيفة رد الاتصال المرتبطة به.
 
@@ -78,8 +83,9 @@ EventEmitters هي واحدة من الأفكار الأساسية وراء بن
 
 انتاج |
 
- `callback runs 
-` 
+```shell
+callback runs
+``` 
 
 `.once` الاحتفاظ بمسارات الأحداث عندما يتم تشغيلها وعدد المرات التي يتم تشغيلها بخلاف طريقة `.on` التي لا تتبع مثل هذا المسار. هذا هو الفرق الرئيسي بين الاثنين.
 
@@ -110,8 +116,9 @@ EventEmitters هي واحدة من الأفكار الأساسية وراء بن
 
 يسمح لك الدفق المقروء بقراءة البيانات من المصدر. يمكن أن يكون هذا المصدر أي شيء من مخزن مؤقت أو ملف أو ما إلى ذلك. أولاً ، قم بإنشاء ملف نصي بسيط للملف الذي سنقوم من خلاله بقراءة البيانات باستخدام الدفق.
 
- `I am Text file that contains data. 
-` 
+```text
+I am Text file that contains data.
+``` 
 
 الآن ، قم بإنشاء ملف جديد يسمى read.js والذي سينفذ وظيفة قراءة البيانات من هذا الملف النصي باستخدام دفق مقروء.
 
@@ -160,11 +167,12 @@ EventEmitters هي واحدة من الأفكار الأساسية وراء بن
 
 إذا أردنا كتابة المثال أعلاه باستخدام الأنبوب ، فسوف نكتب كما يلي:
 
- `const fs = require('fs'); 
- const readableStream = fs.createReadStream('./abc.txt'); 
- const writeableStream = fs.createWriteStream('./dest.txt'); 
- 
- readableStream.pipe(writeableStream); 
-` 
+```js
+const fs = require('fs');
+const readableStream = fs.createReadStream('./abc.txt');
+const writeableStream = fs.createWriteStream('./dest.txt');
+
+readableStream.pipe(writeableStream);
+``` 
 
 لاحظ عدد أسطر الرمز التي أزلناها. أيضا ، نحن الآن بحاجة فقط إلى مسارات الملفات المصدر والوجهة ولقراءة وكتابة البيانات التي نستخدمها `.pipe()` .
