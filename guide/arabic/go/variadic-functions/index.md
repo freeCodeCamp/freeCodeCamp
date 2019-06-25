@@ -12,22 +12,23 @@ localeTitle: وظائف متنوعة
 
 فيما يلي الأساسيات حول كيفية عمل الدوال varidic:
 
- `package main 
- import "fmt" 
- 
- func printFruits(fruits ...string) { 
-    for _, fruit := range fruits{ 
-        fmt.Println(fruit) 
-    } 
- } 
- 
- func main() { 
-   printFruits("apple", "bannana") 
-   printFruits("papaya", "coconut", "pear", "pineapple") 
-   berries := []string{"blueberry", "strawberry", "raspberry"} 
-   printFruits(berries...) 
- } 
-` 
+```go
+package main
+import "fmt"
+
+func printFruits(fruits ...string) {
+    for _, fruit := range fruits{
+        fmt.Println(fruit)
+    }
+}
+
+func main() {
+   printFruits("apple", "bannana")
+   printFruits("papaya", "coconut", "pear", "pineapple")
+   berries := []string{"blueberry", "strawberry", "raspberry"}
+   printFruits(berries...)
+}
+``` 
 
 أولاً ، في printFruits قمنا بتعريف عدد الوسيطات باستخدام \[… string\].
 
@@ -35,23 +36,26 @@ localeTitle: وظائف متنوعة
 
 تظهر أول مكالمتين للطباعة printFruits أن الدالة ستقوم بطباعة كل سلسلة ، حتى إذا كنا نجتاز عددًا مختلفًا من الوسيطات.
 
- `apple 
- bannana 
- ... 
- papaya 
- coconut 
- pear 
- ... 
-` 
+```text
+apple
+bannana
+...
+papaya
+coconut
+pear
+...
+``` 
 
 هذا سوف يعمل أيضا لشرائح.
 
 لاستخدام وظيفة vardiac مع شريحة ، نضيف نقاط التدريب إلى المكالمة.
 
- `printFruits(berries...) 
-` 
+```go
+printFruits(berries...)
+``` 
 
- `blueberry 
- strawberry 
- raspberry 
-`
+```text
+blueberry
+strawberry
+raspberry
+```

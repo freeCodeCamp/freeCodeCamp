@@ -10,7 +10,7 @@ localeTitle: С
 
 ### Синтаксис
 
-```syntax
+```js
 with (expression) 
   statement 
 ```

@@ -47,7 +47,6 @@ localeTitle: 使用const关键字声明只读变量
     printManyTimes("freeCodeCamp"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://codepen.io/dylantyates/pen/OwVxyx)
 
 # 代码说明：
 

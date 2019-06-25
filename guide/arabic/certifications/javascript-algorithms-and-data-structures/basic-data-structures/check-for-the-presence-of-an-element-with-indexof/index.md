@@ -10,21 +10,23 @@ localeTitle: التحقق من وجود عنصر مع indexOf ()
 
 ## حل 1:
 
- `function quickCheck(arr, elem) { 
-  if(arr.indexOf(elem)>=0) { 
-    return true; 
-  } 
-  return false; 
- } 
- console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms')); 
-` 
+```javascript
+function quickCheck(arr, elem) {
+  if(arr.indexOf(elem)>=0) {
+    return true;
+  }
+  return false;
+}
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+``` 
 
 *   يوضح `Solution-2` كيف يمكن حل المشكلة باستخدام `? : (conditional)` المشغل.
 
 ## حل 2:
 
- `function quickCheck(arr, elem) { 
- return arr.indexOf(elem) >= 0 ? true : false; 
- } 
- console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms')); 
-`
+```javascript
+function quickCheck(arr, elem) {
+return arr.indexOf(elem) >= 0 ? true : false;
+}
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+```

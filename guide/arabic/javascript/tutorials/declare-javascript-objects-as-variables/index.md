@@ -15,16 +15,19 @@ localeTitle: قم بتعريف كائنات JavaScript كمتغيرات
 
 باستخدام ميزة التدوين النقطي:
 
- `console.log(car.wheels); // 4 
-` 
+```javascript
+console.log(car.wheels); // 4
+``` 
 
 باستخدام تدرج قوس:
 
- `console.log(car["wheels"]); // 1 
-` 
+```javascript
+console.log(car["wheels"]); // 1
+``` 
 
 استخدام تدرج قوس ديناميكي:
 
- `var seatsProperty = "seats"; 
- console.log(car[seatsProperty]); // 5 
-`
+```javascript
+var seatsProperty = "seats";
+console.log(car[seatsProperty]); // 5
+```

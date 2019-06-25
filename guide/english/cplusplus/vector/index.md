@@ -107,12 +107,14 @@ Iterators are pointers, which are variables that store the memory address of ano
 However, because an iterator is a pointer, in order to see what it points to, you need to dereference it into a variable of the appropriate type. 
 How do we do this?
 HERE. WE. GO!
+
 ```cpp
 std::vector<std::string> a{"test", "element", "access"};
 for(auto it = v.begin(); it != v.end(); it++) { //notice use of auto keyword
-    cout<<*it<<endl; //Will print out string that the iterator is currently ppointing to
+    cout<<*it<<endl; //Will print out string that the iterator is currently pointing to
 }
 ```
+
 From here, you can do all sorts of cool stuff, like manipulating the vector or messing around with its order as you please!
 
 ### Some Useful Member Functions
@@ -127,6 +129,9 @@ std::vector.front(); // returns the first element of the vector.
 std::vector.back(); // returns the last element of the vector.
 std::vector.push_back(n); // inserts the element "n" to the end of the vector.
 std::vector.pop_back(n); // removes the last element of the vector
+std::vector.at(i); // returns a reference to the element at position i in the vector.
+std::vector.resize(n); // resizes a vector so that it contains the specified number of elements.
+std::vector.assign(i,n); // assigns new contents to the vector and replaces its current contents.
 ```
 
 ### Vector Iterators
@@ -193,25 +198,30 @@ int main(){
  return 0;
 }
 ```
+
 In C++11, you can also sort using a lambda function, which can be useful.
-```cpp11
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main(){
     vector<int > v {3, 1, 2};
     sort(v.begin(), v.end(), [] (int i, int j) -> bool {
         return i < j;
     } );
+    
     cout << "Vector Contents Sorted In Ascending Order:\n";
-    for (int e : v)
-    cout << e << " ";
+    for (int e : v){
+      cout << e << " ";
+    }
+    
     return 0;
 }
 ```
+
 ### Sorting a Vector Into Descending Order
 Sorting the elements of a vector into descending order can be done by using the third argument in `sort()` (which specifies the function to be used for comparison), as shown below.
+
 ``` cpp
 #include <iostream>
 #include <vector>
@@ -223,7 +233,28 @@ int main(){
  vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
  sort(v.begin(), v.end(), greater<int>());
  
- cout << "Vector Contents Sorted In Ascending Order:\n";
+ cout << "Vector Contents Sorted In Descending Order:\n";
+ for(int e : v){
+  cout << e << " ";
+ }
+ 
+ return 0;
+}
+```
+An alternative way to do this.
+
+``` cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(){
+ 
+ vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
+ sort(v.rbegin(), v.rend());
+ 
+ cout << "Vector Contents Sorted In Descending Order:\n";
  for(int e : v){
  cout << e << " ";
  }

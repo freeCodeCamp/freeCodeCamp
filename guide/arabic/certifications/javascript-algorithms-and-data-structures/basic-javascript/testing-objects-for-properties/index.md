@@ -27,13 +27,14 @@ localeTitle: اختبار كائنات للعقارات
 
 نحن لا نغير أي شيء هنا:
 
- `// Setup 
- var myObj = { 
-  gift: "pony", 
-  pet: "kitten", 
-  bed: "sleigh" 
- }; 
-` 
+```javascript
+// Setup
+var myObj = {
+  gift: "pony",
+  pet: "kitten",
+  bed: "sleigh"
+};
+``` 
 
 كذلك ، في الجسم من الدالة التي نستخدمها. `.hasOwnProperty(propname)` للكائنات لتحديد ما إذا كان هذا الكائن لديه اسم خاصية معينة. `if/else` العبارة `if/else` ذات القيم المنطقية ستساعدنا في هذا:
 

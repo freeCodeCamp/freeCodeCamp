@@ -52,7 +52,7 @@ Cuando se indexa una matriz muchas veces, es fácil superar los límites de la m
 
 Esto dará como resultado:
 
-```txt
+```shell
 int(1) int(2) int(3) NULL 
 ```
 

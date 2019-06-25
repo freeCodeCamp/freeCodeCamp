@@ -12,7 +12,7 @@ localeTitle: Guía de implementación de Heroku
     
 5.  Serás llevado a un panel de control para esa aplicación. Haga clic en la pestaña Implementar.
     
-6.  Allí estará encantado de encontrar que puede conectarse a un repositorio de github. En la sección Método de implementación, elija Github y autentíquese iniciando sesión en Github.
+6.  Allí estará encantado de encontrar que puede conectarse a un repositorio de github. En la sección Método de implementación, elija GitHub y autentíquese iniciando sesión en GitHub.
     
 7.  Justo debajo de eso, completa tu nombre de repositorio de github. (Por supuesto, esto requiere que hayas enviado un repositorio a github desde cloud9 o desde tu máquina local ... y que lo hayas configurado correctamente. Más sobre esto más adelante).
     

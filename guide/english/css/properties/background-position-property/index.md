@@ -8,13 +8,13 @@ The background-property sets the position from where the background image should
 ```css
 /* setting background-image of HTML doc */
 body {
-  background-image: url('https://i.imgur.com/6Z2VStD.png');
+  background-image: url('https://cdn-media-1.freecodecamp.org/imgr/6Z2VStD.png');
   background-repeat: no-repeat;
   background-position: right top;
 }
 ```
 
-By default, background-position property is set to `0% 0%`.
+By default, the background-position property is set to `0% 0%`.
 
 **Property values:**
 
@@ -30,7 +30,7 @@ Other permitted property values are `initial` and `inherit`.
 
 `inherit`: Inherits the value from parent element.
 
-**Note:** When only one value is given to background-property then the other is, by default, set to `center`.
+**Note:** When only one value is given to background-property, then the other is, by default, set to `center`.
 
 **Other Resources:**
 

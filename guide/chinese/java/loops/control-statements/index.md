@@ -14,7 +14,7 @@ localeTitle: 跳转声明
 当满足条件时，'break'控制语句会跳出循环。这意味着循环的其余部分将不会运行。 例如，在下面的循环中，如果我达到5，则循环中断，因此它不会继续。
 
 ```java
-for(int i=0;i<10;i++){ 
+for(int i = 0; i < 10; i++){ 
  
   if(i == 5){ //if i is 5, break out of the loop. 
     break; 

@@ -6,7 +6,7 @@ localeTitle: Используйте PropTypes для определения ре
 
 В этой задаче вы установили `propTypes` для компонента `Items` .
 
-```react.js
+```jsx
 const Items = (props) => { 
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1> 
  }; 
@@ -14,7 +14,7 @@ const Items = (props) => {
 
 Чтобы установить propTypes, синтаксис, который следует соблюдать, - это
 
-```react.js
+```jsx
 itemName.propTypes = { 
   props: PropTypes.dataType.isRequired 
  }; 
@@ -22,7 +22,7 @@ itemName.propTypes = {
 
 После синтаксиса следующий код должен быть установлен ниже заданного кода для `quantity` реквизитов компонента `Items`
 
-```react.js
+```jsx
 Items.propTypes = { 
   quantity: PropTypes.number.isRequired 
  }; 

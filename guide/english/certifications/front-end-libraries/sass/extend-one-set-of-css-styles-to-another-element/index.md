@@ -3,8 +3,35 @@ title: Extend One Set of CSS Styles to Another Element
 ---
 ## Extend One Set of CSS Styles to Another Element
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/sass/extend-one-set-of-css-styles-to-another-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use `@extend`
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+Use `@extend` to extend the `info` class into `info-important` like:
+
+```html
+<style type='text/sass'>
+  h3 {
+    text-align: center;
+  }
+  .info {
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+  .info-important {
+    @extend .info;
+    background-color: magenta;
+  }  
+</style>
+<h3>Posts</h3>
+<div class="info-important">
+  <p>This is an important post. It should extend the class ".info" and have its own CSS styles.</p>
+</div>
+
+<div class="info">
+  <p>This is a simple post. It has basic styling and can be extended for other uses.</p>
+</div>
+```

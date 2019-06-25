@@ -49,7 +49,7 @@ ser esmagadora para novos usuários. Há também muita [documentação](http://f
 
 [disponível](http://stackoverflow.com/search?q=atom) online.
 
-## [Código do Visual Studio](https://code.visualstudio.com/) ![Ícone de código do Visual Studio](https://i.imgur.com/b4vFsKa.png)
+## [Código do Visual Studio](https://code.visualstudio.com/) ![Ícone de código do Visual Studio](https://cdn-media-1.freecodecamp.org/imgr/b4vFsKa.png)
 
 ![Screenshot do código do Visual Studio](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 
