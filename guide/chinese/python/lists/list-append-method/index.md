@@ -2,9 +2,9 @@
 title: List Append Method
 localeTitle: 列出追加方法
 ---
-## 列出追加方法
+## 列表方法 - 增加新元素到列表
 
-列表有很多方法，您可以通过在python控制台中键入`help(list)`来探索所有这些方法。 其中之一是append函数，正如名称所示，附加给定列表的参数。
+列表有很多方法，您可以通过在python控制台中键入`help(list)`来探索所有这些方法。 其中之一是append函数，正如名称所示，其可以增加给定列表的参数。
 
 #### 示例用法
 
@@ -19,7 +19,7 @@ words = ["I", "love", "Python"]
 ["I", "love", "Python", "very much"] 
 ```
 
-您可能已经注意到， `"very much"`的元素会附加到列表中。
+您可能已经注意到， 在执行append命令以后，元素`"very much"`被加到了列表的末尾。
 
 #### 更多信息：
 

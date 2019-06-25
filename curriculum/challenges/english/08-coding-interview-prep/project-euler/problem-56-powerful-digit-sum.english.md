@@ -21,7 +21,7 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the maxim
 ```yml
 tests:
   - text: <code>euler56()</code> should return 972.
-    testString: 'assert.strictEqual(euler56(), 972, "<code>euler56()</code> should return 972.");'
+    testString: assert.strictEqual(euler56(), 972, '<code>euler56()</code> should return 972.');
 
 ```
 

@@ -45,7 +45,6 @@ Falsy هو شيء يتم تقييمه لـ FALSE. لا يوجد سوى ستة ق
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/32)
 
 ### شرح الشفرة:
 

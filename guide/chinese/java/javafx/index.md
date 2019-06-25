@@ -14,7 +14,7 @@ Gulon Scene Builder是一个用于JavaFX中用户界面（UI）设计的应用�
 
 #### Screeenshots：
 
-![场景生成器UI](https://i.imgur.com/3d9SqBR.png)
+![场景生成器UI](https://cdn-media-1.freecodecamp.org/imgr/3d9SqBR.png)
 
 ### FXML
 

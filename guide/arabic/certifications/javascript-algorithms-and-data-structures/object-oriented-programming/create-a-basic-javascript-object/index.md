@@ -10,8 +10,9 @@ localeTitle: قم بإنشاء كائن JavaScript أساسي
 
 ### حل:
 
- `let dog = { 
-  name: "George", 
-  numLegs: 4 
- }; 
-`
+```javascript
+let dog = {
+  name: "George",
+  numLegs: 4
+};
+```

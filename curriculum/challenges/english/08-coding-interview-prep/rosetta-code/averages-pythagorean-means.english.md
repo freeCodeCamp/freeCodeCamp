@@ -32,9 +32,9 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>pythagoreanMeans</code> is a function.
-    testString: 'assert(typeof pythagoreanMeans === "function", "<code>pythagoreanMeans</code> is a function.");'
-  - text: '<code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.'
-    testString: 'assert.deepEqual(pythagoreanMeans(range1), answer1, "<code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.");'
+    testString: assert(typeof pythagoreanMeans === 'function', '<code>pythagoreanMeans</code> is a function.');
+  - text: <code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.
+    testString: assert.deepEqual(pythagoreanMeans(range1), answer1, '<code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.');
 
 ```
 
@@ -58,7 +58,16 @@ function pythagoreanMeans (rangeArr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const range1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const answer1 = {
+  values: {
+    Arithmetic: 5.5,
+    Geometric: 4.528728688116765,
+    Harmonic: 3.414171521474055
+  },
+  test: 'is A >= G >= H ? yes'
+};
+
 ```
 
 </div>

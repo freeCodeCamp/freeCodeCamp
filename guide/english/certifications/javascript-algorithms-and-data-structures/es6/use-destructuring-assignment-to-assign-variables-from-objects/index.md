@@ -12,9 +12,9 @@ Thus, each string has a length property; genericString = {length: 13}. (This is 
 
 # Reassign properties using deconstruction. 
 ```javascript
-var basicOjb = {x: 40};
+var basicObj = {x: 40};
 //To reassign 'get the value of the x property of basicObj and place its value into bigX' in ES6:
-const { x: bigX } = basicOjb;
-consle.log(bigX) // ans = 40 
+const { x: bigX } = basicObj;
+console.log(bigX) // ans = 40 
 ```
 Place the value of the length property of 'str' into len.

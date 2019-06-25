@@ -20,21 +20,23 @@ localeTitle: اختبارات الوحدة
 
 افترض أن هناك وظيفة مكتوبة في ملف **add.js**
 
- `var add = function(number1, number2){ 
-  return number1 + number2; 
- } 
-` 
+```javascript
+var add = function(number1, number2){
+  return number1 + number2;
+}
+``` 
 
 الآن ، من أجل كتابة اختبار الوحدة لهذه الوظيفة تحديدًا ، يمكننا استخدام أدوات الاختبار مثل [mocha](http://mochajs.org/)
 
- `const mocha = require('mocha') 
- const chai = require('chai')  // It is an assertion library 
- describe('Test to check add function', function(){ 
-  it('should add two numbers', function(){ 
-    (add(2,3)).should.equal(5)  //Checking that 2+3 should equal 5 using the given add function 
-  }); 
- }); 
-` 
+```javascript
+const mocha = require('mocha')
+const chai = require('chai')  // It is an assertion library
+describe('Test to check add function', function(){
+  it('should add two numbers', function(){
+    (add(2,3)).should.equal(5)  //Checking that 2+3 should equal 5 using the given add function
+  });
+});
+``` 
 
 ### التطوير المدفوع بالاختبارات
 

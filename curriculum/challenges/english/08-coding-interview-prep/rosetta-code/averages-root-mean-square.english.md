@@ -22,9 +22,9 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>rms</code> is a function.
-    testString: 'assert(typeof rms === "function", "<code>rms</code> is a function.");'
-  - text: '<code>rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</code> should equal <code>6.2048368229954285</code>.'
-    testString: 'assert.equal(rms(arr1), answer1, "<code>rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</code> should equal <code>6.2048368229954285</code>.");'
+    testString: assert(typeof rms === 'function', '<code>rms</code> is a function.');
+  - text: <code>rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</code> should equal <code>6.2048368229954285</code>.
+    testString: assert.equal(rms(arr1), answer1, '<code>rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</code> should equal <code>6.2048368229954285</code>.');
 
 ```
 
@@ -48,7 +48,8 @@ function rms (arr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const answer1 = 6.2048368229954285;
 ```
 
 </div>

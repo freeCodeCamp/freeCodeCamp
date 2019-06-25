@@ -38,7 +38,7 @@ Give the last 18 digits of your answer.
 ```yml
 tests:
   - text: <code>euler378()</code> should return 147534623725724700.
-    testString: 'assert.strictEqual(euler378(), 147534623725724700, "<code>euler378()</code> should return 147534623725724700.");'
+    testString: assert.strictEqual(euler378(), 147534623725724700, '<code>euler378()</code> should return 147534623725724700.');
 
 ```
 

@@ -72,7 +72,6 @@ localeTitle: جمع السجلات
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/C2AZ/0)
 
 ### شرح الشفرة:
 
