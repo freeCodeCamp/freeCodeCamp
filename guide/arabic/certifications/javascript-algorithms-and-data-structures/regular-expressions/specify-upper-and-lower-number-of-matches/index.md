@@ -8,15 +8,16 @@ localeTitle: تحديد العلوي والسفلي عدد من المباريا
 
 كل هذه السلاسل ستعود `true` :
 
- `let threeAs = "aaa"; 
- let fourAs = "aaaa"; 
- let sevenAs = "aaaaaaa"; 
- 
- let myRegex = /a{2,4}/; 
- myRegex.test(threeAs) ; // true 
- myRegex.test(fourAs) ; // true 
- myRegex.test(sevenAs) ; // true 
-` 
+```javascript
+let threeAs = "aaa";
+let fourAs = "aaaa";
+let sevenAs = "aaaaaaa";
+
+let myRegex = /a{2,4}/;
+myRegex.test(threeAs) ; // true
+myRegex.test(fourAs) ; // true
+myRegex.test(sevenAs) ; // true
+``` 
 
 ## Spolier Alert!
 
@@ -24,7 +25,8 @@ localeTitle: تحديد العلوي والسفلي عدد من المباريا
 
 ## حل:
 
- `let ohStr = "Ohhh no"; 
- let ohRegex = /Oh{3,6}\sno/; // Change this line 
- let result = ohRegex.test(ohStr); 
-`
+```javascript
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6}\sno/; // Change this line
+let result = ohRegex.test(ohStr);
+```

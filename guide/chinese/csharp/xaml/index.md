@@ -26,7 +26,7 @@ Silverlight，移动开发，WPF（Windows Presentation Foindation），Windows 
 
 以下示例显示了带有“Hello World！”的标签。作为其顶级容器中的内容，称为UserControl。
 
-```XAML
+```xml
 <UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"> 
     <Label Content="Hello World!" /> 
  </UserControl> 

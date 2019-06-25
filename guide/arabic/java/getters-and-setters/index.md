@@ -29,14 +29,15 @@ localeTitle: رسائل ورسائل
 
 بمجرد أن يتم تعريف الستر والأدوات ، نستخدمها في هدفنا الرئيسي:
 
- `public stativ void main(String[] args) { 
-  Vehicle v1 = new Vehicle(); 
-  v1.setColor("Red"); 
-  System.out.println(v1.getColor()); 
- } 
- 
- // Outputs "Red" 
-` 
+```java
+public stativ void main(String[] args) {
+  Vehicle v1 = new Vehicle();
+  v1.setColor("Red");
+  System.out.println(v1.getColor());
+}
+
+// Outputs "Red"
+``` 
 
 * * *
 
@@ -46,22 +47,25 @@ localeTitle: رسائل ورسائل
 
 باستخدام أداة getter و setter ، يمكن للمبرمج التحكم في كيفية الوصول إلى المتغيرات الهامة وتحديثها ، مثل تغيير قيمة متغير داخل نطاق محدد. خذ بعين الاعتبار التعليمة البرمجية التالية لطريقة setter:
 
- `public void setNumber(int num) { 
-    if (num < 10 || num > 100) { 
-        throw new IllegalArgumentException(); 
-    } 
-    this.number = num; 
- } 
-` 
+```java
+public void setNumber(int num) {
+    if (num < 10 || num > 100) {
+        throw new IllegalArgumentException();
+    }
+    this.number = num;
+}
+``` 
 
 وهذا يضمن تعيين قيمة الرقم دائمًا بين 10 و 100. إذا كان المبرمج يسمح بتحديث رقم المتغير مباشرة ، يمكن للمتصل تعيين أي قيمة عشوائية له:
 
- `obj.number = 3; 
-` 
+```java
+obj.number = 3;
+``` 
 
 هذا ينتهك القيد لقيم تتراوح بين 10 إلى 100 لهذا المتغير. نظرًا لأننا لا نتوقع حدوث ذلك ، فإن إخفاء رقم المتغير كخاصية خاصة واستخدام أداة ضبط يمنعه. من ناحية أخرى ، فإن طريقة الوسيلة هي الطريقة الوحيدة للعالم الخارجي لقراءة قيمة المتغير:
 
- `public int getNumber() { 
-    return this.number; 
- } 
-`
+```java
+public int getNumber() {
+    return this.number;
+}
+```

@@ -22,7 +22,7 @@ En el ejemplo anterior, la variable `result` será igual a `a + b`.
 
 #### Resta: `-`
 
-La adición se realiza con un `-` , así:
+La substracción se realiza con un `-` , así:
 
 ```C
 result = a - b; 

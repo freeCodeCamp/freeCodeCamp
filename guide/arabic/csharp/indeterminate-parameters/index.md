@@ -28,8 +28,9 @@ localeTitle: معلمات غير محددة
 
 ## انتاج:
 
- `> Parameter 0 is 1 
- > Parameter 1 is 2 
- > Parameter 2 is 3 
- > Parameter 0 is 4 
-`
+```
+> Parameter 0 is 1
+> Parameter 1 is 2
+> Parameter 2 is 3
+> Parameter 0 is 4
+```

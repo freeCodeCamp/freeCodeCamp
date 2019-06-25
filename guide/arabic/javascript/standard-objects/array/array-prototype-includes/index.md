@@ -13,10 +13,11 @@ localeTitle: Array.prototype.includes
 
 ### مثال
 
- `const a = [1, 2, 3]; 
- a.includes(2); // true 
- a.includes(4); // false 
-` 
+```js
+const a = [1, 2, 3];
+a.includes(2); // true
+a.includes(4); // false
+``` 
 
 #### معلومات اكثر:
 

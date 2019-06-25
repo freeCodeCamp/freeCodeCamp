@@ -8,7 +8,7 @@ localeTitle: 使用apt-get在Ubuntu中安装Go
 
 > 在撰写本文时，Ubuntu Xenial的版本是1.6.1，而最新版本 稳定版本是1.9.1
 
-```sh
+```shell
 $ sudo apt-get update 
  $ sudo apt-get install golang-go 
 ```
@@ -17,7 +17,7 @@ $ sudo apt-get update
 
 要检查go是否已成功安装，请使用：
 
-```sh
+```shell
 $ go version 
  > go version go1.9.1 linux/amd64 
 ```
