@@ -30,7 +30,6 @@ using System;
 
 ## Saída:
 ```shell
-```sh
 > Hello World! 
  > Press any key to exit. 
 
