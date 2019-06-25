@@ -8,11 +8,12 @@ localeTitle: النطاق المحلي والوظائف
 
 فيما يلي الحل الأساسي للتعليمات البرمجية لإنشاء متغير `myVar` محلي.
 
- `function myLocalScope() { 
-  var myVar; 
-  console.log(myVar); 
- } 
- myLocalScope(); 
-` 
+```javascript
+function myLocalScope() {
+  var myVar;
+  console.log(myVar);
+}
+myLocalScope();
+``` 
 
 المتغير موجود فقط في الوظيفة. خارج الوظيفة ، هو غير موجود.

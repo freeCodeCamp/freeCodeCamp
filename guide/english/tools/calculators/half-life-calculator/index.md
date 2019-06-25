@@ -3,13 +3,12 @@ title: Half Life Calculator
 ---
 ## Half Life Calculator
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/tools/calculators/half-life-calculator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A half life calculator calculates the remaining quantity of a radioactive substance given the initial quantity, the time passed, and the half life of the substance (the time taken for the substance undergoing decay to halve its quantity).
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+More generally, a half life calculator could refer to any calculator that calculates one of the four aforementioned variables given the known values of the other three.  
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+* [An online half life calculator](https://www.calculator.net/half-life-calculator.html)
+* [Wikipedia article on half life](https://en.wikipedia.org/wiki/Half-life)
 
 

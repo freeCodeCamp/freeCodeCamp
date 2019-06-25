@@ -8,14 +8,15 @@ localeTitle: حدث Onload
 
 ### مثال:
 
- `<body onload="myFunction()"> 
- 
- <script> 
-  function myFunction() { 
-    alert('Page finished loading'); 
-  } 
- </script> 
-` 
+```javascript
+<body onload="myFunction()">
+
+<script>
+  function myFunction() {
+    alert('Page finished loading');
+  }
+</script>
+``` 
 
 في المثال أعلاه ، بمجرد تحميل صفحة الويب ، سيتم استدعاء وظيفة `myFunction` ، مما يعرض تنبيه `Page finished loading` المنتهي إلى المستخدم.
 

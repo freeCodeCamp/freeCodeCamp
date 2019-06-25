@@ -12,11 +12,11 @@ Href اختصار لـ "Hypertext Reference" وهي إحدى سمات HTML. يت
 
 #### أمثلة
 
- `
-<a href="https://www.freecodecamp.org">This is an absolute URL</a> 
- 
- <a href="index.html">This is a relative URL</a> 
-` 
+```html
+<a href="https://www.freecodecamp.org">This is an absolute URL</a>
+
+<a href="index.html">This is a relative URL</a>
+``` 
 
 #### معلومات اكثر:
 

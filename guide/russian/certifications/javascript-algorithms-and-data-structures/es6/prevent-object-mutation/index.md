@@ -44,8 +44,6 @@ localeTitle: Предотвращение мутации объектов
     const PI = freezeObj(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://codepen.io/dylantyates/pen/OwVxYB)
-
 # Код Объяснение:
 
 Используя Object.freeze () в `MATH_CONSTANTS` мы можем избежать манипулирования им.

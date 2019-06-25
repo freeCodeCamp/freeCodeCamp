@@ -1,7 +1,8 @@
 ---
 title: React TypeChecking with PropTypes
-localeTitle: Reaccionar TypeChecking con PropTypes
----## Reaccionar PropTypes
+localeTitle: React TypeChecking con PropTypes
+---
+## React PropTypes
 
 Estos sirven como un método de verificación de tipos, ya que una aplicación tiende a crecer, con esto, una gran base de errores tiende a corregirse con el uso de esta función.
 
@@ -11,7 +12,7 @@ A partir de la versión 15.5 de React, esta característica se movió a un paque
 
 Para usarlo, se requiere que se agregue al proyecto como una dependencia emitiendo el siguiente comando en una consola.
 
-```sh
+```shell
 npm install --save prop-types 
 ```
 
@@ -122,4 +123,4 @@ import React,{Component} from 'react';
 
 Para obtener más información sobre PropTypes y otros documentos sobre React.
 
-Vaya al [sitio oficial](https://reactjs.org/) y lea los documentos, o [Github Repo](https://github.com/facebook/react/)
+Vaya al [sitio oficial](https://reactjs.org/) y lea los documentos, o [GitHub Repo](https://github.com/facebook/react/)

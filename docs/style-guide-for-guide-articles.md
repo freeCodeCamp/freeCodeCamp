@@ -1,10 +1,10 @@
 # Style guide for creating and editing Guide Articles
 
-We recommend the following guidelines to writing Guide articles to help you get started contributing and create helpful articles.
+We recommend the following guidelines for writing Guide articles to help you get started contributing and to create helpful articles.
 
 ## Title
 
-Article titles should be as short, concise, and to-the-point as possible.
+Article titles should be as short, concise, and as to-the-point as possible.
 
 We want campers to quickly find the information they're looking for, and the title should reflect the main theme of the article.
 
@@ -12,29 +12,30 @@ Folder name is used in the URL, so only use dashes (-), numbers (0-9), and lower
 
 However, you can include special characters in the article title.
 
+The titles use a special YAML front matter syntax block as shown below. These contain the information required by the build tools to create webpages for the guide articles.
+
+These are the specific front matter requirements:
+1. The front matter block should be on the first line of the file.
+2. The front matter block should not have whitespaces before and after the lines.
+3. The `title` keyword and the string value after the colon (`:`) must only be separated by a single space.
+4. If the article is a translation from the english version, the front matter block should also have a `titleLocale` keyword with applicable translation for the english title.
+
 Here are some examples of properly named titles:
 
-> [`src/pages/html/tables/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/html/tables/index.md)
-
-```markdown
----
-title: Tables
----
-```
-
-> [`src/pages/css/borders/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/css/borders/index.md)
-
-```markdown
----
-title: Borders
----
-```
-
-> [`src/pages/javascript/loops/for-loop/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/javascript/loops/for-loop/index.md)
+> [`guide/english/javascript/loops/for-loop/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/javascript/loops/for-loop/index.md)
 
 ```markdown
 ---
 title: For Loop
+---
+```
+
+> [`guide/spanish/algorithms/binary-search-trees/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/spanish/algorithms/binary-search-trees/index.md)
+
+```
+---
+title: Binary Search Trees
+localeTitle: Árboles binarios de búsqueda
 ---
 ```
 
@@ -90,9 +91,9 @@ The following represents two other examples using JavaScript and CSS syntax high
 
 Please keep the following recommendations in mind:
 
-- To ensure correct rendering, each codeblock must have a language label. You can find a list of supported languages [here](http://prismjs.com/#languages-list ).
+- To ensure correct rendering, each code block must have a language label. You can find a list of supported languages [here](http://prismjs.com/#languages-list ).
 - For codeblocks with no appropriate language, use generic labels like ` ```text `, or ` ```code `.
-- You may know about markdown's four-space indentation syntax for writing codeblocks. However, this is currently __not__ supported by our rendering system.
+- You may know about markdown's four-space indentation syntax for writing code blocks. However, this is currently __not__ supported by our rendering system.
 
 Finally, here are some suggested formatting guidelines when writing code blocks:
 
@@ -134,7 +135,9 @@ To order your list, precede each line with a number.
 
 ## Images
 
-For including images, if they aren't already hosted somewhere else on the web, you will need to put them online yourself using a platform like [Imgur](https://imgur.com/) or [Flickr](https://www.flickr.com). You can also host images by committing them to a git repository and pushing it to GitHub. Then you can right-click the image and copy its URL.
+We do not recommend adding images to an article unless absolutely necessary. Images hurt Web Accessibility, they are difficult to maintain and may get outdated. They are also slow to load on poor connections, thus, hurt web performance.
+
+For including images in an article under compelling reasons, if they aren't already hosted somewhere else on the web, you will need to put them online yourself using a platform like [Imgur](https://imgur.com/) or [Flickr](https://www.flickr.com). You can also host images by committing them to a git repository and pushing it to GitHub. Then you can right-click the image and copy its URL.
 
 We don't allow hosting images directly in the git repository because it would make it far too big (people pulling it to their local system to make changes would end up downloading all the images), and because it is easier to change an image by just changing the URL in an article than by putting the new image in the repository.
 
@@ -148,9 +151,13 @@ Then the images should show up when you click the <kcd>Preview</kcd> tab.
 
 You can also add diagrams, graphics, or visualizations as necessary.
 
-You can even embed relevant YouTube videos and interactive [REPL.it](https://repl.it/) code editors.
+You can even embed relevant YouTube videos.
 
 Don't use emojis or emoticons in the Guide. freeCodeCamp has a global community, and the cultural meaning of an emoji or emoticon may be different around the world. Also, emojis can render differently on different systems.
+
+## Curriculum Challenge Solutions
+
+When proposing a solution for a curriculum challenge related article, the full code should be given. This includes all the original seed code plus any changes needed to pass all the challenge tests.
 
 ## Attributions
 
@@ -191,9 +198,9 @@ Typically, an attribution has a structure like the following:
 
 > Author Last Name, Author First Name. "Article Title." *Publication.* Publisher. Date Published. Date Accessed.
 
-If you cannot find an author or published date, which is common, simply omit these.
+If you cannot find an author or a publication date, which is common, simply omit these.
 
-Use of proper citations will not only keep the guide reputable, but these citations and links will also provide valuable resources should the reader want to learn more about the topic.
+Use of proper citations will not only keep the guide reputable but these citations and links will also provide valuable resources should the reader want to learn more about the topic.
 
 Also note that instances of blatant plagiarism will be either removed or have their pull requests declined, and the user will receive a warning.
 
@@ -278,11 +285,11 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
 
-Front-end development (adjective form with a dash) is when you working on the front end (noun form with no dash). The same goes with the back end, full stack, and many other compound terms.
+Front-end development (an adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes for the back end, full stack, and many other compound terms.
 
 ## Third-Party Tools
 
-To check for grammar and spelling, we recommend using an app like [Grammarly](https://grammarly.com) or a built in extension/plugin that checks for this within your text editor.
+To check for grammar and spelling, we recommend using an app like [Grammarly](https://grammarly.com) or a built-in extension/plugin that checks for this within your text editor.
 
 - [VS Code](https://code.visualstudio.com/) - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - [Sublime Text 3](https://www.sublimetext.com/docs/3/spell_checking.html)

@@ -10,23 +10,25 @@ localeTitle: كابل بيانات
 
 يستخدم المستند المضمن `#` أمام نص يصف شيئًا عن الشفرة.
 
- `def get(path) do 
-    # This is an inline comment for documentation purposes. 
-    "http get request response" 
-  end 
-` 
+```elixir
+def get(path) do
+    # This is an inline comment for documentation purposes.
+    "http get request response"
+  end
+``` 
 
 ### وثائق الوحدة
 
 يصف مستند الوحدة النمطية الغرض من وحدة نمطية. تشبه Moduledocs التعليقات متعددة الأسطر التي قد تجدها في لغات البرمجة الأخرى.
 
- `defmodule WebServer do 
-  @moduledoc """ 
-    Provides a set of functions to accept and respond to HTTP requests. 
-    This module provides the @get/1, @post/1, and @put/1 functions. 
-  """ 
- end 
-` 
+```elixir
+defmodule WebServer do
+  @moduledoc """
+    Provides a set of functions to accept and respond to HTTP requests.
+    This module provides the @get/1, @post/1, and @put/1 functions.
+  """
+end
+``` 
 
 ### وثائق الوظيفة
 

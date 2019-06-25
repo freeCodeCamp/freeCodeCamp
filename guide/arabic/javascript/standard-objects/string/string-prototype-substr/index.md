@@ -17,14 +17,16 @@ localeTitle: String.prototype.substr
 
 #### أمثلة:
 
- `let str = "Hello world!"; 
- let res = str.substr(1, 4); 
-` 
+```JavaScript
+let str = "Hello world!";
+let res = str.substr(1, 4);
+``` 
 
 ستكون نتيجة الدقة:
 
- `ello 
-` 
+```
+ello
+``` 
 
 #### معلومات اكثر:
 
