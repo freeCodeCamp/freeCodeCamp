@@ -10,19 +10,21 @@ localeTitle: تحويل عدد صحيح الى سلسلة في بايثون
 
 قد يحاول المبرمجون القادمون من لغات أخرى تنفيذ سلسلة السلاسل التالية التي تنتج خطأ:
 
- `age = 18 
- 
- string = "Hello, I am " + age + " years old" 
-` 
+```py
+age = 18
+
+string = "Hello, I am " + age + " years old"
+``` 
 
 [تشغيل الكود على repl.it](https://repl.it/JyYH/0)
 
 الخطأ الذي يظهر هو
 
- `Traceback (most recent call last): 
-  File "python", line 3, in <module> 
- TypeError: must be str, not int 
-` 
+```
+Traceback (most recent call last):
+  File "python", line 3, in <module>
+TypeError: must be str, not int
+``` 
 
 `TypeError: must be str, not int` يشير إلى أنه يجب أولاً تحويل العدد الصحيح إلى سلسلة ليتم توصيله.
 
@@ -30,28 +32,30 @@ localeTitle: تحويل عدد صحيح الى سلسلة في بايثون
 
 مثال سلسلتي بسيط:
 
- `age = 18 
- 
- print("Hello, I am " + str(age) + " years old") 
- 
- # Output 
- # Hello, I am 18 years old 
-` 
+```py
+age = 18
+
+print("Hello, I am " + str(age) + " years old")
+
+# Output
+# Hello, I am 18 years old
+``` 
 
 [تشغيل الكود على repl.it](https://repl.it/Jz8Q/0)
 
 اطبع `1 2 3 4 5 6 7 8 9 10` باستخدام جملة واحدة
 
- `result = "" 
- 
- for i in range(1, 11): 
-    result += str(i) + " " 
- 
- print(result) 
- 
- # Output 
- # 1 2 3 4 5 6 7 8 9 10 
-` 
+```py
+result = ""
+
+for i in range(1, 11):
+    result += str(i) + " "
+
+print(result)
+
+# Output
+# 1 2 3 4 5 6 7 8 9 10
+``` 
 
 [تشغيل الكود على repl.it](https://repl.it/KBLB/0)
 

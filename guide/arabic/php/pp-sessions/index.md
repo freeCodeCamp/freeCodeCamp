@@ -27,24 +27,25 @@ localeTitle: جلسات PHP
 
 **مثال:**
 
- `<?php 
- // Start the session 
- session_start(); 
- ?> 
- <!DOCTYPE html> 
- <html> 
- <body> 
- 
- <?php 
- // Set session variables 
- $_SESSION["favcolor"] = "blue"; 
- $_SESSION["favanimal"] = "dog"; 
- echo "Session variables are set."; 
- ?> 
- 
- </body> 
- </html> 
-` 
+```
+<?php
+// Start the session
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// Set session variables
+$_SESSION["favcolor"] = "blue";
+$_SESSION["favanimal"] = "dog";
+echo "Session variables are set.";
+?>
+
+</body>
+</html>
+``` 
 
 **ملاحظة:** يجب أن تكون الدالة session\_start () **أول شيء** في المستند. **قبل** أي علامات HTML.
 
@@ -59,22 +60,23 @@ localeTitle: جلسات PHP
 
 **مثال:**
 
- `<?php 
- session_start(); 
- ?> 
- <!DOCTYPE html> 
- <html> 
- <body> 
- 
- <?php 
- // Echo session variables that were set on previous page 
- echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>"; 
- echo "Favorite animal is " . $_SESSION["favanimal"] . "."; 
- ?> 
- 
- </body> 
- </html> 
-` 
+```
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// Echo session variables that were set on previous page
+echo "Favorite color is " . $_SESSION["favcolor"] . ".<br>";
+echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
+?>
+
+</body>
+</html>
+``` 
 
 انتاج:  
 اللون المفضل باللون الأزرق.  
@@ -82,10 +84,11 @@ localeTitle: جلسات PHP
 
 هناك طريقة أخرى لإظهار كافة قيم متغير جلسة العمل لجلسة مستخدم هي تشغيل التعليمة البرمجية التالية:
 
- `<?php 
- print_r($_SESSION); 
- ?> 
-` 
+```
+<?php
+print_r($_SESSION);
+?>
+``` 
 
 ### كيف يعمل؟
 
@@ -99,22 +102,23 @@ localeTitle: جلسات PHP
 
 **مثال:**
 
- `<?php 
- session_start(); 
- ?> 
- <!DOCTYPE html> 
- <html> 
- <body> 
- 
- <?php 
- // to change a session variable, just overwrite it 
- $_SESSION["favcolor"] = "pink"; 
- print_r($_SESSION); 
- ?> 
- 
- </body> 
- </html> 
-` 
+```
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// to change a session variable, just overwrite it
+$_SESSION["favcolor"] = "pink";
+print_r($_SESSION);
+?>
+
+</body>
+</html>
+``` 
 
 ## تدمير دورة PHP
 
@@ -122,21 +126,22 @@ localeTitle: جلسات PHP
 
 **مثال:**
 
- `<?php 
- session_start(); 
- ?> 
- <!DOCTYPE html> 
- <html> 
- <body> 
- 
- <?php 
- // remove all session variables 
- session_unset(); 
- 
- // destroy the session 
- session_destroy(); 
- ?> 
- 
- </body> 
- </html> 
-`
+```
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// remove all session variables
+session_unset();
+
+// destroy the session
+session_destroy();
+?>
+
+</body>
+</html>
+```

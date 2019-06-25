@@ -41,8 +41,6 @@ Necesitamos cambiar `var` para `let` nuestro alcance de función y agregar `let`
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://codepen.io/dylantyates/pen/wxwxRd)
-
 # Explicación del código:
 
 Mediante el uso de `let` se puede declarar variables en relación con su ámbito de aplicación.

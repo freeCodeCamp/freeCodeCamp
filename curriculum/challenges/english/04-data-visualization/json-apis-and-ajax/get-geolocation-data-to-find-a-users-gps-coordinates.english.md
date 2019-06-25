@@ -11,7 +11,15 @@ The navigator will get the user's current longitude and latitude.
 You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.
 By selecting allow, you will see the text on the output phone change to your latitude and longitude.
 Here's code that does this:
-<blockquote>if (navigator.geolocation){<br>&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('data').innerHTML="latitude: "+ position.coords.latitude +  "&lt;br&gt;longitude: " +  position.coords.longitude;<br>&nbsp;&nbsp;});<br>}</blockquote>
+
+```js
+if (navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(function(position) {
+    document.getElementById('data').innerHTML="latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+  });
+}
+```
+
 First, it checks if the <code>navigator.geolocation</code> object exists. If it does, the <code>getCurrentPosition</code> method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the <code>position</code> object's values for latitude and longitude using dot notation and updates the HTML.
 </section>
 

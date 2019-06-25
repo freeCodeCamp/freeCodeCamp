@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08823
 title: Add a Negative Margin to an Element
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
 localeTitle: 向元素添加负边距
 ---

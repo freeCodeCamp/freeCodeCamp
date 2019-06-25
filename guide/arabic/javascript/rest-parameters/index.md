@@ -10,21 +10,23 @@ localeTitle: معايير الراحة
 
 ### بناء الجملة
 
- `function myFunc(...args) { 
-  console.log(args); 
- } 
- 
- myFunc( 1, 2, 3, 4, 5);       // [1,2,3,4,5] 
-` 
+```js
+function myFunc(...args) {
+  console.log(args);
+}
+
+myFunc( 1, 2, 3, 4, 5);       // [1,2,3,4,5]
+``` 
 
 يمكنك بادئة معلمة آخر دالة باستخدام `...` عندما تريد عمل شيء ما مع المعلمات الأولية ثم معالجة جميع المعلمات المتبقية بشكل مختلف.
 
- `function convertCurrency(rate, fee, ...amounts) { 
-  return amounts.map(amount => (amount * rate) + fee); 
- } 
- 
- convertCurrency(0.89, 2.5, 100, 250, 75, 150, 300); // [ 91.5, 225, 69.25, 136, 269.5 ] 
-` 
+```js
+function convertCurrency(rate, fee, ...amounts) {
+  return amounts.map(amount => (amount * rate) + fee);
+}
+
+convertCurrency(0.89, 2.5, 100, 250, 75, 150, 300); // [ 91.5, 225, 69.25, 136, 269.5 ]
+``` 
 
 يتيح لك `...` جمع ما تبقى من الوسيطات ، إن وجدت ، في مصفوفة.
 

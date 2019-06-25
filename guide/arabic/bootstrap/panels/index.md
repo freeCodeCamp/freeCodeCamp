@@ -12,12 +12,12 @@ localeTitle: لوحات
 
 **مثال الكود**
 
- `
-<div class="panel panel-primary"> 
-  <div class="panel panel-heading">Panel Primary</div> 
-  <div class="panel panel-body"> This is a panel with the primary panel style.</div> 
- </div> 
-` 
+```html
+<div class="panel panel-primary">
+  <div class="panel panel-heading">Panel Primary</div>
+  <div class="panel panel-body"> This is a panel with the primary panel style.</div>
+</div>
+``` 
 
 #### أمثلة على اللوحة:
 

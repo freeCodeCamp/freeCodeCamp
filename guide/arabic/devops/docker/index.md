@@ -35,13 +35,15 @@ _جميع روابط thoses هي ل Docker CE (إصدار المجتمع)_
 
 لاختبار ما إذا كان التطبيق سارًا بشكل جيد ، قم بتشغيل:
 
- `docker --version 
-` 
+```
+docker --version
+``` 
 
 تأكد من أن لديك مخرجات تبدو كالتالي:
 
- `Docker version 18.06.1-ce, build e68fc7a 
-` 
+```
+Docker version 18.06.1-ce, build e68fc7a
+``` 
 
 * * *
 
@@ -49,18 +51,19 @@ _جميع روابط thoses هي ل Docker CE (إصدار المجتمع)_
 
 اختبار أن التثبيت الخاص بك يعمل عن طريق تشغيل صورة Docker بسيطة ، مرحبا العالم:
 
- `docker run hello-world 
- 
- Unable to find image 'hello-world:latest' locally 
- latest: Pulling from library/hello-world 
- ca4f61b1923c: Pull complete 
- Digest: sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7 
- Status: Downloaded newer image for hello-world:latest 
- 
- Hello from Docker! 
- This message shows that your installation appears to be working correctly. 
- ... 
-` 
+```
+docker run hello-world
+
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+ca4f61b1923c: Pull complete
+Digest: sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+...
+``` 
 
 ### ما هي الحاويات ثم:
 
@@ -95,91 +98,92 @@ _جميع روابط thoses هي ل Docker CE (إصدار المجتمع)_
 
 Dockerfile هو المكان الذي تكتب فيه التعليمات لبناء صورة Docker. يمكن أن تكون هذه التعليمات: **RUN apt-get y install some-package** : to install a software package **EXPOSE 8000** : لعرض منفذ **ENV ANT\_HOME / usr / local / apache-ant** لتمرير متغير بيئة وما إلى ذلك. بمجرد الانتهاء من إعداد Dockerfile ، يمكنك استخدام الأمر لبناء المرسى لبناء صورة منه. إليك مثال على Dockerfile:
 
- `# Start with ubuntu 14.04 
- FROM ubuntu:14.04 
- 
- MAINTAINER freeCodeCamp@gmail.com 
- 
- # For SSH access and port redirection 
- ENV ROOTPASSWORD sample 
- 
- # Turn off prompts during installations 
- ENV DEBIAN_FRONTEND noninteractive 
- RUN echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections 
- RUN echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections 
- 
- # Update packages 
- RUN apt-get -y update 
- 
- # Install system tools / libraries 
- RUN apt-get -y install python3-software-properties \ 
-    software-properties-common \ 
-    bzip2 \ 
-    ssh \ 
-    net-tools \ 
-    vim \ 
-    curl \ 
-    expect \ 
-    git \ 
-    nano \ 
-    wget \ 
-    build-essential \ 
-    dialog \ 
-    make \ 
-    build-essential \ 
-    checkinstall \ 
-    bridge-utils \ 
-    virt-viewer \ 
-    python-pip \ 
-    python-setuptools \ 
-    python-dev 
- 
- # Install Node, npm 
- RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - 
- RUN apt-get install -y nodejs 
- 
- # Add oracle-jdk7 to repositories 
- RUN add-apt-repository ppa:webupd8team/java 
- 
- # Make sure the package repository is up to date 
- RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list 
- 
- # Update apt 
- RUN apt-get -y update 
- 
- # Install oracle-jdk7 
- RUN apt-get -y install oracle-java7-installer 
- 
- # Export JAVA_HOME variable 
- ENV JAVA_HOME /usr/lib/jvm/java-7-oracle 
- 
- # Run sshd 
- RUN apt-get install -y openssh-server 
- RUN mkdir /var/run/sshd 
- RUN echo "root:$ROOTPASSWORD" | chpasswd 
- RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config 
- 
- # SSH login fix. Otherwise user is kicked off after login 
- RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd 
- 
- # Expose Node.js app port 
- EXPOSE 8000 
- 
- # Create tap-to-android app directory 
- RUN mkdir -p /usr/src/my-app 
- WORKDIR /usr/src/my-app 
- 
- # Install app dependencies 
- COPY . /usr/src/my-app 
- RUN npm install 
- 
- # Add entrypoint 
- ADD entrypoint.sh /entrypoint.sh 
- RUN chmod +x /entrypoint.sh 
- ENTRYPOINT ["/entrypoint.sh"] 
- 
- CMD ["npm", "start"] 
-` 
+```
+# Start with ubuntu 14.04
+FROM ubuntu:14.04
+
+MAINTAINER freeCodeCamp@gmail.com
+
+# For SSH access and port redirection
+ENV ROOTPASSWORD sample
+
+# Turn off prompts during installations
+ENV DEBIAN_FRONTEND noninteractive
+RUN echo "debconf shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections
+RUN echo "debconf shared/accepted-oracle-license-v1-1 seen true" | debconf-set-selections
+
+# Update packages
+RUN apt-get -y update
+
+# Install system tools / libraries
+RUN apt-get -y install python3-software-properties \
+    software-properties-common \
+    bzip2 \
+    ssh \
+    net-tools \
+    vim \
+    curl \
+    expect \
+    git \
+    nano \
+    wget \
+    build-essential \
+    dialog \
+    make \
+    build-essential \
+    checkinstall \
+    bridge-utils \
+    virt-viewer \
+    python-pip \
+    python-setuptools \
+    python-dev
+
+# Install Node, npm
+RUN curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+RUN apt-get install -y nodejs
+
+# Add oracle-jdk7 to repositories
+RUN add-apt-repository ppa:webupd8team/java
+
+# Make sure the package repository is up to date
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+
+# Update apt
+RUN apt-get -y update
+
+# Install oracle-jdk7
+RUN apt-get -y install oracle-java7-installer
+
+# Export JAVA_HOME variable
+ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
+
+# Run sshd
+RUN apt-get install -y openssh-server
+RUN mkdir /var/run/sshd
+RUN echo "root:$ROOTPASSWORD" | chpasswd
+RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+# SSH login fix. Otherwise user is kicked off after login
+RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+
+# Expose Node.js app port
+EXPOSE 8000
+
+# Create tap-to-android app directory
+RUN mkdir -p /usr/src/my-app
+WORKDIR /usr/src/my-app
+
+# Install app dependencies
+COPY . /usr/src/my-app
+RUN npm install
+
+# Add entrypoint
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["npm", "start"]
+``` 
 
 #### معلومات اكثر:
 

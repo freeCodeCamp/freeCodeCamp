@@ -45,8 +45,9 @@ localeTitle: الحلقات
 
 اذهب إلى عن على { // Whill loop حتى يفصل الشرط عن العروة كسر // الخروج من الحلقة }
 
- `## Replacement for while-loop 
- To simulate while-loop of other languages, you can simply exclude the **init** and **post** statement: 
-` 
+```
+## Replacement for while-loop
+To simulate while-loop of other languages, you can simply exclude the **init** and **post** statement:
+``` 
 
 اذهب func main () { الأسطوانات: = 1 لـ num <= 1000 { num \* = 2 } fmt.Println ("أصغر طاقة تبلغ 2 فوق 1000 هي" ، عدد) } \`\` \`

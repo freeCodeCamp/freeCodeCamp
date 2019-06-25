@@ -6,7 +6,7 @@ localeTitle: 打字稿
 
 ### 概观
 
-![打字稿](https://i.imgur.com/uRLunzU.png)
+![打字稿](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
 
 因此，正如您最有可能意识到的那样，JavaScript每天都在扩大其占用空间，而且现在您可以使用该语言实现这一目标，这既令人难以置信又令人惊叹。
 
@@ -16,7 +16,7 @@ localeTitle: 打字稿
 
 您可以在[`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript)了解有关语法差异的更多信息。
 
-![主要特点](https://i.imgur.com/pZij95O.jpg)
+![主要特点](https://cdn-media-1.freecodecamp.org/imgr/pZij95O.jpg)
 
 从本质上讲，TypeScript正试图帮助JavaScript达到新的高度，并且变得非常可扩展，并且可以通过以下功能突出显示：
 
@@ -41,7 +41,7 @@ localeTitle: 打字稿
 
 ### 操场
 
-![操场](https://i.imgur.com/vlV7ZFr.png)
+![操场](https://cdn-media-1.freecodecamp.org/imgr/vlV7ZFr.png)
 
 如果您想在不安装的情况下试用TypeScript，请访问[TypeScript Playground](http://www.typescriptlang.org/play/index.html) 。
 

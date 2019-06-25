@@ -12,17 +12,17 @@ localeTitle: HTML دوم
 
 كل عنصر في DOM يسمى أيضًا عقدة.
 
- `
-<html> 
- <head> 
-  <title> My title </title> 
- </head> 
- <body> 
-  <a href="#">My Link</a> 
-  <h1> My header </h1> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<head>
+  <title> My title </title>
+</head>
+<body>
+  <a href="#">My Link</a>
+  <h1> My header </h1>
+</body>
+</html>
+``` 
 
 يكون DOM الخاص بـ HTML أعلاه على النحو التالي:
 
