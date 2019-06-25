@@ -1,6 +1,5 @@
 ---
 title: Bash Cat
-
 localeTitle: Bash Cat
 ---
 
