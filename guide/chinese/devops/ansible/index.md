@@ -6,10 +6,6 @@ localeTitle: Ansible
 
 Ansible是一个易于使用的自动化工具。 Ansible可用于自动化部署，更新，安全性，系统管理，容器配置等。配置文件易于管理用简单英语编写的YAML文件。安装很简单，由于其Master-Push格式，远程机器上不需要代理。与远程机器的通信是通过SSH进行的。
 
-Ansible 架構圖如下所示，使用者透過 Ansible 編配操控公有與私有雲或 CMDB（組態管理資料庫）中的主機，其中 Ansible 編排是由Inventory(主機與群組規則)、API、Modules(模組)與Plugins(插件)組合而成。
-
-
-
 Ansible 與其他管理工具最大差異在於不需要任何 Agent，預設使用 SSH 來做遠端操控與配置，並採用 YAML 格式來描述配置資訊。
 
 Ansible 提供了一個 Playbook 分享平台，可以讓管理與開發者上傳自己的功能與角色配置的 Playbook，該網址為 Ansible Galaxy。
