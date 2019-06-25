@@ -10,8 +10,9 @@ localeTitle: مكونات الترتيب الأعلى
 
 الفكرة الأساسية هي:
 
- `const EnhancedComponent = enhance(WrappedComponent); 
-` 
+```jsx
+const EnhancedComponent = enhance(WrappedComponent);
+``` 
 
 أين:
 
@@ -21,22 +22,23 @@ localeTitle: مكونات الترتيب الأعلى
 
 هذا يمكن أن يكون الجسم من `enhance` HOC:
 
- `function enhance(WrappedComponent) { 
-  return class extends React.Component { 
-    render() { 
-      const extraProp = 'This is an injected prop!'; 
-      return ( 
-        <div className="Wrapper"> 
-          <WrappedComponent 
-            {...this.props} 
-            extraProp={extraProp} 
-          /> 
-        </div> 
-      ); 
-    } 
-  } 
- } 
-` 
+```jsx
+function enhance(WrappedComponent) {
+  return class extends React.Component {
+    render() {
+      const extraProp = 'This is an injected prop!';
+      return (
+        <div className="Wrapper">
+          <WrappedComponent
+            {...this.props}
+            extraProp={extraProp}
+          />
+        </div>
+      );
+    }
+  }
+}
+``` 
 
 في هذه الحالة ، `enhance` إرجاع **فئة المجهول** التي تمتد `React.Component` . يقوم هذا المكون الجديد بثلاثة أشياء بسيطة:
 

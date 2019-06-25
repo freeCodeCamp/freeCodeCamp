@@ -8,12 +8,13 @@ localeTitle: تنفيذ برنامج طلب تسجيل مستوى الجذر ا�
 
 لإعداد البرنامج الوسيط الخاص بك ، يمكنك القيام بذلك كما يلي:
 
- `app.use(function middleware(req, res, next) { 
-  // Do something 
-  // Call the next function in line: 
-  next(); 
- }); 
-` 
+```javascript
+app.use(function middleware(req, res, next) {
+  // Do something
+  // Call the next function in line:
+  next();
+});
+``` 
 
 إذا واجهتك مشكلة في تنسيق السلسلة بشكل صحيح ، فستبدو طريقة واحدة لتنفيذها كما يلي:
 

@@ -7,7 +7,7 @@ Layouts organize different areas of the web page.
 
 Almost every web page we see can be divided into boxes, that can be arranged into specific order to create that web page. The image below is one such example.
 
-![Sample of Website Design - www.codementor.io](http://i.imgur.com/Z1DSMYC.png)
+![Sample of Website Design - www.codementor.io](https://cdn-media-1.freecodecamp.org/imgr/Z1DSMYC.png)
 
 > Websites often display content in multiple columns (like a magazine or newspaper).
 

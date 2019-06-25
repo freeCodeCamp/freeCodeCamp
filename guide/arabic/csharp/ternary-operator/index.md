@@ -8,8 +8,9 @@ localeTitle: المشغل الثلاثي
 
 ## بناء الجملة
 
- `condition_expression ? expression_1 : expression_2 
-` 
+```
+condition_expression ? expression_1 : expression_2
+``` 
 
 ### معامل
 
@@ -21,20 +22,22 @@ localeTitle: المشغل الثلاثي
 
 ## مثال
 
- `// initialize - set true or false here to view different result 
- bool hasFreeSweet = false; 
- 
- string str = hasFreeSweet ? "Free sweet!" : "No free sweet."; 
- 
- //output in console 
- Console.WriteLine(str); 
-` 
+```
+// initialize - set true or false here to view different result
+bool hasFreeSweet = false;
+
+string str = hasFreeSweet ? "Free sweet!" : "No free sweet.";
+
+//output in console
+Console.WriteLine(str);
+``` 
 
 ## انتاج |
 
- `if hasFreeSweet == true 
- > Free sweet! 
- 
- if hasFreeSweet == false 
- > No free sweet. 
-`
+```
+if hasFreeSweet == true
+> Free sweet!
+
+if hasFreeSweet == false
+> No free sweet.
+```

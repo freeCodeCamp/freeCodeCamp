@@ -14,10 +14,11 @@ localeTitle: التعامل مع صفائف مع البوب ​​()
 
 ## المفسد! حل الرمز:
 
- `var removedFromMyArray = myArray.pop(); 
- ======= 
- Remove the last element of an array with the pop() method, like so: 
-` 
+```javascript
+var removedFromMyArray = myArray.pop();
+=======
+Remove the last element of an array with the pop() method, like so:
+``` 
 
 جافا سكريبت var arr = \[1، 2، 3، 4، 5\]؛ arr.pop ()؛ // هذا تخلص من 5
 

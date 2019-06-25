@@ -16,7 +16,7 @@ localeTitle: 2 في 2 المحددات
 
 القيمة المطلقة للعنصر تساوي مساحة متوازي الأضلاع.
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [هنا](https://i.stack.imgur.com/gCaz3.png) هو دليل مرئي مثير للاهتمام من هذه الخاصية.
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [هنا](https://cdn-media-1.freecodecamp.org/imgr/gCaz3.png) هو دليل مرئي مثير للاهتمام من هذه الخاصية.
 
 ملاحظة: إذا كان المحدد يساوي صفر ، فلا توجد حلول (تقاطعات) مع النظام (ويعرف أيضاً بالخطوط المتوازية).
 

@@ -25,7 +25,7 @@ So directly install **httpd** software -
 ### Start services -
   - If we use **systemctl** to start the services, this will not work and gives an error.
   - **systemctl** doesn't work in docker.
-  - In actual RedHat system, when we start a service it actually runs a script in background. That script start daemons.
+  - In actual RedHat system, when we start a service it actually runs a script in background. That script starts daemons.
   - To find the path of that script, check status of service
 `$ systemctl status httpd`
 `Loaded` option shows script file path.

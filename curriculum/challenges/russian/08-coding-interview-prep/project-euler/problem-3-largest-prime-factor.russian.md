@@ -3,11 +3,11 @@ id: 5900f36f1000cf542c50fe82
 challengeType: 5
 title: 'Problem 3: Largest prime factor'
 videoUrl: ''
-localeTitle: 'Задача 3: Наибольший простой коэффициент'
+localeTitle: 'Задача 3: Наибольший простой множитель'
 ---
 
 ## Description
-<section id="description"> Основными факторами 13195 являются 5, 7, 13 и 29. Каков самый большой простой коэффициент для данного <code>number</code> ? </section>
+<section id="description"> Простыми множителями (факторами) числа 13195 являются 5, 7, 13 и 29. Каков самый большой простой множитель для данного <code>number</code> ? </section>
 
 ## Instructions
 <section id="instructions">
@@ -42,7 +42,7 @@ tests:
 
 ```js
 function largestPrimeFactor(number) {
-  // Good luck!
+  // Удачи!
   return true;
 }
 

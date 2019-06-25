@@ -14,13 +14,13 @@ localeTitle: دليل لمتخصصي الصف واختياري
 
 لنفترض أن لديك 5 عناصر في شفرة HTML.
 
- `
-<p> First paragraph </p> 
- <p> Second paragraph </p> 
- <p> Third paragraph </p> 
- <p> Fourth paragraph </p> 
- <p> Fifth paragraph </p> 
-` 
+```html
+<p> First paragraph </p>
+<p> Second paragraph </p>
+<p> Third paragraph </p>
+<p> Fourth paragraph </p>
+<p> Fifth paragraph </p>
+``` 
 
 يمكنك إعطاء كل منهم لون خط أحمر باستخدام CSS.
 
@@ -43,12 +43,12 @@ _فئة وهوية للانقاذ_
 
 هكذا تعمل `class` . يمكنك إعطاء مجموعة من العناصر فئة وستكون في نادٍ واحد. تماما مثل قاعدة جديدة في النادي يجب أن يتبعها جميع أعضاء النادي ، وبالمثل ، يتم تطبيق جميع قواعد نمط جديد على عناصر في نفس النادي.
 
- `
-<p class="bike"> Hayabusa </p> 
- <p class="car"> Chevrolet </p> 
- <p class="bike"> Hayley-Davidson </p> 
- <p class="car"> Lamborghini </p> 
-` 
+```html
+<p class="bike"> Hayabusa </p>
+<p class="car"> Chevrolet </p>
+<p class="bike"> Hayley-Davidson </p>
+<p class="car"> Lamborghini </p>
+``` 
 
 هنا لدينا 4 فقرات. إذا نظرت إلى أسماء الفصل ، فهناك "ناديان". الآن يمكننا اختيار النادي (أو المجموعة) التي نريدها وتطبيق الأنماط التي نريدها عليهم.
 
@@ -67,15 +67,15 @@ _فئة وهوية للانقاذ_
 
 هذا هو معرف. تماما مثل بطاقات الهوية الشخصية ، يمكن أن يكون عنصر HTML واحد فقط `id` معين. لا عناصر لهما نفس `id` .
 
- `
-<p id="car"> Ferrari </p> 
- <p id="car"> Ford </p> 
- <!-- This is incorrect--> 
- 
- <p id="harley"> Harley-Davidson </p> 
- <p id="hayabusa"> Hayabusa </p> 
- <!--This is correct since an id is only used once.--> 
-` 
+```html
+<p id="car"> Ferrari </p>
+<p id="car"> Ford </p>
+<!-- This is incorrect-->
+
+<p id="harley"> Harley-Davidson </p>
+<p id="hayabusa"> Hayabusa </p>
+<!--This is correct since an id is only used once.-->
+``` 
 
 يمكن أن يكون `id` أيضًا مشابهًا للمفتاح الخاص لخزانة الخزانة في النادي. كل شخص في النادي لديه نفس بطاقة الهوية الخاصة بالنادي ، لكن مفتاح خزانة كل شخص مختلف وفريد.
 

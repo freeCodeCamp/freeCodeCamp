@@ -10,9 +10,9 @@ localeTitle: عناصر
 
 في ما يلي مثال على استخدام [عنصر p](#) ( `<p>` ) لإخبار المتصفح بأن مجموعة من النصوص هي فقرة:
 
- `
-<p>This is a paragraph.</p> 
-` 
+```html
+<p>This is a paragraph.</p>
+``` 
 
 يجب أن تتطابق علامات فتح وإغلاق ، وإلا فقد يعرض المتصفح المحتوى بطريقة غير متوقعة.
 
@@ -56,50 +56,50 @@ localeTitle: عناصر
 
 في ما يلي مثال لصفحة بها [عنصر رئيسي](#the-head-element) ، [وعنصر أساسي](#the-body-element) ، [وفقرة](#the-p-element) واحدة:
 
- `
-<!DOCTYPE html> 
- <html> 
-  <head> 
-  </head> 
-  <body> 
-    <p>I'm a paragraph</p> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p>I'm a paragraph</p>
+  </body>
+</html>
+``` 
 
 ## عنصر الرأس
 
 هذه هي الحاوية لمعالجة المعلومات والبيانات الوصفية لمستند HTML.
 
- `
-<head> 
-  <meta charset="utf-8"> 
- </head> 
-` 
+```html
+<head>
+  <meta charset="utf-8">
+</head>
+``` 
 
 ## عنصر BODY
 
 هذه حاوية للمحتوى القابل للعرض لمستند HTML.
 
- `
-<body>...</body> 
-` 
+```html
+<body>...</body>
+``` 
 
 ## ف عنصر
 
 ينشئ فقرة ، ربما عنصر مستوى الكتلة الأكثر شيوعًا.
 
- `
-<p>...</p> 
-` 
+```html
+<p>...</p>
+``` 
 
 ## عنصر A (Link)
 
 ينشئ ارتباطًا تشعبيًا لتوجيه الزائرين إلى صفحة أو مورد آخر.
 
- `
-<a href="#">...</a> 
-` 
+```html
+<a href="#">...</a>
+``` 
 
 ## موارد آخرى
 
