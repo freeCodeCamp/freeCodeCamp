@@ -2,7 +2,6 @@ import { toString, flow } from 'lodash';
 
 // we use two different frames to make them all essentially pure functions
 // main iframe is responsible rendering the preview and is where we proxy the
-// console.log
 const mainId = 'fcc-main-frame';
 // the test frame is responsible for running the assert tests
 const testId = 'fcc-test-frame';

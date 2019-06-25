@@ -25,20 +25,23 @@ localeTitle: بحث ثنائي
 
 بالتفصيل ، كم مرة يمكنك قسمة N على 2 حتى يكون لديك 1؟ هذا هو القول الأساسي ، قم بإجراء بحث ثنائي (نصف العناصر) حتى تجده. في صيغة هذا سيكون هذا:
 
- `1 = N / 2x 
-` 
+```
+1 = N / 2x
+``` 
 
 اضرب 2x:
 
- `2x = N 
-` 
+```
+2x = N
+``` 
 
 الآن القيام log2:
 
- `log2(2x)    = log2 N 
- x * log2(2) = log2 N 
- x * 1       = log2 N 
-` 
+```
+log2(2x)    = log2 N
+x * log2(2) = log2 N
+x * 1       = log2 N
+``` 
 
 هذا يعني أنه يمكنك تقسيم سجل N مرة حتى يتم تقسيم كل شيء. مما يعني أنه يجب عليك تقسيم السجل N ("القيام بعملية البحث الثنائي") حتى تعثر على العنصر الخاص بك.
 
@@ -114,44 +117,46 @@ _O_ ( _log 2 N_ ) يكون هكذا لأنه في كل خطوة نصف العن�
 
 في ما يلي تطبيق آخر في جافا سكريبت:
 
- `function binary_search(a, v) { 
-    function search(low, high) { 
-        if (low === high) { 
-            return a[low] === v; 
-        } else { 
-            var mid = math_floor((low + high) / 2); 
-            return (v === a[mid]) 
-                   || 
-                   (v < a[mid]) 
-                   ? search(low, mid - 1) 
-                   : search(mid + 1, high); 
-        } 
-    } 
-    return search(0, array_length(a) - 1); 
- } 
-` 
+```Javascript
+function binary_search(a, v) {
+    function search(low, high) {
+        if (low === high) {
+            return a[low] === v;
+        } else {
+            var mid = math_floor((low + high) / 2);
+            return (v === a[mid])
+                   ||
+                   (v < a[mid])
+                   ? search(low, mid - 1)
+                   : search(mid + 1, high);
+        }
+    }
+    return search(0, array_length(a) - 1);
+}
+``` 
 
 ### تطبيق روبي
 
- `def binary_search(target, array) 
-  sorted_array = array.sort 
-  low = 0 
-  high = (sorted_array.length) - 1 
- 
-  while high >= low 
-    middle = (low + high) / 2 
- 
-    if target > sorted_array[middle] 
-      low = middle + 1 
-    elsif target < sorted_array[middle] 
-      high = middle - 1 
-    else 
-      return middle 
-    end 
-  end 
-  return nil 
- end 
-` 
+```ruby
+def binary_search(target, array)
+  sorted_array = array.sort
+  low = 0
+  high = (sorted_array.length) - 1
+
+  while high >= low
+    middle = (low + high) / 2
+
+    if target > sorted_array[middle]
+      low = middle + 1
+    elsif target < sorted_array[middle]
+      high = middle - 1
+    else
+      return middle
+    end
+  end
+  return nil
+end
+``` 
 
 ### مثال في C
 
@@ -187,18 +192,19 @@ _O_ ( _log 2 N_ ) يكون هكذا لأنه في كل خطوة نصف العن�
 
 ### تنفيذ بايثون
 
- `def binary_search(arr, l, r, target): 
-    if r >= l: 
-        mid = l + (r - l)/2 
-        if arr[mid] == target: 
-            return mid 
-        elif arr[mid] > target: 
-            return binary_search(arr, l, mid-1, target) 
-        else: 
-            return binary_search(arr, mid+1, r, target) 
-    else: 
-        return -1 
-` 
+```Python
+def binary_search(arr, l, r, target):
+    if r >= l:
+        mid = l + (r - l)/2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] > target:
+            return binary_search(arr, l, mid-1, target)
+        else:
+            return binary_search(arr, mid+1, r, target)
+    else:
+        return -1
+``` 
 
 ### مثال في C ++
 
@@ -249,8 +255,9 @@ _O_ ( _log 2 N_ ) يكون هكذا لأنه في كل خطوة نصف العن�
 
 } العودة -1 ؛ }
 
- `Iterative approach! 
-` 
+```
+Iterative approach!
+``` 
 
 C ++ - نهج تكراري int binarySearch (int arr \[\]، int start، int int، int x) { بينما (تبدأ <= النهاية) { int mid = start + (end-start) / 2؛ إذا (arr \[mid\] == x) عودة منتصف ؛ إذا (arr \[mid\] <x) start = mid + 1؛ آخر end = mid - 1؛ } العودة -1 ؛ } \`\` \`
 

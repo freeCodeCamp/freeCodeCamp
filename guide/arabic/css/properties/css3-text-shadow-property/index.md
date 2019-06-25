@@ -8,8 +8,9 @@ localeTitle: خاصية الظل النص CSS3
 
 ظل النص: X-offset Y-offset blur-radius color
 
- `**Example :** 
-` 
+```
+**Example :**
+``` 
 
 المغلق ص { الظل النص: 2px 2px 8px # FF0000؛ } \`\` \`
 

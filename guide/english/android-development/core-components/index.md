@@ -1,7 +1,7 @@
 ---
 title: Android Core Components
 ---
-## Android core components
+# Android core components
 Core components are the essential elements contained in an Android app. Each of them has its own purpose and lifecycle, but not all of them are independent. The Android Core Components are:
 
 - Activities
@@ -9,7 +9,7 @@ Core components are the essential elements contained in an Android app. Each of 
 - Broadcast receivers
 - Content providers
 
-### [Activities](https://developer.android.com/guide/components/activities/)
+## [Activities](https://developer.android.com/guide/components/activities/)
 An _activity_ is a component that has a user interface and represents a single screen in an Android app. An app can have multiple activities, each of which can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one). One  activity can call another activity with the help of an [Intent](https://developer.android.com/reference/android/content/Intent).
 
 An activity facilitates the following key interactions between system and app:
@@ -18,7 +18,7 @@ An activity facilitates the following key interactions between system and app:
 - Helping the app handle having its process killed so the user can return to activities with their previous state restored.
 - Providing a way for apps to implement user flows between each other, and for the system to coordinate these flows. (The most classic example here being share.)
 
-#### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
+### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
 ![Activity Lifecycle](https://developer.android.com/images/activity_lifecycle.png)
 
 * onCreate():
@@ -67,6 +67,7 @@ import android.os.Bundle;
 import android.util.Log;
 public class MainActivity extends Activity {
     String tag = "LifeCycleEvents";
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,31 +75,43 @@ public class MainActivity extends Activity {
        setContentView(R.layout.main);
        Log.d(tag, "In the onCreate() event");
     }
+    
+    @Override
     public void onStart()
     {
        super.onStart();
        Log.d(tag, "In the onStart() event");
     }
+    
+    @Override
     public void onRestart()
     {
        super.onRestart();
        Log.d(tag, "In the onRestart() event");
     }
+    
+    @Override
     public void onResume()
     {
        super.onResume();
        Log.d(tag, "In the onResume() event");
     }
+    
+    @Override
     public void onPause()
     {
        super.onPause();
        Log.d(tag, "In the onPause() event");
     }
+    
+    @Override
     public void onStop()
     {
        super.onStop();
        Log.d(tag, "In the onStop() event");
     }
+    
+    @Override
     public void onDestroy()
     {
        super.onDestroy();
@@ -158,7 +171,7 @@ public void onDetach() {
 }
 ```
 
-### [Services](https://developer.android.com/guide/components/services)
+## [Services](https://developer.android.com/guide/components/services)
 A _service_ is a component without a user interface that performs long-running operations in the background.
 The services have seperate lifecycle than the activity or component that initiates it. This unique autonomy of seperate lifecycle allows the service to run in thee background even if the activity that initiated it is stopped.
 There are three kinds of services:
@@ -171,14 +184,14 @@ There are three kinds of services:
 #### [Services Lifecycle](https://developer.android.com/guide/components/services#Lifecycle)
 ![Services Lifecycle](https://developer.android.com/images/service_lifecycle.png)
 
-### [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
+## [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
 A _Broadcast receiver_ is another component without user interface (except an optional status bar notification) that provides a gateway for the system to deliver events from/to the app, even when the latter hasn't been previously launched. For example, the Android system sends broadcasts when various system events occur, such as when the system boots up or the device starts charging.
 These receivers respond to broadcast messages from the system of other application. These messages are known as events or intents.
 
 ### [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
 A _Content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme. These provide access to central repository of data by applications.This data can be stored by the accessing application or by other applications. _content provider_ can help an application manage access to data stored by itself, stored by other apps, and provide a way to share data with other apps. 
 
-For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 
-### Advanced Android Development  
-To learn advanced Android programming concepts, see Google's [Advanced Android Development](https://developers.google.com/training/courses/android-advanced) course.
+## Additional Resources
+- For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
+- To learn advanced Android programming concepts, see Google's [Advanced Android Development](https://developers.google.com/training/courses/android-advanced) course.

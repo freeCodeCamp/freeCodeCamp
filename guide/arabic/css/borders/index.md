@@ -45,33 +45,36 @@ localeTitle: الملكية الحدودية
 
 المغلق نمط الحد الأعلى: صلب ؛ border-left-style: منقط ؛ border-right-style: dashed؛ نمط الحد السفلي: مزدوج ؛
 
- `Or you can style them all at once: 
-` 
+```
+Or you can style them all at once:
+``` 
 
 المغلق نمط الحدود: الصلبة متقطعة مزدوجة منقط ؛
 
- `As shown, the border property allows you to select different sections of it. [top, bottom, left, right] 
- 
- ### Border Width 
- 
- To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must 
- define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined 
- values: thin, medium, or thick. 
- 
- Example: 
-` 
+```
+As shown, the border property allows you to select different sections of it. [top, bottom, left, right]
+
+### Border Width
+
+To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must
+define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined
+values: thin, medium, or thick.
+
+Example:
+``` 
 
 المغلق
 
 table { border-width: 7px; border-style: outset; } td { border-width: medium; border-style: outset; } p { border-width: thick; border-style: solid; }
 
- `### Border Color 
- 
- Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout 
- of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types. 
- 
- Example: 
-` 
+```
+### Border Color
+
+Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout
+of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
+
+Example:
+``` 
 
 المغلق
 
@@ -89,12 +92,13 @@ table { border-color: rgb( 100, 100, 255); border-style: dashed; } td { border-c
 
 المغلق border-radius: 15٪ 10px 30٪ 5px؛
 
- `### Border: All in One 
- 
- While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code. 
- 
- Example: 
-` 
+```
+### Border: All in One
+
+While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code.
+
+Example:
+``` 
 
 المغلق
 

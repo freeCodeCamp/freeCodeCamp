@@ -6,15 +6,17 @@ localeTitle: تعرف على Jsonp
 
 JSONP لتقف على "JSON مع الحشو". لنفترض أنك تريد تقديم طلبات AJAX إلى نطاق مختلف. حسنا ، لا يمكنك القيام بذلك مع XMLHttpRequest ، كما تفعل عادة ، ولكن يمكنك القيام بذلك مع علامات البرنامج النصي ، كما رأينا [على StackOverflow](https://stackoverflow.com/questions/2067472/what-is-jsonp-all-about) :
 
- `script = document.createElement('script'); 
- script.type = 'text/javascript'; 
- script.src = 'http://www.someWebApiServer.com/some-data'; 
-` 
+```javascript
+script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'http://www.someWebApiServer.com/some-data';
+``` 
 
 ولكن هذا قبيح ، والآن لدينا للحصول على عناصر من JSON من علامة النصي ، الإجمالي. لحسن الحظ ، كان منشئو JSONP يفكرون في المستقبل ، لذا بدلاً من وضع نصوصنا كما فعلنا أعلاه ، نقوم بذلك:
 
- `script.src = 'http://www.someWebApiServer.com/some-data?callback=my_callback'; 
-` 
+```javascript
+script.src = 'http://www.someWebApiServer.com/some-data?callback=my_callback';
+``` 
 
 يؤدي هذا إلى معاودة الاتصال التلقائي بعد تحميل البيانات ، مما يؤدي إلى إنشاء وظيفة بالبيانات المطلوبة داخلها.
 

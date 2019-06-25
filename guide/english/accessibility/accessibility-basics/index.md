@@ -44,7 +44,7 @@ This is where accessibility comes into play. Accessibility entails making your c
 
 ## Why worry about accessibility?
 
-You may think that accessibility doesn’t apply to you or to your  users, so why bother implementing it? What would a blind person do with a photo editing tool?
+You may think that accessibility doesn’t apply to you or to your users, so why bother implementing it? What would a blind person do with a photo editing tool?
 
 The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group diminishes.
 
@@ -67,7 +67,7 @@ The Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-
 
 ### Talk like the natives
 
-The HTML specification is a document that describes how the language should be used to build websites. Assistive technologies, like screen-readers, speech recognition programs, etc. are aware of this document. Web developers, however, often are not, or at least not enough, and think something like this is ok:
+The HTML specification is a document that describes how language should be used to build websites. Assistive technologies, like screen readers, speech recognition programs, etc. are aware of this document. Web developers, however, often are not, or at least not enough, and think something like this is ok:
 ```html
     <div class="epic-button"></div>
 
@@ -81,7 +81,7 @@ The first element breaks the ‘name, role, value’-criterium, which states tha
 
 Visually, the second element looks like a heading after styling it with CSS, but semantically it is a `span`. Thus, assistive technologies won’t know it's a heading. A screen-reader will read this element as regular text instead of a heading. Screen-readers that use a hotkey to jump between headings would skip this element.
 
-The third element could be something used to change the language of the website. Perhaps a fancy animated menu of languages will expand on click. However, because it is a `span` and does not define its role as link or button, assistive technologies will think this is simple text with some styling.
+The third element could be something used to change the language of the website. Perhaps a fancy animated menu of languages will expand on click. However, because it is a `span` and does not define its role as a link or button, assistive technologies will think this is simple text with some styling.
 
 Spans and divs are not semantic elements; they do not provide the contextual meaning of a particular element to web browsers, search engines, or assistive technology.  You can fix these in two ways:
 *   You can manually add ARIA-attributes to the elements above. This is an advanced topic and outside the scope of this article.
@@ -93,7 +93,7 @@ Spans and divs are not semantic elements; they do not provide the contextual mea
 
     <a href="JavascriptThing">English</a>
 ```
-Boom. Suddenly, all these elements are now perfectly accessible, just by using native HTML. HTML used as intended, in other  words.
+Boom. Suddenly, all these elements are now perfectly accessible, just by using native HTML. HTML used as intended, in other words.
 
 ### How do pages begin?
 ```html
@@ -103,14 +103,14 @@ We copy it from some template and mostly don't even know it is there. These word
 
 ### A foundation cannot stand without structure
 
-As mentioned earlier, screen-readers have hotkeys to jump from  heading to heading. There are also hotkeys to jump to the next table, form field, link, etc. Thus, it is good practice to make sure these headings are actually in logical places.  It also decreases users’ stress levels, which encourages them to keep coming back to your website.
+As mentioned earlier, screen-readers have hotkeys to jump from heading to heading. There are also hotkeys to jump to the next table, form field, link, etc. Thus, it is good practice to make sure these headings are actually in logical places.  It also decreases users’ stress levels, which encourages them to keep coming back to your website.
 
-Also remember that headings are hierarchical. If you use an `h2`, make sure the `h3`s that follow it actually have something to do with that `h2`. Don't put an `h3` for contact details under your `h2` for recent blog posts. A good analogy here is a book with chapters, that have subsections. You wouldn't put a section on baking cookies in the middle of a chapter on preparing vegetables, right?
+Also, remember that headings are hierarchical. If you use an `h2`, make sure the `h3`s that follow it actually has something to do with that `h2`. Don't put an `h3` for contact details under your `h2` for recent blog posts. A good analogy here is a book with chapters, that have subsections. You wouldn't put a section on baking cookies in the middle of a chapter on preparing vegetables, right?
 
 ### What's the alternative?
 Images on a website are great. They add a new layer to your content, make experiences more immersive, and generally look good among all the text. A picture can say more than a thousand words, right?
 
-Certainly. That is, if you can see them. In the HTML5-specification,  an img-attribute must always have an alt-attribute. This attribute is  meant as an alternative to the image in case it is not visible. This  would be true for blind visitors to your website, but also when your  image doesn't load for some reason. Not adding an alt-tag to an  img-attribute not only breaks accessibility, it goes against the HTML5-spec.
+Certainly. That is if you can see them. In the HTML5-specification,  an img-attribute must always have an alt attribute. This attribute is meant as an alternative to the image in case it is not visible. This would be true for blind visitors to your website, but also when your image doesn't load for some reason. Not adding an alt-tag to an img-attribute not only breaks accessibility, but it also goes against the HTML5-spec.
 
 Now, there is one caveat here. Alt-attributes are mandatory according to the HTML5-spec, but it is not mandatory to fill them in. `<img src="awesome-image.jpg", alt="">` is therefore legal HTML5 code.
 
@@ -120,7 +120,7 @@ For purely decorative images that have no information in them at all, you're fre
 
 For images that contain information, like a map or chart, not adding alt text breaks WCAG unless you provide a textual alternative. This is usually an alt-attribute, but can also be a block of text right below or next to the image.
 
-For images of text, the text can either be included in the  alt-attribute or offered in some alternative manner. The problem with adding the textual alternative on the same page is that the same content would show twice for people who can see the image, making the alt-attribute a better option.
+For images of text, the text can either be included in the alt-attribute or offered in some alternative manner. The problem with adding the textual alternative on the same page is that the same content would show twice for people who can see the image, making the alt-attribute a better option.
 
 The text should provide the context and information that is an alternative to seeing the image. It is simply not enough to write "image of hot air balloons" – why are the balloon pictures there? If the image is stylized or conveys an emotional meaning, this can be included.
 
@@ -150,9 +150,9 @@ This will make a screen-reader say “username, text edit field”, instead of j
 
 Let’s take a small break. Go look at a really well-designed web page. It can be any page. Go on.
 
-Back? Ok, great. Now, look at the page again but disable all CSS. Does it still look good? Is the content on the page still in a logical order? If so, great. You found a page with decent HTML structure. (One way to easily view a page without CSS is to load the site in WebAIM's <a href='http://wave.webaim.org' target='_blank' rel='nofollow'>WAVE Web Accessibility Evaluation Tool</a>. Then click on the "No Styles" tab to see it without styles.)
+Back? Ok, great. Now, look at the page again but disable all CSS. Does it still look good? Is the content on the page still in a logical order? If so, great. You found a page with a decent HTML structure. (One way to easily view a page without CSS is to load the site in WebAIM's <a href='http://wave.webaim.org' target='_blank' rel='nofollow'>WAVE Web Accessibility Evaluation Tool</a>. Then click on the "No Styles" tab to see it without styles.)
 
-If not, great. Now you get an impression of what people using assistive technologies have to deal with  on a daily basis.
+If not, great. Now you get an impression of what people using assistive technologies have to deal with on a daily basis.
 
 Why is this such a big deal?
 

@@ -8,21 +8,21 @@ Source code editors are the programs that allow for code creation and editing. A
 
 There are many, many editors available to download or use online, both paid and free. They offer many of the same core features, but each have their own subtleties. Further research may help find the one that's right for you. The following editors are all cross-platform and free to use or evaluate.
 
-## [Sublime Text](https://www.sublimetext.com/)<img src="https://i.imgur.com/3ALtws1.png" width="50px">
-![Sublime Text Screenshot](https://i.imgur.com/Jk2aJod.png)
+## [Sublime Text](https://www.sublimetext.com/)<img src="https://cdn-media-1.freecodecamp.org/imgr/3ALtws1.png" width="50px">
+![Sublime Text Screenshot](https://cdn-media-1.freecodecamp.org/imgr/Jk2aJod.png)
 
 Sublime Text is a very popular editor that has been around [since 2008](https://www.sublimetext.com/blog/articles/one-point-oh). There are many options and [extensions](https://packagecontrol.io/search/sublime?sort=popularity) available, and a lot of [help available online](http://stackoverflow.com/search?q=sublime+text) to help set it up. Sublime Text is free to download and evaluate, but the license for continued use costs $70.
 
-## [Brackets](http://brackets.io/)<img src="https://i.imgur.com/fassWYs.png" width="50px">
-![Brackets Screenshot](https://i.imgur.com/H9mO8qS.jpg)
+## [Brackets](http://brackets.io/)<img src="https://cdn-media-1.freecodecamp.org/imgr/fassWYs.png" width="50px">
+![Brackets Screenshot](https://cdn-media-1.freecodecamp.org/imgr/H9mO8qS.jpg)
 
 Brackets is a relatively new open-source editor by Adobe. It is very user  
 friendly, especially for people who aren't used to command-line interfaces  
 or JSON-style settings/preferences. Extensions and themes are quick and easy  
 to find and install through the Extension Manager.
 
-## [Atom](https://atom.io/)<img src="https://i.imgur.com/woj5vPm.png" width="50px">
-![Atom Screenshot](https://i.imgur.com/halOgkj.png)
+## [Atom](https://atom.io/)<img src="https://cdn-media-1.freecodecamp.org/imgr/woj5vPm.png" width="50px">
+![Atom Screenshot](https://cdn-media-1.freecodecamp.org/imgr/halOgkj.png)
 
 Atom is an [open source](https://github.com/atom/atom) editor, developed by [GitHub](https://github.com/). Atom is very popular and configurable("hackable", as they say), but the advanced features may be overwhelming to new users. There is also plenty of helpful documentation available online.
 
@@ -31,7 +31,7 @@ Atom is an [open source](https://github.com/atom/atom) editor, developed by [Git
 - [Atom flight manual](http://flight-manual.atom.io)
 - [Atom on stackoverflow](http://stackoverflow.com/search?q=atom)
 
-## [Visual Studio Code](https://code.visualstudio.com/)<img src="https://i.imgur.com/b4vFsKa.png" width="50px">
+## [Visual Studio Code](https://code.visualstudio.com/)<img src="https://cdn-media-1.freecodecamp.org/imgr/b4vFsKa.png" width="50px">
 ![Visual Studio Code Screenshot](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 
 Visual Studio Code is a source code editor developed by Microsoft since 2015, and is now one of the most known code editors.

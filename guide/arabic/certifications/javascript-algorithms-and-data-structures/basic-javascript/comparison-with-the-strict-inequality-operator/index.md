@@ -20,16 +20,17 @@ localeTitle: مقارنة مع مشغل عدم المساواة الصارم
 
 ## حل الرمز الأساسي:
 
- `function testStrictNotEqual(val) { 
-  if (val !== 17) { 
-    return "Not equal"; 
-  } 
-  return "Equal"; 
- } 
- 
- // Change this value to test 
- testStrictNotEqual(10); 
-` 
+```javascript
+function testStrictNotEqual(val) {
+  if (val !== 17) {
+    return "Not equal";
+  }
+  return "Equal";
+}
+
+// Change this value to test
+testStrictNotEqual(10);
+``` 
 
 ### تفسير الشفرة
 

@@ -22,8 +22,9 @@ localeTitle: معايير الترميز
 
 إليك كيفية التحقق مما إذا كان رمز python الخاص بك يتوافق مع المعايير.
 
- `:~$ pip install pep8 
- :~$ pep8 --first myCode.py 
-` 
+```console
+:~$ pip install pep8
+:~$ pep8 --first myCode.py
+``` 
 
 سيعطي هذا كل تلك الخطوط التي تنتهك المعايير ، إلى جانب وصف قصير للإصلاحات.

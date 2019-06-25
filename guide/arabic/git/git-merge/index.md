@@ -8,34 +8,39 @@ localeTitle: جيت ميرج
 
 بناء جملة الأمر كما يلي:
 
- `git merge BRANCH-NAME 
-` 
+```shell
+git merge BRANCH-NAME
+``` 
 
 على سبيل المثال ، إذا كنت تعمل حاليًا في فرع باسم `dev` وترغب في دمج أي تغييرات جديدة تم إجراؤها في فرع باسم `new-features` ، فستقوم بإصدار الأمر التالي:
 
- `git merge new-features 
-` 
+```shell
+git merge new-features
+``` 
 
 **يرجى ملاحظة:** إذا كانت هناك أي تغييرات غير ملزمة على فرعك الحالي ، فلن تسمح لك Git بالدمج حتى يتم الالتزام بكافة التغييرات في الفرع الحالي. للتعامل مع هذه التغييرات ، يمكنك إما:
 
 *   إنشاء فرع جديد وإلزام التغييرات
 
- `git checkout -b new-branch-name 
- git add . 
- git commit -m "<your commit message>" 
-` 
+```shell
+git checkout -b new-branch-name
+git add .
+git commit -m "<your commit message>"
+``` 
 
 *   خبأهم
 
- `git stash               # add them to the stash 
- git merge new-features  # do your merge 
- git stash pop           # get the changes back into your working tree 
-` 
+```shell
+git stash               # add them to the stash
+git merge new-features  # do your merge
+git stash pop           # get the changes back into your working tree
+``` 
 
 *   التخلي عن كل شيء
 
- `git reset --hard        # removes all pending changes 
-` 
+```shell
+git reset --hard        # removes all pending changes
+``` 
 
 ## دمج الصراع
 

@@ -8,15 +8,15 @@ Font Awesome هي مكتبة ملائمة من الرموز. هذه الرموز
 
 هيريس كيف تضيف أيقونة:
 
- `
-<i class="fa fa-thumbs-up"></i> 
-` 
+```html
+<i class="fa fa-thumbs-up"></i>
+``` 
 
 إليك كيفية إدراج هذا الرمز على زر:
 
- `
-<button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button> 
-` 
+```html
+<button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
+``` 
 
 #### معلومات اكثر:
 

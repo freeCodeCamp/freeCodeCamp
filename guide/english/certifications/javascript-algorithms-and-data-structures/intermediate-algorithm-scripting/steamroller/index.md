@@ -65,9 +65,9 @@ You will definitely need recursion or another way to go beyond two level arrays 
 ### Code Explanation:
 
 *   Create a new variable to keep flattened arrays.
-*   Create a function that will add non array elements to the new variable, and for the ones that are array it loops through them to get the element.
-*   It does that by using recursion, if the element is an array then call the function again with a layer of array deeper to check if it is an array or not. if it is not then push that non-array element to the variable that gets returned. Otherwise, keep going deeper.
-*   Invoke the function, the first time you will always pass it an array, so it always fall in to the isArray branch
+*   Create a function that will add non-array elements to the new variable, and for the ones that are array, loop through them to get the element.
+*   It does that by using recursion, if the element is an array then call the function again with a layer of array deeper to check if it is an array or not. If it is not then push that non-array element to the variable that gets returned. Otherwise, keep going deeper.
+*   Invoke the function, the first time you will always pass it an array, so it always falls into the isArray branch
 *   Return the flattened array.
 
 #### Relevant Links
@@ -90,7 +90,7 @@ You will definitely need recursion or another way to go beyond two level arrays 
 
 *   Use spread operator to concatenate each element of `arr` with an empty array
 *   Use `Array.some()` method to find out if the new array contains an array still
-*   If it does, use recursion call `steamrollArray` again, passing in the new array to repeat the process on the arrays that were deeply nested
+*   If it does, use recursion to call `steamrollArray` again, passing in the new array to repeat the process on the arrays that were deeply nested
 *   If it does not, return the flattened array
 
 #### Relevant Links
@@ -116,7 +116,7 @@ You will definitely need recursion or another way to go beyond two level arrays 
 ### Code Explanation:
 
 *   Use `Array.some()` method to find out if the new array contains an array still, if it does flatten the array
-*   Repeats, until there is no more arrays inside arr.
+*   Repeats until there are no more arrays inside arr.
 
 #### Relevant Links
 
@@ -144,7 +144,7 @@ You will definitely need recursion or another way to go beyond two level arrays 
 
 ### Code Explanation:
 
-*   First we turn the array to a string, which will give us a string of numbers seperated by a comma, double comma if there was an empty array and literal object text if there was an object, which we can fix it later in our if statement.
+*   First we turn the array to a string, which will give us a string of numbers separated by a comma, double comma if there was an empty array and literal object text if there was an object, which we can fix later in our if statement.
 *   We replace the double comma with one, then split it back into an array.
 *   map through the array and fix object values and convert string numbers to regular numbers.
 

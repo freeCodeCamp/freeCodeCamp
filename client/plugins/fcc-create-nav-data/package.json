@@ -1,5 +1,6 @@
 {
   "name": "fcc-create-nav-data",
+  "private": true,
   "version": "0.0.1",
   "scripts": {
     "test": "mocha  -R spec \"./{,!(node_modules)/**/}*.test.js\"",

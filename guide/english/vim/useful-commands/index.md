@@ -19,6 +19,7 @@ Depending on the configuration, you may enter a file browser by typing and enter
 - `gg` brings you to the start of the file
 - `G` brings you to the end of the file
 - `:(num)` brings you to a specific line in your file (ex- :42 brings you to line 42)
+- `(num)G` also brings you to a specific line in your file (ex- 42G brings you to line 42)
 
 ## Saving
 1. Press `Escape` to make sure you're in `normal mode`;

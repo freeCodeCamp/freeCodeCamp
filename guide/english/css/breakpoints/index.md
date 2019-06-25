@@ -168,7 +168,7 @@ body {
 ```
 
 
-Breakpoints that are based on content as opposed to device are less complicated. Here's a simple snippet that triggers when the device's width is upward of ```code 700px``` roughly smart-phone screen sized
+Breakpoints that are based on content as opposed to device are less complicated. Here's a simple snippet that triggers when the device's width is upward of `700px` roughly smart-phone screen sized
 
 ```css
 @media only screen and (min-width: 700px) {

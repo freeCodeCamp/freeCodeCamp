@@ -80,7 +80,7 @@ services:
       - seed_node_modules:/app/tools/scripts/seed/node_modules
       - client_plugin_nav_data_node_modules:/app/client/plugins/fcc-create-nav-data/node_modules
     working_dir: /app/api-server
-    command: node development-entry.js
+    command: npm run develop
     ports:
       - '3000:3000'
       - '9229:9229'
