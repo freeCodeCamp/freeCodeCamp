@@ -174,7 +174,7 @@ Os pontos de interrupção baseados no conteúdo, e não no dispositivo, são me
 
 Você também pode definir uma largura mínima e máxima, o que permite que você faça experimentos com intervalos diferentes. Este dispara entre smar-phone e tamanhos maiores de desktops e monitores
 
-```code
+```css
 @media only screen and (min-width: 700px) and (max-width: 1500px) { 
   something { 
     something: something; 

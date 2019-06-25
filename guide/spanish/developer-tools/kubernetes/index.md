@@ -6,7 +6,7 @@ localeTitle: gobernadores
 
 "Kubernetes es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. Agrupa los contenedores que conforman una aplicación en unidades lógicas para una fácil administración y descubrimiento. 1 "
 
-### Campo de golf:
+### Enlaces:
 
 *   [Kubernetes en GitHub](https://github.com/kubernetes/kubernetes)
 *   [Sitio web de kubernetes](https://kubernetes.io)

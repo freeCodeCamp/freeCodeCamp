@@ -19,7 +19,7 @@ Another way to store the data on the client side is `localstorage`.
 
 A cookie can be set using the syntax below but a library, like the one mentioned at the end, is highly recommended to make development easier for everyone. While setting the cookie, you can set the expiry for it as well. If skipped, cookie is erased when browser is closed.
 
-**Keep in mind a cookie set by a particular domain can only be read by that domain & it's subdomains only.**
+**Keep in mind a cookie set by a particular domain can only be read by that domain & its subdomains only.**
 
 ```javascript
 // Using vanilla javascript

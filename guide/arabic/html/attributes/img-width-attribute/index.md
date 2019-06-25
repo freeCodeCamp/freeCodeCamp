@@ -8,17 +8,17 @@ localeTitle: yourcolor.net سمة العرض
 
 على سبيل المثال ، إذا كان لديك بالفعل رابط إلى صورة تم إعدادها عبر السمة `src` فيمكنك إضافة سمة العرض مثل:
 
- `
-<!DOCTYPE html> 
- <html lang="en"> 
-  <head> 
-    <title>Img Width Attribute</title> 
-  </head> 
-  <body> 
-    <img src="image.png" alt="Image" width="100"/> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Img Width Attribute</title>
+  </head>
+  <body>
+    <img src="image.png" alt="Image" width="100"/>
+  </body>
+</html>
+``` 
 
 يوجد في مقتطف الشفرة أعلاه علامة صورة ويتم ضبط الصورة على عرض 100 بكسل. `width="100"`
 

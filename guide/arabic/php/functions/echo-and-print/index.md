@@ -10,31 +10,35 @@ localeTitle: صدى وطباعة
 
 يكتب الدالة `echo()` قيمة متغير أو وسيطة إلى الشاشة.
 
- `<?php 
- echo "freeCodeCamp"; 
-` 
+```PHP
+<?php
+echo "freeCodeCamp";
+``` 
 
 ملاحظة: طريقة قصيرة لفتح علامة PHP وصدى هو <؟ =
 
- `<?= "freeCodeCamp"; ?> 
-` 
+```
+<?= "freeCodeCamp"; ?>
+``` 
 
 ### طباعة
 
 تعمل وظيفة `print()` خارج قيمة متغير أو وسيطة على الشاشة.
 
- `<?php 
- print "freeCodeCamp"; 
-` 
+```PHP
+<?php
+print "freeCodeCamp";
+``` 
 
 ### print\_r
 
 تكتب الدالة `print_r()` قيمة أي متغير (مثل صفيف) أو وسيطة إلى الشاشة ، بخلاف وظائف الارتداد أو الطباعة التي تكون محدودة بشكل أكبر.
 
- `<?php 
- $freecodecamp = "freeCodeCamp"; 
- print_r($freecodecamp); 
-` 
+```PHP
+<?php
+$freecodecamp = "freeCodeCamp";
+print_r($freecodecamp);
+``` 
 
 #### معلومات اكثر:
 

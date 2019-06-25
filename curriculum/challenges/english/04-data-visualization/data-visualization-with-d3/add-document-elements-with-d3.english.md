@@ -1,8 +1,6 @@
 ---
 id: 587d7fa6367417b2b2512bc2
 title: Add Document Elements with D3
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 ---
 
@@ -16,7 +14,13 @@ Two other useful methods are <code>append()</code> and <code>text()</code>.
 The <code>append()</code> method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
 The <code>text()</code> method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.
 Here's an example that selects an unordered list, appends a list item, and adds text:
-<blockquote>d3.select("ul")<br>&nbsp;&nbsp;.append("li")<br>&nbsp;&nbsp;.text("Very important item");</blockquote>
+
+```js
+d3.select("ul")
+  .append("li")
+  .text("Very important item");
+```
+
 D3 allows you to chain several methods together with periods to perform a number of actions in a row.
 </section>
 

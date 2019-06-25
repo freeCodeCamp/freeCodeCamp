@@ -37,7 +37,6 @@ Precisamos mudar cada `var` para `let` nosso código.
     catTalk(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://codepen.io/dylantyates/pen/eKqoGY)
 
 # Explicação do código:
 

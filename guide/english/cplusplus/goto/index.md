@@ -1,10 +1,10 @@
 ---
-title: goto as a powerful utility
+title: goto
 ---
 
 # Intro to the use of goto and labels
 
-goto is one of the most powerful, yet highly underrated piece of logic in C++. Crazy amount of optimization can be achieved using goto, provided it is used properly.
+goto is one of the most powerful pieces of logic in C/C++. Crazy amounts of optimization can be achieved using goto, provided it is used properly. **It is, however, discouraged for use in C++, since better ways of programming exist, and it [leads to spaghetti code](https://stackoverflow.com/questions/3517726/what-is-wrong-with-using-goto#3517746)**  
 It does exactly what it is named as. It goes to the mentioned occurence of the next label, wherever may it be.
 
 # Terminology
@@ -13,14 +13,26 @@ It does exactly what it is named as. It goes to the mentioned occurence of the n
 	label - this can be named anything.
 # syntax
 
-goto <label>;
-
-(without the <> );
-
-//This takes the exe to the next appearance of label.
+`goto label; //This takes the program flow to the next appearance of label.`
 
 goto is something that transcends all loops. To be clearer on this point, here is an example.
 
-https://code.sololearn.com/cI4qqQA8W2q3
+```
+#include <iostream>
+using std::cout;
 
-However, care must be taken to use goto very carefully, especially in the early days of coding as it can lead to crazy issues, if not understood well enough.
+int main() {
+for(;;)
+{
+if(1)
+goto label;
+
+}
+label:
+cout << "lol"; //here, goto is used to get out of an otherwise infinite loop. That is one of the only places where goto is tolerated.
+    return 0;
+}
+```
+[Try the code here!](https://wandbox.org/permlink/tG0aInbyuKJQC4ER)
+
+**However, care must be taken to use goto very carefully.**

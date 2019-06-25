@@ -15,14 +15,15 @@ localeTitle: التي تربط إلى firebase
 2.  قم بتثبيت Google Repository يمكنك القيام بذلك عن طريق إضافة التبعية إلى ملف build.gradle على مستوى المشروع كما يلي:
     
 
- `allprojects{ 
-  repositories { 
-        maven { 
-            url "https://maven.google.com" // Google's Maven repository 
-        } 
-    } 
- } 
-` 
+```java
+allprojects{
+  repositories {
+        maven {
+            url "https://maven.google.com" // Google's Maven repository
+        }
+    }
+}
+``` 
 
 بدلا من ذلك ، يمكنك القيام بذلك [باستخدام واجهة المستخدم الرسومية](https://developer.android.com/studio/write/firebase) .
 

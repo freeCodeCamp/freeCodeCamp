@@ -8,8 +8,9 @@ localeTitle: إنشاء تدرج خطي متدرج CSS
 
 الصيغة هي دائما:
 
- `background-image: linear-gradient(angle, color-stop1, color-stop2);
-`
+```
+background-image: linear-gradient(angle, color-stop1, color-stop2);
+```
 
 يمكن استخدام الألوان في تنسيقات hex () و rgb (). جرب قليلا وسوف تفهم كم هو سهل وجميل استخدامه.
 

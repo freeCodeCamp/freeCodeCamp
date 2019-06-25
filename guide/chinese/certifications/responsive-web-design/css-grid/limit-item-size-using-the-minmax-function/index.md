@@ -18,11 +18,6 @@ localeTitle: 使用minmax函数限制项目大小##
     grid-template-columns: repeat(3, minmax(50px, 2fr)); 
 ```
 
-* * *
-
-您也可以在Codepen上查看此嵌入式笔以查看实际操作中的示例，您可以调整其大小以查看结果：
-
-请参阅[CodePen](https://codepen.io/skywardcode)上的[skywardcode](https://codepen.io) （ [@skywardcode](https://codepen.io/skywardcode) ）的Pen [limit-item-size-using-the-minmax-function](https://codepen.io/skywardcode/pen/EeGGze/) 。
 
 ### 资源
 

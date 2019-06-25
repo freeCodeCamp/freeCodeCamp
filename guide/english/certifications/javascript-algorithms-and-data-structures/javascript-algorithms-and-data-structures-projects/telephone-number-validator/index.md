@@ -31,6 +31,33 @@ Start by trying to get it to validate each format from the example, each one sho
 
 > _try to solve the problem now_
 
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 4
+ Think through what you are trying to solve in a step by step fashion. Below are the different Booleans you could set up. Once you have these set up, you can create small regex tests for each variable.
+ This will lead to a much longer solution than those contained in the spoilers. However it will be easier to decipher and generate.
+```js
+  // Set up your Booleans here
+  let hasTenDigits = false;
+  let hasElevenDigits = false;
+  let startsWithOne = false;
+  let hasPermittedCharsOnly = false;
+  let hasCorrectParentheses = false;
+  
+  // Write regular expressions here so that the Booleans contain the correct values
+  // INSERT CODE WITH REGEX HERE
+  
+  // Use the Booleans to return true or false, without needing to string together one complex regular expression
+  if (!hasTenDigits && !hasElevenDigits) {
+    return false;
+  } else if (!hasPermittedCharsOnly || !hasCorrectParentheses) {
+    return false;
+  } else if (hasElevenDigits && !startsWithOne) {
+    return false;
+  } else {
+    return true;
+  }
+```
+ > _try to solve the problem now_
+
 ## Spoiler Alert!
 
 ![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
@@ -66,7 +93,7 @@ Start by trying to get it to validate each format from the example, each one sho
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
     function telephoneCheck(str) {
-      var re = /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})$/;
+      var re = /^([+]?1[\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\s.-]?){1}([0-9]{4}){1}$/;
       return re.test(str);
     }
     telephoneCheck("555-555-5555");
@@ -87,6 +114,3 @@ This is an example of a very comprehensive and robust solution to validating US 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

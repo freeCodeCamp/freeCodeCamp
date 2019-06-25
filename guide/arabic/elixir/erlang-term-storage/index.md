@@ -12,17 +12,18 @@ localeTitle: Erlang Term Storage
 
 ### ETS Demo في IEX
 
- `iex(1)> myETSTable = :ets.new(:my_ets_table, []) 
- #Reference<0.1520230345.550371329.65846> 
- iex(2)> :ets.insert(myETSTable, {"favoriteWebSite", "freeCodeCamp"}) 
- true 
- iex(3)> :ets.insert(myETSTable, {"favoriteProgrammingLanguage", "Elixir"}) 
- true 
- iex(4)> :ets.i(myETSTable) 
- <1   > {<<"favoriteProgrammingLanguage">>,<<"Elixir">>} 
- <2   > {<<"favoriteWebSite">>,<<"freeCodeCamp">>} 
- EOT  (q)uit (p)Digits (k)ill /Regexp --> 
-` 
+```elixir
+iex(1)> myETSTable = :ets.new(:my_ets_table, [])
+#Reference<0.1520230345.550371329.65846>
+iex(2)> :ets.insert(myETSTable, {"favoriteWebSite", "freeCodeCamp"})
+true
+iex(3)> :ets.insert(myETSTable, {"favoriteProgrammingLanguage", "Elixir"})
+true
+iex(4)> :ets.i(myETSTable)
+<1   > {<<"favoriteProgrammingLanguage">>,<<"Elixir">>}
+<2   > {<<"favoriteWebSite">>,<<"freeCodeCamp">>}
+EOT  (q)uit (p)Digits (k)ill /Regexp -->
+``` 
 
 ## إصرار
 
