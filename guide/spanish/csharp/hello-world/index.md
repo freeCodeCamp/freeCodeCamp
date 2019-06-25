@@ -30,8 +30,6 @@ using System;
 
 ## Salida:
 ```shell
-```sh
 > Hello World! 
- > Press any key to exit. 
-
+> Press any key to exit. 
 ```
