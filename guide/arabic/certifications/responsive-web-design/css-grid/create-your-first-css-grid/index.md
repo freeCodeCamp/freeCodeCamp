@@ -8,8 +8,9 @@ localeTitle: إنشاء أول شبكة CSS
 
 لتغيير عرض أي عنصر ، يتم استخدام البنية التالية:
 
- `display: propertyName; 
-` 
+```css
+display: propertyName;
+``` 
 
 ### تلميح 2
 
@@ -23,5 +24,6 @@ localeTitle: إنشاء أول شبكة CSS
 
 لتعيين عرض عنصر .container على الشبكة:
 
- `display: grid; 
-`
+```css
+display: grid;
+```

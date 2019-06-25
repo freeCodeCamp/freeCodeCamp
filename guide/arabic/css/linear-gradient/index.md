@@ -20,8 +20,9 @@ localeTitle: الخطي التدرج
 
 لإنشاء تدرج خطي ، يجب تحديد إيقافين للألوان على الأقل. (وهي الألوان التي يتم إنشاء الانتقالات بينها). يتم الإعلان على إما **الخلفية** أو خصائص **الصورة الخلفية** .
 
- `background: linear-gradient(direction, colour-stop1, colour-stop2, ...); 
-` 
+```
+background: linear-gradient(direction, colour-stop1, colour-stop2, ...);
+``` 
 
 **ملاحظة: في حالة عدم تحديد أي اتجاه ، يكون النقل من أعلى إلى أسفل بشكل افتراضي**
 
@@ -29,8 +30,9 @@ localeTitle: الخطي التدرج
 
 **من اعلى لاسفل :**
 
- `background: linear-gradient(red, yellow); 
-` 
+```
+background: linear-gradient(red, yellow);
+``` 
 
 ![من اعلى لاسفل](https://cdn.discordapp.com/attachments/261391445074771978/371702268803809301/image.png)
 
@@ -38,8 +40,9 @@ localeTitle: الخطي التدرج
 
 لجعله اليسار إلى اليمين، يمكنك إضافة معلمة إضافية في بداية الخطية التدرج () بدءا من كلمة **الذي** يشير إلى الاتجاه:
 
- `background: linear-gradient(to right, red , yellow); 
-` 
+```
+background: linear-gradient(to right, red , yellow);
+``` 
 
 ![من اليسار إلى اليمين](https://cdn.discordapp.com/attachments/261391445074771978/371702990161051648/image.png)
 
@@ -58,13 +61,15 @@ localeTitle: الخطي التدرج
 
 يمكنك أيضًا استخدام الزوايا ، لتكون أكثر دقة في تحديد اتجاه التدرج:
 
- `background: linear-gradient(angle, colour-stop1, colour-stop2); 
-` 
+```
+background: linear-gradient(angle, colour-stop1, colour-stop2);
+``` 
 
 يتم تحديد الزاوية كزاوية بين الخط الأفقي وخط التدرج.
 
- `background: linear-gradient(90deg, red, yellow); 
-` 
+```
+background: linear-gradient(90deg, red, yellow);
+``` 
 
 ![90 درجة](https://cdn.discordapp.com/attachments/261391445074771978/371710718698848256/image.png)
 
@@ -72,8 +77,9 @@ localeTitle: الخطي التدرج
 
 لا تقتصر على لونين فقط ، يمكنك استخدام العديد من الألوان المفصولة بفواصل كما تريد.
 
- `background: linear-gradient(red, yellow, green); 
-` 
+```
+background: linear-gradient(red, yellow, green);
+``` 
 
 ![تدرج مع 3 توقفات لونية](https://cdn.discordapp.com/attachments/261391445074771978/371706534591201281/image.png)
 
@@ -83,8 +89,9 @@ localeTitle: الخطي التدرج
 
 لا يمكنك استخدام التدرجات اللونية فقط للانتقال باستخدام ألوان باهتة ، ولكن يمكنك أيضًا استخدامها للتغيير من لون واحد إلى لون خالص آخر على الفور
 
- `background: linear-gradient(to right,red 15%, yellow 15%); 
-` 
+```
+background: linear-gradient(to right,red 15%, yellow 15%);
+``` 
 
 ![توقف اللون الصلب](https://cdn.discordapp.com/attachments/261391445074771978/371716730046775318/image.png)
 

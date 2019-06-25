@@ -10,18 +10,21 @@ localeTitle: وحدات الماكرو في C
 
 يتم استخدام الكلمة الأساسية `#define` لتحديد وحدات الماكرو الجديدة. يتبعه اسم ومحتوى. حسب الاصطلاح ، تتم كتابة أسماء الماكرو في أحرف كبيرة.
 
- `#define PI 3.14 
-` 
+```C
+#define PI 3.14
+``` 
 
 إذا كنت تستخدم الماكرو بهذه الطريقة:
 
- `printf("Value of PI: %d", PI); 
-` 
+```C
+printf("Value of PI: %d", PI);
+``` 
 
 هو نفس كتابة هذا:
 
- `printf("Value of PI: %d", 3.14); 
-` 
+```C
+printf("Value of PI: %d", 3.14);
+``` 
 
 #### أنواع وحدات الماكرو
 
@@ -31,33 +34,39 @@ localeTitle: وحدات الماكرو في C
 
 تشبه دالة تستخدم نفس الكلمة `#define` . الفرق هو أنك تستخدم قوسين زوج بعد اسم الدالة.
 
- `#define hello_world() printf("Hello World!") 
-` 
+```C
+#define hello_world() printf("Hello World!")
+``` 
 
 لذلك اتصلت:
 
- `hello_world() 
-` 
+```C
+hello_world()
+``` 
 
 لقد حصلت:
 
- `printf("Hello World!"); 
-` 
+```C
+printf("Hello World!");
+``` 
 
 يمكنك تعيين المعلمات أيضًا:
 
- `#define hello(X) printf("Hello " X "!") 
-` 
+```C
+#define hello(X) printf("Hello " X "!")
+``` 
 
 الآن الاتصال:
 
- `hello("World"); 
-` 
+```C
+hello("World");
+``` 
 
 تحصل على equivallent:
 
- `printf("Hello World!"); 
-` 
+```C
+printf("Hello World!");
+``` 
 
 #### معلومات اكثر:
 

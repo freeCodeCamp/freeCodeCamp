@@ -9,10 +9,10 @@ describe('fcc-create-nav-data', () => {
       internal: {
         content:
           '---\ntitle: File Writing\n---\n## File Writing\n\nThis is a stub.' +
-          " <a href='https://github.com/freecodecamp/guides/tree/master/src/" +
+          " <a href='https://github.com/freeCodeCamp/guides/tree/master/src/" +
           "pages/php/functions/files/writing/index.md' target='_blank' " +
           "rel='nofollow'>Help our community expand it</a>.\n\n<a href=" +
-          "'https://github.com/freecodecamp/guides/blob/master/README.md' " +
+          "'https://github.com/freeCodeCamp/freeCodeCamp/blob/master/docs/style-guide-for-guide-articles.md' " +
           "target='_blank' rel='nofollow'>This quick style guide will help " +
           'ensure your pull request gets accepted</a>.\n\n<!-- The article ' +
           'goes here, in GitHub-flavored Markdown. Feel free to add YouTube ' +
@@ -43,13 +43,21 @@ describe('fcc-create-nav-data', () => {
       expect(result.dashedName).equal('file-writing');
     });
 
-    it('node.path should equal the file path from pagesDir, prefixed with `/guide`', () => {
-      expect(result.path).to.equal('/guide/php/functions/files/file-writing');
-    });
+    it(
+      'node.path should equal the file path from pagesDir, ' +
+        'prefixed with `/guide`',
+      () => {
+        expect(result.path).to.equal('/guide/php/functions/files/file-writing');
+      }
+    );
 
-    it('node.parentPath should equal the path of the parent page, prefixed with `/guide`', () => {
-      expect(result.parentPath).to.equal('/guide/php/functions/files');
-    });
+    it(
+      'node.parentPath should equal the path of the parent page, ' +
+        'prefixed with `/guide`',
+      () => {
+        expect(result.parentPath).to.equal('/guide/php/functions/files');
+      }
+    );
 
     it('node.title should equal srcNode.frontmatter.title', () => {
       expect(result.title).to.equal(mockNode.frontmatter.title);

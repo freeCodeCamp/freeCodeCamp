@@ -14,18 +14,19 @@ localeTitle: التحقق من المساواة
 
 بالنسبة لأنواع المتغيرات البدائية ، مثل `int` و `double` ، يمكن دائمًا استخدام عامل `==` للتحقق من المساواة ، حيث يتم تخزين قيمها مباشرة مع المتغير (وليس كمرجع إلى فتحة أخرى في الذاكرة).
 
- `int var1 = 1; 
- int var2 = 1; 
- System.out.println(var1 == var2) // true 
- 
- MyObject obj1 = new MyObject(); 
- MyObject obj2 = obj1; 
- MyObject obj3 = new MyObject(); 
- 
- System.out.println(obj1 == obj2) // true 
- System.out.println(obj1 == obj3) // false 
- System.out.println(obj2 == obj3) // false 
-` 
+```java
+int var1 = 1;
+int var2 = 1;
+System.out.println(var1 == var2) // true
+
+MyObject obj1 = new MyObject();
+MyObject obj2 = obj1;
+MyObject obj3 = new MyObject();
+
+System.out.println(obj1 == obj2) // true
+System.out.println(obj1 == obj3) // false
+System.out.println(obj2 == obj3) // false
+``` 
 
 ## طريقة `.equals()`
 
@@ -33,12 +34,13 @@ localeTitle: التحقق من المساواة
 
 تعد فئة "السلسلة" واحدة من الأمثلة الأكثر شيوعًا للفئة التي تتجاوز طريقة "يساوي ()". عند المقارنة بين "سلعة" للمساواة ، تحتاج إلى استخدام طريقة "يساوي ()" ، لأن "==" لن يعمل كما هو متوقع.
 
- `String s1 = "Bob"; 
- String s2 = "ob"; 
- s2 = "B" + s2; //s2 now is also "Bob" 
- System.out.println(s1 == s2); //false 
- System.out.println(s1.equals(s2)); //true 
-` 
+```java
+String s1 = "Bob";
+String s2 = "ob";
+s2 = "B" + s2; //s2 now is also "Bob"
+System.out.println(s1 == s2); //false
+System.out.println(s1.equals(s2)); //true
+``` 
 
 عند إنشاء فئة جديدة في Java ، ستحتاج غالبًا إلى تجاوز طريقة `equals()` لتوفير طريقة أكثر فائدة لمقارنة كائنين من نفس الفئة. كيف يتم تنفيذ هذه الطريقة هو ما يصل تماما إلى حكم المطور.
 

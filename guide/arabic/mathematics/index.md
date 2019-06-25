@@ -30,37 +30,41 @@ private int CalculatePoweredArray (int int، int \[\] arr) { var poweredArray = 
 
 }
 
- `Calling the function with a power of 3 will give these results: 
- [1, 8, 27, 64, 125] 
- 
- Documentation reference: <a href='https://msdn.microsoft.com/en-us/library/system.math(v=vs.110' target='_blank' rel='nofollow'>MSDN</a>.aspx) 
- 
- #### JavaScript 
- With Node.js 
-` 
+```
+Calling the function with a power of 3 will give these results:
+[1, 8, 27, 64, 125]
+
+Documentation reference: <a href='https://msdn.microsoft.com/en-us/library/system.math(v=vs.110' target='_blank' rel='nofollow'>MSDN</a>.aspx)
+
+#### JavaScript
+With Node.js
+``` 
 
 جافا سكريبت var math = requires ('mathjs')؛
 
- `In the browser 
-` 
+```
+In the browser
+``` 
 
 أتش تي أم أل
 
 // use the math.js libary math.sqrt(-4); // result: 2i
 
- `Documentation reference: <a href='http://mathjs.org/docs/index.html' target='_blank' rel='nofollow'>Math.js documentation</a> 
- 
- #### C++ 
-` 
+```
+Documentation reference: <a href='http://mathjs.org/docs/index.html' target='_blank' rel='nofollow'>Math.js documentation</a>
+
+#### C++
+``` 
 
 حزب الشعب الكمبودي
 
 # تتضمن
 
- `Documentation reference: <a href='http://www.cplusplus.com/reference/cmath/' target='_blank' rel='nofollow'>cplusplus reference</a> 
- 
- #### Python 
-` 
+```
+Documentation reference: <a href='http://www.cplusplus.com/reference/cmath/' target='_blank' rel='nofollow'>cplusplus reference</a>
+
+#### Python
+``` 
 
 الثعبان
 
@@ -73,10 +77,11 @@ private int CalculatePoweredArray (int int، int \[\] arr) { var poweredArray = 
 
 > > > استيراد numpy كما np np.zeros ((3،4))
 
- `This returns a 3x4 array populated with 0s. 
- 
- #### Java 
-` 
+```
+This returns a 3x4 array populated with 0s.
+
+#### Java
+``` 
 
 جافا استيراد java.lang.Math
 

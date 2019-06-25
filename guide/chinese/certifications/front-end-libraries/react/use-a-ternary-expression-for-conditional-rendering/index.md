@@ -17,7 +17,7 @@ condition ? expressionIfTrue : expressionIfFalse
 
 这是使用三元表达的示例解决方案。 首先，您需要在构造函数中声明状态，如下所示
 
-```react.js
+```jsx
 constructor(props) { 
     super(props); 
     // change code below this line 
@@ -33,7 +33,7 @@ constructor(props) {
 
 然后是三元运算符
 
-```react.js
+```jsx
 { 
     /* change code here */ 
     (this.state.userAge >= 18) ? buttonTwo : (this.state.userAge== '')? buttonOne: buttonThree 

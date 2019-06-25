@@ -18,8 +18,11 @@ The default name of the new directory on your computer is the name of the reposi
 ```shell
 git clone URL-OF-REPOSITORY NAME-OF-DIRECTORY-ON-COMPUTER
 ```
+The `git clone` command not only allows to copy a remote repository but also can clone a repository if it's on a local machine. This can be done using the `-l` or `--local` option.
 
 Git gives the remote the alias "origin". This is a useful way to refer to the remote when you want to push your changes to the remote server or pull changes from it. See <a href='https://guide.freecodecamp.org/git/git-push/' target='_blank' rel='nofollow'>Git push</a> and <a href='https://guide.freecodecamp.org/git/git-pull/' target='_blank' rel='nofollow'>Git pull</a> for more details.
+
+Instead of using the default "origin" alias to the remote repository, git allows you to set your own alias name by using `-o <name>` or `--origin <name>`
 
 Git only pulls the remote's main branch onto your computer. This branch is usually named "master" by convention but may be defined differently depending on the project.
 
@@ -49,9 +52,9 @@ After mirroring a repository, you can clone your local mirror from your server.
 git clone NAME-OF-DIRECTORY-ON-COMPUTER
 ```
 
-### To clone a spacific branch
+### To clone a specific branch
 
-If you want to clone a spacific branch, you can do that by the following command.
+If you want to clone a specific branch, you can do that by the following command.
 
 ```shell
 git clone URL-OF-REPOSITORY -R branch_name

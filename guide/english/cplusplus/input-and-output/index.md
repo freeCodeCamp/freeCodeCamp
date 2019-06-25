@@ -10,8 +10,8 @@ To print things to the console, or read from it, you use `cout` and `cin`, which
 
 The "Hello World" program uses `cout` to print "Hello World!" to the console:
 
-```C++
-#include<iostream>
+```cpp
+#include<iostream.h>
 using namespace std; 
 
 int main()
@@ -29,24 +29,24 @@ The first two lines at the top are necessary for you to use `cout` and other str
 
 Almost everything can be put into a stream: strings, numbers, variables, expressions, etc. Here area some examples of valid stream insertions:
 
-```C++
+```cpp
 // Notice we can use the number 42 and not the string "42". 
 cout << "The meaning of life is " << 42 << endl;` // Output: The meaning of life is 42
 ```
 
-```C++
+```cpp
 string name = "Tim";
 cout << "Except for you, " << name << endl;`// Output: Except for you, Tim
 ```
 
-```C++
+```cpp
 string name = "Tim";
 cout << name;
 cout << " is a great guy!" << endl;`
 // Output: Tim is a great guy!
 ```
 
-```C++
+```cpp
 int a = 3;
 cout << a*2 + 18/a << endl;`// Output: 12
 ```
@@ -55,7 +55,7 @@ cout << a*2 + 18/a << endl;`// Output: 12
 
 C++ always puts *you* in control, and only does exactly the things you tell it to do. This can sometimes be surprising, as in the following example:
 
-```C++
+```cpp
 string name = "Sarah";
 cout << "Good morning" << name << "how are you today? << endl;
 ```
@@ -63,7 +63,7 @@ You might expect it to print "Good morning Sarah how are you today?", but actual
 
 Line breaks don't happen by themselves, either. You might think this would print a recipe on four lines:
 
-```C++
+```cpp
 cout << "To make bread, you need:";
 cout << "* One egg";
 cout << "* One water";
@@ -72,7 +72,7 @@ cout << "* Two wheat";
 but the output is actually all on one line: "To make bread, you need:* One egg* One water* Two wheat". This is because there are no newline characters at the end of the lines, so naturally, C++ assumes we don't want it to print newline characters.
 
 You could fix this by adding `endl`s after every line, because as discussed earlier, `endl` inserts a newline character into the output stream. However, it also forces the buffer to be flushed, which loses us a little performance since we could have printed all the lines in one go. Therefore the best would be to add actual newline characters at the end of the lines, and only use `endl` at the end:
-```C++
+```cpp
 cout << "To make bread, you need:\n";
 cout << "* One egg\n";
 cout << "* One water\n";
@@ -83,7 +83,7 @@ If you're just printing a small recipe, the time you save is miniscule and not w
 ### Input with cin
 
 To read from the console, you use the _input stream_ `cin` in the same way as you would `cout`, but instead of putting things into `cin`, you "take them out". The following program reads two numbers from the user and adds them together:
-```C++
+```cpp
 #include<iostream>
 using namespace std; 
 
@@ -97,15 +97,17 @@ int main()
   cin >> b;
 
   cout << "The sum of your numbers is: " << a + b << endl;
+  
+  return 0;
 }
 ```
 
-`cin` stands for "Console Input" and is an _input stream_ that represents input from the console. In the expression `cin >> a;`, data is read from `cin` and saved into the variable `a`, using the operator `>>`, the _extraction operator_<sup>2</sup>. The extraction operator reads exactly as much data as required to write into the variable we specify, and skips any whitespace, so if the user types "       6" that will just be read as the value `6`.
+`cin` stands for "Console Input" and is an _input stream_ that represents input from the console. In the expression `cin >> a;`, data is read from `cin` and saved into the variable `a`, using the operator `>>`, the _extraction operator_<sup>2</sup>. The extraction operator reads exactly as much data as required to write into the variable we specify, and skips any whitespace, so if the user types "6" that will just be read as the value `6`.
 
 It's worth noting that `cin` will stop the whole program to wait for the user to type in their value. The program will not continue until the user has pressed enter, and there is some data to be written into the variable. If the user just presses enter without typing anything, `cin` will keep waiting for a value.
 
 The extraction operator `<<` can be chained too. Here is the same program as last time, but written in a more concise manner:
-```C++
+```cpp
 #include<iostream>
 using namespace std; 
 
@@ -121,9 +123,6 @@ int main()
 When chained, the extraction operator will first read data from `cin` to fill `a`, and then read data to fill `b`.
 
 
-C's standard printf and scanf statements can also be used with c++ by importing '<cstdio>' header file.
+C's standard printf and scanf statements can also be used with c++ by importing '<stdio.h>' header file.
 
 
-## Sources
-1. http://www.cplusplus.com/reference/ostream/ostream/operator%3C%3C/
-2. http://www.cplusplus.com/reference/istream/istream/operator%3E%3E/

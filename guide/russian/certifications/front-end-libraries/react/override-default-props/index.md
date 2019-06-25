@@ -6,7 +6,7 @@ localeTitle: Переопределить опоры по умолчанию
 
 Эта задача имеет переопределить значение по умолчанию реквизита `quantity` для компонента Items. Если значение по умолчанию `quantity` устанавливается в `0` .
 
-```react.js
+```jsx
 const Items = (props) => { 
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1> 
  } 
@@ -18,13 +18,13 @@ const Items = (props) => {
 
 Чтобы переопределить значение реквизита по умолчанию, синтаксис, который следует соблюдать,
 
-```react.js
+```jsx
 <Component propsName={Value}/> 
 ```
 
 После синтаксиса следующий код должен быть объявлен ниже данного кода
 
-```react.js
+```jsx
 <Items quantity={50}/> 
 ```
 

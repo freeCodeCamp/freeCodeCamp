@@ -10,53 +10,59 @@ localeTitle: أنواع البيانات
 
 العدد الصحيح هو رقم غير عشري. وقد بنى Elixir دعمًا للأرقام الثنائية ، والثمانية ، والسداسي عشرية كأعداد صحيحة.
 
- `iex> 1337 
- 1337 
-` 
+```elixir
+iex> 1337
+1337
+``` 
 
 ### العربات
 
 يتطلب العوم عشريًا ورقمًا واحدًا على الأقل بعد العلامة العشرية. يدعم Floats دقة مزدوجة 64 بت و `e` أجل exponets.
 
- `iex> 27e-100 
- 27e-100 
-` 
+```elixir
+iex> 27e-100
+27e-100
+``` 
 
 ### القيم المنطقية
 
 البولية هي قيمة حقيقية أو خاطئة. في الإكسير كل شيء صدق ما عدا `false` ولا `nil` . من المهم ملاحظة أن booleans هي نوع فرعي من ذرات Elxir (يمكنك فحص القيم في IEX لترى بنفسك).
 
- `iex> true 
- true 
- iex> false 
- false 
- iex> nil 
- nil 
-` 
+```elixir
+iex> true
+true
+iex> false
+false
+iex> nil
+nil
+``` 
 
 ### ذرات
 
 تعتبر الذرة قيمة ثابتة هي نفس الاسم. يتم استخدام الذرات بشكل شائع لرسائل الحالة / الأخطاء داخل المجموعة مع المزيد من المعلومات المضمنة في سلسلة.
 
- `iex> {:ok, "Message sent successfully"} 
- {:ok, "Message sent successfully"} 
- iex> {:error, "Message failed to send"} 
- {:error, "Message failed to send"} 
-` 
+```elixir
+iex> {:ok, "Message sent successfully"}
+{:ok, "Message sent successfully"}
+iex> {:error, "Message failed to send"}
+{:error, "Message failed to send"}
+``` 
 
 ### سلاسل
 
 السلسلة UTF-8 مشفرة وملفوفة في علامات اقتباس مزدوجة.
 
- `iex> "freeCodeCamp" 
- "freeCodeCamp" 
-` 
+```elixir
+iex> "freeCodeCamp"
+"freeCodeCamp"
+``` 
 
 السلسلة هي أيضًا ثنائية ، يمكنك رؤية تمثيل ثنائي لسلسلة في Elixir عن طريق إرفاق `<> <<0>>` بنهاية السلسلة. يمكن أن تمثل السلسلة ثنائيًا ، ويمكن أن يمثل الثنائي أيضًا سلسلة.
 
- `iex> "freeCodeCamp" <> <<0>> 
- <<102, 114, 101, 101, 67, 111, 100, 101, 67, 97, 109, 112, 0>> 
-` 
+```elixir
+iex> "freeCodeCamp" <> <<0>>
+<<102, 114, 101, 101, 67, 111, 100, 101, 67, 97, 109, 112, 0>>
+``` 
 
 #### معلومات اكثر
 

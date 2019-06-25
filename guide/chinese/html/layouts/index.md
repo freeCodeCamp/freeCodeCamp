@@ -8,7 +8,7 @@ localeTitle: 布局
 
 我们看到的几乎每个网页都可以分成多个框，可以按特定顺序排列以创建该网页。下图是一个这样的例子。
 
-![网站设计样本 -  www.codementor.io](http://i.imgur.com/Z1DSMYC.png)
+![网站设计样本 -  www.codementor.io](https://cdn-media-1.freecodecamp.org/imgr/Z1DSMYC.png)
 
 > 网站通常以多列（如杂志或报纸）显示内容。
 

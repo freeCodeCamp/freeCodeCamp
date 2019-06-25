@@ -4,7 +4,7 @@ localeTitle: JavaScript vs TypeScript
 ---
 ## JavaScript vs TypeScript
 
-![Где Уолдо](https://i.imgur.com/DznuAou.jpg)
+![Где Уолдо](https://cdn-media-1.freecodecamp.org/imgr/DznuAou.jpg)
 
 Итак, теперь, когда у нас есть общее представление о том, что такое TypeScript, давайте сыграем в быстрой игре **Where's Waldo** .
 
