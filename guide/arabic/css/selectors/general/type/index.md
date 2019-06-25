@@ -8,24 +8,27 @@ localeTitle: نوع
 
 #### كود النحو
 
- `* { 
-    css declarations; 
- } 
-` 
+```css
+* {
+    css declarations;
+}
+``` 
 
 #### مثال الكود
 
- `h1 { 
-    background-color: red; 
- } 
-` 
+```css
+h1 {
+    background-color: red;
+}
+``` 
 
 يختار كل عنصر h1 وتعيين لون الخلفية باللون الأحمر.
 
- `div { 
-    width: 100px; 
- } 
-` 
+```css
+div {
+    width: 100px;
+}
+``` 
 
 يختار كل عنصر div وعرض عنصر العرض 100 بكسل.
 

@@ -11,14 +11,16 @@ localeTitle: التعامل مع كائنات جافا سكريبت
 
 إضافة خصائص إلى كائنات باستخدام تدرج قوس:
 
- `myObject['myProperty'] = "myValue"; 
-` 
+```javascript
+myObject['myProperty'] = "myValue";
+``` 
 
 باستخدام تدرج القوس ، يمكننا استخدام المتغيرات كأسماء للممتلكات:
 
- `var dynamicProperty = "myProperty"; 
- myObject[dynamicProperty] = "myValue"; 
-` 
+```javascript
+var dynamicProperty = "myProperty";
+myObject[dynamicProperty] = "myValue";
+``` 
 
 يمكننا أيضًا حذفها كما يلي:
 

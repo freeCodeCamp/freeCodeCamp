@@ -10,7 +10,7 @@ Este es un reto un poco complicado pero fácil.
 
 Cambie `handleClick()` con la declaración de incremento adecuada.
 
-```react.js
+```jsx
 handleClick() { 
   this.setState({ 
     counter: this.state.counter + 1 
@@ -20,7 +20,7 @@ handleClick() {
 
 En `render()` el uso del método `Math.random()` como se menciona en la descripción desafío y escribir una expresión ternaria para pasar `props` en el componente de **Resultados.**
 
-```react.js
+```jsx
  let expression = Math.random() > .5; 
  
  {(expression == 1)? <Results fiftyFifty="You win!"/> : <Results fiftyFifty="You lose!"/> } 
@@ -28,7 +28,7 @@ En `render()` el uso del método `Math.random()` como se menciona en la descripc
 
 Luego renderiza los `fiftyFifty` apoyos en el componente Resultados.
 
-```react.js
+```jsx
   <h1> 
   { 
     this.props.fiftyFifty 

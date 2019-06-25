@@ -34,8 +34,9 @@ localeTitle: الثعبان
 
 `hello_campers.py`
 
- `print('Hello campers!') 
-` 
+```python
+print('Hello campers!')
+``` 
 
 من المحطة:
 

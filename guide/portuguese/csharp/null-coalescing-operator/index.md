@@ -10,7 +10,7 @@ O operador de coalescência nula em C # é usado para ajudar a designar uma vari
 
 Como `name` é `null` , o `clientName` receberá o valor "John Doe".
 
-```cs
+```csharp
 string name = null; 
  
  string clientName = name ?? "John Doe"; 
@@ -18,7 +18,7 @@ string name = null;
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > John Doe 
 ```
 
@@ -26,7 +26,7 @@ string name = null;
 
 Como o `name` não é `null` , o `clientName` receberá o valor do `name` , que é "Jane Smith".
 
-```cs
+```csharp
 string name = "Jane Smith"; 
  
  string clientName = name ?? "John Doe"; 
@@ -34,7 +34,7 @@ string name = "Jane Smith";
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > Jane Smith 
 ```
 
@@ -42,7 +42,7 @@ string name = "Jane Smith";
 
 Você poderia usar uma instrução `if...else` para testar a presença de `null` e atribuir um valor diferente.
 
-```cs
+```csharp
 string clientName; 
  
  if (name != null) 
@@ -53,7 +53,7 @@ string clientName;
 
 No entanto, isso pode ser muito simplificado usando o operador de coalescência nula.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 
@@ -61,13 +61,13 @@ string clientName = name ?? "John Doe";
 
 Também é possível usar o operador condicional para testar a presença de `null` e atribuir um valor diferente.
 
-```cs
+```csharp
 string clientName = name != null ? name : "John Doe"; 
 ```
 
 Novamente, isso pode ser simplificado usando o operador de coalescência nula.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 

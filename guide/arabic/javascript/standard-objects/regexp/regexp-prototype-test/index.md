@@ -8,27 +8,29 @@ localeTitle: RegExp.prototype.test
 
 ## أمثلة
 
- `let str = 'freeCodeCamp'; 
- let regEx = /Code/; 
- let result = regEx.test(str); 
- 
- console.log(result); // prints true 
-` 
+```javascript
+let str = 'freeCodeCamp';
+let regEx = /Code/;
+let result = regEx.test(str);
+
+console.log(result); // prints true
+``` 
 
 **ملاحظة:** التعبيرات العادية حساسة لحالة الأحرف. سيظهر المثال أعلاه `false` إذا كان `regEx` `/code/` بدلاً من `/Code/` . لجعل التعبير العادي غير حساس لحالة الأحرف ، يجب عليك إضافة علامة `i` إلى التعبير العادي.
 
- `let str = 'freeCodeCamp'; 
- let regEx = /code/; 
- let result = regEx.test(str); 
- 
- console.log(result); // prints false 
- 
- // Include the 'i' flag. 
- 
- regEx = /code/i; 
- result = regEx.test(str); 
- console.log(result); // prints true 
-` 
+```javascript
+let str = 'freeCodeCamp';
+let regEx = /code/;
+let result = regEx.test(str);
+
+console.log(result); // prints false
+
+// Include the 'i' flag.
+
+regEx = /code/i;
+result = regEx.test(str);
+console.log(result); // prints true
+``` 
 
 #### معلومات اكثر:
 

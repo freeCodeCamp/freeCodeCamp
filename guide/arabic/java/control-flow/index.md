@@ -29,34 +29,36 @@ localeTitle: تدفق التحكم
 
 يعد التبديل خيارًا بديلًا `if...else` إنشاء `if...else` عند وجود قيم وحالات متعددة للتحقق منها.
 
- `switch( <integer / String / Enum > ){ 
-    case <int/String/Enum>: 
-        <statements> 
-        break; 
-    case <int/String/Enum>: 
-        <statements> 
-        break; 
-    default: 
-        <statements> 
- } 
-` 
+```java
+switch( <integer / String / Enum > ){
+    case <int/String/Enum>:
+        <statements>
+        break;
+    case <int/String/Enum>:
+        <statements>
+        break;
+    default:
+        <statements>
+}
+``` 
 
 ملاحظة: `falls through` تدفق البرنامج `falls through` `case` التالية إذا كان بيان `break` مفقودًا. على سبيل المثال ، دعنا نقول أنك تقول "مرحباً" لكل شخص في المكتب ، لكنك لطيف جداً للفتاة التي تجلس إلى جانبك وتسمع صوت غاضب إلى رئيسك في العمل. طريقة التمثيل ستكون شيئًا مثل:
 
- `switch(person){ 
-    case 'boss': 
-        soundGrumpy(); 
-        break; 
-    case 'neighbour': 
-        soundExtraNice(); 
-        break; 
-    case 'colleague': 
-        soundNormal(); 
-        break; 
-    default: 
-        soundNormal(); 
- } 
-` 
+```java
+switch(person){
+    case 'boss':
+        soundGrumpy();
+        break;
+    case 'neighbour':
+        soundExtraNice();
+        break;
+    case 'colleague':
+        soundNormal();
+        break;
+    default:
+        soundNormal();
+}
+``` 
 
  ``Note: The `default` case runs when none of the `case` matches. Remember that when a case has no `break` statement, it `falls through` to the next case and will continue to the subsequent `cases` till a `break` is encountered. Because of this, make sure that each case has a `break` statement. The `default` case does not require a `break` statement. 
 `` 
@@ -74,29 +76,30 @@ localeTitle: تدفق التحكم
 
 تتمثل إحدى الطرق لتمثيل ذلك في:
 
- `int cash = 150; 
- String company = "friends"; 
- 
- if( cash < 25 ){ 
-    getCoffee(); 
- } else if( cash < 60 ){ 
-    getDecentMeal(); 
- } else if( cash < 100 ){ 
-    getDecentMeal(); 
-    getGlassOfWine(); 
- } else { 
-    switch(company){ 
-        case "wife": 
-            candleLitDinner(); 
-            break; 
-        case "friends": 
-            meetFriendsAtSportsBar(); 
-            break; 
-        default: 
-            getDecentMeal(); 
-    } 
- } 
-` 
+```java
+int cash = 150;
+String company = "friends";
+
+if( cash < 25 ){
+    getCoffee();
+} else if( cash < 60 ){
+    getDecentMeal();
+} else if( cash < 100 ){
+    getDecentMeal();
+    getGlassOfWine();
+} else {
+    switch(company){
+        case "wife":
+            candleLitDinner();
+            break;
+        case "friends":
+            meetFriendsAtSportsBar();
+            break;
+        default:
+            getDecentMeal();
+    }
+}
+``` 
 
 في هذا المثال ، سيتم تنفيذ `meetFriendsAtSportsBar()` .
 

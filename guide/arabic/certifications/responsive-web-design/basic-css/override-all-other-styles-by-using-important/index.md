@@ -15,8 +15,9 @@ localeTitle: تجاوز كافة الأنماط الأخرى باستخدام ه
 3.  إعلانات معرف
 4.  تصريحات الطبقة
 
- `Here is an example of how to write/apply !important: 
-` 
+```
+Here is an example of how to write/apply !important:
+``` 
 
 المغلق اللون: أسود!
 
