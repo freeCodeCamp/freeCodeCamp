@@ -33,16 +33,17 @@ localeTitle: عملية تمهيد لينكس
 *   GRUB لديه معرفة بنظام الملفات (لا يفهم لودر لينوكس الأقدم LILO نظام الملفات).
 *   ملف تكوين Grub هو /boot/grub/grub.conf (/etc/grub.conf هو رابط لهذا). فيما يلي عينة من grub.conf من CentOS.
 
- `#boot=/dev/sda 
- default=0 
- timeout=5 
- splashimage=(hd0,0)/boot/grub/splash.xpm.gz 
- hiddenmenu 
- title CentOS (2.6.18-194.el5PAE) 
-          root (hd0,0) 
-          kernel /boot/vmlinuz-2.6.18-194.el5PAE ro root=LABEL=/ 
-          initrd /boot/initrd-2.6.18-194.el5PAE.img 
-` 
+```
+#boot=/dev/sda
+default=0
+timeout=5
+splashimage=(hd0,0)/boot/grub/splash.xpm.gz
+hiddenmenu
+title CentOS (2.6.18-194.el5PAE)
+          root (hd0,0)
+          kernel /boot/vmlinuz-2.6.18-194.el5PAE ro root=LABEL=/
+          initrd /boot/initrd-2.6.18-194.el5PAE.img
+``` 
 
 ### 4\. النواة
 

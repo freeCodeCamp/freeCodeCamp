@@ -10,35 +10,39 @@ localeTitle: علامة الصوت
 
 ##### إضافة OGG
 
- `<audio controls> 
-  <source src="file.ogg" type="audio/ogg"> 
- </audio> 
-` 
+```
+<audio controls>
+  <source src="file.ogg" type="audio/ogg">
+</audio>
+``` 
 
 ##### إضافة MP3
 
- `<audio controls> 
-  <source src="file.mp3" type="audio/mpeg"> 
- </audio> 
-` 
+```
+<audio controls>
+  <source src="file.mp3" type="audio/mpeg">
+</audio>
+``` 
 
 ##### إضافة WAV
 
- `<audio controls> 
-  <source src="file.wav" type="audio/wav"> 
- </audio> 
-` 
+```
+<audio controls>
+  <source src="file.wav" type="audio/wav">
+</audio>
+``` 
 
 قد يحتوي على واحد أو أكثر من مصادر الصوت ، ممثلة باستخدام السمة src أو عنصر المصدر.
 
 ##### إضافة ملفات صوت متعددة
 
- `<audio controls> 
-  <source src="file-1.wav" type="audio/wav"> 
-  <source src="file-2.ogg" type="audio/ogg"> 
-  <source src="file-3.mp3" type="audio/mpeg"> 
- </audio> 
-` 
+```
+<audio controls>
+  <source src="file-1.wav" type="audio/wav">
+  <source src="file-2.ogg" type="audio/ogg">
+  <source src="file-3.mp3" type="audio/mpeg">
+</audio>
+``` 
 
 #### دعم المستعرض لأنواع مختلفة من filetypes كما يلي
 

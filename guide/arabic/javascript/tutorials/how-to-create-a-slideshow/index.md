@@ -12,10 +12,11 @@ localeTitle: كيف تصنع عرض الشرائح
 
 \`\` \`أتش تي أم أل   عرض الشرائح  
 
- `### Write styles to hide slides and show only one slide. 
- 
- For hide the slides you have to give them a default style and only show one slide if this is active or you want to show it. 
-` 
+```
+### Write styles to hide slides and show only one slide.
+
+For hide the slides you have to give them a default style and only show one slide if this is active or you want to show it.
+``` 
 
 المغلق \[data-component = "slideshow"\] .slide { عرض لا شيء؛ }
 

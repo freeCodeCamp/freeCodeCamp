@@ -5,13 +5,13 @@ title: Support Vector Machine
 
 A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating hyperplane. In other words, given labeled training data (supervised learning), the algorithm outputs an optimal hyperplane which categorizes new examples. It does this by minimizing the margin between the data points near the hyperplane.
 
-![SVM vs logistic regression](https://i.imgur.com/KUeOSK3.png)
+![SVM vs logistic regression](https://cdn-media-1.freecodecamp.org/imgr/KUeOSK3.png)
 
 A SVM cost function seeks to approximate the logistic function with a piecewise linear. This ML algorithm is used for classification problems and is part of the subset of supervised learning algorithms.
 
 ### The Cost Function
 
-![SVM Cost Function](https://i.imgur.com/SOhv2jZ.png)
+![SVM Cost Function](https://cdn-media-1.freecodecamp.org/imgr/SOhv2jZ.png)
 
 The Cost Function is used to train the SVM. By minimizing the value of J(theta), we can ensure that the SVM is as accurate as possible. In the equation, the functions cost1 and cost0 refer to the cost for an example where y=1 and the cost for an example where y=0. Cost, for SVMs, is determined by kernel (similarity) functions.
 

@@ -14,16 +14,17 @@ localeTitle: العمل مع واجهات برمجة التطبيقات JSON
 
 يمكن تحويل الكائنات في PHP إلى JSON باستخدام وظيفة PHP `json_encode()` :
 
- `<?php 
- $myObj->name = "John"; 
- $myObj->age = 30; 
- $myObj->city = "New York"; 
- 
- $myJSON = json_encode($myObj); 
- 
- echo $myJSON; 
- ?> 
-` 
+```php
+<?php
+$myObj->name = "John";
+$myObj->age = 30;
+$myObj->city = "New York";
+
+$myJSON = json_encode($myObj);
+
+echo $myJSON;
+?>
+``` 
 
 [جربها](https://www.w3schools.com/js/showphp.asp?filename=demo_file)
 
@@ -35,16 +36,17 @@ localeTitle: العمل مع واجهات برمجة التطبيقات JSON
 
 استخدم JSON.parse () لتحويل النتيجة إلى كائن JavaScript:
 
- `var xmlhttp = new XMLHttpRequest(); 
- xmlhttp.onreadystatechange = function() { 
-    if (this.readyState == 4 && this.status == 200) { 
-        var myObj = JSON.parse(this.responseText); 
-        document.getElementById("demo").innerHTML = myObj.name; 
-    } 
- }; 
- xmlhttp.open("GET", "demo_file.php", true); 
- xmlhttp.send(); 
-` 
+```js
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myObj.name;
+    }
+};
+xmlhttp.open("GET", "demo_file.php", true);
+xmlhttp.send();
+``` 
 
 [جربها](https://www.w3schools.com/js/tryit.asp?filename=tryjson_php_simple)
 

@@ -33,7 +33,7 @@ El algoritmo euclidiano encuentra el GCD de 2 números.
 
 Comprenderás mejor este algoritmo viéndolo en acción. Suponiendo que desea calcular el GCD de 1220 y 516, apliquemos el algoritmo euclídeo -
 
-Suponiendo que desea calcular el GCD de 1220 y 516, apliquemos el algoritmo euclídeo - ![Ejemplo Euclidiano](https://i.imgur.com/aa8oGgP.png)
+Suponiendo que desea calcular el GCD de 1220 y 516, apliquemos el algoritmo euclídeo - ![Ejemplo Euclidiano](https://cdn-media-1.freecodecamp.org/imgr/aa8oGgP.png)
 
 Pseudo Código del algoritmo  
 Paso 1: **Sean `a, b` los dos números**  

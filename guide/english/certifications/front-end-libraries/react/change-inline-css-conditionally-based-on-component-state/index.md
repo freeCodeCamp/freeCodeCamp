@@ -5,7 +5,7 @@ title: Change Inline CSS Conditionally Based on Component State
 
 ## Hint 1:
 
-You are going to be checking the length of ```this.state.input``` so use it's ```.length``` property.
+You are going to be checking the length of ```this.state.input``` so use its ```.length``` property.
 
 ```
 this.state.input.length
@@ -59,7 +59,7 @@ class GateKeeper extends React.Component {
 ## Solution 
 Write a conditional statement that is evaluated according to your state, as mentioned in the challenge description, checks the length of the input and assigns a new object to the inputStyle variable.
 
-```react.js
+```jsx
 if (this.state.input.length > 15) {
   inputStyle = {
     border: '3px solid red'

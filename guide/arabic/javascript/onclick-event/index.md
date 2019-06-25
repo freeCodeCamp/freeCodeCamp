@@ -8,14 +8,15 @@ localeTitle: حدث Onclick
 
 ### مثال
 
- `<button onclick="myFunction()">Click me</button> 
- 
- <script> 
-  function myFunction() { 
-    alert('Button was clicked!'); 
-  } 
- </script> 
-` 
+```javascript
+<button onclick="myFunction()">Click me</button>
+
+<script>
+  function myFunction() {
+    alert('Button was clicked!');
+  }
+</script>
+``` 
 
 في المثال البسيط أعلاه ، عندما ينقر المستخدم على الزر ، سيرى تنبيهًا في المتصفح يعرض `Button was clicked!` .
 
@@ -45,15 +46,16 @@ localeTitle: حدث Onclick
 
 ولكن إذا كان لنا أن نعلق `onclick` على وصلات (HTML هو `a` علامة) قد نرغب منع الإجراء الافتراضي إلى حدوث:
 
- `<a href="https://guide.freecodecamp.org" onclick="myAlert()">Guides</a> 
- 
- <script> 
-  function myAlert(event) { 
-    event.preventDefault(); 
-    alert("Link was clicked but page was not open"); 
-  } 
- </script> 
-` 
+```javascript
+<a href="https://guide.freecodecamp.org" onclick="myAlert()">Guides</a>
+
+<script>
+  function myAlert(event) {
+    event.preventDefault();
+    alert("Link was clicked but page was not open");
+  }
+</script>
+``` 
 
 في المثال أعلاه يمكننا منع السلوك الافتراضي `a` عنصر (وصلة فتح) باستخدام `event.preventDefault()` داخل لدينا `onclick` ظيفة رد.
 

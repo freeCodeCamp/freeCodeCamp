@@ -20,7 +20,7 @@ Digamos que você tenha um arquivo C ++ chamado `helloWorld.cpp` …
 
 #### Usando e IDE como CodeBlocks
 
-É tão simples quanto clicar nos botões build e run, eles irão criar um arquivo na pasta do projeto. ![img](https://i.imgur.com/FwZuFGy.png)
+É tão simples quanto clicar nos botões build e run, eles irão criar um arquivo na pasta do projeto. ![img](https://cdn-media-1.freecodecamp.org/imgr/FwZuFGy.png)
 
 #### Usando o prompt de comando
 

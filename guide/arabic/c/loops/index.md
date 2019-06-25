@@ -12,27 +12,29 @@ localeTitle: الحلقات من جميع الأنواع
 
 ### بناء الجملة
 
- `while(condition) { 
-   statement(s); 
- } 
-` 
+```
+while(condition) {
+   statement(s);
+}
+``` 
 
 إليك مثال على ذلك:
 
- `#include <stdio.h> 
- 
- int main(void) { 
-    int my_number = 0; 
- 
-    while(my_number != 10){ 
-        ++my_number; 
-    } 
- 
-    printf("my_number = %i", my_number); 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
+
+int main(void) {
+    int my_number = 0;
+
+    while(my_number != 10){
+        ++my_number;
+    }
+
+    printf("my_number = %i", my_number);
+
+    return 0;
+}
+``` 
 
 في حين أن العبارة داخل حلقة أثناء صحيحة ، سيتم تشغيل المحتوى داخل الأقواس. عندما يضرب البرنامج `while(my_number)` ، فإنه يتحقق من العبارة داخل الأقواس. إذا كانت هذه العبارة خاطئة ، فلن تقوم بتشغيل حلقة while. بدلاً من ذلك ، سيتم تخطي التعليمة البرمجية بين القوسين بين قوسين وسيتم التقاطها من حيث توقفت.
 
@@ -40,27 +42,29 @@ localeTitle: الحلقات من جميع الأنواع
 
 الشيء الذي قد تصادفه عند اللعب مع هذه الحلقة أو أي حلقة أخرى هو فكرة حلقة لا نهائية يمكن تشغيلها لعدد لا نهائي من المرات لأنه لا يوجد شيء لإيقافه. في بعض الأحيان يمكن أن يحدث هذا عن قصد:
 
- `while(1) { 
-    printf("This will get printed forever unless the program is stopped!"); 
- } 
-` 
+```C
+while(1) {
+    printf("This will get printed forever unless the program is stopped!");
+}
+``` 
 
 بالطبع ، يمكن أن يحدث أيضا عن طريق الخطأ. إليك الشفرة نفسها التي كانت عليها من قبل ، ولكن مع اختلاف دقيق يجعلها في حلقة لا نهائية:
 
- `#include <stdio.h> 
- 
- int main(void) { 
-    int my_number = 11; 
- 
-    while(my_number != 10){ 
-        ++my_number; 
-    } 
- 
-    printf("my_number = %i", my_number); 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
+
+int main(void) {
+    int my_number = 11;
+
+    while(my_number != 10){
+        ++my_number;
+    }
+
+    printf("my_number = %i", my_number);
+
+    return 0;
+}
+``` 
 
 عندما يتم تقييم هذه الحلقة في `my_number` ، سيتم التحقق من `my_number` لمعرفة ما إذا كانت ليست 10. لم يتم ذلك ، لأنه تمت تهيئتها في 11 ، لذا سيتم تشغيل الشفرة داخل الحلقة بينما سيكون `my_number` 12. 12 لا يساوي 10 ، لذلك سيتم تشغيل التعليمات البرمجية داخل حلقة أثناء و `my_number` سيكون 13. سوف يستمر تشغيل هذا إلى الأبد لأن هذا الشرط لن تصبح خاطئة أبداً - الطريقة الوحيدة للتوقف هو أن يتم فرض البرنامج للتوقف عن التشغيل. هذا مثال على حلقة لا نهائية ، لأنه إذا تُرك بمفرده ، فسوف يتم تشغيل عدد لا نهائي من المرات.
 
@@ -70,27 +74,29 @@ localeTitle: الحلقات من جميع الأنواع
 
 ### بناء الجملة
 
- `do { 
-   statement(s); 
- } while( condition ); 
-` 
+```
+do {
+   statement(s);
+} while( condition );
+``` 
 
 وإليك نظرة على ذلك:
 
- `#include <stdio.h> 
- 
- int main(void){ 
-    int a = 0; 
- 
-    do { 
-        a++ 
-    } while(a == -123); 
- 
-    printf("%i\n", a); 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
+
+int main(void){
+    int a = 0;
+
+    do {
+        a++
+    } while(a == -123);
+
+    printf("%i\n", a);
+
+    return 0;
+}
+``` 
 
 إذا كانت هذه حلقة مستمرة ، فلن يتم تشغيل الرمز الموجود بين الأقواس لأن هذا الشرط ليس صحيحًا عند إجراء التقييم. ومع ذلك ، نظرًا لأن هذه حلقة do-while ، سيتم تنفيذ الكود مرة واحدة ، ثم يتم إجراء التقييم لمعرفة ما إذا كان يجب إجراء ذلك مرة أخرى. تعد "مهام المهام أثناء العمل" مفيدة عندما تعرف أنك تريد القيام بشيء ما مرة واحدة ، ولكن قد تحتاج إلى تشغيله مرة أخرى بعد ذلك.
 
@@ -100,11 +106,12 @@ localeTitle: الحلقات من جميع الأنواع
 
 ### بناء الجملة
 
- `for(initialisation; condition; changer) 
- { 
-   statement(s); 
- } 
-` 
+```
+for(initialisation; condition; changer)
+{
+   statement(s);
+}
+``` 
 
 إليك مثال على ذلك:
 
@@ -127,8 +134,9 @@ localeTitle: الحلقات من جميع الأنواع
 
 الضرب هو مجرد تكرار زائد ، لذلك هذا هو إضافة على `a` ، `b` مرة. دعونا نلقي نظرة على على `for` قمة على وجه الخصوص:
 
- `for(int count = 0; count != b; count++) 
-` 
+```C
+for(int count = 0; count != b; count++)
+``` 
 
 على عكس الحلقة ، هناك ثلاثة أشياء في قوسينا مفصولة بفواصل منقوطة. القسم الأول هو التهيئة ، ويشار إليه بـ "التهيئة": فهو يسمح لك بإنشاء متغير جديد وتعيين قيمة له ، أو تعيين متغير موجود إلى قيمة مختلفة ، أو لا يمكنك تعيين أي شيء ووضعه فاصلة منقوطة.
 
@@ -198,14 +206,15 @@ localeTitle: الحلقات من جميع الأنواع
 
 خذ لحظة للنظر في ما سيفعله هذا الرمز:
 
- `for(;;){ 
-    printf("hello, world! \n"); 
- } 
- 
- while("Free Code Camp"){ 
-    printf("hello, world! \n"); 
- } 
-` 
+```C
+for(;;){
+    printf("hello, world! \n");
+}
+
+while("Free Code Camp"){
+    printf("hello, world! \n");
+}
+``` 
 
 لا يوجد شيء في قسم التهيئة ، لذا لم تتم تهيئة أي شيء. هذا أمر جيد ، ويتم ذلك أحيانًا لأنك لا تريد دائمًا أو تحتاج إلى تهيئة أي شيء.
 
@@ -217,9 +226,10 @@ localeTitle: الحلقات من جميع الأنواع
 
 خلال هذه الصفحة ، قرأت أن الكود "داخل الأقواس" هو ما يتم تشغيله ، وهذا صحيح في الغالب. ومع ذلك ، ماذا لو لم تكن هناك أقواس؟
 
- `while(true) 
-    printf("hello, world! \n"); 
-` 
+```C
+while(true)
+    printf("hello, world! \n");
+``` 
 
 في حالات مثل هذه ، سيعامل C السطر التالي باعتباره المحتوى الوحيد الذي يحتاج إلى حلقات. يتجاهل C المسافات البيضاء ، بحيث تكون المسافة البادئة موجودة فقط للوضوح. سيتم التعامل مع ذلك السطر فقط كما لو كان في الحلقة ، وهذه خاصية إذا كانت هناك عبارات لكل حلقات وحلقات أثناء المشاركة. نظرًا لأنه يتم تجاهل المساحة البيضاء ، فإن موضع الإعلان لا يهم: يمكن أن يكون على نفس السطر أو السطر التالي أو 300 سطر ومسافتين لأسفل طالما لا توجد أسطر أخرى من الكود بينهما. يمكن أن تجعل هذه الميزة التعليمات البرمجية تبدو منظفاً قليلاً عندما يكون لديك سطر واحد فقط من التعليمات البرمجية لتشغيل في عبارة.
 
@@ -227,8 +237,9 @@ localeTitle: الحلقات من جميع الأنواع
 
 إذا لم تكن هناك أقواس ، سيبدو المحول البرمجي فقط في السطر التالي ويكون ذلك هو محتوى الحلقة. تخبر الفواصل المنقوطة المترجم بأن الخط قد انتهى. مع هذه الأشياء مجتمعة ، يمكن أن ننتظر C حتى يصبح شيء صحيح. لنفترض أن لدينا طريقة تسمى `is_button_pressed` وترجع false إذا لم يتم الضغط على زر ، وصحيح إذا تم الضغط على زر:
 
- `while(!is_button_pressed()); 
-` 
+```C
+while(!is_button_pressed());
+``` 
 
 لا يحدث شيء في هذه الحلقة ، لأن الخط الوحيد الذي سينظر إليه هو فاصلة منقوطة. نتيجة لذلك ، سيتم استدعاء الأسلوب `is_button_pressed` ، وسيتم تقييم قيمة الإرجاع الخاصة به. إذا لم يتم الضغط على الزر وكانت قيمة الإرجاع خاطئة ، فإن `!` سوف تقلبه إلى true حتى يتم تشغيل الوظيفة مرة أخرى وتقييمها مرة أخرى. إذا كانت قيمة الإرجاع صحيحة ، فإن `!` سوف تقلبه إلى false وستخرج الحلقة الداخلية.
 
@@ -248,67 +259,71 @@ localeTitle: الحلقات من جميع الأنواع
 
 #### مثال 1: برنامج لطباعة نصف الهرم باستخدام \*
 
- `* 
- * * 
- * * * 
- * * * * 
- * * * * * 
-` 
+```
+*
+* *
+* * *
+* * * *
+* * * * *
+``` 
 
 **مصدر الرمز**
 
- `#include <stdio.h> 
- 
- int main() 
- { 
-    int i, j, rows; 
- 
-    printf("Enter number of rows: "); 
-    scanf("%d",&rows); 
- 
-    for(i=1; i<=rows; ++i) 
-    { 
-        for(j=1; j<=i; ++j) 
-        { 
-            printf("* "); 
-        } 
-        printf("\n"); 
-    } 
-    return 0; 
- } 
-` 
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i, j, rows;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&rows);
+
+    for(i=1; i<=rows; ++i)
+    {
+        for(j=1; j<=i; ++j)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+``` 
 
 #### مثال 2: برنامج لطباعة نصف الهرم باستخدام الأرقام
 
- `1 
- 1 2 
- 1 2 3 
- 1 2 3 4 
- 1 2 3 4 5 
-` 
+```
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+``` 
 
 **مصدر الرمز**
 
- `#include <stdio.h> 
- 
- int main() 
- { 
-    int i, j, rows; 
- 
-    printf("Enter number of rows: "); 
-    scanf("%d",&rows); 
- 
-    for(i=1; i<=rows; ++i) 
-    { 
-        for(j=1; j<=i; ++j) 
-        { 
-            printf("%d ",j); 
-        } 
-        printf("\n"); 
-    } 
-    return 0; 
- } 
-` 
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i, j, rows;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&rows);
+
+    for(i=1; i<=rows; ++i)
+    {
+        for(j=1; j<=i; ++j)
+        {
+            printf("%d ",j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+``` 
 
 #### مثال 3: برنامج لطباعة نصف الهرم باستخدام الحروف الهجائية
 
@@ -321,40 +336,42 @@ localeTitle: الحلقات من جميع الأنواع
 
 **مصدر الرمز**
 
- `#include <stdio.h> 
- 
- int main() 
- { 
-    int i, j; 
-    char input, alphabet = 'A'; 
- 
-    printf("Enter the uppercase character you want to print in last row: "); 
-    scanf("%c",&input); 
- 
-    for(i=1; i <= (input-'A'+1); ++i) 
-    { 
-        for(j=1;j<=i;++j) 
-        { 
-            printf("%c", alphabet); 
-        } 
-        ++alphabet; 
- 
-        printf("\n"); 
-    } 
-    return 0; 
- } 
-` 
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i, j;
+    char input, alphabet = 'A';
+
+    printf("Enter the uppercase character you want to print in last row: ");
+    scanf("%c",&input);
+
+    for(i=1; i <= (input-'A'+1); ++i)
+    {
+        for(j=1;j<=i;++j)
+        {
+            printf("%c", alphabet);
+        }
+        ++alphabet;
+
+        printf("\n");
+    }
+    return 0;
+}
+``` 
 
 برامج لطباعة نصف الهرم المقلوب باستخدام \* والأرقام
 
 #### مثال 4: نصف الهرم المقلوب باستخدام \*
 
- `* * * * * 
- * * * * 
- * * * 
- * * 
- * 
-` 
+```
+* * * * *
+* * * *
+* * *
+* *
+*
+``` 
 
 **مصدر الرمز**
 
@@ -382,36 +399,38 @@ localeTitle: الحلقات من جميع الأنواع
 
 #### مثال 5: هرم نصف مقلوب باستخدام الأرقام
 
- `1 2 3 4 5 
- 1 2 3 4 
- 1 2 3 
- 1 2 
- 1 
-` 
+```
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2
+1
+``` 
 
 **مصدر الرمز**
 
- `#include <stdio.h> 
- 
- int main() 
- { 
-    int i, j, rows; 
- 
-    printf("Enter number of rows: "); 
-    scanf("%d",&rows); 
- 
-    for(i=rows; i>=1; --i) 
-    { 
-        for(j=1; j<=i; ++j) 
-        { 
-            printf("%d ",j); 
-        } 
-        printf("\n"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i, j, rows;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&rows);
+
+    for(i=rows; i>=1; --i)
+    {
+        for(j=1; j<=i; ++j)
+        {
+            printf("%d ",j);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+``` 
 
 #### مثال 6: برنامج لطباعة الهرم الكامل باستخدام \*
 
@@ -464,82 +483,85 @@ localeTitle: الحلقات من جميع الأنواع
 
 **مصدر الرمز**
 
- `#include <stdio.h> 
- 
- int main() 
- { 
-    int i, space, rows, k=0, count = 0, count1 = 0; 
- 
-    printf("Enter number of rows: "); 
-    scanf("%d",&rows); 
- 
-    for(i=1; i<=rows; ++i) 
-    { 
-        for(space=1; space <= rows-i; ++space) 
-        { 
-            printf("  "); 
-            ++count; 
-        } 
- 
-        while(k != 2*i-1) 
-        { 
-            if (count <= rows-1) 
-            { 
-                printf("%d ", i+k); 
-                ++count; 
-            } 
-            else 
-            { 
-                ++count1; 
-                printf("%d ", (i+k-2*count1)); 
-            } 
-            ++k; 
-        } 
-        count1 = count = k = 0; 
- 
-        printf("\n"); 
-    } 
-    return 0; 
- } 
-` 
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i, space, rows, k=0, count = 0, count1 = 0;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&rows);
+
+    for(i=1; i<=rows; ++i)
+    {
+        for(space=1; space <= rows-i; ++space)
+        {
+            printf("  ");
+            ++count;
+        }
+
+        while(k != 2*i-1)
+        {
+            if (count <= rows-1)
+            {
+                printf("%d ", i+k);
+                ++count;
+            }
+            else
+            {
+                ++count1;
+                printf("%d ", (i+k-2*count1));
+            }
+            ++k;
+        }
+        count1 = count = k = 0;
+
+        printf("\n");
+    }
+    return 0;
+}
+``` 
 
 #### مثال 8: الهرم الكامل المعكوس باستخدام \*
 
- `* * * * * * * * * 
-  * * * * * * * 
-    * * * * * 
-      * * * 
-        * 
-` 
+```
+* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+``` 
 
 **مصدر الرمز**
 
- `#include<stdio.h> 
- 
- int main() 
- { 
-    int rows, i, j, space; 
- 
-    printf("Enter number of rows: "); 
-    scanf("%d",&rows); 
- 
-    for(i=rows; i>=1; --i) 
-    { 
-        for(space=0; space < rows-i; ++space) 
-            printf("  "); 
- 
-        for(j=i; j <= 2*i-1; ++j) 
-            printf("* "); 
- 
-        for(j=0; j < i-1; ++j) 
-            printf("* "); 
- 
-        printf("\n"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```c
+#include<stdio.h>
+
+int main()
+{
+    int rows, i, j, space;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&rows);
+
+    for(i=rows; i>=1; --i)
+    {
+        for(space=0; space < rows-i; ++space)
+            printf("  ");
+
+        for(j=i; j <= 2*i-1; ++j)
+            printf("* ");
+
+        for(j=0; j < i-1; ++j)
+            printf("* ");
+
+        printf("\n");
+    }
+
+    return 0;
+}
+``` 
 
 #### مثال 9: طباعة مثلث باسكال
 
@@ -553,66 +575,69 @@ localeTitle: الحلقات من جميع الأنواع
 
 **مصدر الرمز**
 
- `#include <stdio.h> 
- 
- int main() 
- { 
-    int rows, coef = 1, space, i, j; 
- 
-    printf("Enter number of rows: "); 
-    scanf("%d",&rows); 
- 
-    for(i=0; i<rows; i++) 
-    { 
-        for(space=1; space <= rows-i; space++) 
-            printf("  "); 
- 
-        for(j=0; j <= i; j++) 
-        { 
-            if (j==0 || i==0) 
-                coef = 1; 
-            else 
-                coef = coef*(i-j+1)/j; 
- 
-            printf("%4d", coef); 
-        } 
-        printf("\n"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```c
+#include <stdio.h>
+
+int main()
+{
+    int rows, coef = 1, space, i, j;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&rows);
+
+    for(i=0; i<rows; i++)
+    {
+        for(space=1; space <= rows-i; space++)
+            printf("  ");
+
+        for(j=0; j <= i; j++)
+        {
+            if (j==0 || i==0)
+                coef = 1;
+            else
+                coef = coef*(i-j+1)/j;
+
+            printf("%4d", coef);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+``` 
 
 #### مثال 10: طباعة مثلث فلويد.
 
- `1 
- 2 3 
- 4 5 6 
- 7 8 9 10 
-` 
+```
+1
+2 3
+4 5 6
+7 8 9 10
+``` 
 
 **مصدر الرمز**
 
- `#include <stdio.h> 
- 
- int main() 
- { 
-    int rows, i, j, number= 1; 
- 
-    printf("Enter number of rows: "); 
-    scanf("%d",&rows); 
- 
-    for(i=1; i <= rows; i++) 
-    { 
-        for(j=1; j <= i; ++j) 
-        { 
-            printf("%d ", number); 
-            ++number; 
-        } 
- 
-        printf("\n"); 
-    } 
- 
-    return 0; 
- } 
-`
+```c
+#include <stdio.h>
+
+int main()
+{
+    int rows, i, j, number= 1;
+
+    printf("Enter number of rows: ");
+    scanf("%d",&rows);
+
+    for(i=1; i <= rows; i++)
+    {
+        for(j=1; j <= i; ++j)
+        {
+            printf("%d ", number);
+            ++number;
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+```

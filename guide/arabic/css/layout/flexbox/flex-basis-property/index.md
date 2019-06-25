@@ -8,8 +8,9 @@ localeTitle: خصائص Flex Basis
 
 ## بناء الجملة
 
- `flex-basis: auto | content | <width> | <height>; 
-` 
+```css
+flex-basis: auto | content | <width> | <height>;
+``` 
 
 ## أساس المرن: السيارات
 

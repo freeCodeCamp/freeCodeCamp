@@ -15,15 +15,17 @@ localeTitle: COUNT COUNT Aggregate Function
 
 كمرجع ، إليك البيانات الحالية لجميع الصفوف في قاعدة بيانات الطلاب الخاصة بنا.
 
- `select studentID, FullName, programOfStudy, sat_score from student; -- all records with fields of interest 
-` 
+```sql
+select studentID, FullName, programOfStudy, sat_score from student; -- all records with fields of interest
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/count01.JPG?raw=true)
 
 توفر عبارة SQL هذه حسابًا لكل الصفوف. لاحظ أنه يمكنك منح عمود COUNT الناتج اسمًا باستخدام "AS".
 
- `select count(*) AS studentCount from student; -- count of all records 
-` 
+```sql
+select count(*) AS studentCount from student; -- count of all records
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/count02.JPG?raw=true)
 
@@ -43,11 +45,12 @@ localeTitle: COUNT COUNT Aggregate Function
 
 في ما يلي مثال على ذلك باستخدام جدول أموال الحملة. هذا هو مجموع الدولارات في كل معاملة وعدد المساهمات لكل حزب سياسي خلال الحملة الرئاسية الأمريكية لعام 2016.
 
- `select Specific_Party, Election_Year, format(sum(Total_$),2) AS contribution$Total, count(*) AS numberOfContributions 
- from combined_party_data 
- group by Specific_Party,Election_Year 
- having Election_Year = 2016; 
-` 
+```sql
+select Specific_Party, Election_Year, format(sum(Total_$),2) AS contribution$Total, count(*) AS numberOfContributions
+from combined_party_data
+group by Specific_Party,Election_Year
+having Election_Year = 2016;
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/count05.JPG?raw=true)
 

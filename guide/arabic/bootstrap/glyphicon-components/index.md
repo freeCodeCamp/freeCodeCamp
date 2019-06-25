@@ -10,11 +10,11 @@ localeTitle: مكونات غليفيكون
 
 ## أمثلة
 
- `
-<p>Star icon: <span class="glyphicon glyphicon-star"></span></p> 
- <p>Refresh icon: <span class="glyphicon glyphicon-refresh"></span></p> 
- <p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p> 
-` 
+```html
+<p>Star icon: <span class="glyphicon glyphicon-star"></span></p>
+<p>Refresh icon: <span class="glyphicon glyphicon-refresh"></span></p>
+<p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p>
+``` 
 
 ## ملحوظة
 
