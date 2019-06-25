@@ -1,8 +1,8 @@
 ---
 title: jQuery
-localeTitle: JQuery
+localeTitle: jQuery
 ---
-## JQuery
+## jQuery
 
 Это заглушка. [Помогите нашему сообществу расширить его](https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md) .
 

@@ -12,8 +12,9 @@ localeTitle: وراثة السلوكيات من Supertype
 
 السماح للحيوان = Object.create (Animal.prototype) ؛
 
- `### Solution 
-` 
+```
+### Solution
+``` 
 
 جافا سكريبت
 

@@ -44,10 +44,11 @@ localeTitle: مؤشرات CSS
 
 يمكنك أيضًا تعيين صورة كمؤشر.
 
- `.custom-cursor { 
-  cursor: url(cursor-image.png); 
- } 
-` 
+```
+.custom-cursor {
+  cursor: url(cursor-image.png);
+}
+``` 
 
 #### معلومات اكثر:
 

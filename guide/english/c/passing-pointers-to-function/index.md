@@ -45,6 +45,27 @@ int main(){
 }
 ```
 
-In the second code example you were able to change the values of the variables only because you were constantly de-referencing pointers within the function, changing the data directly in memory, instead of in the function's temporary frame on the stack.
+In the second code example you were able to change the values of the variables only because you were constantly de-referencing a pointer within the function instead of trying to change the values directly
 
 Notice the use of `*` to denote a pointer to a piece of memory and the use of `&` to denote the address of a piece of memory.
+
+In another example, suppose you want to modify the values of 2-3 variables during a function call. Since C does not allows us to return multiple values, a clever way to get around this is to pass the pointers to the variables to that functions, and make changes to their value inside that function.
+```C
+//correct demonstration of the above statement
+#include <stdio.h>
+void change(int *a, int *b, int *c)
+{
+    *a=(*a)*10;
+    *b=(*b)-10;
+    *c=*a + *b;
+}
+
+int main()
+{
+    int a=50,b=100,c;
+    c=a+b;
+    printf("a=%d b=%d c=%d \n",a,b,c);
+    change(&a,&b,&c);
+    printf("a=%d b=%d c=%d",a,b,c);
+}
+```

@@ -8,20 +8,21 @@ localeTitle: استدعاء وظيفة
 
 يجب أن تكون الوظائف في النطاق عندما يتم استدعاؤها. نطاق الوظيفة هو الوظيفة التي يتم الإعلان عنها ، أو البرنامج بالكامل إذا تم الإعلان عنه في المستوى الأعلى.
 
- `function myFunction(a, b) { 
-  return a * b; 
- } 
- myFunction(10, 2);           // Function invocation, will return 20 
- 
- //optional parameters (es6 only) 
- //allow to set optional parameters 
- 
- function myFunction(a, b = 10) { 
-  return a * b; 
- } 
- myFunction(1);           // Function invocation, will return 10 
- myFunction(1,5);           // Function invocation, will return 5 
-` 
+```javascript
+function myFunction(a, b) {
+  return a * b;
+}
+myFunction(10, 2);           // Function invocation, will return 20
+
+//optional parameters (es6 only)
+//allow to set optional parameters
+
+function myFunction(a, b = 10) {
+  return a * b;
+}
+myFunction(1);           // Function invocation, will return 10
+myFunction(1,5);           // Function invocation, will return 5
+``` 
 
 في مثال التعليمة البرمجية ، يكون a و b هما معلمات الدالة التي تحتوي على القيمتين 10 و 2 ، وهما الوسيطات المستخدمة في استدعاء الدالة.
 
@@ -31,15 +32,16 @@ localeTitle: استدعاء وظيفة
 
 المثال التالي يقوم بإنشاء كائن ( `myObject` ) ، مع خاصيتين ( `firstName` و `lastName` ) ، وطريقة ( `fullName` ):
 
- `var myObject = { 
-  firstName:"John", 
-  lastName: "Doe", 
-  fullName: function () { 
-    return this.firstName + " " + this.lastName; 
-  } 
- } 
- myObject.fullName();         // Function invoked as a method, will return "John Doe" 
-` 
+```javascript
+var myObject = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
+}
+myObject.fullName();         // Function invoked as a method, will return "John Doe"
+``` 
 
 ### وظائف السهم
 

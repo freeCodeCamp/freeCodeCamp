@@ -10,22 +10,22 @@ localeTitle: تجاوز تعريفات الطبقة عن طريق تحديد س�
 
 مثال على ذلك هو:
 
- `
-<style> 
-  body { 
-    background-color: black; 
-    font-family: Arial; 
-    color: black; 
-  } 
-  .red-text { 
-    color: red; 
-  } 
-  .blue-text { 
-    color: blue; 
-  } 
- </style> 
- <h1 class="red-text blue-text">Example</h1> 
-` 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: Arial;
+    color: black;
+  }
+  .red-text {
+    color: red;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 class="red-text blue-text">Example</h1>
+``` 
 
 في المثال أعلاه ، سيكون نص `Example` باللون الأزرق لأن آخر صف تمت إضافته كان `blue-text` .
 
@@ -33,34 +33,34 @@ localeTitle: تجاوز تعريفات الطبقة عن طريق تحديد س�
 
 يمكنك إنشاء سمة `id` عن طريق إضافة الرمز `#` قبل اسم الفئة ، كما هو موضح أدناه:
 
- `
-<style> 
-  #purple-text { 
-    color: purple; 
-  } 
- </style> 
-` 
+```html
+<style>
+  #purple-text {
+    color: purple;
+  }
+</style>
+``` 
 
 هذا مثال يوضح لك كيفية **تجاوز تعريفات Class بواسطة سمات معرف التصميم** :
 
- `
-<style> 
-  body { 
-    background-color: black; 
-    font-family: Arial; 
-    color: black; 
-  } 
-  .red-text { 
-    color: red; 
-  } 
-  .blue-text { 
-    color: blue; 
-  } 
-  #green-color { 
-    color: green; 
-  } 
- </style> 
- <h1 id="green-color" class="red-text blue-text">Example</h1> 
-` 
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: Arial;
+    color: black;
+  }
+  .red-text {
+    color: red;
+  }
+  .blue-text {
+    color: blue;
+  }
+  #green-color {
+    color: green;
+  }
+</style>
+<h1 id="green-color" class="red-text blue-text">Example</h1>
+``` 
 
 سيؤدي ذلك إلى جعل النص `Example` أخضر لأن سمة `id` ستحظى دائمًا بالأسبقية على تعريفات `class` .

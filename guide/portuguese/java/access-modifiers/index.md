@@ -14,7 +14,7 @@ Estes modificadores de acesso podem ser aplicados a campos, métodos e classes (
 
 #### Referência da Tabela de Modificadores de Acesso:
 
-![Tabela de modificadores de acesso](https://i.imgur.com/zoMspyn.png)
+![Tabela de modificadores de acesso](https://cdn-media-1.freecodecamp.org/imgr/zoMspyn.png)
 
 #### Modificador de Acesso Privado
 

@@ -43,8 +43,9 @@ localeTitle: اختيار نوع
 
 تبديل الدالة (A، x، y) { var temp = A \[x\]؛ A \[x\] = A \[y\]؛ A \[ص\] = درجة الحرارة }
 
- `### Implementation in Python 
-` 
+```
+### Implementation in Python
+``` 
 
 الثعبان def seletion _sort (arr): إن لم يكن arr: عودة arr لأني في المدى (len (arr)): دقيقة_ ط = ط لـ j في النطاق (i + 1، len (arr)): إذا كان \[j\] <arr \[min _i\]: دقيقة_ ط = ي arr \[i\] ، arr \[min _i\] = arr \[min_ i\] ، arr \[i\] \`\` \`
 

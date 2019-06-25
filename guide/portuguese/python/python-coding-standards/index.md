@@ -22,7 +22,7 @@ Nós amamos aderir às convenções. A comunidade de usuários de python criou u
 
 Veja como você verifica se o seu código python atende aos padrões dele.
 
-```console
+```shell
 :~$ pip install pep8 
  :~$ pep8 --first myCode.py 
 ```

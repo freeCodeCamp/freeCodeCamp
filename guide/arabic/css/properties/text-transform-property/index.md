@@ -8,24 +8,25 @@ localeTitle: خاصية تحويل النص
 
 أكثر القيم استخدامًا لهذه الخاصية هي `lowercase` `uppercase` `capitalize` .
 
- `<style> 
- .lowercased { 
-  text-transform: lowercase; 
- } 
- 
- .uppercased { 
-  text-transform: uppercase; 
- } 
- 
- .capitalized { 
-  text-transform: capitalize; 
- } 
- </style> 
- 
- <p class="uppercased">this text was lowercase.</p> <!-- = THIS TEXT WAS LOWERCASE. --> 
- <p class="lowercased">THIS TEXT WAS UPPERCASE.</p> <!-- = this text was uppercase. --> 
- <p class="capitalized">this text wasn't capitalized.</p> <!-- = This Text Wasn't Capitalized. --> 
-` 
+```
+<style>
+.lowercased {
+  text-transform: lowercase;
+}
+
+.uppercased {
+  text-transform: uppercase;
+}
+
+.capitalized {
+  text-transform: capitalize;
+}
+</style>
+
+<p class="uppercased">this text was lowercase.</p> <!-- = THIS TEXT WAS LOWERCASE. -->
+<p class="lowercased">THIS TEXT WAS UPPERCASE.</p> <!-- = this text was uppercase. -->
+<p class="capitalized">this text wasn't capitalized.</p> <!-- = This Text Wasn't Capitalized. -->
+``` 
 
 #### معلومات اكثر:
 

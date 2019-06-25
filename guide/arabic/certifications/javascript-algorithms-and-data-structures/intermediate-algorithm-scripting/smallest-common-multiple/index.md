@@ -82,7 +82,6 @@ localeTitle: أصغر مشترك متعددة
  smallestCommons([1,5]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLn2/0)
 
 ### شرح الشفرة:
 
@@ -139,7 +138,6 @@ localeTitle: أصغر مشترك متعددة
  smallestCommons([1,5]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLn4/0)
 
 ### شرح الشفرة:
 
@@ -199,7 +197,6 @@ localeTitle: أصغر مشترك متعددة
  smallestCommons([1,5]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/MR9P/latest)
 
 ### شرح الشفرة:
 
