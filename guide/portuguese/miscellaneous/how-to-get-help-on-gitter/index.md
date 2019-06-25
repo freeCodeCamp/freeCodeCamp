@@ -10,4 +10,4 @@ Desculpe, você está preso. Felizmente, há muitos campistas que ficam na Gitte
     *   Se o problema parece estar no próprio site, poste uma captura de tela do problema ou descreva-o bem.
 2.  Lembre-se que as pessoas lá são campistas como você, então seja cortês!
     
-3.  Se o seu problema confundiu todos em Gitter, tente [Pesquisar o seu problema no Github](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) para qualquer pessoa que tenha postado sobre um problema semelhante.
+3.  Se o seu problema confundiu todos em Gitter, tente [Pesquisar o seu problema no GitHub](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) para qualquer pessoa que tenha postado sobre um problema semelhante.

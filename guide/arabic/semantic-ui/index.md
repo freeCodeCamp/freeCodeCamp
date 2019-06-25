@@ -62,28 +62,31 @@ UI الدلالي `1.x` صدر لأول مرة في نوفمبر 2014 مع كس�
 
 في دليل المشروع الخاص بك ، قم بتثبيت gulp عالميًا باستخدام npm
 
- `npm install -g gulp 
-` 
+```
+npm install -g gulp
+``` 
 
 تثبيت واجهة المستخدم الدلالية
 
- `npm install semantic-ui --save 
- cd semantic/ 
- gulp build 
-` 
+```
+npm install semantic-ui --save
+cd semantic/
+gulp build
+``` 
 
 تضمين في HTML
 
- `
-<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css"> 
- <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script> 
- <script src="semantic/dist/semantic.min.js"></script> 
-` 
+```html
+<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+``` 
 
 تحديث عن طريق npm
 
- `npm update 
-` 
+```
+npm update
+``` 
 
 3.  **التكامل مع الأطر الأخرى**
 

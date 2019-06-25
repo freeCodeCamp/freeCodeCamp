@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Anular declaraciones de clase por atributos de ID de estilo
 ---
 
-## Description
+## Descripción
 <section id="description"> Acabamos de demostrar que los navegadores leen CSS de arriba a abajo. Eso significa que, en caso de conflicto, el navegador utilizará la declaración de CSS que haya sido la última. Pero aún no hemos terminado. Hay otras formas en que puedes anular CSS. ¿Recuerdas los atributos de identificación? Anulemos sus clases de <code>blue-text</code> <code>pink-text</code> <code>blue-text</code> , y hagamos que su elemento <code>h1</code> naranja, asignando una identificación al elemento <code>h1</code> y luego diseñando ese tipo de identificación. </section>
 
-## Instructions
-<section id="instructions"> Dale a tu elemento <code>h1</code> el atributo <code>id</code> del <code>orange-text</code> . Recuerde, los estilos de identificación tienen este aspecto: <code>&lt;h1 id=&quot;orange-text&quot;&gt;</code> Deje las clases de <code>pink-text</code> <code>blue-text</code> y <code>pink-text</code> en su elemento <code>h1</code> . Cree una declaración CSS para su ID de <code>orange-text</code> en su elemento de <code>style</code> . Aquí hay un ejemplo de cómo se ve esto: <blockquote> # texto marrón { <br> color marrón; <br> } </blockquote> Nota: No importa si declara este CSS por encima o por debajo de la clase de texto rosado, ya que el atributo id siempre tendrá prioridad. </section>
+## Instrucciones
+<section id="instructions"> Dale a tu elemento <code>h1</code> el atributo <code>id</code> del <code>orange-text</code> . Recuerde, los estilos de identificación tienen este aspecto: <code>&lt;h1 id=&quot;orange-text&quot;&gt;</code> Deje las clases de <code>pink-text</code> <code>blue-text</code> y <code>pink-text</code> en su elemento <code>h1</code> . Cree una declaración CSS para su ID de <code>orange-text</code> en su elemento de <code>style</code> . Aquí hay un ejemplo de cómo se ve esto: <blockquote> #orange-text { <br> color: orange; <br> } </blockquote> Nota: No importa si declara este CSS por encima o por debajo de la clase de texto rosado, ya que el atributo id siempre tendrá prioridad. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -65,7 +65,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

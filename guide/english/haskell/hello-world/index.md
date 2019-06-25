@@ -2,7 +2,7 @@
 title: Hello World Program
 ---
 
-## The simplest Hello World Program in Haskell
+## A Simple Hello World Program in Haskell
 ```haskell
 main :: IO ()
 main = do
@@ -22,3 +22,4 @@ main :: IO ()
 main = printer hello
 
 ```
+> Function compositions are a better way to write multiple nested functions in Haskell. In the above example, putStrLn.show is equivalent to (putStrLn (show)).

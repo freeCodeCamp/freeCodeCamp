@@ -7,9 +7,31 @@ challengeType: 1
 ## Description
 <section id='description'>
 Anytime a constructor function creates a new object, that object is said to be an <code>instance</code> of its constructor. JavaScript gives a convenient way to verify this with the <code>instanceof</code> operator. <code>instanceof</code> allows you to compare an object to a constructor, returning <code>true</code> or <code>false</code> based on whether or not that object was created with the constructor. Here's an example:
-<blockquote>let Bird = function(name, color) {<br>&nbsp;&nbsp;this.name = name;<br>&nbsp;&nbsp;this.color = color;<br>&nbsp;&nbsp;this.numLegs = 2;<br>}<br><br>let crow = new Bird("Alexis", "black");<br><br>crow instanceof Bird; // => true</blockquote>
+
+```js
+let Bird = function(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 2;
+}
+
+let crow = new Bird("Alexis", "black");
+
+crow instanceof Bird; // => true
+```
+
 If an object is created without using a constructor, <code>instanceof</code> will verify that it is not an instance of that constructor:
-<blockquote>let canary = {<br>&nbsp;&nbsp;name: "Mildred",<br>&nbsp;&nbsp;color: "Yellow",<br>&nbsp;&nbsp;numLegs: 2<br>};<br><br>canary instanceof Bird; // => false</blockquote>
+
+```js
+let canary = {
+  name: "Mildred",
+  color: "Yellow",
+  numLegs: 2
+};
+
+canary instanceof Bird; // => false
+```
+
 </section>
 
 ## Instructions

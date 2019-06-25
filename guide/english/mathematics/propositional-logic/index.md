@@ -3,13 +3,44 @@ title: Propositional Logic
 ---
 ## Propositional Logic Intro
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/propositional-logic/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Propositional logic is a branch of logic that uses propositions, logical connectives and inference rules to reach conclusions.  Propositions are statements or assertions that only be either false or true. These statements are the basic building blocks of propositional logic.  Logical connectives bring propositions together to define argument and reach conclusions. Inference rules dictate how arguments are structured. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Propositions are simple statements that can be represented by simple symbols. Those symbols can then be used with logical connectives to reach conclusions.
+For example take the following argument:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+First Premise:  If it is snowing, then it is winter.
+
+Second Premise: It is snowing.
+
+Conclusion: Therefore, it is winter.
+
+This argument can be rewritten in the form:
+
+First Premise: P ->  Q
+
+Second Premise: P
+
+Conclusion: Q
+
+## Modus Ponens
+
+The following argument illustrates one of the most basic inference rules of propositional logic: Modus Ponens also known as implication elimination.
+
+The rule for modus ponens takes the simple form: If P is true then Q is true.  P is true therefore Q is true.  
+
+P and Q can be replaced with any statement and the argument will be valid meaning if the premises are true, then the conclusion must be true by necessity. However, the argument is not sound unless it is both valid and the premises are true. For example,
+
+The following argument is valid but not sound:
+
+First Premise: If it is raining, it is a Thursday.
+
+Second Premise: It is raining.
+
+Conclusion: It is Thursday.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+- [Wikipedia: Propositional Calclulus]( https://en.wikipedia.org/wiki/Propositional_calculus)
+
+
 
 

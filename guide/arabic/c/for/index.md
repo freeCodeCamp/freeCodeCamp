@@ -8,10 +8,11 @@ localeTitle: لحلقة
 
 ## بناء جملة من أجل حلقة
 
- `for ( init; condition; increment ) { 
-   statement(s); 
- } 
-` 
+```c
+for ( init; condition; increment ) {
+   statement(s);
+}
+``` 
 
 تتألف الحلقة `for` من 3 أقسام ، وقسم التهيئة ، وحالة محددة ، وقسم التشغيل التزايدي أو التزايدي. تتحكم هذه المقاطع 3 و `for` حلقة.
 
@@ -35,28 +36,32 @@ localeTitle: لحلقة
 
 ## انتاج:
 
- `> Item on index 0 is 1 
- > Item on index 1 is 2 
- > Item on index 2 is 3 
- > Item on index 3 is 4 
-`
+```shell
+> Item on index 0 is 1
+> Item on index 1 is 2
+> Item on index 2 is 3
+> Item on index 3 is 4
+```
+
 ## مثال Fibonacci
 
-`#include <stdio.h>
- int main () {
-     int A[10];
-    A[0]=1;
-    A[1]=1;
-     for (int i = 2; i < 10; i++) {
-        A[i]=A[i-1]+A[i-2];
-    }
-     for (int i = 0; i < 10; i++) {
-    	printf(" %d",A[i]);
-    }
+```c
+#include <stdio.h>
+int main () {
+  int A[10];
+  A[0]=1;
+  A[1]=1;
+  for (int i = 2; i < 10; i++) {
+    A[i]=A[i-1]+A[i-2];
+  }
+  for (int i = 0; i < 10; i++) {
+    printf(" %d",A[i]);
+  }
 }
-`
+```
+
 ## انتاج:
-` 
+
+```shell 
  1 1 2 3 5 8 13 21 34 55
- 
-`
+```

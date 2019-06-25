@@ -8,9 +8,21 @@ challengeType: 1
 <section id='description'>
 When an object inherits its <code>prototype</code> from another object, it also inherits the <code>supertype</code>'s constructor property.
 Here's an example:
-<blockquote>function Bird() { }<br>Bird.prototype = Object.create(Animal.prototype);<br>let duck = new Bird();<br>duck.constructor // function Animal(){...}</blockquote>
+
+```js
+function Bird() { }
+Bird.prototype = Object.create(Animal.prototype);
+let duck = new Bird();
+duck.constructor // function Animal(){...}
+```
+
 But <code>duck</code> and all instances of <code>Bird</code> should show that they were constructed by <code>Bird</code> and not <code>Animal</code>. To do so, you can manually set <code>Bird's</code> constructor property to the <code>Bird</code> object:
-<blockquote>Bird.prototype.constructor = Bird;<br>duck.constructor // function Bird(){...}</blockquote>
+
+```js
+Bird.prototype.constructor = Bird;
+duck.constructor // function Bird(){...}
+```
+
 </section>
 
 ## Instructions

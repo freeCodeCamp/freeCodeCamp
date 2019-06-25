@@ -10,7 +10,7 @@ localeTitle: 输入和输出
 
 “Hello World”程序使用`cout`打印“Hello World！”到控制台：
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  
@@ -30,24 +30,24 @@ localeTitle: 输入和输出
 
 几乎所有东西都可以放入一个流：字符串，数字，变量，表达式等。这里有一些有效的流插入示例：
 
-```C++
+```cpp
 // Notice we can use the number 42 and not the string "42". 
  cout << "The meaning of life is " << 42 << endl;` // Output: The meaning of life is 42 
 ```
 
-```C++
+```cpp
 string name = "Tim"; 
  cout << "Except for you, " << name << endl;`// Output: Except for you, Tim 
 ```
 
-```C++
+```cpp
 string name = "Tim"; 
  cout << name; 
  cout << " is a great guy!" << endl;` 
  // Output: Tim is a great guy! 
 ```
 
-```C++
+```cpp
 int a = 3; 
  cout << a*2 + 18/a << endl;`// Output: 12 
 ```
@@ -56,7 +56,7 @@ int a = 3;
 
 C ++总是让_你_掌控，并且只完成你告诉它要做的事情。这有时会令人惊讶，如下例所示：
 
-```C++
+```cpp
 string name = "Sarah"; 
  cout << "Good morning" << name << "how are you today? << endl; 
 ```
@@ -65,7 +65,7 @@ string name = "Sarah";
 
 换行也不会自己发生。你可能会认为这会在四行打印一个食谱：
 
-```C++
+```cpp
 cout << "To make bread, you need:"; 
  cout << "* One egg"; 
  cout << "* One water"; 
@@ -76,7 +76,7 @@ cout << "To make bread, you need:";
 
 您可以通过在每行之后添加`endl`来解决此问题，因为如前所述， `endl`在换行流中插入换行符。但是，它也会强制冲洗缓冲区，这会让我们失去一点性能，因为我们可以一次打印所有的线条。因此，最好的方法是在行尾添加实际的换行符，并且最后只使用`endl` ：
 
-```C++
+```cpp
 cout << "To make bread, you need:\n"; 
  cout << "* One egg\n"; 
  cout << "* One water\n"; 
@@ -89,7 +89,7 @@ cout << "To make bread, you need:\n";
 
 要从控制台中读取，您可以像使用`cout`一样使用_输入流_ `cin` ，但不要将内容放入`cin` ，而是“将它们取出”。以下程序从用户读取两个数字并将它们加在一起：
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  
@@ -112,7 +112,7 @@ cout << "To make bread, you need:\n";
 
 提取运算符`<<`也可以链接。这是与上次相同的程序，但是以更简洁的方式编写：
 
-```C++
+```cpp
 #include<iostream> 
  using namespace std; 
  

@@ -8,7 +8,7 @@ localeTitle: Для цикла
 
 ## Синтаксис
 
-```C#
+```csharp
 for ((Initial variable); (condition); (step)) 
     { 
     (code) 
@@ -25,7 +25,7 @@ for ((Initial variable); (condition); (step))
 
 ## пример
 
-```C#
+```csharp
 int[] array = { 1, 2, 3, 4, 5 }; 
  for (int i = 0; i < array.Length; i++) 
  { 
