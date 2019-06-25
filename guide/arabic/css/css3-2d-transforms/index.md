@@ -37,12 +37,13 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: translate(50px, 100px); /* IE 9 */ 
-  -webkit-transform: translate(50px, 100px); /* Safari */ 
-  transform: translate(50px, 100px); 
- } 
-` 
+```css
+div {
+  -ms-transform: translate(50px, 100px); /* IE 9 */
+  -webkit-transform: translate(50px, 100px); /* Safari */
+  transform: translate(50px, 100px);
+}
+``` 
 
 ## طريقة التدوير ()
 
@@ -52,12 +53,13 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: rotate(20deg); /* IE 9 */ 
-  -webkit-transform: rotate(20deg); /* Safari */ 
-  transform: rotate(20deg); 
- } 
-` 
+```css
+div {
+  -ms-transform: rotate(20deg); /* IE 9 */
+  -webkit-transform: rotate(20deg); /* Safari */
+  transform: rotate(20deg);
+}
+``` 
 
 يؤدي استخدام القيم السالبة إلى تدوير العنصر عكس اتجاه عقارب الساعة.
 
@@ -65,12 +67,13 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: rotate(-20deg); /* IE 9 */ 
-  -webkit-transform: rotate(-20deg); /* Safari */ 
-  transform: rotate(-20deg); 
- } 
-` 
+```css
+div {
+  -ms-transform: rotate(-20deg); /* IE 9 */
+  -webkit-transform: rotate(-20deg); /* Safari */
+  transform: rotate(-20deg);
+}
+``` 
 
 ## مقياس () الطريقة
 
@@ -80,23 +83,25 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: scale(2, 3); /* IE 9 */ 
-  -webkit-transform: scale(2, 3); /* Safari */ 
-  transform: scale(2, 3); 
- } 
-` 
+```css
+div {
+  -ms-transform: scale(2, 3); /* IE 9 */
+  -webkit-transform: scale(2, 3); /* Safari */
+  transform: scale(2, 3);
+}
+``` 
 
 المثال التالي يقلل عنصر `<div>` ليكون نصف أصله الأصلي العرض والارتفاع:
 
 ### مثال:
 
- `div { 
-  -ms-transform: scale(0.5, 0.5); /* IE 9 */ 
-  -webkit-transform: scale(0.5, 0.5); /* Safari */ 
-  transform: scale(0.5, 0.5); 
- } 
-` 
+```css
+div {
+  -ms-transform: scale(0.5, 0.5); /* IE 9 */
+  -webkit-transform: scale(0.5, 0.5); /* Safari */
+  transform: scale(0.5, 0.5);
+}
+``` 
 
 ## طريقة skewX ()
 
@@ -106,12 +111,13 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: skewX(20deg); /* IE 9 */ 
-  -webkit-transform: skewX(20deg); /* Safari */ 
-  transform: skewX(20deg); 
- } 
-` 
+```css
+div {
+  -ms-transform: skewX(20deg); /* IE 9 */
+  -webkit-transform: skewX(20deg); /* Safari */
+  transform: skewX(20deg);
+}
+``` 
 
 ## طريقة (())
 
@@ -121,12 +127,13 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: skewY(20deg); /* IE 9 */ 
-  -webkit-transform: skewY(20deg); /* Safari */ 
-  transform: skewY(20deg); 
- } 
-` 
+```css
+div {
+  -ms-transform: skewY(20deg); /* IE 9 */
+  -webkit-transform: skewY(20deg); /* Safari */
+  transform: skewY(20deg);
+}
+``` 
 
 ## طريقة الانحراف ()
 
@@ -136,23 +143,25 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: skew(20deg, 10deg); /* IE 9 */ 
-  -webkit-transform: skew(20deg, 10deg); /* Safari */ 
-  transform: skew(20deg, 10deg); 
- } 
-` 
+```css
+div {
+  -ms-transform: skew(20deg, 10deg); /* IE 9 */
+  -webkit-transform: skew(20deg, 10deg); /* Safari */
+  transform: skew(20deg, 10deg);
+}
+``` 
 
 إذا لم يتم تحديد المعلمة الثانية ، فإنها تحتوي على قيمة صفرية. لذلك ، ما يلي على سبيل المثال يتخطى عنصر `<div>` 20 درجة على طول المحور X:
 
 ### مثال:
 
- `div { 
-  -ms-transform: skew(20deg); /* IE 9 */ 
-  -webkit-transform: skew(20deg); /* Safari */ 
-  transform: skew(20deg); 
- } 
-` 
+```css
+div {
+  -ms-transform: skew(20deg); /* IE 9 */
+  -webkit-transform: skew(20deg); /* Safari */
+  transform: skew(20deg);
+}
+``` 
 
 ## طريقة المصفوفة ()
 
@@ -164,12 +173,13 @@ localeTitle: CSS3 2d يحول
 
 ### مثال:
 
- `div { 
-  -ms-transform: matrix(1, -0.3, 0, 1, 0, 0); /* IE 9 */ 
-  -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0); /* Safari */ 
-  transform: matrix(1, -0.3, 0, 1, 0, 0); 
- } 
-` 
+```css
+div {
+  -ms-transform: matrix(1, -0.3, 0, 1, 0, 0); /* IE 9 */
+  -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0); /* Safari */
+  transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+``` 
 
 ## CSS3 خصائص التحويل
 

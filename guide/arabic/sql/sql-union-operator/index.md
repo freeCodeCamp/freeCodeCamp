@@ -16,21 +16,23 @@ localeTitle: مشغل اتحاد SQL
 
 بيان SQL
 
- `SELECT 'aaaaa' 
- UNION 
- SELECT 'bbbbbbbbb'; 
-` 
+```sql
+SELECT 'aaaaa'
+UNION
+SELECT 'bbbbbbbbb';
+``` 
 
 انتاج |
 
- `+-----------+ 
- | aaaaa     | 
- +-----------+ 
- | aaaaa     | 
- | bbbbbbbbb | 
- +-----------+ 
- 2 rows in set (0.00 sec) 
-` 
+```text
++-----------+
+| aaaaa     |
++-----------+
+| aaaaa     |
+| bbbbbbbbb |
++-----------+
+2 rows in set (0.00 sec)
+``` 
 
 ### مثال باستخدام جداول الطلاب
 
@@ -45,15 +47,16 @@ localeTitle: مشغل اتحاد SQL
 
 \`\` \`النص + ----------- + -------------------------------- + | StudentID | FullName | + ----------- + -------------------------------- + | 1 | مونيك ديفيز | 2 | تيري جوتيريز | | 3 | سبنسر باوتير | | 4 | لويس رمزي | 5 | ألفين غرين | | 7 | Maximo.Smith@freeCodeCamp.org | | 8 | Michael.Roach@freeCodeCamp.ort | + ----------- + -------------------------------- + 7 صفوف في مجموعة (0.00 ثانية)
 
- `## SQL UNION ALL Operator 
- 
- The UNION ALL operator is an extension to UNION operator where it should result you a A+B of rows in the ouptput assuming A and B is your input, in simple terms UNION ALL doesn't deduplicate. 
- 
- 
- ### Basic Syntax 
- 
- SQL Statement 
-` 
+```
+## SQL UNION ALL Operator
+
+The UNION ALL operator is an extension to UNION operator where it should result you a A+B of rows in the ouptput assuming A and B is your input, in simple terms UNION ALL doesn't deduplicate.
+
+
+### Basic Syntax
+
+SQL Statement
+``` 
 
 مزود SELECT expression1، expression2،… expression _n من الجداول \[حيث الظروف\] الاتحاد كله SELECT expression1، expression2،… expression_ n من الجداول \[حيث الظروف\] ؛ \`\` \`
 

@@ -14,10 +14,11 @@ localeTitle: إعداد تطوير تطبيق Cordova iOS للنشر
 
 ابدأ بفتح الوحدة الطرفية وإنشاء مشروع Cordova جديد (استخدم sudo فقط إذا كان لديك مشكلات في الإذن ، أي أخطاء EACCESS):
 
- `sudo cordova create iosdemo 
- cd iosdemo 
- sudo cordova platform add ios 
-` 
+```
+sudo cordova create iosdemo
+cd iosdemo
+sudo cordova platform add ios
+``` 
 
 في وقت كتابة هذا الدليل ، فإن هذا الإصدار من منصة Cordova iOS هو: 4.3.1
 
@@ -25,13 +26,15 @@ localeTitle: إعداد تطوير تطبيق Cordova iOS للنشر
 
 الخطوة التالية هي لتشغيل الأمر بناء كوردوفا. سيؤدي هذا إلى تحويل شفرة التطبيق إلى ملف .xcodeproj الذي سنستخدمه بعد ذلك.
 
- `sudo cordova build ios 
-` 
+```
+sudo cordova build ios
+``` 
 
 سيكون ملف مشروع Xcode الذي تم إنشاؤه في:
 
- `[Your App Folder]/platforms/ios/[Your App Name].xcodeproj 
-` 
+```
+[Your App Folder]/platforms/ios/[Your App Name].xcodeproj
+``` 
 
 الآن في حالة حدوث Android ، يتم توقيع الشفرة باستخدام ملف Keystore بتنسيق jj. ومع ذلك ، في حالة ركاب iOS لتوزيع تطبيقات iOS ، يجب أن يكون لديك حساب مطوّر برامج Apple ، هذا حتى نتمكن من إنشاء _الشهادات_ _وملفات التعريف الاحتياطية_ اللازمة لتوزيع التطبيق.
 

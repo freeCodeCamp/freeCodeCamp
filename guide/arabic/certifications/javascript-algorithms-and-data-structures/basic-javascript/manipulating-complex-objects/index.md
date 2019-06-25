@@ -6,21 +6,22 @@ localeTitle: معالجة الكائنات المعقدة
 
 هنا هو المثال:
 
- `var myMusic = [ 
-  { 
-    "artist": "Billy Joel", 
-    "title": "Piano Man", 
-    "release_year": 1973, 
-    "formats": [ 
-      "CD", 
-      "8T", 
-      "LP" 
-    ], 
-    "gold": true 
-  } 
-  // Add record here 
- ]; 
-` 
+```javascript
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+  // Add record here
+];
+``` 
 
 وإليك الحل: بعد السلسلة `// Add record here` نقوم بإضافة ألبوم جديد إلى `myMusic` . أنت في حاجة للبدء من `,` . ويمكنك فقط نسخ ألبوم تم إنشاؤه بالفعل: `javascript { "artist": "Billy Joel", "title": "Piano Man", "release_year": 1973, "formats": [ "CD", "8T", "LP" ], "gold": true }`
 

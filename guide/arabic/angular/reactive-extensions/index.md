@@ -30,31 +30,33 @@ localeTitle: الامتدادات التفاعلية
 
 أن أكرر بسرعة، و `Observable` الصورة يمكن _ملاحظتها._ هذا بحيث يوفر `Observable` ملاحظات إلى تبعياته بناءً على تدفق البيانات. في RxJS، و `Observable` هي وظيفة مصنعها الخاصة المستخدمة في إنشاء `Observable` الكائنات. مخططهم الأساسي هو على النحو التالي.
 
- `import { Observable } from 'rxjs'; 
- 
- const observable = Observable.create((source) => { 
-  source.next(data); 
- }); 
-` 
+```typescript
+import { Observable } from 'rxjs';
+
+const observable = Observable.create((source) => {
+  source.next(data);
+});
+``` 
 
 `.next` يمر البيانات في حين ينبعث الحدث إلى مراقبيه. يقوم برنامج `Observable` بإرسال البيانات من داخل `.create` callback باستخدام `.next` . وهو يقبل وسيطة واحدة تمثل البيانات التي تنبعث منها. لم يتم تنفيذ `Observable` في JavaScript حتى الآن. يوفر RxJS بديلاً من مكتبته.
 
 الخطوة التالية هي المراقبين. لنقول وظيفة أو يعترض على _مراقبة_ و `Observable` ، ويستخدم بناء الجملة التالي: `observable.subscribe(observer)` . طريقة أخرى للنظر في ذلك هو `producer.subscribe(consumer)` . _تنتج_ `.next` البيانات عن طريق استدعاء `.next` . يتم إعلام العملاء عند تلقي البيانات.
 
- `import { Observable } from 'rxjs'; 
- 
- const observable = Observable.create((source) => { 
-  source.next("Hello"); 
-  source.next("World!"); 
- }); 
- 
- observable.subscribe((word) => console.log(word)); 
- // console output 
- /* 
- Hello 
- World! 
- */ 
-` 
+```typescript
+import { Observable } from 'rxjs';
+
+const observable = Observable.create((source) => {
+  source.next("Hello");
+  source.next("World!");
+});
+
+observable.subscribe((word) => console.log(word));
+// console output
+/*
+Hello
+World!
+*/
+``` 
 
 اثنين من الدعاء من `.next` تحدث من داخل `Observable` الصورة `.create` رد (منتج البيانات). وينتج عن ذلك مخرجات منفصلة لوحدة التحكم من المراقب (مستهلك البيانات).
 
@@ -68,18 +70,19 @@ localeTitle: الامتدادات التفاعلية
 
 وظائف رد الاتصال ليست هي الطريقة الوحيدة لاستهلاك البيانات. يمكن للمراقبين أن يتسلسلوا في بعضهم البعض كمنتجين ومستهلكين.
 
- `const observableI = Observable.create((source) => { 
-  source.next("Hello World!"); 
- }); 
- 
- const observableII = new Observable().subscribe((v) => console.log(v)); 
- 
- observableI.subscribe(observableII); 
- // console output 
- /* 
- Hello World! 
- */ 
-` 
+```typescript
+const observableI = Observable.create((source) => {
+  source.next("Hello World!");
+});
+
+const observableII = new Observable().subscribe((v) => console.log(v));
+
+observableI.subscribe(observableII);
+// console output
+/*
+Hello World!
+*/
+``` 
 
 `.subscribe` هو على `Observable` الكائن. يمكنك أن تسميها `Observable` كمصدر (منتج) وأخرى يمكن ملاحظتها كحجة (مستهلك). يمكن أن تتدفق البيانات (تنبعث) من خلال أي عدد من الملاحظات.
 
@@ -189,22 +192,23 @@ localeTitle: الامتدادات التفاعلية
 
 أهداف `.map` وتحويل كل قيمة تيار الجارية.
 
- `const stream: number[] = [1, 2, 3, 4, 5]; 
- 
- const observable: Observable<number> = from(stream).pipe( 
-    map((val) => (val + 1)) 
- ); 
- observable.subscribe((val: number) => console.log(val)); 
- 
- // console output 
- /* 
- 2 
- 3 
- 4 
- 5 
- 6 
- */ 
-` 
+```typescript
+const stream: number[] = [1, 2, 3, 4, 5];
+
+const observable: Observable<number> = from(stream).pipe(
+    map((val) => (val + 1))
+);
+observable.subscribe((val: number) => console.log(val));
+
+// console output
+/*
+2
+3
+4
+5
+6
+*/
+``` 
 
 ##### التحدي: كل و Foreach
 
@@ -220,47 +224,49 @@ localeTitle: الامتدادات التفاعلية
 
 يستخدم المثال التالي واجهة برمجة تطبيقات عامة تم تصميمها بواسطة [Typicode](https://jsonplaceholder.typicode.com) . يوفر API صفيفًا مكونًا من 100 عنصر لكل طلب `GET` غير متزامن.
 
- `// ./models/post.model.ts 
- 
- export interface Post { 
-  userId: number; 
-  id: number; 
-  title: string; 
-  body: string; 
- } 
-` 
+```typescript
+// ./models/post.model.ts
 
- `// ./services/json.service.ts 
- 
- import { HttpClient } from '@angular/common/http'; 
- import { Injectable } from '@angular/core'; 
- 
- import { Observable, from } from 'rxjs'; 
- import { switchMap, map, filter, reduce } from 'rxjs/operators'; 
- 
- import { Post } from '../models/post.model'; 
- 
- @Injectable({ 
-  providedIn: 'root' 
- }) 
- export class JsonService { 
-  constructor(private http: HttpClient) { } 
- 
-  getPostsByUserId(id: number): Observable<any> { 
-    const trim$ = (stream) => from(stream) 
-      .pipe( 
-        filter((post: Post) => +post.userId === +id), 
-        map((post: Post) => ({ title: post.title, body: post.body })), 
-        reduce((accum: Post[], post: Post) => accum.concat([post]), []) 
-      ); 
- 
-    return this.http.get("https://jsonplaceholder.typicode.com/posts") 
-      .pipe( 
-        switchMap((value) => trim$(value)) 
-      ); 
-  } 
- } 
-` 
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+``` 
+
+```typescript
+// ./services/json.service.ts
+
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+import { Observable, from } from 'rxjs';
+import { switchMap, map, filter, reduce } from 'rxjs/operators';
+
+import { Post } from '../models/post.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class JsonService {
+  constructor(private http: HttpClient) { }
+
+  getPostsByUserId(id: number): Observable<any> {
+    const trim$ = (stream) => from(stream)
+      .pipe(
+        filter((post: Post) => +post.userId === +id),
+        map((post: Post) => ({ title: post.title, body: post.body })),
+        reduce((accum: Post[], post: Post) => accum.concat([post]), [])
+      );
+
+    return this.http.get("https://jsonplaceholder.typicode.com/posts")
+      .pipe(
+        switchMap((value) => trim$(value))
+      );
+  }
+}
+``` 
 
  ``// ./components/example/example.component.ts 
  

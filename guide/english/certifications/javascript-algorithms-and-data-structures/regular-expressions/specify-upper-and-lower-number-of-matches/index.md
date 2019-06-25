@@ -16,7 +16,7 @@ myRegex.test(threeAs) ; // true
 myRegex.test(fourAs) ; // true
 myRegex.test(sevenAs) ; // true
 ```
-## Spolier Alert!
+## Spoiler Alert!
 
 Remember to use `\s` after `Oh{3,6}` to include a white space, followed by `no` to pass all test cases. All test cases are written using a capital O, however the testcases could also be passed by using `ignore-case` : `/oh{3,6}\sno/i`
 

@@ -2,23 +2,23 @@
 title: Python Integers
 localeTitle: Inteiros em Python
 ---
-O domínio teórico para números inteiros em python é infinito negativo até o infinito. Na prática, os valores inteiros são limitados pela quantidade de memória disponível.
+O domínio teórico para números inteiros (integers) em Python vai de infinito negativo até o infinito. Na prática, os valores inteiros são limitados pela quantidade de memória disponível.
 
-No Python 2, havia uma distinção entre **`int`** , números que se encaixam em números _longos_ e **`long`** , de 32 ou 64 bits, limitados pela memória disponível. O Python 3 unificou os dois tipos em apenas **`int`** , mais informações no [PEP 237](https://www.python.org/dev/peps/pep-0237/) .
+No Python 2, havia uma distinção entre números que se encaixam em números _longos_( **`long`**) e **`int`**, de 32 ou 64 bits, limitados pela memória disponível. O Python 3 unificou os dois tipos em apenas **`int`** . Mais informações no [PEP 237](https://www.python.org/dev/peps/pep-0237/) .
 
-**criação `int` usando literais inteiros**
+**criando `int` usando literais inteiros**
 
 [Literais Inteiros](https://docs.python.org/3/reference/lexical_analysis.html#integer-literals)
 
-_Objetos inteiros_ podem ser criados usando o uso de literais inteiros. Números sem adornos sem decimais são literais inteiros:
+_Objetos inteiros_ podem ser criados usando literais inteiros. Números sem adornos e sem decimais são literais inteiros:
 ```
->>> 1234567890           # Unadorned numbers are integer literals 
+>>> 1234567890           # Números sem adornos são literais inteiros 
  1234567890 
  >>> type(1234567890) 
  <class 'int'> 
 ```
 
-Literais numéricos não contêm um sinal, no entanto, é possível criar _objetos inteiros_ negativos prefixando com um operador unário `-` (menos) sem espaço antes do literal:
+Literais numéricos não contêm um sinal. No entanto, é possível criar _objetos inteiros_ negativos prefixando com um operador `-` (menos) sem espaço antes do literal:
 ```
 >>> -1234567890 
  -1234567890 
@@ -26,13 +26,13 @@ Literais numéricos não contêm um sinal, no entanto, é possível criar _objet
  <class 'int'> 
 ```
 
-Da mesma forma, objetos inteiros positivos podem ser criados prefixando um operador unário `+` (mais) sem espaço antes dos dígitos. Normalmente `+` é omitido:
+Da mesma forma, objetos inteiros positivos podem ser criados prefixando um operador `+` (mais) sem espaço antes dos dígitos. Normalmente o  `+` é omitido:
 ```
 >>> +1234 
  1234 
 ```
 
-Os números inteiros binários (base 2, prefixo: `0b` ou `0B` ), octal (base 8, prefixo: `0o` ou `0O` ) e hexadecimal (base 16, prefixo: `0x` ou `0X` ) também podem ser criados usando literais de inteiros:
+Os números inteiros binários (base 2, prefixo: `0b` ou `0B` ), octais (base 8, prefixo: `0o` ou `0O` ) e hexadecimais (base 16, prefixo: `0x` ou `0X` ) também podem ser criados usando literais inteiros:
 ```
 >>> 0b1, 0b10, 0b11 
  (1, 2, 3) 
@@ -42,11 +42,11 @@ Os números inteiros binários (base 2, prefixo: `0b` ou `0B` ), octal (base 8, 
  (1, 16, 17) 
 ```
 
-Observe que os 0s iniciais para literais inteiros diferentes de zero **não** são **permitidos** :
+Observe que os 0s iniciais para literais inteiros diferentes de zero **não** são **permitidos**:
 ```
->>> 0     # Zero by itself is okay. 
+>>> 0     # Zero sozinho está certo. 
  0 
- >>> 01    # Leading zero(s) cause SyntaxError. 
+ >>> 01    # Zero antecedendo o inteiro causa SyntaxError. 
   File "<stdin>", line 1 
     01 
      ^ 
@@ -61,10 +61,10 @@ class int(x=0)
 
 Criar _objetos inteiros_ com literais inteiros é preferível quando possível:
 ```
->>> a = 1         # Prefer integer literal when possible. 
+>>> a = 1         # Prefira literais inteiros sempre que possível. 
  >>> type(a) 
  <class 'int'> 
- >>> b = int(1)    # Works but unnecessary. 
+ >>> b = int(1)    # Funciona, mas é desnecessário. 
  >>> type(b) 
  <class 'int'> 
 ```
@@ -83,7 +83,7 @@ No entanto, o construtor permite criar _objetos inteiros_ de outros tipos de nú
  1 
 ```
 
-Usando o construtor `int` para números de ponto flutuante truncará o número em direção a zero:
+Usando o construtor `int` para números de ponto flutuante (`float`) arredondará o número em direção a zero:
 ```
 >>> int(-1.23) 
  -1 
@@ -107,7 +107,7 @@ Se isso não faz sentido para você, não se preocupe. Por enquanto, lembre-se d
  0 
 ```
 
-O construtor `int` também fará _objetos inteiros a_ partir de strings:
+O construtor `int` também fará _objetos inteiros_ a partir de strings:
 ```
 >>> a = "10" 
  >>> type(a) 
@@ -117,11 +117,11 @@ O construtor `int` também fará _objetos inteiros a_ partir de strings:
  <class 'int'> 
 ```
 
-_Strings_ para o construtor `int` devem representar um literal inteiro:
+As _Strings_ para o construtor `int` devem representar um literal inteiro:
 
 O segundo parâmetro do construtor `int` é especificar uma base (padrão: 10). Bases válidas são 0 e 2-36.
 
-Se uma base explícita for fornecida, o primeiro argumento deve ser uma string.
+Se uma base explícita for fornecida, o primeiro argumento deve ser uma `string`.
 ```
 >>> int("111", 2) 
  7 
@@ -131,7 +131,7 @@ Se uma base explícita for fornecida, o primeiro argumento deve ser uma string.
  TypeError: int() can't convert non-string with explicit base 
 ```
 
-A string usada para o construtor `int` com uma base explícita deve ser um literal inteiro válido para essa base:
+A `string` usada para o construtor `int` com uma base explícita deve ser um literal inteiro válido para essa base:
 ```
 >>> int('11', 2) 
  3 
@@ -141,7 +141,7 @@ A string usada para o construtor `int` com uma base explícita deve ser um liter
  ValueError: invalid literal for int() with base 2: '12' 
 ```
 
-Ambas as sequências prefixadas e não prefixadas de literais inteiros podem ser usadas, no entanto, se usadas, o prefixo deve corresponder à base fornecida.
+Ambas as sequências prefixadas e não prefixadas de literais inteiros podem ser usadas. No entanto, se usadas, o prefixo deve corresponder à base fornecida:
 ```
 >>> int('1101', 2) 
  13 
@@ -153,7 +153,7 @@ Ambas as sequências prefixadas e não prefixadas de literais inteiros podem ser
  ValueError: invalid literal for int() with base 2: '0x1101' 
 ```
 
-Se uma seqüência de caracteres prefixada e base 0 for usada, o objeto inteiro criado usará a base especificada pelo prefixo. Se nenhum prefixo for usado, então a base é assumida 10
+Se uma seqüência de caracteres prefixada e base 0 for usada, o objeto inteiro criado usará a base especificada pelo prefixo. Se nenhum prefixo for usado, então a base assumida é 10:
 ```
 >>> int('100', 0) 
  100 

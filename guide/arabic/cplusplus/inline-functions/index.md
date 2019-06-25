@@ -8,11 +8,12 @@ localeTitle: وظائف مضمنة في C ++
 
 يوفر C ++ وظائف مضمّنة لتقليل الحمل المكالمة الدالة. دالة مضمنة هي دالة يتم توسيعها في السطر عندما يتم استدعاؤها. عندما يتم استدعاء الدالة المضمنة يتم إدخال رمز كامل للدالة المضمنة أو استبدالها في نقطة استدعاء دالة مضمنة. يتم تنفيذ هذا الاستبدال بواسطة برنامج التحويل البرمجي C ++ في وقت التحويل البرمجي. وظيفة مضمنة قد تزيد من الكفاءة إذا كانت صغيرة. إن صيغة تعريف الدالة المضمنة هي:
 
- `inline return-type function-name(parameters) 
- { 
-    // function code 
- } 
-` 
+```cpp
+inline return-type function-name(parameters)
+{
+    // function code
+}
+``` 
 
 تذكر أن التضمين هو مجرد طلب إلى المحول البرمجي وليس أمرًا. يمكن تجاهل المحول البرمجي طلب forlining. قد لا يؤدّي المحول البرمجي inlining في حالات مثل:
 
@@ -107,10 +108,11 @@ localeTitle: وظائف مضمنة في C ++
 
 انتاج:
 
- `Enter first value: 45 
- Enter second value: 15 
- Addition of two numbers: 60 
- Difference of two numbers: 30 
- Product of two numbers: 675 
- Division of two numbers: 3 
-`
+```
+Enter first value: 45
+Enter second value: 15
+Addition of two numbers: 60
+Difference of two numbers: 30
+Product of two numbers: 675
+Division of two numbers: 3
+```

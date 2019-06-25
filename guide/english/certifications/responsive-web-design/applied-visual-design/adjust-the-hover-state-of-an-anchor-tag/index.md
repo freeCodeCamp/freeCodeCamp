@@ -3,8 +3,18 @@ title: Adjust the Hover State of an Anchor Tag
 ---
 ## Adjust the Hover State of an Anchor Tag
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/adjust-the-hover-state-of-an-anchor-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+You can use the :hover pseudo-class with the anchor tag to style how a link appears when someone hovers over the link with their mouse or other pointing device. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+For example, the following code will change the color of the link to orange when someone hovers over it:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```html
+<a href="https://www.freecodecamp.org/">freeCodeCamp</a>
+```
+
+```css
+a:hover {
+    color: orange;
+}
+```
+
+

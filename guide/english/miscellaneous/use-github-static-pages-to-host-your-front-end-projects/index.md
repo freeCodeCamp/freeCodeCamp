@@ -1,5 +1,5 @@
 ---
-title: Use Github Static Pages to Host Your Front End Projects
+title: Use GitHub Static Pages to Host Your Front End Projects
 ---
 **Benefits**
 
@@ -12,11 +12,11 @@ I love Codepen.io, it's a wonderful, easy-to-use tool for simple front-end exper
 *   Git versioning
 *   Improved screen real-estate experience
 
-## Git to Github
+## Git to GitHub
 
-Since I'm already saving locally, and using git for version control, I figured might as well upload to Github. Plus, Github has a fantastic, free service for front-end projects called <a href='https://pages.github.com/' target='_blank' rel='nofollow'>Github Pages</a>. Just update your repo and your changes are live.
+Since I'm already saving locally, and using git for version control, I figured might as well upload to GitHub. Plus, GitHub has a fantastic, free service for front-end projects called <a href='https://pages.github.com/' target='_blank' rel='nofollow'>GitHub Pages</a>. Just update your repo and your changes are live.
 
-How it works is simple. Github checks if your repository has a branch called `gh-pages` and serves any code that's sitting in that branch. No back-end stuff here, but HTML, CSS and JS work like a charm.
+How it works is simple. GitHub checks if your repository has a branch called `gh-pages` and serves any code that's sitting in that branch. No back-end stuff here, but HTML, CSS and JS work like a charm.
 
 ## First things first
 

@@ -1,26 +1,28 @@
 ---
 title: Hello World Swift
-localeTitle: Hello World Swift
+localeTitle: Привет, Мир! Swift
 ---
-\## Привет, мир
+## Привет, мир
 
-Только нам нужно добавить метод `print("Hello World")` (из библиотеки UIKit) в функцию `viewDidLoad()` класса \`ViewController:
+Нам нужно только добавить метод `print("Привет, мир!")` (из библиотеки UIKit) в функцию `viewDidLoad()` класса `ViewController`:
 
-\`\` \`Swift импортировать UIKit
+```Swift
+import UIKit
 
 class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        print("Привет, мир!")
+        
+    }
+
+}
 ```
-override func viewDidLoad() { 
-    super.viewDidLoad() 
-    // Do any additional setup after loading the view, typically from a nib. 
- 
-    print("Hello World") 
- 
- } 
+
+## Вывод:
 ```
-
-} \`\` \`
-
-\## Выход: \`\` \`
-
-> Привет мир \`\` \`
+> Привет, мир!
+```

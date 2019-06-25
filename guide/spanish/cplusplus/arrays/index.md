@@ -8,13 +8,13 @@ Una matriz es una serie de elementos del mismo tipo de datos que se almacenan en
 
 Por ejemplo, una matriz que contiene 5 valores enteros llamados números se declara así:
 
-```C++
+```cpp
 int numbers [5]; 
 ```
 
 Inicialización:
 
-```C++
+```cpp
 //Initialization with entries: 
  int numbers [5] = {1, 2, 3, 4, 5}; 
  
@@ -34,7 +34,7 @@ Inicialización:
 Se puede acceder a los elementos de una matriz a través de la referencia de su posición en la matriz. (Comience contando desde 0).  
 Ejemplo:
 
-```C++
+```cpp
 x = numbers[0]; // = 1. [0] == first position 
  numbers[2] = 55; // Sets the third position (3) to the new number 55 
  //numbers[] is now: {1, 2, 55, 4, 5} 

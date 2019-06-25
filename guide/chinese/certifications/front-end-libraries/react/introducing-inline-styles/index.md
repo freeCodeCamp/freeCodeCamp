@@ -10,7 +10,7 @@ localeTitle: 介绍内联样式
 
 让我们逐步了解这些步骤，以便您了解其中的差异。 首先将样式标记设置为**JavaScript对象** 。
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 
@@ -26,7 +26,7 @@ class Colorful extends React.Component {
 
 其次，让我们将颜色设置为红色。
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 
@@ -42,7 +42,7 @@ class Colorful extends React.Component {
 
 ### 扰流板
 
-```react.js
+```jsx
 class Colorful extends React.Component { 
   render() { 
     return ( 
