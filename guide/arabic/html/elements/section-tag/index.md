@@ -10,19 +10,19 @@ localeTitle: قسم القسم
 
 لا ينبغي استخدام عنصر `<section>` بدلاً من عنصر `<div>` إذا كانت هناك حاجة إلى حاوية عامة. يجب استخدامه لتعريف الأقسام في صفحة HTML.
 
- `
-<html> 
- <head> 
-  <title>Section Example</title> 
- </head> 
- <body> 
-  <section> 
-    <h1>Heading</h1> 
-    <p>Bunch of awesome content</p> 
-  </section> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<head>
+  <title>Section Example</title>
+</head>
+<body>
+  <section>
+    <h1>Heading</h1>
+    <p>Bunch of awesome content</p>
+  </section>
+</body>
+</html>
+``` 
 
 #### معلومات اكثر:
 

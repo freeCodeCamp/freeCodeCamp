@@ -47,7 +47,6 @@ localeTitle: تنفيذ فرز سريع
  } 
 ` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Quick-Sort)
 
 ### مرجع:
 

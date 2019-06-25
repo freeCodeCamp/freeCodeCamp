@@ -44,13 +44,11 @@ tests:
 ```js
 function bubbleSort(array) {
   // change code below this line
-
-  // change code above this line
   return array;
+  // change code above this line
 }
 
-// test array:
-// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
+bubbleSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </div>
@@ -74,6 +72,23 @@ function isSorted(arr) {
 <section id='solution'>
 
 ```js
-// solution required
+function bubbleSort(array) {
+  for (let i = 0; i < array.length; i++) {
+    let swapped = false;
+    for (let j = 1; j < array.length; j++) {
+      if (array[j - 1] > array[j]) {
+        let temp = array[j-1];
+        array[j-1] =  array[j];
+        array[j] = temp;
+        swapped = true;
+      }
+    }
+    if (swapped === false) {
+      break;
+    }
+  }
+  return array;
+}
 ```
+
 </section>

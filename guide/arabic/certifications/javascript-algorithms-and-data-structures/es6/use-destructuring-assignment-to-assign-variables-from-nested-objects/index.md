@@ -12,5 +12,6 @@ localeTitle: استخدم Destructuring Assignment لتعيين متغيرات �
 
 هنا هو الحل رمز:
 
- `const { tomorrow: { max: maxOfTomorrow } } = forecast; 
-`
+```javascript
+const { tomorrow: { max: maxOfTomorrow } } = forecast;
+```

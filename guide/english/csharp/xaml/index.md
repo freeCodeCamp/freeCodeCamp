@@ -24,7 +24,7 @@ Creating a TextBlock with several properties.  TextBlocks are usually employed f
 
 ### Example 2
 The following example shows a label with "Hello World!" as its content in a top level container called UserControl.
-```XAML
+```xml
 <UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <Label Content="Hello World!" />
 </UserControl>

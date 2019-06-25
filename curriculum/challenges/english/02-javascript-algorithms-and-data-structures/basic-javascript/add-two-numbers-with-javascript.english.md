@@ -2,15 +2,20 @@
 id: cf1111c1c11feddfaeb3bdef
 title: Add Two Numbers with JavaScript
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cM2KBAG'
 ---
 
 ## Description
 <section id='description'>
 <code>Number</code> is a data type in JavaScript which represents numeric data.
 Now let's try to add two numbers using JavaScript.
-JavaScript uses the <code>+</code> symbol as addition operation when placed between two numbers.
-<strong>Example</strong>
-<blockquote>myVar = 5 + 10; // assigned 15</blockquote>
+JavaScript uses the <code>+</code> symbol as an addition operator when placed between two numbers.
+<strong>Example:</strong>
+
+```js
+myVar = 5 + 10; // assigned 15
+```
+
 </section>
 
 ## Instructions

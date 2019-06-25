@@ -14,7 +14,8 @@ localeTitle: استيراد تصدير افتراضي
 
 ## حل:
 
- `"use strict"; 
- import subtract from "math_functions"; 
- subtract(7,4); 
-`
+```javascript
+"use strict";
+import subtract from "math_functions";
+subtract(7,4);
+```
