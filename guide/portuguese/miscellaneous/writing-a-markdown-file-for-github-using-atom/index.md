@@ -1,6 +1,6 @@
 ---
-title: Writing a Markdown File for Github Using Atom
-localeTitle: Escrevendo um arquivo Markdown para o Github usando o Atom
+title: Writing a Markdown File for GitHub Using Atom
+localeTitle: Escrevendo um arquivo Markdown para o GitHub usando o Atom
 ---
 O Markdown é uma maneira de estilizar o texto na Web, e os usuários do GitHub usam o markdown para fornecer documentação para seus repositórios.
 

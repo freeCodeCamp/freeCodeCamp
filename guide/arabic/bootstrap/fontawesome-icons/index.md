@@ -10,9 +10,9 @@ localeTitle: أيقونات Fontawesome ل Bootstrap
 
 في `<head>` من html الخاص بك تتضمن مرجع إلى Font Awesome.
 
- `
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
-` 
+```html
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+``` 
 
 استخدام fontawesome هو نفس استخدام Glyphicon.
 

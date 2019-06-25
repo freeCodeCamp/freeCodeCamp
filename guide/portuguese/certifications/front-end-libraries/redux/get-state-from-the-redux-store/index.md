@@ -6,7 +6,7 @@ localeTitle: Obtenha o estado da loja Redux
 
 Recuperar dados da loja usando o método `getState()` .
 
-```react.js
+```jsx
 let currentState = store.getState(); 
 
 ```

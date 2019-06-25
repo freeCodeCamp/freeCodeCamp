@@ -3,18 +3,18 @@ title: Test Driven Development
 ---
 ## Test Driven Development
 
-Test Driven Development (TDD) is one of Agile Software Development approaches. It is based on the concept that
-> you must write a test case for your code even before you write the code
+Test Driven Development (TDD) is an Agile Software Development approach. It is based on the concept that you write a unit test first, and then write the code that will allow this test to pass. This means we are working iteratively to specify and build correct behaviour and also to create clean code with good structure.
 
-Here, we write unit test first and then write the code to complete the test successfully. This saves time spend to perform unit test and other similar test, as we are going ahead with the successful iteration of the test as well leading to achieve modularity in the code. 
-It's basically composed of 4 steps
+With TDD, the unit test is written first with a test that fails, you then write the code that will execute and allow the unit test to pass. Overall TDD saves time spent performing unit tests and other similar tests since test creation is developed before the code has even been written.
 
- - Write a test case
- - See the test fail (Red)
- - Make the test pass, comitting whatever crimes in the process (Green)
- - Refactor the code to be up to standards (Refactor)
+Test Driven Development is essentially comprised of 4 steps:
 
- These steps follow the principle of Red-Green-Refactor. Red-Green make sure that you write the simplest code possible to solve the problem while the last step makes sure that the code that you write is up to the standards.
+ - Write a test case that fails (Red)
+ - Write the code to satisfy the test case
+ - Run the test case again confirming test passes (Green)
+ - Refactor the code as per typical standards (Refactor)
+ 
+These steps follow the principle of *Red-Green-Refactor*. For the *Red-Green* steps, make sure that you write the simplest code possible to solve the problem and when *Refactoring*, ensure that it follows *Clean Code* principles.
 
 Each new feature of your system should follow the steps above.
 
@@ -25,7 +25,7 @@ Each new feature of your system should follow the steps above.
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 Agile Data's <a href='http://agiledata.org/essays/tdd.html' target='_blank' rel='nofollow'>Introduction to TDD</a>
 
-Wiki on <a href='https://en.wikipedia.org/wiki/Test-driven_development' target='_blank' rel='nofollow'>TDD</a>
+Wikipedia on <a href='https://en.wikipedia.org/wiki/Test-driven_development' target='_blank' rel='nofollow'>TDD</a>
 
 Martin Fowler <a href='https://martinfowler.com/articles/is-tdd-dead/' target='_blank' rel='nofollow'>Is TDD Dead?</a>
  (A series of recorded conversations on the subject)

@@ -28,39 +28,41 @@ localeTitle: التوجيه
 
 مع تزايد تعقيد الطريق ، فإن امتلاكه كوحدة خاصة به سيعزز من بساطة وحدة الجذر. ابقائه بسيط غبي دون المساومة على وظائف يشكل التصميم الجيد للوحدات.
 
- `import { NgModule } from '@angular/core'; 
- import { RouterModule, Routes } from '@angular/router'; 
- 
- import { AComponent } from '../../components/a/a.component'; 
- import { BComponent } from '../../components/b/b.component'; 
- 
- // an array of soon-to-be routes! 
- const routes: Routes = []; 
- 
- @NgModule({ 
-  imports: [ RouterModule.forRoot(routes) ], 
-  exports: [ RouterModule ] 
- }) 
- export class AppRoutingModule { } 
-` 
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AComponent } from '../../components/a/a.component';
+import { BComponent } from '../../components/b/b.component';
+
+// an array of soon-to-be routes!
+const routes: Routes = [];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule { }
+``` 
 
 `.forRoot(...)` هي وظيفة فئة متوفرة من فئة RouterModule. تقبل وظيفة مجموعة من `Route` الكائنات في `Routes` . `.forRoot(...)` بتكوين `.forRoot(...)` - تحميل أثناء به البديلة `.forChild(...)` لتكوين التحميل البطيئة.
 
 تحميل حريصة يعني أن تحميل المسارات محتواها في التطبيق من الحصول على الذهاب. التحميل الزائف يحدث عند الطلب. محور هذه المقالة هو تحميل حريصة. هذا هو النهج الافتراضي للتحميل في تطبيق. يبدو تعريف فئة RouterModule شيئًا مثل كتلة التعليمة البرمجية التالية.
 
- `@NgModule({ 
-  // … lots of metadata ... 
- }) 
- export class RouterModule { 
-  forRoot(routes: Routes) { 
-    // … configuration for eagerly loaded routes … 
-  } 
- 
-  forChild(routes: Routes) { 
-    // … configuration for lazily loaded routes … 
-  } 
- } 
-` 
+```typescript
+@NgModule({
+  // … lots of metadata ...
+})
+export class RouterModule {
+  forRoot(routes: Routes) {
+    // … configuration for eagerly loaded routes …
+  }
+
+  forChild(routes: Routes) {
+    // … configuration for lazily loaded routes …
+  }
+}
+``` 
 
 لا تقلق بشأن تفاصيل التكوين التي يغفلها المثال مع التعليقات. وجود فهم عام سيفعل في الوقت الحالي.
 
@@ -68,43 +70,44 @@ localeTitle: التوجيه
 
 هذا يفسر لماذا يجب على AppRoutingModule تصدير RouterModule. يفعل ذلك من أجل شجرة المكونات الأساسية في وحدة الجذر. يحتاج الوصول إلى تلك المرافق التوجيه!
 
- `import { BrowserModule } from '@angular/platform-browser'; 
- import { NgModule } from '@angular/core'; 
- 
- import { AppComponent } from './app.component'; 
- import { AComponent } from './components/a/a.component'; 
- import { BComponent } from './components/b/b.component'; 
- import { AppRoutingModule } from './modules/app-routing/app-routing.module'; 
- 
- @NgModule({ 
-  declarations: [ 
-    AppComponent, 
-    AComponent, 
-    BComponent 
-  ], 
-  imports: [ 
-    AppRoutingModule, // routing feature module 
-    BrowserModule 
-  ], 
-  providers: [], 
-  bootstrap: [ AppComponent ] 
- }) 
- export class AppModule { } 
-` 
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+import { AComponent } from './components/a/a.component';
+import { BComponent } from './components/b/b.component';
+import { AppRoutingModule } from './modules/app-routing/app-routing.module';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AComponent,
+    BComponent
+  ],
+  imports: [
+    AppRoutingModule, // routing feature module
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+``` 
 
 الواردات الرمز المميز AppRoutingModule من الأعلى. إدراج رمزي في صفيف واردات وحدة الجذر. قد تستخدم شجرة مكون الجذر الآن مكتبة RouterModule. يتضمن ذلك توجيهاته واجهاته وخدماته كما سبق ذكره. شكرا جزيلا ل AppRoutingModule لتصدير RouterModule!
 
 وستكون أدوات RouterModule مفيدة لمكونات الجذر. يستخدم HTML الأساسي لـ AppComponent من توجيه واحد: `router-outlet` .
 
- `
-<!-- app.component.html --> 
- 
- <ul> 
-  <!-- routerLink(s) here --> 
- </ul> 
- <router-outlet></router-outlet> 
- <!-- routed content appends here (AFTER THE ELEMENT, NOT IN IT!) --> 
-` 
+```html
+<!-- app.component.html -->
+
+<ul>
+  <!-- routerLink(s) here -->
+</ul>
+<router-outlet></router-outlet>
+<!-- routed content appends here (AFTER THE ELEMENT, NOT IN IT!) -->
+``` 
 
 `routerLink` عبارة عن توجيه سمة من سمات RouterModule. سيتم إرفاقه بكل عنصر من عناصر `<ul></ul>` بمجرد إعداد المسارات. `router-outlet` عبارة عن توجيه مكون ذو سلوك مثير للاهتمام. يعمل أكثر كمؤشر لعرض المحتوى الموجه. نتائج المحتوى الموجه من التنقل إلى مسار معين. عادةً ما يعني ذلك مكونًا واحدًا تم تكوينه في AppRoutingModule
 
@@ -118,83 +121,86 @@ localeTitle: التوجيه
 
 يحدد موقع المسار (أو المسار) ما يتم إلحاقه [بأصل موقع الويب](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) (على سبيل المثال http: // localhost: 4200) من خلال سلسلة من المائلة ( `/` ).
 
- `// … same imports from before … 
- 
- const routes: Routes = [ 
-  { 
-    path: 'A', 
-    component: AComponent 
-  }, 
-  { 
-    path: 'B', 
-    component: BComponent 
-  } 
- ]; 
- 
- @NgModule({ 
-  imports: [ RouterModule.forRoot(routes) ], 
-  exports: [ RouterModule ] 
- }) 
- export class AppRoutingModule { } 
-` 
+```typescript
+// … same imports from before …
+
+const routes: Routes = [
+  {
+    path: 'A',
+    component: AComponent
+  },
+  {
+    path: 'B',
+    component: BComponent
+  }
+];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule { }
+``` 
 
 `http://localhost:4200/A` يجعل AComponent من منفذ `router-outlet` الخاص بـ AppComponent. `http://localhost:4200/B` renders BComponent. تحتاج إلى وسيلة لتوجيه إلى هذه المواقع دون استخدام شريط العنوان. يجب ألا يعتمد التطبيق على شريط عناوين متصفح الإنترنت للتنقل.
 
 _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML أسفله. يجب أن يكون رابط جهاز التوجيه في التطبيق مظهرًا رائعًا. ينطبق هذا CSS على جميع الأمثلة الأخرى أيضًا._
 
- `/* global styles.css */ 
- 
- ul li { 
-  cursor: pointer; 
-  display: inline-block; 
-  padding: 20px; 
-  margin: 5px; 
-  background-color: whitesmoke; 
-  border-radius: 5px; 
-  border: 1px solid black; 
- } 
- 
- ul li:hover { 
-  background-color: lightgrey; 
- } 
-` 
+```css
+/* global styles.css */
 
- `
-<!-- app.component.html --> 
- 
- <ul> 
-  <li routerLink="/A">Go to A!</li> 
-  <li routerLink="/B">Go to B!</li> 
- </ul> 
- <router-outlet></router-outlet> 
-` 
+ul li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 20px;
+  margin: 5px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+ul li:hover {
+  background-color: lightgrey;
+}
+``` 
+
+```html
+<!-- app.component.html -->
+
+<ul>
+  <li routerLink="/A">Go to A!</li>
+  <li routerLink="/B">Go to B!</li>
+</ul>
+<router-outlet></router-outlet>
+``` 
 
 هذا هو التوجيه الأساسي! يؤدي النقر فوق أي من مسارات routerLink إلى توجيه عنوان الويب. يعيد تعيينه دون تحديث متصفح الويب. يقوم `Router` Angular بتحديد خرائط العنوان الموجه إلى `Routes` تكوينها في AppRoutingModule. يطابق العنوان إلى `path` ممتلكات واحد `Route` الكائن ضمن مجموعة. دائمًا ما تفوز المباراة الأولى ، لذا يجب أن تكون جميع المسارات المطابقة تقع في نهاية صفيف `Routes` .
 
 تمنع جميع المسارات المتوافقة التطبيق من التعطل إذا تعذر مطابقة المسار الحالي. يمكن أن يحدث هذا من شريط العنوان حيث قد يكتب المستخدم في أي مسار. لهذا ، يوفر Angular قيمة مسار حرف البدل `**` التي تقبل جميع المسارات. يعرض هذا المسار عادةً مكون PageNotFoundComponent الذي يعرض "خطأ 404: الصفحة غير موجودة".
 
- `// … PageNotFoundComponent imported along with everything else … 
- 
- const routes: Routes = [ 
-  { 
-    path: 'A', 
-    component: AComponent 
-  }, 
-  { 
-    path: 'B', 
-    component: BComponent 
-  }, 
-  { 
-    path: '', 
-    redirectTo: 'A', 
-    pathMatch: 'full' 
-  }, 
-  { 
-    path: '**', 
-    component: PageNotFoundComponent 
-  } 
- ]; 
-` 
+```typescript
+// … PageNotFoundComponent imported along with everything else …
+
+const routes: Routes = [
+  {
+    path: 'A',
+    component: AComponent
+  },
+  {
+    path: 'B',
+    component: BComponent
+  },
+  {
+    path: '',
+    redirectTo: 'A',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
+  }
+];
+``` 
 
 في `Route` الكائن الذي يحتوي `redirectTo` يحافظ على PageNotFoundComponent من تقديم نتيجة `http://localhost:4200` . هذا هو الطريق الرئيسية للتطبيقات. لإصلاح هذا ، `redirectTo` توجيه المسار الرئيسي إلى `http://localhost:4200/A` `http://localhost:4200/A` يصبح بطريقة `http://localhost:4200/A` مباشرة مسار المنزل الجديد للتطبيق.
 
@@ -206,24 +212,25 @@ _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML
 
 هذا اصلاحه سهل. عند النقر فوق عنصر `routerLink` ، يعين `Router` في Angular _التركيز_ عليه. يمكن أن يؤدي هذا التركيز إلى تشغيل أنماط معينة توفر ملاحظات مفيدة للمستخدم. يمكن لتوجيه `routerLinkActive` تتبع هذا التركيز للمطور.
 
- `
-<!-- app.component.html --> 
- 
- <ul> 
-  <li routerLink="/A" routerLinkActive="active">Go to A!</li> 
-  <li routerLink="/B" routerLinkActive="active">Go to B!</li> 
- </ul> 
- <router-outlet></router-outlet> 
-` 
+```html
+<!-- app.component.html -->
+
+<ul>
+  <li routerLink="/A" routerLinkActive="active">Go to A!</li>
+  <li routerLink="/B" routerLinkActive="active">Go to B!</li>
+</ul>
+<router-outlet></router-outlet>
+``` 
 
 يمثل التعيين الصحيح لـ `routerLinkActive` سلسلة من الفئات. يصور هذا المثال فئة واحدة فقط (. `.active` ) ، ولكن قد يتم تطبيق أي عدد من الفئات المفصول `.active` . عندما يعين `Router` _التركيز_ على routerLink ، يتم تطبيق الفئات المحددة بفراغات على عنصر المضيف. عندما ينتقل التركيز بعيدًا ، تتم إزالة الفئات تلقائيًا.
 
- `/* global styles.css */ 
- 
- .active { 
-  background-color: lightgrey !important; 
- } 
-` 
+```css
+/* global styles.css */
+
+.active {
+  background-color: lightgrey !important;
+}
+``` 
 
 يمكن للمستخدمين الآن التعرف بسهولة على كيفية تطابق المسار الحالي ومحتوى الصفحة. تسليط الضوء على `lightgrey` ينطبق على routerLink مطابقة الطريق الحالي. يضمن `!important` تجاوز التمييز stylings مضمنة.
 
@@ -235,19 +242,20 @@ _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML
 
 تبدأ المعلمات التقليدية من صفيف `Routes` المكوّنة في AppRoutingModule.
 
- `const routes: Routes = [ 
-  // … other routes … 
-  { 
-    path: 'B', 
-    component: BComponent 
-  }, 
-  { 
-    path: 'B/:parameter', 
-    component: BComponent 
-  }, 
-  // … other routes … 
- ]; 
-` 
+```typescript
+const routes: Routes = [
+  // … other routes …
+  {
+    path: 'B',
+    component: BComponent
+  },
+  {
+    path: 'B/:parameter',
+    component: BComponent
+  },
+  // … other routes …
+];
+``` 
 
 التركيز على مسارين BComponent. ستحدث المعلمة في نهاية المطاف في كلا الطريقين.
 
@@ -257,30 +265,31 @@ _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML
 
 يمكن BComponent مرجع معلمات التوجيه من فئة المكون الخاص به. كل من النهج إلى المعلمات (مصفوفة والتقليدية) تعطي النتائج نفسها في BComponent. قبل رؤية BComponent ، افحص شكل مصفوفة المعلمات أدناه.
 
- `// app.component.ts 
- 
- import { Component } from '@angular/core'; 
- import { Router } from '@angular/router'; 
- 
- @Component({ 
-  selector: 'app-root', 
-  templateUrl: './app.component.html' 
- }) 
- export class AppComponent { 
-  constructor(private router: Router) { } 
- 
-  routeMatrixParam(value: string) { 
-    if (value) 
-      this.router.navigate(['B', { parameter: value }]); // matrix parameter 
-    else 
-      this.router.navigate(['B']); 
-  } 
- 
-  routeAddressParam(value: string) { 
-    this.router.navigate(['B', value]); 
-  } 
- } 
-` 
+```typescript
+// app.component.ts
+
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  constructor(private router: Router) { }
+
+  routeMatrixParam(value: string) {
+    if (value)
+      this.router.navigate(['B', { parameter: value }]); // matrix parameter
+    else
+      this.router.navigate(['B']);
+  }
+
+  routeAddressParam(value: string) {
+    this.router.navigate(['B', value]);
+  }
+}
+``` 
 
 يوفر نظام حقن التبعية في Angular إمكانية إنشاء مثيل لجهاز `Router` . يتيح هذا المكون برمجيًا التوجيه. تقبل الدالة `.navigate(...)` صفيف من القيم التي يتم `.navigate(...)` إلى مسار _قابل للتوجيه_ . شيء من هذا القبيل `.navigate(['path', 'to', 'something'])` يحل إلى `http://localhost:4200/path/to/something` . `.navigate(...)` يضيف علامات `/` مسارات المسار عند تطبيع الصفيف في مسار _قابل للتوجيه_ .
 
@@ -292,22 +301,22 @@ _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML
 
 لإضفاء فهم كامل على الشفرة الواردة أعلاه ، إليك شفرة HTML المقابلة للنموذج.
 
- `
-// app.component.html 
- 
- <ul> 
-  <li routerLink="/A">Go to A!</li> 
-  <li> 
-    <input #matrixInput> 
-    <button (click)="routeMatrixParam(matrixInput.value)">Matrix!</button> 
-  </li> 
-  <li> 
-    <input #paramInput> 
-    <button (click)="routeAddressParam(paramInput.value)">Param!</button> 
-  </li> 
- </ul> 
- <router-outlet></router-outlet> 
-` 
+```html
+// app.component.html
+
+<ul>
+  <li routerLink="/A">Go to A!</li>
+  <li>
+    <input #matrixInput>
+    <button (click)="routeMatrixParam(matrixInput.value)">Matrix!</button>
+  </li>
+  <li>
+    <input #paramInput>
+    <button (click)="routeAddressParam(paramInput.value)">Param!</button>
+  </li>
+</ul>
+<router-outlet></router-outlet>
+``` 
 
 في القالب ، يتم قبول القيم كمدخل نصي. يقوم الإدخال بحقنها في مسار المسار كمعلمة. توجد مجموعتان منفصلتان من الصناديق لكل إستراتيجية معلمات (تقليدية ومصفوفة). مع كافة القطع معاً ، فقد حان الوقت لفحص فئة مكون BComponent.
 
@@ -349,30 +358,31 @@ _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML
 
 قد تشكل `Routes` تسلسلاً هرمياً. في DOM ، ينطوي ذلك على `router-outlet` أحد الوالدين `router-outlet` `router-outlet` واحد على الأقل. في شريط العنوان ، يبدو كالتالي: `http://localhost/parentRoutes/childRoutes` . في تكوين `Routes` ، تشير الخاصية `children: []` إلى كائن `Route` أنه يحتوي على مسارات متداخلة (فرعية).
 
- `import { NgModule } from '@angular/core'; 
- import { RouterModule, Routes } from '@angular/router'; 
- 
- import { NestComponent } from '../../components/nest/nest.component'; 
- import { AComponent } from '../../components/nest/a/a.component'; 
- import { BComponent } from '../../components/nest/b/b.component'; 
- 
- const routes: Routes = [ 
-  { 
-    path: 'nest', 
-    component: NestComponent, 
-    children: [ 
-      { path: 'A', component: AComponent }, 
-      { path: 'B', component: BComponent } 
-    ] 
-  } 
- ]; 
- 
- @NgModule({ 
-  imports: [ RouterModule.forRoot(routes) ], 
-  exports: [ RouterModule ] 
- }) 
- export class AppRoutingModule { } 
-` 
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { NestComponent } from '../../components/nest/nest.component';
+import { AComponent } from '../../components/nest/a/a.component';
+import { BComponent } from '../../components/nest/b/b.component';
+
+const routes: Routes = [
+  {
+    path: 'nest',
+    component: NestComponent,
+    children: [
+      { path: 'A', component: AComponent },
+      { path: 'B', component: BComponent }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule { }
+``` 
 
  ``// nest.component.ts 
  
@@ -472,40 +482,41 @@ _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML
 
 لحراسة الطريق ، يجب أن تكون هناك فئة تستخدم أساليب الحراسة كخدمة. خدمة يمكن أن تضخ في AppRoutingModule لحراسة لها `Routes` . قد حقن قيمة رمزية للخدمة في أي واحد `Route` الكائن.
 
- `import { NgModule } from '@angular/core'; 
- import { RouterModule, Routes } from '@angular/router'; 
- 
- import { AuthService } from '../../services/auth.service'; 
- import { UserService } from '../../services/user.service'; 
- 
- import { PrivateNestComponent } from '../../components/private-nest/private-nest.component'; 
- import { PrivateAComponent } from '../../components/private-nest/private-a/private-a.component'; 
- import { PrivateBComponent } from '../../components/private-nest/private-b/private-b.component'; 
- 
- const routes: Routes = [ 
-  { 
-    path: 'private-nest', 
-    component: PrivateNestComponent, 
-    canActivate: [ AuthService ], // !!! 
-    canActivateChild: [ AuthService ], // !!! 
-    canDeactivate: [ AuthService ], // !!! 
-    children: [ 
-      { path: 'private-A', component: PrivateAComponent }, 
-      { path: 'private-B', component: PrivateBComponent } 
-    ] 
-  } 
- ]; 
- 
- @NgModule({ 
-  imports: [ RouterModule.forRoot(routes) ], 
-  exports: [ RouterModule ], 
-  providers: [ 
-    AuthService, 
-    UserService 
-  ] 
- }) 
- export class AppRoutingModule { } 
-` 
+```typescript
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
+
+import { PrivateNestComponent } from '../../components/private-nest/private-nest.component';
+import { PrivateAComponent } from '../../components/private-nest/private-a/private-a.component';
+import { PrivateBComponent } from '../../components/private-nest/private-b/private-b.component';
+
+const routes: Routes = [
+  {
+    path: 'private-nest',
+    component: PrivateNestComponent,
+    canActivate: [ AuthService ], // !!!
+    canActivateChild: [ AuthService ], // !!!
+    canDeactivate: [ AuthService ], // !!!
+    children: [
+      { path: 'private-A', component: PrivateAComponent },
+      { path: 'private-B', component: PrivateBComponent }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ],
+  providers: [
+    AuthService,
+    UserService
+  ]
+})
+export class AppRoutingModule { }
+``` 
 
 `canActivate` و `canActivateChild` و يمكن `canDeactivate` التطبيق من AuthService. سيتم عرض تنفيذ الخدمة قريبًا مع تطبيق UserService.
 
@@ -517,82 +528,84 @@ _يكمل CSS العالمي (أوراق الأنماط المتتالية) HTML
 
 راجع تطبيقات AuthService و UserService أدناه.
 
- `// user.service.ts 
- 
- import { Injectable } from '@angular/core'; 
- import { Router } from '@angular/router'; 
- 
- class TheUser { 
-  constructor(public isLoggedIn: boolean = false) { } 
- 
-  toggleLogin() { 
-    this.isLoggedIn = true; 
-  } 
- 
-  toggleLogout() { 
-    this.isLoggedIn = false; 
-  } 
- } 
- 
- const globalUser = new TheUser(); 
- 
- @Injectable({ 
-  providedIn: 'root' 
- }) 
- export class UserService { 
-  theUser: TheUser = globalUser; 
- 
-  constructor(private router: Router) { } 
- 
-  get isLoggedIn() { 
-    return this.theUser.isLoggedIn; 
-  } 
- 
-  login() { 
-    this.theUser.toggleLogin(); 
-  } 
- 
-  logout() { 
-    this.theUser.toggleLogout(); 
-    this.router.navigate(['/']); 
-  } 
- } 
-` 
+```typescript
+// user.service.ts
+
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
+class TheUser {
+  constructor(public isLoggedIn: boolean = false) { }
+
+  toggleLogin() {
+    this.isLoggedIn = true;
+  }
+
+  toggleLogout() {
+    this.isLoggedIn = false;
+  }
+}
+
+const globalUser = new TheUser();
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  theUser: TheUser = globalUser;
+
+  constructor(private router: Router) { }
+
+  get isLoggedIn() {
+    return this.theUser.isLoggedIn;
+  }
+
+  login() {
+    this.theUser.toggleLogin();
+  }
+
+  logout() {
+    this.theUser.toggleLogout();
+    this.router.navigate(['/']);
+  }
+}
+``` 
 
 يتم تمرير المثيل نفسه من `TheUser` مع كل إنشاء مثيل لـ UserService. يوفر `TheUser` الوصول إلى `isLoggedIn` لتحديد حالة تسجيل دخول المستخدم. تسمح أساليب عامة أخرى اثنين UserService تبديل قيمة `isLoggedIn` . هذا هو أنه يمكن للمستخدم تسجيل الدخول والخروج.
 
 يمكنك التفكير في `TheUser` كمثال عالمي. يعد `UserService` واجهة `UserService` تقوم بتكوين هذا العمومية. `TheUser` التغييرات على `TheUser` من `UserService` إنشاء `UserService` واحدة على كل مثيل خدمة `UserService` الأخرى. ينفذ `UserService` إلى AuthService لتوفير الوصول إلى `isLoggedIn` من `TheUser` للمصادقة.
 
- `import { Component, Injectable } from '@angular/core'; 
- import { CanActivate, CanActivateChild, CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router'; 
- 
- import { UserService } from './user.service'; 
- 
- @Injectable({ 
-  providedIn: 'root' 
- }) 
- export class AuthService implements CanActivate, CanActivateChild, CanDeactivate<Component> { 
-  constructor(private user: UserService) {} 
- 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) { 
-    if (this.user.isLoggedIn) 
-      return true; 
-    else 
-      return false; 
-  } 
- 
-  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) { 
-    return this.canActivate(route, state); 
-  } 
- 
-  canDeactivate(component: Component, route: ActivatedRouteSnapshot, state: RouterStateSnapshot) { 
-    if (!this.user.isLoggedIn || window.confirm('Leave the nest?')) 
-      return true; 
-    else 
-      return false; 
-  } 
- } 
-` 
+```typescript
+import { Component, Injectable } from '@angular/core';
+import { CanActivate, CanActivateChild, CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+
+import { UserService } from './user.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService implements CanActivate, CanActivateChild, CanDeactivate<Component> {
+  constructor(private user: UserService) {}
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (this.user.isLoggedIn)
+      return true;
+    else
+      return false;
+  }
+
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.canActivate(route, state);
+  }
+
+  canDeactivate(component: Component, route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (!this.user.isLoggedIn || window.confirm('Leave the nest?'))
+      return true;
+    else
+      return false;
+  }
+}
+``` 
 
 تنفذ AuthService كل أسلوب حراسة مستورد من `@angular/router` . تحدد كل طريقة حراسة إلى حقل مناظر في كائن `Route` PrivateNestComponent. مثيل instantService instantiates من منشئ AuthService. تحدد AuthService إذا كان يمكن للمستخدم المتابعة باستخدام `isLoggedIn` المكشوفة بواسطة UserService.
 

@@ -12,7 +12,7 @@ Es casi igual que el [desafío](https://learn.freecodecamp.org/front-end-librari
 
 Solo agregue el atributo `key` a la etiqueta `<li>` para que sea único
 
-```react.js
+```jsx
 const renderFrameworks = frontEndFrameworks.map((item) => 
   <li key={item+1}>{item}</li> 
  ); 

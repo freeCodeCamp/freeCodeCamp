@@ -8,8 +8,9 @@ localeTitle: هل هناك طريقة لتدبير سلسلة في بايثون
 
 يتبع هذا القالب:
 
- `string[start: end: step] 
-` 
+```python
+string[start: end: step]
+``` 
 
 أين،
 
@@ -33,62 +34,72 @@ localeTitle: هل هناك طريقة لتدبير سلسلة في بايثون
 
 *   **احصل على أول 5 حروف من السلسلة**
 
- `string = "freeCodeCamp" 
- print(string[0:5]) 
-` 
+```python
+string = "freeCodeCamp"
+print(string[0:5])
+``` 
 
 انتاج:
 
- `> freeC 
-` 
+```shell
+> freeC
+``` 
 
 ملاحظة: تقوم `print(string[:5])` بإرجاع نفس نتيجة `print(string[0:5])`
 
 *   **الحصول على سلسلة فرعية من طول 4 من الحرف الثالث للسلسلة**
 
- `string = "freeCodeCamp" 
- print(string[2:6]) 
-` 
+```python
+string = "freeCodeCamp"
+print(string[2:6])
+``` 
 
 انتاج:
 
- `> eeCo 
-` 
+```shell
+> eeCo
+``` 
 
 يرجى ملاحظة أن مؤشر البداية أو النهاية قد يكون رقمًا سالبًا. الفهرس السالب يعني أن تبدأ العد من نهاية السلسلة بدلاً من البداية (أي من اليمين إلى اليسار). يمثل الفهرس -1 الحرف الأخير في السلسلة ، حيث يمثل -2 الحرف الثاني إلى الأخير وما إلى ذلك ...
 
 *   **الحصول على الحرف الأخير من السلسلة**
 
- `string = "freeCodeCamp" 
- print(string[-1]) 
-` 
+```python
+string = "freeCodeCamp"
+print(string[-1])
+``` 
 
 انتاج:
 
- `> p 
-` 
+```shell
+> p
+``` 
 
 *   **احصل على آخر 5 حروف من السلسلة**
 
- `string = "freeCodeCamp" 
- print(string[-5:]) 
-` 
+```python
+string = "freeCodeCamp"
+print(string[-5:])
+``` 
 
 انتاج:
 
- `> eCamp 
-` 
+```shell
+> eCamp
+``` 
 
 *   **الحصول على سلسلة فرعية تحتوي على جميع الحروف ما عدا آخر 4 أحرف والحرف الأول**
 
- `string = "freeCodeCamp" 
- print(string[1:-4]) 
-` 
+```python
+string = "freeCodeCamp"
+print(string[1:-4])
+``` 
 
 انتاج:
 
- `> reeCode 
-` 
+```shell
+> reeCode
+``` 
 
 #### مزيد من الأمثلة
 
@@ -100,11 +111,13 @@ localeTitle: هل هناك طريقة لتدبير سلسلة في بايثون
 
 *   **الحصول على كل شخصية أخرى من سلسلة**
 
- `string = "freeCodeCamp" 
- print(string[::2]) 
-` 
+```python
+string = "freeCodeCamp"
+print(string[::2])
+``` 
 
 انتاج:
 
- `> feCdCm 
-`
+```shell
+> feCdCm
+```

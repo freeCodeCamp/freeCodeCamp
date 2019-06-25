@@ -74,7 +74,7 @@ test('<Block />  should handle toggle clicks correctly', () => {
   expect(
     enzymeWrapper
       .find('.map-title')
-      .find('h5')
+      .find('h4')
       .text()
   ).toBe('Block A');
 
@@ -88,7 +88,7 @@ test('<Block />  should handle toggle clicks correctly', () => {
   expect(
     enzymeWrapper
       .find('.map-title')
-      .find('h5')
+      .find('h4')
       .text()
   ).toBe('Block A');
   expect(enzymeWrapper.find('ul').length).toBe(1);

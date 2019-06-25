@@ -53,17 +53,18 @@ localeTitle: صفائف Php
 
 سيؤدي ذلك إلى النتيجة التالية -
 
- `Value is 1 
- Value is 2 
- Value is 3 
- Value is 4 
- Value is 5 
- Value is one 
- Value is two 
- Value is three 
- Value is four 
- Value is five 
-` 
+```
+Value is 1
+Value is 2
+Value is 3
+Value is 4
+Value is 5
+Value is one
+Value is two
+Value is three
+Value is four
+Value is five
+``` 
 
 ### صفيفات الارتباط
 
@@ -101,13 +102,14 @@ localeTitle: صفائف Php
 
 سيؤدي ذلك إلى النتيجة التالية -
 
- `Salary of mohammad is 2000 
- Salary of qadir is 1000 
- Salary of zara is 500 
- Salary of mohammad is high 
- Salary of qadir is medium 
- Salary of zara is low 
-` 
+```
+Salary of mohammad is 2000
+Salary of qadir is 1000
+Salary of zara is 500
+Salary of mohammad is high
+Salary of qadir is medium
+Salary of zara is low
+``` 
 
 ### صفائف متعددة الأبعاد
 
@@ -158,7 +160,8 @@ localeTitle: صفائف Php
 
 سيؤدي ذلك إلى النتيجة التالية -
 
- `Marks for mohammad in physics : 35 
- Marks for qadir in maths : 32 
- Marks for zara in chemistry : 39 
-`
+```
+Marks for mohammad in physics : 35
+Marks for qadir in maths : 32
+Marks for zara in chemistry : 39
+```

@@ -7,7 +7,7 @@ localeTitle: Adicionar atributos de identificação a elementos do bootstrap
 ---
 
 ## Description
-<section id="description"> Lembre-se de que, além dos atributos de classe, você pode atribuir a cada um dos seus elementos um atributo <code>id</code> . Cada ID deve ser exclusivo para um elemento específico e usado apenas uma vez por página. Vamos dar um id único para cada um dos nossos elementos <code>div</code> da classe <code>well</code> . Lembre-se que você pode dar a um elemento um id como este: <code>&lt;div class=&quot;well&quot; id=&quot;center-well&quot;&gt;</code> Dê ao poço à esquerda o id da <code>left-well</code> . Dê o bem à direita, o id da <code>right-well</code> . </section>
+<section id="description"> Lembre-se de que, além dos atributos de classe, você pode atribuir a cada um dos seus elementos um atributo <code>id</code> . Cada ID deve ser exclusivo para um elemento específico e usado apenas uma vez por página. Vamos dar um id único para cada um dos nossos elementos <code>div</code> da classe <code>well</code> . Lembre-se que você pode dar a um elemento um id como este: <code>&lt;div class=&quot;well&quot; id=&quot;center-well&quot;&gt;</code> Dê ao well à esquerda o id <code>left-well</code> . Dê ao well bem à direita, o id <code>right-well</code> . </section>
 
 ## Instructions
 <section id="instructions">
@@ -18,9 +18,9 @@ localeTitle: Adicionar atributos de identificação a elementos do bootstrap
 
 ```yml
 tests:
-  - text: Dê sua esquerda <code>well</code> o id da <code>left-well</code> .
+  - text: Dê ao <code>well</code> à sua esquerda o id <code>left-well</code> .
     testString: 'assert($(".col-xs-6").children("#left-well") && $(".col-xs-6").children("#left-well").length > 0, "Give your left <code>well</code> the id of <code>left-well</code>.");'
-  - text: Dê o seu direito <code>well</code> o id de <code>right-well</code> .
+  - text: Dê ao <code>well</code> à sua direita o id <code>right-well</code> .
     testString: 'assert($(".col-xs-6").children("#right-well") && $(".col-xs-6").children("#right-well").length > 0, "Give your right <code>well</code> the id of <code>right-well</code>.");'
 
 ```

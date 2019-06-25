@@ -8,7 +8,15 @@ challengeType: 1
 <section id='description'>
 The <code>every</code> method works with arrays to check if <em>every</em> element passes a particular test. It returns a Boolean value - <code>true</code> if all values meet the criteria, <code>false</code> if not.
 For example, the following code would check if every element in the <code>numbers</code> array is less than 10:
-<blockquote>var numbers = [1, 5, 8, 0, 10, 11];<br>numbers.every(function(currentValue) {<br>&nbsp;&nbsp;return currentValue < 10;<br>});<br>// Returns false</blockquote>
+
+```js
+var numbers = [1, 5, 8, 0, 10, 11];
+numbers.every(function(currentValue) {
+  return currentValue < 10;
+});
+// Returns false
+```
+
 </section>
 
 ## Instructions
@@ -59,6 +67,11 @@ checkPositive([1, 2, 3, -4, 5]);
 <section id='solution'>
 
 ```js
-// solution required
+function checkPositive(arr) {
+  // Add your code below this line
+  return arr.every(num => num > 0);
+  // Add your code above this line
+}
+checkPositive([1, 2, 3, -4, 5]);
 ```
 </section>

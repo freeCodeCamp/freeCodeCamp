@@ -18,9 +18,9 @@ const thing = (condition) ? <if true> : <if false>;
 const cappedInput = input > 50 ? 50 : input // this will cap the input at 50 
 ```
 
-### Еще раз, если
+### Else if
 
-Вы также можете связать троичные операторы, таким образом вы будете иметь поведение if-else if-else
+Вы также можете сцеплять тернарные операторы, таким образом вы будете иметь поведение if-else if-else
 
 ```js
 <first condition> ? <value if first true> 

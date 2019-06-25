@@ -12,10 +12,11 @@ localeTitle: استخدم Destructuring Assignment لتعيين متغيرات �
 
 # إعادة تعيين خصائص باستخدام deconstruction.
 
- `var basicOjb = {x: 40}; 
- //To reassign 'get the value of the x property of basicObj and place its value into bigX' in ES6: 
- const { x: bigX } = basicOjb; 
- consle.log(bigX) // ans = 40 
-` 
+```javascript
+var basicOjb = {x: 40};
+//To reassign 'get the value of the x property of basicObj and place its value into bigX' in ES6:
+const { x: bigX } = basicOjb;
+consle.log(bigX) // ans = 40
+``` 
 
 ضع قيمة الخاصية الطول 'str' في len.

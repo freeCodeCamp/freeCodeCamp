@@ -4,7 +4,7 @@ localeTitle: Día p
 ---
 ## Etiqueta P
 
-La etiqueta `<p>` significa párrafo, que es la etiqueta más común utilizada para crear líneas de palabras dentro del documento `<html>` . Usar `<p>` será muy útil para agregar el margen automáticamente entre elementos. El atributo `<p>` también puede ser útil para el estilo CSS.
+La etiqueta `<p>` significa párrafo, que es la etiqueta más comúnmente utilizada para crear líneas de palabras dentro del documento `<html>` . Usar `<p>` será muy útil para agregar el margen automáticamente entre elementos. El atributo `<p>` también puede ser útil para el estilo CSS.
 
 ### Etiqueta P con otras etiquetas
 

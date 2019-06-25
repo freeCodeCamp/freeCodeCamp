@@ -12,7 +12,7 @@ docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
 
 Crea y comienza un contenedor.
 
-```sh
+```shell
 $ docker create -t -i fedora bash 
 
 ```
