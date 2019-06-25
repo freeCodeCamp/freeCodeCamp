@@ -7,7 +7,7 @@ localeTitle: Use animação CSS para alterar o estado de foco de um botão
 ---
 
 ## Description
-<section id="description"> Você pode usar CSS <code>@keyframes</code> para alterar a cor de um botão em seu estado de foco. Veja um exemplo de como alterar a largura de uma imagem no hover: <blockquote> &lt;style&gt; <br> img: hover { <br> nome da animação: largura; <br> duração da animação: 500ms; <br> } <br><br> Largura @keyframes { <br> 100% { <br> Largura: 40px; <br> } <br> } <br> &lt;/ style&gt; <br><br> &lt;img src = &quot;https://bit.ly/smallgooglelogo&quot; alt = &quot;Logotipo do Google&quot; /&gt; </blockquote></section>
+<section id="description"> Você pode usar CSS <code>@keyframes</code> para alterar a cor de um botão em seu estado de foco. Veja um exemplo de como alterar a largura de uma imagem no hover: <blockquote><style><br>&nbsp;&nbsp;img:hover {<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-name: width;<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-duration: 500ms;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;@keyframes width {<br>&nbsp;&nbsp;&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 40px;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>&lt;/style&gt;<br><br>&lt;img src="https://bit.ly/smallgooglelogo" alt="Logotipo da Google" /></blockquote></section>
 
 ## Instructions
 <section id="instructions"> Observe que <code>ms</code> significa milissegundos, em que 1000ms é igual a 1s. Use CSS <code>@keyframes</code> para alterar a <code>background-color</code> de fundo do elemento <code>button</code> , de modo que ele se torne <code>#4791d0</code> quando um usuário passar por cima dele. A regra <code>@keyframes</code> deve ter apenas uma entrada para <code>100%</code> . </section>

@@ -123,7 +123,7 @@ public class bubble-sort {
 
 ### 冒泡排序的递归实现。
 
-```c++
+```cpp
 void bubblesort(int arr[], int n) 
  { 
     if(n==1)    //Initial Case 

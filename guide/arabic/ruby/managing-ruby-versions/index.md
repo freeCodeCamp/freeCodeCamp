@@ -30,8 +30,9 @@ localeTitle: إدارة إصدارات روبي
 
 هناك نوعان من الأدوات التي تحظى بشعبية كبيرة ، لكن كلاهما وافق على ذلك مشاركة ملف مشترك. العديد من مشاريع Ruby (أو Rails) ستشمل بسيطة ملف `.ruby-version` ، الذي يحدد ببساطة رقم إصدار ، على _سبيل المثال_ :
 
- `2.4.2 
-` 
+```
+2.4.2
+``` 
 
 الأدوات الشائعة لمساعدتك في إدارة إصدار روبي هي:
 
@@ -46,15 +47,16 @@ localeTitle: إدارة إصدارات روبي
 
 على سبيل المثال ، قد يكون لديك هذا التسلسل:
 
- `% cd ~/projects/older-project 
- % ruby --version 
- 
- ruby 2.3.5p376 (2017-09-14 revision 59905) [x86_64-darwin16] 
- 
- % cd ~/projects/newer-project 
- % ruby --version 
- 
- ruby 2.4.2p198 (2017-09-14 revision 59899) [x86_64-darwin16] 
-` 
+```shell
+% cd ~/projects/older-project
+% ruby --version
+
+ruby 2.3.5p376 (2017-09-14 revision 59905) [x86_64-darwin16]
+
+% cd ~/projects/newer-project
+% ruby --version
+
+ruby 2.4.2p198 (2017-09-14 revision 59899) [x86_64-darwin16]
+``` 
 
 (هذه الأمثلة من جهاز MacOS)

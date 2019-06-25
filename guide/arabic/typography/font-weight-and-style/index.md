@@ -6,15 +6,17 @@ localeTitle: وزن الخط والنمط
 
 يمكن كتابة خط الوزن على هيئة قيم نصية:
 
- `font-weight: normal; 
- font-weight: bold; 
-` 
+```
+font-weight: normal;
+font-weight: bold;
+``` 
 
 أو كقيمة رقمية من `100` إلى `900` (بمضاعفات 100):
 
- `font-weight: 400;  /* equal to 'normal' above */ 
- font-weight: 700; /* equal to 'bold' above */ 
-` 
+```
+font-weight: 400;  /* equal to 'normal' above */
+font-weight: 700; /* equal to 'bold' above */
+``` 
 
 القيمة العددية ووصفها المشترك
 
@@ -24,6 +26,7 @@ localeTitle: وزن الخط والنمط
 
 يمكن أيضًا تحديد وزن الخط بالنسبة إلى أصل أحد العناصر (إذا كان الخط يحتوي على أكثر من وزن):
 
- `font-weight: lighter; 
- font-weight: bolder; 
-`
+```
+font-weight: lighter;
+font-weight: bolder;
+```

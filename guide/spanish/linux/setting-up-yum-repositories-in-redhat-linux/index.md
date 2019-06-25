@@ -10,7 +10,7 @@ El archivo del paquete RPM es un archivo de Red Hat Package Manager y permite la
 
 Paso 1: Compruebe si hay repositorios existentes o no.
 
-```sh
+```shell
 #yum repolist 
 ```
 
@@ -18,19 +18,19 @@ Encontrarás que no hay repositorios.
 
 Paso 2: Cambiar Directorio a
 
-```sh
+```shell
 #cd /etc/yum.repos.d 
 ```
 
 Paso 3: Crear nuevo archivo
 
-```sh
+```shell
 #vim myrepo.repo 
 ```
 
 Paso 4: Escribe las siguientes líneas en el archivo
 
-```sh
+```shell
 [file-name] 
  name=filename 
  baseurl="location of yum repositories" 
@@ -41,7 +41,7 @@ Paso 5: guardar y salir
 
 Paso 6: Repita el paso 1
 
-```sh
+```shell
 You Will find repositories 
 
 ```

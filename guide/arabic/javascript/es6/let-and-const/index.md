@@ -33,19 +33,21 @@ localeTitle: واسمحوا Const
 
 يتم استخدام Const لتعيين قيمة ثابتة للمتغير. ولا يمكن تغيير القيمة. انها ثابتة.
 
- `const a = 50; 
- a = 60; // shows error. You cannot change the value of const. 
- const b = "Constant variable"; 
- b = "Assigning new value"; // shows error. 
-` 
+```
+const a = 50;
+a = 60; // shows error. You cannot change the value of const.
+const b = "Constant variable";
+b = "Assigning new value"; // shows error.
+``` 
 
 فكر في مثال آخر.
 
- `const LANGUAGES = ['Js', 'Ruby', 'Python', 'Go']; 
- LANGUAGES = "Javascript"; // shows error. 
- LANGUAGES.push('Java'); // Works fine. 
- console.log(LANGUAGES); // ['Js', 'Ruby', 'Python', 'Go', 'Java'] 
-` 
+```
+const LANGUAGES = ['Js', 'Ruby', 'Python', 'Go'];
+LANGUAGES = "Javascript"; // shows error.
+LANGUAGES.push('Java'); // Works fine.
+console.log(LANGUAGES); // ['Js', 'Ruby', 'Python', 'Go', 'Java']
+``` 
 
 قد يكون هذا مربكًا قليلاً.
 

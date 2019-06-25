@@ -30,3 +30,5 @@ For example, in `os` module there's a method `open`. But we even have a built-in
 We can even use `form x import *`, this would import all the methods, classes of that module to the global namespace of the program. This is a bad programming practice. Please avoid it.
 
 In general you should avoid ` from x import y` simply because of the problems it may cause in large scale programs. For example, you never know if a fellow programmer might want to make a new function that happens to be the name of one of the existing functions. You also do not know whether Python will change the library that you are importing functions from. While these problems won't exist as often for solo projects, as stated before, it is bad programming practice and should be avoided.
+
+You may use `from x import y as z`, this would import `y` from `x` module as `z` . Using `as` you can rename the method imported according to your wish. At times, the method name may be too large to spell again and again. By using `as`, you can rename it as you wish. For example, `from matplotlib import pyplot as plt` - here `pyplot` has been renamed to `plt` and can be used normally.

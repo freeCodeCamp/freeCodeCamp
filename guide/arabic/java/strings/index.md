@@ -6,14 +6,16 @@ localeTitle: سلاسل
 
 سلاسل هي تسلسل من الشخصيات. في Java ، تعد `String` `Object` . ينبغي عدم الخلط بين السلاسل مع `char` كأحرف حرفيا 1 قيمة بدلا من سلسلة من الأحرف. لا يزال بإمكانك استخدام قيمة واحدة داخل سلسلة ، ومع ذلك يفضل استخدام `char` عند التحقق من حرف واحد.
 
- `String course = "FCC"; 
- System.out.println(course instanceof Object); 
-` 
+```java
+String course = "FCC";
+System.out.println(course instanceof Object);
+``` 
 
 انتاج:
 
- `true 
-` 
+```
+true
+``` 
 
 يمكنك إنشاء كائن سلسلة بالطرق التالية:
 
@@ -27,10 +29,11 @@ localeTitle: سلاسل
 
 في مقتطف الشفرة هذا ، كم عدد كائنات السلسلة التي تم إنشاؤها؟
 
- `String str = "This is a string"; 
- String str2 = "This is a string"; 
- String str3 = new String("This is a string"); 
-` 
+```java
+String str = "This is a string";
+String str2 = "This is a string";
+String str3 = new String("This is a string");
+``` 
 
 الإجابة هي: يتم إنشاء كائنات سلسلة 2. `str` و `str2` كلاهما يشيران إلى نفس الكائن. `str3` لديه نفس المحتوى ولكن باستخدام القسري `new` خلق كائن جديد ومتميز.
 
@@ -38,10 +41,11 @@ localeTitle: سلاسل
 
 يمكنك اختبار ذلك باستخدام swallow أو fast Object Compar `==` و `equals()` .
 
- `System.out.println(str == str2); // This prints 'true' 
- System.out.println(str == str3); // This prints 'false' 
- System.out.println(str.equals(str3)); // This prints 'true' 
-` 
+```java
+System.out.println(str == str2); // This prints 'true'
+System.out.println(str == str3); // This prints 'false'
+System.out.println(str.equals(str3)); // This prints 'true'
+``` 
 
 فيما يلي مثال آخر حول كيفية إنشاء سلسلة في Java باستخدام الطرق المختلفة:
 
@@ -63,17 +67,19 @@ localeTitle: سلاسل
 
 إذا كنت ترغب في مقارنة قيمة متغيرين للسلسلة ، فلا يمكنك استخدام ==. هذا يرجع إلى حقيقة أن هذا سوف يقارن إشارات المتغيرات وليس القيم المرتبطة بها. لمقارنة القيم المخزنة من السلاسل التي تستخدمها تساوي هذه الطريقة.
 
- `boolean equals(Object obj) 
-` 
+```java
+boolean equals(Object obj)
+``` 
 
 تقوم بإرجاع true إذا كان كائنان متساويان و false على خلاف ذلك.
 
- `String str = "Hello world"; 
- String str2 = "Hello world"; 
- 
- System.out.println(str == str2); // This prints false 
- System.out.println(str.equals(str2); // This prints true 
-` 
+```java
+String str = "Hello world";
+String str2 = "Hello world";
+
+System.out.println(str == str2); // This prints false
+System.out.println(str.equals(str2); // This prints true
+``` 
 
 المقارنة الأولى غير صحيحة لأن "==" ينظر إلى المراجع وهي ليست متماثلة.
 
@@ -81,15 +87,16 @@ localeTitle: سلاسل
 
 لدينا عدة طرق يحمل في ثناياه عوامل في سلسلة. فيما يلي مثال لطريقة طول السلسلة ().
 
- `public class StringDemo { 
- 
-   public static void main(String args[]) { 
-      String palindrome = "Dot saw I was Tod"; 
-      int len = palindrome.length(); 
-      System.out.println( "String Length is : " + len ); 
-   } 
- } 
-` 
+```java
+public class StringDemo {
+
+   public static void main(String args[]) {
+      String palindrome = "Dot saw I was Tod";
+      int len = palindrome.length();
+      System.out.println( "String Length is : " + len );
+   }
+}
+``` 
 
 سيؤدي ذلك إلى - `String Length is : 17`
 
@@ -105,25 +112,28 @@ localeTitle: سلاسل
 
 "طول" السلسلة هو مجرد عدد الأحرف الموجودة فيه. حتى "hi" هي طول 2 و "Hello" هي length 5. ترجع طريقة length () على سلسلة طولها ، كما يلي:
 
- `String a = "Hello"; 
- int len = a.length();  // len is 5 
-` 
+```java
+String a = "Hello";
+int len = a.length();  // len is 5
+``` 
 
 #### طرق المقارنة الأخرى التي يمكن استخدامها أيضًا في السلسلة هي:
 
 1.  equalsIgnoreCase (): - يقارن السلسلة دون الأخذ بعين الاعتبار حساسية الحالة.
 
- `String a = "HELLO"; 
- String b = "hello"; 
- System.out.println(a.equalsIgnoreCase(b));   // It will print true 
-` 
+```java
+String a = "HELLO";
+String b = "hello";
+System.out.println(a.equalsIgnoreCase(b));   // It will print true
+``` 
 
 2.  قارنTo: - يقارن قيمة lexicographically وإرجاع عدد صحيح.
 
- `String a = "Sam"; 
- String b = "Sam"; 
- String c = "Ram"; 
- System.out.println(a.compareTo(b));       // 0 
- System.out.prinltn(a.compareTo(c));       // 1 since (a>b) 
- System.out.println(c.compareTo(a));       // -1 since (c<a) 
-`
+```java
+String a = "Sam";
+String b = "Sam";
+String c = "Ram";
+System.out.println(a.compareTo(b));       // 0
+System.out.prinltn(a.compareTo(c));       // 1 since (a>b)
+System.out.println(c.compareTo(a));       // -1 since (c<a)
+```
