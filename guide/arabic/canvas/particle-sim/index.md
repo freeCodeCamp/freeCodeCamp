@@ -8,41 +8,43 @@ localeTitle: الجسيمات نعم
 
 سنرغب في إنشاء مجموعة من الجسيمات مع التسارع والسرعات. سنقوم بإنشاء 100 جسيم في نقاط عشوائية على اللوحة.
 
- `canvas = document.getElementById("canvas"); 
- ctx = canvas.getContext('2d'); 
- 
- var particles = []; 
- for(var i=0; i<100; i++) { 
-  particles.push( 
-    { 
-      x:Math.random()*canvas.width, 
-      y:Math.random()*canvas.height, 
-      vx:0, 
-      vy:0, 
-      ax:0, 
-      ay:0 
-    } 
-  ); 
- } 
-` 
+```js
+canvas = document.getElementById("canvas");
+ctx = canvas.getContext('2d');
+
+var particles = [];
+for(var i=0; i<100; i++) {
+  particles.push(
+    {
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      vx:0,
+      vy:0,
+      ax:0,
+      ay:0
+    }
+  );
+}
+``` 
 
 في حلقة الرسم لدينا ، نقدم هذه الجسيمات.
 
- `function draw() { 
-  ctx.clearRect(0, 0, canvas.width, canvas.height); 
-  for(var i=0; i<particles.length; i++) { 
-    // update state 
- 
-    // render state 
-    ctx.beginPath(); 
-    ctx.arc(particles[i].x, particles[i].y, 5, 0, 2*Math.PI); 
-    ctx.fill(); 
-  } 
- 
-  window.requestAnimationFrame(draw); 
- } 
- window.requestAnimationFrame(draw); 
-` 
+```js
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for(var i=0; i<particles.length; i++) {
+    // update state
+
+    // render state
+    ctx.beginPath();
+    ctx.arc(particles[i].x, particles[i].y, 5, 0, 2*Math.PI);
+    ctx.fill();
+  }
+
+  window.requestAnimationFrame(draw);
+}
+window.requestAnimationFrame(draw);
+``` 
 
 الآن ، كل ما نحتاجه هو تحديث السرعة وتسريع كل إطار. سنضيف التسارع إلى السرعة وإضافة السرعة إلى الموضع.
 

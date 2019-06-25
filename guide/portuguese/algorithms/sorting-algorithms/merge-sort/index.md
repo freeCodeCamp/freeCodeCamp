@@ -23,7 +23,7 @@ T(n) = 2T(n/2) + n
 
 Contando o número de repetições de n na soma no final, vemos que há lg n + 1 delas. Assim, o tempo de execução é n (lg n + 1) = n l n n + n. Observamos que n ng n + n <n lg n + n lg n = 2n lg n para n> 0, então o tempo de execução é O (n lg n).
 
-```Algorithm
+```
 MergeSort(arr[], left,  right): 
  If right > l: 
      1. Find the middle point to divide the array into two halves: 

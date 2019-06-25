@@ -22,24 +22,24 @@ localeTitle: زر الزر
 
 **مثال:**
 
- `
-<html> 
-  <head> 
-    <title>Button Tag example</title> 
-  </head> 
-  <body> 
-    <form> 
-      First name:<br> 
-      <input type="text" name="firstname" value="Free"> 
-      <br> 
-      Last name:<br> 
-      <input type="text" name="lastname" value="CodeCamp"> 
-      <br><br> 
-      <input type="submit" value="Submit" formtarget="_self"> 
-    </form> 
-  </body> 
- </html> 
-` 
+```html
+<html>
+  <head>
+    <title>Button Tag example</title>
+  </head>
+  <body>
+    <form>
+      First name:<br>
+      <input type="text" name="firstname" value="Free">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname" value="CodeCamp">
+      <br><br>
+      <input type="submit" value="Submit" formtarget="_self">
+    </form>
+  </body>
+</html>
+``` 
 
 جميع المتصفحات الرئيسية تدعم العلامة `<button>` . كما تدعم العلامة `<button>` خصائص الحدث في HTML. **ملاحظة:** قد ترسل المتصفحات المختلفة قيمًا مختلفة إذا كنت تستخدم عنصر `<button>` . يُنصح إما بتحديد قيمة الزر أو استخدام العلامة `<input>` لإنشاء زر في نموذج HTML.
 

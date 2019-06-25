@@ -50,27 +50,27 @@ _O_ （ _log 2 N_ ）是这样的，因为在每个步骤中数据集中的一�
 
 使用二进制搜索在给定的数字数组中找到5。
 
-![二进制搜索1](https://i.imgur.com/QAuugOL.jpg)
+![二进制搜索1](https://cdn-media-1.freecodecamp.org/imgr/QAuugOL.jpg)
 
 标记阵列中的低位，高位和中位。
 
-![二进制搜索2](https://i.imgur.com/1710fEx.jpg)
+![二进制搜索2](https://cdn-media-1.freecodecamp.org/imgr/1710fEx.jpg)
 
 将您要查找的项目与中间元素进行比较。
 
-![二进制搜索3](https://i.imgur.com/jr4icze.jpg)
+![二进制搜索3](https://cdn-media-1.freecodecamp.org/imgr/jr4icze.jpg)
 
 丢掉左半边，看看右半边。
 
-![二进制搜索4](https://i.imgur.com/W57lGsk.jpg)
+![二进制搜索4](https://cdn-media-1.freecodecamp.org/imgr/W57lGsk.jpg)
 
 再次与中间元素进行比较。
 
-![二进制搜索5](https://i.imgur.com/5Twm8NE.jpg)
+![二进制搜索5](https://cdn-media-1.freecodecamp.org/imgr/5Twm8NE.jpg)
 
 现在，移动到左半边。
 
-![二进制搜索6](https://i.imgur.com/01xetay.jpg)
+![二进制搜索6](https://cdn-media-1.freecodecamp.org/imgr/01xetay.jpg)
 
 中间元素是我们正在寻找的项目！
 
@@ -174,7 +174,7 @@ int binarySearch(int a[], int l, int r, int x) {
 
 ### C / C ++实现
 
-```C++
+```cpp
 int binary_search(int arr[], int l, int r, int target) 
  { 
    if (r >= l) 
@@ -208,7 +208,7 @@ def binary_search(arr, l, r, target):
 
 ### C ++中的示例
 
-```c++
+```cpp
 // Binary Search using iteration 
  int binary_search(int arr[], int beg, int end, int num) 
  { 
@@ -225,7 +225,7 @@ def binary_search(arr, l, r, target):
  } 
 ```
 
-```c++
+```cpp
 // Binary Search using recursion 
  int binary_search(int arr[], int beg, int end, int num) 
  { 

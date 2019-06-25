@@ -6,12 +6,13 @@ localeTitle: وضع CSS
 
 تحدد خاصية الموضع نوع طريقة تحديد المواقع المستخدمة لعنصر. يحتوي على 5 قيم للكلمات الرئيسية:
 
- `.static         { position: static; } // default value 
- .relative       { position: relative; } 
- .sticky         { position: sticky; } 
- .fixed          { position: fixed; } 
- .absolute       { position: absolute; } 
-` 
+```css
+.static         { position: static; } // default value
+.relative       { position: relative; }
+.sticky         { position: sticky; }
+.fixed          { position: fixed; }
+.absolute       { position: absolute; }
+``` 
 
 ### معلومات اكثر:
 

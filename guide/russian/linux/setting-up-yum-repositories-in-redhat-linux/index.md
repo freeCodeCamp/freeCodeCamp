@@ -10,7 +10,7 @@ localeTitle: Настройка репозиториев Yum в RedHat / CentOS 
 
 Шаг 1: Проверьте, существуют ли существующие хранилища или нет.
 
-```sh
+```shell
 #yum repolist 
 ```
 
@@ -18,19 +18,19 @@ localeTitle: Настройка репозиториев Yum в RedHat / CentOS 
 
 Шаг 2: измените каталог на
 
-```sh
+```shell
 #cd /etc/yum.repos.d 
 ```
 
 Шаг 3: Создайте новый файл
 
-```sh
+```shell
 #vim myrepo.repo 
 ```
 
 Шаг 4: Введите следующие строки в файле
 
-```sh
+```shell
 [file-name] 
  name=filename 
  baseurl="location of yum repositories" 
@@ -41,7 +41,7 @@ localeTitle: Настройка репозиториев Yum в RedHat / CentOS 
 
 Шаг 6: Повторите шаг 1
 
-```sh
+```shell
 You Will find repositories 
 
 ```
