@@ -209,8 +209,6 @@ Note: If the array only has two elements, then the `for` loop never gets used an
     // test here
     smallestCommons([1,5]);
     
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@tiagosalema/smallestCommons' target='_blank' rel='nofollow'>Run Code</a>
-
 ### Code Explanation:
 
 *   Extract `min` and `max` from `arr` using `Math.min()` and `Math.max()`, respectively. As the arguments to these functions are integers, it is necessary to spread `...` the array.
@@ -221,11 +219,11 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 #### Relevant Links
 
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--)' target='_blank' rel='nofollow'>Prefix decrement operator --</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()' target='_blank' rel='nofollow'>Remainder operator --</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--)' target='_blank' rel='nofollow'>Prefix decrement operator (--)</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()' target='_blank' rel='nofollow'>Remainder operator (%)</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min' target='_blank' rel='nofollow'>Math.min()</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max' target='_blank' rel='nofollow'>Math.max()</a>
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax' target='_blank' rel='nofollow'>Spread syntax ...</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax' target='_blank' rel='nofollow'>Spread syntax (...)</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
