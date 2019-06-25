@@ -20,26 +20,29 @@ localeTitle: تعويم وواضحة
 
 ![float image for print layout](https://github.com/jamal-pb95/guides/blob/master/assets/css3-float-print-layout.png "CSS-الحيل تعويم قيمه img")
 
- `img { 
-    float: right; 
- } 
-` 
+```
+img {
+    float: right;
+}
+``` 
 
 يحدد هذا المثال أن الصورة يجب أن تطفو إلى اليمين في صفحة:
 
 ![Float image for web layout](https://github.com/jamal-pb95/guides/blob/master/assets/css3-float-web-text-wrap.png "تعويم img على شبكة الإنترنت")
 
- `img { 
-    float: left; 
- } 
-` 
+```
+img {
+    float: left;
+}
+``` 
 
 يحدد هذا المثال أن الصورة يجب أن تطفو إلى اليسار في صفحة:
 
- `img { 
-    float: none; 
- } 
-` 
+```
+img {
+    float: none;
+}
+``` 
 
 في المثال التالي ، سيتم عرض الصورة فقط في مكان حدوثها في النص ( `float: none;` ):
 
@@ -57,10 +60,11 @@ localeTitle: تعويم وواضحة
 
 ![unclear footer image](https://github.com/jamal-pb95/guides/blob/master/assets/unclearedfooter.png "صورة تذييل غير واضح") المصدر: CSS-TRICS
 
- `div { 
-    clear: left; 
- } 
-` 
+```
+div {
+    clear: left;
+}
+``` 
 
 ![clear footer image](https://github.com/jamal-pb95/guides/blob/master/assets/clearedfooter.png "صورة تذييل واضح") المصدر: CSS-TRICS
 

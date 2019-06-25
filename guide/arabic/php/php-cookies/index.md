@@ -28,25 +28,26 @@ localeTitle: الكوكيز بي اتش بي
 
 **مثال:**
 
- `<?php 
- $cookie_name = "user"; 
- $cookie_value = "John Doe"; 
- setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");  // 86400 = 1 day 
- ?> 
- <html> 
- <body> 
- 
- <?php 
- if(!isset($_COOKIE[$cookie_name])) { 
-    echo "Cookie named '" . $cookie_name . "' is not set!"; 
- } else { 
-    echo "Cookie '" . $cookie_name . "' is set!<br>"; 
-    echo "Value is: " . $_COOKIE[$cookie_name]; 
- } 
- ?> 
- </body> 
- </html> 
-` 
+```
+<?php
+$cookie_name = "user";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");  // 86400 = 1 day
+?>
+<html>
+<body>
+
+<?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
+</body>
+</html>
+``` 
 
 **ملاحظة:** يجب أن تظهر الدالة setcookie () **قبل** العلامة.
 
@@ -60,26 +61,27 @@ localeTitle: الكوكيز بي اتش بي
 
 **مثال:**
 
- `<?php 
- $cookie_name = "user"; 
- $cookie_value = "Jane Porter"; 
- setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); 
- ?> 
- <html> 
- <body> 
- 
- <?php 
- if(!isset($_COOKIE[$cookie_name])) { 
-    echo "Cookie named '" . $cookie_name . "' is not set!"; 
- } else { 
-    echo "Cookie '" . $cookie_name . "' is set!<br>"; 
-    echo "Value is: " . $_COOKIE[$cookie_name]; 
- } 
- ?> 
- 
- </body> 
- </html> 
-` 
+```
+<?php
+$cookie_name = "user";
+$cookie_value = "Jane Porter";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
+<html>
+<body>
+
+<?php
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
+
+</body>
+</html>
+``` 
 
 انتاج:  
 تم تعيين Cookie 'user'!  
@@ -91,20 +93,21 @@ localeTitle: الكوكيز بي اتش بي
 
 **مثال:**
 
- `<?php 
- // set the expiration date to one hour ago 
- setcookie("user", "", time() - 3600); 
- ?> 
- <html> 
- <body> 
- 
- <?php 
- echo "Cookie 'user' is deleted."; 
- ?> 
- 
- </body> 
- </html> 
-` 
+```
+<?php
+// set the expiration date to one hour ago
+setcookie("user", "", time() - 3600);
+?>
+<html>
+<body>
+
+<?php
+echo "Cookie 'user' is deleted.";
+?>
+
+</body>
+</html>
+``` 
 
 انتاج:  
 يتم حذف Cookie 'user'.

@@ -4,54 +4,60 @@ title: CSS Cursors
 ## CSS Cursors
 
 The cursor property specifies the type of cursor to be displayed when you hover over an element. It has 39 possible values: 
-```css
-    .alias           { cursor: alias; }
-    .all-scroll      { cursor: all-scroll; }
-    .auto            { cursor: auto; }
-    .cell            { cursor: cell; }
-    .context-menu    { cursor: context-menu; }
-    .col-resize      { cursor: col-resize; }
-    .copy            { cursor: copy; }
-    .crosshair       { cursor: crosshair; }
-    .default         { cursor: default; }
-    .e-resize        { cursor: e-resize; }
-    .ew-resize       { cursor: ew-resize; }
-    .grab            { cursor: grab; }
-    .grabbing        { cursor: grabbing; }
-    .help            { cursor: help; }
-    .move            { cursor: move; }
-    .n-resize        { cursor: n-resize; }
-    .ne-resize       { cursor: ne-resize; }
-    .nesw-resize     { cursor: nesw-resize; }
-    .ns-resize       { cursor: ns-resize; }
-    .nw-resize       { cursor: nw-resize; }
-    .nwse-resize     { cursor: nwse-resize; }
-    .no-drop         { cursor: no-drop; }
-    .none            { cursor: none; }
-    .not-allowed     { cursor: not-allowed; }
-    .pointer         { cursor: pointer; }
-    .progress        { cursor: progress; }
-    .row-resize      { cursor: row-resize; }
-    .s-resize        { cursor: s-resize; }
-    .se-resize       { cursor: se-resize; }
-    .sw-resize       { cursor: sw-resize; }
-    .text            { cursor: text; }
-    .vertical-text   { cursor: vertical-text; }
-    .w-resize        { cursor: w-resize; }
-    .wait            { cursor: wait; }
-    .zoom-in         { cursor: zoom-in; }
-    .zoom-out        { cursor: zoom-out; }
-    .initial         { cursor: initial; }
-    .inherit         { cursor: inherit; }
-    ```
+
+• `cursor: alias;`<br>
+• `cursor: all-scroll;`<br>
+• `cursor: auto;`<br>
+• `cursor: cell;`<br>
+• `cursor: context-menu;`<br>
+• `cursor: col-resize;`<br>
+• `cursor: copy;`<br>
+• `cursor: crosshair;`<br>
+• `cursor: default;`<br>
+• `cursor: e-resize;`<br>
+• `cursor: ew-resize;`<br>
+• `cursor: grab;`<br>
+• `cursor: grabbing;`<br>
+• `cursor: help;`<br>
+• `cursor: move;`<br>
+• `cursor: n-resize;`<br>
+• `cursor: ne-resize;`<br>
+• `cursor: nesw-resize;`<br>
+• `cursor: ns-resize;`<br>
+• `cursor: nw-resize ;`<br>
+• `cursor: nwse-resize;`<br>
+• `cursor: no-drop;`<br>
+• `cursor: none;`<br>
+• `cursor: not-allowed;`<br>
+• `cursor: pointer;`<br>
+• `cursor: progress;`<br>
+• `cursor: row-resize;`<br>
+• `cursor: s-resize;`<br>
+• `cursor: se-resize;`<br>
+• `cursor: sw-resize;`<br>
+• `cursor: text;`<br>
+• `cursor: vertical-text;`<br>
+• `cursor: w-resize;`<br>
+• `cursor: wait;`<br>
+• `cursor: zoom-in;`<br>
+• `cursor: zoom-out;`<br>
+• `cursor: initial;`<br>
+• `cursor: inherit;`
+
 ![alt text](http://www.javascripter.net/faq/24_cursor_styles.gif "CSS Cursors")
 
-You can also set an image as the cursor. 
-Note: Always specific a default cursor at the end incase the specified cursor is unavailable.
+
+You can also set an image as the cursor.<br>
+
+Note: However,it won't work in case your image is too big.
+(For example,in Firefox, the size limit is 128x128 px)
+
+This also depends on the browser support.<br>
+Note: Always specify a default cursor at the end incase the specified cursor is unavailable.
 
 ```
 .custom-cursor {
-  cursor: url(cursor-image.png),auto;
+  cursor: url(cursor-image.png), auto;
 }
 ```
 
@@ -60,3 +66,7 @@ Note: Always specific a default cursor at the end incase the specified cursor is
 * Mozilla Developer Network: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/cursor' target='_blank' rel='nofollow'>MDN</a>
 * Browser Support: <a href='http://caniuse.com/#search=cursor' target='_blank' rel='nofollow'>caniuse</a>
 * Cursor examples by w3schools: <a href='https://www.w3schools.com/cssref/playit.asp?filename=playcss_cursor&preval=none' target='_blank' rel='nofollow'>w3schools</a>
+* [Emoji Cursors-Use emojis as mouse cursors by combining SVG with CSS.](https://www.emojicursor.app/)
+* [w3schools-HTML smileys](https://www.w3schools.com/charsets/ref_emoji_smileys.asp)
+* [CSS-Tricks](https://css-tricks.com/almanac/properties/c/cursor/)
+* [Emoji Cheat Sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)

@@ -8,11 +8,12 @@ localeTitle: الرياضيات Ceil
 
 ### أمثلة
 
- `Math.ceil(0.1)  //  1 
- Math.ceil(1.3)  //  2 
- Math.ceil(-0.9) // -0 
- Math.ceil(-1.5) // -1 
-` 
+```javascript
+Math.ceil(0.1)  //  1
+Math.ceil(1.3)  //  2
+Math.ceil(-0.9) // -0
+Math.ceil(-1.5) // -1
+``` 
 
 ### معلومات اكثر:
 

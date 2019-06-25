@@ -14,12 +14,13 @@ _هنا في المثال المتغير b هو القاعدة بينما الم
 
 مثال على سجلات في بيثون:
 
- `import math 
- 
- # math.log(value, base) - outputs exponent 
- math.log(100, 10) #outputs 2 
- math.log(2, 2) #outputs 1 
-` 
+```python
+import math
+
+# math.log(value, base) - outputs exponent
+math.log(100, 10) #outputs 2
+math.log(2, 2) #outputs 1
+``` 
 
 #### مصادر:
 

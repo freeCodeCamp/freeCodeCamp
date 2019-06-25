@@ -20,7 +20,7 @@ The `text-indent` property can also inherit from its parent element using `inher
 For example:
 - `text-indent: inherit;`
 
-The 'text-indent' property can be reset to it's initial CSS property default value.
+The 'text-indent' property can be reset to its initial CSS property default value.
 
 For example: 
 - 'text-indent: initial;'

@@ -13,31 +13,33 @@ localeTitle: المتغيرات العالمية ريفاكتور من الوظ�
 
 ## الحل 1
 
- `function add (arr, bookName) { 
-  let newArr = [...arr];  // Copy the bookList array to a new array. 
-  newArr.push(bookName);  // Add bookName parameter to the end of the new array. 
-  return newArr; // Return the new array. 
- } 
- 
- function remove (arr, bookName) { 
-  let newArr = [...arr];  // Copy the bookList array to a new array. 
-  if (newArr.indexOf(bookName) >= 0) {   // Check whether the bookName parameter is in new array. 
-    /. 
-    newArr.splice(newArr.indexOf(bookName), 1); // Remove the given paramater from the new array. 
-    return newArr; // Return the new array. 
-    } 
- } 
-` 
+```javascript
+function add (arr, bookName) {
+  let newArr = [...arr];  // Copy the bookList array to a new array.
+  newArr.push(bookName);  // Add bookName parameter to the end of the new array.
+  return newArr; // Return the new array.
+}
+
+function remove (arr, bookName) {
+  let newArr = [...arr];  // Copy the bookList array to a new array.
+  if (newArr.indexOf(bookName) >= 0) {   // Check whether the bookName parameter is in new array.
+    /.
+    newArr.splice(newArr.indexOf(bookName), 1); // Remove the given paramater from the new array.
+    return newArr; // Return the new array.
+    }
+}
+``` 
 
 ## الحل 2
 
- `function add (list,bookName) { 
-  return [...list, bookName]; 
- } 
- 
- function remove (list,bookName) { 
-  if (list.indexOf(bookName) >= 0) { 
-    return list.filter((item) => item !== bookName); 
-    } 
- } 
-`
+```javascript
+function add (list,bookName) {
+  return [...list, bookName];
+}
+
+function remove (list,bookName) {
+  if (list.indexOf(bookName) >= 0) {
+    return list.filter((item) => item !== bookName);
+    }
+}
+```

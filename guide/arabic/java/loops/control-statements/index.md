@@ -13,15 +13,16 @@ localeTitle: بيانات القفز
 
 تقسيم بيان التحكم "فاصل" خارج الحلقة عندما يتم استيفاء الشرط. هذا يعني أن بقية الحلقة لن تعمل. على سبيل المثال ، في الحلقة أدناه إذا وصلت إلى 5 ، فواصل الحلقة ، بحيث لا تستمر.
 
- `for(int i=0;i<10;i++){ 
- 
-  if(i == 5){ //if i is 5, break out of the loop. 
-    break; 
-  } 
- 
- System.out.println(i); 
- } 
-` 
+```java
+for(int i=0;i<10;i++){
+
+  if(i == 5){ //if i is 5, break out of the loop.
+    break;
+  }
+
+System.out.println(i);
+}
+``` 
 
 انتاج:
 
@@ -30,15 +31,16 @@ localeTitle: بيانات القفز
 
 إن بيان التحكم 'continue' هو الإصدار الأقل كثافة من 'break'. إنه يخرج فقط من المثيل الحالي للحلقة ويستمر. في الحلقة أدناه ، إذا كان i هو 5 ، تستمر الحلقة ، لذا سوف تتخطى بيان الطباعة أدناه وتتحرك حتى تصل إلى 10 وتوقف الحلقة.
 
- `for(int i=0;i<10;i++){ 
- 
-  if(i == 5){ //if i is 5, break out of the current instance loop. 
-    continue; 
-  } 
- 
- System.out.println(i); 
- } 
-` 
+```java
+for(int i=0;i<10;i++){
+
+  if(i == 5){ //if i is 5, break out of the current instance loop.
+    continue;
+  }
+
+System.out.println(i);
+}
+``` 
 
 انتاج:
 

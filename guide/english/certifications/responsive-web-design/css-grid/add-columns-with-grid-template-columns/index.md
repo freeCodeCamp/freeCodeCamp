@@ -17,7 +17,7 @@ where parameters is whatever you want it to be.
 
 ### Solution
 
-Since the challenge requires you to create three columns of 100px each, declare the followin in your .container CSS codeblock:
+Since the challenge requires you to create three columns of 100px each, declare the following in your .container CSS codeblock:
 
 ````css
 grid-template-columns: 100px 100px 100px;
