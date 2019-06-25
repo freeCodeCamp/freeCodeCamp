@@ -1,12 +1,12 @@
 ---
-title: Searching for Existing Issues in Github
+title: Searching for Existing Issues in GitHub
 localeTitle: البحث عن القضايا الحالية في جيثب
 ---
 إذا كنت لا تزال ترى مشكلات بعد الحصول على مساعدة على Gitter ، فستحتاج إلى محاولة معرفة ما إذا كان أي شخص آخر قد نشر عن مشكلة مماثلة.
 
 ![gif خلال الخطوات التالية للبحث عن GitHub لهذه المشكلة](//discourse-user-assets.s3.amazonaws.com/original/2X/3/3577718dd9fe14fbe80b203bc3cc56cdb0d9c3af.gif)
 
-1.  انتقل إلى صفحة [Github](https://github.com/FreeCodeCamp/FreeCodeCamp/issues) الخاصة بـ FreeCodeCamp's.
+1.  انتقل إلى صفحة [GitHub](https://github.com/FreeCodeCamp/FreeCodeCamp/issues) الخاصة بـ FreeCodeCamp's.
     
 2.  استخدم شريط البحث للبحث عن المشكلات التي تم حفظها بالفعل والتي قد تكون ذات صلة بمشكلتك.
     

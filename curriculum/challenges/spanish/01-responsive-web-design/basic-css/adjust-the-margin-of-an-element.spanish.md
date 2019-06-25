@@ -2,18 +2,17 @@
 id: bad87fee1348bd9aedf08822
 title: Adjust the Margin of an Element
 challengeType: 0
-guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/adjust-the-margin-of-an-element'
 videoUrl: ''
 localeTitle: Ajustar el margen de un elemento
 ---
 
-## Description
+## Descripción
 <section id="description"> El <code>margin</code> un elemento controla la cantidad de espacio entre el <code>border</code> un elemento y los elementos circundantes. Aquí, podemos ver que el cuadro azul y el cuadro rojo están anidados dentro del cuadro amarillo. Tenga en cuenta que el cuadro rojo tiene un <code>margin</code> más <code>margin</code> que el cuadro azul, lo que hace que parezca más pequeño. Cuando aumente el <code>margin</code> del cuadro azul, aumentará la distancia entre su borde y los elementos circundantes. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Cambie el <code>margin</code> del cuadro azul para que coincida con el del cuadro rojo. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -78,7 +77,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

@@ -27,8 +27,9 @@ localeTitle: واجهات برمجة التطبيقات REST مع Falcon
 
 فكر في مورد ككيان تحتاج إليه واجهة برمجة التطبيقات. في حالتنا ، سيكون أفضل مورد هو `Timestamp` . عادةً ما يكون توجيهنا شيئًا كالتالي:
 
- `GET /timestamp 
-` 
+```
+GET /timestamp
+``` 
 
 هنا ، `GET` هو فعل HTTP المستخدم لاستدعاء نقطة النهاية هذه ، و `/timestamp` هو عنوان URL نفسه. الآن بعد أن حصلنا على هذا الجزء من الطريق ، دعنا ننشئ وحدة نمطية!
 
@@ -36,12 +37,13 @@ localeTitle: واجهات برمجة التطبيقات REST مع Falcon
 
 الوقت لاستيراد مكتبة الصقر:
 
- `import json 
- 
- import falcon 
- 
- import arrow 
-` 
+```python
+import json
+
+import falcon
+
+import arrow
+``` 
 
 لاحظ أننا قمنا أيضًا باستيراد حزمة `json` ومكتبة `arrow` . الآن ، دعنا نحدد فئة لموردنا:
 
@@ -64,16 +66,17 @@ localeTitle: واجهات برمجة التطبيقات REST مع Falcon
 
 الآن ، أضف الرمز أدناه:
 
- `import falcon 
- 
- from timestamp import Timestamp 
- 
- api = application = falcon.API() 
- 
- timestamp = Timestamp() 
- 
- api.add_route('/timestamp', timestamp) 
-` 
+```python
+import falcon
+
+from timestamp import Timestamp
+
+api = application = falcon.API()
+
+timestamp = Timestamp()
+
+api.add_route('/timestamp', timestamp)
+``` 
 
 هنا ، قمنا بتعريف واجهة برمجة تطبيقات Falcon ، وقمنا بتهيئة مثيل لفئة الموارد التي أنشأناها في وقت سابق. بعد ذلك ، قمنا `/timestamp` نقطة النهاية `/timestamp` مع مثيل الفصل - والآن نحن جاهزون للنجاح! لاختبار هذا API تثبيت `gunicorn` ( `pip install gunicorn` ) ، وتشغيل `gunicorn app` . استخدم Postman أو `cURL` بسيط لاختبار ذلك:
 

@@ -58,7 +58,7 @@ class GateKeeper extends React.Component {
 
 Escreva uma instrução condicional que seja avaliada de acordo com o seu estado, conforme mencionado na descrição do desafio, verifique o comprimento da entrada e atribua um novo objeto à variável inputStyle.
 
-```react.js
+```jsx
 if (this.state.input.length > 15) { 
   inputStyle = { 
     border: '3px solid red' 

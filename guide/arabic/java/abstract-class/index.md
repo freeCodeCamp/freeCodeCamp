@@ -18,8 +18,9 @@ localeTitle: دروس مجردة في جاوة
 
 الطبقة العامة للدراجات النارية يمتد المركبة { ... }
 
- `You cannot create an object of Vehicle class anywhere in your program. You can however, extend the abstract vehicle class and create objects of the child classes; 
-` 
+```
+You cannot create an object of Vehicle class anywhere in your program. You can however, extend the abstract vehicle class and create objects of the child classes;
+``` 
 
 جافا مركبة جديدة Véhicle = سيارة جديدة () ؛ // غير صالحة سيارة مركبة = سيارة جديدة () ؛ // صالح مركبة mBike = دراجة نارية جديدة () ؛ // صالح
 

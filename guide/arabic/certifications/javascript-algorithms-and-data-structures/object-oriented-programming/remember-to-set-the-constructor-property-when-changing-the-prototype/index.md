@@ -8,16 +8,17 @@ localeTitle: تذكر تعيين الخاصية منشئ عند تغيير "ال
 
 # حل
 
- `Dog.prototype = { 
- 
-  constructor: Dog, // Solution 
- 
-  numLegs: 2, 
-  eat: function() { 
-    console.log("nom nom nom"); 
-  }, 
-  describe: function() { 
-    console.log("My name is " + this.name); 
-  } 
- }; 
-`
+```javascript
+Dog.prototype = {
+
+  constructor: Dog, // Solution
+
+  numLegs: 2,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+```

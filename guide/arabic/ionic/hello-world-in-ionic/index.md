@@ -10,22 +10,25 @@ localeTitle: مرحبا العالم في الأيونية
 
 #### 1\. تثبيت `ionic` ، `npm` ، `angular` و `cordova` إذا لم يتم تثبيت. \[انظر المقدمة [الأولى](https://guide.freecodecamp.org/ionic) لمزيد من المعلومات\]
 
- `sudo apt-get install nodejs 
- sudo apt-get install npm 
- sudo npm install -g ionic cordova 
-` 
+```shell
+sudo apt-get install nodejs
+sudo apt-get install npm
+sudo npm install -g ionic cordova
+``` 
 
 #### 2\. قم بإنشاء مجلد باسم `helloworld`
 
- `ionic start helloworld blank 
-` 
+```shell
+ionic start helloworld blank
+``` 
 
 ملحوظة: حيث أن هذا هو مشروع صغير أدخل لا أو N عند المطالبة أثناء تنفيذ البرنامج.
 
 #### 3\. قم بتغيير الدليل إلى `helloworld` \[هذا هو دليلك الأيوني\]
 
- `cd helloworld 
-` 
+```shell
+cd helloworld
+``` 
 
 #### 4\. افتح المجلد في محرر النص الخاص بك. سترى مختلف الملفات والمجلدات الفرعية.
 

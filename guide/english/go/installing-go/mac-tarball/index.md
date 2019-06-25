@@ -25,7 +25,7 @@ $ export PATH=$PATH:/usr/local/go/bin
 
 To check if go was successfully installed, use:
 
-```sh
+```shell
 $ go version
 ```
 This should print to the console the version of go, while at the same time making sure the installation went smoothly.

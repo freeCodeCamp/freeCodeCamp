@@ -29,18 +29,19 @@ localeTitle: الخطوط
 *   مائل - النص موضح في _المائل_
 *   مائل - النص المائل يميل
 
- `.normal { 
-    font-style: normal; 
- } 
- 
- .italic { 
-    font-style: italic; 
- } 
- 
- .oblique { 
-    font-style: oblique; 
- } 
-` 
+```css
+.normal {
+    font-style: normal;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.oblique {
+    font-style: oblique;
+}
+``` 
 
 ### حجم الخط
 
@@ -53,39 +54,41 @@ localeTitle: الخطوط
 *   `small` ، `medium` ، `large` - يُعرف بقيم الحجم المطلقة
 *   `%` - النسب المئوية
 
- `.with-pixels { 
-    font-size: 14px; 
- } 
- 
- .with-ems { 
-    font-size: 0.875em; 
- } 
- 
- .with-absolute { 
-    font-size: large; 
- } 
- 
- .with-percentage { 
-    font-size: 80%; 
- } 
-` 
+```css
+.with-pixels {
+    font-size: 14px;
+}
+
+.with-ems {
+    font-size: 0.875em;
+}
+
+.with-absolute {
+    font-size: large;
+}
+
+.with-percentage {
+    font-size: 80%;
+}
+``` 
 
 ### وزن الخط
 
 تحدد الخاصية `font-weight` الوزن (أو الجرأة) للخط. يقبل الكلمات الرئيسية ( `bold` ، `normal` ، `bolder` ، `lighter` ) أو كلمات رئيسية عددية ( `100` ، `200` ، `300` ، `400` إلخ) `400` هو نفسه `normal` .
 
- `p { 
-   font-weight: bold 
- } 
-` 
+```css
+p {
+   font-weight: bold
+}
+``` 
 
 ### استجابة الخط
 
 يمكن ضبط حجم النص بوحدة عرض vw (عرض إطار العرض). وبهذه الطريقة ، سيتبع حجم النص حجم نافذة المتصفح.
 
- `
-<h1 style="font-size:10vw">Hello World</h1> 
-` 
+```html
+<h1 style="font-size:10vw">Hello World</h1>
+``` 
 
 `Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.`
 
@@ -93,10 +96,11 @@ localeTitle: الخطوط
 
 تحدد خاصية `font-variant` إذا كان يجب عرض النص في خط صغير الحجم (حيث يتم تحويل جميع الأحرف الصغيرة إلى أحرف كبيرة أثناء الظهور في حجم خط أصغر من الأحرف الكبيرة الأصلية في النص).
 
- `p.small { 
-  font-variant: small-caps; 
- } 
-` 
+```css
+p.small {
+  font-variant: small-caps;
+}
+``` 
 
 #### معلومات اكثر:
 
