@@ -4,7 +4,7 @@ localeTitle: جافا سكريبت مقابل TypeScript
 ---
 ## جافا سكريبت مقابل TypeScript
 
-![اين والدو](https://i.imgur.com/DznuAou.jpg)
+![اين والدو](https://cdn-media-1.freecodecamp.org/imgr/DznuAou.jpg)
 
 حسنًا حتى الآن ، أصبح لدينا إحساس عام بماهية TypeScript ، لنبدأ لعبة سريعة من **أين والدو** .
 

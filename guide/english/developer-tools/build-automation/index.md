@@ -14,7 +14,10 @@ Its primary purpose is to generate build artifacts through activities like compi
 ## - Build automation servers:
 They are general web based tools that execute build automation utilities on a scheduled or trigger basis; continuous integration server is a type of build automation server.
 
-There are three subcategories to Build automation: Continuous Integration, Configuration management and other Build automation.
+There are three subcategories to Build automation:
+- Continuous Integration
+- Configuration management
+- other Build automation.
 
 Below is a list of some notable tool associated with automating build processes:
 - GNU make

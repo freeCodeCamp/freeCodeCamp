@@ -118,7 +118,7 @@ Otro selector de filtrado,: `:contains(text)` , selecciona elementos que tienen 
 $("p:contains('World')").css("color", "yellow"); 
 ```
 
-De manera similar, el `:last` selector selecciona el elemento que es el último hijo de su padre. El selector JQuery a continuación selecciona el último elemento `<li>` en la lista, el elemento de la lista "Tres", y luego usa el método `.css` para convertir el texto en amarillo.
+De manera similar, el `:last` selector selecciona el elemento que es el último hijo de su padre. El selector jQuery a continuación selecciona el último elemento `<li>` en la lista, el elemento de la lista "Tres", y luego usa el método `.css` para convertir el texto en amarillo.
 
 `$("li:last").css("color", "yellow");`
 

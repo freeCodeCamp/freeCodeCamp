@@ -87,55 +87,59 @@ _إعادة تسمية الكود مع الميراث في البرمجة الم
 
 بدون الاضطرار إلى إعادة كتابة جميع الرموز الخاصة بفئة `Man` ، يمكننا إعادة استخدام هذا الرمز باستخدام الكلمة الأساسية الممتدة.
 
- `<?php 
- class HealthyMan extends Man 
- { 
- 
- } 
-` 
+```php
+<?php
+class HealthyMan extends Man
+{
+
+}
+``` 
 
 الآن لدينا جميع خصائص وأساليب الفصل من رجل داخل `HealthyMan` . يمكننا `HealthyMan` فئة `HealthyMan` للتحقق من هذا سريع حقيقي.
 
- `<?php 
- $jackie = new HealthyMan('Jackie', 25, '5\' 5"'); 
- // => Our man's name is: Jackie 
- // => He is 25 years old and 5' 5" tall. 
-` 
+```php
+<?php
+$jackie = new HealthyMan('Jackie', 25, '5\' 5"');
+// => Our man's name is: Jackie
+// => He is 25 years old and 5' 5" tall.
+``` 
 
 يمكننا المضي قدمًا ووضع رياضة ومشروبات HealthyMan aka aka المفضلة.
 
- `<?php 
- $jackie->fav_sports = ['swimming', 'weight training']; 
- print_r($jackie->fav_sports); 
- // => 
- // Array 
- // ( 
- //     [0] => swimming 
- //     [1] => weight training 
- // ) 
- 
- $jackie->setFavDrinks(['Matcha tea', 'Oolong Tea']); 
- print_r($jackie->getFavDrinks()); 
- // => 
- // Array 
- // ( 
- //     [0] => Matcha tea 
- //     [1] => Oolong Tea 
- // ) 
-` 
+```php
+<?php
+$jackie->fav_sports = ['swimming', 'weight training'];
+print_r($jackie->fav_sports);
+// =>
+// Array
+// (
+//     [0] => swimming
+//     [1] => weight training
+// )
+
+$jackie->setFavDrinks(['Matcha tea', 'Oolong Tea']);
+print_r($jackie->getFavDrinks());
+// =>
+// Array
+// (
+//     [0] => Matcha tea
+//     [1] => Oolong Tea
+// )
+``` 
 
 الآن دعنا نرى ما إذا كان باستطاعتنا الاتصال بطرق `giveFirmHandshakes()` الرجل مثل `giveFirmHandshakes()` و `beStubborn()` و `notPutToiletPaper()` .
 
- `<?php 
- echo "\n" . $jackie->giveFirmHandshakes(); 
- // => I give firm handshakes. 
- 
- echo "\n" . $jackie->beStubborn(); 
- // => I am stubborn. 
- 
- echo "\n" . $jackie->notPutToiletPaper(); 
- // => It's not humanly possible to remember to put toilet paper rolls when they are finished 
-` 
+```php
+<?php
+echo "\n" . $jackie->giveFirmHandshakes();
+// => I give firm handshakes.
+
+echo "\n" . $jackie->beStubborn();
+// => I am stubborn.
+
+echo "\n" . $jackie->notPutToiletPaper();
+// => It's not humanly possible to remember to put toilet paper rolls when they are finished
+``` 
 
 نحصل على كل هذه الأشياء من خلال مجرد ترميز فئة رجل باستخدام الكلمة الأساسية الممتدة.
 
@@ -201,25 +205,26 @@ _إعادة تسمية الكود مع الميراث في البرمجة الم
 
 يمكننا استدعاء هذه الطرق لمعرفة ما إذا كانت تعمل كما هو متوقع:
 
- `<?php 
- 
- echo "\n" . $jackie->eatHealthy(); 
- // => I only eat healthy meals. 
- 
- echo "\n" . $jackie->meditateDaily(); 
- // => I set aside 20 minutes daily to meditate. 
- 
- echo "\n" . $jackie->laughOften(); 
- // => I watch funny TV shows to unwind myself. 
- 
- $jackie->setBodyFatPercentage(12); 
- echo "\nBody Fat %: " . $jackie->getBodyFatPercentage(); 
- // => Body Fat %: 12 
- 
- $jackie->setWorkoutPerWeek(5); 
- echo "\nWorkout Times Per Week: " . $jackie->getWorkoutPerWeek(); 
- // => Workout Times Per Week: 5 
-` 
+```php
+<?php
+
+echo "\n" . $jackie->eatHealthy();
+// => I only eat healthy meals.
+
+echo "\n" . $jackie->meditateDaily();
+// => I set aside 20 minutes daily to meditate.
+
+echo "\n" . $jackie->laughOften();
+// => I watch funny TV shows to unwind myself.
+
+$jackie->setBodyFatPercentage(12);
+echo "\nBody Fat %: " . $jackie->getBodyFatPercentage();
+// => Body Fat %: 12
+
+$jackie->setWorkoutPerWeek(5);
+echo "\nWorkout Times Per Week: " . $jackie->getWorkoutPerWeek();
+// => Workout Times Per Week: 5
+``` 
 
 لقد نجحنا في إعادة استخدام الشفرة الحالية ونفذنا برنامجًا دراسيًا للأطفال.
 
@@ -227,28 +232,30 @@ _إعادة تسمية الكود مع الميراث في البرمجة الم
 
 على الرغم من أنه ورث عن `beStubborn()` من فئة Man ، حيث أن Jackie رجل سليم ، فهو عنيد فقط مرة واحدة فقط في فترة. يمكننا أن نحصل على `beStubborn()` " `beStubborn()` Healthy Man's `beStubborn()` " ليقول "أنا عنيد من حين `beStubborn()` " بدلاً من "أنا عنيد" فقط عن طريق تجاوز أسلوب "الطبقة الأم".
 
- `<?php 
- class HealthyMan extends Man 
- { 
-    ..... 
-    ..... 
- 
-    public function beStubborn() 
-    { 
-        return "I am stubborn once in a while."; 
-    } 
- 
-    ..... 
-    ..... 
- } 
-` 
+```php
+<?php
+class HealthyMan extends Man
+{
+    .....
+    .....
+
+    public function beStubborn()
+    {
+        return "I am stubborn once in a while.";
+    }
+
+    .....
+    .....
+}
+``` 
 
 الآن عندما نتمكن من `beStubborn()` طريقة `beStubborn()` ، سنرى مخرجًا مختلفًا عن ذي قبل:
 
- `<?php 
- echo "\n" . $jackie->beStubborn(); 
- // => I am stubborn once in a while. 
-` 
+```php
+<?php
+echo "\n" . $jackie->beStubborn();
+// => I am stubborn once in a while.
+``` 
 
 يوضح هذا كيف يعمل overriding الأسلوب في OOP.
 

@@ -24,6 +24,8 @@ See "More Information" for a link to test your phishing knowledge and see if you
 
 * Infiltrating: Impersonating someone legitimate in order to gain physical access to a secured location; for example, accessing an office by pretending to be the coffee-machine repair person.
 
+* Lastly, the 419 scam, also known as Advanced-Fee Scam, is a real life example of social engineering. In Nigeria and other third world countries, people would manipulate people by connecting with people using emotional connections in order to scam money. Usually strategies would include: third world poor country status in need of donations or informing people they won scam money and asking for account numbers. These emails would be very convincing and many have fallen victims to these scams. 
+
 #### Prevention and Security
 
 Because Social Engineering requires little computer expertise, it is a readily-available tool for individuals who wish to access sensitive data.

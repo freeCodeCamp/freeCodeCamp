@@ -93,14 +93,14 @@ function sumFibs(num) {
     // Sum only the odd numbers and return the value 
     return arrFib.reduce((acc, curr) => { 
         return acc + curr * (curr % 2); 
-    }); 
+    }, 0); 
  } 
  
  // test here 
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/@kr3at0/SumAllOddFibonacciNumbers)
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/repls/ImpassionedFineConnection)
 
 ### Explicação do código:
 

@@ -24,9 +24,9 @@ localeTitle: يوم سبان
 
 يشبه رمز الفقرة ذات النص الأحمر هذا:
 
- `
-<p>This paragraph has <span style="color:red">red span styling</span> inside it without affecting the rest of the document.</p> 
-` 
+```html
+<p>This paragraph has <span style="color:red">red span styling</span> inside it without affecting the rest of the document.</p>
+``` 
 
 #### الاختلافات بين `<span>` و `<div>`
 

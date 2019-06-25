@@ -6,13 +6,15 @@ localeTitle: سلسلة بحث مساعدة المساعدين لضيق نتائ
 
 1.  لإنشاء ولكن لا يتم تنفيذ استعلام بحث
 
- `Model.find( {name: 'Leah'} ) 
-` 
+```javascript
+Model.find( {name: 'Leah'} )
+``` 
 
 2.  لتخزين استعلام البحث في متغير لاستخدامه لاحقًا:
 
- `var findQuery = YourModel.find( {name: 'Leah'} ) 
-` 
+```javascript
+var findQuery = YourModel.find( {name: 'Leah'} )
+``` 
 
 3.  لفرز مصفوفة:
 
@@ -21,35 +23,40 @@ localeTitle: سلسلة بحث مساعدة المساعدين لضيق نتائ
 
 4.  لتحديد حجم المصفوفة:
 
- `yourArray.limit(5)  // return array which has 5 items in it. 
-` 
+```javascript
+yourArray.limit(5)  // return array which has 5 items in it.
+``` 
 
 5.  لإخفاء خاصية معينة من النتيجة:
 
- `yourArray.select( {name: 0, age: 1} ) // Here: 0 means false and thus hide name property; 1 means true so age property will show. 
-` 
+```javascript
+yourArray.select( {name: 0, age: 1} ) // Here: 0 means false and thus hide name property; 1 means true so age property will show.
+``` 
 
 6.  لتنفيذ هذا الاستعلام ، يمكنك إما:  
     1) رد الاتصال:
 
- `YourQuery.exec(function(err, docs) { 
-    //do something here 
- }) 
-` 
+```javascript
+YourQuery.exec(function(err, docs) {
+    //do something here
+})
+``` 
 
 أو 2) وعد
 
- `YourQuery.exec.then(function(err, docs) { 
-    //do something here 
- }) 
-` 
+```javascript
+YourQuery.exec.then(function(err, docs) {
+    //do something here
+})
+``` 
 
 7.  سلسلة كل ذلك معا:
 
- `Person.find({age: 55}).sort({name: -1}).limit(5).select( {favoriteFoods: 0} ).exec(function(error, people) { 
-  //do something here 
- }) 
-` 
+```javascript
+Person.find({age: 55}).sort({name: -1}).limit(5).select( {favoriteFoods: 0} ).exec(function(error, people) {
+  //do something here
+})
+``` 
 
   
   
