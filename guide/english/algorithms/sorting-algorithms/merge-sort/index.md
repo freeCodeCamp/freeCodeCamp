@@ -8,7 +8,7 @@ Merge Sort is a <a href='https://guide.freecodecamp.org/algorithms/divide-and-co
 Since this is a recursion based algorithm, we have a recurrence relation for it. A recurrence relation is simply a way of representing a problem in terms of its subproblems. 
 
 ```
-T(n) = 2 * T(n / 2) + O(n)
+T(n) = 2 * T(n / 2) + O(n) 
 ```
 
 Putting it in plain english, we break down the subproblem into two parts at every step and we have some linear amount of work that we have to do for merging the two sorted halves together at each step. 
@@ -51,15 +51,6 @@ If right > l:
 ### Visualization:
 * <a href='https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html'>USFCA</a>
 * <a href='https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/visualize/'>HackerEarth</a>
-
-
-### Relavant videos on freeCodeCamp YouTube channel
-* <a href='https://youtu.be/TzeBrDU-JaY'>Merge Sort algorithm - MyCodeSchool</a>
-
-### Other Resources:
-* <a href='https://en.wikipedia.org/wiki/Merge_sort' target='_blank' rel='nofollow'>Wikipedia</a>
-* <a href='www.geeksforgeeks.org/merge-sort' target='_blank' rel='nofollow'>GeeksForGeeks</a>
-* <a href='https://youtu.be/sWtYJv_YXbo' target='_blank' rel='nofollow'>Merge Sort - CS50</a>
 
 ### Implementaion in JS
 ```js
@@ -181,6 +172,32 @@ int main()
 ```
 
 ### Implementation in C++
+ 
+Let us consider array A = {2,5,7,8,9,12,13}
+and array B = {3,5,6,9,15} and we want array C to be in ascending order as well.
+
+```cpp
+void mergesort(int A[],int size_a,int B[],int size_b,int C[])
+{
+     int token_a,token_b,token_c;
+     for(token_a=0, token_b=0, token_c=0; token_a<size_a && token_b<size_b; )
+     {
+          if(A[token_a]<=B[token_b])
+               C[token_c++]=A[token_a++];
+          else
+               C[token_c++]=B[token_b++];
+      }
+      
+      if(token_a<size_a)
+      {
+          while(token_a<size_a)
+               C[token_c++]=A[token_a++];
+      }
+      else
+      {
+          while(token_b<size_b)
+               C[token_c++]=B[token_b++];
+      }
 
 ```cpp
 void merge(int arr[], int l, int m, int r) 
@@ -391,3 +408,57 @@ public class mergesort {
   }
 }
 ```
+
+### Implementaion in MATLAB
+```matlab
+
+a = [9,4,7,3,8,5,1,6,2];
+
+[sorted] = mergeSort(a);
+
+function [sorted] = mergeSort(unsorted)
+    len = length(unsorted);
+    if len == 1
+        sorted = unsorted;
+        return;
+    end
+    mid = ceil((len)/2);
+    left = mergeSort(unsorted(1:mid));
+    right = mergeSort(unsorted(mid+1:end));
+    
+    sorted = mergeLR(left, right);
+       
+end
+
+function [sorted] = mergeLR(left, right)
+    sorted = [left right];                              % add two splited array together
+    j = 1;                                              % index for 'sorted'
+    k = 1;                                              % index for 'left'
+    for i = 1:1:length(right)
+        % going through every element of the 'right'
+        if right(i) < left(k)
+            sorted(j) = right(i);                       % move the 'right' element before 
+            sorted(j+1:(j+length(left(k:end)))) = left(k:end);      % shift the left elemts 
+            j = j+1;
+        else
+            while (k <= length(left)) && (right(i) > left(k))
+                k = k+1;
+                j = j+1;
+            end
+            sorted(j) = right(i);
+            sorted(j+1:(j+length(left(k:end)))) = left(k:end);
+            j = j+1;
+        end
+    end
+
+end
+
+```
+
+### Relavant videos on freeCodeCamp YouTube channel
+* <a href='https://youtu.be/TzeBrDU-JaY'>Merge Sort algorithm - MyCodeSchool</a>
+
+### Other Resources:
+* <a href='https://en.wikipedia.org/wiki/Merge_sort' target='_blank' rel='nofollow'>Wikipedia</a>
+* <a href='www.geeksforgeeks.org/merge-sort' target='_blank' rel='nofollow'>GeeksForGeeks</a>
+* <a href='https://youtu.be/sWtYJv_YXbo' target='_blank' rel='nofollow'>Merge Sort - CS50</a>
