@@ -43,8 +43,25 @@ In this case, for matrix M, M' will denote the transpose of matrix M
 3. Plug the Delta matricies into our partial derivative matricies
    D(l) = 1\m(Delta(l) + lambda • Theta(l)); if l≠0
    D(l) = 1\m • Delta(l); if l=0
+   
+### Algorithm explained (from wikipedia)
+  Phase 1: propagation
+  Each propagation involves the following steps:
 
-This article should only be understood in the greater contexts of neural networks and machine learning. Please read the arrached references for a better understanding of the topic as a whole.
+    1.  Propagation forward through the network to generate the output value(s)
+    2.  Calculation of the cost (error term)
+    3.  Propagation of the output activations back through the network using the training pattern target to generate the deltas (the difference between the targeted and actual output values) of all output and hidden neurons.
+  Phase 2: weight update
+  For each weight, the following steps must be followed:
+
+    1.  The weight's output delta and input activation are multiplied to find the gradient of the weight.
+    2.  A ratio (percentage) of the weight's gradient is subtracted from the weight.
+This ratio (percentage) influences the speed and quality of learning; it is called the learning rate. The greater the ratio, the faster the neuron trains, but the lower the ratio, the more accurate the training is. The sign of the gradient of a weight indicates whether the error varies directly with, or inversely to, the weight. Therefore, the weight must be updated in the opposite direction, "descending" the gradient.
+
+Learning is repeated (on new batches) until the network performs adequately.
+  
+
+This article should only be understood in the greater contexts of neural networks and machine learning. Please read the attached references for a better understanding of the topic as a whole.
 
 ### More Information
 
