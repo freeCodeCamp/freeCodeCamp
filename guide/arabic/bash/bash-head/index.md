@@ -10,8 +10,9 @@ localeTitle: باش هيد
 
 ### استعمال
 
- `head [options] [file_name(s)] 
-` 
+```bash
+head [options] [file_name(s)]
+``` 
 
 معظم الخيارات المستخدمة:
 
@@ -21,18 +22,21 @@ localeTitle: باش هيد
 
 ### مثال
 
- `head file.txt 
-` 
+```bash
+head file.txt
+``` 
 
 يطبع في نهاية الأسطر العشرة الأولى من file.txt (افتراضي)
 
- `head -n 7 file.txt 
-` 
+```bash
+head -n 7 file.txt
+``` 
 
 يطبع في الأسطر السبعة الأولى من file.txt
 
- `head -q -n 5 file1.txt file2.txt 
-` 
+```bash
+head -q -n 5 file1.txt file2.txt
+``` 
 
 قم بطباعة أول 5 أسطر من file1.txt ، ثم اتبع أول 5 أسطر من file2.txt
 

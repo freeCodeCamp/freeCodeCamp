@@ -10,26 +10,27 @@ localeTitle: استخراج الدولة المنطق إلى Redux
 
 الحل المقترح:
 
- `const ADD = 'ADD'; 
- 
- function addMessage(message) { 
-  return { 
-    type: ADD, 
-    message: message 
-  }; 
- }; 
- 
- function messageReducer (previousState, action) { 
-  return [...previousState, action.message]; 
- } 
- 
- let store = { 
-  state: [], 
-  getState: () => store.state, 
-  dispatch: (action) => { 
-    if (action.type === ADD) { 
-      store.state = messageReducer(store.state, action); 
-    } 
-  } 
- }; 
-`
+```javascript
+const ADD = 'ADD';
+
+function addMessage(message) {
+  return {
+    type: ADD,
+    message: message
+  };
+};
+
+function messageReducer (previousState, action) {
+  return [...previousState, action.message];
+}
+
+let store = {
+  state: [],
+  getState: () => store.state,
+  dispatch: (action) => {
+    if (action.type === ADD) {
+      store.state = messageReducer(store.state, action);
+    }
+  }
+};
+```

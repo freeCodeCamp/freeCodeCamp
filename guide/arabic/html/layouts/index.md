@@ -8,7 +8,7 @@ localeTitle: تخطيطات
 
 يمكن تقسيم كل صفحة الويب التي نراها تقريبًا إلى مربعات ، يمكن ترتيبها بترتيب معين لإنشاء صفحة الويب هذه. الصورة أدناه مثال واحد.
 
-![عينة من تصميم الموقع - www.codementor.io](http://i.imgur.com/Z1DSMYC.png)
+![عينة من تصميم الموقع - www.codementor.io](https://cdn-media-1.freecodecamp.org/imgr/Z1DSMYC.png)
 
 > غالبًا ما تعرض مواقع الويب محتوى في عدة أعمدة (مثل مجلة أو صحيفة).
 
@@ -38,15 +38,16 @@ localeTitle: تخطيطات
 
 تقدم HTML5 عناصر دلالية دلالية تحدد الأجزاء المختلفة لصفحة الويب:
 
- `<header> - Defines a header for a document or a section 
- <nav> - Defines a container for navigation links 
- <section> - Defines a section in a document 
- <article> - Defines an independent self-contained article 
- <aside> - Defines content aside from the content (like a sidebar) 
- <footer> - Defines a footer for a document or a section 
- <details> - Defines additional details 
- <summary> - Defines a heading for the <details> element 
-` 
+```
+<header> - Defines a header for a document or a section
+<nav> - Defines a container for navigation links
+<section> - Defines a section in a document
+<article> - Defines an independent self-contained article
+<aside> - Defines content aside from the content (like a sidebar)
+<footer> - Defines a footer for a document or a section
+<details> - Defines additional details
+<summary> - Defines a heading for the <details> element
+``` 
 
 #### معلومات اكثر:
 

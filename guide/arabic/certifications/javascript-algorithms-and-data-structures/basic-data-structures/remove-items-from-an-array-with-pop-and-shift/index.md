@@ -8,12 +8,13 @@ localeTitle: إزالة العناصر من صفيف مع pop () و shift ()
 
 ## حل:
 
- `function popShift(arr) { 
-  let popped = arr.pop(); 
-  let shifted = arr.shift(); 
-  return [shifted, popped]; 
- } 
- 
- // do not change code below this line 
- console.log(popShift(['challenge', 'is', 'not', 'complete'])); 
-`
+```javascript
+function popShift(arr) {
+  let popped = arr.pop();
+  let shifted = arr.shift();
+  return [shifted, popped];
+}
+
+// do not change code below this line
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
+```

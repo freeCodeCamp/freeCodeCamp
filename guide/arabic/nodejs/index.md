@@ -19,27 +19,29 @@ Node.js هو وقت تشغيل جافا سكريبت مبني على محرك ج
 
 **الثعبان**
 
- `import time 
- 
- def my_io_task(): 
-  time.sleep(5) 
-  print("done") 
- 
- my_io_task() 
- my_io_task() 
-` 
+```python
+import time
+
+def my_io_task():
+  time.sleep(5)
+  print("done")
+
+my_io_task()
+my_io_task()
+``` 
 
 **نود.جي إس**
 
- `function my_io_task() { 
-    setTimeout(function() { 
-      console.log('done'); 
-    }, 5000); 
- } 
- 
- my_io_task(); 
- my_io_task(); 
-` 
+```node
+function my_io_task() {
+    setTimeout(function() {
+      console.log('done');
+    }, 5000);
+}
+
+my_io_task();
+my_io_task();
+``` 
 
 كلاهما يشبهان لكن الوقت المستغرق في التنفيذ مختلفان. يستغرق رمز python 10 ثوانٍ لتنفيذ بينما يستغرق رمز Node.js 5 ثوانٍ فقط للتنفيذ.
 

@@ -30,3 +30,4 @@ Area = 1/2 * 2 in * 1/2 * 7 in * π = 11 in<sup>2</sup>
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Ellipse)
 * [Math Is Fun](https://www.mathsisfun.com/geometry/ellipse.html)
+* [Calculus based proof for Area equation](http://www.analyzemath.com/calculus/Integrals/area_ellipse.html)

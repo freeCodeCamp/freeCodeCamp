@@ -8,9 +8,10 @@ localeTitle: أنا تاج
 
 في مواصفات HTML السابقة ، تم استخدام العلامة `<i>` فقط للإشارة إلى النص المائل. ومع ذلك ، في HTML الدلالي الحديث ، يجب استخدام علامات مثل `<em>` و `<strong>` عند الاقتضاء. يمكنك استخدام السمة "class" الخاصة بالعنصر `<i>` لتوضيح سبب اختلاف النص في العلامات عن النص المحيط. قد ترغب في إظهار أن النص أو العبارة من لغة مختلفة ، كما هو موضح في المثال أدناه.
 
- `<p>The French phrase <i class="french">esprit de corps</i> is often 
- used to describe a feeling of group cohesion and fellowship.</p> 
-` 
+```HTML
+<p>The French phrase <i class="french">esprit de corps</i> is often
+used to describe a feeling of group cohesion and fellowship.</p>
+``` 
 
 #### معلومات اكثر:
 

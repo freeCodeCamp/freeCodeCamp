@@ -27,66 +27,67 @@ localeTitle: نقاط
 
 وهنا مثال على ذلك
 
- `/* ----------- iPhone 6, 6S, 7 and 8 ----------- */ 
- 
- /* Portrait */ 
- 
- @media only screen 
- 
- and (min-device-width: 375px) 
- 
- and (max-device-width: 667px) 
- 
- and (-webkit-min-device-pixel-ratio: 2) 
- 
- and (orientation: portrait) { 
- 
- } 
- 
- /* Landscape */ 
- 
- @media only screen 
- 
- and (min-device-width: 375px) 
- 
- and (max-device-width: 667px) 
- 
- and (-webkit-min-device-pixel-ratio: 2) 
- 
- and (orientation: landscape) { 
- 
- } 
- 
- /* ----------- Google Pixel ----------- */ 
- 
- /* Portrait */ 
- 
- @media screen 
- 
- and (device-width: 360px) 
- 
- and (device-height: 640px) 
- 
- and (-webkit-device-pixel-ratio: 3) 
- 
- and (orientation: portrait) { 
- 
- } 
- 
- /* Landscape */ 
- 
- @media screen 
- 
- and (device-width: 360px) 
- 
- and (device-height: 640px) 
- 
- and (-webkit-device-pixel-ratio: 3) 
- 
- and (orientation: landscape) { 
- 
- } 
-` 
+```
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait */
+
+@media only screen
+
+and (min-device-width: 375px)
+
+and (max-device-width: 667px)
+
+and (-webkit-min-device-pixel-ratio: 2)
+
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+
+@media only screen
+
+and (min-device-width: 375px)
+
+and (max-device-width: 667px)
+
+and (-webkit-min-device-pixel-ratio: 2)
+
+and (orientation: landscape) {
+
+}
+
+/* ----------- Google Pixel ----------- */
+
+/* Portrait */
+
+@media screen
+
+and (device-width: 360px)
+
+and (device-height: 640px)
+
+and (-webkit-device-pixel-ratio: 3)
+
+and (orientation: portrait) {
+
+}
+
+/* Landscape */
+
+@media screen
+
+and (device-width: 360px)
+
+and (device-height: 640px)
+
+and (-webkit-device-pixel-ratio: 3)
+
+and (orientation: landscape) {
+
+}
+``` 
 
 > مع هذا النهج ، سوف ينتهي بك الأمر وجود قائمة ضخمة من الاستفسارات الإعلامية.
 
@@ -94,21 +95,23 @@ localeTitle: نقاط
 
 هذا هو الخيار المفضل أثناء إجراء أو كتابة قواعد نقطة الإيقاف. لأنه من الأسهل ضبط المحتوى وفقًا لتخطيط معين فقط عندما يتطلب تغييرًا.
 
- `@media only screen (min-width: 768px){ 
- ... 
- } 
-` 
+```
+@media only screen (min-width: 768px){
+...
+}
+``` 
 
 > تعني نقطة الإيقاف هذه أنه سيتم تطبيق CSS عندما يكون عرض الجهاز 768 بكسل وما فوق.
 
 #### يمكنك أيضًا تعيين نطاق بنقاط توقف ، بحيث لا يتم تطبيق CSS إلا ضمن هذه الحدود.
 
- `@media only screen and (min-width: 768px) and (max-width: 959px){ 
- 
- ... 
- 
- } 
-` 
+```
+@media only screen and (min-width: 768px) and (max-width: 959px){
+
+...
+
+}
+``` 
 
 **ملحوظة** حاول دائمًا إنشاء نقاط توقف استنادًا إلى المحتوى الخاص بك وليس إلى الأجهزة. تقسيمها إلى عرض منطقي بدلاً من عرض عشوائي والاحتفاظ بها إلى عدد يمكن إدارتها ، لذلك يبقى التعديل بسيطة وواضحة.
 
@@ -118,15 +121,16 @@ localeTitle: نقاط
 
 دعونا نحولها إلى رمز CSS:
 
- `.text1 { 
-    font-size: 16px; 
- } 
- @media (min-width: 1200px) { 
-    .text1 { 
-        font-size: 20px; 
-    } 
- } 
-` 
+```css
+.text1 {
+    font-size: 16px;
+}
+@media (min-width: 1200px) {
+    .text1 {
+        font-size: 20px;
+    }
+}
+``` 
 
 **للراحة لدينا،** وكتابة `.text1` التصميم الأساسي أولا ... ثم بعد ذلك سنقوم تحديد `@media` القواعد.
 
@@ -134,13 +138,14 @@ localeTitle: نقاط
 
 من الجيد تمامًا استخدام `@media (max-width) {}` . هنا مثال:
 
- `.text1 { 
-    font-size: 20px; 
- } 
- @media (max-width: 1199px) { 
-    font-size: 16px; 
- } 
-` 
+```css
+.text1 {
+    font-size: 20px;
+}
+@media (max-width: 1199px) {
+    font-size: 16px;
+}
+``` 
 
  `// Normal, basic styles 
  // that look great on small screens 
@@ -161,21 +166,23 @@ localeTitle: نقاط
 
 نقاط التوقف المستندة إلى محتوى بدلاً من الجهاز تكون أقل تعقيدًا. إليك مقتطف بسيط يتم `code 700px` عندما يكون عرض الجهاز أعلى من حجم شاشة الهاتف الذكي بحجم `code 700px` تقريبًا
 
- `@media only screen and (min-width: 700px) { 
-  something { 
-    something: something; 
-  } 
- } 
-` 
+```css
+@media only screen and (min-width: 700px) {
+  something {
+    something: something;
+  }
+}
+``` 
 
 يمكنك أيضًا تعيين الحد الأدنى والحد الأقصى للعرض ، والذي يتيح لك إجراء التجارب باستخدام نطاقات مختلفة. هذا واحد تقريبا يطلق بين الهاتف smar وأكبر حجم سطح المكتب وأحجام الشاشة
 
- `@media only screen and (min-width: 700px) and (max-width: 1500px) { 
-  something { 
-    something: something; 
-  } 
- } 
-` 
+```code
+@media only screen and (min-width: 700px) and (max-width: 1500px) {
+  something {
+    something: something;
+  }
+}
+``` 
 
 #### معلومات اكثر:
 

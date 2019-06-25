@@ -20,15 +20,16 @@ localeTitle: الخدمات والحاقنات
 
 الخدمة هي نوع من _التخطيطي_ المتاح في Angular. وهو قابل للتوليد بواسطة واجهة سطر الأوامر (CLI): `ng generate service [name-of-service]` . استبدل `[name-of-service]` باسم مفضل. يعطي الأمر CLI ما يلي.
 
- `import { Injectable } from '@angular/core'; 
- 
- @Injectable({ 
-  providedIn: 'root' 
- }) 
- export class LoggerService { 
-  constructor() { } 
- } 
-` 
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoggerService {
+  constructor() { }
+}
+``` 
 
 منطق الخدمة متميز داخل فئتها. يفسر الزاوي فئة كخدمة _للحقن_ القائمة قبالة الديكور `@Injectable` . يجب أن _تسجل_ الخدمات القابلة للحقن مع حاقن.
 
@@ -89,49 +90,50 @@ localeTitle: الخدمات والحاقنات
 
 هذا المثال يتراكم من الهيكل الأساسي `@Injectable` . الهيكل العظمي متاح من خلال تنفيذ CLI ( `ng generate service [name-of-service]]` .
 
- `// services/logger.service.ts 
- 
- import { Injectable } from '@angular/core'; 
- 
- interface LogMessage { 
-  message:string; 
-  timestamp:Date; 
- } 
- 
- @Injectable({ 
-  providedIn: 'root' 
- }) 
- export class LoggerService { 
-  callStack:LogMessage[] = []; 
- 
-  constructor() { } 
- 
-  addLog(message:string):void { 
-      // prepend new log to bottom of stack 
-      this.callStack = [{ message, timestamp: new Date() }].concat(this.callStack); 
-  } 
- 
-  clear():void { 
-      // clear stack 
-      this.callStack = []; 
-  } 
- 
-  printHead():void { 
-      // print bottom of stack 
-      console.log(this.callStack[0] || null); 
-  } 
- 
-  printLog():void { 
-      // print bottom to top of stack on screen 
-      this.callStack.reverse().forEach((logMessage) => console.log(logMessage)); 
-  } 
- 
-  getLog():LogMessage[] { 
-      // return the entire log as an array 
-      return this.callStack.reverse(); 
-  } 
- } 
-` 
+```typescript
+// services/logger.service.ts
+
+import { Injectable } from '@angular/core';
+
+interface LogMessage {
+  message:string;
+  timestamp:Date;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoggerService {
+  callStack:LogMessage[] = [];
+
+  constructor() { }
+
+  addLog(message:string):void {
+      // prepend new log to bottom of stack
+      this.callStack = [{ message, timestamp: new Date() }].concat(this.callStack);
+  }
+
+  clear():void {
+      // clear stack
+      this.callStack = [];
+  }
+
+  printHead():void {
+      // print bottom of stack
+      console.log(this.callStack[0] || null);
+  }
+
+  printLog():void {
+      // print bottom to top of stack on screen
+      this.callStack.reverse().forEach((logMessage) => console.log(logMessage));
+  }
+
+  getLog():LogMessage[] {
+      // return the entire log as an array
+      return this.callStack.reverse();
+  }
+}
+``` 
 
 تسجيل LoggerService مع الوحدة النمطية الجذر من خلال بيانات `@Injectable` . وبالتالي يمكن إنشاء في `app.component.html` .
 
@@ -175,22 +177,22 @@ localeTitle: الخدمات والحاقنات
 
 يوفر القالب HTML مزيدًا من الإحصاءات حول استخدام المكون لـ LoggerService.
 
- `
-<!-- app.component.html --> 
- 
- <h1>Log Example</h1> 
- 
- <form (submit)="logMessage($event, userInput.value)"> 
-  <input #userInput placeholder="Type a message..."> 
-  <button type="submit">SUBMIT</button> 
- </form> 
- 
- <h3>Complete Log</h3> 
- <button type="button" (click)="clearLog()">CLEAR</button> 
- <ul> 
-  <li *ngFor="let log of logs; let i=index">{{ logs.length - i }} > {{ log.message }} @ {{ log.timestamp }}</li> 
- </ul> 
-` 
+```html
+<!-- app.component.html -->
+
+<h1>Log Example</h1>
+
+<form (submit)="logMessage($event, userInput.value)">
+  <input #userInput placeholder="Type a message...">
+  <button type="submit">SUBMIT</button>
+</form>
+
+<h3>Complete Log</h3>
+<button type="button" (click)="clearLog()">CLEAR</button>
+<ul>
+  <li *ngFor="let log of logs; let i=index">{{ logs.length - i }} > {{ log.message }} @ {{ log.timestamp }}</li>
+</ul>
+``` 
 
 هذا يشعر به تطبيق ToDo. يمكنك تسجيل الرسائل ومسح سجل الرسائل. تخيل لو تم دفع كل المنطق من الخدمة في AppComponent! كان من شأنه أن يعقد رمز. يحتفظ LoggerService رمز السجل ذات الصلة مغلفة من فئة AppComponent الأساسية.
 

@@ -58,7 +58,7 @@ class GateKeeper extends React.Component {
 
 Напишите условный оператор, который оценивается в соответствии с вашим состоянием, как указано в описании задачи, проверяет длину ввода и назначает новый объект переменной inputStyle.
 
-```react.js
+```jsx
 if (this.state.input.length > 15) { 
   inputStyle = { 
     border: '3px solid red' 

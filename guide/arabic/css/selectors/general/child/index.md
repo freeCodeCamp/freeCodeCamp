@@ -8,17 +8,19 @@ localeTitle: طفل
 
 في ما يلي مثال على البنية:
 
- `first selector (parent) > second selector (child) { 
-    css declarations; 
- } 
-` 
+```css
+first selector (parent) > second selector (child) {
+    css declarations;
+}
+``` 
 
 في ما يلي مثال الكود الذي يطابق كل عنصر `span` الفوري مع أصل `div` :
 
- `div > span { 
-    background-color: red; 
- } 
-` 
+```css
+div > span {
+    background-color: red;
+}
+``` 
 
 ### معلومات اكثر:
 

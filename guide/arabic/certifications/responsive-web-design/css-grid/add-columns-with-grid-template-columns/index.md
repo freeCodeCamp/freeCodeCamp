@@ -10,8 +10,9 @@ localeTitle: إضافة أعمدة بأعمدة قالب الشبكة
 
 يمكنك تعريف الأعمدة عن طريق التصريح بما يلي في codeblock الخاص بـ CSS:
 
- `grid-template-columns: parameters; 
-` 
+```css
+grid-template-columns: parameters;
+``` 
 
 حيث المعلمات هي كل ما تريد أن تكون.
 
@@ -19,5 +20,6 @@ localeTitle: إضافة أعمدة بأعمدة قالب الشبكة
 
 نظرًا لأن التحدي يتطلب منك إنشاء ثلاثة أعمدة يبلغ حجم كل منها 100 بكسل ، فأخبر المتابعين في ملف تعريف الارتباط .container CSS:
 
- `grid-template-columns: 100px 100px 100px; 
-`
+```css
+grid-template-columns: 100px 100px 100px;
+```
