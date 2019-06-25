@@ -10,4 +10,4 @@ title: Documentation
 
 The documentation within golang.org includes the standard library and the src.
 
-The good thing about __godoc.org__ is that includes the standard library AND third-party packages.
+The good thing about __godoc.org__ is that it includes the standard library AND third-party packages.

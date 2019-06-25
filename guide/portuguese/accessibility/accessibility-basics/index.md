@@ -2,7 +2,7 @@
 title: Accessibility Basics
 localeTitle: Noções básicas de acessibilidade
 ---
-> "As Artes das Trevas são muitas, variadas, em constante mudança e eternas. Lutar contra elas é como lutar contra um monstro de muitas cabeças, que, cada vez que um pescoço é rompido, brota uma cabeça ainda mais feroz e mais inteligente do que antes. Você está lutando contra isso. que é instável, mutante, indestrutível ".
+> "As Artes das Trevas são muitas, variadas, estão em constante mudança, e são eternas. Combatê-las é como combater um monstro de muitas cabeças, no qual, cada vez que cortamos uma cabeça, surge outra ainda mais feroz e inteligente do que a anterior. Você está lutando contra algo que não é fixo, mutável e indestrutível.".
 > 
 > \- Professor Severo Snape, Série Harry Potter
 

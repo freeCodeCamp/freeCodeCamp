@@ -16,30 +16,31 @@ localeTitle: تمرير رد الاتصال على النحو الدعائم
 
 ### حل
 
- `class MyApp extends React.Component { 
-  constructor(props) { 
-    super(props); 
-    this.state = { 
-      inputValue: '' 
-    } 
-    this.handleChange = this.handleChange.bind(this); 
-  } 
-  handleChange(event) { 
-    this.setState({ 
-      inputValue: event.target.value 
-    }); 
-  } 
-  render() { 
-    return ( 
-       <div> 
-        { /* change code below this line */ 
-        <GetInput input={this.state.inputValue} handleChange={this.handleChange}/> 
-        } 
-        { /* change code above this line */ 
-        <RenderInput input={this.state.inputValue}/> 
-        } 
-       </div> 
-    ); 
-  } 
- }; 
-`
+```javascript
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+  render() {
+    return (
+       <div>
+        { /* change code below this line */
+        <GetInput input={this.state.inputValue} handleChange={this.handleChange}/>
+        }
+        { /* change code above this line */
+        <RenderInput input={this.state.inputValue}/>
+        }
+       </div>
+    );
+  }
+};
+```

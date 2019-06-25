@@ -8,42 +8,43 @@ localeTitle: أساسيات الوراثة
 
 الحل: **الميراث** . توفر Java طريقة مرتبة لخصائص الأصل "الوراثة":
 
- `public class Car { 
- 
-    private String name; 
-    private String manufacturerName; 
- 
-    public Car(String name, String man) { 
-        this.name = name; 
-        this.manufacturerName = man; 
-    } 
-    // Getter method 
-    public String getName() { 
-        return name; 
-    } 
-    // Getter method 
-    public String getManufacturerName() { 
-        return manufacturerName; 
-    } 
- } 
- 
- public class ElectricCar extends Car { 
- 
-    public ElectricCar(String name, String man) { 
-        super(name, man); 
-    } 
- 
-    public void charge() { 
-     System.out.println("Charging ..."); 
-    } 
- } 
- 
- ElectricCar modelS = new ElectricCar("Model S","Tesla"); 
- // prints Tesla 
- System.out.println(modelS.getManufacturerName()); 
- // prints Charging ... 
- modelS.charge(); 
-` 
+```java
+public class Car {
+
+    private String name;
+    private String manufacturerName;
+
+    public Car(String name, String man) {
+        this.name = name;
+        this.manufacturerName = man;
+    }
+    // Getter method
+    public String getName() {
+        return name;
+    }
+    // Getter method
+    public String getManufacturerName() {
+        return manufacturerName;
+    }
+}
+
+public class ElectricCar extends Car {
+
+    public ElectricCar(String name, String man) {
+        super(name, man);
+    }
+
+    public void charge() {
+     System.out.println("Charging ...");
+    }
+}
+
+ElectricCar modelS = new ElectricCar("Model S","Tesla");
+// prints Tesla
+System.out.println(modelS.getManufacturerName());
+// prints Charging ...
+modelS.charge();
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJZY/0)
 

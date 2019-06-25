@@ -3,11 +3,15 @@ id: 5a9036ee38fddaf9a66b5d34
 title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
 videoUrl: ''
-localeTitle: 使用CSS网格单位更改列和行的大小
+localeTitle: 使用CSS网格单位更改网格列和网格行的大小
 ---
 
 ## Description
-<section id="description">您可以在CSS Grid中使用绝对和相对单位（如<code>px</code>和<code>em</code>来定义行和列的大小。您也可以使用这些： <code>fr</code> ：将列或行设置为可用空间的一小部分， <code>auto</code> ： <code>auto</code>将列或行设置为其内容的宽度或高度， <code>%</code> ：将列或行调整为百分比宽度它的容器。这是在预览中生成输出的代码： <blockquote> grid-template-columns：auto 50px 10％2fr 1fr; </blockquote>此代码段创建了五列。第一列与其内容一样宽，第二列是50px，第三列是其容器的10％，最后两列;剩下的空间分为三个部分，两个分配给第四列，一个分配给第五个。 </section>
+<section id="description">您可以在CSS Grid中使用绝对性和相对性的单位（列如<code>px</code>和<code>em</code>）来定义网格行和网格列的大小。您也可以使用这些： 
+<code>fr</code> ：将网格列或网格行设置为可用空间的一小部分
+<code>auto</code> ：将网格列或网格行设置为其内容的宽度或高度 
+<code>%</code> ：将网格列或网格行调整为对应它的容器高宽度的百分比。
+这是输出下面预览的代码： <blockquote> grid-template-columns：auto 50px 10％2fr 1fr; </blockquote>此代码段创建了五个网格列。第一个网格列与其内容一样宽，第二个网格列是50px，第三个网格列是其容器的10％。到最后两个网格列时，剩下的空间被分为三个部分，两个部分配给第四个网格列，一个部分配配给第五个网格列。 </section>
 
 ## Instructions
 <section id="instructions">创建一个包含三列的网格，其宽度如下：1fr，100px和2fr。 </section>

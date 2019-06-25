@@ -8,33 +8,36 @@ localeTitle: الشرطية
 
 ### إذا
 
- `<?php 
- if ($_GET['name'] = "freecodecamp"){ 
-  echo "You viewed the freeCodeCamp Page!"; 
- } 
-` 
+```PHP
+<?php
+if ($_GET['name'] = "freecodecamp"){
+  echo "You viewed the freeCodeCamp Page!";
+}
+``` 
 
 ### ELSEIF
 
- `<?php 
- if ($_GET['name'] = "freecodecamp"){ 
-  echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
-  echo "You viewed the freeCodeCamp Guide Page!"; 
- } 
-` 
+```PHP
+<?php
+if ($_GET['name'] = "freecodecamp"){
+  echo "You viewed the freeCodeCamp Page!";
+} elseif ($_GET['name'] = "freecodecampguide"){
+  echo "You viewed the freeCodeCamp Guide Page!";
+}
+``` 
 
 ### آخر
 
- `<?php 
- if ($_GET['name'] = "freecodecamp"){ 
-  echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
-  echo "You viewed the freeCodeCamp Guide Page!"; 
- } else { 
-  echo "You viewed a page that does not exist yet!"; 
- } 
-` 
+```PHP
+<?php
+if ($_GET['name'] = "freecodecamp"){
+  echo "You viewed the freeCodeCamp Page!";
+} elseif ($_GET['name'] = "freecodecampguide"){
+  echo "You viewed the freeCodeCamp Guide Page!";
+} else {
+  echo "You viewed a page that does not exist yet!";
+}
+``` 
 
 ### ملحوظة
 

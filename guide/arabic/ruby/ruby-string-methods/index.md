@@ -92,8 +92,9 @@ _لاحظ أن الحرف الأول يتم تكبيره فقط إذا كان ف
 
 *   يستبدل `gsub` كل مرجع للمعلمة الأولى للمعلمة الثانية في سلسلة.
 
- `"ruby is cool".gsub("cool", "very cool") #=> "ruby is very cool" 
-` 
+```ruby
+"ruby is cool".gsub("cool", "very cool") #=> "ruby is very cool"
+``` 
 
 *   يقبل `gsub` أيضًا الأنماط (مثل _regexp_ ) كمعلمة أولى ، مما يسمح بأشياء مثل:
 

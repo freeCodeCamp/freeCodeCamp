@@ -12,37 +12,41 @@ localeTitle: تعليقات
 
 الطريقة الأولى هي `//` التعليق ؛ كل النص التالي `//` على نفس السطر في تعليق. فمثلا:
 
- `function hello() { 
-  // This is a one line JavaScript comment 
-  console.log("Hello world!"); 
- } 
- hello(); 
-` 
+```javascript
+function hello() {
+  // This is a one line JavaScript comment
+  console.log("Hello world!");
+}
+hello();
+``` 
 
 والطريقة الثانية هي `/* */` comment ، التي يمكن استخدامها للتعليقات ذات السطر الواحد والمتعددة الخطوط. فمثلا:
 
- `function hello() { 
-  /* This is a one line JavaScript comment */ 
-  console.log("Hello world!"); 
- } 
- hello(); 
-` 
+```javascript
+function hello() {
+  /* This is a one line JavaScript comment */
+  console.log("Hello world!");
+}
+hello();
+``` 
 
- `function hello() { 
-  /* This comment spans multiple lines. Notice 
-     that we don't need to end the comment until we're done. */ 
-  console.log("Hello world!"); 
- } 
- hello(); 
-` 
+```javascript
+function hello() {
+  /* This comment spans multiple lines. Notice
+     that we don't need to end the comment until we're done. */
+  console.log("Hello world!");
+}
+hello();
+``` 
 
 يمكنك أيضًا منع تنفيذ شفرة جافا سكريبت فقط عند استخدام خطوط الرمز مثل هذا:
 
- `function hello() { 
-  /*console.log("Hello world!");*/ 
- } 
- hello(); 
-` 
+```javascript
+function hello() {
+  /*console.log("Hello world!");*/
+}
+hello();
+``` 
 
 #### معلومات اكثر:
 
@@ -59,22 +63,24 @@ localeTitle: تعليقات
 
 كما أن التعليقات مفيدة جدًا لاختبار الشفرة حيث يمكنك منع تشغيل سطر / فقرة رمز معين
 
- `function hello() { 
-  // The statement below is not going to get executed 
-  // console.log('hi') 
-  } 
- hello(); 
-` 
+```javascript
+function hello() {
+  // The statement below is not going to get executed
+  // console.log('hi')
+  }
+hello();
+``` 
 
- `function hello() { 
-  // The statements below are not going to get executed 
-  /* 
-  console.log('hi'); 
-  console.log('code-test'); 
-  */ 
- } 
- hello(); 
-` 
+```
+function hello() {
+  // The statements below are not going to get executed
+  /*
+  console.log('hi');
+  console.log('code-test');
+  */
+}
+hello();
+``` 
 
 #### معلومات اكثر:
 

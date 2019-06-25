@@ -32,20 +32,20 @@ localeTitle: سمة لون الخط
 
 2.  سمة سداسي عشري
 
- `
-<html> 
-  <body> 
-   <font color="#00FF00">Font color example using color attribute</font> 
-  </body> 
- </html> 
-` 
+```html
+<html>
+  <body>
+   <font color="#00FF00">Font color example using color attribute</font>
+  </body>
+</html>
+``` 
 
 3.  سمة RGB
 
- `
-<html> 
-  <body> 
-    <font color="rgb(0,255,0)">Font color example using color attribute</font> 
-  </body> 
- </html> 
-`
+```html
+<html>
+  <body>
+    <font color="rgb(0,255,0)">Font color example using color attribute</font>
+  </body>
+</html>
+```

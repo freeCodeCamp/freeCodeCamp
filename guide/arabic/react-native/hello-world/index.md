@@ -6,17 +6,17 @@ localeTitle: مرحبا بالعالم
 
 في صفحة الويب التقليدية ، يمكنك بسهولة تقديم `Hello World!` على الشاشة عن طريق كتابة بعض HTML مثل هذا:
 
- `
-<!DOCTYPE html> 
- <html> 
-  <head> 
-    <title>Test Page</title> 
-  </head> 
-  <body> 
-    <p>Hello World!</p> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Page</title>
+  </head>
+  <body>
+    <p>Hello World!</p>
+  </body>
+</html>
+``` 
 
 في React Native ، لا يوجد DOM أو مستعرض ، لذلك يجب عليك عرض الأشياء على الشاشة من واجهة برمجة تطبيقات الجوال التي يقدمها React Native. على سبيل المثال ، بدلاً من استخدام علامة `<p>` كملف للنص كما لو كنت على الويب ، يمكنك استخدام `<Text>` ؛ بدلاً من علامات حاوية `<div>` ، يمكنك استخدام `<View>` .
 
