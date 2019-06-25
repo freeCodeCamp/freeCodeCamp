@@ -9,7 +9,15 @@ videoUrl: 'https://scrimba.com/c/c2MvDtV'
 <section id='description'>
 Classes are reusable styles that can be added to HTML elements.
 Here's an example CSS class declaration:
-<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.blue-text {<br>&nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>
+
+```html
+<style>
+  .blue-text {
+    color: blue;
+  }
+</style>
+```
+
 You can see that we've created a CSS class called <code>blue-text</code> within the <code>&#60;style&#62;</code> tag.
 You can apply a class to an HTML element like this:
 <code>&#60;h2 class="blue-text"&#62;CatPhotoApp&#60;/h2&#62;</code>

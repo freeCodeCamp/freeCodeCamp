@@ -8,7 +8,7 @@ The If...Else statement executes different blocks of code depending on the truth
 
 
 ## Syntax
-```C#
+```csharp
 if (boolean expression)
 {
    // execute this code block if expression evalutes to true
@@ -20,7 +20,7 @@ else
 ```
 
 ## Example
-```C#
+```csharp
 int Price = 30;
 
 if (Price == 30)
@@ -45,7 +45,7 @@ Price is equal to 30.
 We can use the ternary `:?` which is great for short if...else statements.
 
 For example:
-```C#
+```csharp
 int Price = 30;
 (Price == 30) ? Console.WriteLine("Price is Equal to 30.") : Console.WriteLine("Price is Not Equal to 30.")
 ```

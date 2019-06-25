@@ -9,11 +9,26 @@ challengeType: 1
 We saw earlier how spread operator can effectively spread, or unpack, the contents of the array.
 We can do something similar with objects as well. <dfn>Destructuring assignment</dfn> is special syntax for neatly assigning values taken directly from an object to variables.
 Consider the following ES5 code:
-<blockquote>var voxel = { x: 3.6, y: 7.4, z: 6.54 };<br>var x = voxel.x; // x = 3.6<br>var y = voxel.y; // y = 7.4<br>var z = voxel.z; // z = 6.54</blockquote>
+
+```js
+var voxel = { x: 3.6, y: 7.4, z: 6.54 };
+var x = voxel.x; // x = 3.6
+var y = voxel.y; // y = 7.4
+var z = voxel.z; // z = 6.54
+```
+
 Here's the same assignment statement with ES6 destructuring syntax:
-<blockquote>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</blockquote>
+
+```js
+const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
+```
+
 If instead you want to store the values of <code>voxel.x</code> into <code>a</code>, <code>voxel.y</code> into <code>b</code>, and <code>voxel.z</code> into <code>c</code>, you have that freedom as well.
-<blockquote>const { x: a, y: b, z: c } = voxel; // a = 3.6, b = 7.4, c = 6.54</blockquote>
+
+```js
+const { x: a, y: b, z: c } = voxel; // a = 3.6, b = 7.4, c = 6.54
+```
+
 You may read it as "get the field <code>x</code> and copy the value into <code>a</code>," and so on.
 </section>
 

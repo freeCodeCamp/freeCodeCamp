@@ -8,7 +8,7 @@ Unreal Engine es un motor de juegos multiplataforma desarrollado por Epic Games.
 
 Uscript es el lenguaje de script nativo del motor, utilizado para crear código de juegos y eventos de juego antes del lanzamiento de Unreal Engine 4, y fue diseñado para programación de alto nivel. El guión fue escrito y programado por Tim Sweeney, también creador de otro lenguaje de guión, ZZT-oop.
 
-Desde 2015, Unreal Engine ha sido de uso gratuito, y Epic cobra una regalía del 5% sobre las ventas de títulos producidos con el motor. Epic hace que la mayoría de su código base esté disponible gratuitamente a través de su Github, aunque la fuente para plataformas cerradas como Playstation 4 y Xbox One solo está disponible para desarrolladores de plataformas registrados.
+Desde 2015, Unreal Engine ha sido de uso gratuito, y Epic cobra una regalía del 5% sobre las ventas de títulos producidos con el motor. Epic hace que la mayoría de su código base esté disponible gratuitamente a través de su GitHub, aunque la fuente para plataformas cerradas como Playstation 4 y Xbox One solo está disponible para desarrolladores de plataformas registrados.
 
 ### Versiones de Unreal Engine
 

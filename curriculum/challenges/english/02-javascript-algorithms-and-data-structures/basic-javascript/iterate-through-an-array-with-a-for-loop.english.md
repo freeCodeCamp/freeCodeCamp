@@ -8,7 +8,14 @@ videoUrl: 'https://scrimba.com/c/caeR3HB'
 ## Description
 <section id='description'>
 A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:
-<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>&nbsp;&nbsp; console.log(arr[i]);<br>}</blockquote>
+
+```js
+var arr = [10,9,8,7,6];
+for (var i = 0; i < arr.length; i++) {
+   console.log(arr[i]);
+}
+```
+
 Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.
 </section>
 

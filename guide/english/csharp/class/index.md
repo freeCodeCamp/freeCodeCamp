@@ -67,7 +67,7 @@ namespace CPrograms
 ```
 
 ## Output:
-```sh
+```shell
 > Employee Name: John Doe, Employee ID: 420156
 ```
 

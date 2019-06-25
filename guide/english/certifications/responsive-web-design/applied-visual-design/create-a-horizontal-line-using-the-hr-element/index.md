@@ -14,7 +14,7 @@ This lesson requires you to use the `hr` tag to separate the title and content o
 
 Add this tag between the title and content to create the horizontal line in [this lesson](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/create-a-horizontal-line-using-the-hr-element/) on [freeCodeCamp](https://www.freecodecamp.org/). Here is a screenshot from that lesson showing an `hr` element contained within the "cardText" div.
 
-![Example hr](https://i.imgur.com/RMTqXPw.png)
+![Example hr](https://cdn-media-1.freecodecamp.org/imgr/RMTqXPw.png)
 
 ## Resources:
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr)

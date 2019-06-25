@@ -12,7 +12,7 @@ localeTitle: 使用PropTypes进行React TypeChecking
 
 为了使用它，需要通过在控制台中发出以下命令将其作为依赖项添加到项目中。
 
-```sh
+```shell
 npm install --save prop-types 
 ```
 

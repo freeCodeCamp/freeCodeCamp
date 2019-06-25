@@ -8,8 +8,9 @@ localeTitle: String.prototype.indexOf
 
 **بناء الجملة**
 
- `str.indexOf(searchValue[, fromIndex]) 
-` 
+```javascript
+str.indexOf(searchValue[, fromIndex])
+``` 
 
 ### المعلمات
 
@@ -24,17 +25,18 @@ localeTitle: String.prototype.indexOf
 
 ### أمثلة
 
- `'Blue Whale'.indexOf('Blue');     // returns  0 
- 'Blue Whale'.indexOf('Blute');    // returns -1 
- 'Blue Whale'.indexOf('Whale', 0); // returns  5 
- 'Blue Whale'.indexOf('Whale', 5); // returns  5 
- 'Blue Whale'.indexOf('Whale', 7); // returns -1 
- 'Blue Whale'.indexOf('');         // returns  0 
- 'Blue Whale'.indexOf('', 9);      // returns  9 
- 'Blue Whale'.indexOf('', 10);     // returns 10 
- 'Blue Whale'.indexOf('', 11);     // returns 10 
- 'Blue Whale'.indexOf('blue');     // returns -1 
-` 
+```javascript
+'Blue Whale'.indexOf('Blue');     // returns  0
+'Blue Whale'.indexOf('Blute');    // returns -1
+'Blue Whale'.indexOf('Whale', 0); // returns  5
+'Blue Whale'.indexOf('Whale', 5); // returns  5
+'Blue Whale'.indexOf('Whale', 7); // returns -1
+'Blue Whale'.indexOf('');         // returns  0
+'Blue Whale'.indexOf('', 9);      // returns  9
+'Blue Whale'.indexOf('', 10);     // returns 10
+'Blue Whale'.indexOf('', 11);     // returns 10
+'Blue Whale'.indexOf('blue');     // returns -1
+``` 
 
 ### معلومات اكثر:
 

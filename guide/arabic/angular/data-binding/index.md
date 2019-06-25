@@ -30,20 +30,21 @@ localeTitle: ربط البيانات
 
 للتعرف على خصائص العناصر المرتبطة بالبيانات ، يستخدم Angular بنية قوس خاصة.
 
- `// my.component.ts 
- @Component({ 
-  templateUrl: './my.component.html' 
- }) 
- 
- export class MyComponent { 
-  value:type = /* some value of type */; 
- } 
-` 
+```typescript
+// my.component.ts
+@Component({
+  templateUrl: './my.component.html'
+})
 
- `
-<!-- my.component.html --> 
- <any-element [property]=“value”>innerHTML</any-element> 
-` 
+export class MyComponent {
+  value:type = /* some value of type */;
+}
+``` 
+
+```html
+<!-- my.component.html -->
+<any-element [property]=“value”>innerHTML</any-element>
+``` 
 
 تحمل معي على هذا.
 
@@ -71,22 +72,23 @@ localeTitle: ربط البيانات
 
 إذا كان المكون يوفر بيانات ، فإن القالب يوفر الأحداث.
 
- `// my.component.ts 
- @Component({ 
-  templateUrl: './my.component.html' 
- }) 
- 
- export class MyComponent { 
-  handler(event):void { 
-      // function does stuff 
-  } 
- } 
-` 
+```typescript
+// my.component.ts
+@Component({
+  templateUrl: './my.component.html'
+})
 
- `
-// my.component.html 
- <any-element (event)=“handler($event)”>innerHTML</any-element> 
-` 
+export class MyComponent {
+  handler(event):void {
+      // function does stuff
+  }
+}
+``` 
+
+```html
+// my.component.html
+<any-element (event)=“handler($event)”>innerHTML</any-element>
+``` 
 
 هذا يعمل بالمثل لربط الملكية.
 
@@ -104,23 +106,24 @@ localeTitle: ربط البيانات
 
 يحتوي ربط البيانات ثنائي الاتجاه على الوحدة الخاصة به. قبل إلقاء نظرة على ذلك ، والنظر في المثال التالي.
 
- `// my.component.ts 
- @Component({ 
-  templateUrl: './my.component.html' 
- }) 
- export class MyComponent { 
-  inputValue:string = ""; 
- 
-  handler(event) { 
-      this.inputValue = event.target.value; 
-  } 
- } 
-` 
+```typescript
+// my.component.ts
+@Component({
+  templateUrl: './my.component.html'
+})
+export class MyComponent {
+  inputValue:string = "";
 
- `
-<!-- my.component.html --> 
- <input (input)=“handler($event)” [value]=“inputValue”> 
-` 
+  handler(event) {
+      this.inputValue = event.target.value;
+  }
+}
+``` 
+
+```html
+<!-- my.component.html -->
+<input (input)=“handler($event)” [value]=“inputValue”>
+``` 
 
 حان الوقت لكسر هذا.
 
@@ -142,10 +145,10 @@ localeTitle: ربط البيانات
  } 
 ` 
 
- `
-<!-- my.component.html --> 
- <input [(ngModel)]=“inputValue”> 
-` 
+```html
+<!-- my.component.html -->
+<input [(ngModel)]=“inputValue”>
+``` 
 
 `ngModel` هو راحة لطيفة. يجب عليك استيراد FormsModule في جذر التطبيق الخاص بك قبل استخدامه. مع هذا التربيع ، يصبح ربط البيانات ثنائي الاتجاه أسهل للعمل معه.
 

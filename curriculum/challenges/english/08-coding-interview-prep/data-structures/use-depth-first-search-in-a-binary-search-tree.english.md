@@ -11,13 +11,12 @@ In-order: Begin the search at the left-most node and end at the right-most node.
 Pre-order: Explore all the roots before the leaves.
 Post-order: Explore all the leaves before the roots.
 As you may guess, you may choose different search methods depending on what type of data your tree is storing and what you are looking for. For a binary search tree, an inorder traversal returns the nodes in sorted order.
-Instructions: Here we will create these three search methods on our binary search tree. Depth-first search is an inherently recursive operation which continues to explore further subtrees so long as child nodes are present. Once you understand this basic concept, you can simply rearrange the order in which you explore the nodes and subtrees to produce any of the three searches above. For example, in post-order search we would want to recurse all the way to a leaf node before we begin to return any of the nodes themselves, whereas in pre-order search we would want to return the nodes first, and then continue recursing down the tree.
-Define <code>inorder</code>, <code>preorder</code>, and <code>postorder</code> methods on our tree. Each of these methods should return an array of items which represent the tree traversal. Be sure to return the integer values at each node in the array, not the nodes themselves. Finally, return <code>null</code> if the tree is empty.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Here we will create these three search methods on our binary search tree. Depth-first search is an inherently recursive operation which continues to explore further subtrees so long as child nodes are present. Once you understand this basic concept, you can simply rearrange the order in which you explore the nodes and subtrees to produce any of the three searches above. For example, in post-order search we would want to recurse all the way to a leaf node before we begin to return any of the nodes themselves, whereas in pre-order search we would want to return the nodes first, and then continue recursing down the tree.
+Define <code>inorder</code>, <code>preorder</code>, and <code>postorder</code> methods on our tree. Each of these methods should return an array of items which represent the tree traversal. Be sure to return the integer values at each node in the array, not the nodes themselves. Finally, return <code>null</code> if the tree is empty.
 </section>
 
 ## Tests
@@ -45,9 +44,7 @@ tests:
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.preorder !== 'function') { return false; }; return (test.preorder() == null); })(), 'The <code>preorder</code> method returns <code>null</code> for an empty tree.');
   - text: The <code>postorder</code> method returns <code>null</code> for an empty tree.
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; return (test.postorder() == null); })(), 'The <code>postorder</code> method returns <code>null</code> for an empty tree.');
-
 ```
-
 </section>
 
 ## Challenge Seed
@@ -56,105 +53,102 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 function BinarySearchTree() {
-    this.root = null;
-    // change code below this line
-    // change code above this line
+  this.root = null;
+  // change code below this line
+  // change code above this line
 }
 ```
 
 </div>
-
 
 ### After Test
 <div id='js-teardown'>
 
 ```js
 BinarySearchTree.prototype = {
-    add: function(value) {
-        var node = this.root;
-        if (node == null) {
-          this.root = new Node(value);
-          return;
+  add: function(value) {
+    var node = this.root;
+    if (node == null) {
+      this.root = new Node(value);
+      return;
+    } else {
+      function searchTree(node) {
+        if (value < node.value) {
+          if (node.left == null) {
+            node.left = new Node(value);
+            return;
+          } else if (node.left != null) {
+            return searchTree(node.left);
+          }
+        } else if (value > node.value) {
+          if (node.right == null) {
+            node.right = new Node(value);
+            return;
+          } else if (node.right != null) {
+            return searchTree(node.right);
+          }
         } else {
-            function searchTree(node) {
-                if (value < node.value) {
-                    if (node.left == null) {
-                        node.left = new Node(value);
-                        return;
-                    } else if (node.left != null) {
-                        return searchTree(node.left)
-                    };
-                } else if (value > node.value) {
-                    if (node.right == null) {
-                        node.right = new Node(value);
-                        return;
-                    } else if (node.right != null) {
-                        return searchTree(node.right);
-                    };
-                } else {
-                    return null;
-                };
-            };
-            return searchTree(node);
-        };
+          return null;
+        }
+      }
+      return searchTree(node);
     }
+  }
 };
 ```
 
 </div>
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 function BinarySearchTree() {
-    this.root = null;
-    this.result = [];
-    
-    this.inorder = function(node) {        
-      if (!node) node = this.root;
-      if (!node) return null;
+  this.root = null;
+  this.result = [];
 
-      if (node.left) this.inorder(node.left);
-      this.result.push(node.value)
-      if (node.right) this.inorder(node.right);
-      return this.result;
+  this.inorder = function(node) {
+    if (!node) node = this.root;
+    if (!node) return null;
 
-    };
-    this.preorder = function(node) {
-      if (!node) node = this.root;
-      if (!node) return null;
-      
-      this.result.push(node.value);
-      if (node.left) this.preorder(node.left);      
-      if (node.right) this.preorder(node.right);
-      return this.result;
-    };
-    this.postorder = function(node) {
-      if (!node) node = this.root;
-      if (!node) return null;
+    if (node.left) this.inorder(node.left);
+    this.result.push(node.value);
+    if (node.right) this.inorder(node.right);
+    return this.result;
+  };
+  this.preorder = function(node) {
+    if (!node) node = this.root;
+    if (!node) return null;
 
-      if (node.left) this.postorder(node.left);      
-      if (node.right) this.postorder(node.right);
-      this.result.push(node.value);
-      
-      return this.result;
-    };
+    this.result.push(node.value);
+    if (node.left) this.preorder(node.left);
+    if (node.right) this.preorder(node.right);
+    return this.result;
+  };
+  this.postorder = function(node) {
+    if (!node) node = this.root;
+    if (!node) return null;
+
+    if (node.left) this.postorder(node.left);
+    if (node.right) this.postorder(node.right);
+    this.result.push(node.value);
+
+    return this.result;
+  };
 }
 ```
 </section>

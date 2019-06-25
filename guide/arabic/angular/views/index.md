@@ -56,19 +56,20 @@ localeTitle: الآراء
 
 حاول استخدام أمر واجهة سطر الأوامر (CLI) Angular: `ng generate component [name-of-component]` . وتنتج ما يلي.
 
- `import { Component, OnInit } from '@angular/core'; 
- 
- @Component({ 
-  selector: 'app-example', 
-  templateUrl: './example.component.html', 
-  styleUrls: ['./example.component.css'] 
- }) 
- export class ExampleComponent implements OnInit { 
-  constructor() { } 
- 
-  ngOnInit() { } 
- } 
-` 
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html',
+  styleUrls: ['./example.component.css']
+})
+export class ExampleComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() { }
+}
+``` 
 
 يؤدي ذلك إلى إنشاء المكون مع `app-example` المحدد. يعلق هذا حاوية عرض على `<app-example></app-example>` في القالب. إذا كان هذا هو جذر التطبيق ، فإن العرض الخاص به سيضم جميع طرق العرض الأخرى. يمثل عرض الجذر بداية التطبيق من منظور Angular.
 

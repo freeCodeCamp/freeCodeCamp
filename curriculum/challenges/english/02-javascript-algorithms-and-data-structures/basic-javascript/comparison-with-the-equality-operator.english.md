@@ -9,10 +9,26 @@ videoUrl: 'https://scrimba.com/c/cKyVMAL'
 <section id='description'>
 There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.
 The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.
-<blockquote>function equalityTest(myVal) {<br>&nbsp;&nbsp;if (myVal == 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return "Equal";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return "Not Equal";<br>}</blockquote>
+
+```js
+function equalityTest(myVal) {
+  if (myVal == 10) {
+     return "Equal";
+  }
+  return "Not Equal";
+}
+```
+
 If <code>myVal</code> is equal to <code>10</code>, the equality operator returns <code>true</code>, so the code in the curly braces will execute, and the function will return <code>"Equal"</code>. Otherwise, the function will return <code>"Not Equal"</code>.
 In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as "Type Coercion". Once it does, however, it can compare terms as follows:
-<blockquote>1   ==  1    // true<br>1   ==  2    // false<br>1   == '1'   // true<br>"3"  ==  3    // true</blockquote>
+
+```js
+1   ==  1   // true
+1   ==  2   // false
+1   == '1'  // true
+"3" ==  3   // true
+```
+
 </section>
 
 ## Instructions

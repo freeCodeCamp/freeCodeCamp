@@ -10,7 +10,11 @@ videoUrl: 'https://scrimba.com/c/c6bDNfp'
 When using your variable as a CSS property value, you can attach a fallback value that your browser will revert to if the given variable is invalid.
 <strong>Note:</strong> This fallback is not used to increase browser compatibility, and it will not work on IE browsers. Rather, it is used so that the browser has a color to display if it cannot find your variable.
 Here's how you do it:
-<blockquote>background: var(--penguin-skin, black);</blockquote>
+
+```css
+background: var(--penguin-skin, black);
+```
+
 This will set background to black if your variable wasn't set.
 Note that this can be useful for debugging.
 </section>

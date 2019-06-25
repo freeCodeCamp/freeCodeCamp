@@ -48,6 +48,11 @@ The cursor property specifies the type of cursor to be displayed when you hover 
 
 
 You can also set an image as the cursor.<br>
+
+Note: However,it won't work in case your image is too big.
+(For example,in Firefox, the size limit is 128x128 px)
+
+This also depends on the browser support.<br>
 Note: Always specify a default cursor at the end incase the specified cursor is unavailable.
 
 ```
@@ -61,3 +66,7 @@ Note: Always specify a default cursor at the end incase the specified cursor is 
 * Mozilla Developer Network: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/cursor' target='_blank' rel='nofollow'>MDN</a>
 * Browser Support: <a href='http://caniuse.com/#search=cursor' target='_blank' rel='nofollow'>caniuse</a>
 * Cursor examples by w3schools: <a href='https://www.w3schools.com/cssref/playit.asp?filename=playcss_cursor&preval=none' target='_blank' rel='nofollow'>w3schools</a>
+* [Emoji Cursors-Use emojis as mouse cursors by combining SVG with CSS.](https://www.emojicursor.app/)
+* [w3schools-HTML smileys](https://www.w3schools.com/charsets/ref_emoji_smileys.asp)
+* [CSS-Tricks](https://css-tricks.com/almanac/properties/c/cursor/)
+* [Emoji Cheat Sheet](https://www.webfx.com/tools/emoji-cheat-sheet/)

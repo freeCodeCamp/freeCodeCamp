@@ -175,11 +175,11 @@ After confirming installation you will be on the WordPress Dashboard.
 1. Download WordPress from https://wordpress.org/download/
 2. Extract the WordPress files from the .tar.gz archive.
 3. Move the extracted WordPress directory to /srv/http. This can be achieved using the following command. Remember to replace the text within the <> with the name of the extracted WordPress directory in your computer (use sudo if superuser access is required):
-    ```sh
+    ```shell
     mv ~Downloads/<insert WordPress directory here) /srv/http
     ```
 4. For **development purposes**, change the user permissions for the WordPress folder to 777. This can be done using the following command:
-    ```sh
+    ```shell
     sudo chmod -R 777 /srv/http/<insert WordPress directory here)
     ```
 5. Open a browser.

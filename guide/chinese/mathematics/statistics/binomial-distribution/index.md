@@ -32,29 +32,29 @@ localeTitle: 二项分布
 
 考虑`P(Single Scenario)`在`k`成功的一般情况下和`n`试验中的`n - k`失败。要查找值，请对独立事件使用乘法规则：
 
-![](https://i.imgur.com/YXzUPiB.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/YXzUPiB.png)
 
 从`n`试验中获得`k`成功的方法可以写成**n选择k** ：
 
-![](https://i.imgur.com/AQ3P4vi.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/AQ3P4vi.png)
 
 因此，在`n`独立试验中获得准确观察`k`成功概率的通式如下：
 
-![](https://i.imgur.com/ZErXKtQ.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/ZErXKtQ.png)
 
 因此，在试验中获得正好一个头的概率是：
 
-![](https://i.imgur.com/fN5wOH2.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/fN5wOH2.png)
 
 ### 均值和方差
 
 具有`n`试验的二项分布的均值，其中`p`是成功的概率，由下式给出：
 
-![](https://i.imgur.com/4ji7JXx.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4ji7JXx.png)
 
 和方差：
 
-![](https://i.imgur.com/1tPHKHj.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/1tPHKHj.png)
 
 #### 更多信息：
 

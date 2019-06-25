@@ -8,11 +8,29 @@ challengeType: 1
 <section id='description'>
 In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.
 To achieve this, we often use the following syntax:
-<blockquote>const myFunc = function() {<br>&nbsp;&nbsp;const myVar = "value";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>
+
+```js
+const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+}
+```
+
 ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use <strong>arrow function syntax</strong>:
-<blockquote>const myFunc = () => {<br>&nbsp;&nbsp;const myVar = "value";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>
+
+```js
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+```
+
 When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword <code>return</code> as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
-<blockquote>const myFunc = () => "value"</blockquote>
+
+```js
+const myFunc = () => "value"
+```
+
 This code will still return <code>value</code> by default.
 </section>
 

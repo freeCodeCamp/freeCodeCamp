@@ -11,7 +11,11 @@ We can also divide one number by another.
 JavaScript uses the <code>/</code> symbol for division.
 
 <strong>Example</strong>
-<blockquote>myVar = 16 / 2; // assigned 8</blockquote>
+
+```js
+myVar = 16 / 2; // assigned 8
+```
+
 
 </section>
 

@@ -137,17 +137,17 @@ function Profile({ user, isSessionUser }) {
       <Grid>
         {isSessionUser ? renderSettingsButton() : null}
         <Camper
-          about={showAbout && about}
+          about={showAbout ? about : null}
           githubProfile={githubProfile}
           isGithub={isGithub}
           isLinkedIn={isLinkedIn}
           isTwitter={isTwitter}
           isWebsite={isWebsite}
           linkedin={linkedin}
-          location={showLocation && location}
-          name={showName && name}
+          location={showLocation ? location : null}
+          name={showName ? name : null}
           picture={picture}
-          points={showPoints && points}
+          points={showPoints ? points : null}
           twitter={twitter}
           username={username}
           website={website}
@@ -157,11 +157,7 @@ function Profile({ user, isSessionUser }) {
         {showCerts ? <Certifications username={username} /> : null}
         {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
         {showTimeLine ? (
-          <Timeline
-            className='timelime-container'
-            completedMap={completedChallenges}
-            username={username}
-          />
+          <Timeline completedMap={completedChallenges} username={username} />
         ) : null}
       </Grid>
     </Fragment>

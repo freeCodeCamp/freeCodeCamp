@@ -60,4 +60,9 @@ By default, inputs are stored as 'strings'. Therefore, we can use the `map()` fu
 
 NOTE: Inside the `split()` function, we can add the separator used to split and identify chunks of data to be stored separately. For example, if we want to separate each value by a comma, we write `input().split(",")` and so on.
 
+7\. Multiple comma seperated integer inputs in list:
+```
+LIST=[int(x) for x in input().split(",")]
+```
+Multiple integers can be stored by iterating whole given string by comma seperated and store in a list.
 <a href='https://docs.python.org/3/library/functions.html#input' target='_blank' rel='nofollow'>Official Docs</a>

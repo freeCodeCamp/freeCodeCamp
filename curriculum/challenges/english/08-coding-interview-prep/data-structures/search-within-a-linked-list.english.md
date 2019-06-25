@@ -101,8 +101,6 @@ function LinkedList() {
 
 </div>
 
-
-
 </section>
 
 ## Solution

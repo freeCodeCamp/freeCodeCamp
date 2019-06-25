@@ -14,11 +14,12 @@ A View هو كائن قاعدة بيانات يقدم البيانات من جد
 
 ### Sytax العام
 
- `CREATE OR REPLACE VIEW view_name AS 
- SELECT column1, column2, ... 
- FROM table_name 
- WHERE condition; 
-` 
+```sql
+CREATE OR REPLACE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+``` 
 
 ### يستخدم SQL لإنشاء العرض والبيانات الحالية
 
@@ -33,32 +34,35 @@ A View هو كائن قاعدة بيانات يقدم البيانات من جد
 
 البيانات الحالية:
 
- `+-----------------+----------------+ 
- | FullName        | programOfStudy | 
- +-----------------+----------------+ 
- | Teri Gutierrez  | Programming    | 
- | Spencer Pautier | Programming    | 
- | Louis Ramsey    | Programming    | 
- | Alvin Greene    | Programming    | 
- | Sophie Freeman  | Programming    | 
- +-----------------+----------------+ 
- 5 rows in set (0.00 sec) 
-` 
+```text
++-----------------+----------------+
+| FullName        | programOfStudy |
++-----------------+----------------+
+| Teri Gutierrez  | Programming    |
+| Spencer Pautier | Programming    |
+| Louis Ramsey    | Programming    |
+| Alvin Greene    | Programming    |
+| Sophie Freeman  | Programming    |
++-----------------+----------------+
+5 rows in set (0.00 sec)
+``` 
 
 قائمة من وجهات النظر الحالية:
 
- `SHOW FULL TABLES IN fcc_sql_guides_database WHERE TABLE_TYPE LIKE 'VIEW'; 
-` 
+```sql
+SHOW FULL TABLES IN fcc_sql_guides_database WHERE TABLE_TYPE LIKE 'VIEW';
+``` 
 
- `+-----------------------------------+------------+ 
- | Tables_in_fcc_sql_guides_database | Table_type | 
- +-----------------------------------+------------+ 
- | programming-students-v            | VIEW       | 
- | students-contact-info_v           | VIEW       | 
- | students_dropme_v                 | VIEW       | 
- +-----------------------------------+------------+ 
- 3 rows in set (0.00 sec) 
-` 
+```text
++-----------------------------------+------------+
+| Tables_in_fcc_sql_guides_database | Table_type |
++-----------------------------------+------------+
+| programming-students-v            | VIEW       |
+| students-contact-info_v           | VIEW       |
+| students_dropme_v                 | VIEW       |
++-----------------------------------+------------+
+3 rows in set (0.00 sec)
+``` 
 
 ### استبدال العرض
 
@@ -73,28 +77,30 @@ A View هو كائن قاعدة بيانات يقدم البيانات من جد
 
 ملاحظة: تعرض طريقة العرض الآن sat\_score.
 
- `+-----------------+----------------+-----------+ 
- | FullName        | programOfStudy | sat_score | 
- +-----------------+----------------+-----------+ 
- | Teri Gutierrez  | Programming    |       800 | 
- | Spencer Pautier | Programming    |      1000 | 
- | Louis Ramsey    | Programming    |      1200 | 
- | Alvin Greene    | Programming    |      1200 | 
- | Sophie Freeman  | Programming    |      1200 | 
- +-----------------+----------------+-----------+ 
-` 
+```text
++-----------------+----------------+-----------+
+| FullName        | programOfStudy | sat_score |
++-----------------+----------------+-----------+
+| Teri Gutierrez  | Programming    |       800 |
+| Spencer Pautier | Programming    |      1000 |
+| Louis Ramsey    | Programming    |      1200 |
+| Alvin Greene    | Programming    |      1200 |
+| Sophie Freeman  | Programming    |      1200 |
++-----------------+----------------+-----------+
+``` 
 
 ملاحظة: قائمة وجهات النظر لم تتغير ، يتم استبدال وجهة نظرنا.
 
- `mysql>  SHOW FULL TABLES IN fcc_sql_guides_database WHERE TABLE_TYPE LIKE 'VIEW'; 
- +-----------------------------------+------------+ 
- | Tables_in_fcc_sql_guides_database | Table_type | 
- +-----------------------------------+------------+ 
- | programming-students-v            | VIEW       | 
- | students-contact-info_v           | VIEW       | 
- | students_dropme_v                 | VIEW       | 
- +-----------------------------------+------------+ 
- 3 rows in set (0.00 sec) 
-` 
+```text
+mysql>  SHOW FULL TABLES IN fcc_sql_guides_database WHERE TABLE_TYPE LIKE 'VIEW';
++-----------------------------------+------------+
+| Tables_in_fcc_sql_guides_database | Table_type |
++-----------------------------------+------------+
+| programming-students-v            | VIEW       |
+| students-contact-info_v           | VIEW       |
+| students_dropme_v                 | VIEW       |
++-----------------------------------+------------+
+3 rows in set (0.00 sec)
+``` 
 
 \* كما هو الحال مع جميع هذه الأشياء SQL هناك أكثر من ذلك بكثير من ما هو موجود في هذا الدليل التمهيدي. آمل أن يمنحك هذا على الأقل ما يكفي للبدء. يرجى الاطلاع على دليل مدير قاعدة البيانات الخاص بك والمتعة محاولة خيارات مختلفة بنفسك.

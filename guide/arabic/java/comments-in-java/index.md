@@ -16,8 +16,9 @@ localeTitle: تعليقات في جافا
 
 لإنشاء خط تعليق واحد فقط إضافة اثنين `//` مائلة قبل النص.
 
- `// This is how single line comment looks like 
-` 
+```java
+// This is how single line comment looks like
+``` 
 
 #### 2\. تعليق متعدد الخط
 

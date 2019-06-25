@@ -8,7 +8,13 @@ challengeType: 1
 <section id='description'>
 In some situations involving array destructuring, we might want to collect the rest of the elements into a separate array.
 The result is similar to <code>Array.prototype.slice()</code>, as shown below:
-<blockquote>const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];<br>console.log(a, b); // 1, 2<br>console.log(arr); // [3, 4, 5, 7]</blockquote>
+
+```js
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b); // 1, 2
+console.log(arr); // [3, 4, 5, 7]
+```
+
 Variables <code>a</code> and <code>b</code> take the first and second values from the array. After that, because of rest parameter's presence, <code>arr</code> gets rest of the values in the form of an array.
 The rest element only works correctly as the last variable in the list. As in, you cannot use the rest parameter to catch a subarray that leaves out last element of the original array.
 </section>

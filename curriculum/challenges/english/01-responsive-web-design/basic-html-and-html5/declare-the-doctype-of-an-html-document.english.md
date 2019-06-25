@@ -13,7 +13,14 @@ You tell the browser this information by adding the <code>&lt;!DOCTYPE ...&gt;</
 The <code>!</code> and uppercase <code>DOCTYPE</code> is important, especially for older browsers. The <code>html</code> is not case sensitive.
 Next, the rest of your HTML code needs to be wrapped in <code>html</code> tags. The opening <code>&lt;html&gt;</code> goes directly below the <code>&lt;!DOCTYPE html&gt;</code> line, and the closing <code>&lt;/html&gt;</code> goes at the end of the page.
 Here's an example of the page structure:
-<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;!-- Your HTML code goes here --&gt;<br>&lt;/html&gt;</blockquote>
+
+```html
+<!DOCTYPE html>
+<html>
+  <!-- Your HTML code goes here -->
+</html>
+```
+
 </section>
 
 ## Instructions

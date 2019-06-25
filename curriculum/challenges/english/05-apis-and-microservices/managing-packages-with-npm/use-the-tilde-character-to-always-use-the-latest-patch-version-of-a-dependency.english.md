@@ -8,7 +8,11 @@ challengeType: 2
 <section id='description'>
 In the last challenge, you told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases, you don’t want to miss bug fixes since they often include important security patches and (hopefully) don’t break things in doing so.
 To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (<code>~</code>) character. Here's an example of how to allow updates to any 1.3.x version.
-<blockquote>"package": "~1.3.8"</blockquote>
+
+```json
+"package": "~1.3.8"
+```
+
 </section>
 
 ## Instructions

@@ -10,7 +10,8 @@ localeTitle: العثور على شخصيات مع مطابقة كسول
 
 #### حل:
 
- `let text = "<h1>Winter is coming</h1>"; 
- let myRegex = /<h1>?/; // it's the answer! 
- let result = text.match(myRegex); 
-`
+```js
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<h1>?/; // it's the answer!
+let result = text.match(myRegex);
+```

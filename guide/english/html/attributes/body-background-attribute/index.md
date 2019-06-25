@@ -23,7 +23,7 @@ Example:
 ```
 
 ## body-background attribute is depreciated
-The body-background attribute has been deprecated in HTML5. The correct way to style the ```<body>``` tag is with CSS.
+The body-background attribute has been deprecated in HTML5 and is no longer recommended for use. The correct way to style the ```<body>``` tag is with CSS.
 
 There are several CSS properties used for setting the background of an element. These can be used on the <body> tag to set the background of an entire page.
 

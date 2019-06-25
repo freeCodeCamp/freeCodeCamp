@@ -25,28 +25,33 @@ _ملاحظة: تنطبق هذه الطرق على كل من أنواع تخزي
 
 لتعيين البيانات ، نحتاج إلى إجراء ما يلي:
 
- `localStorage.setItem('Name', 'somevalue'); 
-` 
+```javascript
+localStorage.setItem('Name', 'somevalue');
+``` 
 
 لاسترداد بعض البيانات من التخزين:
 
- `localStorage.getItem('Name'); 
-` 
+```javascript
+localStorage.getItem('Name');
+``` 
 
 لإزالة أو حذف بعض البيانات ، يمكننا القيام بذلك:
 
- `localStorage.removeItem('Name'); 
-` 
+```javascript
+localStorage.removeItem('Name');
+``` 
 
 لمسح السعة التخزينية بالكامل (وليس فقط عنصرًا فرديًا) ، يمكننا استخدام:
 
- `localStorage.clear(); 
-` 
+```javascript
+localStorage.clear();
+``` 
 
 للحصول على عدد الخصائص في السعة التخزينية:
 
- `localStorage.length; 
-` 
+```javascript
+localStorage.length;
+``` 
 
 #### معلومات اكثر:
 

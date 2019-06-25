@@ -8,9 +8,19 @@ isRequired: false
 ## Description
 <section id='description'>
 The previous challenges covered a lot about creating and composing JSX elements, functional components, and ES6 style class components in React. With this foundation, it's time to look at another feature very common in React: <b>props</b>. In React, you can pass props, or properties, to child components. Say you have an <code>App</code> component which renders a child component called <code>Welcome</code> which is a stateless functional component. You can pass <code>Welcome</code> a <code>user</code> property by writing:
-<blockquote>&lt;App&gt;<br>&nbsp;&nbsp;&lt;Welcome user='Mark' /&gt;<br>&lt;/App&gt;</blockquote>
+
+```jsx
+<App>
+  <Welcome user='Mark' />
+</App>
+```
+
 You use <strong>custom HTML attributes</strong> created by you and supported by React to be passed to the component. In this case, the created property <code>user</code> is passed to the component <code>Welcome</code>. Since <code>Welcome</code> is a stateless functional component, it has access to this value like so:
-<blockquote>const Welcome = (props) => &lt;h1&gt;Hello, {props.user}!&lt;/h1&gt;</blockquote>
+
+```jsx
+const Welcome = (props) => <h1>Hello, {props.user}!</h1>
+```
+
 It is standard to call this value <code>props</code> and when dealing with stateless functional components, you basically consider it as an argument to a function which returns JSX. You can access the value of the argument in the function body. With class components, you will see this is a little different.
 </section>
 

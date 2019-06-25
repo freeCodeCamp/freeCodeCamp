@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/c/c9bQEA4'
 ## Description
 <section id='description'>
 The CSS offsets of <code>top</code> or <code>bottom</code>, and <code>left</code> or <code>right</code> tell the browser how far to offset an item relative to where it would sit in the normal flow of the document. You're offsetting an element away from a given spot, which moves the element away from the referenced side (effectively, the opposite direction). As you saw in the last challenge, using the top offset moved the <code>h2</code> downwards. Likewise, using a left offset moves an item to the right.
-<img src='https://i.imgur.com/eWWi3gZ.gif' alt='' />
+<img src='https://cdn-media-1.freecodecamp.org/imgr/eWWi3gZ.gif' alt='' />
 </section>
 
 ## Instructions

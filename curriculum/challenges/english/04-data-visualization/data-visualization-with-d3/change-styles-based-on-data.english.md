@@ -8,7 +8,13 @@ challengeType: 6
 <section id='description'>
 D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the <code>style()</code> method to change the styling for different elements.
 For example, you may want to color a data point blue if has a value less than 20, and red otherwise. You can use a callback function in the <code>style()</code> method and include the conditional logic. The callback function uses the <code>d</code> parameter to represent the data point:
-<blockquote>selection.style("color", (d) => {<br>&nbsp;&nbsp;/* Logic that returns the color based on a condition */<br>});</blockquote>
+
+```js
+selection.style("color", (d) => {
+  /* Logic that returns the color based on a condition */
+});
+```
+
 The <code>style()</code> method is not limited to setting the <code>color</code> - it can be used with other CSS properties as well.
 </section>
 

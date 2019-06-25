@@ -2,7 +2,7 @@
 title: Direct Upload to GitHub Via Android Studio
 ---
 
-![](https://i.imgur.com/W6QaUAX.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/W6QaUAX.png)
 
 [GitHub](https://services.github.com/on-demand/intro-to-github/) is a web based version control which is an amazing tool used by developers to store multiple versions of their projects. There may be times when you may add a feature to your project but may want to keep that bit of code separate. On GitHub you can create seperate branches and store the necessary code. 
 
@@ -27,5 +27,5 @@ If your project is connected to GitHub and you would like to push a commit:
 2. After entering the commit message select commit and push.
 3. Finally select push.
 
-![](https://i.imgur.com/1UUFXnM.png)
-![](https://i.imgur.com/Lih2m92.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/1UUFXnM.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/Lih2m92.png)

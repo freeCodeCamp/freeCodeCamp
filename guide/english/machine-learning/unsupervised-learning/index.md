@@ -29,6 +29,7 @@ Types:
 
 Clustering: Is used for exploratory data analysis to find hidden patterns or grouping in data. Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.
 
+K-Means Clustering: The goal of the algorithm is to cluster the data in k-groups. It iteratively assigns data points to their nearest cluster, while keeping their centroids as small as possible.
 
 Approaches to unsupervised learning include:
 

@@ -20,48 +20,52 @@ localeTitle: استخدم Destructuring Assignment مع عامل التشغيل 
 
 استخدم destructuring لإنشاء متغير `arr` .
 
- `function removeFirstTwo(list) { 
-  "use strict"; 
-  // change code below this line 
-  const [arr] = list; // change this 
-  // change code above this line 
-  return arr; 
- } 
-` 
+```javascript
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [arr] = list; // change this
+  // change code above this line
+  return arr;
+}
+``` 
 
 ## تلميح 2
 
 انشر معلمة `list` في `arr` .
 
- `function removeFirstTwo(list) { 
-  "use strict"; 
-  // change code below this line 
-  const [...arr] = list; // change this 
-  // change code above this line 
-  return arr; 
- } 
-` 
+```javascript
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [...arr] = list; // change this
+  // change code above this line
+  return arr;
+}
+``` 
 
 ## تلميح 3
 
 استبعاد أول عنصرين من صفيف `arr` مع `,,` .
 
- `function removeFirstTwo(list) { 
-  "use strict"; 
-  // change code below this line 
-  const [,,...arr] = list; // change this 
-  // change code above this line 
-  return arr; 
- } 
-` 
+```javascript
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [,,...arr] = list; // change this
+  // change code above this line
+  return arr;
+}
+``` 
 
 ## تنبيه المفسد - الحل إلى الأمام!
 
- `function removeFirstTwo(list) { 
-  "use strict"; 
-  // change code below this line 
-  const [a, b, ...arr] = list; 
-  // change code above this line 
-  return arr; 
- } 
-`
+```javascript
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [a, b, ...arr] = list;
+  // change code above this line
+  return arr;
+}
+```

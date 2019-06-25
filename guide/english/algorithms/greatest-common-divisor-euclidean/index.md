@@ -32,7 +32,7 @@ You will better understand this Algorithm by seeing it in action.
 Assuming you want to calculate the GCD of  1220 and 516, lets apply the Euclidean Algorithm-  
 
 Assuming you want to calculate the GCD of  1220 and 516, lets apply the Euclidean Algorithm-
-![Euclidean Example](https://i.imgur.com/aa8oGgP.png)  
+![Euclidean Example](https://cdn-media-1.freecodecamp.org/imgr/aa8oGgP.png)  
 
 Pseudo Code of the Algorithm-  
 Step 1: **Let `a, b` be the two numbers**  

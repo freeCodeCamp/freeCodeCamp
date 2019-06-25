@@ -15,7 +15,13 @@ Every HTML page has a <code>body</code> element.
 <section id='instructions'>
 We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.
 We can do this by adding the following to our <code>style</code> element:
-<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote>
+
+```css
+body {
+  background-color: black;
+}
+```
+
 </section>
 
 ## Tests
