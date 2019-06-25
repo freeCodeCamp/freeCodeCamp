@@ -16,7 +16,7 @@ localeTitle: Mapa
 
 Aquí hay un ejemplo:
 
-```c++
+```cpp
 #include <iostream> 
  #include <map> 
  
@@ -56,7 +56,7 @@ a => 10
 
 Insertando datos con la función miembro insertada.
 
-```c++
+```cpp
 myMap.insert(make_pair("earth", 1)); 
  myMap.insert(make_pair("moon", 2)); 
 ```
@@ -69,7 +69,7 @@ También podemos insertar datos en std :: map utilizando el operador \[\], es de
 
 Para acceder a los elementos del mapa, debe crear un iterador para él. Aquí hay un ejemplo como se dijo antes.
 
-```c++
+```cpp
 map<char, int>::iterator it; 
  for(it=first.begin(); it!=first.end(); ++it){ 
   cout << it->first << " => " << it->second << '\n'; 

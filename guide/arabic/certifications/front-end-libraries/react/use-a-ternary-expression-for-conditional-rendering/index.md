@@ -10,8 +10,9 @@ localeTitle: استخدم تعبير Ternary للعرض الشرطي
 
 يتكون المشغل الثلاثي من ثلاثة أجزاء ، ولكن يمكنك الجمع بين عدة تعبيرات ثلاثية معًا. وإليك البنية الأساسية:
 
- `condition ? expressionIfTrue : expressionIfFalse 
-` 
+```
+condition ? expressionIfTrue : expressionIfFalse
+``` 
 
 ## حل
 

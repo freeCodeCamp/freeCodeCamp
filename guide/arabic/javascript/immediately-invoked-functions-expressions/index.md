@@ -34,11 +34,12 @@ localeTitle: تعبيرات الوظائف المستحثة على الفور (I
 
 **مثال سيء** :
 
- `var x = 2 //no semicolon, will throw error 
- (function(y){ 
-  return x; 
- })(x); //Uncaught TypeError: 2 is not a function 
-` 
+```javascript
+var x = 2 //no semicolon, will throw error
+(function(y){
+  return x;
+})(x); //Uncaught TypeError: 2 is not a function
+``` 
 
 ## لماذا استخدام تعبيرات الاستدلال على الفور؟
 

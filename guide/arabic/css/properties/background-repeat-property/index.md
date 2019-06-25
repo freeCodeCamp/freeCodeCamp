@@ -10,8 +10,9 @@ localeTitle: تكرار الخلفية الملكية
 
 بناء الجملة:
 
- `background-repeat: repeat|repeat-x|repeat-y|no-repeat|initial|inherit; 
-` 
+```css
+background-repeat: repeat|repeat-x|repeat-y|no-repeat|initial|inherit;
+``` 
 
 *   تكرار: سيتم تكرار صورة الخلفية عموديًا وأفقيًا. هذا هو الافتراضي
     
@@ -28,19 +29,21 @@ localeTitle: تكرار الخلفية الملكية
 
 أمثلة: لتكرار الصورة أفقياً وعمودياً
 
- `body { 
-    background-image:url(smiley.gif); 
-    background-repeat:repeat; 
- } 
-` 
+```css
+body {
+    background-image:url(smiley.gif);
+    background-repeat:repeat;
+}
+``` 
 
 لتكرار الصورة أفقيا
 
- `body { 
-    background-image:url(smiley.gif); 
-    background-repeat:repeat-x; 
- } 
-` 
+```css
+body {
+    background-image:url(smiley.gif);
+    background-repeat:repeat-x;
+}
+``` 
 
 #### معلومات اكثر:
 

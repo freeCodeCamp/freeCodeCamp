@@ -10,4 +10,4 @@ localeTitle: كيفية الحصول على مساعدة على جيتر
     *   إذا كانت المشكلة تبدو مع الموقع نفسه ، فقم بنشر لقطة شاشة للمشكلة أو وصفها بشكل جيد.
 2.  تذكر أن الناس هناك معسكرين مثلك تمامًا ، لذا كن مهذبًا!
     
-3.  إذا حالت مشكلتك حيرة الجميع في Gitter ، فجرّب [البحث عن](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) مشكلتك [على Github](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) لأي شخص نشر موضوعًا مشابهًا.
+3.  إذا حالت مشكلتك حيرة الجميع في Gitter ، فجرّب [البحث عن](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) مشكلتك [على GitHub](http://forum.freecodecamp.com/t/searching-for-existing-issues-in-github/18390) لأي شخص نشر موضوعًا مشابهًا.

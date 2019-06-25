@@ -49,12 +49,12 @@ Vamos examinar as várias abordagens para resolver esse problema.
 
 1.  **Primeira Hora de Início Primeiro,** ou seja, selecione o intervalo que tem a hora de início mais antiga. Dê uma olhada no exemplo a seguir que quebra essa solução. Essa solução falhou porque pode haver um intervalo que começa muito cedo, mas isso é muito longo. Isso significa que a próxima estratégia que poderíamos tentar seria onde nós olhamos em intervalos menores primeiro. ![Primeiras Horas Iniciais Primeiro](https://algorithmsandme.files.wordpress.com/2015/03/f268b-jobs.png?w=840)
     
-2.  **Intervalo Menor Primeiro,** ou seja, você acaba selecionando as palestras na ordem de seu intervalo geral, que não é nada além do `finish time - start time` . Mais uma vez, esta solução não está correta. Olhe o seguinte caso. ![Intervalo mais curto primeiro](https://i.stack.imgur.com/4bz2N.png)
+2.  **Intervalo Menor Primeiro,** ou seja, você acaba selecionando as palestras na ordem de seu intervalo geral, que não é nada além do `finish time - start time` . Mais uma vez, esta solução não está correta. Olhe o seguinte caso. ![Intervalo mais curto primeiro](https://cdn-media-1.freecodecamp.org/imgr/4bz2N.png)
     
 
 Você pode ver claramente que a palestra de intervalo mais curta é a do meio, mas essa não é a solução ideal aqui. Vamos ver outra solução para esse problema, derivando insights dessa solução.
 
-3.  **Intervalo de Conflito Menor Primeiro,** ou seja, você deve procurar intervalos que causem o menor número de conflitos. Mais uma vez, temos um exemplo em que essa abordagem não consegue encontrar uma solução ideal. ![Intervalo menos conflitante primeiro](https://i.stack.imgur.com/5LZ9V.png)
+3.  **Intervalo de Conflito Menor Primeiro,** ou seja, você deve procurar intervalos que causem o menor número de conflitos. Mais uma vez, temos um exemplo em que essa abordagem não consegue encontrar uma solução ideal. ![Intervalo menos conflitante primeiro](https://cdn-media-1.freecodecamp.org/imgr/5LZ9V.png)
 
 O diagrama nos mostra que o intervalo menos conflitante é aquele no meio com apenas 2 conflitos. Depois disso, só podemos escolher os dois intervalos nas extremidades com conflitos 3 cada. Mas a melhor solução é escolher os 4 intervalos no nível mais alto.
 

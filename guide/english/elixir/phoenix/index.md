@@ -24,7 +24,7 @@ $ mix archive.install https://github.com/phoenixframework/archives/raw/master/ph
 $ mix phx.new <application_name>
 ```
 
-2. Running this command with generate a directory structure and all the basic files needed with the *application_name* you used in the previous command. You will then be prompted to install basic dependencies for the application, so we'll say yes to that.
+2. Running this command wiil generate a directory structure and all the basic files needed with the *application_name* you used in the previous command. You will then be prompted to install basic dependencies for the application, so we'll say yes to that.
 
 3. Next, we'll be prompted to change into our project directory:
 ```shell

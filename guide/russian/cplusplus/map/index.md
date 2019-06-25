@@ -16,7 +16,7 @@ localeTitle: карта
 
 Вот пример:
 
-```c++
+```cpp
 #include <iostream> 
  #include <map> 
  
@@ -56,7 +56,7 @@ a => 10
 
 Вставка данных с функцией вставки.
 
-```c++
+```cpp
 myMap.insert(make_pair("earth", 1)); 
  myMap.insert(make_pair("moon", 2)); 
 ```
@@ -69,7 +69,7 @@ myMap.insert(make_pair("earth", 1));
 
 Чтобы получить доступ к элементам карты, вам необходимо создать для нее итератор. Вот пример, как было сказано ранее.
 
-```c++
+```cpp
 map<char, int>::iterator it; 
  for(it=first.begin(); it!=first.end(); ++it){ 
   cout << it->first << " => " << it->second << '\n'; 
