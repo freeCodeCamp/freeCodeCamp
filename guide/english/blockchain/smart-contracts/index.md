@@ -30,7 +30,7 @@ Smart contracts in Ethereum are written using Solidity.  Solidity is a contract-
 Smart contracts in Hyperledger is called chaincode, and is written in Golang programming language.
 
 ## Hello World Smart Contract
-```solidity
+```
 pragma solidity ^0.4.24;
 contract Hello {
     string public message;

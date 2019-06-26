@@ -4,35 +4,35 @@ title: Vectors
 
 ## Vectors
 
-The C++ `vector` is one of the most used containers in C++. A container is a data structure that stores a collection of objects that can vary from being ordered(like `vector`!) to unordered(like `set`). All C++ containers have a different set of functions that allow you to access an object(s) in that collection, modify and loop over the elements in that data structure.
+The C++ `vector` is one of the most used containers in C++. A container in C++ is a data structure that stores a collection of objects of the same type. C++ includes both sequential containers (like `vector`!) and associative containers (like `set`). All C++ containers have functions that allow you to access, modify, and iterate over the elements in the container.
 
-Vectors are similar to ArrayLists in Java since you don't have to specify the length of the container. Compared to an array where you have to define how large it is, its size depends on its contents.
+Vectors are similar to ArrayLists in Java since you don't have to specify the length of the container. Compared to an array where you have to define how large it is, a C++ vector will be automatically resized as necessary to contain its elements.
 
-`std::vector` is part of the C++ standard library (hence the prefix `std::`) and allows you to store contiguous data of the same data type. NOTE: **All objects within a vector must be of the same data type**
+`std::vector` is part of the C++ Standard Template Library (hence the prefix `std::`) and allows you to store data of the same data type for indexed access. NOTE: **All objects stored in a vector must be of the same data type.**
 
-The data type you store within a vector goes within angle brackets next to the vector keyword. For example, if you would like to store a collection of strings the vector would be `std::vector<std::string> vector_name`
+The data type you store within a vector goes within angle brackets next to the vector keyword. For example, if you would like to store a collection of strings the vector would be specified as `std::vector<std::string> vector_name`
 
 *NOTE*: You must include the vector library whenever using vectors!
 
 `#include <vector>`
 
 ### Vector Construction
-There are many convinent ways to construct a vector.
+There are many convenient ways to construct a vector.
 
-Using an intializer list - where objects are listed inside a set of braces: `{ }`
+Using an intializer list (where the elements to be stored in the vector are listed inside a set of braces: `{ }`):
 ```cpp
 std::vector<int> a{1, 2, 3, 4, 5}; // a is a vector of 5 ints: 1, 2, 3, 4 and 5
 std::vector<std::string> b{"hello", "world"}; // b is a vector of 2 strings: "hello" and "world"
 std::vector<bool> v; // v is an empty vector 
 ```
 
-Constructing it from another vector (this is known as a copy construction)
+Constructing the vector from another vector (this is known as a copy construction):
 ```cpp
 std::vector<double> a{1.0, 2.0, 3.0};
 std::vector<double> b(a); // b is a vector of 3 doubles: 1.0, 2.0 and 3.0
 ```
 
-Initializing it with the same element:
+Initializing the vector with a specified number of copies of a given element:
 ```cpp
 std::vector<int> a(100, -1); // a is a vector of 100 elements all set to -1
 ```
@@ -42,8 +42,8 @@ std::vector<int> a(100, -1); // a is a vector of 100 elements all set to -1
 Iterators can be thought of as pointers specifically used for navigating containers 
 (such as vectors). The most important iterators are `begin()` and `end()`.
 `begin()` returns a pointer to the first item in a vector whereas `end()` points
-to one position after the last item in a vector. As such looping through a 
-vector can be done as :
+to one position after the last item in a vector. Thus looping through a 
+vector can be done as follows:
 
 ```cpp
 std::vector<int> vec{1, 2, 3};
@@ -85,7 +85,7 @@ vec.insert(iter, 38); // inserts '38' before '12'
 // vec: [3, 400, 38, 12, 45]
 ```
 
-### Element Access
+### Accessing the Elements of a `vector`
 The standard library provides different functions for accessing particular elements in your vector. 
 
 ```cpp
@@ -100,23 +100,25 @@ std::string second_item = a.at(2); // gets "element"
 std::string second_item = a[2]; // gets "element"
 ```
 
-### Looping over elements in a `vector`
+### Looping over Elements in a `vector`
 
 Looping over elements in a C++ `std::vector` is pretty different from looping over elements in a vector in JavaScript or Ruby. Due to C++ being a thin abstraction of C, you can only loop over elements using these nifty little variables called iterators to access each element.
-Iterators often come in the form of pointers which are variables that store the memory address of another variable. You can learn more about pointers [here](https://www.tutorialspoint.com/cplusplus/cpp_pointers.htm).
-However, because iterators act as pointers (or vice-versa), in order to see what they point to, you need to dereference it into a variable of the appropriate type. 
+Iterators are pointers, which are variables that store the memory address of another variable. You can learn more about pointers [here](https://www.tutorialspoint.com/cplusplus/cpp_pointers.htm).
+However, because an iterator is a pointer, in order to see what it points to, you need to dereference it into a variable of the appropriate type. 
 How do we do this?
 HERE. WE. GO!
+
 ```cpp
 std::vector<std::string> a{"test", "element", "access"};
 for(auto it = v.begin(); it != v.end(); it++) { //notice use of auto keyword
     cout<<*it<<endl; //Will print out string that the iterator is currently pointing to
 }
 ```
-From here, you can do all sorts of cool stuff, like manipulating the vector or mess around with its order as you please!
 
-### Some useful member functions
-The standard template library (STL) also provide different *methods* for you:
+From here, you can do all sorts of cool stuff, like manipulating the vector or messing around with its order as you please!
+
+### Some Useful Member Functions
+The Standard Template Library (STL) also provides different *methods* for you:
 
 ```cpp
 std::vector.size(); // returns the size of the vector (the number of positions in the vector)
@@ -132,7 +134,7 @@ std::vector.resize(n); // resizes a vector so that it contains the specified num
 std::vector.assign(i,n); // assigns new contents to the vector and replaces its current contents.
 ```
 
-### Vector Iterator
+### Vector Iterators
 The iterators provide another method for accessing elements in your vector.
 
 Iterator declaration.
@@ -141,7 +143,7 @@ std::vector<int> v;
 //Iterator delcaration for the above vector will correspond to
 std::vector<int>::iterator it;
 ```
-Using the iterator to print elements of the vector using for loop
+Using the iterator to print elements of the vector using a `for` loop
 ```cpp
 for(it=v.begin(); it!=v.end(); ++it) 
 //std::vector::begin and std::vector::end return iterator pointing to first and last element of the vector respectively.
@@ -149,7 +151,7 @@ for(it=v.begin(); it!=v.end(); ++it)
 ```
 
 ### Iterating Through a Vector
-There are different ways to iterate through a vector and access its contents. The following forms are equivalent, the first one involves using a range-based expression (since C++11), the second one uses iterators, and the last one is a index-based iteration
+There are different ways to iterate through a vector and access its contents. The following forms are equivalent, the first one involves using a range-based expression (since C++11), the second one uses iterators, and the last one is an index-based iteration.
 
 ``` cpp
 #include <iostream>
@@ -175,8 +177,8 @@ for(std::vector<int>::size_type i = 0; i != myVector.size(); i++){
 }
 
 ```
-### Sorting A Vector In Ascending Order
-Sorting a vector based on ascending order can be done with the help of Sort() in C++.
+### Sorting a Vector Into Ascending Order
+Sorting the elements of a vector into ascending order can be done by using `sort()` in C++.
 ``` cpp
 #include <iostream>
 #include <vector>
@@ -196,9 +198,10 @@ int main(){
  return 0;
 }
 ```
-In C++11, you can also sort with lambda function, which can be useful.
+
+In C++11, you can also sort using a lambda function, which can be useful.
 ```cpp
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 int main(){
@@ -215,9 +218,10 @@ int main(){
     return 0;
 }
 ```
-### Sorting Vector In Descending Order
-Sorting Vector in descending order can be done with the help of third argument namely greater<int>() in Sort() in C++.
-    
+
+### Sorting a Vector Into Descending Order
+Sorting the elements of a vector into descending order can be done by using the third argument in `sort()` (which specifies the function to be used for comparison), as shown below.
+
 ``` cpp
 #include <iostream>
 #include <vector>
@@ -259,4 +263,7 @@ int main(){
 }
 ```
 
-You can also sort in descending using lambda like the one above.
+You can also sort a vector into descending order using a lambda function as in the example for ascending-order sort presented above.
+
+#### More Information
+[Wikipedia](https://en.wikipedia.org/wiki/Sequence_container_(C%2B%2B))
