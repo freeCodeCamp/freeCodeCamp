@@ -12,12 +12,12 @@ In the last challenge, you learned about <code>export default</code> and its use
 import add from "./math_functions.js";
 ```
 
-The syntax differs in one key place. The imported value, <code>add</code>, is not surrounded by curly braces (<code>{}</code>). The primary method of importing a default export is to simply write the value's name after <code>import</code>.
+The syntax differs in one key place. The imported value, <code>add</code>, is not surrounded by curly braces (<code>{}</code>). <code>add</code> here is simply a variable name for whatever the default export of the <code>math_functions.js</code> file is. You can use any name here when importing a default.
 </section>
 
 ## Instructions
 <section id='instructions'>
-In the following code, import the default export, <code>subtract</code>, from the file <code>math_functions.js</code>, found in the same directory as this file.
+In the following code, import the default export from the <code>math_functions.js</code> file, found in the same directory as this file. Give the import the name <code>subtract</code>.
 </section>
 
 ## Tests

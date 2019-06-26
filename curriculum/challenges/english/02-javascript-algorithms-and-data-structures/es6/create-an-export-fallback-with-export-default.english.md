@@ -30,7 +30,7 @@ The following function should be the fallback value for the module. Please add t
 ```yml
 tests:
   - text: Your code should use <code>export</code> fallback.
-    testString: assert(code.match(/export\s+default\s+function\s+subtract\s*\(\s*x,\s*y\s*\)\s*{/g));
+    testString: assert(code.match(/export\s+default\s+function(\s+subtract\s*|\s*)\(\s*x,\s*y\s*\)\s*{/g));
 ```
 
 </section>
