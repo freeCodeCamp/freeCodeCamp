@@ -18,12 +18,8 @@ localeTitle: 使用jQuery禁用元素
 
 ```yml
 tests:
-  - text: 禁用<code>target1</code>按钮。
-    testString: 'assert($("#target1") && $("#target1").prop("disabled") && code.match(/[""]disabled[""],( true|true)/g), "Disable your <code>target1</code> button.");'
-  - text: 不要禁用任何其他按钮。
-    testString: 'assert($("#target2") && !$("#target2").prop("disabled"), "Do not disable any other buttons.");'
-  - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(!code.match(/disabled[^<]*>/g), "Only use jQuery to add these classes to the element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

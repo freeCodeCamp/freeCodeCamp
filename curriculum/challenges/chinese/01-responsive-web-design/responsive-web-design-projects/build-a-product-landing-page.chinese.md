@@ -18,7 +18,9 @@ localeTitle: 建立产品登陆页面
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

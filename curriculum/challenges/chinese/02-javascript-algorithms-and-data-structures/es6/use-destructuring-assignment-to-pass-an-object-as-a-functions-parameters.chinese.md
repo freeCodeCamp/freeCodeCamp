@@ -17,12 +17,8 @@ localeTitle: 使用解构分配将对象作为函数的参数传递
 
 ```yml
 tests:
-  - text: <code>stats</code>应该是一个<code>object</code> 。
-    testString: 'assert(typeof stats === "object", "<code>stats</code> should be an <code>object</code>.");'
-  - text: <code>half(stats)</code>应为<code>28.015</code>
-    testString: 'assert(half(stats) === 28.015, "<code>half(stats)</code> should be <code>28.015</code>");'
-  - text: 使用了解构。
-    testString: 'getUserInput => assert(getUserInput("index").match(/\(\s*\{\s*\w+\s*,\s*\w+\s*\}\s*\)/g), "Destructuring was used.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

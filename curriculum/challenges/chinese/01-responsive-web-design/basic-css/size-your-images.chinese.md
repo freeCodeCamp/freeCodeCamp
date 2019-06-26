@@ -17,10 +17,8 @@ localeTitle: 调整图像大小
 
 ```yml
 tests:
-  - text: 您的<code>img</code>元素应该具有<code>smaller-image</code>类。
-    testString: 'assert($("img[src="https://bit.ly/fcc-relaxing-cat"]").attr("class") === "smaller-image", "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
-  - text: 您的图片应为100像素宽。浏览器缩放应为100％。
-    testString: 'assert($("img").width() === 100, "Your image should be 100 pixels wide. Browser zoom should be at 100%.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题465：极地多边形
 
 ```yml
 tests:
-  - text: <code>euler465()</code>应该返回585965659。
-    testString: 'assert.strictEqual(euler465(), 585965659, "<code>euler465()</code> should return 585965659.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

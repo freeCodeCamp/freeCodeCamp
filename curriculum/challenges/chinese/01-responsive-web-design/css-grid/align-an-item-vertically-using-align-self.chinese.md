@@ -17,8 +17,8 @@ localeTitle: 使用align-self垂直对齐项目
 
 ```yml
 tests:
-  - text: <code>item3</code>类应该有一个<code>align-self</code>属性，其值为<code>end</code> 。
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

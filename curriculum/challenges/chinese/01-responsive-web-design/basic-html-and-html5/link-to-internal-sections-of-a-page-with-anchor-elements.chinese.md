@@ -17,18 +17,8 @@ localeTitle: 链接到具有锚元素的页面的内部部分
 
 ```yml
 tests:
-  - text: 您的页面上应该只有一个锚标记。
-    testString: 'assert($("a").length == 1, "There should be only one anchor tag on your page.");'
-  - text: 页面上应该只有一个<code>footer</code>标记。
-    testString: 'assert($("footer").length == 1, "There should be only one <code>footer</code> tag on your page.");'
-  - text: '<code>a</code>标签的<code>href</code>属性应设置为“#footer”。'
-    testString: 'assert($("a").eq(0).attr("href") == "#footer", "The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".");'
-  - text: <code>a</code>标签不应具有<code>target</code>属性
-    testString: 'assert(typeof $("a").eq(0).attr("target") == typeof undefined || $("a").eq(0).attr("target") == true, "The <code>a</code> tag should not have a <code>target</code> attribute");'
-  - text: <code>a</code>文本应该是“跳到底部”。
-    testString: 'assert($("a").eq(0).text().match(/Jump to Bottom/gi), "The <code>a</code> text should be "Jump to Bottom".");'
-  - text: <code>footer</code>标记的<code>id</code>属性应设置为“footer”。
-    testString: 'assert($("footer").eq(0).attr("id") == "footer", "The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

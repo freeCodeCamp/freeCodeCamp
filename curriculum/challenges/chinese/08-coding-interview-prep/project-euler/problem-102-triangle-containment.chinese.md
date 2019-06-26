@@ -18,8 +18,8 @@ localeTitle: 问题102：三角形遏制
 
 ```yml
 tests:
-  - text: <code>euler102()</code>应该返回228。
-    testString: 'assert.strictEqual(euler102(), 228, "<code>euler102()</code> should return 228.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

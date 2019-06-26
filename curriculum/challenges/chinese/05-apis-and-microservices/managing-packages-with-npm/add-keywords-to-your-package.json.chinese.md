@@ -21,12 +21,8 @@ keywords-field是您可以使用相关关键字描述项目的地方。 <code>0<
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“关键字”键
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, ''"keywords" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“keywords”字段应为Array'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, ''"keywords" is not an array''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“关键字”应包含“freecodecamp”'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, ''freecodecamp'', ''"keywords" does not include "freecodecamp"''); },  xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

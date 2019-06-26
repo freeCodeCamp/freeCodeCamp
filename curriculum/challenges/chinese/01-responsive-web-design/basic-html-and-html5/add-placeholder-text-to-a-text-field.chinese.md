@@ -17,12 +17,8 @@ localeTitle: 将占位符文本添加到文本字段
 
 ```yml
 tests:
-  - text: 将<code>placeholder</code>属性添加到现有文本<code>input</code>元素。
-    testString: 'assert($("input[placeholder]").length > 0, "Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.");'
-  - text: 将占位符属性的值设置为“cat photo URL”。
-    testString: 'assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi), "Set the value of your placeholder attribute to "cat photo URL".");'
-  - text: 完成的<code>input</code>元素应该具有有效的语法。
-    testString: 'assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|".*?"|[\^"">\s]+))?)+\s*|\s*)\/?>/gi), "The finished <code>input</code> element should have valid syntax.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

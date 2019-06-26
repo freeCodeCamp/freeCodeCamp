@@ -17,10 +17,8 @@ localeTitle: 使用for ... in Statement中的对象键迭代
 
 ```yml
 tests:
-  - text: <code>users</code>对象包含用户<code>Jeff</code>和<code>Ryan</code> ， <code>online</code>设置为<code>true</code> ，用户<code>Alan</code>和<code>Sarah</code> <code>online</code>设置为<code>false</code>
-    testString: 'assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, "The <code>users</code> object contains users <code>Jeff</code> and <code>Ryan</code> with <code>online</code> set to <code>true</code> and users <code>Alan</code> and <code>Sarah</code> with <code>online</code> set to <code>false</code>");'
-  - text: 函数<code>countOnline</code>返回<code>online</code>属性设置为<code>true</code>的用户数
-    testString: 'assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, "The function <code>countOnline</code> returns the number of users with the <code>online</code> property set to <code>true</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

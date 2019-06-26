@@ -18,8 +18,8 @@ localeTitle: 问题394：吃馅饼
 
 ```yml
 tests:
-  - text: <code>euler394()</code>应返回3.2370342194。
-    testString: 'assert.strictEqual(euler394(), 3.2370342194, "<code>euler394()</code> should return 3.2370342194.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

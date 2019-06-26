@@ -17,12 +17,8 @@ localeTitle: 将图像转换为链接
 
 ```yml
 tests:
-  - text: 巢现有<code>img</code>一个内元件<code>a</code>元件。
-    testString: 'assert($("a").children("img").length > 0, "Nest the existing <code>img</code> element within an <code>a</code> element.");'
-  - text: '您<code>a</code>元素应该是<code>href</code>属性设置为<code>#</code>的死链接。'
-    testString: 'assert(new RegExp("#").test($("a").children("img").parent().attr("href")), "Your <code>a</code> element should be a dead link with a <code>href</code> attribute set to <code>#</code>.");'
-  - text: 确保每个的<code>a</code>元素具有一个结束标记。
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

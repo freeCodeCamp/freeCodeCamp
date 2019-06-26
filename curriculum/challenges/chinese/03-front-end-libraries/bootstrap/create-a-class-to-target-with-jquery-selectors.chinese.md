@@ -18,8 +18,8 @@ localeTitle: 使用jQuery选择器创建一个目标类
 
 ```yml
 tests:
-  - text: 将<code>target</code>类应用于每个<code>button</code>元素。
-    testString: 'assert($(".target").length > 5, "Apply the <code>target</code> class to each of your <code>button</code> elements.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

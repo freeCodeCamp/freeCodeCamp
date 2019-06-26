@@ -18,8 +18,8 @@ localeTitle: 问题170：找到可以通过连接产品形成的最大的0到9�
 
 ```yml
 tests:
-  - text: <code>euler170()</code>应返回9857164023。
-    testString: 'assert.strictEqual(euler170(), 9857164023, "<code>euler170()</code> should return 9857164023.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

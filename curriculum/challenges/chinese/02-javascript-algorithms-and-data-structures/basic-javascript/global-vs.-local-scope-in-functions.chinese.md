@@ -17,12 +17,8 @@ localeTitle: 功能中的全局与局部范围
 
 ```yml
 tests:
-  - text: 不要更改全局<code>outerWear</code>的值
-    testString: 'assert(outerWear === "T-Shirt", "Do not change the value of the global <code>outerWear</code>");'
-  - text: <code>myOutfit</code>应该返回<code>&quot;sweater&quot;</code>
-    testString: 'assert(myOutfit() === "sweater", "<code>myOutfit</code> should return <code>"sweater"</code>");'
-  - text: 不要更改return语句
-    testString: 'assert(/return outerWear/.test(code), "Do not change the return statement");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

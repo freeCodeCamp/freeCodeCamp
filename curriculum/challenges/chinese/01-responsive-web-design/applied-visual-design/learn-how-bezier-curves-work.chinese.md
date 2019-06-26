@@ -17,10 +17,8 @@ localeTitle: 了解Bezier曲线的工作原理
 
 ```yml
 tests:
-  - text: 具有id <code>ball1</code>的元素的<code>animation-timing-function</code>属性的值应该是线性等效的cubic-bezier函数。
-    testString: 'assert($("#ball1").css("animation-timing-function") == "cubic-bezier(0.25, 0.25, 0.75, 0.75)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.");'
-  - text: 具有id <code>ball2</code>的元素的<code>animation-timing-function</code>属性的<code>ball2</code>不应更改。
-    testString: 'assert($("#ball2").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题97：大的非梅森素数
 
 ```yml
 tests:
-  - text: <code>euler97()</code>应该返回8739992577。
-    testString: 'assert.strictEqual(euler97(), 8739992577, "<code>euler97()</code> should return 8739992577.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,12 +17,8 @@ localeTitle: 使用JavaScript迭代...循环
 
 ```yml
 tests:
-  - text: 你应该使用<code>do...while</code>循环。
-    testString: 'assert(code.match(/do/g), "You should be using a <code>do...while</code> loop for this.");'
-  - text: '<code>myArray</code>应该等于<code>[10]</code> 。'
-    testString: 'assert.deepEqual(myArray, [10], "<code>myArray</code> should equal <code>[10]</code>.");'
-  - text: <code>i</code>应该等于<code>11</code>
-    testString: 'assert.deepEqual(i, 11, "<code>i</code> should equal <code>11</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

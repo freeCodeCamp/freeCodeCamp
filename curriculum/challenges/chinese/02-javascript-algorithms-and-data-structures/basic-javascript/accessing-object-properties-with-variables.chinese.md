@@ -17,18 +17,8 @@ localeTitle: 使用变量访问对象属性
 
 ```yml
 tests:
-  - text: <code>playerNumber</code>应该是一个数字
-    testString: 'assert(typeof playerNumber === "number", "<code>playerNumber</code> should be a number");'
-  - text: 变量<code>player</code>应该是一个字符串
-    testString: 'assert(typeof player === "string", "The variable <code>player</code> should be a string");'
-  - text: <code>player</code>的价值应该是“蒙大拿”
-    testString: 'assert(player === "Montana", "The value of <code>player</code> should be "Montana"");'
-  - text: 您应该使用括号表示法来访问<code>testObj</code>
-    testString: 'assert(/testObj\s*?\[.*?\]/.test(code),"You should use bracket notation to access <code>testObj</code>");'
-  - text: 您不应该直接将值<code>Montana</code>分配给变量<code>player</code> 。
-    testString: 'assert(!code.match(/player\s*=\s*"|\"\s*Montana\s*"|\"\s*;/gi),"You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.");'
-  - text: 您应该在括号表示法中使用变量<code>playerNumber</code>
-    testString: 'assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code),"You should be using the variable <code>playerNumber</code> in your bracket notation");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题357：Prime生成整数
 
 ```yml
 tests:
-  - text: <code>euler357()</code>应该返回1739023853137。
-    testString: 'assert.strictEqual(euler357(), 1739023853137, "<code>euler357()</code> should return 1739023853137.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

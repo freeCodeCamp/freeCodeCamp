@@ -18,8 +18,8 @@ localeTitle: 问题127：abc-hits
 
 ```yml
 tests:
-  - text: <code>euler127()</code>应该返回18407904。
-    testString: 'assert.strictEqual(euler127(), 18407904, "<code>euler127()</code> should return 18407904.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,8 +17,8 @@ localeTitle: 声明JavaScript变量
 
 ```yml
 tests:
-  - text: 您应该使用<code>var</code>关键字声明<code>myName</code> ，以分号结尾
-    testString: 'assert(/var\s+myName\s*;/.test(code), "You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

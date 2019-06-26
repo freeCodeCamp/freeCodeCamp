@@ -17,12 +17,8 @@ localeTitle: 使用getter和setter来控制对象的访问
 
 ```yml
 tests:
-  - text: <code>Thermostat</code>应该是一个<code>class</code>具有限定<code>constructor</code>方法。
-    testString: 'assert(typeof Thermostat === "function" && typeof Thermostat.constructor === "function","<code>Thermostat</code> should be a <code>class</code> with a defined <code>constructor</code> method.");'
-  - text: <code>class</code>关键字。
-    testString: 'getUserInput => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
-  - text: <code>Thermostat</code>可以实例化。
-    testString: 'assert(() => {const t = new Thermostat(32); return typeof t === "object" && t.temperature === 0;}, "<code>Thermostat</code> can be instantiated.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

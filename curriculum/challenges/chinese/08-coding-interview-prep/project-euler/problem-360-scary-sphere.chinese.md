@@ -18,8 +18,8 @@ localeTitle: 问题360：可怕的球体
 
 ```yml
 tests:
-  - text: <code>euler360()</code>应该返回878825614395267100。
-    testString: 'assert.strictEqual(euler360(), 878825614395267100, "<code>euler360()</code> should return 878825614395267100.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

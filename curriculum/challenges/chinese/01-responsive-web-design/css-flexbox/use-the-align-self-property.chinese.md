@@ -17,10 +17,8 @@ localeTitle: 使用align-self属性
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素应将<code>align-self</code>属性设置为center的值。'
-    testString: 'assert($("#box-1").css("align-self") == "center", "The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.");'
-  - text: '<code>#box-2</code>元素应该将<code>align-self</code>属性设置为flex-end的值。'
-    testString: 'assert($("#box-2").css("align-self") == "flex-end", "The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

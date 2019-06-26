@@ -18,20 +18,8 @@ localeTitle: Jaro距离
 
 ```yml
 tests:
-  - text: <code>jaro</code>应该是一个功能。
-    testString: 'assert(typeof jaro=="function","<code>jaro</code> should be a function.");'
-  - text: '<code>jaro(&quot;&quot;+tests[0][0]+&quot;&quot;,&quot;&quot;+tests[0][1]+&quot;&quot;)</code>应返回一个数字。'
-    testString: 'assert(typeof jaro(tests[0][0],tests[0][1])=="number","<code>jaro()</code> should return a number.");'
-  - text: '<code>jaro(&quot;&quot;+tests[0][0]+&quot;&quot;,&quot;&quot;+tests[0][1]+&quot;&quot;)</code>应该返回<code>&quot;+results[0]+&quot;</code> 。'
-    testString: 'assert.equal(jaro(tests[0][0],tests[0][1]),results[0],"<code>jaro(""+tests[0][0]+"",""+tests[0][1]+"")</code> should return <code>"+results[0]+"</code>.");'
-  - text: '<code>jaro(&quot;&quot;+tests[1][0]+&quot;&quot;,&quot;&quot;+tests[1][1]+&quot;&quot;)</code>应返回<code>&quot;+results[1]+&quot;</code> 。'
-    testString: 'assert.equal(jaro(tests[1][0],tests[1][1]),results[1],"<code>jaro(""+tests[1][0]+"",""+tests[1][1]+"")</code> should return <code>"+results[1]+"</code>.");'
-  - text: '<code>jaro(&quot;&quot;+tests[2][0]+&quot;&quot;,&quot;&quot;+tests[2][1]+&quot;&quot;)</code>应返回<code>&quot;+results[2]+&quot;</code> 。'
-    testString: 'assert.equal(jaro(tests[2][0],tests[2][1]),results[2],"<code>jaro(""+tests[2][0]+"",""+tests[2][1]+"")</code> should return <code>"+results[2]+"</code>.");'
-  - text: '<code>jaro(&quot;&quot;+tests[3][0]+&quot;&quot;,&quot;&quot;+tests[3][1]+&quot;&quot;)</code>应返回<code>&quot;+results[3]+&quot;</code> 。'
-    testString: 'assert.equal(jaro(tests[3][0],tests[3][1]),results[3],"<code>jaro(""+tests[3][0]+"",""+tests[3][1]+"")</code> should return <code>"+results[3]+"</code>.");'
-  - text: '<code>jaro(&quot;&quot;+tests[4][0]+&quot;&quot;,&quot;&quot;+tests[4][1]+&quot;&quot;)</code>应该返回<code>&quot;+results[4]+&quot;</code> 。'
-    testString: 'assert.equal(jaro(tests[4][0],tests[4][1]),results[4],"<code>jaro(""+tests[4][0]+"",""+tests[4][1]+"")</code> should return <code>"+results[4]+"</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

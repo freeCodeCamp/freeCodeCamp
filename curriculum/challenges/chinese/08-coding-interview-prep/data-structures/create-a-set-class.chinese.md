@@ -18,14 +18,8 @@ localeTitle: 创建一个Set类
 
 ```yml
 tests:
-  - text: 您的<code>Set</code>类应该有一个<code>add</code>方法。
-    testString: 'assert((function(){var test = new Set(); return (typeof test.add === "function")}()), "Your <code>Set</code> class should have an <code>add</code> method.");'
-  - text: 您的<code>add</code>方法不应添加重复值。
-    testString: 'assert((function(){var test = new Set(); test.add("a"); test.add("b"); test.add("a"); var vals = test.values(); return (vals[0] === "a" && vals[1] === "b" && vals.length === 2)}()), "Your <code>add</code> method should not add duplicate values.");'
-  - text: 成功添加值后， <code>add</code>方法应返回<code>true</code> 。
-    testString: 'assert((function(){var test = new Set(); var result = test.add("a"); return (result != undefined) && (result === true);}()), "Your <code>add</code> method should return <code>true</code> when a value has been successfully added.");'
-  - text: <code>add</code>重复值时， <code>add</code>方法应返回<code>false</code> 。
-    testString: 'assert((function(){var test = new Set(); test.add("a"); var result = test.add("a"); return (result != undefined) && (result === false);}()), "Your <code>add</code> method should return <code>false</code> when a duplicate value is added.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

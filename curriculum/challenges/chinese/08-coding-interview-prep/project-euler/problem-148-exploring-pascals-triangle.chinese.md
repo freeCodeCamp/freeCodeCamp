@@ -18,8 +18,8 @@ localeTitle: 问题148：探索帕斯卡的三角形
 
 ```yml
 tests:
-  - text: <code>euler148()</code>应该返回2129970655314432。
-    testString: 'assert.strictEqual(euler148(), 2129970655314432, "<code>euler148()</code> should return 2129970655314432.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

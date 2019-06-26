@@ -18,8 +18,8 @@ localeTitle: 问题74：数字因子链
 
 ```yml
 tests:
-  - text: <code>euler74()</code>应返回402。
-    testString: 'assert.strictEqual(euler74(), 402, "<code>euler74()</code> should return 402.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

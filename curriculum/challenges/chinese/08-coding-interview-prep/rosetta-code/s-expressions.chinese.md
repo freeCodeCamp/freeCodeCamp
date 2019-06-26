@@ -20,12 +20,8 @@ localeTitle: S-表达式
 
 ```yml
 tests:
-  - text: <code>parseSexpr</code>是一个函数。
-    testString: 'assert(typeof parseSexpr === "function", "<code>parseSexpr</code> is a function.");'
-  - text: '<code>parseSexpr(&quot;(data1 data2 data3)&quot;)</code>应返回[“data1”，“data2”，“data3”]“）'
-    testString: 'assert.deepEqual(parseSexpr(simpleSExpr), simpleSolution, "<code>parseSexpr("(data1 data2 data3)")</code> should return ["data1", "data2", "data3"]");'
-  - text: '<code>parseSexpr(&#39;(data1 data2 data3)&#39;)</code>应该返回一个包含3个元素的数组“）'
-    testString: 'assert.deepEqual(parseSexpr(basicSExpr), basicSolution, "<code>parseSexpr("(data1 data2 data3)")</code> should return an array with 3 elements");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

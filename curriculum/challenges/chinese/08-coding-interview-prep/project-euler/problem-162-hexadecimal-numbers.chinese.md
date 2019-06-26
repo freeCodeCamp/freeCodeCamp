@@ -18,8 +18,8 @@ localeTitle: 问题162：十六进制数
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler162(), 3D58725572C62302, "<code>euler162()</code> should return 3D58725572C62302.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

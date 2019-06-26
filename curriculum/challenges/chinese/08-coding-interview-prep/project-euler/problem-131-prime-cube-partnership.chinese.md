@@ -18,8 +18,8 @@ localeTitle: 问题131：Prime立方体伙伴关系
 
 ```yml
 tests:
-  - text: <code>euler131()</code>应该返回173。
-    testString: 'assert.strictEqual(euler131(), 173, "<code>euler131()</code> should return 173.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

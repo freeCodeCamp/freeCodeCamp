@@ -17,16 +17,8 @@ localeTitle: 使用内联样式覆盖类声明
 
 ```yml
 tests:
-  - text: 您的<code>h1</code>元素应该具有<code>pink-text</code>类。
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: 你的<code>h1</code>元素应该有<code>blue-text</code> 。
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: 您的<code>h1</code>元素应具有<code>orange-text</code>的ID。
-    testString: 'assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");'
-  - text: 为您的<code>h1</code>元素提供内联样式。
-    testString: 'assert(document.querySelector("h1[style]"), "Give your <code>h1</code> element an inline style.");'
-  - text: 你的<code>h1</code>元素应该是白色的。
-    testString: 'assert($("h1").css("color") === "rgb(255, 255, 255)", "Your <code>h1</code> element should be white.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

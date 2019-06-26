@@ -18,8 +18,8 @@ localeTitle: 问题349：兰顿的蚂蚁
 
 ```yml
 tests:
-  - text: <code>euler349()</code>应该返回115384615384614940。
-    testString: 'assert.strictEqual(euler349(), 115384615384614940, "<code>euler349()</code> should return 115384615384614940.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

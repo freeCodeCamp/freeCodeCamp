@@ -23,18 +23,8 @@ localeTitle: 之字形矩阵
 
 ```yml
 tests:
-  - text: ZigZagMatrix必须是一个功能
-    testString: 'assert.equal(typeof ZigZagMatrix, "function", "ZigZagMatrix must be a function");'
-  - text: ZigZagMatrix应该返回数组
-    testString: 'assert.equal(typeof ZigZagMatrix(1), "object", "ZigZagMatrix should return array");'
-  - text: ZigZagMatrix应该返回一个nestes数组的数组
-    testString: 'assert.equal(typeof ZigZagMatrix(1)[0], "object", "ZigZagMatrix should return an array of nestes arrays");'
-  - text: 'ZigZagMatrix（1）应返回[[0]]'
-    testString: 'assert.deepEqual(ZigZagMatrix(1), zm1, "ZigZagMatrix(1) should return [[0]]");'
-  - text: 'ZigZagMatrix（2）应返回[[0,1]，[2,3]]'
-    testString: 'assert.deepEqual(ZigZagMatrix(2), zm2, "ZigZagMatrix(2) should return [[0, 1], [2, 3]]");'
-  - text: ZigZagMatrix（5）必须返回指定的矩阵
-    testString: 'assert.deepEqual(ZigZagMatrix(5), zm5, "ZigZagMatrix(5) must return specified matrix");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

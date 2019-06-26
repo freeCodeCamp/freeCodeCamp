@@ -17,20 +17,8 @@ localeTitle: 仅指定较低的匹配数
 
 ```yml
 tests:
-  - text: 你的正则表达式应该使用大括号。
-    testString: 'assert(haRegex.source.match(/{.*?}/).length > 0, "Your regex should use curly brackets.");'
-  - text: 你的正则表达式不应该与<code>&quot;Hazzah&quot;</code>匹配
-    testString: 'assert(!haRegex.test("Hazzah"), "Your regex should not match <code>"Hazzah"</code>");'
-  - text: 你的正则表达式不应该与<code>&quot;Hazzzah&quot;</code>匹配
-    testString: 'assert(!haRegex.test("Hazzzah"), "Your regex should not match <code>"Hazzzah"</code>");'
-  - text: 你的正则表达应该匹配<code>&quot;Hazzzzah&quot;</code>
-    testString: 'assert(haRegex.test("Hazzzzah"), "Your regex should match <code>"Hazzzzah"</code>");'
-  - text: 你的正则表达应该匹配<code>&quot;Hazzzzzah&quot;</code>
-    testString: 'assert(haRegex.test("Hazzzzzah"), "Your regex should match <code>"Hazzzzzah"</code>");'
-  - text: 你的正则表达应该匹配<code>&quot;Hazzzzzzah&quot;</code>
-    testString: 'assert(haRegex.test("Hazzzzzzah"), "Your regex should match <code>"Hazzzzzzah"</code>");'
-  - text: 你的正则表达式应该匹配<code>&quot;Hazzah&quot;</code>和30个<code>z</code> 。
-    testString: 'assert(haRegex.test("Ha" + "z".repeat(30) + "ah"), "Your regex should match <code>"Hazzah"</code> with 30 <code>z</code>\"s in it.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

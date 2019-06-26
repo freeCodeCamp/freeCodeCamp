@@ -18,8 +18,8 @@ localeTitle: 问题462：3个平滑数的排列
 
 ```yml
 tests:
-  - text: <code>euler462()</code>应返回Infinity。
-    testString: 'assert.strictEqual(euler462(), Infinity, "<code>euler462()</code> should return Infinity.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

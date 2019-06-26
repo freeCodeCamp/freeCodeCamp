@@ -18,8 +18,8 @@ localeTitle: 问题262：山脉
 
 ```yml
 tests:
-  - text: <code>euler262()</code>应返回2531.205。
-    testString: 'assert.strictEqual(euler262(), 2531.205, "<code>euler262()</code> should return 2531.205.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

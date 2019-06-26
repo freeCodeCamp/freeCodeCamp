@@ -20,8 +20,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 端点<code>/json</code>的响应应根据环境变量<code>MESSAGE_STYLE</code>
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/use-env-vars'').then(data => { assert.isTrue(data.passed, ''The response of "/json" does not change according to MESSAGE_STYLE''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

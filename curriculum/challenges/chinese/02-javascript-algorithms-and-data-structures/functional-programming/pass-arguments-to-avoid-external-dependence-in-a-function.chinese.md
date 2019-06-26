@@ -17,12 +17,8 @@ localeTitle: 传递参数以避免函数中的外部依赖
 
 ```yml
 tests:
-  - text: 您的函数<code>incrementer</code>不应更改<code>fixedValue</code>的值。
-    testString: 'assert(fixedValue === 4, "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.");'
-  - text: 您的<code>incrementer</code>功能应该采用参数。
-    testString: 'assert(code.match(/function\s+?incrementer\s*?\(.+?\)/g), "Your <code>incrementer</code> function should take a parameter.");'
-  - text: 您的<code>incrementer</code>函数应返回一个大于<code>fixedValue</code>值的值。
-    testString: 'assert(newValue === 5, "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

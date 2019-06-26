@@ -18,8 +18,8 @@ localeTitle: 问题382：生成多边形
 
 ```yml
 tests:
-  - text: <code>euler382()</code>应该返回697003956。
-    testString: 'assert.strictEqual(euler382(), 697003956, "<code>euler382()</code> should return 697003956.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

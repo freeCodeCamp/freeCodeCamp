@@ -19,8 +19,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 您的应用应该提供文件views / index.html
-    testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.match(data, /<h1>.*<\/h1>/, ''Your app does not serve the expected HTML''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

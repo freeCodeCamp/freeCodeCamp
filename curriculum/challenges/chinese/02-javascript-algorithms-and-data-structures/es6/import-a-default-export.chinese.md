@@ -17,8 +17,8 @@ localeTitle: 导入默认导出
 
 ```yml
 tests:
-  - text: 正确导入<code>export default</code>方法。
-    testString: 'getUserInput => assert(getUserInput("index").match(/import\s+subtract\s+from\s+"math_functions"/g), "Properly imports <code>export default</code> method.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

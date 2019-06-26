@@ -18,8 +18,8 @@ localeTitle: 问题158：探索在其邻居之后只有一个字符按字典顺�
 
 ```yml
 tests:
-  - text: <code>euler158()</code>应该返回409511334375。
-    testString: 'assert.strictEqual(euler158(), 409511334375, "<code>euler158()</code> should return 409511334375.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

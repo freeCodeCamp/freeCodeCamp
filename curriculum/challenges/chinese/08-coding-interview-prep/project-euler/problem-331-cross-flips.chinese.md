@@ -18,8 +18,8 @@ localeTitle: 问题331：交叉翻转
 
 ```yml
 tests:
-  - text: <code>euler331()</code>应该返回467178235146843500。
-    testString: 'assert.strictEqual(euler331(), 467178235146843500, "<code>euler331()</code> should return 467178235146843500.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

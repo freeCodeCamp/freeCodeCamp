@@ -18,8 +18,8 @@ localeTitle: 问题363：Bézier曲线
 
 ```yml
 tests:
-  - text: <code>euler363()</code>应返回0.0000372091。
-    testString: 'assert.strictEqual(euler363(), 0.0000372091, "<code>euler363()</code> should return 0.0000372091.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

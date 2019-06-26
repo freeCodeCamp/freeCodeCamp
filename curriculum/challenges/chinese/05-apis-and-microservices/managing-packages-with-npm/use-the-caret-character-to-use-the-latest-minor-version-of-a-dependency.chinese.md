@@ -20,10 +20,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: '“依赖”应该包括“时刻”'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, ''moment'', ''"dependencies" does not include "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“moment”版本应匹配“^ 2.x.x”'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\^2\./, ''Wrong version of "moment". It should be ^2.10.2''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

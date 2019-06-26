@@ -18,8 +18,8 @@ localeTitle: 问题247：双曲线下的正方形
 
 ```yml
 tests:
-  - text: <code>euler247()</code>应该返回782252。
-    testString: 'assert.strictEqual(euler247(), 782252, "<code>euler247()</code> should return 782252.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

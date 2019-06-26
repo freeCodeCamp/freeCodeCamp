@@ -18,8 +18,8 @@ localeTitle: 问题339：Peredur fab Efrawg
 
 ```yml
 tests:
-  - text: <code>euler339()</code>应返回19823.542204。
-    testString: 'assert.strictEqual(euler339(), 19823.542204, "<code>euler339()</code> should return 19823.542204.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

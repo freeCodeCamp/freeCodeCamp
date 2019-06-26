@@ -17,14 +17,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(distinctPowers(15), 177, "<code>distinctPowers(15)</code> should return 177.");'
-  - text: ''
-    testString: 'assert.strictEqual(distinctPowers(20), 324, "<code>distinctPowers(20)</code> should return 324.");'
-  - text: ''
-    testString: 'assert.strictEqual(distinctPowers(25), 519, "<code>distinctPowers(25)</code> should return 519.");'
-  - text: ''
-    testString: 'assert.strictEqual(distinctPowers(30), 755, "<code>distinctPowers(30)</code> should return 755.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

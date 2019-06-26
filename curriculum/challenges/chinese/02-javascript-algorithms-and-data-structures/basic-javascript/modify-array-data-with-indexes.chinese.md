@@ -17,10 +17,8 @@ localeTitle: 使用索引修改数组数据
 
 ```yml
 tests:
-  - text: '<code>myArray</code>现在应该是[45,64,99]。'
-    testString: 'assert((function(){if(typeof myArray != "undefined" && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})(), "<code>myArray</code> should now be [45,64,99].");'
-  - text: 您应该使用正确的索引来修改<code>myArray</code>的值。
-    testString: 'assert((function(){if(code.match(/myArray\[0\]\s*=\s*/g)){return true;}else{return false;}})(), "You should be using correct index to modify the value in <code>myArray</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

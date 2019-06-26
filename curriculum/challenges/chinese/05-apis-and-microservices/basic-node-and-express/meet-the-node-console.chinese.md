@@ -18,8 +18,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: <code>"Hello World"</code>应该在控制台中
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,8 +17,8 @@ localeTitle: 使用哈希符号制作死链接
 
 ```yml
 tests:
-  - text: 您<code>a</code>元素应该是一个死链接， <code>href</code>属性的值设置为“＃”。
-    testString: 'assert($("a").attr("href") === "#", "Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

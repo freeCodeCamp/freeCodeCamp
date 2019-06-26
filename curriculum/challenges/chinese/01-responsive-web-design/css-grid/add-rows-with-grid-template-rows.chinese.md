@@ -17,8 +17,8 @@ localeTitle: 使用grid-template-rows添加行
 
 ```yml
 tests:
-  - text: <code>container</code>类应该有一个<code>grid-template-rows</code>属性，其中两个单元为<code>50px</code> 。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

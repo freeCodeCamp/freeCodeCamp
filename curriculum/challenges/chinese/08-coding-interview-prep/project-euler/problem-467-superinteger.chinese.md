@@ -18,8 +18,8 @@ localeTitle: 问题467：超级整数
 
 ```yml
 tests:
-  - text: <code>euler467()</code>应该返回775181359。
-    testString: 'assert.strictEqual(euler467(), 775181359, "<code>euler467()</code> should return 775181359.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

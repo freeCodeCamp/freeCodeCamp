@@ -18,8 +18,8 @@ localeTitle: 问题269：具有至少一个整数根的多项式
 
 ```yml
 tests:
-  - text: <code>euler269()</code>应该返回1311109198529286。
-    testString: 'assert.strictEqual(euler269(), 1311109198529286, "<code>euler269()</code> should return 1311109198529286.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

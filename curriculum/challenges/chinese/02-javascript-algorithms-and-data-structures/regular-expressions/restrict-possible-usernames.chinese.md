@@ -17,18 +17,8 @@ localeTitle: 限制可能的用户名
 
 ```yml
 tests:
-  - text: 你的正则表达式应该与<code>JACK</code>匹配
-    testString: 'assert(userCheck.test("JACK"), "Your regex should match <code>JACK</code>");'
-  - text: 你的正则表达式不应该与<code>J</code>匹配
-    testString: 'assert(!userCheck.test("J"), "Your regex should not match <code>J</code>");'
-  - text: 你的正则表达式应该与<code>Oceans11</code>匹配
-    testString: 'assert(userCheck.test("Oceans11"), "Your regex should match <code>Oceans11</code>");'
-  - text: 你的正则表达式应该与<code>RegexGuru</code>匹配
-    testString: 'assert(userCheck.test("RegexGuru"), "Your regex should match <code>RegexGuru</code>");'
-  - text: 你的正则表达式不应该与<code>007</code>匹配
-    testString: 'assert(!userCheck.test("007"), "Your regex should not match <code>007</code>");'
-  - text: 你的正则表达式不应该匹配<code>9</code>
-    testString: 'assert(!userCheck.test("9"), "Your regex should not match <code>9</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

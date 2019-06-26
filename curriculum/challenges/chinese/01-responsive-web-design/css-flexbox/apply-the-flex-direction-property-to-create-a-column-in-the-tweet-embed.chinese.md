@@ -17,8 +17,8 @@ localeTitle: 应用flex-direction属性在Tweet Embed中创建一个列
 
 ```yml
 tests:
-  - text: <code>.profile-name</code>元素应将<code>flex-direction</code>属性设置为column。
-    testString: 'assert($(".profile-name").css("flex-direction") == "column", "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

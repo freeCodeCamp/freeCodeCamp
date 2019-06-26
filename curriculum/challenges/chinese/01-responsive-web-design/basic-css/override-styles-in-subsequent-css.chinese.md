@@ -17,14 +17,8 @@ localeTitle: 覆盖后续CSS中的样式
 
 ```yml
 tests:
-  - text: 您的<code>h1</code>元素应该具有<code>pink-text</code>类。
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: 你的<code>h1</code>元素应该有<code>blue-text</code> 。
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: <code>blue-text</code>和<code>pink-text</code>都应属于同一个<code>h1</code>元素。
-    testString: 'assert($(".pink-text").hasClass("blue-text"), "Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.");'
-  - text: 你的<code>h1</code>元素应该是蓝色的。
-    testString: 'assert($("h1").css("color") === "rgb(0, 0, 255)", "Your <code>h1</code> element should be blue.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

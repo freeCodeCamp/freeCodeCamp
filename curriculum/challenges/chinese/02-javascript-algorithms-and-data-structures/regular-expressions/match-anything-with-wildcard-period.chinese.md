@@ -17,26 +17,8 @@ localeTitle: 匹配通配符期间的任何内容
 
 ```yml
 tests:
-  - text: 您应该使用<code>.test()</code>方法。
-    testString: 'assert(code.match(/\.test\(.*\)/), "You should use the <code>.test()</code> method.");'
-  - text: 您应该在正则表达式<code>unRegex</code>使用通配符
-    testString: 'assert(/\./.test(unRegex.source), "You should use the wildcard character in your regex <code>unRegex</code>");'
-  - text: 你的正则表达式<code>unRegex</code>应该匹配<code>&quot;run&quot;</code> <code>&quot;Let us go on a run.&quot;</code> <code>&quot;run&quot;</code>中的<code>&quot;run&quot;</code> <code>&quot;Let us go on a run.&quot;</code>
-    testString: 'assert(unRegex.test("Let us go on a run."), "Your regex <code>unRegex</code> should match <code>"run"</code> in <code>"Let us go on a run."</code>");'
-  - text: 你的正则表达式<code>unRegex</code>应该与<code>&quot;sun&quot;</code> <code>&quot;The sun is out today.&quot;</code> <code>&quot;sun&quot;</code>中的<code>&quot;sun&quot;</code>匹配<code>&quot;The sun is out today.&quot;</code>
-    testString: 'assert(unRegex.test("The sun is out today."), "Your regex <code>unRegex</code> should match <code>"sun"</code> in <code>"The sun is out today."</code>");'
-  - text: 你的正则表达式<code>unRegex</code>应该与<code>&quot;fun&quot;</code> <code>&quot;Coding is a lot of fun.&quot;</code> <code>&quot;fun&quot;</code>中的<code>&quot;fun&quot;</code>匹配<code>&quot;Coding is a lot of fun.&quot;</code>
-    testString: 'assert(unRegex.test("Coding is a lot of fun."), "Your regex <code>unRegex</code> should match <code>"fun"</code> in <code>"Coding is a lot of fun."</code>");'
-  - text: 你的正则表达式<code>unRegex</code>应该匹配<code>&quot;pun&quot;</code> <code>&quot;Seven days without a pun makes one weak.&quot;</code> <code>&quot;pun&quot;</code> <code>&quot;Seven days without a pun makes one weak.&quot;</code>
-    testString: 'assert(unRegex.test("Seven days without a pun makes one weak."), "Your regex <code>unRegex</code> should match <code>"pun"</code> in <code>"Seven days without a pun makes one weak."</code>");'
-  - text: 你的正则表达式<code>unRegex</code>应该与<code>&quot;nun&quot;</code> <code>&quot;One takes a vow to be a nun.&quot;</code> <code>&quot;nun&quot;</code>中的<code>&quot;nun&quot;</code>匹配<code>&quot;One takes a vow to be a nun.&quot;</code>
-    testString: 'assert(unRegex.test("One takes a vow to be a nun."), "Your regex <code>unRegex</code> should match <code>"nun"</code> in <code>"One takes a vow to be a nun."</code>");'
-  - text: 你的正则表达式<code>unRegex</code>应该匹配<code>&quot;bun&quot;</code> <code>&quot;She got fired from the hot dog stand for putting her hair in a bun.&quot;</code> <code>&quot;bun&quot;</code>中的<code>&quot;bun&quot;</code> <code>&quot;She got fired from the hot dog stand for putting her hair in a bun.&quot;</code>
-    testString: 'assert(unRegex.test("She got fired from the hot dog stand for putting her hair in a bun."), "Your regex <code>unRegex</code> should match <code>"bun"</code> in <code>"She got fired from the hot dog stand for putting her hair in a bun."</code>");'
-  - text: 您的正则表达式<code>unRegex</code>不应与<code>&quot;There is a bug in my code.&quot;</code>匹配<code>&quot;There is a bug in my code.&quot;</code>
-    testString: 'assert(!unRegex.test("There is a bug in my code."), "Your regex <code>unRegex</code> should not match <code>"There is a bug in my code."</code>");'
-  - text: 您的正则表达式<code>unRegex</code>不应该匹配<code>&quot;Catch me if you can.&quot;</code>
-    testString: 'assert(!unRegex.test("Can me if you can."), "Your regex <code>unRegex</code> should not match <code>"Catch me if you can."</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,12 +17,8 @@ localeTitle: 使用s标记删除线文本
 
 ```yml
 tests:
-  - text: 您的代码应一个加<code>s</code>标签来标记。
-    testString: 'assert($("s").length == 1, "Your code should add one <code>s</code> tag to the markup.");'
-  - text: <code>s</code>标记应该环绕<code>h4</code>标记中的Google文本。它不应包含单词Alphabet。
-    testString: 'assert($("s").text().match(/Google/gi) && !$("s").text().match(/Alphabet/gi), "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.");'
-  - text: 在<code>h4</code>标记中包含单词Alphabet，不带删除线格式。
-    testString: 'assert($("h4").html().match(/Alphabet/gi), "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

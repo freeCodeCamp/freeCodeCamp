@@ -17,12 +17,8 @@ localeTitle: 删除HTML元素
 
 ```yml
 tests:
-  - text: 删除你的<code>h1</code>元素。
-    testString: 'assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi), "Delete your <code>h1</code> element.");'
-  - text: 将<code>h2</code>元素留在页面上。
-    testString: 'assert(code.match(/<h2>[\w\W]*<\/h2>/gi), "Leave your <code>h2</code> element on the page.");'
-  - text: 将<code>p</code>元素留在页面上。
-    testString: 'assert(code.match(/<p>[\w\W]*<\/p>/gi), "Leave your <code>p</code> element on the page.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

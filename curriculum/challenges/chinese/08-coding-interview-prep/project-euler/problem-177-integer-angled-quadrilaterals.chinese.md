@@ -18,8 +18,8 @@ localeTitle: 问题177：整数角四边形
 
 ```yml
 tests:
-  - text: <code>euler177()</code>应返回129325。
-    testString: 'assert.strictEqual(euler177(), 129325, "<code>euler177()</code> should return 129325.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

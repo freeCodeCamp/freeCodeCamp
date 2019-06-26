@@ -17,14 +17,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(spiralDiagonals(101) == 692101, "<code>spiralDiagonals(101)</code> should return 692101.");'
-  - text: ''
-    testString: 'assert(spiralDiagonals(303) == 18591725, "<code>spiralDiagonals(303)</code> should return 18591725.");'
-  - text: ''
-    testString: 'assert(spiralDiagonals(505) == 85986601, "<code>spiralDiagonals(505)</code> should return 85986601.");'
-  - text: ''
-    testString: 'assert(spiralDiagonals(1001) == 669171001, "<code>spiralDiagonals(1001)</code> should return 669171001.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

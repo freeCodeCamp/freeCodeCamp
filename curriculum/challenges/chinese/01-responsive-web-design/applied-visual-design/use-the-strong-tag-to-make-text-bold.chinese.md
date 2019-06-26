@@ -17,12 +17,8 @@ localeTitle: 使用强标记使文字粗体
 
 ```yml
 tests:
-  - text: 您的代码应该在标记中添加一个<code>strong</code>标记。
-    testString: 'assert($("strong").length == 1, "Your code should add one <code>strong</code> tag to the markup.");'
-  - text: <code>strong</code>标记应该在<code>p</code>标记内。
-    testString: 'assert($("p").children("strong").length == 1, "The <code>strong</code> tag should be inside the <code>p</code> tag.");'
-  - text: <code>strong</code>标签应该包含“斯坦福大学”这个词。
-    testString: 'assert($("strong").text().match(/^Stanford University$/gi), "The <code>strong</code> tag should wrap around the words "Stanford University".");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

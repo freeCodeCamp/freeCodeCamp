@@ -17,12 +17,8 @@ localeTitle: 使用与Rest运算符的Destructuring Assignment重新分配数组
 
 ```yml
 tests:
-  - text: '<code>arr</code>应为<code>[3,4,5,6,7,8,9,10]</code>'
-    testString: 'assert(arr.every((v, i) => v === i + 3) && arr.length === 8,"<code>arr</code> should be <code>[3,4,5,6,7,8,9,10]</code>");'
-  - text: 应该使用解构。
-    testString: 'getUserInput => assert(getUserInput("index").match(/\[\s*\w*\s*,\s*\w*\s*,\s*...\w+\s*\]/g),"Destructuring should be used.");'
-  - text: 不应使用<code>Array.slice()</code> 。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/slice/g), "<code>Array.slice()</code> should not be used.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

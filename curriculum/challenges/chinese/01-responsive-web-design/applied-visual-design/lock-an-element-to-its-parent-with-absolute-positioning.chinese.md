@@ -17,12 +17,8 @@ localeTitle: 使用绝对定位将元素锁定到其父级
 
 ```yml
 tests:
-  - text: '<code>#searchbar</code>元素的<code>position</code>应设置为<code>absolute</code> 。'
-    testString: 'assert($("#searchbar").css("position") == "absolute", "The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.");'
-  - text: '您的代码应该在<code>#searchbar</code>元素上使用50像素的<code>top</code> CSS偏移量。'
-    testString: 'assert($("#searchbar").css("top") == "50px", "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");'
-  - text: '您的代码应该在<code>#searchbar</code>元素上使用50像素的<code>right</code> CSS偏移量。'
-    testString: 'assert($("#searchbar").css("right") == "50px", "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

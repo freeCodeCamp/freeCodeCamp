@@ -17,8 +17,8 @@ localeTitle: 使用flex-direction属性创建一行
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>元素的<code>flex-direction</code>属性应设置为row-reverse。'
-    testString: 'assert($("#box-container").css("flex-direction") == "row-reverse", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

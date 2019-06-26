@@ -18,7 +18,9 @@ localeTitle: 建立一个投票应用程序
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

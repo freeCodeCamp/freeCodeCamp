@@ -18,8 +18,8 @@ localeTitle: 问题172：调查重复数字很少的数字
 
 ```yml
 tests:
-  - text: <code>euler172()</code>应返回227485267000992000。
-    testString: 'assert.strictEqual(euler172(), 227485267000992000, "<code>euler172()</code> should return 227485267000992000.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

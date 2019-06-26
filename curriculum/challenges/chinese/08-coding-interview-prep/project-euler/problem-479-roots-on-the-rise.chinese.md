@@ -18,8 +18,8 @@ localeTitle: 问题479：崛起的根源
 
 ```yml
 tests:
-  - text: <code>euler479()</code>应该返回191541795。
-    testString: 'assert.strictEqual(euler479(), 191541795, "<code>euler479()</code> should return 191541795.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

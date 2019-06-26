@@ -17,14 +17,8 @@ localeTitle: 使用CSS和HTML创建更复杂的形状
 
 ```yml
 tests:
-  - text: '<code>heart::after</code>选择器的<code>background-color</code>属性应为粉红色。'
-    testString: 'assert(code.match(/\.heart::after\s*?{\s*?background-color\s*?:\s*?pink\s*?;/gi), "The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.");'
-  - text: '选择<code>heart::after</code>的<code>heart::after</code> <code>border-radius</code>应为50％。'
-    testString: 'assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2, "The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.");'
-  - text: <code>heart</code>类的<code>transform</code>属性应使用设置为-45度的<code>rotate()</code>函数。
-    testString: 'assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi), "The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.");'
-  - text: '该<code>content</code>的的<code>heart::before</code>选择应该是一个空字符串。'
-    testString: 'assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|")\1\s*?;/gi), "The <code>content</code> of the <code>heart::before</code> selector should be an empty string.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题476：圆形包装II
 
 ```yml
 tests:
-  - text: <code>euler476()</code>应返回110242.87794。
-    testString: 'assert.strictEqual(euler476(), 110242.87794, "<code>euler476()</code> should return 110242.87794.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

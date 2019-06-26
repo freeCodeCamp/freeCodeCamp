@@ -17,10 +17,8 @@ localeTitle: ''
 
 ```yml
 tests:
-  - text: <code>penguin.fly()</code>应该返回字符串“唉，这是一只不会飞的鸟”。
-    testString: 'assert(penguin.fly() === "Alas, this is a flightless bird.", "<code>penguin.fly()</code> should return the string "Alas, this is a flightless bird."");'
-  - text: <code>bird.fly()</code>方法应该返回“我正在飞行！”
-    testString: 'assert((new Bird()).fly() === "I am flying!", "The <code>bird.fly()</code> method should return "I am flying!"");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

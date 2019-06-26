@@ -17,20 +17,8 @@ localeTitle: HTML5元素简介
 
 ```yml
 tests:
-  - text: 使用Kitty Ipsum文本需要2个<code>p</code>元素。
-    testString: 'assert($("p").length > 1, "You need 2 <code>p</code> elements with Kitty Ipsum text.");'
-  - text: 确保每个<code>p</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure each of your <code>p</code> elements has a closing tag.");'
-  - text: 你的<code>p</code>元素应该包含所提供的额外<code>kitty ipsum text</code>的前几个单词。
-    testString: 'assert.isTrue((/Purr\s+jump\s+eat/gi).test($("p").text()), "Your <code>p</code> element should contain the first few words of the provided additional <code>kitty ipsum text</code>.");'
-  - text: 您的代码应该有一个<code>main</code>元素。
-    testString: 'assert($("main").length === 1, "Your code should have one <code>main</code> element.");'
-  - text: <code>main</code>元素应该有两个段落元素作为子元素。
-    testString: 'assert($("main").children("p").length === 2, "The <code>main</code> element should have two paragraph elements as children.");'
-  - text: 开头<code>main</code>标记应位于第一个段落标记之前。
-    testString: 'assert(code.match(/<main>\s*?<p>/g), "The opening <code>main</code> tag should come before the first paragraph tag.");'
-  - text: 结束<code>main</code>标记应该在第二个结束段标记之后。
-    testString: 'assert(code.match(/<\/p>\s*?<\/main>/g), "The closing <code>main</code> tag should come after the second closing paragraph tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

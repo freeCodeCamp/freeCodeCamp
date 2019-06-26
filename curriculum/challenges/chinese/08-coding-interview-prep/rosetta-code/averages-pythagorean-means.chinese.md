@@ -26,10 +26,8 @@ localeTitle: 平均值 - 毕达哥拉斯指的是
 
 ```yml
 tests:
-  - text: <code>pythagoreanMeans</code>是一种功能。
-    testString: 'assert(typeof pythagoreanMeans === "function", "<code>pythagoreanMeans</code> is a function.");'
-  - text: '<code>pythagoreanMeans([1, 2, ..., 10])</code>应该等于上面相同的输出。'
-    testString: 'assert.deepEqual(pythagoreanMeans(range1), answer1, "<code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

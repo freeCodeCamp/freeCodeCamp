@@ -17,12 +17,8 @@ localeTitle: 使用固定定位将元素锁定到浏览器窗口
 
 ```yml
 tests:
-  - text: '<code>#navbar</code>元素的<code>position</code>应设置为<code>fixed</code> 。'
-    testString: 'assert($("#navbar").css("position") == "fixed", "The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.");'
-  - text: '您的代码应该使用<code>#navbar</code>元素上0像素的<code>top</code> CSS偏移量。'
-    testString: 'assert($("#navbar").css("top") == "0px", "Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");'
-  - text: '您的代码应使用<code>#navbar</code>元素上0像素的<code>left</code> CSS偏移量。'
-    testString: 'assert($("#navbar").css("left") == "0px", "Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

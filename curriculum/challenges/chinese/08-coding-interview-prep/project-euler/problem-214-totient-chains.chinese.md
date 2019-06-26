@@ -18,8 +18,8 @@ localeTitle: 问题214个欧拉链
 
 ```yml
 tests:
-  - text: <code>euler214()</code>应该返回1677366278943。
-    testString: 'assert.strictEqual(euler214(), 1677366278943, "<code>euler214()</code> should return 1677366278943.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

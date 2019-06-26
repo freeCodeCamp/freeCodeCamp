@@ -18,8 +18,8 @@ localeTitle: 问题183：零件的最大产品
 
 ```yml
 tests:
-  - text: <code>euler183()</code>应该返回48861552。
-    testString: 'assert.strictEqual(euler183(), 48861552, "<code>euler183()</code> should return 48861552.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

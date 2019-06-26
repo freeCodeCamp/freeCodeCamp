@@ -18,8 +18,8 @@ localeTitle: 问题206：隐藏的广场
 
 ```yml
 tests:
-  - text: <code>euler206()</code>应该返回1389019170。
-    testString: 'assert.strictEqual(euler206(), 1389019170, "<code>euler206()</code> should return 1389019170.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

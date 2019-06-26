@@ -18,10 +18,8 @@ localeTitle: 使用helmet.contentSecurityPolicy（）设置内容安全策略
 
 ```yml
 tests:
-  - text: helmet.csp（）中间件应该正确安装
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "csp"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '你的csp配置不正确。 defaultSrc应该是[“”self“”]而scriptSrc应该是[“”self“”，“trusted-cdn.com”]'
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === "content-security-policy" || k === "x-webkit-csp" || k === "x-content-security-policy" })[0]; assert.equal(data.headers[cspHeader], "default-src "self"; script-src "self" trusted-cdn.com"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题223：几乎是直角三角形I.
 
 ```yml
 tests:
-  - text: <code>euler223()</code>应该返回61614848。
-    testString: 'assert.strictEqual(euler223(), 61614848, "<code>euler223()</code> should return 61614848.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,16 +17,8 @@ localeTitle: 将键值对添加到JavaScript对象
 
 ```yml
 tests:
-  - text: <code>foods</code>是一个对象
-    testString: 'assert(typeof foods === "object", "<code>foods</code> is an object");'
-  - text: <code>foods</code>对象有一个值为<code>13</code>的关键<code>&quot;bananas&quot;</code>
-    testString: 'assert(foods.bananas === 13, "The <code>foods</code> object has a key <code>"bananas"</code> with a value of <code>13</code>");'
-  - text: <code>foods</code>对象有一个关键的<code>&quot;grapes&quot;</code> ，价值<code>35</code>
-    testString: 'assert(foods.grapes === 35, "The <code>foods</code> object has a key <code>"grapes"</code> with a value of <code>35</code>");'
-  - text: <code>foods</code>对象有一个关键的<code>&quot;strawberries&quot;</code> ，值为<code>27</code>
-    testString: 'assert(foods.strawberries === 27, "The <code>foods</code> object has a key <code>"strawberries"</code> with a value of <code>27</code>");'
-  - text: 应使用点或括号表示法设置键值对
-    testString: 'assert(code.search(/bananas:/) === -1 && code.search(/grapes:/) === -1 && code.search(/strawberries:/) === -1, "The key-value pairs should be set using dot or bracket notation");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

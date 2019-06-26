@@ -17,8 +17,8 @@ localeTitle: 级联CSS变量
 
 ```yml
 tests:
-  - text: '在<code>:root</code>声明<code>--penguin-belly</code>变量并将其指定为<code>pink</code> 。'
-    testString: 'assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

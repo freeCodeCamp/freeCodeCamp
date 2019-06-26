@@ -17,8 +17,8 @@ localeTitle: 更改元素的字体大小
 
 ```yml
 tests:
-  - text: 在<code>style</code>标记之间，给出<code>p</code>元素<code>font-size</code>为<code>16px</code> 。浏览器和文本缩放应为100％。
-    testString: 'assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), "Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

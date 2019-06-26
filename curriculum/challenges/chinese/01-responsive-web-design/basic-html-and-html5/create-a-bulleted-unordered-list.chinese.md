@@ -17,16 +17,9 @@ localeTitle: 创建项目符号无序列表
 
 ```yml
 tests:
-  - text: 创建一个<code>ul</code>元素。
-    testString: 'assert($("ul").length > 0, "Create a <code>ul</code> element.");'
-  - text: 你的<code>ul</code>元素中应该有三个<code>li</code>元素。
-    testString: 'assert($("ul li").length > 2, "You should have three <code>li</code> elements within your <code>ul</code> element.");'
-  - text: 确保你的<code>ul</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/ul>/gi) && code.match(/<ul/gi) && code.match(/<\/ul>/gi).length === code.match(/<ul/gi).length, "Make sure your <code>ul</code> element has a closing tag.");'
-  - text: 确保您的<code>li</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/li>/gi) && code.match(/<li[\s>]/gi) && code.match(/<\/li>/gi).length === code.match(/<li[\s>]/gi).length, "Make sure your <code>li</code> elements have closing tags.");'
-  - text: 确保您的<code>li</code>元素不包含任何空字符串或者只有空格。
-    testString: assert($("ul li").filter((_, item) => !$(item).text().trim()).length === 0, 'Make sure your <code>li</code> elements don\’t contain an empty string or only white-space.');
+  - text: 測試文本
+    testString: assert(true);
+
 ```
 
 </section>

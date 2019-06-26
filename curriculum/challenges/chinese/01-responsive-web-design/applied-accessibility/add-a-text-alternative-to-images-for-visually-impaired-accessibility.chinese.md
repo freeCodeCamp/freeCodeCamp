@@ -17,8 +17,8 @@ localeTitle: 为视力受损的辅助功能添加图像替代文字
 
 ```yml
 tests:
-  - text: 你的<code>img</code>标签应该有一个<code>alt</code>属性，它不应该是空的。
-    testString: 'assert($("img").attr("alt"), "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

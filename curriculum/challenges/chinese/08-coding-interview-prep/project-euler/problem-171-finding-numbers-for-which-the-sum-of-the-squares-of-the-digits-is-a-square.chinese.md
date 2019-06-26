@@ -18,8 +18,8 @@ localeTitle: 问题171：找到数字的平方和为正方形的数字
 
 ```yml
 tests:
-  - text: <code>euler171()</code>应该返回142989277。
-    testString: 'assert.strictEqual(euler171(), 142989277, "<code>euler171()</code> should return 142989277.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,12 +17,8 @@ localeTitle: 使用CSS变量一次更改多个元素
 
 ```yml
 tests:
-  - text: <code>penguin</code>类应声明<code>--penguin-skin</code>变量并将其指定为<code>gray</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");'
-  - text: <code>penguin</code>类应声明<code>--penguin-belly</code>变量并将其指定为<code>white</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.");'
-  - text: <code>penguin</code>类应声明<code>--penguin-beak</code>变量并将其指定为<code>orange</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

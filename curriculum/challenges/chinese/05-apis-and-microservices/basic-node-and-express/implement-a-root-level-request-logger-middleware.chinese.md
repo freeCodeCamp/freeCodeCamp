@@ -20,8 +20,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 根级别记录器中间件应该是活动的
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/root-middleware-logger'').then(data => { assert.isTrue(data.passed, ''root-level logger is not working as expected''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

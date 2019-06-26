@@ -18,8 +18,8 @@ localeTitle: 问题408：通过网格的可允许路径
 
 ```yml
 tests:
-  - text: <code>euler408()</code>应该返回299742733。
-    testString: 'assert.strictEqual(euler408(), 299742733, "<code>euler408()</code> should return 299742733.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,12 +17,8 @@ localeTitle: 使用继承，所以你不要重复自己
 
 ```yml
 tests:
-  - text: <code>Animal.prototype</code>应该有<code>eat</code>属性。
-    testString: 'assert(Animal.prototype.hasOwnProperty("eat"), "<code>Animal.prototype</code> should have the <code>eat</code> property.");'
-  - text: <code>Bear.prototype</code>不应该有<code>eat</code>属性。
-    testString: 'assert(!(Bear.prototype.hasOwnProperty("eat")), "<code>Bear.prototype</code> should not have the <code>eat</code> property.");'
-  - text: <code>Cat.prototype</code>不应该有<code>eat</code>属性。
-    testString: 'assert(!(Cat.prototype.hasOwnProperty("eat")), "<code>Cat.prototype</code> should not have the <code>eat</code> property.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

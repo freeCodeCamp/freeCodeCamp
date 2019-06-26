@@ -17,12 +17,8 @@ localeTitle: 使用IIFE创建模块
 
 ```yml
 tests:
-  - text: 应该定义<code>funModule</code>并返回一个对象。
-    testString: 'assert(typeof funModule === "object", "<code>funModule</code> should be defined and return an object.");'
-  - text: <code>funModule.isCuteMixin</code>应该访问一个函数。
-    testString: 'assert(typeof funModule.isCuteMixin === "function", "<code>funModule.isCuteMixin</code> should access a function.");'
-  - text: <code>funModule.singMixin</code>应该访问一个函数。
-    testString: 'assert(typeof funModule.singMixin === "function", "<code>funModule.singMixin</code> should access a function.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

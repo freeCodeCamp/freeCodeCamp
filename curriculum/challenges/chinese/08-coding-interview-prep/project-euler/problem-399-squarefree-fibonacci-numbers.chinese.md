@@ -18,8 +18,8 @@ localeTitle: 问题399：无自由斐波纳契数
 
 ```yml
 tests:
-  - text: '<code>euler399()</code>应返回1508395636674243,6.5e27330467。'
-    testString: 'assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467, "<code>euler399()</code> should return 1508395636674243, 6.5e27330467.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

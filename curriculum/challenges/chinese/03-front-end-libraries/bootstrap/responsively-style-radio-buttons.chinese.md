@@ -21,12 +21,8 @@ localeTitle: 响应样式单选按钮
 
 ```yml
 tests:
-  - text: 将所有单选按钮<code>div</code>具有类<code>row</code>一个<code>div</code> 。
-    testString: 'assert($("div.row:has(input[type=\"radio\"])").length > 0, "Nest all of your radio buttons inside one <code>div</code> with the class <code>row</code>.");'
-  - text: 使用类<code>col-xs-6</code>将每个单选按钮嵌套在自己的<code>div</code> 。
-    testString: 'assert($("div.col-xs-6:has(input[type=\"radio\"])").length > 1, "Nest each of your radio buttons inside its own <code>div</code> with the class <code>col-xs-6</code>.");'
-  - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

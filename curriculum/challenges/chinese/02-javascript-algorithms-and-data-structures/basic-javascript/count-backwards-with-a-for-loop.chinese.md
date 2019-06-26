@@ -17,12 +17,8 @@ localeTitle: 用For循环向后计数
 
 ```yml
 tests:
-  - text: 你应该为此使用<code>for</code>循环。
-    testString: 'assert(code.match(/for\s*\(/g).length > 1, "You should be using a <code>for</code> loop for this.");'
-  - text: 你应该使用数组方法<code>push</code> 。
-    testString: 'assert(code.match(/myArray.push/), "You should be using the array method <code>push</code>.");'
-  - text: '<code>myArray</code>应该等于<code>[9,7,5,3,1]</code> 。'
-    testString: 'assert.deepEqual(myArray, [9,7,5,3,1], "<code>myArray</code> should equal <code>[9,7,5,3,1]</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

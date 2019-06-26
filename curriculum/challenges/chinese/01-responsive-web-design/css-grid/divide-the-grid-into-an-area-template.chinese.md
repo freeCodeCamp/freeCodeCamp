@@ -17,8 +17,8 @@ localeTitle: 将网格划分为区域模板
 
 ```yml
 tests:
-  - text: <code>container</code>类应该具有类似于预览但具有的<code>grid-template-areas</code>属性<code>.</code>而不是<code>advert</code>区域。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -20,26 +20,8 @@ localeTitle: 旧数据可视化证书
 
 ```yml
 tests:
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

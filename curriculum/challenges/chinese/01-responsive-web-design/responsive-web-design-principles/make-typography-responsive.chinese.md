@@ -17,10 +17,8 @@ localeTitle: 使排版响应
 
 ```yml
 tests:
-  - text: 你的<code>h2</code>标签应该有80vw的<code>width</code> 。
-    testString: 'assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g), "Your <code>h2</code> tag should have a <code>width</code> of 80vw.");'
-  - text: 你的<code>p</code>标签应该有75vmin的<code>width</code> 。
-    testString: 'assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g), "Your <code>p</code> tag should have a <code>width</code> of 75vmin.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

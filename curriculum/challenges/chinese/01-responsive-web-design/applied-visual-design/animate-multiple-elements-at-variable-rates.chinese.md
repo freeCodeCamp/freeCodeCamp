@@ -17,12 +17,8 @@ localeTitle: 以可变速率动画多个元素
 
 ```yml
 tests:
-  - text: 具有<code>star-1</code>的星的<code>animation-duration</code>属性应保持为1秒。
-    testString: 'assert($(".star-1").css("animation-duration") == "1s", "The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.");'
-  - text: <code>star-2</code>的星的<code>animation-duration</code>属性应为0.9秒。
-    testString: 'assert($(".star-2").css("animation-duration") == "0.9s", "The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.");'
-  - text: <code>star-3</code>的星的<code>animation-duration</code>属性应为1.1秒。
-    testString: 'assert($(".star-3").css("animation-duration") == "1.1s", "The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

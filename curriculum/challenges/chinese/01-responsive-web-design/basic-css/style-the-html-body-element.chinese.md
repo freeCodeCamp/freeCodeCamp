@@ -17,12 +17,8 @@ localeTitle: 设置HTML Body Element的样式
 
 ```yml
 tests:
-  - text: 给你的<code>body</code>元素黑色的<code>background-color</code> 。
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Give your <code>body</code> element the <code>background-color</code> of black.");'
-  - text: 确保您的CSS规则使用左右大括号正确格式化。
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule is properly formatted with both opening and closing curly brackets.");'
-  - text: 确保您的CSS规则以分号结尾。
-    testString: 'assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), "Make sure your CSS rule ends with a semi-colon.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

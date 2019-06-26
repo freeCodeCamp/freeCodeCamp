@@ -18,8 +18,8 @@ localeTitle: 问题236：豪华礼篮
 
 ```yml
 tests:
-  - text: <code>euler236()</code>应返回<code>euler236()</code> 。
-    testString: 'assert.strictEqual(euler236(), 123 / 59, "<code>euler236()</code> should return 123 / 59.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

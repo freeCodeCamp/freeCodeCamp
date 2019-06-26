@@ -17,8 +17,8 @@ localeTitle: 使用网格区域属性在网格区域中放置项目
 
 ```yml
 tests:
-  - text: <code>item5</code>类应该有一个<code>grid-area</code>属性，其值为<code>footer</code> 。
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

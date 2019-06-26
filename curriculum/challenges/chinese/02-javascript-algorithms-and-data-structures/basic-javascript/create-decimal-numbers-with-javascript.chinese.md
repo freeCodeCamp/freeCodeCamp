@@ -17,10 +17,8 @@ localeTitle: 使用JavaScript创建十进制数
 
 ```yml
 tests:
-  - text: <code>myDecimal</code>应该是一个数字。
-    testString: 'assert(typeof myDecimal === "number", "<code>myDecimal</code> should be a number.");'
-  - text: <code>myDecimal</code>应该有一个小数点
-    testString: 'assert(myDecimal % 1 != 0, "<code>myDecimal</code> should have a decimal point"); '
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

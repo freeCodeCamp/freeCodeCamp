@@ -20,12 +20,8 @@ localeTitle: id的目标元素使用jQuery
 
 ```yml
 tests:
-  - text: 选择<code>id</code>为<code>target3</code>的<code>button</code>元素，并使用jQuery <code>addClass()</code>函数为它提供<code>animated</code>类。
-    testString: 'assert($("#target3").hasClass("animated"), "Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.");'
-  - text: 使用id <code>target3</code>定位元素，并使用jQuery <code>addClass()</code>函数为其提供类<code>fadeOut</code> 。
-    testString: 'assert(($("#target3").hasClass("fadeOut") || $("#target3").hasClass("fadeout"))  && code.match(/\$\(\s*.#target3.\s*\)/g), "Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.");'
-  - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to add these classes to the element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

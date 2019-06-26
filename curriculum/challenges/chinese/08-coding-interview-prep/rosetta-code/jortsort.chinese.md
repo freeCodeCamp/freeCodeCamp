@@ -18,22 +18,8 @@ localeTitle: JortSort
 
 ```yml
 tests:
-  - text: <code>jortsort</code>应该是一个功能。
-    testString: 'assert(typeof jortsort=="function","<code>jortsort</code> should be a function.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[0])+&quot;)</code>应该返回一个布尔值。'
-    testString: 'assert(typeof jortsort(tests[0].slice())=="boolean","<code>jortsort("+JSON.stringify(tests[0])+")</code> should return a boolean.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[0])+&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(jortsort(tests[0].slice()),true,"<code>jortsort("+JSON.stringify(tests[0])+")</code> should return <code>true</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[1])+&quot;)</code>应该返回<code>false</code> 。'
-    testString: 'assert.equal(jortsort(tests[1].slice()),false,"<code>jortsort("+JSON.stringify(tests[1])+")</code> should return <code>false</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[2])+&quot;)</code>应该返回<code>false</code> 。'
-    testString: 'assert.equal(jortsort(tests[2].slice()),false,"<code>jortsort("+JSON.stringify(tests[2])+")</code> should return <code>false</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[3])+&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(jortsort(tests[3].slice()),true,"<code>jortsort("+JSON.stringify(tests[3])+")</code> should return <code>true</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[4])+&quot;)</code>应该返回<code>false</code> 。'
-    testString: 'assert.equal(jortsort(tests[4].slice()),false,"<code>jortsort("+JSON.stringify(tests[4])+")</code> should return <code>false</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[5])+&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(jortsort(tests[5].slice()),true,"<code>jortsort("+JSON.stringify(tests[5])+")</code> should return <code>true</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,8 +17,8 @@ localeTitle: 使用CSS变换属性skewX沿X轴倾斜元素
 
 ```yml
 tests:
-  - text: 具有id <code>bottom</code>的元素应沿其X轴倾斜24度。
-    testString: 'assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g), "The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

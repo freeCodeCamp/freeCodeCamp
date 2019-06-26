@@ -17,22 +17,8 @@ localeTitle: 在段落中嵌入锚元素
 
 ```yml
 tests:
-  - text: '您需要一个链接到“http://freecatphotoapp.com” <code>a</code>元素。'
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").length > 0 || $("a[href=\"http://www.freecatphotoapp.com\"]").length > 0), "You need an <code>a</code> element that links to "http://freecatphotoapp.com".");'
-  - text: 你<code>a</code>元素应该有“猫照片”的锚文本
-    testString: 'assert($("a").text().match(/cat\sphotos/gi), "Your <code>a</code> element should have the anchor text of "cat photos"");'
-  - text: 创建一个新的<code>p</code>周围的元素<code>a</code>元素。 HTML代码中应至少包含3个<code>p</code>标签。
-    testString: 'assert($("p") && $("p").length > 2, "Create a new <code>p</code> element around your <code>a</code> element. There should be at least 3 total <code>p</code> tags in your HTML code.");'
-  - text: 您<code>a</code>元素应嵌套在新的<code>p</code>元素中。
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().is("p") || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().is("p")), "Your <code>a</code> element should be nested within your new <code>p</code> element.");'
-  - text: 你的<code>p</code>元素应该有“查看更多”文本（后面有一个空格）。
-    testString: 'assert(($("a[href=\"http://freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi) || $("a[href=\"http://www.freecatphotoapp.com\"]").parent().text().match(/View\smore\s/gi)), "Your <code>p</code> element should have the text "View more " (with a space after it).");'
-  - text: 您的<code>a</code>元素<em>不</em>应该有文字“查看更多”。
-    testString: 'assert(!$("a").text().match(/View\smore/gi), "Your <code>a</code> element should <em>not</em> have the text "View more".");'
-  - text: 确保每个<code>p</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<p/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure each of your <code>p</code> elements has a closing tag.");'
-  - text: 确保每个的<code>a</code>元素具有一个结束标记。
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<a/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure each of your <code>a</code> elements has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

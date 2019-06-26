@@ -17,12 +17,8 @@ localeTitle: 使用pop（）和shift（）从数组中删除项
 
 ```yml
 tests:
-  - text: '<code>popShift([&quot;challenge&quot;, &quot;is&quot;, &quot;not&quot;, &quot;complete&quot;])</code>应返回<code>[&quot;challenge&quot;, &quot;complete&quot;]</code>'
-    testString: 'assert.deepEqual(popShift(["challenge", "is", "not", "complete"]), ["challenge", "complete"], "<code>popShift(["challenge", "is", "not", "complete"])</code> should return <code>["challenge", "complete"]</code>");'
-  - text: <code>popShift</code>函数应该使用<code>pop()</code>方法
-    testString: 'assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1, "The <code>popShift</code> function should utilize the <code>pop()</code> method");'
-  - text: <code>popShift</code>函数应该使用<code>shift()</code>方法
-    testString: 'assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1, "The <code>popShift</code> function should utilize the <code>shift()</code> method");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

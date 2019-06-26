@@ -18,8 +18,8 @@ localeTitle: 问题100：安排概率
 
 ```yml
 tests:
-  - text: <code>euler100()</code>应该返回756872327473。
-    testString: 'assert.strictEqual(euler100(), 756872327473, "<code>euler100()</code> should return 756872327473.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

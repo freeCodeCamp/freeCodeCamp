@@ -18,8 +18,8 @@ localeTitle: 问题165：交叉口
 
 ```yml
 tests:
-  - text: <code>euler165()</code>应该返回2868868。
-    testString: 'assert.strictEqual(euler165(), 2868868, "<code>euler165()</code> should return 2868868.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

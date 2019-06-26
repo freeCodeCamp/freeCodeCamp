@@ -18,8 +18,8 @@ localeTitle: 问题372：光线笔
 
 ```yml
 tests:
-  - text: <code>euler372()</code>应该返回301450082318807040。
-    testString: 'assert.strictEqual(euler372(), 301450082318807040, "<code>euler372()</code> should return 301450082318807040.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

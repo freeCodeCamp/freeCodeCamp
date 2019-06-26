@@ -17,10 +17,8 @@ localeTitle: 使用float属性向左或向右推送元素
 
 ```yml
 tests:
-  - text: id为<code>left</code>的元素的<code>float</code>值应为<code>left</code> 。
-    testString: 'assert($("#left").css("float") == "left", "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.");'
-  - text: id为<code>right</code>的元素的<code>float</code>值应为<code>right</code> 。
-    testString: 'assert($("#right").css("float") == "right", "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

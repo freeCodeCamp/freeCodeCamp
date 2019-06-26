@@ -18,8 +18,8 @@ localeTitle: 问题342：正方形的总数是一个立方体
 
 ```yml
 tests:
-  - text: <code>euler342()</code>应该返回5943040885644。
-    testString: 'assert.strictEqual(euler342(), 5943040885644, "<code>euler342()</code> should return 5943040885644.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

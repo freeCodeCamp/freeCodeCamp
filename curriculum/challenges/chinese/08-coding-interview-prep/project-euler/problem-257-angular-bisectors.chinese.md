@@ -18,8 +18,8 @@ localeTitle: 问题257：角度平分器
 
 ```yml
 tests:
-  - text: <code>euler257()</code>应该返回139012411。
-    testString: 'assert.strictEqual(euler257(), 139012411, "<code>euler257()</code> should return 139012411.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

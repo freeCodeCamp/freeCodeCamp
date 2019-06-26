@@ -18,8 +18,8 @@ localeTitle: 问题246：切线到椭圆
 
 ```yml
 tests:
-  - text: <code>euler246()</code>应该返回810834388。
-    testString: 'assert.strictEqual(euler246(), 810834388, "<code>euler246()</code> should return 810834388.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

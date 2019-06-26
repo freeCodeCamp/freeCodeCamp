@@ -17,14 +17,8 @@ localeTitle: 了解堆栈的工作原理
 
 ```yml
 tests:
-  - text: <code>homeworkStack</code>应该只包含4个元素。
-    testString: 'assert(homeworkStack.length === 4, "<code>homeworkStack</code> should only contain 4 elements.");'
-  - text: <code>homeworkStack</code>的最后一个元素应该是<code>&quot;CS50&quot;</code> 。
-    testString: 'assert(homeworkStack[3] === "CS50", "The last element in <code>homeworkStack</code> should be <code>"CS50"</code>.");'
-  - text: <code>homeworkStack</code>不应包含<code>&quot;PSY44&quot;</code> 。
-    testString: 'assert(homeworkStack.indexOf("PSY44") === -1, "<code>homeworkStack</code> should not contain <code>"PSY44"</code>.");'
-  - text: 不应更改<code>homeworkStack</code>的初始声明。
-    testString: 'assert(code.match(/=/g).length === 1 && /homeworkStack\s*=\s*\["BIO12"\s*,\s*"HIS80"\s*,\s*"MAT122"\s*,\s*"PSY44"\]/.test(code), "The initial declaration of the <code>homeworkStack</code> should not be changed.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

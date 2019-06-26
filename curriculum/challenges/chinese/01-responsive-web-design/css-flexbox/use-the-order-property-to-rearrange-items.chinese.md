@@ -17,10 +17,8 @@ localeTitle: 使用order属性重新排列项目
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素的<code>order</code>属性应设置为值2。'
-    testString: 'assert($("#box-1").css("order") == "2", "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.");'
-  - text: '<code>#box-2</code>元素应该将<code>order</code>属性设置为值1。'
-    testString: 'assert($("#box-2").css("order") == "1", "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

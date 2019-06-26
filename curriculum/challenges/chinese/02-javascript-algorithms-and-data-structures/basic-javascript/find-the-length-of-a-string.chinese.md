@@ -17,10 +17,8 @@ localeTitle: 找到字符串的长度
 
 ```yml
 tests:
-  - text: <code>lastNameLength</code>应该等于8。
-    testString: 'assert((function(){if(typeof lastNameLength !== "undefined" && typeof lastNameLength === "number" && lastNameLength === 8){return true;}else{return false;}})(), "<code>lastNameLength</code> should be equal to eight.");'
-  - text: 您应该使用<code>.length</code>来获取<code>lastName</code>的长度，如下所示： <code>lastName.length</code> 。
-    testString: 'assert((function(){if(code.match(/\.length/gi) && code.match(/\.length/gi).length >= 2 && code.match(/var lastNameLength \= 0;/gi) && code.match(/var lastNameLength \= 0;/gi).length >= 1){return true;}else{return false;}})(), "You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

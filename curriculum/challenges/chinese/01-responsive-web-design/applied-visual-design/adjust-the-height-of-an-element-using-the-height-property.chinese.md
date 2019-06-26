@@ -17,8 +17,8 @@ localeTitle: 使用height属性调整元素的高度
 
 ```yml
 tests:
-  - text: 您的代码应将<code>h4</code> <code>height</code>属性更改为25像素的值。
-    testString: 'assert($("h4").css("height") == "25px", "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

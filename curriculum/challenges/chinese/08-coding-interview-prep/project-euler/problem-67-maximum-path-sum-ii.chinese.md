@@ -18,8 +18,8 @@ localeTitle: 问题67：最大路径总和II
 
 ```yml
 tests:
-  - text: <code>euler67()</code>应该返回7273。
-    testString: 'assert.strictEqual(euler67(), 7273, "<code>euler67()</code> should return 7273.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

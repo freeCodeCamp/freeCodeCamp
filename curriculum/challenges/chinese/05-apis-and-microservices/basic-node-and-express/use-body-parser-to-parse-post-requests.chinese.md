@@ -21,8 +21,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 应该安装'body-parser'中间件
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/add-body-parser'').then(data => { assert.isAbove(data.mountedAt, 0, ''"body-parser" is not mounted correctly'') }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

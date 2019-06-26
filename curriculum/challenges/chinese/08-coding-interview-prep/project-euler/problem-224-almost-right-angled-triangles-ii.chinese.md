@@ -18,8 +18,8 @@ localeTitle: 问题224：几乎直角三角形II
 
 ```yml
 tests:
-  - text: <code>euler224()</code>应返回4137330。
-    testString: 'assert.strictEqual(euler224(), 4137330, "<code>euler224()</code> should return 4137330.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

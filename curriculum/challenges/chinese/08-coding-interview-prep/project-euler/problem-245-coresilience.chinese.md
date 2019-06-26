@@ -18,8 +18,8 @@ localeTitle: 问题245：Coresilience
 
 ```yml
 tests:
-  - text: <code>euler245()</code>应该返回288084712410001。
-    testString: 'assert.strictEqual(euler245(), 288084712410001, "<code>euler245()</code> should return 288084712410001.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

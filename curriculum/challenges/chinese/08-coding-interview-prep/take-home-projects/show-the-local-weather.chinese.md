@@ -18,7 +18,9 @@ localeTitle: 显示当地天气
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

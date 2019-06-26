@@ -17,10 +17,8 @@ localeTitle: 使用border-radius制作圆形图像
 
 ```yml
 tests:
-  - text: 您的图像应具有<code>50%</code>的边框半径，使其完美呈圆形。
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 48, "Your image should have a border radius of <code>50%</code>, making it perfectly circular.");'
-  - text: 请务必使用<code>50%</code>的百分比值。
-    testString: 'assert(code.match(/50%/g), "Be sure to use a percentage value of <code>50%</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

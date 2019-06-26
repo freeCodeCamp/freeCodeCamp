@@ -17,12 +17,8 @@ localeTitle: 比较var的范围并让关键字
 
 ```yml
 tests:
-  - text: <code>var</code>在代码中不存在。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
-  - text: 在if语句中声明的变量<code>i</code>应该等于“块范围”。
-    testString: 'getUserInput => assert(getUserInput("index").match(/(i\s*=\s*).*\s*.*\s*.*\1("|")block\s*scope\2/g), "The variable <code>i</code> declared in the if statement should equal "block scope".");'
-  - text: <code>checkScope()</code>应该返回“函数范围”
-    testString: 'assert(checkScope() === "function scope", "<code>checkScope()</code> should return "function scope"");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

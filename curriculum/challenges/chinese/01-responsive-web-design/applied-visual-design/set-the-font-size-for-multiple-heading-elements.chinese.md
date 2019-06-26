@@ -17,18 +17,8 @@ localeTitle: 设置多个标题元素的字体大小
 
 ```yml
 tests:
-  - text: 您的代码应将<code>h1</code>标记的<code>font-size</code>属性设置为68像素。
-    testString: 'assert($("h1").css("font-size") == "68px", "Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.");'
-  - text: 您的代码应将<code>h2</code>标记的<code>font-size</code>属性设置为52像素。
-    testString: 'assert($("h2").css("font-size") == "52px", "Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.");'
-  - text: 您的代码应将<code>h3</code>标记的<code>font-size</code>属性设置为40像素。
-    testString: 'assert($("h3").css("font-size") == "40px", "Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.");'
-  - text: 您的代码应将<code>h4</code>标记的<code>font-size</code>属性设置为32像素。
-    testString: 'assert($("h4").css("font-size") == "32px", "Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.");'
-  - text: 您的代码应将<code>h5</code>标记的<code>font-size</code>属性设置为21像素。
-    testString: 'assert($("h5").css("font-size") == "21px", "Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.");'
-  - text: 您的代码应将<code>h6</code>标记的<code>font-size</code>属性设置为14像素。
-    testString: 'assert($("h6").css("font-size") == "14px", "Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

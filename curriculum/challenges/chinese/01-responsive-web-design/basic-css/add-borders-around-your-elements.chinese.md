@@ -17,16 +17,8 @@ localeTitle: 添加元素周围的边框
 
 ```yml
 tests:
-  - text: 您的<code>img</code>元素应该具有<code>smaller-image</code>类。
-    testString: 'assert($("img").hasClass("smaller-image"), "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
-  - text: 你的<code>img</code>元素应该有类<code>thick-green-border</code> 。
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your <code>img</code> element should have the class <code>thick-green-border</code>.");'
-  - text: 为图像提供<code>10px</code>的边框宽度。
-    testString: 'assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, "Give your image a border width of <code>10px</code>.");'
-  - text: 为您的图像提供<code>solid</code>的边框样式。
-    testString: 'assert($("img").css("border-right-style") === "solid", "Give your image a border style of <code>solid</code>.");'
-  - text: <code>img</code>元素周围的边框应为绿色。
-    testString: 'assert($("img").css("border-left-color") === "rgb(0, 128, 0)", "The border around your <code>img</code> element should be green.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

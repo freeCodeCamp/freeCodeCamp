@@ -18,12 +18,8 @@ localeTitle: 在Bootstrap Wells中添加元素
 
 ```yml
 tests:
-  - text: 在每个<code>div</code>元素中嵌入三个<code>button</code>元素，并且类<code>well</code> 。
-    testString: 'assert($("div.well:eq(0)").children("button").length === 3 && $("div.well:eq(1)").children("button").length === 3, "Nest three <code>button</code> elements within each of your <code>div</code> elements with class <code>well</code>.");'
-  - text: 你应该总共有6个<code>button</code>元素。
-    testString: 'assert($("button") && $("button").length > 5, "You should have a total of 6 <code>button</code> elements.");'
-  - text: 确保所有<code>button</code>元素都有结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have closing tags.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

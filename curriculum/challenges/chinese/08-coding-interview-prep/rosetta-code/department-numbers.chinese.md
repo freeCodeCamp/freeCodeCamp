@@ -18,14 +18,8 @@ localeTitle: 部门编号
 
 ```yml
 tests:
-  - text: <code>combinations</code>应该是一个功能。
-    testString: 'assert(typeof combinations === "function", "<code>combinations</code> should be a function.");'
-  - text: '<code>combinations([1, 2, 3], 6)</code>应该返回一个数组。'
-    testString: 'assert(Array.isArray(combinations([1, 2, 3], 6)), "<code>combinations([1, 2, 3], 6)</code> should return an Array.");'
-  - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code>应返回长度为14的数组。'
-    testString: 'assert(combinations(nums, total).length === len, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.");'
-  - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code>应返回所有有效组合。'
-    testString: 'assert.deepEqual(combinations(nums, total), result, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

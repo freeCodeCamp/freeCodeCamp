@@ -18,8 +18,8 @@ localeTitle: 问题366：石头游戏III
 
 ```yml
 tests:
-  - text: <code>euler366()</code>应该返回88351299。
-    testString: 'assert.strictEqual(euler366(), 88351299, "<code>euler366()</code> should return 88351299.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

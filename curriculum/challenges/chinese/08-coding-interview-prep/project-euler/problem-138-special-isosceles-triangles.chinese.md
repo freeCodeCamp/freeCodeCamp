@@ -18,8 +18,8 @@ localeTitle: 问题138：特殊的等腰三角形
 
 ```yml
 tests:
-  - text: <code>euler138()</code>应该返回1118049290473932。
-    testString: 'assert.strictEqual(euler138(), 1118049290473932, "<code>euler138()</code> should return 1118049290473932.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

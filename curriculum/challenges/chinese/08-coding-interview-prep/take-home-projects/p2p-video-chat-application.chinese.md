@@ -18,7 +18,9 @@ localeTitle: P2P视频聊天应用
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

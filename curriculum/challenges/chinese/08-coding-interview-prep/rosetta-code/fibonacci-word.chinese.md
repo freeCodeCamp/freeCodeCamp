@@ -18,12 +18,8 @@ localeTitle: 斐波那契字
 
 ```yml
 tests:
-  - text: <code>fibWord</code>是一个功能。
-    testString: 'assert(typeof fibWord === "function", "<code>fibWord</code> is a function.");'
-  - text: <code>fibWord(5)</code>应该返回一个数组。
-    testString: 'assert(Array.isArray(fibWord(5)),"<code>fibWord(5)</code> should return an array.");'
-  - text: '<code>fibWord(5)</code>应该返回<code>&#39;+JSON.stringify(ans)+&#39;</code> 。'
-    testString: 'assert.deepEqual(fibWord(5),ans,"<code>fibWord(5)</code> should return <code>"+JSON.stringify(ans)+"</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

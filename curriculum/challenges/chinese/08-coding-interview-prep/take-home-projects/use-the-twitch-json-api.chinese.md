@@ -18,7 +18,9 @@ localeTitle: 使用Twitch JSON API
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

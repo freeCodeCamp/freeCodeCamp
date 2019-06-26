@@ -18,14 +18,8 @@ localeTitle: 将状态映射到道具
 
 ```yml
 tests:
-  - text: const <code>state</code>应该是一个空数组。
-    testString: 'assert(Array.isArray(state) && state.length === 0, "The const <code>state</code> should be an empty array.");'
-  - text: <code>mapStateToProps</code>应该是一个函数。
-    testString: 'assert(typeof mapStateToProps === "function", "<code>mapStateToProps</code> should be a function.");'
-  - text: <code>mapStateToProps</code>应该返回一个对象。
-    testString: 'assert(typeof mapStateToProps() === "object", "<code>mapStateToProps</code> should return an object.");'
-  - text: 将数组作为状态传递给<code>mapStateToProps</code>应该返回分配给<code>messages</code>键的数组。
-    testString: 'assert(mapStateToProps(["messages"]).messages.pop() === "messages", "Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

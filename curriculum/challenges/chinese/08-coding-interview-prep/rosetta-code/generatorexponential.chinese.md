@@ -18,20 +18,8 @@ localeTitle: GeneratorExponential
 
 ```yml
 tests:
-  - text: <code>exponentialGenerator</code>应该是一个函数。
-    testString: 'assert(typeof exponentialGenerator=="function","<code>exponentialGenerator</code> should be a function.");'
-  - text: <code>exponentialGenerator()</code>应该返回一个数字。
-    testString: 'assert(typeof exponentialGenerator(10)=="number","<code>exponentialGenerator()</code> should return a number.");'
-  - text: <code>exponentialGenerator(10)</code>应该返回<code>144</code> 。
-    testString: 'assert.equal(exponentialGenerator(10),144,"<code>exponentialGenerator(10)</code> should return <code>144</code>.");'
-  - text: <code>exponentialGenerator(12)</code>应该返回<code>196</code> 。
-    testString: 'assert.equal(exponentialGenerator(12),196,"<code>exponentialGenerator(12)</code> should return <code>196</code>.");'
-  - text: <code>exponentialGenerator(14)</code>应该返回<code>256</code> 。
-    testString: 'assert.equal(exponentialGenerator(14),256,"<code>exponentialGenerator(14)</code> should return <code>256</code>.");'
-  - text: <code>exponentialGenerator(20)</code>应该返回<code>484</code> 。
-    testString: 'assert.equal(exponentialGenerator(20),484,"<code>exponentialGenerator(20)</code> should return <code>484</code>.");'
-  - text: <code>exponentialGenerator(25)</code>应该返回<code>784</code> 。
-    testString: 'assert.equal(exponentialGenerator(25),784,"<code>exponentialGenerator(25)</code> should return <code>784</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

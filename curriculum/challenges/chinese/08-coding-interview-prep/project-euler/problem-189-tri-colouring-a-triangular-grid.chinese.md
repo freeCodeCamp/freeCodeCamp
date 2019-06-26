@@ -18,8 +18,8 @@ localeTitle: 问题189：三角网格三色
 
 ```yml
 tests:
-  - text: <code>euler189()</code>应该返回10834893628237824。
-    testString: 'assert.strictEqual(euler189(), 10834893628237824, "<code>euler189()</code> should return 10834893628237824.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

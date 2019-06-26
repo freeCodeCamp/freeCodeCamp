@@ -17,12 +17,8 @@ localeTitle: 使用页脚Landmark使屏幕阅读器导航更轻松
 
 ```yml
 tests:
-  - text: 您的代码应该有一个<code>footer</code>标记。
-    testString: 'assert($("footer").length == 1, "Your code should have one <code>footer</code> tag.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 您的代码应该有一个开始和结束<code>footer</code>标记。
-    testString: 'assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g), "Your code should have an opening and closing <code>footer</code> tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

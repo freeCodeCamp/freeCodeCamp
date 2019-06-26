@@ -17,10 +17,8 @@ localeTitle: 使用主元素直接跳转到内容
 
 ```yml
 tests:
-  - text: 您的代码应该有一个<code>main</code>标记。
-    testString: 'assert($("main").length == 1, "Your code should have one <code>main</code> tag.");'
-  - text: <code>main</code>标记应位于结束<code>header</code>标记和开放<code>footer</code>标记之间。
-    testString: 'assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), "The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

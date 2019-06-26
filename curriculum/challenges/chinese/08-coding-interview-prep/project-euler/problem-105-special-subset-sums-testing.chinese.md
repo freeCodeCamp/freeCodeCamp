@@ -18,8 +18,8 @@ localeTitle: 问题105：特殊子集总和：测试
 
 ```yml
 tests:
-  - text: <code>euler105()</code>应返回73702。
-    testString: 'assert.strictEqual(euler105(), 73702, "<code>euler105()</code> should return 73702.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

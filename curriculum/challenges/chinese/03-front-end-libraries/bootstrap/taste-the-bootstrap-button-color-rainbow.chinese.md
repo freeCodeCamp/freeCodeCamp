@@ -18,12 +18,8 @@ localeTitle: 品尝Bootstrap按钮彩虹
 
 ```yml
 tests:
-  - text: 你的按钮应该有<code>btn-primary</code>类。
-    testString: 'assert($("button").hasClass("btn-primary"), "Your button should have the class <code>btn-primary</code>.");'
-  - text: 你的按钮应该仍然有<code>btn</code>和<code>btn-block</code>类。
-    testString: 'assert($("button").hasClass("btn-block") && $("button").hasClass("btn"), "Your button should still have the <code>btn</code> and <code>btn-block</code> classes.");'
-  - text: 确保所有<code>button</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

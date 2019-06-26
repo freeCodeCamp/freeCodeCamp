@@ -17,22 +17,8 @@ localeTitle: 在交换机语句中添加默认选项
 
 ```yml
 tests:
-  - text: <code>switchOfStuff(&quot;a&quot;)</code>的值应为“apple”
-    testString: 'assert(switchOfStuff("a") === "apple", "<code>switchOfStuff("a")</code> should have a value of "apple"");'
-  - text: <code>switchOfStuff(&quot;b&quot;)</code>的值应为“bird”
-    testString: 'assert(switchOfStuff("b") === "bird", "<code>switchOfStuff("b")</code> should have a value of "bird"");'
-  - text: <code>switchOfStuff(&quot;c&quot;)</code>的值应为“cat”
-    testString: 'assert(switchOfStuff("c") === "cat", "<code>switchOfStuff("c")</code> should have a value of "cat"");'
-  - text: <code>switchOfStuff(&quot;d&quot;)</code>的值应为“stuff”
-    testString: 'assert(switchOfStuff("d") === "stuff", "<code>switchOfStuff("d")</code> should have a value of "stuff"");'
-  - text: <code>switchOfStuff(4)</code>的值应为“stuff”
-    testString: 'assert(switchOfStuff(4) === "stuff", "<code>switchOfStuff(4)</code> should have a value of "stuff"");'
-  - text: 您不应该使用任何<code>if</code>或<code>else</code>语句
-    testString: 'assert(!/else/g.test(code) || !/if/g.test(code), "You should not use any <code>if</code> or <code>else</code> statements");'
-  - text: 您应该使用<code>default</code>语句
-    testString: 'assert(switchOfStuff("string-to-trigger-default-case") === "stuff", "You should use a <code>default</code> statement");'
-  - text: 你应该至少有3个<code>break</code>语句
-    testString: 'assert(code.match(/break/g).length > 2, "You should have at least 3 <code>break</code> statements");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

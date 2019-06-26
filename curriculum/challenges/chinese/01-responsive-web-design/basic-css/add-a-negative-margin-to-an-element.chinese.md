@@ -17,8 +17,8 @@ localeTitle: 向元素添加负边距
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给出<code>-15px</code>的<code>margin</code>元素。
-    testString: 'assert($(".blue-box").css("margin-top") === "-15px", "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

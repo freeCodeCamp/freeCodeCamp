@@ -17,14 +17,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(digitnPowers(2) == 0, "<code>digitnPowers(2)</code> should return 0.");'
-  - text: ''
-    testString: 'assert(digitnPowers(3) == 1301, "<code>digitnPowers(3)</code> should return 1301.");'
-  - text: ''
-    testString: 'assert(digitnPowers(4) == 19316, "<code>digitnPowers(4)</code> should return 19316.");'
-  - text: ''
-    testString: 'assert(digitnPowers(5) == 443839, "<code>digitnPowers(5)</code> should return 443839.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

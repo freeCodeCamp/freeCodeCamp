@@ -18,14 +18,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1400) == 129, "<code>codedTriangleNumbers(1400)</code> should return 129.");'
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1500) == 137, "<code>codedTriangleNumbers(1500)</code> should return 137.");'
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1600) == 141, "<code>codedTriangleNumbers(1600)</code> should return 141.");'
-  - text: ''
-    testString: 'assert(codedTriangleNumbers(1786) == 162, "<code>codedTriangleNumbers(1786)</code> should return 162.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

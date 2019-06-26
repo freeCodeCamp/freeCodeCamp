@@ -20,8 +20,8 @@ isRequired: true
 
 ```yml
 tests:
-  - text: “我可以为我的浏览器获取IP地址，语言和操作系统。”
-    testString: ''
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

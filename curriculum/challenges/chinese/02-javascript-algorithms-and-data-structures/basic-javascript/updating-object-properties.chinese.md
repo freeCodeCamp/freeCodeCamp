@@ -17,10 +17,8 @@ localeTitle: 更新对象属性
 
 ```yml
 tests:
-  - text: 将<code>myDog</code>的<code>&quot;name&quot;</code>属性更新为“Happy Coder”。
-    testString: 'assert(/happy coder/gi.test(myDog.name), "Update <code>myDog</code>&apos;s <code>"name"</code> property to equal "Happy Coder".");'
-  - text: 不要编辑<code>myDog</code>定义
-    testString: 'assert(/"name": "Coder"/.test(code), "Do not edit the <code>myDog</code> definition");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

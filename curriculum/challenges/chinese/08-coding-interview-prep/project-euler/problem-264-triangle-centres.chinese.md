@@ -18,8 +18,8 @@ localeTitle: 问题264：三角中心
 
 ```yml
 tests:
-  - text: <code>euler264()</code>应该返回2816417.1055。
-    testString: 'assert.strictEqual(euler264(), 2816417.1055, "<code>euler264()</code> should return 2816417.1055.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

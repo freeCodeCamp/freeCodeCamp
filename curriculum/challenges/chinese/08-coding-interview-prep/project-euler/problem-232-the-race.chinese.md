@@ -18,8 +18,8 @@ localeTitle: 问题232：比赛
 
 ```yml
 tests:
-  - text: <code>euler232()</code>应返回0.83648556。
-    testString: 'assert.strictEqual(euler232(), 0.83648556, "<code>euler232()</code> should return 0.83648556.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

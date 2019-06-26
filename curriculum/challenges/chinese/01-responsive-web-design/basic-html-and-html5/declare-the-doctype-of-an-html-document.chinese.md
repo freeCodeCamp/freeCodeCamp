@@ -17,12 +17,8 @@ localeTitle: 声明HTML文档的Doctype
 
 ```yml
 tests:
-  - text: 您的代码应包含<code>&lt;!DOCTYPE html&gt;</code>标记。
-    testString: 'assert(code.match(/<!DOCTYPE\s+?html\s*?>/gi), "Your code should include a <code>&lt;!DOCTYPE html&gt;</code> tag.");'
-  - text: 应该有一个<code>html</code>元素。
-    testString: 'assert($("html").length == 1, "There should be one <code>html</code> element.");'
-  - text: <code>html</code>标签应该包含一个<code>h1</code>元素。
-    testString: 'assert(code.match(/<html>\s*?<h1>\s*?.*?\s*?<\/h1>\s*?<\/html>/gi), "The <code>html</code> tags should wrap around one <code>h1</code> element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

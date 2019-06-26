@@ -18,8 +18,8 @@ localeTitle: 问题233：圆上的格点
 
 ```yml
 tests:
-  - text: <code>euler233()</code>应该返回271204031455541300。
-    testString: 'assert.strictEqual(euler233(), 271204031455541300, "<code>euler233()</code> should return 271204031455541300.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

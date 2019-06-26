@@ -18,8 +18,8 @@ localeTitle: 问题228：Minkowski Sums
 
 ```yml
 tests:
-  - text: <code>euler228()</code>应返回86226。
-    testString: 'assert.strictEqual(euler228(), 86226, "<code>euler228()</code> should return 86226.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

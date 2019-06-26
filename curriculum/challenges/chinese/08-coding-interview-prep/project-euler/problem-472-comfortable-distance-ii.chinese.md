@@ -18,8 +18,8 @@ localeTitle: 问题472：舒适的距离II
 
 ```yml
 tests:
-  - text: <code>euler472()</code>应该返回73811586。
-    testString: 'assert.strictEqual(euler472(), 73811586, "<code>euler472()</code> should return 73811586.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

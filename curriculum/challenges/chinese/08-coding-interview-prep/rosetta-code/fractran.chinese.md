@@ -18,20 +18,8 @@ localeTitle: Fractran
 
 ```yml
 tests:
-  - text: <code>fractran</code>应该是一个功能。
-    testString: 'assert(typeof fractran=="function","<code>fractran</code> should be a function.");'
-  - text: '<code>fractran(&quot;&quot;+tests[0]+&quot;&quot;)</code>应该返回一个数组。'
-    testString: 'assert(Array.isArray(fractran(tests[0])),"<code>fractran(""+tests[0]+"")</code> should return an array.");'
-  - text: '<code>fractran(&quot;&quot;+tests[0]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[0])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[0]),results[0],"<code>fractran(""+tests[0]+"")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[1]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[1])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[1]),results[1],"<code>fractran(""+tests[1]+"")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[2]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[2])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[2]),results[2],"<code>fractran(""+tests[2]+"")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[3]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[3])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[3]),results[3],"<code>fractran(""+tests[3]+"")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[4]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[4])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[4]),results[4],"<code>fractran(""+tests[4]+"")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

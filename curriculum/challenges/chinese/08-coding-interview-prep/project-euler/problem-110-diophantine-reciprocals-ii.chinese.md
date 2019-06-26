@@ -18,8 +18,8 @@ localeTitle: 问题110：丢番图互惠II
 
 ```yml
 tests:
-  - text: <code>diophantineTwo</code>应该返回9350130049860600。
-    testString: 'assert.strictEqual(diophantineTwo(), 9350130049860600, "<code>diophantineTwo()</code> should return 9350130049860600.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

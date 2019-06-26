@@ -17,12 +17,8 @@ localeTitle: 使用解构分配从数组中分配变量
 
 ```yml
 tests:
-  - text: 交换后<code>a</code>值应为6。
-    testString: 'assert(a === 6, "Value of <code>a</code> should be 6, after swapping.");'
-  - text: 交换后<code>b</code>值应为8。
-    testString: 'assert(b === 8, "Value of <code>b</code> should be 8, after swapping.");'
-  - text: 使用数组解构来交换a和b。
-    testString: '// assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code), "Use array destructuring to swap a and b.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

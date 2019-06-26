@@ -17,7 +17,9 @@ localeTitle: 管理图书交易俱乐部
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

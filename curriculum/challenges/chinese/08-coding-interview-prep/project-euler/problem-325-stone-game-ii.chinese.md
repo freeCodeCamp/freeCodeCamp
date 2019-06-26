@@ -18,8 +18,8 @@ localeTitle: 问题325：石头游戏II
 
 ```yml
 tests:
-  - text: <code>euler325()</code>应该返回54672965。
-    testString: 'assert.strictEqual(euler325(), 54672965, "<code>euler325()</code> should return 54672965.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

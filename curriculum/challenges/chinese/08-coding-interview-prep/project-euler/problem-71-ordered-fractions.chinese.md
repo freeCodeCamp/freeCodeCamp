@@ -18,8 +18,8 @@ localeTitle: 问题71：有序分数
 
 ```yml
 tests:
-  - text: <code>euler71()</code>应返回428570。
-    testString: 'assert.strictEqual(euler71(), 428570, "<code>euler71()</code> should return 428570.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

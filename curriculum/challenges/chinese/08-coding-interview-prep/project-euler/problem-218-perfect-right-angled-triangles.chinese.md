@@ -18,8 +18,8 @@ localeTitle: 问题218：完美的直角三角形
 
 ```yml
 tests:
-  - text: <code>euler218()</code>应该返回0。
-    testString: 'assert.strictEqual(euler218(), 0, "<code>euler218()</code> should return 0.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

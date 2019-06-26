@@ -18,8 +18,8 @@ localeTitle: 了解使用命令代码的危害
 
 ```yml
 tests:
-  - text: 继续前进以了解错误。
-    testString: 'assert(true, "Move ahead to understand the error.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

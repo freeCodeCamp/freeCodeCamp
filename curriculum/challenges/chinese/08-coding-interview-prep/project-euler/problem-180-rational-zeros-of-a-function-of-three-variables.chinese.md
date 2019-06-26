@@ -18,8 +18,8 @@ localeTitle: 问题180：三个变量函数的有理零点
 
 ```yml
 tests:
-  - text: <code>euler180()</code>应该返回285196020571078980。
-    testString: 'assert.strictEqual(euler180(), 285196020571078980, "<code>euler180()</code> should return 285196020571078980.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

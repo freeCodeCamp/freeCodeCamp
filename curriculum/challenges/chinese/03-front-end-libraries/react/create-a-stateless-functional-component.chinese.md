@@ -18,12 +18,8 @@ localeTitle: 创建无状态功能组件
 
 ```yml
 tests:
-  - text: <code>MyComponent</code>应该返回JSX。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), "<code>MyComponent</code> should return JSX.");'
-  - text: <code>MyComponent</code>应该返回一个<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === "div" })(), "<code>MyComponent</code> should return a <code>div</code> element.");'
-  - text: <code>div</code>元素应包含一串文本。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").text() !== ""; })(), "The <code>div</code> element should contain a string of text.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

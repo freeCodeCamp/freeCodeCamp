@@ -17,12 +17,8 @@ localeTitle: 通知段落元素
 
 ```yml
 tests:
-  - text: 创建一个<code>p</code>元素。
-    testString: 'assert(($("p").length > 0), "Create a <code>p</code> element.");'
-  - text: 你的<code>p</code>元素应该有文本“Hello Paragraph”。
-    testString: 'assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), "Your <code>p</code> element should have the text "Hello Paragraph".");'
-  - text: 确保您的<code>p</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, "Make sure your <code>p</code> element has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

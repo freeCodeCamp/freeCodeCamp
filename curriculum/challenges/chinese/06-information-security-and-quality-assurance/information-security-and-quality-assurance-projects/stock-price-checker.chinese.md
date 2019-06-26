@@ -19,20 +19,8 @@ localeTitle: 股票价格检查
 
 ```yml
 tests:
-  - text: 将内容安全策略设置为仅允许从服务器加载脚本和css。
-    testString: ''
-  - text: 我可以使用包含纳斯达克股票代码的表格数据获得/ api /股票价格并收回一个对象stockData。
-    testString: ''
-  - text: 在stockData中，我可以看到股票（字符串，股票代码），价格（字符串格式的小数）和喜欢（int）。
-    testString: ''
-  - text: 我也可以传递像true（boolean）这样的字段来将我的喜欢添加到股票中。每个IP应该只接受1个。
-    testString: ''
-  - text: 如果我传递2只股票，则返回对象将是一个包含股票信息的数组。而不是喜欢，它将显示两者上的rel_likes（两只股票之间的差异）。
-    testString: ''
-  - text: 获得当前价格的一个好方法是使用以下外部API（用您的股票替换“GOOG”）：https：//finance.google.com/finance/info？q = NASDAQ％3AOGOOG
-    testString: ''
-  - text: 所有5个功能测试都已完成并通过。
-    testString: ''
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

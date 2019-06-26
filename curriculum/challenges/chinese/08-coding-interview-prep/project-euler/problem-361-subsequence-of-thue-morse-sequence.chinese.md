@@ -18,8 +18,8 @@ localeTitle: 问题361：Thue-Morse序列的子序列
 
 ```yml
 tests:
-  - text: <code>euler361()</code>应该返回178476944。
-    testString: 'assert.strictEqual(euler361(), 178476944, "<code>euler361()</code> should return 178476944.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

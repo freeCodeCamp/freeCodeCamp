@@ -17,12 +17,8 @@ localeTitle: 使用模板文字创建字符串
 
 ```yml
 tests:
-  - text: <code>resultDisplayArray</code>是一个包含<code>result failure</code>消息的数组。
-    testString: 'assert(typeof makeList(result.failure) === "object" && resultDisplayArray.length === 3, "<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.");'
-  - text: <code>resultDisplayArray</code>是所需的输出。
-    testString: 'assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class="text-warning">${result.failure[i]}</li>`), "<code>resultDisplayArray</code> is the desired output.");'
-  - text: 使用了模板字符串
-    testString: 'getUserInput => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

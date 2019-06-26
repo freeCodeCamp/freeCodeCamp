@@ -17,16 +17,8 @@ localeTitle: 使用箭头函数编写简明的匿名函数
 
 ```yml
 tests:
-  - text: 用户确实替换了<code>var</code>关键字。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g), "User did replace <code>var</code> keyword.");'
-  - text: <code>magic</code>应该是一个常量变量（通过使用<code>const</code> ）。
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+magic/g), "<code>magic</code> should be a constant variable (by using <code>const</code>).");'
-  - text: <code>magic</code>是一种<code>function</code> 。
-    testString: 'assert(typeof magic === "function", "<code>magic</code> is a <code>function</code>.");'
-  - text: <code>magic()</code>返回正确的日期。
-    testString: 'assert(magic().getDate() == new Date().getDate(), "<code>magic()</code> returns correct date.");'
-  - text: <code>function</code>关键字未使用。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

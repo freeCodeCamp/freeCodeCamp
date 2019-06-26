@@ -17,14 +17,8 @@ localeTitle: 使用HTML5 datetime属性标准化Times
 
 ```yml
 tests:
-  - text: 你的<code>time</code>标签应该包含“9月15日星期四&lt;sup&gt; th &lt;/ sup&gt;”的文字。
-    testString: 'assert($("time").text().match(/Thursday, September 15th/g), "Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".");'
-  - text: 您的<code>time</code>标记应具有非空的<code>datetime</code>属性。
-    testString: 'assert($("time").attr("datetime"), "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.");'
-  - text: 您的<code>datetime</code>属性应设置为2016-09-15的值。
-    testString: 'assert($("time").attr("datetime") === "2016-09-15", "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.");'
-  - text: 确保您的<code>time</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, "Make sure your <code>time</code> element has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

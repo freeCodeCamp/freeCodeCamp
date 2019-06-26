@@ -20,8 +20,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“作者”密钥
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.author, ''"author" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

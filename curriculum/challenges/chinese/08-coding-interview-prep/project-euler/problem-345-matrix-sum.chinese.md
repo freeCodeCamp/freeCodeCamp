@@ -18,8 +18,8 @@ localeTitle: 问题345：矩阵求和
 
 ```yml
 tests:
-  - text: <code>euler345()</code>应返回13938。
-    testString: 'assert.strictEqual(euler345(), 13938, "<code>euler345()</code> should return 13938.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

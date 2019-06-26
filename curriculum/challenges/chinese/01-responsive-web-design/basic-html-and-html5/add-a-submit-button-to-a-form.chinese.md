@@ -17,14 +17,8 @@ localeTitle: 向表单添加提交按钮
 
 ```yml
 tests:
-  - text: 你的表单里面应该有一个按钮。
-    testString: 'assert($("form").children("button").length > 0, "Your form should have a button inside it.");'
-  - text: 您的提交按钮应该具有要<code>submit</code>的属性<code>type</code> 。
-    testString: 'assert($("button").attr("type") === "submit", "Your submit button should have the attribute <code>type</code> set to <code>submit</code>.");'
-  - text: 您的提交按钮应该只有“提交”文本。
-    testString: 'assert($("button").text().match(/^\s*submit\s*$/gi), "Your submit button should only have the text "Submit".");'
-  - text: 确保您的<code>button</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure your <code>button</code> element has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

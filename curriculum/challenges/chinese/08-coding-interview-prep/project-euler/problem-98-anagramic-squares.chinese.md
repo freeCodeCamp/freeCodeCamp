@@ -18,8 +18,8 @@ localeTitle: 问题98：Anagramic正方形
 
 ```yml
 tests:
-  - text: <code>euler98()</code>应该返回18769。
-    testString: 'assert.strictEqual(euler98(), 18769, "<code>euler98()</code> should return 18769.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

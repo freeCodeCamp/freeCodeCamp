@@ -18,8 +18,8 @@ localeTitle: 问题215：无裂缝墙
 
 ```yml
 tests:
-  - text: <code>euler215()</code>应该返回806844323190414。
-    testString: 'assert.strictEqual(euler215(), 806844323190414, "<code>euler215()</code> should return 806844323190414.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,12 +17,8 @@ localeTitle: 了解freeCodeCamp和浏览器控制台之间的差异
 
 ```yml
 tests:
-  - text: 使用<code>console.log()</code>打印<code>outputTwo</code>变量。在浏览器控制台中，这应该打印出变量的值两次。
-    testString: 'assert(code.match(/console\.log\(outputTwo\)/g), "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.");'
-  - text: 使用<code>console.log()</code>打印<code>outputOne</code>变量。
-    testString: 'assert(code.match(/console\.log\(outputOne\)/g), "Use <code>console.log()</code> to print the <code>outputOne</code> variable.");'
-  - text: 使用<code>console.clear()</code>修改输出，以便<code>outputOne</code>变量只输出一次。
-    testString: 'assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm), "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

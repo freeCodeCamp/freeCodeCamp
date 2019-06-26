@@ -17,8 +17,8 @@ localeTitle: 使用HTML5需要字段
 
 ```yml
 tests:
-  - text: 您的<code>input</code>元素应具有<code>required</code>属性。
-    testString: 'assert($("input").prop("required"), "Your text <code>input</code> element should have the <code>required</code> attribute.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

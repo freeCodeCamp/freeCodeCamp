@@ -18,16 +18,8 @@ localeTitle: 斐波那契序列
 
 ```yml
 tests:
-  - text: <code>fibonacci</code>是一种功能。
-    testString: 'assert(typeof fibonacci === "function", "<code>fibonacci</code> is a function.");'
-  - text: <code>fibonacci(2)</code>应该返回一个数字。
-    testString: 'assert(typeof fibonacci(2) == "number", "<code>fibonacci(2)</code> should return a number.");'
-  - text: <code>fibonacci(3)</code>应该返回1.“）
-    testString: 'assert.equal(fibonacci(3),1,"<code>fibonacci(3)</code> should return 1.");'
-  - text: <code>fibonacci(5)</code>应该返回3.“）
-    testString: 'assert.equal(fibonacci(5),3,"<code>fibonacci(5)</code> should return 3.");'
-  - text: <code>fibonacci(10)</code>应该返回34.“）
-    testString: 'assert.equal(fibonacci(10),34,"<code>fibonacci(10)</code> should return 34.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

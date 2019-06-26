@@ -18,7 +18,9 @@ localeTitle: 建立一个Roguelike Dungeon Crawler游戏
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

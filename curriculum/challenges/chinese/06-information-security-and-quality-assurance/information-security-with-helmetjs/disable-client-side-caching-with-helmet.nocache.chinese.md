@@ -18,8 +18,8 @@ localeTitle: 使用helmet.noCache（）禁用客户端缓存
 
 ```yml
 tests:
-  - text: 应该正确安装helmet.noCache（）中间件
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "nocache"); assert.equal(data.headers["cache-control"], "no-store, no-cache, must-revalidate, proxy-revalidate"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

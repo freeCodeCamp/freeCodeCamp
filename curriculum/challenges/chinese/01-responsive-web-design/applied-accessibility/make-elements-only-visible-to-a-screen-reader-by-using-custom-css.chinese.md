@@ -17,14 +17,8 @@ localeTitle: 使用自定义CSS使元素仅对屏幕阅读器可见
 
 ```yml
 tests:
-  - text: 您的代码应该将<code>sr-only</code>类的<code>position</code>属性设置为absolute的值。
-    testString: 'assert($(".sr-only").css("position") == "absolute", "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.");'
-  - text: 您的代码应将<code>sr-only</code>类的<code>left</code>属性设置为-10000px的值。
-    testString: 'assert($(".sr-only").css("left") == "-10000px", "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.");'
-  - text: 您的代码应将<code>sr-only</code>类的<code>width</code>属性设置为1像素的值。
-    testString: 'assert(code.match(/width:\s*?1px/gi), "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
-  - text: 您的代码应将<code>sr-only</code>类的<code>height</code>属性设置为1像素的值。
-    testString: 'assert(code.match(/height:\s*?1px/gi), "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,18 +17,8 @@ localeTitle: 设置多个标题元素的字体粗细
 
 ```yml
 tests:
-  - text: 您的代码应将<code>h1</code>标记的<code>font-weight</code>属性设置为800。
-    testString: 'assert($("h1").css("font-weight") == "800", "Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.");'
-  - text: 您的代码应将<code>h2</code>标记的<code>font-weight</code>属性设置为600。
-    testString: 'assert($("h2").css("font-weight") == "600", "Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.");'
-  - text: 您的代码应将<code>h3</code>标记的<code>font-weight</code>属性设置为500。
-    testString: 'assert($("h3").css("font-weight") == "500", "Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.");'
-  - text: 您的代码应将<code>h4</code>标记的<code>font-weight</code>属性设置为400。
-    testString: 'assert($("h4").css("font-weight") == "400", "Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.");'
-  - text: 您的代码应将<code>h5</code>标记的<code>font-weight</code>属性设置为300。
-    testString: 'assert($("h5").css("font-weight") == "300", "Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.");'
-  - text: 您的代码应将<code>h6</code>标记的<code>font-weight</code>属性设置为200。
-    testString: 'assert($("h6").css("font-weight") == "200", "Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

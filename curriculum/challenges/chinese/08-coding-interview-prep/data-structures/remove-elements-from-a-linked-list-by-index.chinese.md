@@ -17,16 +17,8 @@ localeTitle: 按索引从链接列表中删除元素
 
 ```yml
 tests:
-  - text: 您的<code>LinkedList</code>类应该有一个<code>removeAt</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.removeAt === "function")}()), "Your <code>LinkedList</code> class should have a <code>removeAt</code> method.");'
-  - text: 您的<code>removeAt</code>方法应该减少链表的<code>length</code>
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); test.removeAt(1); return test.size() === 2}()), "Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list");'
-  - text: 您的<code>removeAt</code>方法还应该返回已删除节点的元素。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return test.removeAt(1) === "dog"}()), "Your <code>removeAt</code> method should also return the element of the removed node.");'
-  - text: 如果给定索引小于<code>0</code>则<code>removeAt</code>方法也应返回<code>null</code>
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return (test.removeAt(-1) === null)}()), "Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>");'
-  - text: 如果给定索引等于或大于链表的<code>length</code> ，则<code>removeAt</code>方法也应返回<code>null</code> 。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return (test.removeAt(3) === null)}()), "Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

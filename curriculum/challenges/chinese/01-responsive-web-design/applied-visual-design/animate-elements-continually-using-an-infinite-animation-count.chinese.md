@@ -17,8 +17,8 @@ localeTitle: 动画元素不断使用无限动画计数
 
 ```yml
 tests:
-  - text: <code>animation-iteration-count</code>属性应具有无限值。
-    testString: 'assert($("#ball").css("animation-iteration-count") == "infinite", "The <code>animation-iteration-count</code> property should have a value of infinite.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

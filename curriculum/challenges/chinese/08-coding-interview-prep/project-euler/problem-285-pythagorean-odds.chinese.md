@@ -17,8 +17,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler285(), 157055.80999, "<code>euler285()</code> should return 157055.80999.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

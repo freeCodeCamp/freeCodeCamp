@@ -18,7 +18,9 @@ localeTitle: 建立一个Tic Tac Toe游戏
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

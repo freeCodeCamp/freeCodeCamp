@@ -17,10 +17,8 @@ localeTitle: 调整锚标记的悬停状态
 
 ```yml
 tests:
-  - text: '锚标记<code>color</code>应保持黑色，仅为<code>:hover</code>状态添加CSS规则。'
-    testString: 'assert($("a").css("color") == "rgb(0, 0, 0)", "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.");'
-  - text: 锚标签应该有一个<code>color</code>的蓝色悬停。
-    testString: 'assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), "The anchor tag should have a <code>color</code> of blue on hover.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

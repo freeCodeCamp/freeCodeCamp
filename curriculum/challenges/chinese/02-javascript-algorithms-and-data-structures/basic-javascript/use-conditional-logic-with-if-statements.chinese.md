@@ -17,16 +17,8 @@ localeTitle: 使用条件逻辑和If语句
 
 ```yml
 tests:
-  - text: <code>trueOrFalse</code>应该是一个函数
-    testString: 'assert(typeof trueOrFalse === "function", "<code>trueOrFalse</code> should be a function");'
-  - text: <code>trueOrFalse(true)</code>应该返回一个字符串
-    testString: 'assert(typeof trueOrFalse(true) === "string", "<code>trueOrFalse(true)</code> should return a string");'
-  - text: <code>trueOrFalse(false)</code>应该返回一个字符串
-    testString: 'assert(typeof trueOrFalse(false) === "string", "<code>trueOrFalse(false)</code> should return a string");'
-  - text: <code>trueOrFalse(true)</code>应该返回“是的，那是真的”
-    testString: 'assert(trueOrFalse(true) === "Yes, that was true", "<code>trueOrFalse(true)</code> should return "Yes, that was true"");'
-  - text: <code>trueOrFalse(false)</code>应该返回“No，that was false”
-    testString: 'assert(trueOrFalse(false) === "No, that was false", "<code>trueOrFalse(false)</code> should return "No, that was false"");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

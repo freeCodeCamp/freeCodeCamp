@@ -18,8 +18,8 @@ localeTitle: 问题454：丢番图倒数III
 
 ```yml
 tests:
-  - text: <code>euler454()</code>应该返回5435004633092。
-    testString: 'assert.strictEqual(euler454(), 5435004633092, "<code>euler454()</code> should return 5435004633092.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

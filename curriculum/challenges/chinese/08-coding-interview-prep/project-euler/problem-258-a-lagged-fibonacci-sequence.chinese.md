@@ -18,8 +18,8 @@ localeTitle: 问题258：滞后的斐波那契序列
 
 ```yml
 tests:
-  - text: <code>euler258()</code>应该返回12747994。
-    testString: 'assert.strictEqual(euler258(), 12747994, "<code>euler258()</code> should return 12747994.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

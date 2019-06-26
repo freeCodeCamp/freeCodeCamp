@@ -17,10 +17,8 @@ localeTitle: 知道Alt文本应该留空
 
 ```yml
 tests:
-  - text: 你的<code>img</code>标签应该有一个<code>alt</code>属性。
-    testString: 'assert(!($("img").attr("alt") == undefined), "Your <code>img</code> tag should have an <code>alt</code> attribute.");'
-  - text: <code>alt</code>属性应设置为空字符串。
-    testString: 'assert($("img").attr("alt") == "", "The <code>alt</code> attribute should be set to an empty string.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 默认情况下检查单选按钮和复选框
 
 ```yml
 tests:
-  - text: 默认情况下，应检查表单上的第一个单选按钮。
-    testString: 'assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");'
-  - text: 默认情况下，应检查表单上的第一个复选框。
-    testString: 'assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

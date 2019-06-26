@@ -18,8 +18,8 @@ localeTitle: 问题348：正方形和立方体的总和
 
 ```yml
 tests:
-  - text: <code>euler348()</code>应返回1004195061。
-    testString: 'assert.strictEqual(euler348(), 1004195061, "<code>euler348()</code> should return 1004195061.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

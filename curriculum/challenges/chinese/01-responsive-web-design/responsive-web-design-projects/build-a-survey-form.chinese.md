@@ -19,7 +19,9 @@ localeTitle: 建立调查表格
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

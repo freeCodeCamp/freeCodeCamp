@@ -17,8 +17,8 @@ localeTitle: 使用z-index属性更改重叠元素的位置
 
 ```yml
 tests:
-  - text: 具有类<code>first</code>的元素的<code>z-index</code>值应为2。
-    testString: 'assert($(".first").css("z-index") == "2", "The element with class <code>first</code> should have a <code>z-index</code> value of 2.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

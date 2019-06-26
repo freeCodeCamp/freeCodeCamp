@@ -18,14 +18,8 @@ localeTitle: 在JSX中添加注释
 
 ```yml
 tests:
-  - text: 常量<code>JSX</code>应该返回一个<code>div</code>元素。
-    testString: 'assert(JSX.type === "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
-  - text: <code>div</code>应包含一个<code>h1</code>标记作为第一个元素。
-    testString: 'assert(JSX.props.children[0].type === "h1", "The <code>div</code> should contain an <code>h1</code> tag as the first element.");'
-  - text: <code>div</code>应该包含一个<code>p</code>标签作为第二个元素。
-    testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
-  - text: <code>JSX</code>应该包含一条评论。
-    testString: 'getUserInput => assert(getUserInput("index").includes("/*") && getUserInput("index").includes("*/"), "The <code>JSX</code> should include a comment.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

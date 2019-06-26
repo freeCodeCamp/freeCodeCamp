@@ -18,12 +18,8 @@ localeTitle: 从集合中删除
 
 ```yml
 tests:
-  - text: 您的<code>Set</code>类应该有一个<code>remove</code>方法。
-    testString: 'assert((function(){var test = new Set(); return (typeof test.remove === "function")}()), "Your <code>Set</code> class should have a <code>remove</code> method.");'
-  - text: 您的<code>remove</code>方法应该只删除集合中存在的项目。
-    testString: 'assert.deepEqual((function(){var test = new Set(); test.add("a");test.add("b");test.remove("c"); return test.values(); })(), ["a", "b"], "Your <code>remove</code> method should only remove items that are present in the set.");'
-  - text: 您的<code>remove</code>方法应从集合中删除给定的项目。
-    testString: 'assert((function(){var test = new Set(); test.add("a");test.add("b");test.remove("a"); var vals = test.values(); return (vals[0] === "b" && vals.length === 1)}()), "Your <code>remove</code> method should remove the given item from the set.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

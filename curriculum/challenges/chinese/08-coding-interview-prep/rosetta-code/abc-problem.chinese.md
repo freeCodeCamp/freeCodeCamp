@@ -18,22 +18,8 @@ localeTitle: ABC问题
 
 ```yml
 tests:
-  - text: <code>canMakeWord</code>是一个功能。
-    testString: 'assert(typeof canMakeWord === "function", "<code>canMakeWord</code> is a function.");'
-  - text: <code>canMakeWord</code>应该返回一个布尔值。
-    testString: 'assert(typeof canMakeWord("hi") === "boolean", "<code>canMakeWord</code> should return a boolean.");'
-  - text: <code>canMakeWord(&quot;bark&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[0]), "<code>canMakeWord("bark")</code> should return true.");'
-  - text: <code>canMakeWord(&quot;BooK&quot;)</code>应该返回false。
-    testString: 'assert(!canMakeWord(words[1]), "<code>canMakeWord("BooK")</code> should return false.");'
-  - text: <code>canMakeWord(&quot;TReAT&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[2]), "<code>canMakeWord("TReAT")</code> should return true.");'
-  - text: <code>canMakeWord(&quot;COMMON&quot;)</code>应返回false。
-    testString: 'assert(!canMakeWord(words[3]), "<code>canMakeWord("COMMON")</code> should return false.");'
-  - text: <code>canMakeWord(&quot;squAD&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[4]), "<code>canMakeWord("squAD")</code> should return true.");'
-  - text: <code>canMakeWord(&quot;conFUSE&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[5]), "<code>canMakeWord("conFUSE")</code> should return true.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

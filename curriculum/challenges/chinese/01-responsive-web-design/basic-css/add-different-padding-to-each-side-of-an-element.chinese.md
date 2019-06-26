@@ -17,14 +17,8 @@ localeTitle: 在元素的每一侧添加不同的填充
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给出<code>40px</code> <code>padding</code>元素的顶部。
-    testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code> <code>padding</code>元素的权利。
-    testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code> <code>padding</code>元素的底部。
-    testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给元素左边<code>padding</code> <code>40px</code> 。
-    testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

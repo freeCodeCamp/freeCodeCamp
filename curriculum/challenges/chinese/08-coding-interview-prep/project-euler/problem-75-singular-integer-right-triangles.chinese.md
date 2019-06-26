@@ -18,8 +18,8 @@ localeTitle: 问题75：奇异整数直角三角形
 
 ```yml
 tests:
-  - text: <code>euler75()</code>应返回161667。
-    testString: 'assert.strictEqual(euler75(), 161667, "<code>euler75()</code> should return 161667.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

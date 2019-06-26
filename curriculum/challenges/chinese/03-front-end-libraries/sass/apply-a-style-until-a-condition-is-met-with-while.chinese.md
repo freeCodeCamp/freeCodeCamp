@@ -17,32 +17,8 @@ localeTitle: 应用样式直到满足@while的条件
 
 ```yml
 tests:
-  - text: 您的代码应使用<code>@while</code>指令。
-    testString: 'assert(code.match(/@while /g), "Your code should use the <code>@while</code> directive.");'
-  - text: 您的代码应将索引变量设置为1才能启动。
-    testString: 'assert(code.match(/\$.*:\s*?1;/gi), "Your code should set an index variable to 1 to start.");'
-  - text: 您的代码应该递增计数器变量。
-    testString: 'assert(code.match(/\$(.*):\s*?\$\1\s*?\+\s*?1;/gi), "Your code should increment the counter variable.");'
-  - text: 您的<code>.text-1</code>类的<code>font-size</code>为5px。
-    testString: 'assert($(".text-1").css("font-size") == "5px", "Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.");'
-  - text: 您的<code>.text-2</code>类的<code>font-size</code>为10px。
-    testString: 'assert($(".text-2").css("font-size") == "10px", "Your <code>.text-2</code> class should have a <code>font-size</code> of 10px.");'
-  - text: 您的<code>.text-3</code>类的<code>font-size</code>为15px。
-    testString: 'assert($(".text-3").css("font-size") == "15px", "Your <code>.text-3</code> class should have a <code>font-size</code> of 15px.");'
-  - text: 您的<code>.text-4</code>类的<code>font-size</code>为20px。
-    testString: 'assert($(".text-4").css("font-size") == "20px", "Your <code>.text-4</code> class should have a <code>font-size</code> of 20px.");'
-  - text: 您的<code>.text-5</code>类的<code>font-size</code>为25px。
-    testString: 'assert($(".text-5").css("font-size") == "25px", "Your <code>.text-5</code> class should have a <code>font-size</code> of 25px.");'
-  - text: 您的<code>.text-6</code>类的<code>font-size</code>为30px。
-    testString: 'assert($(".text-6").css("font-size") == "30px", "Your <code>.text-6</code> class should have a <code>font-size</code> of 30px.");'
-  - text: 您的<code>.text-7</code>类的<code>font-size</code>为35px。
-    testString: 'assert($(".text-7").css("font-size") == "35px", "Your <code>.text-7</code> class should have a <code>font-size</code> of 35px.");'
-  - text: 您的<code>.text-8</code>类的<code>font-size</code>为40px。
-    testString: 'assert($(".text-8").css("font-size") == "40px", "Your <code>.text-8</code> class should have a <code>font-size</code> of 40px.");'
-  - text: 您的<code>.text-9</code>类的<code>font-size</code>为45px。
-    testString: 'assert($(".text-9").css("font-size") == "45px", "Your <code>.text-9</code> class should have a <code>font-size</code> of 45px.");'
-  - text: 您的<code>.text-10</code>类的<code>font-size</code>为50px。
-    testString: 'assert($(".text-10").css("font-size") == "50px", "Your <code>.text-10</code> class should have a <code>font-size</code> of 50px.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

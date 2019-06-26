@@ -18,8 +18,8 @@ localeTitle: 问题82：路径总和：三种方式
 
 ```yml
 tests:
-  - text: <code>euler82()</code>应返回260324。
-    testString: 'assert.strictEqual(euler82(), 260324, "<code>euler82()</code> should return 260324.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

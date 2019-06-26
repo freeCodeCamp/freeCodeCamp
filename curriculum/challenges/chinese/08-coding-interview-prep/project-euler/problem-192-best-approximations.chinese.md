@@ -18,8 +18,8 @@ localeTitle: 问题192：最佳近似值
 
 ```yml
 tests:
-  - text: <code>euler192()</code>应该返回57060635927998344。
-    testString: 'assert.strictEqual(euler192(), 57060635927998344, "<code>euler192()</code> should return 57060635927998344.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

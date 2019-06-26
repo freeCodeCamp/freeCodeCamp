@@ -17,14 +17,8 @@ localeTitle: 使用条件（三元）运算符
 
 ```yml
 tests:
-  - text: <code>checkEqual</code>应该使用<code>conditional operator</code>
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkEqual</code> should use the <code>conditional operator</code>");'
-  - text: '<code>checkEqual(1, 2)</code>应该返回false'
-    testString: 'assert(checkEqual(1, 2) === false, "<code>checkEqual(1, 2)</code> should return false");'
-  - text: '<code>checkEqual(1, 1)</code>应该返回true'
-    testString: 'assert(checkEqual(1, 1) === true, "<code>checkEqual(1, 1)</code> should return true");'
-  - text: '<code>checkEqual(1, -1)</code>应该返回false'
-    testString: 'assert(checkEqual(1, -1) === false, "<code>checkEqual(1, -1)</code> should return false");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题112：有弹性的数字
 
 ```yml
 tests:
-  - text: <code>euler112()</code>应返回1587000。
-    testString: 'assert.strictEqual(euler112(), 1587000, "<code>euler112()</code> should return 1587000.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

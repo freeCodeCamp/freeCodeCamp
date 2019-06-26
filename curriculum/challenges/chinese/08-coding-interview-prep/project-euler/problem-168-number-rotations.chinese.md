@@ -18,8 +18,8 @@ localeTitle: 问题168：数字轮换
 
 ```yml
 tests:
-  - text: <code>euler168()</code>应返回<code>euler168()</code> 。
-    testString: 'assert.strictEqual(euler168(), 59206, "<code>euler168()</code> should return 59206.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

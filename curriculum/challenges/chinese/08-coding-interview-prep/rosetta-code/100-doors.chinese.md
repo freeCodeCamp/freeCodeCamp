@@ -18,12 +18,8 @@ localeTitle: 100门
 
 ```yml
 tests:
-  - text: <code>getFinalOpenedDoors</code>是一个函数。
-    testString: 'assert(typeof getFinalOpenedDoors === "function", "<code>getFinalOpenedDoors</code> is a function.");'
-  - text: <code>getFinalOpenedDoors</code>应该返回一个数组。
-    testString: 'assert(Array.isArray(getFinalOpenedDoors(100)), "<code>getFinalOpenedDoors</code> should return an array.");'
-  - text: <code>getFinalOpenedDoors</code>没有产生正确的结果。
-    testString: 'assert.deepEqual(getFinalOpenedDoors(100), solution, "<code>getFinalOpenedDoors</code> did not produce the correct results.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

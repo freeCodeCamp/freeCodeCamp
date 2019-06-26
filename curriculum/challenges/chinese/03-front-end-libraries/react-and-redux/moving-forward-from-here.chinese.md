@@ -18,8 +18,8 @@ localeTitle: 从这里前进
 
 ```yml
 tests:
-  - text: 消息<code>Now I know React and Redux!</code>应该登录到控制台。
-    testString: 'assert(editor.getValue().includes("console.log("Now I know React and Redux!")") || editor.getValue().includes("console.log(\"Now I know React and Redux!\")"), "The message <code>Now I know React and Redux!</code> should be logged to the console.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

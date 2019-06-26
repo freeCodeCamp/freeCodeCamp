@@ -17,14 +17,8 @@ localeTitle: 使用reduce方法分析数据
 
 ```yml
 tests:
-  - text: <code>watchList</code>变量不应该更改。
-    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
-  - text: 您的代码应使用<code>reduce</code>方法。
-    testString: 'assert(code.match(/\.reduce/g), "Your code should use the <code>reduce</code> method.");'
-  - text: <code>averageRating</code>应该等于8.675。
-    testString: 'assert(averageRating == 8.675, "The <code>averageRating</code> should equal 8.675.");'
-  - text: 您的代码不应使用<code>for</code>循环。
-    testString: 'assert(!code.match(/for\s*?\(.*\)/g), "Your code should not use a <code>for</code> loop.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

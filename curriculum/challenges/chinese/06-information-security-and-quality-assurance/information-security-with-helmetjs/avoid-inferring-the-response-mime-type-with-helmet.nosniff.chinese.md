@@ -18,8 +18,8 @@ localeTitle: 避免使用helmet.noSniff（）推断响应MIME类型
 
 ```yml
 tests:
-  - text: helmet.noSniff（）中间件应该正确安装
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "nosniff"); assert.equal(data.headers["x-content-type-options"], "nosniff"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

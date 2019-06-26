@@ -18,8 +18,8 @@ localeTitle: 问题126：长方体层
 
 ```yml
 tests:
-  - text: <code>euler126()</code>应返回18522。
-    testString: 'assert.strictEqual(euler126(), 18522, "<code>euler126()</code> should return 18522.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

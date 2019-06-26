@@ -18,8 +18,8 @@ localeTitle: 问题64：奇数期平方根
 
 ```yml
 tests:
-  - text: <code>euler64()</code>应返回1322。
-    testString: 'assert.strictEqual(euler64(), 1322, "<code>euler64()</code> should return 1322.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 在Prototype上实现过滤器方法
 
 ```yml
 tests:
-  - text: '<code>new_s</code>应该等于<code>[23, 65, 5]</code> <code>new_s</code> <code>[23, 65, 5]</code> 。'
-    testString: 'assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]), "<code>new_s</code> should equal <code>[23, 65, 5]</code>.");'
-  - text: 您的代码不应使用<code>filter</code>方法。
-    testString: 'assert(!code.match(/\.filter/g), "Your code should not use the <code>filter</code> method.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

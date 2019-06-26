@@ -17,20 +17,8 @@ localeTitle: 添加Flex Superpowers到Tweet Embed
 
 ```yml
 tests:
-  - text: 您的<code>header</code>应该具有设置为flex的<code>display</code>属性。
-    testString: 'assert($("header").css("display") == "flex", "Your <code>header</code> should have a <code>display</code> property set to flex.");'
-  - text: 您的<code>footer</code>应该具有设置为flex的<code>display</code>属性。
-    testString: 'assert($("footer").css("display") == "flex", "Your <code>footer</code> should have a <code>display</code> property set to flex.");'
-  - text: 你的<code>h3</code>应该有一个<code>display</code>属性设置为flex。
-    testString: 'assert($("h3").css("display") == "flex", "Your <code>h3</code> should have a <code>display</code> property set to flex.");'
-  - text: 你的<code>h4</code>应该有一个<code>display</code>属性设置为flex。
-    testString: 'assert($("h4").css("display") == "flex", "Your <code>h4</code> should have a <code>display</code> property set to flex.");'
-  - text: 您的<code>.profile-name</code>应该将<code>display</code>属性设置为flex。
-    testString: 'assert($(".profile-name").css("display") == "flex", "Your <code>.profile-name</code> should have a <code>display</code> property set to flex.");'
-  - text: 你的<code>.follow-btn</code>应该有一个<code>display</code>属性设置为flex。
-    testString: 'assert($(".follow-btn").css("display") == "flex", "Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.");'
-  - text: 您的<code>.stats</code>应该将<code>display</code>属性设置为flex。
-    testString: 'assert($(".stats").css("display") == "flex", "Your <code>.stats</code> should have a <code>display</code> property set to flex.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

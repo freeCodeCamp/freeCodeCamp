@@ -17,8 +17,8 @@ localeTitle: 调整颜色的色调
 
 ```yml
 tests:
-  - text: <code>nav</code>元素应使用<code>hsl()</code>属性具有调整后的青色调的<code>background-color</code> 。
-    testString: 'assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), "The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

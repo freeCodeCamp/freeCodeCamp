@@ -18,8 +18,8 @@ localeTitle: 问题182：RSA加密
 
 ```yml
 tests:
-  - text: <code>euler182()</code>应该返回399788195976。
-    testString: 'assert.strictEqual(euler182(), 399788195976, "<code>euler182()</code> should return 399788195976.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

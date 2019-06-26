@@ -18,16 +18,8 @@ localeTitle: deepcopy的
 
 ```yml
 tests:
-  - text: <code>deepcopy</code>应该是一个功能。
-    testString: 'assert(typeof deepcopy === "function", "<code>deepcopy</code> should be a function.");'
-  - text: '<code>deepcopy({test: &quot;test&quot;})</code>应返回一个对象。'
-    testString: 'assert(typeof deepcopy(obj1) === "object", "<code>deepcopy({test: "test"})</code> should return an object.");'
-  - text: 不应该返回提供的相同对象。
-    testString: 'assert(deepcopy(obj2) != obj2, "Should not return the same object that was provided.");'
-  - text: 传递包含数组的对象时，应返回该对象的深层副本。
-    testString: 'assert.deepEqual(deepcopy(obj2), obj2, "When passed an object containing an array, should return a deep copy of the object.");'
-  - text: 传递包含另一个对象的对象时，应返回该对象的深层副本。
-    testString: 'assert.deepEqual(deepcopy(obj3), obj3, "When passed an object containing another object, should return a deep copy of the object.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

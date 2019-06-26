@@ -17,12 +17,8 @@ localeTitle: 定义构造函数
 
 ```yml
 tests:
-  - text: <code>Dog</code>应该将<code>name</code>属性设置为字符串。
-    testString: 'assert(typeof (new Dog()).name === "string", "<code>Dog</code> should have a <code>name</code> property set to a string.");'
-  - text: <code>Dog</code>应该将<code>color</code>属性设置为字符串。
-    testString: 'assert(typeof (new Dog()).color === "string", "<code>Dog</code> should have a <code>color</code> property set to a string.");'
-  - text: <code>Dog</code>应该将<code>numLegs</code>属性设置为数字。
-    testString: 'assert(typeof (new Dog()).numLegs === "number", "<code>Dog</code> should have a <code>numLegs</code> property set to a number.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

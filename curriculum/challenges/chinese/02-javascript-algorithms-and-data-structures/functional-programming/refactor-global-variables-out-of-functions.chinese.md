@@ -17,14 +17,8 @@ localeTitle: 重构函数的全局变量
 
 ```yml
 tests:
-  - text: '<code>bookList</code>不应该改变并且仍然相等<code>[&quot;The Hound of the Baskervilles&quot;, &quot;On The Electrodynamics of Moving Bodies&quot;, &quot;Philosophiæ Naturalis Principia Mathematica&quot;, &quot;Disquisitiones Arithmeticae&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(bookList) === JSON.stringify(["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]), "<code>bookList</code> should not change and still equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]</code>.");'
-  - text: '<code>newBookList</code>应该等于<code>[&quot;The Hound of the Baskervilles&quot;, &quot;On The Electrodynamics of Moving Bodies&quot;, &quot;Philosophiæ Naturalis Principia Mathematica&quot;, &quot;Disquisitiones Arithmeticae&quot;, &quot;A Brief History of Time&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(newBookList) === JSON.stringify(["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]), "<code>newBookList</code> should equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]</code>.");'
-  - text: '<code>newerBookList</code>应该等于<code>[&quot;The Hound of the Baskervilles&quot;, &quot;Philosophiæ Naturalis Principia Mathematica&quot;, &quot;Disquisitiones Arithmeticae&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(newerBookList) === JSON.stringify(["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]), "<code>newerBookList</code> should equal <code>["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]</code>.");'
-  - text: '<code>newestBookList</code>应该等于<code>[&quot;The Hound of the Baskervilles&quot;, &quot;Philosophiæ Naturalis Principia Mathematica&quot;, &quot;Disquisitiones Arithmeticae&quot;, &quot;A Brief History of Time&quot;]</code> 。'
-    testString: 'assert(JSON.stringify(newestBookList) === JSON.stringify(["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]), "<code>newestBookList</code> should equal <code>["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

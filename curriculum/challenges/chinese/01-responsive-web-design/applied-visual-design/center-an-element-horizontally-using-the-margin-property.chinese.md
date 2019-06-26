@@ -17,8 +17,8 @@ localeTitle: 使用margin属性水平居中元素
 
 ```yml
 tests:
-  - text: <code>div</code>应该有一个设置为auto的<code>margin</code> 。
-    testString: 'assert(code.match(/margin:\s*?auto;/g), "The <code>div</code> should have a <code>margin</code> set to auto.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

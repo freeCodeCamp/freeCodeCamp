@@ -17,14 +17,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert(coinSums(50) == 451, "<code>coinSums(50)</code> should return 451.");'
-  - text: ''
-    testString: 'assert(coinSums(100) == 4563, "<code>coinSums(100)</code> should return 4563.");'
-  - text: ''
-    testString: 'assert(coinSums(150) == 21873, "<code>coinSums(150)</code> should return 21873.");'
-  - text: ''
-    testString: 'assert(coinSums(200) == 73682, "<code>coinSums(200)</code> should return 73682.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

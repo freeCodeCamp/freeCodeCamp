@@ -18,16 +18,8 @@ localeTitle: 阿克曼功能
 
 ```yml
 tests:
-  - text: <code>ack</code>是一个功能。
-    testString: 'assert(typeof ack === "function", "<code>ack</code> is a function.");'
-  - text: '<code>ack(0, 0)</code>应该返回1。'
-    testString: 'assert(ack(0, 0) === 1, "<code>ack(0, 0)</code> should return 1.");'
-  - text: '<code>ack(1, 1)</code>应该返回3。'
-    testString: 'assert(ack(1, 1) === 3, "<code>ack(1, 1)</code> should return 3.");'
-  - text: '<code>ack(2, 5)</code>应该返回13。'
-    testString: 'assert(ack(2, 5) === 13, "<code>ack(2, 5)</code> should return 13.");'
-  - text: '<code>ack(3, 3)</code>应该返回61。'
-    testString: 'assert(ack(3, 3) === 61, "<code>ack(3, 3)</code> should return 61.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

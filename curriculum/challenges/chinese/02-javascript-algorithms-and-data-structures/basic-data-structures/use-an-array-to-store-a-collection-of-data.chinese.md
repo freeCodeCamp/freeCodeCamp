@@ -17,16 +17,8 @@ localeTitle: 使用数组存储数据集合
 
 ```yml
 tests:
-  - text: yourArray是一个数组
-    testString: 'assert.strictEqual(Array.isArray(yourArray), true, "yourArray is an array");'
-  - text: <code>yourArray</code>至少有5个元素
-    testString: 'assert.isAtLeast(yourArray.length, 5, "<code>yourArray</code> is at least 5 elements long");'
-  - text: <code>yourArray</code>至少包含一个<code>boolean</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "boolean").length >= 1, "<code>yourArray</code> contains at least one <code>boolean</code>");'
-  - text: <code>yourArray</code>至少包含一个<code>number</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "number").length >= 1, "<code>yourArray</code> contains at least one <code>number</code>");'
-  - text: <code>yourArray</code>至少包含一个<code>string</code>
-    testString: 'assert(yourArray.filter( el => typeof el === "string").length >= 1, "<code>yourArray</code> contains at least one <code>string</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

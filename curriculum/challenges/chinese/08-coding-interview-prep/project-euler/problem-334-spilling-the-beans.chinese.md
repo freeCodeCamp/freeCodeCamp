@@ -18,8 +18,8 @@ localeTitle: 问题334：溢出豆子
 
 ```yml
 tests:
-  - text: <code>euler334()</code>应该返回150320021261690850。
-    testString: 'assert.strictEqual(euler334(), 150320021261690850, "<code>euler334()</code> should return 150320021261690850.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

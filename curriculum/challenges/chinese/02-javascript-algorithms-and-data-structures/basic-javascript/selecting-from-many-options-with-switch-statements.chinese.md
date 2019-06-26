@@ -17,18 +17,8 @@ undefined
 
 ```yml
 tests:
-  - text: <code>caseInSwitch(1)</code>的值应为“alpha”
-    testString: 'assert(caseInSwitch(1) === "alpha", "<code>caseInSwitch(1)</code> should have a value of "alpha"");'
-  - text: <code>caseInSwitch(2)</code>的值应为“beta”
-    testString: 'assert(caseInSwitch(2) === "beta", "<code>caseInSwitch(2)</code> should have a value of "beta"");'
-  - text: <code>caseInSwitch(3)</code>的值应为“gamma”
-    testString: 'assert(caseInSwitch(3) === "gamma", "<code>caseInSwitch(3)</code> should have a value of "gamma"");'
-  - text: <code>caseInSwitch(4)</code>的值应为“delta”
-    testString: 'assert(caseInSwitch(4) === "delta", "<code>caseInSwitch(4)</code> should have a value of "delta"");'
-  - text: 您不应该使用任何<code>if</code>或<code>else</code>语句
-    testString: 'assert(!/else/g.test(code) || !/if/g.test(code), "You should not use any <code>if</code> or <code>else</code> statements");'
-  - text: 你应该至少有3个<code>break</code>语句
-    testString: 'assert(code.match(/break/g).length > 2, "You should have at least 3 <code>break</code> statements");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

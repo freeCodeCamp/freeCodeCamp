@@ -17,10 +17,8 @@ localeTitle: 在文章元素中包装内容
 
 ```yml
 tests:
-  - text: 您的代码应该有三个<code>article</code>标签。
-    testString: 'assert($("article").length == 3, "Your code should have three <code>article</code> tags.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

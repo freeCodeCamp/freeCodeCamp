@@ -18,8 +18,8 @@ localeTitle: 问题115：计数块组合II
 
 ```yml
 tests:
-  - text: <code>euler115()</code>应返回168。
-    testString: 'assert.strictEqual(euler115(), 168, "<code>euler115()</code> should return 168.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

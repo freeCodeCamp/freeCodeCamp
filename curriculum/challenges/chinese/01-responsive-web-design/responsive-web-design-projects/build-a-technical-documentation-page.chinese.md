@@ -18,7 +18,9 @@ localeTitle: 建立技术文档页面
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

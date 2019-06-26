@@ -18,14 +18,8 @@ localeTitle: 使用btn-info调出可选操作
 
 ```yml
 tests:
-  - text: 使用文本“Info”创建一个新的<code>button</code>元素。
-    testString: 'assert(new RegExp("info","gi").test($("button").text()), "Create a new <code>button</code> element with the text "Info".");'
-  - text: 两个Bootstrap按钮都应该有<code>btn</code>和<code>btn-block</code>类。
-    testString: 'assert($("button.btn-block.btn").length > 1, "Both of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.");'
-  - text: 你的新按钮应该有类<code>btn-info</code> 。
-    testString: 'assert($("button").hasClass("btn-info"), "Your new button should have the class <code>btn-info</code>.");'
-  - text: 确保所有<code>button</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

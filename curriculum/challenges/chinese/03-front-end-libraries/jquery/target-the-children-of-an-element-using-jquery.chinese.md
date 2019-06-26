@@ -17,12 +17,8 @@ localeTitle: 使用jQuery定位元素的子元素
 
 ```yml
 tests:
-  - text: '<code>#right-well</code>所有孩子都应该有橙色文字。'
-    testString: 'assert($("#right-well").children().css("color") === "rgb(255, 165, 0)", "All children of <code>#right-well</code> should have orange text.");'
-  - text: 您应该使用<code>children()</code>函数来修改这些元素。
-    testString: 'assert(code.match(/\.children\(\)\.css/g), "You should use the <code>children&#40&#41</code> function to modify these elements.");'
-  - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(code.match(/<div class="well" id="right-well">/g), "Only use jQuery to add these classes to the element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

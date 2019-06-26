@@ -18,8 +18,8 @@ localeTitle: 问题68：魔法5-gon戒指
 
 ```yml
 tests:
-  - text: <code>euler68()</code>应该返回6531031914842725。
-    testString: 'assert.strictEqual(euler68(), 6531031914842725, "<code>euler68()</code> should return 6531031914842725.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

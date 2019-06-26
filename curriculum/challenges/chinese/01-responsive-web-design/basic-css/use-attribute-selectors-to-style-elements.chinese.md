@@ -17,12 +17,8 @@ localeTitle: 使用属性选择器来设置样式元素
 
 ```yml
 tests:
-  - text: 应使用<code>type</code>属性选择器来选中复选框。
-    testString: 'assert(code.match(/<style>[\s\S]*?\[type=("|")checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),"The <code>type</code> attribute selector should be used to select the checkboxes.");'
-  - text: 复选框的顶部边距应为10px。
-    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginTop") === "10px") {count++;}});return (count===3)}()),"The top margins of the checkboxes should be 10px.");'
-  - text: 复选框的下边距应为15px。
-    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginBottom") === "15px") {count++;}});return (count===3)}()),"The bottom margins of the checkboxes should be 15px.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

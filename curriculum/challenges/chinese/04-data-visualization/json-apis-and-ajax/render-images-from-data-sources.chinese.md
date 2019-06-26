@@ -17,8 +17,8 @@ localeTitle: 从数据源渲染图像
 
 ```yml
 tests:
-  - text: 您应该使用<code>imageLink</code>属性来显示图像。
-    testString: 'assert(code.match(/val\.imageLink/g), "You should use the <code>imageLink</code> property to display the images.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

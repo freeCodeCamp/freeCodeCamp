@@ -18,8 +18,8 @@ localeTitle: 问题376：不可传递的骰子集
 
 ```yml
 tests:
-  - text: <code>euler376()</code>应该返回973059630185670。
-    testString: 'assert.strictEqual(euler376(), 973059630185670, "<code>euler376()</code> should return 973059630185670.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

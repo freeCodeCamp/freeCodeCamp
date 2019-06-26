@@ -18,8 +18,8 @@ localeTitle: 问题265：二进制圆圈
 
 ```yml
 tests:
-  - text: <code>euler265()</code>应该返回209110240768。
-    testString: 'assert.strictEqual(euler265(), 209110240768, "<code>euler265()</code> should return 209110240768.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

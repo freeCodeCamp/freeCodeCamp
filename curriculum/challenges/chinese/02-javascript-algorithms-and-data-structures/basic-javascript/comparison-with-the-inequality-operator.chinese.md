@@ -17,18 +17,8 @@ localeTitle: 与不等式算子的比较
 
 ```yml
 tests:
-  - text: <code>testNotEqual(99)</code>应返回“Equal”
-    testString: 'assert(testNotEqual(99) === "Equal", "<code>testNotEqual(99)</code> should return "Equal"");'
-  - text: <code>testNotEqual(&quot;99&quot;)</code>应该返回“Equal”
-    testString: 'assert(testNotEqual("99") === "Equal", "<code>testNotEqual("99")</code> should return "Equal"");'
-  - text: <code>testNotEqual(12)</code>应该返回“Not Equal”
-    testString: 'assert(testNotEqual(12) === "Not Equal", "<code>testNotEqual(12)</code> should return "Not Equal"");'
-  - text: <code>testNotEqual(&quot;12&quot;)</code>应该返回“Not Equal”
-    testString: 'assert(testNotEqual("12") === "Not Equal", "<code>testNotEqual("12")</code> should return "Not Equal"");'
-  - text: <code>testNotEqual(&quot;bob&quot;)</code>应返回“Not Equal”
-    testString: 'assert(testNotEqual("bob") === "Not Equal", "<code>testNotEqual("bob")</code> should return "Not Equal"");'
-  - text: 你应该使用<code>!=</code>运算符
-    testString: 'assert(code.match(/(?!!==)!=/), "You should use the <code>!=</code> operator");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

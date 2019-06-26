@@ -17,14 +17,8 @@ localeTitle: 使用Sass变量存储数据
 
 ```yml
 tests:
-  - text: 您的代码应该具有为<code>$text-color</code>声明的Sass变量，其值为red。
-    testString: 'assert(code.match(/\$text-color:\s*?red;/g), "Your code should have a Sass variable declared for <code>$text-color</code> with a value of red.");'
-  - text: 您的代码应使用<code>$text-color</code>变量来更改<code>.blog-post</code>和<code>h2</code>项的<code>color</code> 。
-    testString: 'assert(code.match(/color:\s*?\$text-color;/g), "Your code should use the <code>$text-color</code> variable to change the <code>color</code> for the <code>.blog-post</code> and <code>h2</code> items.");'
-  - text: 您的<code>.blog-post</code>元素应该是红色。
-    testString: 'assert($(".blog-post").css("color") == "rgb(255, 0, 0)", "Your <code>.blog-post</code> element should have a </code>color</code> of red.");'
-  - text: 你的<code>h2</code>元素应该是红色。
-    testString: 'assert($("h2").css("color") == "rgb(255, 0, 0)", "Your <code>h2</code> elements should have a </code>color</code> of red.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

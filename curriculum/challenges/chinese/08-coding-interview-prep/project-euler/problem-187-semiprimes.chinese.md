@@ -18,8 +18,8 @@ localeTitle: 问题187：半致
 
 ```yml
 tests:
-  - text: <code>euler187()</code>应该返回17427258。
-    testString: 'assert.strictEqual(euler187(), 17427258, "<code>euler187()</code> should return 17427258.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

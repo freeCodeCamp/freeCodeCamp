@@ -17,10 +17,8 @@ localeTitle: 使用足够的对比度避免色盲问题
 
 ```yml
 tests:
-  - text: 您的代码只应将文本<code>color</code>属性的亮度值更改为15％的值。
-    testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.");'
-  - text: 您的代码应仅将<code>background-color</code>属性的亮度值更改为值55％。
-    testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

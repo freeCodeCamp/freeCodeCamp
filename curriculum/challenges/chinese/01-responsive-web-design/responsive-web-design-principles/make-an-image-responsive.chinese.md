@@ -17,12 +17,8 @@ localeTitle: 使图像响应
 
 ```yml
 tests:
-  - text: 您的<code>img</code>标记的<code>max-width</code>设置为100％。
-    testString: 'assert(code.match(/max-width:\s*?100%;/g), "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.");'
-  - text: 你的<code>img</code>标签应该有一个<code>display</code>设置阻止。
-    testString: 'assert($("img").css("display") == "block", "Your <code>img</code> tag should have a <code>display</code> set to block.");'
-  - text: 你的<code>img</code>标签的<code>height</code>应该设置为auto。
-    testString: 'assert(code.match(/height:\s*?auto;/g), "Your <code>img</code> tag should have a <code>height</code> set to auto.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

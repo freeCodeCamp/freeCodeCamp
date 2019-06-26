@@ -17,12 +17,8 @@ localeTitle: 使用pop（）操作数组
 
 ```yml
 tests:
-  - text: '<code>myArray</code>应该只包含<code>[[&quot;John&quot;, 23]]</code> 。'
-    testString: 'assert((function(d){if(d[0][0] == "John" && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray), "<code>myArray</code> should only contain <code>[["John", 23]]</code>.");'
-  - text: 在<code>myArray</code>上使用<code>pop()</code>
-    testString: 'assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code), "Use <code>pop()</code> on <code>myArray</code>");'
-  - text: '<code>removedFromMyArray</code>应该只包含<code>[&quot;cat&quot;, 2]</code> 。'
-    testString: 'assert((function(d){if(d[0] == "cat" && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), "<code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

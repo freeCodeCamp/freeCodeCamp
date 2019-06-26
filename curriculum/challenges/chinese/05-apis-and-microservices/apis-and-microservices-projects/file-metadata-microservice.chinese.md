@@ -20,10 +20,8 @@ isRequired: true
 
 ```yml
 tests:
-  - text: 我可以提交包含文件上传的FormData对象。
-    testString: ''
-  - text: “当我提交某些内容时，我将在JSON响应中收到以字节为单位的文件大小。”
-    testString: ''
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

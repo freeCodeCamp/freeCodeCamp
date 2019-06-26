@@ -18,8 +18,8 @@ localeTitle: 问题123：素数正方形余数
 
 ```yml
 tests:
-  - text: <code>euler123()</code>应该返回21035。
-    testString: 'assert.strictEqual(euler123(), 21035, "<code>euler123()</code> should return 21035.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

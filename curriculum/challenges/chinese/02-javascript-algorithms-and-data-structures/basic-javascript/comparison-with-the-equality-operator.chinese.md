@@ -17,14 +17,8 @@ localeTitle: 与平等算子的比较
 
 ```yml
 tests:
-  - text: <code>testEqual(10)</code>应该返回“Not Equal”
-    testString: 'assert(testEqual(10) === "Not Equal", "<code>testEqual(10)</code> should return "Not Equal"");'
-  - text: <code>testEqual(12)</code>应返回“Equal”
-    testString: 'assert(testEqual(12) === "Equal", "<code>testEqual(12)</code> should return "Equal"");'
-  - text: <code>testEqual(&quot;12&quot;)</code>应返回“Equal”
-    testString: 'assert(testEqual("12") === "Equal", "<code>testEqual("12")</code> should return "Equal"");'
-  - text: 您应该使用<code>==</code>运算符
-    testString: 'assert(code.match(/==/g) && !code.match(/===/g), "You should use the <code>==</code> operator");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

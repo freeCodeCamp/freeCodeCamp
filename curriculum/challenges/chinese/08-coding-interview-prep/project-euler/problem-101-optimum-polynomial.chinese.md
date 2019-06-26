@@ -18,8 +18,8 @@ localeTitle: 问题101：最佳多项式
 
 ```yml
 tests:
-  - text: <code>euler101()</code>应该返回37076114526。
-    testString: 'assert.strictEqual(euler101(), 37076114526, "<code>euler101()</code> should return 37076114526.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

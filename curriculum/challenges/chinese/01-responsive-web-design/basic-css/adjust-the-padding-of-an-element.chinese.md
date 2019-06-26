@@ -17,8 +17,8 @@ localeTitle: 调整元素的填充
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code>的<code>padding</code>元素。
-    testString: 'assert($(".blue-box").css("padding-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

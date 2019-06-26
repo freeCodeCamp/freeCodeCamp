@@ -17,10 +17,8 @@ localeTitle: 使用em标记来显示文本
 
 ```yml
 tests:
-  - text: 您的代码应该在标记中添加<code>em</code>标记。
-    testString: 'assert($("em").length == 1, "Your code should add an <code>em</code> tag to the markup.");'
-  - text: <code>em</code>标签应该环绕<code>p</code>标签的内容，而不是<code>p</code>标签本身。
-    testString: 'assert($("p").children().length == 1 && $("em").children().length == 2, "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

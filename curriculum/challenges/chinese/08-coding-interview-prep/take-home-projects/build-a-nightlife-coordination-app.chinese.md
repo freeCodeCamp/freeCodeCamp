@@ -18,7 +18,9 @@ localeTitle: 建立夜生活协调应用程序
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

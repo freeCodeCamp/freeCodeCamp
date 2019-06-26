@@ -18,10 +18,8 @@ localeTitle: 使用jQuery删除元素
 
 ```yml
 tests:
-  - text: 使用jQuery从页面中删除<code>target4</code>元素。
-    testString: 'assert($("#target4").length === 0 && code.match(/\$\([""]#target4[""]\).remove\(\)/g), "Use jQuery to remove your <code>target4</code> element from your page.");'
-  - text: 仅使用jQuery删除此元素。
-    testString: 'assert(code.match(/id="target4/g) && !code.match(/<!--.*id="target4".*-->/g) && $("#right-well").length > 0, "Only use jQuery to remove this element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

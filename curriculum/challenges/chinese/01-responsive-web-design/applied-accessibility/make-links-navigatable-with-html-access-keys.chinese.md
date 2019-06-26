@@ -17,14 +17,8 @@ localeTitle: 使链接可以使用HTML访问密钥进行导航
 
 ```yml
 tests:
-  - text: 您的代码应该为<code>id</code>为“first” <code>a</code>标记添加一个<code>accesskey</code>属性。
-    testString: 'assert($("#first").attr("accesskey"), "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "first".");'
-  - text: 您的代码应该为<code>id</code>为“second” <code>a</code>标记添加一个<code>accesskey</code>属性。
-    testString: 'assert($("#second").attr("accesskey"), "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "second".");'
-  - text: 您的代码应在<code>id</code>为“first”到“g” <code>a</code>标记上设置<code>accesskey</code>属性。请注意，案件很重要。
-    testString: 'assert($("#first").attr("accesskey") == "g", "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "first" to "g". Note that case matters.");'
-  - text: 您的代码应设置<code>accesskey</code>的属性<code>a</code>标签与<code>id</code> “第二”到“C”的。请注意，案件很重要。
-    testString: 'assert($("#second").attr("accesskey") == "c", "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "second" to "c". Note that case matters.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

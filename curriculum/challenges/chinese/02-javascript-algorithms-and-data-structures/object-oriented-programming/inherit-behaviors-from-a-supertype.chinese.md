@@ -17,14 +17,8 @@ localeTitle: 从超类型继承行为
 
 ```yml
 tests:
-  - text: 应该定义<code>duck</code>变量。
-    testString: 'assert(typeof duck !== "undefined", "The <code>duck</code> variable should be defined.");'
-  - text: 应该定义<code>beagle</code>变量。
-    testString: 'assert(typeof beagle !== "undefined", "The <code>beagle</code> variable should be defined.");'
-  - text: <code>duck</code>应该有<code>Animal</code>的<code>prototype</code> 。
-    testString: 'assert(duck instanceof Animal, "<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.");'
-  - text: <code>beagle</code>应该有<code>Animal</code>的<code>prototype</code> 。
-    testString: 'assert(beagle instanceof Animal, "<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

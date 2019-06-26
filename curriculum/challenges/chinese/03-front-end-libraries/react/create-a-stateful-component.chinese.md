@@ -18,14 +18,8 @@ localeTitle: 创建一个有状态组件
 
 ```yml
 tests:
-  - text: <code>StatefulComponent</code>应该存在并呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find("StatefulComponent").length === 1; })(), "<code>StatefulComponent</code> should exist and render.");'
-  - text: <code>StatefulComponent</code>应该呈现<code>div</code>和<code>h1</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find("div").length === 1 && mockedComponent.find("h1").length === 1; })(), "<code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.");'
-  - text: 应使用设置为字符串的属性<code>name</code>初始化<code>StatefulComponent</code> 。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === "object" && typeof initialState.name === "string"); })(), "The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.");'
-  - text: <code>StatefulComponent</code>的属性<code>name</code>应在<code>h1</code>元素中呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find("h1").text() === initialState.name; })(), "The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

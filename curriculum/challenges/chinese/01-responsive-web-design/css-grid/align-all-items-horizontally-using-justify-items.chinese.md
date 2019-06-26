@@ -17,8 +17,8 @@ localeTitle: 使用对齐项目水平对齐所有项目
 
 ```yml
 tests:
-  - text: <code>container</code>类应该有一个具有<code>center</code>值的<code>justify-items</code>属性。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 使用Retina图像获得更高分辨率的显示
 
 ```yml
 tests:
-  - text: 你的<code>img</code>标签应该有100像素的<code>width</code> 。
-    testString: 'assert($("img").css("width") == "100px", "Your <code>img</code> tag should have a <code>width</code> of 100 pixels.");'
-  - text: 你的<code>img</code>标签应该有100像素的<code>height</code> 。
-    testString: 'assert($("img").css("height") == "100px", "Your <code>img</code> tag should have a <code>height</code> of 100 pixels.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

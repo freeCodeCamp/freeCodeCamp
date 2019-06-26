@@ -18,8 +18,8 @@ localeTitle: 问题243：恢复力
 
 ```yml
 tests:
-  - text: <code>euler243()</code>应该返回892371480。
-    testString: 'assert.strictEqual(euler243(), 892371480, "<code>euler243()</code> should return 892371480.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

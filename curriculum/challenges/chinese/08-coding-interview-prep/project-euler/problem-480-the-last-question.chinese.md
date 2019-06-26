@@ -18,8 +18,8 @@ localeTitle: 问题480：最后一个问题
 
 ```yml
 tests:
-  - text: <code>euler480()</code>应该返回turnthestarson。
-    testString: 'assert.strictEqual(euler480(), turnthestarson, "<code>euler480()</code> should return turnthestarson.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

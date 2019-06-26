@@ -18,8 +18,8 @@ localeTitle: 问题160：因子尾随数字
 
 ```yml
 tests:
-  - text: <code>euler160()</code>应返回16576。
-    testString: 'assert.strictEqual(euler160(), 16576, "<code>euler160()</code> should return 16576.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

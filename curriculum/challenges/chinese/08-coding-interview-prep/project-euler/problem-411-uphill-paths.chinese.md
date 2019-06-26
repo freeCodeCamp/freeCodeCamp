@@ -18,8 +18,8 @@ localeTitle: 问题411：上坡路径
 
 ```yml
 tests:
-  - text: <code>euler411()</code>应返回9936352。
-    testString: 'assert.strictEqual(euler411(), 9936352, "<code>euler411()</code> should return 9936352.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

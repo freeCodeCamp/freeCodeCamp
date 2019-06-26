@@ -19,14 +19,8 @@ localeTitle: 压路机
 
 ```yml
 tests:
-  - text: '<code>steamrollArray([[[&quot;a&quot;]], [[&quot;b&quot;]]])</code>应返回<code>[&quot;a&quot;, &quot;b&quot;]</code> 。'
-    testString: 'assert.deepEqual(steamrollArray([[["a"]], [["b"]]]), ["a", "b"], "<code>steamrollArray([[["a"]], [["b"]]])</code> should return <code>["a", "b"]</code>.");'
-  - text: '<code>steamrollArray([1, [2], [3, [[4]]]])</code>应该返回<code>[1, 2, 3, 4]</code> 。'
-    testString: 'assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4], "<code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.");'
-  - text: '<code>steamrollArray([1, [], [3, [[4]]]])</code>应该返回<code>[1, 3, 4]</code> 。'
-    testString: 'assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4], "<code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.");'
-  - text: '<code>steamrollArray([1, {}, [3, [[4]]]])</code>应返回<code>[1, {}, 3, 4]</code> 。'
-    testString: 'assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4], "<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

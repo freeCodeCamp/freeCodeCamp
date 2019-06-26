@@ -18,8 +18,8 @@ localeTitle: 问题398：切割绳索
 
 ```yml
 tests:
-  - text: <code>euler398()</code>应返回2010.59096。
-    testString: 'assert.strictEqual(euler398(), 2010.59096, "<code>euler398()</code> should return 2010.59096.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

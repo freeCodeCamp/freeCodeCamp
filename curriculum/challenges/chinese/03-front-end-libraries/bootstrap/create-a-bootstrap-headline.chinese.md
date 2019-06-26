@@ -18,16 +18,8 @@ localeTitle: 创建一个Bootstrap标题
 
 ```yml
 tests:
-  - text: 在页面中添加<code>h3</code>元素。
-    testString: 'assert($("h3") && $("h3").length > 0, "Add a <code>h3</code> element to your page.");'
-  - text: 确保您的<code>h3</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/h3>/g) && code.match(/<h3/g) && code.match(/<\/h3>/g).length === code.match(/<h3/g).length, "Make sure your <code>h3</code> element has a closing tag.");'
-  - text: 应该使用<code>text-primary</code>类来对你的<code>h3</code>元素进行着色
-    testString: 'assert($("h3").hasClass("text-primary"), "Your <code>h3</code> element should be colored by applying the class <code>text-primary</code>");'
-  - text: 应用类<code>text-center</code>应该使<code>h3</code>元素居中
-    testString: 'assert($("h3").hasClass("text-center"), "Your <code>h3</code> element should be centered by applying the class <code>text-center</code>");'
-  - text: 你的<code>h3</code>元素应该有<code>jQuery Playground</code>文本。
-    testString: 'assert.isTrue((/jquery(\s)+playground/gi).test($("h3").text()), "Your <code>h3</code> element should have the text <code>jQuery Playground</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

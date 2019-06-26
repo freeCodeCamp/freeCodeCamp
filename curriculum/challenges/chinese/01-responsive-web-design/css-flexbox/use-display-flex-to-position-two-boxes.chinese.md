@@ -17,8 +17,8 @@ localeTitle: 使用display：flex定位两个Box
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>应将<code>display</code>属性设置为flex值。'
-    testString: 'assert($("#box-container").css("display") == "flex", "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

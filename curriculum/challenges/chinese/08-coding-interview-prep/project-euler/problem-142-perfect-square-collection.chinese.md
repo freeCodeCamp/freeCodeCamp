@@ -18,8 +18,8 @@ localeTitle: 问题142：完美的方形集合
 
 ```yml
 tests:
-  - text: <code>euler142()</code>应返回1006193。
-    testString: 'assert.strictEqual(euler142(), 1006193, "<code>euler142()</code> should return 1006193.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

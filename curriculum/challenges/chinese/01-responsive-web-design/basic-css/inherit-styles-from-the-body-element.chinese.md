@@ -17,20 +17,8 @@ localeTitle: 从Body元素继承样式
 
 ```yml
 tests:
-  - text: 创建一个<code>h1</code>元素。
-    testString: 'assert(($("h1").length > 0), "Create an <code>h1</code> element.");'
-  - text: 你的<code>h1</code>元素应该有文本<code>Hello World</code> 。
-    testString: 'assert(($("h1").length > 0 && $("h1").text().match(/hello world/i)), "Your <code>h1</code> element should have the text <code>Hello World</code>.");'
-  - text: 确保您的<code>h1</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/h1>/g) && code.match(/<h1/g) && code.match(/<\/h1>/g).length === code.match(/<h1/g).length, "Make sure your <code>h1</code> element has a closing tag.");'
-  - text: 为你的<code>body</code>元素赋予<code>green</code>的<code>color</code>属性。
-    testString: 'assert(($("body").css("color") === "rgb(0, 128, 0)"), "Give your <code>body</code> element the <code>color</code> property of <code>green</code>.");'
-  - text: 为<code>body</code>元素提供<code>monospace</code>的<code>font-family</code>属性。
-    testString: 'assert(($("body").css("font-family").match(/monospace/i)), "Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.");'
-  - text: 你的<code>h1</code>元素应该从你的<code>body</code>元素继承font <code>monospace</code> 。
-    testString: 'assert(($("h1").length > 0 && $("h1").css("font-family").match(/monospace/i)), "Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.");'
-  - text: 您的<code>h1</code>元素应该从您的<code>body</code>元素继承绿色。
-    testString: 'assert(($("h1").length > 0 && $("h1").css("color") === "rgb(0, 128, 0)"), "Your <code>h1</code> element should inherit the color green from your <code>body</code> element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,18 +18,8 @@ localeTitle: 使用Array.map（）动态渲染元素
 
 ```yml
 tests:
-  - text: MyToDoList组件应该存在并呈现给页面。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find("MyToDoList").length === 1; })(), "The MyToDoList component should exist and render to the page.");'
-  - text: <code>MyToDoList</code>的第一个子<code>MyToDoList</code>应该是<code>textarea</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find("MyToDoList").children().childAt(0).type() === "textarea"; })(), "The first child of <code>MyToDoList</code> should be a <code>textarea</code> element.");'
-  - text: <code>MyToDoList</code>的第三个子<code>MyToDoList</code>应该是一个<code>button</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); return mockedComponent.find("MyToDoList").children().childAt(2).type() === "button"; })(), "The third child of <code>MyToDoList</code> should be a <code>button</code> element.");'
-  - text: 应使用<code>toDoList</code>将<code>MyToDoList</code>的状态初始化为空数组。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return Array.isArray(initialState.toDoList) === true && initialState.toDoList.length === 0; })(), "The state of <code>MyToDoList</code> should be initialized with <code>toDoList</code> as an empty array.");'
-  - text: 应使用<code>userInput</code>将<code>MyToDoList</code>的状态初始化为空字符串。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const initialState = mockedComponent.state(); return typeof initialState.userInput === "string" && initialState.userInput.length === 0; })(), "The state of <code>MyToDoList</code> should be initialized with <code>userInput</code> as an empty string.");'
-  - text: 单击“ <code>Create List</code>按钮时， <code>MyToDoList</code>组件应动态返回无序列表，该列表包含输入到<code>textarea</code>元素中的逗号分隔列表的每个项目的列表项元素。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const mockedComponent = Enzyme.mount(React.createElement(MyToDoList)); const simulateChange = (el, value) => el.simulate("change", {target: {value}}); const state_1 = () => { return waitForIt(() => mockedComponent.find("ul").find("li"))}; const setInput = () => { return waitForIt(() => simulateChange(mockedComponent.find("textarea"), "testA, testB, testC"))}; const click = () => { return waitForIt(() => mockedComponent.find("button").simulate("click"))}; const state_2 = () => { return waitForIt(() => { const nodes = mockedComponent.find("ul").find("li"); return { nodes, text: nodes.reduce((t, n) => t + n.text(), "") }; })}; const setInput_2 = () => { return waitForIt(() => simulateChange(mockedComponent.find("textarea"), "t1, t2, t3, t4, t5, t6"))}; const click_1 = () => { return waitForIt(() => mockedComponent.find("button").simulate("click"))}; const state_3 = () => { return waitForIt(() => { const nodes = mockedComponent.find("ul").find("li"); return { nodes, text: nodes.reduce((t, n) => t + n.text(), "") }; })}; const awaited_state_1 = await state_1(); const awaited_setInput = await setInput(); const awaited_click = await click(); const awaited_state_2 = await state_2(); const awaited_setInput_2 = await setInput_2(); const awaited_click_1 = await click_1(); const awaited_state_3 = await state_3(); assert(awaited_state_1.length === 0 && awaited_state_2.nodes.length === 3 && awaited_state_3.nodes.length === 6 && awaited_state_2.text === "testA testB testC" && awaited_state_3.text === "t1 t2 t3 t4 t5 t6", "When the <code>Create List</code> button is clicked, the <code>MyToDoList</code> component should dynamically return an unordered list that contains a list item element for every item of a comma-separated list entered into the <code>textarea</code> element."); }; '
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

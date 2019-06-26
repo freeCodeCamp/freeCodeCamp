@@ -18,8 +18,8 @@ localeTitle: 问题222：球体包装
 
 ```yml
 tests:
-  - text: <code>euler222()</code>应该返回1590933。
-    testString: 'assert.strictEqual(euler222(), 1590933, "<code>euler222()</code> should return 1590933.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

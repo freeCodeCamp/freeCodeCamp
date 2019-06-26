@@ -18,8 +18,8 @@ localeTitle: 问题226：Blancmange的一个独家新闻
 
 ```yml
 tests:
-  - text: <code>euler226()</code>应该返回0.11316017。
-    testString: 'assert.strictEqual(euler226(), 0.11316017, "<code>euler226()</code> should return 0.11316017.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

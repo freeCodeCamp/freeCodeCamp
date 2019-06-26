@@ -17,24 +17,8 @@ localeTitle: 动态更新元素的高度
 
 ```yml
 tests:
-  - text: 第一个<code>div</code>的<code>height</code>应为12像素。
-    testString: 'assert($("div").eq(0).css("height") == "12px", "The first <code>div</code> should have a <code>height</code> of 12 pixels.");'
-  - text: 第二个<code>div</code>的<code>height</code>应为31像素。
-    testString: 'assert($("div").eq(1).css("height") == "31px", "The second <code>div</code> should have a <code>height</code> of 31 pixels.");'
-  - text: 第三个<code>div</code>的<code>height</code>应为22像素。
-    testString: 'assert($("div").eq(2).css("height") == "22px", "The third <code>div</code> should have a <code>height</code> of 22 pixels.");'
-  - text: 第四个<code>div</code>的<code>height</code>应为17像素。
-    testString: 'assert($("div").eq(3).css("height") == "17px", "The fourth <code>div</code> should have a <code>height</code> of 17 pixels.");'
-  - text: 第五个<code>div</code>的<code>height</code>应为25像素。
-    testString: 'assert($("div").eq(4).css("height") == "25px", "The fifth <code>div</code> should have a <code>height</code> of 25 pixels.");'
-  - text: 第六个<code>div</code>的<code>height</code>应为18像素。
-    testString: 'assert($("div").eq(5).css("height") == "18px", "The sixth <code>div</code> should have a <code>height</code> of 18 pixels.");'
-  - text: 第七个<code>div</code>的<code>height</code>应为29像素。
-    testString: 'assert($("div").eq(6).css("height") == "29px", "The seventh <code>div</code> should have a <code>height</code> of 29 pixels.");'
-  - text: 第八个<code>div</code>的<code>height</code>应为14像素。
-    testString: 'assert($("div").eq(7).css("height") == "14px", "The eighth <code>div</code> should have a <code>height</code> of 14 pixels.");'
-  - text: 第九个<code>div</code>的<code>height</code>应为9像素。
-    testString: 'assert($("div").eq(8).css("height") == "9px", "The ninth <code>div</code> should have a <code>height</code> of 9 pixels.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

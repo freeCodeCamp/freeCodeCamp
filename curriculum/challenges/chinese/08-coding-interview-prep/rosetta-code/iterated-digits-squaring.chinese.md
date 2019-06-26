@@ -19,22 +19,8 @@ localeTitle: 迭代的数字平方
 
 ```yml
 tests:
-  - text: <code>iteratedSquare</code>应该是一个函数。
-    testString: 'assert(typeof iteratedSquare=="function","<code>iteratedSquare</code> should be a function.");'
-  - text: <code>iteratedSquare(4)</code>应该返回一个数字。
-    testString: 'assert(typeof iteratedSquare(4)=="number","<code>iteratedSquare(4)</code> should return a number.");'
-  - text: <code>iteratedSquare(4)</code>应该返回<code>89</code> 。
-    testString: 'assert.equal(iteratedSquare(4),89,"<code>iteratedSquare(4)</code> should return <code>89</code>.");'
-  - text: <code>iteratedSquare(7)</code>应该返回<code>1</code> 。
-    testString: 'assert.equal(iteratedSquare(7),1,"<code>iteratedSquare(7)</code> should return <code>1</code>.");'
-  - text: <code>iteratedSquare(15)</code>应该返回<code>89</code> 。
-    testString: 'assert.equal(iteratedSquare(15),89,"<code>iteratedSquare(15)</code> should return <code>89</code>.");'
-  - text: <code>iteratedSquare(20)</code>应该返回<code>89</code> 。
-    testString: 'assert.equal(iteratedSquare(20),89,"<code>iteratedSquare(20)</code> should return <code>89</code>.");'
-  - text: <code>iteratedSquare(70)</code>应该返回<code>1</code> 。
-    testString: 'assert.equal(iteratedSquare(70),1,"<code>iteratedSquare(70)</code> should return <code>1</code>.");'
-  - text: <code>iteratedSquare(100)</code>应该返回<code>1</code> 。
-    testString: 'assert.equal(iteratedSquare(100),1,"<code>iteratedSquare(100)</code> should return <code>1</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,7 +18,9 @@ localeTitle: 建立一个露营者排行榜
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

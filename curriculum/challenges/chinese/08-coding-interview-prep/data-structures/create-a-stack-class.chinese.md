@@ -18,24 +18,8 @@ localeTitle: 创建一个堆栈类
 
 ```yml
 tests:
-  - text: 你的<code>Stack</code>类应该有一个<code>push</code>方法。
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.push === "function")}()), "Your <code>Stack</code> class should have a <code>push</code> method.");'
-  - text: 你的<code>Stack</code>类应该有一个<code>pop</code>方法。
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.pop === "function")}()), "Your <code>Stack</code> class should have a <code>pop</code> method.");'
-  - text: 你的<code>Stack</code>类应该有一个<code>peek</code>方法。
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.peek === "function")}()), "Your <code>Stack</code> class should have a <code>peek</code> method.");'
-  - text: 您的<code>Stack</code>类应该有一个<code>isEmpty</code>方法。
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.isEmpty === "function")}()), "Your <code>Stack</code> class should have a <code>isEmpty</code> method.");'
-  - text: 你的<code>Stack</code>类应该有一个<code>clear</code>方法。
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.clear === "function")}()), "Your <code>Stack</code> class should have a <code>clear</code> method.");'
-  - text: <code>peek</code>方法应该返回堆栈的顶部元素
-    testString: 'assert((function(){var test = new Stack();  test.push("CS50"); return (test.peek() === "CS50")}()), "The <code>peek</code> method should return the top element of the stack");'
-  - text: <code>pop</code>方法应该删除并返回堆栈的顶部元素
-    testString: 'assert((function(){var test = new Stack(); test.push("CS50"); return (test.pop() === "CS50");}()), "The <code>pop</code> method should remove and return the top element of the stack");'
-  - text: 如果堆栈不包含任何元素，则<code>isEmpty</code>方法应返回true
-    testString: 'assert((function(){var test = new Stack(); return test.isEmpty()}()), "The <code>isEmpty</code> method should return true if a stack does not contain any elements");'
-  - text: <code>clear</code>方法应该从堆栈中删除所有元素
-    testString: 'assert((function(){var test = new Stack();  test.push("CS50"); test.clear(); return (test.isEmpty())}()), "The <code>clear</code> method should remove all element from the stack");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

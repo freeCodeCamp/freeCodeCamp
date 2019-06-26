@@ -18,8 +18,8 @@ localeTitle: 问题375：最小子序列
 
 ```yml
 tests:
-  - text: <code>euler375()</code>应该返回7435327983715286000。
-    testString: 'assert.strictEqual(euler375(), 7435327983715286000, "<code>euler375()</code> should return 7435327983715286000.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

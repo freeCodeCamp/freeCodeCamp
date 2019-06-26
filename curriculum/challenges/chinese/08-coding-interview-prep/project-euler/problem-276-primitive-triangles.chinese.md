@@ -18,8 +18,8 @@ localeTitle: 问题276：原始三角形
 
 ```yml
 tests:
-  - text: <code>euler276()</code>应该返回5777137137739633000。
-    testString: 'assert.strictEqual(euler276(), 5777137137739633000, "<code>euler276()</code> should return 5777137137739633000.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 使用hr元素创建水平线
 
 ```yml
 tests:
-  - text: 您的代码应该在标记中添加<code>hr</code>标记。
-    testString: 'assert($("hr").length == 1, "Your code should add an <code>hr</code> tag to the markup.");'
-  - text: <code>hr</code>标签应位于标题和段落之间。
-    testString: 'assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), "The <code>hr</code> tag should come between the title and the paragraph.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -20,8 +20,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 您的应用应该提供字符串'Hello Express'
-    testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.equal(data, ''Hello Express'', ''Your app does not serve the text "Hello Express"''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

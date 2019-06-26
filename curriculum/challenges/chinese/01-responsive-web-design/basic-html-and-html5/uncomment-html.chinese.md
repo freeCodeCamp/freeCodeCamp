@@ -17,14 +17,8 @@ localeTitle: 取消注释HTML
 
 ```yml
 tests:
-  - text: 通过取消注释，使您的<code>h1</code>元素在您的页面上可见。
-    testString: 'assert($("h1").length > 0, "Make your <code>h1</code> element visible on your page by uncommenting it.");'
-  - text: 通过取消注释，使您的<code>h2</code>元素在您的页面上可见。
-    testString: 'assert($("h2").length > 0, "Make your <code>h2</code> element visible on your page by uncommenting it.");'
-  - text: 通过取消注释，可以在页面上显示您的<code>p</code>元素。
-    testString: 'assert($("p").length > 0, "Make your <code>p</code> element visible on your page by uncommenting it.");'
-  - text: 请务必删除所有尾随注释标记，即<code>--&gt;</code> 。
-    testString: 'assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,"")), "Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

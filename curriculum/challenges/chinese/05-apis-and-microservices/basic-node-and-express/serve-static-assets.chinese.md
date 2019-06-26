@@ -20,8 +20,8 @@ HTML服务器通常有一个或多个用户可以访问的目录。您可以放�
 
 ```yml
 tests:
-  - text: 您的应用应该从<code>/public</code>目录提供资产文件
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/style.css'').then(data => { assert.match(data, /body\s*\{[^\}]*\}/, ''Your app does not serve static assets''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

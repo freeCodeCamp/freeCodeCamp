@@ -17,10 +17,8 @@ localeTitle: 评论您的JavaScript代码
 
 ```yml
 tests:
-  - text: 创建一个包含至少五个字母的<code>//</code>样式注释。
-    testString: 'assert(code.match(/(\/\/)...../g), "Create a <code>//</code> style comment that contains at least five letters.");'
-  - text: 创建包含至少五个字母的<code>/* */</code>样式注释。
-    testString: 'assert(code.match(/(\/\*)([^\/]{5,})(?=\*\/)/gm), "Create a <code>/* */</code> style comment that contains at least five letters.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

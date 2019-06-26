@@ -17,18 +17,8 @@ localeTitle: 使用图元素改进图表可访问性
 
 ```yml
 tests:
-  - text: 您的代码应该有一个<code>figure</code>标记。
-    testString: 'assert($("figure").length == 1, "Your code should have one <code>figure</code> tag.");'
-  - text: 您的代码应该有一个<code>figcaption</code>标记。
-    testString: 'assert($("figcaption").length == 1, "Your code should have one <code>figcaption</code> tag.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 您的代码不应包含任何<code>p</code>标记。
-    testString: 'assert($("p").length == 0, "Your code should not have any <code>p</code> tags.");'
-  - text: <code>figcaption</code>应该是<code>figure</code>标签的子<code>figcaption</code> 。
-    testString: 'assert($("figure").children("figcaption").length == 1, "The <code>figcaption</code> should be a child of the <code>figure</code> tag.");'
-  - text: 确保您的<code>figure</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, "Make sure your <code>figure</code> element has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

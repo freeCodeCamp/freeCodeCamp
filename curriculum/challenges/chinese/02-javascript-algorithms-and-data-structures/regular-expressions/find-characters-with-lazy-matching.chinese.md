@@ -17,8 +17,8 @@ localeTitle: 查找具有延迟匹配的字符
 
 ```yml
 tests:
-  - text: <code>result</code>变量应该是一个包含<code>&lt;h1&gt;</code>的数组
-    testString: 'assert(result[0] == "<h1>", "The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

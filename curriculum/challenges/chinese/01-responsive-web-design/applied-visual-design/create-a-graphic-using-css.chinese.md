@@ -17,12 +17,8 @@ localeTitle: 使用CSS创建图形
 
 ```yml
 tests:
-  - text: <code>background-color</code>属性的值应设置为<code>transparent</code> 。
-    testString: 'assert(code.match(/background-color:\s*?transparent;/gi), "The value of the <code>background-color</code> property should be set to <code>transparent</code>.");'
-  - text: <code>border-radius</code>属性的值应设置为<code>50%</code> 。
-    testString: 'assert(code.match(/border-radius:\s*?50%;/gi), "The value of the <code>border-radius</code> property should be set to <code>50%</code>.");'
-  - text: <code>box-shadow</code>属性的值应设置为<code>offset-x</code>为25px， <code>offset-y</code>为10px， <code>blur-radius</code>为0， <code>spread-radius</code>为0，最后为颜色为蓝色。
-    testString: 'assert(code.match(/box-shadow:\s*?25px\s+?10px\s+?0(px)?\s+?0(px)?\s+?blue\s*?;/gi), "The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

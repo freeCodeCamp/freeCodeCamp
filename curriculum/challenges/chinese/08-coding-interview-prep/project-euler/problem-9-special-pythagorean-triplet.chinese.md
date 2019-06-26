@@ -18,12 +18,8 @@ localeTitle: 问题9：特殊的毕达哥拉斯三重奏
 
 ```yml
 tests:
-  - text: <code>specialPythagoreanTriplet(1000)</code>应返回31875000。
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(1000), 31875000, "<code>specialPythagoreanTriplet(1000)</code> should return 31875000.");'
-  - text: <code>specialPythagoreanTriplet(24)</code>应该返回480。
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(24), 480, "<code>specialPythagoreanTriplet(24)</code> should return 480.");'
-  - text: <code>specialPythagoreanTriplet(120)</code>应该返回49920。
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(120), 49920, "<code>specialPythagoreanTriplet(120)</code> should return 49920.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

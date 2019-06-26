@@ -18,8 +18,8 @@ localeTitle: 问题59：XOR解密
 
 ```yml
 tests:
-  - text: <code>euler59()</code>应返回107359。
-    testString: 'assert.strictEqual(euler59(), 107359, "<code>euler59()</code> should return 107359.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

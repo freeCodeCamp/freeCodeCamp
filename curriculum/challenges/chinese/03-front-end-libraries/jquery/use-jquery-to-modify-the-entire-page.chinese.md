@@ -20,8 +20,8 @@ localeTitle: 使用jQuery修改整个页面
 
 ```yml
 tests:
-  - text: 将<code>animated</code>类和<code>hinge</code>添加到您的<code>body</code>元素中。
-    testString: 'assert($("body").hasClass("animated") && $("body").hasClass("hinge"), "Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

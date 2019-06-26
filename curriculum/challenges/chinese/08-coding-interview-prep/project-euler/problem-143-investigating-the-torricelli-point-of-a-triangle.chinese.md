@@ -18,8 +18,8 @@ localeTitle: 问题143：研究三角形的Torricelli点
 
 ```yml
 tests:
-  - text: <code>euler143()</code>应返回30758397。
-    testString: 'assert.strictEqual(euler143(), 30758397, "<code>euler143()</code> should return 30758397.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

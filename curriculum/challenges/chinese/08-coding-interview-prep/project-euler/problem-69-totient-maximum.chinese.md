@@ -18,8 +18,8 @@ localeTitle: 问题69大欧拉
 
 ```yml
 tests:
-  - text: <code>euler69()</code>应该返回510510。
-    testString: 'assert.strictEqual(euler69(), 510510, "<code>euler69()</code> should return 510510.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

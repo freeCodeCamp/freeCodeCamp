@@ -18,8 +18,8 @@ localeTitle: 问题335：收集豆子
 
 ```yml
 tests:
-  - text: <code>euler335()</code>应返回5032316。
-    testString: 'assert.strictEqual(euler335(), 5032316, "<code>euler335()</code> should return 5032316.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

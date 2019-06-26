@@ -17,14 +17,8 @@ localeTitle: 找到比第一场比赛更多的东西
 
 ```yml
 tests:
-  - text: 你的正则表达式<code>starRegex</code>应该使用全局标志<code>g</code>
-    testString: 'assert(starRegex.flags.match(/g/).length == 1, "Your regex <code>starRegex</code> should use the global flag <code>g</code>");'
-  - text: 你的正则表达式<code>starRegex</code>应该使用不区分大小写的标志<code>i</code>
-    testString: 'assert(starRegex.flags.match(/i/).length == 1, "Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>");'
-  - text: 您的匹配应匹配<code>&quot;Twinkle&quot;</code>一词的出现次数
-    testString: 'assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), "Your match should match both occurrences of the word <code>"Twinkle"</code>");'
-  - text: 您的匹配<code>result</code>应该包含两个元素。
-    testString: 'assert(result.length == 2, "Your match <code>result</code> should have two elements in it.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

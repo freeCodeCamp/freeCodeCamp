@@ -17,14 +17,8 @@ localeTitle: 使用CSS类来设置元素的样式
 
 ```yml
 tests:
-  - text: 你的<code>h2</code>元素应该是红色的。
-    testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
-  - text: 你的<code>h2</code>元素应该有<code>red-text</code>类。
-    testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");'
-  - text: 样式表应声明一个<code>red-text</code>类，并将其颜色设置为红色。
-    testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.");'
-  - text: '不要在<code>h2</code>元素中使用<code>style=&quot;color: red&quot;</code>内联样式声明。'
-    testString: 'assert($("h2").attr("style") === undefined, "Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

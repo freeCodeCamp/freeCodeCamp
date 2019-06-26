@@ -17,10 +17,8 @@ localeTitle: 使用解构分配从对象分配变量
 
 ```yml
 tests:
-  - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code>应为<code>79</code>
-    testString: 'assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, "<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>");'
-  - text: 使用了重新分配的解构
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),"destructuring with reassignment was used");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题356：三次多项式的最大根
 
 ```yml
 tests:
-  - text: <code>euler356()</code>应该返回28010159。
-    testString: 'assert.strictEqual(euler356(), 28010159, "<code>euler356()</code> should return 28010159.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

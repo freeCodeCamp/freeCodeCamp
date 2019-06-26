@@ -17,14 +17,8 @@ localeTitle: 从链接列表中删除元素
 
 ```yml
 tests:
-  - text: 您的<code>LinkedList</code>类应该有一个<code>remove</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.remove === "function")}()), "Your <code>LinkedList</code> class should have a <code>remove</code> method.");'
-  - text: <code>remove</code>第一个节点时， <code>remove</code>方法应重新分配<code>head</code>到第二个节点。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.remove("cat"); return test.head().element === "dog"}()), "Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.");'
-  - text: 对于每个删除的节点，您的<code>remove</code>方法应该将链表的<code>length</code>减少一个。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.remove("cat"); return test.size() === 1})(), "Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.");'
-  - text: 您的<code>remove</code>方法应该将已删除节点的上<code>next</code>节点的引用重新分配给已删除节点的<code>next</code>引用。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog");test.add("kitten"); test.remove("dog"); return test.head().next.element === "kitten"})(), "Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

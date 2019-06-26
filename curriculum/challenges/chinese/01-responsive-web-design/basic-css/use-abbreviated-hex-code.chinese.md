@@ -17,22 +17,8 @@ localeTitle: 使用缩写的十六进制代码
 
 ```yml
 tests:
-  - text: 给你的<code>h1</code>元素添加<code>I am red!</code>的文本<code>I am red!</code> <code>color</code>红色。
-    testString: 'assert($(".red-text").css("color") === "rgb(255, 0, 0)", "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.");'
-  - text: '使用缩写<code>hex code</code>表示红色而不是十六进制代码<code>#FF0000</code> 。'
-    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi), "Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.");'
-  - text: 给你的<code>h1</code>元素添加<code>I am green!</code>的文本<code>I am green!</code> <code>color</code>绿色。
-    testString: 'assert($(".green-text").css("color") === "rgb(0, 255, 0)", "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.");'
-  - text: '使用缩写的<code>hex code</code>表示绿色而不是十六进制代码<code>#00FF00</code> 。'
-    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.");'
-  - text: 给你的<code>h1</code>元素添加<code>I am cyan!</code>文字<code>I am cyan!</code>在<code>color</code>青色。
-    testString: 'assert($(".cyan-text").css("color") === "rgb(0, 255, 255)", "Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.");'
-  - text: '使用缩写的<code>hex code</code>代替十六进制代码<code>#00FFFF</code> 。'
-    testString: 'assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.");'
-  - text: 给你的<code>h1</code>元素文字<code>I am fuchsia!</code> <code>color</code>紫红色。
-    testString: 'assert($(".fuchsia-text").css("color") === "rgb(255, 0, 255)", "Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.");'
-  - text: '使用缩写的<code>hex code</code>作为颜色的紫红色而不是十六进制代码<code>#FF00FF</code> 。'
-    testString: 'assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

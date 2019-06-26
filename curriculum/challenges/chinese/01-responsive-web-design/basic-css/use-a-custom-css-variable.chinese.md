@@ -17,14 +17,8 @@ localeTitle: 使用自定义CSS变量
 
 ```yml
 tests:
-  - text: 将<code>--penguin-skin</code>变量应用于<code>penguin-top</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.");'
-  - text: 将<code>--penguin-skin</code>变量应用于<code>penguin-bottom</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
-  - text: 将<code>--penguin-skin</code>变量应用于<code>right-hand</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.");'
-  - text: 将<code>--penguin-skin</code>变量应用于<code>left-hand</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

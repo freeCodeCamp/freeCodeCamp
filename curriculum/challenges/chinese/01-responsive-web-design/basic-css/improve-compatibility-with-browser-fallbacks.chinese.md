@@ -17,8 +17,8 @@ localeTitle: 改善与浏览器回退的兼容性
 
 ```yml
 tests:
-  - text: 您的<code>.red-box</code>规则应包括在现有<code>background</code>声明之前立即将<code>background</code>设置为红色的后备。
-    testString: 'assert(code.match(/.red-box\s*{[^}]*background:\s*(red|#ff0000|#f00|rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*;\s*background:\s*var\(\s*--red-color\s*\);/gi), "Your <code>.red-box</code> rule should include a fallback with the <code>background</code> set to red immediately before the existing <code>background</code> declaration.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

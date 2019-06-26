@@ -17,14 +17,8 @@ localeTitle: 标题与h2元素
 
 ```yml
 tests:
-  - text: 创建一个<code>h2</code>元素。
-    testString: 'assert(($("h2").length > 0), "Create an <code>h2</code> element.");'
-  - text: 确保您的<code>h2</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, "Make sure your <code>h2</code> element has a closing tag.");'
-  - text: 您的<code>h2</code>元素应该包含文本“CatPhotoApp”。
-    testString: 'assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), "Your <code>h2</code> element should have the text "CatPhotoApp".");'
-  - text: 你的<code>h1</code>元素应该有“Hello World”文本。
-    testString: 'assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), "Your <code>h1</code> element should have the text "Hello World".");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

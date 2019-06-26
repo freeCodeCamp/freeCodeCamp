@@ -18,8 +18,8 @@ localeTitle: 问题393：迁移蚂蚁
 
 ```yml
 tests:
-  - text: <code>euler393()</code>应该返回112398351350823100。
-    testString: 'assert.strictEqual(euler393(), 112398351350823100, "<code>euler393()</code> should return 112398351350823100.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

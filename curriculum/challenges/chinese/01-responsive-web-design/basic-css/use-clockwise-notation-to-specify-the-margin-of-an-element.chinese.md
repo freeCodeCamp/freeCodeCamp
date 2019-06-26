@@ -17,14 +17,8 @@ localeTitle: 使用顺时针符号指定元素的边距
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给元素顶部<code>40px</code>的<code>margin</code> 。
-    testString: 'assert($(".blue-box").css("margin-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.");'
-  - text: 您的<code>blue-box</code>类应该赋予元素<code>20px</code> <code>margin</code>的权利。
-    testString: 'assert($(".blue-box").css("margin-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.");'
-  - text: 你的<code>blue-box</code>类应该给元素的底部提供<code>20px</code>的<code>margin</code> 。
-    testString: 'assert($(".blue-box").css("margin-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.");'
-  - text: 你的<code>blue-box</code>类应该给元素左边<code>40px</code>的<code>margin</code> 。
-    testString: 'assert($(".blue-box").css("margin-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

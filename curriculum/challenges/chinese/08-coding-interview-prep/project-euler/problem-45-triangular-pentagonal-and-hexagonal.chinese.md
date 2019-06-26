@@ -18,8 +18,8 @@ undefined
 
 ```yml
 tests:
-  - text: <code>triPentaHexa(40756)</code>应该返回1533776805。
-    testString: 'assert.strictEqual(triPentaHexa(40756), 1533776805, "<code>triPentaHexa(40756)</code> should return 1533776805.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

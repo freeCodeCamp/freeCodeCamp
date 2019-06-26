@@ -17,8 +17,8 @@ localeTitle: 更改特定区域的变量
 
 ```yml
 tests:
-  - text: <code>penguin</code>类应该将<code>--penguin-belly</code>变量重新分配为<code>white</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

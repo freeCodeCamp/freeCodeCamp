@@ -20,12 +20,8 @@ localeTitle: 使用jQuery从元素中删除类
 
 ```yml
 tests:
-  - text: 从所有<code>button</code>元素中删除<code>btn-default</code>类。
-    testString: 'assert($(".btn-default").length === 0, "Remove the <code>btn-default</code> class from all of your <code>button</code> elements.");'
-  - text: 仅使用jQuery从元素中删除此类。
-    testString: 'assert(code.match(/btn btn-default/g), "Only use jQuery to remove this class from the element.");'
-  - text: 只删除<code>btn-default</code>类。
-    testString: 'assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*("|")\s*btn-default\s*("|")[\s\v]*\)/gm), "Only remove the <code>btn-default</code> class.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

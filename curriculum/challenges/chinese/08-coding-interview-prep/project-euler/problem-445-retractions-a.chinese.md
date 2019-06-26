@@ -18,8 +18,8 @@ localeTitle: 问题445：撤回A.
 
 ```yml
 tests:
-  - text: <code>euler445()</code>应该返回659104042。
-    testString: 'assert.strictEqual(euler445(), 659104042, "<code>euler445()</code> should return 659104042.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

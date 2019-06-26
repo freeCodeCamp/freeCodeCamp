@@ -18,8 +18,8 @@ localeTitle: 问题198：模糊数字
 
 ```yml
 tests:
-  - text: <code>euler198()</code>应该返回52374425。
-    testString: 'assert.strictEqual(euler198(), 52374425, "<code>euler198()</code> should return 52374425.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

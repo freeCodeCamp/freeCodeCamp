@@ -18,8 +18,8 @@ localeTitle: 问题73：计算范围内的分数
 
 ```yml
 tests:
-  - text: <code>euler73()</code>应该返回7295372。
-    testString: 'assert.strictEqual(euler73(), 7295372, "<code>euler73()</code> should return 7295372.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

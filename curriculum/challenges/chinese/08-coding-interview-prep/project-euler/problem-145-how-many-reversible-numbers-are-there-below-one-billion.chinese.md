@@ -18,8 +18,8 @@ localeTitle: 问题145：有多少可逆数字低于十亿？
 
 ```yml
 tests:
-  - text: <code>euler145()</code>应该返回608720。
-    testString: 'assert.strictEqual(euler145(), 608720, "<code>euler145()</code> should return 608720.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

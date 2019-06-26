@@ -17,26 +17,8 @@ localeTitle: 与逻辑和运算符的比较
 
 ```yml
 tests:
-  - text: 你应该使用一次<code>&amp;&amp;</code>运算符
-    testString: 'assert(code.match(/&&/g).length === 1, "You should use the <code>&&</code> operator once");'
-  - text: 你应该只有一个<code>if</code>语句
-    testString: 'assert(code.match(/if/g).length === 1, "You should only have one <code>if</code> statement");'
-  - text: <code>testLogicalAnd(0)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(0) === "No", "<code>testLogicalAnd(0)</code> should return "No"");'
-  - text: <code>testLogicalAnd(24)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(24) === "No", "<code>testLogicalAnd(24)</code> should return "No"");'
-  - text: <code>testLogicalAnd(25)</code>应返回“是”
-    testString: 'assert(testLogicalAnd(25) === "Yes", "<code>testLogicalAnd(25)</code> should return "Yes"");'
-  - text: <code>testLogicalAnd(30)</code>应该返回“是”
-    testString: 'assert(testLogicalAnd(30) === "Yes", "<code>testLogicalAnd(30)</code> should return "Yes"");'
-  - text: <code>testLogicalAnd(50)</code>应该返回“是”
-    testString: 'assert(testLogicalAnd(50) === "Yes", "<code>testLogicalAnd(50)</code> should return "Yes"");'
-  - text: <code>testLogicalAnd(51)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(51) === "No", "<code>testLogicalAnd(51)</code> should return "No"");'
-  - text: <code>testLogicalAnd(75)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(75) === "No", "<code>testLogicalAnd(75)</code> should return "No"");'
-  - text: <code>testLogicalAnd(80)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(80) === "No", "<code>testLogicalAnd(80)</code> should return "No"");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

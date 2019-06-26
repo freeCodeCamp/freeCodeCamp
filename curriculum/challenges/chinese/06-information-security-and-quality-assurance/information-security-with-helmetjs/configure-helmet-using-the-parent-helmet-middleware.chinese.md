@@ -18,8 +18,8 @@ localeTitle: 配置头盔使用“父”头盔（）中间件
 
 ```yml
 tests:
-  - text: 没有测试 - 这是一个描述性的挑战
-    testString: assert(true)
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

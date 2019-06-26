@@ -17,24 +17,8 @@ localeTitle: 使用对象进行查找
 
 ```yml
 tests:
-  - text: <code>phoneticLookup(&quot;alpha&quot;)</code>应该等于<code>&quot;Adams&quot;</code>
-    testString: 'assert(phoneticLookup("alpha") === "Adams", "<code>phoneticLookup("alpha")</code> should equal <code>"Adams"</code>");'
-  - text: <code>phoneticLookup(&quot;bravo&quot;)</code>应该等于<code>&quot;Boston&quot;</code>
-    testString: 'assert(phoneticLookup("bravo") === "Boston", "<code>phoneticLookup("bravo")</code> should equal <code>"Boston"</code>");'
-  - text: <code>phoneticLookup(&quot;charlie&quot;)</code>应该等于<code>&quot;Chicago&quot;</code>
-    testString: 'assert(phoneticLookup("charlie") === "Chicago", "<code>phoneticLookup("charlie")</code> should equal <code>"Chicago"</code>");'
-  - text: <code>phoneticLookup(&quot;delta&quot;)</code>应该等于<code>&quot;Denver&quot;</code>
-    testString: 'assert(phoneticLookup("delta") === "Denver", "<code>phoneticLookup("delta")</code> should equal <code>"Denver"</code>");'
-  - text: <code>phoneticLookup(&quot;echo&quot;)</code>应该等于<code>&quot;Easy&quot;</code>
-    testString: 'assert(phoneticLookup("echo") === "Easy", "<code>phoneticLookup("echo")</code> should equal <code>"Easy"</code>");'
-  - text: <code>phoneticLookup(&quot;foxtrot&quot;)</code>应该等于<code>&quot;Frank&quot;</code>
-    testString: 'assert(phoneticLookup("foxtrot") === "Frank", "<code>phoneticLookup("foxtrot")</code> should equal <code>"Frank"</code>");'
-  - text: <code>phoneticLookup(&quot;&quot;)</code>应该等于<code>undefined</code>
-    testString: 'assert(typeof phoneticLookup("") === "undefined", "<code>phoneticLookup("")</code> should equal <code>undefined</code>");'
-  - text: 您不应该修改<code>return</code>语句
-    testString: 'assert(code.match(/return\sresult;/), "You should not modify the <code>return</code> statement");'
-  - text: 您不应该使用<code>case</code> ， <code>switch</code>或<code>if</code>语句
-    testString: 'assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,"")), "You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements"); '
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,14 +17,8 @@ localeTitle: 使用id属性为元素设置样式
 
 ```yml
 tests:
-  - text: 为<code>form</code>元素添加<code>cat-photo-form</code>的id。
-    testString: 'assert($("form").attr("id") === "cat-photo-form", "Give your <code>form</code> element the id of <code>cat-photo-form</code>.");'
-  - text: 您的<code>form</code>元素应具有绿色的<code>background-color</code> 。
-    testString: 'assert($("#cat-photo-form").css("background-color") === "rgb(0, 128, 0)", "Your <code>form</code> element should have the <code>background-color</code> of green.");'
-  - text: 确保您的<code>form</code>元素具有<code>id</code>属性。
-    testString: 'assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, "Make sure your <code>form</code> element has an <code>id</code> attribute.");'
-  - text: 不要为<code>form</code>任何<code>class</code>或<code>style</code>属性。
-    testString: 'assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

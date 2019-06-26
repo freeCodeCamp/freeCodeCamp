@@ -18,16 +18,8 @@ localeTitle: 阶乘
 
 ```yml
 tests:
-  - text: <code>factorial</code>是一种功能。
-    testString: 'assert(typeof factorial === "function", "<code>factorial</code> is a function.");'
-  - text: <code>factorial(2)</code>应该返回一个数字。
-    testString: 'assert(typeof factorial(2) === "number", "<code>factorial(2)</code> should return a number.");'
-  - text: <code>factorial(3)</code>应该返回6.“）
-    testString: 'assert.equal(factorial(3),results[0],"<code>factorial(3)</code> should return 6.");'
-  - text: <code>factorial(3)</code>应返回120.“）
-    testString: 'assert.equal(factorial(5),results[1],"<code>factorial(3)</code> should return 120.");'
-  - text: '<code>factorial(3)</code>应返回3,628,800。“）'
-    testString: 'assert.equal(factorial(10),results[2],"<code>factorial(3)</code> should return 3,628,800.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

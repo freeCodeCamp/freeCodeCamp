@@ -18,10 +18,8 @@ localeTitle: 应用默认引导按钮样式
 
 ```yml
 tests:
-  - text: 将<code>btn</code>类应用于每个<code>button</code>元素。
-    testString: 'assert($(".btn").length > 5, "Apply the <code>btn</code> class to each of your <code>button</code> elements.");'
-  - text: 将<code>btn-default</code>类应用于每个<code>button</code>元素。
-    testString: 'assert($(".btn-default").length > 5, "Apply the <code>btn-default</code> class to each of your <code>button</code> elements.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

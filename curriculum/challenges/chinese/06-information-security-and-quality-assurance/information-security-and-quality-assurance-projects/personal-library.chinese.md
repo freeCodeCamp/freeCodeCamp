@@ -19,26 +19,8 @@ localeTitle: 个人图书馆
 
 ```yml
 tests:
-  - text: 我的网站上的任何内容都不会缓存在我的客户端中。
-    testString: ''
-  - text: 标题会说该网站由'PHP 4.2.0'提供支持，即使它不是（作为安全措施）。
-    testString: ''
-  - text: 我可以将标题发布到/ api / books以添加书籍，并返回将是具有标题和唯一_id的对象。
-    testString: ''
-  - text: 我可以获取/ api / books来检索包含title，_id和commentcount的所有书籍的数组。
-    testString: ''
-  - text: '我可以使用/ api / books / {id}来检索包含_title，_id和注释数组的书的单个对象（如果没有注释，则为空数组）。'
-    testString: ''
-  - text: '我可以在/ api / books / {id}上发表评论，为书籍添加评论，并返回类似于get / api / books / {id}的书籍对象，包括新评论。'
-    testString: ''
-  - text: '我可以删除/ api / books / {_ id}从集合中删除一本书。如果成功，返回将“删除成功”。'
-    testString: ''
-  - text: 如果我试图要求一本不存在的书，我将被退回'没有书存在'。
-    testString: ''
-  - text: 我可以向/ api / books发送删除请求以删除数据库中的所有书籍。如果成功，返回将是“完全删除成功”。
-    testString: ''
-  - text: 所有6项功能测试都是完整的并且通过。
-    testString: ''
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

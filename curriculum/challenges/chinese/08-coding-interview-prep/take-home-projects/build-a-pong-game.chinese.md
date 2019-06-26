@@ -18,7 +18,9 @@ localeTitle: 建立乒乓球比赛
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

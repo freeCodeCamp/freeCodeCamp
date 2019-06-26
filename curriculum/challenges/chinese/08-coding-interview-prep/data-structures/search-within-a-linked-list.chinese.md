@@ -17,16 +17,8 @@ localeTitle: 在链接列表中搜索
 
 ```yml
 tests:
-  - text: 您的<code>LinkedList</code>类应该有一个<code>indexOf</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.indexOf === "function")}()), "Your <code>LinkedList</code> class should have a <code>indexOf</code> method.");'
-  - text: 您的<code>LinkedList</code>类应该有一个<code>elementAt</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.elementAt === "function")}()), "Your <code>LinkedList</code> class should have a <code>elementAt</code> method.");'
-  - text: 您的<code>size</code>方法应返回链表的长度
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.size() === 3}()), "Your <code>size</code> method should return the length of the linked list");'
-  - text: <code>indexOf</code>方法应该返回给定元素的索引。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.indexOf("kitten") === 2}()), "Your <code>indexOf</code> method should return the index of the given element.");'
-  - text: 您的<code>elementAt</code>方法应该返回给定索引处的元素。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.elementAt(1) === "dog"}()), "Your <code>elementAt</code> method should return at element at a given index.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

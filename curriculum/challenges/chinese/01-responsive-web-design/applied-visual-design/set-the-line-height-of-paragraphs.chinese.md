@@ -17,8 +17,8 @@ localeTitle: 设置段落的行高
 
 ```yml
 tests:
-  - text: 您的代码应将<code>p</code>标记的<code>line-height</code>设置为25像素。
-    testString: 'assert($("p").css("line-height") == "25px", "Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 使用Hex代码表示特定颜色
 
 ```yml
 tests:
-  - text: 给你的<code>body</code>元素黑色的背景颜色。
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Give your <code>body</code> element the background-color of black.");'
-  - text: 使用<code>hex code</code>替换黑色而不是<code>black</code> 。
-    testString: 'assert(code.match(/body\s*{(([\s\S]*;\s*?)|\s*?)background.*\s*:\s*?#000(000)?((\s*})|(;[\s\S]*?}))/gi), "Use the <code>hex code</code> for the color black instead of the word <code>black</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

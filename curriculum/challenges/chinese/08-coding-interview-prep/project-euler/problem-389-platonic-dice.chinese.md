@@ -18,8 +18,8 @@ localeTitle: 问题389：柏拉图式骰子
 
 ```yml
 tests:
-  - text: <code>euler389()</code>应该返回2406376.3623。
-    testString: 'assert.strictEqual(euler389(), 2406376.3623, "<code>euler389()</code> should return 2406376.3623.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

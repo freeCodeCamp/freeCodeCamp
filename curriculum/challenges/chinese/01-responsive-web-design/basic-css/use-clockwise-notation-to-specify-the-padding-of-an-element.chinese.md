@@ -17,16 +17,8 @@ localeTitle: 使用顺时针符号指定元素的填充
 
 ```yml
 tests:
-  - text: 你的<code>blue-box</code>类应该给出<code>40px</code> <code>padding</code>元素的顶部。
-    testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给出<code>20px</code> <code>padding</code>元素的权利。
-    testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给元素的底部提供<code>20px</code>的<code>padding</code> 。
-    testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.");'
-  - text: 你的<code>blue-box</code>类应该给元素左边<code>padding</code> <code>40px</code> 。
-    testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.");'
-  - text: 您应该使用顺时针符号来设置<code>blue-box</code>类的填充。
-    testString: 'assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), "You should use the clockwise notation to set the padding of <code>blue-box</code> class.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

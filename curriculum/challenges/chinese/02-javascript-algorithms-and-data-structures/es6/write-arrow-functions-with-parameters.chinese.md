@@ -17,16 +17,8 @@ localeTitle: 用参数写箭头函数
 
 ```yml
 tests:
-  - text: 用户确实替换了<code>var</code>关键字。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g), "User did replace <code>var</code> keyword.");'
-  - text: <code>myConcat</code>应该是一个常量变量（使用<code>const</code> ）。
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+myConcat/g), "<code>myConcat</code> should be a constant variable (by using <code>const</code>).");'
-  - text: <code>myConcat</code>应该是一个函数
-    testString: 'assert(typeof myConcat === "function", "<code>myConcat</code> should be a function");'
-  - text: <code>myConcat()</code>返回正确的<code>array</code>
-    testString: 'assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, "<code>myConcat()</code> returns the correct <code>array</code>");'
-  - text: <code>function</code>关键字未使用。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

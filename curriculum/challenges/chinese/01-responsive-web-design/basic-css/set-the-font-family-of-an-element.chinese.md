@@ -17,8 +17,8 @@ localeTitle: 设置元素的字体系列
 
 ```yml
 tests:
-  - text: 你的<code>p</code>元素应该使用字体<code>monospace</code> 。
-    testString: 'assert($("p").not(".red-text").css("font-family").match(/monospace/i), "Your <code>p</code> elements should use the font <code>monospace</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

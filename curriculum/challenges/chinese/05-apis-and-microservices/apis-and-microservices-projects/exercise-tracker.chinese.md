@@ -20,16 +20,8 @@ isRequired: true
 
 ```yml
 tests:
-  - text: 我可以通过将表单数据用户名发布到/ api / exercise / new-user来创建用户，并返回将是具有用户名和<code>_id</code>的对象。
-    testString: ''
-  - text: 我可以通过使用与创建用户时相同的信息获取api / exercise / users来获得所有用户的数组。
-    testString: ''
-  - text: '我可以通过将表单数据userId（_id），描述，持续时间和可选日期发布到/ api / exercise / add来向任何用户添加练习。如果没有提供日期，它将使用当前日期。应用程序将返回添加了练习字段的用户对象。'
-    testString: ''
-  - text: 我可以通过使用userId（_id）参数获取/ api / exercise / log来检索任何用户的完整练习日志。应用程序将返回添加了数组日志和计数（总运动计数）的用户对象。
-    testString: ''
-  - text: '我还可以通过传递from和to或limit的可选参数来检索任何用户的部分日志。 （日期格式yyyy-mm-dd，limit = int）'
-    testString: ''
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题130：具有主要repunit属性的复合材料
 
 ```yml
 tests:
-  - text: <code>euler130()</code>应返回149253。
-    testString: 'assert.strictEqual(euler130(), 149253, "<code>euler130()</code> should return 149253.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 使用解构分配从嵌套对象分配变量
 
 ```yml
 tests:
-  - text: <code>maxOfTomorrow</code>等于<code>84.6</code>
-    testString: 'assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, "<code>maxOfTomorrow</code> equals <code>84.6</code>");'
-  - text: 使用嵌套解构
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),"nested destructuring was used");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

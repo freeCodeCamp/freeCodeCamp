@@ -18,18 +18,8 @@ localeTitle: 将状态逻辑提取到Redux
 
 ```yml
 tests:
-  - text: const <code>ADD</code>应该存在并保持一个等于字符串<code>ADD</code>的值
-    testString: 'assert(ADD === "ADD", "The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>");'
-  - text: 动作创建者<code>addMessage</code>应返回<code>type</code>等于<code>ADD</code>的对象，并且消息等于传入的消息。
-    testString: 'assert((function() { const addAction = addMessage("__TEST__MESSAGE__"); return addAction.type === ADD && addAction.message === "__TEST__MESSAGE__"; })(), "The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.");'
-  - text: <code>messageReducer</code>应该是一个函数。
-    testString: 'assert(typeof messageReducer === "function", "<code>messageReducer</code> should be a function.");'
-  - text: 存储应该存在并且初始状态设置为空数组。
-    testString: 'assert((function() { const initialState = store.getState(); return typeof store === "object" && initialState.length === 0; })(), "The store should exist and have an initial state set to an empty array.");'
-  - text: 对商店调度<code>addMessage</code>应该<code>addMessage</code>向状态中保存的消息数组添加新消息。
-    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage("__A__TEST__MESSAGE")); const addState = store.getState(); return (isFrozen && addState[0] === "__A__TEST__MESSAGE"); })(), "Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.");'
-  - text: 如果使用任何其他操作调用， <code>messageReducer</code>应返回当前状态。
-    testString: 'assert((function() { const addState = store.getState(); store.dispatch({type: "FAKE_ACTION"}); const testState = store.getState(); return (addState === testState); })(), "The <code>messageReducer</code> should return the current state if called with any other actions.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

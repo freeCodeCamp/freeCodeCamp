@@ -18,8 +18,8 @@ localeTitle: 问题367：Bozo排序
 
 ```yml
 tests:
-  - text: <code>euler367()</code>应该返回48271207。
-    testString: 'assert.strictEqual(euler367(), 48271207, "<code>euler367()</code> should return 48271207.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

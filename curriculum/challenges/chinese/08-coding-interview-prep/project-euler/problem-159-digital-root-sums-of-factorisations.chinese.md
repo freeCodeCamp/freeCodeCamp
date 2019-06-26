@@ -18,8 +18,8 @@ localeTitle: 问题159：因子的数字根和
 
 ```yml
 tests:
-  - text: <code>euler159()</code>应返回14489159。
-    testString: 'assert.strictEqual(euler159(), 14489159, "<code>euler159()</code> should return 14489159.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

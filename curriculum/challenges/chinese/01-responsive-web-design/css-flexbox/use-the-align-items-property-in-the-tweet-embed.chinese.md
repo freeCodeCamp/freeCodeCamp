@@ -17,8 +17,8 @@ localeTitle: 使用Tweet Embed中的align-items属性
 
 ```yml
 tests:
-  - text: <code>.follow-btn</code>元素应将<code>align-items</code>属性设置为center的值。
-    testString: 'assert($(".follow-btn").css("align-items") == "center", "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

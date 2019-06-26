@@ -17,10 +17,8 @@ localeTitle: 更改元素的相对位置
 
 ```yml
 tests:
-  - text: <code>h2</code>元素的<code>position</code>属性应设置为<code>relative</code> 。
-    testString: 'assert($("h2").css("position") == "relative", "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.");'
-  - text: 您的代码应该使用CSS偏移来相对地将<code>h2</code> 15px定位在远离其正常位置的<code>top</code> 。
-    testString: 'assert($("h2").css("top") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

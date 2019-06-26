@@ -18,7 +18,9 @@ localeTitle: 构建图像搜索抽象层
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

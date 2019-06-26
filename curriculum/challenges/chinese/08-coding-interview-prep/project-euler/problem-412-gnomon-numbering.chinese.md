@@ -18,8 +18,8 @@ localeTitle: 问题412：Gnomon编号
 
 ```yml
 tests:
-  - text: <code>euler412()</code>应该返回38788800。
-    testString: 'assert.strictEqual(euler412(), 38788800, "<code>euler412()</code> should return 38788800.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

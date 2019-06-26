@@ -18,20 +18,8 @@ localeTitle: 他们
 
 ```yml
 tests:
-  - text: <code>isValid</code>应该是一个函数。
-    testString: 'assert(typeof isValid=="function","<code>isValid</code> should be a function.");'
-  - text: '<code>isValid(&quot;&quot;+tests[0]+&quot;&quot;)</code>应该返回一个布尔值。'
-    testString: 'assert(typeof isValid(tests[0])=="boolean","<code>isValid(""+tests[0]+"")</code> should return a boolean.");'
-  - text: '<code>isValid(&quot;&quot;+tests[0]+&quot;&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(isValid(tests[0]),true,"<code>isValid(""+tests[0]+"")</code> should return <code>true</code>.");'
-  - text: '<code>isValid(&quot;&quot;+tests[1]+&quot;&quot;)</code>应返回<code>false</code> 。'
-    testString: 'assert.equal(isValid(tests[1]),false,"<code>isValid(""+tests[1]+"")</code> should return <code>false</code>.");'
-  - text: '<code>isValid(&quot;&quot;+tests[2]+&quot;&quot;)</code>应返回<code>false</code> 。'
-    testString: 'assert.equal(isValid(tests[2]),false,"<code>isValid(""+tests[2]+"")</code> should return <code>false</code>.");'
-  - text: '<code>isValid(&quot;&quot;+tests[3]+&quot;&quot;)</code>应该返回<code>false</code> 。'
-    testString: 'assert.equal(isValid(tests[3]),false,"<code>isValid(""+tests[3]+"")</code> should return <code>false</code>.");'
-  - text: '<code>isValid(&quot;&quot;+tests[4]+&quot;&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(isValid(tests[4]),true,"<code>isValid(""+tests[4]+"")</code> should return <code>true</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,10 +18,8 @@ localeTitle: 使用默认道具
 
 ```yml
 tests:
-  - text: <code>ShoppingCart</code>组件应该呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("ShoppingCart").length === 1; })(), "The <code>ShoppingCart</code> component should render.");'
-  - text: '<code>ShoppingCart</code>组件应具有<code>{ items: 0 }</code>的默认支柱。'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find("ShoppingCart").props().items === 0; })(), "The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

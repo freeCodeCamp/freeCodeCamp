@@ -17,12 +17,8 @@ localeTitle: 将轴添加到可视化
 
 ```yml
 tests:
-  - text: 您的代码应使用<code>axisLeft()</code>方法， <code>yScale</code>作为参数传递。
-    testString: 'assert(code.match(/\.axisLeft\(yScale\)/g), "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.");'
-  - text: 'y轴<code>g</code>元素应具有<code>transform</code>属性以将轴平移（60,0）。'
-    testString: 'assert($("g").eq(1).attr("transform").match(/translate\(60\s*?,\s*?0\)/g), "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).");'
-  - text: 您的代码应该调用<code>yAxis</code> 。
-    testString: 'assert(code.match(/\.call\(yAxis\)/g), "Your code should call the <code>yAxis</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

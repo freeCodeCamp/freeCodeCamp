@@ -17,12 +17,8 @@ localeTitle: 调整文本的背景颜色属性
 
 ```yml
 tests:
-  - text: '您的代码应该将<code>background-color</code>属性添加到设置为<code>rgba(45, 45, 45, 0.1)</code>的<code>h4</code>元素。'
-    testString: 'assert(code.match(/background-color:\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\)/gi), "Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.");'
-  - text: 您的代码应该为<code>h4</code>元素添加<code>padding</code>属性并将其设置为10像素。
-    testString: 'assert($("h4").css("padding-top") == "10px" && $("h4").css("padding-right") == "10px" && $("h4").css("padding-bottom") == "10px" && $("h4").css("padding-left") == "10px", "Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.");'
-  - text: 应删除<code>h4</code>元素上的<code>height</code>属性。
-    testString: 'assert(!($("h4").css("height") == "25px"), "The <code>height</code> property on the <code>h4</code> element should be removed.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

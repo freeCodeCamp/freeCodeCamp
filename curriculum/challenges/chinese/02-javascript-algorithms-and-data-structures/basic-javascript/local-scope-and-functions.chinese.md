@@ -17,10 +17,8 @@ localeTitle: 本地范围和功能
 
 ```yml
 tests:
-  - text: 没有全局<code>myVar</code>变量
-    testString: 'assert(typeof myVar === "undefined", "No global <code>myVar</code> variable");'
-  - text: 添加本地<code>myVar</code>变量
-    testString: 'assert(/var\s+myVar/.test(code), "Add a local <code>myVar</code> variable");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

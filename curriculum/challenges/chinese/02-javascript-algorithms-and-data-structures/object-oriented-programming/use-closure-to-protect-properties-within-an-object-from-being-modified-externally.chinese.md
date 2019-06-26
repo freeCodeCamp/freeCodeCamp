@@ -17,10 +17,8 @@ localeTitle: 使用闭包保护对象内的属性不被外部修改
 
 ```yml
 tests:
-  - text: <code>weight</code>属性应该是私有变量。
-    testString: 'assert(!code.match(/this\.weight/g), "The <code>weight</code> property should be a private variable.");'
-  - text: 你的代码应该在<code>Bird</code>创建一个名为<code>getWeight</code>的方法来返回<code>weight</code> 。
-    testString: 'assert((new Bird()).getWeight() === 15, "Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

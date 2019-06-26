@@ -17,10 +17,8 @@ localeTitle: 使用text-transform属性使文本为大写
 
 ```yml
 tests:
-  - text: <code>h4</code>文本应为大写。
-    testString: 'assert($("h4").css("text-transform") === "uppercase", "The <code>h4</code> text should be uppercase.");'
-  - text: 不应更改h4的原始文本。
-    testString: 'assert(($("h4").text() !== $("h4").text().toUpperCase()), "The original text of the h4 should not be changed.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

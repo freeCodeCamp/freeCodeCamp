@@ -17,10 +17,8 @@ localeTitle: 使用JavaScript迭代循环
 
 ```yml
 tests:
-  - text: 你应该为此使用<code>for</code>循环。
-    testString: 'assert(code.match(/for\s*\(/g).length > 1, "You should be using a <code>for</code> loop for this.");'
-  - text: '<code>myArray</code>应该等于<code>[1,2,3,4,5]</code> 。'
-    testString: 'assert.deepEqual(myArray, [1,2,3,4,5], "<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

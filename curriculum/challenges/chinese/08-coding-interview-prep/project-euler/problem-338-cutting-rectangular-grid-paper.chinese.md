@@ -18,8 +18,8 @@ localeTitle: 问题338：切割矩形网格纸
 
 ```yml
 tests:
-  - text: <code>euler338()</code>应该返回15614292。
-    testString: 'assert.strictEqual(euler338(), 15614292, "<code>euler338()</code> should return 15614292.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

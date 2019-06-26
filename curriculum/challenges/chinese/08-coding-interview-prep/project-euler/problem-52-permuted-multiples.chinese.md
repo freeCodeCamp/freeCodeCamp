@@ -18,8 +18,8 @@ localeTitle: 问题52：置换倍数
 
 ```yml
 tests:
-  - text: <code>permutedMultiples()</code>应该返回142857。
-    testString: 'assert.strictEqual(permutedMultiples(), 142857, "<code>permutedMultiples()</code> should return 142857.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

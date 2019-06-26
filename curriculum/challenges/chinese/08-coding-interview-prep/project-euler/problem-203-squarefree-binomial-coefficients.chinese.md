@@ -18,8 +18,8 @@ localeTitle: 问题203：无平方二项系数
 
 ```yml
 tests:
-  - text: <code>euler203()</code>应该返回34029210557338。
-    testString: 'assert.strictEqual(euler203(), 34029210557338, "<code>euler203()</code> should return 34029210557338.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

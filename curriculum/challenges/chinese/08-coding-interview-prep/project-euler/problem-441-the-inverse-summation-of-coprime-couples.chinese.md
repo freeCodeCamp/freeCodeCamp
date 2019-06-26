@@ -18,8 +18,8 @@ localeTitle: 问题441：互质夫妇的反向总和
 
 ```yml
 tests:
-  - text: <code>euler441()</code>应返回5000088.8395。
-    testString: 'assert.strictEqual(euler441(), 5000088.8395, "<code>euler441()</code> should return 5000088.8395.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

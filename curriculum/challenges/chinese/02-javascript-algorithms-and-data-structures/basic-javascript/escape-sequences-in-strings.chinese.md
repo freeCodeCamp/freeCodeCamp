@@ -17,18 +17,8 @@ localeTitle: 字符串中的转义序列
 
 ```yml
 tests:
-  - text: <code>myStr</code>不应包含任何空格
-    testString: 'assert(!/ /.test(myStr), "<code>myStr</code> should not contain any spaces");'
-  - text: <code>myStr</code>应包含的字符串<code>FirstLine</code> ， <code>SecondLine</code>和<code>ThirdLine</code> （记住区分大小写）
-    testString: 'assert(/FirstLine/.test(myStr) && /SecondLine/.test(myStr) && /ThirdLine/.test(myStr), "<code>myStr</code> should contain the strings <code>FirstLine</code>, <code>SecondLine</code> and <code>ThirdLine</code> (remember case sensitivity)");'
-  - text: <code>FirstLine</code>后面应跟换行符<code>\n</code>
-    testString: 'assert(/FirstLine\n/.test(myStr), "<code>FirstLine</code> should be followed by the newline character <code>\n</code>");'
-  - text: <code>myStr</code>应该包含一个制表字符<code>\t</code> ，它跟在换行符后面
-    testString: 'assert(/\n\t/.test(myStr), "<code>myStr</code> should contain a tab character <code>\t</code> which follows a newline character");'
-  - text: <code>SecondLine</code>应该以反斜杠字符<code>\\</code>开头
-    testString: 'assert(/\SecondLine/.test(myStr), "<code>SecondLine</code> should be preceded by the backslash character <code>\\</code>");'
-  - text: <code>SecondLine</code>和<code>ThirdLine</code>之间应该有换行符
-    testString: 'assert(/SecondLine\nThirdLine/.test(myStr), "There should be a newline character between <code>SecondLine</code> and <code>ThirdLine</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

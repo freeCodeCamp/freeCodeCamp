@@ -17,20 +17,8 @@ localeTitle: 通过样式ID属性覆盖类声明
 
 ```yml
 tests:
-  - text: 您的<code>h1</code>元素应该具有<code>pink-text</code>类。
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: 你的<code>h1</code>元素应该有<code>blue-text</code> 。
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: 为你的<code>h1</code>元素提供<code>orange-text</code>的id。
-    testString: 'assert($("h1").attr("id") === "orange-text", "Give your <code>h1</code> element the id of <code>orange-text</code>.");'
-  - text: 应该只有一个<code>h1</code>元素。
-    testString: 'assert(($("h1").length === 1), "There should be only one <code>h1</code> element.");'
-  - text: 为您的<code>orange-text</code> ID创建一个CSS声明
-    testString: 'assert(code.match(/#orange-text\s*{/gi), "Create a CSS declaration for your <code>orange-text</code> id");'
-  - text: 不要给你的<code>h1</code>任何<code>style</code>属性。
-    testString: 'assert(!code.match(/<h1.*style.*>/gi), "Do not give your <code>h1</code> any <code>style</code> attributes.");'
-  - text: 你的<code>h1</code>元素应该是橙色的。
-    testString: 'assert($("h1").css("color") === "rgb(255, 165, 0)", "Your <code>h1</code> element should be orange.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

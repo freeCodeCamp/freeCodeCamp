@@ -17,26 +17,8 @@ localeTitle: 与逻辑或运算符的比较
 
 ```yml
 tests:
-  - text: 你应该使用<code>||</code>操作员一次
-    testString: 'assert(code.match(/\|\|/g).length === 1, "You should use the <code>||</code> operator once");'
-  - text: 你应该只有一个<code>if</code>语句
-    testString: 'assert(code.match(/if/g).length === 1, "You should only have one <code>if</code> statement");'
-  - text: <code>testLogicalOr(0)</code>应返回“Outside”
-    testString: 'assert(testLogicalOr(0) === "Outside", "<code>testLogicalOr(0)</code> should return "Outside"");'
-  - text: <code>testLogicalOr(9)</code>应返回“Outside”
-    testString: 'assert(testLogicalOr(9) === "Outside", "<code>testLogicalOr(9)</code> should return "Outside"");'
-  - text: <code>testLogicalOr(10)</code>应返回“Inside”
-    testString: 'assert(testLogicalOr(10) === "Inside", "<code>testLogicalOr(10)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(15)</code>应返回“Inside”
-    testString: 'assert(testLogicalOr(15) === "Inside", "<code>testLogicalOr(15)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(19)</code>应该返回“Inside”
-    testString: 'assert(testLogicalOr(19) === "Inside", "<code>testLogicalOr(19)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(20)</code>应该返回“Inside”
-    testString: 'assert(testLogicalOr(20) === "Inside", "<code>testLogicalOr(20)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(21)</code>应该返回“Outside”
-    testString: 'assert(testLogicalOr(21) === "Outside", "<code>testLogicalOr(21)</code> should return "Outside"");'
-  - text: <code>testLogicalOr(25)</code>应返回“Outside”
-    testString: 'assert(testLogicalOr(25) === "Outside", "<code>testLogicalOr(25)</code> should return "Outside"");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

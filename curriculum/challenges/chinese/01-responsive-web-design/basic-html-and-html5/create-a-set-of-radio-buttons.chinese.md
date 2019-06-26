@@ -17,20 +17,8 @@ localeTitle: 创建一组单选按钮
 
 ```yml
 tests:
-  - text: 您的页面应该有两个单选按钮元素。
-    testString: 'assert($("input[type="radio"]").length > 1, "Your page should have two radio button elements.");'
-  - text: 为您的单选按钮提供<code>indoor-outdoor</code>的<code>name</code>属性。
-    testString: 'assert($("label > input[type="radio"]").filter("[name="indoor-outdoor"]").length > 1, "Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.");'
-  - text: 两个单选按钮元素中的每一个都应嵌套在自己的<code>label</code>元素中。
-    testString: 'assert($("label > input[type="radio"]:only-child").length > 1, "Each of your two radio button elements should be nested in its own <code>label</code> element.");'
-  - text: 确保每个<code>label</code>元素都有一个结束标记。
-    testString: 'assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length), "Make sure each of your <code>label</code> elements has a closing tag.");'
-  - text: 您的一个单选按钮应该是<code>indoor</code>标签。
-    testString: 'assert($("label").text().match(/indoor/gi), "One of your radio buttons should have the label <code>indoor</code>.");'
-  - text: 您的一个单选按钮应该是<code>outdoor</code>标签。
-    testString: 'assert($("label").text().match(/outdoor/gi), "One of your radio buttons should have the label <code>outdoor</code>.");'
-  - text: 应在<code>form</code>标记中添加每个单选按钮元素。
-    testString: 'assert($("label").parent().get(0).tagName.match("FORM"), "Each of your radio button elements should be added within the <code>form</code> tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

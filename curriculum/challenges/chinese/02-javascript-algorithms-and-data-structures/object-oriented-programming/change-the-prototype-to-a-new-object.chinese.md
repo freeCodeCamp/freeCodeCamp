@@ -17,14 +17,8 @@ localeTitle: 将Prototype更改为新对象
 
 ```yml
 tests:
-  - text: <code>Dog.prototype</code>应该设置为一个新对象。
-    testString: 'assert((/Dog\.prototype\s*?=\s*?{/).test(code), "<code>Dog.prototype</code> should be set to a new object.");'
-  - text: <code>Dog.prototype</code>应该具有属性<code>numLegs</code> 。
-    testString: 'assert(Dog.prototype.numLegs !== undefined, "<code>Dog.prototype</code> should have the property <code>numLegs</code>.");'
-  - text: <code>Dog.prototype</code>应该有方法<code>eat()</code> 。
-    testString: 'assert(typeof Dog.prototype.eat === "function", "<code>Dog.prototype</code> should have the method <code>eat()</code>."); '
-  - text: <code>Dog.prototype</code>应该有方法<code>describe()</code> 。
-    testString: 'assert(typeof Dog.prototype.describe === "function", "<code>Dog.prototype</code> should have the method <code>describe()</code>."); '
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

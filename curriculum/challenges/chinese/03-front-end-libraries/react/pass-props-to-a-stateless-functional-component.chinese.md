@@ -18,16 +18,8 @@ localeTitle: 将道具传递给无状态功能组件
 
 ```yml
 tests:
-  - text: <code>Calendar</code>组件应返回单个<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().type() === "div"; })(), "The <code>Calendar</code> component should return a single <code>div</code> element.");'
-  - text: <code>Calendar</code>组件的第二个子<code>CurrentDate</code>应该是<code>CurrentDate</code>组件。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().childAt(1).name() === "CurrentDate"; })(), "The second child of the <code>Calendar</code> component should be the <code>CurrentDate</code> component.");'
-  - text: <code>CurrentDate</code>组件应该有一个名为<code>date</code>的prop。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().childAt(1).props().date })(), "The <code>CurrentDate</code> component should have a prop called <code>date</code>.");'
-  - text: <code>CurrentDate</code>的<code>date</code>道具应包含一串文本。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); const prop = mockedComponent.children().childAt(1).props().date; return( typeof prop === "string" && prop.length > 0 ); })(), "The <code>date</code> prop of the <code>CurrentDate</code> should contain a string of text.");'
-  - text: <code>CurrentDate</code>组件应该从<code>p</code>标记中的<code>date</code>道具中呈现值。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.find("p").html().includes(Date().substr(3)); })(), "The <code>CurrentDate</code> component should render the value from the <code>date</code> prop in the <code>p</code> tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

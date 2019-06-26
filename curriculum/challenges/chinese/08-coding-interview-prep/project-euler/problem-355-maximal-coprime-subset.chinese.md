@@ -18,8 +18,8 @@ localeTitle: 问题355：最大互质子集
 
 ```yml
 tests:
-  - text: <code>euler355()</code>应返回1726545007。
-    testString: 'assert.strictEqual(euler355(), 1726545007, "<code>euler355()</code> should return 1726545007.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

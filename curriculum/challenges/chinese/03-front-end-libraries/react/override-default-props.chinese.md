@@ -18,12 +18,8 @@ localeTitle: 覆盖默认道具
 
 ```yml
 tests:
-  - text: <code>ShoppingCart</code>应该呈现组件。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("ShoppingCart").length === 1; })(), "The component <code>ShoppingCart</code> should render.");'
-  - text: 该组件<code>Items</code>应该呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("Items").length === 1; })(), "The component <code>Items</code> should render.");'
-  - text: '<code>Items</code>组件应具有从<code>ShoppingCart</code>组件传递的<code>{ quantity: 10 }</code>的prop。'
-    testString: 'getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("Items").props().quantity == 10 && getUserInput("index").replace(/ /g,"").includes("<Itemsquantity={10}/>"); })(), "The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

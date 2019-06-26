@@ -17,10 +17,8 @@ localeTitle: 使用括号表示法查找字符串中的最后一个字符
 
 ```yml
 tests:
-  - text: <code>lastLetterOfLastName</code>应为“e”。
-    testString: 'assert(lastLetterOfLastName === "e", "<code>lastLetterOfLastName</code> should be "e".");'
-  - text: 你必须使用<code>.length</code>来获取最后一个字母。
-    testString: 'assert(code.match(/\.length/g).length === 2, "You have to use <code>.length</code> to get the last letter.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

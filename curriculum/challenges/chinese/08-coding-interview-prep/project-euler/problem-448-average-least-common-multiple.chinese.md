@@ -18,8 +18,8 @@ localeTitle: 问题448：平均最小公倍数
 
 ```yml
 tests:
-  - text: <code>euler448()</code>应该返回106467648。
-    testString: 'assert.strictEqual(euler448(), 106467648, "<code>euler448()</code> should return 106467648.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题79：密码派生
 
 ```yml
 tests:
-  - text: <code>euler79()</code>应该返回73162890。
-    testString: 'assert.strictEqual(euler79(), 73162890, "<code>euler79()</code> should return 73162890.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

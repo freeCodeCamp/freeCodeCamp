@@ -19,12 +19,8 @@ localeTitle: Sum All Primes
 
 ```yml
 tests:
-  - text: <code>sumPrimes(10)</code>应该返回一个数字。
-    testString: 'assert.deepEqual(typeof sumPrimes(10), "number", "<code>sumPrimes(10)</code> should return a number.");'
-  - text: <code>sumPrimes(10)</code>应该返回17。
-    testString: 'assert.deepEqual(sumPrimes(10), 17, "<code>sumPrimes(10)</code> should return 17.");'
-  - text: <code>sumPrimes(977)</code>应该返回73156。
-    testString: 'assert.deepEqual(sumPrimes(977), 73156, "<code>sumPrimes(977)</code> should return 73156.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

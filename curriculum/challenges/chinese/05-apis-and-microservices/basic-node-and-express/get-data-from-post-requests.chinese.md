@@ -24,10 +24,8 @@ DELETE =&gt;删除资源。 <code>0</code>还有一些其他方法用于协商�
 
 ```yml
 tests:
-  - text: '测试1：您的API端点应使用正确的名称进行响应'
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/name'', {first: ''Mick'', last: ''Jagger''}).then(data => { assert.equal(data.name, ''Mick Jagger'', ''Test 1: "POST /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '测试2：您的API端点应使用正确的名称进行响应'
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/name'', {first: ''Keith'', last: ''Richards''}).then(data => { assert.equal(data.name, ''Keith Richards'', ''Test 2: "POST /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题217：平衡数字
 
 ```yml
 tests:
-  - text: <code>euler217()</code>应该返回6273134。
-    testString: 'assert.strictEqual(euler217(), 6273134, "<code>euler217()</code> should return 6273134.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

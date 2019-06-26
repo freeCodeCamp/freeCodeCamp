@@ -19,8 +19,8 @@ localeTitle: 使用模块清理项目
 
 ```yml
 tests:
-  - text: 存在的模块
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /require.*("|").\/routes.js("|")/gi, "You should have required your new files"); assert.match(data, /mongo.connect[^]*routes/gi, "Your new modules should be called after your connection to the database"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

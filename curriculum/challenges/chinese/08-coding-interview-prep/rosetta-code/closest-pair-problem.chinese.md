@@ -65,16 +65,8 @@ localeTitle: 最近对的问题
 
 ```yml
 tests:
-  - text: <code>getClosestPair</code>是一个函数。
-    testString: 'assert(typeof getClosestPair === "function", "<code>getClosestPair</code> is a function.");'
-  - text: 距离应如下。
-    testString: 'assert.equal(getClosestPair(points1).distance, answer1.distance, "Distance should be the following.");'
-  - text: 要点应如下。
-    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair, "Points should be the following.");'
-  - text: 距离应如下。
-    testString: 'assert.equal(getClosestPair(points2).distance, answer2.distance, "Distance should be the following.");'
-  - text: 要点应如下。
-    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair, "Points should be the following.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

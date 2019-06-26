@@ -18,8 +18,8 @@ localeTitle: 问题76：计算总结
 
 ```yml
 tests:
-  - text: <code>euler76()</code>应该返回190569291。
-    testString: 'assert.strictEqual(euler76(), 190569291, "<code>euler76()</code> should return 190569291.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

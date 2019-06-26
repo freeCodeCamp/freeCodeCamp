@@ -17,10 +17,8 @@ localeTitle: 添加带有border-radius的圆角
 
 ```yml
 tests:
-  - text: 您的图片元素应该具有“thick-green-border”类。
-    testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
-  - text: 您的图像的边框半径应为<code>10px</code>
-    testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

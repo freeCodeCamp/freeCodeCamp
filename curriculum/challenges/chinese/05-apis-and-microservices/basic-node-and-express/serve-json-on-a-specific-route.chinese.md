@@ -19,8 +19,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 'endpoint <code>/json</code>应该服务于json对象<code>{"message": "Hello json"}</code> '
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/json'').then(data => { assert.equal(data.message, ''Hello json'', ''The \''/json\'' endpoint does not serve the right data''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

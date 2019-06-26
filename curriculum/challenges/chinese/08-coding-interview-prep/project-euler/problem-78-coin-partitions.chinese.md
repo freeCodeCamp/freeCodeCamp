@@ -18,8 +18,8 @@ localeTitle: 问题78：硬币分区
 
 ```yml
 tests:
-  - text: <code>euler78()</code>应返回55374。
-    testString: 'assert.strictEqual(euler78(), 55374, "<code>euler78()</code> should return 55374.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

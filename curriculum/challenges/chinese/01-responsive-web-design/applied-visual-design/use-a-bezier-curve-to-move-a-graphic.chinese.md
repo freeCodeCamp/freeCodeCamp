@@ -17,12 +17,8 @@ localeTitle: 使用贝塞尔曲线移动图形
 
 ```yml
 tests:
-  - text: 'id为<code>red</code>的元素的<code>animation-timing-function</code>属性值应为<code>cubic-bezier</code>函数，x1，y1，x2，y2值分别设置为0,0,0.58,1。'
-    testString: 'assert($("#red").css("animation-timing-function") == "cubic-bezier(0, 0, 0.58, 1)", "The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .");'
-  - text: id为<code>red</code>的元素不应该具有linear的<code>animation-timing-function</code>属性。
-    testString: 'assert($("#red").css("animation-timing-function") !== "linear", "The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.");'
-  - text: 具有id <code>blue</code>的元素的<code>animation-timing-function</code>属性的值不应更改。
-    testString: 'assert($("#blue").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

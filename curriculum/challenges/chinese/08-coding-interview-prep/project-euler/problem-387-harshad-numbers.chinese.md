@@ -18,8 +18,8 @@ localeTitle: 问题387：Harshad数字
 
 ```yml
 tests:
-  - text: <code>euler387()</code>应该返回696067597313468。
-    testString: 'assert.strictEqual(euler387(), 696067597313468, "<code>euler387()</code> should return 696067597313468.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

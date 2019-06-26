@@ -17,10 +17,8 @@ localeTitle: 使用JavaScript添加两个数字
 
 ```yml
 tests:
-  - text: <code>sum</code>应该等于<code>20</code>
-    testString: 'assert(sum === 20, "<code>sum</code> should equal <code>20</code>");'
-  - text: 使用<code>+</code>运算符
-    testString: 'assert(/\+/.test(code), "Use the <code>+</code> operator");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

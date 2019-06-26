@@ -18,8 +18,8 @@ localeTitle: 问题344：银元游戏
 
 ```yml
 tests:
-  - text: <code>euler344()</code>应该返回65579304332。
-    testString: 'assert.strictEqual(euler344(), 65579304332, "<code>euler344()</code> should return 65579304332.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

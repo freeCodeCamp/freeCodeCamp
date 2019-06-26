@@ -17,12 +17,8 @@ localeTitle: 从函数返回布尔值
 
 ```yml
 tests:
-  - text: '<code>isLess(10,15)</code>应该返回<code>true</code>'
-    testString: 'assert(isLess(10,15) === true, "<code>isLess(10,15)</code> should return <code>true</code>");'
-  - text: '<code>isLess(15,10)</code>应该返回<code>false</code>'
-    testString: 'assert(isLess(15, 10) === false, "<code>isLess(15,10)</code> should return <code>false</code>");'
-  - text: 您不应该使用任何<code>if</code>或<code>else</code>语句
-    testString: 'assert(!/if|else/g.test(code), "You should not use any <code>if</code> or <code>else</code> statements");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

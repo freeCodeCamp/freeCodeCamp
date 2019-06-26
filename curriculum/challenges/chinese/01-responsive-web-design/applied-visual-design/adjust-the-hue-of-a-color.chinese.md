@@ -17,18 +17,8 @@ localeTitle: 调整颜色的色调
 
 ```yml
 tests:
-  - text: 您的代码应使用<code>hsl()</code>属性将颜色声明为绿色。
-    testString: 'assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color green.");'
-  - text: 您的代码应使用<code>hsl()</code>属性来声明青色。
-    testString: 'assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color cyan.");'
-  - text: 您的代码应使用<code>hsl()</code>属性将颜色声明为蓝色。
-    testString: 'assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), "Your code should use the <code>hsl()</code> property to declare the color blue.");'
-  - text: 具有<code>green</code>类的<code>div</code>元素应具有<code>green</code>的<code>background-color</code> 。
-    testString: 'assert($(".green").css("background-color") == "rgb(0, 255, 0)", "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.");'
-  - text: 具有<code>cyan</code>类的<code>div</code>元素应具有<code>cyan</code>的<code>background-color</code> 。
-    testString: 'assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");'
-  - text: 具有<code>blue</code>类的<code>div</code>元素应具有<code>blue</code>的<code>background-color</code> 。
-    testString: 'assert($(".blue").css("background-color") == "rgb(0, 0, 255)", "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

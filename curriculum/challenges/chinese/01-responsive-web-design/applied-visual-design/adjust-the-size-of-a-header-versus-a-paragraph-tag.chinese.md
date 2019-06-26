@@ -17,8 +17,8 @@ localeTitle: 调整标题的大小与段落标记
 
 ```yml
 tests:
-  - text: 您的代码应该将<code>font-size</code>属性添加到设置为27像素的<code>h4</code>元素。
-    testString: 'assert($("h4").css("font-size") == "27px", "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

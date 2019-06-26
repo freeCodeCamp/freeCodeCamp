@@ -18,7 +18,9 @@ localeTitle: 用力导向图显示全国连续性
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

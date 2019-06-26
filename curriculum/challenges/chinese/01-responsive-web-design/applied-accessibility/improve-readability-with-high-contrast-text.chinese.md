@@ -17,10 +17,8 @@ localeTitle: 使用高对比度文本提高可读性
 
 ```yml
 tests:
-  - text: 您的代码应该改变文字<code>color</code>为<code>body</code>的深灰色。
-    testString: 'assert($("body").css("color") == "rgb(99, 99, 99)", "Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.");'
-  - text: 您的代码不应更改<code>body</code>的<code>background-color</code> 。
-    testString: 'assert($("body").css("background-color") == "rgb(255, 255, 255)", "Your code should not change the <code>background-color</code> for the <code>body</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题57：平方根收敛
 
 ```yml
 tests:
-  - text: <code>euler57()</code>应返回153。
-    testString: 'assert.strictEqual(euler57(), 153, "<code>euler57()</code> should return 153.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

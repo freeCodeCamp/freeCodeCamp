@@ -18,8 +18,8 @@ localeTitle: 问题84：垄断赔率
 
 ```yml
 tests:
-  - text: <code>euler84()</code>应返回101524。
-    testString: 'assert.strictEqual(euler84(), 101524, "<code>euler84()</code> should return 101524.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

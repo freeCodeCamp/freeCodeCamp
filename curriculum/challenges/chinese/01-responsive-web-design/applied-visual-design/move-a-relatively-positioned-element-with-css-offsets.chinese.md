@@ -17,10 +17,8 @@ localeTitle: 使用CSS偏移移动相对定位的元素
 
 ```yml
 tests:
-  - text: 您的代码应使用CSS偏移量来相对定位<code>h2</code> 10px。换句话说，将它从通常所在位置的<code>bottom</code>移开10px。
-    testString: 'assert($("h2").css("bottom") == "10px", "Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.");'
-  - text: 您的代码应该使用CSS偏移来相对地将<code>h2</code> 15px定位到右侧。换句话说，将它从通常所在的位置<code>left</code>移动15px。
-    testString: 'assert($("h2").css("left") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

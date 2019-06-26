@@ -18,10 +18,8 @@ localeTitle: 将id属性添加到Bootstrap元素
 
 ```yml
 tests:
-  - text: 给你留下<code>well</code>的id <code>left-well</code> 。
-    testString: 'assert($(".col-xs-6").children("#left-well") && $(".col-xs-6").children("#left-well").length > 0, "Give your left <code>well</code> the id of <code>left-well</code>.");'
-  - text: 给您的权利<code>well</code>的ID <code>right-well</code> 。
-    testString: 'assert($(".col-xs-6").children("#right-well") && $(".col-xs-6").children("#right-well").length > 0, "Give your right <code>well</code> the id of <code>right-well</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 使用标签元素改进表单字段可访问性
 
 ```yml
 tests:
-  - text: 您的代码应该在<code>label</code>标签上具有非空的<code>for</code>属性。
-    testString: 'assert($("label").attr("for"), "Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.");'
-  - text: 您的<code>for</code>属性值应与电子邮件<code>input</code>中的<code>id</code>值匹配。
-    testString: 'assert($("label").attr("for") == "email", "Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

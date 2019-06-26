@@ -18,8 +18,8 @@ localeTitle: 问题455：使用尾随数字的权力
 
 ```yml
 tests:
-  - text: <code>euler455()</code>应该返回450186511399999。
-    testString: 'assert.strictEqual(euler455(), 450186511399999, "<code>euler455()</code> should return 450186511399999.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

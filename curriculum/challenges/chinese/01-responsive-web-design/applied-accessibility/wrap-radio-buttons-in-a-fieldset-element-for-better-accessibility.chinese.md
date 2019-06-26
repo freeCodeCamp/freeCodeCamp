@@ -17,16 +17,8 @@ localeTitle: 在字段集元素中包裹单选按钮以获得更好的可访问�
 
 ```yml
 tests:
-  - text: 您的代码应该在单选按钮集周围有一个<code>fieldset</code>标记。
-    testString: 'assert($("fieldset").length == 1, "Your code should have a <code>fieldset</code> tag around the radio button set.");'
-  - text: 确保您的<code>fieldset</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/fieldset>/g) && code.match(/<\/fieldset>/g).length === code.match(/<fieldset>/g).length, "Make sure your <code>fieldset</code> element has a closing tag.");'
-  - text: 您的代码应该在文本周围有一个<code>legend</code>标记，询问用户的忍者级别。
-    testString: 'assert($("legend").length == 1, "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 你的代码不应该在文本周围有一个<code>p</code>标记，询问用户是什么级别的忍者。
-    testString: 'assert($("p").length == 4, "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

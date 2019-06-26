@@ -17,18 +17,8 @@ localeTitle: 了解CSS @keyframes和动画属性的工作原理
 
 ```yml
 tests:
-  - text: id为<code>rect</code>的元素应该有一个<code>animation-name</code>属性，其值为rainbow。
-    testString: 'assert($("#rect").css("animation-name") == "rainbow", "The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.");'
-  - text: id为<code>rect</code>的元素应该具有值为4s的<code>animation-duration</code>属性。
-    testString: 'assert($("#rect").css("animation-duration") == "4s", "The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.");'
-  - text: <code>@keyframes</code>规则应该使用rainbow的<code>animation-name</code> 。
-    testString: 'assert(code.match(/@keyframes\s+?rainbow\s*?{/g), "The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.");'
-  - text: 彩虹的<code>@keyframes</code>规则应使用0％的蓝色<code>background-color</code> 。
-    testString: 'assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.");'
-  - text: 彩虹的<code>@keyframes</code>规则应使用50％的绿色<code>background-color</code> 。
-    testString: 'assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.");'
-  - text: 彩虹的<code>@keyframes</code>规则应使用100％的黄色<code>background-color</code> 。
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi), "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

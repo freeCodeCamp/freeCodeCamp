@@ -18,8 +18,8 @@ localeTitle: 问题274：可分性乘数
 
 ```yml
 tests:
-  - text: <code>euler274()</code>应该返回1601912348822。
-    testString: 'assert.strictEqual(euler274(), 1601912348822, "<code>euler274()</code> should return 1601912348822.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

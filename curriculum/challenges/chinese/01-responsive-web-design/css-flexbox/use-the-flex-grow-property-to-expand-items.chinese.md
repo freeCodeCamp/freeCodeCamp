@@ -17,10 +17,8 @@ localeTitle: 使用flex-grow属性扩展项目
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素应将<code>flex-grow</code>属性设置为值1。'
-    testString: 'assert($("#box-1").css("flex-grow") == "1", "The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.");'
-  - text: '<code>#box-2</code>元素应将<code>flex-grow</code>属性设置为值2。'
-    testString: 'assert($("#box-2").css("flex-grow") == "2", "The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

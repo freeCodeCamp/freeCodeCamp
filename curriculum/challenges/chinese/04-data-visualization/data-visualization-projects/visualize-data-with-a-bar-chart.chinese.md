@@ -18,7 +18,9 @@ localeTitle: 使用条形图可视化数据
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

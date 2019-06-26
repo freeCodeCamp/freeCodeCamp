@@ -17,8 +17,8 @@ localeTitle: 使用grid-row-gap创建行间隙
 
 ```yml
 tests:
-  - text: <code>container</code>类应该具有值为<code>5px</code>的<code>grid-row-gap</code>属性。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

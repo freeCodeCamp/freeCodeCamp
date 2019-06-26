@@ -18,16 +18,8 @@ localeTitle: 为兄弟元素提供唯一的键属性
 
 ```yml
 tests:
-  - text: <code>Frameworks</code>组件应该存在并呈现给页面。
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("Frameworks").length === 1, "The <code>Frameworks</code> component should exist and render to the page.");'
-  - text: <code>Frameworks</code>应该呈现<code>h1</code>元素。
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("h1").length === 1, "<code>Frameworks</code> should render an <code>h1</code> element.");'
-  - text: <code>Frameworks</code>应该呈现<code>ul</code>元素。
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("ul").length === 1, "<code>Frameworks</code> should render a <code>ul</code> element.");'
-  - text: ''
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("ul").children().length === 6 && Enzyme.mount(React.createElement(Frameworks)).find("ul").childAt(0).name() === "li" && Enzyme.mount(React.createElement(Frameworks)).find("li").length === 6, "The <code>ul</code> tag should render 6 child <code>li</code> elements.");'
-  - text: 每个列表项元素都应具有唯一的<code>key</code>属性。
-    testString: 'assert((() => { const ul = Enzyme.mount(React.createElement(Frameworks)).find("ul"); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), "Each list item element should have a unique <code>key</code> attribute.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -18,8 +18,8 @@ localeTitle: 问题469：空椅子
 
 ```yml
 tests:
-  - text: <code>euler469()</code>应该返回0.56766764161831。
-    testString: 'assert.strictEqual(euler469(), 0.56766764161831, "<code>euler469()</code> should return 0.56766764161831.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

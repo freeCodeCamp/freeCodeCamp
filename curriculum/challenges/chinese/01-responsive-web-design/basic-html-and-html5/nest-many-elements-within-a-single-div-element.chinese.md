@@ -17,14 +17,8 @@ localeTitle: 在单个div元素中嵌套许多元素
 
 ```yml
 tests:
-  - text: 将<code>p</code>元素嵌套在<code>div</code>元素中。
-    testString: 'assert($("div").children("p").length > 1, "Nest your <code>p</code> elements inside your <code>div</code> element.");'
-  - text: 将您的<code>ul</code>元素<code>div</code>元素中。
-    testString: 'assert($("div").children("ul").length > 0, "Nest your <code>ul</code> element inside your <code>div</code> element.");'
-  - text: 将您的<code>ol</code>元素<code>div</code>元素中。
-    testString: 'assert($("div").children("ol").length > 0, "Nest your <code>ol</code> element inside your <code>div</code> element.");'
-  - text: 确保你的<code>div</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length, "Make sure your <code>div</code> element has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

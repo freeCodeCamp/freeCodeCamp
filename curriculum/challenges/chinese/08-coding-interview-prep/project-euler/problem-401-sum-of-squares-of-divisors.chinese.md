@@ -18,8 +18,8 @@ localeTitle: 问题401：除数的平方和
 
 ```yml
 tests:
-  - text: <code>euler401()</code>应该返回281632621。
-    testString: 'assert.strictEqual(euler401(), 281632621, "<code>euler401()</code> should return 281632621.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

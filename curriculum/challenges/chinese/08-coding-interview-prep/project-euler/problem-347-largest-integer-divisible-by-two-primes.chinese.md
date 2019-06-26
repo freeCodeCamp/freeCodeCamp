@@ -18,8 +18,8 @@ localeTitle: 问题347：最大整数可被两个素数整除
 
 ```yml
 tests:
-  - text: <code>euler347()</code>应该返回11109800204052。
-    testString: 'assert.strictEqual(euler347(), 11109800204052, "<code>euler347()</code> should return 11109800204052.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

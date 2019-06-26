@@ -17,24 +17,8 @@ localeTitle: 创建有序列表
 
 ```yml
 tests:
-  - text: 你应该有一个“猫讨厌的三件事”的有序列表：
-    testString: 'assert((/Top 3 things cats hate:/i).test($("ol").prev().text()), "You should have an ordered list for "Top 3 things cats hate:"");'
-  - text: 你应该有一个无序的列表“猫爱的东西：”
-    testString: 'assert((/Things cats love:/i).test($("ul").prev().text()), "You should have an unordered list for "Things cats love:"");'
-  - text: 你应该只有一个<code>ul</code>元素。
-    testString: 'assert.equal($("ul").length, 1, "You should have only one <code>ul</code> element.");'
-  - text: 你应该只有一个<code>ol</code>元素。
-    testString: 'assert.equal($("ol").length, 1, "You should have only one <code>ol</code> element.");'
-  - text: 你的<code>ul</code>元素中应该有三个<code>li</code>元素。
-    testString: 'assert.equal($("ul li").length, 3, "You should have three <code>li</code> elements within your <code>ul</code> element.");'
-  - text: 你的<code>ol</code>元素中应该有三个<code>li</code>元素。
-    testString: 'assert.equal($("ol li").length, 3, "You should have three <code>li</code> elements within your <code>ol</code> element.");'
-  - text: 确保你的<code>ul</code>元素有一个结束标记。
-    testString: 'assert(code.match(/<\/ul>/g) && code.match(/<\/ul>/g).length === code.match(/<ul>/g).length, "Make sure your <code>ul</code> element has a closing tag.");'
-  - text: 确保您的<code>ol</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length, "Make sure your <code>ol</code> element has a closing tag.");'
-  - text: ''
-    testString: 'assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length, "Make sure your <code>li</code> element has a closing tag.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

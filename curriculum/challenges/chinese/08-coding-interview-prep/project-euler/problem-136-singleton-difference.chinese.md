@@ -18,8 +18,8 @@ localeTitle: 问题136：单身人士差异
 
 ```yml
 tests:
-  - text: <code>euler136()</code>应返回2544559。
-    testString: 'assert.strictEqual(euler136(), 2544559, "<code>euler136()</code> should return 2544559.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

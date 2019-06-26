@@ -17,12 +17,8 @@ localeTitle: 添加图片到您的网站
 
 ```yml
 tests:
-  - text: 您的页面应该有一个图像元素。
-    testString: 'assert($("img").length > 0, "Your page should have an image element.");'
-  - text: 您的图像应具有指向小猫图像的<code>src</code>属性。
-    testString: 'assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), "Your image should have a <code>src</code> attribute that points to the kitten image.");'
-  - text: 您的图片元素<strong>必须</strong>具有<code>alt</code>属性。
-    testString: 'assert(code.match(/alt\s*?=\s*?(\"|\").*(\"|\")/), "Your image element <strong>must</strong> have an <code>alt</code> attribute.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

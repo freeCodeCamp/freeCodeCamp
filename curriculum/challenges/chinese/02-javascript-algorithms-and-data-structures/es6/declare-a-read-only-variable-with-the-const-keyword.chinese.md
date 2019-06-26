@@ -17,14 +17,8 @@ localeTitle: 使用const关键字声明只读变量
 
 ```yml
 tests:
-  - text: <code>var</code>在您的代码中不存在。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in your code.");'
-  - text: <code>SENTENCE</code>应该是用<code>const</code>声明的常量变量。
-    testString: 'getUserInput => assert(getUserInput("index").match(/(const SENTENCE)/g), "<code>SENTENCE</code> should be a constant variable declared with <code>const</code>.");'
-  - text: <code>i</code>应该以<code>let</code>来宣布。
-    testString: 'getUserInput => assert(getUserInput("index").match(/(let i)/g), "<code>i</code> should be declared with <code>let</code>.");'
-  - text: 应更改<code>console.log</code>以打印<code>SENTENCE</code>变量。
-    testString: 'getUserInput => assert(getUserInput("index").match(/console\.log\(\s*SENTENCE\s*\)\s*;?/g), "<code>console.log</code> should be adjusted to print the variable <code>SENTENCE</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

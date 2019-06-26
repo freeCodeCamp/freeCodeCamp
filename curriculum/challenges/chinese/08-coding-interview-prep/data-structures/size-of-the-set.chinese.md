@@ -18,10 +18,8 @@ localeTitle: 套装的大小
 
 ```yml
 tests:
-  - text: 您的<code>Set</code>类应该有一个<code>size</code>方法。
-    testString: 'assert((function(){var test = new Set(); return (typeof test.size === "function")}()), "Your <code>Set</code> class should have a <code>size</code> method.");'
-  - text: <code>size</code>方法应返回集合中的元素数。
-    testString: 'assert((function(){var test = new Set(); test.add("a");test.add("b");test.remove("a");return (test.size() === 1)}()), "The <code>size</code> method should return the number of elements in the collection.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

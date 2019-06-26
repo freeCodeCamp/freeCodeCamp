@@ -17,10 +17,8 @@ localeTitle: 使用flex-shrink属性收缩项目
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素应将<code>flex-shrink</code>属性设置为值1。'
-    testString: 'assert($("#box-1").css("flex-shrink") == "1", "The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.");'
-  - text: '<code>#box-2</code>元素的<code>flex-shrink</code>属性应设置为值2。'
-    testString: 'assert($("#box-2").css("flex-shrink") == "2", "The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

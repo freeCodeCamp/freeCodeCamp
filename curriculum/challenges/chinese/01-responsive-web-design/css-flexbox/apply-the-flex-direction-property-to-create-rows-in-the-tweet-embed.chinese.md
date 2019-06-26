@@ -17,10 +17,8 @@ localeTitle: 应用flex-direction属性在Tweet Embed中创建行
 
 ```yml
 tests:
-  - text: <code>header</code>应该将<code>flex-direction</code>属性设置为row。
-    testString: 'assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>header</code> should have a <code>flex-direction</code> property set to row.");'
-  - text: <code>footer</code>应将<code>flex-direction</code>属性设置为row。
-    testString: 'assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g), "The <code>footer</code> should have a <code>flex-direction</code> property set to row.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

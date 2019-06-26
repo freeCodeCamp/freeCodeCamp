@@ -17,8 +17,8 @@ localeTitle: 使用导出默认值创建导出回退
 
 ```yml
 tests:
-  - text: 适当使用<code>export</code>回落。
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+default\s+function\s+subtract\(x,y\)\s+{return\s+x\s-\s+y;}/g), "Proper used of <code>export</code> fallback.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

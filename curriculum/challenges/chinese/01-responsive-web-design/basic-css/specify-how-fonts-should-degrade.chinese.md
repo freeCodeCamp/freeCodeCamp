@@ -17,14 +17,8 @@ localeTitle: 指定字体应如何降级
 
 ```yml
 tests:
-  - text: 你的h2元素应该使用字体<code>Lobster</code> 。
-    testString: 'assert($("h2").css("font-family").match(/^"?lobster/i), "Your h2 element should use the font <code>Lobster</code>.");'
-  - text: 当<code>Lobster</code>不可用时，你的h2元素会降级为<code>monospace</code>字体。
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?,\s*monospace\s*;\s*\}/gi.test(code), "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.");'
-  - text: 通过在其前面放置<code>&lt;!--</code>来注释您对Google的<code>Lobster</code>字体的调用。
-    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.");'
-  - text: 请务必通过添加<code>--&gt;</code>来关闭您的评论。
-    testString: 'assert(new RegExp("[^fc]-->", "gi").test(code), "Be sure to close your comment by adding <code>--&#62;</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

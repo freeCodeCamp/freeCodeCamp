@@ -17,22 +17,8 @@ localeTitle: 使用十六进制代码混合颜色
 
 ```yml
 tests:
-  - text: 给你的<code>h1</code>元素添加<code>I am red!</code>的文本<code>I am red!</code> <code>color</code>红色。
-    testString: 'assert($(".red-text").css("color") === "rgb(255, 0, 0)", "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.");'
-  - text: 使用<code>hex code</code>为红色而不是<code>red</code> 。
-    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color red instead of the word <code>red</code>.");'
-  - text: 给你的<code>h1</code>元素添加<code>I am green!</code>的文本<code>I am green!</code> <code>color</code>绿色。
-    testString: 'assert($(".green-text").css("color") === "rgb(0, 255, 0)", "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.");'
-  - text: 使用<code>hex code</code>表示绿色而不是<code>green</code> 。
-    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color green instead of the word <code>green</code>.");'
-  - text: 给你的<code>h1</code>元素提供<code>I am dodger blue!</code>的文字<code>I am dodger blue!</code> <code>color</code>道奇蓝色。
-    testString: 'assert($(".dodger-blue-text").css("color") === "rgb(30, 144, 255)", "Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.");'
-  - text: 使用颜色<code>dodgerblue</code>蓝色的<code>hex code</code>而不是单词<code>dodgerblue</code> 。
-    testString: 'assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.");'
-  - text: 给你的<code>h1</code>元素添加<code>I am orange!</code>的文本<code>I am orange!</code>在<code>color</code>为橙色。
-    testString: 'assert($(".orange-text").css("color") === "rgb(255, 165, 0)", "Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.");'
-  - text: 使用<code>hex code</code>表示橙色而不是<code>orange</code> 。
-    testString: 'assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

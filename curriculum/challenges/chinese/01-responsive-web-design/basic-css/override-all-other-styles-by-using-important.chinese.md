@@ -17,18 +17,8 @@ localeTitle: 使用重要覆盖所有其他样式
 
 ```yml
 tests:
-  - text: 您的<code>h1</code>元素应该具有<code>pink-text</code>类。
-    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
-  - text: 你的<code>h1</code>元素应该有<code>blue-text</code> 。
-    testString: 'assert($("h1").hasClass("blue-text"), "Your <code>h1</code> element should have the class <code>blue-text</code>.");'
-  - text: 您的<code>h1</code>元素应具有<code>orange-text</code>的ID。
-    testString: 'assert($("h1").attr("id") === "orange-text", "Your <code>h1</code> element should have the id of <code>orange-text</code>.");'
-  - text: '您的<code>h1</code>元素应具有内联样式的<code>color: white</code> 。'
-    testString: 'assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi), "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.");'
-  - text: 你的<code>pink-text</code>类声明应该有<code>!important</code>关键字来覆盖所有其他声明。
-    testString: 'assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g), "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.");'
-  - text: 你的<code>h1</code>元素应该是粉红色的。
-    testString: 'assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

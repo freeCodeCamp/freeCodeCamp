@@ -17,10 +17,8 @@ localeTitle: 使用export重用代码块
 
 ```yml
 tests:
-  - text: <code>foo</code>被导出了。
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+const\s+foo\s*=\s*"bar"/g), "<code>foo</code> is exported.");'
-  - text: <code>bar</code>出口。
-    testString: 'getUserInput => assert(getUserInput("index").match(/export\s+const\s+bar\s*=\s*"foo"/g), "<code>bar</code> is exported.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

@@ -17,10 +17,8 @@ localeTitle: 将RGB值用于颜色元素
 
 ```yml
 tests:
-  - text: 你的<code>body</code>元素应该有黑色背景。
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Your <code>body</code> element should have a black background.");'
-  - text: 使用<code>rgb</code>为您的<code>body</code>元素提供黑色。
-    testString: 'assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig), "Use <code>rgb</code> to give your <code>body</code> element a color of black.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

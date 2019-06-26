@@ -18,22 +18,8 @@ localeTitle: 我在E之前除了C之后
 
 ```yml
 tests:
-  - text: <code>IBeforeExceptC</code>应该是一个函数。
-    testString: 'assert(typeof IBeforeExceptC=="function","<code>IBeforeExceptC</code> should be a function.");'
-  - text: <code>IBeforeExceptC(&quot;receive&quot;)</code>应该返回一个布尔值。
-    testString: 'assert(typeof IBeforeExceptC("receive")=="boolean","<code>IBeforeExceptC("receive")</code> should return a boolean.");'
-  - text: <code>IBeforeExceptC(&quot;receive&quot;)</code>应该返回<code>true</code> 。
-    testString: 'assert.equal(IBeforeExceptC("receive"),true,"<code>IBeforeExceptC("receive")</code> should return <code>true</code>.");'
-  - text: <code>IBeforeExceptC(&quot;science&quot;)</code>应该返回<code>false</code> 。
-    testString: 'assert.equal(IBeforeExceptC("science"),false,"<code>IBeforeExceptC("science")</code> should return <code>false</code>.");'
-  - text: <code>IBeforeExceptC(&quot;imperceivable&quot;)</code>应该返回<code>true</code> 。
-    testString: 'assert.equal(IBeforeExceptC("imperceivable"),true,"<code>IBeforeExceptC("imperceivable")</code> should return <code>true</code>.");'
-  - text: <code>IBeforeExceptC(&quot;inconceivable&quot;)</code>应该返回<code>true</code> 。
-    testString: 'assert.equal(IBeforeExceptC("inconceivable"),true,"<code>IBeforeExceptC("inconceivable")</code> should return <code>true</code>.");'
-  - text: <code>IBeforeExceptC(&quot;insufficient&quot;)</code>应返回<code>false</code> 。
-    testString: 'assert.equal(IBeforeExceptC("insufficient"),false,"<code>IBeforeExceptC("insufficient")</code> should return <code>false</code>.");'
-  - text: <code>IBeforeExceptC(&quot;omniscient&quot;)</code>应该返回<code>false</code> 。
-    testString: 'assert.equal(IBeforeExceptC("omniscient"),false,"<code>IBeforeExceptC("omniscient")</code> should return <code>false</code>.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

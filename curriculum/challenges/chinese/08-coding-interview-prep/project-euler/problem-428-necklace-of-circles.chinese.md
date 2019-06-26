@@ -18,8 +18,8 @@ undefined
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(necklace(1000000000), 747215561862, "<code>necklace(1000000000)</code> should return 747215561862.");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 

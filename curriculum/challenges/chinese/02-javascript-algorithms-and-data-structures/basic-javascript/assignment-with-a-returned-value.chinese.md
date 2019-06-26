@@ -17,10 +17,8 @@ localeTitle: 具有返回值的分配
 
 ```yml
 tests:
-  - text: <code>processed</code>的值应为<code>2</code>
-    testString: 'assert(processed === 2, "<code>processed</code> should have a value of <code>2</code>");'
-  - text: 您应该将<code>processArg</code>分配给已<code>processed</code>
-    testString: 'assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), "You should assign <code>processArg</code> to <code>processed</code>");'
+  - text: 測試文本
+    testString: assert(true);
 
 ```
 
