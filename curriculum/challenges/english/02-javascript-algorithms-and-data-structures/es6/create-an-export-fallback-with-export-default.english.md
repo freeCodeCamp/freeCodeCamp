@@ -8,10 +8,16 @@ challengeType: 1
 <section id='description'>
 In the <code>export</code> lesson, you learned about the syntax referred to as a <dfn>named export</dfn>. This allowed you to make multiple functions and variables available for use in other files.
 There is another <code>export</code> syntax you need to know, known as <dfn>export default</dfn>. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.
-Here is a quick example of <code>export default</code>:
+Here is a couple examples using <code>export default</code>:
 
 ```js
+// named function
 export default function add(x, y) {
+  return x + y;
+}
+
+// anonymous function
+export default function(x, y) {
   return x + y;
 }
 ```
