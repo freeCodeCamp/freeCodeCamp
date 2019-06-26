@@ -176,7 +176,7 @@ and (orientation: landscape) {
 
 يمكنك أيضًا تعيين الحد الأدنى والحد الأقصى للعرض ، والذي يتيح لك إجراء التجارب باستخدام نطاقات مختلفة. هذا واحد تقريبا يطلق بين الهاتف smar وأكبر حجم سطح المكتب وأحجام الشاشة
 
-```code
+```css
 @media only screen and (min-width: 700px) and (max-width: 1500px) {
   something {
     something: something;

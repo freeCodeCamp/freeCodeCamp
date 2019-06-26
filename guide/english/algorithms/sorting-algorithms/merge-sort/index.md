@@ -25,18 +25,18 @@ T(n) = 2T(n/2) + n
      
 Counting the number of repetitions of n in the sum at the end, we see that there are lg n + 1 of them.  Thus the running time is n(lg n + 1) = n lg n + n. We observe that n lg n + n < n lg n + n lg n = 2n lg n for n>0, so the running time is O(n lg n). Another simple way to remember the time complexity O(n lg n) of merge sort is that it takes roughly log<sub>2</sub><sup>n</sup> steps to split an array of size n to multiple arrays of size one. After each split, the algorithm have to merge 2 sorted arrays into one which can take n steps in total. As a result, the time complexity for merge sort is O(n lg n).
 
-```
-MergeSort(arr[], left,  right):
-If right > l:
-     1. Find the middle point to divide the array into two halves:
-             mid = (left+right)/2
-     2. Call mergeSort for first half:
-             Call mergeSort(arr, left, mid)
-     3. Call mergeSort for second half:
-             Call mergeSort(arr, mid+1, right)
-     4. Merge the two halves sorted in step 2 and 3:
-             Call merge(arr, left, mid, right)
- ```
+<blockquote>
+MergeSort(arr[], left,  right):<br>
+If right > l:<br>
+&nbsp;&nbsp;1. Find the middle point to divide the array into two halves:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mid = (left+right)/2<br>
+&nbsp;&nbsp;2. Call mergeSort for first half:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Call mergeSort(arr, left, mid)<br>
+&nbsp;&nbsp;3. Call mergeSort for second half:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Call mergeSort(arr, mid+1, right)<br>
+&nbsp;&nbsp;4. Merge the two halves sorted in step 2 and 3:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Call merge(arr, left, mid, right)
+</blockquote>
 
 ![Merge Sort Algorithm](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Merge_sort_algorithm_diagram.svg/300px-Merge_sort_algorithm_diagram.svg.png)
 
@@ -453,6 +453,79 @@ function [sorted] = mergeLR(left, right)
 
 end
 
+```
+
+### Implementation in Java
+```Java
+class MergeSort 
+{
+    void merge(int arr[], int l, int m, int r) 
+    {
+        int n1 = m - l + 1; 
+        int n2 = r - m; 
+        int L[] = new int [n1]; 
+        int R[] = new int [n2];
+        for (int i=0; i<n1; ++i) 
+            L[i] = arr[l + i]; 
+        for (int j=0; j<n2; ++j) 
+            R[j] = arr[m + 1+ j]; 
+        int i = 0, j = 0; 
+        int k = l; 
+        while (i < n1 && j < n2) 
+        { 
+            if (L[i] <= R[j]) 
+            { 
+                arr[k] = L[i]; 
+                i++; 
+            } 
+            else
+            { 
+                arr[k] = R[j]; 
+                j++; 
+            } 
+            k++; 
+        } 
+        while (i < n1) 
+        { 
+            arr[k] = L[i]; 
+            i++; 
+            k++; 
+        } 
+        while (j < n2) 
+        { 
+            arr[k] = R[j]; 
+            j++; 
+            k++; 
+        } 
+    } 
+    void sort(int arr[], int l, int r) 
+    { 
+        if (l < r) 
+        {
+            int m = (l+r)/2;
+            sort(arr, l, m); 
+            sort(arr , m+1, r); 
+            merge(arr, l, m, r); 
+        } 
+    } 
+    static void printArray(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i=0; i<n; ++i) 
+            System.out.print(arr[i] + " "); 
+        System.out.println(); 
+    }
+    public static void main(String args[]) 
+    { 
+        int arr[] = {12, 11, 13, 5, 6, 7}; 
+        System.out.println("Given Array"); 
+        printArray(arr); 
+        MergeSort ob = new MergeSort(); 
+        ob.sort(arr, 0, arr.length-1);
+        System.out.println("\n The Sorted array is : "); 
+        printArray(arr); 
+    } 
+}
 ```
 
 ### Relavant videos on freeCodeCamp YouTube channel

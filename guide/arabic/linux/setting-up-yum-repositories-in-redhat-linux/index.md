@@ -10,7 +10,7 @@ localeTitle: إعداد مستودعات Yum في RedHat / CentOS Linux
 
 الخطوة 1: التحقق من وجود مستودعات حالية أم لا.
 
-```sh
+```shell
 #yum repolist
 ``` 
 
@@ -18,19 +18,19 @@ localeTitle: إعداد مستودعات Yum في RedHat / CentOS Linux
 
 الخطوة 2: تغيير الدليل إلى
 
-```sh
+```shell
 #cd /etc/yum.repos.d
 ``` 
 
 الخطوة 3: إنشاء ملف جديد
 
-```sh
+```shell
 #vim myrepo.repo
 ``` 
 
 الخطوة 4: اكتب الأسطر التالية في الملف
 
-```sh
+```shell
 [file-name]
 name=filename
 baseurl="location of yum repositories"
@@ -41,6 +41,6 @@ gpgcheck=0
 
 الخطوة 6: كرر الخطوة 1
 
-```sh
+```shell
 You Will find repositories
 ```

@@ -8,7 +8,7 @@ localeTitle: تثبيت Go في Ubuntu باستخدام apt-get
 
 > حتى كتابة هذه السطور ، فإن نسخة Ubuntu Xenial من go هي 1.6.1 ، بينما الأحدث إصدار مستقر هو 1.9.1
 
-```sh
+```shell
 $ sudo apt-get update
 $ sudo apt-get install golang-go
 ``` 
@@ -17,7 +17,7 @@ $ sudo apt-get install golang-go
 
 للتحقق مما إذا تم تشغيل go بنجاح ، استخدم:
 
-```sh
+```shell
 $ go version
 > go version go1.9.1 linux/amd64
 ``` 

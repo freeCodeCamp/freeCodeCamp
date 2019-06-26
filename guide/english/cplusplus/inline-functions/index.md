@@ -28,7 +28,7 @@ Note that inlining is only a request to the compiler, not a command. The compile
 * When performance is important.
 * Instead of a macro.
 
-``` c++
+```cpp
 #include<iostream>
 
 using namespace std;

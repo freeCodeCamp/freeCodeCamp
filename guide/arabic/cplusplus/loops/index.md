@@ -60,21 +60,20 @@ Lets write a program which will print numbers from 0 to 1000 including 1000 on t
     ` for(int i=0;i<=1000;i++) ` 
  * If there is only one statement inside the loop then the curly bracket is optional but its better to write loop code 
    within brackets so that you don't get confused. 
-    ``` c++ 
+```cpp 
     for(int i=0;i<=1000;i++) 
         { 
         } 
-     ``` 
+``` 
  * Then inside the loop you write what do you want to do. In the above program we output the value of i. 
  
  So, in this way the for loop works 
  
  If you want to print even numbers from 1 to 1000 then your program will look like this 
-`` 
+```cpp
+لـ (int i = 0؛ i = 1000 = i = i + 2) { cout << i << endl؛ }
 
-ج ++ لـ (int i = 0؛ i = 1000 = i = i + 2) { cout << i << endl؛ }
-
-\`\` \`
+```
 
 *   الفرق في البرنامج الأول والثاني هو جزء الزيادة. بقية الكود هو نفسه. هذا البرنامج سوف يطبع 0 و ثم إضافة 2 إليه وطباعة 2 على وحدة التحكم وهكذا تصبح قيمة up تساوي 1000.
     
