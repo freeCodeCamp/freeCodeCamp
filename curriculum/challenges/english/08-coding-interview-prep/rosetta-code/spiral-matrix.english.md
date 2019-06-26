@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Produce a spiral array.
 A  <i>spiral array</i>  is a square arrangement of the first  N<sup>2</sup> natural numbers, where the numbers increase sequentially as you go around the edges of the array spiraling inwards.
 For example, given <b>5</b>,  produce this array:
@@ -44,6 +45,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

@@ -6,12 +6,14 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Given a mapping between items, and items they depend on, a <a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting" target="_blank">topological sort</a> orders items so that no item precedes an item it depends upon.
 The compiling of a library in the <a href="https://en.wikipedia.org/wiki/VHDL" title="wp: VHDL" target="_blank">VHDL</a> language has the constraint that a library must be compiled after any library it depends on.
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Write a function that will return a valid compile order of VHDL libraries from their dependencies.
 <ul>
   <li>Assume library names are single words.</li>

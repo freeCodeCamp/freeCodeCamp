@@ -6,6 +6,7 @@ title: 'Problem 443: GCD sequence'
 
 ## Description
 <section id='description'>
+
 Let g(n) be a sequence defined as follows:
 g(4) = 13,
 g(n) = g(n-1) + gcd(n, g(n-1)) for n > 4.
@@ -64,4 +65,5 @@ euler443();
 ```js
 // solution required
 ```
+
 </section>

@@ -6,6 +6,7 @@ title: 'Problem 228: Minkowski Sums'
 
 ## Description
 <section id='description'>
+
 <!-- TODO Use MathJax and re-write from projecteuler.net -->
 Let Sn be the regular n-sided polygon – or shape – whose vertices
 
@@ -74,4 +75,5 @@ euler228();
 ```js
 // solution required
 ```
+
 </section>

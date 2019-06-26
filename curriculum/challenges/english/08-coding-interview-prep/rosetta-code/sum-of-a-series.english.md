@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Compute the  <b>n</b><sup>th</sup>  term of a <a href="https://en.wikipedia.org/wiki/Series (mathematics)" target="_blank">series</a>,  i.e. the sum of the  <b>n</b>  first terms  of the corresponding <a href="https://en.wikipedia.org/wiki/sequence" target="_blank">sequence</a>.
 Informally this value, or its limit when  <b>n</b>  tends to infinity, is also called the <i>sum of the series</i>, thus the title of this task.
 For this task, use:
@@ -18,6 +19,7 @@ and compute  $S_{1000}$
 
 ## Instructions
 <section id='instructions'>
+
 Write a function that take $a$ and $b$ as parameters and returns the sum of $a^{th}$ to $b^{th}$ members of the sequence.
 </section>
 
@@ -46,6 +48,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

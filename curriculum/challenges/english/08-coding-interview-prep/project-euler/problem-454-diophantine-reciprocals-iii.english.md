@@ -6,6 +6,7 @@ title: 'Problem 454: Diophantine reciprocals III'
 
 ## Description
 <section id='description'>
+
 In the following equation x, y, and n are positive integers.
 1/x + 1/y= 1/n
 <!-- TODO Use MathJax -->
@@ -59,4 +60,5 @@ euler454();
 ```js
 // solution required
 ```
+
 </section>

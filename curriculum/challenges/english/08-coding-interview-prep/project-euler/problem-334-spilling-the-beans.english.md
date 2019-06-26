@@ -6,6 +6,7 @@ title: 'Problem 334: Spilling the beans'
 
 ## Description
 <section id='description'>
+
 In Plato's heaven, there exist an infinite number of bowls in a straight line.
 Each bowl either contains some or none of a finite number of beans.
 A child plays a game, which allows only one kind of move: removing two beans from any bowl, and putting one in each of the two adjacent bowls. The game ends when each bowl contains either one or no beans.
@@ -74,4 +75,5 @@ euler334();
 ```js
 // solution required
 ```
+
 </section>

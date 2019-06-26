@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 This task is inspired by Mark Nelson's DDJ Column "Wordplay" and one of the weekly puzzle challenges from Will Shortz on NPR Weekend Edition <a href="https://www.npr.org/templates/story/story.php?storyId=9264290" target="_blank">[1]</a> and originally attributed to David Edelheit.
 The challenge was to take the names of two U.S. States, mix them all together, then rearrange the letters to form the names of two <i>different</i> U.S. States (so that all four state names differ from one another).
 What states are these?
@@ -15,6 +16,7 @@ A second challenge in the form of a set of fictitious new states was also presen
 
 ## Instructions
 <section id='instructions'>
+
 Write a function to solve the challenge for the given array of names of states. The function should return an array. Each element should be an object in this form: <code>{"from":[],"to":[]}</code>. The "from" array should contain the original names and the "to" array should contain the resultant names.
 </section>
 
@@ -37,6 +39,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

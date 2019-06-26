@@ -18,12 +18,13 @@ React components have several special methods that provide opportunities to perf
 <code>componentDidUpdate()</code>
 <code>componentWillUnmount()</code>
 The next several lessons will cover some of the basic use cases for these lifecycle methods.
-  
+
 <strong>Note:</strong> The `componentWillMount` Lifecycle method will be deprecated in a future version of 16.X and removed in version 17. [(Source)](https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html)
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 The <code>componentWillMount()</code> method is called before the <code>render()</code> method when a component is being mounted to the DOM. Log something to the console within <code>componentWillMount()</code> - you may want to have your browser console open to see the output.
 </section>
 

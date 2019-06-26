@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 This is an algorithm used to thin a black and white i.e. one bit per pixel images.
 For example, with an input image of:
 <!-- TODO write fully in markdown>

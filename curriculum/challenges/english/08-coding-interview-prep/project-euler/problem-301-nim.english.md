@@ -6,6 +6,7 @@ title: 'Problem 301: Nim'
 
 ## Description
 <section id='description'>
+
 Nim is a game played with heaps of stones, where two players take it in turn to remove any number of stones from any heap until no stones remain.
 
 We'll consider the three-heap normal-play version of Nim, which works as follows:
@@ -67,4 +68,5 @@ euler301();
 ```js
 // solution required
 ```
+
 </section>

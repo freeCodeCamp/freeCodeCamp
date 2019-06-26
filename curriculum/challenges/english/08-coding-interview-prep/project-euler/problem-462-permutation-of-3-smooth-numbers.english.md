@@ -6,6 +6,8 @@ title: 'Problem 462: Permutation of 3-smooth numbers'
 
 ## Description
 <section id='description'>
+
+<!-- TODO use MathJax -->
 A 3-smooth number is an integer which has no prime factor larger than 3. For an integer N, we define S(N) as the set of 3-smooth numbers less than or equal to N . For example, S(20) = { 1, 2, 3, 4, 6, 8, 9, 12, 16, 18 }.
 
 
@@ -68,4 +70,5 @@ euler462();
 ```js
 // solution required
 ```
+
 </section>

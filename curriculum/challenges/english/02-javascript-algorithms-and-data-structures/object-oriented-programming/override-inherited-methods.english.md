@@ -6,6 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
+
 In previous lessons, you learned that an object can inherit its behavior (methods) from another object by cloning its <code>prototype</code> object:
 
 ```js
@@ -48,6 +49,7 @@ If you have an instance <code>let duck = new Bird();</code> and you call <code>d
 
 ## Instructions
 <section id='instructions'>
+
 Override the <code>fly()</code> method for <code>Penguin</code> so that it returns "Alas, this is a flightless bird."
 </section>
 

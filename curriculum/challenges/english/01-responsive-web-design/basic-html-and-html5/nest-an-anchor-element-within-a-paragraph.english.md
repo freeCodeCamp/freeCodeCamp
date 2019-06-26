@@ -7,6 +7,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 
 ## Description
 <section id='description'>
+
 You can nest links within other text elements.
 
 ```html
@@ -26,6 +27,7 @@ The final output of the example will look like this:<br><p>Here's a <a target="_
 
 ## Instructions
 <section id='instructions'>
+
 Now nest the existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element). The new paragraph should have text that says "View more cat photos", where "cat photos" is a link, and the rest of the text is plain text.
 </section>
 
@@ -86,11 +88,12 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>View more <a target="_blank" href="http://freecatphotoapp.com">cat photos</a></p>
-  
+
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
-  
+
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
+
 </section>

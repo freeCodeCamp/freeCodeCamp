@@ -6,6 +6,7 @@ title: 'Problem 449: Chocolate covered candy'
 
 ## Description
 <section id='description'>
+
 Phil the confectioner is making a new batch of chocolate covered candy. Each candy centre is shaped like an ellipsoid of revolution defined by the equation: b2x2 + b2y2 + a2z2 = a2b2.
 
 
@@ -65,4 +66,5 @@ euler449();
 ```js
 // solution required
 ```
+
 </section>

@@ -6,8 +6,8 @@ title: 'Problem 330: Euler''s Number'
 
 ## Description
 <section id='description'>
-An infinite sequence of real numbers a(n) is defined for all integers n as follows:
 
+An infinite sequence of real numbers a(n) is defined for all integers n as follows:
 <!-- TODO Use MathJax and re-write from projecteuler.net -->
 For example,a(0) = 11! + 12! + 13! + ... = e − 1
 a(1) = e − 11! + 12! + 13! + ... = 2e − 3
@@ -71,4 +71,5 @@ euler330();
 ```js
 // solution required
 ```
+
 </section>
