@@ -222,7 +222,7 @@ function populateTestsForLang({ lang, challenges }) {
         }
 
         files = files.map(createPoly);
-        it('Test suite must fail on the initial contents', async function() {
+        /* it('Test suite must fail on the initial contents', async function() {
           this.timeout(5000 * tests.length + 1000);
           // suppress errors in the console.
           const oldConsoleError = console.error;
@@ -250,8 +250,7 @@ function populateTestsForLang({ lang, challenges }) {
           }
           console.error = oldConsoleError;
           assert(fails, 'Test suit does not fail on the initial contents');
-        });
-
+        }); */
         let { solutions = [] } = challenge;
         const noSolution = new RegExp('// solution required');
         solutions = solutions.filter(
