@@ -21,7 +21,7 @@ const { name: userName, age: userAge } = user;
 // userName = 'John Doe', userAge = 34
 ```
 
-You may read it as "get the value of <code>user.name</code> and copy it into <code>userName</code>" and so on.
+You may read it as "get the value of <code>user.name</code> and assign it to a new variable named <code>userName</code>" and so on.
 </section>
 
 ## Instructions
