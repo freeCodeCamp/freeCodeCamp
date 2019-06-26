@@ -7,7 +7,10 @@ localeTitle: 从带有开关语句的多个选项中进行选择
 ---
 
 ## Description
-undefined
+<section id="description">
+
+這個挑戰需要一個描述部分。
+</section>
 
 ## Instructions
 <section id="instructions">编写一个switch语句，测试<code>val</code>并设置以下条件的<code>answer</code> ： <br> <code>1</code> - “alpha” <br> <code>2</code> - “beta” <br> <code>3</code> - “伽玛” <br> <code>4</code> - “三角洲” </section>

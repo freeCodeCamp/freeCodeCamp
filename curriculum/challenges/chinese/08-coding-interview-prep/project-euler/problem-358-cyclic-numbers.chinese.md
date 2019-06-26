@@ -7,7 +7,10 @@ localeTitle: 问题358：循环数
 ---
 
 ## Description
-undefined
+<section id="description">
+
+這個挑戰需要一個描述部分。
+</section>
 
 ## Instructions
 undefined

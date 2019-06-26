@@ -7,7 +7,10 @@ localeTitle: 问题45：三角形，五边形和六边形
 ---
 
 ## Description
-undefined
+<section id="description">
+
+這個挑戰需要一個描述部分。
+</section>
 
 ## Instructions
 <section id="instructions">

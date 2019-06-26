@@ -7,7 +7,10 @@ localeTitle: 反转SVG元素
 ---
 
 ## Description
-undefined
+<section id="description">
+
+這個挑戰需要一個描述部分。
+</section>
 
 ## Instructions
 <section id="instructions">更改<code>y</code>属性的回调函数以将栏设置为正面朝上。请记住，条形的<code>height</code>是数据值<code>d</code> 3倍。 <strong>注意</strong> <br>通常，关系是<code>y = h - m * d</code> ，其中<code>m</code>是缩放数据点的常数。 </section>

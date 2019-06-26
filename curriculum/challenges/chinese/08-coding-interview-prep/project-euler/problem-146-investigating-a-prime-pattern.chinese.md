@@ -7,7 +7,10 @@ localeTitle: 问题146：调查素数模式
 ---
 
 ## Description
-undefined
+<section id="description">
+
+這個挑戰需要一個描述部分。
+</section>
 
 ## Instructions
 <section id="instructions">
