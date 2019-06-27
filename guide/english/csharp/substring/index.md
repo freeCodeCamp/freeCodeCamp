@@ -18,6 +18,7 @@ The first overload retrieves a substring that starts at a specified character po
 ```csharp
 string firstSentence = "Apple, I have.";
 string secondSentence = "I have a Pen.";
+string thirdSentence = "I am having Fun";
 
 string apple1 = firstSentence.Substring(9);
 string pen1 = secondSentence.Substring(7);

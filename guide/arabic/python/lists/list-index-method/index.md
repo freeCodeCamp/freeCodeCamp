@@ -12,24 +12,26 @@ localeTitle: طريقة قائمة الفهرس
 
 #### مثال للاستخدام:
 
- `numbers = [1, 2, 2, 3, 9, 5, 6, 10] 
- words = ["I", "love", "Python", "I", "love"] 
- 
- print(numbers.index(9)) 
- print(numbers.index(2)) 
- print(words.index("I")) 
- print(words.index("am")) 
-` 
+```py
+numbers = [1, 2, 2, 3, 9, 5, 6, 10]
+words = ["I", "love", "Python", "I", "love"]
+
+print(numbers.index(9))
+print(numbers.index(2))
+print(words.index("I"))
+print(words.index("am"))
+``` 
 
 ##### انتاج:
 
- `4 
- 1 
- 0 
- Traceback (most recent call last): 
-  File "<stdin>", line 1, in <module> 
- ValueError: 'am' is not in list 
-` 
+```py
+4
+1
+0
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: 'am' is not in list
+``` 
 
 هنا يكون الناتج الأول واضحًا جدًا ، ولكن قد يبدو الثاني والثالث محيكين في البداية. لكن تذكر أن `index()` يعرض التواجد الأول للعنصر ، ومن ثم في هذه الحالة ، يكون `1` و `0` هما المؤشرين حيث `2` و `"I"` تحدثان أولاً في القوائم على التوالي.
 
@@ -39,15 +41,17 @@ localeTitle: طريقة قائمة الفهرس
 
 يمكنك أيضًا استخدام وسيطات اختيارية لتقييد بحثك على نسبة معينة من القائمة كما هو موضح في هذا المثال:
 
- `words = ["I","am", "a", "I", "am", "Pythonista"] 
- 
- print(words.index("am",2,5)) 
-` 
+```py
+words = ["I","am", "a", "I", "am", "Pythonista"]
+
+print(words.index("am",2,5))
+``` 
 
 ##### انتاج:
 
- `4 
-` 
+```
+4
+``` 
 
 على الرغم من أنه يتم البحث عن العنصر بين الفهرس 2 (ضمنا) و 5 (غير شامل) ولكن يتم حساب الفهرس المرتجع بالنسبة لبداية القائمة الكاملة بدلاً من وسيطة البدء.
 

@@ -10,7 +10,7 @@ title: IDE and Printing different text
 
 **1. Editor :** A slightly modified text editor to make coding easy. An example of an editor for coding is Notepad++.
 
-**2. Debugger :** Software that helps you find errors in your program , and resolve them before execution. Imagine FaceBook crashing on loading an application or a game crashing all of a sudden. To prevent faulty execution of a program, the debugger is a programmer's best friend.
+**2. Debugger :** Software that helps you find errors in your program and resolve them before execution. Using a debugger, you can step through each line of your code as your program runs and check the values of variables and even alter the sequence of execution.
 
 **3. Compiler :** A compiler is the part of the computer which converts your high level program code to machine code : 0s & 1s ; so that the computer's Central Processing Unit (CPU) can understand the commands and execute them. From now on, we will be using the word **compiler** frequently.
 

@@ -50,27 +50,27 @@ Este é o algoritmo de busca binária. É elegante e eficiente, mas para funcion
 
 Encontre 5 na matriz de números fornecida usando a pesquisa binária.
 
-![Pesquisa Binária 1](https://i.imgur.com/QAuugOL.jpg)
+![Pesquisa Binária 1](https://cdn-media-1.freecodecamp.org/imgr/QAuugOL.jpg)
 
 Marque as posições baixa, alta e média na matriz.
 
-![Pesquisa Binária 2](https://i.imgur.com/1710fEx.jpg)
+![Pesquisa Binária 2](https://cdn-media-1.freecodecamp.org/imgr/1710fEx.jpg)
 
 Compare o item que você está procurando com o elemento do meio.
 
-![Pesquisa Binária 3](https://i.imgur.com/jr4icze.jpg)
+![Pesquisa Binária 3](https://cdn-media-1.freecodecamp.org/imgr/jr4icze.jpg)
 
 Jogue fora a metade esquerda e olhe na metade direita.
 
-![Pesquisa Binária 4](https://i.imgur.com/W57lGsk.jpg)
+![Pesquisa Binária 4](https://cdn-media-1.freecodecamp.org/imgr/W57lGsk.jpg)
 
 Mais uma vez compare com o elemento do meio.
 
-![Pesquisa Binária 5](https://i.imgur.com/5Twm8NE.jpg)
+![Pesquisa Binária 5](https://cdn-media-1.freecodecamp.org/imgr/5Twm8NE.jpg)
 
 Agora, vá para a metade esquerda.
 
-![Pesquisa Binária 6](https://i.imgur.com/01xetay.jpg)
+![Pesquisa Binária 6](https://cdn-media-1.freecodecamp.org/imgr/01xetay.jpg)
 
 O elemento do meio é o item que estávamos procurando!
 

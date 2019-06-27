@@ -28,6 +28,16 @@ The above function can be re-written using multiple <code>conditional operators<
 
 ```js
 function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" 
+    : (a > b) ? "a is greater" 
+    : "b is greater";
+}
+```
+
+However, this should be used with care as using multiple <code>conditional operators</code> without proper indentation may make your code hard to read. For example:
+
+```js
+function findGreaterOrEqual(a, b) {
   return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
 }
 ```

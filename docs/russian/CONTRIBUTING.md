@@ -32,7 +32,7 @@ freeCodeCamp.org возможен благодаря тысячам добров
 2. Помощь новичкам с нашим [форумом](https://www.freecodecamp.org/forum/).
 
     - ❓ Помощь новичкам [отвечая на их вопросы](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Дать обратную связь](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) на проекты новичков.
+    - 💬 [Написать отзыв](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) на проекты новичков.
 
 3. Помогите нам добавить субтитры на нашем [канале YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 

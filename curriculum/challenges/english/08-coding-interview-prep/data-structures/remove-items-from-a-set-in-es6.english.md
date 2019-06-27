@@ -38,7 +38,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -52,14 +51,10 @@ function checkSet(){
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
-
 
 ```js
 function checkSet(){

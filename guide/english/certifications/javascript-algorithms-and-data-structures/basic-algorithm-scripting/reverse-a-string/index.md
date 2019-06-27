@@ -3,15 +3,6 @@ title: Reverse a String
 ---
 ![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
-
-We need to take the string and reverse it, so if it originally reads 'hello', it will now read 'olleh'. We will need to split the string, and therefore we will be working with Arrays as well.
-
-#### Relevant Links
-
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split' target='_blank' rel='nofollow'>str.split()</a>
-*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse' target='_blank' rel='nofollow'>arr.reverse()</a>
-*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join' target='_blank' rel='nofollow'>arr.join()</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
@@ -37,15 +28,17 @@ Do not forget to join the characters back together after you reverse them.
 
 **Solution ahead!**
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution #1:
 
-    function reverseString(str) {
-      return str.split('').reverse().join('');
-    }
+<details><summary>Click to see solution</summary>
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU' target='_blank' rel='nofollow'>Run Code</a>
+```js
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+```
 
-### Code Explanation:
+#### Code Explanation:
 
 *   Our goal is to take the input, `str`, and return it in reverse. Our first step is to split the string by characters using `split('')`. Notice that we don't leave anything in between the single quotes, this tells the function to split the string by each character.
 
@@ -54,6 +47,37 @@ Do not forget to join the characters back together after you reverse them.
 *   Next we _chain_ the `reverse()` function, which takes our array of characters and reverses them.
 
 *   Finally, we _chain_ `join('')` to put our characters back together into a string. Notice once again that we left no spaces in the argument for join, this makes sure that the array of characters is joined back together by each character.
+
+### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split' target='_blank' rel='nofollow'>str.split()</a>
+*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse' target='_blank' rel='nofollow'>arr.reverse()</a>
+*   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join' target='_blank' rel='nofollow'>arr.join()</a>
+</details><br>
+
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution #2:
+
+<details><summary>Click to see solution</summary>
+
+```js
+function reverseString(str) {
+  for (var reversedStr = '', i = str.length - 1; i >= 0; i--){
+    reversedStr += str[i];
+  }
+  return reversedStr;
+};
+```
+
+#### Code Explanation:
+
+* Starting at the last character of the string passed to the function, you build a new string `reversedStr` from `str`.
+
+* During each iteration of the `for` loop, `reversedStr` gets concatenated with itself and the current character.
+
+* Finally, you return the final value of `reversedStr`.
+
+</details><br>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 

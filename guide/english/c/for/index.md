@@ -76,7 +76,7 @@ int main() {
 }
 ```
 Output:
-```output
+```shell
 ->1 2 3 4 5
 ```
 
@@ -91,7 +91,7 @@ int main() {
 }
 ```
 Output:
-```output
+```shell
 ->2 4
 ```
 
@@ -106,7 +106,7 @@ int main() {
 }
 ```
 Output:
-```output
+```shell
 ->1 1 2 2 3 3 4 4 
 ```
 
@@ -242,7 +242,7 @@ int main(void) {
 }
 ```
 output:
-```output
+```shell
 1
 2
 ```
@@ -264,7 +264,7 @@ int main(void) {
 }
 ```
 output:
-```output
+```shell
 1
 2
 4

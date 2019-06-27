@@ -117,7 +117,7 @@ export class Project extends Component {
           />
           <ProjectForm
             isFrontEnd={isFrontEnd}
-            openModal={openCompletionModal}
+            onSubmit={openCompletionModal}
             updateProjectForm={updateProjectFormValues}
           />
           <ToolPanel guideUrl={createGuideUrl(slug)} />

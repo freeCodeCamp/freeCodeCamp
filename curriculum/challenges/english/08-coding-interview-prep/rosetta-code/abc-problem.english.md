@@ -6,36 +6,39 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:</p>
-<p>(B O)</p>
-<p>(X K)</p>
-<p>(D Q)</p>
-<p>(C P)</p>
-<p>(N A)</p>
-<p>(G T)</p>
-<p>(R E)</p>
-<p>(T G)</p>
-<p>(Q D)</p>
-<p>(F S)</p>
-<p>(J W)</p>
-<p>(H U)</p>
-<p>(V I)</p>
-<p>(A N)</p>
-<p>(O B)</p>
-<p>(E R)</p>
-<p>(F S)</p>
-<p>(L Y)</p>
-<p>(P C)</p>
-<p>(Z M)</p>
-<p>Some rules to keep in mind:</p>
-Once a letter on a block is used, that block cannot be used again.
-The function should be case-insensitive.
-<p>Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.</p>
+You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:
+<pre>
+(B O)
+(X K)
+(D Q)
+(C P)
+(N A)
+(G T)
+(R E)
+(T G)
+(Q D)
+(F S)
+(J W)
+(H U)
+(V I)
+(A N)
+(O B)
+(E R)
+(F S)
+(L Y)
+(P C)
+(Z M)
+</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+Some rules to keep in mind:
+<ul>
+  <li>Once a letter on a block is used, that block cannot be used again.</li>
+  <li>The function should be case-insensitive.</li>
+</ul>
 </section>
 
 ## Tests
@@ -70,7 +73,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function canMakeWord (word) {
+function canMakeWord(word) {
   // Good luck!
 }
 ```
@@ -94,7 +97,7 @@ const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
 
 
 ```js
-function canMakeWord (word) {
+function canMakeWord(word) {
   const characters = 'BO XK DQ CP NA GT RE TG QD FS JW HU VI AN OB ER FS LY PC ZM';
   const blocks = characters.split(' ').map(pair => pair.split(''));
 

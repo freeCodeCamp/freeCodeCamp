@@ -10,16 +10,17 @@ localeTitle: محددات
 
 ستتراكم المحضرات مرتبة في تسلسل محدد لقاعدة لاستهداف العناصر. مثال،
 
- `/* selects anchor tags */ 
- a { 
-    color: orange; 
- } 
- 
- /* selects elements with hero class */ 
- .hero { 
-    text-align: center; 
- } 
-` 
+```css
+/* selects anchor tags */
+a {
+    color: orange;
+}
+
+/* selects elements with hero class */
+.hero {
+    text-align: center;
+}
+``` 
 
 ## نوع من المحددات
 

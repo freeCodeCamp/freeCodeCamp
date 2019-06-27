@@ -108,7 +108,7 @@ public class BubbleSort {
 }
 ```
 ### Example in C++
-```c++
+```cpp
 // Recursive Implementation
 void bubblesort(int arr[], int n)
 {

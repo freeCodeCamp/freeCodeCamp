@@ -42,7 +42,6 @@ function testLogicalAnd(val) {
  testLogicalAnd(10); 
 ```
 
-· [在repl.it上运行代码](https://repl.it/@AdrianSkar/Basic-JS-Comparison-with-the-and-operator)
 
 ### 代码说明
 

@@ -8,27 +8,27 @@ Supongamos que le dan una lista o una matriz de elementos. Usted está buscando 
 
 Encuentra el número 13 en la lista dada.
 
-![Búsqueda lineal 1](https://i.imgur.com/ThkzYEV.jpg)
+![Búsqueda lineal 1](https://cdn-media-1.freecodecamp.org/imgr/ThkzYEV.jpg)
 
 ¡Basta con mirar la lista y ahí está!
 
-![Búsqueda lineal 2](https://i.imgur.com/K7HfCly.jpg)
+![Búsqueda lineal 2](https://cdn-media-1.freecodecamp.org/imgr/K7HfCly.jpg)
 
 Ahora, ¿cómo le dices a una computadora para encontrarlo?
 
 Una computadora no puede mirar más que el valor en un instante dado de tiempo. Por lo tanto, toma un elemento de la matriz y comprueba si es lo mismo que está buscando.
 
-![Búsqueda lineal 3](https://i.imgur.com/ZOSxeZD.jpg)
+![Búsqueda lineal 3](https://cdn-media-1.freecodecamp.org/imgr/ZOSxeZD.jpg)
 
 El primer elemento no coincide. Así que pasa a la siguiente.
 
-![Búsqueda lineal 4](https://i.imgur.com/SwKsPxD.jpg)
+![Búsqueda lineal 4](https://cdn-media-1.freecodecamp.org/imgr/SwKsPxD.jpg)
 
 Y así…
 
 Esto se hace hasta que se encuentra una coincidencia o hasta que se hayan verificado todos los elementos.
 
-![Búsqueda lineal 5](https://i.imgur.com/3AaViff.jpg)
+![Búsqueda lineal 5](https://cdn-media-1.freecodecamp.org/imgr/3AaViff.jpg)
 
 En este algoritmo, puede detener cuando se encuentra el elemento y, a continuación, no hay necesidad de buscar más.
 

@@ -15,14 +15,14 @@ A binary search tree (BST) adds these two characteristics:
 
 
 
-The BST is built on the idea of the <a href='https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search' targer='_blank' rel='nofollow'>binary search</a> algorithm, which allows for fast lookup, insertion and removal of nodes. The way that they are set up means that, on average, each comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes time proportional to the logarithm of the number of items stored in the tree, `O(log n)`. However, some times the worst case can happen, when the tree isn't balanced and the time complexity is `O(n)` for all three of these functions. That is why self-balancing trees (AVL, red-black, etc.) are a lot more effective than the basic BST.
+The BST is built on the idea of the <a href="https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search" target="_blank" rel="nofollow">binary search</a> algorithm, which allows for fast lookup, insertion and removal of nodes. The way that they are set up means that, on average, each comparison allows the operations to skip about half of the tree, so that each lookup, insertion or deletion takes time proportional to the logarithm of the number of items stored in the tree, `O(log n)`. However, some times the worst case can happen, when the tree is not balanced and the time complexity is `O(n)` for all three of these functions. That is why self-balancing trees (AVL, red-black, etc.) are a lot more effective than the basic BST.
 
 **Worst case scenario example:** This can happen when you keep adding nodes that are *always* larger than the node before (its parent), the same can happen when you always add nodes with values lower than their parents.
 
 ### Basic operations on a BST
 - Create: creates an empty tree.
 - Insert: insert a node in the tree.
-- Search: Searches for a node in the tree.
+- Search: searches for a node in the tree.
 - Delete: deletes a node from the tree.
 - Inorder: in-order traversal of the tree.
 - Preorder: pre-order traversal of the tree.
@@ -214,7 +214,7 @@ Binary search trees (BSTs) also give us quick access to predecessors and success
 ### Let's look at a couple of procedures operating on trees.
 Since trees are recursively defined, it's very common to write routines that operate on trees that are themselves recursive. 
 
-So for instance, if we want to calculate the height of a tree, that is the height of a root node, We can go ahead and recursively do that, going through the tree. So we can say:
+So for instance, if we want to calculate the height of a tree, that is the height of a root node. We can go ahead and recursively do that, going through the tree. So we can say:
 
 * For instance, if we have a nil tree, then its height is a 0.
 * Otherwise, We're 1 plus the maximum of the left child tree and the right child tree.
@@ -340,9 +340,9 @@ Full Binary Tree/Strict Binary Tree: A Binary Tree is full or strict if every no
         /  \       /  \
       40    50   100   40
 
-In Full Binary Tree, number of leaf nodes is equal to number of internal nodes plus one.
+In a Full Binary Tree, the number of leaf nodes is equal to number of internal nodes plus one.
  
-Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible
+Complete Binary Tree: A Binary Tree is a complete Binary Tree if all the levels are completely filled except possibly the last level and the last level has all keys as left as possible.
  
                18
              /    \
@@ -364,7 +364,7 @@ Perfect Binary Tree A Binary tree is Perfect Binary Tree in which all internal n
 
 ### Augumenting a BST
 Sometimes we need to store some additional information with the traditional data structures to make our tasks easier.
-For example, consider a scenario where you are supposed to find the ith smallest number in a set. You can use brute force here but we can reduce the complexity of the problem to O(lg n) by augumenting a red-black or any self-balancing tree (where n is the number of elements in the set). We can also compute rank of any element in O(lg n) time. Let us consider a case where we are augumenting a red-black tree to store the addional information needed. Besides the usual attributes, we can store number of internal nodes in the subtree rooted at x(size of the subtree rooted at x including the node itself).
+For example, consider a scenario where you are supposed to find the ith smallest number in a set. You can use brute force here but we can reduce the complexity of the problem to O(lg n) by augumenting a red-black or any self-balancing tree (where n is the number of elements in the set). We can also compute rank of any element in O(lg n) time. Let us consider a case where we are augumenting a red-black tree to store the addional information needed. Besides the usual attributes, we can store a number of internal nodes in the subtree rooted at x(size of the subtree rooted at x including the node itself).
 Let x be any arbitary node of a tree.
 
 x.size = x.left.size + x.right.size + 1

@@ -24,13 +24,15 @@ cat [options] [file_names]
 
 ### 例子
 
-在终端机打印file.txt的内容：
+在终端中打印file.txt的内容：
+
 
 ```bash
 cat file.txt 
 ```
 
-连接两个文件的内容并在终端机中显示结果：
+连接两个文件的内容并在终端中显示结果：
+
 
 ```bash
 cat file1.txt file2.txt 
