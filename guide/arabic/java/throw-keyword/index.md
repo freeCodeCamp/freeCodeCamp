@@ -8,8 +8,9 @@ localeTitle: يرمي
 
 **_مثال:_**
 
- `throw new ArithmeticException("/ by zero not permitted"); 
-` 
+```java
+throw new ArithmeticException("/ by zero not permitted");
+``` 
 
 ##### المزيد من الموارد
 

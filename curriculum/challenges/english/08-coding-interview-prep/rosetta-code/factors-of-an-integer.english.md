@@ -6,8 +6,8 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a function that returns the factors  of a positive integer.</p><p>These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.</p>
-///
+Write a function that returns the factors of a positive integer as an array.
+These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.
 </section>
 
 ## Instructions
@@ -39,7 +39,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function factors (num) {
+function factors(num) {
   // Good luck!
 }
 ```

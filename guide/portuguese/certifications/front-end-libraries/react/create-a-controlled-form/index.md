@@ -10,13 +10,13 @@ Primeiro, crie uma entrada controlada que armazene seu valor no estado, para que
 
 ### Solução
 
-```react.js
+```jsx
 <input value={this.state.input} onChange={this.handleChange}/> 
 ```
 
 Em seguida, crie o método handleSubmit para o seu componente. Primeiro, porque o formulário está sendo enviado, você terá que evitar que a página seja atualizada. Em segundo lugar, chame o método `setState()` , passando um objeto dos diferentes pares de valor-chave que você deseja alterar. Neste caso, você deseja definir 'submit' para o valor da variável 'input' e definir 'input' para uma string vazia.
 
-```react.js
+```jsx
 handleSubmit(event) { 
   event.preventDefault(); 
   this.setState({ 

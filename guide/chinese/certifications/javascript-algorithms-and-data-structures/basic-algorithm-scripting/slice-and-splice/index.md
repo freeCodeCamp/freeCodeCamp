@@ -52,7 +52,6 @@ function frankenSplice(arr1, arr2, n) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU)
 
 ### 代码说明：
 

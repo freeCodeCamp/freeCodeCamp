@@ -8,11 +8,11 @@ flex-grow属性是一个flexbox属性，允许您指定Flex容器中容器的可
 
 它会把你的容器从这里转过来
 
-![](https://i.imgur.com/lFJaBUfh.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/lFJaBUfh.png)
 
 # **对此**
 
-![](https://i.imgur.com/4X8ITZih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4X8ITZih.png)
 
 刚刚发生了什么？
 
@@ -49,7 +49,7 @@ body {
 
 首先让我们创建两个段落并启用display：flex;
 
-![](https://i.imgur.com/wPqUgsih.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/wPqUgsih.png)
 
 注意一些事情
 
@@ -60,7 +60,7 @@ body {
 
 为了看到这一点，让第一个给出一个“十”类和一个flex-grow属性为1.让第二个给出一个“20”类和2个flex-grow属性。
 
-![](https://i.imgur.com/7n0V1G4h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/7n0V1G4h.png)
 
 注意一些事情
 
@@ -69,6 +69,6 @@ body {
 
 当我们调整屏幕大小时，我们还发现第一个缩小的速度是第二个缩小的两倍。
 
-![](https://i.imgur.com/pa4grM8h.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/pa4grM8h.png)
 
 #### 更多信息：

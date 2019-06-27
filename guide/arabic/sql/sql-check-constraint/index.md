@@ -14,38 +14,41 @@ localeTitle: SQL CHECK القيد
 
 **الخلية:**
 
- `CREATE TABLE Persons ( 
-    ID int NOT NULL, 
-    LastName varchar(255) NOT NULL, 
-    FirstName varchar(255), 
-    Age int, 
-    CHECK (Age>=18) 
- ); 
-` 
+```sql
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age>=18)
+);
+``` 
 
 **SQL Server / Oracle / MS Access:**
 
- `CREATE TABLE Persons ( 
-    ID int NOT NULL, 
-    LastName varchar(255) NOT NULL, 
-    FirstName varchar(255), 
-    Age int CHECK (Age>=18) 
- ); 
-` 
+```sql
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int CHECK (Age>=18)
+);
+``` 
 
 للسماح بتسمية قيد CHECK ، ولتحديد قيد CHECK على أعمدة متعددة ، استخدم بناء جملة SQL التالي:
 
 **MySQL / SQL Server / Oracle / MS Access:**
 
- `CREATE TABLE Persons ( 
-    ID int NOT NULL, 
-    LastName varchar(255) NOT NULL, 
-    FirstName varchar(255), 
-    Age int, 
-    City varchar(255), 
-    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes') 
- ); 
-` 
+```sql
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255),
+    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes')
+);
+``` 
 
 ### SQL الاختيار على ALTER TABLE
 
@@ -53,17 +56,19 @@ localeTitle: SQL CHECK القيد
 
 **MySQL / SQL Server / Oracle / MS Access:**
 
- `ALTER TABLE Persons 
- ADD CHECK (Age>=18); 
-` 
+```sql
+ALTER TABLE Persons
+ADD CHECK (Age>=18);
+``` 
 
 للسماح بتسمية قيد CHECK ، ولتحديد قيد CHECK على أعمدة متعددة ، استخدم بناء جملة SQL التالي:
 
 **MySQL / SQL Server / Oracle / MS Access:**
 
- `ALTER TABLE Persons 
- ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes'); 
-` 
+```sql
+ALTER TABLE Persons
+ADD CONSTRAINT CHK_PersonAge CHECK (Age>=18 AND City='Sandnes');
+``` 
 
 ### انخفاض القيد الاختيار
 
@@ -71,12 +76,14 @@ localeTitle: SQL CHECK القيد
 
 **SQL Server / Oracle / MS Access:**
 
- `ALTER TABLE Persons 
- DROP CONSTRAINT CHK_PersonAge; 
-` 
+```sql
+ALTER TABLE Persons
+DROP CONSTRAINT CHK_PersonAge;
+``` 
 
 **الخلية:**
 
- `ALTER TABLE Persons 
- DROP CHECK CHK_PersonAge; 
-`
+```sql
+ALTER TABLE Persons
+DROP CHECK CHK_PersonAge;
+```

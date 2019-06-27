@@ -17,15 +17,17 @@ localeTitle: يتكرر من خلال جميع عناصر المصفوفة عن 
 
 *   يجب بعد ذلك مقارنة كل عنصر من الصفيف بمعلمة `elem` تم تمريرها من خلال الدالة `filteredArray()` .
 
- `if (arr[i].indexOf(elem)==-1){ 
-` 
+```javascript
+if (arr[i].indexOf(elem)==-1){
+``` 
 
 ## تلميح 3
 
 *   إذا لم يتم العثور على تطابق ، فهذا `newArr` أن `newArr` تمت إضافته بالكامل. وظيفة `push()` مفيدة جدًا هنا.
 
- `newArr.push(arr[i]); 
-` 
+```javascript
+newArr.push(arr[i]);
+``` 
 
 *   وبمجرد إضافة هذا `newArr` بأكمله إلى `newArr` ، تستمر الحلقة مع العنصر التالي.
 

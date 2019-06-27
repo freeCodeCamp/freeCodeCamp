@@ -23,19 +23,21 @@ localeTitle: CSS3 Nth Child Selector
 
 المغلق a: nth-childe (odd) { / \* CSS هنا \* / }
 
- `##### Even 
- 
- Even returns all even elements of a given type. 
-` 
+```
+##### Even
+
+Even returns all even elements of a given type.
+``` 
 
 المغلق a: nth-childe (even) { / \* CSS هنا \* / }
 
- `#### An+B 
- 
- Returns all elements matching the equation An+B for every positive integer value of n (in addition to 0). 
- 
- For example, the following will match every 3rd anchor element: 
-` 
+```
+#### An+B
+
+Returns all elements matching the equation An+B for every positive integer value of n (in addition to 0).
+
+For example, the following will match every 3rd anchor element:
+``` 
 
 المغلق a: nth-childe (3n) { / \* CSS هنا \* / } \`\` \`
 

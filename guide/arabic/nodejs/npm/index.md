@@ -12,9 +12,10 @@ localeTitle: الآلية الوقائية الوطنية
 
 لتثبيت `npm` لدينا لتنزيل ثنائيات Nodejs في envrionment المحلي. تتضمن ثنائيات Node.js أحدث إصدار من npm. للتحقق من ذلك:
 
- `npm -v 
- 5.6.0 
-` 
+```shell
+npm -v
+5.6.0
+``` 
 
 يوفر مدير حزمة العقدة (NPM) وظيفتين رئيسيتين -
 
@@ -31,44 +32,49 @@ localeTitle: الآلية الوقائية الوطنية
 
 ستصبح أي حزم مثبتة عالميًا متوفرة من سطر الأوامر. نستخدم العلامة --global أو g لتثبيت الحزم عالمياً.
 
- `$ npm install uglify-js --global 
-` 
+```shell
+$ npm install uglify-js --global
+``` 
 
 يمكننا سرد الحزم العالمية التي قمنا بتثبيتها باستخدام الأمر list npm.
 
- `$ npm list --global 
- /usr/local/lib 
- ├─┬ npm@5.6.0 
- │ ├── abbrev@1.1.0 
- │ ├── ansi-regex@2.1.1 
- │ ├── ansicolors@0.3.2 
- │ ├── ansistyles@0.1.3 
- .................... 
- └─┬ uglify-js@3.0.15 
-  ├─┬ commander@2.9.0 
-  │ └── graceful-readlink@1.0.1 
-  └── source-map@0.5.6 
-` 
+```shell
+$ npm list --global
+/usr/local/lib
+├─┬ npm@5.6.0
+│ ├── abbrev@1.1.0
+│ ├── ansi-regex@2.1.1
+│ ├── ansicolors@0.3.2
+│ ├── ansistyles@0.1.3
+....................
+└─┬ uglify-js@3.0.15
+  ├─┬ commander@2.9.0
+  │ └── graceful-readlink@1.0.1
+  └── source-map@0.5.6
+``` 
 
 ومع ذلك ، فإن المخرجات مطولة نوعًا ما. يمكننا تغيير ذلك مع الخيار --depth = 0.
 
- `$ npm list -g --depth=0 
- /usr/local/lib 
- ├── npm@5.6.0 
- └── uglify-js@3.0.15 
-` 
+```js
+$ npm list -g --depth=0
+/usr/local/lib
+├── npm@5.6.0
+└── uglify-js@3.0.15
+``` 
 
 ### تثبيت الحزم في الوضع المحلي
 
 عند تثبيت الحزم محليًا ، فأنت تفعل ذلك عادةً باستخدام ملف package.json.
 
- `npm install --save express 
-` 
+```shell
+npm install --save express
+``` 
 
 الآن يمكنك استخدام هذه الوحدة في ملف js الخاص بك كما يلي
 
- `const express = require('express'); 
-` 
+```js
+const express = require('express');
+``` 
 
 وتنقسم الوحدات المحلية الى مزيد من نوعين من depenedencies: `devDepenednecies` و `dependencies` . الفرق بين هذين ، هو أن devDependencies هي وحدات مطلوبة فقط أثناء التطوير ، في حين أن التبعيات هي وحدات مطلوبة أيضا في وقت التشغيل. لحفظ تبعية باعتبارها devDependency على التثبيت ، نحتاج إلى القيام `npm install --save-dev` ، بدلاً من مجرد `npm install --save` .
 
@@ -78,8 +84,9 @@ localeTitle: الآلية الوقائية الوطنية
 
 للقيام بذلك ، نذكر إصدار الحزمة الذي نريد تثبيته.
 
- `$ npm install underscore@1.8.2 -S 
-` 
+```shell
+$ npm install underscore@1.8.2 -S
+``` 
 
 لإزالة تبعية عمومية ، استخدم `-g` flag.
 
@@ -87,8 +94,9 @@ localeTitle: الآلية الوقائية الوطنية
 
 npm هو مدير حزم لذا يجب أن يكون قادرًا على إزالة حزمة. يمكننا إزالة الحزمة:
 
- `$ npm uninstall underscore -S 
-` 
+```shell
+$ npm uninstall underscore -S
+``` 
 
 لتحديث تبعية عالمية ، استخدم `-g` flag.
 
@@ -96,16 +104,18 @@ npm هو مدير حزم لذا يجب أن يكون قادرًا على إزا�
 
 لتحديث حزمة ، يمكنك القيام بما يلي:
 
- `$ npm update underscore -S 
-` 
+```
+$ npm update underscore -S
+``` 
 
 للتحقق مما إذا كان هناك تحديث متوفر لأي حزمة مرتبطة بمشروعنا:
 
- `$ npm outdated 
- 
- Package     Current  Wanted  Latest  Location 
- underscore    1.8.2   1.8.3   1.8.3  project 
-` 
+```shell
+$ npm outdated
+
+Package     Current  Wanted  Latest  Location
+underscore    1.8.2   1.8.3   1.8.3  project
+``` 
 
 يعرض العمود الحالي لنا الإصدار المثبت محليًا. يخبرنا العمود الأحدث بأحدث إصدار من الحزمة. يخبرنا العمود "مطلوب" بأحدث إصدار من الحزمة التي يمكننا الترقية إليها دون كسر الشفرة الحالية.
 
@@ -115,17 +125,18 @@ npm هو مدير حزم لذا يجب أن يكون قادرًا على إزا�
 
 عند تثبيت الحزم محليًا ، فإنك تحتاج إلى ملف package.json. لتوليد واحدة يمكنك القيام بذلك باستخدام الأمر `npm init` . سيؤدي ذلك إلى طرح بعض الأسئلة عن طريق الضغط على Enter يمكنك الاحتفاظ بالقيم الافتراضية.
 
- `$ npm init 
- package name: (project) 
- version: (1.0.0) 
- description: Demo of package.json 
- entry point: (index.js) 
- test command: 
- git repository: 
- keywords: 
- author: 
- license: (ISC) 
-` 
+```shell
+$ npm init
+package name: (project)
+version: (1.0.0)
+description: Demo of package.json
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+``` 
 
 فكر في `package.json` باعتباره حارس جميع التبعيات أو مظاهر مشروع Node.js. إذا كنت تريد طريقة أسرع لإنشاء ملف package.json استخدم `npm init --y` .
 
@@ -162,146 +173,157 @@ npm هو مدير حزم لذا يجب أن يكون قادرًا على إزا�
 
 مثال:
 
- `{ 
-   "name": "express", 
-      "description": "Fast, unopinionated, minimalist web framework", 
-      "version": "4.11.2", 
-      "author": { 
- 
-         "name": "TJ Holowaychuk", 
-         "email": "tj@vision-media.ca" 
-      }, 
- 
-   "contributors": [{ 
-      "name": "Aaron Heckmann", 
-      "email": "aaron.heckmann+github@gmail.com" 
-   }, 
- 
-    ], 
-   "license": "MIT", "repository": { 
-      "type": "git", 
-      "url": "https://github.com/strongloop/express" 
-   }, 
-   "homepage": "https://expressjs.com/", "keywords": [ 
-      "express", 
-      "framework", 
-      "sinatra", 
-      "web", 
-      "rest", 
-      "restful", 
-      "router", 
-      "app", 
-      "api" 
-   ], 
-   "dependencies": { 
-      "serve-static": "~1.8.1", 
- 
-   }, 
-   "devDependencies": { 
-      "jade": "~1.9.1", 
-   }, 
-   "engines": { 
-      "node": ">= 0.10.0" 
-   }, 
-   "files": [ 
-      "LICENSE", 
-      "History.md", 
-      "Readme.md", 
-      "index.js", 
-      "lib/" 
-   ], 
-   "scripts": { 
-      "test": "mocha --require test/support/env 
-         --reporter spec --bail --check-leaks test/ test/acceptance/", 
-      "test-cov": "istanbul cover node_modules/mocha/bin/_mocha 
-         -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance/", 
-      "test-tap": "mocha --require test/support/env 
-         --reporter tap --check-leaks test/ test/acceptance/", 
-      "test-travis": "istanbul cover node_modules/mocha/bin/_mocha 
-         --report lcovonly -- --require test/support/env 
-         --reporter spec --check-leaks test/ test/acceptance/" 
-   }, 
- 
- } 
-` 
+```json
+{
+   "name": "express",
+      "description": "Fast, unopinionated, minimalist web framework",
+      "version": "4.11.2",
+      "author": {
+
+         "name": "TJ Holowaychuk",
+         "email": "tj@vision-media.ca"
+      },
+
+   "contributors": [{
+      "name": "Aaron Heckmann",
+      "email": "aaron.heckmann+github@gmail.com"
+   },
+
+    ],
+   "license": "MIT", "repository": {
+      "type": "git",
+      "url": "https://github.com/strongloop/express"
+   },
+   "homepage": "https://expressjs.com/", "keywords": [
+      "express",
+      "framework",
+      "sinatra",
+      "web",
+      "rest",
+      "restful",
+      "router",
+      "app",
+      "api"
+   ],
+   "dependencies": {
+      "serve-static": "~1.8.1",
+
+   },
+   "devDependencies": {
+      "jade": "~1.9.1",
+   },
+   "engines": {
+      "node": ">= 0.10.0"
+   },
+   "files": [
+      "LICENSE",
+      "History.md",
+      "Readme.md",
+      "index.js",
+      "lib/"
+   ],
+   "scripts": {
+      "test": "mocha --require test/support/env
+         --reporter spec --bail --check-leaks test/ test/acceptance/",
+      "test-cov": "istanbul cover node_modules/mocha/bin/_mocha
+         -- --require test/support/env --reporter dot --check-leaks test/ test/acceptance/",
+      "test-tap": "mocha --require test/support/env
+         --reporter tap --check-leaks test/ test/acceptance/",
+      "test-travis": "istanbul cover node_modules/mocha/bin/_mocha
+         --report lcovonly -- --require test/support/env
+         --reporter spec --check-leaks test/ test/acceptance/"
+   },
+
+}
+``` 
 
 ## مخطوطات npm
 
 `npm` البرامج النصية `npm` لأتمتة المهام المتكررة. على سبيل المثال ، بناء مشروعك ، وتقليل ملفات Cascading Style Sheets (CSS) و JavaScript (JS). تُستخدم البرامج النصية أيضًا في حذف الملفات والمجلدات المؤقتة ، إلخ. يمكن تخصيصها ويمكن الوصول إليها عبر كائن `scripts` في `package.json` .
 
- `{ 
-  "name": "super-cool-package", 
-  "version": "1.0.0", 
-  "scripts": {} 
- } 
-` 
+```json
+{
+  "name": "super-cool-package",
+  "version": "1.0.0",
+  "scripts": {}
+}
+``` 
 
 مثال على أكثر نصوص NPM شيوعًا:
 
- `"scripts": { 
-    "start": "node index.js", 
-    ... 
- } 
-` 
+```json
+"scripts": {
+    "start": "node index.js",
+    ...
+}
+``` 
 
 ## npm الكاش
 
 عندما تقوم npm بتثبيت حزمة فإنها تحتفظ بنسخة ، لذلك في المرة التالية التي ترغب في تثبيت هذه الحزمة ، لا تحتاج إلى الوصول إلى الشبكة. يتم تخزين النسخ مؤقتًا في الدليل .npm في المسار الرئيسي.
 
- `$ ls ~/.npm 
- lodash.zipobject 
- log-driver 
- log-symbols 
- logalot 
- logfmt 
- loglevel 
- long-timeout 
- longest 
- longest-strea 
-` 
+```shell
+$ ls ~/.npm
+lodash.zipobject
+log-driver
+log-symbols
+logalot
+logfmt
+loglevel
+long-timeout
+longest
+longest-strea
+``` 
 
 سيصبح هذا الدليل مزدحمًا مع الحزم القديمة بمرور الوقت ، لذلك من المفيد تنظيفه في بعض الأحيان.
 
- `$ npm cache clean 
-` 
+```shell
+$ npm cache clean
+``` 
 
 ## غزل - بديل ل npm
 
 غزل هو أيضا مدير حزمة جافا سكريبت المتقدمة والمحافظة عليها من قبل الفيسبوك. كلاهما يشتركان في أوجه تشابه عالية عندما يتعلق الأمر باستخدامهما. من المفترض أن يكون أسرع في تثبيت التبعيات من npm. لتثبيته:
 
- `npm install -g yarn 
-` 
+```shell
+npm install -g yarn
+``` 
 
 لا ينوي غزل استبدال npm ، أكثر مثل تحسين عليه. ويستخدم نفس ملف package.json ، ويحفظ التبعيات إلى `node_modules/` folder. لتهيئة مشروع ، سوف تستخدم:
 
- `yarn init 
-` 
+```shell
+yarn init
+``` 
 
 ### إضافة ، وترقية ، وإزالة التبعيات
 
 إضافة تبعية جديدة أمر سهل ومماثل إلى npm:
 
- `yarn add [package-name] 
-` 
+```shell
+yarn add [package-name]
+``` 
 
 إذا كنت تريد إصدارًا أو علامة حزمة معينة ، فيمكنك القيام بذلك.
 
- `yarn add express@4.14.1 
-` 
+```shell
+yarn add express@4.14.1
+``` 
 
 بالنسبة إلى تبعيات dev ، تبعية الأقران والتبعيات الاختيارية التي تمر بها --dev --peer --optional على التوالي.
 
- `yarn add gulp --dev 
-` 
+```shell
+yarn add gulp --dev
+``` 
 
 سيوفر الجولب تحت devDependencies. لترقية حزمة أو إزالتها ، يمكنك فقط استبدال أمر الإضافة إما بترقية أو إزالة متبوعة باسم الحزمة.
 
- `# upgrade a gulp from 3.9.1 to version 4 
- yarn upgrade gulp@4.0 
- 
- # remove a gulp 
- yarn remove gulp 
-` 
+```shell
+# upgrade a gulp from 3.9.1 to version 4
+yarn upgrade gulp@4.0
+
+# remove a gulp
+yarn remove gulp
+``` 
 
 بعد كل عملية تثبيت أو ترقية أو إزالة ، يقوم الغزل بتحديث ملف yarn.lock الذي يتتبع إصدار الحزمة المضبوط المثبت في دليل node\_modules. تم تحديث ميزة مشابهة في npm. الآن هناك `package-lock.json` التي تتصرف بالضبط بنفس الطريقة كما `yarn.lock` في إصدارات أحدث من npm.
 

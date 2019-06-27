@@ -1,5 +1,5 @@
 ---
-title: Add Free Code Camp in Linkedin
+title: Add Free Code Camp in LinkedIn
 ---
 LinkedIn recognizes Free Code Camp as a university.
 

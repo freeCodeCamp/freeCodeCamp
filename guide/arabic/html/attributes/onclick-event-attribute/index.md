@@ -8,9 +8,9 @@ localeTitle: Onclick Event Attribute
 
 وهي تعمل تمامًا مثل _طريقة onclick_ أو `addEventListener('click')` للعنصر.
 
- `
-<element onclick="event"></element> 
-` 
+```html
+<element onclick="event"></element>
+``` 
 
 > يمكن أن يكون `event` عبارة عن وظيفة JavaScript أو يمكنك كتابة جافا سكريبت الخام
 
@@ -18,22 +18,22 @@ localeTitle: Onclick Event Attribute
 
 تغيير لون عنصر `<p>` عند النقر عليه
 
- `
-<p id="text" onclick="redify()">Change my color</p> 
- 
- <script> 
- function redify(){ 
-  let text = document.querySelector('#text'); 
-  text.style.color = "red"; 
- } 
- </script> 
-` 
+```html
+<p id="text" onclick="redify()">Change my color</p>
+
+<script>
+function redify(){
+  let text = document.querySelector('#text');
+  text.style.color = "red";
+}
+</script>
+``` 
 
 باستخدام سمة raw onclick الأولية لجافا سكريبت:
 
- `
-<button onclick="alert('Hello')">Hello World</button> 
-` 
+```html
+<button onclick="alert('Hello')">Hello World</button>
+``` 
 
 #### معلومات اكثر:
 
