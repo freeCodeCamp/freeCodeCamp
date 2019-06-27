@@ -7,14 +7,15 @@ challengeType: 5
 ## Description
 <section id='description'>
 If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:
-<pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
-7 -> 49 -> 97 -> 130 -> 10 -> 1</pre>
-Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
+<pre>
+15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
+7 -> 49 -> 97 -> 130 -> 10 -> 1
+</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
 </section>
 
 ## Tests
@@ -49,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function iteratedSquare (n) {
+function iteratedSquare(n) {
   // Good luck!
 }
 ```
@@ -65,7 +66,7 @@ function iteratedSquare (n) {
 
 
 ```js
-function iteratedSquare (n) {
+function iteratedSquare(n) {
 	var total;
 	while (n != 89 && n != 1) {
 		total = 0;
