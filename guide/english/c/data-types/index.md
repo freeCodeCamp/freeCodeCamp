@@ -10,7 +10,8 @@ There are two categories that we can break this into: integers, and floating-poi
 
 Floating point numbers are numbers with a decimal. Like integers, -321, 497, 19345, and -976812 are all valid, but now 4.5, 0.0004, -324.984, and other non-whole numbers are valid too.
 
-C allows us to choose between several options with our data types because they are all stored in different ways on the computer. As a result, it is important to be aware of the abilities and limitations of each data type to choose the most appropriate one.
+C allows us to choose between several different options with our data types because they are all stored in different ways on the computer. As a result, it is important to be aware of the abilities and limitations of each data type to choose the most appropriate one.
+Since C is not interpreted language, it is not allowed to declare variables dynamically, so dynamic allocation of memory to variables is not possible. Variables should be declared at the beginning or before using it. Also, there should be provision by IDE to indicate the unused variable which is declared.
 
 ## Integer data types
 
