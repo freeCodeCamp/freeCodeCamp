@@ -40,7 +40,7 @@ O Git é um sistema de controle de versão distribuído gratuito e de código ab
 *   [Git nas trincheiras](http://cbx33.github.io/gitt/) - Git In The Trenches, ou GITT é projetado para ser um livro que se concentra em ensinar as pessoas a usar o Git associando-se a cenários que são vivenciados por uma empresa fictícia chamada Tamagoyaki Inc. Faça o download deste livro em PDF, mobi ou Formulário ePub gratuitamente.
 *   [Tutorial Oficial do Git](https://git-scm.com/docs/gittutorial) - Este tutorial explica como importar um novo projeto para o Git, fazer alterações nele e compartilhar mudanças com outros desenvolvedores.
 *   [Official Git User Manual](https://git-scm.com/docs/user-manual.html) - Este manual foi projetado para ser lido por alguém com habilidades básicas de linha de comando do UNIX, mas sem conhecimento prévio do Git.
-*   [Experimente o Git Tutorial by Github e CodeSchool](https://try.github.io) - Este tutorial é uma rápida sprint de 15 minutos para começar a usar o Git no navegador.
+*   [Experimente o Git Tutorial by GitHub e CodeSchool](https://try.github.io) - Este tutorial é uma rápida sprint de 15 minutos para começar a usar o Git no navegador.
 
 ## Outros recursos
 

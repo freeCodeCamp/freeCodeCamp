@@ -57,28 +57,28 @@ When you execute this code in a c++ program numbers from 1 to 1000 will be print
     ` for(int i=0;i<=1000;i++) ` 
  * If there is only one statement inside the loop then the curly bracket is optional but its better to write loop code 
    within brackets so that you don't get confused. 
-    ``` c++ 
+```cpp 
     for(int i=0;i<=1000;i++) 
         { 
         } 
-     ``` 
+```
  * Then inside the loop you write what do you want to do. In the above program we output the value of i. 
  
  So, in this way the for loop works 
  
  If you want to print even numbers from 1 to 1000 then your program will look like this 
+```cpp
+
+para (int i = 0; i <= 1000; i = i + 2) { cout << i << endl; }
+
 ```
-
-c ++ para (int i = 0; i <= 1000; i = i + 2) { cout << i << endl; }
-
-\`\` \`
 
 *   La diferencia entre el primer programa y el segundo es la parte de incremento. El resto del código es el mismo. Este programa imprimirá 0 y luego agregue 2 e imprima 2 en la consola y así sucesivamente hasta que el valor de i sea igual a 1000.
     
     Nuestro programa final para imprimir números pares de 0 a 1000 se verá así.
     
-    \`\` \`c ++
+```cpp
     
     # incluir
-    
-    utilizando namespace std; int main () { para (int i = 0; i <= 1000; i = i + 2) { cout << i << endl; } devuelve 0; } \`\` \`
+    utilizando namespace std; int main () { para (int i = 0; i <= 1000; i = i + 2) { cout << i << endl; } devuelve 0; }
+```

@@ -10,11 +10,12 @@ localeTitle: استخدم طريقة التصفية لاستخراج البيا�
 
 ### حل
 
- `// Add your code below this line 
- 
- var filteredList = watchList.map(function(e) { 
-  return {title: e["Title"], rating: e["imdbRating"]} 
- }).filter((e) => e.rating >= 8); 
- 
- console.log(filteredList); 
-`
+```javascript
+// Add your code below this line
+
+var filteredList = watchList.map(function(e) {
+  return {title: e["Title"], rating: e["imdbRating"]}
+}).filter((e) => e.rating >= 8);
+
+console.log(filteredList);
+```

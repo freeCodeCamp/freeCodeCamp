@@ -20,11 +20,11 @@ localeTitle: إعطاء لون الخلفية لعنصر div
 
 يمكنك بعد ذلك إضافة `class` إلى `div` :
 
- `
-<div class="blue-background"> 
-  <p> Example </p> 
- </div> 
-` 
+```html
+<div class="blue-background">
+  <p> Example </p>
+</div>
+``` 
 
 **الطريقة الثانية:**
 
@@ -34,10 +34,10 @@ localeTitle: إعطاء لون الخلفية لعنصر div
 
 (وهذا يعني أنها `class` متكررة لكل عنصر `div` تقوم بإنشائه.)
 
- `
-<style> 
-  div { 
-    background-color: blue; 
-  } 
- </style> 
-`
+```html
+<style>
+  div {
+    background-color: blue;
+  }
+</style>
+```

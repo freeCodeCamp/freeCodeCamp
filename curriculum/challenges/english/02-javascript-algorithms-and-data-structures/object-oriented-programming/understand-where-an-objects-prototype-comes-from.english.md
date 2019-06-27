@@ -7,9 +7,22 @@ challengeType: 1
 ## Description
 <section id='description'>
 Just like people inherit genes from their parents, an object inherits its <code>prototype</code> directly from the constructor function that created it. For example, here the <code>Bird</code> constructor creates the <code>duck</code> object:
-<blockquote>function Bird(name) {<br>&nbsp;&nbsp;this.name = name;<br>}<br><br>let duck = new Bird("Donald");</blockquote>
+
+```js
+function Bird(name) {
+  this.name = name;
+}
+
+let duck = new Bird("Donald");
+```
+
 <code>duck</code> inherits its <code>prototype</code> from the <code>Bird</code> constructor function. You can show this relationship with the <code>isPrototypeOf</code> method:
-<blockquote>Bird.prototype.isPrototypeOf(duck);<br>// returns true</blockquote>
+
+```js
+Bird.prototype.isPrototypeOf(duck);
+// returns true
+```
+
 </section>
 
 ## Instructions

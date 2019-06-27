@@ -14,15 +14,15 @@ localeTitle: Как создать раскрывающееся меню с CSS 
 
 Начальный экран:
 
-![](https://i.imgur.com/jrnu6mE.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png)
 
 Откроется окно:
 
-![](https://i.imgur.com/gszPtRa.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png)
 
 Выпадающее меню с выбранной опцией:
 
-![](https://i.imgur.com/TKXxZGF.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png)
 
 #### HTML:
 
@@ -241,5 +241,5 @@ function handleTitleChange(e){
 ## Больше информации
 
 *   [Введение ES6](https://guide.freecodecamp.org/javascript/es6)
-*   [Функции стрелок](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [Let и Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [Функции стрелок](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [Let и Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)

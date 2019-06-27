@@ -14,18 +14,19 @@ localeTitle: استخدم Destructuring Assignment لتمرير كائن كمع�
 
 ## الحل 1:
 
- `const half = (function() { 
-  "use strict"; // do not change this line 
- 
-  // change code below this line 
-  return function half({max, min}) { 
-    // use function argument destructuring 
-    return (max + min) / 2.0; 
-  }; 
-  // change code above this line 
- 
- })(); 
-` 
+```javascript
+const half = (function() {
+  "use strict"; // do not change this line
+
+  // change code below this line
+  return function half({max, min}) {
+    // use function argument destructuring
+    return (max + min) / 2.0;
+  };
+  // change code above this line
+
+})();
+``` 
 
 لاحظ أننا ندمر `stats` لتمرير اثنين من صفاتها - `max` `min` - إلى الوظيفة. لا تنس تعديل بيان الإرجاع الثاني. تغيير `stats.max` إلى `max` ، وتغيير `stats.min` إلى `min` فقط.
 
@@ -33,15 +34,16 @@ localeTitle: استخدم Destructuring Assignment لتمرير كائن كمع�
 
 هنا هو حل آخر يعمل. ليس الكثير من الاختلاف ، بخلاف حقيقة أن الوظيفة لا تملك اسمًا.
 
- `const half = (function() { 
-  "use strict"; // do not change this line 
- 
-  // change code below this line 
-  return (({max, min}) => { 
-    // use function argument destructuring 
-    return (max + min) / 2.0; 
-  }); 
-  // change code above this line 
- 
- })(); 
-`
+```javascript
+const half = (function() {
+  "use strict"; // do not change this line
+
+  // change code below this line
+  return (({max, min}) => {
+    // use function argument destructuring
+    return (max + min) / 2.0;
+  });
+  // change code above this line
+
+})();
+```

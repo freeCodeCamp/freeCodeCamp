@@ -6,20 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: &nbsp; (X, Y, Z).
-<p>
-Task:
-
-    Write a function that takes two vectors (arrays) as input and computes their cross product.
-
-Your function should return <code>null</code> on
-invalid inputs (ie vectors of different lengths).
-</p>
+A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return <code>null</code> on invalid inputs such as vectors of different lengths.
 </section>
 
 ## Tests
@@ -44,7 +36,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function crossProduct() {
+function crossProduct(a, b) {
     // Good luck!
 }
 ```
