@@ -9,10 +9,11 @@ localeTitle: عناصر الهدف حسب الفئة باستخدام jQuery
 
 ## حل
 
- `<script> 
-  $(document).ready(function() { 
-    $(".well").addClass("animated bounce"); 
-    $(".well").addClass("shake"); 
-  }); 
- </script> 
-`
+```javascript
+<script>
+  $(document).ready(function() {
+    $(".well").addClass("animated bounce");
+    $(".well").addClass("shake");
+  });
+</script>
+```

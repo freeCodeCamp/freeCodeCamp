@@ -2,13 +2,12 @@
 id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
-guideUrl: 'https://russian.freecodecamp.org/guide/certificates/assignment-with-a-returned-value'
 videoUrl: ''
 localeTitle: Назначение с возвращенной стоимостью
 ---
 
 ## Description
-<section id="description"> Если вы вспомните из нашего обсуждения « <a href="javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Сохранение значений с помощью оператора назначения»</a> , все, что находится справа от знака равенства, будет разрешено до присвоения значения. Это означает, что мы можем взять возвращаемое значение функции и присвоить ее переменной. Предположим, что мы предварительно определили <code>sum</code> функций, которая объединяет два числа, а затем: <code>ourSum = sum(5, 12);</code> вызовет функцию <code>sum</code> , которая возвращает значение <code>17</code> и присваивает ее переменной <code>ourSum</code> . </section>
+<section id="description"> Если вы вспомните из нашего обсуждения « <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Сохранение значений с помощью оператора назначения»</a> , все, что находится справа от знака равенства, будет разрешено до присвоения значения. Это означает, что мы можем взять возвращаемое значение функции и присвоить ее переменной. Предположим, что мы предварительно определили <code>sum</code> функций, которая объединяет два числа, а затем: <code>ourSum = sum(5, 12);</code> вызовет функцию <code>sum</code> , которая возвращает значение <code>17</code> и присваивает ее переменной <code>ourSum</code> . </section>
 
 ## Instructions
 <section id="instructions"> Вызовите функцию <code>processArg</code> с аргументом <code>7</code> и назначьте его возвращаемое значение <code>processed</code> переменной. </section>

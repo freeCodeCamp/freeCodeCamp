@@ -23,6 +23,6 @@ Isso aciona um retorno de chamada automático após o carregamento dos dados, cr
 ### Mais Informações:
 
 *   [Wikipidea / JSONP](https://en.wikipedia.org/wiki/JSONP)
-*   [JSONP e JQuery](https://learn.jquery.com/ajax/working-with-jsonp)
-*   [Mais JSONP com JQuery](http://api.jquery.com/jquery.getjson/#jsonp)
+*   [JSONP e jQuery](https://learn.jquery.com/ajax/working-with-jsonp)
+*   [Mais JSONP com jQuery](http://api.jquery.com/jquery.getjson/#jsonp)
 *   [Ajax e JSONP](http://stackoverflow.com/questions/5943630/basic-example-of-using-ajax-with-jsonp)

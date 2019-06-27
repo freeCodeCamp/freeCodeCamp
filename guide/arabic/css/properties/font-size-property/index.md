@@ -8,8 +8,9 @@ localeTitle: حجم الخط الممتلكات
 
 يتم استخدام الخاصية `font-size` لتعيين حجم خط العنصر. يوجد أدناه بناء الجملة الافتراضي لهذه الخاصية.
 
- `font-size:medium|xx-small|x-small|small|large|x-large|xx-large|smaller|larger|length|initial|inherit; 
-` 
+```css
+font-size:medium|xx-small|x-small|small|large|x-large|xx-large|smaller|larger|length|initial|inherit;
+``` 
 
 كما هو موضح أعلاه ، يمكن أن تأخذ هذه الخاصية عدة قيم. القيمة الافتراضية هي _متوسطة الحجم_ والقيم من _xx-small_ إلى _xx-large_ تحدد حجم الخط من صغير جدًا إلى كبير جدًا (مثل أحجام الملابس). تحدد القيم _الأصغر_ _والأكبر_ حجم الخط إلى أصغر من حجم خط العنصر الأصلي وأكبر من حجم خط العنصر الأصلي ، على التوالي. على الرغم من توافر القيم المذكورة ، فإن أكثر أنواع القيم المستخدمة شيوعًا هو وحدة الطول. قد تتضمن وحدات الطول: **px** و **٪** و **em** و **rem** و **pt** .
 
@@ -21,10 +22,11 @@ localeTitle: حجم الخط الممتلكات
 
 **مثال:**
 
- `p { 
-  font-size: 20px; 
- } 
-` 
+```css
+p {
+  font-size: 20px;
+}
+``` 
 
 **نتيجة:** ![مثال واحد](https://image.prntscr.com/image/TI_29z3FRO20dJD2Dc7JJA.png)
 
@@ -34,10 +36,11 @@ localeTitle: حجم الخط الممتلكات
 
 **مثال:**
 
- `p { 
-  font-size: 120%; 
- } 
-` 
+```css
+p {
+  font-size: 120%;
+}
+``` 
 
 **نتيجة:** ![المثال الثاني](https://image.prntscr.com/image/P9HTpWbETeyjZhxzf9z-SA.png) يغيّر الرمز أعلاه حجم الخط إلى 120٪ من حجم الخط الافتراضي وهو 16 بكسل.
 
@@ -47,10 +50,11 @@ localeTitle: حجم الخط الممتلكات
 
 **مثال:**
 
- `p { 
-  font-size: 1.4em; 
- } 
-` 
+```css
+p {
+  font-size: 1.4em;
+}
+``` 
 
 **نتيجة:** ![المثال الثالث](https://image.prntscr.com/image/AeCJ0TCbRHqOTAFJ9CYNUQ.png) يعيّن الرمز أعلاه حجم الخط في الفقرة إلى 1.4 مرة حجم الخط من أقرب أصل وهو العنصر الأساسي. يحتوي عنصر النص على حجم خط افتراضي يبلغ 16 بكسل ، لذا سيكون لهذه الفقرة حجم خط يبلغ 1.4 \* 16 = 22.4 بكسل.
 
@@ -76,10 +80,11 @@ localeTitle: حجم الخط الممتلكات
 
 **مثال:**
 
- `p { 
-  font-size: 16pt; 
- } 
-` 
+```css
+p {
+  font-size: 16pt;
+}
+``` 
 
 **نتيجة:** ![المثال الخامس](https://image.prntscr.com/image/IyOOr_WCT963wa0DoWyoOg.png) حجم الخط أعلاه هو 16 نقطة.
 

@@ -6,7 +6,8 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Write a function to calculate the binomial coefficient for the given value of n and k.</p><p>This formula is recommended:</p>
+Write a function to calculate the binomial coefficient for the given value of n and k.
+This formula is recommended:
 $\binom{n}{k} = \frac{n!}{(n-k)!k!} = \frac{n(n-1)(n-2)\ldots(n-k+1)}{k(k-1)(k-2)\ldots 1}$
 </section>
 
@@ -43,7 +44,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function binom (n, k) {
+function binom(n, k) {
   // Good luck!
 }
 ```

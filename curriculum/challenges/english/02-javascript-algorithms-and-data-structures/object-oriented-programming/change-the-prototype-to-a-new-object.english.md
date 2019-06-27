@@ -7,11 +7,37 @@ challengeType: 1
 ## Description
 <section id='description'>
 Up until now you have been adding properties to the <code>prototype</code> individually:
-<blockquote>Bird.prototype.numLegs = 2;</blockquote>
+
+```js
+Bird.prototype.numLegs = 2;
+```
+
 This becomes tedious after more than a few properties.
-<blockquote>Bird.prototype.eat = function() {<br>&nbsp;&nbsp;console.log("nom nom nom");<br>}<br><br>Bird.prototype.describe = function() {<br>&nbsp;&nbsp;console.log("My name is " + this.name);<br>}</blockquote>
+
+```js
+Bird.prototype.eat = function() {
+  console.log("nom nom nom");
+}
+
+Bird.prototype.describe = function() {
+  console.log("My name is " + this.name);
+}
+```
+
 A more efficient way is to set the <code>prototype</code> to a new object that already contains the properties. This way, the properties are added all at once:
-<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;numLegs: 2, <br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("nom nom nom");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("My name is " + this.name);<br>&nbsp;&nbsp;}<br>};</blockquote>
+
+```js
+Bird.prototype = {
+  numLegs: 2, 
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
+```
+
 </section>
 
 ## Instructions

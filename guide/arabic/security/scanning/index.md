@@ -45,23 +45,25 @@ localeTitle: مسح
 
 فمثلا:
 
- `ping <target_ip_address> -c <number_of_packets_to_send> 
- ping 10.10.0.1 -c 4 
-` 
+```
+ping <target_ip_address> -c <number_of_packets_to_send>
+ping 10.10.0.1 -c 4
+``` 
 
 إذا كان النظام الهدف على قيد الحياة ، يجب أن تحصل على رد ظهر يبدو مشابهاً أدناه.
 
- `Pinging 10.10.0.1 with 32 bytes of data: 
- 
- Reply from 10.0.0.1: bytes=32 time=26ms TTL=240 
- Reply from 10.0.0.1: bytes=32 time=26ms TTL=240 
- Reply from 10.0.0.1: bytes=32 time=26ms TTL=240 
- Reply from 10.0.0.1: bytes=32 time=26ms TTL=240 
- Ping statistics for 10.10.0.1: 
-    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss), 
- Approximate round trip times in milliseconds: 
-    Minimum = 26ms, Maximum = 26ms, Average = 26ms 
-` 
+```
+Pinging 10.10.0.1 with 32 bytes of data:
+
+Reply from 10.0.0.1: bytes=32 time=26ms TTL=240
+Reply from 10.0.0.1: bytes=32 time=26ms TTL=240
+Reply from 10.0.0.1: bytes=32 time=26ms TTL=240
+Reply from 10.0.0.1: bytes=32 time=26ms TTL=240
+Ping statistics for 10.10.0.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milliseconds:
+    Minimum = 26ms, Maximum = 26ms, Average = 26ms
+``` 
 
 *   يشير **الرد من** أن حزمة طلب ارتداد ICMP الخاصة بنا قد تم استلامها في حزمة رد ICMP Echo تم إرسالها مرة أخرى.
 *   **Bytes = 32** يخبرنا أن حجم الحزمة التي تم إرسالها.

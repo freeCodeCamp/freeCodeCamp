@@ -6,31 +6,31 @@ videoUrl: ''
 localeTitle: Adicionar um selecionador de data acessível
 ---
 
-## Description
-<section id="description"> Os formulários geralmente incluem o campo de <code>input</code> , que pode ser usado para criar vários controles de formulários diferentes. O atributo <code>type</code> neste elemento indica que tipo de entrada será criada. Você deve ter notado os tipos de entrada <code>text</code> e <code>submit</code> nos desafios anteriores, e o HTML5 introduziu uma opção para especificar um campo do tipo <code>date</code> . Dependendo do suporte ao navegador, um seletor de data aparece no campo de <code>input</code> quando está em foco, o que facilita o preenchimento de um formulário para todos os usuários. Para navegadores mais antigos, o tipo será padronizado para <code>text</code> . Por isso, é útil mostrar aos usuários o formato de data esperado na label ou no campo de texto com um placeholder. Aqui está um exemplo: <blockquote> &lt;label for = &quot;input1&quot;&gt; Insira uma data: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
+## Descrição
+<section id="description"> Os formulários geralmente incluem o campo de <code>input</code>, que pode ser usado para criar vários controles de formulários diferentes. O atributo <code>type</code> neste elemento indica que tipo de entrada será criada. Você deve ter notado os tipos de entrada <code>text</code> e <code>submit</code> nos desafios anteriores, e o HTML5 introduziu uma opção para especificar um campo do tipo <code>date</code>. Dependendo do navegador, quando o campo de <code>input</code> está com o foco, irá aparecer um seletor de data, o que facilita o preenchimento do formulário. Em navegadores mais antigos, o tipo será padronizado para <code>text</code>. Por isso, é útil mostrar aos usuários o formato de data esperado na <i>label</i> ou no campo de texto com um <i>placeholder</i>. Aqui está um exemplo: <blockquote> &lt;label for = &quot;input1&quot;&gt; Insira uma data: &lt;/ label&gt; <br> &lt;input type = &quot;date&quot; id = &quot;input1&quot; name = &quot;input1&quot;&gt; <br></blockquote></section>
 
-## Instructions
-<section id="instructions"> O Camper Cat está organizando um torneio de Mortal Kombat e quer pedir a seus concorrentes para ver qual data funciona melhor. Adicione uma tag de <code>input</code> com um atributo <code>type</code> de &quot;date&quot;, um atributo <code>id</code> de &quot;pickdate&quot; e um atributo <code>name</code> de &quot;date&quot;. </section>
+## Instruções
+<section id="instructions"> O Gato Campista está organizando um torneio de Mortal Kombat e quer pedir aos seus participantes para ver qual data funciona melhor. Adicione uma etiqueta de <code>input</code> com um atributo <code>type</code> de &quot;<i>date</i>&quot;, um atributo <code>id</code> de &quot;<i>pickdate</i>&quot; e um atributo <code>name</code> de &quot;<i>date</i>&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Seu código deve adicionar uma tag de <code>input</code> para o campo do seletor de datas.
-    testString: 'assert($("input").length == 2, "Your code should add one <code>input</code> tag for the date selector field.");'
-  - text: Sua tag de <code>input</code> deve ter um atributo de <code>type</code> com um valor de data.
-    testString: 'assert($("input").attr("type") == "date", "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.");'
-  - text: Sua tag de <code>input</code> deve ter um atributo <code>id</code> com um valor de pickdate.
-    testString: 'assert($("input").attr("id") == "pickdate", "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.");'
-  - text: Sua tag de <code>input</code> deve ter um atributo de <code>name</code> com um valor de data.
-    testString: 'assert($("input").attr("name") == "date", "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.");'
+  - text: O seu c&oacute;digo deve adicionar uma etiqueta <code>input</code> para o campo do seletor de datas.
+    testString: 'assert($("input").length == 2, "O seu c&oacute;digo deve adicionar uma etiqueta <code>input</code> para o campo do seletor de datas.");'
+  - text: A sua etiqueta de <code>input</code> deve ter um atributo <code>type</code> com um valor de <i>date</i>.
+    testString: 'assert($("input").attr("type") == "date", "A sua etiqueta de <code>input</code> deve ter um atributo <code>type</code> com um valor de <i>date</i>.");'
+  - text: A sua etiqueta de <code>input</code> deve ter um atributo <code>id</code> com um valor de <i>pickdate</i>.
+    testString: 'assert($("input").attr("id") == "pickdate", "A sua etiqueta de <code>input</code> deve ter um atributo <code>id</code> com um valor de <i>pickdate</i>.");'
+  - text: A sua etiqueta de <code>input</code> deve ter um atributo <code>name</code> com um valor de <i>date</i>.
+    testString: 'assert($("input").attr("name") == "date", "A sua etiqueta de <code>input</code> deve ter um atributo <code>name</code> com um valor de <i>date</i>.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -38,14 +38,14 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Tournaments</h1>
+    <h1>Torneios</h1>
   </header>
   <main>
     <section>
-      <h2>Mortal Kombat Tournament Survey</h2>
+      <h2>Inqu&eacute;rito do Torneio Mortal Kombat</h2>
       <form>
-        <p>Tell us the best date for the competition</p>
-        <label for="pickdate">Preferred Date:</label>
+        <p>Diga-nos a melhor data para a competi&ccedil;&atilde;o</p>
+        <label for="pickdate">Data Preferida:</label>
 
         <!-- Add your code below this line -->
 
@@ -57,7 +57,7 @@ tests:
       </form>
     </section>
   </main>
-  <footer>&copy; 2018 Camper Cat</footer>
+  <footer>&copy; 2018 Gato Campista</footer>
 </body>
 
 ```
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

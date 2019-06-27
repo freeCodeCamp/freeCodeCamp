@@ -13,12 +13,12 @@ localeTitle: بطاقات
 
 ###### هذه هي الطريقة التي ستبدو في مستند HTML
 
- `
-<div class="card"> 
- <!-- content of the card goes here --> 
-  <div class="card-body">Content</div> 
- </div> 
-` 
+```html
+<div class="card">
+<!-- content of the card goes here -->
+  <div class="card-body">Content</div>
+</div>
+``` 
 
 ## \### رأس وتذييل الصفحة
 
@@ -26,14 +26,14 @@ localeTitle: بطاقات
 
 ###### هذه هي الطريقة التي ستبدو في مستند HTML
 
- `
-<div class="card"> 
- <!-- content of the card goes here --> 
-  <div class="card-header">Header content</div> 
-  <div class="card-body">Body content</div> 
-  <div class="card-footer">Footer content</div> 
- </div> 
-` 
+```html
+<div class="card">
+<!-- content of the card goes here -->
+  <div class="card-header">Header content</div>
+  <div class="card-body">Body content</div>
+  <div class="card-footer">Footer content</div>
+</div>
+``` 
 
 ## \### بطاقات مع الصور
 
@@ -48,20 +48,20 @@ localeTitle: بطاقات
 
 ###### هذه هي الطريقة التي ستبدو في مستند HTML
 
- `
-<div class="card"> 
- <!-- content of the card goes here --> 
- <!-- image on the top of the content --> 
-  <img src="picture.jpg" alt="Picture" class="card-img-top"> 
-  <div class="card-body">Body content</div> 
- </div> 
- <div class="card"> 
- <!-- content of the card goes here --> 
-  <div class="card-body">Body content</div> 
- <!-- image on the bottom of the content --> 
-  <img src="picture.jpg" alt="Picture" class="card-img-bottom"> 
- </div> 
-` 
+```html
+<div class="card">
+<!-- content of the card goes here -->
+<!-- image on the top of the content -->
+  <img src="picture.jpg" alt="Picture" class="card-img-top">
+  <div class="card-body">Body content</div>
+</div>
+<div class="card">
+<!-- content of the card goes here -->
+  <div class="card-body">Body content</div>
+<!-- image on the bottom of the content -->
+  <img src="picture.jpg" alt="Picture" class="card-img-bottom">
+</div>
+``` 
 
 ## \### تراكب البطاقات
 
@@ -69,11 +69,11 @@ localeTitle: بطاقات
 
 ###### هذه هي الطريقة التي ستبدو في مستند HTML
 
- `
-<div class="card"> 
- <!-- content of the card goes here --> 
-  <img src="picture.jpg" alt="Picture" class="card-img-top"> 
- <!-- this content is displayed over the image, which is now in the background and covers the whole element --> 
-  <div class="card-img-overlay">Overlay content</div> 
- </div> 
-`
+```html
+<div class="card">
+<!-- content of the card goes here -->
+  <img src="picture.jpg" alt="Picture" class="card-img-top">
+<!-- this content is displayed over the image, which is now in the background and covers the whole element -->
+  <div class="card-img-overlay">Overlay content</div>
+</div>
+```
