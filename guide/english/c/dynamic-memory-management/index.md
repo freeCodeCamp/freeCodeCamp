@@ -157,3 +157,8 @@ If you do not free memory in a timley fashion (or at all), you can leak memory, 
 - **Logical errors**
 
 The general pattern is allocate, use, and free. If you deviate from this pattern, you cause many problems such as a double free or the aforementioned segfault.
+
+##Dynamic Memory Management Using Linked List
+Linked list is type of data structure where we can allocate memory to each new node individually during runtime .Each node in the linked list consist of memory address of next as well as previous node and data field.In case of linked list we dont need to declare or allocate memory previously so there is no question of wastage of memory .Inserting a new node as well as deletion of any node is easier as we dont need to move other elements it is done with just by changing links.And there is no question of ArrayOutOfBound Exception.
+Use of linked list instead of array for big data and consisting more than 2 data fields is more profitable and makes code more efficient.
+
