@@ -8,12 +8,14 @@ localeTitle: اكتب Reusable JavaScript مع الوظائف
 
 تبدأ من خلال استخدام الكلمة `function` ، ثم كتابة اسم الدالة (الذي يتبع تنسيق حالة الجمل). ثم ، اكتب `()` ، وإنشاء الأقواس `{}` . مثل ذلك:
 
- `function reusableFunction() {} 
-` 
+```javascript
+function reusableFunction() {}
+``` 
 
 الآن ، أصبحت الدالة جاهزة لكتابتها. استخدم `console.log()` لطباعة رسالة في وحدة التحكم. الحل الأساسي رمز كما يلي:
 
- `function reusableFunction() { 
-    console.log("Hi World"); 
- } 
-`
+```javascript
+function reusableFunction() {
+    console.log("Hi World");
+}
+```

@@ -12,16 +12,17 @@ localeTitle: الوضع الصارم
 
 يمكن أن تتعايش شفرة الأسلوب الصارم ورمز الوضع غير المقيد في نفس البرنامج النصي.
 
- `// Non-strict code... 
- 
- (function(){ 
-    "use strict"; 
- 
-    // Define your library strictly... 
- })(); 
- 
- // Non-strict code... 
-` 
+```javascript
+// Non-strict code...
+
+(function(){
+    "use strict";
+
+    // Define your library strictly...
+})();
+
+// Non-strict code...
+``` 
 
 ## استدعاء وضع صارم
 
@@ -29,24 +30,26 @@ localeTitle: الوضع الصارم
 
 **وضع صارم للنصوص**
 
- `// Whole-script strict mode syntax 
- 
- "use strict"; 
- var v = "Hi!  I'm a strict mode script!"; 
-` 
+```javascript
+// Whole-script strict mode syntax
+
+"use strict";
+var v = "Hi!  I'm a strict mode script!";
+``` 
 
 **وضع صارم للوظائف**
 
- `function strict(){ 
-    // Function-level strict mode syntax 
- 
-    'use strict'; 
-    function nested() { return "And so am I!"; } 
-    return "Hi!  I'm a strict mode function!  " + nested(); 
- } 
- 
- function notStrict() { return "I'm not strict."; } 
-` 
+```javascript
+function strict(){
+    // Function-level strict mode syntax
+
+    'use strict';
+    function nested() { return "And so am I!"; }
+    return "Hi!  I'm a strict mode function!  " + nested();
+}
+
+function notStrict() { return "I'm not strict."; }
+``` 
 
 **في الأساس ، يساعدك على ارتكاب أخطاء أقل ، من خلال اكتشاف الأشياء التي قد تؤدي إلى حدوث كسر والتي لا يتم اكتشافها بشكل طبيعي (الوضع غير الصارم).**
 

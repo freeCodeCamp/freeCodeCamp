@@ -48,7 +48,6 @@ Precisamos calcular e `realNumberArray` valores a partir do `realNumberArray` e 
     console.log(squaredIntegers); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://codepen.io/dylantyates/pen/WyWoYJ)
 
 # Explicação do código:
 

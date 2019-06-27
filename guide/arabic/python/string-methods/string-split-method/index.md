@@ -18,58 +18,68 @@ localeTitle: طريقة تقسيم السلسلة
 
 1) سلسلة الانقسام في الفضاء: ""
 
- `string = "freeCodeCamp is fun." 
- print(string.split(" ")) 
-` 
+```python
+string = "freeCodeCamp is fun."
+print(string.split(" "))
+``` 
 
 انتاج:
 
- `['freeCodeCamp', 'is', 'fun.'] 
-` 
+```python
+['freeCodeCamp', 'is', 'fun.']
+``` 
 
 2) سلسلة الانقسام في الفاصلة: "،"
 
- `string = "freeCodeCamp,is fun, and informative" 
- print(string.split(",")) 
-` 
+```python
+string = "freeCodeCamp,is fun, and informative"
+print(string.split(","))
+``` 
 
 انتاج:
 
- `['freeCodeCamp', 'is fun', ' and informative'] 
-` 
+```python
+['freeCodeCamp', 'is fun', ' and informative']
+``` 
 
 3) لا يوجد `separator` محدد
 
- `string = "freeCodeCamp is fun and informative" 
- print(string.split()) 
-` 
+```python
+string = "freeCodeCamp is fun and informative"
+print(string.split())
+``` 
 
 انتاج:
 
- `['freeCodeCamp', 'is', 'fun', 'and', 'informative'] 
-` 
+```python
+['freeCodeCamp', 'is', 'fun', 'and', 'informative']
+``` 
 
 ملاحظة: إذا لم يتم تحديد `separator` ، فسيتم تجريد السلسلة من **جميع** المسافات البيضاء
 
- `string = "freeCodeCamp        is     fun and    informative" 
- print(string.split()) 
-` 
+```python
+string = "freeCodeCamp        is     fun and    informative"
+print(string.split())
+``` 
 
 انتاج:
 
- `['freeCodeCamp', 'is', 'fun', 'and', 'informative'] 
-` 
+```python
+['freeCodeCamp', 'is', 'fun', 'and', 'informative']
+``` 
 
 3) تقسيم السلسلة باستخدام `maxsplit` . هنا نقسم السلسلة على "" مرتين:
 
- `string = "freeCodeCamp is fun and informative" 
- print(string.split(" ", 2)) 
-` 
+```python
+string = "freeCodeCamp is fun and informative"
+print(string.split(" ", 2))
+``` 
 
 انتاج:
 
- `['freeCodeCamp', 'is', 'fun and informative'] 
-` 
+```python
+['freeCodeCamp', 'is', 'fun and informative']
+``` 
 
 #### معلومات اكثر
 

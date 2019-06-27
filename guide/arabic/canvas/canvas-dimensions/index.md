@@ -14,16 +14,17 @@ localeTitle: أبعاد قماش
 
 لجعل حجم سياق الرسم يتطابق مع الحجم المعروض لعنصر `canvas` ، يتعين علينا فرض هذا في الوقت الفعلي. إحدى الممارسات الشائعة هي وضع المعالج التالي في `onResize` إصغاء `onResize` .
 
- `// somewhere early in the script 
- var canvas = document.getElementById("canvas"); 
- ... 
- 
- window.addEventListener("resize", function() { 
-    canvas.setAttribute("width", canvas.scrollWidth); 
-    canvas.setAttribute("height", canvas.scrollHeight); 
-    console.log(canvas.offsetWidth); 
- }); 
-` 
+```js
+// somewhere early in the script
+var canvas = document.getElementById("canvas");
+...
+
+window.addEventListener("resize", function() {
+    canvas.setAttribute("width", canvas.scrollWidth);
+    canvas.setAttribute("height", canvas.scrollHeight);
+    console.log(canvas.offsetWidth);
+});
+``` 
 
 #### معلومات اكثر:
 

@@ -31,6 +31,7 @@ title: Dynamic Memory Allocation
  `delete ptr;`  
  In Example 2 above, however, memory for an array of integers was allocated. To free the memory alloted for an array, the `delete []` operator must be used:
  `delete [] ptr2`;
+
  
  ### Memory Leaks
  Memory leaks are caused when you fail to deallocate the dynamic memory you allocated via the `new` operator by the end of your program. If you do not deallocate this memory with the `delete` operator, it will accumulate in the heap every time the program runs. This causes your computer to slow down because memory is not deleted and your available memory decreases. Many poorly written computer programs exhibit memory leaks over time. However, when you reboot the machine, it will resolve the issue, as all memory in the heap will be released at that point.

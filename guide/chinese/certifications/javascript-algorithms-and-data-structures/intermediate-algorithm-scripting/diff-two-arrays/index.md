@@ -66,7 +66,6 @@ localeTitle: 差分两个阵列
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLme/0)
 
 ### 代码说明：
 
@@ -90,7 +89,6 @@ localeTitle: 差分两个阵列
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CNYb/0)
 
 ### 代码说明：
 
@@ -115,7 +113,6 @@ function diffArray(arr1, arr2) {
  diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CNYU/0)
 
 ### 代码说明：
 

@@ -3,7 +3,7 @@ title: Learn About Ruby Hashes
 ---
 ### Basics:
 
-*   Ruby hashes are comparable to Javascript objects or dictionaries in languages like Python.
+*   Ruby hashes are comparable to JavaScript objects or dictionaries in languages like Python.
 *   Hashes contain items that are stored by `key: value` pairs.
 *   Ruby hashes can be created using the following methods:
     *   `my_hash = {}`

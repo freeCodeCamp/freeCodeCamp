@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Write a function to generate an array of lower case ASCII characters, for a given range. For example: for range 1 to 4 the function should return <code>['a','b','c','d']</code>.
+Write a function to generate an array of lower case ASCII characters for a given range. For example, given the range <code>['a', 'd']</code>, the function should return <code>['a', 'b', 'c', 'd']</code>.
 </section>
 
 ## Instructions
@@ -44,7 +44,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function lascii (cFrom, cTo) {
+function lascii(cFrom, cTo) {
   // Good luck!
 }
 ```

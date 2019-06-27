@@ -22,7 +22,7 @@ localeTitle: Стандарты кодирования
 
 Вот как вы проверяете, соответствует ли ваш код Python его стандартам.
 
-```console
+```shell
 :~$ pip install pep8 
  :~$ pep8 --first myCode.py 
 ```

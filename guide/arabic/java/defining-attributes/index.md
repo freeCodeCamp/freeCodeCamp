@@ -25,15 +25,16 @@ localeTitle: تحديد السمات
 
 يمكننا إنشاء كائنات متعددة لفئة مركباتنا ، واستخدام بناء الجملة للنقاط للوصول إلى سماتها وأساليبها.
 
- `class MyClass { 
-  public static void main(String[] args) { 
-    Vehicle v1 = new Vehicle(); 
-    Vehicle v2 = new Vehicle(); 
-    v1.color = "red"; 
-    v2.horn(); 
-  } 
- } 
-` 
+```java
+class MyClass {
+  public static void main(String[] args) {
+    Vehicle v1 = new Vehicle();
+    Vehicle v2 = new Vehicle();
+    v1.color = "red";
+    v2.horn();
+  }
+}
+``` 
 
 ### معدلات الرؤية
 

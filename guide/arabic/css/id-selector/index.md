@@ -8,15 +8,17 @@ localeTitle: محدد الهوية
 
 ### بناء الجملة
 
- `#specified_id { /* styles */ } 
-` 
+```css
+#specified_id { /* styles */ }
+``` 
 
 يمكنك دمج محدد المعرّف مع أنواع أخرى من المحددات لتمييز عنصر محدد جدًا.
 
- `section#about:hover { color: blue; } 
- 
- div.classname#specified_id { color: green; } 
-` 
+```css
+section#about:hover { color: blue; }
+
+div.classname#specified_id { color: green; }
+``` 
 
 ### ملاحظة حول المعرفات
 
@@ -24,9 +26,9 @@ localeTitle: محدد الهوية
 
 تذكر ، يجب أن يتطابق محدد ID مع سمة معرف عنصر HTML.
 
- `
-<div id="specified_id"><!-- content --></div> 
-` 
+```html
+<div id="specified_id"><!-- content --></div>
+``` 
 
 ### النوعية
 
