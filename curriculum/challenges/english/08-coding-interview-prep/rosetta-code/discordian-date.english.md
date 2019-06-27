@@ -6,8 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Convert a given date from the  <a href="https://en.wikipedia.org/wiki/Gregorian calendar" title="wp: Gregorian calendar">Gregorian calendar</a>  to the  <a href="https://en.wikipedia.org/wiki/Discordian calendar" title="wp: Discordian calendar">Discordian calendar</a>.</p>
+Convert a given date from the  <a href="https://en.wikipedia.org/wiki/Gregorian calendar" title="wp: Gregorian calendar" target="_blank">Gregorian calendar</a>  to the  <a href="https://en.wikipedia.org/wiki/Discordian calendar" title="wp: Discordian calendar" target="_blank">Discordian calendar</a>.
 </section>
 
 ## Instructions
@@ -47,7 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function discordianDate (date) {
+function discordianDate(date) {
   // Good luck!
   return true;
 }
