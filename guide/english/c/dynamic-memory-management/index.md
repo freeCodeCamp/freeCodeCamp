@@ -158,7 +158,55 @@ If you do not free memory in a timley fashion (or at all), you can leak memory, 
 
 The general pattern is allocate, use, and free. If you deviate from this pattern, you cause many problems such as a double free or the aforementioned segfault.
 
-##Dynamic Memory Management Using Linked List
+## Dynamic Memory Management Using Linked List
 Linked list is type of data structure where we can allocate memory to each new node individually during runtime .Each node in the linked list consist of memory address of next as well as previous node and data field.In case of linked list we dont need to declare or allocate memory previously so there is no question of wastage of memory .Inserting a new node as well as deletion of any node is easier as we dont need to move other elements it is done with just by changing links.And there is no question of ArrayOutOfBound Exception.
 Use of linked list instead of array for big data and consisting more than 2 data fields is more profitable and makes code more efficient.
 
+* Not checking for allocation failures
+Memory allocation is not guaranteed to succeed, and may instead return a null pointer. 
+Using the returned value, without checking if the allocation is successful, invokes undefined behavior. This usually leads to crash (due to the resulting segmentation fault on the null pointer dereference), but there is no guarantee that a crash will happen so relying on that can also lead to problems.
+* Memory leaks
+Failure to deallocate memory using `free` leads to buildup of non-reusable memory, which is no longer used by the program.
+* Logical errors
+All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
+
+## Detecting memory leaks and bad memory acesses
+Memory management can be quite difficult to get your head around and especially difficult to debug. Lucky enough there are some tools which will help detect memory leaks, or accessing bad memory. You can use a tool called **Valgrind**, which at runtime can detect such problems.
+
+Running without Valgrind
+```BASH
+myprog arg1 arg2
+```
+Running with Valgrind
+```BASH
+valgrind --leak-check=yes myprog arg1 arg2
+```
+
+if you run the following program with Valgrind
+
+```C
+  #include <stdlib.h>
+
+  void f(void)
+  {
+     int* x = malloc(10 * sizeof(int));
+     x[10] = 0;        // problem 1: heap block overrun
+  }                    // problem 2: memory leak -- x not freed
+
+  int main(void)
+  {
+     f();
+     return 0;
+  }
+```
+you will see an output on the console like this:
+
+```
+  ==19182== Invalid write of size 4
+  ==19182==    at 0x804838F: f (example.c:6)
+  ==19182==    by 0x80483AB: main (example.c:11)
+  ==19182==  Address 0x1BA45050 is 0 bytes after a block of size 40 alloc'd
+  ==19182==    at 0x1B8FF5CD: malloc (vg_replace_malloc.c:130)
+  ==19182==    by 0x8048385: f (example.c:5)
+  ==19182==    by 0x80483AB: main (example.c:11)
+  ```
