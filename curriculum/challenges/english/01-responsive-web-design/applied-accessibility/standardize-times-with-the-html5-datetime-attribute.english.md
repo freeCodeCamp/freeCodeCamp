@@ -22,6 +22,7 @@ Camper Cat's Mortal Kombat survey results are in! Wrap a <code>time</code> tag a
 
 ```yml
 tests:
+<<<<<<< HEAD
   - text: Your code should have a <code>p</code> element which includes the text "Thank you to everyone for responding to Master Camper Cat's survey." and include a <code>time</code> element.
     testString: assert(timeElement.length);
   - text: Your added <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".
@@ -32,6 +33,17 @@ tests:
     testString: assert(datetimeAttr === "2016-09-15");
   - text: Your added <code>time</code> element should have a closing tag.
     testString: assert(timeElement[0].outerHTML.match(/<\/time>/g));
+=======
+  - text: Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".
+    testString: assert($('time').html().trim() === "Thursday, September 15<sup>th</sup>");
+  - text: Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.
+    testString: assert($('time[datetime]').length === 4);
+  - text: Your <code>datetime</code> attribute should be set to a value of 2016-09-15.
+    testString: assert($('time').attr('datetime') === "2016-09-15");
+  - text: Your <code>time</code> element should have a closing tag.
+    testString: assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4);
+
+>>>>>>> 2ef6a6975061562a2bd2ec40ea3f56c5d7e28030
 ```
 
 </section>
