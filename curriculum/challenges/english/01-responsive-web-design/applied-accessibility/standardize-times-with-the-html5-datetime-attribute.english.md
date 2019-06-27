@@ -41,19 +41,6 @@ tests:
 
 <div id='html-seed'>
 
-<div id='html-teardown'>
-
-```html
-<script>
-const pElement = $("article > p")
-  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
-const timeElement = $(pElement).find("time");
-const datetimeAttr = $(timeElement).attr("datetime");
-</script>
-```
-
-</div>
-
 ```html
 <body>
   <header>
@@ -86,6 +73,19 @@ const datetimeAttr = $(timeElement).attr("datetime");
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+```
+
+</div>
+
+<div id='html-teardown'>
+
+```html
+<script>
+const pElement = $("article > p")
+  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
+const timeElement = $(pElement).find("time");
+const datetimeAttr = $(timeElement).attr("datetime");
+</script>
 ```
 
 </div>
