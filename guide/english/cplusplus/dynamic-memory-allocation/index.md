@@ -38,8 +38,10 @@ title: Dynamic Memory Allocation
  
  There are various ways to check for memory leaks in your program. Valgrind is a common tool for doing this from a bash linux shell. Once valgrind is downloaded and the program is compiled, valgrind can be run with certain flags for displaying different information about memory read and write errors and memory leaks. Here is an example of running valgrind with a compiled program 'a.out':
  `valgrind ./a.out`
- 
- #### More Information
- [Wikipedia](https://en.wikipedia.org/wiki/New_and_delete_(C%2B%2B))
- 
+
+### Mechanism Memory allocated/deallocated in C++
+C uses malloc() and calloc() function to allocate memory dynamically at run time and uses free() function to free dynamically allocated memory. C++ supports these functions and also has two operators new and delete that perform the task of allocating and freeing the memory in a better and easier way.
+
+#### More Information
+- [Wikipedia](https://en.wikipedia.org/wiki/New_and_delete_(C%2B%2B))
  
