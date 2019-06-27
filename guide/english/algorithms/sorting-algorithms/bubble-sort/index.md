@@ -51,7 +51,6 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 ### Video Explanation
 [Bubble sort in easy way](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
 
------
 
 ### Example in JavaScript
 ```js
@@ -157,6 +156,22 @@ def bubbleSort(arr):
                         arr[j], arr[j+1] = arr[j+1], arr[j]
     print(arr)
 
+```
+
+### Example in Ruby
+```ruby
+def bubble_sort(arr)
+  sorted = false
+  until sorted
+    sorted = true
+    (arr.count-1).times do|i|
+      if arr[i] > arr[i + 1]
+        arr[i], arr[i +1] = arr[i +1], arr[i]
+	    sorted = false
+	  end
+    end
+  end
+arr end
 ```
 
 ### Example in PHP
