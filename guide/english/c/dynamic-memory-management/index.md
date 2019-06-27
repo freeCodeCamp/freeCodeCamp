@@ -97,7 +97,7 @@ Failure to deallocate memory using `free` leads to buildup of non-reusable memor
 * Logical errors
 All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
 
-## Before you leave
+## Detecting memory leaks and bad memory acesses
 Memory management can be quite difficult to get your head around and especially difficult to debug. Lucky enough there are some tools which will help detect memory leaks, or accessing bad memory. You can use a tool called **Valgrind**, which at runtime can detect such problems.
 
 Running without Valgrind
