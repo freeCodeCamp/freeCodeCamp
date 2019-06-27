@@ -8,7 +8,14 @@ challengeType: 1
 <section id='description'>
 You can use <code>typeof</code> to check the data structure, or type, of a variable. This is useful in debugging when working with multiple data types. If you think you're adding two numbers, but one is actually a string, the results can be unexpected. Type errors can lurk in calculations or function calls. Be careful especially when you're accessing and working with external data in the form of a JavaScript Object Notation (JSON) object.
 Here are some examples using <code>typeof</code>:
-<blockquote>console.log(typeof ""); // outputs "string"<br>console.log(typeof 0); // outputs "number"<br>console.log(typeof []); // outputs "object"<br>console.log(typeof {}); // outputs "object"</blockquote>
+
+```js
+console.log(typeof ""); // outputs "string"
+console.log(typeof 0); // outputs "number"
+console.log(typeof []); // outputs "object"
+console.log(typeof {}); // outputs "object"
+```
+
 JavaScript recognizes six primitive (immutable) data types: <code>Boolean</code>, <code>Null</code>, <code>Undefined</code>, <code>Number</code>, <code>String</code>, and <code>Symbol</code> (new with ES6) and one type for mutable items: <code>Object</code>. Note that in JavaScript, arrays are technically a type of object.
 </section>
 

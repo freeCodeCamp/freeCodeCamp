@@ -33,13 +33,14 @@ localeTitle: تعتيم الصورة والشفافية
 
 المغلق img { التعتيم: 0.3 ؛ filter: alpha (opacity = 30)؛ } img: hover { opacity: 1.0؛ filter: alpha (opacity = 100)؛ }
 
- `[A codepen example to show a transparent image turning opaque on hover](https://codepen.io/lvcoulter/full/JrzxXa/) 
- <!--I cannot figure out how to embed a Codepen. I would really like to know--> 
- 
- You can create the opposite effect with less code since the image is 1.0 opacity by default 
- 
- Example: 
-` 
+```
+[A codepen example to show a transparent image turning opaque on hover](https://codepen.io/lvcoulter/full/JrzxXa/)
+<!--I cannot figure out how to embed a Codepen. I would really like to know-->
+
+You can create the opposite effect with less code since the image is 1.0 opacity by default
+
+Example:
+``` 
 
 المغلق img: hover { التعتيم: 0.3 ؛ filter: alpha (opacity = 30)؛ } \`\` \` [مثال codepen لإظهار الشفافية على الماوس](https://codepen.io/lvcoulter/full/xXBQoR/)
 

@@ -12,11 +12,12 @@ z-index: auto | number | initial | inherit؛
 
 #### مثال
 
- `div { 
-  position: absolute; 
-  z-index: -1; 
- } 
-` 
+```
+div {
+  position: absolute;
+  z-index: -1;
+}
+``` 
 
 #### القيم
 

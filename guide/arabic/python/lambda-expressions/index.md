@@ -16,15 +16,16 @@ localeTitle: تعبيرات لامدا
 
 #### كود المثال
 
- `# Lambda function to calculate square of a number 
- square = lambda x: x ** 2 
- print(square(3)) # Output: 9 
- 
- # Traditional function to calculate square of a number 
- def square1(num): 
-  return num ** 2 
- print(square(5)) # Output: 25 
-` 
+```py
+# Lambda function to calculate square of a number
+square = lambda x: x ** 2
+print(square(3)) # Output: 9
+
+# Traditional function to calculate square of a number
+def square1(num):
+  return num ** 2
+print(square(5)) # Output: 25
+``` 
 
 في المثال lambda أعلاه lambda `lambda x: x ** 2` ينتج كائن دالة مجهول يمكن ربطه بأي اسم. لذا ، قمنا بربط كائن الدالة مع `square` وبالتالي من الآن فصاعداً يمكننا استدعاء الكائن `square` مثل أي وظيفة تقليدية. مثل `square(10)`
 
@@ -32,22 +33,25 @@ localeTitle: تعبيرات لامدا
 
 ### مبتدئ
 
- `lambda_func = lambda x: x**2 # Function that takes an integer and returns its square 
- lambda_func(3) # Returns 9 
-` 
+```py
+lambda_func = lambda x: x**2 # Function that takes an integer and returns its square
+lambda_func(3) # Returns 9
+``` 
 
 ### متوسط
 
- `lambda_func = lambda x: True if x**2 >= 10 else False 
- lambda_func(3) # Returns False 
- lambda_func(4) # Returns True 
-` 
+```py
+lambda_func = lambda x: True if x**2 >= 10 else False
+lambda_func(3) # Returns False
+lambda_func(4) # Returns True
+``` 
 
 ### مركب
 
- `my_dict = {"A": 1, "B": 2, "C": 3} 
- sorted(my_dict, key=lambda x: my_dict[x]%3) # Returns ['C', 'A', 'B'] 
-` 
+```py
+my_dict = {"A": 1, "B": 2, "C": 3}
+sorted(my_dict, key=lambda x: my_dict[x]%3) # Returns ['C', 'A', 'B']
+``` 
 
 ### حالة الاستخدام
 

@@ -8,8 +8,9 @@ localeTitle: أضف تعليقات في JSX
 
 *   تعليق سطر واحد:
 
- `{/*<h1>Hanoi University of Science</h1>*/} 
-` 
+```jsx
+{/*<h1>Hanoi University of Science</h1>*/}
+``` 
 
 *   تعليقات متعددة الخطوط:
 
@@ -21,6 +22,6 @@ localeTitle: أضف تعليقات في JSX
 
 ملاحظة: لا يمكنك استخدام تعليق HTML في JSX على النحو التالي:
 
- `
-<!-- not working --> 
-`
+```html
+<!-- not working -->
+```

@@ -19,26 +19,27 @@ localeTitle: خاصية الخلفية
 
 التركيب 1 :
 
- `body { 
-  /* Using a <background-color> */ 
-  background: green; 
- } 
- 
- .error { 
-  /* Using a <bg-image> and <repeat-style> */ 
-  background: url("test.jpg") repeat-y; 
- } 
- 
- header { 
-  /* Using a <box> and <background-color> */ 
-  background: border-box red; 
- } 
- 
- .topbanner { 
-  /* A single image, centered and scaled */ 
-  background: no-repeat center/80% url("../img/image.png"); 
- } 
-` 
+```css
+body {
+  /* Using a <background-color> */
+  background: green;
+}
+
+.error {
+  /* Using a <bg-image> and <repeat-style> */
+  background: url("test.jpg") repeat-y;
+}
+
+header {
+  /* Using a <box> and <background-color> */
+  background: border-box red;
+}
+
+.topbanner {
+  /* A single image, centered and scaled */
+  background: no-repeat center/80% url("../img/image.png");
+}
+``` 
 
 ### مصادر
 

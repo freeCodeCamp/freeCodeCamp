@@ -50,7 +50,6 @@ localeTitle: كرر سلسلة يكرر سلسلة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/19)
 
 ### شرح الشفرة:
 
@@ -76,7 +75,6 @@ localeTitle: كرر سلسلة يكرر سلسلة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/21)
 
 ### شرح الشفرة:
 
@@ -98,7 +96,6 @@ localeTitle: كرر سلسلة يكرر سلسلة
  repeatStringNumTimes("abc", 3); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/85)
 
 ### شرح الشفرة:
 

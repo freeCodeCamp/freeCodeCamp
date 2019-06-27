@@ -27,10 +27,11 @@ localeTitle: نطاق
 
 سوف الناتج:
 
- `apple 
- orange 
- pear 
-` 
+```
+apple
+orange
+pear
+``` 
 
 ربما لاحظت مُعرِّفًا فارغًا تم استخدامه.
 
@@ -55,6 +56,7 @@ localeTitle: نطاق
 
 المخرجات:
 
- `a -> apple 
- b -> banana 
-`
+```
+a -> apple
+b -> banana
+```

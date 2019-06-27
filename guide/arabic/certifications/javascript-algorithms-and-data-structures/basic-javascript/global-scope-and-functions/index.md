@@ -14,25 +14,27 @@ localeTitle: النطاق العالمي والوظائف
 
 عند إضافة `var` قبل اسم المتغير ، يتم تحديد نطاقه حسب مكان وضعه. مثل ذلك:
 
- `var num1 = 18; // Global scope 
- function fun() { 
-  var num2 = 20; // Local (Function) Scope 
-  if (true) { 
-    var num3 = 22; // Block Scope (within an if-statement) 
-  } 
- } 
-` 
+```javascript
+var num1 = 18; // Global scope
+function fun() {
+  var num2 = 20; // Local (Function) Scope
+  if (true) {
+    var num3 = 22; // Block Scope (within an if-statement)
+  }
+}
+``` 
 
 عندما لا تفعل ، هذه هي النتيجة:
 
- `num1 = 18; // Global scope 
- function fun() { 
-  num2 = 20; // Global Scope 
-  if (true) { 
-    num3 = 22; // Global Scope 
-  } 
- } 
-` 
+```javascript
+num1 = 18; // Global scope
+function fun() {
+  num2 = 20; // Global Scope
+  if (true) {
+    num3 = 22; // Global Scope
+  }
+}
+``` 
 
 حسنًا ، إليك حل الشفرة الأساسية.
 

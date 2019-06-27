@@ -6,10 +6,11 @@ localeTitle: سوف يتغير
 
 تسمح لك خاصية will-change بإخبار المتصفح عن التلاعبات التي ستحدث مع العنصر من أجل تحسينها.
 
- `.container { 
- will-change: transform; 
- } 
-` 
+```css
+.container {
+will-change: transform;
+}
+``` 
 
 سيتم استخدام خاصية will-change في الفئة `.container` ، في هذه الحالة ، قد يحدث أو لا يحدث التحويل على العنصر.
 

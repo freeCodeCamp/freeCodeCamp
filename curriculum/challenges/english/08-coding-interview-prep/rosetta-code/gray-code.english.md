@@ -6,21 +6,34 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<a href="https://en.wikipedia.org/wiki/Gray code">Gray code</a> is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
+<a href="https://en.wikipedia.org/wiki/Gray code" target="_blank">Gray code</a> is a form of binary encoding where transitions between consecutive numbers differ by only one bit.
 This is a useful encoding for reducing hardware data hazards with values that change rapidly and/or connect to slower hardware as inputs.
-It is also useful for generating inputs for <a href="https://en.wikipedia.org/wiki/Karnaugh map">Karnaugh maps</a> in order from left to right or top to bottom.
-Create a function to encode a number to and decode a number from Gray code. The function should will have 2 parameters.
-The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
-Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
-There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."<br>Encoding (MSB is bit 0, b is binary, g is Gray code):
-<code><br>if b[i-1] = 1<br><span style="padding-left:1em">g[i] = not b[i]</span><br>else<br><span style="padding-left:1em">g[i] = b[i]</span><br>
-</code>  Or: <br><code> g = b xor (b logically right shifted 1 time)</code><br>Decoding (MSB is bit 0, b is binary, g is Gray code): <br>
-<code>b[0] = g[0]<br>for other bits:<br>b[i] = g[i] xor b[i-1]<br></code>
+It is also useful for generating inputs for <a href="https://en.wikipedia.org/wiki/Karnaugh map" target="_blank">Karnaugh maps</a> in order from left to right or top to bottom.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Create a function to encode a number to and decode a number from Gray code. The function should will have 2 parameters.
+The first would be a boolean. The function should encode for true and decode for false. The second parameter would be the number to be encoded/decoded.
+Display the normal binary representations, Gray code representations, and decoded Gray code values for all 5-bit binary numbers (0-31 inclusive, leading 0's not necessary).
+There are many possible Gray codes. The following encodes what is called "binary reflected Gray code."
+Encoding (MSB is bit 0, b is binary, g is Gray code):
+<pre>
+if b[i-1] = 1
+  g[i] = not b[i]
+else
+  g[i] = b[i]
+</pre>
+Or:
+<pre>
+g = b xor (b logically right shifted 1 time)
+</pre>
+Decoding (MSB is bit 0, b is binary, g is Gray code):
+<pre>
+b[0] = g[0]<br>
+for other bits:
+b[i] = g[i] xor b[i-1]
+</pre>
 </section>
 
 ## Tests

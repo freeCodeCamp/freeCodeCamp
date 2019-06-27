@@ -48,7 +48,6 @@ Necesitamos calcular y cuadrar los valores de `realNumberArray` y almacenarlos e
     console.log(squaredIntegers); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://codepen.io/dylantyates/pen/WyWoYJ)
 
 # Explicación del código:
 

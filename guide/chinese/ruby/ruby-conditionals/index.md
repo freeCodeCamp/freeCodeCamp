@@ -20,14 +20,20 @@ Ruby有几个常用的条件。
      end 
     
     ```
-    
-
-### 除非声明
+ 
+## 除非声明
 
 除非语句与if语句相反。它与否定的if语句相同。
 
 *   `ruby happy = true if !happy puts "This person is not happy" end` 以上陈述等同于以下陈述
 *   `ruby unless happy puts "This person is not happy" end`
+
+## 句尾条件
+
+在ruby当里我们也常将条件至于句尾
+
+*   `puts "Your fruit is an apple" if fruit == :apple`
+*   `puts "This is not an apple" unless fruit == :apple`
 
 ## 三元声明
 

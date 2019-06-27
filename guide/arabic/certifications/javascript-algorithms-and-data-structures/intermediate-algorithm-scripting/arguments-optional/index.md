@@ -94,7 +94,6 @@ localeTitle: الحجج اختياري
     addTogether(2,3); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnz/0)
 
 ### شرح الشفرة:
 
@@ -152,7 +151,6 @@ localeTitle: الحجج اختياري
     addTogether(2,3); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLoA/0)
 
 ### شرح الشفرة:
 
@@ -186,7 +184,6 @@ localeTitle: الحجج اختياري
     addTogether(2,3); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLoB/0)
 
 ### شرح الشفرة:
 

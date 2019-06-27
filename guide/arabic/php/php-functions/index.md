@@ -42,8 +42,9 @@ localeTitle: وظائف PHP
 
 سيظهر هذا النتيجة التالية -
 
- `You are really a nice person, Have a nice time! 
-` 
+```
+You are really a nice person, Have a nice time!
+``` 
 
 ### وظائف PHP مع المعلمات
 
@@ -72,8 +73,9 @@ localeTitle: وظائف PHP
 
 سيظهر هذا النتيجة التالية -
 
- `Sum of the two numbers is : 30 
-` 
+```
+Sum of the two numbers is : 30
+``` 
 
 ### تمرير الحجج حسب المرجع
 
@@ -115,9 +117,10 @@ localeTitle: وظائف PHP
 
 سيظهر هذا النتيجة التالية -
 
- `Original Value is 10 
- Original Value is 16 
-` 
+```
+Original Value is 10
+Original Value is 16
+``` 
 
 ### وظائف PHP العودة القيمة
 
@@ -151,8 +154,9 @@ localeTitle: وظائف PHP
 
 سيظهر هذا النتيجة التالية -
 
- `Returned value from the function : 30 
-` 
+```
+Returned value from the function : 30
+``` 
 
 ### ضبط القيم الافتراضية لمعلمات الدالة
 
@@ -183,8 +187,9 @@ localeTitle: وظائف PHP
 
 هذا سينتج النتيجة التالية -
 
- `This is test 
-` 
+```
+This is test
+``` 
 
 ### المكالمات الديناميكية
 
@@ -213,5 +218,6 @@ localeTitle: وظائف PHP
 
 سيظهر هذا النتيجة التالية -
 
- `Hello 
-`
+```
+Hello
+```

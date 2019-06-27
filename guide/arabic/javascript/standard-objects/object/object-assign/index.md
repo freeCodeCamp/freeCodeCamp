@@ -16,8 +16,9 @@ localeTitle: كائن التعيين
 
 **بناء الجملة**
 
- `Object.assign(targetObject, ...sourceObject) 
-` 
+```javascript
+Object.assign(targetObject, ...sourceObject)
+``` 
 
 **قيمة الإرجاع**
 
@@ -27,33 +28,36 @@ localeTitle: كائن التعيين
 
 _تعديل ونسخ targetObject_
 
- `let obj = {name: 'Dave', age: 30}; 
- 
- let objCopy = Object.assign(obj, {coder: true}); 
- 
- console.log(obj); // returns { name: 'Dave', age: 30, coder: true } 
- console.log(objCopy); // returns { name: 'Dave', age: 30, coder: true } 
-` 
+```javascript
+let obj = {name: 'Dave', age: 30};
+
+let objCopy = Object.assign(obj, {coder: true});
+
+console.log(obj); // returns { name: 'Dave', age: 30, coder: true }
+console.log(objCopy); // returns { name: 'Dave', age: 30, coder: true }
+``` 
 
 _نسخ targetObject بدون تعديل_
 
- `let obj = {name: 'Dave', age: 30}; 
- 
- let objCopy = Object.assign({}, obj, {coder: true}); 
- 
- console.log(obj); // returns { name: 'Dave', age: 30 } 
- console.log(objCopy); // returns { name: 'Dave', age: 30, coder: true } 
-` 
+```javascript
+let obj = {name: 'Dave', age: 30};
+
+let objCopy = Object.assign({}, obj, {coder: true});
+
+console.log(obj); // returns { name: 'Dave', age: 30 }
+console.log(objCopy); // returns { name: 'Dave', age: 30, coder: true }
+``` 
 
 _كائنات ذات خصائص مماثلة_
 
- `let obj = {name: 'Dave', age: 30, favoriteColor: 'blue'}; 
- 
- let objCopy = Object.assign({}, obj, {coder: true, favoriteColor: 'red'}); 
- 
- console.log(obj); // returns { name: 'Dave', age: 30, favoriteColor: 'blue' } 
- console.log(objCopy); // { name: 'Dave', age: 30, favoriteColor: 'red', coder: true } 
-` 
+```javascript
+let obj = {name: 'Dave', age: 30, favoriteColor: 'blue'};
+
+let objCopy = Object.assign({}, obj, {coder: true, favoriteColor: 'red'});
+
+console.log(obj); // returns { name: 'Dave', age: 30, favoriteColor: 'blue' }
+console.log(objCopy); // { name: 'Dave', age: 30, favoriteColor: 'red', coder: true }
+``` 
 
 #### معلومات اكثر:
 

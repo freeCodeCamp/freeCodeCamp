@@ -3,7 +3,7 @@ title: Binary Calculator
 ---
 ## Binary Calculator
 
-A Binary Calculator is used to preform addition, subtraction, multiplication, or division of two binary numbers. A binary calculator can also convert binary values to decimal values, and vice versa.
+A Binary Calculator is used to perform addition, subtraction, multiplication, or division of two binary numbers. A binary calculator can also convert binary values to decimal values, and vice versa.
 
 For example:
 10101010 + 11001100 = 0101110110 (binary) or 374 (decimal)
