@@ -8,8 +8,9 @@ localeTitle: Map.prototype.forEach
 
 ## بناء الجملة
 
- `myMap.forEach(callback, thisArg) 
-` 
+```javascript
+myMap.forEach(callback, thisArg)
+``` 
 
 ## المعلمات
 

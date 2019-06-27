@@ -1,66 +1,76 @@
 ---
 title: Swift
-localeTitle: стриж
+localeTitle: Swift
 ---
 ![Swift Logo](https://developer.apple.com/assets/elements/icons/swift-playgrounds/swift-playgrounds-64x64_2x.png)
 
-# Что такое Свифт?
+# Что такое Swift?
 
-Swift - это [открытый](https://en.wikipedia.org/wiki/Open-source_software) язык программирования общего назначения, разработанный Apple Inc. Они описывают его как:
+Swift - это язык программирования общего назначения [с открытым исходным кодом](https://en.wikipedia.org/wiki/Open-source_software), разработанный Apple Inc. Они описывают его так:
 
-> Swift - мощный и интуитивно понятный язык программирования для macOS, iOS, watchOS и tvOS. Написание кода Swift является интерактивным и забавным, синтаксис является сжатым, но выразительным, а Swift включает в себя современные функции, которые разработчики любят. Быстрый код безопасен по дизайну, но также производит программное обеспечение, которое работает молниеносно. 1
 
-Хотите попробовать Swift прямо сейчас? [Repl.it](https://repl.it/languages/swift) предлагает онлайн-цикл Read-Eval-Print для Swift. У вас не будет доступа к UIKit или другим API, которые обычно используются, но дайте ему шанс!
+> Swift - мощный интерактивный и интуитивно-понятный язык программирования для macOS, iOS, watchOS и tvOS. Писать на нем легко и весело. Разработчики ценят Swift за то, что в нем много современных особенностей облегчающих им жизнь. Синтаксис Swift лаконичный, но в то же время выразительный.  Код Swift безопасен по своему замыслу, но при этом производит программное обеспечение работающее молниеносно. <sup>1</sup>
 
-# основы
 
-Чтобы объявить переменную в Swift, просто используйте var, за которым следует имя вашей переменной.
+Хотите попробовать Swift прямо сейчас? [Repl.it](https://repl.it/languages/swift) предлагает онлайн интерактивную среду для Swift - Read-Eval-Print loop. У вас не будет доступа к UIKit или другим API, которые обычно используются, но чем черт не шутит!
+
+# Основы
+
+Чтобы объявить переменную в Swift, просто используйте var, а затем назовите вашу переменную.
 
 ```Swift
 var x = 6 
- var name = "Bob" 
- var boole = true 
+var name = "Bob" 
+var boole = true 
  
- x = 3 
+x = 3 
 ```
 
-Константы похожи на переменные, но после создания они не могут измениться.
+Константы похожи на переменные, но после создания они не могут изменить свое значение.
 
 ```Swift
 let x = 6 
- let name = "Bob" 
- let boole = true 
+let name = "Bob" 
+let boole = true 
 ```
 
-Чтобы распечатать что-либо на стандартный вывод, просто используйте print () и поместите свой вывод в круглые скобки.
+
+Чтобы вывести что-либо стандартным методом, просто используйте print() и поместите свой вывод в круглые скобки.
+
 
 ```Swift
 let x = "World" 
  
- print("Hello ") 
- print(x) 
+print("Hello ") 
+print(x) 
 ```
 
 # Версия
 
-Последняя версия - [Swift 4.2](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html) , выпущенная 17 сентября 2018 года. Swift постоянно развивается, и вы можете ожидать больших изменений в будущем. При запуске нового проекта рекомендуется использовать последнюю версию Swift.
+17 сентября 2018 года была выпущенна последняя версия - [Swift 4.2](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html) . Язык постоянно развивается, поэтому в будущем нас ждет еще больше изменений. При запуске нового проекта рекомендуется использовать актуальную версию Swift.
 
 # Документация
 
-Свифт сильно задокументирован. Имейте в виду, что кодирование Swift включает не только используя язык, но также и многие API. Лучший способ узнать Swift - сделать проекта или приложения, независимо от того, насколько малы!
+
+Swift хорошо документирован. Имейте в виду, что написание кода на Swift включает в себя не только использование языка, но и многие API. Лучше всего начать изучение Swift с создания скромного проекта или небольшого приложения.
 
 *   [Исходный код](https://github.com/apple/swift)
     
-*   [Разработка приложений iOS (Swift)](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/) : хотите сделать iOS Apps? Это отличное место для начала.
+*   [Разработка приложений iOS (Swift)](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/): 
+Хотите создать приложение для iOS? Начните здесь!
+
     
-*   [Language Guide](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/) : содержит обзор практически каждой функции в Swift. Если вы запутались при чтении чужого кода, этот документ может вам помочь.
+*   [Справочник по языку](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/): содержит обзор практически всех особенностей Swift. Он поможет вам, если вы запутались, читая чужой код.
     
 
 # Хотите узнать больше?
 
+
 *   [RayWenderlich.com](https://www.raywenderlich.com/) : Есть много отличных учебников для Swift и iOS.
+
 *   [Взлом с Swift](https://www.hackingwithswift.com/read) : полный учебник Swift, который позволяет вам начинать до продвинутых, используя практические проекты.
 
-### источники
+### Источники
 
-1.  «Swift 4 - мощный язык программирования, который также легко усваивается». Apple, [developer.apple.com/swift](https://developer.apple.com/swift/) , доступ к 31 октября 2017 года.
+1.  «Swift 4 - мощный язык программирования, который также легко усваивается». Apple, [developer.apple.com/swift](https://developer.apple.com/swift/).
+

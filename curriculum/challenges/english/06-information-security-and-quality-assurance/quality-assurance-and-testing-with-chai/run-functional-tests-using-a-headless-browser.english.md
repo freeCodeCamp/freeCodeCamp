@@ -9,13 +9,13 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
 In the next challenges we are going to simulate the human interaction with a page using a device called 'Headless Browser'.
 A headless browser is a web browser without a graphical user interface. These kind of tools are particularly useful for testing web pages as they are able to render and understand HTML, CSS, and JavaScript the same way a browser would.
-For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Glitch. There are many other (more powerful) options.<br>
-Look at the examples in the code for the exercise directions Follow the assertions order, We rely on it.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Glitch. There are many other (more powerful) options.<br>
+Look at the examples in the code for the exercise directions Follow the assertions order, We rely on it.
 </section>
 
 ## Tests

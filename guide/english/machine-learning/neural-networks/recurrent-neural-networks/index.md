@@ -3,13 +3,13 @@ title: Recurrent Neural Networks
 ---
 ## Recurrent Neural Networks
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/machine-learning/neural-networks/recurrent-neural-networks/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Recurrent Neural Networks (RNN) are a category of Neural Networks which are mainly used for data which are sequential in nature. In Recurrent Neural Networks, the output of the previous time is fed as an input to the current time. RNN's have been extensively used for Natural Language Processing, Time Series Data prediction and other tasks which involve sequential data.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Types of Recurrent Neural Networks
+* Long Short Term Memory (LSTM)
+* Gated Recurrent Unit (GRU)
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+## Suggested Links
+* Stanford CS231 lesson 10 video https://www.youtube.com/watch?v=6niqTuYFZLQ
+* Deep Learning Book https://www.youtube.com/watch?v=6niqTuYFZLQ
+* Colah's blog http://colah.github.io/posts/2015-08-Understanding-LSTMs/

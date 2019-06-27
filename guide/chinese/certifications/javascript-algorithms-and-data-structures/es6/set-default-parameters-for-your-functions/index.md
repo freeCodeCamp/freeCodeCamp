@@ -52,7 +52,6 @@ const increment = (function() {
  console.log(increment(5)); // returns NaN 
 ```
 
-：rocket： [运行代码](https://repl.it/@RyanPisuena/PleasingFumblingThings)
 
 ## 代码说明
 

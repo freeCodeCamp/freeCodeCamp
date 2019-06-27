@@ -4,10 +4,11 @@ localeTitle: لحلقة
 ---
 ### بناء الجملة
 
- `for ([initialization]); [condition]; [final-expression]) { 
-   // statement 
- } 
-` 
+```javascript
+for ([initialization]); [condition]; [final-expression]) {
+   // statement
+}
+``` 
 
 جافا سكريبت `for` بيان يتكون من ثلاث عبارات وبيان:
 
@@ -46,36 +47,38 @@ localeTitle: لحلقة
 
 تكرار عبر الأعداد الصحيحة من 0-8
 
- `for (var i = 0; i < 9; i++) { 
-   console.log(i); 
- } 
- 
- output: 
- 0 
- 1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
-` 
+```javascript
+for (var i = 0; i < 9; i++) {
+   console.log(i);
+}
+
+output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+``` 
 
 الخروج من حلقة قبل تعبير الشرط غير صحيح
 
- `for (var elephant = 1; elephant < 10; elephant+=2) { 
-    if (elephant === 7) { 
-        break; 
-    } 
-    console.info('elephant is ' + elephant); 
- } 
- 
- output: 
- elephant is 1 
- elephant is 3 
- elephant is 5 
-` 
+```javascript
+for (var elephant = 1; elephant < 10; elephant+=2) {
+    if (elephant === 7) {
+        break;
+    }
+    console.info('elephant is ' + elephant);
+}
+
+output:
+elephant is 1
+elephant is 3
+elephant is 5
+``` 
 
 ### موارد آخرى
 

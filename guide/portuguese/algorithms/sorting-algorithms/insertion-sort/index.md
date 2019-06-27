@@ -92,7 +92,7 @@ Passo 5:
 
 O algoritmo abaixo é uma versão ligeiramente otimizada para evitar a troca do elemento- `key` em cada iteração. Aqui, o elemento- `key` será trocado no final da iteração (etapa).
 
-```Algorithm
+```
     InsertionSort(arr[]) 
       for j = 1 to arr.length 
          key = arr[j] 

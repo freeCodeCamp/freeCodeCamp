@@ -17,32 +17,30 @@ Es posible que haya notado que el **tipo de envoltorio** consiste en tipos escri
 Normalmente, puede _declarar_ (es decir, crear) variables según la siguiente sintaxis: < _tipo de datos_ > <nombre de _variable_ >;
 
 ```java
-// Primitive Data Type 
+// Tipo de dato primitivo 
  int i; 
  
- // Reference Data Type 
+ // Referencia al tipo de dato
  Float myFloat; 
 ```
 
 Puede _asignar_ un valor a la variable de forma simultánea cuando lo declara (lo que se denomina _inicialización_ ), o en cualquier lugar del código después de haberlo declarado. El símbolo **\=** se utiliza para el mismo.
 
 ```java
-// Initialise the variable of Primitive Data Type 'int' to store the value 10 
+ // Inicializa la variable primitiva del tipo 'int' para almacenar el valor 10
  int i = 10; 
  double amount = 10.0; 
  boolean isOpen = false; 
  char c = 'a'; // Note the single quotes 
  
- //Variables can also be declared in one statement, and assigned values later. 
+ // Las variables también pueden declararse en una sentencia, y asignarse valores más adelante.
  int j; 
  j = 10; 
  
- // initiates an Float object with value 1.0 
- // variable myFloat now points to the object 
+ // Inicializar un objeto de tipo Float con el valor "1.0" y hacemos que la variable 'myFloat' lo referencie
  Float myFloat = new Float(1.0); 
  
- //Bytes are one of types in Java and can be 
- //represented with this code 
+ // Los Byte son uno de los tipos de Java y pueden ser representados mediante este código
  int byteValue = 0B101; 
  byte anotherByte = (byte)0b00100001; 
 ```

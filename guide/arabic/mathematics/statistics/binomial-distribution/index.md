@@ -32,29 +32,29 @@ localeTitle: توزيع ثنائي
 
 خذ بعين الاعتبار `P(Single Scenario)` تحت الحالة العامة للنجاحات `k` و `n - k` الفشل في `n` التجارب. للعثور على القيمة ، استخدم قاعدة الضرب للأحداث المستقلة:
 
-![](https://i.imgur.com/YXzUPiB.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/YXzUPiB.png)
 
 عدد من الطرق للحصول `k` النجاحات من `n` المحاكمات يمكن كتابة كما **ن اختيار ك:**
 
-![](https://i.imgur.com/AQ3P4vi.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/AQ3P4vi.png)
 
 لذا، فإن الصيغة العامة للحصول على احتمال مراقبة بالضبط `k` النجاحات في `n` محاكمات مستقلة تعطى من قبل:
 
-![](https://i.imgur.com/ZErXKtQ.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/ZErXKtQ.png)
 
 وبالتالي ، فإن احتمال الحصول على رؤوس واحدة بالضبط في التجارب هو:
 
-![](https://i.imgur.com/fN5wOH2.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/fN5wOH2.png)
 
 ### يعني والفرق
 
 يُعطى متوسط ​​التوزيع ذي الحدين مع التجارب `n` حيث `p` هو احتمال النجاح من خلال:
 
-![](https://i.imgur.com/4ji7JXx.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4ji7JXx.png)
 
 والتباين:
 
-![](https://i.imgur.com/1tPHKHj.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/1tPHKHj.png)
 
 #### معلومات اكثر:
 

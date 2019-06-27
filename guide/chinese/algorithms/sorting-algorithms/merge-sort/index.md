@@ -23,7 +23,7 @@ T(n) = 2T(n/2) + n
 
 计算结尾总和中n的重复次数，我们看到它们有lg n + 1。因此运行时间是n（lg n + 1）= n lg n + n。我们观察到，对于n> 0，n lg n + n <n lg n + n lg n = 2n lg n，因此运行时间为O（n lg n）。
 
-```Algorithm
+```
 MergeSort(arr[], left,  right): 
  If right > l: 
      1. Find the middle point to divide the array into two halves: 

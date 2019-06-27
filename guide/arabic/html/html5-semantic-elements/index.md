@@ -81,52 +81,52 @@ The `&#60;section&#62;` و `&#60;article&#62;` العناصر متشابهة م�
 1.  تهدف المقالة إلى أن تكون قابلة للتوزيع أو القابلة لإعادة الاستخدام بشكل مستقل.
 2.  القسم هو تجميع موضوعي للمحتوى.
 
- `
-<section> 
-  <p>Top Stories</p> 
-  <section> 
-    <p>News</p> 
-    <article>Story 1</article> 
-    <article>Story 2</article> 
-    <article>Story 3</article> 
-  </section> 
-  <section> 
-    <p>Sport</p> 
-    <article>Story 1</article> 
-    <article>Story 2</article> 
-    <article>Story 3</article> 
-  </section> 
- </section> 
-` 
+```html
+<section>
+  <p>Top Stories</p>
+  <section>
+    <p>News</p>
+    <article>Story 1</article>
+    <article>Story 2</article>
+    <article>Story 3</article>
+  </section>
+  <section>
+    <p>Sport</p>
+    <article>Story 1</article>
+    <article>Story 2</article>
+    <article>Story 3</article>
+  </section>
+</section>
+``` 
 
 #### `&#60;header&#62;` و `&#60;hgroup&#62;`
 
 `&#60;header&#62;` عنصر موجود بشكل عام في أعلى مستند أو قسم أو مقالة ويحتوي عادةً على العنوان الرئيسي وبعض أدوات التنقل والبحث.
 
- `
-<header> 
-  <h1>Company A</h1> 
-  <ul> 
-    <li><a href="/home">Home</a></li> 
-    <li><a href="/about">About</a></li> 
-    <li><a href="/contact">Contact us</a></li> 
-  </ul> 
-  <form target="/search"> 
-    <input name="q" type="search" /> 
-    <input type="submit" /> 
-  </form> 
- </header> 
-` 
+```html
+<header>
+  <h1>Company A</h1>
+  <ul>
+    <li><a href="/home">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact us</a></li>
+  </ul>
+  <form target="/search">
+    <input name="q" type="search" />
+    <input type="submit" />
+  </form>
+</header>
+``` 
 
 `&#60;hgroup&#62;` يجب استخدام عنصر حيث تريد عنوان رئيسي مع واحد أو أكثر من العناوين الفرعية.
 
- `
-<hgroup> 
-  <h1>Heading 1</h1> 
-  <h2>Subheading 1</h2> 
-  <h2>Subheading 2</h2> 
- </hgroup> 
-` 
+```html
+<hgroup>
+  <h1>Heading 1</h1>
+  <h2>Subheading 1</h2>
+  <h2>Subheading 2</h2>
+</hgroup>
+``` 
 
 تذكر ، أن رأس `&#60;header&#62;` عنصر يمكن أن يحتوي على أي محتوى ، ولكن `&#60;hgroup&#62;` لا يمكن أن يحتوي العنصر إلا على رؤوس أخرى ، وهي `&#60;h1&#62;` إلى `&#60;h6&#62;` بما في ذلك `&#60;hgroup&#62;` .
 
@@ -134,47 +134,47 @@ The `&#60;section&#62;` و `&#60;article&#62;` العناصر متشابهة م�
 
 The `&#60;aside&#62;` عنصر مخصص للمحتوى الذي ليس جزءًا من تدفق النص الذي يظهر فيه ، ومع ذلك لا يزال مرتبطًا بطريقة ما. هذا `&#60;aside&#62;` كشريط جانبي للمحتوى الرئيسي الخاص بك.
 
- `
-<aside> 
-  <p>This is a sidebar, for example a terminology definition or a short background to a historical figure.</p> 
- </aside> 
-` 
+```html
+<aside>
+  <p>This is a sidebar, for example a terminology definition or a short background to a historical figure.</p>
+</aside>
+``` 
 
 قبل HTML5 ، تم إنشاء قوائمنا باستخدام `&#60;ul&#62;` 's و `&#60;li&#62;` الصورة. الآن ، مع هذه ، يمكننا فصل عناصر القائمة لدينا باستخدام `&#60;nav&#62;` للتنقل بين صفحاتك. يمكنك الحصول على أي عدد من `&#60;nav&#62;` العناصر على الصفحة ، على سبيل المثال ، من الشائع أن يكون لديك نظام ملاحة عمومي عبر الجزء العلوي (في `&#60;header&#62;` ) والتنقل المحلي في شريط جانبي (في عنصر `&#60;aside&#62;` ).
 
- `
-<nav> 
-  <ul> 
-    <li><a href="/home">Home</a></li> 
-    <li><a href="/about">About</a></li> 
-    <li><a href="/contact">Contact us</a></li> 
-  </ul> 
- </nav> 
-` 
+```html
+<nav>
+  <ul>
+    <li><a href="/home">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact us</a></li>
+  </ul>
+</nav>
+``` 
 
 #### `&#60;footer&#62;`
 
 إذا كان هناك رأس `&#60;header&#62;` يجب أن يكون هناك `&#60;footer&#62;` . A `&#60;footer&#62;` بشكل عام في أسفل مستند أو قسم أو مقالة. تمامًا مثل `&#60;header&#62;` المحتوى عبارة عن معلومات عامة ، مثل تفاصيل المؤلف ، أو المعلومات القانونية ، و / أو روابط إلى المعلومات ذات الصلة. تسري أيضًا على تضمين `&#60;section&#62;` عناصر داخل تذييل الصفحة.
 
- `
-<footer>&copy;Company A</footer> 
-` 
+```html
+<footer>&copy;Company A</footer>
+``` 
 
 #### `&#60;small&#62;`
 
 ال `&#60;small&#62;` يظهر العنصر غالبًا داخل `&#60;footer&#62;` أو `&#60;aside&#62;` العنصر الذي عادة ما يحتوي على معلومات حقوق الطبع والنشر أو التنازلات القانونية ، وغيرها من مثل هذه المطبوعة الجميلة. ومع ذلك ، هذا غير مخصص لجعل النص أصغر. إنه مجرد وصف محتواه ، وليس وصف العرض التقديمي.
 
- `
-<footer><small>&copy;Company A</small> Date</footer> 
-` 
+```html
+<footer><small>&copy;Company A</small> Date</footer>
+``` 
 
 #### `&#60;time&#62;`
 
 The `&#60;time&#62;` يسمح عنصر لا لبس فيها ISO 8601 تاريخ لإرفاق نسخة الإنسان من ذلك التاريخ.
 
- `
-<time datetime="2017-10-31T11:21:00+02:00">Tuesday, 31 October 2017</time> 
-` 
+```html
+<time datetime="2017-10-31T11:21:00+02:00">Tuesday, 31 October 2017</time>
+``` 
 
 لماذا تهتم بـ `&#60;time&#62;` ؟ في حين يستطيع البشر قراءة الوقت الذي يمكن أن يفسد من خلال السياق بالطريقة العادية ، يمكن لأجهزة الكمبيوتر قراءة تاريخ ISO 8601 ورؤية التاريخ والوقت والمنطقة الزمنية.
 
@@ -182,12 +182,12 @@ The `&#60;time&#62;` يسمح عنصر لا لبس فيها ISO 8601 تاريخ 
 
 `&#60;figure&#62;` لتغليف محتوى الصور حوله ، و `&#60;figcaption&#62;` هو تسمية صورتك.
 
- `
-<figure> 
-  <img src="https://en.wikipedia.org/wiki/File:Shadow_of_Mordor_cover_art.jpg" alt="Shadow of Mordor" /> 
-  <figcaption>Cover art for Middle-earth: Shadow of Mordor</figcaption> 
- </figure> 
-` 
+```html
+<figure>
+  <img src="https://en.wikipedia.org/wiki/File:Shadow_of_Mordor_cover_art.jpg" alt="Shadow of Mordor" />
+  <figcaption>Cover art for Middle-earth: Shadow of Mordor</figcaption>
+</figure>
+``` 
 
 ### تعرف على المزيد حول عناصر HTML5 الجديدة:
 

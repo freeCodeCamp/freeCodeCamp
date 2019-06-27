@@ -6,5 +6,6 @@ localeTitle: اكتب منطقي
 
 `boolean` هي قيمة true / false الأساسية لجافا سكريبت.
 
- `let isDone: boolean = false; 
-`
+```typescript
+let isDone: boolean = false;
+```

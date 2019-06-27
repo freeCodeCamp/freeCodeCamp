@@ -32,29 +32,29 @@ El primer componente de la ecuación anterior es el número de formas de organiz
 
 Considere `P(Single Scenario)` en el caso general de `k` éxitos y `n - k` fallas en `n` intentos. Para encontrar el valor, use la Regla de multiplicación para eventos independientes:
 
-![](https://i.imgur.com/YXzUPiB.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/YXzUPiB.png)
 
 El número de maneras de obtener `k` éxitos de `n` ensayos se puede escribir como **n elige k** :
 
-![](https://i.imgur.com/AQ3P4vi.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/AQ3P4vi.png)
 
 Entonces, la fórmula general para obtener la probabilidad de observar exactamente `k` éxitos en `n` ensayos independientes viene dada por:
 
-![](https://i.imgur.com/ZErXKtQ.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/ZErXKtQ.png)
 
 Por lo tanto, la probabilidad de obtener exactamente un Heads en los ensayos es:
 
-![](https://i.imgur.com/fN5wOH2.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/fN5wOH2.png)
 
 ### Media y varianza
 
 La media de una distribución binomial con `n` ensayos donde `p` es la probabilidad de éxito viene dada por:
 
-![](https://i.imgur.com/4ji7JXx.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4ji7JXx.png)
 
 y varianza:
 
-![](https://i.imgur.com/1tPHKHj.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/1tPHKHj.png)
 
 #### Más información:
 

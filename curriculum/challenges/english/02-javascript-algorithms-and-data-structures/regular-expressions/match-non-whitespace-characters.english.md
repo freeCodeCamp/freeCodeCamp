@@ -8,7 +8,13 @@ challengeType: 1
 <section id='description'>
 You learned about searching for whitespace using <code>\s</code>, with a lowercase <code>s</code>. You can also search for everything except whitespace.
 Search for non-whitespace using <code>\S</code>, which is an uppercase <code>s</code>. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class <code>[^ \r\t\f\n\v]</code>.
-<blockquote>let whiteSpace = "Whitespace. Whitespace everywhere!"<br>let nonSpaceRegex = /\S/g;<br>whiteSpace.match(nonSpaceRegex).length; // Returns 32</blockquote>
+
+```js
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let nonSpaceRegex = /\S/g;
+whiteSpace.match(nonSpaceRegex).length; // Returns 32
+```
+
 </section>
 
 ## Instructions
@@ -57,6 +63,8 @@ let result = sample.match(countNonWhiteSpace);
 <section id='solution'>
 
 ```js
-// solution required
+let sample = "Whitespace is important in separating words";
+let countNonWhiteSpace = /\S/g; // Change this line
+let result = sample.match(countNonWhiteSpace);
 ```
 </section>
