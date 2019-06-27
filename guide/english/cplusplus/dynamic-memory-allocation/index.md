@@ -5,42 +5,41 @@ title: Dynamic Memory Allocation
 
 ### What is Dynamic Memory Allocation in C++?
 * **Memory Allocation** in C++ refers to the memory alloted to the variables you use throughout your program.
-* **Dynamic Memory Allocation** is the memory which is alloted to the variables at the run-time and the amount of memory required is also decided at the run-time.
-* This memory comes from **heap**, whereas _non-static_ variables and _local_ variables get memory from **stack**.
-* In C++, the programmer can perform memory allocations manually, and is called as **_dynamic memory allocation_**.
-* It was possible in C to do dynamic memory allocation, by using _calloc()_ and _malloc()_ functions to allocate memory and using _free()_ function to de-allocate the dynamic memory.
-* In C++, in addition to above (although the above functions are generally discouraged), there are two functions, _new_ and _delete_ for performing dynamic memory allocation and de-allocation.
+* **Dynamic Memory Allocation** in C++ refers to the memory which is alloted to the variables at run-time, which is also when the amount of memory required is decided.
+* This memory comes from the **heap**, whereas _non-static_ variables and _local_ variables get memory from the **stack**.
+* In C++, the programmer can manually perform dynamic memory allocation as described below.
+* It is possible in C to do dynamic memory allocation by using the _calloc_ and _malloc_ functions to allocate memory as needed, and then using the _free_ function to deallocate it.
+* In C++, in addition to the above C functions, there are two operators, _new_ and _delete_, for respectively performing dynamic memory allocation and deallocation.
 
 ### NEW operator
-* `new` operator can grant the programmer memory from the heap (if available). If the memory which the programmer asks is available, then the `new` operator initializes the memory and then returns the address (reference) of the memory allocated.
-**Syntax**  
+* The `new` operator can grant the programmer memory from the heap (if available). If the memory which the programmer asks for is available, then the `new` operator initializes the memory and returns the address (reference) of the memory allocated (otherwise an exception of type `std::bad_alloc` is thrown).
+* **Syntax**  
  `pointer-variable-type` = **new** `data-type;`  
- Example 1: `int *ptr` = **new** `int;`  
- Example 2: `int *ptr2` = **new** `int[10];`  
- Here, `pointer-variable-type` is a **pointer** of `data type`. The `data-type` can be int, char, etc. or user-defined data-type.
- * `new` is preferred over `malloc()` in C++ because new works for objects as well which is the main building block for OOP.
+ **Example 1:** `int *ptr` = **new** `int;`  
+ **Example 2:** `int *ptr2` = **new** `int[10];`  
+ Here, `pointer-variable-type` is a **pointer** of `data type`. The `data-type` can be either a primitive (int, char, etc.) or a user-defined data-type.
+ * In C++, `new` is preferred over `malloc()` because `new` works for objects by calling their constructors. For example, if an object `Foo` has both a default constructor and a constructor that takes an `int` argument, Example 3 below will construct a `Foo` object using the former constructor, while (if `a` is of type `int`), Example 4 will construct a `Foo` object using the latter constructor instead.  
+ **Example 3:** `Foo *ptr` = **new** `Foo;`  
+ **Example 4:** `Foo *ptr` = **new** `Foo(a);`  
 
 ### DELETE operator
-* It is the programmer's responsibility to de-allocate the dynamically allocated memory otherwise the memory would not be available to be re-allocated until the end of the program.
-* To deallocate the memory, the `delete` operator is available and can be used by the programmer.
-
-**Syntax** 
-
+* In C++, it is programmer's responsibility to deallocate dynamically allocated memory, since otherwise the memory will not be available to be reused after the end of the program.
+* To deallocate the memory, the `delete` operator is available and can be used by the programmer as follows.
+* **Syntax**  
  **delete** `pointer-type-variable;`  
-
-For example to free the memory allocated in example 1 above, we type:  
+ For example, to free the memory allocated in Examples 1, 3, and 4 above, we type:  
  `delete ptr;`  
-
-In example 2, memory for an array of integers was allocated. To free this memory alloted for an array, the `delete []` operator is used:
+ In Example 2 above, however, memory for an array of integers was allocated. To free the memory alloted for an array, the `delete []` operator must be used:
  `delete [] ptr2`;
 
  
  ### Memory Leaks
- Leaks are caused when you fail to deallocate dynamic memory you allocated via `New` operator at the end of your program. If you do not deallocate it with the Delete operator, your computer will keep creating new memory in the heap every time the program runs. This causes your computer to slow down because memory is not deleted and your available memory decreases. Many computer programs cause memory leaks over time. However, when you reboot the machine, it will resolve the issue. This is because rebooting releases those spaces in heap memory that were causing memory leaks.
+ Memory leaks are caused when you fail to deallocate the dynamic memory you allocated via the `new` operator by the end of your program. If you do not deallocate this memory with the `delete` operator, it will accumulate in the heap every time the program runs. This causes your computer to slow down because memory is not deleted and your available memory decreases. Many poorly written computer programs exhibit memory leaks over time. However, when you reboot the machine, it will resolve the issue, as all memory in the heap will be released at that point.
  
- There are many various ways to check for memory leaks in your program. Valgrind is a common tool for doing this from a bash linux shell. Once valgrind is downloaded and the program is compiled, valgrind can be ran with certain flags for displaying different information about memory read and write errors and memory leaks. Here is an example of running valgrind with a compiled program 'a.out':
+ There are various ways to check for memory leaks in your program. Valgrind is a common tool for doing this from a bash linux shell. Once valgrind is downloaded and the program is compiled, valgrind can be run with certain flags for displaying different information about memory read and write errors and memory leaks. Here is an example of running valgrind with a compiled program 'a.out':
  `valgrind ./a.out`
  
- 
+ #### More Information
+ [Wikipedia](https://en.wikipedia.org/wiki/New_and_delete_(C%2B%2B))
  
  
