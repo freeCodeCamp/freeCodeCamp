@@ -1,7 +1,7 @@
 ---
-title: Some Administrative Linux Commands You Have To Know
+title: Administrative Linux Commands
 ---
-# Some Administrative Linux Commands
+## Administrative Linux Commands
 
 In this section we have some useful commands to you admin your Linux system. Initially, an advice: 
 
@@ -10,9 +10,7 @@ these commands before use and don't use them if you have any questions unsolved 
 
 1. `sysctl` Command
 
-The kernel Linux have several parameters you can control at runtime. The sysctl command is the knife you need to do this. However, you have to be 
-careful using this command because depending which parameter you modify, your system crashes. Basically use of this command is: `sysctl <VARIABLE>` 
-where `<VARIABLE>` is the runtime parameter you want to see or modify. Some examples of use:
+The kernel Linux have several parameters you can control at runtime. The sysctl command is the knife you need to do this. However, you have to be careful using this command because depending which parameter you modify, your could crash. Basically use of this command is: `sysctl <VARIABLE>` where `<VARIABLE>` is the runtime parameter you want to see or modify. Some examples of use:
 
 Example 1: `sysctl -a`: print all parameters availabe
 Example 2: `sysctl <VARIABLE>`: print the actual value of `<VARIABLE>`.
