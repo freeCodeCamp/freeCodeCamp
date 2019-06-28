@@ -46,6 +46,8 @@ Returns x with the bits shifted to the right by y places. This is same as dividi
 Returns x with the bits shifted to the right by y places. Unlike arithmetic shift, logical shifts do not preseve sign. For example: -2 represented in 8 bits would be 11111110 (because the most significant bit has negative weight). Shifting it right one bit using arithmetic shift would give you 11111111, or -1\. Logical right shift, however, does not care that the value could possibly represent a number; it simply moves everything to the right and fills in from the left with 0s. Shifting our -2 right one bit using logical shift would give 01111111\. This operator is not necessirly present in all languages.
 
 ## example in C
+
+```c
 #include<stdio.h> 
 int main() 
 { 
@@ -59,3 +61,4 @@ int main()
     printf("b>>1 = %d\n", b>>1);   
     return 0; 
 } 
+```
