@@ -3,15 +3,6 @@ title: Kano Analysis
 ---
 ## Kano Analysis
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/agile/kano-analysis/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
 Kano Model was put forth by Professor Noriaki Kano, professor of quality management at the Tokyo University of Science and a consultant in the field of quality management.
 
 Kano Model is basically a theory for product development and customer satisfaction. This model classifies the customer preferences into 5 different categories. These are as follows-
