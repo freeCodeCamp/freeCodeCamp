@@ -1,6 +1,7 @@
 ---
 title: Kano Analysis
 ---
+
 ## Kano Analysis
 
 Kano Model was put forth by Professor Noriaki Kano, professor of quality management at the Tokyo University of Science and a consultant in the field of quality management.
@@ -20,3 +21,4 @@ Kano Model is basically a theory for product development and customer satisfacti
 
 So, Kano Analysis is based on the Kano model and focuses on analyzing the requirements of the customer base being targeted based on the above categories.
 
+### More Information
