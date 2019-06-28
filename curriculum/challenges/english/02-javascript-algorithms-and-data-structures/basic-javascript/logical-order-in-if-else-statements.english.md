@@ -11,11 +11,40 @@ Order is important in <code>if</code>, <code>else if</code> statements.
 The function is executed from top to bottom so you will want to be careful of what statement comes first.
 Take these two functions as an example.
 Here's the first:
-<blockquote>function foo(x) {<br>&nbsp;&nbsp;if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than one";<br>&nbsp;&nbsp;} else if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than two";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Greater than or equal to two";<br>&nbsp;&nbsp;}<br>}</blockquote>
+
+```js
+function foo(x) {
+  if (x < 1) {
+    return "Less than one";
+  } else if (x < 2) {
+    return "Less than two";
+  } else {
+    return "Greater than or equal to two";
+  }
+}
+```
+
 And the second just switches the order of the statements:
-<blockquote>function bar(x) {<br>&nbsp;&nbsp;if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than two";<br>&nbsp;&nbsp;} else if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Less than one";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Greater than or equal to two";<br>&nbsp;&nbsp;}<br>}</blockquote>
+
+```js
+function bar(x) {
+  if (x < 2) {
+    return "Less than two";
+  } else if (x < 1) {
+    return "Less than one";
+  } else {
+    return "Greater than or equal to two";
+  }
+}
+```
+
 While these two functions look nearly identical if we pass a number to both we get different outputs.
-<blockquote>foo(0) // "Less than one"<br>bar(0) // "Less than two"</blockquote>
+
+```js
+foo(0) // "Less than one"
+bar(0) // "Less than two"
+```
+
 </section>
 
 ## Instructions

@@ -19,44 +19,45 @@ localeTitle: أشرطة الملاحة
 
 هناك جزءان لأي التنقل: HTML و CSS. هذا مجرد مثال سريع.
 
- `
-<nav class="myNav">                                 <!-- Any element can be used here --> 
-    <ul> 
-        <li><a href="index.html">Home</a></li> 
-        <li><a href="about.html">About</a></li> 
-        <li><a href="contact.html">Contact</a></li> 
-    </ul> 
- </nav> 
-` 
+```html
+<nav class="myNav">                                 <!-- Any element can be used here -->
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+``` 
 
- `/* Define the main Navigation block */ 
- .myNav { 
-    display: block; 
-    height: 50px; 
-    line-height: 50px; 
-    background-color: #333; 
- } 
- /* Remove bullets, margin and padding */ 
- .myNav ul { 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
- } 
- .myNav li { 
-    float: left; 
-    /* Or you can use display: inline; */ 
- } 
- /* Define the block styling for the links */ 
- .myNav li a { 
-    display: inline-block; 
-    text-align: center; 
-    padding: 14px 16px; 
- } 
- /* This is optional, however if you want to display the active link differently apply a background to it */ 
- .myNav li a.active { 
-    background-color: #3786E1; 
- } 
-` 
+```css
+/* Define the main Navigation block */
+.myNav {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    background-color: #333;
+}
+/* Remove bullets, margin and padding */
+.myNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.myNav li {
+    float: left;
+    /* Or you can use display: inline; */
+}
+/* Define the block styling for the links */
+.myNav li a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+}
+/* This is optional, however if you want to display the active link differently apply a background to it */
+.myNav li a.active {
+    background-color: #3786E1;
+}
+``` 
 
 #### معلومات اكثر:
 

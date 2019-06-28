@@ -51,7 +51,6 @@ localeTitle: اقتطاع سلسلة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/55)
 
 ### شرح الشفرة:
 
@@ -71,7 +70,6 @@ localeTitle: اقتطاع سلسلة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/54)
 
 ### شرح الشفرة:
 

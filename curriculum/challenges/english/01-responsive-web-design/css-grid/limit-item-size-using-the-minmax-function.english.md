@@ -8,7 +8,11 @@ videoUrl: 'https://scrimba.com/p/pByETK/cD97RTv'
 ## Description
 <section id='description'>
 There's another built-in function to use with <code>grid-template-columns</code> and <code>grid-template-rows</code> called <code>minmax</code>. It's used to limit the size of items when the grid container changes size. To do this you need to specify the acceptable size range for your item. Here is an example:
-<blockquote>grid-template-columns: 100px minmax(50px, 200px);</blockquote>
+
+```css
+grid-template-columns: 100px minmax(50px, 200px);
+```
+
 In the code above, <code>grid-template-columns</code> is set to create two columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.
 </section>
 

@@ -6,7 +6,7 @@
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> Русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
         <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
     </tr>
@@ -42,7 +42,7 @@ You can help us to:
 
 - [💻 Create, Update and Fix Bugs in our coding challenges](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [Translate guide articles](#translate-guide-articles)
+- [🌐 Translate guide articles](#translate-guide-articles)
 
 - [🛠 Fix bugs in freeCodeCamp.org's learning platform](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
@@ -56,13 +56,13 @@ You can find an [example article about HTML Anchor Elements here](https://github
 
 **What can I write an article about?**
 
-We welcome your help writing these articles. You don't have to be an expert in a topic to write about it. This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
+We welcome your help in writing these articles. You don't have to be an expert on a topic to write about it. This entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
 
 To help, find a `stub article` on our [Guide website](https://guide.freecodecamp.org), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about, review, and eventually adopt your changes.
 
 If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
 
-If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).
+**If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).**
 
 ### Create, Update and Fix Bugs in our coding challenges
 
@@ -89,7 +89,7 @@ Note that once we have finished [Version 7.0 of the freeCodeCamp curriculum](htt
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
-Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
+Our learning platform runs on a modern JavaScript stack. It has various components, tools, and libraries, including but not limited to, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
 Broadly,
 
@@ -101,9 +101,17 @@ Contributing to this requires some understanding of APIs, ES6 Syntax, and a lot 
 
 Essentially, we expect basic familiarity with some of the aforementioned technologies, tools, and libraries. With that being said, you are not required to be an expert on them in order to contribute.
 
-Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
+**If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).**
 
-If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).
+Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach out to our platform dev team to help you with this:
+
+| Name            | GitHub | Twitter |
+|:----------------|:-------|:--------|
+| Mrugesh Mohapatra | [`@raisedadead`](https://github.com/raisedadead) | [`@raisedadead`](https://twitter.com/raisedadead)|
+| Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
+| Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
+
+> **Email: `dev at freecodecamp dot org`**
 
 ## Frequently Asked Questions
 
@@ -136,7 +144,7 @@ Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCam
 
 Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity, and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
 
-You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. These are up for grabs, and you do not need to seek permission before working on them.
+You should go through [**`help wanted`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) or [**`first-timers welcome`**](https://github.com/freeCodeCamp/freeCodeCamp/issues?q=is%3Aopen+is%3Aissue+label%3A%22first+timers+welcome%22) issues for a quick overview of what is available for you to work on. These are up for grabs, and you do not need to seek permission before working on them.
 
 If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 

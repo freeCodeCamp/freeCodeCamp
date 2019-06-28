@@ -22,9 +22,9 @@ AngularJS (الإصدارات 1.x) هو إطار مفتوح المصدر يست�
 
 AngularJS: يمكننا إضافة AngularJS (الإصدارات 1.x الزاوي) من خلال الرجوع إلى شبكة تسليم المحتوى من Google.
 
- `
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
-` 
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+``` 
 
 التنزيل / التثبيت: يمكننا تنزيل إطار العمل باستخدام npm أو Bower أو composer
 
@@ -39,8 +39,9 @@ AngularJS: يمكننا إضافة AngularJS (الإصدارات 1.x الزاو�
 
 أتش تي أم أل
 
- `bower 
-` 
+```
+bower
+``` 
 
 الصدف باور تثبيت زاوية
 

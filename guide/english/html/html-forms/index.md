@@ -64,7 +64,7 @@ Code example:
   <input type="submit" value="Submit">
 </form>
 ```
-![Screenshot of Code Above](https://i.imgur.com/r0br52L.png "Screenshot of Code Above")
+![Screenshot of Code Above](https://cdn-media-1.freecodecamp.org/imgr/r0br52L.png "Screenshot of Code Above")
 
 SETTING MINIMUM AND MAXIMUM VALUES ON INPUTS OF TYPE "NUMBER"
 

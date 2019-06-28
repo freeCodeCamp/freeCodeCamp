@@ -72,7 +72,7 @@ Laravel utilizes [Composer](https://getcomposer.org/) to manage its dependencies
 #### Via Laravel Installer
 First, download the Laravel installer using Composer:
 
-```sh
+```shell
 > composer global require laravel/installer
 ```
 
@@ -83,21 +83,21 @@ Make sure to place composer's system-wide vendor bin directory in your `$PATH` v
 
 Once installed, the laravel `new` command will create a fresh Laravel installation in the directory you specify. For instance, laravel new blog will create a directory named blog containing a fresh Laravel installation with all of Laravel's dependencies already installed:
 
-```sh
+```shell
 > laravel new blog
 ```
 
 #### Via Composer Create-Project
 Alternatively, you may also install Laravel by issuing the Composer create-project command in your terminal:
 
-```sh
+```shell
 > composer create-project --prefer-dist laravel/laravel blog
 ```
 
 Local Development Server
 If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the Artisan `serve` command. This command will start a development server at `http://localhost:8000`:
 
-```sh
+```shell
 > php artisan serve
 ```
 

@@ -14,8 +14,9 @@ localeTitle: String.prototype.includes
 
 **بناء الجملة**
 
- `string.includes(searchString[, position]) 
-` 
+```js
+string.includes(searchString[, position])
+``` 
 
 **المعلمات**
 
@@ -23,30 +24,35 @@ localeTitle: String.prototype.includes
 
 **أمثلة**
 
- `let string = "Roses are red, violets are blue."; 
- 
- string.includes('red'); // returns true 
-` 
+```js
+let string = "Roses are red, violets are blue.";
 
- `let string = "Roses are red, violets are blue."; 
- 
- string.includes('Red'); // returns false 
-` 
+string.includes('red'); // returns true
+``` 
 
- `let string = "Roses are red, violets are blue."; 
- 
- string.includes('red',12); // returns false because 'red' starts at position 9, and our search begins at position 12. 
-` 
+```javascript
+let string = "Roses are red, violets are blue.";
 
- `let string = "Roses are red, violets are blue."; 
- 
- string.includes('blue',12); // returns true because 'blue' starts after our search begins at position 12. 
-` 
+string.includes('Red'); // returns false
+``` 
 
- `let string = "Roses are red, violets are blue."; 
- 
- string.includes('violets are blue'); // returns true 
-` 
+```javascript
+let string = "Roses are red, violets are blue.";
+
+string.includes('red',12); // returns false because 'red' starts at position 9, and our search begins at position 12.
+``` 
+
+```javascript
+let string = "Roses are red, violets are blue.";
+
+string.includes('blue',12); // returns true because 'blue' starts after our search begins at position 12.
+``` 
+
+```javascript
+let string = "Roses are red, violets are blue.";
+
+string.includes('violets are blue'); // returns true
+``` 
 
 #### معلومات اكثر:
 

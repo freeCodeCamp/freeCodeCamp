@@ -66,4 +66,11 @@ For example, we could create the file `requirements.txt` and its content:
      pip install -r requirements.txt
      
  Should install all the modules listed on the file.
+ 
+  If you need to know which packages you have installed (along with their versions) you
+  can use the list command:
+ 
+     pip list
+     
+ This will come in handy when installing packages with prerequisites such as torch or tensorflow.
 

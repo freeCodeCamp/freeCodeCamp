@@ -8,7 +8,15 @@ challengeType: 1
 <section id='description'>
 Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: <code>.</code>
 The wildcard character <code>.</code> will match any one character. The wildcard is also called <code>dot</code> and <code>period</code>. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match <code>"hug"</code>, <code>"huh"</code>, <code>"hut"</code>, and <code>"hum"</code>, you can use the regex <code>/hu./</code> to match all four words.
-<blockquote>let humStr = "I'll hum a song";<br>let hugStr = "Bear hug";<br>let huRegex = /hu./;<br>humStr.test(huRegex); // Returns true<br>hugStr.test(huRegex); // Returns true</blockquote>
+
+```js
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+humStr.test(huRegex); // Returns true
+hugStr.test(huRegex); // Returns true
+```
+
 </section>
 
 ## Instructions

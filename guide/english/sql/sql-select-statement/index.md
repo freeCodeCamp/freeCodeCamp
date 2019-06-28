@@ -41,7 +41,7 @@ SELECT * from <table_name>
 As defined in above section, there is another way of selecting all data without defining names of each and every attribute in query.
 This technique is short and very helpfull in querying faster:
 
-```Select query 
+```sql 
 select * 
 from student;
 ```

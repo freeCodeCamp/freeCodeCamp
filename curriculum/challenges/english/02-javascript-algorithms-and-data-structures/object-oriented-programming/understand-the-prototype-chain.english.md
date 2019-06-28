@@ -7,11 +7,29 @@ challengeType: 1
 ## Description
 <section id='description'>
 All objects in JavaScript (with a few exceptions) have a <code>prototype</code>. Also, an object’s <code>prototype</code> itself is an object.
-<blockquote>function Bird(name) {<br>&nbsp;&nbsp;this.name = name;<br>}<br><br>typeof Bird.prototype; // => object</blockquote>
+
+```js
+function Bird(name) {
+  this.name = name;
+}
+
+typeof Bird.prototype; // => object
+```
+
 Because a <code>prototype</code> is an object, a <code>prototype</code> can have its own <code>prototype</code>! In this case, the <code>prototype</code> of <code>Bird.prototype</code> is <code>Object.prototype</code>:
-<blockquote>Object.prototype.isPrototypeOf(Bird.prototype);<br>// returns true</blockquote>
+
+```js
+Object.prototype.isPrototypeOf(Bird.prototype);
+// returns true
+```
+
 How is this useful? You may recall the <code>hasOwnProperty</code> method from a previous challenge:
-<blockquote>let duck = new Bird("Donald");<br>duck.hasOwnProperty("name"); // => true</blockquote>
+
+```js
+let duck = new Bird("Donald");
+duck.hasOwnProperty("name"); // => true
+```
+
 The <code>hasOwnProperty</code> method is defined in <code>Object.prototype</code>, which can be accessed by <code>Bird.prototype</code>, which can then be accessed by <code>duck</code>. This is an example of the <code>prototype</code> chain.
 In this <code>prototype</code> chain, <code>Bird</code> is the <code>supertype</code> for <code>duck</code>, while <code>duck</code> is the <code>subtype</code>. <code>Object</code> is a <code>supertype</code> for both <code>Bird</code> and <code>duck</code>.
 <code>Object</code> is a <code>supertype</code> for all objects in JavaScript. Therefore, any object can use the <code>hasOwnProperty</code> method.

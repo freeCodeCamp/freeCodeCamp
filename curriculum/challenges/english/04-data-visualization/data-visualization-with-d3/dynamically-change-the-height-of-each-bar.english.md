@@ -7,7 +7,16 @@ challengeType: 6
 ## Description
 <section id='description'>
 The height of each bar can be set to the value of the data point in the array, similar to how the <code>x</code> value was set dynamically.
-<blockquote>selection.attr("property", (d, i) => {<br>&nbsp;&nbsp;/* <br>&nbsp;&nbsp;* d is the data point value<br>&nbsp;&nbsp;* i is the index of the data point in the array<br>&nbsp;&nbsp;*/<br>})</blockquote>
+
+```js
+selection.attr("property", (d, i) => {
+  /* 
+  * d is the data point value
+  * i is the index of the data point in the array
+  */
+})
+```
+
 </section>
 
 ## Instructions

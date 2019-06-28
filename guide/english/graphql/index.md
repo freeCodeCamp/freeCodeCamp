@@ -12,7 +12,7 @@ GraphQL schemas are often coupled with frameworks such as [Relay](https://facebo
 ## Installation
 From the command line run:
 
-```sh
+```shell
 npm init
 npm install graphql --save
 ```

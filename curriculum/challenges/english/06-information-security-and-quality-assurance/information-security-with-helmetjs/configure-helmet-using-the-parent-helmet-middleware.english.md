@@ -9,20 +9,22 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.
 <code>app.use(helmet())</code> will automatically include all the middleware introduced above, except <code>noCache()</code>, and <code>contentSecurityPolicy()</code>, but these can be enabled if necessary. You can also disable or configure any other middleware individually, using a configuration object.
 <h3>Example:</h3>
-<blockquote>
-app.use(helmet({<br>
-&nbsp;&nbsp;frameguard: {         // configure<br>
-&nbsp;&nbsp;&nbsp;&nbsp;action: 'deny'<br>
-&nbsp;&nbsp;},<br>
-&nbsp;&nbsp;contentSecurityPolicy: {    // enable and configure<br>
-&nbsp;&nbsp;&nbsp;&nbsp;directives: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;defaultSrc: ["self"],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;styleSrc: ['style.com'],<br>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-&nbsp;&nbsp;},<br>
-&nbsp;&nbsp;dnsPrefetchControl: false     // disable<br>
+
+```js
+app.use(helmet({
+  frameguard: {         // configure
+    action: 'deny'
+  },
+  contentSecurityPolicy: {    // enable and configure
+    directives: {
+      defaultSrc: ["self"],
+      styleSrc: ['style.com'],
+    }
+  },
+  dnsPrefetchControl: false     // disable
 }))
-</blockquote>
+```
+
 We introduced each middleware separately for teaching purposes and for ease of testing. Using the ‘parent’ <code>helmet()</code> middleware is easy to implement in a real project.
 </section>
 

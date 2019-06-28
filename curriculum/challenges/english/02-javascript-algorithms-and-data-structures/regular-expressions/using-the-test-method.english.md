@@ -9,7 +9,14 @@ challengeType: 1
 Regular expressions are used in programming languages to match parts of strings. You create patterns to help you do that matching.
 If you want to find the word <code>"the"</code> in the string <code>"The dog chased the cat"</code>, you could use the following regular expression: <code>/the/</code>. Notice that quote marks are not required within the regular expression.
 JavaScript has multiple ways to use regexes. One way to test a regex is using the <code>.test()</code> method. The <code>.test()</code> method takes the regex, applies it to a string (which is placed inside the parentheses), and returns <code>true</code> or <code>false</code> if your pattern finds something or not.
-<blockquote>let testStr = "freeCodeCamp";<br>let testRegex = /Code/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
+
+```js
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr);
+// Returns true
+```
+
 </section>
 
 ## Instructions

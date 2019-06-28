@@ -9,7 +9,13 @@ videoUrl: 'https://scrimba.com/c/c3bvpCg'
 <section id='description'>
 You can set which font an element should use, by using the <code>font-family</code> property.
 For example, if you wanted to set your <code>h2</code> element's font to <code>sans-serif</code>, you would use the following CSS:
-<blockquote>h2 {<br>&nbsp;&nbsp;font-family: sans-serif;<br>}</blockquote>
+
+```css
+h2 {
+  font-family: sans-serif;
+}
+```
+
 </section>
 
 ## Instructions

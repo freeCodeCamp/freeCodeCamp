@@ -132,7 +132,8 @@ Dale una oportunidad para ver qué pasa, y asegúrate de jugar con los operadore
 
 C proporciona una biblioteca matemática ( `math.h` ) que proporciona múltiples funciones matemáticas útiles. Como ejemplo, la potencia de un número se puede calcular como:
 
-```#include<math.h>
+```c
+#include<math.h>
 int result = pow(2,3) // will result in 2*2*2 or 8 
 ```
 

@@ -8,7 +8,18 @@ challengeType: 1
 <section id='description'>
 In the last challenge, you learned to use the <code>caret</code> character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
 You can search the end of strings using the <code>dollar sign</code> character <code>$</code> at the end of the regex.
-<blockquote>let theEnding = "This is a never ending story";<br>let storyRegex = /story$/;<br>storyRegex.test(theEnding);<br>// Returns true<br>let noEnding = "Sometimes a story will have to end";<br>storyRegex.test(noEnding);<br>// Returns false<br></blockquote>
+
+```js
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;
+storyRegex.test(theEnding);
+// Returns true
+let noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);
+// Returns false
+
+```
+
 </section>
 
 ## Instructions

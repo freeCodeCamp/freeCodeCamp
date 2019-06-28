@@ -3,7 +3,7 @@ title: Polygons
 ---
 ## Polygons
 
-![img](https://i.stack.imgur.com/ALoC9.png)
+![img](https://cdn-media-1.freecodecamp.org/imgr/ALoC9.png)
 
 A polygon is a 2-dimensional shape formed with straight lines. Examples include triangles, squares, pentagons, and hexagons.
 

@@ -2,7 +2,6 @@ import _ from 'lodash';
 import compareDesc from 'date-fns/compare_desc';
 import debug from 'debug';
 
-import { getMediumFeed } from './medium';
 import { getLybsynFeed } from './lybsyn';
 
 const log = debug('fcc:rss:news-feed');
@@ -13,7 +12,6 @@ class NewsFeed {
   constructor() {
     this.state = {
       readyState: false,
-      mediumFeed: [],
       lybsynFeed: [],
       combinedFeed: []
     };
@@ -31,18 +29,17 @@ class NewsFeed {
   refreshFeeds = () => {
     const currentFeed = this.state.combinedFeed.slice(0);
     log('grabbing feeds');
-    return Promise.all([getMediumFeed(), getLybsynFeed()])
-      .then(([mediumFeed, lybsynFeed]) =>
+    return Promise.all([getLybsynFeed()])
+      .then(([lybsynFeed]) =>
         this.setState(state => ({
           ...state,
-          mediumFeed,
           lybsynFeed
         }))
       )
       .then(() => {
         log('crossing the streams');
-        const { mediumFeed, lybsynFeed } = this.state;
-        const combinedFeed = [...mediumFeed, ...lybsynFeed].sort((a, b) => {
+        const { lybsynFeed } = this.state;
+        const combinedFeed = [...lybsynFeed].sort((a, b) => {
           return compareDesc(a.isoDate, b.isoDate);
         });
         this.setState(state => ({

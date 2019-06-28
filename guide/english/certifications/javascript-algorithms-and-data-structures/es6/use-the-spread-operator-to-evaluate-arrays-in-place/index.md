@@ -12,7 +12,7 @@ title: Use the Spread Operator to Evaluate Arrays In-Place
 ### Video Explaining Spread Operator and Rest Parameter
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=iLx4ma8ZqvQ
 " target="_blank"><img src="http://img.youtube.com/vi/iLx4ma8ZqvQ/0.jpg" 
-alt="Image of youtube video link spread and rest operator " width="240" height="180" border="10" /></a>
+alt="Image of youtube video link spread and rest parameter " width="240" height="180" border="10" /></a>
 
 ### Information About apply() Method
 [Mozilla Developer Network Apply Method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply "Mozilla Developer Network")

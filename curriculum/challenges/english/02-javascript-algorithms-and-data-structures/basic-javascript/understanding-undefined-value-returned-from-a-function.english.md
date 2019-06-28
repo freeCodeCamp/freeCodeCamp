@@ -9,7 +9,15 @@ videoUrl: 'https://scrimba.com/c/ce2p7cL'
 <section id='description'>
 A function can include the <code>return</code> statement but it does not have to. In the case that the function doesn't have a <code>return</code> statement, when you call it, the function processes the inner code but the returned value is <code>undefined</code>.
 <strong>Example</strong>
-<blockquote>var sum = 0;<br>function addSum(num) {<br>&nbsp;&nbsp;sum = sum + num;<br>}<br>var returnedValue = addSum(3); // sum will be modified but returned value is undefined</blockquote>
+
+```js
+var sum = 0;
+function addSum(num) {
+  sum = sum + num;
+}
+var returnedValue = addSum(3); // sum will be modified but returned value is undefined
+```
+
 <code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>.
 </section>
 

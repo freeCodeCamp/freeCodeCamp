@@ -8,48 +8,51 @@ localeTitle: الشظايا
 
 تعمل `Fragment` جزءًا بدون إضافة أقسام غير ضرورية إلى DOM. يمكنك استخدامه مباشرة من استيراد React أو تفكيكه:
 
- `import React from 'react'; 
- 
- class MyComponent extends React.Component { 
-  render(){ 
-    return ( 
-      <React.Fragment> 
-        <div>I am an element!</div> 
-        <button>I am another element</button> 
-      </React.Fragment> 
-    ); 
-  } 
- } 
- 
- export default MyComponent; 
-` 
+```jsx
+import React from 'react';
 
- `// Deconstructed 
- import React, { Component, Fragment } from 'react'; 
- 
- class MyComponent extends Component { 
-  render(){ 
-    return ( 
-      <Fragment> 
-        <div>I am an element!</div> 
-        <button>I am another element</button> 
-      </Fragment> 
-    ); 
-  } 
- } 
- 
- export default MyComponent; 
-` 
+class MyComponent extends React.Component {
+  render(){
+    return (
+      <React.Fragment>
+        <div>I am an element!</div>
+        <button>I am another element</button>
+      </React.Fragment>
+    );
+  }
+}
+
+export default MyComponent;
+``` 
+
+```jsx
+// Deconstructed
+import React, { Component, Fragment } from 'react';
+
+class MyComponent extends Component {
+  render(){
+    return (
+      <Fragment>
+        <div>I am an element!</div>
+        <button>I am another element</button>
+      </Fragment>
+    );
+  }
+}
+
+export default MyComponent;
+``` 
 
 نجح الإصدار 16.2 من React في تبسيط هذه العملية بشكل أكبر ، مما يسمح بوضع علامات JSX فارغة في شكل أجزاء:
 
- `return ( 
-  <> 
-    <div>I am an element!</div> 
-    <button>I am another element</button> 
-  </> 
- ); 
-` 
+```jsx
+return (
+  <>
+    <div>I am an element!</div>
+    <button>I am another element</button>
+  </>
+);
+``` 
 
 #### معلومات اكثر:
 

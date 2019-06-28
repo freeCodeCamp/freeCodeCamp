@@ -39,7 +39,7 @@ Two case labels cannot have the same value.
 
 
 Example:
-```C++
+```cpp
 #include <iostream>
 using namespace std;
 

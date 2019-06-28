@@ -10,25 +10,25 @@ title: Create a Circular Queue
 - The dequeue method on the other hand, moves the read pointer but doesnt exceed the write pointer.
 - Example:
   - First, we create an array of length 5:
-  ```output
+  ```shell
   [null, null, null, null, null]
    ^Read @ 0
    ^Write @ 0
   ```
   - Then we enqueue `a`, `b`, and `c`:
-  ```output
+  ```shell
   [a, b, c, null, null]
    ^Read @ 0
             ^Write @ 3
   ```
   - Now we dequeue all the enqueued items:
-  ```output
+  ```shell
   [null, null, null, null, null]
                      ^Read @ 3
                      ^Write @ 3
   ```
   - Finally, we enqueue `d`, `e` and `f`:
-  ```output
+  ```shell
   [f, null, null, d, e]
                   ^Read @ 3
       ^Write @ 1

@@ -8,19 +8,21 @@ localeTitle: عناصر HTML الهدف مع المحددات باستخدام j
 
 ## مثال
 
- `//You can select all <p> elements on a page like this  =  $("p") 
-  $(document).ready(function(){ 
-    $("button").click(function(){ 
-        $("p").hide(); 
-    }); 
- }); 
-` 
+```javascipt
+//You can select all <p> elements on a page like this  =  $("p")
+  $(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
+``` 
 
 ## حل
 
- `<script> 
-  $(document).ready(function() { 
-      $("button").addClass("animated bounce"); // We are selecting the button elements and adding "animated bounce" class to them. 
-  }); 
- </script> 
-`
+```javascript
+<script>
+  $(document).ready(function() {
+      $("button").addClass("animated bounce"); // We are selecting the button elements and adding "animated bounce" class to them.
+  });
+</script>
+```

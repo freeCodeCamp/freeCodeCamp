@@ -21,19 +21,19 @@ Nginx offers a different option than using Apache or other web servers and claim
 
 Update the local package index and install Nginx from default repositories:
 
-```sh
+```shell
 $ sudo apt-get update && sudo apt-get upgrade
 $ sudo apt-get install nginx
 $ sudo systemctl status nginx
 ```
 
 Enable nginx on the firewall using `ufw`
-```sh
+```shell
 sudo ufw allow 'Nginx HTTP'
 ```
 
 Validate nginx is running:
-```sh
+```shell
 systemctl status nginx
 ```
 
@@ -41,7 +41,7 @@ systemctl status nginx
 
 Add Nginx repository and install:
 
-```sh
+```shell
 $ sudo yum install epel-release
 $ sudo yum install nginx
 $ sudo systemctl start nginx # will start the server

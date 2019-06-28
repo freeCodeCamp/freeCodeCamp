@@ -71,7 +71,7 @@ Make sure that each time you transcode a character from binary to decimal, you r
 ## Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>String.prototype.split</a>
-*   <a href='http://forum.freecodecamp.com/t/javascript-parseint/14686' target='_blank' rel='nofollow'>parseInt</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt' target='_blank' rel='nofollow'>parseInt</a>
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 ```javascript
@@ -122,8 +122,7 @@ Make sure that each time you transcode a character from binary to decimal, you r
 ## Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-pow/14685' target='_blank' rel='nofollow'>Math.pow</a>
-*   <a>String.length</a>
-*   <a href='http://example.com' target='_blank' rel='nofollow'>Link Title 3</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length' target='_blank' rel='nofollow'>String.length</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 ```javascript
@@ -146,6 +145,26 @@ Make sure that each time you transcode a character from binary to decimal, you r
 ## Relevant Links
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>Array.prototype.map</a>
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Alternative Advanced Code Solution:
+```js
+  const binaryAgent = str => str.replace(/\d+./g, char => String.fromCharCode(`0b${char}`));
+       
+  binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
+```
+
+## Code Explanation
+
+*   Find all groups of one or more digits followed by one other character
+*   Replace with a string created from the specified sequence of UTF-16 code units
+*   Use `0b` to lead the code unit to express that a binary integer literal is being converted. 
+
+## Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode' target='_blank' rel='nofollow'>String.fromCharCode()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace' target='_blank' rel='nofollow'>String.prototype.replace()</a>
+*   <a href='https://codegolf.stackexchange.com/questions/35096/convert-a-string-of-binary-characters-to-the-ascii-equivalents' target='_blank' rel='nofollow'>Convert a string of binary characters to the ASCII equivalents</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Numeric_literals' target='_blank' rel='nofollow'>Grammar and types/Numeric Literals</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 

@@ -15,7 +15,7 @@ Los Mods y el personal de Free Code Camp están disponibles para ayudarlo con lo
 ## Configurando su sistema
 
 1.  Instala [Git](https://git-scm.com/) o tu cliente Git favorito
-2.  (Opcional) [Configure una clave SSH](https://help.github.com/articles/generating-ssh-keys/) para Github.  
+2.  (Opcional) [Configure una clave SSH](https://help.github.com/articles/generating-ssh-keys/) para GitHub.  
     El uso de SSH puede acelerar enormemente sus interacciones con GitHub, ya que no se le pedirá su contraseña.
 3.  Cree un directorio de proyectos padre en su sistema. A los efectos de este documento, asumiremos que es `/mean/`
 

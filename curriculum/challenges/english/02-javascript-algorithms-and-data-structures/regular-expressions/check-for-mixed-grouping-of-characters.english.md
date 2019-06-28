@@ -9,7 +9,14 @@ challengeType: 1
 Sometimes we want to check for groups of characters using a Regular Expression and to achieve that we use parentheses <code>()</code>.
 If you want to find either <code>Penguin</code> or <code>Pumpkin</code> in a string, you can use the following Regular Expression: <code>/P(engu|umpk)in/g</code>
 Then check whether the desired string groups are in the test string by using the <code>test()</code> method.
-<blockquote>let testStr = "Pumpkin";<br>let testRegex = /P(engu|umpk)in/g;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
+
+```js
+let testStr = "Pumpkin";
+let testRegex = /P(engu|umpk)in/g;
+testRegex.test(testStr);
+// Returns true
+```
+
 </section>
 
 ## Instructions

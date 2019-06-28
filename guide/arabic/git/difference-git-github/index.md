@@ -6,7 +6,7 @@ localeTitle: الفرق بين جيت و جيثب
 
 Git و GitHub هما شيئان مختلفان. [Git](https://git-scm.com/) هو [نظام التحكم في الإصدار](https://en.wikipedia.org/wiki/Version_control) ، في حين أن [GitHub](https://github.com/) هي خدمة لاستضافة Git repos ومساعدة الأشخاص على التعاون في كتابة البرامج. ومع ذلك ، فإنهم غالباً ما يكونون مرتبكين بسبب اسمهم المتشابه ، وذلك بسبب حقيقة أن GitHub يعتمد على Git ، ولأن العديد من المواقع والمقالات لا تجعل الفرق بينهما واضحًا بما فيه الكفاية.
 
-![Git ليس GitHub](https://i.imgur.com/EkjwJdr.png)
+![Git ليس GitHub](https://cdn-media-1.freecodecamp.org/imgr/EkjwJdr.png)
 
 ### بوابة
 

@@ -11,7 +11,14 @@ HTML has another special element for creating <code>ordered lists</code>, or num
 Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists are closed with the <code>&#60;/ol&#62;</code> tag.
 
 For example:
-<blockquote>&#60;ol&#62;<br>&nbsp;&nbsp;&#60;li&#62;Garfield&#60;/li&#62;<br>&nbsp;&nbsp;&#60;li&#62;Sylvester&#60;/li&#62;<br>&#60;/ol&#62;</blockquote>
+
+```html
+<ol>
+  <li>Garfield</li>
+  <li>Sylvester</li>
+</ol>
+```
+
 would create a numbered list of "Garfield" and "Sylvester".
 </section>
 

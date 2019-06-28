@@ -8,8 +8,9 @@ localeTitle: Map.prototype.set
 
 ## بناء الجملة
 
- `myMap.set(key, value); 
-` 
+```javascript
+myMap.set(key, value);
+``` 
 
 ## المعلمات
 
@@ -17,15 +18,16 @@ localeTitle: Map.prototype.set
 
 ## مثال
 
- `const myMap = new Map(); 
- 
- // sets new elements 
- myMap.set('foo',1); 
- myMap.set('bar',2); 
- myMap.set('baz',3); 
- 
- // Updates an element 
- myMap.set('foo', 100); 
- 
- myMap.get('foo');   // returns 100 
-`
+```javascript
+const myMap = new Map();
+
+// sets new elements
+myMap.set('foo',1);
+myMap.set('bar',2);
+myMap.set('baz',3);
+
+// Updates an element
+myMap.set('foo', 100);
+
+myMap.get('foo');   // returns 100
+```

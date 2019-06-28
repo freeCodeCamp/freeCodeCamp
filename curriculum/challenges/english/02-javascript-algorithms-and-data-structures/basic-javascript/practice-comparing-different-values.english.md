@@ -10,9 +10,19 @@ videoUrl: 'https://scrimba.com/c/cm8PqCa'
 In the last two challenges, we learned about the equality operator (<code>==</code>) and the strict equality operator (<code>===</code>). Let's do a quick review and practice using these operators some more.
 If the values being compared are not of the same type, the equality operator will perform a type conversion, and then evaluate the values. However, the strict equality operator will compare both the data type and value as-is, without converting one type to the other.
 <strong>Examples</strong>
-<blockquote>3 == '3'  // returns true because JavaScript performs type conversion from string to number<br>3 === '3' // returns false because the types are different and type conversion is not performed</blockquote>
+
+```js
+3 == '3'  // returns true because JavaScript performs type conversion from string to number
+3 === '3' // returns false because the types are different and type conversion is not performed
+```
+
 <strong>Note</strong><br>In JavaScript, you can determine the type of a variable or a value with the <code>typeof</code> operator, as follows:
-<blockquote>typeof 3   // returns 'number'<br>typeof '3' // returns 'string'</blockquote>
+
+```js
+typeof 3   // returns 'number'
+typeof '3' // returns 'string'
+```
+
 </section>
 
 ## Instructions

@@ -10,21 +10,23 @@ localeTitle: و
 
 #### مثال للاستخدام
 
- `from collections import deque 
- queue = deque(["January", "February", "March", "April"] ) 
- 
- queue.append("May") 
- 
- queue.popleft() 
- queue.popleft() 
- 
- print "Spring months in the list: ", queue 
-` 
+```py
+from collections import deque
+queue = deque(["January", "February", "March", "April"] )
+
+queue.append("May")
+
+queue.popleft()
+queue.popleft()
+
+print "Spring months in the list: ", queue
+``` 
 
 #### انتاج |
 
- `Spring months in the list:  deque(['March', 'April', 'May']) 
-` 
+```
+Spring months in the list:  deque(['March', 'April', 'May'])
+``` 
 
 #### معلومات اكثر:
 

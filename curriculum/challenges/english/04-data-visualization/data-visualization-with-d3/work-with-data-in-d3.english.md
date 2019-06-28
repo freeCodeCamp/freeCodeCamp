@@ -11,7 +11,21 @@ The first step is to make D3 aware of the data. The <code>data()</code> method i
 A common workflow pattern is to create a new element in the document for each piece of data in the set. D3 has the <code>enter()</code> method for this purpose.
 When <code>enter()</code> is combined with the <code>data()</code> method, it looks at the selected elements from the page and compares them to the number of data items in the set. If there are fewer elements than data items, it creates the missing elements.
 Here is an example that selects a <code>ul</code> element and creates a new list item based on the number of entries in the array:
-<blockquote>&lt;body&gt;<br>&nbsp;&nbsp;&lt;ul&gt;&lt;/ul&gt;<br>&nbsp;&nbsp;&lt;script&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;const dataset = ["a", "b", "c"];<br>&nbsp;&nbsp;&nbsp;&nbsp;d3.select("ul").selectAll("li")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.data(dataset)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.enter()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append("li")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.text("New item");<br>&nbsp;&nbsp;&lt;/script&gt;<br>&lt;/body&gt;</blockquote>
+
+```html
+<body>
+  <ul></ul>
+  <script>
+    const dataset = ["a", "b", "c"];
+    d3.select("ul").selectAll("li")
+      .data(dataset)
+      .enter()
+      .append("li")
+      .text("New item");
+  </script>
+</body>
+```
+
 It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the <code>ul</code> on the page. Next, select all list items, which returns an empty selection. Then the <code>data()</code> method reviews the dataset and runs the following code three times, once for each item in the array. The <code>enter()</code> method sees there are no <code>li</code> elements on the page, but it needs 3 (one for each piece of data in <code>dataset</code>). New <code>li</code> elements are appended to the <code>ul</code> and have the text "New item".
 </section>
 

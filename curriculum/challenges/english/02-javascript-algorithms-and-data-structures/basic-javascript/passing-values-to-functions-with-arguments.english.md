@@ -9,7 +9,13 @@ videoUrl: 'https://scrimba.com/c/cy8rahW'
 <section id='description'>
 <dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
 Here is a function with two parameters, <code>param1</code> and <code>param2</code>:
-<blockquote>function testFun(param1, param2) {<br>&nbsp;&nbsp;console.log(param1, param2);<br>}</blockquote>
+
+```js
+function testFun(param1, param2) {
+  console.log(param1, param2);
+}
+```
+
 Then we can call <code>testFun</code>:
 <code>testFun("Hello", "World");</code>
 We have passed two arguments, <code>"Hello"</code> and <code>"World"</code>. Inside the function, <code>param1</code> will equal "Hello" and <code>param2</code> will equal "World". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.

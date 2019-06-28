@@ -12,27 +12,27 @@ localeTitle: الروابط
 
 يمكنك استخدام `code <a>` العلامة أو عنصر الارتساء لتعريف الرابط الخاص بك ، والذي يحتاج أيضًا إلى عنوان وجهة يمكنك الوصول إليه باستخدام سمة `code href` . في ما يلي مقتطف يجعل عبارة "الدليل freeCodeCamp" عبارة:
 
- `
-<a href="https://guide.freecodecamp.org">the freeCodeCamp Guide</a> 
-` 
+```html
+<a href="https://guide.freecodecamp.org">the freeCodeCamp Guide</a>
+``` 
 
 إذا كنت تريد فتح الرابط في علامة تبويب جديدة ، `code target` السمة `code target` مع قيمة `code "_blank"` داخل `code <a>` tag الخاص بك. يبدو هذا مثل:
 
- `
-<a href="https://guide.freecodecamp.org" target="_blank">the freeCodeCamp Guide</a> 
-` 
+```html
+<a href="https://guide.freecodecamp.org" target="_blank">the freeCodeCamp Guide</a>
+``` 
 
 عندما تحتاج إلى توجيه المستخدمين إلى جزء معين من صفحة الويب الخاصة بك ، دعنا نفترض القاع ، تحتاج أولاً إلى تعيين `code #` التجزئة إلى سمة `code href` ، مثل هذا
 
- `
-<a href="#footer>More about us<a/> 
-` 
+```html
+<a href="#footer>More about us<a/>
+``` 
 
 ستحتاج بعد ذلك إلى استخدام السمة `code id` في العنصر الذي تريد توجيه المستخدم إليه - وفي هذه الحالة `code <footer>` في أسفل صفحة الويب.
 
- `
-<footer id="footer">Powered by freeCodeCamp</footer> 
-` 
+```html
+<footer id="footer">Powered by freeCodeCamp</footer>
+``` 
 
 #### معلومات اكثر:
 

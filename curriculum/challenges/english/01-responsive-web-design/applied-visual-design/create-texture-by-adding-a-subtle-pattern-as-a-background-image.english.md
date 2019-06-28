@@ -12,7 +12,7 @@ One way to add texture and interest to a background and have it stand out more i
 
 ## Instructions
 <section id='instructions'>
-Using the url of <code>https://i.imgur.com/MJAkxbh.png</code>, set the <code>background</code> of the whole page with the <code>body</code> selector.
+Using the url of <code>https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png</code>, set the <code>background</code> of the whole page with the <code>body</code> selector.
 </section>
 
 ## Tests
@@ -21,7 +21,7 @@ Using the url of <code>https://i.imgur.com/MJAkxbh.png</code>, set the <code>bac
 ```yml
 tests:
   - text: Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.
-    testString: assert(code.match(/background:\s*?url\(\s*("|'|)https:\/\/i\.imgur\.com\/MJAkxbh\.png\1\s*\)/gi), 'Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');
+    testString: assert(code.match(/background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi), 'Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');
 
 ```
 
@@ -52,7 +52,7 @@ tests:
 ```html
 <style>
   body {
-    background: url("https://i.imgur.com/MJAkxbh.png");
+    background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png");
   }
 </style>
 ```

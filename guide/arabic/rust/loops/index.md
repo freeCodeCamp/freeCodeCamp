@@ -12,12 +12,13 @@ localeTitle: الحلقات
 
 في ما يلي مثال على برنامج باستخدام `loop` لطباعة الكلمة "مرة أخرى" باستمرار إلى المحطة:
 
- `fn main() { 
-    loop { 
-        println!("again!"); 
-    } 
- } 
-` 
+```rust
+fn main() {
+    loop {
+        println!("again!");
+    }
+}
+``` 
 
 ## حلقات شرطية مع `while`
 
@@ -25,15 +26,16 @@ localeTitle: الحلقات
 
 في ما يلي مثال لبرنامج يستخدم `while` العد التنازلي من 5:
 
- `fn main() { 
-    let mut number = 5; 
- 
-    while number != 0 { 
-        println!("{}", number); 
-        number = number - 1; 
-    } 
- } 
-` 
+```rust
+fn main() {
+    let mut number = 5;
+
+    while number != 0 {
+        println!("{}", number);
+        number = number - 1;
+    }
+}
+``` 
 
 قم بتشغيل الكود [هنا](https://play.rust-lang.org/?gist=62677371a8590be27c84dcae7068de57&version=stable) .
 
@@ -43,14 +45,15 @@ localeTitle: الحلقات
 
 هنا هو برنامج سبيل المثال أن يطبع كل رقم في صفيف إلى المحطة باستخدام `for` :
 
- `fn main() { 
-    let collection = [15, 7, 2, 6, 9]; 
- 
-    for element in collection.iter() { 
-        println!("the value is: {}", element); 
-    } 
- } 
-` 
+```rust
+fn main() {
+    let collection = [15, 7, 2, 6, 9];
+
+    for element in collection.iter() {
+        println!("the value is: {}", element);
+    }
+}
+``` 
 
 قم بتشغيل الكود [هنا](https://play.rust-lang.org/?gist=0c2acf21b96a81ebd411e4a7dc5a19fd&version=stable) .
 

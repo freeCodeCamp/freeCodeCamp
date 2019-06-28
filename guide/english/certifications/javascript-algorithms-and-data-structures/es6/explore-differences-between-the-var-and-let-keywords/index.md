@@ -32,7 +32,6 @@ We need to change each `var` to `let` in our code.
     }
     catTalk();
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") [Run code at codepen.io](https://codepen.io/dylantyates/pen/eKqoGY)
 
 # Code Explanation:
 

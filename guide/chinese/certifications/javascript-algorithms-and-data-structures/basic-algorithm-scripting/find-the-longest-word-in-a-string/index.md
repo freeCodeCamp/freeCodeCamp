@@ -52,7 +52,6 @@ function findLongestWordLength(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/5)
 
 ### 代码说明：
 
@@ -76,7 +75,6 @@ function findLongestWordLength(s) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/6)
 
 ### 代码说明：
 
@@ -122,7 +120,6 @@ function findLongestWordLength(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/7)
 
 ### 代码说明：
 
