@@ -4,7 +4,7 @@ localeTitle:  Colores CSS3
 ---
 ## Colores
 
-CSS Colors es un módulo CSS que trata los colores, los tipos de colores, la combinación de colores y la opacidad. No todas las propiedades CSS que toman un Como valor forman parte de este módulo, pero sí dependen de él. En CSS, puede cambiar el color de casi cualquier elemento en su página HTML. Las propiedades como `background-color` , `color` y `border-color` establecen el color de esos elementos.
+CSS Colors es un módulo CSS que trata los colores, los tipos de colores, la combinación de colores y la opacidad. No todas las propiedades CSS que toman un valor forman parte de este módulo, pero sí dependen de él. En CSS, puede cambiar el color de casi cualquier elemento en su página HTML. Las propiedades como `background-color` , `color` y `border-color` establecen el color de esos elementos.
 
 CSS soporta nombres de colores, hexadecimales y colores RGB. Además de la introducción de la declaración de `opacity` , los colores en CSS3 ahora se pueden especificar usando nombres de colores, o valores RGB, HEX, HSL, RGBA, HSLA.
 
@@ -18,9 +18,9 @@ Un valor de color RGB se especifica con: rgb (rojo, verde, azul) Un valor de col
 
 ### HSL (A)
 
-HSL significa "Tono, saturación y luminosidad". El tono es un grado en la rueda de color (de 0 a 360): 0 (o 360) es rojo 120 es verde 240 es azul La saturación es un valor porcentual: el 100% es a todo color. La ligereza es también un porcentaje; 0% es oscuro (negro) y 100% es blanco. Los valores de color HSLA son una extensión de los valores de color HSL con un canal alfa, que especifica la opacidad de un color.
+HSL significa "Tono, saturación y luminosidad". El tono es un ángulo en la rueda de color (de 0 a 360): 0 (o 360) es rojo, 120 es verde, 240 es azul. La saturación es un valor porcentual: el 100% es a todo color. La luminosidad es también un porcentaje; 0% es oscuro (negro) y 100% es blanco. Los valores de color HSLA son una extensión de los valores de color HSL con un canal alfa, que especifica la opacidad de un color.
 
-Un valor de color HSL se especifica con: hsl (tono, saturación, luminosidad). Un valor de color HSLA es similar, con el valor alfa en la última posición: hsla (matiz, saturación, luminosidad, alfa)
+Un valor de color HSL se especifica con: hsl (tono, saturación, luminosidad). Un valor de color HSLA es similar, con el valor alfa en la última posición: hsla (tono, saturación, luminosidad, alfa)
 
 ### CMYK
 
@@ -30,11 +30,11 @@ Colores de ejemplo: CMYK Rojo: cmyk (0%, 100%, 100%, 0%) CMYK Verde: cmyk (100%,
 
 ### Hexcodes
 
-El código hexadecimal, abreviatura de código hexadecimal, es una forma de expresar un valor de color a su computadora. Se llama así porque se pueden usar 16 símbolos únicos como valores. En este caso, se utilizan los números 0 a 9 y las letras a a f.
+El _hexcode_, abreviatura de código hexadecimal, es una forma de expresar un valor de color a su computadora. Se llama así porque se pueden usar 16 símbolos únicos como valores. En este caso, se utilizan los números 0 a 9 y las letras A a F.
 
-Los códigos hexadecimales se expresan en este formato: # 000000, que sería el color negro en este caso. Se utilizan seis caracteres en cada código hexadecimal, utilizando cualquiera de los 16 caracteres mencionados anteriormente. Estos seis personajes se dividen en tres pares de dos.
+Los códigos hexadecimales se expresan en este formato: # 000000, que sería el color negro en este caso. Se utilizan seis caracteres en cada código hexadecimal, utilizando cualquiera de los 16 caracteres mencionados anteriormente. Estos seis caracteres se dividen en tres pares de dos.
 
-Estos tres pares expresan un valor para la cantidad de rojo, verde y azul en un color particular. Tomando el código hexadecimal color # AA11BB, AA es la cantidad de rojo, 11 la cantidad de verde y BB la cantidad de azul. 0 es el valor más bajo de un color, mientras que f es el valor más alto.
+Estos tres pares expresan un valor para la cantidad de rojo, verde y azul en un color particular. Tomando el código hexadecimal color # AA11BB, AA es la cantidad de rojo, 11 la cantidad de verde y BB la cantidad de azul. 0 es el valor más bajo de un color, mientras que F es el valor más alto.
 
 Los códigos hexadecimales no distinguen entre mayúsculas y minúsculas, lo que significa que #FFFFFF y #ffffff serían del mismo color: blanco.
 

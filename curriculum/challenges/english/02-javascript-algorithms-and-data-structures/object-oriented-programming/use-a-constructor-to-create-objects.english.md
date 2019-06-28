@@ -7,12 +7,34 @@ challengeType: 1
 ## Description
 <section id='description'>
 Here's the <code>Bird</code> constructor from the previous challenge:
-<blockquote>function Bird() {<br>&nbsp;&nbsp;this.name = "Albert";<br>&nbsp;&nbsp;this.color  = "blue";<br>&nbsp;&nbsp;this.numLegs = 2;<br>&nbsp;&nbsp;// "this" inside the constructor always refers to the object being created<br>}<br><br>let blueBird = new Bird();</blockquote>
+
+```js
+function Bird() {
+  this.name = "Albert";
+  this.color  = "blue";
+  this.numLegs = 2;
+  // "this" inside the constructor always refers to the object being created
+}
+
+let blueBird = new Bird();
+```
+
 Notice that the <code>new</code> operator is used when calling a constructor. This tells JavaScript to create a new <code>instance</code> of <code>Bird</code> called <code>blueBird</code>. Without the <code>new</code> operator, <code>this</code> inside the constructor would not point to the newly created object, giving unexpected results.
 Now <code>blueBird</code> has all the properties defined inside the <code>Bird</code> constructor:
-<blockquote>blueBird.name; // => Albert<br>blueBird.color; // => blue<br>blueBird.numLegs; // => 2</blockquote>
+
+```js
+blueBird.name; // => Albert
+blueBird.color; // => blue
+blueBird.numLegs; // => 2
+```
+
 Just like any other object, its properties can be accessed and modified:
-<blockquote>blueBird.name = 'Elvira';<br>blueBird.name; // => Elvira</blockquote>
+
+```js
+blueBird.name = 'Elvira';
+blueBird.name; // => Elvira
+```
+
 </section>
 
 ## Instructions

@@ -34,10 +34,11 @@ localeTitle: عمال الخدمة
 
 قبل تثبيت عامل خدمة ، تحتاج إلى تسجيل واحد من ملف جافا سكريبت الرئيسي. يمكن القيام بذلك بفضل الطريقة navigator.serviceWorker.register على النحو التالي:
 
- `if ('serviceWorker' in navigator) { 
- navigator.serviceWorker.register('/serviceWorkerArticles.js', { scope: '/' }): 
- } 
-` 
+```javascript
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('/serviceWorkerArticles.js', { scope: '/' }):
+}
+``` 
 
 هذه الطريقة تأخذ معلمتين:
 
@@ -51,20 +52,21 @@ localeTitle: عمال الخدمة
 
 بالنسبة إلى معظم الإجراءات ، تحتاج فقط إلى إجراء بعض addEventListener ، حيث إن لدى عمال الخدمة بالفعل الكثير من الأحداث المفيدة للاستماع إليها!
 
- `self.addEventListener('install', cach => { 
-    event.waitUntil( 
-        caches.open('v1').then(cache => { 
-            return cache.addAll([ 
-              '/', 
-              '/style.css', 
-              '/app.js', 
-              '/favicon.ico', 
-              '/frontPageCover.jpg', 
-            ]); 
-          }) 
-        ); 
-    }); 
-` 
+```javascript
+self.addEventListener('install', cach => {
+    event.waitUntil(
+        caches.open('v1').then(cache => {
+            return cache.addAll([
+              '/',
+              '/style.css',
+              '/app.js',
+              '/favicon.ico',
+              '/frontPageCover.jpg',
+            ]);
+          })
+        );
+    });
+``` 
 
 لدينا 3 طرق مثيرة للاهتمام هنا! دعونا نلقي نظرة سريعة على كل منهم:
 

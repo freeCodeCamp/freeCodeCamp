@@ -2,24 +2,25 @@
 title: Functional
 localeTitle: وظيفي
 ---
- `var fun = function(a, b) { 
-  var funInstance = {}; 
-  funInstance.a = a; 
-  funInstance.b = b; 
-  funInstance.method1 = function() { 
-    // method code here 
-  } 
-  funInstance.method2 = function() { 
-    // method code here 
-  } 
-  funInstance.method3 = function() { 
-    // method code here 
-  } 
-  return funInstance; 
- } 
- var myFun = fun(1, 2); 
- myFun.method1(); 
-` 
+```javascript
+var fun = function(a, b) {
+  var funInstance = {};
+  funInstance.a = a;
+  funInstance.b = b;
+  funInstance.method1 = function() {
+    // method code here
+  }
+  funInstance.method2 = function() {
+    // method code here
+  }
+  funInstance.method3 = function() {
+    // method code here
+  }
+  return funInstance;
+}
+var myFun = fun(1, 2);
+myFun.method1();
+``` 
 
 ## كيف يمكنني التعرف عليه؟
 
@@ -37,31 +38,32 @@ localeTitle: وظيفي
 
 ## العنوان: وظيفية المشتركة
 
- `var fun = function(a, b) { 
-  var funInstance = {}; 
-  funInstance.a = a; 
-  funInstance.b = b; 
-  extend(funInstance, funMethods); 
-  return funInstance; 
- } 
- var extend = function(to, from) { 
-  for (var key in from) { 
-    to[key] = from[key]; 
-  } 
- } 
- var funMethods = {}; 
- funMethods.method1 = function() { 
-    // method code here 
- } 
- funMethods.method2 = function() { 
-    // method code here 
- } 
- funMethods.method3 = function() { 
-    // method code here 
- } 
- var myFun = fun(1, 2); 
- myFun.method1(); 
-` 
+```javascript
+var fun = function(a, b) {
+  var funInstance = {};
+  funInstance.a = a;
+  funInstance.b = b;
+  extend(funInstance, funMethods);
+  return funInstance;
+}
+var extend = function(to, from) {
+  for (var key in from) {
+    to[key] = from[key];
+  }
+}
+var funMethods = {};
+funMethods.method1 = function() {
+    // method code here
+}
+funMethods.method2 = function() {
+    // method code here
+}
+funMethods.method3 = function() {
+    // method code here
+}
+var myFun = fun(1, 2);
+myFun.method1();
+``` 
 
 ## كيف يمكنني التعرف عليه؟
 
@@ -79,25 +81,26 @@ localeTitle: وظيفي
 
 ## العنوان: Prototypal
 
- `var fun = function(a, b) { 
-  var funInstance = Object.create(funMethods); 
-  funInstance.a = a; 
-  funInstance.b = b; 
-  return funInstance; 
- } 
- var funMethods = {}; 
- funMethods.method1 = function() { 
-    // method code here 
- } 
- funMethods.method2 = function() { 
-    // method code here 
- } 
- funMethods.method3 = function() { 
-    // method code here 
- } 
- var myFun = fun(1, 2); 
- myFun.method1(); 
-` 
+```javascript
+var fun = function(a, b) {
+  var funInstance = Object.create(funMethods);
+  funInstance.a = a;
+  funInstance.b = b;
+  return funInstance;
+}
+var funMethods = {};
+funMethods.method1 = function() {
+    // method code here
+}
+funMethods.method2 = function() {
+    // method code here
+}
+funMethods.method3 = function() {
+    // method code here
+}
+var myFun = fun(1, 2);
+myFun.method1();
+``` 
 
 ## كيف يمكنني التعرف عليه؟
 
@@ -115,24 +118,25 @@ localeTitle: وظيفي
 
 ## العنوان: Pseudoclassical
 
- `var Fun = function(a, b) { 
-  // this = Object.create(Fun.prototype); 
-  this.a = a; 
-  this.b = b; 
-  // return this; 
- } 
- Fun.prototype.method1 = function() { 
-    // method code here 
- } 
- Fun.prototype.method2 = function() { 
-    // method code here 
- } 
- Fun.prototype.method3 = function() { 
-    // method code here 
- } 
- var myFun = new Fun(1, 2); 
- myFun.method1(); 
-` 
+```javascript
+var Fun = function(a, b) {
+  // this = Object.create(Fun.prototype);
+  this.a = a;
+  this.b = b;
+  // return this;
+}
+Fun.prototype.method1 = function() {
+    // method code here
+}
+Fun.prototype.method2 = function() {
+    // method code here
+}
+Fun.prototype.method3 = function() {
+    // method code here
+}
+var myFun = new Fun(1, 2);
+myFun.method1();
+``` 
 
 ## كيف يمكنني التعرف عليه؟
 

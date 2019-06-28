@@ -1,0 +1,13 @@
+diff --git a/index.js b/index.js
+index 61bf354..c00dc03 100644
+--- a/index.js
++++ b/index.js
+@@ -156,7 +156,7 @@ class Installer {
+         )
+         return BB.join(
+           this.checkLock(),
+-          stat && rimraf(path.join(this.prefix, 'node_modules'))
++          stat && rimraf(path.join(this.prefix, 'node_modules/*'))
+         )
+       }).then(() => {
+       // This needs to happen -after- we've done checkLock()
