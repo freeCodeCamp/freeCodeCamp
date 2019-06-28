@@ -30,7 +30,6 @@ tests:
     testString: assert(datetimeAttr && datetimeAttr.length);
   - text: Your added <code>datetime</code> attribute should be set to a value of 2016-09-15.
     testString: assert(datetimeAttr === "2016-09-15");
-  - text: Your added <code>time</code> element should have a closing tag.
 ```
 
 </section>
