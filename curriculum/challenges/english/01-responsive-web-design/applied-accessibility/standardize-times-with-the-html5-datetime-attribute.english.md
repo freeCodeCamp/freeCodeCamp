@@ -22,15 +22,14 @@ Camper Cat's Mortal Kombat survey results are in! Wrap a <code>time</code> tag a
 
 ```yml
 tests:
-  - text: Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".
-    testString: assert($('time').text().match(/Thursday, September 15th/g), 'Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".');
-  - text: Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.
-    testString: assert($('time').attr('datetime'), 'Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.');
-  - text: Your <code>datetime</code> attribute should be set to a value of 2016-09-15.
-    testString: assert($('time').attr('datetime') === "2016-09-15", 'Your <code>datetime</code> attribute should be set to a value of 2016-09-15.');
-  - text: Make sure your <code>time</code> element has a closing tag.
-    testString: assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, 'Make sure your <code>time</code> element has a closing tag.');
-
+  - text: Your code should have a <code>p</code> element which includes the text "Thank you to everyone for responding to Master Camper Cat's survey." and include a <code>time</code> element.
+    testString: assert(timeElement.length);
+  - text: Your added <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".
+    testString: assert(timeElement.length && $(timeElement).html().trim() === "Thursday, September 15<sup>th</sup>");
+  - text: Your added <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.
+    testString: assert(datetimeAttr && datetimeAttr.length);
+  - text: Your added <code>datetime</code> attribute should be set to a value of 2016-09-15.
+    testString: assert(datetimeAttr === "2016-09-15");
 ```
 
 </section>
@@ -76,7 +75,18 @@ tests:
 
 </div>
 
+<div id='html-teardown'>
 
+```html
+<script>
+const pElement = $("article > p")
+  .filter((_, elem) => $(elem).text().includes("Thank you to everyone for responding to Master Camper Cat's survey."));
+const timeElement = pElement[0] ? $(pElement[0]).find("time") : null;
+const datetimeAttr = $(timeElement).attr("datetime");
+</script>
+```
+
+</div>
 
 </section>
 
