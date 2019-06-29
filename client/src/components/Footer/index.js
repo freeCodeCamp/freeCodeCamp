@@ -80,7 +80,6 @@ function Footer() {
             <Link to='https://www.youtube.com/freecodecamp'>Youtube</Link>
             <Link to='https://podcast.freecodecamp.org'>Podcast</Link>
             <Link to='https://twitter.com/freecodecamp'>Twitter</Link>
-            <Link to='https://medium.freecodecamp.org'>Medium</Link>
             <Link to='https://instagram.com/freecodecamp'>Instagram</Link>
           </Col>
         </Row>

@@ -38,7 +38,6 @@ Reassign the values of the `const` variable `s` using various element assignment
     }
     editInPlace();
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://codepen.io/dylantyates/pen/djoVjW' target='_blank' rel='nofollow'>Run Code</a>
 
 # Code Explanation:
 

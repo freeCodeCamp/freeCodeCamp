@@ -33,8 +33,9 @@ localeTitle: SQL إنشاء جدول
 
 سنقوم بإنشاء المخطط للتعلم والاختبار باستخدام الأمر SQL ؛
 
- `create database fCC_alterTableGuide; 
-` 
+```
+create database fCC_alterTableGuide;
+``` 
 
 هذه الأمثلة بنية المخطط قبل تشغيل هذا الأمر
 

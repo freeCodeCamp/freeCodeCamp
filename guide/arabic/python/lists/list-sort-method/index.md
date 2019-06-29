@@ -14,71 +14,78 @@ list.sort (مفتاح = ... ، عكس = \[صواب / خطأ\])
 
 ### مثال للاستخدام
 
- `a = [4, 2, 5, 3, 1] 
- a.sort() 
- print a # prints [1, 2, 3, 4, 5] 
- 
- b = ['free', 'code', 'camp'] 
- b.sort() 
- print b # prints ['camp', 'code', 'free'] 
-` 
+```py
+a = [4, 2, 5, 3, 1]
+a.sort()
+print a # prints [1, 2, 3, 4, 5]
+
+b = ['free', 'code', 'camp']
+b.sort()
+print b # prints ['camp', 'code', 'free']
+``` 
 
 النظر في مثال مع المعلمة **العكسية**
 
- `a = [4, 2, 5, 3, 1] 
- 
- #Sorts the list in descending order 
- a.sort(reverse=True) 
- 
- print a # prints [5, 4, 3, 2, 1] 
-` 
+```py
+a = [4, 2, 5, 3, 1]
+
+#Sorts the list in descending order
+a.sort(reverse=True)
+
+print a # prints [5, 4, 3, 2, 1]
+``` 
 
 إذا كنت تريد فرز القائمة بناءً على وظيفتك الخاصة ، فاستخدم المعلمة **الرئيسية** . في ما يلي مثال لفرز السلاسل في القائمة حسب الطول ، بترتيب تصاعدي
 
- `a = ["hello", "hi", "hey"] 
- 
- #The built-in len() function is given as an input to key parameter to sort the strings by length 
- a.sort(key = len) 
- 
- print a # prints ['hi', 'hey', 'hello'] 
-` 
+```py
+a = ["hello", "hi", "hey"]
+
+#The built-in len() function is given as an input to key parameter to sort the strings by length
+a.sort(key = len)
+
+print a # prints ['hi', 'hey', 'hello']
+``` 
 
 في ما يلي مثال آخر ، حيث تحتوي القائمة على مجموعات (الاسم والعمر). يوضح الاستخدام أدناه كيفية فرز القائمة حسب العمر ، بترتيب تصاعدي.
 
- `#Consider the second element in the tuple for sorting 
- >>> def compareByAge(element): 
- ...     return element[1] 
- 
- b = [('Adam', 20), ('Rahman', 30), ('Rahul', 25)] 
- 
- #Sort the list by age 
- b.sort(key = compareByAge) 
- 
- #Output 
- print b # prints [('Adam', 20), ('Rahul', 25), ('Rahman', 30)] 
-` 
+```py
+#Consider the second element in the tuple for sorting
+>>> def compareByAge(element):
+...     return element[1]
+
+b = [('Adam', 20), ('Rahman', 30), ('Rahul', 25)]
+
+#Sort the list by age
+b.sort(key = compareByAge)
+
+#Output
+print b # prints [('Adam', 20), ('Rahul', 25), ('Rahman', 30)]
+``` 
 
 ### أساسيات الفرز
 
 إن الفرز التصاعدي البسيط سهل للغاية - ما عليك سوى استدعاء الدالة sort (). تقوم بإرجاع قائمة تم فرزها:
 
- `>>> sorted([5, 2, 3, 1, 4]) 
- [1, 2, 3, 4, 5] 
-` 
+```python
+>>> sorted([5, 2, 3, 1, 4])
+[1, 2, 3, 4, 5]
+``` 
 
 يمكنك أيضا استخدام طريقة list.sort () من القائمة. يقوم بتعديل القائمة في المكان (ويعود بلا لتفادي الخلط). عادة ما يكون أقل ملاءمة من sorted () - ولكن إذا لم تكن في حاجة إلى القائمة الأصلية ، فستكون أكثر كفاءة.
 
- `>>> a = [5, 2, 3, 1, 4] 
- >>> a.sort() 
- >>> a 
- [1, 2, 3, 4, 5] 
-` 
+```python
+>>> a = [5, 2, 3, 1, 4]
+>>> a.sort()
+>>> a
+[1, 2, 3, 4, 5]
+``` 
 
 اختلاف آخر هو أن طريقة list.sort () محددة فقط للقوائم. في المقابل ، تقبل الدالة sorted () أي أمر ممكن.
 
- `>>> sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'}) 
- [1, 2, 3, 4, 5] 
-` 
+```python
+>>> sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'})
+[1, 2, 3, 4, 5]
+``` 
 
 #### تفاصيل التنفيذ
 

@@ -5,9 +5,8 @@ import { Provider } from 'react-redux';
 
 import headComponents from './src/head';
 import { createStore } from './src/redux/createStore';
-import { wrapPageElement } from './gatsby-browser';
 
-export { wrapPageElement };
+import layoutSelector from './utils/gatsby/layoutSelector';
 
 const store = createStore();
 
@@ -18,6 +17,8 @@ export const wrapRootElement = ({ element }) => {
 wrapRootElement.propTypes = {
   element: PropTypes.any
 };
+
+export const wrapPageElement = layoutSelector;
 
 export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   setHeadComponents([...headComponents]);

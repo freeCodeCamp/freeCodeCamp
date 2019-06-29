@@ -49,7 +49,7 @@ Examples of this include:
 
 ### Step 1 - Generate an SSH authentication-key file
 
-```sh
+```shell
 [user@server1 ~]$ ssh-keygen
 ```
 When you are prompted for a passphrase, leave it blank
@@ -58,25 +58,25 @@ By default the key files should be stored in `/home/user/.ssh/`
 
 ### Step 2 - Copy the public part of the key to other servers
 
-```sh
+```shell
 [user@server1 ~]$ ssh-copy-id -i ~/.ssh/id_rsa.pub user@server2
 ```
 
 If the server is not installed with openssh-clients you can copy the authentication key with  the command:
-```sh
+```shell
 [user@server1 ~]$ cat ~/.ssh/id_rsa.pub | ssh user@server2 "cat >> ~/.ssh/authorized_keys"
 ```
 
 ### Step 3 - Verification
 Attempt to connect to the other servers va SSH
-```sh
+```shell
 [user@server1 ~]$ ssh user@server2
 ```
 
 If access is denied, it is likely a permission error on the .ssh directory.
 
 Check/change the permissions on both the local and remote user's files:
-```sh
+```shell
 chmod 600 ~/.ssh/authorized_keys
 chmod 700 ~/.ssh/
 ```

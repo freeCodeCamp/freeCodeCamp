@@ -19,7 +19,20 @@ import {
   reducer as challenge,
   ns as challengeNameSpace
 } from '../templates/Challenges/redux';
+import {
+  reducer as search,
+  ns as searchNameSpace
+} from '../components/search/redux';
 
+// console.log({
+//   [appNameSpace]: app,
+//   [challengeNameSpace]: challenge,
+//   [curriculumMapNameSpace]: curriculumMap,
+//   [flashNameSpace]: flash,
+//   form: formReducer,
+//   [searchNameSpace]: search,
+//   [settingsNameSpace]: settings
+// });
 export default combineReducers({
   [appNameSpace]: app,
   [challengeNameSpace]: challenge,
@@ -27,5 +40,6 @@ export default combineReducers({
   [flashNameSpace]: flash,
   [guideNavNameSpace]: guideNav,
   form: formReducer,
+  [searchNameSpace]: search,
   [settingsNameSpace]: settings
 });

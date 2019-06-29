@@ -205,7 +205,7 @@ function createPostReportUserProfile(app) {
     if (!username || !report || report === '') {
       return res.json({
         type: 'danger',
-        message: 'Oops, something is not right please re-check your submission.'
+        message: 'Check if you have provided a username and a report'
       });
     }
     return Email.send$(

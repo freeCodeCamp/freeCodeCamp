@@ -44,7 +44,6 @@ Change all the variables to `let` or `const` and rename `sentence`.
     }
     printManyTimes("freeCodeCamp");
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://codepen.io/dylantyates/pen/OwVxyx' target='_blank' rel='nofollow'>Run Code</a>
 
 # Code Explanation:
 

@@ -38,49 +38,50 @@ localeTitle: صب
 
 ## أمثلة
 
- `#include <iostream> 
- 
- class MyClass { 
- public: 
-    virtual ~MyClass() = default; 
- 
-    void greet() { 
-        std::cout << "Hello World!" << std::endl; 
-    } 
- }; 
- 
- class MyClassChild : public MyClass { 
- }; 
- 
- void reinterpretCastTest(void *objectPtr) { 
-    // Let's assume we know objectPtr is of type MyClass * 
-    auto myClassObj = reinterpret_cast<MyClassChild *>(objectPtr); 
-    myClassObj->greet(); 
- } 
- 
- void constCastTest(const MyClassChild &myClassChild) { 
-    auto nonConst = const_cast<MyClassChild &>(myClassChild); 
-    nonConst.greet(); 
- } 
- 
- void dynamicCastTest(MyClass *myClass) { 
-    auto *child = dynamic_cast<MyClassChild *>(myClass); 
-    child->greet(); 
- } 
- 
- void staticCastTest(float floatVal) { 
-    // Convert the float into an int. 
-    auto intVal = static_cast<int>(floatVal); 
-    std::cout << intVal << std::endl; 
- } 
- 
- int main() { 
-    MyClassChild myClass; 
-    reinterpretCastTest(&myClass); 
-    constCastTest(myClass); 
-    dynamicCastTest(&myClass); 
-    staticCastTest(10.5); 
- 
-    return 0; 
- } 
-`
+```cpp
+#include <iostream>
+
+class MyClass {
+public:
+    virtual ~MyClass() = default;
+
+    void greet() {
+        std::cout << "Hello World!" << std::endl;
+    }
+};
+
+class MyClassChild : public MyClass {
+};
+
+void reinterpretCastTest(void *objectPtr) {
+    // Let's assume we know objectPtr is of type MyClass *
+    auto myClassObj = reinterpret_cast<MyClassChild *>(objectPtr);
+    myClassObj->greet();
+}
+
+void constCastTest(const MyClassChild &myClassChild) {
+    auto nonConst = const_cast<MyClassChild &>(myClassChild);
+    nonConst.greet();
+}
+
+void dynamicCastTest(MyClass *myClass) {
+    auto *child = dynamic_cast<MyClassChild *>(myClass);
+    child->greet();
+}
+
+void staticCastTest(float floatVal) {
+    // Convert the float into an int.
+    auto intVal = static_cast<int>(floatVal);
+    std::cout << intVal << std::endl;
+}
+
+int main() {
+    MyClassChild myClass;
+    reinterpretCastTest(&myClass);
+    constCastTest(myClass);
+    dynamicCastTest(&myClass);
+    staticCastTest(10.5);
+
+    return 0;
+}
+```

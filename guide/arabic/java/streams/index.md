@@ -42,54 +42,57 @@ localeTitle: تيارات
 
 ## أمثلة
 
- `// print the length of all Strings in a List 
- for (String string : Arrays.asList("abc", "de", "f", "abc")) { 
-    int length = string.length(); 
-    System.out.println(length); 
- } 
- 
- Arrays.asList("abc", "de", "f", "abc") 
-        .stream() 
-        .map(String::length) 
-        .forEach(System.out::println); 
- 
- // output: 3 2 1 3 
-` 
+```java
+// print the length of all Strings in a List
+for (String string : Arrays.asList("abc", "de", "f", "abc")) {
+    int length = string.length();
+    System.out.println(length);
+}
 
- `// print all Strings in a List with a Length greater than 2 
- for (String string : Arrays.asList("abc", "de", "f", "abc")) { 
-    if (string.length() > 2) { 
-        System.out.println(string); 
-    } 
- } 
- 
- Arrays.asList("abc", "de", "f", "abc") 
-        .stream() 
-        .filter(string -> string.length() > 2) 
-        .forEach(System.out::println); 
- 
- // output: abc abc 
-` 
+Arrays.asList("abc", "de", "f", "abc")
+        .stream()
+        .map(String::length)
+        .forEach(System.out::println);
 
- `// create a sorted List with all unique Strings from another List which are longer than or requal 2 
- List<String> result = new ArrayList<>(); 
- for (String string : Arrays.asList("de", "abc", "f", "abc")) { 
-    if (string.length() >= 2 
-            && ! result.contains(string)) { 
-        result.add(string); 
-    } 
- } 
- Collections.sort(result); 
- 
- List<String> result2 = Arrays.asList("de", "abc", "f", "abc") 
-        .stream() 
-        .filter(string -> string.length() >= 2) 
-        .distinct() 
-        .sorted() 
-        .collect(Collectors.toList()); 
- 
- // result: abc de 
-` 
+// output: 3 2 1 3
+``` 
+
+```java
+// print all Strings in a List with a Length greater than 2
+for (String string : Arrays.asList("abc", "de", "f", "abc")) {
+    if (string.length() > 2) {
+        System.out.println(string);
+    }
+}
+
+Arrays.asList("abc", "de", "f", "abc")
+        .stream()
+        .filter(string -> string.length() > 2)
+        .forEach(System.out::println);
+
+// output: abc abc
+``` 
+
+```java
+// create a sorted List with all unique Strings from another List which are longer than or requal 2
+List<String> result = new ArrayList<>();
+for (String string : Arrays.asList("de", "abc", "f", "abc")) {
+    if (string.length() >= 2
+            && ! result.contains(string)) {
+        result.add(string);
+    }
+}
+Collections.sort(result);
+
+List<String> result2 = Arrays.asList("de", "abc", "f", "abc")
+        .stream()
+        .filter(string -> string.length() >= 2)
+        .distinct()
+        .sorted()
+        .collect(Collectors.toList());
+
+// result: abc de
+``` 
 
 ### مصادر
 

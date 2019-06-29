@@ -13,10 +13,11 @@ import {
   onlineStatusChange,
   isOnlineSelector
 } from '../../redux';
-import { flashMessagesSelector, removeFlashMessage } from '../Flash/redux';
+import { flashMessageSelector, removeFlashMessage } from '../Flash/redux';
 
 import { isBrowser } from '../../../utils';
 
+import WithInstantSearch from '../search/WithInstantSearch';
 import OfflineWarning from '../OfflineWarning';
 import Flash from '../Flash';
 import Header from '../Header';
@@ -57,31 +58,30 @@ const metaKeywords = [
 const propTypes = {
   children: PropTypes.node.isRequired,
   fetchUser: PropTypes.func.isRequired,
-  flashMessages: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      type: PropTypes.string,
-      message: PropTypes.string
-    })
-  ),
-  hasMessages: PropTypes.bool,
+  flashMessage: PropTypes.shape({
+    id: PropTypes.string,
+    type: PropTypes.string,
+    message: PropTypes.string
+  }),
+  hasMessage: PropTypes.bool,
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
   navigationMenu: PropTypes.element,
   onlineStatusChange: PropTypes.func.isRequired,
+  pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
   showFooter: PropTypes.bool
 };
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  flashMessagesSelector,
+  flashMessageSelector,
   isOnlineSelector,
-  (isSignedIn, flashMessages, isOnline) => ({
+  (isSignedIn, flashMessage, isOnline) => ({
     isSignedIn,
-    flashMessages,
-    hasMessages: !!flashMessages.length,
+    flashMessage,
+    hasMessage: !!flashMessage.message,
     isOnline
   })
 );
@@ -92,30 +92,22 @@ const mapDispatchToProps = dispatch =>
   );
 
 class DefaultLayout extends Component {
-  constructor(props) {
-    super(props);
-
-    this.location = '';
-  }
-
   componentDidMount() {
-    if (!this.props.isSignedIn) {
-      this.props.fetchUser();
+    const { isSignedIn, fetchUser, pathname } = this.props;
+    if (!isSignedIn) {
+      fetchUser();
     }
-    const url = window.location.pathname + window.location.search;
-    ga.pageview(url);
+    ga.pageview(pathname);
 
     window.addEventListener('online', this.updateOnlineStatus);
     window.addEventListener('offline', this.updateOnlineStatus);
-
-    this.location = url;
   }
 
-  componentDidUpdate() {
-    const url = window.location.pathname + window.location.search;
-    if (url !== this.location) {
-      ga.pageview(url);
-      this.location = url;
+  componentDidUpdate(prevProps) {
+    const { pathname } = this.props;
+    const { pathname: prevPathname } = prevProps;
+    if (pathname !== prevPathname) {
+      ga.pageview(pathname);
     }
   }
 
@@ -134,14 +126,14 @@ class DefaultLayout extends Component {
   render() {
     const {
       children,
-      hasMessages,
-      flashMessages = [],
-      removeFlashMessage,
-      landingPage,
-      showFooter = true,
-      navigationMenu,
+      hasMessage,
+      flashMessage,
       isOnline,
-      isSignedIn
+      isSignedIn,
+      landingPage,
+      navigationMenu,
+      removeFlashMessage,
+      showFooter = true
     } = this.props;
     return (
       <Fragment>
@@ -158,15 +150,22 @@ class DefaultLayout extends Component {
         >
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
-        <Header disableSettings={landingPage} navigationMenu={navigationMenu} />
-        <div className={`default-layout ${landingPage ? 'landing-page' : ''}`}>
-          <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
-          {hasMessages ? (
-            <Flash messages={flashMessages} onClose={removeFlashMessage} />
-          ) : null}
-          {children}
-        </div>
-        {showFooter && <Footer />}
+        <WithInstantSearch>
+          <Header
+            disableSettings={landingPage}
+            navigationMenu={navigationMenu}
+          />
+          <div
+            className={`default-layout ${landingPage ? 'landing-page' : ''}`}
+          >
+            <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
+            {hasMessage && flashMessage ? (
+              <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
+            ) : null}
+            {children}
+            {showFooter && <Footer />}
+          </div>
+        </WithInstantSearch>
       </Fragment>
     );
   }

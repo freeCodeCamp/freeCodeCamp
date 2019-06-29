@@ -32,9 +32,9 @@ localeTitle: أبعاد الطول والعرض
 
 **مثال:**
 
- `
-<p id="red">Example text</p> 
-` 
+```html
+<p id="red">Example text</p>
+``` 
 
  `p#red { 
     margin: 0; 
@@ -51,20 +51,22 @@ localeTitle: أبعاد الطول والعرض
 
 **مثال:**
 
- `p#example { 
-  min-height: 400px; 
- } 
-` 
+```css
+p#example {
+  min-height: 400px;
+}
+``` 
 
 تحدد الخاصية `max-height` أقصى ارتفاع يمكن أن يصل إليه العنصر. قد يكون ذلك مفيدًا عندما لا تريد أن يكون العنصر أكبر من حجم معين. إذا كان محتوى العنصر أعلى من قيمة `max-height` المحتوى.
 
 **مثال:**
 
- `p { 
-  max-height: 40px; 
-  background-color: red; 
- } 
-` 
+```css
+p {
+  max-height: 40px;
+  background-color: red;
+}
+``` 
 
 **نتيجة:** ![مثال 3](https://image.prntscr.com/image/eRdqazdUSWO2rdVfcUb5rQ.png)
 
@@ -74,11 +76,12 @@ localeTitle: أبعاد الطول والعرض
 
 **مثال:**
 
- `p { 
-  width: 150px; 
-  background-color: red; 
- } 
-` 
+```css
+p {
+  width: 150px;
+  background-color: red;
+}
+``` 
 
 **نتيجة:** ![مثال 4](https://image.prntscr.com/image/x1_khU6TQsmZQznt7YU9qw.png)
 
@@ -86,20 +89,22 @@ _ملاحظة: لا يمتد المحتوى إلى اليمين ، بل يسته
 
 **مثال:**
 
- `p { 
-  min-width: 50px; 
- } 
-` 
+```css
+p {
+  min-width: 50px;
+}
+``` 
 
 لن يسمح الكود السابق ببساطة لعنصر فقرة أن يتقلص أفقيًا إلى أقل من 50 بكسل.
 
 **مثال:**
 
- `p { 
-  max-width: 300px; 
-  background-color: red; 
- } 
-` 
+```css
+p {
+  max-width: 300px;
+  background-color: red;
+}
+``` 
 
 لن يسمح الرمز أعلاه بعرض عنصر أكبر من 300 بكسل.
 

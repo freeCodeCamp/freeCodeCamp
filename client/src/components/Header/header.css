@@ -26,62 +26,6 @@ header {
   align-items: center;
 }
 
-/* Search bar */
-.fcc_searchBar {
-  flex-grow: 1;
-  padding: 0 10px;
-  max-height: 33px;
-}
-
-.fcc_searchBar .ais-SearchBox-input,
-.fcc_searchBar .ais-Hits {
-  background-color: #fff;
-}
-
-.fcc_searchBar .ais-SearchBox-form {
-  margin-bottom: 0;
-}
-
-.fcc_searchBar .ais-Hits {
-  width: 100%;
-  left: 0;
-}
-
-@media (min-width: 480px) {
-  .fcc_searchBar .ais-Hits {
-    width: 90%;
-    left: 5%;
-  }
-}
-
-@media (min-width: 735px) {
-  .fcc_searchBar .ais-Hits {
-    width: 80%;
-    left: 10%;
-  }
-}
-
-@media (min-width: 992px) {
-  .fcc_searchBar {
-    position: relative;
-  }
-  .fcc_searchBar .ais-Hits {
-    width: calc(100% - 20px);
-    left: 10px;
-  }
-}
-
-/* hits */
-.fcc_searchBar .ais-Highlight-highlighted {
-  background-color: transparent;
-  font-style: normal;
-  font-weight: bold;
-}
-
-.fcc_searchBar .fcc_suggestion_item {
-  padding: 10px;
-}
-
 /* Navbar logo */
 
 #top-nav .nav-logo {

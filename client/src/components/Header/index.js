@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import FCCSearch from 'react-freecodecamp-search';
+import SearchBar from '../search/searchBar/SearchBar';
 
 import NavigationMenu from './components/NavMenu';
 import NavLogo from './components/NavLogo';
@@ -21,7 +21,7 @@ function Header(props) {
         <Link className='home-link' to='/'>
           <NavLogo />
         </Link>
-        {disableSettings ? null : <FCCSearch />}
+        {disableSettings ? null : <SearchBar />}
         {navigationMenu ? (
           navigationMenu
         ) : (

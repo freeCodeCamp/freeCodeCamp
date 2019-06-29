@@ -16,13 +16,14 @@ localeTitle: برمجة ديناميكية
 
 لحساب F (5) ستحتاج إلى حساب عدة مرات نفس F (i). استخدام العودية:
 
- `def fib(n) 
- { 
-    if n <= 1: 
-        return n 
-    return fib(n-1) + fib(n-2); 
- } 
-` 
+```python
+def fib(n)
+{
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2);
+}
+``` 
 
 وفيما يلي الحل الأمثل (باستخدام DP)
 
@@ -30,17 +31,18 @@ localeTitle: برمجة ديناميكية
 
 هنا هو الحل الأمثل الذي يستخدم DP و memoization:
 
- `lookup = {1 : 1, 2 : 1} # Create a lookup-table (a map) inizialized with the first 2 Fibonacci's numbers 
- 
- def fib(n) 
- { 
-    if n in lookup: # If n is already computed 
-        return n # Return the previous computed solution 
-    else 
-        lookup[n] = fib(n-1) + fib(n-2) # Else, do the recursion. 
-    return lookup[n] 
- } 
-` 
+```python
+lookup = {1 : 1, 2 : 1} # Create a lookup-table (a map) inizialized with the first 2 Fibonacci's numbers
+
+def fib(n)
+{
+    if n in lookup: # If n is already computed
+        return n # Return the previous computed solution
+    else
+        lookup[n] = fib(n-1) + fib(n-2) # Else, do the recursion.
+    return lookup[n]
+}
+``` 
 
 التخزين المؤقت للحلول المحسوبة في جدول البحث ، والاستعلام عنها قبل الذهاب العودية سيتيح للبرنامج وقت تشغيل O (N).
 

@@ -13,6 +13,7 @@ import {
 } from '../redux';
 import FourOhFourPage from '../components/FourOhFour';
 import Profile from '../components/profile/Profile';
+import { isBrowser } from '../../utils/index';
 
 const propTypes = {
   fetchProfileForUser: PropTypes.func.isRequired,
@@ -45,23 +46,26 @@ const makeMapStateToProps = () => (state, props) => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ fetchProfileForUser }, dispatch);
 
-class ShowFourOhFour extends Component {
+class ShowProfileOrFourOhFour extends Component {
   componentDidMount() {
     const { requestedUser, maybeUser, fetchProfileForUser } = this.props;
     if (isEmpty(requestedUser)) {
-      return fetchProfileForUser(maybeUser);
+      fetchProfileForUser(maybeUser);
     }
-    return null;
   }
 
   render() {
-    const { isSessionUser, requestedUser, showLoading } = this.props;
-    if (showLoading) {
-      // We don't know if /:maybeUser is a user or not, we will show the loader
-      // until we get a response from the API
-      return <Loader fullScreen={true} />;
+    if (!isBrowser()) {
+      return null;
     }
+
+    const { isSessionUser, requestedUser, showLoading } = this.props;
     if (isEmpty(requestedUser)) {
+      if (showLoading) {
+        // We don't know if /:maybeUser is a user or not, we will show
+        // the loader until we get a response from the API
+        return <Loader fullScreen={true} />;
+      }
       // We have a response from the API, but there is nothing in the store
       // for /:maybeUser. We can derive from this state the /:maybeUser is not
       // a user the API recognises, so we 404
@@ -74,10 +78,10 @@ class ShowFourOhFour extends Component {
   }
 }
 
-ShowFourOhFour.displayName = 'ShowFourOhFour';
-ShowFourOhFour.propTypes = propTypes;
+ShowProfileOrFourOhFour.displayName = 'ShowProfileOrFourOhFour';
+ShowProfileOrFourOhFour.propTypes = propTypes;
 
 export default connect(
   makeMapStateToProps,
   mapDispatchToProps
-)(ShowFourOhFour);
+)(ShowProfileOrFourOhFour);

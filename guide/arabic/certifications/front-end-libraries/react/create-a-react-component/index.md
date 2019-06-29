@@ -12,20 +12,21 @@ localeTitle: إنشاء مكون React
 
 ## حل
 
- `class MyComponent extends React.Component { 
-  constructor(props) { 
-    super(props); 
-  } 
-  render() { 
-    // change code below this line 
-    return ( 
-      <div> 
-       <h1>Hello React!</h1> 
-      </div> 
-    ); 
-    // change code above this line 
-  } 
- }; 
-` 
+```javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    // change code below this line
+    return (
+      <div>
+       <h1>Hello React!</h1>
+      </div>
+    );
+    // change code above this line
+  }
+};
+``` 
 
 لاحظ أنك لا تحتاج إلى وضع علامات اقتباس حول النص ، لأنه عندما تعمل مع JSX يتم التعامل معه على أنه HTML. تحقق أيضًا من صحة التهجئة والحالة وعلامات الترقيم! إذا كان كل هذا التعليمة البرمجية يبدو غريبا ، اذهب إلى الاطلاع على بعض المواد الرائعة الموجودة على Javascript ES6 هنا على freeCodeCamp.

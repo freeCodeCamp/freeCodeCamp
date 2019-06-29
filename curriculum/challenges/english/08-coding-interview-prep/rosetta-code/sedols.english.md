@@ -6,38 +6,22 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-    Task:
-
-  <p>
-    For each number list of 6-digit
-    <a href="https://en.wikipedia.org/wiki/SEDOL" title="wp: SEDOL">SEDOL</a>s,
-    calculate and append the checksum digit.
-  </p>
-
-  <p>
-    That is, given the input string on the left, your function should return the
-    corresponding string on the right:
-  </p>
-
-    <pre>
-     710889 => 7108899
-     B0YBKJ => B0YBKJ7
-     406566 => 4065663
-     B0YBLH => B0YBLH2
-     228276 => 2282765
-     B0YBKL => B0YBKL9
-     557910 => 5579107
-     B0YBKR => B0YBKR5
-     585284 => 5852842
-     B0YBKT => B0YBKT7
-     B00030 => B000300
-    </pre>
-
-  <p>
-    Check also that each input is correctly formed, especially
-    with respect to valid characters allowed in a SEDOL string. Your function
-    should return <code>null</code> on invalid input.
-  </p>
+For each number list of 6-digit <a href="https://en.wikipedia.org/wiki/SEDOL" title="wp: SEDOL" target="_blank">SEDOL</a>s, calculate and append the checksum digit.
+That is, given the input string on the left, your function should return the corresponding string on the right:
+<pre>
+710889 => 7108899
+B0YBKJ => B0YBKJ7
+406566 => 4065663
+B0YBLH => B0YBLH2
+228276 => 2282765
+B0YBKL => B0YBKL9
+557910 => 5579107
+B0YBKR => B0YBKR5
+585284 => 5852842
+B0YBKT => B0YBKT7
+B00030 => B000300
+</pre>
+Check that each input is correctly formed, especially with respect to valid characters allowed in a SEDOL string. Your function should return <code>null</code> on an invalid input.
 </section>
 
 ## Instructions
@@ -71,7 +55,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function sedol (input) {
+function sedol(input) {
   // Good luck!
   return true;
 }

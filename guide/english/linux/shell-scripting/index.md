@@ -2,43 +2,48 @@
 title: Shell scripting
 ---
 
-# Shell scripting
+# Shell Scripting
 
-In the command line, a shell script is an executable file that contains a set of instructions that the shell will execute. Its main purpose is to reduce a set of instructions (or commands) in just one file. Also, it can handles bsome logic because it's a programming language.
+In the command line, a shell script is an executable file that contains a set of instructions that the shell will execute. Its main purpose is to reduce a set of instructions (or commands) to just one file. Also, it can handle logic because it's also an interpreter.
 
-## How to create it
+## How to Create a Shell Script
 
-1) Create the file:
+1. Create the file:
 ```bash
 $ touch myscript.sh
 ```
-2) Add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) at the start of the file. The Shebang line is responsible for letting the command interpreter know which interpreter the shell script will be run with:
+
+The file extension is not necessary.  In linux, scripts can be executed even without .sh extension.
+
+If the file is stored in `/user/bin` then the script should be able to be run from anywhere, provided the path is included in the `$PATH` variable.
+
+2. Add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) (`#!`) to the start of the file. The shebang line is responsible for letting the command interpreter know which interpreter the shell script will be run with.
+
 ```bash
 $ echo "#!/bin/bash" > myscript.sh
 # or
 $ your-desired-editor myscript.sh
-# write at the first line #!/bin/bash
+# ---------- myscript.sh ------
+#!/bin/bash
+...
+# -----------------------------
 ```
-3) Add some commands:
+
+3. Add commands to the file:
 ```bash
 $ echo "echo Hello World!" >> myscript.sh
 ```
-4) Give the file _execution_ mode:
+
+4. Give the file _execution_ mode:
 ```bash
 $ chmod +x myscript.sh
 ```
-5) Execute it!
+
+5. Execute the script!
 ```bash
 $ ./myscript.sh
 Hello World!
 ```
 
-More info about shell-scripting can be found [here](https://www.shellscript.sh/)
-
-
-//changes
-script file extension is not necessary
-In linux, script can be executed even without .sh extension.
-for example test.sh can be executed if we leave it as test.
-If we keep our script in user/bin then we can use script anywhere.
-
+## Additional Resources
+- [More info about shell-scripting](https://www.shellscript.sh/)
