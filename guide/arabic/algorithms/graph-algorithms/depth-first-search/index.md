@@ -66,15 +66,16 @@ void Graph :: add _edge (int u، int v) { adj \[u\] .الرجوع_ مرة أخر
 
 }
 
- `### Evaluation 
- 
- Space Complexity: O(n) 
- 
- Worse Case Time Complexity: O(n) 
- Depth First Search is complete on a finite set of nodes. I works better on shallow trees. 
- 
- ### Implementation of DFS in C++ 
-` 
+```
+### Evaluation
+
+Space Complexity: O(n)
+
+Worse Case Time Complexity: O(n)
+Depth First Search is complete on a finite set of nodes. I works better on shallow trees.
+
+### Implementation of DFS in C++
+``` 
 
 ج ++
 

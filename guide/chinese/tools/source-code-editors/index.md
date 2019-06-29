@@ -49,7 +49,7 @@ Atom是一个[开源](https://github.com/atom/atom)编辑器
 
 [可](http://stackoverflow.com/search?q=atom)在线获取。
 
-## [Visual Studio代码](https://code.visualstudio.com/) ![Visual Studio代码图标](https://i.imgur.com/b4vFsKa.png)
+## [Visual Studio代码](https://code.visualstudio.com/) ![Visual Studio代码图标](https://cdn-media-1.freecodecamp.org/imgr/b4vFsKa.png)
 
 ![Visual Studio代码截图](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 

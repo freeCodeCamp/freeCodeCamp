@@ -10,8 +10,9 @@ localeTitle: نظام الملفات
 
 من أجل تضمين وحدة نمطية ، استخدم الدالة `require()` مع اسم الوحدة.
 
- `const fs = require('fs');
-`
+```javascript
+const fs = require('fs');
+```
 
 الاستخدام الشائع لوحدة نظام الملفات:
 
@@ -27,16 +28,17 @@ localeTitle: نظام الملفات
 
 رمز Node.js لقراءة الملف من جهاز الكمبيوتر وإرجاع المحتوى إلى وحدة التحكم.
 
- `const fs = require('fs');
- fs.readFile('input.txt', 'utf-8', (err, data) => {
+```javascript
+const fs = require('fs');
+fs.readFile('input.txt', 'utf-8', (err, data) => {
   if(err){
   console.log(err);
   }
   else{
   console.log("Content present in input.txt file : " + data.toString());
   }
- });
-`
+});
+```
 
 يقرأ الكود أعلاه ملف _input.txt_ من جهاز الكمبيوتر ويعيد المحتوى إلى وحدة التحكم.
 

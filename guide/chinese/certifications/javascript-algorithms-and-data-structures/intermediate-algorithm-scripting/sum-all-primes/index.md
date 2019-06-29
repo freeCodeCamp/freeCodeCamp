@@ -73,7 +73,6 @@ function sumPrimes(num) {
  sumPrimes(10); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnZ/0)
 
 ### 代码说明：
 
@@ -122,7 +121,6 @@ function sumPrimes(num) {
  sumPrimes(10); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLn0/0)
 
 ### 代码说明：
 
@@ -157,7 +155,6 @@ function sumPrimes(num) {
  sumPrimes(977); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/DoOo/3)
 
 ### 代码说明：
 

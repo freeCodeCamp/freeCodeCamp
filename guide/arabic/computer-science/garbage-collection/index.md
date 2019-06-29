@@ -30,14 +30,15 @@ localeTitle: جمع القمامة
 
 إذا كان الكائن لا يحتوي على مراجع (لم يعد قابلاً للوصول) ، فهو مؤهل لجمع البيانات المهملة. على سبيل المثال ، في رمز Java الموجود أدناه ، يحتوي كائن Thing الذي تمت الإشارة إليه أصلاً بواسطة 'thing1' على مرجع واحد ومرجع فقط إلى كائن آخر على الكومة - ثم يتعذر الوصول إليه وسيتوفر ذاكرة غير مخصصة من قبل أداة تجميع مجمعي البيانات المهملة.
 
- `class Useless { 
-  public static void main (String[] args) { 
-  Thing thing1 = new Thing(); 
-  Thing thing2 = new Thing(); 
-  thing2 = thing1; // direct thing2's reference towards thing1 
-                   // no references access thing2 
- } } 
-` 
+```java
+class Useless {
+  public static void main (String[] args) {
+  Thing thing1 = new Thing();
+  Thing thing2 = new Thing();
+  thing2 = thing1; // direct thing2's reference towards thing1
+                   // no references access thing2
+} }
+``` 
 
 أحد الأمثلة على جمع البيانات المهملة هو ARC ، باختصار لحساب المراجع الأوتوماتيكي. هذا يستخدم في سويفت ، على سبيل المثال. ARC يتلخص لتتبع المراجع إلى جميع الكائنات التي يتم إنشاؤها. إذا انخفض مقدار المراجع إلى 0 ، فسيتم وضع علامة على الكائن لإلغاء تخصيصه.
 

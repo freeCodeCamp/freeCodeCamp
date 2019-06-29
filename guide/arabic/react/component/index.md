@@ -6,16 +6,17 @@ localeTitle: رد الفعل - مكونات
 
 مكونات قابلة لإعادة الاستخدام في react.js. يمكنك ضخ القيمة في الدعائم كما هو موضح أدناه:
 
- `function Welcome(props) { 
-  return <h1>Hello, {props.name}</h1>; 
- } 
- 
- const element = <Welcome name="Faisal Arkan" />; 
- ReactDOM.render( 
-  element, 
-  document.getElementById('root') 
- ); 
-` 
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+const element = <Welcome name="Faisal Arkan" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+``` 
 
 `name="Faisal Arkan"` سيعطي قيمة في `{props.name}` من `function Welcome(props)` `{props.name}` المكونة التي أعطيت القيمة `name="Faisal Arkan"` ، بعد أن تتفاعل ستجعل العنصر في html.
 
@@ -27,26 +28,27 @@ localeTitle: رد الفعل - مكونات
 
 #### مكونات نوع الطبقة
 
- `class Cat extends React.Component { 
-  constructor(props) { 
-    super(props); 
- 
-    this.state = { 
-      humor: 'happy' 
-    } 
-  } 
-  render() { 
-    return( 
-      <div> 
-        <h1>{this.props.name}</h1> 
-        <p> 
-          {this.props.color} 
-        </p> 
-      </div> 
-    ); 
-  } 
- } 
-` 
+```jsx
+class Cat extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      humor: 'happy'
+    }
+  }
+  render() {
+    return(
+      <div>
+        <h1>{this.props.name}</h1>
+        <p>
+          {this.props.color}
+        </p>
+      </div>
+    );
+  }
+}
+``` 
 
 ### مكونات عديمة الحالة
 
@@ -64,9 +66,10 @@ localeTitle: رد الفعل - مكونات
 
 #### مكونات العودة الضمنية
 
- `const Cat = props => 
-  <div> 
-    <h1>{props.name}</h1> 
-    <p>{props.color}</p> 
-  </div>; 
-`
+```jsx
+const Cat = props =>
+  <div>
+    <h1>{props.name}</h1>
+    <p>{props.color}</p>
+  </div>;
+```

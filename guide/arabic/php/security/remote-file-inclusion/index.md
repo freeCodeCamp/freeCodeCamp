@@ -14,11 +14,12 @@ localeTitle: إدراج الملف عن بعد
 
 سيوفر كود PHP التالي حماية قوية ضد هجمات تضمين الملفات عن بعد
 
- `<?php 
- if(basename($_GET['file]) !== $_GET['file']) { 
-  die('INVALID FILE REQUESTED'); 
- } 
-` 
+```PHP
+<?php
+if(basename($_GET['file]) !== $_GET['file']) {
+  die('INVALID FILE REQUESTED');
+}
+``` 
 
 *   يمكنك تعطيل `allow_url_fopen` في ملف php.ini كحماية إضافية ضد تضمين الملفات عن بعد.
 

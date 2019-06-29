@@ -7,10 +7,10 @@ localeTitle: Ajustar el color de varios elementos a colores complementarios
 ---
 
 ## Description
-<section id="description"> El desafío de los colores complementarios demostró que los colores opuestos en la rueda de colores pueden hacer que cada uno parezca más vibrante cuando se colocan uno al lado del otro. Sin embargo, el fuerte contraste visual puede ser discordante si se usa en exceso en un sitio web, y algunas veces puede hacer que el texto sea más difícil de leer si se coloca sobre un fondo de color complementario. En la práctica, uno de los colores suele ser dominante y el complemento se utiliza para atraer la atención visual a cierto contenido de la página. </section>
+<section id="description"> El desafío de los colores complementarios demostró que los colores opuestos en la rueda de colores pueden hacer que cada uno parezca más vibrante cuando se colocan uno al lado del otro. Sin embargo, el fuerte contraste visual puede ser discordante si se usa en exceso en un sitio web, y algunas veces puede hacer que el texto sea más difícil de leer si se coloca sobre un fondo de color complementario. En la práctica, uno de los colores suele ser el dominante y su complementario se utiliza para atraer la atención visual a cierto contenido de la página. </section>
 
 ## Instructions
-<section id="instructions"> Esta página utilizará un tono de verde azulado ( <code>#09A7A1</code> ) como color dominante, y su complemento naranja ( <code>#FF790E</code> ) para resaltar visualmente los botones de <code>#FF790E</code> . Cambie el <code>background-color</code> de <code>background-color</code> del <code>header</code> y del <code>footer</code> de <code>footer</code> de negro al color verde azulado. Luego cambia el <code>color</code> texto <code>h2</code> a teal también. Finalmente, cambie el <code>background-color</code> de <code>background-color</code> del <code>button</code> al color naranja. </section>
+<section id="instructions"> Esta página utilizará un tono de verde azulado ( <code>#09A7A1</code> ) como color dominante, y su complementario naranja ( <code>#FF790E</code> ) para resaltar visualmente los botones de registro (Sign Up). Cambie el <code>background-color</code> del <code>header</code> y del <code>footer</code> del negro al color verde azulado. Luego cambie el <code>color</code> del texto del <code>h2</code> al verde azulado(teal) también. Finalmente, cambie el <code>background-color</code> del <code>button</code> al color naranja. </section>
 
 ## Tests
 <section id='tests'>

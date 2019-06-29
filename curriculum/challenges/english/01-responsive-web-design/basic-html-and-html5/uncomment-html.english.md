@@ -23,13 +23,13 @@ Uncomment your <code>h1</code>, <code>h2</code> and <code>p</code> elements.
 ```yml
 tests:
   - text: Make your <code>h1</code> element visible on your page by uncommenting it.
-    testString: 'assert($("h1").length > 0, "Make your <code>h1</code> element visible on your page by uncommenting it.");'
+    testString: assert($("h1").length > 0, 'Make your <code>h1</code> element visible on your page by uncommenting it.');
   - text: Make your <code>h2</code> element visible on your page by uncommenting it.
-    testString: 'assert($("h2").length > 0, "Make your <code>h2</code> element visible on your page by uncommenting it.");'
+    testString: assert($("h2").length > 0, 'Make your <code>h2</code> element visible on your page by uncommenting it.');
   - text: Make your <code>p</code> element visible on your page by uncommenting it.
-    testString: 'assert($("p").length > 0, "Make your <code>p</code> element visible on your page by uncommenting it.");'
-  - text: 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.'
-    testString: 'assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,"")), "Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.");'
+    testString: assert($("p").length > 0, 'Make your <code>p</code> element visible on your page by uncommenting it.');
+  - text: Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.
+    testString: assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,'')), 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.');
 
 ```
 
@@ -60,6 +60,10 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 ```
 </section>

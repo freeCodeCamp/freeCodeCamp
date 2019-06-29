@@ -5,14 +5,12 @@ node_js:
 
 cache:
   directories:
-  - "$HOME/.npm"
+    - '$HOME/.npm'
 
 env:
   global:
     - NO_UPDATE_NOTIFIER=1
     - NODE_NO_WARNINGS=1
-
-sudo: false
 
 before_install:
   - npm config set loglevel warn
@@ -20,8 +18,14 @@ before_install:
 install: npm ci
 
 before_script:
-  - git config --global user.email team+camperbot@freeCodeCamp.org
-  - git config --global user.name "CamperBot"
+  - npm run ensure-env
 
-script:
-  - npm run test-ci
+jobs:
+  include:
+    - stage: Lint javaScript
+      script:
+        - npm run lint
+
+    - stage: Unit and Integration tests
+      script: npm test
+

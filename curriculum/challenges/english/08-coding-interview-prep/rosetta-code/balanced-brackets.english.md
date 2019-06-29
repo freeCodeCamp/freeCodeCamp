@@ -6,15 +6,17 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.</p>
-Examples:
-<p class='rosetta__paragraph'>(empty) true</p>
-<p class='rosetta__paragraph'><code>[]</code> true</p>
-<p class='rosetta__paragraph'><code>][</code> false</p>
-<p class='rosetta__paragraph'><code>[][]</code> true</p>
-<p class='rosetta__paragraph'><code>][][</code> false</p>
-<p class='rosetta__paragraph'><code>[]][[]</code> false</p>
-<p class='rosetta__paragraph'><code>[[[[]]]]</code> true</p>
+Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+<h4><strong>Examples:</strong></h4>
+
+| Input | Output |
+| --- | --- |
+| <code>[]</code> | true |
+| <code>][</code> | false |
+| <code>[][]</code> | true |
+| <code>][][</code> | false |
+| <code>[]][[]</code> | false |
+| <code>[[[[]]]]</code> | true |
 </section>
 
 ## Instructions
@@ -28,43 +30,43 @@ Examples:
 ```yml
 tests:
   - text: <code>isBalanced</code> is a function.
-    testString: 'assert(typeof isBalanced === "function", "<code>isBalanced</code> is a function.");'
-  - text: '<code>isBalanced("[]")</code> should return true.'
-    testString: 'assert(isBalanced(testCases[0]), "<code>isBalanced("[]")</code> should return true.");'
-  - text: '<code>isBalanced("]][[[][][][]][")</code> should return false.'
-    testString: 'assert(!isBalanced(testCases[1]), "<code>isBalanced("]][[[][][][]][")</code> should return false.");'
-  - text: '<code>isBalanced("[][[[[][][[[]]]]]]")</code> should return true.'
-    testString: 'assert(isBalanced(testCases[2]), "<code>isBalanced("[][[[[][][[[]]]]]]")</code> should return true.");'
-  - text: '<code>isBalanced("][")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[3]), "<code>isBalanced("][")</code> should return true.");'
-  - text: '<code>isBalanced("[[[]]]][[]")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[4]), "<code>isBalanced("[[[]]]][[]")</code> should return true.");'
-  - text: '<code>isBalanced("][[]")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[5]), "<code>isBalanced("][[]")</code> should return true.");'
-  - text: '<code>isBalanced("][[][]][[[]]")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[6]), "<code>isBalanced("][[][]][[[]]")</code> should return true.");'
-  - text: '<code>isBalanced("[[][]]][")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[7]), "<code>isBalanced("[[][]]][")</code> should return true.");'
-  - text: '<code>isBalanced("[[[]]][[]]]][][[")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[8]), "<code>isBalanced("[[[]]][[]]]][][[")</code> should return true.");'
-  - text: '<code>isBalanced("[]][[]]][[[[][]]")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[9]), "<code>isBalanced("[]][[]]][[[[][]]")</code> should return true.");'
-  - text: '<code>isBalanced("][]][[][")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[10]), "<code>isBalanced("][]][[][")</code> should return true.");'
-  - text: '<code>isBalanced("[[]][[][]]")</code> should return true.'
-    testString: 'assert(isBalanced(testCases[11]), "<code>isBalanced("[[]][[][]]")</code> should return true.");'
-  - text: '<code>isBalanced("[[]]")</code> should return true.'
-    testString: 'assert(isBalanced(testCases[12]), "<code>isBalanced("[[]]")</code> should return true.");'
-  - text: '<code>isBalanced("]][]][[]][[[")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[13]), "<code>isBalanced("]][]][[]][[[")</code> should return true.");'
-  - text: '<code>isBalanced("][]][][[")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[14]), "<code>isBalanced("][]][][[")</code> should return true.");'
-  - text: '<code>isBalanced("][][")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[15]), "<code>isBalanced("][][")</code> should return true.");'
-  - text: '<code>isBalanced("[[]]][][][[]][")</code> should return true.'
-    testString: 'assert(!isBalanced(testCases[16]), "<code>isBalanced("[[]]][][][[]][")</code> should return true.");'
+    testString: assert(typeof isBalanced === 'function', '<code>isBalanced</code> is a function.');
+  - text: <code>isBalanced("[]")</code> should return true.
+    testString: assert(isBalanced(testCases[0]), '<code>isBalanced("[]")</code> should return true.');
+  - text: <code>isBalanced("]][[[][][][]][")</code> should return false.
+    testString: assert(!isBalanced(testCases[1]), '<code>isBalanced("]][[[][][][]][")</code> should return false.');
+  - text: <code>isBalanced("[][[[[][][[[]]]]]]")</code> should return true.
+    testString: assert(isBalanced(testCases[2]), '<code>isBalanced("[][[[[][][[[]]]]]]")</code> should return true.');
+  - text: <code>isBalanced("][")</code> should return true.
+    testString: assert(!isBalanced(testCases[3]), '<code>isBalanced("][")</code> should return true.');
+  - text: <code>isBalanced("[[[]]]][[]")</code> should return true.
+    testString: assert(!isBalanced(testCases[4]), '<code>isBalanced("[[[]]]][[]")</code> should return true.');
+  - text: <code>isBalanced("][[]")</code> should return true.
+    testString: assert(!isBalanced(testCases[5]), '<code>isBalanced("][[]")</code> should return true.');
+  - text: <code>isBalanced("][[][]][[[]]")</code> should return true.
+    testString: assert(!isBalanced(testCases[6]), '<code>isBalanced("][[][]][[[]]")</code> should return true.');
+  - text: <code>isBalanced("[[][]]][")</code> should return true.
+    testString: assert(!isBalanced(testCases[7]), '<code>isBalanced("[[][]]][")</code> should return true.');
+  - text: <code>isBalanced("[[[]]][[]]]][][[")</code> should return true.
+    testString: assert(!isBalanced(testCases[8]), '<code>isBalanced("[[[]]][[]]]][][[")</code> should return true.');
+  - text: <code>isBalanced("[]][[]]][[[[][]]")</code> should return true.
+    testString: assert(!isBalanced(testCases[9]), '<code>isBalanced("[]][[]]][[[[][]]")</code> should return true.');
+  - text: <code>isBalanced("][]][[][")</code> should return true.
+    testString: assert(!isBalanced(testCases[10]), '<code>isBalanced("][]][[][")</code> should return true.');
+  - text: <code>isBalanced("[[]][[][]]")</code> should return true.
+    testString: assert(isBalanced(testCases[11]), '<code>isBalanced("[[]][[][]]")</code> should return true.');
+  - text: <code>isBalanced("[[]]")</code> should return true.
+    testString: assert(isBalanced(testCases[12]), '<code>isBalanced("[[]]")</code> should return true.');
+  - text: <code>isBalanced("]][]][[]][[[")</code> should return true.
+    testString: assert(!isBalanced(testCases[13]), '<code>isBalanced("]][]][[]][[[")</code> should return true.');
+  - text: <code>isBalanced("][]][][[")</code> should return true.
+    testString: assert(!isBalanced(testCases[14]), '<code>isBalanced("][]][][[")</code> should return true.');
+  - text: <code>isBalanced("][][")</code> should return true.
+    testString: assert(!isBalanced(testCases[15]), '<code>isBalanced("][][")</code> should return true.');
+  - text: <code>isBalanced("[[]]][][][[]][")</code> should return true.
+    testString: assert(!isBalanced(testCases[16]), '<code>isBalanced("[[]]][][][[]][")</code> should return true.');
   - text: <code>isBalanced("")</code> should return true.
-    testString: 'assert(isBalanced(testCases[17]), "<code>isBalanced("")</code> should return true.");'
+    testString: assert(isBalanced(testCases[17]), '<code>isBalanced("")</code> should return true.');
 
 ```
 
@@ -76,7 +78,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isBalanced (str) {
+function isBalanced(str) {
   // Good luck!
   return true;
 }
@@ -89,7 +91,26 @@ function isBalanced (str) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [
+  '[]',
+  ']][[[][][][]][',
+  '[][[[[][][[[]]]]]]',
+  '][',
+  '[[[]]]][[]',
+  '][[]',
+  '][[][]][[[]]',
+  '[[][]]][',
+  '[[[]]][[]]]][][[',
+  '[]][[]]][[[[][]]',
+  '][]][[][',
+  '[[]][[][]]',
+  '[[]]',
+  ']][]][[]][[[',
+  '][]][][[',
+  '][][',
+  '[[]]][][][[]][',
+  ''
+];
 ```
 
 </div>
@@ -101,13 +122,13 @@ console.info('after the test');
 
 
 ```js
-function isBalanced (str) {
-  if (str === ") return true;
+function isBalanced(str) {
+  if (str === '') return true;
   let a = str;
   let b;
   do {
     b = a;
-    a = a.replace(/\[\]/g, ");
+    a = a.replace(/\[\]/g, '');
   } while (a !== b);
   return !a;
 }

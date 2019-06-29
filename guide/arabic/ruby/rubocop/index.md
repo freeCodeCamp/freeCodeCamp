@@ -14,10 +14,11 @@ localeTitle: Rubocop
 
 يتم تسليم Rubocop كما جوهرة ، لذلك في مشروع نموذجي يستخدم Bundler لك `Gemfile` إلى قسم التطوير في `Gemfile` الخاص بك:
 
- `group :development do 
-  gem rubocop 
- end 
-` 
+```
+group :development do
+  gem rubocop
+end
+``` 
 
 وهذا يعني أن أي شخص يستخدم مشروعك سيكون له نفس الإصدار من Rubocop ، و سيتفق الجميع على أفضل الممارسات الحالية.
 
@@ -25,15 +26,17 @@ localeTitle: Rubocop
 
 قبل كل التزام ، أرغب في التحقق من أن الشفرة المعدلة حديثًا تتوافق معها معيار commmunity ، ببساطة عن طريق تشغيل:
 
- `rubocop 
-` 
+```
+rubocop
+``` 
 
 سيؤدي ذلك إلى إخراج قائمة بالتحذيرات حول شفرتك.
 
 يمكن أن يكون من المفيد طلب Rubocop للحصول على مزيد من المساعدة:
 
- `rubocop --extra-details --display-cop-names 
-` 
+```
+rubocop --extra-details --display-cop-names
+``` 
 
 (يمكنك إضافة هذه الملفات إلى ملف `.rubocop` لجعلها افتراضية.)
 
@@ -43,20 +46,23 @@ localeTitle: Rubocop
 
 لنفترض أنني كتبت رمزًا جديدًا ؛ قبل أن ألتزم بها ، قد أقرر ذلك تأكد من أنها تلتزم بالمبادئ التوجيهية:
 
- `rubocop <my new file> 
-` 
+```shell
+rubocop <my new file>
+``` 
 
 يمكنني تحرير التغييرات المقترحة يدويًا ، أو يمكنني أن أطلب من Rubocop إصلاحها مشاكل طفيفة تلقائيا:
 
- `rubocop --auto-correct 
-` 
+```
+rubocop --auto-correct
+``` 
 
 ### تشغيل بعض رجال الشرطة فقط
 
 يتم تنفيذ كل المبادئ التوجيهية للمجتمع في "شرطي" Rubocop. عند العمل على قاعدة البيانات القديمة قد تغرق مع التحذيرات عند تقديم Rubocop. في هذه الحالة ، يمكن أن يكون من المفيد تشغيل شرطي واحد فقط عبر مصدر البرنامج ، وتحقق من هذه التغييرات قبل الانتقال إلى المبدأ التوجيهي التالي ، من أجل مثال:
 
- `rubocop --auto-correct --only 'Layout/EmptyLineAfterMagicComment' 
-` 
+```
+rubocop --auto-correct --only 'Layout/EmptyLineAfterMagicComment'
+``` 
 
 ### تكامل محرر النصوص
 

@@ -12,20 +12,22 @@ localeTitle: المتتالية CSS المتغيرات
 
 ### بناء الجملة
 
- `:root { 
-  --main-bkgnd-color:  #00B8CB; 
- } 
- 
- body { 
-  background-color: var(--main-bkgnd-color); 
-  font-family: 'Raleway', Helvetica, sans-serif; 
- } 
-` 
+```css
+:root {
+  --main-bkgnd-color:  #00B8CB;
+}
+
+body {
+  background-color: var(--main-bkgnd-color);
+  font-family: 'Raleway', Helvetica, sans-serif;
+}
+``` 
 
 التصريح عن المتغير:
 
- `--custom-name: value 
-` 
+```css
+--custom-name: value
+``` 
 
 باستخدام المتغير: `css var(--custom-name)`
 
