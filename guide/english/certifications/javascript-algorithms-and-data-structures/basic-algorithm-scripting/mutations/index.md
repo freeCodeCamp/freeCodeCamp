@@ -89,6 +89,41 @@ Grab the second string, lowercase and turn it into an array; then make sure _eve
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>Array.split()</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-every/14287' target='_blank' rel='nofollow'>Array.every()</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3) Advanced Code Solution:
+
+**Procedural**
+
+```js
+
+    function mutation(arr) {
+      let re = new RegExp("(?=.*" + arr[1].toLowerCase().split("").join(')(?=.*') + ")","ig");
+      return re.test(arr[0]);
+    }
+
+     console.log(mutation(["hello", "Hello"]));
+
+```
+     
+
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@cybcova/Mutations-New-Regex-Solution' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+*   Create a new Regex `re`.
+*   This Regex need a pattern to match the characters of the second string with the first string, so you have to do the regex pattern with second string.
+    *   Grab `arr[1]`.
+    *   Concatenate the result of `arr[1]` with `(?=.*` before and with `)` after.
+    *   At this point you have something like this `(?=.*'Hello')`.
+    *   But for the match you need envolve each caracter like `(?=.*c)` where c is the character.
+        *   Lowercase and split `arr[1]`.
+        *   At this point you have something like this `(?=.*'h,e,l,l,o')`.
+        *   join it with `')(?=.*'`.
+    *   Result in something like `(?=.*'h')(?=.*'e')(?=.*'l')(?=.*'l')(?=.*'o')`.
+*   To global results and ignore cases ad `"ig"`.
+*   Let `re.test` return `arr[1]` the result of match.
+
+@cybcova
+
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
