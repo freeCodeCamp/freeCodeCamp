@@ -44,5 +44,6 @@ function nthPrime(n) {
 
 }
 ```
+
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Prime_number)
