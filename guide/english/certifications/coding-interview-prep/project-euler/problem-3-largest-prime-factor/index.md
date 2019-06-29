@@ -23,6 +23,7 @@ function largestPrimeFactor(number) {
   return max;
 }
 ```
+
 ### Resources:
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Prime_number)
