@@ -1,0 +1,52 @@
+{
+	"app": "Ghost Algolia Blog Redux",
+	"cred": {
+		"appid": "",
+		"apikey": ""
+	},
+	"oldentries" : 86400000,
+	"oldentriesfilters": "",
+	"maxRecordSize": 10000,
+	"index": {
+		"name": "test_news",
+		"settings": {
+			"attributesToIndex": ["title"],
+			"attributesForFaceting": ["lang"]
+		}
+	},
+	"sitemaps": [
+		{"url": "https://www.freecodecamp.org/news/sitemap-posts.xml", "lang": "en"}
+	],
+	"http": {
+		"auth": "",
+		"headers": {
+
+		}
+	},
+	"delayBetweenRequests": 100,
+	"selectors": {
+    "title": "title",
+    "author": ".author-card-name > a",
+    "medium-author": "#site-main > div > article > section > div > p:nth-child(1)",
+    "main-tag": "article.read-next-card > header > h3 > a"
+	},
+	"exclusions": {
+		
+	},
+	"formatters": {
+		
+	},
+	"types": {
+		
+	},
+	"defaults": {
+		
+	},
+	"plugins": [
+		
+	],
+	"pingbackUrl": "",
+	"blacklist": [
+		
+	]
+}

@@ -4,3 +4,4 @@ client/static/**
 client/public/**
 api-server/public/**
 api-server/lib/**
+search-indexing/data-sources/news/**
