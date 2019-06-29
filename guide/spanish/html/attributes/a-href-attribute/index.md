@@ -58,7 +58,7 @@ El `<a href="#">` también puede aplicarse a imágenes y otros elementos HTML.
 ### Ejemplo
 
 ```html
-<a href="#"><img itemprop="image" style="height: 90px;" src="http://www.chatbot.chat/assets/images/header-bg_y.jpg" alt="picture">  </a> 
+<a href="#"><img itemprop="image" style="height: 90px;" src="http://www.chatbot.chat/assets/images/header-bg_y.jpg" alt="imagen">  </a> 
 ```
 
 ### Ejemplo
@@ -68,7 +68,8 @@ El `<a href="#">` también puede aplicarse a imágenes y otros elementos HTML.
 ### Algunos ejemplos más de href
 
 ```html
-<base href="https://www.freecodecamp.org/a-href/">Esto otorga una url base para todas las próximas urls en la página</a> 
-<link href="style.css">Esto es un enlace vivo a una hoja de estilos externa</a> 
-
+<!-- Este te da una url base para todas las url subsecuentes en esta página -->
+<base href="https://www.freecodecamp.org/a-href/">
+<!-- Este es un enlace activo a una hoja de estilos externa (external stylesheet) -->
+<link href="style.css">
 ```
