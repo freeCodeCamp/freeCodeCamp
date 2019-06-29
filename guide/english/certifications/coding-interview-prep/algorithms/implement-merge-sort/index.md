@@ -44,6 +44,7 @@ function mergeSort(array) {
   return merger(left, right);
 }
 ```
+
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
 - Video by [Hackerrank](https://www.youtube.com/watch?v=KF2j-9iSf4Q)
