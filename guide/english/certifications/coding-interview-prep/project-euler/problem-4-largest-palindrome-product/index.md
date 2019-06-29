@@ -45,6 +45,7 @@ function largestPalindromeProduct(n) {
   return Math.max(...res);
 }
 ```
+
 ### References:
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Palindromic_number)
