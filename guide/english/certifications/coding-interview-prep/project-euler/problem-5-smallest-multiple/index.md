@@ -33,6 +33,7 @@ function smallestMult(n){
   return maxLCM;
 }
 ```  
+
 ### References:
 - [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm)
 - [LCM](https://en.wikipedia.org/wiki/Least_common_multiple)
