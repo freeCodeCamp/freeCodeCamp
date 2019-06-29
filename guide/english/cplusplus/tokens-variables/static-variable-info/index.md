@@ -78,7 +78,7 @@ Now let's read about a new type of variable-
 #### Static variable
 
 Static variables : When a variable is declared as static, space for it gets allocated for the lifetime of the program. Even if the function is called multiple times, space for the static variable is allocated only once and the value of variable in the previous call gets carried through the next function call. This is useful for implementing coroutines in C/C++ or any other application where previous state of function needs to be stored.
-In layman terms , it means that a normal variable when goes out of scope looses it's identity (value) , but a static variable has a global scope and retain it's value till end of program , but unlike global variable it is not necessary to declare it at start of program.
+In layman's terms , it means that when a normal variable goes out of scope it loses its identity (value), but a static variable has a global scope and retains its value until the end of the program, but unlike a global variable it is not necessary to declare it at the start of the program.
 
 #### EXTRA-
 Static is a keyword in C++ used to give special characteristics to an element. Static elements are allocated storage only once in a program lifetime in static storage area. And they have a scope till the program lifetime.

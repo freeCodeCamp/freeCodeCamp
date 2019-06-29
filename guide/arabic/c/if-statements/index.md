@@ -8,30 +8,33 @@ localeTitle: مشغلات منطقية وبيانات إذا كانت
 
 ## بناء جملة من _البيان_
 
- `if (testExpression) { 
-   // statements 
- } 
-` 
+```
+if (testExpression) {
+   // statements
+}
+``` 
 
 ## مثال بسيط
 
 دعونا ننظر إلى مثال على ذلك في العمل:
 
- `#include <stdio.h> 
- #include <stdbool.h> 
- 
- int main(void) { 
-    if(true) { 
-        printf("Statement is True!\n"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
+#include <stdbool.h>
 
- `output: 
- Statement is True! 
-` 
+int main(void) {
+    if(true) {
+        printf("Statement is True!\n");
+    }
+
+    return 0;
+}
+``` 
+
+```
+output:
+Statement is True!
+``` 
 
 تمامًا مثل helloworld.c ، تم تضمين stdio.h. الجديد في هذا البرنامج هو stdbool.h ، وهو المكتبة البوولية القياسية - فهو يحتوي على كود يتيح لنا الوصول إلى 'true' و 'false'.
 
@@ -43,25 +46,27 @@ localeTitle: مشغلات منطقية وبيانات إذا كانت
 
 بالطبع ، لم يكن هذا المثال مفيدًا جدًا ، لأن الصواب صحيح دائمًا. وإليك آخر آخر أكثر عملية:
 
- `#include <stdio.h> 
- 
- int main(void) { 
-    int n = 2; 
- 
-    if(n == 3) { // comparing n with 3 
-        printf("Statement is True!\n"); 
-    } 
-    else { // if first condition is not true, then comes to this block of code. 
-        printf("Statement is False!\n"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
 
- `output: 
- Statement is False! 
-` 
+int main(void) {
+    int n = 2;
+
+    if(n == 3) { // comparing n with 3
+        printf("Statement is True!\n");
+    }
+    else { // if first condition is not true, then comes to this block of code.
+        printf("Statement is False!\n");
+    }
+
+    return 0;
+}
+``` 
+
+```
+output:
+Statement is False!
+``` 
 
 هناك بعض الأشياء الهامة التي تختلف هنا. أولاً ، لم يتم تضمين `stdbool.h` . هذا مقبول ، لأنه لا يتم استخدام `true` `false` . في C ، لدينا بيانات تعامل على أنها صحيحة وكاذبة حتى ولو لم تكن الكلمات صحيحة أو خاطئة في العملية.
 
@@ -71,24 +76,26 @@ localeTitle: مشغلات منطقية وبيانات إذا كانت
 
 تسمح العبارة if-else بالاختيار بين بديلين محتملين. في بعض الأحيان ، يجب الاختيار بين أكثر من احتمالين. على سبيل المثال ، ترجع الدالة sign في الرياضيات -1 إذا كانت الوسيطة أقل من الصفر ، تُرجع +1 إذا كانت الوسيطة أكبر من الصفر وتعيد الصفر إذا كانت الوسيطة صفرًا. تطبق العبارة C ++ التالية هذه الوظيفة:
 
- `if (x < 0) 
-   sign = -1; 
- else 
-   if (x == 0) 
-      sign = 0; 
-   else 
-      sign = 1; 
-` 
+```C
+if (x < 0)
+   sign = -1;
+else
+   if (x == 0)
+      sign = 0;
+   else
+      sign = 1;
+``` 
 
 هذا هو عبارة if-else التي يكون فيها البيان الذي يلي الجملة هو نفسه عبارة if-else. إذا كانت قيمة x أقل من الصفر ، فسيتم تعيين علامة على -1 ، ومع ذلك إذا لم يكن أقل من العبارة التالية بعد تنفيذ آخر. في هذه الحالة ، إذا كانت x تساوي الصفر ، فسيتم تعيين التوقيع على الصفر وإلا يتم تعيينه على 1. غالبًا ما يستخدم المبرمجون المبتدئون تسلسلًا من عبارات if بدلاً من استخدام عبارة if-else متداخلة. هذا ما يكتبونه أعلاه في النموذج المكافئ منطقيًا:
 
- `if (x < 0) 
-   sign = -1; 
- if (x == 0) 
-   sign = 0; 
- if (x > 0) 
-   sign = 1; 
-` 
+```C
+if (x < 0)
+   sign = -1;
+if (x == 0)
+   sign = 0;
+if (x > 0)
+   sign = 1;
+``` 
 
 لا ينصح بهذا الإصدار لأنه لا يوضح أنه سيتم تنفيذ واحد فقط من عبارات المهمة لقيمة معينة من x. كما أنها غير فعالة حيث يتم اختبار جميع الشروط الثلاثة دائما.
 
@@ -100,25 +107,27 @@ localeTitle: مشغلات منطقية وبيانات إذا كانت
 
 هناك الكثير يمكننا القيام به مع كل هؤلاء المشغلين! خذ بعين الاعتبار ما يلي ، حيث سنستخدم عبارة if-else:
 
- `#include <stdio.h> 
- 
- int main(void) { 
-    int n = 5; 
- 
-    if(n == 5) { 
-        printf("n is equal to 5!\n"); 
-    } 
-    else if (n > 5) { 
-        printf("n is greater than 5!\n"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stdio.h>
 
- `output: 
- n is equal to 5! 
-` 
+int main(void) {
+    int n = 5;
+
+    if(n == 5) {
+        printf("n is equal to 5!\n");
+    }
+    else if (n > 5) {
+        printf("n is greater than 5!\n");
+    }
+
+    return 0;
+}
+``` 
+
+```
+output:
+n is equal to 5!
+``` 
 
 يحتوي بيان if-else على 'else if' مرتبط به. تعمل هذه التعليمة البرمجية إذا كان الشرط الموجود داخل السابق إذا كان خطأً ، ولكنه يضيف شرطًا داخل أقواسها يجب أن يكون صحيحًا قبل تشغيل الشفرة.
 
@@ -126,32 +135,34 @@ localeTitle: مشغلات منطقية وبيانات إذا كانت
 
 بالطبع ، قد نرغب في حدوث شيء ما إذا لم يكن ذلك صحيحًا ، أو إذا كان صحيحًا أو غير ذلك. لذلك ، لدينا عوامل منطقية:! ل ، لا & ، و و ل أو. دعونا نلقي نظرة على هذا في العمل:
 
- `#include <stfio.h> 
- 
- int main(void) { 
-    int n = 5; 
-    int m = 10; 
- 
-    if(n > m || n == 15) { 
-        printf("Either n is greater than m, or n is equal to 15\n"); 
-    } 
-    else if( n == 5 && m == 10 ) { 
-        printf("n is equal to 5 and m is equal to 10!\n"); 
-    } 
-    else if ( !(n == 6)) { 
-        printf("It is not true that n is equal to 6!\n"); 
-    } 
-    else if (n > 5) { 
-        printf("n is greater than 5!\n"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```C
+#include <stfio.h>
 
- `output: 
- n is equal to 5 and m is equal to 10! 
-` 
+int main(void) {
+    int n = 5;
+    int m = 10;
+
+    if(n > m || n == 15) {
+        printf("Either n is greater than m, or n is equal to 15\n");
+    }
+    else if( n == 5 && m == 10 ) {
+        printf("n is equal to 5 and m is equal to 10!\n");
+    }
+    else if ( !(n == 6)) {
+        printf("It is not true that n is equal to 6!\n");
+    }
+    else if (n > 5) {
+        printf("n is greater than 5!\n");
+    }
+
+    return 0;
+}
+``` 
+
+```
+output:
+n is equal to 5 and m is equal to 10!
+``` 
 
 إليك المجموعة الأولى من الأقواس: `n > m || n == 5` . سيكون هذا صحيحًا إذا كان n أكبر من m ، أو إذا كان n تساوي 5. n ليس أكبر من m ، ولكن n تساوي 5. لأن أحد هذه الأشياء يكون صحيحًا ، ويتم ضمها بواسطة ، أو ، سيكون البيان صحيحًا وستتم طباعة التعليمة البرمجية داخل.
 
@@ -167,16 +178,18 @@ localeTitle: مشغلات منطقية وبيانات إذا كانت
 
 ونتيجة لذلك ، هذه العبارة إذا كانت صحيحة وصالحة:
 
- `if(12452) { 
-    printf("This is true!\n") 
- } 
-` 
+```C
+if(12452) {
+    printf("This is true!\n")
+}
+``` 
 
 حسب التصميم ، 0 غير صحيح ومن قبل الاصطلاح ، 1 صحيح. في الواقع ، إليك نظرة على مكتبة `stdbool.h` الموضحة مسبقًا:
 
- `#define false   0 
- #define true    1 
-` 
+```C
+#define false   0
+#define true    1
+``` 
 
 هناك في الواقع أكثر قليلا من ذلك ، ولكن هذا هو الجزء الذي يقوم بكل العمل.
 

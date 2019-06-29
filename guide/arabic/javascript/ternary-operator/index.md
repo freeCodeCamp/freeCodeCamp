@@ -4,8 +4,9 @@ localeTitle: مشغل ثلاثي
 ---
 يستبدل مشغل Ternary كتلة `if` / `else` بتنسيق مكثف. ما يلي هو الشكل العام للمشغل الثلاثي.
 
- `condition ? expr1 : expr2 
-` 
+```
+condition ? expr1 : expr2
+``` 
 
 ## وصف
 
@@ -13,10 +14,11 @@ localeTitle: مشغل ثلاثي
 
 على سبيل المثال ، لعرض رسالة مختلفة بناءً على قيمة متغير isMember ، يمكنك استخدام هذا البيان:
 
- `let isMember = true; 
- 
- let message = isMember ? 'Welcome Back!' : 'You need to login'; // 'Welcome Back' 
-` 
+```javascript
+let isMember = true;
+
+let message = isMember ? 'Welcome Back!' : 'You need to login'; // 'Welcome Back'
+``` 
 
 ومن الطرق المفيدة الأخرى لاستخدام المشغل الثلاثي هو حثه على تنفيذ وظيفة أو طريقة بشكل مشروط
 

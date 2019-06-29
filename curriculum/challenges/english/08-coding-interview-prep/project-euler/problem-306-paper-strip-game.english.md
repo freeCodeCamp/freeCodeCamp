@@ -37,7 +37,7 @@ For 1 ≤ n ≤ 1 000 000, how many values of n are there for which the first pl
 ```yml
 tests:
   - text: <code>euler306()</code> should return 852938.
-    testString: 'assert.strictEqual(euler306(), 852938, "<code>euler306()</code> should return 852938.");'
+    testString: assert.strictEqual(euler306(), 852938, '<code>euler306()</code> should return 852938.');
 
 ```
 

@@ -51,7 +51,6 @@ localeTitle: الطفرات
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/30)
 
 ### شرح الشفرة:
 
@@ -79,7 +78,6 @@ localeTitle: الطفرات
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/31)
 
 ### شرح الشفرة:
 

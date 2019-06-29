@@ -6,33 +6,38 @@ localeTitle: وضع العلامات في جيت
 
 لعرض جميع العلامات المنشأة بترتيب أبجدي:
 
- `git tag 
-` 
+```bash
+git tag
+``` 
 
 للحصول على مزيد من المعلومات حول علامة:
 
- `git show v1.4 
-` 
+```bash
+git show v1.4
+``` 
 
 هناك نوعان من العلامات:
 
 1.  المشروح
 
- `git tag -a v1.2 -m "my version 1.4" 
-` 
+```bash
+git tag -a v1.2 -m "my version 1.4"
+``` 
 
 2.  وزن خفيف
 
- `git tag v1.2 
-` 
+```bash
+git tag v1.2
+``` 
 
 تختلف في الطريقة التي يتم تخزينها.  
 هذه خلق علامات على التزامك الحالي.
 
 إذا كنت تريد وضع علامة على التزام سابق ، فحدد رقم تعريف الالتزام الذي ترغب في وضع علامة عليه:
 
- `git tag -a v1.2 9fceb02 
-` 
+```bash
+git tag -a v1.2 9fceb02
+``` 
 
 يمكن استخدام أسماء العلامات بدلًا من استخدام المعرفات أثناء السحب والدفع بالالتزامات إلى repo بعيد.
 
@@ -43,20 +48,22 @@ localeTitle: وضع العلامات في جيت
 
 يمكنك إدراج جميع العلامات المتاحة في مشروع باستخدام الأمر `git tag` (nate that they will appear بالترتيب الأبجدي):
 
- `$ git tag 
- v1.0 
- v2.0 
- v3.0 
-` 
+```
+$ git tag
+v1.0
+v2.0
+v3.0
+``` 
 
 تعد هذه الطريقة من علامات الإدراج رائعة للمشروعات الصغيرة ، ولكن يمكن أن تتضمن المشروعات الأكبر مئات العلامات ، لذلك قد تحتاج إلى ترشيحها عند البحث عن نقطة مهمة في التاريخ. يمكنك العثور على العلامات التي تحتوي على أحرف محددة تضيف - `-l` إلى أمر `git tag` :
 
- `$ git tag -l "v2.0*" 
- v2.0.1 
- v2.0.2 
- v2.0.3 
- v2.0.4 
-` 
+```
+$ git tag -l "v2.0*"
+v2.0.1
+v2.0.2
+v2.0.3
+v2.0.4
+``` 
 
 ## قم بإنشاء علامة
 
@@ -66,13 +73,14 @@ localeTitle: وضع العلامات في جيت
 
 لإنشاء علامة مشفرة ، قم بإضافة علامة `-a tagname -m "tag message"` إلى أمر `git tag` :
 
- `$ git tag -a v4.0 -m "release version 4.0" 
- $ git tag 
- v1.0 
- v2.0 
- v3.0 
- v4.0 
-` 
+```
+$ git tag -a v4.0 -m "release version 4.0"
+$ git tag
+v1.0
+v2.0
+v3.0
+v4.0
+``` 
 
 كما ترى ، يحدد `-a` أنك تقوم بإنشاء علامة توضيحية ، بعد أن يأتي اسم العلامة وأخيراً ، `-m` متبوعة برسالة العلامة للتخزين في قاعدة البيانات Git.
 
@@ -80,14 +88,15 @@ localeTitle: وضع العلامات في جيت
 
 علامات خفيفة الوزن تحتوي فقط على المجموع الاختباري المرتبط (لا يتم تخزين أي معلومات أخرى). لإنشاء واحدة ، ما عليك سوى تشغيل الأمر `git tag` بدون أي خيارات أخرى (يتم استخدام الأحرف -lw في نهاية الاسم للإشارة إلى علامات خفيفة ، ولكن يمكنك تمييزها كما تريد):
 
- `$ git tag v4.1-lw 
- $ git tag 
- v1.0 
- v2.0 
- v3.0 
- v4.0 
- v4.1-lw 
-` 
+```
+$ git tag v4.1-lw
+$ git tag
+v1.0
+v2.0
+v3.0
+v4.0
+v4.1-lw
+``` 
 
 في هذه المرة لم تحدد رسالة أو بيانات أخرى ذات صلة ، لذلك تحتوي العلامة على المجموع الاختباري للالتزام المرتبط فقط.
 
@@ -95,29 +104,31 @@ localeTitle: وضع العلامات في جيت
 
 يمكنك تشغيل أمر `git show` لعرض البيانات المخزنة في علامة. في حالة العلامات التوضيحية ، سترى بيانات العلامة وبيانات الالتزام:
 
- `$ git show v4.0 
- tag v4.0 
- Tagger: John Cash <john@cash.com> 
- Date:   Mon Sat 28 15:00:25 2017 -0700 
- 
- release version 4.0 
- 
- commit da43a5fss745av88d47839247990022a98419093 
- Author: John Cash <john@cash.com> 
- Date:   Fri Feb 20 20:30:05 2015 -0700 
- 
-  finished details 
-` 
+```
+$ git show v4.0
+tag v4.0
+Tagger: John Cash <john@cash.com>
+Date:   Mon Sat 28 15:00:25 2017 -0700
+
+release version 4.0
+
+commit da43a5fss745av88d47839247990022a98419093
+Author: John Cash <john@cash.com>
+Date:   Fri Feb 20 20:30:05 2015 -0700
+
+  finished details
+``` 
 
 إذا كانت العلامة التي تشاهدها علامة خفيفة ، فسترى بيانات الالتزام المحالة فقط:
 
- `$ git show v1.4-lw 
- commit da43a5f7389adcb9201ab0a289c389ed022a910b 
- Author: John Cash <john@cash.com> 
- Date:   Fri Feb 20 20:30:05 2015 -0700 
- 
-  finished details 
-` 
+```
+$ git show v1.4-lw
+commit da43a5f7389adcb9201ab0a289c389ed022a910b
+Author: John Cash <john@cash.com>
+Date:   Fri Feb 20 20:30:05 2015 -0700
+
+  finished details
+``` 
 
 ## وضع علامات على الالتزام القديم
 
@@ -125,29 +136,32 @@ localeTitle: وضع العلامات في جيت
 
 أولاً ، قم بتشغيل git log للتعرف على المجموع الاختباري للالتزام المطلوب:
 
- `$ git log --pretty=oneline 
- ac2998acf289102dba00823821bee04276aad9ca added products section 
- d09034bdea0097726fd8383c0393faa0072829a7 refactorization 
- a029ac120245ab012bed1ca771349eb9cca01c0b modified styles 
- da43a5f7389adcb9201ab0a289c389ed022a910b finished details 
- 0adb03ca013901c1e02174924486a08cea9293a2 small fix in search textarea styles 
-` 
+```
+$ git log --pretty=oneline
+ac2998acf289102dba00823821bee04276aad9ca added products section
+d09034bdea0097726fd8383c0393faa0072829a7 refactorization
+a029ac120245ab012bed1ca771349eb9cca01c0b modified styles
+da43a5f7389adcb9201ab0a289c389ed022a910b finished details
+0adb03ca013901c1e02174924486a08cea9293a2 small fix in search textarea styles
+``` 
 
 عندما يكون لديك المجموع الاختباري المطلوب ، أضفه في نهاية سطر إنشاء العلامة:
 
- `$ git tag -a v3.5 a029ac 
-` 
+```
+$ git tag -a v3.5 a029ac
+``` 
 
 سترى علامة تم إضافة `git tag` بشكل صحيح:
 
- `$ git tag 
- v1.0 
- v2.0 
- v3.0 
- v3.5 
- v4.0 
- v4.1-lw 
-` 
+```
+$ git tag
+v1.0
+v2.0
+v3.0
+v3.5
+v4.0
+v4.1-lw
+``` 
 
 ## دفع علامات
 
@@ -180,10 +194,11 @@ $ git checkout v0.0.3 ملاحظة: التحقق من "v0.0.3".
 
 أنت في حالة "فصل الرأس". يمكنك أن تنظر حولك وتجعلها تجريبية التغييرات والالتزام بها ، ويمكنك تجاهل أي تعهدات تجريها في هذا الشأن دون التأثير على أي فروع عن طريق إجراء عملية دفع أخرى.
 
- `## Deleting a Tag 
- 
- You may find a situation were you want to delete a certain tag. There's a very useful command for this situations: 
-` 
+```
+## Deleting a Tag
+
+You may find a situation were you want to delete a certain tag. There's a very useful command for this situations:
+``` 
 
 علامة git $ - حذف v0.0.2 علامة git $ v0.0.1 v0.0.3 v0.0.4 \`\` \`
 

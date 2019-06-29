@@ -8,9 +8,10 @@ localeTitle: يوم التسمية
 
 ### استعمال
 
- `<label for="id">Label</label> 
- <input type="text" name="text" id="id" value="yourvalue"><br> 
-` 
+```
+<label for="id">Label</label>
+<input type="text" name="text" id="id" value="yourvalue"><br>
+``` 
 
 كما ترون، ينبغي أن يكون _للسمة_ من العلامة يساوي السمة معرف العنصر ذات الصلة لربط معا.
 
@@ -42,17 +43,17 @@ localeTitle: يوم التسمية
 
 يمكن ربط التسمية بعنصر إما باستخدام السمة "for" أو بوضع العنصر داخل العنصر.
 
- `
-<label for="peas">Do you like peas? 
-  <input type="checkbox" name="peas" id="peas"> 
- </label> 
-` 
+```html
+<label for="peas">Do you like peas?
+  <input type="checkbox" name="peas" id="peas">
+</label>
+``` 
 
- `
-<label>Do you like peas? 
-  <input type="checkbox" name="peas"> 
- </label> 
-` 
+```html
+<label>Do you like peas?
+  <input type="checkbox" name="peas">
+</label>
+``` 
 
 #### معلومات اكثر:
 

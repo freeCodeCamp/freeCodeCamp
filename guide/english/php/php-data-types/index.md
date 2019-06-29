@@ -2,7 +2,7 @@
 title: PHP Data Types
 ---
 
-# PHP Data Types
+## PHP Data Types
 
 Variables can store data of different types such as:
 * String ("Hello")
@@ -14,17 +14,17 @@ Variables can store data of different types such as:
 * NULL
 * Resource
 
-## PHP String
+### PHP String
 
 A string is a sequence of characters. It can be any text inside quotes (single or double):
 
 #### Example
-```
+```php
 $x = "Hello!";
 $y = 'Hello!';
 ```
 
-## PHP Integer
+### PHP Integer
 
 An integer data type is a non-decimal number between -2,147,483,648 and 2,147,483,647.
 
@@ -39,56 +39,56 @@ Rules for integers:
 `$x = 5;`
 
 
-## PHP Float
+### PHP Float
 
 A float (floating point number) is a number with a decimal point or a number in exponential form.
 
 #### Example
 `$x = 5.01;`
 
-## PHP Boolean
+### PHP Boolean
 
 A Boolean represents two possible states: TRUE or FALSE. Booleans are often used in conditional testing.
 
-```
+```php
 $x = true;
 $y = false;
 ```
 
-## PHP Array
+### PHP Array
 
-An array stores multiple values in one single variable.  
+An array stores multiple values in one single variable.
 
 `$colours = array("Blue","Purple","Pink");`
 
 
-## PHP NULL Value
+### PHP NULL Value
 
-Null is a special data type which can have only one value: NULL.  
-A variable of data type NULL is a variable that has no value assigned to it.  
-Variables can also be emptied by setting the value to NULL.  
+Null is a special data type which can have only one value: NULL.
+A variable of data type NULL is a variable that has no value assigned to it.
+Variables can also be emptied by setting the value to NULL.
 
-**Note:** If a variable is created without a value, it is automatically assigned a value of NULL.  
+**Note:** If a variable is created without a value, it is automatically assigned a value of NULL.
 
-```
+```php
 <?php
 $x = "Hello world!";
 $x = null;
 ?>
 ```
 
-Output:  
+Output:
 NULL
 
 
-## PHP Object
+### PHP Object
 
-An object is a data type which stores data and information on how to process that data.  
-In PHP, an object must be explicitly declared.  
+An object is a data type which stores data and information on how to process that data.
+In PHP, an object must be explicitly declared.
 First we must declare a class of object. A class is a structure that can contain properties and methods.
 
 **Example:**
-```
+```php
 <?php
 class Car {
     function Car() {
@@ -102,4 +102,24 @@ $herbie = new Car();
 // show object properties
 echo $herbie->model;
 ?>
+```
+
+### PHP Resource
+
+A resource is a special variable, holding a reference to an external resource. Resources are created and used by special functions. See the [official PHP documentation](http://php.net/manual/en/resource.php) for a listing of all these functions and the corresponding resource types. You can use [get_resource_type()](http://php.net/manual/en/function.get-resource-type.php) function to see resource type.
+
+**Example:**
+```php
+<?php
+// prints: mysql link
+$c = mysql_connect();
+echo get_resource_type($c) . "\n";
+
+// prints: stream
+$fp = fopen("foo", "w");
+echo get_resource_type($fp) . "\n";
+
+// prints: domxml document
+$doc = new_xmldoc("1.0");
+echo get_resource_type($doc->doc) . "\n";
 ```

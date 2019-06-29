@@ -6,7 +6,7 @@ Os decoradores funcionam essencialmente como invólucros. Eles modificam o compo
 
 Antes de entrar em detalhes sobre decoradores, existem alguns conceitos que devem ser claros. No Python, funções são objetos e podemos fazer muitas coisas úteis com elas.
 
-> ### Atribuindo funtions a uma variável:
+> ### Atribuindo funções a uma variável:
 ```
 def greet(name): 
   return "Hello "+name 

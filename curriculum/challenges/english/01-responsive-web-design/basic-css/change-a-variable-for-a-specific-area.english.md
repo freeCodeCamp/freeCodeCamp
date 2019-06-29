@@ -22,7 +22,7 @@ Change the value of <code>--penguin-belly</code> to <code>white</code> in the <c
 ```yml
 tests:
   - text: The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");'
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), 'The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.');
 
 ```
 

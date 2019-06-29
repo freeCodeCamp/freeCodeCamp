@@ -7,14 +7,15 @@ challengeType: 5
 ## Description
 <section id='description'>
 If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:
-<pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
-7 -> 49 -> 97 -> 130 -> 10 -> 1</pre>
-Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
+<pre>
+15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89
+7 -> 49 -> 97 -> 130 -> 10 -> 1
+</pre>
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process.
 </section>
 
 ## Tests
@@ -23,21 +24,21 @@ Write a function that takes a number as a parameter and returns 1 or 89 after pe
 ```yml
 tests:
   - text: <code>iteratedSquare</code> should be a function.
-    testString: 'assert(typeof iteratedSquare=="function","<code>iteratedSquare</code> should be a function.");'
+    testString: assert(typeof iteratedSquare=='function','<code>iteratedSquare</code> should be a function.');
   - text: <code>iteratedSquare(4)</code> should return a number.
-    testString: 'assert(typeof iteratedSquare(4)=="number","<code>iteratedSquare(4)</code> should return a number.");'
+    testString: assert(typeof iteratedSquare(4)=='number','<code>iteratedSquare(4)</code> should return a number.');
   - text: <code>iteratedSquare(4)</code> should return <code>89</code>.
-    testString: 'assert.equal(iteratedSquare(4),89,"<code>iteratedSquare(4)</code> should return <code>89</code>.");'
+    testString: assert.equal(iteratedSquare(4),89,'<code>iteratedSquare(4)</code> should return <code>89</code>.');
   - text: <code>iteratedSquare(7)</code> should return <code>1</code>.
-    testString: 'assert.equal(iteratedSquare(7),1,"<code>iteratedSquare(7)</code> should return <code>1</code>.");'
+    testString: assert.equal(iteratedSquare(7),1,'<code>iteratedSquare(7)</code> should return <code>1</code>.');
   - text: <code>iteratedSquare(15)</code> should return <code>89</code>.
-    testString: 'assert.equal(iteratedSquare(15),89,"<code>iteratedSquare(15)</code> should return <code>89</code>.");'
+    testString: assert.equal(iteratedSquare(15),89,'<code>iteratedSquare(15)</code> should return <code>89</code>.');
   - text: <code>iteratedSquare(20)</code> should return <code>89</code>.
-    testString: 'assert.equal(iteratedSquare(20),89,"<code>iteratedSquare(20)</code> should return <code>89</code>.");'
+    testString: assert.equal(iteratedSquare(20),89,'<code>iteratedSquare(20)</code> should return <code>89</code>.');
   - text: <code>iteratedSquare(70)</code> should return <code>1</code>.
-    testString: 'assert.equal(iteratedSquare(70),1,"<code>iteratedSquare(70)</code> should return <code>1</code>.");'
+    testString: assert.equal(iteratedSquare(70),1,'<code>iteratedSquare(70)</code> should return <code>1</code>.');
   - text: <code>iteratedSquare(100)</code> should return <code>1</code>.
-    testString: 'assert.equal(iteratedSquare(100),1,"<code>iteratedSquare(100)</code> should return <code>1</code>.");'
+    testString: assert.equal(iteratedSquare(100),1,'<code>iteratedSquare(100)</code> should return <code>1</code>.');
 
 ```
 
@@ -49,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function iteratedSquare (n) {
+function iteratedSquare(n) {
   // Good luck!
 }
 ```
@@ -65,7 +66,7 @@ function iteratedSquare (n) {
 
 
 ```js
-function iteratedSquare (n) {
+function iteratedSquare(n) {
 	var total;
 	while (n != 89 && n != 1) {
 		total = 0;
