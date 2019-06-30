@@ -3,7 +3,6 @@
   "extends": ["@freecodecamp/eslint-config", "prettier", "prettier/react"],
   "plugins": ["prettier"],
   "rules": {
-    "import/no-unresolved": "off",
     "max-len": [
       "error",
       { "code": 80, "ignoreUrls": true, "ignoreTemplateLiterals": true }
