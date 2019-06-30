@@ -94,18 +94,13 @@ Grab the second string, lowercase and turn it into an array; then make sure _eve
 **Procedural**
 
 ```js
+function mutation(arr) {
+    let re = new RegExp("(?=.*" + arr[1].toLowerCase().split("").join(')(?=.*') + ")","i");
+    return re.test(arr[0]);
+}
 
-    function mutation(arr) {
-      let re = new RegExp("(?=.*" + arr[1].toLowerCase().split("").join(')(?=.*') + ")","ig");
-      return re.test(arr[0]);
-    }
-
-     console.log(mutation(["hello", "Hello"]));
-
+mutation(["hello", "Hello"]);
 ```
-     
-
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@cybcova/Mutations-New-Regex-Solution' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -119,10 +114,8 @@ Grab the second string, lowercase and turn it into an array; then make sure _eve
         *   At this point you have something like this `(?=.*'h,e,l,l,o')`.
         *   join it with `')(?=.*'`.
     *   Result in something like `(?=.*'h')(?=.*'e')(?=.*'l')(?=.*'l')(?=.*'o')`.
-*   To global results and ignore cases ad `"ig"`.
+*   To ignore cases add `"i"`.
 *   Let `re.test` return `arr[1]` the result of match.
-
-@cybcova
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
