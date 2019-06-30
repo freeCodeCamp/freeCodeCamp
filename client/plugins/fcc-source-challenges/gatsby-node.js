@@ -28,7 +28,8 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   const { createNode } = actions;
   const watcher = chokidar.watch(curriculumPath, {
     ignored: /(^|[\/\\])\../,
-    persistent: true
+    persistent: true,
+    usePolling: true
   });
 
   watcher.on('ready', sourceAndCreateNodes).on('change', filePath =>

@@ -86,7 +86,7 @@ A = {1, 2, 3}
 
 ```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
 
- [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [运行代码](https://repl.it/C4II/0)
+ [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
 
 ### 代码说明：
 
@@ -141,8 +141,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLoc/0)
-
 ### 代码说明：
 
 *   `slice()`方法用于将_arguments_对象分解为数组_args_ 。
@@ -176,7 +174,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/@ashenm/Symmetric-Difference)
 
 ### 代码说明：
 

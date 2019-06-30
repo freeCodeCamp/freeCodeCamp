@@ -48,7 +48,6 @@ localeTitle: 实现合并排序
  } 
 ```
 
-*   [运行代码](https://repl.it/@ezioda004/Merge-Sort)
 
 ### 参考文献：
 

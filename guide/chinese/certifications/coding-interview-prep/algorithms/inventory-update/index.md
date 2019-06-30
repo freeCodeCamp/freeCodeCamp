@@ -106,7 +106,6 @@ localeTitle: 库存更新
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLok/0)
 
 ### 代码说明：
 
@@ -192,7 +191,6 @@ localeTitle: 库存更新
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLol/0)
 
 ### 代码说明：
 
@@ -268,7 +266,6 @@ localeTitle: 库存更新
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/MQvv/latest)
 
 ### 代码说明：
 

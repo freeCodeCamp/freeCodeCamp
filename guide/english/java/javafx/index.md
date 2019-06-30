@@ -30,7 +30,27 @@ ControlsFX is an open source project that maintains high quality controls for Ja
 Next to common controls like text fields and labels, there are also advanced features that can upgrade the look and feel of the UI. For example, a collection of pre-built dialogs used for the easy creation of custom dialogs.
 Documentation can be found on the website.
 
+### Examples
+
+- Label
+- Button
+- Color Picker
+- Checkbox
+- RadioButton
+- Listview
+- Textfield
+- PasswordField
+- Scrollbar
+- FileChooser
+- ProgressBar
+- Slider
+
+And more, link in references.
+
 ### References:
+
+[Controls Documentation](https://www.tutorialspoint.com/javafx/javafx_ui_controls.htm)
+
 [FXML Documentation](https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/doc-files/introduction_to_fxml.html)
 
 [Scene Builder Tutorial](https://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/overview.htm#JSBGS164)
