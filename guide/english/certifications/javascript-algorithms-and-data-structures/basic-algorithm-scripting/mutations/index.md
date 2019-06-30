@@ -95,10 +95,9 @@ Grab the second string, lowercase and turn it into an array; then make sure _eve
 
 ```js
 function mutation(arr) {
-    let re = new RegExp("(?=.*" + arr[1].toLowerCase().split("").join(')(?=.*') + ")","i");
-    return re.test(arr[0]);
+  let re = new RegExp("(?=.*" + arr[1].toLowerCase().split("").join(')(?=.*') + ")","i");
+  return re.test(arr[0]);
 }
-
 mutation(["hello", "Hello"]);
 ```
 
