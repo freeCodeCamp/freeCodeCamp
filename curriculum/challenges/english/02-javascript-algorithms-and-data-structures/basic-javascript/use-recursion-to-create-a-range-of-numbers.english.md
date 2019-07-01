@@ -1,27 +1,31 @@
 ---
 id: 5cc0bd7a49b71cb96132e54c
-title: Using Recursion Instead of a Loop
+title: Use Recursion to Create a Range of Numbers
 challengeType: 1
 ---
 
 ## Description
 <section id='description'>
-Recursion is the programming concept of using a function that calls itself in order to accomplish a task. For example: 
+In a [previous challenge](/learn/replace-loops-using-recursion) you learned how to use recursion to replace a for loop. Now, let's look a more complex function that returns an array of consecutive integers starting with <code>1</code> through the number passed to the function.
+
+As mentioned in the previous challenge, there will be a <dfn>base case</dfn>.  The base case tells the recursive function when it no longer needs to call itself.  It is a simple case where the return value is already known. There will also be a <dfn>recursive call</dfn> which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.
+
+For example, say you want to write a recursive function that returns an array containing the numbers 1 through n.  This function will need to accept an argument <code>n</code> representing the final number. Then it will need to call itself with progressively smaller values of <code>n</code> until it reaches 1. You could write the function as follows:
 
 ```js
-function countToN(n) {
+function count(n) {
   if (n === 1) {
     return [1];
   } else {
-    var numbers = countToN(n - 1);
+    var numbers = count(n - 1); 
     numbers.push(n);
     return numbers;
   }
 }
 ```
 
-The above function returns an array of consecutive integers starting with <code>1</code> through the number passed to the the function.
-Recursion has two fundamental parts: the base case, and the recursive loop. The base case tells the recursive function when to stop (in this example: when <code>n</code> is equal to <code>1</code>) and the recursive loop tells the function when to call itself, and with what parameters (in this example: calling itself with <code>n - 1</code>).
+At first this is counterintuitive since the value of `n` <em>decreases</em>, but the values in the final array are <em>increasing</em>.  This happens because the push happens last, after the recursive call has returned.  At the point where `n` is pushed into the array, `count(n - 1)` has already been evaluated and returned `[1, 2, ..., n - 1]`.
+
 </section>
 
 ## Instructions
@@ -86,7 +90,7 @@ function rangeOfNumbers(startNum, endNum) {
     numbers.push(endNum);
     return numbers;
   }
-};
+}
 ```
 
 </section>
