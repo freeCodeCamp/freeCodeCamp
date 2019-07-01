@@ -40,7 +40,6 @@ You will need to use the slice() method and specify where to start and where to 
       }
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/55' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -54,7 +53,6 @@ You will need to use the slice() method and specify where to start and where to 
       return (str.length > num)?(str.slice(0,num)+"..."):str;
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/54' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

@@ -72,7 +72,6 @@ Start by trying to get it to validate each format from the example, each one sho
     }
     telephoneCheck("555-555-5555");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLo9/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -98,7 +97,6 @@ Start by trying to get it to validate each format from the example, each one sho
     }
     telephoneCheck("555-555-5555");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLoa/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

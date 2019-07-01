@@ -53,6 +53,10 @@ const squareList = (arr) => {
 };
 ```
 
+### Code explanation
+This does basically the same but uses the `isInteger()` method to check the numbers.
+
+
 ### Resources
 
 - ["Array.prototype.map()" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)

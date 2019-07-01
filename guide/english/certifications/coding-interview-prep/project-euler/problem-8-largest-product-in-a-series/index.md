@@ -36,7 +36,6 @@ function largestProductinaSeries(n) {
 
 console.log(largestProductinaSeries(13));
 ```
-- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-8-Largest-product-in-a-series)
 
 ### References:
 

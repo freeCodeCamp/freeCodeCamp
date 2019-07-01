@@ -68,7 +68,6 @@ Find out how to remove and add key to a JavaScript object.
     // test here
     orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLow/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -109,7 +108,6 @@ Find out how to remove and add key to a JavaScript object.
     // test here
     orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLoy/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -139,7 +137,6 @@ Find out how to remove and add key to a JavaScript object.
     // test here
     orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLoz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

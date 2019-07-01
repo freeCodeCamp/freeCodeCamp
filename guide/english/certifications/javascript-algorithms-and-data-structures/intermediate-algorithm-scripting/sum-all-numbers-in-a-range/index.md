@@ -45,7 +45,6 @@ Remember to that you must add all the numbers in between so this would require a
 
     sumAll([1, 4]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLm6/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -77,7 +76,6 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
       return sum;
     };
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLm7/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -104,7 +102,6 @@ Since the numbers might not be always in order, using `max()` and `min()` will h
 
     sumAll([1, 4]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLm8/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

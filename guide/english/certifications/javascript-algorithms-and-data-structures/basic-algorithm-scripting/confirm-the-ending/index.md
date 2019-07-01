@@ -20,8 +20,6 @@ function confirmEnding(str, target) {
 confirmEnding("He has to give me a new name", "name");
 ```
 
-#### 🚀 [Run Code](https://repl.it/repls/SardonicRoundAfkgaming)
-
 # Code Explanation:
  - First we use the `slice` method copy the string.
  - In order to get the last characters in `str` equivalent to the `target`'s length we use the `slice` method.

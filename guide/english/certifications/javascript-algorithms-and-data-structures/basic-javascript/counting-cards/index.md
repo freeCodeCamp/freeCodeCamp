@@ -118,7 +118,6 @@ function cc(card) {
   // Only change code above this line
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Counting-cards).
 
 ### Code explanation
 · The function first evaluates `if` the condition `card` is a value greater than `1` and lower than `7`, in which case it increments `count` by one.
