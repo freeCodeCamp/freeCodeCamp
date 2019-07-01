@@ -4,7 +4,8 @@ localeTitle: Comandos básicos de Linux
 ---
 ## Comandos básicos de Linux
 
-Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
+Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer. Probablemente el comando mas importante es `man`, el cual te muestra el funcionamiento, opciones y parametros de los diferentes comandos. La sintaxis para usarlo es la siguiente:
+Si se quiere conocer el funcionamiento de el comando `cd` utilizamos `man cd` para que nos muestre el manual.
 
 1.  **cd** - cambiar directorio
 
@@ -49,3 +50,10 @@ Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer.
 1.  **less** - ver el contenido del archivo
 
 *   Usa `less filename.txt` para ver el contenido de un archivo y navegar a través de ellos. Por defecto, `less` irá a través del archivo página a página.
+
+## Comandos básicos para diagnostico de redes en Linux
+- `ifconfig` - Es util para configurar los parametros de la interfaz de redes
+- `traceroute` - Muestra la ruta que los paquetes de datos utilizan para llegar al destino. El IP destino es un parametro necesario para este comando
+- `dig` - Se utiliza para saber el nombre de los servidores DNS
+- `telnet` - Utiliza el protocolo telnet y es util para establecer una conexion entre dos servidores o hosts
+- `netstat` - Muestra informacion acerca de las conexiones de red y de los puertos abiertos
