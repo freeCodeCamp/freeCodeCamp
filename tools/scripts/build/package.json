@@ -19,7 +19,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
     "debug": "^4.0.1",
-    "dotenv": "^6.0.0",
+    "dotenv": "^8.0.0",
     "jest": "^24.8.0"
   }
 }

@@ -30,7 +30,7 @@
     "algoliasearch": "^3.25.1",
     "chalk": "^2.3.2",
     "debug": "^4.1.1",
-    "dotenv": "^6.2.0",
+    "dotenv": "^8.0.0",
     "file": "^0.2.2",
     "fs-extra": "^7.0.1",
     "googleapis": "^37.2.0",

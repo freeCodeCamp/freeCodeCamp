@@ -41,7 +41,7 @@
     "babel-eslint": "^10.0.1",
     "cross-env": "^5.2.0",
     "debug": "^4.1.1",
-    "dotenv": "^6.0.0",
+    "dotenv": "^8.0.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-babel": "^5.3.0",
