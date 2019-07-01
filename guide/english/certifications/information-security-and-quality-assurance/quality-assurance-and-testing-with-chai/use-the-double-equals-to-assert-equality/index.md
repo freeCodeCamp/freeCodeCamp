@@ -3,8 +3,22 @@ title: Use the Double Equals to Assert Equality
 ---
 ## Use the Double Equals to Assert Equality
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/use-the-double-equals-to-assert-equality/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Equality'.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 5 */``` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+The lines in the test should be changed from `assert.fail()` to either `assert.equal()` or `assert.notEqual()`.
+
+## Solution
+```js
+/** 5 - .equal(), .notEqual() **/
+// .equal() compares objects using '=='
+test('#equal, #notEqual', function(){
+  assert.equal( 12, '12', 'numbers are coerced into strings with == ');
+  assert.notEqual( {value: 1}, {value:1}, '== compares object references');
+  assert.equal( 6 * '2', '12', 'no more hints...');
+  assert.notEqual( 6 + '2', '12', 'type your error message if you want' );
+});
+```
