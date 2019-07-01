@@ -1,5 +1,5 @@
 ---
-title: User interface design
+title: User Interface Design
 ---
 # User Interface Design
 The layout defines the user interface (UI) of an activity or [widget of an app](https://developer.android.com/guide/topics/appwidgets/?hl=en-419). You can declare the layout in 2 ways:
