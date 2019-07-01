@@ -17,7 +17,7 @@
     "@freecodecamp/react-bootstrap": "^0.32.3",
     "@reach/router": "^1.2.1",
     "algoliasearch": "^3.33.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "browser-cookies": "^1.2.0",
     "chai": "^4.2.0",
     "date-fns": "^1.30.1",
