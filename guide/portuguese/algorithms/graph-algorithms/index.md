@@ -21,3 +21,12 @@ Alguns dos algoritmos gráficos mais comuns são:
 [Largura da Primeira Pesquisa (BFS)](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/breadth-first-search/index.md)
 
 [Primeira pesquisa de profundidade (DFS)](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/depth-first-search/index.md)
+
+[Dijkstra](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/dijkstra/index.md)
+
+[Algoritmo Floyd-Warshall](https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/floyd-warshall-algorithm/index.md)
+
+#### Mais Informações
+
+- [Graph Theory - Wikipedia](https://en.wikipedia.org/wiki/Graph_theory "Graph theory Wiki")
+- [Basic Graph Algorithms](https://web.stanford.edu/class/cs97si/06-basic-graph-algorithms.pdf) 
