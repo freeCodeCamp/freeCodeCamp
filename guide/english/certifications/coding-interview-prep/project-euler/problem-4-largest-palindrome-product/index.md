@@ -45,7 +45,7 @@ function largestPalindromeProduct(n) {
   return Math.max(...res);
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Problem-4-Largest-palindrome-product)
+
 ### References:
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Palindromic_number)

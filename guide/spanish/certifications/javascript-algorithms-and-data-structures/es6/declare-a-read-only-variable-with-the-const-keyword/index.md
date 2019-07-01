@@ -47,8 +47,6 @@ Cambia todas las variables a `let` o `const` y renombra la `sentence` .
     printManyTimes("freeCodeCamp"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://codepen.io/dylantyates/pen/OwVxyx)
-
 # Explicación del código:
 
 Al usar `const` en `sentence` podemos hacerlo de solo lectura y al usar `let` on `i` en el bucle for podemos evitar el uso de `var` completo. Para mayor claridad de código, también podemos cambiar la `sentence` a `SENTENCE` para mostrar que es una constante.

@@ -7,7 +7,11 @@ challengeType: 1
 ## Description
 <section id='description'>
 The next few challenges will cover maps and hash tables. Maps are data structures that store key-value pairs. In JavaScript, these are available to us as objects. Maps provide rapid lookup of stored items based on key values and are very common and useful data structures.
-Instructions: Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write here, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations?
+</section>
+
+## Instructions
+<section id='instructions'>
+Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write here, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations?
 Use the <code>Map</code> object provided here as a wrapper around a JavaScript <code>object</code>. Create the following methods and operations on the Map object:
 <ul>
 <li><code>add</code> accepts a <code>key, value</code> pair to add to the map.</li>
@@ -20,11 +24,6 @@ Use the <code>Map</code> object provided here as a wrapper around a JavaScript <
 </ul>
 </section>
 
-## Instructions
-<section id='instructions'>
-
-</section>
-
 ## Tests
 <section id='tests'>
 
@@ -33,7 +32,7 @@ tests:
   - text: The Map data structure exists.
     testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test == 'object')})(), 'The Map data structure exists.');
   - text: 'The Map object has the following methods: add, remove, get, has, values, clear, and size.'
-    testString: 'assert((function() { var test = false; if (typeof Map !== ''undefined'') { test = new Map() }; return (typeof test.add == ''function'' && typeof test.remove == ''function'' && typeof test.get == ''function'' && typeof test.has == ''function'' && typeof test.values == ''function'' && typeof test.clear == ''function'' && typeof test.size == ''function'')})(), ''The Map object has the following methods: add, remove, get, has, values, clear, and size.'');'
+    testString: "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test.add == 'function' && typeof test.remove == 'function' && typeof test.get == 'function' && typeof test.has == 'function' && typeof test.values == 'function' && typeof test.clear == 'function' && typeof test.size == 'function')})(), 'The Map object has the following methods: add, remove, get, has, values, clear, and size.');"
   - text: The add method adds items to the map.
     testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add(5,6); test.add(2,3); test.add(2,5); return (test.size() == 2)})(), 'The add method adds items to the map.');
   - text: The has method returns true for added items and false for absent items.
@@ -44,9 +43,7 @@ tests:
     testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('a','b'); test.add('c','d'); test.add('e','f'); var vals = test.values(); return (vals.indexOf('b') != -1 && vals.indexOf('d') != -1 && vals.indexOf('f') != -1)})(), 'The values method returns all the values stored in the map as strings in an array.');
   - text: The clear method empties the map and the size method returns the number of items present in the map.
     testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('b','b'); test.add('c','d'); test.remove('asdfas'); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})(), 'The clear method empties the map and the size method returns the number of items present in the map.');
-
 ```
-
 </section>
 
 ## Challenge Seed
@@ -63,9 +60,6 @@ var Map = function() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution

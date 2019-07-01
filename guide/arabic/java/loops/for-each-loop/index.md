@@ -6,22 +6,24 @@ localeTitle: لكل حلقة
 
 كما دعا إلى تعزيز `for` حلقة، فإنه هو وسيلة مفيدة للغاية وبسيطة لتكرار عبر كل عنصر في مجموعة، مجموعة أو أي كائن التي تطبق `Iterable` اجهة.
 
- `for (object : iterable) 
- { 
-    // Statements 
- } 
-` 
+```java
+for (object : iterable)
+{
+    // Statements
+}
+``` 
 
 تتم قراءة الحلقة كـ "لكل عنصر في `iterable` (يمكن أن يكون صفيفًا أو قابل للتحصيل وما إلى ذلك)". يجب أن يتطابق نوع `object` مع نوع عنصر `iterable` .
 
- `int[] number_list = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 
- 
- for (int numbers : number_list) 
- { 
-    System.out.print(numbers + " "); 
-    // Iterated 10 times, numbers 0,1,2...9 
- } 
-` 
+```java
+int[] number_list = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+for (int numbers : number_list)
+{
+    System.out.print(numbers + " ");
+    // Iterated 10 times, numbers 0,1,2...9
+}
+``` 
 
 انتاج:
 
@@ -32,15 +34,16 @@ localeTitle: لكل حلقة
 
 وبمقارنة هذا مع التقليدية `for` حلقات:
 
- `int[] number_list = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 
- 
- for(int i=0;i < number_list.length;i++) 
- { 
-  System.out.print(number_list[i]+" "); 
-      // Iterated 10 times, numbers 0,1,2...9 
- 
- } 
-` 
+```java
+int[] number_list = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+for(int i=0;i < number_list.length;i++)
+{
+  System.out.print(number_list[i]+" ");
+      // Iterated 10 times, numbers 0,1,2...9
+
+}
+``` 
 
 انتاج:
 

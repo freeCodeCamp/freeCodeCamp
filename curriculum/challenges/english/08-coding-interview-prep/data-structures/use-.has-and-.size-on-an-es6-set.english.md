@@ -50,13 +50,10 @@ checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
-
 
 ```js
 function checkSet(arrToBeSet, checkValue){

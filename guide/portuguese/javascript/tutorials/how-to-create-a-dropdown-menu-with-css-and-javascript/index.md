@@ -14,15 +14,15 @@ Isso é direcionado a desenvolvedores que têm um entendimento médio de HTML, C
 
 Tela inicial:
 
-![](https://i.imgur.com/jrnu6mE.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png)
 
 Dropdown aberto:
 
-![](https://i.imgur.com/gszPtRa.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png)
 
 Dropdown com a opção selecionada:
 
-![](https://i.imgur.com/TKXxZGF.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png)
 
 #### HTML:
 
@@ -241,5 +241,5 @@ O código completo e a demonstração deste aplicativo podem ser encontrados [aq
 ## Mais Informações
 
 *   [Introdução ao ES6](https://guide.freecodecamp.org/javascript/es6)
-*   [Funções de seta](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [Deixe e Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [Funções de seta](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [Deixe e Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)

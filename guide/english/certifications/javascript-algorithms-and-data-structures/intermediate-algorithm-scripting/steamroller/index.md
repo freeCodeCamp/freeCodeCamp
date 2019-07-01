@@ -19,11 +19,11 @@ You need to check if an element is an array or not.
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
-If you are dealing with an array, then you need flatten it by getting the value inside of the array. This means if you have <a href='https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:"' target='_blank' rel='nofollow'>[4]] then instead of returning [4] you need to return 4\. If you get [[[4]]] then the same, you want the 4\. You can access it with arr[index1][index2] to go a level deeper.
+If you are dealing with an array, then you need flatten it by getting the value inside of the array. This means if you have `[[4]]` then instead of returning `[4]` you need to return `4`. If you get `[[[4]]]` then the same, you want the `4`. You can access it with `arr[index1][index2]` to go a level deeper.
 
 > _try to solve the problem now_
 
-## ![:speech_balloon:</a> Hint: 3
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
 
 You will definitely need recursion or another way to go beyond two level arrays to make the code flexible and not hard-coded to the answers needed. Have fun!
 
@@ -31,7 +31,7 @@ You will definitely need recursion or another way to go beyond two level arrays 
 
 ## Spoiler Alert!
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+![warning sign](https://discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
 
 **Solution ahead!**
 
@@ -60,14 +60,13 @@ You will definitely need recursion or another way to go beyond two level arrays 
     // test here
     steamrollArray([1, [2], [3, [[4]]]]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnh/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
 *   Create a new variable to keep flattened arrays.
-*   Create a function that will add non array elements to the new variable, and for the ones that are array it loops through them to get the element.
-*   It does that by using recursion, if the element is an array then call the function again with a layer of array deeper to check if it is an array or not. if it is not then push that non-array element to the variable that gets returned. Otherwise, keep going deeper.
-*   Invoke the function, the first time you will always pass it an array, so it always fall in to the isArray branch
+*   Create a function that will add non-array elements to the new variable, and for the ones that are array, loop through them to get the element.
+*   It does that by using recursion, if the element is an array then call the function again with a layer of array deeper to check if it is an array or not. If it is not then push that non-array element to the variable that gets returned. Otherwise, keep going deeper.
+*   Invoke the function, the first time you will always pass it an array, so it always falls into the isArray branch
 *   Return the flattened array.
 
 #### Relevant Links
@@ -82,15 +81,14 @@ You will definitely need recursion or another way to go beyond two level arrays 
       return flat.some(Array.isArray) ? steamrollArray(flat) : flat;
     }
 
-    flattenArray([1, [2], [3, [[4]]]]);
+    steamrollArray([1, [2], [3, [[4]]]]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLni/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
 *   Use spread operator to concatenate each element of `arr` with an empty array
 *   Use `Array.some()` method to find out if the new array contains an array still
-*   If it does, use recursion call `steamrollArray` again, passing in the new array to repeat the process on the arrays that were deeply nested
+*   If it does, use recursion to call `steamrollArray` again, passing in the new array to repeat the process on the arrays that were deeply nested
 *   If it does not, return the flattened array
 
 #### Relevant Links
@@ -99,6 +97,28 @@ You will definitely need recursion or another way to go beyond two level arrays 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-concat/14286' target='_blank' rel='nofollow'>Array.concat</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator' target='_blank' rel='nofollow'>Spread operator</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator' target='_blank' rel='nofollow'>Ternary Operator (`condition ? a : b`)</a>
+
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+
+    function steamrollArray(arr) {
+      while(arr.some(element => Array.isArray(element))) {
+        arr = arr.flat();
+      }
+      return arr;
+    }
+
+    steamrollArray([1, [2], [3, [[4]]]]);
+
+
+### Code Explanation:
+
+*   Use `Array.some()` method to find out if the new array contains an array still, if it does flatten the array
+*   Repeats until there are no more arrays inside arr.
+
+#### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some' target='_blank' rel='nofollow'>Array.some</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat' target='_blank' rel='nofollow'>Array.flat</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
@@ -117,18 +137,24 @@ You will definitely need recursion or another way to go beyond two level arrays 
         });
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CpDy/4' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   First we turn the array to a string, which will give us a string of numbers seperated by a comma, double comma if there was an empty array and literal object text if there was an object, which we can fix it later in our if statement.
+*   First we turn the array to a string, which will give us a string of numbers separated by a comma, double comma if there was an empty array and literal object text if there was an object, which we can fix later in our if statement.
 *   We replace the double comma with one, then split it back into an array.
 *   map through the array and fix object values and convert string numbers to regular numbers.
+
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 2:
+
+    const steamrollArray = arr => arr.flat(Infinity);
+
+
+### Code Explanation:
+
+*   Use `Array.flat()` to flatten an array with `Infinity` as a parameter for the depth.
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

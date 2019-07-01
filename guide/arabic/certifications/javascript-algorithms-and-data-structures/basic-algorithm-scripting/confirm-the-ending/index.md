@@ -18,7 +18,6 @@ localeTitle: تأكيد الانتهاء
  confirmEnding("He has to give me a new name", "name"); 
 ` 
 
-#### 🚀 [تشغيل الكود](https://repl.it/repls/SardonicRoundAfkgaming)
 
 # شرح الشفرة:
 

@@ -3,13 +3,24 @@ title: String.prototype.search
 ---
 ## String.prototype.search
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-search/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `search()` method searches for a match between a regular expression and the given String object. If a match is found, `search()` returns the index of the first match; if not found, `search()` returns -1.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+**Syntax**
+```javascript
+str.search(regexp) // regexp is a RegExp object
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+**Example**
+```js
+var x = "Hello World";
+var pattern1 = /[A-H][a-e]/; // first character between 'A' and 'H', second between 'a' and 'e'
+var pattern2 = "world";      // the string 'world'
+console.log(x.search(pattern1)); // 0
+console.log(x.search(pattern2)); // -1
+console.log(x.search("o"));      // 4
+```
+
+*Note*: `search()` implicitly converts a string argument to a RegExp object; in the example above, the string `world` in `pattern2` is converted to the regular expression `world` (and similarly for the string `o`).
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- [String.prototype.search() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search)

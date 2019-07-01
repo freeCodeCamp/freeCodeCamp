@@ -4,7 +4,7 @@ localeTitle: Монтаж
 ---
 ## Монтаж
 
-![Монтаж](https://i.imgur.com/9ILjA1q.jpg)
+![Монтаж](https://cdn-media-1.freecodecamp.org/imgr/9ILjA1q.jpg)
 
 Чтобы начать работу, вам потребуются два компилятора TypeScript и редактор, который поддерживает TypeScript.
 
@@ -47,7 +47,7 @@ touch tsconfig.json
 
 ### Быстрый пример
 
-![умножение](https://i.imgur.com/V5nP3xj.jpg)
+![умножение](https://cdn-media-1.freecodecamp.org/imgr/V5nP3xj.jpg)
 
 На скриншоте выше вы можете увидеть два файла - `multiplication.js` и `multiplication.ts` .
 

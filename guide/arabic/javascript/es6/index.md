@@ -12,18 +12,19 @@ localeTitle: ES6
 
 > مثال ES5:
 
- `var User = function () { 
-  function User(name) { 
-    this._name = name; 
-  } 
- 
-  User.prototype.getName = function getName(x) { 
-    return 'Mr./Mrs. ' + this._name; 
-  }; 
- 
-  return User; 
- }(); 
-` 
+```javascript
+var User = function () {
+  function User(name) {
+    this._name = name;
+  }
+
+  User.prototype.getName = function getName(x) {
+    return 'Mr./Mrs. ' + this._name;
+  };
+
+  return User;
+}();
+``` 
 
 > مثال ES6:
 

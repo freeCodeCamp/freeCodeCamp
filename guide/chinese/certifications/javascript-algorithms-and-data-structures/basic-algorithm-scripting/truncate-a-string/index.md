@@ -51,7 +51,6 @@ function truncateString(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/55)
 
 ### 代码说明：
 
@@ -71,7 +70,6 @@ function truncateString(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/54)
 
 ### 代码说明：
 

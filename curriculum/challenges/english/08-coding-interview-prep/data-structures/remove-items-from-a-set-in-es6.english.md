@@ -10,7 +10,12 @@ Let's practice removimg items from an ES6 Set using the <code>delete</code> meth
 First, create an ES6 Set
 <code>var set = new Set([1,2,3]);</code>
 Now remove an item from your Set with the <code>delete</code> method.
-<blockquote>set.delete(1);<br>console.log([...set]) // should return [ 2, 3 ]<blockquote>
+
+```js
+set.delete(1);
+console.log([...set]) // should return [ 2, 3 ]
+```
+
 </section>
 
 ## Instructions
@@ -33,7 +38,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -47,14 +51,10 @@ function checkSet(){
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
-
 
 ```js
 function checkSet(){

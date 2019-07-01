@@ -14,12 +14,11 @@ The new version of JavaScript provides us with a built-in Map object which provi
 <code>.clear()</code> removes all key, value pairs
 <code>.entries()</code> returns an array of all the keys in insertion order
 <code>.values()</code> returns an array of all the values in insertion order
-Instructions: Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair <code>freeCodeCamp</code>, <code>Awesome!</code> to it.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair <code>freeCodeCamp</code>, <code>Awesome!</code> to it.
 </section>
 
 ## Tests
@@ -31,24 +30,17 @@ tests:
     testString: assert(typeof myMap === 'object', 'The myMap object exists.');
   - text: myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.
     testString: assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');
-
 ```
-
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
 // change code below this line
 ```
-
 </div>
-
-
-
 </section>
 
 ## Solution

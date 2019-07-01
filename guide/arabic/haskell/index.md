@@ -18,28 +18,31 @@ localeTitle: هاسكل
 
 للبدء فعليًا في استخدام Haskell فأنت بحاجة إلى GHC (The Glasgow Haskell Compiler) ، وذلك لإعداد: [إعداد المكدس](https://docs.haskellstack.org/en/stable/README/#how-to-install://docs.haskellstack.org/en/stable/README/#quick-start-guide)
 
- `stack new my-project 
- cd my-project 
- stack setup 
- stack build 
- stack exec my-project-exe 
-` 
+```shell
+stack new my-project
+cd my-project
+stack setup
+stack build
+stack exec my-project-exe
+``` 
 
 كلمة الحذر ، حاول عدم استخدام تثبيت مكدس على الرغم من أنه سيتم تثبيت الحزمة على مستوى العالم ، إلا أنه لا يوصى بهذا لأن إصدارات مختلفة من الحزم متوافقة مع الإصدارات المختلفة من GHC. وبالتالي ، فإن استخدام النسخة المحلية من الحزمة باستخدام بنية المكدس هو أفضل طريقة للمتابعة.
 
 ## مرحبا بالعالم
 
- `main :: IO () 
- main = print "Hello Haskell :)" 
-` 
+```haskell
+main :: IO ()
+main = print "Hello Haskell :)"
+``` 
 
 احفظ فوق الرمز في ملف يسمى "hello.hs" واحفظه.
 
 لتجميع مثال Hello World ، سيؤدي هذا إلى تحويل شفرة haskell الخاصة بنا إلى رموز بايت مفهومة.
 
- `stack ghc hello.hs 
- ./hello 
-` 
+```shell
+stack ghc hello.hs
+./hello
+``` 
 
 ## كابل بيانات
 

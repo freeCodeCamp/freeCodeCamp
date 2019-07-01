@@ -60,7 +60,6 @@ You can't have more than three consecutive Roman numerals together.
     // test here
     convertToRoman(36);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmf/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -125,7 +124,6 @@ You can't have more than three consecutive Roman numerals together.
     // test here
     convertToRoman(97);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/C1YV' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -144,7 +142,7 @@ You can't have more than three consecutive Roman numerals together.
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
     function convertToRoman(num) {
-      var romans = 
+      var romans = [
       // 10^i 10^i*5
         ["I", "V"], // 10^0
         ["X", "L"], // 10^1
@@ -181,7 +179,6 @@ You can't have more than three consecutive Roman numerals together.
     // test here
     convertToRoman(36);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/C1YV' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -207,6 +204,3 @@ You can't have more than three consecutive Roman numerals together.
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

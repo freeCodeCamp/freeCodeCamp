@@ -10,11 +10,11 @@ localeTitle: علامة Textarea
 
 عينة من الرموز:
 
- `
-    <form> 
-      <textarea name="comment" rows="8" cols="80" maxlength="500" placeholder="Enter your comment here..." required></textarea> 
-    </form> 
-` 
+```html
+    <form>
+      <textarea name="comment" rows="8" cols="80" maxlength="500" placeholder="Enter your comment here..." required></textarea>
+    </form>
+``` 
 
 السمات الأكثر شيوعًا: تحدد `row` و `cols` ارتفاع وعرض النص تحدد السمة `placeholder` النص المرئي للمستخدم ، فهي تساعد المستخدم على فهم البيانات التي يجب كتابتها تحدد السمة `maxlength` الحد الأقصى لطول النص الذي يمكن كتابته في textarea ، لا يمكن للمستخدم إرسال المزيد من الأحرف تعني السمة `required` أنه يجب ملء هذا الحقل قبل إرسال النموذج
 

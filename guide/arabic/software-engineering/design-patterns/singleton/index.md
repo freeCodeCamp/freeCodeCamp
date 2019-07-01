@@ -92,32 +92,34 @@ Singleton هو نمط تصميم غالبًا ما يستخدم في Android. ي
 
 يمكننا استخدام metaclass لتطبيق Singleton في Python3.
 
- `class Singleton(type): 
-    # Mapping from a class to its singleton instance 
-    _instances = {} 
- 
-    def __call__(cls, *args, **kwargs): 
-        if cls not in Singleton._instances: 
-            Singleton._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs) 
- 
-        return Singleton._instances[cls] 
- 
- 
- class MyClass(metaclass=Singleton): 
-    pass 
-` 
+```python
+class Singleton(type):
+    # Mapping from a class to its singleton instance
+    _instances = {}
+
+    def __call__(cls, *args, **kwargs):
+        if cls not in Singleton._instances:
+            Singleton._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
+
+        return Singleton._instances[cls]
+
+
+class MyClass(metaclass=Singleton):
+    pass
+``` 
 
 ### اختبارات
 
- `obj_0 = MyClass() 
- obj_1 = MyClass() 
- 
- In [2]: obj_0 
- Out[2]: <__main__.MyClass at 0x111130da0> 
- 
- In [3]: obj_1 
- Out[3]: <__main__.MyClass at 0x111130da0> 
-` 
+```python
+obj_0 = MyClass()
+obj_1 = MyClass()
+
+In [2]: obj_0
+Out[2]: <__main__.MyClass at 0x111130da0>
+
+In [3]: obj_1
+Out[3]: <__main__.MyClass at 0x111130da0>
+``` 
 
 ## سينجلتون في دائرة الرقابة الداخلية
 

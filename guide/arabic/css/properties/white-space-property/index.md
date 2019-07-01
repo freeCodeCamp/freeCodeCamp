@@ -12,10 +12,11 @@ localeTitle: الملكية الفضائية البيضاء
 
 #### مثال
 
- `p { 
-  white-space: nowrap; 
- } 
-` 
+```
+p {
+  white-space: nowrap;
+}
+``` 
 
 #### القيم
 

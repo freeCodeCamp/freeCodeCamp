@@ -39,7 +39,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -49,8 +48,6 @@ var homeworkStack = ["BIO12","HIS80","MAT122","PSY44"];
 ```
 
 </div>
-
-
 
 </section>
 
