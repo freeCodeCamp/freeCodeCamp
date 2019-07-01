@@ -6,9 +6,10 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Calculate the Shannon entropy  H  of a given input string.</p><p>Given the discreet random variable $X$ that is a string of $N$ "symbols" (total characters) consisting of $n$ different characters (n=2 for binary), the Shannon entropy of X in bits/symbol is :</p>
-<p>$H_2(X) = -\sum_{i=1}^n \frac{count_i}{N} \log_2 \left(\frac{count_i}{N}\right)$</p><p>where $count_i$ is the count of character $n_i$.</p>
+Calculate the Shannon entropy H of a given input string.
+Given the discreet random variable $X$ that is a string of $N$ "symbols" (total characters) consisting of $n$ different characters (n=2 for binary), the Shannon entropy of X in bits/symbol is:
+$H_2(X) = -\sum_{i=1}^n \frac{count_i}{N} \log_2 \left(\frac{count_i}{N}\right)$
+where $count_i$ is the count of character $n_i$.
 </section>
 
 ## Instructions
@@ -46,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function entropy (s) {
+function entropy(s) {
   // Good luck!
 }
 ```

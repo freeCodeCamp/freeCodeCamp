@@ -99,3 +99,5 @@ Use o índice Z se precisar colocar um elemento de plano de fundo abaixo de um c
 [https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS _Posicionamento / Noções_ básicas sobre z\_index](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index)
 
 [https://philipwalton.com/articles/what-no-one-told-you-about-z-index/](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
+
+[https://www.devmedia.com.br/css-z-index-entendendo-sobre-o-eixo-z-na-web/28698](https://www.devmedia.com.br/css-z-index-entendendo-sobre-o-eixo-z-na-web/28698)

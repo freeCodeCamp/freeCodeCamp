@@ -8,43 +8,43 @@ localeTitle: مطلوب
 
 فمثلا:
 
- `
-<!DOCTYPE html> 
- <html> 
-  <head> 
-    <title>HTML Required Attribute</title> 
-  </head> 
-  <body> 
-    <form action="/"> 
-      Text Field: <input type="text" name="textfield" required> 
-      <input type="submit" value="Submit"> 
-    </form> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML Required Attribute</title>
+  </head>
+  <body>
+    <form action="/">
+      Text Field: <input type="text" name="textfield" required>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
+``` 
 
 اختر مثال:
 
- `
-<form action="/action.php"> 
- <select required> 
-  <option value="">None</option> 
-  <option value="volvo">Volvo</option> 
-  <option value="saab">Saab</option> 
-  <option value="mercedes">Mercedes</option> 
-  <option value="audi">Audi</option> 
- </select> 
- </form> 
-` 
+```html
+<form action="/action.php">
+<select required>
+  <option value="">None</option>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+</form>
+``` 
 
 مثال على منطقة النص:
 
- `
-<form action="/action.php"> 
-  <textarea name="comment" required></textarea> 
-  <input type="submit"> 
- </form> 
-` 
+```html
+<form action="/action.php">
+  <textarea name="comment" required></textarea>
+  <input type="submit">
+</form>
+``` 
 
 ببساطة إضافة `required` إلى عنصر إدخال
 

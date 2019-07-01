@@ -131,7 +131,7 @@ myFun.method1();
 Pseudoclassical Instantiation is by far contains the least amount of code. Rather than creating a new object and returning it, the new keyword does that for us. Under the hood, when you use the new keyword to instantiate an object, you create a new object using this = Object.create(Object.prototype), where this refers to the prototype that is named after the new keyword. When we are defining our methods, we use the prototype keyword.
 
 ## Why would I use it?
-Pseudoclassical is said to be the fastest instantiation pattern, which is helpful if you are creating tens of thousands of instances. It is also the most optimized since it utilizes Javascript functionality.
+Pseudoclassical is said to be the fastest instantiation pattern, which is helpful if you are creating tens of thousands of instances. It is also the most optimized since it utilizes JavaScript functionality.
 
 ## What are the drawbacks?
 The downside of Pseudoclassical Instantiation is that it requires a bit more knowledge about what JavaScript is doing under the hood, particularly with the this keyword. This makes this type of object instantiation a bit more complex to understand, especially if someone else is reading your code

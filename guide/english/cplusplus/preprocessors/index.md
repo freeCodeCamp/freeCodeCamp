@@ -6,7 +6,7 @@ title: Preprocessors
 
 As the name suggests Preprocessors are programs that processes our source code before compilation. There are a number of steps involved between writing a program and executing a program in C / C++. Let us have a look at these steps before we actually start learning about Preprocessors.
 
-![Img](https://i.imgur.com/Pb0aTkV.png)
+![Img](https://cdn-media-1.freecodecamp.org/imgr/Pb0aTkV.png)
 
 You can see the intermediate steps in the above diagram. The source code written by programmers is stored in the file program.c. This file is then processed by preprocessors and an expanded source code file is generated named program. This expanded file is compiled by the compiler and an object code file is generated named program.obj . Finally the linker links this object code file to the object code of the library functions to generate the executable file program.exe .
 

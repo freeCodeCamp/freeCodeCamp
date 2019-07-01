@@ -17,7 +17,7 @@ condition ? expressionIfTrue : expressionIfFalse
 
 Вот образец решения с использованием тройного выражения. Сначала вам нужно объявить состояние в конструкторе, как это
 
-```react.js
+```jsx
 constructor(props) { 
     super(props); 
     // change code below this line 
@@ -33,7 +33,7 @@ constructor(props) {
 
 Тогда тернарный оператор
 
-```react.js
+```jsx
 { 
     /* change code here */ 
     (this.state.userAge >= 18) ? buttonTwo : (this.state.userAge== '')? buttonOne: buttonThree 
