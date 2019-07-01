@@ -4,8 +4,8 @@ localeTitle: Comandos básicos de Linux
 ---
 ## Comandos básicos de Linux
 
-Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer. Probablemente el comando mas importante es "man", el cual te muestra el funcionamiento, opciones y parametros de los diferentes comandos. La sintaxis para usarlo es la siguiente:
-Si se quiere conocer el funcionamiento de el comando 'cd' utilizamos 'man cd' para que nos muestre el manual.
+Al comenzar con Linux, hay algunos comandos básicos que todos deben conocer. Probablemente el comando mas importante es `man`, el cual te muestra el funcionamiento, opciones y parametros de los diferentes comandos. La sintaxis para usarlo es la siguiente:
+Si se quiere conocer el funcionamiento de el comando `cd` utilizamos `man cd` para que nos muestre el manual.
 
 1.  **cd** - cambiar directorio
 
