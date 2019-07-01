@@ -1,7 +1,7 @@
 ---
-title: User interface desing
+title: User interface design
 ---
-# User interface desing
+# User Interface Design
 The layout defines the user interface (UI) of an activity or [widget of an app](https://developer.android.com/guide/topics/appwidgets/?hl=en-419). You can declare the layout in 2 ways:
 1. Declare elements in the UI in XML.
 2. Create instances of design elements programmatically.
@@ -62,10 +62,10 @@ Button button = (Button) findViewById(R.id.button);
 ```
 To connect an element of the layout file to the Activity we use the findViewById method. This method accepts the resource Id of a widget as an argument and returns a View object.
 
-# Más Información
-- [Layouts](https://developer.android.com/guide/topics/ui/declaring-layout?hl=en-419).
-- [Layout resource](https://developer.android.com/guide/topics/resources/layout-resource?hl=es-419).
+### More Information
+- [Layouts](https://developer.android.com/guide/topics/ui/declaring-layout?hl=en-419)
+- [Layout resource](https://developer.android.com/guide/topics/resources/layout-resource?hl=es-419)
 
-# Cursos
-- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862).
-- [CodeLabs](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0).
+### Courses
+- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862)
+- [CodeLabs](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0)

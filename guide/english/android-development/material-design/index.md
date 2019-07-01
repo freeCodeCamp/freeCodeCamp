@@ -7,7 +7,7 @@ Material Design is a design system to build bold and beautiful digital products.
 It uses the experiences of the physical world to make user interfaces (UI) more intuitive, using the following concepts: Light, shadow and volumes of renderings. Material Design focuses on 4 main concepts:
 
 - Tangible surfaces
-- Bold graphic design.
+- Bold graphic design
 - Significant movement
 - Adaptive design
 
@@ -46,15 +46,15 @@ The adaptive design changes the UI based on the size of the screen, whether it i
 
 Breakpoints are points where the UI changes. When finding a breakpoint you should start to change the UI. You can start with the drawable, string, layout, orientation files. For specific adaptations, you can vary the number of columns, heights, and width of margins, space.
 
-# More information
-- [Material Design para Android](https://developer.android.com/design/material/?hl=es-419).
-- [Material Components for Android](https://github.com/material-components/material-components-android).
-- [Material design specifications](https://material.io/design/introduction/#).
-- [Material Design](https://www.youtube.com/watch?v=Q8TXgCzxEnw).
-- [Material Design in the Google I/O App](https://www.youtube.com/watch?v=XOcCOBe8PTc&hl=es-419).
-- [Google I/O 2014 - Material design: Structure and components](https://www.youtube.com/watch?v=dZqzz5lZFvo).
-- [User interfaces using Material Design by Uplabs](https://www.uplabs.com/android).
+### More information
+- [Material Design para Android](https://developer.android.com/design/material/?hl=es-419)
+- [Material Components for Android](https://github.com/material-components/material-components-android)
+- [Material design specifications](https://material.io/design/introduction/#)
+- [Material Design](https://www.youtube.com/watch?v=Q8TXgCzxEnw)
+- [Material Design in the Google I/O App](https://www.youtube.com/watch?v=XOcCOBe8PTc&hl=es-419)
+- [Google I/O 2014 - Material design: Structure and components](https://www.youtube.com/watch?v=dZqzz5lZFvo)
+- [User interfaces using Material Design by Uplabs](https://www.uplabs.com/android)
 
-# Courses
-- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862).
-- [Codelab](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0).
+### Courses
+- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862)
+- [Codelab](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0)

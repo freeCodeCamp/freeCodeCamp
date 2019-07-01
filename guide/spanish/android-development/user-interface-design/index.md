@@ -1,5 +1,5 @@
 ---
-title: User interface desing
+title: User Interface Design
 localeTitle: Diseño de Interfaz de Usuario
 ---
 # Diseño de Interfaz de Usuario
@@ -63,10 +63,10 @@ Button button = (Button) findViewById(R.id.button);
 ```
 Para conectar un elemento del archivo layout a la Activity utilizamos el método findViewById. Este método acepta el Id de recurso de un widget como argumento y devuelve un objeto View.
 
-# Más Información
-- [Layouts](https://developer.android.com/guide/topics/ui/declaring-layout?hl=en-419).
-- [Layout resource](https://developer.android.com/guide/topics/resources/layout-resource?hl=es-419).
+### Más Información
+- [Layouts](https://developer.android.com/guide/topics/ui/declaring-layout?hl=en-419)
+- [Layout resource](https://developer.android.com/guide/topics/resources/layout-resource?hl=es-419)
 
-# Cursos
-- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862).
-- [CodeLabs](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0).
+### Cursos
+- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862)
+- [CodeLabs](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0)

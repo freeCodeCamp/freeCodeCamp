@@ -45,15 +45,15 @@ El diseño adaptativo cambia la UI basado en el tamaño de la pantalla, ya sea q
 
 Los breakpoints son puntos donde la UI cambia. Al encontrar un breakpoint debe empezar a cambiar la UI. Usted puede empezar por los archivos drawables, string, layout, orientación. Para adaptaciones especificas usted puede variar el numero de columnas, alturas y anchura de márgenes, espacio.
 
-# Más Información
-- [Material Design para Android](https://developer.android.com/design/material/?hl=es-419).
-- [Material Components for Android](https://github.com/material-components/material-components-android).
-- [Material design specifications](https://material.io/design/introduction/#).
-- [Material Design](https://www.youtube.com/watch?v=Q8TXgCzxEnw).
+### Más Información
+- [Material Design para Android](https://developer.android.com/design/material/?hl=es-419)
+- [Material Components for Android](https://github.com/material-components/material-components-android)
+- [Material design specifications](https://material.io/design/introduction/#)
+- [Material Design](https://www.youtube.com/watch?v=Q8TXgCzxEnw)
 - [Material Design in the Google I/O App](https://www.youtube.com/watch?v=XOcCOBe8PTc&hl=es-419)
-- [Google I/O 2014 - Material design: Structure and components](https://www.youtube.com/watch?v=dZqzz5lZFvo).
-- [User interfaces using Material Design by Uplabs](https://www.uplabs.com/android).
+- [Google I/O 2014 - Material design: Structure and components](https://www.youtube.com/watch?v=dZqzz5lZFvo)
+- [User interfaces using Material Design by Uplabs](https://www.uplabs.com/android)
 
-# Cursos
-- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862).
-- [Codelab](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0).
+### Cursos
+- [Material Design for Android Developers](https://www.udacity.com/course/material-design-for-android-developers--ud862)
+- [Codelab](https://codelabs.developers.google.com/codelabs/material-design-style-sp/index.html#0)
