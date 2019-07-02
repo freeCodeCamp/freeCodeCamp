@@ -51,7 +51,6 @@ To convert `arguments` into an array use this code `var args = Array.prototype.s
       return arr.filter(Boolean);
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/95' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -81,7 +80,6 @@ To convert `arguments` into an array use this code `var args = Array.prototype.s
       });
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/Ck2m/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

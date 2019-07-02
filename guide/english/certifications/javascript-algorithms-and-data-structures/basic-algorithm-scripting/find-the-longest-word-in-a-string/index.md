@@ -50,7 +50,6 @@ Remember how to get the length of elements on the array? `Array[index].length`.
       return maxLength;
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/5' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -73,7 +72,6 @@ Then check for the longest word by comparing the current word to the previous on
         }, 0);
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/6' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -144,7 +142,6 @@ For more information on `map` <a href='https://developer.mozilla.org/en/docs/Web
       }
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/7' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

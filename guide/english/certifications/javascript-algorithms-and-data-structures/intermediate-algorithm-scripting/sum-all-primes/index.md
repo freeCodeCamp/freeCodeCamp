@@ -71,7 +71,6 @@ This problem is hard if you have to create your own code to check for primes, so
     // test here
     sumPrimes(10);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnZ/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -108,7 +107,6 @@ This problem is hard if you have to create your own code to check for primes, so
     }
     //test here
     sumPrimes(10);
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnZ/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -152,7 +150,6 @@ This problem is hard if you have to create your own code to check for primes, so
     // test here
     sumPrimes(10);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLn0/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -177,7 +174,6 @@ This problem is hard if you have to create your own code to check for primes, so
     // test here
     sumPrimes(13);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/FrigidFantasticFossil' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -205,7 +201,6 @@ This problem is hard if you have to create your own code to check for primes, so
     // test here
     sumPrimes(977);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/DoOo/3' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

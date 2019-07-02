@@ -50,7 +50,6 @@ function frankenSplice(arr1, arr2, n) {
   return localArray;
 }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/RedundantGrossGenres' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -74,7 +73,6 @@ function frankenSplice(arr1, arr2, n) {
   return localArr;
 }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/BelovedNegativeMoto' target='_blank' rel='nofollow'>Run Code</a>
 
 * Since our goal is to return the new array with out altering `arr1` or `arr2` we create a `localArr` and add all the items from `arr2` using the `slice()` function
 

@@ -143,6 +143,7 @@ function factorialize(num, factorial = 1) {
 
 factorialize(5);
 ```
+
 #### Code Explanation:
 
 In this solution, we use <a href='https://stackoverflow.com/questions/33923/what-is-tail-recursion' target='_blank' rel='nofollow'>Tail Recursion</a> to optimize the the memory use.

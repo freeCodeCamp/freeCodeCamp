@@ -67,7 +67,6 @@ Finally, we need a method to do the actual splitting and we can use `Array.slice
       return result;
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/24' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -94,7 +93,6 @@ Finally, we need a method to do the actual splitting and we can use `Array.slice
       return arr2;
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/Cj9x/3' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -125,7 +123,6 @@ Finally, we need a method to do the actual splitting and we can use `Array.slice
     }
     chunkArrayInGroups(["a", "b", "c", "d"], 2);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/26' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -154,7 +151,6 @@ Finally, we need a method to do the actual splitting and we can use `Array.slice
       return newArr;
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/579' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -181,7 +177,6 @@ Finally, we need a method to do the actual splitting and we can use `Array.slice
       }
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/WideBriskMining' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

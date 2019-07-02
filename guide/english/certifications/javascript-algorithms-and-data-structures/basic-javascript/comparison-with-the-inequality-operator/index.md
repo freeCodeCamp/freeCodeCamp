@@ -30,7 +30,6 @@ function testNotEqual(val) {
 // Change this value to test
 testNotEqual(10);
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Comparison-with-the-inequality-operator).
 
 ### Code explanation
 The function first evaluates `if` the condition `(val != 99)` evaluates to `true`. If it does, it returns the statement between the curly braces ("Not equal"). If it doesn't, it returns the next `return` statement outside them ("Equal"). 

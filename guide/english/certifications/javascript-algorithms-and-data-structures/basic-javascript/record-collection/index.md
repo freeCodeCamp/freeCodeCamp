@@ -70,7 +70,6 @@ To access the value of a key in this object, you will use `collection[id][prop]`
       return collection;
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/C2AZ/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

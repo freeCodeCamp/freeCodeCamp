@@ -49,7 +49,6 @@ title: Mutations
       return true;
      }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/30' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -76,7 +75,6 @@ If they are _all_ found, the loop will finish without returning anything and we 
         });
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/31' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

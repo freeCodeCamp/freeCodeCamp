@@ -110,7 +110,6 @@ function golfScore(par, strokes) {
 // Change these values to test
 golfScore(5, 4);
 ```
-·Run at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Golf-code)
 
  ## Code explanation
 Since we already have an array defined in the variable `names` we can take advantage of it and use it for our return statements using indexes (eg: `names[0] is the first one`). That way, if you ever need to change a specific result you wouldn't need to look for it inside the function, it'd be at the beginning, in your array.
@@ -129,7 +128,6 @@ Since we already have an array defined in the variable `names` we can take advan
       "Change Me";
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@greggubarev/Basic-JS-Golf-code1' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Resources
 

@@ -48,7 +48,6 @@ const increment = (function() {
 console.log(increment(5, 2)); // returns 7
 console.log(increment(5)); // returns NaN
 ```
-[Run Code](https://repl.it/@RyanPisuena/PleasingFumblingThings)
 
 ### Code Explanation
 

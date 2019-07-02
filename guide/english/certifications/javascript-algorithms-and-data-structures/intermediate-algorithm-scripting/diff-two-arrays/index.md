@@ -63,7 +63,6 @@ The best way to go about the callback function is to check if the number from th
 
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CLme/0">Run Code</a>
 
 ### Code Explanation:
 
@@ -85,7 +84,6 @@ Read the comments in the code.
 
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CNYb/0">Run Code</a>
 
 ### Code Explanation:
 
@@ -109,7 +107,6 @@ Explain solution here and add any relevant links
 
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CNYU/0">Run Code</a>
 
 ### Code Explanation:
 

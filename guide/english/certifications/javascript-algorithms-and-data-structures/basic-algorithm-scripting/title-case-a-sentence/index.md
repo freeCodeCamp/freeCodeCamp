@@ -56,7 +56,6 @@ We have to return a sentence with title case. This means that the first letter w
         return updatedTitle.join(' ');
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/8' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -83,7 +82,6 @@ Split the string by white spaces, and create a variable to track the updated tit
 
     titleCase("I'm a little tea pot");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/9' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -99,7 +97,6 @@ We are making entire string lowercase and then converting it into array. Then we
       return str.toLowerCase().replace(/(^|\s)\S/g, (L) => L.toUpperCase());
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/14' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

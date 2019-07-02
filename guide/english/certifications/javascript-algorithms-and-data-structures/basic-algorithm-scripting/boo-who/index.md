@@ -46,7 +46,6 @@ This program is very simple, the trick is to understand what a boolean primitive
     // test here
     booWho(null);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnK/0' target='_blank' rel='nofollow'>Run Code</a>
 
 # Code Explanation:
 

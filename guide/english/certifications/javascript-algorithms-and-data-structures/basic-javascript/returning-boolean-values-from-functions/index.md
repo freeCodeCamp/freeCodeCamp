@@ -38,7 +38,5 @@ function isLess(a, b) {
 isLess(10, 15);
 ```
 
-Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-Js-Returning-boolean-from-function).
-
 ### Resources
 - ["Less than or equal operator (<=)" - *MDN JavaScript Reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_or_equal_operator_(%3C))
