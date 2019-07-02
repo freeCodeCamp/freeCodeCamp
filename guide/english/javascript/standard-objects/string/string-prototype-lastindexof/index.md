@@ -40,4 +40,4 @@ The `lastIndexOf()` method checks the string from right to left. The index of th
 ```
 
 ### More Information:
-- MDN documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf' target='_blank' rel='nofollow'>MDN</a>
+- [String.prototype.lastIndexOf() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
