@@ -33,5 +33,3 @@ app.get("/:word/echo", (req, res) => {
   });
 });
 ```
-
-[Help our community expand these hints and guides.](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/basic-node-and-express/get-route-parameter-input-from-the-client/index.md)

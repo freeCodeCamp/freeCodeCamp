@@ -51,5 +51,3 @@ app.get("/now", middleware, (req, res) => {
   });
 });
 ```
-
-[Help our community expand these hints and guides.](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/basic-node-and-express/chain-middleware-to-create-a-time-server/index.md)

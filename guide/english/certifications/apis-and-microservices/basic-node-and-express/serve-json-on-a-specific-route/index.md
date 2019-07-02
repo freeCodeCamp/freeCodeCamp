@@ -14,5 +14,3 @@ app.get("/json", (req, res) => {
     });
 });
 ```
-
-[Help our community expand these hints and guides.](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/basic-node-and-express/serve-json-on-a-specific-route/index.md)

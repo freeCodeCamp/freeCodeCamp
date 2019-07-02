@@ -10,7 +10,7 @@ Given the endpoint URL, `/name?first=firstname&last=lastname`, we can extract th
 ### Solution
 
 ```javascript
-app.post("/name", function(req, res) {
+app.get("/name", function(req, res) {
   var firstName = req.query.first;
   var lastName = req.query.last;
   // OR you can destructure and rename the keys
@@ -18,8 +18,6 @@ app.post("/name", function(req, res) {
   // Use template literals to form a formatted string
   res.json({
     name: `${firstName} ${lastName}`
-  });s
+  });
 });
 ```
-
-[Help our community expand these hints and guides.](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/basic-node-and-express/get-query-parameter-input-from-the-client/index.md)

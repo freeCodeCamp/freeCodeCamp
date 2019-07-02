@@ -20,5 +20,3 @@ app.use(express.static(__dirname + "/public"));
 // Assets at the /assets route
 app.use("/assets", express.static(__dirname + "/public"));
 ```
-
-[Help our community expand these hints and guides.](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/basic-node-and-express/serve-static-assets/index.md)

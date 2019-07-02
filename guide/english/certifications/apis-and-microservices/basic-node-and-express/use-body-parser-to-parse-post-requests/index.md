@@ -40,5 +40,3 @@ app.use(bodyParser.json());
 The data received in the request is available in the `req.body` object.
 
 Do not forget that all these statements need to go above any routes that might have been defined.
-
-[Help our community expand these hints and guides.](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/basic-node-and-express/use-body-parser-to-parse-post-requests/index.md)

@@ -15,5 +15,3 @@ The `package.json` file in the root directory of your project, among other thing
 ```
 
 There might be additional peer dependencies or development dependencies that your project might need in case it has to be built or compiled due to a number of reasons currently outside the scope of this challenge. They are listed under the `peerDependecies` and `devDependencies` respectively.
-
-[Help our community expand it.](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/managing-packages-with-npm/expand-your-project-with-external-packages-from-npm/index.md)
