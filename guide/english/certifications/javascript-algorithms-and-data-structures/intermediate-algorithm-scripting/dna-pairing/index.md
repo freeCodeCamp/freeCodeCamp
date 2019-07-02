@@ -81,7 +81,6 @@ This problem does not involve rearranging the input into different combinations 
     // test here
     pairElement("GCG");
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -112,7 +111,6 @@ This problem does not involve rearranging the input into different combinations 
   //test here
   pairElement("GCG");
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/ThoroughSphericalComputeranimation' target='_blank' rel='nofollow'>Run Code</a>
 
 ## Code Explanation:
 

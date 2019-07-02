@@ -3,8 +3,55 @@ title: Run Functional Tests using a Headless Browser II
 ---
 ## Run Functional Tests using a Headless Browser II
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/run-functional-tests-using-a-headless-browser-ii/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, open the file "tests/2_functional_tests.js" and locate the browser based tests.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Change the Browser.site link to the current URL of your project if you are completing this challenge online. If you are using a local development environment, replace the line with ```Browser.localhost('example.com', (process.env.PORT || 3000));```.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Find test 'submit "surname" : "Vespucci" - write your e2e test...' and check the challenge page for the expected values in order to pass this challenge.
+
+## Hint 1
+
+Using the example above, look at how the form is being submitted, and how the assertions are making comparisons between the expected and actual values of the response.
+
+## Hint 2
+
+Fill the broswer with a surname of Vespucci, then use pressButton to submit.
+
+## Hint 3
+
+In the callback for pressButton, all assertions should be browser.assert in order to correctly pass.
+
+## Hint 4
+
+Replace the `assert.fail()` statement with your own tests based on the instructions in the comments. Check the example above for syntax if you get stuck.
+
+## Hint 4
+
+Check the tests on the challenge page or the instructions in the comments for expected values.
+
+## Hint 5
+
+Make sure your `done()` call is within the pressButton callback.
+
+## Solution
+
+```js
+test('submit "surname" : "Vespucci" - write your e2e test...', function(done) {
+  // fill the form, and submit.
+  browser
+    .fill('surname', 'Vespucci')
+    .pressButton('submit', function(){
+        
+      // assert that status is OK 200
+      browser.assert.success();
+      // assert that the text inside the element 'span#name' is 'Amerigo'
+      browser.assert.text('span#name', 'Amerigo');
+      // assert that the text inside the element 'span#surname' is 'Vespucci'
+      browser.assert.text('span#surname', 'Vespucci');
+      // assert that the element(s) 'span#dates' exist and their count is 1
+      browser.assert.element('span#dates', 1);
+            
+      done();
+    });
+});
+```

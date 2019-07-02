@@ -63,7 +63,6 @@ You will have to check if the current value is already on the array to be return
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnM/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -120,7 +119,6 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnO/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -152,7 +150,6 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnN/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -181,7 +178,6 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CcWk/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

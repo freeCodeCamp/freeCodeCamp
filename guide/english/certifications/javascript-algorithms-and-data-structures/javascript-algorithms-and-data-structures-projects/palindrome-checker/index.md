@@ -49,7 +49,6 @@ The `Array.prototype.split` and `Array.prototype.join` methods can be of use her
              str.replace(/[\W_]/g, '').toLowerCase().split('').reverse().join('');
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/2' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -79,7 +78,6 @@ The `Array.prototype.split` and `Array.prototype.join` methods can be of use her
       return true;
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/3' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -125,7 +123,6 @@ The `Array.prototype.split` and `Array.prototype.join` methods can be of use her
 
     }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/4' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

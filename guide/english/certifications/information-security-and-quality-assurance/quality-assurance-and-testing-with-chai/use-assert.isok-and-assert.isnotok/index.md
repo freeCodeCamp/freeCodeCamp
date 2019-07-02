@@ -3,8 +3,21 @@ title: Use Assert.isOK and Assert.isNotOK
 ---
 ## Use Assert.isOK and Assert.isNotOK
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/use-assert.isok-and-assert.isnotok/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js".
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 3 */``` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+The lines in the test should be changed from `assert.fail()` to either `assert.isOk()` or `assert.isNotOk()`.
+
+## Solution
+```js
+/** 3 - Use assert.isOk() or assert.isNotOk() to make the tests pass. **/
+// .isOk(truthy) and .isNotOk(falsey) will pass
+test('#isOk, #isNotOk', function(){
+  assert.isNotOk( null, 'null is falsey');
+  assert.isOk( "I'm truthy", 'a string is truthy');
+  assert.isOk( true, 'true is truthy' );
+});
+```

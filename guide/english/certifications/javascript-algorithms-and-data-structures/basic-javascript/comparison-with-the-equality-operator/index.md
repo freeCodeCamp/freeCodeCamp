@@ -30,7 +30,6 @@ function testEqual(val) {
 testEqual(10);
 
 ```
-· [Run code at repl.it](https://repl.it/@AdrianSkar/Basic-JS-Equality-operator)
 
 ### Code explanation
 The function first evaluates `if` the condition `(val == 12)` evaluates to `true`. If it does, it returns the statement between the curly braces ("Equal"). If it doesn't, it returns the next `return` statement outside them ("Not equal"). 

@@ -98,7 +98,6 @@ for (var i = 0; i < contacts.length; i++){
 return "No such contact";
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Profile-lookup).
 
 ### Code explanation
 This works as the last example but uses the `in` operator to look for `prop` instead of the `hasOwnProperty()` method.
