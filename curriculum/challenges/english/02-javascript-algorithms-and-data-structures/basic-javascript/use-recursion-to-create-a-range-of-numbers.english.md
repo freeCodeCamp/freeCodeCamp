@@ -7,7 +7,7 @@ challengeType: 1
 ## Description
 <section id='description'>
 
-In a [previous challenge](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion) you learned how to use recursion to replace a for loop. Now, let's look a more complex function that returns an array of consecutive integers starting with <code>1</code> through the number passed to the function.
+In a [previous challenge](/learn/javascript-algorithms-and-data-structures/basic-javascript/replace-loops-using-recursion), you learned how to use recursion to replace a for loop. Now, let's look at a more complex function that returns an array of consecutive integers starting with <code>1</code> through the number passed to the function.
 
 As mentioned in the previous challenge, there will be a <dfn>base case</dfn>.  The base case tells the recursive function when it no longer needs to call itself.  It is a simple case where the return value is already known. There will also be a <dfn>recursive call</dfn> which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.
 
