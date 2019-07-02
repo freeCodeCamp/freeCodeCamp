@@ -183,7 +183,7 @@ Keep in mind if you want to use additional services, you'll have to acquire your
 
 *Tip for Windows Home user:*\
 In this case, you have to use Docker Toolbox.
-Your forked freeCodeCamp folder must then be located in the folder `C:\Users\user_name\`. 
+Your forked freeCodeCamp folder must be located in the folder `C:\Users\user_name\`. 
 If you don't want docker folders to be stored on your `C:` drive, you can move them to your `D:` drive (for example).
 - Create two folders on `D:` drive (with powershell or cmd)
 ```powershell
@@ -195,7 +195,7 @@ mkdir docker-projects
 cmd mklink .docker /J D:\.docker
 cmd mklink docker-projects /J D:\docker-projects
 ```
-Cut and paste your forked freeCodeCamp folder in the docker-projects folder and, before runnig the commands in the next steps, go from this former directory
+Cut and paste your forked freeCodeCamp folder in the docker-projects folder and, before runnig the commands in the next steps, place you in this former directory
 ```bash
 # Launch first Docker Quickstart Terminal as admin, and wait...
 cd ~
@@ -292,7 +292,7 @@ Congratulations  🎉🎉🎉! You now have a copy of freeCodeCamp's entire lear
 ---
 
 *Tip for Windows Home user (using Docker Toolbox):*\
-To view the app in your browser, go to the adress indicated:
+To view the app in your browser, go to the address indicated:
 ```shell
 You can now view @freecodecamp/client in the browser.
 client_1        |
