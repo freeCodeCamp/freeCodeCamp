@@ -40,4 +40,4 @@ The `indexOf()` method checks the string from left to right. The index of the fi
 ```
 
 ### More Information:
-- MDN documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf' target='_blank' rel='nofollow'>MDN</a>
+- [String.prototype.indexOf() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
