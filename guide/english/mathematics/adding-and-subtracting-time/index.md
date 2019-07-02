@@ -65,8 +65,11 @@ The operation can now be performed:
 
 Hence subtracting 1 hour 15 minutes and 30 seconds from 4 hours would result in 2 hours 44 minutes and 30 seconds.
 
-See the following youtube video intended for kids which cover the basics in a fun way.
-https://www.youtube.com/watch?v=HrxZWNu72WI
+
+## More information:
+
+[YouTube video](https://www.youtube.com/watch?v=HrxZWNu72WI
+) - intended for kids which cover the basics in a fun way.
 
 
 
