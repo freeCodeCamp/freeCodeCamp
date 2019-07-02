@@ -24,8 +24,5 @@ If you have trouble formatting the string correctly, one way to do it looks like
   var string = req.method + ' ' + req.path + ' - ' + req.ip;
 ```
 
-
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/basic-node-and-express/implement-a-root-level-request-logger-middleware/index.md' target='_blank' rel='nofollow'>Help our community expand these hints and guides</a>.
-
 ### Resources
 - [Express Middleware](https://expressjs.com/en/guide/using-middleware.html)
