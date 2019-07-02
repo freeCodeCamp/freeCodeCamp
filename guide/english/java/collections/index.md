@@ -123,6 +123,53 @@ intList.removeFirst(); // Removes first element of the list
 intList.removeLast(); // Removes last element of the list
 ```
 
+## The Stack Class
+
+Stack class, as previously mentioned classes, implements Collection interface and extends Vector class and contains five methods that treat Vector as Stack. Stack is data structure which applies principle Last In First Out (LIFO) and contains following methods:
+
+```java
+
+T void pop(); // 'T' represents type which is being returned as the last elemented is removed from this stack 
+
+T void peek(); // 'T' represents type which is being returned and last elemented is not being removed from this stack
+
+T push(T element); // 'T' represents type which is being returned and last elemented is being added on this stack
+
+boolean empty(); // returns true (if this stack is empty) of false (if this stack isn't empty)
+
+int search(Object o) // returns position of element located on this stack 
+```
+
+**Create a Stack**
+
+Stack class is being created using following snippet of code:
+
+```java
+Stack<Integer> stackObject = new Stack<>(); // creates stack which recieves elements of Integer/int type 
+```
+
+**Add elements on Stack**
+
+```java
+
+stackObject.push(5); 
+stackObject.push(2);
+stackObject.push(36);
+stackObject.push(4);
+
+```
+
+**Retrieve element from Stack**
+
+```java
+
+int lastElemement = stackObject.pop(); // retrieves last element pushed on top of 'stackObject' stack and REMOVES it
+System.out.println(lastElemement); // prints retrieved element which is 4
+
+lastElements = stackObject.peek(); // retrieves last element pushed on top of 'stackObject' stack and DOES NOT REMOVE it
+System.out.println(lastElemement); // prints retrieved element which is 36
+```
+
 Note: All the above mentioned methods for removing and fetching an element return `NoSuchElementException` on an empty list.
 
 #### More Information
