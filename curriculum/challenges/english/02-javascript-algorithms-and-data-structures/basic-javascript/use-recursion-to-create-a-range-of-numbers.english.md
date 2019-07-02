@@ -31,7 +31,7 @@ At first this is counterintuitive since the value of `n` <em>decreases</em>, but
 
 ## Instructions
 <section id='instructions'>
-We have defined a function named <code>rangeOfNumbers</code> with two parameters. The function should return an array of integers which begins a starting number represented by the <code>startNum</code> parameter and ends with an ending number represented by the <code>endNum</code> parameter.  The starting number will always be less than or equal to the ending number.  Your function must use recursion by calling itself and not use loops of any kind.
+We have defined a function named <code>rangeOfNumbers</code> with two parameters. The function should return an array of integers which begins with a number represented by the <code>startNum</code> parameter and ends with a number represented by the <code>endNum</code> parameter.  The starting number will always be less than or equal to the ending number.  Your function must use recursion by calling itself and not use loops of any kind.
 </section>
 
 ## Tests
