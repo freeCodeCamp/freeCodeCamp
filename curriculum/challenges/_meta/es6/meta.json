@@ -118,8 +118,6 @@
     ],
     [
       "5cdafbb0291309899753167f",
-<<<<<<< HEAD
-<<<<<<< HEAD
       "Create a JavaScript Promise"
     ],
     [
@@ -133,28 +131,6 @@
     [
       "5cdafbe72913098997531682",
       "Handle a Rejected Promise with catch"
-=======
-      "Create a Javascript Promise"
-=======
-      "Create a JavaScript Promise"
->>>>>>> 950f80a92... Update curriculum/challenges/_meta/es6/meta.json
-    ],
-    [
-      "5cdafbc32913098997531680",
-      "Complete a Promise with Resolve and Reject"
-    ],
-    [
-      "5cdafbd72913098997531681",
-      "Handle a Fulfilled Promise with then"
-    ],
-    [
-      "5cdafbe72913098997531682",
-<<<<<<< HEAD
-      "Handle a Rejected Promise with .catch"
->>>>>>> 5aba19817... feat/new-lessons-on-js-promises
-=======
-      "Handle a Rejected Promise with catch"
->>>>>>> 8dec9d7c7... fix/add-tests-rename-files
     ]
   ],
   "helpRoom": "Help",
