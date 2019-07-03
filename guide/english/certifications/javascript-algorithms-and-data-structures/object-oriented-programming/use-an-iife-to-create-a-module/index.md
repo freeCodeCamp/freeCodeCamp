@@ -45,3 +45,21 @@ let funModule = (function() {
 })();
 
 ```
+
+### Solution 2
+
+If using ES6, the same can be rewritten as:
+
+```javascript
+let funModule = ( () => {
+  return {
+    isCuteMixin: (obj) => {
+      obj.isCute = () => { true; };
+    },
+    singMixin: (obj) => {
+      obj.sing = () => { console.log("Singing to an awesome tune"); }
+    }
+
+  }
+})();
+```
