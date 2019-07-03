@@ -1,8 +1,8 @@
 ---
 title: Getters & Setters
-localeTitle: 吸气者和二传手
+localeTitle: 讀取器和設定器
 ---
-# 吸气者和二传手
+# 讀取器和設定器
 
 Getters和Setter用于有效保护您的数据，尤其是在创建类时。对于每个实例变量，getter方法返回其值，而setter方法设置或更新其值。吸气剂和固定剂也分别称为存取器和变换器。
 
@@ -16,12 +16,12 @@ public class Vehicle {
  
   // Getter 
   public String getColor() { 
-  return color; 
+    return color; 
   } 
  
   // Setter 
   public void setColor(String c) { 
-  this.color = c; 
+     this.color = c; 
   } 
  } 
 ```
@@ -44,7 +44,7 @@ public stativ void main(String[] args) {
 
 Getters和setter允许控制值。在实际设置值之前，您可以在setter中验证给定值。
 
-## 为什么吸气和安装？
+## 为什么讀取和設定？
 
 通过使用getter和setter，程序员可以控制如何访问和更新其重要变量，例如更改指定范围内变量的值。考虑以下setter方法的代码：
 

@@ -47,7 +47,7 @@ Ambos se parecen, pero el tiempo de ejecución es diferente. El código de Pytho
 
 Node.js toma menos tiempo debido a su modelo de E/S no bloqueante. La primera llamada a ```my_io_task()``` inicia el temporizador y lo deja allí. No espera la respuesta de la función, en su lugar, pasa a llamar al segundo ```my_io_task()```, inicia el temporizador y lo deja allí.
 
-Cuando el temporizador de la completa ejecución de tomar 5 segundos, se llama a la función y las impresiones ```done``` en la consola. Dado que ambos temporizadores se inician juntos, se completan juntos y, por lo tanto, toman la misma cantidad de tiempo.
+Cuando el temporizador completa su ejecución tomando 5 segundos, se llama a la función e imprime `done` en la consola. Dado que ambos temporizadores se inician juntos, se completan juntos y, por lo tanto, toman la misma cantidad de tiempo.
 
 #### Por qué usar NodeJS:
 1. Genial para principiantes. JavaScript es un lenguaje amigable para principiantes.

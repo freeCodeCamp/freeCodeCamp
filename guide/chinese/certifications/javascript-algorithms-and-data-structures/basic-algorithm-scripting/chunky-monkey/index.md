@@ -72,7 +72,6 @@ localeTitle: 矮胖的猴子
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/24)
 
 ### 代码说明：
 
@@ -101,7 +100,6 @@ localeTitle: 矮胖的猴子
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/Cj9x/3)
 
 ### 代码说明：
 
@@ -134,7 +132,6 @@ localeTitle: 矮胖的猴子
     chunkArrayInGroups(["a", "b", "c", "d"], 2); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/26)
 
 ### 代码说明：
 
@@ -169,7 +166,6 @@ localeTitle: 矮胖的猴子
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/579)
 
 ### 代码说明：
 
@@ -198,7 +194,6 @@ localeTitle: 矮胖的猴子
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/579)
 
 ### 代码说明：
 

@@ -10,7 +10,7 @@ localeTitle: Оператор Null-coalescing
 
 Поскольку `name` равно `null` , `clientName` будет присвоено значение «John Doe».
 
-```cs
+```csharp
 string name = null; 
  
  string clientName = name ?? "John Doe"; 
@@ -18,7 +18,7 @@ string name = null;
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > John Doe 
 ```
 
@@ -26,7 +26,7 @@ string name = null;
 
 Поскольку `name` не равно `null` , `clientName` будет присвоено значение `name` , которое является «Jane Smith».
 
-```cs
+```csharp
 string name = "Jane Smith"; 
  
  string clientName = name ?? "John Doe"; 
@@ -34,7 +34,7 @@ string name = "Jane Smith";
  Console.WriteLine(clientName); 
 ```
 
-```cs
+```csharp
 > Jane Smith 
 ```
 
@@ -42,7 +42,7 @@ string name = "Jane Smith";
 
 Вы можете использовать оператор `if...else` для проверки наличия `null` и назначения другого значения.
 
-```cs
+```csharp
 string clientName; 
  
  if (name != null) 
@@ -53,7 +53,7 @@ string clientName;
 
 Однако это может быть значительно упрощено с помощью оператора нулевой коалесценции.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 
@@ -61,13 +61,13 @@ string clientName = name ?? "John Doe";
 
 Также можно использовать условный оператор для проверки наличия `null` и присвоения другого значения.
 
-```cs
+```csharp
 string clientName = name != null ? name : "John Doe"; 
 ```
 
 Опять же, это можно упростить с помощью оператора нуль-коалесценции.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe"; 
 ```
 

@@ -1,8 +1,8 @@
 ---
 title: Bootstrap
-localeTitle: Oreja
+localeTitle: Bootstrap
 ---
-## Oreja
+## Bootstrap
 
 Bootstrap es un framework de front-end popular para el desarrollo web. Contiene componentes pre-construidos y elementos de diseño para estilizar el contenido HTML. Los navegadores modernos como Chrome, Firefox, Opera, Safari e Internet Explorer son compatibles con Bootstrap.
 
@@ -10,15 +10,15 @@ Bootstrap incluye un sistema de cuadrícula sensible para diferentes diseños. E
 
 #### Historial de versiones
 
-Twitter originalmente desarrolló el marco de Bootstrap como una herramienta interna. Lo lanzaron como un proyecto de código abierto en agosto de 2011.
+Twitter originalmente desarrolló el framework de Bootstrap como una herramienta interna. Lo lanzaron como un proyecto de código abierto en agosto de 2011.
 
 Bootstrap 2 se lanzó en enero de 2012. Una de las características principales fue la introducción del sistema de cuadrícula sensible de 12 columnas. Bootstrap 3 apareció en agosto de 2013, cambiando a un diseño plano y un enfoque móvil. Bootstrap 4 está disponible en versión beta a partir de agosto de 2017, y ahora incluye Sass y Flexbox.
 
 Bootstrap 4 estuvo en desarrollo durante dos años antes de lanzar algunas versiones beta durante 2017, mientras que la primera versión estable salió en enero de 2018. Algunos cambios notables incluyen:
 
-*   Movido de Less a Sass;
-*   Se trasladó a Flexbox y se mejoró el sistema de red;
-*   Tarjetas agregadas (reemplazo de pozos, miniaturas y paneles);
+*   Migración de Less a Sass;
+*   Se migró a Flexbox y se mejoró el sistema de red;
+*   Tarjetas agregadas (reemplazo de wells, miniaturas y paneles);
 *   ¡Y mucho más!
 
 En el momento de escribir este artículo, la última versión de Bootstrap es \[4.1.3\] (http://blog.getbootstrap.com/2018/07/24/bootstrap-4-1-3/ ). Si desea mantenerse al día con cualquier noticia de anuncios, sígalos [aquí](http://blog.getbootstrap.com/) .
@@ -75,8 +75,13 @@ Bootstrap viene con clases de cuadrícula predefinidas para su uso en el marcado
 
 Bootstrap tiene una documentación exhaustiva con muchos [ejemplos](https://getbootstrap.com/docs/4.0/examples/) y una [plantilla HTML para comenzar](https://getbootstrap.com/docs/4.0/getting-started/introduction/) (esta plantilla solo tiene script incluido; no contiene una configuración del sistema de cuadrícula si eso es lo que está buscando).
 
-Además, puedes encontrar tanto [gratuitos](https://bootswatch.com/) como de [pago.](https://themes.getbootstrap.com/) Temas que se basan en el marco de Bootstrap para proporcionar un aspecto más personalizado y elegante.
+Además, puedes encontrar tanto [gratuitos](https://bootswatch.com/) como de [pago.](https://themes.getbootstrap.com/) Temas que se basan en el framework de Bootstrap para proporcionar un aspecto más personalizado y elegante.
 
 #### Recursos Bootstrap:
 
-[Blog oficial de Bootstrap](http://blog.getbootstrap.com/) [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/) [Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/) [Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint) [Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/) [Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)
+- [Blog oficial de Bootstrap](http://blog.getbootstrap.com/)
+- [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/)
+- [Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/)
+- [Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint)
+- [Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/)
+- [Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)

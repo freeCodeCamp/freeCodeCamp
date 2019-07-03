@@ -27,7 +27,6 @@ function randomRange(myMin, myMax) {
 
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Random-whole-numbers-within-range).
 
 ### Code explanation
 - `Math.random()` generates our random number between 0 and ≈ 0.9.

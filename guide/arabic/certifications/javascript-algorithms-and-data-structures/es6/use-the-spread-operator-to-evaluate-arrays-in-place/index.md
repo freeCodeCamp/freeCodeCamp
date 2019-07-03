@@ -29,17 +29,20 @@ localeTitle: استخدم Spread Operator لتقييم Arrays في - مكان
 
 ### 3 أمثلة سريعة
 
- `let numbers = [-12, 160, 0, -3, 51]; 
- let minNum = Math.min.apply(null, numbers); 
- console.log(minNum);//-12 
-` 
+```javascript
+let numbers = [-12, 160, 0, -3, 51];
+let minNum = Math.min.apply(null, numbers);
+console.log(minNum);//-12
+``` 
 
- `let numbers = [-12, 160, 0, -3, 51]; 
- let minNum = Math.min(numbers); 
- console.log(minNum);//NaN 
-` 
+```javascript
+let numbers = [-12, 160, 0, -3, 51];
+let minNum = Math.min(numbers);
+console.log(minNum);//NaN
+``` 
 
- `let numbers = [-12, 160, 0, -3, 51]; 
- let minNum = Math.min(...numbers); 
- console.log(minNum);//-12 
-`
+```javascript
+let numbers = [-12, 160, 0, -3, 51];
+let minNum = Math.min(...numbers);
+console.log(minNum);//-12
+```

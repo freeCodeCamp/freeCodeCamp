@@ -6,27 +6,28 @@ videoUrl: ''
 localeTitle: Criar uma consulta de mídia
 ---
 
-## Description
-<section id="description"> Consultas de mídia são uma nova técnica introduzida no CSS3 que altera a apresentação do conteúdo com base em diferentes tamanhos de viewport. A janela de visualização é uma área visível de um usuário de uma página da Web e é diferente dependendo do dispositivo usado para acessar o site. Consultas de mídia consistem em um tipo de mídia e, se esse tipo de mídia corresponder ao tipo de dispositivo em que o documento é exibido, os estilos serão aplicados. Você pode ter tantos seletores e estilos dentro de sua consulta de mídia quanto desejar. Veja um exemplo de uma consulta de mídia que retorna o conteúdo quando a largura do dispositivo é menor ou igual a 100px: <code>@media (max-width: 100px) { /* CSS Rules */ }</code> e a consulta de mídia a seguir retorna o conteúdo quando o a altura do dispositivo é maior ou igual a 350px: @media <code>@media (min-height: 350px) { /* CSS Rules */ }</code> Lembre-se, o CSS dentro da consulta de mídia é aplicado somente se o tipo de mídia corresponder ao do dispositivo que está sendo usado. </section>
+## Descrição
+<section id="description"> Media Queries são uma nova técnica introduzida no CSS3 que altera a apresentação do conteúdo com base em diferentes tamanhos de viewport(telas). A janela de visualização é uma área visível de um usuário de uma página da Web e é diferente dependendo do dispositivo usado para acessar o site. Media queries consistem em um tipo de mídia e, se esse tipo de mídia corresponder ao tipo de dispositivo em que o documento é exibido, os estilos serão aplicados. Você pode ter tantos seletores e estilos dentro de sua Media querie quanto desejar. Veja um exemplo de uma Media querie que retorna o conteúdo quando a largura do dispositivo é menor ou igual a 100px: <code>@media (max-width: 100px) { /* CSS Rules */ }</code> e a consulta de mídia a seguir retorna o conteúdo quando o a altura do dispositivo é maior ou igual a 350px: @media <code>@media (min-height: 350px) { /* CSS Rules */ }</code> Lembre-se, o CSS dentro da Media querie é aplicado somente se o tipo de mídia corresponder ao do dispositivo que está sendo usado. </section>
 
-## Instructions
-<section id="instructions"> Adicione uma consulta de mídia para que a tag <code>p</code> tenha um <code>font-size</code> de <code>font-size</code> de 10px quando a altura do dispositivo for menor ou igual a 800px. </section>
+## Instruções
+<section id="instructions"> Adicione uma consulta de mídia para que a tag <code>p</code> tenha um <code>font-size</code> de 10px quando a altura do dispositivo for menor ou igual a 800px. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Seu elemento <code>p</code> deve ter o <code>font-size</code> da <code>font-size</code> de 10px quando a <code>height</code> do dispositivo for menor ou igual a 800px.
-    testString: 'assert($("p").css("font-size") == "10px", "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");'
   - text: Declare uma consulta <code>@media</code> para dispositivos com uma <code>height</code> menor ou igual a 800px.
-    testString: 'assert(code.match(/@media\s*?\(\s*?max-height\s*?:\s*?800px\s*?\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");'
-
+    testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\)/g), "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.");
+  - text: Seu elemento <code>p</code> deve ter o <code>font-size</code> da <code>font-size</code> de 10px quando a <code>height</code> do dispositivo for menor ou igual a 800px.
+    testString: assert($("style").text().replace(/\s/g ,'').match(/@media\(max-height:800px\){p{font-size:10px;?}}/g), "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.");
+  - text: Seu elemento <code>p</code> deve ter o inicial<code>font-size</code> da <code>font-size</code> de 20px quando a <code>height</code> do dispositivo for maior a 800px.
+    testString: assert($("style").text().replace(/\s/g ,'').replace(/@media.*}/g, '').match(/p{font-size:20px;?}/g), “Your <code>p</code> element should have an initial <code>font-size</code> of 20px when the device <code>height</code> is more than 800px.");
 ```
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -37,7 +38,7 @@ tests:
     font-size: 20px;
   }
 
-  /* Add media query below */
+  /* Adicione a media querie abaixo */
 
 </style>
 
@@ -51,10 +52,10 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
-// solution required
+// Solução necessária
 ```
 </section>

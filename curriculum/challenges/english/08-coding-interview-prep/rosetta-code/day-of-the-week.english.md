@@ -6,14 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).</p>
-<p>Task:</p>
-<p>Write a function that takes a start year and an end year and return an array of all the years where the 25th of December will be a Sunday.</p>
+A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes a start year and an end year and return an array of all the years where the 25th of December will be a Sunday.
 </section>
 
 ## Tests
@@ -40,7 +38,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function findXmasSunday (start, end) {
+function findXmasSunday(start, end) {
   // Good luck!
   return true;
 }
@@ -66,7 +64,7 @@ const secondSolution = [2011, 2016, 2022, 2033, 2039, 2044, 2050, 2061, 2067, 20
 
 
 ```js
-function findXmasSunday (start, end) {
+function findXmasSunday(start, end) {
   const xmasSunday = [];
   for (let year = start; year <= end; year++) {
     const xmas = new Date(year, 11, 25);

@@ -6,8 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-Task:
-<p>Find the top N ranked data in each group, where N  is provided as a parameter. Name of the rank and the group are also provided as parameter.</p>
+Find the top <code>n</code> ranked data in each group, where <code>n</code> is provided as a parameter. Name of the rank and the group are also provided as parameter.
 Given the following data:
 <pre>
 [
@@ -119,7 +118,6 @@ const testData2 = [
 const res2 = topRankPerGroup(1, testData2, 'genre', 'rating');
 const res3 = topRankPerGroup(2, testData2, 'genre', 'rating');
 
-//console.log(JSON.stringify(topRankPerGroup(10, testData1)));
 ```
 
 </div>
