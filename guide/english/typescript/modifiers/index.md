@@ -2,13 +2,13 @@
 title : Modifiers
 ---
 
-# TypeScript's Modifiers
+# Modifiers
 
-Modifiers are can be use to limits the access of the class members scope. TypeScript has `public`,
+Modifiers can be used to limit the access of the class members scope. TypeScript has `public`,
 `private` and `protected` modifier.
 
 ### public
-Usually we do not need to mark member of the class `public` in TypeScript, each member is `public` by default.
+In TypeScript, you do not need to mark a member of a class `public`, each member is `public` by default.
 
 ```typescript
 class Tree {
@@ -26,8 +26,7 @@ class Tree {
 ```
 
 ### private
-Sometimes we've to rigid the class member scope from outside, to do this mark member of the class `private`. In TypeScript,
-`private` properties couldn't access from outside the class scope.
+Sometimes you want to hide the member scope from outside classes. To do this, mark member of the class `private`. In TypeScript, `private` properties can't be accessed from outside the class scope.
 
 ```typescript
 class Tree {
@@ -44,8 +43,7 @@ class Tree {
 ```
 
 ### protected
-The `protected` modifier acts same like `private` modifier with the exception that members declared protected can
-also be accessed within deriving classes. For example,
+The `protected` modifier acts like the `private` modifier with the exception that members declared `protected` can also be accessed within deriving classes. For example:
 
 ```typescript
 class Animal {
@@ -70,8 +68,7 @@ let lucy = new Cat("Lucy","White");
 let misty = new Animal("Misty"); // Error: The 'Animal' constructor is protected;
 ```
 ### readonly
-We can make members of the class readonly by using the `readonly` keyword.Readonly acts same like `const` properties must
-be initialized at their declaration or in the constructor.
+We can make members of the class read-only by using the `readonly` keyword. Read-only properties must be initialized at their declaration or in the constructor.
 
 ```typescript
 class SuperHero {
