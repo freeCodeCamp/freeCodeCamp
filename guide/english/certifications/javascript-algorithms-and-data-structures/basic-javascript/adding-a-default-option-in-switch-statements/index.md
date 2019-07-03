@@ -11,7 +11,7 @@ title: Adding a Default Option in Switch Statements
 function switchOfStuff(val) {
   var answer = "";
   
-  switch(val){
+  switch (val){
     case 'a': answer = 'apple'; 
     break;
     case 'b': answer = 'bird'; 

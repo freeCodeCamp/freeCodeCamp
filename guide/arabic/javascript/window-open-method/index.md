@@ -21,13 +21,14 @@ localeTitle: نافذة طريقة مفتوحة
 
 ## مثال
 
- `var windowObjectReference; 
- var strWindowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes"; 
- 
- function openRequestedPopup() { 
-  windowObjectReference = window.open("http://www.cnn.com/", "CNN_WindowName", strWindowFeatures); 
- } 
-` 
+```javascript
+var windowObjectReference;
+var strWindowFeatures = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
+
+function openRequestedPopup() {
+  windowObjectReference = window.open("http://www.cnn.com/", "CNN_WindowName", strWindowFeatures);
+}
+``` 
 
 إذا كانت هناك نافذة تحمل الاسم بالفعل ، فسيتم تحميل strURL في النافذة الحالية. في هذه الحالة ، تكون قيمة الإرجاع للطريقة هي النافذة الموجودة ويتم تجاهل strWindowFeatures.
 

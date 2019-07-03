@@ -229,10 +229,8 @@ echo "\n\t" . $jack->beStubborn();
 echo "\n\t" . $jack->notPutToiletPaper();
 ```
  
-Now, we don’t have to set Jack’s name, age and height separately and print them anymore. Whenever we create Jack object, we just specify his properties as the parameters and they will get printed automatically by the help of the constructor. We can also put his favorite sports and drinks in the parameter if we want by
+Now, we don’t have to set Jack’s name, age and height separately and print them anymore. Whenever we create Jack object, we just specify his properties as the parameters and they will get printed automatically by the help of the constructor. We can also put his favorite sports and drinks in the parameter if we want by specifying them as parameters while creating the object and putting the echo lines inside the constructor.
 
-specifying them as parameters while creating the object and
-putting the echo lines inside the constructor.
 You can visit here for more information on PHP implementation of constructors. Our OOP journey has been slow but steady.
 
 
@@ -373,3 +371,25 @@ echo json_encode($jack->getFavDrinks());
 ```
  
 This way of implementing and using class methods to retrieve and update class properties is called encapsulation in Object Oriented Programming. We can also set visibility for class methods just like how we did it for class properties.
+
+### MAGIC METHODS
+
+There are some special methods that Php uses for its own purpose.
+
+Suppose you want to threat an object as a string. You can do that by overriding `__toString()` method into related class:
+
+```
+<?php
+
+class Foo {
+    public function __toString() {
+        return 'foo';
+    }
+}
+
+$foo = new Foo();
+echo $foo;
+// "foo"
+```
+
+There are many more other [magic methods](http://php.net/manual/en/language.oop5.magic.php).

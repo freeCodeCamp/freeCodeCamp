@@ -10,3 +10,4 @@ It was founded in March 2006. Parent organization is Rackspace.
  #### More Information:
  <!-- Please add any articles you think might be helpful to read before writing the article -->
   * <a href='https://en.wikipedia.org/wiki/Rackspace_Cloud' target='_blank' rel='nofollow'>Wikipedia</a>
+  * <a href='https://www.rackspace.com/cloud' target='_blank' rel='nofollow'>Rackspace</a>

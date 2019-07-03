@@ -85,7 +85,6 @@ In the event of *odd number of sets* the symmetric difference will include ident
     }
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/C4II/0" target="_blank" rel="nofollow">Run Code</a>
 
 ### Code Explanation: ###
 
@@ -140,7 +139,6 @@ In the event of *odd number of sets* the symmetric difference will include ident
     sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CLoc/0" target="_blank" rel="nofollow">Run Code</a>
 
 ### Code Explanation: ###
 
@@ -175,7 +173,6 @@ In the event of *odd number of sets* the symmetric difference will include ident
     sym([1, 2, 3], [5, 2, 1, 4]);
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/@ashenm/Symmetric-Difference" target="_blank" rel="nofollow">Run Code</a>
 
 ### Code Explanation: ###
 
@@ -193,6 +190,3 @@ In the event of *odd number of sets* the symmetric difference will include ident
 * ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 * Add an explanation of your solution.
 * Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-* Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href="http://forum.freecodecamp.com/t/algorithm-article-template/14272" target="_blank" rel="nofollow">**`Wiki Challenge Solution Template`**</a> for reference.

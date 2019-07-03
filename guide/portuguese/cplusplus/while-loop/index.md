@@ -10,7 +10,7 @@ Um ponto-chave do loop while é que o loop pode não ser executado. Quando a con
 
 Exemplo:
 
-```C++
+```cpp
 #include <iostream>
  using namespace std;
 

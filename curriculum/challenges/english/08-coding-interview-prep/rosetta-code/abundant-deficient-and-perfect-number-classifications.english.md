@@ -6,20 +6,23 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>These define three classifications of positive integers based on their <a href="http://rosettacode.org/wiki/Proper divisors" title="Proper divisors">proper divisors</a>.</p>
-<p>Let $P(n)$ be the sum of the proper divisors of n where proper divisors are all positive integers n other than n itself.</p>
-<p>If <code>P(n) < n</code> then n is classed as "deficient"</p>
-<p>If <code>P(n) === n</code> then n is classed as "perfect"</p>
-<p>If <code>P(n) > n</code> then n is classed as "abundant"</p>
-<p>Example:</p>
-<p>6 has proper divisors of 1, 2, and 3.</p>
-<p>1 + 2 + 3 = 6, so 6 is classed as a perfect number.</p>
-<p>Implement a function that calculates how many of the integers from 1 to 20,000 (inclusive) are in each of the three classes. Output the result as an array in the following format <code>[deficient, perfect, abundant]</code>.</p>
+These define three classifications of positive integers based on their <a href='https://rosettacode.org/wiki/Proper divisors' title='Proper divisors' target='_blank'>proper divisors</a>.
+Let $P(n)$ be the sum of the proper divisors of <code>n</code> where proper divisors are all positive integers <code>n</code> other than <code>n</code> itself.
+
+If <code>P(n) < n</code> then <code>n</code> is classed as <code>deficient</code>
+
+If <code>P(n) === n</code> then <code>n</code> is classed as <code>perfect</code>
+
+If <code>P(n) > n</code> then <code>n</code> is classed as <code>abundant</code>
+
+<strong>Example</strong>:
+<code>6</code> has proper divisors of <code>1</code>, <code>2</code>, and <code>3</code>.
+<code>1 + 2 + 3 = 6</code>, so <code>6</code> is classed as a perfect number.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Implement a function that calculates how many of the integers from <code>1</code> to <code>20,000</code> (inclusive) are in each of the three classes. Output the result as an array in the following format <code>[deficient, perfect, abundant]</code>.
 </section>
 
 ## Tests
@@ -46,7 +49,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function getDPA (num) {
+function getDPA(num) {
   // Good luck!
 }
 ```
@@ -70,7 +73,7 @@ const solution = [15043, 4, 4953];
 
 
 ```js
-function getDPA (num) {
+function getDPA(num) {
   const dpa = [1, 0, 0];
   for (let n = 2; n <= num; n += 1) {
     let ds = 1;

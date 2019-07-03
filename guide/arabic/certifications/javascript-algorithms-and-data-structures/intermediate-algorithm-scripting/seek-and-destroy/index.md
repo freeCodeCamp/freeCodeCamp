@@ -53,7 +53,6 @@ localeTitle: تسعى وتدمر
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/95)
 
 ### شرح الشفرة:
 
@@ -85,7 +84,6 @@ localeTitle: تسعى وتدمر
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/Ck2m/0)
 
 ### شرح الشفرة:
 
@@ -102,8 +100,9 @@ localeTitle: تسعى وتدمر
 
 ## الحل المتقدم للكود:
 
- `const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i)); 
-` 
+```javascript
+const destroyer = (arr, ...args) => arr.filter(i => !args.includes(i));
+``` 
 
 ### شرح الشفرة:
 

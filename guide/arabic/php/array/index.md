@@ -8,12 +8,13 @@ localeTitle: مجموعة مصفوفة
 
 هنا مثال:
 
- `<?php 
- // array without keys 
- $bikes = array("Suzuki","BMW","Yamaha"); 
- echo "I like " . $bikes[0] . ", " . $bikes[1] . " and " . $bikes[2] . "."; 
- ?> 
-` 
+```
+<?php
+// array without keys
+$bikes = array("Suzuki","BMW","Yamaha");
+echo "I like " . $bikes[0] . ", " . $bikes[1] . " and " . $bikes[2] . ".";
+?>
+``` 
 
 مجموعة PHP لديها العديد من الوظائف للعمل بها. هنا هو كل قائمة تم فرزها: [وظائف](https://www.w3schools.com/php/php_ref_array.asp)
 
@@ -23,13 +24,14 @@ localeTitle: مجموعة مصفوفة
 
 هذا مثال بسيط:
 
- `<?php 
- $array = array( 
-    "foo" => "bar", 
-    "bar" => "foo", 
- ); 
- 
- echo $array['bar']; 
-` 
+```
+<?php
+$array = array(
+    "foo" => "bar",
+    "bar" => "foo",
+);
+
+echo $array['bar'];
+``` 
 
 أتمنى لك يومًا سعيدًا وترميزًا سعيدًا !!!

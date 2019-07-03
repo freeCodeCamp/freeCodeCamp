@@ -22,15 +22,15 @@ Remember to iterate through the first argument to check each object.
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
 
-Only if all of them are truth will we return true, so make sure all of them check.
+Only if all of them are truthy will we return true, so make sure all of them check.
 
 > _try to solve the problem now_
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
 
-> _try to solve the problem now_
+You could use loops or callback functions, there are multiple ways to solve this problem.
 
-You could use loops or callbacks functions, there are multiple ways to solve this problem.
+> _try to solve the problem now_
 
 ## Spoiler Alert!
 
@@ -59,7 +59,6 @@ You could use loops or callbacks functions, there are multiple ways to solve thi
     // test here
     truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnw/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -85,7 +84,6 @@ You could use loops or callbacks functions, there are multiple ways to solve thi
     // test here
     truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLny/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -106,7 +104,6 @@ You could use loops or callbacks functions, there are multiple ways to solve thi
 
     truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex");
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/E2u6/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -123,6 +120,3 @@ You could use loops or callbacks functions, there are multiple ways to solve thi
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

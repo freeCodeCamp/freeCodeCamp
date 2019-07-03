@@ -14,8 +14,9 @@ localeTitle: استخدم jQuery لتعديل الصفحة بأكملها
 
 ### حل:
 
- `<script> 
-  $("body").addClass("animated hinge"); 
-  }); 
- </script> 
-`
+```javascript
+<script>
+  $("body").addClass("animated hinge");
+  });
+</script>
+```

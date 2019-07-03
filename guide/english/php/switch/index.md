@@ -2,7 +2,7 @@
 title: Switch
 ---
 ## Switch
-In PHP, the `Switch` statement is very similar to the Javascript `Switch` statement (See the <a href="/javascript/switch-statements">Javascript Switch Guide</a> to compare and contrast). It allows rapid case testing with a lot of different possible conditions, the code is also more readable.
+In PHP, the `Switch` statement is very similar to the JavaScript `Switch` statement (See the <a href="/javascript/switch-statements">JavaScript Switch Guide</a> to compare and contrast). It allows rapid case testing with a lot of different possible conditions, the code is also more readable.
 
 ### Syntax
 ```php

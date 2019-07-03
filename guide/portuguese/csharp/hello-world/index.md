@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: Olá Mundo
----# Olá Mundo
+---
+# Olá Mundo
 
 Para escrever algum texto no console, usamos o `Console.WriteLine()` . Este método usa uma string como entrada.
 
@@ -28,8 +29,7 @@ using System;
 ```
 
 ## Saída:
-
-```sh
+```shell
 > Hello World! 
  > Press any key to exit. 
 

@@ -56,7 +56,7 @@ Leave your `return "No such contact"` out of the `for` loop as a final catch-all
 
 
 ``` javascript    
-for (var x = 0; x < contacts.length; x++){
+for (var x = 0; x < contacts.length; x++) {
     if (contacts[x].firstName === name) {
         if (contacts[x].hasOwnProperty(prop)) {
             return contacts[x][prop];
@@ -98,7 +98,6 @@ for (var i = 0; i < contacts.length; i++){
 return "No such contact";
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Profile-lookup).
 
 ### Code explanation
 This works as the last example but uses the `in` operator to look for `prop` instead of the `hasOwnProperty()` method.

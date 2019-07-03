@@ -6,16 +6,16 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Create a function that takes a single (numeric) argument and returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).</p>
-<p>Rules:</p>
-<p>Do not use global variables.</p>
-<p>Hint:</p>
-<p>Closures save outer state.</p>
+A problem posed by <a href='https://en.wikipedia.org/wiki/Paul_Graham_(programmer)' target='_blank'>Paul Graham</a> is that of creating a function that takes a single (numeric) argument and which returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Create a function that takes a number $n$ and generates accumulator functions that return the sum of every number ever passed to them.
+<strong>Rules:</strong>
+Do not use global variables.
+<strong>Hint:</strong>
+Closures save outer state.
 </section>
 
 ## Tests
@@ -42,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function accumulator (sum) {
+function accumulator(sum) {
   // Good luck!
 }
 ```
@@ -70,8 +70,8 @@ if (testFn) {
 
 
 ```js
-function accumulator (sum) {
-  return function (n) {
+function accumulator(sum) {
+  return function(n) {
     return sum += n;
   };
 }

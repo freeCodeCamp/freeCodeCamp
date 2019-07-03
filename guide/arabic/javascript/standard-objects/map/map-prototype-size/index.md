@@ -8,16 +8,18 @@ localeTitle: Map.prototype.size
 
 ## بناء الجملة
 
- `myMap.size(); 
-` 
+```javascript
+myMap.size();
+``` 
 
 ## مثال
 
- `const myMap = new Map(); 
- myMap.set('foo',1); 
- myMap.set('bar',2); 
- myMap.set('baz',3); 
- 
- 
- myMap.size(); // 3 
-`
+```javascript
+const myMap = new Map();
+myMap.set('foo',1);
+myMap.set('bar',2);
+myMap.set('baz',3);
+
+
+myMap.size(); // 3
+```
