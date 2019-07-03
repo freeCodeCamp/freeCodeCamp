@@ -8,13 +8,5 @@ Multi Layer Perceptron is a type of feed-forward neural network, consisting of m
 Here, you can see that the MLP consists of an Input Layer with 3 neurons, then a single Hidden Layer with 4 neurons and finally a Output Layer with 2 neurons. Thus, the network, essentially, takes three values as input and outputs two values.
 The weights and the biases of each layer are initialised with random values and through a no of training on a given data, the values are adjusted, using backpropagation, to attain maximum accuracy in the output.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/machine-learning/neural-networks/multi-layer-perceptron/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
