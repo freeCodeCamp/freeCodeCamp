@@ -4,9 +4,7 @@ title: Abstract Classes
 
 # Abstract Classes
 
-Abstract classes are super classes which can be derived by other classes.The class marked with `abstract` keyword
-is the abstract class and it can't be instantiate directly. The Abstract class may contain `abstract` or `non-abstract` 
-member functions.
+Abstract classes are super classes which can be derived by other classes.The class marked with the `abstract` keyword is the abstract class and it can't be instantiate directly. The Abstract class may contain `abstract` or `non-abstract` member functions.
 
 ```typescript
 abstract class FCC{
@@ -17,8 +15,7 @@ abstract class FCC{
 }
 ```
 
-Methods enclosed to abstract class which are marked `abstract` they do not contain method body and must be implemented in derived
-class.
+Methods enclosed to abstract class which are marked `abstract` do not contain a method body and must be implemented in the derived class.
 
 ```typescript
 abstract class FCC{
@@ -45,4 +42,3 @@ let jack = new Camper('Jack Smith');
 jack.displayName();
 jack.makeSkill('Front-End Library');
 ```
-
