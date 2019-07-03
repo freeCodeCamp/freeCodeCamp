@@ -52,6 +52,10 @@ Asymmetric Encryption algorithms provide each user with a pair of keys: one publ
 
 Some Asymmetric techniques include: RSA, Diffie-Hellman, DSS(Digital Signature Standard), ElGamal.
 
+### 3) Hybrid Cryptography:
+
+Hybrid Cryptography is a hybrid based encryption with both Asymmetric and Symmetric Key Encryptions. This is achieved by using public key encryption to protect the message by adding an unsystematic layer over the symmetic key encryption. Next, the public key encryption technique is used to decode the symmetic key. After the symmetic key is uncovered, the message is ready to be decrypted to plain text. This method is shown to be quite useful in providing extra security in cryptographic messages. 
+
 ### Cryptographic Hashing
 
 Most cryptographic hash functions are designed to take a string of any length as input and produce a fixed-length hash value.
