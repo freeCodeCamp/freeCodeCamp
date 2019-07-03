@@ -1,5 +1,5 @@
 ---
-title: Vue-Router
+title: Router
 ---
 
 ## Introduction
