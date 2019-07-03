@@ -1,17 +1,20 @@
 ---
 id: 587d7fb1367417b2b2512bf2
 title: Use the .env File
-localeTitle: 使用.env文件
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Use the .env File
 ---
 
 ## Description
-<section id='description'> 
-<code>.env</code>文件是一个隐藏文件，用于将环境变量传递给应用程序。这个文件是秘密的，没有人可以访问它，它可以用来存储你想保密或隐藏的数据。例如，您可以存储来自外部服务或数据库URI的API密钥。您还可以使用它来存储配置选项。通过设置配置选项，您可以更改应用程序的行为，而无需重写某些代码。 <code>0</code>可以从应用程序访问环境变量<code>process.env.VAR_NAME</code> 。 <code>process.env</code>对象是一个全局Node对象，变量作为字符串传递。按照惯例，变量名都是大写的，单词用下划线分隔。 <code>.env</code>是一个shell文件，因此您不需要在引号中包装名称或值。同样重要的是要注意，当您为变量赋值时，等号周围不能有空格，例如<code>VAR_NAME=value</code> 。通常，您将每个变量定义放在单独的行上。 <code>0</code>让我们添加一个环境变量作为配置选项。将变量<code>MESSAGE_STYLE=uppercase</code>存储在<code>.env</code>文件中。然后告诉您在上一次质询中创建的GET <code>/json</code>路由处理程序，如果<code>process.env.MESSAGE_STYLE</code>等于<code>uppercase</code>则将响应对象的消息转换为<code>uppercase</code> 。响应对象应该成为<code>{"message": "HELLO JSON"}</code> 。 
+<section id='description'>
+在开发过程中，能够随时看到代码的运行结果是非常重要的。Node 只是一个 JavaScript 环境。与客户端 JavaScript 一样，你可以使用控制台输出有用的调试信息。在本地计算机上，你可以在终端中输出调试信息。在 Glitch 上，你可以打开屏幕下方的日志。使用 "Logs" 按钮切换日志面板（在左上角，应用名称的下面）。
+准备开始，我们只需要在控制台打印出经典的 "Hello World" 即可。我们建议在做这些挑战题时，保持日志面板处于打开状态。通过这些错误日志，你可能会发现这些错误的本质原因。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,8 +23,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 端点<code>/json</code>的响应应根据环境变量<code>MESSAGE_STYLE</code>
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/use-env-vars'').then(data => { assert.isTrue(data.passed, ''The response of "/json" does not change according to MESSAGE_STYLE''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 客户端响应<code>/json</code>的值，应该随着环境变量<code>MESSAGE_STYLE</code>的变化而改变
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/use-env-vars").then(data => { assert.isTrue(data.passed, "响应 "/json" 时，并没有随着 MESSAGE_STYLE 的值改变而改变"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -30,12 +33,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

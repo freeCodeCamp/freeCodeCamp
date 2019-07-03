@@ -2,23 +2,28 @@
 id: cf1111c1c11feddfaeb7bdef
 title: Nest one Array within Another Array
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 将一个Array嵌套在另一个Array中
+localeTitle: Nest one Array within Another Array
 ---
 
 ## Description
-<section id="description">您还可以在其他数组中嵌套数组，如： <code>[[&quot;Bulls&quot;, 23], [&quot;White Sox&quot;, 45]]</code> 。这也称为<dfn>多维数组<dfn>。</dfn></dfn> </section>
+<section id='description'>
+你也可以在数组中包含其他数组，例如：<code>[["Bulls", 23], ["White Sox", 45]]</code>。这被称为一个<dfn>多维数组<dfn>。
+</section>
 
 ## Instructions
-<section id="instructions">创建一个名为<code>myArray</code>的嵌套数组。 </section>
+<section id='instructions'>
+创建一个名为<code>myArray</code>的多维数组。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myArray</code>应至少有一个嵌套在另一个数组中的数组。
-    testString: 'assert(Array.isArray(myArray) && myArray.some(Array.isArray), "<code>myArray</code> should have at least one array nested within another array.");'
+  - text: 应该包含至少一个嵌入的数组
+    testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray), '应该包含至少一个嵌入的数组');
 
 ```
 
@@ -27,25 +32,25 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-// Example
-var ourArray = [["the universe", 42], ["everything", 101010]];
 
-// Only change code below this line.
-var myArray = [];
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>
@@ -56,6 +61,8 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var myArray = [[1,2,3]];
 ```
+
 </section>
+              

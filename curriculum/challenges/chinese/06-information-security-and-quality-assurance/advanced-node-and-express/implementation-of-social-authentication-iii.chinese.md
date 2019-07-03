@@ -2,34 +2,24 @@
 id: 589a8eb3f9fc0f352b528e72
 title: Implementation of Social Authentication III
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 社会认证的实施III
+localeTitle: Implementation of Social Authentication III
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socialauth/">GitHub</a>克隆的。策略的最后一部分是处理从Github返回的配置文件。我们需要加载用户数据库对象（如果存在）或创建一个（如果不存在）并填充配置文件中的字段，然后返回用户的对象。 Github在每个配置文件中为我们提供了一个唯一的<em>ID</em> ，我们可以使用它来搜索（已经实现）用户序列化。下面是您可以在项目中使用的示例实现 - 它位于作为新策略的第二个参数的函数内，就在<code>console.log(profile);</code>目前是： <pre> db.collection（ &#39;socialusers&#39;）。findAndModify（
-    {id：profile.id}，
-    {}，
-    {$ setOnInsert：{
-        id：profile.id，
-        name：profile.displayName || &#39;John Doe&#39;，
-        照片：profile.photos [0] .value || ”
-        电子邮件：profile.emails [0] .value || &#39;没有公开电子邮件&#39;，
-        created_on：new Date（），
-        provider：profile.provider || “
-    } $设置：{
-        last_login：新日期（）
-    } $ INC {
-        login_count：1
-    }}，
-    {upsert：true，new：true}，
-    （错误，doc）=&gt; {
-        return cb（null，doc.value）;
-    }
-）; </pre>使用findAndModify，它允许您搜索对象并对其进行更新，如果对象不存在则将其置换，并在每次回调函数中接收新对象。在这个例子中，我们总是将last_login设置为now，我们总是将login_count增加1，并且只有当我们插入一个新对象（新用户）时，我们才会填充大部分字段。需要注意的是使用默认值。有时，返回的个人资料不会填写所有信息，或者用户会选择保留私密信息;所以在这种情况下我们必须处理它以防止错误。你现在应该可以登录你的应用了 - 试试吧！当您认为自己已经做对时，请提交您的页面。如果你正在运行到错误，您可以检查出的这个小项目的完成代码的例子<a href="https://glitch.com/#!/project/guttural-birch">在这里</a> 。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -37,8 +27,8 @@ localeTitle: 社会认证的实施III
 
 ```yml
 tests:
-  - text: Github策略设置完成
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, "Strategy should use now use the database to search for the user"); assert.match(data, /GitHubStrategy[^]*socialusers/gi, "Strategy should use "socialusers" as db collection"); assert.match(data, /GitHubStrategy[^]*return cb/gi, "Strategy should return the callback function "cb""); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: GitHub 策略应配置完成。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, "应在当前 GitHub 策略中调用数据库方法，查找用户。"); assert.match(data, /GitHubStrategy[^]*socialusers/gi, "策略应使用 "socialusers" collection。"); assert.match(data, /GitHubStrategy[^]*return cb/gi, "策略应返回回调方法 "cb""); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -47,12 +37,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

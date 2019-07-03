@@ -1,18 +1,28 @@
 ---
 id: 587d7fb4367417b2b2512bfd
 title: Add Keywords to Your package.json
-localeTitle: 将关键字添加到package.json
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Add Keywords to Your package.json
 ---
 
 ## Description
-<section id='description'> 
-keywords-field是您可以使用相关关键字描述项目的地方。 <code>0</code>示例
-<code>"keywords": [ "descriptive", "related", "words" ],</code> <code>0</code>如您所见，此字段的结构为双引号字符串数组。 <code>0</code>说明<code>0</code>将一组合适的字符串添加到Glitch项目的package.json中的keywords-field。 <code>0</code>其中一个关键字应该是freecodecamp。 
+<section id='description'>
+package.json 是任何 Node.js 项目或 npm 包的中心。它存储项目的相关信息，就像 HTML 文档中的<code><head></code>区域是用来描述网页的通用信息（元信息）一样。package.json 由单个 JSON 对象组成，它以键值对的形式存储项目的信息。一个最小的 package.json 文件至少包含两个必须字段：name 和 version——但是提供有关项目的附加信息是一个更好的做法，在以后它可能对你的用户或者维护者有所帮助。
+author 字段：
+如果你转到之前设置的 Glitch 项目并查看屏幕左侧，你会看到一个文件树，你可以在其中查看项目中各种文件的概述。在文件树的末尾部分，你会看到 package.json——我们将在接下来的几个挑战中改进这个文件。
+这个文件中最常见的信息之一是 author 字段，它指定了谁是项目的创建者。它可以是字符串，也可以是带有联系人详细信息的对象。对于较大的项目，建议使用对象，但是在我们的例子中，一个简单的字符串就可以了，比如下面的例子。
+<code>"author": "Jane Doe",</code>
+说明：
+将你的名字添加到 Glitch 项目中，package.json 的 author 字段。
+请记住，你正在编写 JSON 文件。
+所有的字段名必须使用双引号（"）包裹, 比如："author"
+所有字段必须用逗号（,）分隔
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -21,12 +31,12 @@ keywords-field是您可以使用相关关键字描述项目的地方。 <code>0<
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“关键字”键
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, ''"keywords" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“keywords”字段应为Array'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, ''"keywords" is not an array''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“关键字”应包含“freecodecamp”'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, ''freecodecamp'', ''"keywords" does not include "freecodecamp"''); },  xhr => { throw new Error(xhr.responseText); })'
+  - text: "package.json 应该有一个有效的 'keywords' 键。"
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, "缺少 "keywords""); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: "'keywords' 应该是一个数组。"
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, ""keywords" 不是一个数组"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: "'keywords' 中应该包含关键词 'freecodecamp'。"
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, "freecodecamp", ""keywords" 未包含 "freecodecamp""); },  xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -35,12 +45,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

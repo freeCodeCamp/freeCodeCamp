@@ -2,27 +2,36 @@
 id: 587d7db3367417b2b2512b8f
 title: Match Literal Strings
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 匹配文字字符串
+localeTitle: Match Literal Strings
 ---
 
 ## Description
-<section id="description">在上一次挑战中，您使用正则表达式<code>/Hello/</code>搜索了单词<code>&quot;Hello&quot;</code> 。该正则表达式搜索字符串<code>&quot;Hello&quot;</code>的文字匹配。这是另一个搜索字符串<code>&quot;Kevin&quot;</code>的文字匹配的示例： <blockquote>让testStr =“你好，我的名字是凯文。”; <br>让testRegex = / Kevin /; <br> testRegex.test（testStr）; <br> //返回true </blockquote>任何其他形式的<code>&quot;Kevin&quot;</code>都不匹配。例如，正则表达式<code>/Kevin/</code>将不匹配<code>&quot;kevin&quot;</code>或<code>&quot;KEVIN&quot;</code> 。 <blockquote> let wrongRegex = / kevin /; <br> wrongRegex.test（testStr）; <br> //返回false </blockquote>未来的挑战将展示如何匹配其他形式。 </section>
+<section id='description'>
+在上一个挑战中，你使用正则表达式<code>/Hello/</code>搜索到了字符串<code>"Hello"</code>。那个正则表达式在字符串中搜寻<code>"Hello"</code>的文字匹配。下面是另一个在字符串中搜寻<code>"Kevin"</code>的示例：
+<blockquote>let testStr = "Hello, my name is Kevin.";<br>let testRegex = /Kevin/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
+任何其他形式的<code>"Kevin"</code>都不会被匹配。例如，正则表达式<code>/Kevin/</code>不会匹配<code>"kevin"</code>或者<code>"KEVIN"</code>。
+<blockquote>let wrongRegex = /kevin/;<br>wrongRegex.test(testStr);<br>// Returns false</blockquote>
+后续的挑战将为你展示如何匹配其他形式的字符串。
+</section>
 
 ## Instructions
-<section id="instructions">完成正则表达式<code>waldoRegex</code>在字符串<code>waldoIsHiding</code>使用文字匹配查找<code>&quot;Waldo&quot;</code> 。 </section>
+<section id='instructions'>
+完成正则表达式<code>waldoRegex</code>，在字符串<code>waldoIsHiding</code>中匹配到文本<code>"Waldo"</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的正则表达式<code>waldoRegex</code>应该找到<code>&quot;Waldo&quot;</code>
-    testString: 'assert(waldoRegex.test(waldoIsHiding), "Your regex <code>waldoRegex</code> should find <code>"Waldo"</code>");'
-  - text: 你的正则表达式<code>waldoRegex</code>不应该搜索任何其他内容。
-    testString: 'assert(!waldoRegex.test("Somewhere is hiding in this text."), "Your regex <code>waldoRegex</code> should not search for anything else.");'
-  - text: 您应该与正则表达式执行文字字符串匹配。
-    testString: 'assert(!/\/.*\/i/.test(code), "You should perform a literal string match with your regex.");'
+  - text: "你的正则表达式<code>waldoRegex</code>应该匹配到<code>'Waldo'</code>。"
+    testString: assert(waldoRegex.test(waldoIsHiding), '你的正则表达式<code>waldoRegex</code>应该匹配到<code>"Waldo"</code>。');
+  - text: 你的正则表达式<code>waldoRegex</code>不应该搜寻其他的任何内容。
+    testString: assert(!waldoRegex.test('Somewhere is hiding in this text.'), '你的正则表达式<code>waldoRegex</code>不应该搜寻其他的任何内容。');
+  - text: 你应该使用你的正则表达式对字符串执行文字匹配。
+    testString: assert(!/\/.*\/i/.test(code), '你应该使用你的正则表达式对字符串执行文字匹配。');
 
 ```
 
@@ -31,25 +40,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
-let waldoRegex = /search/; // Change this line
-let result = waldoRegex.test(waldoIsHiding);
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

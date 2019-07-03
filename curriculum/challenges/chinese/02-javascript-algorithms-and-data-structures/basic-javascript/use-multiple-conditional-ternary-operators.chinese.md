@@ -2,29 +2,38 @@
 id: 587d7b7e367417b2b2512b21
 title: Use Multiple Conditional (Ternary) Operators
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 使用多个条件（三元）运算符
+localeTitle: Use Multiple Conditional (Ternary) Operators
 ---
 
 ## Description
-<section id="description">在之前的挑战中，您使用了单个<code>conditional operator</code> 。您也可以将它们链接在一起以检查多种条件。以下函数使用if，else if和else语句来检查多个条件： <blockquote> function findGreaterOrEqual（a，b）{ <br> if（a === b）{ <br>返回“a和b相等”; <br> } <br>否则如果（a&gt; b）{ <br>返回“a更大”; <br> } <br>其他{ <br>返回“b更大”; <br> } <br> } </blockquote>可以使用多个<code>conditional operators</code>重写上述函数： <blockquote> function findGreaterOrEqual（a，b）{ <br>返回（a === b）？ “a和b相等”：（a&gt; b）？ “a更大”：“b更大”; <br> } </blockquote></section>
+<section id='description'>
+在之前的挑战中，你使用了一个条件运算符。你也可以将多个运算符串联在一起以检查多种条件。
+下面的函数使用 if，else if 和 else 语句来检查多个条件：
+<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;if(a === b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "a and b are equal";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else if(a > b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "a is greater";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "b is greater";<br>&nbsp;&nbsp;}<br>}</blockquote>
+上面的函数使用条件运算符写法如下：
+<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";<br>}</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">在<code>checkSign</code>函数中使用多个<code>conditional operators</code>来检查数字是正数，负数还是零。 </section>
+<section id='instructions'>
+在 checkSign 函数中使用多个条件运算符来检查数字是正数 ("positive")、负数 ("negative") 或零 ("zero")。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>checkSign</code>应该使用多个<code>conditional operators</code>
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkSign</code> should use multiple <code>conditional operators</code>");'
-  - text: <code>checkSign(10)</code>应该返回“positive”。请注意，资本化很重要
-    testString: 'assert(checkSign(10) === "positive", "<code>checkSign(10)</code> should return "positive". Note that capitalization matters");'
-  - text: <code>checkSign(-12)</code>应返回“否定”。请注意，资本化很重要
-    testString: 'assert(checkSign(-12) === "negative", "<code>checkSign(-12)</code> should return "negative". Note that capitalization matters");'
-  - text: <code>checkSign(0)</code>应返回“零”。请注意，资本化很重要
-    testString: 'assert(checkSign(0) === "zero", "<code>checkSign(0)</code> should return "zero". Note that capitalization matters");'
+  - text: <code>checkSign</code>应该使用多个条件运算符
+    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkSign</code>应该使用多个条件运算符");'
+  - text: "<code>checkSign(10)</code>应该返回 'positive' 注意，结果对大小写敏感"
+    testString: assert(checkSign(10) === 'positive', '<code>checkSign(10)</code>应该返回 "positive" 注意，结果对大小写敏感');
+  - text: "<code>checkSign(-12)</code>应该返回 'negative' 注意，结果对大小写敏感"
+    testString: assert(checkSign(-12) === 'negative', '<code>checkSign(-12)</code>应该返回 "negative" 注意，结果对大小写敏感');
+  - text: "<code>checkSign(0)</code>应该返回 'zero' 注意，结果对大小写敏感"
+    testString: assert(checkSign(0) === 'zero', '<code>checkSign(0)</code>应该返回 "zero" 注意，结果对大小写敏感');
 
 ```
 
@@ -33,27 +42,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function checkSign(num) {
 
-}
 
-checkSign(10);
 
-```
 
-</div>
+
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

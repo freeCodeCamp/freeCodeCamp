@@ -2,15 +2,25 @@
 id: bad87fee1348bd9aec908855
 title: Give Each Element a Unique id
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 为每个元素赋予唯一ID
+localeTitle: Give Each Element a Unique id
 ---
 
 ## Description
-<section id="description">我们还希望能够使用jQuery通过其唯一ID来定位每个按钮。每个按钮提供一个唯一的ID，从<code>target1</code> ，结束时用<code>target6</code> 。确保<code>target1</code>到<code>target3</code>在<code>#left-well</code> ，而<code>target4</code>到<code>target6</code>在<code>#right-well</code> 。 </section>
+<section id='description'>
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
+Bootstrap 会根据你的屏幕大小来调节 HTML 元素的大小————因此称为 <code>响应式设计( Responsive Design )</code>。
+通过响应式设计，我们将无需额外设计一个手机版的网页，因为它在任何尺寸的屏幕上看起来都还不错。
+无论开发什么应用，你都可以通过将以下代码添加到你的 HTML 顶部来引入 Bootstrap 。
+<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/&#62;</code>
+在该案例中，我们已经帮你把相应代码添加到页面中。记住使用 <code>></code> 和 <code>/></code> 闭合 <code>link</code> 标签来保证引入成功。
+首先，我们应该把所有 HTML 标签放在 class 为 <code>container-fluid</code> 的 <code>div</code> 元素下（除了 <code>link</code> 标签和 <code>style</code> 标签）。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,18 +28,18 @@ localeTitle: 为每个元素赋予唯一ID
 
 ```yml
 tests:
-  - text: 一个<code>button</code>元素应该具有id <code>target1</code> 。
-    testString: 'assert($("#left-well").children("#target1") && $("#left-well").children("#target1").length > 0, "One <code>button</code> element should have the id <code>target1</code>.");'
-  - text: 一个<code>button</code>元素应该具有id <code>target2</code> 。
-    testString: 'assert($("#left-well").children("#target2") && $("#left-well").children("#target2").length > 0, "One <code>button</code> element should have the id <code>target2</code>.");'
-  - text: 一个<code>button</code>元素应该具有id <code>target3</code> 。
-    testString: 'assert($("#left-well").children("#target3") && $("#left-well").children("#target3").length > 0, "One <code>button</code> element should have the id <code>target3</code>.");'
-  - text: 一个<code>button</code>元素应该具有id <code>target4</code> 。
-    testString: 'assert($("#right-well").children("#target4") && $("#right-well").children("#target4").length > 0, "One <code>button</code> element should have the id <code>target4</code>.");'
-  - text: 一个<code>button</code>元素应该具有id <code>target5</code> 。
-    testString: 'assert($("#right-well").children("#target5") && $("#right-well").children("#target5").length > 0, "One <code>button</code> element should have the id <code>target5</code>.");'
-  - text: 一个<code>button</code>元素应该具有id <code>target6</code> 。
-    testString: 'assert($("#right-well").children("#target6") && $("#right-well").children("#target6").length > 0, "One <code>button</code> element should have the id <code>target6</code>.");'
+  - text: 其中一个 <code>button</code> 元素应该有 id <code>target1</code>。
+    testString: assert($("#left-well").children("#target1") && $("#left-well").children("#target1").length > 0, '其中一个 <code>button</code> 元素应该有 id <code>target1</code>。');
+  - text: 其中一个 <code>button</code> 元素应该有 id <code>target2</code>。
+    testString: assert($("#left-well").children("#target2") && $("#left-well").children("#target2").length > 0, '其中一个 <code>button</code> 元素应该有 id <code>target2</code>。');
+  - text: 其中一个 <code>button</code> 元素应该有 id <code>target3</code>。
+    testString: assert($("#left-well").children("#target3") && $("#left-well").children("#target3").length > 0, '其中一个 <code>button</code> 元素应该有 id <code>target3</code>。');
+  - text: 其中一个 <code>button</code> 元素应该有 id <code>target4</code>。
+    testString: assert($("#right-well").children("#target4") && $("#right-well").children("#target4").length > 0, '其中一个 <code>button</code> 元素应该有 id <code>target4</code>。');
+  - text: 其中一个 <code>button</code> 元素应该有 id <code>target5</code>。
+    testString: assert($("#right-well").children("#target5") && $("#right-well").children("#target5").length > 0, '其中一个 <code>button</code> 元素应该有 id <code>target5</code>。');
+  - text: 其中一个 <code>button</code> 元素应该有 id <code>target6</code>。
+    testString: assert($("#right-well").children("#target6") && $("#right-well").children("#target6").length > 0, '其中一个 <code>button</code> 元素应该有 id <code>target6</code>。');
 
 ```
 
@@ -38,43 +48,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<div class="container-fluid">
-  <h3 class="text-primary text-center">jQuery Playground</h3>
-  <div class="row">
-    <div class="col-xs-6">
-      <h4>#left-well</h4>
-      <div class="well" id="left-well">
-        <button class="btn btn-default target"></button>
-        <button class="btn btn-default target"></button>
-        <button class="btn btn-default target"></button>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <h4>#right-well</h4>
-      <div class="well" id="right-well">
-        <button class="btn btn-default target"></button>
-        <button class="btn btn-default target"></button>
-        <button class="btn btn-default target"></button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<div class="container-fluid">,  <h3 class="text-primary text-center">jQuery Playground</h3>,  <div class="row">,    <div class="col-xs-6">,      <h4>#left-well</h4>,      <div class="well" id="left-well">,        <button class="btn btn-default target"></button>,        <button class="btn btn-default target"></button>,        <button class="btn btn-default target"></button>,      </div>,    </div>,    <div class="col-xs-6">,      <h4>#right-well</h4>,      <div class="well" id="right-well">,        <button class="btn btn-default target"></button>,        <button class="btn btn-default target"></button>,        <button class="btn btn-default target"></button>,      </div>,    </div>,  </div>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

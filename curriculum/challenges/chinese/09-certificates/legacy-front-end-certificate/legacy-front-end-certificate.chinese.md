@@ -1,18 +1,20 @@
 ---
 id: 561add10cb82ac38a17513be
-title: Legacy Front End Certificate
+title: undefined
 challengeType: 7
-isPrivate: true
+
 videoUrl: ''
-localeTitle: 传统前端证书
+localeTitle: undefined
 ---
 
 ## Description
-<section id="description">
+<section id='description'>
+
 </section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -20,26 +22,6 @@ localeTitle: 传统前端证书
 
 ```yml
 tests:
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
 
 ```
 
@@ -48,12 +30,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

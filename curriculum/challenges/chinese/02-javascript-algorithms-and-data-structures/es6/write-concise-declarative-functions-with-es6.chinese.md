@@ -2,27 +2,35 @@
 id: 587d7b8b367417b2b2512b50
 title: Write Concise Declarative Functions with ES6
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 用ES6编写简明的声明函数
+localeTitle: Write Concise Declarative Functions with ES6
 ---
 
 ## Description
-<section id="description">在ES5中定义对象内的函数时，我们必须使用关键字<code>function</code> ，如下所示： <blockquote> const person = { <br>名称：“泰勒”， <br> sayHello：function（）{ <br>回来`你好！我的名字是$ {this.name} .`; <br> } <br> }; </blockquote>使用ES6，您可以在定义对象中的函数时完全删除<code>function</code>关键字和冒号。以下是此语法的示例： <blockquote> const person = { <br>名称：“泰勒”， <br>问好（） { <br>回来`你好！我的名字是$ {this.name} .`; <br> } <br> }; </blockquote></section>
+<section id='description'>
+在 ES5 中，当我们需要在对象中定义一个函数的时候，我们必须如下面这般使用<code>function</code>关键字：
+<blockquote>const person = {<br>&nbsp;&nbsp;name: "Taylor",<br>&nbsp;&nbsp;sayHello: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>
+在 ES6 语法的对象中定义函数的时候，你可以完全删除<code>function</code>关键字和冒号。请看以下例子：
+<blockquote>const person = {<br>&nbsp;&nbsp;name: "Taylor",<br>&nbsp;&nbsp;sayHello() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">重构对象<code>bicycle</code>内的函数<code>setGear</code>以使用上述简写语法。 </section>
+<section id='instructions'>
+使用以上这种简短的语法，重构在<code>bicycle</code>对象中的<code>setGear</code>函数。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 未使用传统函数表达式。
-    testString: 'assert(!getUserInput("index").match(/function/),"Traditional <code>function</code> expression was not used.");'
-  - text: <code>setGear</code>是一个声明函数。
-    testString: 'assert(typeof bicycle.setGear === "function" && getUserInput("index").match(/setGear\s*\(.+\)\s*\{/), "<code>setGear</code> is a declarative function.");'
-  - text: ''
-    testString: 'assert((new bicycle.setGear(48)).gear === 48, "<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.");'
+  - text: 不应使用<code>function</code>关键字定义方法。
+    testString: assert(!getUserInput('index').match(/function/), '不应使用<code>function</code>关键字定义方法。');
+  - text: <code>setGear</code>应是一个函数。
+    testString: assert(typeof bicycle.setGear === 'function' && getUserInput('index').match(/setGear\s*\(.+\)\s*\{/), '<code>setGear</code>应是一个函数。');
+  - text: 执行<code>bicycle.setGear(48)</code>应可以让<code>gear</code>的值变为 48。
+    testString: assert((new bicycle.setGear(48)).gear === 48, '执行<code>bicycle.setGear(48)</code>应可以让<code>gear</code>的值变为 48。');
 
 ```
 
@@ -31,33 +39,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-// change code below this line
-const bicycle = {
-  gear: 2,
-  setGear: function(newGear) {
-    "use strict";
-    this.gear = newGear;
-  }
-};
-// change code above this line
-bicycle.setGear(3);
-console.log(bicycle.gear);
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

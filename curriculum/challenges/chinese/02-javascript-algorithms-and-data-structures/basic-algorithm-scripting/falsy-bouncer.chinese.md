@@ -1,17 +1,22 @@
 ---
 id: adf08ec01beb4f99fc7a68f2
 title: Falsy Bouncer
-isRequired: true
 challengeType: 5
+isRequired: true
 videoUrl: ''
 localeTitle: Falsy Bouncer
 ---
 
 ## Description
-<section id="description">从数组中删除所有有价值的值。 JavaScript中的Falsy值为<code>false</code> ， <code>null</code> ， <code>0</code> ， <code>&quot;&quot;</code> ， <code>undefined</code>和<code>NaN</code> 。提示：尝试将每个值转换为布尔值。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id='description'>
+将摄氏度转换为华氏度的算法为：摄氏度 × <code>9/5 + 32</code>
+输入参数 <code>celsius</code> 代表一个摄氏温度值。请你根据上述转换公式，将已定义好的 <code>fahrenheit</code> 变量赋值为对应的华氏温度的值。
+你不需要顾虑 function 和 return 语句，它们会在之后的挑战中予以介绍。现在，你只需要使用你已学过的运算符。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,14 +24,14 @@ localeTitle: Falsy Bouncer
 
 ```yml
 tests:
-  - text: '<code>bouncer([7, &quot;ate&quot;, &quot;&quot;, false, 9])</code>应该返回<code>[7, &quot;ate&quot;, 9]</code> 。'
-    testString: 'assert.deepEqual(bouncer([7, "ate", "", false, 9]), [7, "ate", 9], "<code>bouncer([7, "ate", "", false, 9])</code> should return <code>[7, "ate", 9]</code>.");'
-  - text: '<code>bouncer([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;])</code>应返回<code>[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</code> 。'
-    testString: 'assert.deepEqual(bouncer(["a", "b", "c"]), ["a", "b", "c"], "<code>bouncer(["a", "b", "c"])</code> should return <code>["a", "b", "c"]</code>.");'
-  - text: '<code>bouncer([false, null, 0, NaN, undefined, &quot;&quot;])</code>应返回<code>[]</code> 。'
-    testString: 'assert.deepEqual(bouncer([false, null, 0, NaN, undefined, ""]), [], "<code>bouncer([false, null, 0, NaN, undefined, ""])</code> should return <code>[]</code>.");'
-  - text: '<code>bouncer([1, null, NaN, 2, undefined])</code>应该返回<code>[1, 2]</code> 。'
-    testString: 'assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], "<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.");'
+  - text: "<code>bouncer([7, 'ate', '', false, 9])</code> 应该返回 <code>[7, 'ate', 9]</code>。"
+    testString: assert.deepEqual(bouncer([7, "ate", "", false, 9]), [7, "ate", 9], '<code>bouncer([7, "ate", "", false, 9])</code> 应该返回 <code>[7, "ate", 9]</code>。');
+  - text: "<code>bouncer(['a', 'b', 'c'])</code> 应该返回 <code>['a', 'b', 'c']</code>。"
+    testString: assert.deepEqual(bouncer(["a", "b", "c"]), ["a", "b", "c"], '<code>bouncer(["a", "b", "c"])</code> 应该返回 <code>["a", "b", "c"]</code>。');
+  - text: "<code>bouncer([false, null, 0, NaN, undefined, ''])</code> 应该返回 <code>[]</code>。"
+    testString: assert.deepEqual(bouncer([false, null, 0, NaN, undefined, ""]), [], '<code>bouncer([false, null, 0, NaN, undefined, ""])</code> 应该返回 <code>[]</code>。');
+  - text: <code>bouncer([1, null, NaN, 2, undefined])</code> 应该返回 <code>[1, 2]</code>。
+    testString: assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], '<code>bouncer([1, null, NaN, 2, undefined])</code> 应该返回 <code>[1, 2]</code>。');
 
 ```
 
@@ -35,19 +40,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function bouncer(arr) {
-  // Don't show a false ID to this bouncer.
-  return arr;
-}
 
-bouncer([7, "ate", "", false, 9]);
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -57,6 +60,13 @@ bouncer([7, "ate", "", false, 9]);
 <section id='solution'>
 
 ```js
-// solution required
+function bouncer(arr) {
+  return arr.filter(e => e);
+}
+
+bouncer([7, "ate", "", false, 9]);
+
 ```
+
 </section>
+              

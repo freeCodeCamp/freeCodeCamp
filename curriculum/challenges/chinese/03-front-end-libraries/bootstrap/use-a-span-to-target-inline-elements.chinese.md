@@ -2,15 +2,25 @@
 id: bad87fee1348bd9aedf08845
 title: Use a span to Target Inline Elements
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用跨度来定位内联元素
+localeTitle: Use a span to Target Inline Elements
 ---
 
 ## Description
-<section id="description">您可以使用跨度来创建内联元素。还记得我们使用<code>btn-block</code>类使按钮填满整行吗？ <button class="btn" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">普通按钮</button> <button class="btn btn-block" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">btn-block按钮</button>说明“内联”元素和“块”元素之间的区别。通过使用内联<code>span</code>元素，您可以将多个元素放在同一行上，甚至可以不同地为同一行的不同部分设置样式。在<code>span</code>元素中的“Things cats love”元素中嵌入“love”这个词。然后给出<code>span</code>类<code>text-danger</code>以使文本变为红色。以下是你如何使用“猫讨厌的三件事”元素： <code>&lt;p&gt;Top 3 things cats &lt;span class=&quot;text-danger&quot;&gt;hate:&lt;/span&gt;&lt;/p&gt;</code> </section>
+<section id='description'>
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
+Bootstrap 会根据你的屏幕大小来调节 HTML 元素的大小————因此称为 <code>响应式设计( Responsive Design )</code>。
+通过响应式设计，我们将无需额外设计一个手机版的网页，因为它在任何尺寸的屏幕上看起来都还不错。
+无论开发什么应用，你都可以通过将以下代码添加到你的 HTML 顶部来引入 Bootstrap 。
+<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/&#62;</code>
+在该案例中，我们已经帮你把相应代码添加到页面中。记住使用 <code>></code> 和 <code>/></code> 闭合 <code>link</code> 标签来保证引入成功。
+首先，我们应该把所有 HTML 标签放在 class 为 <code>container-fluid</code> 的 <code>div</code> 元素下（除了 <code>link</code> 标签和 <code>style</code> 标签）。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +28,14 @@ localeTitle: 使用跨度来定位内联元素
 
 ```yml
 tests:
-  - text: 你的<code>span</code>元素应该在你的<code>p</code>元素中。
-    testString: 'assert($("p span") && $("p span").length > 0, "Your <code>span</code> element should be inside your <code>p</code> element.");'
-  - text: 你的<code>span</code>元素应该只有文字<code>love</code> 。
-    testString: 'assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i), "Your <code>span</code> element should have just the text <code>love</code>.");'
-  - text: 你的<code>span</code>元素应该有class <code>text-danger</code> 。
-    testString: 'assert($("span").hasClass("text-danger"), "Your <code>span</code> element should have class <code>text-danger</code>.");'
-  - text: 确保您的<code>span</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length, "Make sure your <code>span</code> element has a closing tag.");'
+  - text: <code>span</code> 元素应该在 <code>p</code> 元素内。
+    testString: assert($("p span") && $("p span").length > 0, '<code>span</code> 元素应该在 <code>p</code> 元素内。');
+  - text: <code>span</code> 元素应该只含有文本 <code>love</code>。
+    testString: assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i), '<code>span</code> 元素应该只含有文本 <code>love</code>。');
+  - text: <code>span</code> 元素应该含有 class <code>text-danger</code>。
+    testString: assert($("span").hasClass("text-danger"), '<code>span</code> 元素应该含有 class <code>text-danger</code>。');
+  - text: 确保你的 <code>span</code> 元素有一个闭合标签。
+    testString: assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length, '确保你的 <code>span</code> 元素有一个闭合标签。');
 
 ```
 
@@ -34,77 +44,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<style>
-
-  h2 {
-    font-family: Lobster, Monospace;
-  }
-
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
-  }
-
-</style>
-
-<div class="container-fluid">
-  <h2 class="text-primary text-center">CatPhotoApp</h2>
-
-  <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
-  <div class="row">
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-primary">Like</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-info">Info</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-danger">Delete</button>
-    </div>
-  </div>
-  <p>Things cats love:</p>
-  <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
-  </ul>
-  <p>Top 3 things cats hate:</p>
-  <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-    <label><input type="checkbox" name="personality"> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Crazy</label>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
-  </form>
-</div>
-
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">,<style>,,  h2 {,    font-family: Lobster, Monospace;,  },,  .thick-green-border {,    border-color: green;,    border-width: 10px;,    border-style: solid;,    border-radius: 50%;,  },,</style>,,<div class="container-fluid">,  <h2 class="text-primary text-center">CatPhotoApp</h2>,,  <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>,,  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">,  <div class="row">,    <div class="col-xs-4">,      <button class="btn btn-block btn-primary">Like</button>,    </div>,    <div class="col-xs-4">,      <button class="btn btn-block btn-info">Info</button>,    </div>,    <div class="col-xs-4">,      <button class="btn btn-block btn-danger">Delete</button>,    </div>,  </div>,  <p>Things cats love:</p>,  <ul>,    <li>cat nip</li>,    <li>laser pointers</li>,    <li>lasagna</li>,  </ul>,  <p>Top 3 things cats hate:</p>,  <ol>,    <li>flea treatment</li>,    <li>thunder</li>,    <li>other cats</li>,  </ol>,  <form action="/submit-cat-photo">,    <label><input type="radio" name="indoor-outdoor"> Indoor</label>,    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>,    <label><input type="checkbox" name="personality"> Loving</label>,    <label><input type="checkbox" name="personality"> Lazy</label>,    <label><input type="checkbox" name="personality"> Crazy</label>,    <input type="text" placeholder="cat photo URL" required>,    <button type="submit">Submit</button>,  </form>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

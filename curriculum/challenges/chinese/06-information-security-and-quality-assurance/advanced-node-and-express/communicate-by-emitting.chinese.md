@@ -2,17 +2,24 @@
 id: 589fc831f9fc0f352b528e75
 title: Communicate by Emitting
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 通过发射进行沟通
+localeTitle: Communicate by Emitting
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socketio/">GitHub</a>克隆的。 <dfn>Emit</dfn>是您将使用的最常见的沟通方式。当您从服务器向&#39;io&#39;发送内容时，会将事件的名称和数据发送到所有连接的套接字。这个概念的一个很好的例子就是每次新用户连接时都会发出连接用户的当前数量！ <hr>首先添加一个变量，以便在您当前正在侦听连接之前跟踪用户。 <code>var currentUsers = 0;</code>现在当有人连接时，你应该在发出计数之前递增计数，这样你就可以在连接监听器中添加增量器。 <code>++currentUsers;</code>最后，在递增计数后，您应该发出事件（仍在连接侦听器中）。该事件应命名为“用户计数”，数据应该只是&#39;currentUsers&#39;。 <code>io.emit(&#39;user count&#39;, currentUsers);</code> <hr>现在，您可以为客户实施一种方式来监听此事件！与在服务器上侦听连接类似，您将使用<em>on</em>关键字。 <pre> socket.on（&#39;user count&#39;，function（data）{
-  的console.log（数据）;
-}）; </pre>现在尝试加载您的应用并进行身份验证，您应该在客户端控制台中看到“1”代表当前用户数！尝试加载更多客户端并进行身份验证以查看数量是否上升。当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -20,12 +27,12 @@ localeTitle: 通过发射进行沟通
 
 ```yml
 tests:
-  - text: currentUsers已定义
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js").then(data => {assert.match(data, /currentUsers/gi, "You should have variable currentUsers defined");}, xhr => { throw new Error(xhr.statusText); })'
-  - text: 服务器在每个新连接上发出当前用户计数
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /io.emit.*("|")user count("|").*currentUsers/gi, "You should emit "user count" with data currentUsers"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 您的客户正在侦听“用户计数”事件
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "Your client should be connection to server with the connection defined as socket"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 应定义 currentUsers
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js").then(data => {assert.match(data, /currentUsers/gi, "你应该定义变量 currentUsers");}, xhr => { throw new Error(xhr.statusText); })'
+  - text: 服务器应在有新的连接时 emit 当前用户数量。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /io.emit.*("|")user count("|").*currentUsers/gi, "你应该 emit 带有 currentUsers 数据的 "user count" 事件。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: '客户端应监听 "user count" 事件。'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "客户端应通过 socket 连接到服务端，并监听 "user count" 事件。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -34,12 +41,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

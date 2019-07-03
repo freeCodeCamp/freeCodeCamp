@@ -1,17 +1,22 @@
 ---
 id: a0b5010f579e69b815e7c5d6
 title: Search and Replace
-isRequired: true
 challengeType: 5
+isRequired: true
 videoUrl: ''
-localeTitle: 搜索和替换
+localeTitle: Search and Replace
 ---
 
 ## Description
-<section id="description">使用提供的参数执行搜索并替换句子并返回新句子。第一个参数是执行搜索和替换的句子。第二个参数是你要替换的词（之前）。第三个参数是你将用（后）替换第二个参数。 <strong>注意</strong> <br>在更换原始单词时保留原始单词中第一个字符的大小写。例如，如果您的意思是将“Book”替换为“dog”，则应将其替换为“Dog”。如果卡住，请记住使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+给出一个含有两个数字的数组，我们需要写一个函数，让它返回这两个数字间所有数字（包含这两个数字）的总和。
+注意，较小数不一定总是出现在数组的第一个元素。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,16 +24,16 @@ localeTitle: 搜索和替换
 
 ```yml
 tests:
-  - text: '<code>myReplace(&quot;Let us go to the store&quot;, &quot;store&quot;, &quot;mall&quot;)</code>应该返回“让我们去商场”。'
-    testString: 'assert.deepEqual(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall", "<code>myReplace("Let us go to the store", "store", "mall")</code> should return "Let us go to the mall".");'
-  - text: '<code>myReplace(&quot;He is Sleeping on the couch&quot;, &quot;Sleeping&quot;, &quot;sitting&quot;)</code>应该回归“他正坐在沙发上”。'
-    testString: 'assert.deepEqual(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch", "<code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code> should return "He is Sitting on the couch".");'
-  - text: '<code>myReplace(&quot;This has a spellngi error&quot;, &quot;spellngi&quot;, &quot;spelling&quot;)</code>应该返回“这有一个拼写错误”。'
-    testString: 'assert.deepEqual(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error", "<code>myReplace("This has a spellngi error", "spellngi", "spelling")</code> should return "This has a spelling error".");'
-  - text: '<code>myReplace(&quot;His name is Tom&quot;, &quot;Tom&quot;, &quot;john&quot;)</code>应该回归“他的名字是约翰”。'
-    testString: 'assert.deepEqual(myReplace("His name is Tom", "Tom", "john"), "His name is John", "<code>myReplace("His name is Tom", "Tom", "john")</code> should return "His name is John".");'
-  - text: '<code>myReplace(&quot;Let us get back to more Coding&quot;, &quot;Coding&quot;, &quot;algorithms&quot;)</code>应该返回“让我们回到更多算法”。'
-    testString: 'assert.deepEqual(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms", "<code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code> should return "Let us get back to more Algorithms".");'
+  - text: "<code>myReplace('Let us go to the store', 'store', 'mall')</code>应该返回 'Let us go to the mall'。"
+    testString: assert.deepEqual(myReplace("Let us go to the store", "store", "mall"), "Let us go to the mall", '<code>myReplace("Let us go to the store", "store", "mall")</code>应该返回 "Let us go to the mall"。');
+  - text: "<code>myReplace('He is Sleeping on the couch', 'Sleeping', 'sitting')</code>应该返回 'He is Sitting on the couch'。"
+    testString: assert.deepEqual(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"), "He is Sitting on the couch", '<code>myReplace("He is Sleeping on the couch", "Sleeping", "sitting")</code>应该返回 "He is Sitting on the couch"。');
+  - text: "<code>myReplace('This has a spellngi error', 'spellngi', 'spelling')</code>应该返回 'This has a spelling error'。"
+    testString: assert.deepEqual(myReplace("This has a spellngi error", "spellngi", "spelling"), "This has a spelling error", '<code>myReplace("This has a spellngi error", "spellngi", "spelling")</code>应该返回 "This has a spelling error"。');
+  - text: "<code>myReplace('His name is Tom', 'Tom', 'john')</code>应该返回 'His name is John'。"
+    testString: assert.deepEqual(myReplace("His name is Tom", "Tom", "john"), "His name is John", '<code>myReplace("His name is Tom", "Tom", "john")</code>应该返回 "His name is John"。');
+  - text: "<code>myReplace('Let us get back to more Coding', 'Coding', 'algorithms')</code>应该返回 'Let us get back to more Algorithms'。"
+    testString: assert.deepEqual(myReplace("Let us get back to more Coding", "Coding", "algorithms"), "Let us get back to more Algorithms", '<code>myReplace("Let us get back to more Coding", "Coding", "algorithms")</code>应该返回 "Let us get back to more Algorithms"。');
 
 ```
 
@@ -37,18 +42,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function myReplace(str, before, after) {
-  return str;
-}
 
-myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -58,6 +62,15 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 <section id='solution'>
 
 ```js
-// solution required
+function myReplace(str, before, after) {
+  if (before.charAt(0) === before.charAt(0).toUpperCase()) {
+    after = after.charAt(0).toUpperCase() + after.substring(1);
+  } else {
+    after = after.charAt(0).toLowerCase() + after.substring(1);
+  }
+  return str.replace(before, after);
+}
 ```
+
 </section>
+              

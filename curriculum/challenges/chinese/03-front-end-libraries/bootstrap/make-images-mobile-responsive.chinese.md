@@ -2,15 +2,25 @@
 id: bad87fee1348bd9acde08812
 title: Make Images Mobile Responsive
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 使图像移动响应
+localeTitle: Make Images Mobile Responsive
 ---
 
 ## Description
-<section id="description">首先，在现有图像下方添加新图像。将其<code>src</code>属性设置为<code>https://bit.ly/fcc-running-cats</code> 。如果这个图像可以正好是我们手机屏幕的宽度，那就太好了。幸运的是，使用Bootstrap，我们需要做的就是将<code>img-responsive</code>类添加到您的图像中。这样做，图像应完全适合您的页面宽度。 </section>
+<section id='description'>
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
+Bootstrap 会根据你的屏幕大小来调节 HTML 元素的大小————因此称为 <code>响应式设计( Responsive Design )</code>。
+通过响应式设计，我们将无需额外设计一个手机版的网页，因为它在任何尺寸的屏幕上看起来都还不错。
+无论开发什么应用，你都可以通过将以下代码添加到你的 HTML 顶部来引入 Bootstrap 。
+<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/&#62;</code>
+在该案例中，我们已经帮你把相应代码添加到页面中。记住使用 <code>></code> 和 <code>/></code> 闭合 <code>link</code> 标签来保证引入成功。
+首先，我们应该把所有 HTML 标签放在 class 为 <code>container-fluid</code> 的 <code>div</code> 元素下（除了 <code>link</code> 标签和 <code>style</code> 标签）。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,16 +28,16 @@ localeTitle: 使图像移动响应
 
 ```yml
 tests:
-  - text: 你应该总共有两个图像。
-    testString: 'assert($("img").length === 2, "You should have a total of two images.");'
-  - text: 您的新图像应该低于旧图像并且具有<code>img-responsive</code>类。
-    testString: 'assert($("img:eq(1)").hasClass("img-responsive"), "Your new image should be below your old one and have the class <code>img-responsive</code>.");'
-  - text: 您的新图片不应该具有<code>smaller-image</code>类。
-    testString: 'assert(!$("img:eq(1)").hasClass("smaller-image"), "Your new image should not have the class <code>smaller-image</code>.");'
-  - text: '您的新图片应该具有<code>https://bit.ly/fcc-running-cats</code>的<code>src</code> 。'
-    testString: 'assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats", "Your new image should have a <code>src</code> of <code>https&#58;//bit.ly/fcc-running-cats</code>.");'
-  - text: 确保新的<code>img</code>元素具有关闭角括号。
-    testString: 'assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, "Make sure your new <code>img</code> element has a closing angle bracket.");'
+  - text: 该页面拥有总计两个图片。
+    testString: assert($("img").length === 2, '该页面拥有总计两个图片。');
+  - text: 新的图片应该在旧的图片下面并且含有 class 属性 <code>img-responsive</code>。
+    testString: 'assert($("img:eq(1)").hasClass("img-responsive"), "新的图片应该在旧的图片下面并且含有 class 属性 <code>img-responsive</code>。");'
+  - text: 新的图片不应该含有 class 属性 <code>smaller-image</code>。
+    testString: 'assert(!$("img:eq(1)").hasClass("smaller-image"), "你的新图片不应该含有 class 属性 <code>smaller-image</code>。");'
+  - text: 新图片的 <code>src</code> 属性应该为 <code>https&#58;//bit.ly/fcc-running-cats</code>。
+    testString: 'assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats", "你的新图片的 <code>src</code> 属性应该为 <code>https&#58;//bit.ly/fcc-running-cats</code>。");'
+  - text: 确保新的 <code>img</code> 元素有一个闭合的右尖括号 “/>”。
+    testString: assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, '确保新的 <code>img</code> 元素有一个闭合的右尖括号 “/>”。');
 
 ```
 
@@ -36,78 +46,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<style>
-  .red-text {
-    color: red;
-  }
-
-  h2 {
-    font-family: Lobster, Monospace;
-  }
-
-  p {
-    font-size: 16px;
-    font-family: Monospace;
-  }
-
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
-  }
-
-  .smaller-image {
-    width: 100px;
-  }
-</style>
-
-<div class="container-fluid">
-  <h2 class="red-text">CatPhotoApp</h2>
-
-  <p>Click here for <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <p>Things cats love:</p>
-  <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
-  </ul>
-  <p>Top 3 things cats hate:</p>
-  <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-    <label><input type="checkbox" name="personality"> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Crazy</label>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
-  </form>
-</div>
-
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">,<style>,  .red-text {,    color: red;,  },,  h2 {,    font-family: Lobster, Monospace;,  },,  p {,    font-size: 16px;,    font-family: Monospace;,  },,  .thick-green-border {,    border-color: green;,    border-width: 10px;,    border-style: solid;,    border-radius: 50%;,  },,  .smaller-image {,    width: 100px;,  },</style>,,<div class="container-fluid">,  <h2 class="red-text">CatPhotoApp</h2>,,  <p>Click here for <a href="#">cat photos</a>.</p>,,  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>,,  <p>Things cats love:</p>,  <ul>,    <li>cat nip</li>,    <li>laser pointers</li>,    <li>lasagna</li>,  </ul>,  <p>Top 3 things cats hate:</p>,  <ol>,    <li>flea treatment</li>,    <li>thunder</li>,    <li>other cats</li>,  </ol>,  <form action="/submit-cat-photo">,    <label><input type="radio" name="indoor-outdoor"> Indoor</label>,    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>,    <label><input type="checkbox" name="personality"> Loving</label>,    <label><input type="checkbox" name="personality"> Lazy</label>,    <label><input type="checkbox" name="personality"> Crazy</label>,    <input type="text" placeholder="cat photo URL" required>,    <button type="submit">Submit</button>,  </form>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

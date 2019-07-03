@@ -2,31 +2,39 @@
 id: 587d7b88367417b2b2512b47
 title: Use the Rest Operator with Function Parameters
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 将Rest运算符与函数参数一起使用
+localeTitle: Use the Rest Operator with Function Parameters
 ---
 
 ## Description
-<section id="description">为了帮助我们创建更灵活的函数，ES6引入了函数参数的<dfn>rest运算符</dfn> 。使用rest运算符，您可以创建带有可变数量参数的函数。这些参数存储在一个数组中，以后可以从函数内部访问。看看这段代码： <blockquote> function howMany（... args）{ <br>返回“你已经通过”+ args.length +“arguments。”; <br> } <br> console.log（howMany（0,1,2））; //你已经传递了3个参数<br> console.log（howMany（“string”，null，[1,2,3]，{}））; //你已经传递了4个参数。 </blockquote>其余运算符无需检查<code>args</code>数组，并允许我们在<code>args</code>数组上应用<code>map()</code> ， <code>filter()</code>和<code>reduce()</code> 。 </section>
+<section id='description'>
+ES6 推出了用于函数参数的<dfn> rest 操作符</dfn>帮助我们创建更加灵活的函数。在<code>rest</code>操作符的帮助下，你可以创建有一个变量来接受多个参数的函数。这些参数被储存在一个可以在函数内部读取的数组中。
+请看以下代码：
+<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return "You have passed " + args.length + " arguments.";<br>}<br>console.log(howMany(0, 1, 2)); // 输出：You have passed 3 arguments.<br>console.log(howMany("string", null, [1, 2, 3], { })); // 输出：You have passed 4 arguments.</blockquote>
+<code>rest</code>操作符可以避免查看<code>args</code>数组的需求，并且允许我们在参数数组上使用<code>map()</code>,<code>fiter()</code>，和<code>reduce()</code>。
+</section>
 
 ## Instructions
-<section id="instructions">修改函数<code>sum</code> ，使其使用rest运算符，并以相同的方式使用任意数量的参数。 </section>
+<section id='instructions'>
+修改<code>sum</code>函数，来让它使用<code>rest</code>操作符，并且它可以在有任何数量的参数时以相同的形式工作。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>sum(0,1,2)</code>的结果应为3'
-    testString: 'assert(sum(0,1,2) === 3, "The result of <code>sum(0,1,2)</code> should be 3");'
-  - text: '<code>sum(1,2,3,4)</code>的结果应为10'
-    testString: 'assert(sum(1,2,3,4) === 10, "The result of <code>sum(1,2,3,4)</code> should be 10");'
-  - text: <code>sum(5)</code>的结果应为5
-    testString: 'assert(sum(5) === 5, "The result of <code>sum(5)</code> should be 5");'
-  - text: <code>sum()</code>的结果应为0
-    testString: 'assert(sum() === 0, "The result of <code>sum()</code> should be 0");'
-  - text: <code>sum</code>函数在<code>args</code>参数上使用<code>...</code> spread运算符。
-    testString: 'getUserInput => assert(getUserInput("index").match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.");'
+  - text: <code>sum(0,1,2)</code>的返回结果应该为3。
+    testString: assert(sum(0,1,2) === 3, '<code>sum(0,1,2)</code>的返回结果应该为3。');
+  - text: <code>sum(1,2,3,4)</code>的返回结果应该为10。
+    testString: assert(sum(1,2,3,4) === 10, '<code>sum(1,2,3,4)</code>的返回结果应该为10。');
+  - text: <code>sum(5)</code>的返回结果应该为5。
+    testString: assert(sum(5) === 5, '<code>sum(5)</code>的返回结果应该为5。');
+  - text: <code>sum()</code>的返回结果应该为 0。
+    testString: assert(sum() === 0, '<code>sum()</code>的返回结果应该为 0。');
+  - text: 对<code>sum</code>函数的<code>args</code>参数使用了<code>...</code>展开操作符。
+    testString: getUserInput => assert(getUserInput('index').match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), '对<code>sum</code>函数的<code>args</code>参数使用了<code>...</code>展开操作符。');
 
 ```
 
@@ -35,30 +43,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-const sum = (function() {
-  "use strict";
-  return function sum(x, y, z) {
-    const args = [ x, y, z ];
-    return args.reduce((a, b) => a + b, 0);
-  };
-})();
-console.log(sum(1, 2, 3)); // 6
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

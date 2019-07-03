@@ -2,15 +2,20 @@
 id: 56533eb9ac21ba0edf2244bc
 title: Shopping List
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 购物清单
+localeTitle: Shopping List
 ---
 
 ## Description
-<section id="description">在变量<code>myList</code>创建购物清单。该列表应该是包含多个子阵列的多维数组。每个子数组中的第一个元素应包含一个带有项目名称的字符串。第二个元素应该是一个代表数量的数字，即<code>[&quot;Chocolate Bar&quot;, 15]</code>列表中应该至少有5个子数组。 </section>
+<section id='description'>
+你不仅可以<code>shift</code>（移出）数组中的第一个元素，你也可以<code>unshift</code>（移入）一个元素到数组的头部。
+<code>.unshift()</code>函数用起来就像<code>.push()</code>函数一样, 但不是在数组的末尾添加元素，而是在数组的头部添加元素。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+使用<code>unshift()</code>函数把<code>["Paul",35]</code>加入到<code>myArray</code>的头部。
 </section>
 
 ## Tests
@@ -18,14 +23,14 @@ localeTitle: 购物清单
 
 ```yml
 tests:
-  - text: <code>myList</code>应该是一个数组
-    testString: 'assert(isArray, "<code>myList</code> should be an array");'
-  - text: 每个子数组中的第一个元素都必须是字符串
-    testString: 'assert(hasString, "The first elements in each of your sub-arrays must all be strings");'
-  - text: 每个子数组中的第二个元素都必须是数字
-    testString: 'assert(hasNumber, "The second elements in each of your sub-arrays must all be numbers");'
-  - text: 您的列表中必须至少有5个项目
-    testString: 'assert(count > 4, "You must have at least 5 items in your list");'
+  - text: <code>myList</code>应该一个数组
+    testString: assert(isArray, '<code>myList</code>应该一个数组');
+  - text: 你的每个子数组的第一个元素的类型都应该是字符串
+    testString: assert(hasString, '你的每个子数组的第一个元素的类型都应该是字符串');
+  - text: 你的每个子数组的第二个元素的类型都应该是数字
+    testString: assert(hasNumber, '你的每个子数组的第二个元素的类型都应该是数字');
+  - text: 你的列表中至少要包含 5 个元素
+    testString: assert(count > 4, '你的列表中至少要包含 5 个元素');
 
 ```
 
@@ -34,21 +39,50 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-var myList = [];
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var count = 0;
+var isArray = false;
+var hasString = false;
+var hasNumber = false;
+(function(list){
+  if(Array.isArray(myList)) {
+    isArray = true;
+    if(myList.length > 0) {
+      hasString = true;
+      hasNumber = true;
+      myList.forEach(function(elem) {
+        if(typeof elem[0] !== 'string') {
+          hasString = false;
+        }
+        if(typeof elem[1] !== 'number') {
+          hasNumber = false;
+        }
+      });
+    }
+    count = myList.length;
+    return JSON.stringify(myList);
+  } else {
+    return "myList is not an array";
+  }
+
+})(myList);
 ```
 
 </div>
@@ -59,6 +93,14 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var myList = [
+  ["Candy", 10],
+  ["Potatoes", 12],
+  ["Eggs", 12],
+  ["Catfood", 1],
+  ["Toads", 9]
+];
 ```
+
 </section>
+              

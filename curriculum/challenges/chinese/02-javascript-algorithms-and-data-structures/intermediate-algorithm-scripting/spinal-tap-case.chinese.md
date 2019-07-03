@@ -1,17 +1,22 @@
 ---
 id: a103376db3ba46b2d50db289
 title: Spinal Tap Case
-isRequired: true
 challengeType: 5
+isRequired: true
 videoUrl: ''
-localeTitle: 脊椎龙头套
+localeTitle: Spinal Tap Case
 ---
 
 ## Description
-<section id="description">将字符串转换为脊柱案例。脊柱情况是全小写单词连接的破折号。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+给出一个含有两个数字的数组，我们需要写一个函数，让它返回这两个数字间所有数字（包含这两个数字）的总和。
+注意，较小数不一定总是出现在数组的第一个元素。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,16 +24,16 @@ localeTitle: 脊椎龙头套
 
 ```yml
 tests:
-  - text: <code>spinalCase(&quot;This Is Spinal Tap&quot;)</code>应该返回<code>&quot;this-is-spinal-tap&quot;</code> 。
-    testString: 'assert.deepEqual(spinalCase("This Is Spinal Tap"), "this-is-spinal-tap", "<code>spinalCase("This Is Spinal Tap")</code> should return <code>"this-is-spinal-tap"</code>.");'
-  - text: <code>spinalCase(&quot;thisIsSpinal Tap&quot;)</code>应该返回<code>&quot;this-is-spinal-tap&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("thisIsSpinalTap"), "this-is-spinal-tap", "<code>spinalCase("thisIsSpinal<wbr>Tap")</code> should return <code>"this-is-spinal-tap"</code>.");'
-  - text: <code>spinalCase(&quot;The_Andy_ Griffith_Show&quot;)</code>应该返回<code>&quot;the-andy-griffith-show&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("The_Andy_Griffith_Show"), "the-andy-griffith-show", "<code>spinalCase("The_Andy_<wbr>Griffith_Show")</code> should return <code>"the-andy-griffith-show"</code>.");'
-  - text: <code>spinalCase(&quot;Teletubbies say Eh-oh&quot;)</code>应该返回<code>&quot;teletubbies-say-eh-oh&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("Teletubbies say Eh-oh"), "teletubbies-say-eh-oh", "<code>spinalCase("Teletubbies say Eh-oh")</code> should return <code>"teletubbies-say-eh-oh"</code>.");'
-  - text: <code>spinalCase(&quot;AllThe-small Things&quot;)</code>应该归还<code>&quot;all-the-small-things&quot;</code> 。
-    testString: 'assert.strictEqual(spinalCase("AllThe-small Things"), "all-the-small-things", "<code>spinalCase("AllThe-small Things")</code> should return <code>"all-the-small-things"</code>.");'
+  - text: "<code>spinalCase('This Is Spinal Tap')</code>应该返回<code>'this-is-spinal-tap'</code>。"
+    testString: assert.deepEqual(spinalCase("This Is Spinal Tap"), "this-is-spinal-tap", '<code>spinalCase("This Is Spinal Tap")</code>应该返回<code>"this-is-spinal-tap"</code>。');
+  - text: "<code>spinalCase('thisIsSpinal<wbr>Tap')</code>应该返回<code>'this-is-spinal-tap'</code>。"
+    testString: assert.strictEqual(spinalCase('thisIsSpinalTap'), "this-is-spinal-tap", '<code>spinalCase("thisIsSpinal<wbr>Tap")</code>应该返回<code>"this-is-spinal-tap"</code>。');
+  - text: "<code>spinalCase('The_Andy_<wbr>Griffith_Show')</code>应该返回<code>'the-andy-griffith-show'</code>。"
+    testString: assert.strictEqual(spinalCase("The_Andy_Griffith_Show"), "the-andy-griffith-show", '<code>spinalCase("The_Andy_<wbr>Griffith_Show")</code>应该返回<code>"the-andy-griffith-show"</code>。');
+  - text: "<code>spinalCase('Teletubbies say Eh-oh')</code>应该返回<code>'teletubbies-say-eh-oh'</code>。"
+    testString: assert.strictEqual(spinalCase("Teletubbies say Eh-oh"), "teletubbies-say-eh-oh", '<code>spinalCase("Teletubbies say Eh-oh")</code>应该返回<code>"teletubbies-say-eh-oh"</code>。');
+  - text: "<code>spinalCase('AllThe-small Things')</code>应该返回<code>'all-the-small-things'</code>。"
+    testString: assert.strictEqual(spinalCase("AllThe-small Things"), "all-the-small-things", '<code>spinalCase("AllThe-small Things")</code>应该返回<code>"all-the-small-things"</code>。');
 
 ```
 
@@ -37,20 +42,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function spinalCase(str) {
-  // "It's such a fine line between stupid, and clever."
-  // --David St. Hubbins
-  return str;
-}
 
-spinalCase('This Is Spinal Tap');
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -60,6 +62,13 @@ spinalCase('This Is Spinal Tap');
 <section id='solution'>
 
 ```js
-// solution required
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  str = str.replace(/([a-z](?=[A-Z]))/g, '$1 ');
+  return str.toLowerCase().replace(/\ |\_/g, '-');
+}
 ```
+
 </section>
+              

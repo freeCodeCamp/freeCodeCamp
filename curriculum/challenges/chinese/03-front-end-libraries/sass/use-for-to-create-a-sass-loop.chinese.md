@@ -2,33 +2,47 @@
 id: 587d7dbe367417b2b2512bb9
 title: Use @for to Create a Sass Loop
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用@for创建Sass循环
+localeTitle: Use @for to Create a Sass Loop
 ---
 
 ## Description
-<section id="description"> <code>@for</code>指令在循环中添加样式，非常类似于JavaScript中的<code>for</code>循环。 <code>@for</code>以两种方式使用：“ <code>@for</code> ”或“ <code>@for</code> ”。主要区别在于“从头到尾” <em>排除</em>了结束号码，“从头到尾” <em>包括</em>结束号码。这是一个开始<b>到</b>最后的例子： <blockquote> @for $ i从1到12 { <br> .col  - ＃{$ i} {width：100％/ 12 * $ i; } <br> } </blockquote> <code>#{$i}</code>部分是将变量（ <code>i</code> ）与文本组合成字符串的语法。当Sass文件转换为CSS时，它看起来像这样： <blockquote> .col-1 { <br>宽度：8.33333％; <br> } <br><br> .col-2 { <br>宽度：16.66667％; <br> } <br><br> ... <br><br> .col-12 { <br>宽度：100％; <br> } </blockquote>这是创建网格布局的有效方法。现在，您有12个可用作CSS类的列宽选项。 </section>
+<section id='description'>
+你可以在 Sass 中使用<code>@for</code>循环，它的表现类似与 JavaScript 中的<code>for</code>循环。
+<code>@for</code>以两种方式使用："start through end" 或 "start to end"。主要区别在于“开始结束”<em> 排除 </em> 结束号码，而“开始结束”<em> 包括 </em> 结束号码。
+这是一个开始 <b> 到 </b> 结束示例：
+<blockquote>@for $i from 1 through 12 {<br>&nbsp;&nbsp;.col-#{$i} { width: 100%/12 * $i; }<br>}</blockquote>
+<code>#{$i}</code>部分是将变量（<code>i</code>）与文本组合成字符串的语法。当 Sass 文件转换为 CSS 时，它看起来像这样：
+<blockquote>.col-1 {<br>&nbsp;&nbsp;width: 8.33333%;<br>}<br><br>.col-2 {<br>&nbsp;&nbsp;width: 16.66667%;<br>}<br><br>......<br><br>.col-12 {<br>&nbsp;&nbsp;width: 100%;<br>}</blockquote>
+这是创建网格布局的有效方法。现在，你有 12 个可用作 CSS classes 的列宽选项。
+</section>
 
 ## Instructions
-<section id="instructions">写一个<code>@for</code>指令，它接受一个从1 <b>到</b> 6的变量<code>$j</code> 。它应该创建5个名为<code>.text-1</code>到<code>.text-5</code> ，其中每个类的<code>font-size</code>设置为10px乘以索引。 </section>
+<section id='instructions'>
+编写<code>@for</code>指令，使<code>$j</code>的值为从 1（包含）到 6（不包含）。
+它应该创建 5 个名为<code>.text-1</code>的 classes 到<code>.text-5</code>，其中每个 class 的<code>font-size</code>设置为 2px+10px 乘以索引。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应使用<code>@for</code>指令。
-    testString: 'assert(code.match(/@for /g), "Your code should use the <code>@for</code> directive.");'
-  - text: 您的<code>.text-1</code>类的<code>font-size</code>为10px。
-    testString: 'assert($(".text-1").css("font-size") == "10px", "Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.");'
-  - text: 您的<code>.text-2</code>类的<code>font-size</code>为20px。
-    testString: 'assert($(".text-2").css("font-size") == "20px", "Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.");'
-  - text: 您的<code>.text-3</code>类的<code>font-size</code>为30px。
-    testString: 'assert($(".text-3").css("font-size") == "30px", "Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.");'
-  - text: 您的<code>.text-4</code>类的<code>font-size</code>为40px。
-    testString: 'assert($(".text-4").css("font-size") == "40px", "Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.");'
-  - text: 您的<code>.text-5</code>类的<code>font-size</code>为50px。
-    testString: 'assert($(".text-5").css("font-size") == "50px", "Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.");'
+  - text: 你应使用<code>@for</code>指令。
+    testString: assert(code.match(/@for /g), '你应使用<code>@for</code>指令。');
+  - text: <code>.text-1</code>class 的<code>font-size</code>应为 12px。
+    testString: assert($('.text-1').css('font-size') == '12px', '<code>.text-1</code>class 的<code>font-size</code>应为 12px。');
+  - text: <code>.text-2</code>class 的<code>font-size</code>应为22px。
+    testString: assert($('.text-2').css('font-size') == '22px', '<code>.text-2</code>class 的<code>font-size</code>应为22px。');
+  - text: <code>.text-3</code>class 的<code>font-size</code>应为32px。
+    testString: assert($('.text-3').css('font-size') == '32px', '<code>.text-3</code>class 的<code>font-size</code>应为32px。');
+  - text: <code>.text-4</code>class 的<code>font-size</code>应为42px。
+    testString: assert($('.text-4').css('font-size') == '42px', '<code>.text-4</code>class 的<code>font-size</code>应为42px。');
+  - text: <code>.text-5</code>class 的<code>font-size</code>应为52px。
+    testString: assert($('.text-5').css('font-size') == '52px', '<code>.text-5</code>class 的<code>font-size</code>应为52px。');
+  - text: <code>.text-6</code>class 的<code>font-size</code>应为默认字体大小。
+    testString: assert( $('.text-6').css('font-size') == $('html').css('font-size') , '<code>.text-6</code>class 的<code>font-size</code>应为默认字体大小。');
 
 ```
 
@@ -37,33 +51,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<style type='text/sass'>
-
-
-
-</style>
-
-<p class="text-1">Hello</p>
-<p class="text-2">Hello</p>
-<p class="text-3">Hello</p>
-<p class="text-4">Hello</p>
-<p class="text-5">Hello</p>
-
+<style type='text/sass'>,  ,  ,  ,</style>,,<p class="text-1">Hello</p>,<p class="text-2">Hello</p>,<p class="text-3">Hello</p>,<p class="text-4">Hello</p>,<p class="text-5">Hello</p>,<p class="text-6">Hello</p>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

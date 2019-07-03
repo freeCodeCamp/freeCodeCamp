@@ -1,17 +1,22 @@
 ---
 id: a5de63ebea8dbee56860f4f2
 title: Diff Two Arrays
-isRequired: true
 challengeType: 5
+isRequired: true
 videoUrl: ''
-localeTitle: 差分两个阵列
+localeTitle: Diff Two Arrays
 ---
 
 ## Description
-<section id="description">比较两个数组并返回一个新数组，其中只有在两个给定数组中的一个中找到的任何项，但不能同时返回两个数组。换句话说，返回两个数组的对称差异。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 <strong>注意</strong> <br>您可以按任何顺序返回包含其元素的数组。 </section>
+<section id='description'>
+给出一个含有两个数字的数组，我们需要写一个函数，让它返回这两个数字间所有数字（包含这两个数字）的总和。
+注意，较小数不一定总是出现在数组的第一个元素。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,36 +24,36 @@ localeTitle: 差分两个阵列
 
 ```yml
 tests:
-  - text: '<code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code>应该返回一个数组。'
-    testString: 'assert(typeof diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) === "object", "<code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code> should return an array.");'
-  - text: '<code>[&quot;diorite&quot;, &quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;pink wool&quot;, &quot;dead shrub&quot;], [&quot;diorite&quot;, &quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;]</code>应该返回<code>[&quot;pink wool&quot;]</code> 。'
-    testString: 'assert.sameMembers(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]), ["pink wool"], "<code>["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code> should return <code>["pink wool"]</code>.");'
-  - text: '<code>[&quot;diorite&quot;, &quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;pink wool&quot;, &quot;dead shrub&quot;], [&quot;diorite&quot;, &quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;]</code>应该返回一个包含一个项目的数组。'
-    testString: 'assert(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]).length === 1, "<code>["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code> should return an array with one item.");'
-  - text: '<code>[&quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;pink wool&quot;, &quot;dead shrub&quot;], [&quot;diorite&quot;, &quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;]</code>应该返回<code>[&quot;diorite&quot;, &quot;pink wool&quot;]</code> 。'
-    testString: 'assert.sameMembers(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]), ["diorite", "pink wool"], "<code>["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code> should return <code>["diorite", "pink wool"]</code>.");'
-  - text: '<code>[&quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;pink wool&quot;, &quot;dead shrub&quot;], [&quot;diorite&quot;, &quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;]</code>应该返回一个数组有两个项目。'
-    testString: 'assert(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]).length === 2, "<code>["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code> should return an array with two items.");'
-  - text: '<code>[&quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;], [&quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;]</code>应该返回<code>[]</code> 。'
-    testString: 'assert.sameMembers(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]), [], "<code>["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]</code> should return <code>[]</code>.");'
-  - text: '<code>[&quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;], [&quot;andesite&quot;, &quot;grass&quot;, &quot;dirt&quot;, &quot;dead shrub&quot;]</code>应返回一个空数组。'
-    testString: 'assert(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]).length === 0, "<code>["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]</code> should return an empty array.");'
-  - text: '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code>应该返回<code>[4]</code> 。'
-    testString: 'assert.sameMembers(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], "<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return <code>[4]</code>.");'
-  - text: '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code>应该返回一个带有一个项目的数组。'
-    testString: 'assert(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]).length  === 1, "<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code> should return an array with one item.");'
-  - text: '<code>[1, &quot;calf&quot;, 3, &quot;piglet&quot;], [1, &quot;calf&quot;, 3, 4]</code>应返回<code>[&quot;piglet&quot;, 4]</code> 。'
-    testString: 'assert.sameMembers(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]), ["piglet", 4], "<code>[1, "calf", 3, "piglet"], [1, "calf", 3, 4]</code> should return <code>["piglet", 4]</code>.");'
-  - text: '<code>[1, &quot;calf&quot;, 3, &quot;piglet&quot;], [1, &quot;calf&quot;, 3, 4]</code>应该返回一个包含两个项目的数组。'
-    testString: 'assert(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]).length === 2, "<code>[1, "calf", 3, "piglet"], [1, "calf", 3, 4]</code> should return an array with two items.");'
-  - text: '<code>[], [&quot;snuffleupagus&quot;, &quot;cookie monster&quot;, &quot;elmo&quot;]</code>应该返回<code>[&quot;snuffleupagus&quot;, &quot;cookie monster&quot;, &quot;elmo&quot;]</code> 。'
-    testString: 'assert.sameMembers(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]), ["snuffleupagus", "cookie monster", "elmo"], "<code>[], ["snuffleupagus", "cookie monster", "elmo"]</code> should return <code>["snuffleupagus", "cookie monster", "elmo"]</code>.");'
-  - text: '<code>[], [&quot;snuffleupagus&quot;, &quot;cookie monster&quot;, &quot;elmo&quot;]</code>应该返回一个包含三个项目的数组。'
-    testString: 'assert(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]).length === 3, "<code>[], ["snuffleupagus", "cookie monster", "elmo"]</code> should return an array with three items.");'
-  - text: '<code>[1, &quot;calf&quot;, 3, &quot;piglet&quot;], [7, &quot;filly&quot;]</code> <code>[1, &quot;calf&quot;, 3, &quot;piglet&quot;, 7, &quot;filly&quot;]</code> <code>[1, &quot;calf&quot;, 3, &quot;piglet&quot;], [7, &quot;filly&quot;]</code>应该返回<code>[1, &quot;calf&quot;, 3, &quot;piglet&quot;, 7, &quot;filly&quot;]</code> 。'
-    testString: 'assert.sameMembers(diffArray([1, "calf", 3, "piglet"], [7, "filly"]), [1, "calf", 3, "piglet", 7, "filly"], "<code>[1, "calf", 3, "piglet"], [7, "filly"]</code> should return <code>[1, "calf", 3, "piglet", 7, "filly"]</code>.");'
-  - text: '<code>[1, &quot;calf&quot;, 3, &quot;piglet&quot;], [7, &quot;filly&quot;]</code>应该返回一个包含六个项目的数组。'
-    testString: 'assert(diffArray([1, "calf", 3, "piglet"], [7, "filly"]).length === 6, "<code>[1, "calf", 3, "piglet"], [7, "filly"]</code> should return an array with six items.");'
+  - text: <code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code>应该返回一个数组。
+    testString: assert(typeof diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]) === "object", '<code>diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5])</code>应该返回一个数组。');
+  - text: "<code>['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']</code>应该返回<code>['pink wool']</code>。"
+    testString: assert.sameMembers(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]), ["pink wool"], '<code>["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code>应该返回<code>["pink wool"]</code>。');
+  - text: "<code>['diorite', 'andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']</code>应该返回一个长度为 1 的数组。"
+    testString: assert(diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]).length === 1, '<code>["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code>应该返回一个长度为 1 的数组。');
+  - text: "<code>['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']</code>应该返回<code>['diorite', 'pink wool']</code>。"
+    testString: assert.sameMembers(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]), ["diorite", "pink wool"], '<code>["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code>应该返回<code>["diorite", "pink wool"]</code>。');
+  - text: "<code>['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub']</code>应该返回一个长度为 2 的数组。"
+    testString: assert(diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]).length === 2, '<code>["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"]</code>应该返回一个长度为 2 的数组。');
+  - text: "<code>['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']</code>应该返回<code>[]</code>。"
+    testString: assert.sameMembers(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]), [], '<code>["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]</code>应该返回<code>[]</code>。');
+  - text: "<code>['andesite', 'grass', 'dirt', 'dead shrub'], ['andesite', 'grass', 'dirt', 'dead shrub']</code>应该返回一个空数组。"
+    testString: assert(diffArray(["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]).length === 0, '<code>["andesite", "grass", "dirt", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"]</code>应该返回一个空数组。');
+  - text: <code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code>应该返回<code>[4]</code>。
+    testString: assert.sameMembers(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]), [4], '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code>应该返回<code>[4]</code>。');
+  - text: <code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code>应该返回一个长度为 1 的数组。
+    testString: assert(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]).length  === 1, '<code>[1, 2, 3, 5], [1, 2, 3, 4, 5]</code>应该返回一个长度为 1 的数组。');
+  - text: "<code>[1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]</code>应该返回<code>['piglet', 4]</code>。"
+    testString: assert.sameMembers(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]), ["piglet", 4], '<code>[1, "calf", 3, "piglet"], [1, "calf", 3, 4]</code>应该返回<code>["piglet", 4]</code>。');
+  - text: "<code>[1, 'calf', 3, 'piglet'], [1, 'calf', 3, 4]</code>应该返回一个长度为 2 的数组。"
+    testString: assert(diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]).length === 2, '<code>[1, "calf", 3, "piglet"], [1, "calf", 3, 4]</code>应该返回一个长度为 2 的数组。');
+  - text: "<code>[], ['snuffleupagus', 'cookie monster', 'elmo']</code>应该返回<code>['snuffleupagus', 'cookie monster', 'elmo']</code>。"
+    testString: assert.sameMembers(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]), ["snuffleupagus", "cookie monster", "elmo"], '<code>[], ["snuffleupagus", "cookie monster", "elmo"]</code>应该返回<code>["snuffleupagus", "cookie monster", "elmo"]</code>。');
+  - text: "<code>[], ['snuffleupagus', 'cookie monster', 'elmo']</code>应该返回一个长度为 3 的数组。"
+    testString: assert(diffArray([], ["snuffleupagus", "cookie monster", "elmo"]).length === 3, '<code>[], ["snuffleupagus", "cookie monster", "elmo"]</code>应该返回一个长度为 3 的数组。');
+  - text: "<code>[1, 'calf', 3, 'piglet'], [7, 'filly']</code>应该返回<code>[1, 'calf', 3, 'piglet', 7, 'filly']</code>。"
+    testString: assert.sameMembers(diffArray([1, "calf", 3, "piglet"], [7, "filly"]), [1, "calf", 3, "piglet", 7, "filly"], '<code>[1, "calf", 3, "piglet"], [7, "filly"]</code>应该返回<code>[1, "calf", 3, "piglet", 7, "filly"]</code>。');
+  - text: "<code>[1, 'calf', 3, 'piglet'], [7, 'filly']</code>应该返回一个长度为 6 的数组。"
+    testString: assert(diffArray([1, "calf", 3, "piglet"], [7, "filly"]).length === 6, '<code>[1, "calf", 3, "piglet"], [7, "filly"]</code>应该返回一个长度为 6 的数组。');
 
 ```
 
@@ -57,20 +62,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function diffArray(arr1, arr2) {
-  var newArr = [];
-  // Same, same; but different.
-  return newArr;
-}
 
-diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -80,6 +82,28 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 <section id='solution'>
 
 ```js
-// solution required
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  var h1 = Object.create(null);
+  arr1.forEach(function(e) {
+    h1[e] = e;
+  });
+  
+  var h2 = Object.create(null);
+  arr2.forEach(function(e) {
+    h2[e] = e;
+  });
+  
+  Object.keys(h1).forEach(function(e) {
+     if (!(e in h2)) newArr.push(h1[e]);
+  });
+  Object.keys(h2).forEach(function(e) {
+     if (!(e in h1)) newArr.push(h2[e]);
+  });
+  // Same, same; but different.
+  return newArr;
+}
 ```
+
 </section>
+              

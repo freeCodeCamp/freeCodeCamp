@@ -1,17 +1,28 @@
 ---
 id: 587d7fb4367417b2b2512bfe
 title: Add a License to Your package.json
-localeTitle: 向package.json添加许可证
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Add a License to Your package.json
 ---
 
 ## Description
-<section id='description'> <code>0</code>许可证字段用于通知项目用户他们可以使用它做什么。 <code>0</code>开源项目的一些常见许可证包括MIT和BSD。如果您想了解更多适合您项目的许可证，http：//choosealicense.com是一个很好的资源。 <code>0</code>不需要许可证信息。大多数国家/地区的版权法都将授予您默认创建的所有权。但是，明确说明用户可以做什么和不做什么总是一个好习惯。 <code>0</code>示例
-<code>"license": "MIT",</code> <code>0</code>说明<code>0</code>如果您认为合适，请填写Glitch项目的package.json中的license-field。 
+<section id='description'>
+package.json 是任何 Node.js 项目或 npm 包的中心。它存储项目的相关信息，就像 HTML 文档中的<code><head></code>区域是用来描述网页的通用信息（元信息）一样。package.json 由单个 JSON 对象组成，它以键值对的形式存储项目的信息。一个最小的 package.json 文件至少包含两个必须字段：name 和 version——但是提供有关项目的附加信息是一个更好的做法，在以后它可能对你的用户或者维护者有所帮助。
+author 字段：
+如果你转到之前设置的 Glitch 项目并查看屏幕左侧，你会看到一个文件树，你可以在其中查看项目中各种文件的概述。在文件树的末尾部分，你会看到 package.json——我们将在接下来的几个挑战中改进这个文件。
+这个文件中最常见的信息之一是 author 字段，它指定了谁是项目的创建者。它可以是字符串，也可以是带有联系人详细信息的对象。对于较大的项目，建议使用对象，但是在我们的例子中，一个简单的字符串就可以了，比如下面的例子。
+<code>"author": "Jane Doe",</code>
+说明：
+将你的名字添加到 Glitch 项目中，package.json 的 author 字段。
+请记住，你正在编写 JSON 文件。
+所有的字段名必须使用双引号（"）包裹, 比如："author"
+所有字段必须用逗号（,）分隔
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,8 +31,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“许可证”密钥
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.license, ''"license" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: "package.json 应该有一个有效的 'license' 键。"
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data); assert(packJson.license, "缺少 "license""); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -30,12 +41,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

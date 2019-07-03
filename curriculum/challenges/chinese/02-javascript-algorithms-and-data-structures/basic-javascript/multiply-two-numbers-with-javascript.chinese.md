@@ -2,25 +2,35 @@
 id: cf1231c1c11feddfaeb5bdef
 title: Multiply Two Numbers with JavaScript
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 使用JavaScript将两个数字相乘
+localeTitle: Multiply Two Numbers with JavaScript
 ---
 
 ## Description
-<section id="description">我们也可以将一个数字乘以另一个数字。 JavaScript使用<code>*</code>符号来乘以两个数字。 <p> <strong>例</strong> </p><blockquote> myVar = 13 * 13; //指定169 </blockquote></section>
+<section id='description'>
+我们也可在 JavaScript 中使用乘法运算。
+JavaScript 使用<code>*</code>符号表示两数相乘。
+
+<strong>示例</strong>
+<blockquote>myVar = 13 * 13; // 赋值为169</blockquote>
+
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>0</code>使产品等于<code>80</code> 。 </section>
+<section id='instructions'>
+改变数值<code>0</code>来让变量 product 的值等于<code>80</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 使变量<code>product</code>等于80
-    testString: 'assert(product === 80,"Make the variable <code>product</code> equal 80");'
+  - text: 要使<code>product</code>的值等于 80
+    testString: assert(product === 80,'要使<code>product</code>的值等于 80');
   - text: 使用<code>*</code>运算符
-    testString: 'assert(/\*/.test(code), "Use the <code>*</code> operator");'
+    testString: assert(/\*/.test(code), '使用<code>*</code>运算符');
 
 ```
 
@@ -29,21 +39,25 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-var product = 8 * 0;
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'product = '+z;})(product);
 ```
 
 </div>
@@ -54,6 +68,8 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var product = 8 * 10;
 ```
+
 </section>
+              

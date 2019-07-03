@@ -1,24 +1,41 @@
 ---
 id: 587d78af367417b2b2512b04
-title: Build a Product Landing Page
-isRequired: true
+title: undefined
 challengeType: 3
+isRequired: true
 videoUrl: ''
-localeTitle: 建立产品登陆页面
+localeTitle: undefined
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/RKRbwL" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/RKRbwL</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a>并通过所有测试。给它你自己的个人风格。您可以使用HTML，JavaScript和CSS来完成此项目。建议使用纯CSS，因为这是迄今为止所涵盖的课程，您应该使用纯CSS进行一些练习。如果您愿意，可以使用Bootstrap或SASS。此项目不建议使用其他技术（例如jQuery，React，Angular或Vue），使用它们需要您自担风险。其他项目将使您有机会使用不同的技术堆栈，如React。我们将接受并尝试修复所有使用建议的技术堆栈的问题报告。快乐的编码！ <strong>用户故事＃1：</strong>我的产品登录页面应该有一个带有相应<code>id=&quot;header&quot;</code>的<code>header</code>元素。 <strong>用户故事＃2：</strong>我可以在<code>header</code>元素中看到一个带有相应<code>id=&quot;header-img&quot;</code> 。公司徽标会在这里形成良好的形象。 <strong>用户故事＃3：</strong>在<code>#header</code>元素中，我可以看到一个带有相应<code>id=&quot;nav-bar&quot;</code>的<code>nav</code>元素。 <strong>用户故事＃4：</strong>我可以在<code>nav</code>元素中看到至少三个可点击的元素，每个元素都有一个<code>nav-link</code>类。 <strong>用户故事＃5：</strong>当我点击<code>nav</code>元素中的<code>.nav-link</code>按钮时，我将被带到目标网页的相应部分。 <strong>用户故事＃6：</strong>我可以观看<code>id=&quot;video&quot;</code>的嵌入式产品视频。 <strong>用户故事＃7：</strong>我的目标网页有一个<code>form</code>元素，其对应的<code>id=&quot;form&quot;</code> 。 <strong>用户故事＃8：</strong>在表单中，有一个<code>id=&quot;email&quot;</code>的<code>input</code>字段，我可以在其中输入电子邮件地址。 <strong>用户故事＃9：</strong> <code>#email</code>输入字段应该有占位符文本，让用户知道该字段的用途。 <strong>用户故事＃10：</strong> <code>#email</code>输入字段使用HTML5验证来确认输入的文本是电子邮件地址。 <strong>用户故事＃11：</strong>在表单中，有一个提交<code>input</code> ，其对应的<code>id=&quot;submit&quot;</code> 。 <strong>用户故事＃12：</strong>当我单击<code>#submit</code>元素时，电子邮件将被提交到静态页面（使用此模拟URL： <a href="https://www.freecodecamp.com/email-submit" target="_blank">https</a> ： <code>#submit</code> ），确认已输入电子邮件地址，并且它发布成功。 <strong>用户故事＃13：</strong>导航栏应始终位于视口的顶部。 <strong>用户故事＃14：</strong>我的产品登录页面应至少有一个媒体查询。 <strong>用户故事＃15：</strong>我的产品登陆页面应至少使用一次CSS flexbox。您可以通过分叉<a href="http://codepen.io/freeCodeCamp/full/MJjpwO" target="_blank">此CodePen笔</a>来构建项目。或者您可以使用此CDN链接在您喜欢的任何环境中运行测试： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code> ： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>完成后，将URL提交给您的工作通过所有测试的项目。如果卡住，请记住使用<a href="https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a>方法。 </section>
+<section id='description'>
+<strong>目标：</strong>使用 <a href='https://codepen.io' target='_blank'>CodePen.io</a> 搭建一个与这个功能上相似的 app：<a href='https://codepen.io/freeCodeCamp/full/zNqgVx' target='_blank'>https://codepen.io/freeCodeCamp/full/zNqgVx</a>。
+在满足以下<a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>需求</a>并能通过所有测试的前提下，你可以根据自己的喜好来美化你的 app。
+你可以使用 HTML、JavaScript 以及 CSS 来完成项目，由于目前我们只学到了 CSS，因此建议你只使用 CSS 完成这个项目，顺便还可以巩固一下之前学到的内容。你也可以使用 Bootstrap 或者是 SASS。在当前的项目中，不推荐使用其他技术如 jQurey、React、Angular 或者是 Vue，因为一旦出现问题，风险自担。但在别的项目中我们仍有机会去使用不同的技术栈比如 React，我们会接受并尽力处理你在使用建议的技术栈过程中遇到的问题，编码愉快！
+<strong>需求 1：</strong>我的致敬页应有对应<code>id="main"</code>的元素，其中包含其他的所有元素
+<strong>需求 2：</strong>我应该看到一个具有相应<code>id="title"</code>的元素，其中包含描述致敬页主题的字符串（即文本），如 "Dr. Norman Borlaug"。
+<strong>需求 3：</strong>我应该看到一个带有对应<code>id="img-div"</code>的<code>div</code>元素。
+<strong>需求 4：</strong>在<code>img-div</code>元素内，我应该看见有对应<code>id="image"</code>的<code>img</code>元素。
+<strong>需求 5：</strong>在<code>img-div</code>元素内，我应该看见一个具有相应<code>id="img-caption"</code>的元素，其中包含对<code>img-div</code>中图像的描述。
+<strong>需求 6：</strong>我应该看见具有对应<code>id="tribute-info"</code>的元素，其中包含描述致敬页主题的文本内容
+<strong>需求 7：</strong>我应该看见具有对应<code>id="tribute-link"</code>的元素，它链接到一个包含有关致敬页主题额外信息的外部网页，提示：你必须为元素提供<code>target</code>属性，并设置为<code>_blank</code>以便在新选项卡中打开连接（例<code>target="_blank"</code>）。
+<strong>需求 8：</strong><code>img</code>元素应相对于其父元素的宽度响应地调整大小，但不超过其原始大小。
+<strong>需求 9：</strong><code>img</code>在其父元素内居中。
+你可以通过 fork 此<a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>CodePen</a> 来构建项目，你也可以使用此 CDN 链接在你喜欢的任何环境中运行测试：<code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>。
+完成项目并通过所有测试后，输入你的项目在 CodePen 上的链接。
+要是卡住的话，记得使用 <a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>Read-Search-Ask</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
-tests: []
+tests:
 
 ```
 
@@ -27,12 +44,20 @@ tests: []
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

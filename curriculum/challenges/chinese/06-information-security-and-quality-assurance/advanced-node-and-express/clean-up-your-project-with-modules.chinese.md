@@ -2,16 +2,24 @@
 id: 589690e6f9fc0f352b528e6e
 title: Clean Up Your Project with Modules
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 使用模块清理项目
+localeTitle: Clean Up Your Project with Modules
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。现在你拥有的一切都在你的server.js文件中。这可能导致难以管理不易扩展的代码。创建2个新文件：Routes.js和Auth.js两者都应该从以下代码开始： <pre> module.exports = function（app，db）{
-<p> } </p></pre>现在位于服务器文件的顶部，需要这样的文件： <code>const routes = require(&#39;./routes.js&#39;);</code>在您与数据库建立成功连接之后，实例化它们中的每一个如下： <code>routes(app, db)</code>最后，获取服务器中的所有路由并将它们粘贴到新文件中并从服务器文件中删除它们。也可以使用ensureAuthenticated，因为我们专门为路由创建了中间件功能。您现在必须正确添加所使用的依赖项，例如<code>const passport = require(&#39;passport&#39;);</code> ，在routes.js文件中导出行的最上方。继续添加它们直到不再存在错误，并且您的服务器文件不再有任何路由！现在在auth.js文件中执行相同的操作，其中包含与身份验证相关的所有内容，例如序列化和本地策略的设置，并从服务器文件中删除它们。确保添加依赖项并在同一位置调用服务器中的<code>auth(app,db)</code> 。确保<code>routes(app, db)</code> <code>auth(app, db)</code>之前有<code>auth(app, db)</code> <code>routes(app, db)</code>因为我们的注册路由取决于发起的护照！恭喜 - 您已经处于Advanced Node和Express的这一部分的末尾，并且有一些漂亮的代码可供展示！当您认为自己已经做对时，请提交您的页面。如果您遇到错误，可以<a href="https://glitch.com/#!/project/delicious-herring">在此处查看</a>已完成项目的示例。 <p></p></section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,8 +27,8 @@ localeTitle: 使用模块清理项目
 
 ```yml
 tests:
-  - text: 存在的模块
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /require.*("|").\/routes.js("|")/gi, "You should have required your new files"); assert.match(data, /mongo.connect[^]*routes/gi, "Your new modules should be called after your connection to the database"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 应正确引入新文件。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /require.*("|").\/routes.js("|")/gi, "应正确引入新文件。"); assert.match(data, /mongo.connect[^]*routes/gi, "应在连接数据库后调用 routes 的模块。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -29,12 +37,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

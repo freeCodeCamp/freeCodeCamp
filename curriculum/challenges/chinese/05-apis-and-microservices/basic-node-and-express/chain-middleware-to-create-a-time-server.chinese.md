@@ -1,17 +1,20 @@
 ---
 id: 587d7fb1367417b2b2512bf4
 title: Chain Middleware to Create a Time Server
-localeTitle: 链中间件创建时间服务器
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Chain Middleware to Create a Time Server
 ---
 
 ## Description
-<section id='description'> <code>0</code>使用<code>app.METHOD(path, middlewareFunction)</code>可以在特定路径上安装<code>app.METHOD(path, middlewareFunction)</code> 。中间件也可以在路由定义中链接。 <code>0</code>查看以下示例： 
-<blockquote>app.get('/user', function(req, res, next) {<br>  req.user = getTheUserSync();  // Hypothetical synchronous operation<br>  next();<br>}, function(req, res) {<br>  res.send(req.user);<br>})</blockquote> <code>0</code>此方法可用于将服务器操作拆分为较小的单元。这导致了更好的应用程序结构，以及在不同位置重用代码的可能性。此方法还可用于对数据执行某些验证。在中间件堆栈的每个点，您可以阻止当前链的执行，并将控制权传递给专门用于处理错误的函数。或者您可以将控制权传递给下一个匹配的路径，以处理特殊情况。我们将在高级Express部分中看到如何。 <code>0</code>在路径<code>app.get('/now', ...)</code>链中间件函数和最终处理程序。在中间件功能中，您应该在<code>req.time</code>键中将当前时间添加到请求对象。您可以使用<code>new Date().toString()</code> 。在处理程序中，使用JSON对象进行响应，采用结构<code>{time: req.time}</code> 。 <code>0</code>提示：如果不链接中间件，测试将无法通过。如果将函数挂载到其他位置，即使输出结果正确，测试也会失败。 
+<section id='description'>
+在开发过程中，能够随时看到代码的运行结果是非常重要的。Node 只是一个 JavaScript 环境。与客户端 JavaScript 一样，你可以使用控制台输出有用的调试信息。在本地计算机上，你可以在终端中输出调试信息。在 Glitch 上，你可以打开屏幕下方的日志。使用 "Logs" 按钮切换日志面板（在左上角，应用名称的下面）。
+准备开始，我们只需要在控制台打印出经典的 "Hello World" 即可。我们建议在做这些挑战题时，保持日志面板处于打开状态。通过这些错误日志，你可能会发现这些错误的本质原因。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,10 +23,10 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: / now端点应该已经安装了中间件
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/chain-middleware-time'').then(data => { assert.equal(data.stackLength, 2, ''"/now" route has no mounted middleware''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: / now端点应返回从现在起+/- 20秒的时间
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/chain-middleware-time'').then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, ''the returned time is not between +- 20 secs from now''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 路由 /now 应该已经挂载了中间件
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/chain-middleware-time").then(data => { assert.equal(data.stackLength, 2, "路由 "/now" 没挂载中间件"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 路由 /now 应该返回一个从现在开始 +/-20 秒的时间
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/chain-middleware-time").then(data => { var now = new Date(); assert.isAtMost(Math.abs(new Date(data.time) - now), 20000, "返回时间不在现在 的 +/-20 秒之间"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -32,12 +35,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

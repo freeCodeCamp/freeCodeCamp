@@ -1,17 +1,21 @@
 ---
 id: bd7158d8c443edefaeb5bd0f
 title: File Metadata Microservice
-localeTitle: 文件元数据微服务
 challengeType: 4
 isRequired: true
+videoUrl: ''
+localeTitle: File Metadata Microservice
 ---
 
 ## Description
-<section id='description'> <code>0</code>构建一个功能类似于此的完整堆栈JavaScript应用程序： <a href='https://purple-paladin.glitch.me/' target='_blank'>https</a> ： <a href='https://purple-paladin.glitch.me/' target='_blank'>//purple-paladin.glitch.me/</a> 。 <code>0</code>在这个项目上工作将涉及您在我们的入门项目上的Glitch上编写代码。完成此项目后，您可以将公共故障网址（到应用程序的主页）复制到此屏幕进行测试！您可以选择在另一个平台上编写项目，但必须公开显示我们的测试。 <code>0</code>使用<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-filemetadata/' target='_blank'>此链接</a>在Glitch上启动此项目或在GitHub上克隆<a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>此存储库</a> ！如果您使用Glitch，请记住将项目链接保存到安全的地方！ 
+<section id='description'>
+构建一个功能类似于 <a href='https://curse-arrow.glitch.me/' target='_blank'>https://curse-arrow.glitch.me/</a> 的 JavaScript 全栈应用。
+在开发这个项目的时，我们推荐你使用 Glitch（https://glitch.com/），在其上面编码，待你完成之后，你可以拷贝应用主页的链接到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。
+参考示例：在 Glitch 上启动这个项目 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/'>这个链接</a> 或者克隆 GitHub 上 <a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>这个仓库的代码</a> ! 如果你使用 Glitch，请记住将项目链接保存到妥当的地方!
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,9 +24,9 @@ isRequired: true
 
 ```yml
 tests:
-  - text: 我可以提交包含文件上传的FormData对象。
+  - text: 我可以提交包含文件上传的 FormData 对象。
     testString: ''
-  - text: “当我提交某些内容时，我将在JSON响应中收到以字节为单位的文件大小。”
+  - text: 当我提交某些内容时，我将在 JSON 响应中收到以 bytes（字节）为单位的文件大小。
     testString: ''
 
 ```
@@ -32,12 +36,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

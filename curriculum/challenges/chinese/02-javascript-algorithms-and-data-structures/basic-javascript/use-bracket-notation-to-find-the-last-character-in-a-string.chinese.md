@@ -2,25 +2,32 @@
 id: bd7123c9c451eddfaeb5bdef
 title: Use Bracket Notation to Find the Last Character in a String
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 使用括号表示法查找字符串中的最后一个字符
+localeTitle: Use Bracket Notation to Find the Last Character in a String
 ---
 
 ## Description
-<section id="description">为了获得字符串的最后一个字母，您可以从字符串的长度中减去一个字母。例如，如果<code>var firstName = &quot;Charles&quot;</code> ，则可以使用<code>firstName[firstName.length - 1]</code>获取字符串最后一个字母的值。 </section>
+<section id='description'>
+要获取字符串的最后一个字符，可以用字符串的长度减 1 的索引值。
+例如，在<code>var firstName = "Charles"</code>中，你可以这样操作<code>firstName[firstName.length - 1]</code>来得到字符串的最后的一个字符。
+</section>
 
 ## Instructions
-<section id="instructions">使用<dfn>括号表示法</dfn>查找<code>lastName</code>变量中的最后一个字符。 <strong>暗示</strong> <br>如果卡住了，请尝试查看<code>lastLetterOfFirstName</code>变量声明。 </section>
+<section id='instructions'>
+使用<dfn>方括号<dfn来取得<code>lastName</code>变量中的最后一个字符。
+<strong>提示</strong><br>如果你遇到困难了，不妨看看在<code>lastLetterOfFirstName</code>变量上是怎么做的。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>lastLetterOfLastName</code>应为“e”。
-    testString: 'assert(lastLetterOfLastName === "e", "<code>lastLetterOfLastName</code> should be "e".");'
-  - text: 你必须使用<code>.length</code>来获取最后一个字母。
-    testString: 'assert(code.match(/\.length/g).length === 2, "You have to use <code>.length</code> to get the last letter.");'
+  - text: "<code>lastLetterOfLastName</code>应该是'e'."
+    testString: assert(lastLetterOfLastName === "e", '<code>lastLetterOfLastName</code>应该是 "e".');
+  - text: 你需要使用<code>.length</code>获取最后一个字符
+    testString: assert(code.match(/\.length/g).length === 2, '你需要使用<code>.length</code>获取最后一个字符');
 
 ```
 
@@ -29,29 +36,25 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-// Example
-var firstName = "Ada";
-var lastLetterOfFirstName = firstName[firstName.length - 1];
 
-// Setup
-var lastName = "Lovelace";
 
-// Only change code below this line.
-var lastLetterOfLastName = lastName;
 
-```
 
-</div>
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return v;})(lastLetterOfLastName);
 ```
 
 </div>
@@ -62,6 +65,12 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var firstName = "Ada";
+var lastLetterOfFirstName = firstName[firstName.length - 1];
+
+var lastName = "Lovelace";
+var lastLetterOfLastName = lastName[lastName.length - 1];
 ```
+
 </section>
+              

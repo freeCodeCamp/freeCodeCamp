@@ -2,15 +2,24 @@
 id: 5895f70df9fc0f352b528e69
 title: How to Use Passport Strategies
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 如何使用Passport策略
+localeTitle: How to Use Passport Strategies
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。在提供的index.pug文件中，实际上有一个登录表单。它之前已被隐藏，因为内联javascript <code>if showLogin</code>的形式缩进后。在showLogin作为变量从未定义之前，它从未呈现包含该表单的代码块。继续在该页面的res.render上向对象<code>showLogin: true</code>添加一个新变量。刷新页面时，您应该看到表单！此表单设置为<b>POST</b> on <em>/ login，</em>因此我们应该设置此接受POST并验证用户身份。对于此挑战，您应添加路由/登录以接受POST请求。要在此路由上进行身份验证，您需要添加中间件才能发送响应。这是通过在您的<code>function(req,res)</code>之前使用中间件传递另一个参数来完成的！要使用的中间件是<code>passport.authenticate(&#39;local&#39;)</code> 。 <em>passport.authenticate</em>也可以将一些选项作为参数，例如： <code>{ failureRedirect: &#39;/&#39; }</code>这非常有用，所以一定要添加它。作为使用中间件后的响应（只有在身份验证中间件通过时才会调用）应该是将用户重定向到<em>/ profile，</em>并且该路由应该呈现视图&#39;profile.pug&#39;。如果身份验证成功，则用户对象将保存在<em>req.user中</em> 。现在，如果您在表单中输入用户名和密码，它应该重定向到主页<em>/</em>并且在服务器的控制台中应该是&#39;用户{USERNAME}尝试登录&#39;。因为我们目前无法登录未注册的用户。当您认为自己已经做对时，请提交您的页面。如果您遇到错误，可以<a href="https://gist.github.com/JosephLivengood/8a335d1a68ed9170da02bb9d8f5b71d5">在这里查看</a>到目前为止完成的项目。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,10 +27,10 @@ localeTitle: 如何使用Passport策略
 
 ```yml
 tests:
-  - text: 所有步骤都在server.js中正确实现
-    testString: ' getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /showLogin:( |)true/gi, "You should be passing the variable "showLogin" as true to your render function for the homepage"); assert.match(data, /failureRedirect:( |)("|")\/("|")/gi, "Your code should include a failureRedirect to the "/" route"); assert.match(data, /login[^]*post[^]*local/gi, "You should have a route for login which accepts a POST and passport.authenticates local"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 对/ login的POST请求正确重定向到/
-    testString: 'getUserInput => $.post(getUserInput("url")+ "/login") .then(data => { assert.match(data, /Looks like this page is being rendered from Pug into HTML!/gi, "A login attempt at this point should redirect to the homepage since we do not have any registered users"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: server.js 中应正确执行所有步骤。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /showLogin:( |)true/gi, "你应该在主页的 render 函数中将变量 "showLogin" 设置为 true。"); assert.match(data, /failureRedirect:( |)("|")\/("|")/gi, "你的代码应该包含重定向到 "/" 路由的错误处理。"); assert.match(data, /login[^]*post[^]*local/gi, "你应该有一个处理登录的路由，它可以接收 POST 请求，并通过 passport.authenticates 验证。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 到 /login 的 POST 请求应重定向到 /
+    testString: 'getUserInput => $.post(getUserInput("url")+ "/login") .then(data => { assert.match(data, /Looks like this page is being rendered from Pug into HTML!/gi, "由于我们还没有已注册的用户，因此现在尝试登录的请求都应重定向到主页。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -30,12 +39,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

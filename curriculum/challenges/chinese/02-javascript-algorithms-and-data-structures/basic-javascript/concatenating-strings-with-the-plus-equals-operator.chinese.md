@@ -2,25 +2,31 @@
 id: 56533eb9ac21ba0edf2244b8
 title: Concatenating Strings with the Plus Equals Operator
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 使用Plus Equals运算符连接字符串
+localeTitle: Concatenating Strings with the Plus Equals Operator
 ---
 
 ## Description
-<section id="description">我们还可以使用<code>+=</code>运算符将字符串<dfn>连接</dfn>到现有字符串变量的末尾。这对于在多行上打破长字符串非常有帮助。 <strong>注意</strong> <br>留意空间。连接不会在连接字符串之间添加空格，因此您需要自己添加它们。 </section>
+<section id='description'>
+我们还可以使用<code>+=</code>运算符来<dfn>concatenate</dfn>（拼接）字符串到现有字符串的结尾。对于那些被分割成几段的长的字符串来说，这一操作是非常有用的。
+<strong>提示</strong><br>注意空格。连接操作不会添加两个字符串外面的空格，所以如果想要加上空格的话，你需要自己在字符串里面添加。
+</section>
 
 ## Instructions
-<section id="instructions">通过连接这两个字符串来构建<code>myStr</code>几行： <code>&quot;This is the first sentence. &quot;</code>和<code>&quot;This is the second sentence.&quot;</code>使用<code>+=</code>运算符。使用<code>+=</code>运算符，类似于它在编辑器中的显示方式。首先将第一个字符串分配给<code>myStr</code> ，然后添加第二个字符串。 </section>
+<section id='instructions'>
+通过使用<code>+=</code>操作符来连接这两个字符串：<br><code>"This is the first sentence. "</code>和<code>"This is the second sentence."</code>并赋给变量<code>myStr</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myStr</code>应该有一个值<code>This is the first sentence. This is the second sentence.</code>
-    testString: 'assert(myStr === "This is the first sentence. This is the second sentence.", "<code>myStr</code> should have a value of <code>This is the first sentence. This is the second sentence.</code>");'
-  - text: 使用<code>+=</code>运算符构建<code>myStr</code>
-    testString: 'assert(code.match(/\w\s*\+=\s*[""]/g).length > 1 && code.match(/\w\s*\=\s*[""]/g).length > 1, "Use the <code>+=</code> operator to build <code>myStr</code>");'
+  - text: <code>myStr</code>的值应该是<code>This is the first sentence. This is the second sentence.</code>
+    testString: assert(myStr === "This is the first sentence. This is the second sentence.", '<code>myStr</code>的值应该是<code>This is the first sentence. This is the second sentence.</code>');
+  - text: 使用<code>+=</code>操作符创建<code>myStr</code>变量
+    testString: assert(code.match(/\w\s*\+=\s*["']/g).length > 1 && code.match(/\w\s*\=\s*["']/g).length > 1, '使用<code>+=</code>操作符创建<code>myStr</code>变量');
 
 ```
 
@@ -29,27 +35,31 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-// Example
-var ourStr = "I come first. ";
-ourStr += "I come second.";
 
-// Only change code below this line
 
-var myStr;
 
-```
 
-</div>
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  if(typeof myStr === 'string') {
+    return 'myStr = "' + myStr + '"';
+  } else {
+    return 'myStr is not a string';
+  }
+})();
 ```
 
 </div>
@@ -60,6 +70,12 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var ourStr = "I come first. ";
+ourStr += "I come second.";
+
+var myStr = "This is the first sentence. ";
+myStr += "This is the second sentence.";
 ```
+
 </section>
+              

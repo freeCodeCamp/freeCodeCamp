@@ -2,27 +2,34 @@
 id: 587d7db7367417b2b2512b9e
 title: Match Ending String Patterns
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 匹配结束字符串模式
+localeTitle: Match Ending String Patterns
 ---
 
 ## Description
-<section id="description">在上一个挑战中，您学会了使用<code>caret</code>来搜索字符串开头的模式。还有一种方法可以在字符串末尾搜索模式。您可以使用正则表达式末尾的<code>dollar sign</code>字符<code>$</code>来搜索字符串的结尾。 <blockquote>让theEnding =“这是一个永无止境的故事”; <br>让storyRegex = / story $ /; <br> storyRegex.test（theEnding）; <br> //返回true <br>让noEnding =“有时故事必须结束”; <br> storyRegex.test（noEnding）; <br> //返回false <br></blockquote></section>
+<section id='description'>
+在上一个挑战中，你学习了使用<code>^</code>符号来搜寻字符串开头的匹配模式。还有一种方法可以搜寻字符串末尾的匹配模式。
+你可以使用正则表达式的<code>美元</code>符号<code>$</code>来搜寻字符串的结尾。
+<blockquote>let theEnding = "This is a never ending story";<br>let storyRegex = /story$/;<br>storyRegex.test(theEnding);<br>// Returns true<br>let noEnding = "Sometimes a story will have to end";<br>storyRegex.test(noEnding);<br>// Returns false<br></blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">使用锚字符（ <code>$</code> ）来匹配字符串<code>&quot;caboose&quot;</code>在字符串的结尾<code>caboose</code> 。 </section>
+<section id='instructions'>
+使用<code>$</code>在字符串<code>caboose</code>的末尾匹配<code>"caboose"</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您应该在正则表达式中使用美元符号<code>$</code> anchor搜索<code>&quot;caboose&quot;</code> 。
-    testString: 'assert(lastRegex.source == "caboose$", "You should search for <code>"caboose"</code> with the dollar sign <code>$</code> anchor in your regex.");'
+  - text: "你应该在正则表达式使用美元符号<code>$</code>来搜寻<code>'caboose'</code>。"
+    testString: assert(lastRegex.source == "caboose$", '你应该在正则表达式使用美元符号<code>$</code>来搜寻<code>"caboose"</code>。');
   - text: 你的正则表达式不应该使用任何标志。
-    testString: 'assert(lastRegex.flags == "", "Your regex should not use any flags.");'
-  - text: 您应该在字符串末尾匹配<code>&quot;caboose&quot;</code> <code>&quot;The last car on a train is the caboose&quot;</code>
-    testString: 'assert(lastRegex.test("The last car on a train is the caboose"), "You should match <code>"caboose"</code> at the end of the string <code>"The last car on a train is the caboose"</code>");'
+    testString: assert(lastRegex.flags == "", '你的正则表达式不应该使用任何标志。');
+  - text: "你应该在字符串<code>'The last car on a train is the caboose'</code>的末尾匹配<code>'caboose'</code>。"
+    testString: assert(lastRegex.test("The last car on a train is the caboose"), '你应该在字符串<code>"The last car on a train is the caboose"</code>的末尾匹配<code>"caboose"</code>。');
 
 ```
 
@@ -31,25 +38,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-let caboose = "The last car on a train is the caboose";
-let lastRegex = /change/; // Change this line
-let result = lastRegex.test(caboose);
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

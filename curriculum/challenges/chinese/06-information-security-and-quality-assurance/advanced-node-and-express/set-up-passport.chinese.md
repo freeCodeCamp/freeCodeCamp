@@ -2,19 +2,24 @@
 id: 5895f70cf9fc0f352b528e65
 title: Set up Passport
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 设置护照
+localeTitle: Set up Passport
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。是时候设置<em>Passport，</em>这样我们终于可以开始允许用户注册或登录帐户了！除了Passport，我们还将使用Express-session来处理会话。使用此中间件将会话ID保存为客户端中的cookie，并允许我们使用服务器上的该ID访问会话数据。这样，我们将个人帐户信息保留在客户端使用的cookie之外，以验证我们的服务器是否经过身份验证，并保留<em>密钥</em>以访问存储在服务器上的数据。要设置Passport以便在项目中使用，您需要先在package.json中将其作为依赖项添加。 <code>&quot;passport&quot;: &quot;^0.3.2&quot;</code>此外，现在还要将Express-session添加为依赖项。 Express-session拥有大量可以使用的高级功能，但现在我们只是要使用基础知识！ <code>&quot;express-session&quot;: &quot;^1.15.0&quot;</code>您需要立即设置会话设置并初始化Passport。一定要先创建变量&#39;session&#39;和&#39;passport&#39;，分别要求&#39;express-session&#39;和&#39;passport&#39;。要设置您要使用的快速应用程序使用会话，我们将仅定义几个基本选项。请务必将“SESSION_SECRET”添加到.env文件中，并为其提供随机值。这用于计算用于加密cookie的哈希值！ <pre> app.use（会话（{
-  secret：process.env.SESSION_SECRET，
-  resave：是的，
-  saveUninitialized：true，
-}））; </pre>您也可以继续告诉您的快递应用程序<b>使用</b> &#39;passport.initialize（）&#39;和&#39;passport.session（）&#39;。 （例如， <code>app.use(passport.initialize());</code> ）当您认为自己正确时，请提交您的页面。如果您遇到错误，可以<a href="https://gist.github.com/JosephLivengood/338a9c5a326923c3826a666d430e65c3">在这里查看</a>到目前为止完成的项目。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -22,14 +27,14 @@ localeTitle: 设置护照
 
 ```yml
 tests:
-  - text: Passort和Express-session是依赖项
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "passport", "Your project should list "passport" as a dependency"); assert.property(packJson.dependencies, "express-session", "Your project should list "express-session" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 正确要求依赖性
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /require.*("|")passport("|")/gi, "You should have required passport"); assert.match(data, /require.*("|")express-session("|")/gi, "You should have required express-session"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: Express应用程序使用新的依赖项
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /passport.initialize/gi, "Your express app should use "passport.initialize()""); assert.match(data, /passport.session/gi, "Your express app should use "passport.session()""); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 正确设置会话和会话密钥
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /secret:( |)process.env.SESSION_SECRET/gi, "Your express app should have express-session set up with your secret as process.env.SESSION_SECRET"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 应添加 Passort 和 express-session 作为依赖。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "passport", "你的项目应该使用 "passport" 作为依赖。"); assert.property(packJson.dependencies, "express-session", "你的项目应该使用 "express-session" 作为依赖。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 依赖应正确引入。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /require.*("|")passport("|")/gi, "你的项目应引入 passport。"); assert.match(data, /require.*("|")express-session("|")/gi, "你的项目应引入 express-session。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: express 应调用 passport 的方法。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /passport.initialize/gi, "express 应用应调用 "passport.initialize()"。"); assert.match(data, /passport.session/gi, "你的 express 应用应调用 "passport.session()"。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 应正确设置 session 和 session secret。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /secret:( |)process.env.SESSION_SECRET/gi, "你的 express 应用应设置 express-session 并使用 process.env.SESSION_SECRET。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -38,12 +43,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

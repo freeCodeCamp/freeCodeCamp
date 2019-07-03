@@ -1,40 +1,49 @@
 ---
 id: 587d7fa7367417b2b2512bc7
 title: Change Styles Based on Data
-challengeType: 6
+challengeType: 0
+
 videoUrl: ''
-localeTitle: 根据数据更改样式
+localeTitle: Change Styles Based on Data
 ---
 
 ## Description
-<section id="description"> D3是关于数据的可视化和呈现。您可能希望根据数据更改元素的样式。您可以在<code>style()</code>方法中使用回调函数来更改不同元素的样式。例如，如果值小于20，您可能希望将数据点着色为蓝色，否则为红色。您可以在<code>style()</code>方法中使用回调函数并包含条件逻辑。回调函数使用<code>d</code>参数表示数据点： <blockquote> selection.style（“color”，（d）=&gt; { <br> / *根据条件返回颜色的逻辑* / <br> }）; </blockquote> <code>style()</code>方法不仅限于设置<code>color</code> - 它也可以与其他CSS属性一起使用。 </section>
+<section id='description'>
+D3 是关于可视化和展示数据的。如果你期望基于数据来改变元素的样式，你可以在<code>style()</code>方法中使用回调函数为不同元素改变样式。
+例如，你想将值小于 20 的数据点设置为蓝色，其余设置为红色。你可以在<code>style()</code>方法中使用包含条件逻辑的回调函数。回调函数以<code>d</code>作为参数来表示一个数据点：
+<blockquote>selection.style("color", (d) => {<br>&nbsp;&nbsp;/* 基于情况返回颜色属性的逻辑表达式 */<br>});</blockquote>
+<code>style()</code>方法不仅仅可以设置<code>color</code>——它也适用于其他 CSS 属性。
+</section>
 
 ## Instructions
-<section id="instructions">将<code>style()</code>方法添加到编辑器中的代码，以有条件地设置<code>h2</code>元素的<code>color</code> 。写回调函数，如果数据值小于20，则返回“red”，否则返回“green”。 <strong>注意</strong> <br>您可以使用if-else逻辑或三元运算符。 </section>
+<section id='instructions'>
+在编辑器中添加<code>style()</code>方法，根据条件设置<code>h2</code>元素的<code>color</code>属性。写一个回调函数，如果值小于 20 返回 "red"，否则返回 "green"。
+<strong>提示</strong><br>你可以使用 if-else 语句或者三目操作符。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 第一<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(0).css("color") == "rgb(255, 0, 0)", "The first <code>h2</code> should have a <code>color</code> of red.");'
-  - text: 第二<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(1).css("color") == "rgb(0, 128, 0)", "The second <code>h2</code> should have a <code>color</code> of green.");'
-  - text: 第三<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(2).css("color") == "rgb(0, 128, 0)", "The third <code>h2</code> should have a <code>color</code> of green.");'
-  - text: 第四<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(3).css("color") == "rgb(255, 0, 0)", "The fourth <code>h2</code> should have a <code>color</code> of red.");'
-  - text: 第五<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(4).css("color") == "rgb(0, 128, 0)", "The fifth <code>h2</code> should have a <code>color</code> of green.");'
-  - text: 第六<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(5).css("color") == "rgb(255, 0, 0)", "The sixth <code>h2</code> should have a <code>color</code> of red.");'
-  - text: 第七<code>h2</code>应该有一个<code>color</code>的绿色。
-    testString: 'assert($("h2").eq(6).css("color") == "rgb(0, 128, 0)", "The seventh <code>h2</code> should have a <code>color</code> of green.");'
-  - text: 第八<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(7).css("color") == "rgb(255, 0, 0)", "The eighth <code>h2</code> should have a <code>color</code> of red.");'
-  - text: 第九<code>h2</code>应该有一个<code>color</code>的红色。
-    testString: 'assert($("h2").eq(8).css("color") == "rgb(255, 0, 0)", "The ninth <code>h2</code> should have a <code>color</code> of red.");'
+  - text: 第一个<code>h2</code>的<code>color</code>应该为 red。
+    testString: assert($('h2').eq(0).css('color') == "rgb(255, 0, 0)", '第一个<code>h2</code>的<code>color</code>应该为 red。');
+  - text: 第二个<code>h2</code>的<code>color</code>应该为 green。
+    testString: assert($('h2').eq(1).css('color') == "rgb(0, 128, 0)", '第二个<code>h2</code>的<code>color</code>应该为 green。');
+  - text: 第三个<code>h2</code>的<code>color</code>应该为 green。
+    testString: assert($('h2').eq(2).css('color') == "rgb(0, 128, 0)", '第三个<code>h2</code>的<code>color</code>应该为 green。');
+  - text: 第四个<code>h2</code>的<code>color</code>应该为 red。
+    testString: assert($('h2').eq(3).css('color') == "rgb(255, 0, 0)", '第四个<code>h2</code>的<code>color</code>应该为 red。');
+  - text: 第五个<code>h2</code>的<code>color</code>应该为 green。
+    testString: assert($('h2').eq(4).css('color') == "rgb(0, 128, 0)", '第五个<code>h2</code>的<code>color</code>应该为 green。');
+  - text: 第六个<code>h2</code>的<code>color</code>应该为 red。
+    testString: assert($('h2').eq(5).css('color') == "rgb(255, 0, 0)", '第六个<code>h2</code>的<code>color</code>应该为 red。');
+  - text: 第七个<code>h2</code>的<code>color</code>应该为 green。
+    testString: assert($('h2').eq(6).css('color') == "rgb(0, 128, 0)", '第七个<code>h2</code>的<code>color</code>应该为 green。');
+  - text: 第八个<code>h2</code>的<code>color</code>应该为 red。
+    testString: assert($('h2').eq(7).css('color') == "rgb(255, 0, 0)", '第八个<code>h2</code>的<code>color</code>应该为 red。');
+  - text: 第九个<code>h2</code>的<code>color</code>应该为 red。
+    testString: assert($('h2').eq(8).css('color') == "rgb(255, 0, 0)", '第九个<code>h2</code>的<code>color</code>应该为 red。');
 
 ```
 
@@ -43,38 +52,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<body>
-  <script>
-    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-    d3.select("body").selectAll("h2")
-      .data(dataset)
-      .enter()
-      .append("h2")
-      .text((d) => (d + " USD"))
-      // Add your code below this line
-
-
-
-      // Add your code above this line
-  </script>
-</body>
-
+<body>,  <script>,    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];,    ,    d3.select("body").selectAll("h2"),      .data(dataset),      .enter(),      .append("h2"),      .text((d) => (d + " USD")),      // 在下面添加你的代码,      ,      ,      ,      // 在上面添加你的代码,  </script>,</body>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

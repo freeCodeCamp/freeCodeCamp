@@ -1,17 +1,20 @@
 ---
 id: 587d7fb2367417b2b2512bf5
 title: Get Route Parameter Input from the Client
-localeTitle: 从客户端获取路由参数输入
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Get Route Parameter Input from the Client
 ---
 
 ## Description
-<section id='description'> <code>0</code>构建API时，我们必须允许用户与我们沟通他们希望从我们的服务中获得什么。例如，如果客户端请求有关存储在数据库中的用户的信息，他们需要一种方法让我们知道他们感兴趣的用户。实现此结果的一种可能方法是使用路由参数。路由参数是URL的命名段，由斜杠（/）分隔。每个段捕获URL的与其位置匹配的部分的值。捕获的值可以在<code>req.params</code>对象中找到。 
-<blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote> <code>0</code>构建一个安装在路径<code>GET /:word/echo</code>的回显服务器。使用结构<code>{echo: word}</code>响应JSON对象。您可以在<code>req.params.word</code>找到要重复的<code>req.params.word</code> 。您可以从浏览器的地址栏测试您的路线，访问一些匹配的路线，例如您的-app-rootpath / freecodecamp / echo 
+<section id='description'>
+在开发过程中，能够随时看到代码的运行结果是非常重要的。Node 只是一个 JavaScript 环境。与客户端 JavaScript 一样，你可以使用控制台输出有用的调试信息。在本地计算机上，你可以在终端中输出调试信息。在 Glitch 上，你可以打开屏幕下方的日志。使用 "Logs" 按钮切换日志面板（在左上角，应用名称的下面）。
+准备开始，我们只需要在控制台打印出经典的 "Hello World" 即可。我们建议在做这些挑战题时，保持日志面板处于打开状态。通过这些错误日志，你可能会发现这些错误的本质原因。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,10 +23,10 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: '测试1：您的echo服务器应该正确重复单词'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/eChOtEsT/echo'').then(data => { assert.equal(data.echo, ''eChOtEsT'', ''Test 1: the echo server is not working as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '测试2：您的echo服务器应该正确重复单词'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/ech0-t3st/echo'').then(data => { assert.equal(data.echo, ''ech0-t3st'', ''Test 2: the echo server is not working as expected'') }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 测试 1：你的 echo 服务应该正确地重复单词
+    testString: 'getUserInput => $.get(getUserInput("url") + "/eChOtEsT/echo").then(data => { assert.equal(data.echo, "eChOtEsT", "测试 1：echo 没有按预期正常执行") }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 测试 2：你的 echo 服务应该正确地重复单词
+    testString: 'getUserInput => $.get(getUserInput("url") + "/ech0-t3st/echo").then(data => { assert.equal(data.echo, "ech0-t3st", "测试 2：echo 没有按预期正常执行") }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -32,12 +35,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

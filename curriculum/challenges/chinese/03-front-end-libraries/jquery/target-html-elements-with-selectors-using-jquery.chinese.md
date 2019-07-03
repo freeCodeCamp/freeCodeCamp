@@ -1,18 +1,26 @@
 ---
 id: bad87fee1348bd9bedc08826
 title: Target HTML Elements with Selectors Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
-challengeType: 6
+challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用选择器使用jQuery定位HTML元素
+localeTitle: Target HTML Elements with Selectors Using jQuery
 ---
 
 ## Description
-<section id="description">现在我们有一个<code>document ready function</code> 。现在让我们编写第一个jQuery语句。所有jQuery函数都以<code>$</code>开头，通常称为<code>dollar sign operator</code> ，或者作为<code>bling</code> 。 jQuery经常选择带有<code>selector</code>的HTML元素，然后对该元素执行某些操作。例如，让我们使所有<code>button</code>元素反弹。只需在您的文档就绪函数中添加此代码： <code>$(&quot;button&quot;).addClass(&quot;animated bounce&quot;);</code>请注意，我们已经在后台包含了jQuery库和Animate.css库，以便您可以在编辑器中使用它们。所以你使用jQuery将Animate.css <code>bounce</code>类应用于你的<code>button</code>元素。 </section>
+<section id='description'>
+现在我们已经准备好学习有史以来最受欢迎的 JavaScript 框架——jQuery 了。
+在使用 jQuery 之前，我们需要在 HTML 页面中添加一些东西。
+首先，在页面顶部添加<code>script</code>标签，记得在后面为<code>script</code>标签添加结束标签。
+浏览器在<code>script</code>标签中运行所有的 JavaScript 脚本包括 jQuery。
+在<code>script</code>标签中添加代码<code>$(document).ready(function() {</code>。然后在后面（仍在该<code>script</code>标签内）用<code>});</code>闭合它。
+稍后我们将详细介绍<code>functions</code>，现在需要知道的是，只要浏览器加载页面，<code>function</code>中放入的代码就会运行。
+有一点很重要，如果没有<code>document ready function</code>，你的代码将在 HTML 页面呈现之前运行，这将导致错误。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -20,12 +28,12 @@ localeTitle: 使用选择器使用jQuery定位HTML元素
 
 ```yml
 tests:
-  - text: 使用jQuery <code>addClass()</code>函数将类<code>animated</code>并<code>bounce</code>回到<code>button</code>元素。
-    testString: 'assert($("button").hasClass("animated") && $("button").hasClass("bounce"), "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.");'
-  - text: 只使用jQuery将这些颜色添加到元素中。
-    testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to add these colors to the element.");'
-  - text: 你的jQuery代码应该在<code>$(document).ready();</code>功能。
-    testString: 'assert(code.match(/\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g), "Your jQuery code should be within the <code>$(document).ready();</code> function.");'
+  - text: 用 jQuery 的<code>addClass&#40&#41</code>方法给<code>button</code>标签添加<code>animated</code>和<code>bounce</code>类。
+    testString: assert($("button").hasClass("animated") && $("button").hasClass("bounce"), '用 jQuery 的<code>addClass&#40&#41</code>方法给<code>button</code>标签添加<code>animated</code>和<code>bounce</code>类。');
+  - text: 仅用 jQuery 给标签添加颜色。
+    testString: assert(!code.match(/class.*animated/g), '仅用 jQuery 给标签添加颜色。');
+  - text: jQuery 代码应该放在<code>$(document).ready();</code>函数里。
+    testString: assert(code.match(/\$\(document\)\.ready\(function.*(\s|\n)*.*button.*.addClass.*\);/g), 'jQuery 代码应该放在<code>$(document).ready();</code>函数里。');
 
 ```
 
@@ -34,51 +42,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<script>
-  $(document).ready(function() {
-
-  });
-</script>
-
-<!-- Only change code above this line. -->
-
-<div class="container-fluid">
-  <h3 class="text-primary text-center">jQuery Playground</h3>
-  <div class="row">
-    <div class="col-xs-6">
-      <h4>#left-well</h4>
-      <div class="well" id="left-well">
-        <button class="btn btn-default target" id="target1">#target1</button>
-        <button class="btn btn-default target" id="target2">#target2</button>
-        <button class="btn btn-default target" id="target3">#target3</button>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <h4>#right-well</h4>
-      <div class="well" id="right-well">
-        <button class="btn btn-default target" id="target4">#target4</button>
-        <button class="btn btn-default target" id="target5">#target5</button>
-        <button class="btn btn-default target" id="target6">#target6</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<script>,  $(document).ready(function() {,,  });,</script>,,<!-- 请修改本行以上的代码 -->,,<div class="container-fluid">,  <h3 class="text-primary text-center">jQuery Playground</h3>,  <div class="row">,    <div class="col-xs-6">,      <h4>#left-well</h4>,      <div class="well" id="left-well">,        <button class="btn btn-default target" id="target1">#target1</button>,        <button class="btn btn-default target" id="target2">#target2</button>,        <button class="btn btn-default target" id="target3">#target3</button>,      </div>,    </div>,    <div class="col-xs-6">,      <h4>#right-well</h4>,      <div class="well" id="right-well">,        <button class="btn btn-default target" id="target4">#target4</button>,        <button class="btn btn-default target" id="target5">#target5</button>,        <button class="btn btn-default target" id="target6">#target6</button>,      </div>,    </div>,  </div>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

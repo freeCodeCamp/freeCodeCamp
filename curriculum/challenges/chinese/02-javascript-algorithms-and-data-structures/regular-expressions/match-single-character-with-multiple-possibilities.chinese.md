@@ -2,31 +2,40 @@
 id: 587d7db5367417b2b2512b95
 title: Match Single Character with Multiple Possibilities
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 将单个角色与多种可能性相匹配
+localeTitle: Match Single Character with Multiple Possibilities
 ---
 
 ## Description
-<section id="description">您学习了如何匹配文字模式（ <code>/literal/</code> ）和通配符（ <code>/./</code> ）。这些是正则表达式的极端，其中一个找到完全匹配，另一个匹配一切。有两个极端之间可以平衡的选项。您可以使用<code>character classes</code>搜索具有一定灵活性的文字模式。字符类允许您通过将它们放在方括号（ <code>[</code>和<code>]</code> ）括号内来定义要匹配的一组字符。例如，您想匹配<code>&quot;bag&quot;</code> ， <code>&quot;big&quot;</code>和<code>&quot;bug&quot;</code>但不匹配<code>&quot;bog&quot;</code> 。您可以创建regex <code>/b[aiu]g/</code>来执行此操作。 <code>[aiu]</code>是仅匹配字符<code>&quot;a&quot;</code> ， <code>&quot;i&quot;</code>或<code>&quot;u&quot;</code>的字符类。 <blockquote>让bigStr =“大”; <br>让bagStr =“bag”; <br>让bugStr =“bug”; <br>让bogStr =“bog”; <br>让bgRegex = / b [aiu] g /; <br> bigStr.match（bgRegex）; //返回[“大”] <br> bagStr.match（bgRegex）; //返回[“bag”] <br> bugStr.match（bgRegex）; //返回[“bug”] <br> bogStr.match（bgRegex）; //返回null </blockquote></section>
+<section id='description'>
+你已经了解了如何匹配文字匹配模式（<code>/literal/</code>）和通配符（<code>/./</code>）。这是正则表达式的两种极端情况，一种是精确匹配，而另一种则是匹配所有。在这两种极端情况之间有一个平衡选项。
+你可以使用<code>字符集</code>搜寻具有一定灵活性的文字匹配模式。字符集允许你通过把它们放在方括号（<code>[</code>和<code>]</code>）之间的方式来定义一组你需要匹配的字符串。
+例如，你想要匹配<code>"bag"</code>、<code>"big"</code>和<code>"bug"</code>，但是不想匹配<code>"bog"</code>。你可以创建正则表达式<code>/b[aiu]g/</code>来执行此操作。<code>[aiu]</code>是只匹配字符<code>"a"</code>、<code>"i"</code>或者<code>"u"</code>的字符集。
+<blockquote>let bigStr = "big";<br>let bagStr = "bag";<br>let bugStr = "bug";<br>let bogStr = "bog";<br>let bgRegex = /b[aiu]g/;<br>bigStr.match(bgRegex); // Returns ["big"]<br>bagStr.match(bgRegex); // Returns ["bag"]<br>bugStr.match(bgRegex); // Returns ["bug"]<br>bogStr.match(bgRegex); // Returns null</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">在正则表达式<code>vowelRegex</code>使用带元音（ <code>a</code> ， <code>e</code> ， <code>i</code> ， <code>o</code> ， <code>u</code> ）的字符类来查找字符串<code>quoteSample</code>中的所有元音。 <strong>注意</strong> <br>确保匹配大写和小写元音。 </section>
+<section id='instructions'>
+使用元音字符集（<code>a</code>、<code>e</code>、<code>i</code>、<code>o</code>、<code>u</code>）在你的正则表达式<code>vowelRegex</code>中匹配到字符串<code>quoteSample</code>中的所有元音。
+<strong>注意</strong><br>一定要同时匹配大小写元音。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该找到所有25个元音。
-    testString: 'assert(result.length == 25, "You should find all 25 vowels.");'
-  - text: 你的正则表达式<code>vowelRegex</code>应该使用一个字符类。
-    testString: 'assert(/\[.*\]/.test(vowelRegex.source), "Your regex <code>vowelRegex</code> should use a character class.");'
+  - text: 你应该匹配到所有25个元音。
+    testString: assert(result.length == 25, '你应该匹配到所有25个元音。');
+  - text: 你的正则表达式<code>vowelRegex</code>应该使用字符集。
+    testString: assert(/\[.*\]/.test(vowelRegex.source), '你的正则表达式<code>vowelRegex</code>应该使用字符集。');
   - text: 你的正则表达式<code>vowelRegex</code>应该使用全局标志。
-    testString: 'assert(vowelRegex.flags.match(/g/).length == 1, "Your regex <code>vowelRegex</code> should use the global flag.");'
-  - text: 你的正则表达式<code>vowelRegex</code>应该使用不区分大小写的标志。
-    testString: 'assert(vowelRegex.flags.match(/i/).length == 1, "Your regex <code>vowelRegex</code> should use the case insensitive flag.");'
-  - text: 你的正则表达式不应该与任何辅音匹配。
-    testString: 'assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()), "Your regex should not match any consonants.");'
+    testString: assert(vowelRegex.flags.match(/g/).length == 1, '你的正则表达式<code>vowelRegex</code>应该使用全局标志。');
+  - text: 你的正则表达式<code>vowelRegex</code>应该使用忽略大小写标志。
+    testString: assert(vowelRegex.flags.match(/i/).length == 1, '你的正则表达式<code>vowelRegex</code>应该使用忽略大小写标志。');
+  - text: 你的正则表达式不应该匹配任何辅音。
+    testString: assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()), '你的正则表达式不应该匹配任何辅音。');
 
 ```
 
@@ -35,25 +44,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
-let vowelRegex = /change/; // Change this line
-let result = vowelRegex; // Change this line
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

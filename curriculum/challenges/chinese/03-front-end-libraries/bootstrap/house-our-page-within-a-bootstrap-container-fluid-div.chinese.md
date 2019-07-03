@@ -2,15 +2,25 @@
 id: bad87fee1348bd9aec908746
 title: House our page within a Bootstrap container-fluid div
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 将我们的页面放在Bootstrap容器 - 流体div中
+localeTitle: House our page within a Bootstrap container-fluid div
 ---
 
 ## Description
-<section id="description">现在让我们确保您网页上的所有内容都是移动响应式的。让我们使用类<code>container-fluid</code>将<code>h3</code>元素嵌套在<code>div</code>元素<code>container-fluid</code> 。 </section>
+<section id='description'>
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
+Bootstrap 会根据你的屏幕大小来调节 HTML 元素的大小————因此称为 <code>响应式设计( Responsive Design )</code>。
+通过响应式设计，我们将无需额外设计一个手机版的网页，因为它在任何尺寸的屏幕上看起来都还不错。
+无论开发什么应用，你都可以通过将以下代码添加到你的 HTML 顶部来引入 Bootstrap 。
+<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/&#62;</code>
+在该案例中，我们已经帮你把相应代码添加到页面中。记住使用 <code>></code> 和 <code>/></code> 闭合 <code>link</code> 标签来保证引入成功。
+首先，我们应该把所有 HTML 标签放在 class 为 <code>container-fluid</code> 的 <code>div</code> 元素下（除了 <code>link</code> 标签和 <code>style</code> 标签）。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +28,12 @@ localeTitle: 将我们的页面放在Bootstrap容器 - 流体div中
 
 ```yml
 tests:
-  - text: 你的<code>div</code>元素应该有class <code>container-fluid</code> 。
-    testString: 'assert($("div").hasClass("container-fluid"), "Your <code>div</code> element should have the class <code>container-fluid</code>.");'
-  - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
-  - text: 将<code>h3</code>元素<code>div</code>元素中。
-    testString: 'assert($("div").children("h3").length >0, "Nest your <code>h3</code> element inside a <code>div</code> element.");'
+  - text: <code>div</code> 元素 class 属性应该为 <code>container-fluid</code>。
+    testString: assert($("div").hasClass("container-fluid"), '<code>div</code> 元素 class 属性应该为 <code>container-fluid</code>。');
+  - text: 确保每一个 <code>div</code> 元素都有一个闭合标签。
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, '确保每一个 <code>div</code> 元素都有一个闭合标签。');
+  - text: <code>h3</code> 元素应该内嵌于 <code>div</code> 元素。
+    testString: assert($("div").children("h3").length >0, '<code>h3</code> 元素应该内嵌于 <code>div</code> 元素。');
 
 ```
 
@@ -32,23 +42,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<h3 class="text-primary text-center">jQuery Playground</h3>
-
+<h3 class="text-primary text-center">jQuery Playground</h3>,,
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

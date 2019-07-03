@@ -2,25 +2,33 @@
 id: cf1111c1c11feddfaeb1bdef
 title: Iterate with JavaScript While Loops
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 在循环时使用JavaScript进行迭代
+localeTitle: Iterate with JavaScript While Loops
 ---
 
 ## Description
-<section id="description">您可以使用循环多次运行相同的代码。我们将学习的第一种类型的循环称为“ <code>while</code> ”循环，因为它在“while”运行时指定的条件为true，并且一旦该条件不再为真就停止。 <blockquote> var ourArray = []; <br> var i = 0; <br>而（i &lt;5）{ <br> ourArray.push（ⅰ）; <br>我++; <br> } </blockquote>让我们尝试通过将值推送到数组来实现while循环。 </section>
+<section id='description'>
+你可以使用循环多次执行相同的代码。
+我们将学习的第一种类型的循环称为 "<code>while</code>" 循环，因为它规定，当 "while" 条件为真，循环才会执行，反之不执行。
+<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>}</blockquote>
+让我们通过 while 循环将值添加到数组中。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>while</code>循环将数字0到4推送到<code>myArray</code> 。 </section>
+<section id='instructions'>
+通过一个<code>while</code>循环，把从 0 到 4 的值添加到<code>myArray</code>中。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该使用<code>while</code>循环。
-    testString: 'assert(code.match(/while/g), "You should be using a <code>while</code> loop for this.");'
-  - text: '<code>myArray</code>应该等于<code>[0,1,2,3,4]</code> 。'
-    testString: 'assert.deepEqual(myArray, [0,1,2,3,4], "<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.");'
+  - text: 你应该使用<code>while</code>循环
+    testString: assert(code.match(/while/g), '你应该使用<code>while</code>循环');
+  - text: <code>myArray</code>应该等于<code>[0,1,2,3,4]</code>.
+    testString: assert.deepEqual(myArray, [0,1,2,3,4], '<code>myArray</code>应该等于<code>[0,1,2,3,4]</code>.');
 
 ```
 
@@ -29,24 +37,25 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-// Setup
-var myArray = [];
 
-// Only change code below this line.
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>
@@ -57,6 +66,13 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var myArray = [];
+var i = 0;
+while(i < 5) {
+  myArray.push(i);
+  i++;
+}
 ```
+
 </section>
+              

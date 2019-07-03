@@ -4,14 +4,19 @@ title: Issue Tracker
 challengeType: 4
 isRequired: true
 videoUrl: ''
-localeTitle: 问题跟踪器
+localeTitle: Issue Tracker
 ---
 
 ## Description
-<section id="description">构建一个功能类似于此的完整堆栈JavaScript应用程序： <a href="https://protective-garage.glitch.me/" target="_blank">https</a> ： <a href="https://protective-garage.glitch.me/" target="_blank">//protective-garage.glitch.me/</a> 。在这个项目上工作将涉及您在我们的入门项目上在Glitch上编写代码。完成此项目后，您可以将公共故障网址（到应用程序的主页）复制到此屏幕进行测试！您可以选择在另一个平台上编写项目，但必须公开显示我们的测试。使用<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-issuetracker/">此链接</a>在Glitch上启动此项目或在GitHub上克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-issuetracker/">此存储库</a> ！如果您使用Glitch，请记住将项目链接保存到安全的地方！ </section>
+<section id='description'>
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://hard-twilight.glitch.me/' target='_blank'>https://hard-twilight.glitch.me/</a>.
+Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
+Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-metricimpconverter/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,21 +24,21 @@ localeTitle: 问题跟踪器
 
 ```yml
 tests:
-  - text: 防止跨站点脚本（XSS）攻击。
+  - text: Prevent cross site scripting (XSS) attacks.
     testString: ''
-  - text: '我可以使用包含所需issue_title，issue_text，created_by和可选的assigned_to和status_text的表单数据POST / api / issues / {projectname}。'
+  - text: I can POST /api/issues/{projectname} with form data containing required issue_title, issue_text, created_by, and optional assigned_to and status_text.
     testString: ''
-  - text: 保存（和返回）的对象将包括所有这些字段（空白表示可选无输入），还包括created_on（日期/时间），updated_on（日期/时间），打开（布尔值，true表示打开，false表示关闭），和_id。
+  - text: The object saved (and returned) will include all of those fields (blank for optional no input) and also include created_on(date/time), updated_on(date/time), open(boolean, true for open, false for closed), and _id.
     testString: ''
-  - text: '我可以使用id和对象中的任何字段PUT / api / issues / {projectname}，并使用值来对象表示对象。返回将“成功更新”或“无法更新”+ id。这应该始终更新updated_on。如果没有发送字段，则返回“未发送更新字段”。'
+  - text: 'I can PUT /api/issues/{projectname} with a id and any fields in the object with a value to object said object. Returned will be "successfully updated" or "could not update "+id. This should always update updated_on. If no fields are sent return "no updated field sent".'
     testString: ''
-  - text: '我可以使用id DELETE / api / issues / {projectname}来完全删除问题。如果没有发送_id，则返回“id error”，成功：“删除”+ id，失败：“无法删除”+ id。'
+  - text: 'I can DELETE /api/issues/{projectname} with a id to completely delete an issue. If no _id is sent return "id error", success: "deleted "+id, failed: "could not delete "+id.'
     testString: ''
-  - text: '我可以GET / api / issues / {projectname}获取该特定项目中所有问题的数组，其中包含发布时返回的每个问题的所有信息。'
+  - text: I can GET /api/issues/{projectname} for an array of all issues on that specific project with all the information for each issue as was returned when posted.
     testString: ''
-  - text: '我可以通过传递查询中的任何字段和值来过滤我的获取请求（即。/ api / issues / {project}？open = false）。我可以传递尽可能多的字段/值。'
+  - text: I can filter my get request by also passing along any field and value in the query(ie. /api/issues/{project}?open=false). I can pass along as many fields/values as I want.
     testString: ''
-  - text: 所有11项功能测试都已完成并通过。
+  - text: All 11 functional tests are complete and passing.
     testString: ''
 
 ```
@@ -43,12 +48,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

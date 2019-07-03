@@ -2,15 +2,20 @@
 id: 587d8247367417b2b2512c36
 title: Install and Require Helmet
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 安装并需要头盔
+localeTitle: Install and Require Helmet
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。 Helmet通过设置各种HTTP标头来帮助您保护Express应用程序。安装包，然后需要它。 </section>
+<section id='description'>
+注意，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+Helmet 通过配置不同的 HTTP 头部信息来使你的 Express 应用更加安全。安装，并引入 Helmet 这个包。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,7 +23,7 @@ localeTitle: 安装并需要头盔
 
 ```yml
 tests:
-  - text: “helmet”依赖应该在package.json中
+  - text: "package.json 文件应该有 'helmet' 这个依赖包"
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "helmet"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -28,12 +33,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

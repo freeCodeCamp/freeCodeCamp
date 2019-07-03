@@ -2,35 +2,47 @@
 id: bad87fee1348bd9aedf08834
 title: Create a Set of Radio Buttons
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 创建一组单选按钮
+localeTitle: Create a Set of Radio Buttons
 ---
 
 ## Description
-<section id="description">您可以使用<code>radio buttons</code>来解决您希望用户仅从多个选项中给出一个答案的问题。单选按钮是一种<code>input</code> 。每个单选按钮都可以嵌套在自己的<code>label</code>元素中。通过将<code>input</code>元素包装在<code>label</code>元素内部，它将自动将单选按钮输入与其周围的标签元素相关联。所有相关的单选按钮应具有相同的<code>name</code>属性以创建单选按钮组。通过创建无线电组，选择任何单个单选按钮将自动取消选择同一组内的其他按钮，确保用户只提供一个答案。这是一个单选按钮的示例： <blockquote> &lt;标签&gt; <br> &lt;input type =“radio”name =“indoor-outdoor”&gt;室内<br> &lt;/标签&gt; </blockquote>最佳做法是在<code>label</code>元素上设置<code>for</code>属性，其值与<code>input</code>元素的<code>id</code>属性值相匹配。这允许辅助技术在标签和子<code>input</code>元素之间创建链接关系。例如： <blockquote> &lt;label for =“室内”&gt; <br> &lt;input id =“indoor”type =“radio”name =“indoor-outdoor”&gt;室内<br> &lt;/标签&gt; </blockquote></section>
+<section id='description'>
+<code>radio buttons</code>（单选按钮）就好比单项选择题，正确答案只有一个。
+单选按钮只是<code>input</code>输入框的一种类型。
+每一个单选按钮都应该嵌套在它自己的<code>label</code>（标签）元素中。
+所有关联的单选按钮应该拥有相同的<code>name</code>属性。
+下面是一个单选按钮的例子：
+<blockquote>&#60;label&#62; <br>&nbsp;&nbsp;&#60;input type="radio" name="indoor-outdoor"&#62;Indoor <br>&#60;/label&#62;</blockquote>
+最佳实践是在<code>label</code>元素上设置for属性，让其值与单选按钮的<code>id</code>属性值相等，这样就在<code>label</code>元素和它的子元素单选按钮之间创建了一种链接关系。例如：
+<blockquote>&#60;label for="indoor"&#62; <br>&nbsp;&nbsp;&#60;input id="indoor" type="radio" name="indoor-outdoor"&#62;Indoor <br>&#60;/label&#62;</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">在表单中添加一对单选按钮，每个按钮都嵌套在自己的标签元素中。一个应该有<code>indoor</code>选择，另一个应该可以选择<code>outdoor</code> 。两者都应该共享<code>indoor-outdoor</code>的<code>name</code>属性来创建一个无线电组。 </section>
+<section id='instructions'>
+给表单添加两个单选按钮，一个叫<code>indoor</code>，另一个叫<code>outdoor</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的页面应该有两个单选按钮元素。
-    testString: 'assert($("input[type="radio"]").length > 1, "Your page should have two radio button elements.");'
-  - text: 为您的单选按钮提供<code>indoor-outdoor</code>的<code>name</code>属性。
-    testString: 'assert($("label > input[type="radio"]").filter("[name="indoor-outdoor"]").length > 1, "Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.");'
-  - text: 两个单选按钮元素中的每一个都应嵌套在自己的<code>label</code>元素中。
-    testString: 'assert($("label > input[type="radio"]:only-child").length > 1, "Each of your two radio button elements should be nested in its own <code>label</code> element.");'
-  - text: 确保每个<code>label</code>元素都有一个结束标记。
-    testString: 'assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length), "Make sure each of your <code>label</code> elements has a closing tag.");'
-  - text: 您的一个单选按钮应该是<code>indoor</code>标签。
-    testString: 'assert($("label").text().match(/indoor/gi), "One of your radio buttons should have the label <code>indoor</code>.");'
-  - text: 您的一个单选按钮应该是<code>outdoor</code>标签。
-    testString: 'assert($("label").text().match(/outdoor/gi), "One of your radio buttons should have the label <code>outdoor</code>.");'
-  - text: 应在<code>form</code>标记中添加每个单选按钮元素。
-    testString: 'assert($("label").parent().get(0).tagName.match("FORM"), "Each of your radio button elements should be added within the <code>form</code> tag.");'
+  - text: 页面上应该有两个单选按钮元素。
+    testString: assert($('input[type="radio"]').length > 1, '页面上应该有两个单选按钮元素。');
+  - text: 设置单选按钮的<code>name</code>属性为<code>indoor-outdoor</code>。
+    testString: assert($('label > input[type="radio"]').filter("[name='indoor-outdoor']").length > 1, '设置单选按钮的<code>name</code>属性为<code>indoor-outdoor</code>。');
+  - text: 每一个单选按钮都应该嵌套进它自己的<code>label</code>元素中。
+    testString: 'assert($("label > input[type="radio"]:only-child").length > 1, "每一个单选按钮都应该嵌套进它自己的<code>label</code>元素中。");'
+  - text: 每一个<code>label</code>元素都有结束标记。
+    testString: assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length), '每一个<code>label</code>元素都有结束标记。');
+  - text: 其中一个<code>label</code>元素的文本为<code>indoor</code>。
+    testString: assert($("label").text().match(/indoor/gi), '其中一个<code>label</code>元素的文本为<code>indoor</code>。');
+  - text: 其中一个<code>label</code>元素的文本为<code>outdoor</code>。
+    testString: assert($("label").text().match(/outdoor/gi), '其中一个<code>label</code>元素的文本为<code>outdoor</code>。');
+  - text: 所有的单选按钮都应该包含在<code>form</code>表单中。
+    testString: assert($("label").parent().get(0).tagName.match('FORM'), '所有的单选按钮都应该包含在<code>form</code>表单中。');
 
 ```
 
@@ -39,45 +51,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<h2>CatPhotoApp</h2>
-<main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <p>Things cats love:</p>
-  <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
-  </ul>
-  <p>Top 3 things cats hate:</p>
-  <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
-  </form>
-</main>
-
+<h2>CatPhotoApp</h2>,<main>,  ,  <a href="#"><img src="http://cdn.freecodecamp.cn/relaxing-cat.jpg" alt="一只仰卧着的萌猫"></a>,  ,  <p>猫咪最喜欢的三件东西：</p>,  <ul>,    <li>猫薄荷</li>,    <li>激光笔</li>,    <li>千层饼</li>,  </ul>,  <p>猫咪最讨厌的三件东西：</p>,  <ol>,    <li>跳蚤</li>,    <li>打雷</li>,    <li>同类</li>,  </ol>,  <form action="/submit-cat-photo">,    <input type="text" placeholder="猫咪图片地址" required>,    <button type="submit">提交</button>,  </form>,</main>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

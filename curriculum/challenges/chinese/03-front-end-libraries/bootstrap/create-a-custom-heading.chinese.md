@@ -2,15 +2,25 @@
 id: bad87fee1348bd9aede08845
 title: Create a Custom Heading
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 创建自定义标题
+localeTitle: Create a Custom Heading
 ---
 
 ## Description
-<section id="description">我们将通过将标题和放松的猫图像放在同一行中，为我们的Cat Photo App制作一个简单的标题。请记住，Bootstrap使用响应式网格系统，可以轻松地将元素放入行中并指定每个元素的相对宽度。 Bootstrap的大多数类都可以应用于<code>div</code>元素。将第一个图像和<code>h2</code>元素嵌套在一个<code>&lt;div class=&quot;row&quot;&gt;</code>元素中。将您的<code>h2</code>元素嵌套在<code>&lt;div class=&quot;col-xs-8&quot;&gt;</code>并将您的图像<code>&lt;div class=&quot;col-xs-4&quot;&gt;</code>以便它们位于同一行。请注意图像现在的大小是否适合文本？ </section>
+<section id='description'>
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
+Bootstrap 会根据你的屏幕大小来调节 HTML 元素的大小————因此称为 <code>响应式设计( Responsive Design )</code>。
+通过响应式设计，我们将无需额外设计一个手机版的网页，因为它在任何尺寸的屏幕上看起来都还不错。
+无论开发什么应用，你都可以通过将以下代码添加到你的 HTML 顶部来引入 Bootstrap 。
+<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/&#62;</code>
+在该案例中，我们已经帮你把相应代码添加到页面中。记住使用 <code>></code> 和 <code>/></code> 闭合 <code>link</code> 标签来保证引入成功。
+首先，我们应该把所有 HTML 标签放在 class 为 <code>container-fluid</code> 的 <code>div</code> 元素下（除了 <code>link</code> 标签和 <code>style</code> 标签）。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +28,14 @@ localeTitle: 创建自定义标题
 
 ```yml
 tests:
-  - text: 你的<code>h2</code>元素和最顶层的<code>img</code>元素都应该在带有类<code>row</code>的<code>div</code>元素中嵌套在一起。
-    testString: 'assert($("div.row:has(h2)").length > 0 && $("div.row:has(img)").length > 0, "Your <code>h2</code> element and topmost <code>img</code> element should both be nested together within a <code>div</code> element with the class <code>row</code>.");'
-  - text: 使用类<code>col-xs-4</code>将最顶层的<code>img</code>元素嵌套在<code>div</code> 。
-    testString: 'assert($("div.col-xs-4:has(img)").length > 0 && $("div.col-xs-4:has(div)").length === 0, "Nest your topmost <code>img</code> element within a <code>div</code> with the class <code>col-xs-4</code>.");'
-  - text: 使用类<code>col-xs-8</code>将<code>h2</code>元素嵌套在<code>div</code> 。
-    testString: 'assert($("div.col-xs-8:has(h2)").length > 0 && $("div.col-xs-8:has(div)").length === 0, "Nest your <code>h2</code> element within a <code>div</code> with the class <code>col-xs-8</code>.");'
-  - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+  - text: <code>h2</code> 元素和最上方的 <code>img</code> 元素应该一起内嵌于具有 <code>row</code> class 的 <code>div</code> 元素内。
+    testString: 'assert($("div.row:has(h2)").length > 0 && $("div.row:has(img)").length > 0, "<code>h2</code> 元素和第一张 <code>img</code> 元素应该一起内嵌于具有 <code>row</code> class 的 <code>div</code> 元素内。");'
+  - text: 最上方的 <code>img</code> 元素应该内嵌于含有 <code>col-xs-4</code> class 的 <code>div</code> 元素中。
+    testString: 'assert($("div.col-xs-4:has(img)").length > 0 && $("div.col-xs-4:has(div)").length === 0, "最上方的 <code>img</code> 元素应该内嵌于含有 <code>col-xs-4</code> class 的 <code>div</code> 元素中。");'
+  - text: <code>h2</code> 元素应该内嵌于含有 <code>col-xs-8</code> class的 <code>div</code> 元素中。
+    testString: 'assert($("div.col-xs-8:has(h2)").length > 0 && $("div.col-xs-8:has(div)").length === 0, "<code>h2</code> 元素应该内嵌于含有 <code>col-xs-8</code> class的 <code>div</code> 元素中。");'
+  - text: 确保每一个 <code>div</code> 元素都有一个闭合标签。
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, '确保每一个 <code>div</code> 元素都有一个闭合标签。');
 
 ```
 
@@ -34,76 +44,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-
-<style>
-  h2 {
-    font-family: Lobster, Monospace;
-  }
-
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
-  }
-</style>
-
-<div class="container-fluid">
-  <h2 class="text-primary text-center">CatPhotoApp</h2>
-
-  <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
-  <div class="row">
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-primary">Like</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-info">Info</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-danger">Delete</button>
-    </div>
-  </div>
-  <p>Things cats <span class="text-danger">love:</span></p>
-  <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
-  </ul>
-  <p>Top 3 things cats hate:</p>
-  <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-    <label><input type="checkbox" name="personality"> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Crazy</label>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
-  </form>
-</div>
-
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">,,<style>,  h2 {,    font-family: Lobster, Monospace;,  },,  .thick-green-border {,    border-color: green;,    border-width: 10px;,    border-style: solid;,    border-radius: 50%;,  },</style>,,<div class="container-fluid">,  <h2 class="text-primary text-center">CatPhotoApp</h2>,,  <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>,,  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">,  <div class="row">,    <div class="col-xs-4">,      <button class="btn btn-block btn-primary">Like</button>,    </div>,    <div class="col-xs-4">,      <button class="btn btn-block btn-info">Info</button>,    </div>,    <div class="col-xs-4">,      <button class="btn btn-block btn-danger">Delete</button>,    </div>,  </div>,  <p>Things cats <span class="text-danger">love:</span></p>,  <ul>,    <li>cat nip</li>,    <li>laser pointers</li>,    <li>lasagna</li>,  </ul>,  <p>Top 3 things cats hate:</p>,  <ol>,    <li>flea treatment</li>,    <li>thunder</li>,    <li>other cats</li>,  </ol>,  <form action="/submit-cat-photo">,    <label><input type="radio" name="indoor-outdoor"> Indoor</label>,    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>,    <label><input type="checkbox" name="personality"> Loving</label>,    <label><input type="checkbox" name="personality"> Lazy</label>,    <label><input type="checkbox" name="personality"> Crazy</label>,    <input type="text" placeholder="cat photo URL" required>,    <button type="submit">Submit</button>,  </form>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

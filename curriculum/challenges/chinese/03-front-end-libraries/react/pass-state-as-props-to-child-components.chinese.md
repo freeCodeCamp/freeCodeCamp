@@ -4,26 +4,32 @@ title: Pass State as Props to Child Components
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: 将状态作为道具传递给子组件
+localeTitle: Pass State as Props to Child Components
 ---
 
 ## Description
-<section id="description">您看到了许多在先前的挑战中将道具传递给子JSX元素和子React组件的示例。您可能想知道这些道具来自哪里。一种常见的模式是让一个有状态的组件包含对您的应用程序很重要的<code>state</code> ，然后呈现子组件。您希望这些组件可以访问该<code>state</code>某些部分，这些部分作为props传递。例如，您可能有一个<code>App</code>组件可以呈现<code>Navbar</code>以及其他组件。在您的<code>App</code> ，您的<code>state</code>包含大量用户信息，但<code>Navbar</code>只需要访问用户的用户名，以便显示它。您将该<code>state</code>作为prop传递给<code>Navbar</code>组件。这种模式说明了React中的一些重要范例。第一种是<em>单向数据流</em> 。状态沿着应用程序组件树的一个方向流动，从有状态父组件到子组件。子组件仅接收所需的状态数据。第二，复杂的有状态应用程序可以分解为几个或者一个有状态的组件。其余组件只是从父级接收状态作为props，并从该状态呈现UI。它开始创建一个分离，其中状态管理在代码的一部分中处理，而UI在另一部分中呈现。将状态逻辑与UI逻辑分离的原则是React的关键原则之一。当它被正确使用时，它使复杂的有状态应用程序的设计更容易管理。 </section>
+<section id='description'>
+在之前的挑战中，你看到了很多将 props 传递给子 JSX 元素和子 React 组件的例子。你可能想知道那些 props 是从哪里来的。一个常见的模式是：有状态组件中包含对应用程序很重要的<code>state</code>，然后用它渲染子组件。你希望这些组件能够访问该<code>state</code>的某些部分，就把这些部分作为 props 传入。
+例如，也许你有一个<code>App</code>组件可以渲染<code>Navbar</code>以及其他组件。在你的<code>App</code>中，你的<code>state</code>中包含大量用户信息，但是<code>Navbar</code>只需要访问用户的用户名就可以显示出来，这时你将该<code>state</code>作为一个 prop 传递给<code>Navbar</code>组件即可。
+这个模式说明了 React 中的一些重要范例。第一个是<em>单向数据流</em>，state 沿着应用程序组件树的一个方向流动，从有状态父组件到子组件，子组件只接收它们需要的 state 数据。第二，复杂的有状态应用程序可以分解成几个，或者可能是一个单一的有状态组件。其余组件只是从父组件简单的接收 state 作为 props，并从该 state 渲染 UI。它开始创建一种分离，在这种分离中，state 管理在代码的一部分中处理，而 UI 渲染在另一部分中处理。将 state 逻辑与 UI 逻辑分离是 React 的关键原则之一。当它被正确使用时，它使得复杂的、有状态的应用程序的设计变得更容易管理。
+</section>
 
 ## Instructions
-<section id="instructions"> <code>MyApp</code>组件是有状态的，并将<code>Navbar</code>组件呈现为子组件。将<code>name</code>属性的<code>state</code>向下传递给子组件，然后在<code>h1</code>标记中显示该<code>name</code> ，该<code>name</code>是<code>Navbar</code> render方法的一部分。 </section>
+<section id='instructions'>
+<code>MyApp</code>组件是有状态的，它将<code>Navbar</code>组件渲染成它的为子组件。将<code>MyApp</code>组件<code>state</code>中的<code>name</code>属性向下传递给子组件，然后在<code>h1</code>标签中显示<code>name</code>，<code>name</code>是<code>Navbar</code>render 方法的一部分。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>MyApp</code>组件应该使用内部的<code>Navbar</code>组件进行渲染。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find("MyApp").length === 1 && mockedComponent.find("Navbar").length === 1; })(), "The <code>MyApp</code> component should render with a <code>Navbar</code> component inside.");'
-  - text: <code>Navbar</code>组件应该将<code>MyApp</code>状态属性<code>name</code>作为props接收。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: "TestName"}); return waitForIt(() => mockedComponent.find("Navbar").props() )}; const navProps = await setState(); assert(navProps.name === "TestName", "The <code>Navbar</code> component should receive the <code>MyApp</code> state property <code>name</code> as props."); }; '
-  - text: <code>Navbar</code>的<code>h1</code>元素应该呈现<code>name</code> prop。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find("Navbar").find("h1").text(); const setState = () => { mockedComponent.setState({name: "TestName"}); return waitForIt(() => mockedComponent.find("Navbar").find("h1").text() )}; const navH1After = await setState(); assert(new RegExp("TestName").test(navH1After) && navH1After !== navH1Before, "The <code>h1</code> element in <code>Navbar</code> should render the <code>name</code> prop."); }; '
+  - text: <code>MyApp</code>组件应该在内部渲染一个<code>Navbar</code>组件。
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyApp)); return mockedComponent.find('MyApp').length === 1 && mockedComponent.find('Navbar').length === 1; })(), '<code>MyApp</code>组件应该在内部渲染一个<code>Navbar</code>组件。');
+  - text: <code>Navbar</code>组件应该接收<code>Navbar</code>的 state 中的<code>name</code>属性作为 props。
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const setState = () => { mockedComponent.setState({name: "TestName"}); return waitForIt(() => mockedComponent.find("Navbar").props() )}; const navProps = await setState(); assert(navProps.name === "TestName", "<code>Navbar</code>组件应该接收<code>Navbar</code>的 state 中的<code>name</code>属性作为 props。"); }; '
+  - text: <code>Navbar</code>中的<code>h1</code>元素应该渲染 prop<code>name</code>。
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyApp)); const navH1Before = mockedComponent.find("Navbar").find("h1").text(); const setState = () => { mockedComponent.setState({name: "TestName"}); return waitForIt(() => mockedComponent.find("Navbar").find("h1").text() )}; const navH1After = await setState(); assert(new RegExp("TestName").test(navH1After) && navH1After !== navH1Before, "<code>Navbar</code>中的<code>h1</code>元素应该渲染 prop<code>name</code>。"); }; '
 
 ```
 
@@ -32,8 +38,13 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
 
+
+
+
+
+    <div id='jsx-seed'>
+    
 ```jsx
 class MyApp extends React.Component {
   constructor(props) {
@@ -63,20 +74,22 @@ class Navbar extends React.Component {
     );
   }
 };
-
+    
 ```
-
 </div>
 
 
 ### After Test
 <div id='jsx-teardown'>
 
-```js
-console.info('after the test');
+```jsx
+ReactDOM.render(<MyApp />, document.getElementById('root'))
+
 ```
 
 </div>
+
+
 
 </section>
 
@@ -84,6 +97,34 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'CamperBot'
+    }
+  }
+  render() {
+    return (
+       <div>
+         <Navbar name={this.state.name}/>
+       </div>
+    );
+  }
+};
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+    <div>
+      <h1>Hello, my name is: {this.props.name}</h1>
+    </div>
+    );
+  }
+};
 ```
+
 </section>
+              

@@ -2,15 +2,27 @@
 id: 56533eb9ac21ba0edf2244c9
 title: Accessing Object Properties with Variables
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 使用变量访问对象属性
+localeTitle: Accessing Object Properties with Variables
 ---
 
 ## Description
-<section id="description">对象的括号表示法的另一个用途是访问存储为变量值的属性。这对于迭代对象的属性或访问查找表非常有用。以下是使用变量访问属性的示例： <blockquote> var dogs = { <br> Fido：“Mutt”，Hunter：“Doberman”，Snoopie：“Beagle” <br> }; <br> var myDog =“猎人”; <br> var myBreed = dogs [myDog]; <br>的console.log（myBreed）; //“杜宾犬” </blockquote>另一种可以使用此概念的方法是在程序执行期间动态收集属性的名称，如下所示： <blockquote> var someObj = { <br> propName：“约翰” <br> }; <br> function propPrefix（str）{ <br> var s =“prop”; <br> return s + str; <br> } <br> var someProp = propPrefix（“Name”）; // someProp现在保存值&#39;propName&#39; <br>的console.log（someObj中[someProp]）; // “约翰” </blockquote>请注意，在使用变量名来访问属性时，我们<em>不会</em>使用引号，因为我们使用的是变量的<em>值</em> ，而不是<em>名称</em> 。 </section>
+<section id='description'>
+中括号操作符的另一个使用方式是用变量来访问一个属性。当你需要遍历对象的属性列表或查表时，这种方式极为有用。
+这有一个使用变量来访问属性的例子：
+<blockquote>var dogs = {<br>&nbsp;&nbsp;Fido: "Mutt",
+  Hunter: "Doberman",
+  Snoopie: "Beagle"<br>};<br>var myDog = "Hunter";<br>var myBreed = dogs[myDog];<br>console.log(myBreed); // "Doberman"</blockquote>
+还有更多：
+<blockquote>var someObj = {<br>&nbsp;&nbsp;propName: "John"<br>};<br>function propPrefix(str) {<br>&nbsp;&nbsp;var s = "prop";<br>&nbsp;&nbsp;return s + str;<br>}<br>var someProp = propPrefix("Name"); // someProp 现在的值为 'propName'<br>console.log(someObj[someProp]); // 输出 "John"</blockquote>
+提示：当我们通过变量名访问属性的时候，不需要给变量名包裹引号。因为实际上我们使用的是变量的值，而不是变量的名称。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>playerNumber</code>变量使用括号表示法在<code>testObj</code>查找玩家<code>16</code> 。然后将该名称分配给<code>player</code>变量。 </section>
+<section id='instructions'>
+使用变量<code>playerNumber</code>，通过中括号操作符找到<code>testObj</code>中<code>playerNumber</code>为<code>16</code>的值。然后把名字赋给变量<code>player</code>。
+</section>
 
 ## Tests
 <section id='tests'>
@@ -18,17 +30,17 @@ localeTitle: 使用变量访问对象属性
 ```yml
 tests:
   - text: <code>playerNumber</code>应该是一个数字
-    testString: 'assert(typeof playerNumber === "number", "<code>playerNumber</code> should be a number");'
+    testString: assert(typeof playerNumber === 'number', '<code>playerNumber</code>应该是一个数字');
   - text: 变量<code>player</code>应该是一个字符串
-    testString: 'assert(typeof player === "string", "The variable <code>player</code> should be a string");'
-  - text: <code>player</code>的价值应该是“蒙大拿”
-    testString: 'assert(player === "Montana", "The value of <code>player</code> should be "Montana"");'
-  - text: 您应该使用括号表示法来访问<code>testObj</code>
-    testString: 'assert(/testObj\s*?\[.*?\]/.test(code),"You should use bracket notation to access <code>testObj</code>");'
-  - text: 您不应该直接将值<code>Montana</code>分配给变量<code>player</code> 。
-    testString: 'assert(!code.match(/player\s*=\s*"|\"\s*Montana\s*"|\"\s*;/gi),"You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.");'
-  - text: 您应该在括号表示法中使用变量<code>playerNumber</code>
-    testString: 'assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code),"You should be using the variable <code>playerNumber</code> in your bracket notation");'
+    testString: assert(typeof player === 'string', '变量<code>player</code>应该是一个字符串');
+  - text: "<code>player</code>点值应该是 'Montana'"
+    testString: assert(player === 'Montana', '<code>player</code>点值应该是 "Montana"');
+  - text: 你应该使用中括号访问<code>testObj</code>
+    testString: assert(/testObj\s*?\[.*?\]/.test(code),'你应该使用中括号访问<code>testObj</code>');
+  - text: 你不应该直接将<code>Montana</code>赋给<code>player</code>
+    testString: assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi),'你不应该直接将<code>Montana</code>赋给<code>player</code>');
+  - text: 你应该在中括号中使用<code>playerNumber</code>变量
+    testString: assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code),'你应该在中括号中使用<code>playerNumber</code>变量');
 
 ```
 
@@ -37,31 +49,25 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-// Setup
-var testObj = {
-  12: "Namath",
-  16: "Montana",
-  19: "Unitas"
-};
 
-// Only change code below this line;
 
-var playerNumber;       // Change this Line
-var player = testObj;   // Change this Line
 
-```
 
-</div>
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof player !== "undefined"){(function(v){return v;})(player);}
 ```
 
 </div>
@@ -72,6 +78,14 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+var playerNumber = 16;
+var player = testObj[playerNumber];
 ```
+
 </section>
+              

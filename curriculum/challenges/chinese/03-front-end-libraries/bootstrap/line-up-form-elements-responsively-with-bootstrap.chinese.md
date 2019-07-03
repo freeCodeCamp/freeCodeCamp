@@ -1,19 +1,26 @@
 ---
 id: bad87fee1348bd9aec908845
 title: Line up Form Elements Responsively with Bootstrap
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
-    raw: true
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用Bootstrap响应表单元素
+localeTitle: Line up Form Elements Responsively with Bootstrap
 ---
 
 ## Description
-<section id="description">现在让我们将您的表单<code>input</code>和提交<code>button</code>放在同一行。我们将做到这一点，我们以前有相同的方式：通过使用<code>div</code>元素带班<code>row</code> ，和其他<code>div</code>使用中它的元素<code>col-xs-*</code>类。将表单的文本<code>input</code>和提交<code>button</code>嵌套在具有类<code>row</code>的<code>div</code> 。将表单的文本<code>input</code>嵌套在具有<code>col-xs-7</code>类的div中。将表单的提交<code>button</code> <code>div</code>具有类<code>col-xs-5</code>的<code>div</code> 。这是我们目前为Cat Photo App所做的最后一项挑战。我们希望您喜欢学习Font Awesome，Bootstrap和响应式设计！ </section>
+<section id='description'>
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
+Bootstrap 会根据你的屏幕大小来调节 HTML 元素的大小————因此称为 <code>响应式设计( Responsive Design )</code>。
+通过响应式设计，我们将无需额外设计一个手机版的网页，因为它在任何尺寸的屏幕上看起来都还不错。
+无论开发什么应用，你都可以通过将以下代码添加到你的 HTML 顶部来引入 Bootstrap 。
+<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/&#62;</code>
+在该案例中，我们已经帮你把相应代码添加到页面中。记住使用 <code>></code> 和 <code>/></code> 闭合 <code>link</code> 标签来保证引入成功。
+首先，我们应该把所有 HTML 标签放在 class 为 <code>container-fluid</code> 的 <code>div</code> 元素下（除了 <code>link</code> 标签和 <code>style</code> 标签）。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -21,14 +28,14 @@ localeTitle: 使用Bootstrap响应表单元素
 
 ```yml
 tests:
-  - text: 将表单提交按钮和文本输入嵌套在带有类<code>row</code>的div中。
-    testString: 'assert($("div.row:has(input[type=\"text\"])").length > 0 &&  $("div.row:has(button[type=\"submit\"])").length > 0, "Nest your form submission button and text input in a div with class <code>row</code>.");'
-  - text: 将表单文本输入嵌套在具有类<code>col-xs-7</code>的div中。
-    testString: 'assert($("div.col-xs-7:has(input[type=\"text\"])").length > 0, "Nest your form text input in a div with the class <code>col-xs-7</code>.");'
-  - text: 将表单提交按钮嵌套在具有类<code>col-xs-5</code>的div中。
-    testString: 'assert($("div.col-xs-5:has(button[type=\"submit\"])").length > 0, "Nest your form submission button in a div with the class <code>col-xs-5</code>.");'
-  - text: 确保每个<code>div</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
+  - text: 确保提交按钮和文本输入框都在同一个具有 class 属性 <code>row</code> 的 div 元素中。
+    testString: 'assert($("div.row:has(input[type=\"text\"])").length > 0 &&  $("div.row:has(button[type=\"submit\"])").length > 0, "确保提交按钮和文本输入框都在同一个具有 class 属性 <code>row</code> 的 div 元素中。");'
+  - text: 表单的文本输入框应该嵌入到具有 class 属性 <code>col-xs-7</code> 的 div 内。
+    testString: 'assert($("div.col-xs-7:has(input[type=\"text\"])").length > 0, "表单的文本输入框应该嵌入到一个具有 class 属性 <code>col-xs-7</code> 的 div 内。");'
+  - text: 表单的提交按钮应该嵌入到具有  class 属性 <code>col-xs-5</code> 的 div 内。
+    testString: 'assert($("div.col-xs-5:has(button[type=\"submit\"])").length > 0, "表单的提交按钮应该嵌入到具有  class 属性 <code>col-xs-5</code> 的 div 内。");'
+  - text: 确保每一个 <code>div</code> 元素都有一个闭合标签。
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, '确保每一个 <code>div</code> 元素都有一个闭合标签。');
 
 ```
 
@@ -37,94 +44,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<style>
-  h2 {
-    font-family: Lobster, Monospace;
-  }
-
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
-  }
-
-</style>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-8">
-      <h2 class="text-primary text-center">CatPhotoApp</h2>
-    </div>
-    <div class="col-xs-4">
-      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-    </div>
-  </div>
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
-  <div class="row">
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>
-    </div>
-    <div class="col-xs-4">
-      <button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>
-    </div>
-  </div>
-  <p>Things cats <span class="text-danger">love:</span></p>
-  <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
-  </ul>
-  <p>Top 3 things cats hate:</p>
-  <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <div class="row">
-      <div class="col-xs-6">
-        <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-      </div>
-      <div class="col-xs-6">
-        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-4">
-        <label><input type="checkbox" name="personality"> Loving</label>
-      </div>
-      <div class="col-xs-4">
-        <label><input type="checkbox" name="personality"> Lazy</label>
-      </div>
-      <div class="col-xs-4">
-        <label><input type="checkbox" name="personality"> Crazy</label>
-      </div>
-    </div>
-    <input type="text" class="form-control" placeholder="cat photo URL" required>
-    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>
-  </form>
-</div>
-
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">,<style>,  h2 {,    font-family: Lobster, Monospace;,  },,  .thick-green-border {,    border-color: green;,    border-width: 10px;,    border-style: solid;,    border-radius: 50%;,  },,</style>,,<div class="container-fluid">,  <div class="row">,    <div class="col-xs-8">,      <h2 class="text-primary text-center">CatPhotoApp</h2>,    </div>,    <div class="col-xs-4">,      <a href="#"><img class="img-responsive thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>,    </div>,  </div>,  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">,  <div class="row">,    <div class="col-xs-4">,      <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up"></i> Like</button>,    </div>,    <div class="col-xs-4">,      <button class="btn btn-block btn-info"><i class="fa fa-info-circle"></i> Info</button>,    </div>,    <div class="col-xs-4">,      <button class="btn btn-block btn-danger"><i class="fa fa-trash"></i> Delete</button>,    </div>,  </div>,  <p>Things cats <span class="text-danger">love:</span></p>,  <ul>,    <li>cat nip</li>,    <li>laser pointers</li>,    <li>lasagna</li>,  </ul>,  <p>Top 3 things cats hate:</p>,  <ol>,    <li>flea treatment</li>,    <li>thunder</li>,    <li>other cats</li>,  </ol>,  <form action="/submit-cat-photo">,    <div class="row">,      <div class="col-xs-6">,        <label><input type="radio" name="indoor-outdoor"> Indoor</label>,      </div>,      <div class="col-xs-6">,        <label><input type="radio" name="indoor-outdoor"> Outdoor</label>,      </div>,    </div>,    <div class="row">,      <div class="col-xs-4">,        <label><input type="checkbox" name="personality"> Loving</label>,      </div>,      <div class="col-xs-4">,        <label><input type="checkbox" name="personality"> Lazy</label>,      </div>,      <div class="col-xs-4">,        <label><input type="checkbox" name="personality"> Crazy</label>,      </div>,    </div>,    <input type="text" class="form-control" placeholder="cat photo URL" required>,    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button>,  </form>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

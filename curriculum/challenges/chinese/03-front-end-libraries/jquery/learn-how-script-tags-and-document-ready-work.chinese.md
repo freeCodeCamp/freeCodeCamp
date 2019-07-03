@@ -1,16 +1,26 @@
 ---
 id: bad87fee1348bd9acdd08826
 title: Learn How Script Tags and Document Ready Work
-challengeType: 6
+challengeType: 0
+
 videoUrl: ''
-localeTitle: 了解脚本标签和文档准备工作的方式
+localeTitle: Learn How Script Tags and Document Ready Work
 ---
 
 ## Description
-<section id="description">现在我们已经准备好学习jQuery，这是有史以来最流行的JavaScript工具。在我们开始使用jQuery之前，我们需要在HTML中添加一些内容。首先，在页面顶部添加一个<code>script</code>元素。请务必在以下行中关闭它。您的浏览器将在<code>script</code>元素中运行任何JavaScript，包括jQuery。在您的<code>script</code>元素中，添加以下代码： <code>$(document).ready(function() {</code>到您的<code>script</code> 。然后在以下行（仍然在您的<code>script</code>元素中）关闭它： <code>});</code>我们稍后会详细了解这些<code>functions</code> 。重要的是要知道，在浏览器加载页面后，您放入此<code>function</code>代码将立即运行。这很重要，因为没有您的<code>document ready function</code> ，您的代码可能会在HTML呈现之前运行，这会导致错误。 </section>
+<section id='description'>
+现在我们已经准备好学习有史以来最受欢迎的 JavaScript 框架——jQuery 了。
+在使用 jQuery 之前，我们需要在 HTML 页面中添加一些东西。
+首先，在页面顶部添加<code>script</code>标签，记得在后面为<code>script</code>标签添加结束标签。
+浏览器在<code>script</code>标签中运行所有的 JavaScript 脚本包括 jQuery。
+在<code>script</code>标签中添加代码<code>$(document).ready(function() {</code>。然后在后面（仍在该<code>script</code>标签内）用<code>});</code>闭合它。
+稍后我们将详细介绍<code>functions</code>，现在需要知道的是，只要浏览器加载页面，<code>function</code>中放入的代码就会运行。
+有一点很重要，如果没有<code>document ready function</code>，你的代码将在 HTML 页面呈现之前运行，这将导致错误。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +28,12 @@ localeTitle: 了解脚本标签和文档准备工作的方式
 
 ```yml
 tests:
-  - text: 创建一个<code>script</code>元素，确保它有效并具有结束标记。
-    testString: 'assert(code.match(/<\/script\s*>/g) && code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g) && code.match(/<\/script\s*>/g).length === code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g).length, "Create a <code>script</code> element making sure it is valid and has a closing tag.");'
-  - text: '您应该将<code>$(document).ready (function() {</code>到<code>script</code>元素的开头。'
-    testString: 'assert(code.match(/\$\s*?\(\s*?document\s*?\)\.ready\s*?\(\s*?function\s*?\(\s*?\)\s*?\{/g), "You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.");'
-  - text: '关闭<code>$(document).ready (function() {</code> function with <code>});</code>'
-    testString: 'assert(code.match(/\n*?\s*?\}\s*?\);/g), "Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>");'
+  - text: 创建一个<code>script</code>标签，确保其有效并具有闭合标签。
+    testString: assert(code.match(/<\/script\s*>/g) && code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\']+[^"\']*["\']+)*(\sasync|\sdefer)*\s*>/g) && code.match(/<\/script\s*>/g).length === code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\']+[^"\']*["\']+)*(\sasync|\sdefer)*\s*>/g).length, '创建一个<code>script</code>标签，确保其有效并具有闭合标签。');
+  - text: 在<code>script</code>的开头添加<code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code>。
+    testString: assert(code.match(/\$\s*?\(\s*?document\s*?\)\.ready\s*?\(\s*?function\s*?\(\s*?\)\s*?\{/g), '在<code>script</code>的开头添加<code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code>。');
+  - text: 用<code>}&#41;;</code>闭合<code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code>函数。
+    testString: assert(code.match(/\n*?\s*?\}\s*?\);/g), '用<code>}&#41;;</code>闭合<code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code>函数。');
 
 ```
 
@@ -32,45 +42,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<!-- Only change code above this line. -->
-
-<div class="container-fluid">
-  <h3 class="text-primary text-center">jQuery Playground</h3>
-  <div class="row">
-    <div class="col-xs-6">
-      <h4>#left-well</h4>
-      <div class="well" id="left-well">
-        <button class="btn btn-default target" id="target1">#target1</button>
-        <button class="btn btn-default target" id="target2">#target2</button>
-        <button class="btn btn-default target" id="target3">#target3</button>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <h4>#right-well</h4>
-      <div class="well" id="right-well">
-        <button class="btn btn-default target" id="target4">#target4</button>
-        <button class="btn btn-default target" id="target5">#target5</button>
-        <button class="btn btn-default target" id="target6">#target6</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<!-- 请把你的代码写在这行以上 -->,,<div class="container-fluid">,  <h3 class="text-primary text-center">jQuery Playground</h3>,  <div class="row">,    <div class="col-xs-6">,      <h4>#left-well</h4>,      <div class="well" id="left-well">,        <button class="btn btn-default target" id="target1">#target1</button>,        <button class="btn btn-default target" id="target2">#target2</button>,        <button class="btn btn-default target" id="target3">#target3</button>,      </div>,    </div>,    <div class="col-xs-6">,      <h4>#right-well</h4>,      <div class="well" id="right-well">,        <button class="btn btn-default target" id="target4">#target4</button>,        <button class="btn btn-default target" id="target5">#target5</button>,        <button class="btn btn-default target" id="target6">#target6</button>,      </div>,    </div>,  </div>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

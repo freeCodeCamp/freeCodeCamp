@@ -1,17 +1,22 @@
 ---
 id: a39963a4c10bc8b4d4f06d7e
 title: Seek and Destroy
-isRequired: true
 challengeType: 5
+isRequired: true
 videoUrl: ''
-localeTitle: 寻找和摧毁
+localeTitle: Seek and Destroy
 ---
 
 ## Description
-<section id="description">您将获得一个初始数组（驱逐舰函数中的第一个参数），后跟一个或多个参数。从初始数组中删除与这些参数具有相同值的所有元素。 <strong>注意</strong> <br>你必须使用<code>arguments</code>对象。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id='description'>
+给出一个含有两个数字的数组，我们需要写一个函数，让它返回这两个数字间所有数字（包含这两个数字）的总和。
+注意，较小数不一定总是出现在数组的第一个元素。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,18 +24,18 @@ localeTitle: 寻找和摧毁
 
 ```yml
 tests:
-  - text: '<code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code>应该返回<code>[1, 1]</code> 。'
-    testString: 'assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], "<code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code> should return <code>[1, 1]</code>.");'
-  - text: '<code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code>应该返回<code>[1, 5, 1]</code> 。'
-    testString: 'assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], "<code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code> should return <code>[1, 5, 1]</code>.");'
-  - text: '<code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code>应该返回<code>[1]</code> 。'
-    testString: 'assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], "<code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code> should return <code>[1]</code>.");'
-  - text: '<code>destroyer([2, 3, 2, 3], 2, 3)</code>应该返回<code>[]</code> 。'
-    testString: 'assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], "<code>destroyer([2, 3, 2, 3], 2, 3)</code> should return <code>[]</code>.");'
-  - text: '<code>destroyer([&quot;tree&quot;, &quot;hamburger&quot;, 53], &quot;tree&quot;, 53)</code>应该返回<code>[&quot;hamburger&quot;]</code> 。'
-    testString: 'assert.deepEqual(destroyer(["tree", "hamburger", 53], "tree", 53), ["hamburger"], "<code>destroyer(["tree", "hamburger", 53], "tree", 53)</code> should return <code>["hamburger"]</code>.");'
-  - text: '<code>destroyer([&quot;possum&quot;, &quot;trollo&quot;, 12, &quot;safari&quot;, &quot;hotdog&quot;, 92, 65, &quot;grandma&quot;, &quot;bugati&quot;, &quot;trojan&quot;, &quot;yacht&quot;], &quot;yacht&quot;, &quot;possum&quot;, &quot;trollo&quot;, &quot;safari&quot;, &quot;hotdog&quot;, &quot;grandma&quot;, &quot;bugati&quot;, &quot;trojan&quot;)</code>应该返回<code>[12,92,65]</code> 。'
-    testString: 'assert.deepEqual(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"), [12,92,65], "<code>destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")</code> should return <code>[12,92,65]</code>.");'
+  - text: <code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code>应该返回<code>[1, 1]</code>。
+    testString: assert.deepEqual(destroyer([1, 2, 3, 1, 2, 3], 2, 3), [1, 1], '<code>destroyer([1, 2, 3, 1, 2, 3], 2, 3)</code>应该返回<code>[1, 1]</code>。');
+  - text: <code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code>应该返回<code>[1, 5, 1]</code>。
+    testString: assert.deepEqual(destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3), [1, 5, 1], '<code>destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)</code>应该返回<code>[1, 5, 1]</code>。');
+  - text: <code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code>应该返回<code>[1]</code>。
+    testString: assert.deepEqual(destroyer([3, 5, 1, 2, 2], 2, 3, 5), [1], '<code>destroyer([3, 5, 1, 2, 2], 2, 3, 5)</code>应该返回<code>[1]</code>。');
+  - text: <code>destroyer([2, 3, 2, 3], 2, 3)</code>应该返回<code>[]</code>。
+    testString: assert.deepEqual(destroyer([2, 3, 2, 3], 2, 3), [], '<code>destroyer([2, 3, 2, 3], 2, 3)</code>应该返回<code>[]</code>。');
+  - text: "<code>destroyer(['tree', 'hamburger', 53], 'tree', 53)</code>应该返回<code>['hamburger']</code>。"
+    testString: assert.deepEqual(destroyer(["tree", "hamburger", 53], "tree", 53), ["hamburger"], '<code>destroyer(["tree", "hamburger", 53], "tree", 53)</code>应该返回<code>["hamburger"]</code>。');
+  - text: "<code>destroyer(['possum', 'trollo', 12, 'safari', 'hotdog', 92, 65, 'grandma', 'bugati', 'trojan', 'yacht'], 'yacht', 'possum', 'trollo', 'safari', 'hotdog', 'grandma', 'bugati', 'trojan')</code>应该返回<code>[12,92,65]</code>。"
+    testString: assert.deepEqual(destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan"), [12,92,65], '<code>destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan")</code>应该返回<code>[12,92,65]</code>。');
 
 ```
 
@@ -39,19 +44,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function destroyer(arr) {
-  // Remove all the values
-  return arr;
-}
 
-destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -61,6 +64,18 @@ destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 <section id='solution'>
 
 ```js
-// solution required
+function destroyer(arr) {
+  var hash = Object.create(null);
+  [].slice.call(arguments, 1).forEach(function(e) {
+    hash[e] = true;
+  });
+  // Remove all the values
+  return arr.filter(function(e) { return !(e in hash);});
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
 ```
+
 </section>
+              

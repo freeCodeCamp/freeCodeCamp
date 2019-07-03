@@ -2,15 +2,24 @@
 id: 56533eb9ac21ba0edf2244ad
 title: Decrement a Number with JavaScript
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 使用JavaScript减少数字
+localeTitle: Decrement a Number with JavaScript
 ---
 
 ## Description
-<section id="description">您可以使用<code>--</code>运算符轻松地将变量<dfn>减1</dfn>或减1。 <code>i--;</code>相当于<code>i = i - 1;</code> <strong>注意</strong> <br>整条线变成了<code>i--;</code> ，消除了对等号的需要。 </section>
+<section id='description'>
+使用自减符号<code>--</code>，你可以很方便地对一个变量执行<dfn>自减</dfn>或者<code>-1</code>运算。
+<code>i--;</code>
+等效于
+<code>i = i - 1;</code>
+<strong>提示</strong><br><code>i--;</code>这种写法，省去了书写<code>=</code>符号的必要。
+</section>
 
 ## Instructions
-<section id="instructions">更改代码以在<code>myVar</code>上使用<code>--</code>运算符。 </section>
+<section id='instructions'>
+重写代码，使用<code>--</code>符号对<code>myVar</code>执行自减操作。
+</section>
 
 ## Tests
 <section id='tests'>
@@ -18,13 +27,13 @@ localeTitle: 使用JavaScript减少数字
 ```yml
 tests:
   - text: <code>myVar</code>应该等于<code>10</code>
-    testString: 'assert(myVar === 10, "<code>myVar</code> should equal <code>10</code>");'
-  - text: <code>myVar = myVar - 1;</code>应该改变
-    testString: 'assert(/var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code), "<code>myVar = myVar - 1;</code> should be changed");'
-  - text: 在<code>myVar</code>上使用<code>--</code>运算符
-    testString: 'assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code), "Use the <code>--</code> operator on <code>myVar</code>");'
-  - text: 不要更改行上方的代码
-    testString: 'assert(/var myVar = 11;/.test(code), "Do not change code above the line");'
+    testString: assert(myVar === 10, '<code>myVar</code>应该等于<code>10</code>');
+  - text: <code>myVar = myVar - 1;</code>语句应该被修改
+    testString: assert(/var\s*myVar\s*=\s*11;\s*\/*.*\s*myVar--;/.test(code), '<code>myVar = myVar - 1;</code>语句应该被修改');
+  - text: 对<code>myVar</code>使用<code>--</code>运算符
+    testString: assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code), '对<code>myVar</code>使用<code>--</code>运算符');
+  - text: 不要修改注释上面的代码
+    testString: assert(/var myVar = 11;/.test(code), '不要修改注释上面的代码');
 
 ```
 
@@ -33,24 +42,25 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-var myVar = 11;
 
-// Only change code below this line
-myVar = myVar - 1;
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'myVar = ' + z;})(myVar);
 ```
 
 </div>
@@ -61,6 +71,9 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var myVar = 11;
+myVar--;
 ```
+
 </section>
+              

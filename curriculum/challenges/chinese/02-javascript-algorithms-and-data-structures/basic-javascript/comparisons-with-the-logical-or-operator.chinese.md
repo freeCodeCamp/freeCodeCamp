@@ -2,41 +2,51 @@
 id: 56533eb9ac21ba0edf2244d9
 title: Comparisons with the Logical Or Operator
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 与逻辑或运算符的比较
+localeTitle: Comparisons with the Logical Or Operator
 ---
 
 ## Description
-<section id="description"> <dfn>逻辑OR</dfn>运算符（ <code>||</code> ）返回<code>true</code> ，如果任一<dfn>操作数</dfn>为<code>true</code> 。否则，它返回<code>false</code> 。 <dfn>逻辑或</dfn>运算符由两个管道符号（ <code>|</code> ）组成。这通常可以在Backspace和Enter键之间找到。以下模式应该从以前的方法点看起来很熟悉： <blockquote> if（num&gt; 10）{ <br>返回“否”; <br> } <br> if（num &lt;5）{ <br>返回“否”; <br> } <br>返回“是”; </blockquote>仅当<code>num</code>介于<code>5</code>和<code>10</code>之间（包括5和10）时，才会返回“Yes”。相同的逻辑可以写成： <blockquote> if（num&gt; 10 || num &lt;5）{ <br>返回“否”; <br> } <br>返回“是”; </blockquote></section>
+<section id='description'>
+只要<dfn>逻辑或</dfn>运算符<code>||</code>两边任何一个为<code>true</code>，那么它就返回<code>true</code>；否则返回<code>false</code>。
+<dfn>逻辑或</dfn>运算符由两个管道符号（|）组成。这个按键位于退格键和回车键之间。
+下面这样的语句你应该很熟悉：
+<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return "No";<br>}<br>if (num < 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote>
+只有当<code>num</code>大于等于 5 或小于等于 10 时，函数返回"Yes"。相同的逻辑可以简写成：
+<blockquote>if (num > 10 || num < 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">将两个<code>if</code>语句组合成一个语句，如果<code>val</code>不在<code>10</code>和<code>20</code>之间（包括<code>10</code>和<code>20</code> ，则返回<code>&quot;Outside&quot;</code> 。否则，返回<code>&quot;Inside&quot;</code> 。 </section>
+<section id='instructions'>
+请使用逻辑或运算符把两个 if 语句合并为一个 if 语句，如果<code>val</code>不在 10 和 20 之间(包括 10 和 20)，返回<code>"Outside"</code>。反之，返回<code>"Inside"</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该使用<code>||</code>操作员一次
-    testString: 'assert(code.match(/\|\|/g).length === 1, "You should use the <code>||</code> operator once");'
-  - text: 你应该只有一个<code>if</code>语句
-    testString: 'assert(code.match(/if/g).length === 1, "You should only have one <code>if</code> statement");'
-  - text: <code>testLogicalOr(0)</code>应返回“Outside”
-    testString: 'assert(testLogicalOr(0) === "Outside", "<code>testLogicalOr(0)</code> should return "Outside"");'
-  - text: <code>testLogicalOr(9)</code>应返回“Outside”
-    testString: 'assert(testLogicalOr(9) === "Outside", "<code>testLogicalOr(9)</code> should return "Outside"");'
-  - text: <code>testLogicalOr(10)</code>应返回“Inside”
-    testString: 'assert(testLogicalOr(10) === "Inside", "<code>testLogicalOr(10)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(15)</code>应返回“Inside”
-    testString: 'assert(testLogicalOr(15) === "Inside", "<code>testLogicalOr(15)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(19)</code>应该返回“Inside”
-    testString: 'assert(testLogicalOr(19) === "Inside", "<code>testLogicalOr(19)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(20)</code>应该返回“Inside”
-    testString: 'assert(testLogicalOr(20) === "Inside", "<code>testLogicalOr(20)</code> should return "Inside"");'
-  - text: <code>testLogicalOr(21)</code>应该返回“Outside”
-    testString: 'assert(testLogicalOr(21) === "Outside", "<code>testLogicalOr(21)</code> should return "Outside"");'
-  - text: <code>testLogicalOr(25)</code>应返回“Outside”
-    testString: 'assert(testLogicalOr(25) === "Outside", "<code>testLogicalOr(25)</code> should return "Outside"");'
+  - text: 你应该使用一次<code>||</code>操作符
+    testString: assert(code.match(/\|\|/g).length === 1, '你应该使用一次<code>||</code>操作符');
+  - text: 你应该只有一个<code>if</code>表达式
+    testString: assert(code.match(/if/g).length === 1, '你应该只有一个<code>if</code>表达式');
+  - text: "<code>testLogicalOr(0)</code>应该返回 'Outside'"
+    testString: assert(testLogicalOr(0) === "Outside", '<code>testLogicalOr(0)</code>应该返回 "Outside"');
+  - text: "<code>testLogicalOr(9)</code>应该返回 'Outside'"
+    testString: assert(testLogicalOr(9) === "Outside", '<code>testLogicalOr(9)</code>应该返回 "Outside"');
+  - text: "<code>testLogicalOr(10)</code>应该返回 'Inside'"
+    testString: assert(testLogicalOr(10) === "Inside", '<code>testLogicalOr(10)</code>应该返回 "Inside"');
+  - text: "<code>testLogicalOr(15)</code>应该返回 'Inside'"
+    testString: assert(testLogicalOr(15) === "Inside", '<code>testLogicalOr(15)</code>应该返回 "Inside"');
+  - text: "<code>testLogicalOr(19)</code>应该返回 'Inside'"
+    testString: assert(testLogicalOr(19) === "Inside", '<code>testLogicalOr(19)</code>应该返回 "Inside"');
+  - text: "<code>testLogicalOr(20)</code>应该返回 'Inside'"
+    testString: assert(testLogicalOr(20) === "Inside", '<code>testLogicalOr(20)</code>应该返回 "Inside"');
+  - text: "<code>testLogicalOr(21)</code>应该返回 'Outside'"
+    testString: assert(testLogicalOr(21) === "Outside", '<code>testLogicalOr(21)</code>应该返回 "Outside"');
+  - text: "<code>testLogicalOr(25)</code>应该返回 'Outside'"
+    testString: assert(testLogicalOr(25) === "Outside", '<code>testLogicalOr(25)</code>应该返回 "Outside"');
 
 ```
 
@@ -45,30 +55,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function testLogicalOr(val) {
-  // Only change code below this line
 
-  if (val) {
-    return "Outside";
-  }
 
-  if (val) {
-    return "Outside";
-  }
 
-  // Only change code above this line
-  return "Inside";
-}
 
-// Change this value to test
-testLogicalOr(15);
 
-```
 
-</div>
+
+
+
+
 
 
 
@@ -78,6 +75,13 @@ testLogicalOr(15);
 <section id='solution'>
 
 ```js
-// solution required
+function testLogicalOr(val) {
+  if (val < 10 || val > 20) {
+    return "Outside";
+  }
+  return "Inside";
+}
 ```
+
 </section>
+              

@@ -1,18 +1,20 @@
 ---
 id: 561abd10cb81ac38a17513bc
-title: JavaScript Algorithms and Data Structures Certificate
+title: undefined
 challengeType: 7
-isPrivate: true
+
 videoUrl: ''
-localeTitle: JavaScript算法和数据结构证书
+localeTitle: undefined
 ---
 
 ## Description
-<section id="description">
+<section id='description'>
+
 </section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -20,16 +22,6 @@ localeTitle: JavaScript算法和数据结构证书
 
 ```yml
 tests:
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
-  - text: ''
-    testString: !<tag:yaml.org,2002:js/undefined> ''
 
 ```
 
@@ -38,12 +30,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

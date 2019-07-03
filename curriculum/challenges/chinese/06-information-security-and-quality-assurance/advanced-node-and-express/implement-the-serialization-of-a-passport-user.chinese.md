@@ -2,21 +2,24 @@
 id: 5895f70cf9fc0f352b528e67
 title: Implement the Serialization of a Passport User
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 实现Passport用户的序列化
+localeTitle: Implement the Serialization of a Passport User
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。现在我们没有加载实际的用户对象，因为我们还没有设置我们的数据库。这可以通过许多不同的方式完成，但是对于我们的项目，当我们启动服务器并在应用程序的整个生命周期中保持持久连接时，我们将连接到数据库。为此，请将MongoDB添加为依赖项，并在服务器中将其需要。 （ <code>const mongo = require(&#39;mongodb&#39;).MongoClient;</code> ）现在我们想要连接到我们的数据库，然后开始侦听请求。这样做的目的是在连接数据库之前或者出现数据库错误时不允许请求。要实现此目的，您需要在以下内容中包含序列化和应用程序侦听器： <pre> mongo.connect（process.env.DATABASE，（err，db）=&gt; {
-    if（错误）{
-        console.log（&#39;数据库错误：&#39;+错误）;
-    } else {
-        console.log（&#39;成功的数据库连接&#39;）;
-<pre> <code> //serialization and app.listen</code> </pre>
-<p> }}）; </p></pre>您现在可以在deserializeUser中取消注释该块并删除您的<code>done(null, null)</code> 。确保将.env文件中的<em>DATABASE</em>设置为数据库的连接字符串（例如： <code>DATABASE=mongodb://admin:pass@mlab.com:12345/my-project</code> ）。您可以在<a href="https://mlab.com/welcome/">mLab</a>上设置免费数据库。恭喜 - 您已完成序列化设置！当您认为自己已经做对时，请提交您的页面。如果您遇到错误，可以<a href="https://gist.github.com/JosephLivengood/e192e809a1d27cb80dc2c6d3467b7477">在这里查看</a>到目前为止完成的项目。 <p></p></section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -24,10 +27,10 @@ localeTitle: 实现Passport用户的序列化
 
 ```yml
 tests:
-  - text: 存在数据库连接
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /mongo.connect/gi, "You should have created a connection to your database"); assert.match(data, /mongo.connect[^]*app.listen[^]*}[^]*}/gi, "You should have your app.listen nested at within your database connection at the bottom"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: '反序列化现在正确使用DB并且擦除了<code>done(null, null)</code>'
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.notMatch(data, /null,( |)null/gi, "The callback in deserializeUser of (null, null) should be completely removed for the db block uncommented out"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 应存在数据库连接。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /mongo.connect/gi, "数据库的连接应已创建。"); assert.match(data, /mongo.connect[^]*app.listen[^]*}[^]*}/gi, "应在 mongo.connect 的回调里监听请求。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 反序列化应正确使用，且应移除<code>done(null, null)</code>。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.notMatch(data, /null,( |)null/gi, "包含 done(null, null) 的回调应移除。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -36,12 +39,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

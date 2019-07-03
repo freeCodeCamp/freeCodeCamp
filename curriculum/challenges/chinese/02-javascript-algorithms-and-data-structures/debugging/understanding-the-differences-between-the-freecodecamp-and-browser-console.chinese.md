@@ -2,27 +2,38 @@
 id: 587d7b83367417b2b2512b37
 title: Understanding the Differences between the freeCodeCamp and Browser Console
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 了解freeCodeCamp和浏览器控制台之间的差异
+localeTitle: Understanding the Differences between the freeCodeCamp and Browser Console
 ---
 
 ## Description
-<section id="description">您可能已经注意到一些freeCodeCamp JavaScript挑战包括他们自己的控制台。此控制台的行为与您在上一次挑战中使用的浏览器控制台略有不同。以下挑战旨在强调freeCodeCamp控制台与浏览器控制台之间的一些差异。首先，浏览器控制台。当您在浏览器中加载并运行普通JavaScript文件时， <code>console.log()</code>语句将准确打印您告诉他们打印到浏览器控制台的确切次数。在浏览器中的文本编辑器中，过程略有不同，最初可能会让人感到困惑。传递给文本编辑器块中的<code>console.log()</code>值运行每组测试以及您在代码中进行的任何函数调用的一次。这有助于一些有趣的行为，并且可能会在开始时将您绊倒，因为您希望只看到一次的记录值可能会打印出更多次，具体取决于测试次数和传递给这些测试的值。如果您只想查看单个输出而不必担心运行测试周期，可以使用<code>console.clear()</code> 。 </section>
+<section id='description'>
+你可能已经注意到一些 freeCodeCamp JavaScript 的挑战有自己的控制台。这些控制台的行为与你在上一次挑战中使用的浏览器控制台略有不同。
+以下挑战旨在强调 freeCodeCamp 控制台与浏览器控制台之间的一些差异。
+对于浏览器控制台。当你在浏览器中加载并运行 JavaScript 文件时，<code>console.log()</code>语句会在控制台中按照你调用的次数准确地打印出你要求的内容。然而，在 freeCodeCamp 的代码编辑器中使用<code>console.log()</code>会略有不同，一开始可能会让你感到困惑。
+在 freeCodeCamp 代码编辑器中，传给<code>console.log()</code>的值会在每组测试执行的时候输出。另外，如果你在代码中还手动调用过挑战题目的函数，调用几次就会增加几次传入值的输出。
+这就产生了一些有趣的行为，并可能在一开始就让你感到困惑，因为你觉得只会输出一次的值可能会输出多次，具体次数取决于挑战题目本身测试的数量以及这些测试调用挑战函数的方式。
+如果你不打算执行挑战的测试，而只想查看自己调用<code>console.log()</code>的输出，可以使用<code>console.clear()</code>。
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>console.log()</code>在指示的代码中打印变量。 </section>
+<section id='instructions'>
+使用<code>console.log()</code>在代码中指定的位置打印变量。
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 使用<code>console.log()</code>打印<code>outputTwo</code>变量。在浏览器控制台中，这应该打印出变量的值两次。
-    testString: 'assert(code.match(/console\.log\(outputTwo\)/g), "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.");'
-  - text: 使用<code>console.log()</code>打印<code>outputOne</code>变量。
-    testString: 'assert(code.match(/console\.log\(outputOne\)/g), "Use <code>console.log()</code> to print the <code>outputOne</code> variable.");'
+  - text: 使用<code>console.log()</code>输出变量<code>outputTwice</code>的值。在浏览器控制台中，应该输出两次变量的值。
+    testString: assert(code.match(/console\.log\(outputTwo\)/g), '使用<code>console.log()</code>输出变量<code>outputTwice</code>的值。在浏览器控制台中，应该输出两次变量的值。');
+  - text: 使用<code>console.log()</code>输出变量<code>outputOne</code>的值。
+    testString: assert(code.match(/console\.log\(outputOne\)/g), '使用<code>console.log()</code>输出变量<code>outputOne</code>的值。');
   - text: 使用<code>console.clear()</code>修改输出，以便<code>outputOne</code>变量只输出一次。
-    testString: 'assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm), "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.");'
+    testString: assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm), '使用<code>console.clear()</code>修改输出，以便<code>outputOne</code>变量只输出一次。');
 
 ```
 
@@ -31,32 +42,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
-
-```js
-// Open your browser console
-let outputTwo = "This will print to the browser console 2 times";
-// Use console.log() to print the outputTwo variable
 
 
-let outputOne = "Try to get this to log only once to the browser console";
-// Use console.clear() in the next line to print the outputOne only once
 
 
-// Use console.log() to print the outputOne variable
 
-```
 
-</div>
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

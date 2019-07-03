@@ -2,15 +2,20 @@
 id: 587d824b367417b2b2512c4a
 title: Use the Double Equals to Assert Equality
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 使用Double Equals来断言平等
+localeTitle: Use the Double Equals to Assert Equality
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。 .equal（）,. notEqual（）.equal（）使用&#39;==&#39;比较对象</section>
+<section id='description'>
+注意，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+使用 assert.isNull() 或 assert.isNotNull() 通过测试。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,16 +23,16 @@ localeTitle: 使用Double Equals来断言平等
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
+  - text: 需通过全部测试
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 - 相等与不等
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[0].method, "equal", "Numbers are coerced into strings with == "); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 - 相等与不等
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[1].method, "notEqual", " == compares object references"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 - 相等与不等
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[2].method, "equal", "6 * \"2\" is 12 ! It should be equal to \"12\""); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 - 相等与不等
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[3].method, "notEqual", "6 + \"2\" is \"62\"..."); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--equal 或 notEqual
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[0].method, "equal", "数字会被 == 强行转换为字符串"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--equal 或 notEqual
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[1].method, "notEqual", " == 比较对象引用"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--equal 或 notEqual
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[2].method, "equal", "6 * \"2\" 为 12 ! 它应该等于 \"12\""); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--equal 或 notEqual
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=4").then(data => {  assert.equal(data.assertions[3].method, "notEqual", "6 + \"2\" 为 \"62\"..."); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -36,12 +41,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

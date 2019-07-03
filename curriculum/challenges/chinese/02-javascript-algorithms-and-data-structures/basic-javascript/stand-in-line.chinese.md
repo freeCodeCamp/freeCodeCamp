@@ -2,15 +2,22 @@
 id: 56533eb9ac21ba0edf2244c6
 title: Stand in Line
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 站在队中
+localeTitle: Stand in Line
 ---
 
 ## Description
-<section id="description">在计算机科学中， <dfn>队列</dfn>是一个抽象的<dfn>数据结构</dfn> ，其中项目按顺序保存。可以在<code>queue</code>的后面添加新项目，并从<code>queue</code>的前面取出旧项目。编写一个函数<code>nextInLine</code> ，它接受一个数组（ <code>arr</code> ）和一个数字（ <code>item</code> ）作为参数。将数字添加到数组的末尾，然后删除数组的第一个元素。然后， <code>nextInLine</code>函数应返回已删除的元素。 </section>
+<section id='description'>
+如果你还记得我们在这一节 <a href="javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Storing Values with the Assignment Operator</a>,的讨论，赋值之前，先完成等号右边的操作。这意味着我们可把一个函数的返回值，赋值给一个变量。
+假设我们预先定义的函数<code>sum</code>其功能就是将两个数字相加，那么：
+<code>ourSum = sum(5, 12);</code>
+将调用<code>sum</code>函数，返回<code>return</code>了一个数值<code>17</code>，然后把它赋值给了<code>ourSum</code>变量。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+调用<code>processArg</code>函数并给参数一个值<code>7</code>，然后把返回的值赋值给变量<code>processed</code>。
 </section>
 
 ## Tests
@@ -18,16 +25,16 @@ localeTitle: 站在队中
 
 ```yml
 tests:
-  - text: '<code>nextInLine([], 5)</code>应返回一个数字。'
-    testString: 'assert.isNumber(nextInLine([],5), "<code>nextInLine([], 5)</code> should return a number.");'
-  - text: '<code>nextInLine([], 1)</code>应该返回<code>1</code>'
-    testString: 'assert(nextInLine([],1) === 1, "<code>nextInLine([], 1)</code> should return <code>1</code>");'
-  - text: '<code>nextInLine([2], 1)</code>应返回<code>2</code>'
-    testString: 'assert(nextInLine([2],1) === 2, "<code>nextInLine([2], 1)</code> should return <code>2</code>");'
-  - text: '<code>nextInLine([5,6,7,8,9], 1)</code>应该返回<code>5</code>'
-    testString: 'assert(nextInLine([5,6,7,8,9],1) === 5, "<code>nextInLine([5,6,7,8,9], 1)</code> should return <code>5</code>");'
-  - text: '在<code>nextInLine(testArr, 10)</code> ， <code>testArr[4]</code>应为<code>10</code>'
-    testString: 'nextInLine(testArr, 10); assert(testArr[4] === 10, "After <code>nextInLine(testArr, 10)</code>, <code>testArr[4]</code> should be <code>10</code>");'
+  - text: <code>nextInLine([], 5)</code>应该返回一个数字
+    testString: assert.isNumber(nextInLine([],5), '<code>nextInLine([], 5)</code>应该返回一个数字');
+  - text: <code>nextInLine([], 1)</code>应该返回<code>1</code>
+    testString: assert(nextInLine([],1) === 1, '<code>nextInLine([], 1)</code>应该返回<code>1</code>');
+  - text: <code>nextInLine([2], 1)</code>应该返回<code>2</code>
+    testString: assert(nextInLine([2],1) === 2, '<code>nextInLine([2], 1)</code>应该返回<code>2</code>');
+  - text: <code>nextInLine([5,6,7,8,9], 1)</code>应该返回<code>5</code>
+    testString: assert(nextInLine([5,6,7,8,9],1) === 5, '<code>nextInLine([5,6,7,8,9], 1)</code>应该返回<code>5</code>');
+  - text: 在<code>nextInLine(testArr, 10)</code>执行后<code>testArr[4]</code>应该是<code>10</code>
+    testString: nextInLine(testArr, 10); assert(testArr[4] === 10, '在<code>nextInLine(testArr, 10)</code>执行后<code>testArr[4]</code>应该是<code>10</code>');
 
 ```
 
@@ -36,26 +43,15 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function nextInLine(arr, item) {
-  // Your code here
 
-  return item;  // Change this line
-}
 
-// Test Setup
-var testArr = [1,2,3,4,5];
 
-// Display Code
-console.log("Before: " + JSON.stringify(testArr));
-console.log(nextInLine(testArr, 6)); // Modify this line to test
-console.log("After: " + JSON.stringify(testArr));
 
-```
 
-</div>
+
+
+
 
 ### Before Test
 <div id='js-setup'>
@@ -81,16 +77,20 @@ function uncapture() {
 }
 
 capture();
-
 ```
 
 </div>
 
+
+
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+uncapture();
+testArr = [1,2,3,4,5];
+(function() { return logOutput.join("\n");})();
 ```
 
 </div>
@@ -101,6 +101,13 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var testArr = [ 1,2,3,4,5];
+
+function nextInLine(arr, item) {
+    arr.push(item);
+    return arr.shift();
+}
 ```
+
 </section>
+              

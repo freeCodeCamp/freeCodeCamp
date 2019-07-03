@@ -2,23 +2,24 @@
 id: 5895f70df9fc0f352b528e6a
 title: Create New Middleware
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 创建新的中间件
+localeTitle: Create New Middleware
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。同样，任何用户都可以通过输入网址来查看/配置他们是否通过身份验证。我们希望通过在呈现配置文件页面之前检查用户是否首先进行身份验证来防止这种情况。这是何时创建中间件的完美示例。这里的挑战是创建中间件功能<code>ensureAuthenticated(req, res, next)</code> ，它将检查用户是否通过调用护照进行身份验证isAuthenticated对<em>请求</em>进行检查，然后检查<em>req.user</em>是否定义。如果是，那么应该调用<em>next（）</em> ，否则我们只需通过重定向到我们的主页来回复请求即可登录。该中间件的实现是： <pre> function ensureAuthenticated（req，res，next）{
-  if（req.isAuthenticated（））{
-      return next（）;
-  }
-  res.redirect（ &#39;/&#39;）;
-}; </pre>现在，在包含呈现页面的函数的get请求的参数之前，将<em>ensureAuthenticated</em>作为中间件添加到配置文件页面的请求中。 <pre> app.route（ &#39;/简档&#39;）
-  .get（ensureAuthenticated，（req，res）=&gt; {
-       res.render（process.cwd（）+&#39;/ views / pug / profile&#39;）;
-  }）; </pre>当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -26,10 +27,10 @@ localeTitle: 创建新的中间件
 
 ```yml
 tests:
-  - text: 中间件确保应该在我们的/配置文件路由上实现
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /ensureAuthenticated[^]*req.isAuthenticated/gi, "Your ensureAuthenticated middleware should be defined and utilize the req.isAuthenticated function"); assert.match(data, /profile[^]*get[^]*ensureAuthenticated/gi, "Your ensureAuthenticated middleware should be attached to the /profile route"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 正确的Get请求/配置文件重定向到/因为我们未经过身份验证
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/profile") .then(data => { assert.match(data, /Home page/gi, "An attempt to go to the profile at this point should redirect to the homepage since we are not logged in"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: <code>ensureAuthenticated</code>中间件应添加到<code>/profile</code>路由中。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /ensureAuthenticated[^]*req.isAuthenticated/gi, "你应定义 ensureAuthenticated 中间件并调用 req.isAuthenticated 方法。"); assert.match(data, /profile[^]*get[^]*ensureAuthenticated/gi, "ensureAuthenticated 中间件应在 /profile 路由中。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 如果没有通过验证，对 /profile 的 GET 请求应重定向到 /
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/profile") .then(data => { assert.match(data, /Home page/gi, "如果没有通过验证，尝试访问 profile 页面应重定向回主页。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -38,12 +39,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

@@ -1,18 +1,26 @@
 ---
 id: bad87fee1348bd9aeda08726
 title: Delete Your jQuery Functions
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
-challengeType: 6
+challengeType: 0
+
 videoUrl: ''
-localeTitle: 删除您的jQuery函数
+localeTitle: Delete Your jQuery Functions
 ---
 
 ## Description
-<section id="description">这些动画起初很酷，但现在它们让人分心。从<code>document ready function</code>删除所有这三个jQuery函数，但保留<code>document ready function</code>本身。 </section>
+<section id='description'>
+现在我们已经准备好学习有史以来最受欢迎的 JavaScript 框架——jQuery 了。
+在使用 jQuery 之前，我们需要在 HTML 页面中添加一些东西。
+首先，在页面顶部添加<code>script</code>标签，记得在后面为<code>script</code>标签添加结束标签。
+浏览器在<code>script</code>标签中运行所有的 JavaScript 脚本包括 jQuery。
+在<code>script</code>标签中添加代码<code>$(document).ready(function() {</code>。然后在后面（仍在该<code>script</code>标签内）用<code>});</code>闭合它。
+稍后我们将详细介绍<code>functions</code>，现在需要知道的是，只要浏览器加载页面，<code>function</code>中放入的代码就会运行。
+有一点很重要，如果没有<code>document ready function</code>，你的代码将在 HTML 页面呈现之前运行，这将导致错误。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -20,16 +28,16 @@ localeTitle: 删除您的jQuery函数
 
 ```yml
 tests:
-  - text: 从<code>document ready function</code>删除所有三个jQuery <code>document ready function</code> 。
-    testString: 'assert(code.match(/\{\s*\}\);/g), "Delete all three of your jQuery functions from your <code>document ready function</code>.");'
-  - text: 保持<code>script</code>元素不变。
-    testString: 'assert(code.match(/<script>/g), "Leave your <code>script</code> element intact.");'
-  - text: '将<code>$(document).ready(function() {</code>保留到<code>script</code>元素的开头。'
-    testString: 'assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g), "Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.");'
-  - text: '保持“文档就绪功能”关闭<code>})</code>完好无损。'
-    testString: 'assert(code.match(/.*\s*\}\);/g), "Leave your "document ready function" closing <code>&#125;&#41;</code> intact.");'
-  - text: 保持<code>script</code>元素结束标记不变。
-    testString: 'assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length, "Leave your <code>script</code> element closing tag intact.");'
+  - text: 删除<code>document ready function</code>中的三个 jQuery 函数。
+    testString: assert(code.match(/\{\s*\}\);/g), '删除<code>document ready function</code>中的三个 jQuery 函数。');
+  - text: 保持<code>script</code>标签不变。
+    testString: assert(code.match(/<script>/g), '保持<code>script</code>标签不变。');
+  - text: 保持<code>$&#40document&#41.ready&#40function&#40&#41 {</code>在<code>script</code>标签的开头不变。
+    testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g), '保持<code>$&#40document&#41.ready&#40function&#40&#41 {</code>在<code>script</code>标签的开头不变。');
+  - text: "保持 'document ready function' 用<code>&#125;&#41;</code>闭合。"
+    testString: assert(code.match(/.*\s*\}\);/g), '保持 "document ready function" 用<code>&#125;&#41;</code>闭合。');
+  - text: 保持<code>script</code>标签闭合。
+    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length, '保持<code>script</code>标签闭合。');
 
 ```
 
@@ -38,54 +46,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<script>
-  $(document).ready(function() {
-    $("button").addClass("animated bounce");
-    $(".well").addClass("animated shake");
-    $("#target3").addClass("animated fadeOut");
-
-  });
-</script>
-
-<!-- Only change code above this line. -->
-
-<div class="container-fluid">
-  <h3 class="text-primary text-center">jQuery Playground</h3>
-  <div class="row">
-    <div class="col-xs-6">
-      <h4>#left-well</h4>
-      <div class="well" id="left-well">
-        <button class="btn btn-default target" id="target1">#target1</button>
-        <button class="btn btn-default target" id="target2">#target2</button>
-        <button class="btn btn-default target" id="target3">#target3</button>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <h4>#right-well</h4>
-      <div class="well" id="right-well">
-        <button class="btn btn-default target" id="target4">#target4</button>
-        <button class="btn btn-default target" id="target5">#target5</button>
-        <button class="btn btn-default target" id="target6">#target6</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<script>,  $(document).ready(function() {,    $("button").addClass("animated bounce");,    $(".well").addClass("animated shake");,    $("#target3").addClass("animated fadeOut");,,  });,</script>,,<!-- 请修改本行以上的代码 -->,,<div class="container-fluid">,  <h3 class="text-primary text-center">jQuery Playground</h3>,  <div class="row">,    <div class="col-xs-6">,      <h4>#left-well</h4>,      <div class="well" id="left-well">,        <button class="btn btn-default target" id="target1">#target1</button>,        <button class="btn btn-default target" id="target2">#target2</button>,        <button class="btn btn-default target" id="target3">#target3</button>,      </div>,    </div>,    <div class="col-xs-6">,      <h4>#right-well</h4>,      <div class="well" id="right-well">,        <button class="btn btn-default target" id="target4">#target4</button>,        <button class="btn btn-default target" id="target5">#target5</button>,        <button class="btn btn-default target" id="target6">#target6</button>,      </div>,    </div>,  </div>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

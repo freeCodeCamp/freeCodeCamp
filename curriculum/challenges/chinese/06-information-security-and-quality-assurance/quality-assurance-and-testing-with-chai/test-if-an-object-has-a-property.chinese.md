@@ -2,15 +2,20 @@
 id: 587d824e367417b2b2512c55
 title: Test if an Object has a Property
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 测试对象是否具有属性
+localeTitle: Test if an Object has a Property
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。 #property断言实际对象具有给定属性。在适当的地方使用#property或#notProperty </section>
+<section id='description'>
+注意，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+使用 assert.isNull() 或 assert.isNotNull() 通过测试。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +23,14 @@ localeTitle: 测试对象是否具有属性
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
+  - text: 需通过全部测试
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=15").then(data => { assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  property vs. notProperty
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=15").then(data => { assert.equal(data.assertions[0].method, "notProperty", "A car has not wings"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  property vs. notProperty
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=15").then(data => { assert.equal(data.assertions[1].method, "property", "planes have engines"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  property vs. notProperty
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=15").then(data => { assert.equal(data.assertions[2].method, "property", "Cars have wheels"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--property 或 notProperty
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=15").then(data => { assert.equal(data.assertions[0].method, "notProperty", "car 没有 wings"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--property 或 notProperty
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=15").then(data => { assert.equal(data.assertions[1].method, "property", "planes 有 engines"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--property 或 notProperty
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=15").then(data => { assert.equal(data.assertions[2].method, "property", "Cars 有 wheels"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -34,12 +39,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

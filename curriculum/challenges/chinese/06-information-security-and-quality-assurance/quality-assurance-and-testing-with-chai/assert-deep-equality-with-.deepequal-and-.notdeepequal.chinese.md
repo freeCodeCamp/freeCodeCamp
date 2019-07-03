@@ -2,15 +2,20 @@
 id: 587d824c367417b2b2512c4c
 title: Assert Deep Equality with .deepEqual and .notDeepEqual
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 使用.deepEqual和.notDeepEqual断言深度等式
+localeTitle: Assert Deep Equality with .deepEqual and .notDeepEqual
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。 .deepEqual（）,. noDeepEqual（）。deepEqual（）断言两个对象是深度相等的</section>
+<section id='description'>
+注意，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+使用 assert.isNull() 或 assert.isNotNull() 通过测试。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +23,12 @@ localeTitle: 使用.deepEqual和.notDeepEqual断言深度等式
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
+  - text: 需通过全部测试
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=6").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  deepEqual vs. notDeepEqual
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=6").then(data => {  assert.equal(data.assertions[0].method, "deepEqual", "The order of the keys does not matter"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  deepEqual vs. notDeepEqual
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=6").then(data => {  assert.equal(data.assertions[1].method, "notDeepEqual", "The position of elements within an array does matter"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--deepEqual 或 notDeepEqual
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=6").then(data => {  assert.equal(data.assertions[0].method, "deepEqual", "键的顺序不影响 deepEqual"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 请选择正确的断言--deepEqual 或 notDeepEqual
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=6").then(data => {  assert.equal(data.assertions[1].method, "notDeepEqual", "数组元素顺序影响 deepEqual"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -32,12 +37,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

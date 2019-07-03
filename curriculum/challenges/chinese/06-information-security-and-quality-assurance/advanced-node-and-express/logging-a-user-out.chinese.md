@@ -2,23 +2,24 @@
 id: 58965611f9fc0f352b528e6c
 title: Logging a User Out
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 记录用户
+localeTitle: Logging a User Out
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。创建注销逻辑很容易。路径应该只是取消认证用户并重定向到主页而不是渲染任何视图。在护照中， <code>req.logout();</code>认证用户就像调用<code>req.logout();</code>一样简单<code>req.logout();</code>在重定向之前。 <pre> app.route（ &#39;/注销&#39;）
-  .get（（req，res）=&gt; {
-      req.logout（）;
-      res.redirect（ &#39;/&#39;）;
-  }）; </pre>您可能已经注意到我们也没有处理丢失的页面（404），在Node中处理此问题的常用方法是使用以下中间件。继续在所有其他路线之后添加： <pre> app.use（（req，res，next）=&gt; {
-  res.status（404）
-    .TYPE（ &#39;文本&#39;）
-    .send（&#39;未找到&#39;）;
-}）; </pre>当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -26,10 +27,10 @@ localeTitle: 记录用户
 
 ```yml
 tests:
-  - text: 退出路线
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /req.logout/gi, "You should be call req.logout() in youre /logout route"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 注销应该重定向到主页/
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/logout") .then(data => { assert.match(data, /Home page/gi, "When a user logs out they should be redirected to the homepage"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 应存在退出登录的路由。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /req.logout/gi, "你应该在 /logout 路由里调用 req.logout()"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 退出登录后应重定向到主页 /
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/logout") .then(data => { assert.match(data, /Home page/gi, "当用户退出登录，应重定向到主页。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -38,12 +39,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

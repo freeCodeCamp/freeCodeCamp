@@ -4,24 +4,29 @@ title: Define a Redux Action
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: 定义Redux动作
+localeTitle: Define a Redux Action
 ---
 
 ## Description
-<section id="description">由于Redux是一个状态管理框架，因此更新状态是其核心任务之一。在Redux中，所有状态更新都由调度操作触发。操作只是一个JavaScript对象，其中包含有关已发生的操作事件的信息。 Redux存储接收这些操作对象，然后相应地更新其状态。有时，Redux操作也会携带一些数据。例如，操作在用户登录后携带用户名。虽然数据是可选的，但操作必须带有<code>type</code>属性，该属性指定发生的操作的“类型”。将Redux操作视为信使，将有关应用程序中发生的事件的信息提供给Redux商店。然后，商店根据发生的操作开展更新状态的业务。 </section>
+<section id='description'>
+由于 Redux 是一个状态管理框架，因此更新状态是其核心任务之一。在 Redux 中，所有状态更新都由 dispatch action 触发，action 只是一个 JavaScript 对象，其中包含有关已发生的 action 事件的信息。Redux store 接收这些 action 对象，然后更新相应的状态。有时，Redux action 也会携带一些数据。例如，在用户登录后携带用户名，虽然数据是可选的，但 action 必须带有<code>type</code>属性，该属性表示此 action 的类型。
+我们可以将 Redux action 视为信使，将有关应用程序中发生的事件信息提供给 Redux store，然后 store 根据发生的 action 进行状态的更新。
+</section>
 
 ## Instructions
-<section id="instructions">编写Redux操作就像声明具有type属性的对象一样简单。声明一个对象<code>action</code>并为其设置一个属性<code>type</code>设置为字符串<code>&#39;LOGIN&#39;</code> 。 </section>
+<section id='instructions'>
+编写 Redux action 就像声明具有 type 属性的对象一样简单，声明一个对象<code>action</code>并为它设置一个属性<code>type</code>，并将他的值设置成字符串<code>'LOGIN'</code>。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 应该存在一个操作对象。
-    testString: 'assert((function() { return typeof action === "object" })(), "An action object should exist.");'
-  - text: 该操作应具有值为<code>LOGIN</code>的键属性类型。
-    testString: 'assert((function() { return action.type === "LOGIN" })(), "The action should have a key property type with value <code>LOGIN</code>.");'
+  - text: 应该有一个 action 对象。
+    testString: assert((function() { return typeof action === 'object' })(), '应该有一个 action 对象。');
+  - text: 该 action 的值应该为<code>LOGIN</code>。
+    testString: assert((function() { return action.type === 'LOGIN' })(), '该 action 的值应该为<code>LOGIN</code>。');
 
 ```
 
@@ -30,14 +35,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='jsx-seed'>
 
+
+
+
+
+    <div id='jsx-seed'>
+    
 ```jsx
-// Define an action here:
+// 在此处定义 action
 
+    
 ```
-
 </div>
+
+
 
 
 
@@ -47,6 +59,10 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+const action = {
+  type: 'LOGIN'
+}
 ```
+
 </section>
+              

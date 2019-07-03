@@ -4,14 +4,19 @@ title: Convert Celsius to Fahrenheit
 challengeType: 1
 isRequired: true
 videoUrl: ''
-localeTitle: 将摄氏温度转换为华氏温度
+localeTitle: Convert Celsius to Fahrenheit
 ---
 
 ## Description
-<section id="description">从摄氏温度转换为华氏温度的算法是以摄氏度乘以<code>9/5</code>的温度加上<code>32</code> 。您将获得一个可变<code>celsius</code>表示摄氏温度。使用已定义的变量<code>fahrenheit</code>温度，并将其指定为相当于给定摄氏温度的华氏温度。使用上面提到的算法帮助将摄氏温度转换为华氏温度。不要过多担心函数和返回语句，因为它们将在未来的挑战中涵盖。目前，只使用您已经学过的运算符。 </section>
+<section id='description'>
+将摄氏度转换为华氏度的算法为：摄氏度 × <code>9/5 + 32</code>
+输入参数 <code>celsius</code> 代表一个摄氏温度值。请你根据上述转换公式，将已定义好的 <code>fahrenheit</code> 变量赋值为对应的华氏温度的值。
+你不需要顾虑 function 和 return 语句，它们会在之后的挑战中予以介绍。现在，你只需要使用你已学过的运算符。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,18 +24,18 @@ localeTitle: 将摄氏温度转换为华氏温度
 
 ```yml
 tests:
-  - text: <code>convertToF(0)</code>应该返回一个数字
-    testString: 'assert(typeof convertToF(0) === "number", "<code>convertToF(0)</code> should return a number");'
-  - text: <code>convertToF(-30)</code>应该返回值<code>-22</code>
-    testString: 'assert(convertToF(-30) === -22, "<code>convertToF(-30)</code> should return a value of <code>-22</code>");'
-  - text: <code>convertToF(-10)</code>应该返回值<code>14</code>
-    testString: 'assert(convertToF(-10) === 14, "<code>convertToF(-10)</code> should return a value of <code>14</code>");'
-  - text: <code>convertToF(0)</code>应返回值<code>32</code>
-    testString: 'assert(convertToF(0) === 32, "<code>convertToF(0)</code> should return a value of <code>32</code>");'
-  - text: <code>convertToF(20)</code>应返回值<code>68</code>
-    testString: 'assert(convertToF(20) === 68, "<code>convertToF(20)</code> should return a value of <code>68</code>");'
-  - text: <code>convertToF(30)</code>应返回值<code>86</code>
-    testString: 'assert(convertToF(30) === 86, "<code>convertToF(30)</code> should return a value of <code>86</code>");'
+  - text: <code>convertToF(0)</code> 应该返回一个数字。
+    testString: assert(typeof convertToF(0) === 'number', '<code>convertToF(0)</code> 应该返回一个数字。');
+  - text: <code>convertToF(-30)</code> 应该返回 <code>-22</code>。
+    testString: assert(convertToF(-30) === -22, '<code>convertToF(-30)</code> 应该返回 <code>-22</code>。');
+  - text: <code>convertToF(-10)</code> 应该返回 <code>14</code>。
+    testString: assert(convertToF(-10) === 14, '<code>convertToF(-10)</code> 应该返回 <code>14</code>。');
+  - text: <code>convertToF(0)</code> 应该返回 <code>32</code>。
+    testString: assert(convertToF(0) === 32, '<code>convertToF(0)</code> 应该返回 <code>32</code>。');
+  - text: <code>convertToF(20)</code> 应该返回 <code>68</code>。
+    testString: assert(convertToF(20) === 68, '<code>convertToF(20)</code> 应该返回 <code>68</code>。');
+  - text: <code>convertToF(30)</code> 应该返回 <code>86</code>。
+    testString: assert(convertToF(30) === 86, '<code>convertToF(30)</code> 应该返回 <code>86</code>。');
 
 ```
 
@@ -39,19 +44,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function convertToF(celsius) {
-  let fahrenheit;
-  return fahrenheit;
-}
 
-convertToF(30);
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -61,6 +64,15 @@ convertToF(30);
 <section id='solution'>
 
 ```js
-// solution required
+function convertToF(celsius) {
+  let fahrenheit = celsius * 9/5 + 32;
+
+  return fahrenheit;
+}
+
+convertToF(30);
+
 ```
+
 </section>
+              

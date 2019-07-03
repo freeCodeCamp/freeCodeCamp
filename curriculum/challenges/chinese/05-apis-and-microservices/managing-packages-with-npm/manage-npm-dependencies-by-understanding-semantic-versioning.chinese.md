@@ -1,21 +1,28 @@
 ---
 id: 587d7fb5367417b2b2512c01
 title: Manage npm Dependencies By Understanding Semantic Versioning
-localeTitle: 通过了解语义版本控制来管理npm依赖项
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Manage npm Dependencies By Understanding Semantic Versioning
 ---
 
 ## Description
-<section id='description'> 
-package.json的dependencies-section中的npm软件包的版本遵循所谓的语义版本控制（SemVer），这是软件版本控制的行业标准，旨在使管理依赖项更容易。在npm上发布的库，框架或其他工具应使用SemVer，以便清楚地传达依赖于程序包的项目在更新时可以期望的更改类型。 
-SemVer在没有公共API的项目中没有意义 - 所以除非你的项目与上面的例子类似，否则使用另一种版本控制格式。 <code>0</code>那么为什么你需要了解SemVer？ <code>0</code>了解SemVer在开发使用外部依赖项的软件时非常有用（您几乎总是这样做）。有一天，您对这些数字的理解将使您免于意外地对项目进行重大更改而不理解为什么“昨天有效”的事情突然之间没有。 <code>0</code>这是语义版本控制根据官方网站的工作方式： <code>0</code>给定版本号MAJOR.MINOR.PATCH，当您进行不兼容的API更改时，增加： 
-MAJOR版本，当以向后兼容的方式添加功能时，增加
-MINOR版本，当您进行向后兼容的错误修复时，和
-PATCH版本。 <code>0</code>这意味着PATCH是错误修复，MINOR添加了新功能，但它们都没有破坏之前的功能。最后，MAJOR添加了对早期版本无效的更改。 <code>0</code>示例<code>0</code>语义版本号：1.3.8 <code>0</code>说明<code>0</code>在package.json的dependencies-section中，更改时刻版本以匹配MAJOR版本2，MINOR版本10和PATCH版本2 
+<section id='description'>
+package.json 是任何 Node.js 项目或 npm 包的中心。它存储项目的相关信息，就像 HTML 文档中的<code><head></code>区域是用来描述网页的通用信息（元信息）一样。package.json 由单个 JSON 对象组成，它以键值对的形式存储项目的信息。一个最小的 package.json 文件至少包含两个必须字段：name 和 version——但是提供有关项目的附加信息是一个更好的做法，在以后它可能对你的用户或者维护者有所帮助。
+author 字段：
+如果你转到之前设置的 Glitch 项目并查看屏幕左侧，你会看到一个文件树，你可以在其中查看项目中各种文件的概述。在文件树的末尾部分，你会看到 package.json——我们将在接下来的几个挑战中改进这个文件。
+这个文件中最常见的信息之一是 author 字段，它指定了谁是项目的创建者。它可以是字符串，也可以是带有联系人详细信息的对象。对于较大的项目，建议使用对象，但是在我们的例子中，一个简单的字符串就可以了，比如下面的例子。
+<code>"author": "Jane Doe",</code>
+说明：
+将你的名字添加到 Glitch 项目中，package.json 的 author 字段。
+请记住，你正在编写 JSON 文件。
+所有的字段名必须使用双引号（"）包裹, 比如："author"
+所有字段必须用逗号（,）分隔
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -24,10 +31,10 @@ PATCH版本。 <code>0</code>这意味着PATCH是错误修复，MINOR添加了�
 
 ```yml
 tests:
-  - text: '“依赖”应该包括“时刻”'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, ''moment'', ''"dependencies" does not include "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“时刻”版应该是“2.10.2”'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^[\^\~]?2\.10\.2/, ''Wrong version of "moment". It should be 2.10.2''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: "'dependencies' 应该包含 'moment'。"
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "moment", ""dependencies" 未包含 "moment""); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: "'moment' 的版本号应该是 '2.10.2'。"
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^[\^\~]?2\.10\.2/, ""moment" 的版本号有误。它应该是 2.10.2"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -36,12 +43,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

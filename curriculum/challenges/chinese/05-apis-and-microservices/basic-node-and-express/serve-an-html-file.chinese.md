@@ -1,16 +1,20 @@
 ---
 id: 587d7fb0367417b2b2512bef
 title: Serve an HTML File
-localeTitle: 提供HTML文件
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Serve an HTML File
 ---
 
 ## Description
-<section id='description'> <code>0</code>我们可以使用<code>res.sendFile(path)</code>方法响应文件。 <code>0</code>您可以将它放在<code>app.get('/', ...)</code>路由处理程序中。在幕后，此方法将根据其类型设置适当的标头，以指示您的浏览器如何处理您要发送的文件。然后它将读取并发送文件。此方法需要绝对文件路径。我们建议您使用Node全局变量<code>__dirname</code>来计算路径。 <code>0</code>例如<code>absolutePath = __dirname + relativePath/file.ext</code> 。 <code>0</code>要发送的文件是<code>/views/index.html</code> 。尝试“显示”你的应用程序，你应该看到一个很大的HTML标题（以及我们稍后将使用的表单......），没有应用任何样式。 <code>0</code>注意：您可以编辑上一个挑战的解决方案，也可以创建一个新挑战。如果您创建新解决方案，请记住Express会从上到下评估路由。它执行第一个匹配的处理程序。您必须注释掉前面的解决方案，否则服务器将继续使用字符串进行响应。 
+<section id='description'>
+在开发过程中，能够随时看到代码的运行结果是非常重要的。Node 只是一个 JavaScript 环境。与客户端 JavaScript 一样，你可以使用控制台输出有用的调试信息。在本地计算机上，你可以在终端中输出调试信息。在 Glitch 上，你可以打开屏幕下方的日志。使用 "Logs" 按钮切换日志面板（在左上角，应用名称的下面）。
+准备开始，我们只需要在控制台打印出经典的 "Hello World" 即可。我们建议在做这些挑战题时，保持日志面板处于打开状态。通过这些错误日志，你可能会发现这些错误的本质原因。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -19,8 +23,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 您的应用应该提供文件views / index.html
-    testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.match(data, /<h1>.*<\/h1>/, ''Your app does not serve the expected HTML''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: app 应该响应 views/index.html 文件
+    testString: getUserInput => $.get(getUserInput('url')).then(data => { assert.match(data, /<h1>.*<\/h1>/, 'app 没有输出预期的 HTML'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -29,12 +33,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

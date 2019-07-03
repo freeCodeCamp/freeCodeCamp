@@ -1,21 +1,20 @@
 ---
 id: 587d7fb2367417b2b2512bf8
 title: Get Data from POST Requests
-localeTitle: 从POST请求中获取数据
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Get Data from POST Requests
 ---
 
 ## Description
-<section id='description'> <code>0</code>在路径<code>/name</code>处安装POST处理程序。它和以前一样。我们在html首页中准备了一个表单。它将提交练习10（查询字符串）的相同数据。如果正确配置了body-parser，您应该在对象<code>req.body</code>找到参数。看看通常的库示例： 
-<blockquote>route: POST '/library'<br>urlencoded_body: userId=546&bookId=6754 <br>req.body: {userId: '546', bookId: '6754'}</blockquote> <code>0</code>使用与以前相同的JSON对象进行响应： <code>{name: 'firstname lastname'}</code> 。使用我们在应用程序首页中提供的html表单测试您的端点是否正常工作。 <code>0</code>提示：除了GET和POST之外，还有其他几种http方法。按照惯例，http动词与您要在服务器上执行的操作之间存在对应关系。传统的映射是： 
-POST（有时是PUT） - 使用随请求发送的信息创建新资源， 
-GET  - 读取现有资源而不修改它， 
-PUT或PATCH（有时是POST） - 使用数据更新资源已发送， 
-DELETE =&gt;删除资源。 <code>0</code>还有一些其他方法用于协商与服务器的连接。除了GET之外，上面列出的所有其他方法都可以有一个有效载荷（即数据进入请求体）。身体解析器中间件也适用于这些方法。 
+<section id='description'>
+在开发过程中，能够随时看到代码的运行结果是非常重要的。Node 只是一个 JavaScript 环境。与客户端 JavaScript 一样，你可以使用控制台输出有用的调试信息。在本地计算机上，你可以在终端中输出调试信息。在 Glitch 上，你可以打开屏幕下方的日志。使用 "Logs" 按钮切换日志面板（在左上角，应用名称的下面）。
+准备开始，我们只需要在控制台打印出经典的 "Hello World" 即可。我们建议在做这些挑战题时，保持日志面板处于打开状态。通过这些错误日志，你可能会发现这些错误的本质原因。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -24,10 +23,10 @@ DELETE =&gt;删除资源。 <code>0</code>还有一些其他方法用于协商�
 
 ```yml
 tests:
-  - text: '测试1：您的API端点应使用正确的名称进行响应'
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/name'', {first: ''Mick'', last: ''Jagger''}).then(data => { assert.equal(data.name, ''Mick Jagger'', ''Test 1: "POST /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '测试2：您的API端点应使用正确的名称进行响应'
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/name'', {first: ''Keith'', last: ''Richards''}).then(data => { assert.equal(data.name, ''Keith Richards'', ''Test 2: "POST /name" route does not behave as expected'') }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 测试 1：你的 API 应该使用正确的名称来响应
+    testString: 'getUserInput => $.post(getUserInput("url") + "/name", {first: "Mick", last: "Jagger"}).then(data => { assert.equal(data.name, "Mick Jagger", "测试 1： "POST /name" 路由的行为不符合预期") }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 测试 2：你的 API 应该使用正确的名称来响应
+    testString: 'getUserInput => $.post(getUserInput("url") + "/name", {first: "Keith", last: "Richards"}).then(data => { assert.equal(data.name, "Keith Richards", "Test 2: "POST /name" 路由的行为不符合预期") }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -36,12 +35,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

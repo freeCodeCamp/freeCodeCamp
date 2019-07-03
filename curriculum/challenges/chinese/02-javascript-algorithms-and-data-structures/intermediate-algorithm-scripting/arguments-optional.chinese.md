@@ -1,17 +1,22 @@
 ---
 id: a97fd23d9b809dac9921074f
 title: Arguments Optional
-isRequired: true
 challengeType: 5
+isRequired: true
 videoUrl: ''
-localeTitle: 参数可选
+localeTitle: Arguments Optional
 ---
 
 ## Description
-<section id="description">创建一个将两个参数相加的函数。如果只提供了一个参数，则返回一个需要一个参数并返回总和的函数。例如， <code>addTogether(2, 3)</code>应返回<code>5</code> ， <code>addTogether(2)</code>应返回一个函数。使用单个参数调用此返回函数将返回总和： <code>var sumTwoAnd = addTogether(2);</code> <code>sumTwoAnd(3)</code>返回<code>5</code> 。如果任一参数不是有效数字，则返回undefined。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+给出一个含有两个数字的数组，我们需要写一个函数，让它返回这两个数字间所有数字（包含这两个数字）的总和。
+注意，较小数不一定总是出现在数组的第一个元素。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,16 +24,16 @@ localeTitle: 参数可选
 
 ```yml
 tests:
-  - text: '<code>addTogether(2, 3)</code>应该返回5。'
-    testString: 'assert.deepEqual(addTogether(2, 3), 5, "<code>addTogether(2, 3)</code> should return 5.");'
-  - text: <code>addTogether(2)(3)</code>应该返回5。
-    testString: 'assert.deepEqual(addTogether(2)(3), 5, "<code>addTogether(2)(3)</code> should return 5.");'
-  - text: '<code>addTogether(&quot;http://bit.ly/IqT6zt&quot;)</code>应返回undefined。'
-    testString: 'assert.isUndefined(addTogether("http://bit.ly/IqT6zt"), "<code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.");'
-  - text: '<code>addTogether(2, &quot;3&quot;)</code>应返回undefined。'
-    testString: 'assert.isUndefined(addTogether(2, "3"), "<code>addTogether(2, "3")</code> should return undefined.");'
-  - text: '<code>addTogether(2)([3])</code>应返回undefined。'
-    testString: 'assert.isUndefined(addTogether(2)([3]), "<code>addTogether(2)([3])</code> should return undefined.");'
+  - text: <code>addTogether(2, 3)</code>应该返回 5。
+    testString: assert.deepEqual(addTogether(2, 3), 5, '<code>addTogether(2, 3)</code>应该返回 5。');
+  - text: <code>addTogether(2)(3)</code>应该返回 5。
+    testString: assert.deepEqual(addTogether(2)(3), 5, '<code>addTogether(2)(3)</code>应该返回 5。');
+  - text: '<code>addTogether("http://bit.ly/IqT6zt")</code>应该返回<code>undefined</code>。'
+    testString: 'assert.isUndefined(addTogether("http://bit.ly/IqT6zt"), "<code>addTogether("http://bit.ly/IqT6zt")</code>应该返回<code>undefined</code>。");'
+  - text: "<code>addTogether(2, '3')</code>应该返回<code>undefined</code>。"
+    testString: assert.isUndefined(addTogether(2, "3"), '<code>addTogether(2, "3")</code>应该返回<code>undefined</code>。');
+  - text: <code>addTogether(2)([3])</code>应该返回<code>undefined</code>。
+    testString: assert.isUndefined(addTogether(2)([3]), '<code>addTogether(2)([3])</code>应该返回<code>undefined</code>。');
 
 ```
 
@@ -37,18 +42,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function addTogether() {
-  return false;
-}
 
-addTogether(2,3);
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -58,6 +62,20 @@ addTogether(2,3);
 <section id='solution'>
 
 ```js
-// solution required
+function addTogether() {
+  var a = arguments[0];
+  if (toString.call(a) !== '[object Number]') return;  
+  if (arguments.length === 1) {
+    return function(b) {
+      if (toString.call(b) !== '[object Number]') return;
+      return a + b;
+    };
+  }
+  var b = arguments[1];
+  if (toString.call(b) !== '[object Number]') return;  
+  return a + arguments[1];
+}
 ```
+
 </section>
+              

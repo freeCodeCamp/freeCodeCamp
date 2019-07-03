@@ -2,25 +2,33 @@
 id: 587d7db3367417b2b2512b8e
 title: Using the Test Method
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 使用测试方法
+localeTitle: Using the Test Method
 ---
 
 ## Description
-<section id="description">正则表达式用于编程语言以匹配字符串的一部分。您可以创建模式来帮助您进行匹配。如果你想在字符串<code>&quot;The dog chased the cat&quot;</code>找到单词<code>&quot;the&quot;</code> ，你可以使用以下正则表达式： <code>/the/</code> 。请注意，正则表达式中不需要引号。 JavaScript有多种方法可以使用正则表达式。测试正则表达式的一种方法是使用<code>.test()</code>方法。 <code>.test()</code>方法接受正则表达式，将其应用于字符串（放在括号内），如果模式发现或不存在，则返回<code>true</code>或<code>false</code> 。 <blockquote>让testStr =“freeCodeCamp”; <br>让testRegex = / Code /; <br> testRegex.test（testStr）; <br> //返回true </blockquote></section>
+<section id='description'>
+在编程语言中，正则表达式用于匹配指定的字符串。通过正则表达式创建匹配模式（规则）可以帮你完成指定匹配。
+如果你想要在字符串<code>"The dog chased the cat"</code>中匹配到<code>"the"</code>这个单词，你可以使用如下正则表达式：<code>/the/</code>。注意，正则表达式中不需要引号。
+JavaScript 中有多种使用正则表达式的方法。测试正则表达式的一种方法是使用<code>.test()</code>方法。<code>.test()</code>方法会把你编写的正则表达式应用到一个字符串（即括号内的内容），如果你的匹配模式成功匹配到字符，则返回<code>true</code>，反之，返回<code>false</code>。
+<blockquote>let testStr = "freeCodeCamp";<br>let testRegex = /Code/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>.test()</code>方法在字符串<code>myString</code>上应用正则表达式<code>myRegex</code> 。 </section>
+<section id='instructions'>
+使用<code>.test()</code>方法，检测字符串<code>myString</code>是否符合正则表达式<code>myRegex</code>定义的规则。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该使用<code>.test()</code>来测试正则表达式。
-    testString: 'assert(code.match(/myRegex.test\(\s*myString\s*\)/), "You should use <code>.test()</code> to test the regex.");'
-  - text: 您的结果应该返回<code>true</code> 。
-    testString: 'assert(result === true, "Your result should return <code>true</code>.");'
+  - text: 你应该使用<code>.test()</code>方法来检测正则表达式。
+    testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), '你应该使用<code>.test()</code>方法来检测正则表达式。');
+  - text: 你的返回结果应该为<code>true</code>。
+    testString: assert(result === true, '你的返回结果应该为<code>true</code>。');
 
 ```
 
@@ -29,25 +37,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-let myString = "Hello, World!";
-let myRegex = /Hello/;
-let result = myRegex; // Change this line
 
-```
 
-</div>
+
+
+
+
+
+
+
+
 
 
 
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

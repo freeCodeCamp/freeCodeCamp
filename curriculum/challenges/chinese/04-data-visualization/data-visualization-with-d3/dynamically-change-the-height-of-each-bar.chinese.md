@@ -1,40 +1,47 @@
 ---
 id: 587d7fa9367417b2b2512bcf
 title: Dynamically Change the Height of Each Bar
-challengeType: 6
+challengeType: 0
+
 videoUrl: ''
-localeTitle: 动态改变每个栏的高度
+localeTitle: Dynamically Change the Height of Each Bar
 ---
 
 ## Description
-<section id="description">每个条的高度可以设置为数组中数据点的值，类似于动态设置<code>x</code>值的方式。 <blockquote> selection.attr（“property”，（d，i）=&gt; { <br> / * <br> * d是数据点值<br> * i是数组中数据点的索引<br> * / <br> }） </blockquote></section>
+<section id='description'>
+和动态设置<code>x</code>值一样，每组的高也可以被设置成数组中数据点的值。
+<blockquote>selection.attr("property", (d, i) => {<br>&nbsp;&nbsp;/* <br>&nbsp;&nbsp;* d 是数据点的值<br>&nbsp;&nbsp;* i 是数据点在数组中的下标<br>&nbsp;&nbsp;*/<br>})</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>height</code>属性的回调函数以返回数据值乘以3. <strong>注意</strong> <br>请记住，将所有数据点乘以相同的常量可以缩放数据（如放大）。在此示例中，有助于查看条形值之间的差异。 </section>
+<section id='instructions'>
+改变<code>height</code>属性的回调函数，让它返回数据值乘以 3 的值。
+<strong>提示</strong><br>记住，把所有数据点乘以相同的常数来对数据进行缩放（就像放大）。这有利于看清例子中每组之间的差异。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 第一个<code>rect</code>的<code>height</code>应为36。
-    testString: 'assert($("rect").eq(0).attr("height") == "36", "The first <code>rect</code> should have a <code>height</code> of 36.");'
-  - text: 第二个<code>rect</code>的<code>height</code>应为93。
-    testString: 'assert($("rect").eq(1).attr("height") == "93", "The second <code>rect</code> should have a <code>height</code> of 93.");'
-  - text: 第三个<code>rect</code>的<code>height</code>应为66。
-    testString: 'assert($("rect").eq(2).attr("height") == "66", "The third <code>rect</code> should have a <code>height</code> of 66.");'
-  - text: 第四个<code>rect</code>的<code>height</code>应为51。
-    testString: 'assert($("rect").eq(3).attr("height") == "51", "The fourth <code>rect</code> should have a <code>height</code> of 51.");'
-  - text: 第五个<code>rect</code>的<code>height</code>应为75。
-    testString: 'assert($("rect").eq(4).attr("height") == "75", "The fifth <code>rect</code> should have a <code>height</code> of 75.");'
-  - text: 第六个<code>rect</code>的<code>height</code>应为54。
-    testString: 'assert($("rect").eq(5).attr("height") == "54", "The sixth <code>rect</code> should have a <code>height</code> of 54.");'
-  - text: 第七个<code>rect</code>的<code>height</code>应为87。
-    testString: 'assert($("rect").eq(6).attr("height") == "87", "The seventh <code>rect</code> should have a <code>height</code> of 87.");'
-  - text: 第八个<code>rect</code>应该有42的<code>height</code> 。
-    testString: 'assert($("rect").eq(7).attr("height") == "42", "The eighth <code>rect</code> should have a <code>height</code> of 42.");'
-  - text: 第九个<code>rect</code>的<code>height</code>应为27。
-    testString: 'assert($("rect").eq(8).attr("height") == "27", "The ninth <code>rect</code> should have a <code>height</code> of 27.");'
+  - text: 第一个<code>rect</code>的<code>height</code>应该为 36。
+    testString: assert($('rect').eq(0).attr('height') == '36', '第一个<code>rect</code>的<code>height</code>应该为 36。');
+  - text: 第二个<code>rect</code>的<code>height</code>应该为 93。
+    testString: assert($('rect').eq(1).attr('height') == '93', '第二个<code>rect</code>的<code>height</code>应该为 93。');
+  - text: 第三个<code>rect</code>的<code>height</code>应该为 66。
+    testString: assert($('rect').eq(2).attr('height') == '66', '第三个<code>rect</code>的<code>height</code>应该为 66。');
+  - text: 第四个<code>rect</code>的<code>height</code>应该为 51。
+    testString: assert($('rect').eq(3).attr('height') == '51', '第四个<code>rect</code>的<code>height</code>应该为 51。');
+  - text: 第五个<code>rect</code>的<code>height</code>应该为 75。
+    testString: assert($('rect').eq(4).attr('height') == '75', '第五个<code>rect</code>的<code>height</code>应该为 75。');
+  - text: 第六个<code>rect</code>的<code>height</code>应该为 54。
+    testString: assert($('rect').eq(5).attr('height') == '54', '第六个<code>rect</code>的<code>height</code>应该为 54。');
+  - text: 第七个<code>rect</code>的<code>height</code>应该为 87。
+    testString: assert($('rect').eq(6).attr('height') == '87', '第七个<code>rect</code>的<code>height</code>应该为 87。');
+  - text: 第八个<code>rect</code>的<code>height</code>应该为 42。
+    testString: assert($('rect').eq(7).attr('height') == '42', '第八个<code>rect</code>的<code>height</code>应该为 42。');
+  - text: 第九个<code>rect</code>的<code>height</code>应该为 27。
+    testString: assert($('rect').eq(8).attr('height') == '27', '第九个<code>rect</code>的<code>height</code>应该为 27。');
 
 ```
 
@@ -43,50 +50,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<body>
-  <script>
-    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-    const w = 500;
-    const h = 100;
-
-    const svg = d3.select("body")
-                  .append("svg")
-                  .attr("width", w)
-                  .attr("height", h);
-
-    svg.selectAll("rect")
-       .data(dataset)
-       .enter()
-       .append("rect")
-       .attr("x", (d, i) => i * 30)
-       .attr("y", 0)
-       .attr("width", 25)
-       .attr("height", (d, i) => {
-         // Add your code below this line
-
-
-
-         // Add your code above this line
-       });
-  </script>
-</body>
-
+<body>,  <script>,    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];,    ,    const w = 500;,    const h = 100;,    ,    const svg = d3.select("body"),                  .append("svg"),                  .attr("width", w),                  .attr("height", h);,    ,    svg.selectAll("rect"),       .data(dataset),       .enter(),       .append("rect"),       .attr("x", (d, i) => i * 30),       .attr("y", 0),       .attr("width", 25),       .attr("height", (d, i) => {,         // 在下面添加你的代码,         ,         ,         ,         // 在上面添加你的代码,       });,  </script>,</body>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

@@ -2,27 +2,36 @@
 id: 5679ceb97cbaa8c51670a16b
 title: Returning Boolean Values from Functions
 challengeType: 1
+
 videoUrl: ''
-localeTitle: 从函数返回布尔值
+localeTitle: Returning Boolean Values from Functions
 ---
 
 ## Description
-<section id="description">您可以从<a href="learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">与Equality运算符的比较中</a>回忆一下，所有比较运算符都返回布尔值<code>true</code>或<code>false</code>值。有时人们使用if / else语句进行比较，如下所示： <blockquote> function isEqual（a，b）{ <br> if（a === b）{ <br>返回true; <br> } else { <br>返回虚假; <br> } <br> } </blockquote>但是有一种更好的方法可以做到这一点。由于<code>===</code>返回<code>true</code>或<code>false</code> ，我们可以返回比较结果： <blockquote> function isEqual（a，b）{ <br>返回a === b; <br> } </blockquote></section>
+<section id='description'>
+你应该还记得<a href="javascript-algorithms-and-data-structures/basic-javascript/comparison-with-the-equality-operator" target="_blank">相等运算符</a>这道挑战题。在那里我们提到，所有比较操作符都会返回 boolean：要么是<code>true</code>要么是<code>false</code>。
+有时人们通过 if/else 语句来做比较然后返回<code>true</code>或<code>false</code>。
+<blockquote>function isEqual(a,b) {<br>&nbsp;&nbsp;if (a === b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>&nbsp;&nbsp;}<br>}</blockquote>
+有一个更好的方法，因为<code>===</code>总是返回<code>true</code>或<code>false</code>，所以我们可以直接返回比较的结果：
+<blockquote>function isEqual(a,b) {<br>&nbsp;&nbsp;return a === b;<br>}</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">修复函数<code>isLess</code>以删除<code>if/else</code>语句。 </section>
+<section id='instructions'>
+移除<code>isLess</code>函数的<code>if/else</code>语句但不影响函数的功能。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>isLess(10,15)</code>应该返回<code>true</code>'
-    testString: 'assert(isLess(10,15) === true, "<code>isLess(10,15)</code> should return <code>true</code>");'
-  - text: '<code>isLess(15,10)</code>应该返回<code>false</code>'
-    testString: 'assert(isLess(15, 10) === false, "<code>isLess(15,10)</code> should return <code>false</code>");'
-  - text: 您不应该使用任何<code>if</code>或<code>else</code>语句
-    testString: 'assert(!/if|else/g.test(code), "You should not use any <code>if</code> or <code>else</code> statements");'
+  - text: <code>isLess(10,15)</code>应该返回 <code>true</code>
+    testString: assert(isLess(10,15) === true, '<code>isLess(10,15)</code>应该返回 <code>true</code>');
+  - text: <code>isLess(15,10)</code>应该返回 <code>false</code>
+    testString: assert(isLess(15, 10) === false, '<code>isLess(15,10)</code>应该返回 <code>false</code>');
+  - text: You should not use any <code>if</code> or <code>else</code> statements
+    testString: assert(!/if|else/g.test(code), '不要使用<code>if</code>或<code>else</code>表达式');
 
 ```
 
@@ -31,24 +40,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function isLess(a, b) {
-  // Fix this code
-  if (a < b) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
-// Change these values to test
-isLess(10, 15);
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -58,6 +60,10 @@ isLess(10, 15);
 <section id='solution'>
 
 ```js
-// solution required
+function isLess(a, b) {
+  return a < b;
+}
 ```
+
 </section>
+              

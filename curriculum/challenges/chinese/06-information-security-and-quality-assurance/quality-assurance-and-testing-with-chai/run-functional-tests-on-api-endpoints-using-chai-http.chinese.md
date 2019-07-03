@@ -2,15 +2,20 @@
 id: 587d824e367417b2b2512c58
 title: Run Functional Tests on API Endpoints using Chai-HTTP
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 使用Chai-HTTP在API端点上运行功能测试
+localeTitle: Run Functional Tests on API Endpoints using Chai-HTTP
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。替换assert.fail（）。测试状态和text.response。让测试通过。不要在查询中发送名称，端点会以“hello Guest”响应。 </section>
+<section id='description'>
+注意，本项目在 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>这个 Glitch 项目</a> 的基础上进行开发。你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> 上克隆。
+使用 assert.isNull() 或 assert.isNotNull() 通过测试。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,11 +23,11 @@ localeTitle: 使用Chai-HTTP在API端点上运行功能测试
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
+  - text: 需通过全部测试
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=0").then(data => { assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 你应该测试'res.status'== 200
+  - text: '你需要测试 "res.status" == 200'
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=0").then(data => { assert.equal(data.assertions[0].method, "equal"); assert.equal(data.assertions[0].args[0], "res.status"); assert.equal(data.assertions[0].args[1], "200");}, xhr => { throw new Error(xhr.responseText); })'
-  - text: 你应该测试'res.text'=='你好客人'
+  - text: '你需要测试 "res.text" == "hello Guest"'
     testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=functional&n=0").then(data => { assert.equal(data.assertions[1].method, "equal"); assert.equal(data.assertions[1].args[0], "res.text"); assert.equal(data.assertions[1].args[1], "\"hello Guest\"");}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -32,12 +37,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

@@ -2,25 +2,32 @@
 id: 587d78b1367417b2b2512b0a
 title: Use a Retina Image for Higher Resolution Displays
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用Retina图像获得更高分辨率的显示
+localeTitle: Use a Retina Image for Higher Resolution Displays
 ---
 
 ## Description
-<section id="description">使图像显示为“视网膜”（并为视网膜显示进行优化）的最简单方法是将其<code>width</code>和<code>height</code>值定义为原始文件的一半。以下是仅使用原始高度和宽度的一半的图像示例： <blockquote> &lt;风格&gt; <br> img {身高：250px;宽度：250px; } <br> &lt;/样式&gt; <br> &lt;img src =“coolPic500x500”alt =“最精彩的图片”&gt; </blockquote></section>
+<section id='description'>
+为优化图片在高分辨率设备下的显示效果，最简单的方式是定义它们的 <code>width</code> 和 <code>height</code> 值为源文件宽高的一半。
+这是一个图片宽高设置为源文件一半的例子：
+<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;一张高质量的图片&quot;&gt;</blockquote>
+</section>
 
 ## Instructions
-<section id="instructions">将<code>img</code>标记的<code>width</code>和<code>height</code>设置为原始值的一半。在这种情况下，原始<code>height</code>和原始<code>width</code>都是200px。 </section>
+<section id='instructions'>
+设置 <code>img</code> 标签的 <code>width</code> 和 <code>height</code> 为它们原始宽高的一半。在这个例子中，原始 <code>height</code> 和原始 <code>width</code> 的值都为 200px。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>img</code>标签应该有100像素的<code>width</code> 。
-    testString: 'assert($("img").css("width") == "100px", "Your <code>img</code> tag should have a <code>width</code> of 100 pixels.");'
-  - text: 你的<code>img</code>标签应该有100像素的<code>height</code> 。
-    testString: 'assert($("img").css("height") == "100px", "Your <code>img</code> tag should have a <code>height</code> of 100 pixels.");'
+  - text: <code>img</code> 标签的 <code>width</code> 值应为 100px。
+    testString: assert($('img').css('width') == '100px', '<code>img</code> 标签的 <code>width</code> 值应为 100px。');
+  - text: <code>img</code> 标签的 <code>height</code> 值应为 100px。
+    testString: assert($('img').css('height') == '100px', '<code>img</code> 标签的 <code>height</code> 值应为 100px。');
 
 ```
 
@@ -29,27 +36,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<style>
-
-</style>
-
-<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
-
+<style>,  ,</style>,,<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

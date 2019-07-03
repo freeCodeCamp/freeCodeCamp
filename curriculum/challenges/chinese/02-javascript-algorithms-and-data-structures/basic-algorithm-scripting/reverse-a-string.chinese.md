@@ -1,17 +1,22 @@
 ---
 id: a202eed8fc186c8434cb6d61
 title: Reverse a String
-isRequired: true
 challengeType: 5
+isRequired: true
 videoUrl: ''
-localeTitle: 反转字符串
+localeTitle: Reverse a String
 ---
 
 ## Description
-<section id="description">反转提供的字符串。您可能需要先将字符串转换为数组，然后才能将其反转。您的结果必须是字符串。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id='description'>
+将摄氏度转换为华氏度的算法为：摄氏度 × <code>9/5 + 32</code>
+输入参数 <code>celsius</code> 代表一个摄氏温度值。请你根据上述转换公式，将已定义好的 <code>fahrenheit</code> 变量赋值为对应的华氏温度的值。
+你不需要顾虑 function 和 return 语句，它们会在之后的挑战中予以介绍。现在，你只需要使用你已学过的运算符。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,14 +24,14 @@ localeTitle: 反转字符串
 
 ```yml
 tests:
-  - text: <code>reverseString(&quot;hello&quot;)</code>应该返回一个字符串。
-    testString: 'assert(typeof reverseString("hello") === "string", "<code>reverseString("hello")</code> should return a string.");'
-  - text: <code>reverseString(&quot;hello&quot;)</code>应该变成<code>&quot;olleh&quot;</code> 。
-    testString: 'assert(reverseString("hello") === "olleh", "<code>reverseString("hello")</code> should become <code>"olleh"</code>.");'
-  - text: <code>reverseString(&quot;Howdy&quot;)</code>应该变成<code>&quot;ydwoH&quot;</code> 。
-    testString: 'assert(reverseString("Howdy") === "ydwoH", "<code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.");'
-  - text: <code>reverseString(&quot;Greetings from Earth&quot;)</code>应返回<code>&quot;htraE morf sgniteerG&quot;</code> 。
-    testString: 'assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG", "<code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.");'
+  - text: "<code>reverseString('hello')</code> 应该返回一个字符串。"
+    testString: assert(typeof reverseString("hello") === "string", '<code>reverseString("hello")</code> 应该返回一个字符串。');
+  - text: "<code>reverseString('hello')</code> 应该返回 <code>'olleh'</code>"
+    testString: assert(reverseString("hello") === "olleh", '<code>reverseString("hello")</code> 应该返回 <code>"olleh"</code>。');
+  - text: "<code>reverseString('Howdy')</code> 应该返回 <code>'ydwoH'</code>"
+    testString: assert(reverseString("Howdy") === "ydwoH", '<code>reverseString("Howdy")</code> 应该返回 <code>"ydwoH"</code>。');
+  - text: "<code>reverseString('Greetings from Earth')</code> 应该返回 <code>'htraE morf sgniteerG'</code>。"
+    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG", '<code>reverseString("Greetings from Earth")</code> 应该返回 <code>"htraE morf sgniteerG"</code>。');
 
 ```
 
@@ -35,18 +40,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function reverseString(str) {
-  return str;
-}
 
-reverseString("hello");
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -56,6 +60,13 @@ reverseString("hello");
 <section id='solution'>
 
 ```js
-// solution required
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString("hello");
+
 ```
+
 </section>
+              

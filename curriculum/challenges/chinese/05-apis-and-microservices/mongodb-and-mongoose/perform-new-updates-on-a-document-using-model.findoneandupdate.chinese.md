@@ -1,16 +1,19 @@
 ---
 id: 587d7fb8367417b2b2512c0f
 title: Perform New Updates on a Document Using model.findOneAndUpdate()
-localeTitle: 使用model.findOneAndUpdate（）对文档执行新更新
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Perform New Updates on a Document Using model.findOneAndUpdate()
 ---
 
 ## Description
-<section id='description'> <code>0</code>最新版本的mongoose具有简化文档更新的方法。一些更高级的功能（即前/后挂钩，验证）与此方法的行为不同，因此Classic方法在许多情况下仍然有用。在按Id搜索时可以使用findByIdAndUpdate（）。 <code>0</code>按名称查找人员并将其年龄设置为20.使用函数参数personName作为搜索关键字。 <code>0</code>提示：我们希望您返回更新的文档。为此，您需要将选项文档{new：true}作为findOneAndUpdate（）的第三个参数传递。默认情况下，这些方法返回未修改的对象。 
+<section id='description'>
+在 package.json 文件中添加 MongoDB 和 Mongoose 依赖，将 mLab 数据库的 URI 作为 MONGO_URI 变量存储在私有 .env 文件中。然后<code>require('mongoose')</code>，使用<code>mongoose.connect(<Your URI>)</code>命令来连接数据库。
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -19,8 +22,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: findOneAndUpdate项应该成功
-    testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-update'', {name:''Dorian Gray'', age: 35, favoriteFoods:[''unknown'']}).then(data => { assert.equal(data.name, ''Dorian Gray'', ''item.name is not what expected''); assert.equal(data.age, 20, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''unknown''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''findOneAndUpdate does not increment version by design !!!''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 对一个 item（项目）的  findOneAndUpdate  操作成功
+    testString: 'getUserInput => $.post(getUserInput("url") +"/_api/find-one-update", {name:"Dorian Gray", age: 35, favoriteFoods:["unknown"]}).then(data => { assert.equal(data.name,"Dorian Gray","item.name is not what expected"); assert.equal(data.age, 20,"item.age is not what expected"); assert.deepEqual(data.favoriteFoods, ["unknown"],"item.favoriteFoods is not what expected"); assert.equal(data.__v, 0,"findOneAndUpdate does not increment version by design !!!"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -29,12 +32,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

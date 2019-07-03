@@ -4,14 +4,19 @@ title: Personal Library
 challengeType: 4
 isRequired: true
 videoUrl: ''
-localeTitle: 个人图书馆
+localeTitle: Personal Library
 ---
 
 ## Description
-<section id="description">构建一个功能类似于此的完整堆栈JavaScript应用程序： <a href="https://spark-cathedral.glitch.me/" target="_blank">https</a> ： <a href="https://spark-cathedral.glitch.me/" target="_blank">//spark-cathedral.glitch.me/</a> 。在这个项目上工作将涉及您在我们的入门项目上在Glitch上编写代码。完成此项目后，您可以将公共故障网址（到应用程序的主页）复制到此屏幕进行测试！您可以选择在另一个平台上编写项目，但必须公开显示我们的测试。使用<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-library/">此链接</a>在Glitch上启动此项目或在GitHub上克隆<a href="https://github.com/freeCodeCamp/boilerplate-project-library/">此存储库</a> ！如果您使用Glitch，请记住将项目链接保存到安全的地方！ </section>
+<section id='description'>
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://hard-twilight.glitch.me/' target='_blank'>https://hard-twilight.glitch.me/</a>.
+Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
+Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-metricimpconverter/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,25 +24,25 @@ localeTitle: 个人图书馆
 
 ```yml
 tests:
-  - text: 我的网站上的任何内容都不会缓存在我的客户端中。
+  - text: Nothing from my website will be cached in my client.
     testString: ''
-  - text: 标题会说该网站由'PHP 4.2.0'提供支持，即使它不是（作为安全措施）。
+  - text: 'The headers will say that the site is powered by "PHP 4.2.0" even though it isn"t (as a security measure).'
     testString: ''
-  - text: 我可以将标题发布到/ api / books以添加书籍，并返回将是具有标题和唯一_id的对象。
+  - text: I can post a title to /api/books to add a book and returned will be the object with the title and a unique _id.
     testString: ''
-  - text: 我可以获取/ api / books来检索包含title，_id和commentcount的所有书籍的数组。
+  - text: I can get /api/books to retrieve an array of all books containing title, _id, and commentcount.
     testString: ''
-  - text: '我可以使用/ api / books / {id}来检索包含_title，_id和注释数组的书的单个对象（如果没有注释，则为空数组）。'
+  - text: I can get /api/books/{id} to retrieve a single object of a book containing _title, _id, & an array of comments (empty array if no comments present).
     testString: ''
-  - text: '我可以在/ api / books / {id}上发表评论，为书籍添加评论，并返回类似于get / api / books / {id}的书籍对象，包括新评论。'
+  - text: I can post a comment to /api/books/{id} to add a comment to a book and returned will be the books object similar to get /api/books/{id} including the new comment.
     testString: ''
-  - text: '我可以删除/ api / books / {_ id}从集合中删除一本书。如果成功，返回将“删除成功”。'
+  - text: 'I can delete /api/books/{_id} to delete a book from the collection. Returned will be "delete successful" if successful.'
     testString: ''
-  - text: 如果我试图要求一本不存在的书，我将被退回'没有书存在'。
+  - text: 'If I try to request a book that doesn"t exist I will be returned "no book exists".'
     testString: ''
-  - text: 我可以向/ api / books发送删除请求以删除数据库中的所有书籍。如果成功，返回将是“完全删除成功”。
+  - text: 'I can send a delete request to /api/books to delete all books in the database. Returned will be "complete delete successful" if successful.'
     testString: ''
-  - text: 所有6项功能测试都是完整的并且通过。
+  - text: All 6 functional tests required are complete and passing.
     testString: ''
 
 ```
@@ -47,12 +52,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

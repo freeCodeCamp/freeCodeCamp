@@ -2,15 +2,21 @@
 id: af4afb223120f7348cdfc9fd
 title: Map the Debris
 challengeType: 5
+
 videoUrl: ''
-localeTitle: 映射碎片
+localeTitle: Map the Debris
 ---
 
 ## Description
-<section id="description">返回一个新数组，将元素的平均高度转换为轨道周期（以秒为单位）。该数组将包含<code>{name: &#39;name&#39;, avgAlt: avgAlt}</code>格式的对象。您可以<a href="http://en.wikipedia.org/wiki/Orbital_period" target="_blank">在维基百科上</a>阅读有关轨道周期的<a href="http://en.wikipedia.org/wiki/Orbital_period" target="_blank">信息</a> 。值应四舍五入到最接近的整数。轨道上的身体是地球。地球半径为6367.4447公里，地球的GM值为398600.4418 km <sup>3</sup> s <sup>-2</sup> 。如果卡住，请记得使用<a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+给出一个含有两个数字的数组，我们需要写一个函数，让它返回这两个数字间所有数字（包含这两个数字）的总和。
+注意，较小数不一定总是出现在数组的第一个元素。
+如果你遇到了问题，请点击<a href='https://forum.freecodecamp.one/t/topic/157' target='_blank'>帮助</a>。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,10 +24,10 @@ localeTitle: 映射碎片
 
 ```yml
 tests:
-  - text: '<code>orbitalPeriod([{name : &quot;sputnik&quot;, avgAlt : 35873.5553}])</code>应返回<code>[{name: &quot;sputnik&quot;, orbitalPeriod: 86400}]</code> 。'
-    testString: 'assert.deepEqual(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]), [{name: "sputnik", orbitalPeriod: 86400}], "<code>orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])</code> should return <code>[{name: "sputnik", orbitalPeriod: 86400}]</code>.");'
-  - text: '<code>orbitalPeriod([{name: &quot;iss&quot;, avgAlt: 413.6}, {name: &quot;hubble&quot;, avgAlt: 556.7}, {name: &quot;moon&quot;, avgAlt: 378632.553}])</code>应返回<code>[{name : &quot;iss&quot;, orbitalPeriod: 5557}, {name: &quot;hubble&quot;, orbitalPeriod: 5734}, {name: &quot;moon&quot;, orbitalPeriod: 2377399}]</code> 。'
-    testString: 'assert.deepEqual(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]), [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}], "<code>orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])</code> should return <code>[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]</code>.");'
+  - text: '<code>orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])</code>应该返回<code>[{name: "sputnik", orbitalPeriod: 86400}]</code>。'
+    testString: 'assert.deepEqual(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]), [{name: "sputnik", orbitalPeriod: 86400}], "<code>orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])</code>应该返回<code>[{name: "sputnik", orbitalPeriod: 86400}]</code>。");'
+  - text: '<code>orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])</code>应该返回<code>[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]</code>。'
+    testString: 'assert.deepEqual(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}]), [{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}], "<code>orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])</code>应该返回<code>[{name : "iss", orbitalPeriod: 5557}, {name: "hubble", orbitalPeriod: 5734}, {name: "moon", orbitalPeriod: 2377399}]</code>。");'
 
 ```
 
@@ -30,20 +36,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='js-seed'>
 
-```js
-function orbitalPeriod(arr) {
-  var GM = 398600.4418;
-  var earthRadius = 6367.4447;
-  return arr;
-}
 
-orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
-```
 
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -53,6 +56,21 @@ orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 <section id='solution'>
 
 ```js
-// solution required
+function orbitalPeriod(arr) {
+  var GM = 398600.4418;
+  var earthRadius = 6367.4447;
+  var TAU = 2 * Math.PI; 
+  return arr.map(function(obj) {
+    return {
+      name: obj.name,
+      orbitalPeriod: Math.round(TAU * Math.sqrt(Math.pow(obj.avgAlt+earthRadius, 3)/GM))
+    };
+  });
+}
+
+orbitalPeriod([{name : "sputkin", avgAlt : 35873.5553}]);
+
 ```
+
 </section>
+              

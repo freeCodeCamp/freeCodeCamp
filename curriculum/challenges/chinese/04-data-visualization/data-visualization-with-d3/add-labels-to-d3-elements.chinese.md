@@ -1,40 +1,48 @@
 ---
 id: 587d7faa367417b2b2512bd2
 title: Add Labels to D3 Elements
-challengeType: 6
+challengeType: 0
+
 videoUrl: ''
-localeTitle: 将标签添加到D3元素
+localeTitle: Add Labels to D3 Elements
 ---
 
 ## Description
-<section id="description"> D3允许您使用SVG <code>text</code>元素标记图形元素，例如条形图。与<code>rect</code>元素一样， <code>text</code>元素需要具有<code>x</code>和<code>y</code>属性，以将其放在SVG画布上。它还需要访问数据以显示这些值。 D3让您可以高度控制标杆的标注方式。 </section>
+<section id='description'>
+D3 允许使用 SVG 的<code>text</code>元素给图形元素贴标签，例如给条形图中的各组都贴上标签。
+和<code>rect</code>元素类似，<code>text</code>元素也需要<code>x</code>和<code>y</code>属性来指定其放置在 SVG 画布上的位置，它也需要能够获取数据来显示数据值。
+关于如何给组贴标签，D3 给了你很高的控制权。 
+</section>
 
 ## Instructions
-<section id="instructions">编辑器中的代码已将数据绑定到每个新<code>text</code>元素。首先，将<code>text</code>节点附加到<code>svg</code> 。接下来，添加<code>x</code>和<code>y</code>坐标的属性。应该以与<code>rect</code>相同的方式计算它们，除了<code>text</code>的<code>y</code>值应该使标签比条形高3个单位。最后，使用D3 <code>text()</code>方法将标签设置为等于数据点值。 <strong>注意</strong> <br>对于标签比坐吧较高，决定是否<code>y</code>为值<code>text</code>应比少3个或大或3 <code>y</code>了吧价值。 </section>
+<section id='instructions'>
+编辑器中的代码已经将数据绑定到每个新的<code>text</code>元素。首先，在<code>svg</code>中添加<code>text</code>节点。然后，添加<code>x</code>和<code>y</code>坐标属性，除了<code>text</code>的<code>y</code>值应该使标签比组的高<code>y</code> 3 个单位，其余值的计算方法应该和<code>rect</code>中计算方法一样。最后，用 D3 的<code>text()</code>方法将标签的文本设置为和数据点相等的值。
+<strong>提示</strong><br>关于标签比组高，想一想<code>text</code>的<code>y</code>值应该比组的<code>y</code>值大 3 还是小 3。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 第一个<code>text</code>元素的标签应为12， <code>y</code>值应为61。
-    testString: 'assert($("text").eq(0).text() == "12" && $("text").eq(0).attr("y") == "61", "The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.");'
-  - text: 第二个<code>text</code>元素的标签应为31， <code>y</code>值应为4。
-    testString: 'assert($("text").eq(1).text() == "31" && $("text").eq(1).attr("y") == "4", "The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.");'
-  - text: 第三个<code>text</code>元素的标签应为22， <code>y</code>值应为31。
-    testString: 'assert($("text").eq(2).text() == "22" && $("text").eq(2).attr("y") == "31", "The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.");'
-  - text: 第四个<code>text</code>元素的标签应为17， <code>y</code>值应为46。
-    testString: 'assert($("text").eq(3).text() == "17" && $("text").eq(3).attr("y") == "46", "The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.");'
-  - text: 第五个<code>text</code>元素的标签应为25， <code>y</code>值应为22。
-    testString: 'assert($("text").eq(4).text() == "25" && $("text").eq(4).attr("y") == "22", "The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.");'
-  - text: 第六个<code>text</code>元素的标签应为18， <code>y</code>值应为43。
-    testString: 'assert($("text").eq(5).text() == "18" && $("text").eq(5).attr("y") == "43", "The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.");'
-  - text: 第七个<code>text</code>元素的标签应为29， <code>y</code>值应为10。
-    testString: 'assert($("text").eq(6).text() == "29" && $("text").eq(6).attr("y") == "10", "The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.");'
-  - text: 第八个<code>text</code>元素的标签应为14， <code>y</code>值应为55。
-    testString: 'assert($("text").eq(7).text() == "14" && $("text").eq(7).attr("y") == "55", "The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.");'
-  - text: 第九个<code>text</code>元素的标签应为9， <code>y</code>值应为70。
-    testString: 'assert($("text").eq(8).text() == "9" && $("text").eq(8).attr("y") == "70", "The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.");'
+  - text: 第一个<code>text</code>元素应该有一个值为 12 的标签并且<code>y</code>值为 61。
+    testString: assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61', '第一个<code>text</code>元素应该有一个值为 12 的标签并且<code>y</code>值为 61。');
+  - text: 第二个<code>text</code>元素应该有一个值为 31 的标签并且<code>y</code>值为 4。
+    testString: assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4', '第二个<code>text</code>元素应该有一个值为 31 的标签并且<code>y</code>值为 4。');
+  - text: 第三个<code>text</code>元素应该有一个值为 22 的标签并且<code>y</code>值为 31。
+    testString: assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31', '第三个<code>text</code>元素应该有一个值为 22 的标签并且<code>y</code>值为 31。');
+  - text: 第四个<code>text</code>元素应该有一个值为 17 的标签并且<code>y</code>值为 46。
+    testString: assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46', '第四个<code>text</code>元素应该有一个值为 17 的标签并且<code>y</code>值为 46。');
+  - text: 第五个<code>text</code>元素应该有一个值为 25 的标签并且<code>y</code>值为 22。
+    testString: assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22', '第五个<code>text</code>元素应该有一个值为 25 的标签并且<code>y</code>值为 22。');
+  - text: 第六个<code>text</code>元素应该有一个值为 18 的标签并且<code>y</code>值为 43。
+    testString: assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43', '第六个<code>text</code>元素应该有一个值为 18 的标签并且<code>y</code>值为 43。');
+  - text: 第七个<code>text</code>元素应该有一个值为 29 的标签并且<code>y</code>值为 10。
+    testString: assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10', '第七个<code>text</code>元素应该有一个值为 29 的标签并且<code>y</code>值为 10。');
+  - text: 第八个<code>text</code>元素应该有一个值为 14 的标签并且<code>y</code>值为 55。
+    testString: assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55', '第八个<code>text</code>元素应该有一个值为 14 的标签并且<code>y</code>值为 55。');
+  - text: 第九个<code>text</code>元素应该有一个值为 9 的标签并且<code>y</code>值为 70。
+    testString: assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70', '第九个<code>text</code>元素应该有一个值为 9 的标签并且<code>y</code>值为 70。');
 
 ```
 
@@ -43,55 +51,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<body>
-  <script>
-    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-
-    const w = 500;
-    const h = 100;
-
-    const svg = d3.select("body")
-                  .append("svg")
-                  .attr("width", w)
-                  .attr("height", h);
-
-    svg.selectAll("rect")
-       .data(dataset)
-       .enter()
-       .append("rect")
-       .attr("x", (d, i) => i * 30)
-       .attr("y", (d, i) => h - 3 * d)
-       .attr("width", 25)
-       .attr("height", (d, i) => 3 * d)
-       .attr("fill", "navy");
-
-    svg.selectAll("text")
-       .data(dataset)
-       .enter()
-       // Add your code below this line
-
-
-
-
-       // Add your code above this line
-  </script>
-<body>
-
+<body>,  <script>,    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];,    ,    const w = 500;,    const h = 100;,    ,    const svg = d3.select("body"),                  .append("svg"),                  .attr("width", w),                  .attr("height", h);,    ,    svg.selectAll("rect"),       .data(dataset),       .enter(),       .append("rect"),       .attr("x", (d, i) => i * 30),       .attr("y", (d, i) => h - 3 * d),       .attr("width", 25),       .attr("height", (d, i) => 3 * d),       .attr("fill", "navy");,    ,    svg.selectAll("text"),       .data(dataset),       .enter(),       // 在下面添加你的代码,       ,       ,       ,       ,       // 在上面添加你的代码,  </script>,<body>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

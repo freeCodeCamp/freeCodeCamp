@@ -1,18 +1,23 @@
 ---
 id: bad87fee1348bd9aed108826
 title: Target a Specific Child of an Element Using jQuery
-required:
-  - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
-challengeType: 6
+challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用jQuery定位元素的特定子元素
+localeTitle: Target a Specific Child of an Element Using jQuery
 ---
 
 ## Description
-<section id="description">您已经了解了为什么id属性对于使用jQuery选择器进行定位非常方便。但是你不会总是有这么整洁的ids。幸运的是，jQuery还有一些其他技巧可用于定位正确的元素。 jQuery使用CSS选择器来定位元素。 <code>target:nth-child(n)</code> CSS选择器允许您选择具有目标类或元素类型的所有第n个元素。以下是如何给每个井中的第三个元素提供反弹类： <code>$(&quot;.target:nth-child(3)&quot;).addClass(&quot;animated bounce&quot;);</code>让每个井元素中的第二个孩子反弹。您必须选择具有<code>target</code>类的元素子项。 </section>
+<section id='description'>
+把 HTML 标签放到另一个级别的标签里，这些 HTML 标签被称为该标签的<code>子标签（children element）</code>。例如，本次挑战中文本为 "#target1"、"#target2" 和 "#target3" 的按钮都是<code>&#60;div class="well" id="left-well"&#62;</code>标签的<code>子标签</code>。
+jQuery 有一个<code>children()</code>方法，可以访问被选取标签的子标签。
+下面的代码展示了用<code>children()</code>方法把<code>left-well</code>标签的子标签的颜色设置成<code>蓝色（blue）</code>：
+<code>$("#left-well").children().css("color", "blue")</code>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+请把<code>right-well</code>标签的所有子标签颜色设置成<code>橙色（orange）</code>。
 </section>
 
 ## Tests
@@ -20,14 +25,14 @@ localeTitle: 使用jQuery定位元素的特定子元素
 
 ```yml
 tests:
-  - text: <code>target</code>元素中的第二个元素应该反弹。
-    testString: 'assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"), "The second element in your <code>target</code> elements should bounce.");'
-  - text: 只有两个元素应该反弹。
-    testString: 'assert($(".animated.bounce").length === 2, "Only two elements should bounce.");'
-  - text: '您应该使用<code>:nth-child()</code>选择器来修改这些元素。'
-    testString: 'assert(code.match(/\:nth-child\(/g), "You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.");'
-  - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g), "Only use jQuery to add these classes to the element.");'
+  - text: <code>target</code>标签中的第二个标签应该有弹性的动画效果。
+    testString: 'assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"), "<code>target</code>标签中的第二个标签应该有弹性的动画效果。");'
+  - text: 应该仅两个标签有弹性的动画效果。
+    testString: assert($(".animated.bounce").length === 2, '应该仅两个标签有弹性的动画效果。');
+  - text: 应该用<code>&#58;nth-child&#40&#41</code>选择器修改这些标签。
+    testString: 'assert(code.match(/\:nth-child\(/g), "应该用<code>&#58;nth-child&#40&#41</code>选择器修改这些标签。");'
+  - text: 仅用 jQuery 给标签添加类。
+    testString: 'assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g), "仅用 jQuery 给标签添加类。");'
 
 ```
 
@@ -36,58 +41,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<script>
-  $(document).ready(function() {
-    $("#target1").css("color", "red");
-    $("#target1").prop("disabled", true);
-    $("#target4").remove();
-    $("#target2").appendTo("#right-well");
-    $("#target5").clone().appendTo("#left-well");
-    $("#target1").parent().css("background-color", "red");
-    $("#right-well").children().css("color", "orange");
-
-  });
-</script>
-
-<!-- Only change code above this line. -->
-
-<div class="container-fluid">
-  <h3 class="text-primary text-center">jQuery Playground</h3>
-  <div class="row">
-    <div class="col-xs-6">
-      <h4>#left-well</h4>
-      <div class="well" id="left-well">
-        <button class="btn btn-default target" id="target1">#target1</button>
-        <button class="btn btn-default target" id="target2">#target2</button>
-        <button class="btn btn-default target" id="target3">#target3</button>
-      </div>
-    </div>
-    <div class="col-xs-6">
-      <h4>#right-well</h4>
-      <div class="well" id="right-well">
-        <button class="btn btn-default target" id="target4">#target4</button>
-        <button class="btn btn-default target" id="target5">#target5</button>
-        <button class="btn btn-default target" id="target6">#target6</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<script>,  $(document).ready(function() {,    $("#target1").css("color", "red");,    $("#target1").prop("disabled", true);,    $("#target4").remove();,    $("#target2").appendTo("#right-well");,    $("#target5").clone().appendTo("#left-well");,    $("#target1").parent().css("background-color", "red");,    $("#right-well").children().css("color", "orange");,,  });,</script>,,<!-- 请修改本行以上的代码 -->,,<div class="container-fluid">,  <h3 class="text-primary text-center">jQuery Playground</h3>,  <div class="row">,    <div class="col-xs-6">,      <h4>#left-well</h4>,      <div class="well" id="left-well">,        <button class="btn btn-default target" id="target1">#target1</button>,        <button class="btn btn-default target" id="target2">#target2</button>,        <button class="btn btn-default target" id="target3">#target3</button>,      </div>,    </div>,    <div class="col-xs-6">,      <h4>#right-well</h4>,      <div class="well" id="right-well">,        <button class="btn btn-default target" id="target4">#target4</button>,        <button class="btn btn-default target" id="target5">#target5</button>,        <button class="btn btn-default target" id="target6">#target6</button>,      </div>,    </div>,  </div>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

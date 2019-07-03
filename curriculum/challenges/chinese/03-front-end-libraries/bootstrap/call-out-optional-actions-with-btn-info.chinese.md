@@ -2,15 +2,25 @@
 id: bad87fee1348cd8acef08813
 title: Call out Optional Actions with btn-info
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用btn-info调出可选操作
+localeTitle: Call out Optional Actions with btn-info
 ---
 
 ## Description
-<section id="description"> Bootstrap带有几种预定义的按钮颜色。 <code>btn-info</code>类用于引起对用户可以采取的可选操作的注意。使用文本“Info”在“Like”按钮下创建一个新的块级Bootstrap按钮，并向其添加Bootstrap的<code>btn-info</code>和<code>btn-block</code>类。请注意，这些按钮仍然需要<code>btn</code>和<code>btn-block</code>类。 </section>
+<section id='description'>
+之前，在 freeCodeCamp 的 HTML5 和 CSS 章节中我们构建了一个 Cat Photo App。这次我们将会使用最受欢迎的响应式 CSS 框架 Bootstrap 来美化它。
+Bootstrap 会根据你的屏幕大小来调节 HTML 元素的大小————因此称为 <code>响应式设计( Responsive Design )</code>。
+通过响应式设计，我们将无需额外设计一个手机版的网页，因为它在任何尺寸的屏幕上看起来都还不错。
+无论开发什么应用，你都可以通过将以下代码添加到你的 HTML 顶部来引入 Bootstrap 。
+<code>&#60;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/&#62;</code>
+在该案例中，我们已经帮你把相应代码添加到页面中。记住使用 <code>></code> 和 <code>/></code> 闭合 <code>link</code> 标签来保证引入成功。
+首先，我们应该把所有 HTML 标签放在 class 为 <code>container-fluid</code> 的 <code>div</code> 元素下（除了 <code>link</code> 标签和 <code>style</code> 标签）。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +28,14 @@ localeTitle: 使用btn-info调出可选操作
 
 ```yml
 tests:
-  - text: 使用文本“Info”创建一个新的<code>button</code>元素。
-    testString: 'assert(new RegExp("info","gi").test($("button").text()), "Create a new <code>button</code> element with the text "Info".");'
-  - text: 两个Bootstrap按钮都应该有<code>btn</code>和<code>btn-block</code>类。
-    testString: 'assert($("button.btn-block.btn").length > 1, "Both of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.");'
-  - text: 你的新按钮应该有类<code>btn-info</code> 。
-    testString: 'assert($("button").hasClass("btn-info"), "Your new button should have the class <code>btn-info</code>.");'
-  - text: 确保所有<code>button</code>元素都有一个结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
+  - text: "创建包含文本 'Info' 的 <code>button</code> 元素。"
+    testString: assert(new RegExp("info","gi").test($("button").text()), '创建包含文本 "Info" 的 <code>button</code> 元素。');
+  - text: 两个按钮的 class 属性应该仍然具有 <code>btn</code> 和 <code>btn-block</code>。
+    testString: assert($("button.btn-block.btn").length > 1, '两个按钮的 class 属性应该仍然具有 <code>btn</code> 和 <code>btn-block</code>。');
+  - text: 新按钮的 class 属性应该含有 <code>btn-info</code>。
+    testString: assert($("button").hasClass("btn-info"), '新按钮的 class 属性应该含有 <code>btn-info</code>。');
+  - text: 确保你所有的 <code>button</code> 元素都有一个闭合标签。
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, '确保你所有的 <code>button</code> 元素都有一个闭合标签。');
 
 ```
 
@@ -34,80 +44,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<style>
-  .red-text {
-    color: red;
-  }
-
-  h2 {
-    font-family: Lobster, Monospace;
-  }
-
-  p {
-    font-size: 16px;
-    font-family: Monospace;
-  }
-
-  .thick-green-border {
-    border-color: green;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 50%;
-  }
-
-  .smaller-image {
-    width: 100px;
-  }
-</style>
-
-<div class="container-fluid">
-  <h2 class="red-text text-center">CatPhotoApp</h2>
-
-  <p>Click here for <a href="#">cat photos</a>.</p>
-
-  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-
-  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">
-  <button class="btn btn-block btn-primary">Like</button>
-  <p>Things cats love:</p>
-  <ul>
-    <li>cat nip</li>
-    <li>laser pointers</li>
-    <li>lasagna</li>
-  </ul>
-  <p>Top 3 things cats hate:</p>
-  <ol>
-    <li>flea treatment</li>
-    <li>thunder</li>
-    <li>other cats</li>
-  </ol>
-  <form action="/submit-cat-photo">
-    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
-    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
-    <label><input type="checkbox" name="personality"> Loving</label>
-    <label><input type="checkbox" name="personality"> Lazy</label>
-    <label><input type="checkbox" name="personality"> Crazy</label>
-    <input type="text" placeholder="cat photo URL" required>
-    <button type="submit">Submit</button>
-  </form>
-</div>
-
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">,<style>,  .red-text {,    color: red;,  },,  h2 {,    font-family: Lobster, Monospace;,  },,  p {,    font-size: 16px;,    font-family: Monospace;,  },,  .thick-green-border {,    border-color: green;,    border-width: 10px;,    border-style: solid;,    border-radius: 50%;,  },,  .smaller-image {,    width: 100px;,  },</style>,,<div class="container-fluid">,  <h2 class="red-text text-center">CatPhotoApp</h2>,,  <p>Click here for <a href="#">cat photos</a>.</p>,,  <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>,,  <img src="https://bit.ly/fcc-running-cats" class="img-responsive" alt="Three kittens running towards the camera.">,  <button class="btn btn-block btn-primary">Like</button>,  <p>Things cats love:</p>,  <ul>,    <li>cat nip</li>,    <li>laser pointers</li>,    <li>lasagna</li>,  </ul>,  <p>Top 3 things cats hate:</p>,  <ol>,    <li>flea treatment</li>,    <li>thunder</li>,    <li>other cats</li>,  </ol>,  <form action="/submit-cat-photo">,    <label><input type="radio" name="indoor-outdoor"> Indoor</label>,    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>,    <label><input type="checkbox" name="personality"> Loving</label>,    <label><input type="checkbox" name="personality"> Lazy</label>,    <label><input type="checkbox" name="personality"> Crazy</label>,    <input type="text" placeholder="cat photo URL" required>,    <button type="submit">Submit</button>,  </form>,</div>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

@@ -1,17 +1,21 @@
 ---
 id: bd7158d8c443edefaeb5bdef
 title: Timestamp Microservice
-localeTitle: 时间戳微服务
 challengeType: 4
 isRequired: true
+videoUrl: ''
+localeTitle: Timestamp Microservice
 ---
 
 ## Description
-<section id='description'> <code>0</code>构建一个功能类似于此的完整堆栈JavaScript应用程序： <a href='https://curse-arrow.glitch.me/' target='_blank'>https</a> ： <a href='https://curse-arrow.glitch.me/' target='_blank'>//curse-arrow.glitch.me/</a> 。 <code>0</code>在这个项目上工作将涉及您在我们的入门项目上的Glitch上编写代码。完成此项目后，您可以将公共故障网址（到应用程序的主页）复制到此屏幕进行测试！您可以选择在另一个平台上编写项目，但必须公开显示我们的测试。 <code>0</code>使用<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/' target='_blank'>此链接</a>在Glitch上启动此项目或在GitHub上克隆<a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>此存储库</a> ！如果您使用Glitch，请记住将项目链接保存到安全的地方！ 
+<section id='description'>
+构建一个功能类似于 <a href='https://curse-arrow.glitch.me/' target='_blank'>https://curse-arrow.glitch.me/</a> 的 JavaScript 全栈应用。
+在开发这个项目的时，我们推荐你使用 Glitch（https://glitch.com/），在其上面编码，待你完成之后，你可以拷贝应用主页的链接到屏幕的输入框中，测试你的代码是否能通过项目需求。当然你也可以基于其他的平台来完成自己的项目，只要提供一个公开的主页便于我们测试就行。
+参考示例：在 Glitch 上启动这个项目 <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/'>这个链接</a> 或者克隆 GitHub 上 <a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>这个仓库的代码</a> ! 如果你使用 Glitch，请记住将项目链接保存到妥当的地方!
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,18 +24,18 @@ isRequired: true
 
 ```yml
 tests:
-  - text: '它应该处理一个有效的日期，并返回正确的unix时间戳'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/2016-12-25'').then(data => { assert.equal(data.unix, 1482624000000, ''Should be a valid unix timestamp''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '它应该处理一个有效的日期，并返回正确的UTC字符串'
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/api/timestamp/2016-12-25'').then(data => { assert.equal(data.utc, ''Sun, 25 Dec 2016 00:00:00 GMT'', ''Should be a valid UTC date string''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '它应该处理一个有效的unix日期，并返回正确的unix时间戳'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/1482624000000'').then(data => { assert.equal(data.unix, 1482624000000) ;  }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 它应返回无效日期的预期错误消息
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp/this-is-not-a-date'').then(data => { assert.equal(data.error.toLowerCase(), ''invalid date'');}, xhr => { throw new Error(xhr.responseText); })'
-  - text: '它应该处理一个空的日期参数，并以unix格式返回当前时间'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp'').then(data => { var now = Date.now(); assert.approximately(data.unix, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })'
-  - text: '它应该处理一个空日期参数，并以UTC格式返回当前时间'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/api/timestamp'').then(data => { var now = Date.now(); var serverTime = (new Date(data.utc)).getTime(); assert.approximately(serverTime, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })'
+  - text: 当处理一个有效的日期，返回正确的 unix 时间戳。
+    testString: 'getUserInput => $.get(getUserInput("url") + "/api/timestamp/2016-12-25").then(data => { assert.equal(data.unix, 1482624000000, "Should be a valid unix timestamp"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 当处理一个有效的日期， 返回正确的 UTC 字符串。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/api/timestamp/2016-12-25").then(data => { assert.equal(data.utc, "Sun, 25 Dec 2016 00:00:00 GMT", "Should be a valid UTC date string"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 当处理一个有效的 unix 格式的日期, 返回正确的 unix 时间戳。
+    testString: 'getUserInput => $.get(getUserInput("url") + "/api/timestamp/1482624000000").then(data => { assert.equal(data.unix, 1482624000000) ;  }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 这个程序应该返回无效日期的预期错误消息
+    testString: 'getUserInput => $.get(getUserInput("url") + "/api/timestamp/this-is-not-a-date").then(data => { assert.equal(data.error.toLowerCase(), "invalid date");}, xhr => { throw new Error(xhr.responseText); })'
+  - text: 当处理一个空的日期参数的时候，返回当前时间的 unix 格式。
+    testString: 'getUserInput => $.get(getUserInput("url") + "/api/timestamp").then(data => { var now = Date.now(); assert.approximately(data.unix, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })'
+  - text: 当处理一个空的日期参数的时候，返回当前时间的 UTC 格式。
+    testString: 'getUserInput => $.get(getUserInput("url") + "/api/timestamp").then(data => { var now = Date.now(); var serverTime = (new Date(data.utc)).getTime(); assert.approximately(serverTime, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -40,12 +44,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

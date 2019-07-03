@@ -2,23 +2,30 @@
 id: bad87fee1348bd9aedf08833
 title: Fill in the Blank with Placeholder Text
 challengeType: 0
+
 videoUrl: ''
-localeTitle: 使用占位符文本填充空白
+localeTitle: Fill in the Blank with Placeholder Text
 ---
 
 ## Description
-<section id="description"> Web开发人员传统上使用<code>lorem ipsum text</code>作为占位符文本。 “lorem ipsum”文字是从古罗马的西塞罗（Cicero of Ancient Rome）的着名文章中随机剪下来的。自16世纪以来，Lorem ipsum文本被排版人员用作占位符文本，这种传统在网上继续存在。好吧，5个世纪足够长了。由于我们正在构建CatPhotoApp，因此我们使用名为<code>kitty ipsum text</code> 。 </section>
+<section id='description'>
+Web 开发者通常用<a href='http://www.ruanyifeng.com/blog/2009/04/lorem_ipsum.html'>lorem ipsum text</a>来做占位符，占位符就是占着位置的一些文字，没有实际意义。
+为什么叫<code>lorem ipsum text</code>呢?是因为<code>lorem ipsum</code>是古罗马西塞罗谚语的前两个单词。
+从公元16世纪开始<code>lorem ipsum text</code>就被当做占位符了，这种传统延续到了互联网时代。与此同时，孙悟空也在五指山下被压了500年，然后就进化成程序猿了，是不是很巧合。^_^
+</section>
 
 ## Instructions
-<section id="instructions">用这个kitty ipsum文本的前几个单词替换你的<code>p</code>元素里面的文字： <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code> </section>
+<section id='instructions'>
+把<code>p</code>元素的内容更换为：<code>Monkey code 猴哥猴哥，你真了不得，金箍棒在手，问世间谁是英雄。</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>p</code>元素应该包含所提供的<code>kitty ipsum text</code>的前几个单词。
-    testString: 'assert.isTrue((/Kitty(\s)+ipsum/gi).test($("p").text()), "Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.");'
+  - text: <code>p</code>元素的内容必须包含<code>Monkey code</code>。
+    testString: assert.isTrue((/Monkey(\s)+code/gi).test($("p").text()), '<code>p</code>元素的内容必须包含<code>Monkey code</code>。');
 
 ```
 
@@ -27,27 +34,21 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-<div id='html-seed'>
-
+    <div id='html-seed'>
 ```html
-<h1>Hello World</h1>
-
-<h2>CatPhotoApp</h2>
-
-<p>Hello Paragraph</p>
-
+<h1>Hello World</h1>,,<h2>CatPhotoApp</h2>,,<p>Hello Paragraph</p>
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

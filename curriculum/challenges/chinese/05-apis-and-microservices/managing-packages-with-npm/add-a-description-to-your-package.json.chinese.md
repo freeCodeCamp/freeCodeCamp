@@ -1,17 +1,28 @@
 ---
 id: 587d7fb3367417b2b2512bfc
 title: Add a Description to Your package.json
-localeTitle: 在package.json中添加一个描述
 challengeType: 2
+
+videoUrl: ''
+localeTitle: Add a Description to Your package.json
 ---
 
 ## Description
-<section id='description'> <code>0</code>一个好的package.json的下一部分是description-field，其中有关于您的项目的简短但信息丰富的描述。 <code>0</code>如果您有一天计划将软件包发布到npm，请记住这是一个字符串，当他们决定是否安装您的软件包时，应该将该想法卖给用户。然而，这并不是描述的唯一用例：这是总结项目工作的一种很好的方式，对于正常的Node.js项目来说，这对于帮助其他开发人员，未来的维护人员甚至是您未来的自我来理解项目同样重要很快。 <code>0</code>无论您对项目的计划是什么，都建议您使用说明。让我们添加类似的东西： 
-<code>"description": "A project that does something awesome",</code> <code>0</code>说明<code>0</code>在Glitch项目中向package.json添加一个描述。 <code>0</code>记住要使用双引号场名称（“）和逗号（，）分隔的字段。 
+<section id='description'>
+package.json 是任何 Node.js 项目或 npm 包的中心。它存储项目的相关信息，就像 HTML 文档中的<code><head></code>区域是用来描述网页的通用信息（元信息）一样。package.json 由单个 JSON 对象组成，它以键值对的形式存储项目的信息。一个最小的 package.json 文件至少包含两个必须字段：name 和 version——但是提供有关项目的附加信息是一个更好的做法，在以后它可能对你的用户或者维护者有所帮助。
+author 字段：
+如果你转到之前设置的 Glitch 项目并查看屏幕左侧，你会看到一个文件树，你可以在其中查看项目中各种文件的概述。在文件树的末尾部分，你会看到 package.json——我们将在接下来的几个挑战中改进这个文件。
+这个文件中最常见的信息之一是 author 字段，它指定了谁是项目的创建者。它可以是字符串，也可以是带有联系人详细信息的对象。对于较大的项目，建议使用对象，但是在我们的例子中，一个简单的字符串就可以了，比如下面的例子。
+<code>"author": "Jane Doe",</code>
+说明：
+将你的名字添加到 Glitch 项目中，package.json 的 author 字段。
+请记住，你正在编写 JSON 文件。
+所有的字段名必须使用双引号（"）包裹, 比如："author"
+所有字段必须用逗号（,）分隔
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,8 +31,8 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“描述”键
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.description, ''"description" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: "package.json 应该有一个有效的 'description' 键。"
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/package.json").then(data => { var packJson = JSON.parse(data); assert(packJson.description, "缺少 "description""); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 
@@ -30,12 +41,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

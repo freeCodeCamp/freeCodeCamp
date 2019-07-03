@@ -2,15 +2,24 @@
 id: 589fc831f9fc0f352b528e76
 title: Handle a Disconnect
 challengeType: 2
+
 videoUrl: ''
-localeTitle: 处理断开连接
+localeTitle: Handle a Disconnect
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socketio/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-socketio/">GitHub</a>克隆的。您可能会注意到，到目前为止，您只增加了用户数。处理用户断开连接就像处理初始连接一样简单，除了区别在于你必须在每个套接字上监听它而不是在整个服务器上监听它。 <hr>为此，请在现有的连接侦听器中添加一个侦听器，该侦听器在没有数据传递的情况下侦听套接字上的“disconnect”。您只需登录用户已断开连接的控制台即可测试此功能。 <code>socket.on(&#39;disconnect&#39;, () =&gt; { /*anything you want to do on disconnect*/ });</code>要确保客户端持续获得当前用户的更新计数，您应该在断开连接时将currentUsers减少1，然后使用更新的计数发出&#39;user count&#39;事件！ <strong>注意</strong> <br>就像&#39;disconnect&#39;一样，套接字可以向服务器发出的所有其他事件应该在我们定义了&#39;socket&#39;的连接监听器中处理。当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+注意，本项目在<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>这个 Glitch 项目</a>的基础上进行开发，你也可以从 <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> 上克隆。
+你可以在应用的模版引擎中使用静态模板文件（如那些写在<em>Pug</em>里的）。在运行时，模版引擎会用服务端的真实数据替换掉模版文件中的变量，然后将模版转译成发送给客户端的 HTML 静态文件。这样可以轻松地构造 HTML 页面，允许在页面直接显示变量内容而不需要发送 API 请求。
+为了在项目中使用 <em>Pug</em>，你需要在 package.json 中添加依赖<code>"pug": "^0.1.0"</code>
+为了在 Node/Express 中使用 pug 作为模版引擎，你需要在 express 中将 <b>app</b> 的 “view-engine” 设置为 “pug”，就像这样：<code>app.set('view engine', 'pug')</code>。
+最后, 你需要使用<code>res.render</code>方法渲染 <em>views/pug/index.pug</em> 页面来作为路由请求的返回。
+如果一切顺利，刷新一下应用的主页就可以看到 Pug 成功加载的提示，这时你就可以提交你的页面了。
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,10 +27,10 @@ localeTitle: 处理断开连接
 
 ```yml
 tests:
-  - text: 服务器处理与套接字的事件断开连接
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")disconnect("|")/gi, ""); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 您的客户正在侦听“用户计数”事件
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "Your client should be connection to server with the connection defined as socket"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: 服务器应处理断开 socket 连接的事件。
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")disconnect("|")/gi, "应监听 disconnect 事件。"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: '客户端应监听 "user count" 事件。'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "客户端应使用 socket 变量与服务器建立连接，且应监听 user count 事件。"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 
@@ -30,12 +39,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              
