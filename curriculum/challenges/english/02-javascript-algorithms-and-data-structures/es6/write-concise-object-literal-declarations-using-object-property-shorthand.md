@@ -36,8 +36,8 @@ Use object property shorthand with object literals to create and return a <code>
 
 ```yml
 tests:
-  - text: 'The output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
-    testString: assert((() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Boolean(person) && JSON.stringify(res) === JSON.stringify(person);})());
+  - text: '<code>createPerson("Zodiac Hasbro", 56, "male")</code> should return <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
+    testString: assert.deepEqual({name:"Zodiac Hasbro",age:56,gender:"male"}, createPerson("Zodiac Hasbro", 56, "male"));
   - text: No <code>key:value</code> were used.
     testString: getUserInput => assert(!getUserInput('index').match(/:/g));
 
