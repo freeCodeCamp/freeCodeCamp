@@ -11,7 +11,7 @@ localeTitle: Declaração If-Else
 
 ### Formulário Geral da Declaração If-Else
 
-```cpp
+```
 if (expressão teste) 
  { 
   //comandos se a espressão for verdadeira 
