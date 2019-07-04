@@ -28,7 +28,7 @@ const getMousePosition = (x, y) => ({ x, y });
 
 ## Instructions
 <section id='instructions'>
-Use object property shorthand with object literals to create and return a <code>Person</code> object with <code>name</code>, <code>age</code> and <code>gender</code> properties.
+Use object property shorthand with object literals to create and return an object with <code>name</code>, <code>age</code> and <code>gender</code> properties.
 </section>
 
 ## Tests
