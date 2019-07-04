@@ -38,7 +38,7 @@ Use object property shorthand with object literals to create and return a <code>
 tests:
   - text: '<code>createPerson("Zodiac Hasbro", 56, "male")</code> should return <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
     testString: assert.deepEqual({name:"Zodiac Hasbro",age:56,gender:"male"}, createPerson("Zodiac Hasbro", 56, "male"));
-  - text: No <code>key:value</code> were used.
+  - text: Your code should not use <code>key:value</code>.
     testString: getUserInput => assert(!getUserInput('index').match(/:/g));
 
 ```
