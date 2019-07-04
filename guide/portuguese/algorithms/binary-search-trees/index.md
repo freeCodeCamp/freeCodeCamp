@@ -8,7 +8,7 @@ localeTitle: Árvores de busca binária
 
 Uma árvore é uma estrutura de dados composta de nós que possui as seguintes características:
 
-1.  Cada árvore tem um nó raiz (no topo) quem possui algum valor.
+1.  Cada árvore tem um nó raiz (no topo) que possui algum valor.
 2.  O nó raiz tem zero ou mais nós filhos.
 3.  Cada nó filho possui zero ou mais nós filhos e assim por diante. Isso cria uma subárvore na árvore. Cada nó tem sua própria subárvore, composta de seus filhos e filhos, etc. Isso significa que cada nó pode ser uma árvore.
 
