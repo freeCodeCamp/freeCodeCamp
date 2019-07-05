@@ -164,7 +164,7 @@ In the event of *odd number of sets* the symmetric difference will include ident
       ]
     );
 
-    const sym = (...args) => Array.from(new Set(args.reduce(diff)));
+    const sym = (...args) => [...new Set(args.reduce(diff))];
 
     // test here
     sym([1, 2, 3], [5, 2, 1, 4]);
@@ -179,7 +179,6 @@ In the event of *odd number of sets* the symmetric difference will include ident
 
 #### Relevant Links ####
 * [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
-* [Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 * [Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS: ##
