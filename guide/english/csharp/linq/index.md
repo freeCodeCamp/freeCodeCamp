@@ -29,7 +29,7 @@ Then we can do things like:
 var firstName = fruits.Select(f => f.Name).First(); // Orange
 
 // Count how many fruits are red
-var qntRed = fruits.Where(Color == "Red").Count(); // 2
+var qntRed = fruits.Where(f => f.Color == "Red").Count(); // 2
 
 // Create a list of yellow fruits
 var yellowFruits = fruits.Where(f => f.Color == "Yellow").ToList(); // { Pineapple, Mango }
