@@ -116,16 +116,6 @@
   background-color: #efefef;
 }
 
-/*adds vertical alignment when the height is bigger than required to display everything*/
-@media screen and (min-height: 700px) {
-  .certification-namespace body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-  }
-}
-
 /*mobile media queries*/
 @media screen and (max-width: 992px) {
   .certification-namespace header {
