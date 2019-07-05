@@ -164,7 +164,7 @@ In the event of *odd number of sets* the symmetric difference will include ident
       ]
     );
 
-    const sym = (...args) => Array.from(new Set(args.reduce(diff).sort()));
+    const sym = (...args) => Array.from(new Set(args.reduce(diff)));
 
     // test here
     sym([1, 2, 3], [5, 2, 1, 4]);
