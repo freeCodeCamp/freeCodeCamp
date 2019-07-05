@@ -1,7 +1,8 @@
 ---
 title: Basic Operations
 ---
-# Basic Operations
+
+## Basic Operations
 
 Java supports the following operations on variables:
 
@@ -47,10 +48,81 @@ Here is a program to illustrate the `instanceof` operator:
 ```Java
 Person obj1 = new Person();
 Person obj2 = new Boy();
- 
 // As obj is of type person, it is not an
 // instance of Boy or interface
 System.out.println("obj1 instanceof Person: " +  (obj1 instanceof Person)); /*it returns true since obj1 is an instance of person */
+```
+
+ ### Operation of ASSIGNMENT Operators explained:
+ 
+Often times students come across questions in exam/quizes involving complex equations/relations between different variables established with different combinations of assignmen operators. On face, they look preety ambiguous. But follwoing a simpe rule might make solving them preety straigh forward.
+The rule itself is simple... On any circumstance, first one must deal with PRE-operations, then 'Assignment' operator and then finally comes with 'POST - operations'.
+ 
+In summary, the order of operation is - 
+ 
+Step 1. PRE-operations
+ 
+Step 2. Assignment
+ 
+Step 3. POST - operations.
+ 
+For example:
+ 
+```java
+ int a = 1;
+ int b;
+ int b = a-- + ++a ;
+ ```
+ 
+What will be the value of a & b after the program compiles?
+
+Step 1. PRE-operations: 
+
+a is assigned value 1. 
+
+Upon pre-assignment, it becomes 2(since it is '+' here)
+ 
+Step 2. Assignment:
+
+At this point, 
+
+a = 2 
+
+and for b ,  
+
+b =a-- + ++a
+
+or, b = 2-- + 2 =  4. [Note:POST - operations has not yet come to play yet]
+ 
+Step 3. POST - operations:
+ 
+At this point, 
+ b = 4 
+ a = 2. But WAIT, there's still one 'post operation' on a to deal with... i.e. a--
+ 
+So it follows:
+
+```java
+a-- // 2-- =  1 (since it is '-' here).
+``` 
+ 
+ 
+Again, consider this example:
+
+```java
+int num1 = 10;
+int num2 = 0;
+int num3 = 4;
+int num4 = 6;
+
+num3 = ++num1 - num4++;
+```
+
+What will be the value of num3 & num4 ?
+
+```
+num3 = 5
+num4 = 7
 ```
 
 # More Information

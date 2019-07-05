@@ -125,6 +125,9 @@ Vim has very tight integration with the `make` build automation tool. If your pr
 
 Important: if you want to replace the first occurrence of the word, remove the `g` at the end.
 
+## The .vimrc file
+The `.vimrc` file is used to save your custom configurations so that you don't have to reconfigure your editor every time you run vim. To open/create your `vimrc`, file just open your cli and type in `vim ~/.vimrc` then add the commands you would normally type into your editor.
+
 ## I Want to Learn Vim!
 
 For total beginners, Vim comes with a built in tutorial! You can access it by running `vimtutor` from your terminal and this will launch an interactive tutorial on *how to get started with Vim* (takes around 15 minutes to work through).
