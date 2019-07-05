@@ -5,7 +5,7 @@ title: IPv4 Header
 
 Below is the IPv4 header format according to [RFC791](https://tools.ietf.org/html/rfc791):
 
-![Image of IPv4 Header](https://i.imgur.com/5ys9G3k.png)
+![Image of IPv4 Header](https://cdn-media-1.freecodecamp.org/imgr/5ys9G3k.png)
 
 
 ##### Version [4-bits]

@@ -8,10 +8,12 @@ localeTitle: تغيير لون النص
 
 ### مثال
 
- `color: red; 
-` 
+```
+color: red;
+``` 
 
 ## حل
 
- `<h2 style="color: red;">CatPhotoApp</h2> 
-`
+```
+<h2 style="color: red;">CatPhotoApp</h2>
+```

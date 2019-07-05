@@ -12,7 +12,7 @@ Na [página de download do golang](https://golang.org/dl/) , obtenha o instalado
 
 Para verificar se foi instalado com sucesso, abra seu terminal e use:
 
-```sh
+```shell
 $ go version 
 ```
 

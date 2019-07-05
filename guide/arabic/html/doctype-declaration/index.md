@@ -20,27 +20,27 @@ localeTitle: Doctype Declaration
 
 بناء جملة Doctype لـ HTML5 وما بعدها:
 
- `
-<!DOCTYPE html> 
-` 
+```html
+<!DOCTYPE html>
+``` 
 
 بناء جملة Doctype لـ HTML 4.01 صارم:
 
- `
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
-` 
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+``` 
 
 Doctype syntax for Transitional HTML 4.01:
 
- `
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
-` 
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+``` 
 
 بناء جملة Doctype لـ frameset HTML 4.01:
 
- `
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"> 
-` 
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+``` 
 
 ## التاريخ
 

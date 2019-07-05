@@ -17,7 +17,7 @@ Algumas operações básicas da pilha são:
 
 A implementação de uma pilha é possível usando arrays ou listas vinculadas. A seguir, uma implementação de matriz simples da estrutura de dados da pilha com suas operações mais comuns.
 
-```C++
+```cpp
 //Stack implementation using array in C++ 
  //You can also include<stack> and then use the C++ STL Library stack class. 
  

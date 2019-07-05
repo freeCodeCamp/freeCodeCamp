@@ -16,9 +16,9 @@ _تم إيقاف هذه الميزة في HTML 4.01 وتمت إزالتها في
 
 مثال:
 
- `
-<font face="fontNameHere" size="7" color="blue">My Text Here</font> 
-` 
+```html
+<font face="fontNameHere" size="7" color="blue">My Text Here</font>
+``` 
 
 #### معلومات اكثر:
 

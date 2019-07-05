@@ -10,9 +10,9 @@ localeTitle: أضف سمات المعرف إلى عناصر Bootstrap
 
 يتم تعريف معرف على النحو التالي:
 
- `
-<element id="id(s)List"></element> 
-` 
+```html
+<element id="id(s)List"></element>
+``` 
 
 ### تلميح 2
 
@@ -30,24 +30,24 @@ localeTitle: أضف سمات المعرف إلى عناصر Bootstrap
 
 نظرًا لأنك تحتاج إلى إضافة معرّف (معرّفات) إلى كلٍّ من الآبار ولديك كلاً من معرف فريد ، فإن ما يلي هو الحل:
 
- `
-<div class="container-fluid"> 
-  <h3 class="text-primary text-center">jQuery Playground</h3> 
-  <div class="row"> 
-    <div class="col-xs-6"> 
-      <div class="well" id="left-well"> 
-        <button class="btn btn-default target"></button> 
-        <button class="btn btn-default target"></button> 
-        <button class="btn btn-default target"></button> 
-      </div> 
-    </div> 
-    <div class="col-xs-6"> 
-      <div class="well" id="right-well"> 
-        <button class="btn btn-default target"></button> 
-        <button class="btn btn-default target"></button> 
-        <button class="btn btn-default target"></button> 
-      </div> 
-    </div> 
-  </div> 
- </div> 
-`
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well" id="left-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well" id="right-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+  </div>
+</div>
+```

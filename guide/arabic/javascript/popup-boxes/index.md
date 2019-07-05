@@ -26,13 +26,14 @@ localeTitle: مربعات منبثقة
 
 ### مثال:
 
- `var result = window.confirm('Are you sure?'); 
- if (result === true) { 
-    window.alert('Okay, if you're sure.'); 
- } else { 
-    window.alert('You seem uncertain.'); 
- } 
-` 
+```javascript
+var result = window.confirm('Are you sure?');
+if (result === true) {
+    window.alert('Okay, if you're sure.');
+} else {
+    window.alert('You seem uncertain.');
+}
+``` 
 
 ![MDN Confirm Example](https://mdn.mozillademos.org/files/7163/firefoxcomfirmdialog_zpsf00ec381.png)
 
@@ -50,13 +51,15 @@ localeTitle: مربعات منبثقة
 
 إذا كنت غير راضٍ عن النوافذ المنبثقة JavaScript الافتراضية ، يمكنك استبدالها في مكتبات UI المختلفة. على سبيل المثال ، يوفر SweetAlert بديلاً لطيفًا لوحدات JavaScript القياسية. يمكنك تضمينها في HTML الخاص بك عبر CDN (شبكة توصيل المحتوى) والبدء في استخدامها.
 
- `<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-` 
+```HTML
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+``` 
 
 الصيغة على النحو التالي: `swal(title, subtitle, messageType)`
 
- `swal("Oops!", "Something went wrong on the page!", "error"); 
-` 
+```javascript
+swal("Oops!", "Something went wrong on the page!", "error");
+``` 
 
 سيعمل الكود أعلاه على إنتاج النافذة المنبثقة التالية: ![SweetAlert مثال](https://ludu-assets.s3.amazonaws.com/lesson-content/rWqOoQXgDrSVSMrAKiZ9) SweetAlert ليست بأي حال المعادل الوحيد للوحدات القياسية ، ولكنها نظيفة وسهلة التنفيذ.
 

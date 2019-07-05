@@ -8,9 +8,10 @@ localeTitle: String.prototype.trim
 
 أمثلة:
 
- `"  Hello, campers. I have spaces on both ends!  ".trim(); 
- // output is "Hello, campers. I have spaces on both ends!" 
-` 
+```js
+"  Hello, campers. I have spaces on both ends!  ".trim();
+// output is "Hello, campers. I have spaces on both ends!"
+``` 
 
 `trim()` لا يزيل فقط أحرف الفضاء. يزيل أي حرف مسافة بيضاء ، مثل علامات التبويب ، فواصل الأسطر ، فواصل عدم الانكسار ، إلخ.
 

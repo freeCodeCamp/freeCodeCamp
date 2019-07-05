@@ -65,7 +65,6 @@ function uniteUnique(arr1, arr2, arr3) {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnM/0)
 
 ### 代码说明：
 
@@ -122,7 +121,6 @@ function uniteUnique(arr1, arr2, arr3) {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnO/0)
 
 ### 代码说明：
 
@@ -155,7 +153,6 @@ function uniteUnique() {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnN/0)
 
 ### 代码说明：
 
@@ -185,7 +182,6 @@ function uniteUnique() {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CcWk/0)
 
 ### 代码说明：
 

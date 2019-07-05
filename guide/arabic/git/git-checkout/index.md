@@ -10,20 +10,23 @@ localeTitle: بوابة الخروج
 
 للخروج من التزام معين ، قم بتشغيل الأمر:
 
- `git checkout specific-commit-id 
-` 
+```shell
+git checkout specific-commit-id
+``` 
 
 يمكننا الحصول على رقم تعريف الالتزام المحدد عن طريق تشغيل:
 
- `git log 
-` 
+```shell
+git log
+``` 
 
 ### الخروج فرع موجود
 
 للتحقق من فرع موجود ، قم بتشغيل الأمر:
 
- `git checkout BRANCH-NAME 
-` 
+```shell
+git checkout BRANCH-NAME
+``` 
 
 بشكل عام ، لن تسمح لك Git بالتسجيل في فرع آخر ما لم يكن دليل عملك نظيفًا ، لأنك ستفقد أي تغييرات في دليل العمل غير ملتزم بها. لديك ثلاثة خيارات للتعامل مع تغييراتك: 1) قم بسحبها ، 2) [ارتكابها](https://guide.freecodecamp.org/git/git-commit/) ، أو 3) [خبأتها](https://guide.freecodecamp.org/git/git-stash/) .
 
@@ -31,8 +34,9 @@ localeTitle: بوابة الخروج
 
 لإنشاء فرع جديد بأمر واحد والخروج منه ، يمكنك استخدام:
 
- `git checkout -b NEW-BRANCH-NAME 
-` 
+```shell
+git checkout -b NEW-BRANCH-NAME
+``` 
 
 سيؤدي هذا إلى تبديلك تلقائيًا إلى الفرع الجديد.
 
@@ -40,8 +44,9 @@ localeTitle: بوابة الخروج
 
 يشبه الأمر التالي التحقق من فرع جديد ، ولكنه يستخدم علامة `-B` (لاحظ علامة captional B) ومعلمة `START-POINT` اختيارية:
 
- `git checkout -B BRANCH-NAME START-POINT 
-` 
+```shell
+git checkout -B BRANCH-NAME START-POINT
+``` 
 
 إذا كان `BRANCH-NAME` غير موجود ، فسيقوم Git بإنشائه وبدء تشغيله عند `START-POINT` . إذا كان `BRANCH-NAME` موجودًا بالفعل ، فعندئذٍ يقوم Git بإعادة تعيين الفرع إلى `START-POINT` . هذا يعادل تشغيل `git branch` مع `-f` .
 
@@ -51,15 +56,17 @@ localeTitle: بوابة الخروج
 
 عند تشغيل الأمر التالي ، سيتجاهل Git الإدخالات غير المدمجة:
 
- `git checkout -f BRANCH-NAME 
- 
- # Alternative 
- git checkout --force BRANCH-NAME 
-` 
+```shell
+git checkout -f BRANCH-NAME
+
+# Alternative
+git checkout --force BRANCH-NAME
+``` 
 
 ### التراجع عن التغييرات في دليل العمل الخاص بك
 
 يمكنك استخدام أمر `git checkout` للتراجع عن التغييرات التي أجريتها على ملف في دليل العمل. سيؤدي هذا إلى إعادة الملف إلى الإصدار في `HEAD` :
 
- `git checkout -- FILE-NAME 
-`
+```shell
+git checkout -- FILE-NAME
+```

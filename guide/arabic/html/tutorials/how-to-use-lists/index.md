@@ -12,13 +12,13 @@ localeTitle: كيفية استخدام القوائم
 
 ##### الشفرة
 
- `
-<ol> 
-    <li>Mix ingredients</li> 
-    <li>Bake in oven for an hour</li> 
-    <li>Allow to stand for ten minutes</li> 
- </ol> 
-` 
+```html
+<ol>
+    <li>Mix ingredients</li>
+    <li>Bake in oven for an hour</li>
+    <li>Allow to stand for ten minutes</li>
+</ol>
+``` 
 
 ##### مثال
 
@@ -32,13 +32,13 @@ localeTitle: كيفية استخدام القوائم
 
 ##### الشفرة
 
- `
-<ul> 
-    <li>Chocolate Cake</li> 
-    <li>Black Forest Cake</li> 
-    <li>Pineapple Cake</li> 
- </ul> 
-` 
+```html
+<ul>
+    <li>Chocolate Cake</li>
+    <li>Black Forest Cake</li>
+    <li>Pineapple Cake</li>
+</ul>
+``` 
 
 #### مثال
 
@@ -52,14 +52,14 @@ localeTitle: كيفية استخدام القوائم
 
 ##### الشفرة
 
- `
-<dl> 
-    <dt>Bread</dt> 
-    <dd>A baked food made of flour.</dd> 
-    <dt>Coffee</dt> 
-    <dd>A drink made from roasted coffee beans.</dd> 
- </dl> 
-` 
+```html
+<dl>
+    <dt>Bread</dt>
+    <dd>A baked food made of flour.</dd>
+    <dt>Coffee</dt>
+    <dd>A drink made from roasted coffee beans.</dd>
+</dl>
+``` 
 
 ##### انتاج |
 
