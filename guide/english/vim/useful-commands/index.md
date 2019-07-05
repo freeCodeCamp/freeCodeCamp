@@ -10,6 +10,8 @@ To get here from other modes you can type `ctrl + c` or `escape`.
 
 To edit text and move around in a familiar way press `i`, for "insert" mode. Try to move around with the arrow keys in "insert" mode - see the "Navigation" section below for details.
 
+To select text press `v` to switch to "visual" mode, then with `shift + arrows` select the desired text and press `d` to cut or `y` to yank (copy).
+
 Depending on the configuration, you may enter a file browser by typing and entering the command `:e .` in "normal" mode. The 'e' stands for edit, and the period for the file or directory.
 
 ## Navigation
@@ -17,6 +19,7 @@ Depending on the configuration, you may enter a file browser by typing and enter
 - `gg` brings you to the start of the file
 - `G` brings you to the end of the file
 - `:(num)` brings you to a specific line in your file (ex- :42 brings you to line 42)
+- `(num)G` also brings you to a specific line in your file (ex- 42G brings you to line 42)
 
 ## Saving
 1. Press `Escape` to make sure you're in `normal mode`;
@@ -121,6 +124,9 @@ Vim has very tight integration with the `make` build automation tool. If your pr
 4. Press `ENTER`.
 
 Important: if you want to replace the first occurrence of the word, remove the `g` at the end.
+
+## The .vimrc file
+The `.vimrc` file is used to save your custom configurations so that you don't have to reconfigure your editor every time you run vim. To open/create your `vimrc`, file just open your cli and type in `vim ~/.vimrc` then add the commands you would normally type into your editor.
 
 ## I Want to Learn Vim!
 

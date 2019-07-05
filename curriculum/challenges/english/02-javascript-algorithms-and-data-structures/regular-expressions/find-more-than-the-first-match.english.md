@@ -7,9 +7,22 @@ challengeType: 1
 ## Description
 <section id='description'>
 So far, you have only been able to extract or search a pattern once.
-<blockquote>let testStr = "Repeat, Repeat, Repeat";<br>let ourRegex = /Repeat/;<br>testStr.match(ourRegex);<br>// Returns ["Repeat"]</blockquote>
+
+```js
+let testStr = "Repeat, Repeat, Repeat";
+let ourRegex = /Repeat/;
+testStr.match(ourRegex);
+// Returns ["Repeat"]
+```
+
 To search or extract a pattern more than once, you can use the <code>g</code> flag.
-<blockquote>let repeatRegex = /Repeat/g;<br>testStr.match(repeatRegex);<br>// Returns ["Repeat", "Repeat", "Repeat"]</blockquote>
+
+```js
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// Returns ["Repeat", "Repeat", "Repeat"]
+```
+
 </section>
 
 ## Instructions

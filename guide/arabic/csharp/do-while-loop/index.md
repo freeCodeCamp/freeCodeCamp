@@ -28,11 +28,12 @@ localeTitle: هل في حين حلقة
 
 ## انتاج:
 
- `> Type A to continue: b 
- > Type A to continue: g 
- > Type A to continue: A 
- > Bye! 
-` 
+```
+> Type A to continue: b
+> Type A to continue: g
+> Type A to continue: A
+> Bye!
+``` 
 
 #### معلومات اكثر:
 

@@ -46,7 +46,7 @@ Vê a demonstração em vídeo ou segue os passos abaixo:
 
 **[A FAZER]** Atualizar a gravação do GIF.
 
-![GIF a mostrar os passos do GitHub interface](#)
+![GIF a mostrar os passos do GitHub interface](https://cdn-images-1.medium.com/max/1395/1*qnFS6ITMwcpsiZvF5b1pHw.gif)
 
 1. Ir à pasta **"pages"** (localizada no [`guide`](/guide)) e encontrar o artigo que gostarias de escrever ou editar.
 

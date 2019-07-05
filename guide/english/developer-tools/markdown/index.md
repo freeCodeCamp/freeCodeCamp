@@ -57,3 +57,5 @@ A cheatsheet is one of the easiest way to learn Markdown. Check out <a href='htt
 You can also check out this online tutorial: <a href='https://www.markdowntutorial.com' target='_blank' rel='nofollow'>Markdown Tutorial</a>
 
 Love learning by videos? Check out <a href='https://www.youtube.com/watch?v=HndN6P9ke6U' target='_blank' rel='nofollow'>this Youtube video</a>
+
+The GitHub <a href='https://guides.github.com/features/mastering-markdown/' target='_blank'>Mastering Markdown</a> guide provides an introduction to Markdown, gives examples, and notes some additional features in the version used on GitHub.

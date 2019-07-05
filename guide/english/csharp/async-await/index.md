@@ -4,7 +4,7 @@ title: Async / Await
 
 # Async / Await Keywords
 
-The `async`/`await` keywords in C# provide convenient ways of managing resource-intensive applications, which are more common in front-end languages such as Javascript libraries. Methods that return `Task<T>` types can be crowned with the `async` keyword, and when calling these methods in a UI handler or service workflow, we can use the `await` on the methods to tell C# to yield the control back to its caller until the background job is finished. By yielding the control on resources-intensive calls, we are able to allow UI to be more responsive and make the service more elastic.
+The `async`/`await` keywords in C# provide convenient ways of managing resource-intensive applications, which are more common in front-end languages such as JavaScript libraries. Methods that return `Task<T>` types can be crowned with the `async` keyword, and when calling these methods in a UI handler or service workflow, we can use the `await` on the methods to tell C# to yield the control back to its caller until the background job is finished. By yielding the control on resources-intensive calls, we are able to allow UI to be more responsive and make the service more elastic.
 
 The core of the `async` and `await` are the `Task<T>` class. When using it along with the `async` keyword as the return type of a method, we indicate that the method has promised to return an object of the `T` type (for methods that wouldn't return any value, use `Task` as the return type instead). `Task<T>` is a sophisticated topic of its own, for more information, please refer to the official documents: [Task Class](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=netframework-4.7.1).
 

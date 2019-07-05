@@ -12,7 +12,7 @@ function phoneticLookup(val) {
   var result = "";
 
   // Only change code below this line
-  switch(val) {
+  switch (val) {
     case "alpha": 
       result = "Adams";
       break;
@@ -66,7 +66,6 @@ After converting our case statements into object properties you can make use of 
   result = lookup[val];
  ```
 
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Using-objects-for-lookups).
 
 ### Resources
 

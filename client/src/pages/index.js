@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHtml5,
   faCss3Alt,
@@ -103,7 +103,7 @@ const IndexPage = () => (
             alt="Meta's testimonial image"
             className='testimonial-image img-center'
             responsive={true}
-            src='https://i.imgur.com/nsvNixW.jpg'
+            src='https://cdn-media-1.freecodecamp.org/imgr/nsvNixW.jpg'
           />
           <p className='testimonial-copy'>
             Through freeCodeCamp, I built a robust and highly functional web app
@@ -116,7 +116,7 @@ const IndexPage = () => (
             alt="Brian's testimonial image"
             className='testimonial-image img-center'
             responsive={true}
-            src='https://i.imgur.com/QPpjPac.jpg'
+            src='https://cdn-media-1.freecodecamp.org/imgr/QPpjPac.jpg'
           />
           <p className='testimonial-copy'>
             freeCodeCamp is a great way for disabled veterans like me to
@@ -129,7 +129,7 @@ const IndexPage = () => (
             alt="Maxim Orlov's testimonial image"
             className='testimonial-image img-center'
             responsive={true}
-            src='https://i.imgur.com/wjlDigg.jpg'
+            src='https://cdn-media-1.freecodecamp.org/imgr/wjlDigg.jpg'
           />
           <p className='testimonial-copy'>
             I joined freeCodeCamp with zero knowledge of web development. 6
@@ -230,8 +230,9 @@ const IndexPage = () => (
         <Link className='large-p underlined-link' external={true} to='/donate'>
           make a tax-deductible donation here
         </Link>
+        .
       </p>
-      .<Spacer />
+      <Spacer />
       <BigCallToAction />
       <Spacer />
       <Spacer />

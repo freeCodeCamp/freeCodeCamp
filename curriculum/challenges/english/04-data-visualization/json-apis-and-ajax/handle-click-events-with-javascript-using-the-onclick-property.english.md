@@ -7,9 +7,19 @@ challengeType: 6
 ## Description
 <section id='description'>
 You want your code to execute only once your page has finished loading. For that purpose, you can attach a JavaScript event to the document called <code>DOMContentLoaded</code>. Here's the code that does this:
-<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote>
+
+```js
+document.addEventListener('DOMContentLoaded',function() {
+
+});
+```
+
 You can implement event handlers that go inside of the <code>DOMContentLoaded</code> function. You can implement an <code>onclick</code> event handler which triggers when the user clicks on the element with id <code>getMessage</code>, by adding the following code:
-<blockquote>document.getElementById('getMessage').onclick=function(){};</blockquote>
+
+```js
+document.getElementById('getMessage').onclick=function(){};
+```
+
 </section>
 
 ## Instructions

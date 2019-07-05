@@ -74,7 +74,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    background: gray;
+    display: flex;
+    height: 500px;
+    justify-content: center;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 25%;
+    height: 100%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 25%;
+    height: 100%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
 </section>

@@ -18,7 +18,7 @@ foreach (element in iterable-item)
 }
 
 // sample code
-List<string> Names = new List<string>{ "Jim", "Jane", "Jack" }
+List<string> Names = new List<string>{ "Jim", "Jane", "Jack" };
 
 foreach(string name in Names)
 {
@@ -27,7 +27,7 @@ foreach(string name in Names)
 ```
 
 ### Output:
-```sh
+```shell
 > We have Jim
 > We have Jane
 > We have Jack

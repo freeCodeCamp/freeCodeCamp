@@ -80,7 +80,7 @@ function Person(){
 
 var p = new Person();
 ```
-An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` operator:
+An arrow function does not have its own `arguments` object. For example, if you do not know the number of arguments passed to a function, instead of using `arguments` you can use the `rest` parameter:
 ```javascript
 const myFunc = (...n) => {
   console.log('The first argument is', n[0]);

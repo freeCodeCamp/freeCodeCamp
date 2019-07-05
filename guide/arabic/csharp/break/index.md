@@ -23,10 +23,11 @@ localeTitle: بيان استراحة
 
 ## انتاج:
 
- `> Item on index 0 is 1 
- > Item on index 1 is 2 
- > Item on index 2 is 3 
-` 
+```
+> Item on index 0 is 1
+> Item on index 1 is 2
+> Item on index 2 is 3
+``` 
 
 في المثال الثاني ، يتم تضمين بيان فاصل في نهاية كل حالة. هذا ينفذ البيانات في القضية دون الاستمرار في القضية القادمة. بدون بيان الاستراحة ، سيستمر البرنامج في تنفيذ الحالة التالية ولن يعمل على النحو المنشود.
 
@@ -53,14 +54,15 @@ localeTitle: بيان استراحة
 
 ## انتاج:
 
- `> case 1 
- > This only shows in example 1 
- > 
- > case  2 
- > This only shows in example 2 
- > This also only shows in example 2 
- > 
- > default 
- > This only shows in the Default Example 
- > 
-`
+```
+> case 1
+> This only shows in example 1
+>
+> case  2
+> This only shows in example 2
+> This also only shows in example 2
+>
+> default
+> This only shows in the Default Example
+>
+```

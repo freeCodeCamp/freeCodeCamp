@@ -31,7 +31,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -86,9 +85,6 @@ function Set() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution

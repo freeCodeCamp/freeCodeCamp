@@ -8,25 +8,22 @@ Os loops forçados Ruby são usados para fazer loop ou iterar sobre vários elem
 
 For loops são meramente um exemplo de loop ou iteração sobre elementos. Abaixo está um exemplo de um loop for:
 ```
-for element in array do 
-  puts element 
- end 
+for element in array do
+  puts element
+ end
 ```
 
 Existem muitas maneiras diferentes nas quais você pode executar um loop ou iteração em Ruby, outro exemplo seria:
 ```
-element.each do |element| 
-  puts element 
- end 
+array.each do |element|
+  puts element
+ end
 ```
 
 Isso alcançaria exatamente os mesmos resultados que o loop for mencionado anteriormente, mas é mais simples e mais eficiente, pois faz uso dos métodos incorporados do Array.
 
 Para ir além, podemos escrever o loop acima da seguinte maneira:
 ```
-element.each do { |element| puts element } 
-
-
-Desta forma, você tem cada elemento Array com o apelido passado entre os pipes: element. Este nome pode ser qualquer nome. Em seguida, você pode executar as operações nesse elemento específico, como no exemplo, imprimindo o elemento no console.
+array.each do |element| puts element end
 
 ```

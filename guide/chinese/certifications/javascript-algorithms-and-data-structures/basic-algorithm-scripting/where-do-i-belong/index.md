@@ -52,7 +52,6 @@ function getIndexToIns(arr, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/36)
 
 ## 代码说明：
 
@@ -77,7 +76,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 50); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/2547)
 
 ## 代码说明：
 
@@ -106,7 +104,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 50); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/4135)
 
 ## 代码说明：
 
@@ -125,7 +122,6 @@ function getIndexToIns(arr, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/EB10/1)
 
 ## 代码说明：
 
@@ -154,7 +150,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 500); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/63)
 
 ## 代码说明：
 
@@ -181,7 +176,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([1,3,4],2); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/IUJE/0)
 
 ## 代码说明：
 

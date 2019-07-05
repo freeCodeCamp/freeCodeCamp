@@ -24,12 +24,13 @@ localeTitle: وظيفة مضمنة
 
 }
 
- `## When to use Inline function 
- 
- * When the function performs small tasks and is called very often. 
- * When performance is important. 
- * Instead of a macro. 
-` 
+```
+## When to use Inline function
+
+* When the function performs small tasks and is called very often.
+* When performance is important.
+* Instead of a macro.
+``` 
 
 ج ++
 

@@ -12,12 +12,13 @@ Sets are a type of associative container in which each element has to be unique.
 4. There are many inbuilt functions in class defining sets that ease the programming.
 
 Example:
-```c++
+```cpp
 #include<iostream>
 #include <set>
 using std::set;
 using std::cout;
 using std::endl;
+
 int main()
 {
   set <int> s;
@@ -38,20 +39,22 @@ return 0;
 [Try this code out yourself!](https://wandbox.org/permlink/XIFK4d9suQdGniFm)
 
 Creating a set object
-```c++
+```cpp
 set <int> s;
 ```
 
 Insertion
-```c++
+```cpp
 s.insert(value_to_be_inserted);
 ```
 
 Accessing set elements
-```c++
+```cpp
 set <int>::iterator it;
 for(it = s.begin(); it != s.end(); ++it)
   cout << *it;
 ```
+## Reference Links
 
+[Geeks for Geeks link to C++ stl](https://www.geeksforgeeks.org/set-in-cpp-stl/ )
 

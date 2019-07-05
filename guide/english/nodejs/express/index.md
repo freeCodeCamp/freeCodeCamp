@@ -68,7 +68,7 @@ Now we have `package.json` file, we can install Express by running the command:
 npm install --save express
 ```
 
-We can confirm that Express has correctly installed in two ways. First, there will be a new section in `package.json` file named `dependencies` under which our Express exists:
+We can confirm that Express has been correctly installed in two ways. First, there will be a new section in `package.json` file named `dependencies` under which our Express exists:
 
 ```json
 {
@@ -371,7 +371,7 @@ The dotenv middleware loads environmental variables from a `.env` file into `pro
 npm install --save dotenv
 ```
 
-```sh
+```shell
 # .env file
 DB_HOST=localhost
 DB_USER=root

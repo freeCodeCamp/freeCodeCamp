@@ -6,16 +6,22 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The phrase   <a href="https://en.wikipedia.org/wiki/I before E except after C"> "I before E, except after C"</a> is a widely known mnemonic which is supposed to help when spelling English words.
+The phrase   <a href="https://en.wikipedia.org/wiki/I before E except after C" target="_blank"> "I before E, except after C"</a> is a widely known mnemonic which is supposed to help when spelling English words.
 Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
-<ol><li style='margin-bottom: 5px;'><i>"I before E when not preceded by C".</i></li><li><i>"E before I when preceded by C".</i></li></ol>
+<ol>
+  <li>
+    <i>"I before E when not preceded by C".</i>
+  </li>
+  <li>
+    <i>"E before I when preceded by C".</i>
+  </li>
+</ol>
 If both sub-phrases are plausible then the original phrase can be said to be plausible.
-Write a function that accepts a word and check if the word follows this rule. The function should return true if it follows the rule otherwise false.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that accepts a word and check if the word follows this rule. The function should return true if the word follows the rule and false if it does not.
 </section>
 
 ## Tests
@@ -50,7 +56,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function IBeforeExceptC (word) {
+function IBeforeExceptC(word) {
   // Good luck!
 }
 ```
@@ -66,7 +72,7 @@ function IBeforeExceptC (word) {
 
 
 ```js
-function IBeforeExceptC (word)
+function IBeforeExceptC(word)
 {
 	if(word.indexOf("c")==-1 && word.indexOf("ie")!=-1)
 		return true;

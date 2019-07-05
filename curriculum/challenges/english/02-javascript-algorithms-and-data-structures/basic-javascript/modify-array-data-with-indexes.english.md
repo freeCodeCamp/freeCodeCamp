@@ -9,7 +9,12 @@ videoUrl: 'https://scrimba.com/c/czQM4A8'
 <section id='description'>
 Unlike strings, the entries of arrays are <dfn>mutable</dfn> and can be changed freely.
 <strong>Example</strong>
-<blockquote>var ourArray = [50,40,30];<br>ourArray[0] = 15; // equals [15,40,30]</blockquote>
+
+```js
+var ourArray = [50,40,30];
+ourArray[0] = 15; // equals [15,40,30]
+```
+
 <strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
 </section>
 

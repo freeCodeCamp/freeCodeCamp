@@ -83,6 +83,11 @@ let page;
 runTests();
 
 async function runTests() {
+  process.on('unhandledRejection', err => {
+    spinner.stop();
+    throw new Error(`unhandledRejection: ${err.name}, ${err.message}`);
+  });
+
   let testLangs = [...supportedLangs];
   if (process.env.TEST_CHALLENGES_FOR_LANGS) {
     const filterLangs = process.env.TEST_CHALLENGES_FOR_LANGS.split(',').map(
@@ -333,13 +338,13 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
   const { build, sources } = await buildJSChallenge({ files });
   const code = sources && 'index' in sources ? sources['index'] : '';
 
-  const testWorker = createWorker('test-evaluator');
+  const testWorker = createWorker('test-evaluator', { terminateWorker: true });
   return async ({ text, testString }) => {
     try {
       const { pass, err } = await testWorker.execute(
         { testString, build, code, sources },
         5000
-      );
+      ).done;
       if (!pass) {
         throw new AssertionError(`${text}\n${err.message}`);
       }
@@ -348,8 +353,6 @@ async function createTestRunnerForJSChallenge({ files }, solution) {
         ? `${text}\n${err}`
         : (err.message = `${text}
         ${err.message}`);
-    } finally {
-      testWorker.killWorker();
     }
   };
 }

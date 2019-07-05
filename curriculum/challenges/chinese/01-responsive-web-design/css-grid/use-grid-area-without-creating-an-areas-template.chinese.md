@@ -17,8 +17,8 @@ localeTitle: 在不创建网格区域模板的情况下使用网格区域
 
 ```yml
 tests:
-  - text: <code>item5</code>类应该具有值为<code>3/1/4/4</code>的<code>grid-area</code>属性。
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.");'
+  - text: <code>item5</code>类应具有<code>grid-area</code>属性，使其位于第三和第四水平线之间以及第一和第四垂直线之间。
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code>类应具有<code>grid-area</code>属性，使其位于第三和第四水平线之间以及第一和第四垂直线之间。");'
 
 ```
 

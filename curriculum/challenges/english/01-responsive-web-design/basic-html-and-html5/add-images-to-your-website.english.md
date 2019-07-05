@@ -12,7 +12,7 @@ An example of this would be:
 <code>&#60img src="https://www.your-image-source.com/your-image.jpg"&#62</code>
 Note that <code>img</code> elements are self-closing.
 All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
-Note: If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
+<strong>Note:</strong> If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
 Ideally the <code>alt</code> attribute should not contain special characters unless needed.
 Let's add an <code>alt</code> attribute to our <code>img</code> example above:
 <code>&#60img src="https://www.your-image-source.com/your-image.jpg" alt="Author standing on a beach with two thumbs up."&#62</code>
@@ -33,11 +33,11 @@ Finally don't forget to give your image an <code>alt</code> text.
 ```yml
 tests:
   - text: Your page should have an image element.
-    testString: assert($("img").length > 0, 'Your page should have an image element.');
+    testString: assert($("img").length);
   - text: Your image should have a <code>src</code> attribute that points to the kitten image.
-    testString: assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), 'Your image should have a <code>src</code> attribute that points to the kitten image.');
-  - text: Your image element <strong>must</strong> have an <code>alt</code> attribute.
-    testString: assert(code.match(/alt\s*?=\s*?(\"|\').*(\"|\')/), 'Your image element <strong>must</strong> have an <code>alt</code> attribute.');
+    testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
+  - text: Your image element's <code>alt</code> attribute <strong>must</strong> not be empty.
+    testString: assert($("img").attr("alt") && $("img").attr("alt").length && /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g,'')));
 
 ```
 

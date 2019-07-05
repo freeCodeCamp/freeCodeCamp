@@ -9,7 +9,15 @@ videoUrl: 'https://scrimba.com/c/cdBm9Sr'
 <section id='description'>
 The inequality operator (<code>!=</code>) is the opposite of the equality operator. It means "Not Equal" and returns <code>false</code> where equality would return <code>true</code> and <em>vice versa</em>. Like the equality operator, the inequality operator will convert data types of values while comparing.
 <strong>Examples</strong>
-<blockquote>1 != 2      // true<br>1 != "1"    // false<br>1 != '1'    // false<br>1 != true   // false<br>0 != false  // false</blockquote>
+
+```js
+1 !=  2     // true
+1 != "1"    // false
+1 != '1'    // false
+1 != true   // false
+0 != false  // false
+```
+
 </section>
 
 ## Instructions

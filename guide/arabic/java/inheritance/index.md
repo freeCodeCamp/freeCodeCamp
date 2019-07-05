@@ -13,33 +13,35 @@ localeTitle: ميراث
 
 دعونا وصف ذلك مع المثال الكلاسيكي لل `Vehicle` الفئة و `Car` الفئة:
 
- `public class Vehicle { 
-    public void start() { 
-        // starting the engine 
-    } 
- 
-    public void stop() { 
-        // stopping the engine 
-    } 
- } 
- 
- public class Car extends Vehicle { 
-    int numberOfSeats = 4; 
- 
-    public int getNumberOfSeats() { 
-        return numberOfSeats; 
-    } 
- } 
-` 
+```java
+public class Vehicle {
+    public void start() {
+        // starting the engine
+    }
+
+    public void stop() {
+        // stopping the engine
+    }
+}
+
+public class Car extends Vehicle {
+    int numberOfSeats = 4;
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+}
+``` 
 
 هنا ، يمكننا رؤية فئة `Car` ترث خصائص فئة `Vehicle` . لذلك ، ليس علينا كتابة نفس الكود `start()` الطريقتين `start()` و `stop()` `Car` كذلك ، حيث أن هذه الخصائص متاحة من الشركة الأم أو الطبقة الفائقة. لذلك ، فإن الكائنات التي تم إنشاؤها من فئة `Car` سيكون لها هذه الخصائص _أيضًا_ !
 
- `Car tesla = new Car(); 
- 
- tesla.start(); 
- 
- tesla.stop(); 
-` 
+```java
+Car tesla = new Car();
+
+tesla.start();
+
+tesla.stop();
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJXz/0)
 
@@ -62,26 +64,29 @@ localeTitle: ميراث
 
 في Java ، من الممكن الإشارة إلى فئة فرعية _كمثال_ لفئة الطبقة المميزة الخاصة بها. يطلق عليه _تعدد الأشكال_ في البرمجة الشيئية (OOP) ، والقدرة على كائن تأخذ على أشكال كثيرة. على سبيل المثال، `Car` كائن الفئة يمكن الرجوع إليها على أنها `Vehicle` مثيل فئة مثل هذا:
 
- `Vehicle car = new Car(); 
-` 
+```java
+Vehicle car = new Car();
+``` 
 
 على الرغم من أن العكس غير ممكن:
 
- `Car car = new Vehicle(); // ERROR 
-` 
+```java
+Car car = new Vehicle(); // ERROR
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJYB/0)
 
 نظرًا لأنه يمكنك الرجوع إلى فئة فرعية من Java كمثيل فائق ، يمكنك بسهولة عرض مثيل لكائن فئة فرعية إلى مثيل superclass. من الممكن إرسال كائن superclass إلى نوع فئة فرعية ، ولكن _فقط إذا كان الكائن بالفعل مثيلًا للفئة الفرعية_ . لذا ضع ذلك في اعتبارك:
 
- `Car car = new Car(); 
- Vehicle vehicle = car; // upcasting 
- Car car2 = (Car)vechile; //downcasting 
- 
- Bike bike = new Bike(); // say Bike is also a subclass of Vehicle 
- Vehicle v = bike; // upcasting, no problem here. 
- Car car3 = (Car)bike; // Compilation Error : as bike is NOT a instance of Car 
-` 
+```java
+Car car = new Car();
+Vehicle vehicle = car; // upcasting
+Car car2 = (Car)vechile; //downcasting
+
+Bike bike = new Bike(); // say Bike is also a subclass of Vehicle
+Vehicle v = bike; // upcasting, no problem here.
+Car car3 = (Car)bike; // Compilation Error : as bike is NOT a instance of Car
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJYM/0)
 
@@ -91,21 +96,22 @@ localeTitle: ميراث
 
 تسمح لك Java _بإلغاء_ أو إعادة تعريف الطرق المحددة في الطبقة الفائقة. على سبيل المثال ، يكون لفئة `Car` الخاصة بك تطبيق مختلف `start()` من `Vehicle` ، لذلك يمكنك القيام بذلك:
 
- `public class Vehicle { 
-    public void start() { 
-      System.out.println("Vehicle start code"); 
-    } 
- } 
- 
- public class Car extends Vehicle { 
-    public void start() { 
-      System.out.println("Car start code"); 
-  } 
- } 
- 
- Car car = new Car(); 
- car.start(); // "Car start code" 
-` 
+```java
+public class Vehicle {
+    public void start() {
+      System.out.println("Vehicle start code");
+    }
+}
+
+public class Car extends Vehicle {
+    public void start() {
+      System.out.println("Car start code");
+  }
+}
+
+Car car = new Car();
+car.start(); // "Car start code"
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJYZ/1)
 
@@ -122,21 +128,22 @@ localeTitle: ميراث
 
 مضحك تسأل عن ذلك! ما عليك سوى استخدام الكلمة الرئيسية `super` :
 
- `public class Vehicle() { 
-    public void start() { 
-      System.out.println("Vehicle start code"); 
-    } 
- } 
- 
- public class Car extends Vehicle { 
-    public void run() { 
-      super.start(); 
-  } 
- } 
- 
- Car car = new Car(); 
- car.run(); // "Vehicle start code" 
-` 
+```java
+public class Vehicle() {
+    public void start() {
+      System.out.println("Vehicle start code");
+    }
+}
+
+public class Car extends Vehicle {
+    public void run() {
+      super.start();
+  }
+}
+
+Car car = new Car();
+car.run(); // "Vehicle start code"
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJY4/0)
 
@@ -146,33 +153,35 @@ localeTitle: ميراث
 
 باستخدام `instanceof` الكلمة. بوجود الكثير من الطبقات والفئات الفرعية ، سيكون من المربك قليلاً معرفة أي فئة هي فئة فرعية واحدة في وقت التشغيل. لذا ، يمكننا استخدام `instanceof` لتحديد ما إذا كان الكائن عبارة عن مثيل لفئة أو مثيل لفئة فرعية أو مثيل لواجهة.
 
- `Car car = new Car(); 
- 
- boolean flag = car instanceof Vehicle; // true in this case! 
-` 
+```java
+Car car = new Car();
+
+boolean flag = car instanceof Vehicle; // true in this case!
+``` 
 
 ## المقاولون والميراث
 
 كما ذكرنا سابقًا ، لا يمكن تكوين المنشئات بشكل مباشر عن طريق فئة فرعية. على الرغم من أن فئة فرعية _مطلوبة_ لاستدعاء constructor الأصل الخاص به [كأول عملية](http://stackoverflow.com/questions/1168345/why-does-this-and-super-have-to-be-the-first-statement-in-a-constructor) في مُنشئه الخاص. ماذا؟ كنت تفكر في ذلك ، وذلك باستخدام `super` :
 
- `public class Vehicle { 
-    public Vehicle() { 
-        // constructor 
-    } 
-    public void start() { 
-      System.out.println("Vehicle start code"); 
-    } 
- } 
- 
- public class Car extends Vehicle { 
-    public Car() { 
-      super(); 
-    } 
-    public void run() { 
-      super.start(); 
-  } 
- } 
-` 
+```java
+public class Vehicle {
+    public Vehicle() {
+        // constructor
+    }
+    public void start() {
+      System.out.println("Vehicle start code");
+    }
+}
+
+public class Car extends Vehicle {
+    public Car() {
+      super();
+    }
+    public void run() {
+      super.start();
+  }
+}
+``` 
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJY8/0)
 

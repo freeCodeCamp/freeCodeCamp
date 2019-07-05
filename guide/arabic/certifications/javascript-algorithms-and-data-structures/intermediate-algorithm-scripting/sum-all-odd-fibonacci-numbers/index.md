@@ -58,7 +58,6 @@ localeTitle: Sum All Odd Fibonacci Numbers
  sumFibs(4); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnV/0)
 
 ### شرح الشفرة:
 
@@ -100,7 +99,6 @@ localeTitle: Sum All Odd Fibonacci Numbers
  sumFibs(4); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/repls/ImpassionedFineConnection)
 
 ### شرح الشفرة:
 

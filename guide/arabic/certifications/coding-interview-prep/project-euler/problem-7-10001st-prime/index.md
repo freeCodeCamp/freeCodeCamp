@@ -48,7 +48,6 @@ localeTitle: 10001st
  } 
 ` 
 
-\- [تشغيل الكود](https://repl.it/@ezioda004/Project-Euler-Problem-7-10001st-prime)
 
 ### المراجع:
 

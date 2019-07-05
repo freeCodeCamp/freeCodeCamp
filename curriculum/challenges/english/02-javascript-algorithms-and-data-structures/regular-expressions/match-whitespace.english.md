@@ -8,7 +8,14 @@ challengeType: 1
 <section id='description'>
 The challenges so far have covered matching letters of the alphabet and numbers. You can also match the whitespace or spaces between letters.
 You can search for whitespace using <code>\s</code>, which is a lowercase <code>s</code>. This pattern not only matches whitespace, but also carriage return, tab, form feed, and new line characters. You can think of it as similar to the character class <code>[ \r\t\f\n\v]</code>.
-<blockquote>let whiteSpace = "Whitespace. Whitespace everywhere!"<br>let spaceRegex = /\s/g;<br>whiteSpace.match(spaceRegex);<br>// Returns [" ", " "]<br></blockquote>
+
+```js
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);
+// Returns [" ", " "]
+```
+
 </section>
 
 ## Instructions

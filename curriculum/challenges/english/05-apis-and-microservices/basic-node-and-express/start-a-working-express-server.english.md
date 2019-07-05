@@ -9,10 +9,13 @@ challengeType: 2
 In the first two lines of the file <code>myApp.js</code>, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is <code>app.listen(port)</code>. It tells your server to listen on a given port, putting it in running state. You can see it at the bottom of the file. It is inside comments because, for testing reasons, we need the app to be running in the background. All the code that you may want to add goes between these two fundamental parts. Glitch stores the port number in the environment variable <code>process.env.PORT</code>. Its value is <code>3000</code>.
 Let’s serve our first string! In Express, routes takes the following structure: <code>app.METHOD(PATH, HANDLER)</code>. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched.
 Handlers take the form <code>function(req, res) {...}</code>, where req is the request object, and res is the response object. For example, the handler
-<blockquote>
-function(req, res) {<br>
-&nbsp;&nbsp;res.send('Response String');<br>
-}</blockquote>
+
+```js
+function(req, res) {
+  res.send('Response String');
+}
+```
+
 will serve the string 'Response String'.
 </section>
 

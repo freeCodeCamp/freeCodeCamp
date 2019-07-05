@@ -63,7 +63,6 @@ You will have to check if the current value is already on the array to be return
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnM/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -120,7 +119,6 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnO/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -152,7 +150,6 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnN/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -181,13 +178,11 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
     // test here
     uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CcWk/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
-*   We first use `concat()` with an empty array `<a href='http://exploringjs.com/es6/ch_maps-sets.html#_set' target='_blank' rel='nofollow'>]` as a starting point and the spread operator `...` to create an array out of the Arguments object and to flatten it at the same time
+*   We first use `concat()` with an empty array as a starting point and the spread operator `...` to create an array out of the Arguments object and to flatten it at the same time
 *   then we use the new ES2015 **Set** object to store only unique values
-*   (to learn more about Sets, read [here</a>)
 
 #### Relevant Links
 
@@ -200,6 +195,3 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

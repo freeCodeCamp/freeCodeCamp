@@ -64,7 +64,7 @@ function LinkedList() {
     if(head === null){
         head = node;
     } else {
-        currentNode = head;
+        var currentNode = head;
 
         while(currentNode.next){
             currentNode  = currentNode.next;
@@ -100,8 +100,6 @@ function LinkedList() {
 ```
 
 </div>
-
-
 
 </section>
 

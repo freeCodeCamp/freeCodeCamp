@@ -22,9 +22,3 @@ All we need to do now is check what the value of the environment variable is, wh
    }
   });
 ```
-
-
-
-
-
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/basic-node-and-express/use-the-.env-file/index.md' target='_blank' rel='nofollow'>Help our community expand these hints and guides</a>.

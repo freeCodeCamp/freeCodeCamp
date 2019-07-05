@@ -9,7 +9,15 @@ videoUrl: 'https://scrimba.com/c/cNVRWtB'
 <section id='description'>
 The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two numbers. If the number to the left is less than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.
 <strong>Examples</strong>
-<blockquote>2 &lt; 5  // true<br>'3' &lt; 7  // true<br>5 &lt; 5  // false<br>3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>
+
+```js
+2   < 5  // true
+'3' < 7  // true
+5   < 5  // false
+3   < 2  // false
+'8' < 4  // false
+```
+
 </section>
 
 ## Instructions

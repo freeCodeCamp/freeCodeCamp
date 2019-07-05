@@ -52,7 +52,7 @@ The algorithm operates on all black pixels P1 that can have eight neighbours. Th
 
 <table border="3">	
   <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>	
-  <tr><td style="text-align: center;">P8</td><td style="text-align: center;"><b>P1</b></td><td style="text-align: center;">P4</td></tr>	
+  <tr><td style="text-align: center;">P8</td><td style="text-align: center;"><strong>P1</strong></td><td style="text-align: center;">P4</td></tr>	
   <tr><td style="text-align: center;">P7</td><td style="text-align: center;">P6</td><td style="text-align: center;">P5</td></tr>	
 </table>
 
@@ -68,8 +68,8 @@ All pixels are tested and pixels satisfying all the following conditions (simult
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
     <li>$A(P1) = 1$</li>
-    <li>At least one of <b>P2, P4 and P6</b> is white</li>
-    <li>At least one of <b>P4, P6 and P8</b> is white</li>
+    <li>At least one of <strong>P2, P4 and P6</strong> is white</li>
+    <li>At least one of <strong>P4, P6 and P8</strong> is white</li>
   </ol>
 After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
 
@@ -79,8 +79,8 @@ All pixels are again tested and pixels satisfying all the following conditions a
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
     <li>$A(P1) = 1$</li>
-    <li>At least one of <b>P2, P4 and P8</b> is white</li>
-    <li>At least one of <b>P2, P6 and P8</b> is white</li>
+    <li>At least one of <strong>P2, P4 and P8</strong> is white</li>
+    <li>At least one of <strong>P2, P6 and P8</strong> is white</li>
   </ol>
 After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
 <h3>Iteration:</h3>

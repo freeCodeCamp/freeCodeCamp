@@ -39,7 +39,7 @@ const initialState = {
   userProfileFetchState: {
     ...defaultFetchState
   },
-  sessionMeta: {},
+  sessionMeta: { activeDonations: 0 },
   showDonationModal: false,
   isOnline: true
 };
@@ -167,7 +167,7 @@ export const userSelector = state => {
 export const sessionMetaSelector = state => state[ns].sessionMeta;
 export const activeDonationsSelector = state =>
   Number(sessionMetaSelector(state).activeDonations) +
-  Number(PAYPAL_SUPPORTERS);
+  Number(PAYPAL_SUPPORTERS || 0);
 
 function spreadThePayloadOnUser(state, payload) {
   return {
@@ -291,7 +291,11 @@ export const reducer = handleActions(
         error: payload
       }
     }),
-    [types.submitComplete]: (state, { payload: { id } }) => {
+    [types.submitComplete]: (state, { payload: { id, challArray } }) => {
+      let submitedchallneges = [{ id }];
+      if (challArray) {
+        submitedchallneges = challArray;
+      }
       const { appUsername } = state;
       return {
         ...state,
@@ -301,7 +305,27 @@ export const reducer = handleActions(
           [appUsername]: {
             ...state.user[appUsername],
             completedChallenges: uniqBy(
-              [...state.user[appUsername].completedChallenges, { id }],
+              [
+                ...submitedchallneges,
+                ...state.user[appUsername].completedChallenges
+              ],
+              'id'
+            )
+          }
+        }
+      };
+    },
+    [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
+      const { appUsername } = state;
+      return {
+        ...state,
+        completionCount: state.completionCount + 1,
+        user: {
+          ...state.user,
+          [appUsername]: {
+            ...state.user[appUsername],
+            completedChallenges: uniqBy(
+              [...state.user[appUsername].completedChallenges, payload],
               'id'
             )
           }

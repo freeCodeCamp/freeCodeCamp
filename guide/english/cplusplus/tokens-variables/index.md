@@ -18,7 +18,7 @@ Tokens are the smallest units of a program which are important to the compiler. 
 * Textbook definition : Variables are named memory locations whose data can be altered.
 
 * But I would like you to think of a variable to be something like a box, something like this : 
-    ![Img](https://i.imgur.com/YdbgWHL.png)
+    ![Img](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
 
 So, for example :
    I'm shifting to a new place and I need to arrange my stuff in boxes . Thus there come 2 things to my mind  **What kind of stuff will be stored in the box, so that the size off the box is known (the data type)** and **How do I identify the box ?(Naming the variable)**  
@@ -181,7 +181,7 @@ If a variable is not initialized , it contains a garbage value. For example:
 
 So in terms of boxes, you can imagine this as - 
 
-![Img](https://i.imgur.com/YdbgWHL.png)
+![Img](https://cdn-media-1.freecodecamp.org/imgr/YdbgWHL.png)
 
  ```cpp
  #include<iostream>

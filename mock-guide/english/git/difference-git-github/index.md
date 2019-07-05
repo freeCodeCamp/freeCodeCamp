@@ -5,7 +5,7 @@ title: Difference between Git and GitHub
 
 Git and GitHub are two different things. [Git](https://git-scm.com/) is the [version control system](https://en.wikipedia.org/wiki/Version_control), while [GitHub](https://github.com/) is a service for hosting Git repos and help people collaborate on writing software. However, they are often confounded because of their similar name, because of the fact that GitHub builds on top of Git, and because many websites and articles don't make the difference between them clear enough.
 
-![Git is not GitHub](https://i.imgur.com/EkjwJdr.png)
+![Git is not GitHub](https://cdn-media-1.freecodecamp.org/imgr/EkjwJdr.png)
 
 ### Git
 

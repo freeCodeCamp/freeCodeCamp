@@ -9,13 +9,21 @@ videoUrl: 'https://scrimba.com/c/cM9MmCP'
 <section id='description'>
 CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.
 For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:
-<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.larger-image {<br>&nbsp;&nbsp;&nbsp;&nbsp;width: 500px;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>
+
+```html
+<style>
+  .larger-image {
+    width: 500px;
+  }
+</style>
+```
+
 </section>
 
 ## Instructions
 <section id='instructions'>
 Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.
-<strong>Note</strong><br>Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.
+<strong>Note:</strong> Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.
 </section>
 
 ## Tests

@@ -17,16 +17,16 @@ or watch this [inspiring video from Preethi Kasireddy](https://www.youtube.com/w
 
 ## A Short History of JavaScript
 <h3>1996:</h3> 
-<p>It changed from LIVESCRIPT to JAVASCRIPT to attract developers.<br>
+<p>It changed from LiveScript to JavaScript to attract developers.<br>
     *JavaScript has nothing to do with Java.</p>
 <h3>1997:</h3> 
-<p>JAVASCRIPT was sold to ECMA and become,<br> 
-    the first version of JAVASCRIPT Language Standerd.</p>
+<p>JavaScript was sold to ECMA and become,<br> 
+    the first version of JavaScript Language Standerd.</p>
 <h3>2009:</h3> 
-    <p>ES5 (ECMASCRIPT 5) was released with lots of new features.</p>
+    <p>ES5 (ECMAScript 5) was released with lots of new features.</p>
 <h3>2015:</h3>
 <p>It changed to annual realease cycle,<br> 
-   It means JAVASCRIPT releases new Updates every year.<br>
+   It means JavaScript releases new Updates every year.<br>
    (With small feature Updates.)</p>
 <h3>2016/ 2017/18/19:</h3>
    <p>Releases of versions - ES2016/ ES2017/ ES2018/....</p>

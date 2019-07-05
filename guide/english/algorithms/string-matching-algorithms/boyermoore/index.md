@@ -27,7 +27,7 @@ __P =__ egef
 The last occurrence function can be stored as an array indexed by the numeric codes of the characters. This function can be calculated in O(m+s) time where m is the length of the pattern and s the size of the alphabet.
 
 ### Code of Boyer-Moore Algorithm in C++
-```c++
+```cpp
 #include<iostream>
 #define MAXCHAR 256 //there are 256 ASCII characters
 using namespace std;

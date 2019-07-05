@@ -2,6 +2,7 @@
 title: Operators
 ---
 # Operators in C
+Operators in C specifies the Mathematical, Conditional and Logical Operations to be Performed. Operators can be used with varibles and constants to form an expression.
 
 ## 1. Arithmetic Operators
 
@@ -49,13 +50,14 @@ title: Operators
      int c = --a; // prefix operator; a = 5, c = 5
      ```
 
- C Program to demonstrate the working of arithmetic operators
+ - C Program to demonstrate the working of arithmetic operators
 ```C
 #include <stdio.h>
+
 int main()
 {
-    int a = 9,b = 4, c;
-
+    int a = 9, b = 4, c;
+    
     c = a+b;
     printf("a+b = %d \n",c);
 
@@ -161,7 +163,7 @@ int main()
   RESULT = 00110
   ```
 
-## 5. Assignment Operators
+## 5. Assignment Operators: Assigns a value to given variable.
 - `=`
   ```C
   int a = 7; // 'a' is going to be equal to 7
@@ -251,6 +253,27 @@ evaluated first.
 - Conditional `?:`
 - Assignment `= += -= *= /= %= >>= <<= &= ^= |=`
 - Comma `,`
+
+## Note:
+We can use & operator for checking whether a given number is even or odd more quickly than regular way.
+### Example
+```C
+#include<stdio.h>
+int main()
+{
+    int a=25;
+    if(a&1)
+    printf("Odd");
+    else
+    printf("Even");
+    return 0;
+}
+```
+## Output
+```
+-> Odd
+```
+The value of (a & 1) will be a non zero element only when a is odd, and 0 if it is even.
 
 ## 7. Conditional Operators
 

@@ -9,7 +9,7 @@ Some of the main features found in Laravel are different ways for accessing rela
 
 Because Laravel is open-source, the community around it is very strong and the documentation is top-notch and example driven. Take a look at the [official documentation](https://laravel.com/docs/5.7/) to get a glimpse of how easy it is to use!
 
-Laravel also has its own online learning platform, [Laracasts](https://laracasts.com/), which offers extensive video tutorials  (some free, some available with paid subscription) on Laravel as well as PHP, Javascript, and other web development topics. The free introductory series [Laravel 5.4 From Scratch](https://laracasts.com/series/laravel-from-scratch-2017) is a great place to start.
+Laravel also has its own online learning platform, [Laracasts](https://laracasts.com/), which offers extensive video tutorials  (some free, some available with paid subscription) on Laravel as well as PHP, JavaScript, and other web development topics. The free introductory series [Laravel 5.4 From Scratch](https://laracasts.com/series/laravel-from-scratch-2017) is a great place to start.
 
 ## Featured Packages
 Ready-to-use bundles provided by Laravel through Composer and Packagist include the following:
@@ -72,7 +72,7 @@ Laravel utilizes [Composer](https://getcomposer.org/) to manage its dependencies
 #### Via Laravel Installer
 First, download the Laravel installer using Composer:
 
-```sh
+```shell
 > composer global require laravel/installer
 ```
 
@@ -83,21 +83,21 @@ Make sure to place composer's system-wide vendor bin directory in your `$PATH` v
 
 Once installed, the laravel `new` command will create a fresh Laravel installation in the directory you specify. For instance, laravel new blog will create a directory named blog containing a fresh Laravel installation with all of Laravel's dependencies already installed:
 
-```sh
+```shell
 > laravel new blog
 ```
 
 #### Via Composer Create-Project
 Alternatively, you may also install Laravel by issuing the Composer create-project command in your terminal:
 
-```sh
+```shell
 > composer create-project --prefer-dist laravel/laravel blog
 ```
 
 Local Development Server
 If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the Artisan `serve` command. This command will start a development server at `http://localhost:8000`:
 
-```sh
+```shell
 > php artisan serve
 ```
 

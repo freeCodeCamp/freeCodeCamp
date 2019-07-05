@@ -5,7 +5,7 @@ title: Why React
 # Why React.js?
 
 ## Simplicity
-React.js is not a full fledged Javascript framework like Angular.js or other popular frontend frameworks. Instead, React.js is a JavaScript library that acts as the 'V' in MVC (Model View Controller). It is simply a view engine that can be dropped in and used with a plethora of other tools for the data and model part of MVC (most popularly Redux and Node.js).
+React.js is not a full fledged JavaScript framework like Angular.js or other popular frontend frameworks. Instead, React.js is a JavaScript library that acts as the 'V' in MVC (Model View Controller). It is simply a view engine that can be dropped in and used with a plethora of other tools for the data and model part of MVC (most popularly Redux and Node.js).
 
 ## Reusability
 React allows you to create reusable components that you can modify with props. This gives a lot of flexibility in development and speeds it up by huge margins. 

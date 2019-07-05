@@ -20,7 +20,7 @@ The comment syntax in CSS works for both single and multi-line comments. You can
 By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future for you or another developer. 
 It’s good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand for someone who didn't write the code. 
 
-You can also make your comments more readable by stylizing it.  
+You can also make your comments more readable by stylizing them.  
 
 ```css
 /*
@@ -30,17 +30,17 @@ You can also make your comments more readable by stylizing it.
 * A paragraph where I give information
 * about everything that someone who reads the code
 * but didn't write it would need to know.
-* The asterisk around the paragraph makes it more readable.
+* The asterisks around the paragraph make it more readable.
 ***
 */
 ```
 
-You can add as many comments to your stylesheet as you like. It’s good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand from a cursory glance. Comments are especially important when working in a team, when your code must be understood by others. By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future.
+You can add as many comments to your stylesheet as you like. It’s good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand from a cursory glance. Comments are especially important when working in a team, when your code must be understood by others. Using CSS comments makes your stylesheets more readable, so that the CSS will be easier to maintain in the future.
 
 ## Comment Formats
 
-Comments should be used everyday in your CSS to keep in maintainable and readable by any dev who dives into said CSS.
-Here are a few exmples to get you started of CSS comments you can use in your daily work to make your life that bit easier.
+Comments should be used every day in your CSS to keep it maintainable and readable by any dev who dives into said CSS.
+Here are a few examples to get you started. These are CSS comments you can use in your daily work to make your life a bit easier.
 
 ```css
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -7,9 +7,9 @@ title: What Is Python Used for
 Python can easily be used for small, large, online and offline projects. The best options for utilizing Python are web development, simple scripting and data analysis.
 Below are a few examples of what Python will let you do:
 
-### Web Development:
-You can use Python to create web applications on many levels of complexity. There are many excellent Python web frameworks, including Pyramid, Django and Flask, to name a few.
-
+##### Web Development:
+You can use Python to create web applications on many levels of complexity. There are many excellent Python web frameworks, including <a href='https://trypyramid.com/' target='_blank' rel='nofollow'>Pyramid</a>, <a href='https://www.djangoproject.com/' target='_blank' rel='nofollow'>Django</a> and <a href='http://flask.pocoo.org/' target='_blank' rel='nofollow'>Flask</a>, to name
+a few.
 
 ### Data Science / Analysis:
 
@@ -24,47 +24,42 @@ executed from the terminal. Python can also be used to create bots which automat
 Python is also used extensively in the growing field of Artificial Intelligence (AI). Google selected Python to be one of the first well-supported programming languages
 for training and interacting with models using Tensorflow.
 
-### Mobile app development:
+##### Mobile app development:
 Mobile apps and games can be created with python using Kivy, Pygame and PyQt.
 
-
-### Security And Networking:
-Python is used to build Networking tools and security-tools that are widely used. Python's remote automation is the most secured, fast and efficient for cloud-testing
-of frameworks, that's why professional developers use python for making most secured frameworks and for socket-programmings.
+##### Security And Networking:
+Python is used to build Networking tools and security-tools that are widely used. Python's remote automation is the most secured, fast and efficient for cloud-testing of frameworks, that's why professional developers use python for making most secured frameworks and for socket-programmings.
 
 ### Machine Learning, Deep Learning:
 Python is one of the best languages suited for machine learning, deep learning and data analytics with a stronghold in all of them.
 
 There are specialized languages best suited for various role such as R and MATLAB but when it comes to overlapping fields of applications python is favoured due to its flexibility, rapid prototyping and availability of libraries.
 
-### Telegram Bots Development
+##### Telegram Bots Development
 You can use Python and some Python-libraries for developing your own <a href='https://core.telegram.org/bots' target="_blank" rel="nofollow">Telegram Bots</a>
 
-### Discord Bots Development
+##### Discord Bots Development
 You can use Python and some Python-libraries for developing <a href='https://github.com/discord-python/hacktoberbot' target="_blank" rel="nofollow">Discord Bots</a>
 
-#### Data Gathering by crawling and scraping
+##### Data Gathering by crawling and scraping
 Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick!
-
-### More Information:
-Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>link</a> to a section of the official Python website describing its various applications.
 
 ### Python is generally used for 
 
 * Web & Internet Development
 * Educational Advancment
 * Scientific Studies/Computing
-* Desktop development
+* Desktop Development
 * Numeric Computing
-* Software development
-* Business Application development
+* Software Development
+* Business Application Development
 * Machine Learning
 * IOT
 * Game Development
 * Rapid Prototyping
 * Browser Automation
-* Data analysis
-* Scraping data from websites
+* Data Analysis
+* Scraping Data from Websites
 * Image Processing
 
 ### Why python has such a wide range of usage?
@@ -83,8 +78,3 @@ These things add to the popularity of Python in various communities.
 * <a href='https://stackoverflow.com/questions/3043085/where-is-python-language-used' target='_blank' rel='nofollow'>Where is the Python Language Used?</a>
 * <a href='https://stackoverflow.com/questions/1909512/what-is-python-used-for' target='_blank' rel='nofollow'>What is Python used for?</a>
 * <a href='https://pythonprogramming.net/data-analysis-tutorials/' target='_blank' rel='nofollow'>Data Analysis using python with examples and tutorials.</a>
-
-
-The official package index for python is <a href='https://pypi.python.org/pypi' target='_blank' rel='nofollow'>here</a>.
-
-[training and interacting with models]: https://stackoverflow.com/questions/35677724/tensorflow-why-was-python-the-chosen-language

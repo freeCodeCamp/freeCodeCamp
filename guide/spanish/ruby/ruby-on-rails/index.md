@@ -97,7 +97,7 @@ $ rails s
 | test / | Pruebas unitarias, accesorios, y otros aparatos de prueba. Estos están cubiertos en las aplicaciones de prueba de rieles. |  
 | tmp / | Archivos temporales (como caché y archivos pid). |  
 | vendor / | Un lugar para todos los códigos de terceros. En una aplicación típica de Rails esto incluye gemas vendidas. |  
-| .gitignore | Este archivo le dice a git qué archivos (o patrones) debe ignorar. Consulte Github - Ignorar archivos para obtener más información sobre ignorar archivos. |
+| .gitignore | Este archivo le dice a git qué archivos (o patrones) debe ignorar. Consulte GitHub - Ignorar archivos para obtener más información sobre ignorar archivos. |
 
 Un gran lugar para comenzar con este marco impresionante es leer su [página de Introducción](http://guides.rubyonrails.org/getting_started.html) .
 

@@ -10,8 +10,9 @@ localeTitle: الرياضيات ماكس
 
 ### بناء الجملة
 
- `Math.max(value1, value2, value3, ...); 
-` 
+```js
+Math.max(value1, value2, value3, ...);
+``` 
 
 ### المعلمات
 
@@ -25,27 +26,31 @@ localeTitle: الرياضيات ماكس
 
 _الأرقام كمعلمات_
 
- `Math.max(4, 13, 27, 0, -5); // returns 27 
-` 
+```js
+Math.max(4, 13, 27, 0, -5); // returns 27
+``` 
 
 _معلمة غير صالحة_
 
- `Math.max(4, 13, 27, 'eight', -5); // returns NaN 
-` 
+```js
+Math.max(4, 13, 27, 'eight', -5); // returns NaN
+``` 
 
 _صفيف كمعلمة ، استخدام السبريد (…)_
 
- `let numbers = [4, 13, 27, 0, -5]; 
- 
- Math.max(...numbers); // returns 27 
-` 
+```js
+let numbers = [4, 13, 27, 0, -5];
+
+Math.max(...numbers); // returns 27
+``` 
 
 _صفيف كمعلمة ، باستخدام تطبيق_
 
- `let numbers = [4, 13, 27, 0, -5]; 
- 
- Math.max.apply(null, numbers); // returns 27 
-` 
+```js
+let numbers = [4, 13, 27, 0, -5];
+
+Math.max.apply(null, numbers); // returns 27
+``` 
 
 #### معلومات اكثر:
 

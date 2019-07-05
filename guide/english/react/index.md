@@ -242,7 +242,7 @@ So let’s do a quick recap. In your head tag you grabbed the script tags for Re
 You then located the position within the DOM that you wanted to insert your React by creating an element `<div>` with the id of “app”.
 Next, you created a script tag to input your React code. You used ReactDOM.render() method that takes two arguments. The “what” of the React content, in this case your JSX, and the second argument is the “where” that you want to insert the React content into the DOM. In this case it is the location with the id of “app”.
 
-As an alternative to JSX, you can use ES6 and Javascript's compiler like Babel. [https://babeljs.io/](https://babeljs.io/)
+As an alternative to JSX, you can use ES6 and JavaScript's compiler like Babel. [https://babeljs.io/](https://babeljs.io/)
 
 ### More Information:
 

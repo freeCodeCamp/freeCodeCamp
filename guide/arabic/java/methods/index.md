@@ -41,14 +41,15 @@ localeTitle: الأساليب 'Methods'
 
 يمكن تمرير المعلمات في الأساليب. المعلمات معلنة فقط بعد اسم الأسلوب ، داخل الأقواس. بناء الجملة لإعلان المعلمة هو \[نوع البيانات\] \[الاسم\].
 
- `public class Car { 
-    private String name; 
- 
-    public void changeName(String newName) { 
-        name = newName; 
-    } 
- } 
-` 
+```java
+public class Car {
+    private String name;
+
+    public void changeName(String newName) {
+        name = newName;
+    }
+}
+``` 
 
 كما هو الحال مع أي لغة أخرى ، يتم استخدام الأساليب (أو الوظائف ، إذا كنت هنا من JS world) في كثير من الأحيان من حيث النمطية والقابلية لإعادة الاستخدام.
 

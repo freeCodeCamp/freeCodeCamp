@@ -1,11 +1,13 @@
 /* global expect */
 import React from 'react';
-import { render } from 'react-testing-library';
+import { render, cleanup } from '@testing-library/react';
 import 'jest-dom/extend-expect';
 
 import Loader from './Loader';
 
 describe('<Loader />', () => {
+  afterEach(cleanup);
+
   it('renders to the DOM', () => {
     const { container } = render(<Loader />);
     expect(container).toBeTruthy();

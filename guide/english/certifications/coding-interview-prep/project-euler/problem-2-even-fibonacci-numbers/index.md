@@ -48,6 +48,6 @@ function fiboEvenSum(n){
   return sumEven;
 }
 ```
-- [Run Code](https://repl.it/@scissorsneedfoo/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
+
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
