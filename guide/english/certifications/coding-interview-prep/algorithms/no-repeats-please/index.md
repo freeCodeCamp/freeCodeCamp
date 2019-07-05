@@ -97,11 +97,11 @@ A way to visualize this is by considering a tree that starts with the first char
     function permAlone(str) {
 
       // Create a regex to match repeated consecutive characters.
-      var regex = /(.)\1+/g;
+      var regex = /(.)\1+/;
 
       // Split the string into an array of characters.
       var arr = str.split('');
-      var permutations = <a href='https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:"' target='_blank' rel='nofollow'>];
+      var permutations = [];
       var tmp;
 
       // Return 0 if str contains same character.
