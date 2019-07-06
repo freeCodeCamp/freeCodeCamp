@@ -3,7 +3,7 @@ title: sapply() Function
 ---
 ## sapply() Function
 
-The `sapply()` function is part of a family of `apply()` functions that aide in manipulating data. It takes 2 or more parameters and it returns a vector or matrix. The first parameter could be a vector or a data frame. The second parameter is usually a function you want to use along the elemnts of columns of the first parameter. 
+The `sapply()` function is part of a family of `apply()` functions that aide in manipulating data. It takes 2 or more parameters and it returns a vector or matrix. The first parameter could be a vector or a data frame. The second parameter is usually a function you want to use along the elements of columns of the first parameter. 
 
 You can use sapply to get the max of every column in a data frame as a vector.
 
