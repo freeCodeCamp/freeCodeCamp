@@ -24,55 +24,57 @@ localeTitle: إنشاء فئة مكدس
 
 #### الأساسية:
 
- `function Stack() { 
-    var collection = []; 
-    this.print = function() { 
-        console.log(collection); 
-    }; 
-    this.push = function(val){ 
-        return collection.push(val); 
-    } 
-    this.pop = function(){ 
-        return collection.pop(); 
-    } 
-    this.peek = function(){ 
-        return collection[collection.length-1]; 
-    } 
-    this.isEmpty = function(){ 
-        return collection.length === 0; 
-    } 
-    this.clear = function(){ 
-        collection.length = 0; 
-    } 
- } 
-` 
+```js
+function Stack() {
+    var collection = [];
+    this.print = function() {
+        console.log(collection);
+    };
+    this.push = function(val){
+        return collection.push(val);
+    }
+    this.pop = function(){
+        return collection.pop();
+    }
+    this.peek = function(){
+        return collection[collection.length-1];
+    }
+    this.isEmpty = function(){
+        return collection.length === 0;
+    }
+    this.clear = function(){
+        collection.length = 0;
+    }
+}
+``` 
 
 #### متقدم - بنية ES6 Class:
 
- `class Stack { 
-    constructor() { 
-        this.collection = []; 
-    } 
-    print(){ 
-        console.log(this.collection); 
-    } 
-    push(val){ 
-        retiurn this.collection.push(val); 
-    } 
-    pop(){ 
-        return this.collection.pop(); 
-    } 
-    peek(){ 
-        return this.collection[this.collection.length-1]; 
-    } 
-    isEmpty(){ 
-        return this.collection.length === 0; 
-    } 
-    clear(){ 
-        return this.collection.length = 0; 
-    } 
- } 
-` 
+```js
+class Stack {
+    constructor() {
+        this.collection = [];
+    }
+    print(){
+        console.log(this.collection);
+    }
+    push(val){
+        retiurn this.collection.push(val);
+    }
+    pop(){
+        return this.collection.pop();
+    }
+    peek(){
+        return this.collection[this.collection.length-1];
+    }
+    isEmpty(){
+        return this.collection.length === 0;
+    }
+    clear(){
+        return this.collection.length = 0;
+    }
+}
+``` 
 
 \### مصادر:
 

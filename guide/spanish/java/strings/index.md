@@ -1,8 +1,8 @@
 ---
 title: Strings
-localeTitle: Cadenas de Caracteres
+localeTitle: Cadena de caracteres
 ---
-# Cadenas de Caracteres
+# Cadena de caracteres
 
 Las cadenas son secuencias de caracteres. En Java, una `String` es un `Object`. Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
 
@@ -17,7 +17,6 @@ true
 ```
 
 Puede crear un objeto de cadena de las siguientes maneras:
-
 1.  `String str = "Soy un String"; //es un literal de String`
 2.  `String str = "Soy un " + "String"; //es una expresion constante`
 3.  `String str = new String("Soy un String"); //es un Objeto String creado con el constructor`
@@ -43,8 +42,8 @@ Puede probar esto usando la comparación de objetos rápida `==` y los `equals()
 
 ```java
 System.out.println(str == str2); // Devuelve 'true' 
- System.out.println(str == str3); // Devuelve 'false' 
- System.out.println(str.equals(str3)); // Devuelve 'true' 
+System.out.println(str == str3); // Devuelve 'false' 
+System.out.println(str.equals(str3)); // Devuelve 'true' 
 ```
 
 Aquí hay otro ejemplo sobre cómo crear una cadena en Java usando los diferentes métodos:
@@ -78,8 +77,8 @@ Devuelve true si dos objetos son iguales en contenido y false de lo contrario.
 String str = "Hola Mundo"; 
  String str2 = "Hola Mundo"; 
  
- System.out.println(str == str2); // This prints false 
- System.out.println(str.equals(str2); // This prints true 
+ System.out.println(str == str2); // Esto impreme falso 
+ System.out.println(str.equals(str2); // Esto impreme  cierto 
 ```
 
 La primera comparación es falsa porque "==" mira las referencias del objeto y nunca son lo mismo a menos que sea el mismo objeto.
@@ -114,7 +113,7 @@ Longitud de la cuerda
 La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es la longitud 2 y "Hello" es la longitud 5. El método length () en una cadena devuelve su longitud, de esta manera:
 
 ```java
- String a = "Hello"; 
+String a = "Hello"; 
  int len = a.length();  // len es 5 
 ```
 
@@ -137,5 +136,4 @@ La "longitud" de una cadena es solo el número de caracteres que contiene. Así 
  System.out.println(a.compareTo(b));       // 0 
  System.out.prinltn(a.compareTo(c));       // 1 ya que (a>b) 
  System.out.println(c.compareTo(a));       // -1 ya que (c<a) 
-
 ```

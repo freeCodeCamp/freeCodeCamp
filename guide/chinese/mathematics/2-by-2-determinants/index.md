@@ -16,7 +16,7 @@ localeTitle: 2乘2的决定因素
 
 行列式的绝对值等于平行四边形的面积。
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [这](https://i.stack.imgur.com/gCaz3.png)是一个有趣的视觉证明这个属性。
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [这](https://cdn-media-1.freecodecamp.org/imgr/gCaz3.png)是一个有趣的视觉证明这个属性。
 
 注意：如果行列式等于零，则系统没有解（交叉点）（也就是线是平行的）。
 

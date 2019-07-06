@@ -16,15 +16,9 @@ All we need to do now is check what the value of the environment variable is, wh
 
 ```javascript
    if (process.env.VAR_NAME === "allCaps") {
-    resonse = "Hello World".toUpperCase();
+    response = "Hello World".toUpperCase();
    } else {
     response = "Hello World";
    }
   });
 ```
-
-
-
-
-
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/basic-node-and-express/use-the-.env-file/index.md' target='_blank' rel='nofollow'>Help our community expand these hints and guides</a>.

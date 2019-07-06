@@ -12,11 +12,12 @@ localeTitle: ادراج ملف محلي
 
 ### الدفاع عن موقع الويب الخاص بك من هجمات تضمين الملف المحلي في PHP
 
- `<?php 
- if(basename($_GET['file]) !== $_GET['file']) { 
-  die('INVALID FILE REQUESTED'); 
- } 
-` 
+```PHP
+<?php
+if(basename($_GET['file]) !== $_GET['file']) {
+  die('INVALID FILE REQUESTED');
+}
+``` 
 
 #### معلومات اكثر:
 

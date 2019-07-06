@@ -8,17 +8,18 @@ localeTitle: تبديل العبارات
 
 ### بناء الجملة:
 
- `switch(x) { 
-  case 1: 
-    statement1; 
-    break; 
-   case 2: 
-     statement2; 
-     break; 
-   default: 
-     defaultstatement; 
- } 
-` 
+```PHP
+switch(x) {
+  case 1:
+    statement1;
+    break;
+   case 2:
+     statement2;
+     break;
+   default:
+     defaultstatement;
+}
+``` 
 
 في المثال أعلاه ، x هي الشرط. سيتم تنفيذ التصريحات التالية للحالة التي تطابق. إذا لم تكن هناك تطابقات ، فسيتم تشغيل العبارة (الألفاظ الافتراضية).
 

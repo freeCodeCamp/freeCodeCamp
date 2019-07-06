@@ -10,12 +10,13 @@ localeTitle: Array.prototype.fill
 
 \`\` \`جافا سكريبت arr.fill (القيمة) arr.fill (القيمة ، البدء) arr.fill (القيمة ، البداية ، النهاية)
 
- `The fill method takes up to three arguments value, start and end. The start and end arguments are optional with default values of 0 and the length of the this object. 
- 
- The fill method is a mutable method, it will change this object itself, and return it, not just return a copy of it. 
- 
- ## Examples 
-` 
+```
+The fill method takes up to three arguments value, start and end. The start and end arguments are optional with default values of 0 and the length of the this object.
+
+The fill method is a mutable method, it will change this object itself, and return it, not just return a copy of it.
+
+## Examples
+``` 
 
 جافا سكريبت \[1 ، 2 ، 3\] .Fill (4) ؛ // \[4، 4، 4\] \[1 ، 2 ، 3\] .Fill (4 ، 1) ؛ // \[1 ، 4 ، 4\]
 

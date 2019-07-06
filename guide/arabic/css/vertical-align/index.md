@@ -8,10 +8,11 @@ localeTitle: عمودي محاذاة CSS
 
 على سبيل المثال ، يمكنك أن تكون `vertical-align` مثل هذه لمحاذاة صورة:
 
- `img { 
-    vertical-align: top; 
- } 
-` 
+```
+img {
+    vertical-align: top;
+}
+``` 
 
 هذه هي القيم الصالحة `vertical-align` :
 

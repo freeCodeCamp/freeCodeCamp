@@ -14,19 +14,21 @@ localeTitle: بناء الجملة الأساسي
 
 # أول صفحة PHP
 
- `The output of that would be : 
-` 
+```
+The output of that would be :
+``` 
 
 أول صفحة PHP
 
 مرحبا بالعالم!
 
- `#### Note: PHP statements end with a semicolon (;). 
- 
- # Comments in PHP 
- 
- PHP supports several ways of commenting: 
-` 
+```
+#### Note: PHP statements end with a semicolon (;).
+
+# Comments in PHP
+
+PHP supports several ways of commenting:
+``` 
 
  `# PHP Case Sensitivity 
  
@@ -35,9 +37,10 @@ localeTitle: بناء الجملة الأساسي
  In the example below, all three echo statements below are legal (and equal): 
 ` 
 
- `### However; all variable names are case-sensitive. 
- 
- In the example below, only the first statement will display the value of the $color variable (this is because $color, $COLOR, and $coLOR are treated as three different variables): 
-` 
+```
+### However; all variable names are case-sensitive.
+
+In the example below, only the first statement will display the value of the $color variable (this is because $color, $COLOR, and $coLOR are treated as three different variables):
+``` 
 
 \`\` \`\`
