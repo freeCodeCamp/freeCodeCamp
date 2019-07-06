@@ -1,5 +1,6 @@
 ---
-title: Função sapply()
+title: sapply() Function
+localeTitle: Função sapply()
 ---
 ## Função sapply()
 
