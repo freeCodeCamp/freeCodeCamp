@@ -16,12 +16,12 @@ myPromise.catch(error => {
 
 <code>error</code> is the argument passed in to the <code>reject</code> method.
 
-<strong>Note:</strong> the <code>then</code> and <code>catch</code> methods can be chained to the promise declaration if you chose.
+<strong>Note:</strong> the <code>then</code> and <code>catch</code> methods can be chained to the promise declaration if you choose.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Add the <code>catch</code> method to your promise. Use <code>error</code> as the argument of its callback function and log <code>error</code> to the console.
+Add the <code>catch</code> method to your promise. Use <code>error</code> as the parameter of its callback function and log <code>error</code> to the console.
 </section>
 
 ## Tests
