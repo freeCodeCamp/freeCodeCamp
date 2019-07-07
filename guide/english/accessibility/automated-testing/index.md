@@ -13,6 +13,6 @@ This depends on the tool you are using, and the language or framework that your 
 
 
 #### More Information:
-[W3C List of Web Accessibility Tools](https://www.w3.org/WAI/ER/tools/)
-[W3C Guide to Selecting Accessibility Tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/)
-[Comparing 3 Top Automated Accessibility Tools](https://medium.com/myplanet-musings/comparing-3-top-automated-accessibility-testing-tools-wave-tenon-io-and-google-lighthouse-d3897d7bb311)
+[W3C List of Web Accessibility Tools](https://www.w3.org/WAI/ER/tools/)  
+[W3C Guide to Selecting Accessibility Tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/)  
+[Comparing 3 Top Automated Accessibility Tools](https://medium.com/myplanet-musings/comparing-3-top-automated-accessibility-testing-tools-wave-tenon-io-and-google-lighthouse-d3897d7bb311)  
