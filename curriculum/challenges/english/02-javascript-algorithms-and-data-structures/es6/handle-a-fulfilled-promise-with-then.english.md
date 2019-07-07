@@ -19,7 +19,7 @@ myPromise.then(result => {
 
 ## Instructions
 <section id='instructions'>
-Add the <code>then</code> method to your promise. Use <code>result</code> as the argument of its callback function and log <code>result</code> to the console.
+Add the <code>then</code> method to your promise. Use <code>result</code> as the parameter of its callback function and log <code>result</code> to the console.
 </section>
 
 ## Tests
