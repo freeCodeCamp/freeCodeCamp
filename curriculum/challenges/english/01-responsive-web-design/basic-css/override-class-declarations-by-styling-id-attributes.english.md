@@ -18,8 +18,14 @@ Give your <code>h1</code> element the <code>id</code> attribute of <code>orange-
 <code>&#60;h1 id="orange-text"&#62;</code>
 Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element.
 Create a CSS declaration for your <code>orange-text</code> id in your <code>style</code> element. Here's an example of what this looks like:
-<blockquote>#brown-text {<br>&nbsp;&nbsp;color: brown;<br>}</blockquote>
-Note: It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
+
+```css
+#brown-text {
+  color: brown;
+}
+```
+
+<strong>Note:</strong> It doesn't matter whether you declare this CSS above or below pink-text class, since id attribute will always take precedence.
 </section>
 
 ## Tests
@@ -77,7 +83,23 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+  .blue-text {
+    color: blue;
+  }
+  #orange-text {
+    color: orange;
+  }  
+</style>
+<h1 id="orange-text"  class="pink-text blue-text">Hello World!</h1>
 ```
 </section>

@@ -49,7 +49,6 @@ localeTitle: أكبر منتج متناظر
  } 
 ` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Problem-4-Largest-palindrome-product)
 
 ### المراجع:
 

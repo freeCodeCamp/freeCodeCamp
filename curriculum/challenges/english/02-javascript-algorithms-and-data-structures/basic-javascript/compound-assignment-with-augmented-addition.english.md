@@ -2,6 +2,7 @@
 id: 56533eb9ac21ba0edf2244af
 title: Compound Assignment With Augmented Addition
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cDR6LCb'
 ---
 
 ## Description
@@ -10,7 +11,13 @@ In programming, it is common to use assignments to modify the contents of a vari
 <code>myVar = myVar + 5;</code>
 to add <code>5</code> to <code>myVar</code>. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
 One such operator is the <code>+=</code> operator.
-<blockquote>var myVar = 1;<br>myVar += 5;<br>console.log(myVar); // Returns 6</blockquote>
+
+```js
+var myVar = 1;
+myVar += 5;
+console.log(myVar); // Returns 6
+```
+
 </section>
 
 ## Instructions

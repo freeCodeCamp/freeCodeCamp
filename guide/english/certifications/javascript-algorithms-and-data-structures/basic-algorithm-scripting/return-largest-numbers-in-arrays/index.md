@@ -52,7 +52,6 @@ Pay close attention to the timing of the storing of variables when working with 
       return results;
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/734' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -80,7 +79,6 @@ Pay close attention to the timing of the storing of variables when working with 
       });
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/733' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -103,7 +101,6 @@ Pay close attention to the timing of the storing of variables when working with 
       return arr.map(Function.apply.bind(Math.max, null));
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/17' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -146,6 +143,3 @@ Here we're passing `null` as the _context_ of the `Function.prototype.apply` met
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

@@ -6,87 +6,118 @@ localeTitle: Aguarda promesas
 
 Los [operadores](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators) `async` / `await` facilitan la implementación de muchas promesas async. También permiten que los ingenieros escriban códigos más claros, concisos y verificables.
 
-Para comprender este tema, debe tener una comprensión sólida de cómo funcionan las [promesas](https://guide.freecodecamp.org/javascript/promises) .
+Para comprender este tema, debes tener una comprensión sólida de cómo funcionan las [promesas](https://guide.freecodecamp.org/javascript/promises) .
 
 * * *
 
 ## Sintaxis basica
 
-\`\` \`javascript function slowlyResolvedPromiseFunc (cadena) { devolver nueva Promesa (resolver => { setTimeout (() => { resolver (cadena); }, 5000); }); }
+```javascript 
 
-función asíncrona doIt () { const myPromise = aguardan slowResolvedPromiseFunc ("foo"); console.log (myPromise); // "foo" }
+function slowlyResolvedPromiseFunc(string) { 
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(string);
+    }, 5000);
+  });
+}
 
-hazlo();
+async function doIt() {
+  const myPromise = await slowlyResolvedPromiseFunc("foo");
+  console.log(myPromise); // "foo"
+}
+
+doIt();
 ```
-There are a few things to note: 
- 
- * The function that encompasses the `await` declaration must include the `async` operator. This will tell the JS interpreter that it must wait until the Promise is resolved or rejected. 
- * The `await` operator must be inline, during the const declaration. 
- * This works for `reject` as well as `resolve`. 
+Hay algunas cosas a tener en cuenta:
+
+ * La function que abarca la declaración de  `await`  debe incluir el operador  `async`. Esto le dirá al intérprete de JS que debe esperar hasta que la Promesa se resuelva o rechace.
+ * El operador `await` debe estar dentro de linea, durante la declaración de const.
+ * Esto funciona para `reject` tan bien como para `resolve`. 
  
  --- 
  
- ## Nested Promises vs. `Async` / `Await` 
+ ## Promesas Anidadas vs. `Async` / `Await` 
  
- Implementing a single Promise is pretty straightforward. In contrast, Chained Promises or the creation of a dependency pattern may produce "spaghetti code". 
+ Implementar una sola promesa es bastante sencillo. En contraste, promesas encadenadas o la creación de un patrón de dependencia puede producir "código spaguetti".
  
- The following examples assume that the <a href='https://github.com/request/request-promise' target='_blank' rel='nofollow'>`request-promise`</a> library is available as `rp`. 
+ Los siguientes ejemplos asumen que la libreria <a href='https://github.com/request/request-promise' target='_blank' rel='nofollow'>`request-promise`</a> está disponible como `rp`. 
  
- ### Chained/Nested Promises 
-```
+ ### Promesas Encadenadas/Anidadas 
+ 
+```javascript
 
-javascript // Primera promesa const fooPromise = rp ("http://domain.com/foo");
+// Primera promesa const fooPromise = rp ("http://domain.com/foo");
 
-fooPromise.then (resultFoo => { // Debe esperar a que "foo" se resuelva console.log (resultFoo);
-```
-const barPromise = rp("http://domain.com/bar"); 
- const bazPromise = rp("http://domain.com/baz"); 
- 
- return Promise.all([barPromise, bazPromise]); 
-```
+fooPromise.then (resultFoo => { 
+   // Debe esperar a que "foo" se resuelva 
+   console.log (resultFoo);
+   
+   const barPromise = rp("http://domain.com/bar"); 
+   const bazPromise = rp("http://domain.com/baz"); 
+   return Promise.all([barPromise, bazPromise]); 
 
-}). entonces (resultArr => { // Manejar resoluciones "bar" y "baz" aquí console.log (resultArr \[0\]); console.log (resultArr \[1\]); });
+}). then (resultArr => { 
+   // Maneja las resoluciones "bar" y "baz" aquí 
+   console.log (resultArr \[0\]); 
+   console.log (resultArr \[1\]); });
+   
 ```
 ### `async` and `await` Promises 
-```
 
-javascript // Envolver todo en una función asíncrona función asíncrona doItAll () { // Agarra los datos del punto final "foo", pero espera la resolución console.log (aguarda rp ("http://domain.com/foo"));
-```
-// Concurrently kick off the next two async calls, 
- // don't wait for "bar" to kick off "baz" 
- const barPromise = rp("http://domain.com/bar"); 
- const bazPromise = rp("http://domain.com/baz"); 
- 
- // After both are concurrently kicked off, wait for both 
- const barResponse = await barPromise; 
- const bazResponse = await bazPromise; 
- 
- console.log(barResponse); 
- console.log(bazResponse); 
-```
 
+```javascript 
+
+// Envolver todo en una función asíncrona 
+
+async function doItAll () {
+   // Agarra los datos del endpoint "foo", pero espera la resolución 
+   console.log (await rp ("http://domain.com/foo"));
+   
+   // Iniciar al mismo tiempo las siguientes dos llamadas async
+   // No esperes a que "bar" llame a "baz"
+
+   const barPromise = rp("http://domain.com/bar"); 
+   const bazPromise = rp("http://domain.com/baz"); 
+ 
+   // Después de que ambas estén comenzadas, espera por ambas 
+   const barResponse = await barPromise; 
+   const bazResponse = await bazPromise; 
+ 
+   console.log(barResponse); 
+   console.log(bazResponse); 
 }
 
 // Finalmente, invocar la función asíncrona. doItAll (). then (() => console.log ('Done!'));
 ```
-The advantages of using `async` and `await` should be clear. This code is more readable, modular, and testable. 
+Las ventajas de usar `async` y `await` deben ser claras. Este código es más redactable, modular, y testeable.
  
- It's fair to note that even though there is an added sense of concurrency, the underlying computational process is the same as the previous example. 
+Es justo tener en cuenta que a pesar de que hay un sentido adicional de concurrencia, el proceso computacional subyacente es el mismo que el del ejemplo anterior. 
  
  --- 
  
- ## Handling Errors / Rejection 
+ ## Manejando Errors / Rejection 
  
- A basic try-catch block handles a rejected Promise. 
+ 
+ Un bloque try-catch básico maneja una promesa rechazada.
+ 
+```javascript 
+
+async function errorExample () { 
+
+   try {
+      const rejectedPromise = await Promise.reject ("Oh-oh!"); 
+   } catch (error) { 
+      console.log (error); // "¡UH oh!" 
+   } 
+}
+
+errorExample (); 
 ```
-
-javascript función asíncrona errorExample () { tratar { const rejectedPromise = aguarda Promise.reject ("Oh-oh!"); } captura (error) { console.log (error); // "¡UH oh!" } }
-
-errorExample (); \`\` \`
 
 * * *
 
 #### Más información:
 
-*   `await` operador [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
-*   `async` Function Operator [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function)
+*   Operador `await` [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+*   Operador `async` [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function)

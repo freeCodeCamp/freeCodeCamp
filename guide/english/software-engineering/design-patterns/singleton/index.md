@@ -124,7 +124,7 @@ Out[3]: <__main__.MyClass at 0x111130da0>
 
 ## Singleton in iOS
 
-```Swift4
+```swift
 
 class Singleton {
   static let sharedInstance = Singleton()

@@ -8,7 +8,7 @@ title: 'Problem 15: Lattice paths'
 <section id='description'>
 Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
 
-<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://i.imgur.com/1Atixoj.gif">
+<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif">
 
 How many such routes are there through a given <code>gridSize</code>?
 </section>

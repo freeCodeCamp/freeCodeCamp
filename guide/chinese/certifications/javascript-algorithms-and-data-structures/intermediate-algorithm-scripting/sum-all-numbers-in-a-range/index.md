@@ -47,7 +47,6 @@ function sumAll(arr) {
  sumAll([1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLm6/0)
 
 ### 代码说明：
 
@@ -79,7 +78,6 @@ function sumAll(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLm7/0)
 
 ### 代码说明：
 
@@ -109,7 +107,6 @@ function sumAll(arr) {
  sumAll([1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLm8/0)
 
 ### 代码说明：
 

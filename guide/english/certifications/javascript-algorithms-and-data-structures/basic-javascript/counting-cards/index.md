@@ -58,7 +58,7 @@ After you've counted the cards, use an `if` statement to check the value of **co
 ```javascript
     function cc(card) {
       // Only change code below this line
-      switch(card){
+      switch (card){
         case 2:
         case 3:
         case 4:
@@ -118,7 +118,6 @@ function cc(card) {
   // Only change code above this line
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Counting-cards).
 
 ### Code explanation
 · The function first evaluates `if` the condition `card` is a value greater than `1` and lower than `7`, in which case it increments `count` by one.
@@ -131,4 +130,4 @@ function cc(card) {
 *   <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank' rel='nofollow'>Card counting at Wikipedia</a>
 *   <a href='http://www.freecodecamp.com/challenges/selecting-from-many-options-with-switch-statements' target='_blank' rel='nofollow'>Challenge: Selecting from many options with Switch Statements</a>
 *   <a href='http://www.freecodecamp.com/challenges/chaining-if-else-statements' target='_blank' rel='nofollow'>Challenge: Chaining If Else Statements</a>
-*   <a href='http://www.freecodecamp.com/challenges/increment-a-number-with-javascript' target='_blank' rel='nofollow'>Challenge: Increment a Number with Javascript</a>
+*   <a href='http://www.freecodecamp.com/challenges/increment-a-number-with-javascript' target='_blank' rel='nofollow'>Challenge: Increment a Number with JavaScript</a>

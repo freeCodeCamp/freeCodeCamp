@@ -6,15 +6,17 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.</p>
-Examples:
-<p class='rosetta__paragraph'>(empty) true</p>
-<p class='rosetta__paragraph'><code>[]</code> true</p>
-<p class='rosetta__paragraph'><code>][</code> false</p>
-<p class='rosetta__paragraph'><code>[][]</code> true</p>
-<p class='rosetta__paragraph'><code>][][</code> false</p>
-<p class='rosetta__paragraph'><code>[]][[]</code> false</p>
-<p class='rosetta__paragraph'><code>[[[[]]]]</code> true</p>
+Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.
+<h4><strong>Examples:</strong></h4>
+
+| Input | Output |
+| --- | --- |
+| <code>[]</code> | true |
+| <code>][</code> | false |
+| <code>[][]</code> | true |
+| <code>][][</code> | false |
+| <code>[]][[]</code> | false |
+| <code>[[[[]]]]</code> | true |
 </section>
 
 ## Instructions
@@ -76,7 +78,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isBalanced (str) {
+function isBalanced(str) {
   // Good luck!
   return true;
 }
@@ -120,7 +122,7 @@ const testCases = [
 
 
 ```js
-function isBalanced (str) {
+function isBalanced(str) {
   if (str === '') return true;
   let a = str;
   let b;

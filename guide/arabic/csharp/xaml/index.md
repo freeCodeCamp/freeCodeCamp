@@ -25,10 +25,11 @@ localeTitle: XAML
 
 يوضح المثال التالي تسمية "Hello World!" كمحتوى في حاوية مستوى أعلى تسمى UserControl.
 
- `<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"> 
-    <Label Content="Hello World!" /> 
- </UserControl> 
-` 
+```XAML
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Label Content="Hello World!" />
+</UserControl>
+``` 
 
 ### معلومات اكثر:
 

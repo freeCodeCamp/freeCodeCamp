@@ -10,5 +10,5 @@ Como parte del código que se encuentra en la cadena de bloques, un contrato int
 
 ## Más información
 Explicación sencilla sobre contratos inteligentes
-<br>
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=QXQPCUQ5t10" target="_blank"><img src="http://img.youtube.com/vi/QXQPCUQ5t10/0.jpg" alt="Video sobre contratos inteligentes" width="240" height="180" border="10" /></a>

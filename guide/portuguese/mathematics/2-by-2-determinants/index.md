@@ -16,7 +16,7 @@ As linhas e vetores de uma matriz de 2 por 2 podem ser associados a pontos em um
 
 O valor absoluto do determinante é igual à área do paralelogramo.
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [Aqui](https://i.stack.imgur.com/gCaz3.png) está uma prova visual interessante dessa propriedade.
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Area_parallellogram_as_determinant.svg/1044px-Area_parallellogram_as_determinant.svg.png) [Aqui](https://cdn-media-1.freecodecamp.org/imgr/gCaz3.png) está uma prova visual interessante dessa propriedade.
 
 Nota: Se o determinante for igual a zero, não há soluções (interseções) para o sistema (as linhas são paralelas).
 
