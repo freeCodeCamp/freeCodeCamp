@@ -29,7 +29,7 @@ Push <code>["dog", 3]</code> onto the end of the <code>myArray</code> variable.
 ```yml
 tests:
   - text: <code>myArray</code> should now equal <code>[["John", 23], ["cat", 2], ["dog", 3]]</code>.
-    testString: assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] === 23 && d[2][0] == 'dog' && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray), '<code>myArray</code> should now equal <code>[["John", 23], ["cat", 2], ["dog", 3]]</code>.');
+    testString: assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] === 23 && d[2][0] == 'dog' && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray));
 
 ```
 

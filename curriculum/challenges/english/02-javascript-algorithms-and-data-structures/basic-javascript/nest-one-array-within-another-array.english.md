@@ -21,7 +21,7 @@ Create a nested array called <code>myArray</code>.
 ```yml
 tests:
   - text: <code>myArray</code> should have at least one array nested within another array.
-    testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray), '<code>myArray</code> should have at least one array nested within another array.');
+    testString: assert(Array.isArray(myArray) && myArray.some(Array.isArray));
 
 ```
 

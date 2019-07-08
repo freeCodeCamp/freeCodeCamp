@@ -46,9 +46,9 @@ Retrieve the second tree from the variable <code>myPlants</code> using object do
 ```yml
 tests:
   - text: <code>secondTree</code> should equal "pine"
-    testString: assert(secondTree === "pine", '<code>secondTree</code> should equal "pine"');
+    testString: assert(secondTree === "pine");
   - text: Use dot and bracket notation to access <code>myPlants</code>
-    testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code), 'Use dot and bracket notation to access <code>myPlants</code>');
+    testString: assert(/=\s*myPlants\[1\].list\[1\]/.test(code));
 
 ```
 

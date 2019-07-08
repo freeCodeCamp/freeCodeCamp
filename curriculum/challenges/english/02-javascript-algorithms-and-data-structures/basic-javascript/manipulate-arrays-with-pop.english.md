@@ -31,11 +31,11 @@ Use the <code>.pop()</code> function to remove the last item from <code>myArray<
 ```yml
 tests:
   - text: <code>myArray</code> should only contain <code>[["John", 23]]</code>.
-    testString: assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray), '<code>myArray</code> should only contain <code>[["John", 23]]</code>.');
+    testString: assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray));
   - text: Use <code>pop()</code> on <code>myArray</code>
-    testString: assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code), 'Use <code>pop()</code> on <code>myArray</code>');
+    testString: assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
   - text: <code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.
-    testString: assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), '<code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.');
+    testString: assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray));
 
 ```
 

@@ -29,9 +29,9 @@ Modify the data stored at index <code>0</code> of <code>myArray</code> to a valu
 ```yml
 tests:
   - text: <code>myArray</code> should now be [45,64,99].
-    testString: assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})(), '<code>myArray</code> should now be [45,64,99].');
+    testString: assert((function(){if(typeof myArray != 'undefined' && myArray[0] == 45 && myArray[1] == 64 && myArray[2] == 99){return true;}else{return false;}})());
   - text: You should be using correct index to modify the value in <code>myArray</code>.
-    testString: assert((function(){if(code.match(/myArray\[0\]\s*=\s*/g)){return true;}else{return false;}})(), 'You should be using correct index to modify the value in <code>myArray</code>.');
+    testString: assert((function(){if(code.match(/myArray\[0\]\s*=\s*/g)){return true;}else{return false;}})());
 
 ```
 
