@@ -34,11 +34,11 @@ tests:
   - text: <code>quickCheck(["onions", "squash", "shallots"], "onions")</code> should return <code>true</code>
     testString: assert.strictEqual(quickCheck(['onions', 'squash', 'shallots'], 'onions'), true, '<code>quickCheck(["onions", "squash", "shallots"], "onions")</code> should return <code>true</code>');
   - text: <code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>
-    testString: assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true, '<code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>');
+    testString: assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true);
   - text: <code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>
-    testString: assert.strictEqual(quickCheck([true, false, false], undefined), false, '<code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>');
+    testString: assert.strictEqual(quickCheck([true, false, false], undefined), false);
   - text: The <code>quickCheck</code> function should utilize the <code>indexOf()</code> method
-    testString: assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1, 'The <code>quickCheck</code> function should utilize the <code>indexOf()</code> method');
+    testString: assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1);
 
 ```
 

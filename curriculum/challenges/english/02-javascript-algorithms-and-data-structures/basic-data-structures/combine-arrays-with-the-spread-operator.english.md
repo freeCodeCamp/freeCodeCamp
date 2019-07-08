@@ -31,7 +31,7 @@ tests:
   - text: <code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>
     testString: assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun'], '<code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>');
   - text: The <code>spreadOut</code> function should utilize spread syntax
-    testString: assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1, 'The <code>spreadOut</code> function should utilize spread syntax');
+    testString: assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);
 
 ```
 

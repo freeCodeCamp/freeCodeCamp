@@ -37,11 +37,11 @@ tests:
   - text: <code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>
     testString: assert.deepEqual(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']), ['DarkSalmon', 'BlanchedAlmond', 'LavenderBlush', 'PaleTurqoise', 'FireBrick'], '<code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>');
   - text: The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method
-    testString: assert(/.splice/.test(code), 'The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method');
+    testString: assert(/.splice/.test(code));
   - text: You should not use <code>shift()</code> or <code>unshift()</code>.
-    testString: assert(!/shift|unshift/.test(code), 'You should not use <code>shift()</code> or <code>unshift()</code>.');
+    testString: assert(!/shift|unshift/.test(code));
   - text: You should not use array bracket notation.
-    testString: assert(!/\[\d\]\s*=/.test(code), 'You should not use array bracket notation.');
+    testString: assert(!/\[\d\]\s*=/.test(code));
 
 ```
 
