@@ -22,13 +22,14 @@ localeTitle: PHP 5 صدى وطباعة البيانات
 
 #### مثال
 
- `<?php 
- echo "<h2>PHP is Fun!</h2>"; 
- echo "Hello world!<br>"; 
- echo "I'm about to learn PHP!<br>"; 
- echo "This ", "string ", "was ", "made ", "with multiple parameters."; 
- ?> 
-` 
+```php
+<?php
+echo "<h2>PHP is Fun!</h2>";
+echo "Hello world!<br>";
+echo "I'm about to learn PHP!<br>";
+echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+?>
+``` 
 
 #### عرض المتغيرات
 
@@ -36,17 +37,18 @@ localeTitle: PHP 5 صدى وطباعة البيانات
 
 #### مثال
 
- `<?php 
- $txt1 = "Learn PHP"; 
- $txt2 = "W3Schools.com"; 
- $x = 5; 
- $y = 4; 
- 
- echo "<h2>" . $txt1 . "</h2>"; 
- echo "Study PHP at " . $txt2 . "<br>"; 
- echo $x + $y; 
- ?> 
-` 
+```php
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+echo "<h2>" . $txt1 . "</h2>";
+echo "Study PHP at " . $txt2 . "<br>";
+echo $x + $y;
+?>
+``` 
 
 ### بيان طباعة PHP
 
@@ -58,12 +60,13 @@ localeTitle: PHP 5 صدى وطباعة البيانات
 
 #### مثال
 
- `<?php 
- print "<h2>PHP is Fun!</h2>"; 
- print "Hello world!<br>"; 
- print "I'm about to learn PHP!"; 
- ?> 
-` 
+```php
+<?php
+print "<h2>PHP is Fun!</h2>";
+print "Hello world!<br>";
+print "I'm about to learn PHP!";
+?>
+``` 
 
 #### عرض المتغيرات
 
@@ -71,14 +74,15 @@ localeTitle: PHP 5 صدى وطباعة البيانات
 
 #### مثال
 
- `<?php 
- $txt1 = "Learn PHP"; 
- $txt2 = "W3Schools.com"; 
- $x = 5; 
- $y = 4; 
- 
- print "<h2>" . $txt1 . "</h2>"; 
- print "Study PHP at " . $txt2 . "<br>"; 
- print $x + $y; 
- ?> 
-`
+```php
+<?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+print "<h2>" . $txt1 . "</h2>";
+print "Study PHP at " . $txt2 . "<br>";
+print $x + $y;
+?>
+```

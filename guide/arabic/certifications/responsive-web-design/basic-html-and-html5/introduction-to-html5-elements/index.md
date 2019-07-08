@@ -8,10 +8,11 @@ localeTitle: مقدمة إلى عناصر HTML5
 
 المثال أدناه يمثل عنصر `h1` وعنصر `h4` ملفوفًا في عنصر `header` :
 
- `<header> 
-  <h1> Big title </h1> 
-  <h4> Tiny subtitle </h4> 
- </header> 
-` 
+```
+<header>
+  <h1> Big title </h1>
+  <h4> Tiny subtitle </h4>
+</header>
+``` 
 
 كما ترى ، يحتوي `header` على العناصر الأخرى التي تنتهي في نفس المستوى (ينتهي `h1` قبل بدء `h4` ويكون كلاهما متداخلين في `header` ).

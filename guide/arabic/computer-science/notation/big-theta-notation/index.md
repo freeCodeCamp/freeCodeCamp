@@ -8,12 +8,13 @@ localeTitle: كبير ثيتا التدوين
 
 لنأخذ على سبيل المثال وظيفة تبحث عن مصفوفة للقيمة 0:
 
- `def containsZero(arr): #assume normal array of length n with no edge cases 
-  for num x in arr: 
-    if x == 0: 
-       return true 
-  return false 
-` 
+```python
+def containsZero(arr): #assume normal array of length n with no edge cases
+  for num x in arr:
+    if x == 0:
+       return true
+  return false
+``` 
 
 1.  ما هي أفضل حالة؟ حسنًا ، إذا كانت الصفيف الذي نوفره له 0 كقيمة أولى ، فسيستغرق ذلك وقتًا ثابتًا: Ω (1)
 2.  ما هي أسوأ حالة؟ إذا كان المصفوفة لا تحتوي على 0 ، فسنقوم بتكرارها من خلال المصفوفة بأكملها: O (n)
@@ -22,10 +23,11 @@ localeTitle: كبير ثيتا التدوين
 
 دعونا نغير كودنا قليلا.
 
- `def printNums(arr): #assume normal array of length n with no edge cases 
-  for num x in arr: 
-    print(x) 
-` 
+```python
+def printNums(arr): #assume normal array of length n with no edge cases
+  for num x in arr:
+    print(x)
+``` 
 
 يمكنك التفكير في أفضل حالة وأسوأ حالة ؟؟ لا استطيع بصرف النظر عن المجموعة التي نوفرها ، يجب علينا التكرار من خلال كل قيمة في الصفيف. وبالتالي فإن الدالة ستستغرق وقتًا قصيرًا (Ω (n)) ، لكننا نعرف أيضًا أنها لن تستغرق أكثر من وقت n (O (n)). ماذا يعني هذا؟ سوف تأخذ **وظيفتنا بالضبط** وقت n: Θ (n).
 

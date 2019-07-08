@@ -20,7 +20,7 @@ Digamos que tienes un archivo C ++ llamado `helloWorld.cpp` ...
 
 #### Usando y IDE como CodeBlocks
 
-Es tan simple como hacer clic en los botones de compilación y ejecución, crearán un archivo en la carpeta del proyecto. ![img](https://i.imgur.com/FwZuFGy.png)
+Es tan simple como hacer clic en los botones de compilación y ejecución, crearán un archivo en la carpeta del proyecto. ![img](https://cdn-media-1.freecodecamp.org/imgr/FwZuFGy.png)
 
 #### Usando el símbolo del sistema
 

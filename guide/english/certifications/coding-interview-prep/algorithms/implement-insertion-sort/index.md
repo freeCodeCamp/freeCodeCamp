@@ -26,7 +26,6 @@ function insertionSort(array) {
   return array;
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Insertion-Sort)
 
 ### References:
 

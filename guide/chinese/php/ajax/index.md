@@ -23,7 +23,7 @@ AJAX利用浏览器内置的**XMLHttpRequest对象**从Web服务器和**HTML DOM
 
 **HTML DOM** ：加载网页时，浏览器会创建页面的文档对象模型。
 
-![](https://i.imgur.com/pfC7QFH.png "AJAX如何工作")
+![](https://cdn-media-1.freecodecamp.org/imgr/pfC7QFH.png "AJAX如何工作")
 
 **创建XMLHttpRequest对象：**
 

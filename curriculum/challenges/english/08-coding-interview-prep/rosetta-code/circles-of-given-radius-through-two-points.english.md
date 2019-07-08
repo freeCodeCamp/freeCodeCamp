@@ -6,18 +6,26 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.</p>
-Exceptions:
-A radius of zero should be treated as never describing circles (except in the case where the points are coincident).
-If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.
-If the points form a diameter then return a single circle.
-If the points are too far apart then no circles can be drawn.Task:
+Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.
+<strong>Exceptions:</strong>
+<ul>
+  <li>A radius of zero should be treated as never describing circles (except in the case where the points are coincident).</li>
+  <li>If the points are coincident then an infinite number of circles with the point on their circumference can be drawn, unless the radius is equal to zero as well which then collapses the circles to a point.</li>
+  <li>If the points form a diameter then return a single circle.</li>
+  <li>If the points are too far apart then no circles can be drawn.</li>
+</ul>
+</section>
+
+## Instructions
+<section id='instructions'>
 Implement a function that takes two points and a radius and returns the two circles through those points. For each resulting circle, provide the coordinates for the center of each circle rounded to four decimal digits. Return each coordinate as an array, and coordinates as an array of arrays.
-For edge cases, return the following:
-If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.
-If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.
-If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.
-Sample inputs:
+<strong>For edge cases, return the following:</strong>
+<ul>
+  <li>If points are on the diameter, return one point. If the radius is also zero however, return <code>"Radius Zero"</code>.</li>
+  <li>If points are coincident, return <code>"Coincident point. Infinite solutions"</code>.</li>
+  <li>If points are farther apart than the diameter, return <code>"No intersection. Points further apart than circle diameter"</code>.</li>
+</ul>
+<strong>Sample inputs:</strong>
 <pre>
       p1                p2           r
 0.1234, 0.9876    0.8765, 0.2345    2.0
@@ -26,13 +34,6 @@ Sample inputs:
 0.1234, 0.9876    0.8765, 0.2345    0.5
 0.1234, 0.9876    0.1234, 0.9876    0.0
 </pre>
-Ref:
-<a href="http://mathforum.org/library/drmath/view/53027.html" title="link: http://mathforum.org/library/drmath/view/53027.html">Finding the Center of a Circle from 2 Points and Radius</a> from Math forum @ Drexel
-</section>
-
-## Instructions
-<section id='instructions'>
-
 </section>
 
 ## Tests
@@ -63,7 +64,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function getCircles (...args) {
+function getCircles(...args) {
   // Good luck!
   return true;
 }
@@ -106,7 +107,7 @@ const pAng = (p1, p2) => Math.atan(p1.map((e, i) => e - p2[i]).reduce((p, c) => 
 const solveF = (p, r) => t => [parseFloat((r * Math.cos(t) + p[0]).toFixed(4)), parseFloat((r * Math.sin(t) + p[1]).toFixed(4))];
 const diamPoints = (p1, p2) => p1.map((e, i) => parseFloat((e + (p2[i] - e) / 2).toFixed(4)));
 
-function getCircles (...args) {
+function getCircles(...args) {
   const [p1, p2, s] = args;
   const solve = solveF(p1, s);
   const halfDist = hDist(p1, p2);

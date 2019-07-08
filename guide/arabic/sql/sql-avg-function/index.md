@@ -8,16 +8,18 @@ localeTitle: دالة Avg SQL
 
 هنا هو بناء الجملة لاستخدام الوظيفة:
 
- `select groupingField, avg(num_field) 
- from table1 
- group by groupingField 
-` 
+```sql
+select groupingField, avg(num_field)
+from table1
+group by groupingField
+``` 
 
 إليك مثال على ذلك باستخدام جدول الطالب:
 
- `select studentID, FullName, avg(sat_score) 
- from student 
- group by studentID, FullName; 
-` 
+```sql
+select studentID, FullName, avg(sat_score)
+from student
+group by studentID, FullName;
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/avg_function01.JPG?raw=true)

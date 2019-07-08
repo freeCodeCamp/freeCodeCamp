@@ -31,8 +31,9 @@ localeTitle: ملحق ميهود
 
 يمكنك الآن إحضار أسلوب **WordCount** إلى النطاق **باستخدام** التوجيه:
 
- `using ExtensionMethods; 
-` 
+```
+using ExtensionMethods;
+``` 
 
 ويمكنك الاتصال به من تطبيق باستخدام بناء الجملة هذا:
 

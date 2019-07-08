@@ -92,7 +92,7 @@ localeTitle: 插入排序
 
 以下算法是略微优化的版本，以避免在每次迭代中交换`key`元素。这里， `key`元素将在迭代结束时交换（步骤）。
 
-```Algorithm
+```
     InsertionSort(arr[]) 
       for j = 1 to arr.length 
          key = arr[j] 
