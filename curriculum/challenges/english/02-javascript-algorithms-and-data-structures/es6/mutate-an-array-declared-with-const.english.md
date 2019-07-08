@@ -32,13 +32,13 @@ An array is declared as <code>const s = [5, 7, 2]</code>. Change the array to <c
 ```yml
 tests:
   - text: Do not replace <code>const</code> keyword.
-    testString: getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.');
+    testString: getUserInput => assert(getUserInput('index').match(/const/g));
   - text: <code>s</code> should be a constant variable (by using <code>const</code>).
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+s/g), '<code>s</code> should be a constant variable (by using <code>const</code>).');
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+s/g));
   - text: Do not change the original array declaration.
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g), 'Do not change the original array declaration.');
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+s\s*=\s*\[\s*5\s*,\s*7\s*,\s*2\s*\]\s*;?/g));
   - text: <code>s</code> should be equal to <code>[2, 5, 7]</code>.
-    testString: assert.deepEqual(s, [2, 5, 7], '<code>s</code> should be equal to <code>[2, 5, 7]</code>.');
+    testString: assert.deepEqual(s, [2, 5, 7]);
 
 ```
 
