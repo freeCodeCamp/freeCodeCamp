@@ -26,9 +26,9 @@ In the code editor, the <code>prepareTea</code> and <code>getTea</code> function
 ```yml
 tests:
   - text: The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.
-    testString: assert(tea4TeamFCC.length === 40, 'The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.');
+    testString: assert(tea4TeamFCC.length === 40);
   - text: The <code>tea4TeamFCC</code> variable should hold cups of green tea.
-    testString: assert(tea4TeamFCC[0] === 'greenTea', 'The <code>tea4TeamFCC</code> variable should hold cups of green tea.');
+    testString: assert(tea4TeamFCC[0] === 'greenTea');
 
 ```
 

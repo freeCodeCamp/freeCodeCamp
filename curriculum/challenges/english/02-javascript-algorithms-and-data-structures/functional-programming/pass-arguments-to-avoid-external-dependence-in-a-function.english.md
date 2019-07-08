@@ -26,11 +26,11 @@ Write the <code>incrementer</code> function so it takes an argument, and then in
 ```yml
 tests:
   - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.
-    testString: assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');
+    testString: assert(fixedValue === 4);
   - text: Your <code>incrementer</code> function should take a parameter.
-    testString: assert(incrementer.length === 1, 'Your <code>incrementer</code> function should take a parameter.');
+    testString: assert(incrementer.length === 1);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
-    testString: assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');
+    testString: assert(newValue === 5);
 
 ```
 

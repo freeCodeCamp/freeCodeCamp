@@ -23,15 +23,15 @@ The variable <code>watchList</code> holds an array of objects with information o
 ```yml
 tests:
   - text: The <code>watchList</code> variable should not change.
-    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", 'The <code>watchList</code> variable should not change.');
+    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
   - text: Your code should use the <code>reduce</code> method.
-    testString: assert(code.match(/\.reduce/g), 'Your code should use the <code>reduce</code> method.');
+    testString: assert(code.match(/\.reduce/g));
   - text: The <code>getRating(watchList)</code> should equal 8.675.
-    testString: assert(getRating(watchList) === 8.675, 'The <code>getRating(watchList)</code> should equal 8.675.');
+    testString: assert(getRating(watchList) === 8.675);
   - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!code.match(/for\s*?\(.*\)/g), 'Your code should not use a <code>for</code> loop.');
+    testString: assert(!code.match(/for\s*?\(.*\)/g));
   - text: Your code should return correct output after modifying the <code>watchList</code> object.
-    testString: assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55, 'Your code should return correct output after modifying the <code>watchList</code> object');
+    testString: assert(getRating(watchList.filter((_, i) => i < 1 || i > 2)) === 8.55);
 
 ```
 
