@@ -2,7 +2,7 @@
 title: Greedy Algorithms
 localeTitle: Algoritmos Greedy
 ---
-## O que é um algoritmo ganancioso
+## O que é um algoritmo guloso
 
 Você deve ter ouvido falar sobre muitas técnicas de design algorítmico enquanto analisa alguns dos artigos aqui. Alguns deles são :
 
@@ -17,9 +17,9 @@ Depois que a viagem termina e todo o seu corpo está dolorido e cansado, você o
 
 ## Definição formal
 
-Suponha que você tenha uma função objetiva que precisa ser otimizada (maximizada ou minimizada) em um determinado ponto. Um algoritmo Greedy faz escolhas gananciosas em cada etapa para garantir que a função objetivo seja otimizada. O algoritmo ganancioso tem apenas uma chance para calcular a solução ótima, para que ela nunca retorne e reverta a decisão.
+Suponha que você tenha uma função objetiva que precisa ser otimizada (maximizada ou minimizada) em um determinado ponto. Um algoritmo guloso faz escolhas gananciosas em cada etapa para garantir que a função objetivo seja otimizada. O algoritmo guloso tem apenas uma chance para calcular a solução ótima, para que ela nunca retorne e reverta a decisão.
 
-### Algoritmos gananciosos têm algumas vantagens e desvantagens:
+### Algoritmos gulosos têm algumas vantagens e desvantagens:
 
 *   É muito fácil criar um algoritmo guloso (ou mesmo vários algoritmos gulosos) para um problema. Analisar o tempo de execução para algoritmos gulosos geralmente será muito mais fácil do que para outras técnicas (como Dividir e conquistar). Para a técnica de dividir e conquistar, não está claro se a técnica é rápida ou lenta. Isso ocorre porque, em cada nível de recursão, o tamanho diminui e o número de subproblemas aumenta.
     
@@ -71,11 +71,11 @@ function interval_scheduling_problem(requests)
  end 
 ```
 
-## Quando usamos Algoritmos Ganancioso?
+## Quando usamos Algoritmos Guloso?
 
-Algoritmos ganancioso podem ajudá-lo a encontrar soluções para muitos problemas aparentemente difíceis. O único problema com eles é que você pode encontrar a solução correta, mas talvez não consiga verificar se é a correta. Todos os problemas gananciosos compartilham uma propriedade comum que um ótimo local pode eventualmente levar a um mínimo global sem reconsiderar o conjunto de escolhas já considerado.
+Algoritmos guloso podem ajudá-lo a encontrar soluções para muitos problemas aparentemente difíceis. O único problema com eles é que você pode encontrar a solução correta, mas talvez não consiga verificar se é a correta. Todos os problemas gananciosos compartilham uma propriedade comum que um ótimo local pode eventualmente levar a um mínimo global sem reconsiderar o conjunto de escolhas já considerado.
 
-Algoritmos Ganancioso nos ajudam a resolver muitos tipos diferentes de problemas. Fique atento aos próximos tutoriais sobre cada um deles.
+Algoritmos gulosos nos ajudam a resolver muitos tipos diferentes de problemas. Fique atento aos próximos tutoriais sobre cada um deles.
 
 1.  Problema do caminho mais curto.
 2.  Problema Mínimo da Árvore de Abrangência em um Gráfico.
