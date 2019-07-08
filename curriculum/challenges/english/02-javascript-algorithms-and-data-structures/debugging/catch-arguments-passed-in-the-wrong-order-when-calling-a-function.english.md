@@ -20,9 +20,9 @@ The function <code>raiseToPower</code> raises a base to an exponent. Unfortunate
 ```yml
 tests:
   - text: Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.
-    testString: assert(power == 8, 'Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');
+    testString: assert(power == 8);
   - text: Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.
-    testString: assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g), 'Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');
+    testString: assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 
 ```
 
