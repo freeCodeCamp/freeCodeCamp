@@ -1,35 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Alert } from '@freecodecamp/react-bootstrap';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import './flash.css';
 
-function createDismissHandler(fn, id) {
-  return () => fn(id);
-}
-
-function Flash({ messages, onClose }) {
-  return messages.map(({ type, message, id }) => (
-    <Alert
-      bsStyle={type}
-      className='flash-message'
-      key={id}
-      onDismiss={createDismissHandler(onClose, id)}
-      >
-      <div dangerouslySetInnerHTML={{ __html: message }} />
-    </Alert>
-  ));
+function Flash({ flashMessage, onClose }) {
+  const { type, message, id } = flashMessage;
+  return (
+    <TransitionGroup>
+      <CSSTransition classNames='flash-message' key={id} timeout={500}>
+        <Alert bsStyle={type} className='flash-message' onDismiss={onClose}>
+          <div dangerouslySetInnerHTML={{ __html: message }} />
+        </Alert>
+      </CSSTransition>
+    </TransitionGroup>
+  );
 }
 
 Flash.displayName = 'FlashMessages';
 Flash.propTypes = {
-  messages: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      type: PropTypes.string,
-      message: PropTypes.string
-    })
-  ),
+  flashMessage: PropTypes.shape({
+    id: PropTypes.string,
+    type: PropTypes.string,
+    message: PropTypes.string
+  }),
   onClose: PropTypes.func.isRequired
 };
 

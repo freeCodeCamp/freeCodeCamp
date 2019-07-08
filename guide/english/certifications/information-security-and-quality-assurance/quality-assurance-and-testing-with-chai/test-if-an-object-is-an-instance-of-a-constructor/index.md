@@ -3,8 +3,32 @@ title: Test if an Object is an Instance of a Constructor
 ---
 ## Test if an Object is an Instance of a Constructor
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/test-if-an-object-is-an-instance-of-a-constructor/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Objects'.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 18 */``` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+The challenge uses objects defined above the tests. Look closely at both, and determine whether the object is an instance of the type being compared against in the assertion.
+
+## Hint 2
+
+Check the error messages to determine if your understanding of the object's instance was correct.
+
+## Hint 3
+
+The lines in the test should be changed from `assert.fail()` to either `assert.instanceOf()` or `assert.notInstanceOf()`.
+
+## Solution
+
+```js
+test('#instanceOf, #notInstanceOf', function() {
+      
+  /** 18 #instanceOf asserts that an object is an instance of a constructor **/
+  // Use #instanceOf or #notInstanceOf where appropriate
+  assert.notInstanceOf(myCar, Plane);
+  assert.instanceOf(airlinePlane, Plane);
+  assert.instanceOf(airlinePlane, Object, 'everything is an Object');
+  assert.notInstanceOf(myCar.wheels, String );
+});
+```

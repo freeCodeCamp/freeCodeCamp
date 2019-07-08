@@ -40,21 +40,22 @@ localeTitle: بيان التحكم في الاستراحة
 
 قد تكون عبارات `break` مفيدة بشكل خاص أثناء البحث عن عنصر في صفيف. يؤدي استخدام `break` في التعليمة البرمجية التالية إلى تحسين الكفاءة أثناء توقف الحلقة بمجرد العثور على العنصر الذي نبحث عنه ( `searchFor` ) ، بدلاً من الاستمرار حتى يتم الوصول إلى نهاية `arrayInts` .
 
- `int j = 0; 
- int[] arrayOfInts = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; 
- int searchFor = 5; 
- 
- for (int i : arrayOfInts) 
- { 
-    if (arrayOfInts[j] == searchFor) 
-    { 
-        break; 
-    } 
-    j++; 
- } 
- 
- System.out.println("j = " + j); 
-` 
+```java
+int j = 0;
+int[] arrayOfInts = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+int searchFor = 5;
+
+for (int i : arrayOfInts)
+{
+    if (arrayOfInts[j] == searchFor)
+    {
+        break;
+    }
+    j++;
+}
+
+System.out.println("j = " + j);
+``` 
 
 يمكن استخدام بيان الاستراحة أيضًا ضمن عبارة "بيان".
 

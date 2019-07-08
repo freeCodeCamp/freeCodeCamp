@@ -16,12 +16,12 @@ localeTitle: سمة خلفية الجسم
 
 مثال:
 
- `
-<html> 
-  <body background="https://assets.digitalocean.com/blog/static/hacktoberfest-is-back/hero.png"> 
-  </body> 
- </html> 
-` 
+```html
+<html>
+  <body background="https://assets.digitalocean.com/blog/static/hacktoberfest-is-back/hero.png">
+  </body>
+</html>
+``` 
 
 ## يتم استهلاك سمة body-background
 

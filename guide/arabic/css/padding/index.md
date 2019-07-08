@@ -10,10 +10,11 @@ localeTitle: حشوة
 
 ## بناء الجملة
 
- `.element { 
-    padding: [padding-top] || [padding-right] || [padding-bottom] || [padding-left]; 
- } 
-` 
+```css
+.element {
+    padding: [padding-top] || [padding-right] || [padding-bottom] || [padding-left];
+}
+``` 
 
 يمكن تحديد هذه الخاصية باستخدام قيم واحدة أو اثنتين أو ثلاثة أو أربعة.
 

@@ -10,7 +10,7 @@ localeTitle: 使用tarball在Ubuntu中安装Go
 
 在继续之前，请确保您知道您的系统是32位还是64位。如果您不知道，请运行以下命令以查找：
 
-```sh
+```shell
 $ lscpu | grep Architecture 
 ```
 
@@ -52,7 +52,7 @@ $ wget https://storage.googleapis.com/golang/go1.9.1.linux-386.tar.gz
 
 要检查go是否已成功安装，请使用：
 
-```sh
+```shell
 $ go version 
  > go version go1.9.1 linux/amd64 
 ```

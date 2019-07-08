@@ -4,6 +4,7 @@ const { createFilePath } = require('gatsby-source-filesystem');
 
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
+const { getGithubPath } = require('./utils/getGithubPath');
 const {
   createChallengePages,
   createBlockIntroPages,
@@ -30,9 +31,19 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 
   if (node.internal.type === 'MarkdownRemark') {
-    let slug = createFilePath({ node, getNode });
+    const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
+      const {
+        fileAbsolutePath,
+        frontmatter: { component = '' }
+      } = node;
       createNodeField({ node, name: 'slug', value: slug });
+      createNodeField({ node, name: 'component', value: component });
+      createNodeField({
+        node,
+        name: 'githubPath',
+        value: getGithubPath(fileAbsolutePath)
+      });
     }
   }
 };
@@ -74,6 +85,8 @@ exports.createPages = function createPages({ graphql, actions }) {
                 fields {
                   slug
                   nodeIdentity
+                  component
+                  githubPath
                 }
                 frontmatter {
                   block
@@ -143,8 +156,8 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
           /* eslint-disable max-len */
           exclude: modulePath => {
             return (
-              (/node_modules/).test(modulePath) &&
-              !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
+              /node_modules/.test(modulePath) &&
+              !/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/.test(
                 modulePath
               )
             );
@@ -161,7 +174,10 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         HOME_PATH: JSON.stringify(
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
+        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
+        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
+        ENVIRONMENT: JSON.stringify(process.env.NODE_ENV || 'development'),
+        PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
       }),
       new RmServiceWorkerPlugin()
     ]

@@ -7,7 +7,7 @@ In software engineering, a design pattern is a general repeatable solution to a 
 
 Design patterns can speed up the development process by providing tested, proven development paradigms.
 
-This patterns are divided in three major categories:
+These patterns are divided into three major categories:
 
 ### Creational patterns
 
@@ -23,5 +23,7 @@ These are design patterns that identify common communication patterns between ob
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-[Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+- [Design patterns tutorial](https://dzone.com/refcardz/design-patterns?chapter=1)
+- [Head First Design](https://www.oreilly.com/library/view/head-first-design/0596007124/)
 

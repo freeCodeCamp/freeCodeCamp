@@ -1,9 +1,6 @@
 ---
 id: 587d7dbe367417b2b2512bb8
 title: Use @if and @else to Add Logic To Your Styles
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
-    raw: true
 challengeType: 0
 videoUrl: ''
 localeTitle: Use @if y @else para agregar lógica a sus estilos
@@ -13,7 +10,10 @@ localeTitle: Use @if y @else para agregar lógica a sus estilos
 <section id="description"> La directiva <code>@if</code> en Sass es útil para probar un caso específico: funciona igual que la sentencia <code>if</code> en JavaScript. <blockquote> @mixin make-bold ($ bool) { <br> @if $ bool == true { <br> font-weight: negrita; <br> } <br> } </blockquote> Y al igual que en JavaScript, <code>@else if</code> y <code>@else</code> prueban más condiciones: <blockquote> @mixin efecto-texto ($ val) { <br> @if $ val == peligro { <br> color rojo; <br> } <br> @else if $ val == alert { <br> color amarillo; <br> } <br> @else if $ val == éxito { <br> color verde; <br> } <br> @else { <br> de color negro; <br> } <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Cree un <code>mixin</code> llamado <code>border-stroke</code> que tome un parámetro <code>$val</code> . La <code>mixin</code> debe verificar las siguientes condiciones usando <code>@if</code> , <code>@else if</code> , y <code>@else</code> : <blockquote> luz - 1px negro sólido <br> mediano - 3px negro sólido <br> pesado - 6px negro sólido <br> ninguno - sin borde </blockquote></section>
+<section id="instructions"> Cree un <code>mixin</code> llamado <code>border-stroke</code> que tome un parámetro <code>$val</code> . La <code>mixin</code> debe verificar las siguientes condiciones usando <code>@if</code> , <code>@else if</code> , y <code>@else</code> :
+<blockquote>luz - 1px negro sólido<br>mediano - 3px negro sólido <br>pesado - 6px negro sólido </blockquote>
+Si <code>$val</code> no es <code>light</code>, <code>medium</code>, o <code>heavy</code>, la frontera se debe establecer en <code>none</code>.
+</section>
 
 ## Tests
 <section id='tests'>

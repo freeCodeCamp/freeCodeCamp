@@ -33,20 +33,21 @@ localeTitle: JSON تحليل
 
 هنا مثال مع `reviver` :
 
- `var data = '{"value": 5}'; 
- 
- var result = JSON.parse(data, function(key, value) { 
-    if (typeof value === 'number') { 
-        return value * 10; 
-    } 
-    return value; 
- }); 
- 
- // Original Data 
- console.log("Original Data:", data); // This will print Original Data: {"value": 5} 
- // Result after parsing 
- console.log("Parsed Result: ", result); // This will print Parsed Result:  { value: 50 } 
-` 
+```javascript
+var data = '{"value": 5}';
+
+var result = JSON.parse(data, function(key, value) {
+    if (typeof value === 'number') {
+        return value * 10;
+    }
+    return value;
+});
+
+// Original Data
+console.log("Original Data:", data); // This will print Original Data: {"value": 5}
+// Result after parsing
+console.log("Parsed Result: ", result); // This will print Parsed Result:  { value: 50 }
+``` 
 
 في المثال أعلاه ، يتم مضاعفة جميع القيم [الرقمية في](https://repl.it/Mwfp/0) `10` - [Repl.it Demo](https://repl.it/Mwfp/0)
 
