@@ -29,11 +29,11 @@ Sigue el mismo patrón que React en el que las vistas (lo que ve en la pantalla)
 5.  **Respaldo corporativo** : muchas empresas apoyan y contribuyen a React Native, incluidos Walmart, Airbnb, Wix y, por supuesto, Facebook.
 6.  **Comunidad** : React Native tiene una comunidad grande (y en crecimiento) con más de 1500 contribuyentes al proyecto central y miles más que contribuyen a varias bibliotecas.
 7.  **Mejor experiencia de usuario** : React Native utiliza el código JavaScript para representar componentes nativos del sistema operativo de su teléfono. En otras palabras, ¡la interfaz de usuario (UI) de la aplicación es completamente nativa!
-8.  **Cruz-Plataforma** - Gran manera de prototipos y ahorrar tiempo mientras que la construcción sea un usuario interfeace universal o aplicación móvil específica plataforma que puede funcionar tanto con dispositivos iOS y Android.
+8.  **Cross-Plataforma** - Gran manera de prototipos y ahorrar tiempo mientras que la construcción sea un usuario interfeace universal o aplicación móvil específica plataforma que puede funcionar tanto con dispositivos iOS y Android.
 
 ### Cómo empezar con React Native
 
-Hay dos formas fáciles y rápidas de comenzar a utilizar React Native. Dependiendo de su situación, una puede ser una mejor opción para usted.
+Hay dos formas fáciles y rápidas de comenzar a utilizar React Native. Dependiendo de su situación, una puede ser una mejor opción para usted que otra.
 
 1.  [Cree la aplicación nativa React](https://www.npmjs.com/package/create-react-native-app) - Similar a la aplicación Crear React, se pone en marcha usando el terminal.
 2.  [Expo](https://expo.io) - Mejor para crear prototipos de una aplicación o si se trata de una etapa anterior. Con Expo, incluso puede crear una aplicación rápida con las funciones de arrastrar y soltar desde snack.expo.io en la frontera.
