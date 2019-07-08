@@ -35,7 +35,7 @@ Você também pode colocar todos os seus comandos bash em um arquivo .sh e execu
 
 Vale a pena notar que a primeira linha do script começa com `#!` . É uma diretiva especial que o Unix trata de maneira diferente.
 
-#### Por que usamos o #! / Bin / bas no início do arquivo de script?
+#### Por que usamos o #!/bin/bash no início do arquivo de script?
 
 Isso é porque é uma convenção deixar o shell interativo saber que tipo de interpretador executar para o programa que segue. A primeira linha diz ao Unix que o arquivo deve ser executado por / bin / bash. Esta é a localização padrão do shell Bourne em praticamente todos os sistemas Unix. Adicionando #! / Bin / bash como a primeira linha do seu script, o sistema operacional invoca o shell especificado para executar os comandos que seguem o script. `#!` é frequentemente referido como "hash-bang", "she-bang" ou "sha-bang". Embora seja executado somente se você executar seu script como um executável. Por exemplo, quando você digita `./scriptname.extension` , ele examinará a linha superior para descobrir o interpretador, enquanto, executando o script como `bash scriptname.sh` , a primeira linha será ignorada.
 
