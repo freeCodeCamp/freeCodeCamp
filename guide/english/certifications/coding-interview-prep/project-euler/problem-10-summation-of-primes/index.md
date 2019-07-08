@@ -49,7 +49,6 @@ function primeSummation(n) {
 }
 ```
 
-- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-10-Summation-of-primes)
 
 ### References:
 - Sieve of Eratosthenes [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)

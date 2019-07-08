@@ -10,67 +10,72 @@ localeTitle: PHP 5 التعامل مع النموذج
 
 #### مثال
 
- `<html> 
- <body> 
- 
- <form action="welcome.php" method="post"> 
- Name: <input type="text" name="name"><br> 
- E-mail: <input type="text" name="email"><br> 
- <input type="submit"> 
- </form> 
- 
- </body> 
- </html> 
-` 
+```php
+<html>
+<body>
+
+<form action="welcome.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
+``` 
 
 عندما يملأ المستخدم النموذج أعلاه وينقر على زر الإرسال ، يتم إرسال بيانات النموذج للمعالجة إلى ملف PHP المسمى "welcome.php". يتم إرسال بيانات النموذج باستخدام طريقة HTTP POST.
 
 لعرض البيانات المقدمة ، يمكنك ببساطة ترديد كل المتغيرات. يبدو "welcome.php" كما يلي:
 
- `<html> 
- <body> 
- 
- Welcome <?php echo $_POST["name"]; ?><br> 
- Your email address is: <?php echo $_POST["email"]; ?> 
- 
- </body> 
- </html> 
-` 
+```php
+<html>
+<body>
+
+Welcome <?php echo $_POST["name"]; ?><br>
+Your email address is: <?php echo $_POST["email"]; ?>
+
+</body>
+</html>
+``` 
 
 يمكن أن يكون الإخراج شيء من هذا القبيل:
 
- `Welcome John 
- Your email address is john.doe@example.com 
-` 
+```
+Welcome John
+Your email address is john.doe@example.com
+``` 
 
 يمكن تحقيق نفس النتيجة باستخدام طريقة HTTP GET:
 
 #### مثال
 
- `<html> 
- <body> 
- 
- <form action="welcome_get.php" method="get"> 
- Name: <input type="text" name="name"><br> 
- E-mail: <input type="text" name="email"><br> 
- <input type="submit"> 
- </form> 
- 
- </body> 
- </html> 
-` 
+```php
+<html>
+<body>
+
+<form action="welcome_get.php" method="get">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
+``` 
 
 و "welcome\_get.php" يشبه هذا:
 
- `<html> 
- <body> 
- 
- Welcome <?php echo $_GET["name"]; ?><br> 
- Your email address is: <?php echo $_GET["email"]; ?> 
- 
- </body> 
- </html> 
-` 
+```php
+<html>
+<body>
+
+Welcome <?php echo $_GET["name"]; ?><br>
+Your email address is: <?php echo $_GET["email"]; ?>
+
+</body>
+</html>
+``` 
 
 الرمز أعلاه بسيط للغاية. ومع ذلك ، فإن الشيء الأكثر أهمية مفقود. يلزمك التحقق من صحة بيانات النموذج لحماية النص البرمجي من الشفرة الضارة.
 

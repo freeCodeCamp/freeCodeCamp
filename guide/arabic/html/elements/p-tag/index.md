@@ -12,28 +12,28 @@ localeTitle: ف يوم
 
 ### مثال
 
- `
-<html> 
-  <head> 
-    <title>Paragraph example</title> 
-  </head> 
-  <body> 
-    <p> 
-      This <strong>sentence</strong> was created to show how the paragraph works. 
-    </p> 
-  </body> 
- </html> 
-` 
+```html
+<html>
+  <head>
+    <title>Paragraph example</title>
+  </head>
+  <body>
+    <p>
+      This <strong>sentence</strong> was created to show how the paragraph works.
+    </p>
+  </body>
+</html>
+``` 
 
 يمكنك أيضًا تضمين عنصر الارتساء `<a>` في فقرة.
 
 ### مثال
 
- `
-<p>Here's a 
-  <a href="http://freecodecamp.com">link to Free Code Camp.com</a> 
-  for you to follow.</p> 
-` 
+```html
+<p>Here's a
+  <a href="http://freecodecamp.com">link to Free Code Camp.com</a>
+  for you to follow.</p>
+``` 
 
 #### معلومات اكثر:
 

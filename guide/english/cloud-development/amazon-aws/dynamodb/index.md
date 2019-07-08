@@ -18,7 +18,11 @@ The concept of partition key and sort key is very important because it relates t
 
 Amazon DynamoDB also has high availability. It replicates the data to many servers in different availability zones in a region. Availability Zones are data centers physically separated by a safe distance. In case of a disaster in one server, other servers have the data replicated in a safe distance and untouched. 
 
-Due to its ease of set up and its infinite capacity to scale it is good for many uses cases. It is best suited for scenarios where the load required is not known or there are sudden peaks. Some of the use cases are as data storage for serverless applications, microservices, mobile back-end, gaming, IoT and more.
+Due to its ease of set up and its infinite capacity to scale it is good for many uses cases. It is best suited for scenarios where the load required is not known or there are sudden peaks. Some of the use cases are as data storage for serverless applications, microservices, mobile back-end, gaming, IoT and more. DynamoDB provides the following mechanisms for managing throughput:
+
+- DynamoDB auto scaling
+- Provisioned throughput
+- Reserved capacity
 
 ### Resources:
 

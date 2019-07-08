@@ -28,7 +28,6 @@ localeTitle: اختلاف مربع الفراغ
  } 
 `` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Problem-6-Sum-square-difference)
 
 ### المراجع:
 

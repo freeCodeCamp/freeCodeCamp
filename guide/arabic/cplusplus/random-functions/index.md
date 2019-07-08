@@ -57,16 +57,17 @@ rand (): - _إرجاع رقم **pseudo-random** (عدد صحيح) من 0 إلى 
 
 مقتطف الشفرة:
 
- `#include <ctime> 
- 
- srand(time(NULL)); 
- cout << rand(); 
- 
- /* 
- Output: (Will differ from computer to computer, and because of the seed, will also differ from time to time, literally. :D) 
- 1696269016 
- */ 
-` 
+```cpp
+#include <ctime>
+
+srand(time(NULL));
+cout << rand();
+
+/*
+Output: (Will differ from computer to computer, and because of the seed, will also differ from time to time, literally. :D)
+1696269016
+*/
+``` 
 
 هذا ينتج قيم مختلفة في كل مرة يتم تشغيل البرنامج.
 

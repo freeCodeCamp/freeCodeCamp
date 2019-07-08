@@ -3,8 +3,22 @@ title: Test for Truthiness
 ---
 ## Test for Truthiness
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/test-for-truthiness/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js".
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 4 */``` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+The lines in the test should be changed from `assert.fail()` to either `assert.isTrue()` or `assert.isNotTrue()`.
+
+## Solution
+```js
+/** 4 - Use assert.isTrue() or assert.isNotTrue() to make the tests pass. **/
+// .isTrue(true) and .isNotTrue(everything else) will pass.
+// .isFalse() and .isNotFalse() also exist.
+test('#isTrue, #isNotTrue', function(){
+  assert.isTrue( true, 'true is true');
+  assert.isTrue( !!'double negation', 'double negation of a truthy is true');
+  assert.isNotTrue({ value: 'truthy' }, 'A truthy object is NOT TRUE (neither is false...)' );
+});
+```

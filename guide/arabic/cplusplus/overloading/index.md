@@ -49,10 +49,11 @@ localeTitle: C ++ التحميل الزائد
 
 عندما يتم تجميع التعليمات البرمجية المذكورة أعلاه وتنفيذها ، فإنها تنتج النتيجة التالية -
 
- `Printing int: 5 
- Printing float: 500.263 
- Printing string: Hello C++ 
-` 
+```
+Printing int: 5
+Printing float: 500.263
+Printing string: Hello C++
+``` 
 
 ### مشغل الحمولة الزائدة في C ++
 
@@ -96,5 +97,6 @@ localeTitle: C ++ التحميل الزائد
 
 الناتج عن البرنامج أعلاه
 
- `4 + i3 
-`
+```
+4 + i3
+```

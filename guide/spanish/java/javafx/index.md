@@ -14,7 +14,7 @@ Gulon Scene Builder es una aplicación utilizada para el diseño de interfaz de 
 
 #### Screeenshots:
 
-![Interfaz de usuario de escena](https://i.imgur.com/3d9SqBR.png)
+![Interfaz de usuario de escena](https://cdn-media-1.freecodecamp.org/imgr/3d9SqBR.png)
 
 ### FXML
 

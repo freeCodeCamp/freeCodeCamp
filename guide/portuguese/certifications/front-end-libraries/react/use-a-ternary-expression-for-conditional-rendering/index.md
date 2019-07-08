@@ -17,7 +17,7 @@ condition ? expressionIfTrue : expressionIfFalse
 
 Aqui está uma solução de exemplo de uso da expressão ternária. Primeiro você precisa declarar estado no construtor como este
 
-```react.js
+```jsx
 constructor(props) { 
     super(props); 
     // change code below this line 
@@ -33,7 +33,7 @@ constructor(props) {
 
 Então o operador ternário
 
-```react.js
+```jsx
 { 
     /* change code here */ 
     (this.state.userAge >= 18) ? buttonTwo : (this.state.userAge== '')? buttonOne: buttonThree 

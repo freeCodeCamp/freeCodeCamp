@@ -8,7 +8,7 @@ Since there are **6** sides, this means that there is a **1 in 6** chance of any
 
 P(1) = P(2) = P(3) = P(4) = P(5) = P(6) = 1/6.
 
-Suppose we now take 2 fair dice. Since each of the six sides of die 1 can show face up with each of the six sides of die 2 there are 6 x 6 = 36 different possibilities and the chance of any combination occuring is therefore 1/36.
+Suppose we now take 2 fair dice. Since each of the six sides of die 1 can show face up with each of the six sides of die 2 there are 6 x 6 = 36 different possibilities and the chance of any combination occuring is therefore 1/36. If there are 3 die, there are 6 x 6 x 6 = 216 different possibilities, and so on with more die.
 
 If it doesn't matter in what order we look at the dice once we have rolled them, we have to look more carefully at the probabilities. For example, a 3 and a 5 can show up as 3 on die 1 and 5 on die 2 **or** 5 on die 1 and 3 on die 2 (2 combinations) so we can say that P(3,5 or 5,3) = 1/36 + 1/36 = 1/18.
 

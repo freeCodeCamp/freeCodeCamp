@@ -28,12 +28,13 @@ localeTitle: جهة تعامل
 
 مثال على واجهة:
 
- `public Interface IUserFavoriteFood
- {
+```csharp
+public Interface IUserFavoriteFood
+{
   void AddFood();
   Task<User> EatFavoriteFood(int id);
- }
-`
+}
+```
 
 * * *
 
