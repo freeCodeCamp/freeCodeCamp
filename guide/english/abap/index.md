@@ -5,7 +5,7 @@ title: ABAP
 ## What is ABAP?
 
 ABAP stands for Advanced Business Application Programming and is a programming language used by SAP developers.
-SAP is an Enterprise Resource Planning system used by large companies. It's renenue could be compared to other tech giants like Microsoft and Apple.
+SAP is an Enterprise Resource Planning system used by large companies. Its revenue could be compared to other tech giants like Microsoft and Apple.
 SAP Software is written in ABAP bytecode (compiled) which later on is interpreted by the C++ code of the kernel.
 
 * C++ for the ABAP kernel
@@ -22,14 +22,12 @@ Since HANA is deployed on Linux exclusively, many developers are using Linux on 
 ABAP is a robust programming language that allows the user to use object oriented concepts, inheritance, persistency, field symbols, structures to put a user's code in any place of the SAP ERP or Business Warehouse system. ABAP is a 4GL language developed specifically for the mass processing of data in business applications. This concept allows developers to put business logic inside, create reports, expose and manipulate data. 
 ABAP IDE is either SAP GUI or Eclipse.
 
-Official ABAP documentation can be found in the link: https://help.sap.com/doc/abapdocu_750_index_htm/7.50/en-US/index.htm
+Official ABAP documentation can be found [here](https://help.sap.com/doc/abapdocu_750_index_htm/7.50/en-US/index.htm).
 ABAP can be used both in application and also executed directly on the database itself using ABAP Managed Database Procedures. 
 This allows the user not to bring the data to the application layer and apply the logic directly in the database itself.
 
-
 ```ABAP
 * Quick example of ABAP with Object Oriented Programming
-
 
 * Example static class method definition
 * Coments and documentation are written in HTML, later on in the code it can be displayed onmouse hover and using predefined keyboard shortcuts.
@@ -53,44 +51,40 @@ CLASS-METHODS flt_pck_4reprocessing
 
 METHOD filter_data_column.
 
-    " Apply some constant to a variable, that is one of multiple ways of doing that dynamically, "lc_constant"'s type is created and fitted dynamically
-    DATA(lc_constant) = 'If this string will be found, method will be executed. Otherwise check will exit the class.'.
+  " Apply some constant to a variable, that is one of multiple ways of doing that dynamically, "lc_constant"'s type is created and fitted dynamically
+  DATA(lc_constant) = 'If this string will be found, method will be executed. Otherwise check will exit the class.'.
 
-    " Check if this method call provided an argument for this class to be executed 
-    " Check if text value provided by the parameter contains pattern stored in previously created variable  
-    CHECK pv_some_desc CP |*{ lc_constant }*| .
+  " Check if this method call provided an argument for this class to be executed 
+  " Check if text value provided by the parameter contains pattern stored in previously created variable  
+  CHECK pv_some_desc CP |*{ lc_constant }*| .
 
+    " Use OPEN-SQL to look up data from system or user defined global tables 
+    " internal variables and dynamically created tables are exited with @ / @DATA
+    SELECT DISTINCT something FROM some_table
+        WHERE counter = ( SELECT MIN( counter ) FROM
+        some_table WHERE some_column = @pv_sourcesys )
+      AND soursystem = @pv_sourcesys
+        INTO @DATA(lv_yft_gen_repr_sel_pck).
+    ENDSELECT.
 
-      " Use OPEN-SQL to look up data from system or user defined global tables 
-      " internal variables and dynamically created tables are exited with @ / @DATA
-      SELECT DISTINCT something FROM some_table
-          WHERE counter = ( SELECT MIN( counter ) FROM
-          some_table WHERE some_column = @pv_sourcesys )
-        AND soursystem = @pv_sourcesys
-         INTO @DATA(lv_yft_gen_repr_sel_pck).
-      ENDSELECT.
+  " Check if proper value was selected - if so, no deletion should happen
+  CHECK lv_yft_gen_repr_sel_pck IS NOT INITIAL AND lv_yft_gen_repr_sel_pck NE '00'.
 
-    " Check if proper value was selected - if so, no deletion should happen
-    CHECK lv_yft_gen_repr_sel_pck IS NOT INITIAL AND lv_yft_gen_repr_sel_pck NE '00'.
-
-    " Loop at internal table given to the method assigning pointers - field symbols, apply filtering to it - if matches, than delete
-    LOOP AT result_package ASSIGNING FIELD-SYMBOL(<fs_result_package>).
-      "As this table has type 'any' - indexed table, than we have to assign specific column name of the structure to a field symbol
-      ASSIGN COMPONENT 'NAME_OF_THE_COLUMN_WE_ARE_LOOKING_FOR' OF STRUCTURE <fs_result_package> TO FIELD-SYMBOL(<fs_NAME_OF_THE_COLUMN_WE_ARE_LOOKING_FOR>).
-      CHECK <fs_gm1pck> IS ASSIGNED.
-      IF <fs_gm1pck> NE lv_yft_gen_repr_sel_pck.
-        DELETE result_package.
-      ENDIF.
-    ENDLOOP.
-
-
+  " Loop at internal table given to the method assigning pointers - field symbols, apply filtering to it - if matches, than delete
+  LOOP AT result_package ASSIGNING FIELD-SYMBOL(<fs_result_package>).
+    "As this table has type 'any' - indexed table, than we have to assign specific column name of the structure to a field symbol
+    ASSIGN COMPONENT 'NAME_OF_THE_COLUMN_WE_ARE_LOOKING_FOR' OF STRUCTURE <fs_result_package> TO FIELD-SYMBOL(<fs_NAME_OF_THE_COLUMN_WE_ARE_LOOKING_FOR>).
+    CHECK <fs_gm1pck> IS ASSIGNED.
+    IF <fs_gm1pck> NE lv_yft_gen_repr_sel_pck.
+      DELETE result_package.
+    ENDIF.
+  ENDLOOP.
 ENDMETHOD. 
-
 ```
 
 ## ABAP Execution Layers
 * Presentation layer 
-This layer is ditributed to the end users and can be accessed both from WEB and from the SAP software itself. In ERP - ECC systems, this layer is when the user creates an invoive, order, executes reports.
+This layer is distributed to the end users and can be accessed both from WEB and from the SAP software itself. In ERP - ECC systems, this layer is when the user creates an invoice, order, executes reports.
 
 * Application layer 
 This layer on application servers. It constists of ABAP runtime environment in which ABAP programs are executed.
@@ -100,26 +94,5 @@ Consists of a database system in which the central dataset of an AS ABAP is save
 
 ## ABAP execution scenarios
 
-ABAP programms can transfer data for processiong from database layer to application layer making it a bottom-up approach. This approach makes an application to run a bit slower because it has to transfer the data between the servers.
+ABAP programs can transfer data for processing from the database layer to the application layer, making it a bottom-up approach. This approach makes an application run a bit slower because it has to transfer the data between the servers.
 To speed up the processing, a top-town approach was introduced. It allows the user to write code that is going to send the instruction (procedure) to the database of how the data should be changed without having to fetch it into application layer. The code is still written in the application layer as a ABAP Managed Database Procedure usually of type SQL Script.  
-
-
-## Core Data Services ( a.k.a. CDS Views)
-
-## Version
--- Current ABAP version
-
-## Installation
--- SAP Hana Express
-
-## Odata
--- How to expose SAP Data to other applications
-
-## Guides
--- SAP Developer Guides
-
-## Job Market
--- Where to look for the job and how to apply, usefull tips, tutorials, sites
-
-## Future
--- What is the future of the language, is it going to be used? is it still being developed?
