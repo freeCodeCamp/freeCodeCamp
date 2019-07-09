@@ -21,7 +21,7 @@ Use the <code>attr()</code> method to add a class of <code>bar</code> to all the
 ```yml
 tests:
   - text: Your <code>rect</code> elements should have a class of <code>bar</code>.
-    testString: assert($('rect').attr('class') == "bar", 'Your <code>rect</code> elements should have a class of <code>bar</code>.');
+    testString: assert($('rect').attr('class') == "bar");
 
 ```
 

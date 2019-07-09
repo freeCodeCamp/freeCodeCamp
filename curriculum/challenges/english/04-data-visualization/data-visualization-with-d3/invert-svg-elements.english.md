@@ -25,23 +25,23 @@ Change the callback function for the <code>y</code> attribute to set the bars ri
 ```yml
 tests:
   - text: The first <code>rect</code> should have a <code>y</code> value of 64.
-    testString: assert($('rect').eq(0).attr('y') == h - (dataset[0] * 3), 'The first <code>rect</code> should have a <code>y</code> value of 64.');
+    testString: assert($('rect').eq(0).attr('y') == h - (dataset[0] * 3));
   - text: The second <code>rect</code> should have a <code>y</code> value of 7.
-    testString: assert($('rect').eq(1).attr('y') == h - (dataset[1] * 3), 'The second <code>rect</code> should have a <code>y</code> value of 7.');
+    testString: assert($('rect').eq(1).attr('y') == h - (dataset[1] * 3));
   - text: The third <code>rect</code> should have a <code>y</code> value of 34.
-    testString: assert($('rect').eq(2).attr('y') == h - (dataset[2] * 3), 'The third <code>rect</code> should have a <code>y</code> value of 34.');
+    testString: assert($('rect').eq(2).attr('y') == h - (dataset[2] * 3));
   - text: The fourth <code>rect</code> should have a <code>y</code> value of 49.
-    testString: assert($('rect').eq(3).attr('y') == h - (dataset[3] * 3), 'The fourth <code>rect</code> should have a <code>y</code> value of 49.');
+    testString: assert($('rect').eq(3).attr('y') == h - (dataset[3] * 3));
   - text: The fifth <code>rect</code> should have a <code>y</code> value of 25.
-    testString: assert($('rect').eq(4).attr('y') == h - (dataset[4] * 3), 'The fifth <code>rect</code> should have a <code>y</code> value of 25.');
+    testString: assert($('rect').eq(4).attr('y') == h - (dataset[4] * 3));
   - text: The sixth <code>rect</code> should have a <code>y</code> value of 46.
-    testString: assert($('rect').eq(5).attr('y') == h - (dataset[5] * 3), 'The sixth <code>rect</code> should have a <code>y</code> value of 46.');
+    testString: assert($('rect').eq(5).attr('y') == h - (dataset[5] * 3));
   - text: The seventh <code>rect</code> should have a <code>y</code> value of 13.
-    testString: assert($('rect').eq(6).attr('y') == h - (dataset[6] * 3), 'The seventh <code>rect</code> should have a <code>y</code> value of 13.');
+    testString: assert($('rect').eq(6).attr('y') == h - (dataset[6] * 3));
   - text: The eighth <code>rect</code> should have a <code>y</code> value of 58.
-    testString: assert($('rect').eq(7).attr('y') == h - (dataset[7] * 3), 'The eighth <code>rect</code> should have a <code>y</code> value of 58.');
+    testString: assert($('rect').eq(7).attr('y') == h - (dataset[7] * 3));
   - text: The ninth <code>rect</code> should have a <code>y</code> value of 73.
-    testString: assert($('rect').eq(8).attr('y') == h - (dataset[8] * 3), 'The ninth <code>rect</code> should have a <code>y</code> value of 73.');
+    testString: assert($('rect').eq(8).attr('y') == h - (dataset[8] * 3));
 
 ```
 
