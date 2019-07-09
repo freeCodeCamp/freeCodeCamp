@@ -6,7 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-A promise in JavaScript is exactly what it sounds like. You use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. <code>Promise</code> is a constructor function, so you need to use the <code>new</code> keyword to create one. It takes a function as its argument with two parameters: <code>resolve</code> and <code>reject</code>. These are methods used to determine the outcome of the promise. The syntax looks like this:
+A promise in JavaScript is exactly what it sounds like - you use it to make a promise to do something, usually asynchronously. When the task completes, you either fulfill your promise or fail to do so. <code>Promise</code> is a constructor function, so you need to use the <code>new</code> keyword to create one. It takes a function, as its argument, with two parameters - <code>resolve</code> and <code>reject</code>. These are methods used to determine the outcome of the promise. The syntax looks like this:
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
