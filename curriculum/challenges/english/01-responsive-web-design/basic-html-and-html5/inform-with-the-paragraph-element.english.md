@@ -23,12 +23,12 @@ Create a <code>p</code> element below your <code>h2</code> element, and give it 
 
 ```yml
 tests:
-  - text: Create a <code>p</code> element.
-    testString: assert(($("p").length > 0), 'Create a valid <code>p</code> element.');
+  - text: Your code should have a valid <code>p</code> element.
+    testString: assert(($("p").length > 0));
   - text: Your <code>p</code> element should have the text "Hello Paragraph".
-    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), 'Your <code>p</code> element should have the text "Hello Paragraph".');
+    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()));
   - text: Make sure your <code>p</code> element has a closing tag.
-    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, 'Make sure your <code>p</code> element has a closing tag.');
+    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
 
 ```
 

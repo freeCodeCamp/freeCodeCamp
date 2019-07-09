@@ -35,9 +35,9 @@ Let's replace the hex code in our <code>body</code> element's background color w
 ```yml
 tests:
   - text: Your <code>body</code> element should have a black background.
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", 'Your <code>body</code> element should have a black background.');
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: Use <code>rgb</code> to give your <code>body</code> element a color of black.
-    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element a color of black.');
+    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig));
 
 ```
 

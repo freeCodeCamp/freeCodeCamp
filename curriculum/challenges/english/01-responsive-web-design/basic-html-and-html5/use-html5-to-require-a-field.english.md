@@ -23,7 +23,7 @@ Then try to submit the form without inputting any text. See how your HTML5 form 
 ```yml
 tests:
   - text: Your text <code>input</code> element should have the <code>required</code> attribute.
-    testString: assert($("input").prop("required"), 'Your text <code>input</code> element should have the <code>required</code> attribute.');
+    testString: assert($("input").prop("required"));
 
 ```
 

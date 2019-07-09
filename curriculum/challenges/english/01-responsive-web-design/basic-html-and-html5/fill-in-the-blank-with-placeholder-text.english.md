@@ -23,7 +23,7 @@ Replace the text inside your <code>p</code> element with the first few words of 
 ```yml
 tests:
   - text: Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.
-    testString: assert.isTrue((/Kitty(\s)+ipsum/gi).test($("p").text()), 'Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.');
+    testString: assert.isTrue((/Kitty(\s)+ipsum/gi).test($("p").text()));
 
 ```
 

@@ -30,11 +30,11 @@ Using the <code>type</code> attribute selector, try to give the checkboxes in Ca
 ```yml
 tests:
   - text: The <code>type</code> attribute selector should be used to select the checkboxes.
-    testString: assert(code.match(/<style>[\s\S]*?\[type=("|')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),'The <code>type</code> attribute selector should be used to select the checkboxes.');
+    testString: assert(code.match(/<style>[\s\S]*?\[type=("|')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi));
   - text: The top margins of the checkboxes should be 10px.
-    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'The top margins of the checkboxes should be 10px.');
+    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()));
   - text: The bottom margins of the checkboxes should be 15px.
-    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'The bottom margins of the checkboxes should be 15px.');
+    testString: assert((function() {var count=0; $("[type='checkbox']").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()));
 
 ```
 

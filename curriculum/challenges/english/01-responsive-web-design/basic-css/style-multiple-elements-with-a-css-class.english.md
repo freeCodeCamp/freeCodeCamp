@@ -21,15 +21,15 @@ Classes allow you to use the same CSS styles on multiple HTML elements. You can 
 ```yml
 tests:
   - text: Your <code>h2</code> element should be red.
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", 'Your <code>h2</code> element should be red.');
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
   - text: Your <code>h2</code> element should have the class <code>red-text</code>.
-    testString: assert($("h2").hasClass("red-text"), 'Your <code>h2</code> element should have the class <code>red-text</code>.');
+    testString: assert($("h2").hasClass("red-text"));
   - text: Your first <code>p</code> element should be red.
-    testString: assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)", 'Your first <code>p</code> element should be red.');
+    testString: assert($("p:eq(0)").css("color") === "rgb(255, 0, 0)");
   - text: Your second and third <code>p</code> elements should not be red.
-    testString: assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"), 'Your second and third <code>p</code> elements should not be red.');
+    testString: assert(!($("p:eq(1)").css("color") === "rgb(255, 0, 0)") && !($("p:eq(2)").css("color") === "rgb(255, 0, 0)"));
   - text: Your first <code>p</code> element should have the class <code>red-text</code>.
-    testString: assert($("p:eq(0)").hasClass("red-text"), 'Your first <code>p</code> element should have the class <code>red-text</code>.');
+    testString: assert($("p:eq(0)").hasClass("red-text"));
 
 ```
 
