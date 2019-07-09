@@ -36,7 +36,7 @@ Find the sum of the strong, right truncatable Harshad primes less than 1014.
 ```yml
 tests:
   - text: <code>euler387()</code> should return 696067597313468.
-    testString: assert.strictEqual(euler387(), 696067597313468, '<code>euler387()</code> should return 696067597313468.');
+    testString: assert.strictEqual(euler387(), 696067597313468);
 
 ```
 

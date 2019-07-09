@@ -25,7 +25,7 @@ Find the last 9 digits of F(10, 1012).
 ```yml
 tests:
   - text: <code>euler416()</code> should return 898082747.
-    testString: assert.strictEqual(euler416(), 898082747, '<code>euler416()</code> should return 898082747.');
+    testString: assert.strictEqual(euler416(), 898082747);
 
 ```
 

@@ -30,7 +30,7 @@ Find T5(1018).
 ```yml
 tests:
   - text: <code>euler383()</code> should return 22173624649806.
-    testString: assert.strictEqual(euler383(), 22173624649806, '<code>euler383()</code> should return 22173624649806.');
+    testString: assert.strictEqual(euler383(), 22173624649806);
 
 ```
 

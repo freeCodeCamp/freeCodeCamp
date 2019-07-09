@@ -21,7 +21,7 @@ Find the variance of I, and give your answer rounded to 4 decimal places.
 ```yml
 tests:
   - text: <code>euler389()</code> should return 2406376.3623.
-    testString: assert.strictEqual(euler389(), 2406376.3623, '<code>euler389()</code> should return 2406376.3623.');
+    testString: assert.strictEqual(euler389(), 2406376.3623);
 
 ```
 

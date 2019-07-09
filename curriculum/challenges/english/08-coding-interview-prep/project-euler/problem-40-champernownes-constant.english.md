@@ -24,11 +24,11 @@ If <i>d<sub>n</sub></i> represents the <i>n</i><sup>th</sup> digit of the fracti
 ```yml
 tests:
   - text: <code>champernownesConstant(100)</code> should return 5.
-    testString: assert.strictEqual(champernownesConstant(100), 5, '<code>champernownesConstant(100)</code> should return 5.');
+    testString: assert.strictEqual(champernownesConstant(100), 5);
   - text: <code>champernownesConstant(1000)</code> should return 15.
-    testString: assert.strictEqual(champernownesConstant(1000), 15, '<code>champernownesConstant(1000)</code> should return 15.');
+    testString: assert.strictEqual(champernownesConstant(1000), 15);
   - text: <code>champernownesConstant(1000000)</code> should return 210.
-    testString: assert.strictEqual(champernownesConstant(1000000), 210, '<code>champernownesConstant(1000000)</code> should return 210.');
+    testString: assert.strictEqual(champernownesConstant(1000000), 210);
 
 ```
 

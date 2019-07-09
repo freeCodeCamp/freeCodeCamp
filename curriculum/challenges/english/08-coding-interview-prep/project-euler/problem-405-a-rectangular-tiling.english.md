@@ -41,7 +41,7 @@ Find f(10k) for k = 1018, give your answer modulo 177.
 ```yml
 tests:
   - text: <code>euler405()</code> should return 237696125.
-    testString: assert.strictEqual(euler405(), 237696125, '<code>euler405()</code> should return 237696125.');
+    testString: assert.strictEqual(euler405(), 237696125);
 
 ```
 

@@ -41,7 +41,7 @@ If it happens that the conjecture is false, then the accepted answer to this pro
 ```yml
 tests:
   - text: <code>euler399()</code> should return 1508395636674243, 6.5e27330467.
-    testString: assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467, '<code>euler399()</code> should return 1508395636674243, 6.5e27330467.');
+    testString: assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467);
 
 ```
 

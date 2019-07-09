@@ -27,7 +27,7 @@ Find F(106, 109).
 ```yml
 tests:
   - text: <code>euler397()</code> should return 141630459461893730.
-    testString: assert.strictEqual(euler397(), 141630459461893730, '<code>euler397()</code> should return 141630459461893730.');
+    testString: assert.strictEqual(euler397(), 141630459461893730);
 
 ```
 

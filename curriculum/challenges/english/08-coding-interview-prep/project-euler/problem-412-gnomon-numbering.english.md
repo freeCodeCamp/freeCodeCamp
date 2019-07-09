@@ -34,7 +34,7 @@ Find LC(10000, 5000) mod 76543217.
 ```yml
 tests:
   - text: <code>euler412()</code> should return 38788800.
-    testString: assert.strictEqual(euler412(), 38788800, '<code>euler412()</code> should return 38788800.');
+    testString: assert.strictEqual(euler412(), 38788800);
 
 ```
 

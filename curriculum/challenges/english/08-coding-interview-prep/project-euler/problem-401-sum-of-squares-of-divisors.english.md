@@ -31,7 +31,7 @@ Find SIGMA2(1015) modulo 109.
 ```yml
 tests:
   - text: <code>euler401()</code> should return 281632621.
-    testString: assert.strictEqual(euler401(), 281632621, '<code>euler401()</code> should return 281632621.');
+    testString: assert.strictEqual(euler401(), 281632621);
 
 ```
 
