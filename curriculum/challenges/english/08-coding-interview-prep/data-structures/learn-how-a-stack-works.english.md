@@ -25,13 +25,13 @@ Modify the given array and treat it like a <code>stack</code> using the JavaScri
 ```yml
 tests:
   - text: <code>homeworkStack</code> should only contain 4 elements.
-    testString: assert(homeworkStack.length === 4, '<code>homeworkStack</code> should only contain 4 elements.');
+    testString: assert(homeworkStack.length === 4);
   - text: The last element in <code>homeworkStack</code> should be <code>"CS50"</code>.
-    testString: assert(homeworkStack[3] === 'CS50', 'The last element in <code>homeworkStack</code> should be <code>"CS50"</code>.');
+    testString: assert(homeworkStack[3] === 'CS50');
   - text: <code>homeworkStack</code> should not contain <code>"PSY44"</code>.
-    testString: assert(homeworkStack.indexOf('PSY44') === -1, '<code>homeworkStack</code> should not contain <code>"PSY44"</code>.');
+    testString: assert(homeworkStack.indexOf('PSY44') === -1);
   - text: The initial declaration of the <code>homeworkStack</code> should not be changed.
-    testString: assert(code.match(/=/g).length === 1 && /homeworkStack\s*=\s*\["BIO12"\s*,\s*"HIS80"\s*,\s*"MAT122"\s*,\s*"PSY44"\]/.test(code), 'The initial declaration of the <code>homeworkStack</code> should not be changed.');
+    testString: assert(code.match(/=/g).length === 1 && /homeworkStack\s*=\s*\["BIO12"\s*,\s*"HIS80"\s*,\s*"MAT122"\s*,\s*"PSY44"\]/.test(code));
 
 ```
 

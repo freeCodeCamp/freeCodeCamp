@@ -26,13 +26,13 @@ As an aside, this will be the last sorting algorithm we cover here. However, lat
 ```yml
 tests:
   - text: <code>mergeSort</code> is a function.
-    testString: assert(typeof mergeSort == 'function', '<code>mergeSort</code> is a function.');
+    testString: assert(typeof mergeSort == 'function');
   - text: <code>mergeSort</code> returns a sorted array (least to greatest).
-    testString: assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>mergeSort</code> returns a sorted array (least to greatest).');
+    testString: assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
   - text: <code>mergeSort</code> returns an array that is unchanged except for order.
-    testString: assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>mergeSort</code> returns an array that is unchanged except for order.');
+    testString: assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>mergeSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert.strictEqual(code.search(/\.sort\(/), -1, '<code>mergeSort</code> should not use the built-in <code>.sort()</code> method.');
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 
