@@ -24,7 +24,7 @@ How many elements would be contained in the set of reduced proper fractions for 
 ```yml
 tests:
   - text: <code>euler72()</code> should return 303963552391.
-    testString: assert.strictEqual(euler72(), 303963552391, '<code>euler72()</code> should return 303963552391.');
+    testString: assert.strictEqual(euler72(), 303963552391);
 
 ```
 

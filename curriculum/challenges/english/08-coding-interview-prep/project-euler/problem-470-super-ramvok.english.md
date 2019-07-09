@@ -32,7 +32,7 @@ Calculate F(20), rounded to the nearest integer.
 ```yml
 tests:
   - text: <code>euler470()</code> should return 147668794.
-    testString: assert.strictEqual(euler470(), 147668794, '<code>euler470()</code> should return 147668794.');
+    testString: assert.strictEqual(euler470(), 147668794);
 
 ```
 

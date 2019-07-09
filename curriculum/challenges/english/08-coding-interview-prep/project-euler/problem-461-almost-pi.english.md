@@ -26,7 +26,7 @@ Find g(10000).
 ```yml
 tests:
   - text: <code>euler461()</code> should return 159820276.
-    testString: assert.strictEqual(euler461(), 159820276, '<code>euler461()</code> should return 159820276.');
+    testString: assert.strictEqual(euler461(), 159820276);
 
 ```
 

@@ -39,7 +39,7 @@ Find C(20 000 000).
 ```yml
 tests:
   - text: <code>euler464()</code> should return 198775297232878.
-    testString: assert.strictEqual(euler464(), 198775297232878, '<code>euler464()</code> should return 198775297232878.');
+    testString: assert.strictEqual(euler464(), 198775297232878);
 
 ```
 

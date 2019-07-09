@@ -23,7 +23,7 @@ Find F(109, 109) mod 1 234 567 891.
 ```yml
 tests:
   - text: <code>euler452()</code> should return 345558983.
-    testString: assert.strictEqual(euler452(), 345558983, '<code>euler452()</code> should return 345558983.');
+    testString: assert.strictEqual(euler452(), 345558983);
 
 ```
 

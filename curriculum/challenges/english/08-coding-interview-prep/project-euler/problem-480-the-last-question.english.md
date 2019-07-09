@@ -58,7 +58,7 @@ Give your answer using lowercase characters (no punctuation or space).
 ```yml
 tests:
   - text: <code>euler480()</code> should return turnthestarson.
-    testString: assert.strictEqual(euler480(), turnthestarson, '<code>euler480()</code> should return turnthestarson.');
+    testString: assert.strictEqual(euler480(), turnthestarson);
 
 ```
 
