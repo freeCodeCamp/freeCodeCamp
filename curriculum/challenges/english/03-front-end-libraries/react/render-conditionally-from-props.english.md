@@ -24,13 +24,13 @@ Now you have an expression that you can use to make a randomized decision in the
 ```yml
 tests:
   - text: The <code>GameOfChance</code> component should exist and render to the page.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('GameOfChance').length, 1, 'The <code>GameOfChance</code> component should exist and render to the page.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('GameOfChance').length, 1);
   - text: <code>GameOfChance</code> should return a single <code>button</code> element.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('button').length, 1, '<code>GameOfChance</code> should return a single <code>button</code> element.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find('button').length, 1);
   - text: <code>GameOfChance</code> should return a single instance of the <code>Results</code> component, which has a prop called <code>fiftyFifty</code>.
-    testString: assert(Enzyme.mount(React.createElement(GameOfChance)).find('Results').length === 1 && Enzyme.mount(React.createElement(GameOfChance)).find('Results').props().hasOwnProperty('fiftyFifty') === true, '<code>GameOfChance</code> should return a single instance of the <code>Results</code> component, which has a prop called <code>fiftyFifty</code>.');
+    testString: assert(Enzyme.mount(React.createElement(GameOfChance)).find('Results').length === 1 && Enzyme.mount(React.createElement(GameOfChance)).find('Results').props().hasOwnProperty('fiftyFifty') === true);
   - text: <code>GameOfChance</code> state should be initialized with a property of <code>counter</code> set to a value of <code>1</code>.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).state().counter, 1, '<code>GameOfChance</code> state should be initialized with a property of <code>counter</code> set to a value of <code>1</code>.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).state().counter, 1);
   - text: 'When the <code>GameOfChance</code> component is first rendered to the DOM, a <code>p</code> element should be returned with the inner text of <code>Turn: 1</code>.'
     testString: 'assert.strictEqual(Enzyme.mount(React.createElement(GameOfChance)).find(''p'').text(), ''Turn: 1'', ''When the <code>GameOfChance</code> component is first rendered to the DOM, a <code>p</code> element should be returned with the inner text of <code>Turn: 1</code>.'');'
   - text: 'Each time the button is clicked, the counter state should be incremented by a value of 1, and a single <code>p</code> element should be rendered to the DOM that contains the text "Turn: N", where N is the value of the counter state.'

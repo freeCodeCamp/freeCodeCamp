@@ -24,7 +24,7 @@ Next, add <code>componentDidUpdate()</code> in the <code>Dialog</code> component
 ```yml
 tests:
   - text: The <code>Controller</code> component should render the <code>Dialog</code> component as a child.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('Dialog').length === 1; })(), 'The <code>Controller</code> component should render the <code>Dialog</code> component as a child.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('Dialog').length === 1; })());
   - text: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>this.props</code> to the console.
     testString: assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,''); return lifecycleChild.includes('console.log') && lifecycleChild.includes('this.props') })(), 'The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>this.props</code> to the console.');
   - text: The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>nextProps</code> to the console.

@@ -22,7 +22,7 @@ The <code>shouldComponentUpdate()</code> method is added in a component called <
 ```yml
 tests:
   - text: The <code>Controller</code> component should render the <code>OnlyEvens</code> component as a child.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('OnlyEvens').length === 1; })(), 'The <code>Controller</code> component should render the <code>OnlyEvens</code> component as a child.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find('Controller').length === 1 && mockedComponent.find('OnlyEvens').length === 1; })());
   - text: The <code>shouldComponentUpdate</code> method should be defined on the <code>OnlyEvens</code> component.
     testString: assert((() => { const child = React.createElement(OnlyEvens).type.prototype.shouldComponentUpdate.toString().replace(/s/g,''); return child !== 'undefined'; })(), 'The <code>shouldComponentUpdate</code> method should be defined on the <code>OnlyEvens</code> component.');
   - text: The <code>OnlyEvens</code> component should return an <code>h1</code> tag which renders the value of <code>this.props.value</code>.

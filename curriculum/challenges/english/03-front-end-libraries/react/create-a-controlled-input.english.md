@@ -25,7 +25,7 @@ Last but not least, don't forget to add the necessary bindings in the constructo
 ```yml
 tests:
   - text: <code>ControlledInput</code> should return a <code>div</code> element which contains an <code>input</code> and a <code>p</code> tag.
-    testString: assert(Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('input').length === 1 && Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('p').length === 1, '<code>ControlledInput</code> should return a <code>div</code> element which contains an <code>input</code> and a <code>p</code> tag.');
+    testString: assert(Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('input').length === 1 && Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('p').length === 1);
   - text: The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.
     testString: assert.strictEqual(Enzyme.mount(React.createElement(ControlledInput)).state('input'), '', 'The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.');
   - text: Typing in the input element should update the state and the value of the input, and the <code>p</code> element should render this state as you type.

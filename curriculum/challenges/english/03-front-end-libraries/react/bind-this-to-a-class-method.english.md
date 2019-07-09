@@ -25,7 +25,7 @@ Once you complete the above steps you should be able to click the button and see
 ```yml
 tests:
   - text: <code>MyComponent</code> should return a <code>div</code> element which wraps two elements, a button and an <code>h1</code> element, in that order.
-    testString: assert(Enzyme.mount(React.createElement(MyComponent)).find('div').length === 1 && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(0).type() === 'button' && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(1).type() === 'h1', '<code>MyComponent</code> should return a <code>div</code> element which wraps two elements, a button and an <code>h1</code> element, in that order.');
+    testString: assert(Enzyme.mount(React.createElement(MyComponent)).find('div').length === 1 && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(0).type() === 'button' && Enzyme.mount(React.createElement(MyComponent)).find('div').childAt(1).type() === 'h1');
   - text: 'The state of <code>MyComponent</code> should initialize with the key value pair <code>{ itemCount: 0 }</code>.'
     testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state(''itemCount'') === 0, ''The state of <code>MyComponent</code> should initialize with the key value pair <code>{ itemCount: 0 }</code>.'');'
   - text: Clicking the <code>button</code> element should run the <code>addItem</code> method and increment the state <code>itemCount</code> by <code>1</code>.

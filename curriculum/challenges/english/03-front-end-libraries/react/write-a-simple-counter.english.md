@@ -22,9 +22,9 @@ The <code>Counter</code> component keeps track of a <code>count</code> value in 
 ```yml
 tests:
   - text: <code>Counter</code> should return a <code>div</code> element which contains three buttons with text content in this order <code>Increment!</code>, <code>Decrement!</code>, <code>Reset</code>.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Counter)); return (mockedComponent.find('.inc').text() === 'Increment!' && mockedComponent.find('.dec').text() === 'Decrement!' && mockedComponent.find('.reset').text() === 'Reset'); })(), '<code>Counter</code> should return a <code>div</code> element which contains three buttons with text content in this order <code>Increment!</code>, <code>Decrement!</code>, <code>Reset</code>.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Counter)); return (mockedComponent.find('.inc').text() === 'Increment!' && mockedComponent.find('.dec').text() === 'Decrement!' && mockedComponent.find('.reset').text() === 'Reset'); })());
   - text: The state of <code>Counter</code> should initialize with a <code>count</code> property set to <code>0</code>.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(Counter)).state('count'), 0, 'The state of <code>Counter</code> should initialize with a <code>count</code> property set to <code>0</code>.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(Counter)).state('count'), 0);
   - text: Clicking the increment button should increment the count by <code>1</code>.
     testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(Counter)); const first = () => { mockedComponent.setState({ count: 0 }); return waitForIt(() => mockedComponent.state(''count'')); }; const second = () => { mockedComponent.find(''.inc'').simulate(''click''); return waitForIt(() => mockedComponent.state(''count'')); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === 0 && secondValue === 1, ''Clicking the increment button should increment the count by <code>1</code>.''); }; '
   - text: Clicking the decrement button should decrement the count by <code>1</code>.
