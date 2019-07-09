@@ -34,7 +34,7 @@ What is the combined volume of all 50000 cuboids, C1,...,C50000 ?
 ```yml
 tests:
   - text: <code>euler212()</code> should return 328968937309.
-    testString: assert.strictEqual(euler212(), 328968937309, '<code>euler212()</code> should return 328968937309.');
+    testString: assert.strictEqual(euler212(), 328968937309);
 
 ```
 

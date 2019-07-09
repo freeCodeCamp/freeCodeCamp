@@ -24,7 +24,7 @@ Using up to one million tiles how many different square laminae can be formed?
 ```yml
 tests:
   - text: <code>euler173()</code> should return 1572729.
-    testString: assert.strictEqual(euler173(), 1572729, '<code>euler173()</code> should return 1572729.');
+    testString: assert.strictEqual(euler173(), 1572729);
 
 ```
 

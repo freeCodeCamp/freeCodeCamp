@@ -29,7 +29,7 @@ What is the largest 0 to 9 pandigital 10-digit concatenated product of an intege
 ```yml
 tests:
   - text: <code>euler170()</code> should return 9857164023.
-    testString: assert.strictEqual(euler170(), 9857164023, '<code>euler170()</code> should return 9857164023.');
+    testString: assert.strictEqual(euler170(), 9857164023);
 
 ```
 

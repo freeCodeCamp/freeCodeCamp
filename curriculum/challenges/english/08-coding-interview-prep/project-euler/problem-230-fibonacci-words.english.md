@@ -46,7 +46,7 @@ Find ∑n = 0,1,...,17   10n× DA,B((127+19n)×7n) .
 ```yml
 tests:
   - text: <code>euler230()</code> should return 850481152593119200.
-    testString: assert.strictEqual(euler230(), 850481152593119200, '<code>euler230()</code> should return 850481152593119200.');
+    testString: assert.strictEqual(euler230(), 850481152593119200);
 
 ```
 

@@ -35,7 +35,7 @@ Find ΣD(N) for 5 ≤ N ≤ 10000.
 ```yml
 tests:
   - text: <code>euler183()</code> should return 48861552.
-    testString: assert.strictEqual(euler183(), 48861552, '<code>euler183()</code> should return 48861552.');
+    testString: assert.strictEqual(euler183(), 48861552);
 
 ```
 

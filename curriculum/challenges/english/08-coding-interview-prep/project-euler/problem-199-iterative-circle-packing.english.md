@@ -28,7 +28,7 @@ Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
 ```yml
 tests:
   - text: <code>euler199()</code> should return 0.00396087.
-    testString: assert.strictEqual(euler199(), 0.00396087, '<code>euler199()</code> should return 0.00396087.');
+    testString: assert.strictEqual(euler199(), 0.00396087);
 
 ```
 

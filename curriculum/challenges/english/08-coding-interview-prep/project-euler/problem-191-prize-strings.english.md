@@ -32,7 +32,7 @@ How many "prize" strings exist over a 30-day period?
 ```yml
 tests:
   - text: <code>euler191()</code> should return 1918080160.
-    testString: assert.strictEqual(euler191(), 1918080160, '<code>euler191()</code> should return 1918080160.');
+    testString: assert.strictEqual(euler191(), 1918080160);
 
 ```
 

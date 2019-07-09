@@ -51,7 +51,7 @@ Determine the sum of all integers which are the sum of exactly one of the 50-ele
 ```yml
 tests:
   - text: <code>euler201()</code> should return 115039000.
-    testString: assert.strictEqual(euler201(), 115039000, '<code>euler201()</code> should return 115039000.');
+    testString: assert.strictEqual(euler201(), 115039000);
 
 ```
 

@@ -22,7 +22,7 @@ How many barely obtuse triangles are there with perimeter ≤ 75,000,000?
 ```yml
 tests:
   - text: <code>euler224()</code> should return 4137330.
-    testString: assert.strictEqual(euler224(), 4137330, '<code>euler224()</code> should return 4137330.');
+    testString: assert.strictEqual(euler224(), 4137330);
 
 ```
 

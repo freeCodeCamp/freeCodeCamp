@@ -23,7 +23,7 @@ What is the expected number of unoccupied squares after 50 rings of the bell? Gi
 ```yml
 tests:
   - text: <code>euler213()</code> should return 330.721154.
-    testString: assert.strictEqual(euler213(), 330.721154, '<code>euler213()</code> should return 330.721154.');
+    testString: assert.strictEqual(euler213(), 330.721154);
 
 ```
 
