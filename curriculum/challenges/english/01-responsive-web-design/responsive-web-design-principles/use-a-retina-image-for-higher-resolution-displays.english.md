@@ -32,9 +32,9 @@ Set the <code>width</code> and <code>height</code> of the <code>img</code> tag t
 ```yml
 tests:
   - text: Your <code>img</code> tag should have a <code>width</code> of 100 pixels.
-    testString: assert($('img').css('width') == '100px', 'Your <code>img</code> tag should have a <code>width</code> of 100 pixels.');
+    testString: assert($('img').css('width') == '100px');
   - text: Your <code>img</code> tag should have a <code>height</code> of 100 pixels.
-    testString: assert($('img').css('height') == '100px', 'Your <code>img</code> tag should have a <code>height</code> of 100 pixels.');
+    testString: assert($('img').css('height') == '100px');
 
 ```
 

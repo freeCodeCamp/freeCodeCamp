@@ -22,9 +22,9 @@ Add the CSS property <code>align-self</code> to both <code>#box-1</code> and <co
 ```yml
 tests:
   - text: The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.
-    testString: assert($('#box-1').css('align-self') == 'center', 'The <code>#box-1</code> element should have the <code>align-self</code> property set to a value of center.');
+    testString: assert($('#box-1').css('align-self') == 'center');
   - text: The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.
-    testString: assert($('#box-2').css('align-self') == 'flex-end', 'The <code>#box-2</code> element should have the <code>align-self</code> property set to a value of flex-end.');
+    testString: assert($('#box-2').css('align-self') == 'flex-end');
 
 ```
 

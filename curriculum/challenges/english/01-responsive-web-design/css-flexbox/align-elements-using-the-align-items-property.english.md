@@ -26,7 +26,7 @@ An example helps show this property in action. Add the CSS property <code>align-
 ```yml
 tests:
   - text: The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.
-    testString: assert($('#box-container').css('align-items') == 'center', 'The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.');
+    testString: assert($('#box-container').css('align-items') == 'center');
 
 ```
 

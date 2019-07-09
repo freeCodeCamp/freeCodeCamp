@@ -21,9 +21,9 @@ Add the CSS property <code>flex-direction</code> to both the <code>header</code>
 ```yml
 tests:
   - text: The <code>header</code> should have a <code>flex-direction</code> property set to row.
-    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g), 'The <code>header</code> should have a <code>flex-direction</code> property set to row.');
+    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
   - text: The <code>footer</code> should have a <code>flex-direction</code> property set to row.
-    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g), 'The <code>footer</code> should have a <code>flex-direction</code> property set to row.');
+    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
 
 ```
 
