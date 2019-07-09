@@ -53,7 +53,6 @@ Uses the operator `typeof` to check if the variable is a boolean. If it is, it w
 
 #### Relevant Links
 
-*   <a href ='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/debugging/use-typeof-to-check-the-type-of-a-variable' target='_blank' rel='nofollow'>Using typeof</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof' target='_blank' rel='nofollow'>typeof</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
