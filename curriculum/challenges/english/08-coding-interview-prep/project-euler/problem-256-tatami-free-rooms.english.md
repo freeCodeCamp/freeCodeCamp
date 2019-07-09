@@ -45,7 +45,7 @@ Find the smallest room-size s for which T(s) = 200.
 ```yml
 tests:
   - text: <code>euler256()</code> should return 85765680.
-    testString: assert.strictEqual(euler256(), 85765680, '<code>euler256()</code> should return 85765680.');
+    testString: assert.strictEqual(euler256(), 85765680);
 
 ```
 

@@ -30,7 +30,7 @@ What is the sum of all positive reachable integers?
 ```yml
 tests:
   - text: <code>euler259()</code> should return 20101196798.
-    testString: assert.strictEqual(euler259(), 20101196798, '<code>euler259()</code> should return 20101196798.');
+    testString: assert.strictEqual(euler259(), 20101196798);
 
 ```
 

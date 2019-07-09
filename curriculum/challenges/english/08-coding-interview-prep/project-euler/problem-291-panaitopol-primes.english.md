@@ -23,7 +23,7 @@ Find how many Panaitopol primes are less than 5×1015.
 ```yml
 tests:
   - text: <code>euler291()</code> should return 4037526.
-    testString: assert.strictEqual(euler291(), 4037526, '<code>euler291()</code> should return 4037526.');
+    testString: assert.strictEqual(euler291(), 4037526);
 
 ```
 

@@ -22,13 +22,13 @@ What is the <var>n</var>th lexicographic permutation of the digits 0, 1, 2, 3, 4
 ```yml
 tests:
   - text: <code>lexicographicPermutations(699999)</code> should return 1938246570.
-    testString: assert(lexicographicPermutations(699999) == 1938246570, '<code>lexicographicPermutations(699999)</code> should return 1938246570.');
+    testString: assert(lexicographicPermutations(699999) == 1938246570);
   - text: <code>lexicographicPermutations(899999)</code> should return 2536987410.
-    testString: assert(lexicographicPermutations(899999) == 2536987410, '<code>lexicographicPermutations(899999)</code> should return 2536987410.');
+    testString: assert(lexicographicPermutations(899999) == 2536987410);
   - text: <code>lexicographicPermutations(900000)</code> should return 2537014689.
-    testString: assert(lexicographicPermutations(900000) == 2537014689, '<code>lexicographicPermutations(900000)</code> should return 2537014689.');
+    testString: assert(lexicographicPermutations(900000) == 2537014689);
   - text: <code>lexicographicPermutations(999999)</code> should return 2783915460.
-    testString: assert(lexicographicPermutations(999999) == 2783915460, '<code>lexicographicPermutations(999999)</code> should return 2783915460.');
+    testString: assert(lexicographicPermutations(999999) == 2783915460);
 
 ```
 

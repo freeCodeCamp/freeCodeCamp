@@ -31,7 +31,7 @@ In how many ways can twenty 12-sided dice (sides numbered 1 to 12) be rolled so 
 ```yml
 tests:
   - text: <code>euler240()</code> should return 7448717393364182000.
-    testString: assert.strictEqual(euler240(), 7448717393364182000, '<code>euler240()</code> should return 7448717393364182000.');
+    testString: assert.strictEqual(euler240(), 7448717393364182000);
 
 ```
 

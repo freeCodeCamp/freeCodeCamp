@@ -26,7 +26,7 @@ Find ∑S(N), for all squarefree N only divisible by primes of the form 4k+1 wit
 ```yml
 tests:
   - text: <code>euler273()</code> should return 2032447591196869000.
-    testString: assert.strictEqual(euler273(), 2032447591196869000, '<code>euler273()</code> should return 2032447591196869000.');
+    testString: assert.strictEqual(euler273(), 2032447591196869000);
 
 ```
 

@@ -28,7 +28,7 @@ How many odd-triplets are there with n ≤ 1012 ?
 ```yml
 tests:
   - text: <code>euler242()</code> should return 997104142249036700.
-    testString: assert.strictEqual(euler242(), 997104142249036700, '<code>euler242()</code> should return 997104142249036700.');
+    testString: assert.strictEqual(euler242(), 997104142249036700);
 
 ```
 

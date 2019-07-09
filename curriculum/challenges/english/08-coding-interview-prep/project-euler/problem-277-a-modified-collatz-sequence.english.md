@@ -44,7 +44,7 @@ What is the smallest a1 > 1015 that begins with the sequence "UDDDUdddDDUDDddDdD
 ```yml
 tests:
   - text: <code>euler277()</code> should return 1125977393124310.
-    testString: assert.strictEqual(euler277(), 1125977393124310, '<code>euler277()</code> should return 1125977393124310.');
+    testString: assert.strictEqual(euler277(), 1125977393124310);
 
 ```
 

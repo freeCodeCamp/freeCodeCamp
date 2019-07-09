@@ -30,7 +30,7 @@ T(10) is 2329. What is T(1012) modulo 108?
 ```yml
 tests:
   - text: <code>euler237()</code> should return 15836928.
-    testString: assert.strictEqual(euler237(), 15836928, '<code>euler237()</code> should return 15836928.');
+    testString: assert.strictEqual(euler237(), 15836928);
 
 ```
 

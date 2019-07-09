@@ -30,7 +30,7 @@ Find ∑ f(p*q,p*r,q*r), where p, q and r are prime numbers and p < q < r < 5000
 ```yml
 tests:
   - text: <code>euler278()</code> should return 1228215747273908500.
-    testString: assert.strictEqual(euler278(), 1228215747273908500, '<code>euler278()</code> should return 1228215747273908500.');
+    testString: assert.strictEqual(euler278(), 1228215747273908500);
 
 ```
 
