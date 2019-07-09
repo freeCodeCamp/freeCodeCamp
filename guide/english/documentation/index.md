@@ -13,7 +13,17 @@ There is always the danger of over-commenting your code, too. Here is a video fr
 
 It is extremely important to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code, just as regular code should be.
 
-Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
+Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do. But beware: you should never use comments as an excuse to write bad code! Your code should be readable enough so you can get by with writing only the necessary comments, for example by using clear and fitting variable and function names.
+
+There are certain guidelines for writing good documentation and several tools that can generate an easily readable documentation document from the comments in your code.
+
+### Function documentation
+
+A function should contain descriptions for each of the parameters that are passed to it (including the data type if it is not obvious from the variable name), a description of what the function does, and a description of the return value if there is one. Apart from making the code more readable and easier to understand for others, it makes the programmer really think about their function design and maybe even reconsider and change it. Writing documentation can also help find errors in the code, especially when the code was written hastily and without planning.
+
+### Class documentation
+
+A class documentation should include the author of the code and a short description of what the class is for and how to use it. This is especially helpful when more than one person is working on a project.
 
 Think of Code documentation as a history textbook. It allows current developers to keep tabs on their progress, as well as to educate future developers. Use it not only as a learning tool, but also as a reminder. As George Santayana once said, "Those who do not read history are doomed to repeat it!"
 
