@@ -28,15 +28,15 @@ Change the regex <code>countNonWhiteSpace</code> to look for multiple non-whites
 ```yml
 tests:
   - text: Your regex should use the global flag.
-    testString: assert(countNonWhiteSpace.global, 'Your regex should use the global flag.');
-  - text: Your regex should use the shorthand character
-    testString: assert(/\\S/.test(countNonWhiteSpace.source), 'Your regex should use the shorthand character <code>\S/code> to match all non-whitespace characters.');
+    testString: assert(countNonWhiteSpace.global);
+  - text: Your regex should use the shorthand character <code>\S/code> to match all non-whitespace characters.
+    testString: assert(/\\S/.test(countNonWhiteSpace.source));
   - text: Your regex should find 35 non-spaces in <code>"Men are from Mars and women are from Venus."</code>
-    testString: assert("Men are from Mars and women are from Venus.".match(countNonWhiteSpace).length == 35, 'Your regex should find 35 non-spaces in <code>"Men are from Mars and women are from Venus."</code>');
+    testString: assert("Men are from Mars and women are from Venus.".match(countNonWhiteSpace).length == 35);
   - text: 'Your regex should find 23 non-spaces in <code>"Space: the final frontier."</code>'
     testString: 'assert("Space: the final frontier.".match(countNonWhiteSpace).length == 23, ''Your regex should find 23 non-spaces in <code>"Space: the final frontier."</code>'');'
   - text: Your regex should find 21 non-spaces in <code>"MindYourPersonalSpace"</code>
-    testString: assert("MindYourPersonalSpace".match(countNonWhiteSpace).length == 21, 'Your regex should find 21 non-spaces in <code>"MindYourPersonalSpace"</code>');
+    testString: assert("MindYourPersonalSpace".match(countNonWhiteSpace).length == 21);
 
 ```
 

@@ -22,11 +22,11 @@ Create a single regex that matches all characters that are not a number or a vow
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should match 9 items.
-    testString: assert(result.length == 9, 'Your regex <code>myRegex</code> should match 9 items.');
+    testString: assert(result.length == 9);
   - text: Your regex <code>myRegex</code> should use the global flag.
-    testString: assert(myRegex.flags.match(/g/).length == 1, 'Your regex <code>myRegex</code> should use the global flag.');
+    testString: assert(myRegex.flags.match(/g/).length == 1);
   - text: Your regex <code>myRegex</code> should use the case insensitive flag.
-    testString: assert(myRegex.flags.match(/i/).length == 1, 'Your regex <code>myRegex</code> should use the case insensitive flag.');
+    testString: assert(myRegex.flags.match(/i/).length == 1);
 
 ```
 

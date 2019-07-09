@@ -30,25 +30,25 @@ Complete the regex <code>unRegex</code> so that it matches the strings <code>"ru
 ```yml
 tests:
   - text: You should use the <code>.test()</code> method.
-    testString: assert(code.match(/\.test\(.*\)/), 'You should use the <code>.test()</code> method.');
+    testString: assert(code.match(/\.test\(.*\)/));
   - text: You should use the wildcard character in your regex <code>unRegex</code>
-    testString: assert(/\./.test(unRegex.source), 'You should use the wildcard character in your regex <code>unRegex</code>');
+    testString: assert(/\./.test(unRegex.source));
   - text: Your regex <code>unRegex</code> should match <code>"run"</code> in <code>"Let us go on a run."</code>
-    testString: assert(unRegex.test("Let us go on a run."), 'Your regex <code>unRegex</code> should match <code>"run"</code> in <code>"Let us go on a run."</code>');
+    testString: assert(unRegex.test("Let us go on a run."));
   - text: Your regex <code>unRegex</code> should match <code>"sun"</code> in <code>"The sun is out today."</code>
-    testString: assert(unRegex.test("The sun is out today."), 'Your regex <code>unRegex</code> should match <code>"sun"</code> in <code>"The sun is out today."</code>');
+    testString: assert(unRegex.test("The sun is out today."));
   - text: Your regex <code>unRegex</code> should match <code>"fun"</code> in <code>"Coding is a lot of fun."</code>
-    testString: assert(unRegex.test("Coding is a lot of fun."), 'Your regex <code>unRegex</code> should match <code>"fun"</code> in <code>"Coding is a lot of fun."</code>');
+    testString: assert(unRegex.test("Coding is a lot of fun."));
   - text: Your regex <code>unRegex</code> should match <code>"pun"</code> in <code>"Seven days without a pun makes one weak."</code>
-    testString: assert(unRegex.test("Seven days without a pun makes one weak."), 'Your regex <code>unRegex</code> should match <code>"pun"</code> in <code>"Seven days without a pun makes one weak."</code>');
+    testString: assert(unRegex.test("Seven days without a pun makes one weak."));
   - text: Your regex <code>unRegex</code> should match <code>"nun"</code> in <code>"One takes a vow to be a nun."</code>
-    testString: assert(unRegex.test("One takes a vow to be a nun."), 'Your regex <code>unRegex</code> should match <code>"nun"</code> in <code>"One takes a vow to be a nun."</code>');
+    testString: assert(unRegex.test("One takes a vow to be a nun."));
   - text: Your regex <code>unRegex</code> should match <code>"bun"</code> in <code>"She got fired from the hot dog stand for putting her hair in a bun."</code>
-    testString: assert(unRegex.test("She got fired from the hot dog stand for putting her hair in a bun."), 'Your regex <code>unRegex</code> should match <code>"bun"</code> in <code>"She got fired from the hot dog stand for putting her hair in a bun."</code>');
+    testString: assert(unRegex.test("She got fired from the hot dog stand for putting her hair in a bun."));
   - text: Your regex <code>unRegex</code> should not match <code>"There is a bug in my code."</code>
-    testString: assert(!unRegex.test("There is a bug in my code."), 'Your regex <code>unRegex</code> should not match <code>"There is a bug in my code."</code>');
+    testString: assert(!unRegex.test("There is a bug in my code."));
   - text: Your regex <code>unRegex</code> should not match <code>"Catch me if you can."</code>
-    testString: assert(!unRegex.test("Can me if you can."), 'Your regex <code>unRegex</code> should not match <code>"Catch me if you can."</code>');
+    testString: assert(!unRegex.test("Can me if you can."));
 
 ```
 
