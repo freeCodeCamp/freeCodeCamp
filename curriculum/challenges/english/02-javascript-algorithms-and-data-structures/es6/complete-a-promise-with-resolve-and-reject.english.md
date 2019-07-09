@@ -10,14 +10,14 @@ A promise has three states: <code>pending</code>, <code>fulfilled</code>, and <c
 
 ```js
 const myPromise = new Promise((resolve, reject) => {
-  if(true) {
+  if(condition here) {
     resolve("Promise was fulfilled");
   } else {
     reject("Promise was rejected");
   }
 ```
 
-The example above uses strings for the argument of these functions, but it can really be anything. Often, it might be an object that you would use data from to put on your website or elsewhere.
+The example above uses strings for the argument of these functions, but it can really be anything. Often, it might be an object, that you would use data from, to put on your website or elsewhere.
 </section>
 
 ## Instructions
