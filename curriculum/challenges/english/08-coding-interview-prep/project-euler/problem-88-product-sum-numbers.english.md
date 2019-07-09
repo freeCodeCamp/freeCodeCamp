@@ -26,7 +26,7 @@ What is the sum of all the minimal product-sum numbers for 2≤k≤12000?
 ```yml
 tests:
   - text: <code>euler88()</code> should return 7587457.
-    testString: assert.strictEqual(euler88(), 7587457, '<code>euler88()</code> should return 7587457.');
+    testString: assert.strictEqual(euler88(), 7587457);
 
 ```
 
