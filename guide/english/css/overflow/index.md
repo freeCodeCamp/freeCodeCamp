@@ -55,7 +55,6 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
     overflow-y: auto;
   }
 ```
-And the `.box-element` will look like this:
 ![Example Image](https://user-images.githubusercontent.com/34807532/49148596-c8a2f200-f32d-11e8-9a2d-21b08b794d14.png)
 
 If the content overflows the Y-axis, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
