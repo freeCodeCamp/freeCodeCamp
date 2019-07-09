@@ -23,9 +23,9 @@ Write a function that takes a number <code>n</code> as a parameter and returns t
 ```yml
 tests:
   - text: <code>idMatrix</code> should be a function.
-    testString: assert(typeof idMatrix=='function','<code>idMatrix</code> should be a function.');
+    testString: assert(typeof idMatrix=='function');
   - text: <code>idMatrix(1)</code> should return an array.
-    testString: assert(Array.isArray(idMatrix(1)),'<code>idMatrix(1)</code> should return an array.');
+    testString: assert(Array.isArray(idMatrix(1)));
   - text: <code>idMatrix(1)</code> should return <code>[ [ 1 ] ]</code>.
     testString: assert.deepEqual(idMatrix(1),results[0]);
   - text: <code>idMatrix(2)</code> should return <code>[ [ 1, 0 ], [ 0, 1 ] ]</code>.

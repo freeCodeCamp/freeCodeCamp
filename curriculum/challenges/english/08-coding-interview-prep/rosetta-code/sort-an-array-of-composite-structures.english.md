@@ -20,7 +20,7 @@ Write a function that takes an array of objects as a parameter. The function sho
 ```yml
 tests:
   - text: <code>sortByKey</code> should be a function.
-    testString: assert(typeof sortByKey == 'function', '<code>sortByKey</code> should be a function.');
+    testString: assert(typeof sortByKey == 'function');
   - text: '<code>sortByKey([{key: 3, value: "foo"}, {key: 2, value: "bar"}, {key: 4, value: "baz"}, {key: 1, value: 42}, {key: 5, value: "another string"}])</code> should return an array.'
     testString: assert(Array.isArray(sortByKey([{key:3, value:"foo"}, {key:2, value:"bar"}, {key:4, value:"baz"}, {key:1, value:42}, {key:5, value:"another string"}])), '<code>sortByKey([{key:3, value:"foo"}, {key:2, value:"bar"}, {key:4, value:"baz"}, {key:1, value:42}, {key:5, value:"another string"}])</code> should return an array.');
   - text: '<code>sortByKey([{key: 3, value: "foo"}, {key: 2, value: "bar"}, {key: 4, value: "baz"}, {key: 1, value: 42}, {key: 5, value: "another string"}])</code> should return <code>[{key: 1, value: 42}, {key: 2, value: "bar"}, {key: 3, value: "foo"}, {key: 4, value: "baz"}, {key: 5, value: "another string"}]</code>.'

@@ -24,19 +24,19 @@ For example for \(n=7\), the function should return 81 as the sequence would be 
 ```yml
 tests:
   - text: <code>exponentialGenerator</code> should be a function.
-    testString: assert(typeof exponentialGenerator=='function','<code>exponentialGenerator</code> should be a function.');
+    testString: assert(typeof exponentialGenerator=='function');
   - text: <code>exponentialGenerator()</code> should return a number.
-    testString: assert(typeof exponentialGenerator(10)=='number','<code>exponentialGenerator()</code> should return a number.');
+    testString: assert(typeof exponentialGenerator(10)=='number');
   - text: <code>exponentialGenerator(10)</code> should return <code>144</code>.
-    testString: assert.equal(exponentialGenerator(10),144,'<code>exponentialGenerator(10)</code> should return <code>144</code>.');
+    testString: assert.equal(exponentialGenerator(10),144);
   - text: <code>exponentialGenerator(12)</code> should return <code>196</code>.
-    testString: assert.equal(exponentialGenerator(12),196,'<code>exponentialGenerator(12)</code> should return <code>196</code>.');
+    testString: assert.equal(exponentialGenerator(12),196);
   - text: <code>exponentialGenerator(14)</code> should return <code>256</code>.
-    testString: assert.equal(exponentialGenerator(14),256,'<code>exponentialGenerator(14)</code> should return <code>256</code>.');
+    testString: assert.equal(exponentialGenerator(14),256);
   - text: <code>exponentialGenerator(20)</code> should return <code>484</code>.
-    testString: assert.equal(exponentialGenerator(20),484,'<code>exponentialGenerator(20)</code> should return <code>484</code>.');
+    testString: assert.equal(exponentialGenerator(20),484);
   - text: <code>exponentialGenerator(25)</code> should return <code>784</code>.
-    testString: assert.equal(exponentialGenerator(25),784,'<code>exponentialGenerator(25)</code> should return <code>784</code>.');
+    testString: assert.equal(exponentialGenerator(25),784);
 
 ```
 

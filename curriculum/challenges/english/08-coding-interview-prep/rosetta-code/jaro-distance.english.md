@@ -39,9 +39,9 @@ Write a function a that takes two strings as parameters and returns the associat
 ```yml
 tests:
   - text: <code>jaro</code> should be a function.
-    testString: assert(typeof jaro=='function','<code>jaro</code> should be a function.');
+    testString: assert(typeof jaro=='function');
   - text: <code>jaro("MARTHA", "MARHTA")</code> should return a number.
-    testString: assert(typeof jaro('MARTHA', 'MARHTA')=='number','<code>jaro()</code> should return a number.');
+    testString: assert(typeof jaro('MARTHA', 'MARHTA')=='number');
   - text: <code>jaro("MARTHA", "MARHTA")</code> should return <code>0.9444444444444445</code>.
     testString: assert.equal(jaro('MARTHA', 'MARHTA'), 0.9444444444444445,'<code>jaro("MARTHA", "MARHTA")</code> should return <code>0.9444444444444445</code>.');
   - text: <code>jaro("DIXON", "DICKSONX")</code> should return <code>0.7666666666666666</code>.

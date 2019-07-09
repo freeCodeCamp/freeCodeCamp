@@ -45,9 +45,9 @@ and using <code>|</code> as a separator and <code>^</code> as escape character, 
 ```yml
 tests:
   - text: <code>tokenize</code> is a function.
-    testString: assert(typeof tokenize === 'function', '<code>tokenize</code> is a function.');
+    testString: assert(typeof tokenize === 'function');
   - text: <code>tokenize</code> should return an array.
-    testString: assert(typeof tokenize('a', 'b', 'c') === 'object', '<code>tokenize</code> should return an array.');
+    testString: assert(typeof tokenize('a', 'b', 'c') === 'object');
   - text: <code>tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^') </code> should return <code>['one|uno', '', 'three^^', 'four^|cuatro', '']</code>
     testString: assert.deepEqual(tokenize(testStr1, '|', '^'), res1, "<code>tokenize('one^|uno||three^^^^|four^^^|^cuatro|', '|', '^') </code> should return ['one|uno', '', 'three^^', 'four^|cuatro', '']");
   - text: <code>tokenize('a@&bcd&ef&&@@hi', '&', '@')</code> should return <code>['a&bcd', 'ef', '', '@hi']</code>

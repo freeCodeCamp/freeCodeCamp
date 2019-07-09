@@ -21,21 +21,21 @@ jortSort is a function that takes a single array of comparable objects as its ar
 ```yml
 tests:
   - text: <code>jortsort</code> should be a function.
-    testString: assert(typeof jortsort=='function','<code>jortsort</code> should be a function.');
+    testString: assert(typeof jortsort=='function');
   - text: <code>jortsort([1,2,3,4,5])</code> should return a boolean.
-    testString: assert(typeof jortsort([1,2,3,4,5])=='boolean','<code>jortsort([1,2,3,4,5])</code> should return a boolean.');
+    testString: assert(typeof jortsort([1,2,3,4,5])=='boolean');
   - text: <code>jortsort([1,2,3,4,5])</code> should return <code>true</code>.
-    testString: assert.equal(jortsort([1,2,3,4,5]),true,'<code>jortsort([1,2,3,4,5])</code> should return <code>true</code>.');
+    testString: assert.equal(jortsort([1,2,3,4,5]),true);
   - text: <code>jortsort([1,2,13,4,5])</code> should return <code>false</code>.
-    testString: assert.equal(jortsort([1,2,13,4,5]),false,'<code>jortsort([1,2,13,4,5])</code> should return <code>false</code>.');
+    testString: assert.equal(jortsort([1,2,13,4,5]),false);
   - text: <code>jortsort([12,4,51,2,4])</code> should return <code>false</code>.
-    testString: assert.equal(jortsort([12,4,51,2,4]),false,'<code>jortsort([12,4,51,2,4])</code> should return <code>false</code>.');
+    testString: assert.equal(jortsort([12,4,51,2,4]),false);
   - text: <code>jortsort([1,2])</code> should return <code>true</code>.
-    testString: assert.equal(jortsort([1,2]),true,'<code>jortsort([1,2])</code> should return <code>true</code>.');
+    testString: assert.equal(jortsort([1,2]),true);
   - text: <code>jortsort([5,4,3,2,1])</code> should return <code>false</code>.
-    testString: assert.equal(jortsort([5,4,3,2,1]),false,'<code>jortsort([5,4,3,2,1])</code> should return <code>false</code>.');
+    testString: assert.equal(jortsort([5,4,3,2,1]),false);
   - text: <code>jortsort([1,1,1,1,1])</code> should return <code>true</code>.
-    testString: assert.equal(jortsort([1,1,1,1,1]),true,'<code>jortsort([1,1,1,1,1])</code> should return <code>true</code>.');
+    testString: assert.equal(jortsort([1,1,1,1,1]),true);
 
 ```
 

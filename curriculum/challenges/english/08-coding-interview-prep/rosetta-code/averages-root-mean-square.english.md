@@ -23,9 +23,9 @@ The RMS is calculated as the mean of the squares of the numbers, square-rooted:
 ```yml
 tests:
   - text: <code>rms</code> is a function.
-    testString: assert(typeof rms === 'function', '<code>rms</code> is a function.');
+    testString: assert(typeof rms === 'function');
   - text: <code>rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</code> should equal <code>6.2048368229954285</code>.
-    testString: assert.equal(rms(arr1), answer1, '<code>rms([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])</code> should equal <code>6.2048368229954285</code>.');
+    testString: assert.equal(rms(arr1), answer1);
 
 ```
 

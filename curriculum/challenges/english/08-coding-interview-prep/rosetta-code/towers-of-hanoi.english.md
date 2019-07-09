@@ -23,9 +23,9 @@ For example, the array <code>[['A', 'C'], ['B', 'A']]</code> indicates that the 
 ```yml
 tests:
   - text: <code>towerOfHanoi</code> is a function.
-    testString: assert(typeof towerOfHanoi === 'function', '<code>towerOfHanoi</code> is a function.');
+    testString: assert(typeof towerOfHanoi === 'function');
   - text: <code>towerOfHanoi(3, ...)</code> should return 7 moves.
-    testString: assert(res3.length === 7, '<code>towerOfHanoi(3, ...)</code> should return 7 moves.');
+    testString: assert(res3.length === 7);
   - text: <code>towerOfHanoi(3, 'A', 'B', 'C')</code> should return <code>[['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']]</code>.
     testString: assert.deepEqual(towerOfHanoi(3, 'A', 'B', 'C'), res3Moves, "<code>towerOfHanoi(3, 'A', 'B', 'C')</code> should return [['A','B'], ['A','C'], ['B','C'], ['A','B'], ['C','A'], ['C','B'], ['A','B']].");
   - text: <code>towerOfHanoi(5, "X", "Y", "Z")</code> 10th move should be Y -> X.
