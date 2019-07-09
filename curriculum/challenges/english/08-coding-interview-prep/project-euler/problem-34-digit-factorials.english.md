@@ -22,7 +22,7 @@ Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 ```yml
 tests:
   - text: '<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.'
-    testString: "assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] }, '<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.');"
+    testString: "assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });"
 
 ```
 

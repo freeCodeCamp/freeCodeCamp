@@ -28,7 +28,7 @@ Find S(1 000 000) mod 1018.
 ```yml
 tests:
   - text: <code>euler320()</code> should return 278157919195482660.
-    testString: assert.strictEqual(euler320(), 278157919195482660, '<code>euler320()</code> should return 278157919195482660.');
+    testString: assert.strictEqual(euler320(), 278157919195482660);
 
 ```
 

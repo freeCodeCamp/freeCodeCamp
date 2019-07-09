@@ -31,7 +31,7 @@ Find the number of L ≤ 5·1011 such that B(L) = 450.
 ```yml
 tests:
   - text: <code>euler354()</code> should return 58065134.
-    testString: assert.strictEqual(euler354(), 58065134, '<code>euler354()</code> should return 58065134.');
+    testString: assert.strictEqual(euler354(), 58065134);
 
 ```
 

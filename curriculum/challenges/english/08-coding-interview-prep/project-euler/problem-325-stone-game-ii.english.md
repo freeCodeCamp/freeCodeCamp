@@ -44,7 +44,7 @@ Find S(1016) mod 710.
 ```yml
 tests:
   - text: <code>euler325()</code> should return 54672965.
-    testString: assert.strictEqual(euler325(), 54672965, '<code>euler325()</code> should return 54672965.');
+    testString: assert.strictEqual(euler325(), 54672965);
 
 ```
 

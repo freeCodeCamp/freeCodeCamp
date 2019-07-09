@@ -57,7 +57,7 @@ Give your answer rounded to six decimal places.
 ```yml
 tests:
   - text: <code>euler352()</code> should return 378563.260589.
-    testString: assert.strictEqual(euler352(), 378563.260589, '<code>euler352()</code> should return 378563.260589.');
+    testString: assert.strictEqual(euler352(), 378563.260589);
 
 ```
 

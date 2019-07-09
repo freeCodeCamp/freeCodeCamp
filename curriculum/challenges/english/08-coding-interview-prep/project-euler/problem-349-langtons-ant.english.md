@@ -25,7 +25,7 @@ Starting with a grid that is entirely white, how many squares are black after 10
 ```yml
 tests:
   - text: <code>euler349()</code> should return 115384615384614940.
-    testString: assert.strictEqual(euler349(), 115384615384614940, '<code>euler349()</code> should return 115384615384614940.');
+    testString: assert.strictEqual(euler349(), 115384615384614940);
 
 ```
 

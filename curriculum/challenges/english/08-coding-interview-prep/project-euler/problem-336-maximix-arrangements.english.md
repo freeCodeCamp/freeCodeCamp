@@ -33,7 +33,7 @@ Find the 2011th lexicographic maximix arrangement for eleven carriages.
 ```yml
 tests:
   - text: <code>euler336()</code> should return CAGBIHEFJDK.
-    testString: assert.strictEqual(euler336(), CAGBIHEFJDK, '<code>euler336()</code> should return CAGBIHEFJDK.');
+    testString: assert.strictEqual(euler336(), CAGBIHEFJDK);
 
 ```
 

@@ -36,7 +36,7 @@ Give your answer rounded to the nearest integer.
 ```yml
 tests:
   - text: <code>euler367()</code> should return 48271207.
-    testString: assert.strictEqual(euler367(), 48271207, '<code>euler367()</code> should return 48271207.');
+    testString: assert.strictEqual(euler367(), 48271207);
 
 ```
 

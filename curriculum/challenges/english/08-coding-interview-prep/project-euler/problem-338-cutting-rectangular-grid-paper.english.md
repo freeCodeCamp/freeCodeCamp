@@ -37,7 +37,7 @@ Find G(1012). Give your answer modulo 108.
 ```yml
 tests:
   - text: <code>euler338()</code> should return 15614292.
-    testString: assert.strictEqual(euler338(), 15614292, '<code>euler338()</code> should return 15614292.');
+    testString: assert.strictEqual(euler338(), 15614292);
 
 ```
 

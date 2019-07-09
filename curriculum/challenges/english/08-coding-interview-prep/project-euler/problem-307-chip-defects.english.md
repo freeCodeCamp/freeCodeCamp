@@ -27,7 +27,7 @@ Find p(20 000, 1 000 000) and give your answer rounded to 10 decimal places in t
 ```yml
 tests:
   - text: <code>euler307()</code> should return 0.7311720251.
-    testString: assert.strictEqual(euler307(), 0.7311720251, '<code>euler307()</code> should return 0.7311720251.');
+    testString: assert.strictEqual(euler307(), 0.7311720251);
 
 ```
 

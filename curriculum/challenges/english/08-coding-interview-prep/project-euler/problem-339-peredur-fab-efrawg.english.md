@@ -29,7 +29,7 @@ Find E(10 000) and give your answer rounded to 6 places behind the decimal point
 ```yml
 tests:
   - text: <code>euler339()</code> should return 19823.542204.
-    testString: assert.strictEqual(euler339(), 19823.542204, '<code>euler339()</code> should return 19823.542204.');
+    testString: assert.strictEqual(euler339(), 19823.542204);
 
 ```
 

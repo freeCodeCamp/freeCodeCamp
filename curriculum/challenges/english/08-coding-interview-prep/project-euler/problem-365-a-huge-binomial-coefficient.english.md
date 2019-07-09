@@ -26,7 +26,7 @@ Calculate ∑M(1018,109,p*q*r) for 1000<p<q<r<5000 and p,q,r prime.
 ```yml
 tests:
   - text: <code>euler365()</code> should return 162619462356610300.
-    testString: assert.strictEqual(euler365(), 162619462356610300, '<code>euler365()</code> should return 162619462356610300.');
+    testString: assert.strictEqual(euler365(), 162619462356610300);
 
 ```
 
