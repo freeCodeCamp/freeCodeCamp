@@ -72,7 +72,7 @@ Find the sum of all S(10, d).
 ```yml
 tests:
   - text: <code>euler111()</code> should return 612407567715.
-    testString: assert.strictEqual(euler111(), 612407567715, '<code>euler111()</code> should return 612407567715.');
+    testString: assert.strictEqual(euler111(), 612407567715);
 
 ```
 

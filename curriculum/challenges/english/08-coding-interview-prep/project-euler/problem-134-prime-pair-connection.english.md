@@ -22,7 +22,7 @@ Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
 ```yml
 tests:
   - text: <code>euler134()</code> should return 18613426663617120.
-    testString: assert.strictEqual(euler134(), 18613426663617120, '<code>euler134()</code> should return 18613426663617120.');
+    testString: assert.strictEqual(euler134(), 18613426663617120);
 
 ```
 

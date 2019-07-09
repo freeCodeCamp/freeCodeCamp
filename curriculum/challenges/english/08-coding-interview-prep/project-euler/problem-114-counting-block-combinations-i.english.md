@@ -123,7 +123,7 @@ NOTE: Although the example above does not lend itself to the possibility, in gen
 ```yml
 tests:
   - text: <code>euler114()</code> should return 16475640049.
-    testString: assert.strictEqual(euler114(), 16475640049, '<code>euler114()</code> should return 16475640049.');
+    testString: assert.strictEqual(euler114(), 16475640049);
 
 ```
 

@@ -22,8 +22,8 @@ What is the least value of <var>n</var> for which the number of distinct solutio
 
 ```yml
 tests:
-  - text: <code>diophantineTwo</code> should return 9350130049860600.
-    testString: assert.strictEqual(diophantineTwo(), 9350130049860600, '<code>diophantineTwo()</code> should return 9350130049860600.');
+  - text: <code>diophantineTwo()</code> should return 9350130049860600.
+    testString: assert.strictEqual(diophantineTwo(), 9350130049860600);
 
 ```
 

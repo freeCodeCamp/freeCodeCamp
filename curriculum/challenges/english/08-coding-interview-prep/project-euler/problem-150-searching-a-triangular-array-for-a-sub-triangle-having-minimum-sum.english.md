@@ -45,7 +45,7 @@ Find the smallest possible sub-triangle sum.
 ```yml
 tests:
   - text: <code>euler150()</code> should return -271248680.
-    testString: assert.strictEqual(euler150(), -271248680, '<code>euler150()</code> should return -271248680.');
+    testString: assert.strictEqual(euler150(), -271248680);
 
 ```
 

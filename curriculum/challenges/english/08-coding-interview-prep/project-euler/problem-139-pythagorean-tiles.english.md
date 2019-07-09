@@ -25,7 +25,7 @@ Given that the perimeter of the right triangle is less than one-hundred million,
 ```yml
 tests:
   - text: <code>euler139()</code> should return 10057761.
-    testString: assert.strictEqual(euler139(), 10057761, '<code>euler139()</code> should return 10057761.');
+    testString: assert.strictEqual(euler139(), 10057761);
 
 ```
 

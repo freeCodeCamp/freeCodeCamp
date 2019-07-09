@@ -23,7 +23,7 @@ Find a30.
 ```yml
 tests:
   - text: <code>euler119()</code> should return 248155780267521.
-    testString: assert.strictEqual(euler119(), 248155780267521, '<code>euler119()</code> should return 248155780267521.');
+    testString: assert.strictEqual(euler119(), 248155780267521);
 
 ```
 

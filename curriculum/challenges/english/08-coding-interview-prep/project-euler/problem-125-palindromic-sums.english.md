@@ -22,7 +22,7 @@ Find the sum of all the numbers less than 108 that are both palindromic and can 
 ```yml
 tests:
   - text: <code>euler125()</code> should return 2906969179.
-    testString: assert.strictEqual(euler125(), 2906969179, '<code>euler125()</code> should return 2906969179.');
+    testString: assert.strictEqual(euler125(), 2906969179);
 
 ```
 
