@@ -24,15 +24,15 @@ Finally, remove the "smaller-image" class from your first <code>img</code> eleme
 ```yml
 tests:
   - text: Your h2 element should no longer have the class <code>red-text</code>.
-    testString: assert(!$("h2").hasClass("red-text"), 'Your h2 element should no longer have the class <code>red-text</code>.');
+    testString: assert(!$("h2").hasClass("red-text"));
   - text: Your h2 element should now have the class <code>text-primary</code>.
-    testString: assert($("h2").hasClass("text-primary"), 'Your h2 element should now have the class <code>text-primary</code>.');
+    testString: assert($("h2").hasClass("text-primary"));
   - text: Your paragraph elements should no longer use the font <code>Monospace</code>.
-    testString: assert(!$("p").css("font-family").match(/monospace/i), 'Your paragraph elements should no longer use the font <code>Monospace</code>.');
+    testString: assert(!$("p").css("font-family").match(/monospace/i));
   - text: Remove the <code>smaller-image</code> class from your top image.
-    testString: assert(!$("img").hasClass("smaller-image"), 'Remove the <code>smaller-image</code> class from your top image.');
+    testString: assert(!$("img").hasClass("smaller-image"));
   - text: Add the <code>img-responsive</code> class to your top image.
-    testString: assert($(".img-responsive").length > 1, 'Add the <code>img-responsive</code> class to your top image.');
+    testString: assert($(".img-responsive").length > 1);
 
 ```
 

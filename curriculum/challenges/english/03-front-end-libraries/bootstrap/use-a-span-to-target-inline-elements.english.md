@@ -27,13 +27,13 @@ Here's how you would do this with the "Top 3 things cats hate" element:
 ```yml
 tests:
   - text: Your <code>span</code> element should be inside your <code>p</code> element.
-    testString: assert($("p span") && $("p span").length > 0, 'Your <code>span</code> element should be inside your <code>p</code> element.');
+    testString: assert($("p span") && $("p span").length > 0);
   - text: Your <code>span</code> element should have just the text <code>love</code>.
-    testString: assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i), 'Your <code>span</code> element should have just the text <code>love</code>.');
+    testString: assert($("p span") && $("p span").text().match(/love/i) && !$("p span").text().match(/Things cats/i));
   - text: Your <code>span</code> element should have class <code>text-danger</code>.
-    testString: assert($("span").hasClass("text-danger"), 'Your <code>span</code> element should have class <code>text-danger</code>.');
+    testString: assert($("span").hasClass("text-danger"));
   - text: Make sure your <code>span</code> element has a closing tag.
-    testString: assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length, 'Make sure your <code>span</code> element has a closing tag.');
+    testString: assert(code.match(/<\/span>/g) && code.match(/<span/g) && code.match(/<\/span>/g).length === code.match(/<span/g).length);
 
 ```
 

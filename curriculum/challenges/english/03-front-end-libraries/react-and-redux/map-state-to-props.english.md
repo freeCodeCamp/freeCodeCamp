@@ -23,13 +23,13 @@ Create a function <code>mapStateToProps()</code>. This function should take <cod
 ```yml
 tests:
   - text: The const <code>state</code> should be an empty array.
-    testString: assert(Array.isArray(state) && state.length === 0, 'The const <code>state</code> should be an empty array.');
+    testString: assert(Array.isArray(state) && state.length === 0);
   - text: <code>mapStateToProps</code> should be a function.
-    testString: assert(typeof mapStateToProps === 'function', '<code>mapStateToProps</code> should be a function.');
+    testString: assert(typeof mapStateToProps === 'function');
   - text: <code>mapStateToProps</code> should return an object.
-    testString: assert(typeof mapStateToProps() === 'object', '<code>mapStateToProps</code> should return an object.');
+    testString: assert(typeof mapStateToProps() === 'object');
   - text: Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.
-    testString: assert(mapStateToProps(['messages']).messages.pop() === 'messages', 'Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.');
+    testString: assert(mapStateToProps(['messages']).messages.pop() === 'messages');
 
 ```
 

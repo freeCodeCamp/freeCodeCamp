@@ -23,7 +23,7 @@ Start with a <code>DisplayMessages</code> component. Add a constructor to this c
 ```yml
 tests:
   - text: The <code>DisplayMessages</code> component should render an empty <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), 'The <code>DisplayMessages</code> component should render an empty <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })());
   - text: The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.
     testString: getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');
   - text: 'The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: "", messages: []}</code>.'

@@ -25,13 +25,13 @@ Give the parent of the <code>#target1</code> element a background-color of red.
 ```yml
 tests:
   - text: Your <code>left-well</code> element should have a red background.
-    testString: assert($("#left-well").css("background-color") === 'red' || $("#left-well").css("background-color") === 'rgb(255, 0, 0)' || $("#left-well").css("background-color").toLowerCase() === '#ff0000' || $("#left-well").css("background-color").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.');
+    testString: assert($("#left-well").css("background-color") === 'red' || $("#left-well").css("background-color") === 'rgb(255, 0, 0)' || $("#left-well").css("background-color").toLowerCase() === '#ff0000' || $("#left-well").css("background-color").toLowerCase() === '#f00');
   - text: You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.
-    testString: assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g), 'You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.');
+    testString: assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g));
   - text: The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.
-    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")\s*?\)\s*?\.parent/gi), 'The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.');
+    testString: assert(code.match(/\$\s*?\(\s*?(?:'|")\s*?#target1\s*?(?:'|")\s*?\)\s*?\.parent/gi));
   - text: Only use jQuery to add these classes to the element.
-    testString: assert(code.match(/<div class="well" id="left-well">/g), 'Only use jQuery to add these classes to the element.');
+    testString: assert(code.match(/<div class="well" id="left-well">/g));
 
 ```
 

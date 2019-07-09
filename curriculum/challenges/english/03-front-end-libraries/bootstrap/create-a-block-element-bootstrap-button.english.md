@@ -29,11 +29,11 @@ Add Bootstrap's <code>btn-block</code> class to your Bootstrap button.
 ```yml
 tests:
   - text: Your button should still have the <code>btn</code> and <code>btn-default</code> classes.
-    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"), 'Your button should still have the <code>btn</code> and <code>btn-default</code> classes.');
+    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
   - text: Your button should have the class <code>btn-block</code>.
-    testString: assert($("button").hasClass("btn-block"), 'Your button should have the class <code>btn-block</code>.');
+    testString: assert($("button").hasClass("btn-block"));
   - text: Make sure all your <code>button</code> elements have a closing tag.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
