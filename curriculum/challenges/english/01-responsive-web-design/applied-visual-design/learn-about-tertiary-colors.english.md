@@ -25,13 +25,13 @@ Change the <code>background-color</code> property of the <code>orange</code>, <c
 ```yml
 tests:
   - text: The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.
-    testString: assert($('.orange').css('background-color') == 'rgb(255, 127, 0)', 'The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');
+    testString: assert($('.orange').css('background-color') == 'rgb(255, 127, 0)');
   - text: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.
-    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');
+    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
   - text: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.
-    testString: assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)', 'The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');
+    testString: assert($('.raspberry').css('background-color') == 'rgb(255, 0, 127)');
   - text: All <code>background-color</code> values for the color classes should be hex codes and not color names.
-    testString: assert(!/background-color:\s(orange|cyan|raspberry)/.test(code), 'All <code>background-color</code> values for the color classes should be hex codes and not color names.');
+    testString: assert(!/background-color:\s(orange|cyan|raspberry)/.test(code));
 
 ```
 

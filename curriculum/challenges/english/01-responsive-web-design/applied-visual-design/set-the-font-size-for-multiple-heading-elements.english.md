@@ -21,17 +21,17 @@ The <code>font-size</code> property is used to specify how large the text is in 
 ```yml
 tests:
   - text: Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.
-    testString: assert($('h1').css('font-size') == '68px', 'Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.');
+    testString: assert($('h1').css('font-size') == '68px');
   - text: Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.
-    testString: assert($('h2').css('font-size') == '52px', 'Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.');
+    testString: assert($('h2').css('font-size') == '52px');
   - text: Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.
-    testString: assert($('h3').css('font-size') == '40px', 'Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.');
+    testString: assert($('h3').css('font-size') == '40px');
   - text: Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.
-    testString: assert($('h4').css('font-size') == '32px', 'Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.');
+    testString: assert($('h4').css('font-size') == '32px');
   - text: Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.
-    testString: assert($('h5').css('font-size') == '21px', 'Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.');
+    testString: assert($('h5').css('font-size') == '21px');
   - text: Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.
-    testString: assert($('h6').css('font-size') == '14px', 'Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.');
+    testString: assert($('h6').css('font-size') == '14px');
 
 ```
 

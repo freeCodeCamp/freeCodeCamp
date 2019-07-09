@@ -21,7 +21,7 @@ Add a <code>z-index</code> property to the element with the class name of <code>
 ```yml
 tests:
   - text: The element with class <code>first</code> should have a <code>z-index</code> value of 2.
-    testString: assert($('.first').css('z-index') == '2', 'The element with class <code>first</code> should have a <code>z-index</code> value of 2.');
+    testString: assert($('.first').css('z-index') == '2');
 
 ```
 

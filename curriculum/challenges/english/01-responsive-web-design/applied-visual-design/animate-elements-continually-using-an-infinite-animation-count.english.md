@@ -23,7 +23,7 @@ To keep the ball bouncing on the right on a continuous loop, change the <code>an
 ```yml
 tests:
   - text: The <code>animation-iteration-count</code> property should have a value of infinite.
-    testString: assert($('#ball').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property should have a value of infinite.');
+    testString: assert($('#ball').css('animation-iteration-count') == 'infinite');
 
 ```
 

@@ -32,9 +32,9 @@ Camper Cat expects a lot of interest in his thoughtful blog posts and wants to i
 ```yml
 tests:
   - text: Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.
-    testString: assert($('label').attr('for'), 'Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.');
+    testString: assert($('label').attr('for'));
   - text: Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.
-    testString: assert($('label').attr('for') == 'email', 'Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.');
+    testString: assert($('label').attr('for') == 'email');
 
 ```
 
