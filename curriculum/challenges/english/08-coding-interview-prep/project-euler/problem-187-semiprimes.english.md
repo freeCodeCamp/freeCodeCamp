@@ -25,7 +25,7 @@ How many composite integers, n < 108, have precisely two, not necessarily distin
 ```yml
 tests:
   - text: <code>euler187()</code> should return 17427258.
-    testString: 'assert.strictEqual(euler187(), 17427258, "<code>euler187()</code> should return 17427258.");'
+    testString: assert.strictEqual(euler187(), 17427258, '<code>euler187()</code> should return 17427258.');
 
 ```
 

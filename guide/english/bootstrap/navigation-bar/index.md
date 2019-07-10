@@ -3,7 +3,7 @@ title: Navigation Bar
 ---
 ## Navigation Bar
 
-The Bootstrap framework provides you with a feature call navigation bars. In short a navigation bar (also referred to navbars) is a header at the top of the page to display navigational information.
+The Bootstrap framework provides you with a feature called navigation bars. In short, a navigation bar (also referred to as a navbar) is a header at the top of the page to display navigational information.
 
 #### How To Use
 To use Bootstrap Navigation Bars you add a `<nav>` element to the top inside the `<body>` element of your webpage. There are various styles you can add to customize the display of your navbars.
@@ -32,7 +32,7 @@ Bootstrap provides a set of classes in the Bootstrap framework to style your nav
 * `navbar navbar-inverse` This is similar to the default style except the colors are inverted.
 
 #### Adding drop-down menus to the navbar
-You can include a drop down menu inside a navbar. This feature requires you to include Bootstrap's javascript file for it to work.
+You can include a drop-down menu inside a navbar. This feature requires you to include Bootstrap's javascript file for it to work.
 ```html
 <li class="dropdown">
   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Drop down
@@ -52,8 +52,26 @@ You can add buttons on the navbar. The existing Bootstrap Button classes work ho
 <button class="btn navbar-btn">Button</button>
 ```
 
+#### Adding brand logo or name to the navbar
+The `navbar-brand` class can be applied to most elements, but an anchor works best as some elements might require utility classes or custom styles.
+
+```html
+<!-- As a link -->
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+</nav>
+```
+
+```html
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Navbar</span>
+</nav>
+```
+
+
 #### Adding forms to the navbar
-You can also add forms to the navbar. This could be uses for tasks such as a search field, quick login field, etc.
+You can also add forms to the navbar. This could be used for tasks such as a search field, quick login field, etc.
 ```html
 <form class="navbar-form navbar-right">
   <div class="form-group">
@@ -122,9 +140,11 @@ On a small screen (such as a phone or tablet) the navbar is going to take up too
 ```
 
 #### Navbar Examples
+```html
 <!-- A drop-down cannot be shown in the example unless we include Bootstrap's javascript file. -->
 <!-- The id attributes are set in the example so clicking the links won't go to top of the page. -->
-`navbar navbar-default`
+Navbar Default:
+
 <nav class="navbar navbar-default" id="navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -143,8 +163,10 @@ On a small screen (such as a phone or tablet) the navbar is going to take up too
     </ul>
   </div>
 </nav>
+```
+```html
+Navbar Inverse:
 
-`navbar navbar-inverse`
 <nav class="navbar navbar-inverse" id="navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -163,6 +185,7 @@ On a small screen (such as a phone or tablet) the navbar is going to take up too
     </ul>
   </div>
 </nav>
+```
 
 #### More Information:
-[BootStrap navbar documentation](https://getbootstrap.com/docs/4.0/components/navbar/)
+[Bootstrap navbar documentation](https://getbootstrap.com/docs/4.0/components/navbar/)

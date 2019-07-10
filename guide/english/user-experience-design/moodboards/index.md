@@ -29,7 +29,7 @@ The other option is to create digital moodboard. The technique is quite the same
 The positive aspect is that you don't have to limit your moodboard to images in magazine. The negative aspect is that it might be hard to find the right images, since you have all internet to search from. 
 
 The places to start look for images and ideas:
-- <a href="https://images.google.co.uk/">google</a>. Goole Images can be chosen according to colour, shape or form, so if you can search it, then it is possible that you find it.
+- <a href="https://images.google.co.uk/">google</a>. Google Images can be chosen according to colour, shape or form, so if you can search it, then it is possible that you find it.
 - <a href="https://www.pinterest.dk/">Pinterest</a>. Same as for google, yet different.
 - free images. Such as <a href="https://pixabay.com/">Pixabay</a>, <a href="https://www.pexels.com/">Pexels</a>, or <a href="http://www.freeimages.com/">free images</a> sites, you can find tons of inspiration already in one picture.
 - go outside with a camera. There might be the exact item for your moodboard waiting for you to take that picture. 

@@ -40,19 +40,21 @@ localeTitle: لحلقة
 
 عند الفهرسة عبر مصفوفة عدة مرات ، من السهل تجاوز حدود الصفيف (على سبيل المثال ، حاول أن ترجع العنصر الرابع في صفيف مكون من 3 عناصر).
 
- `// This will cause an error. 
- // The bounds of the array will be exceeded. 
- $arr = array(1,2,3); 
- 
- for ($i = 0; $i <= count($arr); $i++) { 
-    var_dump($arr[$i]); 
- } 
-` 
+```php
+// This will cause an error.
+// The bounds of the array will be exceeded.
+$arr = array(1,2,3);
+
+for ($i = 0; $i <= count($arr); $i++) {
+    var_dump($arr[$i]);
+}
+``` 
 
 هذا سوف يخرج:
 
- `int(1) int(2) int(3) NULL 
-` 
+```txt
+int(1) int(2) int(3) NULL
+``` 
 
 هناك طرق لإصلاح هذا الرمز.
 
@@ -64,9 +66,10 @@ localeTitle: لحلقة
 
 لحل هذه المشكلة ، من الممكن وضع حجم الصفيف في متغير.
 
- `//create the $size variable with a second expression comma separated 
- for ($i = 0, $size = count($arr); $i < $size; ++$i) { 
-` 
+```php
+//create the $size variable with a second expression comma separated
+for ($i = 0, $size = count($arr); $i < $size; ++$i) {
+``` 
 
 ### معلومات اكثر
 

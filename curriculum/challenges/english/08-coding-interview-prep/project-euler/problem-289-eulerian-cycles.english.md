@@ -34,7 +34,7 @@ Find L(6,10) mod 1010.
 ```yml
 tests:
   - text: <code>euler289()</code> should return 6567944538.
-    testString: 'assert.strictEqual(euler289(), 6567944538, "<code>euler289()</code> should return 6567944538.");'
+    testString: assert.strictEqual(euler289(), 6567944538, '<code>euler289()</code> should return 6567944538.');
 
 ```
 

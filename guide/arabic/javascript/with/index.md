@@ -10,52 +10,57 @@ localeTitle: مع
 
 ### بناء الجملة
 
- `with (expression) 
-  statement 
-` 
+```syntax
+with (expression)
+  statement
+``` 
 
 ### مثال للاستخدام
 
 في JavaScript ، يمكنك تعديل خصائص أحد الكائنات على حدة مثل أدناه:
 
- `let earth = {}; 
- earth.moons = 1; 
- earth.continents = 7; 
-` 
+```javascript
+let earth = {};
+earth.moons = 1;
+earth.continents = 7;
+``` 
 
 `with` يمنحك اختصار لتعديل الخصائص على كائن:
 
- `with (earth) { 
-  moons = 1; 
-  continents = 7; 
- } 
-` 
+```javascript
+with (earth) {
+  moons = 1;
+  continents = 7;
+}
+``` 
 
 في حين أن هذا المثال مفتعل ، يمكنك فهم حالات الاستخدام `with` المزيد إذا كان لديك كائنات أكبر مثل أدناه:
 
- `earth.continents.australia.geography.ocean = "Pacific"; 
- earth.continents.australia.geography.river = "Murray"; 
- earth.continents.australia.geography.mountain = "Kosciuszko"; 
-` 
+```javascript
+earth.continents.australia.geography.ocean = "Pacific";
+earth.continents.australia.geography.river = "Murray";
+earth.continents.australia.geography.mountain = "Kosciuszko";
+``` 
 
 ### البدائل
 
 يجب عدم استخدامه `with` وجود مشكلات بسيطة في الأخطاء والتوافق. يتمثل أسلوب موصى به للغاية في تعيين الكائن إلى متغير ، ثم تعديل خصائص المتغير. هنا مثال على استخدام كائن أكبر:
 
- `let earth = { 
-  continents: { 
-    australia: { 
-      geography: {} 
-    } 
-  } 
- }; 
- 
- let geo = earth.continents.australia.geography; 
- 
- geo.ocean = "Pacific"; 
- geo.river = "Murray"; 
- geo.mountain = "Kosciuszko"; 
-` 
+```javascript
+let earth = {
+  continents: {
+    australia: {
+      geography: {}
+    }
+  }
+};
+
+let geo = earth.continents.australia.geography;
+
+geo.ocean = "Pacific";
+geo.river = "Murray";
+geo.mountain = "Kosciuszko";
+``` 
 
 ### حاول
 

@@ -16,7 +16,7 @@ localeTitle: 地图
 
 这是一个例子：
 
-```c++
+```cpp
 #include <iostream> 
  #include <map> 
  
@@ -56,7 +56,7 @@ a => 10
 
 使用插入成员函数插入数据。
 
-```c++
+```cpp
 myMap.insert(make_pair("earth", 1)); 
  myMap.insert(make_pair("moon", 2)); 
 ```
@@ -69,7 +69,7 @@ myMap.insert(make_pair("earth", 1));
 
 要访问地图元素，您必须为它创建迭代器。这是前面提到的一个例子。
 
-```c++
+```cpp
 map<char, int>::iterator it; 
  for(it=first.begin(); it!=first.end(); ++it){ 
   cout << it->first << " => " << it->second << '\n'; 

@@ -2,28 +2,37 @@
 id: 587d7790367417b2b2512ab1
 title: Use tabindex to Specify the Order of Keyboard Focus for Several Elements
 challengeType: 0
-videoUrl: ''
-localeTitle: Используйте tabindex для указания порядка фокусировки клавиатуры для нескольких элементов
+videoUrl: 'https://scrimba.com/c/cmzRRcb'
+localeTitle: Использование tabindex для указания порядка фокуса клавиатуры для нескольких элементов
 ---
 
 ## Description
-undefined
+<section id='description'>
+<code>tabindex</code> атрибут также определяет точный порядок вкладок элементов. Это достигается, когда значение атрибута установлено как положительное число, равное 1 или выше.
+Установка <code>tabindex = "1"</code>  сначала приведет фокусировку клавиатуры на этот элемент. Затем он перемещается по последовательности указанных значений <code>tabindex</code> (2, 3 и т.д.), прежде чем перейти к настройкам по умолчанию и <code>tabindex = "0"</code> элементам.
+Важно отметить, что когда порядок табуляции задан таким образом, он переопределяет порядок по умолчанию (который использует источник HTML). Это может смутить пользователей, которые ожидают начать навигацию в верхней части страницы. Этот метод может быть необходим в некоторых случаях, но с точки зрения доступности, будьте аккуратны с его применением.
+Вот пример:
+<code>&lt;div tabindex=&quot;1&quot;&gt;Я получаю фокус клавиатуры, и я получаю его первым!&lt;/div&gt;</code>
+<code>&lt;div tabindex=&quot;2&quot;&gt;Я получаю фокус клавиатуры, и я получаю его вторым!&lt;/div&gt;</code>
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+Camper Cat имеет поле поиска на странице Вдохновляющие цитаты, которое он планирует позиционировать в верхнем правом углу с помощью CSS. Он хочет ввести <code>input</code> и представить элементы управления формой <code>input</code> как первые два элемента в порядке табуляции. Добавьте атрибут <code>tabindex</code>, со значением «1» в поиск <code>input</code> и атрибут <code>tabindex</code> со значением «2», в отправляемый <code>input</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
+  - text: 'Ваш код должен добавить к тегу <code>input</code> атрибут <code>tabindex</code>.'
     testString: 'assert($("#search").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.");'
-  - text: ''
+  - text: 'Ваш код должен добавить атрибут <code>tabindex</code> в тег submit <code>input</code>.'
     testString: 'assert($("#submit").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.");'
-  - text: ''
+  - text: 'Ваш код должен установить атрибут <code>tabindex</code> в теге <code>input</code> для поиска <значение> к значению 1.'
     testString: 'assert($("#search").attr("tabindex") == "1", "Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.");'
-  - text: ''
+  - text: 'Ваш код должен установить атрибут <code>tabindex</code> в теге отправки <code>input</code> значение 2.'
     testString: 'assert($("#submit").attr("tabindex") == "2", "Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.");'
 
 ```

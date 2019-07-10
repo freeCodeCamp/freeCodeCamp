@@ -58,7 +58,7 @@ class GateKeeper extends React.Component {
 
 编写根据您的状态计算的条件语句，如质询描述中所述，检查输入的长度并将新对象分配给inputStyle变量。
 
-```react.js
+```jsx
 if (this.state.input.length > 15) { 
   inputStyle = { 
     border: '3px solid red' 

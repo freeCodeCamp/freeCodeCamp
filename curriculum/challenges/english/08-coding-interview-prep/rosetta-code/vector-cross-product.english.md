@@ -6,20 +6,12 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: &nbsp; (X, Y, Z).
-<p>
-Task:
-
-    Write a function that takes two vectors (arrays) as input and computes their cross product.
-
-Your function should return <code>null</code> on
-invalid inputs (ie vectors of different lengths).
-</p>
+A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return <code>null</code> on invalid inputs such as vectors of different lengths.
 </section>
 
 ## Tests
@@ -28,11 +20,11 @@ invalid inputs (ie vectors of different lengths).
 ```yml
 tests:
   - text: dotProduct must be a function
-    testString: 'assert.equal(typeof crossProduct, "function", "dotProduct must be a function");'
+    testString: assert.equal(typeof crossProduct, 'function', 'dotProduct must be a function');
   - text: dotProduct() must return null
-    testString: 'assert.equal(crossProduct(), null, "dotProduct() must return null");'
-  - text: 'crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].'
-    testString: 'assert.deepEqual(res12, exp12, "crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].");'
+    testString: assert.equal(crossProduct(), null, 'dotProduct() must return null');
+  - text: crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].
+    testString: assert.deepEqual(res12, exp12, 'crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].');
 
 ```
 
@@ -44,7 +36,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function crossProduct() {
+function crossProduct(a, b) {
     // Good luck!
 }
 ```
@@ -56,7 +48,10 @@ function crossProduct() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const tv1 = [1, 2, 3];
+const tv2 = [4, 5, 6];
+const res12 = crossProduct(tv1, tv2);
+const exp12 = [-3, 6, -3];
 ```
 
 </div>

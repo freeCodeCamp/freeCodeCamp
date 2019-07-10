@@ -2,9 +2,9 @@
 title: Chef
 localeTitle: líder
 ---
-## Chefe de cozinha
+## Chef
 
-Chef é uma poderosa plataforma de automação que transforma a infraestrutura em código. Independentemente de você estar operando na nuvem, no local ou em um ambiente híbrido, o Chef automatiza como a infraestrutura é configurada, implantada e gerenciada em toda a rede, independentemente do tamanho.
+Chef é uma poderosa plataforma de automação que transforma a infraestrutura em código. Independentemente de você estar operando na nuvem, localmente ou em um ambiente híbrido, o Chef automatiza como a infraestrutura é configurada, implantada e gerenciada em toda a rede, independentemente do tamanho.
 
 #### Como funciona o chef
 

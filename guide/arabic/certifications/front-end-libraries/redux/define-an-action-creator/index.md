@@ -8,10 +8,11 @@ localeTitle: قم بتعريف عمل الخالق
 
 يتم تعريف الدالة باستخدام بناء الجملة التالي:
 
- `functionName(){ 
-  console.log("Do something"); 
- } 
-` 
+```javascript
+functionName(){
+  console.log("Do something");
+}
+``` 
 
 حيث يمكن تغيير console.log حسب الحاجة.
 
@@ -21,7 +22,8 @@ localeTitle: قم بتعريف عمل الخالق
 
 ### حل
 
- `function actionCreator(){ 
-    return action; 
- } 
-`
+```javascript
+function actionCreator(){
+    return action;
+}
+```

@@ -28,39 +28,40 @@ localeTitle: توجيهات
 
 تعتبر `component.css` و `component.spec.ts` خارج نطاق هذه المقالة. يتضمن الجانب _التوجيهي_ للمكون الملفين الآخرين. ألق نظرة على ملفي `component.ts` و `component.html` .
 
- `// example.component.ts 
- import { Component } from '@angular/core'; 
- 
- @Component({ 
-  selector: 'app-example', 
-  templateUrl: './example.component.html' 
- }) 
- export class ExampleComponent { 
-  constructor() { } 
- } 
-` 
+```typescript
+// example.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-example',
+  templateUrl: './example.component.html'
+})
+export class ExampleComponent {
+  constructor() { }
+}
+``` 
 
 تم قطع اثنين من التفاصيل غير ذات صلة من الجيل الافتراضي من `component.ts` . بهذه الطريقة يكون التركيز على المكون نفسه.
 
- `
-<!-- example.component.html --> 
- 
- <p>example works!</p> 
-` 
+```html
+<!-- example.component.html -->
+
+<p>example works!</p>
+``` 
 
 قد يبدو إدراج ExampleComponent كطفل مكون آخر كما يلي.
 
- `
-<!-- another.component.html --> 
- 
- <h1>Welcome to AnotherComponent.</h1> 
- <h3>Check out ExampleComponent!</h3> 
- 
- <!-- Outputs “<p>example works!</p>” --> 
- <app-example></app-example> 
- 
- <h6>This is the end of the AnotherComponent template HTML.</h6> 
-` 
+```html
+<!-- another.component.html -->
+
+<h1>Welcome to AnotherComponent.</h1>
+<h3>Check out ExampleComponent!</h3>
+
+<!-- Outputs “<p>example works!</p>” -->
+<app-example></app-example>
+
+<h6>This is the end of the AnotherComponent template HTML.</h6>
+``` 
 
 انتبه إلى `<app-example></app-example>` . يتطابق `app-example` مع المحدد من decoratorComponent في `@Component` . هذا هو عنصر التوجيه. يتعرف الزاوي `app-example` _ويوجه_ عرضه إلى فئة ExampleComponent.
 
@@ -85,27 +86,27 @@ localeTitle: توجيهات
 
 `*ngIf` قيمة معينة لمعرفة ما إذا كانت _صحيحة_ أو _كاذبة_ تستند إلى التقييم المنطقي العام في JavaScript. إذا كانت الحقيقة ، يظهر العنصر و HTML الداخلي. خلاف ذلك ، فإنها لا تقدم أبدا إلى نموذج كائن المجال (DOM).
 
- `
-<!-- renders “<h1>Hello!</h1>” --> 
- <div *ngIf="true"> 
-  <h1>Hello!</h1> 
- </div> 
- 
- <!-- does not render --> 
- <div *ngIf="false"> 
-  <h1>Hi!</h1> 
- </div> 
-` 
+```html
+<!-- renders “<h1>Hello!</h1>” -->
+<div *ngIf="true">
+  <h1>Hello!</h1>
+</div>
+
+<!-- does not render -->
+<div *ngIf="false">
+  <h1>Hi!</h1>
+</div>
+``` 
 
 هذا مثال مفتعل. يمكن استبدال أي قيمة عضو من فئة مكون القالب بـ `true` أو `false` .
 
 ملاحظة: يمكنك أيضًا القيام بما يلي مع \* ngIf للوصول إلى قيمة الملاحظة
 
- `
-<div *ngIf="observable$ | async as anyNameYouWant"> 
-  {{  anyNameYouWant }} 
- </div> 
-` 
+```html
+<div *ngIf="observable$ | async as anyNameYouWant">
+  {{  anyNameYouWant }}
+</div>
+``` 
 
 ##### \* ngFor
 
@@ -134,11 +135,11 @@ localeTitle: توجيهات
 
 ملاحظة: يمكنك أيضًا القيام بما يلي مع \* ngFor التوجيه للوصول إلى قيمة الملاحظة (hacky)
 
- `
-<div *ngFor="let anyNameYouWant of [(observable$ | async)]"> 
-  {{  anyNameYouWant }} 
- </div> 
-` 
+```html
+<div *ngFor="let anyNameYouWant of [(observable$ | async)]">
+  {{  anyNameYouWant }}
+</div>
+``` 
 
 ##### \* ngSwitchCase و \* ngSwitchDefault
 
@@ -165,15 +166,16 @@ localeTitle: توجيهات
 
 يحدد `ng-template` التوجيهات الهيكلية. يشرح كيف يمكنهم تكوين HTML النموذج لإنتاج HTML الفعلي. ابدأ بإنشاء أمر توجيه باستخدام `ng generate directive [name-of-directive]` . استبدل `[name-of-directive]` باسم مفضل. يعطي الأمر ما يلي.
 
- `import { Directive } from '@angular/core'; 
- 
- @Directive({ 
-  selector: '[appExample]' 
- }) 
- export class ExampleDirective { 
-  constructor() { } 
- } 
-` 
+```typescript
+import { Directive } from '@angular/core';
+
+@Directive({
+  selector: '[appExample]'
+})
+export class ExampleDirective {
+  constructor() { }
+}
+``` 
 
 هذا الهيكل العظمي التوجيهي هي جميلة عارية. لا نعرف بعد ما إذا كنا نبني توجيهًا هيكليًا أو مسطرة. يحدد `selector: '[appExample]'` الزاوي ما `selector: '[appExample]'` التوجيهات إلى. نظرًا لأنك تقوم بإنشاء توجيه هيكلي ، قم بتعديل الهيكل العظمي كما يلي.
 
@@ -201,14 +203,14 @@ localeTitle: توجيهات
 
 تضمين عنصر عشوائي مع سمة `appExample` بمثابة مثال جيد.
 
- `
-<div *appExample=“value”>innerHTML content</div> 
- <!-- This is shorthand for: 
- <ng-template> 
-  <div>innerHTML content</div> 
- </ng-template> 
- --> 
-` 
+```html
+<div *appExample=“value”>innerHTML content</div>
+<!-- This is shorthand for:
+<ng-template>
+  <div>innerHTML content</div>
+</ng-template>
+-->
+``` 
 
 هذا هو الكثير ليأخذ في. `@Input() set ...` هو إعلان عضو واضعة. يتم تنفيذ ذلك عندما تظهر السمة `appExample` داخل عنصر ويتم تعيين قيمة منطقية لها. تستقبل الدالة setter تلك القيمة المنطقية كمعلمة للتنفيذ.
 
@@ -224,17 +226,17 @@ localeTitle: توجيهات
 
 في الواقع ، فإن ExampleDirective أعلاه يحاكي وظائف `*ngIf` !
 
- `
-<!-- renders “<h1>Hello!</h1>” --> 
- <div *ngExample="true"> 
-  <h1>Hello!</h1> 
- </div> 
- 
- <!-- does not render --> 
- <div *appExample="false"> 
-  <h1>Hi!</h1> 
- </div> 
-` 
+```html
+<!-- renders “<h1>Hello!</h1>” -->
+<div *ngExample="true">
+  <h1>Hello!</h1>
+</div>
+
+<!-- does not render -->
+<div *appExample="false">
+  <h1>Hi!</h1>
+</div>
+``` 
 
 لا تنسى النجمة ( `*` ). هو اختزال لعنصر `ng-template` الذي تشير إليه فئة التوجيه الخاصة بنا.
 
@@ -248,40 +250,42 @@ localeTitle: توجيهات
 
 إنشاء توجيه آخر: `ng generate directive [name-of-directive]` . استبدل `[name-of-directive]` باسم مفضل.
 
- `import { Directive } from '@angular/core'; 
- 
- @Directive({ 
-  selector: '[appExample]' 
- }) 
- export class ExampleDirective { 
-  constructor() { } 
- } 
-` 
+```typescript
+import { Directive } from '@angular/core';
+
+@Directive({
+  selector: '[appExample]'
+})
+export class ExampleDirective {
+  constructor() { }
+}
+``` 
 
 تبدأ السمة والتوجيهات الهيكلية بنفس الهيكل العظمي. سوف تضيف بضعة إضافات أخرى توجيه السمة.
 
- `import { Directive, Input, ElementRef } from '@angular/core'; 
- 
- @Directive({ 
-  selector: '[appExample]' 
- }) 
- export class ExampleDirective { 
-  @Input() set appExample(color:string) { 
-      this.host.nativeElement.style.color = color; 
-  } 
- 
-  constructor(private host:ElementRef) { } 
- } 
-` 
+```typescript
+import { Directive, Input, ElementRef } from '@angular/core';
+
+@Directive({
+  selector: '[appExample]'
+})
+export class ExampleDirective {
+  @Input() set appExample(color:string) {
+      this.host.nativeElement.style.color = color;
+  }
+
+  constructor(private host:ElementRef) { }
+}
+``` 
 
 بعض العناصر لاختبار مع مساعدة.
 
- `
-<!-- the intended results are self-explanatory --> 
- <div appExample=“purple”>This text is purple!</div> 
- <div appExample=“blue”>This text is blue!</div> 
- <div appExample=“red”>This text is red!</div> 
-` 
+```html
+<!-- the intended results are self-explanatory -->
+<div appExample=“purple”>This text is purple!</div>
+<div appExample=“blue”>This text is blue!</div>
+<div appExample=“red”>This text is red!</div>
+``` 
 
 يوفر `ElementRef` إشارة مباشرة إلى عنصر المضيف. يستحوذ `ElementRef.nativeElement` على عقدة DOM. مع العقدة ، فإن تصميم العنصر بسيط مثل `this.host.nativeElement.style.color = color` .
 
