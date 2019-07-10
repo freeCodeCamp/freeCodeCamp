@@ -6,25 +6,11 @@ title: Replace Loops using Recursion
 
 ### Hint 1:
 
-<details><summary>(Click to reveal)
-</summary>
-<p>
-
 When `n <= 0` `sum(arr, n)` returns `arr[0]`.
-</p>
-</details>
-<br>
 
 ### Hint 2:
 
-<details><summary>(Click to reveal)
-</summary>
-<p>
-
 When `n` is larger than 0 `sum(arr, n)` returns `sum(arr, n - 1) + arr[n]`
-</p>
-</details>
-<br>
 
 ## Basic code solution:
 
