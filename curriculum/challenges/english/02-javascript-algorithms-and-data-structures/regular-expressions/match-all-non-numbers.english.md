@@ -35,7 +35,7 @@ tests:
   - text: Your regex should find 12 non-digits in <code>"21 Jump Street"</code>.
     testString: assert("21 Jump Street".match(noNumRegex).length == 12);
   - text: 'Your regex should find 17 non-digits in <code>"2001: A Space Odyssey"</code>.'
-    testString: 'assert("2001: A Space Odyssey".match(noNumRegex).length == 17, ''Your regex should find 17 non-digits in <code>"2001: A Space Odyssey"</code>.'');'
+    testString: 'assert("2001: A Space Odyssey".match(noNumRegex).length == 17);'
 
 ```
 

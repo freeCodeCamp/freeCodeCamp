@@ -52,7 +52,7 @@ tests:
   - text: <code>Dog</code> should receive an argument for <code>name</code>.
     testString: assert((new Dog('Clifford')).name === 'Clifford');
   - text: <code>Dog</code> should receive an argument for <code>color</code>.
-    testString: assert((new Dog('Clifford', 'yellow')).color === 'yellow', '<code>Dog</code> should receive an argument for <code>color</code>.');
+    testString: assert((new Dog('Clifford', 'yellow')).color === 'yellow');
   - text: <code>Dog</code> should have property <code>numLegs</code> set to 4.
     testString: assert((new Dog('Clifford')).numLegs === 4);
   - text: <code>terrier</code> should be created using the <code>Dog</code> constructor.

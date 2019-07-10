@@ -21,7 +21,7 @@ Fix the two spelling errors in the code so the <code>netWorkingCapital</code> ca
 ```yml
 tests:
   - text: 'Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".'
-    testString: 'assert(netWorkingCapital === 2, ''Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".'');'
+    testString: 'assert(netWorkingCapital === 2);'
   - text: There should be no instances of mis-spelled variables in the code.
     testString: assert(!code.match(/recievables/g));
   - text: The <code>receivables</code> variable should be declared and used properly in the code.

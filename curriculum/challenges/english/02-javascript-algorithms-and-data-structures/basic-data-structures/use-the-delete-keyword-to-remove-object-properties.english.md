@@ -27,7 +27,7 @@ Use the delete keyword to remove the <code>oranges</code>, <code>plums</code>, a
 ```yml
 tests:
   - text: 'The <code>foods</code> object only has three keys: <code>apples</code>, <code>grapes</code>, and <code>bananas</code>'
-    testString: 'assert(!foods.hasOwnProperty(''oranges'') && !foods.hasOwnProperty(''plums'') && !foods.hasOwnProperty(''strawberries'') && Object.keys(foods).length === 3, ''The <code>foods</code> object only has three keys: <code>apples</code>, <code>grapes</code>, and <code>bananas</code>'');'
+    testString: 'assert(!foods.hasOwnProperty(''oranges'') && !foods.hasOwnProperty(''plums'') && !foods.hasOwnProperty(''strawberries'') && Object.keys(foods).length === 3);'
   - text: The <code>oranges</code>, <code>plums</code>, and <code>strawberries</code> keys are removed using <code>delete</code>
     testString: assert(code.search(/oranges:/) !== -1 && code.search(/plums:/) !== -1 && code.search(/strawberries:/) !== -1);
 
