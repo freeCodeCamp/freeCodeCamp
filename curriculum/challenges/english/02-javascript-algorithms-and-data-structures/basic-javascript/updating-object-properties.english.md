@@ -38,7 +38,7 @@ tests:
   - text: Update <code>myDog</code>&apos;s <code>"name"</code> property to equal "Happy Coder".
     testString: assert(/happy coder/gi.test(myDog.name));
   - text: Do not edit the <code>myDog</code> definition
-    testString: 'assert(/"name": "Coder"/.test(code), ''Do not edit the <code>myDog</code> definition'');'
+    testString: 'assert(/"name": "Coder"/.test(code));'
 
 ```
 

@@ -57,7 +57,7 @@ tests:
   - text: <code>chainToSwitch(42)</code> should be "The Answer"
     testString: assert(chainToSwitch(42) === "The Answer");
   - text: "<code>chainToSwitch(1)</code> should be \"There is no #1\""
-    testString: "assert(chainToSwitch(1) === \"There is no #1\", '<code>chainToSwitch(1)</code> should be \"There is no #1\"');"
+    testString: "assert(chainToSwitch(1) === \"There is no #1\");"
   - text: <code>chainToSwitch(99)</code> should be "Missed me by this much!"
     testString: assert(chainToSwitch(99) === "Missed me by this much!");
   - text: <code>chainToSwitch(7)</code> should be "Ate Nine"
