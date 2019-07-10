@@ -14,16 +14,16 @@ localeTitle: الهيئة Bgcolor السمة
 
 **فمثلا:**
 
- `
-<html> 
-  <head> 
-    <title>Body bgcolor Attribute example</title> 
-  </head> 
-  <body bgcolor="#afafaf"> 
-    <h1>This webpage has colored background.</h1> 
-  </body> 
- </html> 
-` 
+```html
+<html>
+  <head>
+    <title>Body bgcolor Attribute example</title>
+  </head>
+  <body bgcolor="#afafaf">
+    <h1>This webpage has colored background.</h1>
+  </body>
+</html>
+``` 
 
 يمكنك تغيير اللون عن طريق استبدال ###### بقيمة سداسية عشرية. للألوان البسيطة ، يمكنك أيضًا استخدام الكلمة ، مثل "أحمر" أو "أسود".
 

@@ -22,20 +22,20 @@ An empty subsequence is considered to have the sum of \( 0 \);  thus if all elem
 tests:
   - text: <code>maximumSubsequence</code> should be a function.
     testString: assert(typeof maximumSubsequence=='function','<code>maximumSubsequence</code> should be a function.');
-  - text: <code>maximumSubsequence([1,2,-1,3,10,-10])</code> should return an array.
-    testString: assert(Array.isArray(maximumSubsequence([1,2,-1,3,10,-10])),'<code>maximumSubsequence([1,2,-1,3,10,-10])</code> should return an array.');
-  - text: <code>maximumSubsequence([1,2,-1,3,10,-10])</code> should return <code>[ 1, 2, -1, 3, 10 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([1,2,-1,3,10,-10]), [ 1, 2, -1, 3, 10 ],'<code>maximumSubsequence([1,2,-1,3,10,-10])</code> should return <code>[ 1, 2, -1, 3, 10 ]</code>.');
-  - text: <code>maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3])</code> should return <code>[ 0, 8, 10 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [ 0, 8, 10 ],'<code>maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3])</code> should return <code>[ 0, 8, 10 ]</code>.');
-  - text: <code>maximumSubsequence([9, 9, -10, 1])</code> should return <code>[ 9, 9 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([9, 9, -10, 1]), [ 9, 9 ],'<code>maximumSubsequence([9, 9, -10, 1])</code> should return <code>[ 9, 9 ]</code>.');
-  - text: <code>maximumSubsequence([7, 1, -5, -3, -8, 1]</code> should return <code>[ 7, 1 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([7, 1, -5, -3, -8, 1]), [ 7, 1 ],'<code>maximumSubsequence([7, 1, -5, -3, -8, 1]</code> should return <code>[ 7, 1 ]</code>.');
-  - text: <code>maximumSubsequence([-3, 6, -1, 4, -4, -6])</code> should return <code>[ 6, -1, 4 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([-3, 6, -1, 4, -4, -6]), [ 6, -1, 4 ],'<code>maximumSubsequence([-3, 6, -1, 4, -4, -6])</code> should return <code>[ 6, -1, 4 ]</code>.');
-  - text: <code>maximumSubsequence([-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1])</code> should return <code>[ 3, 5, 6, -2, -1, 4 ]</code>.
-    testString: assert.deepEqual(maximumSubsequence([-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1]), [ 3, 5, 6, -2, -1, 4 ],'<code>maximumSubsequence([-1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1])</code> should return <code>[ 3, 5, 6, -2, -1, 4 ]</code>.');
+  - text: <code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return an array.
+    testString: assert(Array.isArray(maximumSubsequence([ 1, 2,-1, 3, 10, -10 ])),'<code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return an array.');
+  - text: <code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return <code>[ 1, 2, -1, 3, 10 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([1,2,-1,3,10,-10]), [ 1, 2, -1, 3, 10 ],'<code>maximumSubsequence([ 1, 2, -1, 3, 10, -10 ])</code> should return <code>[ 1, 2, -1, 3, 10 ]</code>.');
+  - text: <code>maximumSubsequence([ 0, 8, 10, -2, -4, -1, -5, -3 ])</code> should return <code>[ 0, 8, 10 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([0, 8, 10, -2, -4, -1, -5, -3]), [ 0, 8, 10 ],'<code>maximumSubsequence([ 0, 8, 10, -2, -4, -1, -5, -3 ])</code> should return <code>[ 0, 8, 10 ]</code>.');
+  - text: <code>maximumSubsequence([ 9, 9, -10, 1 ])</code> should return <code>[ 9, 9 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ 9, 9, -10, 1 ]), [ 9, 9 ],'<code>maximumSubsequence([ 9, 9, -10, 1 ])</code> should return <code>[ 9, 9 ]</code>.');
+  - text: <code>maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]</code> should return <code>[ 7, 1 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]), [ 7, 1 ],'<code>maximumSubsequence([ 7, 1, -5, -3, -8, 1 ]</code> should return <code>[ 7, 1 ]</code>.');
+  - text: <code>maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])</code> should return <code>[ 6, -1, 4 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ -3, 6, -1, 4, -4, -6 ]), [ 6, -1, 4 ],'<code>maximumSubsequence([ -3, 6, -1, 4, -4, -6 ])</code> should return <code>[ 6, -1, 4 ]</code>.');
+  - text: <code>maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ])</code> should return <code>[ 3, 5, 6, -2, -1, 4 ]</code>.
+    testString: assert.deepEqual(maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ]), [ 3, 5, 6, -2, -1, 4 ],'<code>maximumSubsequence([ -1, -2, 3, 5, 6, -2, -1, 4, -4, 2, -1 ])</code> should return <code>[ 3, 5, 6, -2, -1, 4 ]</code>.');
 
 ```
 
@@ -47,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function maximumSubsequence (population) {
+function maximumSubsequence(population) {
   // Good luck!
 }
 ```
@@ -86,8 +86,6 @@ function maximumSubsequence(population) {
 
   return greatest;
 }
-
-
 
 ```
 

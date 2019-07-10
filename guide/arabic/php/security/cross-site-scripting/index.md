@@ -10,10 +10,11 @@ Cross Site Scripting هو نوع من نقاط الضعف في تطبيق الو
 
 تسمح المدونة للمستخدمين بوضع تعليقاتهم باستخدام علامات HTML ، إلا أن النص البرمجي الذي يمد المدونة لا يزيل علامات `<script>` تسمح لأي مستخدم بتشغيل javascript على الصفحة. يمكن للمهاجم استخدام هذه الميزة لصالح تشغيل javascript ضار في المستعرض. يمكن أن تصيب المستخدمين بالبرامج الضارة ، وتسرق ملفات تعريف الارتباط للجلسة ، والمزيد.
 
- `<script> 
-  alert('Cross Site Scripting!'); 
- </script> 
-` 
+```HTML
+<script>
+  alert('Cross Site Scripting!');
+</script>
+``` 
 
 ### الدفاع عن موقع الويب الخاص بك من هجمات البرمجة عبر الموقع في PHP
 
@@ -21,28 +22,31 @@ Cross Site Scripting هو نوع من نقاط الضعف في تطبيق الو
 
 `htmlspecialchars($string)` وظيفة `htmlspecialchars($string)` منع سلسلة HTML من العرض كملف HTML وعرضها كنص عادي لمتصفح الويب. **htmlspecialchars () مثال التعليمات البرمجية**
 
- `<?php 
- $usercomment = "<string>alert('Cross Site Scripting!');</script>"; 
- echo htmlspecialchars($usercomment); 
-` 
+```PHP
+<?php
+$usercomment = "<string>alert('Cross Site Scripting!');</script>";
+echo htmlspecialchars($usercomment);
+``` 
 
 الطريقة الأخرى هي `strip_tags($string, $allowedtags)` التي تزيل كل علامات HTML باستثناء علامات HTML التي قمت بإضافتها إلى القائمة البيضاء. من المهم أن نلاحظ أنه مع وظيفة `strip_tags()` يجب أن تكون أكثر حذراً ، هذه الوظيفة لا تمنع المستخدم من تضمين javascript كحلقة ارتباط ، سيكون عليك تطهير ذلك بمفردنا.
 
 **code\_tags () مثال التعليمات البرمجية**
 
- `<?php 
- $usercomment = "<string>alert('Cross Site Scripting!');</script>"; 
- $allowedtags = "<p><a><h1><h2><h3>"; 
- echo strip_tags($usercomment, $allowedtags); 
-` 
+```php
+<?php
+$usercomment = "<string>alert('Cross Site Scripting!');</script>";
+$allowedtags = "<p><a><h1><h2><h3>";
+echo strip_tags($usercomment, $allowedtags);
+``` 
 
 **ضبط رأس الحماية X-XSS:**
 
 في PHP ، يمكنك إرسال `X-XSS-Protection` Header الذي سيخبر المتصفحات بالتحقق من هجوم Scripting عبر موقع ويب منع الصفحة من التحميل. هذا لا يمنع جميع الهجمات النصية عبر الموقع فقط تنعكس منها ويجب استخدامها في تركيبة مع أساليب أخرى.
 
- `<?php 
- header("X-XSS-Protection: 1; mode=block"); 
-` 
+```PHP
+<?php
+header("X-XSS-Protection: 1; mode=block");
+``` 
 
 **كتابة وظيفة التعقيم الخاصة بك** خيار آخر ، إذا كنت ترغب في مزيد من التحكم في كيفية عمل التطهير ، هو كتابة وظيفة تعقيم HTML الخاصة بك ، وهذا لا يوصى به للمبتدئين PHP كخطأ من شأنه أن يجعل موقع الويب الخاص بك عرضة.
 
@@ -56,9 +60,10 @@ Cross Site Scripting هو نوع من نقاط الضعف في تطبيق الو
 
 **مثال على سياسة أمان المحتوى التي تم تعيينها في رأس HTTP**
 
- `<?php 
- header("content-security-policy: default-src 'self'; img-src https://*; child-src 'none';"); 
-` 
+```php
+<?php
+header("content-security-policy: default-src 'self'; img-src https://*; child-src 'none';");
+``` 
 
 #### عيّن سياسة أمان المحتوى كعلامات وصفية
 
@@ -66,8 +71,9 @@ Cross Site Scripting هو نوع من نقاط الضعف في تطبيق الو
 
 **مثال على سياسة أمان المحتوى التي تم تعيينها في علامة HTML الوصفية**
 
- `<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';"> 
-` 
+```HTML
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https://*; child-src 'none';">
+``` 
 
 #### معلومات اكثر:
 

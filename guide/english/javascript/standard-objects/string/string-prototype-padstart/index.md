@@ -3,13 +3,22 @@ title: String.prototype.padStart
 ---
 ## String.prototype.padStart
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-padstart/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The 'padStart()' method is a JavaScript string method that pads the start (left) of the current string with another string to the specified final string length.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+**Syntax**
+```javascript
+string_to_be_padded.padStart(resulting_length, pad_string)
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+**Example**
+```js
+var str1 = '1';
+var str2 = '2';
+console.log(str1.padStart(2, '*'));   // expected output: "*1"
+console.log(str2.padStart(5, '*#-')); // expected output: "*#-*2"
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+- [String.prototype.padStart() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
 
 

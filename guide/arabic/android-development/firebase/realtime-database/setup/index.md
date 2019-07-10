@@ -18,11 +18,12 @@ localeTitle: إعداد قاعدة بيانات Firebase في الوقت الف�
 
 **إضافة التبعيات Gradle** 1 في ملف build.gradle على مستوى التطبيق ، أضف ما يلي
 
- `dependencies { 
-    implementation 'com.firebase:firebase-client-android:2.5.2+' 
-    implementation 'com.google.firebase:firebase-database:15.0.0' 
- } 
-` 
+```java
+dependencies {
+    implementation 'com.firebase:firebase-client-android:2.5.2+'
+    implementation 'com.google.firebase:firebase-database:15.0.0'
+}
+``` 
 
 # تثبيت Firebase Android SDK والأذونات ورمز الإعداد
 

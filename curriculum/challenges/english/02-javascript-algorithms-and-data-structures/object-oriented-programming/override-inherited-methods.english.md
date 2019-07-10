@@ -7,12 +7,36 @@ challengeType: 1
 ## Description
 <section id='description'>
 In previous lessons, you learned that an object can inherit its behavior (methods) from another object by cloning its <code>prototype</code> object:
-<blockquote>ChildObject.prototype = Object.create(ParentObject.prototype);</blockquote>
+
+```js
+ChildObject.prototype = Object.create(ParentObject.prototype);
+```
+
 Then the <code>ChildObject</code> received its own methods by chaining them onto its <code>prototype</code>:
-<blockquote>ChildObject.prototype.methodName = function() {...};</blockquote>
+
+```js
+ChildObject.prototype.methodName = function() {...};
+```
+
 It's possible to override an inherited method. It's done the same way - by adding a method to <code>ChildObject.prototype</code> using the same method name as the one to override.
 Here's an example of <code>Bird</code> overriding the <code>eat()</code> method inherited from <code>Animal</code>:
-<blockquote>function Animal() { }<br>Animal.prototype.eat = function() {<br>&nbsp;&nbsp;return "nom nom nom";<br>};<br>function Bird() { }<br><br>// Inherit all methods from Animal<br>Bird.prototype = Object.create(Animal.prototype);<br><br>// Bird.eat() overrides Animal.eat()<br>Bird.prototype.eat = function() {<br>&nbsp;&nbsp;return "peck peck peck";<br>};</blockquote>
+
+```js
+function Animal() { }
+Animal.prototype.eat = function() {
+  return "nom nom nom";
+};
+function Bird() { }
+
+// Inherit all methods from Animal
+Bird.prototype = Object.create(Animal.prototype);
+
+// Bird.eat() overrides Animal.eat()
+Bird.prototype.eat = function() {
+  return "peck peck peck";
+};
+```
+
 If you have an instance <code>let duck = new Bird();</code> and you call <code>duck.eat()</code>, this is how JavaScript looks for the method on <code>duck’s</code> <code>prototype</code> chain:
 1. duck => Is eat() defined here? No.
 2. Bird => Is eat() defined here? => Yes. Execute it and stop searching.

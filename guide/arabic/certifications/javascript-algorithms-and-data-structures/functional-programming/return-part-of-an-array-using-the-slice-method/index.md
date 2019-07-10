@@ -12,20 +12,22 @@ localeTitle: عودة جزء من صفيف باستخدام طريقة شريح�
 
 يمكن كتابة الدالة ببساطة عن طريق كتابة سطر واحد من التعليمات البرمجية - عبارة return. تمامًا كما في المثال المعطى ، قم `beginSlice` المصفوفة التي تأخذها الدالة كمعلمة باستخدام معلمات `beginSlice` و `endSlice` كمعلمات `endSlice` `slice()` . تذكر بنية طريقة `slice()` :
 
- `var arr = ["Cat", "Dog", "Tiger", "Zebra", "Ant"]; 
- arr.slice([index-to-begin-slice] , [index-to-end-slice]); 
-` 
+```javascript
+var arr = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+arr.slice([index-to-begin-slice] , [index-to-end-slice]);
+``` 
 
 ### حل
 
- `function sliceArray(anim, beginSlice, endSlice) { 
-  // Add your code below this line 
-  return anim.slice(beginSlice, endSlice); 
-  // Add your code above this line 
- } 
- var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"]; 
- sliceArray(inputAnim, 1, 3); 
-` 
+```javascript
+function sliceArray(anim, beginSlice, endSlice) {
+  // Add your code below this line
+  return anim.slice(beginSlice, endSlice);
+  // Add your code above this line
+}
+var inputAnim = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
+sliceArray(inputAnim, 1, 3);
+``` 
 
 #### روابط ذات صلة:
 

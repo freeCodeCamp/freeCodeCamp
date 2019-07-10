@@ -21,8 +21,9 @@ localeTitle: JSON البناء
 
 يتكون زوج الاسم / القيمة من اسم حقل (في علامات اقتباس مزدوجة) ، متبوعًا بنقطتين ، متبوعًا بقيمة:
 
- `"handle":"moghya" 
-` 
+```
+"handle":"moghya"
+``` 
 
 *   تتطلب أسماء JSON علامات اقتباس مزدوجة.
 
@@ -34,13 +35,15 @@ localeTitle: JSON البناء
 
 *   JSON
 
- `"handle":"moghya" 
-` 
+```
+"handle":"moghya"
+``` 
 
 *   جافا سكريبت
 
- `handle:"moghya" 
-` 
+```
+handle:"moghya"
+``` 
 
 ### قيم JSON
 
@@ -65,47 +68,51 @@ localeTitle: JSON البناء
 
 باستخدام JavaScript ، يمكنك إنشاء كائن وتعيين البيانات إليه ، على النحو التالي:
 
- `var person = { 
-  "name":"Shubham", 
-  "age":21, 
-  "handle":"moghya", 
-  "website":"http://moghya.me/" 
-  }; 
-` 
+```
+var person = {
+  "name":"Shubham",
+  "age":21,
+  "handle":"moghya",
+  "website":"http://moghya.me/"
+  };
+``` 
 
 يمكنك الوصول إلى كائن JavaScript مثل هذا:
 
- `//returns moghya 
- person.handle; 
-` 
+```
+//returns moghya
+person.handle;
+``` 
 
 يمكن أيضًا الوصول إليه على النحو التالي:
 
- `//returns http://moghya.me/ 
- person["website"]; 
-` 
+```
+//returns http://moghya.me/
+person["website"];
+``` 
 
 ### المصفوفات في JSON
 
- `var team = { 
-  "name":"novatoscript", 
-  "members" : 
-  [ 
-    { 
-      "name":"Shubham Sawant", 
-      "age":21, 
-      "handle":"moghya", 
-      "website":"http://moghya.me", 
-    }, 
-    { 
-      "name":"Saurabh Banore", 
-      "age":21, 
-      "handle":"banoresaurabh", 
-      "website":"http://banoresaurabh.me/", 
-    } 
-  ] 
- } 
-` 
+```
+var team = {
+  "name":"novatoscript",
+  "members" :
+  [
+    {
+      "name":"Shubham Sawant",
+      "age":21,
+      "handle":"moghya",
+      "website":"http://moghya.me",
+    },
+    {
+      "name":"Saurabh Banore",
+      "age":21,
+      "handle":"banoresaurabh",
+      "website":"http://banoresaurabh.me/",
+    }
+  ]
+}
+``` 
 
 ### مثال
 

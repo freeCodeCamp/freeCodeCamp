@@ -95,7 +95,6 @@ localeTitle: 参数可选
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnz/0)
 
 ### 代码说明：
 
@@ -154,7 +153,6 @@ localeTitle: 参数可选
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLoA/0)
 
 ### 代码说明：
 
@@ -189,7 +187,6 @@ localeTitle: 参数可选
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLoB/0)
 
 ### 代码说明：
 

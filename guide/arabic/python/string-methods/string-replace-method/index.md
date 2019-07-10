@@ -10,27 +10,31 @@ localeTitle: طريقة استبدال السلاسل
 
 1.  استبدال كافة تكرارات `"is"` بـ `"WAS"`
 
- `string = "This is nice. This is good." 
- newString = string.replace("is","WAS") 
- print(newString) 
-` 
+```python
+string = "This is nice. This is good."
+newString = string.replace("is","WAS")
+print(newString)
+``` 
 
 انتاج |
 
- `ThWAS WAS nice. ThWAS WAS good. 
-` 
+```python
+ThWAS WAS nice. ThWAS WAS good.
+``` 
 
 2.  استبدال أول تكرارين لـ `"is"` بـ `"WAS"`
 
- `string = "This is nice. This is good." 
- newString = string.replace("is","WAS", 2) 
- print(newString) 
-` 
+```python
+string = "This is nice. This is good."
+newString = string.replace("is","WAS", 2)
+print(newString)
+``` 
 
 انتاج |
 
- `ThWAS WAS nice. This is good. 
-` 
+```python
+ThWAS WAS nice. This is good.
+``` 
 
 #### معلومات اكثر:
 

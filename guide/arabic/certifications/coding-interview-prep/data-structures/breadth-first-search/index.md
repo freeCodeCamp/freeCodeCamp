@@ -6,12 +6,13 @@ localeTitle: اتساع البحث الأول
 
 دعونا أولا تحديد فئة `Tree` لاستخدامها لتنفيذ خوارزمية Breadth First Search.
 
- `class Tree: 
-  def __init__(self, x): 
-    self.val = x 
-    self.left = None 
-    self.right = None 
-` 
+```python
+class Tree:
+  def __init__(self, x):
+    self.val = x
+    self.left = None
+    self.right = None
+``` 
 
 تنتقل خوارزمية البحث الأولى والاتساع من مستوى إلى آخر بدءًا من جذر الشجرة. سنستخدم `queue` لهذا الغرض.
 

@@ -12,7 +12,7 @@ Primero, ajuste el método de retorno actual dentro de una declaración if y est
 
 ### Solución
 
-```react.js
+```jsx
 if (this.state.display === true) { 
   return ( 
     <div> 
@@ -25,7 +25,7 @@ if (this.state.display === true) {
 
 A continuación, cree una declaración else que devuelva el mismo JSX **sin** el elemento `h1` .
 
-```react.js
+```jsx
 else { 
   return ( 
     <div> 

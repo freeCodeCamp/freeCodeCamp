@@ -19,34 +19,32 @@ Generalmente, puede _declarar_ (es decir, crear) variables según la siguiente s
  < _tipo de dato_ > < _nombre de la variable_ >;
 
 ```java
- // Tipo de Dato Primitivo 
+// Tipo de dato primitivo 
  int i; 
  
- // Tipo de Dato Referencia 
- Float miFlotante; 
+ // Referencia al tipo de dato
+ Float myFloat; 
 ```
 
 Puede _asignar_ un valor a la variable de forma simultánea cuando la declara (lo que se denomina _inicialización_), o en cualquier lugar del código después de haberla declarado. El símbolo **\=** se utiliza para esto.
 
 ```java
- // Inicializa la variable de Tipo Primitivo 'int' para almacenar el valor 10 
+ // Inicializa la variable primitiva del tipo 'int' para almacenar el valor 10
  int i = 10; 
  double cantidad = 10.0; 
  boolean estaAbierto = false; 
  char c = 'a'; // Observe las comillas simples
  
- // Las variables también pueden ser declaradas en una sentencia, y despues asignarles valores. 
+ // Las variables también pueden declararse en una sentencia, y asignarse valores más adelante.
  int j; 
  j = 10; 
  
- // Inicializa un objeto Float con el valor de 1.0 
- // La variable miFlotante ahora apunta al objeto 
- Float miFlotante = new Float(1.0); 
+ // Inicializar un objeto de tipo Float con el valor "1.0" y hacemos que la variable 'myFloat' lo referencie
+ Float myFloat = new Float(1.0); 
  
- // Los bytes son uno de los Tipos en Java y pueden ser  
- // representados cone este codigo
- int valorDelByte = 0B101; 
- byte otroByte = (byte)0b00100001; 
+ // Los Byte son uno de los tipos de Java y pueden ser representados mediante este código
+ int byteValue = 0B101; 
+ byte anotherByte = (byte)0b00100001; 
 ```
 
 Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comportan de manera ligeramente diferente a las variables del tipo Referencia (y Envoltorio); mientras que las variables Primitivas _almacenan_ el valor real, las variables de Referencia hacen _referencia a_ un 'objeto' que contiene el valor real. Puede encontrar más información en las secciones vinculadas a continuación.
@@ -55,8 +53,3 @@ Como se desprende del ejemplo anterior, las variables del tipo Primitivo se comp
 
 *   [Tipos de datos](https://guide.freecodecamp.org/java/data-types)
 *   [Clases y objetos](https://guide.freecodecamp.org/java/classes-and-objects)
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDc2ODYxNTksMjA3MzIyNzY5OCwtMj
-M2MTI0ODQwLDE1NzUwNTYyMzksNjI5MzM5NTIxLDE4ODYzMDMw
-MDcsLTg0OTg5MjI3MSwtMTA2MjgzNTUzMF19
--->

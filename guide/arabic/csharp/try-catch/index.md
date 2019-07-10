@@ -12,22 +12,23 @@ localeTitle: حاول الصيد في النهاية
 
 ## بناء الجملة
 
- `try 
- { 
-   // Code which could potentially throw an exception 
-   var parsedValue = Int32.Parse("abcde"); 
- } 
- catch(Exception e) 
- { 
-    // Code to handle the exception 
-    Console.WriteLine("Exception: " + e.Message); 
- } 
- finally 
- { 
-    // Code which will always run no matter what. 
-    Console.WriteLine("Try-Catch block has finished execution"); 
- } 
-` 
+```csharp
+try
+{
+   // Code which could potentially throw an exception
+   var parsedValue = Int32.Parse("abcde");
+}
+catch(Exception e)
+{
+    // Code to handle the exception
+    Console.WriteLine("Exception: " + e.Message);
+}
+finally
+{
+    // Code which will always run no matter what.
+    Console.WriteLine("Try-Catch block has finished execution");
+}
+``` 
 
 في المثال أعلاه ، نحاول تحويل "abcde" إلى قيمة عددية. سيقوم هذا الخط بطرح استثناء لأنه لا يمكن تحويله إلى رقم بنجاح. سيتم اكتشاف الاستثناء في كتلة catch وسيتم تخزين رسالة الاستثناء والتفاصيل الأخرى في المتغير المعين في كتلة catch (الحرف 'e' في المثال أعلاه). بعد تنفيذ كل هذا ، سيتم تنفيذ القسم "أخيرًا" لإنهائه.
 
@@ -37,51 +38,54 @@ localeTitle: حاول الصيد في النهاية
 
 كتلة المحاولة لها نطاق طريقة خاص بها ، لذلك لن يتم الوصول إلى أي من المتغيرات التي يتم الإعلان عنها داخل كتلة المحاولة خارج نطاق المحاولة.
 
- `try 
- { 
-    // Read user input from the console. 
-    var userInput = Console.ReadLine(); 
- } 
- catch(Exception e) 
- { 
-    Console.WriteLine("Exception: " + e.Message); 
- } 
- 
- //Outside the Try block 
- var parsedUserInput = Int32.Parse(userInput);  // Not correct 
-` 
+```csharp
+try
+{
+    // Read user input from the console.
+    var userInput = Console.ReadLine();
+}
+catch(Exception e)
+{
+    Console.WriteLine("Exception: " + e.Message);
+}
+
+//Outside the Try block
+var parsedUserInput = Int32.Parse(userInput);  // Not correct
+``` 
 
 سيعطيك ما سبق خطأ في وقت الترجمة لأن القيمة 'userInput' لا يمكن الوصول إليها. إذا كنت تحتاج إلى الوصول إلى متغير خارج كتلة try-catch ستحتاج إلى تعريف المتغير قبل كتلة المحاولة.
 
- `var userInput = ""; 
- try 
- { 
-    // Read user input from the console. 
-    userInput = Console.ReadLine(); 
- } 
- catch(Exception e) 
- { 
-    Console.WriteLine("Exception: " + e.Message); 
- } 
- 
- //Outside the Try block 
- var parsedUserInput = Int32.Parse(userInput);  // Correct 
-` 
+```csharp
+var userInput = "";
+try
+{
+    // Read user input from the console.
+    userInput = Console.ReadLine();
+}
+catch(Exception e)
+{
+    Console.WriteLine("Exception: " + e.Message);
+}
+
+//Outside the Try block
+var parsedUserInput = Int32.Parse(userInput);  // Correct
+``` 
 
 ## كتلة الصيد
 
 هذه الكتلة هي المكان الذي تحدد فيه نوع `Exception` الذي تريد التقاطه. إذا كنت تريد التقاط كافة الاستثناءات الممكنة ، يمكنك استخدام الفئة الأساسية `Exception` . إذا كنت تريد فقط التقاط نوع معين من الاستثناء ، فيمكنك تحديد ذلك بدلاً من ذلك. بعض الأمثلة على أنواع الاستثناءات الأخرى هي `ArgumentException` و `OutOfMemoryException` و `FormatException` .
 
- `try 
- { 
-   var parsedValue = Int32.Parse("abcde"); 
- } 
- // Only FormatExceptions will be caught in this catch block. 
- catch(FormatException exceptionVariable) 
- { 
-    Console.WriteLine(exceptionVariable.Message); 
- } 
-` 
+```csharp
+try
+{
+   var parsedValue = Int32.Parse("abcde");
+}
+// Only FormatExceptions will be caught in this catch block.
+catch(FormatException exceptionVariable)
+{
+    Console.WriteLine(exceptionVariable.Message);
+}
+``` 
 
 المتغير المعلن بعد نوع الاستثناء سيحتوي على كل بيانات الاستثناء ويمكن استخدامه داخل كتلة `Catch` .
 
@@ -89,14 +93,15 @@ localeTitle: حاول الصيد في النهاية
 
 يتم **دائمًا** تشغيل الكتلة الأخيرة في النهاية بعد كتل `Try` and `Catch` . وعادة ما يستخدم هذا القسم لعندما يكون هناك شيء **يجب أن** يحدث في نهاية بغض النظر عما إذا كان طرح استثناء أم لا. على سبيل المثال ، لنفترض أننا بحاجة إلى متغير ليتم إعادة تنشيطه مرة أخرى إلى رقم محدد بعد التلاعب به طوال الوقت.
 
- `int initalValue = 12; 
- try 
- { 
-    // Code which manipulates 'initialValue' 
- } 
- finally 
- { 
-    Console.WriteLine("re-initalising value back to 12"); 
-    initialValue = 12; 
- } 
-`
+```csharp
+int initalValue = 12;
+try
+{
+    // Code which manipulates 'initialValue'
+}
+finally
+{
+    Console.WriteLine("re-initalising value back to 12");
+    initialValue = 12;
+}
+```
