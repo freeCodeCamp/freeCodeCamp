@@ -4,7 +4,6 @@ title: Replace Loops using Recursion
 
 # Replace Loops using Recursion
 
-
 ### Hint 1:
 
 <details><summary>(Click to reveal)
