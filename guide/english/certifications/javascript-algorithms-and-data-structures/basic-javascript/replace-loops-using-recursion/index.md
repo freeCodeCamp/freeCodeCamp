@@ -4,7 +4,6 @@ title: Replace Loops using Recursion
 
 # Replace Loops using Recursion
 
-
 Write a recursive function, `sum(arr, n)`, that creates the sum of the first elements (from 0 to `n` inclusive) in an array `arr`.
 
 ### Hint 1:
