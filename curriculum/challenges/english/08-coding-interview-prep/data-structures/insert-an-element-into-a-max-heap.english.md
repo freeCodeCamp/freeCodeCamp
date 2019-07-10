@@ -40,7 +40,7 @@ tests:
   - text: MaxHeap has a method called print.
     testString: assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})(), 'MaxHeap has a method called print.');
   - text: The insert method adds elements according to the max heap property.
-    testString: 'assert((function() { var test = false; if (typeof MaxHeap !== ''undefined'') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })(), ''The insert method adds elements according to the max heap property.'');'
+    testString: 'assert((function() { var test = false; if (typeof MaxHeap !== ''undefined'') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })());'
 
 ```
 
