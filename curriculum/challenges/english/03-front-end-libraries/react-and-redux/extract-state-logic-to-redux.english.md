@@ -32,7 +32,7 @@ tests:
   - text: Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.
     testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })());
   - text: The <code>messageReducer</code> should return the current state if called with any other actions.
-    testString: 'assert((function() { const addState = store.getState(); store.dispatch({type: ''FAKE_ACTION''}); const testState = store.getState(); return (addState === testState); })(), ''The <code>messageReducer</code> should return the current state if called with any other actions.'');'
+    testString: 'assert((function() { const addState = store.getState(); store.dispatch({type: ''FAKE_ACTION''}); const testState = store.getState(); return (addState === testState); })());'
 
 ```
 
