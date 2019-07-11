@@ -2,20 +2,20 @@
 title: Accessibility Basics
 localeTitle: Noções básicas de acessibilidade
 ---
+
 > "As Artes das Trevas são muitas, variadas, estão em constante mudança, e são eternas. Combatê-las é como combater um monstro de muitas cabeças, no qual, cada vez que cortamos uma cabeça, surge outra ainda mais feroz e inteligente do que a anterior. Você está lutando contra algo que não é fixo, mutável e indestrutível.".
-> 
 > \- Professor Severo Snape, Série Harry Potter
 
 O papel da acessibilidade no desenvolvimento é essencialmente entender a perspectiva e as necessidades do usuário e saber que a Web e os aplicativos são uma solução para pessoas com deficiências.
 
-Hoje em dia, mais e mais novas tecnologias são inventadas para tornar a vida dos desenvolvedores, assim como dos usuários, mais fácil. Até que ponto isso é uma coisa boa é um debate para outro momento, por enquanto é o suficiente para dizer que a caixa de ferramentas de um desenvolvedor, especialmente um desenvolvedor web, está tão em constante mudança quanto as chamadas "artes das trevas" estão de acordo com nosso amigo. Snape
+Hoje em dia, mais e mais novas tecnologias são inventadas para tornar a vida dos desenvolvedores, assim como dos usuários, mais fácil. Até que ponto isso é uma coisa boa é um debate para outro momento, por enquanto é o suficiente para dizer que a caixa de ferramentas de um desenvolvedor, especialmente um desenvolvedor web, está tão em constante mudança quanto as chamadas "artes das trevas" estão de acordo com nosso amigo Snape.
 
 Uma ferramenta nessa caixa de ferramentas deve ser acessibilidade. É uma ferramenta que deve idealmente ser usada em um dos primeiros passos de escrever qualquer forma de conteúdo da web. No entanto, esta ferramenta muitas vezes não é tão bem apresentada na caixa de ferramentas da maioria dos desenvolvedores. Isso pode ser devido a um simples caso de não saber que existe até casos extremos, como não se importar com isso.
 
 Na minha vida como usuário e, mais tarde, como desenvolvedor, que se beneficia da acessibilidade em qualquer forma de conteúdo, eu vi os dois lados desse espectro. Se você estiver lendo este artigo, acredito que esteja em uma das seguintes categorias:
 
-*   Você é um desenvolvedor web iniciante e gostaria de saber mais sobre acessibilidade
-*   Você é um desenvolvedor web experiente e perdeu o seu caminho (mais sobre isso mais tarde)
+*   Você é um desenvolvedor web iniciante e gostaria de saber mais sobre acessibilidade.
+*   Você é um desenvolvedor web experiente e perdeu o seu caminho (mais sobre isso mais tarde).
 *   Você sente que existe uma obrigação legal do trabalho e precisa aprender mais sobre isso.
 
 Se você ficar fora dessas categorias bastante amplas, por favor me avise. Eu sempre gosto de ouvir as pessoas que lêem o que eu escrevo. A implementação da acessibilidade afeta toda a equipe, desde as cores escolhidas pelo designer, a cópia escrita pelo redator e até você, o desenvolvedor.
