@@ -10,20 +10,20 @@ localeTitle: كيف لعلامة
 
 ### مثال
 
- `
-<!-- This is a comment --> 
-` 
+```html
+<!-- This is a comment -->
+``` 
 
 يمكن أيضًا استخدام التعليقات لجعل الشفرة غير نشطة دون الحاجة إلى حذفها بالكامل.
 
 ### مثال
 
- `
-<!-- 
- <h1>Hello Campers</h1> 
- --> 
- <h2>Hello Friends</h2> 
- <!-- 
- <p>Hello Paragraph</p> 
- --> 
-`
+```html
+<!--
+<h1>Hello Campers</h1>
+-->
+<h2>Hello Friends</h2>
+<!--
+<p>Hello Paragraph</p>
+-->
+```

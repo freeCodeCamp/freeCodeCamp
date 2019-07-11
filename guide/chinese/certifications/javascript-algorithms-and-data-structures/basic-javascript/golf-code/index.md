@@ -112,7 +112,6 @@ var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", 
  golfScore(5, 4); 
 ```
 
-·在[repl.it](https://repl.it/@AdrianSkar/Basic-JS-Golf-code)运行
 
 ##代码说明 由于我们已经在变量`names`定义了一个数组，我们可以利用它并将它用于使用索引的返回语句（例如： `names[0] is the first one` ）。这样，如果您需要更改特定结果，则不需要在函数内部查找它，它将位于数组的开头。
 

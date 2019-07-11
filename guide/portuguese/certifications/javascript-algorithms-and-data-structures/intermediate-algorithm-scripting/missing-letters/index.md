@@ -61,8 +61,7 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnD/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Esta solução faz uso de um loop `for` .
@@ -99,8 +98,7 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnE/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, definimos variáveis ​​para armazenar o código do caractere para a primeira letra da string e para armazenar as letras que faltam.
@@ -148,8 +146,7 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnG/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Uma nova string **allChars** é criada.

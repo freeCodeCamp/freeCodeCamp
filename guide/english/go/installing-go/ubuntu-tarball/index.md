@@ -9,7 +9,7 @@ title: Installing Go in Ubuntu using a tarball
 
 Before proceeding make sure you know if your system is 32 or 64 bit. If you don't know, run the following command to find out:
 
-```sh
+```shell
 $ lscpu | grep Architecture
 ```
 If you see ``` Architecture: x86_64``` your system is 64bit, otherwise if you get ```Architecture: i686```, then your system is 32bit. Now that you know your system architecture, let's proceed.
@@ -52,7 +52,7 @@ $ export PATH=$PATH:/usr/local/go/bin
 
 To check if go was successfully installed, use:
 
-```sh
+```shell
 $ go version
 > go version go1.9.1 linux/amd64
 ```

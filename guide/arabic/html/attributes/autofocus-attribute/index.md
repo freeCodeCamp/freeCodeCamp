@@ -16,12 +16,12 @@ localeTitle: خاصية التركيز التلقائي
 
 ### مثال
 
- `
-<form> 
-    <input type="text" name="fname" autofocus> 
-    <input type="text" name="lname"> 
- </form> 
-` 
+```html
+<form>
+    <input type="text" name="fname" autofocus>
+    <input type="text" name="lname">
+</form>
+``` 
 
 ### التوافق
 

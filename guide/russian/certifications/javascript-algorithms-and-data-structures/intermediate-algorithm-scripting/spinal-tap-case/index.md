@@ -56,7 +56,6 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLnS/0)
 
 ### Код Объяснение:
 
@@ -77,7 +76,6 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLnT/0)
 
 ### Код Объяснение:
 
@@ -99,7 +97,6 @@ function spinalCase(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/EUZV)
 
 ### Код Объяснение:
 

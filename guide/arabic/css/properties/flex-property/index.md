@@ -12,12 +12,13 @@ localeTitle: فليكس الملكية
 
 الاختلافات الممكنة في بناء الجملة المذكورة أدناه. `flex-grow` `flex-shrink` يأخذ عدد صحيح كقيمة. `flex-basis` يأخذ وحدات حجم منتظم مثل px ، em ، rem… الخ.
 
- `flex: <flex-grow> <flex-shrink> <flex-basis>; 
- flex: <flex-basis>; 
- flex: <flex-grow>; 
- flex: <flex-grow> <flex-basis>; 
- flex: <flex-grow> <flex-shrink>; 
-` 
+```css
+flex: <flex-grow> <flex-shrink> <flex-basis>;
+flex: <flex-basis>;
+flex: <flex-grow>;
+flex: <flex-grow> <flex-basis>;
+flex: <flex-grow> <flex-shrink>;
+``` 
 
 تحدد `flex-basis` حجم العنصر على طول المحور الرئيسي. داخل الحاوية ، يتم تعريف المحور الرئيسي `flex-direction` . المحور الرئيسي هو الأفقي عندما يكون `flex-direction` هو `row` . عمودي عندما يكون `flex-direction` هو `column` .
 

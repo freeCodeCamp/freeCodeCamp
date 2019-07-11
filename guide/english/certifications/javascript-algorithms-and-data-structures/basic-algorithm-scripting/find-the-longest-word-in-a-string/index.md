@@ -50,7 +50,6 @@ Remember how to get the length of elements on the array? `Array[index].length`.
       return maxLength;
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/5' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -73,7 +72,6 @@ Then check for the longest word by comparing the current word to the previous on
         }, 0);
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/6' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -86,6 +84,32 @@ In case you're wondering about that `0` after the callback function, it is used 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-reduce/14299' target='_blank' rel='nofollow'>JS Reduce</a>
 *   <a href='http://forum.freecodecamp.com/t/using-array-prototype-reduce-to-reduce-conceptual-boilerplate-for-problems-on-arrays/14687' target='_blank' rel='nofollow'>JS Reduce Made Easy</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-max/14682.md' target='_blank' rel='nofollow'>JS Math Max</a>
+
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+
+**Using `.map()`**
+```javascript
+function findLongestWordLength(str) {
+    return Math.max(...str.split(" ").map(word => word.length));
+}
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/6' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+
+We provide `Math.max` with the length of each word as argument, and it will simply return the highest of all. 
+
+Let's analyze everything inside the `Math.max` parenthesees to understand how we do that. 
+
+`str.split(" ")` splits the string into an array, taking spaces as separators. It returns this array: \["The","quick,"brown","fox","jumped","over","the","lazy","dog"\].
+
+Then, we will make another array, made from the lengths of each element of the `str.split(" ")` array with `map()`.
+
+`str.split(" ").map(word => word.length)` returns \[3, 5, 5, 3, 6, 4, 3, 4, 3\]
+
+Finally, we pass the array as argument for the Math.max function with the spread operator `...`
+
+For more information on `map` <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map' target='_blank' rel='nofollow'>click here.</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
@@ -118,7 +142,6 @@ In case you're wondering about that `0` after the callback function, it is used 
       }
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/7' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -134,6 +157,3 @@ The first line splits the string into individual words. Then we check if `str` o
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

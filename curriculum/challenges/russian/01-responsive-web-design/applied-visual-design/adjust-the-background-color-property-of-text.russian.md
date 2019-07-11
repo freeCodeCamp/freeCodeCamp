@@ -7,10 +7,10 @@ localeTitle: Отрегулируйте фоновый цвет Свойство
 ---
 
 ## Description
-<section id="description"> Вместо того, чтобы корректировать общий фон или цвет текста, чтобы сделать передний план легко читаемым, вы можете добавить <code>background-color</code> к элементу, содержащему текст, который вы хотите подчеркнуть. Эта проблема использует <code>rgba()</code> вместо <code>hex</code> кодов или нормальный <code>rgb()</code> . <blockquote> rgba акроним расшифровывается как: <br> r = красный <br> g = зеленый <br> b = синий <br> a = альфа / уровень непрозрачности </blockquote> Значения RGB могут находиться в диапазоне от 0 до 255. Значение альфа может варьироваться от 1, полностью непрозрачного или сплошного цвета, до 0, что является полностью прозрачным или прозрачным. <code>rgba()</code> отлично подходит для использования в этом случае, так как он позволяет вам регулировать непрозрачность. Это означает, что вам не нужно полностью блокировать фон. Для этой задачи вы будете использовать <code>background-color: rgba(45, 45, 45, 0.1)</code> . Он производит темно-серый цвет, который почти прозрачен, учитывая низкое значение непрозрачности 0,1. </section>
+<section id="description"> Вместо исправления общего фона или цвета текста, для читаемости переднего плана вы можете добавить <code>background-color</code> к элементу, содержащему текст, который вы хотите подчеркнуть. Эта проблема использует <code>rgba()</code> вместо <code>hex</code> кодов или нормальный <code>rgb()</code> . <blockquote> rgba акроним расшифровывается как: <br> r = красный <br> g = зеленый <br> b = синий <br> a = альфа / уровень непрозрачности </blockquote> Значения RGB могут находиться в диапазоне от 0 до 255. Значение альфа может варьироваться от 1, полностью непрозрачного или сплошного цвета, до 0, что является полностью прозрачным или невидимым. <code>rgba()</code> отлично подходит для использования в этом случае, так как он позволяет вам регулировать непрозрачность. Это означает, что вам не нужно полностью блокировать фон. Для этой задачи вы будете использовать <code>background-color: rgba(45, 45, 45, 0.1)</code> . Он производит темно-серый цвет, который почти прозрачен, учитывая низкое значение непрозрачности 0,1. </section>
 
 ## Instructions
-<section id="instructions"> Чтобы текст выделялся больше, отрегулируйте <code>background-color</code> элемента <code>h4</code> на заданное значение <code>rgba()</code> . Также для <code>h4</code> удалите свойство <code>height</code> и добавьте <code>padding</code> 10px. </section>
+<section id="instructions"> Чтобы текст сильнее выделялся, отрегулируйте <code>background-color</code> элемента <code>h4</code> на заданное значение <code>rgba()</code> . Также для <code>h4</code> удалите свойство <code>height</code> и добавьте <code>padding</code> 10px. </section>
 
 ## Tests
 <section id='tests'>
@@ -21,7 +21,7 @@ tests:
     testString: 'assert(code.match(/background-color:\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\)/gi), "Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.");'
   - text: Ваш код должен добавить свойство <code>padding</code> к элементу <code>h4</code> и установить его на 10 пикселей.
     testString: 'assert($("h4").css("padding-top") == "10px" && $("h4").css("padding-right") == "10px" && $("h4").css("padding-bottom") == "10px" && $("h4").css("padding-left") == "10px", "Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.");'
-  - text: Свойство <code>height</code> на элементе <code>h4</code> должно быть удалено.
+  - text: Свойство <code>height</code> в элементе <code>h4</code> должно быть удалено.
     testString: 'assert(!($("h4").css("height") == "25px"), "The <code>height</code> property on the <code>h4</code> element should be removed.");'
 
 ```

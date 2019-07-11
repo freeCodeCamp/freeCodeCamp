@@ -15,9 +15,10 @@ localeTitle: SQL CREATE INDEX Statement
 
 فيما يلي مثال على صيغة بناء بيان الفهرس. لاحظ أن بناء الجملة يسمح لفهرس أن يكون أكثر من عمود واحد.
 
- `CREATE INDEX index_name 
- ON table_name (column1, column2, ...); 
-` 
+```sql
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+``` 
 
 إنشاء فهرس جديد في حقل جدول الطالب ، programOfStudy. كمرجع ، إليك التعريف الحالي لجدول الطالب.
 
@@ -25,9 +26,10 @@ localeTitle: SQL CREATE INDEX Statement
 
 إليك بيان لإنشاء الفهرس ، ولقطة شاشة لتعريف الجدول المحدّث:
 
- `create index pStudyIndex 
- on student (programOfStudy); 
-` 
+```sql
+create index pStudyIndex
+on student (programOfStudy);
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/create-index-statement02.JPG?raw=true)
 
