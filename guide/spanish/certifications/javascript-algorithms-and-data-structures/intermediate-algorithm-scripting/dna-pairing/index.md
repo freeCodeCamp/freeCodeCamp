@@ -85,7 +85,6 @@ Este problema no implica reorganizar la entrada en diferentes combinaciones o pe
     pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLmz/0)
 
 ### Explicación del código:
 
@@ -118,7 +117,6 @@ Este problema no implica reorganizar la entrada en diferentes combinaciones o pe
   pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/repls/ThoroughSphericalComputeranimation)
 
 ## Explicación del código:
 

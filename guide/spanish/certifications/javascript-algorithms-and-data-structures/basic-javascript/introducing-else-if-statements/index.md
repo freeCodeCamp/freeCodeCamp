@@ -56,7 +56,7 @@ function testElseIf(val) {
  testElseIf(7); 
 ```
 
-: cohete: [Ejecutar código](https://repl.it/@RyanPisuena/GoldenWorriedRuntime) ## explicación del código La estructura de un **flujo lógico else-if** es una declaración inicial `if` , una instrucción `if-else` y una instrucción `else` final.
+## explicación del código La estructura de un **flujo lógico else-if** es una declaración inicial `if` , una instrucción `if-else` y una instrucción `else` final.
 
 ### Recursos
 
