@@ -24,8 +24,7 @@ Você pode, então, estilizar esses elementos com CSS. As classes são referenci
  } 
 ```
 
-Este código atribui um fundo azul e uma cor de texto vermelho para todos os elementos que têm o `super-man` como classe. [Veja este exemplo no CodePen](https://codepen.io/Tlandis/pen/RLvomV).
-
+Este código atribui um fundo azul e uma cor de texto vermelho para todos os elementos que têm o `super-man` como classe.
 
 Você também pode declarar mais de uma classe para seu elemento, como:
 
