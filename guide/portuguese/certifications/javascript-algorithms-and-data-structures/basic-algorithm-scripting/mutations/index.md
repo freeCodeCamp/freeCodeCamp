@@ -51,8 +51,7 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/30)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Primeiro fazemos as duas strings no array minúsculo. `test` irá realizar o que estamos procurando no `target` .  
@@ -79,8 +78,7 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/31)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Pegue a segunda corda, em minúsculas e transforme-a em uma matriz; em seguida, certifique-se de que _cada_ uma de suas _letras faça_ parte da primeira seqüência de caracteres em minúscula.

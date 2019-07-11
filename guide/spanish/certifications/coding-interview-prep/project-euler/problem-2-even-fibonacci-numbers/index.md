@@ -56,7 +56,6 @@ function fiboEvenSum(n) {
  } 
 ```
 
-*   [Ejecutar código](https://repl.it/@ezioda004/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
 
 ### Referencias:
 

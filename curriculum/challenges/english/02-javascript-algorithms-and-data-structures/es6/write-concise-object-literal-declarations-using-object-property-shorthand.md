@@ -1,6 +1,6 @@
 ---
 id: 587d7b8a367417b2b2512b4f
-title: Write Concise Object Literal Declarations Using Simple Fields
+title: Write Concise Object Literal Declarations Using Object Property Shorthand
 challengeType: 1
 ---
 
@@ -16,7 +16,7 @@ const getMousePosition = (x, y) => ({
 });
 ```
 
-<code>getMousePosition</code> is a simple function that returns an object containing two fields.
+<code>getMousePosition</code> is a simple function that returns an object containing two properties.
 ES6 provides the syntactic sugar to eliminate the redundancy of having to write <code>x: x</code>. You can simply write <code>x</code> once, and it will be converted to<code>x: x</code> (or something equivalent) under the hood.
 Here is the same function from above rewritten to use this new syntax:
 
@@ -28,7 +28,7 @@ const getMousePosition = (x, y) => ({ x, y });
 
 ## Instructions
 <section id='instructions'>
-Use simple fields with object literals to create and return a <code>Person</code> object with <code>name</code>, <code>age</code> and <code>gender</code> properties.
+Use object property shorthand with object literals to create and return an object with <code>name</code>, <code>age</code> and <code>gender</code> properties.
 </section>
 
 ## Tests
@@ -36,10 +36,10 @@ Use simple fields with object literals to create and return a <code>Person</code
 
 ```yml
 tests:
-  - text: 'The output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
-    testString: 'assert((() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);})(), ''The output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'');'
-  - text: No <code>key:value</code> were used.
-    testString: getUserInput => assert(!getUserInput('index').match(/:/g), 'No <code>key:value</code> were used.');
+  - text: '<code>createPerson("Zodiac Hasbro", 56, "male")</code> should return <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
+    testString: assert.deepEqual({name:"Zodiac Hasbro",age:56,gender:"male"}, createPerson("Zodiac Hasbro", 56, "male"));
+  - text: Your code should not use <code>key:value</code>.
+    testString: getUserInput => assert(!getUserInput('index').match(/:/g));
 
 ```
 

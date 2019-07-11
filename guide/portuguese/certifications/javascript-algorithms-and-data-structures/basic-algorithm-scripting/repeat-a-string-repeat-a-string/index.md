@@ -50,8 +50,7 @@ function repeatStringNumTimes(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/19)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie uma variável de string vazia para armazenar a palavra repetida.
@@ -76,8 +75,7 @@ function repeatStringNumTimes(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/21)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Esta solução usa recursão.
@@ -98,8 +96,7 @@ function repeatStringNumTimes(str, num) {
  repeatStringNumTimes("abc", 3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/85)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Essa solução usa uma abordagem declarativa.
