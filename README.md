@@ -123,7 +123,7 @@ Our community also has:
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
-- The [Developer News](https://www.freecodecamp.org/news), a free, open source, no-ads place to cross-post your blog articles.
+- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
 - A [Facebook group](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) with over 100,000 members worldwide
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
