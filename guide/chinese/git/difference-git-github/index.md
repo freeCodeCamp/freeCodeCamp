@@ -6,7 +6,7 @@ localeTitle: Git和GitHub之间的区别
 
 Git和Github是两回事。 [Git](https://git-scm.com/)是[版本控制系统](https://en.wikipedia.org/wiki/Version_control) ，而[GitHub](https://github.com/)是用于托管Git repos的服务，并帮助人们协作编写软件。然而，由于GitHub建立在Git之上，并且因为许多网站和文章没有明确区分它们，因此它们的名称相似，因此经常会被混淆。
 
-![Git不是GitHub](https://i.imgur.com/EkjwJdr.png)
+![Git不是GitHub](https://cdn-media-1.freecodecamp.org/imgr/EkjwJdr.png)
 
 ### 混帐
 

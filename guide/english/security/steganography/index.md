@@ -3,7 +3,7 @@ title: Steganography
 ---
 ## Steganography
 
-Steganography is the concept of conceling text, images, files, or videos within other text, images, files or videos. An offline example of this is using "invisible ink" to conceal a message between the lines of a letter. Lemon juice is a popular candidate for invisible ink: 
+Steganography is the concept of concealing text, images, files, or videos within other text, images, files or videos. An offline example of this is using "invisible ink" to conceal a message between the lines of a letter. Lemon juice is a popular candidate for invisible ink: 
 [lemon juice invisible ink](https://www.youtube.com/embed/poCnU_crpjQ)
 
 The following formula provides a very generic description of the pieces of the steganographic process:

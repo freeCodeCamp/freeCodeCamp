@@ -44,7 +44,7 @@ function mergeSort(array) {
   return merger(left, right);
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Merge-Sort)
+
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
 - Video by [Hackerrank](https://www.youtube.com/watch?v=KF2j-9iSf4Q)

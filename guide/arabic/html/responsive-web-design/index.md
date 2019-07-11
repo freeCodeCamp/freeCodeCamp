@@ -17,20 +17,22 @@ localeTitle: تصميم الويب سريع الاستجابة
 
 تخبر استعلامات الوسائط متصفح الويب بتجاهل أو استبدال خصائص صفحة الويب استنادًا إلى سمات معينة مثل عرض الشاشة أو ما إذا كان المستخدم يطبع.
 
- `@media (query) { 
-  /* The browser will use the CSS rules within the curly braces when the query is true */ 
- } 
-` 
+```
+@media (query) {
+  /* The browser will use the CSS rules within the curly braces when the query is true */
+}
+``` 
 
 يقوم المثال التالي بتعيين `padding-left` و `padding-right` داخل الطبقة الداخلية `more-padding` عندما يكون عرض الشاشة أقل من أو يساوي 768 بكسل.
 
- `@media screen and (max-width: 768px) { 
-    .more-padding { 
-        padding-left: 10px; 
-        padding-right: 10px; 
-    } 
- } 
-` 
+```
+@media screen and (max-width: 768px) {
+    .more-padding {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+``` 
 
 ### 2\. أطر CSS
 
@@ -38,9 +40,9 @@ localeTitle: تصميم الويب سريع الاستجابة
 
 في هذا المثال ، يحدد `col-md-9` و `col-sm-6` عرض علامة `<div>` استنادًا إلى ما إذا كانت الشاشة صغيرة أم متوسطة.
 
- `
-<div class="col-12 col-md-6"></div> 
-` 
+```html
+<div class="col-12 col-md-6"></div>
+``` 
 
 يقسم إطار Bootstrap الصف إلى اثني عشر عمودًا. في المثال أعلاه ، سوف ينتشر `<div>` عبر تسعة أو ستة منهم. يعد نظام الشبكة ، الموضح أدناه ، أمرًا أساسيًا في كيفية تسهيل Bootstrap للتصميم سريع الاستجابة.
 

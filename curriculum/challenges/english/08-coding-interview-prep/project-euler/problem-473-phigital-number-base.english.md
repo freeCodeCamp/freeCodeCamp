@@ -37,7 +37,7 @@ Find the sum of the positive integers not exceeding $10^{10}$ whose phigital rep
 ```yml
 tests:
   - text: <code>euler473()</code> should return 35856681704365.
-    testString: 'assert.strictEqual(euler473(), 35856681704365, "<code>euler473()</code> should return 35856681704365.");'
+    testString: assert.strictEqual(euler473(), 35856681704365, '<code>euler473()</code> should return 35856681704365.');
 
 ```
 

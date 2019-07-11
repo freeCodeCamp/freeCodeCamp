@@ -7,15 +7,15 @@ localeTitle: Funções de seta
 Funções no ES6 mudaram um pouco. Quero dizer a sintaxe.
 
 ```javascript
-// Old Syntax 
- function oldOne() { 
+// Old Syntax
+function oldOne() {
  console.log("Hello World..!"); 
- } 
+} 
  
- // New Syntax 
- var newOne = () => { 
+// New Syntax 
+var newOne = () => { 
  console.log("Hello World..!"); 
- } 
+} 
 ```
 
 A nova sintaxe pode ser um pouco confusa. Mas vou tentar explicar a sintaxe. Existem duas partes da sintaxe.
@@ -32,8 +32,8 @@ Outro exemplo com parâmetros:
 ```javascript
 let NewOneWithParameters = (a, b) => { 
  console.log(a+b); // 30 
- } 
- NewOneWithParameters(10, 20); 
+} 
+NewOneWithParameters(10, 20); 
 ```
 
 Parênteses são opcionais quando há apenas um nome de parâmetro:
@@ -41,7 +41,7 @@ Parênteses são opcionais quando há apenas um nome de parâmetro:
 ```javascript
 let newOneWithOneParam = a => { 
  console.log(a); 
- } 
+} 
 ```
 
 Uma vantagem incrível da função de setas é que você não pode religar uma função de seta. Sempre será chamado com o contexto em que foi definido. Apenas use uma função normal.

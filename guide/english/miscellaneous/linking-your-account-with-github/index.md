@@ -1,5 +1,5 @@
 ---
-title: Linking Your Account with Github
+title: Linking Your Account with GitHub
 ---
 In August 2015, we pushed some changes that caused trouble for many of our campers.
 

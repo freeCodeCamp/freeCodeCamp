@@ -39,7 +39,7 @@ Find H(100 000 000).
 ```yml
 tests:
   - text: <code>euler351()</code> should return 11762187201804552.
-    testString: 'assert.strictEqual(euler351(), 11762187201804552, "<code>euler351()</code> should return 11762187201804552.");'
+    testString: assert.strictEqual(euler351(), 11762187201804552, '<code>euler351()</code> should return 11762187201804552.');
 
 ```
 

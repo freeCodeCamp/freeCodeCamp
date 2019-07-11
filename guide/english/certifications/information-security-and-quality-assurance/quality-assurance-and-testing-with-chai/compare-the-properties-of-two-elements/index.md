@@ -3,8 +3,26 @@ title: Compare the Properties of Two Elements
 ---
 ## Compare the Properties of Two Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/compare-the-properties-of-two-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Comparisons'.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ` /** 8 */` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+`isAbove()` compares if the first parameter is greater than the second `(a > b)`
+`isAtMost()` compares if the first parameter is equal to or less than the second `(a <= b)`
+
+## Hint 2
+
+The lines in the test should be changed from `assert.fail()` to either `assert.isAbove()` or `assert.isAtMost()`.
+
+## Solution
+```js
+/** 8 - .isAbove() => a > b , .isAtMost() => a <= b **/
+test('#isAbove, #isAtMost', function() {
+  assert.isAtMost('hello'.length , 5);
+  assert.isAbove(1, 0);
+  assert.isAbove(Math.PI, 3);
+  assert.isAtMost(1 - Math.random(), 1);
+});
+```

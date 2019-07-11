@@ -10,13 +10,15 @@ localeTitle: جيت استنس
 
 في سطر الأوامر على جهازك المحلي ، انتقل إلى المكان الذي تريد حفظ المشروع في دليل العمل الخاص بك. وأخيرًا ، قم بتشغيل الأمر `git clone` :
 
- `git clone URL-OF-REPOSITORY 
-` 
+```shell
+git clone URL-OF-REPOSITORY
+``` 
 
 الاسم الافتراضي للدليل الجديد على جهاز الكمبيوتر الخاص بك هو اسم المستودع ، ولكن يمكنك تغيير ذلك عن طريق تضمين المعلمة (اختياري) الأخيرة:
 
- `git clone URL-OF-REPOSITORY NAME-OF-DIRECTORY-ON-COMPUTER 
-` 
+```shell
+git clone URL-OF-REPOSITORY NAME-OF-DIRECTORY-ON-COMPUTER
+``` 
 
 يعطي Git البعيد الاسم المستعار "الأصل". هذه طريقة مفيدة للإشارة إلى جهاز التحكم عن بعد عندما تريد دفع تغييراتك إلى الخادم البعيد أو سحب التغييرات منه. انظر [Git push](https://guide.freecodecamp.org/git/git-push/) و [Git pull](https://guide.freecodecamp.org/git/git-pull/) لمزيد من التفاصيل.
 
@@ -24,12 +26,13 @@ Git يسحب فقط الفرع الرئيسي عن بعد على جهاز الك
 
 أيضا ، Git تلقائيا بإعداد الفرع الرئيسي المحلي لتتبع الفرع البعيد. عند تشغيل `git status` ، سترى معلومات حول ما إذا كان الفرع المحلي لديك محدثًا مع جهاز التحكم عن بُعد. إليك مثال على الناتج:
 
- `myCommandPrompt (master) >> git status 
- On branch master 
- Your branch is up-to-date with 'origin/master'. 
- nothing to commit, working tree clean 
- myCommandPrompt (master) >> 
-` 
+```shell
+myCommandPrompt (master) >> git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+myCommandPrompt (master) >>
+``` 
 
 إذا كان فرعك المحلي `master` يحتوي على ثلاث تعهدات لم تقم بدفعها إلى الخادم البعيد بعد ، فإن الحالة ستقول "الفرع الخاص بك متقدم على" الأصل / الرئيسي "بـ 3 مرات."
 
@@ -37,13 +40,15 @@ Git يسحب فقط الفرع الرئيسي عن بعد على جهاز الك
 
 إذا كنت ترغب في استضافة مرآة لمستودع ، فيمكنك استخدام معلمة mirror.
 
- `git clone URL-OF-REPOSITORY --mirror 
-` 
+```shell
+git clone URL-OF-REPOSITORY --mirror
+``` 
 
 بعد إجراء نسخ متطابق لمستودع ، يمكنك استنساخ المرآة المحلية من الخادم الخاص بك.
 
- `git clone NAME-OF-DIRECTORY-ON-COMPUTER 
-` 
+```shell
+git clone NAME-OF-DIRECTORY-ON-COMPUTER
+``` 
 
 ### معلومات اكثر:
 

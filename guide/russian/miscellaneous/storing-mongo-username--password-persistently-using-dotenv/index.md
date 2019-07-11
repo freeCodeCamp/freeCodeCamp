@@ -69,7 +69,7 @@ node\_modules
 
 [stackoverflow.com](http://stackoverflow.com/questions/35356692/best-practice-when-using-an-api-key-in-node-js)
 
-[! \[Drake Main](https://i.stack.imgur.com/jRaTj.jpg?s=128&g=1) \] (http://stackoverflow.com/users/4956243/drake-main) #### [Лучшая практика при использовании ключа API в Node.js](http://stackoverflow.com/questions/35356692/best-practice-when-using-an-api-key-in-node-js)
+[! \[Drake Main](https://cdn-media-1.freecodecamp.org/imgr/jRaTj.jpg) \] (http://stackoverflow.com/users/4956243/drake-main) #### [Лучшая практика при использовании ключа API в Node.js](http://stackoverflow.com/questions/35356692/best-practice-when-using-an-api-key-in-node-js)
 
 \*\* node.js, api-key \*\*
 

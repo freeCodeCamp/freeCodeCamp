@@ -6,16 +6,17 @@ localeTitle: هيكل الصفحة
 
 لإنشاء صفحاتك في `HTML` ، تحتاج إلى معرفة كيفية تنظيم صفحة `HTML` ، حيث أن هيكلية الصفحة تتبع الترتيب التالي:
 
- `<!DOCTYPE html> 
- <html> 
-  <head> 
-    <title>Title of the Page</title> 
-  </head> 
-  <body> 
-    <!-- Content --> 
-  </body> 
- </html> 
-` 
+```HTML
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the Page</title>
+  </head>
+  <body>
+    <!-- Content -->
+  </body>
+</html>
+``` 
 
 1 - يجب أن تكون العبارة `<!DOCTYPE html>` دائما أول من يظهر على صفحة `HTML` وتخبر المتصفح بنسخة اللغة المستخدمة. في هذه الحالة ، نعمل باستخدام `HTML5` .
 

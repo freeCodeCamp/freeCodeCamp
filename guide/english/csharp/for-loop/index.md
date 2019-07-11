@@ -34,6 +34,7 @@ for (int i = 0; i < 5; i++)
 > Number 3
 > Number 4
 ```
+- Only counts to 4 due to the fact that the initial number is 0 meaning that 5 numbers including 0 would reach 4.
 
 ### Example 2
 ```

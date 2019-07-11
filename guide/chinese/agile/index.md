@@ -9,6 +9,7 @@ localeTitle: 敏捷
 敏捷强调向最终用户询问他们想要什么，并经常向他们展示产品开发时的演示。这与“瀑布式”方法，规范驱动的开发以及敏捷实践者所称的“大型前端设计”形成鲜明对比。在这些方法中，功能在开发之前计划出来并编入预算。
 
 对于敏捷，重点是“敏捷性” - 能够快速响应用户的反馈和其他不断变化的环境。
+一般来说 最佳小团队人数是4 - 7人左右
 
 ![来自Commitstrip.com的漫画，展示产品经理向开发人员解释他们正在转向敏捷，但随后要求开发人员预先计划一切](https://www.commitstrip.com/wp-content/uploads/2017/01/Strip-Budegt-fixe-pour-projet-flexible-english650-final.jpg)
 

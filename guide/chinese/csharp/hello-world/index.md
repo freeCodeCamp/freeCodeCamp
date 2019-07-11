@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: 你好，世界
----# 你好，世界
+---
+# 你好，世界
 
 要在控制台上编写一些文本，我们使用`Console.WriteLine()` 。此方法将字符串作为输入。
 
@@ -28,8 +29,7 @@ using System;
 ```
 
 ## 输出：
-
-```sh
+```shell
 > Hello World! 
  > Press any key to exit. 
 

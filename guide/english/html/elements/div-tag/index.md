@@ -15,7 +15,10 @@ Here is an example of how to display a section in the same color:
 </div>
 ```
 
-#### More Information:
+#### Differences between `<span>` and `<div>`
+The main difference is that `<span>` is an inline element, while `<div>` is a block element. This means that a `<span>` can appear within a sentence or paragraph (as in the example above), while a `<div>` will start a new line of content. Note that the CSS `display` property can change this default behavior, but that's way beyond the scope of this article!
+
+##### More Information:
 <a href='https://www.tutorialspoint.com/html/html_div_tag.htm' target='_blank' rel='nofollow'>Tutorialspoint</a>
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div' target='_blank' rel='nofollow'>MDN</a>

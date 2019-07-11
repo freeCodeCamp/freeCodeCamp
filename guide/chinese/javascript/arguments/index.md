@@ -2,52 +2,71 @@
 title: Arguments
 localeTitle: 参数
 ---
-arguments对象是一个**类似于数组的对象** _（因为_ **对象** _的结构类似于数组的结构，但它不应该被认为是一个数组，因为它具有对象的所有功能）_ ，它存储了你的所有参数传递给函数，特别是该函数专有。如果要将3个参数传递给函数，比如`storeNames()` ，那么这三个参数将存储在一个名为**arguments**的对象中，当我们传递参数`storeNames("Mulder", "Scully", "Alex Krycek")`它将看起来像这样`storeNames("Mulder", "Scully", "Alex Krycek")`我们的功能：
+arguments对象是一个**类似于数组的对象** _（因为_ **对象** _的结构类似于数组的结构，但它不应该被认为是一个数组，因为它具有对象的所有功能）_ ，它存储了你的所有参数传递给函数，特别是该函数专有。如果要将3个参数传递给函数，比如`storeNames()` ，那么这三个参数将存储在一个名为**arguments**的对象中，它将看起来像这样传递给我的函数`storeNames("Mulder", "Scully", "Alex Krycek")`：
 
 *   首先，我们声明一个函数并使其返回arguments对象。
 
-\`\`\`的JavaScript  
+```javascript
 function storeNames（）{return arguments; }
 ```
-*   Then, when we execute that function with **n arguments**, 3 in this case, it will return the object to us and it will **look like** an array. We can convert it to an array, but more on that later... 
+*   然后，当我们执行这个带有**n个参数**（在这里是3个参数）的函数时，他会返回一个**看起来像** 数组的对象。我们稍后可以将它转换成一个数组... 
+
+```javascript
+// 如果我们在console中执行这行代码:
+storeNames("Mulder", "Scully", "Alex Kryceck");
+// output是 { '0': 'Mulder', '1': 'Scully', '2': 'Alex Kryceck' }
 ```
 
-JavaScript的 //如果我们在控制台中执行以下行： storeNames（“Mulder”，“Scully”，“Alex Kryceck”）; //输出为{'0'：'Mulder'，'1'：'Scully'，'2'：'Alex Kryceck'}
-```
-If you want to know more about this, such as converting it to an array or the optimization problem that comes with using the _slice(_) method and how to solve it, click on **read more** (Gitter Chat Only). 
+如果你想了解更多，例如如何将arguments转换成数组或利用_slice(_) 方法去解决，点击**了解更多**(Gitter Chat Only)。
  
- ## Treat it as an array 
+ ## 把它看成数组
  
- You can invoke arguments by using `arguments[n]` (where _n_ is the index of the argument in the array-like object) but if you want to use it as an array for iteration purposes or applying array methods to it, you need to _convert it to an array_ by declaring a variable and using the Array.prototype.slice.call method (because _arguments_ is not an array): 
+你可以用`arguments[n]` (其中_n_代表参数在arguments类似数组的对象中的index索引) 来调用arguments，但是如果你想把它当成数组实现迭代的目的或使用数组的方法，你需要声明一个变量并使用Array.prototype.slice.call方法把它_转换成数组_（因为_arguments_不是数组):
+  
+```javascript
+var args = Array.prototype.slice.call(arguments);
+
+// 或者在ES6中:
+var args = Array.from(arguments)
 ```
 
-JavaScript的 var args = Array.prototype.slice.call（arguments）;
+因为 **slice()** 有两个参数(参数**end**是可选的),你可以在_slice.call()_指定开头和结尾来只选取arguments中的一部分，参考以下代码：
 
-//或es6方式： var args = Array.from（arguments）
+```javascript
+function getGrades() {
+    var args = Array.prototype.slice.call(arguments, 1, 3);
+    return args;
+}
+
+// 打印出来看看!
+console.log(getGrades(90, 100, 75, 40, 89, 95));
+
+// 结果是: //
+// [100, 75] <- 为什么？因为从index 1开始到index 3结束
+// 所以, index 3 (40) 不在这个范围内
+//
+// 如果我们去掉参数'3',只保留(arguments, 1) 我们将会得到
+// 从index 1 开始的所有参数: [100, 75, 40, 89, 95].
 ```
-Since **slice()** has two (the parameter **end** is optional) parameters, you can grab a certain portion of the arguments by specifying (using the _slice.call()_ method renders these two parameters optional, not just _end_) the beginning and the ending of your portion; check out the following code: 
-```
-
-JavaScript的 function getGrades（）{ var args = Array.prototype.slice.call（arguments，1,3）; 回归 }
-
-//让我们输出这个！ console.log（getGrades（90,100,75,40,89,95））;
-
-//输出应该是：// // \[100,75\] < - 为什么？因为它从索引1开始并在索引3处停止 //所以，没有考虑索引3（40）。 // //如果我们删除'3'参数，只留下（参数，1）我们得到 //来自索引1的每个参数：\[100,75,40,89,95\]。
-```
-### Optimization issues with Array.slice() 
+### Array.slice()的优化问题
  
- There is a little problem, it's not recommended to use slice in the arguments object (optimization reasons)... 
+这里有一个小问题，不推荐在arguments对象上使用slice方法（优化原因)...
  
- > **Important**: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object. 
+ > **注意**: 不推荐在arguments对象上使用slice方法，因为它有碍JavaScript引擎优化。与之相比，尽量通过迭代arguments对象来构造一个新的数组。
  > 
- > _by_ **_Mozilla Developer Network_** <a href='https://developer.mozilla.org/ca/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>(reference)<a> 
+ > _by_ **_Mozilla Developer Network_** <a href='https://developer.mozilla.org/ca/docs/Web/JavaScript/Reference/Functions/arguments' target='_blank' rel='nofollow'>(参考)<a> 
  
  
  
- So, what other method is available to convert _arguments_ to an array? I recommend the for-loop (not the for-in loop), you can do it like this: 
+有没有其他办法将_arguments_转换成数组呢? 推荐使用for-loop (不是 for-in loop),你可以这样做： 
+
+```javascript
+var args = []; // 定义空数组.
+for (var i = 0; i < arguments.length; i++) {
+    args.push(arguments[i])
+} // 现在 'args' 是一个存着arguments的数组了
 ```
 
-JavaScript的 var args = \[\]; //首先是空数组。 for（var i = 0; i <arguments.length; i ++）{ args.push（参数\[I\]） } //现在'args'是一个包含你的参数的数组。 \`\`\`
 
 有关优化问题的更多信息：  
 优化杀手： [管理参数](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers#3-managing-arguments)

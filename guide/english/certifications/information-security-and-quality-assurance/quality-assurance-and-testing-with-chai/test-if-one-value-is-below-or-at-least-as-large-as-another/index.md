@@ -3,8 +3,26 @@ title: Test if One Value is Below or At Least as Large as Another
 ---
 ## Test if One Value is Below or At Least as Large as Another
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/test-if-one-value-is-below-or-at-least-as-large-as-another/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Comparisons'.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 9 */``` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+`isBelow()` compares if the first parameter is less than the second ```(a < b)```.
+`isAtLeast()` compares if the first parameter is equal to or less than the second ```(a >= b)```.
+
+## Hint 2
+
+The lines in the test should be changed from `assert.fail()` to either `assert.isBelow()` or `assert.isAtLeast()`.
+
+## Solution
+```js
+/** 9 - .isBelow() => a < b , .isAtLeast =>  a >= b **/
+test('#isBelow, #isAtLeast', function() {
+  assert.isAtLeast('world'.length , 5);
+  assert.isAtLeast(2*Math.random(), 0);
+  assert.isBelow(5 % 2, 2);
+  assert.isBelow(2/3, 1);
+});
+```

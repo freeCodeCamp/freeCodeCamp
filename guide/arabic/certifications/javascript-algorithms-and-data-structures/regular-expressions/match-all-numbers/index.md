@@ -16,8 +16,9 @@ localeTitle: تطابق جميع الأرقام
 
 ## حل
 
- `let numRegex = /\d/g; 
-` 
+```javascript
+let numRegex = /\d/g;
+``` 
 
 ## تفسير
 
