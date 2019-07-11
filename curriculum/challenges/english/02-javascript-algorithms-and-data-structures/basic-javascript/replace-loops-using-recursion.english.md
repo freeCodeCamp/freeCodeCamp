@@ -7,7 +7,7 @@ videoUrl: 'https://www.freecodecamp.org/news/how-recursion-works-explained-with-
 
 ## Description
 <section id='description'>
-Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first elements (from 0 to <code>n</code> inclusive) in an array to create the product of the elements. Using a <code>for</code> loop, you could do this:
+Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the elements from <code>0</code> to <code>n</code> inclusive in an array to create the product of those elements. Using a <code>for</code> loop, you could do this:
 
 ```js
   function multiply(arr, n) {
@@ -40,7 +40,7 @@ The recursive version of <code>multiply</code> breaks down like this. In the <df
 ## Instructions
 <section id='instructions'>
 
-Write a recursive function, <code>sum(arr, n)</code>, that creates the sum of the first elements (from 0 to <code>n</code> inclusive) in an array <code>arr</code>.
+Write a recursive function, <code>sum(arr, n)</code>, that returns the sum of the elements from <code>0</code> to <code>n</code> inclusive in an array <code>arr</code>.
 
 </section>
 
