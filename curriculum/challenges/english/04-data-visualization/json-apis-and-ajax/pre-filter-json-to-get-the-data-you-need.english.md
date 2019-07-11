@@ -29,7 +29,7 @@ Add code to <code>filter</code> the json data to remove the cat with the "id" va
 ```yml
 tests:
   - text: Your code should use the <code>filter</code> method.
-    testString: assert(code.match(/json\.filter/g), 'Your code should use the <code>filter</code> method.');
+    testString: assert(code.match(/json\.filter/g));
 
 ```
 
