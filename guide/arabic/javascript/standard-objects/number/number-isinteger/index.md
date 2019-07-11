@@ -26,25 +26,26 @@ A [Boolean](https://guide.freecodecamp.org/javascript/booleans) تشير إلى 
 
 ## أمثلة
 
- `Number.isInteger(0);         // true 
- Number.isInteger(-0);        // true 
- Number.isInteger(1);         // true 
- Number.isInteger(2);         // true 
- Number.isInteger(-100001);   // true 
- Number.isInteger(999999999999999999999999); // true 
- 
- Number.isInteger(0.1);       // false 
- Number.isInteger(0.3);       // false 
- Number.isInteger(Math.PI);   // false 
- 
- Number.isInteger(NaN);       // false 
- Number.isInteger(Infinity);  // false 
- Number.isInteger(-Infinity); // false 
- Number.isInteger('10');      // false 
- Number.isInteger(true);      // false 
- Number.isInteger(false);     // false 
- Number.isInteger([1]);       // false 
-` 
+```
+Number.isInteger(0);         // true
+Number.isInteger(-0);        // true
+Number.isInteger(1);         // true
+Number.isInteger(2);         // true
+Number.isInteger(-100001);   // true
+Number.isInteger(999999999999999999999999); // true
+
+Number.isInteger(0.1);       // false
+Number.isInteger(0.3);       // false
+Number.isInteger(Math.PI);   // false
+
+Number.isInteger(NaN);       // false
+Number.isInteger(Infinity);  // false
+Number.isInteger(-Infinity); // false
+Number.isInteger('10');      // false
+Number.isInteger(true);      // false
+Number.isInteger(false);     // false
+Number.isInteger([1]);       // false
+``` 
 
 #### معلومات اكثر:
 

@@ -10,10 +10,11 @@ SVG أو Scalable Vector Graphics هو معيار ويب لتعريف الرسو
 
 يبدأ المطوّرون رسم SVG باستخدام العلامة `<svg>` ومساحة اسم XML كما يلي:
 
- `<svg xmlns="http://www.w3.org/2000/svg" version="1.1"> 
- 
- </svg> 
-` 
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+</svg>
+``` 
 
 يتضمن النموذج أيضًا سمة `version` . سمة `version` اختيارية ولكن يُنصح باستخدامها مع مواصفات XML.
 
@@ -67,16 +68,17 @@ SVG أو Scalable Vector Graphics هو معيار ويب لتعريف الرسو
 
 جزء.
 
- `<p > Before canvas . </p > 
- < canvas width ="120" height ="60" > </ canvas > 
- <p > After canvas . </p > 
- < script > 
- var canvas = document . querySelector (" canvas ") ; 
- var context = canvas . getContext ("2 d ") ; 
- context . fillStyle = " red "; 
- context . fillRect (10 , 10 , 100 , 50) ; 
- </ script > 
-` 
+```
+<p > Before canvas . </p >
+< canvas width ="120" height ="60" > </ canvas >
+<p > After canvas . </p >
+< script >
+var canvas = document . querySelector (" canvas ") ;
+var context = canvas . getContext ("2 d ") ;
+context . fillStyle = " red ";
+context . fillRect (10 , 10 , 100 , 50) ;
+</ script >
+``` 
 
 ![](http://www.crwflags.com/fotw/images/s/sly@stt.gif)
 
@@ -86,40 +88,42 @@ SVG أو Scalable Vector Graphics هو معيار ويب لتعريف الرسو
 
 يحتوي متغير النتائج على مصفوفة من الكائنات التي تمثل ردود المسح.
 
- `var results = [ 
- { name : " Satisfied " , count : 1043 , color : " lightblue "} , 
- { name : " Neutral " , count : 563 , color : " lightgreen "} , 
- { name : " Unsatisfied " , count : 510 , color : " pink "} , 
- { name : " No comment " , count : 175 , color : " silver "} 
- ]; 
-` 
+```
+var results = [
+{ name : " Satisfied " , count : 1043 , color : " lightblue "} ,
+{ name : " Neutral " , count : 563 , color : " lightgreen "} ,
+{ name : " Unsatisfied " , count : 510 , color : " pink "} ,
+{ name : " No comment " , count : 175 , color : " silver "}
+];
+``` 
 
 لرسم مخطط دائري ، نرسم عددًا من الشرائح الدائرية ، تتكون كل منها من قوس وزوج من الخطوط إلى مركز هذا القوس. يمكننا حساب الزاوية المأخوذة من كل قوس بقسمة دائرة كاملة (2 π) على العدد الإجمالي للاستجابات ثم ضرب ذلك العدد (زاوية لكل استجابة) بعدد الأشخاص الذين اختاروا اختيارًا معينًا.
 
- `< canvas width ="200" height ="200" > </ canvas > 
- < script > 
- var cx = document . querySelector (" canvas ") . getContext ("2 d ") ; 
- var total = results . reduce ( function ( sum , choice ) { 
- return sum + choice . count ; 
- } , 0) ; 
- 
- // Start at the top 
- 
- var currentAngle = -0.5 * Math . PI ; 
- results . forEach ( function ( result ) { 
- var sliceAngle = ( result . count / total ) * 2 * Math . PI ; 
- cx . beginPath () ; 
- // center =100 ,100 , radius =100 
- // from current angle , clockwise by slice ' s angle 
- cx . arc (100 , 100 , 100 , 
- currentAngle , currentAngle + sliceAngle ); 
- currentAngle += sliceAngle ; 
- cx . lineTo (100 , 100) ; 
- cx . fillStyle = result . color ; 
- cx . fill () ; 
- }) ; 
- </ script > 
-` 
+```
+< canvas width ="200" height ="200" > </ canvas >
+< script >
+var cx = document . querySelector (" canvas ") . getContext ("2 d ") ;
+var total = results . reduce ( function ( sum , choice ) {
+return sum + choice . count ;
+} , 0) ;
+
+// Start at the top
+
+var currentAngle = -0.5 * Math . PI ;
+results . forEach ( function ( result ) {
+var sliceAngle = ( result . count / total ) * 2 * Math . PI ;
+cx . beginPath () ;
+// center =100 ,100 , radius =100
+// from current angle , clockwise by slice ' s angle
+cx . arc (100 , 100 , 100 ,
+currentAngle , currentAngle + sliceAngle );
+currentAngle += sliceAngle ;
+cx . lineTo (100 , 100) ;
+cx . fillStyle = result . color ;
+cx . fill () ;
+}) ;
+</ script >
+``` 
 
 هذا يرسم المخطط التالي: ![](https://pbs.twimg.com/media/CTDvkA8UwAAdJg5.png)
 

@@ -51,7 +51,6 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/30)
 
 ### 代码说明：
 
@@ -79,7 +78,6 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/31)
 
 ### 代码说明：
 

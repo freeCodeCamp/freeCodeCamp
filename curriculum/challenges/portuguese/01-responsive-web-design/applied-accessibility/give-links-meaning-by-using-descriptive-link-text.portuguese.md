@@ -3,30 +3,30 @@ id: 587d778f367417b2b2512aae
 title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
 videoUrl: ''
-localeTitle: Dar sentido de links usando texto de link descritivo
+localeTitle: Dar sentido aos links usando texto descritivo nos links 
 ---
 
-## Description
-<section id="description"> Os usuários de leitores de tela têm opções diferentes para o tipo de conteúdo que o dispositivo lê. Isso inclui pular para (ou sobre) elementos de referência, pular para o conteúdo principal ou obter um resumo de página dos títulos. Outra opção é apenas ouvir os links disponíveis em uma página. Os leitores de tela fazem isso lendo o texto do link ou o que está entre as tags âncora ( <code>a</code> ). Ter uma lista de links &quot;clique aqui&quot; ou &quot;leia mais&quot; não é útil. Em vez disso, você deve usar um texto breve, mas descritiva nos <code>a</code> tags para proporcionar mais significado para esses usuários. </section>
+## Descrição
+<section id="description"> Os usuários de leitores de tela têm opções diferentes para o tipo de conteúdo que o dispositivo lê. Isso inclui pular para (ou sobre) elementos de referência, pular para o conteúdo principal ou obter um resumo de página dos títulos. Outra opção é apenas ouvir os links disponíveis numa página. Os leitores de tela fazem isso lendo o texto do link ou o que está dentro das etiquetas âncora ( <code>a</code> ). Ter uma lista de links &quot;clique aqui&quot; ou &quot;leia mais&quot; não é útil. Em vez disso, você deve usar um texto breve, mas descritivo nas etiquetas <code>a</code> para apresentar mais significado a esses usuários. </section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Seu código deve mover a âncora com <code>a</code> tag em torno das palavras &quot;Clique aqui&quot; para envolver as palavras &quot;informações sobre baterias&quot;.
-    testString: 'assert($("a").text().match(/^(information about batteries)$/g), "Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".");'
-  - text: Verifique se o seu <code>a</code> elemento tem uma marca de fechamento.
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(""|"")>/g).length, "Make sure your <code>a</code> element has a closing tag.");'
+  - text: O seu código deve mover a etiqueta âncora com <code>a</code> que envolve as palavras &quot;Clicar aqui&quot; para passar a envolver as palavras &quot;informações sobre baterias&quot;.
+    testString: 'assert($("a").text().match(/^(informações sobre baterias)$/g), "O seu código deve mover a etiqueta âncora com <code>a</code> que envolve as palavras &quot;Clicar aqui&quot; para passar a envolver as palavras &quot;informações sobre baterias&quot;.");'
+  - text: Assegure-se que o seu elemento <code>a</code> tem uma marca de fecho.
+    testString: 'assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(""|"")>/g).length, "Assegure-se que o seu elemento <code>a</code> tem uma marca de fecho.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -34,11 +34,11 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Deep Thoughts with Master Camper Cat</h1>
+    <h1>Pensamentos Profundos com o Mestre Gato Campista</h1>
   </header>
   <article>
-    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
-    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click here</a> for information about batteries</p>
+    <h2>Derrotando o teu Inimigo: o Ponto Vermelho &eacute; Nosso!</h2>
+    <p>Em todo o mundo os felinos t&ecirc;m estado em guerra com um dos mais persistentes inimigos. Este vermelho mal&eacute;volo combina tanto uma manhosa invisibilidade como uma velocidade rel&acirc;mpago. Mas, animem-se, caros companheiros de luta, a nossa hora da vit&oacute;ria pode estar muito perto em breve. <a href="">Clicar aqui</a> para informa&ccedil;&otilde;es sobre baterias</p>
   </article>
 </body>
 
@@ -50,7 +50,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -44,7 +44,7 @@ function quickSort(array, left = 0, right = array.length-1) {
   return array;
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Quick-Sort)
+
 ### Reference:
 - [Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
 - [Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/quick-sort/a/overview-of-quicksort)

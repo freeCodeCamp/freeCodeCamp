@@ -2,9 +2,9 @@
 title: Agile
 localeTitle: Ágil
 ---
-## Ágil
+## Metodologia Ágil
 
-O desenvolvimento de software ágil é uma coleção de metodologias usadas para gerenciar equipes de desenvolvedores. Defende o planejamento adaptativo, o desenvolvimento evolutivo, a entrega antecipada e a melhoria contínua, além de estimular uma resposta rápida e flexível à mudança. Pessoas e comunicação são consideradas mais importantes que ferramentas e processos.
+O desenvolvimento ágil de software é a coleção de metodologias usadas para gerenciar equipes de desenvolvedores de software. Essas metodologias defendem o planejamento adaptativo, o desenvolvimento evolutivo, a entrega antecipada e a melhoria contínua, além de estimular respostas rápidas e flexíveis às mudanças no escopo do projeto. Pessoas e comunicação são consideradas mais importantes que ferramentas e processos.
 
 O método ágil tem ênfase em perguntar aos usuários finais o que eles querem e freqüentemente mostrando demonstrações do produto à medida que ele é desenvolvido. Isso contrasta com a abordagem "Waterfall"(modelo em cascata), o desenvolvimento orientado por especificação e o que os profissionais ágeis chamam de "Big Up Front Design". Nessas abordagens, os recursos são planejados e orçados antes do início do desenvolvimento.
 
@@ -23,3 +23,5 @@ Existem muitos sabores diferentes de desenvolvimento ágil, incluindo Scrum e Ex
 ### Mais Informações
 
 [Homepage da Agile Alliance](https://www.agilealliance.org/)
+[Página do Manifesto Ágil em Portugês](http://agilemanifesto.org/iso/ptbr/manifesto.html)
+

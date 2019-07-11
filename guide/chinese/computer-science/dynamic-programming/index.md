@@ -12,7 +12,7 @@ Fibonacci系列的一个例子，定义如下：
 
 这是找到F（5）的树：
 
-![斐波那契系列的树](https://i.stack.imgur.com/59Rpw.png)
+![斐波那契系列的树](https://cdn-media-1.freecodecamp.org/imgr/59Rpw.png)
 
 要计算F（5），它需要计算相同F（i）的许多倍。使用递归：
 

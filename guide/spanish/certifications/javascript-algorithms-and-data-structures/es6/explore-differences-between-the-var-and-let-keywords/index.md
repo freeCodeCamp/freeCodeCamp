@@ -37,8 +37,6 @@ Necesitamos cambiar cada `var` para `let` nuestro código.
     catTalk(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://codepen.io/dylantyates/pen/eKqoGY)
-
 # Explicación del código:
 
 Usando `let` lugar de `var` podemos evitar anular `catName` y `quote` .
