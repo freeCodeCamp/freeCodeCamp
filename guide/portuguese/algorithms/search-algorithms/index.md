@@ -10,9 +10,10 @@ Esse tipo de algoritmo analisa o problema de reorganizar uma matriz de itens em 
 
 Nos links a seguir, você também pode encontrar mais informações sobre:
 
-*   Pesquisa binária
-*   Pesquisa Linear
-*   Pesquisando listas vinculadas vs arrays
+* [Pesquisa binária](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese/algorithms/search-algorithms/binary-search/index.md)
+* [Pesquisa Exponencial](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese/algorithms/search-algorithms/exponential-search/index.md)
+* [Pesquisa Linear](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese/algorithms/search-algorithms/linear-search/index.md)
+* [Pesquisando Listas Vinculadas Versus Arrays](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese/algorithms/search-algorithms/searching-linked-lists-versus-arrays/index.md)
 
 #### Mais Informações:
 
