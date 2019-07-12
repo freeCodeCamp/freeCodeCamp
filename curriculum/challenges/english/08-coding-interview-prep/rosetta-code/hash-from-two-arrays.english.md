@@ -28,7 +28,7 @@ tests:
   - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d", "e"])</code> should return <code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: "e" }</code>'
     testString: 'assert.deepEqual(arrToObj(...testCases[0]), res[0]);'
   - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d"])</code> should return <code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: undefined }</code>'
-    testString: 'assert.deepEqual(arrToObj(...testCases[1]), res[1]);'
+    testString: assert.deepEqual(arrToObj(...testCases[1]), res[1]);
   - text: '<code>arrToObj([1, 2, 3], ["a", "b", "c", "d", "e"])</code> should return <code>{ 1: "a", 2: "b", 3: "c" }</code>'
     testString: assert.deepEqual(arrToObj(...testCases[2]), res[2]);
   - text: '<code>arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4, 5])</code> should return <code>{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": 5 }</code>'
