@@ -3,13 +3,13 @@ title: Combinations and Permutations Calculator
 ---
 ## Combinations and Permutations Calculator
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/tools/calculators/combinations-and-permutations-calculator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A combinations and permutations calculator calculates the number of permutations or combinations possible given some elements from a set.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+A permutation refers to a possible arrangement of the elements of the given set, where the order is important. A combination is the same, except order is disregarded. 
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+* [An online combinations and permutations calculator](https://www.mathsisfun.com/combinatorics/combinations-permutations-calculator.html)
+* [Wikipedia article on permutations](https://en.wikipedia.org/wiki/Permutation)
+* [Wikipedia article on combinations](https://en.wikipedia.org/wiki/Combination)
 
 

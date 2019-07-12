@@ -47,7 +47,6 @@ function telephoneCheck(str) {
  telephoneCheck("555-555-5555"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLo9/0)
 
 ### Explicación del código:
 
@@ -75,7 +74,6 @@ function telephoneCheck(str) {
  telephoneCheck("555-555-5555"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLoa/0)
 
 ### Explicación del código:
 

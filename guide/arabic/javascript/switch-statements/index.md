@@ -8,17 +8,18 @@ localeTitle: تبديل العبارات
 
 ### بناء الجملة:
 
- `switch(expression) { 
-  case 1: 
-    console.log('1'); 
-    break; 
-   case 2: 
-     console.log('2'); 
-     break; 
-   default: 
-     console.log('No true condition, default'); 
- } 
-` 
+```javascript
+switch(expression) {
+  case 1:
+    console.log('1');
+    break;
+   case 2:
+     console.log('2');
+     break;
+   default:
+     console.log('No true condition, default');
+}
+``` 
 
 يظهر المقتطف أعلاه بناء الجملة لبيان `switch` أساسي. في هذا المثال ، هناك 3 سيناريوهات مختلفة لـ:
 
@@ -32,19 +33,20 @@ localeTitle: تبديل العبارات
 
 فمثلا:
 
- `var someValue; 
- var expression = someValue; 
- switch(expression){ 
-  case someValue: 
-    console.log('10'); // 10 would be printed to the console 
-    break; 
-  case 23: 
-    console.log('12'); 
-    break; 
-  default: 
-    console.log('No matches'); 
- } 
-` 
+```javascript
+var someValue;
+var expression = someValue;
+switch(expression){
+  case someValue:
+    console.log('10'); // 10 would be printed to the console
+    break;
+  case 23:
+    console.log('12');
+    break;
+  default:
+    console.log('No matches');
+}
+``` 
 
 ملاحظة: يمكن أن يكون `expression` في المقتطف أعلاه عبارة عن سلسلة أو رقم.
 
@@ -52,17 +54,18 @@ localeTitle: تبديل العبارات
 
 مطلوب الكلمة الأساسية `break` في كل حالة للتأكد من أن يتم تنفيذ التعليمات البرمجية فقط في هذه الحالة. بدون الفاصل ، يمكن تنفيذ عدة حالات. عندما تصل JavaScript إلى كلمة رئيسية `break` ، فإنها `break` عن كتلة المحول. إذا تم ترك `break` خارج المثال أعلاه ، فهذا ما سيحدث:
 
- `var expression = 1; 
- switch(expression) { 
-  case 1: 
-    console.log('1');  // 1 would be printed to console 
-  case 2: // As there is no break after case 1, this case is also executed. 
-    console.log('2'); // 2 would be printed to the console. 
-    break; // break -> Switch statement is exited 
-  default: 
-    console.log('No true condition, default'); 
- } 
-` 
+```javascript
+var expression = 1;
+switch(expression) {
+  case 1:
+    console.log('1');  // 1 would be printed to console
+  case 2: // As there is no break after case 1, this case is also executed.
+    console.log('2'); // 2 would be printed to the console.
+    break; // break -> Switch statement is exited
+  default:
+    console.log('No true condition, default');
+}
+``` 
 
 ### تنفيذ حالات متعددة:
 
@@ -70,19 +73,20 @@ localeTitle: تبديل العبارات
 
 على سبيل المثال:
 
- `switch (day) { 
-  case 4: 
-  case 5: 
-    console.log('it is nearly the weekend'); 
-    break; 
-  case 0: 
-  case 6: 
-    console.log('it is the weekend'); 
-    break; 
-  default: 
-    console.log('Looking forward to the Weekend'); 
- } 
-` 
+```javascript
+switch (day) {
+  case 4:
+  case 5:
+    console.log('it is nearly the weekend');
+    break;
+  case 0:
+  case 6:
+    console.log('it is the weekend');
+    break;
+  default:
+    console.log('Looking forward to the Weekend');
+}
+``` 
 
 في المقتطف أعلاه:
 

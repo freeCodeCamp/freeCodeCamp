@@ -23,14 +23,16 @@ localeTitle: مطابقة أحرف مفردة غير محددة
 
 تأكد من التحقق مما إذا كان نطاق الأرقام صحيحًا - يطالبنا التحدي بإنهاء جميع الأرقام من 0 إلى 99. يمكن القيام بذلك باستخدام علامة الإبطال السلبي الموضوعة مباشرة بعد أول شريحة افتتاحية من كلمة regexp الخاصة بك.
 
- `let numbersRegExp = /[^0-99]/ig; 
-` 
+```javacsript
+let numbersRegExp = /[^0-99]/ig;
+``` 
 
 ### تنبيه المفسد - الحل إلى الأمام
 
 ## حل
 
- `let quoteSample = "3 blind mice."; 
- let myRegex = /[^aeiou^0-99]/ig; // Change this line 
- let result = quoteSample.match(myRegex); // Change this line 
-`
+```javascript
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou^0-99]/ig; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+```

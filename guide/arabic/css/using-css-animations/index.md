@@ -21,11 +21,11 @@ localeTitle: استخدام الرسوم المتحركة CSS
 
 في جزء HTML ، سيكون لدينا مستند `div` مع `container` للفئة و `h3` مع النص `Hello World` :
 
- `
-<div class="container"> 
-    <h3> Hello World ! </h3> 
- </div> 
-` 
+```html
+<div class="container">
+    <h3> Hello World ! </h3>
+</div>
+``` 
 
 بالنسبة لجزء CSS:
 
@@ -61,7 +61,7 @@ localeTitle: استخدام الرسوم المتحركة CSS
  } 
 `` 
 
-![Imgur](https://imgur.com/sczZjwm.gif)
+![Imgur](https://cdn-media-1.freecodecamp.org/imgr/sczZjwm.gif)
 
 #### معلومات اكثر:
 

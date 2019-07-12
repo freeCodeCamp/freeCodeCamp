@@ -26,13 +26,18 @@ $.get('http://example.com/resource.json', {category:'client', type:'premium'}, f
       $("#mypar").html(response.amount);
 });
 ```
+However, `$.get` doesn't provide any way to handle error.
 
-The above example can also be written as:
+The above example (with error handling) can also be written as:
  ```javascript
 $.get('http://example.com/resource.json', {category:'client', type:'premium'})
       .done(function(response) {
             alert("success");
             $("#mypar").html(response.amount);
+      })
+      .fail(function(error) {
+            alert("error");
+            $("#mypar").html(error.statusText);
       });
 ```
 

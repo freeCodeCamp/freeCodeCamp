@@ -3,7 +3,7 @@ title: Object Instantiation
 ---
 
 ## Object Instantiation
-In Javascript and most other languages, an object contains a series of properties, which are a key, value pair. There are multiple options available to you when you need to construct an object.
+In JavaScript and most other languages, an object contains a series of properties, which are a key, value pair. There are multiple options available to you when you need to construct an object.
 
 ### Initialize an object variable
 You can create an object with pre-defined properties like so:

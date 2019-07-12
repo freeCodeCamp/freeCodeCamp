@@ -6,17 +6,19 @@ localeTitle: انتقال
 
 و `transition` الملكية يسمح لك بتغيير قيمة العقارات بشكل سلس (من قيمة واحدة إلى أخرى)، خلال مدة معينة. \`\` \`المغلق الانتقال: كل 300ms.
 
- `### Transition on Several Property Values 
- 
- You can change multiples property values with transition property. 
-` 
+```
+### Transition on Several Property Values
+
+You can change multiples property values with transition property.
+``` 
 
 المغلق الانتقال: عرض 300ms ، ارتفاع 2s ؛
 
- `### Specify the Speed Curve of the Transition 
- 
- You can specify a speed curve on an element in transition property. 
-` 
+```
+### Specify the Speed Curve of the Transition
+
+You can specify a speed curve on an element in transition property.
+``` 
 
 المغلق الانتقال: ارتفاع 2s خطي؛
 

@@ -8,8 +8,9 @@ localeTitle: إجراءات Redux
 
 فمثلا
 
- `const ADD_ITEM = 'ADD_ITEM' 
-` 
+```javascript
+const ADD_ITEM = 'ADD_ITEM'
+``` 
 
  `{ 
  type: ADD_ITEM, 

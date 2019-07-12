@@ -75,11 +75,10 @@ $ python3.5
  >>> exit() 
  $ 
 ```
-
 ## El Zen de Python
 
 Algunos de los principios que influyeron en el diseño de Python se incluyen como un huevo de Pascua (*easter egg*) y se pueden leer usando el comando en el modo interactivo de intérprete de Python:
-```
+```python
 >>> import this 
  The Zen of Python, by Tim Peters 
  
@@ -104,14 +103,40 @@ Algunos de los principios que influyeron en el diseño de Python se incluyen com
  Namespaces are one honking great idea -- let's do more of those! 
 ```
 
+### Traduccion
+```python
+ El Zen of Python, por Tim Peters 
+ 
+ Bello es mejor que feo.
+ Explicito es mejor que implicito.
+ Simple es mejor que complejo.
+ Complejo es mejor que complicado.
+ Plano es mejor que incrustado.
+ Esparso es mejor que denso.
+ La facilidad de lectura cuenta.
+ Los casos especiales no son lo suficientemente especiales para romper las reglas.
+ Aunque la practicalidad le gana a la pureza.
+ Los errores nunca deben pasar silenciosamente.
+ Al menos que sean explicitamente silenciados.
+ Ante la ambiguedad, no caer en la tentacion de adivinar.
+ Debe existir una-- y preferentemente solo una-- manera obvia de hacerlo
+ Aunque esa manera no sea tan obvia al principio al menos que seas holandes.
+ Ahora es mejor que nunca.
+ Aunque nunca es mejor que *justo* ahora la mayoria del tiempo.
+ Si la implementacion es dificil de explicar, es una mala idea.
+ Si la implementacion es facil de explicar, talvez sea una buena idea.
+ Los espacios nombrados son una idea resonante -- hagamos mas de esos!
+```
+
 ## Pros y Contras de Python
-#### Pros
+
+### Pros
 1. Lenguaje interactivo con soporte de módulos para casi todas las funcionalidades.
 2. Código abierto: puedes contribuir a la comunidad, las funciones que has desarrollado para uso futuro y ayudar a otros
 3. Un montón de buenos intérpretes y cuadernos disponibles para una mejor experiencia como Jupyter Notebook.
 4. Es un lenguaje muy fácil de aprender y depurar. Para comprobar si una pequeña parte del código funciona o no, simplemente puedes abrir el intérprete y probarlo.
 
-#### Contras
+### Contras
 1. Al ser de código abierto, se han desarrollado muchas formas diferentes a lo largo del año para la misma función. Esto crea, en ocasiones, un caos para otros que lean el código de otra persona.
 2. Es un lenguaje lento. Por lo tanto, un lenguaje muy malo para usar en el desarrollo de algoritmos generales.
 
@@ -157,16 +182,16 @@ El argumento con el que llamamos a la función de `print` es un objeto `str` o _
 
 El parámetro de los `objects` tiene un prefijo `*` que indica que la función tomará un número arbitrario de argumentos para ese parámetro.
 
-## ¿Quieres aprender más?
+## ¿Querer aprender más?
 
 Free Code Camp tiene algunos recursos estupendos. La web es un lugar grande, hay mucho más que explorar:
-* Libro de práctica de Python: http://anandology.com/python-practice-book/index.html
-* Piense Python: http://greenteapress.com/thinkpython/html/index.html
-* Practical Business Python: http://pbpython.com/
-* Otro curso: https://realpython.com/?utm _source = fsp & utm_ medium = promo & utm\_campaign = bestresources
-* General: https://www.fullstackpython.com/
-* Aprenda lo básico: https://www.codecademy.com/learn/learn-python
-* Informática utilizando Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
-* Lista de más recursos para aprender python: https://github.com/vinta/awesome-python
-* Python interactivo: http://interactivepython.org/runestone/static/thinkcspy/index.html
-* Guía para desarrolladores de Python: https://devguide.python.org/
+*   Libro de práctica de Python: http://anandology.com/python-practice-book/index.html
+*   Piense Python: http://greenteapress.com/thinkpython/html/index.html
+*   Practical Business Python: http://pbpython.com/
+*   Otro curso: https://realpython.com/?utm _source = fsp & utm_ medium = promo & utm\_campaign = bestresources
+*   General: https://www.fullstackpython.com/
+*   Aprenda lo básico: https://www.codecademy.com/learn/learn-python
+*   Informática utilizando Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
+*   Lista de más recursos para aprender python: https://github.com/vinta/awesome-python
+*   Python interactivo: http://interactivepython.org/runestone/static/thinkcspy/index.html
+*   Guía para desarrolladores de Python: https://devguide.python.org/

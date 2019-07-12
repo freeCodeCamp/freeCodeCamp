@@ -18,38 +18,39 @@ localeTitle: غابة عشوائية
 
 في هذه المسابقة ، يتم منحنا قائمة بأحداث التصادم وخصائصها. سوف نتوقع بعد ذلك ما إذا كان هناك إنحلال τ → 3μ حدث في هذا التصادم. هذا τ → 3μ يفترض في الوقت الحاضر من قبل العلماء ألا يحدث ، وكان الهدف من هذه المسابقة هو اكتشاف τ → 3μ يحدث بشكل متكرر أكثر مما يستطيع العلماء فهمه. كان التحدي هنا هو تصميم مشكلة تعلم آلي لشيء لم يلاحظه أحد من قبل. طور العلماء في CERN التصاميم التالية لتحقيق الهدف. https://www.kaggle.com/c/flavours-of-physics/data
 
- `#Data Cleaning 
- import pandas as pd 
- data_test = pd.read_csv("test.csv") 
- data_train = pd.read_csv("training.csv") 
- data_train = data_train.drop('min_ANNmuon',1) 
- data_train = data_train.drop('production',1) 
- data_train = data_train.drop('mass',1) 
- 
- #Cleaned data 
- Y = data_train['signal'] 
- X = data_train.drop('signal',1) 
- 
- #adaboost 
- from sklearn.ensemble import AdaBoostClassifier 
- from sklearn.tree import DecisionTreeClassifier 
- seed = 9001 #this ones over 9000!!! 
- boosted_tree = AdaBoostClassifier(DecisionTreeClassifier(max_depth=1), algorithm="SAMME", 
-                                  n_estimators=50, random_state = seed) 
- model = boosted_tree.fit(X, Y) 
- 
- predictions = model.predict(data_test) 
- print(predictions) 
- #Note we can't really validate this data since we don't have an array of "right answers" 
- 
- #stochastic gradient boosting 
- from sklearn.ensemble import GradientBoostingClassifier 
- gradient_boosted_tree = GradientBoostingClassifier(n_estimators=50, random_state=seed) 
- model2 = gradient_boosted_tree.fit(X,Y) 
- 
- predictions2 = model2.predict(data_test) 
- print(predictions2) 
-` 
+```python
+#Data Cleaning
+import pandas as pd
+data_test = pd.read_csv("test.csv")
+data_train = pd.read_csv("training.csv")
+data_train = data_train.drop('min_ANNmuon',1)
+data_train = data_train.drop('production',1)
+data_train = data_train.drop('mass',1)
+
+#Cleaned data
+Y = data_train['signal']
+X = data_train.drop('signal',1)
+
+#adaboost
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.tree import DecisionTreeClassifier
+seed = 9001 #this ones over 9000!!!
+boosted_tree = AdaBoostClassifier(DecisionTreeClassifier(max_depth=1), algorithm="SAMME",
+                                  n_estimators=50, random_state = seed)
+model = boosted_tree.fit(X, Y)
+
+predictions = model.predict(data_test)
+print(predictions)
+#Note we can't really validate this data since we don't have an array of "right answers"
+
+#stochastic gradient boosting
+from sklearn.ensemble import GradientBoostingClassifier
+gradient_boosted_tree = GradientBoostingClassifier(n_estimators=50, random_state=seed)
+model2 = gradient_boosted_tree.fit(X,Y)
+
+predictions2 = model2.predict(data_test)
+print(predictions2)
+``` 
 
 #### معلومات اكثر:
 
