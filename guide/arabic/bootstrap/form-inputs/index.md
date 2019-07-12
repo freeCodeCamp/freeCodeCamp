@@ -22,27 +22,27 @@ localeTitle: مدخلات النموذج
 
 يحتوي المثال التالي على عنصرين إدخال ؛ واحد من نوع النص وواحد من نوع كلمة المرور:
 
- `
-<div class="form-group"> 
-  <label for="usr">Name:</label> 
-  <input type="text" class="form-control" id="usr"> 
- </div> 
- <div class="form-group"> 
-  <label for="pwd">Password:</label> 
-  <input type="password" class="form-control" id="pwd"> 
- </div> 
-` 
+```html
+<div class="form-group">
+  <label for="usr">Name:</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label for="pwd">Password:</label>
+  <input type="password" class="form-control" id="pwd">
+</div>
+``` 
 
 #### 2\. Textarea
 
 يحتوي المثال التالي على نص:
 
- `
-<div class="form-group"> 
-  <label for="comment">Comment:</label> 
-  <textarea class="form-control" rows="5" id="comment"></textarea> 
- </div> 
-` 
+```html
+<div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+``` 
 
 #### 3\. مربعات الاختيار
 
@@ -50,28 +50,28 @@ localeTitle: مدخلات النموذج
 
 يحتوي المثال التالي على ثلاثة مربعات اختيار. الخيار الأخير معطل:
 
- `
-<div class="checkbox"> 
-  <label> 
-  <input type="checkbox" value="">Option 1</label> 
- </div> 
- <div class="checkbox"> 
-  <label> 
-  <input type="checkbox" value="">Option 2</label> 
- </div> 
- <div class="checkbox disabled"> 
-  <label> 
-  <input type="checkbox" value="" disabled>Option 3</label> 
- </div> 
-` 
+```html
+<div class="checkbox">
+  <label>
+  <input type="checkbox" value="">Option 1</label>
+</div>
+<div class="checkbox">
+  <label>
+  <input type="checkbox" value="">Option 2</label>
+</div>
+<div class="checkbox disabled">
+  <label>
+  <input type="checkbox" value="" disabled>Option 3</label>
+</div>
+``` 
 
 استخدم فئة **.checkbox-inline** إذا كنت تريد ظهور مربعات الاختيار على نفس السطر:
 
- `
-<label class="checkbox-inline"><input type="checkbox" value="">Option 1</label> 
- <label class="checkbox-inline"><input type="checkbox" value="">Option 2</label> 
- <label class="checkbox-inline"><input type="checkbox" value="">Option 3</label> 
-` 
+```html
+<label class="checkbox-inline"><input type="checkbox" value="">Option 1</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Option 2</label>
+<label class="checkbox-inline"><input type="checkbox" value="">Option 3</label>
+``` 
 
 #### 4\. أزرار الراديو
 
@@ -79,25 +79,25 @@ localeTitle: مدخلات النموذج
 
 يحتوي المثال التالي على ثلاثة أزرار للراديو. الخيار الأخير معطل:
 
- `
-<div class="radio"> 
-  <label><input type="radio" name="optradio">Option 1</label> 
- </div> 
- <div class="radio"> 
-  <label><input type="radio" name="optradio">Option 2</label> 
- </div> 
- <div class="radio disabled"> 
-  <label><input type="radio" name="optradio" disabled>Option 3</label> 
- </div> 
-` 
+```html
+<div class="radio">
+  <label><input type="radio" name="optradio">Option 1</label>
+</div>
+<div class="radio">
+  <label><input type="radio" name="optradio">Option 2</label>
+</div>
+<div class="radio disabled">
+  <label><input type="radio" name="optradio" disabled>Option 3</label>
+</div>
+``` 
 
 استخدم فئة **.radio-inline** إذا كنت تريد أن تظهر مربعات الاختيار على نفس السطر:
 
- `
-<label class="radio-inline"><input type="radio" name="optradio">Option 1</label> 
- <label class="radio-inline"><input type="radio" name="optradio">Option 2</label> 
- <label class="radio-inline"><input type="radio" name="optradio">Option 3</label> 
-` 
+```html
+<label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
+<label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+<label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
+``` 
 
 #### 5\. حدد (قائمة)
 
@@ -105,17 +105,17 @@ localeTitle: مدخلات النموذج
 
 يحتوي المثال التالي على قائمة منسدلة (حدد القائمة):
 
- `
-<div class="form-group"> 
-  <label for="sel1">Select list:</label> 
-  <select class="form-control" id="sel1"> 
-    <option>1</option> 
-    <option>2</option> 
-    <option>3</option> 
-    <option>4</option> 
-  </select> 
- </div> 
-` 
+```html
+<div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+</div>
+``` 
 
 ## كيفية جعل Bootstrap Inputs Accessible
 
@@ -123,10 +123,10 @@ localeTitle: مدخلات النموذج
 
 ويمكن أن يتم ذلك عن طريق utlizing و `for` معلمة في HTML:
 
- `
-<label for="email-input">Enter Email</label> 
- <input type="email" class="form-control" id="email-input" placeholder="Enter Email"> 
-` 
+```html
+<label for="email-input">Enter Email</label>
+<input type="email" class="form-control" id="email-input" placeholder="Enter Email">
+``` 
 
 التسمية `for` سمة يحيل **دائما** حقل الإدخال عن طريق **المعرف** الخاص به. هذا يخبر قارئ الشاشة أن هذا التصنيف هو بالتأكيد حقل الإدخال هذا الذي سيقلل من الارتباك لأي مستخدم يستخدم قارئ الشاشة لزيارة موقع على شبكة الإنترنت.
 

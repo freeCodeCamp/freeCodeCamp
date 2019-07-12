@@ -20,7 +20,7 @@ Un script PHP comienza con `<?php` y termina con `?>` :
 
 ```php
 <?php 
- // PHP code goes here 
+ // El codigo PHP va aqui
  ?> 
 ```
 
@@ -28,10 +28,10 @@ o también puede escribir Un script PHP comienza con `<?php` y termina sin `?>` 
 
 ```php
 <?php 
- // PHP code goes here 
+ // El codigo PHP va aqui 
 ```
 
-A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP que utiliza una función de PHP "echo" para generar el texto "Hello World!" en una página web:
+A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP que utiliza una función de PHP "echo" para generar el texto "Hola Mundo!" en una página web:
 
 ```php
 <!DOCTYPE html> 
@@ -39,7 +39,7 @@ A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP 
  <body> 
  
  <?php 
- echo "My first PHP script!"; 
+ echo "Hola Mundo!"; 
  ?> 
  
  </body> 

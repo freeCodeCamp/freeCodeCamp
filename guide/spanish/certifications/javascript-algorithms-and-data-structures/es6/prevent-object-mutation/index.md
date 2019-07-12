@@ -44,7 +44,6 @@ Necesitamos evitar que el valor de `MATH_CONSTANTS` cambie.
     const PI = freezeObj(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://codepen.io/dylantyates/pen/OwVxYB)
 
 # Explicación del código:
 

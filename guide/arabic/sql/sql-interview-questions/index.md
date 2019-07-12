@@ -8,51 +8,56 @@ localeTitle: أسئلة مقابلة SQL
 
 هذا هو نوع الارتباط الافتراضي إذا لم يتم تحديد صلة. تقوم بإرجاع كافة الصفوف التي توجد تطابق واحد على الأقل في كلا الجدولين.
 
- `SELECT * FROM A x JOIN B y ON y.aId = x.Id 
-` 
+```sql
+SELECT * FROM A x JOIN B y ON y.aId = x.Id
+``` 
 
 ### ما هو انضمام اليسار في SQL؟
 
 يقوم الرابط الأيسر بإرجاع جميع الصفوف من الجدول الأيسر ، والصفوف المتطابقة من الجدول الصحيح. سيتم إرجاع الصفوف في الجدول الأيسر حتى في حالة عدم وجود تطابق في الجدول الصحيح. الصفوف من الجدول الأيسر بدون تطابق في الجدول الصحيح ستكون `null` لقيم الجدول الصحيح.
 
- `SELECT * FROM A x LEFT JOIN B y ON y.aId = x.Id 
-` 
+```sql
+SELECT * FROM A x LEFT JOIN B y ON y.aId = x.Id
+``` 
 
 ### ما هو الانضمام الصحيح في SQL؟
 
 يقوم الربط الأيمن بإرجاع جميع الصفوف من الجدول الصحيح والصفوف المتطابقة من الجدول الأيسر. مقابل صلة اليسار ، سيؤدي هذا إلى إرجاع كافة الصفوف من الجدول الصحيح حتى عندما لا يوجد تطابق في الجدول الأيسر. الصفوف في الجدول الأيمن التي ليس لها أي تطابق في الجدول الأيسر سيكون لها قيم `null` الجدول الأيسر.
 
- `SELECT * FROM A x RIGHT JOIN B y ON y.aId = x.Id 
-` 
+```sql
+SELECT * FROM A x RIGHT JOIN B y ON y.aId = x.Id
+``` 
 
 ### ما هو الانضمام الكامل في SQL؟
 
 إرجاع صلة كاملة كافة الصفوف التي توجد تطابق في أي من الجداول. لذلك إذا كانت هناك صفوف في الجدول الأيسر لا تحتوي على تطابقات في الجدول الصحيح ، فسيتم تضمينها. وكذلك إذا كانت هناك صفوف في الجدول الأيمن لا تحتوي على تطابقات في الجدول الأيسر ، فسيتم تضمينها.
 
- `SELECT Customers.CustomerName, Orders.OrderID 
- FROM Customers 
- FULL OUTER JOIN Orders 
- ON Customers.CustomerID=Orders.CustomerID 
- ORDER BY Customers.CustomerName 
-` 
+```sql
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+FULL OUTER JOIN Orders
+ON Customers.CustomerID=Orders.CustomerID
+ORDER BY Customers.CustomerName
+``` 
 
 ### ما هي نتيجة الأمر التالي؟
 
 \`\` \` إسقاط عرض view\_name
 
- `Here it'll be an error because we can't perform a DML operation on a view. 
- 
- ### Can we perform a rollback after using ALTER command? 
- No, because ALTER is a DDL command and Oracle server performs an automatic COMMIT when the DDL statements are executed. 
- 
- 
- ### Which is the only constraint that enforces rules at column level? 
- NOT NULL is the only constraint that works at the column level. 
- 
- 
- ### What are the pseudocolumns in SQL? Give some examples? 
- A pseudocolumn is a function which returns a system generated value. The reason it is known as so because a pseudocolumn is an Oracle assigned value used in the same context as an Oracle database column but not stored on disk. 
-` 
+```
+Here it'll be an error because we can't perform a DML operation on a view.
+
+### Can we perform a rollback after using ALTER command?
+No, because ALTER is a DDL command and Oracle server performs an automatic COMMIT when the DDL statements are executed.
+
+
+### Which is the only constraint that enforces rules at column level?
+NOT NULL is the only constraint that works at the column level.
+
+
+### What are the pseudocolumns in SQL? Give some examples?
+A pseudocolumn is a function which returns a system generated value. The reason it is known as so because a pseudocolumn is an Oracle assigned value used in the same context as an Oracle database column but not stored on disk.
+``` 
 
 بعض الأمثلة على ذلك هي: ROWNUM، ROWID، USER، CURRVAL، NEXTVAL etc. \`\` \`
 
@@ -114,8 +119,9 @@ localeTitle: أسئلة مقابلة SQL
 هنا خيار CASCADE ضروري لإزالة كافة كائنات المستخدم في قاعدة البيانات. \`\` \`sql  
 انخفاض المستخدم ريتا CASCADE
 
- `### Write SQL query to find the nth highest salary from table. 
-` 
+```
+### Write SQL query to find the nth highest salary from table.
+``` 
 
 مزود  
 SELECT TOP 1 الراتب من عند ( SELECT DISTINCT TOP N Salary من الموظف ORDER BY Salary DESC ) ORDER BY الراتب ASC \`\` \`

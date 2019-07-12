@@ -37,7 +37,7 @@ Give your answer using as many decimal places as necessary for an exact result.
 ```yml
 tests:
   - text: <code>euler300()</code> should return 8.0540771484375.
-    testString: 'assert.strictEqual(euler300(), 8.0540771484375, "<code>euler300()</code> should return 8.0540771484375.");'
+    testString: assert.strictEqual(euler300(), 8.0540771484375, '<code>euler300()</code> should return 8.0540771484375.');
 
 ```
 

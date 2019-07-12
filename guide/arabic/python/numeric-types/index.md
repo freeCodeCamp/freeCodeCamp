@@ -8,20 +8,22 @@ localeTitle: بايثون أنواع رقمية
 
 #### أمثلة:
 
- `print(1) 
- print(100) 
- print(8435367) 
-` 
+```py
+print(1)
+print(100)
+print(8435367)
+``` 
 
 *   أرقام النقطة العائمة ( `float` )
     *   [البناء](https://docs.python.org/3/library/functions.html#float)
 
 #### أمثلة:
 
- `print(1.5) 
- print(46.84) 
- print(84357.435) 
-` 
+```py
+print(1.5)
+print(46.84)
+print(84357.435)
+``` 
 
 *   ارقام مركبة
     *   [البناء](https://docs.python.org/3/library/functions.html#complex)

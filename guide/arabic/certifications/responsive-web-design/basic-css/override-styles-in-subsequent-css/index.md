@@ -10,19 +10,19 @@ localeTitle: تجاوز الأنماط في CSS لاحقة
 
 فمثلا:
 
- `
-<style> 
-  body { 
-    color: purple; 
-  } 
-  .red-text { 
-    color: red; 
-  } 
-  .blue-text { 
-    color: blue; 
-  { 
- </style> 
-` 
+```html
+<style>
+  body {
+    color: purple;
+  }
+  .red-text {
+    color: red;
+  }
+  .blue-text {
+    color: blue;
+  {
+</style>
+``` 
 
 الآن، عند إنشاء أي نص في `body` ، وسوف يكون لون النص `purple` المسندة إليها.
 
@@ -30,21 +30,21 @@ localeTitle: تجاوز الأنماط في CSS لاحقة
 
 باستخدام التنسيق أعلاه ، سيتجاوز النص أدناه لون الخط `purple` السابق `purple` `red` .
 
- `
-<h1 class="red-text">Example</h1> 
-` 
+```html
+<h1 class="red-text">Example</h1>
+``` 
 
 عندما تريد إضافة عدة فئات ، يمكنك استخدام هذا التنسيق:
 
- `
-<h1 class="class-name1 class-name2 class-name3">Example</h1> 
-` 
+```html
+<h1 class="class-name1 class-name2 class-name3">Example</h1>
+``` 
 
 يمكنك الآن إضافة الفئة الأخيرة التي تم إنشاؤها أعلاه ( `"blue-text"` ) إلى نفس المثال أعلاه لمشاهدة النتائج.
 
- `
-<h1 class="red-text blue-text">Example</h1> 
-` 
+```html
+<h1 class="red-text blue-text">Example</h1>
+``` 
 
 سيؤدي ذلك تلقائيًا إلى اختيار الفصل الأخير الذي تم إنشاؤه في قسم الأنماط ، والذي كان في هذه الحالة هو `"blue-text"` .
 
@@ -52,9 +52,9 @@ localeTitle: تجاوز الأنماط في CSS لاحقة
 
 لذلك ، على سبيل المثال:
 
- `
-<h1 class="blue-text red-text">Example</h1> 
-` 
+```html
+<h1 class="blue-text red-text">Example</h1>
+``` 
 
 سيظل هذا يعرض لون خط `blue` بسبب الترتيب في قسم الأنماط.
 

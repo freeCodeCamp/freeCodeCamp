@@ -35,7 +35,7 @@ h=( 5000-0.005*(x*x+y*y+x*y)+12.5*(x+y) ) * exp( -abs(0.000001*(x*x+y*y)-0.0015*
 ```yml
 tests:
   - text: <code>euler262()</code> should return 2531.205.
-    testString: 'assert.strictEqual(euler262(), 2531.205, "<code>euler262()</code> should return 2531.205.");'
+    testString: assert.strictEqual(euler262(), 2531.205, '<code>euler262()</code> should return 2531.205.');
 
 ```
 

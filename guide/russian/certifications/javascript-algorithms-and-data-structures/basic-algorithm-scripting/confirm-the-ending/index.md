@@ -19,8 +19,6 @@ function confirmEnding(str, target) {
  confirmEnding("He has to give me a new name", "name"); 
 ```
 
-#### 🚀 [Код запуска](https://repl.it/repls/SardonicRoundAfkgaming)
-
 # Код Объяснение:
 
 *   Сначала мы используем метод `slice` копирования строки.

@@ -20,15 +20,16 @@ localeTitle: فهم القيم المنطقية
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":مبتدئ:") حل الرمز الأساسي:
 
- `function welcomeToBooleans() { 
- 
- // Only change code below this line. 
- 
- return true; // Change this line 
- 
- // Only change code above this line. 
- } 
-` 
+```javascript
+function welcomeToBooleans() {
+
+// Only change code below this line.
+
+return true; // Change this line
+
+// Only change code above this line.
+}
+``` 
 
 ### تفسير الشفرة
 

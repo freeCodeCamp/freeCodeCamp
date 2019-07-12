@@ -1,5 +1,5 @@
 ---
-  title : Features of BlockTech
+title: Features of BlockTech
 localeTitle: Recursos do BlockTech
 ---
 ## Recursos da tecnologia Blockchain

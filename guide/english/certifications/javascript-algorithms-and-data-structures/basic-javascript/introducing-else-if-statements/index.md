@@ -71,7 +71,7 @@ function testElseIf(val) {
 // Change this value to test
 testElseIf(7);
 ```
-:rocket: [Run code](https://repl.it/@RyanPisuena/GoldenWorriedRuntime)
+
  ## Code explanation
 The structure of an **else-if logic flow** is an initial `if` statement, one more `if-else` statements, and one final `else` statement.
  

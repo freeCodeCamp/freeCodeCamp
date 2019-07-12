@@ -45,8 +45,7 @@ function reverseString(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Nosso objetivo é pegar a entrada, `str` e retorná-la ao contrário. Nosso primeiro passo é dividir a string por caracteres usando `split('')` . Observe que não deixamos nada entre as aspas simples, isso diz à função para dividir a string por cada caractere.

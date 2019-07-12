@@ -4,16 +4,17 @@ localeTitle: المتغيرات
 ---
 دعونا نناقش شيء يعرف كمتغيرات. المتغيرات هي بمثابة دلو. يمكنك وضع شيء فيه ثم تغييره بعد ذلك عند الحاجة. في C ++ ، هناك العديد من أنواع المتغيرات مثل الأعداد الصحيحة ، السلاسل ، Booleans وغيرها الكثير. دعونا ننظر إلى برنامج بسيط باستخدام المتغيرات الصحيحة. تخزن أعداد صحيحة الأعداد الصحيحة التي تكون موجبة أو سالبة أو صفر. الأرقام الكاملة ليست أرقام كسور على سبيل المثال 1/2 و 1/4 و 1/5. دعونا ننظر إلى برنامج بسيط يستخدم عددًا صحيحًا متغير.
 
- `#include <iostream> 
- using namespace std ; 
- int main() 
- { 
-    int a;          // Declare an integer variable a 
-    a = 5;          // Assign value of 5 to variable a 
-    cout << a;      // Display the value of variable a which contains 5 
-    return 0; 
- } 
-` 
+```cpp
+#include <iostream>
+using namespace std ;
+int main()
+{
+    int a;          // Declare an integer variable a
+    a = 5;          // Assign value of 5 to variable a
+    cout << a;      // Display the value of variable a which contains 5
+    return 0;
+}
+``` 
 
 عند تنفيذ هذا البرنامج ، سترى 5 معروضة على الشاشة
 

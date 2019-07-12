@@ -10,8 +10,9 @@ localeTitle: تنسيق النص في HTML
 
 يمكنك بسهولة تغيير معنى النص الخاص بك باستخدام عنصر `<b>` HTML. يجعل الكلمات جريئة ، والتي تعمل على إفراد جزء التسلسل. فمثلا:
 
- `The most important part of your code is <b>the end</b>, because if you <b>don't close</b> the element, it will affect to <b>everything</b>! 
-` 
+```
+The most important part of your code is <b>the end</b>, because if you <b>don't close</b> the element, it will affect to <b>everything</b>!
+``` 
 
 يمكنك أيضًا استخدام `<strong>` أيضًا - إنها تضيف أيضًا أهمية "قوية" دلالية. لا يتعرف متصفحك على فرق بين هذين العنصرين ، ولكنه موجود.
 
@@ -19,8 +20,9 @@ localeTitle: تنسيق النص في HTML
 
 عادة ما تستخدم عند اقتباس شيء ما أو وضع ترجمة للكلمة في الكثير من المقالات. يجعلها مائلة - فقط تخيل ركلها قليلاً في الأحرف الصحيحة. فمثلا:
 
- `Theatre - <i>teatos</i>, <i>teates</i> and <i>teatron</i>. 
-` 
+```
+Theatre - <i>teatos</i>, <i>teates</i> and <i>teatron</i>.
+``` 
 
 يمكنك أيضًا استخدام `<em>` أيضًا - حيث تضيف أيضًا أهمية دلالية "مؤكدة". لا يتعرف متصفحك على فرق بين هذين العنصرين ، ولكنه موجود.
 

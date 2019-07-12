@@ -6,7 +6,7 @@ localeTitle: نسخة مطبوعة على الآلة الكاتبة
 
 ### نظرة عامة
 
-![نسخة مطبوعة على الآلة الكاتبة](https://i.imgur.com/uRLunzU.png)
+![نسخة مطبوعة على الآلة الكاتبة](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
 
 لذا ، كما تعلم على الأرجح ، تعمل جافا سكريبت على توسيع نطاقها كل يوم ، وهو أمر مذهل ومذهل في الوقت الحالي مما يمكنك فعله باللغة الحالية.
 
@@ -16,7 +16,7 @@ localeTitle: نسخة مطبوعة على الآلة الكاتبة
 
 يمكنك معرفة المزيد حول الاختلافات في بناء الجملة في [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript) .
 
-![دلائل الميزات](https://i.imgur.com/pZij95O.jpg)
+![دلائل الميزات](https://cdn-media-1.freecodecamp.org/imgr/pZij95O.jpg)
 
 في الجوهر ، تحاول شركة TypeScript مساعدة جافا سكريبت في الوصول إلى ارتفاعات جديدة وتصبح قابلة للتوسع جدًا ويمكن أن يتم تمييزها بواسطة الميزات التالية:
 
@@ -41,7 +41,7 @@ localeTitle: نسخة مطبوعة على الآلة الكاتبة
 
 ### ملعب
 
-![ملعب](https://i.imgur.com/vlV7ZFr.png)
+![ملعب](https://cdn-media-1.freecodecamp.org/imgr/vlV7ZFr.png)
 
 إذا كنت ترغب في تجربة TypeScript بدون تثبيته ، قم بزيارة [TypeScript Playground](http://www.typescriptlang.org/play/index.html) .
 
