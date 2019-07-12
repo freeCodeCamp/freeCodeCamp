@@ -35,7 +35,7 @@ tests:
     testString: assert(code.match(/else/g).length > 1);
   - text: You should have at least two <code>if</code> statements
     testString: assert(code.match(/if/g).length > 1);
-  - text: You should have closing and opening curly braces for each condition <code>else if</code> code block.
+  - text: You should have closing and opening curly braces for each <code>if else</code> code block.
     testString: assert(code.match(/if\s*\((.+)\)\s*\{[\s\S]+\}\s*else if\s*\((.+)\)\s*\{[\s\S]+\}\s*else\s*\{[\s\S]+\s*\}/));
   - text: <code>testElseIf(0)</code> should return "Smaller than 5"
     testString: assert(testElseIf(0) === "Smaller than 5");
