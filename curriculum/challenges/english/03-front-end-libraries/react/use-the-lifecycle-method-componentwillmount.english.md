@@ -31,7 +31,7 @@ tests:
   - text: <code>MyComponent</code> should render a <code>div</code> element.
     testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').length === 1; })());
   - text: <code>console.log</code> should be called in <code>componentWillMount</code>.
-    testString: assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })(), '<code>console.log</code> should be called in <code>componentWillMount</code>.');
+    testString: assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''); return lifecycle.includes('console.log('); })());
 
 ```
 

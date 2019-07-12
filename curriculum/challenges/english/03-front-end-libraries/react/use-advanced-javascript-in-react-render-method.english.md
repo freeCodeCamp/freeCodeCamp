@@ -24,9 +24,9 @@ tests:
   - text: The <code>MagicEightBall</code> component should exist and should render to the page.
     testString: assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).find('MagicEightBall').length, 1);
   - text: <code>MagicEightBall</code>&apos;s first child should be an <code>input</code> element.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(0).name(), 'input', '<code>MagicEightBall</code>&apos;s first child should be an <code>input</code> element.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(0).name(), 'input');
   - text: <code>MagicEightBall</code>&apos;s third child should be a <code>button</code> element.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(2).name(), 'button', '<code>MagicEightBall</code>&apos;s third child should be a <code>button</code> element.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(2).name(), 'button');
   - text: <code>MagicEightBall</code>&apos;s state should be initialized with a property of <code>userInput</code> and a property of <code>randomIndex</code> both set to a value of an empty string.
     testString: assert(Enzyme.mount(React.createElement(MagicEightBall)).state('randomIndex') === '' && Enzyme.mount(React.createElement(MagicEightBall)).state('userInput') === '');
   - text: When <code>MagicEightBall</code> is first mounted to the DOM, it should return an empty <code>p</code> element.
