@@ -136,6 +136,7 @@ Algunos de los principios que influyeron en el diseño de Python se incluyen com
 1.  Lenguaje interactivo con soporte de módulo para casi todas las funcionalidades.
 2.  Código abierto: Entonces, puede contribuir a la comunidad, las funciones que ha desarrollado para su uso futuro y para ayudar a otros
 3.  Un montón de buenos intérpretes y cuadernos disponibles para una mejor experiencia como el cuaderno jupyter.
+4.  Es un lenguaje multiparadigma por tanto soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. 
 
 #### Contras
 
