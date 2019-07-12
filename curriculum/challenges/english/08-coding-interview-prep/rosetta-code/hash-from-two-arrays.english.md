@@ -32,7 +32,7 @@ tests:
   - text: '<code>arrToObj([1, 2, 3], ["a", "b", "c", "d", "e"])</code> should return <code>{ 1: "a", 2: "b", 3: "c" }</code>'
     testString: 'assert.deepEqual(arrToObj(...testCases[2]), res[2]);'
   - text: '<code>arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4, 5])</code> should return <code>{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": 5 }</code>'
-    testString: 'assert.deepEqual(arrToObj(...testCases[3]), res[3]);'
+    testString: assert.deepEqual(arrToObj(...testCases[3]), res[3]);
   - text: '<code>arrToObj(["a", "b", "c", "d", "e"], [1, 2, 3, 4])</code> should return <code>{ "a": 1, "b": 2, "c": 3 , "d": 4, "e": undefined }</code>'
     testString: assert.deepEqual(arrToObj(...testCases[4]), res[4]);
   - text: '<code>arrToObj(["a", "b", "c"], [1, 2, 3, 4, 5])</code> should return <code>{ "a": 1, "b": 2, "c": 3  }</code>'
