@@ -1,6 +1,6 @@
 ---
 title: Python
-localeTitle: Pitón
+localeTitle: Python
 ---
 ## ¿Qué es Python?
 
@@ -14,23 +14,23 @@ Para obtener más información sobre Python, consulte estas páginas en python.o
 
 ## Python 2 o Python 3
 
-*   Las dos versiones son similares, con el conocimiento de un cambio a escribir código para el otro es fácil.
+*   Las dos versiones son similares. Con el conocimiento de una de ellas, el cambio a la otra es fácil.
 *   [Python 2 o Python 3](https://wiki.python.org/moin/Python2orPython3)
     *   [Python 2.x no se mantendrá a partir de 2020.](https://www.python.org/dev/peps/pep-0373/)
-    *   3.x esta en desarrollo activo. Esto significa que todas las mejoras recientes de la biblioteca estándar, por ejemplo, solo están disponibles de forma predeterminada en Python 3.x.
-    *   El ecosistema de Python ha acumulado una cantidad significativa de software de calidad a lo largo de los años. La desventaja de romper la compatibilidad con versiones anteriores en 3.x es que parte de ese software (especialmente el software interno de las empresas) todavía no funciona en 3.x todavía.
+    *   3.x está en desarrollo activo. Esto significa que todas las mejoras recientes de la librería estándar, por ejemplo, sólo están disponibles de forma predeterminada en Python 3.x.
+    *   El ecosistema de Python ha acumulado una cantidad significativa de software de calidad a lo largo de los años. La desventaja de romper la compatibilidad con versiones anteriores en 3.x es que parte de ese software (especialmente el software interno de las empresas) todavía no funciona en 3.x.
 
 ## Instalación
 
-La mayoría de los sistemas operativos basados ​​en \* nix vienen con Python instalado (generalmente Python 2, Python 3 en los más recientes). Reemplazar el sistema Python no se recomienda y puede causar problemas. Sin embargo, diferentes versiones de Python pueden instalarse de manera segura junto con el sistema Python. Consulte [Configuración y uso de Python](https://docs.python.org/3/using/index.html) .
+La mayoría de los sistemas operativos basados en \*nix vienen con Python instalado (generalmente Python 2, Python 3 en los más recientes). Reemplazar el sistema Python no se recomienda y puede causar problemas. Sin embargo, diferentes versiones de Python pueden instalarse de manera segura junto con el Python del sistema. Consulta [Configuración y uso de Python](https://docs.python.org/3/using/index.html).
 
-Windows no viene con Python, el instalador y las instrucciones se pueden encontrar [aquí](https://docs.python.org/3/using/windows.html)
+Windows no viene con Python, el instalador y las instrucciones se pueden encontrar [aquí](https://docs.python.org/3/using/windows.html).
 
 ## Intérprete de Python
 
-El intérprete de Python es lo que se utiliza para ejecutar los scripts de Python.
+El intérprete de Python es lo que se utiliza para ejecutar los *scripts* de Python.
 
-Si está disponible y en la ruta de búsqueda del shell de Unix, es posible iniciarlo escribiendo el comando `python` seguido del nombre del script, invocará al intérprete y ejecutará el script.
+Si está disponible y en la ruta de búsqueda del *shell* de Unix, es posible iniciarlo escribiendo el comando `python` seguido del nombre del script, invocará al intérprete y ejecutará el script.
 
 `hello_campers.py`
 
@@ -44,7 +44,7 @@ $ python hello_campers.py
  Hello campers! 
 ```
 
-"Cuando se instalan varias versiones de Python, se puede llamar por versión dependiendo de la configuración de instalación. En el entorno personalizado de Cloud9 ide, se pueden invocar como:
+"Cuando se instalan varias versiones de Python, se puede llamar por versión dependiendo de la configuración de instalación. En el entorno personalizado de Cloud9 IDE, se pueden invocar como:
 ```
 $ python --version 
  Python 2.7.6 
@@ -58,7 +58,7 @@ $ python --version
  Python 3.7.1 
 ```
 
-## Modo interactivo de intérprete de Python
+## Modo interactivo del intérprete de Python
 
 El modo interactivo puede iniciarse invocando al intérprete de Python con el indicador `-i` o sin ningún argumento.
 
@@ -75,11 +75,10 @@ $ python3.5
  >>> exit() 
  $ 
 ```
+## El Zen de Python
 
-## El zen de Python
-
-Algunos de los principios que influyeron en el diseño de Python se incluyen como un huevo de Pascua y se pueden leer usando el comando en el modo interactivo de intérprete de Python:
-```
+Algunos de los principios que influyeron en el diseño de Python se incluyen como un huevo de Pascua (*easter egg*) y se pueden leer usando el comando en el modo interactivo de intérprete de Python:
+```python
 >>> import this 
  The Zen of Python, by Tim Peters 
  
@@ -105,7 +104,7 @@ Algunos de los principios que influyeron en el diseño de Python se incluyen com
 ```
 
 ### Traduccion
-```
+```python
  El Zen of Python, por Tim Peters 
  
  Bello es mejor que feo.
@@ -129,44 +128,42 @@ Algunos de los principios que influyeron en el diseño de Python se incluyen com
  Los espacios nombrados son una idea resonante -- hagamos mas de esos!
 ```
 
-## Pros y contras de Python
+## Pros y Contras de Python
 
 ### Pros
+1. Lenguaje interactivo con soporte de módulos para casi todas las funcionalidades.
+2. Código abierto: puedes contribuir a la comunidad, las funciones que has desarrollado para uso futuro y ayudar a otros
+3. Un montón de buenos intérpretes y cuadernos disponibles para una mejor experiencia como Jupyter Notebook.
+4. Es un lenguaje muy fácil de aprender y depurar. Para comprobar si una pequeña parte del código funciona o no, simplemente puedes abrir el intérprete y probarlo.
 
-1.  Lenguaje interactivo con soporte de módulo para casi todas las funcionalidades.
-2.  Código abierto: Entonces, puede contribuir a la comunidad, las funciones que ha desarrollado para su uso futuro y para ayudar a otros
-3.  Un montón de buenos intérpretes y cuadernos disponibles para una mejor experiencia como el cuaderno jupyter.
-4.  Es un lenguaje multiparadigma por tanto soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. 
-
-#### Contras
-
-1.  Siendo de código abierto, se han desarrollado muchas formas diferentes a lo largo del año para la misma función. Esto a veces, crea un caos para que otros lean el código de otra persona.
-2.  Es un lenguaje lento. Entonces, un lenguaje muy malo para usar en el desarrollo de algoritmos generales.
+### Contras
+1. Al ser de código abierto, se han desarrollado muchas formas diferentes a lo largo del año para la misma función. Esto crea, en ocasiones, un caos para otros que lean el código de otra persona.
+2. Es un lenguaje lento. Por lo tanto, un lenguaje muy malo para usar en el desarrollo de algoritmos generales.
 
 ## Documentación
 
-[Python está bien documentado](https://docs.python.org/3/) . Estos documentos incluyen tutoriales, guías, referencias y metainformación para el idioma.
+[Python está bien documentado](https://docs.python.org/3/). Estos documentos incluyen tutoriales, guías, referencias y metainformación para el lenguaje.
 
-Otra referencia importante son las Propuestas de mejora de Python ( [PEP](https://www.python.org/dev/peps/) ). En los PEP se incluye una guía de estilo para escribir el código Python, [`PEP 8`](https://www.python.org/dev/peps/pep-0008/) .
+Otra referencia importante son las Propuestas de Mejora de Python ([PEP](https://www.python.org/dev/peps/)). En los PEP se incluye una guía de estilo para escribir el código Python, [`PEP 8`](https://www.python.org/dev/peps/pep-0008/).
 
 ## Depuración
 
-Las declaraciones de `print` línea se pueden utilizar para la depuración simple:
+Las declaraciones *inline* de `print` se pueden utilizar para la depuración simple:
 
-> **... a menudo, la forma más rápida de depurar un programa es agregar algunas declaraciones de impresión a la fuente: el rápido ciclo de edición-prueba-depuración hace que este enfoque simple sea muy efectivo.**
+> **... a menudo, la forma más rápida de depurar un programa es agregar algunas declaraciones `print` al código fuente: el rápido ciclo de edición-prueba-depuración hace que este enfoque simple sea muy efectivo.**
 > 
-> \- [Resumen ejecutivo](https://www.python.org/doc/essays/blurb/)
+> \- [Resumen Ejecutivo](https://www.python.org/doc/essays/blurb/)
 
 Python también incluye herramientas más potentes para la depuración, como:
 
 *   módulo de [_registro_](https://docs.python.org/3/library/logging.html) , [_registro_](https://docs.python.org/3/library/logging.html)
 *   módulo de depuración, [_pdb_](https://docs.python.org/3/library/pdb.html)
 
-Sólo tenga en cuenta que estos existen por ahora.
+Simplemente ten en cuenta que estos existen por ahora.
 
 ## Hola Mundo!
 
-Volviendo a los documentos, podemos leer acerca de la función de [`print`](https://docs.python.org/3/library/functions.html#print) , una [_función incorporada_](https://docs.python.org/3/library/functions.html) de la [biblioteca estándar de Python](https://docs.python.org/3/library/index.html) .
+Volviendo a la documentación, podemos leer acerca de la función de [`print`](https://docs.python.org/3/library/functions.html#print), una [_función incorporada_](https://docs.python.org/3/library/functions.html) de la [biblioteca estándar de Python](https://docs.python.org/3/library/index.html) .
 ```
 print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False) 
 ```
@@ -179,16 +176,15 @@ La función de [`print`](https://docs.python.org/3/library/functions.html#print)
  Hello world! 
 ```
 
-Se llama a una función cuando el nombre de la función va seguido de `()` . Para el mundo Hola! Por ejemplo, la función de impresión se llama con una cadena como argumento para el primer parámetro. Para el resto de los parámetros se utilizan los valores por defecto.
+Se llama a una función cuando el nombre de la función va seguido de `()` . Para el ejemplo de "Hola Mundo!", la función `print` se llama con una cadena como argumento para el primer parámetro. Para el resto de los parámetros se utilizan los valores por defecto.
 
-El argumento con el que llamamos a la función de `print` es un objeto `str` o _cadena_ , uno de los [_tipos incorporados_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) de Python. Además, lo más importante de python es que no tiene que especificar el tipo de datos al declarar una variable, el compilador de python Lo hará por sí mismo en función del tipo de valor asignado.
+El argumento con el que llamamos a la función de `print` es un objeto `str` o _cadena_ , uno de los [_tipos incorporados_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) de Python. Además, lo más importante de python es que no tienes que especificar el tipo de datos al declarar una variable, el compilador de Python lo hará por sí mismo en función del tipo de valor asignado.
 
 El parámetro de los `objects` tiene un prefijo `*` que indica que la función tomará un número arbitrario de argumentos para ese parámetro.
 
 ## ¿Querer aprender más?
 
-Free Code Camp tiene algunos grandes recursos. La web es un lugar grande, hay mucho más que explorar:
-
+Free Code Camp tiene algunos recursos estupendos. La web es un lugar grande, hay mucho más que explorar:
 *   Libro de práctica de Python: http://anandology.com/python-practice-book/index.html
 *   Piense Python: http://greenteapress.com/thinkpython/html/index.html
 *   Practical Business Python: http://pbpython.com/
