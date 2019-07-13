@@ -24,15 +24,15 @@ Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> t
 ```yml
 tests:
   - text: <code>a</code> should equal <code>5</code>
-    testString: assert(a === 5, '<code>a</code> should equal <code>5</code>');
+    testString: assert(a === 5);
   - text: <code>b</code> should equal <code>-6</code>
-    testString: assert(b === -6, '<code>b</code> should equal <code>-6</code>');
+    testString: assert(b === -6);
   - text: <code>c</code> should equal <code>2</code>
-    testString: assert(c === 2, '<code>c</code> should equal <code>2</code>');
+    testString: assert(c === 2);
   - text: You should use the <code>-=</code> operator for each variable
-    testString: assert(code.match(/-=/g).length === 3, 'You should use the <code>-=</code> operator for each variable');
+    testString: assert(code.match(/-=/g).length === 3);
   - text: Do not modify the code above the line
-    testString: assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'Do not modify the code above the line');
+    testString: assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code));
 
 ```
 

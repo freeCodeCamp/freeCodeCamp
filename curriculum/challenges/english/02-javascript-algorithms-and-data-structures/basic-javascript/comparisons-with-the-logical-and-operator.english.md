@@ -41,25 +41,25 @@ Combine the two if statements into one statement which will return <code>"Yes"</
 ```yml
 tests:
   - text: You should use the <code>&&</code> operator once
-    testString: assert(code.match(/&&/g).length === 1, 'You should use the <code>&&</code> operator once');
+    testString: assert(code.match(/&&/g).length === 1);
   - text: You should only have one <code>if</code> statement
-    testString: assert(code.match(/if/g).length === 1, 'You should only have one <code>if</code> statement');
+    testString: assert(code.match(/if/g).length === 1);
   - text: <code>testLogicalAnd(0)</code> should return "No"
-    testString: assert(testLogicalAnd(0) === "No", '<code>testLogicalAnd(0)</code> should return "No"');
+    testString: assert(testLogicalAnd(0) === "No");
   - text: <code>testLogicalAnd(24)</code> should return "No"
-    testString: assert(testLogicalAnd(24) === "No", '<code>testLogicalAnd(24)</code> should return "No"');
+    testString: assert(testLogicalAnd(24) === "No");
   - text: <code>testLogicalAnd(25)</code> should return "Yes"
-    testString: assert(testLogicalAnd(25) === "Yes", '<code>testLogicalAnd(25)</code> should return "Yes"');
+    testString: assert(testLogicalAnd(25) === "Yes");
   - text: <code>testLogicalAnd(30)</code> should return "Yes"
-    testString: assert(testLogicalAnd(30) === "Yes", '<code>testLogicalAnd(30)</code> should return "Yes"');
+    testString: assert(testLogicalAnd(30) === "Yes");
   - text: <code>testLogicalAnd(50)</code> should return "Yes"
-    testString: assert(testLogicalAnd(50) === "Yes", '<code>testLogicalAnd(50)</code> should return "Yes"');
+    testString: assert(testLogicalAnd(50) === "Yes");
   - text: <code>testLogicalAnd(51)</code> should return "No"
-    testString: assert(testLogicalAnd(51) === "No", '<code>testLogicalAnd(51)</code> should return "No"');
+    testString: assert(testLogicalAnd(51) === "No");
   - text: <code>testLogicalAnd(75)</code> should return "No"
-    testString: assert(testLogicalAnd(75) === "No", '<code>testLogicalAnd(75)</code> should return "No"');
+    testString: assert(testLogicalAnd(75) === "No");
   - text: <code>testLogicalAnd(80)</code> should return "No"
-    testString: assert(testLogicalAnd(80) === "No", '<code>testLogicalAnd(80)</code> should return "No"');
+    testString: assert(testLogicalAnd(80) === "No");
 
 ```
 
