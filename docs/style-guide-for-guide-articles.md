@@ -181,7 +181,10 @@ When proposing a solution for a curriculum challenge related article, the full c
   </div>
 </section>
 ```
-If you want to add a solution to a file which already has a solution, add another `<div class='solution'></div>` like above and add it below the previous solutions.
+
+If you want to add a solution to a file which already has a solution, add another `<div class='solution'></div>` like above and add it below the existing solutions.
+
+Since complexity of code is subjective, do not use words like `Basic`, `Intermediate` or `Advanced` with your solutions.
 
 ## Attributions
 
@@ -239,6 +242,8 @@ If there are other Guide resources you think campers would benefit from, add the
 
 - [A New Resource](#link)
 ```
+
+We recommend not adding links to websites like REPL, CodePen and JSBin since the user may delete the pen or session, etc. rendering the link useless.
 
 ## Formatting
 
