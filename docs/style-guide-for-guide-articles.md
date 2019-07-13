@@ -159,32 +159,57 @@ Don't use emojis or emoticons in the Guide. freeCodeCamp has a global community,
 
 When proposing a solution for a curriculum challenge related article, the full code should be given. This includes all the original seed code plus any changes needed to pass all the challenge tests. Use the following syntax to write your solution in the guide:
 
-```html
-<section id='hints'>
-  <div class='hint'>
-    Hint goes here
-  </div>
-  <div class='hint'>
-    Hint goes here
-  </div>
-</section>
+````markdown
+# Challenge Name Goes Here
 
-<section id='solutions'>
-  <div class='solution'>
-    ```js
-    function myFunc() {
-      console.log('Hello World!');
-    }
-    ```
-    #### Code Explanation
-    Code explanation goes here
-  </div>
-</section>
+## Hints
+
+### Hint #1
+Hint goes here
+
+###  Hint #2
+Hint goes here
+
+## Solutions
+
+<details><summary>Solution #1 (Click to Unhide)</summary>
+
+```js
+function myFunc() {
+  console.log('Hello World!');
+}
 ```
 
-If you want to add a solution to a file which already has a solution, add another `<div class='solution'></div>` like above and add it below the existing solutions.
+#### Code Explanation
+* Code explanation goes here
+* Code explanation goes here
 
-Since complexity of code is subjective, do not use words like `Basic`, `Intermediate` or `Advanced` with your solutions.
+#### Relevant Links
+* [Link Text](link_url_goes_here)
+* [Link Text](link_url_goes_here)
+
+</details>
+
+<details><summary>Solution #2 (Click to Unhide)</summary>
+
+```js
+function myFunc() {
+  console.log('Hello World!');
+}
+```
+
+#### Code Explanation
+* Code explanation goes here
+* Code explanation goes here
+
+#### Relevant Links
+* [Link Text](link_url_goes_here)
+* [Link Text](link_url_goes_here)
+
+</details>
+````
+
+Since complexity of code is subjective and depends on the user, do not use adjectives like `Basic`, `Intermediate` or `Advanced` with your solutions.
 
 ## Attributions
 
