@@ -157,8 +157,41 @@ Don't use emojis or emoticons in the Guide. freeCodeCamp has a global community,
 
 ## Curriculum Challenge Solutions
 
-When proposing a solution for a curriculum challenge related article, the full code should be given. This includes all the original seed code plus any changes needed to pass all the challenge tests.
+When proposing a solution for a curriculum challenge related article, the full code should be given. This includes all the original seed code plus any changes needed to pass all the challenge tests. Use the following syntax to write your solution in the guide:
 
+```html
+<section id='hints'>
+  <div class='hint'>
+    Hint goes here
+  </div>
+  <div class='hint'>
+    hint goes here
+  </div>
+</section>
+
+<section id='solutions'>
+  <div class='solution'>
+    ```js
+    function myFunc() {
+      console.log('Hello World!');
+    }
+    ```
+    #### Code Explanation
+    Code explanation goes here
+  </div>
+</section>
+```
+<section id='solutions'>
+  <div class='solution'>
+    ```js
+    function myFunc() {
+      console.log('Hello World!');
+    }
+    ```
+    #### Code Explanation
+    Code explanation goes here
+  </div>
+</section>
 ## Attributions
 
 To minimize the potential for plagiarism and maintain integrity in this guide, it is important to give credit where necessary.
