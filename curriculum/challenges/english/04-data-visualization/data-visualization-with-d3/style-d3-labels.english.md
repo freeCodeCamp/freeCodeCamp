@@ -20,9 +20,9 @@ Set the <code>font-size</code> of the <code>text</code> elements to 25px, and th
 ```yml
 tests:
   - text: The labels should all have a <code>fill</code> color of red.
-    testString: assert($('text').css('fill') == 'rgb(255, 0, 0)', 'The labels should all have a <code>fill</code> color of red.');
+    testString: assert($('text').css('fill') == 'rgb(255, 0, 0)');
   - text: The labels should all have a <code>font-size</code> of 25 pixels.
-    testString: assert($('text').css('font-size') == '25px', 'The labels should all have a <code>font-size</code> of 25 pixels.');
+    testString: assert($('text').css('font-size') == '25px');
 
 ```
 

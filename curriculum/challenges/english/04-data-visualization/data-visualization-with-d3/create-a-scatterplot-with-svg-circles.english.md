@@ -22,7 +22,7 @@ Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> met
 ```yml
 tests:
   - text: Your code should have 10 <code>circle</code> elements.
-    testString: assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');
+    testString: assert($('circle').length == 10);
 
 ```
 

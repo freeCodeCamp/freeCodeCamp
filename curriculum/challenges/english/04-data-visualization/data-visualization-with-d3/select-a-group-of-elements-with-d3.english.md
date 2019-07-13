@@ -22,11 +22,11 @@ Select all of the <code>li</code> tags in the document, and change their text to
 ```yml
 tests:
   - text: There should be 3 <code>li</code> elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.
-    testString: assert($('li').text().match(/list item/g).length == 3, 'There should be 3 <code>li</code> elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.');
+    testString: assert($('li').text().match(/list item/g).length == 3);
   - text: Your code should access the <code>d3</code> object.
-    testString: assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');
+    testString: assert(code.match(/d3/g));
   - text: Your code should use the <code>selectAll</code> method.
-    testString: assert(code.match(/\.selectAll/g), 'Your code should use the <code>selectAll</code> method.');
+    testString: assert(code.match(/\.selectAll/g));
 
 ```
 
