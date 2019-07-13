@@ -165,7 +165,7 @@ When proposing a solution for a curriculum challenge related article, the full c
     Hint goes here
   </div>
   <div class='hint'>
-    hint goes here
+    Hint goes here
   </div>
 </section>
 
@@ -181,17 +181,8 @@ When proposing a solution for a curriculum challenge related article, the full c
   </div>
 </section>
 ```
-<section id='solutions'>
-  <div class='solution'>
-    ```js
-    function myFunc() {
-      console.log('Hello World!');
-    }
-    ```
-    #### Code Explanation
-    Code explanation goes here
-  </div>
-</section>
+If you want to add a solution to a file which already has a solution, add another `<div class='solution'></div>` like above and add it below the previous solutions.
+
 ## Attributions
 
 To minimize the potential for plagiarism and maintain integrity in this guide, it is important to give credit where necessary.
