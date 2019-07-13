@@ -24,9 +24,9 @@ Add the <code>attr()</code> method to the code in the editor and put a class of 
 ```yml
 tests:
   - text: Your <code>div</code> elements should have a class of <code>bar</code>.
-    testString: assert($('div').attr('class') == "bar", 'Your <code>div</code> elements should have a class of <code>bar</code>.');
+    testString: assert($('div').attr('class') == "bar");
   - text: Your code should use the <code>attr()</code> method.
-    testString: assert(code.match(/\.attr/g), 'Your code should use the <code>attr()</code> method.');
+    testString: assert(code.match(/\.attr/g));
 
 ```
 
