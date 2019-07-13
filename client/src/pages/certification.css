@@ -22,20 +22,20 @@
   margin: 0;
 }
 
-.certification-namespace .col-sm-12 {
-  padding: 0;
+.certificate-outer-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.certification-namespace.certificate-wrapper {
-  top: calc(100vh / 20);
-  position: relative;
+.certification-namespace.certificate-inner-wrapper {
   font-family: 'Sax Mono', monospace;
 }
 
 .certification-namespace header {
   width: 100%;
-  height: 140px;
-  background-color: darkgreen;
+  min-height: 140px;
+  background-color: darkgreen !important;
   position: relative;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .certification-namespace .logo img {
-  max-width: 500px;
+  max-width: 500px !important;
   width: 100%;
 }
 
@@ -56,21 +56,21 @@
   font-size: 20px;
   text-align: right;
   margin-right: 100px;
-  color: #fff;
+  color: #fff !important;
+}
+
+.certification-namespace .issue-date strong {
+  color: #fff !important;
 }
 
 .certification-namespace .information {
-  margin-top: -20px;
-  height: 380px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
   text-align: center;
-  background-color: #efefef;
-}
-
-.certification-namespace .information-container {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0px 100px;
+  background-color: #efefef !important;
 }
 
 .certification-namespace p {
@@ -94,11 +94,11 @@
 .certification-namespace .signatures {
   text-align: center;
   margin: 0 auto;
-  background-color: #efefef;
+  background-color: #efefef !important;
 }
 
 .certification-namespace .signatures img {
-  max-width: 300px;
+  max-width: 300px !important;
   width: 100%;
   margin: 0 auto;
 }
@@ -113,11 +113,11 @@
   font-size: 15px;
   text-align: center;
   word-wrap: break-word;
-  background-color: #efefef;
+  background-color: #efefef !important;
 }
 
 /*adds vertical alignment when the height is bigger than required to display everything*/
-@media screen and (min-height: 700px) {
+@media (min-height: 700px) {
   .certification-namespace body {
     display: flex;
     flex-direction: column;
@@ -127,9 +127,9 @@
 }
 
 /*mobile media queries*/
-@media screen and (max-width: 992px) {
+@media (max-width: 991px) {
   .certification-namespace header {
-    height: 160px;
+    min-height: 160px;
   }
 
   .certification-namespace .logo {
@@ -144,7 +144,7 @@
   }
 
   .certification-namespace .issue-date {
-    margin-top: 10px;
+    padding: 20px 0;
     margin-right: 0;
     text-align: center;
     line-height: 0px;
@@ -157,14 +157,10 @@
     line-height: 25px;
   }
 
-  .certification-namespace .information {
-    height: 300px;
-  }
-
   .certification-namespace .information-container {
-    margin: 0px 15px;
+    margin: 15px;
     text-align: center;
-    word-wrap: break-word;
+    word-break: break-word;
   }
 
   .certification-namespace h3 {
@@ -176,14 +172,10 @@
   }
 }
 
-@media screen and (max-width: 675px) {
-  .certification-namespaces.issue-date {
+@media (max-width: 675px) {
+  .certification-namespaces .issue-date {
     padding: 0;
     border: 0;
-  }
-
-  .certification-namespace header {
-    height: 190px;
   }
 
   .certification-namespace h3 {
@@ -197,5 +189,22 @@
   .certification-namespace h4 {
     font-size: 15px;
     margin-top: 20px;
+  }
+}
+
+/* print styles */
+
+@media print {
+  * {
+    color-adjust: exact !important;
+  }
+
+  .certification-namespace.container {
+    padding: 25px;
+  }
+
+  .certification-namespace .information {
+    min-height: 0;
+    padding: 25px 0;
   }
 }
