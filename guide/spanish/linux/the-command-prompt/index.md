@@ -33,7 +33,7 @@ Esto ha llevado a que algunas palabras se usen indistintamente en las conversaci
 
 ### Una historia muy, muy corta
 
-En el siglo XIX fue el [telégrafo](https://en.wikipedia.org/wiki/Electrical_telegraph) . Esto permitió que dos personas intercambiaran mensajes codificados en largas distancias. Los avances tecnológicos posteriores llevaron a la [máquina de teletipo](https://en.wikipedia.org/wiki/Teleprinter) (tty), donde la persona requerida para recibir el mensaje fue reemplazada por un tipo de impresora.
+En el siglo XIX fue el [telégrafo](https://es.wikipedia.org/wiki/Tel%C3%A9grafo) . Esto permitió que dos personas intercambiaran mensajes codificados en largas distancias. Los avances tecnológicos posteriores llevaron a la [máquina de teletipo](https://es.wikipedia.org/wiki/Teletipo) (tty), donde la persona requerida para recibir el mensaje fue reemplazada por un tipo de impresora.
 
 Al mismo tiempo, las primeras computadoras como ENIAC se programaban con algún tipo de hardware, como interruptores, diales o cables de conexión. A medida que las computadoras avanzaban, se necesitaba una mejor entrada / salida (IO), y así las máquinas de teletipo comúnmente disponibles se convirtieron para su uso.
 
@@ -59,7 +59,7 @@ Los que estén disponibles dependerán de la distribución de Linux (distro, par
 
 _Los shell_ s son programas que interpretan comandos.
 
-Hay varios de ellos, como [**B** ourne **A** gain **SH** ell](https://www.gnu.org/software/bash/) (BASH), [C Shell](https://docs.freebsd.org/44doc/usd/04.csh/paper.html) (csh / tcsh) y [Z SHell](http://zsh.sourceforge.net/) (zsh).
+Hay varios de ellos, como [**B**ourne **A**gain **SH**ell](https://www.gnu.org/software/bash/) (BASH), [C Shell](https://docs.freebsd.org/44doc/usd/04.csh/paper.html) (csh / tcsh) y [Z SHell](http://zsh.sourceforge.net/) (zsh).
 
 #### GOLPETAZO
 
@@ -137,7 +137,7 @@ Si tiene que usar una consola raíz, tenga en cuenta su poder. No se le advertir
 
 #### sudo
 
-Agregue "sudo" antes de un comando para cambiar a **S** uper **U** ser y **DO** (SUDO). Esta es la forma en que Ubuntu y sus derivados se configuran para permitir el acceso de los administradores, y se dan por orden.
+Agregue "sudo" antes de un comando para cambiar a **S**uper **U**ser y **DO** (SUDO). Esta es la forma en que Ubuntu y sus derivados se configuran para permitir el acceso de los administradores, y se dan por orden.
 
 No se le asigna un shell de root, y el siguiente comando que escriba no tendrá privilegios elevados, a menos que use `sudo` nuevamente.
 
@@ -229,7 +229,7 @@ Cada comando tiene diferentes opciones, y varias opciones pueden enumerarse junt
 
 Los comandos individuales se pueden conectar juntos en una cadena, donde la salida de un comando se convierte en la entrada a otro comando.
 
-Esto se hace con el `|` Personaje, a menudo llamado **pipa** o **barra** . Esto no es una capital I o L minúscula, ni es el número 1. En los teclados de los EE. UU., Se encuentra en una de las teclas cercanas a Enter .
+Esto se hace con el `|` caracter, a menudo llamado **pipe** o **barra** . Esto no es una capital I o L minúscula, ni es el número 1. En los teclados de los EE. UU., Se encuentra en una de las teclas cercanas a Enter .
 
 En el siguiente ejemplo, usaré 2 comandos.
 
