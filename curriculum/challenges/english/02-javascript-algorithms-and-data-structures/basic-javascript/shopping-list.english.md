@@ -24,13 +24,13 @@ There should be at least 5 sub-arrays in the list.
 ```yml
 tests:
   - text: <code>myList</code> should be an array
-    testString: assert(isArray, '<code>myList</code> should be an array');
+    testString: assert(isArray);
   - text: The first elements in each of your sub-arrays must all be strings
-    testString: assert(hasString, 'The first elements in each of your sub-arrays must all be strings');
+    testString: assert(hasString);
   - text: The second elements in each of your sub-arrays must all be numbers
-    testString: assert(hasNumber, 'The second elements in each of your sub-arrays must all be numbers');
+    testString: assert(hasNumber);
   - text: You must have at least 5 items in your list
-    testString: assert(count > 4, 'You must have at least 5 items in your list');
+    testString: assert(count > 4);
 
 ```
 
