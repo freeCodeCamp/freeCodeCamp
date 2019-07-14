@@ -38,7 +38,7 @@ tests:
   - text: Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.
     testString: assert($('#target1').hasClass('animated') && $('#target1').hasClass('shake') && $('#target1').hasClass('btn-primary'), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.');
   - text: Only use jQuery to add these classes to the element.
-    testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to add these classes to the element.");'
+    testString: 'assert(!code.match(/class.*animated/g));'
 
 ```
 
