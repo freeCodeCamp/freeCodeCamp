@@ -14,10 +14,11 @@ localeTitle: بايثون بوكسي
 
 ## مثال
 
- `print(pow(2,4))    # prints 16 
- print(pow(10,-2))  # prints 0.01 
- print(pow(4,3,5))  # prints 4 
-` 
+```python
+print(pow(2,4))    # prints 16
+print(pow(10,-2))  # prints 0.01
+print(pow(4,3,5))  # prints 4
+``` 
 
 [كود ران](https://repl.it/CTGi)
 

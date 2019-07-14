@@ -8,8 +8,9 @@ localeTitle: Array.prototype.find
 
 بناء الجملة:
 
- `arr.find(callback[, thisArg]) 
-` 
+```
+arr.find(callback[, thisArg])
+``` 
 
 ##### المعلمات
 
@@ -34,35 +35,37 @@ localeTitle: Array.prototype.find
 
 سيجد هذا المثال العنصر المناظر في الصفيف ويعيد الكائن منه.
 
- `let items = [ 
-    {name: 'books', quantity: 2}, 
-    {name: 'movies', quantity: 1}, 
-    {name: 'games', quantity: 5} 
- ]; 
- 
- function findMovies(item) { 
-    return item.name === 'movies'; 
- } 
- 
- console.log(items.find(findMovies)); 
- 
- // Output 
- //  { name: 'movies', quantity: 1 } 
-` 
+```javascript
+let items = [
+    {name: 'books', quantity: 2},
+    {name: 'movies', quantity: 1},
+    {name: 'games', quantity: 5}
+];
+
+function findMovies(item) {
+    return item.name === 'movies';
+}
+
+console.log(items.find(findMovies));
+
+// Output
+//  { name: 'movies', quantity: 1 }
+``` 
 
 يوضح المثال التالي إخراج كل معلمة اختيارية إلى وظيفة رد الاتصال. سيؤدي ذلك إلى `undefined` نظرًا لأن أيًا من العناصر لن يعود صحيحًا من وظيفة رد الاتصال.
 
- `function showInfo(element, index, array) { 
-  console.log('element = ' + element + ', index = ' + index + ', array = ' + array); 
-  return false; 
- } 
- 
- console.log('return = ' + [4, 6, 8, 12].find(showInfo)); 
- 
- // Output 
- //  element = 4, index = 0, array = 4,6,8,12 
- //  element = 6, index = 1, array = 4,6,8,12 
- //  element = 8, index = 2, array = 4,6,8,12 
- //  element = 12, index = 3, array = 4,6,8,12 
- //  return = undefined 
-`
+```javascript
+function showInfo(element, index, array) {
+  console.log('element = ' + element + ', index = ' + index + ', array = ' + array);
+  return false;
+}
+
+console.log('return = ' + [4, 6, 8, 12].find(showInfo));
+
+// Output
+//  element = 4, index = 0, array = 4,6,8,12
+//  element = 6, index = 1, array = 4,6,8,12
+//  element = 8, index = 2, array = 4,6,8,12
+//  element = 12, index = 3, array = 4,6,8,12
+//  return = undefined
+```

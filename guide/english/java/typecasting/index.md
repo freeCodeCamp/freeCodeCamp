@@ -13,6 +13,8 @@ Java, type casting is classified into two types.
 ***1.  Implicit Typecasting***
 Here, Automatic Type casting take place when the two types are compatible
 the target type is larger than the source type.
+Datatype precedence for implicit type casting (widening) is as follows :
+`byte -> short -> int -> long -> float -> double`
 eg.
 ``` java
       int i = 100;
@@ -20,7 +22,8 @@ eg.
       float f = l;	//no explicit type casting required
 ```
 ***2.  Explicit Typecasting***
-When we assign a larger type value to a variable of smaller type, then we need to perform explicit type casting.
+When we assign a larger type value to a variable of smaller type, then we need to perform explicit type casting. Datatype precedence for Explict type casting (narrowing) is as follows :
+`byte <- short <- int <- long <- float <-double`
 eg.
 ```java
       double d = 100.04;

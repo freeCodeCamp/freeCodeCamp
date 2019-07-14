@@ -1,6 +1,6 @@
 ---
 title: "Use display: flex to Position Two Boxes"
-localeTitle: "Usar pantalla
+localeTitle: "Usar pantalla"
 ---
 ## Use la pantalla: flexione para posicionar dos cajas
 
@@ -11,8 +11,8 @@ Este desafío es establecer el primero de cada tres pasos cuando se utiliza Flex
 Ejemplo:
 
 ```CSS
-#main-container { 
-    display: flex; 
- } 
+#main-container {
+    display: flex;
+ }
 
 ```

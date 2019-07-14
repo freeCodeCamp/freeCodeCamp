@@ -37,40 +37,46 @@ localeTitle: مقارنات بايثون
 
 أولا ، إنشاء قائمة في بيثون.
 
- `myListA = [1,2,3] 
-` 
+```python
+myListA = [1,2,3]
+``` 
 
 بعد ذلك ، قم بإنشاء نسخة من تلك القائمة.
 
- `myListB = myListA 
-` 
+```python
+myListB = myListA
+``` 
 
 إذا استخدمنا عامل التشغيل "==" أو عامل التشغيل "is" ، فسيؤدي كلاهما إلى إخراج **صحيح** .
 
- `>>> myListA == myListB # both lists contains similar elements 
- True 
- >>> myListB is myListA # myListB contains the same elements 
- True 
-` 
+```python
+>>> myListA == myListB # both lists contains similar elements
+True
+>>> myListB is myListA # myListB contains the same elements
+True
+``` 
 
 هذا لأن myListA و myListB يشيران إلى نفس متغير القائمة ، الذي عرّفته في بداية برنامج Python الخاص بي. كلا القائمتين متطابقتان تمامًا ، سواء في الهوية أو في المحتوى.
 
 ومع ذلك ، ماذا لو أنشأت الآن قائمة جديدة؟
 
- `myListC = [1,2,3] 
-` 
+```python
+myListC = [1,2,3]
+``` 
 
 لا يزال أداء عامل `==` يشير إلى أن كلا القائمتين متماثلتين ، من حيث المحتوى.
 
- `>>> myListA == myListC 
- True 
-` 
+```python
+>>> myListA == myListC
+True
+``` 
 
 ومع ذلك، أداء `is` مشغل والآن تنتج `False` الانتاج. هذا لأن myListA و myListC هما متغيرين مختلفين ، بالرغم من احتوائهما على نفس البيانات. على الرغم من أنها تبدو متشابهة ، إلا أنها **مختلفة** .
 
- `>>> myListA is myListC 
- False # both lists have different reference 
-` 
+```python
+>>> myListA is myListC
+False # both lists have different reference
+``` 
 
 لنلخص:
 

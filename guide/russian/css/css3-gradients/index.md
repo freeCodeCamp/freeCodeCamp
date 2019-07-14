@@ -24,7 +24,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ##### Линейный градиент - сверху вниз (по умолчанию)
 
-В следующем примере показан линейный градиент, который начинается сверху. Он начинает красный, переход на желтый: ![по умолчанию-линейный градиент-](https://i.imgur.com/2uGfleD.jpg)
+В следующем примере показан линейный градиент, который начинается сверху. Он начинает красный, переход на желтый: ![по умолчанию-линейный градиент-](https://cdn-media-1.freecodecamp.org/imgr/2uGfleD.jpg)
 
 #### пример
 ```
@@ -55,11 +55,11 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  </html> 
 ```
 
-![по умолчанию-линейный градиент-](https://i.imgur.com/CvtXCMd.jpg)
+![по умолчанию-линейный градиент-](https://cdn-media-1.freecodecamp.org/imgr/CvtXCMd.jpg)
 
 ##### Линейный градиент - слева направо
 
-В следующем примере показан линейный градиент, начинающийся слева. Он начинает красный, переход на желтый: ![слева направо](https://i.imgur.com/e4dRvZR.jpg)
+В следующем примере показан линейный градиент, начинающийся слева. Он начинает красный, переход на желтый: ![слева направо](https://cdn-media-1.freecodecamp.org/imgr/e4dRvZR.jpg)
 
 #### пример
 ```
@@ -90,7 +90,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  </html> 
 ```
 
-![слева направо](https://i.imgur.com/k4FSyXz.jpg)
+![слева направо](https://cdn-media-1.freecodecamp.org/imgr/k4FSyXz.jpg)
 
 #### Линейный градиент - диагональ
 
@@ -98,7 +98,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 В следующем примере показан линейный градиент, который начинается в левом верхнем углу (и идет вправо справа). Он начинает красный, переход на желтый:
 
-![диагональ](https://i.imgur.com/YvtbUBH.jpg)
+![диагональ](https://cdn-media-1.freecodecamp.org/imgr/YvtbUBH.jpg)
 
 #### пример
 ```
@@ -129,7 +129,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  </html> 
 ```
 
-![диагонально-ехр](https://i.imgur.com/8gKRhAp.jpg)
+![диагонально-ехр](https://cdn-media-1.freecodecamp.org/imgr/8gKRhAp.jpg)
 
 #### Дополнительная информация:
 

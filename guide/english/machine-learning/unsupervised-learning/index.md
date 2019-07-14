@@ -7,6 +7,7 @@ title: Unsupervised Learning
 - https://en.wikipedia.org/wiki/Unsupervised_learning
 - https://stackoverflow.com/a/1854449/6873133
 - http://mlg.eng.cam.ac.uk/zoubin/papers/ul.pdf
+- https://www.datasciencecentral.com/profiles/blogs/machine-learning-explained-understanding-supervised-unsupervised
 
 #### Draft of Article:
 <!-- Please add your working draft below in GitHub-flavored Markdown -->
@@ -28,6 +29,7 @@ Types:
 
 Clustering: Is used for exploratory data analysis to find hidden patterns or grouping in data. Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.
 
+K-Means Clustering: The goal of the algorithm is to cluster the data in k-groups. It iteratively assigns data points to their nearest cluster, while keeping their centroids as small as possible.
 
 Approaches to unsupervised learning include:
 

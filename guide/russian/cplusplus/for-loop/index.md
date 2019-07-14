@@ -37,7 +37,7 @@ for ( init; condition;) {
 
 ## РЕАЛИЗАЦИЯ:
 
-```C++
+```cpp
 #include <iostream> 
  using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std:: 
  

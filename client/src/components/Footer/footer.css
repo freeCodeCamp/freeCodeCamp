@@ -1,0 +1,39 @@
+.footer {
+  background-color: #f1f5f8;
+  font-size: 0.9em;
+  width: 100%;
+  padding-top: 40px;
+  margin-top: auto;
+}
+
+.footer .col-header {
+  padding-bottom: 5px;
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+.footer a:not([class*='inline']) {
+  display: block;
+  padding-left: 5px
+}
+
+.footer a:hover {
+  outline-offset: 1px;
+  outline: 1px dashed #A0A0A0;
+  background-color: #ffbe41;
+}
+
+.night .footer {
+  color: #606f7b;
+  background: #222;
+}
+
+.night .footer a {
+  color: #006400;
+}
+
+.night .footer a:hover {
+  color: #606f7b;
+  outline-offset: 1px;
+  outline: 1px dashed #A0A0A0;
+}

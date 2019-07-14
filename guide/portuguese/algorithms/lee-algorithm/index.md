@@ -21,7 +21,7 @@ O C ++ já tem a fila implementada na biblioteca `<queue>` , mas se você estive
 
 Código C ++:
 
-```c++
+```cpp
 int dl[] = {-1, 0, 1, 0}; // these arrays will help you travel in the 4 directions more easily 
  int dc[] = {0, 1, 0, -1}; 
  

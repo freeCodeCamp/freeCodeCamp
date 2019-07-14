@@ -10,15 +10,17 @@ localeTitle: أبعاد الشاشة
 
 للحصول على النافذة أو ارتفاع الشاشة / عرض جهاز المستخدم ، يحتوي React Native على واجهة برمجة تطبيقات تسمى `Dimensions` .
 
- `import { Dimensions } from 'react-native'; 
-` 
+```js
+import { Dimensions } from 'react-native';
+``` 
 
 في ما يلي الطرق التي توفرها `Dimensions` API:
 
- `Dimensions.get('window').height; 
- Dimensions.get('window').width; 
- Dimensions.get('screen').height; 
- Dimensions.get('screen').width; 
-` 
+```js
+Dimensions.get('window').height;
+Dimensions.get('window').width;
+Dimensions.get('screen').height;
+Dimensions.get('screen').width;
+``` 
 
 **ملاحظة: كانت هناك بعض المشكلات المعروفة في الماضي باستخدام Dimensions API مثل عدم إرجاع المعلومات الصحيحة عند تدوير المستخدم لجهازه. من الأفضل التأكد من اختبار ذلك على الأجهزة الفعلية قبل نشر التطبيق.**

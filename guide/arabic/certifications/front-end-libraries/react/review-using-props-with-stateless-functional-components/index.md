@@ -12,16 +12,17 @@ localeTitle: استعراض استخدام الدعائم مع مكونات وظ
 
 ### حل
 
- `const Camper = props => (<p>{props.name}</p>); 
- 
- Camper.defaultProps = { 
-  name: 'CamperBot' 
- }; 
- 
- Camper.propTypes = { 
-  name: PropTypes.string.isRequired 
- }; 
-` 
+```javascript
+const Camper = props => (<p>{props.name}</p>);
+
+Camper.defaultProps = {
+  name: 'CamperBot'
+};
+
+Camper.propTypes = {
+  name: PropTypes.string.isRequired
+};
+``` 
 
 ### رابط ذو صلة
 

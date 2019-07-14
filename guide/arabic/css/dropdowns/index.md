@@ -8,38 +8,39 @@ localeTitle: هبوط قطرة
 
 أمثلة:
 
- `
-<div class="dropdown"> 
-  <button class="dropbtn">Name</button> 
-  <div class="dropdownContent"> 
-    <a href="#">One</a> 
-    <a href="#">Two</a> 
-    <a href="#">Three</a> 
-  </div> 
- </div> 
-` 
+```html
+<div class="dropdown">
+  <button class="dropbtn">Name</button>
+  <div class="dropdownContent">
+    <a href="#">One</a>
+    <a href="#">Two</a>
+    <a href="#">Three</a>
+  </div>
+</div>
+``` 
 
 ثم يجب عليك تخصيص الطبقات في CSS
 
- `.dropdown { 
-  position: relative; 
-  display: inline-block; 
- } 
- 
- .dropbtn { 
-  background-color: red; 
-  padding: 10px; 
- } 
- 
- .dropdown-content { 
-  display: none; 
-  position: absolute; 
- } 
- 
- .dropdown:hover .dropdown-content { 
-  display:block; 
- } 
-` 
+```css
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: red;
+  padding: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+
+.dropdown:hover .dropdown-content {
+  display:block;
+}
+``` 
 
 تحتاج إلى فئات div منفصلة لإنشاء الزر ، و div آخر لفصل قائمة ما يحتوي عليه الزر.
 

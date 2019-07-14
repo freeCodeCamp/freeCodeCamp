@@ -3,8 +3,22 @@ title: Use the Triple Equals to Assert Strict Equality
 ---
 ## Use the Triple Equals to Assert Strict Equality
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/use-the-triple-equals-to-assert-strict-equality/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Equality'.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 6 */``` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+The lines in the test should be changed from `assert.fail()` to either `assert.strictEqual()` or `assert.notStrictEqual()`.
+
+## Solution
+```js
+/** 6 - .strictEqual(), .notStrictEqual() **/
+// .strictEqual() compares objects using '==='
+test('#strictEqual, #notStrictEqual', function(){
+  assert.notStrictEqual( 6, '6' );
+  assert.strictEqual( 6, 3*2 );
+  assert.strictEqual( 6 * '2', 12 );
+  assert.notStrictEqual( [1, 'a', {} ], [1, 'a', {}] );
+});
+```
