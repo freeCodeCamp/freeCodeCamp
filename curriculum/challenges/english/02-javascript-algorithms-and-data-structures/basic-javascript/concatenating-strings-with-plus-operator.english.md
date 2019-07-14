@@ -28,13 +28,13 @@ Build <code>myStr</code> from the strings <code>"This is the start. "</code> and
 ```yml
 tests:
   - text: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>
-    testString: assert(myStr === "This is the start. This is the end.", '<code>myStr</code> should have a value of <code>This is the start. This is the end.</code>');
+    testString: assert(myStr === "This is the start. This is the end.");
   - text: Use the <code>+</code> operator to build <code>myStr</code>
-    testString: assert(code.match(/(["']).*(["'])\s*\+\s*(["']).*(["'])/g).length > 1, 'Use the <code>+</code> operator to build <code>myStr</code>');
+    testString: assert(code.match(/(["']).*(["'])\s*\+\s*(["']).*(["'])/g).length > 1);
   - text: <code>myStr</code> should be created using the <code>var</code> keyword.
-    testString: assert(/var\s+myStr/.test(code), '<code>myStr</code> should be created using the <code>var</code> keyword.');
+    testString: assert(/var\s+myStr/.test(code));
   - text: Make sure to assign the result to the <code>myStr</code> variable.
-    testString: assert(/myStr\s*=/.test(code), 'Make sure to assign the result to the <code>myStr</code> variable.');
+    testString: assert(/myStr\s*=/.test(code));
 
 ```
 

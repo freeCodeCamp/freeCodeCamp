@@ -21,9 +21,9 @@ Set <code>someAdjective</code> and append it to <code>myStr</code> using the <co
 ```yml
 tests:
   - text: <code>someAdjective</code> should be set to a string at least 3 characters long
-    testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, '<code>someAdjective</code> should be set to a string at least 3 characters long');
+    testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2);
   - text: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator
-    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0, 'Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');
+    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0);
 
 ```
 

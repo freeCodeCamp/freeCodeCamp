@@ -24,9 +24,9 @@ Call the <code>processArg</code> function with an argument of <code>7</code> and
 ```yml
 tests:
   - text: <code>processed</code> should have a value of <code>2</code>
-    testString: assert(processed === 2, '<code>processed</code> should have a value of <code>2</code>');
+    testString: assert(processed === 2);
   - text: You should assign <code>processArg</code> to <code>processed</code>
-    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), 'You should assign <code>processArg</code> to <code>processed</code>');
+    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code));
 
 ```
 

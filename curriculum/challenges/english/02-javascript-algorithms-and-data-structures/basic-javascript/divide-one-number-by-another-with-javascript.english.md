@@ -30,9 +30,9 @@ Change the <code>0</code> so that the <code>quotient</code> is equal to <code>2<
 ```yml
 tests:
   - text: Make the variable <code>quotient</code> equal to 2.
-    testString: assert(quotient === 2, 'Make the variable <code>quotient</code> equal to 2.');
+    testString: assert(quotient === 2);
   - text: Use the <code>/</code> operator
-    testString: assert(/\d+\s*\/\s*\d+/.test(code), 'Use the <code>/</code> operator');
+    testString: assert(/\d+\s*\/\s*\d+/.test(code));
 
 ```
 
