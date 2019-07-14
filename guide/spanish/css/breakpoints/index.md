@@ -174,7 +174,7 @@ Los puntos de interrupción que se basan en el contenido en lugar de en el dispo
 
 También puede establecer un ancho mínimo y máximo, que le permita experimentar con diferentes rangos. Este dispara aproximadamente entre teléfonos inteligentes y tamaños de monitores y de escritorio más grandes
 
-```code
+```css
 @media only screen and (min-width: 700px) and (max-width: 1500px) { 
   something { 
     something: something; 

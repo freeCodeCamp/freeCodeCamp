@@ -8,12 +8,24 @@ challengeType: 1
 <section id='description'>
 As seen in the previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.
 Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.
-<blockquote>let obj = {<br>&nbsp;&nbsp;name:"FreeCodeCamp",<br>&nbsp;&nbsp;review:"Awesome"<br>};<br>Object.freeze(obj);<br>obj.review = "bad"; //will be ignored. Mutation not allowed<br>obj.newProp = "Test"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: "FreeCodeCamp", review:"Awesome"}</blockquote>
+
+```js
+let obj = {
+  name:"FreeCodeCamp",
+  review:"Awesome"
+};
+Object.freeze(obj);
+obj.review = "bad"; // will be ignored. Mutation not allowed
+obj.newProp = "Test"; // will be ignored. Mutation not allowed
+console.log(obj); 
+// { name: "FreeCodeCamp", review:"Awesome"}
+```
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code>, add, or delete properties .
+In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able to alter the value of <code>PI</code>, add, or delete properties.
 </section>
 
 ## Tests
@@ -22,13 +34,13 @@ In this challenge you are going to use <code>Object.freeze</code> to prevent mat
 ```yml
 tests:
   - text: Do not replace <code>const</code> keyword.
-    testString: 'getUserInput => assert(getUserInput("index").match(/const/g), "Do not replace <code>const</code> keyword.");'
+    testString: getUserInput => assert(getUserInput('index').match(/const/g), 'Do not replace <code>const</code> keyword.');
   - text: <code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS/g), "<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).");'
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS/g), '<code>MATH_CONSTANTS</code> should be a constant variable (by using <code>const</code>).');
   - text: Do not change original <code>MATH_CONSTANTS</code>.
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g), "Do not change original <code>MATH_CONSTANTS</code>.");'
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+MATH_CONSTANTS\s+=\s+{\s+PI:\s+3.14\s+};/g), 'Do not change original <code>MATH_CONSTANTS</code>.');
   - text: <code>PI</code> equals <code>3.14</code>.
-    testString: 'assert(PI === 3.14, "<code>PI</code> equals <code>3.14</code>.");'
+    testString: assert(PI === 3.14, '<code>PI</code> equals <code>3.14</code>.');
 
 ```
 
@@ -51,7 +63,7 @@ function freezeObj() {
   // change code above this line
   try {
     MATH_CONSTANTS.PI = 99;
-  } catch( ex ) {
+  } catch(ex) {
     console.log(ex);
   }
   return MATH_CONSTANTS.PI;
@@ -80,7 +92,7 @@ function freezeObj() {
   // change code above this line
   try {
     MATH_CONSTANTS.PI = 99;
-  } catch( ex ) {
+  } catch(ex) {
     console.log(ex);
   }
   return MATH_CONSTANTS.PI;

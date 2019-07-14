@@ -25,9 +25,9 @@ Declare a <code>store</code> variable and assign it to the <code>createStore()</
 ```yml
 tests:
   - text: The redux store exists.
-    testString: 'assert(typeof store.getState === "function", "The redux store exists.");'
+    testString: assert(typeof store.getState === 'function', 'The redux store exists.');
   - text: The redux store has a value of 5 for the state.
-    testString: 'assert(store.getState()=== 5, "The redux store has a value of 5 for the state.");'
+    testString: assert(store.getState()=== 5, 'The redux store has a value of 5 for the state.');
 
 ```
 

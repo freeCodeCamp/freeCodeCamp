@@ -14,8 +14,9 @@ localeTitle: استخدم بعض الأسلوب للتحقق من أن أي عن
 
 ### حل:
 
- `function checkPositive(arr) { 
-  return arr.some((elem) => elem > 0); 
- } 
- checkPositive([1, 2, 3, -4, 5]); 
-`
+```javascript
+function checkPositive(arr) {
+  return arr.some((elem) => elem > 0);
+}
+checkPositive([1, 2, 3, -4, 5]);
+```

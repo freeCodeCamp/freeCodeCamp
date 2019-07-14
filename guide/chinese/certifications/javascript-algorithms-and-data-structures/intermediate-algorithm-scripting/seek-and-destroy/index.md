@@ -53,7 +53,6 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/95)
 
 ### 代码说明：
 
@@ -85,7 +84,6 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/Ck2m/0)
 
 ### 代码说明：
 

@@ -26,7 +26,6 @@ function largestPrimeFactor(number) {
  } 
 ```
 
-*   [运行代码](https://repl.it/@ezioda004/Problem-3-Largest-prime-factor)
 
 ### 资源：
 

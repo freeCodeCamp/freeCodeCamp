@@ -24,7 +24,7 @@ Em caso afirmativo, verifique se você está adicionando os sinalizadores apropr
 
 Certifique-se de verificar se o seu intervalo de numeração está correto - o desafio nos pede para negar todos os números de 0 a 99. Isso pode ser feito usando o cursor negado colocado imediatamente após o primeiro parêntese de abertura do seu regexp.
 
-```javacsript
+```js
 let numbersRegExp = /[^0-99]/ig; 
 ```
 

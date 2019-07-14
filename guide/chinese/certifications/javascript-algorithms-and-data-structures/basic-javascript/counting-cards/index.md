@@ -120,7 +120,6 @@ function cc(card) {
  } 
 ```
 
-·在[repl.it上](https://repl.it/@AdrianSkar/Basic-JS-Counting-cards)运行代码。
 
 ### 代码说明
 

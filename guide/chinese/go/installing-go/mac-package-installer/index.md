@@ -12,7 +12,7 @@ localeTitle: 使用Package Installer在Mac OS X中安装Go
 
 要检查是否已成功安装，请打开终端并使用：
 
-```sh
+```shell
 $ go version 
 ```
 

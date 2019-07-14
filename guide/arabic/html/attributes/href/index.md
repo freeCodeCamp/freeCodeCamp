@@ -22,31 +22,31 @@ localeTitle: أ href
 
 \-> شعار Google الذي يشير إلى صفحة Google الرئيسية
 
- `
-<a href="https://www.google.com"> 
- <img border="0" alt="Google" src="https://www.google.com/logos/doodles/2015/googles-new-logo-5078286822539264.3-hp2x.gif" width="100" height="100"> 
-` 
+```html
+<a href="https://www.google.com">
+<img border="0" alt="Google" src="https://www.google.com/logos/doodles/2015/googles-new-logo-5078286822539264.3-hp2x.gif" width="100" height="100">
+``` 
 
 العلامات التي تستخدم HREF:
 
- `
-<a> 
- <area> 
- <base> 
- <cursor> 
- <discard> 
- <feImage> 
- <hatch> 
- <image> 
- <link> 
- <mesh> 
- <meshgradient> 
- <mpath> 
- <pattern> 
- <script> 
- <textPath> 
- <use> 
-` 
+```html
+<a>
+<area>
+<base>
+<cursor>
+<discard>
+<feImage>
+<hatch>
+<image>
+<link>
+<mesh>
+<meshgradient>
+<mpath>
+<pattern>
+<script>
+<textPath>
+<use>
+``` 
 
 #### معلومات اكثر:
 

@@ -36,7 +36,7 @@ export default function ToggleButton({
           disabled={value}
           type='radio'
           value={1}
-          >
+        >
           {onLabel}
         </TB>
         <TB
@@ -46,7 +46,7 @@ export default function ToggleButton({
           disabled={!value}
           type='radio'
           value={2}
-          >
+        >
           {offLabel}
         </TB>
       </BSBG>
