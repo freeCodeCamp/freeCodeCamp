@@ -195,6 +195,10 @@
 /* print styles */
 
 @media print {
+  @page {
+    margin: 0;
+  }
+
   * {
     color-adjust: exact !important;
   }
