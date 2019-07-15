@@ -26,9 +26,9 @@
   margin-top: 1em;
 }
 
-@media(max-width: 1515px) {
+@media (max-width: 1515px) {
   .certificate-outer-wrapper {
-     margin-top: 0;
+    margin-top: 0;
   }
 }
 
@@ -92,6 +92,9 @@
 
 .certification-namespace h1 {
   font-size: 40px;
+}
+
+.certification-namespace h1 strong {
   color: #006400;
 }
 
@@ -207,7 +210,7 @@
     color-adjust: exact !important;
   }
 
-  .certification-namespace.container {
+  .certification-namespace .container {
     padding: 25px;
   }
 
@@ -220,7 +223,7 @@
     padding: 25px 0 15px;
   }
 
-  .certificate-inner-wrapper.certification-namespace.container{
-     max-height: 772px;
+  .certificate-inner-wrapper .certification-namespace .container {
+    max-height: 772px;
   }
 }
