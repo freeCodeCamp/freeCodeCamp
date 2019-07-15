@@ -12,10 +12,10 @@ Node.js es un tiempo de ejecución de JavaScript creado en el motor de JavaScrip
     Cada navegador tiene un motor JavaSript incorporado para procesar archivos JavaScript contenidos en sitios web. Google Chrome utiliza el motor V8 que se construye utilizando C ++. Node.js también usa este motor súper rápido para interpretar archivos JavaScript.
 *   Node.js utiliza un modelo controlado por eventos.  
     Esto significa que Node.js espera que ciertos eventos tengan lugar. Entonces actúa sobre esos eventos. Los eventos pueden ser desde un clic hasta una solicitud HTTP. También podemos declarar nuestros propios eventos personalizados y hacer que node.js escuche esos eventos.
-*   Node.js utiliza un modelo de E / S sin bloqueo.  
-    Sabemos que las tareas de E / S llevan mucho más tiempo que las tareas de procesamiento. Node.js usa funciones de devolución de llamada para manejar tales solicitudes.
+*   Node.js utiliza un modelo de E/S sin bloqueo.  
+    Sabemos que las tareas de E/S llevan mucho más tiempo que las tareas de procesamiento. Node.js usa funciones de devolución de llamada para manejar tales solicitudes.
 
-Supongamos que una tarea de E / S en particular tarda 5 segundos en ejecutarse. Y queremos realizar esta E / S dos veces en nuestro código.
+Supongamos que una tarea de E/S en particular tarda 5 segundos en ejecutarse. Y queremos realizar esta E/S dos veces en nuestro código.
 
 **Python**
 
@@ -45,9 +45,14 @@ function my_io_task() {
 
 Ambos se parecen, pero el tiempo de ejecución es diferente. El código de Python tarda 10 segundos en ejecutarse, mientras que el código Node.js tarda solo 5 segundos en ejecutarse.
 
-Node.js toma menos tiempo debido a su modelo de E / S sin bloqueo. La primera llamada a `my_io_task()` inicia el temporizador y lo deja allí. No espera la respuesta de la función, en su lugar, pasa a llamar al segundo `my_io_task()` , inicia el temporizador y lo deja allí.
+Node.js toma menos tiempo debido a su modelo de E/S no bloqueante. La primera llamada a ```my_io_task()``` inicia el temporizador y lo deja allí. No espera la respuesta de la función, en su lugar, pasa a llamar al segundo ```my_io_task()```, inicia el temporizador y lo deja allí.
 
 Cuando el temporizador completa su ejecución tomando 5 segundos, se llama a la función e imprime `done` en la consola. Dado que ambos temporizadores se inician juntos, se completan juntos y, por lo tanto, toman la misma cantidad de tiempo.
+
+#### Por qué usar NodeJS:
+1. Genial para principiantes. JavaScript es un lenguaje amigable para principiantes.
+2. Gran soporte por la comunidad y gran cantidad de módulos (Express, Grunt, etc.)
+3. Amplio rango de opciones de alojamiento.
 
 #### Más información:
 

@@ -46,7 +46,6 @@ This program is very simple, the trick is to understand what a boolean primitive
     // test here
     booWho(null);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnK/0' target='_blank' rel='nofollow'>Run Code</a>
 
 # Code Explanation:
 
@@ -54,7 +53,6 @@ Uses the operator `typeof` to check if the variable is a boolean. If it is, it w
 
 #### Relevant Links
 
-*   <a>Using typeof</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof' target='_blank' rel='nofollow'>typeof</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:

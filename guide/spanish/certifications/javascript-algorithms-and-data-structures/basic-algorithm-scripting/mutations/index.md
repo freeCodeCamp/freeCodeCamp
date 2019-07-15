@@ -51,7 +51,6 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/30)
 
 ### Explicación del código:
 
@@ -79,7 +78,6 @@ function mutation(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/31)
 
 ### Explicación del código:
 

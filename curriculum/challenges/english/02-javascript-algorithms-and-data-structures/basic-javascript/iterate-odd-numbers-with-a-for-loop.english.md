@@ -32,9 +32,9 @@ Push the odd numbers from 1 through 9 to <code>myArray</code> using a <code>for<
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: assert(code.match(/for\s*\(/g).length > 1, 'You should be using a <code>for</code> loop for this.');
+    testString: assert(code.match(/for\s*\(/g).length > 1);
   - text: <code>myArray</code> should equal <code>[1,3,5,7,9]</code>.
-    testString: assert.deepEqual(myArray, [1,3,5,7,9], '<code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');
+    testString: assert.deepEqual(myArray, [1,3,5,7,9]);
 
 ```
 

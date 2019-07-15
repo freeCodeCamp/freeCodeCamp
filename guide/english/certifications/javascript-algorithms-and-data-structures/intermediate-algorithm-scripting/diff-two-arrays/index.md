@@ -63,7 +63,6 @@ The best way to go about the callback function is to check if the number from th
 
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CLme/0">Run Code</a>
 
 ### Code Explanation:
 
@@ -85,7 +84,6 @@ Read the comments in the code.
 
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CNYb/0">Run Code</a>
 
 ### Code Explanation:
 
@@ -98,24 +96,6 @@ Explain solution here and add any relevant links
 *   <a href='https://devdocs.io/javascript/global_objects/array/includes' target='_blank' rel='nofollow'>Array.prototype.includes (Devdocs)</a>
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution (Declarative Solution):
-
-    function diffArray(arr1, arr2) {
-        return arr1
-          .filter(el => !arr2.includes(el))
-          .concat(
-            arr2.filter(el => !arr1.includes(el))
-          )
-    }
-
-    diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
-
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href="https://repl.it/CNYU/0">Run Code</a>
-
-### Code Explanation:
-
-Explain solution here and add any relevant links
-
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution Alternative (Declarative Solution):
     function diffArray(arr1, arr2) {
       return [
         ...diff(arr1, arr2),

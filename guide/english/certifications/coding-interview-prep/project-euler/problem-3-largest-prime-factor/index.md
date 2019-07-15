@@ -23,7 +23,7 @@ function largestPrimeFactor(number) {
   return max;
 }
 ```
-- [Run Code](https://repl.it/@ezioda004/Problem-3-Largest-prime-factor)
+
 ### Resources:
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Prime_number)

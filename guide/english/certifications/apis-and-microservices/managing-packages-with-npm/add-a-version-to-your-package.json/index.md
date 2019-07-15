@@ -10,4 +10,4 @@ You should go over to the package.json file in your project. Versions follow a s
 "version": "x.x.x"
 ```
 
-<a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/certifications/apis-and-microservices/managing-packages-with-npm/add-a-version-to-your-package.json/index.md' target='_blank' rel='nofollow'>Help our community expand these hints and guides</a>.
+This convention is also known as _**semantic versioning**_ where the versions follow the format `MAJOR.MINOR.PATCH` whenever a new release is made.

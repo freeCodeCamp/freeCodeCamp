@@ -52,7 +52,6 @@ Pay close attention to the timing of the storing of variables when working with 
       return results;
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/734' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -80,7 +79,6 @@ Pay close attention to the timing of the storing of variables when working with 
       });
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/733' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -103,7 +101,6 @@ Pay close attention to the timing of the storing of variables when working with 
       return arr.map(Function.apply.bind(Math.max, null));
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/17' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 

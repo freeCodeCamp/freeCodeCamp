@@ -83,7 +83,6 @@ function sequentialSizes(val) {
 // Change this value to test
 sequentialSizes(1);
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Multiple-opts-in-switch).
 
 ### Code explanation
 Since you already have a variable named `answer` defined and the function returns it, you can just modify its value on each group of case statements to fit the exercise requirements. 

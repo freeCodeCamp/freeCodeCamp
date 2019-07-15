@@ -60,7 +60,6 @@ You can't have more than three consecutive Roman numerals together.
     // test here
     convertToRoman(36);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLmf/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -125,7 +124,6 @@ You can't have more than three consecutive Roman numerals together.
     // test here
     convertToRoman(97);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/C1YV' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -181,7 +179,6 @@ You can't have more than three consecutive Roman numerals together.
     // test here
     convertToRoman(36);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/C1YV' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
