@@ -23,9 +23,13 @@
 }
 
 .certificate-outer-wrapper {
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
+  margin-top: 1em;
+}
+
+@media(max-width: 1515px) {
+  .certificate-outer-wrapper {
+     margin-top: 0;
+  }
 }
 
 .certification-namespace.certificate-inner-wrapper {
@@ -196,7 +200,7 @@
 
 @media print {
   @page {
-    margin: 0;
+    margin: 10px;
   }
 
   * {
@@ -210,5 +214,13 @@
   .certification-namespace .information {
     min-height: 0;
     padding: 25px 0;
+  }
+
+  .certification-namespace .verify {
+    padding: 25px 0 15px;
+  }
+
+  .certificate-inner-wrapper.certification-namespace.container{
+     max-height: 772px;
   }
 }
