@@ -4,8 +4,16 @@ title: goto
 
 # Intro to the use of goto and labels
 
-goto is one of the most powerful pieces of logic in C/C++. Crazy amounts of optimization can be achieved using goto, provided it is used properly. **It is, however, discouraged for use in C++, since better ways of programming exist, and it [leads to spaghetti code](https://stackoverflow.com/questions/3517726/what-is-wrong-with-using-goto#3517746)**  
-It does exactly what it is named as. It goes to the mentioned occurence of the next label, wherever may it be.
+`goto label` goes to the mentioned occurence of the `label`, which can be either before or after the `goto` statement, as long as the `label` is in the same function as the `goto` statement.
+
+If a `goto` causes program execution to exit some scope where a variable is defined, then the variable will be destroyed. If multiple of these variables exist, then they will be destroyed in opposite order of their construction.
+
+See https://en.cppreference.com/w/cpp/language/goto for more information.
+
+A common use of `goto` is to break out of a multiply-nested loop following some condition. However, there are several C++ language constructs that can be used to avoid this use case, including early `returns`, refactoring into different functions, and local variables in the loop.
+
+**The use of goto is discouraged in C++, since it encourages poor design and creates code that is hard to debug and trace through. https://stackoverflow.com/questions/3517726/what-is-wrong-with-using-goto#3517746)**  
+
 
 # Terminology
 
@@ -14,20 +22,17 @@ It does exactly what it is named as. It goes to the mentioned occurence of the n
     
 # Syntax
 
-```C++
-goto label_name;
-//This takes the program flow to the next appearance of label_name.
+```cpp
+goto labelName; //This takes the program flow to the next appearance of label.
+labelName: //to create a label name, write the name followed by a colon
 ```
-Labels are defined as a name, followed by a colon (**:**)
-```C++
-label_name:
-```
+
 # Scope
 
 `goto` can only jump to a label in the **same scope** (set of braces - {}).
 
 ### Example:
-```C++
+```cpp
 #include <iostream> 
 int main(){
     goto x:
@@ -43,7 +48,7 @@ int someFunction(){
 
 `goto` is something that transcends all loops. To be clearer on this point, here is an example.
 
-```C++
+```cpp
 #include <iostream>
 using std::cout;
 
@@ -59,12 +64,12 @@ label:
     return 0;
 }
 ```
-[Try the code here!](https://wandbox.org/permlink/2zm4f4WMR7ybvJlQ)
 
 Even though the above code works, a **much** better option is to structure your code such that `goto` is not needed for the program flow. For this reason, many modern programming languages (like java, javascript, python, etc.) do support `goto`. Instead, control statements like `break` and `continue` are used.
 
 The above example can be rewritten using `break` as:
-```C++
+
+```cpp
 #include <iostream>
 using std::cout;
 
@@ -78,7 +83,6 @@ int main(){
     return 0;
 }
 ```
-[Try the code here!](https://wandbox.org/permlink/faRaw7paaRwWGkln)
 
 **However, care must be taken to use goto very carefully**, especially in the early days of coding as it can lead to crazy issues, if not understood well enough. `goto` violates the standard flow of the program, and as C++ is an object oriented language, goto should **NEVER EVER, EVER** be used in a normal program, under **ANY CIRCUMSTANCES**. The same effect can usually be replicated by using functions or loops, with the resulting code being easier to read as well as maintain.
 
