@@ -58,20 +58,20 @@ Agora, a matriz já está classificada, mas nosso algoritmo não sabe se está c
 ```java
 public int[] bubSort(int []ar)
 {
-	int i, j, temp;
-	for (i = 0; i < n; i++)
-	{
-		for (j = 0; j < n - 1 - i; j++)
-		{
-			if (ar[j] > ar[j+1])
-			{
-				temp = ar[j];
-				ar[j] = ar[j + 1];
-				ar[j + 1] = temp;
-			}
-		}
-	}
-	return ar[];
+  int i, j, temp;
+  for (i = 0; i < n; i++)
+  {
+    for (j = 0; j < n - 1 - i; j++)
+    {
+      if (ar[j] > ar[j+1])
+      {
+        temp = ar[j];
+        ar[j] = ar[j + 1];
+        ar[j + 1] = temp;
+      }
+    }
+  }
+  return ar[];
 }
 ```
 ### Exemplo em C++
@@ -80,36 +80,36 @@ public int[] bubSort(int []ar)
 using namespace std;
 int BubbleSort[] (int arr[], int n)
 {
-	int i, j, temp;
-	for (i = 0; i < n; ++i)
-	{
-		for (j = 0; j < n-i-1; ++j)
-		{
-			if (arr[j] > arr[j+1])
-			{
-                                temp = arr[j]
-				arr[j] = arr[j+1];
-				arr[j+1] = temp;
-			}
-		}
-	}
-        return arr;
-}	
+  int i, j, temp;
+  for (i = 0; i < n; ++i)
+  {
+    for (j = 0; j < n-i-1; ++j)
+    {
+      if (arr[j] > arr[j+1])
+      {
+        temp = arr[j]
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+  return arr;
+}
 ```
 ### Exemplo em Swift
 ```swift
 func bubbleSort(_ inputArray: [Int]) -> [Int] {
-    guard inputArray.count > 1 else { return inputArray } // make sure our input array has more than 1 element
-    var numbers = inputArray // function arguments are constant by default in Swift, so we make a copy
-    for i in 0..<(numbers.count - 1) {
-        for j in 0..<(numbers.count - i - 1) {
-            if numbers[j] > numbers[j + 1] {
-                numbers.swapAt(j, j + 1)
-            }
-        }
+  guard inputArray.count > 1 else { return inputArray } // make sure our input array has more than 1 element
+  var numbers = inputArray // function arguments are constant by default in Swift, so we make a copy
+  for i in 0..<(numbers.count - 1) {
+    for j in 0..<(numbers.count - i - 1) {
+      if numbers[j] > numbers[j + 1] {
+        numbers.swapAt(j, j + 1)
+      }
     }
-    return numbers // return the sorted array
-} 
+  }
+  return numbers // return the sorted array
+}
 ```
 ### Exemplo em Python
 ```python
@@ -136,20 +136,20 @@ Este código usará bubble sort para classificar o array.
 ### Exemplo em JavaScript
 
 ```js
-let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9]; 
- let sorted = false 
+let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9];
+let sorted = false
  
- while(!sorted) { 
-  sorted = true 
-  for(var i=0; i < arr.length; i++) { 
-    if(arr[i] < arr[i-1]) { 
-      let temp = arr[i]; 
+while(!sorted) {
+  sorted = true
+  for(var i=0; i < arr.length; i++) {
+    if(arr[i] < arr[i-1]) {
+      let temp = arr[i];
       arr[i] = arr[i-1]; 
-      arr[i-1] = temp; 
-      sorted = false; 
-    } 
-  } 
- } 
+      arr[i-1] = temp;
+      sorted = false;
+    }
+  }
+}
 ```
 ### Exemplo em Java
 
@@ -158,65 +158,62 @@ Exemplo 1:
 ```java
 public int[] bubSortModified(int []ar)
 {
-	int i, j, temp;
-	boolean sorted;
-	for (i = 0; i < n; i++)
-	{
-		sorted = true;
-		for (j = 0; j < n - 1 - i; j++)
-		{
-			if (ar[j] > ar[j+1])
-			{
-				sorted = false; //implying array was not sorted already, swaps are needed
-				temp = ar[j];
-				ar[j] = ar[j + 1];
-				ar[j + 1] = temp;				
-			}
-		}
-		if (sorted == true)
-			break;	//if array is sorted, stop iterating
-	}
-	return ar[];
+  int i, j, temp;
+  boolean sorted;
+  for (i = 0; i < n; i++)
+  {
+    sorted = true;
+    for (j = 0; j < n - 1 - i; j++)
+    {
+      if (ar[j] > ar[j+1])
+      {
+        sorted = false; //implying array was not sorted already, swaps are needed
+        temp = ar[j];
+        ar[j] = ar[j + 1];
+        ar[j + 1] = temp;       
+      }
+    }
+    if (sorted == true)
+      break; //if array is sorted, stop iterating
+  }
+  return ar[];
 }
 ```
 
 Exemplo 2:
 
 ```java
-public class bubble-sort { 
-    static void sort(int[] arr) { 
-        int n = arr.length; 
-        int temp = 0; 
-         for(int i=0; i < n; i++){ 
-                 for(int x=1; x < (ni); x++){ 
-                          if(arr[x-1] > arr[x]){ 
-                                 temp = arr[x-1]; 
-                                 arr[x-1] = arr[x]; 
-                                 arr[x] = temp; 
-                         } 
+public class bubble-sort {
+  static void sort(int[] arr) {
+    int n = arr.length;
+    int temp = 0;
+    for(int i=0; i < n; i++){
+      for(int x=1; x < (ni); x++){
+        if(arr[x-1] > arr[x]){
+          temp = arr[x-1];
+          arr[x-1] = arr[x];
+          arr[x] = temp;
+        }
+      }
+    }
+  }
+  
+  public static void main(String[] args) {
+    for(int i=0; i < 15; i++){
+      int arr[i] = (int)(Math.random() * 100 + 1);
+    }
  
-                 } 
-         } 
- 
-    } 
-    public static void main(String[] args) { 
- 
-        for(int i=0; i < 15; i++){ 
-            int arr[i] = (int)(Math.random() * 100 + 1); 
-        } 
- 
-                System.out.println("array before sorting\n"); 
-                for(int i=0; i < arr.length; i++){ 
-                        System.out.print(arr[i] + " "); 
-                } 
-                bubbleSort(arr); 
-                System.out.println("\n array after sorting\n"); 
-                for(int i=0; i < arr.length; i++){ 
-                        System.out.print(arr[i] + " "); 
-                } 
- 
-        } 
- } 
+    System.out.println("array before sorting\n");
+    for(int i=0; i < arr.length; i++){
+      System.out.print(arr[i] + " ");
+    }
+    bubbleSort(arr);
+    System.out.println("\n array after sorting\n");
+    for(int i=0; i < arr.length; i++){
+      System.out.print(arr[i] + " ");
+    }
+  }
+ }
 ```
 
 ### Exemplo em C++
@@ -227,23 +224,23 @@ Exemplo 1:
 // Implementação Recursiva
 void bubblesort(int arr[], int n)
 {
-	if(n==1)	//Initial Case
-		return;
-	bool swap_flag = false;
-	for(int i=0;i<n-1;i++)	//After this pass the largest element will move to its desired location.
-	{
-		if(arr[i]>arr[i+1])
-		{
-			int temp=arr[i];
-			arr[i]=arr[i+1];
-			arr[i+1]=temp;
-			swap_flag = true;
-		}
-	}
-        // IF no two elements were swapped in the loop, then return, as array is sorted 
-	if(swap_flag == false)
-		return;
-	bubblesort(arr,n-1);	//Recursion for remaining array
+  if(n==1) //Initial Case
+    return;
+  bool swap_flag = false;
+  for(int i=0;i<n-1;i++) //After this pass the largest element will move to its desired location.
+  {
+    if(arr[i]>arr[i+1])
+    {
+      int temp=arr[i];
+      arr[i]=arr[i+1];
+      arr[i+1]=temp;
+      swap_flag = true;
+    }
+  }
+// IF no two elements were swapped in the loop, then return, as array is sorted 
+  if(swap_flag == false)
+    return;
+  bubblesort(arr,n-1); //Recursion for remaining array
 }
 ```
 
@@ -251,20 +248,20 @@ Exemplo 2:
 
 ```cpp
 void bubblesort(int arr[], int n) 
- { 
-    if(n==1)    //Initial Case 
-        return; 
-    for(int i=0;i<n-1;i++)  //After this pass the largest element will move to its desired location. 
+{
+  if(n==1) //Initial Case 
+    return; 
+  for(int i=0;i<n-1;i++) //After this pass the largest element will move to its desired location. 
+  { 
+    if(arr[i]>arr[i+1]) 
     { 
-        if(arr[i]>arr[i+1]) 
-        { 
-            temp=arr[i]; 
-            arr[i]=arr[i+1]; 
-            arr[i+1]=temp; 
-        } 
+      temp=arr[i]; 
+      arr[i]=arr[i+1]; 
+      arr[i+1]=temp; 
     } 
-    bubblesort(arr,n-1);    //Recursion for remaining array 
- } 
+  } 
+  bubblesort(arr,n-1); //Recursion for remaining array
+}
 ```
 
 ### Exemplo em Ruby
@@ -285,19 +282,18 @@ arr end
 
 ### Exemplo em PHP
 ```php
-
 function bubble_sort($arr) {
-    $size = count($arr)-1;
-    for ($i=0; $i<$size; $i++) {
-        for ($j=0; $j<$size-$i; $j++) {
-            $k = $j+1;
-            if ($arr[$k] < $arr[$j]) {
-                // Swap elements at indices: $j, $k
-                list($arr[$j], $arr[$k]) = array($arr[$k], $arr[$j]);
-            }
-        }
+  $size = count($arr)-1;
+  for ($i=0; $i<$size; $i++) {
+    for ($j=0; $j<$size-$i; $j++) {
+      $k = $j+1;
+      if ($arr[$k] < $arr[$j]) {
+        // Swap elements at indices: $j, $k
+        list($arr[$j], $arr[$k]) = array($arr[$k], $arr[$j]);
+      }
     }
-    return $arr;// return the sorted array
+  }
+  return $arr;// return the sorted array
 }
 
 $arr = array(1,3,2,8,5,7,4,0);
@@ -307,7 +303,6 @@ print_r($arr);
 $arr = bubble_sort($arr);
 print("After sorting by using bubble sort");
 print_r($arr);
-
 ```
 
 ### Exemplo em C
@@ -325,6 +320,7 @@ int main(void) {
   }
   return 0;
 }
+
 int BubbleSort(int array[], n)
 {
 for (int i = 0 ; i < n - 1; i++)
