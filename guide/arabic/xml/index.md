@@ -8,25 +8,27 @@ localeTitle: لغة الترميز الموسعة (XML)
 
 \## تركيب XML يشير بناء جملة XML إلى القواعد التي تحدد كيفية كتابة تطبيق XML. بناء جملة XML بشكل مستقيم جداً ، وهذا يجعل XML سهل التعلم. يجب أن تحتوي مستندات XML على عنصر أساسي واحد هو أصل كل العناصر الأخرى:
 
- `<root> 
-  <child> 
-    <subchild>.....</subchild> 
-  </child> 
- </root> 
-` 
+```
+<root>
+  <child>
+    <subchild>.....</subchild>
+  </child>
+</root>
+``` 
 
 #### يجب أن يكون XML عنصرًا أساسيًا
 
 فوق بناء الجملة يظهر العنصر الجذر الذي هو ضروري أثناء إنشاء رمز XML. يمكن إظهار ذلك من خلال المثال: -
 
- `<?xml version="1.0" encoding="UTF-8"?> 
- <note> 
-  <to>Tove</to> 
-  <from>Jani</from> 
-  <heading>Reminder</heading> 
-  <body>Don't forget me this weekend!</body> 
- </note> 
-` 
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<note>
+  <to>Tove</to>
+  <from>Jani</from>
+  <heading>Reminder</heading>
+  <body>Don't forget me this weekend!</body>
+</note>
+``` 
 
 في هذا المثال ، "note" هو العنصر الجذر.
 

@@ -8,14 +8,16 @@ localeTitle: التاريخ الآن
 
 ### بناء الجملة
 
- `var timeInMs = Date.now(); 
-` 
+```js
+var timeInMs = Date.now();
+``` 
 
 ### مثال
 
- `Date.now(); 
- // 1508783660969 
-` 
+```js
+Date.now();
+// 1508783660969
+``` 
 
 #### معلومات اكثر:
 

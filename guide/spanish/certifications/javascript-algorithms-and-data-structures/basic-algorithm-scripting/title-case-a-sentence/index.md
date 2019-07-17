@@ -58,7 +58,6 @@ String.prototype.replaceAt = function(index, character) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/8)
 
 ### Explicación del código:
 
@@ -86,7 +85,6 @@ function titleCase(str) {
  titleCase("I'm a little tea pot"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/9)
 
 ### Explicación del código:
 
@@ -103,7 +101,6 @@ function titleCase(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/14)
 
 ### Explicación del código:
 

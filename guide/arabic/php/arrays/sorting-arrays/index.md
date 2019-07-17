@@ -10,121 +10,133 @@ localeTitle: فرز المصفوفات
 
 تقوم الدالة `sort()` بفرز قيم صفيف بترتيب أبجدي / رقمي تصاعدي (على سبيل المثال A ، B ، C ، D ، E… 5 ، 4 ، 3 ، 2 ، 1 ...)
 
- `<?php 
- $freecodecamp = array("free", "code", "camp"); 
- sort($freecodecamp); 
- print_r($freecodecamp); 
-` 
+```PHP
+<?php
+$freecodecamp = array("free", "code", "camp");
+sort($freecodecamp);
+print_r($freecodecamp);
+``` 
 
 **انتاج:**
 
- `Array 
- ( 
-    [0] => camp 
-    [1] => code 
-    [2] => free 
- ) 
-` 
+```text
+Array
+(
+    [0] => camp
+    [1] => code
+    [2] => free
+)
+``` 
 
 ### rsort ()
 
 تقوم `rsort()` بفرز قيم صفيف في ترتيب أبجدي / رقمي تنازلي (Eg Z، Y، X، W، V… 5، 4، 3، 2، 1…)
 
- `<?php 
- $freecodecamp = array("free", "code", "camp"); 
- rsort($freecodecamp); 
- print_r($freecodecamp); 
-` 
+```PHP
+<?php
+$freecodecamp = array("free", "code", "camp");
+rsort($freecodecamp);
+print_r($freecodecamp);
+``` 
 
 **انتاج:**
 
- `Array 
- ( 
-    [0] => free 
-    [1] => code 
-    [2] => camp 
- ) 
-` 
+```text
+Array
+(
+    [0] => free
+    [1] => code
+    [2] => camp
+)
+``` 
 
 ### asort ()
 
 تقوم الدالة `asort()` بفرز مصفوفة ارتباطية ، حسب قيمها ، بترتيب أبجدي / رقمي تصاعدي (على سبيل المثال A ، B ، C ، D ، E… 5 ، 4 ، 3 ، 2 ، 1 ...)
 
- `<?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
- asort($freecodecamp); 
- print_r($freecodecamp); 
-` 
+```PHP
+<?php
+$freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp");
+asort($freecodecamp);
+print_r($freecodecamp);
+``` 
 
 **انتاج:**
 
- `Array 
- ( 
-    [two] => camp 
-    [one] => code 
-    [zero] => free 
- ) 
-` 
+```text
+Array
+(
+    [two] => camp
+    [one] => code
+    [zero] => free
+)
+``` 
 
 ### ksort ()
 
 تقوم `ksort()` بترتيب مصفوفة `ksort()` ، حسب مفاتيحها ، بترتيب أبجدي / رقمي تصاعدي (على سبيل المثال A ، B ، C ، D ، E… 5 ، 4 ، 3 ، 2 ، 1 ...)
 
- `<?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
- ksort($freecodecamp); 
- print_r($freecodecamp); 
-` 
+```PHP
+<?php
+$freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp");
+ksort($freecodecamp);
+print_r($freecodecamp);
+``` 
 
 **انتاج:**
 
- `Array 
- ( 
-    [one] => code 
-    [two] => camp 
-    [zero] => free 
- ) 
-` 
+```text
+Array
+(
+    [one] => code
+    [two] => camp
+    [zero] => free
+)
+``` 
 
 ### arsort ()
 
 تقوم `arsort()` بترتيب مصفوفة `arsort()` ، حسب قيمها ، بترتيب أبجدي / رقمي تنازلي (Eg Z ، Y ، X ، W ، V… 5 ، 4 ، 3 ، 2 ، 1 ...)
 
- `<?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
- arsort($freecodecamp); 
- print_r($freecodecamp); 
-` 
+```PHP
+<?php
+$freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp");
+arsort($freecodecamp);
+print_r($freecodecamp);
+``` 
 
 **انتاج:**
 
- `Array 
- ( 
-    [zero] => free 
-    [one] => code 
-    [two] => camp 
- ) 
-` 
+```text
+Array
+(
+    [zero] => free
+    [one] => code
+    [two] => camp
+)
+``` 
 
 ### krsort ()
 
 تقوم `krsort()` بترتيب مصفوفة `krsort()` ، من خلال مفاتيحها في ترتيب أبجدي / رقمي تنازلي (Eg Z ، Y ، X ، W ، V… 5 ، 4 ، 3 ، 2 ، 1 ...)
 
- `<?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
- krsort($freecodecamp); 
- print_r($freecodecamp); 
-` 
+```PHP
+<?php
+$freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp");
+krsort($freecodecamp);
+print_r($freecodecamp);
+``` 
 
 **انتاج:**
 
- `Array 
- ( 
-    [zero] => free 
-    [two] => camp 
-    [one] => code 
- ) 
-` 
+```text
+Array
+(
+    [zero] => free
+    [two] => camp
+    [one] => code
+)
+``` 
 
 #### معلومات اكثر:
 

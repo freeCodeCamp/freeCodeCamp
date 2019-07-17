@@ -104,7 +104,7 @@ ID is the pull request id and BRANCHNAME is the name of the branch that you want
 - <a href='https://services.github.com/on-demand/intro-to-github/create-pull-request' target='_blank' rel='nofollow'>GitHub On Demand Training</a>
 - <a href='https://www.atlassian.com/git/tutorials/syncing' target='_blank' rel='nofollow'>Syncing Tutorials</a>
 
-### Other Resources on git in guide.freecodecamp.org
+### Other Resources on `git` in the freeCodeCamp Guide
 - [Git merge](../git-merge/index.md)
 - [Git checkout](../git-checkout/index.md)
 - [Git commit](../git-commit/index.md)

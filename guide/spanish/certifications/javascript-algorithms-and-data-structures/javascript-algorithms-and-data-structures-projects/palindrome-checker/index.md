@@ -52,7 +52,6 @@ Los métodos `Array.prototype.split` y `Array.prototype.join` pueden ser de util
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/2)
 
 ### Explicación del código:
 
@@ -85,7 +84,6 @@ Los métodos `Array.prototype.split` y `Array.prototype.join` pueden ser de util
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/3)
 
 ### Explicación del código:
 
@@ -134,7 +132,6 @@ Los métodos `Array.prototype.split` y `Array.prototype.join` pueden ser de util
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/4)
 
 ### Explicación del código:
 

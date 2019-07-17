@@ -3,8 +3,13 @@ title: Set a Content Security Policy with helmet.contentSecurityPolicy()
 ---
 ## Set a Content Security Policy with helmet.contentSecurityPolicy()
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/set-a-content-security-policy-with-helmet.contentsecuritypolicy/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+- You want your `app` to `use` helmet's `contentSecurityPolicy()` method.
+- Be sure to give the `directives` object in the configuration a `defaultSrc` and `scriptSrc`.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+- In the `myApp.js` file, add `app.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'", "trusted-cdn.com"] }} ))` under the tenth instruction.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.

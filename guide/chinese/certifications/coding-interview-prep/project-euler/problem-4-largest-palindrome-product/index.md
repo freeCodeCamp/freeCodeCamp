@@ -50,7 +50,6 @@ function largestPalindromeProduct(n) {
  } 
 ```
 
-*   [运行代码](https://repl.it/@ezioda004/Problem-4-Largest-palindrome-product)
 
 ### 参考文献：
 

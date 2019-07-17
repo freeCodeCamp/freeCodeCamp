@@ -52,7 +52,7 @@ for ($i = 0; $i <= count($arr); $i++) {
 
 This will output:
 
-```txt
+```shell
 int(1) int(2) int(3) NULL
 ```
 

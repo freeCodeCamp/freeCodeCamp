@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use el código hexadecimal abreviado
 ---
 
-## Description
+## Descripción
 <section id="description"> Muchas personas se sienten abrumadas por las posibilidades de más de 16 millones de colores. Y es difícil recordar el código hexadecimal. Afortunadamente, puedes acortarlo. Por ejemplo, el código hexadecimal de rojo <code>#FF0000</code> puede <code>#FF0000</code> a <code>#F00</code> . Esta forma abreviada proporciona un dígito para el rojo, un dígito para el verde y un dígito para el azul. Esto reduce el número total de colores posibles a alrededor de 4.000. Pero los navegadores interpretarán <code>#FF0000</code> y <code>#F00</code> como exactamente del mismo color. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Adelante, intente usar los códigos hexadecimales abreviados para colorear los elementos correctos. <table class="table table-striped"><tbody><tr><th> Color </th><th> Código hexadecimal corto </th></tr><tr><td> Cian </td><td> <code>#0FF</code> </td> </tr><tr><td> Verde </td><td> <code>#0F0</code> </td> </tr><tr><td> rojo </td><td> <code>#F00</code> </td> </tr><tr><td> Fucsia </td><td> <code>#F0F</code> </td> </tr></tbody></table></section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -59,13 +59,13 @@ tests:
   }
 </style>
 
-<h1 class="red-text">I am red!</h1>
+<h1 class="red-text">Estoy rojo!</h1>
 
-<h1 class="fuchsia-text">I am fuchsia!</h1>
+<h1 class="fuchsia-text">Estoy fucsia!</h1>
 
-<h1 class="cyan-text">I am cyan!</h1>
+<h1 class="cyan-text">Estoy cian!</h1>
 
-<h1 class="green-text">I am green!</h1>
+<h1 class="green-text">Estoy verde!</h1>
 
 ```
 
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

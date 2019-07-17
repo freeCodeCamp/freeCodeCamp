@@ -80,7 +80,6 @@ If you sort the array from greatest to smallest, then you can use the first two 
     // test here
     smallestCommons([1,5]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLn2/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -136,7 +135,6 @@ Note: If the array only has two elements, then the `for` loop never gets used an
     // test here
     smallestCommons([1,5]);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLn4/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -151,7 +149,7 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-max/14682' target='_blank' rel='nofollow'>JS Math Max</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-min/14684' target='_blank' rel='nofollow'>JS Math Min</a>
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 1:
 
     function smallestCommons(arr) {  
         // Euclidean algorithm for the greatest common divisor.
@@ -175,7 +173,6 @@ Note: If the array only has two elements, then the `for` loop never gets used an
     // test here
     smallestCommons([1,5]);
     
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/MR9P/latest' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -187,12 +184,46 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment' target='_blank' rel='nofollow'>Prefix increment operator ++</a>
 
+## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 2:
+
+    const smallestCommons = arr => {
+      let max = Math.max(...arr);
+      let min = Math.min(...arr);
+      // Initially the solution is assigned to the highest value of the array
+      let sol = max;
+
+      for (let i = max - 1; i >= min; i--) {
+        // Each time the solution checks (i.e. sol%i===0) it won't be necessary
+        // to increment 'max' to our solution and restart the loop
+        if (sol % i) {
+          sol += max;
+          i = max;
+        }
+      }
+      return sol;
+    };
+    
+    // test here
+    smallestCommons([1,5]);
+    
+### Code Explanation:
+
+*   Extract `min` and `max` from `arr` using `Math.min()` and `Math.max()`, respectively. As the arguments to these functions are integers, it is necessary to spread `...` the array.
+*   As a first guess, let's say that the solution is `max`. (we will increment this value later on if it is not the solution)
+*   Confirm that our solution is a multiple of all the values between `max` and `min` using a `for` loop.
+*   In case it isn't a solution, increment `max` to our solution (i.e. get the next multiple of the `arr` highest value) and restart the loop `i = max`. Note that it isn't `i = max - 1` since the `for` loop hasn't finished yet. Once it is finished, the loop itself will execute `i--`. It is also worth mentioning now that we started the loop at `i = max` and decremented `i` throughout instead of starting at `i = min` and then increment it in order to minimize the number of iterations.
+*   The `if` statement never being true means that all numbers between `min` and `max` are divisible by our solution
+
+#### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--)' target='_blank' rel='nofollow'>Prefix decrement operator (--)</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder_()' target='_blank' rel='nofollow'>Remainder operator (%)</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min' target='_blank' rel='nofollow'>Math.min()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max' target='_blank' rel='nofollow'>Math.max()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax' target='_blank' rel='nofollow'>Spread syntax (...)</a>
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

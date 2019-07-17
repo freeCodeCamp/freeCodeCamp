@@ -16,32 +16,33 @@ localeTitle: البرمجة الشيئية
 
 مع وضع هذه الأمور في الاعتبار ، لم يعد إنشاء فئة رجل أمرًا صعبًا بعد الآن. لذا ، سيذهب البرنامج هكذا.
 
- `<?php 
- 
- class Man 
- { 
-    public $name; 
-    public $age; 
-    public $height; 
-    public $fav_sports; 
-    public $fav_drinks; 
- 
-    public function giveFirmHandshakes() 
-    { 
-        return "I give firm handshakes."; 
-    } 
- 
-    public function beStubborn() 
-    { 
-        return "I am stubborn."; 
-    } 
- 
-    public function notPutToiletPaper() 
-    { 
-        return "It's not humanly possible to remember to put toilet paper rolls when they are finished"; 
-    } 
- } 
-` 
+```php
+<?php
+
+class Man
+{
+    public $name;
+    public $age;
+    public $height;
+    public $fav_sports;
+    public $fav_drinks;
+
+    public function giveFirmHandshakes()
+    {
+        return "I give firm handshakes.";
+    }
+
+    public function beStubborn()
+    {
+        return "I am stubborn.";
+    }
+
+    public function notPutToiletPaper()
+    {
+        return "It's not humanly possible to remember to put toilet paper rolls when they are finished";
+    }
+}
+``` 
 
 ### الرجل الهدف
 
@@ -90,20 +91,22 @@ localeTitle: البرمجة الشيئية
 
 لنأخذ هذه الفكرة خطوة أخرى ونجعل جاك يبدأ في تقديم نفسه كلما أنشأنا كائن جاك دون الاضطرار إلى طباعته بشكل فردي على النحو التالي:
 
- `<?php 
- // Print out Jack's attributes and values 
- echo "Our man's name is: " . $jack->name . "\n"; 
- echo "He is " . $jack->age . " years old and " . $jack->height . " tall."; 
-` 
+```php
+<?php
+// Print out Jack's attributes and values
+echo "Our man's name is: " . $jack->name . "\n";
+echo "He is " . $jack->age . " years old and " . $jack->height . " tall.";
+``` 
 
 هذا هو المكان الصانعين يلعبون. إن المنشئات هي أساليب خاصة يتم استدعائها عند إنشاء كائن.
 
 لذا ، فإن الفكرة هي طباعة اسم جاك وعمرها وارتفاعها عندما نقوم بإنشاء كائن "جاك" عن طريق إنشاء دروس للإنسان. ولتحقيق ذلك ، نحتاج إلى تحديد الاسم والعمر والطول عند إنشاء الكائن على النحو التالي:
 
- `<?php 
- // Create a Man object called "Jack" 
- $jack = new Man('Jack', 30, '6 feet'); 
-` 
+```php
+<?php
+// Create a Man object called "Jack"
+$jack = new Man('Jack', 30, '6 feet');
+``` 
 
 يخبر هذا الكود "رجل الطبقة" بإنشاء كائن به 3 معلمات: "Jack" للاسم ، 30 لـ age و "6 feet" للارتفاع.
 
@@ -131,10 +134,11 @@ localeTitle: البرمجة الشيئية
 
 لذلك ، الآن عندما نقوم بتشكيل فئة Man ، نحتاج إلى وضع 3 معلمات وسيتم طباعتها على الفور.
 
- `<?php 
- // Create a Man object called "Jack" 
- $jack = new Man('Jack', 30, '6 feet'); 
-` 
+```php
+<?php
+// Create a Man object called "Jack"
+$jack = new Man('Jack', 30, '6 feet');
+``` 
 
 `Object created` `Our man's name is: Jack` `He is 30 years old and 6 feet tall.`
 
@@ -218,10 +222,11 @@ localeTitle: البرمجة الشيئية
 
 إذا لاحظت أن جميع متغيرات الصفوف (الاسم ، العمر ، الطول ، fav _sports و fav_ drinks) يتم الإعلان عنها على أنها عامة داخل فئة Man. الآن ، بعد إنشاء كائن رجل ، لدينا حق الوصول إلى جميع ممتلكاته عن طريق الاتصال بهم ببساطة:
 
- `<?php 
- echo $jack->name; 
- echo $jack->height; 
-` 
+```php
+<?php
+echo $jack->name;
+echo $jack->height;
+``` 
 
 ولكن ماذا لو أردنا أن نبقي بعض الأمور سرية عن الرجل؟ ربما لا يريد أن يعرف الجميع سنه ... أو ... ربما يريد فقط بعض الأشخاص أن يعرفوا مشروباته المفضلة. يمكننا تحقيق ذلك عن طريق تغيير مستوى رؤية هذه الخصائص من العامة إلى المحمية وحتى الخاصة.
 
@@ -233,31 +238,33 @@ localeTitle: البرمجة الشيئية
 
 سنتحدث عن وراثة فصل في وقت ما. في الوقت الحالي ، دعنا نحاول تعيين فئة العمر محمية و private\_drinks خاصة في فئة Man.
 
- `<?php 
- 
- class Man 
- { 
-    // 1. Declare the variables 
-    public $name; 
-    protected $age; 
-    public $height; 
-    public $fav_sports; 
-    private $fav_drinks; 
-    ..... 
-    ..... 
-` 
+```php
+<?php
+
+class Man
+{
+    // 1. Declare the variables
+    public $name;
+    protected $age;
+    public $height;
+    public $fav_sports;
+    private $fav_drinks;
+    .....
+    .....
+``` 
 
 الآن إذا حاولت إنشاء مثيل للفئة وتسمية العمر و fav\_drinks ، فسوف تحصل على خطأ.
 
- `<?php 
- $jack = new Man('Jack', 30, '6 feet'); 
- 
- echo $jack->age; 
- // Fatal error:  Cannot access protected property Man::$age 
- 
- print_r($jack->fav_drinks); 
- // Fatal error:  Cannot access private property Man::$fav_drinks 
-` 
+```php
+<?php
+$jack = new Man('Jack', 30, '6 feet');
+
+echo $jack->age;
+// Fatal error:  Cannot access protected property Man::$age
+
+print_r($jack->fav_drinks);
+// Fatal error:  Cannot access private property Man::$fav_drinks
+``` 
 
 ### المحددات والرسومات
 
@@ -265,12 +272,13 @@ localeTitle: البرمجة الشيئية
 
 للحصول على الخصائص المحمية أو الخاصة ، نحتاج إلى إنشاء طريقة getter مثل هذا داخل فئة Man (لاحظ أن هذه طريقة للفصل مع ظهور للجمهور).
 
- `<?php 
- public function getAge() 
- { 
-    return $this->age; 
- } 
-` 
+```php
+<?php
+public function getAge()
+{
+    return $this->age;
+}
+``` 
 
 الآن يمكننا بسهولة الحصول على عمر جاك عن طريق استدعاء هذه الطريقة:
 
@@ -312,9 +320,10 @@ echo $ jack-> getAge ()؛ // 31
 
 للحصول على fav\_srinks من Jack:
 
- `<?php 
- echo json_encode($jack->getFavDrinks()); 
- // ["coffee","green tea"] 
-` 
+```php
+<?php
+echo json_encode($jack->getFavDrinks());
+// ["coffee","green tea"]
+``` 
 
 وتسمى هذه الطريقة في تطبيق واستخدام أساليب الصف لاسترجاع وتحديث خصائص الصفات بالتغليف في البرمجة الشيئية. يمكننا أيضًا تعيين مستوى الرؤية لطرق الصفوف تمامًا مثل الطريقة التي استخدمناها في خصائص الصف.

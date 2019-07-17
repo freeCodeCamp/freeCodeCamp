@@ -95,7 +95,6 @@ localeTitle: Аргументы Дополнительно
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLnz/0)
 
 ### Код Объяснение:
 
@@ -154,7 +153,6 @@ localeTitle: Аргументы Дополнительно
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLoA/0)
 
 ### Код Объяснение:
 
@@ -189,7 +187,6 @@ localeTitle: Аргументы Дополнительно
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLoB/0)
 
 ### Код Объяснение:
 

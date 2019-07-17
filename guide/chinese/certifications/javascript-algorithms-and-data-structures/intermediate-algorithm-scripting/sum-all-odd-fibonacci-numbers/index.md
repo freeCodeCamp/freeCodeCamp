@@ -58,7 +58,6 @@ function sumFibs(num) {
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnV/0)
 
 ### 代码说明：
 
@@ -93,14 +92,13 @@ function sumFibs(num) {
     // Sum only the odd numbers and return the value 
     return arrFib.reduce((acc, curr) => { 
         return acc + curr * (curr % 2); 
-    }); 
+    }, 0); 
  } 
  
  // test here 
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/@kr3at0/SumAllOddFibonacciNumbers)
 
 ### 代码说明：
 

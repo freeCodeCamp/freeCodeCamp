@@ -2,6 +2,7 @@
 id: bd7123c9c450eddfaeb5bdef
 title: Use Bracket Notation to Find the Nth Character in a String
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cWPVJua'
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of
 ```yml
 tests:
   - text: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.
-    testString: assert(thirdLetterOfLastName === 'v', 'The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.');
+    testString: assert(thirdLetterOfLastName === 'v');
   - text: You should use bracket notation.
-    testString: assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/), 'You should use bracket notation.');
+    testString: assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/));
 
 ```
 

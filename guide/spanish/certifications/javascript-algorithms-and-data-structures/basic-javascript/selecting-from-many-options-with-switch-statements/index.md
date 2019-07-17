@@ -116,7 +116,6 @@ function caseInSwitch(val) {
  caseInSwitch(1); 
 ```
 
-· Ejecutar código en [repl.it.](https://repl.it/@AdrianSkar/Basic-JS-Switch-statements)
 
 ### Explicación del código
 

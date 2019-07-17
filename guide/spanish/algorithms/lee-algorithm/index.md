@@ -21,7 +21,7 @@ C ++ ya tiene la cola implementada en la biblioteca `<queue>` , pero si está ut
 
 Código C ++:
 
-```c++
+```cpp
 int dl[] = {-1, 0, 1, 0}; // these arrays will help you travel in the 4 directions more easily 
  int dc[] = {0, 1, 0, -1}; 
  

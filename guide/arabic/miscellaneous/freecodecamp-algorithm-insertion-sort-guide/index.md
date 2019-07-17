@@ -45,7 +45,7 @@ localeTitle: Freecodecamp خوارزمية الإدراج دليل فرز
        arr[j+1] = arr[j]; 
        j = j-1; 
    } 
-   arr[j+1] = key; // place element key at it's correct place 
+   arr[j+1] = key; // place element key at its correct place 
    } 
  } 
  
@@ -77,7 +77,7 @@ localeTitle: Freecodecamp خوارزمية الإدراج دليل فرز
         while j>=0 and key < arr[j] : 
                 arr[j+1] = arr[j] 
                 j -= 1 
-        arr[j+1] = key # place element key at it's correct place 
+        arr[j+1] = key # place element key at its correct place 
  
  # array to be sorted 
  arr = [12, 11, 13, 5, 6] 

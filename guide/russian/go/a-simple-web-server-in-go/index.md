@@ -1,7 +1,8 @@
 ---
 title: A simple web server in Go
 localeTitle: Простой веб-сервер в Go
----Язык программирования Go хорошо известен тем, что имеет встроенный веб-сервер. В этой статье вы узнаете, как вы можете легко сделать свой собственный веб-сервер с Go. Вам не понадобятся другие пакеты рядом с теми, которые уже встроены!
+---
+Язык программирования Go хорошо известен тем, что имеет встроенный веб-сервер. В этой статье вы узнаете, как вы можете легко сделать свой собственный веб-сервер с Go. Вам не понадобятся другие пакеты рядом с теми, которые уже встроены!
 
 Сначала перейдите в свой текстовый редактор. Затем создайте файл с именем `webserver.go` и введите следующий код:
 
@@ -15,10 +16,10 @@ package main
  
  func main() { 
   http.HandleFunc("/", servePage) 
-    http.ListenAndServe(":8080", nil) 
+  http.ListenAndServe(":8080", nil) 
  } 
  
- func servePage(writer http.ResponseWriter, reqest *http.Request) { 
+ func servePage(writer http.ResponseWriter, request *http.Request) { 
   io.WriteString(writer, "Hello world!") 
  } 
 ```
