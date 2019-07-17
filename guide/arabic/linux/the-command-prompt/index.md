@@ -85,12 +85,13 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 يعد أمر `info` هو خيار المساعدة الثالث ، ويتم استخدامه تمامًا مثل `man` .
 
- `ls --help 
- 
- man ls 
- 
- info ls 
-` 
+```bash
+ls --help
+
+man ls
+
+info ls
+``` 
 
 ### الموجه
 
@@ -104,13 +105,15 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 فمثلا:
 
- `$ ls -l 
-` 
+```bash
+$ ls -l
+``` 
 
 يعني كتابة `ls -l` في موجه عادي.
 
- `# apt-get install node 
-` 
+```bash
+# apt-get install node
+``` 
 
 يعني أنك تكتب `apt-get install node` باستخدام امتيازات المشرف. تعتمد كيفية رفع الامتيازات على توزيع Linux الخاص بك.
 
@@ -128,8 +131,9 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 لم يتم منحك shell root ، ولن يكون للأمر التالي الذي تكتبه امتيازات مرتفعة ، ما لم تستخدم `sudo` مرة أخرى.
 
- `sudo apt-get update 
-` 
+```bash
+sudo apt-get update
+``` 
 
 باستثناء أول مستخدم تم إنشاؤه في بعض المواقع ، يجب إضافة المستخدمين إلى قائمة خاصة (موجودة في `/etc/sudoers` ) من أجل استخدام sudo.
 
@@ -147,8 +151,9 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 يمكن أن يؤدي ذلك إلى نتائج غير متوقعة ، وإذا كنت تريد استخدام `su` للتبديل إلى مستخدم آخر ، فأضِف واصلة بعد الأمر:
 
- `su - 
-` 
+```bash
+su -
+``` 
 
 هذا سوف يحولك بشكل كامل إلى موجه الجذر.
 
@@ -156,14 +161,15 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 يمكن استخدام `sudo` في تركيبة مع `su` للسماح للمدير بالتبديل إلى أي مستخدم.
 
- `myUser@linux $ su - otherUsername 
- Password: (typed my password) 
- su: Authentication failure 
- 
- myUser@linux $ sudo su - otherUsername 
- Password: (typed my password) 
- otherUsername@Linux $ 
-` 
+```bash
+myUser@linux $ su - otherUsername
+Password: (typed my password)
+su: Authentication failure
+
+myUser@linux $ sudo su - otherUsername
+Password: (typed my password)
+otherUsername@Linux $
+``` 
 
 ### المسارات النسبية والمطلقة
 
@@ -199,8 +205,9 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 تتبع معظم أوامر shell نفس بناء الجملة ، وهي **ملفات خيارات الأوامر** .
 
- `ls -l *.txt 
-` 
+```bash
+ls -l *.txt
+``` 
 
 أين
 
@@ -220,8 +227,9 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 الأمر الثاني ، `grep` هو برنامج يخرج النص الموجود بناءً على بعض المدخلات ، ونمط بحث. يمكن أن يكون نمط البحث عبارة عن نص بسيط ، أو تعبير عادي (تعبير عادي) لعمليات بحث أكثر تقدمًا.
 
- `cat index.html | grep img 
-` 
+```bash
+cat index.html | grep img
+``` 
 
 هناك العديد من الطرق للقيام بذلك ، ولكن هذا سيخرج كل سطر في index.html يحتوي على `img` إلى المحطة الطرفية. يستخدم هذا المثال واحد فقط `|` ، لكنك لا تقتصر على ذلك.
 
@@ -231,15 +239,17 @@ _Shell_ s هي برامج تقوم بتفسير الأوامر.
 
 المثال التالي هو عدد مستخدمي دبيان وأوبونتو الذين يقومون بتحديث قائمة البرامج الخاصة بهم ، ثم قم بتشغيل ترقية النظام.
 
- `sudo apt-get update && sudo apt-get dist-upgrade 
-` 
+```bash
+sudo apt-get update && sudo apt-get dist-upgrade
+``` 
 
 خيار آخر هو أنبوب مزدوج `||` مما يعني منطقية **OR** . يمكنك استخدامه عندما تريد تشغيل أمر فقط عندما يخرج الأول بخطأ.
 
 سوف يقوم ما يلي بإنشاء أرشيف يسمى `project.tar` على سطح مكتب المستخدم من الملفات الموجودة في دليل مشروع ، وإذا فشل ذلك ، صدى رسالة.
 
- `tar -cvf /home/user/Desktop/project.tar /home/user/project/* || echo "archive failed" 
-` 
+```bash
+tar -cvf /home/user/Desktop/project.tar /home/user/project/* || echo "archive failed"
+``` 
 
 ### وظائف الخلفية
 
@@ -253,10 +263,11 @@ o تعليق برنامج قيد التشغيل في المحطة الطرفية
 
 عندما أكتب `jobs` أحصل على الناتج التالي:
 
- `$ jobs 
- 
- [1]  + suspended  man ls 
-` 
+```bash
+$ jobs
+
+[1]  + suspended  man ls
+``` 
 
 من هنا ، يمكنني السماح باستئنافها في الخلفية بكتابة `bg %1` حيث `1` هو رقم المهمة الموجود بين الأقواس المربعة.
 

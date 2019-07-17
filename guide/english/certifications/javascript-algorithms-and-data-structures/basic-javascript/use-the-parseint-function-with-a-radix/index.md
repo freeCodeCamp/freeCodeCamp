@@ -28,7 +28,6 @@ function convertToInteger(str) {
 }
 convertToInteger("10011");
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Use-parseInt-with-radix).
 
 ### Code explanation
 - The function takes `str` and returns an integer instead of a string but "understanding" its a binary number instead of a decimal one thanks to the `radix` parameter (2).

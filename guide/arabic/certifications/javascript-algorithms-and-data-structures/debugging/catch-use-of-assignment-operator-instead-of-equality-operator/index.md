@@ -9,15 +9,16 @@ localeTitle: قبض على استخدام مشغل التعيين بدلا من 
 
 ## حل
 
- `let x = 7; 
- let y = 9; 
- let result = "to come"; 
- 
- if(x == y) { 
-  result = "Equal!"; 
- } else { 
-  result = "Not equal!"; 
- } 
- 
- console.log(result); 
-`
+```javascript
+let x = 7;
+let y = 9;
+let result = "to come";
+
+if(x == y) {
+  result = "Equal!";
+} else {
+  result = "Not equal!";
+}
+
+console.log(result);
+```

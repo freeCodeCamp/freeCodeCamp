@@ -59,8 +59,7 @@ function dropElements(arr, func) {
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLna/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie um loop for para verificar cada elemento.
@@ -82,8 +81,7 @@ function dropElements(arr, func) {
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnc/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Use a função ES6 `findIndex()` para encontrar o índice do elemento que passa a condição
@@ -108,8 +106,7 @@ function dropElements(arr, func) {
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnf/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código
 
 *   Use um loop while com `Array.prototype.shift()` para continuar verificando e `Array.prototype.shift()` o primeiro elemento da matriz até que a função retorne true. Ele também garante que o array não esteja vazio primeiro para evitar loops infinitos.

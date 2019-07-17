@@ -48,7 +48,6 @@ localeTitle: Implementar Merge Sort
  } 
 ```
 
-*   [Ejecutar código](https://repl.it/@ezioda004/Merge-Sort)
 
 ### Referencias:
 

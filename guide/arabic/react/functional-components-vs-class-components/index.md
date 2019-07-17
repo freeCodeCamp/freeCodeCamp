@@ -19,16 +19,17 @@ localeTitle: المكونات الوظيفية مقابل مكونات Class
 *   يمكن للمكونات الوظيفية قبول الدعائم واستخدامها.
 *   يجب تفضيل المكونات الوظيفية إذا لم تكن بحاجة إلى استخدام حالة React.
 
- `import React from "react"; 
- 
- const Person = props => ( 
-  <div> 
-    <h1>Hello, {props.name}</h1> 
-  </div> 
- ); 
- 
- export default Person; 
-` 
+```js
+import React from "react";
+
+const Person = props => (
+  <div>
+    <h1>Hello, {props.name}</h1>
+  </div>
+);
+
+export default Person;
+``` 
 
 ## مكونات الطبقة
 

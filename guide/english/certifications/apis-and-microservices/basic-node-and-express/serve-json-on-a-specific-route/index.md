@@ -5,16 +5,12 @@ title: Serve JSON on a Specific Route
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
-It is rather simple to serve a json object with node (at the '/json' route), if we want to deliver a message and give it the value "Hello World," we can do so like this:
+It is rather simple to serve a JSON object with Node (at the `/json` route), if we want to deliver an object containing a key `message` and with the value `"Hello json"` we can do so as indicated:
 
 ```javascript
-  app.get("/json", function(req, res) {
-        res.json({"message": "Hello World"});
-  });
+app.get("/json", (req, res) => {
+    res.json({
+      "message": "Hello json"
+    });
+});
 ```
-
-
-
-
-
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/basic-node-and-express/serve-json-on-a-specific-route/index.md' target='_blank' rel='nofollow'>Help our community expand these hints and guides</a>.

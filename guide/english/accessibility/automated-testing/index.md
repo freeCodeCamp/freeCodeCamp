@@ -3,11 +3,16 @@ title: Automated Accessibility Testing Tools
 ---
 ## Automated Accessibility Testing
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/accessibility/automated-testing/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Automated Accessibility Testing Tools provide you with a way to test your application or website for common accessibility issues. They also help you meet accessibility guidelines. These tools are also called Web Accessibility Evaluation tools. With these tools you can test your entire codebase as a whole. This is much easier and less time-consuming than using manual tools which require you to check every page individually. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### What Are They Testing For?
+They are testing to see if your content follows established guidelines such as Section 508 Compliance, Web Content Accessibility Guidelines (WCAG), and the Americans with Disabilities Act (ADA).
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### How Do They Work?
+This depends on the tool you are using, and the language or framework that your codebase is written in. Many integrate with a testing suite.
+
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+[W3C List of Web Accessibility Tools](https://www.w3.org/WAI/ER/tools/)  
+[W3C Guide to Selecting Accessibility Tools](https://www.w3.org/WAI/test-evaluate/tools/selecting/)  
+[Comparing 3 Top Automated Accessibility Tools](https://medium.com/myplanet-musings/comparing-3-top-automated-accessibility-testing-tools-wave-tenon-io-and-google-lighthouse-d3897d7bb311)  

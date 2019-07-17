@@ -35,7 +35,7 @@ This problem is hard if you have to create your own code to check for primes, so
 
 **Solution ahead!**
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution 1:
 
     function sumPrimes(num) {
       var res = 0;
@@ -71,7 +71,6 @@ This problem is hard if you have to create your own code to check for primes, so
     // test here
     sumPrimes(10);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnZ/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -85,6 +84,38 @@ This problem is hard if you have to create your own code to check for primes, so
 #### Relevant Links
 
 *   <a href='https://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>JS For Loops Explained</a>
+
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution 2:
+
+    function sumPrimes(num) {
+     let i = 1;
+     let sum = 0;
+     while(i <= num){
+       if(isPrime(i)){
+         sum += i;
+       }
+       i++;
+     }
+    return sum;
+    }
+    //function to check if a number is prime or not
+    function isPrime(x){
+     for(let i =2;i < x;i++){
+      if(x % i === 0) return false;
+    }
+    return x !==1 && x !== 0;
+    }
+    //test here
+    sumPrimes(10);
+
+### Code Explanation:
+
+*   Create a function to check if a number is prime or not.
+*   Declare two variables. One to keep us within the limit of the given number and the other to store the sum of numbers to be returned.
+*   Create a loop to check all numbers lesser than or equal to the given number.
+*   Check if a number is prime and add it to the value of sum.
+*   Return the value of sum once the loop exits.
+
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
@@ -119,7 +150,6 @@ This problem is hard if you have to create your own code to check for primes, so
     // test here
     sumPrimes(10);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLn0/0' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -131,6 +161,24 @@ This problem is hard if you have to create your own code to check for primes, so
 #### Relevant Links
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Recursion' target='_blank' rel='nofollow'>Functions - Recursion</a>
+
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+
+    function sumPrimes(num) {
+      let nums =  Array.from({length: num + 1}).map((_, i) => i).slice(2);
+      for (let n in nums) {
+        nums = nums.filter(val => val == nums[n] || val % nums[n] != 0);
+      }
+      return nums.reduce((prevSum, cur) => prevSum + cur);
+    }
+    // test here
+    sumPrimes(13);
+
+
+### Code Explanation:
+
+*  Use `Array.from()` to generate a sequence of numbers up to and including `num`. Combine with `.slice()` to slice off first two indices `[0, 1]` since all prime numbers must be greater than 1.
+*   If a number is not prime, it is divided by number > 1 other smaller than himself. 
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
@@ -153,7 +201,6 @@ This problem is hard if you have to create your own code to check for primes, so
     // test here
     sumPrimes(977);
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/DoOo/3' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
@@ -172,5 +219,3 @@ This problem is hard if you have to create your own code to check for primes, so
 *   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
 *   Add an explanation of your solution.
 *   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='https://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.

@@ -6,32 +6,34 @@ localeTitle: عرض الملكية
 
 تحدد خاصية `display` نوع المربع المستخدم لعنصر HTML. هناك 20 قيمة للكلمات الرئيسية الإجمالية ، على الرغم من استخدام 10 فقط بشكل شائع. هذه هي شائعة الاستخدام:
 
- `.none           {display: none} 
- .block          {display: block} 
- .inline-block   {display: inline-block} 
- .inline         {display: inline} 
- .flex           {display: flex} 
- .inline-flex    {display: inline-flex} 
- .inline-table   {display: inline-table} 
- .table          {display: table} 
- .inherit        {display: inherit} 
- .initial        {display: initial} 
-` 
+```css
+.none           {display: none}
+.block          {display: block}
+.inline-block   {display: inline-block}
+.inline         {display: inline}
+.flex           {display: flex}
+.inline-flex    {display: inline-flex}
+.inline-table   {display: inline-table}
+.table          {display: table}
+.inherit        {display: inherit}
+.initial        {display: initial}
+``` 
 
 **أمثلة شائعة:**
 
- `.myBox { 
-    display: block; 
- } 
- 
- .myContainer { 
-    display: flex; 
- } 
- 
- .inlineList ul > li { 
-    display: inline; 
- } 
-` 
+```css
+.myBox {
+    display: block;
+}
+
+.myContainer {
+    display: flex;
+}
+
+.inlineList ul > li {
+    display: inline;
+}
+``` 
 
 #### معلومات اكثر:
 

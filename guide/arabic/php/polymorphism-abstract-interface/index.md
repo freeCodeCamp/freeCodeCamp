@@ -48,12 +48,13 @@ _مشاركة وفرض الكود مع تعدد الأشكال باستخدام 
 
 نحتاج إلى تحديد الاسم والعمر والطول لتكوين هذه الفئة وفقًا لما يتطلبه المنشئ.
 
- `<?php 
- $jack = new Man('Jack', '26', '5 Feet 6 Inches'); 
- 
- echo sprintf('%s - %s - %s', $jack->name, $jack->age, $jack->height); 
- // => Jack - 26 - 5 Feet 6 Inches 
-` 
+```php
+<?php
+$jack = new Man('Jack', '26', '5 Feet 6 Inches');
+
+echo sprintf('%s - %s - %s', $jack->name, $jack->age, $jack->height);
+// => Jack - 26 - 5 Feet 6 Inches
+``` 
 
 الآن ، دعنا نقول أننا نريد إضافة طريقة جديدة لهذه الفئة تسمى isActive.
 
@@ -99,21 +100,22 @@ _مشاركة وفرض الكود مع تعدد الأشكال باستخدام 
 
 يمكننا الحصول على if..sese..else مثل هذه العبارات:
 
- `<?php 
- 
- public function isActive() 
- { 
-    if ($this->active == 1) { 
-        return "I am an idle man."; 
-    } elseif ($this->active == 2) { 
-        return "I am a lightly active man."; 
-    } elseif ($this->active == 3) { 
-        return "I am a moderately active man."; 
-    } else { 
-        return "I am a very active man."; 
-    } 
- } 
-` 
+```php
+<?php
+
+public function isActive()
+{
+    if ($this->active == 1) {
+        return "I am an idle man.";
+    } elseif ($this->active == 2) {
+        return "I am a lightly active man.";
+    } elseif ($this->active == 3) {
+        return "I am a moderately active man.";
+    } else {
+        return "I am a very active man.";
+    }
+}
+``` 
 
 الآن ، لنأخذ هذه خطوة أخرى.
 
@@ -133,55 +135,60 @@ _مشاركة وفرض الكود مع تعدد الأشكال باستخدام 
 
 # 1: تعريف الصف كملخص.
 
- `<?php 
- abstract class Man 
- { 
- ..... 
- ..... 
- } 
-` 
+```php
+<?php
+abstract class Man
+{
+.....
+.....
+}
+``` 
 
 # 2: إنشاء طريقة مجردة للطريقة التي تريد فرضها داخل الطبقة المجردة.
 
- `<?php 
- abstract class Man 
- { 
- ..... 
- ..... 
- abstract public function isActive(); 
- } 
-` 
+```php
+<?php
+abstract class Man
+{
+.....
+.....
+abstract public function isActive();
+}
+``` 
 
 # 3: إنشاء فئة تابعة لتوسيع الفئة المجردة.
 
- `<?php 
- 
- class AthleticMan extends Man 
- { 
- ..... 
- ..... 
- } 
-` 
+```php
+<?php
+
+class AthleticMan extends Man
+{
+.....
+.....
+}
+``` 
 
 # 4: تنفيذ الطريقة المجردة داخل فئة الطفل.
 
- `<?php 
- class AthleticMan extends Man 
- { 
-    public function isActive() 
-    { 
-        return "I am a very active athlete."; 
-    } 
- } 
-` 
+```php
+<?php
+class AthleticMan extends Man
+{
+    public function isActive()
+    {
+        return "I am a very active athlete.";
+    }
+}
+``` 
 
 # 5: تحفيظ فئة الطفل (وليس الطبقة المجردة).
 
- `<?php 
- $jack = new AthleticMan('Jack', '26', '5 feet 6 inches'); 
- echo $jack->isActive(); 
- // => I am a very active athlete. 
-` 
+```php
+<?php
+$jack = new AthleticMan('Jack', '26', '5 feet 6 inches');
+echo $jack->isActive();
+// => I am a very active athlete.
+``` 
 
 كامل تعريف فئة الملخص ورمز التنفيذ:
 
@@ -237,11 +244,12 @@ _مشاركة وفرض الكود مع تعدد الأشكال باستخدام 
 
 الآن لا يمكن إنشاء مثيل لطبقة `Man` مباشرة لإنشاء كائن.
 
- `<?php 
- $ted = new Man('Ted', '30', '6 feet'); 
- echo $ted->isActive(); 
- // => Fatal error:  Uncaught Error: Cannot instantiate abstract class Man 
-` 
+```php
+<?php
+$ted = new Man('Ted', '30', '6 feet');
+echo $ted->isActive();
+// => Fatal error:  Uncaught Error: Cannot instantiate abstract class Man
+``` 
 
 أيضا ، كل فئة طفل من الطبقة المجردة (درجة `Man` ) تحتاج إلى تنفيذ جميع الأساليب المجردة. سوف يؤدي عدم تنفيذ مثل هذا إلى خطأ فادح.
 
@@ -325,11 +333,12 @@ _مشاركة وفرض الكود مع تعدد الأشكال باستخدام 
 
 # 3: تحفيز فئة التنفيذ (AthleticMan)
 
- `<?php 
- $jack = new AthleticMan('Jack', '26', '5 feet 6 inches'); 
- echo $jack->isActive(); 
- // => I am a very active athlete. 
-` 
+```php
+<?php
+$jack = new AthleticMan('Jack', '26', '5 feet 6 inches');
+echo $jack->isActive();
+// => I am a very active athlete.
+``` 
 
 باستخدام الواجهات ، يجب أن تضع في اعتبارك ما يلي:
 

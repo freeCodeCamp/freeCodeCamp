@@ -6,15 +6,16 @@ localeTitle: استخدم الخاصية الأساسية المرنة لتعي�
 
 يمكنك تحقيق نفس تأثير التحديتين السابقتين مع `flax-basis` . بعد تحديد قيم approati ، سترى `#box-2` أكبر من `#box-1` قبل تطبيق أي تقلص أو نمو.
 
- `#box-1 { 
-  background-color: dodgerblue; 
-  height: 200px; 
-  flex-basis: 10em; 
- } 
- 
- #box-2 { 
-  background-color: orangered; 
-  height: 200px; 
-  flex-basis: 20em; 
- } 
-`
+```css
+#box-1 {
+  background-color: dodgerblue;
+  height: 200px;
+  flex-basis: 10em;
+}
+
+#box-2 {
+  background-color: orangered;
+  height: 200px;
+  flex-basis: 20em;
+}
+```

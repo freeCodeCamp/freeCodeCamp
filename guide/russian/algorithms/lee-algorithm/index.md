@@ -21,7 +21,7 @@ C ++ имеет очередь, уже реализованную в библи�
 
 Код C ++:
 
-```c++
+```cpp
 int dl[] = {-1, 0, 1, 0}; // these arrays will help you travel in the 4 directions more easily 
  int dc[] = {0, 1, 0, -1}; 
  

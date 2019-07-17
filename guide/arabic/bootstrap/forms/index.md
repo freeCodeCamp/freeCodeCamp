@@ -27,8 +27,9 @@ localeTitle: إستمارات
 
 خضع
 
- `## Example of an inline form 
-` 
+```
+## Example of an inline form
+``` 
 
 أتش تي أم أل
 
@@ -38,8 +39,9 @@ localeTitle: إستمارات
 
 إرسال دعوة
 
- `## Example of horizontal form 
-` 
+```
+## Example of horizontal form
+``` 
 
 أتش تي أم أل
 
@@ -51,8 +53,9 @@ localeTitle: إستمارات
 
 تسجيل الدخول
 
- `![Inline Form 2](https://github.com/TroyB12/Pictures/blob/master/Inline%20Form2.PNG) 
-` 
+```
+![Inline Form 2](https://github.com/TroyB12/Pictures/blob/master/Inline%20Form2.PNG)
+``` 
 
 أتش تي أم أل
 
@@ -64,11 +67,12 @@ $
 
 تحويل النقدية
 
- `Bootstrap forms allow the programmer to use classes to easily make HTML forms presentable and responsive. 
- Take the following simple form: 
- 
- ![](https://siamcomm.com/wp-content/uploads/2017/10/Forms-·-Bootstrap.png) 
-` 
+```
+Bootstrap forms allow the programmer to use classes to easily make HTML forms presentable and responsive.
+Take the following simple form:
+
+![](https://siamcomm.com/wp-content/uploads/2017/10/Forms-·-Bootstrap.png)
+``` 
 
 أتش تي أم أل
 

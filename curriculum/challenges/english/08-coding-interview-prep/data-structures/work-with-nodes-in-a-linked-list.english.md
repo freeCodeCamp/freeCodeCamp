@@ -25,7 +25,6 @@ tests:
     testString: assert(Puppy.next.element === "Cat", 'Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');
   - text: Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.
     testString: assert(Cat.next.element === "Dog", 'Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.');
-
 ```
 
 </section>
@@ -36,12 +35,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-var Node = function(element){
-    this.element = element;
-    this.next = null;
+var Node = function(element) {
+  this.element = element;
+  this.next = null;
 };
-var Kitten = new Node("Kitten");
-var Puppy = new Node("Puppy");
+var Kitten = new Node('Kitten');
+var Puppy = new Node('Puppy');
 
 Kitten.next = Puppy;
 // only add code below this line
@@ -51,9 +50,6 @@ console.log(Kitten.next);
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
@@ -62,4 +58,5 @@ console.log(Kitten.next);
 ```js
 // solution required
 ```
+
 </section>

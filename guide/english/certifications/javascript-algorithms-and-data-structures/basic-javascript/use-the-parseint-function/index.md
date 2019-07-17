@@ -2,9 +2,16 @@
 title: Use the parseInt Function
 ---
 ## Use the parseInt Function
+The ```parseInt()``` function will take any ```string``` parameter representing a number and return its integer value. 
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/use-the-parseint-function/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint 1 
+```parseInt()``` should be used inside your function and return whatever ```str``` is, assuming that ```str``` is a string representing some number.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Solution
+```javascript
+function convertToInteger(str) {
+    return parseInt(str); 
+}
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+convertToInteger("56");
+```

@@ -2,6 +2,7 @@
 id: cf1391c1c11feddfaeb4bdef
 title: Create Decimal Numbers with JavaScript
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/ca8GEuW'
 ---
 
 ## Description
@@ -21,9 +22,9 @@ Create a variable <code>myDecimal</code> and give it a decimal value with a frac
 ```yml
 tests:
   - text: <code>myDecimal</code> should be a number.
-    testString: assert(typeof myDecimal === "number", '<code>myDecimal</code> should be a number.');
+    testString: assert(typeof myDecimal === "number");
   - text: <code>myDecimal</code> should have a decimal point
-    testString: assert(myDecimal % 1 != 0, '<code>myDecimal</code> should have a decimal point');
+    testString: assert(myDecimal % 1 != 0);
 
 ```
 

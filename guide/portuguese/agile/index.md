@@ -12,16 +12,16 @@ Com a metodologia ágil, a ênfase está na "agilidade" - poder responder rapida
 
 ![Uma história em quadrinhos do site Commitstrip.com mostrando um gerente de produto explicando a um desenvolvedor que está mudando para o ágil, mas depois pedindo ao desenvolvedor para planejar tudo antecipadamente](https://www.commitstrip.com/wp-content/uploads/2017/01/Strip-Budegt-fixe-pour-projet-flexible-english650-final.jpg)
 
-O desenvolvimento ágil de software enfatiza quatro valores fundamentais. 
-1. A valorização de indivíduos e interações sobre processos e ferramentas
-2. Software em funcionamento sobre documentação exaustiva
-3. A colaboração com o cliente é mais importante do que as negociações de contrato
-4. Responder a mudanças ao invés de seguir um plano
+O desenvolvimento de software ágil tem ênfase em quatro valores fundamentais.
+1. O time e as interações individuais tem prioridade sobre ferramentas e processos.
+2. Um software funcionando ao invés de uma documentação exaustiva.
+3. É dado mais importância a colaboração com o cliente do que as negociações de contrato.
+4. Prioridade em apresentar respostas as alterações ao invés de seguir um plano.
 
-Existem diferentes "tribos" no universo da metodolgia ágil, incluindo Scrum e Extreme Programming.
+Existem muitos sabores diferentes de desenvolvimento ágil, incluindo Scrum e Extreme Programming.
 
 ### Mais Informações
 
 [Homepage da Agile Alliance](https://www.agilealliance.org/)
+[Página do Manifesto Ágil em Portugês](http://agilemanifesto.org/iso/ptbr/manifesto.html)
 
-[Página do Manifesto Ágil em Portugês](http://agilemanifesto.org/iso/ptbr/manifesto.html/)
