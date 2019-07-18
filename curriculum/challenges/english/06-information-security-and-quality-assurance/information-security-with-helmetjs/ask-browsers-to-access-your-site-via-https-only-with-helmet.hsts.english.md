@@ -23,7 +23,7 @@ Note: Configuring HTTPS on a custom website requires the acquisition of a domain
 tests:
   - text: helmet.hsts() middleware should be mounted correctly
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'hsts'); assert.property(data.headers, 'strict-transport-security'); }, xhr => { throw new Error(xhr.responseText); })
-  - text: maxAge should be equal to 7776000 ms (90 days)
+  - text: maxAge should be equal to 7776000 s (90 days)
     testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.match(data.headers['strict-transport-security'], /^max-age=7776000;?/); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
