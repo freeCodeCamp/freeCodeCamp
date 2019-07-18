@@ -195,7 +195,7 @@ Each of the Docker commands above will take some time to complete. You should wa
 You will also need to install a few npm packages outside of Docker. You can skip this step if you are only running the app locally and will not use git.
 
 ```shell
-npm ci --ignore-scripts
+npm ci
 ```
 
 All of the above needs to be run only the first time you set up the local dev environment.
