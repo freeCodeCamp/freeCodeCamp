@@ -7,6 +7,7 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cb6k8Cb'
 
 ## Description
 <section id='description'>
+
 You can nest links within other text elements.
 
 ```html
@@ -19,13 +20,14 @@ Let's break down the example:
 Normal text is wrapped in the <code>p</code> element:<br> <code>&#60;p&#62; Here's a ... for you to follow. &#60;/p&#62;</code>
 Next is the <i>anchor</i> element <code>&#60;a&#62;</code> (which requires a closing tag <code>&#60;/a&#62;</code>):<br>  <code>&#60;a&#62; ... &#60;/a&#62;</code>
 <code>target</code> is an anchor tag attribute that specifies where to open the link and the value <code>"_blank"</code> specifies to open the link in a new tab
-<code>href</code> is an anchor tag attribute that contains the URL address of the link:<br>  <code>&#60;a href="http://freecodecamp.org"> ... &#60;/a&#62;</code>
+<code>href</code> is an anchor tag attribute that contains the URL address of the link:<br>  `<a href="http://freecodecamp.org"> ... </a>`
 The text, <strong>"link to freecodecamp.org"</strong>, within the <code>a</code> element called <code>anchor text</code>, will display a link to click:<br>  <code>&#60;a href=" ... "&#62;link to freecodecamp.org&#60;/a&#62;</code>
 The final output of the example will look like this:<br><p>Here's a <a target="_blank" href="http://freecodecamp.org"> link to freecodecamp.org</a> for you to follow.</p>
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Now nest the existing <code>a</code> element within a new <code>p</code> element (just after the existing <code>main</code> element). The new paragraph should have text that says "View more cat photos", where "cat photos" is a link, and the rest of the text is plain text.
 </section>
 
@@ -86,9 +88,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>View more <a target="_blank" href="http://freecatphotoapp.com">cat photos</a></p>
-  
+
   <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
-  
+
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>

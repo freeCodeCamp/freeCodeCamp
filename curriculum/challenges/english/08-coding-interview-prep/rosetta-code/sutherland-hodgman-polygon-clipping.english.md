@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 The  <a href="https://en.wikipedia.org/wiki/Sutherland-Hodgman clipping algorithm" target="_blank">Sutherland-Hodgman clipping algorithm</a>  finds the polygon that is the intersection between an arbitrary polygon (the "subject polygon") and a convex polygon (the "clip polygon").
 It is used in computer graphics (especially 2D graphics) to reduce the complexity of a scene being displayed by eliminating parts of a polygon that do not need to be displayed.
 Take the closed polygon defined by the points:
@@ -16,6 +17,7 @@ and clip it by the rectangle defined by the points:
 
 ## Instructions
 <section id='instructions'>
+
 Write a function that takes 2 arrays as parameters. The first array contains the points of the subject polygon and the second array contains the points of the clipping polygon. The function should return an array containing the points of the clipped polygon. Each number should be rounded to 3 decimal places.
 </section>
 
@@ -40,6 +42,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

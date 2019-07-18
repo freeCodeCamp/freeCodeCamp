@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Determine whether a given year is a leap year in the Gregorian calendar.
 </section>
 
@@ -41,6 +42,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js
