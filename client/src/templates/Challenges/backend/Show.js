@@ -164,6 +164,9 @@ export class BackEnd extends Component {
         }
       },
       output,
+      pageContext: {
+        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+      },
       tests,
       isSignedIn,
       executeChallenge,
@@ -181,7 +184,14 @@ export class BackEnd extends Component {
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer />
-              <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+              <ChallengeTitle
+                introPath={introPath}
+                nextChallengePath={nextChallengePath}
+                prevChallengePath={prevChallengePath}
+                showPrevNextBtns={true}
+              >
+                {blockNameTitle}
+              </ChallengeTitle>
               <ChallengeDescription
                 description={description}
                 instructions={instructions}
