@@ -97,4 +97,5 @@ function getArrayOfUsers(obj) {
 
 console.log(getArrayOfUsers(users));
 ```
+
 </section>

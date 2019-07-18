@@ -84,4 +84,5 @@ var MaxHeap = function() {
 	// change code above this line
 };
 ```
+
 </section>

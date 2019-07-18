@@ -76,4 +76,5 @@ tests:
 
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg" alt="freeCodeCamp stickers set">
 ```
+
 </section>

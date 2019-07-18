@@ -79,4 +79,5 @@ function removeFirstTwo(list) {
 }
 const arr = removeFirstTwo(source);
 ```
+
 </section>

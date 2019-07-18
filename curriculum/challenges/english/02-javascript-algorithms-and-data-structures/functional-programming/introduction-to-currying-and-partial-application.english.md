@@ -100,4 +100,5 @@ add(10)(20)(30);
 ```js
 const add = x => y => z => x + y + z
 ```
+
 </section>

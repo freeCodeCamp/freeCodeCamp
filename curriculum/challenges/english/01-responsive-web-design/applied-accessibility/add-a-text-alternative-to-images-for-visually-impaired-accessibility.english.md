@@ -53,4 +53,5 @@ tests:
 ```html
 <img src="doingKarateWow.jpeg" alt="Someone doing karate">
 ```
+
 </section>

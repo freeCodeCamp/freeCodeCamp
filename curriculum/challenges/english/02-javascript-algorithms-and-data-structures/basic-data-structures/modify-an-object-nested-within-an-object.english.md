@@ -92,4 +92,5 @@ let userActivity = {
 
 userActivity.data.online = 45;
 ```
+
 </section>

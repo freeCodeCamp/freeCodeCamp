@@ -65,4 +65,5 @@ console.log(increment(5)); // returns 6
 ```js
 const increment = (number, value = 1) => number + value;
 ```
+
 </section>

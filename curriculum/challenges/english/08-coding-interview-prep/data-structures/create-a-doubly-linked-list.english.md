@@ -108,4 +108,5 @@ DoublyLinkedList.prototype = {
 ```js
 // solution required
 ```
+
 </section>

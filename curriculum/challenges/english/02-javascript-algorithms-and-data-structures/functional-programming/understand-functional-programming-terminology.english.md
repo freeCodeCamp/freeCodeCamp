@@ -114,4 +114,5 @@ const getTea = (prepareTea, numOfCups) => {
 const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
 const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
 ```
+
 </section>
