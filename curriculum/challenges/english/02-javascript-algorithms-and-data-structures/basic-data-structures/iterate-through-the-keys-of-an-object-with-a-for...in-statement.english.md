@@ -41,6 +41,7 @@ We've defined a function <code>countOnline</code> which accepts one argument (a 
   }
 }
 ```
+
 </section>
 
 ## Tests
@@ -138,4 +139,5 @@ function countOnline(usersObj) {
 }
 
 ```
+
 </section>

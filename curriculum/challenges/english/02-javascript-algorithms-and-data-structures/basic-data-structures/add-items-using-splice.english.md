@@ -79,4 +79,5 @@ function htmlColorNames(arr) {
   return arr;
 }
 ```
+
 </section>

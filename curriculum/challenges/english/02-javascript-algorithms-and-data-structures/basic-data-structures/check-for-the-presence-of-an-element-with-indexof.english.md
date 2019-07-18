@@ -76,4 +76,5 @@ function quickCheck(arr, elem) {
   // change code above this line
 }
 ```
+
 </section>

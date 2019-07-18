@@ -126,4 +126,5 @@ const datetimeAttr = $(timeElement).attr("datetime");
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

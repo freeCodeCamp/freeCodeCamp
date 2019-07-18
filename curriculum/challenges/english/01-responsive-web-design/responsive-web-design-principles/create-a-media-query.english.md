@@ -33,6 +33,7 @@ tests:
   - text: Your <code>p</code> element should have an initial <code>font-size</code> of 20px when the device <code>height</code> is more than 800px.
     testString: assert($("style").text().replace(/\s/g ,'').replace(/@media.*}/g, '').match(/p{font-size:20px;?}/g));
 ```
+
 </section>
 
 ## Challenge Seed

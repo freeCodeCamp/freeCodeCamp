@@ -82,4 +82,5 @@ function urlSlug(title) {
 
 var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 ```
+
 </section>

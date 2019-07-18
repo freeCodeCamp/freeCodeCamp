@@ -115,4 +115,5 @@ tests:
   <p>I shift up when the #navbar is fixed to the browser window.</p>
 </body>
 ```
+
 </section>

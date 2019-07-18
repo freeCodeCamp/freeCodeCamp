@@ -302,4 +302,5 @@ function getRating(watchList){
 }
 
 ```
+
 </section>

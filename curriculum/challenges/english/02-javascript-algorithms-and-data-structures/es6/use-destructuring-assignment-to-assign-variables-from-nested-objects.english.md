@@ -97,4 +97,5 @@ const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
 console.log(highToday); // should be 77
 console.log(highTomorrow); // should be 80
 ```
+
 </section>
