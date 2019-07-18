@@ -7,6 +7,7 @@ challengeType: 1
 ## Description
 
 <section id='description'>
+
 This is the first of three challenges where we will implement a more difficult operation in binary search trees: deletion. Deletion is difficult because removing nodes breaks links in the tree. These links must be carefully reestablished to ensure the binary tree structure is maintained. For some deletions, this means the tree must be rearranged. In general, you will encounter one of three cases when trying to delete a node:
 Leaf Node: The target to delete has zero children.
 One Child: The target to delete only has one child.
@@ -17,6 +18,7 @@ Removing a leaf node is easy, we simply remove it. Deleting a node with one chil
 ## Instructions
 
 <section id='instructions'>
+
 Create a method on our binary tree called <code>remove</code>. We'll build the logic for our deletion operation in here. First, you'll want to create a function within remove that finds the node we are trying to delete in the current tree. If the node is not present in the tree, <code>remove</code> should return <code>null</code>. Now, if the target node is a leaf node with no children, then the parent reference to it should be set to <code>null</code>. This effectively deletes the node from the tree. To do this, you will have to keep track of the parent of the node we are trying to delete as well. It will also be useful to create a way to track the number of children the target node has, as this will determine which case our deletion falls under.
 We will handle the second and third cases in the next challenges. Good luck!
 </section>
@@ -37,10 +39,12 @@ tests:
   - text: The <code>remove</code> method removes leaf nodes from the tree
     testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');
 ```
+
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

@@ -6,6 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
+
 In the last section, we talked about what a stack is and how we can use an array to represent a stack. In this section, we will be creating our own stack class.
 Although you can use arrays to create stacks, sometimes it is best to limit the amount of control we have with our stacks.
 Apart from the <code>push</code> and <code>pop</code> method, stacks have other useful methods. Let's add a <code>peek</code>, <code>isEmpty</code>, and <code>clear</code> method to our stack class.
@@ -13,6 +14,7 @@ Apart from the <code>push</code> and <code>pop</code> method, stacks have other 
 
 ## Instructions
 <section id='instructions'>
+
 Write a <code>push</code> method that pushes an element to the top of the stack, a <code>pop</code> method that removes the element on the top of the stack, a <code>peek</code> method that looks at the first element in the stack, an <code>isEmpty</code> method that checks if the stack is empty, and a <code>clear</code> method that removes all elements from the stack.
 Normally stacks don't have this, but we've added a <code>print</code> helper method that console logs the collection.
 </section>
@@ -41,10 +43,12 @@ tests:
   - text: The <code>clear</code> method should remove all element from the stack
     testString: assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); return (test.isEmpty())}()), 'The <code>clear</code> method should remove all element from the stack');
 ```
+
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js
@@ -58,6 +62,7 @@ function Stack() {
   // Only change code above this line
 }
 ```
+
 </div>
 </section>
 

@@ -6,6 +6,7 @@ challengeType: 0
 
 ## Description
 <section id='description'>
+
 The last challenge showed how the <code>@for</code> directive uses a starting and ending value to loop a certain number of times. Sass also offers the <code>@each</code> directive which loops over each item in a list or map.
 On each iteration, the variable gets assigned to the current value from the list or map.
 
@@ -46,6 +47,7 @@ Both of the above code examples are converted into the following CSS:
 
 ## Instructions
 <section id='instructions'>
+
 Write an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.color-bg</code> class, where the "color" part changes for each item.
 Each class should set the <code>background-color</code> the respective color.
 </section>
@@ -99,6 +101,7 @@ tests:
 The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.
 
 ### List Data type
+
 ```html
 <style type='text/sass'>
 
@@ -118,6 +121,7 @@ The solution requires using the $color variable twice: once for the class name a
 ```
 
 ### Map Data type
+
 ```html
 <style type='text/sass'>
 

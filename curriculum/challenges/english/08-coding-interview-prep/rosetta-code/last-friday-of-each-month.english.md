@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Write a function that returns the date of the last Friday of a given month for a given year.
 </section>
 
@@ -45,6 +46,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js
