@@ -25,7 +25,8 @@ Arrow函数是用于编写JavaScript函数表达式的新ES6语法。较短的�
  var multiply = (x, y) => x * y; 
 ```
 
-您不再需要`function`和`return`关键字，甚至是大括号。
+您不再需要`function`和`return`关键字，甚至是花括号。
+注意：只有在整个功能在同一行的時候才能省略花括号和`return`关键字。不然会报错。
 
 ### 简化了`this`
 

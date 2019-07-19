@@ -6,36 +6,20 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-<p>
-Even today, with proportional fonts and complex layouts, there are still
-cases where you need to wrap text at a specified
-column.  The basic task is to wrap a paragraph of text in a simple way.
-Example text:
-</p>
-<pre>
-Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX algorithm.
-If your language provides this, you get easy extra credit,
-but you ''must reference documentation'' indicating that the algorithm
-is something better than a simple minimimum length algorithm.
-</pre>
-<p>
-Task:
 
-    Write a function that can wrap this text to any number of characters.
-
-As an example, the text wrapped to 80 characters should look like the following:
-</p>
-<pre>
-Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
-algorithm. If your language provides this, you get easy extra credit, but you
-must reference documentation indicating that the algorithm is something better
-than a simple minimimum length algorithm.
-</pre>
+Even today, with proportional fonts and complex layouts, there are still cases where you need to wrap text at a specified column. The basic task is to wrap a paragraph of text in a simple way.
 </section>
 
 ## Instructions
 <section id='instructions'>
 
+Write a function that can wrap this text to any number of characters. As an example, the text wrapped to 80 characters should look like the following:
+<pre>
+Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
+algorithm. If your language provides this, you get easy extra credit, but you
+must reference documentation indicating that the algorithm is something better
+than a simple minimum length algorithm.
+</pre>
 </section>
 
 ## Tests
@@ -66,7 +50,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function wrap (text, limit) {
+function wrap(text, limit) {
   return text;
 }
 ```
@@ -102,7 +86,7 @@ const firstRow42 = 'Wrap text using a more sophisticated';
 
 
 ```js
-function wrap (text, limit) {
+function wrap(text, limit) {
   const noNewlines = text.replace('\n', '');
   if (noNewlines.length > limit) {
     // find the last space within limit

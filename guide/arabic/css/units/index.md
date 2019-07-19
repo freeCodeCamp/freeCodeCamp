@@ -58,15 +58,15 @@ localeTitle: وحدات
 
 مثال
 
- `
-p { 
-  font-size: 24px; 
- } 
- div { 
-  width: 3in; 
-  border-width: 3pt; 
- } 
-` 
+```html
+p {
+  font-size: 24px;
+}
+div {
+  width: 3in;
+  border-width: 3pt;
+}
+``` 
 
 ستظهر `font-size: 24px` بكسل على أنها 24 بكسل على الهاتف أو الجهاز اللوحي أو شاشة سطح المكتب.
 

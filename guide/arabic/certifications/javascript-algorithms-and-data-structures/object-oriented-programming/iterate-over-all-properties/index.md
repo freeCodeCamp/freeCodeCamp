@@ -10,24 +10,25 @@ localeTitle: تكرار جميع الممتلكات
 
 ### حل
 
- `function Dog(name) { 
-  this.name = name; 
- } 
- 
- Dog.prototype.numLegs = 4; 
- 
- let beagle = new Dog("Snoopy"); 
- 
- let ownProps = []; 
- let prototypeProps = []; 
- 
- // Add your code below this line 
- for (let property in beagle) { 
-  if(Dog.hasOwnProperty(property)) { 
-    ownProps.push(property) 
-  } 
-  else { 
-    prototypeProps.push(property) 
-  } 
- } 
-`
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+// Add your code below this line
+for (let property in beagle) {
+  if(Dog.hasOwnProperty(property)) {
+    ownProps.push(property)
+  }
+  else {
+    prototypeProps.push(property)
+  }
+}
+```

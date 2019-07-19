@@ -70,4 +70,5 @@ const names = ['MARY','PATRICIA','LINDA','BARBARA','ELIZABETH','JENNIFER','MARIA
 ```js
 // solution required
 ```
+
 </section>

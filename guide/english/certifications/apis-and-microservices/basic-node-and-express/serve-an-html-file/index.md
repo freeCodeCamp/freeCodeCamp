@@ -16,8 +16,3 @@ To serve an index.html in a folder called "public" at the root domain you would 
 ```
 
 Note: __dirname returns the root directory is a best practice for node developers.
-
-
-
-
-<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/basic-node-and-express/serve-an-html-file/index.md' target='_blank' rel='nofollow'>Help our community expand these hints and guides</a>.

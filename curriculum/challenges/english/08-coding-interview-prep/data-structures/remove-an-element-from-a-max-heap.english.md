@@ -40,7 +40,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -51,9 +50,6 @@ var MaxHeap = function() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
@@ -62,4 +58,5 @@ var MaxHeap = function() {
 ```js
 // solution required
 ```
+
 </section>

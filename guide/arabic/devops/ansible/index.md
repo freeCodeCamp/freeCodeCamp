@@ -12,24 +12,28 @@ Ansible هو أداة سهلة الاستخدام الآلي. يمكن استخ�
 
 تأكد أولاً من أن النظام محدث.
 
- `$ sudo apt-get update 
- $ sudo apt-get upgrade 
-` 
+```
+$ sudo apt-get update
+$ sudo apt-get upgrade
+``` 
 
 بعد ذلك ، ستحتاج إلى إضافة الحزمة التالية إلى نظامك
 
- `$ sudo apt-get install software-properties-common 
-` 
+```
+$ sudo apt-get install software-properties-common
+``` 
 
 أضف ppa: ansible / ansible إلى النظام الخاص بك
 
- `$ sudo apt-add-repository ppa:ansible/ansible 
-` 
+```
+$ sudo apt-add-repository ppa:ansible/ansible
+``` 
 
 قم بتحديث repos الخاص بك مرة أخرى
 
- `$ sudo apt-get update 
-` 
+```
+$ sudo apt-get update
+``` 
 
 عادة ما تكون هناك خطوات قليلة تشارك في نشر التعليمات البرمجية في الإنتاج (إلى الموقع المباشر). يزداد عدد الخطوات كلما أصبح موقعك / تطبيق / Webapp أكبر وأكثر تعقيدًا.
 
@@ -39,20 +43,22 @@ Ansible هي أداة أتمتة ، يتم استخدامها غالبًا لل�
 
 تستخدم لغة تسمى [YAML](https://en.wikipedia.org/wiki/YAML) والتي تسمح لك بوصف المؤثرات القريبة من الإنجليزية البسيطة ، كما يمكنك أن ترى في مثال الوحدة النمطية Ansible:
 
- `--- 
- - yum: name={{contact.item}} state=installed 
- with_items: 
- - app_server 
- - acme_software 
- 
- 
- - service: name=app_server state=running enabled=yes 
-` 
+```YAML
+---
+- yum: name={{contact.item}} state=installed
+with_items:
+- app_server
+- acme_software
+
+
+- service: name=app_server state=running enabled=yes
+``` 
 
 أخيرا ، قم بتثبيت الحزمة
 
- `$ sudo apt-get install ansible 
-` 
+```
+$ sudo apt-get install ansible
+``` 
 
 من المزايا المهمة لاستخدام Ansible هو أنه يستخدم SSH (Secure SHell) بشكل افتراضي ، ويمكن للوحدات أن تقيم على أي جهاز (كمبيوتر) لا يتطلب خوادم أو شواهد أو قواعد بيانات.
 

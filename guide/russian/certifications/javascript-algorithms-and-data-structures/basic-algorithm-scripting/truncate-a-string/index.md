@@ -51,7 +51,6 @@ function truncateString(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/55)
 
 ### Код Объяснение:
 
@@ -71,7 +70,6 @@ function truncateString(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/54)
 
 ### Код Объяснение:
 

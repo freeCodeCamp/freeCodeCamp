@@ -42,7 +42,6 @@ function testElse(val) {
 // Change this value to test
 testElse(4);
 ```
-· [Run code at repl.it](https://repl.it/@AdrianSkar/Introducing-else-statements)
 
 ### Code explanation
 The function first evaluates `if` the condition `val > 5` evaluates to `true`. If it doesn't, it executes the next statement (`else { return "5 or smaller";})`.  

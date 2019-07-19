@@ -8,7 +8,14 @@ challengeType: 1
 <section id='description'>
 While <code>slice()</code> allows us to be selective about what elements of an array to copy, among several other useful tasks, ES6's new <dfn>spread operator</dfn> allows us to easily copy <em>all</em> of an array's elements, in order, with a simple and highly readable syntax. The spread syntax simply looks like this: <code>...</code>
 In practice, we can use the spread operator to copy an array like so:
-<blockquote>let thisArray = [true, true, undefined, false, null];<br>let thatArray = [...thisArray];<br>// thatArray equals [true, true, undefined, false, null]<br>// thisArray remains unchanged, and is identical to thatArray</blockquote>
+
+```js
+let thisArray = [true, true, undefined, false, null];
+let thatArray = [...thisArray];
+// thatArray equals [true, true, undefined, false, null]
+// thisArray remains unchanged, and is identical to thatArray
+```
+
 </section>
 
 ## Instructions
@@ -22,15 +29,15 @@ We have defined a function, <code>copyMachine</code> which takes <code>arr</code
 ```yml
 tests:
   - text: <code>copyMachine([true, false, true], 2)</code> should return <code>[[true, false, true], [true, false, true]]</code>
-    testString: assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]], '<code>copyMachine([true, false, true], 2)</code> should return <code>[[true, false, true], [true, false, true]]</code>');
+    testString: assert.deepEqual(copyMachine([true, false, true], 2), [[true, false, true], [true, false, true]]);
   - text: <code>copyMachine([1, 2, 3], 5)</code> should return <code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>
-    testString: assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]], '<code>copyMachine([1, 2, 3], 5)</code> should return <code>[[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]</code>');
+    testString: assert.deepEqual(copyMachine([1, 2, 3], 5), [[1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3], [1, 2, 3]]);
   - text: <code>copyMachine([true, true, null], 1)</code> should return <code>[[true, true, null]]</code>
-    testString: assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]], '<code>copyMachine([true, true, null], 1)</code> should return <code>[[true, true, null]]</code>');
+    testString: assert.deepEqual(copyMachine([true, true, null], 1), [[true, true, null]]);
   - text: <code>copyMachine(["it works"], 3)</code> should return <code>[["it works"], ["it works"], ["it works"]]</code>
-    testString: assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']], '<code>copyMachine(["it works"], 3)</code> should return <code>[["it works"], ["it works"], ["it works"]]</code>');
+    testString: assert.deepEqual(copyMachine(['it works'], 3), [['it works'], ['it works'], ['it works']]);
   - text: The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>
-    testString: assert.notStrictEqual(copyMachine.toString().indexOf('.concat(_toConsumableArray(arr))'), -1, 'The <code>copyMachine</code> function should utilize the <code>spread operator</code> with array <code>arr</code>');
+    testString: assert(removeJSComments(code).match(/\.\.\.arr/));
 
 ```
 
@@ -59,7 +66,14 @@ console.log(copyMachine([true, false, true], 2));
 
 </div>
 
+### After Test
+<div id='js-teardown'>
 
+```js
+const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+```
+
+</div>
 
 </section>
 
@@ -67,6 +81,17 @@ console.log(copyMachine([true, false, true], 2));
 <section id='solution'>
 
 ```js
-// solution required
+function copyMachine(arr,num){
+	let newArr=[];
+	while(num >=1){
+	// change code below this line 
+	newArr.push([...arr]);
+	//change code above this line
+	num--;
+	}
+	return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
 ```
+
 </section>

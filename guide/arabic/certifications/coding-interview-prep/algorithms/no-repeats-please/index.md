@@ -145,7 +145,6 @@ localeTitle: لا يتكرر من فضلك
  permAlone('aab'); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLop/0)
 
 ### شرح الشفرة:
 

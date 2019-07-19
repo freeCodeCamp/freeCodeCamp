@@ -46,7 +46,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function gamma (x) {
+function gamma(x) {
   // Good luck!
 }
 ```

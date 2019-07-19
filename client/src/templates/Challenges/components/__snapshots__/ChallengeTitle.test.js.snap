@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChallengeTitle/> renders correctly 1`] = `
+<div
+  className="challenge-title-wrap"
+>
+  <MockedLink
+    aria-label="Previous lesson"
+    className="btn-invert btn btn-primary"
+    to="/prev"
+  >
+    &lt;
+  </MockedLink>
+  <h2
+    className="text-center challenge-title"
+  >
+    title text
+    <i
+      className="ion-checkmark-circled text-primary"
+      title="Completed"
+    />
+  </h2>
+  <MockedLink
+    aria-label="Next lesson"
+    className="btn-invert btn btn-primary"
+    to="/intro/path"
+  >
+    &gt;
+  </MockedLink>
+</div>
+`;

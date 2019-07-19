@@ -14,8 +14,9 @@ localeTitle: غيت عن بعد
 
 ### قائمة جميع مستودعات بعيد تكوينها
 
- `git remote -v 
-` 
+```bash
+git remote -v
+``` 
 
 يسرد هذا الأمر جميع المستودعات البعيدة بجانب موقعها.
 
@@ -27,34 +28,39 @@ localeTitle: غيت عن بعد
 
 لإضافة مستودع تخزين عن بعد إلى مشروعك ، يمكنك تشغيل الأمر التالي:
 
- `git remote add REMOTE-NAME REMOTE-URL 
-` 
+```bash
+git remote add REMOTE-NAME REMOTE-URL
+``` 
 
 يمكن أن يكون `REMOTE-URL` إما HTTPS أو SSH. يمكنك العثور على عنوان URL على GitHub بالنقر على القائمة المنسدلة "نسخ أو تنزيل" في المستودع.
 
 على سبيل المثال ، إذا كنت ترغب في إضافة مستودع تخزين بعيد ووصفه `example` ، فيمكنك تشغيل:
 
- `git remote add example https://example.org/my-repo.git 
-` 
+```bash
+git remote add example https://example.org/my-repo.git
+``` 
 
 ### تحديث عنوان URL بعيد
 
 إذا تغير عنوان URL لمستودع تخزين عن بعد ، فيمكنك تحديثه باستخدام الأمر التالي ، حيث `example` هو اسم جهاز التحكم عن بعد:
 
- `git remote set-url example https://example.org/my-new-repo.git 
-` 
+```bash
+git remote set-url example https://example.org/my-new-repo.git
+``` 
 
 ### حذف أجهزة التحكم عن بعد
 
 يتم حذف أجهزة التحكم عن بعد مثل:
 
- `git remote rm REMOTE-NAME 
-` 
+```bash
+git remote rm REMOTE-NAME
+``` 
 
 يمكنك التأكد من اختفاء جهاز التحكم عن بعد من خلال عرض قائمة أجهزة التحكم عن بعد الموجودة لديك:
 
- `git remote -v 
-` 
+```bash
+git remote -v
+``` 
 
 ### معلومات اكثر:
 

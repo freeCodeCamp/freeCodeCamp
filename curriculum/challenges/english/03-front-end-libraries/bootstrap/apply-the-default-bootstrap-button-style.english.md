@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aec908850
 title: Apply the Default Bootstrap Button Style
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/apply-the-default-bootstrap-button-style'
 ---
 
 ## Description
@@ -66,7 +65,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
+
 </section>

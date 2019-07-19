@@ -65,7 +65,16 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+
+</style>
+<h1>Hello World!</h1>
 ```
+
 </section>

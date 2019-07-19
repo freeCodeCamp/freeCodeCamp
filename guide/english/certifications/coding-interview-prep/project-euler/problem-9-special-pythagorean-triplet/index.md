@@ -27,7 +27,6 @@ function specialPythagoreanTriplet(n) {
 
 specialPythagoreanTriplet(1000);
 ```
-- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-9-Special-Pythagorean-triplet)
 
 ### References:
 - [Wikipedia](https://en.wikipedia.org/wiki/Pythagorean_triple)

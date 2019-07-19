@@ -15,7 +15,12 @@ The first and last character you see in the JSON data are square brackets <code>
 You learned earlier that objects contain "key-value pairs" that are separated by commas. In the Cat Photo example, the first object has <code>"id":0</code> where "id" is a key and 0 is its corresponding value. Similarly, there are keys for "imageLink", "altText", and "codeNames". Each cat photo object has these same keys, but with different values.
 Another interesting "key-value pair" in the first object is <code>"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]</code>. Here "codeNames" is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.
 Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the "altText" of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called <code>json</code>:
-<blockquote>console.log(json[0].altText);<br>// Prints "A white cat wearing a green helmet shaped melon on its head."</blockquote>
+
+```js
+console.log(json[0].altText);
+// Prints "A white cat wearing a green helmet shaped melon on its head."
+```
+
 </section>
 
 ## Instructions
@@ -29,7 +34,7 @@ For the cat with the "id" of 2, print to the console the second value in the <co
 ```yml
 tests:
   - text: Your code should use bracket and dot notation to access the proper code name, and print "Loki" to the console.
-    testString: assert(code.match(/(?:json\[2\]\.codeNames\[1\]|json\[2\]\[('|")codeNames\1\]\[1\])/g), 'Your code should use bracket and dot notation to access the proper code name, and print "Loki" to the console.');
+    testString: assert(code.match(/(?:json\[2\]\.codeNames\[1\]|json\[2\]\[('|")codeNames\1\]\[1\])/g));
 
 ```
 
@@ -85,7 +90,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -107,4 +112,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

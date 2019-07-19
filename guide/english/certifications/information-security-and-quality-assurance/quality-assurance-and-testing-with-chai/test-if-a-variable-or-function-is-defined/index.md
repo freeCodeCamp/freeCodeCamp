@@ -3,8 +3,20 @@ title: Test if a Variable or Function is Defined
 ---
 ## Test if a Variable or Function is Defined
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/test-if-a-variable-or-function-is-defined/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To begin, locate the file "tests/1_unit_tests.js".
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 2 */``` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+
+The lines in the test should be changed from `assert.fail()` to either `assert.isDefined()` or `assert.isUndefined()`.
+
+## Solution
+```js
+/** 2 - Use assert.isDefined() or assert.isUndefined() to make the tests pass. **/
+test('#isDefined, #isUndefined', function(){
+  assert.isDefined( null, 'null is not undefined');
+  assert.isUndefined( undefined, 'undefined IS undefined');
+  assert.isDefined( 'hello', 'a string is not undefined' );
+});
+```

@@ -16,7 +16,8 @@ localeTitle: فهم الاختلافات بين الاستيراد وتتطلب
 
 ## حل
 
- `"use strict"; 
- import { capitalizeString } from "string-functions"; 
- capitalizeString("hello!"); 
-`
+```javascript
+"use strict";
+import { capitalizeString } from "string-functions";
+capitalizeString("hello!");
+```

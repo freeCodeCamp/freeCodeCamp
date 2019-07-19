@@ -2,6 +2,18 @@
 title: Rasberry PI Basics
 ---
 
+## Update your Raspberry Pi
+
+With os.system(), it is possible to write shell commands and run the apt-get update and upgrade.
+```
+import os
+
+def install_updates():
+    os.system('sudo apt-get update && sudo apt-get upgrade -y')
+
+install_updates()
+```
+
 ## Rasberry PI Basics Example
 ```python
 ## CODE THAT MAKES AN LED GLOW FOR 2 SECONDS

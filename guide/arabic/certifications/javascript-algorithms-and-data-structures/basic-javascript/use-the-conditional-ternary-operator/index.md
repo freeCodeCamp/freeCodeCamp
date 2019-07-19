@@ -10,9 +10,10 @@ localeTitle: استخدم المشغل الشرطي (الثالوثي)
 
 ### تحذير حل قدما!
 
- `function checkEqual(a, b) { 
-  return (a = b ? true : false ); 
- } 
- 
- checkEqual(1, 2); 
-`
+```javascript
+function checkEqual(a, b) {
+  return (a = b ? true : false );
+}
+
+checkEqual(1, 2);
+```

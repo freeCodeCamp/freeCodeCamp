@@ -11,17 +11,18 @@ localeTitle: تتضمن التعدادات
 1.  رقمية
 2.  سلسلة القائم
 
- `// numeric enum 
- enum NumericEnum { 
-    numeric1 = 1, 
-    numeric2, 
-    numeric3, 
-    numeric4, 
- } 
- 
- // string based enum 
- enum StringBasedEnum { 
-    Programming = "is fun", 
-    Pizza = "is good" 
- } 
-`
+```typescript
+// numeric enum
+enum NumericEnum {
+    numeric1 = 1,
+    numeric2,
+    numeric3,
+    numeric4,
+}
+
+// string based enum
+enum StringBasedEnum {
+    Programming = "is fun",
+    Pizza = "is good"
+}
+```

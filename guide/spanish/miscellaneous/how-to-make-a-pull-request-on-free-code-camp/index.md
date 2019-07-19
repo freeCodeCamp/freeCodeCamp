@@ -59,7 +59,7 @@ No hay nada que cometer, trabajando en el directorio limpio.
 
 ## Pasos comunes
 
-1.  Una vez que se hayan realizado las ediciones, se le solicitará que cree una solicitud de extracción en la página de Github de su fork.
+1.  Una vez que se hayan realizado las ediciones, se le solicitará que cree una solicitud de extracción en la página de GitHub de su fork.
 2.  De forma predeterminada, todas las solicitudes de extracción deben ir en contra del repositorio principal de la FCC, rama de `staging` .
 3.  Haga un título claro para su RP que sucintamente indique lo que se está arreglando. No agregue el número de problema en el título. Ejemplos: `Add Test Cases to Algorithm Drop It` `Correct typo in Challenge Size Your Images`
 4.  En el cuerpo de su RP, incluya un resumen más detallado de los cambios que realizó y por qué.

@@ -6,9 +6,27 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-Just like a normal function, you can pass arguments into arrow functions.
-<blockquote>// doubles input value and returns it<br>const doubler = (item) => item * 2;</blockquote>
-You can pass more than one argument into arrow functions as well.
+Just like a regular function, you can pass arguments into an arrow function.
+
+```js
+// doubles input value and returns it
+const doubler = (item) => item * 2;
+```
+
+If an arrow function has a single argument, the parentheses enclosing the argument may be omitted.
+
+```js
+// the same function, without the argument parentheses
+const doubler = item => item * 2;
+```
+
+It is possible to pass more than one argument into an arrow function.
+
+```js
+// multiplies the first input value by the second and returns it
+const multiplier = (item, multi) => item * multi;
+```
+
 </section>
 
 ## Instructions
@@ -67,4 +85,5 @@ const myConcat = (arr1, arr2) =>  {
 // test your code
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
+
 </section>

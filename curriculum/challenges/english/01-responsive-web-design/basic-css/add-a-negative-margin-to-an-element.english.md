@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08823
 title: Add a Negative Margin to an Element
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: 'https://scrimba.com/c/cnpyGs3'
 ---
 
@@ -124,4 +123,5 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
+
 </section>

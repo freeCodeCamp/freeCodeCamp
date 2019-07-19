@@ -8,9 +8,10 @@ localeTitle: استخدم خاصية الاختزال المرن
 
 مثال:
 
- `#box-1 { 
-    background-color: dodgerblue; 
-    flex: 2 2 150px; 
-    height: 200px; 
-  } 
-`
+```css
+#box-1 {
+    background-color: dodgerblue;
+    flex: 2 2 150px;
+    height: 200px;
+  }
+```

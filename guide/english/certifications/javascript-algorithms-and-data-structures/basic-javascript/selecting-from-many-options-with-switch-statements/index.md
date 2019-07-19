@@ -8,7 +8,7 @@ _If you have many options to choose from, use a `switch` statement. A `switch` s
 _Here is a pseudocode example:_
 
 ```js
-  switch(num) {
+  switch (num) {
     case value1:
       statement1;
       break;
@@ -54,7 +54,7 @@ Do not see _"following conditions"_ as an ordered list as it looks in the origin
 function caseInSwitch(val) {
   var answer = "";
   // Only change code below this line
-  switch(val) {
+  switch (val) {
     case 1:
       return "alpha";
       break;
@@ -105,7 +105,6 @@ function caseInSwitch(val) {
 // Change this value to test
 caseInSwitch(1);
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Switch-statements).
 
 ### Code explanation
 Since you already have a variable defined at the beginning of the function named `answer` and it's defined as the last return statement, you can assign new values to it for each case and will return the expected answer depending on the value you pass to the function. 

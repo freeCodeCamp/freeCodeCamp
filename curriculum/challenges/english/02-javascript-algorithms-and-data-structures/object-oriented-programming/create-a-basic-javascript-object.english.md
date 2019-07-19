@@ -10,7 +10,14 @@ Think about things people see everyday, like cars, shops, and birds. These are a
 What are some qualities of these <code>objects</code>? A car has wheels. Shops sell items. Birds have wings.
 These qualities, or <code>properties</code>, define what makes up an <code>object</code>. Note that similar <code>objects</code> share the same <code>properties</code>, but may have different values for those <code>properties</code>. For example, all cars have wheels, but not all cars have the same number of wheels.
 <code>Objects</code> in JavaScript are used to model real-world objects, giving them <code>properties</code> and behavior just like their real-world counterparts. Here's an example using these concepts to create a <code>duck</code> <code>object</code>:
-<blockquote>let duck = {<br>&nbsp;&nbsp;name: "Aflac",<br>&nbsp;&nbsp;numLegs: 2<br>};</blockquote>
+
+```js
+let duck = {
+  name: "Aflac",
+  numLegs: 2
+};
+```
+
 This <code>duck</code> <code>object</code> has two property/value pairs: a <code>name</code> of "Aflac" and a <code>numLegs</code> of 2.
 </section>
 
