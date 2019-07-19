@@ -26,7 +26,6 @@
     "hooks:uninstall": "node node_modules/husky/husky.js uninstall",
     "lint": "npm-run-all -p lint:*",
     "lint:challenges": "cd ./curriculum && npm run lint",
-    "lint:guide": "cd ./tools/lint-guide/ && gulp lint",
     "lint:js": "eslint .",
     "lint:css": "npm run prettier -- --check",
     "prettier": "prettier \"**/*.css\"",
