@@ -39,6 +39,7 @@ export function DynamicForm({
   fields,
   handleSubmit,
   fields: {
+    // eslint-disable-next-line react/prop-types
     _meta: { allPristine }
   },
 

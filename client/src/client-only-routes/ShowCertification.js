@@ -23,11 +23,12 @@ const propTypes = {
     username: PropTypes.string,
     name: PropTypes.string,
     certName: PropTypes.string,
+    certTitle: PropTypes.string,
+    completionTime: PropTypes.string,
     date: PropTypes.string
   }),
   certDashedName: PropTypes.string,
   certName: PropTypes.string,
-  certTitle: PropTypes.string,
   createFlashMessage: PropTypes.func.isRequired,
   fetchState: PropTypes.shape({
     pending: PropTypes.bool,
