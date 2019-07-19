@@ -14,10 +14,9 @@ Following above definition, symmetric difference of three sets *A*, *B*, and *C*
 
 #### Relevant Links ####
 
-* <a href="https://en.wikipedia.org/wiki/Symmetric_difference" target="_blank" rel="nofollow">Symmetric difference - Wikipedia</a>
-* <a href="https://www.youtube.com/watch?v=PxffSUQRkG4" target="_blank" rel="nofollow">Symmetric difference - YouTube</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce" target="_blank"
- rel="nofollow">JavaScript Array.prototype.reduce()</a>
+* [Symmetric difference - Wikipedia](https://en.wikipedia.org/wiki/Symmetric_difference)
+* [Symmetric difference - YouTube](https://www.youtube.com/watch?v=PxffSUQRkG4)
+* [Array.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1 ##
 
@@ -96,11 +95,11 @@ In the event of *odd number of sets* the symmetric difference will include ident
 
 #### Relevant Links ####
 
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for" target="_blank" rel="nofollow">JavaScript for</a>
-* <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/length" target="_blank" rel="nofollow">JavaScript Array.length</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank" rel="nofollow">JavaScript Array.prototype.push()</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="nofollow">JavaScript Array.prototype.forEach()</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank" rel="nofollow">JavaScript Array.prototype.indexOf()</a>
+* [Statement for](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for)
+* [Array.length](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
+* [Array.push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+* [Array.forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+* [Array.indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution: ##
 
@@ -151,23 +150,21 @@ In the event of *odd number of sets* the symmetric difference will include ident
 
 #### Relevant Links ####
 
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice" target="_blank" rel="nofollow">JavaScript Array.prototype.slice()</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="nofollow">JavaScript Array.prototype.filter()</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank" rel="nofollow">JavaScript Array.prototype.concat()</a>
+* [Array.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+* [Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+* [Array.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution: ##
 
 ```javascript
-    function sym() {
-      let argv = Array.from(arguments).reduce(diffArray);
-      return argv.filter((element, index, array) => index === array.indexOf(element));//remove duplicates
-    }
+    const diff = (arr1, arr2) => (
+      [
+        ...arr1.filter(e => !arr2.includes(e)), 
+        ...arr2.filter(e => !arr1.includes(e)),
+      ]
+    );
 
-    function diffArray(arr1, arr2) {
-      return arr1
-        .filter(element => !arr2.includes(element))
-        .concat(arr2.filter(element => !arr1.includes(element)));
-    }
+    const sym = (...args) => [...new Set(args.reduce(diff))];
 
     // test here
     sym([1, 2, 3], [5, 2, 1, 4]);
@@ -176,14 +173,13 @@ In the event of *odd number of sets* the symmetric difference will include ident
 
 ### Code Explanation: ###
 
-* The main function *sym()* creates an array from *arguments* and reduces its elements utilising helper function *diffArray()* to a single array.
+* The main function *sym()* reduces given arrays utilising helper function *diff()* to a single array. Also, it temporary converts the result to *Set* to remove duplicates.
 
-* The function *diffArray()* returns the symmetric difference of two arrays by picking out unique elements in parameterised arrays; *arr1* and *arr2*. 
+* The function *diff()* returns the symmetric difference of two arrays by picking out elements in parameterised arrays; *arr1* and *arr2*. 
 
 #### Relevant Links ####
-
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from" target="_blank" rel="nofollow">JavaScript Array.from()</a>
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="nofollow">JavaScript Array.prototype.filter()</a>
+* [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+* [Array.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS: ##
 
