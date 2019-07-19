@@ -28,7 +28,6 @@ function sum(arr, n) {
 ```
 
 </details>
-<br>
 
 ### Code explanation
 
