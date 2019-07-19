@@ -41,7 +41,7 @@ A quick reference to the commands that you will need when working locally.
 
 | command | description |
 | ------- | ----------- |
-| `npm run bootstrap` | Bootstraps the different services. |
+| `npm ci` | Bootstraps the different services. |
 | `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
 | `npm run develop` | Starts the freeCodeCamp API Server and Client Applications. |
 | `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests. |
