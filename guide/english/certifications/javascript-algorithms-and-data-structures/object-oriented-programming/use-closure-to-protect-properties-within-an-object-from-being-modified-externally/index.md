@@ -21,3 +21,14 @@ function Bird() {
 }
 
 ```
+
+### Solution 2
+
+In ES6 syntax we can make the function a bit less verbose:
+
+```
+function Bird() {
+  let weight = 15;
+  this.getWeight = () => weight;  
+}
+```
