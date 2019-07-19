@@ -18,6 +18,7 @@ The above <code>import</code> statement will create an object called <code>myMat
 myMathModule.add(2,3);
 myMathModule.subtract(5,3);
 ```
+
 </section>
 
 ## Instructions
@@ -41,7 +42,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-  
+
 // add code above this line
 
 stringFunctions.uppercaseString("hello");
