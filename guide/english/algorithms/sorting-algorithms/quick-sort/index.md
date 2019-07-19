@@ -78,58 +78,58 @@ console.log(arr);
 ### Implementation in C
 ```C
 #include<stdio.h>  
-void swap(int* a, int* b) 
-{ 
-    int t = *a; 
-    *a = *b; 
-    *b = t; 
+void swap(int* a, int* b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
 }
-int partition (int arr[], int low, int high) 
-{ 
+int partition (int arr[], int low, int high)
+{
     int pivot = arr[high];     
     int i = (low - 1);  
-  
-    for (int j = low; j <= high- 1; j++) 
-    { 
-        if (arr[j] <= pivot) 
-        { 
-            i++;    
-            swap(&arr[i], &arr[j]); 
-        } 
-    } 
-    swap(&arr[i + 1], &arr[high]); 
-    return (i + 1); 
-}
-void quickSort(int arr[], int low, int high) 
-{ 
-    if (low < high) 
+
+    for (int j = low; j <= high- 1; j++)
     {
-        int pi = partition(arr, low, high); 
-  
-        quickSort(arr, low, pi - 1); 
-        quickSort(arr, pi + 1, high); 
-    } 
-} 
-  
+        if (arr[j] <= pivot)
+        {
+            i++;    
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        int pi = partition(arr, low, high);
 
-void printArray(int arr[], int size) 
-{ 
-    int i; 
-    for (i=0; i < size; i++) 
-        printf("%d ", arr[i]); 
-    printf("n"); 
-} 
-  
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
 
-int main() 
-{ 
-    int arr[] = {10, 7, 8, 9, 1, 5}; 
-    int n = sizeof(arr)/sizeof(arr[0]); 
-    quickSort(arr, 0, n-1); 
-    printf("Sorted array: n"); 
-    printArray(arr, n); 
-    return 0; 
-} 
+
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("n");
+}
+
+
+int main()
+{
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    quickSort(arr, 0, n-1);
+    printf("Sorted array: n");
+    printArray(arr, n);
+    return 0;
+}
 ```
 
 ### Implementation in Python3
@@ -150,7 +150,7 @@ def quicksort(z):
         return res
     else:
         return z
-        
+
 ans1=quicksort(z)
 print(ans1)
 
@@ -177,13 +177,53 @@ function [pInd, unsorted] = partition(unsorted, low, high)
         if unsorted(j) <= unsorted(high)
             i = i+1;
             unsorted([i,j]) = unsorted([j,i]);
-            
+
         end
     end
     unsorted([i+1,high]) = unsorted([high,i+1]);
     pInd = i+1;
 
 end
+
+```
+### Implementation in Java
+
+```java
+public class Quicksort {
+
+  static void quickSort(int[] array, int p, int r) {
+      if (p < r) {
+          int q = partition(array, p, r);
+          quickSort(array, p, q - 1);
+          quickSort(array, q + 1, r);
+      }
+  }
+
+  static int partition(int[] array, int p, int r) {
+      // using the last element as the pivot
+      int pivot = array[r];
+      int i = p - 1;
+      for (int j = p; j <= r - 1; j++) {
+          if (array[j] <= pivot) {
+              i++;
+              int temp = array[i];
+              array[i] = array[j];
+              array[j] = temp;
+          }
+      }
+      int temp = array[i + 1];
+      array[i + 1] = array[r];
+      array[r] = temp;
+      return i + 1;
+  }
+
+    public static void main(String[] args) {
+      int [] array = {2,8,7,1,3,5,6,4};
+      quickSort(array, 0, 7);
+      for (int i : array)
+          System.out.print(i + " ");  
+   }
+}
 
 ```
 
@@ -209,4 +249,3 @@ The space complexity of quick sort is O(n). This is an improvement over other di
 - <a href='https://www.youtube.com/watch?v=SLauY6PpjW4' target='_blank' rel='nofollow'>Youtube: Gayle Laakmann McDowell (author of Cracking The Coding Interview) explains the basics of quicksort and show some implementations</a>
 
 - <a href='https://www.youtube.com/watch?v=COk73cpQbFQ' target='_blank' rel='nofollow'>Quick Sort - MyCodeSchool</a>
-
