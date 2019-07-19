@@ -1,6 +1,6 @@
 const chokidar = require('chokidar');
 
-const { createChallengeNode } = require('./create-Challenge-nodes');
+const { createChallengeNode } = require('./create-challenge-nodes');
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter },
