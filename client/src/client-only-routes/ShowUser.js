@@ -28,7 +28,7 @@ const propTypes = {
   reportUser: PropTypes.func.isRequired,
   userFetchState: PropTypes.shape({
     pending: PropTypes.bool,
-    comnplete: PropTypes.bool,
+    complete: PropTypes.bool,
     errored: PropTypes.bool
   }),
   username: PropTypes.string

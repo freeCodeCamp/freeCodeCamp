@@ -37,9 +37,9 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
       ? onSourceChange(filePath)
           .then(challenge => {
             reporter.info(
-              `File changed at ${filePath}, replacing challengeNode id ${
-                challenge.id
-              }`
+              `
+File changed at ${filePath}, replacing challengeNode id ${challenge.id}
+              `
             );
             return createChallengeNode(challenge, reporter);
           })

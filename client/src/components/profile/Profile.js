@@ -25,7 +25,25 @@ const propTypes = {
       showPortfolio: PropTypes.bool,
       showTimeLine: PropTypes.bool
     }),
-    username: PropTypes.string
+    calendar: PropTypes.object,
+    streak: PropTypes.shape,
+    completedChallenges: PropTypes.array,
+    portfolio: PropTypes.array,
+    about: PropTypes.string,
+    githubProfile: PropTypes.string,
+    isGithub: PropTypes.bool,
+    isLinkedIn: PropTypes.bool,
+    isTwitter: PropTypes.bool,
+    isWebsite: PropTypes.bool,
+    linkedin: PropTypes.string,
+    location: PropTypes.string,
+    name: PropTypes.string,
+    picture: PropTypes.string,
+    points: PropTypes.number,
+    twitter: PropTypes.string,
+    username: PropTypes.string,
+    website: PropTypes.string,
+    yearsTopContributor: PropTypes.array
   })
 };
 
