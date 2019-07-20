@@ -27,10 +27,10 @@
 ## Краткие справочные статьи
 
 
-1. [Как работать над статьями руководства.](/how-to-work-on-guide-articles.md)
-2. [Как работать над задачами по кодированию.](/how-to-work-on-coding-challenges.md)
-3. [Как настроить freeCodeCamp локально.](/how-to-setup-freecodecamp-locally.md)
-4. [Как поймать исходящие электронные письма локально.](/how-to-catch-outgoing-emails-locally.md)
+1. [Как работать над статьями руководства.](/docs/russian/how-to-work-on-guide-articles.md)
+2. [Как работать над задачами по кодированию.](/docs/russian/how-to-work-on-coding-challenges.md)
+3. [Как настроить freeCodeCamp локально.](/docs/russian/how-to-setup-freecodecamp-locally.md)
+4. [Как поймать исходящие электронные письма локально.](/docs/russian/how-to-catch-outgoing-emails-locally.md)
 
 ## Руководство по стилю
 
@@ -44,7 +44,6 @@
 
 | команда | описание |
 | ------- | ----------- |
-
 | `npm run bootstrap` | Загружает различные сервисы |
 | `npm run seed` | Парсит файлы с отметкой о проблемах и вставляет их в MongoDB |
 | `npm run develop` | Запускает сервер API и клиентские приложения freeCodeCamp |
