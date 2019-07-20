@@ -100,4 +100,5 @@ function addFriend(userObj, friend) {
   return userObj.data.friends;
 }
 ```
+
 </section>

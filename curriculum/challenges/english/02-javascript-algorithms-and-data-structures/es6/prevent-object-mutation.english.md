@@ -99,4 +99,5 @@ function freezeObj() {
 }
 const PI = freezeObj();
 ```
+
 </section>

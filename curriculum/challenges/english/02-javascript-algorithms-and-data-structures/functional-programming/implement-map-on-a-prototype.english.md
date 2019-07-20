@@ -82,4 +82,5 @@ var new_s = s.myMap(function(item){
   return item * 2;
 });
 ```
+
 </section>

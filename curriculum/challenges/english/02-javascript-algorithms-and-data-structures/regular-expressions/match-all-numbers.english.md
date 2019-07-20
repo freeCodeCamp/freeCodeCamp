@@ -67,4 +67,5 @@ let numRegex = /\d/g; // Change this line
 let result = movieName.match(numRegex).length;
 
 ```
+
 </section>

@@ -71,4 +71,5 @@ function incrementer() {
 
 var newValue = incrementer(); // Should equal 5
 ```
+
 </section>

@@ -105,4 +105,5 @@ tests:
 </style>
 <button>Register</button>
 ```
+
 </section>

@@ -29,8 +29,9 @@ h6 {
   color: #006400;
 }
 
-a:hover, a:focus {
-   text-decoration: none;
+a:hover,
+a:focus {
+  text-decoration: none;
 }
 
 .fcc-modal {

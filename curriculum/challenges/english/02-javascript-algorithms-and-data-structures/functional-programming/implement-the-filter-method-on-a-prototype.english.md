@@ -80,4 +80,5 @@ var new_s = s.myFilter(function(item){
   return item % 2 === 1;
 });
 ```
+
 </section>

@@ -74,4 +74,5 @@ const incrementer = val => val + 1;
 var newValue = incrementer(fixedValue); // Should equal 5
 console.log(fixedValue); // Should print 4
 ```
+
 </section>

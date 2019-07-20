@@ -82,4 +82,5 @@ function popShift(arr) {
   return [shifted, popped];
 }
 ```
+
 </section>

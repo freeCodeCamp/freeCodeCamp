@@ -10,6 +10,7 @@ import {
   challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
+  initConsole,
   initTests,
   updateBackendFormValues,
   updateChallengeMeta,
@@ -44,6 +45,7 @@ const propTypes = {
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
+  initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
   output: PropTypes.string,
@@ -71,6 +73,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToActions = {
   challengeMounted,
   executeChallenge,
+  initConsole,
   initTests,
   updateBackendFormValues,
   updateChallengeMeta,
@@ -94,21 +97,7 @@ export class BackEnd extends Component {
   }
 
   componentDidMount() {
-    const {
-      challengeMounted,
-      initTests,
-      updateChallengeMeta,
-      data: {
-        challengeNode: {
-          fields: { tests },
-          challengeType
-        }
-      },
-      pageContext: { challengeMeta }
-    } = this.props;
-    initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, challengeType });
-    challengeMounted(challengeMeta.id);
+    this.initializeComponent();
     window.addEventListener('resize', this.updateDimensions);
   }
 
@@ -127,23 +116,33 @@ export class BackEnd extends Component {
       }
     } = prevProps;
     const {
+      data: {
+        challengeNode: { title: currentTitle }
+      }
+    } = this.props;
+    if (prevTitle !== currentTitle) {
+      this.initializeComponent();
+    }
+  }
+
+  initializeComponent() {
+    const {
       challengeMounted,
+      initConsole,
       initTests,
       updateChallengeMeta,
       data: {
         challengeNode: {
-          title: currentTitle,
           fields: { tests },
           challengeType
         }
       },
       pageContext: { challengeMeta }
     } = this.props;
-    if (prevTitle !== currentTitle) {
-      initTests(tests);
-      updateChallengeMeta({ ...challengeMeta, challengeType });
-      challengeMounted(challengeMeta.id);
-    }
+    initConsole('');
+    initTests(tests);
+    updateChallengeMeta({ ...challengeMeta, challengeType });
+    challengeMounted(challengeMeta.id);
   }
 
   handleSubmit(values) {
@@ -164,6 +163,9 @@ export class BackEnd extends Component {
         }
       },
       output,
+      pageContext: {
+        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+      },
       tests,
       isSignedIn,
       executeChallenge,
@@ -181,7 +183,14 @@ export class BackEnd extends Component {
           <Row>
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer />
-              <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
+              <ChallengeTitle
+                introPath={introPath}
+                nextChallengePath={nextChallengePath}
+                prevChallengePath={prevChallengePath}
+                showPrevNextBtns={true}
+              >
+                {blockNameTitle}
+              </ChallengeTitle>
               <ChallengeDescription
                 description={description}
                 instructions={instructions}

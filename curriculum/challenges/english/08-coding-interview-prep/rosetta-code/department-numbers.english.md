@@ -28,6 +28,7 @@ Write a program which outputs all valid combinations as an array.
 [4, 7, 1] [6, 1, 5] [6, 2, 4]
 [6, 4, 2] [6, 5, 1]
 ```
+
 </section>
 
 ## Tests
