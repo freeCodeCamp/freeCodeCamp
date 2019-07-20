@@ -15,9 +15,9 @@ One of the most important and most common reasons why we need to adopt data driv
 
 **How to Get Started with Data Driven Design?**
 
-The first step to start with the data driven design approach is to talk to existing or potential users. If you already have a user-base; talk to them and identify their pain-points with your products. 
+The first step to start with a data driven design approach is to talk to existing or potential users. If you already have a user-base; talk to them and identify their pain-points with your products. 
 
-There are a few ways you can use to listen to existing users:
+There are a few methods for listening to existing users:
 
 **1)	Understand Analytics**
 
@@ -37,7 +37,7 @@ Another popular method is to conduct A/B Tests on your website or app. An A/B te
 
 An effective A/B test can tell you which version of your tested element is more popular among customers. 
 
-For example: If you want to redesign your home-page using data driven design approach, you can conduct A/B test with two different designs of the home-page and directing a few of users on first version of the design, while directing other users on the second version. With a test like this, you can find out which version retains or converts more users during a specific test duration. 
+For example: If you want to redesign your home-page using data driven design approach, you can conduct A/B tests with two different designs of the home-page. You could direct a few users onto the first version of the design, while directing other users onto the second version. With a test like this, you can find out which version retains or converts more users during a specific test duration.
 
 There are many free and premium tools available to conduct A/B testing. The most popular ones are:
 
