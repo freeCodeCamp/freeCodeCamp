@@ -108,4 +108,5 @@ let temp = thermos.temperature; // 24.44 in C
 thermos.temperature = 26;
 temp = thermos.temperature; // 26 in C
 ```
+
 </section>

@@ -75,4 +75,5 @@ function nonMutatingSplice(cities) {
 var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];
 nonMutatingSplice(inputCities);
 ```
+
 </section>

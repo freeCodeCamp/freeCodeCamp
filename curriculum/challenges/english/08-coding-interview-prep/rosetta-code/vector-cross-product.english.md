@@ -6,11 +6,13 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return <code>null</code> on invalid inputs such as vectors of different lengths.
 </section>
 

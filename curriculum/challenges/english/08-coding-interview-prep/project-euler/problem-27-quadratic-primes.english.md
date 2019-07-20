@@ -66,4 +66,5 @@ quadraticPrimes(1000);
 ```js
 // solution required
 ```
+
 </section>

@@ -6,7 +6,8 @@ challengeType: 1
 
 ## Description
 <section id='description'>
-In this exercise we are going to create a class named <code>Set</code> to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item. 
+
+In this exercise we are going to create a class named <code>Set</code> to emulate an abstract data structure called "set". A set is like an array, but it cannot contain duplicate values. The typical use for a set is to simply check for the presence of an item.
 We can see how ES6 set object works in the example below-
 
 ```js
@@ -26,6 +27,7 @@ And finally, we will create a size method that returns the number of elements in
 
 ## Instructions
 <section id='instructions'>
+
 Create an <code>add</code> method that adds a unique value to the set collection and returns <code>true</code> if the value was successfully added and <code>false</code> otherwise.
 
 Create a <code>remove</code> method that accepts a value and checks if it exists in the set. If it does, then this method should remove it from the set collection, and return <code>true</code>. Otherwise, it should return <code>false</code>.
@@ -63,6 +65,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js
@@ -130,4 +133,5 @@ class Set {
   }
 }
 ```
+
 </section>

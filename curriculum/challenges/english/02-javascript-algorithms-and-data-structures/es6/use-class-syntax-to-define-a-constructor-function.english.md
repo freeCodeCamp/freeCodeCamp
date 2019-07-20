@@ -89,4 +89,5 @@ class Vegetable {
 }
 const carrot = new Vegetable('carrot');
 ```
+
 </section>

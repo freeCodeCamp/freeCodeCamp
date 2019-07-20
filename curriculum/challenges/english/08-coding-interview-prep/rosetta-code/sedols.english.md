@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 For each number list of 6-digit <a href="https://en.wikipedia.org/wiki/SEDOL" title="wp: SEDOL" target="_blank">SEDOL</a>s, calculate and append the checksum digit.
 That is, given the input string on the left, your function should return the corresponding string on the right:
 <pre>

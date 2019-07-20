@@ -6,6 +6,7 @@ challengeType: 1
 
 ## Description
 <section id='description'>
+
 Graphs can be represented in different ways. Here we describe one way, which is called an <dfn>adjacency list</dfn>.
 An adjacency list is essentially a bulleted list where the left side is the node and the right side lists all the other nodes it's connected to. Below is a representation of an adjacency list.
 <blockquote>Node1: Node2, Node3<br>Node2: Node1<br>Node3: Node1</blockquote>
@@ -34,6 +35,7 @@ var undirectedGArr = [
 
 ## Instructions
 <section id='instructions'>
+
 Create a social network as an undirected graph with 4 nodes/people named <code>James</code>, <code>Jill</code>, <code>Jenny</code>, and <code>Jeff</code>. There are edges/relationships between James and Jeff, Jill and Jenny, and Jeff and Jenny.
 </section>
 
@@ -51,10 +53,12 @@ tests:
   - text: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.
     testString: assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, 'There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');
 ```
+
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js
