@@ -26,7 +26,10 @@ const propTypes = {
       showTimeLine: PropTypes.bool
     }),
     calendar: PropTypes.object,
-    streak: PropTypes.shape,
+    streak: PropTypes.shape({
+      current: PropTypes.number,
+      longest: PropTypes.number
+    }),
     completedChallenges: PropTypes.array,
     portfolio: PropTypes.array,
     about: PropTypes.string,

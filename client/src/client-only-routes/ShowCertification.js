@@ -24,7 +24,7 @@ const propTypes = {
     name: PropTypes.string,
     certName: PropTypes.string,
     certTitle: PropTypes.string,
-    completionTime: PropTypes.string,
+    completionTime: PropTypes.number,
     date: PropTypes.string
   }),
   certDashedName: PropTypes.string,
