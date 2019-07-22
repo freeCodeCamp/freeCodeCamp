@@ -463,9 +463,9 @@ function createShowCert(app) {
         messages: [
           {
             type: 'info',
-            message: `It looks like user ${username} is not ${
-              certText[certType]
-            } certified`
+            message: `
+It looks like user ${username} is not ${certText[certType]} certified
+          `
           }
         ]
       });
