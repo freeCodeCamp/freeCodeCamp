@@ -46,7 +46,8 @@ See below for the correct code to make the tests pass.
 <details><summary>Solution #1 (Click to Show/Hide)</summary>
 **.env**
   
-```GLITCH_DEBUGGER=true
+```
+GLITCH_DEBUGGER=true
 # Environment Config
 
 # store your secrets and config variables in here
