@@ -20,6 +20,7 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://www.theodinproject.com/' target='_blank' rel='nofollow'>The Odin Project</a>
 *   <a href='https://learnxinyminutes.com/docs/javascript/' target='_blank' rel='nofollow'>Learn X in Y minutes (X = JavaScript)</a>
 *   <a href='http://javascriptbook.com/' target='_blank' rel='nofollow'>JavaScript and jQuery: interactive front-end web development</a>
+*   <a href='https://github.com/leonardomso/33-js-concepts/' target='_blank' rel='nofollow'>33 Concepts Every JavaScript Developer Should Know </a>
 
 
 
