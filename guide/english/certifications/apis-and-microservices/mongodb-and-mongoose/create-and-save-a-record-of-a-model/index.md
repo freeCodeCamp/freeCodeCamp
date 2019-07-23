@@ -5,6 +5,8 @@ title: Create and Save a Record of a Model
 
 ## Hints
 
+### Hint #1
+
 You need to do the following:
 1. Create a model of a person, using the schema from exercise 2
 2. Create a new person, including their attributes
