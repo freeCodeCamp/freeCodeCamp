@@ -95,7 +95,7 @@ MONGO_URI=mongodb+srv://ailyntang:<ENTERYOURPASSWORDHERE>@fcccluster-vlas9.mongo
  </details>
 
 <details>
-  <summary>myApp.js</summary>
+**myApp.js**
   
   ```/**********************************************
 * 3. FCC Mongo & Mongoose Challenges
