@@ -120,4 +120,3 @@ mongoose.connect(process.env.MONGO_URI);
 ```
 </details>
   
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
