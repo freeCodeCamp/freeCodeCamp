@@ -1,10 +1,47 @@
 ---
 title: Create and Save a Record of a Model
 ---
-## Create and Save a Record of a Model
+# Create and Save a Record of a Model
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/create-and-save-a-record-of-a-model/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hints
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint #1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+You need to do the following:
+1. Create a model of a person, using the schema from exercise 2
+2. Create a new person, including their attributes
+3. Save the new person you created
+4. Put your new person inside the `createAndSavePerson` function
+
+## Solutions
+
+<details><summary>Solution #1 (Click to Show/Hide)</summary>
+
+Code for `myApp.js`
+  
+```javascript
+/** 1) Install & Set up mongoose */
+
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI);
+
+/** 2) Create a 'Person' Model */
+var personSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  favoriteFoods: [String]
+});
+
+/** 3) Create and Save a Person */
+var Person = mongoose.model('Person', personSchema);
+
+var createAndSavePerson = function(done) {
+  var janeFonda = new Person({name: "Jane Fonda", age: 84, favoriteFoods: ["vodka", "air"]});
+
+  janeFonda.save(function(err, data) {
+    if (err) return console.error(err);
+    done(null, data)
+  });
+};
+```
+</details>
