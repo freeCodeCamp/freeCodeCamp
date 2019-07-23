@@ -4,8 +4,12 @@ title: Use model.find() to Search Your Database
 # Use model.find() to Search Your Database
 
 ## Hints
-* Replace `Model` with the name of your model from the previous sections. Most likely this is `Person`.
-* Use `{name: personName}` for the first argument in `Model.find()`.
+
+### Hint #1
+Replace `Model` with the name of your model from the previous sections. Most likely this is `Person`.
+
+### Hint #2
+Use `{name: personName}` for the first argument in `Model.find()`.
 
 ## Solutions
 
