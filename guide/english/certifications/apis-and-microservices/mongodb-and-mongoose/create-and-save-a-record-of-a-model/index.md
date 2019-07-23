@@ -13,7 +13,8 @@ You need to do the following:
 
 ## Solutions
 
-<details><summary>Solution 1 for `myApp.js`</summary>
+<details><summary>Solution #1 (Click to Show/Hide)</summary>
+Code for `myApp.js`
   
 ```javascript
 /** 1) Install & Set up mongoose */
