@@ -14,7 +14,8 @@ OR
 
 ## Hints
 
-### Hint #1: Timeout error
+### Hint #1
+**Timeout error**
 
 If the tests are timing out, check the `package.json` file. Ensure the final dependency does not end in a `,`.
 
