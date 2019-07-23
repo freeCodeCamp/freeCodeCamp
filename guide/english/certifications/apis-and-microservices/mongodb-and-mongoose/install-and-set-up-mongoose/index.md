@@ -43,7 +43,7 @@ Still having issues? Check the below hints:
 ## Solutions
 See below for the correct code to make the tests pass.
 
-<details>
+<details><summary>Solution #1 (Click to Show/Hide)</summary>
   <summary>.env</summary>
   
 ```GLITCH_DEBUGGER=true
