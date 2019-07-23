@@ -64,7 +64,8 @@ MONGO_URI=mongodb+srv://ailyntang:<ENTERYOURPASSWORDHERE>@fcccluster-vlas9.mongo
 <details>
   <summary>package.json</summary>
   
-  ```{
+```json
+{
 	"name": "fcc-mongo-mongoose-challenges",
 	"version": "0.0.1",
 	"description": "A boilerplate project",
