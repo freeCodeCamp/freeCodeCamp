@@ -32,7 +32,7 @@ Vous pouvez extraire ces suites de tests via [le CDN de freeCodeCamp](https://cd
 
 L'obtention des certifications est définitive. Vous pourrez toujours y accéder depuis votre LinkedIn ou votre CV. Et lorsque vos employeurs potentiels ou vos clients indépendants cliquent sur ce lien, ils voient une certification vérifiée qui vous est propre.
 
-La seule exception à cette règle est que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant sans citation le code ou les projets d'autres personnes), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire: nous révoquons leurs certifications et banissons ces personnes.
+La seule exception à cette règle est que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant sans citation le code ou les projets d'autres personnes), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire: nous révoquons leurs certifications et bannissons ces personnes.
 
 Voici nos six certifications principales:
 
