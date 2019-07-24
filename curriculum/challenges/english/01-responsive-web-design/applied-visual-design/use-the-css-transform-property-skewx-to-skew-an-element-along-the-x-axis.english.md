@@ -29,7 +29,7 @@ Skew the element with the id of <code>bottom</code> by 24 degrees along the X-ax
 ```yml
 tests:
   - text: The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.
-    testString: assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g), 'The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.');
+    testString: assert(code.match(/#bottom\s*?{\s*?.*?\s*?transform:\s*?skewX\(24deg\);/g));
 
 ```
 

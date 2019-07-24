@@ -26,9 +26,9 @@ Align the <code>h4</code> tag's text, which says "Google", to the center. Then j
 ```yml
 tests:
   - text: Your code should use the text-align property on the <code>h4</code> tag to set it to center.
-    testString: assert($('h4').css('text-align') == 'center', 'Your code should use the text-align property on the <code>h4</code> tag to set it to center.');
+    testString: assert($('h4').css('text-align') == 'center');
   - text: Your code should use the text-align property on the <code>p</code> tag to set it to justify.
-    testString: assert($('p').css('text-align') == 'justify', 'Your code should use the text-align property on the <code>p</code> tag to set it to justify.');
+    testString: assert($('p').css('text-align') == 'justify');
 
 ```
 

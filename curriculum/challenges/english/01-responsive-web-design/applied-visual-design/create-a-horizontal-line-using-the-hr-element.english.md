@@ -22,9 +22,9 @@ Add an <code>hr</code> tag underneath the <code>h4</code> which contains the car
 ```yml
 tests:
   - text: Your code should add an <code>hr</code> tag to the markup.
-    testString: assert($('hr').length == 1, 'Your code should add an <code>hr</code> tag to the markup.');
+    testString: assert($('hr').length == 1);
   - text: The <code>hr</code> tag should come between the title and the paragraph.
-    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi), 'The <code>hr</code> tag should come between the title and the paragraph.');
+    testString: assert(code.match(/<\/h4>\s*?<hr(>|\s*?\/>)\s*?<p>/gi));
 
 ```
 

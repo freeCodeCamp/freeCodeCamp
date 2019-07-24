@@ -26,13 +26,13 @@ Camper Cat wants a page on his site dedicated to becoming a ninja. Help him fix 
 ```yml
 tests:
   - text: Your code should have 6 <code>h3</code> tags.
-    testString: assert($("h3").length === 6, 'Your code should have 6 <code>h3</code> tags.');
+    testString: assert($("h3").length === 6);
   - text: Your code should have 6 <code>h3</code> closing tags.
-    testString: assert((code.match(/\/h3/g) || []).length===6,'Your code should have 6 <code>h3</code> closing tags.');
+    testString: assert((code.match(/\/h3/g) || []).length===6);
   - text: Your code should not have any <code>h5</code> tags.
     testString: assert($("h5").length === 0, "Your code should not have any <code>h5</code> tags.");
   - text: Your code should not have any <code>h5</code> closing tags.
-    testString: assert(/\/h5/.test(code)===false, 'Your code should not have any <code>h5</code> closing tags');
+    testString: assert(/\/h5/.test(code)===false);
 ```
 
 </section>

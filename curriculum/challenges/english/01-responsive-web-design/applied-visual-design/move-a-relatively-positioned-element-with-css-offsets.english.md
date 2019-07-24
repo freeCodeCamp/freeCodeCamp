@@ -22,9 +22,9 @@ Use CSS offsets to move the <code>h2</code> 15 pixels to the right and 10 pixels
 ```yml
 tests:
   - text: Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.
-    testString: assert($('h2').css('bottom') == '10px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.');
+    testString: assert($('h2').css('bottom') == '10px');
   - text: Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.
-    testString: assert($('h2').css('left') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.');
+    testString: assert($('h2').css('left') == '15px');
 
 ```
 
