@@ -38,11 +38,11 @@ Also notice the <code>Kitten</code> class has a <code>constructor</code> defined
 ```yml
 tests:
   - text: The React component should return a <code>div</code> element.
-    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div', 'The React component should return a <code>div</code> element.');
+    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).type() === 'div');
   - text: The returned <code>div</code> should render an <code>h1</code> header within it.
-    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.shallow(React.createElement(MyComponent)).html()), 'The returned <code>div</code> should render an <code>h1</code> header within it.');
+    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.shallow(React.createElement(MyComponent)).html()));
   - text: The <code>h1</code> header should contain the string <code>Hello React!</code>.
-    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).html() === '<div><h1>Hello React!</h1></div>', 'The <code>h1</code> header should contain the string <code>Hello React!</code>.');
+    testString: assert(Enzyme.shallow(React.createElement(MyComponent)).html() === '<div><h1>Hello React!</h1></div>');
 
 ```
 
