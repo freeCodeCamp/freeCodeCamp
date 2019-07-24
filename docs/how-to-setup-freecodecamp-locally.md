@@ -207,7 +207,7 @@ All of the above needs to be run only the first time you set up the local dev en
 npm ci
 ```
 
-**NB:** If your ISP has certain network restrictions, the above step (2) may fail without warning. In such a case, you will need to install a VPN or proxy to get this step to pass.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources. Some solutions would be use to VPN services if possible and allowed in your environment.
 
 #### Step 3: Start MongoDB and seed the database (Local build only)
 
