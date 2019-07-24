@@ -3,6 +3,8 @@ title: Send Action Data to the Store
 ---
 # Send Action Data to the Store
 
+
+---
 ## Hints
 
 ### Hint 1

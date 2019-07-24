@@ -3,6 +3,8 @@ title: Use Middleware to Handle Asynchronous Actions
 ---
 # Use Middleware to Handle Asynchronous Actions
 
+
+---
 ## Hints
 
 ### Hint 1

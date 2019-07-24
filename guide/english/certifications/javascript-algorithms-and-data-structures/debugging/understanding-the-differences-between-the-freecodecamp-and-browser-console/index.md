@@ -3,6 +3,8 @@ title: Understanding the Differences between the freeCodeCamp and Browser Consol
 ---
 # Understanding the Differences between the freeCodeCamp and Browser Console
 
+
+---
 ## Hints
 
 ### Hint 1

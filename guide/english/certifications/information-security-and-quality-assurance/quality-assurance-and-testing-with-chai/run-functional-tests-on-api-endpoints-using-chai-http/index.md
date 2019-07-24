@@ -7,6 +7,8 @@ title: Run Functional Tests on API Endpoints using Chai-HTTP
 ## Problem Explanation
 To begin, open the file "tests/2_functional_tests.js" and locate 'Test GET /hello with no name'.
 
+
+---
 ## Hints
 
 ### Hint 1

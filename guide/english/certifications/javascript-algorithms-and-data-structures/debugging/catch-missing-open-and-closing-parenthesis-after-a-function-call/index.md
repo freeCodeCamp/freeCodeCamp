@@ -3,6 +3,8 @@ title: Catch Missing Open and Closing Parenthesis After a Function Call
 ---
 # Catch Missing Open and Closing Parenthesis After a Function Call
 
+
+---
 ## Hints
 
 ### Hint 1

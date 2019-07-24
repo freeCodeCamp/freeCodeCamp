@@ -3,6 +3,8 @@ title: Use Hex Code to Mix Colors
 ---
 # Use Hex Code to Mix Colors
 
+
+---
 ## Hints
 
 ### Hint 1

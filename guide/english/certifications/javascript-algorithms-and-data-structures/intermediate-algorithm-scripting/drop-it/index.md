@@ -15,6 +15,8 @@ Basically while the second argument is not true, you will have to remove the fir
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-shift/14301' target='_blank' rel='nofollow'>Array.shift()</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-slice/14302' target='_blank' rel='nofollow'>Array.slice()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

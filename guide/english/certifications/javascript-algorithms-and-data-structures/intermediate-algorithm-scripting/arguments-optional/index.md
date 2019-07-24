@@ -19,6 +19,8 @@ It can be quite complicated to understand what needs to be done. There are alway
 *   [Typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
 *   [Arguments Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
 
+
+---
 ## Hints
 
 ### Hint 1

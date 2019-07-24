@@ -3,6 +3,8 @@ title: Write a Simple Counter
 ---
 # Write a Simple Counter
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Use Array.filter() to Dynamically Filter an Array
 ---
 # Use Array.filter() to Dynamically Filter an Array
 
+
+---
 ## Hints
 
 ### Hint 1

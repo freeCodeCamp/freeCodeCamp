@@ -3,6 +3,8 @@ title: Practice comparing different values
 ---
 # Practice comparing different values
 
+
+---
 ## Hints
 
 ### Hint 1

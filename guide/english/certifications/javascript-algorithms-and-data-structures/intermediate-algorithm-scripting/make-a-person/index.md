@@ -20,6 +20,8 @@ Read the instructions carefully, it is always a good hint in itself to run the c
 *   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target='_blank' rel='nofollow'>Closures</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model' target='_blank' rel='nofollow'>Details of the Object Model</a>
 
+
+---
 ## Hints
 
 ### Hint 1

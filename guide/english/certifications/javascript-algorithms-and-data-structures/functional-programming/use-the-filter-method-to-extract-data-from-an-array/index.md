@@ -3,6 +3,8 @@ title: Use the filter method to extract data from an array
 ---
 # Use the filter method to extract data from an array
 
+
+---
 ## Hints
 
 ### Hint 1

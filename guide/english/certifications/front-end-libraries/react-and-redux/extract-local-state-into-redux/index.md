@@ -3,6 +3,8 @@ title: Extract Local State into Redux
 ---
 # Extract Local State into Redux
 
+
+---
 ## Hints
 
 ### Hint 1

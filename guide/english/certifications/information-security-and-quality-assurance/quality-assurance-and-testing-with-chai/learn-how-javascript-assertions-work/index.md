@@ -9,6 +9,8 @@ To begin, locate the file "tests/1_unit_tests.js".
 
 This file contains multiple suites of tests for the project, and this first challenge requires you to make the tests in ` /** 1 */` to pass.
 
+
+---
 ## Hints
 
 ### Hint 1

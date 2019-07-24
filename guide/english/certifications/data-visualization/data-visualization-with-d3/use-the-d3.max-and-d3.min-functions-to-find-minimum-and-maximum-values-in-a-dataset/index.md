@@ -3,6 +3,8 @@ title: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in
 ---
 # Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Review Using Props with Stateless Functional Components
 ---
 # Review Using Props with Stateless Functional Components
 
+
+---
 ## Hints
 
 ### Hint 1

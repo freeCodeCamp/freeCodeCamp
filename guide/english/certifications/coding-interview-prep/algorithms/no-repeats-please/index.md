@@ -74,6 +74,8 @@ A way to visualize this is by considering a tree that starts with the first char
 *   <a>JS Regex Resources</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' target='_blank' rel='nofollow'>JS String object</a>
 
+
+---
 ## Hints
 
 ### Hint 1

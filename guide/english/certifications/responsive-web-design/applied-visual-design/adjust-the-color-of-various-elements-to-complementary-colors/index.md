@@ -3,6 +3,8 @@ title: Adjust the Color of Various Elements to Complementary Colors
 ---
 # Adjust the Color of Various Elements to Complementary Colors
 
+
+---
 ## Hints
 
 ### Hint 1

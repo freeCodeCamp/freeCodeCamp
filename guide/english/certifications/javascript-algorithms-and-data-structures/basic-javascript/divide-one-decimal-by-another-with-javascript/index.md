@@ -3,6 +3,8 @@ title: Divide One Decimal by Another with JavaScript
 ---
 # Divide One Decimal by Another with JavaScript
 
+
+---
 ## Hints
 
 ### Hint 1

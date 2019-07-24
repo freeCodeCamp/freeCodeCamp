@@ -11,6 +11,8 @@ title: Define an HTML Class in JSX
 - There may also be some words reserved in JavaScript.For instance the word "class" cant be use to define HTML classes
 in JSX.Therefore instead of using "class" you can use "className".
 
+
+---
 ## Hints
 
 ### Hint 1

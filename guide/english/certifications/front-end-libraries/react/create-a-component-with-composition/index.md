@@ -4,6 +4,8 @@ title: Create a Component with Composition
 
 # Create a Component with Composition
 
+
+---
 ## Hints
 
 ### Hint 1

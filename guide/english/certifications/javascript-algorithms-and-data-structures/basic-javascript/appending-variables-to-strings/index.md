@@ -3,6 +3,8 @@ title: Appending Variables to Strings
 ---
 # Appending Variables to Strings
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Store Multiple Values in one Variable using JavaScript Arrays
 ---
 # Store Multiple Values in one Variable using JavaScript Arrays
 
+
+---
 ## Hints
 
 ### Hint 1

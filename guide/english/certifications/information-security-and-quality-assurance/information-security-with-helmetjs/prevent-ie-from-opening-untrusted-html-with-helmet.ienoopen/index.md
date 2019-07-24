@@ -3,6 +3,8 @@ title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
 ---
 # Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
 
+
+---
 ## Hints
 
 ### Hint 1

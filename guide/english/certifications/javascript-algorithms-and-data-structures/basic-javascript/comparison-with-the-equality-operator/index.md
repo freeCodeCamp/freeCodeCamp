@@ -7,6 +7,8 @@ title: Comparison with the Equality Operator
 ## Problem Explanation
 _Add the equality operator to the indicated line so that the function will return "Equal" when `val` is equivalent to 12._
 
+
+---
 ## Hints
 
 ### Hint 1

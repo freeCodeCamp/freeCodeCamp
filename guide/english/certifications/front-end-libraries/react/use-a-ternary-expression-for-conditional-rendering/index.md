@@ -4,6 +4,8 @@ title: Use a Ternary Expression for Conditional Rendering
 # Use a Ternary Expression for Conditional Rendering
 This challenge is to use Ternary Expression only instead of using `If/Else` in code,
 
+
+---
 ## Hints
 
 ### Hint 1

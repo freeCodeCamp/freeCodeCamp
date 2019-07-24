@@ -3,6 +3,8 @@ title: Access an Array's Contents Using Bracket Notation
 ---
 # Access an Array's Contents Using Bracket Notation
 
+
+---
 ## Hints
 
 ### Hint 1

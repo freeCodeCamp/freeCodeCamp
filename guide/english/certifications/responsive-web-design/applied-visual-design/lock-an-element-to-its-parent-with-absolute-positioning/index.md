@@ -4,6 +4,8 @@ title: Lock an Element to its Parent with Absolute Positioning
 
 # Lock an Element to its Parent with Absolute Positioning
 
+
+---
 ## Hints
 
 ### Hint 1

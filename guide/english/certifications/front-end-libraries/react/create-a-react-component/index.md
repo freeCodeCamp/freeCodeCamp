@@ -3,6 +3,8 @@ title: Create a React Component
 ---
 # Create a React Component
 
+
+---
 ## Hints
 
 ### Hint 1

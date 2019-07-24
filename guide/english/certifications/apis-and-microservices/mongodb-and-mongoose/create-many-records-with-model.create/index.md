@@ -3,6 +3,8 @@ title: Create Many Records with model.create()
 ---
 # Create Many Records with model.create()
 
+
+---
 ## Hints
 
 ### Hint 1

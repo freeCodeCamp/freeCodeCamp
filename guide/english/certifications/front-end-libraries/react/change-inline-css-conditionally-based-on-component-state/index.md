@@ -3,6 +3,8 @@ title: Change Inline CSS Conditionally Based on Component State
 ---
 # Change Inline CSS Conditionally Based on Component State
 
+
+---
 ## Hints
 
 ### Hint 1

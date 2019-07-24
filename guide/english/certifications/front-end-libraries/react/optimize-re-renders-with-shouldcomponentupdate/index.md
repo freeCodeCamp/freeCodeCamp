@@ -3,6 +3,8 @@ title: Optimize Re-Renders with shouldComponentUpdate
 ---
 # Optimize Re-Renders with shouldComponentUpdate
 
+
+---
 ## Hints
 
 ### Hint 1

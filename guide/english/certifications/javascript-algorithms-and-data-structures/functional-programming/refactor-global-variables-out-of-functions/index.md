@@ -3,6 +3,8 @@ title: Refactor Global Variables Out of Functions
 ---
 # Refactor Global Variables Out of Functions
 
+
+---
 ## Hints
 
 ### Hint 1

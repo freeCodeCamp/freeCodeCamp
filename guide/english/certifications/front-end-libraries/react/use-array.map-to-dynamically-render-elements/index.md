@@ -3,6 +3,8 @@ title: Use Array.map() to Dynamically Render Elements
 ---
 # Use Array.map() to Dynamically Render Elements
 
+
+---
 ## Hints
 
 ### Hint 1

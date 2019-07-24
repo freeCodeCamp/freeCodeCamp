@@ -9,6 +9,8 @@ title: Mutate an Array Declared with const
 
 Reassign the values of the `const` variable `s` using various element assignment.
 
+
+---
 ## Hints
 
 ### Hint 1

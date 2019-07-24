@@ -4,6 +4,8 @@ title: Adding a Default Option in Switch Statements
 
 # Adding a Default Option in Switch Statements
 
+
+---
 ## Hints
 
 ### Hint 1

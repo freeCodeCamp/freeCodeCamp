@@ -19,6 +19,8 @@ Our goal for this Algorithm is to split `arr` (first argument) into smaller chun
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push' rel='nofollow'>Array.push()</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice' target='_blank' rel='nofollow'>Array.slice()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

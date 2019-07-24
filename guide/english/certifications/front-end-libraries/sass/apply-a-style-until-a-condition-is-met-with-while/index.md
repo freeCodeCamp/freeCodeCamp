@@ -9,6 +9,8 @@ title: Apply a Style Until a Condition is Met with @while
 
 This program is very simple, the trick is to remember how while looping works.
 
+
+---
 ## Hints
 
 ### Hint 1

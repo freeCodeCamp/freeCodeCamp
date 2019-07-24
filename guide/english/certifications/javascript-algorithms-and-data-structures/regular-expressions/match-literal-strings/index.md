@@ -9,6 +9,8 @@ This challenge is not any different from the previous; in this case though, you 
 
 In this challenge, you're finding Waldo...inside a string!
 
+
+---
 ## Hints
 
 ### Hint 1

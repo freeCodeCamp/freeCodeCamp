@@ -3,6 +3,8 @@ title: Increment a Number with JavaScript
 ---
 # Increment a Number with JavaScript
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Use model.find() to Search Your Database
 ---
 # Use model.find() to Search Your Database
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Add a Hover Effect to a D3 Element
 ---
 # Add a Hover Effect to a D3 Element
 
+
+---
 ## Hints
 
 ### Hint 1

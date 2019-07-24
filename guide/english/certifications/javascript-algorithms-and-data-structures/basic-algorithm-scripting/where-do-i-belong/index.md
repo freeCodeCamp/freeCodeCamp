@@ -13,6 +13,8 @@ This can be a tricky problem to understand. You need to find where in the array 
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-sort/14306' target='_blank' rel='nofollow'>JS Array Sort</a>
 
+
+---
 ## Hints
 
 ### Hint 1

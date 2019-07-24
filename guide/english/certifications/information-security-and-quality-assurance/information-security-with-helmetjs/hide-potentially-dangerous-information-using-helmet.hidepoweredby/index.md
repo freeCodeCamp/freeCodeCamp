@@ -3,6 +3,8 @@ title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 ---
 # Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 
+
+---
 ## Hints
 
 ### Hint 1

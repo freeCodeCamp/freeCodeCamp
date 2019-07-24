@@ -14,6 +14,8 @@ This problem is a bit tricky because you have to familiarize yourself with Argum
 *   <a href='http://forum.freecodecamp.com/t/javascript-arguments/14283' target='_blank' rel='nofollow'>Arguments object</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-filter/14289' target='_blank' rel='nofollow'>Array.filter()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

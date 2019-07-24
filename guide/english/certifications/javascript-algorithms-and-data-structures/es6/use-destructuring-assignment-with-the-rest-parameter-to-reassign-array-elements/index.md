@@ -7,6 +7,8 @@ title: Use Destructuring Assignment with the Rest Parameter to Reassign Array El
 ## Problem Explanation
 Remember that the rest parameter allows for variable numbers of arguments. In this challenge, you have to get rid of the first two elements of an array.
 
+
+---
 ## Hints
 
 ### Hint 1

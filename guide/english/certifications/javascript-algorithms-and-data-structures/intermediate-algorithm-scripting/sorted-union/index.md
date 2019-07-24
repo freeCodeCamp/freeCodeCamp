@@ -13,6 +13,8 @@ The program has to return a new array of unique values from two original arrays 
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-arguments/14283' target='_blank' rel='nofollow'>JS Arguments</a>
 
+
+---
 ## Hints
 
 ### Hint 1

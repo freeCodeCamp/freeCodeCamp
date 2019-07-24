@@ -7,6 +7,8 @@ title: Use Responsive Design with Bootstrap Fluid Containers
 ## Problem Explanation
 Welcome to the Bootstrap challenges, the followingchallenge has you making the existing content children or sub-child of a new div which would be a bootstrap container
 
+
+---
 ## Hints
 
 ### Hint 1

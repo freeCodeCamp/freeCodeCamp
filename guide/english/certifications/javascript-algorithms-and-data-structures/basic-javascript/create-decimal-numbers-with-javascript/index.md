@@ -3,6 +3,8 @@ title: Create Decimal Numbers with JavaScript
 ---
 # Create Decimal Numbers with JavaScript
 
+
+---
 ## Hints
 
 ### Hint 1

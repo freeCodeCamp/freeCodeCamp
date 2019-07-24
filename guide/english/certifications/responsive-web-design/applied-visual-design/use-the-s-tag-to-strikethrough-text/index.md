@@ -4,6 +4,8 @@ title: Use the s Tag to Strikethrough Text
 
 # Use the s Tag to Strikethrough Text
 
+
+---
 ## Hints
 
 ### Hint 1

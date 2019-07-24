@@ -3,6 +3,8 @@ title: Use the map Method to Extract Data from an Array
 ---
 # Use the map Method to Extract Data from an Array
 
+
+---
 ## Hints
 
 ### Hint 1

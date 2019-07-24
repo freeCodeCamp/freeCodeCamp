@@ -12,6 +12,8 @@ Remove all <a href='https://guide.freecodecamp.org/javascript/falsy-values/' tar
 #### Relevant Links
 
 *   <a href='https://guide.freecodecamp.org/javascript/falsy-values/' target='_blank' rel='nofollow'>Falsy Values</a>
+
+---
 ## Hints
 
 ### Hint 1

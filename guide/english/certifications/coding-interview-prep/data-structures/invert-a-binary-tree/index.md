@@ -3,6 +3,8 @@ title: Invert a Binary Tree
 ---
 # Invert a Binary Tree
 
+
+---
 ## Hints
 
 ### Hint 1

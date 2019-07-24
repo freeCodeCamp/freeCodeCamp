@@ -7,6 +7,8 @@ title: Understand BCrypt Hashes
 ## Problem Explanation
 **Starting with this lesson there is a new boilerplate project to clone on glitch.** So be sure to start by cloning that first!
 
+
+---
 ## Hints
 
 ### Hint 1

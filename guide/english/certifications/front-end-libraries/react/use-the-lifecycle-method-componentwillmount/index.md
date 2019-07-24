@@ -8,6 +8,8 @@ title: Use the Lifecycle Method componentWillMount
 The challenge is a basic introduction to React's LifeCycle components.
 These methods are also called Lifecycle Hooks.
 
+
+---
 ## Hints
 
 ### Hint 1

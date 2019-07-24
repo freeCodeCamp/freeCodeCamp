@@ -3,6 +3,8 @@ title: Learn About Self-Closing JSX Tags
 ---
 # Learn About Self-Closing JSX Tags
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -7,6 +7,8 @@ title: Use CSS Grid Units to Change the Size of Columns and Rows
 ## Problem Explanation
 This challenge requires you to set the width of the columns of the container to the ones as specified in the challenge description.
 
+
+---
 ## Hints
 
 ### Hint 1

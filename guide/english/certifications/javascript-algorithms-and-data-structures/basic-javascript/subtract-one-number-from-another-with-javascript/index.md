@@ -3,6 +3,8 @@ title: Subtract One Number from Another with JavaScript
 ---
 # Subtract One Number from Another with JavaScript
 
+
+---
 ## Hints
 
 ### Hint 1

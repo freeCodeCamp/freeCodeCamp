@@ -3,6 +3,8 @@ title: Catch Use of Assignment Operator Instead of Equality Operator
 ---
 # Catch Use of Assignment Operator Instead of Equality Operator
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -4,6 +4,8 @@ title: Prevent Object Mutation
 
 # Prevent Object Mutation
 
+
+---
 ## Hints
 
 ### Hint 1

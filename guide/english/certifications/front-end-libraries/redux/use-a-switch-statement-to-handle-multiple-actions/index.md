@@ -3,6 +3,8 @@ title: Use a Switch Statement to Handle Multiple Actions
 ---
 # Use a Switch Statement to Handle Multiple Actions
 
+
+---
 ## Hints
 
 ### Hint 1

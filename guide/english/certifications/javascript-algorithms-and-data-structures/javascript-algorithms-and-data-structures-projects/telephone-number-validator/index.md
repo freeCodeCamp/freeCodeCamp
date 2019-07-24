@@ -15,6 +15,8 @@ The task is not that hard to understand, implementing it is the hardest part. Yo
 *   <a href='http://regexpal.com/' target='_blank' rel='nofollow'>regexpal.com</a>
 *   <a href='https://regex101.com/#javascript' target='_blank' rel='nofollow'>regex101.com/</a>
 
+
+---
 ## Hints
 
 ### Hint 1

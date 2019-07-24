@@ -3,6 +3,8 @@ title: Compose React Components
 ---
 # Compose React Components
 
+
+---
 ## Hints
 
 ### Hint 1 

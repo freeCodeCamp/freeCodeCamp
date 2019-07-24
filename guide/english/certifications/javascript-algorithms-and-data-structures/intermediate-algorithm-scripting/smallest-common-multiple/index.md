@@ -19,6 +19,8 @@ This problem can be confusing because most people look for the smallest common m
 
 *   <a href='https://en.wikipedia.org/wiki/Least_common_multiple' target='_blank' rel='nofollow'>Least (Smallest) Common Multiple</a>
 
+
+---
 ## Hints
 
 ### Hint 1

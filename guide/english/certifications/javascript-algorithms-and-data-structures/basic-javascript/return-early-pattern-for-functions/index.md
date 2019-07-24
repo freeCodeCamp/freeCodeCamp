@@ -3,6 +3,8 @@ title: Return Early Pattern for Functions
 ---
 # Return Early Pattern for Functions
 
+
+---
 ## Hints
 
 ### Hint 1

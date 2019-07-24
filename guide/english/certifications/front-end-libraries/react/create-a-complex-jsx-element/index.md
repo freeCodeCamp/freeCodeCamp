@@ -3,6 +3,8 @@ title: Create a Complex JSX Element
 ---
 # Create a Complex JSX Element
 
+
+---
 ## Hints
 
 ### Hint 1

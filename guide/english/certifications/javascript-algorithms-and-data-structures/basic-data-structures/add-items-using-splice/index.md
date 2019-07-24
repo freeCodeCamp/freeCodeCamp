@@ -3,6 +3,8 @@ title: Add Items Using splice()
 ---
 # Add Items Using splice()
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Use an IIFE to Create a Module
 ---
 # Use an IIFE to Create a Module
 
+
+---
 ## Hints
 
 ### Hint 1

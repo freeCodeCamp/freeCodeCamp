@@ -3,6 +3,8 @@ title: Define an Action Creator
 ---
 # Define an Action Creator
 
+
+---
 ## Hints
 
 ### Hint 1

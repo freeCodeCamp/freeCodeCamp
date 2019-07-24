@@ -8,6 +8,8 @@ title: Use * to Import Everything from a File
 
 If you want to import everything possible from a file, then you use the `import * as _ from` syntax, provided by ES6. That's exactly what you're tasked at doing in this challenge!
 
+
+---
 ## Hints
 
 ### Hint 1

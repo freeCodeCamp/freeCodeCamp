@@ -7,6 +7,8 @@ title: Align All Items Horizontally using justify-items
 ## Problem Explanation
 In this challenge you are required to use the "justify-items" property to horizontally align all the items in the grid.
 
+
+---
 ## Hints
 
 ### Hint 1

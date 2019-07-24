@@ -20,6 +20,8 @@ componentDidMount() {
 ```
 where ``` one ``` and ``` two ``` are states you want to set after ``` interval ```ms.
 
+
+---
 ## Hints
 
 ### Hint 1

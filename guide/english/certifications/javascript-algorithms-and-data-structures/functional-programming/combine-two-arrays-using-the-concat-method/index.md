@@ -3,6 +3,8 @@ title: Combine Two Arrays Using the concat Method
 ---
 # Combine Two Arrays Using the concat Method
 
+
+---
 ## Hints
 
 ### Hint 1

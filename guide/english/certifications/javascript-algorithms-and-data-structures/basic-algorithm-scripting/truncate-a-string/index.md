@@ -12,6 +12,8 @@ We need to reduce the length of the string or **truncate** it if it is longer th
 
 *   <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/JS-String-Prototype-Slice' target='_blank' rel='nofollow'>String.prototype.slice()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

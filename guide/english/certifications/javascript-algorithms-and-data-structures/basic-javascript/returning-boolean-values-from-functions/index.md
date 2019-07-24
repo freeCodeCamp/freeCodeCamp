@@ -17,6 +17,8 @@ if (a < b) {
   return false;
 }
 ```
+
+---
 ## Hints
 
 ### Hint 1

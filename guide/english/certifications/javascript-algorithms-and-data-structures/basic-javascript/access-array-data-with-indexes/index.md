@@ -3,6 +3,8 @@ title: Access Array Data with Indexes
 ---
 # Access Array Data with Indexes
 
+
+---
 ## Hints
 
 ### Hint 1

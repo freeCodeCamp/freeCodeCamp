@@ -4,6 +4,8 @@ title: Pass Arguments to Avoid External Dependence in a Function
 
 # Pass Arguments to Avoid External Dependence in a Function
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Create a Stateful Component
 ---
 # Create a Stateful Component
 
+
+---
 ## Hints
 
 ### Hint 1

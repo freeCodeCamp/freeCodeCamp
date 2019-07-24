@@ -7,6 +7,8 @@ title: Match Letters of the Alphabet
 ## Problem Explanation
 In this challenge, you're asked to match all of the letters of the alphabet within a given string. Not only are you matching/searching for these characters, but you're asked to extract them. 
 
+
+---
 ## Hints
 
 ### Hint 1 

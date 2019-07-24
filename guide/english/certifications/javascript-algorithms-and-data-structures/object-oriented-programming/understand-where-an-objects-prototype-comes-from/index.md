@@ -3,6 +3,8 @@ title: Understand Where an Object’s Prototype Comes From
 ---
 # Understand Where an Object’s Prototype Comes From
 
+
+---
 ## Hints
 
 ### Hint 1

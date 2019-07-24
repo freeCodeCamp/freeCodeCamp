@@ -3,6 +3,8 @@ title: Divide One Number by Another with JavaScript
 ---
 # Divide One Number by Another with JavaScript
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -9,6 +9,8 @@ title: Set Default Parameters for Your Functions
 
 We'll be modifying the increment function so that the **number** parameter is incremented by 1 by default, by setting **value** to 1 if a value for **value** is not passed to the increment function.
 
+
+---
 ## Hints
 
 ### Hint 1

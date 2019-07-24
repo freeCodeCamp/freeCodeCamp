@@ -3,6 +3,8 @@ title: Manipulate Arrays With shift()
 ---
 # Manipulate Arrays With shift()
 
+
+---
 ## Hints
 
 ### Hint 1

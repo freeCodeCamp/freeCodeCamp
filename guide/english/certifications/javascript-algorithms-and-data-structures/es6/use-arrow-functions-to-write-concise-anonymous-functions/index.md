@@ -9,6 +9,8 @@ Again, ES6 is all about making JavaScript more elegant, and for some, more reada
 
 Anonymous functions, as stated, can be created when you are sure that the function will not be called by name anywhere else.
 
+
+---
 ## Hints
 
 ### Hint 1

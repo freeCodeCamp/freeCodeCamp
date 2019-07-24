@@ -11,6 +11,8 @@ Change the Browser.site link to the current URL of your project if you are compl
 
 Find test 'submit "surname" : "Colombo" - write your e2e test...' and read the instructions to determine how to pass this challenge.
 
+
+---
 ## Hints
 
 ### Hint 1

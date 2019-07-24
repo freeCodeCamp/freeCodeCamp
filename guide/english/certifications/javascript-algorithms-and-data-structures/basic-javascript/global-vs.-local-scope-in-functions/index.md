@@ -3,6 +3,8 @@ title: Global vs. Local Scope in Functions
 ---
 # Global vs. Local Scope in Functions
 
+
+---
 ## Hints
 
 ### Hint 1

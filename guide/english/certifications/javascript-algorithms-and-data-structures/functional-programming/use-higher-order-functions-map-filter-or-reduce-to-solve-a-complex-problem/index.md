@@ -9,6 +9,8 @@ title: Use Higher-Order Functions map, filter, or reduce to Solve a Complex Prob
 
 We need to compute and square values from the `realNumberArray` and store them in the variable `squaredIntegers` using the `map()`, `filter()`, and/or `reduce()` functions.
 
+
+---
 ## Hints
 
 ### Hint 1

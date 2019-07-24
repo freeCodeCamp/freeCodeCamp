@@ -5,6 +5,8 @@ title: Lock an Element to the Browser Window with Fixed Positioning
 
 # Lock an Element to the Browser Window with Fixed Positioning
 
+
+---
 ## Hints
 
 ### Hint 1

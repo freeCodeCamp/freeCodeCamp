@@ -7,6 +7,8 @@ title: Create a Linear Scale with D3
 ## Problem Explanation
 In this D3 challenge you are required to change the scale variable to create a linear scale. Then set the output variable to the scale called with an input argument of 50.
 
+
+---
 ## Hints
 
 ### Hint 1

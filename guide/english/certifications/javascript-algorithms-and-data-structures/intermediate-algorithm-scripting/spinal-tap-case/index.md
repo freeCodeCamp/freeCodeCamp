@@ -16,6 +16,8 @@ Convert the given string to a lowercase sentence with words joined by dashes.
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-replace/15942' target='_blank' rel='nofollow'>JS String Prototype Replace</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-tolowercase/15948' target='_blank' rel='nofollow'>JS String Prototype ToLowerCase</a>
 
+
+---
 ## Hints
 
 ### Hint 1

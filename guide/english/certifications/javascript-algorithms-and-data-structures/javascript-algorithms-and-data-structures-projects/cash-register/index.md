@@ -13,6 +13,8 @@ title: Cash Register
 
 *   <a>Data Structure Arrays</a>
 
+
+---
 ## Hints
 
 ### Hint 1

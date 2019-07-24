@@ -3,6 +3,8 @@ title: Create a Stateless Functional Component
 ---
 # Create a Stateless Functional Component
 
+
+---
 ## Hints
 
 ### Hint 1

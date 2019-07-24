@@ -3,6 +3,8 @@ title: Initializing Variables with the Assignment Operator
 ---
 # Initializing Variables with the Assignment Operator
 
+
+---
 ## Hints
 
 ### Hint 1

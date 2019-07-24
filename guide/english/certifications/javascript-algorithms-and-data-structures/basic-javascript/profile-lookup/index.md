@@ -15,6 +15,8 @@ title: Profile Lookup
     *   If **firstName** is found and no associated **prop** is found, you should return `No such property`.
 *   If **firstName** isn't found anywhere, you should return `No such contact`.
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -23,6 +23,8 @@ This problem does not involve rearranging the input into different combinations 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-push/14298' target='_blank' rel='nofollow'>Array.push()</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>String.split()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -9,6 +9,8 @@ To begin, locate the file "tests/1_unit_tests.js".
 
 This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 2 */``` pass.
 
+
+---
 ## Hints
 
 ### Hint 1

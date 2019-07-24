@@ -7,6 +7,8 @@ title: Ignore Case While Matching
 ## Problem Explanation
 When creating a regular expression, you might want to match parts of string that are same in spelling, but different in case. To do this, you add the `i` flag to the end of the regex. In this challenge, you are doing just that.
 
+
+---
 ## Hints
 
 ### Hint 1

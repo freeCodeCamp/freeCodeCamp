@@ -3,6 +3,8 @@ title: Use Destructuring Assignment to Assign Variables from Nested Objects
 ---
 # Use Destructuring Assignment to Assign Variables from Nested Objects
 
+
+---
 ## Hints
 
 ### Hint 1

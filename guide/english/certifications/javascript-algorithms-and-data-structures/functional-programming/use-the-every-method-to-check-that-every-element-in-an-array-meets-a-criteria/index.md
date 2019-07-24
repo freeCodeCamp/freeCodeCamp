@@ -10,6 +10,8 @@ Use the `every` method inside the `checkPositive` function to check if every ele
 #### Relevant Links
   - [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
 
+
+---
 ## Hints
 
 ### Hint

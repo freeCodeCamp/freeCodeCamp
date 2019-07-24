@@ -3,6 +3,8 @@ title: Remember to Set the Constructor Property when Changing the Prototype
 ---
 # Remember to Set the Constructor Property when Changing the Prototype
 
+
+---
 ## Hints
 
 ### Hint 1

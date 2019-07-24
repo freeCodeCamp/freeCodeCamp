@@ -3,6 +3,8 @@ title: Understanding Uninitialized Variables
 ---
 # Understanding Uninitialized Variables
 
+
+---
 ## Hints
 
 ### Hint 1

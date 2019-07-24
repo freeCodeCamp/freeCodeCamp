@@ -13,6 +13,8 @@ This lesson requires you to use the `hr` tag to separate the title and content o
 <!-- It's this easy. Note that it does not have a closing tag. -->
 <hr>
 ```
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Pass Props to a Stateless Functional Component
 ---
 # Pass Props to a Stateless Functional Component
 
+
+---
 ## Hints
 
 ### Hint 1

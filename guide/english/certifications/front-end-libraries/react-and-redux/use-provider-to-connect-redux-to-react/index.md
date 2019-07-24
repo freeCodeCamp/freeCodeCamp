@@ -3,6 +3,8 @@ title: Use Provider to Connect Redux to React
 ---
 # Use Provider to Connect Redux to React
 
+
+---
 ## Hints
 
 ### Hint 1

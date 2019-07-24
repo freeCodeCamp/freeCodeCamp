@@ -3,6 +3,8 @@ title: Getting Started with React Redux
 ---
 # Getting Started with React Redux
 
+
+---
 ## Hints
 
 ### Hint 1

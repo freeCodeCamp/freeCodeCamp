@@ -3,6 +3,8 @@ title: Split Your Styles into Smaller Chunks with Partials
 ---
 # Split Your Styles into Smaller Chunks with Partials
 
+
+---
 ## Hints 
 
 ### Hint 1

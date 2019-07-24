@@ -3,6 +3,8 @@ title: Accessing Nested Arrays
 ---
 # Accessing Nested Arrays
 
+
+---
 ## Hints
 
 ### Hint 1

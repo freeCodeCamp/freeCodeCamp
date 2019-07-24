@@ -3,6 +3,8 @@ title: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFi
 ---
 # Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
 
+
+---
 ## Hints
 
 ### Hint 1

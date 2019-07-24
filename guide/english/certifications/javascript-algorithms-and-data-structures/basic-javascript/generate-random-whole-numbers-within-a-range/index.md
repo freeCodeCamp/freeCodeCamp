@@ -3,6 +3,8 @@ title: Generate Random Whole Numbers within a Range
 ---
 # Generate Random Whole Numbers within a Range
 
+
+---
 ## Hints
 
 ### Hint 1

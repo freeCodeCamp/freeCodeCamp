@@ -3,6 +3,8 @@ title: Create a Scatterplot with SVG Circles
 ---
 # Create a Scatterplot with SVG Circles
 
+
+---
 ## Hints
 
 ### Hint 1

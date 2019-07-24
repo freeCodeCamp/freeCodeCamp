@@ -3,6 +3,8 @@ title: Compound Assignment With Augmented Multiplication
 ---
 # Compound Assignment With Augmented Multiplication
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -8,6 +8,8 @@ title: Match Numbers and Letters of the Alphabet
 ## Problem Explanation
 In this challenge, you are asked to return a collection of both numbers and letters extracted from a string. Our goal is to create a single regexp that captures the range of letters between h and s, and the numbers from 2 to 6.
 
+
+---
 ## Hints
 
 ### Hint 1

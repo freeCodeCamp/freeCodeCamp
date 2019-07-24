@@ -14,6 +14,8 @@ This challenge introduces using JavaScript callback functions as arguments to D3
 *   [JavaScript Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 *   [JavaScript Arrow Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
+
+---
 ## Hints
 
 ### Hint 1

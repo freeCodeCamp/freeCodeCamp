@@ -3,6 +3,8 @@ title: Declare JavaScript Variables
 ---
 # Declare JavaScript Variables
 
+
+---
 ## Hints
 
 ### Hint 1

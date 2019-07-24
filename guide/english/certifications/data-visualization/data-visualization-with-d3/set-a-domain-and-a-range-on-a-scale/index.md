@@ -3,6 +3,8 @@ title: Set a Domain and a Range on a Scale
 ---
 # Set a Domain and a Range on a Scale
 
+
+---
 ## Hints
 
 ### Hint 1

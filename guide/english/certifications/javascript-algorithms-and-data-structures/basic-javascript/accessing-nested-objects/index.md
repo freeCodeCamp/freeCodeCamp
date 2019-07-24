@@ -3,6 +3,8 @@ title: Accessing Nested Objects
 ---
 # Accessing Nested Objects
 
+
+---
 ## Hints
 
 ### Hint 1

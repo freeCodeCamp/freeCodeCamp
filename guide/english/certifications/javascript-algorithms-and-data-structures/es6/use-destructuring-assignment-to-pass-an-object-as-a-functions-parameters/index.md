@@ -8,6 +8,8 @@ title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 
 You could pass the entire object, and then pick the specific attributes you want by using the `.` operator. But ES6 offers a more elegant option!
 
+
+---
 ## Hints
 
 ### Hint 1

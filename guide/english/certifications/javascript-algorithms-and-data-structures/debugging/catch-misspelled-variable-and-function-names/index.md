@@ -3,6 +3,8 @@ title: Catch Misspelled Variable and Function Names
 ---
 # Catch Misspelled Variable and Function Names
 
+
+---
 ## Hints
 
 ### Hint 1

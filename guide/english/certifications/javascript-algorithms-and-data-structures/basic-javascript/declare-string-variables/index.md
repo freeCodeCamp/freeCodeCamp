@@ -3,6 +3,8 @@ title: Declare String Variables
 ---
 # Declare String Variables
 
+
+---
 ## Hints
 
 ### Hint 1

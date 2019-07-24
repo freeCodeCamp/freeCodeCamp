@@ -3,6 +3,8 @@ title: Use Bracket Notation to Find the Nth Character in a String
 ---
 # Use Bracket Notation to Find the Nth Character in a String
 
+
+---
 ## Hints
 
 ### Hint 1

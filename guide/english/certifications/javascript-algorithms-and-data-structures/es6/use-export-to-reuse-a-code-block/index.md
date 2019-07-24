@@ -9,6 +9,8 @@ We learned how to import stuff from another file. But there's a catch. You can o
 
 Your task here is to export `foo` and `bar`.
 
+
+---
 ## Hints
 
 ### Hint 1

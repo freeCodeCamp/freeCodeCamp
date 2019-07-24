@@ -3,6 +3,8 @@ title: Hash and Compare Passwords Synchronously
 ---
 # Hash and Compare Passwords Synchronously
 
+
+---
 ## Hints
 
 ### Hint 1

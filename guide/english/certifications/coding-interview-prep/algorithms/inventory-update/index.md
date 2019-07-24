@@ -15,6 +15,8 @@ The current as well as new inventory will be in this format: `[[2, "item-0"], [3
 
 * <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array' target='_blank' rel='nofollow'>JS Array</a>
 
+
+---
 ## Hints
 
 ### Hint 1

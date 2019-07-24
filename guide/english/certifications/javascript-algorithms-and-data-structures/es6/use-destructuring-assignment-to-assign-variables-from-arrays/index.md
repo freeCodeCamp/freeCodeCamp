@@ -3,6 +3,8 @@ title: Use Destructuring Assignment to Assign Variables from Arrays
 ---
 # Use Destructuring Assignment to Assign Variables from Arrays
 
+
+---
 ## Hints
 
 ### Hint # 1

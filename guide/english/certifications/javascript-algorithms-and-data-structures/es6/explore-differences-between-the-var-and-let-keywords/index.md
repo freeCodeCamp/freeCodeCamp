@@ -9,6 +9,8 @@ title: Explore Differences Between the var and let Keywords
 
 We need to change each `var` to `let` in our code.
 
+
+---
 ## Hints
 
 ### Hint 1

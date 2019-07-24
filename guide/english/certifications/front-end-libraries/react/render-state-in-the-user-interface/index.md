@@ -4,6 +4,8 @@ title: Render State in the User Interface
 # Render State in the User Interface
 In the challenge, you will need to render a state value in `<h1>` tag, pretty simple.
 
+
+---
 ## Hints
 
 ### Hint 1

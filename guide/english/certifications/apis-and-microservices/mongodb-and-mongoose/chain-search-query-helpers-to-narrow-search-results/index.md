@@ -3,6 +3,8 @@ title: Chain Search Query Helpers to Narrow Search Results
 ---
 # Chain Search Query Helpers to Narrow Search Results
 
+
+---
 ## Hints
 
 ### Hint 1

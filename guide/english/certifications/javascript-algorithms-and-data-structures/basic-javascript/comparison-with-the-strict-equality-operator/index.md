@@ -8,6 +8,8 @@ title: Comparison with the strict equality operator
 ## Problem Explanation
 · _Use the strict equality operator in the `if` statement so the function will return "Equal" when `val` is strictly equal to `7`._
 
+
+---
 ## Hints
 
 ### Hint 1

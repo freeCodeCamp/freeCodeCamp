@@ -18,6 +18,8 @@ Once we have determined whether it is a palindrome or not we want to return eith
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-replace/15942' target='_blank' rel='nofollow'>String.prototype.replace</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-tolowercase/15948' target='_blank' rel='nofollow'>String.prototype.toLowerCase</a>
 
+
+---
 ## Hints
 
 ### Hint 1

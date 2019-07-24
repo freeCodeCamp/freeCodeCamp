@@ -3,8 +3,6 @@ title: Iterate with JavaScript While Loops
 ---
 # Iterate with JavaScript While Loops
 
-## Hints
-
 ---
 ## Problem Explanation
 While loops will run as long as the condition inside the ( ) is true.
@@ -16,6 +14,8 @@ while (condition) {
   //code...
 }
 ```
+
+---
 ## Hints
 
 ### Hint 1

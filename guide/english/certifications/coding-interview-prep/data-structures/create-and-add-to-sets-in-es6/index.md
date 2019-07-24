@@ -8,6 +8,8 @@ title: Create and Add to Sets in ES6
 
 To solve this problem, you have to add an array of items to the set.
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -7,6 +7,8 @@ title: Use the parseInt Function
 ## Problem Explanation
 The ```parseInt()``` function will take any ```string``` parameter representing a number and return its integer value. 
 
+
+---
 ## Hints
 
 ### Hint 1 

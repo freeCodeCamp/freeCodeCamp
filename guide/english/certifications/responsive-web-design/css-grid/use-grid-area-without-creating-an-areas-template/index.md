@@ -3,6 +3,8 @@ title: Use grid-area Without Creating an Areas Template
 ---
 # Use grid-area Without Creating an Areas Template
 
+
+---
 ## Hints
 
 ### Hint 1

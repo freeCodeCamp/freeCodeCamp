@@ -8,6 +8,8 @@ title: Use class Syntax to Define a Constructor Function
 
 In this lesson, you are defining the Vegetable object using class syntax.
 
+
+---
 ## Hints
 
 ### Hint 1

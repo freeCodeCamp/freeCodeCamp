@@ -30,6 +30,8 @@ class MyComponent extends React.Component {
 };
 ```
 
+
+---
 ## Hints
 
 ### Hint 1

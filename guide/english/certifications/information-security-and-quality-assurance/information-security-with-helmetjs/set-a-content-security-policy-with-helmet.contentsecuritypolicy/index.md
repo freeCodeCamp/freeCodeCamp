@@ -3,6 +3,8 @@ title: Set a Content Security Policy with helmet.contentSecurityPolicy()
 ---
 # Set a Content Security Policy with helmet.contentSecurityPolicy()
 
+
+---
 ## Hints
 
 ### Hint 1

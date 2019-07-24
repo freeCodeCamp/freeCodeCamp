@@ -16,6 +16,8 @@ We have to return a sentence with title case. This means that the first letter w
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-touppercase/15950' target='_blank' rel='nofollow'>JS String Prototype ToUpperCase</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-replace/15942' target='_blank' rel='nofollow'>JS String Prototype Replace</a>
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Manage npm Dependencies By Understanding Semantic Versioning
 ---
 # Manage npm Dependencies By Understanding Semantic Versioning
 
+
+---
 ## Hints
 
 ### Hint 1

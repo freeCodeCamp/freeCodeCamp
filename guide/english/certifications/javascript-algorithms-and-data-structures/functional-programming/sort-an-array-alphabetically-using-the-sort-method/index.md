@@ -3,6 +3,8 @@ title: Sort an Array Alphabetically using the sort Method
 ---
 # Sort an Array Alphabetically using the sort Method
 
+
+---
 ## Hints
 
 Hint #1

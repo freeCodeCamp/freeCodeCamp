@@ -13,6 +13,8 @@ You have to go through each word and figure out which one is the longest and ret
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length' target='_blank' rel='nofollow'>JS String Length</a>
 
+
+---
 ## Hints
 
 ### Hint 1

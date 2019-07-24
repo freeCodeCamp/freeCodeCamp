@@ -4,6 +4,8 @@ title: Create Visual Balance Using the text-align Property
 
 # Create Visual Balance Using the text-align Property
 
+
+---
 ## Hints
 
 ### Hint #1

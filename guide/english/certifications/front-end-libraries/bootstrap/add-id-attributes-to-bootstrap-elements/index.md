@@ -7,6 +7,8 @@ title: Add id Attributes to Bootstrap Elements
 ## Problem Explanation
 The last challenge had you adding a class to your button elements, this time you have to add id(s) to the div(s) which have the well class.
 
+
+---
 ## Hints
 
 ### Hint 1

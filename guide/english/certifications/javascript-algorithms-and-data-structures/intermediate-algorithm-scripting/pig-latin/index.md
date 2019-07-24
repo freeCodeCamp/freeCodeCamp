@@ -13,6 +13,8 @@ You need to create a program that will translate from English to Pig Latin. Pig 
 *   <a href='http://en.wikipedia.org/wiki/Pig_Latin' target='_blank' rel='nofollow'>Pig Latin</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-match/15941' target='_blank' rel='nofollow'>JS String Prototype Match</a>
 
+
+---
 ## Hints
 
 ### Hint 1

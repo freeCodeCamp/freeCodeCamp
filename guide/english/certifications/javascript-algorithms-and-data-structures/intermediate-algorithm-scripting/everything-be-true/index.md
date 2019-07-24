@@ -14,6 +14,8 @@ The program needs to check if the second argument is a <a href='http://forum.fre
 *   <a href='http://forum.freecodecamp.com/t/javascript-truthy-value/15975' target='_blank' rel='nofollow'>JavaScript Truthy</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-arguments/14283.md' target='_blank' rel='nofollow'>JavaScript Arguments</a>
 
+
+---
 ## Hints
 
 ### Hint 1

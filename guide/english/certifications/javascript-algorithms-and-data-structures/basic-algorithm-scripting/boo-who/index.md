@@ -13,6 +13,8 @@ This program is very simple, the trick is to understand what a boolean primitive
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean' target='_blank' rel='nofollow'>Boolean</a>
 
+
+---
 ## Hints
 
 ### Hint 1

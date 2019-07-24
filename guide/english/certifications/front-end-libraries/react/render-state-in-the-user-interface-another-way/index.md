@@ -3,6 +3,8 @@ title: Render State in the User Interface Another Way
 ---
 # Render State in the User Interface Another Way
 
+
+---
 ## Hints
 
 ### Hint 1

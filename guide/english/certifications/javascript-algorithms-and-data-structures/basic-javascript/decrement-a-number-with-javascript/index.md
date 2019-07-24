@@ -3,6 +3,8 @@ title: Decrement a Number with JavaScript
 ---
 # Decrement a Number with JavaScript
 
+
+---
 ## Hints
 
 ### Hint 1

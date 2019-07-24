@@ -16,6 +16,8 @@ You will create a program that converts an integer to a Roman Numeral.
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf' target='_blank' rel='nofollow'>Array.indexOf()</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>Array.join()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

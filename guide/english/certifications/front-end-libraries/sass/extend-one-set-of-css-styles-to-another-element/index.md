@@ -3,6 +3,8 @@ title: Extend One Set of CSS Styles to Another Element
 ---
 # Extend One Set of CSS Styles to Another Element
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -7,6 +7,8 @@ title: Remove Whitespace from Start and End
 ## Problem Explanation
 To solve this challenge you simply have to create a regex string that matches any spaces at the beginning or at the end of the string. 
 
+
+---
 ## Hints
 
 ### Hint 1

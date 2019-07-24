@@ -10,6 +10,8 @@ Instead of using string concatenation, ES6 offers template literals to create st
 
 It's required to use template literals to return a list as every element in the array as the element will be wrapped in a `<li></li>` tag.
 
+
+---
 ## Hints
 
 ### Hint 1

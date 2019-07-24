@@ -13,6 +13,8 @@ title: Mutations
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-indexof/15936' target='_blank' rel='nofollow'>String.indexOf()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

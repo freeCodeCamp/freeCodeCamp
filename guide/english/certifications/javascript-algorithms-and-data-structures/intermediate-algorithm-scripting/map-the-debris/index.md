@@ -17,6 +17,8 @@ The first thing to do is to get familiar with what the program is for by knowing
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt' target='_blank' rel='nofollow'>Math.sqrt()</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round' target='_blank' rel='nofollow'>Math.round()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

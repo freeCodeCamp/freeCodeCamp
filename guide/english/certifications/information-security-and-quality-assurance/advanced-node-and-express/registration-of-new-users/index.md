@@ -3,6 +3,8 @@ title: Registration of New Users
 ---
 # Registration of New Users
 
+
+---
 ## Hints
 
 ### Hint 1

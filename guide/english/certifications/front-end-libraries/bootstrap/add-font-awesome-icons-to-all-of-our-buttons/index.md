@@ -12,6 +12,8 @@ Use Font Awesome to add an `info-circle` icon to your info button and a `trash` 
   - [Font Awesome](https://fontawesome.com/)
   - [Different between Font Awesome v4 and v5](https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4)
   
+
+---
 ## Hints
 
 ### Hint 1

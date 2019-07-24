@@ -3,6 +3,8 @@ title: Comment Your JavaScript Code
 ---
 # Comment Your JavaScript Code
 
+
+---
 ## Hints
 
 ### Hint 1

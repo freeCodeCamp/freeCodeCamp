@@ -13,6 +13,8 @@ This problem seems simple but you need to make sure to flatten any array, regard
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-isarray/14284' target='_blank' rel='nofollow'>Array.isArray()</a>
 
+
+---
 ## Hints
 
 ### Hint 1

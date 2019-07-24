@@ -18,6 +18,8 @@ Following above definition, symmetric difference of three sets *A*, *B*, and *C*
 * [Symmetric difference - YouTube](https://www.youtube.com/watch?v=PxffSUQRkG4)
 * [Array.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
+
+---
 ## Hints
 
 ### Hint 1

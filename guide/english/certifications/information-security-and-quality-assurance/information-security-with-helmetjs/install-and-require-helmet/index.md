@@ -8,6 +8,8 @@ title: Install and Require Helmet
 For this series of lessons, it's easiest to clone the glitch boilerplate project and follow the instructions there.  
 In this challenge you need to add and require helmet to your project.
 
+
+---
 ## Hints
 
 ### Hint 1

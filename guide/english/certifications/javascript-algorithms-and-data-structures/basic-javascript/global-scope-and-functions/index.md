@@ -3,6 +3,8 @@ title: Global Scope and Functions
 ---
 # Global Scope and Functions
 
+
+---
 ## Hints
 
 ### Hint 1

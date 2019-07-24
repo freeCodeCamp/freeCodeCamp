@@ -14,6 +14,8 @@ OR
 2. Once done add the MONGO_URL in .env file and save your path as 
 ``` mongodb://<dbuser>:<dbpassword>@ds<PORT>.mlab.com:<PORT>/<DATABASE-NAME> ```` which you copy from mLab. Remember to remove the angle brackets ````<  >```` when you replace your username and password of your database.
 
+
+---
 ## Hints
 
 ### Hint 1

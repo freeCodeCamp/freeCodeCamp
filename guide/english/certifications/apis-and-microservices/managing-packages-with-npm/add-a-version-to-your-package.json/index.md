@@ -3,6 +3,8 @@ title: Add a Version to Your package.json
 ---
 # Add a Version to Your package.json
 
+
+---
 ## Hints
 
 ### Hint 1

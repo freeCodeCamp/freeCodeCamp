@@ -19,6 +19,8 @@ myRegex.test(fourAs); // true
 myRegex.test(sevenAs); // true
 ```
 
+
+---
 ## Hints
 
 ### Hint 1

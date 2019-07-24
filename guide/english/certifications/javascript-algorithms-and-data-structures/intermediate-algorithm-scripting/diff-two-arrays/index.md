@@ -16,6 +16,8 @@ Check two arrays and return a new array that contains only the items that are no
 *   <a href='https://devdocs.io/javascript/global_objects/array/filter' target='_blank' rel='nofollow'>Array.prototype.filter (Devdocs)</a>
 *   <a href='https://devdocs.io/javascript/global_objects/array/concat' target='_blank' rel='nofollow'>Array.prototype.concat (Devdocs)</a>
 
+
+---
 ## Hints
 
 ### Hint 1

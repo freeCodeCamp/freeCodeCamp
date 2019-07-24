@@ -3,6 +3,8 @@ title: Add a License to Your package.json
 ---
 # Add a License to Your package.json
 
+
+---
 ## Hints
 
 ### Hint 1

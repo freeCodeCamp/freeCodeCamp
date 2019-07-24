@@ -3,6 +3,8 @@ title: Iterate Through an Array with a For Loop
 ---
 # Iterate Through an Array with a For Loop
 
+
+---
 ## Hints
 
 ### Hint 1

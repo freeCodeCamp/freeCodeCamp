@@ -7,6 +7,8 @@ To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tes
 
 This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ``` /** 13 */``` pass.
 
+
+---
 ## Hints
 
 ### Hint 1

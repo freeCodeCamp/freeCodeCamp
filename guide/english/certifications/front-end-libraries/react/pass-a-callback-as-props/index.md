@@ -8,6 +8,8 @@ title: Pass a Callback as Props
 - Add the `GetInput` component to the render method in MyApp, then pass it a prop called `inpu`t assigned to `inputValue` from MyApp's state. Also create a prop called `handleChange` and pass the input handler `handleChange` to it.
 - Add `RenderInput` to the render method in MyApp, then create a prop called `input` and pass the `inputValue` from state to it.
 
+
+---
 ## Hints
 
 ### Hint 1

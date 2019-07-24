@@ -9,6 +9,8 @@ title: Iterate Through the Keys of an Object with a for...in Statement
 - `[square-bracket]` notation must be used to call a variable property name.
 - The following code will not work.
 
+
+---
 ## Hints
 
 ### Hint 1:

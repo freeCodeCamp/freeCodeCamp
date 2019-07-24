@@ -13,6 +13,8 @@ This problem is very straight forward - you start with a string that represents 
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charcodeat/15933' target='_blank' rel='nofollow'>String.prototype.charCodeAt</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode' target='_blank' rel='nofollow'>String.fromCharCode</a>
 
+
+---
 ## Hints
 
 ### Hint 1

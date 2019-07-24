@@ -7,6 +7,8 @@ title: Call out Optional Actions with btn-info
 ## Problem Explanation
 This challenge requires you to create a new block level `<button>` element with some required classes.
 
+
+---
 ## Hints
 
 ### Hint 1

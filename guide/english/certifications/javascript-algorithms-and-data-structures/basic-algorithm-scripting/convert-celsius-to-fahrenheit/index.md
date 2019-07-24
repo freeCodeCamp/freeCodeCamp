@@ -15,6 +15,8 @@ You are given a variable **celsius** representing a temperature in Celsius. Use 
 
 *   <a href='http://www.purplemath.com/modules/orderops.htm' target='_blank' rel='nofollow'>The Order of Operations: PEMDAS</a>
 *   <a href='https://www.khanacademy.org/math/pre-algebra/order-of-operations/order_of_operations/v/order-of-operations' target='_blank' rel='nofollow'>Order of Operation: Video</a>
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
 ---
 # Use the Caret-Character to Use the Latest Minor Version of a Dependency
 
+
+---
 ## Hints
 
 ## Hint 1

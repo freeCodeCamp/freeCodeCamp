@@ -4,6 +4,8 @@ title: Updating Object Properties
 
 # Updating Object Properties
 
+
+---
 ## Hints
 
 ### Hint 1

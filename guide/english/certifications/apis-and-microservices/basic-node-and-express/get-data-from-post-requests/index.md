@@ -9,6 +9,8 @@ Just like using req.query we can do req.body to get our data. This challenge is 
 
 In order to get data from a post request a general format is:
 
+
+---
 ## Hints
 
 ### Hint 1

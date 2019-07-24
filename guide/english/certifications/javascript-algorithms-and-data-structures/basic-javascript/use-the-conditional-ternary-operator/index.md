@@ -10,6 +10,8 @@ title: Use the Conditional (Ternary) Operator
 * You need to write a function named `checkEqual`, which checks if the two parameters are equal.
 * If the parameters are equal, `Equal` is to be returned else `Not Equal` should be returned.
 
+
+---
 ## Hints
 
 ### Hint 1

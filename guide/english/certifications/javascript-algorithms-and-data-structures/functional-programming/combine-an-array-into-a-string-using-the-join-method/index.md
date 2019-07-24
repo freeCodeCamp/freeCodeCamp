@@ -13,6 +13,8 @@ Use the `join` method (among others) inside the `sentensify` function to make a 
   - [String.prototype.split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
   - [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
   
+
+---
 ## Hints
 
 ### Hint1

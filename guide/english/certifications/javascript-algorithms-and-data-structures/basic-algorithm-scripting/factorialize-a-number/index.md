@@ -4,15 +4,16 @@ title: Factorialize a Number
 
 # Factorialize a Number
 
+
+---
 ## Hints
+
 ### Hint 1
 
 You know your solution should return `1` when the number passed to the function is `0` or `1`.  Also, the final value returned will be the product of all the numbers between 1 and the number (inclusive).  If you initialize the value for the product to `1`, then think how you could start at the given number and continue decrementing this number until a specific value while multiplying the product by the number at each step.
 
 
-## Hints for a Recursive Solution
-
-### Hint 1
+**Recursive Solution**
 
 This one starts easily since `0! = 1`, so you can go ahead and simply `return 1` there.
 
@@ -21,13 +22,10 @@ We can use that as an `if` in order to break the loop we're going to create usin
 This is also why **instead** of having _"finished"_, a function is always said to _"have returned"_. And now this...
 
 
-### Hint 2
-
 **Understanding recursion**
 
 Recursion refers to a function repeating (calling) itself. In this case we are basically returning the given number (i.e. 5), multiplied by the function itself but this time the value passed to the _num_ parameter is `num-1` (which initially translates to 4). The very function is going to **run inside itself** interesting, eh?
 
-### Hint 3
 
 **Understanding the flow**
 

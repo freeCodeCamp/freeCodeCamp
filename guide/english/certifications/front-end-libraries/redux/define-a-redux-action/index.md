@@ -3,6 +3,8 @@ title: Define a Redux Action
 ---
 # Define a Redux Action
 
+
+---
 ## Hints
 
 ### Hint 1

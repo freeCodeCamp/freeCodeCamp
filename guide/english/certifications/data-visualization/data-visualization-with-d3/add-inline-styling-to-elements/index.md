@@ -13,6 +13,8 @@ This challenge introduces the D3 `style` method, which takes 2 arguments: (key, 
 
 *   [style](https://github.com/d3/d3-selection/blob/master/README.md#selection_style)
 
+
+---
 ## Hints
 
 ### Hint 1

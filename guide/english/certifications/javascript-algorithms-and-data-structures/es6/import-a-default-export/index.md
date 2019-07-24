@@ -4,6 +4,8 @@ title: Import a Default Export
 # Import a Default Export
 
 Importing an export default is almost the same as importing a normal export; you just don't need the curly braces to define the name of what you're importing from the file!
+
+---
 ## Hints
 
 ### Hint 1

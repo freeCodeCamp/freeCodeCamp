@@ -14,6 +14,8 @@ You will create a program that takes a sentence, then search for a word in it an
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' target='_blank' rel='nofollow'>String global object</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-replace/15942' target='_blank' rel='nofollow'>JS String Prototype Replace</a>
 
+
+---
 ## Hints
 
 ### Hint 1

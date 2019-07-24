@@ -4,6 +4,8 @@ title: Make Typography Responsive
 
 # Make Typography Responsive
 
+
+---
 ## Hints
 
 ### Hint 1

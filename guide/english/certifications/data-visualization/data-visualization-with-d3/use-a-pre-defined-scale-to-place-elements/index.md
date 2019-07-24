@@ -3,6 +3,8 @@ title: Use a Pre-Defined Scale to Place Elements
 ---
 # Use a Pre-Defined Scale to Place Elements
 
+
+---
 ## Hints
 
 ### Hint 1

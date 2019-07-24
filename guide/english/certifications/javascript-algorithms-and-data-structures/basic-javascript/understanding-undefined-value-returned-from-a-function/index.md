@@ -3,6 +3,8 @@ title: Understanding Undefined Value returned from a Function
 ---
 # Understanding Undefined Value returned from a Function
 
+
+---
 ## Hints
 
 ### Hint 1

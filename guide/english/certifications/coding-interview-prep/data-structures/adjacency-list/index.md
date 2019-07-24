@@ -8,6 +8,8 @@ title: Adjacency List
 
 To solve this problem, you have to create a Javascript Object to emulate an undirected graph in the form of an adjacency list.
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Use typeof to Check the Type of a Variable
 ---
 # Use typeof to Check the Type of a Variable
 
+
+---
 ## Hints
 
 ### Hint 1

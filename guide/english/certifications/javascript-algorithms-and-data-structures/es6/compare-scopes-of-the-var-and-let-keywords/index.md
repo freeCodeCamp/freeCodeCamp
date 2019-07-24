@@ -9,6 +9,8 @@ title: Compare Scopes of the var and let Keywords
 
 Change the code so that the variable `i` declared in the if block is separately scoped than the variable `i` declared at the beginning of the function.
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -10,6 +10,8 @@ Let's clarify: `require()` loads the entire file and its components (functions, 
 
 In this lesson, you are tasked at importing the function `capitalizeStrings()`, which comes from the file `"string-functions"`.
 
+
+---
 ## Hints
 
 ### Hint 1

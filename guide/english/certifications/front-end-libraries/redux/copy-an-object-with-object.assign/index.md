@@ -7,6 +7,8 @@ title: Copy an Object with Object.assign
 ## Problem Explanation
 The goal of this challenge is to enforce state immutability when state is an object. 
 
+
+---
 ## Hints
 
 ### Hint 1

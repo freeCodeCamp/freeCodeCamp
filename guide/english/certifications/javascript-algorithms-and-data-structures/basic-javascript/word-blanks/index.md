@@ -20,6 +20,8 @@ We have provided a framework for testing your results with different words. The 
 *   <a href='http://www.freecodecamp.com/challenges/concatenating-strings-with-plus-operator' target='_blank' rel='nofollow'>Challenge: Concatenating Strings with Plus Operator</a>
 *   <a href='http://www.freecodecamp.com/challenges/concatenating-strings-with-the-plus-equals-operator' target='_blank' rel='nofollow'>Challenge: Concatenating Strings with the Plus Equals Operator</a>
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -9,6 +9,8 @@ title: Sum All Numbers in a Range
 
 You need to create a program that will take an array of two numbers who are not necessarily in order, and then add not just those numbers but any numbers in between. For example, [3,1] will be the same as `1+2+3` and not just `3+1`
 
+
+---
 ## Hints
 
 ### Hint 1

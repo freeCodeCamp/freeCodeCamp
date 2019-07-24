@@ -13,6 +13,8 @@ The program is very simple, we have to take a variable and return that variable 
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String' target='_blank' rel='nofollow'>Global String Object</a>
 
+
+---
 ## Hints
 
 ### Hint 1

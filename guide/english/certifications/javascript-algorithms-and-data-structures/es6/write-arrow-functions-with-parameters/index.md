@@ -9,6 +9,8 @@ Here is a [cool resource about anonymous functions in JavaScript](http://helepha
 
 Now, you are tasked at putting parameters inside arrow functions. 
 
+
+---
 ## Hints
 
 ### Hint 1

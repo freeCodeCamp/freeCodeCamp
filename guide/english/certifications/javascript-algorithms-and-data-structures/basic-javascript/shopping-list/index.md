@@ -4,6 +4,8 @@ title: Shopping List
 
 # Shopping List
 
+
+---
 ## Hints
 
 ### Hint 1

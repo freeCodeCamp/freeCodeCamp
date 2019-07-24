@@ -13,6 +13,8 @@ title: Nesting For Loops
   <li><a href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-arrays">Accessing Nested Arrays</a></li>
 </ul>
 
+
+---
 ## Hints
 
 ### Hint 1

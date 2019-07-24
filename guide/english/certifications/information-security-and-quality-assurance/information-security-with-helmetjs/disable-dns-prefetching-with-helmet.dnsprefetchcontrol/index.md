@@ -4,6 +4,8 @@ title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 
 # Disable DNS Prefetching with helmet.dnsPrefetchControl()
 
+
+---
 ## Hints
 
 ### Hint 1

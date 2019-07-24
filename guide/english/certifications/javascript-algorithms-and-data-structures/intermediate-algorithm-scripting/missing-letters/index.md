@@ -15,6 +15,8 @@ You will create a program that will find the missing letter from a string and re
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charcodeat/15933' target='_blank' rel='nofollow'>JS String Prototype CharCodeAt</a>
 *   <a>String.fromCharCode</a>
 
+
+---
 ## Hints
 
 ### Hint 1

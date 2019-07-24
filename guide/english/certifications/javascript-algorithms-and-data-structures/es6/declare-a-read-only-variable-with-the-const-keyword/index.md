@@ -9,6 +9,8 @@ title: Declare a Read-Only Variable with the const Keyword
 
 Change all the variables to `let` or `const` and rename `sentence`.
 
+
+---
 ## Hints
 
 ### Hint 1

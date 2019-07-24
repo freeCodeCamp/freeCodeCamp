@@ -8,6 +8,8 @@ title: Comparison with the greater than operator (>)
 ## Problem Explanation
 · _Add the `greater than` operator to the indicated lines so that the return statements make sense._
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -4,6 +4,8 @@ title: Counting Cards
 
 # Counting Cards
 
+
+---
 ## Hints
 
 ### Hint 1

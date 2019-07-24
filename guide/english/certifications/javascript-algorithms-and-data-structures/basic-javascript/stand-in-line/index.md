@@ -4,6 +4,8 @@ title: Stand in Line
 
 # Stand in Line
 
+
+---
 ## Hints
 
 ### Hint 1

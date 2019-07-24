@@ -3,6 +3,8 @@ title: Avoid Inferring the Response MIME Type with helmet.noSniff()
 ---
 # Avoid Inferring the Response MIME Type with helmet.noSniff()
 
+
+---
 ## Hints
 
 ### Hint 1

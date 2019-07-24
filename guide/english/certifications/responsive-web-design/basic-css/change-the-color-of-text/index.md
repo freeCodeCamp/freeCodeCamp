@@ -4,6 +4,8 @@ title: Change the Color of Text
 
 # Change the Color of Text
 
+
+---
 ## Hints
 
 ### Hint 1

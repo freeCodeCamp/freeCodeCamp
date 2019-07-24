@@ -3,6 +3,8 @@ title: Mitigate the Risk of Clickjacking with helmet.frameguard()
 ---
 # Mitigate the Risk of Clickjacking with helmet.frameguard()
 
+
+---
 ## Hints
 
 ### Hint 1

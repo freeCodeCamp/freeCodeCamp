@@ -12,6 +12,8 @@ You have learned in earlier lessons, that there are two ways to create a React c
 
 2. Define a React component using the ES6 syntax.
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -7,6 +7,8 @@ title: Create a Row Gap using grid-row-gap
 ## Problem Explanation
 This challenge requires you to add a gap of `20px` between all the rows of the CSS Grid in .container.
 
+
+---
 ## Hints
 
 ### Hint 1

@@ -3,6 +3,8 @@ title: Use Dynamic Scales
 ---
 # Use Dynamic Scales
 
+
+---
 ## Hints
 
 ### Hint 1

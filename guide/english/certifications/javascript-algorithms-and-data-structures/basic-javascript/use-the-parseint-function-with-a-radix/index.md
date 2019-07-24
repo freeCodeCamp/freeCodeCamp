@@ -3,6 +3,8 @@ title: Use the parseInt Function with a Radix
 ---
 # Use the parseInt Function with a Radix
 
+
+---
 ## Hints
 
 ### Hint 1

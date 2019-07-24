@@ -11,6 +11,8 @@ If no matching `case` clause is found, the program looks for the optional `defau
 
 The optional `break` statement associated with each case label ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If `break` is omitted, the program continues execution at the next statement in the `switch` statement.<sup><a href="#cite1">1</a></sup>
 
+
+---
 ## Hints
 
 ### Hint 1

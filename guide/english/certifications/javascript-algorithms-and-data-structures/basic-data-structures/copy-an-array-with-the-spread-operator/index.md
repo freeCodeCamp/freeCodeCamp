@@ -3,6 +3,8 @@ title: Copy an Array with the Spread Operator
 ---
 # Copy an Array with the Spread Operator
 
+
+---
 ## Hints
 
 ### Hint 1
