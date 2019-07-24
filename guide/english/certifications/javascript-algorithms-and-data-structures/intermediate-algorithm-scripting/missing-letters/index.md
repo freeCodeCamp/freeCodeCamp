@@ -1,9 +1,11 @@
 ---
 title: Missing Letters
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+# Missing Letters
+
+---
+## Problem Explanation
 
 You will create a program that will find the missing letter from a string and return it. If there is no missing letter, the program should return undefined. There is currently no test case for the string missing more than one letter, but if there was one, recursion would be used. Also, the letters are always provided in order so there is no need to sort them.
 
@@ -13,54 +15,50 @@ You will create a program that will find the missing letter from a string and re
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-charcodeat/15933' target='_blank' rel='nofollow'>JS String Prototype CharCodeAt</a>
 *   <a>String.fromCharCode</a>
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+
+---
+## Hints
+
+### Hint 1
 
 You will need to convert from character to ASCII code using the two methods provided in the description.
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 You will have to check for the difference in ASCII code as they are in order. Using a chart would be very helpful.
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 You will need to figure out where the missing letter is, along with handling the case that there is not missing letter as it needs an specific return value.
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
+---
+## Solutions
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-**Solution ahead!**
+```javascript
+function fearNotLetter(str) {
+  for (var i = 0; i < str.length; i++) {
+    /* code of current character */
+    var code = str.charCodeAt(i);
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
-
-    function fearNotLetter(str) {
-
-      for(var i = 0; i < str.length; i++) {
-        /* code of current character */
-        var code = str.charCodeAt(i);
-
-        /* if code of current character is not equal to first character + no of iteration
+    /* if code of current character is not equal to first character + no of iteration
         hence character has been escaped */
-        if (code !== str.charCodeAt(0) + i) {
-
-          /* if current character has escaped one character find previous char and return */
-          return String.fromCharCode(code - 1);
-        }  
-      }
-      return undefined;
+    if (code !== str.charCodeAt(0) + i) {
+      /* if current character has escaped one character find previous char and return */
+      return String.fromCharCode(code - 1);
     }
+  }
+  return undefined;
+}
 
-    // test here
-    fearNotLetter("abce");
+// test here
+fearNotLetter("abce");
+```
 
 
-### Code Explanation:
+#### Code Explanation
 
 *   This solutions makes use of a `for` loop.
 *   Code of encountered character is stored in **code**.
@@ -72,31 +70,36 @@ You will need to figure out where the missing letter is, along with handling the
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>JS For Loops Explained</a>
 *   <a>String.length</a>
+</details>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 
-    // Adding this solution for the sake of avoiding using 'for' and 'while' loops.
-    // See the explanation for reference as to why. It's worth the effort.
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
 
-    function fearNotLetter(str) {
-      var compare = str.charCodeAt(0), missing;
+```javascript
+// Adding this solution for the sake of avoiding using 'for' and 'while' loops.
+// See the explanation for reference as to why. It's worth the effort.
 
-      str.split('').map(function(letter,index) {
-        if (str.charCodeAt(index) == compare) {
-          ++compare;
-        } else {
-          missing = String.fromCharCode(compare);
-        }
-      });
+function fearNotLetter(str) {
+  var compare = str.charCodeAt(0),
+    missing;
 
-      return missing;
+  str.split("").map(function(letter, index) {
+    if (str.charCodeAt(index) == compare) {
+      ++compare;
+    } else {
+      missing = String.fromCharCode(compare);
     }
+  });
 
-    // test here
-    fearNotLetter("abce");
+  return missing;
+}
+
+// test here
+fearNotLetter("abce");
+```
 
 
-### Code Explanation:
+#### Code Explanation
 
 *   First we define variables to store the character code for the first letter in the string, and to store whatever missing letters we may find.
 *   We turn the string to an array in order to map through it instead of using `for` and `while` loops.
@@ -110,39 +113,45 @@ You will need to figure out where the missing letter is, along with handling the
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>JS String Prototype Split</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>JS Array Prototype Map</a>
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Simplified Advanced Code Solution:
+</details>
 
-    function fearNotLetter(str) {
-      for (let i = 1; i < str.length; ++i) {
-        if (str.charCodeAt(i) - str.charCodeAt(i-1) > 1) {
-          return String.fromCharCode(str.charCodeAt(i - 1) + 1);
-        }
-      }
+<details><summary>Solution 3 (Click to Show/Hide)</summary>
+
+```javascript
+function fearNotLetter(str) {
+  for (let i = 1; i < str.length; ++i) {
+    if (str.charCodeAt(i) - str.charCodeAt(i - 1) > 1) {
+      return String.fromCharCode(str.charCodeAt(i - 1) + 1);
     }
+  }
+}
+```
 
-### Code Explanation:
+#### Code Explanation
 
 * Loop over the string
 * Check if the difference in char codes between adjacent characters in the string is more than 1 (check ASCII table)
 * Return the missing character ( +1 from where the gap was detected)
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
-    function fearNotLetter(str) {
-      var allChars = '';
-      var notChars = new RegExp('[^'+str+']','g');
+```javascript
+function fearNotLetter(str) {
+  var allChars = "";
+  var notChars = new RegExp("[^" + str + "]", "g");
 
-      for (var i = 0; allChars[allChars.length-1] !== str[str.length-1] ; i++)
-        allChars += String.fromCharCode(str[0].charCodeAt(0) + i);
+  for (var i = 0; allChars[allChars.length - 1] !== str[str.length - 1]; i++)
+    allChars += String.fromCharCode(str[0].charCodeAt(0) + i);
 
-      return allChars.match(notChars) ? allChars.match(notChars).join('') : undefined;
-    }
+  return allChars.match(notChars)
+    ? allChars.match(notChars).join("")
+    : undefined;
+}
 
-    // test here
-    fearNotLetter("abce");
+// test here
+fearNotLetter("abce");
+```
 
-
-### Code Explanation:
+#### Code Explanation
 
 *   A new string **allChars** is created.
 *   Create a regular expression **notChars** which selects everything except **str**.
@@ -156,9 +165,4 @@ You will need to figure out where the missing letter is, along with handling the
 *   <a href='http://forum.freecodecamp.com/t/javascript-ternary-operator/15973' target='_blank' rel='nofollow'>JS Ternary</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-match/15941' target='_blank' rel='nofollow'>JS String Prototype Match</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>JS Array Prototype Join</a>
-
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
-
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+</details>

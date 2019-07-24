@@ -24,11 +24,11 @@ Finally, click the button to see the conditional rendering of the component base
 ```yml
 tests:
   - text: <code>MyComponent</code> should return a <code>div</code> element which contains a <code>button</code>.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('div').find('button').length, 1, '<code>MyComponent</code> should return a <code>div</code> element which contains a <code>button</code>.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).find('div').find('button').length, 1);
   - text: The state of <code>MyComponent</code> should initialize with a <code>visibility</code> property set to <code>false</code>.
-    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).state('visibility'), false, 'The state of <code>MyComponent</code> should initialize with a <code>visibility</code> property set to <code>false</code>.');
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).state('visibility'), false);
   - text: Clicking the button element should toggle the <code>visibility</code> property in state between <code>true</code> and <code>false</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ visibility: false }); return waitForIt(() => mockedComponent.state(''visibility'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const third = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(!firstValue && secondValue && !thirdValue, ''Clicking the button element should toggle the <code>visibility</code> property in state between <code>true</code> and <code>false</code>.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ visibility: false }); return waitForIt(() => mockedComponent.state(''visibility'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const third = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(!firstValue && secondValue && !thirdValue); }; '
 
 ```
 

@@ -1,9 +1,13 @@
 ---
 title: Understanding the Differences between the freeCodeCamp and Browser Console
 ---
-## Understanding the Differences between the freeCodeCamp and Browser Console
+# Understanding the Differences between the freeCodeCamp and Browser Console
 
-#### Hint:
+
+---
+## Hints
+
+### Hint 1
 So were exactly do you run this *console.log()* command?
 In order to see the difference between the live console (terminal of freecodecamp) and our browser console we need to open up the console in our browser. 
 Contemporary internet browser have a built in feature called Developer Tools which, among others contains a live console. 
@@ -30,9 +34,12 @@ Lastly, click: Develop->Show Error Console
 * Click the the following: ''...'' symbol->Developer Tools-> Console tab
 
 
+---
+## Solutions
 
-#### Solution:
-``` javascript
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```javascript
 // Open your browser console
 let outputTwo = "This will print to the browser console 2 times";
 // Use console.log() to print the outputTwo variable
@@ -46,3 +53,5 @@ console.clear();
 // Use console.log() to print the outputOne variable
 console.log(outputOne);
 ```
+
+</details>

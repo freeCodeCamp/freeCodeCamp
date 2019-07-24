@@ -1,7 +1,7 @@
 ---
 title: Create a Set of Radio Buttons
 ---
-## Create a Set of Radio Buttons
+# Create a Set of Radio Buttons
 
 To solve this challenge you can break it into pieces to better understand the steps:
 

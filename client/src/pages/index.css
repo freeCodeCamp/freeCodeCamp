@@ -1,13 +1,13 @@
-
 /*
   Embrace the cascade to override night mode styles
   This ensures a consistent landing page, even for users with nigt mode enabled
 */
-.night body .landing-page{
+.night body .landing-page {
   background-color: #fff;
   color: #333;
 }
-.night .landing-page #top-right-nav li > a, .night #top-right-nav li > span {
+.night .landing-page #top-right-nav li > a,
+.night #top-right-nav li > span {
   color: #fff;
 }
 .night .landing-page a {

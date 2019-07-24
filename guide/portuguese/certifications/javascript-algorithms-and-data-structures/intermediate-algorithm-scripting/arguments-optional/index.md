@@ -95,8 +95,7 @@ No caso em que apenas um argumento foi passado, não se preocupe sobre como soli
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnz/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, crio uma função com o único propósito de verificar se um número é realmente um número e retorna indefinido, se não for. Ele usa **typeof** para verificar.
@@ -154,8 +153,7 @@ No caso em que apenas um argumento foi passado, não se preocupe sobre como soli
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLoA/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro armazene os argumentos em uma matriz, criando uma matriz usando o método construtor.
@@ -189,8 +187,7 @@ No caso em que apenas um argumento foi passado, não se preocupe sobre como soli
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLoB/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro eu percorrer os argumentos e verificar argumentos que não são um número e retornar indefinido

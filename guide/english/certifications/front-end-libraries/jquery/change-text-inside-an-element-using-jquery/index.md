@@ -1,9 +1,13 @@
 ---
 title: Change Text Inside an Element Using jQuery
 ---
-## Change Text Inside an Element Using jQuery
+# Change Text Inside an Element Using jQuery
 
-### Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <script>
@@ -36,9 +40,10 @@ title: Change Text Inside an Element Using jQuery
 </div>
 ```
 
-### More information
+#### Relevant Links
 
 [jQuery API  Documentation](http://api.jquery.com/html/)
 
 [freeCodeCamp Guide](https://guide.freecodecamp.org/jquery/jquery-html-method)
+</details>
 

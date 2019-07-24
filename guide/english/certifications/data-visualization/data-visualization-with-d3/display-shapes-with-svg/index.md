@@ -1,20 +1,31 @@
 ---
 title: Display Shapes with SVG
 ---
-## Display Shapes with SVG
+# Display Shapes with SVG
 
+---
+## Problem Explanation
 This challenge can be approached in a similar fashion to the previous one; with the difference being that, this time, you must add a specified shape **within** the appended SVG node. SVG supports several shape definitions, but in this instance, we will use **rect**.
 
-## Hint 1
+
+---
+## Hints
+
+### Hint 1
 
 Check that you have appended the **rect** using D3's 'append()' method. (Be sure to enclose **rect** in quotation marks).
 
-## Hint 2
+### Hint 2
 
 Now assign attributes to the shape using D3's '.attr()' method. You can chain multiple uses of this method. Remember when assigning x and y co-ordinates that within the SVG area, point (0,0) occurs on the top-**left**. As such, while x values dictate how far right an element moves, y values will dictate how far **downward** it moves from the origin point.
 
-## Solution (!!Spoiler Alert!!)
- ```
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
@@ -38,3 +49,4 @@ Now assign attributes to the shape using D3's '.attr()' method. You can chain mu
   </script>
 </body>
 ```
+</details>

@@ -1,13 +1,18 @@
 ---
 title: Get Query Parameter Input from the Client
 ---
-## Get Query Parameter Input from the Client
+# Get Query Parameter Input from the Client
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Problem Explanation
 
 Given the endpoint URL, `/name?first=firstname&last=lastname`, we can extract the query parameters (`first` and `last`) and their corresponding values from the `req.query` object and send a custom JSON response containing values derived from the query parameters to the client.
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 app.get("/name", function(req, res) {
@@ -21,3 +26,4 @@ app.get("/name", function(req, res) {
   });
 });
 ```
+</details>

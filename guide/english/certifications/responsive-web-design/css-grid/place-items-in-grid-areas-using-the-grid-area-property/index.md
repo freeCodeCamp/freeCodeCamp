@@ -1,15 +1,23 @@
 ---
 title: Place Items in Grid Areas Using the grid-area Property
 ---
-## Place Items in Grid Areas Using the grid-area Property
+# Place Items in Grid Areas Using the grid-area Property
 
-### Hint
+
+---
+## Hints
+
+### Hint 1
 
 Use the `grid-area` property.
 
-### Solution
+
+---
+## Solutions
 
 ```html
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 <style>
   .item1{background:LightSkyBlue;}
   .item2{background:LightSalmon;}
@@ -45,3 +53,4 @@ Use the `grid-area` property.
   <div class="item5">5</div>
 </div>
 ```
+</details>

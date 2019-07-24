@@ -58,4 +58,5 @@ var MaxHeap = function() {
 ```js
 // solution required
 ```
+
 </section>

@@ -1,7 +1,7 @@
 ---
 title: Date format
 ---
-## Date format
+# Date format
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/date-format/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

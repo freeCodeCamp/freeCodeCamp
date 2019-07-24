@@ -31,7 +31,7 @@ tests:
   - text: <code>[].subset([])</code> should return <code>true</code>
     testString: assert((function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)})());
   - text: <code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>
-    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)})();
+    testString: assert((function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)})());
 
 ```
 

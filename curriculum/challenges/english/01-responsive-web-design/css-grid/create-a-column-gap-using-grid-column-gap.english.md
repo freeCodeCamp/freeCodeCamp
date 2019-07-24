@@ -27,7 +27,7 @@ Give the columns in the grid a <code>20px</code> gap.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
 
 ```
 

@@ -1,13 +1,21 @@
 ---
 title: Use grid-area Without Creating an Areas Template
 ---
-## Use grid-area Without Creating an Areas Template
+# Use grid-area Without Creating an Areas Template
 
-### Hint
+
+---
+## Hints
+
+### Hint 1
 
 The `grid-area` takes values in the following format `horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at`.
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -41,3 +49,5 @@ The `grid-area` takes values in the following format `horizontal line to start a
   <div class="item5">5</div>
 </div>
 ```
+
+</details>

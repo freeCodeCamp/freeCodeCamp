@@ -1,9 +1,10 @@
 ---
 title: Expand Your Project with External Packages from npm
 ---
-## Expand Your Project with External Packages from npm
+# Expand Your Project with External Packages from npm
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Problem Explanation
 
 The `package.json` file in the root directory of your project, among other things, lists all the dependencies that your project needs in order to work, are listed under the `dependencies` key in that file and follow a similar convention as given below:
 

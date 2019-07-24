@@ -1,9 +1,15 @@
 ---
 title: Create a Linear Scale with D3
 ---
-## Create a Linear Scale with D3
+# Create a Linear Scale with D3
 
+---
+## Problem Explanation
 In this D3 challenge you are required to change the scale variable to create a linear scale. Then set the output variable to the scale called with an input argument of 50.
+
+
+---
+## Hints
 
 ### Hint 1
 
@@ -28,10 +34,14 @@ const output = scale(scalingFactor);
 ```
 Where `scalingFactor` is a number.
 
-### Solution
 
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 To solve this challenge, the `scale` variable has to be re-initialized with a D3 scale ans the scaling factor in the output has to be set to `50`, to do this, change you code to look like this:
-```javascript
+
+```html
 <body>
   <script>
     const scale = d3.scaleLinear();
@@ -42,3 +52,4 @@ To solve this challenge, the `scale` variable has to be re-initialized with a D3
   </script>
 </body>
 ```
+</details>

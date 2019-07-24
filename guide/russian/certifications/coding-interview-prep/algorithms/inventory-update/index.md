@@ -106,7 +106,6 @@ localeTitle: Обновление инвентаря
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLok/0)
 
 ### Код Объяснение:
 
@@ -192,7 +191,6 @@ localeTitle: Обновление инвентаря
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLol/0)
 
 ### Код Объяснение:
 
@@ -268,7 +266,6 @@ localeTitle: Обновление инвентаря
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/MQvv/latest)
 
 ### Код Объяснение:
 

@@ -1,7 +1,11 @@
 ---
 title: Use a Pre-Defined Scale to Place Elements
 ---
-## Use a Pre-Defined Scale to Place Elements
+# Use a Pre-Defined Scale to Place Elements
+
+
+---
+## Hints
 
 ### Hint 1
 
@@ -15,7 +19,11 @@ Use a callback function on the `.attr()` functions.
 
 The radius is set using the `r`attribute.
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Change the `svg.selectAll("circle")` and `svg.selectAll("text")` codeblocks to the following to complete the challenge, this has been done by incorporating all the hints from above:
 
@@ -90,3 +98,5 @@ The full solution looks like:
   </script>
 </body>
 ```
+
+</details>

@@ -35,11 +35,11 @@ In the code editor, there is a simple functional component called <code>ChildCom
 ```yml
 tests:
   - text: The React component should return a single <code>div</code> element.
-    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.type() === 'div'; })(), 'The React component should return a single <code>div</code> element.');
+    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.type() === 'div'; })());
   - text: The component should return two nested elements.
-    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.children().length === 2; })(), 'The component should return two nested elements.');
+    testString: assert((function() { var shallowRender = Enzyme.shallow(React.createElement(ParentComponent)); return shallowRender.children().length === 2; })());
   - text: The component should return the ChildComponent as its second child.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ParentComponent)); return mockedComponent.find('ParentComponent').find('ChildComponent').length === 1; })(), 'The component should return the ChildComponent as its second child.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ParentComponent)); return mockedComponent.find('ParentComponent').find('ChildComponent').length === 1; })());
 
 ```
 

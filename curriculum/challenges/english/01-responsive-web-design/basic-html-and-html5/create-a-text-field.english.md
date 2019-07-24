@@ -25,7 +25,7 @@ Create an <code>input</code> element of type <code>text</code> below your lists.
 ```yml
 tests:
   - text: Your app should have an <code>input</code> element of type <code>text</code>.
-    testString: assert($("input[type=text]").length > 0, 'Your app should have an <code>input</code> element of type <code>text</code>.');
+    testString: assert($("input[type=text]").length > 0);
 
 ```
 

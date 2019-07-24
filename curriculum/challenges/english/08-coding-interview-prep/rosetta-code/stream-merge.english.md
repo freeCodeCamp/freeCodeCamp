@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Write a function that takes multiple sorted arrays of items, and returns one array of sorted items.
 </section>
 
@@ -39,6 +40,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

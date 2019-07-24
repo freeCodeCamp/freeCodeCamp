@@ -67,4 +67,5 @@ var MinHeap = function() {
 ```js
 // solution required
 ```
+
 </section>

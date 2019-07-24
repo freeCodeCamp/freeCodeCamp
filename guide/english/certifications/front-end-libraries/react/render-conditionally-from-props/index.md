@@ -1,10 +1,14 @@
 ---
 title: Render Conditionally from Props
 ---
-## Render Conditionally from Props
-This is a bit tricky challenge but easy though.
+# Render Conditionally from Props
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 Change `handleClick()` with proper increment statement.
 
 ```jsx
@@ -30,3 +34,5 @@ Then render the `fiftyFifty` props in the Results component.
   }
   </h1>
 ```
+
+</details>
