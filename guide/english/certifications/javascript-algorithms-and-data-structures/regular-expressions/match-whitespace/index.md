@@ -3,6 +3,7 @@ title: Match Whitespace
 ---
 # Match Whitespace
 
+---
 ## Problem Explanation
 To finish this challenge, it's necessary to use the __/s__ character class in your regexp pattern.
 

@@ -3,6 +3,7 @@ title: Work with Data in D3
 ---
 # Work with Data in D3
 
+---
 ## Problem Explanation
 
 This challenge uses the `select`, `selectAll`, `append`, and `text` methods seen in previous challenges. It adds 2 new D3 methods: `data` and `enter` to target the given data and display an element on the page for each datum

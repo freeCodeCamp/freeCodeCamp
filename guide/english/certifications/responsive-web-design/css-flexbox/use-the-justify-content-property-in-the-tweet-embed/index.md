@@ -3,6 +3,7 @@ title: Use the justify-content Property in the Tweet Embed
 ---
 # Use the justify-content Property in the Tweet Embed
 
+---
 ## Problem Explanation
 The different values for `justify-content` from the previous challenge are:
 

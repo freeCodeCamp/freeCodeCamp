@@ -3,6 +3,7 @@ title: Create a Stack Class
 ---
 # Create a Stack Class
 
+---
 ## Problem Explanation
 - Stack is an abstract data structure.
 - Stack follows LIFO/FILO principle.

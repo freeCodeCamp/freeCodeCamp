@@ -3,6 +3,7 @@ title: Create a Controlled Form
 ---
 # Create a Controlled Form
 
+---
 ## Problem Explanation
 Creating a controlled form is the same process as creating a controlled input, except you need to handle a submit event.
 

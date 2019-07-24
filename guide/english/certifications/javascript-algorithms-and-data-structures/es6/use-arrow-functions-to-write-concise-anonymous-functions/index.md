@@ -3,6 +3,7 @@ title: Use Arrow Functions to Write Concise Anonymous Functions
 ---
 # Use Arrow Functions to Write Concise Anonymous Functions
 
+---
 ## Problem Explanation
 Again, ES6 is all about making JavaScript more elegant, and for some, more readable. 
 

@@ -3,6 +3,7 @@ title: Using the Test Method
 ---
 # Using the Test Method
 
+---
 ## Problem Explanation
 In this challenge, you are checking to see if a string contains a certain "regular expression", or **regex** (**reg**ular **ex**pressions). You will use the `test()` method to do that.
 

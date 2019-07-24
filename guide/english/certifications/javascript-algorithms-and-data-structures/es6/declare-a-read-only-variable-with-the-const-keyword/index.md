@@ -4,6 +4,7 @@ title: Declare a Read-Only Variable with the const Keyword
 
 # Declare a Read-Only Variable with the const Keyword
 
+---
 ## Problem Explanation
 
 Change all the variables to `let` or `const` and rename `sentence`.

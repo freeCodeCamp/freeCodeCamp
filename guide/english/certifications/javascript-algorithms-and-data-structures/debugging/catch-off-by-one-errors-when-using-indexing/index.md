@@ -3,6 +3,7 @@ title: Catch Off By One Errors When Using Indexing
 ---
 # Catch Off By One Errors When Using Indexing
 
+---
 ## Problem Explanation
 
 Due to the way JavaScript indexes work `firstFive` has **five elements** but they are indexed from **0 to 4**!

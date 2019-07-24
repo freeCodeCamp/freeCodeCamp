@@ -3,6 +3,7 @@ title: Specify How Fonts Should Degrade
 ---
 # Specify How Fonts Should Degrade
 
+---
 ## Problem Explanation
 We need to apply the ```monospace``` font to the ```h2``` element, so that it now has two fonts - ```Lobster``` and ```monospace```. After, we need to comment out that import of the ```Lobster``` font(using the HTML comments you learned before) from Google Fonts so that it isn't available anymore.
 

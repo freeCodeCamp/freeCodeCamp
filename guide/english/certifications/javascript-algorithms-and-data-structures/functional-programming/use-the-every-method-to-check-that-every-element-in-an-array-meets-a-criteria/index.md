@@ -3,6 +3,7 @@ title: Use the every Method to Check that Every Element in an Array Meets a Crit
 ---
 # Use the every Method to Check that Every Element in an Array Meets a Criteria
 
+---
 ## Problem Explanation
 Use the `every` method inside the `checkPositive` function to check if every element in `arr` is positive. The function should return a Boolean value.
 

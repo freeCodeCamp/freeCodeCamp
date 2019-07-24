@@ -3,6 +3,7 @@ title: Add Labels to Scatter Plot Circles
 ---
 # Add Labels to Scatter Plot Circles
 
+---
 ## Problem Explanation
 In this challenge, you are required to set the x attribute so it's 5 units more than the value you used for the cx attribute on the circle. Set the y attribute the same way that's used for the cy value on the circle, for the text element.
 

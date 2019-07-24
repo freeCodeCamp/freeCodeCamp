@@ -3,6 +3,7 @@ title: Configure Helmet Using the ‘parent’ helmet() Middleware
 ---
 # Configure Helmet Using the ‘parent’ helmet() Middleware
 
+---
 ## Problem Explanation
 
 This lesson describes additional details on how to better use helmet and requires no modifications to the project to complete it. 

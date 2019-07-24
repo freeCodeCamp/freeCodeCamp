@@ -3,6 +3,7 @@ title: Add Gaps Faster with grid-gap
 ---
 # Add Gaps Faster with grid-gap
 
+---
 ## Problem Explanation
 In this challenge you are required to use "grid-gap" to define a row gap and a column gap.
 

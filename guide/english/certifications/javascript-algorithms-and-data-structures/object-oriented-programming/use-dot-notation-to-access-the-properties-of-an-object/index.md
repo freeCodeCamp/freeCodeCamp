@@ -3,6 +3,7 @@ title: Use Dot Notation to Access the Properties of an Object
 ---
 # Use Dot Notation to Access the Properties of an Object
 
+---
 ## Problem Explanation
 
 The following code will simply print `1` from the `obj` object.

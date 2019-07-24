@@ -3,6 +3,7 @@ title: Smallest multiple
 ---
 # Problem 5: Smallest multiple
 
+---
 ## Problem Explanation
 - In this challenge we need to find the LCM of 1 to n numbers. 
 - To find LCM of a number we use the following formula: 

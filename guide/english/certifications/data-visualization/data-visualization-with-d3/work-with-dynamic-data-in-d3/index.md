@@ -4,6 +4,7 @@ title: Work with Dynamic Data in D3
 # Work with Dynamic Data in D3
 
 
+---
 ## Problem Explanation
 
 This challenge introduces using JavaScript callback functions as arguments to D3 methods. Since D3 is a JavaScript object, it has no problem following the same syntax rules

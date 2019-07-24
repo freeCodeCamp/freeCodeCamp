@@ -3,6 +3,7 @@ title: Align Elements Using the align-items Property
 ---
 # Align Elements Using the align-items Property
 
+---
 ## Problem Explanation
 While it is encourage to try the different options for `align-items`, setting is value to `center` is the only way to pass this challenge.
 

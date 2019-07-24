@@ -3,6 +3,7 @@ title: Profile Lookup
 ---
 # Profile Lookup
 
+---
 ## Problem Explanation
 
 *   Change the code below `// Only change code below this line` and up to `// Only change code above this line`.

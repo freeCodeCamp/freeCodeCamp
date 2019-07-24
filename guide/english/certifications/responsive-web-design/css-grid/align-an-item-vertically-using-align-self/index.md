@@ -3,6 +3,7 @@ title: Align an Item Vertically using align-self
 ---
 # Align an Item Vertically using align-self
 
+---
 ## Problem Explanation
 In this challenge you are required to use the "align-self" property to vertically align a grid item.
 

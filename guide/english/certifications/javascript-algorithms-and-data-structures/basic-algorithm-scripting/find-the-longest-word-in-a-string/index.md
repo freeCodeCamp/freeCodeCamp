@@ -4,6 +4,7 @@ title: Find the Longest Word in a String
 
 # Find the Longest Word in a String
 
+---
 ## Problem Explanation
 
 You have to go through each word and figure out which one is the longest and return not the word, but how many characters it has.

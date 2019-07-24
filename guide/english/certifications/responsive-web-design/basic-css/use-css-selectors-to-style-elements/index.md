@@ -3,6 +3,7 @@ title: Use CSS Selectors to Style Elements
 ---
 # Use CSS Selectors to Style Elements
 
+---
 ## Problem Explanation
 CSS selectors are widely used to apply styling to all instances of a particular element.
 

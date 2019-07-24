@@ -3,6 +3,7 @@ title: Use RGB to Mix Colors
 ---
 # Use RGB to Mix Colors
 
+---
 ## Problem Explanation
 Within the `<style>` element, we need to change the hexcode colour  `#000000` within the `color` element in these classes:
 * `.red-text`

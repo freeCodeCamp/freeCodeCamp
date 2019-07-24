@@ -4,6 +4,7 @@ title: Mutate an Array Declared with const
 
 # Mutate an Array Declared with const
 
+---
 ## Problem Explanation
 
 Reassign the values of the `const` variable `s` using various element assignment.

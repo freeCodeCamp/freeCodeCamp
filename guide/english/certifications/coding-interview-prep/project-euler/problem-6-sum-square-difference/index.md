@@ -3,6 +3,7 @@ title: Sum square difference
 ---
 # Problem 6: Sum square difference
 
+---
 ## Problem Explanation
 - Sum of first n natural numbers can be calculated by using this formula:
   - ![sum of n numbers](https://wikimedia.org/api/rest_v1/media/math/render/svg/99476e25466549387c585cb4de44e90f6cbe4cf2)

@@ -3,6 +3,7 @@ title: Inherit Styles from the Body Element
 ---
 # Inherit Styles from the Body Element
 
+---
 ## Problem Explanation
 We need to create a ```h1``` element with the text ```Hello World```, then we need to give all elements on your page the color of ```green``` in our ```body``` element's style declaration, and finally, we need add  to our ```body``` element  font-family of ```monospace```.
 

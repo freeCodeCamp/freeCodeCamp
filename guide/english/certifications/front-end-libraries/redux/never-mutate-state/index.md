@@ -3,6 +3,7 @@ title: Never Mutate State
 ---
 # Never Mutate State
 
+---
 ## Problem Explanation
 The goal of this challenge is to return a new copy of state in reducer function because of state immutability in Redux.
 

@@ -3,6 +3,7 @@ title: Create a Horizontal Line Using the hr Element
 ---
 # Create a Horizontal Line Using the hr Element
 
+---
 ## Problem Explanation
 The `hr` tag is one of the simplest HTML elements. It represents a thematic change in content and creates a thin horizontal line across its parent element.
 

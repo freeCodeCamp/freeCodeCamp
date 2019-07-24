@@ -4,6 +4,7 @@ title: Create Flexible Layouts Using auto-fill
 
 # Create Flexible Layouts Using auto-fill
 
+---
 ## Problem Explanation
 This challenge will expound upon the previous challenge by adding the **auto-fill** value to the *repeat* function. This will cause the number of divs to expand based on the viewport's size rather than the previously specified column value. In the **Before** section below, the **grid-template-column** value "3" is specified.
 

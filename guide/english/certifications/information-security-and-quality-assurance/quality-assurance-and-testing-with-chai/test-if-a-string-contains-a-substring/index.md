@@ -3,6 +3,7 @@ title: Test if a String Contains a Substring
 ---
 # Test if a String Contains a Substring
 
+---
 ## Problem Explanation
 To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Strings'.
 

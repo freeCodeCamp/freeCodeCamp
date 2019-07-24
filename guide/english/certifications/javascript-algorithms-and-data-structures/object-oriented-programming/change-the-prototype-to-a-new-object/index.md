@@ -3,6 +3,7 @@ title: Change the Prototype to a New Object
 ---
 # Change the Prototype to a New Object
 
+---
 ## Problem Explanation
 Instead of adding each prototype property one by one with ```object.prototype.property```. We can do this much easier by setting the prototype to a new object. That way all of the prototype properties are added at once.
 

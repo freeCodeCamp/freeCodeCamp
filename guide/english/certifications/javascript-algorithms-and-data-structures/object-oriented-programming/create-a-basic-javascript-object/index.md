@@ -3,6 +3,7 @@ title: Create a Basic JavaScript Object
 ---
 # Create a Basic JavaScript Object
 
+---
 ## Problem Explanation
 
 The soultion to this problem is more or less identical to the example given.

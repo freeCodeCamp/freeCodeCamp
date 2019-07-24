@@ -3,6 +3,7 @@ title: Turn an Image into a Link
 ---
 # Turn an Image into a Link
 
+---
 ## Problem Explanation
 In a previous challenge you already achieved the task to nest a HTML element into another (e.g. [Nest an anchor element within a paragraph](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/nest-an-anchor-element-within-a-paragraph) )
 

@@ -3,6 +3,7 @@ title: Implement Quick Sort
 ---
 # Implement Quick Sort
 
+---
 ## Problem Explanation
 - Quick sort is an efficient sorting algorithm. It's an in-place algorithm so it doesn't take any auxilary space.
 - First pick a random pivot point around which move all the smaller elements to it to the left of it and the bigger elements to the right of it. 

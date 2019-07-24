@@ -4,6 +4,7 @@ title: Convert HTML Entities
 
 # Convert HTML Entities
 
+---
 ## Problem Explanation
 
 *   You have to create a program that will convert HTML entities from string to their corresponding HTML entities. There are only a few so you can use different methods.

@@ -3,6 +3,7 @@ title: Serve Static Assets
 ---
 # Serve Static Assets
 
+---
 ## Problem Explanation
 Serving static webpages and assets is fairly simple with `express`. This could be useful for building your own portfolio website or blog, single-page web applications etc.
 

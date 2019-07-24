@@ -3,6 +3,7 @@ title: Prevent Infinite Loops with a Valid Terminal Condition
 ---
 # Prevent Infinite Loops with a Valid Terminal Condition
 
+---
 ## Problem Explanation
 - To prevent an infinite loop, the `while-condition` must reach a terminal condition to exit out of the loop.
 - So the error in this challenge occurs due to the condition - `i != 4` - in the for loop.

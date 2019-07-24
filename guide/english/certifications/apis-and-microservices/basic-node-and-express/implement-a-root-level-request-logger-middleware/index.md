@@ -3,6 +3,7 @@ title: Implement a Root-Level Request Logger Middleware
 ---
 # Implement a Root-Level Request Logger Middleware
 
+---
 ## Problem Explanation
 
 It is easier to write this challenge all at the top (there is already a stub for it). This is because middleware must be placed the function calls you want it to be used for.

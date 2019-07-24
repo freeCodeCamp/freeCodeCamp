@@ -4,6 +4,7 @@ title: Diff Two Arrays
 
 # Diff Two Arrays
 
+---
 ## Problem Explanation
 
 Check two arrays and return a new array that contains only the items that are not in either of the original arrays.

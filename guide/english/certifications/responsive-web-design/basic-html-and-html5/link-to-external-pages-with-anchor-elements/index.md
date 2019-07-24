@@ -3,6 +3,7 @@ title: Link to External Pages with Anchor Elements
 ---
 # Link to External Pages with Anchor Elements
 
+---
 ## Problem Explanation
 In this challenge you should use everything you have learned so far.
 The HTML elements syntax:

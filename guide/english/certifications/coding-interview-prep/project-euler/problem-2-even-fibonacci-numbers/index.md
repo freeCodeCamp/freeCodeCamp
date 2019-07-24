@@ -3,6 +3,7 @@ title: Even Fibonacci Numbers
 ---
 # Problem 2: Even Fibonacci Numbers
 
+---
 ## Problem Explanation
 - A fibonacci sequence is a sequence where `fib(n) = fib(n-1) + fib(n-1)`.
 - In this challenge we have to sum all the even numbers upto `nth` term in the sequence.

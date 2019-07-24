@@ -3,6 +3,7 @@ title: Largest product in a series
 ---
 # Problem 8: Largest product in a series
 
+---
 ## Problem Explanation
 
 - In this challenge we need to get the largest product of `n` cosnecutive numbers.

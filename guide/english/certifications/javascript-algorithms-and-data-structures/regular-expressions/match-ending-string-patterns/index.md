@@ -3,6 +3,7 @@ title: Match Ending String Patterns
 ---
 # Match Ending String Patterns
 
+---
 ## Problem Explanation
 To finish this challenge, it's necessary to use __boundaries__. 
 

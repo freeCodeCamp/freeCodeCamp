@@ -3,6 +3,7 @@ title: Nest CSS with Sass
 ---
 # Nest CSS with Sass
 
+---
 ## Problem Explanation
 - In Sass, nesting CSS rules allows to define hierarchy selectors.
 - You can organize your style sheets by nesting CSS rules.

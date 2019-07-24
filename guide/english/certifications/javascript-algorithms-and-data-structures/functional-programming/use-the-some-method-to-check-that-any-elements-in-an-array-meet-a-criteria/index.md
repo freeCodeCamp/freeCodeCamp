@@ -3,6 +3,7 @@ title: Use the some Method to Check that Any Elements in an Array Meet a Criteri
 ---
 # Use the some Method to Check that Any Elements in an Array Meet a Criteria
 
+---
 ## Problem Explanation
 
 Use the some method inside the checkPositive function to check if any element in arr is positive. The `checkPositive` function should return a Boolean value.

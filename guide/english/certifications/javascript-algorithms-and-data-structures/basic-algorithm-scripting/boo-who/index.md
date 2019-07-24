@@ -4,6 +4,7 @@ title: Boo Who
 
 # Boo Who
 
+---
 ## Problem Explanation
 
 This program is very simple, the trick is to understand what a boolean primitive is. The programs requires a true or false answer.

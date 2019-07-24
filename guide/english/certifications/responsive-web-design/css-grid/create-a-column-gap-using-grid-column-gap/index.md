@@ -3,6 +3,7 @@ title: Create a Column Gap Using grid-column-gap
 ---
 # Create a Column Gap Using grid-column-gap
 
+---
 ## Problem Explanation
 This challenge requires you to add a gap of 20px between all the columns of the CSS Grid in .container.
 

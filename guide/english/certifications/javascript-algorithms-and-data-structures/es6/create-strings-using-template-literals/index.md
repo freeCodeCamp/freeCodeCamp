@@ -4,6 +4,7 @@ title: Create Strings Using Template Literals
 
 # Create Strings Using Template Literals
 
+---
 ## Problem Explanation
 Instead of using string concatenation, ES6 offers template literals to create strings. In this challenge, you have to use template literals to create an array of text warnings.
 

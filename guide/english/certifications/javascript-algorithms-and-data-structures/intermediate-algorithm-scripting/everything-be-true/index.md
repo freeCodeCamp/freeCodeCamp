@@ -4,6 +4,7 @@ title: Everything Be True
 
 # Everything Be True
 
+---
 ## Problem Explanation
 
 The program needs to check if the second argument is a <a href='http://forum.freecodecamp.com/t/javascript-truthy-value/15975' target='_blank' rel='nofollow'>truthy</a> element, and it must check this for each object in the first argument.

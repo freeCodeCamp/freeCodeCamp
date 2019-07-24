@@ -3,6 +3,7 @@ title: Set the Child's Prototype to an Instance of the Parent
 ---
 # Set the Child's Prototype to an Instance of the Parent
 
+---
 ## Problem Explanation
 
 This challenge is no different from the last challenge, in the fact that you must create an object which inherits from the `supertype`. Only this time the subtype `Dog` will inherit the `Animal` supertype.

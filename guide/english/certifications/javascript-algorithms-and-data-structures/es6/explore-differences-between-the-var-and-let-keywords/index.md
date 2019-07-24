@@ -4,6 +4,7 @@ title: Explore Differences Between the var and let Keywords
 
 # Explore Differences Between the var and let Keywords
 
+---
 ## Problem Explanation
 
 We need to change each `var` to `let` in our code.

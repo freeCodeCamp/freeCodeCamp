@@ -3,6 +3,7 @@ title: Implement Bubble Sort
 ---
 # Implement Bubble Sort
 
+---
 ## Problem Explanation
 - Bubble Sort is a sorting algorithm which sorts or *bubbles* the largest number as last element at the end of each pass.
 - We compare each element to the one ahead of it, if the element before is smaller, we swap their places.

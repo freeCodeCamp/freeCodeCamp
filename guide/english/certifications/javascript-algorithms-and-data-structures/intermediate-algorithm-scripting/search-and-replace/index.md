@@ -4,6 +4,7 @@ title: Search and Replace
 
 # Search and Replace
 
+---
 ## Problem Explanation
 
 You will create a program that takes a sentence, then search for a word in it and replaces it for a new one while preserving the uppercase if there is one.

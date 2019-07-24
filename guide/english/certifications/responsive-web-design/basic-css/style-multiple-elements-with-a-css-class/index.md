@@ -3,6 +3,7 @@ title: Style Multiple Elements with a CSS Class
 ---
 # Style Multiple Elements with a CSS Class
 
+---
 ## Problem Explanation
 We need to applying our ```red-text``` class to the first ```p``` element.
 

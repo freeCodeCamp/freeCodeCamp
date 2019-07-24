@@ -3,6 +3,7 @@ title: Manage Updates with Lifecycle Methods
 ---
 # Manage Updates with Lifecycle Methods
 
+---
 ## Problem Explanation
 This challenge has you creating a couple lifecycle functions, componentWillUpdate and ComponentWillReceiveProps. You will be provided with another function called componentDidUpdate. We'll discuss how you use them at each stage of the component lifecycle and why you should use them when you are checking different stages of your component.
 

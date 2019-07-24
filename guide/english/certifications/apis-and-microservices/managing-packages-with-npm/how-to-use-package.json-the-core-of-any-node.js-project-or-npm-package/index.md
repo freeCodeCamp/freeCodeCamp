@@ -3,6 +3,7 @@ title: How to Use package.json, the Core of Any Node.js Project or npm Package
 ---
 # How to Use package.json, the Core of Any Node.js Project or npm Package
 
+---
 ## Problem Explanation
 According to [this issue discussed on freeCodeCamp's git repo](https://github.com/freeCodeCamp/freeCodeCamp/issues/34798), the bootstrapped glitch project in the [introduction](https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm/) will NOT work if you're not logged in on glitch.
 

@@ -3,6 +3,7 @@ title: Import a Google Font
 ---
 # Import a Google Font
 
+---
 ## Problem Explanation
 The below example shows one of the ways in which you can import and use a Google Font.
 The example uses a link to the font's API, in the ```<head>``` of the HTML document rather than in the CSS.

@@ -3,6 +3,7 @@ title: Create a custom CSS Variable
 ---
 # Create a custom CSS Variable
 
+---
 ## Problem Explanation
 We need to create a variable name ```--penguin-skin``` and give it a value of ```gray``` in the ```penguin``` class.
 

@@ -3,6 +3,7 @@ title: Adjust the Hover State of an Anchor Tag
 ---
 # Adjust the Hover State of an Anchor Tag
 
+---
 ## Problem Explanation
 You can use the :hover pseudo-class with the anchor tag to style how a link appears when someone hovers over the link with their mouse or other pointing device. 
 

@@ -3,6 +3,7 @@ title: Return a Value from a Function with Return
 ---
 # Return a Value from a Function with Return
 
+---
 ## Problem Explanation
 Using `return`, you can make functions output data. 
 

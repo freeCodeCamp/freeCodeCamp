@@ -3,6 +3,7 @@ title: Align All Items Vertically using align-items
 ---
 # Align All Items Vertically using align-items
 
+---
 ## Problem Explanation
 In this challenge you are required to use the "align-items" property to vertically align all the items in the grid.
 

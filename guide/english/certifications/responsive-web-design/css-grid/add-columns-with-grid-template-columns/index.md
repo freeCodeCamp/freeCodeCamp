@@ -3,6 +3,7 @@ title: Add Columns with grid-template-columns
 ---
 # Add Columns with grid-template-columns
 
+---
 ## Problem Explanation
 In this challenge, you are required to define columns for the grid.
 

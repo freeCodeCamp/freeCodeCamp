@@ -3,6 +3,7 @@ title: Use the Lifecycle Method componentDidMount
 ---
 # Use the Lifecycle Method componentDidMount
 
+---
 ## Problem Explanation
 This challenges introduces the ``` componentDidMount ``` Lifecycle method. This is used to set state after a giventime period.
 

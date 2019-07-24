@@ -3,6 +3,7 @@ title: Apply the Default Bootstrap Button Style
 ---
 # Apply the Default Bootstrap Button Style
 
+---
 ## Problem Explanation
 The last challenge had you creating 6 buttons, 3 in each well element. This time you are required to add classes to those buttons.
 

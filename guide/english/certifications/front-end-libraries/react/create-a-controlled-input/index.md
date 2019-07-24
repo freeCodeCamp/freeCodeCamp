@@ -3,6 +3,7 @@ title: Create a Controlled Input
 ---
 # Create a Controlled Input
 
+---
 ## Problem Explanation
 Here the idea is to create a controlled input where the text updates from your state, not from the browser.
 

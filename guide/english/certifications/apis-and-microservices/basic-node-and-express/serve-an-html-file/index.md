@@ -3,6 +3,7 @@ title: Serve an HTML File
 ---
 # Serve an HTML File
 
+---
 ## Problem Explanation
 You probably need to comment out the last challenge. If you have a website and want to serve an index.html file you probably want to put this in a public folder. This is to ensure the public doesn't see something you dont want them to, and it sometimes is called "public" or "views," but you can technically call it whatever you want.
 

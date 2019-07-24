@@ -3,6 +3,7 @@ title: Summation of primes
 ---
 # Problem 10: Summation of primes
 
+---
 ## Problem Explanation
 - In this challenge we need to find sum of all prime numbers up to `n`.
 - Example:

@@ -3,6 +3,7 @@ title: Implement Selection Sort
 ---
 # Implement Selection Sort
 
+---
 ## Problem Explanation
 - Selection Sort is one of the easier sorting algorithm to understand and implement.
 - This algorithm splits the array in two parts:

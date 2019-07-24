@@ -3,6 +3,7 @@ title: Learn How JavaScript Assertions Work
 ---
 # Learn How JavaScript Assertions Work
 
+---
 ## Problem Explanation
 To begin, locate the file "tests/1_unit_tests.js".
 

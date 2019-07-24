@@ -3,6 +3,7 @@ title: Pass an Array as Props
 ---
 # Pass an Array as Props
 
+---
 ## Problem Explanation
 To pass an array as a prop, first an array must be declared as a "tasks" prop on each of the components to be rendered:
 

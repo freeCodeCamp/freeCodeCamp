@@ -3,6 +3,7 @@ title: Manipulate Arrays With pop()
 ---
 # Manipulate Arrays With pop()
 
+---
 ## Problem Explanation
 
 Get rid of the last element in the array. Then, assign that ridden element to `removedFromMyArray`.

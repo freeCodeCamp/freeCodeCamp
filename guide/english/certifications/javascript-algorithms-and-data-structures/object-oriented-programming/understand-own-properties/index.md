@@ -3,6 +3,7 @@ title: Understand Own Properties
 ---
 # Understand Own Properties
 
+---
 ## Problem Explanation
 
 In the example code given you will see a new array `ownProps[]` intialised followed by a `for...in` statement to loop through the properties of `duck` and then use a `push()` statement to fill in the new array. The same method must be followed for the `canary` object. 

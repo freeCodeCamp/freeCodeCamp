@@ -4,6 +4,7 @@ title: Reverse a Doubly Linked List
 
 # Reverse a Doubly Linked List
 
+---
 ## Problem Explanation
 - Reverse the doubly linked list, and update previous and next variables for each member node accordingly.
 - Define privileged methods add() and reverse().

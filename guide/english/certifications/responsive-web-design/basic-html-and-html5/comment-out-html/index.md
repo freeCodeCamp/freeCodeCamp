@@ -3,6 +3,7 @@ title: Comment out HTML
 ---
 # Comment out HTML
 
+---
 ## Problem Explanation
 Comment syntax is the same of every other HTML element:
 

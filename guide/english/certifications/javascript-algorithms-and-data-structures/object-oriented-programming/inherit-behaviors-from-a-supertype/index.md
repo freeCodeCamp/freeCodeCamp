@@ -3,6 +3,7 @@ title: Inherit Behaviors from a Supertype
 ---
 # Inherit Behaviors from a Supertype
 
+---
 ## Problem Explanation
 
 To pass this challenge simply create the new `duck` and `beagle` objects using the `Object.create()` method seen in the following example.

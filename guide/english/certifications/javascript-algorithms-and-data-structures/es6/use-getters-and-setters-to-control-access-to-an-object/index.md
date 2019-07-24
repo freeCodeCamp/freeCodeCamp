@@ -3,6 +3,7 @@ title: Use getters and setters to Control Access to an Object
 ---
 # Use getters and setters to Control Access to an Object
 
+---
 ## Problem Explanation
 Getters and setters are critical parts of a class/object. They allow you to control their attributes from the outside. They will become more prominent when you get started with the Object-Oriented Programming unit (coming up!). For now, this exercise shows you how to manipulate them with ES6.
 

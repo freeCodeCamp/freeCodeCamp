@@ -3,6 +3,7 @@ title: Write Reusable JavaScript with Functions
 ---
 # Write Reusable JavaScript with Functions
 
+---
 ## Problem Explanation
 Functions allow you to reuse code over and over. Our task is to make a simple `reusableFunction()` that prints out "Hi World" to the console (which you can reach with **Ctrl + Shift + I**). 
 

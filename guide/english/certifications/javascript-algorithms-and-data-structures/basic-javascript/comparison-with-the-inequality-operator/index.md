@@ -3,6 +3,7 @@ title: Comparison with the Inequality Operator
 ---
 # Comparison with the Inequality Operator
 
+---
 ## Problem Explanation
 · _Add the inequality operator `!=` in the `if` statement so that the function will return "Not equal" when `val` is not equivalent to `99`._
 

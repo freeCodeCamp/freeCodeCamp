@@ -3,6 +3,7 @@ title: Use React to Render Nested Components
 ---
 # Use React to Render Nested Components
 
+---
 ## Problem Explanation
 
 You have learned in earlier lessons, that there are two ways to create a React component:

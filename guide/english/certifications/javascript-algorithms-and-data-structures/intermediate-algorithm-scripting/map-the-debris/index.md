@@ -3,6 +3,7 @@ title: Map the Debris
 ---
 # Map the Debris
 
+---
 ## Problem Explanation
 
 The first thing to do is to get familiar with what the program is for by knowing what Orbital period exactly is. You've to return a new array that transforms the element's average altitude into their orbital periods. The parts generally found hard are finding the formula, implementing it and for some people, modifying objects by the key. However, something that is not very clear is the fact that your program has to be able to check for any number of objects in the array; This is what is tested on the second part.

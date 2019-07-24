@@ -3,6 +3,7 @@ title: Implement Merge Sort
 ---
 # Implement Merge Sort
 
+---
 ## Problem Explanation
 - Merge Sort is a classic divide and conquer problem.
 - The following steps are involved:

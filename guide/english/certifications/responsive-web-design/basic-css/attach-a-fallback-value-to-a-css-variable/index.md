@@ -3,6 +3,7 @@ title: Attach a Fallback value to a CSS Variable
 ---
 # Attach a Fallback value to a CSS Variable
 
+---
 ## Problem Explanation
 We need to add a fallback value of ```black``` to the ```background``` property of the ```.penguin-top``` and ```.penguin-bottom``` classes.
 

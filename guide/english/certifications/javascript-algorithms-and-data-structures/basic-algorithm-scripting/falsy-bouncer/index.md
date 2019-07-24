@@ -4,6 +4,7 @@ title: Falsy Bouncer
 
 # Falsy Bouncer
 
+---
 ## Problem Explanation
 
 Remove all <a href='https://guide.freecodecamp.org/javascript/falsy-values/' target='_blank' rel='nofollow'>falsy</a> values from an array.

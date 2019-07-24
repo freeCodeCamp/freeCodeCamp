@@ -3,6 +3,7 @@ title: Adjust the Margin of an Element
 ---
 # Adjust the Margin of an Element
 
+---
 ## Problem Explanation
 Adjusting the `Margin` of an `Element` means to increase or decrease the amount of spacing between the Element's borders and surrounding Elements.
 

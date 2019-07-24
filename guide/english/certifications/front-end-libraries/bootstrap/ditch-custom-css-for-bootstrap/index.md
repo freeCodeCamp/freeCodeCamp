@@ -3,6 +3,7 @@ title: Ditch Custom CSS for Bootstrap
 ---
 # Ditch Custom CSS for Bootstrap
 
+---
 ## Problem Explanation
 The challenge has you doing a lot of things, remove CSS styles, elements and add classes in place of old ones.
 

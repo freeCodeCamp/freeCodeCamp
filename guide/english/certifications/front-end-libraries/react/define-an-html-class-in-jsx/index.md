@@ -3,6 +3,7 @@ title: Define an HTML Class in JSX
 ---
 # Define an HTML Class in JSX
 
+---
 ## Problem Explanation
 - HTML and JSX may seem that they are exactly the same but there are a few differences between them.
 - One of these differences is the naming convention.

@@ -3,6 +3,7 @@ title: Build a Random Quote Machine
 ---
 # Build a Random Quote Machine
 
+---
 ## Problem Explanation
 The project consists of three distinct parts:
 

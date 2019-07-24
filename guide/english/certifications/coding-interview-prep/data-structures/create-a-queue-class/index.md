@@ -4,6 +4,7 @@ title: Create a Queue Class
 # Create a Queue Class
 
 
+---
 ## Problem Explanation
 - A Queue is an abstract Data Structure.
 - A Queue folow FIFO/LILO principle.

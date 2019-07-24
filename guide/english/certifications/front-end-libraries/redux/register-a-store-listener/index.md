@@ -3,6 +3,7 @@ title: Register a Store Listener
 ---
 # Register a Store Listener
 
+---
 ## Problem Explanation
 Let's break the instructions down to figure exactly what it's asking. 
 >*Write a callback function that increments the global variable count every time the store receives an action, and pass this function in to the store.subscribe() method.*

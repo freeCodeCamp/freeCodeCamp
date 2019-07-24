@@ -3,6 +3,7 @@ title: Learn how a Stack Works
 ---
 # Learn how a Stack Works
 
+---
 ## Problem Explanation
 - Stacks are an abstract data structures.
 - They follow LIFO (Last In First Out) or FILO (First In Last Out) principle.

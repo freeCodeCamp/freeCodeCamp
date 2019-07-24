@@ -3,6 +3,7 @@ title: Use Default Props
 ---
 # Use Default Props
 
+---
 ## Problem Explanation
 This challenge has you declaring a default prop for the ShoppingCart component
 

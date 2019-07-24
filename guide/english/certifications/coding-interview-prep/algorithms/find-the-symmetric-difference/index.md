@@ -4,6 +4,7 @@ title: Find the Symmetric Difference
 
 # Find the Symmetric Difference
 
+---
 ## Problem Explanation
 Symmetric difference (commonly denoted by &Delta;) of two sets is the set of elements which are in either of the two sets, but not in both.
 

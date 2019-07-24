@@ -3,6 +3,7 @@ title: Get Data from POST Requests
 ---
 # Get Data from POST Requests
 
+---
 ## Problem Explanation
 Just like using req.query we can do req.body to get our data. This challenge is very similar to "Get Query Parameter Input from the Client."
 

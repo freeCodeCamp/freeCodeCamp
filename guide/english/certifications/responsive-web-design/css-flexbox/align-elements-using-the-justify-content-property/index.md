@@ -3,6 +3,7 @@ title: Align Elements Using the justify-content Property
 ---
 # Align Elements Using the justify-content Property
 
+---
 ## Problem Explanation
 As stated on the challenge, to pass it you need to set the `justify-content` to center. However, the point of the challenge is to experiemnt and see how the different options affect the content.
 

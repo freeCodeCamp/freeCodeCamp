@@ -3,6 +3,7 @@ title: Use Advanced JavaScript in React Render Method
 ---
 # Use Advanced JavaScript in React Render Method
 
+---
 ## Problem Explanation
 While you are inside the render method and not inside the return method, you can write JavaScript **without** wrapping it inside curly braces.
 

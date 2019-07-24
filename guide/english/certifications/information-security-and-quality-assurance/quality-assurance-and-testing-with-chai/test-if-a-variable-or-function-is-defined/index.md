@@ -3,6 +3,7 @@ title: Test if a Variable or Function is Defined
 ---
 # Test if a Variable or Function is Defined
 
+---
 ## Problem Explanation
 To begin, locate the file "tests/1_unit_tests.js".
 

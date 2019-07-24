@@ -3,6 +3,7 @@ title: Largest palindrome product
 ---
 # Problem 4: Largest palindrome product
 
+---
 ## Problem Explanation
 - A palindromic number is the one that when reversed reads the same.
 - The largest number obtained from product of two 3 digit number is `999 * 999`, so we can make a loop that starts by producting the largest number and check if that number is palindromic or not.

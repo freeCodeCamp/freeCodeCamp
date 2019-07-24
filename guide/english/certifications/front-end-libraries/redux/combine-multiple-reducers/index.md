@@ -3,6 +3,7 @@ title: Combine Multiple Reducers
 ---
 # Combine Multiple Reducers
 
+---
 ## Problem Explanation
 The goal of this challenge is to combine two reducers into a single reducer which will be passed into the ```Redux.createStore()``` method. 
 

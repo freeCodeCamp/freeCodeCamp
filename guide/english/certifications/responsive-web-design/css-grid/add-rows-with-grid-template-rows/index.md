@@ -3,6 +3,7 @@ title: Add Rows with grid-template-rows
 ---
 # Add Rows with grid-template-rows
 
+---
 ## Problem Explanation
 In this challenge, you are required to define rows for the CSS grid in `<div class="container">`.
 

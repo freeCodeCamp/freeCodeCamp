@@ -4,6 +4,7 @@ title: Telephone Number Validator
 
 # Telephone Number Validator
 
+---
 ## Problem Explanation
 
 The task is not that hard to understand, implementing it is the hardest part. You have a to validate a US phone number. This means there is a certain amount of numbers required, while you don't need to put the country code, you will still need the area code and use one of the few formats allowed.

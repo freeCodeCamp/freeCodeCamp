@@ -3,6 +3,7 @@ title: Use PropTypes to Define the Props You Expect
 ---
 # Use PropTypes to Define the Props You Expect
 
+---
 ## Problem Explanation
 This challenge has you set a `propTypes` for the `Items` component.
 ```jsx

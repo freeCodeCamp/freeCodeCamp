@@ -3,6 +3,7 @@ title: Declare the Doctype of an HTML Document
 ---
 # Declare the Doctype of an HTML Document
 
+---
 ## Problem Explanation
 The declaration of the Doctype must be in the first line since it gives instructions to the browser on how to interpret the following lines of code. 
 

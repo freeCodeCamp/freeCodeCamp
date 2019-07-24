@@ -3,6 +3,7 @@ title: Introducing Else If statements
 ---
 # Introducing Else If statements
 
+---
 ## Problem Explanation
 
 We'll be modifying the existing code above so that it follows the flow of logic that an **else-if** statement has.

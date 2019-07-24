@@ -4,6 +4,7 @@ title: Multiply Two Decimals with JavaScript
 
 # Multiply Two Decimals with JavaScript
 
+---
 ## Problem Explanation
 
 JavaScript uses the `*` symbol for multiplication. Multiplying floats is the same as multiplying integers. JavaScript only has the *number* type, which serves both integer and floating point numbers, it does not have a specific type for integers.

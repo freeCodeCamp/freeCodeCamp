@@ -3,6 +3,7 @@ title: Add Borders Around Your Elements
 ---
 # Add Borders Around Your Elements
 
+---
 ## Problem Explanation
 To add a custom border around any HTML element, these three properties are used as shown below.
 

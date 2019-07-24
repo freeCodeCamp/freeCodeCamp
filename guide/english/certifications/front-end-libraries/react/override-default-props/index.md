@@ -3,6 +3,7 @@ title: Override Default Props
 ---
 # Override Default Props
 
+---
 ## Problem Explanation
 This challenge has you override the default value of props `quantity` for the Items component. Where default value of `quantity` is set to `0`.
 ```jsx

@@ -5,6 +5,7 @@ title: Learn About Functional Programming
 A function has an input or a parameter ``` const myFunc = (input) => { ...code to execute... } ```. In this case the input is how many cups of tea to be created.
 <br/>
 
+---
 ## Problem Explanation
 
 Only one line of code must be changed to pass this challenege. The `getTea()` function must be called and stored in the `tea4TeamFCC` variable. Make sure to read through the `getTea()` function and understand exactly what it does. The function takes in one variable - `numOfCups`. A `teaCups[]` array is first made and a for loop is set up to count down the number of cups passed into the function. A new cup of tea is then pushed to the array through every iteration of the for loop. 

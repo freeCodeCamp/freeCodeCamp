@@ -4,6 +4,7 @@ title: Add Inline Styling to Elements
 # Add Inline Styling to Elements
 
 
+---
 ## Problem Explanation
 
 This challenge introduces the D3 `style` method, which takes 2 arguments: (key, value).

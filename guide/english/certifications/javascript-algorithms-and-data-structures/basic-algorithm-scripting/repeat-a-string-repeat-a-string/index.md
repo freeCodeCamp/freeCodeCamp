@@ -4,6 +4,7 @@ title: Repeat a String Repeat a String
 
 # Repeat a String Repeat a String
 
+---
 ## Problem Explanation
 
 The program is very simple, we have to take a variable and return that variable being repeated certain amount of times. No need to add space or anything, just keep repeating it into one single string.

@@ -3,6 +3,7 @@ title: Add a Text Alternative to Images for Visually Impaired Accessibility
 ---
 # Add a Text Alternative to Images for Visually Impaired Accessibility
 
+---
 ## Problem Explanation
 Visually impaired people often rely on screen readers to convert web content to an audio interface. The alt attribute provides alternative information for an image if a user for some reason cannot view it. This could be due to a slow connection, an error in the src attribute, but _also_ if the user uses a screen reader. When a screen reader encounters an image, it accesses the alt attribute and reads its contents in order to deliver key information. The alt atribute should be short but descriptive. It is meant to briefly convey the meaning of the image in order to be picked up by a screenreader and read aloud to the user. 
 

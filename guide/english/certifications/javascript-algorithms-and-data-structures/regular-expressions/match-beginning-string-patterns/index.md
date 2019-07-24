@@ -3,6 +3,7 @@ title: Match Beginning String Patterns
 ---
 # Match Beginning String Patterns
 
+---
 ## Problem Explanation
 Use the caret character in a regex to find "Cal" only in the beginning of the string rickyAndCal.
 

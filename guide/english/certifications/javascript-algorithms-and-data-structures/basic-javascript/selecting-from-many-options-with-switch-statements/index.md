@@ -3,6 +3,7 @@ title: Selecting from Many Options with Switch Statements
 ---
 # Selecting from Many Options with Switch Statements
 
+---
 ## Problem Explanation 
 A switch statement first evaluates its expression. It then looks for the first `case` clause whose expression evaluates to the same value as the result of the input expression (using the [strict comparison](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators), (`===`) and transfers control to that clause, executing the associated statements. (If multiple cases match the provided value, the first case that matches is selected, even if the cases are not equal to each other.)
 

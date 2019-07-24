@@ -3,6 +3,7 @@ title: Use the .env File
 ---
 # Use the .env File
 
+---
 ## Problem Explanation
 We can use the .toUpperCase() method to make a string all caps, such as:
 

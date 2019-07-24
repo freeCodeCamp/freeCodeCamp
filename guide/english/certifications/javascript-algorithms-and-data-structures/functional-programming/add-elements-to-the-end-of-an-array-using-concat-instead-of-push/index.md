@@ -4,6 +4,7 @@ title: Add Elements to the End of an Array Using concat Instead of push
 
 # Add Elements to the End of an Array Using concat Instead of push
 
+---
 ## Problem Explanation
 Where the `push` method adds new element to the end of the orginal array, the `concat` method creates a new array containing the elements from the original array and the new element. The original array remains the same when using `concat`.
 

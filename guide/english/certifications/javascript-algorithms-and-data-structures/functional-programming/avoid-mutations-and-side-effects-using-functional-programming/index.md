@@ -4,6 +4,7 @@ title: Avoid Mutations and Side Effects Using Functional Programming
 
 # Avoid Mutations and Side Effects Using Functional Programming
 
+---
 ## Problem Explanation
 
 Fill in the code for the function `incrementer` so it returns the value of the global variable `fixedValue` increased by one. `fixedValue` should not change, no matter how many times the function `incrememter` is called.

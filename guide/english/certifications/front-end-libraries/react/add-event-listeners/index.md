@@ -3,6 +3,7 @@ title: Add Event Listeners
 ---
 # Add Event Listeners
 
+---
 ## Problem Explanation
 This challenge has you modifying two lifecycle methods componentDidMount and componentWillUnmount. You use componentDidMount when you want to set something up, in your case, an event listener. You use componentWillUnmount when you need to clear that something, your event listener.
 

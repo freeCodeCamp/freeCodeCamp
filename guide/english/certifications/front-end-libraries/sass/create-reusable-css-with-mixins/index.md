@@ -3,6 +3,7 @@ title: Create Reusable CSS with Mixins
 ---
 # Create Reusable CSS with Mixins
 
+---
 ## Problem Explanation
 
 `Mixin` is one of the great features that let developers use `SASS` instead of plain `CSS`, as it allows you to have a `Function` inside your Stylesheet!

@@ -3,6 +3,7 @@ title: Run Functional Tests using a Headless Browser II
 ---
 # Run Functional Tests using a Headless Browser II
 
+---
 ## Problem Explanation
 To begin, open the file "tests/2_functional_tests.js" and locate the browser based tests.
 

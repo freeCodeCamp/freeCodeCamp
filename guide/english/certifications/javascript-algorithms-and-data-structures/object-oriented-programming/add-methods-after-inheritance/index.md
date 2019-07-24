@@ -3,6 +3,7 @@ title: Add Methods After Inheritance
 ---
 # Add Methods After Inheritance
 
+---
 ## Problem Explanation
 
 Just like the following example, a new instance of an object - `Dog` - must be created and the `prototype` must be set. 

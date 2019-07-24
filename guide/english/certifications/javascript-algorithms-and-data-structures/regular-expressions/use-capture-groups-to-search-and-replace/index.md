@@ -3,6 +3,7 @@ title: Use Capture Groups to Search and Replace
 ---
 # Use Capture Groups to Search and Replace
 
+---
 ## Problem Explanation
 Using `.replace()` with the first parameter set to find the part of the original string to replace, and the second parameter should be the replacement. 
 

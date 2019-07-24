@@ -3,6 +3,7 @@ title: Align an Item Horizontally using justify-self
 ---
 # Align an Item Horizontally using justify-self
 
+---
 ## Problem Explanation
 In this challenge you are required to use the "justify-self" property to horizontally align a grid item.
 

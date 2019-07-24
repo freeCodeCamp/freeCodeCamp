@@ -3,6 +3,7 @@ title: Understand the Differences Between import and require
 ---
 # Understand the Differences Between import and require
 
+---
 ## Problem Explanation
 
 Let's clarify: `require()` loads the entire file and its components (functions, variables), while `import _ from` allows you to hand-pick what components you want. 

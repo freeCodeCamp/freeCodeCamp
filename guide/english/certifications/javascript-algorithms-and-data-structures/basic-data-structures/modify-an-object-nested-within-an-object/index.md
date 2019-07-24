@@ -3,6 +3,7 @@ title: Modify an Object Nested Within an Object
 ---
 # Modify an Object Nested Within an Object
 
+---
 ## Problem Explanation
 - Remember the object you want to change is two levels deep, `dot-notation` is easier to use in this instance.
 - Simply define the object and then use `dot-notation` to access the second object and finally the final element you wish to modify.

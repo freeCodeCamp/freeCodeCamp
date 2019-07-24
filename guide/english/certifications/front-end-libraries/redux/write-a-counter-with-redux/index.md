@@ -3,6 +3,7 @@ title: Write a Counter with Redux
 ---
 # Write a Counter with Redux
 
+---
 ## Problem Explanation
 The goal of this challenge is to apply all the concepts learned from previous Redux challenges and create a simple counter that will increment or decrement a state by 1. 
 

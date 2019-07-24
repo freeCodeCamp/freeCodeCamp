@@ -3,6 +3,7 @@ title: Create a Method on an Object
 ---
 # Create a Method on an Object
 
+---
 ## Problem Explanation
 
 An objects function must be initialised within the object itself. This is demonstrated in the following code.

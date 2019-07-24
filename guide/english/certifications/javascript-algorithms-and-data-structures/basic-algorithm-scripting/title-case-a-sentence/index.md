@@ -4,6 +4,7 @@ title: Title Case a Sentence
 
 # Title Case a Sentence
 
+---
 ## Problem Explanation
 
 We have to return a sentence with title case. This means that the first letter will always be in uppercase and the rest will be in lowercase.

@@ -3,6 +3,7 @@ title: Improve Compatibility with Browser Fallbacks
 ---
 # Improve Compatibility with Browser Fallbacks
 
+---
 ## Problem Explanation
 We need to add a fallback to the ```background``` property of the ```.black-box`` class.
 

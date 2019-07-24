@@ -4,6 +4,7 @@ title: Spinal Tap Case
 
 # Spinal Tap Case
 
+---
 ## Problem Explanation
 
 Convert the given string to a lowercase sentence with words joined by dashes.

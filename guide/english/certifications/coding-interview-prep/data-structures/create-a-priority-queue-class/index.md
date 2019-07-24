@@ -3,6 +3,7 @@ title: Create a Priority Queue Class
 ---
 # Create a Priority Queue Class
 
+---
 ## Problem Explanation
 - Priority Queue is an Abstract Data Type.
 - It can be implemented using other Data Structures but is commonly implemented using a Heap.

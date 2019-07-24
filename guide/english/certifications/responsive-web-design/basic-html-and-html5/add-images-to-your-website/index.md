@@ -3,6 +3,7 @@ title: Add Images to Your Website
 ---
 # Add Images to Your Website
 
+---
 ## Problem Explanation
 Img HTML elements belongs to the group of the "self-closing" HTML elements: it means that they do not follow the ordinary structure  - open tag, put content, close tag - but they have just one tag which works as opening and closing tag: <img />
 As all opening tag it still can receive attributes though, and these are the tools you can use to manipulate the tag, put some content in, enhance accessibility, etc.

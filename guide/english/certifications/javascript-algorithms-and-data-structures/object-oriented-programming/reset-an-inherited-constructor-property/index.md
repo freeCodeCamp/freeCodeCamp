@@ -3,6 +3,7 @@ title: Reset an Inherited Constructor Property
 ---
 # Reset an Inherited Constructor Property
 
+---
 ## Problem Explanation
 
 The `duck` and `beagle` objects have been programmed to inherit the `supertypes` constructor properties. To overwrite this two lines of code will have to be written to set the constructors to the desired constructors `Bird` and `Dog`. The following code demonstrates how this can be achieved. 

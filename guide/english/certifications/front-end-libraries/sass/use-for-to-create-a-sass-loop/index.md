@@ -3,6 +3,7 @@ title: Use @for to Create a Sass Loop
 ---
 # Use @for to Create a Sass Loop
 
+---
 ## Problem Explanation
 
 1. The basic syntax of `@for` loop in SASS:

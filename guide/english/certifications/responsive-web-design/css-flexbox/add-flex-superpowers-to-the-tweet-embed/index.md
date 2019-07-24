@@ -3,6 +3,7 @@ title: Add Flex Superpowers to the Tweet Embed
 ---
 # Add Flex Superpowers to the Tweet Embed
 
+---
 ## Problem Explanation
 Building on the previous challenge, you will need to add the property to the right selectors. Here the trick is identifying the right selector then all you need to add the *display: flex;* property.
 

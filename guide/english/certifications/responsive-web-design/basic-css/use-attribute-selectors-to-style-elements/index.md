@@ -3,6 +3,7 @@ title: Use Attribute Selectors to Style Elements
 ---
 # Use Attribute Selectors to Style Elements
 
+---
 ## Problem Explanation
 You can also apply styling to elements by their attribute values.
 

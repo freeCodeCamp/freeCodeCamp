@@ -4,6 +4,7 @@ title: Palindrome Checker
 
 # Palindrome Checker
 
+---
 ## Problem Explanation
 
 Our goal for solving this problem is tidying up the string passed in, and checking whether it is in fact a palindrome.

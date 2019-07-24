@@ -3,6 +3,7 @@ title: Override Class Declarations with Inline Styles
 ---
 # Override Class Declarations with Inline Styles
 
+---
 ## Problem Explanation
 We need to use an ```inline style``` to try to make our ```h1``` element white.
 

@@ -4,6 +4,7 @@ title: Apply a Style Until a Condition is Met with @while
 
 # Apply a Style Until a Condition is Met with @while
 
+---
 ## Problem Explanation
 
 This program is very simple, the trick is to remember how while looping works.

@@ -4,6 +4,7 @@ title: Create a Form Element
 
 # Create a Form Element
 
+---
 ## Problem Explanation
 A `<form>` is an element used to gather infomation directly from the user's input. When you use this HTML element you are identifying a section used to collect the user choices.
 

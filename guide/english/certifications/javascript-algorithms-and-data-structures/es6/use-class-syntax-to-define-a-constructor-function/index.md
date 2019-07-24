@@ -3,6 +3,7 @@ title: Use class Syntax to Define a Constructor Function
 ---
 # Use class Syntax to Define a Constructor Function
 
+---
 ## Problem Explanation
 
 In this lesson, you are defining the Vegetable object using class syntax.

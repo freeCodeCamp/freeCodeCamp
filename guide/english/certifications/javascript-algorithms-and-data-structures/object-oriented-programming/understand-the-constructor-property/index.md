@@ -3,6 +3,7 @@ title: Understand the Constructor Property
 ---
 # Understand the Constructor Property
 
+---
 ## Problem Explanation
 
 Simply finish the function like that of the example given. Use an `if-statement` to test whether or not the `candidate` is a `Dog`.  

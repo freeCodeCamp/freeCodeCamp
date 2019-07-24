@@ -3,6 +3,7 @@ title: Create Grids within Grids
 ---
 # Create Grids within Grids
 
+---
 ## Problem Explanation
 A grid within a grid is made the same as any other grid.
 1. Just nest one element inside another,

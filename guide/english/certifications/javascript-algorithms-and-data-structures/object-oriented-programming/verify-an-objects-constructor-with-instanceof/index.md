@@ -3,6 +3,7 @@ title: Verify an Object's Constructor with instanceof
 ---
 # Verify an Object's Constructor with instanceof
 
+---
 ## Problem Explanation
 
 Just like in the last challenge, create a new object - `myHouse` - using the constructor given.

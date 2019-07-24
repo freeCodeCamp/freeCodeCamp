@@ -3,6 +3,7 @@ title: Check Radio Buttons and Checkboxes by Default
 ---
 # Check Radio Buttons and Checkboxes by Default
 
+---
 ## Problem Explanation
 The `checked` attribute, exclusively usable with `type="radio"` and the `type="checkbox"`, is a boolean attribute ( you can check the challenge about the `required` attribute, boolean aswell, at this link: [use html5 to require a field](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/use-html5-to-require-a-field/)).
 

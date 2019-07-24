@@ -3,6 +3,7 @@ title: Use @each to Map Over Items in a List
 ---
 # Use @each to Map Over Items in a List
 
+---
 ## Problem Explanation
 The @each directive loops over a list and for each iteration the variable is assigned the value in the list.
 

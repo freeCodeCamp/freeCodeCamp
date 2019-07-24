@@ -3,6 +3,7 @@ title: Override Styles in Subsequent CSS
 ---
 # Override Styles in Subsequent CSS
 
+---
 ## Problem Explanation
 The most important bit to remember when wanting to Override Styles in Subsequent CSS is the order the classes are created.
 

@@ -3,6 +3,7 @@ title: Display Shapes with SVG
 ---
 # Display Shapes with SVG
 
+---
 ## Problem Explanation
 This challenge can be approached in a similar fashion to the previous one; with the difference being that, this time, you must add a specified shape **within** the appended SVG node. SVG supports several shape definitions, but in this instance, we will use **rect**.
 

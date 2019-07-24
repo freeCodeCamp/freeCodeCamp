@@ -3,6 +3,7 @@ title: Access Property Names with Bracket Notation
 ---
 # Access Property Names with Bracket Notation
 
+---
 ## Problem Explanation
 - Using bracket notation simply write the return statement in the `checkInventory()` function.
 - The following code block demonstrates the required syntax.

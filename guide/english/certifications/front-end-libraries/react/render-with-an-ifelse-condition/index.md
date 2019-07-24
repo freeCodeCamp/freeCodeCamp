@@ -3,6 +3,7 @@ title: Render with an If/Else Condition
 ---
 # Render with an If/Else Condition
 
+---
 ## Problem Explanation
 Inside of the render method of the component, write if/else statements that each have its own return method that has different JSX. This gives programmers the ability to render different UI according to various conditions.
 

@@ -4,6 +4,7 @@ title: Seek and Destroy
 
 # Seek and Destroy
 
+---
 ## Problem Explanation
 
 This problem is a bit tricky because you have to familiarize yourself with Arguments, as you will have to work with two **or more** but on the script you only see two. Many people hardcode this program for three arguments. You will remove any number from the first argument that is the same as any other other arguments.

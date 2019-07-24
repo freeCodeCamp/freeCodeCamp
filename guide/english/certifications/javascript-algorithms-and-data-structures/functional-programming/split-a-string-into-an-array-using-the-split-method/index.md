@@ -3,6 +3,7 @@ title: Split a String into an Array Using the split Method
 ---
 # Split a String into an Array Using the split Method
 
+---
 ## Problem Explanation
 
 Simply split the string to create a new array of words. 

@@ -4,6 +4,7 @@ title: Return Largest Numbers in Arrays
 
 # Return Largest Numbers in Arrays
 
+---
 ## Problem Explanation
 
 You will get an array that contains sub arrays of numbers and you need to return an array with the largest number from each of the sub arrays.

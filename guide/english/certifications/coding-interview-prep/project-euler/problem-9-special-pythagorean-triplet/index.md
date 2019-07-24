@@ -3,6 +3,7 @@ title: Special Pythagorean triplet
 ---
 # Problem 9: Special Pythagorean triplet
 
+---
 ## Problem Explanation
 - In this challenge we need to find the pythagorean triple.
 - We have the following information - `a < b < c`

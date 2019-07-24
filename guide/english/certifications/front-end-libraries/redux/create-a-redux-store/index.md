@@ -3,6 +3,7 @@ title: Create a Redux Store
 ---
 # Create a Redux Store
 
+---
 ## Problem Explanation
 There are three parts to this challenge.
 

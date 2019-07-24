@@ -4,6 +4,7 @@ title: Word Blanks
 
 # Word Blanks
 
+---
 ## Problem Explanation
 
 We have provided a framework for testing your results with different words. The tests will run your function with several different inputs to make sure all of the provided words appear in the output, as well as your extra strings.

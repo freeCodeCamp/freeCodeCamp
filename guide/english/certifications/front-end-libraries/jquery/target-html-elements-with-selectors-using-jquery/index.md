@@ -4,6 +4,7 @@ title: Target HTML Elements with Selectors Using jQuery
 
 # Target HTML Elements with Selectors Using jQuery
 
+---
 ## Problem Explanation
 
 - jQuery selectors allow you to select and manipulate HTML elements.

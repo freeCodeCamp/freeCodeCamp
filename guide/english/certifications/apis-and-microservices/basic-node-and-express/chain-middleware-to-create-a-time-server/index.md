@@ -3,6 +3,7 @@ title: Chain Middleware to Create a Time Server
 ---
 # Chain Middleware to Create a Time Server
 
+---
 ## Problem Explanation
 
 Similar to the last challenge, but now we are chaining 2 functions together. It seems complicated, but it's just JavaScript.

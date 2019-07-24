@@ -3,6 +3,7 @@ title: Test if an Object has a Property
 ---
 # Test if an Object has a Property
 
+---
 ## Problem Explanation
 To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Objects'.
 

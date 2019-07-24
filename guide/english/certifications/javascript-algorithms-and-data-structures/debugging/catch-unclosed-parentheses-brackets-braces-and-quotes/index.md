@@ -3,6 +3,7 @@ title: Catch Unclosed Parentheses, Brackets, Braces and Quotes
 ---
 # Catch Unclosed Parentheses, Brackets, Braces and Quotes
 
+---
 ## Problem Explanation
 The reduce() method reduces an array to a single value.  If you're not familiar with it, the following code shows an example of using the the method:
 

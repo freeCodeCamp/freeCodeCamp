@@ -3,6 +3,7 @@ title: Add Different Padding to Each Side of an Element
 ---
 # Add Different Padding to Each Side of an Element
 
+---
 ## Problem Explanation
 
 To adjust the padding of an element use:

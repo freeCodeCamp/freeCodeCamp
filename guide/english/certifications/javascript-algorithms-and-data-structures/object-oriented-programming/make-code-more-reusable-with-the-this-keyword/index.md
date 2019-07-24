@@ -3,6 +3,7 @@ title: Make Code More Reusable with the this Keyword
 ---
 # Make Code More Reusable with the this Keyword
 
+---
 ## Problem Explanation
 
 This challenge is simply demonstrating the power of the `this` keyword. Replacing `dog.numLegs` with `this.numLegs` strengthens our code by directly referencing this object. 

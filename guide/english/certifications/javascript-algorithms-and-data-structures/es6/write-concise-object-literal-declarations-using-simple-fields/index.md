@@ -3,6 +3,7 @@ title: Write Concise Object Literal Declarations Using Simple Fields
 ---
 # Write Concise Object Literal Declarations Using Simple Fields
 
+---
 ## Problem Explanation
 Here, we are tasked at returning an object that accepts the function's parameters as its attributes. 
 

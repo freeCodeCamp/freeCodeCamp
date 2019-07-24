@@ -3,6 +3,7 @@ title: Remove Items Using splice()
 ---
 # Remove Items Using splice()
 
+---
 ## Problem Explanation
 - The `splice()` function must be called on the `arr` array in order to remove 1 or more elements from the center of the array.
 - The array `arr` currently adds up to the value of 16. Simply remove as many variables neccessary to return 10.

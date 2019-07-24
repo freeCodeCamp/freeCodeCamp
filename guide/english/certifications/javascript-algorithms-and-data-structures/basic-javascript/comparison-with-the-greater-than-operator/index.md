@@ -4,6 +4,7 @@ title: Comparison with the greater than operator (>)
 # Comparison with the Greater Than Operator (>)
 
 
+---
 ## Problem Explanation
 · _Add the `greater than` operator to the indicated lines so that the return statements make sense._
 

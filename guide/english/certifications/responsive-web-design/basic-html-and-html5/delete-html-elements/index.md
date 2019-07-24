@@ -3,6 +3,7 @@ title: Delete HTML Elements
 ---
 # Delete HTML Elements
 
+---
 ## Problem Explanation
 To remove an HTML element you must remove its tag subelements: the content, whatever it is, can be kept since it's not representative of any HTML element.
 

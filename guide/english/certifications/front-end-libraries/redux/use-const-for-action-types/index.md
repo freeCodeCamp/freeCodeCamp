@@ -3,6 +3,7 @@ title: Use const for Action Types
 ---
 # Use const for Action Types
 
+---
 ## Problem Explanation
 
 Using a const for Action Types has a big advantage over using strings.

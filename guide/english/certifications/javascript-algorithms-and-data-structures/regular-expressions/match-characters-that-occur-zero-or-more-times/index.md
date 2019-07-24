@@ -4,6 +4,7 @@ title: Match Characters that Occur Zero or More Times
 
 # Match Characters that Occur Zero or More Times
 
+---
 ## Problem Explanation
 Any letter in a regex expression that is followed by a `*` does not have to occur in the string tested whereas any letter in a regex expression followed by a `+` must occur in a string at least once, as shown below, 
 

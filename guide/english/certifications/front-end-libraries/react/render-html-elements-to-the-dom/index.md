@@ -3,6 +3,7 @@ title: Render HTML Elements to the DOM
 ---
 # Render HTML Elements to the DOM
 
+---
 ## Problem Explanation
 To render an element to the DOM, we use the following syntax
 ```

@@ -3,6 +3,7 @@ title: Returning Boolean Values from Functions
 ---
 # Returning Boolean Values from Functions
 
+---
 ## Problem Explanation
 
 Instead of using an if/else block to compare variable we can do it right inside the return statement with a comparison operator and minmal code.

@@ -3,6 +3,7 @@ title: Comparison with the Equality Operator
 ---
 # Comparison with the equality operator
 
+---
 ## Problem Explanation
 _Add the equality operator to the indicated line so that the function will return "Equal" when `val` is equivalent to 12._
 

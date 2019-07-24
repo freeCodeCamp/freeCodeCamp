@@ -4,6 +4,7 @@ title: No Repeats Please
 
 # No Repeats Please
 
+---
 ## Problem Explanation
 
 This task requires us to return the number of total permutations of the provided string that don't have repeated consecutive letters. It is to be assumed that all characters in the provided string are each unique. For example, `aab` should return 2 because it has 6 total permutations (`aab`, `aab`, `aba`, `aba`, `baa`, `baa`), but only 2 of them (`aba` and `aba`) don't have the same letter (in this case `a`) repeating.

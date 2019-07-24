@@ -3,6 +3,7 @@ title: Use Prototype Properties to Reduce Duplicate Code
 ---
 # Use Prototype Properties to Reduce Duplicate Code
 
+---
 ## Problem Explanation
 
 The `prototype` property allows us you to add new properties to an object constructor from outside the original code block. The prototype property also allows you to add new functions to the objects constructor. The following code demonstrates how to use `.prototype` on an object to create a new property in the constructor. 

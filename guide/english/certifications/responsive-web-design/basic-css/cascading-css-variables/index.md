@@ -3,6 +3,7 @@ title: Cascading CSS Variables
 ---
 # Cascading CSS Variables
 
+---
 ## Problem Explanation
 Cascading CSS variables (officially called custom properties) are entities which behave similarly to traditional variables, in that variables allow for data to be stored and updated to reflect new values later<sup>2</sup>. 
 

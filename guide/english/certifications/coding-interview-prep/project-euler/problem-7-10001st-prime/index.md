@@ -3,6 +3,7 @@ title: 10001st prime
 ---
 # Problem 7: 10001st prime
 
+---
 ## Problem Explanation
 - A prime number is a number which is divided by 1 and itself.
 - We can find a number is prime if it's not divisible by other prime numbers smaller than itself.

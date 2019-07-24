@@ -4,6 +4,7 @@ title: Check for All or None
 
 # Check for All or None
 
+---
 ## Problem Explanation
 In this challenge, you are asked to change the regex so that it defines the existence of the letter u, resulting in the acceptance of both American and British versions of the word favourite/favorite. 
 

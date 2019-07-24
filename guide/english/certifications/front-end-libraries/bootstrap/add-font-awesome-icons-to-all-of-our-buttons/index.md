@@ -3,6 +3,7 @@ title: Add Font Awesome Icons to all of our Buttons
 ---
 # Add Font Awesome Icons to all of our Buttons
 
+---
 ## Problem Explanation
 
 Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.

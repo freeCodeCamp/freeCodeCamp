@@ -3,6 +3,7 @@ title: Divide the Grid Into an Area Template
 ---
 # Divide the Grid Into an Area Template
 
+---
 ## Problem Explanation
 In this challenge you are required to use the "grid-template-areas" property to group cells of a grid together into areas and give the areas a custom name.
 

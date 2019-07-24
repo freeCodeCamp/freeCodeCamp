@@ -3,6 +3,7 @@ title: Use && for a More Concise Conditional
 ---
 # Use && for a More Concise Conditional
 
+---
 ## Problem Explanation
 The example given is 
 ```jsx

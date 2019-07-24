@@ -3,6 +3,7 @@ title: Create a Bulleted Unordered List
 ---
 # Create a Bulleted Unordered List
 
+---
 ## Problem Explanation
 To pass the challenge the first operation you should do is to remove the `p` elements with all their content.
 

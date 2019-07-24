@@ -3,6 +3,7 @@ title: Add Font Awesome Icons to our Buttons
 ---
 # Add Font Awesome Icons to our Buttons
 
+---
 ## Problem Explanation
 The challenge requires you to add a thumbs up icon from font awesome to the button with the text 'Like' in it
 

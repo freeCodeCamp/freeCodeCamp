@@ -3,6 +3,7 @@ title: Adjacency List
 ---
 # Adjacency List
 
+---
 ## Problem Explanation
 
 To solve this problem, you have to create a Javascript Object to emulate an undirected graph in the form of an adjacency list.

@@ -3,6 +3,7 @@ title: Learn about Tertiary Colors
 ---
 # Learn about Tertiary Colors
 
+---
 ## Problem Explanation
 Tertiary colours are combinations of primary and secondary colours. There are six tertiary colors; red-orange, yellow-orange, yellow-green, blue-green, blue-violet, and red-violet.
 

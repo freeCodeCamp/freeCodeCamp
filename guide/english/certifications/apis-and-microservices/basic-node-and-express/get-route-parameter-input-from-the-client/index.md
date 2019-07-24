@@ -3,6 +3,7 @@ title: Get Route Parameter Input from the Client
 ---
 # Get Route Parameter Input from the Client
 
+---
 ## Problem Explanation
 If someone tells you to build a GET or POST endpoint you would achieve the same using `app.get(...)` or `app.post(...)` accordingly.
 

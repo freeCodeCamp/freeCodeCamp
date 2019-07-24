@@ -3,6 +3,7 @@ title: Use export to Reuse a Code Block
 ---
 # Use export to Reuse a Code Block
 
+---
 ## Problem Explanation
 We learned how to import stuff from another file. But there's a catch. You can only import files that are **exported** from that other file. 
 

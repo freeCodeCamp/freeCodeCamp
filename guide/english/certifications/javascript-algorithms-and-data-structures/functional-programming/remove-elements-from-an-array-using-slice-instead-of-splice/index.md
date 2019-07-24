@@ -4,6 +4,7 @@ title: Remove Elements from an Array Using slice Instead of splice
 
 # Remove Elements from an Array Using slice Instead of splice
 
+---
 ## Problem Explanation
 - The difference between splice and slice method is that the slice method does not mutate the original array, but returns a new one.
 - The slice method takes 2 two arguments for the indices to begin and end the slice (the end is non-inclusive).

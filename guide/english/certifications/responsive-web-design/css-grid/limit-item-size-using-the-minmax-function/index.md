@@ -4,6 +4,7 @@ title: Limit Item Size Using the minmax Function
 
 # Limit Item Size Using the minmax Function
 
+---
 ## Problem Explanation
 Using the *minmax* function in conjunction with the *repeat* function is exactly what this challenge describes, but this was not inherently obvious to me at first. The way to pass this challenge is to remove the **max-width** value within the *repeat* function, and then add the *minmax* function in place of the *repeat* **max-width** value.
 

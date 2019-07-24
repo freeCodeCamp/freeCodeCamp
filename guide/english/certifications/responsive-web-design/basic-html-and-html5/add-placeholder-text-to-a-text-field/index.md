@@ -3,6 +3,7 @@ title: Add Placeholder Text to a Text Field
 ---
 # Add Placeholder Text to a Text Field
 
+---
 ## Problem Explanation
 `placeholder` is an attribute, not a tag. It can be used together with the attribute `text` of the `input` tag to create a text to visualize when the input box is empty. 
 

@@ -3,6 +3,7 @@ title: "Use display: flex to Position Two Boxes"
 ---
 # Use display: flex to Position Two Boxes
 
+---
 ## Problem Explanation
 [Flexbox](https://github.com/freecodecamp/guides/tree/master/src/pages/css/layout/flexbox/index.md) is a way to structure content in CSS3 which allows you to create responsie websites.
 

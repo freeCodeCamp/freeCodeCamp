@@ -4,6 +4,7 @@ title: Understand the Hazards of Using Imperative Code
 # Understand the Hazards of Using Imperative Code
 
 
+---
 ## Problem Explanation
 
 What you should notice is the fact that output is not as suggested in instructions, which should be the following array:

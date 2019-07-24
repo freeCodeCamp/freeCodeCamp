@@ -3,6 +3,7 @@ title: Multiples of 3 and 5
 ---
 # Problem 1: Multiples of 3 and 5
 
+---
 ## Problem Explanation
 - We can find if a number is divisble by another number with the help of `%` modulo operator.
 - `num1 % num2` returns `0` if there's no remainder while doing `num1/num2`.

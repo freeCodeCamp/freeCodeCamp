@@ -3,6 +3,7 @@ title: Catch Arguments Passed in the Wrong Order When Calling a Function
 ---
 # Catch Arguments Passed in the Wrong Order When Calling a Function
 
+---
 ## Problem Explanation
 
 ```javascript

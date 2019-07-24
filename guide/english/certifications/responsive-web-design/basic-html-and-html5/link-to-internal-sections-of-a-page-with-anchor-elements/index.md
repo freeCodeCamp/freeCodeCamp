@@ -3,6 +3,7 @@ title: Link to Internal Sections of a Page with Anchor Elements
 ---
 # Link to Internal Sections of a Page with Anchor Elements
 
+---
 ## Problem Explanation
 As stated in the instructions the internal link is composed of two elements: the `a` tag and the html element with the `id` used in the `href` attribute of the `a` tag.
 

@@ -3,6 +3,7 @@ title: Add Elements within Your Bootstrap Wells
 ---
 # Add Elements within Your Bootstrap Wells
 
+---
 ## Problem Explanation
 
 In the last challenge, you created a div with the well class. This challenge now requires you to add 3 button elements in each of the wells.

@@ -3,6 +3,7 @@ title: Prioritize One Style Over Another
 ---
 # Prioritize One Style Over Another
 
+---
 ## Problem Explanation
 We need to create a CSS class called ```pink-text``` that gives an our ```h1``` element the color pink.
 

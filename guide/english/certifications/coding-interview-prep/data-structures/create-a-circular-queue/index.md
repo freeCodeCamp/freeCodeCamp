@@ -3,6 +3,7 @@ title: Create a Circular Queue
 ---
 # Create a Circular Queue
 
+---
 ## Problem Explanation
 - In this challenge we create a Circular Queue data structure.
 - First, we need to create an array of `size` with all elements set to `null`.

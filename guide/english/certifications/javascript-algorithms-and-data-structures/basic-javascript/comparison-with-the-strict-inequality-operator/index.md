@@ -3,6 +3,7 @@ title: Comparison with the Strict Inequality Operator
 ---
 # Comparison with the Strict Inequality Operator
 
+---
 ## Problem Explanation
 · _Add the `strict inequality operator` to the `if` statement so the function will return "Not Equal" when `val` is not strictly equal to `17`._
 

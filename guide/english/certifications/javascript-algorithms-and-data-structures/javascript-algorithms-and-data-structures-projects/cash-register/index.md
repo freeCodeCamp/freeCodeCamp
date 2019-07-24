@@ -4,6 +4,7 @@ title: Cash Register
 
 # Cash Register
 
+---
 ## Problem Explanation
 
 *   You have to create a program that will return an object containing a `status` key and a `change` key. The value of `status` is the string `INSUFFICIENT_FUNDS`, `CLOSED`, or `OPEN`, and the value of `change` is a 2D array of the change due.

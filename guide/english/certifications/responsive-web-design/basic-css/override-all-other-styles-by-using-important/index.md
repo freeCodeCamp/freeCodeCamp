@@ -3,6 +3,7 @@ title: Override All Other Styles by using Important
 ---
 # Override All Other Styles by using Important
 
+---
 ## Problem Explanation
 You can override all other styles in CSS by using `!important`.
 

@@ -3,6 +3,7 @@ title: Add a box-shadow to a Card-like Element
 ---
 # Add a box-shadow to a Card-like Element
 
+---
 ## Problem Explanation
 The box-shadow property attaches one or more shadows to an element.
 

@@ -3,6 +3,7 @@ title: Use Caution When Reinitializing Variables Inside a Loop
 ---
 # Use Caution When Reinitializing Variables Inside a Loop
 
+---
 ## Problem Explanation
 - This challenge must be solved by redefining the scope of `row[]`.
 - Below is an example of the desired matrix.

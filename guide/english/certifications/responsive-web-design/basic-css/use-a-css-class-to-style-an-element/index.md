@@ -3,6 +3,7 @@ title: Use a CSS Class to Style an Element
 ---
 # Use a CSS Class to Style an Element
 
+---
 ## Problem Explanation
 
 In CSS, we can target the styling of specific elements that match the specified class attribute.

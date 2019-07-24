@@ -3,6 +3,7 @@ title: Write Arrow Functions with Parameters
 ---
 # Write Arrow Functions with Parameters
 
+---
 ## Problem Explanation
 Here is a [cool resource about anonymous functions in JavaScript](http://helephant.com/2008/08/23/javascript-anonymous-functions/), in case you are still wondering what they are, and their role.
 

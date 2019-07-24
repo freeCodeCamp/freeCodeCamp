@@ -6,6 +6,7 @@ title: Golf Code
 
 ## Hints
 
+---
 ## Problem Explanation
 Change the code below `// Only change code below this line` and above `// Only change code above this line`.
 

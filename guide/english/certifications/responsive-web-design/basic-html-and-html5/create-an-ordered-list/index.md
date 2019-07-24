@@ -3,6 +3,7 @@ title: Create an Ordered List
 ---
 # Create an Ordered List
 
+---
 ## Problem Explanation
 Sometimes people overthink this kind of challenge: the ordered lists has the exact same pattern of the unordered ones, it simply changes the tag: `<ul>` for the unordered, `<ol>` for the ordered.
 

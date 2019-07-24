@@ -4,6 +4,7 @@ title: Smallest Common Multiple
 
 # Smallest Common Multiple
 
+---
 ## Problem Explanation
 
 The smallest common multiple between two numbers is the smallest number that both numbers can divide into. This concept can be extended to more than two numbers as well.

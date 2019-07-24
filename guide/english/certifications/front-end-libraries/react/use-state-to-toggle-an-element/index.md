@@ -3,6 +3,7 @@ title: Use State to Toggle an Element
 ---
 # Use State to Toggle an Element
 
+---
 ## Problem Explanation
 You can toggle an element by checking and changing its state.
 

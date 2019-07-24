@@ -3,6 +3,7 @@ title: Visualize Data with a Bar Chart
 ---
 # Visualize Data with a Bar Chart
 
+---
 ## Problem Explanation
 
 **Why Visualize Data**

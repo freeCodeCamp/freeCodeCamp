@@ -4,6 +4,7 @@ title: Make a Person
 
 # Make a Person
 
+---
 ## Problem Explanation
 
 When I started the program I figured I just had to create the six functions mentioned in the details. However, it was not that simple. Creating them as a function was not the right way, I had to create them in a different way to make them a key.

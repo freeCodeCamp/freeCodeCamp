@@ -3,6 +3,7 @@ title: Define the Head and Body of an HTML Document
 ---
 # Define the Head and Body of an HTML Document
 
+---
 ## Problem Explanation
 The `head` element is used to group all the metadata of the document, the `body` to display the document's content.
 

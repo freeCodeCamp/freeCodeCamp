@@ -3,6 +3,7 @@ title: Change a variable for a specific area
 ---
 # Change a variable for a specific area
 
+---
 ## Problem Explanation
 Cascading CSS variables officially called custom properties are entities which behave similarly to traditional variables. In that variables allow for data to be stored and updated to reflect new values later. 
 

@@ -3,6 +3,7 @@ title: Create a Bar for Each Data Point in the Set
 ---
 # Create a Bar for Each Data Point in the Set
 
+---
 ## Problem Explanation
 To complete this challenge, you must make use of D3's **.data()**, **.enter()**, and **.append()** methods.
 

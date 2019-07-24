@@ -3,6 +3,7 @@ title: Nest Many Elements within a Single div Element
 ---
 # Nest Many Elements within a Single div Element
 
+---
 ## Problem Explanation
 Using a generic purpose tag as `div` to wrap multiple elements allows the developer to apply a common style to each of the wrapped element, to group elements with the same meaning, to create different layout 'pack' and so on.
 

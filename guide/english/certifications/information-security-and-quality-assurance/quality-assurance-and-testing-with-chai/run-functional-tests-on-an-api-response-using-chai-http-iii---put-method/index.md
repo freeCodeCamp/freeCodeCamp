@@ -3,6 +3,7 @@ title: Run Functional Tests on an API Response using Chai-HTTP III - PUT method
 ---
 # Run Functional Tests on an API Response using Chai-HTTP III - PUT method
 
+---
 ## Problem Explanation
 To begin, open the file "tests/2_functional_tests.js" and locate the test 'send {surname: "Colombo"}'
 

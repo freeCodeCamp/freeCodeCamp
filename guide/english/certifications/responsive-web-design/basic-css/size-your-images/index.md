@@ -4,6 +4,7 @@ title: Size Your Images
 
 # Size Your Images
 
+---
 ## Problem Explanation
 For sizing your images, first create your class in your style tag.
 

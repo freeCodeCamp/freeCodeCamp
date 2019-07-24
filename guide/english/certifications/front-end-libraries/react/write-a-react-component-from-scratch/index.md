@@ -3,6 +3,7 @@ title: Write a React Component from Scratch
 ---
 # Write a React Component from Scratch
 
+---
 ## Problem Explanation
 In this challenge we want to create a `class` react component (React components can be `class` components or `function` components). All of our class components are going to be an extention of `React.Component`. For example we can start to make a component called `FirstComponent` with:
 ```javascript

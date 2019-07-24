@@ -3,6 +3,7 @@ title: Set the Font Family of an Element
 ---
 # Set the Font Family of an Element
 
+---
 ## Problem Explanation
 In CSS, you can define the type of font used as part of a Font Family. It's recommended to include a set of font types, mostly used for fallback mechanism such that when one Font is not available, the system will fallback to render text using the next available font, and so on.
 

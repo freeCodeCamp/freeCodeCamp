@@ -3,6 +3,7 @@ title: Implement Insertion Sort
 ---
 # Implement Insertion Sort
 
+---
 ## Problem Explanation
 - Insertion Sort assumes that array is divided in two parts:
   1. Sorted (Initially the first element)

@@ -3,6 +3,7 @@ title: Binary Agents
 ---
 # Binary Agents
 
+---
 ## Problem Explanation
 
 This problem is very straight forward - you start with a string that represents a sentence in binary code, and you need to translate that into words. There is not a direct way to do this so you will have to translate twice.

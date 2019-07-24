@@ -3,6 +3,7 @@ title: Largest prime factor
 ---
 # Problem 3: Largest prime factor
 
+---
 ## Problem Explanation
 - To find the largest prime factor of a number, we start from the smallest prime factor 2 and divide the number with it.
 - If the remainder is 0 that means the number is divisible by that prime number, we keep dividing the number by same prime number until that number is no more divisible by that prime number. 

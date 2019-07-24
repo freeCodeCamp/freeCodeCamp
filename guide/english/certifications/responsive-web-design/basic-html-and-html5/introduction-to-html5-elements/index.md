@@ -3,6 +3,7 @@ title: Introduction to HTML5 Elements
 ---
 # Introduction to HTML5 Elements
 
+---
 ## Problem Explanation
 The example below represent a `h1` element and a `h4` element wrapped into a `header` element:
 ```

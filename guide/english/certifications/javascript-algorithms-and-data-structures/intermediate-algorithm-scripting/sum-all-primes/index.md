@@ -4,6 +4,7 @@ title: Sum All Primes
 
 # Sum All Primes
 
+---
 ## Problem Explanation
 
 The explanation for this problem is very simple. You will generate a list of prime numbers up to the number you are given as a parameter. Then you need to add them all up and return that value. The tricky part is on generating the list of prime numbers. I suggest you find a code or a good math algorithm that you can turn into code.

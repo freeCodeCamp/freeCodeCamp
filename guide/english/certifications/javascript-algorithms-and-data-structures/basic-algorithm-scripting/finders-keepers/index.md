@@ -4,6 +4,7 @@ title: Finders Keepers
 
 # Finders Keepers
 
+---
 ## Problem Explanation
 We need to return the element from an array that passes a function. Both the `function` and the `array` are passed into our function `findElement(arr, func)`.
 

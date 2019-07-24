@@ -4,6 +4,7 @@ title: Missing Letters
 
 # Missing Letters
 
+---
 ## Problem Explanation
 
 You will create a program that will find the missing letter from a string and return it. If there is no missing letter, the program should return undefined. There is currently no test case for the string missing more than one letter, but if there was one, recursion would be used. Also, the letters are always provided in order so there is no need to sort them.

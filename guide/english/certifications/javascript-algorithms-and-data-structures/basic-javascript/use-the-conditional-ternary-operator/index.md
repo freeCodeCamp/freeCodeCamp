@@ -4,6 +4,7 @@ title: Use the Conditional (Ternary) Operator
 
 # Use the Conditional (Ternary) Operator
 
+---
 ## Problem Explanation
 
 * You need to write a function named `checkEqual`, which checks if the two parameters are equal.

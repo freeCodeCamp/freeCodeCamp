@@ -3,6 +3,7 @@ title: Center Text with Bootstrap
 ---
 # Center Text with Bootstrap
 
+---
 ## Problem Explanation
 The challenge introduces the class of ``` text-center ``` for centering text and has to be used to center the ``` <h2></h2> ``` element.
 

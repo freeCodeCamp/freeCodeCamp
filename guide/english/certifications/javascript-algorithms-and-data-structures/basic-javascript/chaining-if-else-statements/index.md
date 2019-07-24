@@ -3,6 +3,7 @@ title: Chaining If Else Statements
 ---
 # Chaining If Else Statements
 
+---
 ## Problem Explanation
 
 * ```If```: the first conditional in every if/else statement, case the conditional is *true*, execute the code and ignore the rest.

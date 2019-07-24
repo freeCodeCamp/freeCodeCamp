@@ -3,6 +3,7 @@ title: Render a Class Component to the DOM
 ---
 # Render a Class Component to the DOM
 
+---
 ## Problem Explanation
 Your code should end up looking similar to this:
 

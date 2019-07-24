@@ -3,6 +3,7 @@ title: Modify an Array Stored in an Object
 ---
 # Modify an Array Stored in an Object
 
+---
 ## Problem Explanation
 
 - The function can be written in just two lines of code.
