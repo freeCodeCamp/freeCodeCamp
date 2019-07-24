@@ -1,12 +1,14 @@
 ---
 title: Map Dispatch to Props
 ---
-## Map Dispatch to Props
+# Map Dispatch to Props
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
+
+---
+## Solutions
   
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```jsx
 const addMessage = (message) => {
   return {

@@ -2,9 +2,13 @@
 title: Accessing Object Properties with Variables
 ---
 
-## Accessing Object Properties with Variables
+# Accessing Object Properties with Variables
 
-Here's a working solution in case you are stuck:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```js
 // Setup
@@ -16,6 +20,7 @@ var testObj = {
 
 // Only change code below this line;
 
-var playerNumber = 16;       // Change this Line
-var player = testObj[playerNumber];   // Change this Line
+var playerNumber = 16; // Change this Line
+var player = testObj[playerNumber]; // Change this Line
 ```
+</details>

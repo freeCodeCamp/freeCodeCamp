@@ -3,9 +3,11 @@ title: Use model.findById() to Search Your Database By _id
 ---
 # Use model.findById() to Search Your Database By _id
 
+
+---
 ## Solutions
 
-<details><summary>Solution #1 (Click to Show/Hide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Code for `myApp.js`
 

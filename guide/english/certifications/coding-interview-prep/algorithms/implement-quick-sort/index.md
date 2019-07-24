@@ -1,9 +1,10 @@
 ---
 title: Implement Quick Sort
 ---
-## Implement Quick Sort
+# Implement Quick Sort
 
-### Method:
+---
+## Problem Explanation
 - Quick sort is an efficient sorting algorithm. It's an in-place algorithm so it doesn't take any auxilary space.
 - First pick a random pivot point around which move all the smaller elements to it to the left of it and the bigger elements to the right of it. 
 - After getting the pivotIndex which is essentially the fixed position of that element, we find other pivotIndex by recusirvely calling this function.
@@ -12,40 +13,44 @@ title: Implement Quick Sort
 - It's an **unstable** algorithm.
 - ![Quick sort in action](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
-### Solution:
+
+---
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```js
-//Swapping array elements via ES6 array destructuring 
-function swap(arr, x, y){
+//Swapping array elements via ES6 array destructuring
+function swap(arr, x, y) {
   [arr[x], arr[y]] = [arr[y], arr[x]];
 }
 
 //Pivot function returns the fixed pivot point
-function pivot(arr, left = 0, right = arr.length-1){
+function pivot(arr, left = 0, right = arr.length - 1) {
   let shift = left;
-  for (let i = left+1; i <= right; i++){
-  
+  for (let i = left + 1; i <= right; i++) {
     //Move all the small elements on the left side
     if (arr[i] < arr[left]) swap(arr, i, ++shift);
   }
-  
+
   //Finally swapping the last element with the left
   swap(arr, left, shift);
   return shift;
 }
 
-function quickSort(array, left = 0, right = array.length-1) {
-  if (left < right){
+function quickSort(array, left = 0, right = array.length - 1) {
+  if (left < right) {
     let pivotIndex = pivot(array, left, right);
-    
+
     //Recusrively calling the function to the left of the pivot and to the right of the pivot
-    quickSort(array, left, pivotIndex-1);
-    quickSort(array, pivotIndex+1, right);
+    quickSort(array, left, pivotIndex - 1);
+    quickSort(array, pivotIndex + 1, right);
   }
   return array;
 }
 ```
 
-### Reference:
+#### Relevant Links
 - [Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
 - [Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/quick-sort/a/overview-of-quicksort)
+</details>
 

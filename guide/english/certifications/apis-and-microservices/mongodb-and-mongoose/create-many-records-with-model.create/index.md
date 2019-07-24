@@ -3,23 +3,27 @@ title: Create Many Records with model.create()
 ---
 # Create Many Records with model.create()
 
+
+---
 ## Hints
 
-### Hint #1
+### Hint 1
 Create an array of objects. Each object has a name, age and an array of favorite foods. Use the variable name `arrayOfPeople`.
 
-### Hint #2
+### Hint 2
 Create your many records (ie. create your people) inside the callback for `createManyPeople`. 
 
-### Hint #3
+### Hint 3
 Use `Model.create()` to create many records. You should replace `Model` with the name of the model you defined in the previous section. Most likely you called your model `Person`.
 
-### Hint #4
+### Hint 4
 The `Model.create` function requires a callback, similar to the `person.save` function you used in the previous section.
 
+
+---
 ## Solutions
 
-<details><summary>Solution #1 (Click to Show/Hide)</summary>
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
   
 Code for `myApp.js`
 

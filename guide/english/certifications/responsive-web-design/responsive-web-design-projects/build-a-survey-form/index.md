@@ -1,7 +1,7 @@
 ---
 title: Build a Survey Form
 ---
-## Build a Survey Form
+# Build a Survey Form
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/responsive-web-design-projects/build-a-survey-form/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -1,9 +1,11 @@
 ---
 title: Telephone Number Validator
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+# Telephone Number Validator
+
+---
+## Problem Explanation
 
 The task is not that hard to understand, implementing it is the hardest part. You have a to validate a US phone number. This means there is a certain amount of numbers required, while you don't need to put the country code, you will still need the area code and use one of the few formats allowed.
 
@@ -13,67 +15,68 @@ The task is not that hard to understand, implementing it is the hardest part. Yo
 *   <a href='http://regexpal.com/' target='_blank' rel='nofollow'>regexpal.com</a>
 *   <a href='https://regex101.com/#javascript' target='_blank' rel='nofollow'>regex101.com/</a>
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+
+---
+## Hints
+
+### Hint 1
 
 There is no way around it, you will need to brush up your regular expressions skills.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 Try using a site from the previous list to test the regex live while you create it.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 Start by trying to get it to validate each format from the example, each one should take a new line, once you get to select them all, then add examples that should not be selected and make sure they are not selected.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 4
+### Hint 4
  Think through what you are trying to solve in a step by step fashion. Below are the different Booleans you could set up. Once you have these set up, you can create small regex tests for each variable.
  This will lead to a much longer solution than those contained in the spoilers. However it will be easier to decipher and generate.
+
 ```js
-  // Set up your Booleans here
-  let hasTenDigits = false;
-  let hasElevenDigits = false;
-  let startsWithOne = false;
-  let hasPermittedCharsOnly = false;
-  let hasCorrectParentheses = false;
-  
-  // Write regular expressions here so that the Booleans contain the correct values
-  // INSERT CODE WITH REGEX HERE
-  
-  // Use the Booleans to return true or false, without needing to string together one complex regular expression
-  if (!hasTenDigits && !hasElevenDigits) {
-    return false;
-  } else if (!hasPermittedCharsOnly || !hasCorrectParentheses) {
-    return false;
-  } else if (hasElevenDigits && !startsWithOne) {
-    return false;
-  } else {
-    return true;
-  }
+// Set up your Booleans here
+let hasTenDigits = false;
+let hasElevenDigits = false;
+let startsWithOne = false;
+let hasPermittedCharsOnly = false;
+let hasCorrectParentheses = false;
+
+// Write regular expressions here so that the Booleans contain the correct values
+// INSERT CODE WITH REGEX HERE
+
+// Use the Booleans to return true or false, without needing to string together one complex regular expression
+if (!hasTenDigits && !hasElevenDigits) {
+  return false;
+} else if (!hasPermittedCharsOnly || !hasCorrectParentheses) {
+  return false;
+} else if (hasElevenDigits && !startsWithOne) {
+  return false;
+} else {
+  return true;
+}
 ```
- > _try to solve the problem now_
+ 
 
-## Spoiler Alert!
+---
+## Solutions
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-**Solution ahead!**
-
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
-
-    function telephoneCheck(str) {
-       var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
-       return regex.test(str);
-    }
-    telephoneCheck("555-555-5555");
+```javascript
+function telephoneCheck(str) {
+  var regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
+  return regex.test(str);
+}
+telephoneCheck("555-555-5555");
+```
 
 
-### Code Explanation:
+#### Code Explanation
 
 *   `^` denotes the beginning of the string.
 *   `(1\s?)?` allows for "1" or "1 " if there is one.
@@ -89,16 +92,20 @@ Start by trying to get it to validate each format from the example, each one sho
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions' target='_blank' rel='nofollow'>Regular Expression Guide</a>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+</details>
 
-    function telephoneCheck(str) {
-      var re = /^([+]?1[\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\s.-]?){1}([0-9]{4}){1}$/;
-      return re.test(str);
-    }
-    telephoneCheck("555-555-5555");
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
+```javascript
+function telephoneCheck(str) {
+  var re = /^([+]?1[\s]?)?((?:[(](?:[2-9]1[02-9]|[2-9][02-8][0-9])[)][\s]?)|(?:(?:[2-9]1[02-9]|[2-9][02-8][0-9])[\s.-]?)){1}([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2}[\s.-]?){1}([0-9]{4}){1}$/;
+  return re.test(str);
+}
+telephoneCheck("555-555-5555");
+```
 
 
-### Code Explanation:
+#### Code Explanation
 
 This is an example of a very comprehensive and robust solution to validating US phone numbers client side. In such cases it might be much better and easier to implement this library <a href='https://github.com/googlei18n/libphonenumber' target='_blank' rel='nofollow'>libphonenumber</a>.
 
@@ -107,8 +114,4 @@ This is an example of a very comprehensive and robust solution to validating US 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test' target='_blank' rel='nofollow'>Regex.test()</a>
 *   <a href='https://github.com/googlei18n/libphonenumber' target='_blank' rel='nofollow'>libphonenumber</a>
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
-
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+</details>

@@ -1,7 +1,7 @@
 ---
 title: Warn Your Users of a Dangerous Action with btn-danger
 ---
-## Warn Your Users of a Dangerous Action with btn-danger
+# Warn Your Users of a Dangerous Action with btn-danger
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/warn-your-users-of-a-dangerous-action-with-btn-danger/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -1,7 +1,7 @@
 ---
 title: Check For Mixed Grouping of Characters
 ---
-## Check For Mixed Grouping of Characters
+# Check For Mixed Grouping of Characters
 
 ### Hint 1
 
@@ -15,7 +15,9 @@ Your regex should use mixed grouping like `/P(engu|umpk)in/g`.
 
 Use `.*` to allow for middle names.
 
-### Solution
+
+---
+## Solutions
 
 ```javascript
 let myString = "Eleanor Roosevelt";

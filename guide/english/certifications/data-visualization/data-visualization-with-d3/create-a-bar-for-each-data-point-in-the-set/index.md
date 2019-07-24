@@ -1,25 +1,32 @@
 ---
 title: Create a Bar for Each Data Point in the Set
 ---
-## Create a Bar for Each Data Point in the Set
+# Create a Bar for Each Data Point in the Set
 
+---
+## Problem Explanation
 To complete this challenge, you must make use of D3's **.data()**, **.enter()**, and **.append()** methods.
 
-## Hint 1
+
+---
+## Hints
+
+### Hint 1
 
 As with the previous challenges, make use of D3's .data() method, passing **dataset** as an argument.
 
-## Hint 2
+### Hint 2
 
 Ensure that you follow using .data(arg) with .enter()
 
-## Hint 3
+### Hint 3
 
 Finally, to create and add the **rect** shape, make use of the .append() method, passing "rect" as an argument. Ensure that you enclose "rect" in quotation marks.
 
-## Solution (!!Spoiler Alert!!)
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-```
+
+```html
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
@@ -47,3 +54,5 @@ Finally, to create and add the **rect** shape, make use of the .append() method,
   </script>
 </body>
 ```
+
+</details>

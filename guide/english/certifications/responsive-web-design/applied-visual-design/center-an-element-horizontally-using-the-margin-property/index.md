@@ -1,9 +1,13 @@
 ---
 title: Center an Element Horizontally Using the margin Property
 ---
-## Center an Element Horizontally Using the margin Property
+# Center an Element Horizontally Using the margin Property
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -16,3 +20,4 @@ title: Center an Element Horizontally Using the margin Property
 </style>
 <div></div>
 ```
+</details>

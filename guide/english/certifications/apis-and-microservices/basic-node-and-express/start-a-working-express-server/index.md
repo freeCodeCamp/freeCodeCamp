@@ -1,9 +1,13 @@
 ---
 title: Start a Working Express Server
 ---
-## Start a Working Express Server
+# Start a Working Express Server
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+---
+## Hints
+
+### Hint 1
 
 If you had a website at "example.com/" and wanted to serve a string such as "Hello Express" to whoever visits the root domain you could do so easily using Node and/or express:
 

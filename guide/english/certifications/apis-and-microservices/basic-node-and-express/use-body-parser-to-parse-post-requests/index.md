@@ -1,16 +1,16 @@
 ---
 title: Use body-parser to Parse POST Requests
 ---
-## Use body-parser to Parse POST Requests
+# Use body-parser to Parse POST Requests
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
+---
+## Problem Explanation
 The body-parser should already be added to your project if you used the provided boilerplate, but if not it should be there as:
 
 ```json
 "dependencies": {
     "body-parser": "^1.19.0",
-    ...
+    
     "express": "^4.17.1"
 }
 ```
@@ -22,7 +22,7 @@ This guide assumes you have imported the `body-parser` module into your file as 
 In order to import the same, you just need to add the following line at the top of your file:
 
 ```javascript
-var bodyParser = require('body-parser');
+var bodyParser = require("body-parser");
 ```
 
 All you need to do for this challenge is pass the middleware to `app.use()`. Make sure it comes before the paths it needs to be used on. Remember that body-parser returns with `bodyParser.urlencoded({extended: false})`. Use the following as a template:

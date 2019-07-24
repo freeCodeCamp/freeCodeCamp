@@ -1,42 +1,45 @@
 ---
 title: Iterate Through the Keys of an Object with a for...in Statement
 ---
-##  Iterate Through the Keys of an Object with a for...in Statement
+#  Iterate Through the Keys of an Object with a for...in Statement
 
-Method:
+---
+## Problem Explanation
 - Note: `dot-notation` will cause errors in this challenge. 
 - `[square-bracket]` notation must be used to call a variable property name.
 - The following code will not work.
 
-### Example 1:
+
+---
+## Hints
+
+### Hint 1:
 
 ```javascript
-
 for (let user in obj) {
-  if(obj.user.online === true) {
+  if (obj.user.online === true) {
     //code
   }
 }
-
 ```
 
+### Hint 2
 - Example 2 demonstrates how using `[square-bracket]` notation the code will be executed.
 
-### Example 2:
-
 ```javascript
-
 for (let user in obj) {
-  if(obj[user].online === true) {
+  if (obj[user].online === true) {
     //code
   }
 }
-
 ```
 
-### Solution:
-```javascript
 
+---
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```javascript
 let users = {
   Alan: {
     age: 27,
@@ -59,7 +62,7 @@ function countOnline(obj) {
   // change code below this line
   let result = 0;
   for (let user in obj) {
-    if(obj[user].online === true) {
+    if (obj[user].online === true) {
       result++;
     }
   }
@@ -67,5 +70,5 @@ function countOnline(obj) {
   // change code above this line
 }
 console.log(countOnline(users));
-
 ```
+</details>

@@ -1,27 +1,10 @@
 ---
 title: Use RGB to Mix Colors
 ---
-## Use RGB to Mix Colors
+# Use RGB to Mix Colors
 
-## Problem
-```html
-<style>
-  .red-text {
-    color: #000000;
-  }
-  .orchid-text {
-    color: #000000;
-  }
-  .sienna-text {
-    color: #000000;
-  }
-  .blue-text {
-    color: #000000;
-  }
-</style>
-```
-
-## Objective
+---
+## Problem Explanation
 Within the `<style>` element, we need to change the hexcode colour  `#000000` within the `color` element in these classes:
 * `.red-text`
 * `.orchid-text`
@@ -37,10 +20,10 @@ We are provided a table where the table shows the RBG values of the colours for 
 |Orchid|rgb(218, 112, 214)
 |Sienna|rgb(160, 82, 45)
 
-## Example
+**Example:**
 In order to change the hexcode colour of a class within the style element, we simply replace the hexcode itself with the RGB value shown below.  
 
-### Before
+Before
 ```html
 <style>
   .ClassName {
@@ -49,7 +32,7 @@ In order to change the hexcode colour of a class within the style element, we si
 </style>
 ```
 
-### After
+After
 
 ```html
 <style>
@@ -61,10 +44,15 @@ In order to change the hexcode colour of a class within the style element, we si
 
 **Note:** In the class,`.ClassName`, within the `<style>` element, the color has changed from a hexcode of `#000000` into the rgb value, `rgb(255, 255, 255)`, which shows that the color of the class `.ClassName` has changed from black to white in the `<style>` element.
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 From the Problem above, we need to change `#000000` from the `color` element in the `<style>` element, into the given RGB values from the table based on the colour that the class needs. For example, the class `.red-text` clearly needs their `color` element to be changed from `#000000` into a red colour, where the table gives us the rgb value of rgb(255, 0, 0) for the colour red, which is shown below:
 
-### Before changing `color` of class `.red-text`
+**Before changing `color` of class `.red-text`**
 ```html
 <style>
   .red-text {
@@ -73,7 +61,7 @@ From the Problem above, we need to change `#000000` from the `color` element in 
 </style>
 ```
 
-### After changing `color` of class `.red-text`
+**After changing `color` of class `.red-text`**
 ```html
 <style>
 .red-text {
@@ -84,7 +72,7 @@ From the Problem above, we need to change `#000000` from the `color` element in 
 
 We will follow the same steps for the rest of the classes shown here:
 
-### Before changing `color` of other classes
+**Before changing `color` of other classes**
 ```html
 <style>
   .orchid-text {
@@ -99,7 +87,7 @@ We will follow the same steps for the rest of the classes shown here:
 </style>
 ```
 
-### After changing `color` of other classes
+**After changing `color` of other classes**
 ```html
 <style>
   .orchid-text {
@@ -114,7 +102,7 @@ We will follow the same steps for the rest of the classes shown here:
 </style>
 ```
 
-## Final Solution
+**Final Solution**
 Hence, the final solution reveals that we have changed the `color` element of these text classes with rgb values shown below:
 ```html
 <style>
@@ -141,6 +129,7 @@ Hence, the final solution reveals that we have changed the `color` element of th
 <h1 class="blue-text">I am blue!</h1>
 ```
 
-#### More Information:
+#### Relevant Links
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Applying_color" target="_blank">MDN web docs: Applying color to HTML elements using CSS</a><br>
 <a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">W3schools Color Picker</a><br>
+</details>
