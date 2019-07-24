@@ -40,8 +40,6 @@ localeTitle: قارن Scopes من var واسمح للكلمات الرئيسية
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://codepen.io/dylantyates/pen/wxwxRd)
-
 # شرح الشفرة:
 
 باستخدام `let` لك يمكن أن تعلن المتغيرات فيما يتعلق بنطاقها.

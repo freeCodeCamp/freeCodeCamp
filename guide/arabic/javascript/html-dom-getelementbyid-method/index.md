@@ -8,24 +8,26 @@ localeTitle: HTML DOM getElementById الطريقة
 
 **محتوى HTML:**
 
- `
-<div id="demo"></div> 
-` 
+```html
+<div id="demo"></div>
+``` 
 
 **محتوى جافا سكريبت:**
 
- `document.getElementById("demo"); // Returns the element with id "demo" 
-` 
+```javascript
+document.getElementById("demo"); // Returns the element with id "demo"
+``` 
 
 إذا كان لديك أكثر من عنصر واحد له نفس قيمة `id` (ممارسة سيئة!) ، فسوف يعرض `getElementById` العنصر الأول الذي تم العثور عليه:
 
- `
-<div id="demo">First</div> 
- <div id="demo">Second</div> 
-` 
+```html
+<div id="demo">First</div>
+<div id="demo">Second</div>
+``` 
 
- `document.getElementById("demo"); // Returns the element with id "demo" containing 'First' 
-` 
+```javascript
+document.getElementById("demo"); // Returns the element with id "demo" containing 'First'
+``` 
 
 #### معلومات اكثر:
 

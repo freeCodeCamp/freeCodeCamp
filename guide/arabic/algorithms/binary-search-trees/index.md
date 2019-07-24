@@ -82,12 +82,13 @@ localeTitle: أشجار البحث الثنائي
 
 وإليك تعريفًا لعقدة BST التي تحتوي على بعض البيانات ، مع الإشارة إلى عقد الطفل اليمنى واليسرى.
 
- `struct node { 
-   int data; 
-   struct node *leftChild; 
-   struct node *rightChild; 
- }; 
-` 
+```c
+struct node {
+   int data;
+   struct node *leftChild;
+   struct node *rightChild;
+};
+``` 
 
 #### عملية البحث
 
@@ -184,10 +185,11 @@ localeTitle: أشجار البحث الثنائي
 
 #### خوارزمية الارتفاع (شجرة)
 
- `if tree = nil: 
-    return 0 
- return 1 + Max(Height(tree.left),Height(tree.right)) 
-` 
+```
+if tree = nil:
+    return 0
+return 1 + Max(Height(tree.left),Height(tree.right))
+``` 
 
 #### هنا هو رمز في C ++
 
@@ -219,21 +221,23 @@ localeTitle: أشجار البحث الثنائي
 
 #### خوارزمية الحجم (شجرة)
 
- `if tree = nil 
-    return 0 
- return 1 + Size(tree.left) + Size(tree.right) 
-` 
+```
+if tree = nil
+    return 0
+return 1 + Size(tree.left) + Size(tree.right)
+``` 
 
 #### هنا هو رمز في C ++
 
- `int treeSize(struct node* node) 
- { 
-    if (node==NULL) 
-        return 0; 
-    else 
-        return 1+(treeSize(node->left) + treeSize(node->right)); 
- } 
-` 
+```
+int treeSize(struct node* node)
+{
+    if (node==NULL)
+        return 0;
+    else
+        return 1+(treeSize(node->left) + treeSize(node->right));
+}
+``` 
 
 ### مقاطع الفيديو ذات الصلة على قناة YouTube freeCodeCamp
 

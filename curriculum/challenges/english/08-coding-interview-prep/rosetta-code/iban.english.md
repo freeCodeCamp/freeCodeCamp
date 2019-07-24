@@ -6,20 +6,19 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-The  <a href="https://en.wikipedia.org/wiki/International_Bank_Account_Number">International Bank Account Number (IBAN)</a>  is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating <a href="https://en.wikipedia.org/wiki/Transcription_error">transcription errors</a>.
+The  <a href="https://en.wikipedia.org/wiki/International_Bank_Account_Number" target="_blank">International Bank Account Number (IBAN)</a>  is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating <a href="https://en.wikipedia.org/wiki/Transcription_error" target="_blank">transcription errors</a>.
 The IBAN consists of up to 34 alphanumeric characters:
 <ul>
-<li>first the two-letter ISO 3166-1 alpha-2 country code</li>
-<li>then two check digits, and</li>
-<li>finally a country-specific Basic Bank Account Number (BBAN).</li>
+  <li>first the two-letter ISO 3166-1 alpha-2 country code</li>
+  <li>then two check digits, and</li>
+  <li>finally a country-specific Basic Bank Account Number (BBAN).</li>
 </ul>
 The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.
-Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false.
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false.
 </section>
 
 ## Tests
@@ -52,7 +51,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function isValid (iban) {
+function isValid(iban) {
   // Good luck!
 }
 ```
@@ -66,7 +65,7 @@ function isValid (iban) {
 
 
 ```js
-function isValid (iban) {
+function isValid(iban) {
   var ibanLen = {
   	NO:15, BE:16, DK:18, FI:18, FO:18, GL:18, NL:18, MK:19,
   	SI:19, AT:20, BA:20, EE:20, KZ:20, LT:20, LU:20, CR:21,

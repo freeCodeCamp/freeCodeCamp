@@ -22,11 +22,11 @@ Delete your <code>h1</code> element so we can simplify our view.
 ```yml
 tests:
   - text: Delete your <code>h1</code> element.
-    testString: assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi), 'Delete your <code>h1</code> element.');
+    testString: assert(!code.match(/<h1>/gi) && !code.match(/<\/h1>/gi));
   - text: Leave your <code>h2</code> element on the page.
-    testString: assert(code.match(/<h2>[\w\W]*<\/h2>/gi), 'Leave your <code>h2</code> element on the page.');
+    testString: assert(code.match(/<h2>[\w\W]*<\/h2>/gi));
   - text: Leave your <code>p</code> element on the page.
-    testString: assert(code.match(/<p>[\w\W]*<\/p>/gi), 'Leave your <code>p</code> element on the page.');
+    testString: assert(code.match(/<p>[\w\W]*<\/p>/gi));
 
 ```
 

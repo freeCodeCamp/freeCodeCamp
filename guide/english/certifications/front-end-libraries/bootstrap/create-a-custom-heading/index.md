@@ -1,7 +1,7 @@
 ---
 title: Create a Custom Heading
 ---
-## Create a Custom Heading
+# Create a Custom Heading
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/create-a-custom-heading/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

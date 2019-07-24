@@ -1,7 +1,7 @@
 ---
 title: Use a media query to change a variable
 ---
-## Use a media query to change a variable
+# Use a media query to change a variable
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-a-media-query-to-change-a-variable/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

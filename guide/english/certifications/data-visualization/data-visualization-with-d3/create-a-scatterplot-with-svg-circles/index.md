@@ -1,7 +1,11 @@
 ---
 title: Create a Scatterplot with SVG Circles
 ---
-## Create a Scatterplot with SVG Circles
+# Create a Scatterplot with SVG Circles
+
+
+---
+## Hints
 
 ### Hint 1
 
@@ -11,7 +15,11 @@ Use the ` data() `, ` enter() `, and ` append() ` methods.
 
 Append circles in the ` append() ` method.
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Chain the following lines of code in the ` svg.selectAll("circle") ` chain:
 
@@ -30,5 +38,5 @@ The ` svg.selectAll("circle") ` chain should look like:
   .append("circle")
 ```
 
-##### Note
-The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
+**Note:** The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
+</details>

@@ -22,7 +22,7 @@ Add the CSS property <code>display</code> to <code>#box-container</code> and set
 ```yml
 tests:
   - text: <code>#box-container</code> should have the <code>display</code> property set to a value of flex.
-    testString: assert($('#box-container').css('display') == 'flex', '<code>#box-container</code> should have the <code>display</code> property set to a value of flex.');
+    testString: assert($('#box-container').css('display') == 'flex');
 
 ```
 
@@ -44,14 +44,12 @@ tests:
     background-color: dodgerblue;
     width: 50%;
     height: 50%;
-
   }
 
   #box-2 {
     background-color: orangered;
     width: 50%;
     height: 50%;
-
   }
 </style>
 <div id="box-container">
@@ -69,7 +67,29 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    height: 500px;
+    display: flex;
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

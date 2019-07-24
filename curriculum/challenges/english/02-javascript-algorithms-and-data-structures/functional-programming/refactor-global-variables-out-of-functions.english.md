@@ -14,7 +14,7 @@ Adding one to a number is not very exciting, but we can apply these principles w
 
 ## Instructions
 <section id='instructions'>
-Rewrite the code so the global array <code>bookList</code> is not changed inside either function. The <code>add</code> function should add the given <code>bookName</code> to the end of an array. The <code>remove</code> function should remove the given <code>bookName</code> from an array. Both functions should return an array, and any new parameters should be added before the <code>bookName</code> one.
+Rewrite the code so the global array <code>bookList</code> is not changed inside either function. The <code>add</code> function should add the given <code>bookName</code> to the end of an array. The <code>remove</code> function should remove the given <code>bookName</code> from an array. Both functions should return an array, and any new parameters should be added before the <code>bookName</code> parameter.
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ Rewrite the code so the global array <code>bookList</code> is not changed inside
 ```yml
 tests:
   - text: <code>bookList</code> should not change and still equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]</code>.
-    testString: assert(JSON.stringify(bookList) === JSON.stringify(["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]), '<code>bookList</code> should not change and still equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]</code>.');
+    testString: assert(JSON.stringify(bookList) === JSON.stringify(["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]));
   - text: <code>newBookList</code> should equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]</code>.
     testString: assert(JSON.stringify(newBookList) === JSON.stringify(['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newBookList</code> should equal <code>["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae", "A Brief History of Time"]</code>.');
   - text: <code>newerBookList</code> should equal <code>["The Hound of the Baskervilles", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"]</code>.
@@ -45,13 +45,14 @@ tests:
 var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 /* This function should add a book to the list and return the list */
-// New parameters should come before the bookName one
+// New parameters should come before bookName
 
 // Add your code below this line
 function add (bookName) {
 
-  return bookList.push(bookName);
-
+  bookList.push(bookName);
+  return bookList;
+  
   // Add your code above this line
 }
 
@@ -60,9 +61,11 @@ function add (bookName) {
 
 // Add your code below this line
 function remove (bookName) {
-  if (bookList.indexOf(bookName) >= 0) {
+  var book_index = bookList.indexOf(bookName);
+  if (book_index >= 0) {
 
-    return bookList.splice(0, 1, bookName);
+    bookList.splice(book_index, 1);
+    return bookList;
 
     // Add your code above this line
     }
@@ -85,6 +88,35 @@ console.log(bookList);
 <section id='solution'>
 
 ```js
-// solution required
+// the global variable
+var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+/* This function should add a book to the list and return the list */
+// New parameters should come before the bookName one
+
+// Add your code below this line
+function add (bookList, bookName) {
+  return [...bookList, bookName];
+  // Add your code above this line
+}
+
+/* This function should remove a book from the list and return the list */
+// New parameters should come before the bookName one
+
+// Add your code below this line
+function remove (bookList, bookName) {
+  const bookListCopy = [...bookList];
+  const bookNameIndex = bookList.indexOf(bookName);
+  if (bookNameIndex >= 0) {
+    bookListCopy.splice(bookNameIndex, 1);
+  }
+  return bookListCopy;
+  // Add your code above this line
+}
+
+var newBookList = add(bookList, 'A Brief History of Time');
+var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
 ```
+
 </section>

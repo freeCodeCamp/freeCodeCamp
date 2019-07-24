@@ -24,9 +24,9 @@ Camper Cat has some big ideas for his ninja weapons page. Help him set up his ma
 ```yml
 tests:
   - text: Your code should have one <code>main</code> tag.
-    testString: assert($('main').length == 1, 'Your code should have one <code>main</code> tag.');
+    testString: assert($('main').length == 1);
   - text: The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.
-    testString: assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), 'The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.');
+    testString: assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi));
 
 ```
 
@@ -56,7 +56,14 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<header>
+  <h1>Weapons of the Ninja</h1>
+</header>
+<main>
+
+</main>
+<footer></footer>
 ```
+
 </section>

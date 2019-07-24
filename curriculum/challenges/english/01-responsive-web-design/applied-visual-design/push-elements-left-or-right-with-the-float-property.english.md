@@ -21,9 +21,9 @@ The given markup would work well as a two-column layout, with the <code>section<
 ```yml
 tests:
   - text: The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.
-    testString: assert($('#left').css('float') == 'left', 'The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.');
+    testString: assert($('#left').css('float') == 'left');
   - text: The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.
-    testString: assert($('#right').css('float') == 'right', 'The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.');
+    testString: assert($('#right').css('float') == 'right');
 
 ```
 
@@ -37,18 +37,18 @@ tests:
 ```html
 <head>
   <style>
-  #left {
+    #left {
 
-    width: 50%;
-  }
-  #right {
+      width: 50%;
+    }
+    #right {
 
-    width: 40%;
-  }
-  aside, section {
-    padding: 2px;
-    background-color: #ccc;
-  }
+      width: 40%;
+    }
+    aside, section {
+      padding: 2px;
+      background-color: #ccc;
+    }
   </style>
 </head>
 <body>
@@ -75,7 +75,36 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<head>
+  <style>
+    #left {
+      float: left;
+      width: 50%;
+    }
+    #right {
+      float: right;
+      width: 40%;
+    }
+    aside, section {
+      padding: 2px;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome!</h1>
+  </header>
+  <section id="left">
+    <h2>Content</h2>
+    <p>Good stuff</p>
+  </section>
+  <aside id="right">
+    <h2>Sidebar</h2>
+    <p>Links</p>
+  </aside>
+</body>
 ```
+
 </section>

@@ -22,9 +22,9 @@ For the elements with id of <code>ball1</code> and <code>ball2</code>, add an <c
 ```yml
 tests:
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.
-    testString: assert($('#ball1').css('animation-timing-function') == 'linear', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.');
+    testString: assert($('#ball1').css('animation-timing-function') == 'linear');
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.
-    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.');
+    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out');
 
 ```
 
@@ -62,14 +62,14 @@ tests:
 
   }
 
-@keyframes bounce {
-  0% {
-    top: 0px;
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
   }
-  100% {
-    top: 249px;
-  }
-}
 
 </style>
 
@@ -86,7 +86,43 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .balls {
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #ball1 {
+    left:27%;
+    animation-timing-function: linear;
+  }
+  #ball2 {
+    left:56%;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
+  }
+</style>
+<div class="balls" id="ball1"></div>
+<div class="balls" id="ball2"></div>
 ```
+
 </section>

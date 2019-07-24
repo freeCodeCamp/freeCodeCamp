@@ -17,7 +17,7 @@ Normalmente, una vez que se completa el trabajo en una función y se recomienda 
 
 ## El flujo de trabajo Eliminar:
 
-Digamos que tienes un repo llamado como `AwesomeRepo` , y está alojado en Github, en una ubicación como `https://github.com/my_username/AwesomeRepo` .
+Digamos que tienes un repo llamado como `AwesomeRepo` , y está alojado en GitHub, en una ubicación como `https://github.com/my_username/AwesomeRepo` .
 
 También vamos a suponer que tiene las ramas como:  
 `master`  

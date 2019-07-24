@@ -7,12 +7,16 @@ challengeType: 5
 ## Description
 <section id='description'>
 Fill in the object constructor with the following methods below:
-<blockquote>getFirstName()
+
+```js
+getFirstName()
 getLastName()
 getFullName()
 setFirstName(first)
 setLastName(last)
-setFullName(firstAndLast)</blockquote>
+setFullName(firstAndLast)
+```
+
 Run the tests to see the expected output for each method.
 The methods that take an argument must accept only one argument and it has to be a string.
 These methods must be the only available means of interacting with the object.
@@ -30,13 +34,13 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>Object.keys(bob).length</code> should return 6.
-    testString: assert.deepEqual(Object.keys(bob).length, 6, '<code>Object.keys(bob).length</code> should return 6.');
+    testString: assert.deepEqual(Object.keys(bob).length, 6);
   - text: <code>bob instanceof Person</code> should return true.
-    testString: assert.deepEqual(bob instanceof Person, true, '<code>bob instanceof Person</code> should return true.');
+    testString: assert.deepEqual(bob instanceof Person, true);
   - text: <code>bob.firstName</code> should return undefined.
-    testString: assert.deepEqual(bob.firstName, undefined, '<code>bob.firstName</code> should return undefined.');
+    testString: assert.deepEqual(bob.firstName, undefined);
   - text: <code>bob.lastName</code> should return undefined.
-    testString: assert.deepEqual(bob.lastName, undefined, '<code>bob.lastName</code> should return undefined.');
+    testString: assert.deepEqual(bob.lastName, undefined);
   - text: <code>bob.getFirstName()</code> should return "Bob".
     testString: assert.deepEqual(bob.getFirstName(), 'Bob', '<code>bob.getFirstName()</code> should return "Bob".');
   - text: <code>bob.getLastName()</code> should return "Ross".

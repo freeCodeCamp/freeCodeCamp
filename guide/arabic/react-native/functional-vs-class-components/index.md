@@ -10,14 +10,15 @@ localeTitle: مكونات وظيفية مقابل فئة
 
 مكونات الفئة هي فئات JavaScript ES2015 التي توسع فئة أساسية من React تسمى `Component` .
 
- `class App extends Component { 
-    render () { 
-        return ( 
-            <Text>Hello World!</Text> 
-        ) 
-    } 
- } 
-` 
+```js
+class App extends Component {
+    render () {
+        return (
+            <Text>Hello World!</Text>
+        )
+    }
+}
+``` 
 
 يتيح ذلك الوصول إلى فئة `App` إلى أساليب دورة حياة React مثل `render` بالإضافة إلى وظيفة الحالة / الدعائم من الأصل.
 
@@ -25,12 +26,13 @@ localeTitle: مكونات وظيفية مقابل فئة
 
 المكونات الوظيفية هي أبسط. فهم لا يديرون حالتهم الخاصة أو يمكنهم الوصول إلى أساليب دورة الحياة التي يقدمها React Native. هم حرفيا وظائف جافا سكريبت عادي حرفيا. وهي تعرف أيضًا باسم المكونات عديمة الحالة.
 
- `const PageOne = () => { 
-    return ( 
-        <h1>Page One</h1> 
-    ); 
- } 
-` 
+```js
+const PageOne = () => {
+    return (
+        <h1>Page One</h1>
+    );
+}
+``` 
 
 ### ملخص
 

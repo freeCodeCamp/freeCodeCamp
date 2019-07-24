@@ -7,13 +7,13 @@ challengeType: 2
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-#property asserts that the actual object has a given property.
-Use #property or #notProperty where appropriate
+<code>#property</code> asserts that the actual object has a given property.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.property()</code> or <code>assert.notProperty()</code> to make the tests pass. 
 </section>
 
 ## Tests
@@ -45,4 +45,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

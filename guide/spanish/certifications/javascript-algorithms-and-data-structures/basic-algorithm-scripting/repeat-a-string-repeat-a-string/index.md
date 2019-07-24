@@ -50,7 +50,6 @@ function repeatStringNumTimes(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/19)
 
 ### Explicación del código:
 
@@ -76,7 +75,6 @@ function repeatStringNumTimes(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/21)
 
 ### Explicación del código:
 
@@ -98,7 +96,6 @@ function repeatStringNumTimes(str, num) {
  repeatStringNumTimes("abc", 3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/85)
 
 ### Explicación del código:
 

@@ -26,21 +26,21 @@ Replace the color words in our <code>style</code> element with their correct hex
 ```yml
 tests:
   - text: Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.
-    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');
+    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
   - text: Use the <code>hex code</code> for the color red instead of the word <code>red</code>.
-    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi), 'Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');
+    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi));
   - text: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.
-    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');
+    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
   - text: Use the <code>hex code</code> for the color green instead of the word <code>green</code>.
-    testString: assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi), 'Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');
+    testString: assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi));
   - text: Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.
-    testString: assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)', 'Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');
+    testString: assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
   - text: Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.
-    testString: assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi), 'Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');
+    testString: assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
   - text: Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.
-    testString: assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');
+    testString: assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
   - text: Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.
-    testString: assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi), 'Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');
+    testString: assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
 
 ```
 
@@ -85,7 +85,29 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .red-text {
+    color: #FF0000;
+  }
+  .green-text {
+    color: #00FF00;
+  }
+  .dodger-blue-text {
+    color: #1E90FF;
+  }
+  .orange-text {
+    color: #FFA500;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="green-text">I am green!</h1>
+
+<h1 class="dodger-blue-text">I am dodger blue!</h1>
+
+<h1 class="orange-text">I am orange!</h1>
 ```
+
 </section>

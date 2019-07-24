@@ -44,7 +44,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -101,7 +100,6 @@ DoublyLinkedList.prototype = {
 ```
 
 </div>
-
 </section>
 
 ## Solution
@@ -110,4 +108,5 @@ DoublyLinkedList.prototype = {
 ```js
 // solution required
 ```
+
 </section>

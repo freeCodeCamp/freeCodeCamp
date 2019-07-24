@@ -22,7 +22,7 @@ Target the element with the id of <code>ball</code> and add the <code>opacity</c
 ```yml
 tests:
   - text: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.
-    testString: assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi), 'The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');
+    testString: assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi));
 
 ```
 
@@ -74,8 +74,32 @@ tests:
 <section id='solution'>
 
 
-```js
-var code = "@keyframes fade {50% { left: 60%; opacity: 0.1;}}"
+```html
+<style>
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity: 0.1;
+    }
+  }
+</style>
+<div id="ball"></div>
 ```
 
 </section>

@@ -1,15 +1,15 @@
 ---
 title: Access Property Names with Bracket Notation
 ---
-## Access Property Names with Bracket Notation
+# Access Property Names with Bracket Notation
 
-Method:
+---
+## Problem Explanation
 - Using bracket notation simply write the return statement in the `checkInventory()` function.
 - The following code block demonstrates the required syntax.
 
 ## Example:
 ```javascript
-
 let juice = {
   apple: 1.15,
   orange: 1.45
@@ -17,11 +17,14 @@ let juice = {
 function checkInventory(scannedItem) {
   return juice[scannedItem];
 }
-
 ```
-## Solution:
-```javascript
 
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```javascript
 let foods = {
   apples: 25,
   oranges: 32,
@@ -39,5 +42,6 @@ function checkInventory(scannedItem) {
 
 // change code below this line to test different cases:
 console.log(checkInventory("apples"));
-
 ```
+
+</details>

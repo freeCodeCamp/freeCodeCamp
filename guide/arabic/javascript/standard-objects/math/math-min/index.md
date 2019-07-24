@@ -8,9 +8,10 @@ localeTitle: الرياضيات مين
 
 يمكنك تمرير أي عدد من الحجج.
 
- `Math.min(7, 2, 9, -6); 
- // returns -6 
-` 
+```javascript
+Math.min(7, 2, 9, -6);
+// returns -6
+``` 
 
 #### معلومات اكثر:
 

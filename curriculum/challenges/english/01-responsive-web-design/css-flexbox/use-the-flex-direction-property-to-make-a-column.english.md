@@ -21,7 +21,7 @@ Add the CSS property <code>flex-direction</code> to the <code>#box-container</co
 ```yml
 tests:
   - text: The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.
-    testString: assert($('#box-container').css('flex-direction') == 'column', 'The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.');
+    testString: assert($('#box-container').css('flex-direction') == 'column');
 
 ```
 
@@ -67,7 +67,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+    flex-direction: column;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

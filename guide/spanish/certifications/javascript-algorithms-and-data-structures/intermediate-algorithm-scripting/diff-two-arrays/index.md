@@ -66,7 +66,6 @@ La mejor manera de realizar la función de devolución de llamada es verificar s
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLme/0)
 
 ### Explicación del código:
 
@@ -90,7 +89,6 @@ Lee los comentarios en el código.
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CNYb/0)
 
 ### Explicación del código:
 
@@ -115,7 +113,6 @@ function diffArray(arr1, arr2) {
  diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CNYU/0)
 
 ### Explicación del código:
 

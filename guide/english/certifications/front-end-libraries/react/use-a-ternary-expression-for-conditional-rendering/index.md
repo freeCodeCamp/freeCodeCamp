@@ -1,19 +1,27 @@
 ---
 title: Use a Ternary Expression for Conditional Rendering
 ---
-## Use a Ternary Expression for Conditional Rendering
+# Use a Ternary Expression for Conditional Rendering
 This challenge is to use Ternary Expression only instead of using `If/Else` in code,
 
-## Hint
+
+---
+## Hints
+
+### Hint 1
 Ternary operator has three parts, but you can combine several ternary expressions together. Here's the basic syntax:
 ```
 condition ? expressionIfTrue : expressionIfFalse
 ```
-## Solution
-Here is sample solution of using ternary expression.
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 First you need declare state in constructor like this
 
-```react.js
+```jsx
 constructor(props) {
     super(props);
     // change code below this line
@@ -27,10 +35,12 @@ constructor(props) {
   }
 ```
 Then the ternary operator 
-```react.js
+```jsx
 {
     /* change code here */
     (this.state.userAge >= 18) ? buttonTwo : (this.state.userAge== '')? buttonOne: buttonThree
 
 }
 ```
+
+</details>

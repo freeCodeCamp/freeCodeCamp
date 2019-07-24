@@ -15,7 +15,13 @@ Every HTML page has a <code>body</code> element.
 <section id='instructions'>
 We can prove that the <code>body</code> element exists here by giving it a <code>background-color</code> of black.
 We can do this by adding the following to our <code>style</code> element:
-<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote>
+
+```css
+body {
+  background-color: black;
+}
+```
+
 </section>
 
 ## Tests
@@ -24,11 +30,11 @@ We can do this by adding the following to our <code>style</code> element:
 ```yml
 tests:
   - text: Give your <code>body</code> element the <code>background-color</code> of black.
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", 'Give your <code>body</code> element the <code>background-color</code> of black.');
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: Make sure your CSS rule is properly formatted with both opening and closing curly brackets.
-    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), 'Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
   - text: Make sure your CSS rule ends with a semi-colon.
-    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), 'Make sure your CSS rule ends with a semi-colon.');
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
 
 ```
 
@@ -54,7 +60,12 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+body {
+  background-color: black;
+}
+</style>
 ```
+
 </section>

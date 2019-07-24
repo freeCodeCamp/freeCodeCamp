@@ -1,15 +1,20 @@
 ---
 title: Summation of primes
 ---
-## Problem 10: Summation of primes
+# Problem 10: Summation of primes
 
-### Method:
+---
+## Problem Explanation
 - In this challenge we need to find sum of all prime numbers up to `n`.
 - Example:
   - If `n = 10` then prime numbers before it are `2, 3, 5, 7` and their sum is `17`.
 - We've used Sieve of Eratosthenes algorithm to find prime numbers in the below solution.
 
-### Solution:
+
+---
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```js
 function primeSummation(n) {
   
@@ -49,7 +54,7 @@ function primeSummation(n) {
 }
 ```
 
-- [Run Code](https://repl.it/@ezioda004/Project-Euler-Problem-10-Summation-of-primes)
 
-### References:
+#### Relevant Links
 - Sieve of Eratosthenes [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+</details>

@@ -65,7 +65,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnM/0)
 
 ### شرح الشفرة:
 
@@ -84,21 +83,22 @@ localeTitle: الاتحاد الفرز
 
 ## بديلة حل رمز الأساسية
 
- `function uniteUnique(arr) { 
-  var args = [...arguments]; 
-  var result = []; 
-  for(var i = 0; i < args.length; i++) { 
-    for(var j = 0; j < args[i].length; j++) { 
-       if(!result.includes(args[i][j])) { 
-        result.push(args[i][j]); 
-      } 
-    } 
-  } 
-  return result; 
- } 
- 
- uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
-` 
+```javascript
+function uniteUnique(arr) {
+  var args = [...arguments];
+  var result = [];
+  for(var i = 0; i < args.length; i++) {
+    for(var j = 0; j < args[i].length; j++) {
+       if(!result.includes(args[i][j])) {
+        result.push(args[i][j]);
+      }
+    }
+  }
+  return result;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+``` 
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":دوار الشمس:") حل الشفرة المتوسطة:
 
@@ -121,7 +121,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnO/0)
 
 ### شرح الشفرة:
 
@@ -154,7 +153,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnN/0)
 
 ### شرح الشفرة:
 
@@ -184,7 +182,6 @@ localeTitle: الاتحاد الفرز
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CcWk/0)
 
 ### شرح الشفرة:
 

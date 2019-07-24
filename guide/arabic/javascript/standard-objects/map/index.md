@@ -8,8 +8,9 @@ localeTitle: خريطة
 
 ## بناء الجملة
 
- `new Map([iterable]) 
-` 
+```javascript
+new Map([iterable])
+``` 
 
 ## المعلمات
 
@@ -17,15 +18,16 @@ localeTitle: خريطة
 
 ## مثال
 
- `// basic usage 
- const myMap = new Map(); 
- myMap.set('foo',1); 
- myMap.set('bar',2); 
- myMap.set('baz',3); 
- 
- myMap.get('foo');   // returns 1 
- myMap.get('baz');   // returns 3 
- myMap.get('hihi');  // return undefined 
- 
- myMap.size();   // 3 
-`
+```javascript
+// basic usage
+const myMap = new Map();
+myMap.set('foo',1);
+myMap.set('bar',2);
+myMap.set('baz',3);
+
+myMap.get('foo');   // returns 1
+myMap.get('baz');   // returns 3
+myMap.get('hihi');  // return undefined
+
+myMap.size();   // 3
+```

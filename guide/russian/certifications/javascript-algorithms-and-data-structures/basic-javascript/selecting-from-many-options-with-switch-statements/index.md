@@ -116,7 +116,6 @@ function caseInSwitch(val) {
  caseInSwitch(1); 
 ```
 
-· Запустить код в [repl.it.](https://repl.it/@AdrianSkar/Basic-JS-Switch-statements)
 
 ### Обозначение кода
 

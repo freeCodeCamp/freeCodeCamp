@@ -50,7 +50,6 @@ function repeatStringNumTimes(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/19)
 
 ### Код Объяснение:
 
@@ -76,7 +75,6 @@ function repeatStringNumTimes(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/21)
 
 ### Код Объяснение:
 
@@ -98,7 +96,6 @@ function repeatStringNumTimes(str, num) {
  repeatStringNumTimes("abc", 3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/85)
 
 ### Код Объяснение:
 

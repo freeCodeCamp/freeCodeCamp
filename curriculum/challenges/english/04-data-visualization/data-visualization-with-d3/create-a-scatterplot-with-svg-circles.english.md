@@ -1,8 +1,6 @@
 ---
 id: 587d7fab367417b2b2512bd7
 title: Create a Scatterplot with SVG Circles
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
 ---
 
@@ -24,7 +22,7 @@ Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> met
 ```yml
 tests:
   - text: Your code should have 10 <code>circle</code> elements.
-    testString: assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');
+    testString: assert($('circle').length == 10);
 
 ```
 
@@ -83,4 +81,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

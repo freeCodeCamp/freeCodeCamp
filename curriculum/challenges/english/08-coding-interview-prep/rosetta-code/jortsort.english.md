@@ -6,7 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious <a href="https://www.youtube.com/watch?v=pj4U_W0OFoE">JSConf</a>.
+jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious <a href="https://www.youtube.com/watch?v=pj4U_W0OFoE" target="_blank">JSConf</a>.
 jortSort is a function that takes a single array of comparable objects as its argument. It then sorts the array in ascending order and compares the sorted array to the originally provided array. If the arrays match (i.e. the original array was already sorted), the function returns true. If the arrays do not match (i.e. the original array was not sorted), the function returns false.
 </section>
 
@@ -47,7 +47,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function jortsort (array) {
+function jortsort(array) {
   // Good luck!
 }
 ```
@@ -61,7 +61,7 @@ function jortsort (array) {
 
 
 ```js
-function jortsort (array) {
+function jortsort(array) {
   // sort the array
   var originalArray = array.slice(0);
   array.sort( function(a,b){return a - b} );

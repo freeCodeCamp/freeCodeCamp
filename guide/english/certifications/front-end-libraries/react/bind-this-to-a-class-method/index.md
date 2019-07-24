@@ -1,9 +1,15 @@
 ---
 title: Bind 'this' to a Class Method
 ---
-## Bind 'this' to a Class Method
+# Bind 'this' to a Class Method
 
+---
+## Problem Explanation
 If a method on JavaScript `class` need to access some internal `state` of the instance, like `this.state`, the method need to be bound to the instance of the `class`. A more detailed description of 'this' binding can be found [here](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md)
+
+
+---
+## Hints
 
 ### Hint 1
 Like many things in programming, there is more than one way to bind this. For this challenge we are going to stick with constructor binding.
@@ -13,15 +19,18 @@ class MyClass {
   constructor() {
     this.myMethod = this.myMethod.bind(this);
   }
-  
+
   myMethod() {
     // whatever myMethod does
   }
 }
 ```
 
-## Spoiler
 
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```jsx
 class MyComponent extends React.Component {
@@ -51,3 +60,4 @@ class MyComponent extends React.Component {
   }
 }
 ```
+</details>

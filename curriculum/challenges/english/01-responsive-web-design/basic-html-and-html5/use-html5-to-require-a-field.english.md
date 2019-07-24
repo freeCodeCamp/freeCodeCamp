@@ -23,7 +23,7 @@ Then try to submit the form without inputting any text. See how your HTML5 form 
 ```yml
 tests:
   - text: Your text <code>input</code> element should have the <code>required</code> attribute.
-    testString: assert($("input").prop("required"), 'Your text <code>input</code> element should have the <code>required</code> attribute.');
+    testString: assert($("input").prop("required"));
 
 ```
 
@@ -69,7 +69,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+    <input type="text" required placeholder="cat photo URL">
+    <button type="submit">Submit</button>
+  </form>
+</main>
 ```
+
 </section>
