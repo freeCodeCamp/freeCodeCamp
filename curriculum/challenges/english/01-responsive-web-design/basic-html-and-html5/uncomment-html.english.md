@@ -29,7 +29,7 @@ tests:
   - text: Make your <code>p</code> element visible on your page by uncommenting it.
     testString: assert($("p").length > 0);
   - text: Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.
-    testString: assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,'')), 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.');
+    testString: assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\n/g,'')));
 
 ```
 
