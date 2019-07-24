@@ -34,7 +34,7 @@ tests:
   - text: The Map data structure exists.
     testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test == 'object')})(), 'The Map data structure exists.');
   - text: 'The Map object has the following methods: add, remove, get, has, values, clear, and size.'
-    testString: "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test.add == 'function' && typeof test.remove == 'function' && typeof test.get == 'function' && typeof test.has == 'function' && typeof test.values == 'function' && typeof test.clear == 'function' && typeof test.size == 'function')})(), 'The Map object has the following methods: add, remove, get, has, values, clear, and size.');"
+    testString: "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test.add == 'function' && typeof test.remove == 'function' && typeof test.get == 'function' && typeof test.has == 'function' && typeof test.values == 'function' && typeof test.clear == 'function' && typeof test.size == 'function')})());"
   - text: The add method adds items to the map.
     testString: assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add(5,6); test.add(2,3); test.add(2,5); return (test.size() == 2)})(), 'The add method adds items to the map.');
   - text: The has method returns true for added items and false for absent items.
