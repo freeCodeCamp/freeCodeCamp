@@ -38,9 +38,9 @@ Fix the string so it either uses different quotes for the <code>href</code> valu
 ```yml
 tests:
   - text: Your code should fix the quotes around the <code>href</code> value "#Home" by either changing or escaping them.
-    testString: assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g), 'Your code should fix the quotes around the <code>href</code> value "#Home" by either changing or escaping them.');
+    testString: assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
   - text: Your code should keep the double quotes around the entire string.
-    testString: assert(code.match(/"<p>.*?<\/p>";/g), 'Your code should keep the double quotes around the entire string.');
+    testString: assert(code.match(/"<p>.*?<\/p>";/g));
 
 ```
 

@@ -48,11 +48,11 @@ Update the code so it only uses the <code>let</code> keyword.
 ```yml
 tests:
   - text: <code>var</code> does not exist in code.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
   - text: <code>catName</code> should be <code>Oliver</code>.
-    testString: assert(catName === "Oliver", '<code>catName</code> should be <code>Oliver</code>.');
+    testString: assert(catName === "Oliver");
   - text: <code>quote</code> should be <code>"Oliver says Meow!"</code>
-    testString: assert(quote === "Oliver says Meow!", '<code>quote</code> should be <code>"Oliver says Meow!"</code>');
+    testString: assert(quote === "Oliver says Meow!");
 
 ```
 

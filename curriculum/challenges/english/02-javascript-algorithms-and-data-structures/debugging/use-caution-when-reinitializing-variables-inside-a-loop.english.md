@@ -21,11 +21,11 @@ The following function is supposed to create a two-dimensional array with <code>
 ```yml
 tests:
   - text: Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.
-    testString: assert(JSON.stringify(matrix) == "[[0,0],[0,0],[0,0]]", 'Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.');
+    testString: assert(JSON.stringify(matrix) == "[[0,0],[0,0],[0,0]]");
   - text: The <code>matrix</code> variable should have 3 rows.
-    testString: assert(matrix.length == 3, 'The <code>matrix</code> variable should have 3 rows.');
+    testString: assert(matrix.length == 3);
   - text: The <code>matrix</code> variable should have 2 columns in each row.
-    testString: assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'The <code>matrix</code> variable should have 2 columns in each row.');
+    testString: assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2);
 
 ```
 

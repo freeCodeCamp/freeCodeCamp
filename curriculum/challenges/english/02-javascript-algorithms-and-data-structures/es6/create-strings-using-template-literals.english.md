@@ -44,14 +44,14 @@ Use an iterator method (any kind of loop) to get the desired output.
 
 ```yml
 tests:
-  - text: <code>resultDisplayArray</code> is an array containing <code>result failure</code> messages.
-    testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3, '<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.');
+  - text: <code>resultDisplayArray</code> should be an array containing <code>result failure</code> messages.
+    testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3);
   - text: <code>resultDisplayArray</code> is the desired output.
-    testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`), '<code>resultDisplayArray</code> is the desired output.');
+    testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`));
   - text: Template strings and expression interpolation should be used
-    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/), 'Template strings and expression interpolation should be used');
+    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
   - text: An iterator should be used
-    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/), 'An iterator should be used');
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
 ```
 
 </section>
