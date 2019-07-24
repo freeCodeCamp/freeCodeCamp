@@ -20,7 +20,7 @@ Take a look at the object we've provided in the code editor. The <code>user</cod
 ```yml
 tests:
   - text: The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys
-    testString: assert('name' in user && 'age' in user && 'data' in user, 'The <code>user</code> object has <code>name</code>, <code>age</code>, and <code>data</code> keys');
+    testString: assert('name' in user && 'age' in user && 'data' in user);
   - text: The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object
     testString: assert((function() { let L1 = user.data.friends.length; addFriend(user, 'Sean'); let L2 = user.data.friends.length; return (L2 === L1 + 1); })(), 'The <code>addFriend</code> function accepts a <code>user</code> object and a <code>friend</code> string as arguments and adds the friend to the array of <code>friends</code> in the <code>user</code> object');
   - text: <code>addFriend(user, "Pete")</code> should return <code>["Sam", "Kira", "Tomo", "Pete"]</code>

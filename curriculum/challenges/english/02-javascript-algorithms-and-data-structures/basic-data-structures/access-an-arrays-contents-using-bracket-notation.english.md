@@ -43,13 +43,13 @@ In order to complete this challenge, set the 2nd position (index <code>1</code>)
 ```yml
 tests:
   - text: <code>myArray[0]</code> is equal to <code>"a"</code>
-    testString: assert.strictEqual(myArray[0], "a", '<code>myArray[0]</code> is equal to <code>"a"</code>');
+    testString: assert.strictEqual(myArray[0], "a");
   - text: <code>myArray[1]</code> is no longer set to <code>"b"</code>
-    testString: assert.notStrictEqual(myArray[1], "b", '<code>myArray[1]</code> is no longer set to <code>"b"</code>');
+    testString: assert.notStrictEqual(myArray[1], "b");
   - text: <code>myArray[2]</code> is equal to <code>"c"</code>
-    testString: assert.strictEqual(myArray[2], "c", '<code>myArray[2]</code> is equal to <code>"c"</code>');
+    testString: assert.strictEqual(myArray[2], "c");
   - text: <code>myArray[3]</code> is equal to <code>"d"</code>
-    testString: assert.strictEqual(myArray[3], "d", '<code>myArray[3]</code> is equal to <code>"d"</code>');
+    testString: assert.strictEqual(myArray[3], "d");
 
 ```
 
