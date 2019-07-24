@@ -16,6 +16,8 @@ Bird.prototype.constructor = Bird;
 
 Then a new function - `bark()` - must be added to the Dog prototype. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -17,6 +17,8 @@ Remember that you're asked to extract the letters from the string -- this cannot
 ### Hint 2
 Are you using the match() method character case flag with brackets? e.g. regExp = /[a-e]/ vs regExp = /a-e/. What this allows us to do is search through the string for any characters matching [a, b, c, ... e] using the shorthand notation /[a-e]/.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

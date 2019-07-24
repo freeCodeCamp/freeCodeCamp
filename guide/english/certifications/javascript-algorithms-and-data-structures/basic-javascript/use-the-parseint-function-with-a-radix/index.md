@@ -14,6 +14,8 @@ Otherwise you can just use a `return` statement for your function.
 ### Hint 2
 In this exercise you need to "convert" a binary number into a decimal number using the `radix` parameter in order to specify the base on which the input number is represented on.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

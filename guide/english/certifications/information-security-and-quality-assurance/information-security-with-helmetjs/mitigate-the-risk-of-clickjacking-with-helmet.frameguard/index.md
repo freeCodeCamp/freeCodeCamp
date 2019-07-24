@@ -14,6 +14,8 @@ You want your `app` to `use` the `helmet.frameguard()` method on each request.
 ### Hint 2
 Don't forget to pass the appropriate configuration into the method.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

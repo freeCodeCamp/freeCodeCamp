@@ -18,6 +18,8 @@ title: Pass a Callback as Props
 ### Hint 2
 To learn more about state and props, read [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html) and [Components and Props](https://reactjs.org/docs/components-and-props.html).
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

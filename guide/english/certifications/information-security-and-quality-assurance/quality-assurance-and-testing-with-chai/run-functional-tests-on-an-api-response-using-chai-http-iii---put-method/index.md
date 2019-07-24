@@ -23,6 +23,8 @@ You need to use .send() to attach the payload `{surname: 'Colombo'}` to the requ
 
 Replace the `assert.fail()` statement with your own tests checking for status, type, body.name, and body.surname in that order. Remember, all of these values are contained in the response (`res`), and you should expect the response to be of type `'application/json'`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

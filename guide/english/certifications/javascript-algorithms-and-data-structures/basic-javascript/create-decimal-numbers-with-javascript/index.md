@@ -10,6 +10,8 @@ title: Create Decimal Numbers with JavaScript
 ### Hint 1
 JavaScript number variables can have decimals.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

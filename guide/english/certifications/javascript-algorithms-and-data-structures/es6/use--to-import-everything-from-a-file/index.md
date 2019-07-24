@@ -16,6 +16,8 @@ If you want to import everything possible from a file, then you use the `import 
 
 Fill in the blanks: `import * as objName from "file-name"`. You can be creative with your `objName`, but your file name should be `capitalize_strings`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

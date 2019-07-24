@@ -21,6 +21,8 @@ grid-template-columns: parameters;
 
 where parameters is whatever you want it to be.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

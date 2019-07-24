@@ -4,6 +4,8 @@ title: Create a Model
 
 # Create a Model
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

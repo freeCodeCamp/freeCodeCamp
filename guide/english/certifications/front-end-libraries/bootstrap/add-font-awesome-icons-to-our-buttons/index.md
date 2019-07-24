@@ -19,6 +19,8 @@ The ``` <i> ``` tag is not self-closing.
 
 Use the classes ``` fa ``` and ```fa-thumbs-up```.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

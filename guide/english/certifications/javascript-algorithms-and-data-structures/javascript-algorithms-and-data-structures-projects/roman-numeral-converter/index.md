@@ -35,6 +35,8 @@ If you add the numbers to the arrays that go before the new letter is introduced
 You can't have more than three consecutive Roman numerals together.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

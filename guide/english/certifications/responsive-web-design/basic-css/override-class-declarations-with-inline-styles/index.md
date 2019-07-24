@@ -17,6 +17,8 @@ Inline styles look like this:
 
 **NOTE:** An inline style loses many of the advantages of a style sheet (by mixing content with presentation). Use this method sparingly.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

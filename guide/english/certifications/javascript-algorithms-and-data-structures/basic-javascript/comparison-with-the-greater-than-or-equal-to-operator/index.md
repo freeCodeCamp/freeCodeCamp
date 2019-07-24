@@ -5,6 +5,8 @@ title: Comparison with the Greater Than Or Equal To Operator
 
 * `>=` (Greater Than or Equal To) is a logical operator that returns true case the value on the left is the **same or higher** than the one on the right.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

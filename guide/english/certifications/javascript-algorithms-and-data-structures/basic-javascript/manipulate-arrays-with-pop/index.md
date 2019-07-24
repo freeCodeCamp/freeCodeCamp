@@ -16,6 +16,8 @@ Get rid of the last element in the array. Then, assign that ridden element to `r
 
 Call `.pop()` on the array, and assign it to `removedFromMyArray`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

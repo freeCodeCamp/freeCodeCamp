@@ -15,6 +15,8 @@ Using `.replace()` with the first parameter set to find the part of the original
 
 Modify the regex so that `fixRegex` detects the part of the string to replace and the variable `replaceText` should be modified to the string that will replace `fixRegex`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

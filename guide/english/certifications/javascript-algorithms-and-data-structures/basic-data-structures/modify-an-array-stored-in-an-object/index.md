@@ -10,6 +10,8 @@ title: Modify an Array Stored in an Object
 - The first line should just use the `push()` function to add the `friend`parameter to the array found in `user.data.friend`. The second line will return the modified array.
 - Remember that `user` mustb be referenced with the first parameter given to the `addFriend()` function.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

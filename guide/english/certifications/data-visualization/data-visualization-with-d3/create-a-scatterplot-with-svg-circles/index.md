@@ -15,6 +15,8 @@ Use the ` data() `, ` enter() `, and ` append() ` methods.
 
 Append circles in the ` append() ` method.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

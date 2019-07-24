@@ -13,6 +13,8 @@ title: Pass Arguments to Avoid External Dependence in a Function
 Try to pass argument to function and return increased value of this argument. 
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

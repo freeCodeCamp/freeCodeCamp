@@ -16,6 +16,8 @@ Obj.prototype.newProperty = "New Property!";
 
 Using this logic, simply create a new `prototype` property for `numLegs`. The test cases can be passed by replacing the `Bird` object with the `Dog` object in the example given - `Bird.prototype.numLegs = 2;`
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -10,6 +10,8 @@ title: Use the map Method to Extract Data from an Array
 ### Hint 1
 array.prototype.map takes a function as in input and returns an array. The returned array includes elements that is processed by the function. This function takes individual elements as input.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

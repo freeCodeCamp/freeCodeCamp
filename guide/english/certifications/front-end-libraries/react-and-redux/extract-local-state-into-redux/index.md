@@ -20,6 +20,8 @@ Replace `this.state.messages` with `this.props.messages`.
 The `submitMessage` function still needs to set the state of the `input`.
 
 
+
+---
 ## Solutions
   
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

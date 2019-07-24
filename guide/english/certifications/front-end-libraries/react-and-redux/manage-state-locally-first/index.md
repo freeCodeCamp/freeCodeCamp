@@ -26,6 +26,8 @@ You may wanna add the following ```<div>``` into render content to check if the 
 ### Hint 4
 spread operator ```...``` can be used for array concatenation in ```submitMessage()``` method declaration.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -17,6 +17,8 @@ Use bcrypt's `hashSync()` method to hash a `plain text password` with a specific
 ### Hint 3
 Then use bcrypt's `compareSync()` method to compare a `plain text password` against the variable.
 
+
+---
 ## Solutionss
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

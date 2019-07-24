@@ -39,6 +39,8 @@ Check the tests on the challenge page or the instructions in the comments for ex
 
 Make sure your `done()` call is within the pressButton callback.
 
+
+---
 ## Solutions
 
 <details><summary>Solution #1(Click to Show/Hide)</summary>

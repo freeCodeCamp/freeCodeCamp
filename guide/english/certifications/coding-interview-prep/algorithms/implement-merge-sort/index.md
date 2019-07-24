@@ -15,6 +15,8 @@ title: Implement Merge Sort
 - It's a **stable** algorithm.
 - ![Merge Sort in action](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif)
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

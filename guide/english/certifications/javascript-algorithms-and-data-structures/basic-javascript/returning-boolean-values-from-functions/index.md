@@ -27,6 +27,8 @@ As with the [previous exercise](https://learn.freecodecamp.org/javascript-algori
 ### Hint 2
 In order to return `true` or `false` you don't need two statements nor use `if` ones. The correct [comparison operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) is all you need.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

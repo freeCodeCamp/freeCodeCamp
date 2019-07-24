@@ -15,6 +15,8 @@ _Add the equality operator to the indicated line so that the function will retur
 Remember that _equality is different from assignment (`=`), which assigns the value at the right of the operator to a variable in the left._<sup><a href="#cite1">1</a></sup>
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -15,6 +15,8 @@ Check the spelling of the first two variables against when it is used. Also, rea
 * ous vs os
 * double letters if certain one-syllable words adding a suffix (like "big" to "bigger")
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

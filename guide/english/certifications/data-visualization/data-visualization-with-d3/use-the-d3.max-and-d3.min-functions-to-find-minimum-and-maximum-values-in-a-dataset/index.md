@@ -19,6 +19,8 @@ Use a callback function.
 
 Check for the second element in the callback function's array.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

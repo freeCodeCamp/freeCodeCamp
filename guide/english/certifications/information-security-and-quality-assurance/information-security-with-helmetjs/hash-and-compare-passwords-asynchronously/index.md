@@ -17,6 +17,8 @@ Use bcrypt's `hash()` method to hash a `plain text password` with a specific num
 ### Hint 3
 Then use bcrypt's `compare()` method to compare a `plain text password` with the results from the hash.
 
+
+---
 ## Solutionss
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

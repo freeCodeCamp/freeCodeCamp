@@ -31,6 +31,8 @@ Use different id(s) for both wells.
 
 Give the well on the left the id of ``` left-well ``` and the well on the right the id of ``` right-well ```.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

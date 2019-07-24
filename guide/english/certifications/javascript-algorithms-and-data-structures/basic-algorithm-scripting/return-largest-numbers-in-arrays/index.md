@@ -25,6 +25,8 @@ You can work with multidimensional arrays by `Array[Index][SubIndex]`
 
 Pay close attention to the timing of the storing of variables when working with loops
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

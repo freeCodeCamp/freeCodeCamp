@@ -28,6 +28,8 @@ To check for the type of a parameter, you can use `typeof`.
 Since you must return true or false you can use if statements or just have it return the boolean used for the if statement.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

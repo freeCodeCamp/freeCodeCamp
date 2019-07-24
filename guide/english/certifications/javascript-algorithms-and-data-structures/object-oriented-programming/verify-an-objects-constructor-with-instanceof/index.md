@@ -16,6 +16,8 @@ let hound = new Dog();
 
 Remember to give the `House` function a parameter to initialise the number of rooms. Then simply call the `instanceof` operator to return true on your new House.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

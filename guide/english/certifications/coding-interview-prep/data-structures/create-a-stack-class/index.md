@@ -19,6 +19,8 @@ title: Create a Stack Class
 | ----- | ------ | ------ | ------ | ------ |
 | Stack |   n    |    n   |   1    |    1   |
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -26,6 +26,8 @@ Change all the variables to `let` or `const` and rename `sentence`.
 *   Common convention is to name `const` variables with ALL CAPS.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

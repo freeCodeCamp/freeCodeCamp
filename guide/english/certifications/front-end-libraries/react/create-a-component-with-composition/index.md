@@ -19,6 +19,8 @@ Use JSX self closing tags.
 ### Hint 3
 The component to be rendered is ChildComponenet and it is to be rendered in ParentComponent
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

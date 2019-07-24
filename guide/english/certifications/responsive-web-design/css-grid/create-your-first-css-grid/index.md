@@ -23,6 +23,8 @@ Change the display property of the .container element
 
 Set the display of the .container element to grid
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

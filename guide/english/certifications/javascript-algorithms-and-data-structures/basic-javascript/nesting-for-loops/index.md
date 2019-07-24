@@ -29,6 +29,8 @@ Use both <code>i</code> and <code>j</code> when multiplying the product.
 
 Remember to use <code>arr[i]</code> when you multiply the sub-arrays with the <code>product</code> variable.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

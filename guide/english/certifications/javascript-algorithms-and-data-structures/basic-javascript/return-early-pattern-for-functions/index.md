@@ -25,6 +25,8 @@ Now, if ```a``` or ```b``` are less than ```0``` - function exit with a value of
 return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

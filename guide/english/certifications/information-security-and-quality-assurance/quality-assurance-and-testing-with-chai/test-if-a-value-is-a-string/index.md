@@ -19,6 +19,8 @@ Check the responses of the error messages if your tests fail, and make sure you 
 
 The lines in the test should be changed from `assert.fail()` to either `assert.isString()` or `assert.isNotString()`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

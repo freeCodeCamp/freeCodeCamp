@@ -24,6 +24,8 @@ newArr.push(arr[i]);
 ```
 - Once that entire subarray is added to `newArr` the loop continue with the next element.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

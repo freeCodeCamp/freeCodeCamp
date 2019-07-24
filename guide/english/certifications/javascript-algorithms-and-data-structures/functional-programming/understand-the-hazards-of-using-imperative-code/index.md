@@ -76,6 +76,8 @@ tabClose = function (index) {
  
  After the third line and concatenation the returned array is the same as tabsBeforeIndex, which results in both 'Vimeo' and 'Vine' values not being in the array.  
  
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

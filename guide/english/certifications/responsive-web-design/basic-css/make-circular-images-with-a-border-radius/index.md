@@ -7,6 +7,8 @@ title: Make Circular Images with a border-radius
 ## Problem Explanation
 We need to give our cat photo a ```border-radius``` of ```50%```.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

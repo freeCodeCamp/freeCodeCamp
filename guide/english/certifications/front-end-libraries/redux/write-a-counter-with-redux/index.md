@@ -19,6 +19,8 @@ The best way to solve this challenge is by reviewing previous redux lessons part
 - [Handle an Action in the Store](https://learn.freecodecamp.org/front-end-libraries/redux/handle-an-action-in-the-store/)
 - [Create a Redux Store](https://learn.freecodecamp.org/front-end-libraries/redux/create-a-redux-store)
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

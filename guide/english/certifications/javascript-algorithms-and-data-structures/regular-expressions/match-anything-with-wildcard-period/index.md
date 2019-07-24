@@ -14,6 +14,8 @@ The dot `.` is the key in this challenge.
 ### Hint 2
 You should put the dot on the right position.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

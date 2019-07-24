@@ -19,6 +19,8 @@ function myFunc() {
 - You will see that `i` is first initialised as 1 and after every iteration of the loop, `i` is incremented by 2.
 - Using this logic, after the first iteration - `i = 3` and the second iteration `i = 5`, the condition `i != 4` will never be met and an infinite loop will occur.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

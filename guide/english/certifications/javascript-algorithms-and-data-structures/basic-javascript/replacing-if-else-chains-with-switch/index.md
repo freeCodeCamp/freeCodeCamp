@@ -3,6 +3,8 @@ title: Replacing If Else Chains with Switch
 ---
 # Replacing If Else Chains with Switch
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -29,6 +29,8 @@ It isn't necessary to use loops. You can use functions such as `map()`, `reduce(
 
 You will have to check if the current value is already on the array to be returned for every value.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -19,6 +19,8 @@ Check that you have appended the **rect** using D3's 'append()' method. (Be sure
 
 Now assign attributes to the shape using D3's '.attr()' method. You can chain multiple uses of this method. Remember when assigning x and y co-ordinates that within the SVG area, point (0,0) occurs on the top-**left**. As such, while x values dictate how far right an element moves, y values will dictate how far **downward** it moves from the origin point.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

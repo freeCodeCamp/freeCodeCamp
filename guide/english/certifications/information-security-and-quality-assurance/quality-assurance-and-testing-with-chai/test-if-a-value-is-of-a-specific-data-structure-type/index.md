@@ -25,6 +25,8 @@ Check the error messages to determine if your understanding of the object or pro
 
 The lines in the test should be changed from `assert.fail()` to either `assert.typeOf()` or `assert.notTypeOf()`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -7,6 +7,8 @@ title: Understand the Prototype Chain
 ## Problem Explanation
 Your code should show that Object.prototype is the prototype of Dog.prototype
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

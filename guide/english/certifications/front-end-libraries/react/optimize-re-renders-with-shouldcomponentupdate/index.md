@@ -11,6 +11,8 @@ title: Optimize Re-Renders with shouldComponentUpdate
 
 Check to see if the value of ```nextProps``` is even.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -40,6 +40,8 @@ This problem does not involve rearranging the input into different combinations 
 *   The result must be an array of arrays, so keep that in mind when pushing things.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

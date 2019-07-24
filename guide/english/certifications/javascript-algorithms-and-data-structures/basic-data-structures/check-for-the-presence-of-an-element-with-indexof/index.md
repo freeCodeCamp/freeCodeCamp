@@ -3,6 +3,8 @@ title: Check For The Presence of an Element With indexOf()
 ---
 # Check For The Presence of an Element With indexOf()
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

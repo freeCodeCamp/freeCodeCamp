@@ -10,6 +10,8 @@ Creating a controlled form is the same process as creating a controlled input, e
 First, create a controlled input that stores its value in state, so that there is a single source of truth. 
 (This is what you did in the previous challenge.) Create an input element, set its value attribute to the input variable located in state. Remember, state can be accessed by `this.state`. Next, set the input element's `onChange` attribute to call the function 'handleChange'.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

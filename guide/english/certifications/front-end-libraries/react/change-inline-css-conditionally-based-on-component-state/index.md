@@ -19,6 +19,8 @@ this.state.input.length;
 
 You are entering code before the return statement so you can use a pure JavaScript ```if/then``` statement.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -15,6 +15,8 @@ Set the y-axis variable using `const yAxis = d3.axisLeft(yScale);`.
 
 Append the y-axis using `svg.append()`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -26,6 +26,8 @@ The format for display has to be `x, y`.
 ##### Note
 There is a space between the comma and the y attribute.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

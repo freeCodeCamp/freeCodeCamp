@@ -17,6 +17,8 @@ Use the method ```Object.assign({}, obj1, obj2)``` in return. Pass ```state``` a
 ### Hint 2
 The obj2 should be the updated ```{key: value}``` pair of your state.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -3,6 +3,8 @@ title: Generate Random Fractions with JavaScript
 ---
 # Generate Random Fractions with JavaScript
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

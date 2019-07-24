@@ -11,6 +11,8 @@ title: Reverse a Doubly Linked List
 - add() will find the end of the list and append new entries at this location.
 - reverse() will swap entries one pair at a time using a temporary variable.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

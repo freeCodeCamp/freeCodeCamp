@@ -11,6 +11,8 @@ title: Extend One Set of CSS Styles to Another Element
 
 Use `@extend`
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

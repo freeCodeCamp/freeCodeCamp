@@ -21,6 +21,8 @@ grid-gap: 'row-gap' 'column-gap';
 
 and inserting the desired parameters for 'row-gap' and 'column-gap'.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

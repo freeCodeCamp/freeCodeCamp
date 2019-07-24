@@ -26,6 +26,8 @@ To override a default props value, the syntax to be followed is
 <Component propsName={Value}/>
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

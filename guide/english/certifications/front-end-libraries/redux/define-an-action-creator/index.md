@@ -23,6 +23,8 @@ Where console.log can be changed as per the need.
 
 A value is returned using the ``` return ``` keyword
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -13,6 +13,8 @@ title: Count Backwards With a For Loop
 ### Hint 2
 * start from the first odd number just before 9
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

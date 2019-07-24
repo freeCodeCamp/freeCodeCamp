@@ -3,6 +3,8 @@ title: Accessing Object Properties with Dot Notation
 ---
 # Accessing Object Properties with Dot Notation
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

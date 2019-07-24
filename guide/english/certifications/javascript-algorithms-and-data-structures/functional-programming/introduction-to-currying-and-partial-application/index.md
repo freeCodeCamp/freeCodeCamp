@@ -3,6 +3,8 @@ title: Introduction to Currying and Partial Application
 ---
 # Introduction to Currying and Partial Application
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

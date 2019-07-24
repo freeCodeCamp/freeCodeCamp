@@ -32,6 +32,8 @@ You use `if / else if` chains to return different values in different scenarios.
 Control the flow of your function based on the tables order of priority - top (highest) to bottom (lowest) to return matching string values.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

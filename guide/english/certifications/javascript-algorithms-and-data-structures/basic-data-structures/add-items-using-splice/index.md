@@ -21,6 +21,8 @@ arr.splice(0, 1, "Two");
 */
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -15,6 +15,8 @@ Your regex should use mixed grouping like `/P(engu|umpk)in/g`.
 
 Use `.*` to allow for middle names.
 
+
+---
 ## Solutions
 
 ```javascript

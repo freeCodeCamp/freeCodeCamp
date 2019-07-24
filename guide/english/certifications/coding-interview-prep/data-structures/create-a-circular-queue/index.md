@@ -37,6 +37,8 @@ title: Create a Circular Queue
       ^Write @ 1
 ```
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

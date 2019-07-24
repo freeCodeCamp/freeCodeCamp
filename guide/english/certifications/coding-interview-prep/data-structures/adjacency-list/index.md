@@ -21,6 +21,8 @@ Create keys with the names James, Jill, Jenny and Jeff.
 
 Read the presentation and try to understand what it means to be an undirected graph.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

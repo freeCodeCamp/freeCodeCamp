@@ -17,6 +17,8 @@ Think of how you can select substrings at the beginning or end of a string.
 ### Hint 2
 Think of how you can select whitespace
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

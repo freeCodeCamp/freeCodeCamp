@@ -11,6 +11,8 @@ The last challenge had you adding some classes to your ```html <button></button>
 Edit the classes
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

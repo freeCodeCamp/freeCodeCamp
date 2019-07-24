@@ -4,6 +4,8 @@ title: Implement map on a Prototype
 
 # Implement map on a Prototype
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -21,6 +21,8 @@ Use the add function to add an array of strings to the set.
 
 Use the length attribute on the values of the Set.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

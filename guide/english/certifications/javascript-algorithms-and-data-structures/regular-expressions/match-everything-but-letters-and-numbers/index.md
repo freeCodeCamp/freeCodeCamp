@@ -13,6 +13,8 @@ __Equivalent to [^A-Za-z0-9_].__
 For example, `/\W/` or `/[^A-Za-z0-9_]/` matches "%" in "50%".
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

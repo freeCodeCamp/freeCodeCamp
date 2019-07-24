@@ -10,6 +10,8 @@ title: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
 ### Hint 1
 You want your `app` to `use` helmet's `ieNoOpen()` method on each request.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

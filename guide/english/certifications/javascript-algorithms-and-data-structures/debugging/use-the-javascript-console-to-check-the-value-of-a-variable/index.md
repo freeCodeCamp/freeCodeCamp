@@ -5,6 +5,8 @@ title: Use the JavaScript Console to Check the Value of a Variable
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 
+
+---
 ## Solutions
 
 ```js

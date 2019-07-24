@@ -10,6 +10,8 @@ title: Understand String Immutability
 ### Hint 1
 Instead of  ```Jello World ```, ```myStr``` should be assigned ```Hello World```.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

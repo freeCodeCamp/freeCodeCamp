@@ -12,6 +12,8 @@ return arr.slice(1, 4);
 /* This will return a substring consisting of indexs [1,2,3]
     Note: arr[4] is NOT included. */
 ```
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -13,6 +13,8 @@ Your `if` statement will evaluate whether your `(condition)` is `true` or `false
 ### Hint 2
 In case your `(condition)` evaluates to `false` the `{statement}` won't be executed and function will return the next `return` statement. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

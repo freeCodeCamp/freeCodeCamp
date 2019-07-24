@@ -23,6 +23,8 @@ let myObject = {
 myObject.first_level_object.level_2 = "level-2 has been reached";
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

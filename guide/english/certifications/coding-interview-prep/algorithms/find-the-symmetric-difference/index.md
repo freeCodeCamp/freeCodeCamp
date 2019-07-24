@@ -43,6 +43,8 @@ In the event of *odd number of sets* the symmetric difference will include ident
     (A &Intersection; B) &Intersection; C = {1, 4} &Intersection {3, 4, 5}
     A &Intersection; B = {1, 3, 5}
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

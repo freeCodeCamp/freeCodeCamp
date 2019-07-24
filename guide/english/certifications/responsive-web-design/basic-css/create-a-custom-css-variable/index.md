@@ -13,6 +13,8 @@ We need to create a variable name ```--penguin-skin``` and give it a value of ``
 --variable-name: value;
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

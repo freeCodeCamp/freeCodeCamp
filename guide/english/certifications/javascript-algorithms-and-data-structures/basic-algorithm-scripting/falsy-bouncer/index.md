@@ -29,6 +29,8 @@ We need to make sure we have all the falsy values to compare, we can know it, ma
 
 Then we need to add a `filter()` with the falsy values function...
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

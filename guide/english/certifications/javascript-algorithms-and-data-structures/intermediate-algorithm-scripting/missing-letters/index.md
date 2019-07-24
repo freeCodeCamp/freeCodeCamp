@@ -31,6 +31,8 @@ You will have to check for the difference in ASCII code as they are in order. Us
 
 You will need to figure out where the missing letter is, along with handling the case that there is not missing letter as it needs an specific return value.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

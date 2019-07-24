@@ -24,6 +24,8 @@ Do not see _"following conditions"_ as an ordered list as it looks in the origin
 >Try to solve the problem now!
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

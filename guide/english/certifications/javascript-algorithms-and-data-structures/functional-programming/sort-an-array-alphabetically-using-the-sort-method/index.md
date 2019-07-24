@@ -25,6 +25,8 @@ reverseAlphabeticalOrder(["l", "h", "z", "b", "s"]);
 // Returns ['z', 's', 'l', 'h', 'b']
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

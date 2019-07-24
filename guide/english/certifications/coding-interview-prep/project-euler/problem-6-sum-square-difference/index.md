@@ -13,6 +13,8 @@ title: Sum square difference
   
 - We can calculate the values using the above formula and subtract them to get the result.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

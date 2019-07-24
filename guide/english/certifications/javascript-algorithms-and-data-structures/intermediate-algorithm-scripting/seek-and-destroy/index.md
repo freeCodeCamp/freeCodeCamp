@@ -30,6 +30,8 @@ You need to filter, this also means you need to create a callback function. You 
 
 To convert `arguments` into an array use this code `var args = Array.prototype.slice.call(arguments);`
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

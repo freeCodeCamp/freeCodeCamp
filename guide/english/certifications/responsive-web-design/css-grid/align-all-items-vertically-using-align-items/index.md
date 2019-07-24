@@ -21,6 +21,8 @@ align-items: value;
 
 where value is how you could like to vertically align the items.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

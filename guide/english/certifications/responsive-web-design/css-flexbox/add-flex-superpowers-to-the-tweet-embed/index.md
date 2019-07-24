@@ -9,6 +9,8 @@ Building on the previous challenge, you will need to add the property to the rig
 
 The header will ensure the picture, name, handle, and follow buttons get repositioned horizonatally.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

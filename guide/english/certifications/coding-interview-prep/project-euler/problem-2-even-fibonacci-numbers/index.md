@@ -17,6 +17,8 @@ title: Even Fibonacci Numbers
 #### Relevant Links
 - [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

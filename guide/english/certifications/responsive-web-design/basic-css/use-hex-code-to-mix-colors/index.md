@@ -30,6 +30,8 @@ In order to change the color of a class within the style element, we simply repl
 
 **Note:** In the class,`.ClassName`, within the `<style>` element, the color has changed from a color of `black` into the hexcode, `#FFFFFF`, which shows that the color of the class `.ClassName` has changed from black to white in the `<style>` element.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -14,6 +14,8 @@ When the first  `if` statement returns `false` the next piece of code is execute
 Sometimes `if` (`condition`) statements can be replaced by `else {code to execute instead} ` statements (in essence you are telling your function to do _"y"_ if it can't do _"x"_ instead of specifying _"x"_ several times) .  
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

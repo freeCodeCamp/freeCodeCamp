@@ -18,6 +18,8 @@ in JSX.Therefore instead of using "class" you can use "className".
 ### Hint 1
 - You may want to change "class" to "className".
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

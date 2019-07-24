@@ -18,6 +18,8 @@ The variable favWord already contains the American version — favorite. Does th
 ### Hint 2
 Have you used the question mark, ? symbol, if so, have you placed it in the correct position?
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

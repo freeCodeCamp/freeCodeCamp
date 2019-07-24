@@ -25,6 +25,8 @@ Logos and the relevant CSS classes for the logos can be found [here](https://fon
 ### Hint 3
 Adding a space between the `<i>` tag and the text will give it a nice spacing.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

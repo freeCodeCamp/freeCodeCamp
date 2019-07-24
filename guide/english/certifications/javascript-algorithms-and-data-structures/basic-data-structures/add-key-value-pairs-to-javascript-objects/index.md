@@ -16,6 +16,8 @@ OBJECT[{ KEY }] = { VALUE };
 
 - The above code will create a ney `key-value` within the object. 
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

@@ -3,6 +3,8 @@ title: Target Elements by id Using jQuery
 ---
 # Target Elements by id Using jQuery
 
+
+---
 ## Solutions 
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

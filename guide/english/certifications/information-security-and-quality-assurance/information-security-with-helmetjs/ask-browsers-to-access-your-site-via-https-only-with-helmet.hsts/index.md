@@ -13,6 +13,8 @@ You want your `app` to `use` helmet's `hsts()` method.
 ### Hint 2
 Don't forget to give the methed the appropriate `maxAge` and `force` configurations.
 
+
+---
 ## Solutionss
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

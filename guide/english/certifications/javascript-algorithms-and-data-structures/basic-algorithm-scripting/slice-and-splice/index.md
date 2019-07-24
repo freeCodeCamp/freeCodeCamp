@@ -32,6 +32,8 @@ Loop through all of the items in the first array. For each item in the first arr
 
 Increment the index after performing the splice. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

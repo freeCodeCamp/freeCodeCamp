@@ -24,6 +24,8 @@ Are you using the '+' flag in your regexp?
 let regexp = /E+/; // returns E, EE, EEE patterns
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

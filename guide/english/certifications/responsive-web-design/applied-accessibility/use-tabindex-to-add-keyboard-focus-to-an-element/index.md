@@ -3,6 +3,8 @@ title: Use tabindex to Add Keyboard Focus to an Element
 ---
 # Use tabindex to Add Keyboard Focus to an Element
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

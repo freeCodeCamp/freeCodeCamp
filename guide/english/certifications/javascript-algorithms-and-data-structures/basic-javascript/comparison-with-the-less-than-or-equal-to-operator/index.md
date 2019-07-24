@@ -10,6 +10,8 @@ title: Comparison with the Less Than Or Equal To Operator
 ### Hint 1
 **`<=`** (Less Than Or Equal To) is a logical operator that returns true case the value on the left is the **same or lower** than the one on the right.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

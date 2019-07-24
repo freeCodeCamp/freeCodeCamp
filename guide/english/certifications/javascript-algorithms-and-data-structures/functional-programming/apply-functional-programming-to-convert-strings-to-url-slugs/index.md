@@ -3,6 +3,8 @@ title: Apply Functional Programming to Convert Strings to URL Slugs
 ---
 # Apply Functional Programming to Convert Strings to URL Slugs
 
+
+---
 ## Solutions 
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

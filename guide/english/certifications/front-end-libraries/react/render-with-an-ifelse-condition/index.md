@@ -9,6 +9,8 @@ Inside of the render method of the component, write if/else statements that each
 
 First, wrap the current return method inside of an if statement and set the condition to check if the variable 'display' is true. Remember, you access state using `this.state`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

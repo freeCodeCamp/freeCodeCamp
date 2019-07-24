@@ -15,6 +15,8 @@ ES6 makes it easy, and fancy, to write declarative functions! In this lesson, yo
 
 Get rid of the `function` keyword.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

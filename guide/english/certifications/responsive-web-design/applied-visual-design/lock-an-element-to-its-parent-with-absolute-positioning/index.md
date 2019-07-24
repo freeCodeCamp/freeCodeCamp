@@ -17,6 +17,8 @@ Use `position: absolute;`.
 
 Use the `right` and `top` properties.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -15,6 +15,8 @@ For example, /t$/ does not match the "t" in "eater", but does match it in "eat".
 __important:__ If the multiline flag is set to true, also matches immediately before a line break character.
  
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

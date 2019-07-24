@@ -33,6 +33,8 @@ Lastly, click: Develop->Show Error Console
 ## Edge:
 * Click the the following: ''...'' symbol->Developer Tools-> Console tab
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

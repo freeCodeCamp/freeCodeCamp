@@ -10,6 +10,8 @@ title: Create a Set Class
 - In this challenge, we have to implement `.add()` method. This method should only add unique values to `collection`.
   - The method should return `true`, if the value is sucessfully added to the collection, otherwise it should return `false`.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

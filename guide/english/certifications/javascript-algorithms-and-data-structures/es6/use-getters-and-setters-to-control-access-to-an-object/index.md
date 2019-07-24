@@ -27,6 +27,8 @@ Create a get method that converts the Fahrenheit attribute to Celsius. Use the f
 
 Create a set method of the same name as the get method. It should have a parameter that accepts celsius temperature. Convert it to fahrenheit, and set it to the attribute.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -20,6 +20,8 @@ Change the code so that the variable `i` declared in the if block is separately 
 ### Hint 2
 *   _Remember that `let`'s scope is limited to the block, function or statement in which you declare it._
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

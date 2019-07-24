@@ -37,6 +37,8 @@ We have to return a sentence with title case. This means that the first letter w
 *   You will need to create a new string with pieces of the previous one and at the end merge everything into a single string again.
 *   In replace method, give first argument as the position of the first letter using charAt. For second argument write a function to return the capitalized letter as the replacement.
 
+
+---
 ## Solutions 
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

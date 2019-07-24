@@ -23,6 +23,8 @@ Both the `.domain()` and `.range()` functions accept an array or two elements.
 
 Subtract padding from height to get SVG height including padding.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

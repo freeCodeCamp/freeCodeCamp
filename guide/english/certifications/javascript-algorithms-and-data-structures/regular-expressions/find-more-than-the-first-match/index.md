@@ -19,6 +19,8 @@ Change the regex so that it detects the word "twinkle".
 
 You can add multiple tags to a regex! For example, a regex that detects multiple occurrences, and detects regardless of case, can be structured like `gi` or `ig`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

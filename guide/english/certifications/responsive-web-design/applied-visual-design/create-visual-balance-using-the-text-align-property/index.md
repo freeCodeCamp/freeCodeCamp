@@ -11,6 +11,8 @@ title: Create Visual Balance Using the text-align Property
 ### Hint #1
 Use the `text-align` property.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

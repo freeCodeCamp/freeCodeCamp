@@ -11,6 +11,8 @@ Where the `push` method adds new element to the end of the orginal array, the `c
 #### Relevant Links
 - [Array.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

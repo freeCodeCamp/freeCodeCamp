@@ -15,6 +15,8 @@ Use the `.domain()` and `.range()` functions.
 
 Both the the `.domain()` and `.range()` functions accept an array of two elements.
 
+
+---
 ## Solutions
 
 The `domain` and `range` functions can be chained, and the following is the solution:

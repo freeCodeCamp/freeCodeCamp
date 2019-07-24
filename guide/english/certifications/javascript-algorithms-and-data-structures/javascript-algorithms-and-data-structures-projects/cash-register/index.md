@@ -31,6 +31,8 @@ title: Cash Register
 
 *   You will have to get as much change from one type of bill or coin before moving to the next, from greater to lesser value. Keep going until you have calculated all the change due.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

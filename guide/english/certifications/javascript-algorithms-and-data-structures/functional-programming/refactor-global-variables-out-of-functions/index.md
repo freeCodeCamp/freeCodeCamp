@@ -13,6 +13,8 @@ title: Refactor Global Variables Out of Functions
 ### Hint 2
 - Here's some more information about [how JavaScript handles function arguments](https://codeburst.io/javascript-passing-by-value-vs-  reference-explained-in-plain-english-8d00fd06a47c).
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

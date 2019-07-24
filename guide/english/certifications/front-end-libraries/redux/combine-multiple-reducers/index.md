@@ -17,6 +17,8 @@ Use the method ```Redux.combineReducers()```. Pass an object as an argument.
 ### Hint 2
 The object should have two ```name:value``` pairs. The ```value``` corresponds to the reducer function 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

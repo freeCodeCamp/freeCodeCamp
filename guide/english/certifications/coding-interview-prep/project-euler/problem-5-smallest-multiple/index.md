@@ -11,6 +11,8 @@ title: Smallest multiple
 - To find GCD (Greatest Common Divisor) of two number we use Euclidean algorithm.
 - Once we get LCM of two numbers, we can get LCM of the numbers from 1 to n.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

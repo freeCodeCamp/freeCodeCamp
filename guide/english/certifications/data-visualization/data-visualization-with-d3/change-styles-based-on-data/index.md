@@ -48,6 +48,8 @@ A more detailed explanation [here](https://codeburst.io/javascript-the-condition
 condition ? value if true : value if false 
 
 ```
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

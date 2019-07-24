@@ -13,6 +13,8 @@ First ensure that you have appended the SVG node to the document body. You can d
 ### Hint 2
 To assign CSS properties to the SVG node - in this case 'width' and 'height' - make use of d3's 'attr()'method. You can use the parameters 'w' and 'h' provided, respectively.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

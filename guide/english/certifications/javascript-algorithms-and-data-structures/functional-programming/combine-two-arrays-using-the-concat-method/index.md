@@ -13,6 +13,8 @@ title: Combine Two Arrays Using the concat Method
 ### Hint 2
 - This method does not mutate the existing arrays, but returns a new array.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

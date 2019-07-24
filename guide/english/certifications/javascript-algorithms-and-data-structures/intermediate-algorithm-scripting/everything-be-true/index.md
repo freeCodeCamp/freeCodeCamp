@@ -29,6 +29,8 @@ Only if all of them are truthy will we return true, so make sure all of them che
 ### Hint 3
 You could use loops or callback functions, there are multiple ways to solve this problem.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

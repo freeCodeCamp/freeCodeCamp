@@ -19,6 +19,8 @@ Define a prop named date in the Calendar component as follows:
 
 The syntax prop.propName is used to render a prop.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

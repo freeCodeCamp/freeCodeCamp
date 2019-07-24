@@ -12,6 +12,8 @@ title: Create a React Component
 - Remember the previous section and return a "div" element which contains an "h1" with the text Hello React!.
 - "div" element has a child so remember to close all tags.
 
+
+---
 ## Solutions 
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

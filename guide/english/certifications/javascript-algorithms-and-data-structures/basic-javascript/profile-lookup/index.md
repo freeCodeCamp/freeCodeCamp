@@ -31,6 +31,8 @@ Use a nested `if` statement to first check if the **firstName** matches, and the
 
 Leave your `return "No such contact"` out of the `for` loop as a final catch-all.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

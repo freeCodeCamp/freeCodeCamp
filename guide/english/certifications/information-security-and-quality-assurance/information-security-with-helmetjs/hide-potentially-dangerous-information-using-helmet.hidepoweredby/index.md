@@ -11,6 +11,8 @@ title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 
 You want your `app` to `use` the `helmet.hidePoweredBy()` method on each request.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

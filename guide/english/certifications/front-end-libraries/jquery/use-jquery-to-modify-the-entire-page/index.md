@@ -11,6 +11,8 @@ Add the classes `animated` and `hinge` to your `body` element.
 #### Relevant Links
   - [.addClass()](https://api.jquery.com/addClass/e)
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -14,6 +14,8 @@ We have to take some precaution in this case.
 
 2. const [b,a] = [a,b] will result in the value of a,b as undefined(simple assignment rule left to right).
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

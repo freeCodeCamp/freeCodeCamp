@@ -34,6 +34,8 @@ const output = scale(scalingFactor);
 ```
 Where `scalingFactor` is a number.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

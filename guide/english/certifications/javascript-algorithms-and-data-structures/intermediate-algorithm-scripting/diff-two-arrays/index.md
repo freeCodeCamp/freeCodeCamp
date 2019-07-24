@@ -32,6 +32,8 @@ Use filter to get the new array, you will need to create a callback function.
 
 The best way to go about the callback function is to check if the number from the new merged array is not in **both** original arrays and return it.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

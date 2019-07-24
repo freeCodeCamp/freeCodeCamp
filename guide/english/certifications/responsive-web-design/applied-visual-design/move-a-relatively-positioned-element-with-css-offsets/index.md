@@ -18,6 +18,8 @@ Use the `left` property for offsetting the element right.
 Use the `bottom` property for offsetting the element top.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

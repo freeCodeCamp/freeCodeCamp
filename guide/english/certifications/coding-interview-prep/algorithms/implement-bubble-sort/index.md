@@ -11,6 +11,8 @@ title: Implement Bubble Sort
 - It's a **stable** algorithm.
 - ![Bubble sort in action](https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif)
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -38,6 +38,8 @@ class MyComponent extends React.Component {
 
 You don't have to do a full ```if/then``` statement. Just write the condition you are checking.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

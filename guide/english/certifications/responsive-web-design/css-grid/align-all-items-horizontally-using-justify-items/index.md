@@ -21,6 +21,8 @@ justify-items: value;
 
 where value is how you would like to horizontally align the items.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

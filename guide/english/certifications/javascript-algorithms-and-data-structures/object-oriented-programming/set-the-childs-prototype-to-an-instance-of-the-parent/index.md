@@ -13,6 +13,8 @@ Simply create a new instance of `Dog.prototype` like the following example.
 Bird.prototype = Object.create(Animal.prototype);
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

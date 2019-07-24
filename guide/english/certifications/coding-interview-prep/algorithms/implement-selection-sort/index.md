@@ -13,6 +13,8 @@ title: Implement Selection Sort
  - Each pass, initially we assume the first element to be the smallest then we loop through the whole array and *select* the smallest element. At the end of the pass we swap smallest element to the sorted array.
  - It has **O(n<sup>2</sup>)** time complexity.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

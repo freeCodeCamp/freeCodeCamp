@@ -11,6 +11,8 @@ title: Practice comparing different values
 Remember from last exercises that _unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion._<sup><a href="#cite1">1</a></sup>
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -27,6 +27,8 @@ Take a look at the code. There is an area that you're not supposed to edit. From
 
 Keep in mind the **order of operation** check the link in the _links_ section for more information.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

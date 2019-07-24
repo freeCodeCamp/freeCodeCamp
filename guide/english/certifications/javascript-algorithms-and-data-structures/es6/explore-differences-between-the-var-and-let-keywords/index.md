@@ -17,6 +17,8 @@ We need to change each `var` to `let` in our code.
 
 *   Find each `var` and replace with `let`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

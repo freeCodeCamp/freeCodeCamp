@@ -3,6 +3,8 @@ title: Connect Redux to React
 ---
 # Connect Redux to React
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

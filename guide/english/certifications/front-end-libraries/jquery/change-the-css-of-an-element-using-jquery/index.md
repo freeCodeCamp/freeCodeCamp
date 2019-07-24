@@ -8,6 +8,8 @@ title: Change the CSS of an Element Using jQuery
  - You can edit the CSS of an element using jQuery with the .css() function.
  - In this example, it allows you to change the text color in the element with an id of "#target1".
  
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

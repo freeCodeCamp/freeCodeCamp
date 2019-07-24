@@ -13,6 +13,8 @@ title: Prevent Object Mutation
 *   _Use `Object.freeze()` to prevent mathematical constants from changing._
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

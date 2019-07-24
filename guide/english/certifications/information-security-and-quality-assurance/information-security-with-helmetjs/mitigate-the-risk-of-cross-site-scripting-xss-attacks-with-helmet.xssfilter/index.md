@@ -11,6 +11,8 @@ title: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFi
 
 You want to use helmet's `xssFilter()` method on each request.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

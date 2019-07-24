@@ -10,6 +10,8 @@ title: Remember to Set the Constructor Property when Changing the Prototype
 ### Hint 1
 Remember to define the constructor property when you set a prototype to a new object.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

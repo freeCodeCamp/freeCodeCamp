@@ -13,6 +13,8 @@ Remember that in Redux, action creator functions return action objects. Objects 
 ### Hint 2
 In the ```notesReducer``` function, create a case condition that checks for the ```type``` of action and returns the value of ```text``` from the ```addNoteText``` function.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

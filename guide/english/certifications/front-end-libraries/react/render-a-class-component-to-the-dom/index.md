@@ -37,6 +37,8 @@ Use `document.getElementById('node-id')` to get target node whose id has the val
 
  - [Rendering Elements](https://reactjs.org/docs/rendering-elements.html)
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

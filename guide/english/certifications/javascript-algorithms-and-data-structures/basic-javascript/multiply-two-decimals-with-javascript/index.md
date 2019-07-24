@@ -21,6 +21,8 @@ var product = 3.4 * 5.7; // product is 19.38
 ### Hint 1
 Think about what decimal number, when multiplied by 2.0, would equal 5.0.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

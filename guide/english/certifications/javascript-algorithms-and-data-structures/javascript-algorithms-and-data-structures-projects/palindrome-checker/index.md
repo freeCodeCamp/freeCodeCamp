@@ -37,6 +37,8 @@ The `Array.prototype.split` and `Array.prototype.join` methods can be of use her
 `String.prototype.toLowerCase` can be used to make a string lowercase.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

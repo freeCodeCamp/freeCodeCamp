@@ -14,6 +14,8 @@ title: Implement Insertion Sort
 - Time comlexity of Insertion sort is of **O(n<sup>2</sup>)**.
 - It's a **stable** algorithm.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

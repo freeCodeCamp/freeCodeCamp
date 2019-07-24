@@ -22,6 +22,8 @@ Each sub-array should be separated by `,` as would any item in an array.
 
 Don't forget the `;` at the end of your declaration.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

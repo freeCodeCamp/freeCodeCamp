@@ -11,6 +11,8 @@ title: Select a Group of Elements with D3
 
 Use the ``` selectAll() ``` method and chain it with the ``` text() ``` method.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

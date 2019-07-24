@@ -13,6 +13,8 @@ You want your `app` to `use` helmet's `contentSecurityPolicy()` method.
 ### Hint 2
 Be sure to give the `directives` object in the configuration a `defaultSrc` and `scriptSrc`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

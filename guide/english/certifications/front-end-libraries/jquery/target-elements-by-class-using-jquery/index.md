@@ -6,6 +6,8 @@ title: Target Elements by Class Using jQuery
 - You can find elements with the jQuery class selector. // $(.className)
 - In this example, It allows you to select elements with the class ".well" 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -4,6 +4,8 @@ title: Generate Random Whole Numbers with JavaScript
 
 # Generate Random Whole Numbers with JavaScript
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

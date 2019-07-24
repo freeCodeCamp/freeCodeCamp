@@ -16,6 +16,8 @@ Use `Component.defaultProps` to set default props.
 ### Hint 3
 Use `Component.propTypes` to set props types.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

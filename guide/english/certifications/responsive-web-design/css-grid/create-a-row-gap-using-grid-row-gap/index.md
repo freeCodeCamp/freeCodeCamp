@@ -15,6 +15,8 @@ This challenge requires you to add a gap of `20px` between all the rows of the C
 
 To add a gap between the rows in a CSS grid, we use the `grid-row-gap` CSS property.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

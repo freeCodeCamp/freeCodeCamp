@@ -13,6 +13,8 @@ To browse through other fonts offered by Google, please check [Google Fonts](htt
 To look at what is going on behind a font, you can open the URL for the font.
 We have used the _Lobster_ font, [click here](https://fonts.googleapis.com/css?family=Lobster) to have a look at what's going on under-the-hood for the _Lobster_ font 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

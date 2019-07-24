@@ -11,6 +11,8 @@ title: Use grid-area Without Creating an Areas Template
 
 The `grid-area` takes values in the following format `horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

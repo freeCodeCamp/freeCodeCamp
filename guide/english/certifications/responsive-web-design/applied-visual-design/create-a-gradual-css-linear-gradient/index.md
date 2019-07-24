@@ -15,6 +15,8 @@ background-image: linear-gradient(angle, color-stop1, color-stop2....);
 
 The colors can be used in both hex() and rgb() formats. Experiment a bit and you'll understand how easy and beautiful it is to use it.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

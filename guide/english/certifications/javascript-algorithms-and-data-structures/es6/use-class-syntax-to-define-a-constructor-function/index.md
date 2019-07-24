@@ -20,6 +20,8 @@ Create the class called `Vegetable`. It will contain the necessary details about
 
 Put a constructor with a parameter called `name`, and set it to `this.name`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

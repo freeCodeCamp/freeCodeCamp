@@ -3,6 +3,8 @@ title: Use the Spread Operator on Arrays
 ---
 # Use the Spread Operator on Arrays
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

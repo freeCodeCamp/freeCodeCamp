@@ -15,6 +15,8 @@ This challenge requires you to set the width of the columns of the container to 
 
 Change the `grid-template-columns` property.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

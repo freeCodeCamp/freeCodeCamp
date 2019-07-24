@@ -11,6 +11,8 @@ title: Place Items in Grid Areas Using the grid-area Property
 
 Use the `grid-area` property.
 
+
+---
 ## Solutions
 
 ```html

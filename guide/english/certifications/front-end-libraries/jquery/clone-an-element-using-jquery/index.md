@@ -15,6 +15,8 @@ In the last challenge we used the .appendTo() method in order to move one elemen
 
 For this challenge you will need to chain the .clone() and .appendTo() methods together. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

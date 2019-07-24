@@ -35,6 +35,8 @@ Try to use the `Object.prototype.hasOwnProperty` method to know if the property 
 Check equivalence of `Object` in `collection` with `Object` passed as second parameter to `whatIsInAName` function.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

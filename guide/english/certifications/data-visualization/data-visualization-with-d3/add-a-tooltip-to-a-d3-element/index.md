@@ -23,6 +23,8 @@ Chain the ` .append() ` and ` .text() ` methods.
 
 Use a callback function in the ` .text() ` method.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

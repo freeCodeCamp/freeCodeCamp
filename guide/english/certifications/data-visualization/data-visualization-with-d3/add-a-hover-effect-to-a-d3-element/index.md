@@ -15,6 +15,8 @@ Add the ` bar ` class to all `rect ` elements.
 
 Use the ` attr() ` method to add attributes.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

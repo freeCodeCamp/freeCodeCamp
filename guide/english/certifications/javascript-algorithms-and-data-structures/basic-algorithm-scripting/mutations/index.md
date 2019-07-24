@@ -31,6 +31,8 @@ title: Mutations
 
 *   A loop might help. Use `indexOf()` to check if the letter of the second word is on the first.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -28,6 +28,8 @@ Be sure to check whether your number range is correct -- the challenge asks us t
 let numbersRegExp = /[^0-9]/gi;
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

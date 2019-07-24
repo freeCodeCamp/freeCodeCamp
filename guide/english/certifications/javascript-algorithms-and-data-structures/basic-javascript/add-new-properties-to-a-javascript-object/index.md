@@ -3,6 +3,8 @@ title: Add New Properties to a JavaScript Object
 ---
 # Add New Properties to a JavaScript Object
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -21,6 +21,8 @@ Remember that you can combine (chain) several `if...else` statements one after t
 ### Hint 2
 Sometimes, when you write more code than you are used to and it doesn't work, the little things are what betray us. Checking for missing semicolons, brackets, etc. can prove very useful.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

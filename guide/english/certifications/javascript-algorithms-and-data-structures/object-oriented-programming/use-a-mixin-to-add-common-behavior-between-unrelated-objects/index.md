@@ -8,6 +8,8 @@ title: Use a Mixin to Add Common Behavior Between Unrelated Objects
 
 Just like the `flyMixin` function, a new `glideMixin` function must be made to accept both `bird` and `boat` objects as a parameter. Create this new function using the same syntax as the `flyMixin` function and then call the function on both objects. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

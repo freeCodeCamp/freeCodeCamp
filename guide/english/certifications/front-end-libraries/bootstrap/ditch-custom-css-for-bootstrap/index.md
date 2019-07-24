@@ -15,6 +15,8 @@ The challenge has you doing a lot of things, remove CSS styles, elements and add
 
 Check if you have completed all of the required tasks for the challenge.
 
+
+---
 ## Solutions
 
 

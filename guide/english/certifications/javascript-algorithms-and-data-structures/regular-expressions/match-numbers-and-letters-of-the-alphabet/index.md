@@ -30,6 +30,8 @@ let regexp = /[a-z1-100]/gi;
 // this includes the letter A and Z and the numbers 1 and 100
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -14,6 +14,8 @@ let animal = Object.create(Animal.prototype);
 
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

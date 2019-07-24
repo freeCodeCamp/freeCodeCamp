@@ -18,6 +18,8 @@ Remember from last exercise that _equality is different from assignment (`=`), w
 ### Hint 2
 _Unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion._<sup><a href="#cite2">2</a></sup>
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

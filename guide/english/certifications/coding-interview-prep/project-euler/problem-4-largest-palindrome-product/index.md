@@ -8,6 +8,8 @@ title: Largest palindrome product
 - A palindromic number is the one that when reversed reads the same.
 - The largest number obtained from product of two 3 digit number is `999 * 999`, so we can make a loop that starts by producting the largest number and check if that number is palindromic or not.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

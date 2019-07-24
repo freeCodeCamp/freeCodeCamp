@@ -15,6 +15,8 @@ Use the `s` tag like this:
     <s><p>freeCodeCamp</p></s>
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

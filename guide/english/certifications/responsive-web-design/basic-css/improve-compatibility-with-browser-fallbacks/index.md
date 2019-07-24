@@ -20,6 +20,8 @@ We need to add a fallback to the ```background``` property of the ```.black-box`
   }
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

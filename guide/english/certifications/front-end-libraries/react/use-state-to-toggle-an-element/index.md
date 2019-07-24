@@ -23,6 +23,8 @@ this.toggleVisibility = this.toggleVisibility.bind(this);
 
 - Remember, you can use a JavaScript function to check for the state of an element.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -11,6 +11,8 @@ title: Understand Where an Object’s Prototype Comes From
 
 * You should use isPrototypeOf() to complete this challenge.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -5,6 +5,8 @@ title: Match All Letters and Numbers
 # Match All Letters and Numbers
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

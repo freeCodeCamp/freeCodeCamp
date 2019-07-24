@@ -12,6 +12,8 @@ Importing an export default is almost the same as importing a normal export; you
 
 Fill in the blanks: `import _ from "file-name"`. Plug in your module's name (which is `subtract`) into `_`, and put `"math-functions"` into `"file-name"`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

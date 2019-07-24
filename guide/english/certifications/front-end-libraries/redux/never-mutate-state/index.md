@@ -27,6 +27,8 @@ Since objects and arrays are mutable, you can add to it by index (array[3] = 3),
 ### Hint 5
 spread operator [...array] doesn't modify array but just returns a new array
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

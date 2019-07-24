@@ -49,6 +49,8 @@ function removeFirstTwo(list) {
 
 You can use random variables to omit the first two values:
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

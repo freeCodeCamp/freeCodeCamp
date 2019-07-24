@@ -32,6 +32,8 @@ else {
 ```
  The last statement in an **else-if** flow is in the `else` format
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

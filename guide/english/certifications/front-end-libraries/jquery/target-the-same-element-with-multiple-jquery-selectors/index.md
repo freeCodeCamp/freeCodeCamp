@@ -3,6 +3,8 @@ title: Target the Same Element with Multiple jQuery Selectors
 ---
 # Target the Same Element with Multiple jQuery Selectors
 
+
+---
 ## Solutions 
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

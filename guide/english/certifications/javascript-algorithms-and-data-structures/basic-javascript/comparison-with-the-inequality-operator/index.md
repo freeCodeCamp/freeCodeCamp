@@ -15,6 +15,8 @@ title: Comparison with the Inequality Operator
 The inequality operator (`!=`) will return `true` if the first value is not equal to the second one without taking value type into consideration.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

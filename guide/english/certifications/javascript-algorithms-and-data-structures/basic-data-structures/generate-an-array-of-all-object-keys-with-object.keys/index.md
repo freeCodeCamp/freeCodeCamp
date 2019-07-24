@@ -9,6 +9,8 @@ title: Generate an Array of All Object Keys with Object.keys()
 - To return the array of users the `Object.keys()` method must take an arguement.
 - This challenge can be solved using a single line return statement. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

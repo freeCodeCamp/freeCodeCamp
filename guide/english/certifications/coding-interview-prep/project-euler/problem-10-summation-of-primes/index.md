@@ -10,6 +10,8 @@ title: Summation of primes
   - If `n = 10` then prime numbers before it are `2, 3, 5, 7` and their sum is `17`.
 - We've used Sieve of Eratosthenes algorithm to find prime numbers in the below solution.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

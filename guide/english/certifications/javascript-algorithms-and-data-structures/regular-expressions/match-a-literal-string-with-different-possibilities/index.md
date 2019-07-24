@@ -15,6 +15,8 @@ Suppose you want to match many different words with your regular expression; usi
 
 Inside the string literal, place the pet names, each seperated by the `|` symbol.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

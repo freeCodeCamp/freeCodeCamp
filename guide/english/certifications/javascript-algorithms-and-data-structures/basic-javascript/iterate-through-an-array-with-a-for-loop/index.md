@@ -24,6 +24,8 @@ Remember how accumulators work:
 - The variable `i` is the one which value will be stored (and accumulated) inside `x`
 - The expression `+=` is an just abreviation of `x = x + i`
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

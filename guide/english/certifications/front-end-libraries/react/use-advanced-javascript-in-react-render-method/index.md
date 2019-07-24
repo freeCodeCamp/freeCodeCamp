@@ -9,6 +9,8 @@ While you are inside the render method and not inside the return method, you can
 
 First, you will have to set the constant 'answer' to a value. Access the 'possibleAnswers' array using the value of 'randomIndex', which is located within the state of your component. Remember, you access state using `this.state`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

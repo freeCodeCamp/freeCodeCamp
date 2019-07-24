@@ -27,6 +27,8 @@ app.post("/:param1/:param2", (req, res) => {
 });
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

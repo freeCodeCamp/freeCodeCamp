@@ -30,6 +30,8 @@ You will create a program that takes a sentence, then search for a word in it an
 
 *   Strings are immutable, you will need to save the edits on another variable, even if you must reuse the same one just to make it look like the changes where done using just that one variable.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

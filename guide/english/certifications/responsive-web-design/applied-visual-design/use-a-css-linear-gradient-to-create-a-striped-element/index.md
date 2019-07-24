@@ -3,6 +3,8 @@ title: Use a CSS Linear Gradient to Create a Striped Element
 ---
 # Use a CSS Linear Gradient to Create a Striped Element
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

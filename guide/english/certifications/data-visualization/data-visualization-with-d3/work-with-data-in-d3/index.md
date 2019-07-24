@@ -33,6 +33,8 @@ From the official D3 documentation:
 *   Now that the D3 object is aware of your data and has created enough elements for each datum, `append` the elements of the specified type and add the `text` required in the instructions
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

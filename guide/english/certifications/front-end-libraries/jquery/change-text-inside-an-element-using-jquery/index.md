@@ -3,6 +3,8 @@ title: Change Text Inside an Element Using jQuery
 ---
 # Change Text Inside an Element Using jQuery
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

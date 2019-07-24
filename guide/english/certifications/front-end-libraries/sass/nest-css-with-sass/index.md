@@ -31,6 +31,8 @@ title: Nest CSS with Sass
 
  - You may want to change the position of "}" at line 4.
  
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

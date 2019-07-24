@@ -15,6 +15,8 @@ When creating a regular expression, you might want to match parts of string that
 
 Modify the regex so that it detects "freeCodeCamp", "FREECODECAMP", and "FrEeCoDeCaMp". Maybe using the `i` flag might help?
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -22,6 +22,8 @@ Get rid of the `function` keyword. Put the arrow operator.
 Make sure you changed the `var` to a `const`.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -13,6 +13,8 @@ Render a React Component!
 ### Hint 2
 You do not need to wrap the `Provider` in any `<div>` tags.
 
+
+---
 ## Solutions
   
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

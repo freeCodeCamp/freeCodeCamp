@@ -19,6 +19,8 @@ Using the example above, look at the assertions and how they are making comparis
 
 The lines in the test should be changed from `assert.fail()` to an assertion that checks if the two values are equal.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

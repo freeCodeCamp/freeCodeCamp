@@ -18,6 +18,8 @@ For example:
 __important:__ Characters are case sensitive in regexp. __\S__ matches a single character other than white space.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

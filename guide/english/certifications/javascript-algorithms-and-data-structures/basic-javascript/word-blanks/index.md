@@ -36,6 +36,8 @@ Just as you can chain strings by concatenating, you can assign them to an existi
 
 `+=` will allow you to use an existing variable, a string type in this case. Remember to add your own **non-letters** in between each variable.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

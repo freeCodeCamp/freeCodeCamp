@@ -25,6 +25,8 @@ var i = 0;
 while (i <= 4) {}
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

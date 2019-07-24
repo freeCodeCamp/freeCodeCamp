@@ -19,6 +19,8 @@ Change your regex to detect the word "coding".
 
 Did you call the `match()` method on the string?
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

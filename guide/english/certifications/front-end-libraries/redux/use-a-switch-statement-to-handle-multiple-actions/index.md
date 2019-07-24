@@ -19,6 +19,8 @@ Each case condition should return an updated authenticated property object.
 ### Hint 4
 Do not forget to include a default case in your statement which returns the defaultState. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -3,6 +3,8 @@ title: Target the Parent of an Element Using jQuery
 ---
 # Target the Parent of an Element Using jQuery
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

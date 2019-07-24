@@ -29,6 +29,8 @@ If you are dealing with an array, then you need flatten it by getting the value 
 
 You will definitely need recursion or another way to go beyond two level arrays to make the code flexible and not hard-coded to the answers needed. Have fun!
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

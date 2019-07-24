@@ -25,6 +25,8 @@ title: Convert HTML Entities
 
 *   You should separate the string and work with each character to convert the right ones and then join everything back up.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

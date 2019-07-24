@@ -16,6 +16,8 @@ function raiseToPower(b, e) {
 - The function must be called specifically with variables in the correct order. Otherwise the function will mix up both variables and return an undesired answer.
 - Make sure the variable `power` is implementing the `raiseToPower` function correctly.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

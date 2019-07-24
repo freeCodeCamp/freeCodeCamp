@@ -15,6 +15,8 @@ Create a invert(node = this.root) method in the BinarySearchTree constructor fun
 
 Try to use recursion and think of a base case.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

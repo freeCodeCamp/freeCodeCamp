@@ -9,6 +9,8 @@ Tertiary colours are combinations of primary and secondary colours. There are si
 
 They are made by full saturation of a primary colour with half saturation of a secondary colour with no other colours.
 
+
+---
 ## Solutions
 
 ```css

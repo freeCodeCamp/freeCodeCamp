@@ -23,6 +23,8 @@ The `shift()` method removes the first element of an array. It also returns the 
 The function `nextInLine` uses **arr** and **item**. Those are what the tests will use to pass the array elements they will test with. It allows the function to be reusable. Do not hardcode any of the tests inside the function.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

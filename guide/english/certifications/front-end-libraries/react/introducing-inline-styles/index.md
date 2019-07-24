@@ -3,6 +3,8 @@ title: Introducing Inline Styles
 ---
 # Introducing Inline Styles
 
+
+---
 ## Solutions 
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

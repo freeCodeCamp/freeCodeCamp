@@ -3,6 +3,8 @@ title: Combine Arrays with the Spread Operator
 ---
 # Combine Arrays with the Spread Operator
 
+
+---
 ## Solutions
 
 <details><summary>Solution 2 (Click to Show/Hide)</summary>

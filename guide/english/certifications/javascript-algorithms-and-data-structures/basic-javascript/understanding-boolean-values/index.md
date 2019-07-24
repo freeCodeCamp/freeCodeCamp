@@ -10,6 +10,8 @@ title: Understanding Boolean values
 ### Hint 1
 You just need to edit line 5 so the function returns `true` instead of `false`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -3,6 +3,8 @@ title: Avoid Colorblindness Issues by Using Sufficient Contrast
 ---
 # Avoid Colorblindness Issues by Using Sufficient Contrast
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

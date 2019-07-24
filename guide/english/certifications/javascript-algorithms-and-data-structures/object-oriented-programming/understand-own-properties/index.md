@@ -10,6 +10,8 @@ In the example code given you will see a new array `ownProps[]` intialised follo
 
 Simply replace the `duck` object in the 'for...in' statement with the `canary`object to pass all test cases.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -16,6 +16,8 @@ title: Add Keywords to Your package.json
 ## Hint 3
 * One of the values in `keywords` should be `freecodecamp`.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

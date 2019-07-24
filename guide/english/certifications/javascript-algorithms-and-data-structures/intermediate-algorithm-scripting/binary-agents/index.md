@@ -29,6 +29,8 @@ Things are easier when focusing on smaller parts, divide the input to focus on o
 
 Make sure that each time you transcode a character from binary to decimal, you reset whatever variable you used to keep track of the ones. Also do not forget to turn everything back into one string.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

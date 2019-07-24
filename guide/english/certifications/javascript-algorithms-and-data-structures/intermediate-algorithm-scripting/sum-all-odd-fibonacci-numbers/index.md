@@ -29,6 +29,8 @@ To check if a number is even all you have to check is if `number % 2 == 0`.
 
 As you get the next odd one, don't forget to add it to a global variable that can be returned at the end. `result += currNumber;` will do the trick.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

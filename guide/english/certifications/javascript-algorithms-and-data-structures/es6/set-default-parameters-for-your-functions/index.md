@@ -26,6 +26,8 @@ Set **value** equal to something so that it is that value by default
 try to solve the problem now
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

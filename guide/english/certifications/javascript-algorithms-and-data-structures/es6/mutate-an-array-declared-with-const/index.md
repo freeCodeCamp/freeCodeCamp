@@ -21,6 +21,8 @@ Reassign the values of the `const` variable `s` using various element assignment
 
 *   To access array value use array[index]
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

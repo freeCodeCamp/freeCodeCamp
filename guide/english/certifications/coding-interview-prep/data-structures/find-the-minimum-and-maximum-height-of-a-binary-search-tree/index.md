@@ -3,6 +3,8 @@ title: Find the Minimum and Maximum Height of a Binary Search Tree
 ---
 # Find the Minimum and Maximum Height of a Binary Search Tree
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -19,6 +19,8 @@ The logical AND (`&&`) operator compares both statements and returns `true` only
 Remember that this effect can be also achieved by nesting `if` statements.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

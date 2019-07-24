@@ -22,6 +22,8 @@ let testExp = /^test/;
 Try using the '^' character caret outside of brackets as seen in the above example
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

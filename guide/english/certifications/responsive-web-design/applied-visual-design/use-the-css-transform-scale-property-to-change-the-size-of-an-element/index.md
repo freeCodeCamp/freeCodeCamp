@@ -3,6 +3,8 @@ title: Use the CSS Transform scale Property to Change the Size of an Element
 ---
 # Use the CSS Transform scale Property to Change the Size of an Element
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

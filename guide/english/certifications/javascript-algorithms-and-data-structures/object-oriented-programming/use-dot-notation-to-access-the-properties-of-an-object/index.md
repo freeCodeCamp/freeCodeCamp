@@ -19,6 +19,8 @@ console.log(obj.property1);
 
 Following this logic, use the `console.log` operation to print both `property1`and `property2`to the screen.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

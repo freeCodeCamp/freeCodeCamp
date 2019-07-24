@@ -31,6 +31,8 @@ This program is very simple, the trick is to remember how while looping works.
 
 *   to set class properties inside a loop we reference them enclosed by #{}, hence ere it will become: `.text-#{$x}`
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

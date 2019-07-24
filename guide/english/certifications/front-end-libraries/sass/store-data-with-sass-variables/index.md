@@ -3,6 +3,8 @@ title: Store Data with Sass Variables
 ---
 # Store Data with Sass Variables
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

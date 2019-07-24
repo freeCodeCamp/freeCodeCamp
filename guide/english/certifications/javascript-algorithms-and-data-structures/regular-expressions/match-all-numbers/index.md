@@ -16,6 +16,8 @@ title: Match All Numbers
 * Try using a shorthand character for `d`igits.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

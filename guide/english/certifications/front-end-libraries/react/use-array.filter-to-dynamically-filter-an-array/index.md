@@ -19,6 +19,8 @@ Use ```.map()``` from previous the previous exercise to list out the online user
 
 ```usersOnline.map((i) => <li key={i.username + 1}>{i.username}</li>)```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

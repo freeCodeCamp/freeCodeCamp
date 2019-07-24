@@ -15,6 +15,8 @@ function reusableFunction() {}
 
 Now, your function is ready to be typed in. Use the `console.log()` to print a message in the console. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

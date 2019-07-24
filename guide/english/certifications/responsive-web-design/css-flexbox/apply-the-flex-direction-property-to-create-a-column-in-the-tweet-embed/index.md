@@ -3,6 +3,8 @@ title: Apply the flex-direction Property to Create a Column in the Tweet Embed
 ---
 # Apply the flex-direction Property to Create a Column in the Tweet Embed
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

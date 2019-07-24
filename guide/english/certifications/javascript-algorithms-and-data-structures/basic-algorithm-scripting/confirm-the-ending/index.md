@@ -3,6 +3,8 @@ title: Confirm the Ending
 ---
 # Confirm the Ending
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

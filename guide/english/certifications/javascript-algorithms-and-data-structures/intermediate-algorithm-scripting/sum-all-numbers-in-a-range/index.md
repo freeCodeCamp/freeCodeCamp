@@ -25,6 +25,8 @@ Use `Math.min()` to find the minimum value of two numbers.
 
 Remember to that you must add all the numbers in between so this would require a way to get those numbers.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -44,6 +44,8 @@ let result = reRegex.test(testString);
 ```
 because we used `\g`, our Regex doesn't return after first full match (`test test test`) and matched all repetitions.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

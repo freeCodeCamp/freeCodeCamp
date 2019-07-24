@@ -3,6 +3,8 @@ title: Manipulating Complex Objects
 ---
 # Manipulating Complex Objects
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

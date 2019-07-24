@@ -7,6 +7,8 @@ title: Pass State as Props to Child Components
 ## Problem Explanation
 In this challenge we are going to be passing state, but since state is local to its parent component we must use <strong>props</strong> to pass into the child component. Using props in child components will allow us to keep all the state data in the parent component and we can pass the data in one direction to the children components.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

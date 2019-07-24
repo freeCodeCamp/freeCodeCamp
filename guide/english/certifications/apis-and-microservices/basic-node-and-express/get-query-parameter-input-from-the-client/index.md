@@ -8,6 +8,8 @@ title: Get Query Parameter Input from the Client
 
 Given the endpoint URL, `/name?first=firstname&last=lastname`, we can extract the query parameters (`first` and `last`) and their corresponding values from the `req.query` object and send a custom JSON response containing values derived from the query parameters to the client.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

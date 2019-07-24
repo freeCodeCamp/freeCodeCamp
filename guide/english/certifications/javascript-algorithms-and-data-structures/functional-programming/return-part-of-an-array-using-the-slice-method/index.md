@@ -14,6 +14,8 @@ var arr = ["Cat", "Dog", "Tiger", "Zebra", "Ant"];
 arr.slice([index - to - begin - slice], [index - to - end - slice]);
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

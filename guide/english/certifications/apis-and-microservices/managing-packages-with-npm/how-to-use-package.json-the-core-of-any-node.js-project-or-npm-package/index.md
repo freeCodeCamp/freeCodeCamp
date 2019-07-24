@@ -26,6 +26,8 @@ Remember, you're writing JSON, so make sure you use
 2. `"key": value` format
 3. the correct number of commas
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

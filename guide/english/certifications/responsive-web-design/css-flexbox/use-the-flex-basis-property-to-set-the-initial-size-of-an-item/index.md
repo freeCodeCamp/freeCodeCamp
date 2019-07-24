@@ -3,6 +3,8 @@ title: Use the flex-basis Property to Set the Initial Size of an Item
 ---
 # Use the flex-basis Property to Set the Initial Size of an Item
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

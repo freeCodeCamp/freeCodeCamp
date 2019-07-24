@@ -21,6 +21,8 @@ Get rid of the `function` key word, and plug in this `=>` arrow.
 
 Did you get rid of the `var` keyword?
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

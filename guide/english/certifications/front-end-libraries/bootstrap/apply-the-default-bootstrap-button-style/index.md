@@ -19,6 +19,8 @@ A class is declared using the following syntax:
 <button class="class(es)Name"></button>
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

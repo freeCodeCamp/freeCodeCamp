@@ -19,6 +19,8 @@ Use `Model.create()` to create many records. You should replace `Model` with the
 ### Hint 4
 The `Model.create` function requires a callback, similar to the `person.save` function you used in the previous section.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

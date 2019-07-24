@@ -13,6 +13,8 @@ Remember to pass parameter props to constructor
 ### Hint 2
 Remember the super(props) in constructor
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

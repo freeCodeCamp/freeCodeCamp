@@ -3,6 +3,8 @@ title: Use Inheritance So You Don't Repeat Yourself
 ---
 # Use Inheritance So You Don't Repeat Yourself
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

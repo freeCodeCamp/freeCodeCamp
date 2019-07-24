@@ -17,6 +17,8 @@ Fill in the code for the function `incrementer` so it returns the value of the g
 
 Using the increment operator (`++`) on `fixedValue` will mutate `fixedValue`, meaning it will no longer reference the same value it was assigned with. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

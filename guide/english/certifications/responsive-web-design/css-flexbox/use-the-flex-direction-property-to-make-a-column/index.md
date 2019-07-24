@@ -3,6 +3,8 @@ title: Use the flex-direction Property to Make a Column
 ---
 # Use the flex-direction Property to Make a Column
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

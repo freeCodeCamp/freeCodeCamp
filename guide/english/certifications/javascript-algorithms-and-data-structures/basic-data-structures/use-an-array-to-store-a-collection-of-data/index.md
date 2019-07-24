@@ -23,6 +23,8 @@ let arr = [1, 2, 3, "John"];
 ```
  - In this challenge you need to create an array with at least 5 elements and at least one string, one number, and one boolean.
  
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

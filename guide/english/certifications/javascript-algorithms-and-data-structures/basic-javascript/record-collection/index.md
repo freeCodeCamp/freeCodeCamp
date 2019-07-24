@@ -42,6 +42,8 @@ The second step listed in the instructions should be first in your `else if` sta
 
 To access the value of a key in this object, you will use `collection[id][prop]`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -3,6 +3,8 @@ title: Use the reduce Method to Analyze Data
 ---
 # Use the reduce Method to Analyze Data
 
+
+---
 ## Solutions
 
 

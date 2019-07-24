@@ -4,6 +4,8 @@ title: Use Multiple Conditional (Ternary) Operators
 
 # Use Multiple Conditional (Ternary) Operators
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

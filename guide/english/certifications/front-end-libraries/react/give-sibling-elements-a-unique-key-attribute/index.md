@@ -10,6 +10,8 @@ title: Give Sibling Elements a Unique Key Attribute
 ### Hint 1
 It is just almost same as previous [challenge](https://learn.freecodecamp.org/front-end-libraries/react/use-array-map-to-dynamically-render-elements). Just you need to add `key` attribute.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

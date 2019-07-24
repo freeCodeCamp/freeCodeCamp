@@ -31,6 +31,8 @@ Shift returns the element that was removed which we don't really need, all we ne
 
 If you still can't figure out how to solve it with shift, then try solving it with filter, and check how filter works, if you become familiar with it, then you can make the code with shift.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

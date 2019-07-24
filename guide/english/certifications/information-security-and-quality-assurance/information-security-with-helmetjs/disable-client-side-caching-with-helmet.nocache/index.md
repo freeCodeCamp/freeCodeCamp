@@ -11,6 +11,8 @@ title: Disable Client-Side Caching with helmet.noCache()
 
 - You want your `app` to `use` helmet's `noCache()` method.
 
+
+---
 ## Solutionss
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

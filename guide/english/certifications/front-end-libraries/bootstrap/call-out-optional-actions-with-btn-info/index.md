@@ -24,6 +24,8 @@ The button should have at least 3 classes.
 The button should have the classes of `btn`, `btn-block` and `btn-info`.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

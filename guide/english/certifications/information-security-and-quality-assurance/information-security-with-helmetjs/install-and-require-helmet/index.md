@@ -19,6 +19,8 @@ You can search for packages on glitch somewhere when in your package.json file
 ### Hint 2
 After you add helmet, you need to require it in the myApp.js file
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

@@ -17,6 +17,8 @@ Use the `every` method inside the `checkPositive` function to check if every ele
 ### Hint
 Don't forget `return`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

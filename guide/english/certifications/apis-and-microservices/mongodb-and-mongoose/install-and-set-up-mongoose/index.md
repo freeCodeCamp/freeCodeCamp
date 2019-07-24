@@ -44,6 +44,8 @@ Still having issues? Check the below hints:
 * Do you have symbols or special characters in your password, e.g. `$&(@`? If so, you will need to translate these into unicode. MongoDB has instructions on how to do this. I would suggest changing your password to be lettes and numbers only for simplicity.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

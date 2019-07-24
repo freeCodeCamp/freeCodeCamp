@@ -3,6 +3,8 @@ title: Create Visual Direction by Fading an Element from Left to Right
 ---
 # Create Visual Direction by Fading an Element from Left to Right
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

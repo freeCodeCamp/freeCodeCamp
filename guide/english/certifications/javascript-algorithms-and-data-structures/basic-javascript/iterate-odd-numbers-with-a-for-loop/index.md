@@ -25,6 +25,8 @@ for (var i = 1; i < 10; i += 2) {
 }
 ```
  
+
+---
 ## Solutions
   
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

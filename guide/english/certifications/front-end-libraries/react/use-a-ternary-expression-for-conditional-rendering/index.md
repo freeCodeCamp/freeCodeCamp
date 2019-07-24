@@ -13,6 +13,8 @@ Ternary operator has three parts, but you can combine several ternary expression
 ```
 condition ? expressionIfTrue : expressionIfFalse
 ```
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

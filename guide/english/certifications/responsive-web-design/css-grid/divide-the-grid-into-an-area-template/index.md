@@ -15,6 +15,8 @@ In this challenge you are required to use the "grid-template-areas" property to 
 
 A period (`.`) designates an empty cell in a grid.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

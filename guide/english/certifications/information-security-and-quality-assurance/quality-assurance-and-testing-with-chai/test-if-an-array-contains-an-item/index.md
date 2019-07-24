@@ -25,6 +25,8 @@ The lines in the test should be changed from `assert.fail()` to either `assert.i
 
 `assert.include()` and `assert.notInclude()` parameters take the form (haystack, needle, message) where the needle is what you are searching for in the haystack. The message provides feedback where there is an error.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

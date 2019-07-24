@@ -15,6 +15,8 @@ title: Match All Non-Numbers
 
 * Try a shorthand character for non-digits characters.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -14,6 +14,8 @@ dependencies property.
 ## Hint 2
 * `moment` version should have a caret character within it.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

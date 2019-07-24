@@ -19,6 +19,8 @@ title: Create a Priority Queue Class
   | Priority Queue |   1    |    1   |   logn    |    logn   |
 
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

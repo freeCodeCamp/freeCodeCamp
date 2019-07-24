@@ -21,6 +21,8 @@ This sequence simulates the process of requesting the data, receiving the data a
 ### Hint 4
 It is important that the ```data``` variable be passed as an argument of ```receivedData```. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

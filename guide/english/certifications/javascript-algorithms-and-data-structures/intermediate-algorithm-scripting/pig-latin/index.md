@@ -29,6 +29,8 @@ If the first character is a vowel, then take that whole word and add 'way' at th
 
 You will need to use everything you know about string manipulation to get the last part right. However, it can be done with `substr` alone.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

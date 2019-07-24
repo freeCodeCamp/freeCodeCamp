@@ -15,6 +15,8 @@ document.getElementByID(<target node>)
 ```
 Use the Document method `getElementByID()`  as an argument within the ReactDOM method `render()` to solve this challenge.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

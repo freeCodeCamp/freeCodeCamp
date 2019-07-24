@@ -11,6 +11,8 @@ title: Compose React Components
 
 Use nested components as in the previous challenge to render components.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

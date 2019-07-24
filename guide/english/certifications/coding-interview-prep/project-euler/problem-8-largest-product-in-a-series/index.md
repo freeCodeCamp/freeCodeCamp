@@ -16,6 +16,8 @@ title: Largest product in a series
   5. Repeat the process.
  - This algorithm's big O is **O(n\*m)** where n is the length of the array and m is the number of consecutive elements.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

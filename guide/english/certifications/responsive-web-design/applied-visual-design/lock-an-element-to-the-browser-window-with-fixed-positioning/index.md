@@ -19,6 +19,8 @@ Use `position: fixed;`.
 Use the `left` and `top` properties.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

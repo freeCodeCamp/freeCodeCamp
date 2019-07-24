@@ -20,6 +20,8 @@ Log something to the console in the ```react componentWillMount ``` method.
 
 The ``` console.log(); ``` statement is used to log to the browser console.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

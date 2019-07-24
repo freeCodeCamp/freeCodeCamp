@@ -10,6 +10,8 @@ title: Divide One Decimal by Another with JavaScript
 ### Hint 1
 JavaScript uses the `/` symbol for division.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

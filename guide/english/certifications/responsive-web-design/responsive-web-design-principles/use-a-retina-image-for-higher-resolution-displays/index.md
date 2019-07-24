@@ -3,6 +3,8 @@ title: Use a Retina Image for Higher Resolution Displays
 ---
 # Use a Retina Image for Higher Resolution Displays
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

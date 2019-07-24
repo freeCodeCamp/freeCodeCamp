@@ -3,6 +3,8 @@ title: Use the delete Keyword to Remove Object Properties
 ---
 # Use the delete Keyword to Remove Object Properties
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

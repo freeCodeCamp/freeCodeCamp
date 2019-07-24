@@ -17,6 +17,8 @@ In this challenge, you're finding Waldo...inside a string!
 
 Change the line to have the correct string literal.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

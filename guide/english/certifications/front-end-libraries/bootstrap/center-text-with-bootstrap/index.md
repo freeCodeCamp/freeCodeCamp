@@ -18,6 +18,8 @@ Use the class of ``` text-center ```.
 
 The class has to applied on the first ``` <h2></h2> ``` in the document.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

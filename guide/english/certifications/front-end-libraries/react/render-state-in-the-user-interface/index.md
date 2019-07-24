@@ -12,6 +12,8 @@ In the challenge, you will need to render a state value in `<h1>` tag, pretty si
 Just make a `<h1>` tag and render `this.state.name` between tag.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

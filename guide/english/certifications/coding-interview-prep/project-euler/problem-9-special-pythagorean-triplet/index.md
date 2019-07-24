@@ -10,6 +10,8 @@ title: Special Pythagorean triplet
 - Based on this, we can make a loop starting from `a = 0` and `b = a` since `a < b` always.
 - We also know that `a + b + c = n` and `a^2 + b^2 = c^2`, since we have `a`, `b` and `n`. We can find `c` and see if it satisfies the triplet theorem.
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

@@ -31,6 +31,8 @@ You will need to figure out a way to keep track globally of the greatest current
 
 Remember how to get the length of elements on the array? `Array[index].length`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

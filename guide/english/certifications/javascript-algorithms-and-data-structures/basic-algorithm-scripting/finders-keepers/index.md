@@ -22,6 +22,8 @@ We need to return the element from an array that passes a function. Both the `fu
 ### Hint 3
 Do not forget, if none of the numbers in the array pass the test, it should return `undefined`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

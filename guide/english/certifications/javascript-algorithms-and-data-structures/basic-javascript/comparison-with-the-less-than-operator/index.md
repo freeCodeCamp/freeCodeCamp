@@ -10,6 +10,8 @@ title: Comparison with the Less Than Operator
 ### Hint 1
 **`<`** (Less Than) is a logical operator that returns true case the value on the left is lower than the one on the right.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

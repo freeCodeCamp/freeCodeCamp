@@ -15,6 +15,8 @@ The example below represent a `h1` element and a `h4` element wrapped into a `he
 
 As you can see the `header` contains the other elements that ends up on the same level ( the `h1` ends before the `h4` starts and both are nested into the `header`). 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

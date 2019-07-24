@@ -13,6 +13,8 @@ Only the if statement must be editied in this challenege.
 ### Hint 2
 The `=` operator on its own is only used to assign values, not to compare them. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

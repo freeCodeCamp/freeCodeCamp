@@ -6,6 +6,8 @@ title: Delete Properties from a JavaScript Object
 ### Hint 1 
 * change the properties of myDog by using dot notation
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

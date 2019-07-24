@@ -44,6 +44,8 @@ After
 
 **Note:** In the class,`.ClassName`, within the `<style>` element, the color has changed from a hexcode of `#000000` into the rgb value, `rgb(255, 255, 255)`, which shows that the color of the class `.ClassName` has changed from black to white in the `<style>` element.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

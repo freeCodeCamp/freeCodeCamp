@@ -21,6 +21,8 @@ Once you have implemented all the lifecycle functions you should see some consol
 
 **Note:** The components that you are creating have been deprecated and will be available to use until version 17. You can find more information about these functions in the resource section below.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

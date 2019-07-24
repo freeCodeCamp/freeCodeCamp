@@ -21,6 +21,8 @@ grid-column-gap: parameter;
 
 where parameter is the required gap.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

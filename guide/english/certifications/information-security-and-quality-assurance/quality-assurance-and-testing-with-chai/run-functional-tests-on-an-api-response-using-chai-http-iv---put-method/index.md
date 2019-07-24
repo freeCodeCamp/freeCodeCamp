@@ -35,6 +35,8 @@ Check the tests on the challenge page to determine the expected values for `body
 
 Ensure your call to `done()` is inside your callback function for the tests.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -17,6 +17,8 @@ Add `bcrypt` to your project as a dependency.
 ### Hint 2
 After you add it, you need to require it in the server file.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

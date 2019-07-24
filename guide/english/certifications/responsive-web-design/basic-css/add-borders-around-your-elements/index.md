@@ -17,6 +17,8 @@ To add a custom border around any HTML element, these three properties are used 
 
 The same className should be used as the value for class attribute of the HTML element which has to be styled. Good Luck!
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

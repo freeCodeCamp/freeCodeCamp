@@ -12,6 +12,8 @@ title: Escaping Literal Quotes in Strings
 * If you use double quotes `"` for the string, single quotes `'` in the string do not need to be escaped. 
 * If you use single quotes `'` for the string, double quotes `"` in the string do not need to be escaped. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

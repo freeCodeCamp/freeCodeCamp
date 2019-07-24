@@ -34,6 +34,8 @@ Create a loop to repeat the code as many times as needed.
 
 Make the variable created store the current value and append the word to it.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

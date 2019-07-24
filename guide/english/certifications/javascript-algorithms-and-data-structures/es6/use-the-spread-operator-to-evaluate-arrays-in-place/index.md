@@ -35,6 +35,8 @@ console.log(minNum); //-12
 ```
 
 
+
+---
 ## Solutions
 
 ```javascript

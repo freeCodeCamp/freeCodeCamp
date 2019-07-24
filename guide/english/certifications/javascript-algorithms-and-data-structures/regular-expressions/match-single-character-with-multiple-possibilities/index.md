@@ -17,6 +17,8 @@ Are you attempting to use the test() method? Remember this method only returns T
 ### Hint 2
 Have you tried using the '[]' character case match without commas? i.e. [abcd] vs [a, b, c, d]
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

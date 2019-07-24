@@ -7,6 +7,8 @@ title: Style Multiple Elements with a CSS Class
 ## Problem Explanation
 We need to applying our ```red-text``` class to the first ```p``` element.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

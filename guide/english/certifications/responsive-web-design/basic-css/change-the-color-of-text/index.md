@@ -12,6 +12,8 @@ title: Change the Color of Text
 
 The color of text can be changed using the CSS `color` property.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

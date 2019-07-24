@@ -11,6 +11,8 @@ title: Avoid Inferring the Response MIME Type with helmet.noSniff()
 
 - You want your `app` to `use` helmet's `noSniff()` method on each request.
 
+
+---
 ## Solutionss
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

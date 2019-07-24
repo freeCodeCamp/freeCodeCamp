@@ -13,6 +13,8 @@ Remeber to use 2 `lookaheads` to check the patterns in the string. The first `lo
 ### Hint 2
 The second `lookahead` is also similar to that given in the example - `(?=\D*\d)` - however, this expression too must be modified to pass all test cases. Remember to specify the exact amount of numbers you want to appear at the end of the string. 
 
+
+---
 ## Solutions 
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

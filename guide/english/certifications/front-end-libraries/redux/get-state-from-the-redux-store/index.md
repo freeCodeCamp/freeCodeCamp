@@ -8,6 +8,8 @@ title: Get State from the Redux Store
 
 Retrieve data from store by using `getState()` method.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

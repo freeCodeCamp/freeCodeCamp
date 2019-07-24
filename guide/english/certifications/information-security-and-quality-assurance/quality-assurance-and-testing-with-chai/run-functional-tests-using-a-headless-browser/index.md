@@ -31,6 +31,8 @@ Replace the `assert.fail()` statement with your own tests based on the instructi
 
 Check the tests on the challenge page for expected values.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

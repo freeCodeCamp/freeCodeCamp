@@ -31,6 +31,8 @@ Once the array is sorted, then just check for the first number that is bigger an
 
 If there is no index for that number then you will have to deal with that case too.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

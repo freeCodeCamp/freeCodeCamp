@@ -13,6 +13,8 @@ title: Implement Quick Sort
 - It's an **unstable** algorithm.
 - ![Quick sort in action](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

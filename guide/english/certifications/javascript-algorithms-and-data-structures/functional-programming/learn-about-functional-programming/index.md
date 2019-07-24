@@ -12,6 +12,8 @@ Only one line of code must be changed to pass this challenege. The `getTea()` fu
 
 Thus resulting in an array full of the amount of teacups originally passed into the `getTea()` function. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

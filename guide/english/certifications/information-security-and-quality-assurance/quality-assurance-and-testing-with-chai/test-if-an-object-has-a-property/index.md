@@ -25,6 +25,8 @@ Check the error messages to determine if your understanding of the object's prop
 
 The lines in the test should be changed from `assert.fail()` to either `assert.property()` or `assert.notProperty()`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

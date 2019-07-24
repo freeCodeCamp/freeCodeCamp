@@ -25,6 +25,8 @@ Strings are immutable in JavaScript so we will need a new variable to store the 
 
 You will need to use the slice() method and specify where to start and where to stop.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

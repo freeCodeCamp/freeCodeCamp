@@ -21,6 +21,8 @@ In this exercise we are assigning the result of a higher order function to varia
 const basketOne = makeBasket(addFruit, 10) 
 ```
 
+
+---
 ## Solutions
  
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

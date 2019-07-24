@@ -25,6 +25,8 @@ The @each directive loops over a list and for each iteration the variable is ass
 <div class="blue-font"></div>
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -15,6 +15,8 @@ In this challenge, you are checking to see if a string contains a certain "regul
 
 Call the test method on `myRegex`. What do you think the argument will be?
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

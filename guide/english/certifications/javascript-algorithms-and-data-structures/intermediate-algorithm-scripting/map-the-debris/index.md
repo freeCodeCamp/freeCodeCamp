@@ -35,6 +35,8 @@ Use `Math.round()` to round up to the next whole number as requested. Using `Mat
 
 Find out how to remove and add key to a JavaScript object.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -14,6 +14,8 @@ What's a fallback value? It's basically a default that the code will go back to 
 
 Just add `export default` to the beginning of the function.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

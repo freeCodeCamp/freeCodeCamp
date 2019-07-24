@@ -3,6 +3,8 @@ title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Info
 ---
 # Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

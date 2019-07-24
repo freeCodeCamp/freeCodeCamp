@@ -10,6 +10,8 @@ title: Multiples of 3 and 5
 - Starting from `i = 3` because that's the first number that's divisble by 3 or 5, we loop through till the `number` provided.
 - If the number is divisible either by 3 or 5, we add that to the variable `sum` and finally return it.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

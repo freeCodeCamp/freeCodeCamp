@@ -13,6 +13,8 @@ Replace `Model` with the name of your model from the previous sections. Most lik
 ### Hint 2
 Use `{name: personName}` for the first argument in `Model.find()`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

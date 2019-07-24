@@ -23,6 +23,8 @@ You need ```.map()``` to generate a line for every object in the array.
 this.state.toDoList.map(i => <li>{i}</li>);
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

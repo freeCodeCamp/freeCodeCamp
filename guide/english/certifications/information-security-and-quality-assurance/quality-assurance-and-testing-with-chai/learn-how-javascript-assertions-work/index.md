@@ -17,6 +17,8 @@ This file contains multiple suites of tests for the project, and this first chal
 
 The two lines in the test should be changed from `assert.fail()` to either `assert.isNull()` or `assert.isNotNull()`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -26,6 +26,8 @@ console.log(array1.reduce(reducer, 5));   // expected output: 15
 
 You can see and run this code at [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

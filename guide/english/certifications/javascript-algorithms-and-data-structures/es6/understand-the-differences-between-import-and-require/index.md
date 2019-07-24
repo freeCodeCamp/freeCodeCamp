@@ -19,6 +19,8 @@ In this lesson, you are tasked at importing the function `capitalizeStrings()`, 
 Fill in the blanks: `import { function_name } from "file_name"`. Your function name is `capitalizeStrings`, and your file name is `"string-functions"`.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

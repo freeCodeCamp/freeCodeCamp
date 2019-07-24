@@ -16,6 +16,8 @@ title: Match Non-Whitespace Characters
 * Try using a shorthand character for `S` non-whitespace.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -10,6 +10,8 @@ title: Remove Elements from an Array Using slice Instead of splice
 - The slice method takes 2 two arguments for the indices to begin and end the slice (the end is non-inclusive).
 - If you do not want to mutate the original array, you can use the slice method.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

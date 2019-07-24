@@ -3,6 +3,8 @@ title: Map State to Props
 ---
 # Map State to Props
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

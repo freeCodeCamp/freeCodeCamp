@@ -19,6 +19,8 @@ Wrap all HTML code into a single ``` <div></div> ```.
 
 Use the class of ``` container-fluid ```
 
+
+---
 ## Solutions
 
 Since you have to add all the HTML in the newly created div, the following is the solution:

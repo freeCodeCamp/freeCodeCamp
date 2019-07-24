@@ -15,6 +15,8 @@ In this challenge, you are required to define rows for the CSS grid in `<div cla
  
 You can define rows by using the `grid-template-rows` CSS property.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

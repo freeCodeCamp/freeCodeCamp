@@ -3,6 +3,8 @@ title: Testing Objects for Properties
 ---
 # Testing Objects for Properties
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

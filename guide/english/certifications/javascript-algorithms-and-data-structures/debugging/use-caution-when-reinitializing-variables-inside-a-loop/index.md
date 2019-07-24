@@ -17,6 +17,8 @@ title: Use Caution When Reinitializing Variables Inside a Loop
 - This error occurs due to the `row[]` array being declared as a global variable outside of the nested for loop.
 - However, to fill the matrix correctly the `row[]` array must be reset after each iteration of the outer loop.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

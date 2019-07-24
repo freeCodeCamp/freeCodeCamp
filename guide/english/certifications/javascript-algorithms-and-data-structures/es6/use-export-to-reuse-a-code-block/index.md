@@ -17,6 +17,8 @@ Your task here is to export `foo` and `bar`.
 
 Just add export in front of them!
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -8,6 +8,8 @@ title: Understand the Constructor Property
 
 Simply finish the function like that of the example given. Use an `if-statement` to test whether or not the `candidate` is a `Dog`.  
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

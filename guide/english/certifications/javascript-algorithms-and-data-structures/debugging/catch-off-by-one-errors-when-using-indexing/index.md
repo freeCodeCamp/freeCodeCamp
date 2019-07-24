@@ -46,6 +46,8 @@ Examine the output. Under these conditions the loop first prints the element pos
 
 This can be considered the point of this challenge. Keep `console.log()` and `console.clear()` present. They will help you understand how your code works.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

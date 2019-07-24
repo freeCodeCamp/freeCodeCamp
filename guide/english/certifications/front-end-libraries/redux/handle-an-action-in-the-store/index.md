@@ -3,6 +3,8 @@ title: Handle an Action in the Store
 ---
 # Handle an Action in the Store
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

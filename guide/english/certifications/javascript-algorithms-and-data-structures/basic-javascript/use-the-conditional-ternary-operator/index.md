@@ -18,6 +18,8 @@ title: Use the Conditional (Ternary) Operator
 
 Use ternary operator to check for equality.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -11,6 +11,8 @@ title: Adding a Default Option in Switch Statements
 ### Hint 1
 Adding a default option makes sure that in case your variable doesn't match any of the options, the default will be used.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

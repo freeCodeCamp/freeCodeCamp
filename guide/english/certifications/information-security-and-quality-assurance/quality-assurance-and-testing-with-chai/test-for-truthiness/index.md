@@ -17,6 +17,8 @@ This file contains multiple suites of tests for the project, and this challenge 
 
 The lines in the test should be changed from `assert.fail()` to either `assert.isTrue()` or `assert.isNotTrue()`.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

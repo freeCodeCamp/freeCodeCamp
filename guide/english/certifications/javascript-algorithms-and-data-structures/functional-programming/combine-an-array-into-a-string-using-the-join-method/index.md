@@ -24,6 +24,8 @@ You may need to convert the string to an array first.
 You may need to use regular expression to split the string.
   
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

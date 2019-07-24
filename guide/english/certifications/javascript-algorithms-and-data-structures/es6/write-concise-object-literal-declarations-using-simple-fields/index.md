@@ -16,6 +16,8 @@ Here, we are tasked at returning an object that accepts the function's parameter
 Get rid of the colons, and the duplicate words.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -25,6 +25,8 @@ Check the error messages to determine if your understanding of the regex match w
 
 The lines in the test should be changed from `assert.fail()` to either `assert.match()` or `assert.notMatch()` based on the regex from the line above.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -3,6 +3,8 @@ title: Connect Redux to the Messages App
 ---
 # Connect Redux to the Messages App
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -10,6 +10,8 @@ title: Add Two Numbers with JavaScript
 ### Hint 1
 JavaScript uses the `+` symbol for addition.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

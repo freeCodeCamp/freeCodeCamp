@@ -23,6 +23,8 @@ Use _String.fromCharCode()_ to convert ASCII to English character.
 Leave anything that doesn't come between A-Z as it is.
 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

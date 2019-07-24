@@ -11,6 +11,8 @@ title: Adjust the Color of Various Elements to Complementary Colors
 
 Change the colours of the given elements to the ones given in the problem.
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -34,6 +34,8 @@ for (let user in obj) {
 }
 ```
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

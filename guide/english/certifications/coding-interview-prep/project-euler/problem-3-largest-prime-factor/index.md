@@ -10,6 +10,8 @@ title: Largest prime factor
 - After that, we incrememnt the prime factor by 1 and repeat this process till the number becomes 1.
 
 
+
+---
 ## Solutions
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 

@@ -30,6 +30,8 @@ regexPlus.test(phrase); // returns true
 regexStar.test(phrase); // returns true
 ```
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -21,6 +21,8 @@ Deep equality checks if two objects, and their child objects, are equal to one a
 
 The lines in the test should be changed from `assert.fail()` to either `assert.deepEqual()` or `assert.notDeepEqual()`
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

@@ -26,6 +26,8 @@ Where _let_ differs, is in its scope. When we declare using _var_, it's global i
 
 __const__, on the other hand, can only be declared once. Its value can never change. 
 
+
+---
 ## Solutions
 
 <details><summary>Solution 1 (Click to Show/Hide)</summary>

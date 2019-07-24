@@ -3,6 +3,8 @@ title: Render React on the Server with renderToString
 ---
 # Render React on the Server with renderToString
 
+
+---
 ## Solutions
 
 You pass a ```class``` to ```.renderToString()``` just like you would pass a component to a ```render``` method.
