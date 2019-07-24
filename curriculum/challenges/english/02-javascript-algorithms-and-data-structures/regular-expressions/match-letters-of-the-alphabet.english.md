@@ -34,11 +34,11 @@ Match all the letters in the string <code>quoteSample</code>.
 ```yml
 tests:
   - text: Your regex <code>alphabetRegex</code> should match 35 items.
-    testString: assert(result.length == 35, 'Your regex <code>alphabetRegex</code> should match 35 items.');
+    testString: assert(result.length == 35);
   - text: Your regex <code>alphabetRegex</code> should use the global flag.
-    testString: assert(alphabetRegex.flags.match(/g/).length == 1, 'Your regex <code>alphabetRegex</code> should use the global flag.');
+    testString: assert(alphabetRegex.flags.match(/g/).length == 1);
   - text: Your regex <code>alphabetRegex</code> should use the case insensitive flag.
-    testString: assert(alphabetRegex.flags.match(/i/).length == 1, 'Your regex <code>alphabetRegex</code> should use the case insensitive flag.');
+    testString: assert(alphabetRegex.flags.match(/i/).length == 1);
 
 ```
 
@@ -69,4 +69,5 @@ let quoteSample = "The quick brown fox jumps over the lazy dog.";
 let alphabetRegex = /[a-z]/gi; // Change this line
 let result = quoteSample.match(alphabetRegex); // Change this line
 ```
+
 </section>

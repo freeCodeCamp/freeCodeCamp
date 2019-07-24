@@ -1,7 +1,11 @@
 ---
 title: Create a Stateless Functional Component
 ---
-## Create a Stateless Functional Component
+# Create a Stateless Functional Component
+
+
+---
+## Hints
 
 ### Hint 1
 
@@ -12,16 +16,21 @@ title: Create a Stateless Functional Component
 ### Hint 2
 
 A return function is added like this
-````jsx
+```jsx
 return(
     <return elements>
 );
-````
+```
 
-### Solution
 
-````jsx
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```jsx
 return(
     <div>Completed challenge!</div>
 );
-  ````
+```
+</details>

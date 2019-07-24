@@ -49,17 +49,17 @@ Use <code>Object.create</code> to make two instances of <code>Animal</code> name
 ```yml
 tests:
   - text: The <code>duck</code> variable should be defined.
-    testString: assert(typeof duck !== "undefined", 'The <code>duck</code> variable should be defined.');
+    testString: assert(typeof duck !== "undefined");
   - text: The <code>beagle</code> variable should be defined.
-    testString: assert(typeof beagle !== "undefined", 'The <code>beagle</code> variable should be defined.');
+    testString: assert(typeof beagle !== "undefined");
   - text: The <code>duck</code> variable should be initialised with <code>Object.create</code>.
-    testString: assert(/(let|const|var)\s{1,}duck\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(code), 'The <code>duck</code> variable should be initialised with <code>Object.create</code>.');
+    testString: assert(/(let|const|var)\s{1,}duck\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(code));
   - text: The <code>beagle</code> variable should be initialised with <code>Object.create</code>.
-    testString: assert(/(let|const|var)\s{1,}beagle\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(code), 'The <code>beagle</code> variable should be initialised with <code>Object.create</code>.');
+    testString: assert(/(let|const|var)\s{1,}beagle\s*=\s*Object\.create\s*\(\s*Animal\.prototype\s*\)\s*/.test(code));
   - text: <code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.
-    testString: assert(duck instanceof Animal, '<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.');
+    testString: assert(duck instanceof Animal);
   - text: <code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.
-    testString: assert(beagle instanceof Animal, '<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.');
+    testString: assert(beagle instanceof Animal);
 
 ```
 

@@ -1,17 +1,21 @@
 ---
 title: Use Array.map() to Dynamically Render Elements
 ---
-## Use Array.map() to Dynamically Render Elements
+# Use Array.map() to Dynamically Render Elements
 
-## Hint 1:
+
+---
+## Hints
+
+### Hint 1
 
 Define the two states as a JavaScript ```object```.
 
-```javascript
+```
 {object: state, object: state}
 ```
 
-## Hint 2:
+### Hint 2
 
 You need ```.map()``` to generate a line for every object in the array.
 
@@ -19,7 +23,11 @@ You need ```.map()``` to generate a line for every object in the array.
 this.state.toDoList.map(i => <li>{i}</li>);
 ```
 
-## Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Once you add the map function, you will notice that it will generate a ```<li>``` for every item you put in the list.
 
@@ -71,5 +79,5 @@ class MyToDoList extends React.Component {
   }
 };
 ```
+</details>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->

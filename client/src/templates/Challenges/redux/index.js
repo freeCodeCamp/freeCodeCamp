@@ -25,6 +25,7 @@ const initialState = {
   challengeMeta: {
     id: '',
     nextChallengePath: '/',
+    prevChallengePath: '/',
     introPath: '',
     challengeType: -1
   },

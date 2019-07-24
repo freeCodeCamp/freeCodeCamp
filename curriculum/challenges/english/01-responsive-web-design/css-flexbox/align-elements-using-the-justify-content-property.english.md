@@ -27,7 +27,7 @@ An example helps show this property in action. Add the CSS property <code>justif
 ```yml
 tests:
   - text: The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.
-    testString: assert($('#box-container').css('justify-content') == 'center', 'The <code>#box-container</code> element should have a <code>justify-content</code> property set to a value of center.');
+    testString: assert($('#box-container').css('justify-content') == 'center');
 
 ```
 
@@ -100,4 +100,5 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
+
 </section>

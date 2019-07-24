@@ -100,6 +100,9 @@ export class Project extends Component {
         }
       },
       openCompletionModal,
+      pageContext: {
+        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+      },
       updateProjectFormValues
     } = this.props;
     const isFrontEnd = challengeType === frontEndProject;
@@ -113,6 +116,10 @@ export class Project extends Component {
             className='full-height'
             description={description}
             guideUrl={guideUrl}
+            introPath={introPath}
+            nextChallengePath={nextChallengePath}
+            prevChallengePath={prevChallengePath}
+            showPrevNextBtns={true}
             title={blockNameTitle}
           />
           <ProjectForm

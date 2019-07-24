@@ -7,7 +7,7 @@ videoUrl: 'https://www.freecodecamp.org/news/how-recursion-works-explained-with-
 
 ## Description
 <section id='description'>
-Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first <code>n</code> elements in an array to create the product of the elements. Using a <code>for</code> loop, you could do this:
+Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the elements from <code>0</code> to <code>n</code> inclusive in an array to create the product of those elements. Using a <code>for</code> loop, you could do this:
 
 ```js
   function multiply(arr, n) {
@@ -31,7 +31,7 @@ However, notice that <code>multiply(arr, n) == multiply(arr, n - 1) * arr[n]</co
   }
 ```
 
-The recursive version of <code>multiply</code> breaks down like this. In the <dfn>base case</dfn>, where <code>n <= 0</code>, it returns the result, <code>arr[0]</code>. For larger values of <code>n</code>, it calls itself, but with <code>n - 1</code>. That function call is evaluated in the same way, calling <code>multiply</code> again until <code>n = 0</code>.  At this point, all the functions can return and the original <code>multiply</code> returns the answer.  
+The recursive version of <code>multiply</code> breaks down like this. In the <dfn>base case</dfn>, where <code>n <= 0</code>, it returns the result, <code>arr[0]</code>. For larger values of <code>n</code>, it calls itself, but with <code>n - 1</code>. That function call is evaluated in the same way, calling <code>multiply</code> again until <code>n = 0</code>.  At this point, all the functions can return and the original <code>multiply</code> returns the answer.
 
 <strong>Note:</strong> Recursive functions must have a base case when they return without calling the function again (in this example, when <code>n <= 0</code>), otherwise they can never finish executing.
 
@@ -40,7 +40,7 @@ The recursive version of <code>multiply</code> breaks down like this. In the <df
 ## Instructions
 <section id='instructions'>
 
-Write a recursive function, <code>sum(arr, n)</code>, that creates the sum of the first <code>n</code> elements of an array <code>arr</code>.
+Write a recursive function, <code>sum(arr, n)</code>, that returns the sum of the elements from <code>0</code> to <code>n</code> inclusive in an array <code>arr</code>.
 
 </section>
 

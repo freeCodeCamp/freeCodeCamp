@@ -2,68 +2,76 @@
 title: Caesars Cipher
 ---
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+# Caesars Cipher
+
+
+---
+## Hints
+
+### Hint 1
 
 Use _String.charCodeAt()_ to convert the English character to ASCII.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 Use _String.fromCharCode()_ to convert ASCII to English character.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 Leave anything that doesn't come between A-Z as it is.
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+---
+## Solutions
 
-**Solution ahead!**
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 ```javascript
 function rot13(str) {
   // Split str into a character array
-  return str.split('')
-    // Iterate over each character in the array
-    .map.call(str, function(char) {
-      // Convert char to a character code
-      var x = char.charCodeAt(0);
-      // Checks if character lies between A-Z
-      if (x < 65 || x > 90) {
-        return String.fromCharCode(x);  // Return un-converted character
-      }
-      //N = ASCII 78, if the character code is less than 78, shift forward 13 places
-      else if (x < 78) {
-        return String.fromCharCode(x + 13);
-      }
-      // Otherwise shift the character 13 places backward
-      return String.fromCharCode(x - 13);
-    }).join('');  // Rejoin the array into a string
+  return (
+    str
+      .split("")
+      // Iterate over each character in the array
+      .map.call(str, function(char) {
+        // Convert char to a character code
+        var x = char.charCodeAt(0);
+        // Checks if character lies between A-Z
+        if (x < 65 || x > 90) {
+          return String.fromCharCode(x); // Return un-converted character
+        }
+        //N = ASCII 78, if the character code is less than 78, shift forward 13 places
+        else if (x < 78) {
+          return String.fromCharCode(x + 13);
+        }
+        // Otherwise shift the character 13 places backward
+        return String.fromCharCode(x - 13);
+      })
+      .join("")
+  ); // Rejoin the array into a string
 }
 ```
 
-### Code Explanation:
+#### Code Explanation
 
 *   A string variable `nstr` is declared and initialized to store the decoded string.
 *   The for loop is used to loop through each character of the input string.
 *   If the character is not uppercase English alphabets(i.e. its ascii doesn't lie between 65 and 91 ), we'll leave it as it is and <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue' target='_blank' rel='nofollow'>continue</a> with next iteration.
 *   If it's the uppercase English alphabet, we'll subtract 13 from its ascii code.
-*   If the ascii code is less than 78, it'll get out of range when subtracted by 13 so we'll add 26 (number of letters in English alphabets) to it so that after A it'll go back to Z. e.g. M(77) ![:left_right_arrow:](https://forum.freecodecamp.com/images/emoji/emoji_one/left_right_arrow.png?v=3 ":left_right_arrow:") 77-13 = 64(Not an English alphabet) +26 = 90 ![:left_right_arrow:](https://forum.freecodecamp.com/images/emoji/emoji_one/left_right_arrow.png?v=3 ":left_right_arrow:") Z(90).
+*   If the ascii code is less than 78, it'll get out of range when subtracted by 13 so we'll add 26 (number of letters in English alphabets) to it so that after A it'll go back to Z. e.g. M(77) <==> 77-13 = 64(Not an English alphabet) +26 = 90 <==> Z(90).
 
 #### Relevant Links
 
 *   <a href='https://forum.freecodecamp.com/t/javascript-array-prototype-map/14294' target='_blank' rel='nofollow'>Array.prototype.map</a>
 *   <a href='https://forum.freecodecamp.com/t/javascript-string-prototype-split/15944' target='_blank' rel='nofollow'>String.prototype.split</a>
 *   <a href='https://forum.freecodecamp.com/t/javascript-array-prototype-join/14292' target='_blank' rel='nofollow'>Array.prototype.join</a>
+</details>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
 ```javascript
 // Solution with Regular expression and Array of ASCII character codes
 function rot13(str) {
@@ -75,7 +83,7 @@ function rot13(str) {
       // A more general approach
       // possible because of modular arithmetic
       // and cyclic nature of rot13 transform
-      rotCharArray.push((str[x].charCodeAt() - 65 + 13) % 26 + 65);
+      rotCharArray.push(((str[x].charCodeAt() - 65 + 13) % 26) + 65);
     } else {
       rotCharArray.push(str[x].charCodeAt());
     }
@@ -87,7 +95,7 @@ function rot13(str) {
 // Change the inputs below to test
 rot13("LBH QVQ VG!");
 ```
-### Code Explanation:
+#### Code Explanation
 
 *   An empty array is created in a variable called `rotCharArray` to store the character codes.
 *   The `regEx` variable stores a regular expression for all uppercase letters from A to Z.
@@ -96,8 +104,9 @@ rot13("LBH QVQ VG!");
 *   If it returns true, we use the `charCodeAt()` function and rot13 transformation to return the correct value, otherwise we return the initial value.
 *   We then return the string with the character codes from the `rotCharArray` variable.
 
-### Algorithm Explanation:
+**Algorithm Explanation:**
 
+```
     ALPHA	KEY	BASE 	 	 	 ROTATED	ROT13
     -------------------------------------------------------------
     [A]     65  <=>   0 + 13  =>  13 % 26  <=>  13 + 65 = 78 [N]
@@ -126,20 +135,28 @@ rot13("LBH QVQ VG!");
     [X]     88  <=>  23 + 13  =>  36 % 26  <=>  10 + 65 = 75 [K]
     [Y]     89  <=>  24 + 13  =>  37 % 26  <=>  11 + 65 = 76 [L]
     [Z]     90  <=>  25 + 13  =>  38 % 26  <=>  12 + 65 = 77 [M]
+```
 
 #### Relevant Links
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply' target='_blank' rel='nofollow'>Function.apply</a>
 *   <a href='https://forum.freecodecamp.com/t/regular-expressions-resources/15931' target='_blank' rel='nofollow'>Regex</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test' target='_blank' rel='nofollow'>Regex.test</a>
+</details>
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+<details><summary>Solution 3 (Click to Show/Hide)</summary>
 
-    function rot13(str) { // LBH QVQ VG!
-      return str.replace(/[A-Z]/g, L => String.fromCharCode((L.charCodeAt(0) % 26) + 65));
-    }
 
-### Algorithm Explanation:
+```javascript
+function rot13(str) {
+  // LBH QVQ VG!
+  return str.replace(/[A-Z]/g, L =>
+    String.fromCharCode((L.charCodeAt(0) % 26) + 65)
+  );
+}
+```
+
+#### Code Explanation
 
 Understanding modulo operator (_sometimes called modulus operator_) symbolically represented as `%` in JavaScript is key to understanding the algorithm.  
 This is an interesting operator which shows up in various places of Engineering e.g. in cryptography.
@@ -164,7 +181,7 @@ OR
 when `LHS = 10`, it wrapped over to `0` again.
 
 Hence, we see the following pattern emerging  
-
+```
      0 ⇔ 0
      1 ⇔ 1
      2 ⇔ 2
@@ -176,13 +193,13 @@ Hence, we see the following pattern emerging
      8 ⇔ 3
      9 ⇔ 4
     10 ⇔ 0
-
+```
 Hence, we conclude that using modulo operator, one can map a range of values to a range between [`0` to `DIVISOR - 1`]. In our case, we mapped [`5 - 9`] between [`0 - 4`] or mapped [`6 - 10`] between [`0 - 4`].
 
 Did you understand till this?
 
 Now let us consider mapping a range of `26` numbers i.e. between [`65 - 90`] which represents uppercase [**English alphabets**] in <a href='http://unicode-table.com/en/alphabets/' target='_blank' rel='nofollow'>Unicode character set</a> to a range of numbers between [`0 - 25`].
-
+```
     [A]  65 % 26 ⇔ 13
     [B]  66 % 26 ⇔ 14
     [C]  67 % 26 ⇔ 15
@@ -209,12 +226,12 @@ Now let us consider mapping a range of `26` numbers i.e. between [`65 - 90`] whi
     [X]  88 % 26 ⇔ 10
     [Y]  89 % 26 ⇔ 11
     [Z]  90 % 26 ⇔ 12
-
+```
 As you can notice, each number in the range of [`65 - 90`] maps to a unique number between [`0 - 25`].  
 You might have also noticed that each given number (e.g. `65`) maps to another number (e.g. `13`) which can be used as an offset value (i.e. `65 + OFFSET`) to get the ROT13 of the given number.
 
 E.g. `65` maps to `13` which can be taken as an offset value and added to `65` to give `78`.
-
+```
     [A]  65 % 26 ⇔ 13 + 65 =  78 [N]
     [B]  66 % 26 ⇔ 14 + 65 =  79 [O]
     [C]  67 % 26 ⇔ 15 + 65 =  80 [P]
@@ -241,8 +258,8 @@ E.g. `65` maps to `13` which can be taken as an offset value and added to `65` t
     [X]  88 % 26 ⇔ 10 + 65 =  75 [K]
     [Y]  89 % 26 ⇔ 11 + 65 =  76 [L]
     [Z]  90 % 26 ⇔ 12 + 65 =  77 [M]
-
-### Code Explanation:
+```
+#### Code Explanation
 
 *   `String.prototype.replace` <a href='http://forum.freecodecamp.com/t/javascript-string-prototype-replace/15942' target='_blank' rel='nofollow'>function</a> lets you transform a `String` based on some pattern match (defined by a regular expression), and the <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_function_as_a_parameter' target='_blank' rel='nofollow'>transformation function</a> (which is applied to each of the pattern matches).
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>Arrow function</a> syntax is used to write the function parameter to `replace()`.
@@ -252,9 +269,5 @@ E.g. `65` maps to `13` which can be taken as an offset value and added to `65` t
 #### Relevant Links
 
 *   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace">String.prototype.replace()</a>
+</details>
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTE TO CONTRIBUTORS:
-
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories -- **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")

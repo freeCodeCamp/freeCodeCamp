@@ -23,13 +23,13 @@ Add an <code>h2</code> tag that says "CatPhotoApp" to create a second HTML <code
 ```yml
 tests:
   - text: Create an <code>h2</code> element.
-    testString: assert(($("h2").length > 0), 'Create an <code>h2</code> element.');
+    testString: assert(($("h2").length > 0));
   - text: Make sure your <code>h2</code> element has a closing tag.
-    testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length, 'Make sure your <code>h2</code> element has a closing tag.');
+    testString: assert(code.match(/<\/h2>/g) && code.match(/<\/h2>/g).length === code.match(/<h2>/g).length);
   - text: Your <code>h2</code> element should have the text "CatPhotoApp".
-    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()), 'Your <code>h2</code> element should have the text "CatPhotoApp".');
+    testString: assert.isTrue((/cat(\s)?photo(\s)?app/gi).test($("h2").text()));
   - text: Your <code>h1</code> element should have the text "Hello World".
-    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()), 'Your <code>h1</code> element should have the text "Hello World".');
+    testString: assert.isTrue((/hello(\s)+world/gi).test($("h1").text()));
 
 ```
 

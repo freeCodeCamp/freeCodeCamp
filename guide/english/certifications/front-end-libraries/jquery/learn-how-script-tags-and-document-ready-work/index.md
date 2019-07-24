@@ -1,7 +1,7 @@
 ---
 title: Learn How Script Tags and Document Ready Work
 ---
-## Learn How Script Tags and Document Ready Work
+# Learn How Script Tags and Document Ready Work
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/learn-how-script-tags-and-document-ready-work/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

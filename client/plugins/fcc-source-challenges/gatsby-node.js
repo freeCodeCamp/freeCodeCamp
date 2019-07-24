@@ -1,6 +1,6 @@
 const chokidar = require('chokidar');
 
-const { createChallengeNode } = require('./create-Challenge-nodes');
+const { createChallengeNode } = require('./create-challenge-nodes');
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter },
@@ -37,9 +37,9 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
       ? onSourceChange(filePath)
           .then(challenge => {
             reporter.info(
-              `File changed at ${filePath}, replacing challengeNode id ${
-                challenge.id
-              }`
+              `
+File changed at ${filePath}, replacing challengeNode id ${challenge.id}
+              `
             );
             return createChallengeNode(challenge, reporter);
           })

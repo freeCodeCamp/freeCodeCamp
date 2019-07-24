@@ -30,13 +30,13 @@ There is a component in the code editor that is trying to render a <code>name</c
 ```yml
 tests:
   - text: <code>StatefulComponent</code> should exist and render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('StatefulComponent').length === 1; })(), '<code>StatefulComponent</code> should exist and render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('StatefulComponent').length === 1; })());
   - text: <code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1; })(), '<code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1; })());
   - text: The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && typeof initialState.name === 'string'); })(), 'The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && typeof initialState.name === 'string'); })());
   - text: The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find('h1').text() === initialState.name; })(), 'The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find('h1').text() === initialState.name; })());
 
 ```
 

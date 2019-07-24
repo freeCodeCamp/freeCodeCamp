@@ -116,4 +116,5 @@ function isEveryoneHere(obj) {
 
 console.log(isEveryoneHere(users));
 ```
+
 </section>

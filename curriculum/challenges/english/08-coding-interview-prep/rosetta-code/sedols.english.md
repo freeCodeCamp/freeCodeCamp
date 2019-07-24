@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 For each number list of 6-digit <a href="https://en.wikipedia.org/wiki/SEDOL" title="wp: SEDOL" target="_blank">SEDOL</a>s, calculate and append the checksum digit.
 That is, given the input string on the left, your function should return the corresponding string on the right:
 <pre>
@@ -37,13 +38,13 @@ tests:
   - text: <code>sedol</code> is a function.
     testString: assert(typeof sedol === 'function', '<code>sedol</code> is a function.');
   - text: <code>sedol('a')</code> should return null.
-    testString: assert(sedol('a') === null, "<code>sedol('a')</code> should return null.");
+    testString: assert(sedol('a') === null);
   - text: <code>sedol('710889')</code> should return '7108899'.
-    testString: assert(sedol('710889') === '7108899', "<code>sedol('710889')</code> should return '7108899'.");
+    testString: assert(sedol('710889') === '7108899');
   - text: <code>sedol('BOATER')</code> should return null.
-    testString: assert(sedol('BOATER') === null, "<code>sedol('BOATER')</code> should return null.");
+    testString: assert(sedol('BOATER') === null);
   - text: <code>sedol('228276')</code> should return '2282765'.
-    testString: assert(sedol('228276') === '2282765', "<code>sedol('228276')</code> should return '2282765'.");
+    testString: assert(sedol('228276') === '2282765');
 
 ```
 

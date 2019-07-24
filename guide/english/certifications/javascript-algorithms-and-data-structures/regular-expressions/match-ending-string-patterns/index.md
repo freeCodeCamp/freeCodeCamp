@@ -1,9 +1,10 @@
 ---
 title: Match Ending String Patterns
 ---
-## Match Ending String Patterns
+# Match Ending String Patterns
 
-
+---
+## Problem Explanation
 To finish this challenge, it's necessary to use __boundaries__. 
 
 The __$__ Matches end of input. 
@@ -15,9 +16,14 @@ __important:__ If the multiline flag is set to true, also matches immediately be
  
 
 
-### Spoiiler Alert: Solution ahead
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```javascript
 let caboose = "The last car on a train is the caboose";
 let lastRegex = /caboose$/; // Change this line
 let result = lastRegex.test(caboose);
 ```
+</details>

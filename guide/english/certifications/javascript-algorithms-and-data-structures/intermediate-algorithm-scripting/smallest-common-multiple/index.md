@@ -1,9 +1,11 @@
 ---
 title: Smallest Common Multiple
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+# Smallest Common Multiple
+
+---
+## Problem Explanation
 
 The smallest common multiple between two numbers is the smallest number that both numbers can divide into. This concept can be extended to more than two numbers as well.
 
@@ -17,71 +19,69 @@ This problem can be confusing because most people look for the smallest common m
 
 *   <a href='https://en.wikipedia.org/wiki/Least_common_multiple' target='_blank' rel='nofollow'>Least (Smallest) Common Multiple</a>
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+
+---
+## Hints
+
+### Hint 1
 
 Create an array with all the numbers that are missing from the original array to make it easier to check when having to check for even division.
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 You can use remainder operator (`%`) to check if the reminder of a division is 0, which means it is evenly divisible.
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 If you sort the array from greatest to smallest, then you can use the first two numbers as a first check for the smallest common multiple. This is because they are more likely to be the smallest common multiple than the lower numbers.
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
+---
+## Solutions
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-**Solution ahead!**
+```javascript
+function smallestCommons(arr) {
+  // Sort array from greater to lowest
+  // This line of code was from Adam Doyle (http://github.com/Adoyle2014)
+  arr.sort(function(a, b) {
+    return b - a;
+  });
 
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+  // Create new array and add all values from greater to smaller from the
+  // original array.
+  var newArr = [];
+  for (var i = arr[0]; i >= arr[1]; i--) {
+    newArr.push(i);
+  }
 
-    function smallestCommons(arr) {
-      // Sort array from greater to lowest
-      // This line of code was from Adam Doyle (http://github.com/Adoyle2014)
-      arr.sort(function(a, b) {
-        return b - a;
-      });
+  // Variables needed declared outside the loops.
+  var quot = 0;
+  var loop = 1;
+  var n;
 
-      // Create new array and add all values from greater to smaller from the
-      // original array.
-      var newArr = [];
-      for (var i = arr[0]; i >= arr[1]; i--) {
-        newArr.push(i);
+  // Run code while n is not the same as the array length.
+  do {
+    quot = newArr[0] * loop * newArr[1];
+    for (n = 2; n < newArr.length; n++) {
+      if (quot % newArr[n] !== 0) {
+        break;
       }
-
-      // Variables needed declared outside the loops.
-      var quot = 0;
-      var loop = 1;
-      var n;
-
-      // Run code while n is not the same as the array length.
-      do {
-        quot = newArr[0] * loop * newArr[1];
-        for (n = 2; n < newArr.length; n++) {
-          if (quot % newArr[n] !== 0) {
-            break;
-          }
-        }
-
-        loop++;
-      } while (n !== newArr.length);
-
-      return quot;
     }
 
-    // test here
-    smallestCommons([1,5]);
+    loop++;
+  } while (n !== newArr.length);
+
+  return quot;
+}
+
+// test here
+smallestCommons([1, 5]);
+```
 
 
-### Code Explanation:
+#### Code Explanation
 
 *   Because of the possibility of the smallest common denominator being among the two biggest numbers, it makes sense to check those first, so sort the array.
 *   Create a new array to sort all the numbers, `newArr`.
@@ -107,36 +107,39 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-push/14298' target='_blank' rel='nofollow'>JS Array Prototype Push</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-do-while-loop/14662' target='_blank' rel='nofollow'>JS Do While Loop</a>
 *   <a>String.length</a>
-
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
-
-    function smallestCommons(arr) {
-        var range = [];
-        for (var i = Math.max(arr[0], arr[1]); i >= Math.min(arr[0], arr[1]); i--) {
-        range.push(i);
-        }
-
-        // can use reduce() in place of this block
-        var lcm = range[0];
-        for (i = 1; i < range.length; i++) {
-        var GCD = gcd(lcm, range[i]);
-        lcm = (lcm * range[i]) / GCD;
-        }
-        return lcm;
-
-        function gcd(x, y) {    // Implements the Euclidean Algorithm
-        if (y === 0)
-            return x;
-        else
-            return gcd(y, x%y);
-        }
-    }
-
-    // test here
-    smallestCommons([1,5]);
+</details>
 
 
-### Code Explanation:
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
+```javascript
+function smallestCommons(arr) {
+  var range = [];
+  for (var i = Math.max(arr[0], arr[1]); i >= Math.min(arr[0], arr[1]); i--) {
+    range.push(i);
+  }
+
+  // can use reduce() in place of this block
+  var lcm = range[0];
+  for (i = 1; i < range.length; i++) {
+    var GCD = gcd(lcm, range[i]);
+    lcm = (lcm * range[i]) / GCD;
+  }
+  return lcm;
+
+  function gcd(x, y) {
+    // Implements the Euclidean Algorithm
+    if (y === 0) return x;
+    else return gcd(y, x % y);
+  }
+}
+
+// test here
+smallestCommons([1, 5]);
+```
+
+
+#### Code Explanation
 
 *   The first, basic solution requires over 2,000 loops to calculate the test case `smallestCommons([1,13])`, and over 4 million loops to calculate `smallestCommons([1,25])`. This solution evaluates `smallestCommons([1,13])` in around 20 loops and `smallestCommons([1,25])` in 40, by using a more efficient algorithm.
 *   Make an empty array **range**.
@@ -149,32 +152,37 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-max/14682' target='_blank' rel='nofollow'>JS Math Max</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-min/14684' target='_blank' rel='nofollow'>JS Math Min</a>
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 1:
+</details>
 
-    function smallestCommons(arr) {  
-        // Euclidean algorithm for the greatest common divisor.
-        // ref: https://en.wikipedia.org/wiki/Euclidean_algorithm
-        const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
+<details><summary>Solution 3 (Click to Show/Hide)</summary>
 
-        // Least Common Multiple for two numbers based on GCD
-        const lcm = (a, b) => (a * b) / gcd(a, b);
 
-        // range
-        let [min, max] = arr.sort((a, b)=> a - b);
-        let currentLCM = min;
+```javascript
+function smallestCommons(arr) {
+  // Euclidean algorithm for the greatest common divisor.
+  // ref: https://en.wikipedia.org/wiki/Euclidean_algorithm
+  const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
 
-        while (min < max) {
-            currentLCM = lcm(currentLCM, ++min);
-        }
+  // Least Common Multiple for two numbers based on GCD
+  const lcm = (a, b) => (a * b) / gcd(a, b);
 
-        return currentLCM;
-    };
+  // range
+  let [min, max] = arr.sort((a, b) => a - b);
+  let currentLCM = min;
+
+  while (min < max) {
+    currentLCM = lcm(currentLCM, ++min);
+  }
+
+  return currentLCM;
+}
+
+// test here
+smallestCommons([1, 5]);
+```
     
-    // test here
-    smallestCommons([1,5]);
-    
 
-### Code Explanation:
+#### Code Explanation
 
 *   Extract minimum and maximum from provided **arr** by sorting and grabbing the first and last values.
 *   Initialise **smallestCommon** with the LCM of first two numbers.
@@ -184,29 +192,33 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment' target='_blank' rel='nofollow'>Prefix increment operator ++</a>
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution 2:
+</details>
 
-    const smallestCommons = arr => {
-      let max = Math.max(...arr);
-      let min = Math.min(...arr);
-      // Initially the solution is assigned to the highest value of the array
-      let sol = max;
+<details><summary>Solution 4 (Click to Show/Hide)</summary>
 
-      for (let i = max - 1; i >= min; i--) {
-        // Each time the solution checks (i.e. sol%i===0) it won't be necessary
-        // to increment 'max' to our solution and restart the loop
-        if (sol % i) {
-          sol += max;
-          i = max;
-        }
-      }
-      return sol;
-    };
+```javascript
+const smallestCommons = arr => {
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
+  // Initially the solution is assigned to the highest value of the array
+  let sol = max;
+
+  for (let i = max - 1; i >= min; i--) {
+    // Each time the solution checks (i.e. sol%i===0) it won't be necessary
+    // to increment 'max' to our solution and restart the loop
+    if (sol % i) {
+      sol += max;
+      i = max;
+    }
+  }
+  return sol;
+};
+
+// test here
+smallestCommons([1, 5]);
+```
     
-    // test here
-    smallestCommons([1,5]);
-    
-### Code Explanation:
+#### Code Explanation
 
 *   Extract `min` and `max` from `arr` using `Math.min()` and `Math.max()`, respectively. As the arguments to these functions are integers, it is necessary to spread `...` the array.
 *   As a first guess, let's say that the solution is `max`. (we will increment this value later on if it is not the solution)
@@ -222,8 +234,4 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max' target='_blank' rel='nofollow'>Math.max()</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax' target='_blank' rel='nofollow'>Spread syntax (...)</a>
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
-
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+</details>

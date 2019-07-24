@@ -1,31 +1,13 @@
 ---
 title: Testing Objects for Properties
 ---
-## Testing Objects for Properties
+# Testing Objects for Properties
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
-Here’s the example:
+---
+## Solutions
 
-```javascript
-// Setup
-var myObj = {
-  gift: "pony",
-  pet: "kitten",
-  bed: "sleigh"
-};
-
-function checkObj(checkProp) {
-  // Your Code Here
-  
-  return "Change Me!";
-}
-
-// Test your code by modifying these values
-checkObj("gift");
-```
-
-Here’s a solution:
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 We do not change anything here:
 ```javascript
@@ -45,11 +27,8 @@ function checkObj(checkProp) {
     return myObj[checkProp];
   }
   else {
- ```
+ //  and change the value of `return` in `else` statement:
  
- and change the value of `return` in `else` statement:
- 
-```javascript 
     return "Not Found"
   }
 }
@@ -69,11 +48,12 @@ function checkObj(checkProp) {
   // Your Code Here
   if (myObj.hasOwnProperty(checkProp) == true) {
     return myObj[checkProp];
-  }
-  else {
-      return "Not Found"
+  } else {
+    return "Not Found";
   }
 }
 // Test your code by modifying these values
 checkObj("gift");
 ```
+
+</details>

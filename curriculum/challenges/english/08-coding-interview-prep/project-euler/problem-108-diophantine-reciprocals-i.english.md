@@ -56,4 +56,5 @@ diophantineOne();
 ```js
 // solution required
 ```
+
 </section>

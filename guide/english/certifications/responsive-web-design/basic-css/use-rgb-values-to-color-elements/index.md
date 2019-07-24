@@ -1,7 +1,7 @@
 ---
 title: Use RGB values to Color Elements
 ---
-## Use RGB values to Color Elements
+# Use RGB values to Color Elements
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-rgb-values-to-color-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
