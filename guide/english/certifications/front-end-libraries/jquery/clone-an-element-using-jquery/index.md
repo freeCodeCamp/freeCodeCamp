@@ -1,15 +1,25 @@
 ---
 title: Clone an Element Using jQuery
 ---
-## Clone an Element Using jQuery
+# Clone an Element Using jQuery
 
+---
+## Problem Explanation
 In the last challenge we used the .appendTo() method in order to move one element into another, this challenge introduces the .clone() method which enables us to work with a copy of an element without altering the original. 
 
-### Hint
+
+---
+## Hints
+
+### Hint 1
 
 For this challenge you will need to chain the .clone() and .appendTo() methods together. 
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <script>
@@ -47,5 +57,6 @@ For this challenge you will need to chain the .clone() and .appendTo() methods t
 </div>
 ```
 
-### Sources
+#### Relevant Links
 1. [For more information on .clone() visit jQuery's documentation.](https://api.jquery.com/clone/)
+</details>

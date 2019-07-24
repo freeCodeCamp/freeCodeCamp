@@ -106,8 +106,7 @@ Retorne o inventário completo em ordem alfabética.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLok/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   O **índice** variável armazena a localização (índice) de um produto.
@@ -192,8 +191,7 @@ Retorne o inventário completo em ordem alfabética.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLol/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   O **índice** variável armazena a localização (índice) de um produto.
@@ -268,8 +266,7 @@ Retorne o inventário completo em ordem alfabética.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/MQvv/latest)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Converta a matriz de inventário atual **arr1** em uma matriz unidimensional para que o método `indexOf()` possa ser usado para verificar a existência de novos itens de entrega no estoque atual.

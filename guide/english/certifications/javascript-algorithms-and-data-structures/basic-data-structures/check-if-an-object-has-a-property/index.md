@@ -1,11 +1,15 @@
 ---
 title: Check if an Object has a Property
 ---
-## Check if an Object has a Property
+# Check if an Object has a Property
 
-### Basic Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```javascript
-
 let users = {
   Alan: {
     age: 27,
@@ -27,8 +31,10 @@ let users = {
 
 function isEveryoneHere(obj) {
   if (
-    obj.hasOwnProperty('Alan') && obj.hasOwnProperty('Jeff') &&
-    obj.hasOwnProperty('Sarah') && obj.hasOwnProperty('Ryan')
+    obj.hasOwnProperty("Alan") &&
+    obj.hasOwnProperty("Jeff") &&
+    obj.hasOwnProperty("Sarah") &&
+    obj.hasOwnProperty("Ryan")
   ) {
     return true;
   }
@@ -39,8 +45,10 @@ function isEveryoneHere(obj) {
 #### Code Explanation
 
 * Checks whether object contains all users by using the `hasOwnProperty` method for each name with the `&&` operator to return a `true` or `false` value.
+</details>
 
-### Advanced Solution:
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
 ```javascript
 let users = {
   Alan: {
@@ -62,12 +70,9 @@ let users = {
 };
 
 function isEveryoneHere(obj) {
-  return [
-    'Alan',
-    'Jeff',
-    'Sarah',
-    'Ryan'
-  ].every(name => obj.hasOwnProperty(name));
+  return ["Alan", "Jeff", "Sarah", "Ryan"].every(name =>
+    obj.hasOwnProperty(name)
+  );
 }
 ```
 
@@ -80,3 +85,5 @@ function isEveryoneHere(obj) {
 #### Relevant Links
 
 * [Array.prototype.every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+
+</details>

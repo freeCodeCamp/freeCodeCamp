@@ -1,13 +1,17 @@
 ---
 title: Get Route Parameter Input from the Client
 ---
-## Get Route Parameter Input from the Client
+# Get Route Parameter Input from the Client
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
+---
+## Problem Explanation
 If someone tells you to build a GET or POST endpoint you would achieve the same using `app.get(...)` or `app.post(...)` accordingly.
 
-## Hint
+
+---
+## Hints
+
+## Hint #1
 
 In order to get route parameters from a POST request, the general format is as follows:
 
@@ -23,7 +27,11 @@ app.post("/:param1/:param2", (req, res) => {
 });
 ```
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 app.get("/:word/echo", (req, res) => {
@@ -33,3 +41,4 @@ app.get("/:word/echo", (req, res) => {
   });
 });
 ```
+</details>

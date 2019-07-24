@@ -1,14 +1,19 @@
 ---
 title: Prioritize One Style Over Another
 ---
-## Prioritize One Style Over Another
+# Prioritize One Style Over Another
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Problem Explanation
 We need to create a CSS class called ```pink-text``` that gives an our ```h1``` element the color pink.
 
-### Solution
 
-  Between ```<style>``` and ```</style>``` create a class called ```pink-text```:
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+Between ```<style>``` and ```</style>``` create a class called ```pink-text```:
 
 ```css
   <style>
@@ -21,21 +26,21 @@ We need to create a CSS class called ```pink-text``` that gives an our ```h1``` 
 
     }
   </style>
-  ```
-  And add in this class ```color``` with value of ```pink```:
+```
+And add in this class ```color``` with value of ```pink```:
   
-  ```css
+```css
   .pink-text {
     color: pink;
   }
-  ```
+```
 After, add this class to our ```h1``` element:
 
 ```css
 <h1 class="pink-text">Hello World!</h1>
 ```
 
-### Full solution
+**Full solution**
 
 ```css
 <style>
@@ -50,3 +55,4 @@ After, add this class to our ```h1``` element:
 </style>
 <h1 class="pink-text">Hello World!</h1>
 ```
+</details>

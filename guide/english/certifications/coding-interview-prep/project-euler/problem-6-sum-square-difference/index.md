@@ -1,9 +1,10 @@
 ---
 title: Sum square difference
 ---
-## Problem 6: Sum square difference
+# Problem 6: Sum square difference
 
-### Method:
+---
+## Problem Explanation
 - Sum of first n natural numbers can be calculated by using this formula:
   - ![sum of n numbers](https://wikimedia.org/api/rest_v1/media/math/render/svg/99476e25466549387c585cb4de44e90f6cbe4cf2)
   
@@ -12,7 +13,11 @@ title: Sum square difference
   
 - We can calculate the values using the above formula and subtract them to get the result.
 
-### Solution:
+
+---
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```js
 function sumSquareDifference(n) {
   const sumOfN = (n*(n+1))/2;
@@ -23,7 +28,9 @@ function sumSquareDifference(n) {
 }
 ```
 
-### References:
+#### Relevant Links
 
 - [Sum of n numbers - Wikipedia](https://en.wikipedia.org/wiki/1_%2B_2_%2B_3_%2B_4_%2B_%E2%8B%AF)
 - [Sum of n square numbers - Wikipedia](https://en.wikipedia.org/wiki/Square_pyramidal_number)
+
+</details>

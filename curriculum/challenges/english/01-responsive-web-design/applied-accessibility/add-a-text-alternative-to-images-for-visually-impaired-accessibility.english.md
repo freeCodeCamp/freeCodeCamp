@@ -26,7 +26,7 @@ Camper Cat happens to be both a coding ninja and an actual ninja, who is buildin
 ```yml
 tests:
   - text: Your <code>img</code> tag should have an <code>alt</code> attribute and it should not be empty.
-    testString: assert($('img').attr('alt'), 'Your <code>img</code> tag should have an <code>alt</code> attribute and it should not be empty.');
+    testString: assert($('img').attr('alt'));
 
 ```
 
@@ -53,4 +53,5 @@ tests:
 ```html
 <img src="doingKarateWow.jpeg" alt="Someone doing karate">
 ```
+
 </section>

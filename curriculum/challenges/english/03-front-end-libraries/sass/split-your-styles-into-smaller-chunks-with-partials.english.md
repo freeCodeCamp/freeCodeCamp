@@ -62,4 +62,5 @@ tests:
 // The main.scss file
 @import 'variables'
 ```
+
 </section>

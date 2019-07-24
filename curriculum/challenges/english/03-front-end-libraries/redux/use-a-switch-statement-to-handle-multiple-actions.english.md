@@ -22,17 +22,17 @@ The code editor has a store, actions, and action creators set up for you. Fill i
 ```yml
 tests:
   - text: Calling the function <code>loginUser</code> should return an object with type property set to the string <code>LOGIN</code>.
-    testString: assert(loginUser().type === 'LOGIN', 'Calling the function <code>loginUser</code> should return an object with type property set to the string <code>LOGIN</code>.');
+    testString: assert(loginUser().type === 'LOGIN');
   - text: Calling the function <code>logoutUser</code> should return an object with type property set to the string <code>LOGOUT</code>.
-    testString: assert(logoutUser().type === 'LOGOUT', 'Calling the function <code>logoutUser</code> should return an object with type property set to the string <code>LOGOUT</code>.');
+    testString: assert(logoutUser().type === 'LOGOUT');
   - text: The store should be initialized with an object with an <code>authenticated</code> property set to <code>false</code>.
-    testString: assert(store.getState().authenticated === false, 'The store should be initialized with an object with an <code>authenticated</code> property set to <code>false</code>.');
+    testString: assert(store.getState().authenticated === false);
   - text: Dispatching <code>loginUser</code> should update the <code>authenticated</code> property in the store state to <code>true</code>.
-    testString: assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'Dispatching <code>loginUser</code> should update the <code>authenticated</code> property in the store state to <code>true</code>.');
+    testString: assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })());
   - text: Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.
-    testString: assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), 'Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.');
+    testString: assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })());
   - text: The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.
-    testString: getUserInput => assert( getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default'), 'The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.');
+    testString: getUserInput => assert( getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default'));
 
 ```
 

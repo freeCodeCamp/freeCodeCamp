@@ -1,9 +1,11 @@
 ---
 title: Find the Longest Word in a String
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+# Find the Longest Word in a String
+
+---
+## Problem Explanation
 
 You have to go through each word and figure out which one is the longest and return not the word, but how many characters it has.
 
@@ -11,31 +13,29 @@ You have to go through each word and figure out which one is the longest and ret
 
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length' target='_blank' rel='nofollow'>JS String Length</a>
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+
+---
+## Hints
+
+### Hint 1
 
 You should split the string into an array of words.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 You will need to figure out a way to keep track globally of the greatest current length.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 Remember how to get the length of elements on the array? `Array[index].length`.
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
+---
+## Solutions
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
-
-**Solution ahead!**
-
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
     function findLongestWordLength(str) {
       var words = str.split(' ');
@@ -51,7 +51,7 @@ Remember how to get the length of elements on the array? `Array[index].length`.
     }
 
 
-### Code Explanation:
+#### Code Explanation
 
 Take the string and convert it into an array of words. Declare a variable to keep track of the maximum length and loop from 0 to the length of the array of words.
 
@@ -61,7 +61,7 @@ Then check for the longest word by comparing the current word to the previous on
 
 *   <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/length' target='_blank' rel='nofollow'>JS Array.length</a>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
 
 **Using `.reduce()`**
 
@@ -73,7 +73,7 @@ Then check for the longest word by comparing the current word to the previous on
     }
 
 
-### Code Explanation:
+#### Code Explanation
 
 For more information on `reduce` <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce' target='_blank' rel='nofollow'>click here.</a>  
 
@@ -85,17 +85,19 @@ In case you're wondering about that `0` after the callback function, it is used 
 *   <a href='http://forum.freecodecamp.com/t/using-array-prototype-reduce-to-reduce-conceptual-boilerplate-for-problems-on-arrays/14687' target='_blank' rel='nofollow'>JS Reduce Made Easy</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-max/14682.md' target='_blank' rel='nofollow'>JS Math Max</a>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+</details>
+
+<details><summary>Solution 3 (Click to Show/Hide)</summary>
 
 **Using `.map()`**
+
 ```javascript
 function findLongestWordLength(str) {
-    return Math.max(...str.split(" ").map(word => word.length));
+  return Math.max(...str.split(" ").map(word => word.length));
 }
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/6' target='_blank' rel='nofollow'>Run Code</a>
 
-### Code Explanation:
+#### Code Explanation
 
 We provide `Math.max` with the length of each word as argument, and it will simply return the highest of all. 
 
@@ -110,40 +112,41 @@ Then, we will make another array, made from the lengths of each element of the `
 Finally, we pass the array as argument for the Math.max function with the spread operator `...`
 
 For more information on `map` <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map' target='_blank' rel='nofollow'>click here.</a>
+</details>
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+<details><summary>Solution 4 (Click to Show/Hide)</summary>
 
-**Using recursiveness**
+**Using recursion**
 
-    function findLongestWordLength(str) {
+```js
+function findLongestWordLength(str) {
+  //split the string into individual words
+  //(important!!, you'll see why later)
+  str = str.split(" ");
 
-      //split the string into individual words 
-      //(important!!, you'll see why later)
-      str = str.split(" ");
+  //str only has 1 element left that is the longest element,
+  //return the length of that element
+  if (str.length == 1) {
+    return str[0].length;
+  }
 
-      //str only has 1 element left that is the longest element, 
-      //return the length of that element
-      if(str.length == 1){
-        return str[0].length;
-      }
+  //if the first element's length is greater than the second element's (or equal)
+  //remove the second element and recursively call the function)
+  if (str[0].length >= str[1].length) {
+    str.splice(1, 1);
+    return findLongestWordLength(str.join(" "));
+  }
 
-      //if the first element's length is greater than the second element's (or equal) 
-      //remove the second element and recursively call the function)
-      if(str[0].length >= str[1].length){
-        str.splice(1,1);
-        return findLongestWordLength(str.join(" "));
-      }
+  //if the second element's length is greater thant the first element's start
+  //call the function past the first element
+  if (str[0].length <= str[1].length) {
+    // from the first element to the last element inclusive.
+    return findLongestWordLength(str.slice(1, str.length).join(" "));
+  }
+}
+```
 
-      //if the second element's length is greater thant the first element's start 
-      //call the function past the first element 
-      if(str[0].length <= str[1].length){
-        // from the first element to the last element inclusive.
-        return findLongestWordLength(str.slice(1,str.length).join(" "));
-      }
-    }
-
-
-### Code Explanation:
+#### Code Explanation
 
 The first line splits the string into individual words. Then we check if `str` only has 1 element left then that is the longest element and we return it. If the first element's length is greater than the second element's (or equal), we remove the second element and recursively call the function `findLongestWord`. However, if the second element's length is greater thant the first element's start, then we call the function past the first element.
 
@@ -152,8 +155,4 @@ The first line splits the string into individual words. Then we check if `str` o
 *   <a href='https://www.youtube.com/watch?v=R8SjM4DKK80' target='_blank' rel='nofollow'>JS Functions</a>
 *   <a href='https://www.youtube.com/watch?v=k7-N8R0-KY4' target='_blank' rel='nofollow'>Recursion Basics</a>
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
-
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+</details>

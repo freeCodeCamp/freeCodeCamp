@@ -1,7 +1,7 @@
 ---
 title: Use Clockwise Notation to Specify the Margin of an Element
 ---
-## Use Clockwise Notation to Specify the Margin of an Element
+# Use Clockwise Notation to Specify the Margin of an Element
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-clockwise-notation-to-specify-the-margin-of-an-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

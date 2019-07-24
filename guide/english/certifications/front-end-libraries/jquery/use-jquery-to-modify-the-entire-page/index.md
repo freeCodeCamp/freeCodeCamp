@@ -1,16 +1,22 @@
 ---
 title: Use jQuery to Modify the Entire Page
 ---
-## Use jQuery to Modify the Entire Page
+# Use jQuery to Modify the Entire Page
 
-### Problem Explanation
+---
+## Problem Explanation
 
 Add the classes `animated` and `hinge` to your `body` element.
 
-#### Relevant Links:
+#### Relevant Links
   - [.addClass()](https://api.jquery.com/addClass/e)
 
-### Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```html
 <script>
   $("body").addClass("animated hinge");
@@ -51,3 +57,5 @@ Add the classes `animated` and `hinge` to your `body` element.
   </div>
 </div>
 ```
+
+</details>

@@ -1,7 +1,7 @@
 ---
 title: Averages/Root mean square
 ---
-## Averages/Root mean square
+# Averages/Root mean square
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/averagesroot-mean-square/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

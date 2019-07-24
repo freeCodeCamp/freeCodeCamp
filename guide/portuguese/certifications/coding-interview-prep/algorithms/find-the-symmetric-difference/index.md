@@ -86,8 +86,7 @@ A = {1, 2, 3}
 
 ```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
 
- [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [Executar código](https://repl.it/C4II/0)
-
+ [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 ### Explicação do código:
 
 *   `push()` é usado para dividir o objeto _arguments_ em um array, _args_ .
@@ -141,8 +140,7 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLoc/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   O método `slice()` é usado para dividir o objeto _arguments_ em um array, _args_ .
@@ -176,8 +174,7 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/@ashenm/Symmetric-Difference)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   A função principal _sym ()_ cria um array a partir de _argumentos_ e reduz seus elementos utilizando a função auxiliar _diffArray ()_ para um único array.

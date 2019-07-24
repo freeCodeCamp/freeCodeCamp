@@ -21,17 +21,17 @@ In this lesson, you'll implement a simple counter with Redux from scratch. The b
 ```yml
 tests:
   - text: The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>
-    testString: assert(incAction().type ===INCREMENT, 'The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>');
+    testString: assert(incAction().type ===INCREMENT);
   - text: The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>
-    testString: assert(decAction().type === DECREMENT, 'The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>');
+    testString: assert(decAction().type === DECREMENT);
   - text: The Redux store should initialize with a <code>state</code> of 0.
-    testString: assert(store.getState() === 0, 'The Redux store should initialize with a <code>state</code> of 0.');
+    testString: assert(store.getState() === 0);
   - text: Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.
-    testString: assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })(), 'Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.');
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })());
   - text: Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.
-    testString: assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })(), 'Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.');
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })());
   - text: <code>counterReducer</code> should be a function
-    testString: assert(typeof counterReducer === 'function', '<code>counterReducer</code> should be a function');
+    testString: assert(typeof counterReducer === 'function');
 
 ```
 

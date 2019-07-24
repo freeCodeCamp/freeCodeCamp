@@ -1,7 +1,7 @@
 ---
 title: Target a Specific Child of an Element Using jQuery
 ---
-## Target a Specific Child of an Element Using jQuery
+# Target a Specific Child of an Element Using jQuery
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/target-a-specific-child-of-an-element-using-jquery/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

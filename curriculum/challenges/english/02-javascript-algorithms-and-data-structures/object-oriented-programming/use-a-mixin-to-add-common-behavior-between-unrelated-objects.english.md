@@ -55,11 +55,11 @@ Create a <code>mixin</code> named <code>glideMixin</code> that defines a method 
 ```yml
 tests:
   - text: Your code should declare a <code>glideMixin</code> variable that is a function.
-    testString: assert(typeof glideMixin === "function", 'Your code should declare a <code>glideMixin</code> variable that is a function.');
+    testString: assert(typeof glideMixin === "function");
   - text: Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.
-    testString: assert(typeof bird.glide === "function", 'Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.');
+    testString: assert(typeof bird.glide === "function");
   - text: Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.
-    testString: assert(typeof boat.glide === "function", 'Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.');
+    testString: assert(typeof boat.glide === "function");
 
 ```
 

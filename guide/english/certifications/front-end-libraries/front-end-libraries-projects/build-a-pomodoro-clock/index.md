@@ -1,7 +1,7 @@
 ---
 title: Build a Pomodoro Clock
 ---
-## Build a Pomodoro Clock
+# Build a Pomodoro Clock
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

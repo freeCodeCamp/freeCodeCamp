@@ -1,7 +1,7 @@
 ---
 title: Render Images from Data Sources
 ---
-## Render Images from Data Sources
+# Render Images from Data Sources
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/json-apis-and-ajax/render-images-from-data-sources/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

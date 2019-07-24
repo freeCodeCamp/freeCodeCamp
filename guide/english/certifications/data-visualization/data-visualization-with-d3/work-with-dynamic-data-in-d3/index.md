@@ -1,11 +1,11 @@
 ---
 title: Work with Dynamic Data in D3
 ---
-## Work with Dynamic Data in D3
+# Work with Dynamic Data in D3
 
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### Problem Explanation:
+---
+## Problem Explanation
 
 This challenge introduces using JavaScript callback functions as arguments to D3 methods. Since D3 is a JavaScript object, it has no problem following the same syntax rules
 
@@ -14,31 +14,27 @@ This challenge introduces using JavaScript callback functions as arguments to D3
 *   [JavaScript Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 *   [JavaScript Arrow Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+
+---
+## Hints
+
+### Hint 1
 
 *   As in the example, your callback function should target each datum, `d` is used for brevity and as convention for each datum
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 *   All of the methods are chained together. Since `data()` and `enter()` precede the `text()` method, the following method calls will be for each datum and executed separately
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 *   As in the example, use an arrow function to target each `d` as a parameter and insert that parameter as a variable into the `text()` method
 
-> _try to solve the problem now_
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-## Spoiler Alert!
-
-**Solution ahead!**
-
-
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
-```javascript
+```html
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
@@ -53,7 +49,7 @@ This challenge introduces using JavaScript callback functions as arguments to D3
   </script>
 </body>    
 ```
-# Code Explanation:
+#### Code Explanation
 
 *   `d3` is used to target the D3 object
 *   `select('body')` targets the 'body' element of the HTML document
@@ -68,9 +64,11 @@ This challenge introduces using JavaScript callback functions as arguments to D3
 
 *   [JavaScript Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 *   [JavaScript Arrow Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+</details>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
-```javascript
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
+```html
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
@@ -86,7 +84,7 @@ This challenge introduces using JavaScript callback functions as arguments to D3
 </body>    
 ```
 
-# Code Explanation:
+#### Code Explanation
 
 *   `d3` is used to target the D3 object
 *   `select('body')` targets the 'body' element of the HTML document
@@ -102,9 +100,5 @@ This challenge introduces using JavaScript callback functions as arguments to D3
 *   [JavaScript Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 *   [JavaScript Arrow Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 *   [JavaScript Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+</details>
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
-
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")

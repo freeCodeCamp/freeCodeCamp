@@ -31,7 +31,7 @@ tests:
   - text: <code>fearNotLetter("bcdf")</code> should return "e".
     testString: assert.deepEqual(fearNotLetter('bcdf'), 'e', '<code>fearNotLetter("bcdf")</code> should return "e".');
   - text: <code>fearNotLetter("abcdefghijklmnopqrstuvwxyz")</code> should return undefined.
-    testString: assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'), '<code>fearNotLetter("abcdefghijklmnopqrstuvwxyz")</code> should return undefined.');
+    testString: assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));
 
 ```
 

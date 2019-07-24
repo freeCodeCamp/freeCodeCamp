@@ -86,7 +86,6 @@ A = {1, 2, 3}
 
 ```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
 
- [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [Ejecutar código](https://repl.it/C4II/0)
 
 ### Explicación del código:
 
@@ -141,7 +140,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLoc/0)
 
 ### Explicación del código:
 
@@ -176,7 +174,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/@ashenm/Symmetric-Difference)
 
 ### Explicación del código:
 

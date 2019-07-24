@@ -1,7 +1,7 @@
 ---
 title: Harshad or Niven series
 ---
-## Harshad or Niven series
+# Harshad or Niven series
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/harshad-or-niven-series/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

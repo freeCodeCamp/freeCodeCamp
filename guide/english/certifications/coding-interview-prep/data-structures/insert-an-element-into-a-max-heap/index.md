@@ -1,7 +1,7 @@
 ---
 title: Insert an Element into a Max Heap
 ---
-## Insert an Element into a Max Heap
+# Insert an Element into a Max Heap
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/insert-an-element-into-a-max-heap/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

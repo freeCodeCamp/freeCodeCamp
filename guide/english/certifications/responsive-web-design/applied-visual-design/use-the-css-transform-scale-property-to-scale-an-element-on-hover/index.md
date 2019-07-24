@@ -1,9 +1,13 @@
 ---
 title: Use the CSS Transform scale Property to Scale an Element on Hover
 ---
-## Use the CSS Transform scale Property to Scale an Element on Hover
+# Use the CSS Transform scale Property to Scale an Element on Hover
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -25,3 +29,5 @@ title: Use the CSS Transform scale Property to Scale an Element on Hover
 
 <div></div>
 ```
+
+</details>

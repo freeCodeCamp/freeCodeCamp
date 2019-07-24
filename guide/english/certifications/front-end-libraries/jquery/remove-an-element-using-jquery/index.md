@@ -1,7 +1,7 @@
 ---
 title: Remove an Element Using jQuery
 ---
-## Remove an Element Using jQuery
+# Remove an Element Using jQuery
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/remove-an-element-using-jquery/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

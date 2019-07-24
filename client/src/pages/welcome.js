@@ -31,12 +31,13 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   user: PropTypes.shape({
     acceptedPrivacyTerms: PropTypes.bool,
-    username: PropTypes.string,
-    completedChallengeCount: PropTypes.number,
-    completedProjectCount: PropTypes.number,
     completedCertCount: PropTypes.number,
+    completedChallengeCount: PropTypes.number,
     completedLegacyCertCount: PropTypes.number,
-    isDonating: PropTypes.bool
+    completedProjectCount: PropTypes.number,
+    isDonating: PropTypes.bool,
+    name: PropTypes.string,
+    username: PropTypes.string
   })
 };
 

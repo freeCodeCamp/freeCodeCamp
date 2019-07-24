@@ -121,7 +121,7 @@ freeCodeCamp.org 커리큘럼의 30개의 프로젝트에는 각각 휼륭한 �
 - 기술 통찰력과 영감을 주분 개발자의 스토리가 담긴 [팟 캐스트](https://podcast.freecodecamp.org/)
 - 함께 코드를 작성할 수 있는 세계 각지의 [지역 스터디 그룹](https://study-group-directory.freecodecamp.org/)
 - 수천 개의 프로그래밍 주제에 대한 [포괄적인 가이드](https://guide.freecodecamp.org/)
-- Medium에서 [가장 큰 기술 출판물](https://medium.freecodecamp.org/)
+- [개발자 뉴스](https://www.freecodecamp.org/news) 간행물, 무료, 오픈 소스, 블로그 기사를 교차 게시 할 수있는 비 광고 공간.
 - 전 세계 100,000명이 넘는 [페이스북 그룹](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) 입니다.
 
 ### [여기에서 가입하세요](https://www.freecodecamp.org/signin)
