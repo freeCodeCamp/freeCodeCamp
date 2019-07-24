@@ -22,25 +22,25 @@ Write a regex <code>fccRegex</code> to match <code>"freeCodeCamp"</code>, no mat
 ```yml
 tests:
   - text: Your regex should match <code>freeCodeCamp</code>
-    testString: assert(fccRegex.test('freeCodeCamp'), 'Your regex should match <code>freeCodeCamp</code>');
+    testString: assert(fccRegex.test('freeCodeCamp'));
   - text: Your regex should match <code>FreeCodeCamp</code>
-    testString: assert(fccRegex.test('FreeCodeCamp'), 'Your regex should match <code>FreeCodeCamp</code>');
+    testString: assert(fccRegex.test('FreeCodeCamp'));
   - text: Your regex should match <code>FreecodeCamp</code>
-    testString: assert(fccRegex.test('FreecodeCamp'), 'Your regex should match <code>FreecodeCamp</code>');
+    testString: assert(fccRegex.test('FreecodeCamp'));
   - text: Your regex should match <code>FreeCodecamp</code>
-    testString: assert(fccRegex.test('FreeCodecamp'), 'Your regex should match <code>FreeCodecamp</code>');
+    testString: assert(fccRegex.test('FreeCodecamp'));
   - text: Your regex should not match <code>Free Code Camp</code>
-    testString: assert(!fccRegex.test('Free Code Camp'), 'Your regex should not match <code>Free Code Camp</code>');
+    testString: assert(!fccRegex.test('Free Code Camp'));
   - text: Your regex should match <code>FreeCOdeCamp</code>
-    testString: assert(fccRegex.test('FreeCOdeCamp'), 'Your regex should match <code>FreeCOdeCamp</code>');
+    testString: assert(fccRegex.test('FreeCOdeCamp'));
   - text: Your regex should not match <code>FCC</code>
-    testString: assert(!fccRegex.test('FCC'), 'Your regex should not match <code>FCC</code>');
+    testString: assert(!fccRegex.test('FCC'));
   - text: Your regex should match <code>FrEeCoDeCamp</code>
-    testString: assert(fccRegex.test('FrEeCoDeCamp'), 'Your regex should match <code>FrEeCoDeCamp</code>');
+    testString: assert(fccRegex.test('FrEeCoDeCamp'));
   - text: Your regex should match <code>FrEeCodECamp</code>
-    testString: assert(fccRegex.test('FrEeCodECamp'), 'Your regex should match <code>FrEeCodECamp</code>');
+    testString: assert(fccRegex.test('FrEeCodECamp'));
   - text: Your regex should match <code>FReeCodeCAmp</code>
-    testString: assert(fccRegex.test('FReeCodeCAmp'), 'Your regex should match <code>FReeCodeCAmp</code>');
+    testString: assert(fccRegex.test('FReeCodeCAmp'));
 
 ```
 

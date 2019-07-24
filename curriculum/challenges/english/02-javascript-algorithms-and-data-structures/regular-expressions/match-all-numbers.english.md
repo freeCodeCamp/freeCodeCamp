@@ -21,19 +21,19 @@ Use the shorthand character class <code>\d</code> to count how many digits are i
 ```yml
 tests:
   - text: Your regex should use the shortcut character to match digit characters
-    testString: assert(/\\d/.test(numRegex.source), 'Your regex should use the shortcut character to match digit characters');
+    testString: assert(/\\d/.test(numRegex.source));
   - text: Your regex should use the global flag.
-    testString: assert(numRegex.global, 'Your regex should use the global flag.');
+    testString: assert(numRegex.global);
   - text: Your regex should find 1 digit in <code>"9"</code>.
-    testString: assert("9".match(numRegex).length == 1, 'Your regex should find 1 digit in <code>"9"</code>.');
+    testString: assert("9".match(numRegex).length == 1);
   - text: Your regex should find 2 digits in <code>"Catch 22"</code>.
-    testString: assert("Catch 22".match(numRegex).length == 2, 'Your regex should find 2 digits in <code>"Catch 22"</code>.');
+    testString: assert("Catch 22".match(numRegex).length == 2);
   - text: Your regex should find 3 digits in <code>"101 Dalmatians"</code>.
-    testString: assert("101 Dalmatians".match(numRegex).length == 3, 'Your regex should find 3 digits in <code>"101 Dalmatians"</code>.');
+    testString: assert("101 Dalmatians".match(numRegex).length == 3);
   - text: Your regex should find no digits in <code>"One, Two, Three"</code>.
-    testString: assert("One, Two, Three".match(numRegex) == null, 'Your regex should find no digits in <code>"One, Two, Three"</code>.');
+    testString: assert("One, Two, Three".match(numRegex) == null);
   - text: Your regex should find 2 digits in <code>"21 Jump Street"</code>.
-    testString: assert("21 Jump Street".match(numRegex).length == 2, 'Your regex should find 2 digits in <code>"21 Jump Street"</code>.');
+    testString: assert("21 Jump Street".match(numRegex).length == 2);
   - text: 'Your regex should find 4 digits in <code>"2001: A Space Odyssey"</code>.'
     testString: 'assert("2001: A Space Odyssey".match(numRegex).length == 4, ''Your regex should find 4 digits in <code>"2001: A Space Odyssey"</code>.'');'
 
