@@ -64,7 +64,7 @@ tests:
   - text: <code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.
     testString: assert.equal(res2[2].length, 1);
   - text: <code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.
-    testString: assert.equal(res3[2][1].name, 'Maze Runner', '<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.');
+    testString: assert.equal(res3[2][1].name, 'Maze Runner');
 
 ```
 
