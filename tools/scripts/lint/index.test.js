@@ -1,7 +1,7 @@
 /* global describe it expect jest beforeEach */
 const path = require('path');
 
-const lint = require('./lint');
+const lint = require('.');
 
 describe('markdown linter', () => {
   let good = { path: path.join(__dirname, './fixtures/good.md') };
