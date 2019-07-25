@@ -32,7 +32,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     usePolling: true
   });
 
-  watcher.on('ready', sourceAndCreateNodes).on('change', filePath =>
+  watcher.on('change', filePath =>
     /\.md$/.test(filePath)
       ? onSourceChange(filePath)
           .then(challenge => {
@@ -73,4 +73,8 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
   `)
       );
   }
+
+  return new Promise((resolve, reject) => {
+    watcher.on('ready', () => sourceAndCreateNodes().then(resolve, reject));
+  });
 };
