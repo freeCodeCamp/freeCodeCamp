@@ -26,7 +26,7 @@ NOTE: The first two examples in the file represent the triangles in the example 
 ```yml
 tests:
   - text: <code>euler102()</code> should return 228.
-    testString: assert.strictEqual(euler102(), 228, '<code>euler102()</code> should return 228.');
+    testString: assert.strictEqual(euler102(), 228);
 
 ```
 
