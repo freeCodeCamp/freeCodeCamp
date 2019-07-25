@@ -207,8 +207,6 @@ All of the above needs to be run only the first time you set up the local dev en
 npm ci
 ```
 
-**NB:** If your ISP has certain network restrictions, the above step (2) may fail without warning. In such a case, you will need to install a VPN or proxy to get this step to pass.
-
 #### Step 3: Start MongoDB and seed the database (Local build only)
 
 This step applies to the Local build only; if you are using the Docker build please skip to Step 4.
@@ -503,3 +501,5 @@ npm run develop
 ```
 
 If you can't sign in, and instead, you see a banner with an error message saying that it'll be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
+
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources. Some solutions would be use to VPN services if possible and allowed in your environment.
