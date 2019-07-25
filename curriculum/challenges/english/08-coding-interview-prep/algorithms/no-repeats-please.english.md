@@ -22,25 +22,25 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>permAlone("aab")</code> should return a number.
-    testString: assert.isNumber(permAlone('aab'), '<code>permAlone("aab")</code> should return a number.');
+    testString: assert.isNumber(permAlone('aab'));
   - text: <code>permAlone("aab")</code> should return 2.
-    testString: assert.strictEqual(permAlone('aab'), 2, '<code>permAlone("aab")</code> should return 2.');
+    testString: assert.strictEqual(permAlone('aab'), 2);
   - text: <code>permAlone("aaa")</code> should return 0.
-    testString: assert.strictEqual(permAlone('aaa'), 0, '<code>permAlone("aaa")</code> should return 0.');
+    testString: assert.strictEqual(permAlone('aaa'), 0);
   - text: <code>permAlone("aabb")</code> should return 8.
-    testString: assert.strictEqual(permAlone('aabb'), 8, '<code>permAlone("aabb")</code> should return 8.');
+    testString: assert.strictEqual(permAlone('aabb'), 8);
   - text: <code>permAlone("abcdefa")</code> should return 3600.
-    testString: assert.strictEqual(permAlone('abcdefa'), 3600, '<code>permAlone("abcdefa")</code> should return 3600.');
+    testString: assert.strictEqual(permAlone('abcdefa'), 3600);
   - text: <code>permAlone("abfdefa")</code> should return 2640.
-    testString: assert.strictEqual(permAlone('abfdefa'), 2640, '<code>permAlone("abfdefa")</code> should return 2640.');
+    testString: assert.strictEqual(permAlone('abfdefa'), 2640);
   - text: <code>permAlone("zzzzzzzz")</code> should return 0.
-    testString: assert.strictEqual(permAlone('zzzzzzzz'), 0, '<code>permAlone("zzzzzzzz")</code> should return 0.');
+    testString: assert.strictEqual(permAlone('zzzzzzzz'), 0);
   - text: <code>permAlone("a")</code> should return 1.
-    testString: assert.strictEqual(permAlone('a'), 1, '<code>permAlone("a")</code> should return 1.');
+    testString: assert.strictEqual(permAlone('a'), 1);
   - text: <code>permAlone("aaab")</code> should return 0.
-    testString: assert.strictEqual(permAlone('aaab'), 0, '<code>permAlone("aaab")</code> should return 0.');
+    testString: assert.strictEqual(permAlone('aaab'), 0);
   - text: <code>permAlone("aaabb")</code> should return 12.
-    testString: assert.strictEqual(permAlone('aaabb'), 12, '<code>permAlone("aaabb")</code> should return 12.');
+    testString: assert.strictEqual(permAlone('aaabb'), 12);
 
 ```
 

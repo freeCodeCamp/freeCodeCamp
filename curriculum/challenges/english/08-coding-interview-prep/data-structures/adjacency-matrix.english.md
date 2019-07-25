@@ -47,15 +47,15 @@ Create an adjacency matrix of an undirected graph with five nodes. This matrix s
 ```yml
 tests:
   - text: <code>undirectedAdjList</code> should only contain five nodes.
-    testString: assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) , '<code>undirectedAdjList</code> should only contain five nodes.');
+    testString: assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) );
   - text: There should be an edge between the first and fourth node.
-    testString: assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1), 'There should be an edge between the first and fourth node.');
+    testString: assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1));
   - text: There should be an edge between the first and third node.
-    testString: assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1), 'There should be an edge between the first and third node.');
+    testString: assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1));
   - text: There should be an edge between the third and fifth node.
-    testString: assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1), 'There should be an edge between the third and fifth node.');
+    testString: assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1));
   - text: There should be an edge between the fourth and fifth node.
-    testString: assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'There should be an edge between the fourth and fifth node.');
+    testString: assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1));
 ```
 
 </section>

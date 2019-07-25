@@ -25,15 +25,15 @@ In order for us to verify that this data structure is implemented correctly, we'
 ```yml
 tests:
   - text: The Trie has an add method.
-    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.add == 'function') }()), 'The Trie has an add method.');
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.add == 'function') }()));
   - text: The Trie has a print method.
-    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.print == 'function') }()), 'The Trie has a print method.');
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.print == 'function') }()));
   - text: The Trie has an isWord method.
-    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.isWord == 'function') }()), 'The Trie has an isWord method.');
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.isWord == 'function') }()));
   - text: The print method returns all items added to the trie as strings in an array.
-    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('jump'); test.add('jumps'); test.add('jumped'); test.add('house'); test.add('mouse'); var added = test.print(); return (added.indexOf('jump') != -1 && added.indexOf('jumps') != -1 && added.indexOf('jumped') != -1 && added.indexOf('house') != -1 && added.indexOf('mouse') != -1 && added.length == 5); }()), 'The print method returns all items added to the trie as strings in an array.');
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('jump'); test.add('jumps'); test.add('jumped'); test.add('house'); test.add('mouse'); var added = test.print(); return (added.indexOf('jump') != -1 && added.indexOf('jumps') != -1 && added.indexOf('jumped') != -1 && added.indexOf('house') != -1 && added.indexOf('mouse') != -1 && added.length == 5); }()));
   - text: The isWord method returns true only for words added to the trie and false for all other words.
-    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('hop'); test.add('hops'); test.add('hopped'); test.add('hoppy'); test.add('hope'); return (test.isWord('hop') && !test.isWord('ho') && test.isWord('hopped') && !test.isWord('hopp') && test.isWord('hoppy') && !test.isWord('hoping')); }()), 'The isWord method returns true only for words added to the trie and false for all other words.');
+    testString: assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('hop'); test.add('hops'); test.add('hopped'); test.add('hoppy'); test.add('hope'); return (test.isWord('hop') && !test.isWord('ho') && test.isWord('hopped') && !test.isWord('hopp') && test.isWord('hoppy') && !test.isWord('hoping')); }()));
 ```
 
 </section>

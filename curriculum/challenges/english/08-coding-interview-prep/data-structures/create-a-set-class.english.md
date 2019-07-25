@@ -41,23 +41,23 @@ Create a <code>size</code> method that returns the size of the set collection.
 ```yml
 tests:
   - text: Your <code>Set</code> class should have an <code>add</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'Your <code>Set</code> class should have an <code>add</code> method.');
+    testString: assert((function(){var test = new Set(); return (typeof test.add === 'function')}()));
   - text: Your <code>add</code> method should not add duplicate values.
-    testString: assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'Your <code>add</code> method should not add duplicate values.');
+    testString: assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()));
   - text: Your <code>add</code> method should return <code>true</code> when a value has been successfully added.
-    testString: assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'Your <code>add</code> method should return <code>true</code> when a value has been successfully added.');
+    testString: assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()));
   - text: Your <code>add</code> method should return <code>false</code> when a duplicate value is added.
-    testString: assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');
+    testString: assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()));
   - text: Your <code>Set</code> class should have a <code>remove</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'Your <code>Set</code> class should have a <code>remove</code> method.');
+    testString: assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()));
   - text: Your <code>remove</code> method should only remove items that are present in the set.
-    testString: assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'Your <code>remove</code> method should only remove items that are present in the set.');
+    testString: assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b']);
   - text: Your <code>remove</code> method should remove the given item from the set.
-    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'Your <code>remove</code> method should remove the given item from the set.');
+    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()));
   - text: Your <code>Set</code> class should have a <code>size</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.size === 'function')}()), 'Your <code>Set</code> class should have a <code>size</code> method.');
+    testString: assert((function(){var test = new Set(); return (typeof test.size === 'function')}()));
   - text: The <code>size</code> method should return the number of elements in the collection.
-    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'The <code>size</code> method should return the number of elements in the collection.');
+    testString: assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()));
 
 ```
 
