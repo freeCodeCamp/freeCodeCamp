@@ -502,4 +502,4 @@ npm run develop
 
 If you can't sign in, and instead, you see a banner with an error message saying that it'll be reported to freeCodeCamp, please double-check that your local port 3000 is not in use by a different program.
 
-If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources. Some solutions would be use to VPN services if possible and allowed in your environment.
+If you get errors while installing the dependencies, please make sure that you are not in a restricted network or your firewall settings do not prevent you from accessing resources. One solution would be to use a VPN service if possible and allowed in your environment.
