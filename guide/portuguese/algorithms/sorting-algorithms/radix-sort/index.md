@@ -60,7 +60,7 @@ A matriz torna-se: 10,11,17,21,34,44,123,654 que é classificada. É assim que n
 Uma implementação em C:
 ```c
 void countsort(int arr[],int n,int place){
-  int i,freq[range]={0};         //range for integers is 10 as digits range from 0-9 
+  int i,freq[range]={0}; // range for integers is 10 as digits range from 0-9 
   int output[n];
 
   for(i=0;i<n;i++)
@@ -78,7 +78,7 @@ void countsort(int arr[],int n,int place){
         arr[i]=output[i];
 }
  
-void radixsort(ll arr[],int n,int maxx){            //maxx is the maximum element in the array
+void radixsort(ll arr[],int n,int maxx){ // maxx is the maximum element in the array
   int mul=1;
   while(maxx){
         countsort(arr,n,mul);
