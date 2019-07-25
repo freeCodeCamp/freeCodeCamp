@@ -58,6 +58,7 @@ Agora, o array se torna: 10,11,17,21,123,34,44,654 Finalmente, classificamos de 
 A matriz torna-se: 10,11,17,21,34,44,123,654 que é classificada. É assim que nosso algoritmo funciona.
 
 Uma implementação em C:
+
 ```c
 void countsort(int arr[],int n,int place){
   int i,freq[range]={0}; // range for integers is 10 as digits range from 0-9 
@@ -88,7 +89,7 @@ void radixsort(ll arr[],int n,int maxx){ // maxx is the maximum element in the a
 }
 ```
 
-Uma implementação em Python :
+Uma implementação em Python:
 
 ```py
 def counting_sort(arr, max_value, get_index):
@@ -121,7 +122,7 @@ def counting_sort(arr, max_value, get_index):
   return ret
 ```
 
-### Mais Informações:
+### Mais Informações
 
 *   [Wikipedia](https://en.wikipedia.org/wiki/Radix_sort)
     
