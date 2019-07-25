@@ -36,7 +36,7 @@ Using bracket notation select an element from <code>myArray</code> such that <co
 ```yml
 tests:
   - text: <code>myData</code> should be equal to <code>8</code>.
-    testString: assert(myData === 8, '<code>myData</code> should be equal to <code>8</code>.');
+    testString: assert(myData === 8);
   - text: You should be using bracket notation to read the correct value from <code>myArray</code>.
     testString: assert(/myData=myArray\[2\]\[1\]/.test(code.replace(/\s/g, '')));
 

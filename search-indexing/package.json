@@ -35,7 +35,7 @@
     "fs-extra": "^7.0.1",
     "googleapis": "^37.2.0",
     "gray-matter": "^4.0.2",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.15",
     "readdirp-walk": "^1.7.0",
     "rxjs": "^6.4.0",
     "secure-compare": "^3.0.1",

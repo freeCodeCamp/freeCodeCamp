@@ -24,13 +24,13 @@ Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>reverseString("hello")</code> should return a string.
-    testString: assert(typeof reverseString("hello") === "string", '<code>reverseString("hello")</code> should return a string.');
+    testString: assert(typeof reverseString("hello") === "string");
   - text: <code>reverseString("hello")</code> should become <code>"olleh"</code>.
-    testString: assert(reverseString("hello") === "olleh", '<code>reverseString("hello")</code> should become <code>"olleh"</code>.');
+    testString: assert(reverseString("hello") === "olleh");
   - text: <code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.
-    testString: assert(reverseString("Howdy") === "ydwoH", '<code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.');
+    testString: assert(reverseString("Howdy") === "ydwoH");
   - text: <code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.
-    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG", '<code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.');
+    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG");
 
 ```
 

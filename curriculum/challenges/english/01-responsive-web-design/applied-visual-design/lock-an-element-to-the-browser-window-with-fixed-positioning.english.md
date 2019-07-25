@@ -22,11 +22,11 @@ The navigation bar in the code is labeled with an id of <code>navbar</code>. Cha
 ```yml
 tests:
   - text: The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.
-    testString: assert($('#navbar').css('position') == 'fixed', 'The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.');
+    testString: assert($('#navbar').css('position') == 'fixed');
   - text: Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.
-    testString: assert($('#navbar').css('top') == '0px', 'Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');
+    testString: assert($('#navbar').css('top') == '0px');
   - text: Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.
-    testString: assert($('#navbar').css('left') == '0px', 'Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');
+    testString: assert($('#navbar').css('left') == '0px');
 
 ```
 
@@ -115,4 +115,5 @@ tests:
   <p>I shift up when the #navbar is fixed to the browser window.</p>
 </body>
 ```
+
 </section>

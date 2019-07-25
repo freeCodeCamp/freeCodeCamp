@@ -58,7 +58,6 @@ function sumFibs(num) {
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnV/0)
 
 ### Explicación del código:
 
@@ -100,7 +99,6 @@ function sumFibs(num) {
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/repls/ImpassionedFineConnection)
 
 ### Explicación del código:
 

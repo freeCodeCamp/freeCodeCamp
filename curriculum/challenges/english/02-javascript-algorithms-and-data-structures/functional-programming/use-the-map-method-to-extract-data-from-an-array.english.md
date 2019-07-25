@@ -306,4 +306,5 @@ var rating = watchList.map(function(movie) {
   }
 });
 ```
+
 </section>

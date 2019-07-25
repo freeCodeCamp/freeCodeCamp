@@ -49,6 +49,7 @@ The algorithm follows:
   ['6S', '9C', '2H', '6H']
 ]
 ```
+
 <strong>Game #617</strong>
 
 ```js
@@ -62,6 +63,7 @@ The algorithm follows:
   ['JD', 'KS', 'KC', '4H']
 ]
 ```
+
 </section>
 
 ## Instructions

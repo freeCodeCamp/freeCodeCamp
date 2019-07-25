@@ -6,11 +6,13 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Even today, with proportional fonts and complex layouts, there are still cases where you need to wrap text at a specified column. The basic task is to wrap a paragraph of text in a simple way.
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Write a function that can wrap this text to any number of characters. As an example, the text wrapped to 80 characters should look like the following:
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX

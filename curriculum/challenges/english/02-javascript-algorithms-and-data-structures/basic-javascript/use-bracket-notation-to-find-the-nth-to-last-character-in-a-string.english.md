@@ -23,9 +23,9 @@ Use <dfn>bracket notation</dfn> to find the second-to-last character in the <cod
 ```yml
 tests:
   - text: <code>secondToLastLetterOfLastName</code> should be "c".
-    testString: assert(secondToLastLetterOfLastName === 'c', '<code>secondToLastLetterOfLastName</code> should be "c".');
+    testString: assert(secondToLastLetterOfLastName === 'c');
   - text: You have to use <code>.length</code> to get the second last letter.
-    testString: assert(code.match(/\.length/g).length === 2, 'You have to use <code>.length</code> to get the second last letter.');
+    testString: assert(code.match(/\.length/g).length === 2);
 
 ```
 

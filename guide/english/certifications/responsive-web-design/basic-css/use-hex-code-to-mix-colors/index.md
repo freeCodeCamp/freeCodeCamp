@@ -1,12 +1,16 @@
 ---
 title: Use Hex Code to Mix Colors
 ---
-## Use Hex Code to Mix Colors
+# Use Hex Code to Mix Colors
 
-## Hint
+
+---
+## Hints
+
+### Hint 1
 In order to change the color of a class within the style element, we simply replace the color itself with the hexcode shown below.
 
-### Before
+**Before**
 ```html
 <style>
   .ClassName {
@@ -15,7 +19,7 @@ In order to change the color of a class within the style element, we simply repl
 </style>
 ```
 
-### After
+**After**
 ```html
 <style>
   .ClassName {
@@ -26,10 +30,15 @@ In order to change the color of a class within the style element, we simply repl
 
 **Note:** In the class,`.ClassName`, within the `<style>` element, the color has changed from a color of `black` into the hexcode, `#FFFFFF`, which shows that the color of the class `.ClassName` has changed from black to white in the `<style>` element.
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 From the Problem above, we need to change `black` from the `color` element in the `<style>` element, into the given hex codes from the table based on the colour that the class needs. For example, the class `.red-text` clearly needs their `color` element to be changed from `black` into a red colour, where the table gives us the hex code of `#FF0000` for the colour red, which is shown below.
 
-### Before changing `color` of class `.red-text`
+**Before changing `color` of class `.red-text`**
 ```html
 <style>
   .red-text {
@@ -47,7 +56,7 @@ From the Problem above, we need to change `black` from the `color` element in th
 </style>
 ```
 
-### Final Solution
+**Final Solution**
 After changing `color` of other classes, the final solution reveals that we have changed the `color` element of these text classes with hex codes shown below:
 ```html
 <style>
@@ -64,3 +73,5 @@ After changing `color` of other classes, the final solution reveals that we have
     color: #FFA500;
   }
 </style>
+```
+</details>

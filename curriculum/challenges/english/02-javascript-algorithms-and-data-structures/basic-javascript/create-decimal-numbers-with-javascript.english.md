@@ -22,9 +22,9 @@ Create a variable <code>myDecimal</code> and give it a decimal value with a frac
 ```yml
 tests:
   - text: <code>myDecimal</code> should be a number.
-    testString: assert(typeof myDecimal === "number", '<code>myDecimal</code> should be a number.');
+    testString: assert(typeof myDecimal === "number");
   - text: <code>myDecimal</code> should have a decimal point
-    testString: assert(myDecimal % 1 != 0, '<code>myDecimal</code> should have a decimal point');
+    testString: assert(myDecimal % 1 != 0);
 
 ```
 

@@ -17,7 +17,7 @@ Rules have the syntax:
 There is one rule per line.
 If there is a <code>.</code> (period) present before the  [replacement], then this is a terminating rule in which case the interpreter must halt execution.
 A ruleset consists of a sequence of rules, with optional comments.
-<big><big>Rulesets</big></big>
+<span style="font-size: 1.5rem">Rulesets</span>
 Use the following tests on entries:
 <strong>Ruleset 1:</strong>
 <pre>
@@ -52,7 +52,7 @@ Should generate:
 <strong>Ruleset 3:</strong>
 This tests for correct substitution order and may trap simple regexp based replacement routines if special regexp characters are not escaped.
 <pre>
-#BNF Syntax testing rules
+# BNF Syntax testing rules
 A -> apple
 WWWW -> with
 Bgage -> ->.*
@@ -106,7 +106,7 @@ A simple <a href="http://en.wikipedia.org/wiki/Turing_machine" title="link: http
 The tape consists of <code>0</code>s and <code>1</code>s, the states are <code>A</code>, <code>B</code>, <code>C</code> and <code>H</code> (for <code>H</code>alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
 Besides demonstrating that the Markov algorithm is Turing-complete, it also made me catch a bug in the C++ implementation which wasn't caught by the first four rulesets.
 <pre>
-#Turing machine: three-state busy beaver
+# Turing machine: three-state busy beaver
 #
 # state A, symbol 0 => write 1, move right, new state B
 A0 -> 1B

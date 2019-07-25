@@ -14,12 +14,12 @@
 
 .footer a:not([class*='inline']) {
   display: block;
-  padding-left: 5px
+  padding-left: 5px;
 }
 
 .footer a:hover {
   outline-offset: 1px;
-  outline: 1px dashed #A0A0A0;
+  outline: 1px dashed #a0a0a0;
   background-color: #ffbe41;
 }
 
@@ -35,5 +35,5 @@
 .night .footer a:hover {
   color: #606f7b;
   outline-offset: 1px;
-  outline: 1px dashed #A0A0A0;
+  outline: 1px dashed #a0a0a0;
 }

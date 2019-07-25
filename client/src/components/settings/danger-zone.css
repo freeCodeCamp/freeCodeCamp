@@ -4,7 +4,8 @@
   border-color: #ad1601;
 }
 
-.btn-danger:hover, .btn-danger:focus {
+.btn-danger:hover,
+.btn-danger:focus {
   background-color: #ad1601;
 }
 .danger-zone .panel-heading {

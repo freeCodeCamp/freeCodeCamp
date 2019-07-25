@@ -1,7 +1,7 @@
 ---
 title: Hashing Your Passwords
 ---
-## Hashing Your Passwords
+# Hashing Your Passwords
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/hashing-your-passwords/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

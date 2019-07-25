@@ -439,6 +439,10 @@
     [
       "587d7b7e367417b2b2512b21",
       "Use Multiple Conditional (Ternary) Operators"
+    ],
+    [
+      "5cc0bd7a49b71cb96132e54c",
+      "Use Recursion to Create a Range of Numbers"
     ]
   ],
   "helpRoom": "HelpJavaScript",

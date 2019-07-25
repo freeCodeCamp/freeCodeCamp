@@ -145,8 +145,7 @@ function permAlone(str) {
  permAlone('aab'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLop/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   **regex** contém a expressão regular para coincidir com caracteres consecutivos repetidos.

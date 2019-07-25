@@ -6,11 +6,13 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Use the following text to test your programs:
 <pre>
 Given$a$text$file$of$many$lines
@@ -130,6 +132,7 @@ const centerAligned = '  Given        a        text     file    of     many     
 'justified,   right    justified\n' +
 '    or       center   justified within  its   column. ';
 ```
+
 </div>
 
 </section>

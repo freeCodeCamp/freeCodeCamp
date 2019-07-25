@@ -1,7 +1,7 @@
 ---
 title: Line up Form Elements Responsively with Bootstrap
 ---
-## Line up Form Elements Responsively with Bootstrap
+# Line up Form Elements Responsively with Bootstrap
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/line-up-form-elements-responsively-with-bootstrap/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

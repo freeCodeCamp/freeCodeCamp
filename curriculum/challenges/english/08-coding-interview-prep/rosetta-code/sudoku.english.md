@@ -6,6 +6,7 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Write a function to solve a partially filled-in normal 9x9 <a href="https://en.wikipedia.org/wiki/Sudoku" target="_blank">Sudoku</a> grid and return the result. The blank fields are represented by 0s.
 <a href="https://en.wikipedia.org/wiki/Algorithmics_of_sudoku" target="_blank">Algorithmics of Sudoku</a> may help implement this.
 </section>
@@ -36,6 +37,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

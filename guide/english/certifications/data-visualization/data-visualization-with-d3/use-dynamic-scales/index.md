@@ -1,7 +1,11 @@
 ---
 title: Use Dynamic Scales
 ---
-## Use Dynamic Scales
+# Use Dynamic Scales
+
+
+---
+## Hints
 
 ### Hint 1
 
@@ -19,7 +23,11 @@ Both the `.domain()` and `.range()` functions accept an array or two elements.
 
 Subtract padding from height to get SVG height including padding.
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 To solve the solution by including all the hints, set the `yScale` variable to:
 
@@ -69,3 +77,4 @@ The full solution now looks like:
   </script>
 </body>
 ```
+</details>

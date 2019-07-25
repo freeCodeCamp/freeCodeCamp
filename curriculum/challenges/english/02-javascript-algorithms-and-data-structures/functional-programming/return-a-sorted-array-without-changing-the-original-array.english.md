@@ -66,4 +66,5 @@ function nonMutatingSort(arr) {
 }
 nonMutatingSort(globalArray);
 ```
+
 </section>

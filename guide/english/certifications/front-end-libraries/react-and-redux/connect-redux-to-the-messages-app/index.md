@@ -1,11 +1,13 @@
 ---
 title: Connect Redux to the Messages App
 ---
-## Connect Redux to the Messages App
+# Connect Redux to the Messages App
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```jsx
 // Redux:
@@ -109,5 +111,4 @@ class AppWrapper extends React.Component {
   }
 };
 ```
-
 </details>

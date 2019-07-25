@@ -82,8 +82,7 @@ function smallestCommons(arr) {
  smallestCommons([1,5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLn2/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Por causa da possibilidade do menor denominador comum estar entre os dois maiores números, faz sentido checar os primeiros, então ordene o array.
@@ -139,8 +138,7 @@ function smallestCommons(arr) {
  smallestCommons([1,5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLn4/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   A primeira solução básica requer mais de 2.000 loops para calcular o caso de teste dos `smallestCommons([1,13])` e mais de 4 milhões de loops para calcular os `smallestCommons([1,25])` . Esta solução avalia os `smallestCommons([1,13])` em cerca de 20 loops e os `smallestCommons([1,25])` em 40, usando um algoritmo mais eficiente.
@@ -199,8 +197,7 @@ function smallestCommons(arr) {
  smallestCommons([1,5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/MR9P/latest)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Extraia o mínimo e o máximo de **arr** .
