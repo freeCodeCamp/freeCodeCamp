@@ -36,11 +36,11 @@ tests:
   - text: <code>genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13)</code> should return <code>"13"</code>.
     testString: assert.equal(genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 13), '13');
   - text: <code>genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15)</code> should return <code>"BuzzFizz"</code>.
-    testString: assert.equal(genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15));
+    testString: assert.equal(genFizzBuzz([[3, "Buzz"],[5, "Fizz"]], 15), "BuzzFizz");
   - text: <code>genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15)</code> should return <code>"FizzBuzz"</code>.
-    testString: assert.equal(genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15));
+    testString: assert.equal(genFizzBuzz([[3, "Fizz"],[5, "Buzz"]], 15), "FizzBuzz");
   - text: <code>genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105)</code> should return <code>"FizzBuzzBaxx"</code>.
-    testString: assert.equal(genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105));
+    testString: assert.equal(genFizzBuzz([[3, "Fizz"],[5, "Buzz"],[7, "Baxx"]], 105), "FizzBuzzBaxx");
 
 ```
 
