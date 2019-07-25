@@ -1,5 +1,5 @@
-const lintRules = require('./.guidelintrc');
-const linter = require('../linter');
+const lintRules = require('./.markdownlintrc');
+const linter = require('./linter');
 const argv = require('yargs').argv;
 
 const isMDRE = /.*\.md$/;
