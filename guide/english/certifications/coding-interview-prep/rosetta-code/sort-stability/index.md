@@ -1,7 +1,7 @@
 ---
-title: 
+title: Sort stability
 ---
-# 
+# Sort stability
 
 ---
 ## Solutions
