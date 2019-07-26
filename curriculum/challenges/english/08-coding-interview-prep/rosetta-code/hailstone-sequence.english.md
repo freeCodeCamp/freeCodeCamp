@@ -35,9 +35,9 @@ The hailstone sequence is also known as hailstone numbers (because the values ar
 ```yml
 tests:
   - text: <code>hailstoneSequence</code> is a function.
-    testString: assert(typeof hailstoneSequence === 'function', '<code>hailstoneSequence</code> is a function.');
+    testString: assert(typeof hailstoneSequence === 'function');
   - text: <code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>
-    testString: assert.deepEqual(hailstoneSequence(), res, '<code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>');
+    testString: assert.deepEqual(hailstoneSequence(), res);
 
 ```
 

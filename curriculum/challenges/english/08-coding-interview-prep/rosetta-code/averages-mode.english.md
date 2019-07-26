@@ -22,11 +22,11 @@ If it is not appropriate or possible to support a general collection, use a vect
 ```yml
 tests:
   - text: <code>mode</code> is a function.
-    testString: assert(typeof mode === 'function', '<code>mode</code> is a function.');
+    testString: assert(typeof mode === 'function');
   - text: <code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>
-    testString: assert.deepEqual(mode(arr1), [6], '<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>');
+    testString: assert.deepEqual(mode(arr1), [6]);
   - text: <code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.
-    testString: assert.deepEqual(mode(arr2).sort(), [1, 4], '<code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.');
+    testString: assert.deepEqual(mode(arr2).sort(), [1, 4]);
 
 ```
 

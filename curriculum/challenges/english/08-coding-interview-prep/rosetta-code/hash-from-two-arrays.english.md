@@ -24,7 +24,7 @@ Using two Arrays of equal length, create a Hash object where the elements from o
 ```yml
 tests:
   - text: <code>arrToObj</code> is a function.
-    testString: assert(typeof arrToObj === 'function', '<code>arrToObj</code> is a function.');
+    testString: assert(typeof arrToObj === 'function');
   - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d", "e"])</code> should return <code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: "e" }</code>'
     testString: assert.deepEqual(arrToObj(...testCases[0]), res[0]);
   - text: '<code>arrToObj([1, 2, 3, 4, 5], ["a", "b", "c", "d"])</code> should return <code>{ 1: "a", 2: "b", 3: "c", 4: "d", 5: undefined }</code>'

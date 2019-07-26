@@ -22,19 +22,19 @@ Example output: <code>"March 8 2009 7:30am EST"</code>
 ```yml
 tests:
   - text: <code>add12Hours</code> is a function.
-    testString: assert(typeof add12Hours === 'function', '<code>add12Hours</code> is a function.');
+    testString: assert(typeof add12Hours === 'function');
   - text: <code>add12Hours(dateString)</code> should return a string.
-    testString: assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string', '<code>add12Hours(dateString)</code> should return a string.');
+    testString: assert(typeof add12Hours('January 17 2017 11:43am EST') === 'string');
   - text: <code>add12Hours("January 17 2017 11:43am EST")</code> should return <code>"January 17 2017 11:43pm EST"</code>
-    testString: assert(add12Hours('January 17 2017 11:43am EST') === 'January 17 2017 11:43pm EST', '<code>add12Hours("January 17 2017 11:43am EST")</code> should return <code>"January 17 2017 11:43pm EST"</code>');
+    testString: assert(add12Hours('January 17 2017 11:43am EST') === 'January 17 2017 11:43pm EST');
   - text: Should handel day change. <code>add12Hours("March 7 2009 7:30pm EST")</code> should return <code>"March 8 2009 7:30am EST"</code>
-    testString: assert(add12Hours('March 7 2009 7:30pm EST') === 'March 8 2009 7:30am EST', 'Should handel day change. <code>add12Hours("March 7 2009 7:30pm EST")</code> should return <code>"March 8 2009 7:30am EST"</code>');
+    testString: assert(add12Hours('March 7 2009 7:30pm EST') === 'March 8 2009 7:30am EST');
   - text: Should handel month change in a leap years. <code>add12Hours("February 29 2004 9:15pm EST")</code> should return <code>"March 1 2004 9:15am EST"</code>
-    testString: assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST', 'Should handel month change in a leap years. <code>add12Hours("February 29 2004 9:15pm EST")</code> should return <code>"March 1 2004 9:15am EST"</code>');
+    testString: assert(add12Hours('February 29 2004 9:15pm EST') === 'March 1 2004 9:15am EST');
   - text: Should handel month change in a common years. <code>add12Hours("February 28 1999 3:15pm EST")</code> should return <code>"March 1 1999 3:15am EST"</code>
-    testString: assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST', 'Should handel month change in a common years. <code>add12Hours("February 28 1999 3:15pm EST")</code> should return <code>"March 1 1999 3:15am EST"</code>');
+    testString: assert(add12Hours('February 28 1999 3:15pm EST') === 'March 1 1999 3:15am EST');
   - text: Should handel year change. <code>add12Hours("December 31 2020 1:45pm EST")</code> should return <code>"January 1 2021 1:45am EST"</code>
-    testString: assert(add12Hours('December 31 2020 1:45pm EST') === 'January 1 2021 1:45am EST', 'Should handel year change. <code>add12Hours("December 31 2020 1:45pm EST")</code> should return <code>"January 1 2021 1:45am EST"</code>');
+    testString: assert(add12Hours('December 31 2020 1:45pm EST') === 'January 1 2021 1:45am EST');
 
 ```
 

@@ -24,9 +24,9 @@ Hence, the series is: 0, 1, 1, 2, 3, 5, 8, 13...
 ```yml
 tests:
   - text: <code>fibonacci</code> is a function.
-    testString: assert(typeof fibonacci === 'function', '<code>fibonacci</code> is a function.');
+    testString: assert(typeof fibonacci === 'function');
   - text: <code>fibonacci(2)</code> should return a number.
-    testString: assert(typeof fibonacci(2) == 'number', '<code>fibonacci(2)</code> should return a number.');
+    testString: assert(typeof fibonacci(2) == 'number');
   - text: <code>fibonacci(3)</code> should return 1.
     testString: assert.equal(fibonacci(3),1);
   - text: <code>fibonacci(5)</code> should return 3.

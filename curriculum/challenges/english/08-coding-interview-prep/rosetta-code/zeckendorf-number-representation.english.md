@@ -21,9 +21,9 @@ Write a function that generates and returns an array of the first <code>n</code>
 ```yml
 tests:
   - text: zeckendorf must be function
-    testString: assert.equal(typeof zeckendorf, 'function', 'zeckendorf must be function');
+    testString: assert.equal(typeof zeckendorf, 'function');
   - text: Your <code>zeckendorf</code> function should return the correct answer
-    testString: assert.deepEqual(answer, solution20, 'Your <code>zeckendorf</code> function should return the correct answer');
+    testString: assert.deepEqual(answer, solution20);
 
 ```
 

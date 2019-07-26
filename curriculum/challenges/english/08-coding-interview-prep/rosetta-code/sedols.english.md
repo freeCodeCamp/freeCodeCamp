@@ -36,7 +36,7 @@ Check that each input is correctly formed, especially with respect to valid char
 ```yml
 tests:
   - text: <code>sedol</code> is a function.
-    testString: assert(typeof sedol === 'function', '<code>sedol</code> is a function.');
+    testString: assert(typeof sedol === 'function');
   - text: <code>sedol('a')</code> should return null.
     testString: assert(sedol('a') === null);
   - text: <code>sedol('710889')</code> should return '7108899'.

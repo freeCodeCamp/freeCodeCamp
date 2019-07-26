@@ -36,29 +36,29 @@ No maximum value for <code>n</code> should be assumed.
 ```yml
 tests:
   - text: <code>ffr</code> is a function.
-    testString: assert(typeof ffr === 'function', '<code>ffr</code> is a function.');
+    testString: assert(typeof ffr === 'function');
   - text: <code>ffs</code> is a function.
-    testString: assert(typeof ffs === 'function', '<code>ffs</code> is a function.');
+    testString: assert(typeof ffs === 'function');
   - text: <code>ffr</code> should return integer.
-    testString: assert(Number.isInteger(ffr(1)), '<code>ffr</code> should return integer.');
+    testString: assert(Number.isInteger(ffr(1)));
   - text: <code>ffs</code> should return integer.
-    testString: assert(Number.isInteger(ffs(1)), '<code>ffs</code> should return integer.');
+    testString: assert(Number.isInteger(ffs(1)));
   - text: <code>ffr()</code> should return <code>69</code>
-    testString: assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1], '<code>ffr()</code> should return <code>69</code>');
+    testString: assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1]);
   - text: <code>ffr()</code> should return <code>1509</code>
-    testString: assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1], '<code>ffr()</code> should return <code>1509</code>');
+    testString: assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1]);
   - text: <code>ffr()</code> should return <code>5764</code>
-    testString: assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1], '<code>ffr()</code> should return <code>5764</code>');
+    testString: assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1]);
   - text: <code>ffr()</code> should return <code>526334</code>
-    testString: assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1], '<code>ffr()</code> should return <code>526334</code>');
+    testString: assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1]);
   - text: <code>ffs()</code> should return <code>14</code>
-    testString: assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1], '<code>ffs()</code> should return <code>14</code>');
+    testString: assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1]);
   - text: <code>ffs()</code> should return <code>59</code>
-    testString: assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1], '<code>ffs()</code> should return <code>59</code>');
+    testString: assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1]);
   - text: <code>ffs()</code> should return <code>112</code>
-    testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1], '<code>ffs()</code> should return <code>112</code>');
+    testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
   - text: <code>ffs()</code> should return <code>1041</code>
-    testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1], '<code>ffs()</code> should return <code>1041</code>');
+    testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);
 
 ```
 

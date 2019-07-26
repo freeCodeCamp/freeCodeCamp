@@ -47,21 +47,21 @@ Some rules to keep in mind:
 ```yml
 tests:
   - text: <code>canMakeWord</code> is a function.
-    testString: assert(typeof canMakeWord === 'function', '<code>canMakeWord</code> is a function.');
+    testString: assert(typeof canMakeWord === 'function');
   - text: <code>canMakeWord</code> should return a boolean.
-    testString: assert(typeof canMakeWord('hi') === 'boolean', '<code>canMakeWord</code> should return a boolean.');
+    testString: assert(typeof canMakeWord('hi') === 'boolean');
   - text: <code>canMakeWord("bark")</code> should return true.
-    testString: assert(canMakeWord(words[0]), '<code>canMakeWord("bark")</code> should return true.');
+    testString: assert(canMakeWord(words[0]));
   - text: <code>canMakeWord("BooK")</code> should return false.
-    testString: assert(!canMakeWord(words[1]), '<code>canMakeWord("BooK")</code> should return false.');
+    testString: assert(!canMakeWord(words[1]));
   - text: <code>canMakeWord("TReAT")</code> should return true.
-    testString: assert(canMakeWord(words[2]), '<code>canMakeWord("TReAT")</code> should return true.');
+    testString: assert(canMakeWord(words[2]));
   - text: <code>canMakeWord("COMMON")</code> should return false.
-    testString: assert(!canMakeWord(words[3]), '<code>canMakeWord("COMMON")</code> should return false.');
+    testString: assert(!canMakeWord(words[3]));
   - text: <code>canMakeWord("squAD")</code> should return true.
-    testString: assert(canMakeWord(words[4]), '<code>canMakeWord("squAD")</code> should return true.');
+    testString: assert(canMakeWord(words[4]));
   - text: <code>canMakeWord("conFUSE")</code> should return true.
-    testString: assert(canMakeWord(words[5]), '<code>canMakeWord("conFUSE")</code> should return true.');
+    testString: assert(canMakeWord(words[5]));
 
 ```
 
