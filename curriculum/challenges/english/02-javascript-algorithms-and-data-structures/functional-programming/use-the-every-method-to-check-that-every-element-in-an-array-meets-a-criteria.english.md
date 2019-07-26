@@ -32,11 +32,11 @@ tests:
   - text: Your code should use the <code>every</code> method.
     testString: assert(code.match(/\.every/g));
   - text: <code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.
-    testString: assert(!checkPositive([1, 2, 3, -4, 5]));
+    testString: assert(checkPositive([1, 2, 3, -4, 5]) === false);
   - text: <code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.
-    testString: assert(checkPositive([1, 2, 3, 4, 5]));
+    testString: assert(checkPositive([1, 2, 3, 4, 5]) === true);
   - text: <code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.
-    testString: assert(!checkPositive([1, -2, 3, -4, 5]));
+    testString: assert(checkPositive([1, -2, 3, -4, 5]) === false);
 
 ```
 
