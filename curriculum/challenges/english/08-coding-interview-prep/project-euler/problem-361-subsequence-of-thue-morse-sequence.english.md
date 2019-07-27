@@ -45,7 +45,7 @@ Find the last 9 digits of .
 ```yml
 tests:
   - text: <code>euler361()</code> should return 178476944.
-    testString: assert.strictEqual(euler361(), 178476944, '<code>euler361()</code> should return 178476944.');
+    testString: assert.strictEqual(euler361(), 178476944);
 
 ```
 

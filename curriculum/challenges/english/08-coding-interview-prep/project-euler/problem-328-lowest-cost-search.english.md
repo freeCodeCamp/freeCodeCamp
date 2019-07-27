@@ -42,7 +42,7 @@ Find C(n).
 ```yml
 tests:
   - text: <code>euler328()</code> should return 260511850222.
-    testString: assert.strictEqual(euler328(), 260511850222, '<code>euler328()</code> should return 260511850222.');
+    testString: assert.strictEqual(euler328(), 260511850222);
 
 ```
 

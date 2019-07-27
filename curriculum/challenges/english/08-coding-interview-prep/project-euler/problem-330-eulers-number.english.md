@@ -39,7 +39,7 @@ Find A(109) + B(109) and give your answer mod 77 777 777.
 ```yml
 tests:
   - text: <code>euler330()</code> should return 15955822.
-    testString: assert.strictEqual(euler330(), 15955822, '<code>euler330()</code> should return 15955822.');
+    testString: assert.strictEqual(euler330(), 15955822);
 
 ```
 

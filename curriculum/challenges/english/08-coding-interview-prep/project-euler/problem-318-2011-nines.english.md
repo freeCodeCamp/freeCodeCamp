@@ -46,7 +46,7 @@ Find ∑N(p,q) for p+q ≤ 2011.
 ```yml
 tests:
   - text: <code>euler318()</code> should return 709313889.
-    testString: assert.strictEqual(euler318(), 709313889, '<code>euler318()</code> should return 709313889.');
+    testString: assert.strictEqual(euler318(), 709313889);
 
 ```
 

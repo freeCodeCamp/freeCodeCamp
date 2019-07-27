@@ -36,7 +36,7 @@ Find S(10 000 000 000).
 ```yml
 tests:
   - text: <code>euler362()</code> should return 457895958010.
-    testString: assert.strictEqual(euler362(), 457895958010, '<code>euler362()</code> should return 457895958010.');
+    testString: assert.strictEqual(euler362(), 457895958010);
 
 ```
 

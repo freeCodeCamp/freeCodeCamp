@@ -45,7 +45,7 @@ Find the Matrix Sum of:
 ```yml
 tests:
   - text: <code>euler345()</code> should return 13938.
-    testString: assert.strictEqual(euler345(), 13938, '<code>euler345()</code> should return 13938.');
+    testString: assert.strictEqual(euler345(), 13938);
 
 ```
 

@@ -24,7 +24,7 @@ Find T(1018, 1012-10).
 ```yml
 tests:
   - text: <code>euler322()</code> should return 999998760323314000.
-    testString: assert.strictEqual(euler322(), 999998760323314000, '<code>euler322()</code> should return 999998760323314000.');
+    testString: assert.strictEqual(euler322(), 999998760323314000);
 
 ```
 
