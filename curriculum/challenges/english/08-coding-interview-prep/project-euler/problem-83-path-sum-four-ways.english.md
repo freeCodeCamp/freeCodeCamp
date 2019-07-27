@@ -34,7 +34,7 @@ Find the minimal path sum, in matrix.txt (right click and
 ```yml
 tests:
   - text: <code>euler83()</code> should return 425185.
-    testString: assert.strictEqual(euler83(), 425185, '<code>euler83()</code> should return 425185.');
+    testString: assert.strictEqual(euler83(), 425185);
 
 ```
 

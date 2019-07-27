@@ -1,7 +1,7 @@
 ---
 title: Target Even Elements Using jQuery
 ---
-## Target Even Elements Using jQuery
+# Target Even Elements Using jQuery
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/target-even-elements-using-jquery/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

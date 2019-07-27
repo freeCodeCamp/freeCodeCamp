@@ -33,7 +33,7 @@ Find the sum of the distinct squarefree numbers in the first 51 rows of Pascal's
 ```yml
 tests:
   - text: <code>euler203()</code> should return 34029210557338.
-    testString: assert.strictEqual(euler203(), 34029210557338, '<code>euler203()</code> should return 34029210557338.');
+    testString: assert.strictEqual(euler203(), 34029210557338);
 
 ```
 

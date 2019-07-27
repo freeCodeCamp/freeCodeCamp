@@ -109,7 +109,7 @@ Find the sum of digits in the numerator of the 100th convergent of the continued
 ```yml
 tests:
   - text: <code>euler65()</code> should return 272.
-    testString: assert.strictEqual(euler65(), 272, '<code>euler65()</code> should return 272.');
+    testString: assert.strictEqual(euler65(), 272);
 
 ```
 

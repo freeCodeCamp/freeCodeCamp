@@ -45,7 +45,7 @@ Find ∑mdrs(n) for 1 < n < 1,000,000.
 ```yml
 tests:
   - text: <code>euler159()</code> should return 14489159.
-    testString: assert.strictEqual(euler159(), 14489159, '<code>euler159()</code> should return 14489159.');
+    testString: assert.strictEqual(euler159(), 14489159);
 
 ```
 

@@ -24,11 +24,11 @@ The code editor has the <code>mapStateToProps()</code> and <code>mapDispatchToPr
 ```yml
 tests:
   - text: The <code>Presentational</code> component should render.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })());
   - text: The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })(), 'The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })());
   - text: The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })());
 
 ```
 

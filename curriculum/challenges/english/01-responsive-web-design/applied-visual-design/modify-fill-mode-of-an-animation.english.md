@@ -23,7 +23,7 @@ Set the <code>animation-fill-mode</code> property of <code>button:hover</code> t
 ```yml
 tests:
   - text: <code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.
-    testString: assert(code.match(/button\s*?:\s*?hover\s*?{[\s\S]*animation-fill-mode\s*?:\s*?forwards\s*?;[\s\S]*}/gi) && code.match(/button\s*?:\s*?hover\s*?{[\s\S]*animation-name\s*?:\s*?background-color\s*?;[\s\S]*}/gi) && code.match(/button\s*?:\s*?hover\s*?{[\s\S]*animation-duration\s*?:\s*?500ms\s*?;[\s\S]*}/gi), '<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');
+    testString: assert(code.match(/button\s*?:\s*?hover\s*?{[\s\S]*animation-fill-mode\s*?:\s*?forwards\s*?;[\s\S]*}/gi) && code.match(/button\s*?:\s*?hover\s*?{[\s\S]*animation-name\s*?:\s*?background-color\s*?;[\s\S]*}/gi) && code.match(/button\s*?:\s*?hover\s*?{[\s\S]*animation-duration\s*?:\s*?500ms\s*?;[\s\S]*}/gi));
 
 ```
 

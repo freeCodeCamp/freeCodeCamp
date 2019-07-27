@@ -27,7 +27,7 @@ How many coefficients in the expansion of (x + y + z)200000 are multiples of 101
 ```yml
 tests:
   - text: <code>euler154()</code> should return 479742450.
-    testString: assert.strictEqual(euler154(), 479742450, '<code>euler154()</code> should return 479742450.');
+    testString: assert.strictEqual(euler154(), 479742450);
 
 ```
 

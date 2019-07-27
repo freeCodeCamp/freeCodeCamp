@@ -23,13 +23,13 @@ Camper Cat is writing some great articles about ninja training, and wants to add
 ```yml
 tests:
   - text: Your code should have one <code>header</code> tag.
-    testString: assert($('header').length == 1, 'Your code should have one <code>header</code> tag.');
+    testString: assert($('header').length == 1);
   - text: Your <code>header</code> tags should wrap around the <code>h1</code>.
-    testString: assert($('header').children('h1').length == 1, 'Your <code>header</code> tags should wrap around the <code>h1</code>.');
+    testString: assert($('header').children('h1').length == 1);
   - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
+    testString: assert($('div').length == 0);
   - text: Make sure your <code>header</code> element has a closing tag.
-    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length, 'Make sure your <code>header</code> element has a closing tag.');
+    testString: assert(code.match(/<\/header>/g) && code.match(/<\/header>/g).length === code.match(/<header>/g).length);
 
 ```
 

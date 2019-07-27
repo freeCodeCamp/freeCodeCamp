@@ -38,7 +38,7 @@ Find the sum of the primes less than 100,000,000 with at least one Fibonacci pri
 ```yml
 tests:
   - text: <code>euler437()</code> should return 74204709657207.
-    testString: assert.strictEqual(euler437(), 74204709657207, '<code>euler437()</code> should return 74204709657207.');
+    testString: assert.strictEqual(euler437(), 74204709657207);
 
 ```
 

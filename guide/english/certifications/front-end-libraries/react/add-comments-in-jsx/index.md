@@ -1,8 +1,13 @@
 ---
 title: Add Comments in JSX
 ---
-## Add Comments in JSX
+# Add Comments in JSX
+
+---
+## Problem Explanation
+
 You can comment as you used to do with code blocks in JavaScript `/* some JS code */` but they need to wrapped by curly braces to add comments in JSX:
+
 For example:
 * Single-line comment:
 ```jsx

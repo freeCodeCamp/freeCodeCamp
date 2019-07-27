@@ -1,47 +1,46 @@
 ---
 title: Use the Spread Operator to Evaluate Arrays In-Place
 ---
-## Use the Spread Operator to Evaluate Arrays In-Place
+# Use the Spread Operator to Evaluate Arrays In-Place
 
-### Spread Operator explained
-[Mozilla Developer Network Spread Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax "Mozilla Developer Network")
+#### Relevant Links
 
-### Spread Operator compared to Rest Parameter
-[Stack Overflow](https://stackoverflow.com/questions/33898512/spread-operator-vs-rest-parameter-in-es2015-es6 "Stack Overflow")
+* [Spread Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax "Mozilla Developer Network")
 
-### Video Explaining Spread Operator and Rest Parameter
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=iLx4ma8ZqvQ
+* [Spread Operator compared to Rest Parameter](https://stackoverflow.com/questions/33898512/spread-operator-vs-rest-parameter-in-es2015-es6 "Stack Overflow")
+
+* <a href="http://www.youtube.com/watch?feature=player_embedded&v=iLx4ma8ZqvQ
 " target="_blank"><img src="http://img.youtube.com/vi/iLx4ma8ZqvQ/0.jpg" 
-alt="Image of youtube video link spread and rest parameter " width="240" height="180" border="10" /></a>
+alt="Image of youtube video link spread and rest parameter " width="240" height="180" border="10" />ideo Explaining Spread Operator and Rest Parameter</a>
 
-### Information About apply() Method
-[Mozilla Developer Network Apply Method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply "Mozilla Developer Network")
+* [Apply Method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply "Mozilla Developer Network")
 
-### 3 Quick Examples
+Examples
 ```javascript
 let numbers = [-12, 160, 0, -3, 51];
 let minNum = Math.min.apply(null, numbers);
-console.log(minNum);//-12
+console.log(minNum); //-12
 ```
 
 ```javascript
 let numbers = [-12, 160, 0, -3, 51];
 let minNum = Math.min(numbers);
-console.log(minNum);//NaN 
+console.log(minNum); //NaN
 ```
 
 ```javascript
 let numbers = [-12, 160, 0, -3, 51];
 let minNum = Math.min(...numbers);
-console.log(minNum);//-12
+console.log(minNum); //-12
 ```
-# SPOILER WARNING: SOLUTION AHEAD
-### The Solution
 
-> Unpacking the arr1 using the spread operator and then copying those values to arr2
+
+
+---
+## Solutions
 
 ```javascript
-const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+const arr1 = ["JAN", "FEB", "MAR", "APR", "MAY"];
 let arr2;
 (function() {
   "use strict";
@@ -49,4 +48,6 @@ let arr2;
 })();
 console.log(arr2);
 ```
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+#### Code Explanation
+* Unpacking the arr1 using the spread operator and then copying those values to arr2

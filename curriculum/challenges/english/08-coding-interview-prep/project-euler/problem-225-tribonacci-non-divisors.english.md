@@ -26,7 +26,7 @@ Find the 124th odd number that does not divide any terms of the above sequence.
 ```yml
 tests:
   - text: <code>euler225()</code> should return 2009.
-    testString: assert.strictEqual(euler225(), 2009, '<code>euler225()</code> should return 2009.');
+    testString: assert.strictEqual(euler225(), 2009);
 
 ```
 

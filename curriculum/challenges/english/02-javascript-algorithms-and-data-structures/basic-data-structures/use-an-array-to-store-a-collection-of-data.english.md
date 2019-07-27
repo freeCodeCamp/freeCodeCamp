@@ -55,15 +55,15 @@ We have defined a variable called <code>yourArray</code>. Complete the statement
 ```yml
 tests:
   - text: yourArray is an array
-    testString: assert.strictEqual(Array.isArray(yourArray), true, 'yourArray is an array');
+    testString: assert.strictEqual(Array.isArray(yourArray), true);
   - text: <code>yourArray</code> is at least 5 elements long
-    testString: assert.isAtLeast(yourArray.length, 5, '<code>yourArray</code> is at least 5 elements long');
+    testString: assert.isAtLeast(yourArray.length, 5);
   - text: <code>yourArray</code> contains at least one <code>boolean</code>
-    testString: assert(yourArray.filter( el => typeof el === 'boolean').length >= 1, '<code>yourArray</code> contains at least one <code>boolean</code>');
+    testString: assert(yourArray.filter( el => typeof el === 'boolean').length >= 1);
   - text: <code>yourArray</code> contains at least one <code>number</code>
-    testString: assert(yourArray.filter( el => typeof el === 'number').length >= 1, '<code>yourArray</code> contains at least one <code>number</code>');
+    testString: assert(yourArray.filter( el => typeof el === 'number').length >= 1);
   - text: <code>yourArray</code> contains at least one <code>string</code>
-    testString: assert(yourArray.filter( el => typeof el === 'string').length >= 1, '<code>yourArray</code> contains at least one <code>string</code>');
+    testString: assert(yourArray.filter( el => typeof el === 'string').length >= 1);
 
 ```
 

@@ -22,7 +22,7 @@ Find the sum of the first forty prime factors of R(109).
 ```yml
 tests:
   - text: <code>euler132()</code> should return 843296.
-    testString: assert.strictEqual(euler132(), 843296, '<code>euler132()</code> should return 843296.');
+    testString: assert.strictEqual(euler132(), 843296);
 
 ```
 

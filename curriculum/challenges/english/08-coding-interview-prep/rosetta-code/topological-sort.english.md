@@ -57,15 +57,15 @@ There are two popular algorithms for topological sorting:
 ```yml
 tests:
   - text: <code>topologicalSort</code> is a function.
-    testString: assert(typeof topologicalSort === 'function', '<code>topologicalSort</code> is a function.');
+    testString: assert(typeof topologicalSort === 'function');
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa'], '<code>topologicalSort</code> must return correct library order..');
+    testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL, '<code>topologicalSort</code> must return correct library order..');
+    testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom, '<code>topologicalSort</code> must return correct library order..');
+    testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom);
   - text: <code>topologicalSort</code> must ignore unorderable dependencies..
-    testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable, '<code>topologicalSort</code> must ignore unorderable dependencies..');
+    testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable);
 
 ```
 

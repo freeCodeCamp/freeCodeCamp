@@ -1,7 +1,10 @@
 ---
 title: Use && for a More Concise Conditional
 ---
-## Use && for a More Concise Conditional
+# Use && for a More Concise Conditional
+
+---
+## Problem Explanation
 The example given is 
 ```jsx
 {condition && <p>markup</p>} 
@@ -27,11 +30,19 @@ class MyComponent extends React.Component {
 };
 ```
 
-## Hint:
+
+---
+## Hints
+
+### Hint 1
 
 You don't have to do a full ```if/then``` statement. Just write the condition you are checking.
 
-## Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 As you can see, you don't have to write the full ```if/then``` statement. We only need to check the condition and see if it returns ```true``` or ```false```. In this case, we are checking the value of ```display```. If the value is ```true```, then you return the value to the right of ```&&```, which is ```<h1>Displayed!</h1>```. If the condition is ```false```, it returns nothing.
 
@@ -67,10 +78,15 @@ class MyComponent extends React.Component {
   }
 };
 ```
-Explanation from [ReactJS.org documentation](https://reactjs.org/docs/conditional-rendering.html)
 
-You may embed any expressions in JSX by wrapping them in curly braces. This includes the JavaScript logical && operator. It can be handy for conditionally including an element
 
-It works because in JavaScript, true && expression always evaluates to expression, and false && expression always evaluates to false.
+#### Code Explanation
+* Explanation from [ReactJS.org documentation](https://reactjs.org/docs/conditional-rendering.html)
 
-Therefore, if the condition is true, the element right after && will appear in the output. If it is false, React will ignore and skip it.
+* You may embed any expressions in JSX by wrapping them in curly braces. This includes the JavaScript logical && operator. It can be handy for conditionally including an element
+
+* It works because in JavaScript, true && expression always evaluates to expression, and false && expression always evaluates to false.
+
+* Therefore, if the condition is true, the element right after && will appear in the output. If it is false, React will ignore and skip it.
+
+</details>

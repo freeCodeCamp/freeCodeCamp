@@ -23,7 +23,7 @@ How many primes below one million have this remarkable property?
 ```yml
 tests:
   - text: <code>euler131()</code> should return 173.
-    testString: assert.strictEqual(euler131(), 173, '<code>euler131()</code> should return 173.');
+    testString: assert.strictEqual(euler131(), 173);
 
 ```
 

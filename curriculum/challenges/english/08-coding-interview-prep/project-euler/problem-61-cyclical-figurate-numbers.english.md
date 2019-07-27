@@ -55,7 +55,7 @@ Find the sum of the only ordered set of six cyclic 4-digit numbers for which eac
 ```yml
 tests:
   - text: <code>euler61()</code> should return 28684.
-    testString: assert.strictEqual(euler61(), 28684, '<code>euler61()</code> should return 28684.');
+    testString: assert.strictEqual(euler61(), 28684);
 
 ```
 

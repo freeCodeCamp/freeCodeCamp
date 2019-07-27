@@ -42,9 +42,9 @@ For the answer, please output an object in the following format:
 ```yml
 tests:
   - text: <code>pythagoreanMeans</code> is a function.
-    testString: assert(typeof pythagoreanMeans === 'function', '<code>pythagoreanMeans</code> is a function.');
+    testString: assert(typeof pythagoreanMeans === 'function');
   - text: <code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.
-    testString: assert.deepEqual(pythagoreanMeans(range1), answer1, '<code>pythagoreanMeans([1, 2, ..., 10])</code> should equal the same output above.');
+    testString: assert.deepEqual(pythagoreanMeans(range1), answer1);
 
 ```
 

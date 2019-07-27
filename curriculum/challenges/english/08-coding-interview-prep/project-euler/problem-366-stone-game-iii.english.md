@@ -43,7 +43,7 @@ Give your answer modulo 108.
 ```yml
 tests:
   - text: <code>euler366()</code> should return 88351299.
-    testString: assert.strictEqual(euler366(), 88351299, '<code>euler366()</code> should return 88351299.');
+    testString: assert.strictEqual(euler366(), 88351299);
 
 ```
 

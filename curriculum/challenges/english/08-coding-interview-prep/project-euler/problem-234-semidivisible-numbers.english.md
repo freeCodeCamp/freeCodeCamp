@@ -27,7 +27,7 @@ What is the sum of all semidivisible numbers not exceeding 999966663333 ?
 ```yml
 tests:
   - text: <code>euler234()</code> should return 1259187438574927000.
-    testString: assert.strictEqual(euler234(), 1259187438574927000, '<code>euler234()</code> should return 1259187438574927000.');
+    testString: assert.strictEqual(euler234(), 1259187438574927000);
 
 ```
 

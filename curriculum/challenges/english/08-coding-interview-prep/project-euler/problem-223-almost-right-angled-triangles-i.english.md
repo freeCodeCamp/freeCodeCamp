@@ -22,7 +22,7 @@ How many barely acute triangles are there with perimeter ≤ 25,000,000?
 ```yml
 tests:
   - text: <code>euler223()</code> should return 61614848.
-    testString: assert.strictEqual(euler223(), 61614848, '<code>euler223()</code> should return 61614848.');
+    testString: assert.strictEqual(euler223(), 61614848);
 
 ```
 

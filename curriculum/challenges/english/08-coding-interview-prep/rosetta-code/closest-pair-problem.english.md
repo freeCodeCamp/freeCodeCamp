@@ -81,15 +81,15 @@ For the input, expect the argument to be an array of objects (points) with <code
 ```yml
 tests:
   - text: <code>getClosestPair</code> is a function.
-    testString: assert(typeof getClosestPair === 'function', '<code>getClosestPair</code> is a function.');
+    testString: assert(typeof getClosestPair === 'function');
   - text: Distance should be the following.
-    testString: assert.equal(getClosestPair(points1).distance, answer1.distance, 'Distance should be the following.');
+    testString: assert.equal(getClosestPair(points1).distance, answer1.distance);
   - text: Points should be the following.
-    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair, 'Points should be the following.');
+    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair);
   - text: Distance should be the following.
-    testString: assert.equal(getClosestPair(points2).distance, answer2.distance, 'Distance should be the following.');
+    testString: assert.equal(getClosestPair(points2).distance, answer2.distance);
   - text: Points should be the following.
-    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair, 'Points should be the following.');
+    testString: assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair);
 
 ```
 

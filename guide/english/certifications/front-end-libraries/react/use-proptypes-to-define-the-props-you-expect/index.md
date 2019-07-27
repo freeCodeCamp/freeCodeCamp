@@ -1,8 +1,10 @@
 ---
 title: Use PropTypes to Define the Props You Expect
 ---
-## Use PropTypes to Define the Props You Expect
+# Use PropTypes to Define the Props You Expect
 
+---
+## Problem Explanation
 This challenge has you set a `propTypes` for the `Items` component.
 ```jsx
 const Items = (props) => {
@@ -17,9 +19,16 @@ itemName.propTypes = {
 };
 ```
 
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 Following the Syntax, the following code should be set below the given code for the `quantity` props of `Items` component
 ```jsx
 Items.propTypes = {
   quantity: PropTypes.number.isRequired
 };
 ```
+
+</details>

@@ -1,9 +1,11 @@
 ---
 title: Make a Person
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+# Make a Person
+
+---
+## Problem Explanation
 
 When I started the program I figured I just had to create the six functions mentioned in the details. However, it was not that simple. Creating them as a function was not the right way, I had to create them in a different way to make them a key.
 
@@ -18,42 +20,37 @@ Read the instructions carefully, it is always a good hint in itself to run the c
 *   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" target='_blank' rel='nofollow'>Closures</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model' target='_blank' rel='nofollow'>Details of the Object Model</a>
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+
+---
+## Hints
+
+### Hint 1
 
 Use the **this** notation to create the keys instead of regular functions: This means instead of `var varName = function() {/*...*/}` you should use `this.varName = function() {/*...*/}`
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 The program has a test that checks for how many keys you used, they have to be exactly six, the six mentioned in the details section. This means if you need to work with variables, make them local and not a key: `this.fullName = firstAndLast;`
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 Often the code would not work the way you expect it due to wrong variable names, make sure to check that you spell them the right way. This happens to all of us at some point.
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 4
+### Hint 4
 
 If you are having problems with writing the `setter` methods, below is a template for a `set` method:
 ```js
 this.setFullName = function(input) {
   // Insert your code here
-}
+};
 ```
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
+---
+## Solutions
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-**Solution ahead!**
-
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 ```js
 var Person = function(firstAndLast) {
   var fullName = firstAndLast;
@@ -83,11 +80,11 @@ var Person = function(firstAndLast) {
   };
 };
 
-var bob = new Person('Bob Ross');
+var bob = new Person("Bob Ross");
 bob.getFullName();
 ```
 
-### Code Explanation:
+#### Code Explanation
 
 *   Create a variable that will make a copy of the full name that was passed as a parameter.
 *   Then we can proceed to create the six methods needed and return what is asked for.
@@ -99,8 +96,5 @@ bob.getFullName();
 *   <a href="https://www.freecodecamp.org/challenges/construct-javascript-objects-with-functions" target='_blank' rel='nofollow'>Construct objects with functions</a>
 *   <a href="https://www.freecodecamp.org/challenges/declare-javascript-variables" target='_blank' rel='nofollow'>Declare objects as variables</a>
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+</details>

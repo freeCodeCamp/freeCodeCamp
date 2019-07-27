@@ -30,7 +30,7 @@ Find S(107). Give your answer rounded to four decimal places.
 ```yml
 tests:
   - text: <code>euler441()</code> should return 5000088.8395.
-    testString: assert.strictEqual(euler441(), 5000088.8395, '<code>euler441()</code> should return 5000088.8395.');
+    testString: assert.strictEqual(euler441(), 5000088.8395);
 
 ```
 

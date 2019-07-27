@@ -30,7 +30,7 @@ Find the value of D ≤ 1000 in minimal solutions of x for which the largest val
 ```yml
 tests:
   - text: <code>euler66()</code> should return 661.
-    testString: assert.strictEqual(euler66(), 661, '<code>euler66()</code> should return 661.');
+    testString: assert.strictEqual(euler66(), 661);
 
 ```
 

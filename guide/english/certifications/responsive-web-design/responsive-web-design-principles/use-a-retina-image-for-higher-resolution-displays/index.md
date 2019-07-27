@@ -1,7 +1,13 @@
 ---
 title: Use a Retina Image for Higher Resolution Displays
 ---
-## Use a Retina Image for Higher Resolution Displays
+# Use a Retina Image for Higher Resolution Displays
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Following the instructions:
 
@@ -15,3 +21,5 @@ the style becomes:
   </style>
 ```
 note that the simplest way to make your images appear "retina" (and optimize them for retina displays) is to define their width and height values as only half of what the original file is. 
+
+</details>

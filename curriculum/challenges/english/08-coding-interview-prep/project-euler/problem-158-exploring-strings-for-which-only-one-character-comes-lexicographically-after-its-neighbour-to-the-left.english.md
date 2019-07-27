@@ -27,7 +27,7 @@ What is the maximum value of p(n)?
 ```yml
 tests:
   - text: <code>euler158()</code> should return 409511334375.
-    testString: assert.strictEqual(euler158(), 409511334375, '<code>euler158()</code> should return 409511334375.');
+    testString: assert.strictEqual(euler158(), 409511334375);
 
 ```
 

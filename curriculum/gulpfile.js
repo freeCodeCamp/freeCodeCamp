@@ -5,7 +5,7 @@ const through2 = require('through2');
 const { locale } = require('../config/env.json');
 const { getChallengesForLang } = require('./getChallenges');
 const { testedLangs } = require('./utils');
-const lintMarkdown = require('../tools/lint/lint');
+const lintMarkdown = require('../tools/scripts/lint');
 
 /**
  * Tasks

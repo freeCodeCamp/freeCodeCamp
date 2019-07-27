@@ -67,7 +67,6 @@ const propTypes = {
   isOnline: PropTypes.bool.isRequired,
   isSignedIn: PropTypes.bool,
   landingPage: PropTypes.bool,
-  navigationMenu: PropTypes.element,
   onlineStatusChange: PropTypes.func.isRequired,
   pathname: PropTypes.string.isRequired,
   removeFlashMessage: PropTypes.func.isRequired,
@@ -131,7 +130,6 @@ class DefaultLayout extends Component {
       isOnline,
       isSignedIn,
       landingPage,
-      navigationMenu,
       removeFlashMessage,
       showFooter = true
     } = this.props;
@@ -151,10 +149,7 @@ class DefaultLayout extends Component {
           <style>{fontawesome.dom.css()}</style>
         </Helmet>
         <WithInstantSearch>
-          <Header
-            disableSettings={landingPage}
-            navigationMenu={navigationMenu}
-          />
+          <Header disableSettings={landingPage} />
           <div
             className={`default-layout ${landingPage ? 'landing-page' : ''}`}
           >

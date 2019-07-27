@@ -27,19 +27,19 @@ Write a function that takes IBAN string as parameter. If it is valid return true
 ```yml
 tests:
   - text: <code>isValid</code> should be a function.
-    testString: assert(typeof isValid=='function','<code>isValid</code> should be a function.');
+    testString: assert(typeof isValid=='function');
   - text: <code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return a boolean.
-    testString: assert(typeof isValid('GB82 WEST 1234 5698 7654 32')=='boolean','<code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return a boolean.');
+    testString: assert(typeof isValid('GB82 WEST 1234 5698 7654 32')=='boolean');
   - text: <code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return <code>true</code>.
-    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 32'),true,'<code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return <code>true</code>.');
+    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 32'),true);
   - text: <code>isValid("GB82 WEST 1.34 5698 7654 32")</code> should return <code>false</code>.
-    testString: assert.equal(isValid('GB82 WEST 1.34 5698 7654 32'),false,'<code>isValid("GB82 WEST 1.34 5698 7654 32")</code> should return <code>false</code>.');
+    testString: assert.equal(isValid('GB82 WEST 1.34 5698 7654 32'),false);
   - text: <code>isValid("GB82 WEST 1234 5698 7654 325")</code> should return <code>false</code>.
-    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 325'),false,'<code>isValid("GB82 WEST 1234 5698 7654 325")</code> should return <code>false</code>.');
+    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 325'),false);
   - text: <code>isValid("GB82 TEST 1234 5698 7654 32")</code> should return <code>false</code>.
-    testString: assert.equal(isValid('GB82 TEST 1234 5698 7654 32'),false,'<code>isValid("GB82 TEST 1234 5698 7654 32")</code> should return <code>false</code>.');
+    testString: assert.equal(isValid('GB82 TEST 1234 5698 7654 32'),false);
   - text: <code>isValid("SA03 8000 0000 6080 1016 7519")</code> should return <code>true</code>.
-    testString: assert.equal(isValid('SA03 8000 0000 6080 1016 7519'),true,'<code>isValid("SA03 8000 0000 6080 1016 7519")</code> should return <code>true</code>.');
+    testString: assert.equal(isValid('SA03 8000 0000 6080 1016 7519'),true);
 
 ```
 

@@ -26,7 +26,7 @@ NOTE: This is a much more difficult version of Problem 18. It is not possible to
 ```yml
 tests:
   - text: <code>euler67()</code> should return 7273.
-    testString: assert.strictEqual(euler67(), 7273, '<code>euler67()</code> should return 7273.');
+    testString: assert.strictEqual(euler67(), 7273);
 
 ```
 

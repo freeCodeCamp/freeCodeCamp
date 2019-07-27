@@ -31,7 +31,7 @@ Find ∑S(p) for 5 ≤ p < 108.
 ```yml
 tests:
   - text: <code>euler381()</code> should return 139602943319822.
-    testString: assert.strictEqual(euler381(), 139602943319822, '<code>euler381()</code> should return 139602943319822.');
+    testString: assert.strictEqual(euler381(), 139602943319822);
 
 ```
 

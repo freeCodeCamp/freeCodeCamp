@@ -35,7 +35,7 @@ Find ∑I(n) for 3≤n≤2·107
 ```yml
 tests:
   - text: <code>euler451()</code> should return 153651073760956.
-    testString: assert.strictEqual(euler451(), 153651073760956, '<code>euler451()</code> should return 153651073760956.');
+    testString: assert.strictEqual(euler451(), 153651073760956);
 
 ```
 

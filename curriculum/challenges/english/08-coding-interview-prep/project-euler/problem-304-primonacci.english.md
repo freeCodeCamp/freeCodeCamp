@@ -35,7 +35,7 @@ Give your answer mod 1234567891011.
 ```yml
 tests:
   - text: <code>euler304()</code> should return 283988410192.
-    testString: assert.strictEqual(euler304(), 283988410192, '<code>euler304()</code> should return 283988410192.');
+    testString: assert.strictEqual(euler304(), 283988410192);
 
 ```
 

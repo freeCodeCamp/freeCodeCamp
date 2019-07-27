@@ -1,10 +1,15 @@
 ---
 title: Use @if and @else to Add Logic To Your Styles
 ---
-## Use @if and @else to Add Logic To Your Styles
+# Use @if and @else to Add Logic To Your Styles
 
-## Solution
-```sass
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```scss
 <style type='text/sass'>
   @mixin border-stroke($val) {
     @if $val == light {
@@ -31,4 +36,5 @@ title: Use @if and @else to Add Logic To Your Styles
 
 <div id="box"></div>
 
+</details>
 ```

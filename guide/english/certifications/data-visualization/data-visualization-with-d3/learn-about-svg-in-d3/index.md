@@ -1,7 +1,11 @@
 ---
 title: Learn About SVG in D3
 ---
-## Learn About SVG in D3
+# Learn About SVG in D3
+
+
+---
+## Hints
 
 ### Hint 1
 First ensure that you have appended the SVG node to the document body. You can do this using d3's 'append()' - don't forget to enclose "svg" in quotation marks. 
@@ -9,9 +13,13 @@ First ensure that you have appended the SVG node to the document body. You can d
 ### Hint 2
 To assign CSS properties to the SVG node - in this case 'width' and 'height' - make use of d3's 'attr()'method. You can use the parameters 'w' and 'h' provided, respectively.
 
-### Solution (!!SPOILER ALERT!!)
 
-```
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
 <style>
   svg {
     background-color: pink;
@@ -32,4 +40,5 @@ To assign CSS properties to the SVG node - in this case 'width' and 'height' - m
                  .attr("height",h);
   </script>
 </body>
-```               
+```
+</details>

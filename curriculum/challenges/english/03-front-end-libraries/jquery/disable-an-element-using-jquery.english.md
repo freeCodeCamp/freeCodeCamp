@@ -25,11 +25,11 @@ Disable only the <code>target1</code> button.
 ```yml
 tests:
   - text: Disable your <code>target1</code> button.
-    testString: assert($("#target1") && $("#target1").prop("disabled") && code.match(/["']disabled["'],( true|true)/g), 'Disable your <code>target1</code> button.');
+    testString: assert($("#target1") && $("#target1").prop("disabled") && code.match(/["']disabled["'],( true|true)/g));
   - text: Do not disable any other buttons.
-    testString: assert($("#target2") && !$("#target2").prop("disabled"), 'Do not disable any other buttons.');
+    testString: assert($("#target2") && !$("#target2").prop("disabled"));
   - text: Only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/disabled[^<]*>/g), 'Only use jQuery to add these classes to the element.');
+    testString: assert(!code.match(/disabled[^<]*>/g));
 
 ```
 

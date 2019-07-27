@@ -25,7 +25,7 @@ Find S(1011) mod 109.
 ```yml
 tests:
   - text: <code>euler439()</code> should return 968697378.
-    testString: assert.strictEqual(euler439(), 968697378, '<code>euler439()</code> should return 968697378.');
+    testString: assert.strictEqual(euler439(), 968697378);
 
 ```
 

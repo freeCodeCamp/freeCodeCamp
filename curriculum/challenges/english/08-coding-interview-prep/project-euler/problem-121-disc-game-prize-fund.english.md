@@ -23,7 +23,7 @@ Find the maximum prize fund that should be allocated to a single game in which f
 ```yml
 tests:
   - text: <code>euler121()</code> should return 2269.
-    testString: assert.strictEqual(euler121(), 2269, '<code>euler121()</code> should return 2269.');
+    testString: assert.strictEqual(euler121(), 2269);
 
 ```
 

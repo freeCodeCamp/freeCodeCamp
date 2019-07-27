@@ -27,7 +27,7 @@ For 1 ≤ k ≤ 200, find ∑ m(k).
 ```yml
 tests:
   - text: <code>euler122()</code> should return 1582.
-    testString: assert.strictEqual(euler122(), 1582, '<code>euler122()</code> should return 1582.');
+    testString: assert.strictEqual(euler122(), 1582);
 
 ```
 

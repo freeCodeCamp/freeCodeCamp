@@ -26,7 +26,7 @@ What is ∑ N(n) for 1 ≤ n ≤ 10?
 ```yml
 tests:
   - text: <code>euler174()</code> should return 209566.
-    testString: assert.strictEqual(euler174(), 209566, '<code>euler174()</code> should return 209566.');
+    testString: assert.strictEqual(euler174(), 209566);
 
 ```
 

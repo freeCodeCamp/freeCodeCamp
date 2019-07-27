@@ -43,11 +43,11 @@ Write a <code>joinDogFraternity</code> function that takes a <code>candidate</co
 ```yml
 tests:
   - text: <code>joinDogFraternity</code> should be defined as a function.
-    testString: assert(typeof(joinDogFraternity) === 'function', '<code>joinDogFraternity</code> should be defined as a function.');
+    testString: assert(typeof(joinDogFraternity) === 'function');
   - text: <code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.
-    testString: assert(joinDogFraternity(new Dog("")) === true, '<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.');
+    testString: assert(joinDogFraternity(new Dog("")) === true);
   - text: <code>joinDogFraternity</code> should use the <code>constructor</code> property.
-    testString: assert(/\.constructor/.test(code) && !/instanceof/.test(code), '<code>joinDogFraternity</code> should use the <code>constructor</code> property.');
+    testString: assert(/\.constructor/.test(code) && !/instanceof/.test(code));
 
 ```
 
