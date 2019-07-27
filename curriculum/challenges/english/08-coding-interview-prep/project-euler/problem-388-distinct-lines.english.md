@@ -29,7 +29,7 @@ Find D(1010). Give as your answer the first nine digits followed by the last nin
 ```yml
 tests:
   - text: <code>euler388()</code> should return 831907372805130000.
-    testString: assert.strictEqual(euler388(), 831907372805130000, '<code>euler388()</code> should return 831907372805130000.');
+    testString: assert.strictEqual(euler388(), 831907372805130000);
 
 ```
 

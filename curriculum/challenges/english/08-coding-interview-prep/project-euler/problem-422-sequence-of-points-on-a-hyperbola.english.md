@@ -32,7 +32,7 @@ For n = 7, the answer would have been: 806236837.
 ```yml
 tests:
   - text: <code>euler422()</code> should return 92060460.
-    testString: assert.strictEqual(euler422(), 92060460, '<code>euler422()</code> should return 92060460.');
+    testString: assert.strictEqual(euler422(), 92060460);
 
 ```
 

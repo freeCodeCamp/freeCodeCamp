@@ -29,7 +29,7 @@ Find S(107).
 ```yml
 tests:
   - text: <code>euler373()</code> should return 727227472448913.
-    testString: assert.strictEqual(euler373(), 727227472448913, '<code>euler373()</code> should return 727227472448913.');
+    testString: assert.strictEqual(euler373(), 727227472448913);
 
 ```
 
