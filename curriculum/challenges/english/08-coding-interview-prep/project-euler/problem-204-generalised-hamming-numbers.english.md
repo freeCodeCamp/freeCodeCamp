@@ -27,7 +27,7 @@ How many generalised Hamming numbers of type 100 are there which don't exceed 10
 ```yml
 tests:
   - text: <code>euler204()</code> should return 2944730.
-    testString: assert.strictEqual(euler204(), 2944730, '<code>euler204()</code> should return 2944730.');
+    testString: assert.strictEqual(euler204(), 2944730);
 
 ```
 

@@ -1,10 +1,15 @@
 ---
 title: Target Elements by id Using jQuery
 ---
-## Target Elements by id Using jQuery
+# Target Elements by id Using jQuery
 
-## Solution 
-```javascript
+
+---
+## Solutions 
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
 <script>
   $(document).ready(function() {
     $("button").addClass("animated bounce");
@@ -34,5 +39,6 @@ title: Target Elements by id Using jQuery
     </div>
   </div>
 </div>
-
 ```
+
+</details>

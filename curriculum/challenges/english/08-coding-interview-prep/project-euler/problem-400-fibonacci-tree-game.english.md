@@ -41,7 +41,7 @@ Find f(10000). Give the last 18 digits of your answer.
 ```yml
 tests:
   - text: <code>euler400()</code> should return 438505383468410600.
-    testString: assert.strictEqual(euler400(), 438505383468410600, '<code>euler400()</code> should return 438505383468410600.');
+    testString: assert.strictEqual(euler400(), 438505383468410600);
 
 ```
 

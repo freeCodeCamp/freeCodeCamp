@@ -36,7 +36,7 @@ Find E(40) rounded to 10 decimal places behind the decimal point.
 ```yml
 tests:
   - text: <code>euler394()</code> should return 3.2370342194.
-    testString: assert.strictEqual(euler394(), 3.2370342194, '<code>euler394()</code> should return 3.2370342194.');
+    testString: assert.strictEqual(euler394(), 3.2370342194);
 
 ```
 

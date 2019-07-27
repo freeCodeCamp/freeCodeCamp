@@ -23,9 +23,9 @@ Add the CSS property <code>flex-shrink</code> to both <code>#box-1</code> and <c
 ```yml
 tests:
   - text: The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.
-    testString: assert($('#box-1').css('flex-shrink') == '1', 'The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.');
+    testString: assert($('#box-1').css('flex-shrink') == '1');
   - text: The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.
-    testString: assert($('#box-2').css('flex-shrink') == '2', 'The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.');
+    testString: assert($('#box-2').css('flex-shrink') == '2');
 
 ```
 

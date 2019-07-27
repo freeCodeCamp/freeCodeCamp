@@ -27,13 +27,13 @@ However, the order of the <code>class</code> declarations in the <code>&#60;styl
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: assert($("h1").hasClass("pink-text"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');
+    testString: assert($("h1").hasClass("pink-text"));
   - text: Your <code>h1</code> element should have the class <code>blue-text</code>.
-    testString: assert($("h1").hasClass("blue-text"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');
+    testString: assert($("h1").hasClass("blue-text"));
   - text: Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.
-    testString: assert($(".pink-text").hasClass("blue-text"), 'Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.');
+    testString: assert($(".pink-text").hasClass("blue-text"));
   - text: Your <code>h1</code> element should be blue.
-    testString: assert($("h1").css("color") === "rgb(0, 0, 255)", 'Your <code>h1</code> element should be blue.');
+    testString: assert($("h1").css("color") === "rgb(0, 0, 255)");
 
 ```
 

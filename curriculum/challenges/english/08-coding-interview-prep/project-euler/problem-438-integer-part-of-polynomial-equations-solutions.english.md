@@ -32,7 +32,7 @@ Find ∑S(t) for n = 7.
 ```yml
 tests:
   - text: <code>euler438()</code> should return 2046409616809.
-    testString: assert.strictEqual(euler438(), 2046409616809, '<code>euler438()</code> should return 2046409616809.');
+    testString: assert.strictEqual(euler438(), 2046409616809);
 
 ```
 

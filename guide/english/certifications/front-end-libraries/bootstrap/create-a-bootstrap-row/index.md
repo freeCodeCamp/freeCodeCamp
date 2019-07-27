@@ -1,7 +1,7 @@
 ---
 title: Create a Bootstrap Row
 ---
-## Create a Bootstrap Row
+# Create a Bootstrap Row
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/create-a-bootstrap-row/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

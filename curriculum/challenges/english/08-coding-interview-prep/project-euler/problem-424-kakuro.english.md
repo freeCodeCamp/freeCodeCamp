@@ -40,7 +40,7 @@ Find the sum of the answers for the 200 puzzles.
 ```yml
 tests:
   - text: <code>euler424()</code> should return 1059760019628.
-    testString: assert.strictEqual(euler424(), 1059760019628, '<code>euler424()</code> should return 1059760019628.');
+    testString: assert.strictEqual(euler424(), 1059760019628);
 
 ```
 

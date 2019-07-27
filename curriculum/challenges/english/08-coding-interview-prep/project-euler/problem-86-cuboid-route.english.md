@@ -25,7 +25,7 @@ Find the least value of M such that the number of solutions first exceeds one mi
 ```yml
 tests:
   - text: <code>euler86()</code> should return 1818.
-    testString: assert.strictEqual(euler86(), 1818, '<code>euler86()</code> should return 1818.');
+    testString: assert.strictEqual(euler86(), 1818);
 
 ```
 

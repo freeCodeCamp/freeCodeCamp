@@ -22,7 +22,7 @@ Enter the rightmost 16 digits as your answer.
 ```yml
 tests:
   - text: <code>euler249()</code> should return 9275262564250418.
-    testString: assert.strictEqual(euler249(), 9275262564250418, '<code>euler249()</code> should return 9275262564250418.');
+    testString: assert.strictEqual(euler249(), 9275262564250418);
 
 ```
 

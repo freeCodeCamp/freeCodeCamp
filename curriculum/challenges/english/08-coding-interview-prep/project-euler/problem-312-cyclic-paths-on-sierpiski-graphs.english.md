@@ -38,7 +38,7 @@ Find C(C(C(10 000))) mod 138.
 ```yml
 tests:
   - text: <code>euler312()</code> should return 324681947.
-    testString: assert.strictEqual(euler312(), 324681947, '<code>euler312()</code> should return 324681947.');
+    testString: assert.strictEqual(euler312(), 324681947);
 
 ```
 

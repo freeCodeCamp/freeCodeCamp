@@ -43,7 +43,7 @@ Let Fk be the Fibonacci numbers: Fk = Fk-1 + Fk-2 with base cases F1 = F2 = 1.Fi
 ```yml
 tests:
   - text: <code>euler406()</code> should return 36813.12757207.
-    testString: assert.strictEqual(euler406(), 36813.12757207, '<code>euler406()</code> should return 36813.12757207.');
+    testString: assert.strictEqual(euler406(), 36813.12757207);
 
 ```
 

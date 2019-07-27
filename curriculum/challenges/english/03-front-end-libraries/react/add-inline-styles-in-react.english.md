@@ -22,17 +22,17 @@ If you have a large set of styles, you can assign a style <code>object</code> to
 ```yml
 tests:
   - text: The <code>styles</code> variable should be an <code>object</code> with three properties.
-    testString: assert(Object.keys(styles).length === 3, 'The <code>styles</code> variable should be an <code>object</code> with three properties.');
+    testString: assert(Object.keys(styles).length === 3);
   - text: The <code>styles</code> variable should have a <code>color</code> property set to a value of <code>purple</code>.
-    testString: assert(styles.color === 'purple', 'The <code>styles</code> variable should have a <code>color</code> property set to a value of <code>purple</code>.');
+    testString: assert(styles.color === 'purple');
   - text: The <code>styles</code> variable should have a <code>fontSize</code> property set to a value of <code>40</code>.
-    testString: assert(styles.fontSize === 40, 'The <code>styles</code> variable should have a <code>fontSize</code> property set to a value of <code>40</code>.');
+    testString: assert(styles.fontSize === 40);
   - text: The <code>styles</code> variable should have a <code>border</code> property set to a value of <code>2px solid purple</code>.
-    testString: assert(styles.border === "2px solid purple", 'The <code>styles</code> variable should have a <code>border</code> property set to a value of <code>2px solid purple</code>.');
+    testString: assert(styles.border === "2px solid purple");
   - text: The component should render a <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })(), 'The component should render a <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return mockedComponent.type() === 'div'; })());
   - text: The <code>div</code> element should have its styles defined by the <code>styles</code> object.
-    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === "purple" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === "2px solid purple"); })(), 'The <code>div</code> element should have its styles defined by the <code>styles</code> object.');
+    testString: assert((function() { const mockedComponent = Enzyme.shallow(React.createElement(Colorful)); return (mockedComponent.props().style.color === "purple" && mockedComponent.props().style.fontSize === 40 && mockedComponent.props().style.border === "2px solid purple"); })());
 
 ```
 

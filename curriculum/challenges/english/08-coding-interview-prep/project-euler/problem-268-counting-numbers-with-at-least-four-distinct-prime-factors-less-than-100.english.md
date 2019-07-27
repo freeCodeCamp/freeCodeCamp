@@ -22,7 +22,7 @@ Find how many positive integers less than 1016 are divisible by at least four di
 ```yml
 tests:
   - text: <code>euler268()</code> should return 785478606870985.
-    testString: assert.strictEqual(euler268(), 785478606870985, '<code>euler268()</code> should return 785478606870985.');
+    testString: assert.strictEqual(euler268(), 785478606870985);
 
 ```
 

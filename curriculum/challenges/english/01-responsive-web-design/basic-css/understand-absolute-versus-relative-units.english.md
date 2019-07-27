@@ -24,9 +24,9 @@ Add a <code>padding</code> property to the element with class <code>red-box</cod
 ```yml
 tests:
   - text: Your <code>red-box</code> class should have a <code>padding</code> property.
-    testString: assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', 'Your <code>red-box</code> class should have a <code>padding</code> property.');
+    testString: assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px');
   - text: Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.
-    testString: assert(code.match(/\.red-box\s*?{(\s|.)*?padding:\s*?1\.5em/gi), 'Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.');
+    testString: assert(code.match(/\.red-box\s*?{(\s|.)*?padding:\s*?1\.5em/gi));
 
 ```
 

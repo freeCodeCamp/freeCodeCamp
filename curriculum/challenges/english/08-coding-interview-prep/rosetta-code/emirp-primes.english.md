@@ -27,15 +27,15 @@ The function should accept two parameters. The first will receive <code>n</code>
 ```yml
 tests:
   - text: <code>emirps</code> is a function.
-    testString: assert(typeof emirps === 'function', '<code>emirps</code> is a function.');
+    testString: assert(typeof emirps === 'function');
   - text: <code>emirps(20,true)</code> should return <code>[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]</code>
-    testString: assert.deepEqual(emirps(20, true), [13, 17, 31, 37, 71, 73, 79, 97, 107, 113, 149, 157, 167, 179, 199, 311, 337, 347, 359, 389], '<code>emirps(20,true)</code> should return <code>[13,17,31,37,71,73,79,97,107,113,149,157,167,179,199,311,337,347,359,389]</code>');
+    testString: assert.deepEqual(emirps(20, true), [13, 17, 31, 37, 71, 73, 79, 97, 107, 113, 149, 157, 167, 179, 199, 311, 337, 347, 359, 389]);
   - text: <code>emirps(10000)</code> should return <code>948349</code>
-    testString: assert.deepEqual(emirps(10000), 948349, '<code>emirps(10000)</code> should return <code>948349</code>');
+    testString: assert.deepEqual(emirps(10000), 948349);
   - text: <code>emirps([7700,8000],true)</code> should return <code>[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]</code>
-    testString: assert.deepEqual(emirps([7700, 8000], true), [7717, 7757, 7817, 7841, 7867, 7879, 7901, 7927, 7949, 7951, 7963], '<code>emirps([7700,8000],true)</code> should return <code>[7717,7757,7817,7841,7867,7879,7901,7927,7949,7951,7963]</code>');
+    testString: assert.deepEqual(emirps([7700, 8000], true), [7717, 7757, 7817, 7841, 7867, 7879, 7901, 7927, 7949, 7951, 7963]);
   - text: <code>emirps([7700,8000],true)</code> should return <code>11</code>
-    testString: assert.deepEqual(emirps([7700, 8000], false), 11, '<code>emirps([7700,8000],true)</code> should return <code>11</code>');
+    testString: assert.deepEqual(emirps([7700, 8000], false), 11);
 
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: Create Bootstrap Wells
 ---
-## Create Bootstrap Wells
+# Create Bootstrap Wells
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/create-bootstrap-wells/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

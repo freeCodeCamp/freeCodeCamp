@@ -28,7 +28,7 @@ Find the sum of all numbers n, 1 &lt n < 1010 such that φ(n2) is a cube.
 ```yml
 tests:
   - text: <code>euler342()</code> should return 5943040885644.
-    testString: assert.strictEqual(euler342(), 5943040885644, '<code>euler342()</code> should return 5943040885644.');
+    testString: assert.strictEqual(euler342(), 5943040885644);
 
 ```
 

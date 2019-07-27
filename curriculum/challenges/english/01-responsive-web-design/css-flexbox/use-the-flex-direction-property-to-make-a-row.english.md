@@ -23,7 +23,7 @@ Add the CSS property <code>flex-direction</code> to the <code>#box-container</co
 ```yml
 tests:
   - text: The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.
-    testString: assert($('#box-container').css('flex-direction') == 'row-reverse', 'The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.');
+    testString: assert($('#box-container').css('flex-direction') == 'row-reverse');
 
 ```
 

@@ -21,13 +21,13 @@ Find the sum of all the multiples of 3 or 5 below the provided parameter value <
 ```yml
 tests:
   - text: <code>multiplesOf3and5(1000)</code> should return 233168.
-    testString: assert.strictEqual(multiplesOf3and5(1000), 233168, '<code>multiplesOf3and5(1000)</code> should return 233168.');
+    testString: assert.strictEqual(multiplesOf3and5(1000), 233168);
   - text: <code>multiplesOf3and5(49)</code> should return 543.
-    testString: assert.strictEqual(multiplesOf3and5(49), 543, '<code>multiplesOf3and5(49)</code> should return 543.');
+    testString: assert.strictEqual(multiplesOf3and5(49), 543);
   - text: <code>multiplesOf3and5(19564)</code> should return 89301183.
-    testString: assert.strictEqual(multiplesOf3and5(19564), 89301183, '<code>multiplesOf3and5(19564)</code> should return 89301183.');
+    testString: assert.strictEqual(multiplesOf3and5(19564), 89301183);
   - text: Your function is not returning the correct result using our tests values.
-    testString: assert.strictEqual(multiplesOf3and5(8456), 16687353, 'Your function is not returning the correct result using our tests values.');
+    testString: assert.strictEqual(multiplesOf3and5(8456), 16687353);
 
 ```
 

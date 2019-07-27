@@ -1,7 +1,7 @@
 ---
 title: Certifications
 ---
-## Certifications
+# Certifications
 
 ### Overview
 

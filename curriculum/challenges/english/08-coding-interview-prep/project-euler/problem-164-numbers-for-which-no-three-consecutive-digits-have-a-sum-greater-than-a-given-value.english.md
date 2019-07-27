@@ -20,7 +20,7 @@ How many 20 digit numbers n (without any leading zero) exist such that no three 
 ```yml
 tests:
   - text: <code>euler164()</code> should return 378158756814587.
-    testString: assert.strictEqual(euler164(), 378158756814587, '<code>euler164()</code> should return 378158756814587.');
+    testString: assert.strictEqual(euler164(), 378158756814587);
 
 ```
 

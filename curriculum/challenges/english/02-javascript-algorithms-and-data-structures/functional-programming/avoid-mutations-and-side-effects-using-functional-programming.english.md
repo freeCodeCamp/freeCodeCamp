@@ -25,9 +25,9 @@ Fill in the code for the function <code>incrementer</code> so it returns the val
 ```yml
 tests:
   - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.
-    testString: assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');
+    testString: assert(fixedValue === 4);
   - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
-    testString: assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');
+    testString: assert(newValue === 5);
 
 ```
 

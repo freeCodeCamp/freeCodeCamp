@@ -23,7 +23,7 @@ Although there exists no rectangular grid that contains exactly two million rect
 ```yml
 tests:
   - text: <code>euler85()</code> should return 2772.
-    testString: assert.strictEqual(euler85(), 2772, '<code>euler85()</code> should return 2772.');
+    testString: assert.strictEqual(euler85(), 2772);
 
 ```
 

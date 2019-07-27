@@ -27,15 +27,15 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>addTogether(2, 3)</code> should return 5.
-    testString: assert.deepEqual(addTogether(2, 3), 5, '<code>addTogether(2, 3)</code> should return 5.');
+    testString: assert.deepEqual(addTogether(2, 3), 5);
   - text: <code>addTogether(2)(3)</code> should return 5.
-    testString: assert.deepEqual(addTogether(2)(3), 5, '<code>addTogether(2)(3)</code> should return 5.');
+    testString: assert.deepEqual(addTogether(2)(3), 5);
   - text: <code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.
-    testString: assert.isUndefined(addTogether("http://bit.ly/IqT6zt"), '<code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.');
+    testString: assert.isUndefined(addTogether("http://bit.ly/IqT6zt"));
   - text: <code>addTogether(2, "3")</code> should return undefined.
-    testString: assert.isUndefined(addTogether(2, "3"), '<code>addTogether(2, "3")</code> should return undefined.');
+    testString: assert.isUndefined(addTogether(2, "3"));
   - text: <code>addTogether(2)([3])</code> should return undefined.
-    testString: assert.isUndefined(addTogether(2)([3]), '<code>addTogether(2)([3])</code> should return undefined.');
+    testString: assert.isUndefined(addTogether(2)([3]));
 
 ```
 

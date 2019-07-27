@@ -39,7 +39,7 @@ Find the sum of the first four engineers’ paradises.
 ```yml
 tests:
   - text: <code>euler263()</code> should return 2039506520.
-    testString: assert.strictEqual(euler263(), 2039506520, '<code>euler263()</code> should return 2039506520.');
+    testString: assert.strictEqual(euler263(), 2039506520);
 
 ```
 

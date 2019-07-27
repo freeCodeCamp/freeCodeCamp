@@ -1,7 +1,7 @@
 ---
 title: Use Abbreviated Hex Code
 ---
-## Use Abbreviated Hex Code
+# Use Abbreviated Hex Code
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-abbreviated-hex-code/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

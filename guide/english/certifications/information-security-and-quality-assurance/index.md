@@ -1,7 +1,7 @@
 ---
 title: Information Security and Quality Assurance
 ---
-## Information Security and Quality Assurance
+# Information Security and Quality Assurance
 
 FreeCodeCamp's Information Security And Quality Assurance certification covers two distinct fields of development - Information Security and Quality Assurance.
 
@@ -26,6 +26,6 @@ BDD sets forth clear acceptance criteria to test your software, and makes it eas
 
 FreeCodeCamp's Quality Assurance component of the curriculum focuses on testing using Chai, an assertion library for node.
 
-### Resources
+#### Relevant Links
 - [Chai](https://www.chaijs.com/)
 - [HelmetJS](https://helmetjs.github.io/)

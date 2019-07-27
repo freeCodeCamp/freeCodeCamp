@@ -1,59 +1,57 @@
 ---
 title: Return Largest Numbers in Arrays
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+# Return Largest Numbers in Arrays
+
+---
+## Problem Explanation
 
 You will get an array that contains sub arrays of numbers and you need to return an array with the largest number from each of the sub arrays.
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
-You will need to keep track of the array with the answer and the largest number of each sub-array.
+---
+## Hints
 
-> _try to solve the problem now_
+### Hint 1
+You will get an array that contains sub arrays of numbers and you need to return an array with the largest number from each of the sub arrays. You will need to keep track of the array with the answer and the largest number of each sub-array.
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+
+### Hint 2
 
 You can work with multidimensional arrays by `Array[Index][SubIndex]`
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
-
+### Hint 3
 
 Pay close attention to the timing of the storing of variables when working with loops
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
+---
+## Solutions
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
-
-**Solutions ahead!**
-
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 **(Procedural approach)**
 
-    function largestOfFour(arr) {
-      var results = [];
-      for (var n = 0; n < arr.length; n++) {
-        var largestNumber = arr[n][0];
-        for (var sb = 1; sb < arr[n].length; sb++) {
-          if (arr[n][sb] > largestNumber) {
-            largestNumber = arr[n][sb];
-          }
-        }
-
-        results[n] = largestNumber;
+```js
+function largestOfFour(arr) {
+  var results = [];
+  for (var n = 0; n < arr.length; n++) {
+    var largestNumber = arr[n][0];
+    for (var sb = 1; sb < arr[n].length; sb++) {
+      if (arr[n][sb] > largestNumber) {
+        largestNumber = arr[n][sb];
       }
-
-      return results;
     }
 
+    results[n] = largestNumber;
+  }
 
-### Code Explanation:
+  return results;
+}
+```
+
+#### Code Explanation
 
 *   Create a variable to store the _results_ as an array.
 *   Create an outer loop to iterate through the outer array.
@@ -67,20 +65,23 @@ Pay close attention to the timing of the storing of variables when working with 
 
 *   <a href='http://forum.freecodecamp.com/t/javascript-for-loop/14666s-Explained' target='_blank' rel='nofollow'>For loops</a>
 
-## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
+</details>
+
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
 
 **(Declarative approach)**
 
-    function largestOfFour(arr) {
-      return arr.map(function(group){
-        return group.reduce(function(prev, current) {
-          return (current > prev) ? current : prev;
-        });
-      });
-    }
+```js
+function largestOfFour(arr) {
+  return arr.map(function(group) {
+    return group.reduce(function(prev, current) {
+      return current > prev ? current : prev;
+    });
+  });
+}
+```
 
-
-### Code Explanation:
+#### Code Explanation
 
 *   we map all items within the main array to a new array using `Array.prototype.map()` and return this array as the final result
 *   within each inner array, we reduce its contents down to a single value using `Array.prototype.reduce()`
@@ -93,18 +94,21 @@ Pay close attention to the timing of the storing of variables when working with 
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-reduce/14299' target='_blank' rel='nofollow'>Array.prototype.reduce()</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-ternary-operator/15973' target='_blank' rel='nofollow'>Ternary Operators</a>
 
-## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
+</details>
+
+<details><summary>Solution 3 (Click to Show/Hide)</summary>
 
 **(Declarative approach)**
 
-    function largestOfFour(arr) {
-      return arr.map(Function.apply.bind(Math.max, null));
-    }
+```js
+function largestOfFour(arr) {
+  return arr.map(Function.apply.bind(Math.max, null));
+}
+```
 
+#### Code Explanation
 
-### Code Explanation:
-
-TL;DR: We build a special callback function (using the `Function.bind` method), that works just like `Math.max` but also has `Function.prototype.apply`'s ability to take arrays as its arguments ![:smiley:](https://forum.freecodecamp.com/images/emoji/emoji_one/smiley.png?v=3 ":smiley:")
+TL;DR: We build a special callback function (using the `Function.bind` method), that works just like `Math.max` but also has `Function.prototype.apply`'s ability to take arrays as its arguments.
 
 *   We start by mapping through the elements inside the main array. Meaning each one of the inner arrays.
 *   Now the need a callback function to find the max of each inner array provided by the map.
@@ -137,9 +141,4 @@ Here we're passing `null` as the _context_ of the `Function.prototype.apply` met
 *   <a href ='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max' target='_blank' rel='nofollow'> Math.max</a>
 *   <a href='http://devdocs.io/#q=js+Function+apply' target='_blank' rel='nofollow'>Function.prototype.apply on DevDocs</a>
 *   <a href='http://devdocs.io/#q=js+Function+bind' target='_blank' rel='nofollow'>Function.bind on DevDocs</a>
-
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
-
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
+</details>

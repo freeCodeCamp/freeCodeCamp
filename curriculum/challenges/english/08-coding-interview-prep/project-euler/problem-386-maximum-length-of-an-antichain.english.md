@@ -30,7 +30,7 @@ Find ΣN(n) for 1 ≤ n ≤ 108
 ```yml
 tests:
   - text: <code>euler386()</code> should return 528755790.
-    testString: assert.strictEqual(euler386(), 528755790, '<code>euler386()</code> should return 528755790.');
+    testString: assert.strictEqual(euler386(), 528755790);
 
 ```
 

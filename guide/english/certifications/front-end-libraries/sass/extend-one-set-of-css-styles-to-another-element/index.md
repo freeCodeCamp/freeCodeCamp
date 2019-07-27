@@ -1,13 +1,21 @@
 ---
 title: Extend One Set of CSS Styles to Another Element
 ---
-## Extend One Set of CSS Styles to Another Element
+# Extend One Set of CSS Styles to Another Element
 
-### Hint
+
+---
+## Hints
+
+### Hint 1
 
 Use `@extend`
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Use `@extend` to extend the `info` class into `info-important` like:
 
@@ -34,4 +42,5 @@ Use `@extend` to extend the `info` class into `info-important` like:
 <div class="info">
   <p>This is a simple post. It has basic styling and can be extended for other uses.</p>
 </div>
-```
+
+</details>

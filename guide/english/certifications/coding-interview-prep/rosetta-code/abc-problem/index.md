@@ -1,7 +1,7 @@
 ---
 title: ABC Problem
 ---
-## ABC Problem
+# ABC Problem
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/abc-problem/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

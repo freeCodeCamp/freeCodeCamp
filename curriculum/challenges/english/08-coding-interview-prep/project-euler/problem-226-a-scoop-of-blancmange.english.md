@@ -29,7 +29,7 @@ What area under the blancmange curve is enclosed by C?Give your answer rounded t
 ```yml
 tests:
   - text: <code>euler226()</code> should return 0.11316017.
-    testString: assert.strictEqual(euler226(), 0.11316017, '<code>euler226()</code> should return 0.11316017.');
+    testString: assert.strictEqual(euler226(), 0.11316017);
 
 ```
 

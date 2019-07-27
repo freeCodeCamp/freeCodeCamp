@@ -25,7 +25,7 @@ How many starting numbers below ten million will arrive at 89?
 ```yml
 tests:
   - text: <code>euler92()</code> should return 8581146.
-    testString: assert.strictEqual(euler92(), 8581146, '<code>euler92()</code> should return 8581146.');
+    testString: assert.strictEqual(euler92(), 8581146);
 
 ```
 

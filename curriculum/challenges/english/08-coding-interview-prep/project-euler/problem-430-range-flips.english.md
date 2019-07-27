@@ -34,7 +34,7 @@ Give your answer rounded to 2 decimal places behind the decimal point.
 ```yml
 tests:
   - text: <code>euler430()</code> should return 5000624921.38.
-    testString: assert.strictEqual(euler430(), 5000624921.38, '<code>euler430()</code> should return 5000624921.38.');
+    testString: assert.strictEqual(euler430(), 5000624921.38);
 
 ```
 

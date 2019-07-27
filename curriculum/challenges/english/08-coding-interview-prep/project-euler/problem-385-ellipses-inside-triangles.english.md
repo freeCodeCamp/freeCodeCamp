@@ -43,7 +43,7 @@ Find A(1 000 000 000).
 ```yml
 tests:
   - text: <code>euler385()</code> should return 3776957309612154000.
-    testString: assert.strictEqual(euler385(), 3776957309612154000, '<code>euler385()</code> should return 3776957309612154000.');
+    testString: assert.strictEqual(euler385(), 3776957309612154000);
 
 ```
 

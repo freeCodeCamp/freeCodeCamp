@@ -33,7 +33,7 @@ If b+d < 100 000 000, how many distinct triplets (a,b,d) are there such that p
 ```yml
 tests:
   - text: <code>euler299()</code> should return 549936643.
-    testString: assert.strictEqual(euler299(), 549936643, '<code>euler299()</code> should return 549936643.');
+    testString: assert.strictEqual(euler299(), 549936643);
 
 ```
 

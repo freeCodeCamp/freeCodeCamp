@@ -82,7 +82,7 @@
         "eslint --fix",
         "git add"
       ],
-      "*.md": "node ./tools/lint/lint.js",
+      "*.md": "node ./tools/scripts/lint/index.js",
       "*.css": [
         "prettier --write",
         "git add"

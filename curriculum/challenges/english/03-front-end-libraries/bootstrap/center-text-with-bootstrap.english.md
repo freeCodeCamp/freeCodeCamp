@@ -22,9 +22,9 @@ Remember that you can add several classes to the same element by separating each
 ```yml
 tests:
   - text: Your <code>h2</code> element should be centered by applying the class <code>text-center</code>
-    testString: assert($("h2").hasClass("text-center"), 'Your <code>h2</code> element should be centered by applying the class <code>text-center</code>');
+    testString: assert($("h2").hasClass("text-center"));
   - text: Your <code>h2</code> element should still have the class <code>red-text</code>
-    testString: assert($("h2").hasClass("red-text"), 'Your <code>h2</code> element should still have the class <code>red-text</code>');
+    testString: assert($("h2").hasClass("red-text"));
 
 ```
 

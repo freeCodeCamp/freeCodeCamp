@@ -22,19 +22,19 @@ Add the CSS property <code>display: flex</code> to all of the following items - 
 ```yml
 tests:
   - text: Your <code>header</code> should have a <code>display</code> property set to flex.
-    testString: assert($('header').css('display') == 'flex', 'Your <code>header</code> should have a <code>display</code> property set to flex.');
+    testString: assert($('header').css('display') == 'flex');
   - text: Your <code>footer</code> should have a <code>display</code> property set to flex.
-    testString: assert($('footer').css('display') == 'flex', 'Your <code>footer</code> should have a <code>display</code> property set to flex.');
+    testString: assert($('footer').css('display') == 'flex');
   - text: Your <code>h3</code> should have a <code>display</code> property set to flex.
-    testString: assert($('h3').css('display') == 'flex', 'Your <code>h3</code> should have a <code>display</code> property set to flex.');
+    testString: assert($('h3').css('display') == 'flex');
   - text: Your <code>h4</code> should have a <code>display</code> property set to flex.
-    testString: assert($('h4').css('display') == 'flex', 'Your <code>h4</code> should have a <code>display</code> property set to flex.');
+    testString: assert($('h4').css('display') == 'flex');
   - text: Your <code>.profile-name</code> should have a <code>display</code> property set to flex.
-    testString: assert($('.profile-name').css('display') == 'flex', 'Your <code>.profile-name</code> should have a <code>display</code> property set to flex.');
+    testString: assert($('.profile-name').css('display') == 'flex');
   - text: Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.
-    testString: assert($('.follow-btn').css('display') == 'flex', 'Your <code>.follow-btn</code> should have a <code>display</code> property set to flex.');
+    testString: assert($('.follow-btn').css('display') == 'flex');
   - text: Your <code>.stats</code> should have a <code>display</code> property set to flex.
-    testString: assert($('.stats').css('display') == 'flex', 'Your <code>.stats</code> should have a <code>display</code> property set to flex.');
+    testString: assert($('.stats').css('display') == 'flex');
 
 ```
 

@@ -22,15 +22,15 @@ By considering the terms in the Fibonacci sequence that do not exceed the <code>
 ```yml
 tests:
   - text: <code>fiboEvenSum(10)</code> should return 44.
-    testString: assert.strictEqual(fiboEvenSum(10), 44, '<code>fiboEvenSum(10)</code> should return 44.');
+    testString: assert.strictEqual(fiboEvenSum(10), 44);
   - text: <code>fiboEvenSum(18)</code> should return 3382.
-    testString: assert.strictEqual(fiboEvenSum(18), 3382, '<code>fiboEvenSum(18)</code> should return 3382.');
+    testString: assert.strictEqual(fiboEvenSum(18), 3382);
   - text: <code>fiboEvenSum(23)</code> should return 60696.
-    testString: assert.strictEqual(fiboEvenSum(23), 60696, '<code>fiboEvenSum(23)</code> should return 60696.');
+    testString: assert.strictEqual(fiboEvenSum(23), 60696);
   - text: <code>fiboEvenSum(43)</code> should return 350704366.
-    testString: assert.strictEqual(fiboEvenSum(43), 350704366, '<code>fiboEvenSum(43)</code> should return 350704366.');
+    testString: assert.strictEqual(fiboEvenSum(43), 350704366);
   - text: Your function should return an <code>even</code> value.
-    testString: assert.equal(fiboEvenSum(10) % 2 === 0, true, 'Your function should return an <code>even</code> value.');
+    testString: assert.equal(fiboEvenSum(10) % 2 === 0, true);
 
 ```
 

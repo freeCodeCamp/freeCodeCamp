@@ -1,9 +1,13 @@
 ---
 title: Target the Parent of an Element Using jQuery
 ---
-## Target the Parent of an Element Using jQuery
+# Target the Parent of an Element Using jQuery
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <script>
@@ -41,3 +45,4 @@ title: Target the Parent of an Element Using jQuery
   </div>
 </body>
 ```
+</details>

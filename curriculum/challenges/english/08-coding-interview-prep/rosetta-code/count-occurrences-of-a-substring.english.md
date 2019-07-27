@@ -28,13 +28,13 @@ In general, this essentially means matching from left-to-right or right-to-left.
 ```yml
 tests:
   - text: <code>countSubstring</code> is a function.
-    testString: assert(typeof countSubstring === 'function', '<code>countSubstring</code> is a function.');
+    testString: assert(typeof countSubstring === 'function');
   - text: <code>countSubstring("the three truths", "th")</code> should return <code>3</code>.
-    testString: assert.equal(countSubstring(testCases[0], searchString[0]), results[0], '<code>countSubstring("the three truths", "th")</code> should return <code>3</code>.');
+    testString: assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
   - text: <code>countSubstring("ababababab", "abab")</code> should return <code>2</code>.
-    testString: assert.equal(countSubstring(testCases[1], searchString[1]), results[1], '<code>countSubstring("ababababab", "abab")</code> should return <code>2</code>.');
+    testString: assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
   - text: <code>countSubstring("abaabba*bbaba*bbab", "a*b")</code> should return <code>2</code>.
-    testString: assert.equal(countSubstring(testCases[2], searchString[2]), results[2], '<code>countSubstring("abaabba*bbaba*bbab", "a*b")</code> should return <code>2</code>.');
+    testString: assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);
 
 ```
 

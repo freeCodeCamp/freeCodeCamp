@@ -1,11 +1,17 @@
 ---
 title: Style Multiple Elements with a CSS Class
 ---
-## Style Multiple Elements with a CSS Class
+# Style Multiple Elements with a CSS Class
 
+---
+## Problem Explanation
 We need to applying our ```red-text``` class to the first ```p``` element.
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 In the opening tag of element ```p``` we need to add ```red-text``` class:
 
@@ -49,6 +55,7 @@ In the opening tag of element ```p``` we need to add ```red-text``` class:
 </main>
 ```
 
-### More information
+#### Relevant Links
 
 - [Class selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors)
+</details>

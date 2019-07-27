@@ -9,12 +9,11 @@ import { Link } from '../helpers';
 import './header.css';
 
 const propTypes = {
-  disableSettings: PropTypes.bool,
-  navigationMenu: PropTypes.element
+  disableSettings: PropTypes.bool
 };
 
 function Header(props) {
-  const { disableSettings, navigationMenu } = props;
+  const { disableSettings } = props;
   return (
     <header>
       <nav id='top-nav'>
@@ -22,11 +21,7 @@ function Header(props) {
           <NavLogo />
         </Link>
         {disableSettings ? null : <SearchBar />}
-        {navigationMenu ? (
-          navigationMenu
-        ) : (
-          <NavigationMenu disableSettings={disableSettings} />
-        )}
+        <NavigationMenu disableSettings={disableSettings} />
       </nav>
     </header>
   );

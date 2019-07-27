@@ -43,7 +43,7 @@ Consider now 1500 adjacent bowls containing b1, b2,..., b1500 beans respectively
 ```yml
 tests:
   - text: <code>euler334()</code> should return 150320021261690850.
-    testString: assert.strictEqual(euler334(), 150320021261690850, '<code>euler334()</code> should return 150320021261690850.');
+    testString: assert.strictEqual(euler334(), 150320021261690850);
 
 ```
 

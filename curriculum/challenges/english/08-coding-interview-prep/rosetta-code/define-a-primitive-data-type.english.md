@@ -29,15 +29,15 @@ tests:
   - text: <code>new Num(4)</code> should return an object.
     testString: assert(typeof (new Num(4)) === 'object');
   - text: <code>new Num('test')</code> should throw a TypeError with message 'Not a Number'.
-    testString: assert.throws(() => new Num('test'), TypeError, 'Not a Number');
+    testString: assert.throws(() => new Num('test'), TypeError);
   - text: <code>new Num(0)</code> should throw a TypeError with message 'Out of range'.
-    testString: assert.throws(() => new Num(0), TypeError, 'Out of range');
+    testString: assert.throws(() => new Num(0), TypeError);
   - text: <code>new Num(-5)</code> should throw a TypeError with message 'Out of range'.
-    testString: assert.throws(() => new Num(-5), TypeError, 'Out of range');
+    testString: assert.throws(() => new Num(-5), TypeError);
   - text: <code>new Num(10)</code> should throw a TypeError with message 'Out of range'.
-    testString: assert.throws(() => new Num(11), TypeError, 'Out of range');
+    testString: assert.throws(() => new Num(11), TypeError);
   - text: <code>new Num(20)</code> should throw a TypeError with message 'Out of range'.
-    testString: assert.throws(() => new Num(20), TypeError, 'Out of range');
+    testString: assert.throws(() => new Num(20), TypeError);
   - text: <code>new Num(3) + new Num(4)</code> should equal 7.
     testString: assert.equal(new Num(3) + new Num(4), 7);
   - text: <code>new Num(3) - new Num(4)</code> should equal -1.

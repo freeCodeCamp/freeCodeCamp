@@ -1,8 +1,10 @@
 ---
 title: Adjust the Padding of an Element
 ---
-## Adjust the Padding of an Element
+# Adjust the Padding of an Element
 
+---
+## Problem Explanation
 Padding is the spacing between the content and the border of an Element.
 
   •There is spacing from the top, bottom, left, and right. 
