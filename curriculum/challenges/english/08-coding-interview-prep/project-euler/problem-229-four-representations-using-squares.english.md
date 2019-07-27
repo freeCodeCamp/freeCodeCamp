@@ -38,7 +38,7 @@ How many such numbers are there that do not exceed 2×109?
 ```yml
 tests:
   - text: <code>euler229()</code> should return 11325263.
-    testString: assert.strictEqual(euler229(), 11325263, '<code>euler229()</code> should return 11325263.');
+    testString: assert.strictEqual(euler229(), 11325263);
 
 ```
 
