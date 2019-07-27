@@ -29,7 +29,7 @@ Give the last 9 digits as your answer.
 ```yml
 tests:
   - text: <code>euler377()</code> should return 732385277.
-    testString: assert.strictEqual(euler377(), 732385277, '<code>euler377()</code> should return 732385277.');
+    testString: assert.strictEqual(euler377(), 732385277);
 
 ```
 
@@ -61,4 +61,5 @@ euler377();
 ```js
 // solution required
 ```
+
 </section>

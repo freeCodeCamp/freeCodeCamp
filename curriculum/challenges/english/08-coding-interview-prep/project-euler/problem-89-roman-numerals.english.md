@@ -31,7 +31,7 @@ Note: You can assume that all the Roman numerals in the file contain no more tha
 ```yml
 tests:
   - text: <code>euler89()</code> should return 743.
-    testString: assert.strictEqual(euler89(), 743, '<code>euler89()</code> should return 743.');
+    testString: assert.strictEqual(euler89(), 743);
 
 ```
 
@@ -63,4 +63,5 @@ euler89();
 ```js
 // solution required
 ```
+
 </section>

@@ -30,13 +30,13 @@ Click the button and watch the rendered state update. Don't worry if you don't f
 ```yml
 tests:
   - text: 'The state of <code>MyComponent</code> should initialize with the key value pair <code>{ name: Initial State }</code>.'
-    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state(''name'') === ''Initial State'', ''The state of <code>MyComponent</code> should initialize with the key value pair <code>{ name: Initial State }</code>.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state(''name'') === ''Initial State'');'
   - text: <code>MyComponent</code> should render an <code>h1</code> header.
-    testString: assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1, '<code>MyComponent</code> should render an <code>h1</code> header.');
+    testString: assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
   - text: The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' }); return waitForIt(() => mockedComponent.html()); }; const firstValue = await first(); assert(/<h1>TestName<\/h1>/.test(firstValue), ''The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.''); };'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' }); return waitForIt(() => mockedComponent.html()); }; const firstValue = await first(); assert(/<h1>TestName<\/h1>/.test(firstValue)); };'
   - text: Calling the <code>handleClick</code> method on <code>MyComponent</code> should set the name property in state to equal <code>React Rocks!</code>.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''Before'' }); return waitForIt(() => mockedComponent.state(''name'')); }; const second = () => { mockedComponent.instance().handleClick(); return waitForIt(() => mockedComponent.state(''name'')); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === ''Before'' && secondValue === ''React Rocks!'', ''Calling the <code>handleClick</code> method on <code>MyComponent</code> should set the name property in state to equal <code>React Rocks!</code>.''); };'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''Before'' }); return waitForIt(() => mockedComponent.state(''name'')); }; const second = () => { mockedComponent.instance().handleClick(); return waitForIt(() => mockedComponent.state(''name'')); }; const firstValue = await first(); const secondValue = await second(); assert(firstValue === ''Before'' && secondValue === ''React Rocks!''); };'
 
 ```
 

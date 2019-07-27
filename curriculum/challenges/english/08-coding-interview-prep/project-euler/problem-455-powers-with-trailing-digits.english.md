@@ -28,7 +28,7 @@ Find Σf(n), 2 ≤ n ≤ 106.
 ```yml
 tests:
   - text: <code>euler455()</code> should return 450186511399999.
-    testString: assert.strictEqual(euler455(), 450186511399999, '<code>euler455()</code> should return 450186511399999.');
+    testString: assert.strictEqual(euler455(), 450186511399999);
 
 ```
 
@@ -60,4 +60,5 @@ euler455();
 ```js
 // solution required
 ```
+
 </section>

@@ -53,7 +53,7 @@ Find ∑ p(k), for 0 < k ≤ 2·1015.
 ```yml
 tests:
   - text: <code>euler238()</code> should return 9922545104535660.
-    testString: assert.strictEqual(euler238(), 9922545104535660, '<code>euler238()</code> should return 9922545104535660.');
+    testString: assert.strictEqual(euler238(), 9922545104535660);
 
 ```
 
@@ -85,4 +85,5 @@ euler238();
 ```js
 // solution required
 ```
+
 </section>

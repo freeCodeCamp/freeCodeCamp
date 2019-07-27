@@ -23,11 +23,11 @@ Change <code>randomFraction</code> to return a random number instead of returnin
 ```yml
 tests:
   - text: <code>randomFraction</code> should return a random number.
-    testString: assert(typeof randomFraction() === "number", '<code>randomFraction</code> should return a random number.');
+    testString: assert(typeof randomFraction() === "number");
   - text: The number returned by <code>randomFraction</code> should be a decimal.
-    testString: assert((randomFraction()+''). match(/\./g), 'The number returned by <code>randomFraction</code> should be a decimal.');
+    testString: assert((randomFraction()+''). match(/\./g));
   - text: You should be using <code>Math.random</code> to generate the random decimal number.
-    testString: assert(code.match(/Math\.random/g).length >= 0, 'You should be using <code>Math.random</code> to generate the random decimal number.');
+    testString: assert(code.match(/Math\.random/g).length >= 0);
 
 ```
 

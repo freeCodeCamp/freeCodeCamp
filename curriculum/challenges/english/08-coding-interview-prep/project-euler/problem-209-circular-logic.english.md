@@ -30,7 +30,7 @@ for all 6-bit inputs (a, b, c, d, e, f)?
 ```yml
 tests:
   - text: <code>euler209()</code> should return 15964587728784.
-    testString: assert.strictEqual(euler209(), 15964587728784, '<code>euler209()</code> should return 15964587728784.');
+    testString: assert.strictEqual(euler209(), 15964587728784);
 
 ```
 
@@ -62,4 +62,5 @@ euler209();
 ```js
 // solution required
 ```
+
 </section>

@@ -32,7 +32,7 @@ Find ∑c for c < 120000.
 ```yml
 tests:
   - text: <code>euler127()</code> should return 18407904.
-    testString: assert.strictEqual(euler127(), 18407904, '<code>euler127()</code> should return 18407904.');
+    testString: assert.strictEqual(euler127(), 18407904);
 
 ```
 
@@ -64,4 +64,5 @@ euler127();
 ```js
 // solution required
 ```
+
 </section>

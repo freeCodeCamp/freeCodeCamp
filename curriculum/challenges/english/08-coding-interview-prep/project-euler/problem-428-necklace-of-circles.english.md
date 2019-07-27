@@ -33,7 +33,7 @@ Find T(1&nbsp;000&nbsp;000&nbsp;000).
 ```yml
 tests:
   - text: <code>necklace(1000000000)</code> should return 747215561862.
-    testString: assert.strictEqual(necklace(1000000000), 747215561862, '<code>necklace(1000000000)</code> should return 747215561862.');
+    testString: assert.strictEqual(necklace(1000000000), 747215561862);
 
 ```
 
@@ -65,4 +65,5 @@ necklace(1000000000)
 ```js
 // solution required
 ```
+
 </section>

@@ -64,7 +64,7 @@ Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
 ```yml
 tests:
   - text: <code>euler69()</code> should return 510510.
-    testString: assert.strictEqual(euler69(), 510510, '<code>euler69()</code> should return 510510.');
+    testString: assert.strictEqual(euler69(), 510510);
 
 ```
 
@@ -96,4 +96,5 @@ euler69();
 ```js
 // solution required
 ```
+
 </section>

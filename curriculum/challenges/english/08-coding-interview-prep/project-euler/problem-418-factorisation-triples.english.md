@@ -29,7 +29,7 @@ Find f(43!).
 ```yml
 tests:
   - text: <code>euler418()</code> should return 1177163565297340400.
-    testString: assert.strictEqual(euler418(), 1177163565297340400, '<code>euler418()</code> should return 1177163565297340400.');
+    testString: assert.strictEqual(euler418(), 1177163565297340400);
 
 ```
 
@@ -61,4 +61,5 @@ euler418();
 ```js
 // solution required
 ```
+
 </section>

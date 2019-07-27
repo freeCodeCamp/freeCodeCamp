@@ -23,7 +23,7 @@ How many values of n less than one million have exactly ten distinct solutions?
 ```yml
 tests:
   - text: <code>euler135()</code> should return 4989.
-    testString: assert.strictEqual(euler135(), 4989, '<code>euler135()</code> should return 4989.');
+    testString: assert.strictEqual(euler135(), 4989);
 
 ```
 
@@ -55,4 +55,5 @@ euler135();
 ```js
 // solution required
 ```
+
 </section>

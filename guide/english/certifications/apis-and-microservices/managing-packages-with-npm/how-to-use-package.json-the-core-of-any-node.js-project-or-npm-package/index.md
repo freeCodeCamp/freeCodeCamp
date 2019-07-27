@@ -1,8 +1,10 @@
 ---
 title: How to Use package.json, the Core of Any Node.js Project or npm Package
 ---
-## How to Use package.json, the Core of Any Node.js Project or npm Package
+# How to Use package.json, the Core of Any Node.js Project or npm Package
 
+---
+## Problem Explanation
 According to [this issue discussed on freeCodeCamp's git repo](https://github.com/freeCodeCamp/freeCodeCamp/issues/34798), the bootstrapped glitch project in the [introduction](https://learn.freecodecamp.org/apis-and-microservices/managing-packages-with-npm/) will NOT work if you're not logged in on glitch.
 
 Here's how to set up a new node/express project anonymously:
@@ -24,9 +26,13 @@ Remember, you're writing JSON, so make sure you use
 2. `"key": value` format
 3. the correct number of commas
 
-SPOILER ALERT. DO NOT SCROLL DOWN IF YOU WISH TO KEEP TRYING
-   
- ```json
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```json
  {
   "name": "fcc-learn-npm-package-json",
   "author": "foobar",
@@ -45,4 +51,6 @@ SPOILER ALERT. DO NOT SCROLL DOWN IF YOU WISH TO KEEP TRYING
     "url": "https://idontknow/todo.git"
   }
 }
- ```
+```
+
+</details>

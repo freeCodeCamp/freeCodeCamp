@@ -27,7 +27,7 @@ Find PSR(p) mod 1016.
 ```yml
 tests:
   - text: <code>euler266()</code> should return 1096883702440585.
-    testString: assert.strictEqual(euler266(), 1096883702440585, '<code>euler266()</code> should return 1096883702440585.');
+    testString: assert.strictEqual(euler266(), 1096883702440585);
 
 ```
 
@@ -59,4 +59,5 @@ euler266();
 ```js
 // solution required
 ```
+
 </section>

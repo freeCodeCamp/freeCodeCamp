@@ -1,7 +1,7 @@
 ---
 title: Taste the Bootstrap Button Color Rainbow
 ---
-## Taste the Bootstrap Button Color Rainbow
+# Taste the Bootstrap Button Color Rainbow
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/taste-the-bootstrap-button-color-rainbow/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

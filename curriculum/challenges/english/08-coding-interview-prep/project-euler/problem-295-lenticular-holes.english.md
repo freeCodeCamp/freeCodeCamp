@@ -42,7 +42,7 @@ Find L(100 000).
 ```yml
 tests:
   - text: <code>euler295()</code> should return 4884650818.
-    testString: assert.strictEqual(euler295(), 4884650818, '<code>euler295()</code> should return 4884650818.');
+    testString: assert.strictEqual(euler295(), 4884650818);
 
 ```
 
@@ -74,4 +74,5 @@ euler295();
 ```js
 // solution required
 ```
+
 </section>

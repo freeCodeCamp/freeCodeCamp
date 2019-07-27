@@ -51,7 +51,7 @@ Give the last 18 digits as your answer.
 ```yml
 tests:
   - text: <code>euler414()</code> should return 552506775824935500.
-    testString: assert.strictEqual(euler414(), 552506775824935500, '<code>euler414()</code> should return 552506775824935500.');
+    testString: assert.strictEqual(euler414(), 552506775824935500);
 
 ```
 
@@ -83,4 +83,5 @@ euler414();
 ```js
 // solution required
 ```
+
 </section>

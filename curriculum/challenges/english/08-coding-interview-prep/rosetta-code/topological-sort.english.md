@@ -6,12 +6,14 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Given a mapping between items, and items they depend on, a <a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting" target="_blank">topological sort</a> orders items so that no item precedes an item it depends upon.
 The compiling of a library in the <a href="https://en.wikipedia.org/wiki/VHDL" title="wp: VHDL" target="_blank">VHDL</a> language has the constraint that a library must be compiled after any library it depends on.
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Write a function that will return a valid compile order of VHDL libraries from their dependencies.
 <ul>
   <li>Assume library names are single words.</li>
@@ -55,15 +57,15 @@ There are two popular algorithms for topological sorting:
 ```yml
 tests:
   - text: <code>topologicalSort</code> is a function.
-    testString: assert(typeof topologicalSort === 'function', '<code>topologicalSort</code> is a function.');
+    testString: assert(typeof topologicalSort === 'function');
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa'], '<code>topologicalSort</code> must return correct library order..');
+    testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa']);
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL, '<code>topologicalSort</code> must return correct library order..');
+    testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL);
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom, '<code>topologicalSort</code> must return correct library order..');
+    testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom);
   - text: <code>topologicalSort</code> must ignore unorderable dependencies..
-    testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable, '<code>topologicalSort</code> must ignore unorderable dependencies..');
+    testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable);
 
 ```
 

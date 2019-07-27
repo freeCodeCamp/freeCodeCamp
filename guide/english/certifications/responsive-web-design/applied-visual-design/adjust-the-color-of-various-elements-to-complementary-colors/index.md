@@ -1,15 +1,23 @@
 ---
 title: Adjust the Color of Various Elements to Complementary Colors
 ---
-## Adjust the Color of Various Elements to Complementary Colors
+# Adjust the Color of Various Elements to Complementary Colors
 
-### Hint
+
+---
+## Hints
+
+### Hint 1
 
 Change the colours of the given elements to the ones given in the problem.
 
-### Solution
 
-```css
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
 <style>
   body {
     background-color: white;
@@ -49,3 +57,4 @@ Change the colours of the given elements to the ones given in the problem.
 <br>
 <footer>&copy; 2018 FCC Kitchen</footer>
 ```
+</details>

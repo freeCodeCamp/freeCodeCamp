@@ -61,7 +61,6 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnD/0)
 
 ### Explicación del código:
 
@@ -99,7 +98,6 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnE/0)
 
 ### Explicación del código:
 
@@ -148,7 +146,6 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnG/0)
 
 ### Explicación del código:
 

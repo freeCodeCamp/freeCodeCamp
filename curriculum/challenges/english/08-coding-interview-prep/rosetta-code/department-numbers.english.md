@@ -28,6 +28,7 @@ Write a program which outputs all valid combinations as an array.
 [4, 7, 1] [6, 1, 5] [6, 2, 4]
 [6, 4, 2] [6, 5, 1]
 ```
+
 </section>
 
 ## Tests
@@ -36,13 +37,13 @@ Write a program which outputs all valid combinations as an array.
 ```yml
 tests:
   - text: <code>combinations</code> should be a function.
-    testString: assert(typeof combinations === 'function', '<code>combinations</code> should be a function.');
+    testString: assert(typeof combinations === 'function');
   - text: <code>combinations([1, 2, 3], 6)</code> should return an Array.
-    testString: assert(Array.isArray(combinations([1, 2, 3], 6)), '<code>combinations([1, 2, 3], 6)</code> should return an Array.');
+    testString: assert(Array.isArray(combinations([1, 2, 3], 6)));
   - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.
-    testString: assert(combinations(nums, total).length === len, '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.');
+    testString: assert(combinations(nums, total).length === len);
   - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.
-    testString: assert.deepEqual(combinations(nums, total), result, '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.');
+    testString: assert.deepEqual(combinations(nums, total), result);
 
 ```
 

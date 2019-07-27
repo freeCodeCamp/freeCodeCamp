@@ -29,7 +29,7 @@ Some small square-pivots are
 ```yml
 tests:
   - text: <code>euler261()</code> should return 238890850232021.
-    testString: assert.strictEqual(euler261(), 238890850232021, '<code>euler261()</code> should return 238890850232021.');
+    testString: assert.strictEqual(euler261(), 238890850232021);
 
 ```
 
@@ -61,4 +61,5 @@ euler261();
 ```js
 // solution required
 ```
+
 </section>

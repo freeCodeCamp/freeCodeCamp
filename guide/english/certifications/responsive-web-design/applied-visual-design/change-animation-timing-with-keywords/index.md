@@ -1,7 +1,7 @@
 ---
 title: Change Animation Timing with Keywords
 ---
-## Change Animation Timing with Keywords
+# Change Animation Timing with Keywords
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/change-animation-timing-with-keywords/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

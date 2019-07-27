@@ -31,7 +31,7 @@ How many chains, with a starting number below one million, contain exactly sixty
 ```yml
 tests:
   - text: <code>euler74()</code> should return 402.
-    testString: assert.strictEqual(euler74(), 402, '<code>euler74()</code> should return 402.');
+    testString: assert.strictEqual(euler74(), 402);
 
 ```
 
@@ -63,4 +63,5 @@ euler74();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,9 +1,10 @@
 ---
 title: Implement Insertion Sort
 ---
-## Implement Insertion Sort
+# Implement Insertion Sort
 
-### Method:
+---
+## Problem Explanation
 - Insertion Sort assumes that array is divided in two parts:
   1. Sorted (Initially the first element)
   2. Unsorted
@@ -13,21 +14,27 @@ title: Implement Insertion Sort
 - Time comlexity of Insertion sort is of **O(n<sup>2</sup>)**.
 - It's a **stable** algorithm.
 
-### Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```js
 function insertionSort(array) {
-  for (let i = 1; i < array.length; i++){
+  for (let i = 1; i < array.length; i++) {
     let curr = array[i];
-    for (var j = i-1; j >= 0 && array[j] > curr; j--){
-      array[j+1] = array[j];
+    for (var j = i - 1; j >= 0 && array[j] > curr; j--) {
+      array[j + 1] = array[j];
     }
-    array[j+1] = curr;
+    array[j + 1] = curr;
   }
   return array;
 }
 ```
 
-### References:
+#### Relevant Links
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
 - [Khan Academy](https://www.youtube.com/watch?v=lCzQvQr8Utw)
+</details>

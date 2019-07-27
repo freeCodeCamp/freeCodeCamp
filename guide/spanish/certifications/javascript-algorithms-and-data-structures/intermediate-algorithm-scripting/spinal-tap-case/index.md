@@ -56,7 +56,6 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnS/0)
 
 ### Explicación del código:
 
@@ -77,7 +76,6 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnT/0)
 
 ### Explicación del código:
 
@@ -99,7 +97,6 @@ function spinalCase(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/EUZV)
 
 ### Explicación del código:
 

@@ -32,7 +32,7 @@ Vous pouvez extraire ces suites de tests via [le CDN de freeCodeCamp](https://cd
 
 L'obtention des certifications est définitive. Vous pourrez toujours y accéder depuis votre LinkedIn ou votre CV. Et lorsque vos employeurs potentiels ou vos clients indépendants cliquent sur ce lien, ils voient une certification vérifiée qui vous est propre.
 
-La seule exception à cette règle est que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant sans citation le code ou les projets d'autres personnes), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire: nous révoquons leurs certifications et banissons ces personnes.
+La seule exception à cette règle est que nous découvrions des violations de notre [politique d'honnêteté académique](https://www.freecodecamp.org/academic-honesty). Lorsque nous surprenons des personnes qui plagient sans ambiguïté (soumettant sans citation le code ou les projets d'autres personnes), nous faisons ce que toutes les institutions rigoureuses d'apprentissage doivent faire: nous révoquons leurs certifications et bannissons ces personnes.
 
 Voici nos six certifications principales:
 
@@ -120,7 +120,7 @@ Notre communauté a aussi:
 
   - Un [forum](https://www.freecodecamp.org/forum) super actif
   - Des milliers de [groupes d'étude locaux](https://study-group-directory.freecodecamp.org/) dans le monde entier, où vous pouvez coder ensemble
-  - La plus [grande publication technique](https://medium.freecodecamp.org) de Medium
+  - Une publication [Developer News](https://www.freecodecamp.org/news), un site gratuit, à code source ouvert et sans annonces, pour poster des articles de votre blog.
   - Une chaîne [YouTube populaire](https://youtube.com/freecodecamp)
   - Un [guide complet](https://guide.freecodecamp.org/) sur des milliers de sujets de programmation
     

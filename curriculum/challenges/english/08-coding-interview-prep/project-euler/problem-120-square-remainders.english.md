@@ -22,7 +22,7 @@ For 3 ≤ a ≤ 1000, find ∑ rmax.
 ```yml
 tests:
   - text: <code>euler120()</code> should return 333082500.
-    testString: assert.strictEqual(euler120(), 333082500, '<code>euler120()</code> should return 333082500.');
+    testString: assert.strictEqual(euler120(), 333082500);
 
 ```
 
@@ -54,4 +54,5 @@ euler120();
 ```js
 // solution required
 ```
+
 </section>

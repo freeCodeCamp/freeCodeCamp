@@ -29,7 +29,7 @@ How many times does the beam hit the internal surface of the white cell before e
 ```yml
 tests:
   - text: <code>euler144()</code> should return 354.
-    testString: assert.strictEqual(euler144(), 354, '<code>euler144()</code> should return 354.');
+    testString: assert.strictEqual(euler144(), 354);
 
 ```
 
@@ -61,4 +61,5 @@ euler144();
 ```js
 // solution required
 ```
+
 </section>

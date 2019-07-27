@@ -26,7 +26,7 @@ Change the <code>padding</code> of your blue box to match that of your red box.
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-top") === "20px", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');
+    testString: assert($(".blue-box").css("padding-top") === "20px");
 
 ```
 
@@ -123,4 +123,5 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
+
 </section>

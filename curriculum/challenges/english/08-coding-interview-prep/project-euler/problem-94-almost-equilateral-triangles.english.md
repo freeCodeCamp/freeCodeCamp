@@ -22,7 +22,7 @@ Find the sum of the perimeters of all almost equilateral triangles with integral
 ```yml
 tests:
   - text: <code>euler94()</code> should return 518408346.
-    testString: assert.strictEqual(euler94(), 518408346, '<code>euler94()</code> should return 518408346.');
+    testString: assert.strictEqual(euler94(), 518408346);
 
 ```
 
@@ -54,4 +54,5 @@ euler94();
 ```js
 // solution required
 ```
+
 </section>

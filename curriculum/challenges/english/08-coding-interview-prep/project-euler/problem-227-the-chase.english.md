@@ -27,7 +27,7 @@ Give your answer rounded to ten significant digits.
 ```yml
 tests:
   - text: <code>euler227()</code> should return 3780.618622.
-    testString: assert.strictEqual(euler227(), 3780.618622, '<code>euler227()</code> should return 3780.618622.');
+    testString: assert.strictEqual(euler227(), 3780.618622);
 
 ```
 
@@ -59,4 +59,5 @@ euler227();
 ```js
 // solution required
 ```
+
 </section>

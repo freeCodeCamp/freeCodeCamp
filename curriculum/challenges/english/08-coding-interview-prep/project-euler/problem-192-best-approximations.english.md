@@ -27,7 +27,7 @@ Find the sum of all denominators of the best approximations to √n for the deno
 ```yml
 tests:
   - text: <code>euler192()</code> should return 57060635927998344.
-    testString: assert.strictEqual(euler192(), 57060635927998344, '<code>euler192()</code> should return 57060635927998344.');
+    testString: assert.strictEqual(euler192(), 57060635927998344);
 
 ```
 
@@ -59,4 +59,5 @@ euler192();
 ```js
 // solution required
 ```
+
 </section>

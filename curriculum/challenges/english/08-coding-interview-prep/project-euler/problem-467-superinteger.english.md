@@ -38,7 +38,7 @@ Find f(10 000) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler467()</code> should return 775181359.
-    testString: assert.strictEqual(euler467(), 775181359, '<code>euler467()</code> should return 775181359.');
+    testString: assert.strictEqual(euler467(), 775181359);
 
 ```
 
@@ -70,4 +70,5 @@ euler467();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 
 import {
   CertificationLayout,
-  DefaultLayout,
-  GuideLayout
+  DefaultLayout
 } from '../../src/components/layouts';
-// eslint-disable-next-line max-len
-import GuideNavMenu from '../../src/components/layouts/components/guide/NavMenu';
 import FourOhFourPage from '../../src/pages/404';
 
 export default function layoutSelector({ element, props }) {
@@ -28,11 +25,7 @@ export default function layoutSelector({ element, props }) {
     return <CertificationLayout>{element}</CertificationLayout>;
   }
   if (/^\/guide(\/.*)*/.test(pathname)) {
-    return (
-      <DefaultLayout navigationMenu={<GuideNavMenu />} pathname={pathname}>
-        <GuideLayout>{element}</GuideLayout>
-      </DefaultLayout>
-    );
+    console.log('Hitting guide for some reason. Need a redirect.');
   }
   if (/^\/learn(\/.*)*/.test(pathname)) {
     return (

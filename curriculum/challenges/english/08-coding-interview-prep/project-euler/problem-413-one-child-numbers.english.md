@@ -29,7 +29,7 @@ Find F(1019).
 ```yml
 tests:
   - text: <code>euler413()</code> should return 3079418648040719.
-    testString: assert.strictEqual(euler413(), 3079418648040719, '<code>euler413()</code> should return 3079418648040719.');
+    testString: assert.strictEqual(euler413(), 3079418648040719);
 
 ```
 
@@ -61,4 +61,5 @@ euler413();
 ```js
 // solution required
 ```
+
 </section>

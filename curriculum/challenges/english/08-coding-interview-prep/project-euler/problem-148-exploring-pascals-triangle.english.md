@@ -31,7 +31,7 @@ Find the number of entries which are not divisible by 7 in the first one billion
 ```yml
 tests:
   - text: <code>euler148()</code> should return 2129970655314432.
-    testString: assert.strictEqual(euler148(), 2129970655314432, '<code>euler148()</code> should return 2129970655314432.');
+    testString: assert.strictEqual(euler148(), 2129970655314432);
 
 ```
 
@@ -63,4 +63,5 @@ euler148();
 ```js
 // solution required
 ```
+
 </section>

@@ -73,4 +73,5 @@ console.log(b); // should be 8
 let a = 8, b = 6;
 [a, b] = [b, a];
 ```
+
 </section>

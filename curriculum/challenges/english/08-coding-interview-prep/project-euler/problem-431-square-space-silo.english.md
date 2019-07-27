@@ -31,7 +31,7 @@ If Quick thinking Quentin is to satisfy frustratingly fussy Fred the farmer's ap
 ```yml
 tests:
   - text: <code>euler431()</code> should return 23.386029052.
-    testString: assert.strictEqual(euler431(), 23.386029052, '<code>euler431()</code> should return 23.386029052.');
+    testString: assert.strictEqual(euler431(), 23.386029052);
 
 ```
 
@@ -63,4 +63,5 @@ euler431();
 ```js
 // solution required
 ```
+
 </section>

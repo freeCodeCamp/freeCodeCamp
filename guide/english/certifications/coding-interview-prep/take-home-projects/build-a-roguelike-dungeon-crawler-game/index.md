@@ -1,7 +1,7 @@
 ---
 title: Build a Roguelike Dungeon Crawler Game
 ---
-## Build a Roguelike Dungeon Crawler Game
+# Build a Roguelike Dungeon Crawler Game
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/build-a-roguelike-dungeon-crawler-game/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

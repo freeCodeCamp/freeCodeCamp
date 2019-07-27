@@ -20,7 +20,7 @@ How many triangles are there with integral sides, at least one integral angle (m
 ```yml
 tests:
   - text: <code>euler279()</code> should return 416577688.
-    testString: assert.strictEqual(euler279(), 416577688, '<code>euler279()</code> should return 416577688.');
+    testString: assert.strictEqual(euler279(), 416577688);
 
 ```
 
@@ -52,4 +52,5 @@ euler279();
 ```js
 // solution required
 ```
+
 </section>

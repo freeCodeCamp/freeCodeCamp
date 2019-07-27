@@ -28,7 +28,7 @@ Find ∑ s(n,108) for 1 ≤ n ≤ 1011.
 ```yml
 tests:
   - text: <code>euler421()</code> should return 2304215802083466200.
-    testString: assert.strictEqual(euler421(), 2304215802083466200, '<code>euler421()</code> should return 2304215802083466200.');
+    testString: assert.strictEqual(euler421(), 2304215802083466200);
 
 ```
 
@@ -60,4 +60,5 @@ euler421();
 ```js
 // solution required
 ```
+
 </section>

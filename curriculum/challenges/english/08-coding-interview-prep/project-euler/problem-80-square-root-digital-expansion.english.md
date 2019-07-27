@@ -22,7 +22,7 @@ For the first one hundred natural numbers, find the total of the digital sums of
 ```yml
 tests:
   - text: <code>euler80()</code> should return 40886.
-    testString: assert.strictEqual(euler80(), 40886, '<code>euler80()</code> should return 40886.');
+    testString: assert.strictEqual(euler80(), 40886);
 
 ```
 
@@ -54,4 +54,5 @@ euler80();
 ```js
 // solution required
 ```
+
 </section>

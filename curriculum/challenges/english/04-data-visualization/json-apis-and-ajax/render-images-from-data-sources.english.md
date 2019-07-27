@@ -23,7 +23,7 @@ Add code to use the <code>imageLink</code> and <code>altText</code> properties i
 ```yml
 tests:
   - text: You should use the <code>imageLink</code> property to display the images.
-    testString: assert(code.match(/val\.imageLink/g), 'You should use the <code>imageLink</code> property to display the images.');
+    testString: assert(code.match(/val\.imageLink/g));
 
 ```
 
@@ -106,4 +106,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

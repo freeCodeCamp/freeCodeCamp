@@ -32,7 +32,7 @@ Find the sum of all distinct pseudo-Fortunate numbers for admissible numbers N l
 ```yml
 tests:
   - text: <code>euler293()</code> should return 2209.
-    testString: assert.strictEqual(euler293(), 2209, '<code>euler293()</code> should return 2209.');
+    testString: assert.strictEqual(euler293(), 2209);
 
 ```
 
@@ -64,4 +64,5 @@ euler293();
 ```js
 // solution required
 ```
+
 </section>

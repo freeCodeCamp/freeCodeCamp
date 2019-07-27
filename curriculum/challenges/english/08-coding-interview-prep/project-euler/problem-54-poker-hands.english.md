@@ -43,7 +43,7 @@ How many hands does Player 1 win?
 ```yml
 tests:
   - text: <code>euler54()</code> should return 376.
-    testString: assert.strictEqual(euler54(), 376, '<code>euler54()</code> should return 376.');
+    testString: assert.strictEqual(euler54(), 376);
 
 ```
 
@@ -75,4 +75,5 @@ euler54();
 ```js
 // solution required
 ```
+
 </section>

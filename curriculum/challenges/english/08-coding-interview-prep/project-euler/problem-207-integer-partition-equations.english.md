@@ -41,7 +41,7 @@ Find the smallest m for which P(m) < 1/12345
 ```yml
 tests:
   - text: <code>euler207()</code> should return 44043947822.
-    testString: assert.strictEqual(euler207(), 44043947822, '<code>euler207()</code> should return 44043947822.');
+    testString: assert.strictEqual(euler207(), 44043947822);
 
 ```
 
@@ -73,4 +73,5 @@ euler207();
 ```js
 // solution required
 ```
+
 </section>

@@ -21,7 +21,7 @@ Using the url of <code>https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png</co
 ```yml
 tests:
   - text: Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.
-    testString: assert(code.match(/background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi), 'Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');
+    testString: assert(code.match(/background:\s*?url\(\s*("|'|)https:\/\/cdn-media-1\.freecodecamp\.org\/imgr\/MJAkxbh\.png\1\s*\)/gi));
 
 ```
 

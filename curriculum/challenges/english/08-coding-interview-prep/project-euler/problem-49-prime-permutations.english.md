@@ -22,7 +22,7 @@ What 12-digit number do you form by concatenating the three terms in this sequen
 ```yml
 tests:
   - text: <code>primePermutations()</code> should return 296962999629.
-    testString: assert.strictEqual(primePermutations(), 296962999629, '<code>primePermutations()</code> should return 296962999629.');
+    testString: assert.strictEqual(primePermutations(), 296962999629);
 
 ```
 

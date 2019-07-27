@@ -1,13 +1,18 @@
 ---
 title: Target Elements by Class Using jQuery
 ---
-## Target Elements by Class Using jQuery
+# Target Elements by Class Using jQuery
 
 - You can find elements with the jQuery class selector. // $(.className)
 - In this example, It allows you to select elements with the class ".well" 
 
-## Solution
-```javascript
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
 <script>
   $(document).ready(function() {
     $(".well").addClass("animated bounce");
@@ -36,4 +41,6 @@ title: Target Elements by Class Using jQuery
     </div>
   </div>
 </div>
+
 ```
+</details>

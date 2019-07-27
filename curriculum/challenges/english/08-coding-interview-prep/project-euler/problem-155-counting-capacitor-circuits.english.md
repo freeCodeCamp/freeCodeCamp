@@ -29,7 +29,7 @@ whereas when connecting them in series, the overall capacitance is given by:
 ```yml
 tests:
   - text: <code>euler155()</code> should return 3857447.
-    testString: assert.strictEqual(euler155(), 3857447, '<code>euler155()</code> should return 3857447.');
+    testString: assert.strictEqual(euler155(), 3857447);
 
 ```
 
@@ -61,4 +61,5 @@ euler155();
 ```js
 // solution required
 ```
+
 </section>

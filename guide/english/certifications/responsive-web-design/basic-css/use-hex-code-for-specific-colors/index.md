@@ -1,7 +1,7 @@
 ---
 title: Use Hex Code for Specific Colors
 ---
-## Use Hex Code for Specific Colors
+# Use Hex Code for Specific Colors
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-hex-code-for-specific-colors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

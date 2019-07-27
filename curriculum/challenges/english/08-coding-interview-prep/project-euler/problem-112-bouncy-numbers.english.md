@@ -25,7 +25,7 @@ Find the least number for which the proportion of bouncy numbers is exactly 99%.
 ```yml
 tests:
   - text: <code>euler112()</code> should return 1587000.
-    testString: assert.strictEqual(euler112(), 1587000, '<code>euler112()</code> should return 1587000.');
+    testString: assert.strictEqual(euler112(), 1587000);
 
 ```
 
@@ -57,4 +57,5 @@ euler112();
 ```js
 // solution required
 ```
+
 </section>

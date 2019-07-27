@@ -54,11 +54,11 @@ First create a <code>buffer</code> that is 64-bytes. Then create a <code>Int32Ar
 ```yml
 tests:
   - text: Your <code>buffer</code> should be 64 bytes large.
-    testString: assert(buffer.byteLength === 64, 'Your <code>buffer</code> should be 64 bytes large.');
+    testString: assert(buffer.byteLength === 64);
   - text: Your <code>i32View</code> view of your buffer should be 64 bytes large.
-    testString: assert(i32View.byteLength === 64, 'Your <code>i32View</code> view of your buffer should be 64 bytes large.');
+    testString: assert(i32View.byteLength === 64);
   - text: Your <code>i32View</code> view of your buffer should be 16 elements long.
-    testString: assert(i32View.length === 16, 'Your <code>i32View</code> view of your buffer should be 16 elements long.');
+    testString: assert(i32View.length === 16);
 
 ```
 

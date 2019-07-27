@@ -1,7 +1,7 @@
 ---
 title: Use an id Attribute to Style an Element
 ---
-## Use an id Attribute to Style an Element
+# Use an id Attribute to Style an Element
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-an-id-attribute-to-style-an-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -35,7 +35,7 @@ Find S(100), give your answer modulo 1000000033
 ```yml
 tests:
   - text: <code>euler434()</code> should return 863253606.
-    testString: assert.strictEqual(euler434(), 863253606, '<code>euler434()</code> should return 863253606.');
+    testString: assert.strictEqual(euler434(), 863253606);
 
 ```
 
@@ -67,4 +67,5 @@ euler434();
 ```js
 // solution required
 ```
+
 </section>

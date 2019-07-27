@@ -27,7 +27,7 @@ Find f(600) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler475()</code> should return 75780067.
-    testString: assert.strictEqual(euler475(), 75780067, '<code>euler475()</code> should return 75780067.');
+    testString: assert.strictEqual(euler475(), 75780067);
 
 ```
 
@@ -59,4 +59,5 @@ euler475();
 ```js
 // solution required
 ```
+
 </section>

@@ -23,7 +23,7 @@ Find the pair of pentagonal numbers, P<sub>j</sub> and P<sub>k</sub>, for which 
 ```yml
 tests:
   - text: <code>pentagonNumbers()</code> should return 5482660.
-    testString: assert.strictEqual(pentagonNumbers(), 5482660, '<code>pentagonNumbers()</code> should return 5482660.');
+    testString: assert.strictEqual(pentagonNumbers(), 5482660);
 
 ```
 

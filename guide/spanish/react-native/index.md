@@ -34,6 +34,6 @@ Sigue el mismo patrón que React en el que las vistas (lo que ve en la pantalla)
 ### Cómo empezar con React Native
 
 Hay dos formas fáciles y rápidas de comenzar a utilizar React Native. Dependiendo de su situación, una puede ser una mejor opción para usted que otra.
-
-1.  [Cree la aplicación nativa React](https://www.npmjs.com/package/create-react-native-app) - Similar a la aplicación Crear React, se pone en marcha usando el terminal.
-2.  [Expo](https://expo.io) - Mejor para crear prototipos de una aplicación o si se trata de una etapa anterior. Con Expo, incluso puede crear una aplicación rápida con las funciones de arrastrar y soltar desde snack.expo.io en la frontera.
+- [Cree la aplicación nativa React](https://www.npmjs.com/package/create-react-native-app) - Similar a la aplicación Crear React, se pone en marcha usando el terminal.
+- [Expo](https://expo.io) - Mejor para crear prototipos de una aplicación o si se trata de una etapa anterior. Con Expo, incluso puede crear una aplicación rápida con las funciones de arrastrar y soltar desde snack.expo.io en la frontera.
+- [Ignite CLI] (https://github.com/infinitered/ignite): permite a los devleopers crear fácilmente una nueva aplicación React Native con complementos. Ignite CLI también permite a los desarrolladores configurar fácilmente las mejores prácticas.

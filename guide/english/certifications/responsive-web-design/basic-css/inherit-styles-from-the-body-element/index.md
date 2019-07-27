@@ -1,31 +1,34 @@
 ---
 title: Inherit Styles from the Body Element
 ---
-## Inherit Styles from the Body Element
+# Inherit Styles from the Body Element
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Problem Explanation
 We need to create a ```h1``` element with the text ```Hello World```, then we need to give all elements on your page the color of ```green``` in our ```body``` element's style declaration, and finally, we need add  to our ```body``` element  font-family of ```monospace```.
 
- ### Solution
+ ## Solutions
  
- #### 1. Create a ```h1``` element with the text ```Hello World```:
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+**Create a ```h1``` element with the text ```Hello World```:**
  
  add ```h1``` after ```</style>``` element:
  
- ```css
+```css
     <h1>Hello World</h1>
 ```
 
-#### 2. Give all elements on your page the color of ```green``` and font-family of ```monospace``` in our ```body``` element's style declaration:
+**Give all elements on your page the color of ```green``` and font-family of ```monospace``` in our ```body``` element's style declaration:**
 
 add between ```<style>``` and ```</style>```:
 
- ```css
+```css
     color: green;
     font-family: monospace;
 ```
 
-#### Full solution
+**Full solution**
 
 ```css
 <style>
@@ -38,3 +41,5 @@ add between ```<style>``` and ```</style>```:
 
 <h1>Hello World</h1>
 ```
+
+</details>

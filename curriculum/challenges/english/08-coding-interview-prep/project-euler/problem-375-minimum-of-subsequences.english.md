@@ -35,7 +35,7 @@ Find M(2 000 000 000).
 ```yml
 tests:
   - text: <code>euler375()</code> should return 7435327983715286000.
-    testString: assert.strictEqual(euler375(), 7435327983715286000, '<code>euler375()</code> should return 7435327983715286000.');
+    testString: assert.strictEqual(euler375(), 7435327983715286000);
 
 ```
 
@@ -67,4 +67,5 @@ euler375();
 ```js
 // solution required
 ```
+
 </section>

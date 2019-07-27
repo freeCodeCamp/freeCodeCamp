@@ -30,7 +30,7 @@ What is Z(1016)?
 ```yml
 tests:
   - text: <code>euler269()</code> should return 1311109198529286.
-    testString: assert.strictEqual(euler269(), 1311109198529286, '<code>euler269()</code> should return 1311109198529286.');
+    testString: assert.strictEqual(euler269(), 1311109198529286);
 
 ```
 
@@ -62,4 +62,5 @@ euler269();
 ```js
 // solution required
 ```
+
 </section>

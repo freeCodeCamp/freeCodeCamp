@@ -6,11 +6,13 @@ challengeType: 5
 
 ## Description
 <section id='description'>
+
 Even today, with proportional fonts and complex layouts, there are still cases where you need to wrap text at a specified column. The basic task is to wrap a paragraph of text in a simple way.
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Write a function that can wrap this text to any number of characters. As an example, the text wrapped to 80 characters should look like the following:
 <pre>
 Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX
@@ -26,17 +28,17 @@ than a simple minimum length algorithm.
 ```yml
 tests:
   - text: wrap must be a function.
-    testString: assert.equal(typeof wrap, 'function', 'wrap must be a function.');
+    testString: assert.equal(typeof wrap, 'function');
   - text: wrap must return a string.
-    testString: assert.equal(typeof wrap('abc', 10), 'string', 'wrap must return a string.');
+    testString: assert.equal(typeof wrap('abc', 10), 'string');
   - text: wrap(80) must return 4 lines.
-    testString: assert(wrapped80.split('\n').length === 4, 'wrap(80) must return 4 lines.');
+    testString: assert(wrapped80.split('\n').length === 4);
   - text: Your <code>wrap</code> function should return our expected text
-    testString: assert.equal(wrapped80.split('\n')[0], firstRow80, 'Your <code>wrap</code> function should return our expected text');
+    testString: assert.equal(wrapped80.split('\n')[0], firstRow80);
   - text: wrap(42) must return 7 lines.
-    testString: assert(wrapped42.split('\n').length === 7, 'wrap(42) must return 7 lines.');
+    testString: assert(wrapped42.split('\n').length === 7);
   - text: Your <code>wrap</code> function should return our expected text
-    testString: assert.equal(wrapped42.split('\n')[0], firstRow42, 'Your <code>wrap</code> function should return our expected text');
+    testString: assert.equal(wrapped42.split('\n')[0], firstRow42);
 
 ```
 

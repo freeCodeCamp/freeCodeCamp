@@ -37,7 +37,7 @@ Find ∑f(N) for 1 ≤ N ≤ 1012. Give the last 8 digits of your answer.
 ```yml
 tests:
   - text: <code>euler472()</code> should return 73811586.
-    testString: assert.strictEqual(euler472(), 73811586, '<code>euler472()</code> should return 73811586.');
+    testString: assert.strictEqual(euler472(), 73811586);
 
 ```
 
@@ -69,4 +69,5 @@ euler472();
 ```js
 // solution required
 ```
+
 </section>

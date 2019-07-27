@@ -6,13 +6,10 @@ title: 'Problem 454: Diophantine reciprocals III'
 
 ## Description
 <section id='description'>
-In the following equation x, y, and n are positive integers.
 
-1x
- +
-1y
- =
-1n
+In the following equation x, y, and n are positive integers.
+1/x + 1/y= 1/n
+<!-- TODO Use MathJax -->
 
 For a limit L we define F(L) as the number of solutions which satisfy x < y ≤ L.
 
@@ -31,7 +28,7 @@ Find F(1012).
 ```yml
 tests:
   - text: <code>euler454()</code> should return 5435004633092.
-    testString: assert.strictEqual(euler454(), 5435004633092, '<code>euler454()</code> should return 5435004633092.');
+    testString: assert.strictEqual(euler454(), 5435004633092);
 
 ```
 
@@ -63,4 +60,5 @@ euler454();
 ```js
 // solution required
 ```
+
 </section>

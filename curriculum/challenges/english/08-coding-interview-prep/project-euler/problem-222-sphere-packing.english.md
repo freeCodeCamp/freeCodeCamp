@@ -22,7 +22,7 @@ Give your answer in micrometres (10-6 m) rounded to the nearest integer.
 ```yml
 tests:
   - text: <code>euler222()</code> should return 1590933.
-    testString: assert.strictEqual(euler222(), 1590933, '<code>euler222()</code> should return 1590933.');
+    testString: assert.strictEqual(euler222(), 1590933);
 
 ```
 
@@ -54,4 +54,5 @@ euler222();
 ```js
 // solution required
 ```
+
 </section>

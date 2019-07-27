@@ -35,7 +35,7 @@ Find C(2 000 000).
 ```yml
 tests:
   - text: <code>euler456()</code> should return 333333208685971500.
-    testString: assert.strictEqual(euler456(), 333333208685971500, '<code>euler456()</code> should return 333333208685971500.');
+    testString: assert.strictEqual(euler456(), 333333208685971500);
 
 ```
 
@@ -67,4 +67,5 @@ euler456();
 ```js
 // solution required
 ```
+
 </section>

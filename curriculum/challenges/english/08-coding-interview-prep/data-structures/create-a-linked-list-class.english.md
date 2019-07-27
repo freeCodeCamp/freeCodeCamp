@@ -25,13 +25,13 @@ Your list's <code>length</code> should increase by one every time an element is 
 ```yml
 tests:
   - text: Your <code>LinkedList</code> class should have a <code>add</code> method.
-    testString: assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>add</code> method.');
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()));
   - text: Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()), 'Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.');
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()));
   - text: The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()), 'The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.');
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()));
   - text: The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.
-    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()), 'The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.');
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()));
 
 ```
 

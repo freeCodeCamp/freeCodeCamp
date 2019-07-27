@@ -30,7 +30,7 @@ Find the least value of n for which p(n) is divisible by one million.
 ```yml
 tests:
   - text: <code>euler78()</code> should return 55374.
-    testString: assert.strictEqual(euler78(), 55374, '<code>euler78()</code> should return 55374.');
+    testString: assert.strictEqual(euler78(), 55374);
 
 ```
 
@@ -62,4 +62,5 @@ euler78();
 ```js
 // solution required
 ```
+
 </section>

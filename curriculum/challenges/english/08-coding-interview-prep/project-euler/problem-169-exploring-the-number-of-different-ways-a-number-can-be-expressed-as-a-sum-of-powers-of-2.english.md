@@ -26,7 +26,7 @@ What is f(1025)?
 ```yml
 tests:
   - text: <code>euler169()</code> should return 178653872807.
-    testString: assert.strictEqual(euler169(), 178653872807, '<code>euler169()</code> should return 178653872807.');
+    testString: assert.strictEqual(euler169(), 178653872807);
 
 ```
 
@@ -58,4 +58,5 @@ euler169();
 ```js
 // solution required
 ```
+
 </section>

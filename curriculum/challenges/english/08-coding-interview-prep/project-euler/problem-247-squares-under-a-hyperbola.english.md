@@ -35,7 +35,7 @@ What is the largest n for which the index of Sn is (3,3)?
 ```yml
 tests:
   - text: <code>euler247()</code> should return 782252.
-    testString: assert.strictEqual(euler247(), 782252, '<code>euler247()</code> should return 782252.');
+    testString: assert.strictEqual(euler247(), 782252);
 
 ```
 
@@ -67,4 +67,5 @@ euler247();
 ```js
 // solution required
 ```
+
 </section>

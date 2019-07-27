@@ -22,11 +22,11 @@ In the <code>penguin</code> class, change the <code>black</code> value to <code>
 ```yml
 tests:
   - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
   - text: <code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.');
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
   - text: <code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.
-    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.');
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi));
 
 ```
 

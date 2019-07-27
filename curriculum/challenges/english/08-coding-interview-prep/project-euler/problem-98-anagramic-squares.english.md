@@ -23,7 +23,7 @@ NOTE: All anagrams formed must be contained in the given text file.
 ```yml
 tests:
   - text: <code>euler98()</code> should return 18769.
-    testString: assert.strictEqual(euler98(), 18769, '<code>euler98()</code> should return 18769.');
+    testString: assert.strictEqual(euler98(), 18769);
 
 ```
 
@@ -55,4 +55,5 @@ euler98();
 ```js
 // solution required
 ```
+
 </section>
