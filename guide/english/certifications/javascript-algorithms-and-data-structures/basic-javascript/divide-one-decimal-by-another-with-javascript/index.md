@@ -17,7 +17,7 @@ JavaScript uses the `/` symbol for division.
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
-var quotient = 0.6 / 0.3; //quotient gets the value 2
+var quotient = 4.4 / 2.0; // Fix this line
 ```
 </details>
 
