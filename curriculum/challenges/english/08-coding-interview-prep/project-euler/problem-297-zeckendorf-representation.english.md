@@ -30,7 +30,7 @@ Find ∑ z(n) for 0<n<1017.
 ```yml
 tests:
   - text: <code>euler297()</code> should return 2252639041804718000.
-    testString: assert.strictEqual(euler297(), 2252639041804718000, '<code>euler297()</code> should return 2252639041804718000.');
+    testString: assert.strictEqual(euler297(), 2252639041804718000);
 
 ```
 

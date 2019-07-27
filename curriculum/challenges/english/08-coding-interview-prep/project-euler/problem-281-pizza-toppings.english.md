@@ -28,7 +28,7 @@ Find the sum of all f(m,n) such that f(m,n) ≤ 1015.
 ```yml
 tests:
   - text: <code>euler281()</code> should return 1485776387445623.
-    testString: assert.strictEqual(euler281(), 1485776387445623, '<code>euler281()</code> should return 1485776387445623.');
+    testString: assert.strictEqual(euler281(), 1485776387445623);
 
 ```
 

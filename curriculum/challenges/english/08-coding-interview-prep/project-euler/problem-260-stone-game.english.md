@@ -39,7 +39,7 @@ with xi ≤ yi ≤ zi ≤ 1000.
 ```yml
 tests:
   - text: <code>euler260()</code> should return 167542057.
-    testString: assert.strictEqual(euler260(), 167542057, '<code>euler260()</code> should return 167542057.');
+    testString: assert.strictEqual(euler260(), 167542057);
 
 ```
 

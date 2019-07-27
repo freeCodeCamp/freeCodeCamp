@@ -32,7 +32,7 @@ Give your answer as a fraction reduced to its lowest terms, in the form u/v.
 ```yml
 tests:
   - text: <code>euler236()</code> should return 123 / 59.
-    testString: assert.strictEqual(euler236(), 123 / 59, '<code>euler236()</code> should return 123 / 59.');
+    testString: assert.strictEqual(euler236(), 123 / 59);
 
 ```
 
