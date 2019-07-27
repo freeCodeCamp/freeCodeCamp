@@ -23,7 +23,7 @@ Find S(1803) rounded to 5 decimal places behind the decimal point.
 ```yml
 tests:
   - text: <code>euler476()</code> should return 110242.87794.
-    testString: assert.strictEqual(euler476(), 110242.87794, '<code>euler476()</code> should return 110242.87794.');
+    testString: assert.strictEqual(euler476(), 110242.87794);
 
 ```
 

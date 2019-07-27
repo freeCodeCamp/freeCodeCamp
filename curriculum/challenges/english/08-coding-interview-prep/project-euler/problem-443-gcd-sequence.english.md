@@ -33,7 +33,7 @@ Find g(1015).
 ```yml
 tests:
   - text: <code>euler443()</code> should return 2744233049300770.
-    testString: assert.strictEqual(euler443(), 2744233049300770, '<code>euler443()</code> should return 2744233049300770.');
+    testString: assert.strictEqual(euler443(), 2744233049300770);
 
 ```
 
