@@ -42,7 +42,7 @@
     "helmet": "^3.18.0",
     "helmet-csp": "^2.1.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "loopback": "^3.26.0",
     "loopback-boot": "^2.28.0",
     "loopback-connector-mongodb": "^4.2.0",
@@ -75,7 +75,7 @@
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
-    "@babel/node": "^7.4.5",
+    "@babel/node": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
