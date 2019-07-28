@@ -30,7 +30,7 @@ We have defined a function, <code>forecast</code>, that takes an array as an arg
 ```yml
 tests:
   - text: <code>forecast</code> should return <code>["warm", "sunny"]</code>
-    testString: assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], '<code>forecast</code> should return <code>["warm", "sunny"]</code>');
+    testString: assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny']);
   - text: The <code>forecast</code> function should utilize the <code>slice()</code> method
     testString: assert(/\.slice\(/.test(code));
 

@@ -48,7 +48,7 @@ tests:
   - text: <code>palindrome("1 eye for of 1 eye.")</code> should return false.
     testString: assert(palindrome("1 eye for of 1 eye.") === false);
   - text: '<code>palindrome("0_0 (: /-\ :) 0-0")</code> should return true.'
-    testString: 'assert(palindrome("0_0 (: /-\ :) 0-0") === true, ''<code>palindrome("0_0 (: /-\ :) 0-0")</code> should return true.'');'
+    testString: 'assert(palindrome("0_0 (: /-\ :) 0-0") === true);'
   - text: <code>palindrome("five|\_/|four")</code> should return false.
     testString: assert(palindrome("five|\_/|four") === false);
 
