@@ -71,10 +71,23 @@ tests:
 </section>
 
 ## Solution
-<section id='solution'>
+
 
 ```js
 // solution required
 ```
+<script>
+  // Add your code below this line
+  if (navigator.geolocation){
+  navigator.geolocation.getCurrentPosition(function(position) {
+    document.getElementById('data').innerHTML="latitude: "+ position.coords.latitude + "<br>longitude: " + position.coords.longitude;
+  });
+}
+  
+  // Add your code above this line
+</script>
+<h4>You are here:</h4>
+<div id="data">
 
-</section>
+</div>
+
