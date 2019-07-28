@@ -31,7 +31,7 @@ tests:
   - text: <code>booWho([].slice)</code> should return false.
     testString: assert.strictEqual(booWho([].slice), false);
   - text: '<code>booWho({ "a": 1 })</code> should return false.'
-    testString: 'assert.strictEqual(booWho({ "a": 1 }), false, ''<code>booWho({ "a": 1 })</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho({ "a": 1 }), false);'
   - text: <code>booWho(1)</code> should return false.
     testString: assert.strictEqual(booWho(1), false);
   - text: <code>booWho(NaN)</code> should return false.

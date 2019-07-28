@@ -39,7 +39,7 @@ tests:
   - text: <code>brain("++++++[>++++++++++<-]>+++++.")</code should return "A"
     testString: assert.equal(brain("++++++[>++++++++++<-]>+++++."),"A");
   - text: <code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>
-    testString: assert.equal(brain(bye), 'Goodbye, World!\r\n', '<code>brain(bye)</code> should return <code>Goodbye, World!\\r\\n</code>');
+    testString: assert.equal(brain(bye), 'Goodbye, World!\r\n');
   - text: <code>brain(hello)</code> should return <code>Hello World!\\n</code>
     testString: assert.equal(brain(hello), "Hello World!\n");
   - text: <code>brain(fib)</code> should return <code>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89</code>

@@ -23,13 +23,13 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>fearNotLetter("abce")</code> should return "d".
-    testString: assert.deepEqual(fearNotLetter('abce'), 'd', '<code>fearNotLetter("abce")</code> should return "d".');
+    testString: assert.deepEqual(fearNotLetter('abce'), 'd');
   - text: <code>fearNotLetter("abcdefghjklmno")</code> should return "i".
-    testString: assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i', '<code>fearNotLetter("abcdefghjklmno")</code> should return "i".');
+    testString: assert.deepEqual(fearNotLetter('abcdefghjklmno'), 'i');
   - text: <code>fearNotLetter("stvwx")</code> should return "u".
-    testString: assert.deepEqual(fearNotLetter('stvwx'), 'u', '<code>fearNotLetter("stvwx")</code> should return "u".');
+    testString: assert.deepEqual(fearNotLetter('stvwx'), 'u');
   - text: <code>fearNotLetter("bcdf")</code> should return "e".
-    testString: assert.deepEqual(fearNotLetter('bcdf'), 'e', '<code>fearNotLetter("bcdf")</code> should return "e".');
+    testString: assert.deepEqual(fearNotLetter('bcdf'), 'e');
   - text: <code>fearNotLetter("abcdefghijklmnopqrstuvwxyz")</code> should return undefined.
     testString: assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'));
 
