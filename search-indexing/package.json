@@ -28,6 +28,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "dependencies": {
     "algoliasearch": "^3.25.1",
+    "axios": "^0.19.0",
     "chalk": "^2.3.2",
     "debug": "^4.1.1",
     "dotenv": "^6.2.0",
