@@ -56,7 +56,7 @@ Watch the video demonstration or follow the steps below it:
 
     Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
 
-    This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
+    This does not take any additional time than an unconventional message like 'update file' or 'add index.md'
 
     You can learn more about [why you should use these here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
