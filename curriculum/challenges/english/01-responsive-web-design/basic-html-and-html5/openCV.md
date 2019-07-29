@@ -45,23 +45,20 @@ tests:
 
 ```html
  <h2>OpenCV.js</h2>
-  <p id = "status">OpenCV.js is loading...</p>
-          <img id = "imageSrc" src="http://bit.ly/fcc-relaxing-cat" />
-          <div> 
-          <input type = "button" id = "runSampl" onclick = "draw()" value="Run test" disabled=true />
-          </div>
-          <div>
-           <canvas id = "canvasOutput" >
-           </canvas>
-         </div>
+ <input type="button" id="runSampl" onclick="draw()" value="Run test" disabled=true />
+ <p id="status">OpenCV.js is loading...</p>
+ <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" /> 
+ <canvas id="canvasOutput" >
+ </canvas>
+ 
+ 
 
-    <script type = "text/javascript">
+ <script type="text/javascript">
+    
     function draw() {
-      let mat = cv.imread("imageSrc");
-      let dst = new cv.Mat();  
-  
+      let mat=cv.imread("imageSrc");
+      let dst=new cv.Mat();  
       cv.cvtColor(mat, dst, cv.COLOR_RGBA2GRAY);
-  
       cv.imshow('canvasOutput', dst);
       mat.delete();
       dst.delete();
@@ -70,12 +67,12 @@ tests:
     function onOpenCvReady() {
       document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
       cv["onRuntimeInitialized"]=()=> {
-       document.getElementById("runSampl").disabled=false;
+        document.getElementById("runSampl").disabled=false;
       }
     }
-    </script>
+  </script>
     
-    <script async src = "https://docs.opencv.org/master/opencv.js" onload = "onOpenCvReady();" type = "text/javascript">
+    <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
     </script>  
 ```
 
