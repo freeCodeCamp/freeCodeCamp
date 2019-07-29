@@ -21,7 +21,7 @@ Each challenge has tests you can run at any time by clicking the "Run tests" but
 
 ## Instructions
 <section id='instructions'>
-To pass the test on this challenge, change your <code>h1</code> element's text to say "Hello World".
+I don't know what is happaning
 </section>
 
 ## Tests
@@ -29,43 +29,54 @@ To pass the test on this challenge, change your <code>h1</code> element's text t
 
 ```yml
 tests:
-  - text: Your <code>h1</code> element should have the text "Hello World".
-    testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".');
+   - text: IDN
+     testString: assert($("draw").length) ; 
+  # - text: You test
+  #   testString:  assert(imrid("imageSrc").test(draw()));
 ```
-
+  <!-- testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".'); -->
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='html-seed'>
 
 ```html
- <h2>Gray && HSV filter in OpenCV.js</h2>
-  <p id="status">OpenCV.js is loading...</p>
-  <div>
-      <img id="imageSrc" src="https://bit.ly/fcc-relaxing-cat"/>
-      <div class="caption"> <input type="button" id="Run"  onclick="runDetectAndColor()" value="Run" /></div>
-      <div class="caption">Gray:</div>
-      <canvas id="canvasOutput" ></canvas> 
-  </div>
+ <h2>OpenCV.js</h2>
+  <p id = "status">OpenCV.js is loading...</p>
+          <img id = "imageSrc" src="http://bit.ly/fcc-relaxing-cat" />
+          <div> 
+          <input type = "button" id = "runSampl" onclick = "draw()" value="Run test" disabled=true />
+          </div>
+          <div>
+           <canvas id = "canvasOutput" >
+           </canvas>
+         </div>
 
-  <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
-  <script type="text/javascript">
-
-   function onOpenCvReady() {
-    document.getElementById('status').innerHTML = 'OpenCV.js is load.';
-
-    cv["onRuntimeInitialized"]=()=>{
+    <script type = "text/javascript">
+    function draw() {
       let mat = cv.imread("imageSrc");
       let dst = new cv.Mat();  
+  
       cv.cvtColor(mat, dst, cv.COLOR_RGBA2GRAY);
+  
       cv.imshow('canvasOutput', dst);
       mat.delete();
       dst.delete();
+    };
+    
+    function onOpenCvReady() {
+      document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
+      cv["onRuntimeInitialized"]=()=> {
+       document.getElementById("runSampl").disabled=false;
+      }
     }
-   }
-  </script>
+    </script>
+    
+    <script async src = "https://docs.opencv.org/master/opencv.js" onload = "onOpenCvReady();" type = "text/javascript">
+    </script>  
 ```
 
 </div>
