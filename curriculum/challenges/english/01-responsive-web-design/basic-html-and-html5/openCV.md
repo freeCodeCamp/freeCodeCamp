@@ -56,8 +56,8 @@ tests:
  <script type="text/javascript">
     
     function draw() {
-      let mat=cv.imread("imageSrc");
-      let dst=new cv.Mat();  
+      let mat = cv.imread("imageSrc");
+      let dst = new cv.Mat();  
       cv.cvtColor(mat, dst, cv.COLOR_RGBA2GRAY);
       cv.imshow('canvasOutput', dst);
       mat.delete();
@@ -67,7 +67,7 @@ tests:
     function onOpenCvReady() {
       document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
       cv["onRuntimeInitialized"]=()=> {
-        document.getElementById("runSampl").disabled=false;
+        document.getElementById("runSampl").disabled = false;
       }
     }
   </script>
