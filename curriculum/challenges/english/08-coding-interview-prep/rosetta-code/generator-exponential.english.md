@@ -1,5 +1,5 @@
 ---
-title: GeneratorExponential
+title: Generator/Exponential
 id: 5a23c84252665b21eecc7e7b
 challengeType: 5
 ---

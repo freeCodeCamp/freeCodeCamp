@@ -1,5 +1,5 @@
 ---
-title: Averages-Mode
+title: Averages/Mode
 id: 594d8d0ab97724821379b1e6
 challengeType: 5
 ---
