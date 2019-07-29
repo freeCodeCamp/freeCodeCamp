@@ -1,5 +1,5 @@
 ---
-title: Largest prime factor
+title: 'Problem 3: Largest prime factor'
 ---
 # Problem 3: Largest prime factor
 

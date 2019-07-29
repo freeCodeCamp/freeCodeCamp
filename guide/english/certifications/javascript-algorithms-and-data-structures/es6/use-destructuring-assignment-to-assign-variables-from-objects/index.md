@@ -4,9 +4,26 @@ title: Use Destructuring Assignment to Assign Variables from Objects
 
 # Use Destructuring Assignment to Assign Variables from Objects
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Solutions
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+```javascript
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+// change code below this line
+  
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+
+// change code above this line
+
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
+```
+
+</details>
