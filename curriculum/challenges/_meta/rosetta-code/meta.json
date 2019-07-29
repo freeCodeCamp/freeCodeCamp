@@ -46,15 +46,15 @@
     ],
     [
       "594d8d0ab97724821379b1e6",
-      "Averages-Mode"
+      "Averages/Mode"
     ],
     [
       "594d966a1467eb84194f0086",
-      "Averages-Pythagorean means"
+      "Averages/Pythagorean means"
     ],
     [
       "594da033de4190850b893874",
-      "Averages-Root mean square"
+      "Averages/Root mean square"
     ],
     [
       "594db4d0dedb4c06a2a4cefd",
@@ -238,7 +238,7 @@
     ],
     [
       "5a23c84252665b21eecc7e7b",
-      "GeneratorExponential"
+      "Generator/Exponential"
     ],
     [
       "5a23c84252665b21eecc7e80",
