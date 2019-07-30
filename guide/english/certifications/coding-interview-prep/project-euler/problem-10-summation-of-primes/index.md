@@ -1,5 +1,5 @@
 ---
-title: Summation of primes
+title: 'Problem 10: Summation of primes'
 ---
 # Problem 10: Summation of primes
 

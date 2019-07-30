@@ -6,9 +6,9 @@ title: Use the Twitch JSON API
 
 ---
 ## Problem Explanation
-Update September 29, 2016: Twitch has changed their API and now requires an API key in order to run queries. If you are using CodePen or GitHub pages to build these, we do not recommend adding an API key to your project for security reasons.
+Update December 28, 2018: Twitch has updated their API a few times since we wrote this. [The latest version of their API is here](https://dev.twitch.tv/docs/api/reference/#get-streams).
 
-Instead of using Twitch's API, we recommend hard-coding <a href='https://gist.github.com/QuincyLarson/2ff6892f948d0b7118a99264fd9c1ce8' target='_blank' rel='nofollow'>this JSON</a> into your app as a variable. It is a series of responses for different accounts from Twitch.
+Due to a change in conditions on API usage, Twitch.tv requires an API key, but we've built a workaround. Use <a href='https://wind-bow.glitch.me' target='_blank'>https://wind-bow.glitch.me/helix</a> instead of twitch's API base URL (i.e. https://api.twitch.tv/helix ) and you'll still be able to get account information, without needing to sign up for an API key.
 
 * * *
 

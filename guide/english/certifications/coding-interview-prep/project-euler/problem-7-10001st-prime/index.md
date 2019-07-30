@@ -1,5 +1,5 @@
 ---
-title: 10001st prime
+title: 'Problem 7: 10001st prime'
 ---
 # Problem 7: 10001st prime
 
