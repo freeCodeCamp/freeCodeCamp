@@ -1,5 +1,5 @@
 ---
-title: Largest palindrome product
+title: 'Problem 4: Largest palindrome product'
 ---
 # Problem 4: Largest palindrome product
 

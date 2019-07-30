@@ -22,19 +22,19 @@ The Gamma function can be defined as:
 ```yml
 tests:
   - text: <code>gamma</code> should be a function.
-    testString: assert(typeof gamma=='function','<code>gamma</code> should be a function.')
+    testString: assert(typeof gamma=='function')
   - text: <code>gamma(.1)</code> should return a number.
-    testString: assert(typeof gamma(.1)=='number','<code>gamma(.1)</code> should return a number.')
+    testString: assert(typeof gamma(.1)=='number')
   - text: <code>gamma(.1)</code> should return <code>9.513507698668736</code>.
-    testString: assert.equal(round(gamma(.1)), round(9.513507698668736),'<code>gamma(.1)</code> should return <code>9.513507698668736</code>.')
+    testString: assert.equal(round(gamma(.1)), round(9.513507698668736))
   - text: <code>gamma(.2)</code> should return <code>4.590843711998803</code>.
-    testString: assert.equal(round(gamma(.2)), round(4.590843711998803),'<code>gamma(.2)</code> should return <code>4.590843711998803</code>.')
+    testString: assert.equal(round(gamma(.2)), round(4.590843711998803))
   - text: <code>gamma(.3)</code> should return <code>2.9915689876875904</code>.
-    testString: assert.equal(round(gamma(.3)), round(2.9915689876875904),'<code>gamma(.3)</code> should return <code>2.9915689876875904</code>.')
+    testString: assert.equal(round(gamma(.3)), round(2.9915689876875904))
   - text: <code>gamma(.4)</code> should return <code>2.218159543757687</code>.
-    testString: assert.equal(round(gamma(.4)), round(2.218159543757687),'<code>gamma(.4)</code> should return <code>2.218159543757687</code>.')
+    testString: assert.equal(round(gamma(.4)), round(2.218159543757687))
   - text: <code>gamma(.5)</code> should return <code>1.7724538509055159</code>.
-    testString: assert.equal(round(gamma(.5)), round(1.7724538509055159),'<code>gamma(.5)</code> should return <code>1.7724538509055159</code>.')
+    testString: assert.equal(round(gamma(.5)), round(1.7724538509055159))
 
 ```
 
