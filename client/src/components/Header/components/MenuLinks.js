@@ -25,6 +25,11 @@ function MenuLinks(props) {
         </Link>
       </li>
       <li>
+        <Link className='top-right-nav-link' external={true} to='https://coderadio.freecodecamp.org/'>
+          CodeRadio
+        </Link>
+      </li>
+      <li>
         <UserState disableSettings={props.disableSettings} />
       </li>
     </ul>
