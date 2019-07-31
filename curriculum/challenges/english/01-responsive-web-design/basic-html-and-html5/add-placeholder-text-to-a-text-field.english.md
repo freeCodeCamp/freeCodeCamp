@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
+forumTopicId: 16647
 ---
 
 ## Description

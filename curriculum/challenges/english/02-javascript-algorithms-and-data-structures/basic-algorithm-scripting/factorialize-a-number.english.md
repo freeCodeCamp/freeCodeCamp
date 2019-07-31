@@ -3,6 +3,7 @@ id: a302f7aae1aa3152a5b413bc
 title: Factorialize a Number
 isRequired: true
 challengeType: 5
+forumTopicId: 16013
 ---
 
 ## Description

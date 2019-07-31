@@ -3,6 +3,7 @@ id: bd7123c9c448eddfaeb5bdef
 title: Find the Length of a String
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cvmqEAd'
+forumTopicId: 18182
 ---
 
 ## Description
