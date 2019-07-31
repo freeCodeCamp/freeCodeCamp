@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
+    "audit": "npm audit && lerna exec --concurrency 1 'echo $LERNA_PACKAGE_NAME && npm audit'",
+    "audit:fix": "npm audit fix && lerna exec --concurrency 1 'echo $LERNA_PACKAGE_NAME && npm audit fix'",
     "bootstrap": "lerna bootstrap --ci",
     "clean": "npm-run-all clean:gatsby-site clean:packages",
     "clean:root-deps": "shx rm -rf node_modules",
