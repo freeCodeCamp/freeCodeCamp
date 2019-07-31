@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08826
 title: Use Clockwise Notation to Specify the Padding of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mBS9'
+forumTopicId: 18346
 ---
 
 ## Description

@@ -4,6 +4,7 @@ title: Delete Your jQuery Functions
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 17561
 ---
 
 ## Description

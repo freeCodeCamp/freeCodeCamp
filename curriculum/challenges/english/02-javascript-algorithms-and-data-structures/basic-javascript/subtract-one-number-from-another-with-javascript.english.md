@@ -3,6 +3,7 @@ id: cf1111c1c11feddfaeb4bdef
 title: Subtract One Number from Another with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3yQtk'
+forumTopicId: 18314
 ---
 
 ## Description
