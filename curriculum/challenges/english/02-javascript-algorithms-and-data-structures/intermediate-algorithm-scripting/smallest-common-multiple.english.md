@@ -33,8 +33,6 @@ tests:
     testString: assert.deepEqual(smallestCommons([2, 10]), 2520);
   - text: <code>smallestCommons([1, 13])</code> should return 360360.
     testString: assert.deepEqual(smallestCommons([1, 13]), 360360);
-  - text: <code>smallestCommons([23, 18])</code> should return 6056820.
-    testString: assert.deepEqual(smallestCommons([23, 18]), 6056820);
 
 ```
 
