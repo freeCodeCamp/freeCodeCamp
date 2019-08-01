@@ -17,7 +17,7 @@ There are three parts to for loop. They are separated by semicolons.
 
 2. The condition: `i < 5;` - The loop will run as long as this is `true`. That means that as soon as `i` is equal to 5, the loop will stop looping. Note that the inside of the loop will never see `i` as 5 because it will stop before then. If this condition is initially `false`, the loop will never execute.
 
-3. The increment: `i++` - This code is run at the end of each loop. It's usually a simple increment (`++` operator), but can really be any mathematical transformation. It is used to move the counter (`i`) forward (or backwards, or whatever.
+3. The increment: `i++` - This code is run at the end of each loop. It's usually a simple increment (`++` operator), but can really be any expression. It is used to move the counter (`i`) forward (or backwards, or whatever).
 
 ---
 ## Solutions
