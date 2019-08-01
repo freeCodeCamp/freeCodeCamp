@@ -16,7 +16,7 @@ Comece do índice 1 ao tamanho da matriz de entrada.
 
 Passo 1 :
 
-! [\[8 3 5 1 4 2\]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/1.png?raw=true)
+![[ 8 3 5 1 4 2 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/1.png?raw=true)
 ```
       key = 3 //starting from 1st index. 
  
@@ -30,7 +30,7 @@ Passo 1 :
 
 Passo 2 :
 
-! [\[3 8 5 1 4 2\]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/2.png?raw=true)
+![[ 3 8 5 1 4 2 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/2.png?raw=true)
 ```
       key = 5 //2nd index 
  
@@ -41,7 +41,7 @@ Passo 2 :
 
 Etapa 3 :
 
-! [\[3 5 8 1 4 2\]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/3.png?raw=true)
+![[ 3 5 8 1 4 2 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/3.png?raw=true)
 ```
       key = 1 //3rd index 
  
@@ -56,7 +56,7 @@ Etapa 3 :
 
 Passo 4 :
 
-! [\[1 3 5 8 4 2\]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/4.png?raw=true)
+![[ 1 3 5 8 4 2 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/4.png?raw=true)
 ```
       key = 4 //4th index 
  
@@ -71,7 +71,7 @@ Passo 4 :
 
 Passo 5:
 
-! [\[1 3 4 5 8 2\]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/5.png?raw=true)
+![[ 1 3 4 5 8 2 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/5.png?raw=true)
 ```
       key = 2 //5th index 
  
@@ -88,7 +88,7 @@ Passo 5:
       Result: [1 2 3 4 5 8] 
 ```
 
-! [\[1 2 3 4 5 8\]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/6.png?raw=true)
+![[ 1 2 3 4 5 8 ]](https://github.com/blulion/freecodecamp-resource/blob/master/insertion_sort/6.png?raw=true)
 
 O algoritmo abaixo é uma versão ligeiramente otimizada para evitar a troca do elemento- `key` em cada iteração. Aqui, o elemento- `key` será trocado no final da iteração (etapa).
 
@@ -103,8 +103,8 @@ O algoritmo abaixo é uma versão ligeiramente otimizada para evitar a troca do 
          arr[i+1] = key 
 ```
 
-Aqui está uma implementação detaied em Javascript:
-```
+Aqui está uma implementação detalhada em JavaScript:
+```js
 function insertion_sort(A) { 
     var len = array_length(A); 
     var i = 1; 
@@ -142,7 +142,7 @@ Uma implementação rápida no Swift é mostrada abaixo:
 ```
 
 O exemplo de Java é mostrado abaixo:
-```
+```java
 public int[] insertionSort(int[] arr) 
       for (j = 1; j < arr.length; j++) { 
          int key = arr[j] 
@@ -178,8 +178,11 @@ void insertionSort(int arr[], int n)
 
 ### Propriedades:
 
-*   Complexidade Espacial: O (1)
-*   Complexidade do Tempo: O (n), O (n \* n), O (n \* n) para Melhor, Média, Piores Casos respectivamente
+*   Complexidade Espacial: O(1)
+*   Complexidade do Tempo: O(n), O(n* n), O(n* n) para Melhor, Média, Piores Casos respectivamente
+     - Melhor Caso: array já está classificado
+     - Médio Caso: array é aleatoriamente classificado
+     - Pior Caso: matriz invertida é ordenada.
 *   Classificação no local: sim
 *   Estável: sim
 
@@ -189,3 +192,5 @@ void insertionSort(int arr[], int n)
 *   [CS50 - YouTube](https://youtu.be/TwGb6ohsvUU)
 *   [SortInsertion - GeeksforGeeks, YouTube](https://www.youtube.com/watch?v=wObxd4Kx8sE)
 *   [Visualização de ordenação de inserção](https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/visualize/)
+*   [Insertion Sort - MyCodeSchool](https://www.youtube.com/watch?v=i-SKeOcBwko)
+*   [Insertion Sort - VisuAlgo](https://visualgo.net/en/sorting)
