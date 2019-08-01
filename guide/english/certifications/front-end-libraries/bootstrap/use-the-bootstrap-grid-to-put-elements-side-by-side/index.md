@@ -3,8 +3,20 @@ title: Use the Bootstrap Grid to Put Elements Side By Side
 ---
 # Use the Bootstrap Grid to Put Elements Side By Side
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/use-the-bootstrap-grid-to-put-elements-side-by-side/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Problem Explanation
+Bootstrap uses a responsive grid system that makes it easier to put elements into rows and tell each element's relative width.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+![Bootstrap 12 column grid layout](https://www.evernote.com/shard/s116/sh/f0944d97-08b8-4615-8273-a327bf41fb05/de1a3acbceef89ae/deep/0/)
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Note that in this illustration, the `col-md-_` class is being used. Here, md means medium, and _ is a number specifying how many columns wide the element should be. In this case, the column width of an element on a medium-sized screen, such as a laptop, is being specified.
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
+
+```
+</details>
+
