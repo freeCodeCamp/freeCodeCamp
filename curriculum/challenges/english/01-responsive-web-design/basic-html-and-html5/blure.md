@@ -1,6 +1,6 @@
 ---
-id: 5d383f6f2cd33e8211fad377
-title: Enter in openCV
+id: 5d428542352db8b32553fd9d
+title: Blur
 challengeType: 0
 videoUrl: 
 ---
@@ -44,36 +44,34 @@ tests:
 <div id='html-seed'>
 
 ```html
- <h2>OpenCV.js</h2>
- <input type="button" id="runSampl" onclick="draw()" value="Run test" disabled=true />
- <p id="status">OpenCV.js is loading...</p>
- <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" /> 
- <canvas id="canvasOutput" >
- </canvas>
- 
- 
+<script async src = "https://docs.opencv.org/master/opencv.js" onload = "onOpenCvReady();" type = "text/javascript"></script>
+<script type = "text/javascript">
 
- <script type="text/javascript">
-    
-    function draw() {
-      let src = cv.imread("imageSrc");
-      let dst = new cv.Mat();  
-      cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
-      cv.imshow('canvasOutput', dst);
-      src.delete();
-      dst.delete();
-    };
-    
-    function onOpenCvReady() {
-      document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
-      cv["onRuntimeInitialized"]=()=> {
-        document.getElementById("runSampl").disabled = false;
-      }
+  function onOpenCvReady() {
+    document.getElementById('status').innerHTML = 'OpenCV.js is load.';
+    cv["onRuntimeInitialized"]=()=> {
+       document.getElementById("run").disabled=false;
     }
+  }
+  function runBlur() {
+    let src = cv.imread('imageSrc');
+    let dst = new cv.Mat();
+    let kernelSize = new cv.Size(3, 3);
+    cv.blur(src, dst, kernelSize);
+    cv.imshow('canvasOutput', dst);
+    src.delete();
+    dst.delete();
+  }
   </script>
-    
-    <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
-    </script>  
+
+
+  <h2>Blure OpenCV.js</h2>
+  <p id="status">OpenCV.js is loading...</p>
+
+  <div> <input type="button" id="run"  onclick="runBlur()" value="Run" disabled=true /></div>
+
+  <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>
+  <canvas id="canvasOutput" ></canvas>
 ```
 
 </div>
