@@ -51,21 +51,26 @@ const challengeFrontmatterValidator = file => frontmatter => {
 
     `);
   }
+
   const { videoUrl } = frontmatter;
-
   let validVideoUrl = false;
-  if (isEmpty(videoUrl)) {
+  if (!isEmpty(videoUrl) && !scrimbaUrlRE.test(videoUrl)) {
     validVideoUrl = true;
-  } else {
-    validVideoUrl = scrimbaUrlRE.test(videoUrl);
-
-    if (!validVideoUrl) {
-      console.log(`
-  ${fullPath} contains an invalid videoUrl
-`);
-    }
+    console.log(`
+        ${fullPath} contains an invalid videoUrl
+      `);
   }
-  return hasRequiredProperties && validVideoUrl;
+
+  const { forumTopicId } = frontmatter;
+  let validForumTopicId = false;
+  if (!isEmpty(forumTopicId) && !isNumber(forumTopicId)) {
+    validForumTopicId = true;
+    console.log(`
+      ${fullPath} contains an invalid forumTopicId
+    `);
+  }
+
+  return hasRequiredProperties && validVideoUrl && validForumTopicId;
 };
 
 function isChallengeParseable(file) {
