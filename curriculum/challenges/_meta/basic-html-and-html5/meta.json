@@ -127,7 +127,11 @@
     [
       "5d428542352db8b32553fd9d",
       "Blur"
-    ]
+    ],
+    [
+      "5d414905ef3f574940200d32",
+      "Resize opencv"
+    ],
   ],
   "helpRoom": "Help",
   "fileName": "01-responsive-web-design/basic-html-and-html5.json"
