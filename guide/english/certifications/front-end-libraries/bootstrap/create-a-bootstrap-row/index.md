@@ -14,3 +14,5 @@ title: Create a Bootstrap Row
   <div class="row"></div>
 </div>
 ```
+
+</details>
