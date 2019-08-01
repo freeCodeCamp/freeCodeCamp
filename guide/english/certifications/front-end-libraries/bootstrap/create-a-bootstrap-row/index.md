@@ -9,7 +9,6 @@ title: Create a Bootstrap Row
 <details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
-</details>
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
   <div class="row"></div>
