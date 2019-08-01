@@ -104,6 +104,7 @@ function updateMyCurrentChallenge(req, res, next) {
     user,
     body: { currentChallengeId }
   } = req;
+  console.log('updating with id', currentChallengeId);
   return user.updateAttribute(
     'currentChallengeId',
     currentChallengeId,

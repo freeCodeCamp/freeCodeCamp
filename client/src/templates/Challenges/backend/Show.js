@@ -137,12 +137,12 @@ export class BackEnd extends Component {
           challengeType
         }
       },
-      pageContext: { challengeMeta }
+      pageContext: { challengeMeta, slug }
     } = this.props;
     initConsole('');
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, challengeType });
-    challengeMounted(challengeMeta.id);
+    challengeMounted({ id: challengeMeta.id, slug });
   }
 
   handleSubmit(values) {

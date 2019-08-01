@@ -1,10 +1,12 @@
 import { put, select, call, takeEvery } from 'redux-saga/effects';
+import cookies from 'browser-cookies';
 
 import {
   isSignedInSelector,
   currentChallengeIdSelector,
   openDonationModal,
   showDonationSelector,
+  updateCurrentChallengeUrl,
   updateComplete,
   updateFailed,
   userSelector
@@ -15,14 +17,17 @@ import { post } from '../../../utils/ajax';
 import { randomCompliment } from '../utils/get-words';
 import { updateSuccessMessage } from './';
 
-function* currentChallengeSaga({ payload }) {
+function* currentChallengeSaga({ payload: { id, slug } }) {
+  cookies.set('currentChallengeUrl', slug, { expires: 365 });
+  yield put(updateCurrentChallengeUrl(slug));
+
   const isSignedIn = yield select(isSignedInSelector);
   const currentChallengeId = yield select(currentChallengeIdSelector);
-  if (isSignedIn && payload !== currentChallengeId) {
+  if (isSignedIn && id !== currentChallengeId) {
     const update = {
       endpoint: '/update-my-current-challenge',
       payload: {
-        currentChallengeId: payload
+        currentChallengeId: id
       }
     };
     try {

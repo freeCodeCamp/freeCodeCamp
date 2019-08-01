@@ -39,7 +39,19 @@ async function createReadSessionUser(app) {
   const { Donation } = app.models;
   const challengeUrlResolver = await createChallengeUrlResolver(app);
 
-  return function getSessionUser(req, res, next) {
+  function delay(n) {
+    n = n || 2000;
+    return new Promise(done => {
+      setTimeout(() => {
+        done();
+      }, n);
+    });
+  }
+
+  return async function getSessionUser(req, res, next) {
+    // console.log('waiting');
+    // await delay();
+    // console.log('done waiting');
     const queryUser = req.user;
 
     const challengeUrlResolver$ = Observable.fromPromise(

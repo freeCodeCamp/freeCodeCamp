@@ -54,6 +54,7 @@ export const types = createTypes(
     'resetUserData',
     'submitComplete',
     'updateComplete',
+    'updateCurrentChallengeUrl',
     'updateFailed',
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('fetchProfileForUser'),
@@ -117,13 +118,17 @@ export const showCert = createAction(types.showCert);
 export const showCertComplete = createAction(types.showCertComplete);
 export const showCertError = createAction(types.showCertError);
 
+export const updateCurrentChallengeUrl = createAction(
+  types.updateCurrentChallengeUrl
+);
+
 export const completedChallengesSelector = state =>
   userSelector(state).completedChallenges || [];
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state =>
   userSelector(state).currentChallengeId || '';
 export const currentChallengeUrlSelector = state =>
-  sessionMetaSelector(state).currentChallengeUrl || '';
+  state[ns].currentChallengeUrl || '';
 
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
@@ -315,6 +320,13 @@ export const reducer = handleActions(
             )
           }
         }
+      };
+    },
+    [types.updateCurrentChallengeUrl]: (state, { payload }) => {
+      console.log('updatingCurrentChallengeUrl', payload);
+      return {
+        ...state,
+        currentChallengeUrl: payload
       };
     },
     [settingsTypes.updateLegacyCertComplete]: (state, { payload }) => {
