@@ -26,7 +26,7 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "gatsby": "^2.10.0",
     "gatsby-cli": "^2.7.0",
-    "gatsby-link": "^2.2.0",
+    "gatsby-link": "^2.2.4",
     "gatsby-plugin-create-client-paths": "^2.1.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.0",
