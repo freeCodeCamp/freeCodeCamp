@@ -1,5 +1,5 @@
 ---
-title: 'Problem 152: Writing half as a sum of inverse squares'
+title: 'Problem 152: Writing one half as a sum of inverse squares'
 ---
 ## Problem 152: Writing one half as a sum of inverse squares
 
