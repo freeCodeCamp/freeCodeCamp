@@ -70,7 +70,7 @@
     "shortid": "^2.2.14",
     "stripe": "^6.1.0",
     "uuid": "^3.0.1",
-    "validator": "^9.4.1"
+    "validator": "^11.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",

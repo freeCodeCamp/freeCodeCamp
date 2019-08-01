@@ -40,7 +40,7 @@
     "readdirp-walk": "^1.7.0",
     "rxjs": "^6.4.0",
     "secure-compare": "^3.0.1",
-    "validator": "^10.11.0"
+    "validator": "^11.1.0"
   },
   "devDependencies": {
     "html-entities": "^1.2.1",

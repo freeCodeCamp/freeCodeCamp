@@ -60,7 +60,7 @@
     "readdirp-walk": "^1.6.0",
     "rx": "^4.1.0",
     "semantic-release": "^15.13.3",
-    "validator": "^10.4.0"
+    "validator": "^11.1.0"
   },
   "keywords": [
     "challenges",
