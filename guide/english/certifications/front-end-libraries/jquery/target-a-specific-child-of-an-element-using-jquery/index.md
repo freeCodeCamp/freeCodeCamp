@@ -18,6 +18,7 @@ title: Target a Specific Child of an Element Using jQuery
     $("#target5").clone().appendTo("#left-well");
     $("#target1").parent().css("background-color", "red");
     $("#right-well").children().css("color", "orange");
+    $(".target:nth-child(2)").addClass("animated bounce");
   });
 </script>
 
