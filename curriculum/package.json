@@ -44,7 +44,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-preset-stage-3": "^6.24.1",
     "babel-standalone": "^6.26.0",
-    "chai": "4.2.0",
+    "chai": "3.5.0",
     "fs-extra": "^6.0.1",
     "gulp": "^4.0.0",
     "joi": "^13.3.0",

@@ -23,7 +23,7 @@
     "accepts": "^1.3.7",
     "auth0-js": "^9.10.4",
     "body-parser": "^1.19.0",
-    "chai": "~3.4.1",
+    "chai": "~3.5.0",
     "compression": "^1.7.4",
     "connect-mongo": "^1.3.2",
     "cookie-parser": "^1.4.4",
