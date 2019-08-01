@@ -1,7 +1,7 @@
 ---
-title: Comparison with the greater than operator (>)
+title: Comparison with the Greater Than Operator
 ---
-# Comparison with the Greater Than Operator (>)
+# Comparison with the Greater Than Operator
 
 
 ---

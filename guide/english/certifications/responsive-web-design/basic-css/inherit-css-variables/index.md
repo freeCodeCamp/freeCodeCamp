@@ -1,7 +1,7 @@
 ---
-title: Cascading CSS Variables
+title: Inherit CSS Variables
 ---
-# Cascading CSS Variables
+# Inherit CSS Variables
 
 ---
 ## Problem Explanation
