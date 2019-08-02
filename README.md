@@ -80,7 +80,7 @@ Here are our six core certifications:
 - [JSON APIs and Ajax](https://learn.freecodecamp.org/data-visualization/json-apis-and-ajax)
   <br />
   <br />
-  **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
+  **Projects**: Bar Chart, Scatter plot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
 #### 5. APIs and Microservices Certification
 
