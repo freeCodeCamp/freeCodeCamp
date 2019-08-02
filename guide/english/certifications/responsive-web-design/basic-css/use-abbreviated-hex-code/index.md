@@ -3,8 +3,48 @@ title: Use Abbreviated Hex Code
 ---
 # Use Abbreviated Hex Code
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-abbreviated-hex-code/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Problem Explanation
+Red, which is `#FF0000` in hex code, can be shortened to `#F00`. That is, one digit for red, one digit for green, one digit for blue.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This reduces the total number of possible colors to around 4,000. But browsers will interpret `#FF0000` and `#F00` as exactly the same color.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```html
+<style>
+  body {
+    background-color: #F00;
+  }
+</style>
+```
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
+<style>
+  .red-text {
+    color: #F00;
+  }
+  .fuchsia-text {
+    color: #F0F;
+  }
+  .cyan-text {
+    color: #0FF;
+  }
+  .green-text {
+    color: #0F0;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="fuchsia-text">I am fuchsia!</h1>
+
+<h1 class="cyan-text">I am cyan!</h1>
+
+<h1 class="green-text">I am green!</h1>
+```
+
+</details>

@@ -1,7 +1,7 @@
 ---
-title: Make Links Navigatable with HTML Access Keys
+title: Make Links Navigable with HTML Access Keys
 ---
-# Make Links Navigatable with HTML Access Keys
+# Make Links Navigable with HTML Access Keys
 
 
 ---

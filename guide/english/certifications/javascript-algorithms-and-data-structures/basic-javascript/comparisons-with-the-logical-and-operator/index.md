@@ -1,7 +1,7 @@
 ---
-title: Comparisons with the && (logical AND) operator
+title: Comparisons with the Logical AND operator
 ---
-# Comparisons with the && (logical AND) operator
+# Comparisons with the Logical AND operator
 
 ---
 ## Problem Explanation
