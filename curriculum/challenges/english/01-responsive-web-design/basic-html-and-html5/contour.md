@@ -1,6 +1,6 @@
 ---
-id: 5d383f6f2cd33e8211fad377
-title: Enter in openCV
+id: 5d4299689da0aed2a684435c
+title: Contour
 challengeType: 0
 videoUrl: 
 ---
@@ -44,36 +44,43 @@ tests:
 <div id='html-seed'>
 
 ```html
- <h2>OpenCV.js</h2>
- <input type="button" id="runSampl" onclick="draw()" value="Run test" disabled=true />
- <p id="status">OpenCV.js is loading...</p>
- <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" /> 
- <canvas id="canvasOutput" >
- </canvas>
- 
- 
+<h2>OpenCV.js</h2>        
+<input type="button" id="myButton" onclick= "contour()" value="Run" disabled=true/>
+<p id="status">OpenCV.js is loading...</p>
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>    
+<canvas id="canvasOutput" ></canvas>
+            
+        
 
- <script type="text/javascript">
-    
-    function draw() {
-      let src = cv.imread("imageSrc");
-      let dst = new cv.Mat();  
-      cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
-      cv.imshow('canvasOutput', dst);
-      src.delete();
-      dst.delete();
-    };
-    
-    function onOpenCvReady() {
-      document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
-      cv["onRuntimeInitialized"]=()=> {
-        document.getElementById("runSampl").disabled = false;
-      }
-    }
-  </script>
-    
-    <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
-    </script>  
+
+<script type="text/javascript">
+
+function contour() {
+  let mat = cv.imread("imageSrc");
+  let edged = new cv.Mat();
+  let contours = new cv.MatVector();
+  let hierarchy = new cv.Mat();
+
+  cv.Canny(mat, edged, 100, 200);
+
+  cv.findContours(edged, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
+
+  cv.drawContours(mat, contours, -1, new cv.Scalar(0, 255, 0, 255));
+
+  cv.imshow("canvasOutput", mat);
+  edged.delete();
+  contours.delete();
+  hierarchy.delete();
+};
+
+function onOpenCvReady() {
+  document.getElementById("status").innerHTML = "OpenCV.js is ready.";
+  cv["onRuntimeInitialized"] = () => {document.getElementById("myButton").disabled = false;}
+}
+</script>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
+</script>
 ```
 
 </div>
