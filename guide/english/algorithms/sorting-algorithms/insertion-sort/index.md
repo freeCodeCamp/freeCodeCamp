@@ -98,7 +98,7 @@ The algorithm shown below is a slightly optimized version to avoid swapping the 
 
 Here is a detailed implementation in JavaScript:
 
-```
+```js
 function insertion_sort(A) {
     var len = array_length(A);
     var i = 1;
@@ -135,7 +135,7 @@ A quick implementation in Swift is shown below :
   }
 ```
 The Java example is shown below:
-```
+```java
 public int[] insertionSort(int[] arr)
       for (j = 1; j < arr.length; j++) {
          int key = arr[j]

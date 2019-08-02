@@ -3,8 +3,16 @@ title: Create a Bootstrap Row
 ---
 # Create a Bootstrap Row
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/create-a-bootstrap-row/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Solutions
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row"></div>
+</div>
+```
+
+</details>

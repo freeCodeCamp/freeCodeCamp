@@ -1,7 +1,7 @@
 ---
-title: Averages-Root mean square
+title: Averages/Root mean square
 ---
-# Averages-Root mean square
+# Averages/Root mean square
 
 ---
 ## Solutions

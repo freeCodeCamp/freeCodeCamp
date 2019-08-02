@@ -1,5 +1,5 @@
 ---
-title: 'Problem 8:  Largest product in a series'
+title: 'Problem 8: Largest product in a series'
 ---
 # Problem 8: Largest product in a series
 
