@@ -2,6 +2,7 @@
 id: 5900f3e71000cf542c50fefa
 challengeType: 5
 title: 'Problem 123: Prime square remainders'
+forumTopicId: 301750
 ---
 
 ## Description

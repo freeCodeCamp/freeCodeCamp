@@ -2,6 +2,7 @@
 id: 5900f4de1000cf542c50fff0
 challengeType: 5
 title: 'Problem 369: Badugi'
+forumTopicId: 302030
 ---
 
 ## Description

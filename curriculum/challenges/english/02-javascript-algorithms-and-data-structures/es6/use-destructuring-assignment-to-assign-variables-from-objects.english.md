@@ -2,6 +2,7 @@
 id: 587d7b89367417b2b2512b49
 title: Use Destructuring Assignment to Assign Variables from Objects
 challengeType: 1
+forumTopicId: 301215
 ---
 
 ## Description

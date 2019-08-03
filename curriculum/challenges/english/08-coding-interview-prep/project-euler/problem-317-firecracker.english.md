@@ -2,6 +2,7 @@
 id: 5900f4aa1000cf542c50ffbc
 challengeType: 5
 title: 'Problem 317: Firecracker'
+forumTopicId: 301973
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4511000cf542c50ff63
 challengeType: 5
 title: 'Problem 228: Minkowski Sums'
+forumTopicId: 301871
 ---
 
 ## Description

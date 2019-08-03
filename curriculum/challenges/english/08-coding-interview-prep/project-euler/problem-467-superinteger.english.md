@@ -2,6 +2,7 @@
 id: 5900f5411000cf542c510052
 challengeType: 5
 title: 'Problem 467: Superinteger'
+forumTopicId: 302142
 ---
 
 ## Description

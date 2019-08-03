@@ -2,6 +2,7 @@
 id: 5900f50b1000cf542c51001d
 challengeType: 5
 title: 'Problem 414: Kaprekar constant'
+forumTopicId: 302083
 ---
 
 ## Description

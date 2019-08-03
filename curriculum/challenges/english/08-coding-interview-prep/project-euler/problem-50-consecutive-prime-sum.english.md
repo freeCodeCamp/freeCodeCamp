@@ -2,6 +2,7 @@
 id: 5900f39e1000cf542c50feb1
 challengeType: 5
 title: 'Problem 50: Consecutive prime sum'
+forumTopicId: 302161
 ---
 
 ## Description

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036144
 title: Use Provider to Connect Redux to React
 challengeType: 6
 isRequired: false
+forumTopicId: 301435
 ---
 
 ## Description

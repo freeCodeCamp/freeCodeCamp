@@ -2,6 +2,7 @@
 id: 5900f3e91000cf542c50fefc
 challengeType: 5
 title: 'Problem 125: Palindromic sums'
+forumTopicId: 301752
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4f91000cf542c51000c
 challengeType: 5
 title: 'Problem 397: Triangle on parabola'
+forumTopicId: 302062
 ---
 
 ## Description

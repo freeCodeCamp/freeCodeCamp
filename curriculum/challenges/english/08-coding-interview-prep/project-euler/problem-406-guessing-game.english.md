@@ -2,6 +2,7 @@
 id: 5900f5021000cf542c510015
 challengeType: 5
 title: 'Problem 406: Guessing Game'
+forumTopicId: 302074
 ---
 
 ## Description

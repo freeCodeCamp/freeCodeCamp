@@ -2,6 +2,7 @@
 title: Zhang-Suen thinning algorithm
 id: 594810f028c0303b75339ad7
 challengeType: 5
+forumTopicId: 302347
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 587d7b8c367417b2b2512b57
 title: Use * to Import Everything from a File
 challengeType: 1
+forumTopicId: 301210
 ---
 
 ## Description

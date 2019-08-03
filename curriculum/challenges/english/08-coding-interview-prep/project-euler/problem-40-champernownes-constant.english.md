@@ -2,6 +2,7 @@
 id: 5900f3941000cf542c50fea7
 challengeType: 5
 title: 'Problem 40: Champernowne''s constant'
+forumTopicId: 302066
 ---
 
 ## Description

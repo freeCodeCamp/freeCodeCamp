@@ -2,6 +2,7 @@
 id: 5900f4b41000cf542c50ffc7
 challengeType: 5
 title: 'Problem 328: Lowest-cost Search'
+forumTopicId: 301985
 ---
 
 ## Description

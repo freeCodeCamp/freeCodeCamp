@@ -2,6 +2,7 @@
 id: 5900f4041000cf542c50ff17
 challengeType: 5
 title: 'Problem 152: Writing one half as a sum of inverse squares'
+forumTopicId: 301783
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f5111000cf542c510023
 challengeType: 5
 title: 'Problem 420: 2x2 positive integer matrix'
+forumTopicId: 302090
 ---
 
 ## Description

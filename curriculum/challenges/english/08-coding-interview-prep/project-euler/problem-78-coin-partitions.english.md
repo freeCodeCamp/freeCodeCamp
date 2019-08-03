@@ -2,6 +2,7 @@
 id: 5900f3ba1000cf542c50fecd
 challengeType: 5
 title: 'Problem 78: Coin partitions'
+forumTopicId: 302191
 ---
 
 ## Description

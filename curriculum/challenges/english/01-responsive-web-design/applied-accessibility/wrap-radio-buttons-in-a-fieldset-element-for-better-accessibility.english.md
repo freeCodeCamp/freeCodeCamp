@@ -3,6 +3,7 @@ id: 587d778b367417b2b2512aa7
 title: Wrap Radio Buttons in a fieldset Element for Better Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJVefw'
+forumTopicId: 301030
 ---
 
 ## Description

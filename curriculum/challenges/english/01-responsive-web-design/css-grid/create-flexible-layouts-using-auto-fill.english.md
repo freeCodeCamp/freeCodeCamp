@@ -3,6 +3,7 @@ id: 5a94fe5469fb03452672e461
 title: Create Flexible Layouts Using auto-fill
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cmzdycW'
+forumTopicId: 301126
 ---
 
 ## Description

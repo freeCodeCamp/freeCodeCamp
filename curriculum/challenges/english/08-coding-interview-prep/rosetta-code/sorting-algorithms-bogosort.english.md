@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8002
 title: Sorting algorithms/Bogosort
 challengeType: 5
+forumTopicId: 302311
 ---
 
 ## Description

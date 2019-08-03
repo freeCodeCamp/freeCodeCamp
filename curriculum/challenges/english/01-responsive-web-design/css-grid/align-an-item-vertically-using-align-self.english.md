@@ -3,6 +3,7 @@ id: 5a90375238fddaf9a66b5d3b
 title: Align an Item Vertically using align-self
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cmzd4fz'
+forumTopicId: 301123
 ---
 
 ## Description

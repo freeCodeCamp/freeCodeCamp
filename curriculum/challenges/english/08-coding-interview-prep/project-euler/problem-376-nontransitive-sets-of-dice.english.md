@@ -2,6 +2,7 @@
 id: 5900f4e51000cf542c50fff7
 challengeType: 5
 title: 'Problem 376: Nontransitive sets of dice'
+forumTopicId: 302038
 ---
 
 ## Description

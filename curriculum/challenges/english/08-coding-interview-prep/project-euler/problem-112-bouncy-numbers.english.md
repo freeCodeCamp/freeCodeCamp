@@ -2,6 +2,7 @@
 id: 5900f3dd1000cf542c50feef
 challengeType: 5
 title: 'Problem 112: Bouncy numbers'
+forumTopicId: 301738
 ---
 
 ## Description

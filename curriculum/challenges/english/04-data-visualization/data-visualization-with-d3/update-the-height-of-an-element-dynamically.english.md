@@ -2,6 +2,7 @@
 id: 587d7fa8367417b2b2512bc9
 title: Update the Height of an Element Dynamically
 challengeType: 6
+forumTopicId: 301493
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f40e1000cf542c50ff21
 challengeType: 5
 title: 'Problem 162: Hexadecimal numbers'
+forumTopicId: 301796
 ---
 
 ## Description
