@@ -2,6 +2,7 @@
 title: Combinations
 id: 5958469238c0d8d2632f46db
 challengeType: 5
+forumTopicId: 302233
 ---
 
 ## Description

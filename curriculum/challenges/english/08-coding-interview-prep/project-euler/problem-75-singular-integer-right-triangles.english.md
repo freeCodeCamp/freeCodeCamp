@@ -2,6 +2,7 @@
 id: 5900f3b71000cf542c50feca
 challengeType: 5
 title: 'Problem 75: Singular integer right triangles'
+forumTopicId: 302188
 ---
 
 ## Description

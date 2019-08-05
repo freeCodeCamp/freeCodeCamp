@@ -2,6 +2,7 @@
 id: 5900f3911000cf542c50fea4
 challengeType: 5
 title: 'Problem 37: Truncatable primes'
+forumTopicId: 302031
 ---
 
 ## Description

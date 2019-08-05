@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4f
 title: Write Concise Object Literal Declarations Using Object Property Shorthand
 challengeType: 1
+forumTopicId: 301225
 ---
 
 ## Description

@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bdee
 title: Build an Image Search Abstraction Layer
 isRequired: true
 challengeType: 4
+forumTopicId: 302361
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f51f1000cf542c510031
 challengeType: 5
 title: 'Problem 434: Rigid graphs'
+forumTopicId: 302105
 ---
 
 ## Description

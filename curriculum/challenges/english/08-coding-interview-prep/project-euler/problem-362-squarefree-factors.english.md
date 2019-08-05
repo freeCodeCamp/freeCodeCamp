@@ -2,6 +2,7 @@
 id: 5900f4d61000cf542c50ffe9
 challengeType: 5
 title: 'Problem 362: Squarefree factors'
+forumTopicId: 302023
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f41c1000cf542c50ff2e
 challengeType: 5
 title: 'Problem 175: Fractions involving the number of different ways a number can be expressed as a sum of powers of 2'
+forumTopicId: 301810
 ---
 
 ## Description

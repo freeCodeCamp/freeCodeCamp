@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8010
 title: Sorting algorithms/Shell sort
 challengeType: 5
+forumTopicId: 302317
 ---
 
 ## Description

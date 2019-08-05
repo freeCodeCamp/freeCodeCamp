@@ -2,6 +2,7 @@
 id: 5900f53d1000cf542c51004f
 challengeType: 5
 title: 'Problem 464: Möbius function and intervals'
+forumTopicId: 302139
 ---
 
 ## Description

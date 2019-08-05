@@ -2,6 +2,7 @@
 id: 587d8258367417b2b2512c80
 title: Delete a Leaf Node in a Binary Search Tree
 challengeType: 1
+forumTopicId: 301637
 ---
 
 ## Description

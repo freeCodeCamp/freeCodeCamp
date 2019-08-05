@@ -2,6 +2,7 @@
 id: 5900f4ed1000cf542c50fffe
 challengeType: 5
 title: 'Problem 384: Rudin-Shapiro sequence'
+forumTopicId: 302048
 ---
 
 ## Description

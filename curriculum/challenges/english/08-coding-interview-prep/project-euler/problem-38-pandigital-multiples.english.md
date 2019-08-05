@@ -2,6 +2,7 @@
 id: 5900f3931000cf542c50fea5
 challengeType: 5
 title: 'Problem 38: Pandigital multiples'
+forumTopicId: 302042
 ---
 
 ## Description

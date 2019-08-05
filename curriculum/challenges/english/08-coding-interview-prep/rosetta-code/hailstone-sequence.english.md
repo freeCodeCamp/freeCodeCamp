@@ -2,6 +2,7 @@
 title: Hailstone sequence
 id: 595608ff8bcd7a50bd490181
 challengeType: 5
+forumTopicId: 302279
 ---
 
 ## Description

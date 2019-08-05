@@ -2,6 +2,7 @@
 id: 5900f4a11000cf542c50ffb3
 challengeType: 5
 title: 'Problem 308: An amazing Prime-generating Automaton'
+forumTopicId: 301962
 ---
 
 ## Description

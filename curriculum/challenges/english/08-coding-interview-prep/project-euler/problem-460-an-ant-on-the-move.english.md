@@ -2,6 +2,7 @@
 id: 5900f5381000cf542c51004b
 challengeType: 5
 title: 'Problem 460: An ant on the move'
+forumTopicId: 302135
 ---
 
 ## Description

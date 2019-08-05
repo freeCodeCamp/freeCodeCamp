@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036146
 title: Map Dispatch to Props
 challengeType: 6
 isRequired: false
+forumTopicId: 301432
 ---
 
 ## Description

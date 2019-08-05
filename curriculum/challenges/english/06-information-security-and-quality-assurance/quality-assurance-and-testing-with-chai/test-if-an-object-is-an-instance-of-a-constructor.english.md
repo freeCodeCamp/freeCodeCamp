@@ -2,6 +2,7 @@
 id: 587d824e367417b2b2512c57
 title: Test if an Object is an Instance of a Constructor
 challengeType: 2
+forumTopicId: 301605
 ---
 
 ## Description

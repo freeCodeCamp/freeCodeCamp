@@ -2,6 +2,7 @@
 id: 598f48a36c8c40764b4e52b3
 title: Prevent Object Mutation
 challengeType: 1
+forumTopicId: 301207
 ---
 
 ## Description

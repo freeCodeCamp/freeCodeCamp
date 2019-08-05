@@ -2,6 +2,7 @@
 id: 587d8257367417b2b2512c7d
 title: Find the Minimum and Maximum Height of a Binary Search Tree
 challengeType: 1
+forumTopicId: 301641
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f3f11000cf542c50ff03
 challengeType: 5
 title: 'Problem 132: Large repunit factors'
+forumTopicId: 301760
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4571000cf542c50ff69
 challengeType: 5
 title: 'Problem 234: Semidivisible numbers'
+forumTopicId: 301878
 ---
 
 ## Description

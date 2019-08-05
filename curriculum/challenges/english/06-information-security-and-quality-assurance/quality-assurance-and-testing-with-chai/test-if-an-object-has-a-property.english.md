@@ -2,6 +2,7 @@
 id: 587d824e367417b2b2512c55
 title: Test if an Object has a Property
 challengeType: 2
+forumTopicId: 301604
 ---
 
 ## Description

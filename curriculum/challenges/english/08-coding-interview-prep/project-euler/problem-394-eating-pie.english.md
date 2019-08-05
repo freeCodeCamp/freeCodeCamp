@@ -2,6 +2,7 @@
 id: 5900f4f71000cf542c510009
 challengeType: 5
 title: 'Problem 394: Eating pie'
+forumTopicId: 302059
 ---
 
 ## Description

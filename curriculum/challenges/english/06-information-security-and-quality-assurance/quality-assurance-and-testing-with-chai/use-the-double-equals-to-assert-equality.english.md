@@ -2,6 +2,7 @@
 id: 587d824b367417b2b2512c4a
 title: Use the Double Equals to Assert Equality
 challengeType: 2
+forumTopicId: 301609
 ---
 
 ## Description

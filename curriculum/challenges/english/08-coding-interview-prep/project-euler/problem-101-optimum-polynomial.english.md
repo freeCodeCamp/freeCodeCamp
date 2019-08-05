@@ -2,6 +2,7 @@
 id: 5900f3d21000cf542c50fee4
 challengeType: 5
 title: 'Problem 101: Optimum polynomial'
+forumTopicId: 301725
 ---
 
 ## Description

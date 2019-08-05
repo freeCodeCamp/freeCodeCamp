@@ -3,6 +3,7 @@ id: 5a858944d96184f06fd60d61
 title: Create Your First CSS Grid
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cqwREC4'
+forumTopicId: 301129
 ---
 
 ## Description

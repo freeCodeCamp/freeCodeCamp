@@ -2,6 +2,7 @@
 id: 587d7fb7367417b2b2512c0a
 title: Create Many Records with model.create()
 challengeType: 2
+forumTopicId: 301537
 ---
 
 ## Description

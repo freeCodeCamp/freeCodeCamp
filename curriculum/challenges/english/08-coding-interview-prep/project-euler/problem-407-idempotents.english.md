@@ -2,6 +2,7 @@
 id: 5900f5041000cf542c510016
 challengeType: 5
 title: 'Problem 407: Idempotents'
+forumTopicId: 302075
 ---
 
 ## Description

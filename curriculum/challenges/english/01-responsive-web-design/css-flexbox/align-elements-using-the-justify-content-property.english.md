@@ -3,6 +3,7 @@ id: 587d78ac367417b2b2512af6
 title: Align Elements Using the justify-content Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43gnHm'
+forumTopicId: 301102
 ---
 
 ## Description

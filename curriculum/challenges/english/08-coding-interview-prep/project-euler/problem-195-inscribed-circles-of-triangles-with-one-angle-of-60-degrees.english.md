@@ -2,6 +2,7 @@
 id: 5900f4311000cf542c50ff43
 challengeType: 5
 title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
+forumTopicId: 301833
 ---
 
 ## Description

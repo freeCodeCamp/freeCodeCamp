@@ -2,6 +2,7 @@
 id: 5900f38a1000cf542c50fe9d
 challengeType: 5
 title: 'Problem 30: Digit n powers'
+forumTopicId: 301953
 ---
 
 ## Description
