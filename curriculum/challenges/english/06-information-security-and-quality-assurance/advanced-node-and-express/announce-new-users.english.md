@@ -2,6 +2,7 @@
 id: 589fc832f9fc0f352b528e78
 title: Announce New Users
 challengeType: 2
+forumTopicId: 301546
 ---
 
 ## Description

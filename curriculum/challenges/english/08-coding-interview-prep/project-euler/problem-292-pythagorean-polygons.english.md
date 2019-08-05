@@ -2,6 +2,7 @@
 id: 5900f4911000cf542c50ffa3
 challengeType: 5
 title: 'Problem 292: Pythagorean Polygons'
+forumTopicId: 301944
 ---
 
 ## Description

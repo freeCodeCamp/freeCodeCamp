@@ -2,6 +2,7 @@
 id: 5900f5221000cf542c510033
 challengeType: 5
 title: 'Problem 436: Unfair wager'
+forumTopicId: 302107
 ---
 
 ## Description

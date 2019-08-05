@@ -3,6 +3,7 @@ id: 587d78b1367417b2b2512b0a
 title: Use a Retina Image for Higher Resolution Displays
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/cVZ4Rfp'
+forumTopicId: 301142
 ---
 
 ## Description

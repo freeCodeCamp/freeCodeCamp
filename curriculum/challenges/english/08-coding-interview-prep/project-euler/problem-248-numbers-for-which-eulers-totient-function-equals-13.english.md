@@ -2,6 +2,7 @@
 id: 5900f4651000cf542c50ff77
 challengeType: 5
 title: 'Problem 248: Numbers for which Euler’s totient function equals 13!'
+forumTopicId: 301895
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4601000cf542c50ff73
 challengeType: 5
 title: 'Problem 243: Resilience'
+forumTopicId: 301890
 ---
 
 ## Description

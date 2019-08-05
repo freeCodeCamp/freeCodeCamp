@@ -2,6 +2,7 @@
 id: 587d8257367417b2b2512c7e
 title: Use Depth First Search in a Binary Search Tree
 challengeType: 1
+forumTopicId: 301719
 ---
 
 ## Description

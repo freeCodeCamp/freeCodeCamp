@@ -2,6 +2,7 @@
 id: 5900f4991000cf542c50ffab
 challengeType: 5
 title: 'Problem 301: Nim'
+forumTopicId: 301955
 ---
 
 ## Description

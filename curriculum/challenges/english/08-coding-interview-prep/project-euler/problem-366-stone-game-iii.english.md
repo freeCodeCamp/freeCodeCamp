@@ -2,6 +2,7 @@
 id: 5900f4da1000cf542c50ffed
 challengeType: 5
 title: 'Problem 366: Stone Game III'
+forumTopicId: 302027
 ---
 
 ## Description

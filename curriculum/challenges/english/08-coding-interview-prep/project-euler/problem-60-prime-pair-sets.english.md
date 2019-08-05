@@ -2,6 +2,7 @@
 id: 5900f3a81000cf542c50febb
 challengeType: 5
 title: 'Problem 60: Prime pair sets'
+forumTopicId: 302172
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f39f1000cf542c50feb2
 challengeType: 5
 title: 'Problem 51: Prime digit replacements'
+forumTopicId: 302162
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f3a11000cf542c50feb4
 challengeType: 5
 title: 'Problem 53: Combinatoric selections'
+forumTopicId: 302164
 ---
 
 ## Description

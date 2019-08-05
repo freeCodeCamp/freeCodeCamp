@@ -2,6 +2,7 @@
 id: 5900f39c1000cf542c50feae
 challengeType: 5
 title: 'Problem 47: Distinct primes factors'
+forumTopicId: 302145
 ---
 
 ## Description

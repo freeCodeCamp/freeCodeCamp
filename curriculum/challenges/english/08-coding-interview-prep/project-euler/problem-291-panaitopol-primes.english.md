@@ -2,6 +2,7 @@
 id: 5900f48f1000cf542c50ffa2
 challengeType: 5
 title: 'Problem 291: Panaitopol Primes'
+forumTopicId: 301943
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4021000cf542c50ff13
 challengeType: 5
 title: 'Problem 149: Searching for a maximum-sum subsequence'
+forumTopicId: 301778
 ---
 
 ## Description

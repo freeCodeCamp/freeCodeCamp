@@ -2,6 +2,7 @@
 id: 5900f54c1000cf542c51005e
 challengeType: 5
 title: 'Problem 478: Mixtures'
+forumTopicId: 302155
 ---
 
 ## Description

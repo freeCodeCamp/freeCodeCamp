@@ -2,6 +2,7 @@
 id: 5900f4f81000cf542c51000b
 challengeType: 5
 title: 'Problem 396: Weak Goodstein sequence'
+forumTopicId: 302061
 ---
 
 ## Description

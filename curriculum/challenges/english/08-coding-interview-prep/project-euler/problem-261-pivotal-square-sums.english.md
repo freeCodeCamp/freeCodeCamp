@@ -2,6 +2,7 @@
 id: 5900f4711000cf542c50ff84
 challengeType: 5
 title: 'Problem 261: Pivotal Square Sums'
+forumTopicId: 301910
 ---
 
 ## Description

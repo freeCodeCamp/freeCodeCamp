@@ -2,6 +2,7 @@
 id: 5900f41f1000cf542c50ff32
 challengeType: 5
 title: 'Problem 179: Consecutive positive divisors'
+forumTopicId: 301814
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 587d8256367417b2b2512c77
 title: Adjacency List
 challengeType: 1
+forumTopicId: 301620
 ---
 
 ## Description

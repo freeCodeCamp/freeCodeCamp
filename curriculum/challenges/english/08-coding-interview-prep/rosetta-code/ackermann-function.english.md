@@ -2,6 +2,7 @@
 title: Ackermann function
 id: 594810f028c0303b75339acf
 challengeType: 5
+forumTopicId: 302223
 ---
 
 ## Description

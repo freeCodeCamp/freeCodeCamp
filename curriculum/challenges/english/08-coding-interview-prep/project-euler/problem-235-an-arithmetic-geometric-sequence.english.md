@@ -2,6 +2,7 @@
 id: 5900f4571000cf542c50ff6a
 challengeType: 5
 title: 'Problem 235: An Arithmetic Geometric sequence'
+forumTopicId: 301879
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4551000cf542c50ff67
 challengeType: 5
 title: 'Problem 232: The Race'
+forumTopicId: 301876
 ---
 
 ## Description

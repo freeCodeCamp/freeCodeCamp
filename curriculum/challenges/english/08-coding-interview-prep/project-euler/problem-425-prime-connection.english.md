@@ -2,6 +2,7 @@
 id: 5900f5151000cf542c510028
 challengeType: 5
 title: 'Problem 425: Prime connection'
+forumTopicId: 302095
 ---
 
 ## Description

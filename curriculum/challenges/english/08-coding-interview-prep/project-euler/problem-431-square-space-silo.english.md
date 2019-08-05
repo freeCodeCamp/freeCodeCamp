@@ -2,6 +2,7 @@
 id: 5900f51b1000cf542c51002e
 challengeType: 5
 title: 'Problem 431: Square Space Silo'
+forumTopicId: 302102
 ---
 
 ## Description

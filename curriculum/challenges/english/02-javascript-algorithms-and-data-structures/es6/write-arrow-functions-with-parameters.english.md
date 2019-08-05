@@ -2,6 +2,7 @@
 id: 587d7b88367417b2b2512b44
 title: Write Arrow Functions with Parameters
 challengeType: 1
+forumTopicId: 301223
 ---
 
 ## Description

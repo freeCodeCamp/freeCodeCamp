@@ -3,6 +3,7 @@ id: 5a94fe3669fb03452672e45f
 title: Reduce Repetition Using the repeat Function
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
+forumTopicId: 301133
 ---
 
 ## Description

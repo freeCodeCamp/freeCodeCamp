@@ -2,6 +2,7 @@
 id: 5900f48b1000cf542c50ff9e
 challengeType: 5
 title: 'Problem 287: Quadtree encoding (a simple compression algorithm)'
+forumTopicId: 301938
 ---
 
 ## Description

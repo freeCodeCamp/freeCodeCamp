@@ -2,6 +2,7 @@
 id: 5900f5431000cf542c510055
 challengeType: 5
 title: 'Problem 470: Super Ramvok'
+forumTopicId: 302146
 ---
 
 ## Description

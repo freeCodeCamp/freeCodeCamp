@@ -3,6 +3,7 @@ id: bd7158d8c442eddfaeb5bd1c
 title: Build a Simon Game
 challengeType: 3
 isRequired: false
+forumTopicId: 302357
 ---
 
 ## Description

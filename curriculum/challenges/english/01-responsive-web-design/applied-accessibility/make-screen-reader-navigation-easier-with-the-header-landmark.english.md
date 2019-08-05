@@ -3,6 +3,7 @@ id: 587d7787367417b2b2512aa1
 title: Make Screen Reader Navigation Easier with the header Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB76vtv'
+forumTopicId: 301023
 ---
 
 ## Description

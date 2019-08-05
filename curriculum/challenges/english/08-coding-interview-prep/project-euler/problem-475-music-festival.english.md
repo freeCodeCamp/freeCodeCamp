@@ -2,6 +2,7 @@
 id: 5900f5481000cf542c51005a
 challengeType: 5
 title: 'Problem 475: Music festival'
+forumTopicId: 302152
 ---
 
 ## Description

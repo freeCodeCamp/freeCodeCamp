@@ -2,6 +2,7 @@
 id: 5900f3b61000cf542c50fec8
 challengeType: 5
 title: 'Problem 73: Counting fractions in a range'
+forumTopicId: 302186
 ---
 
 ## Description
