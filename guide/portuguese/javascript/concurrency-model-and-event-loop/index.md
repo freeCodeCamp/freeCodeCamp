@@ -33,7 +33,7 @@ Então, para resumir sempre que uma função é chamada, ela é colocada na pilh
 
 Agora sabemos disso que o Javascript pode executar uma coisa de cada vez, mas esse não é o caso do Navegador. O Navegador tem seu próprio conjunto de APIs como setTimeout, XMLHttpRequests que não são especificadas no tempo de execução de Javascript. Na verdade, se você observar o código-fonte do V8, o popular runtime Javascript que dá suporte a navegadores como o Google Chrome, você não encontrará nenhuma definição para ele. É porque essas APIs especiais existem no ambiente do navegador, não dentro do ambiente javascript, e você pode dizer que essas APIs introduzem a simultaneidade na mistura. Vamos ver um diagrama para entender a imagem inteira.
 
-![Concorrência e Modelo de Loop de Eventos](https://i.imgur.com/rnQEY7o.png)
+![Concorrência e Modelo de Loop de Eventos](https://cdn-media-1.freecodecamp.org/imgr/rnQEY7o.png)
 
 Mais alguns termos são introduzidos
 

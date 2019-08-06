@@ -1,7 +1,7 @@
 ---
 title: Advantages of Using Free Code Camp
 ---
-Free Code Camp's main advantages are that we're accessible to busy adults who want to change careers.
+Free Code Camp's main advantage is that we're accessible to busy adults who want to change careers.
 
 Specifically, we're:
 

@@ -63,7 +63,6 @@ localeTitle: 凯撒密码
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/38)
 
 ### 代码说明：
 
@@ -152,7 +151,6 @@ ALPHA    KEY BASE             ROTATED    ROT13
 *   [正则表达式](https://forum.freecodecamp.com/t/regular-expressions-resources/15931)
 *   [Regex.test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/39)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 "：rotating_light：")高级代码解决方案
 ```

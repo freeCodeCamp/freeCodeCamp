@@ -8,8 +8,9 @@ localeTitle: الثوابت
 
 #### مثال:
 
- `let name = "Chris Lattner" 
-` 
+```swift
+let name = "Chris Lattner"
+``` 
 
 قمت بتعريف الثوابت مع `let` الكلمة ثم إعطائه اسما `name` ثم كنت تستخدم عامل التعيين `=` لتعيين قيمة `"Chris Lattner"` إلى ثابت `name` .
 

@@ -3,13 +3,27 @@ title: String.prototype.codePointAt
 ---
 ## String.prototype.codePointAt
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-codepointat/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `codePointAt()` method returns a non-negative integer representing the Unicode code point value of a specified character in the given string.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+**Syntax**
+```javascript
+str.codePointAt(pos) // pos is the position of the character in str from which to return the code point value
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+**Example**
+```js
+var x = "AB12↑↓";
+console.log(x.codePointAt(0)); // 65
+console.log(x.codePointAt(1)); // 66
+console.log(x.codePointAt(2)); // 49
+console.log(x.codePointAt(3)); // 50
+console.log(x.codePointAt(4)); // 8593
+console.log(x.codePointAt(5)); // 8595
+console.log(x.codePointAt(6)); // undefined
+```
+
+*Note*: if there is no character at `pos`, `codePointAt()` returns undefined.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- [String.prototype.codePointAt() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/codePointAt)
+- [Unicode Lookup](https://unicodelookup.com/)

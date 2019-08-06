@@ -16,15 +16,15 @@ localeTitle: كيفية استخدام الروابط
 
 في HTML ، يتم تعريف الارتباطات بالعلامة:
 
- `
-<a href="url">link text</a> 
-` 
+```html
+<a href="url">link text</a>
+``` 
 
 مثال
 
- `
-<a href="https://www.freecodecamp.org/">Visit our site for tutorials</a> 
-` 
+```html
+<a href="https://www.freecodecamp.org/">Visit our site for tutorials</a>
+``` 
 
 تحدد السمة href عنوان الوجهة (https://www.freecodecamp.org) للرابط.
 

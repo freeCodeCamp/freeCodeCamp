@@ -12,19 +12,20 @@ localeTitle: البرمجة الشيئية باستخدام C ++
 
 الكائنات هي كيانات وقت التشغيل الأساسية في نظام موجه للكائنات ، والكائنات هي مثيلات للفئة يتم تعريف هذه أنواع البيانات المعرفة من قبل المستخدم.
 
- `class person 
- { 
-    char name[20]; 
-    int id; 
- public: 
-    void getdetails(){} 
- }; 
- 
- int main() 
- { 
-   person p1; //p1 is an object 
- } 
-` 
+```cpp
+class person
+{
+    char name[20];
+    int id;
+public:
+    void getdetails(){}
+};
+
+int main()
+{
+   person p1; //p1 is an object
+}
+``` 
 
 تشغل الكائنات مساحة في الذاكرة ويكون لها عنوان مرتبط مثل سجل في الباسكال أو البنية أو الاتحاد في C.
 
@@ -36,16 +37,17 @@ localeTitle: البرمجة الشيئية باستخدام C ++
 
 الصف هو مخطط للبيانات والوظائف أو الطرق. الطبقة لا تأخذ أي مساحة.
 
- `class class_name 
- { 
-  private: 
-     //data members and member functions declarations 
-  public: 
-     //data members and member functions declarations 
-  protected: 
-     //data members and member functions declarations 
- }; 
-` 
+```cpp
+class class_name
+{
+  private:
+     //data members and member functions declarations
+  public:
+     //data members and member functions declarations
+  protected:
+     //data members and member functions declarations
+};
+``` 
 
 Class هو نوع بيانات محدد بواسطة المستخدم مثل بنيات ونقابات في C.
 

@@ -10,40 +10,42 @@ localeTitle: صورة بناء منفصلة
 
 في هذا المثال ، سنستخدم خادمًا بسيطًا لخادم الويب في [Go](https://golang.org/) . التعليمة البرمجية التالية هي مجرد webserver hello world يستمع على المنفذ `8080` .
 
- `package main 
- 
- import ( 
-    "fmt" 
-    "log" 
-    "net/http" 
- ) 
- 
- func handler(w http.ResponseWriter, r *http.Request) { 
-    fmt.Fprint(w, "Hello world!") 
- } 
- 
- func main() { 
-    http.HandleFunc("/", handler) 
-    log.Fatal(http.ListenAndServe(":8080", nil)) 
- } 
-` 
+```go
+package main
+
+import (
+    "fmt"
+    "log"
+    "net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprint(w, "Hello world!")
+}
+
+func main() {
+    http.HandleFunc("/", handler)
+    log.Fatal(http.ListenAndServe(":8080", nil))
+}
+``` 
 
 ### Dockerfile
 
 قد يبدو Dockerfile لهذا الرمز شيء من هذا القبيل
 
- `FROM golang:1.11 
- 
- ADD . /app 
- 
- WORKDIR /app 
- 
- RUN go build -o /myserver . 
- 
- EXPOSE 8080 
- 
- CMD [ "/myserver" ] 
-` 
+```
+FROM golang:1.11
+
+ADD . /app
+
+WORKDIR /app
+
+RUN go build -o /myserver .
+
+EXPOSE 8080
+
+CMD [ "/myserver" ]
+``` 
 
 بناء هذه الصورة ينتج في صورة بحجم 783MB !! باستخدام صورة بهذا الحجم للتطبيق البسيط ، من السهل رؤية كيف يمكن أن يؤدي ذلك إلى إبطاء الأشياء عند النشر.
 
@@ -55,23 +57,24 @@ localeTitle: صورة بناء منفصلة
 
 سيقوم Dockerfile التالي ببناء الثنائي داخل صورة golang ومن ثم بناء صورة جديدة من الصفر ، نسخ الملف الثنائي من الصورة الأولى إلى الثانية.
 
- `FROM golang:1.11 as build 
- 
- ADD . /app 
- 
- WORKDIR /app 
- 
- RUN go build -o /myserver . 
- 
- 
- FROM scratch 
- 
- COPY --from=build /myserver /myserver 
- 
- EXPOSE 8080 
- 
- CMD [ "myserver" ] 
-` 
+```
+FROM golang:1.11 as build
+
+ADD . /app
+
+WORKDIR /app
+
+RUN go build -o /myserver .
+
+
+FROM scratch
+
+COPY --from=build /myserver /myserver
+
+EXPOSE 8080
+
+CMD [ "myserver" ]
+``` 
 
 بناء من هذا dockerfile النتائج في حجم الصورة النهائية من 6.55MB فقط! هذا **أصغر** من **100 مرة** من محاولتنا الأولى ، مما يجعله أسرع 100 مرة في سحب الصورة من التسجيل!
 

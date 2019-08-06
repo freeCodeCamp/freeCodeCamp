@@ -10,7 +10,7 @@ localeTitle: Instalar Go en Ubuntu usando un tarball
 
 Antes de continuar, asegúrese de saber si su sistema es de 32 o 64 bits. Si no lo sabes, ejecuta el siguiente comando para averiguarlo:
 
-```sh
+```shell
 $ lscpu | grep Architecture 
 ```
 
@@ -52,7 +52,7 @@ $ wget https://storage.googleapis.com/golang/go1.9.1.linux-386.tar.gz
 
 Para comprobar si Go se instaló correctamente, use:
 
-```sh
+```shell
 $ go version 
  > go version go1.9.1 linux/amd64 
 ```

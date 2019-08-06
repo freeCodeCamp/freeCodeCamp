@@ -1,7 +1,7 @@
 ---
 title: Manage a Book Trading Club
 ---
-## Manage a Book Trading Club
+# Manage a Book Trading Club
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/manage-a-book-trading-club/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

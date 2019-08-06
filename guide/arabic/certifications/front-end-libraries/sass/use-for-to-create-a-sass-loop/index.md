@@ -8,17 +8,19 @@ localeTitle: استخدمfor لإنشاء Sass Loop
 
 *   ل - من خلال حلقة:
 
- `@for $i from <start number> through <end number> { 
-  // some CSS 
- } 
-` 
+```sass
+@for $i from <start number> through <end number> {
+  // some CSS
+}
+``` 
 
 *   ل- للحلقة:
 
- `@for $i from <start number> to <end number> { 
-  // some CSS 
- } 
-` 
+```sass
+@for $i from <start number> to <end number> {
+  // some CSS
+}
+``` 
 
 لاحظ أن الاختلاف الرئيسي هو أن "البداية إلى النهاية" **تستبعد** الرقم النهائي ، و "البدء من خلال النهاية" **يتضمن** الرقم النهائي.
 
@@ -26,32 +28,35 @@ localeTitle: استخدمfor لإنشاء Sass Loop
 
 *   ل - من خلال حلقة:
 
- `@for $i from 1 through 3 { 
-  // some CSS 
- } 
- 
- // 1 2 
-` 
+```sass
+@for $i from 1 through 3 {
+  // some CSS
+}
+
+// 1 2
+``` 
 
 *   ل- للحلقة:
 
- `@for $i from 1 to 3 { 
-  // some CSS 
- } 
- 
- // 1 2 3 
-` 
+```sass
+@for $i from 1 to 3 {
+  // some CSS
+}
+
+// 1 2 3
+``` 
 
 3.  المبدأ التوجيهي من [المبادئ التوجيهية SASS](https://sass-guidelin.es/#loops)
 
 قد تكون حلقة `@for` مفيدة عند دمجها مع CSS `:nth-*` pseudo-classes. باستثناء هذه السيناريوهات ، تفضل حلقة `@each` إذا كان عليك التكرار أكثر من شيء ما.
 
- `@for $i from 1 through 10 { 
-  .foo:nth-of-type(#{$i}) { 
-    border-color: hsl($i * 36, 50%, 50%); 
-  } 
- } 
-` 
+```sass
+@for $i from 1 through 10 {
+  .foo:nth-of-type(#{$i}) {
+    border-color: hsl($i * 36, 50%, 50%);
+  }
+}
+``` 
 
 استخدم دائمًا `$i` كاسم متغير للالتزام بالاتفاقية المعتادة وما لم يكن لديك سبب جيد بالفعل ، لا تستخدم الكلمة المفتاحية أبدًا: استخدمها دائمًا. العديد من المطورين لا يعرفون حتى Sass يقدم هذا الاختلاف. قد يؤدي استخدامها إلى الارتباك.
 

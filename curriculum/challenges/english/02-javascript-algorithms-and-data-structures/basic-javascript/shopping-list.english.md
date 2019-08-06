@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244bc
 title: Shopping List
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/c9MEKHZ'
+forumTopicId: 18280
 ---
 
 ## Description
@@ -23,13 +25,13 @@ There should be at least 5 sub-arrays in the list.
 ```yml
 tests:
   - text: <code>myList</code> should be an array
-    testString: 'assert(isArray, "<code>myList</code> should be an array");'
+    testString: assert(isArray);
   - text: The first elements in each of your sub-arrays must all be strings
-    testString: 'assert(hasString, "The first elements in each of your sub-arrays must all be strings");'
+    testString: assert(hasString);
   - text: The second elements in each of your sub-arrays must all be numbers
-    testString: 'assert(hasNumber, "The second elements in each of your sub-arrays must all be numbers");'
+    testString: assert(hasNumber);
   - text: You must have at least 5 items in your list
-    testString: 'assert(count > 4, "You must have at least 5 items in your list");'
+    testString: assert(count > 4);
 
 ```
 
@@ -53,7 +55,32 @@ var myList = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var count = 0;
+var isArray = false;
+var hasString = false;
+var hasNumber = false;
+(function(list){
+  if(Array.isArray(myList)) {
+    isArray = true;
+    if(myList.length > 0) {
+      hasString = true;
+      hasNumber = true;
+      for (var elem of myList) {
+        if(!elem || !elem[0] || typeof elem[0] !== 'string') {
+          hasString = false;
+        }
+        if(!elem || typeof elem[1] !== 'number') {
+          hasNumber = false;
+        }
+      }
+    }
+    count = myList.length;
+    return JSON.stringify(myList);
+  } else {
+    return "myList is not an array";
+  }
+
+})(myList);
 ```
 
 </div>
