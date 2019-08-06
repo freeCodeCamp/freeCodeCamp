@@ -23,7 +23,7 @@ localeTitle: Создание горизонтальной линии с исп�
 
 Какой бы формат вы ни выбрали, он создаст горизонтальную линию, как в [этом уроке](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/create-a-horizontal-line-using-the-hr-element/) на [freeCodeCamp](https://www.freecodecamp.org/) . Вот скриншот из этого урока, показывающий элемент `hr` содержащийся в div.
 
-![Пример hr](https://i.imgur.com/RMTqXPw.png)
+![Пример hr](https://cdn-media-1.freecodecamp.org/imgr/RMTqXPw.png)
 
 ## Ресурсы:
 

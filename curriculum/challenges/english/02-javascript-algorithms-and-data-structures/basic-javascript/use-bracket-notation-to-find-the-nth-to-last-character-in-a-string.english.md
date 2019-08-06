@@ -2,6 +2,8 @@
 id: bd7123c9c452eddfaeb5bdef
 title: Use Bracket Notation to Find the Nth-to-Last Character in a String
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cw4vkh9'
+forumTopicId: 18344
 ---
 
 ## Description
@@ -22,9 +24,9 @@ Use <dfn>bracket notation</dfn> to find the second-to-last character in the <cod
 ```yml
 tests:
   - text: <code>secondToLastLetterOfLastName</code> should be "c".
-    testString: 'assert(secondToLastLetterOfLastName === "c", "<code>secondToLastLetterOfLastName</code> should be "c".");'
+    testString: assert(secondToLastLetterOfLastName === 'c');
   - text: You have to use <code>.length</code> to get the second last letter.
-    testString: 'assert(code.match(/\.length/g).length === 2, "You have to use <code>.length</code> to get the second last letter.");'
+    testString: assert(code.match(/\.length/g).length === 2);
 
 ```
 
@@ -56,7 +58,7 @@ var secondToLastLetterOfLastName = lastName;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return v;})(secondToLastLetterOfLastName);
 ```
 
 </div>

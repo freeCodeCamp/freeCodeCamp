@@ -52,7 +52,6 @@ function testSize(num) {
  } 
 ```
 
-· Запустить код в [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Chaining-ifelse-statements)
 
 ### Обозначение кода
 

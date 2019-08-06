@@ -32,19 +32,21 @@ localeTitle: HTML5 فيديو
 
   
 
- `#### poster 
- 
- The "poster" attribute is the image that shows on the video until the user clicks to play it. 
-` 
+```
+#### poster
+
+The "poster" attribute is the image that shows on the video until the user clicks to play it.
+``` 
 
 أتش تي أم أل
 
   
 
- `#### controls 
- 
- The "controls" attribute can be set to true or false and will handle whether controls such as the play/pause button or volume slider appear. You set it to true by adding it into the tag, if it is not present in the tag it is set to false. 
-` 
+```
+#### controls
+
+The "controls" attribute can be set to true or false and will handle whether controls such as the play/pause button or volume slider appear. You set it to true by adding it into the tag, if it is not present in the tag it is set to false.
+``` 
 
 أتش تي أم أل
 

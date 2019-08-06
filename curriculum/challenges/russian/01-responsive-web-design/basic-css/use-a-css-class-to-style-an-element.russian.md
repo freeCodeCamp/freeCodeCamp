@@ -3,14 +3,14 @@ id: bad87fee1348bd9aecf08806
 title: Use a CSS Class to Style an Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Используйте класс CSS для стилизации элемента
+localeTitle: Используйте селектор класса в CSS для стилизации элемента
 ---
 
 ## Description
-<section id="description"> Классы - многоразовые стили, которые можно добавить к элементам HTML. Вот пример объявления класса CSS: <blockquote> &lt;Стиль&gt; <br> .blue-text { <br> цвет синий; <br> } <br> &lt;/ Стиль&gt; </blockquote> Вы можете видеть, что мы создали класс CSS, называемый <code>blue-text</code> в <code>&lt;style&gt;</code> . Вы можете применить класс к HTML-элементу следующим образом: <code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Обратите внимание, что в элементе <code>style</code> CSS имена классов начинаются с периода. В атрибуте класса HTML-элементов имя класса не включает период. </section>
+<section id="description"> Классы - многоразовые стили, которые можно добавить к элементам HTML. Вот пример объявления класса CSS: <blockquote> &lt;style&gt; <br> .blue-text { <br> color: blue; <br> } <br> &lt;/ style&gt; </blockquote> Вы можете видеть, что мы создали класс CSS, который назвали <code>blue-text</code> в <code>&lt;style&gt;</code> . Вы можете применить класс к HTML-элементу следующим образом: <code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Обратите внимание, что в элементе <code>style</code> CSS имена классов начинаются с точки. В атрибуте класса HTML-элементов имя класса не включает точку. </section>
 
 ## Instructions
-<section id="instructions"> Внутри элемента <code>style</code> измените селектор <code>h2</code> на <code>.red-text</code> и обновите значение цвета от <code>blue</code> до <code>red</code> . Дайте вашему элементу <code>h2</code> атрибут <code>class</code> со значением <code>&#39;red-text&#39;</code> . </section>
+<section id="instructions"> Внутри элемента <code>style</code> измените селектор <code>h2</code> на <code>.red-text</code> и обновите значение цвета с <code>blue</code> на <code>red</code> . Задайте вашему элементу <code>h2</code> атрибут <code>class</code> со значением <code>&#39;red-text&#39;</code> . </section>
 
 ## Tests
 <section id='tests'>

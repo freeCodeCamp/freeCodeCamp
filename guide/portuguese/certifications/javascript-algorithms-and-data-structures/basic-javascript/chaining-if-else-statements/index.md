@@ -52,8 +52,6 @@ function testSize(num) {
  } 
 ```
 
-· Executar código em [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Chaining-ifelse-statements)
-
 ### Explicação de código
 
 A função primeiro verifica a condição `if` `(num < 5)` . Se for avaliado como `true` , retorna a instrução entre as chaves ("Tiny"). Se isso não acontecer, ele verifica a próxima condição até a última instrução `else` .

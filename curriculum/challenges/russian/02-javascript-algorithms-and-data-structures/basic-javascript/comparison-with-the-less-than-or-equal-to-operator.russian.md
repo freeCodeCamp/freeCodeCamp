@@ -7,10 +7,10 @@ localeTitle: Сравнение с меньшим или равным опера
 ---
 
 ## Description
-<section id="description"> Чем <code>less than or equal to</code> оператору ( <code>&lt;=</code> ), то сравниваются значения двух чисел. Если число влево меньше или равно числу справа, оно возвращает <code>true</code> . Если число слева больше числа справа, оно возвращает <code>false</code> . Как и оператор равенства, <code>less than or equal to</code> преобразует типы данных. <strong>Примеры</strong> <blockquote> 4 &lt;= 5 // true <br> &#39;7&#39; &lt;= 7 // true <br> 5 &lt;= 5 // true <br> 3 &lt;= 2 // false <br> &#39;8&#39; &lt;= 4 // false </blockquote></section>
+<section id="description"> Оператор ( <code>&lt;=</code> ) (<code>less than or equal to</code>) сравнивает значения двух чисел. Если число слева меньше или равно числу справа, выражение возвращает <code>true</code> , и если число слева больше числа справа, оно возвращает <code>false</code> . Так же как и оператор равенства, <code>less than or equal to</code> преобразует типы данных. <strong>Примеры</strong> <blockquote> 4 &lt;= 5 // true <br> &#39;7&#39; &lt;= 7 // true <br> 5 &lt;= 5 // true <br> 3 &lt;= 2 // false <br> &#39;8&#39; &lt;= 4 // false </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Добавьте <code>less than or equal to</code> оператору к указанным линиям, чтобы иметь смысл. </section>
+<section id="instructions"> Добавьте оператор ( <code>&lt;=</code> ) чтобы функция работала правильно. </section>
 
 ## Tests
 <section id='tests'>

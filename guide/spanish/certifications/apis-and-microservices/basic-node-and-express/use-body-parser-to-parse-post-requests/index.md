@@ -6,7 +6,7 @@ localeTitle: Use el analizador de cuerpo para analizar las solicitudes POST
 
 El analizador de cuerpo ya debería estar agregado a su proyecto si usó la placa de caldera provista, pero si no, debería estar allí como:
 
-```code
+```json
 "dependencies": { 
     "body-parser": "^1.4.3", 
     ... 

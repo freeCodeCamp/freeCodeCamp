@@ -56,7 +56,6 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnS/0)
 
 ### 代码说明：
 
@@ -77,7 +76,6 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnT/0)
 
 ### 代码说明：
 
@@ -99,7 +97,6 @@ function spinalCase(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/EUZV)
 
 ### 代码说明：
 

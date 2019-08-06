@@ -12,16 +12,17 @@ localeTitle: أحداث التوقيت
 
 مثال `setTimeout()` :
 
- `var timeoutID; 
- 
- function delayTimer() { 
-  timeoutID = setTimeout(delayedFunction, 3000); 
- } 
- 
- function delayedFunction() { 
-  alert(“Three seconds have elapsed.”); 
- } 
-` 
+```javascript
+var timeoutID;
+
+function delayTimer() {
+  timeoutID = setTimeout(delayedFunction, 3000);
+}
+
+function delayedFunction() {
+  alert(“Three seconds have elapsed.”);
+}
+``` 
 
 عندما يتم استدعاء الدالة delayTimer فإنه سيتم تشغيل setTimeout. بعد مرور 3 ثوانٍ ، سيتم تنفيذ الأمر delayedFunction الذي سيرسل تنبيهًا.
 
@@ -29,16 +30,17 @@ localeTitle: أحداث التوقيت
 
 مثال `setInterval()` :
 
- `var intervalID; 
- 
- function repeatEverySecond() { 
-  intervalID = setInterval(sendMessage, 1000); 
- } 
- 
- function sendMessage() { 
-  console.log(“One second elapsed.”); 
- } 
-` 
+```javascript
+var intervalID;
+
+function repeatEverySecond() {
+  intervalID = setInterval(sendMessage, 1000);
+}
+
+function sendMessage() {
+  console.log(“One second elapsed.”);
+}
+``` 
 
 عند استدعاء التعليمات البرمجية الخاصة بك الدالة repeatEverySecond سيتم تشغيله setInterval. سوف setInterval تشغيل وظيفة sendMessage كل 1000 ميلي ثانية.
 
@@ -52,17 +54,18 @@ localeTitle: أحداث التوقيت
 
 مثال:
 
- `var timeoutID; 
- 
- function delayTimer() { 
-  timeoutID = setTimeout(delayedFunction, 3000); 
- } 
- 
- function delayedFunction() { 
-  alert(“Three seconds have elapsed.”); 
- } 
- 
- function clearAlert() { 
-  clearTimeout(timeoutID); 
- } 
-`
+```javascript
+var timeoutID;
+
+function delayTimer() {
+  timeoutID = setTimeout(delayedFunction, 3000);
+}
+
+function delayedFunction() {
+  alert(“Three seconds have elapsed.”);
+}
+
+function clearAlert() {
+  clearTimeout(timeoutID);
+}
+```

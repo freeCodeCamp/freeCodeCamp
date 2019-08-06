@@ -1,7 +1,7 @@
 ---
 title: Wrap Content in the article Element
 ---
-## Wrap Content in the article Element
+# Wrap Content in the article Element
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/wrap-content-in-the-article-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -1,5 +1,5 @@
 ---
-title : Interface 
+title: Interface
 localeTitle: جهة تعامل
 ---
 * * *
@@ -28,29 +28,30 @@ localeTitle: جهة تعامل
 
 مثال على واجهة:
 
- `public Interface IUserFavoriteFood 
- { 
-  void AddFood(); 
-  Task<User> EatFavoriteFood(int id); 
- } 
-` 
+```csharp
+public Interface IUserFavoriteFood
+{
+  void AddFood();
+  Task<User> EatFavoriteFood(int id);
+}
+```
 
 * * *
 
 الميراث واجهة والتنفيذ:
 
- `public class UserHungry : IUserFavoriteFood 
- { 
-  public AddFood() 
-  { 
-    // Implementation: 
-    // A method to add food. 
-  } 
- 
-  public Task<User> EatFavoriteFood(int id) 
-  { 
-    // Implementation: 
-    // A method to Eat food by id. 
-  } 
- } 
+ `public class UserHungry : IUserFavoriteFood
+ {
+  public AddFood()
+  {
+    // Implementation:
+    // A method to add food.
+  }
+
+  public Task<User> EatFavoriteFood(int id)
+  {
+    // Implementation:
+    // A method to Eat food by id.
+  }
+ }
 `

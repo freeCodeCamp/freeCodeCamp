@@ -108,6 +108,21 @@ One of the benefit of using this command is that it enables you to get a overvie
 
 There are may other options you could use in combination with ```--graph```. Couple of them are ```--decorate``` and ```--all```. Make sure to try these out too. And refer to [documantation](https://git-scm.com/docs/git-log) for more helpful info.
 
+#### --grep
+
+```git log --grep <regexp>```
+
+The ```--grep``` flag enables you to search for commit messages that match a regular expression `<regexp>`. Use it in combination with `-i` option for case-insensitive searches:
+
+```git log --oneline -i --grep=component```
+
+The output would be similar to:
+
+```
+* 7e3934b Add hint for Compose React Components (#8705)
+* c4e6a84 Add hint for "Create a Component with Composition" (#8704)
+```
+
 #### More Information:
 
 - [Git Basics - Viewing the Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)

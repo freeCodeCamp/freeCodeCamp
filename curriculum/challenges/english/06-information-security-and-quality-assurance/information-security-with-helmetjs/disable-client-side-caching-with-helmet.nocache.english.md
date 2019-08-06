@@ -2,6 +2,7 @@
 id: 587d8249367417b2b2512c3e
 title: Disable Client-Side Caching with helmet.noCache()
 challengeType: 2
+forumTopicId: 301576
 ---
 
 ## Description
@@ -21,7 +22,7 @@ If you are releasing an update for your website, and you want the users to alway
 ```yml
 tests:
   - text: helmet.noCache() middleware should be mounted correctly
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "nocache"); assert.equal(data.headers["cache-control"], "no-store, no-cache, must-revalidate, proxy-revalidate"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'nocache'); assert.equal(data.headers['cache-control'], 'no-store, no-cache, must-revalidate, proxy-revalidate'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -38,4 +39,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>
