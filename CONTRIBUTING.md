@@ -103,6 +103,12 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 **If you want to help us improve our codebase, here's [how to setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md).**
 
+If you want to help us improve our codebase, you can either [setup freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md) or use Gitpod, a free online dev environment.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
+
+(Starts a ready-to-code dev environment for freecodecamp in your browser.)
+
 Feel free to ask us questions on the related issue threads, and we will be glad to clarify. When in doubt, you can reach out to our platform dev team to help you with this:
 
 | Name            | GitHub | Twitter |
