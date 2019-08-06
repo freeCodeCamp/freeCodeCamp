@@ -85,7 +85,6 @@ localeTitle: Dna Pairing
     pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLmz/0)
 
 ### Код Объяснение:
 
@@ -118,7 +117,6 @@ localeTitle: Dna Pairing
   pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/repls/ThoroughSphericalComputeranimation)
 
 ## Код Объяснение:
 

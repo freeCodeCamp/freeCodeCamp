@@ -7,9 +7,9 @@ Sends an asynchronous http POST request to load data from the server. Its genera
 jQuery.post( url [, data ] [, success ] [, dataType ] )
 ```
 
-* url : is the only mandatory parameter. This string contains the adress to which to send the request. The returned data will be ignored if no other parameter is specified
+* url : This is the only mandatory parameter. This string contains the adress to which to send the request. The returned data will be ignored if no other parameter is specified
 * data : A plain object or string that is sent to the server with the request. 
-* success : A callback function that is executed if the request succeeds.it takes as an argument the returned data. It is also passed the text status of the response.
+* success : A callback function that is executed if the request succeeds. It takes as an argument the returned data. It is also passed the text status of the response.
 * dataType : The type of data expected from the server. The default is Intelligent Guess (xml, json, script, text, html). if this parameter is provided, then the success callback must be provided as well.
 
 #### Examples

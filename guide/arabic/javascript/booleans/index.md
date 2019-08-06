@@ -8,11 +8,12 @@ Booleans هي نوع بيانات بدائي شائع الاستخدام في ل
 
 في Javascript ، غالبًا ما يكون هناك نوع الإكراه الضمني للقيمة المنطقية. إذا كان لديك مثلاً عبارة if تتحقق من تعبير معين ، فسيتم فرض هذا التعبير على قيمة منطقية:
 
- `var a = 'a string'; 
- if (a) { 
-  console.log(a); // logs 'a string' 
- } 
-` 
+```javascript
+var a = 'a string';
+if (a) {
+  console.log(a); // logs 'a string'
+}
+``` 
 
 هناك بعض القيم القليلة التي سيتم فرضها على false:
 
@@ -27,24 +28,25 @@ Booleans هي نوع بيانات بدائي شائع الاستخدام في ل
 
 إحدى الطرق التي يتم بها استخدام نوع الإكراه هي استخدام مشغلي (أو `||` ) و ( `&&` ):
 
- `var a = 'word'; 
- var b = false; 
- var c = true; 
- var d = 0 
- var e = 1 
- var f = 2 
- var g = null 
- 
- console.log(a || b); // 'word' 
- console.log(c || a); // true 
- console.log(b || a); // 'word' 
- console.log(e || f); // 1 
- console.log(f || e); // 2 
- console.log(d || g); // null 
- console.log(g || d); // 0 
- console.log(a && c); // true 
- console.log(c && a); // 'word' 
-` 
+```javascript
+var a = 'word';
+var b = false;
+var c = true;
+var d = 0
+var e = 1
+var f = 2
+var g = null
+
+console.log(a || b); // 'word'
+console.log(c || a); // true
+console.log(b || a); // 'word'
+console.log(e || f); // 1
+console.log(f || e); // 2
+console.log(d || g); // null
+console.log(g || d); // 0
+console.log(a && c); // true
+console.log(c && a); // 'word'
+``` 
 
 كما ترى ، يفحص المشغل _أو_ العامل الأول. إذا كان هذا صحيحًا أو صريحًا ، فسيتم إرجاعه على الفور (وهذا هو سبب حصولنا على كلمة في الحالة الأولى وصحيح في الحالة الثانية). إذا لم يكن صحيحا أو صائبا ، فإنه يعيد المعامل الثاني (وهذا هو السبب في أننا نحصل على كلمة في الحالة الثالثة).
 
@@ -60,33 +62,37 @@ Booleans هي نوع بيانات بدائي شائع الاستخدام في ل
 
 يتم تقييم أي كائن لا تكون قيمته غير محددة أو خالية ، بما في ذلك كائن منطقي قيمته غير صحيح ، إلى true عند تمريره إلى بيان شرطي. إذا كان هذا صحيحًا ، فسيؤدي هذا إلى تنفيذ الوظيفة. على سبيل المثال ، يتم تقييم الشرط الموجود في العبارة if في الحالة التالية:
 
- `var x = new Boolean(false); 
- if (x) { 
-  // this code is executed 
- } 
-` 
+```javascript
+var x = new Boolean(false);
+if (x) {
+  // this code is executed
+}
+``` 
 
 لا ينطبق هذا السلوك على الأوليات البولية. على سبيل المثال ، يتم تقييم الشرط الموجود في العبارة if في حالة الخطأ:
 
- `var x = false; 
- if (x) { 
-  // this code is not executed 
- } 
-` 
+```javascript
+var x = false;
+if (x) {
+  // this code is not executed
+}
+``` 
 
 لا تستخدم كائنًا منطقيًا لتحويل قيمة غير منطقية إلى قيمة منطقية. بدلاً من ذلك ، استخدم Boolean كدالة لتنفيذ هذه المهمة:
 
- `var x = Boolean(expression);     // preferred 
- var x = new Boolean(expression); // don't use 
-` 
+```javascript
+var x = Boolean(expression);     // preferred
+var x = new Boolean(expression); // don't use
+``` 
 
 إذا قمت بتحديد أي كائن ، بما في ذلك كائن منطقي قيمته غير كاذبة ، كالقيمة الأولية لكائن Boolean ، فإن الكائن المنطقي الجديد يحتوي على قيمة true.
 
- `var myFalse = new Boolean(false);   // initial value of false 
- var g = new Boolean(myFalse);       // initial value of true 
- var myString = new String('Hello'); // string object 
- var s = new Boolean(myString);      // initial value of true 
-` 
+```javascript
+var myFalse = new Boolean(false);   // initial value of false
+var g = new Boolean(myFalse);       // initial value of true
+var myString = new String('Hello'); // string object
+var s = new Boolean(myString);      // initial value of true
+``` 
 
 لا تستخدم كائن منطقي بدلاً من بدائي منطقي.
 

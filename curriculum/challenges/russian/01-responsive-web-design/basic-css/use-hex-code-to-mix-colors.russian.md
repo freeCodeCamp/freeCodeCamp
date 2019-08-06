@@ -7,7 +7,7 @@ localeTitle: Используйте шестнадцатеричный код д
 ---
 
 ## Description
-<section id="description"> Для просмотра шестнадцатеричные коды используют 6 шестнадцатеричных цифр для представления цветов, два для красного (R), зеленого (G) и синего (B) компонентов. Из этих трех чистых цветов (красный, зеленый и синий) мы можем варьировать количество каждого из них, чтобы создать более 16 миллионов других цветов! Например, оранжевый чистый красный, смешанный с каким-то зеленым, и не синий. В шестнадцатеричном коде это означает, что это <code>#FFA500</code> . Цифра <code>0</code> является наименьшим числом в шестнадцатеричном коде и представляет полное отсутствие цвета. Цифра <code>F</code> является наивысшим числом в шестнадцатеричном коде и представляет максимально возможную яркость. </section>
+<section id="description"> Для представления цвета шестнадцатеричные коды используют 6 шестнадцатеричных цифр, по две для красного (R), зеленого (G) и синего (B) компонентов. Для этих трех чистых цветов (красный, зеленый и синий) мы можем варьировать количество каждого из них, чтобы создать более 16 миллионов других цветов! Например, оранжевый чистый красный, смешанный с каким-то зеленым, и не синий. В шестнадцатеричном коде это означает, что это <code>#FFA500</code> . Цифра <code>0</code> является наименьшим числом в шестнадцатеричном коде и представляет полное отсутствие цвета. Цифра <code>F</code> является наивысшим числом в шестнадцатеричном коде и представляет максимально возможную яркость. </section>
 
 ## Instructions
 <section id="instructions"> Замените цветные слова в нашем элементе <code>style</code> на их правильные шестнадцатеричные коды. <table class="table table-striped"><tbody><tr><th> цвет </th><th> Шестнадцатеричный код </th></tr><tr><td> Dodger Blue </td><td> <code>#1E90FF</code> </td> </tr><tr><td> зеленый </td><td> <code>#00FF00</code> </td> </tr><tr><td> оранжевый </td><td> <code>#FFA500</code> </td> </tr><tr><td> красный </td><td> <code>#FF0000</code> </td> </tr></tbody></table></section>
@@ -17,15 +17,15 @@ localeTitle: Используйте шестнадцатеричный код д
 
 ```yml
 tests:
-  - text: 'Дайте вашему элементу <code>h1</code> текст, который <code>I am red!</code> <code>color</code> красный.'
+  - text: 'Дайте вашему текстовому <code>h1</code> элементу  <code>I am red!</code> <code>color</code> красный.'
     testString: 'assert($(".red-text").css("color") === "rgb(255, 0, 0)", "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.");'
   - text: Используйте <code>hex code</code> для красного цвета вместо слова <code>red</code> .
     testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color red instead of the word <code>red</code>.");'
-  - text: 'Дайте вашему элементу <code>h1</code> текст, который <code>I am green!</code> <code>color</code> зеленый.'
+  - text: 'Дайте вашему текстовому <code>h1</code>  элементу <code>I am green!</code> <code>color</code> зеленый.'
     testString: 'assert($(".green-text").css("color") === "rgb(0, 255, 0)", "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.");'
   - text: Используйте <code>hex code</code> для зеленого цвета вместо слова <code>green</code> .
     testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color green instead of the word <code>green</code>.");'
-  - text: 'Дайте вашему элементу <code>h1</code> текст, который <code>I am dodger blue!</code> <code>color</code> утка синий.'
+  - text: 'Дайте вашему текстовому <code>h1</code> элементу <code>I am dodger blue!</code> <code>color</code> утка синий.'
     testString: 'assert($(".dodger-blue-text").css("color") === "rgb(30, 144, 255)", "Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.");'
   - text: Используйте <code>hex code</code> для синтаксиса цвета вместо слова <code>dodgerblue</code> .
     testString: 'assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.");'

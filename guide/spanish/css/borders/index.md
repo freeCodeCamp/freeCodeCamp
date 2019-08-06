@@ -8,7 +8,10 @@ localeTitle: Propiedad de borde
 
 Nuestro atributo personal favorito de CSS, permite personalizar completamente los bordes que aparecen alrededor de los elementos HTML. Con HTML, solía ser imposible colocar un borde alrededor de un elemento, excepto en la tabla. Los bordes de CSS te permiten crear estilos de bordes personalizados y nítidos con muy poco trabajo, en comparación con los métodos anticuados de HTML.
 
-La propiedad abreviada de `border` establece todas las propiedades de borde en una declaración. \`\` \`css borde: 1px sólido # 000;
+La propiedad abreviada de `border` establece todas las propiedades de borde en una declaración. 
+
+```css 
+border: 1px sólido # 000;
 ```
 Las propiedades que pueden utilizarse son (en orden): 
  1. `border-style` 
@@ -17,9 +20,8 @@ Las propiedades que pueden utilizarse son (en orden):
  4. `border-radius` 
  
  No importa si falta alguno de los valores de arriba, por ejemplo: 
-```
-
-css borde: rojo sólido;
+```css
+borde: rojo sólido;
 ```
 El código de arriba también es CSS válido. 
  
@@ -39,16 +41,14 @@ El código de arriba también es CSS válido.
  - `none` - Establece que no hay borde. 
  - `hidden` - Establece un borde oculto. 
  
- Basado en la propiedad que elijas estos estilos pueden no coincidir. 
+Basado en la propiedad que elijas estos estilos pueden no coincidir. 
  Puedes darle un borde diferente a cada lado del elemento: 
-```
-
-css border-top-style: 'solid'; border-left-style: 'dotted'; border-right-style: 'dotted'; border-bottom-style: 'double';
+```css
+border-top-style: 'solid'; border-left-style: 'dotted'; border-right-style: 'dotted'; border-bottom-style: 'double';
 ```
 O puedes estilizarlos todos a la vez: 
-```
-
-css border-style: dotted solid double dashed;
+```css
+border-style: dotted solid double dashed;
 ```
 Aquí queda demostrado que la propiedad de borde permite seleccionar sus diferentes secciones. [superior, inferios, izquierda , derecha] 
  
@@ -60,10 +60,7 @@ Aquí queda demostrado que la propiedad de borde permite seleccionar sus diferen
  thin (delgado), medium (medio), or thick (grueso). 
  
  Ejemplo: 
-```
-
-css
-
+```css
 table { border-width: 7px; border-style: outset; } td { border-width: medium; border-style: outset; } p { border-width: thick; border-style: solid; }
 ```
 ### Color del Borde 
@@ -71,35 +68,37 @@ table { border-width: 7px; border-style: outset; } td { border-width: medium; bo
 ¡Ahora viene el aspecto creativo de los bordes de CSS! Usando el atributo border-color puedes creat bordes personalizados que encajen el flujo y el diseño de tu página web. El color del borde puede ser cualquier color definido con RGB, hexadecimal, o palabras clave. A continuación hay un ejemplo para cada una de las opciones. 
  
  Ejemplo: 
-```
-
-css
-
-table { border-color: rgb( 100, 100, 255); border-style: dashed; } td { border-color: #FFBD32; border-style: ridge; } p { border-color: blue; border-style: solid; }
+```css
+table { 
+ border-color: rgb( 100, 100, 255); 
+ border-style: dashed; 
+} 
+td { 
+ border-color: #FFBD32; 
+ border-style: ridge; 
+} 
+p { 
+ border-color: blue; 
+ border-style: solid; 
+}
 ```
 ### Radio del Borde 
  La propiedad `border-radius` te permite redondear las esquinas de un borde. Ésto se hace al establecer un tamaño que indique cuanto se quiere redondear el borde. Este tamaño puede estar en px o %. 
-```
-
-css border-radius: 25px;
+```css
+border-radius: 25px;
 ```
 Puedes ajustar cada lado del borde usando `border-radius`. El orden es superior, inferior, izquierda, derecha. 
-```
-
-css border-radius: 15% 10px 30% 5px;
+```css
+border-radius: 15% 10px 30% 5px;
 ```
 ### Borde Todo en Uno 
  
  Es excelente que CSS permita al desarrollador ser tan específico como quiera al crear un borde personalizado, aunque a veces es más fácil crear un borde uniforme en una sola línea de código CSS. 
  
- Ejemplo: 
-```
-
-css
-
+Ejemplo: 
+```css
 p { border: 20px outset blue; } h4 { border: 5px solid; } h5 { border: dotted; }
-
-\`\` \`
+```
 
 ### Más información:
 

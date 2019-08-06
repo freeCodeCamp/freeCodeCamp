@@ -23,29 +23,33 @@ localeTitle: فيض
 
 ### مرئي:
 
- `.box-element { overflow: visible; } 
-` 
+```css
+.box-element { overflow: visible; }
+``` 
 
 ![صورة المثال](https://s26.postimg.org/gweu6g5yh/1-vissible.png)
 
 ### المخفية:
 
- `.box-element { overflow: hidden; } 
-` 
+```css
+.box-element { overflow: hidden; }
+``` 
 
 ![صورة المثال](https://s26.postimg.org/l49mf77e1/2-hidden.png)
 
 ### انتقل:
 
- `.box-element { overflow: scroll; } 
-` 
+```css
+.box-element { overflow: scroll; }
+``` 
 
 ![صورة المثال](https://s26.postimg.org/d8z30dxrd/3-scroll.png)
 
 ### تلقاءي:
 
- `.box-element { overflow: auto; } 
-` 
+```css
+.box-element { overflow: auto; }
+``` 
 
 ![صورة المثال](https://s26.postimg.org/z5q7ei0bt/4-autoank.png)
 

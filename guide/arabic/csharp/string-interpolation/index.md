@@ -8,21 +8,24 @@ localeTitle: الاستيفاء سلسلة
 
 # #
 
- `string message = "Hello " + firstName + " " + lastName + "!"; 
- 
- string message2 = string.Format("Hello {0} {1}!", firstName, lastName); 
-` 
+```
+string message = "Hello " + firstName + " " + lastName + "!";
+
+string message2 = string.Format("Hello {0} {1}!", firstName, lastName);
+``` 
 
 باستخدام تعبيرات سلسلة متداخلة ، لديك سلسلة تحتوي على تعبيرات مضمنة يتم استبدالها بنتائج التعبيرات. يجب عليك بادئة السلسلة الحرفية الخاصة بك بعلامة الدولار ($). يتم وضع التعبيرات التي تريد تضمينها في السلسلة مضمنة محاطة بأقواس معقوفة. الرسالة المذكورة أعلاه ستبدو الآن كما يلي:
 
 # #
 
- `string message = $"Hello {firstName} {lastName}!"; 
-` 
+```
+string message = $"Hello {firstName} {lastName}!";
+``` 
 
 **القليل من المعلومات المفيدة** في الاستيفاء سلسلة لديك القدرة على استدعاء وظائف ، والخصائص والمشغلين الثلاثي:
 
- `int a = 3; 
- int b = 454; 
- string result = $"{a}+{b} = {a+b}"; 
-`
+```
+int a = 3;
+int b = 454;
+string result = $"{a}+{b} = {a+b}";
+```

@@ -1,7 +1,7 @@
 ---
 title: Build a Product Landing Page
 ---
-## Build a Product Landing Page
+# Build a Product Landing Page
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -9,10 +9,10 @@ you add logic like `if` and `while` to automatically control how they behave as 
 
 ## What’s Bash?
 Bash is the name of a command line interpreter, a program that makes sense of the Linux commands you enter at the command 
-prompt, or in your script.
+prompt, or in your script. There are other interpreters as well, such us TC-Shell, Z Shell, Fish-Shell, and many more.
 
 ## What’s in a Script?
-A script is just a file. A basic script is made up of an introductory line that tells the server what to make of it, and one 
+A script is just a file. A basic script is made up of an introductory line, called a "shebang", that tells the server what to make of it, and one 
 or more instructions to execute. Here’s an example:
 
 ```
@@ -49,7 +49,7 @@ Linux relies extensively on file permissions. They determine a lot about how you
 permissions, but for now we only need to know this: you can't run your script until you give yourself execute permissions. To 
 do that, type:
 
-`chmod +x my script.sh`
+`chmod +x myscript.sh`
 
 **Second, run it.** We execute the script from the command line just like any other command like `ls` or `date`. The script 
 name is the command, and you need to precede it with a './' when you call it:

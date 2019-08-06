@@ -14,7 +14,7 @@ As seguintes etapas básicas são necessárias para fazer a abordagem atual mais
 
 1.  Manter um repositório central e um branch `master` ativo.
 
-Tem que haver um repositório de código para que todos possam se fundir e extrair alterações. Isso pode estar no Github ou em qualquer outro serviço de armazenamento de código.
+Tem que haver um repositório de código para que todos possam se fundir e extrair alterações. Isso pode estar no GitHub ou em qualquer outro serviço de armazenamento de código.
 
 2.  Automatize a construção.
 

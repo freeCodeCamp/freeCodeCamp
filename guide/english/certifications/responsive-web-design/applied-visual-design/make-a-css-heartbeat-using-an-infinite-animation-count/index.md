@@ -1,7 +1,7 @@
 ---
 title: Make a CSS Heartbeat using an Infinite Animation Count
 ---
-## Make a CSS Heartbeat using an Infinite Animation Count
+# Make a CSS Heartbeat using an Infinite Animation Count
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/make-a-css-heartbeat-using-an-infinite-animation-count/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

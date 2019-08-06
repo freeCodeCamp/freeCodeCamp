@@ -10,8 +10,9 @@ localeTitle: الهروب من الأسعار الحرفيه في الاوتار
 
 ## حل
 
- `var myStr = "I am a \"double quoted\" string inside \"double quotes\"."; 
- var otherStr = 'I am a \'single quoted\' string inside \'single quotes\'.'; 
- var noEscapeSingle = "There is no need to 'escape' the single quotes."; 
- var noEscapeDouble = 'There is no need to "escape" the double quotes.'; 
-`
+```javascript
+var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
+var otherStr = 'I am a \'single quoted\' string inside \'single quotes\'.';
+var noEscapeSingle = "There is no need to 'escape' the single quotes.";
+var noEscapeDouble = 'There is no need to "escape" the double quotes.';
+```

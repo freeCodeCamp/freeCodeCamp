@@ -10,7 +10,7 @@ localeTitle: Отказывать условно от реквизита
 
 Измените `handleClick()` с правильной инструкцией по увеличению.
 
-```react.js
+```jsx
 handleClick() { 
   this.setState({ 
     counter: this.state.counter + 1 
@@ -20,7 +20,7 @@ handleClick() {
 
 В методе `render()` используйте `Math.random()` как указано в описании задачи, и напишите тернарное выражение, чтобы передать `props` в компоненте **Results** .
 
-```react.js
+```jsx
  let expression = Math.random() > .5; 
  
  {(expression == 1)? <Results fiftyFifty="You win!"/> : <Results fiftyFifty="You lose!"/> } 
@@ -28,7 +28,7 @@ handleClick() {
 
 Затем `fiftyFifty` реквизит в компоненте Results.
 
-```react.js
+```jsx
   <h1> 
   { 
     this.props.fiftyFifty 

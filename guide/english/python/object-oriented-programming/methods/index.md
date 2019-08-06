@@ -3,13 +3,35 @@ title: Methods
 ---
 ## Methods
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/area-of-a-parallelogram/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In object oriented programming a function within a class or an object is named a method. Imagine you have a cat object and inside the class there is a funcion named scratch, you can now use the cat's scratch method by calling it in the following way:
+```py
+cat.scratch(somePerson)
+```
+## Different kind of methods
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+There are different types of methods you can define in a class, some of them are listed here.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+The constructor, a method that is executed when the object is created:
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+```py
+class Cat:
+  def __init__(self, name): // Constructor which recieves a name
+    self.name = name
+```
 
+Standard methods:
+```py
+class Cat:
+  name = "Bob"
+  
+  def scratch(self, person): // Standard method, recieves person to scratch
+    print(self.name + " scratched " + person)
+```
 
+The destructor, a method that is executed when the object is deleted by the garbage collector. 
+```py
+class Cat:
+  name = "Bob"
+  def __del__(self):
+    print(name + " is no more.")
+```
