@@ -1,18 +1,25 @@
 ---
 title: Write Concise Declarative Functions with ES6
 ---
-## Write Concise Declarative Functions with ES6
+# Write Concise Declarative Functions with ES6
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Problem Explanation
 ES6 makes it easy, and fancy, to write declarative functions! In this lesson, you are tasked at changing the function to follow ES6 standards.
 
-## Hint 1:
+
+---
+## Hints
+
+### Hint 1
 
 Get rid of the `function` keyword.
 
-## Spoiler Alert - Solution Ahead!
 
-## Solution
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 const bicycle = {
@@ -23,3 +30,5 @@ const bicycle = {
   }
 };
 ```
+
+</details>

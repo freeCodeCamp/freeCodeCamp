@@ -22,12 +22,13 @@ localeTitle: SQL مفتاح القيد الرئيسي
 
 فيما يلي أمر إنشاء جدول يقوم أيضًا بإنشاء مفتاح أساسي باستخدام حقلين.
 
- `CREATE TABLE priKeyExample( 
- rcdKey_id_a INT NOT NULL, 
- rcdKeySeq_id INT NOT NULL, 
- someData varchar(256) NOT NULL, 
- PRIMARY KEY(rcdKey_id_a,rcdKeySeq_id)); 
-` 
+```sql
+CREATE TABLE priKeyExample(
+rcdKey_id_a INT NOT NULL,
+rcdKeySeq_id INT NOT NULL,
+someData varchar(256) NOT NULL,
+PRIMARY KEY(rcdKey_id_a,rcdKeySeq_id));
+``` 
 
 ### مثال مع جدول التغيير
 
@@ -38,9 +39,10 @@ localeTitle: SQL مفتاح القيد الرئيسي
 
 الآن سنقوم بإضافة واحدة جديدة.
 
- `ALTER TABLE priKeyExample 
- ADD CONSTRAINT myPriKey PRIMARY KEY(rcdKey_id_a,rcdKeySeq_id); 
-` 
+```sql
+ALTER TABLE priKeyExample
+ADD CONSTRAINT myPriKey PRIMARY KEY(rcdKey_id_a,rcdKeySeq_id);
+``` 
 
 كما هو الحال مع كل هذه الأشياء SQL هناك أكثر من ذلك بكثير من ما هو موجود في هذا الدليل التمهيدي.
 

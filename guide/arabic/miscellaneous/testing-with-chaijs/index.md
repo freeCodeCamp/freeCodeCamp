@@ -8,17 +8,19 @@ localeTitle: اختبار مع Chaijs
 
 يمكنك تثبيت Chai في مشروعك من خلال npm.
 
- `npm install chai 
-` 
+```
+npm install chai
+``` 
 
 ##### المؤيدة للطرف
 
 إضافة Chai في devDependencies of _package.json_ ، باستخدام \* كعلامة إصدار. بهذه الطريقة ، لديك دائمًا أحدث إصدار.
 
- `"devDependencies": { 
-  "chai": "*" 
- } 
-` 
+```
+"devDependencies": {
+  "chai": "*"
+}
+``` 
 
 ### كيف تستعمل
 

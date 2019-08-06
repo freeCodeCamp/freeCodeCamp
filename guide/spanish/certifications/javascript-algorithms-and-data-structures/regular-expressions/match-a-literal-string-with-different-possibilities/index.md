@@ -14,7 +14,7 @@ Dentro de la cadena literal, coloque los nombres de las mascotas, cada uno separ
 
 ## Solución:
 
-```javascriot
+```js
 let petString = "James has a pet cat."; 
  let petRegex = /dog|cat|bird|fish/; 
  let result = petRegex.test(petString); 

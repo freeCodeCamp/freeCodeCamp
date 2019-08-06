@@ -1,9 +1,9 @@
 ---
 title: Python Abs Function
-localeTitle: Função de Abs Python
+localeTitle: Função Abs em Python
 ---
 
-`abs()` é uma função que já vem incorporada em Python 3. Ela é utilizada para calcular o [valor absoluto](https://pt.wikipedia.org/wiki/Valor_absoluto) de um número.
+`abs()` é uma função que já vem incorporada em Python 3. Ela é utilizada para calcular o [valor absoluto](https://pt.wikipedia.org/wiki/Valor_absoluto) de um número, ou seja, se temos o número 938, o valor absoluto do primeiro digito é 9, do segundo 3 e do terceiro 8. Em poucas palavras, o valor absoluto é o valor do número sozinho, desconsiderando a sua posição (centesimal, decimal ou unitária). A função leva um argumento `x`. O argumento pode até ser um [número complexo](https://docs.python.org/3.0/library/cmath.html) e, nesse caso, seu [módulo](http://www.mathcentre.ac.uk/resources/sigma%20complex%20number%20leaflets/sigma-complex9-2009-1.pdf) é retornado.
 
 ## Argumento
 

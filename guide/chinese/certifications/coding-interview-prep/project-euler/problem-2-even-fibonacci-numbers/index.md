@@ -56,7 +56,6 @@ function fiboEvenSum(n) {
  } 
 ```
 
-*   [运行代码](https://repl.it/@ezioda004/Project-Euler-Problem-2-Even-Fibonacci-Numbers)
 
 ### 参考文献：
 

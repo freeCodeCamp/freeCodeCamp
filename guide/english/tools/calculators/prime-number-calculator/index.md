@@ -3,13 +3,8 @@ title: Prime Number Calculator
 ---
 ## Prime Number Calculator
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/tools/calculators/prime-number-calculator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A <a href='https://en.wikipedia.org/wiki/Prime_number'>**prime number**</a> is a natural number that is greater than one *(>1)* that cannot be formed by multiplying two smaller natural numbers. One of the most popular use of prime numbers in information technology is public-key cryptography.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+The recommended calculator for activities involving prime numbers is CalculatorSoup® <a href='https://www.calculatorsoup.com/calculators/math/prime-number-calculator.php'>Prime Number Calculator</a>. The features of this calculator include:
+- Finding whether a number is prime or <a href='https://en.wikipedia.org/wiki/Composite_number'>composite</a>
+- Providing the factors of the number

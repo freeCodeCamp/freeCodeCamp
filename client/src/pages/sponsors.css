@@ -1,0 +1,19 @@
+.sls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sl {
+  max-height: 80px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  width: 150px;
+  height: 100px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

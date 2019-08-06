@@ -44,7 +44,6 @@ localeTitle: 防止对象突变
     const PI = freezeObj(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://codepen.io/dylantyates/pen/OwVxYB)
 
 # 代码说明：
 
