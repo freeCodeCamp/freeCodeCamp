@@ -14,15 +14,15 @@ Así es como se ve el resultado del código:
 
 Pantalla inicial:
 
-![](https://i.imgur.com/jrnu6mE.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png)
 
 Desplegable abierto:
 
-![](https://i.imgur.com/gszPtRa.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png)
 
 Desplegable con la opción seleccionada:
 
-![](https://i.imgur.com/TKXxZGF.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png)
 
 #### HTML:
 
@@ -241,5 +241,5 @@ El código completo y la demostración de esta aplicación se pueden encontrar [
 ## Más información
 
 *   [ES6 introducción](https://guide.freecodecamp.org/javascript/es6)
-*   [Funciones de flecha](https://guide.freecodecamp.org/javascript/es6/arrow_functions/)
-*   [Let y Const](https://guide.freecodecamp.org/javascript/es6/let_and_const/)
+*   [Funciones de flecha](https://guide.freecodecamp.org/javascript/es6/arrow-functions/)
+*   [Let y Const](https://guide.freecodecamp.org/javascript/es6/let-and-const/)

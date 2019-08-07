@@ -2,6 +2,7 @@
 id: 5900f37d1000cf542c50fe90
 challengeType: 5
 title: 'Problem 17: Number letter counts'
+forumTopicId: 301804
 ---
 
 ## Description
@@ -22,11 +23,11 @@ If all the numbers from 1 to given <code>limit</code> inclusive were written out
 ```yml
 tests:
   - text: <code>numberLetterCounts(5)</code> should return 19.
-    testString: assert.strictEqual(numberLetterCounts(5), 19, '<code>numberLetterCounts(5)</code> should return 19.');
+    testString: assert.strictEqual(numberLetterCounts(5), 19);
   - text: <code>numberLetterCounts(150)</code> should return 1903.
-    testString: assert.strictEqual(numberLetterCounts(150), 1903, '<code>numberLetterCounts(150)</code> should return 1903.');
+    testString: assert.strictEqual(numberLetterCounts(150), 1903);
   - text: <code>numberLetterCounts(1000)</code> should return 21124.
-    testString: assert.strictEqual(numberLetterCounts(1000), 21124, '<code>numberLetterCounts(1000)</code> should return 21124.');
+    testString: assert.strictEqual(numberLetterCounts(1000), 21124);
 
 ```
 

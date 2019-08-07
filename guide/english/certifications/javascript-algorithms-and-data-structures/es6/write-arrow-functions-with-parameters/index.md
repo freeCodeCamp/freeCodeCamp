@@ -1,24 +1,32 @@
 ---
 title: Write Arrow Functions with Parameters
 ---
-## Write Arrow Functions with Parameters
+# Write Arrow Functions with Parameters
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Problem Explanation
 Here is a [cool resource about anonymous functions in JavaScript](http://helephant.com/2008/08/23/javascript-anonymous-functions/), in case you are still wondering what they are, and their role.
 
 Now, you are tasked at putting parameters inside arrow functions. 
 
-## Hint 1:
+
+---
+## Hints
+
+### Hint 1
 
 Get rid of the `function` keyword. Put the arrow operator.
 
-## Hint 2:
+### Hint 2
 
 Make sure you changed the `var` to a `const`.
 
-## Spoiler Warning - Solution Ahead!
 
-## Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 const myConcat = (arr1, arr2) => {
@@ -28,3 +36,5 @@ const myConcat = (arr1, arr2) => {
 // test your code
 console.log(myConcat([1, 2], [3, 4, 5]));
 ```
+
+</details>

@@ -18,11 +18,12 @@ localeTitle: حجم الخلفية
 
 لتعيين هذه الخاصية على صور خلفية متعددة ، قم بفصل القيم بفاصلة:
 
- `.multiple { 
-    background-image: url(1.png), url(2.png); 
-    background-size: 3px 3px, cover; 
- } 
-` 
+```css
+.multiple {
+    background-image: url(1.png), url(2.png);
+    background-size: 3px 3px, cover;
+}
+``` 
 
 #### معلومات اكثر:
 

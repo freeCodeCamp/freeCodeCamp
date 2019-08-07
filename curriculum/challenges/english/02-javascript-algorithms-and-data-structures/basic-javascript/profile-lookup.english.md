@@ -2,6 +2,8 @@
 id: 5688e62ea601b2482ff8422b
 title: Profile Lookup
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cDqW2Cg'
+forumTopicId: 18259
 ---
 
 ## Description
@@ -10,8 +12,8 @@ We have an array of objects representing different people in our contacts lists.
 A <code>lookUpProfile</code> function that takes <code>name</code> and a property (<code>prop</code>) as arguments has been pre-written for you.
 The function should check if <code>name</code> is an actual contact's <code>firstName</code> and the given property (<code>prop</code>) is a property of that contact.
 If both are true, then return the "value" of that property.
-If <code>name</code> does not correspond to any contacts then return <code>"No such contact"</code>
-If <code>prop</code> does not correspond to any valid properties of a contact found to match <code>name</code> then return <code>"No such property"</code>
+If <code>name</code> does not correspond to any contacts then return <code>"No such contact"</code>.
+If <code>prop</code> does not correspond to any valid properties of a contact found to match <code>name</code> then return <code>"No such property"</code>.
 </section>
 
 ## Instructions
@@ -25,17 +27,17 @@ If <code>prop</code> does not correspond to any valid properties of a contact fo
 ```yml
 tests:
   - text: <code>"Kristian", "lastName"</code> should return <code>"Vos"</code>
-    testString: assert(lookUpProfile('Kristian','lastName') === "Vos", '<code>"Kristian", "lastName"</code> should return <code>"Vos"</code>');
+    testString: assert(lookUpProfile('Kristian','lastName') === "Vos");
   - text: <code>"Sherlock", "likes"</code> should return <code>["Intriguing Cases", "Violin"]</code>
-    testString: assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"], '<code>"Sherlock", "likes"</code> should return <code>["Intriguing Cases", "Violin"]</code>');
+    testString: assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"]);
   - text: <code>"Harry","likes"</code> should return an array
-    testString: assert(typeof lookUpProfile("Harry", "likes") === "object", '<code>"Harry","likes"</code> should return an array');
+    testString: assert(typeof lookUpProfile("Harry", "likes") === "object");
   - text: <code>"Bob", "number"</code> should return "No such contact"
-    testString: assert(lookUpProfile("Bob", "number") === "No such contact", '<code>"Bob", "number"</code> should return "No such contact"');
+    testString: assert(lookUpProfile("Bob", "number") === "No such contact");
   - text: <code>"Bob", "potato"</code> should return "No such contact"
-    testString: assert(lookUpProfile("Bob", "potato") === "No such contact", '<code>"Bob", "potato"</code> should return "No such contact"');
+    testString: assert(lookUpProfile("Bob", "potato") === "No such contact");
   - text: <code>"Akira", "address"</code> should return "No such property"
-    testString: assert(lookUpProfile("Akira", "address") === "No such property", '<code>"Akira", "address"</code> should return "No such property"');
+    testString: assert(lookUpProfile("Akira", "address") === "No such property");
 
 ```
 

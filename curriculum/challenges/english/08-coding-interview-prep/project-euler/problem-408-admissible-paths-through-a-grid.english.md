@@ -2,6 +2,7 @@
 id: 5900f5091000cf542c51001b
 challengeType: 5
 title: 'Problem 408: Admissible paths through a grid'
+forumTopicId: 302076
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find P(10 000 000) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler408()</code> should return 299742733.
-    testString: assert.strictEqual(euler408(), 299742733, '<code>euler408()</code> should return 299742733.');
+    testString: assert.strictEqual(euler408(), 299742733);
 
 ```
 
@@ -61,4 +62,5 @@ euler408();
 ```js
 // solution required
 ```
+
 </section>

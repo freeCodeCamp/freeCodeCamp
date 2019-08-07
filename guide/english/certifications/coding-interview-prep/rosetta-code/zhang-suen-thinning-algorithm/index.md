@@ -1,7 +1,7 @@
 ---
 title: Zhang-Suen thinning algorithm
 ---
-## Zhang-Suen thinning algorithm
+# Zhang-Suen thinning algorithm
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/zhang-suen-thinning-algorithm/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

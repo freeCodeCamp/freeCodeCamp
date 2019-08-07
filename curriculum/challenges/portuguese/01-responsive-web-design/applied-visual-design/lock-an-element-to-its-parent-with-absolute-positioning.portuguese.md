@@ -7,10 +7,10 @@ localeTitle: Bloqueie um Elemento ao seu Pai com Posicionamento Absoluto
 ---
 
 ## Description
-<section id="description"> A próxima opção para a propriedade CSS <code>position</code> é <code>absolute</code> , que bloqueia o elemento no lugar em relação ao seu contêiner pai. Ao contrário da posição <code>relative</code> , isso remove o elemento do fluxo normal do documento, portanto, os itens adjacentes o ignoram. As propriedades de deslocamento CSS (superior ou inferior e esquerda ou direita) são usadas para ajustar a posição. Uma nuance com o posicionamento absoluto é que ele vai ser bloqueado em relação ao seu antepassado mais próximo <em>posicionado.</em> Se você esquecer de adicionar uma regra de posição ao item pai (isso geralmente é feito usando <code>position: relative;</code> ), o navegador continuará procurando a cadeia e, por fim, assumirá o padrão da tag body. </section>
+<section id="description"> A próxima opção para a propriedade CSS <code>position</code> é <code>absolute</code> , que bloqueia o elemento no lugar em relação ao seu contentor pai. Ao contrário da posição <code>relative</code> , isso remove o elemento do fluxo normal do documento, portanto, os itens adjacentes ignoram-no. As propriedades de deslocamento CSS (superior ou inferior e esquerda ou direita) são usadas para ajustar a posição. Uma nuance no posicionamento absoluto é que ele vai bloquear o elemento em relação ao seu antepassado mais próximo <em>posicionado.</em> Se você esquecer de adicionar uma regra de posição ao item pai (isso geralmente é feito usando <code>position: relative;</code> ), o navegador irá continuar a procurar a ligação e, por fim, irá assumir o padrão da tag body. </section>
 
 ## Instructions
-<section id="instructions"> Bloqueie o elemento <code>#searchbar</code> no canto superior direito de seu pai de <code>section</code> , declarando sua <code>position</code> como <code>absolute</code> . Dê-lhe compensações <code>top</code> e <code>right</code> de 50 pixels cada. </section>
+<section id="instructions"> Bloqueie o elemento <code>#searchbar</code> no canto superior direito do seu pai  <code>section</code> , declarando sua <code>position</code> como <code>absolute</code> . Dê-lhe compensações <code>top</code> e <code>right</code> de 50 pixels cada. </section>
 
 ## Tests
 <section id='tests'>

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036168
 title: Write a React Component from Scratch
 challengeType: 6
 isRequired: false
+forumTopicId: 301424
 ---
 
 ## Description
@@ -22,11 +23,11 @@ Render this component to the DOM using <code>ReactDOM.render()</code>. There is 
 ```yml
 tests:
   - text: There should be a React component called <code>MyComponent</code>.
-    testString: getUserInput => assert(getUserInput('index').replace(/\s/g, '').includes('classMyComponentextendsReact.Component{'), 'There should be a React component called <code>MyComponent</code>.');
+    testString: getUserInput => assert(getUserInput('index').replace(/\s/g, '').includes('classMyComponentextendsReact.Component{'));
   - text: <code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })(), '<code>MyComponent</code> should contain an <code>h1</code> tag with text <code>My First React Component!</code> Case and punctuation matter.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('h1').text() === 'My First React Component!'; })());
   - text: <code>MyComponent</code> should render to the DOM.
-    testString: assert(document.getElementById('challenge-node').childNodes.length === 1, '<code>MyComponent</code> should render to the DOM.');
+    testString: assert(document.getElementById('challenge-node').childNodes.length === 1);
 
 ```
 

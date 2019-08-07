@@ -2,6 +2,7 @@
 id: 5900f4d51000cf542c50ffe8
 challengeType: 5
 title: 'Problem 361: Subsequence of Thue-Morse sequence'
+forumTopicId: 302022
 ---
 
 ## Description
@@ -45,7 +46,7 @@ Find the last 9 digits of .
 ```yml
 tests:
   - text: <code>euler361()</code> should return 178476944.
-    testString: assert.strictEqual(euler361(), 178476944, '<code>euler361()</code> should return 178476944.');
+    testString: assert.strictEqual(euler361(), 178476944);
 
 ```
 
@@ -77,4 +78,5 @@ euler361();
 ```js
 // solution required
 ```
+
 </section>

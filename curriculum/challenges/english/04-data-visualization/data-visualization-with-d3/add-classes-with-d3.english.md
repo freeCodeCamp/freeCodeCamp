@@ -1,9 +1,8 @@
 ---
 id: 587d7fa7367417b2b2512bc8
 title: Add Classes with D3
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+forumTopicId: 301473
 ---
 
 ## Description
@@ -26,9 +25,9 @@ Add the <code>attr()</code> method to the code in the editor and put a class of 
 ```yml
 tests:
   - text: Your <code>div</code> elements should have a class of <code>bar</code>.
-    testString: assert($('div').attr('class') == "bar", 'Your <code>div</code> elements should have a class of <code>bar</code>.');
+    testString: assert($('div').attr('class') == "bar");
   - text: Your code should use the <code>attr()</code> method.
-    testString: assert(code.match(/\.attr/g), 'Your code should use the <code>attr()</code> method.');
+    testString: assert(code.match(/\.attr/g));
 
 ```
 
@@ -97,4 +96,5 @@ tests:
   </script>
 </body>
 ```
+
 </section>

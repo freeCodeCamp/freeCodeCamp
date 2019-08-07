@@ -5,20 +5,32 @@ import {
   unwrapHandledError
 } from '../utils/create-handled-error.js';
 
-const { ROLLBAR_APP_ID } = process.env;
+import { rollbar } from '../../../config/secrets';
 
-const rollbar = new Rollbar(ROLLBAR_APP_ID);
+const { appId } = rollbar;
+const reporter = new Rollbar(appId);
 const log = debug('fcc:middlewares:error-reporter');
 
-const errTemplate = ({message, ...restError}, req) => `
+const errTemplate = (error, req) => {
+  const { message, stack } = error;
+  return `
 Time: ${new Date(Date.now()).toISOString()}
 Error: ${message}
 Is authenticated user: ${!!req.user}
 Route: ${JSON.stringify(req.route, null, 2)}
+Stack: ${stack}
 
-${JSON.stringify(restError, null, 2)}
+// raw
+${JSON.stringify(error, null, 2)}
 
 `;
+};
+
+export function reportError(err) {
+  return process.env.NODE_ENV === 'production'
+    ? reporter.error(err.message, err)
+    : console.error(err);
+}
 
 export default function errrorReporter() {
   if (process.env.NODE_ENV !== 'production' && process.env.ERROR_REPORTER) {
@@ -44,6 +56,7 @@ export default function errrorReporter() {
     // logging the error provides us with more information,
     // i.e isAuthenticatedUser, req.route
     console.error(errTemplate(err, req));
-    return rollbar.error(err.message, err);
+    reportError(err);
+    return next(err);
   };
 }

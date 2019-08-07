@@ -2,6 +2,7 @@
 id: 5900f5431000cf542c510055
 challengeType: 5
 title: 'Problem 470: Super Ramvok'
+forumTopicId: 302146
 ---
 
 ## Description
@@ -32,7 +33,7 @@ Calculate F(20), rounded to the nearest integer.
 ```yml
 tests:
   - text: <code>euler470()</code> should return 147668794.
-    testString: assert.strictEqual(euler470(), 147668794, '<code>euler470()</code> should return 147668794.');
+    testString: assert.strictEqual(euler470(), 147668794);
 
 ```
 
@@ -64,4 +65,5 @@ euler470();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f54c1000cf542c51005e
 challengeType: 5
 title: 'Problem 478: Mixtures'
+forumTopicId: 302155
 ---
 
 ## Description
@@ -40,7 +41,7 @@ Find E(10 000 000) mod 118.
 ```yml
 tests:
   - text: <code>euler478()</code> should return 59510340.
-    testString: assert.strictEqual(euler478(), 59510340, '<code>euler478()</code> should return 59510340.');
+    testString: assert.strictEqual(euler478(), 59510340);
 
 ```
 
@@ -72,4 +73,5 @@ euler478();
 ```js
 // solution required
 ```
+
 </section>

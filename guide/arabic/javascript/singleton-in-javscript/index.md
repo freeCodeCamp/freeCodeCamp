@@ -37,14 +37,15 @@ localeTitle: خلق سينجلتون في جافا سكريبت
 
 الآن لتنفيذ أو استخدام المفرد الخاص بك. في المتصفح بعد حفظ هذا الملف js وتحميله.
 
- `console.log(singletonFn.getDataCounter()); //0 as bydefault it will be 0. 
- 
- singletonFn.setDataCounter(20); 
- 
- console.log(singletonFn.getDataCounter()); //20 as we assigned. 
- 
- console.log(fishNames); //will Print array with "SimpleFish". 
-` 
+```
+console.log(singletonFn.getDataCounter()); //0 as bydefault it will be 0.
+
+singletonFn.setDataCounter(20);
+
+console.log(singletonFn.getDataCounter()); //20 as we assigned.
+
+console.log(fishNames); //will Print array with "SimpleFish".
+``` 
 
 الآن مع هذه المعرفة يمكنك تحديد الثوابت ، التعدادات أو أي شيء يحتاج إلى استخدام متعددة في مشروع مكتوب هنا. أو شيء من هذا القبيل التكوينات.
 

@@ -2,6 +2,7 @@
 id: 5900f3be1000cf542c50fed1
 challengeType: 5
 title: 'Problem 82: Path sum: three ways'
+forumTopicId: 302196
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Find the minimal path sum, in matrix.txt (right click and "Save Link/Target As..
 ```yml
 tests:
   - text: <code>euler82()</code> should return 260324.
-    testString: assert.strictEqual(euler82(), 260324, '<code>euler82()</code> should return 260324.');
+    testString: assert.strictEqual(euler82(), 260324);
 
 ```
 
@@ -65,4 +66,5 @@ euler82();
 ```js
 // solution required
 ```
+
 </section>

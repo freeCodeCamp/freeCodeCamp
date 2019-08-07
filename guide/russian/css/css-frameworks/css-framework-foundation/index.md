@@ -4,11 +4,11 @@ localeTitle: Основы CSS Framework
 ---
 # Основы CSS Framework
 
-[Foundation](http://foundation.zurb.com/) - это открытая, мобильная первая CSS-структура, созданная [Zurb](https://zurb.com/) .
+[Foundation](http://foundation.zurb.com/) - это фронтенд-фреймворк с [адаптивным дизаином](https://ru.wikipedia.org/wiki/%D0%90%D0%B4%D0%B0%D0%BF%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B9_%D0%B2%D0%B5%D0%B1-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD) и открытым кодом , созданный агенством [Zurb](https://zurb.com/) .
 
-## Начиная
+## Начало
 
-Вот простой HTML-шаблон, который включает в себя последние скомпилированные и уменьшенные CSS и Javascript для библиотеки Foundation.
+Вот простой HTML-шаблон, который включает в себя последние скомпилированные и минифицированнные CSS и Javascript для библиотеки Foundation.
 
 ```html
 
@@ -29,7 +29,7 @@ localeTitle: Основы CSS Framework
     </html> 
 ```
 
-В этом примере используется CDN, который загружает настройки по умолчанию. Если вы хотите настроить макет сетки, измените цвета или добавьте и удалите компоненты, которые вы можете сделать на странице [загрузки](http://foundation.zurb.com/sites/download/) Foundation.
+В этом примере используется CDN, который загружает настройки по умолчанию (вы можете найти последние версии библиотек ZurbFoundation на [cdnjs.com](https://cdnjs.com/libraries/foundation)).  Если вы хотите настроить макет сетки, изменить цвета, добавить или удалить компоненты, посетите страницу [загрузки](http://foundation.zurb.com/sites/download/) Foundation.
 
 #### Учебные ресурсы
 

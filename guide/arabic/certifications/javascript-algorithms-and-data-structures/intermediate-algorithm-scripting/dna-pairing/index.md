@@ -84,7 +84,6 @@ localeTitle: دنا الاقتران
     pairElement("GCG"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmz/0)
 
 ### شرح الشفرة:
 
@@ -116,7 +115,6 @@ localeTitle: دنا الاقتران
   pairElement("GCG"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/repls/ThoroughSphericalComputeranimation)
 
 ## شرح الشفرة:
 

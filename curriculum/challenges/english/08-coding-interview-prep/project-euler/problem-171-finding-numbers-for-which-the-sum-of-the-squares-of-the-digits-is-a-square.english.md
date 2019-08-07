@@ -2,6 +2,7 @@
 id: 5900f4181000cf542c50ff2a
 challengeType: 5
 title: 'Problem 171: Finding numbers for which the sum of the squares of the digits is a square'
+forumTopicId: 301806
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find the last nine digits of the sum of all n, 0 < n < 1020, such that f(n) is a
 ```yml
 tests:
   - text: <code>euler171()</code> should return 142989277.
-    testString: assert.strictEqual(euler171(), 142989277, '<code>euler171()</code> should return 142989277.');
+    testString: assert.strictEqual(euler171(), 142989277);
 
 ```
 
@@ -56,4 +57,5 @@ euler171();
 ```js
 // solution required
 ```
+
 </section>

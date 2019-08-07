@@ -1,9 +1,13 @@
 ---
 title: Create a Stateful Component
 ---
-## Create a Stateful Component
+# Create a Stateful Component
 
-#### Hint 1 :
+
+---
+## Hints
+
+### Hint 1
 ```JSX
 class StatefulComponent extends React.Component {
   constructor(props) {
@@ -22,7 +26,12 @@ class StatefulComponent extends React.Component {
 };
 ```
 
-## Solution 
+
+---
+## Solutions 
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```JSX
 class StatefulComponent extends React.Component {
   constructor(props) {
@@ -43,3 +52,4 @@ class StatefulComponent extends React.Component {
   }
 };
 ```
+</details>
