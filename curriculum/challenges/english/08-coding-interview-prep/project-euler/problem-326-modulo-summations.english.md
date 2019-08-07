@@ -2,6 +2,7 @@
 id: 5900f4b21000cf542c50ffc5
 challengeType: 5
 title: 'Problem 326: Modulo Summations'
+forumTopicId: 301983
 ---
 
 ## Description

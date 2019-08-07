@@ -2,6 +2,7 @@
 id: 5900f4531000cf542c50ff66
 challengeType: 5
 title: 'Problem 231: The prime factorisation of binomial coefficients'
+forumTopicId: 301875
 ---
 
 ## Description

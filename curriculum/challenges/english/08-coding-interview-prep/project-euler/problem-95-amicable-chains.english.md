@@ -2,6 +2,7 @@
 id: 5900f3cc1000cf542c50fede
 challengeType: 5
 title: 'Problem 95: Amicable chains'
+forumTopicId: 302212
 ---
 
 ## Description

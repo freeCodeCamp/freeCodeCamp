@@ -2,6 +2,7 @@
 id: 5900f4831000cf542c50ff95
 challengeType: 5
 title: 'Problem 278: Linear Combinations of Semiprimes'
+forumTopicId: 301928
 ---
 
 ## Description

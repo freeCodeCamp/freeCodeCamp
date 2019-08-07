@@ -3,6 +3,7 @@ id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
+forumTopicId: 16158
 ---
 
 ## Description

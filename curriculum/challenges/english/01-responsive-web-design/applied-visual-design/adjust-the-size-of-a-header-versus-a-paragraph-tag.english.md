@@ -3,6 +3,7 @@ id: 587d781b367417b2b2512abd
 title: Adjust the Size of a Header Versus a Paragraph Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
+forumTopicId: 301037
 ---
 
 ## Description

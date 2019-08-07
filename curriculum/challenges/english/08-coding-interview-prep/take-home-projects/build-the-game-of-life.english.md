@@ -3,6 +3,7 @@ id: bd7154d8c242eddfaeb5bd13
 title: Build the Game of Life
 isRequired: false
 challengeType: 3
+forumTopicId: 302362
 ---
 
 ## Description

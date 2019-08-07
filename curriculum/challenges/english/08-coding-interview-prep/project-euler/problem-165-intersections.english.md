@@ -2,6 +2,7 @@
 id: 5900f4111000cf542c50ff24
 challengeType: 5
 title: 'Problem 165: Intersections'
+forumTopicId: 301799
 ---
 
 ## Description

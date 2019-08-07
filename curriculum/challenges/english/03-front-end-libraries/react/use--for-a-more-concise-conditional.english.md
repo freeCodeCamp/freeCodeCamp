@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036185
 title: Use && for a More Concise Conditional
 challengeType: 6
 isRequired: false
+forumTopicId: 301413
 ---
 
 ## Description

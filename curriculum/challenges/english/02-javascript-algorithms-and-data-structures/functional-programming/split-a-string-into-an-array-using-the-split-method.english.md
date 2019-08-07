@@ -2,6 +2,7 @@
 id: 587d7daa367417b2b2512b6b
 title: Split a String into an Array Using the split Method
 challengeType: 1
+forumTopicId: 18305
 ---
 
 ## Description

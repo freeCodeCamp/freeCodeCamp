@@ -2,6 +2,7 @@
 id: 5900f3bb1000cf542c50fece
 challengeType: 5
 title: 'Problem 79: Passcode derivation'
+forumTopicId: 302192
 ---
 
 ## Description

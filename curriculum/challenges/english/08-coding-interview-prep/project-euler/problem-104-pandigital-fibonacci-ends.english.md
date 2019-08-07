@@ -2,6 +2,7 @@
 id: 5900f3d51000cf542c50fee6
 challengeType: 5
 title: 'Problem 104: Pandigital Fibonacci ends'
+forumTopicId: 301728
 ---
 
 ## Description

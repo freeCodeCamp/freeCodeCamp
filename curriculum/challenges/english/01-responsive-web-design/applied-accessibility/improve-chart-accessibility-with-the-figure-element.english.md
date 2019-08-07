@@ -3,6 +3,7 @@ id: 587d778a367417b2b2512aa5
 title: Improve Chart Accessibility with the figure Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMqtE'
+forumTopicId: 301015
 ---
 
 ## Description

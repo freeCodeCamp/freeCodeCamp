@@ -2,6 +2,7 @@
 title: Count the coins
 id: 59713bd26bdeb8a594fb9413
 challengeType: 5
+forumTopicId: 302238
 ---
 
 ## Description

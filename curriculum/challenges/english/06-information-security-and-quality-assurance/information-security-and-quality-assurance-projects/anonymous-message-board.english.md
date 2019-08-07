@@ -3,6 +3,7 @@ id: 587d824a367417b2b2512c45
 title: Anonymous Message Board
 challengeType: 4
 isRequired: true
+forumTopicId: 301568
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f3ec1000cf542c50fefe
 challengeType: 5
 title: 'Problem 127: abc-hits'
+forumTopicId: 301754
 ---
 
 ## Description

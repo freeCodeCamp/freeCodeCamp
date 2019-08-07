@@ -2,6 +2,7 @@
 id: 587d7fac367417b2b2512bdb
 title: Set a Domain and a Range on a Scale
 challengeType: 6
+forumTopicId: 301491
 ---
 
 ## Description

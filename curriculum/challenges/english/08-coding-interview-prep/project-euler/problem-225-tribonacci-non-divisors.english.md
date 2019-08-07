@@ -2,6 +2,7 @@
 id: 5900f44e1000cf542c50ff60
 challengeType: 5
 title: 'Problem 225: Tribonacci non-divisors'
+forumTopicId: 301868
 ---
 
 ## Description

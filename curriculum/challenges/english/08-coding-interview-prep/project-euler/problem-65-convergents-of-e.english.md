@@ -2,6 +2,7 @@
 id: 5900f3ad1000cf542c50fec0
 challengeType: 5
 title: 'Problem 65: Convergents of e'
+forumTopicId: 302177
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4621000cf542c50ff75
 challengeType: 5
 title: 'Problem 246: Tangents to an ellipse'
+forumTopicId: 301893
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f5331000cf542c510045
 challengeType: 5
 title: 'Problem 454: Diophantine reciprocals III'
+forumTopicId: 302127
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8041
 title: Sum of a series
 challengeType: 5
+forumTopicId: 302333
 ---
 
 ## Description

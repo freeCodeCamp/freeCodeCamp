@@ -2,6 +2,7 @@
 id: 5900f4ee1000cf542c510000
 challengeType: 5
 title: 'Problem 385: Ellipses inside triangles'
+forumTopicId: 302049
 ---
 
 ## Description

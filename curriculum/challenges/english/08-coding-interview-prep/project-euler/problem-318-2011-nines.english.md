@@ -2,6 +2,7 @@
 id: 5900f4ab1000cf542c50ffbd
 challengeType: 5
 title: 'Problem 318: 2011 nines'
+forumTopicId: 301974
 ---
 
 ## Description

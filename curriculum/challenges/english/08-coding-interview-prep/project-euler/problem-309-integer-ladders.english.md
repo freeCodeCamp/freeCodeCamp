@@ -2,6 +2,7 @@
 id: 5900f4a11000cf542c50ffb4
 challengeType: 5
 title: 'Problem 309: Integer Ladders'
+forumTopicId: 301963
 ---
 
 ## Description

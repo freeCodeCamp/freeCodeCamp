@@ -2,6 +2,7 @@
 id: 5900f38e1000cf542c50fea1
 challengeType: 5
 title: 'Problem 34: Digit factorials'
+forumTopicId: 301998
 ---
 
 ## Description

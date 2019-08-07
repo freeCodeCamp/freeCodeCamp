@@ -2,6 +2,7 @@
 id: 5900f4f31000cf542c510006
 challengeType: 5
 title: 'Problem 391: Hopping Game'
+forumTopicId: 302056
 ---
 
 ## Description

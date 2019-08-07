@@ -2,6 +2,7 @@
 id: 5900f47e1000cf542c50ff90
 challengeType: 5
 title: 'Problem 273: Sum of Squares'
+forumTopicId: 301923
 ---
 
 ## Description

@@ -3,6 +3,7 @@ id: bad87fee1348bd9aede08718
 title: Use RGB values to Color Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkp2fr'
+forumTopicId: 18369
 ---
 
 ## Description

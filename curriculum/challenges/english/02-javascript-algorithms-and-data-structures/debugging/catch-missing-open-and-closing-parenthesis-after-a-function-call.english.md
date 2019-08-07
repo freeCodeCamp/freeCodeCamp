@@ -2,6 +2,7 @@
 id: 587d7b85367417b2b2512b39
 title: Catch Missing Open and Closing Parenthesis After a Function Call
 challengeType: 1
+forumTopicId: 301185
 ---
 
 ## Description

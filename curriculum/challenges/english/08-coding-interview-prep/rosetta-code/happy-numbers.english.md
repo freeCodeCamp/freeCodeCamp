@@ -2,6 +2,7 @@
 title: Happy numbers
 id: 594810f028c0303b75339ad1
 challengeType: 5
+forumTopicId: 302280
 ---
 
 ## Description

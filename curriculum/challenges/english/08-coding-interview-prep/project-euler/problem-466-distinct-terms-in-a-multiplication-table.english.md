@@ -2,6 +2,7 @@
 id: 5900f53e1000cf542c510051
 challengeType: 5
 title: 'Problem 466: Distinct terms in a multiplication table'
+forumTopicId: 302141
 ---
 
 ## Description

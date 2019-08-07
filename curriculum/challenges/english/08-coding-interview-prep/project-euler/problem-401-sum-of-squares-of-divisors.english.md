@@ -2,6 +2,7 @@
 id: 5900f4fd1000cf542c51000f
 challengeType: 5
 title: 'Problem 401: Sum of squares of divisors'
+forumTopicId: 302069
 ---
 
 ## Description

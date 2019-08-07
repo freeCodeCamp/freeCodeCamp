@@ -2,6 +2,7 @@
 id: 5900f4eb1000cf542c50fffd
 challengeType: 5
 title: 'Problem 382: Generating polygons'
+forumTopicId: 302046
 ---
 
 ## Description

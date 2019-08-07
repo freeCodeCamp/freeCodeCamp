@@ -2,6 +2,7 @@
 id: 5900f41a1000cf542c50ff2d
 challengeType: 5
 title: 'Problem 174: Counting the number of "hollow" square laminae that can form one, two, three, ... distinct arrangements'
+forumTopicId: 301809
 ---
 
 ## Description

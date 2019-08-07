@@ -41,6 +41,7 @@ function getSchemaForLang(lang) {
     ),
     guideUrl: Joi.string().uri({ scheme: 'https' }),
     videoUrl: Joi.string().allow(''),
+    forumTopicId: Joi.number(),
     helpRoom: Joi.string(),
     id: Joi.objectId().required(),
     instructions: Joi.string().allow(''),

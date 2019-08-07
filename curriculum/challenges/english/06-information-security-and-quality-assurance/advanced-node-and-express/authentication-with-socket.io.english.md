@@ -2,6 +2,7 @@
 id: 589fc831f9fc0f352b528e77
 title: Authentication with Socket.IO
 challengeType: 2
+forumTopicId: 301548
 ---
 
 ## Description

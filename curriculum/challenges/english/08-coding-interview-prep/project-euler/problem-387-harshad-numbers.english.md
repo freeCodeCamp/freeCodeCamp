@@ -2,6 +2,7 @@
 id: 5900f4f11000cf542c510003
 challengeType: 5
 title: 'Problem 387: Harshad Numbers'
+forumTopicId: 302051
 ---
 
 ## Description

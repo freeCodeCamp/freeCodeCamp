@@ -3,6 +3,7 @@ id: bad88fee1348bd9aedf08816
 title: Link to Internal Sections of a Page with Anchor Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
+forumTopicId: 301098
 ---
 
 ## Description
