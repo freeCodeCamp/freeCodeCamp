@@ -23,7 +23,7 @@ class ClassName:
  
  #### Class Objects: 
  
- Class objects support two kinds of operations: attribute references and instantiation. 
+ Objetos de uma classe soportam dois tipos de operações: Referência por atributo e instanciação.
  
  Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
  Valid attribute names are all the names that were in the class's namespace when the class object was created. 
