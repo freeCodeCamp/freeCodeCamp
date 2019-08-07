@@ -1,10 +1,29 @@
 ---
 title: Add Keywords to Your package.json
 ---
-## Add Keywords to Your package.json
+# Add Keywords to Your package.json
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/managing-packages-with-npm/add-keywords-to-your-package.json/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+---
+## Hints
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 1
+* Your package.json should contain the property `keywords`.
+
+## Hint 2
+* `keywords` should be an array.
+
+## Hint 3
+* One of the values in `keywords` should be `freecodecamp`.
+
+
+---
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```json
+
+"keywords": [ "freecodecamp", "microservice", "guide" ]
+```
+
+</details>

@@ -70,7 +70,6 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLow/0)
 
 ### Код Объяснение:
 
@@ -112,7 +111,6 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLoy/0)
 
 ### Код Объяснение:
 
@@ -143,7 +141,6 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLoz/0)
 
 ### Код Объяснение:
 

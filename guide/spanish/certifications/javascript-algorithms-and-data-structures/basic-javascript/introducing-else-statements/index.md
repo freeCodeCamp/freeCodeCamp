@@ -47,7 +47,6 @@ function testElse(val) {
  testElse(4); 
 ```
 
-· [Ejecutar código en repl.it](https://repl.it/@AdrianSkar/Introducing-else-statements)
 
 ### Explicación del código
 

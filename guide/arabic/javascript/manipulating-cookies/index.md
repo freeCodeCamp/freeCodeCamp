@@ -22,38 +22,41 @@ _يتذكر موقع الويب اللغة التي حددتها في زيارت
 
 **ضع في اعتبارك أن ملف تعريف الارتباط الذي تم تعيينه بواسطة نطاق معين لا يمكن قراءته إلا من خلال ذلك النطاق والنطاقات الفرعية فقط.**
 
- `// Using vanilla javascript 
- document.cookie = 'userLanguage=french; expires=Sun, 2 Dec 2017 23:56:11 UTC; path=/'; 
- 
- //Using JS cookie library 
- Cookies.set('userLanguage', 'french', { expires: 7, path: '/' }); 
-` 
+```javascript
+// Using vanilla javascript
+document.cookie = 'userLanguage=french; expires=Sun, 2 Dec 2017 23:56:11 UTC; path=/';
+
+//Using JS cookie library
+Cookies.set('userLanguage', 'french', { expires: 7, path: '/' });
+``` 
 
 _تنتهي صلاحية ملف تعريف الارتباط في 7 أيام_
 
 ### احصل على ملفات تعريف الارتباط
 
- `// Using vanilla javascript 
- console.log(document.cookie) 
- 
- // => "_ga=GA1.2.1266762736.1473341790; userLanguage=french" 
- 
- // Using JS cookie library 
- Cookies.get('userLanguage'); 
- 
- // => "french" 
-` 
+```javascript
+// Using vanilla javascript
+console.log(document.cookie)
+
+// => "_ga=GA1.2.1266762736.1473341790; userLanguage=french"
+
+// Using JS cookie library
+Cookies.get('userLanguage');
+
+// => "french"
+``` 
 
 ### حذف ملف تعريف الارتباط
 
 لحذف ملف تعريف ارتباط ، يتم تعيين تاريخ انتهاء الصلاحية إلى شيء ما في الماضي.
 
- `// Using vanilla javascript 
- document.cookie = 'userLanguage; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/'; 
- 
- //Using JS cookie library 
- Cookies.remove('userLanguage'); 
-` 
+```javascript
+// Using vanilla javascript
+document.cookie = 'userLanguage; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
+
+//Using JS cookie library
+Cookies.remove('userLanguage');
+``` 
 
 _إذا وجدت نفسك تتعامل مع ملفات تعريف الارتباط كثيرًا في مشروعك ، فالرجاء استخدام مكتبة مثل [JS Cookie](https://github.com/js-cookie/js-cookie) وحفظ وقتًا كبيرًا من الوقت._
 

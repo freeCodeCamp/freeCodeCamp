@@ -1,7 +1,7 @@
 ---
 title: Build a Nightlife Coordination App
 ---
-## Build a Nightlife Coordination App
+# Build a Nightlife Coordination App
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/build-a-nightlife-coordination-app/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

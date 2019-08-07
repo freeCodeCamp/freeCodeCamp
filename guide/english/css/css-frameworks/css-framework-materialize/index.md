@@ -7,7 +7,7 @@ Materialize is a Responsive CSS framework based on Google's <a href='https://des
 
 ## Getting Started
 
-Here is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Materialize library.
+Here is a simple HTML template which includes the latest compiled and minified CSS and JavaScript for the Materialize library.
 ```html
     <!DOCTYPE html>
   <html>

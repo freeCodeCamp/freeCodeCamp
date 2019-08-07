@@ -2,6 +2,7 @@
 id: 5900f47d1000cf542c50ff8f
 challengeType: 5
 title: 'Problem 272: Modular Cubes, part 2'
+forumTopicId: 301922
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find the sum of the positive numbers n≤1011 for which C(n)=242.
 ```yml
 tests:
   - text: <code>euler272()</code> should return 8495585919506151000.
-    testString: assert.strictEqual(euler272(), 8495585919506151000, '<code>euler272()</code> should return 8495585919506151000.');
+    testString: assert.strictEqual(euler272(), 8495585919506151000);
 
 ```
 
@@ -58,4 +59,5 @@ euler272();
 ```js
 // solution required
 ```
+
 </section>

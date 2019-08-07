@@ -4,7 +4,7 @@ localeTitle: 方法
 ---
 # 方法
 
-Java中最容易识别的方法可能是`public static void main(String[]args)` ，其中`public`表示用户可以访问该方法， `static`表示该方法基于“类”而不是“实例”， `void`表示没有任何东西会从方法返回到另一个（更高级别）方法，而`main`是这个特定方法的名称。
+Java中最容易识别的方法可能是`public static void main(String[] args)` ，其中`public`表示用户可以访问该方法， `static`表示该方法基于“类”而不是“实例”， `void`表示没有任何东西会从方法返回到另一个（更高级别）方法，而`main`是这个特定方法的名称。
 
 `getName()`和`getManufacturerName()`是我们在这里使用的两个“Getter”方法。通常，Java中的方法包含以下部分 -
 

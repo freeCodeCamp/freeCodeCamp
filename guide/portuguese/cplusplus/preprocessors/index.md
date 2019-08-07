@@ -6,7 +6,7 @@ localeTitle: Pré-processadores
 
 Como o nome sugere, os pré-processadores são programas que processam nosso código-fonte antes da compilação. Há vários passos envolvidos entre escrever um programa e executar um programa em C / C ++. Vamos dar uma olhada nestes passos antes de começarmos a aprender sobre os pré-processadores.
 
-![Img](https://i.imgur.com/Pb0aTkV.png)
+![Img](https://cdn-media-1.freecodecamp.org/imgr/Pb0aTkV.png)
 
 Você pode ver as etapas intermediárias no diagrama acima. O código fonte escrito pelos programadores é armazenado no arquivo program.c. Este arquivo é então processado por pré-processadores e um arquivo de código-fonte expandido é gerado programa nomeado. Este arquivo expandido é compilado pelo compilador e um arquivo de código de objeto é gerado chamado program.obj. Finalmente, o vinculador vincula esse arquivo de código de objeto ao código de objeto das funções de biblioteca para gerar o arquivo executável program.exe.
 

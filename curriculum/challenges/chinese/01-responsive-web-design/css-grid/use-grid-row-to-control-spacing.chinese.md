@@ -7,17 +7,17 @@ localeTitle: 使用网格行控制间距
 ---
 
 ## Description
-<section id="description">当然，您可以像使用列一样使项目消耗多行。您可以使用网格项上的<code>grid-row</code>属性定义项目开始和停止的水平线。 </section>
+<section id="description">当然，像网格列一样，您也可以使一个项目同时占据多个网格行。您可以使用<code>grid-row</code>属性来定义项目开始和结束的网格行。 </section>
 
 ## Instructions
-<section id="instructions">使用<code>item5</code>类的元素消耗最后两行。 </section>
+<section id="instructions">让带有<code>item5</code>class选择器的元素占有最后两排网格行。 </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>item5</code>类应该有一个<code>grid-row</code>具有的值属性<code>2 / 4</code>
+  - text: <code>item5</code>class应该有一个具有<code>2 / 4</code>值属性的<code>grid-row</code>.
     testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.");'
 
 ```

@@ -1,7 +1,7 @@
 ---
 title: Perform a Difference on Two Sets of Data
 ---
-## Perform a Difference on Two Sets of Data
+# Perform a Difference on Two Sets of Data
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/perform-a-difference-on-two-sets-of-data/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

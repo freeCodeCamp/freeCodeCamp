@@ -27,7 +27,7 @@ localeTitle: 洪水填充算法
 
 有关更多详细信息，请参阅此处描述该函数的代码：
 
-```c++
+```cpp
 int wall = -1; 
  
  void flood_fill(int pos_x, int pos_y, int target_color, int color) 
@@ -80,7 +80,7 @@ int wall = -1;
 
 您有以下输入：
 
-```c++
+```cpp
 2 4 4 
  0 0 0 1 
  0 0 1 1 

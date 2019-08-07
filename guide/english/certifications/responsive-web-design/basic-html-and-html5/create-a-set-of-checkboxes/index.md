@@ -1,8 +1,10 @@
 ---
 title: Create a Set of Checkboxes
 ---
-## Create a Set of Checkboxes
+# Create a Set of Checkboxes
 
+---
+## Problem Explanation
 The `type="checkbox"`attribute works basically as the `type="radio"` attribute does: the main difference is that checkboxes are used to collect one OR MORE choices, radio-buttons are used when you want exclusive choices ( one OR another ). 
 
 The `name` attribute indicates the group the checkbox belongs to, and to be part of a group will make easier to manage the data on the server-side.

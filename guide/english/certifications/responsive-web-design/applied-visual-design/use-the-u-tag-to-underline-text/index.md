@@ -1,7 +1,7 @@
 ---
 title: Use the u Tag to Underline Text
 ---
-## Use the u Tag to Underline Text
+# Use the u Tag to Underline Text
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/use-the-u-tag-to-underline-text/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

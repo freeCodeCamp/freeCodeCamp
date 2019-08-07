@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aec908847
 title: Split Your Bootstrap Row
 challengeType: 0
+forumTopicId: 18306
 ---
 
 ## Description
@@ -21,9 +22,9 @@ Create two <code>div</code> elements within your row, both with the class <code>
 ```yml
 tests:
   - text: Nest two <code>div class="col-xs-6"</code> elements within your <code>div class="row"</code> element.
-    testString: assert($("div.row > div.col-xs-6").length > 1, 'Nest two <code>div class="col-xs-6"</code> elements within your <code>div class="row"</code> element.');
+    testString: assert($("div.row > div.col-xs-6").length > 1);
   - text: Make sure all your <code>div</code> elements have closing tags.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.');
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -53,7 +54,14 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6"></div>
+    <div class="col-xs-6"></div>
+  </div>
+</div>
 ```
+
 </section>

@@ -20,8 +20,9 @@ Redux هو حاوية حالة يمكن التنبؤ بها لتطبيقات Jav
 
 #### أين يتم تخزين هذه الحالة؟ Redux يوفر لك وظيفة يدوية تسمى
 
- `createStore() 
-` 
+```js
+createStore()
+``` 
 
 حيث يمكنك إنشاء المتجر الذي سيحافظ على كل حالتك.
 
@@ -29,8 +30,9 @@ Redux هو حاوية حالة يمكن التنبؤ بها لتطبيقات Jav
 
 #### لا يمكن تغيير الحالة إلا من خلال وظيفة نقية تعرف بالمخفّض حتى نتمكن من إنشاء هذا الاتصال سنمرر في المخفض إلى CreateStore () مثل
 
- `var store = createStore(reducer) 
-` 
+```js
+var store = createStore(reducer)
+``` 
 
 يصبح الأمر أكثر تعقيدا عندما يكون لديك مخفضات أكثر ولكن في الصميم ، يحتوي المخزن الآن على مخفض متصل به
 
@@ -40,20 +42,22 @@ Redux هو حاوية حالة يمكن التنبؤ بها لتطبيقات Jav
 
 تستطيع أن ترى أين يحدث هذا.
 
- `store.dispatch(action) 
-` 
+```js
+store.dispatch(action)
+``` 
 
 قبل أن أتناول ما هو المخفض والعمل الذي أقوم به ، أعتقد أن عرض تطبيق أساسي ومحدود للغاية لـ CreateStore () من Redux سوف يساعد بشكل كبير.
 
- `createStore = (reducer) => { 
-    let state; 
- //dispatch method 
-    dispatch = (action) => { 
-        state = reducer(state, action) 
-    } 
-  return {dispatch} 
- } 
-` 
+```js
+createStore = (reducer) => {
+    let state;
+//dispatch method
+    dispatch = (action) => {
+        state = reducer(state, action)
+    }
+  return {dispatch}
+}
+``` 
 
 انظر كيف نمرر في المخفض إلى createStore ويصبح مضبوطًا في طريقة إرسالنا ؛ وعندما نطلق على طريقة الإرسال فإنه يأخذ في عمل ويضع حالة جديدة على أساس ما سوف يعود المخفض.
 
@@ -61,8 +65,9 @@ Redux هو حاوية حالة يمكن التنبؤ بها لتطبيقات Jav
 
 الإجراء في المستوى الأساسي هو كائن له خاصية تسمى النوع. يمكن أن يكون لها أيضًا خصائص أخرى ، ولكن ببساطة ستتمتع بالنوع.
 
- `var someAction = {type:'doSomething'} 
-` 
+```js
+var someAction = {type:'doSomething'}
+``` 
 
 المخفض هو مجرد وظيفة:
 

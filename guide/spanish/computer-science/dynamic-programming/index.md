@@ -12,7 +12,7 @@ Un ejemplo con la serie de Fibonacci que se define como:
 
 Este es el árbol para encontrar F (5):
 
-![Árbol de la serie fibonacci](https://i.stack.imgur.com/59Rpw.png)
+![Árbol de la serie fibonacci](https://cdn-media-1.freecodecamp.org/imgr/59Rpw.png)
 
 Para calcular F (5) tendrá que calcular muchas veces la misma F (i). Utilizando la recursividad:
 

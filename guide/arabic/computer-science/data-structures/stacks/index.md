@@ -72,27 +72,29 @@ localeTitle: كومات
 
 على سبيل المثال ، يحتوي مصفوفة في JavaScript على طرق **دفع** و **pop** تسمح لأحد بتطبيق وظائف المكدس بسهولة في أحد التطبيقات.
 
- `stack = []; 
- 
- let i = 0; 
- while(i < 5) 
-  stack.push(i++); 
- 
- while(stack.length) { 
-  stack.pop(); 
- } 
-` 
+```js
+stack = [];
+
+let i = 0;
+while(i < 5)
+  stack.push(i++);
+
+while(stack.length) {
+  stack.pop();
+}
+``` 
 
 يمكن أن تؤدي قائمة في Python أيضًا وظيفة مكدس في أحد التطبيقات. بدلا من **الدفع** ، يمكن للمرء أن يستخدم طريقة **إلحاق** .
 
- `stack = [] 
- 
- for i in range(5): 
-    stack.append(i) 
- 
- while len(stack): 
-    stack.pop() 
-` 
+```python
+stack = []
+
+for i in range(5):
+    stack.append(i)
+
+while len(stack):
+    stack.pop()
+``` 
 
 #### تطبيقات
 

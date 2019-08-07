@@ -12,7 +12,7 @@ localeTitle: Dê aos Irmãos Elementos um Atributo de Chave Única
 
 Basta adicionar `key` atributo- `key` à tag `<li>` para torná-lo exclusivo
 
-```react.js
+```jsx
 const renderFrameworks = frontEndFrameworks.map((item) => 
   <li key={item+1}>{item}</li> 
  ); 

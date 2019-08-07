@@ -6,13 +6,13 @@ localeTitle: 支持向量机
 
 支持向量机（SVM）是由分离超平面正式定义的判别分类器。换句话说，给定标记的训练数据（监督学习），算法输出最佳超平面，其对新示例进行分类。它通过最小化超平面附近的数据点之间的边距来实现这一点。
 
-![SVM与逻辑回归](https://i.imgur.com/KUeOSK3.png)
+![SVM与逻辑回归](https://cdn-media-1.freecodecamp.org/imgr/KUeOSK3.png)
 
 SVM成本函数试图用分段线性逼近逻辑函数。该ML算法用于分类问题，并且是监督学习算法子集的一部分。
 
 ### 成本函数
 
-![SVM成本函数](https://i.imgur.com/SOhv2jZ.png)
+![SVM成本函数](https://cdn-media-1.freecodecamp.org/imgr/SOhv2jZ.png)
 
 成本函数用于训练SVM。通过最小化J（theta）的值，我们可以确保SVM尽可能准确。在等式中，函数cost1和cost0指的是y = 1的示例的成本和y = 0的示例的成本。 SVM的成本由内核（相似性）函数决定。
 

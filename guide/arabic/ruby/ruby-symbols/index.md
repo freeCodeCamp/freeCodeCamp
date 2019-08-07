@@ -10,22 +10,23 @@ localeTitle: روبي الرموز
 
 على سبيل المثال: إذا كان Fred ثابتًا في سياق واحد ، وطريقة في أخرى ، وفئة في الثلث ، فسيكون الرمز: Fred هو نفس الكائن في جميع السياقات الثلاثة.
 
- `module One 
-  class Fred 
-  end 
-  $f1 = :Fred 
- end 
- module Two 
-  Fred = 1 
-  $f2 = :Fred 
- end 
- def Fred() 
- end 
- $f3 = :Fred 
- $f1.object_id   #=> 2514190 
- $f2.object_id   #=> 2514190 
- $f3.object_id   #=> 2514190 
-` 
+```ruby
+module One
+  class Fred
+  end
+  $f1 = :Fred
+end
+module Two
+  Fred = 1
+  $f2 = :Fred
+end
+def Fred()
+end
+$f3 = :Fred
+$f1.object_id   #=> 2514190
+$f2.object_id   #=> 2514190
+$f3.object_id   #=> 2514190
+``` 
 
 ## العمل مع الرموز
 
@@ -33,31 +34,34 @@ localeTitle: روبي الرموز
 
 حتى الآن رأيناهم كمفتاح في هاش (العمل مع الزنانير في روبي):
 
- `person = {:name => "Philip"} 
-` 
+```ruby
+person = {:name => "Philip"}
+``` 
 
 لذا ، فإن أول شيء يمكننا القيام به هو فحص الرمز لمعرفة الفئة التي يستخدمها:
 
- `:hello.class 
- => Symbol 
- 
- "hello".class 
- => String 
-` 
+```ruby
+:hello.class
+=> Symbol
+
+"hello".class
+=> String
+``` 
 
 حتى يمكننا أن نرى أن الرموز والسلاسل هي أمثلة لكائنين مختلفين.
 
 يمكنك الاتصال بأساليب شبيهة `upcase` ، مثل `upcase` ، و `downcase` ، `capitalize` الرموز:
 
- `:hello.upcase 
- => :HELLO 
- 
- :HELLO.downcase 
- => :hello 
- 
- :hello.capitalize 
- => :Hello 
-` 
+```ruby
+:hello.upcase
+=> :HELLO
+
+:HELLO.downcase
+=> :hello
+
+:hello.capitalize
+=> :Hello
+``` 
 
 ## لماذا تستخدم رمزًا بدلاً من سلسلة؟
 
@@ -89,16 +93,17 @@ localeTitle: روبي الرموز
 
 فمثلا:
 
- `philip".object_id 
- => 70288511587360 
- "philip".object_id 
- => 70288504327720 
- 
- :philip.object_id 
- => 539368 
- :philip.object_id 
- => 539368 
-` 
+```ruby
+philip".object_id
+=> 70288511587360
+"philip".object_id
+=> 70288504327720
+
+:philip.object_id
+=> 539368
+:philip.object_id
+=> 539368
+``` 
 
 عند إنشاء كائنين سلسلة بنفس القيمة ، يتم التعامل مع هذين العنصرين ككائنين مختلفين. عند إنشاء رمز ، سيستخدم الرجوع إلى الرمز دائمًا نفس الكائن.
 
@@ -108,14 +113,15 @@ localeTitle: روبي الرموز
 
 all\_symbols => نقر المصفوفة لتبديل المصدر لإرجاع مجموعة من الرموز الموجودة حاليًا في جدول رمز Ruby.
 
- `Symbol.all_symbols.size    #=> 903 
- Symbol.all_symbols[1,20]   #=> [:floor, :ARGV, :Binding, :symlink, 
-                                :chown, :EOFError, :$;, :String, 
-                                :LOCK_SH, :"setuid?", :$<, 
-                                :default_proc, :compact, :extend, 
-                                :Tms, :getwd, :$=, :ThreadGroup, 
-                                :wait2, :$>] 
-` 
+```ruby
+Symbol.all_symbols.size    #=> 903
+Symbol.all_symbols[1,20]   #=> [:floor, :ARGV, :Binding, :symlink,
+                                :chown, :EOFError, :$;, :String,
+                                :LOCK_SH, :"setuid?", :$<,
+                                :default_proc, :compact, :extend,
+                                :Tms, :getwd, :$=, :ThreadGroup,
+                                :wait2, :$>]
+``` 
 
 #### معلومات اكثر:
 

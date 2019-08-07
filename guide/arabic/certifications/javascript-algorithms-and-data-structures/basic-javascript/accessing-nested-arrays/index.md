@@ -16,26 +16,27 @@ localeTitle: الوصول إلى صفائف متداخلة
 
 ### الوصول إلى الكائنات داخل المصفوفات باستخدام braket `[]` ونقطة `.` الرموز
 
- `var garage = [ 
-  { 
-    type: 'car', 
-    color: 'red', 
-    make: 'Ford' 
-  }, 
-  { 
-    type: 'motorbike', 
-    color: 'black', 
-    make: 'Yamaha' 
-  }, 
-  { 
-    type: 'bus', 
-    color: 'yellow', 
-    make: 'Blue Bird' 
-  } 
- ]; 
- 
- var busColor = garage[2].color; // 'yellow' 
-` 
+```js
+var garage = [
+  {
+    type: 'car',
+    color: 'red',
+    make: 'Ford'
+  },
+  {
+    type: 'motorbike',
+    color: 'black',
+    make: 'Yamaha'
+  },
+  {
+    type: 'bus',
+    color: 'yellow',
+    make: 'Blue Bird'
+  }
+];
+
+var busColor = garage[2].color; // 'yellow'
+``` 
 
 ## حل:
 

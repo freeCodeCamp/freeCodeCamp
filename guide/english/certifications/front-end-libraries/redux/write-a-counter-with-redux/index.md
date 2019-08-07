@@ -1,9 +1,15 @@
 ---
 title: Write a Counter with Redux
 ---
-## Write a Counter with Redux
+# Write a Counter with Redux
 
+---
+## Problem Explanation
 The goal of this challenge is to apply all the concepts learned from previous Redux challenges and create a simple counter that will increment or decrement a state by 1. 
+
+
+---
+## Hints
 
 ### Hint 1
 The best way to solve this challenge is by reviewing previous redux lessons particularly the following:
@@ -13,40 +19,45 @@ The best way to solve this challenge is by reviewing previous redux lessons part
 - [Handle an Action in the Store](https://learn.freecodecamp.org/front-end-libraries/redux/handle-an-action-in-the-store/)
 - [Create a Redux Store](https://learn.freecodecamp.org/front-end-libraries/redux/create-a-redux-store)
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```javascript
-const INCREMENT = 'INCREMENT'; // define a constant for increment action types
-const DECREMENT = 'DECREMENT'; // define a constant for decrement action types
+const INCREMENT = "INCREMENT"; // define a constant for increment action types
+const DECREMENT = "DECREMENT"; // define a constant for decrement action types
 
 // define the counter reducer which will increment or decrement the state based on the action it receives
 const counterReducer = (state = 0, action) => {
-    switch(action.type){
-        case INCREMENT: 
-            return state+=1;          
+  switch (action.type) {
+    case INCREMENT:
+      return (state += 1);
 
-        case DECREMENT: 
-            return state-=1;                
-            
-        default:
-            return state;
-    }
-} ; 
+    case DECREMENT:
+      return (state -= 1);
+
+    default:
+      return state;
+  }
+};
 
 // define an action creator for incrementing
-const incAction = () => { 
-    return {
-        type: INCREMENT
-    }
-}; 
+const incAction = () => {
+  return {
+    type: INCREMENT
+  };
+};
 
 // define an action creator for decrementing
-const decAction = () => { 
-    return {
-        type: DECREMENT
-    }
-}; 
+const decAction = () => {
+  return {
+    type: DECREMENT
+  };
+};
 
 // define the Redux store here, passing in your reducers
-const store = Redux.createStore(counterReducer); 
+const store = Redux.createStore(counterReducer);
 ```
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+</details>

@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08833
 title: Fill in the Blank with Placeholder Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cgR7Dc7'
+forumTopicId: 18178
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Replace the text inside your <code>p</code> element with the first few words of 
 ```yml
 tests:
   - text: Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.
-    testString: assert.isTrue((/Kitty(\s)+ipsum/gi).test($("p").text()), 'Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.');
+    testString: assert.isTrue((/Kitty(\s)+ipsum/gi).test($("p").text()));
 
 ```
 
@@ -51,7 +52,12 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Hello World</h1>
+
+<h2>CatPhotoApp</h2>
+
+<p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff</p>
 ```
+
 </section>

@@ -1,7 +1,7 @@
 ---
 title: Build a JavaScript Calculator
 ---
-## Build a JavaScript Calculator
+# Build a JavaScript Calculator
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
