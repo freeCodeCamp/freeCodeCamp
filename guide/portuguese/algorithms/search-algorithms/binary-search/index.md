@@ -17,8 +17,6 @@ Como sabemos que os nomes da lista telefônica são classificados em ordem alfab
 3.  Caso contrário, jogue fora a metade da agenda que não contém o nome
 4.  Repita até encontrar o nome ou não há mais páginas na lista telefônica
 
-[![Binary vs Linear Search](https://www.mathwarehouse.com/programming/images/binary-vs-linear-search/binary-and-linear-search-animations.gif)]
-
 Complexidade de tempo: Como descartamos uma parte do caso de pesquisa durante cada etapa da pesquisa binária e executamos a operação de pesquisa na outra metade, isso resulta em uma complexidade de tempo de pior caso de _O_ ( _log 2 N_ ).
 
 Complexidade de espaço: A pesquisa binária leva constante ou _O_ ( _1_ ) espaço, o que significa que não definimos qualquer variável relacionada ao tamanho de entrada.
