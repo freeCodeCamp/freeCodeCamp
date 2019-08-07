@@ -38,14 +38,14 @@ localeTitle: تطوير الالعاب
 
 ### محركات الالعاب النموذجية
 
-*   كراي إنجن
-*   محرك غير واقعي
-*   وحدة لعبة المحرك
-*   صانع العاب
-*   بناء 2 أو 3
-*   جدل
-*   مصدر
-*   قضمة الصقيع
+*   Cry engine
+*   Unreal engine
+*   Unity3D
+*   Game Make
+*   Construct 2 - 3
+*   Godot3
+*   Source
+*   Frostbite
 *   Buildbox
 
 ### معلومات اكثر
