@@ -1,5 +1,5 @@
 ---
-id:
+id: 5d4acfab0b988955b7e0c1e8
 title: Rotate
 challengeType: 0
 videoUrl:
@@ -29,12 +29,13 @@ I don't know what is happaning
 
 ```yml
 tests:
-   - text: IDN
-     testString: assert($("draw").length) ;
-  # - text: You test
-  #   testString:  assert(imrid("imageSrc").test(draw()));
+   - text: Use <code>cv.rotate</code> to rotate image 
+     testString: assert(code.match(/cv.rotate/g),'Use <code>cv.imread</code> to read image and create a matix of image');
+   - text: Use <code>cv.ROTATE_90_CLOCKWISE</code> like argument in <code>cv.rotate</code> to rotate image on 90 degree 
+     testString: assert(code.match(/cv.ROTATE_90_CLOCKWISE/g),'Use <code>cv.ROTATE_90_CLOCKWISE</code> like argument in <code>cv.rotate</code> to rotate image on 90 degree  ');
+
 ```
-  <!-- testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".'); -->
+
 </section>
 
 ## Challenge Seed
@@ -44,43 +45,27 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2>OpenCV.js</h2>
-<p id="status">OpenCV.js is loading...</p>
+
+<script>
+
+  function rotate() {
+    let src = cv.imread("imgSrc");
+    let dst = new cv.Mat();
+    cv.rotate(src, dst, cv.ROTATE_90_CLOCKWISE);
+    cv.imshow("canvasOutput", dst);
+    src.delete();
+    dst.delete();
+  };
+
+</script>
+
 <img id="imgSrc" src="http://bit.ly/fcc-relaxing-cat"/>
-<input type="button" id="myButton" onclick="rotate()" value="Run" disabled=true/>
+<p></p>
 <canvas id="canvasOutput" ></canvas>
 
-
-
-
-<script type="text/javascript">
-
-function rotate() {
-  let src = cv.imread("imgSrc");
-  let dst = new cv.Mat();
-  // Rotation function with following varieties of arguments:
-  // cv.ROTATE_90_CLOCKWISE
-  // cv.ROTATE_180
-  // cv.ROTATE_90_COUNTERCLOCKWISE
-  cv.rotate(src, dst, cv.ROTATE_90_CLOCKWISE);
-  cv.imshow("canvasOutput", dst);
-  src.delete();
-  dst.delete();
-};
-
-function onOpenCvReady() {
-  document.getElementById("status").innerHTML = "OpenCV.js is ready.";
-  cv["onRuntimeInitialized"]=() => {document.getElementById("myButton").disabled = false;}
-}
-</script>
-
-<script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
-</script>
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
 ```
-
 </div>
-
-
 
 </section>
 
@@ -88,7 +73,23 @@ function onOpenCvReady() {
 <section id='solution'>
 
 ```html
+<script type="text/javascript">
 
+  function rotate() {
+    let src = cv.imread("imgSrc");
+    let dst = new cv.Mat();
+    cv.rotate(src, dst, cv.ROTATE_90_CLOCKWISE);
+    cv.imshow("canvasOutput", dst);
+    src.delete();
+    dst.delete();
+  };
+
+</script>
+
+<img id="imgSrc" src="http://bit.ly/fcc-relaxing-cat"/>
+<p></p>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
 ```
-
 </section>
