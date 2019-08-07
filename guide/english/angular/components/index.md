@@ -6,7 +6,7 @@ title: Components
 
 #### Motivation
 
-Angular contains many *schematics* for building applications. Components are one such schematic. They encompass a single unit of logic concerned with a single part of the application. Components often partner with other schematics to operate more effectively.
+Angular contains many *schematics* for building applications. Components are one such schematic. They encompass a single unit of logic concerned with a single part of the application. Components often partner with other schematics to operate more effectively. A component is technically a directive. However, components are so distinctive and central to Angular applications that Angular defines the @Component() decorator, which extends the @Directive() decorator with template-oriented features.
 
 Among all schematics, components tend to consume more than provide. While other schematics like directives, pipes, and services offer utility, components utilize. They are responsible for the application interface so it makes sense why the consume utility.
 

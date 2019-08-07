@@ -1,10 +1,33 @@
 ---
 title: Learn about Complementary Colors
 ---
-## Learn about Complementary Colors
+# Learn about Complementary Colors
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/learn-about-complementary-colors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+---
+## Solutions
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  .blue {
+    background-color: blue;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="blue"></div>
+<div class="yellow"></div>
+```
+
+</details>

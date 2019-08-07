@@ -2,6 +2,7 @@
 id: 5900f3a61000cf542c50feb9
 challengeType: 5
 title: 'Problem 58: Spiral primes'
+forumTopicId: 302169
 ---
 
 ## Description
@@ -28,7 +29,7 @@ If one complete new layer is wrapped around the spiral above, a square spiral wi
 ```yml
 tests:
   - text: <code>euler58()</code> should return 26241.
-    testString: assert.strictEqual(euler58(), 26241, '<code>euler58()</code> should return 26241.');
+    testString: assert.strictEqual(euler58(), 26241);
 
 ```
 
@@ -60,4 +61,5 @@ euler58();
 ```js
 // solution required
 ```
+
 </section>

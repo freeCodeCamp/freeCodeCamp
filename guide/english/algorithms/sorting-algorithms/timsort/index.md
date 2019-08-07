@@ -10,7 +10,7 @@ The smaller part are sorted using Insertion Sort and is later merged together us
 
 A quick implementation in Python:
 
-```
+```py
 def binary_search(the_array, item, start, end):
     if start == end:
         if the_array[start] > item:

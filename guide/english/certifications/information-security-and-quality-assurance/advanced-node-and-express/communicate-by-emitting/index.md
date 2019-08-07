@@ -1,7 +1,7 @@
 ---
 title: Communicate by Emitting
 ---
-## Communicate by Emitting
+# Communicate by Emitting
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/communicate-by-emitting/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

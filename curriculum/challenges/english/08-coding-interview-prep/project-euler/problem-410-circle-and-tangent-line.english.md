@@ -2,6 +2,7 @@
 id: 5900f5071000cf542c510018
 challengeType: 5
 title: 'Problem 410: Circle and tangent line'
+forumTopicId: 302079
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find F(108, 109) + F(109, 108).
 ```yml
 tests:
   - text: <code>euler410()</code> should return 799999783589946600.
-    testString: assert.strictEqual(euler410(), 799999783589946600, '<code>euler410()</code> should return 799999783589946600.');
+    testString: assert.strictEqual(euler410(), 799999783589946600);
 
 ```
 
@@ -59,4 +60,5 @@ euler410();
 ```js
 // solution required
 ```
+
 </section>

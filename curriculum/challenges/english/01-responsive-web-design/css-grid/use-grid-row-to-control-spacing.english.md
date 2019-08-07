@@ -3,6 +3,7 @@ id: 5a90373638fddaf9a66b5d39
 title: Use grid-row to Control Spacing
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/c9WBLU4'
+forumTopicId: 301137
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Make the element with the <code>item5</code> class consume the last two rows.
 ```yml
 tests:
   - text: <code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.
-    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), '<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.');
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-row\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
 

@@ -14,6 +14,7 @@ localeTitle: استخدم * لاستيراد كل شيء من ملف
 
 ## حل:
 
- `"use strict"; 
- import * as str from "capitalize_strings"; 
-`
+```javascript
+"use strict";
+import * as str from "capitalize_strings";
+```

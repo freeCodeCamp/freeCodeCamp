@@ -1,7 +1,7 @@
 ---
 title: Deal cards for FreeCell
 ---
-## Deal cards for FreeCell
+# Deal cards for FreeCell
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/deal-cards-for-freecell/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

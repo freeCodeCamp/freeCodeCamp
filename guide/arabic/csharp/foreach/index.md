@@ -23,7 +23,8 @@ localeTitle: Foreach حلقة
 
 ### انتاج:
 
- `> We have Jim 
- > We have Jane 
- > We have Jack 
-`
+```shell
+> We have Jim
+> We have Jane
+> We have Jack
+```

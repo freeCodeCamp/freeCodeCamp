@@ -23,7 +23,7 @@ function nthPrime(n) {
   //Looping until primes array is equal to n 
   while (primes.length < n){ 
  
-    //All the primes numbers of a number is always <= it's square root 
+    //All the primes numbers of a number is always <= its square root 
     let max = Math.ceil(Math.sqrt(num)); 
  
     for (let i = 0; primes[i] <= max; i++){ 
@@ -49,7 +49,6 @@ function nthPrime(n) {
  } 
 ```
 
-\- [运行代码](https://repl.it/@ezioda004/Project-Euler-Problem-7-10001st-prime)
 
 ### 参考文献：
 

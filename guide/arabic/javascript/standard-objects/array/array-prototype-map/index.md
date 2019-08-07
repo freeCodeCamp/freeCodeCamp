@@ -10,18 +10,20 @@ localeTitle: Array.prototype.map
 
 **ES5**
 
- `var arr = [1, 2, 3, 4]; 
- var newArray = arr.map(function(element) { return element * 2}); 
- console.log(newArray); // [2, 4, 6, 8] 
-` 
+```js
+var arr = [1, 2, 3, 4];
+var newArray = arr.map(function(element) { return element * 2});
+console.log(newArray); // [2, 4, 6, 8]
+``` 
 
 **ES6**
 
- `const arr = [1, 2, 3, 4]; 
- const newArray = arr.map(element => element * 2); 
- console.log(newArray); 
- //[2, 4, 6, 8] 
-` 
+```js
+const arr = [1, 2, 3, 4];
+const newArray = arr.map(element => element * 2);
+console.log(newArray);
+//[2, 4, 6, 8]
+``` 
 
 **معلومات اكثر**
 

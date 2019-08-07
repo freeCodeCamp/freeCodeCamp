@@ -2,6 +2,7 @@
 id: 5900f4f91000cf542c51000c
 challengeType: 5
 title: 'Problem 397: Triangle on parabola'
+forumTopicId: 302062
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find F(106, 109).
 ```yml
 tests:
   - text: <code>euler397()</code> should return 141630459461893730.
-    testString: assert.strictEqual(euler397(), 141630459461893730, '<code>euler397()</code> should return 141630459461893730.');
+    testString: assert.strictEqual(euler397(), 141630459461893730);
 
 ```
 
@@ -59,4 +60,5 @@ euler397();
 ```js
 // solution required
 ```
+
 </section>

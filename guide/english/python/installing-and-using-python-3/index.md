@@ -65,3 +65,13 @@ An alternative to using virtualenvwrapper is [Pipenv](https://docs.pipenv.org/).
 
 To get started with Pipenv, you can follow this very detailed [guide](https://docs.pipenv.org/install.html#installing-pipenv). Pipenv makes it easy to [specify which version of Python](https://docs.pipenv.org/basics.html#specifying-versions-of-python) you wish to use for each project, [import](https://docs.pipenv.org/basics.html#importing-from-requirements-txt) from an existing `requirements.txt` file and [graph](https://docs.pipenv.org/#pipenv-graph) your dependencies.
 
+## Installing packages using pip(Python Installer Package):
+```
+pip3 install <package-name>
+```
+```
+pip3 install numpy #example
+```
+
+
+

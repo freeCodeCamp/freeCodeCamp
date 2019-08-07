@@ -10,11 +10,11 @@ localeTitle: 蒙蒂霍尔问题
 
 事实证明，选择确实很重要，将您的决定转移到3号门实际上对您有利！这就是原因。当您从3个关闭的门中选择1号门时，您有1/3的机会选择了正确的门。门2和门3也有三分之一的机会在它后面有一辆车。你也可以说，门2和3的有车背后_组合_的2出3机会。
 
-![Probability before revealing a goat](https://i.imgur.com/8EsVvZk.png "暴露山羊之前的概率")
+![Probability before revealing a goat](https://cdn-media-1.freecodecamp.org/imgr/8EsVvZk.png "暴露山羊之前的概率")
 
 现在，当主机打开门2并且它包含一只山羊时，您现在可以获得有关该问题的更多信息。请记住，门2和门3的总概率包含汽车的2 / 3rds。门显示你知道门2没有车。但是，这个揭示不会改变两扇门的组合概率。这是关键的内容！由于我们现在知道门2有0/3的机会展示汽车，你现在可以说门3有2 / 3rds的机会包含汽车。结合门2和门3的概率仍然比门2打开前的2 / 3rds加起来。门1保持不变，只有1/3的机会。因此，如果您决定转换，那么从大约33.33％的机会到66.67％的选择。换句话说，你通过切换加倍成功的机会！
 
-![Probability after revealing a goat](https://i.imgur.com/V2JzAka.png "揭露山羊后的概率")
+![Probability after revealing a goat](https://cdn-media-1.freecodecamp.org/imgr/V2JzAka.png "揭露山羊后的概率")
 
 是的，门1可能一直有车，蒙蒂欺骗了你。那没关系。你通过这笔交易赌博，但你赌博聪明。您可以根据所提供的信息做出最佳决定并让骰子滚动。从长远来看，你比决定保留首选的选手表现出更好的转换效果。最后，Monty实际上会欺骗自己，为你提供更好的交易。
 

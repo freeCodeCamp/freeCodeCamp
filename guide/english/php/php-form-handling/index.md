@@ -11,15 +11,15 @@ The example below displays a simple HTML form with two input fields and a submit
 #### Example
 ```php
 <html>
-<body>
+  <body>
 
-<form action="welcome.php" method="post">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
+    <form action="welcome.php" method="post">
+      Name: <input type="text" name="name"><br>
+      E-mail: <input type="text" name="email"><br> 
+      <input type="submit">
+    </form>
 
-</body>
+  </body>
 </html>
 ```
 
@@ -29,12 +29,12 @@ To display the submitted data you could simply echo all the variables. The "welc
 
 ```php
 <html>
-<body>
+  <body>
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
+    Welcome <?php echo $_POST["name"]; ?><br>
+    Your email address is: <?php echo $_POST["email"]; ?>
 
-</body>
+  </body>
 </html>
 ```
 
@@ -50,15 +50,15 @@ The same result could also be achieved using the HTTP GET method:
 #### Example
 ```php
 <html>
-<body>
+  <body>
 
-<form action="welcome_get.php" method="get">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
+    <form action="welcome_get.php" method="get">
+      Name: <input type="text" name="name"><br>
+      E-mail: <input type="text" name="email"><br>
+      <input type="submit">
+    </form>
 
-</body>
+  </body>
 </html>
 ```
 
@@ -66,12 +66,12 @@ and "welcome_get.php" looks like this:
 
 ```php
 <html>
-<body>
+  <body>
 
-Welcome <?php echo $_GET["name"]; ?><br>
-Your email address is: <?php echo $_GET["email"]; ?>
+    Welcome <?php echo $_GET["name"]; ?><br>
+    Your email address is: <?php echo $_GET["email"]; ?>
 
-</body>
+  </body>
 </html>
 ```
 
@@ -87,11 +87,11 @@ The code above is quite simple. However, the most important thing is missing. Yo
 
 Both GET and POST create an array (e.g. array( key => value, key2 => value2, key3 => value3, ...)). This array holds key/value pairs, where keys are the names of the form controls and values are the input data from the user.
 
-Both GET and POST are treated as $_GET and $_POST. These are superglobals, which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.
+Both GET and POST are stored in the variables `$_GET` and `$_POST`. These are superglobals, which means that they are always accessible, regardless of scope - and you can access them from any function, class or file without having to do anything special.
 
-$_GET is an array of variables passed to the current script via the URL parameters.
+`$_GET` is an array of variables passed to the current script via the URL parameters.
 
-$_POST is an array of variables passed to the current script via the HTTP POST method.
+`$_POST` is an array of variables passed to the current script via the HTTP POST method.
 
 ### When to use GET?
 
@@ -103,10 +103,51 @@ GET may be used for sending non-sensitive data.
 
 ### When to use POST?
 
-Information sent from a form with the POST method is **invisible to others** (all names/values are embedded within the body of the HTTP request) and has **no limits** on the amount of information to send.
+Information sent from a form with the POST method is **less visible to others** (all names/values are embedded within the body of the HTTP request) and has **no limits** on the amount of information to send.  While, sensitive data does not appear within the request URL like with GET method forms, it is possible for the information to be read by someone able to intercept the POST request (which is why technologies like HTTPS are very important).
 
 Moreover POST supports advanced functionality such as support for multi-part binary input while uploading files to server.
 
 However, because the variables are not displayed in the URL, it is not possible to bookmark the page.
 
 > **Developers prefer POST for sending form data.**
+
+### Advanced $_GET and $_POST behavior
+
+Suppose you are needing a more complex form for your website now, where you want to gather a few more pieces or data.  While you can give every input a unique name, it is handy to make use of PHP's behavior to automatically create arrays from GET and POST parameters.
+
+Take for example this form:
+
+```php
+<html>
+  <body>
+  
+    <form action="process.php" method="POST">
+      
+      <div>
+        <input type="checkbox" name="item[]" value="foo" checked> Foo <br>
+        <input type="checkbox" name="item[]" value="bar"> Bar <br>
+        <input type="checkbox" name="item[]" value="baz" checked> Baz
+      </div>
+      <div>
+        <input type="text" name="user[name]" value="John">
+        <input type="text" name="user[email]" value="john@doe.com">
+      </div>
+      
+      <input type="submit">
+    </form>
+    
+  </body>
+</html>
+```
+
+When this is submitted to `process.php` via the POST method, it performs a transformation on the data to turn each name value followed by '[]' into either an array, or a keyed array.
+
+Now we can make use of this:
+
+```php
+<?php
+  $items = $_POST["item"]; // this assigns the array ['foo', 'baz'] to $items
+  $user = $_POST["user"]; // this assigns the keyed array ["name" => "John", "email" => "john@doe.com"] to $user
+```
+
+If the checkbox is not selected, its value does not appear in the array. Similar behavior for radio buttons.

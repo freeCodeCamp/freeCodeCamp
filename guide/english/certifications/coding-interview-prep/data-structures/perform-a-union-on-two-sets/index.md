@@ -1,7 +1,7 @@
 ---
 title: Perform a Union on Two Sets
 ---
-## Perform a Union on Two Sets
+# Perform a Union on Two Sets
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/perform-a-union-on-two-sets/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

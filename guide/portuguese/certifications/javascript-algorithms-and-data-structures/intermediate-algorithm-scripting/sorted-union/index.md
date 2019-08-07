@@ -65,8 +65,7 @@ function uniteUnique(arr1, arr2, arr3) {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnM/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie array **final finalResult** para armazenar o resultado final.
@@ -122,8 +121,7 @@ function uniteUnique(arr1, arr2, arr3) {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnO/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   objeto **argumentos** é convertido em um array usando `slice()` .
@@ -155,8 +153,7 @@ function uniteUnique() {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnN/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   O número de argumentos pode mudar dinamicamente, portanto, não precisamos nos preocupar em fornecer nossa função `uniteUnique()` com argumentos.
@@ -185,8 +182,7 @@ function uniteUnique() {
  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CcWk/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, usamos `concat()` com uma matriz vazia `<a href='http://exploringjs.com/es6/ch_maps-sets.html#_set' target='_blank' rel='nofollow'>]` como ponto de partida e o operador spread `...` para criar um array fora do objeto Arguments e achatá-lo ao mesmo tempo

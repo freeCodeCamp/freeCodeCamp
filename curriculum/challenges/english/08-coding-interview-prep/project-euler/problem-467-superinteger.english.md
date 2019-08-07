@@ -2,6 +2,7 @@
 id: 5900f5411000cf542c510052
 challengeType: 5
 title: 'Problem 467: Superinteger'
+forumTopicId: 302142
 ---
 
 ## Description
@@ -38,7 +39,7 @@ Find f(10 000) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler467()</code> should return 775181359.
-    testString: assert.strictEqual(euler467(), 775181359, '<code>euler467()</code> should return 775181359.');
+    testString: assert.strictEqual(euler467(), 775181359);
 
 ```
 
@@ -70,4 +71,5 @@ euler467();
 ```js
 // solution required
 ```
+
 </section>

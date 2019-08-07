@@ -49,7 +49,6 @@ Este programa es muy simple, el truco es entender qué es un primitivo booleano.
     booWho(null); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnK/0)
 
 # Explicación del código:
 
