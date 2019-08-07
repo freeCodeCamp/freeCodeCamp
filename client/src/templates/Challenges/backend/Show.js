@@ -50,7 +50,8 @@ const propTypes = {
   isSignedIn: PropTypes.bool,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
+    challengeMeta: PropTypes.object,
+    slug: PropTypes.string
   }),
   tests: PropTypes.array,
   title: PropTypes.string,

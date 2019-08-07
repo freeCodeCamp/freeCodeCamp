@@ -69,7 +69,8 @@ const propTypes = {
   initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
   pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
+    challengeMeta: PropTypes.object,
+    slug: PropTypes.string
   }),
   tests: PropTypes.arrayOf(
     PropTypes.shape({

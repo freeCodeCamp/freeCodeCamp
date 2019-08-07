@@ -44,7 +44,8 @@ const propTypes = {
   }),
   openCompletionModal: PropTypes.func.isRequired,
   pageContext: PropTypes.shape({
-    challengeMeta: PropTypes.object
+    challengeMeta: PropTypes.object,
+    slug: PropTypes.string
   }),
   updateChallengeMeta: PropTypes.func.isRequired,
   updateProjectFormValues: PropTypes.func.isRequired
