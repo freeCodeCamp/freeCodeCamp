@@ -60,3 +60,4 @@ zach@marigold:~$ chmod u+x myBashScript.sh
 *   tldp.org Руководство по Bash: http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2
 *   gnu.org Руководство пользователя Bash: https://www.gnu.org/software/bash/manual/html _node / index.html # SEC_ Содержание
 *   Учебник по сценарию оболочки для начала работы: https://www.shellscript.sh/
+*   Основы Linux с Bash: https://www.funtoo.org/Linux_Fundamentals,_Part_1
