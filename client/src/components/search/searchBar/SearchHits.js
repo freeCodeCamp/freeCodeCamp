@@ -4,6 +4,7 @@ import isEmpty from 'lodash/isEmpty';
 import Suggestion from './SearchSuggestion';
 
 const CustomHits = connectHits(({ hits, currentRefinement, handleSubmit }) => {
+  const shortenedHits = hits.filter((hit, i) => i < 8);
   const defaultHit = [
     {
       objectID: `default-hit-${currentRefinement}`,
@@ -21,7 +22,7 @@ const CustomHits = connectHits(({ hits, currentRefinement, handleSubmit }) => {
   return (
     <div className='ais-Hits'>
       <ul className='ais-Hits-list'>
-        {defaultHit.concat(hits).map(hit => (
+        {shortenedHits.concat(defaultHit).map(hit => (
           <li
             className='ais-Hits-item'
             data-fccobjectid={hit.objectID}

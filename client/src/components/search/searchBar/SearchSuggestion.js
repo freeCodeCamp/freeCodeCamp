@@ -3,18 +3,37 @@ import PropTypes from 'prop-types';
 import { Highlight } from 'react-instantsearch-dom';
 import { isEmpty } from 'lodash';
 
+// const Suggestion = ({ handleSubmit, hit }) => {
+//   return isEmpty(hit) || isEmpty(hit.objectID) ? null : (
+//     <a
+//       className='fcc_suggestion_item'
+//       href='/search'
+//       onClick={e => handleSubmit(e, hit.query)}
+//     >
+//       <span className='hit-name'>
+//         {hit.objectID.includes('default-hit-') ? (
+//           <Highlight attribute='query' hit={hit} tagName='strong' />
+//         ) : (
+//           <Highlight attribute='query' hit={hit} />
+//         )}
+//       </span>
+//     </a>
+//   );
+// };
+
 const Suggestion = ({ handleSubmit, hit }) => {
   return isEmpty(hit) || isEmpty(hit.objectID) ? null : (
     <a
       className='fcc_suggestion_item'
-      href='/search'
+      // href='/search'
+      href={hit.url}
       onClick={e => handleSubmit(e, hit.query)}
     >
       <span className='hit-name'>
         {hit.objectID.includes('default-hit-') ? (
           <Highlight attribute='query' hit={hit} tagName='strong' />
         ) : (
-          <Highlight attribute='query' hit={hit} />
+          <Highlight attribute='title' hit={hit} />
         )}
       </span>
     </a>
