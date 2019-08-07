@@ -2,6 +2,7 @@
 id: 5900f3c71000cf542c50feda
 challengeType: 5
 title: 'Problem 91: Right triangles with integer coordinates'
+forumTopicId: 302208
 ---
 
 ## Description

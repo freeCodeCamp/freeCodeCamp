@@ -167,10 +167,10 @@ class ShowClassic extends Component {
   }
 
   getGuideUrl() {
-    const {
-      fields: { slug }
-    } = this.getChallenge();
-    return createGuideUrl(slug);
+    const { forumTopicId, title } = this.getChallenge();
+    return forumTopicId
+      ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
+      : createGuideUrl(title);
   }
 
   getVideoUrl = () => this.getChallenge().videoUrl;
@@ -303,6 +303,7 @@ export const query = graphql`
       instructions
       challengeType
       videoUrl
+      forumTopicId
       fields {
         slug
         blockName

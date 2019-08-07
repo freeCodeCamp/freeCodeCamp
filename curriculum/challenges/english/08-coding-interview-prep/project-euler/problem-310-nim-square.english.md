@@ -2,6 +2,7 @@
 id: 5900f4a21000cf542c50ffb5
 challengeType: 5
 title: 'Problem 310: Nim Square'
+forumTopicId: 301966
 ---
 
 ## Description

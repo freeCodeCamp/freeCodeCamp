@@ -2,6 +2,7 @@
 id: 5900f48a1000cf542c50ff9c
 challengeType: 5
 title: 'Problem 285: Pythagorean odds'
+forumTopicId: 301936
 ---
 
 ## Description

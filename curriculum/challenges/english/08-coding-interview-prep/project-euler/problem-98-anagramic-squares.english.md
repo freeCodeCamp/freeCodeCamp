@@ -2,6 +2,7 @@
 id: 5900f3cf1000cf542c50fee1
 challengeType: 5
 title: 'Problem 98: Anagramic squares'
+forumTopicId: 302215
 ---
 
 ## Description

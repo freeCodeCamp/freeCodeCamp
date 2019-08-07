@@ -2,6 +2,7 @@
 id: 5900f49f1000cf542c50ffb1
 challengeType: 5
 title: 'Problem 306: Paper-strip Game'
+forumTopicId: 301960
 ---
 
 ## Description

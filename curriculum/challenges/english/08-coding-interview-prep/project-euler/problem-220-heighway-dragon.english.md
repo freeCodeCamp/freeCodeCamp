@@ -2,6 +2,7 @@
 id: 5900f4481000cf542c50ff5b
 challengeType: 5
 title: 'Problem 220: Heighway Dragon'
+forumTopicId: 301863
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 587d825b367417b2b2512c8c
 title: Implement Heap Sort with a Min Heap
 challengeType: 1
+forumTopicId: 301643
 ---
 
 ## Description

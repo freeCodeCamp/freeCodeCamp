@@ -2,6 +2,7 @@
 id: 5900f3d91000cf542c50feeb
 challengeType: 5
 title: 'Problem 108: Diophantine Reciprocals I'
+forumTopicId: 301732
 ---
 
 ## Description

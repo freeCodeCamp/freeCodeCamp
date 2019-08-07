@@ -2,6 +2,7 @@
 id: 5900f3971000cf542c50feaa
 challengeType: 5
 title: 'Problem 43: Sub-string divisibility'
+forumTopicId: 302100
 ---
 
 ## Description

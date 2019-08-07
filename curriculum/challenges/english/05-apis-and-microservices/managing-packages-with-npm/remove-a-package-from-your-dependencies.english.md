@@ -2,6 +2,7 @@
 id: 587d7fb5367417b2b2512c04
 title: Remove a Package from Your Dependencies
 challengeType: 2
+forumTopicId: 301530
 ---
 
 ## Description

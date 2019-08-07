@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8017
 title: Soundex
 challengeType: 5
+forumTopicId: 302320
 ---
 
 ## Description

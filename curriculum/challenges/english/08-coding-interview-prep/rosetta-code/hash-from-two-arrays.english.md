@@ -2,6 +2,7 @@
 title: Hash from two arrays
 id: 595671d4d2cdc305f0d5b36f
 challengeType: 5
+forumTopicId: 302283
 ---
 
 ## Description

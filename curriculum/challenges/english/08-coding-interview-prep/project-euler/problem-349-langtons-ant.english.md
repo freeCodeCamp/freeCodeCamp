@@ -2,6 +2,7 @@
 id: 5900f4ca1000cf542c50ffdc
 challengeType: 5
 title: 'Problem 349: Langton''s ant'
+forumTopicId: 302008
 ---
 
 ## Description

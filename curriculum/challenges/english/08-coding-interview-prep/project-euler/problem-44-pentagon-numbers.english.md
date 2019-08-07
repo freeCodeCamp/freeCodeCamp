@@ -2,6 +2,7 @@
 id: 5900f3981000cf542c50feab
 challengeType: 5
 title: 'Problem 44: Pentagon numbers'
+forumTopicId: 302111
 ---
 
 ## Description

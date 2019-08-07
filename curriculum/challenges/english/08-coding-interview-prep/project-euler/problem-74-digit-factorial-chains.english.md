@@ -2,6 +2,7 @@
 id: 5900f3b61000cf542c50fec9
 challengeType: 5
 title: 'Problem 74: Digit factorial chains'
+forumTopicId: 302187
 ---
 
 ## Description

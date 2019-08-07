@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617f
 title: Manage Updates with Lifecycle Methods
 challengeType: 6
 isRequired: false
+forumTopicId: 301397
 ---
 
 ## Description

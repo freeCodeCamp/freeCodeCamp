@@ -3,6 +3,7 @@ id: ae9defd7acaf69703ab432ea
 title: Smallest Common Multiple
 isRequired: true
 challengeType: 5
+forumTopicId: 16075
 ---
 
 ## Description

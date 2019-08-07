@@ -2,6 +2,7 @@
 title: Hofstadter Q sequence
 id: 59637c4d89f6786115efd814
 challengeType: 5
+forumTopicId: 302287
 ---
 
 ## Description

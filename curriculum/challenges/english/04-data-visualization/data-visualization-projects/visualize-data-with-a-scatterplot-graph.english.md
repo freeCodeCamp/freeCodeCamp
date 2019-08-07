@@ -3,6 +3,7 @@ id: bd7178d8c242eddfaeb5bd13
 title: Visualize Data with a Scatterplot Graph
 isRequired: true
 challengeType: 3
+forumTopicId: 301467
 ---
 
 ## Description

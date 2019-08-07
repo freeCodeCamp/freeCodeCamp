@@ -2,6 +2,7 @@
 id: 5900f4c21000cf542c50ffd4
 challengeType: 5
 title: 'Problem 340: Crazy Function'
+forumTopicId: 301999
 ---
 
 ## Description

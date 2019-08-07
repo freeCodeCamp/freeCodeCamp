@@ -3,6 +3,7 @@ id: bd7108d8c242eddfaeb5bd13
 title: Map Data Across the Globe
 isRequired: false
 challengeType: 3
+forumTopicId: 302365
 ---
 
 ## Description

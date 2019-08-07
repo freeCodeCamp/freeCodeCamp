@@ -3,6 +3,7 @@ id: 58a7a6ebf9a6318348e2d5aa
 title: Modify Fill Mode of an Animation
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJDmcE'
+forumTopicId: 301064
 ---
 
 ## Description

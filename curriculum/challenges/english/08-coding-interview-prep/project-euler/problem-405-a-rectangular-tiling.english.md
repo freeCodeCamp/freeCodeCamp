@@ -2,6 +2,7 @@
 id: 5900f5021000cf542c510014
 challengeType: 5
 title: 'Problem 405: A rectangular tiling'
+forumTopicId: 302073
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4ef1000cf542c510001
 challengeType: 5
 title: 'Problem 386: Maximum length of an antichain'
+forumTopicId: 302050
 ---
 
 ## Description

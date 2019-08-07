@@ -2,6 +2,7 @@
 id: 5900f3d71000cf542c50fee9
 challengeType: 5
 title: 'Problem 106: Special subset sums: meta-testing'
+forumTopicId: 301730
 ---
 
 ## Description

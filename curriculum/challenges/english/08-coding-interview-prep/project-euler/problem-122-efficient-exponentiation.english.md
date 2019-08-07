@@ -2,6 +2,7 @@
 id: 5900f3e61000cf542c50fef9
 challengeType: 5
 title: 'Problem 122: Efficient exponentiation'
+forumTopicId: 301749
 ---
 
 ## Description

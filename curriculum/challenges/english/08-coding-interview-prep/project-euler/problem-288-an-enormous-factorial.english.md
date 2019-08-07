@@ -2,6 +2,7 @@
 id: 5900f48d1000cf542c50ff9f
 challengeType: 5
 title: 'Problem 288: An enormous factorial'
+forumTopicId: 301939
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5cdafbc32913098997531680
 title: Complete a Promise with resolve and reject
 challengeType: 1
+forumTopicId: 301196
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f3b81000cf542c50fecb
 challengeType: 5
 title: 'Problem 76: Counting summations'
+forumTopicId: 302189
 ---
 
 ## Description

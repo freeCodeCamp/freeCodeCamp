@@ -2,6 +2,7 @@
 id: 587d7db1367417b2b2512b85
 title: Set the Child's Prototype to an Instance of the Parent
 challengeType: 1
+forumTopicId: 301325
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5cfa550e84205a357704ccb6
 title: Use Destructuring Assignment to Extract Values from Objects
 challengeType: 1
+forumTopicId: 301216
 ---
 
 ## Description

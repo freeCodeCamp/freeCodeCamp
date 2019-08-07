@@ -31,7 +31,8 @@ const __utils = (() => {
   }
 
   return {
-    postResult
+    postResult,
+    oldLog
   };
 })();
 
@@ -54,7 +55,12 @@ self.onmessage = async e => {
       `);
     } catch (err) {
       if (__userCodeWasExecuted) {
+        // rethrow error, since test failed.
         throw err;
+      } else {
+        // report errors to dev console (not the editor console, since the test
+        // may still pass)
+        __utils.oldLog(err);
       }
       testResult = eval(e.data.testString);
     }

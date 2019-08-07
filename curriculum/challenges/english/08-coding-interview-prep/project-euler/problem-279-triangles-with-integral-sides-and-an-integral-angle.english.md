@@ -2,6 +2,7 @@
 id: 5900f4841000cf542c50ff96
 challengeType: 5
 title: 'Problem 279: Triangles with integral sides and an integral angle'
+forumTopicId: 301929
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 title: Amicable pairs
 id: 5949b579404977fbaefcd737
 challengeType: 5
+forumTopicId: 302225
 ---
 
 ## Description

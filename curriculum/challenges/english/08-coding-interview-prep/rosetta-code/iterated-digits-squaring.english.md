@@ -2,6 +2,7 @@
 title: Iterated digits squaring
 id: 5a23c84252665b21eecc7ec1
 challengeType: 5
+forumTopicId: 302291
 ---
 
 ## Description

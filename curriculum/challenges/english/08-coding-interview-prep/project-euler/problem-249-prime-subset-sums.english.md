@@ -2,6 +2,7 @@
 id: 5900f4671000cf542c50ff79
 challengeType: 5
 title: 'Problem 249: Prime Subset Sums'
+forumTopicId: 301896
 ---
 
 ## Description

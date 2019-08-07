@@ -2,6 +2,7 @@
 id: 5900f5091000cf542c51001b
 challengeType: 5
 title: 'Problem 408: Admissible paths through a grid'
+forumTopicId: 302076
 ---
 
 ## Description

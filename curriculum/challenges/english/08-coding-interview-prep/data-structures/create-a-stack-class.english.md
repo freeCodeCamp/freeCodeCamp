@@ -2,6 +2,7 @@
 id: 587d8250367417b2b2512c5f
 title: Create a Stack Class
 challengeType: 1
+forumTopicId: 301633
 ---
 
 ## Description

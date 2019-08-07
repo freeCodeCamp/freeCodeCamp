@@ -2,6 +2,7 @@
 id: 5900f4771000cf542c50ff8a
 challengeType: 5
 title: 'Problem 267: Billionaire'
+forumTopicId: 301916
 ---
 
 ## Description
