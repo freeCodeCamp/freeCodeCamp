@@ -29,12 +29,10 @@ I don't know what is happaning
 
 ```yml
 tests:
-   - text: IDN
-     testString: assert($("draw").length) ; 
-  # - text: You test
-  #   testString:  assert(imrid("imageSrc").test(draw()));
-```
-  <!-- testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".'); -->
+   - text:  You must have <code>cv.blur</code> in your code
+     testString: assert(code.match(/cv.blur/g),'You must have <code>cv.blur</code> in your code'); 
+ ```
+
 </section>
 
 ## Challenge Seed
@@ -44,15 +42,7 @@ tests:
 <div id='html-seed'>
 
 ```html
-<script async src = "https://docs.opencv.org/master/opencv.js" onload = "onOpenCvReady();" type = "text/javascript"></script>
-<script type = "text/javascript">
-
-  function onOpenCvReady() {
-    document.getElementById('status').innerHTML = 'OpenCV.js is load.';
-    cv["onRuntimeInitialized"]=()=> {
-       document.getElementById("run").disabled=false;
-    }
-  }
+<script>
   function runBlur() {
     let src = cv.imread('imageSrc');
     let dst = new cv.Mat();
@@ -62,29 +52,43 @@ tests:
     src.delete();
     dst.delete();
   }
-  </script>
+</script>
 
+<h2>Blur OpenCV.js</h2>
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>
+<p></p>
+<canvas id="canvasOutput" ></canvas>
 
-  <h2>Blure OpenCV.js</h2>
-  <p id="status">OpenCV.js is loading...</p>
-
-  <div> <input type="button" id="run"  onclick="runBlur()" value="Run" disabled=true /></div>
-
-  <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>
-  <canvas id="canvasOutput" ></canvas>
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { runBlur() }' type="text/javascript"></script>
 ```
 
 </div>
 
-
-
 </section>
 
 ## Solution
+
 <section id='solution'>
 
 ```html
- 
+<script>
+  function runBlur() {
+    let src = cv.imread('imageSrc');
+    let dst = new cv.Mat();
+    let kernelSize = new cv.Size(3, 3);
+    cv.blur(src, dst, kernelSize);
+    cv.imshow('canvasOutput', dst);
+    src.delete();
+    dst.delete();
+  }
+</script>
+
+<h2>Blure OpenCV.js</h2>
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>
+<p></p>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { runBlur() }' type="text/javascript"></script>
 ```
 
 </section>

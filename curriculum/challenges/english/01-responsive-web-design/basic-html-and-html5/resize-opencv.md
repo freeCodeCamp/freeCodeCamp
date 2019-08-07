@@ -23,14 +23,9 @@ Create a <code>p</code> element below your <code>h2</code> element, and give it 
 
 ```yml
 tests:
-  - text: Test
-    testString: assert(code.match(/\run///resive/), Test');
-  - text: Your <code>p</code> element should have the text "Hello Paragraph".
-    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), 'Your <code>p</code> element should have the text "Hello Paragraph".');
-  - text: Make sure your <code>p</code> element has a closing tag.
-    testString: assert(code.match(foo/g) && code.match(foo/g).length === code.match(/g).length, 'Make sure your <code>p</code> element has a closing tag.');
-
-```
+  - text: You must have <code>cv.resize</code> in your code to resize image
+    testString: assert(code.match(/cv.resize/g),'You must have <code>cv.resize</code> in your code to resize image'); 
+ ```
 
 </section>
 
@@ -40,41 +35,28 @@ tests:
 <div id='html-seed'>
 
 ```html
-  <h2>Blure OpenCV.js</h2>
-  <p id="status">OpenCV.js is loading...</p>
 
-  <div class="caption"> <input type="button" id="run"  onclick="runResize()" value="Run" disabled=true /></div>
+<script type="text/javascript">
 
-  <img id="src" src="http://bit.ly/fcc-relaxing-cat"/>
-  <canvas id="canvasOutput" ></canvas>
+  function runResize(){
+    let src = cv.imread("src");
+    let dst = new cv.Mat();
+    let dsize = new cv.Size(src.cols / 2, src.rows / 2);
+    cv.resize(src, dst, dsize);
+    cv.imshow('canvasOutput', dst);
+    src.delete();
+    dst.delete();
+  }
+</script> 
 
-  <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script>
+<img id="src" src="http://bit.ly/fcc-relaxing-cat"/>
+<p></p>
+<canvas id="canvasOutput" ></canvas>
 
-  <script type="text/javascript">
-
-    function onOpenCvReady() {
-        document.getElementById('status').innerHTML = 'OpenCV.js is load.';
-        cv["onRuntimeInitialized"]=()=> {
-            document.getElementById("run").disabled = false;
-        }
-    }
-
-    function runResize(){
-        let src = cv.imread("src");
-        let dst = new cv.Mat();
-        let dsize = new cv.Size(src.cols / 2, src.rows / 2);
-        cv.resize(src, dst, dsize);
-        cv.imshow('canvasOutput', dst);
-        src.delete();
-        dst.delete();
-    }
-  </script> 
-
+<script async src="https://docs.opencv.org/master/opencv.js" onload= 'cv["onRuntimeInitialized"]=()=> { runResize() }' type="text/javascript"></script>
 ```
 
 </div>
-
-
 
 </section>
 
@@ -82,7 +64,24 @@ tests:
 <section id='solution'>
 
 ```html
+<script type="text/javascript">
 
+  function runResize(){
+    let src = cv.imread("src");
+    let dst = new cv.Mat();
+    let dsize = new cv.Size(src.cols / 2, src.rows / 2);
+    cv.resize(src, dst, dsize);
+    cv.imshow('canvasOutput', dst);
+    src.delete();
+    dst.delete();
+  }
+</script> 
+
+<img id="src" src="http://bit.ly/fcc-relaxing-cat"/>
+<p></p>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload= 'cv["onRuntimeInitialized"]=()=> { runResize() }' type="text/javascript"></script>
 ```
 
 </section>

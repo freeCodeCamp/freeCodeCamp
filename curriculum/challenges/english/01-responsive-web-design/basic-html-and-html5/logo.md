@@ -1,5 +1,5 @@
 ---
-id:
+id: 5d47f9e144cec26fdb0a6365
 title: OpenCV_logo
 challengeType: 0
 videoUrl:
@@ -29,12 +29,11 @@ I don't know what is happaning
 
 ```yml
 tests:
-   - text: IDN
-     testString: assert($("draw").length) ;
-  # - text: You test
-  #   testString:  assert(imrid("imageSrc").test(draw()));
+    - text:  Use <code>cv.ellipse</code> to drow ellips on image
+      testString: assert(code.match(/ellipse/g),'Use <code>cv.ellipse</code> to drow an ellips image'); 
+    - text:  Use <code>cv.circle</code> to drow ellips on image
+      testString: assert(code.match(/circle/g),'Use <code>cv.circle</code> to drow an ellips image'); 
 ```
-  <!-- testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".'); -->
 </section>
 
 ## Challenge Seed
@@ -44,48 +43,32 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2>OpenCV.js</h2>
-<p id="status">OpenCV.js is loading...</p>
-<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>
-<input type="button" id="myButton" onclick="contrast()" value="Run" disabled=true/>
-<canvas id="canvasOutput" ></canvas>
-
-
-
 
 <script type="text/javascript">
 
-function draw() {
-  let mat = new cv.Mat(300, 300, cv.CV_8UC3, new cv.Scalar(255, 255, 255, 255));
-
-  cv.ellipse(mat, new cv.Point(220, 170), new cv.Size(50, 50), 300.0, 0.0, 300.0, new cv.Scalar(0, 0, 255, 255), cv.FILLED);
-  cv.ellipse(mat, new cv.Point(80, 170), new cv.Size(50, 50), 0.0, 0.0, 300.0, new cv.Scalar(0, 255, 0, 255), cv.FILLED);
-  cv.ellipse(mat, new cv.Point(150, 60), new cv.Size(50, 50), 120.0, 0.0, 300.0, new cv.Scalar(255, 0, 0, 255), cv.FILLED);
-
-  cv.circle(mat, new cv.Point(220, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
-  cv.circle(mat, new cv.Point(80, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
-  cv.circle(mat, new cv.Point(150, 60), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
-
-  cv.putText(mat, "OpenCV", new cv.Point(30, 270), cv.FONT_HERSHEY_PLAIN, 4, new cv.Scalar(0, 0, 0, 255), 5)
-
-  cv.imshow('canvasOutput', mat);
-  mat.delete();
-};
-
-function onOpenCvReady() {
-  document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
-  cv["onRuntimeInitialized"] = () => {document.getElementById("myButton").disabled = false;}
-}
+  function draw() {
+    let mat = new cv.Mat(300, 300, cv.CV_8UC3, new cv.Scalar(255, 255, 255, 255));
+  
+    cv.ellipse(mat, new cv.Point(220, 170), new cv.Size(50, 50), 300.0, 0.0, 300.0, new cv.Scalar(0, 0, 255, 255), cv.FILLED);
+    cv.ellipse(mat, new cv.Point(80, 170), new cv.Size(50, 50), 0.0, 0.0, 300.0, new cv.Scalar(0, 255, 0, 255), cv.FILLED);
+    cv.ellipse(mat, new cv.Point(150, 60), new cv.Size(50, 50), 120.0, 0.0, 300.0, new cv.Scalar(255, 0, 0, 255), cv.FILLED);
+  
+    cv.circle(mat, new cv.Point(220, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+    cv.circle(mat, new cv.Point(80, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+    cv.circle(mat, new cv.Point(150, 60), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+  
+    cv.putText(mat, "OpenCV", new cv.Point(30, 270), cv.FONT_HERSHEY_PLAIN, 4, new cv.Scalar(0, 0, 0, 255), 5)
+  
+    cv.imshow('canvasOutput', mat);
+    mat.delete();
+  };
 </script>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
-</script>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
 ```
-
 </div>
-
-
-
 </section>
 
 ## Solution
@@ -93,6 +76,29 @@ function onOpenCvReady() {
 
 ```html
 
+<script type="text/javascript">
+
+  function draw() {
+    let mat = new cv.Mat(300, 300, cv.CV_8UC3, new cv.Scalar(255, 255, 255, 255));
+  
+    cv.ellipse(mat, new cv.Point(220, 170), new cv.Size(50, 50), 300.0, 0.0, 300.0, new cv.Scalar(0, 0, 255, 255), cv.FILLED);
+    cv.ellipse(mat, new cv.Point(80, 170), new cv.Size(50, 50), 0.0, 0.0, 300.0, new cv.Scalar(0, 255, 0, 255), cv.FILLED);
+    cv.ellipse(mat, new cv.Point(150, 60), new cv.Size(50, 50), 120.0, 0.0, 300.0, new cv.Scalar(255, 0, 0, 255), cv.FILLED);
+  
+    cv.circle(mat, new cv.Point(220, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+    cv.circle(mat, new cv.Point(80, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+    cv.circle(mat, new cv.Point(150, 60), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+  
+    cv.putText(mat, "OpenCV", new cv.Point(30, 270), cv.FONT_HERSHEY_PLAIN, 4, new cv.Scalar(0, 0, 0, 255), 5)
+  
+    cv.imshow('canvasOutput', mat);
+    mat.delete();
+  };
+</script>
+
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
 ```
 
 </section>

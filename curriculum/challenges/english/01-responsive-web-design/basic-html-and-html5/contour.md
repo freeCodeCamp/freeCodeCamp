@@ -2,7 +2,7 @@
 id: 5d4299689da0aed2a684435c
 title: Contour
 challengeType: 0
-videoUrl: 
+videoUrl:
 ---
 
 ## Description
@@ -29,12 +29,14 @@ I don't know what is happaning
 
 ```yml
 tests:
-   - text: IDN
-     testString: assert($("draw").length) ; 
-  # - text: You test
-  #   testString:  assert(imrid("imageSrc").test(draw()));
+   - text: You must have <code>cv.Canny</code> in your code
+     testString: assert(code.match(/cv.Canny/g),'<code>cv.Canny</code> is not in initializes');
+   - text: You need to use a <code>cv.findContours</code> to find contour on image
+     testString: assert(code.match(/cv.findContours/g),' You need to use a <code>cv.findContours</code> to find contour on image');
+   - text: You need to use a <code>cv.drawContours</code> to draw contour
+     testString: assert(code.match(/cv.drawContours/g),'You need to use a <code>cv.drawContours</code> to draw contour');
 ```
-  <!-- testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".'); -->
+
 </section>
 
 ## Challenge Seed
@@ -44,48 +46,36 @@ tests:
 <div id='html-seed'>
 
 ```html
-<h2>OpenCV.js</h2>        
-<input type="button" id="myButton" onclick= "contour()" value="Run" disabled=true/>
-<p id="status">OpenCV.js is loading...</p>
-<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>    
-<canvas id="canvasOutput" ></canvas>
-            
-        
-
-
 <script type="text/javascript">
+  function contour() {
+    let mat = cv.imread("imageSrc");
+    let edged = new cv.Mat();
+    let contours = new cv.MatVector();
+    let hierarchy = new cv.Mat();
 
-function contour() {
-  let mat = cv.imread("imageSrc");
-  let edged = new cv.Mat();
-  let contours = new cv.MatVector();
-  let hierarchy = new cv.Mat();
+    cv.Canny(mat, edged, 100, 200);
 
-  cv.Canny(mat, edged, 100, 200);
+    cv.findContours(edged, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
 
-  cv.findContours(edged, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
+    cv.drawContours(mat, contours, -1, new cv.Scalar(0, 255, 0, 255));
 
-  cv.drawContours(mat, contours, -1, new cv.Scalar(0, 255, 0, 255));
-
-  cv.imshow("canvasOutput", mat);
-  edged.delete();
-  contours.delete();
-  hierarchy.delete();
-};
-
-function onOpenCvReady() {
-  document.getElementById("status").innerHTML = "OpenCV.js is ready.";
-  cv["onRuntimeInitialized"] = () => {document.getElementById("myButton").disabled = false;}
-}
+    cv.imshow("canvasOutput", mat);
+    edged.delete();
+    contours.delete();
+    hierarchy.delete();
+  };
 </script>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
+<h2>OpenCV.js</h2>        
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>    
+<p></p>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { contour() }' type="text/javascript">
 </script>
 ```
 
 </div>
-
-
 
 </section>
 
@@ -93,7 +83,33 @@ function onOpenCvReady() {
 <section id='solution'>
 
 ```html
- 
+<script type="text/javascript">
+  function contour() {
+    let mat = cv.imread("imageSrc");
+    let edged = new cv.Mat();
+    let contours = new cv.MatVector();
+    let hierarchy = new cv.Mat();
+
+    cv.Canny(mat, edged, 100, 200);
+
+    cv.findContours(edged, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
+
+    cv.drawContours(mat, contours, -1, new cv.Scalar(0, 255, 0, 255));
+
+    cv.imshow("canvasOutput", mat);
+    edged.delete();
+    contours.delete();
+    hierarchy.delete();
+  };
+</script>
+
+<h2>OpenCV.js</h2>        
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>    
+<p></p>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { contour() }' type="text/javascript">
+</script>
 ```
 
 </section>

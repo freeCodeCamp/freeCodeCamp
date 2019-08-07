@@ -29,64 +29,69 @@ I don't know what is happaning
 
 ```yml
 tests:
-   - text: IDN
-     testString: assert($("draw").length) ; 
-  # - text: You test
-  #   testString:  assert(imrid("imageSrc").test(draw()));
+   - text: Use <code>cv.imread</code> to read image and create a matix of image
+     testString: assert(code.match(/cv.imread/g),'Use <code>cv.imread</code> to read image and create a matix of image'); 
+   - text: Use <code>cv.cvtColor()</code> to use filters 
+     testString: assert(code.match(/cv.cvtColor/g),'Use <code>cv.cvtColor()</code> to use filters '); 
+   - text: <code>COLOR_RGBA2GRAY</code> is not argument in <code>cv.cvtColor()</code>
+     testString:  assert(code.match(/COLOR_RGBA2GRAY/g),'<code>COLOR_RGBA2GRAY</code> is not argument in <code>cv.cvtColor()</code>');
+   - text: Use <code>cv.imshow</code> to input image
+     testString: assert(code.match(/cv.imshow/g),'Use <code>cv.imshow</code> to input image'); 
+  
 ```
-  <!-- testString: assert.isTrue((/hello(\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text "Hello World".'); -->
 </section>
 
 ## Challenge Seed
 
 <section id='challengeSeed'>
-
 <div id='html-seed'>
 
 ```html
- <h2>OpenCV.js</h2>
- <input type="button" id="runSampl" onclick="draw()" value="Run test" disabled=true />
- <p id="status">OpenCV.js is loading...</p>
- <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" /> 
- <canvas id="canvasOutput" >
- </canvas>
- 
- 
 
- <script type="text/javascript">
-    
-    function draw() {
-      let src = cv.imread("imageSrc");
-      let dst = new cv.Mat();  
-      cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
-      cv.imshow('canvasOutput', dst);
-      src.delete();
-      dst.delete();
-    };
-    
-    function onOpenCvReady() {
-      document.getElementById('status').innerHTML = 'OpenCV.js is ready.';
-      cv["onRuntimeInitialized"]=()=> {
-        document.getElementById("runSampl").disabled = false;
-      }
-    }
-  </script>
-    
-    <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript">
-    </script>  
+<script>
+  function draw() {
+    let src = cv.imread("imageSrc");
+    let dst = new cv.Mat();  
+    cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+    cv.imshow('canvasOutput', dst);
+    src.delete();
+    dst.delete();
+  };
+</script>
+
+
+<h2>OpenCV.js</h2>
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" />
+<p></p>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
 ```
-
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```html
- 
-```
 
+<script>
+  function draw() {
+    let src = cv.imread("imageSrc");
+    let dst = new cv.Mat();  
+    cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+    cv.imshow('canvasOutput', dst);
+    src.delete();
+    dst.delete();
+  };
+</script>
+
+
+<h2>OpenCV.js</h2>
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" />
+<p></p>
+<canvas id="canvasOutput" ></canvas>
+
+<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
+```
 </section>
