@@ -15,10 +15,27 @@ newString = string.replace("is","WAS")
 print(newString)
 ```
 
-Output
-```python
+Output:
+
+```shell
 ThWAS WAS nice. ThWAS WAS good.
 ```
+As you can see above, the "is" in This is also replaced with Was.
+
+To prevent this we can use <br>
+
+```python
+string = "This is nice. This is good."
+newString = string.replace(" is "," WAS ")
+print(newString)
+```
+
+Now the output becomes:
+
+```shell
+This WAS nice. This WAS good.
+```
+Here the "is" between whitespaces gets changed to "Was" 
 
 2. Replace the first 2 occurrences of `"is"` with `"WAS"`
 
@@ -28,8 +45,9 @@ newString = string.replace("is","WAS", 2)
 print(newString)
 ```
 
-Output
-```python
+Output:
+
+```shell
 ThWAS WAS nice. This is good.
 ```
 

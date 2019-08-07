@@ -12,9 +12,10 @@ localeTitle: مباراة بداية أنماط سلسلة
 
 جرِّب محيطك المعتاد بالأشرطة المائلة
 
- `let testExp = /^test/; 
- // returns true or false depending on whether test is found in the beginning of the string 
-` 
+```javascript
+let testExp = /^test/;
+// returns true or false depending on whether test is found in the beginning of the string
+``` 
 
 ### تلميح 2:
 
@@ -24,7 +25,8 @@ localeTitle: مباراة بداية أنماط سلسلة
 
 ## حل
 
- `let rickyAndCal = "Cal and Ricky both like racing."; 
- let calRegex = /^Cal/; // Change this line 
- let result = calRegex.test(rickyAndCal); 
-`
+```javascript
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
+```

@@ -16,13 +16,15 @@ localeTitle: طريقة تحديث الموقع
 
 *   `True` يعيد تحميل الصفحة من الخادم (على سبيل المثال لا يخزن البيانات المخزنة مؤقتًا بواسطة المتصفح):
 
- `window.location.reload(true); 
-` 
+```
+window.location.reload(true);
+``` 
 
 *   `False` بإعادة تحميل الصفحة باستخدام إصدار الصفحة المخزنة مؤقتًا بواسطة المستعرض.
 
- `window.location.reload(false); 
-` 
+```
+window.location.reload(false);
+``` 
 
 `False` هي المعلمة الافتراضية ، لذلك إذا تركت فارغة ، فإن `object.reload()` يعيد تحميل الصفحة باستخدام بيانات broswer المخبأة ، أي أنه مماثل لاستخدام الطريقة كـ `object.reload(false)` .
 
@@ -30,29 +32,33 @@ localeTitle: طريقة تحديث الموقع
 
 *   إرفاق `Location.reload()` بعلامة زر HTML ، كما يلي:
 
- `<input type="button" value="Refresh Button" onClick="window.location.reload()"> 
-` 
+```
+<input type="button" value="Refresh Button" onClick="window.location.reload()">
+``` 
 
 *   تعيين حدث عند النقر على الزر باستخدام الوظيفة التي تستخدم الطريقة ، حيث يبدو الزر مشابهاً
 
- `<button type="button" onClick="reloadThePage()">Refresh!</button> 
-` 
+```
+<button type="button" onClick="reloadThePage()">Refresh!</button>
+``` 
 
- `<script> 
- function reloadThePage(){ 
-    window.location.reload(); 
- } 
- </script> 
-` 
+```
+<script>
+function reloadThePage(){
+    window.location.reload();
+}
+</script>
+``` 
 
 ### مثال:
 
- `// Reload the current resources from the server 
- window.location.reload(true); 
- 
- // Reload the current resources from the browser's cache 
- window.location.reload(); 
-` 
+```javascript
+// Reload the current resources from the server
+window.location.reload(true);
+
+// Reload the current resources from the browser's cache
+window.location.reload();
+``` 
 
 سيؤدي هذا إلى إعادة تحميل الصفحة على عنوان URL الحالي من الخادم.
 

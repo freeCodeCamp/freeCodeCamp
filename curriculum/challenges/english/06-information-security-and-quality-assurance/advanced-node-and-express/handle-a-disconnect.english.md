@@ -2,6 +2,7 @@
 id: 589fc831f9fc0f352b528e76
 title: Handle a Disconnect
 challengeType: 2
+forumTopicId: 301552
 ---
 
 ## Description
@@ -25,9 +26,9 @@ Submit your page when you think you've got it right.
 ```yml
 tests:
   - text: Server handles the event disconnect from a socket
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /socket.on.*("|")disconnect("|")/gi, ""); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /socket.on.*('|")disconnect('|")/gi, ''); }, xhr => { throw new Error(xhr.statusText); })
   - text: Your client is listening for 'user count' event
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "Your client should be connection to server with the connection defined as socket"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|")user count('|")/gi, 'Your client should be connection to server with the connection defined as socket'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
@@ -44,4 +45,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

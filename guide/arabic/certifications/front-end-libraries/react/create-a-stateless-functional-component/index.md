@@ -14,10 +14,11 @@ localeTitle: إنشاء مكون وظيفي عديم الحالة
 
 تتم إضافة وظيفة إرجاع مثل هذا
 
- `return( 
-    <return elements> 
- ); 
-` 
+```jsx
+return(
+    <return elements>
+);
+``` 
 
 ### حل
 

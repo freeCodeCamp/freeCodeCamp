@@ -2,6 +2,7 @@
 id: 589fc831f9fc0f352b528e75
 title: Communicate by Emitting
 challengeType: 2
+forumTopicId: 301550
 ---
 
 ## Description
@@ -11,9 +12,14 @@ As a reminder, this project is being built upon the following starter project on
 <hr>Start by adding a variable to keep track of the users just before where you are currently listening for connections. <code>var currentUsers = 0;</code>
 Now when someone connects you should increment the count before emitting the count so you will want to add the incrementer within the connection listener. <code>++currentUsers;</code>
 Finally after incrementing the count, you should emit the event(still within the connection listener). The event should be named 'user count' and the data should just be the 'currentUsers'. <code>io.emit('user count', currentUsers);</code>
-<hr>Now you can implement a way for your client to listen for this event! Similarly to listening for a connection on the server you will use the <em>on</em> keyword. <pre>socket.on('user count', function(data){
+<hr>Now you can implement a way for your client to listen for this event! Similarly to listening for a connection on the server you will use the <em>on</em> keyword.
+
+```js
+socket.on('user count', function(data){
   console.log(data);
-});</pre>
+});
+```
+
 Now try loading up your app and authenticate and you should see in your client console '1' representing the current user count! Try loading more clients up and authenticating to see the number go up.
 Submit your page when you think you've got it right.
 </section>
@@ -29,11 +35,11 @@ Submit your page when you think you've got it right.
 ```yml
 tests:
   - text: currentUsers is defined
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js").then(data => {assert.match(data, /currentUsers/gi, "You should have variable currentUsers defined");}, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /currentUsers/gi, 'You should have variable currentUsers defined');}, xhr => { throw new Error(xhr.statusText); })
   - text: Server emits the current user count at each new connection
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /io.emit.*("|")user count("|").*currentUsers/gi, "You should emit "user count" with data currentUsers"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /io.emit.*('|")user count('|").*currentUsers/gi, 'You should emit "user count" with data currentUsers'); }, xhr => { throw new Error(xhr.statusText); })
   - text: Your client is listening for 'user count' event
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/public/client.js") .then(data => { assert.match(data, /socket.on.*("|")user count("|")/gi, "Your client should be connection to server with the connection defined as socket"); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: getUserInput => $.get(getUserInput('url')+ '/public/client.js') .then(data => { assert.match(data, /socket.on.*('|")user count('|")/gi, 'Your client should be connection to server with the connection defined as socket'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
@@ -50,4 +56,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

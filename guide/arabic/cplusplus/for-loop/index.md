@@ -10,18 +10,20 @@ A For Loop هو عبارة تكرارية تستخدم للتحقق من وجو�
 
 ## بناء الجملة
 
- `for ( init; condition; increment ) { 
-   statement(s); 
- } 
-` 
+```
+for ( init; condition; increment ) {
+   statement(s);
+}
+``` 
 
 من المسموح به لوضع الزيادة insie للحلقة مثل في حلقة في حين. بمعنى أن بناء الجملة مثل هذا يمكن أن يعمل أيضًا.
 
- `for ( init; condition;) { 
-   statement(s); 
-   increment; 
- } 
-` 
+```
+for ( init; condition;) {
+   statement(s);
+   increment;
+}
+``` 
 
 ### فيه
 

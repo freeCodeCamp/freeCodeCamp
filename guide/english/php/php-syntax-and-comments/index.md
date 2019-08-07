@@ -6,9 +6,9 @@ title: PHP Syntax and Comments
 
 The structure of a PHP document may look something like:
 
-```
+```php
 <?php
-    
+
 // Your PHP code goes here.
 ```
 
@@ -16,7 +16,7 @@ The structure of a PHP document may look something like:
 
 When placing PHP in an HTML document, a closing tag is needed, like so:
 
-```
+```php
 <?php
 
 // Your PHP code goes here.
@@ -34,22 +34,22 @@ The default file extension for PHP files is `.php`.
 
 While this is mostly personal preference, it is most common to see the lines within the <?php / ?> tags at the same level, like so:
 
-```
+```php
 <?php
 
 // Same level of indendation.
     // Not indented like so.
 ```
- 
+
 ## How to make comments in PHP?
- 
+
 A comment in PHP code is a line that is not executed as part of the program. Its only purpose is to be read by someone who is looking at the code.
 
 In PHP, comments can be make by two ways — either single-lined or multi-lined.
 
 This can be seen in the example below:
 
-```
+```php
 <?
 
 // This is a single-lined comment.

@@ -23,13 +23,13 @@ class ClassName:
  
  #### Class Objects: 
  
- Objetos de Classe suportam dois tipo de operações: referência de atributo e instanciação. 
+Objetos de Classe suportam dois tipo de operações: referência de atributo e instanciação. 
  
  Referências de atributos usam a sintaxe padrão usada para todas as referências de atributos no Python: `obj.name`. 
  Os nomes de atributos válidos são todos os nomes que estavam no namespace da classe quando o objeto da classe foi criado.
  Então, se a definição da classe for assim:
-```
 
+```
 python class MyClass: "" "Um exemplo simples de classe" "" i = 12345
 ```
 def f(self): 

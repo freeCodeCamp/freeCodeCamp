@@ -1,7 +1,7 @@
 ---
 title: Hash from two arrays
 ---
-## Hash from two arrays
+# Hash from two arrays
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/hash-from-two-arrays/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -35,7 +35,19 @@ for,
 
 ![0<=t<= 2 pi](https://raw.githubusercontent.com/pranabendra/articles/master/geometry/circle/circle_5.png)
 
+### 3. Diametric form:
+Suppose there are two points on a circle (x1, y1) and (x2, y2), such that they lie on the opposite ends of the same diameter. Then the equation of circle can be written as:
+```
+(x-x1)(x-x2) + (y-y1)(y-y2) = 0
+```                                 
+Suppose 2 points on the circle A =  (x1, y1)  and  B = (x2, y2) are diametrically opposite, then for any point C = (x,y) on the circle, ΔABC will be a right triangle with right angle at C. This implies
+
+```
+AC ⊥ BC
+(mAC)*(mBC) = -1
+```
+
+Substituting the values for slopes, we get: (x-x1)(x-x2) + (y-y1)(y-y2) = 0
+
 ### More Information:
 <a href = "http://mypages.valdosta.edu/alazari/math1111/Circle.html" target="_blank" rel="nofollow">Equation of a Circle</a>
-
-

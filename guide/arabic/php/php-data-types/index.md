@@ -21,9 +21,10 @@ localeTitle: أنواع البيانات PHP
 
 #### مثال
 
- `$x = "Hello!"; 
- $y = 'Hello!'; 
-` 
+```
+$x = "Hello!";
+$y = 'Hello!';
+``` 
 
 ## PHP Integer
 
@@ -52,9 +53,10 @@ localeTitle: أنواع البيانات PHP
 
 Boolean يمثل حالتين محتملتين: TRUE أو FALSE. يتم استخدام Booleans غالبًا في الاختبارات الشرطية.
 
- `$x = true; 
- $y = false; 
-` 
+```
+$x = true;
+$y = false;
+``` 
 
 ## صفيف PHP
 
@@ -70,11 +72,12 @@ Null هو نوع بيانات خاص يمكن أن يكون له قيمة واح
 
 **ملاحظة:** إذا تم إنشاء متغير بدون قيمة ، فسيتم تعيين قيمة فارغة له تلقائيًا.
 
- `<?php 
- $x = "Hello world!"; 
- $x = null; 
- ?> 
-` 
+```
+<?php
+$x = "Hello world!";
+$x = null;
+?>
+``` 
 
 انتاج:  
 لا شيء
@@ -87,17 +90,18 @@ Null هو نوع بيانات خاص يمكن أن يكون له قيمة واح
 
 **مثال:**
 
- `<?php 
- class Car { 
-    function Car() { 
-        $this->model = "VW"; 
-    } 
- } 
- 
- // create an object 
- $herbie = new Car(); 
- 
- // show object properties 
- echo $herbie->model; 
- ?> 
-`
+```
+<?php
+class Car {
+    function Car() {
+        $this->model = "VW";
+    }
+}
+
+// create an object
+$herbie = new Car();
+
+// show object properties
+echo $herbie->model;
+?>
+```
