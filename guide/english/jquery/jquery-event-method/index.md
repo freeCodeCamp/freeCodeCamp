@@ -9,7 +9,7 @@ Most DOM events have an equivalent jQuery method, such as `.click()`, `.focus()`
 
 An example of assigning an event to an element:
 
-```
+```js
 $("button").click(function() {
     alert("You clicked me!");
 });
