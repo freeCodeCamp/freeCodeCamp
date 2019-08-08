@@ -2,7 +2,7 @@
 title: C
 localeTitle: C
 ---
-# مرحبا بالعالم! - برنامج C الأول الخاص بك
+## مرحبا بالعالم! - برنامج C الأول الخاص بك
 
 ## الحصول على أقصى استفادة من هذه الدورة
 
@@ -119,7 +119,7 @@ gcc -o helloworld ./helloworld.c
 
 [يمكن تنزيل Dev-C ++ من هنا.](https://sourceforge.net/projects/orwelldevcpp/) أنشئ برنامجًا جديدًا `file` -> `new` -> `Source File` ، ثم انسخ النص helloworld.c الذي تقرأه سابقًا ثم احفظ الملف مع `file` -> `save As` as hello.c ، ثم ترجم الشفرة وقم بتشغيلها `Execute` -> `Compile & Run` .
 
-# قبل أن تذهب ...
+## قبل أن تذهب ...
 
 ## مراجعة
 
