@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036164
 title: Create a Component with Composition
 challengeType: 6
 isRequired: false
+forumTopicId: 301383
 ---
 
 ## Description

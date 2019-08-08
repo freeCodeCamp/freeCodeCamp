@@ -2,6 +2,7 @@
 id: 5900f4181000cf542c50ff2a
 challengeType: 5
 title: 'Problem 171: Finding numbers for which the sum of the squares of the digits is a square'
+forumTopicId: 301806
 ---
 
 ## Description

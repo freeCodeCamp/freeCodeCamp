@@ -2,6 +2,7 @@
 id: 5900f3db1000cf542c50feed
 challengeType: 5
 title: 'Problem 110: Diophantine Reciprocals II'
+forumTopicId: 301735
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f5481000cf542c51005b
 challengeType: 5
 title: 'Problem 476: Circle Packing II'
+forumTopicId: 302153
 ---
 
 ## Description

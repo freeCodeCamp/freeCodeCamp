@@ -11,100 +11,108 @@ localeTitle: أنواع البيانات
 وهي مقسمة إلى الفئات التالية:
 
 *   الأعداد الصحيحة
-*   أرقام النقطة العائمة
-*   الشخصيات
-*   اكتب منطقي
+*   الاعداد العشرية
+*   الرموز
+*   القيم المنطقية
 
 تفاصيل كل نوع من أنواع البيانات مذكورة أدناه:
 
 ## الأعداد الصحيحة:
 
-هذه هي من أربعة أنواع: `byte` ، `short` ، `int` ، `long` . من المهم ملاحظة أن هذه القيم موجبة وسالبة. يتم تخزين الأعداد الصحيحة في جهاز الكمبيوتر باستخدام [مكمل 2](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html) . ويتكون من قيم سلبية وإيجابية ولكن بصيغ مختلفة مثل `(-1 to -128)` أو `(0 to +127)` . يمكن أن يحتوى عدد صحيح غير موقعة على قيمة موجبة أكبر ، ولا توجد قيمة سالبة مثل `(0 to 255)` . على عكس C ++ لا يوجد عدد صحيح غير موقعة في Java.
+هذه هي من أربعة أنواع: `byte` ، `short` ، `int` ، `long` . من المهم ملاحظة أن هذه القيم موجبة وسالبة. يتم تخزين الأعداد الصحيحة في جهاز الكمبيوتر باستخدام [مكمل 2](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html) . ويتكون من قيم سالبة وموجبة ولكن بصيغ مختلفة مثل `(-1 to -128)` أو `(0 to +127)` . يمكن أن يحتوى عدد صحيح غير موقعة على قيمة موجبة أكبر ، ولا توجد قيمة سالبة مثل `(0 to 255)` . على عكس C ++ لا يوجد عدد صحيح غير موقعة في Java.
 
-### بايت:
+### بايت (byte):
 
 نوع البيانات بايت هو عدد صحيح مكمل 8 بت موقعة اثنين.
 
- `Wrapper Class: Byte 
+ `Wrapper Class (الفئة): Byte 
  
- Minimum value: -128 (-2^7) 
+ Minimum value (القيمة الاصغر): -128 (-2^7) 
  
- Maximum value: 127 (2^7 -1) 
+ Maximum value (القيمة القصوى): 127 (2^7 -1) 
  
- Default value: 0 
+ Default value (القيمة الافتراضية): 0 
  
- Example: byte a = 10 , byte b = -50; 
+ Example (مثال): byte a = 10 , byte b = -50; 
 ` 
 
-### قصيرة:
+### قصيرة (short):
 
 نوع البيانات القصير هو عدد صحيح مكمل من 16 بت موقعة اثنين.
 
- `Wrapper Class: Short 
+ `Wrapper Class (الفئة): Short 
  
- Minimum value: -32,768 (-2^15) 
+ Minimum value (القيمة الصغرى): -32,768 (-2^15) 
  
- Maximum value: 32,767 (2^15 -1) 
+ Maximum value (القيمة القصوى): 32,767 (2^15 -1) 
  
- Default value: 0. 
+ Default value (القيمة الافتراضية): 0. 
  
- Example: short s = 10, short r = -1000; 
+ Example (مثال): short s = 10, short r = -1000; 
 ` 
 
-### الباحث:
+### العدد الصحيح (integer):
 
 نوع البيانات IN هو عدد صحيح مكمل 32 بت موقعة اثنين. يتم استخدامه بشكل عام كنوع بيانات افتراضي للقيم المتكاملة إلا إذا كان هناك قلق حول الذاكرة.
 
- `Wrapper Class: Integer 
+ `Wrapper Class (الفئة): Integer 
  
- Minimum value: (-2^31) 
+ Minimum value (القيمة الصغرى): (-2^31) 
  
- Maximum value: (2^31 -1) 
+ Maximum value (القيمة القصوى): (2^31 -1) 
  
- The default value: 0. 
+ The default value (القيمة الافتراضية): 0. 
  
- Example: int a = 50000, int b = -20 
+ Example (مثال): int a = 50000, int b = -20 
 ` 
 
-### طويل:
+###  طويل (long):
 
 نوع بيانات طويل هو عدد صحيح مكمل 64 بت موقعة اثنين.
 
- `Wrapper Class: Long 
+ `Wrapper Class (الفئة): Long 
  
- Minimum value: (-2^63) 
+ Minimum value (القيمة الصغرى): (-2^63) 
  
- Maximum value: (2^63 -1) 
+ Maximum value (القيمة القصوى): (2^63 -1) 
  
- Default value: 0L. 
+ Default value (القيمة الافتراضية): 0L. 
  
- Example: long a = 100000L, long b = -600000L; 
+ Example (مثال): long a = 100000L, long b = -600000L; 
  
  By default all integer type variable is "int". So long num=600851475143  will give an error. 
  But it can be specified as long by appending the suffix L (or l) 
 ` 
 
-## نقطة عائمة:
+## اعداد عشرية:
 
 تسمى هذه أيضًا أرقامًا حقيقية وتستخدم للتعبيرات التي تتضمن دقة كسرية. هذه من نوعين: `float` ، `double` . يتم تجنب Float فعليًا في حالة البيانات الدقيقة مثل بيانات العملات أو الأبحاث.
 
-### تطفو:
+### تطفو (float):
 
 نوع بيانات عائم عبارة عن [نقطة عائمة IEEE 754](http://steve.hollasch.net/cgindex/coding/ieeefloat.html) ذات دقة واحدة 32 بت.
 
- `Wrapper Class: Float 
+ `Wrapper Class (الفئة): Float 
  
  Float is mainly used to save memory in large arrays of floating point numbers. 
+  اساسا تستخدم لحفظ الذاكرة في المصفوفات المكونة من الارقام العشرية ذات دقة واحدة(float)
  
- Default value: 0.0f. 
+ Default value (القيمة الافتراضية): 0.0f. 
  
- Example: float f1 = 24.5f; 
+ Example (مثال): float f1 = 24.5f; 
  
- The default data type of floating-point number is double. So float f = 24.5 will introduce an error. 
- However, we can append the suffix F (or f) to designate the data type as float. 
-` 
+ The default data type of floating-point number is double. So float f = 24.5 will introduce an error.
+ نوع القيمة الافتراضية للارقام العشرية ذات دقة واحدة هو مزدوج. 
+ مثال:
+ float f = 24.5 
+ ستظهر خطا للمستخدم
+ 
+ However, we can append the suffix F (or f) to designate the data type as float.
+ لكن, بامكاننا استخدام F(or f)
+لتعيين توع البيانات كرقم عشري ذات دقة واحدة (float)
+ 
 
-### مزدوج:
+### مزدوج (double):
 
 نوع بيانات مزدوج هو [نقطة عائم IEEE 754](http://steve.hollasch.net/cgindex/coding/ieeefloat.html) مزدوجة الدقة 64 بت. عادةً ما يكون نوع البيانات هذا هو الخيار الافتراضي. يجب عدم استخدام نوع البيانات هذا مطلقًا للقيم الدقيقة ، مثل العملة.
 

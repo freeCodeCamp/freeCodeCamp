@@ -2,6 +2,7 @@
 id: 5900f3ef1000cf542c50ff02
 challengeType: 5
 title: 'Problem 131: Prime cube partnership'
+forumTopicId: 301759
 ---
 
 ## Description

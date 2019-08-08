@@ -2,6 +2,7 @@
 id: 587d824e367417b2b2512c56
 title: Test if a Value is of a Specific Data Structure Type
 challengeType: 2
+forumTopicId: 301601
 ---
 
 ## Description

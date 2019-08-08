@@ -2,6 +2,7 @@
 id: 5900f4511000cf542c50ff62
 challengeType: 5
 title: 'Problem 226: A Scoop of Blancmange'
+forumTopicId: 301869
 ---
 
 ## Description

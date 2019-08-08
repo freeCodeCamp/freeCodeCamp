@@ -2,6 +2,7 @@
 id: 5900f4021000cf542c50ff14
 challengeType: 5
 title: 'Problem 148: Exploring Pascal''s triangle'
+forumTopicId: 301777
 ---
 
 ## Description

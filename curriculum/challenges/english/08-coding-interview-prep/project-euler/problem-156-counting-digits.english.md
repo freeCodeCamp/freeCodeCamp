@@ -2,6 +2,7 @@
 id: 5900f4091000cf542c50ff1b
 challengeType: 5
 title: 'Problem 156: Counting Digits'
+forumTopicId: 301787
 ---
 
 ## Description

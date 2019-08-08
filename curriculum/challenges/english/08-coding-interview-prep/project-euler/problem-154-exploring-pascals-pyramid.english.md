@@ -2,6 +2,7 @@
 id: 5900f4071000cf542c50ff19
 challengeType: 5
 title: 'Problem 154: Exploring Pascal''s pyramid'
+forumTopicId: 301785
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4181000cf542c50ff2b
 challengeType: 5
 title: 'Problem 172: Investigating numbers with few repeated digits'
+forumTopicId: 301807
 ---
 
 ## Description

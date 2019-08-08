@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036171
 title: Render State in the User Interface
 challengeType: 6
 isRequired: false
+forumTopicId: 301409
 ---
 
 ## Description

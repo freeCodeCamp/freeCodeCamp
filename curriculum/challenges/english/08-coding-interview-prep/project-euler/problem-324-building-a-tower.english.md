@@ -2,6 +2,7 @@
 id: 5900f4b11000cf542c50ffc3
 challengeType: 5
 title: 'Problem 324: Building a tower'
+forumTopicId: 301981
 ---
 
 ## Description

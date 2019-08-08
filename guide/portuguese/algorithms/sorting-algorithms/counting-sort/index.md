@@ -8,33 +8,33 @@ Classificação de contagem é uma técnica de classificação baseada em chaves
 
 ### Exemplo:
 ```
-For simplicity, consider the data in the range 0 to 9. 
- Input data: 1, 4, 1, 2, 7, 5, 2 
-  1) Take a count array to store the count of each unique object. 
-  Index:     0  1  2  3  4  5  6  7  8  9 
-  Count:     0  2  2  0  1  1  0  1  0  0 
- 
-  2) Modify the count array such that each element at each index 
-  stores the sum of previous counts. 
-  Index:     0  1  2  3  4  5  6  7  8  9 
-  Count:     0  2  4  4  5  6  6  7  7  7 
- 
- The modified count array indicates the position of each object in 
- the output sequence. 
- 
-  3) Output each object from the input sequence followed by 
-  decreasing its count by 1. 
-  Process the input data: 1, 4, 1, 2, 7, 5, 2. Position of 1 is 2. 
-  Put data 1 at index 2 in output. Decrease count by 1 to place 
-  next data 1 at an index 1 smaller than this index. 
+Para simplificar, considere os dados no intervalo de 0 a 9.
+  Dados de entrada: 1, 4, 1, 2, 7, 5, 2
+   1) Pegue uma matriz de contagem para armazenar a contagem de cada objeto único.
+   Índice: 0 1 2 3 4 5 6 7 8 9
+   Contagem: 0 2 2 0 1 1 0 1 0 0
+ 
+   2) Modifique a matriz de contagem de forma que cada elemento em cada índice
+   armazene a soma das contagens anteriores.
+   Índice: 0 1 2 3 4 5 6 7 8 9
+   Contagem: 0 2 4 4 5 6 6 7 7 7
+ 
+  A matriz de contagem modificada indica a posição de cada objeto
+  na seqüência de saída.
+ 
+   3) Saída de cada objeto da seqüência de entrada seguido por
+   diminuir sua contagem em 1.
+   Processe os dados de entrada: 1, 4, 1, 2, 7, 5, 2. A posição de 1 é 2.
+   Coloque os dados 1 no índice 2 na saída. Diminua a contagem em 1 para colocar 
+   os próximos dados 1 em um índice 1 menor que esse índice.
 ```
 
-### Propriedades
-- Complexidade do espaço: O(K)
-- Desempenho do melhor caso: O(n+K)
-- Desempenho médio do caso: O(n+K)
-- Desempenho do pior caso: O(n+K)
-- Estável: Sim
+### Propriedades 
+- Complexidade do espaço: O(K) 
+- Caso de melhor desempenho: O(n+K) 
+- Caso de desempenho médio: O(n+K) 
+- Caso do pior desempenho: O(n+K) 
+- Estável: Sim 
 (K é o número de elementos distintos na matriz)
 
 ### Implementação em JavaScript
@@ -107,4 +107,3 @@ func countingSort(_ array: [Int]) {
 }
 
   ```
-  

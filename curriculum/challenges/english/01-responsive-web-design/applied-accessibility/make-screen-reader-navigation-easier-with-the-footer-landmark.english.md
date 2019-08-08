@@ -3,6 +3,7 @@ id: 587d7788367417b2b2512aa3
 title: Make Screen Reader Navigation Easier with the footer Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVrDh8'
+forumTopicId: 301022
 ---
 
 ## Description

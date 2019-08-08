@@ -1,8 +1,8 @@
 ---
 title: Before Selector
-localeTitle: Перед селектором
+localeTitle: Псевдоэлемент before 
 ---
-## Перед селектором
+## Псевдоэлемент before 
 
 CSS **:: before** selector может использоваться для вставки чего-либо перед содержимым элемента или элементов. Это позволяет дизайнеру выполнять любой дизайн css перед содержимым в элементе. Он используется путем присоединения **:: before** к элементу, для которого он должен использоваться.
 
@@ -23,11 +23,11 @@ p::before {
 ```html
 
 <p> To infinity and beyond</p> 
- <p> I am buz lightyear, I come in peace.</p> 
- 
- <span class="comment"> May the force be with you</span> 
- <br/> 
- <span> Do. Or do not. There is no try</span> 
+<p> I am buz lightyear, I come in peace.</p> 
+
+<span class="comment"> May the force be with you</span> 
+<br/> 
+<span> Do. Or do not. There is no try</span> 
 ```
 
 В приведенном выше примере мы добавляем серая граница перед каждым элементом абзаца на странице, и мы также добавляем комментарий слова синим до каждого элемента span с комментарием класса.

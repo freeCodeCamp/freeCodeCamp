@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244cc
 title: Accessing Nested Objects
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cRnRnfa'
+forumTopicId: 16161
 ---
 
 ## Description

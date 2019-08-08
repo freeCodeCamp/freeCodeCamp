@@ -2,6 +2,7 @@
 id: 5900f4091000cf542c50ff1c
 challengeType: 5
 title: 'Problem 157: Solving the diophantine equation'
+forumTopicId: 301788
 ---
 
 ## Description

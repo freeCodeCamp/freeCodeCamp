@@ -2,6 +2,7 @@
 id: 5900f4351000cf542c50ff47
 challengeType: 5
 title: 'Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"'
+forumTopicId: 301840
 ---
 
 ## Description

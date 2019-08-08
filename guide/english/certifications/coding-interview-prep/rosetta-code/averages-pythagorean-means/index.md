@@ -1,7 +1,7 @@
 ---
-title: Averages-Pythagorean means
+title: Averages/Pythagorean means
 ---
-# Averages-Pythagorean means
+# Averages/Pythagorean means
 
 ---
 ## Solutions

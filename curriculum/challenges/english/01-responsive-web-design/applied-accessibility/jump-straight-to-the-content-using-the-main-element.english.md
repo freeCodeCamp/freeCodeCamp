@@ -3,6 +3,7 @@ id: 587d774e367417b2b2512a9f
 title: Jump Straight to the Content Using the main Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7zuE'
+forumTopicId: 301018
 ---
 
 ## Description

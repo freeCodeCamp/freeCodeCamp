@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import DonateModal from '../Donation';
 
 import 'prismjs/themes/prism.css';
+import './prism.css';
+import './prism-night.css';
 import 'react-reflex/styles.css';
 import './learn.css';
 

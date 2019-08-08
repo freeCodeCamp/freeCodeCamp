@@ -2,6 +2,7 @@
 id: 5900f4761000cf542c50ff88
 challengeType: 5
 title: 'Problem 265: Binary Circles'
+forumTopicId: 301914
 ---
 
 ## Description

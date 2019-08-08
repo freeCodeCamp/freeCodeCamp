@@ -2,6 +2,7 @@
 id: 5900f4f21000cf542c510005
 challengeType: 5
 title: 'Problem 390: Triangles with non rational sides and integral area'
+forumTopicId: 302055
 ---
 
 ## Description

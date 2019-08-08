@@ -2,6 +2,7 @@
 id: 5900f4231000cf542c50ff35
 challengeType: 5
 title: 'Problem 182: RSA encryption'
+forumTopicId: 301818
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 title: Balanced brackets
 id: 594dc6c729e5700999302b45
 challengeType: 5
+forumTopicId: 302230
 ---
 
 ## Description

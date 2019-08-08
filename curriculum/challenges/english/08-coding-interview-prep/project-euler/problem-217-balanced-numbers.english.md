@@ -2,6 +2,7 @@
 id: 5900f4461000cf542c50ff58
 challengeType: 5
 title: 'Problem 217: Balanced Numbers'
+forumTopicId: 301859
 ---
 
 ## Description

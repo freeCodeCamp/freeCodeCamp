@@ -2,6 +2,7 @@
 id: 587d7b87367417b2b2512b3f
 title: Explore Differences Between the var and let Keywords
 challengeType: 1
+forumTopicId: 301202
 ---
 
 ## Description

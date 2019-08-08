@@ -2,6 +2,7 @@
 id: 5900f4691000cf542c50ff7c
 challengeType: 5
 title: 'Problem 253: Tidying up'
+forumTopicId: 301901
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 587d7fab367417b2b2512bd9
 title: Add Labels to Scatter Plot Circles
 challengeType: 6
+forumTopicId: 301477
 ---
 
 ## Description

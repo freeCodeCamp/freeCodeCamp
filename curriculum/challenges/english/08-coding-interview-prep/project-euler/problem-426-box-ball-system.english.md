@@ -2,6 +2,7 @@
 id: 5900f5171000cf542c510029
 challengeType: 5
 title: 'Problem 426: Box-ball system'
+forumTopicId: 302096
 ---
 
 ## Description

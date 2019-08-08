@@ -2,6 +2,7 @@
 id: 587d7fb8367417b2b2512c0e
 title: 'Perform Classic Updates by Running Find, Edit, then Save'
 challengeType: 2
+forumTopicId: 301541
 ---
 
 ## Description

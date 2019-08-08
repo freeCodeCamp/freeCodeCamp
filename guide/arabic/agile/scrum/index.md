@@ -41,6 +41,6 @@ Scrum هي واحدة من المنهجيات تحت مظلة Agile. ينشأ م
 
 في ما يلي بعض الموارد الإضافية:
 
-*   [لماذا سكروم](https://www.scrumalliance.org/why-scrum) من تحالف سكروم
+*   [لماذا سكروم](https://www.scrumalliance.org/why-scrum) من مجتمع سكروم
 *   [دليل سكروم](http://www.scrumguides.org/scrum-guide.html) من Scrum.org
 *   [القيام مقابل كونها رشيقة](http://agilitrix.com/2016/04/doing-agile-vs-being-agile/)

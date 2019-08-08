@@ -2,6 +2,7 @@
 id: 5900f5201000cf542c510032
 challengeType: 5
 title: 'Problem 435: Polynomials of Fibonacci numbers'
+forumTopicId: 302106
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f3761000cf542c50fe89
 challengeType: 5
 title: 'Problem 10: Summation of primes'
+forumTopicId: 301723
 ---
 
 ## Description

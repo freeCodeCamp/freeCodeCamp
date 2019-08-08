@@ -2,6 +2,7 @@
 id: 5900f3731000cf542c50fe86
 challengeType: 5
 title: 'Problem 7: 10001st prime'
+forumTopicId: 302182
 ---
 
 ## Description

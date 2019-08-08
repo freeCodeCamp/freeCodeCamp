@@ -2,6 +2,7 @@
 id: 5900f4a81000cf542c50ffbb
 challengeType: 5
 title: 'Problem 316: Numbers in decimal expansions'
+forumTopicId: 301972
 ---
 
 ## Description

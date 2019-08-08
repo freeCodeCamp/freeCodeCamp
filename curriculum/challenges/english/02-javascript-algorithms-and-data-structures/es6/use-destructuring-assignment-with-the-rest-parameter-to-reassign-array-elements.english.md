@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4c
 title: Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
 challengeType: 1
+forumTopicId: 301218
 ---
 
 ## Description

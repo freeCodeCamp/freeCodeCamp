@@ -2,6 +2,7 @@
 id: 5900f5241000cf542c510036
 challengeType: 5
 title: 'Problem 437: Fibonacci primitive roots'
+forumTopicId: 302108
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aed208826
 title: Target the Children of an Element Using jQuery
 challengeType: 6
+forumTopicId: 18320
 ---
 
 ## Description
