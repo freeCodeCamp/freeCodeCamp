@@ -30,28 +30,28 @@ _`num < 5` - عودة "صغيرة" `num < 10` - عودة "صغير" `num < 15` -
 
 ## حل:
 
- `function testSize(num) { 
-  // Only change code below this line 
-  if (num < 5){ 
-    return "Tiny"; 
-  } 
-  else if (num < 10) { 
-    return "Small"; 
-  } 
-  else if (num < 15){ 
-    return "Medium"; 
-  } 
-  else if (num < 20){ 
-    return "Large"; 
-  } 
-  else { 
-    return "Huge"; 
-  } 
-  // Only change code above this line 
- } 
-` 
+```javascript
+function testSize(num) {
+  // Only change code below this line
+  if (num < 5){
+    return "Tiny";
+  }
+  else if (num < 10) {
+    return "Small";
+  }
+  else if (num < 15){
+    return "Medium";
+  }
+  else if (num < 20){
+    return "Large";
+  }
+  else {
+    return "Huge";
+  }
+  // Only change code above this line
+}
+``` 
 
-تشغيل الكود في [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Chaining-ifelse-statements)
 
 ### تفسير الشفرة
 

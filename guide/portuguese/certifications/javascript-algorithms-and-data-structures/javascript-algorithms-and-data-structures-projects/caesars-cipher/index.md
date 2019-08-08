@@ -63,8 +63,7 @@ Deixe qualquer coisa que não esteja entre o AZ como está.
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/38)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Uma variável de string `nstr` é declarada e inicializada para armazenar a string decodificada.
@@ -152,8 +151,7 @@ ALPHA    KEY BASE             ROTATED    ROT13
 *   [Regex](https://forum.freecodecamp.com/t/regular-expressions-resources/15931)
 *   [Regex.test](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test)
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/39)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotating_light:") Solução avançada de código:
 ```
 function rot13(str) { // LBH QVQ VG! 

@@ -114,3 +114,7 @@ Add dropdown menus to your nav pills.
 ```
 
 ![Pills with Dropdowns](https://github.com/TroyB12/Pictures/blob/master/Bootstrap%20Pills%20Dropdown.PNG)
+
+
+#### More Information
+- [Bootstrap Documentation for Tabs and Pills](https://getbootstrap.com/docs/4.1/components/navs/#tabs)

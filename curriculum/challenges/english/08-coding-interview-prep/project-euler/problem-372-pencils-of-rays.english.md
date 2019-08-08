@@ -2,6 +2,7 @@
 id: 5900f4e11000cf542c50fff3
 challengeType: 5
 title: 'Problem 372: Pencils of rays'
+forumTopicId: 302034
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Note:  represents the floor function.
 ```yml
 tests:
   - text: <code>euler372()</code> should return 301450082318807040.
-    testString: assert.strictEqual(euler372(), 301450082318807040, '<code>euler372()</code> should return 301450082318807040.');
+    testString: assert.strictEqual(euler372(), 301450082318807040);
 
 ```
 
@@ -58,4 +59,5 @@ euler372();
 ```js
 // solution required
 ```
+
 </section>

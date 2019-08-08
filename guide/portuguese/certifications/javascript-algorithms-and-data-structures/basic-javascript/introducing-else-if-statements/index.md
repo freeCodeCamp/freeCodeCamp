@@ -56,7 +56,7 @@ function testElseIf(val) {
  testElseIf(7); 
 ```
 
-: rocket: [código de execução](https://repl.it/@RyanPisuena/GoldenWorriedRuntime) ## Explicação do código A estrutura de um **else-se o fluxo de lógica** é uma inicial `if` declaração, mais um `if-else` declarações, e uma final, `else` declaração.
+## Explicação do código A estrutura de um **else-se o fluxo de lógica** é uma inicial `if` declaração, mais um `if-else` declarações, e uma final, `else` declaração.
 
 ### Recursos
 

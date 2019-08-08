@@ -43,19 +43,20 @@ Docstring هو وسيلة للمطورين لتوصيل الغرض ، والمع
 
 ## مثال 1
 
- `def is_less_than_five(some_number): 
-  '''(int) -> bool 
-  Returns True if the given number is less than 5, and False is the given number is greater than 5. 
-  REQ: some_number != 5 
-  >>> is_less_than_five(4) 
-  True 
-  >>> is_less_than_five(6) 
-  False 
-  >>> is_less_than_five(100000) 
-  False 
-  ''' 
-  # Your code goes here 
-` 
+```python
+def is_less_than_five(some_number):
+  '''(int) -> bool
+  Returns True if the given number is less than 5, and False is the given number is greater than 5.
+  REQ: some_number != 5
+  >>> is_less_than_five(4)
+  True
+  >>> is_less_than_five(6)
+  False
+  >>> is_less_than_five(100000)
+  False
+  '''
+  # Your code goes here
+``` 
 
 ### بعض الروابط المفيدة:
 

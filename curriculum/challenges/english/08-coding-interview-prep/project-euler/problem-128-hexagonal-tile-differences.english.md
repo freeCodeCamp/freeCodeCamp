@@ -2,6 +2,7 @@
 id: 5900f3ec1000cf542c50feff
 challengeType: 5
 title: 'Problem 128: Hexagonal tile differences'
+forumTopicId: 301755
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find the 2000th tile in this sequence.
 ```yml
 tests:
   - text: <code>euler128()</code> should return 14516824220.
-    testString: assert.strictEqual(euler128(), 14516824220, '<code>euler128()</code> should return 14516824220.');
+    testString: assert.strictEqual(euler128(), 14516824220);
 
 ```
 
@@ -61,4 +62,5 @@ euler128();
 ```js
 // solution required
 ```
+
 </section>

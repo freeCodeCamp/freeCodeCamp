@@ -32,29 +32,29 @@ localeTitle: Биномиальное распределение
 
 Рассмотрим `P(Single Scenario)` в общем случае `k` успехов и `n - k` отказов в `n` испытаниях. Чтобы найти значение, используйте правило умножения для независимых событий:
 
-![](https://i.imgur.com/YXzUPiB.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/YXzUPiB.png)
 
 Количество способов получить `k` успехов из `n` проб может быть записано как **n выбрать k** :
 
-![](https://i.imgur.com/AQ3P4vi.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/AQ3P4vi.png)
 
 Таким образом, общая формула для получения вероятности наблюдения точно `k` успехов в `n` независимых испытаниях дает:
 
-![](https://i.imgur.com/ZErXKtQ.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/ZErXKtQ.png)
 
 Следовательно, вероятность получения ровно одной главы в испытаниях:
 
-![](https://i.imgur.com/fN5wOH2.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/fN5wOH2.png)
 
 ### Среднее и разное
 
 Среднее биномиальное распределение с `n` исследованиями, где `p` - вероятность успеха, определяется:
 
-![](https://i.imgur.com/4ji7JXx.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/4ji7JXx.png)
 
 и дисперсия:
 
-![](https://i.imgur.com/1tPHKHj.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/1tPHKHj.png)
 
 #### Дополнительная информация:
 

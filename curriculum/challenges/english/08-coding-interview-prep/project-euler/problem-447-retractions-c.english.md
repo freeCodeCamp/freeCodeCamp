@@ -2,6 +2,7 @@
 id: 5900f52c1000cf542c51003e
 challengeType: 5
 title: 'Problem 447: Retractions C'
+forumTopicId: 302119
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find F(1014) (mod 1 000 000 007).
 ```yml
 tests:
   - text: <code>euler447()</code> should return 530553372.
-    testString: assert.strictEqual(euler447(), 530553372, '<code>euler447()</code> should return 530553372.');
+    testString: assert.strictEqual(euler447(), 530553372);
 
 ```
 
@@ -62,4 +63,5 @@ euler447();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f3ab1000cf542c50febe
 challengeType: 5
 title: 'Problem 63: Powerful digit counts'
+forumTopicId: 302175
 ---
 
 ## Description
@@ -21,7 +22,7 @@ How many n-digit positive integers exist which are also an nth power?
 ```yml
 tests:
   - text: <code>euler63()</code> should return 49.
-    testString: assert.strictEqual(euler63(), 49, '<code>euler63()</code> should return 49.');
+    testString: assert.strictEqual(euler63(), 49);
 
 ```
 
@@ -53,4 +54,5 @@ euler63();
 ```js
 // solution required
 ```
+
 </section>

@@ -73,7 +73,6 @@ function sumPrimes(num) {
  sumPrimes(10); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnZ/0)
 
 ### Explicación del código:
 
@@ -122,7 +121,6 @@ function sumPrimes(num) {
  sumPrimes(10); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLn0/0)
 
 ### Explicación del código:
 
@@ -157,7 +155,6 @@ function sumPrimes(num) {
  sumPrimes(977); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/DoOo/3)
 
 ### Explicación del código:
 

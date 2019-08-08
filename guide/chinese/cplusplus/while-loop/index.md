@@ -10,7 +10,7 @@ while循环的一个关键点是循环可能永远不会运行。 当测试条�
 
 例：
 
-```C++
+```cpp
 #include <iostream>
  using namespace std;
 

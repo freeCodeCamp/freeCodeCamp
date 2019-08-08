@@ -2,6 +2,7 @@
 id: 5900f4281000cf542c50ff39
 challengeType: 5
 title: 'Problem 186: Connectedness of a network'
+forumTopicId: 301822
 ---
 
 ## Description
@@ -32,7 +33,7 @@ The Prime Minister's phone number is 524287. After how many successful calls, no
 ```yml
 tests:
   - text: <code>euler186()</code> should return 2325629.
-    testString: assert.strictEqual(euler186(), 2325629, '<code>euler186()</code> should return 2325629.');
+    testString: assert.strictEqual(euler186(), 2325629);
 
 ```
 
@@ -64,4 +65,5 @@ euler186();
 ```js
 // solution required
 ```
+
 </section>

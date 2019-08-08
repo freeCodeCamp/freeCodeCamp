@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244d9
 title: Comparisons with the Logical Or Operator
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cEPrGTN'
+forumTopicId: 16800
 ---
 
 ## Description
@@ -9,9 +11,26 @@ challengeType: 1
 The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.
 The <dfn>logical or</dfn> operator is composed of two pipe symbols (<code>|</code>). This can typically be found between your Backspace and Enter keys.
 The pattern below should look familiar from prior waypoints:
-<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return "No";<br>}<br>if (num < 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote>
+
+```js
+if (num > 10) {
+  return "No";
+}
+if (num < 5) {
+  return "No";
+}
+return "Yes";
+```
+
 will return "Yes" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:
-<blockquote>if (num > 10 || num < 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote>
+
+```js
+if (num > 10 || num < 5) {
+  return "No";
+}
+return "Yes";
+```
+
 </section>
 
 ## Instructions
@@ -25,25 +44,25 @@ Combine the two <code>if</code> statements into one statement which returns <cod
 ```yml
 tests:
   - text: You should use the <code>||</code> operator once
-    testString: assert(code.match(/\|\|/g).length === 1, 'You should use the <code>||</code> operator once');
+    testString: assert(code.match(/\|\|/g).length === 1);
   - text: You should only have one <code>if</code> statement
-    testString: assert(code.match(/if/g).length === 1, 'You should only have one <code>if</code> statement');
+    testString: assert(code.match(/if/g).length === 1);
   - text: <code>testLogicalOr(0)</code> should return "Outside"
-    testString: assert(testLogicalOr(0) === "Outside", '<code>testLogicalOr(0)</code> should return "Outside"');
+    testString: assert(testLogicalOr(0) === "Outside");
   - text: <code>testLogicalOr(9)</code> should return "Outside"
-    testString: assert(testLogicalOr(9) === "Outside", '<code>testLogicalOr(9)</code> should return "Outside"');
+    testString: assert(testLogicalOr(9) === "Outside");
   - text: <code>testLogicalOr(10)</code> should return "Inside"
-    testString: assert(testLogicalOr(10) === "Inside", '<code>testLogicalOr(10)</code> should return "Inside"');
+    testString: assert(testLogicalOr(10) === "Inside");
   - text: <code>testLogicalOr(15)</code> should return "Inside"
-    testString: assert(testLogicalOr(15) === "Inside", '<code>testLogicalOr(15)</code> should return "Inside"');
+    testString: assert(testLogicalOr(15) === "Inside");
   - text: <code>testLogicalOr(19)</code> should return "Inside"
-    testString: assert(testLogicalOr(19) === "Inside", '<code>testLogicalOr(19)</code> should return "Inside"');
+    testString: assert(testLogicalOr(19) === "Inside");
   - text: <code>testLogicalOr(20)</code> should return "Inside"
-    testString: assert(testLogicalOr(20) === "Inside", '<code>testLogicalOr(20)</code> should return "Inside"');
+    testString: assert(testLogicalOr(20) === "Inside");
   - text: <code>testLogicalOr(21)</code> should return "Outside"
-    testString: assert(testLogicalOr(21) === "Outside", '<code>testLogicalOr(21)</code> should return "Outside"');
+    testString: assert(testLogicalOr(21) === "Outside");
   - text: <code>testLogicalOr(25)</code> should return "Outside"
-    testString: assert(testLogicalOr(25) === "Outside", '<code>testLogicalOr(25)</code> should return "Outside"');
+    testString: assert(testLogicalOr(25) === "Outside");
 
 ```
 

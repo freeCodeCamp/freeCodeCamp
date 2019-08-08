@@ -1,19 +1,21 @@
 ---
 title: Override All Other Styles by using Important
 ---
-## Override All Other Styles by using Important
+# Override All Other Styles by using Important
 
+---
+## Problem Explanation
 You can override all other styles in CSS by using `!important`.
 
 This override is considered the most important and takes precedence over the rest.
 
 The list of most important to least important is as follows:
-``` 
+
 1. important (!important) 
 2. inline styles 
 3. id declarations 
 4. class declarations 
-```
+
 
 Here is an example of how to write/apply !important:
 ```css

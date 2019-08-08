@@ -26,7 +26,6 @@ function largestPrimeFactor(number) {
  } 
 ```
 
-*   [Код запуска](https://repl.it/@ezioda004/Problem-3-Largest-prime-factor)
 
 ### Ресурсы:
 
