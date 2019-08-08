@@ -1,7 +1,7 @@
 ---
 title: Create a More Complex Shape Using CSS and HTML
 ---
-## Create a More Complex Shape Using CSS and HTML
+# Create a More Complex Shape Using CSS and HTML
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/create-a-more-complex-shape-using-css-and-html/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

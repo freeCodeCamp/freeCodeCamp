@@ -62,7 +62,6 @@ var convertToRoman = function(num) {
  convertToRoman(36); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmf/0)
 
 ### 代码说明：
 
@@ -128,7 +127,6 @@ function convertToRoman(num) {
  convertToRoman(97); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/C1YV)
 
 ### 代码说明：
 
@@ -185,7 +183,6 @@ function convertToRoman(num) {
  convertToRoman(36); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/C1YV)
 
 ### 代码说明：
 

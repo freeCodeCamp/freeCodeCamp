@@ -1,7 +1,7 @@
 ---
-title: Paper sheets of standard sizes - an expected-value problem
+title: 'Problem 151: Paper sheets of standard sizes: an expected-value problem'
 ---
-## Problem 151: Paper sheets of standard sizes: an expected-value problem
+# Problem 151: Paper sheets of standard sizes: an expected-value problem
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/project-euler/problem-151-paper-sheets-of-standard-sizes-an-expected-value-problem/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -9,6 +9,8 @@ Experiment with alignment to find exciting new visual combinations that make you
 
 Use CSS to align text whenever possible. You may encounter HTML alignment tags (e.g., `<p align="right"></p>` or `<center></center>`), but they are deprecated in HTML 5.
 
+There are four main ways to align a paragraph, which we'll discuss in further detail below: Flush Left, Flush Right, Justified, and Centered. There are various factors to look at to determine which alignment will work best for your application.
+
 ### Left-justified Text
 
 Default, `text-align: left;`
@@ -50,7 +52,7 @@ Can be used for:
 
 `text-align: justify;`
 
-Full-justified text is tricky to recommend for body text, as large gaps can appear between words in some lines. However, skilled desgigners can make beautiful use of it.
+Full-justified text is tricky to recommend for body text, as large gaps can appear between words in some lines. However, skilled designers can make beautiful use of it.
 
 Can be used for:
 * Captions

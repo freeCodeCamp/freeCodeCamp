@@ -70,7 +70,6 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLow/0)
 
 ### 代码说明：
 
@@ -112,7 +111,6 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLoy/0)
 
 ### 代码说明：
 
@@ -143,7 +141,6 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLoz/0)
 
 ### 代码说明：
 

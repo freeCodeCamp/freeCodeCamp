@@ -72,7 +72,6 @@ function updateRecords(id, prop, value) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/C2AZ/0)
 
 ### Explicación del código:
 

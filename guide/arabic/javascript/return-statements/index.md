@@ -16,20 +16,21 @@ localeTitle: بيان العودة
 
 عدم إرجاع أي شيء على سطر جديد بدون استخدام الأقواس. هذا هو quirk JavaScript وستكون النتيجة غير محددة. حاول دائمًا استخدام الأقواس عند إرجاع شيء ما على أسطر متعددة.
 
- `function foo() { 
-    return 
-      1; 
- } 
- 
- function boo() { 
-    return ( 
-      1 
-    ); 
- } 
- 
- foo(); --> undefined 
- boo(); --> 1 
-` 
+```javascript
+function foo() {
+    return
+      1;
+}
+
+function boo() {
+    return (
+      1
+    );
+}
+
+foo(); --> undefined
+boo(); --> 1
+``` 
 
 ## أمثلة
 

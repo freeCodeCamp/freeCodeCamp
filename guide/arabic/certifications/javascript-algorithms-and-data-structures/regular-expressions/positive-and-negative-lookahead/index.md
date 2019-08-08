@@ -11,7 +11,8 @@ localeTitle: الإيجابية و السلبية Lookahead
 
 ## حل :
 
- `let sampleWord = "astronaut"; 
- let pwRegex = /(?=\w{5,})(?=\D*\d{2})/; 
- let result = pwRegex.test(sampleWord); 
-`
+```javascript
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{5,})(?=\D*\d{2})/;
+let result = pwRegex.test(sampleWord);
+```

@@ -63,7 +63,7 @@ CSS动画为网页增添了美感。 CSS动画可以将CSS样式转换为另一�
  } 
 ```
 
-![Imgur](https://imgur.com/sczZjwm.gif)
+![Imgur](https://cdn-media-1.freecodecamp.org/imgr/sczZjwm.gif)
 
 #### 更多信息：
 

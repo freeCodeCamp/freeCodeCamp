@@ -1,29 +1,32 @@
 ---
 title: Use Inheritance So You Don't Repeat Yourself
 ---
-## Use Inheritance So You Don't Repeat Yourself
+# Use Inheritance So You Don't Repeat Yourself
 
-### Solution 
-Remove the "eat" method from Cat.prototype and Bear.prototype and add it to the Animal.prototype.
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 function Cat(name) {
-  this.name = name; 
-};
+  this.name = name;
+}
 
 Cat.prototype = {
   constructor: Cat
 };
 
 function Bear(name) {
-  this.name = name; 
-};
+  this.name = name;
+}
 
 Bear.prototype = {
   constructor: Bear
 };
 
-function Animal() { };
+function Animal() {}
 
 Animal.prototype = {
   constructor: Animal,
@@ -32,3 +35,7 @@ Animal.prototype = {
   }
 };
 ```
+
+#### Code Explanation
+* Remove the "eat" method from Cat.prototype and Bear.prototype and add it to the Animal.prototype.
+</details>

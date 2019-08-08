@@ -12,7 +12,7 @@ Depth First Search is one of the most simple graph algorithms. It traverses the 
 
 ### Implementation (C++14)
 
- ```c++
+ ```cpp
 #include <iostream> 
 #include <vector> 
 #include <queue>  
@@ -93,7 +93,7 @@ Worse Case Time Complexity: O(n)
 Depth First Search is complete on a finite set of nodes. I works better on shallow trees.
 
 ### Implementation of DFS in C++
-```c++
+```cpp
 #include<iostream>
 #include<vector>
 #include<queue>

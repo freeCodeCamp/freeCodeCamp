@@ -1,5 +1,5 @@
 ---
-title: Path sum - two ways
+title: 'Problem 81: Path sum: two ways'
 ---
 ## Problem 81: Path sum: two ways
 

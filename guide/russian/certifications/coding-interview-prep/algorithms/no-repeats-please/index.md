@@ -145,7 +145,6 @@ function permAlone(str) {
  permAlone('aab'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLop/0)
 
 ### Код Объяснение:
 

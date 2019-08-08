@@ -2,6 +2,7 @@
 id: 587d7db9367417b2b2512ba7
 title: Specify Exact Number of Matches
 challengeType: 1
+forumTopicId: 301365
 ---
 
 ## Description
@@ -9,7 +10,17 @@ challengeType: 1
 You can specify the lower and upper number of patterns with <code>quantity specifiers</code> using curly brackets. Sometimes you only want a specific number of matches.
 To specify a certain number of patterns, just have that one number between the curly brackets.
 For example, to match only the word <code>"hah"</code> with the letter <code>a</code> <code>3</code> times, your regex would be <code>/ha{3}h/</code>.
-<blockquote>let A4 = "haaaah";<br>let A3 = "haaah";<br>let A100 = "h" + "a".repeat(100) + "h";<br>let multipleHA = /ha{3}h/;<br>multipleHA.test(A4); // Returns false<br>multipleHA.test(A3); // Returns true<br>multipleHA.test(A100); // Returns false</blockquote>
+
+```js
+let A4 = "haaaah";
+let A3 = "haaah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleHA = /ha{3}h/;
+multipleHA.test(A4); // Returns false
+multipleHA.test(A3); // Returns true
+multipleHA.test(A100); // Returns false
+```
+
 </section>
 
 ## Instructions
@@ -23,17 +34,17 @@ Change the regex <code>timRegex</code> to match the word <code>"Timber"</code> o
 ```yml
 tests:
   - text: Your regex should use curly brackets.
-    testString: assert(timRegex.source.match(/{.*?}/).length > 0, 'Your regex should use curly brackets.');
+    testString: assert(timRegex.source.match(/{.*?}/).length > 0);
   - text: Your regex should not match <code>"Timber"</code>
-    testString: assert(!timRegex.test("Timber"), 'Your regex should not match <code>"Timber"</code>');
+    testString: assert(!timRegex.test("Timber"));
   - text: Your regex should not match <code>"Timmber"</code>
-    testString: assert(!timRegex.test("Timmber"), 'Your regex should not match <code>"Timmber"</code>');
+    testString: assert(!timRegex.test("Timmber"));
   - text: Your regex should not match <code>"Timmmber"</code>
-    testString: assert(!timRegex.test("Timmmber"), 'Your regex should not match <code>"Timmmber"</code>');
+    testString: assert(!timRegex.test("Timmmber"));
   - text: Your regex should match <code>"Timmmmber"</code>
-    testString: assert(timRegex.test("Timmmmber"), 'Your regex should match <code>"Timmmmber"</code>');
+    testString: assert(timRegex.test("Timmmmber"));
   - text: Your regex should not match <code>"Timber"</code> with 30 <code>m</code>'s in it.
-    testString: assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"), 'Your regex should not match <code>"Timber"</code> with 30 <code>m</code>\'s in it.');
+    testString: assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"));
 
 ```
 
@@ -60,6 +71,9 @@ let result = timRegex.test(timStr);
 <section id='solution'>
 
 ```js
-// solution required
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
 ```
+
 </section>

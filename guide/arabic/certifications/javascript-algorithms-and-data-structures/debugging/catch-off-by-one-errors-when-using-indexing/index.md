@@ -8,12 +8,13 @@ localeTitle: القبض عن طريق واحدة من الأخطاء عند اس
 
 بسبب الطريقة التي تعمل بها فهارس جافا سكريبت `firstFive` لديها **خمسة عناصر** لكنها مفهرسة من **0 إلى 4** !
 
- `console.log(len); // 5 
- console.log(firstFive[0]); // 1 
- /**/ 
- console.log(firstFive[4]); // 5 
- console.log(firstFive[5]); // undefined 
-` 
+```javascript
+console.log(len); // 5
+console.log(firstFive[0]); // 1
+/**/
+console.log(firstFive[4]); // 5
+console.log(firstFive[5]); // undefined
+``` 
 
 يجب أن يعطيك ما يكفي لإدراك حدود `firstFive` . توجيه انتباهك إلى الحلقة. ماذا تعمل، أو ماذا تفعل؟ يمكنك محاولة تصحيح الأخطاء لمعرفة ذلك!
 

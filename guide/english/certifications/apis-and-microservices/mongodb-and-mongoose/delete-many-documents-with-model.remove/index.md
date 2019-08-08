@@ -1,7 +1,7 @@
 ---
 title: Delete Many Documents with model.remove()
 ---
-## Delete Many Documents with model.remove()
+# Delete Many Documents with model.remove()
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/delete-many-documents-with-model.remove/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

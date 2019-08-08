@@ -35,5 +35,5 @@ Ele segue o mesmo padrão do React, em que as visualizações (o que você vê n
 
 Existem duas maneiras fáceis e rápidas de começar a usar o React Native. Dependendo da sua situação, pode ser uma opção melhor para você.
 
-1.  [Criar React Native App](https://www.npmjs.com/package/create-react-native-app) - Semelhante ao Create React App ele se levanta em execução usando o terminal.
-2.  [Expo](https://expo.io) - Ferramenta bastante utilizada para prototipagem de um aplicativo. Usando a Expo você pode até mesmo criar um aplicativo rápido usando recursos de arrastar e soltar do snack.expo.io no broswer.
+1.  [Create React Native App](https://www.npmjs.com/package/create-react-native-app) - Semelhante ao Create React App ele se levanta em execução usando o terminal.
+2.  [Expo](https://expo.io) - Melhor para prototipagem de um aplicativo ou se está em estágio anterior. Usando a Expo você pode até mesmo criar um aplicativo rápido usando recursos de arrastar e soltar do snack.expo.io no broswer.

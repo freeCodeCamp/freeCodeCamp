@@ -8,7 +8,30 @@ Java inheritance refers to the ability of a Java Class to `inherit` the properti
 *   The Class that extends or inherits is called a **subclass**
 *   The Class that is being extended or inherited is called a **superclass**
 
+## Why use inheritance in java
+- For Method Overriding (so runtime polymorphism can be achieved).
+- For Code Reusability.
+
+## Terms used in Inheritance
+- Class: A class is a group of objects which have common properties. It is a template or blueprint from which objects are created.
+- Sub Class/Child Class: Subclass is a class which inherits the other class. It is also called a derived class, extended class, or child class.
+- Super Class/Parent Class: Superclass is the class from where a subclass inherits the features. It is also called a base class or a parent class.
+- Reusability: As the name specifies, reusability is a mechanism which facilitates you to reuse the fields and methods of the existing class when you create a new class. You can use the same fields and methods already defined in the previous class.
+
 Thus, inheritance gives Java the cool capability of _re-using_ code, or sharing code between classes!
+
+## Syntax
+```java
+class Subclass-name extends Superclass-name  
+{  
+   //methods and fields  
+}  
+```
+
+The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
+
+In the terminology of Java, a class which is inherited is called a parent or superclass, and the new class is called child or subclass.
+
 
 Let's describe it with the classic example of a `Vehicle` class and a `Car` class :
 
@@ -42,7 +65,7 @@ tesla.start();
 tesla.stop();
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJXz/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJXz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 But, does the parent class have the methods of the child? No, it doesn't.
 
@@ -73,7 +96,7 @@ Although, the opposite is not possible :
 Car car = new Vehicle(); // ERROR
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYB/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYB/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Since you can reference a Java subclass as a superclass instance, you can easily cast an instance of a subclass object to a superclass instance. It is possible to cast a superclass object into a subclass type, but _only if the object is really an instance of the subclass_. So keep this in mind :
 
@@ -87,7 +110,7 @@ Vehicle v = bike; // upcasting, no problem here.
 Car car3 = (Car)bike; // Compilation Error : as bike is NOT a instance of Car
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYM/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYM/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Now you know how to share code through a parent-child relationship. But, what if, you do not like the implementation of a particular method in the child class and want to write a new one for it? What do you do then?
 
@@ -112,7 +135,7 @@ Car car = new Car();
 car.start(); // "Car start code"
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYZ/1' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYZ/1' target='_blank' rel='nofollow'>Run Code</a>
 
 So, it's pretty simple to override methods in the subclass. Although, there is a _catch_. Only that superclass method with the _exact same method signature_ as the subclass method will be overriden. That means the subclass method definition must have the exact same name, same number and type of parameters, and in the exact same sequence. Thus, `public void start(String key)` would not override `public void start()`.
 
@@ -144,7 +167,7 @@ Car car = new Car();
 car.run(); // "Vehicle start code"
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY4/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY4/0' target='_blank' rel='nofollow'>Run Code</a>
 
 **N.B.** : Although you can call the parent method by using a `super` call, you cannot go up the inheritance hierarchy with chained `super` calls.
 
@@ -182,10 +205,14 @@ public class Car extends Vehicle {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY8/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY8/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Remember, if the superclass does not have any constructors defined, you don't have to call it explicitely in the subclass. Java handles that internally for you! Invocation to `super` constructor is done in the case when the super class is to be called with any other constructor other than the _default constructor_.
 
 If no other constructors are defined, then Java invokes the default super class constructor (_even if not defined explicitly_).
 
 Congrats, now you know all about Inheritance! Read more about advanced ways to inherit things in Abstract Classes and [Interfaces](//forum.freecodecamp.com/t/java-docs-interfaces)!
+
+Here are some useful links to learn more about Inheritance in Java (great for those starting out with Java):
+ - https://www.codejava.net/java-core/the-java-language/12-rules-and-examples-about-inheritance-in-java
+ - https://medium.com/java-for-absolute-dummies/inheritance-in-java-programming-39176e0016f3

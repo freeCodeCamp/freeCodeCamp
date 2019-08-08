@@ -67,7 +67,7 @@ import java.util.Arrays;
 
 implementación en C ++
 
-```C++
+```cpp
 #include <iostream> 
  using namespace std; 
  void heapify(int arr[], int n, int i) 

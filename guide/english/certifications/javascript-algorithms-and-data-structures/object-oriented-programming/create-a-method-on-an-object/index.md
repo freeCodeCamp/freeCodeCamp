@@ -1,27 +1,30 @@
 ---
 title: Create a Method on an Object
 ---
-## Create a Method on an Object
+# Create a Method on an Object
 
-### Method:
+---
+## Problem Explanation
 
 An objects function must be initialised within the object itself. This is demonstrated in the following code.
 
 ```javascript
-
 let obj = {
-  property1 = 1,
-  
+  property1: 1,
+
   function1: function() {
     //Code to be exectued
   }
 };
-
 ```
-### Solution:
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
-
 let dog = {
   name: "Spot",
   numLegs: 4,
@@ -31,5 +34,6 @@ let dog = {
 };
 
 dog.sayLegs();
-
 ```
+
+</details>
