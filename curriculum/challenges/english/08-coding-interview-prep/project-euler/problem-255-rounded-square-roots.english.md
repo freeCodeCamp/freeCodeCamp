@@ -2,6 +2,7 @@
 id: 5900f46d1000cf542c50ff7f
 challengeType: 5
 title: 'Problem 255: Rounded Square Roots'
+forumTopicId: 301903
 ---
 
 ## Description
@@ -43,7 +44,7 @@ Note: The symbols ⌊x⌋ and ⌈x⌉ represent the floor function and ceiling f
 ```yml
 tests:
   - text: <code>euler255()</code> should return 4.447401118.
-    testString: assert.strictEqual(euler255(), 4.447401118, '<code>euler255()</code> should return 4.447401118.');
+    testString: assert.strictEqual(euler255(), 4.447401118);
 
 ```
 
@@ -75,4 +76,5 @@ euler255();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,18 @@
 title: Align columns
 id: 594810f028c0303b75339ad0
 challengeType: 5
+forumTopicId: 302224
 ---
 
 ## Description
 <section id='description'>
+
 Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Use the following text to test your programs:
 <pre>
 Given$a$text$file$of$many$lines
@@ -41,13 +44,13 @@ or$center$justified$within$its$column.
 ```yml
 tests:
   - text: <code>formatText</code> is a function.
-    testString: assert(typeof formatText === 'function', '<code>formatText</code> is a function.');
+    testString: assert(typeof formatText === 'function');
   - text: '<code>formatText</code> with the above input and "right" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''right''), rightAligned, ''<code>formatText</code> with the above input and "right" justification should produce the following: '');'
+    testString: 'assert.strictEqual(formatText(testInput, ''right''), rightAligned);'
   - text: '<code>formatText</code> with the above input and "left" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''left''), leftAligned, ''<code>formatText</code> with the above input and "left" justification should produce the following: '');'
+    testString: 'assert.strictEqual(formatText(testInput, ''left''), leftAligned);'
   - text: '<code>formatText</code> with the above input and "center" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''center''), centerAligned, ''<code>formatText</code> with the above input and "center" justification should produce the following: '');'
+    testString: 'assert.strictEqual(formatText(testInput, ''center''), centerAligned);'
 
 ```
 
@@ -130,6 +133,7 @@ const centerAligned = '  Given        a        text     file    of     many     
 'justified,   right    justified\n' +
 '    or       center   justified within  its   column. ';
 ```
+
 </div>
 
 </section>

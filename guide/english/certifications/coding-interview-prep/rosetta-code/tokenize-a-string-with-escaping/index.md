@@ -1,7 +1,7 @@
 ---
 title: Tokenize a string with escaping
 ---
-## Tokenize a string with escaping
+# Tokenize a string with escaping
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/tokenize-a-string-with-escaping/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

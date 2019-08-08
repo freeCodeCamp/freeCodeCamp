@@ -2,6 +2,7 @@
 id: bad88fee1348ce8acef08815
 title: Use the Bootstrap Grid to Put Elements Side By Side
 challengeType: 0
+forumTopicId: 18371
 ---
 
 ## Description
@@ -25,13 +26,13 @@ The <code>row</code> class is applied to a <code>div</code>, and the buttons the
 ```yml
 tests:
   - text: Your buttons should all be nested within the same <code>div</code> element with the class <code>row</code>.
-    testString: assert($("div.row:has(button)").length > 0, 'Your buttons should all be nested within the same <code>div</code> element with the class <code>row</code>.');
+    testString: assert($("div.row:has(button)").length > 0);
   - text: Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class <code>col-xs-4</code>.
-    testString: assert($("div.col-xs-4:has(button)").length > 2, 'Each of your Bootstrap buttons should be nested within its own <code>div</code> element with the class <code>col-xs-4</code>.');
+    testString: assert($("div.col-xs-4:has(button)").length > 2);
   - text: Make sure each of your <code>button</code> elements has a closing tag.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, 'Make sure each of your <code>button</code> elements has a closing tag.');
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
   - text: Make sure each of your <code>div</code> elements has a closing tag.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.');
+    testString: assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length);
 
 ```
 
@@ -185,4 +186,5 @@ tests:
   </form>
 </div>
 ```
+
 </section>

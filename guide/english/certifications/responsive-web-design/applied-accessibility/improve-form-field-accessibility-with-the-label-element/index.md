@@ -1,7 +1,7 @@
 ---
 title: Improve Form Field Accessibility with the label Element
 ---
-## Improve Form Field Accessibility with the label Element
+# Improve Form Field Accessibility with the label Element
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/improve-form-field-accessibility-with-the-label-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

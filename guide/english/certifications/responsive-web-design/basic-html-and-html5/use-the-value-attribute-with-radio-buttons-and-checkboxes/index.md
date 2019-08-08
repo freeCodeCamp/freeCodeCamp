@@ -1,7 +1,10 @@
 ---
 title: Use the value attribute with Radio Buttons and Checkboxes
 ---
-## Use the value attribute with Radio Buttons and Checkboxes
+# Use the value attribute with Radio Buttons and Checkboxes
+
+---
+## Problem Explanation
 To pass the challenge, add the `value` attribute to the `input` elements of type `checkbox` and `radio`. Use the `input` label text, in lowercase, as the value for the attribute. The `value` attribute will make sure the choices are identifiable when the form is submitted.
 
 Example form with value attributes:

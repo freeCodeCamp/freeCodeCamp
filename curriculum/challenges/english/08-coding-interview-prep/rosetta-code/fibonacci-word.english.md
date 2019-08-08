@@ -2,6 +2,7 @@
 title: Fibonacci word
 id: 5992e222d397f00d21122931
 challengeType: 5
+forumTopicId: 302269
 ---
 
 ## Description

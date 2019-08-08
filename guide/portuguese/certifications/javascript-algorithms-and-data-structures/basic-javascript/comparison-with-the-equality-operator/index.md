@@ -31,8 +31,6 @@ function testEqual(val) {
  testEqual(10); 
 ```
 
-· [Executar código em repl.it](https://repl.it/@AdrianSkar/Basic-JS-Equality-operator)
-
 ### Explicação de código
 
 A função primeiro avalia `if` a condição `(val == 12)` avaliada como `true` . Em caso afirmativo, retorna a instrução entre as chaves ("Equal"). Caso contrário, retorna a próxima instrução de `return` fora deles ("Não é igual").

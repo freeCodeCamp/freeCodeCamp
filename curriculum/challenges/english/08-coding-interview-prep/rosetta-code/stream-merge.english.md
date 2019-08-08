@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc802a
 title: Stream Merge
 challengeType: 5
+forumTopicId: 302326
 ---
 
 ## Description
 <section id='description'>
+
 Write a function that takes multiple sorted arrays of items, and returns one array of sorted items.
 </section>
 
@@ -39,6 +41,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

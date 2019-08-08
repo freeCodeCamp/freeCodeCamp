@@ -3,6 +3,7 @@ id: 587d781a367417b2b2512ab9
 title: Use the em Tag to Italicize Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJRBtp'
+forumTopicId: 301078
 ---
 
 ## Description
@@ -21,9 +22,9 @@ Wrap an <code>em</code> tag around the contents of the paragraph tag to give it 
 ```yml
 tests:
   - text: Your code should add an <code>em</code> tag to the markup.
-    testString: assert($('em').length == 1, 'Your code should add an <code>em</code> tag to the markup.');
+    testString: assert($('em').length == 1);
   - text: The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.
-    testString: assert($('p').children().length == 1 && $('em').children().length == 2, 'The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.');
+    testString: assert($('p').children().length == 1 && $('em').children().length == 2);
 
 ```
 
@@ -124,4 +125,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

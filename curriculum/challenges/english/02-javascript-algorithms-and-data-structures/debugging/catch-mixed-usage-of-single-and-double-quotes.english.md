@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b37
 title: Catch Mixed Usage of Single and Double Quotes
 challengeType: 1
+forumTopicId: 301188
 ---
 
 ## Description
@@ -38,9 +39,9 @@ Fix the string so it either uses different quotes for the <code>href</code> valu
 ```yml
 tests:
   - text: Your code should fix the quotes around the <code>href</code> value "#Home" by either changing or escaping them.
-    testString: assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g), 'Your code should fix the quotes around the <code>href</code> value "#Home" by either changing or escaping them.');
+    testString: assert(code.match(/<a href=\s*?('|\\")#Home\1\s*?>/g));
   - text: Your code should keep the double quotes around the entire string.
-    testString: assert(code.match(/"<p>.*?<\/p>";/g), 'Your code should keep the double quotes around the entire string.');
+    testString: assert(code.match(/"<p>.*?<\/p>";/g));
 
 ```
 
@@ -69,4 +70,5 @@ console.log(innerHtml);
 let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
 console.log(innerHtml);
 ```
+
 </section>

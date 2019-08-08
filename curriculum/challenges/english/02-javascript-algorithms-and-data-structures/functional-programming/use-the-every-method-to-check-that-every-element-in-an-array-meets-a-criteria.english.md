@@ -2,6 +2,7 @@
 id: 587d7dab367417b2b2512b6e
 title: Use the every Method to Check that Every Element in an Array Meets a Criteria
 challengeType: 1
+forumTopicId: 301312
 ---
 
 ## Description
@@ -30,13 +31,13 @@ Use the <code>every</code> method inside the <code>checkPositive</code> function
 ```yml
 tests:
   - text: Your code should use the <code>every</code> method.
-    testString: assert(code.match(/\.every/g), 'Your code should use the <code>every</code> method.');
+    testString: assert(code.match(/\.every/g));
   - text: <code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.
-    testString: assert(!checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.');
+    testString: assert.isFalse(checkPositive([1, 2, 3, -4, 5]));
   - text: <code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.
-    testString: assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');
+    testString: assert.isTrue(checkPositive([1, 2, 3, 4, 5]));
   - text: <code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.
-    testString: assert(!checkPositive([1, -2, 3, -4, 5]), '<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.');
+    testString: assert.isFalse(checkPositive([1, -2, 3, -4, 5]));
 
 ```
 
@@ -74,4 +75,5 @@ function checkPositive(arr) {
 }
 checkPositive([1, 2, 3, -4, 5]);
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4d
 title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 challengeType: 1
+forumTopicId: 301217
 ---
 
 ## Description
@@ -95,4 +96,5 @@ const stats = {
 
 const half = ( {max, min} ) => (max + min) / 2.0;
 ```
+
 </section>

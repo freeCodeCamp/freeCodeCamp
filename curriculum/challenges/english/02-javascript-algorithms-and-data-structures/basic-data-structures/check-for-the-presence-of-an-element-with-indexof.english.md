@@ -2,6 +2,7 @@
 id: 587d7b7b367417b2b2512b14
 title: Check For The Presence of an Element With indexOf()
 challengeType: 1
+forumTopicId: 301154
 ---
 
 ## Description
@@ -30,15 +31,15 @@ fruits.indexOf('pears'); // returns 1, the first index at which the element exis
 ```yml
 tests:
   - text: <code>quickCheck(["squash", "onions", "shallots"], "mushrooms")</code> should return <code>false</code>
-    testString: assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false, '<code>quickCheck(["squash", "onions", "shallots"], "mushrooms")</code> should return <code>false</code>');
+    testString: assert.strictEqual(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'), false);
   - text: <code>quickCheck(["onions", "squash", "shallots"], "onions")</code> should return <code>true</code>
-    testString: assert.strictEqual(quickCheck(['onions', 'squash', 'shallots'], 'onions'), true, '<code>quickCheck(["onions", "squash", "shallots"], "onions")</code> should return <code>true</code>');
+    testString: assert.strictEqual(quickCheck(['onions', 'squash', 'shallots'], 'onions'), true);
   - text: <code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>
-    testString: assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true, '<code>quickCheck([3, 5, 9, 125, 45, 2], 125)</code> should return <code>true</code>');
+    testString: assert.strictEqual(quickCheck([3, 5, 9, 125, 45, 2], 125), true);
   - text: <code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>
-    testString: assert.strictEqual(quickCheck([true, false, false], undefined), false, '<code>quickCheck([true, false, false], undefined)</code> should return <code>false</code>');
+    testString: assert.strictEqual(quickCheck([true, false, false], undefined), false);
   - text: The <code>quickCheck</code> function should utilize the <code>indexOf()</code> method
-    testString: assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1, 'The <code>quickCheck</code> function should utilize the <code>indexOf()</code> method');
+    testString: assert.notStrictEqual(quickCheck.toString().search(/\.indexOf\(/), -1);
 
 ```
 
@@ -76,4 +77,5 @@ function quickCheck(arr, elem) {
   // change code above this line
 }
 ```
+
 </section>

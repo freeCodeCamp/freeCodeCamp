@@ -3,6 +3,7 @@ id: 587d7b7e367417b2b2512b24
 title: Use the Conditional (Ternary) Operator
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c3JRmSg'
+forumTopicId: 301181
 ---
 
 ## Description
@@ -44,13 +45,13 @@ Use the <code>conditional operator</code> in the <code>checkEqual</code> functio
 ```yml
 tests:
   - text: <code>checkEqual</code> should use the <code>conditional operator</code>
-    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code), '<code>checkEqual</code> should use the <code>conditional operator</code>');
+    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/.test(code));
   - text: <code>checkEqual(1, 2)</code> should return "Not Equal"
-    testString: assert(checkEqual(1, 2) === "Not Equal", '<code>checkEqual(1, 2)</code> should return "Not Equal"');
+    testString: assert(checkEqual(1, 2) === "Not Equal");
   - text: <code>checkEqual(1, 1)</code> should return "Equal"
-    testString: assert(checkEqual(1, 1) === "Equal", '<code>checkEqual(1, 1)</code> should return "Equal"');
+    testString: assert(checkEqual(1, 1) === "Equal");
   - text: <code>checkEqual(1, -1)</code> should return "Not Equal"
-    testString: assert(checkEqual(1, -1) === "Not Equal", '<code>checkEqual(1, -1)</code> should return "Not Equal"');
+    testString: assert(checkEqual(1, -1) === "Not Equal");
 ```
 
 </section>
@@ -82,4 +83,5 @@ function checkEqual(a, b) {
   return a === b ? "Equal" : "Not Equal";
 }
 ```
+
 </section>

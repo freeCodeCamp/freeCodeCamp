@@ -2,6 +2,7 @@
 id: 587d7dba367417b2b2512ba8
 title: Check for All or None
 challengeType: 1
+forumTopicId: 301338
 ---
 
 ## Description
@@ -31,13 +32,13 @@ Change the regex <code>favRegex</code> to match both the American English (favor
 ```yml
 tests:
   - text: Your regex should use the optional symbol, <code>?</code>.
-    testString: assert(favRegex.source.match(/\?/).length > 0, 'Your regex should use the optional symbol, <code>?</code>.');
+    testString: assert(favRegex.source.match(/\?/).length > 0);
   - text: Your regex should match <code>"favorite"</code>
-    testString: assert(favRegex.test("favorite"), 'Your regex should match <code>"favorite"</code>');
+    testString: assert(favRegex.test("favorite"));
   - text: Your regex should match <code>"favourite"</code>
-    testString: assert(favRegex.test("favourite"), 'Your regex should match <code>"favourite"</code>');
+    testString: assert(favRegex.test("favourite"));
   - text: Your regex should not match <code>"fav"</code>
-    testString: assert(!favRegex.test("fav"), 'Your regex should not match <code>"fav"</code>');
+    testString: assert(!favRegex.test("fav"));
 
 ```
 
@@ -68,4 +69,5 @@ let favWord = "favorite";
 let favRegex = /favou?r/;
 let result = favRegex.test(favWord);
 ```
+
 </section>

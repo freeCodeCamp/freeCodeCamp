@@ -3,6 +3,7 @@ id: 5a9d7295424fe3d0e10cad14
 title: Inherit CSS Variables
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLZZhZ'
+forumTopicId: 301088
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Define a variable named <code>--penguin-belly</code> in the <code>:root</code> s
 ```yml
 tests:
   - text: Declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.
-    testString: assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), 'Declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.');
+    testString: assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi));
 
 ```
 

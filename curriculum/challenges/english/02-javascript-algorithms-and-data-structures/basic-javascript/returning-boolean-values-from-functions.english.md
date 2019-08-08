@@ -3,6 +3,7 @@ id: 5679ceb97cbaa8c51670a16b
 title: Returning Boolean Values from Functions
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cp62qAQ'
+forumTopicId: 18273
 ---
 
 ## Description
@@ -41,11 +42,11 @@ Fix the function <code>isLess</code> to remove the <code>if/else</code> statemen
 ```yml
 tests:
   - text: <code>isLess(10,15)</code> should return <code>true</code>
-    testString: assert(isLess(10,15) === true, '<code>isLess(10,15)</code> should return <code>true</code>');
+    testString: assert(isLess(10,15) === true);
   - text: <code>isLess(15,10)</code> should return <code>false</code>
-    testString: assert(isLess(15, 10) === false, '<code>isLess(15,10)</code> should return <code>false</code>');
+    testString: assert(isLess(15, 10) === false);
   - text: You should not use any <code>if</code> or <code>else</code> statements
-    testString: assert(!/if|else/g.test(code), 'You should not use any <code>if</code> or <code>else</code> statements');
+    testString: assert(!/if|else/g.test(code));
 
 ```
 

@@ -3,6 +3,7 @@ id: 587d78a5367417b2b2512ad9
 title: Use the CSS Transform scale Property to Change the Size of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZVSg'
+forumTopicId: 301076
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Increase the size of the element with the id of <code>ball2</code> to 1.5 times 
 ```yml
 tests:
   - text: Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.
-    testString: assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');
+    testString: assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi));
 
 ```
 

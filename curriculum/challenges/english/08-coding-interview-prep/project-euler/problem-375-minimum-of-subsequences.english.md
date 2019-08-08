@@ -2,6 +2,7 @@
 id: 5900f4e41000cf542c50fff5
 challengeType: 5
 title: 'Problem 375: Minimum of subsequences'
+forumTopicId: 302037
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Find M(2 000 000 000).
 ```yml
 tests:
   - text: <code>euler375()</code> should return 7435327983715286000.
-    testString: assert.strictEqual(euler375(), 7435327983715286000, '<code>euler375()</code> should return 7435327983715286000.');
+    testString: assert.strictEqual(euler375(), 7435327983715286000);
 
 ```
 
@@ -67,4 +68,5 @@ euler375();
 ```js
 // solution required
 ```
+
 </section>

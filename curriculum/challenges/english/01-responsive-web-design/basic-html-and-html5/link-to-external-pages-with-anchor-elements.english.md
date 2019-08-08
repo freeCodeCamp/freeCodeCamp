@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08816
 title: Link to External Pages with Anchor Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/c8EkncB'
+forumTopicId: 18226
 ---
 
 ## Description
@@ -24,11 +25,11 @@ Create an <code>a</code> element that links to <code>http://freecatphotoapp.com<
 ```yml
 tests:
   - text: Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".
-    testString: assert((/cat photos/gi).test($("a").text()), 'Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".');
+    testString: assert((/cat photos/gi).test($("a").text()));
   - text: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>
-    testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")), 'You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>');
+    testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));
   - text: Make sure your <code>a</code> element has a closing tag.
-    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.');
+    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length);
 
 ```
 
@@ -72,4 +73,5 @@ tests:
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
 ```
+
 </section>

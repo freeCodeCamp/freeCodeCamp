@@ -3,6 +3,7 @@ id: bad82fee1322bd9aedf08721
 title: Understand Absolute versus Relative Units
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN66JSL'
+forumTopicId: 301089
 ---
 
 ## Description
@@ -24,9 +25,9 @@ Add a <code>padding</code> property to the element with class <code>red-box</cod
 ```yml
 tests:
   - text: Your <code>red-box</code> class should have a <code>padding</code> property.
-    testString: assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', 'Your <code>red-box</code> class should have a <code>padding</code> property.');
+    testString: assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px');
   - text: Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.
-    testString: assert(code.match(/\.red-box\s*?{(\s|.)*?padding:\s*?1\.5em/gi), 'Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.');
+    testString: assert(code.match(/\.red-box\s*?{(\s|.)*?padding:\s*?1\.5em/gi));
 
 ```
 
@@ -121,4 +122,5 @@ tests:
   <h5 class="box green-box">padding</h5>
 </div>
 ```
+
 </section>

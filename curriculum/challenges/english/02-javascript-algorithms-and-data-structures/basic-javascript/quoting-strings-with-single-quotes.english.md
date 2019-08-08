@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244b4
 title: Quoting Strings with Single Quotes
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cbQmnhM'
+forumTopicId: 18260
 ---
 
 ## Description
@@ -43,9 +44,9 @@ Right now, the <code>&#60;a&#62;</code> tag in the string uses double quotes eve
 ```yml
 tests:
   - text: Remove all the <code>backslashes</code> (<code>\</code>)
-    testString: assert(!/\\/g.test(code) && myStr.match('\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*'), 'Remove all the <code>backslashes</code> (<code>\</code>)');
+    testString: assert(!/\\/g.test(code) && myStr.match('\\s*<a href\\s*=\\s*"http://www.example.com"\\s*target\\s*=\\s*"_blank">\\s*Link\\s*</a>\\s*'));
   - text: You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>
-    testString: assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2, 'You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');
+    testString: assert(code.match(/"/g).length === 4 && code.match(/'/g).length === 2);
 
 ```
 

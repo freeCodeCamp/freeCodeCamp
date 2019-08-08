@@ -2,6 +2,7 @@
 title: Deal cards for FreeCell
 id: 59694356a6e7011f7f1c5f4e
 challengeType: 5
+forumTopicId: 302246
 ---
 
 ## Description
@@ -49,6 +50,7 @@ The algorithm follows:
   ['6S', '9C', '2H', '6H']
 ]
 ```
+
 <strong>Game #617</strong>
 
 ```js
@@ -62,6 +64,7 @@ The algorithm follows:
   ['JD', 'KS', 'KC', '4H']
 ]
 ```
+
 </section>
 
 ## Instructions
@@ -76,15 +79,15 @@ Deals can also be checked against <a href="https://freecellgamesolutions.com/" t
 ```yml
 tests:
   - text: <code>dealFreeCell</code> is a function.
-    testString: assert(typeof dealFreeCell === 'function', '<code>dealFreeCell</code> is a function.');
+    testString: assert(typeof dealFreeCell === 'function');
   - text: <code>dealFreeCell(seed)</code> should return an object.
-    testString: assert(typeof dealFreeCell(1) === 'object', '<code>dealFreeCell(seed)</code> should return an object.');
+    testString: assert(typeof dealFreeCell(1) === 'object');
   - text: <code>dealFreeCell(seed)</code> should return an array of length 7.
-    testString: assert(dealFreeCell(1).length === 7, '<code>dealFreeCell(seed)</code> should return an array of length 7.');
+    testString: assert(dealFreeCell(1).length === 7);
   - text: "<code>dealFreeCell(1)</code> should return an array identical to example \"Game #1\""
-    testString: "assert.deepEqual(dealFreeCell(1), game1, '<code>dealFreeCell(1)</code> should return an array identical to example \"Game #1\"');"
+    testString: "assert.deepEqual(dealFreeCell(1), game1);"
   - text: "<code>dealFreeCell(617)</code> should return an array identical to example \"Game #617\""
-    testString: "assert.deepEqual(dealFreeCell(617), game617, '<code>dealFreeCell(617)</code> should return an array identical to example \"Game #617\"');"
+    testString: "assert.deepEqual(dealFreeCell(617), game617);"
 
 ```
 

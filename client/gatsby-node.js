@@ -4,16 +4,13 @@ const { createFilePath } = require('gatsby-source-filesystem');
 
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
-const { getGithubPath } = require('./utils/getGithubPath');
 const {
   createChallengePages,
   createBlockIntroPages,
-  createSuperBlockIntroPages,
-  createGuideArticlePages
+  createSuperBlockIntroPages
 } = require('./utils/gatsby');
 
 const createByIdentityMap = {
-  guideMarkdown: createGuideArticlePages,
   blockIntroMarkdown: createBlockIntroPages,
   superBlockIntroMarkdown: createSuperBlockIntroPages
 };
@@ -34,16 +31,10 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
     const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
       const {
-        fileAbsolutePath,
         frontmatter: { component = '' }
       } = node;
       createNodeField({ node, name: 'slug', value: slug });
       createNodeField({ node, name: 'component', value: component });
-      createNodeField({
-        node,
-        name: 'githubPath',
-        value: getGithubPath(fileAbsolutePath)
-      });
     }
   }
 };
@@ -86,7 +77,6 @@ exports.createPages = function createPages({ graphql, actions }) {
                   slug
                   nodeIdentity
                   component
-                  githubPath
                 }
                 frontmatter {
                   block

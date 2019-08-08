@@ -3,6 +3,7 @@ id: 587d774e367417b2b2512aa0
 title: Wrap Content in the article Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp79S3'
+forumTopicId: 301029
 ---
 
 ## Description
@@ -31,9 +32,9 @@ Camper Cat used <code>article</code> tags to wrap the posts on his blog page, bu
 ```yml
 tests:
   - text: Your code should have three <code>article</code> tags.
-    testString: assert($('article').length == 3, 'Your code should have three <code>article</code> tags.');
+    testString: assert($('article').length == 3);
   - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
+    testString: assert($('div').length == 0);
 
 ```
 
@@ -100,4 +101,5 @@ tests:
   </article>
 </main>
 ```
+
 </section>

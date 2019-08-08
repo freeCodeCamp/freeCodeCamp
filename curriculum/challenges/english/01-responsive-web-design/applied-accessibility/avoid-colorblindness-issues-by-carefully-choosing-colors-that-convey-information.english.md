@@ -3,6 +3,7 @@ id: 587d778f367417b2b2512aad
 title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c437as3'
+forumTopicId: 301011
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Camper Cat is testing different styles for an important button, but the yellow (
 ```yml
 tests:
   - text: Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.
-    testString: assert($('button').css('color') == 'rgb(0, 51, 102)', 'Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.');
+    testString: assert($('button').css('color') == 'rgb(0, 51, 102)');
 
 ```
 
@@ -80,4 +81,5 @@ tests:
   <button>Delete Internet</button>
 </body>
 ```
+
 </section>

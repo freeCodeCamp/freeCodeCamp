@@ -3,6 +3,7 @@ id: 587d7790367417b2b2512aaf
 title: Make Links Navigable with HTML Access Keys
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cQvmaTp'
+forumTopicId: 301021
 ---
 
 ## Description
@@ -24,13 +25,13 @@ Camper Cat wants the links around the two blog article titles to have keyboard s
 ```yml
 tests:
   - text: Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "first".
-    testString: assert($('#first').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "first".');
+    testString: assert($('#first').attr('accesskey'));
   - text: Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "second".
-    testString: assert($('#second').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of "second".');
+    testString: assert($('#second').attr('accesskey'));
   - text: Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "first" to "g". Note that case matters.
-    testString: assert($('#first').attr('accesskey') == 'g', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "first" to "g". Note that case matters.');
+    testString: assert($('#first').attr('accesskey') == 'g');
   - text: Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "second" to "c". Note that case matters.
-    testString: assert($('#second').attr('accesskey') == 'c', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of "second" to "c". Note that case matters.');
+    testString: assert($('#second').attr('accesskey') == 'c');
 
 ```
 
@@ -99,4 +100,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

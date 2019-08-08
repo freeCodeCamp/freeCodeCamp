@@ -2,6 +2,7 @@
 id: 5cc0c1b32479e176caf3b422
 title: Check if Tree is Binary Search Tree
 challengeType: 1
+forumTopicId: 301624
 ---
 
 ## Description
@@ -24,7 +25,7 @@ In this challenge, you will create a utility for your tree. Write a JavaScript m
 ```yml
 tests:
   - text: Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.push(3); test.push(4); test.push(5); return isBinarySearchTree(test) == true})(), 'Your Binary Search Tree should return true when checked with <code>isBinarySearchTree()</code>.');
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.push(3); test.push(4); test.push(5); return isBinarySearchTree(test) == true})());
 ```
 
 </section>

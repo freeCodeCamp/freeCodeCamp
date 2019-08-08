@@ -2,6 +2,7 @@
 id: 5900f42f1000cf542c50ff41
 challengeType: 5
 title: 'Problem 193: Squarefree Numbers'
+forumTopicId: 301831
 ---
 
 ## Description
@@ -22,7 +23,7 @@ How many squarefree numbers are there below 250?
 ```yml
 tests:
   - text: <code>euler193()</code> should return 684465067343069.
-    testString: assert.strictEqual(euler193(), 684465067343069, '<code>euler193()</code> should return 684465067343069.');
+    testString: assert.strictEqual(euler193(), 684465067343069);
 
 ```
 
@@ -54,4 +55,5 @@ euler193();
 ```js
 // solution required
 ```
+
 </section>

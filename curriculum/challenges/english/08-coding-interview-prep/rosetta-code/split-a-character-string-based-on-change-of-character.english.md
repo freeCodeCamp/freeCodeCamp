@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc801d
 title: Split a character string based on change of character
 challengeType: 5
+forumTopicId: 302322
 ---
 
 ## Description
 <section id='description'>
+
 Split a (character) string into comma (plus a blank) delimited strings based on a change of character  (left to right).
 Blanks should be treated as any other character  (except they are problematic to display clearly).  The same applies to commas.
 For instance, the string:
@@ -48,6 +50,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

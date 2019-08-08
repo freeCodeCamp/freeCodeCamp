@@ -3,6 +3,7 @@ id: 587d78a4367417b2b2512ad5
 title: Adjust the Tone of a Color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cEDJvT7'
+forumTopicId: 301038
 ---
 
 ## Description
@@ -21,7 +22,7 @@ All elements have a default <code>background-color</code> of <code>transparent</
 ```yml
 tests:
   - text: The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.
-    testString: assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), 'The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.');
+    testString: assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi));
 
 ```
 

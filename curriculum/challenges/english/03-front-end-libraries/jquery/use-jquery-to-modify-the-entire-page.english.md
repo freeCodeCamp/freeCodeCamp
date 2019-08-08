@@ -4,6 +4,7 @@ title: Use jQuery to Modify the Entire Page
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 18361
 ---
 
 ## Description
@@ -25,7 +26,7 @@ But let's do something more dramatic. Add the classes <code>animated</code> and 
 ```yml
 tests:
   - text: Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.
-    testString: assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.');
+    testString: assert($('body').hasClass('animated') && $('body').hasClass('hinge'));
 
 ```
 
@@ -128,4 +129,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

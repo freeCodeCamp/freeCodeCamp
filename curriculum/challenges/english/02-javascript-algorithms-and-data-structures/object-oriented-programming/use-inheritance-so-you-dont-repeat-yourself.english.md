@@ -2,6 +2,7 @@
 id: 587d7db0367417b2b2512b83
 title: Use Inheritance So You Don't Repeat Yourself
 challengeType: 1
+forumTopicId: 301334
 ---
 
 ## Description
@@ -63,11 +64,11 @@ The <code>eat</code> method is repeated in both <code>Cat</code> and <code>Bear<
 ```yml
 tests:
   - text: <code>Animal.prototype</code> should have the <code>eat</code> property.
-    testString: assert(Animal.prototype.hasOwnProperty('eat'), '<code>Animal.prototype</code> should have the <code>eat</code> property.');
+    testString: assert(Animal.prototype.hasOwnProperty('eat'));
   - text: <code>Bear.prototype</code> should not have the <code>eat</code> property.
-    testString: assert(!(Bear.prototype.hasOwnProperty('eat')), '<code>Bear.prototype</code> should not have the <code>eat</code> property.');
+    testString: assert(!(Bear.prototype.hasOwnProperty('eat')));
   - text: <code>Cat.prototype</code> should not have the <code>eat</code> property.
-    testString: assert(!(Cat.prototype.hasOwnProperty('eat')), '<code>Cat.prototype</code> should not have the <code>eat</code> property.');
+    testString: assert(!(Cat.prototype.hasOwnProperty('eat')));
 
 ```
 

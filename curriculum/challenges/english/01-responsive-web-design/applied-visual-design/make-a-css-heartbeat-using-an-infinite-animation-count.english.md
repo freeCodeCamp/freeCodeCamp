@@ -3,6 +3,7 @@ id: 587d78a8367417b2b2512ae4
 title: Make a CSS Heartbeat using an Infinite Animation Count
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cDZpDUr'
+forumTopicId: 301062
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Keep the heart beating by adding the <code>animation-iteration-count</code> prop
 ```yml
 tests:
   - text: The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.
-    testString: assert($('.heart').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.');
+    testString: assert($('.heart').css('animation-iteration-count') == 'infinite');
   - text: The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.
-    testString: assert($('.back').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.');
+    testString: assert($('.back').css('animation-iteration-count') == 'infinite');
 
 ```
 
@@ -186,4 +187,5 @@ tests:
 <div class="back"></div>
 <div class="heart"></div>
 ```
+
 </section>

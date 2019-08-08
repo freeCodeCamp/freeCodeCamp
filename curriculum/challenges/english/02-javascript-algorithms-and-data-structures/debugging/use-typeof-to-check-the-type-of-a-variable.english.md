@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b34
 title: Use typeof to Check the Type of a Variable
 challengeType: 1
+forumTopicId: 18374
 ---
 
 ## Description
@@ -30,11 +31,11 @@ Add two <code>console.log()</code> statements to check the <code>typeof</code> e
 ```yml
 tests:
   - text: Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.
-    testString: assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2, 'Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');
+    testString: assert(code.match(/console\.log\(typeof[\( ].*\)?\)/g).length == 2);
   - text: Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.
-    testString: assert(code.match(/typeof[\( ]seven\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');
+    testString: assert(code.match(/typeof[\( ]seven\)?/g));
   - text: Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.
-    testString: assert(code.match(/typeof[\( ]three\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');
+    testString: assert(code.match(/typeof[\( ]three\)?/g));
 
 ```
 

@@ -2,6 +2,7 @@
 id: 587d7faa367417b2b2512bd4
 title: Add a Hover Effect to a D3 Element
 challengeType: 6
+forumTopicId: 301469
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Use the <code>attr()</code> method to add a class of <code>bar</code> to all the
 ```yml
 tests:
   - text: Your <code>rect</code> elements should have a class of <code>bar</code>.
-    testString: assert($('rect').attr('class') == "bar", 'Your <code>rect</code> elements should have a class of <code>bar</code>.');
+    testString: assert($('rect').attr('class') == "bar");
 
 ```
 

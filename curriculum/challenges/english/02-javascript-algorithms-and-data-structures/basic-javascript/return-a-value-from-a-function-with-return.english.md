@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244c2
 title: Return a Value from a Function with Return
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy87wue'
+forumTopicId: 18271
 ---
 
 ## Description
@@ -31,13 +32,13 @@ Create a function <code>timesFive</code> that accepts one argument, multiplies i
 ```yml
 tests:
   - text: <code>timesFive</code> should be a function
-    testString: assert(typeof timesFive === 'function', '<code>timesFive</code> should be a function');
+    testString: assert(typeof timesFive === 'function');
   - text: <code>timesFive(5)</code> should return <code>25</code>
-    testString: assert(timesFive(5) === 25, '<code>timesFive(5)</code> should return <code>25</code>');
+    testString: assert(timesFive(5) === 25);
   - text: <code>timesFive(2)</code> should return <code>10</code>
-    testString: assert(timesFive(2) === 10, '<code>timesFive(2)</code> should return <code>10</code>');
+    testString: assert(timesFive(2) === 10);
   - text: <code>timesFive(0)</code> should return <code>0</code>
-    testString: assert(timesFive(0) === 0, '<code>timesFive(0)</code> should return <code>0</code>');
+    testString: assert(timesFive(0) === 0);
 
 ```
 

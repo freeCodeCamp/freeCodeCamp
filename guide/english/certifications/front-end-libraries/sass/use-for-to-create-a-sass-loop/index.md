@@ -1,7 +1,10 @@
 ---
 title: Use @for to Create a Sass Loop
 ---
-## Use @for to Create a Sass Loop
+# Use @for to Create a Sass Loop
+
+---
+## Problem Explanation
 
 1. The basic syntax of `@for` loop in SASS:
 
@@ -57,8 +60,13 @@ Also be sure to respect those guidelines to preserve readability:
 * Always an empty new line before `@for`;
 * Always an empty new line after the closing brace (}) unless the next line is a closing brace (}).
 
-## Solution
-```sass
+
+---
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+
+```scss
 <style type='text/sass'>
   @for $j from 1 through 5 {
     .text-#{$j} { font-size: 10px * $j; }
@@ -96,6 +104,7 @@ The solution above will generate the following CSS:
 .text-5 {
   font-size: 50px;
 }
+</details>
 
 ```
 

@@ -3,6 +3,7 @@ id: bad87eee1348bd9aede07836
 title: Set the id of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6MEc2'
+forumTopicId: 18279
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Give your <code>form</code> element the id <code>cat-photo-form</code>.
 ```yml
 tests:
   - text: Give your <code>form</code> element the id of <code>cat-photo-form</code>.
-    testString: assert($("form").attr("id") === "cat-photo-form", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');
+    testString: assert($("form").attr("id") === "cat-photo-form");
 
 ```
 
@@ -174,4 +175,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

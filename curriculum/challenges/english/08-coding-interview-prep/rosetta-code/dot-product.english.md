@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc7e1e
 title: Dot product
 challengeType: 5
+forumTopicId: 302251
 ---
 
 ## Description
 <section id='description'>
+
 Create a function, to compute the <b><a href="https://en.wikipedia.org/wiki/Dot product">dot product</a></b>, also known as the <b>scalar product</b> of two vectors.
 </section>
 
@@ -39,6 +41,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

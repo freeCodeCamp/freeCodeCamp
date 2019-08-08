@@ -3,6 +3,7 @@ id: bad87fee1348bd9aede08718
 title: Use RGB values to Color Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cRkp2fr'
+forumTopicId: 18369
 ---
 
 ## Description
@@ -35,9 +36,9 @@ Let's replace the hex code in our <code>body</code> element's background color w
 ```yml
 tests:
   - text: Your <code>body</code> element should have a black background.
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", 'Your <code>body</code> element should have a black background.');
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: Use <code>rgb</code> to give your <code>body</code> element a color of black.
-    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element a color of black.');
+    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig));
 
 ```
 
@@ -72,4 +73,5 @@ tests:
   }
 </style>
 ```
+
 </section>

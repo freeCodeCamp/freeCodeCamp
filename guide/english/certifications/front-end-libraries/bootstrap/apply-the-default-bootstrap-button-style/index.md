@@ -1,11 +1,17 @@
 ---
 title: Apply the Default Bootstrap Button Style
 ---
-## Apply the Default Bootstrap Button Style
+# Apply the Default Bootstrap Button Style
 
+---
+## Problem Explanation
 The last challenge had you creating 6 buttons, 3 in each well element. This time you are required to add classes to those buttons.
 
-### Hint
+
+---
+## Hints
+
+### Hint 1
 
 A class is declared using the following syntax:
 
@@ -13,9 +19,11 @@ A class is declared using the following syntax:
 <button class="class(es)Name"></button>
 ```
 
-### Solution
 
-Since you have to add the ``` btn ``` and ``` btn-default ``` classes, the following is the solution:
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <div class="container-fluid">
@@ -38,3 +46,4 @@ Since you have to add the ``` btn ``` and ``` btn-default ``` classes, the follo
   </div>
 </div>
 ```
+</details>

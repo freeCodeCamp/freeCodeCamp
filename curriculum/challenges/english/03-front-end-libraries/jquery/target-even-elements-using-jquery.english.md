@@ -4,6 +4,7 @@ title: Target Even Elements Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 18318
 ---
 
 ## Description
@@ -26,11 +27,11 @@ Try selecting all the even <code>target</code> elements and giving them the clas
 ```yml
 tests:
   - text: All of the <code>target</code> elements that jQuery considers to be even should shake.
-    testString: assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'All of the <code>target</code> elements that jQuery considers to be even should shake.');
+    testString: assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'));
   - text: You should use the <code>&#58;even</code> selector to modify these elements.
-    testString: assert(code.match(/\:even/g), 'You should use the <code>&#58;even</code> selector to modify these elements.');
+    testString: assert(code.match(/\:even/g));
   - text: Only use jQuery to add these classes to the element.
-    testString: assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\('.target:even'\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\('.target'\).filter\(':even'\)/g), 'Only use jQuery to add these classes to the element.');
+    testString: assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\('.target:even'\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\('.target'\).filter\(':even'\)/g));
 
 ```
 
@@ -131,4 +132,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

@@ -1,7 +1,7 @@
 ---
 title: Implementation of Social Authentication III
 ---
-## Implementation of Social Authentication III
+# Implementation of Social Authentication III
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/implementation-of-social-authentication-iii/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

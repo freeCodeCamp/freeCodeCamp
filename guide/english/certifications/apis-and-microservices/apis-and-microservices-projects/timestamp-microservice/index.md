@@ -2,13 +2,10 @@
 title: Timestamp Microservice
 ---
 
-## Timestamp Microservice
+# Timestamp Microservice
 
 ---
-
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ':triangular_flag_on_post:') Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ':busts_in_silhouette:') and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ':pencil:')
-
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ':checkered_flag:') Problem Explanation:
+## Problem Explanation
 
 - You need to write a microservice that will return a JSON with the date in Unix format and in a human-readable date format. The JSON format is like the example output, "{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}".
 - The response depends on the URL. If the API endpoint is hit with no additional information, it returns the JSON with the current time.
@@ -20,38 +17,37 @@ title: Timestamp Microservice
 
 - [Date at MDN:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ':speech_balloon:') Hint: 1
+
+---
+## Hints
+
+## Hint: 1
 
 You will need to create the '/api/timestamp/' endpoint separately from the endpoint that reads the date to be parsed from the URL. You won't need a conditional to deal with this endpoint.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ':speech_balloon:') Hint: 2
+## Hint: 2
 
 Date.valueOf() and Date.toUTCString() will generate the correct strings for unix: and utc:. No need to import the Moment library!
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ':speech_balloon:') Hint: 3
+## Hint: 3
 
 The Javascript Date object checks for dates that are invalid dates under ISO-8601. Use a Javascript REPL or a short Node script to try it out. [Here is a free online service that lets you test some JS code.:]https://repl.it/site/languages/javascript
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
 
-![warning sign](https://discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+---
+## Solutions
 
-**Solution ahead!**
-
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ':beginner:') Basic Code Solution:
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
-app.get('/api/timestamp/', (req, res) => {
+app.get("/api/timestamp/", (req, res) => {
   res.json({ unix: Date.now(), utc: Date() });
 });
 
-app.get('/api/timestamp/:date_string', (req, res) => {
+app.get("/api/timestamp/:date_string", (req, res) => {
   let dateString = req.params.date_string;
 
   //A 4 digit number is a valid ISO-8601 for the beginning of that year
@@ -64,15 +60,15 @@ app.get('/api/timestamp/:date_string', (req, res) => {
 
   let dateObject = new Date(dateString);
 
-  if (dateObject.toString() === 'Invalid Date') {
-    res.json({ error: 'Invaid Date' });
+  if (dateObject.toString() === "Invalid Date") {
+    res.json({ error: "Invaid Date" });
   } else {
     res.json({ unix: dateObject.valueOf(), utc: dateObject.toUTCString() });
   }
 });
 ```
 
-### Code Explanation:
+#### Code Explanation
 
 - This is a pretty straightforward application of the lessons, Basic Node and Express - Serve JSON on a Specific Route
   and Basic Node and Express - Get Route Parameter Input from the Client. The added wrinkle is the use of Javascript's native Date object.
@@ -81,9 +77,4 @@ app.get('/api/timestamp/:date_string', (req, res) => {
 
 That's it. There is no intermediate or advanced solution yet. If you have a better, more elegant solution, help us all out and contribute them!
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ':clipboard:') NOTE TO CONTRIBUTORS:
-
-- ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ':warning:') **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-- Add an explanation of your solution.
-- Categorize the solution in one of the following categories -- **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ':traffic_light:')
-
+</details>

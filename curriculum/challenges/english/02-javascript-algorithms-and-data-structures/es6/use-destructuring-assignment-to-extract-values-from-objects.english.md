@@ -2,6 +2,7 @@
 id: 5cfa550e84205a357704ccb6
 title: Use Destructuring Assignment to Extract Values from Objects
 challengeType: 1
+forumTopicId: 301216
 ---
 
 ## Description
@@ -63,7 +64,7 @@ const HIGH_TEMPERATURES = {
 // change code below this line
 
 const today = HIGH_TEMPERATURES.today;
-const tomorrow = HIGH_TEMPERATURES.tomorrow; 
+const tomorrow = HIGH_TEMPERATURES.tomorrow;
 
 // change code above this line
 
@@ -95,4 +96,5 @@ console.log(yesterday) // should be not defined
 console.log(today); // should be 77
 console.log(tomorrow); // should be 80
 ```
+
 </section>

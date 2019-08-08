@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc7e03
 title: Cumulative standard deviation
 challengeType: 5
+forumTopicId: 302240
 ---
 
 ## Description
 <section id='description'>
+
 Write a function that takes an array of numbers as parameter and returns the <a href="https://en.wikipedia.org/wiki/Standard Deviation">standard deviation</a> of the series.
 </section>
 
@@ -39,6 +41,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

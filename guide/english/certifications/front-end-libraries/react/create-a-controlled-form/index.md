@@ -1,14 +1,20 @@
 ---
 title: Create a Controlled Form
 ---
-## Create a Controlled Form
+# Create a Controlled Form
 
+---
+## Problem Explanation
 Creating a controlled form is the same process as creating a controlled input, except you need to handle a submit event.
 
 First, create a controlled input that stores its value in state, so that there is a single source of truth. 
 (This is what you did in the previous challenge.) Create an input element, set its value attribute to the input variable located in state. Remember, state can be accessed by `this.state`. Next, set the input element's `onChange` attribute to call the function 'handleChange'.
 
-### Solution
+
+---
+## Solutions
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```jsx
 <input value={this.state.input} onChange={this.handleChange}/>
 ```
@@ -28,3 +34,4 @@ Now that your data is being handled in state, we can use this data. Create an `h
 ```jsx
 <h1>{this.state.submit}</h1>
 ```
+</details>

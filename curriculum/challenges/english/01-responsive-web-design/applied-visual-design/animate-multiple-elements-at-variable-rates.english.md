@@ -3,6 +3,7 @@ id: 587d78a8367417b2b2512ae6
 title: Animate Multiple Elements at Variable Rates
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cnpWZc9'
+forumTopicId: 301042
 ---
 
 ## Description
@@ -22,11 +23,11 @@ Set the <code>animation-duration</code> of the elements with the classes <code>s
 ```yml
 tests:
   - text: The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.
-    testString: assert($('.star-1').css('animation-duration') == '1s', 'The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.');
+    testString: assert($('.star-1').css('animation-duration') == '1s');
   - text: The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.
-    testString: assert($('.star-2').css('animation-duration') == '0.9s', 'The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.');
+    testString: assert($('.star-2').css('animation-duration') == '0.9s');
   - text: The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.
-    testString: assert($('.star-3').css('animation-duration') == '1.1s', 'The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.');
+    testString: assert($('.star-3').css('animation-duration') == '1.1s');
 
 ```
 
@@ -156,4 +157,5 @@ tests:
 <div class="star-2 stars"></div>
 <div class="star-3 stars"></div>
 ```
+
 </section>

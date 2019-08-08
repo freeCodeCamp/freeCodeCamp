@@ -3,6 +3,7 @@ id: 587d78ac367417b2b2512af5
 title: Apply the flex-direction Property to Create a Column in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cnzdVC9'
+forumTopicId: 301103
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Add the CSS property <code>flex-direction</code> to the header's <code>.profile-
 ```yml
 tests:
   - text: The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.
-    testString: assert($('.profile-name').css('flex-direction') == 'column', 'The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.');
+    testString: assert($('.profile-name').css('flex-direction') == 'column');
 
 ```
 
@@ -222,4 +223,5 @@ tests:
   </div>
 </footer>
 ```
+
 </section>

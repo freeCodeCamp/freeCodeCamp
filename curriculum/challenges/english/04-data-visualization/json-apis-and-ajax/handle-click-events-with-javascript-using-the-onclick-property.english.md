@@ -2,6 +2,7 @@
 id: 587d7fad367417b2b2512be1
 title: Handle Click Events with JavaScript using the onclick property
 challengeType: 6
+forumTopicId: 301503
 ---
 
 ## Description
@@ -33,9 +34,9 @@ Add a click event handler inside of the <code>DOMContentLoaded</code> function f
 ```yml
 tests:
   - text: Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.
-    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g), 'Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.');
+    testString: assert(code.match(/document\s*\.getElementById\(\s*?('|")getMessage\1\s*?\)/g));
   - text: Your code should add an <code>onclick</code> event handler.
-    testString: assert(typeof document.getElementById('getMessage').onclick === 'function', 'Your code should add an <code>onclick</code> event handler.');
+    testString: assert(typeof document.getElementById('getMessage').onclick === 'function');
 
 ```
 
@@ -104,4 +105,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

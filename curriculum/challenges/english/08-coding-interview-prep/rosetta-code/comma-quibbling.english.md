@@ -2,6 +2,7 @@
 title: Comma quibbling
 id: 596e414344c3b2872167f0fe
 challengeType: 5
+forumTopicId: 302234
 ---
 
 ## Description
@@ -34,17 +35,17 @@ Test your function with the following series of inputs showing your output here 
 ```yml
 tests:
   - text: <code>quibble</code> is a function.
-    testString: assert(typeof quibble === 'function', '<code>quibble</code> is a function.');
+    testString: assert(typeof quibble === 'function');
   - text: <code>quibble(["ABC"])</code> should return a string.
-    testString: assert(typeof quibble(["ABC"]) === 'string', '<code>quibble(["ABC"])</code> should return a string.');
+    testString: assert(typeof quibble(["ABC"]) === 'string');
   - text: <code>quibble([])</code> should return "{}".
-    testString: assert.equal(quibble(testCases[0]), results[0], '<code>quibble([])</code> should return "{}".');
+    testString: assert.equal(quibble(testCases[0]), results[0]);
   - text: <code>quibble(["ABC"])</code> should return "{ABC}".
-    testString: assert.equal(quibble(testCases[1]), results[1], '<code>quibble(["ABC"])</code> should return "{ABC}".');
+    testString: assert.equal(quibble(testCases[1]), results[1]);
   - text: <code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".
-    testString: assert.equal(quibble(testCases[2]), results[2], '<code>quibble(["ABC", "DEF"])</code> should return "{ABC and DEF}".');
+    testString: assert.equal(quibble(testCases[2]), results[2]);
   - text: <code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".
-    testString: assert.equal(quibble(testCases[3]), results[3], '<code>quibble(["ABC", "DEF", "G", "H"])</code> should return "{ABC,DEF,G and H}".');
+    testString: assert.equal(quibble(testCases[3]), results[3]);
 
 ```
 

@@ -2,6 +2,7 @@
 id: 5900f4531000cf542c50ff65
 challengeType: 5
 title: 'Problem 230: Fibonacci Words'
+forumTopicId: 301874
 ---
 
 ## Description
@@ -46,7 +47,7 @@ Find ∑n = 0,1,...,17   10n× DA,B((127+19n)×7n) .
 ```yml
 tests:
   - text: <code>euler230()</code> should return 850481152593119200.
-    testString: assert.strictEqual(euler230(), 850481152593119200, '<code>euler230()</code> should return 850481152593119200.');
+    testString: assert.strictEqual(euler230(), 850481152593119200);
 
 ```
 
@@ -78,4 +79,5 @@ euler230();
 ```js
 // solution required
 ```
+
 </section>

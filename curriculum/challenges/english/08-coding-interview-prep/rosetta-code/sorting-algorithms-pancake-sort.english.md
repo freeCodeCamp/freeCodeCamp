@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc800b
 title: Sorting algorithms/Pancake sort
 challengeType: 5
+forumTopicId: 302315
 ---
 
 ## Description

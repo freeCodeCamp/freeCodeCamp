@@ -2,6 +2,7 @@
 id: 587d7daf367417b2b2512b7d
 title: Iterate Over All Properties
 challengeType: 1
+forumTopicId: 301320
 ---
 
 ## Description
@@ -49,11 +50,11 @@ Add all of the <code>own</code> properties of <code>beagle</code> to the array <
 ```yml
 tests:
   - text: The <code>ownProps</code> array should include <code>"name"</code>.
-    testString: assert(ownProps.indexOf('name') !== -1, 'The <code>ownProps</code> array should include <code>"name"</code>.');
+    testString: assert(ownProps.indexOf('name') !== -1);
   - text: The <code>prototypeProps</code> array should include <code>"numLegs"</code>.
-    testString: assert(prototypeProps.indexOf('numLegs') !== -1, 'The <code>prototypeProps</code> array should include <code>"numLegs"</code>.');
+    testString: assert(prototypeProps.indexOf('numLegs') !== -1);
   - text: Solve this challenge without using the built in method <code>Object.keys()</code>.
-    testString: assert(!/\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.');
+    testString: assert(!/\Object.keys/.test(code));
 
 ```
 

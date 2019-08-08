@@ -2,6 +2,7 @@
 id: 587d7b7b367417b2b2512b17
 title: Combine Arrays with the Spread Operator
 challengeType: 1
+forumTopicId: 301156
 ---
 
 ## Description
@@ -29,9 +30,9 @@ We have defined a function <code>spreadOut</code> that returns the variable <cod
 ```yml
 tests:
   - text: <code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>
-    testString: assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun'], '<code>spreadOut</code> should return <code>["learning", "to", "code", "is", "fun"]</code>');
+    testString: assert.deepEqual(spreadOut(), ['learning', 'to', 'code', 'is', 'fun']);
   - text: The <code>spreadOut</code> function should utilize spread syntax
-    testString: assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1, 'The <code>spreadOut</code> function should utilize spread syntax');
+    testString: assert.notStrictEqual(spreadOut.toString().search(/[...]/), -1);
 
 ```
 
@@ -72,4 +73,5 @@ function spreadOut() {
 }
 
 ```
+
 </section>

@@ -3,6 +3,7 @@ id: bd7123c9c443eddfaeb5bdef
 title: Declare JavaScript Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cNanrHq'
+forumTopicId: 17556
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Use the <code>var</code> keyword to create a variable called <code>myName</code>
 ```yml
 tests:
   - text: You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon
-    testString: assert(/var\s+myName\s*;/.test(code), 'You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon');
+    testString: assert(/var\s+myName\s*;/.test(code));
 
 ```
 

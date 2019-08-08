@@ -1,5 +1,5 @@
 ---
-title: Find the 200th prime-proof sqube containing the contiguous sub-string "200"
+title: 'Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"'
 ---
 ## Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string "200"
 

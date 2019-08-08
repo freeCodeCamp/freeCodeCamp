@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc7e05
 title: CUSIP
 challengeType: 5
+forumTopicId: 302241
 ---
 
 ## Description
 <section id='description'>
+
 A <b>CUSIP</b> is a nine-character alphanumeric code that identifies a North American financial security for the purposes of facilitating clearing and settlement of trades. The CUSIP was adopted as an American National Standard under Accredited Standards X9.6.
 </section>
 
@@ -45,6 +47,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

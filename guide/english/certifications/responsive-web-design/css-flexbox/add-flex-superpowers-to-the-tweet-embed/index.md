@@ -1,11 +1,19 @@
 ---
 title: Add Flex Superpowers to the Tweet Embed
 ---
-## Add Flex Superpowers to the Tweet Embed
+# Add Flex Superpowers to the Tweet Embed
 
+---
+## Problem Explanation
 Building on the previous challenge, you will need to add the property to the right selectors. Here the trick is identifying the right selector then all you need to add the *display: flex;* property.
 
 The header will ensure the picture, name, handle, and follow buttons get repositioned horizonatally.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -99,3 +107,5 @@ The header will ensure the picture, name, handle, and follow buttons get reposit
 </footer>
 
 ```
+
+</details>
