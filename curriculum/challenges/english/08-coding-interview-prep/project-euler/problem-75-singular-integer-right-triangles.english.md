@@ -2,6 +2,7 @@
 id: 5900f3b71000cf542c50feca
 challengeType: 5
 title: 'Problem 75: Singular integer right triangles'
+forumTopicId: 302188
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Given that L is the length of the wire, for how many values of L ≤ 1,500,000 c
 ```yml
 tests:
   - text: <code>euler75()</code> should return 161667.
-    testString: assert.strictEqual(euler75(), 161667, '<code>euler75()</code> should return 161667.');
+    testString: assert.strictEqual(euler75(), 161667);
 
 ```
 
@@ -56,4 +57,5 @@ euler75();
 ```js
 // solution required
 ```
+
 </section>

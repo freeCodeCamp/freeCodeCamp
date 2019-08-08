@@ -2,6 +2,7 @@
 id: 5900f3db1000cf542c50feed
 challengeType: 5
 title: 'Problem 110: Diophantine Reciprocals II'
+forumTopicId: 301735
 ---
 
 ## Description
@@ -22,8 +23,8 @@ What is the least value of <var>n</var> for which the number of distinct solutio
 
 ```yml
 tests:
-  - text: <code>diophantineTwo</code> should return 9350130049860600.
-    testString: assert.strictEqual(diophantineTwo(), 9350130049860600, '<code>diophantineTwo()</code> should return 9350130049860600.');
+  - text: <code>diophantineTwo()</code> should return 9350130049860600.
+    testString: assert.strictEqual(diophantineTwo(), 9350130049860600);
 
 ```
 
@@ -55,4 +56,5 @@ diophantineTwo();
 ```js
 // solution required
 ```
+
 </section>

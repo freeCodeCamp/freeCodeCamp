@@ -2,6 +2,7 @@
 id: 5900f4291000cf542c50ff3c
 challengeType: 5
 title: 'Problem 189: Tri-colouring a triangular grid'
+forumTopicId: 301825
 ---
 
 ## Description
@@ -32,7 +33,7 @@ How many distinct valid colourings are there for the above configuration?
 ```yml
 tests:
   - text: <code>euler189()</code> should return 10834893628237824.
-    testString: assert.strictEqual(euler189(), 10834893628237824, '<code>euler189()</code> should return 10834893628237824.');
+    testString: assert.strictEqual(euler189(), 10834893628237824);
 
 ```
 
@@ -64,4 +65,5 @@ euler189();
 ```js
 // solution required
 ```
+
 </section>

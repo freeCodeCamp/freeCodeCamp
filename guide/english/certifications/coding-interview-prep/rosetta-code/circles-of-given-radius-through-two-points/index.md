@@ -1,7 +1,7 @@
 ---
 title: Circles of given radius through two points
 ---
-## Circles of given radius through two points
+# Circles of given radius through two points
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/circles-of-given-radius-through-two-points/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

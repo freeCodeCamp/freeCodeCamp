@@ -10,35 +10,37 @@ localeTitle: حلقات لا نهائية
 
 أمثلة:
 
- `// Infinite For Loop 
- for ( ; ; ) 
- { 
-    // some code here 
- } 
- 
- // Infinite While Loop 
- while (true) 
- { 
-    // some code here 
- } 
- 
- // Infinite Do While Loop 
- do 
- { 
-    // some code here 
- } while (true); 
-` 
+```java
+// Infinite For Loop
+for ( ; ; )
+{
+    // some code here
+}
+
+// Infinite While Loop
+while (true)
+{
+    // some code here
+}
+
+// Infinite Do While Loop
+do
+{
+    // some code here
+} while (true);
+``` 
 
 عادةً ، إذا كان يتم تشغيل الحلقة الخاصة بك بشكل لا نهائي ، فهذا خطأ لا ينبغي أن يحدث لأن حلقة لا نهائية لا تتوقف وتمنع بقية البرنامج من التشغيل.
 
- `for(int i=0;i<100;i++){ 
- 
-    if(i==49){ 
-    i=0; 
-    } 
- 
- } 
-` 
+```java
+for(int i=0;i<100;i++){
+
+    if(i==49){
+    i=0;
+    }
+
+}
+``` 
 
 يتم تشغيل الحلقة أعلاه بشكل لا نهائي لأن كل مرة أقترب فيها من 49 ، يتم تعيينها إلى 0. هذا يعني أني لم تصل إلى 100 لإنهاء الحلقة ، لذا فإن الحلقة هي حلقة لا نهائية.
 

@@ -18,12 +18,13 @@ jQuery هي مكتبة جافا سكريبت الأكثر استخدامًا ، 
 
 سيتم إخفاء العناصر:
 
- `$(document).ready(function(){ 
-    $("button").click(function(){ 
-        $("p").hide(); 
-    }); 
- }); 
-` 
+```javascript
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
+``` 
 
 #### معلومات اكثر
 

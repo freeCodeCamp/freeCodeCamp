@@ -43,15 +43,16 @@ localeTitle: وظائف السهم
 
 ميزة لا تصدق من وظيفة الأسهم هو أنه لا يمكنك إعادة وظيفة السهم. سوف يطلق عليه دائما مع السياق الذي تم تعريفه فيه. مجرد استخدام وظيفة عادية.
 
- `// Old Syntax 
- axios.get(url).then(function(response) { 
-  this.data = response.data; 
- }).bind(this); 
- 
- // New Syntax 
- axios.get(url).then(response => { 
-  this.data = response.data; 
- }); 
-` 
+```javascript
+// Old Syntax
+axios.get(url).then(function(response) {
+  this.data = response.data;
+}).bind(this);
+
+// New Syntax
+axios.get(url).then(response => {
+  this.data = response.data;
+});
+``` 
 
 لا أعتقد أنني بحاجة إلى تقديم تفسير لهذا. انها بسيطة.

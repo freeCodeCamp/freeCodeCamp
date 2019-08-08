@@ -1,0 +1,14 @@
+.challenge-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.45rem;
+}
+
+.challenge-title {
+  padding: 0 15px;
+}
+
+.challenge-title-wrap > a {
+  align-self: flex-start;
+}

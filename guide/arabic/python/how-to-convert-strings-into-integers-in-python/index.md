@@ -8,44 +8,50 @@ localeTitle: كيفية تحويل السلاسل إلى أعداد صحيحة �
 
 #### مثال للاستخدام:
 
- `# Here age is a string object 
- age = "18" 
- print(age) 
- # Converting string to integer 
- int_age = int(age) 
- print(int_age) 
-` 
+```py
+# Here age is a string object
+age = "18"
+print(age)
+# Converting string to integer
+int_age = int(age)
+print(int_age)
+``` 
 
 انتاج |
 
- `18 
- 18 
-` 
+```py
+18
+18
+``` 
 
 على الرغم من أن المخرجات متشابهة بصريًا ، إلا أنه يجب أن تضع في اعتبارك أن السطر الأول يطبع كائن سلسلة بينما يقوم السطر الموجود بجواره بطباعة كائن صحيح يتضح أكثر في المثال التالي:
 
- `age = "18" 
- print(age+2) 
-` 
+```py
+age = "18"
+print(age+2)
+``` 
 
 انتاج:
 
- `Traceback (most recent call last): 
-  File "<stdin>", line 1, in <module> 
- TypeError: cannot concatenate 'str' and 'int' objects 
-` 
+```py
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: cannot concatenate 'str' and 'int' objects
+``` 
 
 `The error should make it clear to you that you need to convert the` الكائن age إلى عدد صحيح قبل إضافة شيء إليه.
 
- `age = "18" 
- age_int = int(age) 
- print(age_int+2) 
-` 
+```py
+age = "18"
+age_int = int(age)
+print(age_int+2)
+``` 
 
 انتاج:
 
- `20 
-` 
+```py
+20
+``` 
 
 لكن يجب أن تضع في اعتبارك بعض الحالات الخاصة:
 

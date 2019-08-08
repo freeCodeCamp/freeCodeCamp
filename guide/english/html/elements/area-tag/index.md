@@ -3,13 +3,17 @@ title: Area Tag
 ---
 ## Area Tag
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/area-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+`<area>` tag is used to define an area inside an image with clickable areas (also known as image-map). `<area>` tag always sits inside a `<map>` tag.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Example usage:
+```html
+<map name="shapemap">
+  <area shape="rect" coords="5,5,15,20" href="rectangle.html" alt="Rectangle">
+  <area shape="circle" coords="90,58,3" href="circle.html" alt="Circle">
+</map>
+<img src="shapes.png" alt="Sample shapes" usemap="#shapemap">
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+- <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area' target='_blank' rel='nofollow'>The HTML &lt;area&gt; element: MDN</a>

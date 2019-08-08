@@ -13,3 +13,7 @@ Most people prefer to use Git as a [CLI (command-line interface)](https://en.wik
 * [Git Tower](https://www.git-tower.com/mac/) is available for Mac and Windows.
 * [TortoiseGit](https://tortoisegit.org/) is a Windows Shell Interface to Git based on TortoiseSVN. It's open source and can be built with freely available software.
 * [SmartGit](https://www.syntevo.com/smartgit/) is a Git client free for a non-commercial use for Windows, Mac and Linux.
+* [Git](https://git-scm.com/) is the "official" Git client for Windows, Mac, and Linux. It is open source, and does contain a GUI, though the interface is not as pretty as others. When it is installed on Windows, it will also include a git-bash client, allowing a user to user some bash tools on Windows. 
+
+## More Information
+[Huge list of Git GUIs](https://git.wiki.kernel.org/index.php/InterfacesFrontendsAndTools)

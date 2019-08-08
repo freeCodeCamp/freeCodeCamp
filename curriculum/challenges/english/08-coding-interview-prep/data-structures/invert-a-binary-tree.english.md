@@ -2,6 +2,7 @@
 id: 587d8259367417b2b2512c83
 title: Invert a Binary Tree
 challengeType: 1
+forumTopicId: 301704
 ---
 
 ## Description
@@ -20,13 +21,13 @@ Here will we create a function to invert a binary tree. Given a binary tree, we 
 ```yml
 tests:
   - text: The <code>BinarySearchTree</code> data structure exists.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
   - text: The binary search tree has a method called <code>invert</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.invert == 'function')})(), 'The binary search tree has a method called <code>invert</code>.');
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.invert == 'function')})());
   - text: The <code>invert</code> method correctly inverts the tree structure.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); test.invert(); return test.inorder().join('') == '877345348741'; })(), 'The <code>invert</code> method correctly inverts the tree structure.');
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); test.invert(); return test.inorder().join('') == '877345348741'; })());
   - text: Inverting an empty tree returns <code>null</code>.
-    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; return (test.invert() == null); })(), 'Inverting an empty tree returns <code>null</code>.');
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; return (test.invert() == null); })());
 
 ```
 
@@ -34,20 +35,19 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
 var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 function BinarySearchTree() {
-    this.root = null;
-    // change code below this line
-    // change code above this line
+  this.root = null;
+  // change code below this line
+  // change code above this line
 }
 ```
 
@@ -109,13 +109,34 @@ BinarySearchTree.prototype = {
 ```
 
 </div>
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  // change code below this line
+  this.invert = function(node = this.root) {
+    if (node) {
+      const temp = node.left;
+      node.left = node.right;
+      node.right = temp;
+      this.invert(node.left);
+      this.invert(node.right);
+    }
+    return node;
+  }
+    // change code above this line
+}
+
 ```
+
 </section>

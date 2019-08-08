@@ -2,6 +2,7 @@
 id: 5900f4b51000cf542c50ffc8
 challengeType: 5
 title: 'Problem 329: Prime Frog'
+forumTopicId: 301986
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Give your answer as a fraction p/q in reduced form.
 ```yml
 tests:
   - text: <code>euler329()</code> should return 199740353 / 29386561536000.
-    testString: assert.strictEqual(euler329(), 199740353 / 29386561536000, '<code>euler329()</code> should return 199740353 / 29386561536000.');
+    testString: assert.strictEqual(euler329(), 199740353 / 29386561536000);
 
 ```
 
@@ -63,4 +64,5 @@ euler329();
 ```js
 // solution required
 ```
+
 </section>

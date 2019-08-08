@@ -9,7 +9,8 @@ localeTitle: قبض على الاستخدام المختلط من أسعار م�
 
 ## حل:
 
- `//Solution1: 
- let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>"; 
- console.log(innerHtml); 
-`
+```javascript
+//Solution1:
+let innerHtml = "<p>Click here to <a href=\"#Home\">return home</a></p>";
+console.log(innerHtml);
+```

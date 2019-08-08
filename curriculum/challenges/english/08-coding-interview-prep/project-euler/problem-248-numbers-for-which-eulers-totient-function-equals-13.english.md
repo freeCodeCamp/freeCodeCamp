@@ -2,6 +2,7 @@
 id: 5900f4651000cf542c50ff77
 challengeType: 5
 title: 'Problem 248: Numbers for which Euler’s totient function equals 13!'
+forumTopicId: 301895
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Find the 150,000th such number.
 ```yml
 tests:
   - text: <code>euler248()</code> should return 23507044290.
-    testString: assert.strictEqual(euler248(), 23507044290, '<code>euler248()</code> should return 23507044290.');
+    testString: assert.strictEqual(euler248(), 23507044290);
 
 ```
 
@@ -53,4 +54,5 @@ euler248();
 ```js
 // solution required
 ```
+
 </section>

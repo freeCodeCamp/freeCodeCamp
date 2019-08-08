@@ -10,13 +10,14 @@ localeTitle: واضح الممتلكات
 
 يتم استخدام هذه الخاصية بعد استخدام الخاصية `float` "مسح" خارج `float` .
 
- `clear: none; 
- clear: left; 
- clear: right; 
- clear: both; 
- clear: inline-start; 
- clear: inline-end; 
-` 
+```css
+clear: none;
+clear: left;
+clear: right;
+clear: both;
+clear: inline-start;
+clear: inline-end;
+``` 
 
 ### مثال:
 

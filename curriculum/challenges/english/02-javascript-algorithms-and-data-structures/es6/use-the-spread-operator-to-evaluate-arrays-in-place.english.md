@@ -2,19 +2,34 @@
 id: 587d7b89367417b2b2512b48
 title: Use the Spread Operator to Evaluate Arrays In-Place
 challengeType: 1
+forumTopicId: 301222
 ---
 
 ## Description
 <section id='description'>
 ES6 introduces the <dfn>spread operator</dfn>, which allows us to expand arrays and other expressions in places where multiple parameters or elements are expected.
 The ES5 code below uses <code>apply()</code> to compute the maximum value in an array:
-<blockquote>var arr = [6, 89, 3, 45];<br>var maximus = Math.max.apply(null, arr); // returns 89</blockquote>
+
+```js
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr); // returns 89
+```
+
 We had to use <code>Math.max.apply(null, arr)</code> because <code>Math.max(arr)</code> returns <code>NaN</code>. <code>Math.max()</code> expects comma-separated arguments, but not an array.
 The spread operator makes this syntax much better to read and maintain.
-<blockquote>const arr = [6, 89, 3, 45];<br>const maximus = Math.max(...arr); // returns 89</blockquote>
+
+```js
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+```
+
 <code>...arr</code> returns an unpacked array. In other words, it <em>spreads</em> the array.
 However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:
-<blockquote>const spreaded = ...arr; // will throw a syntax error</blockquote>
+
+```js
+const spreaded = ...arr; // will throw a syntax error
+```
+
 </section>
 
 ## Instructions
@@ -27,12 +42,12 @@ Copy all contents of <code>arr1</code> into another array <code>arr2</code> usin
 
 ```yml
 tests:
-  - text: <code>arr2</code> is correct copy of <code>arr1</code>.
-    testString: assert(arr2.every((v, i) => v === arr1[i]), '<code>arr2</code> is correct copy of <code>arr1</code>.');
+  - text: <code>arr2</code> should be correct copy of <code>arr1</code>.
+    testString: assert(arr2.every((v, i) => v === arr1[i]));
   - text: <code>...</code> spread operator was used to duplicate <code>arr1</code>.
-    testString: getUserInput => assert(getUserInput('index').match(/\[\s*...arr1\s*\]/g),'<code>...</code> spread operator was used to duplicate <code>arr1</code>.');
-  - text: <code>arr2</code> remains unchanged when <code>arr1</code> is changed.
-    testString: assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'<code>arr2</code> remains unchanged when <code>arr1</code> is changed.');
+    testString: assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
+  - text: <code>arr2</code> should remain unchanged when <code>arr1</code> is changed.
+    testString: assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length});
 
 ```
 
@@ -46,10 +61,9 @@ tests:
 ```js
 const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
 let arr2;
-(function() {
-  "use strict";
-  arr2 = []; // change this line
-})();
+
+arr2 = [];  // change this line
+
 console.log(arr2);
 ```
 
@@ -65,10 +79,8 @@ console.log(arr2);
 ```js
 const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
 let arr2;
-(function() {
-  "use strict";
-  arr2 = [...arr1]; // change this line
-})();
-console.log(arr2);
+
+arr2 = [...arr1];
 ```
+
 </section>

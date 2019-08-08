@@ -1,8 +1,8 @@
 ---
 title: Embarassingly Parallel Algorithms
-localeTitle: Algoritmos Paralisados ​​Abarassingly
+localeTitle: Algoritmos embaraçosamente paralelos
 ---
-## Algoritmos Paralisados ​​Abarassingly
+## Algoritmos embaraçosamente paralelos
 
 Na programação paralela, um algoritmo embaraçosamente paralelo é aquele que não requer comunicação ou dependência entre os processos. Ao contrário dos problemas de computação distribuída que precisam de comunicação entre as tarefas - especialmente em resultados intermediários, os algoritmos embaraçosamente paralelos são fáceis de executar em farms de servidores que não possuem a infraestrutura especial usada em um verdadeiro cluster de supercomputador. Devido à natureza de algoritmos embaraçosamente paralelos, eles são adequados para grandes plataformas distribuídas baseadas na Internet e não sofrem de lentidão paralela. O oposto de problemas embaraçosamente paralelos são inerentemente problemas seriais, que não podem ser paralelizados de forma alguma. O caso ideal de algoritmos embaraçosamente paralelos pode ser resumido da seguinte forma:
 

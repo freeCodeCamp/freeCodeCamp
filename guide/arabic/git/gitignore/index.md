@@ -18,26 +18,28 @@ localeTitle: .gitignore
 
 هذا مثال لما قد يبدو عليه ملف `.gitignore` :
 
- `# Ignore Mac system files 
- .DS_store 
- 
- # Ignore node_modules folder 
- node_modules 
- 
- # Ignore all text files 
- *.txt 
- 
- # Ignore files related to API keys 
- .env 
- 
- # Ignore SASS config files 
- .sass-cache 
-` 
+```
+# Ignore Mac system files
+.DS_store
+
+# Ignore node_modules folder
+node_modules
+
+# Ignore all text files
+*.txt
+
+# Ignore files related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache
+``` 
 
 لإضافة أو تغيير ملف .gitignore العام ، قم بتشغيل الأمر التالي:
 
- `git config --global core.excludesfile ~/.gitignore_global 
-` 
+```bash
+git config --global core.excludesfile ~/.gitignore_global
+``` 
 
 سيؤدي ذلك إلى إنشاء الملف `~/.gitignore_global` . الآن يمكنك تحرير هذا الملف بنفس طريقة ملف `.gitignore` المحلي. ستتجاهل جميع مستودعات Git الملفات والمجلدات المدرجة في ملف `.gitignore` .
 

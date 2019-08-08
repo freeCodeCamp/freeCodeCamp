@@ -52,7 +52,6 @@ localeTitle: 回文检查
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/2)
 
 ### 代码说明：
 
@@ -85,7 +84,6 @@ localeTitle: 回文检查
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/3)
 
 ### 代码说明：
 
@@ -134,7 +132,6 @@ localeTitle: 回文检查
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/4)
 
 ### 代码说明：
 

@@ -112,7 +112,6 @@ var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", 
  golfScore(5, 4); 
 ```
 
-· Corra no [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Golf-code)
 
 \## Explicação do código Como já temos uma matriz definida nos `names` das variáveis, podemos aproveitá-la e usá-la para nossas instruções de retorno usando índices (por exemplo: `names[0] is the first one` ). Dessa forma, se você precisar alterar um resultado específico, não precisaria procurá-lo dentro da função, seria no início, na sua matriz.
 

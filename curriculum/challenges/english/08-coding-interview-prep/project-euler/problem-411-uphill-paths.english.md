@@ -2,6 +2,7 @@
 id: 5900f5081000cf542c510019
 challengeType: 5
 title: 'Problem 411: Uphill paths'
+forumTopicId: 302080
 ---
 
 ## Description
@@ -32,7 +33,7 @@ Find ∑ S(k5) for 1 ≤ k ≤ 30.
 ```yml
 tests:
   - text: <code>euler411()</code> should return 9936352.
-    testString: assert.strictEqual(euler411(), 9936352, '<code>euler411()</code> should return 9936352.');
+    testString: assert.strictEqual(euler411(), 9936352);
 
 ```
 
@@ -64,4 +65,5 @@ euler411();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,6 +3,7 @@ id: 587d78ae367417b2b2512afc
 title: Use the flex-grow Property to Expand Items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c2p78cg'
+forumTopicId: 301111
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Add the CSS property <code>flex-grow</code> to both <code>#box-1</code> and <cod
 ```yml
 tests:
   - text: The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.
-    testString: assert($('#box-1').css('flex-grow') == '1', 'The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.');
+    testString: assert($('#box-1').css('flex-grow') == '1');
   - text: The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.
-    testString: assert($('#box-2').css('flex-grow') == '2', 'The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.');
+    testString: assert($('#box-2').css('flex-grow') == '2');
 
 ```
 
@@ -70,7 +71,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+
+  #box-1 {
+    background-color: dodgerblue;
+    height: 200px;
+    flex-grow: 1;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    height: 200px;
+    flex-grow: 2;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

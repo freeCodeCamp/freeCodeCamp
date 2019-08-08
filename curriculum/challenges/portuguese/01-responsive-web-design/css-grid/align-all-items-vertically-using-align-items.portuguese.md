@@ -7,7 +7,7 @@ localeTitle: Alinhar todos os itens verticalmente usando itens de alinhamento
 ---
 
 ## Description
-<section id="description"> Usar a propriedade <code>align-items</code> em um contêiner de grade definirá o alinhamento vertical para todos os itens em nossa grade. </section>
+<section id="description"> Usar a propriedade <code>align-items</code> em um container de grade definirá o alinhamento vertical para todos os itens em nossa grade. </section>
 
 ## Instructions
 <section id="instructions"> Use agora para mover todos os itens para o final de cada célula. </section>

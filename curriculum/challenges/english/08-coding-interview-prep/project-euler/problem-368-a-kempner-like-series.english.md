@@ -2,6 +2,7 @@
 id: 5900f4dd1000cf542c50ffef
 challengeType: 5
 title: 'Problem 368: A Kempner-like series'
+forumTopicId: 302029
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Give your answer rounded to 10 digits behind the decimal point.
 ```yml
 tests:
   - text: <code>euler368()</code> should return 253.6135092068.
-    testString: assert.strictEqual(euler368(), 253.6135092068, '<code>euler368()</code> should return 253.6135092068.');
+    testString: assert.strictEqual(euler368(), 253.6135092068);
 
 ```
 
@@ -65,4 +66,5 @@ euler368();
 ```js
 // solution required
 ```
+
 </section>

@@ -23,42 +23,46 @@ localeTitle: لحلقة
 
 لاحظ أنك ستتحقق مما إذا كانت القيمة أقل من 10 ، وليس أقل من أو تساوي 10 ، حيث أنك تبدأ العدّاد الخاص بك عند 0.
 
- `for (int iter_For = 0; iter_For < 10; iter_For++) 
- { 
-    System.out.print(iter_For + " "); 
-    // Iterated 10 times, iter_For 0,1,2...9 
- } 
- 
- System.out.println("iter_For Value: " + iter_For); 
-` 
+```java
+for (int iter_For = 0; iter_For < 10; iter_For++)
+{
+    System.out.print(iter_For + " ");
+    // Iterated 10 times, iter_For 0,1,2...9
+}
+
+System.out.println("iter_For Value: " + iter_For);
+``` 
 
 ملاحظة: من المقبول أيضًا الإعلان عن متغير داخل الحلقة for for single ككلمة.
 
- `for (int iter_For = 0; iter_For < 10; iter_For++) 
- { 
-    System.out.print (iter_For + " "); 
-    // Iterated 10 times, iter_For 0,1,2...9 
- } 
-` 
+```java
+for (int iter_For = 0; iter_For < 10; iter_For++)
+{
+    System.out.print (iter_For + " ");
+    // Iterated 10 times, iter_For 0,1,2...9
+}
+``` 
 
 انتاج:
 
- `0 1 2 3 4 5 6 7 8 9 
- iter_For Value: 10 
-` 
+```
+0 1 2 3 4 5 6 7 8 9
+iter_For Value: 10
+``` 
 
 مثال آخر للحلقة التي تضيف أول 50 رقم سيكون مثل هذا. i ++ تعني i = i + 1.
 
- `int addUntil = 50; 
- int sum 0; 
- 
- for (int i = 1; i <= addUntil; i++) 
- { 
-    sum+=i 
- } 
- 
- System.out.println("The sum of the first 50 numbers is: " + 50); 
-` 
+```java
+int addUntil = 50;
+int sum 0;
+
+for (int i = 1; i <= addUntil; i++)
+{
+    sum+=i
+}
+
+System.out.println("The sum of the first 50 numbers is: " + 50);
+``` 
 
 ![:rocket:](https://forum.freecodecamp.org/images/emoji/emoji_one/rocket.png?v=2 ":صاروخ:") [تشغيل الكود](https://repl.it/CJYr/0)
 

@@ -1,7 +1,8 @@
 ---
 title: Installing Rust
 localeTitle: 安装Rust
----# 安装Rust
+---
+# 安装Rust
 
 使用`rustup`是Rust安装的首选。 `rustup`为您的系统安装和管理Rust。
 
@@ -12,8 +13,7 @@ localeTitle: 安装Rust
 ## 在其他操作系统中安装Rust（Mac OS X，Linux，BSD，Unix）
 
 打开终端并输入以下命令：
-
-```sh
+```shell
 curl https://sh.rustup.rs -sSf | sh 
 ```
 
@@ -22,8 +22,7 @@ curl https://sh.rustup.rs -sSf | sh
 # 验证安装
 
 安装`rustup`将安装与rust相关的所有内容，但最重要的是这意味着安装编译器和包管理器。要验证是否已安装所有内容，请运行以下命令：
-
-```sh
+```shell
 cargo version 
 ```
 

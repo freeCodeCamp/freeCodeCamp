@@ -52,7 +52,6 @@ function findLongestWordLength(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/5)
 
 ### Explicación del código:
 
@@ -76,7 +75,6 @@ function findLongestWordLength(s) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/6)
 
 ### Explicación del código:
 
@@ -122,7 +120,6 @@ function findLongestWordLength(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/7)
 
 ### Explicación del código:
 
