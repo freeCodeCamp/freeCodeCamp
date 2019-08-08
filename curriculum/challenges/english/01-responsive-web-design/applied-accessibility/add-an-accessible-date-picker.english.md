@@ -3,6 +3,7 @@ id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cR3bRbCV'
+forumTopicId: 301008
 ---
 
 ## Description
@@ -30,13 +31,13 @@ Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competi
 ```yml
 tests:
   - text: Your code should add one <code>input</code> tag for the date selector field.
-    testString: assert($('input').length == 2, 'Your code should add one <code>input</code> tag for the date selector field.');
+    testString: assert($('input').length == 2);
   - text: Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.
-    testString: assert($('input').attr('type') == 'date', 'Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.');
+    testString: assert($('input').attr('type') == 'date');
   - text: Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.
-    testString: assert($('input').attr('id') == 'pickdate', 'Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.');
+    testString: assert($('input').attr('id') == 'pickdate');
   - text: Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.
-    testString: assert($('input').attr('name') == 'date', 'Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.');
+    testString: assert($('input').attr('name') == 'date');
 
 ```
 
@@ -101,4 +102,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

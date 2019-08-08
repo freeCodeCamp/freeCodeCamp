@@ -1,9 +1,11 @@
 ---
 title: Record Collection
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+# Record Collection
+
+---
+## Problem Explanation
 
 You are given a JSON object representing (a small part of) your record collection. Each album is identified by a unique id number and has several properties. Not all albums have complete information.
 
@@ -27,51 +29,44 @@ Always return the entire collection object.
     *   If **value** is an empty string, delete that **prop** from the object.
 *   Finally, return the **collection** object.
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+### Hint 1
 
 Use an `else if` statement to check the needed steps.
 
-> _try to solve the problem now_
-
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+### Hint 2
 
 The second step listed in the instructions should be first in your `else if` statement.
 
-> _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 3
+### Hint 3
 
 To access the value of a key in this object, you will use `collection[id][prop]`.
 
-> _try to solve the problem now_
 
-## Spoiler Alert!
+---
+## Solutions
 
-![warning sign](//discourse-user-assets.s3.amazonaws.com/original/2X/2/2d6c412a50797771301e7ceabd554cef4edcd74d.gif)
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-**Solution ahead!**
-
-## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
-
-    function updateRecords(id, prop, value) {
-      if (prop === "tracks" && value !== "") {
-       if (collection[id][prop]) {
-        collection[id][prop].push(value);
-       }
-       else {
-        collection[id][prop]=[value];
-       }
-      } else if (value !== "") {
-        collection[id][prop] = value;
-      } else {
-        delete collection[id][prop];
-      }
-
-      return collection;
+```javascript
+function updateRecords(id, prop, value) {
+  if (prop === "tracks" && value !== "") {
+    if (collection[id][prop]) {
+      collection[id][prop].push(value);
+    } else {
+      collection[id][prop] = [value];
     }
+  } else if (value !== "") {
+    collection[id][prop] = value;
+  } else {
+    delete collection[id][prop];
+  }
 
+  return collection;
+}
+```
 
-### Code Explanation:
+#### Code Explanation
 
 *   First checks if **prop** is equal to **tracks** AND if **value** isn't a blank string. If both tests pass, **value** is pushed into the **tracks** array.
 *   If that first check doesn't pass, it next checks only if **value** isn't a blank string. If that test passes, either a new key (**prop**) and value (**value**) are added to the object, or an existing key is updated if the **prop** already exists.
@@ -85,7 +80,7 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 *   `artist: "ABBA"` is added to the `5439` `id`.
 
 
-### Resources:
+#### Relevant Links
 
 *   [fCC's challenge: Accessing Objects Properties with Bracket Notation](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-bracket-notation/)
 *   [fCC's challenge: Add New Properties to a JavaScript Object](http://www.freecodecamp.com/challenges/add-new-properties-to-a-javascript-object)
@@ -93,3 +88,5 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 *   [fCC's challenge: Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects/)
 *  ["Array.prototype.push()" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
 *  ["delete operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
+
+</details>

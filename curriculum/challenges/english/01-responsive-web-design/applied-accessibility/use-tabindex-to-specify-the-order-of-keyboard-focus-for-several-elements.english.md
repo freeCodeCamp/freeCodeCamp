@@ -3,6 +3,7 @@ id: 587d7790367417b2b2512ab1
 title: Use tabindex to Specify the Order of Keyboard Focus for Several Elements
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzRRcb'
+forumTopicId: 301028
 ---
 
 ## Description
@@ -26,13 +27,13 @@ Camper Cat has a search field on his Inspirational Quotes page that he plans to 
 ```yml
 tests:
   - text: Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.
-    testString: assert($('#search').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.');
+    testString: assert($('#search').attr('tabindex'));
   - text: Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.
-    testString: assert($('#submit').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.');
+    testString: assert($('#submit').attr('tabindex'));
   - text: Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.
-    testString: assert($('#search').attr('tabindex') == '1', 'Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.');
+    testString: assert($('#search').attr('tabindex') == '1');
   - text: Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.
-    testString: assert($('#submit').attr('tabindex') == '2', 'Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.');
+    testString: assert($('#submit').attr('tabindex') == '2');
 
 ```
 
@@ -119,4 +120,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

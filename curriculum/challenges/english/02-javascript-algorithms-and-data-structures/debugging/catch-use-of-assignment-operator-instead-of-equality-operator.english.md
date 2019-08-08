@@ -2,6 +2,7 @@
 id: 587d7b85367417b2b2512b38
 title: Catch Use of Assignment Operator Instead of Equality Operator
 challengeType: 1
+forumTopicId: 301191
 ---
 
 ## Description
@@ -34,9 +35,9 @@ Fix the condition so the program runs the right branch, and the appropriate valu
 ```yml
 tests:
   - text: Your code should fix the condition so it checks for equality, instead of using assignment.
-    testString: assert(result == "Not equal!", 'Your code should fix the condition so it checks for equality, instead of using assignment.');
+    testString: assert(result == "Not equal!");
   - text: The condition can use either <code>==</code> or <code>===</code> to test for equality.
-    testString: assert(code.match(/x\s*?===?\s*?y/g), 'The condition can use either <code>==</code> or <code>===</code> to test for equality.');
+    testString: assert(code.match(/x\s*?===?\s*?y/g));
 
 ```
 
@@ -83,4 +84,5 @@ if(x === y) {
 
 console.log(result);
 ```
+
 </section>

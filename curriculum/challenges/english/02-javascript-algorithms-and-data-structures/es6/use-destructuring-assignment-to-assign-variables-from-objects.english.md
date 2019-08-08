@@ -2,6 +2,7 @@
 id: 587d7b89367417b2b2512b49
 title: Use Destructuring Assignment to Assign Variables from Objects
 challengeType: 1
+forumTopicId: 301215
 ---
 
 ## Description
@@ -89,4 +90,5 @@ const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
 console.log(highToday); // should be 77
 console.log(highTomorrow); // should be 80
 ```
+
 </section>

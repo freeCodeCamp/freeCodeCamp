@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc8042
 title: Sum of squares
 challengeType: 5
+forumTopicId: 302334
 ---
 
 ## Description
 <section id='description'>
+
 Write a function to find the sum of squares of an array of integers.
 </section>
 
@@ -39,6 +41,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

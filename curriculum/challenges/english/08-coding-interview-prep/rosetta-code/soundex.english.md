@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc8017
 title: Soundex
 challengeType: 5
+forumTopicId: 302320
 ---
 
 ## Description
 <section id='description'>
+
 Soundex is an algorithm for creating indices for words based on their pronunciation.
 The goal is for homophones to be encoded to the same representation so that they can be matched despite minor differences in spelling (from <a href="https://en.wikipedia.org/wiki/soundex" target="_blank">the WP article</a>).
 There is a major issue in many of the implementations concerning the separation of two consonants that have the same soundex code! According to the <a href="https://www.archives.gov/research/census/soundex.html" target="_blank">official Rules</a>. So check for instance if <b>Ashcraft</b> is coded to <b>A-261</b>.
@@ -55,6 +57,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

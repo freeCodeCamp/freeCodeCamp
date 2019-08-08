@@ -2,10 +2,12 @@
 id: 587d7db1367417b2b2512b88
 title: Override Inherited Methods
 challengeType: 1
+forumTopicId: 301322
 ---
 
 ## Description
 <section id='description'>
+
 In previous lessons, you learned that an object can inherit its behavior (methods) from another object by cloning its <code>prototype</code> object:
 
 ```js
@@ -38,14 +40,17 @@ Bird.prototype.eat = function() {
 ```
 
 If you have an instance <code>let duck = new Bird();</code> and you call <code>duck.eat()</code>, this is how JavaScript looks for the method on <code>duck’s</code> <code>prototype</code> chain:
+
 1. duck => Is eat() defined here? No.
 2. Bird => Is eat() defined here? => Yes. Execute it and stop searching.
 3. Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.
 4. Object => JavaScript stopped searching before reaching this level.
+
 </section>
 
 ## Instructions
 <section id='instructions'>
+
 Override the <code>fly()</code> method for <code>Penguin</code> so that it returns "Alas, this is a flightless bird."
 </section>
 
@@ -55,9 +60,9 @@ Override the <code>fly()</code> method for <code>Penguin</code> so that it retur
 ```yml
 tests:
   - text: <code>penguin.fly()</code> should return the string "Alas, this is a flightless bird."
-    testString: assert(penguin.fly() === "Alas, this is a flightless bird.", '<code>penguin.fly()</code> should return the string "Alas, this is a flightless bird."');
+    testString: assert(penguin.fly() === "Alas, this is a flightless bird.");
   - text: The <code>bird.fly()</code> method should return "I am flying!"
-    testString: assert((new Bird()).fly() === "I am flying!", 'The <code>bird.fly()</code> method should return "I am flying!"');
+    testString: assert((new Bird()).fly() === "I am flying!");
 
 ```
 

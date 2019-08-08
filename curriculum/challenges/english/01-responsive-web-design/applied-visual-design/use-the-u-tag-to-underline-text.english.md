@@ -3,6 +3,7 @@ id: 587d781a367417b2b2512ab8
 title: Use the u Tag to Underline Text
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cN6aQCL'
+forumTopicId: 301082
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Wrap the <code>u</code> tag only around the text "Ph.D. students".
 ```yml
 tests:
   - text: Your code should add a <code>u</code> tag to the markup.
-    testString: assert($('u').length === 1, 'Your code should add a <code>u</code> tag to the markup.');
+    testString: assert($('u').length === 1);
   - text: The <code>u</code> tag should wrap around the text "Ph.D. students".
-    testString: assert($('u').text() === 'Ph.D. students', 'The <code>u</code> tag should wrap around the text "Ph.D. students".');
+    testString: assert($('u').text() === 'Ph.D. students');
 
 ```
 
@@ -125,4 +126,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

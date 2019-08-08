@@ -2,6 +2,7 @@
 id: 587d7db1367417b2b2512b87
 title: Add Methods After Inheritance
 challengeType: 1
+forumTopicId: 301315
 ---
 
 ## Description
@@ -48,15 +49,15 @@ Add all necessary code so the <code>Dog</code> object inherits from <code>Animal
 ```yml
 tests:
   - text: <code>Animal</code> should not respond to the <code>bark()</code> method.
-    testString: assert(typeof Animal.prototype.bark == "undefined", '<code>Animal</code> should not respond to the <code>bark()</code> method.');
+    testString: assert(typeof Animal.prototype.bark == "undefined");
   - text: <code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.
-    testString: assert(typeof Dog.prototype.eat == "function", '<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.');
+    testString: assert(typeof Dog.prototype.eat == "function");
   - text: <code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.
-    testString: assert(Dog.prototype.hasOwnProperty('bark'), '<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.');
+    testString: assert(Dog.prototype.hasOwnProperty('bark'));
   - text: <code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.
-    testString: assert(beagle instanceof Animal, '<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.');
+    testString: assert(beagle instanceof Animal);
   - text: The constructor for <code>beagle</code> should be set to <code>Dog</code>.
-    testString: assert(beagle.constructor === Dog, 'The constructor for <code>beagle</code> should be set to <code>Dog</code>.');
+    testString: assert(beagle.constructor === Dog);
 
 ```
 

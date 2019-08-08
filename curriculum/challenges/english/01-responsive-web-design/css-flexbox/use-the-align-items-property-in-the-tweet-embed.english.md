@@ -3,6 +3,7 @@ id: 587d78ad367417b2b2512af9
 title: Use the align-items Property in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cd3PNfq'
+forumTopicId: 301106
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Add the CSS property <code>align-items</code> to the header's <code>.follow-btn<
 ```yml
 tests:
   - text: The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.
-    testString: assert($('.follow-btn').css('align-items') == 'center', 'The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.');
+    testString: assert($('.follow-btn').css('align-items') == 'center');
 
 ```
 
@@ -226,4 +227,5 @@ tests:
   </div>
 </footer>
 ```
+
 </section>

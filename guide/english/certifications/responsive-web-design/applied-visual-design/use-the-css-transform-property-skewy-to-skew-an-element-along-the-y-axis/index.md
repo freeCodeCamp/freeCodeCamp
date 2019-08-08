@@ -1,9 +1,13 @@
 ---
 title: Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis
 ---
-## Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis
+# Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -25,3 +29,5 @@ title: Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis
 <div id="top"></div>
 <div id="bottom"></div>
 ```
+
+</details>

@@ -3,6 +3,7 @@ id: 587d78a4367417b2b2512ad3
 title: Adjust the Color of Various Elements to Complementary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmPpud'
+forumTopicId: 301033
 ---
 
 ## Description
@@ -21,13 +22,13 @@ This page will use a shade of teal (<code>#09A7A1</code>) as the dominant color,
 ```yml
 tests:
   - text: 'The <code>header</code> element should have a <code>background-color</code> of #09A7A1.'
-    testString: "assert($('header').css('background-color') == 'rgb(9, 167, 161)', 'The <code>header</code> element should have a <code>background-color</code> of #09A7A1.');"
+    testString: "assert($('header').css('background-color') == 'rgb(9, 167, 161)');"
   - text: 'The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.'
-    testString: "assert($('footer').css('background-color') == 'rgb(9, 167, 161)', 'The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.');"
+    testString: "assert($('footer').css('background-color') == 'rgb(9, 167, 161)');"
   - text: 'The <code>h2</code> element should have a <code>color</code> of #09A7A1.'
-    testString: "assert($('h2').css('color') == 'rgb(9, 167, 161)', 'The <code>h2</code> element should have a <code>color</code> of #09A7A1.');"
+    testString: "assert($('h2').css('color') == 'rgb(9, 167, 161)');"
   - text: 'The <code>button</code> element should have a <code>background-color</code> of #FF790E.'
-    testString: "assert($('button').css('background-color') == 'rgb(255, 121, 14)', 'The <code>button</code> element should have a <code>background-color</code> of #FF790E.');"
+    testString: "assert($('button').css('background-color') == 'rgb(255, 121, 14)');"
 
 ```
 
@@ -128,4 +129,5 @@ tests:
 <br>
 <footer>&copy; 2018 FCC Kitchen</footer>
 ```
+
 </section>

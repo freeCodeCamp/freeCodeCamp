@@ -3,6 +3,7 @@ id: 598e8944f009e646fc236146
 title: Understanding Undefined Value returned from a Function
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2p7cL'
+forumTopicId: 301177
 ---
 
 ## Description
@@ -32,13 +33,13 @@ Create a function <code>addFive</code> without any arguments. This function adds
 ```yml
 tests:
   - text: <code>addFive</code> should be a function
-    testString: assert(typeof addFive === 'function', '<code>addFive</code> should be a function');
+    testString: assert(typeof addFive === 'function');
   - text: <code>sum</code> should be equal to 8
-    testString: assert(sum === 8, '<code>sum</code> should be equal to 8');
+    testString: assert(sum === 8);
   - text: Returned value from <code>addFive</code> should be <code>undefined</code>
-    testString: assert(addFive() === undefined, 'Returned value from <code>addFive</code> should be <code>undefined</code>');
+    testString: assert(addFive() === undefined);
   - text: Inside of your functions, add 5 to the <code>sum</code> variable
-    testString: assert(code.match(/(sum\s*\=\s*sum\s*\+\s*5)|(sum\s*\+\=\s*5)/g).length === 1, 'Inside of your functions, add 5 to the <code>sum</code> variable');
+    testString: assert(code.match(/(sum\s*\=\s*sum\s*\+\s*5)|(sum\s*\+\=\s*5)/g).length === 1);
 
 ```
 

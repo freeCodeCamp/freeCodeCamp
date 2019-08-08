@@ -2,6 +2,7 @@
 id: 587d78b2367417b2b2512b10
 title: Remove Items Using splice()
 challengeType: 1
+forumTopicId: 301166
 ---
 
 ## Description
@@ -39,9 +40,9 @@ We've defined a function, <code>sumOfTen</code>, which takes an array as an argu
 ```yml
 tests:
   - text: <code>sumOfTen</code> should return 10
-    testString: assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10, '<code>sumOfTen</code> should return 10');
+    testString: assert.strictEqual(sumOfTen([2, 5, 1, 5, 2, 1]), 10);
   - text: The <code>sumOfTen</code> function should utilize the <code>splice()</code> method
-    testString: assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1, 'The <code>sumOfTen</code> function should utilize the <code>splice()</code> method');
+    testString: assert.notStrictEqual(sumOfTen.toString().search(/\.splice\(/), -1);
 
 ```
 
@@ -79,4 +80,5 @@ function sumOfTen(arr) {
   return arr.reduce((a, b) => a + b);
 }
 ```
+
 </section>

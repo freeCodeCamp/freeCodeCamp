@@ -22,6 +22,9 @@ Machine learning problems usually requires computations over a sample size in th
 
 In stochastic gradient descent you update the parameter for the cost gradient of each example rather that the sum of the cost gradient of all the examples. You could arrive at a set of good parameters faster after only a few passes through the training examples, thus the learning is faster as well. 
 
+### Mini-batch Gradient Descent
+Stochastic Gradient Descent computes the gradient on a single instance. As described above, this is indeed faster than evaluating the entire training set when computing a gradient. However, this is somewhat extreme and can lead to parameter volatility around the optimal solution. Mini-batch gradient descent offers a middle-ground where the gradients are computed on a random sample (a "mini" batch). The larger your mini-batch (the chunkier your selection from the training set), the less parameter volatility you can expect around the optimal solution. 
+
 ### Further Reading
 
 * [A guide to Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)

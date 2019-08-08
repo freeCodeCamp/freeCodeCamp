@@ -2,6 +2,7 @@
 title: Babbage problem
 id: 594db4d0dedb4c06a2a4cefd
 challengeType: 5
+forumTopicId: 302229
 ---
 
 ## Description
@@ -26,9 +27,9 @@ Implement a function to return the lowest integer that satisfies the Babbage pro
 ```yml
 tests:
   - text: <code>babbage</code> is a function.
-    testString: assert(typeof babbage === 'function', '<code>babbage</code> is a function.');
+    testString: assert(typeof babbage === 'function');
   - text: <code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).
-    testString: assert.equal(babbage(babbageAns, endDigits), answer, '<code>babbage(99736, 269696)</code> should not return 99736 (there is a smaller answer).');
+    testString: assert.equal(babbage(babbageAns, endDigits), answer);
 
 ```
 

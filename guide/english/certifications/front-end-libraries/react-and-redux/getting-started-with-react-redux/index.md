@@ -1,7 +1,11 @@
 ---
 title: Getting Started with React Redux
 ---
-## Getting Started with React Redux
+# Getting Started with React Redux
+
+
+---
+## Hints
 
 ### Hint 1
 Remember to pass parameter props to constructor
@@ -9,9 +13,11 @@ Remember to pass parameter props to constructor
 ### Hint 2
 Remember the super(props) in constructor
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```jsx
 class DisplayMessages extends React.Component {

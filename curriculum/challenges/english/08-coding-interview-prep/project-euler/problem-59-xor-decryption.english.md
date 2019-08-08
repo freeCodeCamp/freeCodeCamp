@@ -2,6 +2,7 @@
 id: 5900f3a81000cf542c50feba
 challengeType: 5
 title: 'Problem 59: XOR decryption'
+forumTopicId: 302170
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Your task has been made easy, as the encryption key consists of three lower case
 ```yml
 tests:
   - text: <code>euler59()</code> should return 107359.
-    testString: assert.strictEqual(euler59(), 107359, '<code>euler59()</code> should return 107359.');
+    testString: assert.strictEqual(euler59(), 107359);
 
 ```
 
@@ -56,4 +57,5 @@ euler59();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 587d78b2367417b2b2512b0e
 title: Add Items to an Array with push() and unshift()
 challengeType: 1
+forumTopicId: 301151
 ---
 
 ## Description
@@ -33,7 +34,7 @@ We have defined a function, <code>mixedNumbers</code>, which we are passing an a
 ```yml
 tests:
   - text: <code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>
-    testString: assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', 9], '<code>mixedNumbers(["IV", 5, "six"])</code> should now return <code>["I", 2, "three", "IV", 5, "six", 7, "VIII", 9]</code>');
+    testString: assert.deepEqual(mixedNumbers(['IV', 5, 'six']), ['I', 2, 'three', 'IV', 5, 'six', 7, 'VIII', 9]);
   - text: The <code>mixedNumbers</code> function should utilize the <code>push()</code> method
     testString: assert(mixedNumbers.toString().match(/\.push/));
   - text: The <code>mixedNumbers</code> function should utilize the <code>unshift()</code> method
@@ -78,4 +79,5 @@ function mixedNumbers(arr) {
   return arr;
 }
 ```
+
 </section>

@@ -2,6 +2,7 @@
 title: Harshad or Niven series
 id: 595668ca4cfe1af2fb9818d4
 challengeType: 5
+forumTopicId: 302281
 ---
 
 ## Description
@@ -23,9 +24,9 @@ Use it to list the first twenty members of the sequence and list the first Harsh
 ```yml
 tests:
   - text: <code>isHarshadOrNiven</code> is a function.
-    testString: assert(typeof isHarshadOrNiven === 'function', '<code>isHarshadOrNiven</code> is a function.');
+    testString: assert(typeof isHarshadOrNiven === 'function');
   - text: '<code>isHarshadOrNiven()</code> should return <code>{"firstTwenty": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],"firstOver1000": 1002}</code>'
-    testString: 'assert.deepEqual(isHarshadOrNiven(), res, ''<code>isHarshadOrNiven()</code> should return <code>{"firstTwenty": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],"firstOver1000": 1002}</code>'');'
+    testString: assert.deepEqual(isHarshadOrNiven(), res);
 
 ```
 

@@ -2,6 +2,7 @@
 id: 587d7b8d367417b2b2512b5b
 title: Learn About Functional Programming
 challengeType: 1
+forumTopicId: 301233
 ---
 
 ## Description
@@ -26,9 +27,9 @@ In the code editor, the <code>prepareTea</code> and <code>getTea</code> function
 ```yml
 tests:
   - text: The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.
-    testString: assert(tea4TeamFCC.length === 40, 'The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.');
+    testString: assert(tea4TeamFCC.length === 40);
   - text: The <code>tea4TeamFCC</code> variable should hold cups of green tea.
-    testString: assert(tea4TeamFCC[0] === 'greenTea', 'The <code>tea4TeamFCC</code> variable should hold cups of green tea.');
+    testString: assert(tea4TeamFCC[0] === 'greenTea');
 
 ```
 
@@ -97,4 +98,5 @@ const getTea = (numOfCups) => {
 
 const tea4TeamFCC = getTea(40); 
 ```
+
 </section>

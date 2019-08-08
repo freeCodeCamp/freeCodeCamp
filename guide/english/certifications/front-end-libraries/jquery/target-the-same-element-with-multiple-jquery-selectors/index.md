@@ -1,9 +1,14 @@
 ---
 title: Target the Same Element with Multiple jQuery Selectors
 ---
-## Target the Same Element with Multiple jQuery Selectors
+# Target the Same Element with Multiple jQuery Selectors
 
-## Solution 
+
+---
+## Solutions 
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```html
 <script>
   $(document).ready(function() {
@@ -35,3 +40,5 @@ title: Target the Same Element with Multiple jQuery Selectors
   </div>
 </div>
 ```
+
+</details>

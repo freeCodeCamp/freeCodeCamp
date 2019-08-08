@@ -1,7 +1,7 @@
 ---
 title: P2P Video Chat Application
 ---
-## P2P Video Chat Application
+# P2P Video Chat Application
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/p2p-video-chat-application/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

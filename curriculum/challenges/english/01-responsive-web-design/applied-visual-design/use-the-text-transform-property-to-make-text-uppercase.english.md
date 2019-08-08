@@ -3,6 +3,7 @@ id: 587d781c367417b2b2512ac0
 title: Use the text-transform Property to Make Text Uppercase
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVZQSP'
+forumTopicId: 301081
 ---
 
 ## Description
@@ -23,9 +24,9 @@ Transform the text of the <code>h4</code> to be uppercase using the <code>text-t
 ```yml
 tests:
   - text: The <code>h4</code> text should be uppercase.
-    testString: assert($('h4').css('text-transform') === 'uppercase', 'The <code>h4</code> text should be uppercase.');
+    testString: assert($('h4').css('text-transform') === 'uppercase');
   - text: The original text of the h4 should not be changed.
-    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()), 'The original text of the h4 should not be changed.');
+    testString: assert(($('h4').text() !== $('h4').text().toUpperCase()));
 
 ```
 
@@ -142,4 +143,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

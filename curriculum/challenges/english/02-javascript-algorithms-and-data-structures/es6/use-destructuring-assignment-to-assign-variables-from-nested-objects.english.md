@@ -2,6 +2,7 @@
 id: 587d7b89367417b2b2512b4a
 title: Use Destructuring Assignment to Assign Variables from Nested Objects
 challengeType: 1
+forumTopicId: 301214
 ---
 
 ## Description
@@ -97,4 +98,5 @@ const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
 console.log(highToday); // should be 77
 console.log(highTomorrow); // should be 80
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 587d7b8e367417b2b2512b5c
 title: Understand Functional Programming Terminology
 challengeType: 1
+forumTopicId: 301240
 ---
 
 ## Description
@@ -27,13 +28,13 @@ Note: The data (the number of cups of tea) is supplied as the last argument. We'
 ```yml
 tests:
   - text: The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.
-    testString: assert(tea4GreenTeamFCC.length === 27, 'The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.');
+    testString: assert(tea4GreenTeamFCC.length === 27);
   - text: The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.
-    testString: assert(tea4GreenTeamFCC[0] === 'greenTea', 'The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.');
+    testString: assert(tea4GreenTeamFCC[0] === 'greenTea');
   - text: The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.
-    testString: assert(tea4BlackTeamFCC.length === 13, 'The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.');
+    testString: assert(tea4BlackTeamFCC.length === 13);
   - text: The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.
-    testString: assert(tea4BlackTeamFCC[0] === 'blackTea', 'The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.');
+    testString: assert(tea4BlackTeamFCC[0] === 'blackTea');
 
 ```
 
@@ -114,4 +115,5 @@ const getTea = (prepareTea, numOfCups) => {
 const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
 const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
 ```
+
 </section>

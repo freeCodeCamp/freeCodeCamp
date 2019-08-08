@@ -49,8 +49,7 @@ Este programa é muito simples, o truque é entender o que é um primitivo boole
     booWho(null); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnK/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 # Explicação do código:
 
 Usa o operador `typeof` para verificar se a variável é booleana. Se for, ele retornará `true` . Caso contrário, se for qualquer outro tipo, retornará `false` .

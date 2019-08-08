@@ -1,10 +1,10 @@
 ---
 title: Falsy Values
-localeTitle: القيم الفارسية
+localeTitle: القيم الكاذبة
 ---
 ## وصف
 
-قيمة الخطأ هي التي يتم تقييمها على FALSE ، على سبيل المثال عند التحقق من متغير. هناك ستة قيم زائفة فقط في JavaScript: `undefined` ، `null` ، `NaN` ، `0` ، `""` (سلسلة فارغة) ، و `false` بالطبع.
+قيمة الخطأ هي التي يتم تقييمها إلى FALSE ، على سبيل المثال عند التحقق من متغير. هناك ستة قيم كاذبة فقط في JavaScript: `undefined` ، `null` ، `NaN` ، `0` ، `""` (سلسلة فارغة) ، و `false` بالطبع.
 
 ## التحقق من وجود قيم كاذبة على المتغيرات
 
@@ -65,7 +65,7 @@ if (typeof match.teamA === 'number')
 }
 ``` 
 
-## معلومات اكثر
+## معلومات أكثر
 
 *   **الصدق** [بلوق وظيفة - Truthy & Falsey](http://james.padolsey.com/javascript/truthy-falsey/)
     

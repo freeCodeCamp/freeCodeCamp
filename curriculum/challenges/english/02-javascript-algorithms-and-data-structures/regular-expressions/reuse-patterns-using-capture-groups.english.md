@@ -2,6 +2,7 @@
 id: 587d7dbb367417b2b2512baa
 title: Reuse Patterns Using Capture Groups
 challengeType: 1
+forumTopicId: 301364
 ---
 
 ## Description
@@ -81,4 +82,5 @@ let repeatNum = "42 42 42";
 let reRegex = /^(\d+)\s\1\s\1$/;
 let result = reRegex.test(repeatNum);
 ```
+
 </section>

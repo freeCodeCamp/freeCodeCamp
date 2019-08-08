@@ -2,6 +2,7 @@
 title: Execute a Markov algorithm
 id: 59e09e6d412c5939baa02d16
 challengeType: 5
+forumTopicId: 302260
 ---
 
 ## Description
@@ -17,7 +18,7 @@ Rules have the syntax:
 There is one rule per line.
 If there is a <code>.</code> (period) present before the  [replacement], then this is a terminating rule in which case the interpreter must halt execution.
 A ruleset consists of a sequence of rules, with optional comments.
-<big><big>Rulesets</big></big>
+<span style="font-size: 1.5rem">Rulesets</span>
 Use the following tests on entries:
 <strong>Ruleset 1:</strong>
 <pre>
@@ -52,7 +53,7 @@ Should generate:
 <strong>Ruleset 3:</strong>
 This tests for correct substitution order and may trap simple regexp based replacement routines if special regexp characters are not escaped.
 <pre>
-#BNF Syntax testing rules
+# BNF Syntax testing rules
 A -> apple
 WWWW -> with
 Bgage -> ->.*
@@ -106,7 +107,7 @@ A simple <a href="http://en.wikipedia.org/wiki/Turing_machine" title="link: http
 The tape consists of <code>0</code>s and <code>1</code>s, the states are <code>A</code>, <code>B</code>, <code>C</code> and <code>H</code> (for <code>H</code>alt), and the head position is indicated by writing the state letter before the character where the head is. All parts of the initial tape the machine operates on have to be given in the input.
 Besides demonstrating that the Markov algorithm is Turing-complete, it also made me catch a bug in the C++ implementation which wasn't caught by the first four rulesets.
 <pre>
-#Turing machine: three-state busy beaver
+# Turing machine: three-state busy beaver
 #
 # state A, symbol 0 => write 1, move right, new state B
 A0 -> 1B
@@ -142,17 +143,17 @@ into
 ```yml
 tests:
   - text: <code>markov</code> is a function.
-    testString: assert(typeof markov === 'function', '<code>markov</code> is a function.');
+    testString: assert(typeof markov === 'function');
   - text: <code>markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")</code> should return "I bought a bag of apples from my brother.".
-    testString: assert.deepEqual(markov(rules[0],tests[0]),outputs[0],'<code>markov(["A -> apple","B -> bag","S -> shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")</code> should return "I bought a bag of apples from my brother.".');
+    testString: assert.deepEqual(markov(rules[0],tests[0]),outputs[0]);
   - text: <code>markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")</code> should return "I bought a bag of apples from T shop.".
-    testString: assert.deepEqual(markov(rules[1],tests[1]),outputs[1],'<code>markov(["A -> apple","B -> bag","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As from T S.")</code> should return "I bought a bag of apples from T shop.".');
+    testString: assert.deepEqual(markov(rules[1],tests[1]),outputs[1]);
   - text: <code>markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")</code> should return "I bought a bag of apples with my money from T shop.".
-    testString: assert.deepEqual(markov(rules[2],tests[2]),outputs[2],'<code>markov(["A -> apple","WWWW -> with","Bgage -> ->.*","B -> bag","->.* -> money","W -> WW","S -> .shop","T -> the","the shop -> my brother","a never used -> .terminating rule"],"I bought a B of As W my Bgage from T S.")</code> should return "I bought a bag of apples with my money from T shop.".');
+    testString: assert.deepEqual(markov(rules[2],tests[2]),outputs[2]);
   - text: <code>markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")</code> should return "11111111111111111111".
-    testString: assert.deepEqual(markov(rules[3],tests[3]),outputs[3],'<code>markov(["_+1 -> _1+","1+1 -> 11+","1! -> !1",",! -> !+","_! -> _","1*1 -> x,@y","1x -> xX","X, -> 1,1","X1 -> 1X","_x -> _X",",x -> ,X","y1 -> 1y","y_ -> _","1@1 -> x,@y","1@_ -> @_",",@_ -> !_","++ -> +","_1 -> 1","1+_ -> 1","_+_ -> "],"_1111*11111_")</code> should return "11111111111111111111".');
+    testString: assert.deepEqual(markov(rules[3],tests[3]),outputs[3]);
   - text: <code>markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")</code> should return "00011H1111000".
-    testString: assert.deepEqual(markov(rules[4],tests[4]),outputs[4],'<code>markov(["A0 -> 1B","0A1 -> C01","1A1 -> C11","0B0 -> A01","1B0 -> A11","B1 -> 1B","0C0 -> B01","1C0 -> B11","0C1 -> H01","1C1 -> H11"],"")</code> should return "00011H1111000".');
+    testString: assert.deepEqual(markov(rules[4],tests[4]),outputs[4]);
 
 ```
 

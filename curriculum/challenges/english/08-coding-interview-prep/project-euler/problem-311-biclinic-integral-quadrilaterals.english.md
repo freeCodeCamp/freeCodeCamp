@@ -2,6 +2,7 @@
 id: 5900f4a31000cf542c50ffb6
 challengeType: 5
 title: 'Problem 311: Biclinic Integral Quadrilaterals'
+forumTopicId: 301967
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find B(10 000 000 000).
 ```yml
 tests:
   - text: <code>euler311()</code> should return 2466018557.
-    testString: assert.strictEqual(euler311(), 2466018557, '<code>euler311()</code> should return 2466018557.');
+    testString: assert.strictEqual(euler311(), 2466018557);
 
 ```
 
@@ -66,4 +67,5 @@ euler311();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,6 +3,7 @@ id: 587d781d367417b2b2512ac8
 title: Adjust the Hover State of an Anchor Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakRGcm'
+forumTopicId: 301035
 ---
 
 ## Description
@@ -29,9 +30,9 @@ The code editor has a CSS rule to style all <code>a</code> tags black. Add a rul
 ```yml
 tests:
   - text: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.
-    testString: assert($('a').css('color') == 'rgb(0, 0, 0)', 'The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');
+    testString: assert($('a').css('color') == 'rgb(0, 0, 0)');
   - text: The anchor tag should have a <code>color</code> of blue on hover.
-    testString: assert(code.match(/a:hover\s*?{\s*?color:\s*?(blue|rgba\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?,\s*?1\s*?\)|#00F|rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\))\s*?;\s*?}/gi), 'The anchor tag should have a <code>color</code> of blue on hover.');
+    testString: assert(code.match(/a:hover\s*?{\s*?color:\s*?(blue|rgba\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?,\s*?1\s*?\)|#00F|rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\))\s*?;\s*?}/gi));
 
 ```
 
@@ -74,4 +75,5 @@ tests:
 </style>
 <a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 ```
+
 </section>

@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc7edc
 title: Last Friday of each month
 challengeType: 5
+forumTopicId: 302299
 ---
 
 ## Description
 <section id='description'>
+
 Write a function that returns the date of the last Friday of a given month for a given year.
 </section>
 
@@ -45,6 +47,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

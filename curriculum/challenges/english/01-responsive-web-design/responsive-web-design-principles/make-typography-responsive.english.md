@@ -3,6 +3,7 @@ id: 587d78b1367417b2b2512b0c
 title: Make Typography Responsive
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pzrPu4/crzN7T8'
+forumTopicId: 301141
 ---
 
 ## Description
@@ -25,9 +26,9 @@ Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's w
 ```yml
 tests:
   - text: Your <code>h2</code> tag should have a <code>width</code> of 80vw.
-    testString: assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g), 'Your <code>h2</code> tag should have a <code>width</code> of 80vw.');
+    testString: assert(code.match(/h2\s*?{\s*?width:\s*?80vw;\s*?}/g));
   - text: Your <code>p</code> tag should have a <code>width</code> of 75vmin.
-    testString: assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g), 'Your <code>p</code> tag should have a <code>width</code> of 75vmin.');
+    testString: assert(code.match(/p\s*?{\s*?width:\s*?75vmin;\s*?}/g));
 
 ```
 

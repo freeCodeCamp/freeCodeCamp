@@ -3,6 +3,7 @@ id: bad87fee1348bd9aede08835
 title: Nest Many Elements within a Single div Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cNW4kC3'
+forumTopicId: 18246
 ---
 
 ## Description
@@ -24,13 +25,13 @@ Hint: Try putting your opening <code>div</code> tag above your "Things cats love
 ```yml
 tests:
   - text: Nest your <code>p</code> elements inside your <code>div</code> element.
-    testString: assert($("div").children("p").length > 1, 'Nest your <code>p</code> elements inside your <code>div</code> element.');
+    testString: assert($("div").children("p").length > 1);
   - text: Nest your <code>ul</code> element inside your <code>div</code> element.
-    testString: assert($("div").children("ul").length > 0, 'Nest your <code>ul</code> element inside your <code>div</code> element.');
+    testString: assert($("div").children("ul").length > 0);
   - text: Nest your <code>ol</code> element inside your <code>div</code> element.
-    testString: assert($("div").children("ol").length > 0, 'Nest your <code>ol</code> element inside your <code>div</code> element.');
+    testString: assert($("div").children("ol").length > 0);
   - text: Make sure your <code>div</code> element has a closing tag.
-    testString: assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length, 'Make sure your <code>div</code> element has a closing tag.');
+    testString: assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length);
 
 ```
 
@@ -113,4 +114,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

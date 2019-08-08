@@ -2,6 +2,7 @@
 id: 587d7b8c367417b2b2512b57
 title: Use * to Import Everything from a File
 challengeType: 1
+forumTopicId: 301210
 ---
 
 ## Description
@@ -18,6 +19,7 @@ The above <code>import</code> statement will create an object called <code>myMat
 myMathModule.add(2,3);
 myMathModule.subtract(5,3);
 ```
+
 </section>
 
 ## Instructions
@@ -41,7 +43,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-  
+
 // add code above this line
 
 stringFunctions.uppercaseString("hello");

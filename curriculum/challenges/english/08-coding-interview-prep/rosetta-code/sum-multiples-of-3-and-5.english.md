@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc8040
 title: Sum multiples of 3 and 5
 challengeType: 5
+forumTopicId: 302332
 ---
 
 ## Description
 <section id='description'>
+
 The objective is to write a function that finds the sum of all positive multiples of 3 or 5 below <i>n</i>.
 </section>
 
@@ -39,6 +41,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

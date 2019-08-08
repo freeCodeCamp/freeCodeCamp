@@ -2,6 +2,7 @@
 id: 587d8251367417b2b2512c61
 title: Work with Nodes in a Linked List
 challengeType: 1
+forumTopicId: 301721
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Create a <code>Cat</code> and <code>Dog</code> node and manually add them to the
 ```yml
 tests:
   - text: Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.
-    testString: assert(Puppy.next.element === "Cat", 'Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');
+    testString: assert(Puppy.next.element === "Cat");
   - text: Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.
-    testString: assert(Cat.next.element === "Dog", 'Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.');
+    testString: assert(Cat.next.element === "Dog");
 ```
 
 </section>

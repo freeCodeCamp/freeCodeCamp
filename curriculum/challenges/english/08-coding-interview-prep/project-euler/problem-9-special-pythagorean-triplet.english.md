@@ -2,6 +2,7 @@
 id: 5900f3761000cf542c50fe88
 challengeType: 5
 title: 'Problem 9: Special Pythagorean triplet'
+forumTopicId: 302205
 ---
 
 ## Description

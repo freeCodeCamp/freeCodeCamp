@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08806
 title: Change the Font Size of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvDc8'
+forumTopicId: 16777
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Inside the same <code>&#60;style&#62;</code> tag that contains your <code>red-te
 ```yml
 tests:
   - text: Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.
-    testString: assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), 'Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');
+    testString: assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i));
 
 ```
 
@@ -130,4 +131,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

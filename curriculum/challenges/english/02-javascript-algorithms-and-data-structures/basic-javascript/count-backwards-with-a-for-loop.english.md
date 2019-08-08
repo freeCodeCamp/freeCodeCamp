@@ -3,6 +3,7 @@ id: 56105e7b514f539506016a5e
 title: Count Backwards With a For Loop
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c2R6BHa'
+forumTopicId: 16808
 ---
 
 ## Description
@@ -33,11 +34,11 @@ Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for<
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: assert(code.match(/for\s*\(/g).length > 1, 'You should be using a <code>for</code> loop for this.');
+    testString: assert(code.match(/for\s*\(/g).length > 1);
   - text: You should be using the array method <code>push</code>.
-    testString: assert(code.match(/myArray.push/), 'You should be using the array method <code>push</code>.');
+    testString: assert(code.match(/myArray.push/));
   - text: <code>myArray</code> should equal <code>[9,7,5,3,1]</code>.
-    testString: assert.deepEqual(myArray, [9,7,5,3,1], '<code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');
+    testString: assert.deepEqual(myArray, [9,7,5,3,1]);
 
 ```
 

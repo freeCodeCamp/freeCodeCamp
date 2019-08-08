@@ -2,6 +2,7 @@
 id: 5900f3d61000cf542c50fee8
 challengeType: 5
 title: 'Problem 105: Special subset sums: testing'
+forumTopicId: 301729
 ---
 
 ## Description
@@ -25,7 +26,7 @@ NOTE: This problem is related to Problem 103 and Problem 106.
 ```yml
 tests:
   - text: <code>euler105()</code> should return 73702.
-    testString: assert.strictEqual(euler105(), 73702, '<code>euler105()</code> should return 73702.');
+    testString: assert.strictEqual(euler105(), 73702);
 
 ```
 
@@ -57,4 +58,5 @@ euler105();
 ```js
 // solution required
 ```
+
 </section>

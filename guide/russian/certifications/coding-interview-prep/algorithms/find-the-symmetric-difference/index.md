@@ -86,8 +86,7 @@ A = {1, 2, 3}
 
 ```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
 
- [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [Код запуска](https://repl.it/C4II/0)
-
+ 
 ### Код Объяснение:
 
 *   `push()` используется для разбиения объекта _аргументов_ на массив, _args_ .
@@ -141,7 +140,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLoc/0)
 
 ### Код Объяснение:
 
@@ -176,7 +174,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/@ashenm/Symmetric-Difference)
 
 ### Код Объяснение:
 

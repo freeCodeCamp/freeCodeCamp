@@ -4,6 +4,7 @@ title: Change the CSS of an Element Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 16776
 ---
 
 ## Description
@@ -28,9 +29,9 @@ Select <code>target1</code> and change its color to red.
 ```yml
 tests:
   - text: Your <code>target1</code> element should have red text.
-    testString: assert($("#target1").css("color") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.');
+    testString: assert($("#target1").css("color") === 'rgb(255, 0, 0)');
   - text: Only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');
+    testString: assert(!code.match(/class.*animated/g));
 
 ```
 
@@ -120,4 +121,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

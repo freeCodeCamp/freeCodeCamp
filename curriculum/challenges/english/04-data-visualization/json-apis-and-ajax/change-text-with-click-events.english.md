@@ -2,6 +2,7 @@
 id: 587d7fad367417b2b2512be2
 title: Change Text with click Events
 challengeType: 6
+forumTopicId: 301500
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Add code inside the <code>onclick</code> event handler to change the text inside
 ```yml
 tests:
   - text: Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>textContent</code> to the given string.
-    testString: assert(code.match(/document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.textContent\s*?=\s*?('|")Here is the message\2/g), 'Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>textContent</code> to the given string.');
+    testString: assert(code.match(/document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.textContent\s*?=\s*?('|")Here is the message\2/g));
 
 ```
 
@@ -94,4 +95,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -3,6 +3,7 @@ id: 587d774c367417b2b2512a9d
 title: Know When Alt Text Should be Left Blank
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9P4t2'
+forumTopicId: 301019
 ---
 
 ## Description
@@ -25,9 +26,9 @@ Camper Cat has coded a skeleton page for the blog part of his website. He's plan
 ```yml
 tests:
   - text: Your <code>img</code> tag should have an <code>alt</code> attribute.
-    testString: assert(!($('img').attr('alt') == undefined), 'Your <code>img</code> tag should have an <code>alt</code> attribute.');
+    testString: assert(!($('img').attr('alt') == undefined));
   - text: The <code>alt</code> attribute should be set to an empty string.
-    testString: assert($('img').attr('alt') == '', 'The <code>alt</code> attribute should be set to an empty string.');
+    testString: assert($('img').attr('alt') == '');
 
 ```
 
@@ -76,4 +77,5 @@ tests:
   <p>To Come...</p>
 </article>
 ```
+
 </section>

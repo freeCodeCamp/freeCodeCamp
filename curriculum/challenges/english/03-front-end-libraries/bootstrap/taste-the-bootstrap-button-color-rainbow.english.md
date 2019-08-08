@@ -2,6 +2,7 @@
 id: bad87fee1348cd8acef08811
 title: Taste the Bootstrap Button Color Rainbow
 challengeType: 0
+forumTopicId: 18323
 ---
 
 ## Description
@@ -22,11 +23,11 @@ Note that this button will still need the <code>btn</code> and <code>btn-block</
 ```yml
 tests:
   - text: Your button should have the class <code>btn-primary</code>.
-    testString: assert($("button").hasClass("btn-primary"), 'Your button should have the class <code>btn-primary</code>.');
+    testString: assert($("button").hasClass("btn-primary"));
   - text: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.
-    testString: assert($("button").hasClass("btn-block") && $("button").hasClass("btn"), 'Your button should still have the <code>btn</code> and <code>btn-block</code> classes.');
+    testString: assert($("button").hasClass("btn-block") && $("button").hasClass("btn"));
   - text: Make sure all your <code>button</code> elements have a closing tag.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
@@ -167,4 +168,5 @@ tests:
   </form>
 </div>
 ```
+
 </section>

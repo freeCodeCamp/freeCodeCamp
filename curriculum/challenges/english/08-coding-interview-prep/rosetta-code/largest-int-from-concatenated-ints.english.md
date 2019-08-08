@@ -2,10 +2,12 @@
 id: 5a23c84252665b21eecc7edb
 title: Largest int from concatenated ints
 challengeType: 5
+forumTopicId: 302298
 ---
 
 ## Description
 <section id='description'>
+
 Given a set of positive integers, write a function to order the integers in such a way that the concatenation of the numbers forms the largest possible integer and return this integer.
 </section>
 
@@ -39,6 +41,7 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
+
 <div id='js-seed'>
 
 ```js

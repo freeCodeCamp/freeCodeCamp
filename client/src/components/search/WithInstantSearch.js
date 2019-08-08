@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import qs from 'query-string';
+import { navigate } from 'gatsby';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -13,6 +14,8 @@ import {
 } from './redux';
 
 import { createSelector } from 'reselect';
+
+const DEBOUNCE_TIME = 400;
 
 const propTypes = {
   children: PropTypes.any,
@@ -56,7 +59,20 @@ class InstantSearchRoot extends Component {
     if (location !== prevProps.location) {
       const { query, updateSearchQuery } = this.props;
       if (this.isSearchPage()) {
-        this.setQueryFromURL();
+        if (
+          location.state &&
+          typeof location.state === 'object' &&
+          location.state.hasOwnProperty('query')
+        ) {
+          updateSearchQuery(location.state.query);
+        } else if (location.search) {
+          this.setQueryFromURL();
+        } else {
+          navigate(searchStateToUrl(this.props.location, query), {
+            state: { query },
+            replace: true
+          });
+        }
       } else if (query) {
         updateSearchQuery('');
       }
@@ -90,13 +106,11 @@ class InstantSearchRoot extends Component {
 
       this.debouncedSetState = setTimeout(() => {
         if (this.isSearchPage()) {
-          window.history.pushState(
-            { query },
-            null,
-            searchStateToUrl(this.props.location, query)
-          );
+          navigate(searchStateToUrl(this.props.location, query), {
+            state: { query }
+          });
         }
-      }, 400);
+      }, DEBOUNCE_TIME);
     }
   };
 

@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244c3
 title: Assignment with a Returned Value
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ce2pEtB'
+forumTopicId: 16658
 ---
 
 ## Description
@@ -24,9 +25,9 @@ Call the <code>processArg</code> function with an argument of <code>7</code> and
 ```yml
 tests:
   - text: <code>processed</code> should have a value of <code>2</code>
-    testString: assert(processed === 2, '<code>processed</code> should have a value of <code>2</code>');
+    testString: assert(processed === 2);
   - text: You should assign <code>processArg</code> to <code>processed</code>
-    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)\s*;/.test(code), 'You should assign <code>processArg</code> to <code>processed</code>');
+    testString: assert(/processed\s*=\s*processArg\(\s*7\s*\)/.test(code));
 
 ```
 

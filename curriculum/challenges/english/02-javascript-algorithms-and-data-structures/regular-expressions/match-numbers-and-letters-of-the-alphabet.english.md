@@ -2,6 +2,7 @@
 id: 587d7db5367417b2b2512b97
 title: Match Numbers and Letters of the Alphabet
 challengeType: 1
+forumTopicId: 301356
 ---
 
 ## Description
@@ -30,11 +31,11 @@ Create a single regex that matches a range of letters between <code>h</code> and
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should match 17 items.
-    testString: assert(result.length == 17, 'Your regex <code>myRegex</code> should match 17 items.');
+    testString: assert(result.length == 17);
   - text: Your regex <code>myRegex</code> should use the global flag.
-    testString: assert(myRegex.flags.match(/g/).length == 1, 'Your regex <code>myRegex</code> should use the global flag.');
+    testString: assert(myRegex.flags.match(/g/).length == 1);
   - text: Your regex <code>myRegex</code> should use the case insensitive flag.
-    testString: assert(myRegex.flags.match(/i/).length == 1, 'Your regex <code>myRegex</code> should use the case insensitive flag.');
+    testString: assert(myRegex.flags.match(/i/).length == 1);
 
 ```
 
@@ -66,4 +67,5 @@ let myRegex = /[h-s2-6]/gi; // Change this line
 let result = quoteSample.match(myRegex); // Change this line
 
 ```
+
 </section>
