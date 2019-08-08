@@ -46,7 +46,7 @@ Voici nos six certifications principales :
 - [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid)
 <br />
 <br />
-**Projets** : page d'hommage, formulaire d'enquête, page de promotion, page de documentation technique, portfolio personnel.
+  **Projets**: page d'hommage, formulaire d'enquête, page de promotion, page de documentation technique, portfolio personnel.
 
 #### 2. Certification des algorithmes JavaScript et des structures de données
 
@@ -61,7 +61,7 @@ Voici nos six certifications principales :
 - [Les Algorithmes - niveau intermédiaire](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/intermediate-algorithm-scripting)
 <br />
 <br />
-**Projets**: vérificateur de palindrome, convertisseur de chiffres romains, chiffrement de César, validateur de numéros de téléphone, caisse enregistreuse.
+  **Projets**: vérificateur de palindrome, convertisseur de chiffres romains, chiffrement de César, validateur de numéros de téléphone, caisse enregistreuse.
 
 #### 3. Certification des bibliothèques Front End
 
@@ -73,7 +73,7 @@ Voici nos six certifications principales :
 - [React et Redux](https://learn.freecodecamp.org/front-end-libraries/react-and-redux)
 <br />
 <br />
-**Projets**: Générateur aléatoire de citations, Prévisualisation de documents Markdown, Boîte à rythmes, Calculatrice JavaScript, Horloge Pomodoro.
+  **Projets**: Générateur aléatoire de citations, Prévisualisation de documents Markdown, Boîte à rythmes, Calculatrice JavaScript, Horloge Pomodoro.
 
 #### 4. Certification de visualisation des données
 
@@ -81,7 +81,7 @@ Voici nos six certifications principales :
 - [API JSON et Ajax](https://learn.freecodecamp.org/data-visualization/json-apis-and-ajax)
 <br />
 <br />
-**Projets**: Diagramme à barres, Diagramme à nuages de points, Carte de chaleur, Carte de Choroplèthes, Diagramme Treemap.
+  **Projets**: Diagramme à barres, Diagramme à nuages de points, Carte de chaleur, Carte de Choroplèthes, Diagramme Treemap.
 
 #### 5. Certification API et Microservices
 
@@ -90,7 +90,7 @@ Voici nos six certifications principales :
 - [MongoDB et Mongoose](https://learn.freecodecamp.org/apis-and-microservices/mongodb-and-mongoose)
 <br />
 <br />
-**Projets**: Microservice Horodateur, Analyseur d'en-tête de requête, Raccourcisseur d'URL, Suivi des exercices, Analyseur de métadonnées.
+  **Projets**: Microservice Horodateur, Analyseur d'en-tête de requête, Raccourcisseur d'URL, Suivi des exercices, Analyseur de métadonnées.
 
 #### 6. Certification de sécurité de l'information et d'assurance qualité
 
@@ -99,7 +99,7 @@ Voici nos six certifications principales :
 - [Node et Express avancés](https://learn.freecodecamp.org/information-security-and-quality-assurance/advanced-node-and-express)
 <br />
 <br />
-**Projets**: convertisseur métrique-impérial, suivi des problèmes, bibliothèque personnelle, vérificateur du prix des actions, forum de discussion anonyme.
+  **Projets**: convertisseur métrique-impérial, suivi des problèmes, bibliothèque personnelle, vérificateur du prix des actions, forum de discussion anonyme.
 
 #### Certification complète de développement.
 
