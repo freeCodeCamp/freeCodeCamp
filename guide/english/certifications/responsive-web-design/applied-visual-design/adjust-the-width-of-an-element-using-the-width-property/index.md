@@ -1,7 +1,7 @@
 ---
 title: Adjust the Width of an Element Using the width Property
 ---
-## Adjust the Width of an Element Using the width Property
+# Adjust the Width of an Element Using the width Property
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/adjust-the-width-of-an-element-using-the-width-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

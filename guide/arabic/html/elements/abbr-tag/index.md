@@ -8,9 +8,9 @@ localeTitle: اببر تاج
 
 استخدام المثال:
 
- `
-<abbr title="Free Code Camp">FCC</abbr> 
-` 
+```html
+<abbr title="Free Code Camp">FCC</abbr>
+``` 
 
 #### معلومات اكثر:
 

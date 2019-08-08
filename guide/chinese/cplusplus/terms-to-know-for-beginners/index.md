@@ -1,7 +1,8 @@
 ---
 title: IDE and Printing different text 
 localeTitle: IDE和打印不同的文本
----# IDE简介和打印不同的文本：
+---
+# IDE简介和打印不同的文本：
 
 *   在上一篇文章中，有一些编程所需软件的下载链接。像这样的软件被称为IDE。 **IDE代表集成开发环境**
 
@@ -33,8 +34,7 @@ _问：尝试在Google上搜索IDE并在其上运行您的第一个程序。检�
 ```
 
 上面的代码返回一个错误，因为在第2行，我们使用了冒号（:)而不是分号（;） 那么，让我们调试错误：
-
-```C++
+```cpp
 #include <iostream> 
  using namespace std ; 
  int main() 

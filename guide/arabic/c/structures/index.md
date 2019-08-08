@@ -15,58 +15,63 @@ localeTitle: الهياكل
 
 *   يمكن أن تساعدنا الكلمة الأساسية `struct` في تعريف نوع بيانات المعرفة من قبل المستخدم.
 
- `struct StudentRecord 
- { 
-  char Name[20]; 
-  int Class; 
-  char Address[30]; 
-  char Phone[10]; 
- }; 
-` 
+```C
+struct StudentRecord
+{
+  char Name[20];
+  int Class;
+  char Address[30];
+  char Phone[10];
+};
+``` 
 
 *   يمكننا أيضًا تحديد **بنية** باستخدام **الرموز المميزة لـ typedef** مما يجعل تهيئة البنية لاحقًا في برنامجنا أسهل.
 
- `typedef struct StudentRecord 
- { 
-  char Name[20]; 
-  int Class; 
-  char Address[30]; 
-  char Phone[10]; 
- }Record; 
-` 
+```C
+typedef struct StudentRecord
+{
+  char Name[20];
+  int Class;
+  char Address[30];
+  char Phone[10];
+}Record;
+``` 
 
 في `main()` ، يتم تعريف **StudentRecord** نوع البيانات المعرفة من قبل المستخدم على النحو التالي:
 
- `int main(void) 
- { 
-  struct StudentRecord student1; 
- } 
-` 
+```C
+int main(void)
+{
+  struct StudentRecord student1;
+}
+``` 
 
 وباستخدام **typedef** ، يبدو نوع البيانات المعرفة من قبل المستخدم:
 
- `int main(void) 
- { 
-  Record student1; 
- } 
-` 
+```C
+int main(void)
+{
+  Record student1;
+}
+``` 
 
 للوصول إلى البيانات المخزنة في **student1** ، نستخدم عامل نقطة ( **.** ) للوصول إلى محتويات متغير نوع البنية.
 
- `int main(void) 
- { 
-  struct StudentRecord student1; 
-  student1.Class = 10; 
-  printf("Enter Name of Student\n"); 
-  scanf("%s",&student1.Name); 
-  printf("Enter Address of Student\n"); 
-  scanf("%s",&student1.Address); 
-  printf("Enter Phone Number of Student\n"); 
-  scanf("%s",&student1.Phone); 
-  // Printing the Data 
-  printf("Name: %s \n, Class: %d \n, Address: %s \n, Phone: %s \n",student1.Name, student1.Class, student1.Address, student1.Phone); 
- } 
-` 
+```C
+int main(void)
+{
+  struct StudentRecord student1;
+  student1.Class = 10;
+  printf("Enter Name of Student\n");
+  scanf("%s",&student1.Name);
+  printf("Enter Address of Student\n");
+  scanf("%s",&student1.Address);
+  printf("Enter Phone Number of Student\n");
+  scanf("%s",&student1.Phone);
+  // Printing the Data
+  printf("Name: %s \n, Class: %d \n, Address: %s \n, Phone: %s \n",student1.Name, student1.Class, student1.Address, student1.Phone);
+}
+``` 
 
 ### معلومات اكثر
 

@@ -1,10 +1,50 @@
 ---
 title: Move a Relatively Positioned Element with CSS Offsets
 ---
-## Move a Relatively Positioned Element with CSS Offsets
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/move-a-relatively-positioned-element-with-css-offsets/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+# Move a Relatively Positioned Element with CSS Offsets
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Hints
+
+### Hint 1
+
+Use the `left` property for offsetting the element right.
+
+
+### Hint 2
+
+Use the `bottom` property for offsetting the element top.
+
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
+<head>
+<style>
+  h2 {
+    position: relative;
+    left: 15px;
+    bottom: 10px;
+  }
+</style>
+</head>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
+```
+
+#### Code Explanation
+
+* The `h2{}` selects the `h2` element.
+* `left: 15px;` offsets the `h2` `15px` to the right.
+* `bottom: 10px;` offsets the `h2` `10px` to the top.
+
+</details>

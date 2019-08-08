@@ -1,10 +1,54 @@
 ---
 title: Lock an Element to its Parent with Absolute Positioning
 ---
-## Lock an Element to its Parent with Absolute Positioning
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/lock-an-element-to-its-parent-with-absolute-positioning/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+# Lock an Element to its Parent with Absolute Positioning
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Hints
+
+### Hint 1
+
+Use `position: absolute;`.
+
+
+### Hint 2
+
+Use the `right` and `top` properties.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
+<style>
+  #searchbar {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+  section {
+    position: relative;
+  }
+</style>
+<body>
+  <h1>Welcome!</h1>
+  <section>
+    <form id="searchbar">
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search">
+      <input type="submit" name="submit" value="Go!">
+    </form>
+  </section>
+</body>
+```
+
+#### Code Explanation
+
+*  `#searchbar{}` selects all the elements with the ID of `searchbar`.
+*  `position: absolute;` positions the element with respect to its nearest ancestor having `position: relative;`.
+*  `top: 50px;` and `right: 50px;` offsets the element by `50px` to the bottom and left respectively.
+</details>

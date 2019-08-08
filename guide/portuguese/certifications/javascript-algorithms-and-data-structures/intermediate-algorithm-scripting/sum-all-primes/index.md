@@ -73,8 +73,7 @@ function sumPrimes(num) {
  sumPrimes(10); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnZ/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie uma função que gere os números de 1 a **num** e verifique se eles são primos ao longo do caminho.
@@ -122,8 +121,7 @@ function sumPrimes(num) {
  sumPrimes(10); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLn0/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   A função `isPrime` verifica se um determinado número é primo ou não.
@@ -157,8 +155,7 @@ function sumPrimes(num) {
  sumPrimes(977); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/DoOo/3)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   **Etapa 1:** use `Array.from()` para gerar uma sequência de números até e incluindo `num` . Combine com `.slice()` para cortar primeiro dois índices `[0, 1]` pois todos os números primos devem ser maiores que 1.

@@ -16,12 +16,13 @@ localeTitle: الرياضيات Sqrt
 
 #### أمثلة
 
- `Math.sqrt(25); // 5 
- Math.sqrt(169); // 13 
- Math.sqrt(3); // 1.732050807568 
- Math.sqrt(1); // 1 
- Math.sqrt(-5); // NaN 
-` 
+```js
+Math.sqrt(25); // 5
+Math.sqrt(169); // 13
+Math.sqrt(3); // 1.732050807568
+Math.sqrt(1); // 1
+Math.sqrt(-5); // NaN
+``` 
 
 #### معلومات اكثر:
 

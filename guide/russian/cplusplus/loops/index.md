@@ -57,7 +57,7 @@ When you execute this code in a c++ program numbers from 1 to 1000 will be print
     ` for(int i=0;i<=1000;i++) ` 
  * If there is only one statement inside the loop then the curly bracket is optional but its better to write loop code 
    within brackets so that you don't get confused. 
-    ``` c++ 
+    ```cpp 
     for(int i=0;i<=1000;i++) 
         { 
         } 

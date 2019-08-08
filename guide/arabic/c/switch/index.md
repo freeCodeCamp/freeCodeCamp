@@ -34,48 +34,50 @@ localeTitle: تبديل القضية
 
 باستخدام عبارة switch عبر عدة if / else يمكن أن تساهم في زيادة السرعة والقابلية للقراءة.
 
- `# include <stdio.h> 
- 
- int main() { 
- 
-    char operator; 
-    double firstNumber,secondNumber; 
- 
-    printf("Enter an operator (+, -, *, /): "); 
-    scanf("%c", &operator); 
- 
-    printf("Enter two operands: "); 
-    scanf("%lf %lf",&firstNumber, &secondNumber); 
- 
-    switch (operator) { 
-        case '+': 
-            printf("%.1lf + %.1lf = %.1lf",firstNumber, secondNumber, firstNumber+secondNumber); 
-            break; 
-        case '-': 
-            printf("%.1lf - %.1lf = %.1lf",firstNumber, secondNumber, firstNumber-secondNumber); 
-            break; 
-        case '*': 
-            printf("%.1lf * %.1lf = %.1lf",firstNumber, secondNumber, firstNumber*secondNumber); 
-            break; 
-        case '/': 
-            printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber); 
-            break; 
-        // Operator is doesn't match any case constant (+, -, *, /) 
-        default: 
-            printf("Error! operator is not correct"); 
-    } 
- 
-    return 0; 
- } 
-` 
+```c
+# include <stdio.h>
+
+int main() {
+
+    char operator;
+    double firstNumber,secondNumber;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+
+    printf("Enter two operands: ");
+    scanf("%lf %lf",&firstNumber, &secondNumber);
+
+    switch (operator) {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf",firstNumber, secondNumber, firstNumber+secondNumber);
+            break;
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf",firstNumber, secondNumber, firstNumber-secondNumber);
+            break;
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf",firstNumber, secondNumber, firstNumber*secondNumber);
+            break;
+        case '/':
+            printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber);
+            break;
+        // Operator is doesn't match any case constant (+, -, *, /)
+        default:
+            printf("Error! operator is not correct");
+    }
+
+    return 0;
+}
+``` 
 
 ## انتاج:
 
- `-> Enter an operator (+, -, *,): - 
- -> Enter two operands: 32.5 
- -> 12.4 
- -> 32.5 - 12.4 = 20.1 
-` 
+```c
+-> Enter an operator (+, -, *,): -
+-> Enter two operands: 32.5
+-> 12.4
+-> 32.5 - 12.4 = 20.1
+``` 
 
 ## مراجعة: التبديل ضد إذا كان آخر
 

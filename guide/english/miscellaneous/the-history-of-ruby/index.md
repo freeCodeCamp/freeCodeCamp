@@ -15,6 +15,6 @@ By 2000, Ruby was more popular than Python in Japan; but as the <a href='http://
 
 Today, Ruby on Rails is considered a solid web framework; and it has pioneered lot of great practices in web development.
 
-Similarly a lot of <a href='https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails' target='_blank' rel='nofollow'>popular sites</a> are coded in Ruby on Rails like Github, Airbnb, Groupon, etc.
+Similarly a lot of <a href='https://prograils.com/posts/top-10-famous-sites-built-with-ruby-on-rails' target='_blank' rel='nofollow'>popular sites</a> are coded in Ruby on Rails like GitHub, Airbnb, Groupon, etc.
 
 There are various <a href='https://github.com/cogitator/ruby-implementations/wiki/List-of-Ruby-implementations' target='_blank' rel='nofollow'>implementations</a> of Ruby. JRuby (Ruby on the JVM), Ruby MRI (also called CRuby) and IronRuby (Ruby for .NET and Silverlight) are some of the most popular ones.

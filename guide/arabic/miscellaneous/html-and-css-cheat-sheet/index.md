@@ -30,9 +30,9 @@ localeTitle: HTML و CSS Cheat Sheet
 
 جرب قيمًا مختلفة لمعرفة كيفية تأثيرها على div وأكثر في html
 
- `
-<div id="divName" class="container-fluid"> 
-` 
+```html
+<div id="divName" class="container-fluid">
+``` 
 
 ## محاذاة عمودية (لسطر واحد من النص)
 

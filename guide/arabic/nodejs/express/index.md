@@ -14,11 +14,12 @@ Express هو إطار Node.js الأكثر شيوعًا لأنه يتطلب ال
 
 للتحقق مما إذا كان كل شيء مثبتًا بشكل صحيح ، يرجى فتح الجهاز ونوع:
 
- `node --version 
- v5.0.0 
- npm --version 
- 3.5.2 
-` 
+```shell
+node --version
+v5.0.0
+npm --version
+3.5.2
+``` 
 
 إذا كنت تحصل على رقم الإصدار بدلاً من خطأ ، فهذا يعني أنك قمت بتثبيت Node.js و npm بنجاح.
 
@@ -38,50 +39,54 @@ Express هو إطار Node.js الأكثر شيوعًا لأنه يتطلب ال
 
 يحتوي ملف JSON (تدوين كائن جافا سكريبت) على كل معلومات عن أي مشروع Express. عدد الوحدات النمطية المثبتة ، واسم المشروع ، والإصدار ، وغيرها من معلومات التعريف. لإضافة Expressjs كوحدة نمطية في مشروعنا ، نحتاج أولاً إلى إنشاء دليل مشروع ثم إنشاء ملف package.json.
 
- `mkdir express-app-example 
- cd express-app-example 
- npm init --yes 
-` 
+```shell
+mkdir express-app-example
+cd express-app-example
+npm init --yes
+``` 
 
 سيؤدي هذا إلى إنشاء ملف `package.json` في جذر دليل المشروع. لتثبيت أي وحدة نمطية من `npm` نحتاج إلى وجود ملف `package.json` في هذا الدليل.
 
- `{ 
-  "name": "express-web-app", 
-  "version": "0.1.0", 
-  "description": "", 
-  "main": "index.js", 
-  "scripts": { 
-    "test": "echo \"Error: no test specified\" && exit 1" 
-  }, 
-  "keywords": [], 
-  "license": "MIT" 
- } 
-` 
+```json
+{
+  "name": "express-web-app",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "MIT"
+}
+``` 
 
 ### تثبيت اكسبرس
 
 الآن لدينا ملف `package.json` ، يمكننا تثبيت Express عن طريق تشغيل الأمر:
 
- `npm install --save express 
-` 
+```shell
+npm install --save express
+``` 
 
 يمكننا التأكد من أن Express قد تم تثبيته بشكل صحيح بطريقتين. أولاً ، سيكون هناك قسم جديد في ملف `package.json` يسمى `dependencies` التي يوجد تحتها Express الخاص بنا:
 
- `{ 
-  "name": "express-web-app", 
-  "version": "0.1.0", 
-  "description": "", 
-  "main": "index.js", 
-  "scripts": { 
-    "test": "echo \"Error: no test specified\" && exit 1" 
-  }, 
-  "keywords": [], 
-  "license": "MIT", 
-  "dependencies": { 
-    "express": "4.16.0" 
-  } 
- } 
-` 
+```json
+{
+  "name": "express-web-app",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.16.0"
+  }
+}
+``` 
 
 الطريقة الثانية هي أن مجلدًا جديدًا يسمى `node_modules` ظهر فجأة في جذر دليل مشروعنا. يخزن هذا المجلد الحزم التي نثبتها محليًا في مشروعنا.
 
@@ -89,18 +94,20 @@ Express هو إطار Node.js الأكثر شيوعًا لأنه يتطلب ال
 
 لاستخدام حزمة التثبيت الخاصة بنا لإطار Express وإنشاء تطبيق خادم بسيط ، سنقوم بإنشاء الملف ، `index.js` ، في جذر دليل مشروعنا.
 
- `const express = require('express'); 
- const app = express(); 
- 
- app.get('/', (req, res) => res.send('Hello World!')); 
- 
- app.listen(3000, () => console.log('Example app listening on port 3000!')); 
-` 
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => res.send('Hello World!'));
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'));
+``` 
 
 لبدء تشغيل الخادم ، انتقل إلى جهازك واكتب:
 
- `node index.js 
-` 
+```shell
+node index.js
+``` 
 
 هذا سيبدأ الخادم. سوف يستمع هذا التطبيق الحد الأدنى على المنفذ 3000. نحن نقدم طلبا من خلال متصفحنا على `http://localhost:3000` وسوف يستجيب الخادم الخاص بنا مع `Hello World` حيث يكون المتصفح هو العميل وستظهر الرسالة هناك.
 
@@ -148,8 +155,9 @@ Express هو إطار Node.js الأكثر شيوعًا لأنه يتطلب ال
 
 يمكن أن تكون المسارات إما صفحات ويب قديمة جيدة أو نقاط نهاية REST API. في كلتا الحالتين ، يمكن تعريف بناء الجملة على أنه بناء مماثل لطريق ما على النحو التالي:
 
- `app.METHOD(PATH, HANDLER); 
-` 
+```javascript
+app.METHOD(PATH, HANDLER);
+``` 
 
 تساعد أجهزة التوجيه في فصل المخاوف مثل نقاط النهاية المختلفة والحفاظ على الأجزاء ذات الصلة من شفرة المصدر معًا. يساعدون في بناء كود قابل للصيانة. يتم تعريف جميع الطرق قبل استدعاء الدالة `app.listen()` . في تطبيق Express النموذجي ، `app.listen()` آخر وظيفة يتم تنفيذها.
 
@@ -157,9 +165,10 @@ Express هو إطار Node.js الأكثر شيوعًا لأنه يتطلب ال
 
 HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يوفر أساليب مختلفة للعميل لتقديم الطلب. يحتوي كل مسار على وظيفة hanlder على الأقل أو رد اتصال. تحدد وظيفة رد الاتصال هذه ما ستكون الاستجابة من الخادم لهذا المسار بعينه. على سبيل المثال ، يتم استخدام مسار `app.get()` لمعالجة طلبات GET وفي المقابل إرسال رسالة بسيطة كرد.
 
- `// GET method route 
- app.get('/', (req, res) => res.send('Hello World!')); 
-` 
+```javascript
+// GET method route
+app.get('/', (req, res) => res.send('Hello World!'));
+``` 
 
 ### مسارات التوجيه
 
@@ -167,13 +176,14 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 دعنا نحدد نقطتي نهايتين أخريين في تطبيقنا القائم على الخادم.
 
- `app.get('/home', (req, res) => { 
-  res.send('Home Page'); 
- }); 
- app.get('/about', (req, res) => { 
-  res.send('About'); 
- }); 
-` 
+```javascript
+app.get('/home', (req, res) => {
+  res.send('Home Page');
+});
+app.get('/about', (req, res) => {
+  res.send('About');
+});
+``` 
 
 ضع في اعتبارك الشفرة الموضحة أعلاه كحد أدنى لموقع الويب الذي يحتوي على نقطتي نهايتين ، و `/about` أو `/home` و `/about` . إذا قدم العميل طلبًا للصفحة الرئيسية ، فسيتم الرد فقط مع `Home Page` وسيقوم `/about` بإرسال الاستجابة: `About Page` . نحن نستخدم وظيفة `res.send` لإرسال السلسلة مرة أخرى إلى العميل في حالة تحديد أي من الطريقتين المحددتين.
 
@@ -181,18 +191,20 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 تسمى معلمات المسار شرائح عناوين URL التي يتم استخدامها لالتقاط القيم المحددة في موضعها في عنوان URL. يتم استخدام كائن `req.params` في هذه الحالة لأنه لديه حق الوصول إلى جميع المعلمات التي تم تمريرها في عنوان url.
 
- `app.get('/books/:bookId', (req, res) => { 
-  res.send(req.params); 
- }); 
-` 
+```javascript
+app.get('/books/:bookId', (req, res) => {
+  res.send(req.params);
+});
+``` 
 
 سيكون عنوان URL من العميل الوارد في شفرة المصدر أعلاه `http://localhost:3000/books/23` . يجب أن يتكون اسم معلمات المسار من أحرف (\[A-Za-z0-9\_\]). حالة استخدام عامة جدًا لمعلمة توجيه في طلبنا هي الحصول على مسار 404.
 
- `// For invalid routes 
- app.get('*', (req, res) => { 
-  res.send('404! This is an invalid URL.'); 
- }); 
-` 
+```javascript
+// For invalid routes
+app.get('*', (req, res) => {
+  res.send('404! This is an invalid URL.');
+});
+``` 
 
 إذا بدأنا الآن الخادم من سطر الأوامر باستخدام `node index.js` وحاول زيارة عنوان URL: `http://localhost:3000/abcd` . ردا على ذلك ، سوف نحصل على رسالة 404.
 
@@ -232,38 +244,41 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 لإعداد أي برامج وسيطة ، سواء كانت مخصصة أو متوفرة كوحدة نمطية في npm ، نستخدم وظيفة `app.use()` . إنها كقاعدة معلمة اختيارية واحدة واستدعاء واحد للمعلمة الإلزامية. في حالتنا ، نحن لا نستخدم مسار paramaeter اختياري.
 
- `app.use((req, res, next) => { 
-  console.log('A new request received at ' + Date.now()); 
-  next(); 
- }); 
-` 
+```javascript
+app.use((req, res, next) => {
+  console.log('A new request received at ' + Date.now());
+  next();
+});
+``` 
 
 يتم استدعاء الدالة الوسيطة أعلاه لكل طلب يقدمه العميل. عند تشغيل الخادم ، ستلاحظ أنه بالنسبة لكل طلب متصفح في نقطة النهاية `/` ، ستتم مطالبتك برسالة في جهازك:
 
- `A new request received at 1467267512545 
-` 
+```shell
+A new request received at 1467267512545
+``` 
 
 يمكن استخدام وظائف الوسيطيات لمسار معين. انظر المثال أدناه:
 
- `const express = require('express'); 
- const app = express(); 
- 
- //Simple request time logger for a specific route 
- app.use('/home', (req, res, next) => { 
-  console.log('A new request received at ' + Date.now()); 
-  next(); 
- }); 
- 
- app.get('/home', (req, res) => { 
-  res.send('Home Page'); 
- }); 
- 
- app.get('/about', (req, res) => { 
-  res.send('About Page'); 
- }); 
- 
- app.listen(3000, () => console.log('Example app listening on port 3000!')); 
-` 
+```javascript
+const express = require('express');
+const app = express();
+
+//Simple request time logger for a specific route
+app.use('/home', (req, res, next) => {
+  console.log('A new request received at ' + Date.now());
+  next();
+});
+
+app.get('/home', (req, res) => {
+  res.send('Home Page');
+});
+
+app.get('/about', (req, res) => {
+  res.send('About Page');
+});
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'));
+``` 
 
 في هذه المرة ، سترى مطالبة مشابهة فقط عندما يطلب العميل نقطة النهاية `/home` منذ الإشارة إلى المسار في `app.use()` . لن يتم عرض أي شيء في المحطة عندما يطلب العميل نقطة النهاية `/about` .
 
@@ -281,19 +296,21 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 يسمح للمطورين بمعالجة البيانات الواردة ، مثل حمولة الجسم. الحمولة هي البيانات التي نتلقاها من العميل حتى تتم معالجتها. الأكثر فائدة مع طرق POST. يتم تثبيته باستخدام:
 
- `npm install --save body-parser 
-` 
+```shell
+npm install --save body-parser
+``` 
 
 الاستعمال:
 
- `const bodyParser = require('body-parser'); 
- 
- // To parse URL encoded data 
- app.use(bodyParser.urlencoded({ extended: false })); 
- 
- // To parse json data 
- app.use(bodyParser.json()); 
-` 
+```javascript
+const bodyParser = require('body-parser');
+
+// To parse URL encoded data
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// To parse json data
+app.use(bodyParser.json());
+``` 
 
 من المحتمل أنها واحدة من أكثر استخدامات الوسيطة من طرف ثالث في أي تطبيق اكسبرس.
 
@@ -301,41 +318,47 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 يوزع رأس ملف تعريف الارتباط `req.cookies` مع كائن مرتبط بأسماء ملفات تعريف الارتباط. لتثبيته ،
 
- `$ npm install --save cookie-parser 
-` 
+```shell
+$ npm install --save cookie-parser
+``` 
 
- `const cookieParser = require('cookie-parser'); 
- app.use(cookieParser()); 
-` 
+```javascript
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+``` 
 
 #### جلسة
 
 تقوم وظيفة الوسيطة هذه بإنشاء وسيط جلسة مع خيارات محددة. غالبًا ما يتم استخدام جلسة في تطبيقات مثل تسجيل الدخول / التسجيل.
 
- `$ npm install --save session 
-` 
+```shell
+$ npm install --save session
+``` 
 
- `app.use( 
-  session({ 
-    secret: 'arbitary-string', 
-    resave: false, 
-    saveUninitialized: true, 
-    cookie: { secure: true } 
-  }) 
- ); 
-` 
+```javascript
+app.use(
+  session({
+    secret: 'arbitary-string',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  })
+);
+``` 
 
 ### مورغان
 
 يقوم البرنامج الوسيط مورغان بتتبع جميع الطلبات وغيرها من المعلومات المهمة اعتمادًا على تنسيق الإخراج المحدد.
 
- `npm install --save morgan 
-` 
+```shell
+npm install --save morgan
+``` 
 
- `const logger = require('morgan'); 
- // ... Configurations 
- app.use(logger('common')); 
-` 
+```javascript
+const logger = require('morgan');
+// ... Configurations
+app.use(logger('common'));
+``` 
 
 `common` هو حالة تنسيق مسبق يمكن استخدامها في التطبيق. هناك تنسيقات أخرى محددة مسبقًا مثل صغيرة ومبتكر ، ولكن يمكنك تحديد أنك تملك تنسيقًا مخصصًا أيضًا باستخدام معلمات السلسلة المتوفرة لنا من قِبل morgan.
 
@@ -349,39 +372,44 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 بشكل افتراضي ، لا يسمح Express بخدمة الملفات الثابتة. علينا استخدام هذه الوظيفة الوسيطة. من الممارسات الشائعة في تطوير تطبيق الويب هو تخزين جميع الملفات الثابتة تحت الدليل "العام" في جذر المشروع. يمكننا تقديم هذا المجلد لخدمة ملفات ثابتة تتضمن الكتابة في ملف `index.js` :
 
- `app.use(express.static('public')); 
-` 
+```javascript
+app.use(express.static('public'));
+``` 
 
 الآن ، سيتم تحميل الملفات الثابتة في دليلنا العام.
 
- `http://localhost:3000/css/style.css 
- http://localhost:3000/images/logo.png 
- http://localhost:3000/images/bg.png 
- http://localhost:3000/index.html 
-` 
+```shell
+http://localhost:3000/css/style.css
+http://localhost:3000/images/logo.png
+http://localhost:3000/images/bg.png
+http://localhost:3000/index.html
+``` 
 
 ### أدلة ثابتة متعددة
 
 لاستخدام العديد من دلائل الأصول الثابتة ، اتصل بوظيفة الوسيطة `express.static` عدة مرات:
 
- `app.use(express.static('public')); 
- app.use(express.static('files')); 
-` 
+```javascript
+app.use(express.static('public'));
+app.use(express.static('files'));
+``` 
 
 ### المسار الافتراضي البادئة
 
 يمكن أيضًا توفير بادئة مسار الإصلاح كوسيطة أولى للدالة الوسيطة `express.static` . يُعرف هذا _بادئة مسار افتراضي_ لأن المسار الفعلي غير موجود في المشروع.
 
- `app.use('/static', express.static('public')); 
-` 
+```javascript
+app.use('/static', express.static('public'));
+``` 
 
 إذا حاولنا الآن تحميل الملفات:
 
- `http://localhost:3000/static/css/style.css 
- http://localhost:3000/static/images/logo.png 
- http://localhost:3000/static/images/bg.png 
- http://localhost:3000/static/index.html 
-` 
+```shell
+http://localhost:3000/static/css/style.css
+http://localhost:3000/static/images/logo.png
+http://localhost:3000/static/images/bg.png
+http://localhost:3000/static/index.html
+``` 
 
 هذه التقنية تأتي في متناول اليدين عند توفير أدلة متعددة لخدمة ملفات ثابتة. يتم استخدام البادئات للمساعدة في التمييز بين الدلائل المتعددة.
 
@@ -391,14 +419,16 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 لشرح كيفية استخدام "محرك القوالب" ، سنستخدم Pug. إنه محرك قالب قوي يوفر ميزات مثل الفلاتر ، ويشمل ، الاستيفاء ، وما إلى ذلك. لاستخدامها ، يجب علينا أولاً تثبيت كوحدة نمطية في مشروعنا باستخدام `npm` .
 
- `npm install --save pug 
-` 
+```shell
+npm install --save pug
+``` 
 
 سيقوم هذا الأمر بتثبيت الصلصة وللتحقق من تثبيتها بشكل صحيح ، فقط ألقي نظرة على ملف `package.json` . لاستخدامه مع تطبيقنا أولاً ، يجب علينا تعيينه كمحرك قالب وإنشاء دليل جديد ".views" حيث سنقوم بتخزين كافة الملفات المتعلقة بمحرك القالب الخاص بنا.
 
- `app.set('view engine', 'pug'); 
- app.set('views', './views'); 
-` 
+```javascript
+app.set('view engine', 'pug');
+app.set('views', './views');
+``` 
 
 بما أننا نستخدم `app.set()` الذي يشير إلى التكوين داخل ملف الخادم الخاص بنا ، يجب أن `app.set()` قبل تحديد أي مسار أو وظيفة وسيطة.
 
@@ -414,46 +444,49 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 لتشغيل هذه الصفحة ، سنقوم بإضافة الطريق التالي إلى طلبنا.
 
- `app.get('/hello', (req, res) => { 
-  res.render('index'); 
- }); 
-` 
+```javascript
+app.get('/hello', (req, res) => {
+  res.render('index');
+});
+``` 
 
 نظرًا لأننا قمنا بالفعل بتعيين `res.render` كمحرك القالب الخاص بنا ، فإننا في `res.render` لا نحتاج إلى توفير ملحق `.pug` . تعرض هذه الوظيفة الكود في أي ملف `.pug` إلى HTML `.pug` العميل. يمكن للمتصفحات تقديم ملفات HTML فقط. إذا قمت بتشغيل الخادم الآن ، وقمت بزيارة المسار `http://localhost:3000/hello` فسوف تشاهد إخراج `Hello World` بشكل صحيح.
 
 في Pug ، يجب أن تلاحظ أننا لا نحتاج إلى كتابة علامات الإغلاق إلى العناصر كما نفعل في HTML. سيتم تقديم الكود السابق في HTML على النحو التالي:
 
- `
-<!DOCTYPE html> 
- <html> 
-   <head> 
-      <title>Hello from Pug</title> 
-   </head> 
- 
-   <body> 
-      <p class = "greetings">Hello World!</p> 
-   </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Hello from Pug</title>
+   </head>
+
+   <body>
+      <p class = "greetings">Hello World!</p>
+   </body>
+</html>
+``` 
 
 ميزة استخدام "محرك القوالب" على ملفات HTML الخام هو أنها توفر الدعم لتنفيذ المهام عبر البيانات. لا يمكن لـ HTML تقديم البيانات مباشرة. تشترك الأطر مثل Angular و React في هذا السلوك مع محركات القوالب.
 
 يمكنك أيضًا تمرير القيم إلى محرك القالب مباشرةً من وظيفة معالج التوجيه.
 
- `app.get('/', (req, res) => { 
-  res.render('index', { title: 'Hello from Pug', message: 'Hello World!' }); 
- }); 
-` 
+```javascript
+app.get('/', (req, res) => {
+  res.render('index', { title: 'Hello from Pug', message: 'Hello World!' });
+});
+``` 
 
 للحالة أعلاه ، سيتم كتابة ملف `index.pug` بنا على النحو التالي:
 
- `doctype html 
-  html 
-    head 
-      title= title 
-    body 
-      h1= message 
-` 
+```pug
+doctype html
+  html
+    head
+      title= title
+    body
+      h1= message
+``` 
 
 سيكون الإخراج نفس الحالة السابقة.
 
@@ -463,30 +496,31 @@ HTTP هو بروتوكول قياسي لعميل وخادم للاتصال. يو
 
 دعونا نذهب من خلال strucutre نموذجي لتطبيق ويب عبر الإنترنت.
 
- `project-root/ 
-   node_modules/          // This is where the packages installed are stored 
-   config/ 
-      db.js                // Database connection and configuration 
-      credentials.js       // Passwords/API keys for external services used by your app 
-      config.js            // Environment variables 
-   models/                 // For mongoose schemas 
-      books.js 
-      things.js 
-   routes/                 // All routes for different entities in different files 
-      books.js 
-      things.js 
-   views/ 
-      index.pug 
-      404.pug 
-        ... 
-   public/                 // All static files 
-      images/ 
-      css/ 
-      javascript/ 
-   app.js 
-   routes.js               // Require all routes in this and then require this file in 
-   app.js 
-   package.json 
-` 
+```
+project-root/
+   node_modules/          // This is where the packages installed are stored
+   config/
+      db.js                // Database connection and configuration
+      credentials.js       // Passwords/API keys for external services used by your app
+      config.js            // Environment variables
+   models/                 // For mongoose schemas
+      books.js
+      things.js
+   routes/                 // All routes for different entities in different files
+      books.js
+      things.js
+   views/
+      index.pug
+      404.pug
+        ...
+   public/                 // All static files
+      images/
+      css/
+      javascript/
+   app.js
+   routes.js               // Require all routes in this and then require this file in
+   app.js
+   package.json
+``` 
 
 هذا هو النمط المعروف باسم MVC ، عارض عرض نموذج. ببساطة لأن نموذج قاعدة البيانات ، واجهة المستخدم الخاصة بالتطبيق ووحدات التحكم (في حالتنا ، الطرق) مكتوبة ومحفوظة في ملفات منفصلة. نمط التصميم هذا الذي يجعل أي تطبيق ويب سهل القياس إذا كنت ترغب في تقديم المزيد من المسارات أو الملفات الثابتة في المستقبل والرمز قابل للصيانة.

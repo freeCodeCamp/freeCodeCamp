@@ -10,12 +10,13 @@ localeTitle: في العلامة
 
 ### مثال:
 
- `<body> 
-  <p> 
-    Text that requires emphasis should go <em>here</em>. 
-  </p> 
- </body> 
-` 
+```
+<body>
+  <p>
+    Text that requires emphasis should go <em>here</em>.
+  </p>
+</body>
+``` 
 
 #### معلومات اكثر:
 

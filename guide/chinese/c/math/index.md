@@ -132,7 +132,8 @@ double result = 23.0 / 2;
 
 C提供了一个数学库（ `math.h` ），它提供了许多有用的数学函数。例如，数字的幂可以计算为：
 
-```#include<math.h>
+```c
+#include<math.h>
 int result = pow(2,3) // will result in 2*2*2 or 8 
 ```
 

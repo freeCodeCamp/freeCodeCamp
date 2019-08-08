@@ -1,7 +1,7 @@
 ---
 title: Personal Library
 ---
-## Personal Library
+# Personal Library
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-and-quality-assurance-projects/personal-library/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

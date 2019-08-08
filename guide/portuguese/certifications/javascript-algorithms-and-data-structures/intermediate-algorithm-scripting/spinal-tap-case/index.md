@@ -56,8 +56,7 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnS/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   **regex** contém a expressão regular `/\s+|_+/g` , que selecionará todos os espaços em branco e sublinhados.
@@ -77,8 +76,7 @@ function spinalCase(str) {
  spinalCase('This Is Spinal Tap'); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnT/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Semelhante à primeira solução, o primeiro `replace()` coloca um espaço antes de qualquer caractere maiúsculo encontrado na string **str, de** modo que os espaços possam ser substituídos por traços posteriores.
@@ -99,8 +97,7 @@ function spinalCase(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/EUZV)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Divida a string em uma das seguintes condições ( _convertida em uma matriz_ )

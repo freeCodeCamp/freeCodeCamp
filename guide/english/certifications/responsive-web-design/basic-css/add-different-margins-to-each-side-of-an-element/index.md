@@ -1,8 +1,10 @@
 ---
 title: Add Different Margins to Each Side of an Element
 ---
-## Add Different Margins to Each Side of an Element
+# Add Different Margins to Each Side of an Element
 
+---
+## Problem Explanation
 To adjust the margins of an element use:
 
 ```css

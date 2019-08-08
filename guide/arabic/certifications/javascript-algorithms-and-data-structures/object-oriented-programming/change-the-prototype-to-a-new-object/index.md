@@ -28,20 +28,21 @@ localeTitle: تغيير النموذج إلى كائن جديد
 
 ## الحل 1:
 
- `function Dog(name) { 
-  this.name = name; 
- } 
- Dog.prototype = { 
-  // Add your code below this line 
-  numLegs: 2, 
-  eat: function(){ 
-    console.log('nom nom nom'); 
-  }, 
-  describe: function(){ 
-    console.log("My name is " + this.name); 
-  } 
- } 
-` 
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+Dog.prototype = {
+  // Add your code below this line
+  numLegs: 2,
+  eat: function(){
+    console.log('nom nom nom');
+  },
+  describe: function(){
+    console.log("My name is " + this.name);
+  }
+}
+``` 
 
 ## شرح الشفرة:
 
@@ -51,21 +52,22 @@ localeTitle: تغيير النموذج إلى كائن جديد
 
 ## الحل 2:
 
- `function Dog(name) { 
-  this.name = name; 
- } 
- 
- Dog.prototype = { 
-  // Add your code below this line 
-  numLegs: 2, 
-  eat(){ 
-    console.log('nom nom nom'); 
-  }, 
-  describe(){ 
-    console.log("My name is " + this.name); 
-  } 
- }; 
-` 
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  // Add your code below this line
+  numLegs: 2,
+  eat(){
+    console.log('nom nom nom');
+  },
+  describe(){
+    console.log("My name is " + this.name);
+  }
+};
+``` 
 
 ## شرح الشفرة:
 

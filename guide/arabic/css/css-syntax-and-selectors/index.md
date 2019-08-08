@@ -18,17 +18,17 @@ localeTitle: CSS المختار والقواعد
 
 إليك مثال على CSS المضمّن. سيكون للكلمات "One" و "Two" لون خلفية باللون الأصفر ولون النص باللون الأحمر. تحتوي كلمة "ثلاثة" على نمط جديد يتجاوز الأول ، وسيكون له لون خلفية باللون الأخضر ونص اللون السماوي. في المثال ، نحن نطبق الأنماط على علامات `<div>` ، ولكن يمكنك تطبيق نمط على أي عنصر HTML.
 
- `
-<div style="color:red; background:yellow"> 
-  One 
-  <div> 
-    Two 
-  </div> 
-  <div style="color:cyan; background:green"> 
-    Three 
-  </div> 
- </div> 
-` 
+```html
+<div style="color:red; background:yellow">
+  One
+  <div>
+    Two
+  </div>
+  <div style="color:cyan; background:green">
+    Three
+  </div>
+</div>
+``` 
 
 ### CSS داخلي
 
@@ -38,48 +38,48 @@ localeTitle: CSS المختار والقواعد
 
 في ما يلي مثال له تأثير مماثل لمثال "مضمنة" أعلاه ، باستثناء أنه تم استخراج CSS إلى منطقته الخاصة. ستتطابق الكلمتان "One" و "Two" مع محدد `div` ويكون النص الأحمر على خلفية صفراء. تتطابق الكلمتان "Three" و "Four" مع محدد `div` أيضًا ، ولكنهما يتطابقان أيضًا مع محدد `.nested_div` الذي ينطبق على أي عنصر HTML يشير إلى هذه الفئة. يتجاوز هذا المحدد المحدد الأول ، وينتهي ظهرا في الظهور كنص أزرق سماوي على خلفية خضراء.
 
- `
-<style type="text/css"> 
-  div { color: red; background: yellow; } 
-  .nested_div { color: cyan; background: green; } 
- </style> 
- 
- <div> 
-  One 
-  <div> 
-    Two 
-  </div> 
-  <div class="nested_div"> 
-    Three 
-  </div> 
-  <div class="nested_div"> 
-    Four 
-  </div> 
- </div> 
-` 
+```html
+<style type="text/css">
+  div { color: red; background: yellow; }
+  .nested_div { color: cyan; background: green; }
+</style>
+
+<div>
+  One
+  <div>
+    Two
+  </div>
+  <div class="nested_div">
+    Three
+  </div>
+  <div class="nested_div">
+    Four
+  </div>
+</div>
+``` 
 
 تعتبر المحددات المبينة أعلاه بسيطة للغاية ، ولكنها قد تكون معقدة للغاية. على سبيل المثال ، من الممكن تطبيق الأنماط فقط على العناصر المتداخلة ؛ وهذا هو ، العنصر الذي هو طفل لعنصر آخر.
 
 في ما يلي مثال على تحديدنا للنمط الذي يجب تطبيقه فقط على عناصر `div` التي تمثل طفلًا مباشرًا لعناصر `div` الأخرى. والنتيجة هي أن "Two" و "Three" سيظهران كنص أحمر على خلفية صفراء ، لكن "One" و "Four" سيظلان غير متأثران (وعلى الأرجح نص أسود على خلفية بيضاء).
 
- `
-<style type="text/css"> 
-  div > div { color: red; background: yellow; } 
- </style> 
- 
- <div> 
-  One 
-  <div> 
-    Two 
-  </div> 
-  <div> 
-    Three 
-  </div> 
- </div> 
- <div> 
-  Four 
- </div> 
-` 
+```html
+<style type="text/css">
+  div > div { color: red; background: yellow; }
+</style>
+
+<div>
+  One
+  <div>
+    Two
+  </div>
+  <div>
+    Three
+  </div>
+</div>
+<div>
+  Four
+</div>
+``` 
 
 ### CSS خارجي
 

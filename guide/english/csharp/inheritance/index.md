@@ -18,6 +18,8 @@ Inheritance is one way. The base class does not inherit the features of the deri
 
 Inheritance is transitive. A Base class of 'Animal' can have a derived class of 'Dog' and this can have a derived class of 'Terrier'. The Terrier class will inherit both the features of the Dog class and the Animal class.
 
+C# does not support multiple inheritance. A class can only inherit from a single class.
+
 # The `:` symbol
 
 In C# the `:` symbol is used to denote inheritance. This is called when creating the derived class.
@@ -27,35 +29,38 @@ In C# the `:` symbol is used to denote inheritance. This is called when creating
 # Base class
 ```
 public class Animal
-{
-	public int ID;
-	public string title;
-	public enum phylum;
-	public enum dietType;
-	
-	    public DefineAnimal(int id, string name, enum phy, enum diet)
     {
-        this.ID = id;
-        this.title = name;
-        this.phylum = phy;
-        this.dietType = diet;
+        public int ID;
+        public string title;
+        public enum phylum { };
+        public enum dietType { };
+
+        public phylum _phylum;
+        public dietType _dietType;
+
+        public Animal(int id, string name, phylum phylum, dietType diet)
+        {
+            this.ID = ID;
+            this.title = name;
+            this._phylum = phylum;
+            this._dietType = diet;
+        }
     }
-}
 	
 ```
 
 # Derived class
 ```
 public class Dog : Animal
-{
-	public enum breed;
-	public int levelOfTraining;
-	
-	public void SayWoof()
-	{
-		Console.WriteLine("Woof");
-	}
-}
+    {
+        public enum breed { };
+        public int levelOfTraining;
+
+        public void SayWoof()
+        {
+            Console.WriteLine("Woof");
+        }
+    }
 ```
 
 <!--- To do -  Constructor rules, Abstract,	Sealing derived classes--->

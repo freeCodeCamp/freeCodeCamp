@@ -112,7 +112,7 @@ Puede escribir Pruebas de aceptación para cada una de estas subcaracterísticas
 
 Aparte del código que maneja la infraestructura de cómo se ejecutará la prueba, su prueba para el primer escenario podría verse como (en pseudocódigo):
 
-Dado que la página está abierta El cuadro de diálogo debe ser visible Y el cuadro de diálogo debe contener un cuadro de entrada Y el cuadro de entrada debe tener un texto de marcador de posición "¡Tu nombre, por favor!"
+Dado que la página está abierta el cuadro de diálogo debe ser visible y el cuadro de diálogo debe contener un cuadro de entrada y el cuadro de entrada debe tener un texto de marcador de posición "¡Tu nombre, por favor!"
 
 ### Notas
 

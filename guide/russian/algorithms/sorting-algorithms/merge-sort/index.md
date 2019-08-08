@@ -23,7 +23,7 @@ T(n) = 2T(n/2) + n
 
 Подсчитая количество повторений n в сумме в конце, мы видим, что есть lg n + 1 из них. Таким образом, время работы n (lg n + 1) = n lg n + n. Заметим, что n lg n + n <n lg n + n lg n = 2n lg n при n> 0, поэтому время работы O (n lg n).
 
-```Algorithm
+```
 MergeSort(arr[], left,  right): 
  If right > l: 
      1. Find the middle point to divide the array into two halves: 

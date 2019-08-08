@@ -8,21 +8,21 @@ localeTitle: علامة Iframe
 
 عند استخدام علامات iframe ، يجب استخدام السمة src للإشارة إلى موقع صفحة الويب أو التطبيق لاستخدامها داخل الإطار.
 
- `
-<iframe src="framesite/index.html"></iframe> 
-` 
+```html
+<iframe src="framesite/index.html"></iframe>
+``` 
 
 يمكنك ضبط خصائص العرض والارتفاع لتقييد حجم الإطار.
 
- `
-<iframe src="framesite/index.html" height="500" width="200"></iframe> 
-` 
+```html
+<iframe src="framesite/index.html" height="500" width="200"></iframe>
+``` 
 
 إذا كانت إطارات iframe تحتوي على حد افتراضي ، إذا كنت ترغب في إزالة هذا ، فيمكنك فعل ذلك باستخدام سمة النمط وتعيين خصائص حدود CSS إلى بلا.
 
- `
-<iframe src="framesite/index.html" height="500" width="200" style="border:none;"></iframe> 
-` 
+```html
+<iframe src="framesite/index.html" height="500" width="200" style="border:none;"></iframe>
+``` 
 
 #### معلومات اكثر:
 
