@@ -19,3 +19,17 @@ When using sleep, you can define the amount of time that the program is suspende
 
 #### More Information
 Time module <a href='https://docs.python.org/3/library/time.html#time.sleep' target='_blank' rel='nofollow'>documentation</a> on the sleep function.
+
+Another method to achieve a time delay will be by using selenium related waits, which can be either implicit wait or waiting until an expected condition.
+Implicit Wait
+```
+from selenium import webdriver
+
+#below code initializes a chrome webdriver, and we can apply waits using it  
+    driver = webdriver.Chrome('driver_path')
+    driver.implicitly_wait(5)
+```
+Wait until Excpected Condition
+```
+self.wait.until(EC.presence_of_element_located((By.ID, '<Id of the element you are waiting for>'))
+```

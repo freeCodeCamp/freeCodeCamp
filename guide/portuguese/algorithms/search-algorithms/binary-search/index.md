@@ -25,19 +25,19 @@ para pequenos conjuntos, a pesquisa linear é melhor, mas em grandes, é muito m
 
 Em detalhes, quantas vezes você pode dividir N por 2 até ter 1? Essencialmente, isso significa fazer uma pesquisa binária (metade dos elementos) até encontrá-la. Em uma fórmula, isso seria:
 ```
-1 = N / 2x 
+1 = N / 2^x
 ```
 
 Multiplique por 2x:
 ```
-2x = N 
+2^x = N 
 ```
 
 Agora faça o log2:
 ```
-log2(2x)    = log2 N 
- x * log2(2) = log2 N 
- x * 1       = log2 N 
+log2(2^x)   = log2 N
+x * log2(2) = log2 N
+x * 1       = log2 N
 ```
 
 Isso significa que você pode dividir o log N vezes até que você tenha tudo dividido. O que significa que você tem que dividir o log N ("faça a etapa de busca binária") até encontrar seu elemento.
@@ -206,7 +206,9 @@ def binary_search(arr, l, r, target):
         return -1 
 ```
 
-### Exemplo em C ++
+### Exemplo em C++
+
+Abordagem recursiva!
 
 ```cpp
 // Binary Search using iteration 
@@ -224,6 +226,8 @@ def binary_search(arr, l, r, target):
     return -1; 
  } 
 ```
+
+Abordagem recursiva!
 
 ```cpp
 // Binary Search using recursion 
@@ -243,26 +247,105 @@ def binary_search(arr, l, r, target):
 ```
 
 ### Exemplo em C ++
-
 Abordagem recursiva!
 
-\`\` \`C ++ - abordagem recursiva int binarySearch (int arr \[\], int início, int fim, int x) { if (end> = start) { int mid = start + (end - start) / 2; if (arr \[meio\] == x)  
-retorno no meio;
-```
-    if (arr[mid] > x) 
-        return binarySearch(arr, start, mid-1, x); 
- 
-    return binarySearch(arr, mid+1, end, x); 
+```cpp
+int binarySearch(int arr[], int start, int end, int x)
+{
+   if (end >= start)
+   {
+        int mid = (start + (end - start))/2;
+        if (arr[mid] == x)
+            return mid;
+
+        if (arr[mid] > x)
+            return binarySearch(arr, start, mid-1, x);
+
+        return binarySearch(arr, mid+1, end, x);
+   }
+   return -1;
+}
 ```
 
-} return -1; }
-```
-Iterative approach! 
+Abordagem iterativa! 
+
+```cpp
+int binarySearch(int arr[], int start, int end, int x)
+{
+    while (start <= end)
+    {
+        int mid = (start + (end - start))/2;
+        if (arr[mid] == x)
+            return mid;
+        if (arr[mid] < x)
+            start = mid + 1;
+        else
+            end = mid - 1;
+    }
+    return -1;
+}
 ```
 
-C ++ - abordagem iterativa int binarySearch (int arr \[\], int início, int fim, int x) { while (início <= fim) { int mid = start + (end - start) / 2; if (arr \[meio\] == x) retorno no meio; if (arr \[mid\] <x) start = mid + 1; outro end = mid - 1; } return -1; } \`\` \`
+### Example in Swift
+
+```Swift
+func binarySearch(for number: Int, in numbers: [Int]) -> Int? {
+    var lowerBound = 0
+    var upperBound = numbers.count
+    while lowerBound < upperBound {
+        let index = lowerBound + (upperBound - lowerBound) / 2
+        if numbers[index] == number {
+            return index // we found the given number at this index
+        } else if numbers[index] < number {
+            lowerBound = index + 1
+        } else {
+            upperBound = index
+        }
+    }
+    return nil // the given number was not found
+}
+```
+
+### Example in Java
+
+```Java
+// Iterative Approach in Java
+int binarySearch(int[] arr, int start, int end, int element)
+{
+    while(start <= end)
+    {
+        int mid = start + ( end - start ) / 2;
+        if(arr[mid] == element)
+            return mid;
+        if(arr[mid] < element)
+            start = mid+1;
+        else
+            end = mid-1;
+    }
+   return -1;
+}
+```
+```Java
+// Recursive Approach in Java
+int binarySearch(int[] arr, int start,int end , int element)
+{
+  if (end >= start)
+  {
+    int mid = start + ( end - start ) / 2;
+    if(arr[mid] ==  element)
+        return mid;
+    if(arr[mid] < element)
+        return binarySearch( arr , mid + 1 , end , element );
+    else
+        return binarySearch( arr, start, mid - 1 , element);
+  }
+  return -1;
+}
+
+```
 
 ### Mais Informações
 
-*   [Pesquisa binária (vídeo do YouTube)](https://youtu.be/P3YID7liBug)
-*   [Pesquisa binária - CS50](https://www.youtube.com/watch?v=5xlIPT1FRcA)
+* [Pesquisa binária (vídeo do YouTube)](https://youtu.be/P3YID7liBug)
+* [Pesquisa binária - CS50](https://www.youtube.com/watch?v=5xlIPT1FRcA)
+* [Binary Search - MyCodeSchool](https://www.youtube.com/watch?v=j5uXyPJ0Pew&list=PL2_aWCzGMAwL3ldWlrii6YeLszojgH77j)

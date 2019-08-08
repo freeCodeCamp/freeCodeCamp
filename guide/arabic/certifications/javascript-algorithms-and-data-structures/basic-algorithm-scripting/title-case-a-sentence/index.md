@@ -58,7 +58,6 @@ localeTitle: العنوان حالة الجملة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/8)
 
 ### شرح الشفرة:
 
@@ -86,7 +85,6 @@ localeTitle: العنوان حالة الجملة
  titleCase("I'm a little tea pot"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/9)
 
 ### شرح الشفرة:
 
@@ -103,7 +101,6 @@ localeTitle: العنوان حالة الجملة
  } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/14)
 
 ### شرح الشفرة:
 

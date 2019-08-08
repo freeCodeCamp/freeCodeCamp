@@ -2,6 +2,7 @@
 id: 587d7dab367417b2b2512b6f
 title: Use the some Method to Check that Any Elements in an Array Meet a Criteria
 challengeType: 1
+forumTopicId: 301314
 ---
 
 ## Description
@@ -30,13 +31,13 @@ Use the <code>some</code> method inside the <code>checkPositive</code> function 
 ```yml
 tests:
   - text: Your code should use the <code>some</code> method.
-    testString: assert(code.match(/\.some/g), 'Your code should use the <code>some</code> method.');
+    testString: assert(code.match(/\.some/g));
   - text: <code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.
-    testString: assert(checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.');
+    testString: assert(checkPositive([1, 2, 3, -4, 5]));
   - text: <code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.
-    testString: assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');
+    testString: assert(checkPositive([1, 2, 3, 4, 5]));
   - text: <code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.
-    testString: assert(!checkPositive([-1, -2, -3, -4, -5]), '<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.');
+    testString: assert(!checkPositive([-1, -2, -3, -4, -5]));
 
 ```
 
@@ -74,4 +75,5 @@ function checkPositive(arr) {
 }
 checkPositive([1, 2, 3, -4, 5]);
 ```
+
 </section>

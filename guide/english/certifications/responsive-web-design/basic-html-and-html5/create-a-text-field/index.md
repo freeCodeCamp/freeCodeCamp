@@ -1,8 +1,10 @@
 ---
 title: Create a Text Field
 ---
-## Create a Text Field
+# Create a Text Field
 
+---
+## Problem Explanation
 `input` could be classified as a generic tag: indeed it is characterized by its attribute `type`, which can assume a range of different values and based on that value then `input` will be rendered as a different object.
 
 A few example of different `type` values:

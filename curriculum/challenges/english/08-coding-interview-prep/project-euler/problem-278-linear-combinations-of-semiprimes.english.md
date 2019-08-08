@@ -2,6 +2,7 @@
 id: 5900f4831000cf542c50ff95
 challengeType: 5
 title: 'Problem 278: Linear Combinations of Semiprimes'
+forumTopicId: 301928
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find ∑ f(p*q,p*r,q*r), where p, q and r are prime numbers and p < q < r < 5000
 ```yml
 tests:
   - text: <code>euler278()</code> should return 1228215747273908500.
-    testString: assert.strictEqual(euler278(), 1228215747273908500, '<code>euler278()</code> should return 1228215747273908500.');
+    testString: assert.strictEqual(euler278(), 1228215747273908500);
 
 ```
 
@@ -62,4 +63,5 @@ euler278();
 ```js
 // solution required
 ```
+
 </section>

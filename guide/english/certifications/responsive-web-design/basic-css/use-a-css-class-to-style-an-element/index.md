@@ -1,9 +1,10 @@
 ---
 title: Use a CSS Class to Style an Element
 ---
-## Use a CSS Class to Style an Element
+# Use a CSS Class to Style an Element
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Problem Explanation
 
 In CSS, we can target the styling of specific elements that match the specified class attribute.
 

@@ -38,11 +38,11 @@ _ملاحظة: لا تقم بتضمين النقطة في سمة فئة HTML ، 
 
 ### أيقونة Bootstrap في الأزرار
 
- `
-  <button type="button" class="btn btn-default" aria-label="Left Align"> 
-    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> 
-  </button> 
-` 
+```html
+  <button type="button" class="btn btn-default" aria-label="Left Align">
+    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+  </button>
+``` 
 
 _ملاحظة: رمز Glyphicons الخاص ب Bootstrap غير متوفر على bootstrap V4_
 

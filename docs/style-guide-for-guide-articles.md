@@ -12,13 +12,13 @@ Folder name is used in the URL, so only use dashes (-), numbers (0-9), and lower
 
 However, you can include special characters in the article title.
 
-The titles use a speacial YAML front matter syntax block as shown below. These contain the information required by the build tools to create webpages for the guide articles.
+The titles use a special YAML front matter syntax block as shown below. These contain the information required by the build tools to create webpages for the guide articles.
 
 These are the specific front matter requirements:
 1. The front matter block should be on the first line of the file.
 2. The front matter block should not have whitespaces before and after the lines.
-3. The `title` keyword and the string value after the colon (`:`) must only be separted by a single space.
-4. If the article is a translation from the english version, the front matter block should also have a `titleLocale` keyword with appilicable translation for the english title.
+3. The `title` keyword and the string value after the colon (`:`) must only be separated by a single space.
+4. If the article is a translation from the english version, the front matter block should also have a `titleLocale` keyword with applicable translation for the english title.
 
 Here are some examples of properly named titles:
 
@@ -200,7 +200,7 @@ Typically, an attribution has a structure like the following:
 
 If you cannot find an author or a publication date, which is common, simply omit these.
 
-Use of proper citations will not only keep the guide reputable, but these citations and links will also provide valuable resources should the reader want to learn more about the topic.
+Use of proper citations will not only keep the guide reputable but these citations and links will also provide valuable resources should the reader want to learn more about the topic.
 
 Also note that instances of blatant plagiarism will be either removed or have their pull requests declined, and the user will receive a warning.
 
@@ -285,11 +285,11 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
 
-Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes for the back end, full stack, and many other compound terms.
+Front-end development (an adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes for the back end, full stack, and many other compound terms.
 
 ## Third-Party Tools
 
-To check for grammar and spelling, we recommend using an app like [Grammarly](https://grammarly.com) or a built in extension/plugin that checks for this within your text editor.
+To check for grammar and spelling, we recommend using an app like [Grammarly](https://grammarly.com) or a built-in extension/plugin that checks for this within your text editor.
 
 - [VS Code](https://code.visualstudio.com/) - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 - [Sublime Text 3](https://www.sublimetext.com/docs/3/spell_checking.html)

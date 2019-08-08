@@ -2,6 +2,7 @@
 id: 5c3dda8b4d8df89bea71600f
 title: Check For Mixed Grouping of Characters
 challengeType: 1
+forumTopicId: 301339
 ---
 
 ## Description
@@ -31,15 +32,15 @@ Then fix the code so that the regex that you have created is checked against <co
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Franklin D. Roosevelt</code>
-    testString: assert(myRegex.test('Franklin D. Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Franklin D. Roosevelt</code>');
+    testString: assert(myRegex.test('Franklin D. Roosevelt'));
   - text: Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Eleanor Roosevelt</code>
-    testString: assert(myRegex.test('Eleanor Roosevelt'), 'Your regex <code>myRegex</code> should return <code>true</code> for the string <code>Eleanor Roosevelt</code>');
+    testString: assert(myRegex.test('Eleanor Roosevelt'));
   - text: Your regex <code>myRegex</code> should return <code>false</code> for the string <code>Franklin Rosevelt</code>
-    testString: assert(!myRegex.test('Franklin Rosevelt'), 'Your regex <code>myRegex</code> should return <code>false</code> for the string <code>Franklin Rosevelt</code>');
+    testString: assert(!myRegex.test('Franklin Rosevelt'));
   - text: You should use <code>.test()</code> to test the regex.
-    testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/), 'You should use <code>.test()</code> to test the regex.');
+    testString: assert(code.match(/myRegex.test\(\s*myString\s*\)/));
   - text: Your result should return <code>true</code>.
-    testString: assert(result === true, 'Your result should return <code>true</code>.');
+    testString: assert(result === true);
 ```
 
 </section>
@@ -70,4 +71,5 @@ let myString = "Eleanor Roosevelt";
 let myRegex = /(Franklin|Eleanor).*Roosevelt/;
 let result = myRegex.test(myString);
 ```
+
 </section>

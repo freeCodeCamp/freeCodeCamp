@@ -20,6 +20,10 @@ In industries robot uses deep reinforcement learning to pick a device from one b
 
 The best example, and one which you will hear a lot in this field, is AlphaGo developed by Google. This uses reinforcement learning to learn the patterns, rules and semantics of the board game, Go. This bot defeated the World No. 1 Go player, Lee Sedol, in what was the first time a computer program defeated a professional player. AlphaGo won by 4-1 in a five game series. This was a huge victory for AI and kickstarted the field of Reinforcement learning. 
 
+
+## Explore / Exploit: 
+An important theme in RL is the explore vs. exploit tradeoff. Exploring refers to looking for optimal actions outside of the current chosen action, whereas exploiting refers to maximizing our payoff using our known actions. This is commonly manifested in the "multi-armed bandit" problem. The problem presents a user with X slot machines with unknown payoff distributions and asks: how do you maximize your cumulative payoff over time, given a finite amount of time to pull the slot machines? "Greedy" approaches refer to strategies where the first attractive arm that is found is pursued until the end, but such approaches are theoretically inefficient. A clever balance of potentially costly exploring and efficient exploiting is the optimal solution. 
+
 ## List of Common Algorithms
 1. Temporal Difference (TD)
     * Q-Learning

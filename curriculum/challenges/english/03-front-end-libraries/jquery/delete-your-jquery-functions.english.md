@@ -4,6 +4,7 @@ title: Delete Your jQuery Functions
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 17561
 ---
 
 ## Description
@@ -23,15 +24,15 @@ Delete all three of these jQuery functions from your <code>document ready functi
 ```yml
 tests:
   - text: Delete all three of your jQuery functions from your <code>document ready function</code>.
-    testString: assert(code.match(/\{\s*\}\);/g), 'Delete all three of your jQuery functions from your <code>document ready function</code>.');
+    testString: assert(code.match(/\{\s*\}\);/g));
   - text: Leave your <code>script</code> element intact.
-    testString: assert(code.match(/<script>/g), 'Leave your <code>script</code> element intact.');
+    testString: assert(code.match(/<script>/g));
   - text: Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.
-    testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g), 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.');
+    testString: assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g));
   - text: Leave your "document ready function" closing <code>&#125;&#41;</code> intact.
-    testString: assert(code.match(/.*\s*\}\);/g), 'Leave your "document ready function" closing <code>&#125;&#41;</code> intact.');
+    testString: assert(code.match(/.*\s*\}\);/g));
   - text: Leave your <code>script</code> element closing tag intact.
-    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.');
+    testString: assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length);
 
 ```
 
@@ -117,4 +118,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

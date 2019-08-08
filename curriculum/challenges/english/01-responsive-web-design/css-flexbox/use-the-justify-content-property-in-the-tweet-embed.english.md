@@ -3,6 +3,7 @@ id: 587d78ac367417b2b2512af7
 title: Use the justify-content Property in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c43GgTa'
+forumTopicId: 301115
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Add the CSS property <code>justify-content</code> to the header's <code>.profile
 ```yml
 tests:
   - text: 'The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: <code>center</code>, <code>flex-start</code>, <code>flex-end</code>, <code>space-between</code>, or <code>space-around</code>.'
-    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), ''The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.'');'
+    testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g));'
 
 ```
 
@@ -224,4 +225,5 @@ tests:
   </div>
 </footer>
 ```
+
 </section>

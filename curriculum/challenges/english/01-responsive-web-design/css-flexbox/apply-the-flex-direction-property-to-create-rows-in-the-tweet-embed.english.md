@@ -3,6 +3,7 @@ id: 587d78ab367417b2b2512af3
 title: Apply the flex-direction Property to Create Rows in the Tweet Embed
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cJb8yuq'
+forumTopicId: 301104
 ---
 
 ## Description
@@ -21,9 +22,9 @@ Add the CSS property <code>flex-direction</code> to both the <code>header</code>
 ```yml
 tests:
   - text: The <code>header</code> should have a <code>flex-direction</code> property set to row.
-    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g), 'The <code>header</code> should have a <code>flex-direction</code> property set to row.');
+    testString: assert(code.match(/header\s*?{[^}]*?flex-direction:\s*?row;/g));
   - text: The <code>footer</code> should have a <code>flex-direction</code> property set to row.
-    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g), 'The <code>footer</code> should have a <code>flex-direction</code> property set to row.');
+    testString: assert(code.match(/footer\s*?{[^}]*?flex-direction:\s*?row;/g));
 
 ```
 
@@ -230,4 +231,5 @@ tests:
   </div>
 </footer>
 ```
+
 </section>

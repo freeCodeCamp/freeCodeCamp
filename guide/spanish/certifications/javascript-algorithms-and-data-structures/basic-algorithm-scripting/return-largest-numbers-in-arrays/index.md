@@ -53,7 +53,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/734)
 
 ### Explicación del código:
 
@@ -82,7 +81,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/733)
 
 ### Explicación del código:
 
@@ -106,7 +104,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/17)
 
 ### Explicación del código:
 

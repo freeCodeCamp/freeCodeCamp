@@ -4,6 +4,7 @@ title: Target Elements by id Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 18317
 ---
 
 ## Description
@@ -27,11 +28,11 @@ Here's how you'd make the <code>button</code> element with the id <code>target6<
 ```yml
 tests:
   - text: Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.
-    testString: assert($("#target3").hasClass("animated"), 'Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.');
+    testString: assert($("#target3").hasClass("animated"));
   - text: Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.
-    testString: assert(($("#target3").hasClass("fadeOut") || $("#target3").hasClass("fadeout"))  && code.match(/\$\(\s*.#target3.\s*\)/g), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.');
+    testString: assert(($("#target3").hasClass("fadeOut") || $("#target3").hasClass("fadeout"))  && code.match(/\$\(\s*.#target3.\s*\)/g));
   - text: Only use jQuery to add these classes to the element.
-    testString: assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');
+    testString: assert(!code.match(/class.*animated/g));
 
 ```
 
@@ -118,4 +119,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

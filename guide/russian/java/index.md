@@ -50,14 +50,14 @@ https://aur.archlinux.org/packages/jdk/
 Установка Oracle JDK:  
 `bash sudo add-apt-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install oracle-java8-installer`
 
-### макинтош
+### Mac
 
 *   Или загрузите исполняемый файл Mac OSX .dmg из Oracle Downloads
 *   Или используйте [Homebrew](http://brew.sh/) для [установки](http://stackoverflow.com/a/28635465/2861269) :
 
 `bash brew tap caskroom/cask brew install brew-cask brew cask install java`
 
-### Проверить установку
+### Проверьте установку
 
 Убедитесь, что Java правильно установлена ​​в вашей системе, открыв командную строку (Windows) / Windows Powershell / Terminal (Mac OS и \* Unix) и проверив версии Java runtime и компилятора:
 ```
@@ -74,20 +74,20 @@ $ java -version
 
 ## JVM
 
-Хорошо, так как мы закончили установку, давайте начнем сначала понимать nitty gritty экосистемы Java. Java - это [интерпретируемый и скомпилированный](http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language) язык, то есть код, который мы пишем, компилируется в байт-код и интерпретируется для запуска. Мы пишем код в .java-файлах, Java компилирует их в [байт-коды,](https://en.wikipedia.org/wiki/Java_bytecode) которые запускаются на виртуальной машине Java или JVM для выполнения. Эти байт-коды обычно имеют расширение .class.
+Хорошо, так как мы закончили установку, давайте начнем сначала понимать nitty gritty экосистемы Java. Java - это [интерпретируемый и скомпилированный](http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language) язык, то есть код, который мы пишем, компилируется в байт-код и интерпретируется для запуска. Мы пишем код в .java-файлах, Java компилирует их в [байт-коды,](https://en.wikipedia.org/wiki/Java_bytecode) которые запускаются на виртуальной машине Java или JVM для выполнения. Эти байт-коды обычно имеют расширение `.class`.
 
 Java - довольно безопасный язык, так как он не позволяет вашей программе работать непосредственно на машине. Вместо этого ваша программа запускается на виртуальной машине под названием JVM. Эта виртуальная машина предоставляет несколько API для низкоуровневых взаимодействий с машиной, которые вы можете сделать, но кроме этого вы не можете играть с машинными инструкциями явно. Это добавляет огромный бонус к безопасности.
 
-Кроме того, как только ваш байт-код будет скомпилирован, он может работать на любой виртуальной машине Java. Эта виртуальная машина зависит от машины, то есть она имеет разные реализации для Windows, Linux и Mac. Но ваша программа гарантирована для работы в любой системе благодаря этой виртуальной машине. Эта философия называется [«Write Once, Run Anywhere»](https://en.wikipedia.org/wiki/Write_once,_run_anywhere) .
+Кроме того, как только ваш байт-код будет скомпилирован, он может работать на любой виртуальной машине Java. Эта виртуальная машина зависит от машины, то есть она имеет разные реализации для Windows, Linux и Mac. Но ваша программа гарантирована для работы в любой системе благодаря этой виртуальной машине. Эта философия называется [«Write Once, Run Anywhere»](https://en.wikipedia.org/wiki/Write_once,_run_anywhere).
 
 ## Привет, мир!
 
-Давайте напишем образец приложения Hello World. Откройте любой редактор / IDE по выбору и создайте файл `HelloWorld.java` .
+Давайте напишем образец приложения Hello World. Откройте любой редактор / IDE по выбору и создайте файл `HelloWorld.java`.
 ```
 public class HelloWorld { 
  
     public static void main(String[] args) { 
-        // Prints "Hello, World" to the terminal window. 
+        // Выводит "Hello, World" в окно терминала. 
         System.out.println("Hello, World"); 
     } 
  
@@ -101,13 +101,13 @@ public class HelloWorld {
 $ javac HelloWorld.java 
 ```
 
-Теперь запустите файл с помощью команды `java` !
+Теперь запустите файл с помощью команды `java`!
 ```
 $ java HelloWorld 
  Hello, World 
 ```
 
-Congrats! Ваша первая Java-программа успешно запущена. Здесь мы просто печатаем строку, передающую ее в API `System.out.println` . Мы рассмотрим все концепции в коде, но вы можете более [внимательно ознакомиться](https://docs.oracle.com/javase/tutorial/getStarted/application/) ! Если у вас есть какие-либо сомнения или вам нужна дополнительная помощь, не стесняйтесь обращаться к нам в любое время в нашем [Gitter Chatroom](https://gitter.im/FreeCodeCamp/java) !
+Congrats! Ваша первая Java-программа успешно запущена. Здесь мы просто печатаем строку, передающую ее в API `System.out.println` . Мы рассмотрим все концепции в коде, но вы можете более [внимательно ознакомиться](https://docs.oracle.com/javase/tutorial/getStarted/application/) ! Если у вас есть какие-либо сомнения или вам нужна дополнительная помощь, не стесняйтесь обращаться к нам в любое время в нашем [Gitter Chatroom](https://gitter.im/FreeCodeCamp/java)!
 
 ## Документация
 

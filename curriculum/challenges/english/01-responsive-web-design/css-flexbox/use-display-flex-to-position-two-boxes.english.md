@@ -3,6 +3,7 @@ id: 587d78ab367417b2b2512af0
 title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/cgz3QS7'
+forumTopicId: 301105
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Add the CSS property <code>display</code> to <code>#box-container</code> and set
 ```yml
 tests:
   - text: <code>#box-container</code> should have the <code>display</code> property set to a value of flex.
-    testString: assert($('#box-container').css('display') == 'flex', '<code>#box-container</code> should have the <code>display</code> property set to a value of flex.');
+    testString: assert($('#box-container').css('display') == 'flex');
 
 ```
 
@@ -91,4 +92,5 @@ tests:
   <div id="box-2"></div>
 </div>
 ```
+
 </section>

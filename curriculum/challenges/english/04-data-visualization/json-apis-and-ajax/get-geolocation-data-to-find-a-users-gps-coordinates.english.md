@@ -2,6 +2,7 @@
 id: 587d7faf367417b2b2512be8
 title: Get Geolocation Data to Find A User's GPS Coordinates
 challengeType: 6
+forumTopicId: 18188
 ---
 
 ## Description
@@ -34,13 +35,13 @@ Add the example code inside the <code>script</code> tags to check a user's curre
 ```yml
 tests:
   - text: Your code should use <code>navigator.geolocation</code> to access the user&#39;s current location.
-    testString: assert(code.match(/navigator\.geolocation\.getCurrentPosition/g), 'Your code should use <code>navigator.geolocation</code> to access the user&#39;s current location.');
+    testString: assert(code.match(/navigator\.geolocation\.getCurrentPosition/g));
   - text: Your code should use <code>position.coords.latitude</code> to display the user&#39;s latitudinal location.
-    testString: assert(code.match(/position\.coords\.latitude/g), 'Your code should use <code>position.coords.latitude</code> to display the user&#39;s latitudinal location.');
+    testString: assert(code.match(/position\.coords\.latitude/g));
   - text: Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.
-    testString: assert(code.match(/position\.coords\.longitude/g), 'Your code should use <code>position.coords.longitude</code> to display the user&#39;s longitudinal location.');
+    testString: assert(code.match(/position\.coords\.longitude/g));
   - text: You should display the user&#39;s position within the <code>data</code> div element.
-    testString: assert(code.match(/document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g), 'You should display the user&#39;s position within the <code>data</code> div element.');
+    testString: assert(code.match(/document\.getElementById\(\s*?('|")data\1\s*?\)\.innerHTML/g));
 
 ```
 
@@ -76,4 +77,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

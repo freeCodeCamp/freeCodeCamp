@@ -17,6 +17,42 @@ O(√N)
 
 ![Jumping Search 1](https://i1.wp.com/theoryofprogramming.com/wp-content/uploads/2016/11/jump-search-1.jpg?resize=676%2C290)
 
+# Code In Java.
+
+``` Java
+
+public int jumpSearch(int[] arr, int x) 
+{ 
+	int n = arr.length; 
+
+	// Finding the size to be jumped 
+	int jumpSize = (int) Math.floor(Math.sqrt(n)); 
+
+	// Finding the index where element is present 
+	int index = 0; 
+	while (arr[Math.min(jumpSize, n)-1] < x) 
+	{ 
+		index = jumpSize; 
+		jumpSize += (int) Math.floor(Math.sqrt(n)); 
+		if (index >= n) 
+			return -1; 
+	} 
+	// Searching for x beginning with index. 
+	while (arr[index] < x) 
+	{ 
+		index++; 
+		// If we reached next index or end of array then element is not present. 
+		if (index == Math.min(jumpSize, n)) 
+			return -1; 
+	} 
+	// If element is found 
+	if (arr[index] == x) 
+		return index; 
+	return -1; 
+} 
+
+```
+
 # Code 
 To view examples of code implementation for this method, access this link below:
 

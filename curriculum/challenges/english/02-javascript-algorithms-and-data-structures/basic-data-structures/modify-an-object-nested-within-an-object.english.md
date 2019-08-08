@@ -2,6 +2,7 @@
 id: 587d7b7c367417b2b2512b19
 title: Modify an Object Nested Within an Object
 challengeType: 1
+forumTopicId: 301164
 ---
 
 ## Description
@@ -37,13 +38,13 @@ Here we've defined an object, <code>userActivity</code>, which includes another 
 ```yml
 tests:
   - text: <code>userActivity</code> has <code>id</code>, <code>date</code> and <code>data</code> properties
-    testString: assert('id' in userActivity && 'date' in userActivity && 'data' in userActivity, '<code>userActivity</code> has <code>id</code>, <code>date</code> and <code>data</code> properties');
+    testString: assert('id' in userActivity && 'date' in userActivity && 'data' in userActivity);
   - text: <code>userActivity</code> has a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>
-    testString: assert('totalUsers' in userActivity.data && 'online' in userActivity.data, '<code>userActivity</code> has a <code>data</code> key set to an object with keys <code>totalUsers</code> and <code>online</code>');
+    testString: assert('totalUsers' in userActivity.data && 'online' in userActivity.data);
   - text: The <code>online</code> property nested in the <code>data</code> key of <code>userActivity</code> should be set to <code>45</code>
-    testString: assert(userActivity.data.online === 45, 'The <code>online</code> property nested in the <code>data</code> key of <code>userActivity</code> should be set to <code>45</code>');
+    testString: assert(userActivity.data.online === 45);
   - text: The <code>online</code> property is set using dot or bracket notation
-    testString: 'assert.strictEqual(code.search(/online: 45/), -1, ''The <code>online</code> property is set using dot or bracket notation'');'
+    testString: 'assert.strictEqual(code.search(/online: 45/), -1);'
 
 ```
 
@@ -92,4 +93,5 @@ let userActivity = {
 
 userActivity.data.online = 45;
 ```
+
 </section>

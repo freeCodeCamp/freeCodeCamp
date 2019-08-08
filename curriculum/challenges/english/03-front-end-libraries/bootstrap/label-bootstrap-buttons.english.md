@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aec908856
 title: Label Bootstrap Buttons
 challengeType: 0
+forumTopicId: 18222
 ---
 
 ## Description
@@ -21,17 +22,17 @@ Give each of your <code>button</code> elements text that corresponds to its <cod
 ```yml
 tests:
   - text: Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.
-    testString: assert(new RegExp("#target1","gi").test($("#target1").text()), 'Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.');
+    testString: assert(new RegExp("#target1","gi").test($("#target1").text()));
   - text: Give your <code>button</code> element with the id <code>target2</code> the text <code>#target2</code>.
-    testString: assert(new RegExp("#target2","gi").test($("#target2").text()), 'Give your <code>button</code> element with the id <code>target2</code> the text <code>#target2</code>.');
+    testString: assert(new RegExp("#target2","gi").test($("#target2").text()));
   - text: Give your <code>button</code> element with the id <code>target3</code> the text <code>#target3</code>.
-    testString: assert(new RegExp("#target3","gi").test($("#target3").text()), 'Give your <code>button</code> element with the id <code>target3</code> the text <code>#target3</code>.');
+    testString: assert(new RegExp("#target3","gi").test($("#target3").text()));
   - text: Give your <code>button</code> element with the id <code>target4</code> the text <code>#target4</code>.
-    testString: assert(new RegExp("#target4","gi").test($("#target4").text()), 'Give your <code>button</code> element with the id <code>target4</code> the text <code>#target4</code>.');
+    testString: assert(new RegExp("#target4","gi").test($("#target4").text()));
   - text: Give your <code>button</code> element with the id <code>target5</code> the text <code>#target5</code>.
-    testString: assert(new RegExp("#target5","gi").test($("#target5").text()), 'Give your <code>button</code> element with the id <code>target5</code> the text <code>#target5</code>.');
+    testString: assert(new RegExp("#target5","gi").test($("#target5").text()));
   - text: Give your <code>button</code> element with the id <code>target6</code> the text <code>#target6</code>.
-    testString: assert(new RegExp("#target6","gi").test($("#target6").text()), 'Give your <code>button</code> element with the id <code>target6</code> the text <code>#target6</code>.');
+    testString: assert(new RegExp("#target6","gi").test($("#target6").text()));
 
 ```
 
@@ -98,4 +99,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

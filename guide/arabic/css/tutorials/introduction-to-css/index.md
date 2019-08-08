@@ -12,37 +12,41 @@ localeTitle: مقدمة في CSS
 
 تسمح CSS لمعلمات بتوضيح كيفية ظهور كل جزء من محتوى المطابقة.
 
- `body { 
-    font-size: 15px; 
- } 
- 
- a { 
-    color: rebeccapurple; 
-    text-decoration: underline; 
- } 
-` 
+```CSS
+body {
+    font-size: 15px;
+}
+
+a {
+    color: rebeccapurple;
+    text-decoration: underline;
+}
+``` 
 
 ### استخدام المغلق
 
 تسمح **أوراق الأنماط الخارجية** لصفحات كثيرة بمشاركة نفس الأنماط.
 
- `<link href="styles.css" rel="stylesheet" type="text/css"> 
-` 
+```HTML
+<link href="styles.css" rel="stylesheet" type="text/css">
+``` 
 
 تطبق **أوراق الأنماط الداخلية** CSS على كل العلامات المطابقة في الصفحة.
 
- `<style> 
-    h1 { 
-        font-family: sans-serif; 
-        margin-bottom: 1.5em; 
-    } 
- </style> 
-` 
+```HTML
+<style>
+    h1 {
+        font-family: sans-serif;
+        margin-bottom: 1.5em;
+    }
+</style>
+``` 
 
 تطبق **CSS مضمنة** الأنماط على علامة واحدة.
 
- `<img src="..." style="border: 1px solid red;" /> 
-` 
+```HTML
+<img src="..." style="border: 1px solid red;" />
+``` 
 
 #### معلومات اكثر:
 

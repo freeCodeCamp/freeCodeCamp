@@ -3,6 +3,7 @@ id: 587d7790367417b2b2512ab0
 title: Use tabindex to Add Keyboard Focus to an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMDHW'
+forumTopicId: 301027
 ---
 
 ## Description
@@ -24,9 +25,9 @@ Camper Cat created a new survey to collect information about his users. He knows
 ```yml
 tests:
   - text: Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.
-    testString: assert($('p').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.');
+    testString: assert($('p').attr('tabindex'));
   - text: Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.
-    testString: assert($('p').attr('tabindex') == '0', 'Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.');
+    testString: assert($('p').attr('tabindex') == '0');
 
 ```
 
@@ -145,4 +146,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

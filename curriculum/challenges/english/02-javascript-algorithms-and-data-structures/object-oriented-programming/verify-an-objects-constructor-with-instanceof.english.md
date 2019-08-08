@@ -2,6 +2,7 @@
 id: 587d7dae367417b2b2512b7a
 title: Verify an Object's Constructor with instanceof
 challengeType: 1
+forumTopicId: 301337
 ---
 
 ## Description
@@ -45,9 +46,9 @@ Create a new instance of the <code>House</code> constructor, calling it <code>my
 ```yml
 tests:
   - text: <code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.
-    testString: assert(typeof myHouse.numBedrooms === 'number', '<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.');
+    testString: assert(typeof myHouse.numBedrooms === 'number');
   - text: Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.
-    testString: assert(/myHouse\s*instanceof\s*House/.test(code), 'Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.');
+    testString: assert(/myHouse\s*instanceof\s*House/.test(code));
 
 ```
 

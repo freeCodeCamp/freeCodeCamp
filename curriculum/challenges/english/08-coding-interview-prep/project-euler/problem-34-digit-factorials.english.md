@@ -2,6 +2,7 @@
 id: 5900f38e1000cf542c50fea1
 challengeType: 5
 title: 'Problem 34: Digit factorials'
+forumTopicId: 301998
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 ```yml
 tests:
   - text: '<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.'
-    testString: "assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] }, '<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.');"
+    testString: "assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] });"
 
 ```
 
@@ -56,4 +57,5 @@ digitFactorial();
 ```js
 // solution required
 ```
+
 </section>

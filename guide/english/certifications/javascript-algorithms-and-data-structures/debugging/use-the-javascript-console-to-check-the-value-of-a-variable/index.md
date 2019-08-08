@@ -1,9 +1,13 @@
 ---
 title: Use the JavaScript Console to Check the Value of a Variable
 ---
-## Use the JavaScript Console to Check the Value of a Variable
+# Use the JavaScript Console to Check the Value of a Variable
 
-### Solution
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+
+---
+## Solutions
 
 ```js
 let a = 5;
@@ -16,3 +20,5 @@ console.log(sumAB);
 
 console.log(a);
 ```
+
+</details>

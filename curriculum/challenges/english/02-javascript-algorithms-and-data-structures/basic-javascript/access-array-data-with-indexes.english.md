@@ -3,6 +3,7 @@ id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cBZQbTz'
+forumTopicId: 16158
 ---
 
 ## Description
@@ -32,9 +33,9 @@ Create a variable called <code>myData</code> and set it to equal the first value
 ```yml
 tests:
   - text: The variable <code>myData</code> should equal the first value of <code>myArray</code>.
-    testString: assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})(), 'The variable <code>myData</code> should equal the first value of <code>myArray</code>.');
+    testString: assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})());
   - text: The data in variable <code>myArray</code> should be accessed using bracket notation.
-    testString: assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})(), 'The data in variable <code>myArray</code> should be accessed using bracket notation.');
+    testString: assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})());
 
 ```
 

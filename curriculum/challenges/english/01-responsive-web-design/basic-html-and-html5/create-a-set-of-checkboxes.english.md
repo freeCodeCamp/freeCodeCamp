@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08835
 title: Create a Set of Checkboxes
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cqrkJsp'
+forumTopicId: 16821
 ---
 
 ## Description
@@ -27,15 +28,15 @@ Add to your form a set of three checkboxes. Each checkbox should be nested withi
 ```yml
 tests:
   - text: Your page should have three checkbox elements.
-    testString: assert($('input[type="checkbox"]').length > 2, 'Your page should have three checkbox elements.');
+    testString: assert($('input[type="checkbox"]').length > 2);
   - text: Each of your three checkbox elements should be nested in its own <code>label</code> element.
-    testString: assert($('label > input[type="checkbox"]:only-child').length > 2, 'Each of your three checkbox elements should be nested in its own <code>label</code> element.');
+    testString: assert($('label > input[type="checkbox"]:only-child').length > 2);
   - text: Make sure each of your <code>label</code> elements has a closing tag.
-    testString: assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, 'Make sure each of your <code>label</code> elements has a closing tag.');
+    testString: assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length);
   - text: Give your checkboxes the <code>name</code> attribute of <code>personality</code>.
-    testString: assert($('label > input[type="checkbox"]').filter('[name="personality"]').length > 2, 'Give your checkboxes the <code>name</code> attribute of <code>personality</code>.');
+    testString: assert($('label > input[type="checkbox"]').filter('[name="personality"]').length > 2);
   - text: Each of your checkboxes should be added within the <code>form</code> tag.
-    testString: assert($('label').parent().get(0).tagName.match('FORM'), 'Each of your checkboxes should be added within the <code>form</code> tag.');
+    testString: assert($('label').parent().get(0).tagName.match('FORM'));
     
 ```
 
@@ -115,4 +116,5 @@ name="personality">Evil</label><br>
   </form>
 </main>
 ```
+
 </section>

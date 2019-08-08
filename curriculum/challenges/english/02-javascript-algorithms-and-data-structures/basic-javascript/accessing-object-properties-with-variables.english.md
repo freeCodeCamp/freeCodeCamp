@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244c9
 title: Accessing Object Properties with Variables
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cnQyKur'
+forumTopicId: 16165
 ---
 
 ## Description
@@ -47,17 +48,17 @@ Use the <code>playerNumber</code> variable to look up player <code>16</code> in 
 ```yml
 tests:
   - text: <code>playerNumber</code> should be a number
-    testString: assert(typeof playerNumber === 'number', '<code>playerNumber</code> should be a number');
+    testString: assert(typeof playerNumber === 'number');
   - text: The variable <code>player</code> should be a string
-    testString: assert(typeof player === 'string', 'The variable <code>player</code> should be a string');
+    testString: assert(typeof player === 'string');
   - text: The value of <code>player</code> should be "Montana"
-    testString: assert(player === 'Montana', 'The value of <code>player</code> should be "Montana"');
+    testString: assert(player === 'Montana');
   - text: You should use bracket notation to access <code>testObj</code>
-    testString: assert(/testObj\s*?\[.*?\]/.test(code),'You should use bracket notation to access <code>testObj</code>');
+    testString: assert(/testObj\s*?\[.*?\]/.test(code));
   - text: You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.
-    testString: assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi),'You should not assign the value <code>Montana</code> to the variable <code>player</code> directly.');
+    testString: assert(!code.match(/player\s*=\s*"|\'\s*Montana\s*"|\'\s*;/gi));
   - text: You should be using the variable <code>playerNumber</code> in your bracket notation
-    testString: assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code),'You should be using the variable <code>playerNumber</code> in your bracket notation');
+    testString: assert(/testObj\s*?\[\s*playerNumber\s*\]/.test(code));
 
 ```
 

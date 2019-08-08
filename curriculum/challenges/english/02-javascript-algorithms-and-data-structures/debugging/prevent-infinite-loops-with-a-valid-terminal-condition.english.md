@@ -2,6 +2,7 @@
 id: 587d7b86367417b2b2512b3d
 title: Prevent Infinite Loops with a Valid Terminal Condition
 challengeType: 1
+forumTopicId: 301192
 ---
 
 ## Description
@@ -31,9 +32,9 @@ The <code>myFunc()</code> function contains an infinite loop because the termina
 ```yml
 tests:
   - text: Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.
-    testString: assert(code.match(/i\s*?<=\s*?4;/g).length == 1, 'Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');
+    testString: assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
   - text: Your code should fix the comparison operator in the terminal condition of the loop.
-    testString: assert(!code.match(/i\s*?!=\s*?4;/g), 'Your code should fix the comparison operator in the terminal condition of the loop.');
+    testString: assert(!code.match(/i\s*?!=\s*?4;/g));
 
 ```
 
@@ -68,4 +69,5 @@ function myFunc() {
  }
 }
 ```
+
 </section>

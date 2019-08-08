@@ -1,9 +1,13 @@
 ---
 title: Set State with this.setState
 ---
-## Set State with this.setState
+# Set State with this.setState
 
-#### Hint 1:
+
+---
+## Hints
+
+### Hint 1
 ```JSX
 class MyComponent extends React.Component {
   constructor(props) {
@@ -30,7 +34,12 @@ class MyComponent extends React.Component {
 };
 ```
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```JSX
 class MyComponent extends React.Component {
   constructor(props) {
@@ -57,10 +66,10 @@ class MyComponent extends React.Component {
   }
 };
 ```
-### Code Explanation:
+#### Code Explanation
 
- when users click the button the "handleClick()" method will be called and 
+* When users click the button the "handleClick()" method will be called and 
 inside this method the data of the constuctor\`s state will be updated by "setState()" method.
 then h1 tag will be changed with the new data of the constructor\`s state.
 
-
+</details>

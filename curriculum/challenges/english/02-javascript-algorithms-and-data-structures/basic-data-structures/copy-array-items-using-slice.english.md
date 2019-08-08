@@ -2,6 +2,7 @@
 id: 587d7b7a367417b2b2512b12
 title: Copy Array Items Using slice()
 challengeType: 1
+forumTopicId: 301158
 ---
 
 ## Description
@@ -30,9 +31,9 @@ We have defined a function, <code>forecast</code>, that takes an array as an arg
 ```yml
 tests:
   - text: <code>forecast</code> should return <code>["warm", "sunny"]</code>
-    testString: assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny'], '<code>forecast</code> should return <code>["warm", "sunny"]</code>');
+    testString: assert.deepEqual(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']), ['warm', 'sunny']);
   - text: The <code>forecast</code> function should utilize the <code>slice()</code> method
-    testString: assert(/\.slice\(/.test(code), 'The <code>forecast</code> function should utilize the <code>slice()</code> method');
+    testString: assert(/\.slice\(/.test(code));
 
 ```
 
@@ -68,4 +69,5 @@ function forecast(arr) {
   return arr.slice(2,4);
 }
 ```
+
 </section>

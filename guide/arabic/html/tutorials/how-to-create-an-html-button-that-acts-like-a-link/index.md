@@ -8,27 +8,27 @@ localeTitle: كيفية إنشاء زر HTML التي تعمل مثل الارت
 
 إحدى الطرق هي ببساطة لف علامة `<button>` في علامة `<a>` :
 
- `
-<a href='https://www.freecodecamp.org/'><button>Link To freeCodeCamp</button></a> 
-` 
+```html
+<a href='https://www.freecodecamp.org/'><button>Link To freeCodeCamp</button></a>
+``` 
 
 يؤدي هذا إلى تحويل الزر بالكامل إلى رابط.
 
 الخيار الثاني هو إنشاء الرابط الخاص بك كما تفعل عادةً مع العلامة `<a>` ثم إعداده عبر CSS:
 
- `
-<a href='https://www.freecodecamp.org/'>Link To freeCodeCamp</a> 
-` 
+```html
+<a href='https://www.freecodecamp.org/'>Link To freeCodeCamp</a>
+``` 
 
 بمجرد إنشاء الرابط ، يمكنك استخدام CSS لجعله يبدو وكأنه زر. على سبيل المثال ، يمكنك إضافة حد ولون خلفية وبعض الأنماط عندما يحوم المستخدم في الرابط ...
 
 هناك طريقة أخرى لإضافة زر وهي التفاف `input` داخل علامات `form` . حدد عنوان URL الهدف المطلوب في سمة إجراء النموذج.
 
- `
-<form action="http://google.com"> 
-    <input type="submit" value="Go to Google" /> 
- </form> 
-` 
+```html
+<form action="http://google.com">
+    <input type="submit" value="Go to Google" />
+</form>
+``` 
 
 #### معلومات اكثر:
 

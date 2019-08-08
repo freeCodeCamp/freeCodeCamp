@@ -2,20 +2,22 @@
 id: 5900f4511000cf542c50ff63
 challengeType: 5
 title: 'Problem 228: Minkowski Sums'
+forumTopicId: 301871
 ---
 
 ## Description
 <section id='description'>
+
+<!-- TODO Use MathJax and re-write from projecteuler.net -->
 Let Sn be the regular n-sided polygon – or shape – whose vertices
 
 vk (k = 1,2,…,n) have coordinates:
 
-    xk   =  
-        cos( 2k-1/n ×180° )
+xk = cos( 2k-1/n ×180° )
 
-    yk   =  
-        sin( 2k-1/n ×180° )
-  Each Sn is to be interpreted as a filled shape consisting of all points on the perimeter and in the interior.
+yk  =  sin( 2k-1/n ×180° )
+
+Each Sn is to be interpreted as a filled shape consisting of all points on the perimeter and in the interior.
 
 The Minkowski sum, S+T, of two shapes S and T is the result of
 
@@ -42,7 +44,7 @@ How many sides does S1864 + S1865 + … + S1909 have?
 ```yml
 tests:
   - text: <code>euler228()</code> should return 86226.
-    testString: assert.strictEqual(euler228(), 86226, '<code>euler228()</code> should return 86226.');
+    testString: assert.strictEqual(euler228(), 86226);
 
 ```
 
@@ -74,4 +76,5 @@ euler228();
 ```js
 // solution required
 ```
+
 </section>

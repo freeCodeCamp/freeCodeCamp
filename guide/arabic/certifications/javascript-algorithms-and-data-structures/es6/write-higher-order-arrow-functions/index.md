@@ -47,8 +47,6 @@ localeTitle: اكتب وظائف السهم لأعلى ترتيب
     console.log(squaredIntegers); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://codepen.io/dylantyates/pen/WyWoYJ)
-
 # شرح الشفرة:
 
 يستخدم عامل `filter()` عوامل `filter()` و `map()` لترقيم كل الأعداد الصحيحة الموجبة في مصفوفة معينة.

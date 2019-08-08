@@ -18,13 +18,14 @@ print "مدينة برزت هي:"، cities.pop () print "City at index 2 is:"، 
 
 يتم استخدام أسلوب `pop()` غالبًا بالتزامن مع `append()` لتنفيذ وظائف مكدس أساسية في تطبيق Python.
 
- `stack = [] 
- 
- for i in range(5): 
-    stack.append(i) 
- 
- while len(stack): 
-    print(stack.pop()) 
-` 
+```py
+stack = []
+
+for i in range(5):
+    stack.append(i)
+
+while len(stack):
+    print(stack.pop())
+``` 
 
 \#### معلومات اكثر: يمكن العثور على الوثائق الرسمية لـ `pop()` [هنا](https://docs.python.org/3.6/tutorial/datastructures.html)

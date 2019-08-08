@@ -47,7 +47,6 @@ function sumAll(arr) {
  sumAll([1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLm6/0)
 
 ### Explicación del código:
 
@@ -79,7 +78,6 @@ function sumAll(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLm7/0)
 
 ### Explicación del código:
 
@@ -109,7 +107,6 @@ function sumAll(arr) {
  sumAll([1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLm8/0)
 
 ### Explicación del código:
 

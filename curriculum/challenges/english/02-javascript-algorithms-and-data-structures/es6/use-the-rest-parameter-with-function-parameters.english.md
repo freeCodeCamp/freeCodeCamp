@@ -2,6 +2,7 @@
 id: 587d7b88367417b2b2512b47
 title: Use the Rest Parameter with Function Parameters
 challengeType: 1
+forumTopicId: 301221
 ---
 
 ## Description
@@ -72,4 +73,5 @@ const sum = (...args) => {
   return args.reduce((a, b) => a + b, 0);
 }
 ```
+
 </section>

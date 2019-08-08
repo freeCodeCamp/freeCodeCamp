@@ -2,6 +2,7 @@
 id: 587d7db0367417b2b2512b82
 title: Understand the Prototype Chain
 challengeType: 1
+forumTopicId: 301329
 ---
 
 ## Description
@@ -46,7 +47,7 @@ Modify the code to show the correct prototype chain.
 ```yml
 tests:
   - text: Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>
-    testString: assert(/Object\.prototype\.isPrototypeOf/.test(code), "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>");
+    testString: assert(/Object\.prototype\.isPrototypeOf/.test(code));
 
 ```
 

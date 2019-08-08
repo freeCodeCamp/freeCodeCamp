@@ -29,17 +29,20 @@ La mayor parte de una aplicación Ionic se escribirá en HTML, Javascript y CSS.
 ```
 
 ### Gestor de paquetes Node.js (npm)
-
-\`\` \`  
-sudo apt-get install npm
 ```
-### Ionic 2 and cordova 
+  sudo apt-get install npm
 ```
 
-sudo npm instalar -g ionic cordova
+### Ionic 2 and cordova
 ```
-### Now sit back and relax, give it some time to finish, it can take several minutes depending on your internet connection. 
- Once that's done, Let's start off by generating a new project based on the “blank” template 
+  sudo npm instalar -g ionic cordova
 ```
 
-Inicio ionico MyFirstApp blank cd MyFirstApp servicio iónico \`\` \`
+ Ahora sientate y relajate, dale tiempo a que finalice, puede tomar varios minutos en función de tu conexión a internet.
+ Una vez terminado, empecemos generando un nuevo proyecto basado en la plantilla "blank":
+
+```
+  ionic start MyPrimeraApp blank 
+  cd MyPrimeraApp
+  ionic serve
+```

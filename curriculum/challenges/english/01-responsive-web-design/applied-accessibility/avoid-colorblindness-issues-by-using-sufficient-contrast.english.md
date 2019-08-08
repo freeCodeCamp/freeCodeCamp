@@ -3,6 +3,7 @@ id: 587d778f367417b2b2512aac
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cmzMEUw'
+forumTopicId: 301012
 ---
 
 ## Description
@@ -24,9 +25,9 @@ Camper Cat is experimenting with using color for his blog text and background, b
 ```yml
 tests:
   - text: Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.
-    testString: assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), 'Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.');
+    testString: assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi));
   - text: Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.
-    testString: assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), 'Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.');
+    testString: assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi));
 
 ```
 

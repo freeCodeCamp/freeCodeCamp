@@ -14,7 +14,8 @@ Ao escrever HTML, você pode adicionar classes a um elemento. Basta adicionar o 
  <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p> 
 ```
 
-Você pode, então, estilizar esses elementos com CSS. As classes são referenciadas com o período (.) antes delas no CSS, mas você não deve colocar pontos no seu HTML.
+Você pode, então, estilizar esses elementos com CSS. As classes são referenciadas com um ponto final (.) antes do nome dado à elas. O ponto não deve ser usado no HTML. 
+
 
 ```css
 .super-man { 
@@ -23,7 +24,7 @@ Você pode, então, estilizar esses elementos com CSS. As classes são referenci
  } 
 ```
 
-Este código dá um fundo azul e uma cor de texto vermelho para todos os elementos que têm o `super-man` de classe. [Veja este exemplo no CodePen](https://codepen.io/Tlandis/pen/RLvomV) .
+Este código atribui um fundo azul e uma cor de texto vermelho para todos os elementos que têm o `super-man` como classe.
 
 Você também pode declarar mais de uma classe para seu elemento, como:
 

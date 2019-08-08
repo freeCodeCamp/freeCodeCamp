@@ -1,7 +1,7 @@
 ---
 title: Create Texture by Adding a Subtle Pattern as a Background Image
 ---
-## Create Texture by Adding a Subtle Pattern as a Background Image
+# Create Texture by Adding a Subtle Pattern as a Background Image
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/create-texture-by-adding-a-subtle-pattern-as-a-background-image/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

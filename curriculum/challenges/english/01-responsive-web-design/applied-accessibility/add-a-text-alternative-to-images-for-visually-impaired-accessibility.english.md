@@ -3,6 +3,7 @@ id: 587d774c367417b2b2512a9c
 title: Add a Text Alternative to Images for Visually Impaired Accessibility
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp7VfD'
+forumTopicId: 16628
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Camper Cat happens to be both a coding ninja and an actual ninja, who is buildin
 ```yml
 tests:
   - text: Your <code>img</code> tag should have an <code>alt</code> attribute and it should not be empty.
-    testString: assert($('img').attr('alt'), 'Your <code>img</code> tag should have an <code>alt</code> attribute and it should not be empty.');
+    testString: assert($('img').attr('alt'));
 
 ```
 
@@ -53,4 +54,5 @@ tests:
 ```html
 <img src="doingKarateWow.jpeg" alt="Someone doing karate">
 ```
+
 </section>

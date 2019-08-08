@@ -64,9 +64,8 @@ hello(); //does not log anything
 ### Many IDEs come with a keyboard shortcut to comment out lines.
 
 1. Highlight text to be commented
-2. Mac: Push `Command`(Apple Key) + `/`  
-   Windows: Push `Control` + `/`
-- You can also uncomment code by doing the same steps
+2. Mac: Push `Command`(Apple Key) + `/` or Windows: Push `Control` + `/`
+3. You can also uncomment code by doing the same steps
 
 #### More Information:
 * [How To Write Comments in JavaScript](https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript)

@@ -3,6 +3,7 @@ id: bad88fee1348bd9aedf08825
 title: Adjust the Padding of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cED8ZC2'
+forumTopicId: 301083
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Change the <code>padding</code> of your blue box to match that of your red box.
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-top") === "20px", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');
+    testString: assert($(".blue-box").css("padding-top") === "20px");
 
 ```
 
@@ -123,4 +124,5 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
+
 </section>

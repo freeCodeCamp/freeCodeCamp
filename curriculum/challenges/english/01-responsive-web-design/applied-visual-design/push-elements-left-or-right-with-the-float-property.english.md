@@ -3,6 +3,7 @@ id: 587d78a3367417b2b2512ace
 title: Push Elements Left or Right with the float Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MDqu2'
+forumTopicId: 301066
 ---
 
 ## Description
@@ -21,9 +22,9 @@ The given markup would work well as a two-column layout, with the <code>section<
 ```yml
 tests:
   - text: The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.
-    testString: assert($('#left').css('float') == 'left', 'The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.');
+    testString: assert($('#left').css('float') == 'left');
   - text: The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.
-    testString: assert($('#right').css('float') == 'right', 'The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.');
+    testString: assert($('#right').css('float') == 'right');
 
 ```
 
@@ -106,4 +107,5 @@ tests:
   </aside>
 </body>
 ```
+
 </section>

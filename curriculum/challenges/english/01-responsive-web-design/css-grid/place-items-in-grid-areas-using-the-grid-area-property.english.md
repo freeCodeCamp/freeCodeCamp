@@ -3,6 +3,7 @@ id: 5a94fe1369fb03452672e45d
 title: Place Items in Grid Areas Using the grid-area Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cRrqmtV'
+forumTopicId: 301132
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Place an element with the <code>item5</code> class in the <code>footer</code> ar
 ```yml
 tests:
   - text: <code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.
-    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi), '<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.');
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi));
 
 ```
 

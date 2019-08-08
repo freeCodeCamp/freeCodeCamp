@@ -3,6 +3,7 @@ id: 587d78ad367417b2b2512af8
 title: Align Elements Using the align-items Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVaDAv/c8aggtk'
+forumTopicId: 301101
 ---
 
 ## Description
@@ -26,7 +27,7 @@ An example helps show this property in action. Add the CSS property <code>align-
 ```yml
 tests:
   - text: The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.
-    testString: assert($('#box-container').css('align-items') == 'center', 'The <code>#box-container</code> element should have an <code>align-items</code> property set to a value of center.');
+    testString: assert($('#box-container').css('align-items') == 'center');
 
 ```
 
@@ -99,4 +100,5 @@ tests:
   <div id="box-2"><p>Goodbye</p></div>
 </div>
 ```
+
 </section>

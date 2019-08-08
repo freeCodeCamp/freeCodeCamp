@@ -24,7 +24,7 @@ Los comentarios comienzan con `<!--` y finalizan con `-->` , y pueden abarcar va
  <html> 
     <body> 
         <h1>FreeCodeCamp web</h1> 
-        <!-- Leave some space between the h1 and the p in order to understand what are we talking about--> 
+        <!-- Deja espacio entre <h1> y <p> para entender mejor el codigo. --> 
         <p>FreeCodeCamp is an open-source project that needs your help</p> 
             <!-- For readability of code use proper indentation --> 
     </body> 
@@ -58,9 +58,9 @@ Estos comentarios solo están disponibles en Internet Explorer y pueden usarse h
 
 ```html
 
-<!--[if lt IE 9]> <p>Your browser is lower then IE9</p> <![endif]--> 
- <!--[if IE 9]> <p>Your browser is IE9</p> <![endif]--> 
- <!--[if gt IE 9]> <p>Your browser is greater then IE9</p> <![endif]--> 
+ <!--[if lt IE 9]> <p>Si tu navegador es menor IE9</p> <![endif]--> 
+ <!--[if IE 9]> <p>Si tu navegador es IE9</p> <![endif]--> 
+ <!--[if gt IE 9]> <p>Si tu navegador es mayor a IE9</p> <![endif]--> 
 ```
 
 [Sobre los comentarios condicionales.](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)

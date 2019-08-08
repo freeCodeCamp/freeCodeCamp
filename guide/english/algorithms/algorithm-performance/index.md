@@ -3,20 +3,20 @@ title: Algorithm Performance
 ---
 
 ## Algorithm Performance
-To understand the performance of algorithms, first we need to know the big-O notation.
+To understand the performance of algorithms, you first need to know the big-O notation.
 
 ### The Big-O Notation
-In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
+In mathematics, the big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
 A function's limiting behavior is how the function acts as it approaches a specific value (usually trends towards infinity).
 
-In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
+In short, the big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
 In algorithm design, we usually use big-O notation because we can see how good or bad an algorithm's performance will be.  From a denotative perspective, big-O denotes the runtime in the worst possible case scenario.  However, in many instances, people use it as a synonym for average expected runtime.  
 
 In mathematics, the big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
-In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.  In programming, big-O notation compares the growth/decline of the runtime in respects to the size of the input.  
+In short, the big-O notation is used to describe the growth or decline of a function, usually with respect to another function.  In programming, big-O notation compares the growth/decline of the runtime in respects to the size of the input.  
 
 NOTE: x^2 is equivalent to x * x or 'x-squared'
 
@@ -25,7 +25,7 @@ The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x 
 
 Effectively, we say that a function f(x) that is O(g(x)) grows slower than g(x) does.
 
-Comparatively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
+Comparatively, in computer science and software development, we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
 
 **Space Complexity** of an algorithm refers to its memory footprint with respect to the input size.
 
@@ -52,7 +52,7 @@ The following 3 notations are mostly used to represent the time complexity of al
 
 <img src = "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AlgoAnalysis-2.png"/>
 
-3. **Ω Notation**: Ω notation provides a lower bound to algorithm. it shows fastest possible answer for that algorithm.
+3. **Ω Notation**: Ω notation provides a lower bound to algorithm. it shows the fastest possible answer for that algorithm.
     >Ω (g(n)) = {f(n): there exist positive constants c and n0 such that 0 <= cg(n) <= f(n) for all n >= n0}.
     
 <img src = "https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AlgoAnalysis-3.png"/>

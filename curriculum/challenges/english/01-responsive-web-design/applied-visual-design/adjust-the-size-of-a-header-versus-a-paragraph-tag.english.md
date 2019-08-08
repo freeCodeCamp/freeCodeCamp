@@ -3,6 +3,7 @@ id: 587d781b367417b2b2512abd
 title: Adjust the Size of a Header Versus a Paragraph Tag
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRPTz'
+forumTopicId: 301037
 ---
 
 ## Description
@@ -21,7 +22,7 @@ To make the heading significantly larger than the paragraph, change the <code>fo
 ```yml
 tests:
   - text: Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.
-    testString: assert($('h4').css('font-size') == '27px', 'Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.');
+    testString: assert($('h4').css('font-size') == '27px');
 
 ```
 
@@ -128,4 +129,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

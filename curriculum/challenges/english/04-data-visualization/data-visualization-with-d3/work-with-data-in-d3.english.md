@@ -2,6 +2,7 @@
 id: 587d7fa7367417b2b2512bc4
 title: Work with Data in D3
 challengeType: 6
+forumTopicId: 301497
 ---
 
 ## Description
@@ -40,13 +41,13 @@ Select the <code>body</code> node, then select all <code>h2</code> elements. Hav
 ```yml
 tests:
   - text: Your document should have 9 <code>h2</code> elements.
-    testString: assert($('h2').length == 9, 'Your document should have 9 <code>h2</code> elements.');
+    testString: assert($('h2').length == 9);
   - text: The text in the <code>h2</code> elements should say "New Title". The capitalization and spacing should match exactly.
-    testString: assert($('h2').text().match(/New Title/g).length == 9, 'The text in the <code>h2</code> elements should say "New Title". The capitalization and spacing should match exactly.');
+    testString: assert($('h2').text().match(/New Title/g).length == 9);
   - text: Your code should use the <code>data()</code> method.
-    testString: assert(code.match(/\.data/g), 'Your code should use the <code>data()</code> method.');
+    testString: assert(code.match(/\.data/g));
   - text: Your code should use the <code>enter()</code> method.
-    testString: assert(code.match(/\.enter/g), 'Your code should use the <code>enter()</code> method.');
+    testString: assert(code.match(/\.enter/g));
 
 ```
 
@@ -83,4 +84,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

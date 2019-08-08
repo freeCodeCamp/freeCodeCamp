@@ -27,11 +27,12 @@ localeTitle: حذف الخصائص من كائن JavaScript
 
 ## مثال
 
- `var person = {name:'Jay', age:'52'}; 
- delete person['age']; 
- 
- console.log(person); //{name:'Jay'} 
-` 
+```js
+var person = {name:'Jay', age:'52'};
+delete person['age'];
+
+console.log(person); //{name:'Jay'}
+``` 
 
 ## قيمة الإرجاع
 

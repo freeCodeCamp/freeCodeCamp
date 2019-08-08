@@ -2,6 +2,7 @@
 id: 587d7dbd367417b2b2512bb4
 title: Store Data with Sass Variables
 challengeType: 0
+forumTopicId: 301460
 ---
 
 ## Description
@@ -35,13 +36,13 @@ Create a variable <code>$text-color</code> and set it to red. Then change the va
 ```yml
 tests:
   - text: Your code should have a Sass variable declared for <code>$text-color</code> with a value of red.
-    testString: assert(code.match(/\$text-color:\s*?red;/g), 'Your code should have a Sass variable declared for <code>$text-color</code> with a value of red.');
+    testString: assert(code.match(/\$text-color:\s*?red;/g));
   - text: Your code should use the <code>$text-color</code> variable to change the <code>color</code> for the <code>.blog-post</code> and <code>h2</code> items.
-    testString: assert(code.match(/color:\s*?\$text-color;/g), 'Your code should use the <code>$text-color</code> variable to change the <code>color</code> for the <code>.blog-post</code> and <code>h2</code> items.');
+    testString: assert(code.match(/color:\s*?\$text-color;/g));
   - text: Your <code>.blog-post</code> element should have a </code>color</code> of red.
-    testString: assert($('.blog-post').css('color') == 'rgb(255, 0, 0)', 'Your <code>.blog-post</code> element should have a </code>color</code> of red.');
+    testString: assert($('.blog-post').css('color') == 'rgb(255, 0, 0)');
   - text: Your <code>h2</code> elements should have a </code>color</code> of red.
-    testString: assert($('h2').css('color') == 'rgb(255, 0, 0)', 'Your <code>h2</code> elements should have a </code>color</code> of red.');
+    testString: assert($('h2').css('color') == 'rgb(255, 0, 0)');
 
 ```
 
@@ -114,4 +115,5 @@ tests:
   <p>Even more random text within a paragraph</p>
 </div>
 ```
+
 </section>

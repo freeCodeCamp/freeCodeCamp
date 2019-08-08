@@ -6,10 +6,11 @@ localeTitle: الخط البديل
 
 يتم استخدام خاصية متغير الخط الأكثر شيوعًا لتغيير النص المستهدف إلى أحرف استهلالية صغيرة. القيمة الافتراضية أمر `normal` .
 
- `p { 
-  font-variant: small-caps; 
- } 
-` 
+```css
+p {
+  font-variant: small-caps;
+}
+``` 
 
 يقبل مكان الإقامة أيضًا `all-small-caps` `petite-caps` `all-petite-caps` `titling-caps` و `unicase` . ومع ذلك ، فهي جديدة في CSS3 ولم يتم دعمها بشكل جيد بعد.
 

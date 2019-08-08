@@ -1,15 +1,20 @@
 ---
 title: Restrict Possible Usernames
 ---
-## Restrict Possible Usernames
+# Restrict Possible Usernames
 
-## Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```javascript
 let username = "JackOfAllTrades";
 const userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
 let result = userCheck.test(username);
 ```
-## Explain:
+#### Code Explanation
 1. `^` - start of input
 2. `[a-z]` - first character is a letter
 3. `[0-9]{2,0}` - ends with two or more numbers
@@ -18,3 +23,4 @@ let result = userCheck.test(username);
 6. `\d*` - and ends with zero or more numbers
 7. `$` - end of input
 8. `i` - ignore case of input
+</details>

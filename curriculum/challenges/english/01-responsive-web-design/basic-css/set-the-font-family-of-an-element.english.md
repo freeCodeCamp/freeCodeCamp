@@ -3,6 +3,7 @@ id: bad87fee1348bd9aede08807
 title: Set the Font Family of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bvpCg'
+forumTopicId: 18278
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Make all of your <code>p</code> elements use the <code>monospace</code> font.
 ```yml
 tests:
   - text: Your <code>p</code> elements should use the font <code>monospace</code>.
-    testString: assert($("p").not(".red-text").css("font-family").match(/monospace/i), 'Your <code>p</code> elements should use the font <code>monospace</code>.');
+    testString: assert($("p").not(".red-text").css("font-family").match(/monospace/i));
 
 ```
 
@@ -137,4 +138,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

@@ -8,34 +8,37 @@ localeTitle: مؤشرات
 
 #
 
- `type *var-name; 
-` 
+```
+type *var-name;
+``` 
 
 ## صنع واستخدام مؤشر
 
- `#include <stdio.h> 
- 
- int main(void){ 
-    double my_double_variable = 10.1; 
-    double *my_pointer; 
- 
-    my_pointer = &my_double_variable; 
- 
-    printf("value of my_double_variable: %f\n", my_double_variable); 
- 
-    ++my_double_variable; 
- 
-    printf("value of my_pointer: %f\n", *my_pointer); 
- 
-    return 0; 
- } 
-` 
+```c
+#include <stdio.h>
+
+int main(void){
+    double my_double_variable = 10.1;
+    double *my_pointer;
+
+    my_pointer = &my_double_variable;
+
+    printf("value of my_double_variable: %f\n", my_double_variable);
+
+    ++my_double_variable;
+
+    printf("value of my_pointer: %f\n", *my_pointer);
+
+    return 0;
+}
+``` 
 
 انتاج:
 
- `value of my_double_variable: 10.100000 
- value of my_pointer: 11.100000 
-` 
+```
+value of my_double_variable: 10.100000
+value of my_pointer: 11.100000
+``` 
 
 في هذا الرمز ، هناك إعلانان. الأول هو تهيئة متغيرة نموذجية مما يؤدي إلى `double` وتعيينها تساوي 10.1. الجديد في تصريحاتنا هو استخدام `*` . تستخدم العلامة النجمية ( `*` ) عادةً للضرب ، ولكن عندما نستخدمها بوضعها أمام متغير ، فإنها تخبر C بأن هذا متغير مؤشر.
 
@@ -43,10 +46,11 @@ localeTitle: مؤشرات
 
 مع أخذ ذلك في الاعتبار ، دعونا نلقي نظرة أخرى على هذا الرمز من التعليمات البرمجية:
 
- `double *my_pointer; 
- // my_pointer now stored the address of my_double_variable 
- my_pointer = &my_double_variable; 
-` 
+```c
+double *my_pointer;
+// my_pointer now stored the address of my_double_variable
+my_pointer = &my_double_variable;
+``` 
 
 تم الإعلان عن `my_pointer` وتم الإعلان عنه كمؤشر. يعرف المترجم C الآن أن `my_pointer` إلى موقع ذاكرة. يعيّن السطر التالي `my_pointer` قيمة موقع ذاكرة باستخدام `&` .
 
@@ -65,8 +69,9 @@ localeTitle: مؤشرات
 
 يمكنك تعريف مؤشر متعدد في عبارة واحدة كما هو الحال مع المتغيرات القياسية ، مثل:
 
- `int *x, *y; 
-` 
+```c
+int *x, *y;
+``` 
 
 لاحظ أن `*` مطلوب قبل كل متغير. وهذا لأن كونك مؤشرًا يعتبر جزءًا من المتغير وليس جزءًا من نوع البيانات.
 
@@ -109,9 +114,10 @@ localeTitle: مؤشرات
 
 انتاج |
 
- `Number1 = 10 
- Number2 = 5 
-` 
+```
+Number1 = 10
+Number2 = 5
+``` 
 
 يتم تمرير العناوين ، أو مواقع الذاكرة ، من `num1` و `num2` إلى `swap` الدالة ويتم تمثيلها بواسطة المؤشرات `*n1` و `*n2` داخل الدالة. لذلك ، الآن تشير المؤشرات `n1` و `n2` إلى عناوين `num1` و `num2` على التوالي.
 
@@ -157,18 +163,19 @@ localeTitle: مؤشرات
 
 ألقِ نظرة على هذا الرمز ، الذي يحول شيء من الأحرف الكبيرة إلى الصغيرة:
 
- `#include <stdio.h> 
- #include <ctype.h> 
- 
- char *lowerCase (char *string) { 
-    char *p = string; 
-    while (*p) { 
-        if (isupper(*p)) *p = tolower(*p); 
-        p++; 
-    } 
-    return string; 
- } 
-` 
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+char *lowerCase (char *string) {
+    char *p = string;
+    while (*p) {
+        if (isupper(*p)) *p = tolower(*p);
+        p++;
+    }
+    return string;
+}
+``` 
 
 يبدأ هذا عن طريق اتخاذ سلسلة (شيء ستتعرف عليه عندما تصل إلى المصفوفات) ويمر عبر كل موقع. لاحظ في p ++. هذا يزيد المؤشر ، مما يعني أنه يبحث في موقع الذاكرة التالي. كل حرف هو موقع ذاكرة ، لذلك في هذه الحالة المؤشر يتطلع إلى كل حرف واتخاذ قرار بشأن ما يجب القيام به لكل واحد.
 

@@ -58,7 +58,6 @@ function sumFibs(num) {
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnV/0)
 
 ### 代码说明：
 
@@ -100,7 +99,6 @@ function sumFibs(num) {
  sumFibs(4); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/repls/ImpassionedFineConnection)
 
 ### 代码说明：
 

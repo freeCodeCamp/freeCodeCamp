@@ -29,20 +29,20 @@ localeTitle: انهدام
 
 ### أمثلة مع الأزرار
 
- `
-<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> 
-  Link with href 
- </a> 
- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> 
-  Button with data-target 
- </button> 
- 
- <div class="collapse" id="collapseExample"> 
-  <div class="well"> 
-    ... 
-  </div> 
- </div> 
-` 
+```html
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Link with href
+</a>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Button with data-target
+</button>
+
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    ...
+  </div>
+</div>
+``` 
 
 في المثال أعلاه ، نستخدم زرًا وعلامة ارتساء للتحكم في عنصر div. يحتاج الزر والمرسلان وهما عنصران للتحكم إلى شيئين ، السمة التي تحدد أن عنصر التحكم هو من أجل الانهيار وسمة أخرى لتحديد العنصر الذي يتحكم فيه (يخفي أو يكشف).
 
@@ -54,22 +54,22 @@ localeTitle: انهدام
 
 ## مثال مع الأكورديون
 
- `
-<div class="panel panel-default"> 
-    <div class="panel-heading" role="tab" id="headingOne"> 
-      <h4 class="panel-title"> 
-        <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> 
-          Collapsible Group Item #1 
-        </a> 
-      </h4> 
-    </div> 
-    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"> 
-      <div class="panel-body"> 
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. 
-      </div> 
-    </div> 
-  </div> 
-` 
+```html
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+``` 
 
 في المثال أعلاه نستخدم انهيار bootstrap لإنشاء الأكورديون. الأكورديون هو مجرد لوحة bootstrap حيث يتم عرض الرأس ويستخدم للتحكم في جسم اللوحة.
 
@@ -81,56 +81,57 @@ localeTitle: انهدام
 
 فقرة!
 
- `
-<p>Lorem ipsum dolar, Free Code Camp rocks... </p> 
-` 
+```html
+<p>Lorem ipsum dolar, Free Code Camp rocks... </p>
+``` 
 
 1.  إضافة class `.collapse` إلى أن الفقرة عنصر قابل للطي.
 2.  إضافة `id` لجعل هذا العنصر القابل للطي قابلًا لعنصر وحدة التحكم.
 
- `
-<p id="myParagraph" class="collapse">Lorem ipsum dolar, Free Code Camp rocks... </p> 
-` 
+```html
+<p id="myParagraph" class="collapse">Lorem ipsum dolar, Free Code Camp rocks... </p>
+``` 
 
 ### عنصر تحكم
 
 الزر!
 
- `
-<button>Click Me To See Some Magic!</button> 
-` 
+```html
+<button>Click Me To See Some Magic!</button>
+``` 
 
 1.  إضافة سمة `data-toggle="collapse"` للسيطرة على عنصر قابل للطي.
 2.  إضافة سمة `data-target="#id"` للإشارة إلى العنصر القابل للطي بمعرّفه.
 
- `
-<button data-toggle="collapse" data-target="#myParagraph">Click Me To See Some Magic!</button> 
-` 
+```html
+<button data-toggle="collapse" data-target="#myParagraph">Click Me To See Some Magic!</button>
+``` 
 
 ## مثال
 
- `
-<p> 
-  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> 
-    Link with href 
-  </a> 
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> 
-    Button with data-target 
-  </button> 
- </p> 
- <div class="collapse" id="collapseExample"> 
-  <div class="card card-block"> 
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. 
-  </div> 
- </div> 
-` 
+```html
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-block">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
+``` 
 
 ### استخدامه مع JavaScript
 
 يتيح لك هذا المكون الإضافي استخدامه مع JavaScript حيث تحتاج فقط إلى تحديد العنصر الذي تريد طيه لتمكينه:
 
- `$('.collapsible-element').collapse(); 
-` 
+```js
+$('.collapsible-element').collapse();
+``` 
 
 تقبل طريقة `collapse` كائنًا اختياريًا حيث يمكنك تعيين الحالة الأولية للعنصر القابل للطي. الخيارات هي:
 
@@ -138,8 +139,9 @@ localeTitle: انهدام
 *   `hide` : إخفاء العنصر.
 *   `show` : يعرض العنصر.
 
- `$('.collapsible-element').collapse('hide'); 
-` 
+```js
+$('.collapsible-element').collapse('hide');
+``` 
 
 أيضا هناك بعض الطرق المكشوفة للربط في وظائف الانهيار:
 

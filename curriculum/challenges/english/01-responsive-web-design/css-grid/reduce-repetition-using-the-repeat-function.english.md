@@ -3,6 +3,7 @@ id: 5a94fe3669fb03452672e45f
 title: Reduce Repetition Using the repeat Function
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
+forumTopicId: 301133
 ---
 
 ## Description
@@ -41,7 +42,7 @@ Use <code>repeat</code> to remove repetition from the <code>grid-template-column
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

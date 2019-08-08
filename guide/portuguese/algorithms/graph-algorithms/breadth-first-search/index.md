@@ -4,7 +4,7 @@ localeTitle: Largura da Primeira Pesquisa (BFS)
 ---
 ## Largura da Primeira Pesquisa (BFS)
 
-Largura A primeira pesquisa é um dos algoritmos gráficos mais simples. Ele percorre o gráfico verificando primeiro o nó atual e expandindo-o adicionando seus sucessores ao próximo nível. O processo é repetido para todos os nós no nível atual antes de passar para o próximo nível. Se a solução for encontrada, a pesquisa será interrompida.
+Largura da Primeira Pesquisa é um dos algoritmos gráficos mais simples. Ele percorre o gráfico verificando primeiro o nó atual e expandindo-o adicionando seus sucessores ao próximo nível. O processo é repetido para todos os nós no nível atual antes de passar para o próximo nível. Se a solução for encontrada, a pesquisa será interrompida.
 
 ### Visualização
 
@@ -16,7 +16,7 @@ Complexidade do espaço: O (n)
 
 Pior complexidade do tempo de caso: O (n)
 
-Largura A primeira pesquisa é concluída em um conjunto finito de nós e é ideal se o custo de mover de um nó para outro é constante.
+Largura da Primeira Pesquisa é concluída em um conjunto finito de nós e é ideal se o custo de mover de um nó para outro é constante.
 
 ### Código C ++ para implementação do BFS
 

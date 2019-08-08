@@ -89,7 +89,7 @@ El código para la búsqueda binaria recursiva se muestra a continuación:
 
 ```javascript
 function binarySearch(arr, item, low, high) { 
-    if (low > high) { // No more elements in the array. 
+    if (low > high) { // No hay más elementos en la matriz.
         return null; 
     } 
  
@@ -174,7 +174,7 @@ int binarySearch(int a[], int l, int r, int x) {
 
 ### Implementación C / C ++
 
-```C++
+```cpp
 int binary_search(int arr[], int l, int r, int target) 
  { 
    if (r >= l) 
@@ -192,7 +192,7 @@ int binary_search(int arr[], int l, int r, int target)
 
 ### Implementacion Python
 
-```Python
+```python
 def binary_search(arr, l, r, target): 
     if r >= l: 
         mid = l + (r - l)/2 
@@ -208,7 +208,7 @@ def binary_search(arr, l, r, target):
 
 ### Ejemplo en C ++
 
-```c++
+```cpp
 // Binary Search using iteration 
  int binary_search(int arr[], int beg, int end, int num) 
  { 
@@ -225,7 +225,7 @@ def binary_search(arr, l, r, target):
  } 
 ```
 
-```c++
+```cpp
 // Binary Search using recursion 
  int binary_search(int arr[], int beg, int end, int num) 
  { 
