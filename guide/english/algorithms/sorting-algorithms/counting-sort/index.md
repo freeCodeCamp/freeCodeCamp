@@ -29,7 +29,16 @@ the output sequence.
   next data 1 at an index 1 smaller than this index.
   
 ```
-### Implementation
+
+### Properties
+- Space complexity: O(K)
+- Best case performance: O(n+K)
+- Average case performance: O(n+K)
+- Worst case performance: O(n+K)
+- Stable: Yes
+(K is the number of distinct elements in the array)
+
+### Implementation in JavaScript
 ```js
 let numbers = [1, 4, 1, 2, 7, 5, 2];
 let count = [];
@@ -53,4 +62,48 @@ for (i=0; i < numbers.length; i++) {
 }
 ```
 
+### C++ Implementation
+```cpp
+#include <iostream>
 
+void countSort(int upperBound, int lowerBound, std::vector<int> numbersToSort) //lower and upper bounds of numbers in vector
+{
+  int range = upperBound - lowerBound;                  //create a range large enough to get every number between the min and max
+  std::vector<int> counts (range);                      //initialize of counts of the size of the range
+  std::fill(counts.begin(), counts.end(), 0);           //fill vector of zeros
+  
+  for (int i = 0; i < numbersToSort.size(); i++)
+  {
+      int index = numbersToSort[i] - lowerBound; //For example, if 5 is the lower bound and numbersToSort[i] is 5. index will be 0 and the       counts[index]+= 1;                         //count of 5 will be stored in counts[0]
+  }
+  
+  std::cout << counts << std::endl;
+} 
+```
+
+### Swift Implementation
+```swift
+func countingSort(_ array: [Int]) {
+  // Create an array to store the count of each element
+  let maxElement = array.max() ?? 0
+  var countArray = [Int](repeating: 0, count: Int(maxElement + 1))
+  
+  for element in array {
+    countArray[element] += 1
+  }
+  var z = 0
+  var sortedArray = [Int](repeating: 0, count: array.count)
+
+  for index in 1 ..< countArray.count {
+    //print index element required number of times
+    while countArray[index] > 0 {
+      sortedArray[z] = index
+      z += 1
+      countArray[index] -= 1
+    }
+  }
+  
+  print(sortedArray)
+}
+
+  ```

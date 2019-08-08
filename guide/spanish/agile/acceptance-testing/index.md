@@ -112,13 +112,13 @@ Puede escribir Pruebas de aceptación para cada una de estas subcaracterísticas
 
 Aparte del código que maneja la infraestructura de cómo se ejecutará la prueba, su prueba para el primer escenario podría verse como (en pseudocódigo):
 
-Dado que la página está abierta El cuadro de diálogo debe ser visible Y el cuadro de diálogo debe contener un cuadro de entrada Y el cuadro de entrada debe tener un texto de marcador de posición "¡Tu nombre, por favor!"
+Dado que la página está abierta el cuadro de diálogo debe ser visible y el cuadro de diálogo debe contener un cuadro de entrada y el cuadro de entrada debe tener un texto de marcador de posición "¡Tu nombre, por favor!"
 
 ### Notas
 
 Las Pruebas de aceptación se pueden escribir en cualquier idioma y se ejecutan utilizando varias herramientas disponibles que se ocuparían de la infraestructura mencionada anteriormente, por ejemplo, abrir un navegador, cargar una página, proporcionar los métodos para acceder a los elementos de la página, bibliotecas de afirmaciones, etc.
 
-Cada vez que escribes una pieza de software que se utilizará de nuevo (incluso por ti mismo), es útil escribir una prueba para ello. Cuando usted u otro realice cambios en este código, la ejecución de las pruebas garantizará que no haya roto la funcionalidad existente.
+Cada vez que escribe una pieza de software que se utilizará de nuevo (incluso por si mismo), es útil escribir una prueba para ello. Cuando usted u otro realice cambios en este código, la ejecución de las pruebas garantizará que no haya roto la funcionalidad existente.
 
 Normalmente lo realizan los usuarios o los expertos en la materia. También se llama como prueba de aceptación del usuario (UAT). La UAT involucra los escenarios de la vida real más comunes. A diferencia de las pruebas del sistema, no se enfoca en los errores o fallas, sino en la funcionalidad. UAT se realiza al final del ciclo de vida de la prueba y decidirá si el software se moverá al siguiente entorno o no.
 

@@ -2,6 +2,7 @@
 id: 5900f4031000cf542c50ff15
 challengeType: 5
 title: 'Problem 150: Searching a triangular array for a sub-triangle having minimum-sum'
+forumTopicId: 301781
 ---
 
 ## Description
@@ -45,7 +46,7 @@ Find the smallest possible sub-triangle sum.
 ```yml
 tests:
   - text: <code>euler150()</code> should return -271248680.
-    testString: assert.strictEqual(euler150(), -271248680, '<code>euler150()</code> should return -271248680.');
+    testString: assert.strictEqual(euler150(), -271248680);
 
 ```
 
@@ -77,4 +78,5 @@ euler150();
 ```js
 // solution required
 ```
+
 </section>

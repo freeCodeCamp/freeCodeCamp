@@ -1,7 +1,7 @@
 ---
 title: Delete One Document Using model.findByIdAndRemove
 ---
-## Delete One Document Using model.findByIdAndRemove
+# Delete One Document Using model.findByIdAndRemove
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/delete-one-document-using-model.findbyidandremove/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

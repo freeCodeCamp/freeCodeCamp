@@ -2,6 +2,7 @@
 id: 5900f4a51000cf542c50ffb7
 challengeType: 5
 title: 'Problem 312: Cyclic paths on Sierpiński graphs'
+forumTopicId: 301968
 ---
 
 ## Description
@@ -38,7 +39,7 @@ Find C(C(C(10 000))) mod 138.
 ```yml
 tests:
   - text: <code>euler312()</code> should return 324681947.
-    testString: assert.strictEqual(euler312(), 324681947, '<code>euler312()</code> should return 324681947.');
+    testString: assert.strictEqual(euler312(), 324681947);
 
 ```
 
@@ -70,4 +71,5 @@ euler312();
 ```js
 // solution required
 ```
+
 </section>

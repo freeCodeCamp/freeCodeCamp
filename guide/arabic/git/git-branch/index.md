@@ -21,13 +21,15 @@ localeTitle: بوابة فرع
 
 لعرض الفروع في مستودع Git ، قم بتشغيل الأمر:
 
- `git branch 
-` 
+```shell
+git branch
+``` 
 
 لعرض كل من فروع التتبع عن بعد والفروع المحلية ، قم بتشغيل الأمر:
 
- `git branch -a 
-` 
+```shell
+git branch -a
+``` 
 
 سيكون هناك علامة نجمية (\*) بجوار الفرع الذي تعمل عليه حاليًا.
 
@@ -39,8 +41,9 @@ localeTitle: بوابة فرع
 
 للتحقق من فرع موجود ، قم بتشغيل الأمر:
 
- `git checkout BRANCH-NAME 
-` 
+```shell
+git checkout BRANCH-NAME
+``` 
 
 بشكل عام ، لن تسمح لك Git بالتسجيل في فرع آخر ما لم يكن دليل عملك نظيفًا ، لأنك ستفقد أي تغييرات في دليل العمل غير ملتزم بها. لديك ثلاثة خيارات للتعامل مع تغييراتك: 1) القمامة لهم (انظر [بوابة الخروج للحصول على التفاصيل](https://guide.freecodecamp.org/git/git-checkout/) ) أو 2) ارتكابها (انظر [Git ارتكاب التفاصيل](https://guide.freecodecamp.org/git/git-commit/) ) أو 3) خبأهم (انظر [خبأ Git لمزيد من التفاصيل](https://guide.freecodecamp.org/git/git-stash/) ).
 
@@ -48,20 +51,22 @@ localeTitle: بوابة فرع
 
 لإنشاء فرع جديد ، قم بتشغيل الأمر:
 
- `git branch NEW-BRANCH-NAME 
-` 
+```shell
+git branch NEW-BRANCH-NAME
+``` 
 
 لاحظ أن هذا الأمر يقوم بإنشاء الفرع الجديد فقط. ستحتاج إلى تشغيل `git checkout NEW-BRANCH-NAME` للتبديل إليه.
 
 هناك اختصار لإنشاء واختبار فرع جديد في وقت واحد. يمكنك تمرير الخيار `-b` (للفرع) مع `git checkout` . الأوامر التالية تفعل الشيء نفسه:
 
- `# Two-step method 
- git branch NEW-BRANCH-NAME 
- git checkout NEW-BRANCH-NAME 
- 
- # Shortcut 
- git checkout -b NEW-BRANCH-NAME 
-` 
+```shell
+# Two-step method
+git branch NEW-BRANCH-NAME
+git checkout NEW-BRANCH-NAME
+
+# Shortcut
+git checkout -b NEW-BRANCH-NAME
+``` 
 
 عندما تنشئ فرعًا جديدًا ، سيتضمن كل الإلتزامات من الفرع الرئيسي. الفرع الأم هو الفرع الذي تتواجد فيه عندما تقوم بإنشاء الفرع الجديد.
 
@@ -69,37 +74,41 @@ localeTitle: بوابة فرع
 
 لإعادة تسمية فرع ، قم بتشغيل الأمر:
 
- `git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME 
- 
- # Alternative 
- git branch --move OLD-BRANCH-NAME NEW-BRANCH-NAME 
-` 
+```shell
+git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME
+
+# Alternative
+git branch --move OLD-BRANCH-NAME NEW-BRANCH-NAME
+``` 
 
 ### حذف فرع
 
 لن تسمح لك Git بحذف فرع أنت موجود حاليًا. يجب عليك أولاً الخروج من فرع مختلف ، ثم تشغيل الأمر:
 
- `git branch -d BRANCH-TO-DELETE 
- 
- # Alternative: 
- git branch --delete BRANCH-TO-DELETE 
-` 
+```shell
+git branch -d BRANCH-TO-DELETE
+
+# Alternative:
+git branch --delete BRANCH-TO-DELETE
+``` 
 
 الفرع الذي تقوم بالتبديل إلى إحداث فرق. سيطرح Git خطأً إذا لم يتم دمج التغييرات في الفرع الذي تحاول حذفه بالكامل في الفرع الحالي. يمكنك تجاوز هذا والقوة بوابة لحذف فرع مع `-D` الخيار (لاحظ حرف) أو باستخدام `--force` الخيار مع `-d` أو `--delete` :
 
- `git branch -D BRANCH-TO-DELETE 
- 
- # Alternatives 
- git branch -d --force BRANCH-TO-DELETE 
- git branch --delete --force BRANCH-TO-DELETE 
-` 
+```shell
+git branch -D BRANCH-TO-DELETE
+
+# Alternatives
+git branch -d --force BRANCH-TO-DELETE
+git branch --delete --force BRANCH-TO-DELETE
+``` 
 
 ### قارن الفروع
 
 يمكنك مقارنة الفروع باستخدام الأمر `git diff` :
 
- `git diff FIRST-BRANCH..SECOND-BRANCH 
-` 
+```shell
+git diff FIRST-BRANCH..SECOND-BRANCH
+``` 
 
 سترى الإخراج الملون للتغييرات بين الفروع. بالنسبة إلى جميع الأسطر التي تغيرت ، سيكون إصدار `SECOND-BRANCH` خطًا أخضر يبدأ بـ "+" ، وسيكون إصدار `FIRST-BRANCH` خطًا أحمر يبدأ بـ "-". إذا كنت لا ترغب في أن يقوم Git بعرض سطرين لكل تغيير ، فيمكنك استخدام الخيار `--color-words` . بدلاً من ذلك ، سيعرض Git سطرًا واحدًا مع النص المحذوف باللون الأحمر ، وإضافة النص باللون الأخضر.
 
@@ -109,10 +118,11 @@ localeTitle: بوابة فرع
 
 إذا كنت قد نسيت كيفية استخدام أحد الخيارات أو تريد استكشاف وظائف أخرى حول الأمر `git branch` ، فيمكنك تشغيل أي من هذه الأوامر:
 
- `git help branch 
- git branch --help 
- man git-branch 
-` 
+```shell
+git help branch
+git branch --help
+man git-branch
+``` 
 
 ### معلومات اكثر:
 

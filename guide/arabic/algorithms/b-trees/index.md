@@ -1,8 +1,8 @@
 ---
 title: B Trees
-localeTitle: ب الأشجار
+localeTitle: الأشجار ب
 ---
-## ب الأشجار
+## الأشجار ب
 
 # المقدمة
 

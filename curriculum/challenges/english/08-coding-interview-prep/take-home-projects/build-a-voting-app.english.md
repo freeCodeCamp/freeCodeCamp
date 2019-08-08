@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdef
 title: Build a Voting App
 challengeType: 4
 isRequired: true
+forumTopicId: 302359
 ---
 
 ## Description
@@ -48,4 +49,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

@@ -50,17 +50,31 @@ Ao começar com o linux, existem alguns comandos básicos que todos devem conhec
 
 - Use `less filename.txt` para visualizar o conteúdo de um arquivo e navegar por eles. Por padrão, menos passará pela página do arquivo por página.
 
- 12. **cat** - exibir o conteúdo textual do arquivo 
+12. **cat** - exibir o conteúdo textual do arquivo 
+
 - Use esse comando para exibir o texto de dentro de um determinado arquivo no seu terminal. Digitando `cat myFile.txt` no seu terminal será irá exibir o conteúdo do arquivo`myFile.txt` na tela. O comando `cat` pode ser uma ferramenta muito útil quando usado com o terminal _pipes_.
 
- 13. **clear** - limpar terminal
+13. **clear** - limpar terminal
+
 - Use `clear` simplesmente para limpar todas as saidas exibidas no terminal.
 
- 14. **cp** - copiar arquivos e diretórios
+14. **cp** - copiar arquivos e diretórios
+
 - Use 'cp' para copiar um arquivo ou um diretório com arquivos dentro dele para outro local usando o comando 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Adicione o sinalizador '-r' para copiar um diretório que não está vazio. 
+
+15.  **netstat** - Visualiza o estado das conexões realizadas pelo host.
+
+- Este comando é utilizado quando você quer ver quais portas estão "abertas" no seu computador(Listening), além de mostrar as conexões de rede realizadas com outras maquinas. Exemplo: `ǹetstat -nlpt` -> Lista quais portas estão abertas no sistema
+
+16.  **whoami**  - MOstra qual usuário está logado no sistema.
+
+- Este comando é utilizado quando você quer saber qual o nome de usuário que está logado no sistema. Exemplo: `whoami` -> Mostrara o nome de usuário
+
+17.  **echo** - Comando para imprimir uma frase na saída padrão.
+
+- Este comando é utilizado quando você quer imprimir uma informação na tela. Exemplo: `echo "https://www.freecodecamp.org/"` -> Mostra na tela a frase "https://www.freecodecamp.org/"
 
 ### Recursos Úteis para a Prática:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Execute o terminal dentro do seu navegador. Ótimo para prática.
 - [LearnShell](https://www.learnshell.org/): Tutoriais de shell interativo (terminal) do Linux.
 - [LinuxJourney](https://linuxjourney.com/lesson/the-shell): Uma coleção de tutoriais de terminal para iniciantes.
-

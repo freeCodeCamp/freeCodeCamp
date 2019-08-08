@@ -1,9 +1,8 @@
 ---
 id: 587d7fa6367417b2b2512bc2
 title: Add Document Elements with D3
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+forumTopicId: 301474
 ---
 
 ## Description
@@ -16,7 +15,13 @@ Two other useful methods are <code>append()</code> and <code>text()</code>.
 The <code>append()</code> method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
 The <code>text()</code> method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.
 Here's an example that selects an unordered list, appends a list item, and adds text:
-<blockquote>d3.select("ul")<br>&nbsp;&nbsp;.append("li")<br>&nbsp;&nbsp;.text("Very important item");</blockquote>
+
+```js
+d3.select("ul")
+  .append("li")
+  .text("Very important item");
+```
+
 D3 allows you to chain several methods together with periods to perform a number of actions in a row.
 </section>
 
@@ -31,17 +36,17 @@ Use the <code>select</code> method to select the <code>body</code> tag in the do
 ```yml
 tests:
   - text: The <code>body</code> should have one <code>h1</code> element.
-    testString: assert($('body').children('h1').length == 1, 'The <code>body</code> should have one <code>h1</code> element.');
+    testString: assert($('body').children('h1').length == 1);
   - text: The <code>h1</code> element should have the text "Learning D3" in it.
-    testString: assert($('h1').text() == "Learning D3", 'The <code>h1</code> element should have the text "Learning D3" in it.');
+    testString: assert($('h1').text() == "Learning D3");
   - text: Your code should access the <code>d3</code> object.
-    testString: assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');
+    testString: assert(code.match(/d3/g));
   - text: Your code should use the <code>select</code> method.
-    testString: assert(code.match(/\.select/g), 'Your code should use the <code>select</code> method.');
+    testString: assert(code.match(/\.select/g));
   - text: Your code should use the <code>append</code> method.
-    testString: assert(code.match(/\.append/g), 'Your code should use the <code>append</code> method.');
+    testString: assert(code.match(/\.append/g));
   - text: Your code should use the <code>text</code> method.
-    testString: assert(code.match(/\.text/g), 'Your code should use the <code>text</code> method.');
+    testString: assert(code.match(/\.text/g));
 
 ```
 
@@ -76,4 +81,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

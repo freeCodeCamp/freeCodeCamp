@@ -1,7 +1,7 @@
 ---
 title: Create an ES6 JavaScript Map
 ---
-## Create an ES6 JavaScript Map
+# Create an ES6 JavaScript Map
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/create-an-es6-javascript-map/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

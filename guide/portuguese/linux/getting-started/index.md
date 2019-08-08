@@ -22,7 +22,7 @@ No Debian / Ubuntu e derivados, o atalho para abrir o cli (Comman Line Interface
 
 cd (Change Directory) - O comando cd é um dos comandos que você mais usará na linha de comando do linux. Ele permite que você mude seu diretório de trabalho. Você o usa para se movimentar dentro da hierarquia do seu sistema de arquivos.
 
-```unix
+```shell
 cd 
 ```
 
@@ -30,7 +30,7 @@ Usando apenas o comando cd, o diretório atual será alterado para o diretório 
 
 ls (List) - Este comando lista o conteúdo no diretório atual. Também pode ser usado para listar informações de arquivos.
 
-```unix
+```shell
 ls 
 ```
 

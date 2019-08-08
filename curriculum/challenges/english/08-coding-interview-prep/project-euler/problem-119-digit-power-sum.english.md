@@ -2,6 +2,7 @@
 id: 5900f3e41000cf542c50fef6
 challengeType: 5
 title: 'Problem 119: Digit power sum'
+forumTopicId: 301745
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find a30.
 ```yml
 tests:
   - text: <code>euler119()</code> should return 248155780267521.
-    testString: assert.strictEqual(euler119(), 248155780267521, '<code>euler119()</code> should return 248155780267521.');
+    testString: assert.strictEqual(euler119(), 248155780267521);
 
 ```
 
@@ -55,4 +56,5 @@ euler119();
 ```js
 // solution required
 ```
+
 </section>

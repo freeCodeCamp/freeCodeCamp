@@ -10,22 +10,23 @@ localeTitle: خاصية عتامة CSS3
 
 ضبط عنصر على `opacity: 0;` لا يزيلها من الصفحة. سيظل العنصر قابلاً للنقر وسيؤثر على تدفق محتوى الصفحة.
 
- `.transparent { 
-    opacity: 0; 
- } 
- 
- .verySeeThrough { 
-    opacity: 0.3; 
- } 
- 
- .slightlySeeThrough { 
-    opacity: 0.7; 
- } 
- 
- .opaque { 
-    opacity: 1; 
- } 
-` 
+```css
+.transparent {
+    opacity: 0;
+}
+
+.verySeeThrough {
+    opacity: 0.3;
+}
+
+.slightlySeeThrough {
+    opacity: 0.7;
+}
+
+.opaque {
+    opacity: 1;
+}
+``` 
 
 [يوضح هذا المثال البسيط](https://jsfiddle.net/1ogmxaf8/1/) كيفية استخدام التعتيم مع تأثير التمرير.
 

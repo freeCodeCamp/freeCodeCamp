@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614b
 title: Create a Redux Store
 challengeType: 6
 isRequired: false
+forumTopicId: 301439
 ---
 
 ## Description
@@ -25,9 +26,9 @@ Declare a <code>store</code> variable and assign it to the <code>createStore()</
 ```yml
 tests:
   - text: The redux store exists.
-    testString: assert(typeof store.getState === 'function', 'The redux store exists.');
+    testString: assert(typeof store.getState === 'function');
   - text: The redux store has a value of 5 for the state.
-    testString: assert(store.getState()=== 5, 'The redux store has a value of 5 for the state.');
+    testString: assert(store.getState()=== 5);
 
 ```
 

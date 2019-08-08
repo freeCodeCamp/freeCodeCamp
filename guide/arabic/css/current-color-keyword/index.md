@@ -14,21 +14,22 @@ localeTitle: الكلمة الرئيسية الحالية
 
 نعلن أن كل div يحتوي على حدود 3px بلون _currentColor_ ، مما يعني أن كل حد div سيتم تلوينه بنفس قيمة خاصية `color` الخاصة به. تحقق من المثال الحي [هنا](http://jsfiddle.net/tjkp0cm3/)
 
- `div{ 
-  /* The currentColor keyword for the color value, which means that the border will have the value of the respective div's color property */ 
-  border: 3px solid currentColor; 
- } 
- 
- /* This div will have green borders, because its color value is green. */ 
- #div1{ 
-  color: green; 
- } 
- 
- /* This div will have blue borders, because its color value is blue. */ 
- #div2{ 
-  color: blue; 
- } 
-` 
+```css
+div{
+  /* The currentColor keyword for the color value, which means that the border will have the value of the respective div's color property */
+  border: 3px solid currentColor;
+}
+
+/* This div will have green borders, because its color value is green. */
+#div1{
+  color: green;
+}
+
+/* This div will have blue borders, because its color value is blue. */
+#div2{
+  color: blue;
+}
+``` 
 
 ### التطبيق العملي مع SVG
 
@@ -44,37 +45,39 @@ localeTitle: الكلمة الرئيسية الحالية
 
 يمكننا استخدام هذا الرمز الخاص بنا لتحقيق السلوك المطلوب.
 
- `button{ 
-  color: #016898; 
- } 
- 
- .emailIcon{ 
-  fill: #016898; 
- } 
- 
- button:hover { 
-  color: #19B5FE; 
- } 
- 
- button:hover .emailIcon{ 
-  fill: #19B5FE; 
- } 
-` 
+```css
+button{
+  color: #016898;
+}
+
+.emailIcon{
+  fill: #016898;
+}
+
+button:hover {
+  color: #19B5FE;
+}
+
+button:hover .emailIcon{
+  fill: #19B5FE;
+}
+``` 
 
 الآن، بدلا من تغيير SVG في `fill` اللون على تحوم بشكل واضح، فإننا يمكن أن يحدد التعبئة ل `currentColor` . يقوم هذا تلقائيًا بتغيير لون SVG إلى قيمة خاصية `color` الخاصة بالزر. نحن الآن بحاجة فقط إلى تغيير خاصية `color` من الزر. هذا يجعل رمز CSS أقصر وأذكى.
 
- `.emailIcon{ 
-  fill: currentColor; 
- } 
- 
- button{ 
-  color: #016898; 
- } 
- 
- button:hover { 
-  color: #19B5FE; 
- } 
-` 
+```css
+.emailIcon{
+  fill: currentColor;
+}
+
+button{
+  color: #016898;
+}
+
+button:hover {
+  color: #19B5FE;
+}
+``` 
 
 تحقق من المثال المباشر على https://repl.it/NNt9/2.
 

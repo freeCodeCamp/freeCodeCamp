@@ -8,18 +8,19 @@ localeTitle: الوصول إلى الكائنات المتداخلة
 
 إذا نظرنا إلى هدفنا:
 
- `var myStorage = { 
-  "car": { 
-    "inside": { 
-      "glove box": "maps", 
-      "passenger seat": "crumbs" 
-     }, 
-    "outside": { 
-      "trunk": "jack" 
-    } 
-  } 
- }; 
-` 
+```javascript
+var myStorage = {
+  "car": {
+    "inside": {
+      "glove box": "maps",
+      "passenger seat": "crumbs"
+     },
+    "outside": {
+      "trunk": "jack"
+    }
+  }
+};
+``` 
 
 اسم هدفنا هو `myStorage` .
 
@@ -29,20 +30,22 @@ localeTitle: الوصول إلى الكائنات المتداخلة
 
 يمكنك تصور بنية الكائن مثل هذا ، إذا كانت تساعد:
 
- `myStorage 
- |-- car 
- |--- inside 
- |----- glove box: maps 
- |----- passenger seat: crumbs 
- |--- outside 
- |----- trunk: jack 
-` 
+```
+myStorage
+|-- car
+|--- inside
+|----- glove box: maps
+|----- passenger seat: crumbs
+|--- outside
+|----- trunk: jack
+``` 
 
 مطلوب منا تعيين محتويات `glove box` ، والتي يمكننا رؤيتها متداخلة في الكائن `inside` ، والتي بدورها متداخلة في جسم `car` .
 
 يمكننا استخدام الترميز النقطي للوصول إلى `glove box` النحو التالي:
 
- `var gloveBoxContents = myStorage.car.inside'complete here' 
-` 
+```javascript
+var gloveBoxContents = myStorage.car.inside'complete here'
+``` 
 
 يجب عليك استبدال `complete here` بالطريقة الصحيحة للوصول إلى الخاصية. انظر فكرة أعلاه إذا واجهتك مشكلة.

@@ -2,6 +2,7 @@
 id: 564944c91be2204b269d51e3
 title: Change Text Inside an Element Using jQuery
 challengeType: 6
+forumTopicId: 16773
 ---
 
 ## Description
@@ -12,7 +13,7 @@ Here's how you would rewrite and emphasize the text of our heading:
 <code>$("h3").html("&#60;em&#62;jQuery Playground&#60;/em&#62;");</code>
 jQuery also has a similar function called <code>.text()</code> that only alters text without adding tags. In other words, this function will not evaluate any HTML tags passed to it, but will instead treat it as the text you want to replace the existing content with.
 Change the button with id <code>target4</code> by emphasizing its text.
-Check this <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/em" target="_blank">link</a> to know more on the difference between <code>&#60;i&#62;</code> and <code>&#60;em&#62;</code> and their uses.
+<a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/em" target="_blank">View the MDN web docs for &#60;em&#62;</a> to learn the difference between <code>&#60;i&#62;</code> and <code>&#60;em&#62</code> and their uses.
 Note that while the <code>&#60;i&#62;</code> tag has traditionally been used to emphasize text, it has since been coopted for use as a tag for icons. The <code>&#60;em&#62;</code> tag is now widely accepted as the tag for emphasis. Either will work for this challenge.
 </section>
 
@@ -27,15 +28,15 @@ Note that while the <code>&#60;i&#62;</code> tag has traditionally been used to 
 ```yml
 tests:
   - text: Emphasize the text in your <code>target4</code> button by adding HTML tags.
-    testString: assert.isTrue((/<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi).test($("#target4").html()), 'Emphasize the text in your <code>target4</code> button by adding HTML tags.');
+    testString: assert.isTrue((/<em>|<i>\s*#target4\s*<\/em>|<\/i>/gi).test($("#target4").html()));
   - text: Make sure the text is otherwise unchanged.
-    testString: assert($("#target4") && $("#target4").text().trim() === '#target4', 'Make sure the text is otherwise unchanged.');
+    testString: assert($("#target4") && $("#target4").text().trim() === '#target4');
   - text: Do not alter any other text.
-    testString: assert.isFalse((/<em>|<i>/gi).test($("h3").html()), 'Do not alter any other text.');
+    testString: assert.isFalse((/<em>|<i>/gi).test($("h3").html()));
   - text: Make sure you are using <code>.html()</code> and not <code>.text()</code>.
-    testString: assert(code.match(/\.html\(/g), 'Make sure you are using <code>.html()</code> and not <code>.text()</code>.');
+    testString: assert(code.match(/\.html\(/g));
   - text: Make sure to select <code>button id="target4"</code> with jQuery.
-    testString: assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/), 'Make sure to select <code>button id="target4"</code> with jQuery.');
+    testString: assert(code.match(/\$\(\s*?(\"|\')#target4(\"|\')\s*?\)\.html\(/));
 
 ```
 
@@ -118,4 +119,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

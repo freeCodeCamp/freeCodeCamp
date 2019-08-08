@@ -2,6 +2,7 @@
 id: 5900f3f71000cf542c50ff0a
 challengeType: 5
 title: 'Problem 139: Pythagorean tiles'
+forumTopicId: 301767
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Given that the perimeter of the right triangle is less than one-hundred million,
 ```yml
 tests:
   - text: <code>euler139()</code> should return 10057761.
-    testString: assert.strictEqual(euler139(), 10057761, '<code>euler139()</code> should return 10057761.');
+    testString: assert.strictEqual(euler139(), 10057761);
 
 ```
 
@@ -57,4 +58,5 @@ euler139();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f47b1000cf542c50ff8d
 challengeType: 5
 title: 'Problem 271: Modular Cubes, part 1'
+forumTopicId: 301921
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find S(13082761331670030).
 ```yml
 tests:
   - text: <code>euler271()</code> should return 4617456485273130000.
-    testString: assert.strictEqual(euler271(), 4617456485273130000, '<code>euler271()</code> should return 4617456485273130000.');
+    testString: assert.strictEqual(euler271(), 4617456485273130000);
 
 ```
 
@@ -58,4 +59,5 @@ euler271();
 ```js
 // solution required
 ```
+
 </section>

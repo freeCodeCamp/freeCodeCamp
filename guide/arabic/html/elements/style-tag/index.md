@@ -26,15 +26,15 @@ localeTitle: علامة نمط
 
 تُستخدم علامة النمط لتعيين أي أنماط CSS لصفحة الويب داخل مستند. يجب أن تكون علامة النمط متداخلة مع قسم الرأس في مستند html:
 
- `
-<head> 
-  <style> 
-  h1 { 
-     text-align: center; 
-     font-family: sans-serif; 
-     } 
-  </style> 
- </head> 
-` 
+```html
+<head>
+  <style>
+  h1 {
+     text-align: center;
+     font-family: sans-serif;
+     }
+  </style>
+</head>
+``` 
 
 يمكنك كتابة أي علامة نمط داخلية للرمز CSS - وفقًا للبناء الخاص بها.

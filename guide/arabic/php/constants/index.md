@@ -12,15 +12,17 @@ localeTitle: الثوابت
 
 ### مثال
 
- `<?php 
- define("freeCodeCamp", "Learn to code and help nonprofits", false); 
- echo freeCodeCamp; 
-` 
+```PHP
+<?php
+define("freeCodeCamp", "Learn to code and help nonprofits", false);
+echo freeCodeCamp;
+``` 
 
 **انتاج:**
 
- `Learn to code and help nonprofits 
-` 
+```text
+Learn to code and help nonprofits
+``` 
 
 #### معلومات اكثر:
 

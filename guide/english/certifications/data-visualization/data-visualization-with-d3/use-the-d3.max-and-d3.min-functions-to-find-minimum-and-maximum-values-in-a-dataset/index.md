@@ -1,10 +1,42 @@
 ---
 title: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
 ---
-## Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
+# Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/use-the-d3.max-and-d3.min-functions-to-find-minimum-and-maximum-values-in-a-dataset/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+---
+## Hints
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 1
+
+Use the `d3.max()` function.
+
+### Hint 2
+
+Use a callback function.
+
+### Hint 3
+
+Check for the second element in the callback function's array.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+To solve the solution, you code should look like this, this would check for the `z` co-ordinate i.e. the third element in the array which would be at an index of 2:
+
+```html
+<body>
+  <script>
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
+    const output = d3.max(positionData, (d) => d[2]);
+      d3.select("body")
+      .append("h2")
+      .text(output)
+  </script>
+</body>
+```
+
+</details>

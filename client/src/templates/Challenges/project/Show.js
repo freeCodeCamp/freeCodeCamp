@@ -5,12 +5,10 @@ import { bindActionCreators } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import { randomCompliment } from '../utils/get-words';
 import { ChallengeNode } from '../../../redux/propTypes';
 import {
+  challengeMounted,
   updateChallengeMeta,
-  createFiles,
-  updateSuccessMessage,
   openModal,
   updateProjectFormValues
 } from '../redux';
@@ -32,16 +30,15 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       updateChallengeMeta,
-      createFiles,
+      challengeMounted,
       updateProjectFormValues,
-      updateSuccessMessage,
       openCompletionModal: () => openModal('completion')
     },
     dispatch
   );
 
 const propTypes = {
-  createFiles: PropTypes.func.isRequired,
+  challengeMounted: PropTypes.func.isRequired,
   data: PropTypes.shape({
     challengeNode: ChallengeNode
   }),
@@ -50,41 +47,44 @@ const propTypes = {
     challengeMeta: PropTypes.object
   }),
   updateChallengeMeta: PropTypes.func.isRequired,
-  updateProjectFormValues: PropTypes.func.isRequired,
-  updateSuccessMessage: PropTypes.func.isRequired
+  updateProjectFormValues: PropTypes.func.isRequired
 };
 
 export class Project extends Component {
   componentDidMount() {
     const {
-      createFiles,
-      data: { challengeNode: { title, challengeType } },
+      challengeMounted,
+      data: {
+        challengeNode: { title, challengeType }
+      },
       pageContext: { challengeMeta },
-      updateChallengeMeta,
-      updateSuccessMessage
+      updateChallengeMeta
     } = this.props;
-    createFiles({});
-    updateSuccessMessage(randomCompliment());
-    return updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    updateChallengeMeta({ ...challengeMeta, title, challengeType });
+    challengeMounted(challengeMeta.id);
   }
 
   componentDidUpdate(prevProps) {
-    const { data: { challengeNode: { title: prevTitle } } } = prevProps;
     const {
-      createFiles,
-      data: { challengeNode: { title: currentTitle, challengeType } },
+      data: {
+        challengeNode: { title: prevTitle }
+      }
+    } = prevProps;
+    const {
+      challengeMounted,
+      data: {
+        challengeNode: { title: currentTitle, challengeType }
+      },
       pageContext: { challengeMeta },
-      updateChallengeMeta,
-      updateSuccessMessage
+      updateChallengeMeta
     } = this.props;
-    updateSuccessMessage(randomCompliment());
     if (prevTitle !== currentTitle) {
-      createFiles({});
       updateChallengeMeta({
         ...challengeMeta,
         title: currentTitle,
         challengeType
       });
+      challengeMounted(challengeMeta.id);
     }
   }
 
@@ -100,6 +100,9 @@ export class Project extends Component {
         }
       },
       openCompletionModal,
+      pageContext: {
+        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+      },
       updateProjectFormValues
     } = this.props;
     const isFrontEnd = challengeType === frontEndProject;
@@ -113,11 +116,15 @@ export class Project extends Component {
             className='full-height'
             description={description}
             guideUrl={guideUrl}
+            introPath={introPath}
+            nextChallengePath={nextChallengePath}
+            prevChallengePath={prevChallengePath}
+            showPrevNextBtns={true}
             title={blockNameTitle}
           />
           <ProjectForm
             isFrontEnd={isFrontEnd}
-            openModal={openCompletionModal}
+            onSubmit={openCompletionModal}
             updateProjectForm={updateProjectFormValues}
           />
           <ToolPanel guideUrl={createGuideUrl(slug)} />
@@ -133,7 +140,10 @@ export class Project extends Component {
 Project.displayName = 'Project';
 Project.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Project);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Project);
 
 export const query = graphql`
   query ProjectChallenge($slug: String!) {

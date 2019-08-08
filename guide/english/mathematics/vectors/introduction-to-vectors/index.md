@@ -17,10 +17,10 @@ In the figure above, the displacement of A to B is written as <span class="texht
 ### The Modulus of a vector
 The modulus of a vector is a positive scalar number that gives magnitude of the vector. It is written like this:
 
-<span class="texhtml">|<strong>AB</strong>|</span> or <span class="texhtml">|<strong>a</strong>|</span> or simply <span class="texhtml"><strong>AB</strong></span> or <span class="texhtml"><strong>a</strong></span>.
+<pre> <span class="texhtml">|<strong>AB</strong>|</span> or <span class="texhtml">|<strong>a</strong>|</span> or simply <span class="texhtml"><strong>AB</strong></span> or <span class="texhtml"><strong>a</strong></span>. </pre>
 
-Where;<span class="texhtml"><br></span>
-|AB| =  <span class="texhtml"> √(<i>x</i><sup>2</sup> + <i>y</i><sup>2</sup>)</span>
+Where;
+<pre>|AB| =  <span class="texhtml"> √(<i>x</i><sup>2</sup> + <i>y</i><sup>2</sup>)</span></pre>
 
 ### More Information:
 

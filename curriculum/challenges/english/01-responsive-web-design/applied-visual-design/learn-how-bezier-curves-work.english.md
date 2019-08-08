@@ -3,6 +3,7 @@ id: 587d78a9367417b2b2512ae8
 title: Learn How Bezier Curves Work
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bDrs8'
+forumTopicId: 301058
 ---
 
 ## Description
@@ -25,9 +26,9 @@ For the element with the id of <code>ball1</code>, change the value of the <code
 ```yml
 tests:
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.
-    testString: assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.');
+    testString: assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)');
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.
-    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.');
+    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out');
 
 ```
 
@@ -65,14 +66,14 @@ tests:
     animation-timing-function: ease-out;
   }
 
-@keyframes bounce {
-  0% {
-    top: 0px;
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
   }
-  100% {
-    top: 249px;
-  }
-}
 
 </style>
 
@@ -89,7 +90,44 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+
+  .balls{
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #ball1 {
+    left: 27%;
+    animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  }
+  #ball2 {
+    left: 56%;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
+  }
+</style>
+<div class="balls" id="ball1"></div>
+<div class="balls" id="ball2"></div>
 ```
+
 </section>
