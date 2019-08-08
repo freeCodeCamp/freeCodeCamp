@@ -2,6 +2,7 @@
 id: 587d7dab367417b2b2512b6d
 title: Apply Functional Programming to Convert Strings to URL Slugs
 challengeType: 1
+forumTopicId: 301227
 ---
 
 ## Description

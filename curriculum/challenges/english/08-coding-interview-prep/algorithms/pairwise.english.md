@@ -2,6 +2,7 @@
 id: a3f503de51cfab748ff001aa
 title: Pairwise
 challengeType: 5
+forumTopicId: 301617
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f3fa1000cf542c50ff0d
 challengeType: 5
 title: 'Problem 142: Perfect Square Collection'
+forumTopicId: 301771
 ---
 
 ## Description

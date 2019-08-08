@@ -2,6 +2,7 @@
 id: 5900f3721000cf542c50fe85
 challengeType: 5
 title: 'Problem 6: Sum square difference'
+forumTopicId: 302171
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 title: Define a primitive data type
 id: 597089c87eec450c68aa1643
 challengeType: 5
+forumTopicId: 302248
 ---
 
 ## Description

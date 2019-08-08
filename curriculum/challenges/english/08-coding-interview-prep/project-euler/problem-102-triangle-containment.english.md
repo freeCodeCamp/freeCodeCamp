@@ -2,6 +2,7 @@
 id: 5900f3d21000cf542c50fee5
 challengeType: 5
 title: 'Problem 102: Triangle containment'
+forumTopicId: 301726
 ---
 
 ## Description

@@ -3,6 +3,7 @@ id: 587d78a5367417b2b2512ad9
 title: Use the CSS Transform scale Property to Change the Size of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MZVSg'
+forumTopicId: 301076
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f4201000cf542c50ff33
 challengeType: 5
 title: 'Problem 180: Rational zeros of a function of three variables'
+forumTopicId: 301816
 ---
 
 ## Description

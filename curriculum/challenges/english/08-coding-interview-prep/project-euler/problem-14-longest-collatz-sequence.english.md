@@ -2,6 +2,7 @@
 id: 5900f37a1000cf542c50fe8d
 challengeType: 5
 title: 'Problem 14: Longest Collatz sequence'
+forumTopicId: 301768
 ---
 
 ## Description

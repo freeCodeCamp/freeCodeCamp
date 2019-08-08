@@ -3,6 +3,7 @@ id: 587d78a8367417b2b2512ae4
 title: Make a CSS Heartbeat using an Infinite Animation Count
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cDZpDUr'
+forumTopicId: 301062
 ---
 
 ## Description

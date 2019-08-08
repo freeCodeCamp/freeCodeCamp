@@ -2,6 +2,7 @@
 id: 5900f3781000cf542c50fe8a
 challengeType: 5
 title: 'Problem 11: Largest product in a grid'
+forumTopicId: 301734
 ---
 
 ## Description

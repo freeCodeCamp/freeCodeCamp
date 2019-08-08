@@ -2,6 +2,7 @@
 id: 5900f4801000cf542c50ff92
 challengeType: 5
 title: 'Problem 275: Balanced Sculptures'
+forumTopicId: 301925
 ---
 
 ## Description

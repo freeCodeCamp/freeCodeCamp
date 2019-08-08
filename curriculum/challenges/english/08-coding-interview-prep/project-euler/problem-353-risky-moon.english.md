@@ -2,6 +2,7 @@
 id: 5900f4cd1000cf542c50ffe0
 challengeType: 5
 title: 'Problem 353: Risky moon'
+forumTopicId: 302013
 ---
 
 ## Description

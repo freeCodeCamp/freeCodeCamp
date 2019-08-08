@@ -2,6 +2,7 @@
 title: 'Abundant, deficient and perfect number classifications'
 id: 594810f028c0303b75339acd
 challengeType: 5
+forumTopicId: 302221
 ---
 
 ## Description

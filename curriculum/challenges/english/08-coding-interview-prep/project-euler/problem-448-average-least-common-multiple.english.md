@@ -2,6 +2,7 @@
 id: 5900f52c1000cf542c51003f
 challengeType: 5
 title: 'Problem 448: Average least common multiple'
+forumTopicId: 302120
 ---
 
 ## Description

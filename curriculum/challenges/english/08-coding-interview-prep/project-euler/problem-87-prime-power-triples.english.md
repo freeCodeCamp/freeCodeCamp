@@ -2,6 +2,7 @@
 id: 5900f3c51000cf542c50fed8
 challengeType: 5
 title: 'Problem 87: Prime power triples'
+forumTopicId: 302201
 ---
 
 ## Description

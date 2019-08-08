@@ -2,6 +2,7 @@
 id: 5900f4e11000cf542c50fff4
 challengeType: 5
 title: 'Problem 373: Circumscribed Circles'
+forumTopicId: 302035
 ---
 
 ## Description

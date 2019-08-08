@@ -2,6 +2,7 @@
 id: 5900f51d1000cf542c51002f
 challengeType: 5
 title: 'Problem 433: Steps in Euclid''s algorithm'
+forumTopicId: 302104
 ---
 
 ## Description

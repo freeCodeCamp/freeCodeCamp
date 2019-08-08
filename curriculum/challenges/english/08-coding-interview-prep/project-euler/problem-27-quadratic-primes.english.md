@@ -2,6 +2,7 @@
 id: 5900f3871000cf542c50fe9a
 challengeType: 5
 title: 'Problem 27: Quadratic primes'
+forumTopicId: 301919
 ---
 
 ## Description

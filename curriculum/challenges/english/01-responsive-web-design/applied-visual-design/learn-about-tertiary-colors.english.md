@@ -3,6 +3,7 @@ id: 587d78a4367417b2b2512ad2
 title: Learn about Tertiary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c3bRDAb'
+forumTopicId: 301057
 ---
 
 ## Description

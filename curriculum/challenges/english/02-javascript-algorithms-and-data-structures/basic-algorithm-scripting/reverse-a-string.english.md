@@ -3,6 +3,7 @@ id: a202eed8fc186c8434cb6d61
 title: Reverse a String
 isRequired: true
 challengeType: 5
+forumTopicId: 16043
 ---
 
 ## Description

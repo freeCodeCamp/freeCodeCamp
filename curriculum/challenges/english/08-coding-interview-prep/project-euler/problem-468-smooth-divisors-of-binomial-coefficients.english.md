@@ -2,6 +2,7 @@
 id: 5900f5411000cf542c510054
 challengeType: 5
 title: 'Problem 468: Smooth divisors of binomial coefficients'
+forumTopicId: 302143
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 5900f3fa1000cf542c50ff0c
 challengeType: 5
 title: 'Problem 140: Modified Fibonacci golden nuggets'
+forumTopicId: 301769
 ---
 
 ## Description

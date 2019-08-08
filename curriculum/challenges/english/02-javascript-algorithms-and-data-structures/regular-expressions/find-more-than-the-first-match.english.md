@@ -2,6 +2,7 @@
 id: 587d7db4367417b2b2512b93
 title: Find More Than the First Match
 challengeType: 1
+forumTopicId: 301342
 ---
 
 ## Description

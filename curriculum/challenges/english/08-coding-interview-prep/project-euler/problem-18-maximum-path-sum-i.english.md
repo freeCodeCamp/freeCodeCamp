@@ -2,6 +2,7 @@
 id: 5900f37e1000cf542c50fe91
 challengeType: 5
 title: 'Problem 18: Maximum path sum I'
+forumTopicId: 301815
 ---
 
 ## Description

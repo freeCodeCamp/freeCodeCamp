@@ -2,6 +2,7 @@
 id: 5900f4b01000cf542c50ffc2
 challengeType: 5
 title: 'Problem 323: Bitwise-OR operations on random integers'
+forumTopicId: 301980
 ---
 
 ## Description

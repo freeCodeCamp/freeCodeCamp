@@ -2,6 +2,7 @@
 id: 5900f43a1000cf542c50ff4d
 challengeType: 5
 title: 'Problem 206: Concealed Square'
+forumTopicId: 301847
 ---
 
 ## Description

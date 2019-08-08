@@ -4,12 +4,12 @@ localeTitle: Algoritmos Greedy
 ---
 ## O que é um algoritmo ganancioso
 
-Você deve ter ouvido falar sobre muitas técnicas de design algorítmico enquanto analisa alguns dos artigos aqui. Alguns deles são :
+Você deve ter ouvido falar sobre muitas técnicas de design algorítmico enquanto analisa alguns dos artigos aqui. Alguns deles são:
 
 *   Força bruta
 *   Dividir e conquistar
 *   Programação gananciosa
-*   Programaçao dinamica para nomear alguns. Neste artigo, você aprenderá sobre o que é um algoritmo guloso e como você pode usar essa técnica para resolver muitos problemas de programação que, de outra forma, não parecem triviais.
+*   Programação dinâmica para nomear alguns. Neste artigo, você aprenderá sobre o que é um algoritmo guloso e como você pode usar essa técnica para resolver muitos problemas de programação que, de outra forma, não parecem triviais.
 
 Imagine que você está indo para caminhadas e seu objetivo é atingir o maior pico possível. Você já tem o mapa antes de começar, mas existem milhares de caminhos possíveis mostrados no mapa. Você é muito preguiçoso e simplesmente não tem tempo para avaliar cada um deles. Aparafuse o mapa! Você começou a caminhar com uma estratégia simples - ser ganancioso e míope. Apenas pegue caminhos que se inclinem mais para cima. Esta parece ser uma boa estratégia para caminhadas. Mas é sempre o melhor?
 

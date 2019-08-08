@@ -2,6 +2,7 @@
 id: 587d7daf367417b2b2512b80
 title: Remember to Set the Constructor Property when Changing the Prototype
 challengeType: 1
+forumTopicId: 301323
 ---
 
 ## Description

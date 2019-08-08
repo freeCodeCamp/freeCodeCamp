@@ -2,6 +2,7 @@
 id: 5900f4251000cf542c50ff38
 challengeType: 5
 title: 'Problem 185: Number Mind'
+forumTopicId: 301821
 ---
 
 ## Description

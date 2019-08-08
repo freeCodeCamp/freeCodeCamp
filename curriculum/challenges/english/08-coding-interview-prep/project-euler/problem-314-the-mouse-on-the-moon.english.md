@@ -2,6 +2,7 @@
 id: 5900f4a71000cf542c50ffb9
 challengeType: 5
 title: 'Problem 314: The Mouse on the Moon'
+forumTopicId: 301970
 ---
 
 ## Description

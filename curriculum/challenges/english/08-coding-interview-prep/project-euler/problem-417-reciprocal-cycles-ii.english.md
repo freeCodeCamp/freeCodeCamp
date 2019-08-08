@@ -2,6 +2,7 @@
 id: 5900f50d1000cf542c51001f
 challengeType: 5
 title: 'Problem 417: Reciprocal cycles II'
+forumTopicId: 302086
 ---
 
 ## Description

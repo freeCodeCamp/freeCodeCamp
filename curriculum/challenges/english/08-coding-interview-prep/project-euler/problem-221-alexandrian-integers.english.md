@@ -2,6 +2,7 @@
 id: 5900f4491000cf542c50ff5c
 challengeType: 5
 title: 'Problem 221: Alexandrian Integers'
+forumTopicId: 301864
 ---
 
 ## Description

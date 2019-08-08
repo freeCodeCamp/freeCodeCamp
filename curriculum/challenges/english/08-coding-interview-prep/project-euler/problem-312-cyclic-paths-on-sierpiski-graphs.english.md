@@ -2,6 +2,7 @@
 id: 5900f4a51000cf542c50ffb7
 challengeType: 5
 title: 'Problem 312: Cyclic paths on Sierpiński graphs'
+forumTopicId: 301968
 ---
 
 ## Description
