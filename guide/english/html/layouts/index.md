@@ -7,7 +7,7 @@ Layouts organize different areas of the web page.
 
 Almost every web page we see can be divided into boxes, that can be arranged into specific order to create that web page. The image below is one such example.
 
-![Sample of Website Design - www.codementor.io](http://i.imgur.com/Z1DSMYC.png)
+![Sample of Website Design - www.codementor.io](https://cdn-media-1.freecodecamp.org/imgr/Z1DSMYC.png)
 
 > Websites often display content in multiple columns (like a magazine or newspaper).
 
@@ -17,7 +17,7 @@ And the HTML layout techniques help us put the needed information into the neede
 ### Techniques to Implement Layouts 
 
 #### HTML Tables
-One the most basic tools to implement layouts in a webpage, these are provided by HTML. But as the layout gets complicated HTML tables quickly lose their ease, because of the increase in markup text.
+One of the most basic tools to implement layouts in a webpage, these are provided by HTML. But as the layout gets complicated, HTML tables quickly lose their ease because of the increase in markup text.
 
 <!-- Examples needed  -->
 
@@ -25,6 +25,11 @@ One the most basic tools to implement layouts in a webpage, these are provided b
 If you are to design a 2-column based page with left navigation pane and center content viewing area, its easy to do it with CSS floats. Simply set the left navigation page into a `<div>` with style property `float: left;`. And voila you get that design. But what if you had 4 columns in a single section. Sure, one can do it with floats, but the syntax of HTML you would be writing would be easy to comprehend.
 
 <!-- Examples needed  -->
+
+#### CSS Flexbox
+This is a more recent CSS update that helps avoid issues that 'float' can have, as 'float' was never meant to work as a layout attribute. CSS Flexbox allows users to designate parent containers, giving that container formatting and layout attributes. This is done by definitng 'display: flex;' in the parent container. The user can then add child items to that container. Based on whether the comtainer aligns by rows or columns, the child items will be automatically positioned. Flexbox also makes it incredibly simple to truly center align content. It also makes responsive web design much easier.
+
+[Example Webpage using CSS Flexbox only for layout](https://codepen.io/mbailey83/pen/vVPMwL)
 
 #### CSS Frameworks
 This is where CSS Frameworks such as [Bootstrap](http://getbootstrap.com/) and [Materialize](http://materializecss.com/) come in. These frameworks provide a grid functionality that lets to divide each section of your webpage into 12 columns, which you can order to design. 

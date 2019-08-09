@@ -7,12 +7,23 @@ The `<a>` tag or _anchor_ element creates a hyperlink to another page or file. I
 
 The text between the opening and closing `<a>` tags becomes the link. This text should be a meaningful description of the link destination, and not a generic phrase such as 'click here'. This better enables users with screen readers to navigate amongst various links on a page and understand what content each one will link to.
 
-By default, a linked page is displayed in the current browser window unless another target is specified. 
+By default, a linked page is displayed in the current browser window unless another target is specified. The default link styles are as follows: 
+- An unvisited link is underlined and blue
+- A visited link is underlined and purple
+- An active link is underlined and red
+
 
 #### Example:
 
 ```html
   <a href= "https://guide.freecodecamp.org/">freeCodeCamp</a>
+```
+You can also create a link to another section on the same page.
+#### Example:
+
+```html
+  <h1 id="top"></h1>
+  <a href= "#top">Go to top</a>
 ```
 
 An image can also be turned into a link by enclosing the `<img>` tag in an `<a>` tag.

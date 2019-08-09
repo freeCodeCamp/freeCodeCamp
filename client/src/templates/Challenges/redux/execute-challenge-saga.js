@@ -1,7 +1,17 @@
-import { put, select, call, takeLatest } from 'redux-saga/effects';
+import {
+  delay,
+  put,
+  select,
+  call,
+  takeLatest,
+  takeEvery,
+  fork,
+  getContext
+} from 'redux-saga/effects';
+import { channel } from 'redux-saga';
 
 import {
-  challengeMetaSelector,
+  challengeDataSelector,
   challengeTestsSelector,
   initConsole,
   updateConsole,
@@ -9,76 +19,87 @@ import {
   updateLogs,
   logsToConsole,
   updateTests,
-  challengeFilesSelector
+  isBuildEnabledSelector,
+  disableBuildOnError
 } from './';
 
-import { buildJSFromFiles } from '../utils/build';
+import {
+  buildChallenge,
+  getTestRunner,
+  challengeHasPreview,
+  updatePreview
+} from '../utils/build';
 
-import { challengeTypes } from '../../../../utils/challengeTypes';
+export function* executeChallengeSaga() {
+  const isBuildEnabled = yield select(isBuildEnabledSelector);
+  if (!isBuildEnabled) {
+    return;
+  }
 
-import WorkerExecutor from '../utils/worker-executor';
+  const consoleProxy = yield channel();
 
-const testWorker = new WorkerExecutor('test-evaluator');
-const testTimeout = 5000;
-
-function* ExecuteChallengeSaga() {
   try {
-    const { js, bonfire, backend } = challengeTypes;
-    const { challengeType } = yield select(challengeMetaSelector);
-
-    // TODO: ExecuteBackendChallengeSaga and ExecuteDOMChallengeSaga
-    if (challengeType !== js && challengeType !== bonfire) {
-      return;
-    }
-
     yield put(initLogs());
     yield put(initConsole('// running tests'));
+    // reset tests to initial state
+    const tests = (yield select(challengeTestsSelector)).map(
+      ({ text, testString }) => ({ text, testString })
+    );
+    yield put(updateTests(tests));
 
-    const tests = yield select(challengeTestsSelector);
-    let testResults;
-    switch (challengeType) {
-      case js:
-      case bonfire:
-        testResults = yield ExecuteJSChallengeSaga(tests);
-        break;
-      case backend:
-        // yield ExecuteBackendChallengeSaga();
-        break;
-      default:
-      // yield ExecuteDOMChallengeSaga();
-    }
+    yield fork(logToConsole, consoleProxy);
+    const proxyLogger = args => consoleProxy.put(args);
+
+    const challengeData = yield select(challengeDataSelector);
+    const buildData = yield buildChallengeData(challengeData);
+    const document = yield getContext('document');
+    const testRunner = yield call(
+      getTestRunner,
+      buildData,
+      proxyLogger,
+      document
+    );
+    const testResults = yield executeTests(testRunner, tests);
 
     yield put(updateTests(testResults));
     yield put(updateConsole('// tests completed'));
     yield put(logsToConsole('// console output'));
   } catch (e) {
     yield put(updateConsole(e));
+  } finally {
+    consoleProxy.close();
   }
 }
 
-function* ExecuteJSChallengeSaga(tests) {
-  const testResults = [];
-  const files = yield select(challengeFilesSelector);
-  const { code, solution } = yield call(buildJSFromFiles, files);
+function* logToConsole(channel) {
+  yield takeEvery(channel, function*(args) {
+    yield put(updateLogs(args));
+  });
+}
 
+function* buildChallengeData(challengeData) {
+  try {
+    return yield call(buildChallenge, challengeData);
+  } catch (e) {
+    yield put(disableBuildOnError(e));
+    // eslint-disable-next-line no-throw-literal
+    throw 'Build failed';
+  }
+}
+
+function* executeTests(testRunner, tests, testTimeout = 5000) {
+  const testResults = [];
   for (const { text, testString } of tests) {
     const newTest = { text, testString };
     try {
-      const { pass, err, logs } = yield call(
-        testWorker.execute,
-        { script: solution + '\n' + testString, code },
-        testTimeout
-      );
-      for (const log of logs) {
-        yield put(updateLogs(log));
-      }
+      const { pass, err } = yield call(testRunner, testString, testTimeout);
       if (pass) {
         newTest.pass = true;
       } else {
         throw err;
       }
     } catch (err) {
-      newTest.message = text.replace(/<code>(.*?)<\/code>/g, '$1');
+      newTest.message = text;
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
@@ -90,12 +111,44 @@ function* ExecuteJSChallengeSaga(tests) {
       yield put(updateConsole(newTest.message));
     } finally {
       testResults.push(newTest);
-      yield call(testWorker.killWorker);
     }
   }
   return testResults;
 }
 
+function* previewChallengeSaga() {
+  yield delay(700);
+
+  const isBuildEnabled = yield select(isBuildEnabledSelector);
+  if (!isBuildEnabled) {
+    return;
+  }
+  const challengeData = yield select(challengeDataSelector);
+  if (!challengeHasPreview(challengeData)) {
+    return;
+  }
+
+  try {
+    yield put(initConsole(''));
+    const ctx = yield buildChallengeData(challengeData);
+    const document = yield getContext('document');
+    yield call(updatePreview, ctx, document);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 export function createExecuteChallengeSaga(types) {
-  return [takeLatest(types.executeChallenge, ExecuteChallengeSaga)];
+  return [
+    takeLatest(types.executeChallenge, executeChallengeSaga),
+    takeLatest(
+      [
+        types.updateFile,
+        types.previewMounted,
+        types.challengeMounted,
+        types.resetChallenge
+      ],
+      previewChallengeSaga
+    )
+  ];
 }

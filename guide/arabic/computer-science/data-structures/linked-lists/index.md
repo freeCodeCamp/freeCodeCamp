@@ -22,18 +22,19 @@ localeTitle: القوائم المرتبطة
 
 \`\` \` ثابت = حجم ثابت في وقت الإنشاء خطي = مخزن خطيًا في الذاكرة ككتلة واحدة
 
- `#### Arrays have the following disadvantages:- 
- 1. Arrays are static structures and therefore cannot be easily extended or reduced to fit the data set. 
- 2. Arrays are also expensive to maintain new insertions and deletions. 
- 
- Linked Lists address some of the limitations of arrays. Unlike an array, where all the elements are stored in a contiguous block of memory, in a linked list each element is a separate object and has a **link** to the next element in sequence. This allows a linked list to start with space for only one element, and grow to accomodate an arbitrary number of elements by allocating memory as and when needed. 
- 
- Deleting elements is also simply handled by manipulating links. 
- 
- Once you understand the Simple Linked List (which from here on will be referred as **'List'**), you can move on to the Doubly Linked List. 
- 
- A List as illustrated below is made up of the following components:- 
-` 
+```
+#### Arrays have the following disadvantages:-
+1. Arrays are static structures and therefore cannot be easily extended or reduced to fit the data set.
+2. Arrays are also expensive to maintain new insertions and deletions.
+
+Linked Lists address some of the limitations of arrays. Unlike an array, where all the elements are stored in a contiguous block of memory, in a linked list each element is a separate object and has a **link** to the next element in sequence. This allows a linked list to start with space for only one element, and grow to accomodate an arbitrary number of elements by allocating memory as and when needed.
+
+Deleting elements is also simply handled by manipulating links.
+
+Once you understand the Simple Linked List (which from here on will be referred as **'List'**), you can move on to the Doubly Linked List.
+
+A List as illustrated below is made up of the following components:-
+``` 
 
  `     head 
          | 
@@ -125,13 +126,15 @@ void list :: insertBefore (int int) { عقدة N \* node = new N؛ node-> الأ
 
 }
 
- `#### OUTPUT 
-` 
+```
+#### OUTPUT
+``` 
 
 عدد العقد في القائمة = 5 50 40 30 20 10
 
- `#### Explanation 
-` 
+```
+#### Explanation
+``` 
 
 حزب الشعب الكمبودي
 
@@ -165,8 +168,9 @@ void list :: insertBefore (int int) { عقدة N \* node = new N؛ node-> الأ
 
 حزب الشعب الكمبودي قائمة :: قائمة () { رئيس = NULL؛ إنهاء = NULL؛ عد = 0؛ }
 
- `The default constructor is used to initialize the data members of the List class with default values 
-` 
+```
+The default constructor is used to initialize the data members of the List class with default values
+``` 
 
 حزب الشعب الكمبودي void list :: insertBefore (int int) { عقدة N \* node = new N؛ node-> الأسطوانات = البيانات؛ node-> ذيل = NULL؛
 
@@ -246,8 +250,9 @@ void list :: insertBefore (int int) { عقدة N \* node = new N؛ node-> الأ
  } 
 ` 
 
- `Now Execute code 
-` 
+```
+Now Execute code
+``` 
 
 اترك LL = new LinkedList ()؛
 
@@ -258,19 +263,21 @@ void list :: insertBefore (int int) { عقدة N \* node = new N؛ node-> الأ
  console.log(LL); 
 ` 
 
- `Representation in C: 
- A linked list is represented by a pointer to the first node of the linked list. The first node is called head. If the linked list is empty, then value of head is NULL. 
- Each node in a list consists of at least two parts: 
- 1) data 
- 2) pointer to the next node 
- In C, we can represent a node using structures. Below is an example of a linked list node with an integer data. 
- In Java, LinkedList can be represented as a class and a Node as a separate class. The LinkedList class contains a reference of Node class type 
-` 
+```
+Representation in C:
+A linked list is represented by a pointer to the first node of the linked list. The first node is called head. If the linked list is empty, then value of head is NULL.
+Each node in a list consists of at least two parts:
+1) data
+2) pointer to the next node
+In C, we can represent a node using structures. Below is an example of a linked list node with an integer data.
+In Java, LinkedList can be represented as a class and a Node as a separate class. The LinkedList class contains a reference of Node class type
+``` 
 
 C // عقدة قائمة مرتبطة عقدة البنية { بيانات int؛ عقدة البنية \* التالي ؛ }؛
 
- `# Linked List with three elements 
-` 
+```
+# Linked List with three elements
+``` 
 
 ج // برنامج C بسيط لتقديم // قائمة مرتبطة
 

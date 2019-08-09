@@ -16,7 +16,5 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest'
   },
-  transformIgnorePatterns: [
-    'node_modules/(?!(gatsby)/)'
-  ]
+  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)']
 };

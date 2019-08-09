@@ -1,8 +1,9 @@
 {
-  "name": "@freecodecamp/database-seeding",
+  "name": "@freecodecamp/scripts-seed",
+  "private": true,
   "version": "0.0.1",
-  "description": "A script to seed challenges in to the database",
-  "main": "seedChallenges.js",
+  "description": "Database seed scripts",
+  "main": "NA",
   "scripts": {
     "test": "jest"
   },
@@ -19,8 +20,8 @@
   "devDependencies": {
     "debug": "^4.0.1",
     "dotenv": "^6.0.0",
-    "jest": "^23.6.0",
-    "lodash": "^4.17.11",
+    "jest": "^24.8.0",
+    "lodash": "^4.17.15",
     "mongodb": "^3.1.6"
   }
 }

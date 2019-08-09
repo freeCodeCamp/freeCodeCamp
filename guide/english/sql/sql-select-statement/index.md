@@ -2,7 +2,7 @@
 title: SQL Select Statement
 ---
 
-## SQL Select Statement
+# SQL Select Statement
 
 ## Select and From clauses
 
@@ -31,13 +31,17 @@ from student;
 +-----------+-------------------+------------+------------------------+
 9 rows in set (0.00 sec)
 ```
+**NOTE**: You can also select all the data from the table using the `*` operator, like so:
+```sql
+SELECT * from <table_name>
+```
 
 ## Select All Data in a table
 
 As defined in above section, there is another way of selecting all data without defining names of each and every attribute in query.
 This technique is short and very helpfull in querying faster:
 
-```Select query 
+```sql 
 select * 
 from student;
 ```

@@ -3,15 +3,15 @@ title: Python
 ---
 ![alt text](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
 
-## What is Python?
+## Python
 
-<a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language that is dynamically typed and interpreted. Python is known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
+[Python](https://www.python.org) is a general purpose programming language that is dynamically typed, interpreted, and is known for its easy readability with great design principles. It was created by Guido van Rossum and released in 1991. Since then, the language has exploded in popularity.  
 
-To learn more about Python, check out these pages on python.org:
+To learn more about Python from its source check out these pages on python.org:
 
-<a href='https://www.python.org/doc/essays/blurb/' target='_blank' rel='nofollow'>What is Python?</a>
+[What is Python?](https://www.python.org/doc/essays/blurb/)
 
-<a href='https://docs.python.org/3/faq/general.html' target='_blank' rel='nofollow'>Python FAQ</a>.
+[Python FAQ](https://docs.python.org/3/faq/general.html)
 
 ## Why Python?
 
@@ -20,16 +20,23 @@ If you've done some programming before, you've still made the right choice. Pyth
 > - Michael Dawson
 
 ## Python 2 or Python 3
+Python 3 was released on [December 3, 2008](https://www.python.org/download/releases/3.0/).
+The two versions are similar and, with knowledge of one, writing code for the other is not difficult.
+Three changes most commonly encountered in going from 2.x to 3.x include:
+- the `print()` function (it is now a function and requires parentheses)
+- the `input()` function (is no longer `raw_input()`)
+- integer division (Python 3 no longer floors this operation but always creates a float)
+A full list of changes can be found [here](https://sebastianraschka.com/Articles/2014_python_2_3_key_diff.html).
 
-*   The two versions are similar. With knowledge of one, switching to writing code for the other is easy.
-*   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
-    *   <a href='https://www.python.org/dev/peps/pep-0373/' target='_blank' rel='nofollow'>Python 2.x will not be maintained past 2020.</a> 
-    * 3.x is under active development. This means that all recent standard library improvements, for example, are only available by default in Python 3.x.
-    *   The Python ecosystem has amassed a significant amount of quality software over the years. The downside of breaking backwards compatibility in 3.x is that some of that software (especially in-house software in companies) still doesn't work on 3.x yet.
+Other considerations include: 
+- [Python 2.x will not be maintained past 2020](https://www.python.org/dev/peps/pep-0373/)
+- 3.x is under active development. This means that all recent standard library improvements, for example, are only available by default in Python 3.x
+- The Python ecosystem has amassed a significant amount of quality software over the years. The downside of breaking backwards compatibility in 3.x is that some of that software (especially in-house software in companies) still doesn't yet work on 3.x
+
+For more information see [Python 2 or Python 3](https://wiki.python.org/moin/Python2orPython3).
 
 ## Installation
-
-Most *nix based operating systems come with Python installed (usually Python 2, Python 3 in more recent ones). Replacing the system Python is not recommended and may cause problems. However, different versions of Python can be safely installed alongside the system Python. See <a href='https://docs.python.org/3/using/index.html' target='_blank' rel='nofollow'>Python Setup and Usage</a>.
+Most *nix based operating systems (including Mac OS) come with Python installed. Replacing a system’s native Python, whatever its version is, is not recommended and may cause problems because the version installed could be being used for some necessary internal services or tools. However, different versions of Python can be safely installed alongside the system Python. See [Python Setup and Usage](https://docs.python.org/3/using/index.html).
 
 Python doesn't ship with Windows. The installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
 
@@ -37,25 +44,31 @@ Linux operating systems come with different versions of Python pre-installed. Ho
 
 MacOS doesn't come with Python 3 (however Python 2.7 pre-installed by Apple), the installer and instructions can be found [here](https://docs.python.org/3/using/mac.html).
 
-## Python Interpreter
+Windows doesn't typically come with Python, the installer and instructions can be found [here](https://docs.python.org/3/using/windows.html).
 
-The Python interpreter is used to run Python scripts.
+### The Python Interpreter
+The Python interpreter is used to run Python scripts, it translates Python code for the operating system.
 
 In your terminal, type the command `python` followed by the script name to invoke the interpreter and run the script. This will determine whether the interpreter is available and in Unix shell’s search path.
 
-`hello_campers.py`
+To execute a script this would be followed by the script name to invoke the interpreter and run the script.
+
+The file: `hello_campers.py` contains the following code:
 
 ```python
 print('Hello campers!')
 ```
 
-From the terminal:
+From a terminal:
 
-    $ python hello_campers.py
-    Hello campers!
+```bash
+$ python hello_campers.py
+Hello campers!
+```
 
 When multiple versions of Python are installed, calling them by version may be possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked as shown below:
 
+```bash
     $ python --version
     Python 2.7.6
     $ python3 --version
@@ -66,23 +79,28 @@ When multiple versions of Python are installed, calling them by version may be p
     Python 3.6.2 
     $ python3.7 --version
     Python 3.7.1
+```
 
-## Python Interpreter Interactive Mode
+### Python Interpreter Interactive Mode
 
 Interactive mode can be started by invoking the Python interpreter with the `-i` flag or without any arguments.
 
-Interactive mode has a prompt where Python commands can be entered and run:
+Interactive mode provides a prompt where Python commands can be entered and run, this is commonly used for learning Python or trying out statements:
 
-    $ python3.5
-    Python 3.5.1 (default, Dec 18 2015, 00:00:00)
-    GCC 4.8.4 on linux
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> print("Hello campers!")
-    Hello campers!
-    >>> 1 + 2
-    3
-    >>> exit()
-    $
+```bash
+$ python3.5
+Python 3.5.1 (default, Dec 18 2015, 00:00:00)
+GCC 4.8.4 on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello campers!")
+Hello campers!
+>>> 1 + 2
+3
+>>> exit()
+$
+```
+
+There are many common applications for interactive Python including the one built in to your Python version, available at the command prompt by invoking the version name, as well downloadable applications such as Idle, Spyder and many more.
 
 ## The Zen of Python
 The principles that influenced the design of Python are included as an Easter egg, and can be read by using the following command inside the Python interpreter interactive mode:
@@ -110,54 +128,52 @@ The principles that influenced the design of Python are included as an Easter eg
     If the implementation is easy to explain, it may be a good idea.
     Namespaces are one honking great idea -- let's do more of those!
 
+### Pros and Cons of Python
 
 ## Pros and Cons of Python
 ### Pros
 - Easy to read, learn, and write.
-- Interactive language with a module support for almost all functionality.
+- Interactive language with module support for almost all functionality.
 - Open Source: You can contribute to the community and help others with the functions you have developed.
-- A lot of good interpreters and notebooks available for better experience like jupyter notebook.
+- A lot of good interpreters and notebooks available for better experience like Jupyter notebook.
 - It is a very easy language to debug. To check if a small bit of code works or not, you can just open up the interpreter and test.
 - There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
 - Don't have to worry about range of data types.  For instance, in the C language, we have to specify data types such as `int`, `long int`, `long long int`.
 
 ### Cons
 - Being open source, many different ways have developed over the years for the same function. This can sometimes create chaos for others when reading someone else's code.
-- It is a slow language. So, it may be less preferred for developing general algorithms.
+- It can be a slow language in some implementations because it is interpreted. This can be a deficit for developing some general algorithms.
 - Python is dynamically typed, so the errors in code only show up after running an application.
-- Python is not the best langauge to use if your project requires efficient memory management.
+- Python is not the best language to use if your project requires efficient memory management.
 - White space can confuse beginners, as spaces may change depending on the program.
 
 ## Documentation
-
 [Python](https://docs.python.org/3) is well documented. These docs include tutorials, guides, references, and meta information for the language.
 
-Another important reference is the Python Enhancement Proposals (<a href='https://www.python.org/dev/peps/' target='_blank' rel='nofollow'>PEPs</a>). Included in the PEPs is a style guide for writing Python code, <a href='https://www.python.org/dev/peps/pep-0008/' target='_blank' rel='nofollow'>`PEP 8`</a>.
+Another important reference is the Python Enhancement Proposals [PEPs](https://www.python.org/dev/peps/). Included in the PEPs is a style guide for writing Python code, [`PEP 8`](https://www.python.org/dev/peps/pep-0008/).
 
 ## Debugging
-
 Inline `print` statements can be used for simple debugging:
 
 > **... often the quickest way to debug a program is to add a few print statements to the source: the fast edit-test-debug cycle makes this simple approach very effective.**
 > 
-> --<a href='https://www.python.org/doc/essays/blurb/' target='_blank' rel='nofollow'>Executive Summary</a>
+> --[Executive Summary](https://www.python.org/doc/essays/blurb/)
 
 Python also includes more powerful tools for debugging, such as:
 
-*   logging module, <a href='https://docs.python.org/3/library/logging.html' target='_blank' rel='nofollow'>_logging_</a>
-*   debugging module, <a href='https://docs.python.org/3/library/pdb.html' target='_blank' rel='nofollow'>_pdb_</a>
+* logging module, [_logging_](https://docs.python.org/3/library/logging.html)
+* debugging module, [_pdb_](https://docs.python.org/3/library/pdb.html)
 
 Just note that these exist for now.
 
-## Hello World!
-
-Going back to the docs, we can read about the <a href='https://docs.python.org/3/library/functions.html#print' target='_blank' rel='nofollow'>`print`</a> function, a <a href='https://docs.python.org/3/library/functions.html' target='_blank' rel='nofollow'>_built-in function_</a> of the <a href='https://docs.python.org/3/library/index.html' target='_blank' rel='nofollow'>Python Standard Library</a>.
+### A Hello World Exercise 
+Going back to the docs, we can read about the [`print`](https://docs.python.org/3/library/functions.html#print) function, a ['nofollow'](https://docs.python.org/3/library/functions.html) of the [Python Standard Library](https://docs.python.org/3/library/index.html.
 
     print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 
 The built-in functions are listed in alphabetical order. The name is followed by a parenthesized list of formal parameters with optional default values. Under that is a short description of the function and its parameters are given. Occasionally, an example is provided.
 
-The <a href='https://docs.python.org/3/library/functions.html#print' target='_blank' rel='nofollow'>`print`</a> function in Python 3 replaces the <a href='https://docs.python.org/2/reference/simple_stmts.html#print' target='_blank' rel='nofollow'>`print`</a> statement in Python 2.
+The [`print`](https://docs.python.org/3/library/functions.html#print) function in Python 3 replaces the [`print`](https://docs.python.org/2/reference/simple_stmts.html#print) statement in Python 2.
 
     >>> print("Hello, World!")
     Hello, World!

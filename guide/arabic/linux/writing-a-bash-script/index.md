@@ -50,40 +50,43 @@ Bash هو اسم مترجم سطر الأوامر ، وهو برنامج يجع�
 
 في بعض الأحيان ترغب في أن يقوم برنامجك النصي بعمل شيء ما فقط إذا كان هناك شيء آخر صحيح. على سبيل المثال ، طباعة رسالة فقط إذا كانت القيمة تحت حد معين. في ما يلي مثال لاستخدامه في `if` القيام بذلك:
 
- `#!/bin/bash 
- 
- count=1 # Create a variable named count and set it to 1 
- 
- if [[ $count -lt 11 ]]; then # This is an if block (or conditional). Test to see if $count is 10 or less. If it is, execute the instructions inside the block. 
-    echo "$count is 10 or less" # This will print, because count = 1. 
- fi # Every if ends with fi 
-` 
+```
+#!/bin/bash
+
+count=1 # Create a variable named count and set it to 1
+
+if [[ $count -lt 11 ]]; then # This is an if block (or conditional). Test to see if $count is 10 or less. If it is, execute the instructions inside the block.
+    echo "$count is 10 or less" # This will print, because count = 1.
+fi # Every if ends with fi
+``` 
 
 وبالمثل ، يمكننا ترتيب البرنامج النصي بحيث ينفذ تعليمات فقط بينما يكون شيء ما صحيحًا. سنقوم بتغيير الكود بحيث قيمة التغيرات المتغيرة العد:
 
- `#!/bin/bash 
- 
- count=1 # Create a variable named count and set it to 1 
- 
- while [[ $count -lt 11 ]]; do # This is an if block (or conditional). Test to see if $count is 10 or less. If it is, execute the instructions inside the block. 
-    echo "$count is 10 or less" # This will print as long as count <= 10. 
-    count=$((count+1)) # Increment count 
- done # Every while ends with done 
-` 
+```
+#!/bin/bash
+
+count=1 # Create a variable named count and set it to 1
+
+while [[ $count -lt 11 ]]; do # This is an if block (or conditional). Test to see if $count is 10 or less. If it is, execute the instructions inside the block.
+    echo "$count is 10 or less" # This will print as long as count <= 10.
+    count=$((count+1)) # Increment count
+done # Every while ends with done
+``` 
 
 سيظهر ناتج هذا الإصدار من myscript.sh بالشكل التالي:
 
- `"1 is 10 or less" 
- "2 is 10 or less" 
- "3 is 10 or less" 
- "4 is 10 or less" 
- "5 is 10 or less" 
- "6 is 10 or less" 
- "7 is 10 or less" 
- "8 is 10 or less" 
- "9 is 10 or less" 
- "10 is 10 or less" 
-` 
+```
+"1 is 10 or less"
+"2 is 10 or less"
+"3 is 10 or less"
+"4 is 10 or less"
+"5 is 10 or less"
+"6 is 10 or less"
+"7 is 10 or less"
+"8 is 10 or less"
+"9 is 10 or less"
+"10 is 10 or less"
+``` 
 
 ## مخطوطات العالم الحقيقي
 

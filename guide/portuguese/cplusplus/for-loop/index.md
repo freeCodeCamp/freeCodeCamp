@@ -37,7 +37,7 @@ A instrução de atualização é usada para alterar a variável de loop usando 
 
 ## IMPLEMENTAÇÃO:
 
-```C++
+```cpp
 #include <iostream> 
  using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std:: 
  

@@ -17,6 +17,8 @@ Because we know that names in the phonebook are sorted alphabetically, we could 
 3. Otherwise, throw away the half of the phonebook that does not contain the name
 4. Repeat until you find the name or there are no more pages left in the phonebook
 
+[![Binary vs Linear Search](https://www.mathwarehouse.com/programming/images/binary-vs-linear-search/binary-and-linear-search-animations.gif)]
+
 Time complexity: As we dispose off one part of the search case during every step of binary search, and perform the search operation on the other half, this results in a worst case time complexity of *O*(*log<sub>2</sub>N*).
 The best case occurs when the element to be found is in the middle of the list. The best case time complexity is *O*(*1*).
 
@@ -54,27 +56,27 @@ This is the binary search algorithm. It is elegant and efficient but for it to w
 
 Find 5 in the given array of numbers using binary search.
 
-![Binary Search 1](https://i.imgur.com/QAuugOL.jpg)
+![Binary Search 1](https://cdn-media-1.freecodecamp.org/imgr/QAuugOL.jpg)
 
 Mark low, high and mid positions in the array.
 
-![Binary Search 2](https://i.imgur.com/1710fEx.jpg)
+![Binary Search 2](https://cdn-media-1.freecodecamp.org/imgr/1710fEx.jpg)
 
 Compare the item you are looking for with the middle element.
 
-![Binary Search 3](https://i.imgur.com/jr4icze.jpg)
+![Binary Search 3](https://cdn-media-1.freecodecamp.org/imgr/jr4icze.jpg)
 
 Throw away the left half and look in the right half.
 
-![Binary Search 4](https://i.imgur.com/W57lGsk.jpg)
+![Binary Search 4](https://cdn-media-1.freecodecamp.org/imgr/W57lGsk.jpg)
 
 Again compare with the middle element.
 
-![Binary Search 5](https://i.imgur.com/5Twm8NE.jpg)
+![Binary Search 5](https://cdn-media-1.freecodecamp.org/imgr/5Twm8NE.jpg)
 
 Now, move to the left half.
 
-![Binary Search 6](https://i.imgur.com/01xetay.jpg)
+![Binary Search 6](https://cdn-media-1.freecodecamp.org/imgr/01xetay.jpg)
 
 The middle element is the item we were looking for!
 
@@ -90,7 +92,7 @@ Binary Search Trees are very powerful because of their O(log n) search times, se
 
 The code for recursive binary search is shown below:
 
-### Javascript implementation
+### JavaScript implementation
 
 ```javascript
 function binarySearch(arr, item, low, high) {
@@ -118,9 +120,9 @@ var numbers = [1,2,3,4,5,6,7];
 print(binarySearch(numbers, 5, 0, numbers.length-1));
 ```
 
-Here is another implementation in Javascript:
+Here is another implementation in JavaScript:
 
-```Javascript
+```JavaScript
 function binary_search(a, v) {
     function search(low, high) {
         if (low === high) {
@@ -198,7 +200,7 @@ def binary_search(arr, l, r, target):
 
 Recursive approach!
 
-```C++ -
+```cpp
 // Recursive approach in C++
 int binarySearch(int arr[], int start, int end, int x)
 {
@@ -219,7 +221,7 @@ int binarySearch(int arr[], int start, int end, int x)
 
 Iterative approach!
 
-```C++
+```cpp
 int binarySearch(int arr[], int start, int end, int x)
 {
     while (start <= end)
@@ -261,7 +263,7 @@ int binarySearch(int[] arr, int start, int end, int element)
 {
     while(start <= end)
     {
-        int mid = ( start + end ) / 2;
+        int mid = start + ( end - start ) / 2;
         if(arr[mid] == element)
             return mid;
         if(arr[mid] < element)
@@ -276,18 +278,18 @@ int binarySearch(int[] arr, int start, int end, int element)
 // Recursive Approach in Java
 int binarySearch(int[] arr, int start,int end , int element)
 {
-    if(start <= end)
-    {
-        int mid = ( start + end ) / 2;
-        if(arr[mid] ==  element)
-                return mid;
-        if(arr[mid] < element)
-                return binarySearch( arr , mid + 1 , end , element );
-        else
-                return binarySearch( arr, start, mid - 1 , element);
-     }
-     return -1;
- }
+  if (end >= start)
+  {
+    int mid = start + ( end - start ) / 2;
+    if(arr[mid] ==  element)
+        return mid;
+    if(arr[mid] < element)
+        return binarySearch( arr , mid + 1 , end , element );
+    else
+        return binarySearch( arr, start, mid - 1 , element);
+  }
+  return -1;
+}
 
 ```
 

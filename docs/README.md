@@ -9,6 +9,7 @@
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
+        <td><a href="/docs/greek/README.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
@@ -36,15 +37,14 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick commands reference when working locally
 
-A quick reference to the commands that you will need, when working locally.
+A quick reference to the commands that you will need when working locally.
 
 | command | description |
 | ------- | ----------- |
-| `npm run bootstrap` | Bootstraps the different services. |
+| `npm ci` | Bootstraps the different services. |
 | `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
 | `npm run develop` | Starts the freeCodeCamp API Server and Client Applications. |
 | `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests. |
 | `npm run test:client` | Run the client test suite. |
 | `npm run test:curriculum` | Run the curriculum test suite. |
 | `npm run test:server` | Run the server test suite. |
-| `npm run commit` | An interactive tool to help you build a good commit message. |

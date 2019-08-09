@@ -51,24 +51,37 @@ Apply directly by using scikit library, thus making linear regression easy to us
 import pandas as pd
 from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LinearRegression as lr
+from sklearn import metrics
+
+# Load the data
 train = pd.read_csv('../input/train.csv')
 test = pd.read_csv('../input/test.csv') 
+
+# Separate the features and labels
 X = train.iloc[:, 0:4].values
 y = train.iloc[:, 4].values
+
+# Split the data into train and test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
-X_train
+
+# Build the model
 model = lr()
 model.fit(X_train, y_train)
-print(model.score(X_train,y_train))
+print("Training score: ", model.score(X_train,y_train))
+print("Gradient: ", model.coef_)
+print("y-intercept: ", model.intercept_)
+
+# Evaluating the model on test data
 y_pred_class = model.predict(X_test)
-model.score(X_train,y_train)
-print(model.coef_)
-print(model.intercept_)
-# calculate accuracy
-from sklearn import metrics
 print(metrics.accuracy_score(y_test, y_pred_class))
 ```
 
+## Metrics  
+How would you know if your regression model is accurate or not? Well, one method is to calculate the R-squared score of your model. [R-squared score](http://blog.minitab.com/blog/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit) (also known as coefficient of determination) is a statistical measure of how close the data are to the fitted regression line.
 
-You can refer to this article for deeper insight into regression  
-https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
+## More Information:
+[scikit learn](http://scikit-learn.org/stable/documentation.html)
+[Article on regression](https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/)
+[Medium article - Implementing Linear Regression with sklearn Tutorial](https://towardsdatascience.com/implementing-supervised-learning-algorithm-by-sklearn-linear-regression-96ffbdb29961)
+
+

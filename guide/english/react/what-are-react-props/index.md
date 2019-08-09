@@ -3,7 +3,7 @@ title: React TypeChecking with PropTypes
 ---
 ## React PropTypes
 
-These serve as a method of typechecking as an application tends go grow, with this a very big base of bugs tends to be corrected with the use of this feature.
+These serve as a method of typechecking. As an application grows, it tends to gather a fair amount of bugs. Typechecking with PropTypes can prevent those.
 
 ## How to get PropTypes
 
@@ -11,7 +11,7 @@ Starting with React version 15.5 this feature was moved to a separate package na
 
 In order to use it, it's required to be added to the project as a dependency by issuing the following command in a console.
 
-```sh
+```shell
 npm install --save prop-types
 ```
 After that a whole range of validators that can be used to make sure the data the developer is going to recieve is actually valid.
@@ -121,4 +121,4 @@ MyComponent.defaultProps = {
 
 For more information about PropTypes and other docs on React.
 
-Go to the [Official Site](https://reactjs.org/) and read the docs, or the [Github Repo](https://github.com/facebook/react/)
+Go to the [Official Site](https://reactjs.org/) and read the docs, or the [GitHub Repo](https://github.com/facebook/react/)

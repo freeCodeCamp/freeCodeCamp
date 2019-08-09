@@ -10,7 +10,7 @@ JavaFX is a graphics framework created by Sun Microsystems used for developing r
 Gulon Scene Builder is an application used for user interface (UI) design in JavaFX. The application uses drag-and-drop for rapid UI design that allows you to visualize the interface you are creating while designing it.
 
 #### Screeenshots:
-![Scene Builder UI](https://i.imgur.com/3d9SqBR.png)
+![Scene Builder UI](https://cdn-media-1.freecodecamp.org/imgr/3d9SqBR.png)
 
 ### FXML
 FXML is an XML-based markup language used for defining structures in JavaFX. The FXML document lays out the various objects in the class in a tree similar to tag nesting in XML documents.
@@ -30,7 +30,27 @@ ControlsFX is an open source project that maintains high quality controls for Ja
 Next to common controls like text fields and labels, there are also advanced features that can upgrade the look and feel of the UI. For example, a collection of pre-built dialogs used for the easy creation of custom dialogs.
 Documentation can be found on the website.
 
+### Examples
+
+- Label
+- Button
+- Color Picker
+- Checkbox
+- RadioButton
+- Listview
+- Textfield
+- PasswordField
+- Scrollbar
+- FileChooser
+- ProgressBar
+- Slider
+
+And more, link in references.
+
 ### References:
+
+[Controls Documentation](https://www.tutorialspoint.com/javafx/javafx_ui_controls.htm)
+
 [FXML Documentation](https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/doc-files/introduction_to_fxml.html)
 
 [Scene Builder Tutorial](https://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/overview.htm#JSBGS164)

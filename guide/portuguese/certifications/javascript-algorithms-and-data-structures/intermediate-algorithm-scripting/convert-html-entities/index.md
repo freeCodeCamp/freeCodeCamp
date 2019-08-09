@@ -82,8 +82,7 @@ Explique a solução aqui e adicione links relevantes
 *   [arr.join ()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 *   [mudar a indicação](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch)
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnP/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":girassol:") Solução de Código Intermediário:
 ```
 function convertHTML(str) { 
@@ -96,8 +95,7 @@ function convertHTML(str) {
  convertHTML("Dolce & Gabbana"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnQ/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Explique a solução aqui e adicione links relevantes
@@ -127,8 +125,7 @@ Explique a solução aqui e adicione links relevantes
     convertHTML("Dolce & Gabbana"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnR/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie um objeto para usar a funcionalidade de pesquisa para encontrar facilmente os caracteres.

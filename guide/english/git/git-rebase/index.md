@@ -68,6 +68,14 @@ pick 5186a9f <message for this commit>
 - If it rebases successfully then you need to force push your changes with `git push -f` to add the rebased version to your github repo.
 - If there is a merge conflict, there are a number of ways to fix this, including following the suggestions in [this guide](https://help.github.com/enterprise/2.11/user/articles/resolving-a-merge-conflict-using-the-command-line/). One way is to open the files in a text editor and delete the parts of the code you do not want. Then use `git add <file name>` followed by `git rebase --continue`. You can skip over the conflicted commit by entering `git rebase --skip`, exit the git rebase by entering `git rebase --abort` in your console.
 
+### Points to Note
+
+Git Rebase is a very powerful feature. That being said, it is **risky** as well if it is not used in the right way.
+
+Git rebase alters the commit history. So use it with care. If Rebasing is done in the remote repository, then it can create a lot of issues when other developers try to pull the latest code changes from the remote repository.
+
+As much as possible try using Git Rebase only to rebase a local git repository.
+
 ### More Information:
 - [Git documentation: rebase](https://git-scm.com/docs/git-rebase)
 - [Thoughbot interactive guide to git rebase](https://robots.thoughtbot.com/git-interactive-rebase-squash-amend-rewriting-history)

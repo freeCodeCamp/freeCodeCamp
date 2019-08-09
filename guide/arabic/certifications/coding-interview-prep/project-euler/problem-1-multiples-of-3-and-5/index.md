@@ -13,17 +13,17 @@ localeTitle: مضاعفات 3 و 5
 
 ### حل:
 
- `function multiplesOf3and5(number) { 
-  let sum = 0, i = 3; 
-  while (i < number){ 
-    if (i % 3 == 0 || i % 5 == 0) sum += i; 
-    i++; 
-  } 
-  return sum; 
- } 
-` 
+```js
+function multiplesOf3and5(number) {
+  let sum = 0, i = 3;
+  while (i < number){
+    if (i % 3 == 0 || i % 5 == 0) sum += i;
+    i++;
+  }
+  return sum;
+}
+``` 
 
-*   [تشغيل الكود](https://repl.it/@ezioda004/Project-Euler-Problem-1-Multiples-of-3-and-5)
 
 ### مرجع:
 

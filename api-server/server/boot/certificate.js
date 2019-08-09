@@ -289,12 +289,12 @@ function createVerifyCert(certTypeIds, app) {
           // sends notification email is user has all 6 certs
           // if not it noop
           sendCertifiedEmail(user, Email.send$),
-          ({ count }, pledgeOrMessage) => ({ count, pledgeOrMessage })
-        ).map(({ count, pledgeOrMessage }) => {
+          (_, pledgeOrMessage) => ({ pledgeOrMessage })
+        ).map(({ pledgeOrMessage }) => {
           if (typeof pledgeOrMessage === 'string') {
             log(pledgeOrMessage);
           }
-          log(`${count} documents updated`);
+          log('Certificates updated');
           return successMessage(user.username, certName);
         });
       })
@@ -350,7 +350,8 @@ function createShowCert(app) {
           messages: [
             {
               type: 'info',
-              message: `We could not find a user with the username "${username}"`
+              message:
+                'We could not find a user with the username "' + username + '"'
             }
           ]
         });
@@ -429,8 +430,25 @@ function createShowCert(app) {
 
       if (user[certType]) {
         const { completedChallenges = [] } = user;
-        const { completedDate = new Date() } =
-          _.find(completedChallenges, ({ id }) => certId === id) || {};
+        const certChallenge = _.find(
+          completedChallenges,
+          ({ id }) => certId === id
+        );
+        let { completedDate = new Date() } = certChallenge || {};
+
+        // the challange id has been rotated for isDataVisCert
+        // so we need to check for id 561add10cb82ac38a17513b3
+        if (certType === 'isDataVisCert' && !certChallenge) {
+          console.log('olderId');
+          let oldDataVisIdChall = _.find(
+            completedChallenges,
+            ({ id }) => '561add10cb82ac38a17513b3' === id
+          );
+
+          if (oldDataVisIdChall) {
+            completedDate = oldDataVisIdChall.completedDate || completedDate;
+          }
+        }
 
         const { username, name } = user;
         return res.json({
@@ -445,9 +463,9 @@ function createShowCert(app) {
         messages: [
           {
             type: 'info',
-            message: `It looks like user ${username} is not ${
-              certText[certType]
-            } certified`
+            message: `
+It looks like user ${username} is not ${certText[certType]} certified
+          `
           }
         ]
       });

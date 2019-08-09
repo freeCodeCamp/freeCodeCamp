@@ -16,45 +16,47 @@ localeTitle: غير متزامن / في انتظار
 
 1.  تقديم نموذج للخادم
 
- `private readonly string url = 'http://localhost:3000/api/submit'; 
- private readonly HttpContent formContent = new HttypContent(); 
- 
- // Update the formContent object while filling up the form. 
- 
- SubmitButton.Clicked += async (object, event) => 
- { 
-  // When PostAsync is hit, the button control will release the UI, while the 
-  //   http post method is still waiting on server response. 
-  HttpClient httpClient = new HttpClient(); 
-  var response = await httpClient.PostAsync(url, formContent); 
-  Console.WriteLine(response.StatusCode); 
- } 
-` 
+```csharp
+private readonly string url = 'http://localhost:3000/api/submit';
+private readonly HttpContent formContent = new HttypContent();
+
+// Update the formContent object while filling up the form.
+
+SubmitButton.Clicked += async (object, event) =>
+{
+  // When PostAsync is hit, the button control will release the UI, while the
+  //   http post method is still waiting on server response.
+  HttpClient httpClient = new HttpClient();
+  var response = await httpClient.PostAsync(url, formContent);
+  Console.WriteLine(response.StatusCode);
+}
+``` 
 
 2.  المزالج "المزالج"
 
- `public async Task<int> CalcDamage(Player player) 
- { 
-  // CPU-intense method, calculate afflicted damage done to the 
-  //   Boss based on the damage types, Boss stats (from static data), 
-  //   player stats, etc. 
-  // ... 
- } 
- 
- public static async Task<int> CalcTotalDamage(IEnumerable<Player> group) 
- { 
-  var totalDamage = 0; 
-  foreach (Player player in group) 
-  { 
-    // each of the async methods are queued in the thread-pool and move on. 
-    totalDamage += CalcDamage(player); 
-  } 
- 
-  // total damage done must be calculated from all players in the group 
-  //   before we return the result. 
-  return await Task.WhenAll(totalDamage); 
- } 
-` 
+```csharp
+public async Task<int> CalcDamage(Player player)
+{
+  // CPU-intense method, calculate afflicted damage done to the
+  //   Boss based on the damage types, Boss stats (from static data),
+  //   player stats, etc.
+  // ...
+}
+
+public static async Task<int> CalcTotalDamage(IEnumerable<Player> group)
+{
+  var totalDamage = 0;
+  foreach (Player player in group)
+  {
+    // each of the async methods are queued in the thread-pool and move on.
+    totalDamage += CalcDamage(player);
+  }
+
+  // total damage done must be calculated from all players in the group
+  //   before we return the result.
+  return await Task.WhenAll(totalDamage);
+}
+``` 
 
 ## الغش ورقة
 

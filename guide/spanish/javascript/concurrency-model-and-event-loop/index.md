@@ -33,7 +33,7 @@ Entonces, para resumir cada vez que se invoca una función, se inserta en la pil
 
 Ahora sabemos por esto que Javascript puede ejecutar una cosa a la vez, pero ese no es el caso con el navegador. El navegador tiene su propio conjunto de API como setTimeout, XMLHttpRequests que no se especifican en el tiempo de ejecución de Javascript. De hecho, si revisa el código fuente de V8, el popular runtime de Javascript que impulsa los navegadores como Google Chrome, no encontrará ninguna definición para ello. Es porque estas API web especiales existen en el entorno del navegador y no en el entorno de javascript y se puede decir que estas API introducen la concurrencia en la mezcla. Veamos un diagrama para entender el cuadro completo.
 
-![Modelo de bucle de concurrencia y evento](https://i.imgur.com/rnQEY7o.png)
+![Modelo de bucle de concurrencia y evento](https://cdn-media-1.freecodecamp.org/imgr/rnQEY7o.png)
 
 Se introducen algunos términos más
 

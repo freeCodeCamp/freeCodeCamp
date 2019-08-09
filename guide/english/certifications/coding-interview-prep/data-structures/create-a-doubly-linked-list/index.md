@@ -1,7 +1,7 @@
 ---
 title: Create a Doubly Linked List
 ---
-## Create a Doubly Linked List
+# Create a Doubly Linked List
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/create-a-doubly-linked-list/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

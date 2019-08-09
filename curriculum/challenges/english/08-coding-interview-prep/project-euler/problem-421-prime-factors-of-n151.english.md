@@ -2,6 +2,7 @@
 id: 5900f5131000cf542c510024
 challengeType: 5
 title: 'Problem 421: Prime factors of n15+1'
+forumTopicId: 302091
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find ∑ s(n,108) for 1 ≤ n ≤ 1011.
 ```yml
 tests:
   - text: <code>euler421()</code> should return 2304215802083466200.
-    testString: assert.strictEqual(euler421(), 2304215802083466200, '<code>euler421()</code> should return 2304215802083466200.');
+    testString: assert.strictEqual(euler421(), 2304215802083466200);
 
 ```
 
@@ -60,4 +61,5 @@ euler421();
 ```js
 // solution required
 ```
+
 </section>

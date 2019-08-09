@@ -2,6 +2,7 @@
 id: 5900f3f91000cf542c50ff0b
 challengeType: 5
 title: 'Problem 141: Investigating progressive numbers, n, which are also square'
+forumTopicId: 301770
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find the sum of all progressive perfect squares below one trillion (1012).
 ```yml
 tests:
   - text: <code>euler141()</code> should return 878454337159.
-    testString: assert.strictEqual(euler141(), 878454337159, '<code>euler141()</code> should return 878454337159.');
+    testString: assert.strictEqual(euler141(), 878454337159);
 
 ```
 
@@ -56,4 +57,5 @@ euler141();
 ```js
 // solution required
 ```
+
 </section>

@@ -19,6 +19,8 @@ key will move the cursor to the end of the current word.
 * To move to the beginning of the current line, type `0`, and to move to the end
 of the current line, type `$`.
 
+* To make one navigation `x` number of times, type the `number`, then the `navigating key`.
+
 * Finally, to move to the first line in the file, type `gg`, and to move to the
 last line in the file, type `G`.
 
@@ -29,10 +31,13 @@ h   moves one character left
 j   moves one row down
 k   moves one row up
 l   moves one character right
+4h  moves four characters left
+6j  moves six rows down
 
 w   moves to the beginning of the next word
 b   moves to the beginning of the previous word
 e   moves to the end of the current word
+5w  moves to the beginning of the next five words
 
 0   moves to the beginning of the current line
 $   moves to the end of the current line

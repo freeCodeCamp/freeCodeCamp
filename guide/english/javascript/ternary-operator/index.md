@@ -56,5 +56,7 @@ To ease readability, the code using ternary operators is often formatted across 
 
 This way of using the ternary operator needs to be done sparingly and in the right places, which is why (as is the case with using multiple `else if's`), it can sometimes lead to more readable code by using a `switch` statement instead.
 
+It is advisable to use the ternary operator only in cases which include both `if` and `else` conditions, otherwise using an `if` block is recommended. Chaining ternary operators without care may cause unforeseen bugs.
+
 
 **Read more:** <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator' target='_blank' rel='nofollow'>MDN</a>

@@ -19,7 +19,7 @@ CSS was first proposed way back in 1994 by Håkon Wium Lie, who was working with
 
 Before CSS, developers would apply styles using attributes or special tags on each node of a page. This made markup repetitive and prone to errors.
 
-CSS allows selectors to describe how each piece of matching content should look. It is an important technology of World Wide Web, along with HTML and Javascript.
+CSS allows selectors to describe how each piece of matching content should look. It is an important technology of World Wide Web, along with HTML and JavaScript.
 ```CSS
 body {
     font-size: 15px;

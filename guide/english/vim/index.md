@@ -18,13 +18,15 @@ Vim is rock stable and boasts many features including:
 
 One of the main differences that both Vim, and its predecessor *vi*, have over other editors like *nano*, is that it is a _modal editor_, which means that they have several modes of operation. For example, the editor starts in *Navigation Mode*, which allows you to quickly move around the document (or, more accurately _blazingly fast_). In this mode, you can enter commands to interact with your document, like using `:i` to enter `insert mode`, `:q` to quit, `/<text>` to search text, among others. 
 
-The modal part of Vim is what makes it really powerful. For an interactive tutorial, please visit [OpenVim](http://www.openvim.com/). Here you can try for yourself several of its more powerful features.
+The modal part of Vim is what makes it really powerful. You can try out the most powerful features through an interactive tutorial by visiting [OpenVim](http://www.openvim.com/) 
+
+If you have vim installed on your system, you can also run the `vimtutor` command to start a tutorial.
 
 ## More information
 
-For more information head to <a href='https://vim.sourceforge.io' target='_blank' rel='nofollow'>Vim's homepage</a>
-
+* [Vim's homepage](https://vim.sourceforge.io)
 * [Vim.org](https://www.vim.org/) is an online resource with downloadable binaries for most operating systems. 
 * [Open Vim](http://www.openvim.com/) is an online, interactive Vim tutorial you can do right in your browser. 
 * [Vim Adventures](https://vim-adventures.com) is an online game based on VIM's keyboard shortcuts. It's the "Zelda meets text editing" game.
+* [Vim Awesome](https://vimawesome.com/) provides descriptions and links to VIM plugins.
 * [Super necessary Vim shortcuts](https://www.maketecheasier.com/vim-keyboard-shortcuts-cheatsheet/)

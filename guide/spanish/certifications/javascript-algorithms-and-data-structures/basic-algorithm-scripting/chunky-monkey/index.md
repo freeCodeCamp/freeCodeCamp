@@ -72,7 +72,6 @@ Finalmente, necesitamos un método para hacer la división real y podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/24)
 
 ### Explicación del código:
 
@@ -101,7 +100,6 @@ Finalmente, necesitamos un método para hacer la división real y podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/Cj9x/3)
 
 ### Explicación del código:
 
@@ -134,7 +132,6 @@ Finalmente, necesitamos un método para hacer la división real y podemos usar `
     chunkArrayInGroups(["a", "b", "c", "d"], 2); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/26)
 
 ### Explicación del código:
 
@@ -169,7 +166,6 @@ Finalmente, necesitamos un método para hacer la división real y podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/579)
 
 ### Explicación del código:
 
@@ -198,7 +194,6 @@ Finalmente, necesitamos un método para hacer la división real y podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/579)
 
 ### Explicación del código:
 

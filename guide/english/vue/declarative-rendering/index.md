@@ -2,7 +2,7 @@
 title: Declarative Rendering
 ---
 
-## Instalation
+## Installation
 
 Before we get started, there are a couple of ways to use Vue.js, namely via CDN and via
 installation. For a first experience, it's easier to use the CDN.
@@ -25,16 +25,13 @@ recommended for beginners.
 ## Declarative Rendering
 
 Vue.js is a great tool for creating dynamic pages, and a first way to get in
-touch with that is what's called Declarative Rendering.
+touch with that is what's called *Declarative Rendering*.
 
-The use of term "declarative" tends to straighten this concept to
-declarative languages, such as SQL: you order something, it's not implied
-any implementation. Vue.js allows you to declare what data you want to be
-rendered, as simply as that:
+"Declarative", because it is somewhat similar to declarative languages such as SQL. Using Vue.js straightforward syntax, you just *declare* what data you want to see, and the framework will take care of the rendering, as simply as that:
 
 ```html
 <div id="app">
-  {{ message }}
+  {{ message }} <!-- declaring what we want to see -->
 </div>
 ```
 
@@ -42,23 +39,24 @@ rendered, as simply as that:
 let app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello, world!'
+    message: 'Hello, world!' // Vue.js fetches its value here
   }
 });
 ```
 
-With those snippets, you're telling Vue to dynamically render whatever is stored
-inside `message` variable. And the fun: whenever `message` is changed,
-Vue.js manages to reload that specific part of the DOM and you see the
-change. 
+With those snipets, you're telling Vue to dynamically render whatever is stored
+inside the `message` variable. And the fun part: whenever `message` is changed,
+Vue.js manages to instantly update that specific part of the DOM. 
 
-If you want to try this reactivity out, open the console and change the value
-of `app.message` to, say, `"Hello from console"`. Did you notice the change in
-the page?
+To experience this reactivity, once you've set up a new project and displayed it in your browser open the console and change the value of app.message to, say, "Hello from console". 
 
-The `{{ ... }}` is the syntax for that behavior: outputting the value
+`app.message = "Hello from console"`
+
+Did you notice the change in the page? It's just like magic.
+
+The `{{ ... }}`, or double mustache brakets, is the syntax for that behavior: outputting the value
 of a variable or of an expression. For instance, this is also a valid use and
-will result in `hello`:
+will result in `hello` :
 
 ```html
 <div id="app">
@@ -66,9 +64,8 @@ will result in `hello`:
 </div>
 ```
 
-There are cases in which what we want is to set an attribute using our Vue app's
-variable.  You might think that the same syntax applies, but Vue has something
-specific for that, what we call "binding".
+There will be cases when we want to dynamically set a DOM element's attribute.
+Vue has a way to do exactly that, and it is called "binding" :
 
 ```html
 <div id="app">
@@ -85,6 +82,8 @@ let app = new Vue({
 }
 ```
 
-The syntax `v-bind` is what Vue.js calls a "directive". It's a way to set a new
-attribute to the tag that will be handled by Vue -- there are more
-directives, they all begin with `v-`.
+The `v-bind:` syntax is what Vue.js calls a "directive". It's a way to dynamically bind an attribute to data.
+As a shorthand, `v-bind:` can be replaced with `:`. You will often see it used that way, as this type of directive is widely used across projects. See more shorthands in the shorthand section of this Vue.js guide.
+
+As a general rule, Vue.js makes it easy to recognize its declarations by always using the `v-` prefix :
+`v-bind`, `v-for`, `v-if`, `v-else`, `v-on`, and more.

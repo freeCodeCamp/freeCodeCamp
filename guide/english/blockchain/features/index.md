@@ -3,33 +3,35 @@ title: Features of BlockTech
 ---
 ## Features of Blockchain Technology
 
-Blockchain is usually thought of as Bitcoin and cryptocurrency. However, there are many other applications of this technology. We are barely beginning to scratch the surface of it. With all the hype around blockchain, it's clear blockchain technology will play an important role in the future of applications and data. But what makes it unique?  
+Blockchain is the underlying technology of Bitcoin and other cryptocurrencies. There are also many other areas in which this technology can be used. We have barely begun to scratch the surface of the technology's potential. With all the hype around it, it's evident that Blockchain Technology (BlockTech) is going to be huge. But what makes it unique?
 
-In this article, we are going to explore the key characteristic features of blockchain.
+In this article, we are going to explore the key features of BlockTech.
 
 #### _* Decentralized System_
 
 > Blockchain is a decentralized dechnology, by design.
 
-When something is controlled by a central authority, where the power to make decision lies in the hands of an overseeing organization, such a system is called a centralized system. Banks, for example, are centralized systems. One company is responsible for securing and maintaining a ledger of transactions.
+When something is controlled by a central authority, where the power to make decisions lies in the hands of the apex of the management, such system is called a centralized system. Banks, for example, are a centralized system, where it's the responsibility of the Governor to make decisions.
 
-On the contrary, when the power is vested in the hands of the people or the users, such system is said to be a decentralized system. A peer-to-peer network, like a torrent or an open source project, for example, is a decentralised system where users contribute to update and maintain data.
+On the contrary, when the power is vested in the hands of the people or the users, such system is said to be a Decentralized System.
+
+The peer to peer network, Torrent, for example, is a decentralised system where the user has complete control.
 
 ![Decentralized Systems](https://raw.githubusercontent.com/Vagisha16/Hw3/master/blockchain_article_pic.jpg)
 
 #### _* Distributed Ledger_
 
-> Blockchains use distributed ledger technology (DLT) to store and access data.
+> Blockchains use distributed Ledger Technology (DLT) to store and access data.
 
-When something is stored on a distributed ledger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledgers do not have a central database or administrator.
+When something is stored on a Distributed Ledger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledgers do not have a central database or administration functionality.
 
 ![Distributed Ledger](https://qph.fs.quoracdn.net/main-qimg-2e24c4949a63eefa9bbab1773e185cdd)
 
-When applied in a decentralized system like blockchain, each user has a copy of the ledger and participates in the transaction verification. This ensures security. Since the data is distributed, there is no centralized version of the data for the hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates any single point of failure.
+When applied in a decentralized system like Blockchain, each user has a copy of the ledger and may (depending on the blockchain) participate in the transaction verification. This gives Blockchain the propeerty of immutability and ensures security. Since the data is distributed there is no centralized version of the data for hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates a single point of failure.
 
 #### _* Secure Ecosystem (Cryptographic Hash)_
 
-Blockchain uses concepts like proof of work and hash encryption to ensure security and immutability. Proof of work involves many people around the world using computational algorithm to try and find the appropriate hash value that satisfies a predefined condition.
+BlockTech uses the concepts like proof of work and hash encryption to ensure security and immutability. Proof of work involves many people around the world using computational algorithm to try and find the appropriate hash value that satisfies a predefined condition regarding the hash value.
 
 ![Hashing](https://raw.githubusercontent.com/Vagisha16/Hw3/master/Hash.png)
 
@@ -52,6 +54,9 @@ Blockchains, ideally, are just very sophisticated linked lists where each block 
 
 Consensus is an approach to decision making. It is a creative and dynamic way of reaching agreement between all members of a group. A transaction on blockchain can be executed only if all the parties on the network unanimously approve it.
 
+#### _* Proof of Work_
+
+The main feature that allows blockchain to be extremely secure is the use of proof of work. Most cryptocurrency states that the block with the longest chain is the "trusted" chain. The longest chain refers to one with the longest computational work put into it, or the one mined the most. If a malicious user decides to add a transaction in a ledger, it would change the entire block values, meaning the user would have to recompute the entire chain which would be computationally impossible or unincentive.
 
 ### Sources
 

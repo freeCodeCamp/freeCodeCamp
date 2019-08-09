@@ -12,7 +12,7 @@ It's based on the principle that a [Node.js](https://nodejs.org/) application is
 Assuming that all is setup and working correctly there are some packages that need to be added in order for Redux work with React.
 
 Open a terminal inside the project folder that was created and issue the following command 
-```sh
+```shell
 npm install --save react react react-dom react-redux react-router redux
 ```
 What the command above does is install the packages locally and add a reference to the the package.json file under dependencies.
@@ -144,6 +144,15 @@ export default connect(mapStateToProps,mapDispatchToProps)(App);
 The example above demonstrates how the base App component is setup and how it will interact with the redux architecture.
 
 Also how to dispatch a defined action from the component which will be passed down to the store and make the changes on the application reducer.
+
+`mapStateToProps` takes a second argument, `ownProps`, which are the props of the component. This can be useful for mapping props from the store based on the component's exisiting props. For example
+```javascript
+const mapStateToProps = (state, ownProps) => {
+    if (ownProps.userId) {
+        return { friends: state.friends[ownProps.userId }
+    }
+}
+```
 
 ## Declaration of the Application Actions
 

@@ -31,7 +31,7 @@ namespace HelloWorld
 ```
 
 ## Output:
-```sh
+```shell
 > Hello World!
 > Press any key to exit.
 ```

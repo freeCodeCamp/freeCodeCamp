@@ -10,19 +10,20 @@ localeTitle: صف دراسي
 
 خلافا لأسماء فئة "معرف" CSS ليست فريدة. لذلك ، لا بأس من استخدام "class" عدة مرات إذا كنت ترغب في أن يكون لهذه العناصر نفس النمط المطبق. في الواقع ، سيكون هذا وقتًا رائعًا لاستخدام "الفئة". إذا كنت ترغب في وجود ثلاثة عناصر "div" في HTML لديك خلفية زرقاء ، يمكنك استخدام فئة مرة واحدة في CSS كما يظهر في المثال أدناه.
 
- `<html> 
- <style> 
-  .blueBg { 
-    background-color: blue; 
-  } 
- </style> 
-  <body> 
-    <div class="blueBg"></div> 
-    <div class="blueBg"></div> 
-    <div class="blueBg"></div> 
-  </body> 
- </html> 
-` 
+```
+<html>
+<style>
+  .blueBg {
+    background-color: blue;
+  }
+</style>
+  <body>
+    <div class="blueBg"></div>
+    <div class="blueBg"></div>
+    <div class="blueBg"></div>
+  </body>
+</html>
+``` 
 
 #### معلومات اكثر:
 

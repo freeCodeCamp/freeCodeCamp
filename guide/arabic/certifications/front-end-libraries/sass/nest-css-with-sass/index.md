@@ -9,17 +9,18 @@ localeTitle: عش المغلق مع ساس
 
 ## مثال
 
- `.title{ 
-  strong{} 
-  em{} 
- } 
- 
- // This will be compiled into: 
- 
- .title{} 
- .title strong{} 
- .title em{} 
-` 
+```sass
+.title{
+  strong{}
+  em{}
+}
+
+// This will be compiled into:
+
+.title{}
+.title strong{}
+.title em{}
+``` 
 
 ## تلميح 1:
 

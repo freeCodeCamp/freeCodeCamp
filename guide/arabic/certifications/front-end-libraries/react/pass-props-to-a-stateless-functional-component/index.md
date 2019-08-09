@@ -8,8 +8,9 @@ localeTitle: تمرير الدعائم إلى مكون وظيفي عديم ال�
 
 حدد تاريخًا مسمى للدعم في مكون التقويم كما يلي:
 
- `<CurrentDate date={Date()} /> 
-` 
+```jsx
+<CurrentDate date={Date()} />
+``` 
 
 \`
 
@@ -21,25 +22,26 @@ localeTitle: تمرير الدعائم إلى مكون وظيفي عديم ال�
 
 قم بتعيين تاريخ مسمى للدعم في مكون التقويم كما يلي وقم بعرضه في مكون التقويم ، مثل:
 
- `const CurrentDate = (props) => { 
-  return ( 
-    <div> 
-      <p>The current date is: {props.date}</p> 
-    </div> 
-  ); 
- }; 
- 
- class Calendar extends React.Component { 
-  constructor(props) { 
-    super(props); 
-  } 
-  render() { 
-    return ( 
-      <div> 
-        <h3>What date is it?</h3> 
-        <CurrentDate date={Date()} /> 
-      </div> 
-    ); 
-  } 
- }; 
-`
+```jsx
+const CurrentDate = (props) => {
+  return (
+    <div>
+      <p>The current date is: {props.date}</p>
+    </div>
+  );
+};
+
+class Calendar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>What date is it?</h3>
+        <CurrentDate date={Date()} />
+      </div>
+    );
+  }
+};
+```

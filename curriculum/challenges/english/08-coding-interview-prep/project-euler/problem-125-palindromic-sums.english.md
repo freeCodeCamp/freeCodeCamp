@@ -2,6 +2,7 @@
 id: 5900f3e91000cf542c50fefc
 challengeType: 5
 title: 'Problem 125: Palindromic sums'
+forumTopicId: 301752
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Find the sum of all the numbers less than 108 that are both palindromic and can 
 ```yml
 tests:
   - text: <code>euler125()</code> should return 2906969179.
-    testString: assert.strictEqual(euler125(), 2906969179, '<code>euler125()</code> should return 2906969179.');
+    testString: assert.strictEqual(euler125(), 2906969179);
 
 ```
 
@@ -54,4 +55,5 @@ euler125();
 ```js
 // solution required
 ```
+
 </section>

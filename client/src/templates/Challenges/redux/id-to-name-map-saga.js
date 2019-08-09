@@ -7,16 +7,12 @@ function* fetchIdToNameMapSaga() {
   try {
     const { data } = yield call(getIdToNameMap);
 
-    yield put(
-      fetchIdToNameMapComplete(data)
-    );
+    yield put(fetchIdToNameMapComplete(data));
   } catch (e) {
     yield put(fetchIdToNameMapError(e));
   }
 }
 
 export function createIdToNameMapSaga(types) {
-  return [
-    takeEvery(types.fetchIdToNameMap, fetchIdToNameMapSaga)
-  ];
+  return [takeEvery(types.fetchIdToNameMap, fetchIdToNameMapSaga)];
 }

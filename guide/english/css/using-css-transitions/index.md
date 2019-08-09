@@ -7,9 +7,6 @@ title: Using CSS Transitions
 
 CSS transitions let you decide which properties to animate (by listing them explicitly), when the animation will start (by setting a delay), how long the transition will last (by setting a duration), and how the transition will run (by defining a timing function, e.g. linearly or quick at the beginning, slow at the end).
 
-#### Which CSS properties can be transitioned?
-
-[CSS animated properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)
 
 #### Defining transitions
 
@@ -47,7 +44,7 @@ This example performs a four-second font size transition with a two-second delay
 }
 ```
 
-![Without CSS Transition](https://imgur.com/Yl0Bxwn)
+![Without CSS Transition](https://cdn-media-1.freecodecamp.org/imgr/Yl0Bxwn.gif)
 
 Without a transition, this element will double in width as soon as the user hovers over it. But we might want a smoother movement. We can add a transition like so:
 
@@ -60,7 +57,7 @@ Without a transition, this element will double in width as soon as the user hove
 }
 ```
 
-![With CSS Transition](https://imgur.com/wgscRNa)
+![With CSS Transition](https://cdn-media-1.freecodecamp.org/imgr/wgscRNa.gif)
 
 The `transition` CSS property is short-hand for several possible properties:
 
@@ -104,8 +101,10 @@ div {
 For more options available in this property, check out the [W3Schools page on transition-timing-function](https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp). Also there's a handy [online cubic-bezier tool](http://cubic-bezier.com).
 
 
-## More about Using CSS Transitions
+#### More about Using CSS Transitions
 
 * [W3 Schools CSS Transitions](https://www.w3schools.com/css/css3_transitions.asp)
 * [MDN CSS Transitions Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 * [All you need to know about CSS Transitions by Alex MacCaw](https://blog.alexmaccaw.com/css-transitions)
+* [CSS Transitions - Explained](https://zellwk.com/blog/css-transitions/)
+* [CSS animated properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties)

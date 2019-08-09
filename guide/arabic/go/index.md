@@ -16,9 +16,10 @@ localeTitle: اذهب
 
 #### تثبيت Golang مع البيرة:
 
- `$ brew update 
- $ brew install golang 
-` 
+```bash
+$ brew update
+$ brew install golang
+``` 
 
 #### عند التثبيت ، حاول تشغيل إصدار go لمشاهدة الإصدار المثبت من Go.
 
@@ -30,8 +31,9 @@ localeTitle: اذهب
 
 سنقوم بإضافة بعض متغيرات البيئة إلى تهيئة shell. واحد من الملفات الموجودة في bash\_profile دليل المنزل الخاص بك ، bashrc أو. zshrc (للوه يا جيش Zsh)
 
- `$ vi .bashrc 
-` 
+```bash
+$ vi .bashrc
+``` 
 
 \`
 
@@ -39,21 +41,23 @@ localeTitle: اذهب
 
 #### هذا هو في الواقع ملف .bashrc الخاص بك
 
- `export GOPATH=$HOME/go-workspace # don't forget to change your path correctly! 
- export GOROOT=/usr/local/opt/go/libexec 
- export PATH=$PATH:$GOPATH/bin 
- export PATH=$PATH:$GOROOT/bin 
-` 
+```bash
+export GOPATH=$HOME/go-workspace # don't forget to change your path correctly!
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+``` 
 
 ## \#### إنشاء مساحة العمل الخاصة بك:
 
 ##### قم بإنشاء شجرة أدلة مساحة العمل:
 
- `$ mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin 
- $GOPATH/src : Where your Go projects / programs are located 
- $GOPATH/pkg : contains every package objects 
- $GOPATH/bin : The compiled binaries home 
-` 
+```bash
+$ mkdir -p $GOPATH $GOPATH/src $GOPATH/pkg $GOPATH/bin
+$GOPATH/src : Where your Go projects / programs are located
+$GOPATH/pkg : contains every package objects
+$GOPATH/bin : The compiled binaries home
+``` 
 
 ### بداية سريعة
 
@@ -61,21 +65,24 @@ localeTitle: اذهب
 
 1.  مستودع استنساخ سبائك
 
- `git clone https://github.com/olliecoleman/alloy 
- cd alloy 
-` 
+```
+git clone https://github.com/olliecoleman/alloy
+cd alloy
+``` 
 
 2.  تثبيت التبعيات
 
- `glide install 
- npm install 
-` 
+```
+glide install
+npm install
+``` 
 
 3.  ابدأ خادم التطوير
 
- `go install 
- alloy dev 
-` 
+```
+go install
+alloy dev
+``` 
 
 4.  زيارة الموقع على `http://localhost:1212`
 

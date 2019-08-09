@@ -96,6 +96,10 @@ x = Foo()
 x.__privatenum  # gives following error : 'Foo' object has no attribute '__privatenum'
 ```
 
+#### Delete Objects:
+
+Objectes can be deleted by using ```del``` keyword.
+
 ## Simple class and Object Implementation
 ```python
 class Friend:
@@ -109,5 +113,6 @@ class Friend:
 
 fr1 = Friend("Nilesh","Bharti","Bihar")
 fr1.show()
+del fr1
 ```
 

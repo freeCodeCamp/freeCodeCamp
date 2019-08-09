@@ -7,14 +7,14 @@ import { createAsyncTypes } from '../../../utils/createTypes';
 import { createPoly } from '../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
-import executeChallengeEpic from './execute-challenge-epic';
 import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
 import codeStorageEpic from './code-storage-epic';
-import currentChallengeEpic from './current-challenge-epic';
 
 import { createIdToNameMapSaga } from './id-to-name-map-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
+import { createCurrentChallengeSaga } from './current-challenge-saga';
+import { challengeTypes } from '../../../../utils/challengeTypes';
 
 export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
@@ -24,12 +24,15 @@ const initialState = {
   challengeIdToNameMap: {},
   challengeMeta: {
     id: '',
-    nextChallengePath: '/'
+    nextChallengePath: '/',
+    prevChallengePath: '/',
+    introPath: '',
+    challengeType: -1
   },
   challengeTests: [],
   consoleOut: '',
   isCodeLocked: false,
-  isJSEnabled: true,
+  isBuildEnabled: true,
   modal: {
     completion: false,
     help: false,
@@ -47,6 +50,7 @@ export const types = createTypes(
     'initTests',
     'initConsole',
     'initLogs',
+    'updateBackendFormValues',
     'updateConsole',
     'updateChallengeMeta',
     'updateFile',
@@ -60,19 +64,21 @@ export const types = createTypes(
 
     'lockCode',
     'unlockCode',
-    'disableJSOnError',
+    'disableBuildOnError',
     'storedCodeFound',
     'noStoredCodeFound',
 
     'closeModal',
     'openModal',
 
+    'previewMounted',
     'challengeMounted',
     'checkChallenge',
     'executeChallenge',
     'resetChallenge',
     'submitChallenge',
-    'submitComplete',
+
+    'moveToTab',
 
     ...createAsyncTypes('fetchIdToNameMap')
   ],
@@ -84,14 +90,13 @@ export const epics = [
   codeLockEpic,
   completionEpic,
   createQuestionEpic,
-  executeChallengeEpic,
-  codeStorageEpic,
-  currentChallengeEpic
+  codeStorageEpic
 ];
 
 export const sagas = [
   ...createIdToNameMapSaga(types),
-  ...createExecuteChallengeSaga(types)
+  ...createExecuteChallengeSaga(types),
+  ...createCurrentChallengeSaga(types)
 ];
 
 export const createFiles = createAction(types.createFiles, challengeFiles =>
@@ -122,6 +127,9 @@ export const updateTests = createAction(types.updateTests);
 
 export const initConsole = createAction(types.initConsole);
 export const initLogs = createAction(types.initLogs);
+export const updateBackendFormValues = createAction(
+  types.updateBackendFormValues
+);
 export const updateChallengeMeta = createAction(types.updateChallengeMeta);
 export const updateFile = createAction(types.updateFile);
 export const updateConsole = createAction(types.updateConsole);
@@ -136,20 +144,23 @@ export const logsToConsole = createAction(types.logsToConsole);
 
 export const lockCode = createAction(types.lockCode);
 export const unlockCode = createAction(types.unlockCode);
-export const disableJSOnError = createAction(types.disableJSOnError);
+export const disableBuildOnError = createAction(types.disableBuildOnError);
 export const storedCodeFound = createAction(types.storedCodeFound);
 export const noStoredCodeFound = createAction(types.noStoredCodeFound);
 
 export const closeModal = createAction(types.closeModal);
 export const openModal = createAction(types.openModal);
 
+export const previewMounted = createAction(types.previewMounted);
 export const challengeMounted = createAction(types.challengeMounted);
 export const checkChallenge = createAction(types.checkChallenge);
 export const executeChallenge = createAction(types.executeChallenge);
 export const resetChallenge = createAction(types.resetChallenge);
 export const submitChallenge = createAction(types.submitChallenge);
-export const submitComplete = createAction(types.submitComplete);
 
+export const moveToTab = createAction(types.moveToTab);
+
+export const currentTabSelector = state => state[ns].currentTab;
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeIdToNameMapSelector = state =>
   state[ns].challengeIdToNameMap;
@@ -162,12 +173,60 @@ export const isCompletionModalOpenSelector = state =>
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
-export const isJSEnabledSelector = state => state[ns].isJSEnabled;
+export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 
-export const backendFormValuesSelector = state => state.form[backendNS];
+export const backendFormValuesSelector = state =>
+  state[ns].backendFormValues || {};
 export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
+
+export const challengeDataSelector = state => {
+  const { challengeType } = challengeMetaSelector(state);
+  let challengeData = { challengeType };
+  if (
+    challengeType === challengeTypes.js ||
+    challengeType === challengeTypes.bonfire
+  ) {
+    challengeData = {
+      ...challengeData,
+      files: challengeFilesSelector(state)
+    };
+  } else if (challengeType === challengeTypes.backend) {
+    const { solution: url = {} } = backendFormValuesSelector(state);
+    challengeData = {
+      ...challengeData,
+      url
+    };
+  } else if (challengeType === challengeTypes.backEndProject) {
+    const values = projectFormValuesSelector(state);
+    const { solution: url } = values;
+    challengeData = {
+      ...challengeData,
+      ...values,
+      url
+    };
+  } else if (challengeType === challengeTypes.frontEndProject) {
+    challengeData = {
+      ...challengeData,
+      ...projectFormValuesSelector(state)
+    };
+  } else if (
+    challengeType === challengeTypes.html ||
+    challengeType === challengeTypes.modern
+  ) {
+    const { required = [], template = '' } = challengeMetaSelector(state);
+    challengeData = {
+      ...challengeData,
+      files: challengeFilesSelector(state),
+      required,
+      template
+    };
+  }
+  return challengeData;
+};
+
+const MAX_LOGS_SIZE = 64 * 1024;
 
 export const reducer = handleActions(
   {
@@ -213,19 +272,17 @@ export const reducer = handleActions(
     }),
     [types.initLogs]: state => ({
       ...state,
-      logsOut: []
+      logsOut: ''
     }),
     [types.updateLogs]: (state, { payload }) => ({
       ...state,
-      logsOut: [...state.logsOut, payload]
+      logsOut: (state.logsOut + '\n' + payload).slice(-MAX_LOGS_SIZE)
     }),
     [types.logsToConsole]: (state, { payload }) => ({
       ...state,
       consoleOut:
         state.consoleOut +
-        (state.logsOut.length
-          ? '\n' + payload + '\n' + state.logsOut.join('\n')
-          : '')
+        (state.logsOut ? '\n' + payload + '\n' + state.logsOut : '')
     }),
     [types.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
@@ -234,6 +291,7 @@ export const reducer = handleActions(
 
     [types.resetChallenge]: state => ({
       ...state,
+      currentTab: 2,
       challengeFiles: {
         ...Object.keys(state.challengeFiles)
           .map(key => state.challengeFiles[key])
@@ -254,6 +312,10 @@ export const reducer = handleActions(
       })),
       consoleOut: ''
     }),
+    [types.updateBackendFormValues]: (state, { payload }) => ({
+      ...state,
+      backendFormValues: payload
+    }),
     [types.updateProjectFormValues]: (state, { payload }) => ({
       ...state,
       projectFormValues: payload
@@ -265,13 +327,13 @@ export const reducer = handleActions(
     }),
     [types.unlockCode]: state => ({
       ...state,
-      isJSEnabled: true,
+      isBuildEnabled: true,
       isCodeLocked: false
     }),
-    [types.disableJSOnError]: (state, { payload }) => ({
+    [types.disableBuildOnError]: (state, { payload }) => ({
       ...state,
       consoleOut: state.consoleOut + ' \n' + payload,
-      isJSEnabled: false
+      isBuildEnabled: false
     }),
 
     [types.updateSuccessMessage]: (state, { payload }) => ({
@@ -291,6 +353,14 @@ export const reducer = handleActions(
         ...state.modal,
         [payload]: true
       }
+    }),
+    [types.moveToTab]: (state, { payload }) => ({
+      ...state,
+      currentTab: payload
+    }),
+    [types.executeChallenge]: state => ({
+      ...state,
+      currentTab: 3
     })
   },
   initialState

@@ -1,7 +1,7 @@
 ---
 title: Gray code
 ---
-## Gray code
+# Gray code
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/gray-code/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

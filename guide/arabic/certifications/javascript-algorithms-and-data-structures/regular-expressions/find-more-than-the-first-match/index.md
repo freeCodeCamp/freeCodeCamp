@@ -18,7 +18,8 @@ localeTitle: العثور على أكثر من المباراة الأولى
 
 ## حل
 
- `let twinkleStar = "Twinkle, twinkle, little star"; 
- let starRegex = /twinkle/gi; 
- let result = twinkleStar.match(starRegex); 
-`
+```javascript
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+let result = twinkleStar.match(starRegex);
+```

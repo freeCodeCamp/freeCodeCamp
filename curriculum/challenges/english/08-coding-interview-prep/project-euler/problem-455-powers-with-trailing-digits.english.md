@@ -2,6 +2,7 @@
 id: 5900f5331000cf542c510046
 challengeType: 5
 title: 'Problem 455: Powers With Trailing Digits'
+forumTopicId: 302129
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find Σf(n), 2 ≤ n ≤ 106.
 ```yml
 tests:
   - text: <code>euler455()</code> should return 450186511399999.
-    testString: assert.strictEqual(euler455(), 450186511399999, '<code>euler455()</code> should return 450186511399999.');
+    testString: assert.strictEqual(euler455(), 450186511399999);
 
 ```
 
@@ -60,4 +61,5 @@ euler455();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,7 +2,7 @@
 title: Abstract Classes in Java
 ---
 
-Lets discuss abstract classes. Before diving into this tutorial it is better that you have understood concepts of classes
+Let's discuss abstract classes. Before diving into this tutorial it is better that you have understood concepts of classes
 and inheritance.
 
 Abstract classes are classes that can be subclassed (i.e. extended) but cannot be instantiated. You can think of them as a **class version** of interfaces, or as an interface with actual code attached to the methods. 
@@ -46,7 +46,7 @@ Car carObj = new Car();  // valid
 Motorcycle mBikeObj = new Motorcycle();  // valid
 ```
 
-If the child class doesn't implement the abstract methods of the father, it becomes an abstract class. 
+If the child class doesn't implement the abstract methods of the parent, it becomes an abstract class. An abstract class can also contain constructors. A constructor of abstract class is called when an instance of a inherited class is created.
 
 #### More Information
 - [Oracle Java Docs - Abstract Classes](https://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.1.1.1)

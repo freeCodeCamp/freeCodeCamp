@@ -9,13 +9,14 @@
 }
 
 .notfound-page-wrapper img {
-  max-width: 380px;
+  width: 380px;
   margin-bottom: 1rem;
 }
 
 .quote-wrapper {
   background-color: #eee;
   padding: 20px 20px 20px 42px;
+  border-width: 0;
   border-radius: 5px;
   position: relative;
   max-width: 980px;

@@ -53,8 +53,7 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/734)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie uma variável para armazenar os _resultados_ como uma matriz.
@@ -82,8 +81,7 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/733)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   `Array.prototype.map()` todos os itens dentro da matriz principal para uma nova matriz usando `Array.prototype.map()` e retornamos essa matriz como o resultado final
@@ -106,8 +104,7 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/17)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 TL; DR: Nós construímos uma função de retorno de chamada especial (usando o `Function.bind` método), que funciona como `Math.max` mas também tem `Function.prototype.apply` capacidade de tomar matrizes como seus argumentos ![:smiley:](https://forum.freecodecamp.com/images/emoji/emoji_one/smiley.png?v=3 ":risonho:")

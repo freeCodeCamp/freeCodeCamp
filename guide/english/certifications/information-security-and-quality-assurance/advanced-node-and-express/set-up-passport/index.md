@@ -1,7 +1,7 @@
 ---
 title: Set up Passport
 ---
-## Set up Passport
+# Set up Passport
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/set-up-passport/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
