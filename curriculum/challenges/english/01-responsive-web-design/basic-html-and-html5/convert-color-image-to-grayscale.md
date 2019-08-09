@@ -1,27 +1,22 @@
 ---
 id: 5d383f6f2cd33e8211fad377
-title: Enter in openCV
+title: Convert color image to grayscale
 challengeType: 0
 videoUrl: 
 ---
 
 ## Description
 <section id='description'>
-Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.
-First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>code editor</code>, which is embedded into this web page.
-Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.
-Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.
-Opening tags look like this:
-<code>&#60;h1&#62;</code>
-Closing tags look like this:
-<code>&#60;/h1&#62;</code>
-The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.
-Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.
+There are more than 150 color-space conversion methods available in OpenCV.js. In this lesson we will look into the most widely used one: RGBA to Gray.
+The function converts an input image from one color space to another. In case of a transformation to-from RGBA color space, the order of the channels should be specified explicitly. Note that the default color format in OpenCV.js is often referred to as RGBA.
+We use the function: <code>cv.cvtColor (src, dst, code) </code> where <code>src</code> is an input image,<code>dst</code> - destination one and <code>code</code> is a color conversion code.
+Convert color image to grayscale is a great way to take up less memory, because  grayscale image consists of a single color. That means total size of image in bytes is 3 times less than RGB.
 </section>
 
 ## Instructions
 <section id='instructions'>
-I don't know what is happaning
+You should use <code>cv.cvtColor()</code> to conver an image to another color spase.
+Also we need to use <code>cv.COLOR_RGBA2GRAY</code> to conver image in shades of gray.
 </section>
 
 ## Tests
@@ -52,7 +47,7 @@ tests:
   function draw() {
     let src = cv.imread("imageSrc");
     let dst = new cv.Mat();  
-    cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+
     cv.imshow('canvasOutput', dst);
     src.delete();
     dst.delete();
@@ -62,10 +57,13 @@ tests:
 
 <h2>OpenCV.js</h2>
 <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" />
-<p></p>
+<p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
+<script async src="https://docs.opencv.org/master/opencv.js" 
+        onload='cv["onRuntimeInitialized"]=()=> { draw() }' 
+        type="text/javascript">
+</script>
 ```
 </div>
 </section>
@@ -89,9 +87,12 @@ tests:
 
 <h2>OpenCV.js</h2>
 <img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat" />
-<p></p>
+<p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
+<script async src="https://docs.opencv.org/master/opencv.js"
+        onload='cv["onRuntimeInitialized"]=()=> { draw() }' 
+        type="text/javascript">
+</script>
 ```
 </section>
