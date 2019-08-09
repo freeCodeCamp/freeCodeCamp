@@ -340,7 +340,7 @@ describe('boot/challenge', () => {
     const mockHomeLocation = 'https://www.example.com';
     const mockLearnUrl = `${mockHomeLocation}/learn`;
 
-    it('redircts to the learn base url for non-users', async done => {
+    it('redirects to the learn base url for non-users', async done => {
       const redirectToCurrentChallenge = createRedirectToCurrentChallenge(
         () => {},
         { _homeLocation: mockHomeLocation, _learnUrl: mockLearnUrl }
