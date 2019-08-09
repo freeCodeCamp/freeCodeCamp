@@ -90,7 +90,7 @@ You can declare, initialize and assign values in the array all at once by using 
 or simply:
 
 ```csharp
-int [] nameOfArray = new nameOfArray[4] {2,9,56,1280};
+int [] nameOfArray = new int[4] {2,9,56,1280};
 int [] nameOfSecondArray = nameOfArray;
 ```
 
