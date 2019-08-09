@@ -25,3 +25,8 @@ Alguns dos algoritmos gráficos mais comuns são:
 [Algoritmo de Dijkstra](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/portuguese/algorithms/graph-algorithms/dijkstra/index.md)
 
 [Algoritmo de Floyd Warshall](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/portuguese/algorithms/graph-algorithms/floyd-warshall-algorithm/index.md)
+
+#### Mais Informações
+
+- [Graph Theory - Wikipedia](https://en.wikipedia.org/wiki/Graph_theory "Graph theory Wiki")
+- [Basic Graph Algorithms](https://web.stanford.edu/class/cs97si/06-basic-graph-algorithms.pdf) 

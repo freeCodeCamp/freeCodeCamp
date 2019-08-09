@@ -4,7 +4,7 @@ localeTitle: While Loop
 ---
 ## While Loops
 
-Um `while` ciclo executa instruções dentro do ciclo enquanto que a condição for satisfeita laçadas.
+Um laço (ou loop) `while` executa instruções dentro do laço enquanto que a condição definida estiver satisfeita.
 
 ### Sintaxe:
 
@@ -16,7 +16,7 @@ $x = 0;
  } 
 ```
 
-**Nota:** O código do bloco deve ter uma declaração que altere ou aumente a condição. Caso contrário, um loop infinito poderia resultar.
+**Nota:** O código do bloco deve ter uma declaração que altere ou incremente a condição. Caso contrário, pode resultar em um laço infinito.
 
 ### Mais Informações:
 
