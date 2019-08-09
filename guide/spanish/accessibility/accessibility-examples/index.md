@@ -30,9 +30,9 @@ Para permitir que los usuarios no videntes se salten al contenido principal de u
  </main> 
 ```
 
-3.  Oculta el enlace "omitir navegación" por defecto. Esto garantiza que el enlace solo sea visible para los usuarios videntes cuando el enlace está enfocado.
+3.  Oculte el enlace "omitir navegación" por defecto. Esto garantiza que el enlace solo sea visible para los usuarios videntes cuando el enlace está enfocado.
 
-*   Crea una clase para el enlace que se puede diseñar con CSS. En mi ejemplo he añadido la clase de `skip-link` .
+*   Cree una clase para el enlace que se puede diseñar con CSS. En mi ejemplo he añadido la clase de `skip-link` .
 
 ```css
 .skip-link { 
