@@ -2,7 +2,6 @@
 id: 587d778f367417b2b2512aae
 title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Give Links Meaning by Using Descriptive Link Text
 ---
@@ -35,9 +34,17 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<body>,  <header>,    <h1>Deep Thoughts with Master Camper Cat</h1>,  </header>,  <article>,    <h2>Defeating your Foe: the Red Dot is Ours!</h2>,    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click here</a> for information about batteries</p>,  </article>,</body>
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <article>
+    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click here</a> for information about batteries</p>
+  </article>
+</body>
 ```
 
 

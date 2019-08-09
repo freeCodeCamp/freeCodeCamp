@@ -2,7 +2,6 @@
 id: 587d778f367417b2b2512aad
 title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 ---
@@ -34,9 +33,24 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<head>,  <style>,  button {,    color: #33FF33;,    background-color: #FFFF33;,    font-size: 14px;,    padding: 10px;,  },  </style>,</head>,<body>,  <header>,    <h1>Danger!</h1>,  </header>,  <button>Delete Internet</button>,</body>
+<head>
+  <style>
+  button {
+    color: #33FF33;
+    background-color: #FFFF33;
+    font-size: 14px;
+    padding: 10px;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Danger!</h1>
+  </header>
+  <button>Delete Internet</button>
+</body>
 ```
 
 

@@ -2,7 +2,6 @@
 id: 587d774e367417b2b2512a9f
 title: Jump Straight to the Content Using the main Element
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Jump Straight to the Content Using the main Element
 ---
@@ -37,9 +36,15 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<header>,  <h1>Weapons of the Ninja</h1>,</header>,,,,<footer></footer>
+<header>
+  <h1>Weapons of the Ninja</h1>
+</header>
+
+
+
+<footer></footer>
 ```
 
 

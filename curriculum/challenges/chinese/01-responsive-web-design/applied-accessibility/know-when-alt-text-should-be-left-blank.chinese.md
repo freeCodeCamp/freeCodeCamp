@@ -2,7 +2,6 @@
 id: 587d774c367417b2b2512a9d
 title: Know When Alt Text Should be Left Blank
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Know When Alt Text Should be Left Blank
 ---
@@ -38,9 +37,20 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<h1>Deep Thoughts with Master Camper Cat</h1>,<article>,  <h2>Defeating your Foe: the Red Dot is Ours!</h2>,  <p>To Come...</p>,</article>,,<img src="samuraiSwords.jpeg">,,<article>,  <h2>Is Chuck Norris a Cat Person?</h2>,  <p>To Come...</p>,</article>
+<h1>Deep Thoughts with Master Camper Cat</h1>
+<article>
+  <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+  <p>To Come...</p>
+</article>
+
+<img src="samuraiSwords.jpeg">
+
+<article>
+  <h2>Is Chuck Norris a Cat Person?</h2>
+  <p>To Come...</p>
+</article>
 ```
 
 

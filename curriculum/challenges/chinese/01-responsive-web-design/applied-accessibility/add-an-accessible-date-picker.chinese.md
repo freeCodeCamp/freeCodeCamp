@@ -2,7 +2,6 @@
 id: 587d778b367417b2b2512aa8
 title: Add an Accessible Date Picker
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Add an Accessible Date Picker
 ---
@@ -42,9 +41,31 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<body>,  <header>,    <h1>Tournaments</h1>,  </header>,  <main>,    <section>,      <h2>Mortal Kombat Tournament Survey</h2>,      <form>,        <p>Tell us the best date for the competition</p>,        <label for="pickdate">Preferred Date:</label>,        ,        <!-- Add your code below this line -->,        ,        ,        ,        <!-- Add your code above this line -->,        ,        <input type="submit" name="submit" value="Submit">,      </form>,    </section>,  </main>,  <footer>&copy; 2016 Camper Cat</footer>,</body>
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Mortal Kombat Tournament Survey</h2>
+      <form>
+        <p>Tell us the best date for the competition</p>
+        <label for="pickdate">Preferred Date:</label>
+        
+        <!-- Add your code below this line -->
+        
+        
+        
+        <!-- Add your code above this line -->
+        
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+  <footer>&copy; 2016 Camper Cat</footer>
+</body>
 ```
 
 

@@ -2,7 +2,6 @@
 id: 587d774c367417b2b2512a9c
 title: Add a Text Alternative to Images for Visually Impaired Accessibility
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Add a Text Alternative to Images for Visually Impaired Accessibility
 ---
@@ -35,7 +34,7 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
 <img src="doingKarateWow.jpeg">
 ```

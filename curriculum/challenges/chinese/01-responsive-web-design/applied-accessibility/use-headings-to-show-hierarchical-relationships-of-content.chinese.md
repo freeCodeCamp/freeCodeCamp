@@ -2,7 +2,6 @@
 id: 587d774d367417b2b2512a9e
 title: Use Headings to Show Hierarchical Relationships of Content
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Use Headings to Show Hierarchical Relationships of Content
 ---
@@ -39,9 +38,22 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<h1>How to Become a Ninja</h1>,<main>,  <h2>Learn the Art of Moving Stealthily</h2>,  <h5>How to Hide in Plain Sight</h5>,  <h5>How to Climb a Wall</h5>,,  <h2>Learn the Art of Battle</h2>,  <h5>How to Strengthen your Body</h5>,  <h5>How to Fight like a Ninja</h5>,,  <h2>Learn the Art of Living with Honor</h2>,  <h5>How to Breathe Properly</h5>,  <h5>How to Simplify your Life</h5>,</main>
+<h1>How to Become a Ninja</h1>
+<main>
+  <h2>Learn the Art of Moving Stealthily</h2>
+  <h5>How to Hide in Plain Sight</h5>
+  <h5>How to Climb a Wall</h5>
+
+  <h2>Learn the Art of Battle</h2>
+  <h5>How to Strengthen your Body</h5>
+  <h5>How to Fight like a Ninja</h5>
+
+  <h2>Learn the Art of Living with Honor</h2>
+  <h5>How to Breathe Properly</h5>
+  <h5>How to Simplify your Life</h5>
+</main>
 ```
 
 

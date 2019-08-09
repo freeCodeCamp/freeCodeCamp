@@ -2,7 +2,6 @@
 id: 587d778c367417b2b2512aa9
 title: Standardize Times with the HTML5 datetime Attribute
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Standardize Times with the HTML5 datetime Attribute
 ---
@@ -40,9 +39,39 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<body>,  <header>,    <h1>Tournaments</h1>,  </header>,  <article>,    <h2>Mortal Kombat Tournament Survey Results</h2>,    ,    <!-- Add your code below this line -->,    ,    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>,    ,    <!-- Add your code above this line -->,    ,    <section>,      <h3>Comments:</h3>,      <article>,        <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>,        <p>Johnny Cage better be there, I'll finish him!</p>,      </article>,      <article>,        <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>,        <p>Wow, much combat, so mortal.</p>,      </article>,      <article>,        <p>Posted by: The Grim Reaper on <time datetime="2016-08-16T00:00Z">August 16<sup>th</sup></time></p>,        <p>Looks like I'll be busy that day.</p>,      </article>,    </section>,  </article>,  <footer>&copy; 2016 Camper Cat</footer>,</body>
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <article>
+    <h2>Mortal Kombat Tournament Survey Results</h2>
+    
+    <!-- Add your code below this line -->
+    
+    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>
+    
+    <!-- Add your code above this line -->
+    
+    <section>
+      <h3>Comments:</h3>
+      <article>
+        <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
+        <p>Johnny Cage better be there, I'll finish him!</p>
+      </article>
+      <article>
+        <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
+        <p>Wow, much combat, so mortal.</p>
+      </article>
+      <article>
+        <p>Posted by: The Grim Reaper on <time datetime="2016-08-16T00:00Z">August 16<sup>th</sup></time></p>
+        <p>Looks like I'll be busy that day.</p>
+      </article>
+    </section>
+  </article>
+  <footer>&copy; 2016 Camper Cat</footer>
+</body>
 ```
 
 

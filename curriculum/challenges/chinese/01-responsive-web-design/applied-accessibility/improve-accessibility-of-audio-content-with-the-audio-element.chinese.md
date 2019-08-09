@@ -2,7 +2,6 @@
 id: 587d7789367417b2b2512aa4
 title: Improve Accessibility of Audio Content with the audio Element
 challengeType: 0
-
 videoUrl: ''
 localeTitle: Improve Accessibility of Audio Content with the audio Element
 ---
@@ -49,9 +48,19 @@ tests:
 ## Challenge Seed
 <section id='challengeSeed'>
 
-    <div id='html-seed'>
+<div id='html-seed'>
 ```html
-<body>,  <header>,    <h1>Real Coding Ninjas</h1>,  </header>,  <main>,    <p>A sound clip of Zersiax's screen reader in action.</p>,    ,    ,    ,  </main>,</body>
+<body>
+  <header>
+    <h1>Real Coding Ninjas</h1>
+  </header>
+  <main>
+    <p>A sound clip of Zersiax's screen reader in action.</p>
+    
+    
+    
+  </main>
+</body>
 ```
 
 
