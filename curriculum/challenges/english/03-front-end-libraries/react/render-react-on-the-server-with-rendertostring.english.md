@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403618d
 title: Render React on the Server with renderToString
 challengeType: 6
 isRequired: false
+forumTopicId: 301407
 ---
 
 ## Description
@@ -22,7 +23,7 @@ The <code>renderToString()</code> method is provided on <code>ReactDOMServer</co
 ```yml
 tests:
   - text: The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.
-    testString: 'getUserInput => assert(getUserInput("index").replace(/ /g,"").includes("ReactDOMServer.renderToString(<App/>)") && Enzyme.mount(React.createElement(App)).children().name() === "div", "The <code>App</code> component should render to a string using <code>ReactDOMServer.renderToString</code>.");'
+    testString: getUserInput => assert(getUserInput('index').replace(/ /g,'').includes('ReactDOMServer.renderToString(<App/>)') && Enzyme.mount(React.createElement(App)).children().name() === 'div');
 
 ```
 
@@ -63,7 +64,7 @@ var ReactDOMServer = { renderToString(x) { return null; } };
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 </div>

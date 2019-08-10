@@ -14,7 +14,7 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
 * `visible`: This is the default value of the property. Content is not clipped when it's bigger than the box.
 * `hidden`: Overflowing content will be hidden.
 * `scroll`: Similar to hidden, but users will be able to scroll through the hidden content.
-* `auto`: If the content proceeds outside its box, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
+* `auto`: If the content proceeds outside its box, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content. Behaviour can vary according to the browser's user-agent.
 * `initial`: Uses the default value which is visible.
 * `inherit`: Sets the overflow to the value of its parent element.
 
@@ -24,42 +24,64 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
 ```css
 .box-element { overflow: visible; }
 ```
-![Example Image](https://s26.postimg.org/gweu6g5yh/1-vissible.png)
+![Example Image](https://i.gyazo.com/e742da4b965543d951185c6ffadb97d9.png)
 
 ### Hidden:
 ```css
 .box-element { overflow: hidden; }
 ```
-![Example Image](https://s26.postimg.org/l49mf77e1/2-hidden.png)
+![Example Image](https://i.gyazo.com/cee767d9d8f89f4d6dd3fd7de7858fd9.png)
 
 ### Scroll:
 ```css
 .box-element { overflow: scroll; }
 ```
-![Example Image](https://s26.postimg.org/d8z30dxrd/3-scroll.png)
+![Example Image](https://i.gyazo.com/6c41a51c5a0398fe74dbb5bd2f08a1fd.png)
 
 ### Auto:
 ```css
 .box-element { overflow: auto; }
 ```
-![Example Image](https://s26.postimg.org/z5q7ei0bt/4-autoank.png)
+![Example Image](https://i.gyazo.com/173a13fd618d7946fceabcf35f33c458.png)
 
 ## overflow-x and overflow-y
+Different overflow properties can be set for content overflowing the width and height of an element.
 
-* `overflow-x`: Allows the user to scroll through the content that extends beyond the height of the box element.
-* `overflow-y`: Allows the user to scroll through the content that extends beyond the width of the box.
+* `overflow-x`: Specify overflow behaviour for left and right edges.
+* `overflow-y`: Specify overflow behaviour for top and bottom edges.
 
 ```css
-  .box-element {
-    overflow-x: scroll;
-    overflow-y: auto;
-  }
+.box-element {
+  overflow-x: scroll;
+  overflow-y: auto;
+}
 ```
-And the `.box-element` will look like this:
-![Example Image](https://s26.postimg.org/ff2kmdfzd/5-_Xand_Y.png)
+![Example Image](https://user-images.githubusercontent.com/34807532/49148596-c8a2f200-f32d-11e8-9a2d-21b08b794d14.png)
 
-If the content overflows the Y-axis, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
+If the content overflows the y-axis, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
+
+## text-overflow
+
+* the `text-overflow` property the overflowed content should be displayed/signaled to the user
+* both of the following properties are required for text-overflow:
+ ``` css
+  white-space: nowrap;
+  overflow:hidden;
+  ```
+ * values: 
+ 
+ `clip` - default value, the text is not accessible and is clipped
+ 
+ `ellipsis` - it renders an ellipsis ("...")
+ 
+ `string` - render the given string
+ 
+ `initial` - sets the property to its default value
+ 
+ `inherit` - inherits this property from its parent element
+ 
 
 #### More Information:
 
 CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/o/overflow/' target='_blank' rel='nofollow'>overflow</a>
+W3Schools: <a href='https://www.w3schools.com/css/css_overflow.asp' target='_blank' rel='nofollow'>image source</a>

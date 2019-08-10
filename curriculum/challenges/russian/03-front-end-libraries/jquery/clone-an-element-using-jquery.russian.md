@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Клонирование элемента с помощью jQuery
 ---
 
-## Description
+## Описание
 <section id="description"> В дополнение к движущимся элементам вы также можете копировать их из одного места в другое. jQuery имеет функцию <code>clone()</code> которая делает копию элемента. Например, если мы хотим скопировать <code>target2</code> из нашей <code>left-well</code> <code>target2</code> в нашу <code>right-well</code> <code>target2</code> , мы будем использовать: <code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code> Вы заметили, что это связано с объединением двух функций jQuery? Это называется <code>function chaining</code> и это удобный способ добиться успеха с помощью jQuery. <code>target5</code> свой элемент <code>target5</code> и добавьте его в <code>left-well</code> <code>target5</code> . </section>
 
-## Instructions
+## Инструкции
 <section id="instructions">
 </section>
 
-## Tests
+## Тестирование
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Задача
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -45,10 +45,10 @@ tests:
   });
 </script>
 
-<!-- Only change code above this line. -->
+<!-- Изменяйте исходный код только выше этой линии.-->
 
 <div class="container-fluid">
-  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <h3 class="text-primary text-center">jQuery Песочница</h3>
   <div class="row">
     <div class="col-xs-6">
       <h4>#left-well</h4>
@@ -77,7 +77,7 @@ tests:
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js

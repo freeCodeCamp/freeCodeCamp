@@ -37,7 +37,6 @@ localeTitle: Menor múltiplo
  } 
 ```
 
-*   [Executar código](https://repl.it/@ezioda004/Problem-5-Smallest-multiple)
 
 ### Referências:
 

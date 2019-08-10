@@ -1,5 +1,5 @@
 ---
-title: Special subset sums - testing
+title: 'Problem 105: Special subset sums: testing'
 ---
 ## Problem 105: Special subset sums: testing
 

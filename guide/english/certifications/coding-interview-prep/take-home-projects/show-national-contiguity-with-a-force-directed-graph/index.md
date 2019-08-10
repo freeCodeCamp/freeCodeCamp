@@ -1,7 +1,7 @@
 ---
 title: Show National Contiguity with a Force Directed Graph
 ---
-## Show National Contiguity with a Force Directed Graph
+# Show National Contiguity with a Force Directed Graph
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/show-national-contiguity-with-a-force-directed-graph/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

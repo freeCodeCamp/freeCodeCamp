@@ -4,7 +4,7 @@ title: Dropdowns
 ## Dropdowns
 
 Bootstrap provides Dropdowns as a plugin for displaying lists of links.
-The dropdown is a button which toggles displaying a list of links.
+A dropdown is a button which toggles displaying a list of links.
 
 Bootstrap’s dropdowns are designed to be generic and applicable to a variety of situations. For instance, it is possible to create dropdowns that contain search fields or login forms.
 
@@ -34,5 +34,5 @@ The *.caret* class creates a caret arrow icon (&#9660;), which indicates that th
 Add the *.dropdown-menu* class to a unordered list element to actually build the dropdown menu.
 
 #### More Information:
-https://getbootstrap.com/docs/4.0/components/dropdowns/
+- [Bootstrap Documentation](https://getbootstrap.com/docs/4.1/components/dropdowns/)
 

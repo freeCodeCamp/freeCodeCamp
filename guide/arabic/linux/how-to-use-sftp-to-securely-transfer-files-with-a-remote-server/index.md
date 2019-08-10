@@ -10,46 +10,54 @@ localeTitle: كيفية استخدام SFTP لنقل الملفات بشكل آ�
 
 إذا لم تكن قد قمت بذلك بالفعل ، اختبر قدرتك على SSH في الخادم. تستخدم SFTP بروتوكول Secure Shell (SSH) ، لذلك إذا كنت غير قادر على SSH ، فلن تتمكن على الأرجح من SFTP.
 
- `ssh your_username@hostname_or_ip_address 
-` 
+```unix
+ssh your_username@hostname_or_ip_address
+``` 
 
 ### بدء جلسة SFTP
 
 يستخدم هذا نفس بنية SSH ويفتح جلسة يمكنك فيها نقل الملفات.
 
- `sftp your_username@hostname_or_ip_address 
-` 
+```unix
+sftp your_username@hostname_or_ip_address
+``` 
 
 لإدراج أوامر مفيدة:
 
- `help 
-` 
+```unix
+help
+``` 
 
 ### نقل الملفات والمجلدات
 
 لتنزيل ملف:
 
- `get <filename> 
-` 
+```unix
+get <filename>
+``` 
 
 لتنزيل مجلد ومحتوياته ، استخدم علامة "-r" (كما يعمل للتحميل):
 
- `get -r <foldername> 
-` 
+```unix
+get -r <foldername>
+``` 
 
 لتحميل ملف:
 
- `put <filename> 
-` 
+```unix
+put <filename>
+``` 
 
 ### تغيير المجلدات
 
 لتغيير المجلد المحلي:
 
- `lcd <path/to/folder> 
-` 
+```unix
+lcd <path/to/folder>
+``` 
 
 لتغيير المجلد البعيد:
 
- `cd <path/to/folder> 
-`
+```unix
+cd <path/to/folder>
+```

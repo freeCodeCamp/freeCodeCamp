@@ -16,27 +16,30 @@ Swift هي لغة برمجة [مفتوحة المصدر](https://en.wikipedia.or
 
 للإعلان عن متغير في Swift ، ببساطة استخدم var متبوعًا باسم المتغير الخاص بك.
 
- `var x = 6 
- var name = "Bob" 
- var boole = true 
- 
- x = 3 
-` 
+```Swift
+var x = 6
+var name = "Bob"
+var boole = true
+
+x = 3
+``` 
 
 تشبه الثوابت المتغيرات ، لكنها لا يمكن أن تتغير في القيمة بعد الإنشاء.
 
- `let x = 6 
- let name = "Bob" 
- let boole = true 
-` 
+```Swift
+let x = 6
+let name = "Bob"
+let boole = true
+``` 
 
 لطباعة أي شيء إلى الإخراج القياسي ، ما عليك سوى استخدام print () ووضع الإخراج في الأقواس.
 
- `let x = "World" 
- 
- print("Hello ") 
- print(x) 
-` 
+```Swift
+let x = "World"
+
+print("Hello ")
+print(x)
+``` 
 
 # الإصدار
 

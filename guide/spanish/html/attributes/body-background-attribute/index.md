@@ -12,7 +12,7 @@ Sintaxis:
 
 Atributo:
 
-`background - URL for background image`
+`background - URL de la imagen de fondo`
 
 Ejemplo:
 

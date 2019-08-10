@@ -8,24 +8,26 @@ localeTitle: التعامل مع الملف
 
 إذا كنت قد قمت بكتابة برنامج C `helloworld` قبل ، فقد قمت بالفعل بإدخال ملف IO في C! تهانينا! : تادا:
 
- `/* A simple hello world in C. */ 
- #include <stdlib.h> 
- 
- // Import IO functions. 
- #include <stdio.h> 
- 
- int main() { 
-    // This printf is where all the file IO magic happens! 
-    // How exciting! 
-    printf("Hello, world!\n"); 
-    return EXIT_SUCCESS; 
- } 
-` 
+```c
+/* A simple hello world in C. */
+#include <stdlib.h>
+
+// Import IO functions.
+#include <stdio.h>
+
+int main() {
+    // This printf is where all the file IO magic happens!
+    // How exciting!
+    printf("Hello, world!\n");
+    return EXIT_SUCCESS;
+}
+``` 
 
 تعد معالجة الملفات الجزء الأكثر أهمية من المبرمج. في لغة C ، نستخدم مؤشر بنية لنوع الملف لإعلان ملف
 
- `FILE *fp; 
-` 
+```c
+FILE *fp;
+``` 
 
 يوفر C عددًا من وظائف البناء لتنفيذ عملية الملف الأساسية
 

@@ -49,7 +49,7 @@ Ser abrumador para los nuevos usuarios. También hay mucha [documentación](http
 
 [Disponible en](http://stackoverflow.com/search?q=atom) línea.
 
-## [Código de Visual Studio](https://code.visualstudio.com/) ![Icono de código de Visual Studio](https://i.imgur.com/b4vFsKa.png)
+## [Código de Visual Studio](https://code.visualstudio.com/) ![Icono de código de Visual Studio](https://cdn-media-1.freecodecamp.org/imgr/b4vFsKa.png)
 
 ![Captura de pantalla de Visual Studio Code](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 

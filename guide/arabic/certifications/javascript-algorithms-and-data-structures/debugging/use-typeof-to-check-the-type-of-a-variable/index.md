@@ -8,6 +8,7 @@ localeTitle: استخدم typeof للتحقق من نوع المتغير
 
 ## حل:
 
- `console.log(typeof seven); 
- console.log(typeof three); 
-`
+```javascript
+console.log(typeof seven);
+console.log(typeof three);
+```

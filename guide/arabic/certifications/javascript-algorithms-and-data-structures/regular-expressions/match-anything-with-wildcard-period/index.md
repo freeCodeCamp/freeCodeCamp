@@ -14,10 +14,11 @@ localeTitle: تطابق أي شيء مع فترة أحرف البدل
 
 ## حل
 
- `let exampleStr = "Let's have fun with regular expressions!"; 
- let unRegex = /.un/; // Change this line 
- let result = unRegex.test(exampleStr); 
-` 
+```javascript
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/; // Change this line
+let result = unRegex.test(exampleStr);
+``` 
 
 ## كسبلايناتيون
 
