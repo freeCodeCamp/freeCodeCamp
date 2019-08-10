@@ -4,7 +4,7 @@ localeTitle: Atributo de fondo del cuerpo
 ---
 ## Atributo de fondo del cuerpo
 
-Si desea agregar una imagen de fondo en lugar de un color, una solución es el atributo `<body background>` . Especifica una imagen de fondo para un documento HTML.
+Si quieres añadir una imagen de fondo en lugar de un color, una solución es el atributo `<body background>` . Éste especifica una imagen de fondo para un documento HTML.
 
 Sintaxis:
 
@@ -24,12 +24,12 @@ Ejemplo:
  </html> 
 ```
 
-## El atributo de fondo del cuerpo se deprecia
+## El atributo de fondo del cuerpo está en desuso
 
-El atributo de fondo del cuerpo ha quedado en desuso en HTML5. La forma correcta de estilo de la etiqueta `<body>` es con CSS.
+El atributo de fondo del cuerpo ha quedado en desuso en HTML5. La forma correcta de dar estilo a la etiqueta `<body>` es con CSS.
 
-Hay varias propiedades CSS utilizadas para configurar el fondo de un elemento. Estas pueden ser utilizadas para establecer el fondo de una página entera.
+Hay varias propiedades CSS utilizadas para configurar el fondo de un elemento. Éstos pueden ser utilizados para establecer el fondo de una página entera.
 
-## Echale un vistazo:
+## Échale un vistazo:
 
 *   [CSS de fondo de propiedad](https://github.com/freeCodeCamp/guides/blob/master/src/pages/css/background/index.md)
