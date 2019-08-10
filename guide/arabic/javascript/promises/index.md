@@ -6,17 +6,18 @@ localeTitle: وعود
 
 جافا سكريبت واحد مترابطة ، مما يعني أنه لا يمكن تشغيل نصين من النص البرمجي في نفس الوقت ؛ لديهم لتشغيل واحد تلو الآخر. الوعد هو كائن يمثل الانتهاء النهائي (أو الفشل) لعملية غير متزامنة ، والقيمة الناتجة عنها.
 
- `var promise = new Promise(function(resolve, reject) { 
-  // do thing, then… 
- 
-  if (/* everything worked */) { 
-    resolve("See, it worked!"); 
-  } 
-  else { 
-    reject(Error("It broke")); 
-  } 
- }); 
-` 
+```javascript
+var promise = new Promise(function(resolve, reject) {
+  // do thing, then…
+
+  if (/* everything worked */) {
+    resolve("See, it worked!");
+  }
+  else {
+    reject(Error("It broke"));
+  }
+});
+``` 
 
 ## الوعد موجود في واحدة من هذه الحالات
 
@@ -30,19 +31,20 @@ localeTitle: وعود
 
 لاتخاذ العديد من المكالمات غير المتزامنة ومزامنتها واحدة تلو الأخرى ، يمكنك استخدام تسلسل الوعد. يسمح هذا باستخدام قيمة من الوعد الأول في عمليات الاسترجاع اللاحقة لاحقًا.
 
- `Promise.resolve('some') 
-  .then(function(string) { // <-- This will happen after the above Promise resolves (returning the value 'some') 
-    return new Promise(function(resolve, reject) { 
-      setTimeout(function() { 
-        string += 'thing'; 
-        resolve(string); 
-      }, 1); 
-    }); 
-  }) 
-  .then(function(string) { // <-- This will happen after the above .then's new Promise resolves 
-    console.log(string); // <-- Logs 'something' to the console 
-  }); 
-` 
+```javascript
+Promise.resolve('some')
+  .then(function(string) { // <-- This will happen after the above Promise resolves (returning the value 'some')
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        string += 'thing';
+        resolve(string);
+      }, 1);
+    });
+  })
+  .then(function(string) { // <-- This will happen after the above .then's new Promise resolves
+    console.log(string); // <-- Logs 'something' to the console
+  });
+``` 
 
 ## Promise API
 
@@ -113,37 +115,40 @@ localeTitle: وعود
 
 في الإصدارات الحديثة ، قدمت JavaScript المزيد من الطرق للتعامل مع Promises. أحد هذه الطرق هو مولد الدالة. مولدات الدالة هي دالات "يمكن إيقافها". عند استخدامها مع Promises ، يمكن للمولدات أن تجعل عملية القراءة أكثر سهولة وأن تظهر "متزامنة".
 
- `const myFirstGenerator = function* () { 
-  const one = yield 1; 
-  const two = yield 2; 
-  const three = yield 3; 
- 
-  return 'Finished!'; 
- } 
- 
- const gen = myFirstGenerator(); 
-` 
+```javascript
+const myFirstGenerator = function* () {
+  const one = yield 1;
+  const two = yield 2;
+  const three = yield 3;
+
+  return 'Finished!';
+}
+
+const gen = myFirstGenerator();
+``` 
 
 ها هو أول مولد لدينا ، والذي يمكنك رؤيته بواسطة بناء الجملة `function*` . و `gen` متغير أعلنا لن يتم تشغيل `myFirstGenerator` ، ولكن بدلا من ذلك سوف "هذه المولدات جاهزة للاستخدام".
 
- `console.log(gen.next()); 
- // Returns { value: 1, done: false } 
-` 
+```javascript
+console.log(gen.next());
+// Returns { value: 1, done: false }
+``` 
 
 عندما نقوم بتشغيل `gen.next()` فإنه سوف `gen.next()` . وبما أن هذه هي المرة الأولى التي نطلق عليها `gen.next()` ، فسوف يتم تشغيل `yield 1` `gen.next()` مؤقتًا حتى نسميه `gen.next()` مرة أخرى. عندما `yield 1` يسمى، فإنه سيعود لنا `value` التي أسفرت عن وجود أو عدم ومولد `done` .
 
- `console.log(gen.next()); 
- // Returns { value: 2, done: false } 
- 
- console.log(gen.next()); 
- // Returns { value: 3, done: false } 
- 
- console.log(gen.next()); 
- // Returns { value: 'Finished!', done: true } 
- 
- console.log(gen.next()); 
- // Will throw an error 
-` 
+```javascript
+console.log(gen.next());
+// Returns { value: 2, done: false }
+
+console.log(gen.next());
+// Returns { value: 3, done: false }
+
+console.log(gen.next());
+// Returns { value: 'Finished!', done: true }
+
+console.log(gen.next());
+// Will throw an error
+``` 
 
 بينما نستمر في استدعاء `gen.next()` ، سيستمر الأمر في `yield` التالي `gen.next()` المؤقت في كل مرة. وبمجرد عدم وجود مزيد من `yield` المتبقي ، فستستمر في تشغيل بقية المولد ، والتي في هذه الحالة تعود ببساطة `'Finished!'` . إذا اتصلت بـ `gen.next()` مرة أخرى ، فسوف ترمي خطأ عندما ينتهي المولد.
 
@@ -153,15 +158,16 @@ localeTitle: وعود
 
 ترجع طريقة Promise.all (iterable) وعدًا واحدًا يحل عندما يتم حل جميع الوعود في الوسيطة المتقابلة أو عندما لا تحتوي الوسيطة القابلة للتكرار على أي وعود. إنها ترفض سبب الوعد الأول الذي يرفض.
 
- `var promise1 = Promise.resolve(catSource); 
- var promise2 = Promise.resolve(dogSource); 
- var promise3 = Promise.resolve(cowSource); 
- 
- Promise.all([promise1, promise2, promise3]).then(function(values) { 
-  console.log(values); 
- }); 
- // expected output: Array ["catData", "dogData", "cowData"] 
-` 
+```javascript
+var promise1 = Promise.resolve(catSource);
+var promise2 = Promise.resolve(dogSource);
+var promise3 = Promise.resolve(cowSource);
+
+Promise.all([promise1, promise2, promise3]).then(function(values) {
+  console.log(values);
+});
+// expected output: Array ["catData", "dogData", "cowData"]
+``` 
 
 ### معلومات اكثر
 

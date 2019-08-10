@@ -47,8 +47,7 @@ function telephoneCheck(str) {
  telephoneCheck("555-555-5555"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLo9/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   `^` indica o começo da corda.
@@ -75,8 +74,7 @@ function telephoneCheck(str) {
  telephoneCheck("555-555-5555"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLoa/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Este é um exemplo de uma solução muito abrangente e robusta para validar o lado cliente dos números de telefone dos EUA. Nesses casos, pode ser muito melhor e mais fácil implementar esse número de [libras da](https://github.com/googlei18n/libphonenumber) biblioteca.

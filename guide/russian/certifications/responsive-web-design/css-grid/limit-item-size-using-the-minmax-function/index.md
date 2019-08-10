@@ -18,11 +18,6 @@ localeTitle: Предельный размер элемента с помощь�
     grid-template-columns: repeat(3, minmax(50px, 2fr)); 
 ```
 
-* * *
-
-Вы также можете проверить это встроенное перо на Codepen, чтобы увидеть пример в действии, который вы можете изменить для просмотра результатов:
-
-См. Pen [limit-item-size-using-the-minmax-функция с](https://codepen.io/skywardcode/pen/EeGGze/) помощью skywardcode ( [@skywardcode](https://codepen.io/skywardcode) ) на [CodePen](https://codepen.io) .
 
 ### Ресурсы
 

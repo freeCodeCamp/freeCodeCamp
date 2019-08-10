@@ -18,16 +18,18 @@ localeTitle: SQL الخارجية مفتاح القيد
 
 لاحظ أن جدول الطالب يحتوي على مفتاح أساسي عمود واحد للطالب.
 
- `SHOW index FROM student; 
-` 
+```sql
+SHOW index FROM student;
+``` 
 
- `+---------+------------+----------+--------------+-------------+ 
- | Table   | Non_unique | Key_name | Seq_in_index | Column_name | 
- +---------+------------+----------+--------------+-------------+ 
- | student |          0 | PRIMARY  |            1 | studentID   | 
- +---------+------------+----------+--------------+-------------+ 
- 1 row in set (0.00 sec) (some columns removed on the right for clarity) 
-` 
+```text
++---------+------------+----------+--------------+-------------+
+| Table   | Non_unique | Key_name | Seq_in_index | Column_name |
++---------+------------+----------+--------------+-------------+
+| student |          0 | PRIMARY  |            1 | studentID   |
++---------+------------+----------+--------------+-------------+
+1 row in set (0.00 sec) (some columns removed on the right for clarity)
+``` 
 
 ### مفاتيح الجدول الأساسي والأجنبي للطفل
 
@@ -36,29 +38,32 @@ localeTitle: SQL الخارجية مفتاح القيد
  ``SHOW index FROM `student-contact-info`; 
 `` 
 
- `+----------------------+------------+----------+--------------+-------------+ 
- | Table                | Non_unique | Key_name | Seq_in_index | Column_name | 
- +----------------------+------------+----------+--------------+-------------+ 
- | student-contact-info |          0 | PRIMARY  |            1 | studentID   | 
- +----------------------+------------+----------+--------------+-------------+ 
- 1 row in set (0.00 sec) (some columns removed on the right for clarity) 
-` 
+```text
++----------------------+------------+----------+--------------+-------------+
+| Table                | Non_unique | Key_name | Seq_in_index | Column_name |
++----------------------+------------+----------+--------------+-------------+
+| student-contact-info |          0 | PRIMARY  |            1 | studentID   |
++----------------------+------------+----------+--------------+-------------+
+1 row in set (0.00 sec) (some columns removed on the right for clarity)
+``` 
 
- `SELECT concat(table_name, '.', column_name) AS 'foreign key', 
- concat(referenced_table_name, '.', referenced_column_name) AS 'references' 
- FROM information_schema.key_column_usage 
- WHERE referenced_table_name IS NOT NULL 
- AND table_schema = 'fcc_sql_guides_database' 
- AND table_name = 'student-contact-info'; 
-` 
+```sql
+SELECT concat(table_name, '.', column_name) AS 'foreign key',
+concat(referenced_table_name, '.', referenced_column_name) AS 'references'
+FROM information_schema.key_column_usage
+WHERE referenced_table_name IS NOT NULL
+AND table_schema = 'fcc_sql_guides_database'
+AND table_name = 'student-contact-info';
+``` 
 
- `+--------------------------------+-------------------+ 
- | foreign key                    | references        | 
- +--------------------------------+-------------------+ 
- | student-contact-info.studentID | student.studentID | 
- +--------------------------------+-------------------+ 
- 1 row in set (0.00 sec) 
-` 
+```text
++--------------------------------+-------------------+
+| foreign key                    | references        |
++--------------------------------+-------------------+
+| student-contact-info.studentID | student.studentID |
++--------------------------------+-------------------+
+1 row in set (0.00 sec)
+``` 
 
 ### مثال على التقرير باستخدام جدول الطالب الرئيسي والجدول الفرعي للاتصال
 
@@ -68,19 +73,20 @@ localeTitle: SQL الخارجية مفتاح القيد
  JOIN `student-contact-info` AS b ON a.studentID = b.studentID; 
 `` 
 
- `+-----------+------------------------+------------------+--------------------+--------------------+ 
- | studentID | FullName               | programOfStudy   | student-phone-cell | student-US-zipcode | 
- +-----------+------------------------+------------------+--------------------+--------------------+ 
- |         1 | Monique Davis          | Literature       | 555-555-5551       |              97111 | 
- |         2 | Teri Gutierrez         | Programming      | 555-555-5552       |              97112 | 
- |         3 | Spencer Pautier        | Programming      | 555-555-5553       |              97113 | 
- |         4 | Louis Ramsey           | Programming      | 555-555-5554       |              97114 | 
- |         5 | Alvin Greene           | Programming      | 555-555-5555       |              97115 | 
- |         6 | Sophie Freeman         | Programming      | 555-555-5556       |              97116 | 
- |         7 | Edgar Frank "Ted" Codd | Computer Science | 555-555-5557       |              97117 | 
- |         8 | Donald D. Chamberlin   | Computer Science | 555-555-5558       |              97118 | 
- +-----------+------------------------+------------------+--------------------+--------------------+ 
-` 
+```text
++-----------+------------------------+------------------+--------------------+--------------------+
+| studentID | FullName               | programOfStudy   | student-phone-cell | student-US-zipcode |
++-----------+------------------------+------------------+--------------------+--------------------+
+|         1 | Monique Davis          | Literature       | 555-555-5551       |              97111 |
+|         2 | Teri Gutierrez         | Programming      | 555-555-5552       |              97112 |
+|         3 | Spencer Pautier        | Programming      | 555-555-5553       |              97113 |
+|         4 | Louis Ramsey           | Programming      | 555-555-5554       |              97114 |
+|         5 | Alvin Greene           | Programming      | 555-555-5555       |              97115 |
+|         6 | Sophie Freeman         | Programming      | 555-555-5556       |              97116 |
+|         7 | Edgar Frank "Ted" Codd | Computer Science | 555-555-5557       |              97117 |
+|         8 | Donald D. Chamberlin   | Computer Science | 555-555-5558       |              97118 |
++-----------+------------------------+------------------+--------------------+--------------------+
+``` 
 
 ### استنتاج
 

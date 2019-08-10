@@ -22,15 +22,17 @@ localeTitle: إعداد Python Web Framework Django وقارورة
 
 إذا كنت قد قمت بالفعل بتثبيت برنامج `pip` فببساطة:
 
- `$ pip install django 
-` 
+```
+$ pip install django
+``` 
 
 بعد اكتمال التثبيت ، يمكننا إنشاء مشروع جديد:
 
- `$ django-admin startproject myproject 
- $ cd myproject 
- $ python manage.py runserver 
-` 
+```
+$ django-admin startproject myproject
+$ cd myproject
+$ python manage.py runserver
+``` 
 
 انتقل إلى `http://localhost:8000` ! :صاروخ:
 

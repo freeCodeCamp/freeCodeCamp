@@ -1,13 +1,13 @@
 const path = require('path');
 
-const { buildChallenges } = require('./utils/buildChallenges');
+const {
+  buildChallenges,
+  replaceChallengeNode,
+  localeChallengesRootDir
+} = require('./utils/buildChallenges');
 
-const { NODE_ENV: env, LOCALE: locale = 'english' } = process.env;
+const { API_PROXY: proxyUrl = 'http://localhost:3000' } = process.env;
 
-const selectedGuideDir = `../${
-  env === 'production' ? 'guide' : 'mock-guide'
-}/${locale}`;
-const guideRoot = path.resolve(__dirname, selectedGuideDir);
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
   },
   proxy: {
     prefix: '/internal',
-    url: 'http://localhost:3000'
+    url: proxyUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -28,7 +28,8 @@ module.exports = {
           '/certification/*',
           '/unsubscribed/*',
           '/user/*',
-          '/settings/*'
+          '/settings/*',
+          '/n/*'
         ]
       }
     },
@@ -36,14 +37,9 @@ module.exports = {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
-        source: buildChallenges
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'guides',
-        path: guideRoot
+        source: buildChallenges,
+        onSourceChange: replaceChallengeNode,
+        curriculumPath: localeChallengesRootDir
       }
     },
     {
@@ -89,19 +85,6 @@ module.exports = {
     {
       resolve: 'gatsby-remark-node-identity',
       options: {
-        identity: 'guideMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && !block && !superBlock;
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-remark-node-identity',
-      options: {
         identity: 'blockIntroMarkdown',
         predicate: ({ frontmatter }) => {
           if (!frontmatter) {
@@ -125,7 +108,6 @@ module.exports = {
         }
       }
     },
-    { resolve: 'fcc-create-nav-data' },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -138,6 +120,12 @@ module.exports = {
         /* eslint-enable camelcase */
         display: 'minimal-ui',
         icon: 'src/images/square_puck.png'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Lato:400,400i,500']
       }
     },
     'gatsby-plugin-sitemap'

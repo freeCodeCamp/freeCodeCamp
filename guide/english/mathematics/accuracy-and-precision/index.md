@@ -21,9 +21,9 @@ For example, if the ruler mentioned above that measured 1 meter as 0.8 meter, me
 
 The precision of a measurement is independent of the accuracy of the measurement. Likewise the accuracy of a measurement is independent of its precision. This means that measurements can be precise and of low accuracy, accurate and of low precision, precise and accurate, and imprecise and inaccurate.
   
-### Basketball analogy
+### Archery analogy
 
-A good analogy for understanding accuracy and precision is to imagine a basketball player shooting baskets. If the player shoots with accuracy, his aim will always take the ball close to or into the basket. If the player shoots with precision, his aim will always take the ball to the same location which may or may not be close to the basket. A good player will be both accurate and precise by shooting the ball the same way each time and each time making it in the basket. 
+A good analogy for understanding accuracy and precision is to imagine an archer shooting arrows at a target. If the archer shoots with accuracy, their aim will take the arrow close to or into the center of the target (or bull's eye). If the archer shoots with precision, their aim will take each arrow to the same location, which may or may not be close to the bull's eye. A good archer will be both accurate and precise by hitting near or in the bull's eye each time, and grouping all the arrows in the same part of the target (see the image below). 
 
 <img src="http://cdn.antarcticglaciers.org/wp-content/uploads/2013/11/precision_accuracy.png">
 

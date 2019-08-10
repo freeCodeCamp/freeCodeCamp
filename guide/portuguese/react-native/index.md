@@ -4,7 +4,7 @@ localeTitle: React Native
 ---
 ## React Native
 
-O React Native é uma estrutura de plataforma cruzada para a criação de aplicativos móveis que podem ser executados fora do navegador - mais comumente aplicativos iOS e Android
+O React Native é uma estrutura de plataforma cruzada para a criação de aplicativos móveis que podem ser executados fora do navegador - mais comumente aplicativos iOS e Android.
 
 Ele também pode ser usado para criar aplicativos em dispositivos Windows, sistemas operacionais de desktop e aplicativos da Apple TV, mas este guia abordará apenas os propósitos mais comuns - aplicativos para Android e iOS.
 
@@ -16,11 +16,11 @@ Ele também pode ser usado para criar aplicativos em dispositivos Windows, siste
 
 ### O que é React Native
 
-React Native cai entre aplicativos nativos e híbridos no espectro de aplicativos para dispositivos móveis. A interface do usuário que você cria é totalmente nativa e o desempenho geral do aplicativo é quase tão bom quanto gravar um aplicativo nativo. Também oferece a flexibilidade de incorporar exibições da Web (páginas da Web) ou código nativo (Java / Kotlin para Android, Objective C / Swift para iOS) dentro de seus aplicativos onde você desejar.
+React Native cai entre aplicativos nativos e híbridos no espectro de aplicativos para dispositivos móveis. A interface do usuário que você cria é totalmente nativa e o desempenho geral do aplicativo é quase tão bom quanto criar um aplicativo nativo. Também oferece a flexibilidade de incorporar exibições da Web (páginas da Web) ou código nativo (Java / Kotlin para Android, Objective C / Swift para iOS) dentro de seus aplicativos onde você desejar.
 
 Ele segue o mesmo padrão do React, em que as visualizações (o que você vê na tela) são renderizadas a partir dos arquivos JavaScript. A diferença é que ele fornece sua própria API para lidar com exibições de celular nativas em comparação ao DOM na Web. Se você está confuso sobre como isso funciona, siga este guia no freeCodeCamp e ele irá levá-lo passo a passo através destes conceitos.
 
-### Razões para escolher Reagir Nativa
+### Razões para escolher React Native
 
 1.  **Reutilização de código** - Utiliza um código baseado que é compartilhado entre as duas plataformas.
 2.  **Reutilize ferramentas e habilidades da Web** - Reutilize o conhecimento, as ferramentas e os utilitários do JavaScript, como `axios` , Redux e outras bibliotecas que não exigem o DOM da Web.
@@ -36,4 +36,4 @@ Ele segue o mesmo padrão do React, em que as visualizações (o que você vê n
 Existem duas maneiras fáceis e rápidas de começar a usar o React Native. Dependendo da sua situação, pode ser uma opção melhor para você.
 
 1.  [Create React Native App](https://www.npmjs.com/package/create-react-native-app) - Semelhante ao Create React App ele se levanta em execução usando o terminal.
-2.  [Expo](https://expo.io) - Melhor para prototipagem de um aplicativo ou se é estágio anterior. Usando a Expo você pode até mesmo criar um aplicativo rápido usando recursos de arrastar e soltar do snack.expo.io no broswer.
+2.  [Expo](https://expo.io) - Melhor para prototipagem de um aplicativo ou se está em estágio anterior. Usando a Expo você pode até mesmo criar um aplicativo rápido usando recursos de arrastar e soltar do snack.expo.io no broswer.

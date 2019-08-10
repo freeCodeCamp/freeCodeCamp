@@ -2,6 +2,7 @@
 id: 5900f4e81000cf542c50fffa
 challengeType: 5
 title: 'Problem 379: Least common multiple count'
+forumTopicId: 302041
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find g(1012).
 ```yml
 tests:
   - text: <code>euler379()</code> should return 132314136838185.
-    testString: assert.strictEqual(euler379(), 132314136838185, '<code>euler379()</code> should return 132314136838185.');
+    testString: assert.strictEqual(euler379(), 132314136838185);
 
 ```
 
@@ -62,4 +63,5 @@ euler379();
 ```js
 // solution required
 ```
+
 </section>

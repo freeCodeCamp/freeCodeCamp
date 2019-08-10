@@ -23,7 +23,7 @@ AJAX utiliza un **objeto XMLHttpRequest** integrado en el navegador para solicit
 
 **HTML DOM** : cuando se carga una página web, el navegador crea un modelo de objeto de documento de la página.
 
-![](https://i.imgur.com/pfC7QFH.png "Cómo funciona AJAX")
+![](https://cdn-media-1.freecodecamp.org/imgr/pfC7QFH.png "Cómo funciona AJAX")
 
 **Crear un objeto XMLHttpRequest:**
 

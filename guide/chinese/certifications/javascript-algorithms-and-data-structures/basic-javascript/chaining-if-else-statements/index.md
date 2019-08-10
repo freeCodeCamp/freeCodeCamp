@@ -52,8 +52,6 @@ function testSize(num) {
  } 
 ```
 
-·在[repl.it上](https://repl.it/@AdrianSkar/Basic-JS-Chaining-ifelse-statements)运行代码
-
 ### 代码说明
 
 该函数首先检查`if`条件`(num < 5)` 。如果它的计算结果为`true` ，则返回花括号之间的语句（“Tiny”）。如果没有，则检查下一个条件，直到最后一个`else`语句。

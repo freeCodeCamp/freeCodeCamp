@@ -2,6 +2,7 @@
 id: 5900f3b31000cf542c50fec6
 challengeType: 5
 title: 'Problem 71: Ordered fractions'
+forumTopicId: 302184
 ---
 
 ## Description
@@ -24,7 +25,7 @@ By listing the set of reduced proper fractions for d ≤ 1,000,000 in ascending 
 ```yml
 tests:
   - text: <code>euler71()</code> should return 428570.
-    testString: assert.strictEqual(euler71(), 428570, '<code>euler71()</code> should return 428570.');
+    testString: assert.strictEqual(euler71(), 428570);
 
 ```
 
@@ -56,4 +57,5 @@ euler71();
 ```js
 // solution required
 ```
+
 </section>

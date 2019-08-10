@@ -61,6 +61,10 @@ convertToF(30);
 <section id='solution'>
 
 ```js
-// solution required
+function convertToF(celsius) {
+  return (celsius * (9 / 5)) + 32;
+}
+
+convertToF(30);
 ```
 </section>

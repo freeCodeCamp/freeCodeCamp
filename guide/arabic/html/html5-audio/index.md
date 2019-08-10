@@ -12,20 +12,20 @@ localeTitle: صوت HTML5
 
 #### مثال 1
 
- `
-<audio controls> 
-  <source src="tutorial.ogg" type="audio/ogg"> 
-  <source src="tutorial.mp3" type="audio/mpeg"> 
- Your browser does not support the audio element. 
- </audio> 
-` 
+```html
+<audio controls>
+  <source src="tutorial.ogg" type="audio/ogg">
+  <source src="tutorial.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+``` 
 
 #### مثال 2
 
- `
-<audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" controls loop autoplay> 
- </audio> 
-` 
+```html
+<audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" controls loop autoplay>
+</audio>
+``` 
 
 تتضمن سمة `controls` الصوتية مثل التشغيل والإيقاف المؤقت ومستوى الصوت. إذا لم تستخدم هذه السمة ، فلن يتم عرض أي عناصر تحكم.
 

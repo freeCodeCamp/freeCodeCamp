@@ -2,6 +2,7 @@
 id: 5900f4b01000cf542c50ffc2
 challengeType: 5
 title: 'Problem 323: Bitwise-OR operations on random integers'
+forumTopicId: 301980
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Give your answer rounded to 10 digits after the decimal point.
 ```yml
 tests:
   - text: <code>euler323()</code> should return 6.3551758451.
-    testString: assert.strictEqual(euler323(), 6.3551758451, '<code>euler323()</code> should return 6.3551758451.');
+    testString: assert.strictEqual(euler323(), 6.3551758451);
 
 ```
 
@@ -59,4 +60,5 @@ euler323();
 ```js
 // solution required
 ```
+
 </section>

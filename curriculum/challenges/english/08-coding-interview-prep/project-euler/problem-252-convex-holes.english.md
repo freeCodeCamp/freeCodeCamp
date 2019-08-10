@@ -2,6 +2,7 @@
 id: 5900f4691000cf542c50ff7b
 challengeType: 5
 title: 'Problem 252: Convex Holes'
+forumTopicId: 301900
 ---
 
 ## Description
@@ -46,7 +47,7 @@ What is the maximum area for a convex hole on the set containing the first 500 p
 ```yml
 tests:
   - text: <code>euler252()</code> should return 104924.
-    testString: assert.strictEqual(euler252(), 104924, '<code>euler252()</code> should return 104924.');
+    testString: assert.strictEqual(euler252(), 104924);
 
 ```
 
@@ -78,4 +79,5 @@ euler252();
 ```js
 // solution required
 ```
+
 </section>

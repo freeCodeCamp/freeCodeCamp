@@ -2,6 +2,7 @@
 id: 5900f4531000cf542c50ff66
 challengeType: 5
 title: 'Problem 231: The prime factorisation of binomial coefficients'
+forumTopicId: 301875
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find the sum of the terms in the prime factorisation of 20000000C15000000.
 ```yml
 tests:
   - text: <code>euler231()</code> should return 7526965179680.
-    testString: assert.strictEqual(euler231(), 7526965179680, '<code>euler231()</code> should return 7526965179680.');
+    testString: assert.strictEqual(euler231(), 7526965179680);
 
 ```
 
@@ -56,4 +57,5 @@ euler231();
 ```js
 // solution required
 ```
+
 </section>

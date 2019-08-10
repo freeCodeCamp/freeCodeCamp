@@ -2,6 +2,7 @@
 id: 5900f52c1000cf542c51003d
 challengeType: 5
 title: 'Problem 446: Retractions B'
+forumTopicId: 302118
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find F(107) (mod 1 000 000 007)
 ```yml
 tests:
   - text: <code>euler446()</code> should return 907803852.
-    testString: assert.strictEqual(euler446(), 907803852, '<code>euler446()</code> should return 907803852.');
+    testString: assert.strictEqual(euler446(), 907803852);
 
 ```
 
@@ -61,4 +62,5 @@ euler446();
 ```js
 // solution required
 ```
+
 </section>

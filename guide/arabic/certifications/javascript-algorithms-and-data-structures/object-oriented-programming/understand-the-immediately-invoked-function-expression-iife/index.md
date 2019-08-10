@@ -10,7 +10,8 @@ localeTitle: فهم تعبير الدالة المستحثة فوراً (IIFE)
 
 ### حل
 
- `(function() { 
-  console.log("A cozy nest is ready"); 
- })(); 
-`
+```javascript
+(function() {
+  console.log("A cozy nest is ready");
+})();
+```

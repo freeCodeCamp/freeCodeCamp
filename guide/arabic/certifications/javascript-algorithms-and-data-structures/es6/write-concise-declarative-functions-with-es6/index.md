@@ -14,11 +14,12 @@ ES6 يجعل من السهل ، والخيال ، لكتابة وظائف الإ
 
 ## حل
 
- `const bicycle = { 
-  gear: 2, 
-  setGear(newGear) { 
-    "use strict"; 
-    this.gear = newGear; 
-  } 
- }; 
-`
+```javascript
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    "use strict";
+    this.gear = newGear;
+  }
+};
+```

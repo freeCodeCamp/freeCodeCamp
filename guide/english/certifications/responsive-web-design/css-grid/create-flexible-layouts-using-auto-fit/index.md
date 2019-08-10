@@ -1,7 +1,7 @@
 ---
 title: Create Flexible Layouts Using auto-fit
 ---
-## Create Flexible Layouts Using auto-fit
+# Create Flexible Layouts Using auto-fit
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/create-flexible-layouts-using-auto-fit/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

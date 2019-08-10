@@ -82,7 +82,6 @@ function smallestCommons(arr) {
  smallestCommons([1,5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLn2/0)
 
 ### 代码说明：
 
@@ -139,7 +138,6 @@ function smallestCommons(arr) {
  smallestCommons([1,5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLn4/0)
 
 ### 代码说明：
 
@@ -199,7 +197,6 @@ function smallestCommons(arr) {
  smallestCommons([1,5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/MR9P/latest)
 
 ### 代码说明：
 

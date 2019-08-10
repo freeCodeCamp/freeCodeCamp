@@ -10,10 +10,11 @@ localeTitle: تمديد البنائين لتلقي الحجج
 
 ### حل:
 
- `function Dog(name, color) { 
-  this.name = name; 
-  this.color = color; 
-  this.numLegs = 4; 
- } 
- let terrier = new Dog("George","White"); 
-`
+```javascript
+function Dog(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 4;
+}
+let terrier = new Dog("George","White");
+```
