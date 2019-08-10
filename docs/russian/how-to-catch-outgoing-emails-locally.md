@@ -1,13 +1,12 @@
 <table>
     <tr>
-        <!-- Do not translate this table -->
-        <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
-        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
-        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+        <td> Прочтите эти рекомендации на </td>
+        <td><a href='/CONTRIBUTING.md'> English </a></td>
+        <td><a href='/docs/chinese/CONTRIBUTING.md'> 中文 </a></td>
+        <td><a href='/docs/russian/CONTRIBUTING.md'> Русском </a></td>
+        <td><a href='/docs/arabic/CONTRIBUTING.md'> عربى </a></td>
+        <td><a href='/docs/spanish/CONTRIBUTING.md'> Español </a></td>
+        <td><a href='/docs/portuguese/CONTRIBUTING.md'> Português </a></td>
     </tr>
 </table>
 
@@ -105,15 +104,15 @@ mailhog
 После того, как вы установили MailHog и запустили его, вам нужно открыть почтовый ящик MailHog в вашем браузере, открыть новую вкладку или окно и перейти на [http://localhost:8025](http://localhost:8025). 
 Теперь вы должны увидеть экран, как показано ниже:
 
-![MailHog Screenshot 1](../images/mailhog/1.jpg)
+![MailHog Скриншот 1](../images/mailhog/1.jpg)
 
 Когда ваша установка freeCodeCamp отправит электронное письмо, вы увидите, что оно появляется здесь. Как показано ниже:
 
-![MailHog Screenshot 2](../images/mailhog/2.jpg)
+![MailHog Скриншот 2](../images/mailhog/2.jpg)
 
 Откройте письмо, и вы увидите две вкладки, где вы можете просмотреть содержимое - обычный текст и исходник. Убедитесь, что вы находитесь на вкладке обычного текста.
 
-![MailHog Screenshot 3](../images/mailhog/3.jpg)
+![MailHog Скриншот 3](../images/mailhog/3.jpg)
 
 Любые ссылки в письме должны быть кликабельны.
 
