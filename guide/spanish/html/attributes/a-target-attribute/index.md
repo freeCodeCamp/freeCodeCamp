@@ -41,11 +41,11 @@ Un atributo de destino con el valor de "\_top" abre el documento vinculado en el
     <a href="https://www.freecodecamp.org" target="_top">freeCodeCamp</a> 
 ```
 
-Un atributo de destino con el valor de _"nombre de marco"_ Abre el documento vinculado en un marco con nombre específico.
+Un atributo de destino con el valor de "_nombre de marco_" abre el documento vinculado en un marco con nombre específico.
 
 ```html
 
-    <a href="https://www.freecodecamp.org" target="framename">freeCodeCamp</a> 
+    <a href="https://www.freecodecamp.org" target="nombre de marco">freeCodeCamp</a> 
 ```
 
 #### Más información:
