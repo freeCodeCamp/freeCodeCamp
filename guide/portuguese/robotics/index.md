@@ -4,7 +4,7 @@ localeTitle: Robótica
 ---
 ## Robótica
 
-Robótica é sobre os sistemas que compõem os robôs. Não há definicação universal de um robô. Uma definição geralmente aceita é: _Um robô é uma máquina física programável que segue o paradigma do sentido, pensamento e ação_ . Mais especificamente, um robô precisa sentir seu ambiente, usar essa informação como uma entrada para tomar decisões e agir de acordo. Cada sistema neste paradigma é frequentemente um estudo em si. Há uma infinidade de variedades de tipos de robôs e sistemas de componentes. Cada robô geralmente é dedicado a um conjunto de processos com objetivos claros.
+Robótica é sobre os sistemas que compõem os robôs. Não há definicação universal de um robô. Uma definição geralmente aceita é: _Um robô é uma máquina física programável que segue o paradigma do sentido, pensamento e ação_ . Mais especificamente, um robô precisa sentir seu ambiente (com sensoores), usar essa informação como uma entrada para tomar decisões e agir de acordo (com atuadores). Cada sistema neste paradigma é frequentemente um estudo em si. Há uma infinidade de variedades de tipos de robôs e sistemas de componentes. Cada robô geralmente é dedicado a um conjunto de processos com objetivos claros.
 
 ### Sentido
 
@@ -35,3 +35,5 @@ Juntando, esses recursos são bons o suficiente para iniciar sua jornada com a R
 [Sensores (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
 
 [Atuador (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
+
+[RoboCup](https://www.robocup.org/)
