@@ -25,8 +25,7 @@ La nueva sintaxis puede ser un poco confusa. Pero voy a tratar de explicar la si
 
 La primera parte es simplemente declarar una variable y asignarle la función (es decir,) (). Simplemente dice que la variable es en realidad una función.
 
-Entonces la segunda parte es declarar la parte del cuerpo de la función. La parte de la flecha con los tirantes rizados define la parte del cuerpo. La palabra clave `const` se emplea para indicar que la función no será reasignada. Para más información sobre `const` y `let` dirigirse a esta [Referencia](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/javascript/es6/let-and-const/index.md)
-
+Entonces la segunda parte es declarar la parte del cuerpo de la función. La parte de la flecha con los tirantes rizados define la parte del cuerpo. La palabra clave `const` se emplea para indicar que la función no será reasignada.
 Otro ejemplo con parámetros:
 
 ```javascript
