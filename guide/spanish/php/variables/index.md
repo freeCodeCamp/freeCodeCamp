@@ -70,5 +70,5 @@ En el ejemplo anterior, observe que no tuvimos que decirle a PHP qué tipo de da
 
 #### Más información:
 
-[PHP.net - Variables básicas](https://secure.php.net/manual/es/language.variables.basics.php)
-[PHP.net - Ámbito de variables](https://secure.php.net/manual/es/language.variables.scope.php)
+* [PHP.net - Variables básicas](https://secure.php.net/manual/es/language.variables.basics.php)
+* [PHP.net - Ámbito de variables](https://secure.php.net/manual/es/language.variables.scope.php)
