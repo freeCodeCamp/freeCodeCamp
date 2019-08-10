@@ -36,7 +36,7 @@ let x = "World"
 
 print("Hello ")
 print(x)
-print("Hello \(x)"
+print("Hello \(x)")
 ```
 
 
