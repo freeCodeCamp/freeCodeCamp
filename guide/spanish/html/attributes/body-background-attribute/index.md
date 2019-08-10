@@ -12,7 +12,7 @@ Sintaxis:
 
 Atributo:
 
-`background - URL for background image`
+`background - URL de la imagen de fondo`
 
 Ejemplo:
 
@@ -28,7 +28,7 @@ Ejemplo:
 
 El atributo de fondo del cuerpo ha quedado en desuso en HTML5. La forma correcta de estilo de la etiqueta `<body>` es con CSS.
 
-Hay varias propiedades CSS utilizadas para configurar el fondo de un elemento. Estos pueden ser utilizados en para establecer el fondo de una página entera.
+Hay varias propiedades CSS utilizadas para configurar el fondo de un elemento. Estas pueden ser utilizadas para establecer el fondo de una página entera.
 
 ## Echale un vistazo:
 
