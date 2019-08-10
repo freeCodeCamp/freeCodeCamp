@@ -6,7 +6,7 @@ localeTitle: Condicionales
 
 Los condicionales en PHP se escriben usando la sintaxis `if` , `elseif` , `else` . El uso de condicionales le permite realizar diferentes acciones dependiendo de las diferentes entradas y valores proporcionados a una página en tiempo de ejecución. En PHP, los condicionales a menudo se denominan estructuras de control.
 
-### Si
+### If
 
 ```PHP
 <?php 
@@ -26,7 +26,7 @@ Los condicionales en PHP se escriben usando la sintaxis `if` , `elseif` , `else`
  } 
 ```
 
-### Más
+### Else
 
 ```PHP
 <?php 
