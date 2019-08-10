@@ -1,8 +1,10 @@
 ---
 title: Build a Random Quote Machine
 ---
-## Build a Random Quote Machine
+# Build a Random Quote Machine
 
+---
+## Problem Explanation
 The project consists of three distinct parts:
 
 1. Identifying the components needed to complete the task, what components are there? Can some components be used more than once? E.g. the buttons, are they the same only with different onClick events?  

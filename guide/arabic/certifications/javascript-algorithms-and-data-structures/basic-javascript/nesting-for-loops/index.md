@@ -12,15 +12,16 @@ localeTitle: التعشيش للحلقات
 
 هنا مثال:
 
- `var arr = [ 
-  [1,2], [3,4], [5,6] 
- ]; 
- for (var i=0; i < arr.length; i++) { 
-  for (var j=0; j < arr[i].length; j++) { 
-    console.log(arr[i][j]); 
-  } 
- } 
-` 
+```
+var arr = [
+  [1,2], [3,4], [5,6]
+];
+for (var i=0; i < arr.length; i++) {
+  for (var j=0; j < arr[i].length; j++) {
+    console.log(arr[i][j]);
+  }
+}
+``` 
 
 هذا إخراج كل عنصر فرعي في `arr` واحد في كل مرة. لاحظ أنه بالنسبة للحلقة الداخلية ، فإننا نتحقق من طول arr \[i\] ، لأن arr \[i\] هو نفسه مصفوفة.
 
@@ -57,21 +58,22 @@ _تنبيه المفسد!_ ![](https://discourse-user-assets.s3.amazonaws.com/or
 
 : مبتدئ: **حل الرمز الأساسي:**
 
- `function multiplyAll(arr) { 
-  var product = 1; 
-  // Only change code below this line 
-  for(var i=0; i < arr.length; i++){ 
-    for (var j=0; j < arr[i].length; j++){ 
-      product = product * arr[i][j]; 
-    } 
-  } 
-  // Only change code above this line 
-  return product; 
- } 
- 
- // Modify values below to test your code 
- multiplyAll([[1,2],[3,4],[5,6,7]]); 
-` 
+```
+function multiplyAll(arr) {
+  var product = 1;
+  // Only change code below this line
+  for(var i=0; i < arr.length; i++){
+    for (var j=0; j < arr[i].length; j++){
+      product = product * arr[i][j];
+    }
+  }
+  // Only change code above this line
+  return product;
+}
+
+// Modify values below to test your code
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+``` 
 
 : صاروخ: **[تشغيل التعليمات البرمجية](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/nesting-for-loops/)**
 

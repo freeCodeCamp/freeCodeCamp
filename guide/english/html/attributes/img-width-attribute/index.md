@@ -22,3 +22,5 @@ In the code snippet above there is an image tag and the image is set to a width 
 
 #### More Information:
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank">MDN article on the img tag<a>
+  
+<a href="https://www.w3schools.com/tags/att_img_width.asp" target="_blank">w3school article on the img tag</a>  

@@ -1,7 +1,7 @@
 ---
 title: 100 doors
 ---
-## 100 doors
+# 100 doors
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/100-doors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

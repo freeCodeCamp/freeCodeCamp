@@ -6,17 +6,18 @@ localeTitle: تكرار الأرقام الفردية مع ل حلقة
 
 هنا هو المثال:
 
- `var ourArray = []; 
- 
- for (var i = 0; i < 10; i += 2) { 
-  ourArray.push(i); 
- } 
- 
- // Setup 
- var myArray = []; 
- 
- // Only change code below this line. 
-` 
+```javascript
+var ourArray = [];
+
+for (var i = 0; i < 10; i += 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+``` 
 
 وإليك الحل: بعد السلسلة `// Only change code below this line.` نضيف `for` حلقة. تحتاج إلى نسخ حلقة من الجزء العلوي:
 
