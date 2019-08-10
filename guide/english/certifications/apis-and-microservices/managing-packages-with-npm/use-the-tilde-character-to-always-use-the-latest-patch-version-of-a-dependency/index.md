@@ -1,7 +1,7 @@
 ---
 title: Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
 ---
-## Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
+# Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/managing-packages-with-npm/use-the-tilde-character-to-always-use-the-latest-patch-version-of-a-dependency/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

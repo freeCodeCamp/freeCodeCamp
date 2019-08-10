@@ -36,12 +36,13 @@ localeTitle: أزرار CSS
 
 لإضافة حد ملون إلى زر ، استخدم خاصية الحدود:
 
- `button { 
-  background-color: #FFF; 
-  color: #FFF; 
-  border: 2px solid #6ba0f4; 
- } 
-` 
+```
+button {
+  background-color: #FFF;
+  color: #FFF;
+  border: 2px solid #6ba0f4;
+}
+``` 
 
 ![Button Border](https://image.ibb.co/kUqymR/button_border_blue.png "حدود الزر")
 
@@ -81,11 +82,12 @@ localeTitle: أزرار CSS
 
 لتغيير نمط زر عند تحريك الماوس فوقه ، استخدم: select hover:
 
- `button:hover { 
-  background-color: #0E2C5B; 
-  color: #FFF; 
- } 
-` 
+```
+button:hover {
+  background-color: #0E2C5B;
+  color: #FFF;
+}
+``` 
 
 ![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "أزرار Hoverable")
 
@@ -95,10 +97,11 @@ localeTitle: أزرار CSS
 
 لتعطيل زر ، استخدم خاصية المؤشر:
 
- `button { 
-  cursor: not-allowed; 
- } 
-` 
+```
+button {
+  cursor: not-allowed;
+}
+``` 
 
 #### معلومات اكثر:
 

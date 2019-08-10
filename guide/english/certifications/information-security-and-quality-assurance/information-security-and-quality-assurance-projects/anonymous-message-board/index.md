@@ -1,7 +1,7 @@
 ---
 title: Anonymous Message Board
 ---
-## Anonymous Message Board
+# Anonymous Message Board
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-and-quality-assurance-projects/anonymous-message-board/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

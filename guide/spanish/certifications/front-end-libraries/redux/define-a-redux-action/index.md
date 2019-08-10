@@ -6,7 +6,7 @@ localeTitle: Definir una acción redux
 
 Aquí es cómo declarar una acción Redux.
 
-```react.js
+```jsx
 let action={ 
   type: 'LOGIN' 
  } 

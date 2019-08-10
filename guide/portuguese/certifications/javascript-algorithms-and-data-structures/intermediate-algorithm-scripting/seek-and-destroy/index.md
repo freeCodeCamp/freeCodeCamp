@@ -53,8 +53,7 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/95)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 1.  Crie uma matriz de `arguments` usando `Array.prototype.slice.call()` e armazene-a na variável `args` . Nós vamos usar isso para verificar contra `arr` .
@@ -85,8 +84,7 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/Ck2m/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 1.  Declare uma variável denominada `args` e defina-a como um novo objeto `Array` `from()` os `arguments` passados ​​para a função. Na mesma linha ou na linha seguinte, use o método `slice()` em `args` a partir do segundo índice, 1. Isso separa os argumentos usados ​​para filtragem em sua própria matriz de `args` .

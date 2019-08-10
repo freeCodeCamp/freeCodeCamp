@@ -10,10 +10,11 @@ localeTitle: استثناءات
 
 إذا حاولنا قراءة نص ملف غير موجود:
 
- `using System.IO; 
- 
- string content = File.ReadAllText(@"C:\DoesNotExist.txt"); 
-` 
+```
+using System.IO;
+
+string content = File.ReadAllText(@"C:\DoesNotExist.txt");
+``` 
 
 سيتم رفع `FileNotFoundException` .
 
@@ -46,20 +47,22 @@ localeTitle: استثناءات
 
 بدلا من
 
- `try 
- { 
-   conn.Close(); 
- } 
- catch (Exception ex) 
- { 
-   //code for handling exceptions. 
- } 
-` 
+```
+try
+{
+   conn.Close();
+}
+catch (Exception ex)
+{
+   //code for handling exceptions.
+}
+``` 
 
 جرب هذا
 
- `if (conn.State != ConnectionState.Closed) 
- { 
-    conn.Close(); 
- } 
-`
+```
+if (conn.State != ConnectionState.Closed)
+{
+    conn.Close();
+}
+```

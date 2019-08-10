@@ -8,7 +8,7 @@ localeTitle: 对于循环
 
 ## 句法
 
-```C#
+```csharp
 for ((Initial variable); (condition); (step)) 
     { 
     (code) 
@@ -25,7 +25,7 @@ C＃for循环由三个表达式和一些代码组成。
 
 ## 例
 
-```C#
+```csharp
 int[] array = { 1, 2, 3, 4, 5 }; 
  for (int i = 0; i < array.Length; i++) 
  { 

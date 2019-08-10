@@ -53,7 +53,6 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/95)
 
 ### Код Объяснение:
 
@@ -85,7 +84,6 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/Ck2m/0)
 
 ### Код Объяснение:
 

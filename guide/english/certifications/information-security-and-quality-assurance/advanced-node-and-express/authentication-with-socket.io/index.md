@@ -1,7 +1,7 @@
 ---
 title: Authentication with Socket.IO
 ---
-## Authentication with Socket.IO
+# Authentication with Socket.IO
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/authentication-with-socket.io/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

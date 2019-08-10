@@ -19,7 +19,7 @@ Siguiendo la definición anterior, la diferencia simétrica de los tres conjunto
 
 [](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 
- [## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ": speech_balloon:") Sugerencia: 1
+ ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ": speech_balloon:") Sugerencia: 1
 
 El objeto de _argumentos_ es un objeto de tipo _Array_ que solo hereda la propiedad `Array.length` . Por lo tanto, considere convertirlo en una _matriz_ real.
 
@@ -86,7 +86,6 @@ A = {1, 2, 3}
 
 ```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) 
 
- [![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce) [Ejecutar código](https://repl.it/C4II/0)
 
 ### Explicación del código:
 
@@ -141,7 +140,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLoc/0)
 
 ### Explicación del código:
 
@@ -176,7 +174,6 @@ A = {1, 2, 3}
     sym([1, 2, 3], [5, 2, 1, 4]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/@ashenm/Symmetric-Difference)
 
 ### Explicación del código:
 

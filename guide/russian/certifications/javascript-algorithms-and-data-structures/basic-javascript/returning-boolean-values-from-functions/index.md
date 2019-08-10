@@ -46,7 +46,6 @@ function isLess(a, b) {
  isLess(10, 15); 
 ```
 
-Выполнить код на [repl.it.](https://repl.it/@AdrianSkar/Basic-Js-Returning-boolean-from-function)
 
 ### Ресурсы
 

@@ -32,6 +32,6 @@ donde `vs` es la abreviatura corta de `vsplit` y ...
 Algunos ejemplos de usar split en Vim:
 
 *   : `sp` Divide la ventana actual en ventanas horizontales iguales para el archivo actual.
-*   : `10sp` la ventana actual creando una nueva ventana con altura 10 para el archivo actual.
+*   : `10sp` Divide la ventana actual creando una nueva ventana con altura 10 para el archivo actual.
 *   : `sp` `index.html` Divide la ventana actual en ventanas horizontales iguales y abre `index.html` en la nueva ventana.
-*   : `vs` `main.css` la ventana actual en ventanas verticales iguales y abre `main.css` en la nueva ventana.
+*   : `vs` `main.css` Divide la ventana actual en ventanas verticales iguales y abre `main.css` en la nueva ventana.

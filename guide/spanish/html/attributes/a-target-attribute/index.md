@@ -4,7 +4,7 @@ localeTitle: Un atributo de destino
 ---
 ## Un atributo de destino
 
-El atributo `<a target>` especifica dónde abrir el documento vinculado en una etiqueta `a` (ancla).
+El `<a target>` atributo especifica dónde abrir el documento vinculado en una etiqueta `a` (ancla).
 
 #### Ejemplos:
 

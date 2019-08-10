@@ -13,11 +13,11 @@ Un enlace de correo a correo es un tipo de hipervínculo ( `<a href=""></a>` ) c
 <a href="mailto:friend@something.com">Some text</a> 
 ```
 
-### Más personalización!
+### ¡Más personalización!
 
-#### Añadiendo un asunto a ese correo:
+#### Añadiendo un asunto a un correo:
 
-Si desea agregar un asunto específico a ese correo, tenga cuidado de agregar `%20` o `+` todas partes, hay un espacio en la línea del asunto. Una forma fácil de asegurarse de que está formateado correctamente es usar un [decodificador / codificador de URL](https://meyerweb.com/eric/tools/dencoder/) .
+Si desea agregar un asunto específico a un correo, tenga cuidado de agregar `%20` o `+` todas partes, hay un espacio en la línea del asunto. Una forma fácil de asegurarse de que está formateado correctamente es usar un [decodificador / codificador de URL](https://meyerweb.com/eric/tools/dencoder/) .
 
 #### Añadiendo texto de cuerpo:
 

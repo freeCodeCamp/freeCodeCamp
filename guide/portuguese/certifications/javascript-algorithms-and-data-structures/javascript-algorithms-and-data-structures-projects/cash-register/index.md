@@ -112,8 +112,7 @@ localeTitle: Caixa registradora
  checkCashRegister(19.50, 20.00, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.10], ["QUARTER", 4.25], ["ONE", 90.00], ["FIVE", 55.00], ["TEN", 20.00], ["TWENTY", 60.00], ["ONE HUNDRED", 100.00]]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/@scissorsneedfoo/cash-register-example)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Primeiro, crie uma matriz de objetos com o valor de cada denominação de conta ou moeda, juntamente com um objeto de saída com o status e as chaves de alteração. Em seguida, transforme a matriz CID em um objeto de gaveta. Em seguida, lide com as condições de mudança exata e fundos insuficientes. Faça o loop através da matriz `denom` e atualize a alteração e os valores enquanto ainda houver dinheiro de cada tipo na gaveta e enquanto a denominação for maior que a alteração restante. Adicione esta denominação ao acumulador de `change_arr` se algum desse tipo foi usado. Após o loop, `change_arr` é uma matriz 2D da mudança devida, classificada da mais alta para a mais baixa denominação. Se não houver elementos em `change_arr` ou você ainda deve alterar, retorne o objeto de saída com um status `INSUFFICIENT_FUNDS` . Finalmente, você pode dar a alteração correta. Retorna o objeto de saída com um status de `OPEN` e `change_arr` como o valor da mudança.

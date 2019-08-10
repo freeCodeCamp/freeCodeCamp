@@ -1,11 +1,18 @@
 ---
 title: Iterate with JavaScript Do...While Loops
 ---
-## Iterate with JavaScript Do...While Loops
+# Iterate with JavaScript Do...While Loops
 
-* `Do...While` loops makes sure that the code is executed at least once, and after the execution, if the condition inside the `while()` is **true**, it continues with the loop, otherwise it stop.
+---
+## Problem Explanation
+`Do...While` loops makes sure that the code is executed at least once, and after the execution, if the condition inside the `while()` is **true**, it continues with the loop, otherwise it stop.
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```javascript
 var myArray = [];
 var i = 10;
@@ -13,5 +20,7 @@ var i = 10;
 do {
   myArray.push(i);
   i++;
-} while(i <= 10);
+} while (i <= 10);
 ```
+
+</details>

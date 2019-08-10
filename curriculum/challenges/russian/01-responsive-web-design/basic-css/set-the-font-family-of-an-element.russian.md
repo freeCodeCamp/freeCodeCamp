@@ -3,14 +3,14 @@ id: bad87fee1348bd9aede08807
 title: Set the Font Family of an Element
 challengeType: 0
 videoUrl: ''
-localeTitle: Установите семейство шрифтов элемента
+localeTitle: Изменение семейства шрифтов элемента
 ---
 
 ## Description
-<section id="description"> Вы можете установить, какой шрифт должен использовать элемент, используя свойство <code>font-family</code> . Например, если вы хотите установить шрифт элемента <code>h2</code> в <code>sans-serif</code> , вы должны использовать следующий CSS: <blockquote> h2 { <br> font-family: sans-serif; <br> } </blockquote></section>
+<section id="description"> Вы можете выбрать, какой шрифт должен использовать элемент, используя свойство <code>font-family</code> . Например, если вы хотите чтобы шрифтом элемента <code>h2</code> был шрифт под названием <code>sans-serif</code>, то вы должны использовать следующий CSS: <blockquote> h2 { <br> font-family: sans-serif; <br> } </blockquote></section>
 
 ## Instructions
-<section id="instructions"> Сделайте все ваши <code>p</code> элементы использующими <code>monospace</code> шрифт. </section>
+<section id="instructions"> Измените стиль всех <code>p</code> элементов данной программы на <code>monospace</code>. </section>
 
 ## Tests
 <section id='tests'>

@@ -4,7 +4,7 @@ localeTitle: Golpetazo
 ---
 ## ¿Qué es Bash?
 
-Bash (abreviatura de Bourne Again SHell) es un shell de Unix y un intérprete de lenguaje de comandos. Un shell es simplemente un procesador de macros que ejecuta comandos. Es el shell más utilizado de forma predeterminada en la mayoría de las distribuciones de Linux, y un sucesor para el shell Korn (ksh) y el shell C (csh).
+Bash (abreviatura de Bourne Again SHell) es un shell de Unix y un intérprete de lenguaje de comandos. Un shell es simplemente un procesador de macros que ejecuta comandos. Es el shell más utilizado de forma predeterminada en la mayoría de las distribuciones de Linux, y un sucesor para el shell Korn (ksh) y el shell C (csh). Bash fue lanzado en 1989.
 
 Muchas cosas que se pueden hacer con el sistema operativo Linux se pueden hacer a través de la línea de comandos. Algunos ejemplos son…
 
