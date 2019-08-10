@@ -2,6 +2,7 @@
 id: 5900f4de1000cf542c50fff0
 challengeType: 5
 title: 'Problem 369: Badugi'
+forumTopicId: 302030
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find ∑f(n)  for 4 ≤ n ≤ 13.
 ```yml
 tests:
   - text: <code>euler369()</code> should return 862400558448.
-    testString: assert.strictEqual(euler369(), 862400558448, '<code>euler369()</code> should return 862400558448.');
+    testString: assert.strictEqual(euler369(), 862400558448);
 
 ```
 
@@ -56,4 +57,5 @@ euler369();
 ```js
 // solution required
 ```
+
 </section>

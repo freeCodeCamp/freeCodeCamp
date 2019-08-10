@@ -1,7 +1,7 @@
 ---
 title: Give Links Meaning by Using Descriptive Link Text
 ---
-## Give Links Meaning by Using Descriptive Link Text
+# Give Links Meaning by Using Descriptive Link Text
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/give-links-meaning-by-using-descriptive-link-text/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

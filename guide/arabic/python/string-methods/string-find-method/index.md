@@ -12,19 +12,21 @@ localeTitle: طريقة البحث عن سلسلة
 
 مثال:
 
- `>>> string = "Don't you call me a mindless philosopher, you overweight glob of grease!" 
- >>> string.find('you') 
- 6 
- >>> string.rfind('you') 
- 42 
-` 
+```shell
+>>> string = "Don't you call me a mindless philosopher, you overweight glob of grease!"
+>>> string.find('you')
+6
+>>> string.rfind('you')
+42
+``` 
 
 إذا لم يتم العثور على السلسلة الفرعية ، يتم إرجاع -1.
 
- `>>> string = "Don't you call me a mindless philosopher, you overweight glob of grease!" 
- >>> string.find('you', 43)  # find 'you' in string anywhere from position 43 to the end of the string 
- -1 
-` 
+```shell
+>>> string = "Don't you call me a mindless philosopher, you overweight glob of grease!"
+>>> string.find('you', 43)  # find 'you' in string anywhere from position 43 to the end of the string
+-1
+``` 
 
 معلومات اكثر:
 

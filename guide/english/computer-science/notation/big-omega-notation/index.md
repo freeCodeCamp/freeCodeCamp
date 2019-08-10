@@ -3,11 +3,6 @@ title: Big Omega Notation
 ---
 ## Big Omega Notation
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/computer-science/notation/big-omega-notation/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 Similar to [big O](https://guide.freecodecamp.org/computer-science/notation/big-o-notation) notation, big Omega(Ω) function is used in computer science to describe the performance or complexity of an algorithm.  
 
 If a running time is Ω(f(n)), then for large enough n, the running time is at least k⋅f(n)  for some constant k. Here's how to think of a running time that is Ω(f(n)):  

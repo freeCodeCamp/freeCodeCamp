@@ -1,7 +1,7 @@
 ---
 title: Update the Height of an Element Dynamically
 ---
-## Update the Height of an Element Dynamically
+# Update the Height of an Element Dynamically
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/update-the-height-of-an-element-dynamically/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

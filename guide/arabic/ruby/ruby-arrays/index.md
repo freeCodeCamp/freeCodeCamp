@@ -6,43 +6,50 @@ localeTitle: روبي أرايس
 
 يمثل الصفيف قائمة بالقيم. غالباً ما تسمى القيم الفردية "عناصر" الصفيف. لإنشاء صفيف في Ruby ، ​​استخدم الأقواس المربعة والقيم المنفصلة باستخدام الفواصل:
 
- `my_array = [1, 2, 3, 4, 5] 
-` 
+```ruby
+my_array = [1, 2, 3, 4, 5]
+``` 
 
 المثال الأول هو مجموعة من الأرقام ، لكن مصفوفة Ruby يمكن أن تحتوي على قيم من أنواع مختلفة ، حتى المصفوفات الأخرى:
 
- `mixed_array = [5, "Hello World", true, [1,2,3]] 
-` 
+```ruby
+mixed_array = [5, "Hello World", true, [1,2,3]]
+``` 
 
 يمكنك الوصول إلى عناصر صفيف يحتوي على أقواس مربعة وفهارس رقمية. لاحظ أن العنصر الأول في index 0 ، وليس 1:
 
- `mixed_array[0] # 5 
- mixed_array[1] # "Hello World" 
- mixed_array[2] # true 
-` 
+```ruby
+mixed_array[0] # 5
+mixed_array[1] # "Hello World"
+mixed_array[2] # true
+``` 
 
 يمكنك التحقق من عدد العناصر التي تحتوي عليها المصفوفة باستخدام طريقة `length` :
 
- `mixed_array.length # 3 
- [].length # 0 
-` 
+```ruby
+mixed_array.length # 3
+[].length # 0
+``` 
 
 يمكنك التحقق من العنصر الأول في مصفوفة باستخدام الطريقة `first` :
 
- `mixed_array.first # 5 
-` 
+```ruby
+mixed_array.first # 5
+``` 
 
 يمكنك التحقق من آخر عنصر في مصفوفة باستخدام الطريقة `last` :
 
- `mixed_array.last # true 
-` 
+```ruby
+mixed_array.last # true
+``` 
 
 #### روبي لامدا
 
 كما يشار إلى lambda على أنها وظيفة مجهولة. لإنشاء لامدا في Ruby ، ​​يمكنك استخدام البنية التالية:
 
- `lambda = lambda {} 
-` 
+```ruby
+lambda = lambda {}
+``` 
 
 #### معلومات اكثر:
 

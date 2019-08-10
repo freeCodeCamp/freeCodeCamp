@@ -18,7 +18,7 @@ localeTitle: إدارة التحديثات باستخدام أساليب دور�
 
 ```yml
 tests:
-  - text: يجب أن يقوم مكون &quot; <code>Controller</code> بعرض مكون &quot; <code>Dialog</code> &quot; كطفل.
+  - text: يجب أن يقوم مكون <code>Controller</code> بعرض مكون  <code>Dialog</code> كطفل.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Controller)); return mockedComponent.find("Controller").length === 1 && mockedComponent.find("Dialog").length === 1; })(), "The <code>Controller</code> component should render the <code>Dialog</code> component as a child.");'
   - text: يجب أن يتم تسجيل أسلوب <code>componentWillReceiveProps</code> في مكون <code>Dialog</code> <code>this.props</code> إلى وحدة التحكم.
     testString: 'assert((function() { const lifecycleChild = React.createElement(Dialog).type.prototype.componentWillReceiveProps.toString().replace(/ /g,""); return lifecycleChild.includes("console.log") && lifecycleChild.includes("this.props") })(), "The <code>componentWillReceiveProps</code> method in the <code>Dialog</code> component should log <code>this.props</code> to the console.");'

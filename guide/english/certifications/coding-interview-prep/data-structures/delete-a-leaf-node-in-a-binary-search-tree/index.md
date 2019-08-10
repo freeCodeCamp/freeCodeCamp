@@ -1,7 +1,7 @@
 ---
 title: Delete a Leaf Node in a Binary Search Tree
 ---
-## Delete a Leaf Node in a Binary Search Tree
+# Delete a Leaf Node in a Binary Search Tree
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/delete-a-leaf-node-in-a-binary-search-tree/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

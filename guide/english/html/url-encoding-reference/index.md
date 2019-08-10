@@ -1,7 +1,7 @@
 ---
-title: Url Encoding Reference
+title: URL Encoding Reference
 ---
-## Url Encoding Reference
+## URL Encoding Reference
 
 A URL is an address for a website. Just like postal addresses have to follow a specific format to be understood by the postman, URLS have to follow a format to be understood and get you to the right location.
 

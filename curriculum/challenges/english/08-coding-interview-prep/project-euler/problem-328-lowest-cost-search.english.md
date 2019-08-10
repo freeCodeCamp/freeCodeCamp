@@ -2,6 +2,7 @@
 id: 5900f4b41000cf542c50ffc7
 challengeType: 5
 title: 'Problem 328: Lowest-cost Search'
+forumTopicId: 301985
 ---
 
 ## Description
@@ -42,7 +43,7 @@ Find C(n).
 ```yml
 tests:
   - text: <code>euler328()</code> should return 260511850222.
-    testString: assert.strictEqual(euler328(), 260511850222, '<code>euler328()</code> should return 260511850222.');
+    testString: assert.strictEqual(euler328(), 260511850222);
 
 ```
 
@@ -74,4 +75,5 @@ euler328();
 ```js
 // solution required
 ```
+
 </section>

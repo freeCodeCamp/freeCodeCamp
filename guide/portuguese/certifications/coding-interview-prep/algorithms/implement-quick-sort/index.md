@@ -48,7 +48,6 @@ localeTitle: Implementar classificação rápida
  } 
 ```
 
-*   [Executar código](https://repl.it/@ezioda004/Quick-Sort)
 
 ### Referência:
 

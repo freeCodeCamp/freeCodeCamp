@@ -1,9 +1,10 @@
 ---
 title: Inherit Behaviors from a Supertype
 ---
-## Inherit Behaviors from a Supertype
+# Inherit Behaviors from a Supertype
 
-### Method
+---
+## Problem Explanation
 
 To pass this challenge simply create the new `duck` and `beagle` objects using the `Object.create()` method seen in the following example.
 
@@ -13,14 +14,17 @@ let animal = Object.create(Animal.prototype);
 
 ```
 
-### Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
-
-function Animal() { }
+function Animal() {}
 
 Animal.prototype = {
-  constructor: Animal, 
+  constructor: Animal,
   eat: function() {
     console.log("nom nom nom");
   }
@@ -29,9 +33,10 @@ Animal.prototype = {
 // Add your code below this line
 
 let duck = Object.create(Animal.prototype); // Change this line
-let beagle = Object.create(Animal.prototype);; // Change this line
+let beagle = Object.create(Animal.prototype); // Change this line
 
 duck.eat(); // Should print "nom nom nom"
-beagle.eat(); // Should print "nom nom nom" 
-
+beagle.eat(); // Should print "nom nom nom"
 ```
+
+</details>

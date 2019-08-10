@@ -10,18 +10,20 @@ localeTitle: String.prototype.substring
 
 أمثلة:
 
- `"Hello, campers".substring(7, 14); 
- // output is "campers" 
- 
- "Hello, world".substring(0, 5); 
- // output is "Hello" 
-` 
+```js
+"Hello, campers".substring(7, 14);
+// output is "campers"
+
+"Hello, world".substring(0, 5);
+// output is "Hello"
+``` 
 
 يمكنك أيضًا حذف معلمة فهرس الأحرف الأخيرة ، وسيتم استخراج التسلسل الفرعي من فهرس البدء حتى نهاية السلسلة. مثال:
 
- `"Hello, campers!".substring(7); 
- // output is "campers!" 
-` 
+```js
+"Hello, campers!".substring(7);
+// output is "campers!"
+``` 
 
 #### معلومات اكثر:
 

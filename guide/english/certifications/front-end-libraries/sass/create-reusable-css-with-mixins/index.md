@@ -1,7 +1,11 @@
 ---
 title: Create Reusable CSS with Mixins
 ---
-## Create Reusable CSS with Mixins
+# Create Reusable CSS with Mixins
+
+---
+## Problem Explanation
+
 `Mixin` is one of the great features that let developers use `SASS` instead of plain `CSS`, as it allows you to have a `Function` inside your Stylesheet!
 
 To create a mixin you should follow the following scheme:
@@ -17,17 +21,16 @@ element {
 }
 ```
 
----
+**Example:** Write A `Text Shadow` in `SASS`
 
-### [Example] Write A `Text Shadow` in `SASS`
 **Objective:** Apply a custom `Text Shadow` to an `h4` element
 
-#### HTML
+**HTML**
 ```html
 <h4>This text needs a Shadow!</h4>
-```
 
-#### SASS _(Written in SCSS syntax)_
+
+**SASS _(Written in SCSS syntax)_**
 ```scss
 @mixin custom-text-shadow($offsetX, $offsetY, $blurRadius, $color) {
     -webkit-text-shadow: $offsetX, $offsetY, $blurRadius, $color;

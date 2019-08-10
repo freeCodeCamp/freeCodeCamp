@@ -56,7 +56,7 @@ function testElseIf(val) {
  testElseIf(7); 
 ```
 
-：rocket： [运行代码](https://repl.it/@RyanPisuena/GoldenWorriedRuntime) ##代码说明 **else-if逻辑流**的结构是一个初始`if`语句，一个`if-else`语句和一个final `else`语句。
+##代码说明 **else-if逻辑流**的结构是一个初始`if`语句，一个`if-else`语句和一个final `else`语句。
 
 ### 资源
 

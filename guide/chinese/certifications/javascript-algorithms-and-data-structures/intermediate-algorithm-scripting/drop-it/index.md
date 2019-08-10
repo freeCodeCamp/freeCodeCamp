@@ -59,7 +59,6 @@ function dropElements(arr, func) {
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}) 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLna/0)
 
 ### 代码说明：
 
@@ -82,7 +81,6 @@ function dropElements(arr, func) {
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnc/0)
 
 ### 代码说明：
 
@@ -108,7 +106,6 @@ function dropElements(arr, func) {
  dropElements([1, 2, 3, 4], function(n) {return n >= 3;}); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnf/0)
 
 ### 代码说明
 

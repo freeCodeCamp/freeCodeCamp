@@ -6,28 +6,30 @@ localeTitle: HTML DOM querySelector ()
 
 **محتوى HTML:**
 
- `
-<div id="id-example"></div> 
- <div class="class-example"></div> 
- <a>element-example</a> 
-` 
+```html
+<div id="id-example"></div>
+<div class="class-example"></div>
+<a>element-example</a>
+``` 
 
 **محتوى جافا سكريبت:**
 
- `document.querySelector("#id-example"); // Returns the element with id "id-example" 
- document.querySelector(".class-example"); // Returns the element with class "class-example" 
- document.querySelector("a"); // Returns the "a" element 
-` 
+```javascript
+document.querySelector("#id-example"); // Returns the element with id "id-example"
+document.querySelector(".class-example"); // Returns the element with class "class-example"
+document.querySelector("a"); // Returns the "a" element
+``` 
 
 ملاحظة `querySelector()` إرجاع عنصر المطابقة الأول ، لإرجاع كافة التطابقات ، استخدم أسلوب querySelectorAll () بدلاً من ذلك.
 
- `
-<div id="example">First</div> 
- <div id="example">Second</div> 
-` 
+```html
+<div id="example">First</div>
+<div id="example">Second</div>
+``` 
 
- `document.querySelector("#example"); // Returns only the element containing 'First' 
-` 
+```javascript
+document.querySelector("#example"); // Returns only the element containing 'First'
+``` 
 
 #### معلومات اكثر:
 

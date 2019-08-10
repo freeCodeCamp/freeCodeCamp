@@ -4,6 +4,8 @@ title: Spark
 
 ## Spark
 
+![Spark](http://spark.apache.org/images/spark-logo-trademark.png "Spark")
+
 <a href='http://spark.apache.org/' target='_blank' rel='nofollow'>Spark</a> is a fast and general cluster computing system for Big Data. It provides high-level APIs in Scala, Java, Python, and R, and an optimized engine that supports general computation graphs for data analysis. It also supports a rich set of higher-level tools including Spark SQL for SQL and DataFrames, MLlib for machine learning, GraphX for graph processing, and Spark Streaming for stream processing.
 
 ## Core Features
@@ -26,5 +28,5 @@ Spark’s RDD (Resilient Distributed Dataset) abstraction resembles Crunch’s P
 * Data operations are transparently distributed across the cluster, even as you type.
 
 #### More information
-* <a href='https://github.com/apache/spark' target='_blank' rel='nofollow'>Spark Github page</a>
+* <a href='https://github.com/apache/spark' target='_blank' rel='nofollow'>Spark GitHub page</a>
 * <a href='https://en.wikipedia.org/wiki/Apache_Spark' target='_blank' rel='nofollow'>Wikipedia</a>

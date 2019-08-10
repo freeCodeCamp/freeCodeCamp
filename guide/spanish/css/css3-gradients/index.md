@@ -24,7 +24,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ##### Degradado lineal: de arriba a abajo (este es el valor predeterminado)
 
-El siguiente ejemplo muestra un degradado lineal que comienza en la parte superior. Empieza en rojo, pasando a amarillo: ![gradiente lineal por defecto](https://i.imgur.com/2uGfleD.jpg)
+El siguiente ejemplo muestra un degradado lineal que comienza en la parte superior. Empieza en rojo, pasando a amarillo: ![gradiente lineal por defecto](https://cdn-media-1.freecodecamp.org/imgr/2uGfleD.jpg)
 
 #### Ejemplo
 ```
@@ -55,11 +55,11 @@ El siguiente ejemplo muestra un degradado lineal que comienza en la parte superi
  </html> 
 ```
 
-![gradiente lineal por defecto](https://i.imgur.com/CvtXCMd.jpg)
+![gradiente lineal por defecto](https://cdn-media-1.freecodecamp.org/imgr/CvtXCMd.jpg)
 
 ##### Gradiente lineal - de izquierda a derecha
 
-El siguiente ejemplo muestra un degradado lineal que comienza desde la izquierda. Empieza en rojo, pasando a amarillo: ![de izquierda a derecha](https://i.imgur.com/e4dRvZR.jpg)
+El siguiente ejemplo muestra un degradado lineal que comienza desde la izquierda. Empieza en rojo, pasando a amarillo: ![de izquierda a derecha](https://cdn-media-1.freecodecamp.org/imgr/e4dRvZR.jpg)
 
 #### Ejemplo
 ```
@@ -90,7 +90,7 @@ El siguiente ejemplo muestra un degradado lineal que comienza desde la izquierda
  </html> 
 ```
 
-![de izquierda a derecha](https://i.imgur.com/k4FSyXz.jpg)
+![de izquierda a derecha](https://cdn-media-1.freecodecamp.org/imgr/k4FSyXz.jpg)
 
 #### Degradado Lineal - Diagonal
 
@@ -98,7 +98,7 @@ Puede hacer un degradado en diagonal especificando las posiciones de inicio hori
 
 El siguiente ejemplo muestra un degradado lineal que comienza en la parte superior izquierda (y va hacia la parte inferior derecha). Empieza en rojo, pasando a amarillo:
 
-![diagonal](https://i.imgur.com/YvtbUBH.jpg)
+![diagonal](https://cdn-media-1.freecodecamp.org/imgr/YvtbUBH.jpg)
 
 #### Ejemplo
 ```
@@ -129,7 +129,7 @@ El siguiente ejemplo muestra un degradado lineal que comienza en la parte superi
  </html> 
 ```
 
-![diagonal-exp](https://i.imgur.com/8gKRhAp.jpg)
+![diagonal-exp](https://cdn-media-1.freecodecamp.org/imgr/8gKRhAp.jpg)
 
 #### Más información:
 

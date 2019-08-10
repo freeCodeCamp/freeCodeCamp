@@ -1,7 +1,7 @@
 ---
 title: Access the JSON Data from an API
 ---
-## Access the JSON Data from an API
+# Access the JSON Data from an API
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/json-apis-and-ajax/access-the-json-data-from-an-api/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
