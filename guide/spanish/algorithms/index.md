@@ -28,6 +28,11 @@ Los algoritmos de clasificación se dividen en varios tipos dependiendo de su ne
 
 No hay discusión de clasificación que pueda terminar sin una clasificación rápida. El concepto básico está en el siguiente enlace. [Ordenación rápida](http://me.dt.in.th/page/Quicksort/)
 
+#### Ordenación por Inserción
+Se trata de un algoritmo relativamente lento. Técnicamente es la forma mas lógica de ordenar cualquier cosa para un humano, por ejemplo, una baraja de cartas...
+Inicialmente se tiene un solo elemento, que obviamente es un conjunto ordenado. Después, cuando hay k elementos ordenados de menor a mayor, se toma el elemento k+1 y se compara con todos los elementos ya ordenados, deteniéndose cuando se encuentra un elemento menor (todos los elementos mayores han sido desplazados una posición a la derecha). En este punto se inserta el elemento k+1 debiendo desplazarse los demás elementos.
+[Explicado por GeeksforGeeks](https://www.geeksforgeeks.org/insertion-sort/)
+
 #### Combinar clasificación
 
 Es el algoritmo de clasificación que se basa en el concepto de cómo se ordenan las matrices ordenadas que se combinan para dar una matriz ordenada. Lea más sobre esto aquí. [Combinar clasificación](https://www.geeksforgeeks.org/merge-sort/)
