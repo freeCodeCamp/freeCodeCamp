@@ -24,7 +24,7 @@ SELECT 'aaaaa'
 
 Salida
 
-```text
+```
 +-----------+ 
  | aaaaa     | 
  +-----------+ 
@@ -45,8 +45,19 @@ SELECT StudentID, FullName FROM student WHERE studentID BETWEEN 1 AND 5
 ```
 
 Salida
-
-\`\` \`texto + ----------- + -------------------------------- + | StudentID | Nombre completo | + ----------- + -------------------------------- + | 1 | Monique Davis | | 2 | Teri Gutierrez | | 3 | Spencer Pautier | | 4 | Louis Ramsey | | 5 | Alvin Greene | | 7 | Maximo.Smith@freeCodeCamp.org | | 8 | Michael.Roach@freeCodeCamp.ort | + ----------- + -------------------------------- + 7 filas en conjunto (0,00 seg)
+```
++ ----------- + -------------------------------- +
+| StudentID | Nombre completo |
++ ----------- + -------------------------------- +
+| 1 | Monique Davis |
+| 2 | Teri Gutierrez |
+| 3 | Spencer Pautier |
+| 4 | Louis Ramsey |
+| 5 | Alvin Greene |
+| 7 | Maximo.Smith@freeCodeCamp.org |
+| 8 | Michael.Roach@freeCodeCamp.ort |
++ ----------- + -------------------------------- +
+7 filas en conjunto (0,00 seg)
 ```
 ## SQL UNION ALL Operator 
  
