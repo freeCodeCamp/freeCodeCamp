@@ -6,7 +6,7 @@ localeTitle: Fondo
 
 La propiedad de fondo (background) te permite usar imágenes y colores para crear fondos para tus páginas web.
 
-### Color de fondo
+### Color de Fondo
 
 La propiedad de color de fondo te permite elegir el color de tu elemento. Éste puede ser el fondo de toda la página o el fondo de una sección de tu página.
 
@@ -41,7 +41,7 @@ En CSS el color se puede definir de tres maneras:
 *   Un valor HEX como `#FFFFF` (Este es el valor hexadecimal para el blanco).
 *   Un valor RGB como `rgb(76,175,80)` (este es el valor RGB para verde claro).
 
-### Imágenes de fondo
+### Imágenes de Fondo
 
 Puedes utilizar la propiedad de imagen de fondo para establecer una imagen como fondo para un elemento. La imagen se repite de forma predeterminada para que cubra todo el elemento.
 
@@ -53,7 +53,7 @@ body {
 
 ![imagen](https://user-images.githubusercontent.com/26467304/31036366-eb1fc260-a539-11e7-835d-e3f935a22c86.png)
 
-También puedes vincular imágenes o gifs que encuentres en línea usando su enlace (por ejemplo una búsqueda desde Google Images).
+También puede vincular imágenes o gifs que encuentre en línea usando un enlace (ej.: desde una búsqueda en Google Imágenes).
 
 ```css
 body { 
@@ -61,7 +61,7 @@ body {
  } 
 ```
 
-### Imagen de fondo - la propiedad de repetición
+### Imagen de Fondo - La Propiedad de Repetición
 
 La imagen de fondo se repite tanto verticalmente (arriba y abajo) como horizontalmente (a través de la página web) de forma predeterminada. Puedes usar la propiedad de repetición de fondo para repetir la imagen vertical u horizontalmente.
 
@@ -76,7 +76,7 @@ body {
 
 ![vertical](https://user-images.githubusercontent.com/26467304/31039770-8962c7a6-a54e-11e7-9d25-4fb09760d219.PNG)
 
-Puedes repetir la imagen horizontalmente configurando la propiedad de repetición de fondo en "repetir-x".
+Puede repetir la imagen horizontalmente configurando la propiedad de repetición de fondo en `repeat-x`.
 
 ```css
 body { 
@@ -85,7 +85,7 @@ body {
  } 
 ```
 
-También puedes usar la propiedad de repetición de fondo para configurar una imagen para que no se repita.
+También puede configurar la propiedad de repetición de fondo para que una imagen no se repita.
 
 ```css
 body { 
@@ -96,7 +96,7 @@ body {
 
 ![norepeat](https://user-images.githubusercontent.com/26467304/31039801-c8761efc-a54e-11e7-8bb9-ec5b88885a50.PNG)
 
-### Imagen de fondo - La propiedad de posición
+### Imagen de Fondo - La Propiedad de Posición
 
 Puedes usar la propiedad de posición para especificar dónde se ubicará tu imagen en una página web.
 
@@ -110,9 +110,9 @@ body {
 
 ![posición](https://user-images.githubusercontent.com/26467304/31039828-077d1038-a54f-11e7-8aa6-092253ca92b8.PNG)
 
-### Imagen de fondo - La posición fija
+### Imagen de Fondo - La Posición Fija
 
-Puedes utilizar la propiedad de adjuntos de fondo para establecer una imagen en una posición fija. Una posición fija hace que una imagen no se desplace con el resto de la página.
+Puede utilizar la propiedad `background-attachment` para establecer una imagen en una posición fija. Una posición fija hace que una imagen no se desplace con el resto de la página.
 
 ```css
 body { 
@@ -125,17 +125,17 @@ body {
 
 ![fijo](https://user-images.githubusercontent.com/26467304/31039859-39612c92-a54f-11e7-93ca-9d7bcb938225.PNG)
 
-### Gradientes de fondo
+### Gradientes de Fondo
 
-Un degradado es una transición entre dos o más colores y se puede usar a través de CSS como una imagen de fondo.
+Un gradiente es una transición entre dos o más colores y se puede usar en CSS de forma similar a una imagen de fondo.
 
-La sintaxis de un fondo degradado puede ser bastante compleja y, a menudo, todavía se usa con prefijos de proveedores debido a las inconsistencias entre los navegadores compatibles.
+La sintaxis de un fondo con gradiente puede ser bastante compleja, y a menudo se usa con prefijos de proveedores debido a las inconsistencias entre los navegadores compatibles.
 
 El [Colorzilla Gradient Editor](http://www.colorzilla.com/gradient-editor/) es una excelente herramienta en línea para generar gradientes personalizados y el marcado css asociado.
 
-### Fondo - La propiedad de taquigrafía
+### Fondo - La Propiedad Abreviada
 
-Puedes escribir las propiedades de fondo en una sola línea. Esto se llama la propiedad taquigrafía.
+Puede escribir las propiedades de fondo en una sola línea. Esto se conoce como propiedad abreviada.
 
 ```css
 body { 
@@ -143,15 +143,15 @@ body {
  } 
 ```
 
-Puedes omitir las propiedades que no necesitas al usar la propiedad abreviada, pero las propiedades deben ser utilizadas en un cierto orden. El orden es:
+Puede omitir las propiedades que no necesita al usar la propiedad abreviada, pero las propiedades deben utilizarse en un cierto orden. El orden es:
 
-*   color
-*   imagen
-*   repetir
-*   adjunto archivo
-*   posición
+*   `color`
+*   `image`
+*   `repeat`
+*   `attachment`
+*   `position`
 
-### Múltiples imágenes de fondo
+### Múltiples Imágenes de Fondo
 
 Puedes especificar varias imágenes de fondo en una sola propiedad de fondo.
 
@@ -161,15 +161,15 @@ body {
  } 
 ```
 
-La primera imagen (o gradiente) especificada es la de más arriba, la segunda viene después, y así sucesivamente. Si uno de los elementos no es correcto debido a su URL o su sintaxis, el navegador ignorará toda la línea.
+La primera imagen (o gradiente) especificada se situa encima, la segunda viene después, y así sucesivamente. Si uno de los elementos no es correcto debido a su URL o su sintaxis, el navegador ignorará toda la línea.
 
-### Algunas propiedades básicas de fondo de CSS
+### Algunas Propiedades Básicas de Fondo de CSS
 
 Las propiedades de fondo de CSS se utilizan para definir los efectos de fondo para los elementos.
 
-Propiedades de fondo CSS: color de fondo, imagen de fondo, repetición de fondo, fondo adjunto, posición de fondo
+Propiedades de fondo CSS: `background-color` `background-image` `background-repeat` `background-attachment` `background-position`
 
-Puedes consultar el siguiente enlace a las escuelas W3 para obtener más información sobre antecedentes y temas relacionados en CSS. [Referencia de fondo a W3](https://www.w3schools.com/css/css_background.asp)
+Puede consultar el siguiente enlace a W3 Schools para obtener más información sobre antecedentes y temas relacionados en CSS. [Referencia de fondo a W3](https://www.w3schools.com/css/css_background.asp)
 
 ### Otros recursos
 
