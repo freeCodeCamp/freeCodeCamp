@@ -41,19 +41,20 @@ localeTitle: Array.prototype.reduce
 
 قم بتحويل صفيف من السلاسل إلى كائن واحد يُظهر عدد المرات التي تظهر فيها كل سلسلة في الصفيف. لاحظ هذه المكالمة لتقليل التمريرات إلى كائن فارغ `{}` كمعلمة `initialValue` . سيتم استخدام هذا كقيمة أولية للمجمع (الوسيطة الأولى) التي تم تمريرها إلى وظيفة رد الاتصال.
 
- `var pets = ['dog', 'chicken', 'cat', 'dog', 'chicken', 'chicken', 'rabbit']; 
- 
- var petCounts = pets.reduce(function(obj, pet){ 
-    if (!obj[pet]) { 
-        obj[pet] = 1; 
-    } else { 
-        obj[pet]++; 
-    } 
-    return obj; 
- }, {}); 
- 
- console.log(petCounts); 
-` 
+```js
+var pets = ['dog', 'chicken', 'cat', 'dog', 'chicken', 'chicken', 'rabbit'];
+
+var petCounts = pets.reduce(function(obj, pet){
+    if (!obj[pet]) {
+        obj[pet] = 1;
+    } else {
+        obj[pet]++;
+    }
+    return obj;
+}, {});
+
+console.log(petCounts);
+``` 
 
 انتاج: `js { dog: 2, chicken: 3, cat: 1, rabbit: 1 }`
 

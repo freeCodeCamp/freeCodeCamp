@@ -1,10 +1,23 @@
 ---
 title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 ---
-## Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
+# Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-with-helmetjs/hide-potentially-dangerous-information-using-helmet.hidepoweredby/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+---
+## Hints
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 1
+
+You want your `app` to `use` the `helmet.hidePoweredBy()` method on each request.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+In the `myApp.js` file, add `app.use(helmet.hidePoweredBy());` under the second instructions.
+
+**Note:** Be sure to submit the link to the **live demo** of your project.
+</details>

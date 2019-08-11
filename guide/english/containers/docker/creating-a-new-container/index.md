@@ -9,6 +9,6 @@ docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 # Examples
 Create and start a container
-```sh
+```shell
 $ docker create -t -i fedora bash
 ```

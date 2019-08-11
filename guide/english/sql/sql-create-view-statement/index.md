@@ -40,36 +40,54 @@ CREATE
     AS select_statement
 ```
 
-### Sample View creation from the student tables
+* ### Sample View creation from the student tables :
 
-Notes:
+  Notes:
 
-* The name of the view has a "v" at the end.  It's recommended that the view name indicate that it's a view in some way to make life easier for programmers and database administrators. Your IT shop should have its own rules on naming objects.
+  * The name of the view has a "v" at the end.  It's recommended that the view name indicate that it's a view in some way to make life easier for programmers and database administrators. Your IT shop should have its own rules on naming objects.
 
-* The columns in the view are limited by the SELECT and the rows of data by the WHERE clause.
+  * The columns in the view are limited by the SELECT and the rows of data by the WHERE clause.
 
-* the "\`" character around the view names is required because of the "-" in the names. MySQL reports an error without them.
+  * the "\`" character around the view names is required because of the "-" in the names. MySQL reports an error without them.
 
-```sql
-create view `programming-students-v` as
-select FullName, programOfStudy 
-from student 
-where programOfStudy = 'Programming';
+  ```sql
+  create view `programming-students-v` as
+  select FullName, programOfStudy 
+  from student 
+  where programOfStudy = 'Programming';
 
-select * from `programming-students-v`;
-```
+  select * from `programming-students-v`;
+  ```
+  Result :
 
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/create-view-statement01.JPG?raw=true)
+  ```text
+  +------------------------+------------------+
+  | FullName               | programOfStudy   |
+  +------------------------+------------------+
+  | Teri Gutierrez         | Programming      |
+  | Spencer Pautier        | Programming      |
+  | Louis Ramsey           | Programming      |
+  | Alvin Greene           | Programming      |
+  | Sophie Freeman         | Programming      |
+  +------------------------+------------------+
+  ```
 
-### Sample of using a View to combine data from more than one table
+* ### Sample of using a View to combine data from more than one table :
 
-A Student demographics table was added to the database to demonstrate this usage. This view will combine these tables.
+  A Student demographics table was added to the database to demonstrate this usage. This view will combine these tables.
 
-Notes:
+  Notes:
 
-* To "join" tables, the tables must have fields in common (usually primary keys) that uniquely identity each row. In this case it's the student ID. (More on this in the [SQL Joins](../sql-joins/index.md) guide.)
-* Notice the "alias" given to each table ("s" for student and "sc" for student contact). This is a tool to shorten the table names and make it easier to identify which table is being used. It's easier than typing long table names repeatedly. In this example, it was required because studentID is the same column name in both tables, and the system would present an "ambiguous column name error" without specifying which table to use.
+  * To "join" tables, the tables must have fields in common (usually primary keys) that uniquely identity each row. In this case it's the student ID. (More on this in the [SQL Joins](../sql-joins/index.md) guide.)
 
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/create-view-statement02.JPG?raw=true)
+  ```sql
+  CREATE VIEW View_name AS
+      SELECT Table1_name.Column1_name , Table1_name.Column2_name , Table2_name.Column1_name , 
+      Table1_name.Column2_name
+      FROM Table1 , Table2
+      WHERE Table1_name.Column1_name = Table2_name.Column1_name;
+
+  ```
+
 
 *As with all of these things there is MUCH MORE to Views.  Please see the manual for your database manager and have fun trying different options yourself.*

@@ -1,7 +1,7 @@
 ---
 title: Create a Hash Table
 ---
-## Create a Hash Table
+# Create a Hash Table
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/create-a-hash-table/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

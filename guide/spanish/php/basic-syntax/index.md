@@ -13,7 +13,9 @@ A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP 
 
 # Mi primera página PHP
 ```
+
 La ejecución del script muestra: 
+
 ```
 
 Mi primera página PHP
@@ -59,3 +61,4 @@ Hola Mundo!
  echo $coLOR; // Notice: Undefined variable: coLOR
  
 ```
+

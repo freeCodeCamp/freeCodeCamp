@@ -24,7 +24,7 @@ A lambda expression is composed of three parts — function parameters, the `->`
 
 The `Stream` API was also introduced in Java 8, and can be used to allow chaining of sequential and aggregate operations. Stream operations are either intermediate or terminal in nature.
 
-Normally, the Stream API is used in conjunction with lambda expressions to produce concise code.
+The stream API isn't technically a lambda function, but is used in conjunction with lambda expressions to produce concise code.
 
 In this small example you can see that one of the utilities of a stream is to receive a certain property of all objects in a list and return it in another list using intermediate and terminal operations.
 
@@ -70,6 +70,30 @@ The terminal `collect` operation collects the stream as a list of strings.
 
 This is only one use of the Streams API used in Java 8. There are many other applications of streams utilizing other operations as seen here in the
  [documentation](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html).
+ 
+### Lambda Expressions and Interfaces
+
+Suppose you have an interface that looks something like this:
+
+```java
+interface MathInterface {
+  int operation(int x, int y);
+}
+```
+
+You can create an instance of this interface in one line using lambdas provided that the interface only has one method.
+
+```java
+MathInterface multiply = ((int x, int y) -> x * y);
+MathInterface add = ((x, y) -> x + y);
+MathInterface subtraction = ((x, y) -> x - y);
+MathInterface division = (((x, y) -> x / y));
+
+multiply.operation(1, 2); // == 2
+add.operation(1, 2); // == 3
+```
+
+Note that in some of these interfaces, we don't specify the type of each parameter. This is valid and will still work the same as specifying the types such as `(int x, int y) -> x * y`. If you specify one type, however, you must specify all types of the lambda function.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->

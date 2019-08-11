@@ -2,6 +2,7 @@
 id: 5900f4551000cf542c50ff68
 challengeType: 5
 title: 'Problem 233: Lattice points on a circle'
+forumTopicId: 301877
 ---
 
 ## Description
@@ -23,7 +24,7 @@ What is the sum of all positive integers N ≤ 1011 such that f(N) = 420
 ```yml
 tests:
   - text: <code>euler233()</code> should return 271204031455541300.
-    testString: assert.strictEqual(euler233(), 271204031455541300, '<code>euler233()</code> should return 271204031455541300.');
+    testString: assert.strictEqual(euler233(), 271204031455541300);
 
 ```
 
@@ -55,4 +56,5 @@ euler233();
 ```js
 // solution required
 ```
+
 </section>

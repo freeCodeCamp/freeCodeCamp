@@ -2,6 +2,7 @@
 id: 5900f4371000cf542c50ff49
 challengeType: 5
 title: 'Problem 202: Laserbeam'
+forumTopicId: 301843
 ---
 
 ## Description
@@ -29,7 +30,7 @@ In how many ways can a laser beam enter at vertex C, bounce off 12017639147 surf
 ```yml
 tests:
   - text: <code>euler202()</code> should return 1209002624.
-    testString: assert.strictEqual(euler202(), 1209002624, '<code>euler202()</code> should return 1209002624.');
+    testString: assert.strictEqual(euler202(), 1209002624);
 
 ```
 
@@ -61,4 +62,5 @@ euler202();
 ```js
 // solution required
 ```
+
 </section>

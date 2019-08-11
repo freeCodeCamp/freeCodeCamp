@@ -2,6 +2,7 @@
 id: 5900f5001000cf542c510013
 challengeType: 5
 title: 'Problem 403: Lattice points enclosed by parabola and line'
+forumTopicId: 302071
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Find S(1012). Give your answer mod 108.
 ```yml
 tests:
   - text: <code>euler403()</code> should return 18224771.
-    testString: assert.strictEqual(euler403(), 18224771, '<code>euler403()</code> should return 18224771.');
+    testString: assert.strictEqual(euler403(), 18224771);
 
 ```
 
@@ -63,4 +64,5 @@ euler403();
 ```js
 // solution required
 ```
+
 </section>

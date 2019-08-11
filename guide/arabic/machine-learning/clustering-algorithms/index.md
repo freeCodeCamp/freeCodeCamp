@@ -60,44 +60,45 @@ localeTitle: خوارزميات التجميع
 
 في ما يلي مثال تجميع في Python يستخدم " [مجموعة بيانات Iris"](https://www.kaggle.com/uciml/iris)
 
- `import pandas as pd 
- import numpy as np 
- iris = pd.read_csv('Iris.csv') 
- del iris['Id'] 
- del iris['SepalLengthCm'] 
- del iris['SepalWidthCm'] 
- 
- from matplotlib import pyplot as plt 
- # k is the input parameter set to the number of species 
- k = len(iris['Species'].unique()) 
- for i in iris['Species'].unique(): 
-    # select only the applicable rows 
-    ds = iris[iris['Species'] == i] 
-    # plot the points 
-    plt.plot(ds[['PetalLengthCm']],ds[['PetalWidthCm']],'o') 
- plt.title("Original Iris by Species") 
- plt.show() 
- 
- from sklearn import cluster 
- del iris['Species'] 
- kmeans = cluster.KMeans(n_clusters=k, n_init=10, max_iter=300, algorithm='auto') 
- kmeans.fit(iris) 
- labels = kmeans.labels_ 
- centroids = kmeans.cluster_centers_ 
- 
- for i in range(k): 
-    # select only data observations from the applicable cluster 
-    ds = iris.iloc[np.where(labels==i)] 
-    # plot the data observations 
-    plt.plot(ds['PetalLengthCm'],ds['PetalWidthCm'],'o') 
-    # plot the centroids 
-    lines = plt.plot(centroids[i,0],centroids[i,1],'kx') 
-    # make the centroid x's bigger 
-    plt.setp(lines,ms=15.0) 
-    plt.setp(lines,mew=2.0) 
- plt.title("Iris by K-Means Clustering") 
- plt.show() 
-` 
+```python
+import pandas as pd
+import numpy as np
+iris = pd.read_csv('Iris.csv')
+del iris['Id']
+del iris['SepalLengthCm']
+del iris['SepalWidthCm']
+
+from matplotlib import pyplot as plt
+# k is the input parameter set to the number of species
+k = len(iris['Species'].unique())
+for i in iris['Species'].unique():
+    # select only the applicable rows
+    ds = iris[iris['Species'] == i]
+    # plot the points
+    plt.plot(ds[['PetalLengthCm']],ds[['PetalWidthCm']],'o')
+plt.title("Original Iris by Species")
+plt.show()
+
+from sklearn import cluster
+del iris['Species']
+kmeans = cluster.KMeans(n_clusters=k, n_init=10, max_iter=300, algorithm='auto')
+kmeans.fit(iris)
+labels = kmeans.labels_
+centroids = kmeans.cluster_centers_
+
+for i in range(k):
+    # select only data observations from the applicable cluster
+    ds = iris.iloc[np.where(labels==i)]
+    # plot the data observations
+    plt.plot(ds['PetalLengthCm'],ds['PetalWidthCm'],'o')
+    # plot the centroids
+    lines = plt.plot(centroids[i,0],centroids[i,1],'kx')
+    # make the centroid x's bigger
+    plt.setp(lines,ms=15.0)
+    plt.setp(lines,mew=2.0)
+plt.title("Iris by K-Means Clustering")
+plt.show()
+``` 
 
 بما أن نقاط البيانات تنتمي عادة إلى مساحة عالية الأبعاد ، فإن مقياس التشابه غالباً ما يتم تعريفه على أنه مسافة بين متجهين (Euclidean ، Manhathan ، Cosine ، Mahalanobis…)
 

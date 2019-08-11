@@ -66,8 +66,7 @@ A melhor maneira de executar a função de retorno de chamada é verificar se o 
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLme/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Leia os comentários no código.
@@ -90,8 +89,7 @@ Leia os comentários no código.
     diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CNYb/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Explique a solução aqui e adicione links relevantes
@@ -115,8 +113,7 @@ function diffArray(arr1, arr2) {
  diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CNYU/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Explique a solução aqui e adicione links relevantes

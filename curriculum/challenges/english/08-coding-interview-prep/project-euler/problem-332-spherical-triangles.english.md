@@ -2,6 +2,7 @@
 id: 5900f4b91000cf542c50ffcb
 challengeType: 5
 title: 'Problem 332: Spherical triangles'
+forumTopicId: 301990
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Find  A(r). Give your answer rounded to six decimal places.
 ```yml
 tests:
   - text: <code>euler332()</code> should return 2717.751525.
-    testString: assert.strictEqual(euler332(), 2717.751525, '<code>euler332()</code> should return 2717.751525.');
+    testString: assert.strictEqual(euler332(), 2717.751525);
 
 ```
 
@@ -65,4 +66,5 @@ euler332();
 ```js
 // solution required
 ```
+
 </section>

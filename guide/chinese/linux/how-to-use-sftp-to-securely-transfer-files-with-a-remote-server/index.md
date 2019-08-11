@@ -10,7 +10,7 @@ localeTitle: 如何使用SFTP通过远程服务器安全地传输文件
 
 如果您还没有，请测试您是否能够SSH到服务器。 SFTP使用Secure Shell（SSH）协议，因此如果您无法通过SSH，您可能也无法使用SFTP。
 
-```unix
+```shell
 ssh your_username@hostname_or_ip_address 
 ```
 
@@ -18,13 +18,13 @@ ssh your_username@hostname_or_ip_address
 
 它使用与SSH相同的语法，并打开一个可以传输文件的会话。
 
-```unix
+```shell
 sftp your_username@hostname_or_ip_address 
 ```
 
 要列出有用的命令：
 
-```unix
+```shell
 help 
 ```
 
@@ -32,19 +32,19 @@ help
 
 要下载文件：
 
-```unix
+```shell
 get <filename> 
 ```
 
 要下载文件夹及其内容，请使用“-r”标志（也可用于上载）：
 
-```unix
+```shell
 get -r <foldername> 
 ```
 
 要上传文件：
 
-```unix
+```shell
 put <filename> 
 ```
 
@@ -52,13 +52,13 @@ put <filename>
 
 要更改本地文件夹：
 
-```unix
+```shell
 lcd <path/to/folder> 
 ```
 
 要更改远程文件夹：
 
-```unix
+```shell
 cd <path/to/folder> 
 
 ```

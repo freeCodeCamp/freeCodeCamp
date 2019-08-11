@@ -8,12 +8,13 @@ localeTitle: الطابق الرياضيات
 
 ### أمثلة
 
- `Math.floor(0.9)  //  0 
- Math.floor(1.3)  //  1 
- Math.floor(0.5)  //  0 
- Math.floor(-0.9) // -1 
- Math.floor(-1.3) // -2 
-` 
+```javascript
+Math.floor(0.9)  //  0
+Math.floor(1.3)  //  1
+Math.floor(0.5)  //  0
+Math.floor(-0.9) // -1
+Math.floor(-1.3) // -2
+``` 
 
 ### معلومات اكثر:
 

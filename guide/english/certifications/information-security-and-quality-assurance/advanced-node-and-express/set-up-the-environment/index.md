@@ -1,7 +1,7 @@
 ---
 title: Set up the Environment
 ---
-## Set up the Environment
+# Set up the Environment
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/set-up-the-environment/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

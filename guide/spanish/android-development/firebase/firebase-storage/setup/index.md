@@ -15,9 +15,9 @@ Se recomienda que lo haga para no confundirse con instrucciones parciales relaci
 
 Después de agregar Firebase a su proyecto, tendrá que agregar dependencias adicionales y hacer otras cosas para configurar El almacenamiento Firebase. Hay la siguiente documentación sobre esto:
 
-*   [Base de fuego](https://firebase.google.com/docs/storage/android/start)
+*   [Documentación de Firebase](https://firebase.google.com/docs/storage/android/start)
 
-Puede haber riesgo de confusión en esa documentación o, si es nuevo en Firebase, es posible que tenga un poco de dificultad para entenderlo. Así que sigue los pasos de belows cuidadosamente:
+Puede haber riesgo de confusión en esa documentación o, si es nuevo en Firebase, es posible que tenga un poco de dificultad para entenderlo. Sigue los siguientes pasos cuidadosamente:
 
 **Añadir Dependencias de Gradle**
 
@@ -44,7 +44,7 @@ Para obtener información sobre cómo leer y escribir en el almacenamiento de su
 
 ## Ejemplos de proyectos de desarrolladores de Firebase
 
-Puede hacer un seguimiento de estos ejemplos de los desarrolladores de Firebase para iniciar el almacenamiento de Firebase. Firebase Quickstart-Android [\-muestra](https://github.com/firebase/quickstart-android/tree/master/storage)
+Puede seguir estos ejemplos de los desarrolladores de Firebase como referencia al almacenamiento de Firebase. Firebase Quickstart-Android [\-muestra](https://github.com/firebase/quickstart-android/tree/master/storage)
 
 ## Nota
 

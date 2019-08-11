@@ -1,10 +1,11 @@
 ---
 title: Create a Queue Class
 ---
-## Create a Queue Class
+# Create a Queue Class
 
 
-### Method:
+---
+## Problem Explanation
 - A Queue is an abstract Data Structure.
 - A Queue folow FIFO/LILO principle.
 - In this challenge we nede to implement `enqueue()`, `dequeue()`, `front()`, `size()`, `isEmpty()` methods.
@@ -20,61 +21,69 @@ title: Create a Queue Class
   
  - ![Queue in action](https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/405px-Data_Queue.svg.png)
 
-### Solution:
 
-#### Basic:
-##### Note: 
-- This solution is not exactly a queue, the shift() method used in the dequeue() method is of complexity `O(n)` and not `O(1)`. However, the advanced solution rectifies this and uses Object(HashTables) instead of Array to implement Queue. 
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+**Note:** This solution is not exactly a queue, the shift() method used in the dequeue() method is of complexity `O(n)` and not `O(1)`. However, the advanced solution rectifies this and uses Object(HashTables) instead of Array to implement Queue. 
+
 ```js
-function Queue () { 
-    var collection = [];
-    this.print = function() {
-        console.log(collection);
-    };
-    this.enqueue = function(val){
-        collection.push(val);
-    };
-    this.dequeue = function(){
-        return collection.shift();
-    }
-    this.front = function(){
-        return collection[0];
-    }
-    this.size = function(){
-        return collection.length;
-    }
-    this.isEmpty = function(){
-        return collection.length === 0;
-    }
+function Queue() {
+  var collection = [];
+  this.print = function() {
+    console.log(collection);
+  };
+  this.enqueue = function(val) {
+    collection.push(val);
+  };
+  this.dequeue = function() {
+    return collection.shift();
+  };
+  this.front = function() {
+    return collection[0];
+  };
+  this.size = function() {
+    return collection.length;
+  };
+  this.isEmpty = function() {
+    return collection.length === 0;
+  };
 }
 ```
-#### Advanced - ES6 class syntax:
+</details>
+
+
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
 ```js
 class Queue {
-    constructor(){
-        this.collection = {};
-        this.start = 0;
-        this.end = 0;
-    }
-    print(){
-        console.log(this.collection);
-    }
-    enqueue(val){
-        this.collection[this.end++] = val; 
-    }
-    dequeue(){
-        return this.collection[this.start++];
-    }
-    front(){
-        return this.collection[this.start];
-    }
-    size(){
-        return this.end - this.start;
-    }
-    isEmpty(){
-        return this.size() === 0;
-    }
+  constructor() {
+    this.collection = {};
+    this.start = 0;
+    this.end = 0;
+  }
+  print() {
+    console.log(this.collection);
+  }
+  enqueue(val) {
+    this.collection[this.end++] = val;
+  }
+  dequeue() {
+    return this.collection[this.start++];
+  }
+  front() {
+    return this.collection[this.start];
+  }
+  size() {
+    return this.end - this.start;
+  }
+  isEmpty() {
+    return this.size() === 0;
+  }
 }
 ```
-### References:
+#### Relevant Links
 - [Wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+</details>
