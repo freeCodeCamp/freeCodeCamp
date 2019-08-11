@@ -93,7 +93,7 @@ let users = {
 };
 
 function getArrayOfUsers(obj) {
-  return Object.keys(users);
+  return Object.keys(obj);
 }
 
 console.log(getArrayOfUsers(users));

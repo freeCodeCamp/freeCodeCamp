@@ -4,7 +4,7 @@ localeTitle: Recursos web para su aprendizaje
 ---
 Enlaces útiles para ayudarte con tu aprendizaje y proyectos.
 
-## Campo de golf
+## Enlaces
 
 *   [Manual de campo web](http://webfieldmanual.com)
 
