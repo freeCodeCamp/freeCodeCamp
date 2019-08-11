@@ -2,6 +2,7 @@
 id: 5900f3b41000cf542c50fec7
 challengeType: 5
 title: 'Problem 72: Counting fractions'
+forumTopicId: 302185
 ---
 
 ## Description
@@ -24,7 +25,7 @@ How many elements would be contained in the set of reduced proper fractions for 
 ```yml
 tests:
   - text: <code>euler72()</code> should return 303963552391.
-    testString: assert.strictEqual(euler72(), 303963552391, '<code>euler72()</code> should return 303963552391.');
+    testString: assert.strictEqual(euler72(), 303963552391);
 
 ```
 
@@ -56,4 +57,5 @@ euler72();
 ```js
 // solution required
 ```
+
 </section>

@@ -14,7 +14,8 @@ localeTitle: تجاهل حالة أثناء المطابقة
 
 ## حل
 
- `let myString = "freeCodeCamp"; 
- let fccRegex = /freeCodeCamp/i; 
- let result = fccRegex.test(myString); 
-`
+```javascript
+let myString = "freeCodeCamp";
+let fccRegex = /freeCodeCamp/i;
+let result = fccRegex.test(myString);
+```

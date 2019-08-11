@@ -12,9 +12,9 @@ localeTitle: سمات
 
 في ما يلي مثال على رابط يرسل المستخدمين إلى الصفحة الرئيسية لـ FreeCodeCamp:
 
- `
-<a href="www.freecodecamp.org">Click here to go to freeCodeCamp!</a> 
-` 
+```html
+<a href="www.freecodecamp.org">Click here to go to freeCodeCamp!</a>
+``` 
 
 لاحظ أنه يتم فصل اسم السمة ( `href` ) والقيمة ("www.freeCodeCamp.org") مع علامة يساوي ، وعلامات الاقتباس تحيط بالقيمة.
 
@@ -30,10 +30,10 @@ localeTitle: سمات
 
 إليك أمثلة تفعل نفس الشيء:
 
- `
-<input type="text" required > 
- <input type="text" required="required" > 
-` 
+```html
+<input type="text" required >
+<input type="text" required="required" >
+``` 
 
 ## موارد آخرى
 

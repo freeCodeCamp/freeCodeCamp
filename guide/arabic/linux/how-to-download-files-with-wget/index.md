@@ -14,30 +14,36 @@ localeTitle: كيفية تنزيل الملفات باستخدام الأداة 
 
 البنية الأساسية لل `wget` هي ...
 
- `wget [option]... [URL]... 
-` 
+```
+wget [option]... [URL]...
+``` 
 
 ### تفاصيل wget
 
- `wget --version 
-` 
+```
+wget --version
+``` 
 
- `wget --help 
-` 
+```
+wget --help
+``` 
 
 ### تنزيل ملف واحد
 
- `wget http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz 
-` 
+```
+wget http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+``` 
 
 ### جارٍ التنزيل من FTP
 
- `wget ftp://ftp.gnu.org/gnu/wget/wget-1.10.1.tar.gz.sig 
-` 
+```
+wget ftp://ftp.gnu.org/gnu/wget/wget-1.10.1.tar.gz.sig
+``` 
 
 ### تقييد حدود سرعة التنزيل
 
- `wget --limit-rate=100k http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz 
-` 
+```
+wget --limit-rate=100k http://ftp.gnu.org/gnu/wget/wget-1.5.3.tar.gz
+``` 
 
 يمكنك اللعب مع الميزات المتبقية من الأداة المساعدة `wget`

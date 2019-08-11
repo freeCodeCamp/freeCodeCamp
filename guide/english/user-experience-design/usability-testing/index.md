@@ -2,16 +2,6 @@
 title: Usability Testing
 ---
 ## Usability Testing
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/user-experience-design/usability-testing/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
 Usability testing is a technique used in user-centered interaction design to evaluate a product by testing it on users. This can be seen as an irreplaceable usability practice, since it gives direct input on how real users use the system.
 
 This is in contrast with usability inspection methods where experts use different methods to evaluate a user interface without involving users. 
@@ -51,3 +41,7 @@ Nielsen's usability heuristics, which have continued to evolve in response to us
 Similar to expert reviews, automated expert reviews provide usability testing but through the use of programs given rules for good design and heuristics. Though an automated review might not provide as much detail and insight as reviews from people, they can be finished more quickly and consistently. The idea of creating surrogate users for usability testing is an ambitious direction for the artificial intelligence community.
 * Help users recognize, diagnose, and recover from errors
 * Help and documentation
+
+#### More Information:
+- [Wikipedia - Usability Testing](https://en.wikipedia.org/wiki/Usability_testing/)
+

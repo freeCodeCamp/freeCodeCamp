@@ -47,8 +47,6 @@ function testElse(val) {
  testElse(4); 
 ```
 
-· [在repl.it上运行代码](https://repl.it/@AdrianSkar/Introducing-else-statements)
-
 ### 代码说明
 
 功能首先评估`if`条件`val > 5`的计算结果为`true` 。如果没有，则执行下一个语句（ `else { return "5 or smaller";})` 。

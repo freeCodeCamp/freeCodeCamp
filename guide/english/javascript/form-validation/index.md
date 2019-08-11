@@ -81,7 +81,7 @@ Lookout [here](https://liveweave.com/LP9eOP)
 
 ### Basic Form Validation
 
-First let us see how to do a basic form validation. In the above form, we are calling validate() to validate data when onsubmit event is occurring. The
+First, let us see how to do a basic form validation. In the above form, we are calling validate() to validate data when onsubmit event is occurring. The
 following code shows the implementation of this `validate()` function.
 
 ```html
@@ -161,7 +161,7 @@ Lookout [here](https://liveweave.com/nznVs6)
 ### HTML5 Form Constraints
 
 Some of commonly used HTML5 constraints for `<input>` are the `type` attribute (e.g. `type="password"`), `maxlength`, `required`and `disabled`. A less
-commonly used constraint is the `pattern` attrinute that takes JavaScript regular expression.
+commonly used constraint is the `pattern` attribute that takes JavaScript regular expression.
 
 ### Validation Libraries
 Examples of validation libraries include:

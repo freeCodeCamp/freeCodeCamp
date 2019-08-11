@@ -10,23 +10,23 @@ localeTitle: مؤسسة CSS Framework
 
 في ما يلي نموذج HTML بسيط يشتمل على أحدث CSS وملف Javascript مجمّعة ومختصرة لمكتبة المؤسسة.
 
- `
-    <!DOCTYPE html> 
-    <html lang="en"> 
-      <head> 
-        <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
-        <title>Foundation Template</title> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css"> 
-      </head> 
-      <body> 
-        <h1>Hello World</h1> 
-        <!-- Add all HTML Code here --> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-        <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script> 
-      </body> 
-    </html> 
-` 
+```html
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Foundation Template</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+      </head>
+      <body>
+        <h1>Hello World</h1>
+        <!-- Add all HTML Code here -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+      </body>
+    </html>
+``` 
 
 يستخدم هذا المثال استخدام CDN الذي يقوم بتحميل الإعدادات الافتراضية. إذا كنت ترغب في تخصيص تخطيط الشبكة ، قم بتغيير الألوان أو إضافة وإزالة المكونات التي يمكنك القيام بها على صفحة [تنزيل](http://foundation.zurb.com/sites/download/) Foundation.
 

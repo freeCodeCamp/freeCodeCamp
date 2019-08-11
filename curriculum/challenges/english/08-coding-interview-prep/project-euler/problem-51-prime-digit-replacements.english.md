@@ -2,6 +2,7 @@
 id: 5900f39f1000cf542c50feb2
 challengeType: 5
 title: 'Problem 51: Prime digit replacements'
+forumTopicId: 302162
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Find the smallest prime which, by replacing part of the number (not necessarily 
 ```yml
 tests:
   - text: <code>euler51()</code> should return 121313.
-    testString: assert.strictEqual(euler51(), 121313, '<code>euler51()</code> should return 121313.');
+    testString: assert.strictEqual(euler51(), 121313);
 
 ```
 
@@ -54,4 +55,5 @@ euler51();
 ```js
 // solution required
 ```
+
 </section>

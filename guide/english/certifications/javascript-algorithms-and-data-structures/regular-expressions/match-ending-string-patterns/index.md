@@ -1,10 +1,29 @@
 ---
 title: Match Ending String Patterns
 ---
-## Match Ending String Patterns
+# Match Ending String Patterns
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/match-ending-string-patterns/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Problem Explanation
+To finish this challenge, it's necessary to use __boundaries__. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The __$__ Matches end of input. 
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+For example, /t$/ does not match the "t" in "eater", but does match it in "eat". 
+
+
+__important:__ If the multiline flag is set to true, also matches immediately before a line break character.
+ 
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```javascript
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
+```
+</details>

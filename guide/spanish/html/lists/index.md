@@ -1,8 +1,8 @@
 ---
 title: Lists
-localeTitle: Liza
+localeTitle: Listas
 ---
-# Liza
+# Listas
 
 Las listas se utilizan para mostrar elementos. Hay 3 tipos de listas.
 

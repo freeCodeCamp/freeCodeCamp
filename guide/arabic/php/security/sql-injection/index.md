@@ -10,33 +10,34 @@ localeTitle: حقن SQL
 
 يقوم البرنامج النصي PHP أدناه بتشغيل عبارة SQL للحصول على البريد الإلكتروني الخاص بالمستخدم بواسطة المعرّف. ومع ذلك ، لا يتم تعقيم الإدخال مما يجعله عرضة لحقن SQL
 
- `<?php 
- $input = $_GET['id']; 
- $dbserver = "localhost"; 
- $dbuser = "camper"; 
- $dbpass = "supersecretcampsitepassword"; 
- $dbname = "freecodecamp"; 
- 
- $conn = new mysqli($dbserver, $dbuser, $dbpass, $dbname); 
- 
- if ($conn->connect_error) { 
-    die("Connection failed: " . $conn->connect_error); 
- } 
- 
- $sql = "SELECT email FROM users WHERE id =" . $input; 
- 
- $result = $conn->query($sql); 
- 
- if ($result->num_rows > 0) { 
-    while($row = $result->fetch_assoc()) { 
-        echo $row["email"]; 
-    } 
- } else { 
-    echo "no results"; 
- } 
- 
- $conn->close(); 
-` 
+```PHP
+<?php
+$input = $_GET['id'];
+$dbserver = "localhost";
+$dbuser = "camper";
+$dbpass = "supersecretcampsitepassword";
+$dbname = "freecodecamp";
+
+$conn = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT email FROM users WHERE id =" . $input;
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        echo $row["email"];
+    }
+} else {
+    echo "no results";
+}
+
+$conn->close();
+``` 
 
  ``SELECT email FROM users WHERE id = `$input`; 
 `` 
@@ -49,18 +50,19 @@ localeTitle: حقن SQL
 
 **هيتليستينغ:** يتم استخدام نهج القائمة البيضاء في الحالات التي يتوقع فيها بعض المدخلات. يمكنك سرد كل إدخال متوقع في أحد مفاتيح تبديل PHP ومن ثم إعداد افتراضي للإدخال غير الصحيح. لا داعي للقلق بشأن مشكلة في كتابة النوع أو تجاوز مسار الهروب ولكن الإدخال المسموح به محدود بشكل غير محدود. يبقى خيارًا ، راجع المثال أدناه.
 
- `<?php 
- switch ($input) { 
-  case "1": 
-    //db query 1 
-    break; 
-  case "2": 
-    //db query 2 
-    break; 
-  default: 
-    // invalid input return error 
- } 
-` 
+```PHP
+<?php
+switch ($input) {
+  case "1":
+    //db query 1
+    break;
+  case "2":
+    //db query 2
+    break;
+  default:
+    // invalid input return error
+}
+``` 
 
 **نوع الصب:** يشيع استخدام أسلوب صب النمط لتطبيق يستخدم مدخلات رقمية. قم ببساطة بإدخال الإدخال باستخدام `(int) $input` وسيتم السماح فقط بقيمة رقمية.
 

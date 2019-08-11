@@ -2,6 +2,7 @@
 id: 5900f4cd1000cf542c50ffe0
 challengeType: 5
 title: 'Problem 353: Risky moon'
+forumTopicId: 302013
 ---
 
 ## Description
@@ -48,7 +49,7 @@ Give your answer rounded to 10 digits behind the decimal point in the form a.bcd
 ```yml
 tests:
   - text: <code>euler353()</code> should return 1.2759860331.
-    testString: assert.strictEqual(euler353(), 1.2759860331, '<code>euler353()</code> should return 1.2759860331.');
+    testString: assert.strictEqual(euler353(), 1.2759860331);
 
 ```
 
@@ -80,4 +81,5 @@ euler353();
 ```js
 // solution required
 ```
+
 </section>

@@ -4,11 +4,11 @@ localeTitle: Fondo
 ---
 ## Fondo
 
-La propiedad de fondo le permite usar imágenes y colores para crear fondos para sus páginas web.
+La propiedad de fondo (background) te permite usar imágenes y colores para crear fondos para tus páginas web.
 
 ### Color de Fondo
 
-La propiedad de color de fondo le permite elegir el color de su elemento. Este puede ser el fondo de toda la página o el fondo de una sección de su página.
+La propiedad de color de fondo te permite elegir el color de tu elemento. Éste puede ser el fondo de toda la página o el fondo de una sección de tu página.
 
 *   Un elemento es una pieza de HTML, como un encabezado o un párrafo en una página web.
 
@@ -22,7 +22,7 @@ Este es un ejemplo de cómo configurar el color de fondo para una página web en
 
 ![fullbackground](https://user-images.githubusercontent.com/26467304/31036038-845567f2-a538-11e7-8e6c-8a52bb0d44b8.png)
 
-Aquí hay un ejemplo de configuración de los colores para dos elementos. Esto establecerá el fondo del encabezado. a morado y el resto de la página a azul.
+Aquí hay un ejemplo de configuración de los colores para dos elementos. Esto establecerá el fondo del encabezado al color morado y el resto de la página a azul.
 
 ```css
   body { 
@@ -43,7 +43,7 @@ En CSS el color se puede definir de tres maneras:
 
 ### Imágenes de Fondo
 
-Puede utilizar la propiedad de imagen de fondo para establecer una imagen como fondo para un elemento. La imagen se repite de forma predeterminada para que cubra todo el elemento.
+Puedes utilizar la propiedad de imagen de fondo para establecer una imagen como fondo para un elemento. La imagen se repite de forma predeterminada para que cubra todo el elemento.
 
 ```css
 body { 
@@ -63,7 +63,7 @@ body {
 
 ### Imagen de Fondo - La Propiedad de Repetición
 
-La imagen de fondo se repite tanto verticalmente (arriba y abajo) como horizontalmente (a través de la página web) de forma predeterminada. Puede usar la propiedad de repetición de fondo para repetir la imagen vertical u horizontalmente.
+La imagen de fondo se repite tanto verticalmente (arriba y abajo) como horizontalmente (a través de la página web) de forma predeterminada. Puedes usar la propiedad de repetición de fondo para repetir la imagen vertical u horizontalmente.
 
 Aquí hay un ejemplo que repite la imagen verticalmente.
 
@@ -98,7 +98,7 @@ body {
 
 ### Imagen de Fondo - La Propiedad de Posición
 
-Puede usar la propiedad de posición para especificar dónde se ubicará su imagen en una página web.
+Puedes usar la propiedad de posición para especificar dónde se ubicará tu imagen en una página web.
 
 ```css
 body { 
@@ -153,7 +153,7 @@ Puede omitir las propiedades que no necesita al usar la propiedad abreviada, per
 
 ### Múltiples Imágenes de Fondo
 
-Puede especificar varias imágenes de fondo en una sola propiedad de fondo.
+Puedes especificar varias imágenes de fondo en una sola propiedad de fondo.
 
 ```css
 body { 

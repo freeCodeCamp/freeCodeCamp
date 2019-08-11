@@ -24,16 +24,17 @@ localeTitle: Array.prototype.indexOf
 
 ## أمثلة
 
- `var array = [1, 2, 4, 1, 7] 
- 
- array.indexOf(1); // 0 
- array.indexOf(7); // 4 
- array.indexOf(6); // -1 
- array.indexOf('1'); // -1 
- array.indexOf('hello'); // -1 
- array.indexOf(1, 2); // 3 
- array.indexOf(1, -3); // 3 
-` 
+```javascript
+var array = [1, 2, 4, 1, 7]
+
+array.indexOf(1); // 0
+array.indexOf(7); // 4
+array.indexOf(6); // -1
+array.indexOf('1'); // -1
+array.indexOf('hello'); // -1
+array.indexOf(1, 2); // 3
+array.indexOf(1, -3); // 3
+``` 
 
 ### معلومات اكثر:
 

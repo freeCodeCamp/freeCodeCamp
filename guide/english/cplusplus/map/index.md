@@ -15,7 +15,7 @@ title: Map
 
 Here is an example:
 
-```c++
+```cpp
 #include <iostream>
 #include <map>
 
@@ -66,7 +66,7 @@ size of map is 1
 ## Insertion 
 Inserting data with insert member function.
 
-```c++
+```cpp
 myMap.insert(make_pair("earth", 1));
 myMap.insert(make_pair("moon", 2));
 ```
@@ -114,7 +114,7 @@ value of def is 2
 ## Accessing map elements
 
 To access map elements, you have to create iterator for it. Here is an example as stated before.
-```c++
+```cpp
 map<char, int>::iterator it;
 for(it=first.begin(); it!=first.end(); ++it){
   cout << it->first << " => " << it->second << '\n';

@@ -1,7 +1,7 @@
 ---
 title: Comma quibbling
 ---
-## Comma quibbling
+# Comma quibbling
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/comma-quibbling/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

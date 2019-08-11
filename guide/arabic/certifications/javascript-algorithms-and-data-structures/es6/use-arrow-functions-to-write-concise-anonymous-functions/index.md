@@ -20,10 +20,11 @@ localeTitle: استخدم Arrow Functions لكتابة الدالات المجه
 
 ## حل
 
- `const magic = () => { 
-  "use strict"; 
-  return new Date(); 
- }; 
-` 
+```javascript
+const magic = () => {
+  "use strict";
+  return new Date();
+};
+``` 
 
 طالما أنك تخلصت من الكلمة الرئيسية `var` ، فأنت جيد.

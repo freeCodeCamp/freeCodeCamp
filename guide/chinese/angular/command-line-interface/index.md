@@ -18,26 +18,28 @@ Angular CLI需要[Node.js和Node Packet Manager（NPM）](https://nodejs.org/en/
 
 #### 关键命令
 
-*   新的
+*   ng new
     
-*   服务
+*   ng serve
     
-*   ng生成
+*   ng generate
     
-*   建立
+*   ng build
     
-*   ng更新
+*   ng update
+
+*   ng add
     
 
 每个关键术语都很有说服力。它们共同构成了使用Angular运行所需的功能。当然，还有更多。 [CLI的GitHub文档1](https://github.com/angular/angular-cli/wiki#additional-commands)中概述了所有命令。您可能会发现上面列出的命令将涵盖必要的基础。
 
-#### 新的
+#### ng new
 
 `ng new`创建了一个_新的_ Angular文件系统。这是一个超现实的过程。请导航到_新_应用程序生成所需的文件位置。键入以下命令，将`[name-of-app]`替换`[name-of-app]`您想要的任何内容： `ng new [name-of-app]` 。
 
 应显示`[name-of-app]`文件夹下的文件系统。随意探索内在的东西。尽量不做任何改动。运行第一个Angular应用程序所需的所有内容都将在此生成的文件系统中打包在一起。
 
-#### 服务
+#### ng serve
 
 要使应用程序运行， `ng serve`命令必须在`[name-of-app]`文件夹中执行。文件夹中的任何位置都可以。 Angular CLI必须认识到它位于使用`ng new`生成的环境中。它将在这一条件下运行。继续尝试： `ng serve` 。
 
@@ -45,7 +47,7 @@ Angular CLI需要[Node.js和Node Packet Manager（NPM）](https://nodejs.org/en/
 
 好的，应用程序运行。它有希望发挥作用，但你需要知道幕后发生了什么。请参阅`[name-of-app]`文件系统。导航`[name-of-app] -> src -> app` 。其中的文件负责您在`localhost:4200`上看到的内容。
 
-#### ng生成
+#### ng generate
 
 `.component`文件定义Angular组件，包括其逻辑（ `.ts` ），样式（ `.css` ），布局（ `.html` ）和测试（ `.spec.ts` ）。 `app.module.ts`特别突出。这两组文件一起作为`component`和`module`一起工作。 `component`和`module`都是Angular原理图的两个独立示例。原理图分类代码_能发生_与不同目的导向块`ng generate` 。
 
@@ -55,7 +57,7 @@ Angular CLI需要[Node.js和Node Packet Manager（NPM）](https://nodejs.org/en/
 
 您可以看到`ng generate`加速了Angular的[样板代码](https://en.wikipedia.org/wiki/Boilerplate_code) 。 `ng generate`也可以解决问题。在Angular文件系统的上下文中创建的Schematics与系统的根模块连接。在这种情况下，这将是`[name-of-app -> src -> app]` `app.module.ts`文件。
 
-#### 建立
+#### ng build
 
 Angular是一个前端工具。 CLI代表前端执行其操作。 `ng serve`负责后端服务器设置。这使开发完全集中在前端。也就是说，也必须将您自己的后端连接到Angular应用程序。
 
@@ -65,11 +67,17 @@ Angular是一个前端工具。 CLI代表前端执行其操作。 `ng serve`负�
 
 试一试： `ng build` 。同样，这必须在Angular文件系统中执行。基于`angular.json`中`“outputPath:”`的`angular.json` 。将生成一个文件，其中原始应用程序已完全编译。如果保持`“outputPath:”`相同，则编译的应用程序将位于： `[name-of-app] -> dist -> [name-of-app]` 。
 
-#### ng更新
+#### ng update
 
-在角度更新中，对所有角度和npm包进行自动更新以获得最新版本。
+在angular更新中，对所有角度和npm包进行自动更新以获得最新版本。
 
 以下是可以与`ng update`一起使用的语法和选项。
+
+`ng update [package]`
+
+#### ng add
+
+將新的 Angular 能力直接加入到專案中，安裝 npm 套件後，還幫忙把該寫的 Code 加好，只留下設定檔給你調整。
 
 `ng update [package]`
 

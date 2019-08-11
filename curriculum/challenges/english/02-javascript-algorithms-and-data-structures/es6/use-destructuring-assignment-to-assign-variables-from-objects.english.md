@@ -2,24 +2,32 @@
 id: 587d7b89367417b2b2512b49
 title: Use Destructuring Assignment to Assign Variables from Objects
 challengeType: 1
+forumTopicId: 301215
 ---
 
 ## Description
 <section id='description'>
-We saw earlier how spread operator can effectively spread, or unpack, the contents of the array.
-We can do something similar with objects as well. <dfn>Destructuring assignment</dfn> is special syntax for neatly assigning values taken directly from an object to variables.
-Consider the following ES5 code:
-<blockquote>var voxel = {x: 3.6, y: 7.4, z: 6.54 };<br>var x = voxel.x; // x = 3.6<br>var y = voxel.y; // y = 7.4<br>var z = voxel.z; // z = 6.54</blockquote>
-Here's the same assignment statement with ES6 destructuring syntax:
-<blockquote>const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54</blockquote>
-If instead you want to store the values of <code>voxel.x</code> into <code>a</code>, <code>voxel.y</code> into <code>b</code>, and <code>voxel.z</code> into <code>c</code>, you have that freedom as well.
-<blockquote>const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54</blockquote>
-You may read it as "get the field <code>x</code> and copy the value into <code>a</code>," and so on.
+Destructuring allows you to assign a new variable name when extracting values. You can do this by putting the new name after a colon when assigning the value.
+
+Using the same object from the last example:
+
+```js
+const user = { name: 'John Doe', age: 34 };
+```
+
+Here's how you can give new variable names in the assignment:
+
+```js
+const { name: userName, age: userAge } = user;
+// userName = 'John Doe', userAge = 34
+```
+
+You may read it as "get the value of <code>user.name</code> and assign it to a new variable named <code>userName</code>" and so on.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use destructuring to obtain the average temperature for tomorrow from the input object <code>AVG_TEMPERATURES</code>, and assign value with key <code>tomorrow</code> to <code>tempOfTomorrow</code> in line.
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>highToday</code> and <code>highTomorrow</code> the values of <code>today</code> and <code>tomorrow</code> from the <code>HIGH_TEMPERATURES</code> object.
 </section>
 
 ## Tests
@@ -27,60 +35,60 @@ Use destructuring to obtain the average temperature for tomorrow from the input 
 
 ```yml
 tests:
-  - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>
-    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, '<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>');
-  - text: destructuring with reassignment was used
-    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),'destructuring with reassignment was used');
-
+  - text: You should remove the ES5 assignment syntax.
+    testString: assert(!code.match(/highToday = HIGH_TEMPERATURES\.today/g) && !code.match(/highTomorrow = HIGH_TEMPERATURES\.tomorrow/g))
+  - text: You should use destructuring to create the <code>highToday</code> variable.
+    testString: assert(code.match(/(var|const|let)\s*{\s*(today:\s*highToday[^}]*|[^,]*,\s*today\s*:\s*highToday\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
+  - text: You should use destructuring to create the <code>highTomorrow</code> variable.
+    testString: assert(code.match(/(var|const|let)\s*{\s*(tomorrow:\s*highTomorrow[^}]*|[^,]*,\s*tomorrow\s*:\s*highTomorrow\s*)}\s*=\s*HIGH_TEMPERATURES(;|\s+|\/\/)/g));
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
-const AVG_TEMPERATURES = {
-  today: 77.5,
-  tomorrow: 79
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
 };
 
-function getTempOfTmrw(avgTemperatures) {
-  "use strict";
-  // change code below this line
-  const tempOfTomorrow = undefined; // change this line
-  // change code above this line
-  return tempOfTomorrow;
-}
+// change code below this line
+  
+const highToday = HIGH_TEMPERATURES.today;
+const highTomorrow = HIGH_TEMPERATURES.tomorrow; 
 
-console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+// change code above this line
+
+console.log(yesterday) // should be not defined
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-const AVG_TEMPERATURES = {
-  today: 77.5,
-  tomorrow: 79
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
 };
 
-function getTempOfTmrw(avgTemperatures) {
-  "use strict";
-  // change code below this line
-  const {tomorrow:tempOfTomorrow} = avgTemperatures; // change this line
-  // change code above this line
-  return tempOfTomorrow;
-}
+// change code below this line
+  
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
 
-console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+// change code above this line
+
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
 ```
+
 </section>

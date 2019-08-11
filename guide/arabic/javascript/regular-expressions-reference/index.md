@@ -40,9 +40,10 @@ localeTitle: مرجع التعبيرات العادية
 
 التعبير العادي هو نوع من الكائنات. يمكن بناؤها إما مع منشئ RegExp أو مكتوبة كقيمة حرفية من خلال إحاطة نمط في مائلة (/) حرفا.
 
- `var re1 = new RegExp (" abc ") ; 
- var re2 = / abc /; 
-` 
+```
+var re1 = new RegExp (" abc ") ;
+var re2 = / abc /;
+``` 
 
 تمثل كل من كائنات التعبير العادية نفس النمط: حرف متبوعًا بـ ab متبوعًا بـ c.
 
@@ -52,28 +53,31 @@ localeTitle: مرجع التعبيرات العادية
 
 ### اختبار للمباريات
 
- `console . log (/ abc /. test (" abcde ") ); 
- // → true 
- console . log (/ abc /. test (" abxde ") ); 
- // → false 
-` 
+```
+console . log (/ abc /. test (" abcde ") );
+// → true
+console . log (/ abc /. test (" abxde ") );
+// → false
+``` 
 
 ### مطابقة مجموعة من الشخصيات
 
- `console . log (/[0123456789]/. test (" in 1992") ); 
- // → true 
- console . log (/[0 -9]/. test (" in 1992") ); 
- // → true 
-` 
+```
+console . log (/[0123456789]/. test (" in 1992") );
+// → true
+console . log (/[0 -9]/. test (" in 1992") );
+// → true
+``` 
 
 ### أنماط الاختيار
 
- `var animalCount = /\ b \ d + ( pig | cow | chicken )s ?\ b /; 
- console . log ( animalCount . test ("15 pigs ") ); 
- // → true 
- console . log ( animalCount . test ("15 pigchickens ") ); 
- // → false 
-` 
+```
+var animalCount = /\ b \ d + ( pig | cow | chicken )s ?\ b /;
+console . log ( animalCount . test ("15 pigs ") );
+// → true
+console . log ( animalCount . test ("15 pigchickens ") );
+// → false
+``` 
 
 #### أساليب
 
@@ -83,11 +87,12 @@ localeTitle: مرجع التعبيرات العادية
 
 يمكن أن تكون الوسيطة الأولى أيضًا تعبيرًا عاديًا ، وفي هذه الحالة يتم استبدال المطابقة الأولى للتعبير العادي. عند إضافة خيار ag (للعامة) إلى التعبير العادي ، سيتم استبدال كل التطابقات في السلسلة ، وليس فقط الأول.
 
- `console . log (" Borobudur ". replace (/[ ou ]/ , "a ") ); 
- // → Barobudur 
- console . log (" Borobudur ". replace (/[ ou ]/g , "a ") ); 
- // → Barabadar 
-` 
+```
+console . log (" Borobudur ". replace (/[ ou ]/ , "a ") );
+// → Barobudur
+console . log (" Borobudur ". replace (/[ ou ]/g , "a ") );
+// → Barabadar
+``` 
 
 ### معلومات اكثر:
 

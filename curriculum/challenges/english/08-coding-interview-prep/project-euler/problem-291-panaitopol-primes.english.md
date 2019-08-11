@@ -2,6 +2,7 @@
 id: 5900f48f1000cf542c50ffa2
 challengeType: 5
 title: 'Problem 291: Panaitopol Primes'
+forumTopicId: 301943
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find how many Panaitopol primes are less than 5×1015.
 ```yml
 tests:
   - text: <code>euler291()</code> should return 4037526.
-    testString: assert.strictEqual(euler291(), 4037526, '<code>euler291()</code> should return 4037526.');
+    testString: assert.strictEqual(euler291(), 4037526);
 
 ```
 
@@ -55,4 +56,5 @@ euler291();
 ```js
 // solution required
 ```
+
 </section>

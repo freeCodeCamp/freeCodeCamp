@@ -49,7 +49,6 @@ localeTitle: Boo Who
     booWho(null); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLnK/0)
 
 # Код Объяснение:
 

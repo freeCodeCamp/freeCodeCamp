@@ -2,6 +2,7 @@
 id: 5900f4c41000cf542c50ffd6
 challengeType: 5
 title: 'Problem 343: Fractional Sequences'
+forumTopicId: 302002
 ---
 
 ## Description
@@ -41,7 +42,7 @@ Find Σf(k3) for 1 ≤ k ≤ 2×106.
 ```yml
 tests:
   - text: <code>euler343()</code> should return 269533451410884200.
-    testString: assert.strictEqual(euler343(), 269533451410884200, '<code>euler343()</code> should return 269533451410884200.');
+    testString: assert.strictEqual(euler343(), 269533451410884200);
 
 ```
 
@@ -73,4 +74,5 @@ euler343();
 ```js
 // solution required
 ```
+
 </section>
