@@ -10,36 +10,55 @@ Un script PHP comienza con `<?php` y termina con `?>`
 
 A continuación, tenemos un ejemplo de un archivo PHP simple, con un script PHP que utiliza una función de PHP "echo" para generar el texto "Hola Mundo!" en una página web
 
-\`\` \`\`
 
 # Mi primera página PHP
 ```
-La salida de eso sería : 
+
+La ejecución del script muestra: 
+
 ```
 
 Mi primera página PHP
 
 Hola Mundo!
 ```
-#### Nota: Las declaraciones en PHP terminan con un punto y coma (;). 
+#### Nota: Las instrucciones de PHP terminan con punto y coma (;). 
  
- # Comentarios en PHP 
+ # Comentarios en PHP
  
- PHP soporta varias formas para comentar: 
+ PHP soporta varia sintaxis de comentarios: 
+ 
+ // Este es un ejemplo de comentario en línea
+ 
+ #  Este es otro ejemplo de comentario en línea
+ 
+ /* Este es un ejemplo
+    de comentario
+    en varias líneas */
 ```
 
 ```
-# Caso-Sensible en PHP 
+# Sensibilidad a mayúsculas/minúsculas en PHP
  
- En PHP, todas las palabras claves (eg if, else, while, echo, etc.), clases, funciones, y las funciones definidas por el usuario NO son caso-sensible. 
+ En PHP, todas las palabras clave (p.ej. if, else, while, echo, etc.), clases, funciones, y funciones definidas por el usuario NO son sensibles a mayúsculas o minúsculas. 
  
- En el ejemplo acontinuación, las tres declaraciones echo son legales (e iguales): 
+ En el ejemplo de abajo, las tres ejecuciones de echo son válidas:
+ 
+ echo "Hola mundo!"; // Hola mundo!
+ eCHo "Hola mundo!"; // Hola mundo!
+ ECHO "Hola mundo!"; // Hola mundo!
 ```
 
 ```
-### Sin embargo; todos los nombres de variables son caso-sensible. 
+### Sin embargo; los nombres de variables sí son sensibles. 
+
+ En el ejemplo de abajo, solamente la primera línea mostrará el valor de la variable $color (porque $color, $COLOR y $coLOR se tratan como tres variables diferentes):
  
- En el siguiente ejemplo, solo la primer declaración mostrará el valor de la variable $color (esto es porque $color, $COLOR, y $coLOR son tratadas como tres variables diferentes): 
+ $color = "rojo";
+ 
+ echo $color; // rojo
+ echo $COLOR; // Notice: Undefined variable: COLOR
+ echo $coLOR; // Notice: Undefined variable: coLOR
+ 
 ```
 
-\`\` \`\`
