@@ -8,33 +8,35 @@ localeTitle: خاصية HTML Dom Innerhtml
 
 **_الحصول على عنصر المحتوى_**
 
- `
-<div id="demo"> 
-  <p>Demo</p> 
- </div> 
-` 
+```html
+<div id="demo">
+  <p>Demo</p>
+</div>
+``` 
 
- `var element = document.getElementById("demo"); 
- console.log(element.innerHTML) //logs <p>Demo</p> 
-` 
+```javascript
+var element = document.getElementById("demo");
+console.log(element.innerHTML) //logs <p>Demo</p>
+``` 
 
 **_محتوى مجموعة العنصر_**
 
- `
-<div id="demo"></div> 
-` 
+```html
+<div id="demo"></div>
+``` 
 
- `var element = document.getElementById("demo"); 
- element.innerHTML = "<div>Demo</div>"; 
-` 
+```javascript
+var element = document.getElementById("demo");
+element.innerHTML = "<div>Demo</div>";
+``` 
 
 سوف يكون مثل HTML الآن
 
- `
-<div id="demo"> 
-  <div>Demo</div> 
- </div> 
-` 
+```html
+<div id="demo">
+  <div>Demo</div>
+</div>
+``` 
 
 **_اعتبارات أمنية_**
 
@@ -44,10 +46,11 @@ localeTitle: خاصية HTML Dom Innerhtml
 
 سيؤدي تعيين قيمة " `<script>alert();</script>` " إلى تشغيل وظيفة "alert ()" في Javascript:
 
- `var element = document.getElementById("demo"); 
- 
- element.innerHTML = "<script>alert();</script>"; 
-` 
+```javascript
+var element = document.getElementById("demo");
+
+element.innerHTML = "<script>alert();</script>";
+``` 
 
 يسمى هذا النوع من الهجوم [Scripting عبر الموقع أو XSS باختصار](https://en.wikipedia.org/wiki/Cross-site_scripting) .
 

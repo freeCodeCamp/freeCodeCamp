@@ -2,6 +2,7 @@
 id: 5900f3d91000cf542c50feeb
 challengeType: 5
 title: 'Problem 108: Diophantine Reciprocals I'
+forumTopicId: 301732
 ---
 
 ## Description
@@ -24,7 +25,7 @@ What is the least value of <var>n</var> for which the number of distinct solutio
 ```yml
 tests:
   - text: <code>diophantineOne()</code> should return 180180.
-    testString: assert.strictEqual(diophantineOne(), 180180, '<code>diophantineOne()</code> should return 180180.');
+    testString: assert.strictEqual(diophantineOne(), 180180);
 
 ```
 
@@ -56,4 +57,5 @@ diophantineOne();
 ```js
 // solution required
 ```
+
 </section>

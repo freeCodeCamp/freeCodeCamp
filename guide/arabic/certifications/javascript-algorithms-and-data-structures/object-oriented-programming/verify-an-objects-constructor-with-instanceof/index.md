@@ -10,20 +10,22 @@ localeTitle: تحقق من Constructor كائن مع instanceof
 
 #### مثال:
 
- `let hound = new Dog(); 
-` 
+```javascript
+let hound = new Dog();
+``` 
 
 تذكر أن تعطي الدالة `House` معلمة لتهيئة عدد الغرف. ثم ببساطة استدعاء العامل `instanceof` للعودة حقيقية على منزلك الجديد.
 
 ### حل:
 
- `/* jshint expr: true */ 
- 
- function House(numBedrooms) { 
-  this.numBedrooms = numBedrooms; 
- } 
- 
- // Add your code below this line 
- let myHouse = new House(5); 
- myHouse instanceof House; 
-`
+```javascript
+/* jshint expr: true */
+
+function House(numBedrooms) {
+  this.numBedrooms = numBedrooms;
+}
+
+// Add your code below this line
+let myHouse = new House(5);
+myHouse instanceof House;
+```

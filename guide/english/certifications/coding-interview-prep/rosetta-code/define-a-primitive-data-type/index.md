@@ -1,7 +1,7 @@
 ---
 title: Define a primitive data type
 ---
-## Define a primitive data type
+# Define a primitive data type
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/define-a-primitive-data-type/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -8,27 +8,27 @@ Suponha que você receba uma lista ou uma matriz de itens. Você está procurand
 
 Encontre o número 13 na lista dada.
 
-![Pesquisa Linear 1](https://i.imgur.com/ThkzYEV.jpg)
+![Pesquisa Linear 1](https://cdn-media-1.freecodecamp.org/imgr/ThkzYEV.jpg)
 
 Você apenas olha para a lista e aí está!
 
-![Pesquisa Linear 2](https://i.imgur.com/K7HfCly.jpg)
+![Pesquisa Linear 2](https://cdn-media-1.freecodecamp.org/imgr/K7HfCly.jpg)
 
 Agora, como você diz a um computador para encontrá-lo?
 
 Um computador não pode olhar mais do que o valor em um determinado instante de tempo. Então, é preciso um item da matriz e verifica se é o mesmo que você está procurando.
 
-![Pesquisa Linear 3](https://i.imgur.com/ZOSxeZD.jpg)
+![Pesquisa Linear 3](https://cdn-media-1.freecodecamp.org/imgr/ZOSxeZD.jpg)
 
 O primeiro item não coincidiu. Então, mude para o próximo.
 
-![Pesquisa Linear 4](https://i.imgur.com/SwKsPxD.jpg)
+![Pesquisa Linear 4](https://cdn-media-1.freecodecamp.org/imgr/SwKsPxD.jpg)
 
 E assim por diante…
 
 Isso é feito até que uma correspondência seja encontrada ou até que todos os itens tenham sido verificados.
 
-![Pesquisa Linear 5](https://i.imgur.com/3AaViff.jpg)
+![Pesquisa Linear 5](https://cdn-media-1.freecodecamp.org/imgr/3AaViff.jpg)
 
 Neste algoritmo, você pode parar quando o item é encontrado e, em seguida, não há necessidade de procurar mais.
 
@@ -75,7 +75,7 @@ def linear_search(target, array)
 
 ### Exemplo em C ++
 
-```c++
+```cpp
 int linear_search(int arr[],int n,int num) 
  { 
     for(int i=0;i<n;i++){ 
@@ -95,6 +95,50 @@ def linear_search(array, num):
         if (array[i]==num): 
             return i 
     return -1 
+```
+
+### Exemplo em Swift
+```swift
+func linearSearch(for number: Int, in array: [Int]) -> Int? {
+    for (index, value) in array.enumerated() {
+        if value == number { return index } // return the index of the number
+    }
+    return nil // the number was not found in the array
+}
+```
+
+### Exemplo em Java
+```java
+int linearSearch(int[] arr, int element)
+{
+        for(int i=0;i<arr.length;i++)
+        {
+                if(arr[i] == element)
+                        return i;
+        }
+        return -1;
+}
+
+```
+
+### Exemplo em PHP
+
+```php
+function linear_search($arr=[],$num=0)
+{
+     $n = count($arr);   
+     for( $i=0; $i<$n; $i++){
+           if($arr[$i] == $num)
+                return $i;
+      }
+      // Item not found in the array
+      return -1; 
+}
+
+$arr = array(1,3,2,8,5,7,4,0);
+print("Linear search result for 2: ");
+echo linear_search($arr,2);
+
 ```
 
 ## Pesquisa Linear Global

@@ -13,8 +13,9 @@ localeTitle: مصنع
 \`\` \`  
 الواجهة العامة Animal { الفراغ الحديث () ؛ }
 
- `We now need to have "concrete classes" - classes which implement our interface and define the associated functions/ variables. 
-` 
+```
+We now need to have "concrete classes" - classes which implement our interface and define the associated functions/ variables.
+``` 
 
  `public class Dog implements Animal { 
  
@@ -34,8 +35,9 @@ localeTitle: مصنع
  } 
 ` 
 
- `We now define our "AnimalFactory" - the class which will handle the creation of these classes. 
-` 
+```
+We now define our "AnimalFactory" - the class which will handle the creation of these classes.
+``` 
 
  `public class AnimalFactory { 
  
@@ -59,12 +61,13 @@ localeTitle: مصنع
     cat.talk(); 
 ` 
 
- `Here we can see that the class with this instance of "Cat" doesn't really know which animal it has. But this doesn't matter - because all the classes the factory creates are concrete classes of the same interface, the parent class doesn't need to know the exact class it is using. 
- 
- 
- ## Factory in Python3 
- We can implement a Factory easily with static methods. 
-` 
+```
+Here we can see that the class with this instance of "Cat" doesn't really know which animal it has. But this doesn't matter - because all the classes the factory creates are concrete classes of the same interface, the parent class doesn't need to know the exact class it is using.
+
+
+## Factory in Python3
+We can implement a Factory easily with static methods.
+``` 
 
 الثعبان فئة الشراب (الكائن): def **init** (self، name، price = None): self.name = الاسم self.price = السعر
 

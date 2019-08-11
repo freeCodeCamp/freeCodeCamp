@@ -15,22 +15,22 @@ localeTitle: اليوم الثاني
 
 ### مثال
 
- `
-<html> 
- <head> 
- <title>Td Tag Example</title> 
- </head> 
- <body> 
- <table> 
-  <tr> 
-    <th>Header1</th> 
-    <th>Header2</th> 
-  </tr> 
-  <tr> 
-    <td>Cell A</td> 
-    <td>Cell B</td> 
-  </tr> 
- </table> 
- </body> 
- </html> 
-`
+```html
+<html>
+<head>
+<title>Td Tag Example</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Header1</th>
+    <th>Header2</th>
+  </tr>
+  <tr>
+    <td>Cell A</td>
+    <td>Cell B</td>
+  </tr>
+</table>
+</body>
+</html>
+```

@@ -62,8 +62,7 @@ function steamrollArray(arr) {
  steamrollArray([1, [2], [3, [[4]]]]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLnh/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie uma nova variável para manter matrizes achatadas.
@@ -87,8 +86,7 @@ function steamrollArray(arr) {
  flattenArray([1, [2], [3, [[4]]]]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLni/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Use o operador spread para concatenar cada elemento do `arr` com um array vazio
@@ -121,8 +119,7 @@ function steamrollArray(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CpDy/4)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, transformamos a matriz em uma string, que nos dará uma string de números separada por uma vírgula, dupla vírgula se houvesse uma matriz vazia e um texto de objeto literal, se houvesse um objeto, que poderíamos corrigi-lo posteriormente em nossa declaração if .

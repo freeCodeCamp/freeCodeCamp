@@ -86,3 +86,7 @@ Hello World!
 0: /usr/local/bin/node
 1: /Users/amanhimself/Desktop/articles/nodejs-text-tuts/test.js
 ```
+
+## Resources
+
+* [NodeJS API](https://nodejs.org/dist/latest-v8.x/docs/api/process.html)

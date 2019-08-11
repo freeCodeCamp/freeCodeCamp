@@ -2,6 +2,7 @@
 id: 5900f47e1000cf542c50ff90
 challengeType: 5
 title: 'Problem 273: Sum of Squares'
+forumTopicId: 301923
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find ∑S(N), for all squarefree N only divisible by primes of the form 4k+1 wit
 ```yml
 tests:
   - text: <code>euler273()</code> should return 2032447591196869000.
-    testString: assert.strictEqual(euler273(), 2032447591196869000, '<code>euler273()</code> should return 2032447591196869000.');
+    testString: assert.strictEqual(euler273(), 2032447591196869000);
 
 ```
 
@@ -58,4 +59,5 @@ euler273();
 ```js
 // solution required
 ```
+
 </section>

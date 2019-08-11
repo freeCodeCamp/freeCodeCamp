@@ -2,6 +2,7 @@
 id: 5900f4731000cf542c50ff85
 challengeType: 5
 title: 'Problem 262: Mountain Range'
+forumTopicId: 301911
 ---
 
 ## Description
@@ -35,7 +36,7 @@ h=( 5000-0.005*(x*x+y*y+x*y)+12.5*(x+y) ) * exp( -abs(0.000001*(x*x+y*y)-0.0015*
 ```yml
 tests:
   - text: <code>euler262()</code> should return 2531.205.
-    testString: assert.strictEqual(euler262(), 2531.205, '<code>euler262()</code> should return 2531.205.');
+    testString: assert.strictEqual(euler262(), 2531.205);
 
 ```
 
@@ -67,4 +68,5 @@ euler262();
 ```js
 // solution required
 ```
+
 </section>

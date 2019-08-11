@@ -70,8 +70,7 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLow/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   **GM** e **earthRadius** são ambos dados para nós.
@@ -112,8 +111,7 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLoy/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   **GM** e **earthRadius** são ambos dados para nós.
@@ -143,8 +141,7 @@ function orbitalPeriod(arr) {
  orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLoz/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   **GM** e **earthRadius** são ambos dados para nós.

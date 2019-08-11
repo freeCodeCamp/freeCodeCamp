@@ -35,11 +35,11 @@ localeTitle: أنابيب
 
 في حالة Obervables ، يقوم AsyncPipe بالاشتراك تلقائيًا في مصدر البيانات. بغض النظر عن مصدر البيانات ، يشترك AsyncPipe في المصدر الذي يمكن ملاحظته. `async` هو الاسم syntactical AsyncPipe كما هو موضح أدناه.
 
- `
-<ul *ngFor=“let potato of (potatoSack$ | async); let i=index”> 
-  <li>Potatoe {{i + 1}}: {{potato}}</li> 
- </ul> 
-` 
+```html
+<ul *ngFor=“let potato of (potatoSack$ | async); let i=index”>
+  <li>Potatoe {{i + 1}}: {{potato}}</li>
+</ul>
+``` 
 
 في المثال ، `potatoSack$` في انتظار تحميل البطاطس. وبمجرد وصول البطاطا ، إما بشكل متزامن أو غير متزامن ، فإن AsyncPipe يستقبلها كمصفوفة قابلة _للتكرار_ . ثم يملأ عنصر القائمة بالبطاطس.
 
@@ -91,34 +91,36 @@ localeTitle: أنابيب
 
 أيا كانت الدالة ترجع ( `return null;` ) يصبح الإخراج من عملية الأنابيب. ألق نظرة على المثال التالي لمشاهدة مثال كامل على ExamplePipe. بالاعتماد على المتغير الذي يستقبله الأنبوب ، فإنه إما يحد أو يخفض المدخل كإخراج جديد. وسيؤدي وجود وسيطة غير صالحة أو غير موجودة إلى إعادة توجيه نفس المدخلات كإخراج.
 
- `// example.pipe.ts 
- 
- @Pipe({ 
-  name: 'example' 
- }) 
- export class ExamplePipe implements PipeTransform { 
-  transform(value:string, args?:string): any { 
-    switch(args || null) { 
-      case 'uppercase': 
-        return value.toUpperCase(); 
-      case 'lowercase': 
-        return value.toLowerCase(); 
-      default: 
-        return value; 
-    } 
-  } 
- } 
-` 
+```typescript
+// example.pipe.ts
 
- `// app.component.ts 
- 
- @Component({ 
-  templateUrl: 'app.component.html' 
- }) 
- export class AppComponent { 
-  someValue:string = "HeLlO WoRlD!"; 
- } 
-` 
+@Pipe({
+  name: 'example'
+})
+export class ExamplePipe implements PipeTransform {
+  transform(value:string, args?:string): any {
+    switch(args || null) {
+      case 'uppercase':
+        return value.toUpperCase();
+      case 'lowercase':
+        return value.toLowerCase();
+      default:
+        return value;
+    }
+  }
+}
+``` 
+
+```typescript
+// app.component.ts
+
+@Component({
+  templateUrl: 'app.component.html'
+})
+export class AppComponent {
+  someValue:string = "HeLlO WoRlD!";
+}
+``` 
 
  `
 <!-- app.component.html --> 

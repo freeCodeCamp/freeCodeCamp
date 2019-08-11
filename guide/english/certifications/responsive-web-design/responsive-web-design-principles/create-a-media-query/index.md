@@ -1,7 +1,13 @@
 ---
 title: Create a Media Query
 ---
-## Create a Media Query
+# Create a Media Query
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Following the instructions:
 
@@ -18,3 +24,5 @@ the media query is:
   }
 ```
 and the size of the text will be 10px when the device's width is less than or equal to 800px.
+
+</details>

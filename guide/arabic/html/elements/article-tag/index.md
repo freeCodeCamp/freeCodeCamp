@@ -12,14 +12,14 @@ localeTitle: المادة العلامة
 
 في ما يلي مثال لكيفية استخدام علامة المقالة في صفحة الويب:
 
- `
-<article> 
-  <h1>FreeCodeCamp</h1> 
-  <p> 
-    Learn to code with a community of programmers and contribute to open source projects. 
-  </p> 
- </article> 
-` 
+```html
+<article>
+  <h1>FreeCodeCamp</h1>
+  <p>
+    Learn to code with a community of programmers and contribute to open source projects.
+  </p>
+</article>
+``` 
 
 #### معلومات اكثر:
 

@@ -70,7 +70,6 @@ localeTitle: قرد مكتنز
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/24)
 
 ### شرح الشفرة:
 
@@ -98,7 +97,6 @@ localeTitle: قرد مكتنز
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/Cj9x/3)
 
 ### شرح الشفرة:
 
@@ -130,7 +128,6 @@ localeTitle: قرد مكتنز
     chunkArrayInGroups(["a", "b", "c", "d"], 2); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/26)
 
 ### شرح الشفرة:
 
@@ -164,7 +161,6 @@ localeTitle: قرد مكتنز
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/579)
 
 ### شرح الشفرة:
 
@@ -192,7 +188,6 @@ localeTitle: قرد مكتنز
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/579)
 
 ### شرح الشفرة:
 

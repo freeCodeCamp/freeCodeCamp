@@ -37,7 +37,7 @@ update语句用于通过使用加法，减法，乘法或除法等简单操作�
 
 ## 实现：
 
-```C++
+```cpp
 #include <iostream> 
  using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std:: 
  

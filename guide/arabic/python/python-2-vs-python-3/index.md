@@ -8,8 +8,9 @@ localeTitle: Python 2 vs Python 3
 
 ما يلي هو عبارة `print` صالحة في Python 2 ، ولكنها لا تعمل على Python 3:
 
- `print "Hello World" 
-` 
+```py
+print "Hello World"
+``` 
 
 في Python 3 ، يلقي نفس العبارة خطأ كالتالي:
 
@@ -24,8 +25,9 @@ localeTitle: Python 2 vs Python 3
 
 يعد استخدام وظيفة `print()` 'آمن' في كل من Python 2 و 3:
 
- `print("Hello World") 
-` 
+```python
+print("Hello World")
+``` 
 
 هناك فرق آخر بين Python 2 و Python 3 وهو بنية البيانات التي يتم إرجاعها عند استدعاء الدالة `map()` .
 

@@ -8,25 +8,28 @@ localeTitle: أضف Flex Flexpowers إلى Tweet تضمين
 
 سيضمن الرأس أن الصورة والاسم والمقبض ومتابعة الأزرار ستتم إعادة ترتيبها بشكل أفقي.
 
- `header { 
-    display: flex; 
- } 
-` 
+```CSS
+header {
+    display: flex;
+}
+``` 
 
 يحاذي الاسم والمقبض ليبدو كجملة واحدة.
 
- `header .profile-name { 
-    display:flex; 
-    margin-left: 10px; 
-  } 
-` 
+```CSS
+header .profile-name {
+    display:flex;
+    margin-left: 10px;
+  }
+``` 
 
 ستؤدي إضافة الخاصية إلى زر المتابعة مع الهامش إلى توسيط الزر إلى الحجم الصحيح.
 
- `header .follow-btn { 
-    display:flex; 
-    margin: 0 0 0 auto; 
-  } 
-` 
+```CSS
+header .follow-btn {
+    display:flex;
+    margin: 0 0 0 auto;
+  }
+``` 
 
 يتم استخدام نفس الفكرة على عناصر التذييل.

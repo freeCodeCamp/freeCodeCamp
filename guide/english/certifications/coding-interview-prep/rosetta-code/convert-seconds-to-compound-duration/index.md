@@ -1,7 +1,7 @@
 ---
 title: Convert seconds to compound duration
 ---
-## Convert seconds to compound duration
+# Convert seconds to compound duration
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/convert-seconds-to-compound-duration/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

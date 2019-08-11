@@ -12,12 +12,12 @@ localeTitle: حجم الخط سمة
 
 مثال:
 
- `
-<html> 
-  <body> 
-    <font size="6">This is some text!</font> 
-  </body> 
- </html> 
-` 
+```html
+<html>
+  <body>
+    <font size="6">This is some text!</font>
+  </body>
+</html>
+``` 
 
 ملاحظة: `The size attribute of <font> is not supported in HTML5. Use CSS instead.`

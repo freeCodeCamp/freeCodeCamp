@@ -6,7 +6,7 @@ localeTitle: 使用body-parser来解析POST请求
 
 如果您使用提供的样板，则应该已经将身体解析器添加到您的项目中，但如果不是，它应该在那里：
 
-```code
+```json
 "dependencies": { 
     "body-parser": "^1.4.3", 
     ... 

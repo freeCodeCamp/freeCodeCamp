@@ -2,6 +2,7 @@
 id: 5900f5111000cf542c510023
 challengeType: 5
 title: 'Problem 420: 2x2 positive integer matrix'
+forumTopicId: 302090
 ---
 
 ## Description
@@ -32,7 +33,7 @@ Find F(107).
 ```yml
 tests:
   - text: <code>euler420()</code> should return 145159332.
-    testString: assert.strictEqual(euler420(), 145159332, '<code>euler420()</code> should return 145159332.');
+    testString: assert.strictEqual(euler420(), 145159332);
 
 ```
 
@@ -64,4 +65,5 @@ euler420();
 ```js
 // solution required
 ```
+
 </section>

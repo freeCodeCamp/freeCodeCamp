@@ -16,13 +16,15 @@ localeTitle: الملفات و IO
 
 يوفر Python أبسط طريقة لإنتاج الإخراج على الشاشة.
 
- `print "Python is a powerful language.","It is easy to learn." 
-` 
+```python
+print "Python is a powerful language.","It is easy to learn."
+``` 
 
 انتاج:
 
- `Python is a powerful language.It is easy to learn. 
-` 
+```
+Python is a powerful language.It is easy to learn.
+``` 
 
 ### المدخلات من المستخدم
 
@@ -32,29 +34,33 @@ raw\_input (\[موجه\])
 
 تستخدم لقراءة سطر واحد من الإدخال القياسي وإعادته كسلسلة
 
- `str = raw_input("Enter your name: ") 
- print "Welcome ", str 
-` 
+```python
+str = raw_input("Enter your name: ")
+print "Welcome ", str
+``` 
 
 انتاج:
 
- `Enter your name: John Doe 
- Welcome John Doe 
-` 
+```
+Enter your name: John Doe
+Welcome John Doe
+``` 
 
 المدخلات (موجه)
 
 وظيفة مشابهة لـ raw\_input () ، ولكن يفترض أن الإدخال عبارة عن تعبير بايثون صالح
 
- `str = input("Enter input: ") 
- print "Input: ", str 
-` 
+```python
+str = input("Enter input: ")
+print "Input: ", str
+``` 
 
 انتاج:
 
- `Enter input: [x*5 for x in range(2,10,2)] 
- Input: [10,20,30,40] 
-` 
+```
+Enter input: [x*5 for x in range(2,10,2)]
+Input: [10,20,30,40]
+``` 
 
 ### التفاعل مع الملفات في بايثون
 
@@ -76,9 +82,10 @@ raw\_input (\[موجه\])
 
 انتاج:
 
- `First 15 characters are: 
- Python is a pow 
-` 
+```
+First 15 characters are:
+Python is a pow
+``` 
 
 #### فتح الملفات
 

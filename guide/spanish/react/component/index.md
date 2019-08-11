@@ -4,7 +4,7 @@ localeTitle: React - Componentes
 ---
 ## React - Componentes
 
-Los componentes son reutilizables en react.js. Puede inyectar valor en los accesorios como se indica a continuación:
+Los componentes son reutilizables en react.js. Puedes inyectar valores en props como se indica a continuación:
 
 ```jsx
 function Welcome(props) { 
@@ -18,7 +18,8 @@ function Welcome(props) {
  ); 
 ```
 
-`name="Faisal Arkan"` le dará valor en `{props.name}` de la `function Welcome(props)` y devolverá el componente que haya dado un valor por `name="Faisal Arkan"` , luego de que reaccione se convertirá el elemento en html.
+El valor `name="Faisal Arkan"` se asignará en `{props.name}` de la `function Welcome(props)` y devolverá el componente `<h1>Hello, Faisal Arkan</h1>` el cual esta guardado en la constante `element`. Ahora el componente puede renderizarse a través de la llamada a `ReactDOM.render(element, document.getElemenyById('root'));`.
+En este caso, `document.getElemenyById('root')` indica el elemento en el cual se va a renderizar el componente.
 
 ### Otras formas de declarar componentes.
 
@@ -26,7 +27,7 @@ Hay muchas formas de declarar componentes al usar React.js, pero hay dos tipos d
 
 ### Con estado
 
-#### Clase de componentes de clase
+#### Componentes de tipo clase
 
 ```jsx
 class Cat extends React.Component { 

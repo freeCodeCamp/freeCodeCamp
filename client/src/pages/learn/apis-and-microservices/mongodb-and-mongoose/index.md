@@ -5,7 +5,7 @@ superBlock: APIs and Microservices
 ---
 ## Introduction to the MongoDB and Mongoose Challenges
 
-MongoDB is a database that stores data records (documents) for use by an application. Mongo is a non-relational, "NoSQL" database. This means Mongo stores all data associated within one record, instead of storing it across many preset tables as in a SQL database. Some benefits of this storage model are:
+MongoDB is a database that stores data records (documents) for use by an application. Mongo is a non-relational, "NoSQL" database. This means Mongo stores all associated data within one record, instead of storing it across many preset tables as in a SQL database. Some benefits of this storage model are:
 
 - Scalability: by default, non-relational databases are split (or "shared") across many systems instead of only one. This makes it easier to improve performance at a lower cost.
 - Flexibility: new datasets and properties can be added to a document without the need to make a new table for that data.
@@ -13,63 +13,70 @@ MongoDB is a database that stores data records (documents) for use by an applica
 
 While there are many non-relational databases, Mongo's use of JSON as its document storage structure makes it a logical choice when learning backend JavaScript. Accessing documents and their properties is like accessing objects in JavaScript.
 
-Mongoose.js is an npm module for Node.js that allows you to write objects for Mongo as you would in JavaScript. This can make is easier to construct documents for storage in Mongo.
+Mongoose.js is an npm module for Node.js that allows you to write objects for Mongo as you would in JavaScript. This can make it easier to construct documents for storage in Mongo.
 
 Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
 
 Start this project on Glitch using [this link](https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mongomongoose/) or clone [this repository](https://github.com/freeCodeCamp/boilerplate-mongomongoose/) on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
 
-## Use mLab to host a free mongodb instance for your projects
+## Use MongoDB Atlas to host a free mongodb instance for your projects
 
-For the following challenges, we are going to start using MongoDB to store our data. To simplify the configuration, we are going to use mLab.
+For the following challenges, we are going to start using MongoDB to store our data. To simplify the configuration, we are going to use MongoDB Atlas.
 
-mLab is a MongoDB Database-as-a-Service platform, which basically means that they configure and host the database for you, making it so the only responsibility you have is to populate your database with what matters: data!
+MongoDB Atlas is a MongoDB Database-as-a-Service platform, which basically means that they configure and host the database for you, making it so that the only responsibility you have is to populate your database with what matters: data!
 We are going to show you how to:
 
-- Create an mLab account.
-- Create a free online database.
-- Create a new admin user on the database, so you can access it.
-- Get the mLab URI, which you will use in your application to connect to your database.
+- Create a MongoDB Atlas account.
+- Create a new cluster.
+- Create a new user on the database.
+- Whitelist your IP address.
+- Connect to your cluster.
 
-### Create an mLab account
+### Create a MongoDB Atlas account
 
-Let's start by <a href='https://mlab.com/' target='_blank' rel='no-follow'>going to mLab</a>.
+Let's start by <a href='https://www.mongodb.com/cloud/atlas' target='_blank' rel='no-follow'>going to MongoDB Atlas</a>.
 
-Once you open the mLab page, you should sign up for a new account.
+Once you open the MongoDB Atlas page, you should sign up for a new account.
 
-- Click the <a href='https://mlab.com/signup/' target='_blank' rel='no-follow'>Sign Up</a> button in the top right corner to open the registration page.
-- Fill the registration form with your information and send it.
-- You should be logged into your new, unverified account.
-- In the top of the screen, a message should appear asking to send you an e-mail for account verification. Send and confirm it.
-- After you confirm your account, click **Create new** in the *MongoDB Deployments* section.
+- Click the <a href='https://cloud.mongodb.com/user#/atlas/login' target='_blank' rel='no-follow'>Sign In</a> button in the top right corner to open the registration page.
+- Click the <a href='https://cloud.mongodb.com/user#/atlas/register/accountProfile' target='_blank' rel='no-follow'>Register for a new account</a> link at the bottom of the sign in page.
+- Fill the registration form with your information and press **continue**.
+- You should now be logged into your new account and see a modal with a green **Build my first cluster** button, click on it.
 
-### Create a free online database.
+### Create a new cluster
 
-Now we are going to create the actual database you are going to be using.
+- Go through the steps of building your first cluster by following the instructions they provide and clicking next after each step.
+    - **Choose your cloud provider and region**, you can leave this as the default provided (typically AWS).
+    - **Customize your cluster's specs**, you can also leave this as the default provided, `M0 Sandbox (Shared RAM, 512 MB Storage) Encrypted`.
+    - **Give your cluster a name**, you can also leave this as the default provided, `Cluster 0`.
+- Now click the green **Create Cluster** button at the bottom of the screen and verify the image captions they provide. 
+- You should now see the message, `Your cluster is being created -
+New clusters take between 7-10 minutes to provision.` Wait until the cluster is created before going to the next step.
 
-- Choose a *Cloud Provider* from the available list.
-- Select the *Sandbox* plan type, which is the only one with no cost, and press **Continue**.
-- Select a region for your Sandbox, from the available list, and press **Continue**.
-- Input a name for your database. This name will be used in the URI for your database. After that, press **Continue**.
+### Create a new user on the database.
 
-A summary of all your choices should appear, allowing you to change any information provided in the previous steps. Press **Submit Order** to confirm the information.
+- You should be able to see the green **Get Started** button on the bottom left of your screen, you can click this button to see at which step of the process your are in, if you click on it now, you can see the next step is to **Create your first database user**, go ahead and click on that step.
+    - Follow the instructions by clicking on the `Security` tab.
+    - Click on the green **ADD NEW USER** button.
+    - Enter a user name and password and then select **Read or write to any database** under user privileges, remember to store your username and password somewhere safe.
+    - Click on the **ADD USER** green button in the bottom right of the modal.
+    
+    Note: You can always upgrade your privileges to the **Admin** level, however, it is best practice to give permissions to a user on an as-needed basis for security reasons.
 
+### Whitelist your IP address
 
-### Create a new admin user on the database
+- If you now click on the green **Get Started** button in the bottom left of your screen, you should see the next step to take highlighted, **Whitelist your IP address**, click on it.
+    - Follow the instructions by clicking on the `IP Whitelist` tab under the `Security` tab.
+    - Click on the green **ADD IP ADDRESS** button.
+    - In the modal, click the **ALLOW ACCESS FROM ANYWHERE** button and you should see `0.0.0.0/0` pre-filled for the whitelist entry field, click the green **Confirm** button.
 
-After you confirmed your configuration, a new sandbox should have been created in the *MongoDB Deployments* section. We are now going to create an administrator, so you can use the database in your application.
+### Connect to your cluster
 
-- Click the newly-created database.
-- Click the *Users* section.
-- Click the **Add database user** button.
-- Input an username and password for your administrator. Do not mark it as read-only or you will not be able to add any information to the database with this user.
+- Clicking on the green **Get Started** button in the bottom left of your screen should now show you the final step, **Connect to your cluster**, click on it.
+    - Follow the instructions by clicking on the `Connect` button in the `Sandbox` section.
+    - In the pop-up modal, click on **Connect Your Application**, a connection string will be displayed, you can copy that connection string by clicking on the `copy` button.
+    - This will be the final URI that you will use to connect to your db, it will look something like this `mongodb+srv://<user>:<password>@<cluster#-dbname>.mongodb.net/test?retryWrites=true`, notice that the `user` and `cluster#-dbname` fields are already filled out for you, all you would need to replace is the `password` field with the one that you created in the previous step. 
 
-### Get the mLab URI
+- That's it! You now have the URI you will add to your application to connect to your database. Keep this URI safe somewhere, so you can use it later!
+- Feel free to create separate databases for different applications if they need a separate database. You just need to create a new project under your current MongoDB Atlas account, build a new cluster, add a new user, whitelist your IP addresses and finally connect to your cluster to obtain the new URI.
 
-Almost done! We have created our new database and created an user to access it, so we just need to find a way to use it in our applications.
-
-- In your database page, you should see some instructions about connecting using the standard MongoDB URI.
-- The line should look like this `mongodb://dbuser:dbpassword@ds0<PORT>.mlab.com:<PORT>/<DATABASE-NAME>`.
-- Copy this URI and substitute dbuser and dbpassword with the information for the user you previously created in the database.
-- That's it! This is the URI you will add to your application to connect to your database. Keep this URI safe somewhere, so you can use it later!
-- Feel free to create separate databases for different applications, if they don't have an use for the same data. You just need to create the sandbox, user and obtain the new URI.

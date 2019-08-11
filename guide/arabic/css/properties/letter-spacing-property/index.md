@@ -6,16 +6,17 @@ localeTitle: خاصية تباعد الأحرف
 
 تقوم خاصية تباعد الحروف بتعديل المسافة بين كل الحروف في كتلة النص. ويشار إليه أيضًا باسم "التعقب" في شروط الطباعة وفي البرامج ذات خيارات إعداد النوع المتقدمة. يقبل الموقع قيم طول `px` و `em` ، بما في ذلك القيم السالبة.
 
- `.first-example { 
-  letter-spacing: 3px; 
- } 
- .second-example { 
-  letter-spacing: -1px; 
- } 
- .third-example { 
-  letter-spacing: 0.5em; 
- } 
-` 
+```css
+.first-example {
+  letter-spacing: 3px;
+}
+.second-example {
+  letter-spacing: -1px;
+}
+.third-example {
+  letter-spacing: 0.5em;
+}
+``` 
 
 ![نتيجة CSS](https://github.com/kaithrendyle/guide-photos/blob/master/letter-spacing.png)
 

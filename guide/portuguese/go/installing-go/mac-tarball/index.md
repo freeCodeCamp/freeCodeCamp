@@ -25,7 +25,7 @@ $ curl -O https://storage.googleapis.com/golang/go1.9.1.darwin-amd64.tar.gz
 
 Para verificar se foi instalado com sucesso, use:
 
-```sh
+```shell
 $ go version 
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: React
 ---
-## React
+# React
 
 ![React](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png)
 
@@ -13,7 +13,7 @@ It is available as a CDN for browser based development or as a npm package for C
 
 React has been developed under the Facebook Open Source project, and is actively maintained by the Open Source community.
 
-#### More Information:
+#### Relevant Links
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 1. [React](https://reactjs.org/)
 2. [React Open Source page](https://github.com/facebook/react/)

@@ -26,9 +26,16 @@ There are nine, underlying principles for SAFe
 There are four variations of SAFe, varying in complexity and needs of your project:
 
 1. Essential SAFe
+  - It’s the basic building block for all other SAFe configurations and describes the most critical elements needed to realize the majority of the Framework’s benefits.
+  
 2. Portfolio SAFe
+  - It’s for developing the largest and most complex solutions that typically require multiple Agile release trains and Suppliers, but do not require portfolio-level considerations. This is common for industries like aerospace and defense, automotive, and government, where the large solution—not portfolio governance—is the primary concern.
+  
 3. Large Solution SAFe
+  - Helps align portfolio execution to the enterprise strategy, by organizing Agile development around the flow of value, through one or more value streams. It provides business agility through principles and practices for portfolio strategy and investment funding, Agile portfolio operations, and Lean governance.
+  
 4. Full SAFe
+  - Supports enterprises that build and maintain large integrated solutions. Usually requiring hundreds of people.
 
 #### More Information:
 

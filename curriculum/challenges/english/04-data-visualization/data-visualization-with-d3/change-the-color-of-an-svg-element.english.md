@@ -1,9 +1,8 @@
 ---
 id: 587d7fa9367417b2b2512bd1
 title: Change the Color of an SVG Element
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+forumTopicId: 301480
 ---
 
 ## Description
@@ -23,7 +22,7 @@ Add an <code>attr()</code> method to set the "fill" of all the bars to the color
 ```yml
 tests:
   - text: The bars should all have a <code>fill</code> color of navy.
-    testString: assert($('rect').css('fill') == "rgb(0, 0, 128)", 'The bars should all have a <code>fill</code> color of navy.');
+    testString: assert($('rect').css('fill') == "rgb(0, 0, 128)");
 
 ```
 
@@ -76,4 +75,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

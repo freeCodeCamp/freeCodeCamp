@@ -13,7 +13,7 @@ Você pode simplesmente incorporar a biblioteca React em sua página da Web como
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.0.0/cjs/react.production.min.js"></script> 
 ```
 
-Programadores inteligentes querem ter uma maneira mais prática e produtiva: [Criar Aplicativo de Reação](https://github.com/facebookincubator/create-react-app)
+Programadores inteligentes querem ter uma maneira mais prática e produtiva: [Criar Aplicativo React](https://github.com/facebookincubator/create-react-app)
 
 ```bash
 npm install -g create-react-app 
@@ -23,11 +23,11 @@ npm install -g create-react-app
  npm start 
 ```
 
-Isso configurará seu ambiente de desenvolvimento para que você possa usar os recursos JavaScript mais recentes, fornecer uma boa experiência de desenvolvedor e otimizar seu aplicativo para produção.
+Isso irá configurar seu ambiente de desenvolvimento para que você possa usar os recursos JavaScript mais recentes, fornecer uma boa experiência de desenvolvedor e otimizar seu aplicativo para produção.
 
-`npm start` inicia um servidor de desenvolvimento que permite recarregar ao vivo 3 .
+`npm start` inicia um servidor de desenvolvimento que permite o recarregamento automático.
 
-Depois de concluir o projeto e estar pronto para implantar seu aplicativo na produção, você pode usar `npm run build` para criar uma compilação otimizada de seu aplicativo na pasta de `build` .
+Depois de concluir o projeto e estar pronto para implantar seu aplicativo em produção, você pode usar `npm run build` para criar uma compilação otimizada de seu aplicativo na pasta de `build` .
 
 #### Links úteis
 
