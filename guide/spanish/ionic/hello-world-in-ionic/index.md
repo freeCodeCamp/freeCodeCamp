@@ -4,7 +4,7 @@ localeTitle: Hola mundo en Ionic
 ---
 # Hola mundo en Ionic !!
 
-### Este es el tutorial que lo guiará para hacer un simple programa Hello World en Ionic.
+### Este es el tutorial que lo guiará para hacer un simple programa Hola Mundo en Ionic.
 
 ### Pasos
 
@@ -36,11 +36,11 @@ No entre en pánico, estos archivos se generan automáticamente por npm para ust
 
 #### 5\. Formato de archivo básico
 ```
-`home.html` es la página html donde puede escribir sintaxis de html.<br/> 
+`home.html` Es la página html donde puede escribir código con notacion html.<br/> 
  
- `home.scss` es la página de css donde puede escribir código con sintaxis de css.<br/> 
+ `home.scss` Es la página css donde puede escribir código con sintaxis css.<br/> 
  
- `home.ts` es la página typescript para escribir código typescript. 
+ `home.ts` es la pagina typescript donde puede escribir codigo typescript. 
 ```
 
 #### 6\. Elimine la plantilla y agregue la sintaxis html como se muestra en la imagen.
