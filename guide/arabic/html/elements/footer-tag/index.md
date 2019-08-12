@@ -8,18 +8,18 @@ localeTitle: تذييل العلامة
 
 ### مثال
 
- `
-<html> 
- <head> 
-  <title>Paragraph example</title> 
- </head> 
- <body> 
-  <footer> 
-    <p>&copy; 2017 Joe Smith</p> 
-  </footer> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<head>
+  <title>Paragraph example</title>
+</head>
+<body>
+  <footer>
+    <p>&copy; 2017 Joe Smith</p>
+  </footer>
+</body>
+</html>
+``` 
 
 #### معلومات اكثر:
 

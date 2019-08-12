@@ -10,10 +10,11 @@ localeTitle: هوامش
 
 ## بناء الجملة
 
- `.element { 
-    margin: margin-top || margin-right || margin-bottom || margin-left; 
- } 
-` 
+```css
+.element {
+    margin: margin-top || margin-right || margin-bottom || margin-left;
+}
+``` 
 
 يمكن تحديد هذه الخاصية باستخدام قيم واحدة أو اثنتين أو ثلاثة أو أربعة.
 

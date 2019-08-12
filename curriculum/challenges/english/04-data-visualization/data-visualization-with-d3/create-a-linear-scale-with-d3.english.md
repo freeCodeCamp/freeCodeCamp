@@ -1,9 +1,8 @@
 ---
 id: 587d7fab367417b2b2512bda
 title: Create a Linear Scale with D3
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+forumTopicId: 301483
 ---
 
 ## Description
@@ -28,11 +27,11 @@ Change the <code>scale</code> variable to create a linear scale. Then set the <c
 ```yml
 tests:
   - text: The text in the <code>h2</code> should be 50.
-    testString: assert($('h2').text() == '50', 'The text in the <code>h2</code> should be 50.');
+    testString: assert($('h2').text() == '50');
   - text: Your code should use the <code>scaleLinear()</code> method.
-    testString: assert(code.match(/\.scaleLinear/g), 'Your code should use the <code>scaleLinear()</code> method.');
+    testString: assert(code.match(/\.scaleLinear/g));
   - text: The <code>output</code> variable should call <code>scale</code> with an argument of 50.
-    testString: assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g), 'The <code>output</code> variable should call <code>scale</code> with an argument of 50.');
+    testString: assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
 
 ```
 
@@ -73,4 +72,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

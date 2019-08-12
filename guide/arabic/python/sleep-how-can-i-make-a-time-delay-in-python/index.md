@@ -8,12 +8,13 @@ localeTitle: النوم كيف يمكنني جعل التأخير في الوق�
 
 مثال:
 
- `import time 
- 
- for letter in 'hello, world!': 
-    print(letter) 
-    time.sleep(2)  # sleep 2 seconds between each print 
-` 
+```
+import time
+
+for letter in 'hello, world!':
+    print(letter)
+    time.sleep(2)  # sleep 2 seconds between each print
+``` 
 
 يمكن إعطاء أرقام النقطة العائمة كوسيطة `sleep()` للحصول على أوقات نوم أكثر دقة.
 

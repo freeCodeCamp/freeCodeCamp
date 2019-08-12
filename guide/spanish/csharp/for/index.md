@@ -8,7 +8,7 @@ El bucle `for` ejecuta un bloque de código hasta que una condición especificad
 
 ## Sintaxis
 
-```C#
+```csharp
 for ((Initial variable); (condition); (step)) 
     { 
     (code) 
@@ -25,7 +25,7 @@ El C # para el bucle consta de tres expresiones y algunos códigos.
 
 ## Ejemplo
 
-```C#
+```csharp
 int[] array = { 1, 2, 3, 4, 5 }; 
  for (int i = 0; i < array.Length; i++) 
  { 

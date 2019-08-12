@@ -14,15 +14,15 @@ localeTitle: 如何使用CSS和JavaScript创建下拉菜单
 
 初始屏幕：
 
-![](https://i.imgur.com/jrnu6mE.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png)
 
 下拉开启：
 
-![](https://i.imgur.com/gszPtRa.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png)
 
 下拉选项已选中：
 
-![](https://i.imgur.com/TKXxZGF.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png)
 
 #### HTML：
 

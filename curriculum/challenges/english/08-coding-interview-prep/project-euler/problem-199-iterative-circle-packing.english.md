@@ -2,6 +2,7 @@
 id: 5900f4341000cf542c50ff46
 challengeType: 5
 title: 'Problem 199: Iterative Circle Packing'
+forumTopicId: 301837
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Give your answer rounded to eight decimal places using the format x.xxxxxxxx .
 ```yml
 tests:
   - text: <code>euler199()</code> should return 0.00396087.
-    testString: assert.strictEqual(euler199(), 0.00396087, '<code>euler199()</code> should return 0.00396087.');
+    testString: assert.strictEqual(euler199(), 0.00396087);
 
 ```
 
@@ -60,4 +61,5 @@ euler199();
 ```js
 // solution required
 ```
+
 </section>

@@ -14,7 +14,8 @@ localeTitle: باستخدام طريقة الاختبار
 
 ## حل
 
- `let myString = "Hello, World!"; 
- let myRegex = /Hello/; 
- let result = myRegex.test(myString); // Change this line 
-`
+```javascript
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString); // Change this line
+```

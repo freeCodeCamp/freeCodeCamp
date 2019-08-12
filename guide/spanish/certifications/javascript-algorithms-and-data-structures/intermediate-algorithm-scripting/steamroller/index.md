@@ -62,7 +62,6 @@ function steamrollArray(arr) {
  steamrollArray([1, [2], [3, [[4]]]]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnh/0)
 
 ### Explicación del código:
 
@@ -87,7 +86,6 @@ function steamrollArray(arr) {
  flattenArray([1, [2], [3, [[4]]]]); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLni/0)
 
 ### Explicación del código:
 
@@ -121,7 +119,6 @@ function steamrollArray(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CpDy/4)
 
 ### Explicación del código:
 

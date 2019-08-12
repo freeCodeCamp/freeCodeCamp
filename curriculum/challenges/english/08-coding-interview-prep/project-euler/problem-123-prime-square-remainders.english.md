@@ -2,6 +2,7 @@
 id: 5900f3e71000cf542c50fefa
 challengeType: 5
 title: 'Problem 123: Prime square remainders'
+forumTopicId: 301750
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find the least value of n for which the remainder first exceeds 1010.
 ```yml
 tests:
   - text: <code>euler123()</code> should return 21035.
-    testString: assert.strictEqual(euler123(), 21035, '<code>euler123()</code> should return 21035.');
+    testString: assert.strictEqual(euler123(), 21035);
 
 ```
 
@@ -55,4 +56,5 @@ euler123();
 ```js
 // solution required
 ```
+
 </section>

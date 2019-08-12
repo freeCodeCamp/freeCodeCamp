@@ -32,7 +32,6 @@ function insertionSort(array) {
  } 
 ```
 
-*   [Код запуска](https://repl.it/@ezioda004/Insertion-Sort)
 
 ### Рекомендации:
 

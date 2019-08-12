@@ -52,7 +52,6 @@ const increment = (function() {
  console.log(increment(5)); // returns NaN 
 ```
 
-: cohete: [Ejecutar código](https://repl.it/@RyanPisuena/PleasingFumblingThings)
 
 ## Explicación del Código
 

@@ -1,7 +1,7 @@
 ---
 title: Data Visualization
 ---
-## Data Visualization
+# Data Visualization
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

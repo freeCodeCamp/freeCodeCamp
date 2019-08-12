@@ -18,11 +18,6 @@ Aquí hay un **ejemplo** de cómo se ve usar un enfoque de _antes_ y _después_ 
     grid-template-columns: repeat(3, minmax(50px, 2fr)); 
 ```
 
-* * *
-
-También puede consultar este bolígrafo incorporado en Codepen para ver el ejemplo en acción, que puede cambiar de tamaño para ver los resultados:
-
-Vea la función Pen [limit-item-size-using-the-minmax-function](https://codepen.io/skywardcode/pen/EeGGze/) de skywardcode ( [@skywardcode](https://codepen.io/skywardcode) ) en [CodePen](https://codepen.io) .
 
 ### Recursos
 

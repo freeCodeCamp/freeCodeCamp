@@ -81,7 +81,6 @@ localeTitle: تحويل كيانات HTML
 *   [arr.join ()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 *   [بيان التبديل](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch)
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnP/0)
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":دوار الشمس:") حل الشفرة المتوسطة:
 
@@ -95,7 +94,6 @@ localeTitle: تحويل كيانات HTML
  convertHTML("Dolce & Gabbana"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnQ/0)
 
 ### شرح الشفرة:
 
@@ -125,7 +123,6 @@ localeTitle: تحويل كيانات HTML
     convertHTML("Dolce & Gabbana"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnR/0)
 
 ### شرح الشفرة:
 

@@ -1,7 +1,7 @@
 ---
 title: Push Elements Left or Right with the float Property
 ---
-## Push Elements Left or Right with the float Property
+# Push Elements Left or Right with the float Property
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/push-elements-left-or-right-with-the-float-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

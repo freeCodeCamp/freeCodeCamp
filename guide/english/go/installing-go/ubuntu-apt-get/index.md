@@ -7,7 +7,7 @@ Using Ubuntu's Source Package Manager (apt-get) is the easiest way to install Go
 >As of this writing, Ubuntu Xenial's version of go is 1.6.1, while the latest
 stable version is 1.9.1
 
-```sh
+```shell
 $ sudo apt-get update
 $ sudo apt-get install golang-go
 ```
@@ -16,7 +16,7 @@ $ sudo apt-get install golang-go
 
 To check if go was successfully installed, use:
 
-```sh
+```shell
 $ go version
 > go version go1.9.1 linux/amd64
 ```

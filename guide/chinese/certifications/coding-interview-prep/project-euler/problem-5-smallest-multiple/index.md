@@ -37,7 +37,6 @@ localeTitle: 最小的倍数
  } 
 ```
 
-*   [运行代码](https://repl.it/@ezioda004/Problem-5-Smallest-multiple)
 
 ### 参考文献：
 

@@ -10,11 +10,12 @@ localeTitle: الرياضيات
 
 يوضح المثال التالي كيفية استخدام كائن `Math` لكتابة دالة تقوم بحساب مساحة دائرة:
 
- `function calculateCircleArea(radius) { 
-  return Math.PI * Math.pow(radius, 2); 
- } 
- calculateCircleArea(1); // 3.141592653589793 
-` 
+```javascript
+function calculateCircleArea(radius) {
+  return Math.PI * Math.pow(radius, 2);
+}
+calculateCircleArea(1); // 3.141592653589793
+``` 
 
 ### موارد آخرى
 

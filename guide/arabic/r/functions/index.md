@@ -131,35 +131,38 @@ localeTitle: وظائف في R
 *   على سبيل المثال ، يمكنك تقريب رقم مع `round()` أو حسابه مع عامل به مع `factorial()` .
     
 
- `> round(4.147) 
- [1] 4 
- > factorial(3) 
- [1] 6 
- > round(mean(1:6)) 
- [1] 4 
-` 
+```r
+> round(4.147)
+[1] 4
+> factorial(3)
+[1] 6
+> round(mean(1:6))
+[1] 4
+``` 
 
 *   تسمى البيانات التي تمررها إلى الدالة وسيطة الدالة.
     
 *   يمكنك محاكاة لفة من الموت مع الدالة R `sample()` . تأخذ الدالة `sample()` الوسيطتين: المتجه المسمى x ورقم المسمى بالحجم. فمثلا:
     
 
- `> sample(x = 1:4, size = 2) 
- [] 4 2 
- > sample(x = die, size = 1) 
- [] 3 
- >dice <- sample(die, size = 2, replace = TRUE) 
- >dice 
- [1] 2 4 
- >sum(dice) 
- [1] 6 
-` 
+```r
+> sample(x = 1:4, size = 2)
+[] 4 2
+> sample(x = die, size = 1)
+[] 3
+>dice <- sample(die, size = 2, replace = TRUE)
+>dice
+[1] 2 4
+>sum(dice)
+[1] 6
+``` 
 
 *   إذا لم تكن متأكدًا من الأسماء التي ستستخدمها مع إحدى الوظائف ، فيمكنك البحث عن الوظيفة الحجج مع args.
 
- `> args(round) 
- [1] function(x, digits=0) 
-` 
+```r
+> args(round)
+[1] function(x, digits=0)
+``` 
 
 ## مصادر
 

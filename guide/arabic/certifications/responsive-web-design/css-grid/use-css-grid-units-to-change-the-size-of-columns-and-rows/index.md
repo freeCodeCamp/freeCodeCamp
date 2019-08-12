@@ -14,8 +14,9 @@ localeTitle: استخدم CSS الشبكة وحدات لتغيير حجم الأ
 
 نظرًا لأن التحدي يتطلب منك تعيين العرض على `1fr` و `100px` و `2fr` ، `2fr` بتغيير خاصية `css grid-template-columns` الخاصة بـ `.container` إلى:
 
- `grid-template-columns: 1fr 100px 2fr; 
-` 
+```css
+grid-template-columns: 1fr 100px 2fr;
+``` 
 
 #### المزيد من المعلومات
 
