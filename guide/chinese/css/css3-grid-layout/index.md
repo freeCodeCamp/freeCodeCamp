@@ -36,6 +36,9 @@ CSS Grid Layout是CSS中最强大的布局系统。 它是一个二维系统，�
 }
 ```
 
+![screen shot 2018-10-23 at 4 11 17 pm](https://user-images.githubusercontent.com/30460357/47394170-36c91900-d6df-11e8-87bb-96b18d08ad8e.png)
+
+
 下一步你需要設定GRID的行數和排數和子項目的位置
 ```
 <div class="container">

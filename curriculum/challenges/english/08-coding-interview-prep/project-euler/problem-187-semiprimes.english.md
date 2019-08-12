@@ -2,6 +2,7 @@
 id: 5900f4291000cf542c50ff3a
 challengeType: 5
 title: 'Problem 187: Semiprimes'
+forumTopicId: 301823
 ---
 
 ## Description
@@ -25,7 +26,7 @@ How many composite integers, n < 108, have precisely two, not necessarily distin
 ```yml
 tests:
   - text: <code>euler187()</code> should return 17427258.
-    testString: assert.strictEqual(euler187(), 17427258, '<code>euler187()</code> should return 17427258.');
+    testString: assert.strictEqual(euler187(), 17427258);
 
 ```
 
@@ -57,4 +58,5 @@ euler187();
 ```js
 // solution required
 ```
+
 </section>

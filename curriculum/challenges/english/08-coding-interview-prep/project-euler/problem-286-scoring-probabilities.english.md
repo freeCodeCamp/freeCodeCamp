@@ -2,6 +2,7 @@
 id: 5900f48a1000cf542c50ff9d
 challengeType: 5
 title: 'Problem 286: Scoring probabilities'
+forumTopicId: 301937
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find q and give your answer rounded to 10 decimal places.
 ```yml
 tests:
   - text: <code>euler286()</code> should return 52.6494571953.
-    testString: assert.strictEqual(euler286(), 52.6494571953, '<code>euler286()</code> should return 52.6494571953.');
+    testString: assert.strictEqual(euler286(), 52.6494571953);
 
 ```
 
@@ -56,4 +57,5 @@ euler286();
 ```js
 // solution required
 ```
+
 </section>

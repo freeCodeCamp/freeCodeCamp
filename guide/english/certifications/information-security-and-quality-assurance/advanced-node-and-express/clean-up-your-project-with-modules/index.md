@@ -1,7 +1,7 @@
 ---
 title: Clean Up Your Project with Modules
 ---
-## Clean Up Your Project with Modules
+# Clean Up Your Project with Modules
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/clean-up-your-project-with-modules/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

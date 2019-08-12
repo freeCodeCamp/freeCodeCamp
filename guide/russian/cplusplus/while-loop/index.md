@@ -10,7 +10,7 @@ localeTitle: undefined
 
 Пример:
 
-```C++
+```cpp
 #include <iostream>
  using namespace std;
 

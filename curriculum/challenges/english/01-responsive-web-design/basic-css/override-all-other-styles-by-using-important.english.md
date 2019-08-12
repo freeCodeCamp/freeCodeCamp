@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf07756
 title: Override All Other Styles by using Important
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cm24rcp'
+forumTopicId: 18249
 ---
 
 ## Description
@@ -26,17 +27,17 @@ An example of how to do this is:
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: assert($("h1").hasClass("pink-text"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');
+    testString: assert($("h1").hasClass("pink-text"));
   - text: Your <code>h1</code> element should have the class <code>blue-text</code>.
-    testString: assert($("h1").hasClass("blue-text"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');
+    testString: assert($("h1").hasClass("blue-text"));
   - text: Your <code>h1</code> element should have the id of <code>orange-text</code>.
-    testString: assert($("h1").attr("id") === "orange-text", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');
+    testString: assert($("h1").attr("id") === "orange-text");
   - text: Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.
-    testString: assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi), 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.');
+    testString: assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\s*?:/gi));
   - text: Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.
-    testString: assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g), 'Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.');
+    testString: assert(code.match(/\.pink-text\s*?\{[\s\S]*?color:.*pink.*!important\s*;?[^\.]*\}/g));
   - text: Your <code>h1</code> element should be pink.
-    testString: assert($("h1").css("color") === "rgb(255, 192, 203)", 'Your <code>h1</code> element should be pink.');
+    testString: assert($("h1").css("color") === "rgb(255, 192, 203)");
 
 ```
 
@@ -76,7 +77,24 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  #orange-text {
+    color: orange;
+  }
+  .pink-text {
+    color: pink !important;
+  }
+  .blue-text {
+    color: blue;
+  }
+</style>
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
 ```
+
 </section>

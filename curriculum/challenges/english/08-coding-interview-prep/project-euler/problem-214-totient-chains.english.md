@@ -2,6 +2,7 @@
 id: 5900f4421000cf542c50ff55
 challengeType: 5
 title: 'Problem 214: Totient Chains'
+forumTopicId: 301856
 ---
 
 ## Description
@@ -39,7 +40,7 @@ What is the sum of all primes less than 40000000 which generate a chain of lengt
 ```yml
 tests:
   - text: <code>euler214()</code> should return 1677366278943.
-    testString: assert.strictEqual(euler214(), 1677366278943, '<code>euler214()</code> should return 1677366278943.');
+    testString: assert.strictEqual(euler214(), 1677366278943);
 
 ```
 
@@ -71,4 +72,5 @@ euler214();
 ```js
 // solution required
 ```
+
 </section>

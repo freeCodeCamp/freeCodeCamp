@@ -48,7 +48,6 @@ localeTitle: Реализация Merge Sort
  } 
 ```
 
-*   [Код запуска](https://repl.it/@ezioda004/Merge-Sort)
 
 ### Рекомендации:
 

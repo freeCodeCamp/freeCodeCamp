@@ -8,41 +8,43 @@ localeTitle: تبديل القضية
 
 ## مثال
 
- `public enum Colors { Red, Blue, Green, Orange } 
- 
- Colors myColor; 
- 
- ... myColor is set to one of the enum values ... 
- 
- switch(myColor){ 
-  case Colors.Red: 
-    Console.WriteLine("How you like them apples?"); 
-    break; 
-  case Colors.Blue: 
-    Console.WriteLine("Ice Ice Baby..."); 
-    break; 
-  case Colors.Green: 
-    Console.WriteLine("Fore!"); 
-    break; 
-  default: 
-    Console.WriteLine("I have a hard time when I try to rhyme."); 
- } 
-` 
+```
+public enum Colors { Red, Blue, Green, Orange }
+
+Colors myColor;
+
+... myColor is set to one of the enum values ...
+
+switch(myColor){
+  case Colors.Red:
+    Console.WriteLine("How you like them apples?");
+    break;
+  case Colors.Blue:
+    Console.WriteLine("Ice Ice Baby...");
+    break;
+  case Colors.Green:
+    Console.WriteLine("Fore!");
+    break;
+  default:
+    Console.WriteLine("I have a hard time when I try to rhyme.");
+}
+``` 
 
 ## انتاج |
 
- `If myColor is Colors.Red: 
- > How you like them apples? 
- 
- If myColor is Colors.Blue: 
- > Ice Ice Baby... 
- 
- If myColor is Colors.Green: 
- > Fore! 
- 
- If myColor is Colors.Orange: 
- > I have a hard time when I try to rhyme. 
-` 
+```
+If myColor is Colors.Red:
+> How you like them apples?
+
+If myColor is Colors.Blue:
+> Ice Ice Baby...
+
+If myColor is Colors.Green:
+> Fore!
+
+If myColor is Colors.Orange:
+> I have a hard time when I try to rhyme.
+``` 
 
 ### مصادر:
 

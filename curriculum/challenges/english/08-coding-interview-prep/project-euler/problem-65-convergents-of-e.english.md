@@ -2,6 +2,7 @@
 id: 5900f3ad1000cf542c50fec0
 challengeType: 5
 title: 'Problem 65: Convergents of e'
+forumTopicId: 302177
 ---
 
 ## Description
@@ -109,7 +110,7 @@ Find the sum of digits in the numerator of the 100th convergent of the continued
 ```yml
 tests:
   - text: <code>euler65()</code> should return 272.
-    testString: assert.strictEqual(euler65(), 272, '<code>euler65()</code> should return 272.');
+    testString: assert.strictEqual(euler65(), 272);
 
 ```
 
@@ -141,4 +142,5 @@ euler65();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,7 +1,7 @@
 ---
 title: Element-wise operations
 ---
-## Element-wise operations
+# Element-wise operations
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/element-wise-operations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

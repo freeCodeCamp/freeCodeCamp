@@ -14,20 +14,21 @@ localeTitle: وظائف رد الاتصال
 
 لتوضيح معاودة الاتصال ، دعنا نبدأ بمثال بسيط:
 
- `function createQuote(quote, callback){ 
-  var myQuote = "Like I always say, " + quote; 
-  callback(myQuote); // 2 
- } 
- 
- function logQuote(quote){ 
-  console.log(quote); 
- } 
- 
- createQuote("eat your vegetables!", logQuote); // 1 
- 
- // Result in console: 
- // Like I always say, eat your vegetables! 
-` 
+```javascript
+function createQuote(quote, callback){
+  var myQuote = "Like I always say, " + quote;
+  callback(myQuote); // 2
+}
+
+function logQuote(quote){
+  console.log(quote);
+}
+
+createQuote("eat your vegetables!", logQuote); // 1
+
+// Result in console:
+// Like I always say, eat your vegetables!
+``` 
 
 في المثال أعلاه ، يعد `createQuote` هو دالة الترتيب الأعلى ، والتي تقبل الوسيطتين ، والثانية هي معاودة الاتصال. يتم استخدام وظيفة `logQuote` لتمرير في وظيفة رد الاتصال الخاصة بنا. عندما نقوم بتنفيذ وظيفة `createQuote` _(1)_ ، نلاحظ أننا _لا_ `logQuote` أقواس `logQuote` عندما `logQuote` كوسيطة. هذا لأننا لا نريد تنفيذ وظيفة معاودة الاتصال الخاصة بنا على الفور ، فنحن نريد ببساطة تمرير تعريف الدالة إلى الوظيفة ذات الترتيب الأعلى بحيث يمكن تنفيذه لاحقًا.
 
@@ -35,18 +36,20 @@ localeTitle: وظائف رد الاتصال
 
 بالإضافة إلى ذلك ، يمكن أن نمر في وظائف مجهولة مثل الاستدعاءات. سيكون للنداء أدناه إلى `createQuote` نفس النتيجة كما في المثال أعلاه:
 
- `createQuote("eat your vegetables!", function(quote){ 
-  console.log(quote); 
- }); 
-` 
+```javascript
+createQuote("eat your vegetables!", function(quote){
+  console.log(quote);
+});
+``` 
 
 بالمناسبة ، لا _تحتاج_ إلى استخدام الكلمة "callback" كاسم لوسيطة الخاص بك ، تحتاج Javascript فقط إلى معرفة أنه اسم الوسيطة الصحيح. استناداً إلى المثال أعلاه ، ستتصرف الدالة أدناه بنفس الطريقة بالضبط.
 
- `function createQuote(quote, functionToCall) { 
-  var myQuote = "Like I always say, " + quote; 
-  functionToCall(myQuote); 
- } 
-` 
+```javascript
+function createQuote(quote, functionToCall) {
+  var myQuote = "Like I always say, " + quote;
+  functionToCall(myQuote);
+}
+``` 
 
 ## لماذا استخدام Callbacks؟
 
@@ -54,22 +57,23 @@ localeTitle: وظائف رد الاتصال
 
 دعونا نلقي نظرة على مثال يحاكي طلب إلى الخادم:
 
- `function serverRequest(query, callback){ 
-  setTimeout(function(){ 
-    var response = query + "full!"; 
-    callback(response); 
-  },5000); 
- } 
- 
- function getResults(results){ 
-  console.log("Response from the server: " + results); 
- } 
- 
- serverRequest("The glass is half ", getResults); 
- 
- // Result in console after 5 second delay: 
- // Response from the server: The glass is half full! 
-` 
+```javascript
+function serverRequest(query, callback){
+  setTimeout(function(){
+    var response = query + "full!";
+    callback(response);
+  },5000);
+}
+
+function getResults(results){
+  console.log("Response from the server: " + results);
+}
+
+serverRequest("The glass is half ", getResults);
+
+// Result in console after 5 second delay:
+// Response from the server: The glass is half full!
+``` 
 
 في المثال أعلاه ، نجري طلبًا زائفًا على الخادم. بعد مرور 5 ثوانٍ يتم تعديل الاستجابة ثم يتم تنفيذ `getResults` وظيفة رد الاتصال الخاصة بنا. للاطلاع على هذا الإجراء ، يمكنك نسخ / لصق الشفرة الواردة أعلاه في أداة مطور المتصفح وتنفيذها.
 

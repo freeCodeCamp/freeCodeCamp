@@ -1,7 +1,7 @@
 ---
 title: Visualize Data with a Treemap Diagram
 ---
-## Visualize Data with a Treemap Diagram
+# Visualize Data with a Treemap Diagram
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-projects/visualize-data-with-a-treemap-diagram/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

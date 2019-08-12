@@ -1,7 +1,7 @@
 ---
 title: Extensible prime generator
 ---
-## Extensible prime generator
+# Extensible prime generator
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/extensible-prime-generator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

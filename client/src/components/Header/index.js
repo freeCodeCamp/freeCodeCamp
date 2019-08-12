@@ -1,44 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import FCCSearch from 'react-freecodecamp-search';
+import SearchBar from '../search/searchBar/SearchBar';
 
+import NavigationMenu from './components/NavMenu';
 import NavLogo from './components/NavLogo';
-import UserState from './components/UserState';
+import { Link } from '../helpers';
 
 import './header.css';
 
-function Header({ disableSettings }) {
+const propTypes = {
+  disableSettings: PropTypes.bool
+};
+
+function Header(props) {
+  const { disableSettings } = props;
   return (
     <header>
       <nav id='top-nav'>
         <Link className='home-link' to='/'>
           <NavLogo />
         </Link>
-        {disableSettings ? null : <FCCSearch />}
-        <ul id='top-right-nav'>
-          <li>
-            <Link to='/learn'>Curriculum</Link>
-          </li>
-          <li>
-            <a
-              href='https://forum.freecodecamp.org'
-              rel='noopener noreferrer'
-              target='_blank'
-              >
-              Forum
-            </a>
-          </li>
-          <li>
-            <UserState disableSettings={disableSettings} />
-          </li>
-        </ul>
+        {disableSettings ? null : <SearchBar />}
+        <NavigationMenu disableSettings={disableSettings} />
       </nav>
     </header>
   );
 }
 
-Header.propTypes = {
-  disableSettings: PropTypes.bool
-};
+Header.propTypes = propTypes;
+
 export default Header;

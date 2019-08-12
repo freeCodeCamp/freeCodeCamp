@@ -2,6 +2,7 @@
 id: 5900f4391000cf542c50ff4c
 challengeType: 5
 title: 'Problem 205: Dice Game'
+forumTopicId: 301846
 ---
 
 ## Description
@@ -25,7 +26,7 @@ What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer 
 ```yml
 tests:
   - text: <code>euler205()</code> should return 0.5731441.
-    testString: assert.strictEqual(euler205(), 0.5731441, '<code>euler205()</code> should return 0.5731441.');
+    testString: assert.strictEqual(euler205(), 0.5731441);
 
 ```
 
@@ -57,4 +58,5 @@ euler205();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f4e51000cf542c50fff8
 challengeType: 5
 title: 'Problem 377: Sum of digits, experience 13'
+forumTopicId: 302039
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Give the last 9 digits as your answer.
 ```yml
 tests:
   - text: <code>euler377()</code> should return 732385277.
-    testString: assert.strictEqual(euler377(), 732385277, '<code>euler377()</code> should return 732385277.');
+    testString: assert.strictEqual(euler377(), 732385277);
 
 ```
 
@@ -61,4 +62,5 @@ euler377();
 ```js
 // solution required
 ```
+
 </section>

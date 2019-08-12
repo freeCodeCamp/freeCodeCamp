@@ -179,9 +179,9 @@ Eche un vistazo a este código, que cambia algo de mayúsculas a minúsculas:
 
 Esto comienza tomando una cadena (algo sobre lo que aprenderá cuando ingrese a los arreglos) y se ejecuta en cada ubicación. Note el p ++. Esto incrementa el puntero, lo que significa que está mirando la siguiente ubicación de memoria. Cada letra es una ubicación de memoria, por lo tanto, el puntero está mirando cada letra y decidiendo qué hacer para cada una.
 
-### Const Qualifer
+### El calificador const
 
-El calificador const se puede aplicar a la declaración de cualquier variable para especificar que su valor no se modificará (lo que depende del lugar donde se almacenan las variables const, podemos cambiar el valor de la variable const usando el puntero).
+El calificador const se puede aplicar a la declaración de cualquier variable para especificar que su valor no se modificará (lo cual depende del lugar donde se almacenen las variables const, podríamos cambiar el valor de la variable const usando el puntero).
 
 # Puntero a variable
 

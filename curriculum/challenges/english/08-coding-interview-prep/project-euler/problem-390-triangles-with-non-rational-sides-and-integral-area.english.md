@@ -2,6 +2,7 @@
 id: 5900f4f21000cf542c510005
 challengeType: 5
 title: 'Problem 390: Triangles with non rational sides and integral area'
+forumTopicId: 302055
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find S(1010).
 ```yml
 tests:
   - text: <code>euler390()</code> should return 2919133642971.
-    testString: assert.strictEqual(euler390(), 2919133642971, '<code>euler390()</code> should return 2919133642971.');
+    testString: assert.strictEqual(euler390(), 2919133642971);
 
 ```
 
@@ -61,4 +62,5 @@ euler390();
 ```js
 // solution required
 ```
+
 </section>

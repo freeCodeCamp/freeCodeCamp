@@ -1,0 +1,58 @@
+{
+  "name": "Basic Node and Express",
+  "dashedName": "basic-node-and-express",
+  "order": 2,
+  "time": "5 hours",
+  "superBlock": "apis-and-microservices",
+  "superOrder": 5,
+  "challengeOrder": [
+    [
+      "587d7fb0367417b2b2512bed",
+      "Meet the Node console"
+    ],
+    [
+      "587d7fb0367417b2b2512bee",
+      "Start a Working Express Server"
+    ],
+    [
+      "587d7fb0367417b2b2512bef",
+      "Serve an HTML File"
+    ],
+    [
+      "587d7fb0367417b2b2512bf0",
+      "Serve Static Assets"
+    ],
+    [
+      "587d7fb1367417b2b2512bf1",
+      "Serve JSON on a Specific Route"
+    ],
+    [
+      "587d7fb1367417b2b2512bf2",
+      "Use the .env File"
+    ],
+    [
+      "587d7fb1367417b2b2512bf3",
+      "Implement a Root-Level Request Logger Middleware"
+    ],
+    [
+      "587d7fb1367417b2b2512bf4",
+      "Chain Middleware to Create a Time Server"
+    ],
+    [
+      "587d7fb2367417b2b2512bf5",
+      "Get Route Parameter Input from the Client"
+    ],
+    [
+      "587d7fb2367417b2b2512bf6",
+      "Get Query Parameter Input from the Client"
+    ],
+    [
+      "587d7fb2367417b2b2512bf7",
+      "Use body-parser to Parse POST Requests"
+    ],
+    [
+      "587d7fb2367417b2b2512bf8",
+      "Get Data from POST Requests"
+    ]
+  ]
+}
