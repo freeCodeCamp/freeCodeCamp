@@ -209,7 +209,7 @@ def binary_search(arr, l, r, target):
 ### Ejemplo en C ++
 
 ```cpp
-// Binary Search using iteration 
+// Búsqueda binaria usando iteración 
  int binary_search(int arr[], int beg, int end, int num) 
  { 
     while(beg <= end){ 
