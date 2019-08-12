@@ -16,7 +16,7 @@ amountOfMoney = 150 // amountOfMoney ahora es 150
 
 daysInAWeek = 10 // ¡Esto nos da un error!
 
-````
+```
 
 En este caso la variable `daysInAWeek` debe ser una constante, porque sólo hay siete días en una semana, mientras que la variable `amountOfMoney` debe ser una var porque la cantidad de dinero en una cuenta puede cambiar.
 
