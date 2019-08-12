@@ -74,7 +74,7 @@ Las actividades de la prueba de aceptación están diseñadas para llegar a una 
 
 # Informe de prueba de aceptación - Atributos
 
-El informe de prueba de aceptación tiene los siguientes atributos:
+El informe de prueba de aceptación tiene los  atributos que estan abajo de esta lista:
 
 > Identificador de informe
 >
