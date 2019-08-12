@@ -1,98 +1,99 @@
 ---
 title: If
-localeTitle: Si
+localeTitle: If
 ---
-# Si
+# If
 
 La instrucción if ejecuta diferentes bloques de código según las condiciones.
 ```
-if (condition) 
+if (condicion) 
  { 
-    // Do something when `condition` is true 
+    // Hace algo cuando la `condicion` es verdadera (true)
  } 
  else 
  { 
-    // Do something when `condition` is false 
+    // Hace algo cuando `condicion` es falsa (false)
  } 
 ```
 
-Cuando la `condition` es verdadera, el código dentro de la sección `if` se ejecuta, de lo `else` ejecuta. A veces necesitarías agregar una segunda condición. Para facilitar la lectura, debe usar `else if` lugar de anidar `if` enunciados. en lugar de escribir:
+Cuando la `condicion` es verdadera (true), el código dentro de la sección `if` se ejecuta, de lo contrario `else` lo hará. A veces necesitarías agregar una segunda condición. Para facilitar la lectura, debes usar `else if` en lugar de anidar enunciados `if`. En vez de escribir:
 ```
-if (condition) 
+if (condicion) 
  { 
-    // Do something if `condition` is true 
+    // Hace algo cuando `condicion` es verdadera (true)
  } 
  else 
  { 
-    if (anotherCondition) 
+    if (otraCondicion) 
     { 
-        // Do something if `anotherCondition` is true 
+        // Hace algo si `otraCondicion` es verdadera (true) Y `condicion` es falsa (false)
     } 
     else 
     { 
-        // Do something if `condition` AND `anotherCondition` is false 
+        // Hace algo si `condicion` Y `otraCondicion` son falsas (false)
     } 
  } 
 ```
 
-Podrías usar la escritura mucho más concisa:
+Podrías escribir algo más conciso como:
 ```
-if (condition) 
+if (condicion) 
  { 
-    // Do something if `condition` is true 
+    // Hace algo si `condicion` es verdadera (true)
  } 
- else if (anotherCondition) 
+ else if (otraCondicion) 
  { 
-    // Do something if `anotherCondition` is ture 
+    // Hace algo si `otraCondicion` es verdadera (true)
  } 
  else 
  { 
-    // Do something if `condition` AND `anotherCondition` is false 
+    // Hace algo si `condicion` Y `otraCondicion` es falsa (false) 
  } 
 ```
 
 También es posible verificar si la condición es falsa y actuar sobre ella sin que tenga que tener una declaración else.
 ```
-if(!condition) 
+if(!condicion) 
  { 
- //do something if the condition is false 
+ // Hace algo si `condicion` es falsa (false)
  } 
 ```
 
 ```
-int number = 3; 
+int numero = 3; 
  //!= implies that you wish to check if the object's value is not equal to the value next to it 
- if(number !=2) 
+ // != implica que deseas verificar si el valor del objeto no es igual al valor junto a él
+ if(numero !=2) 
  { 
-     Console.WriteLine("Number is not 2"); 
+     Console.WriteLine("El numero no es 2"); 
  } 
 ```
 
-Tenga en cuenta que las `else` y " `else if` no son necesarias, mientras que `if` es obligatorio.
+Ten en cuenta que las `else` y `else if` no son necesarias, mientras que `if` si es obligatorio.
 
 ## Ejemplo
 ```
-    Console.WriteLine("Who are you? "); 
-    string name = Console.ReadLine(); 
+    Console.WriteLine("Quien eres? "); 
+    string nombre = Console.ReadLine(); 
  
-    if (name == "John") 
+    if (nombre == "John") 
     { 
-        Console.WriteLine("Hi John!"); 
+        Console.WriteLine("Hola John!"); 
     } 
-    else if (name == "Fabio") 
+    else if (nombre == "Fabio") 
     { 
-        Console.WriteLine("Oh, it's you Fabio :)"); 
+        Console.WriteLine("Oh, eres tú Fabio :)"); 
     } 
     else 
     { 
-        Console.WriteLine("Oh! I thought you were John or Fabio. Anyway, nice to meet you {0}!", name); 
+        Console.WriteLine("Oh! pensé que eras John o Fabio. Bueno, es un placer conocerte {0}!", nombre); 
     } 
  
-    /* Run and type some names: 
-        -> If name is "John", then output is "Hi John!" 
-        -> If name is "Fabio", then output is "Oh, it's you Fabio :)" 
-        -> If name is neither "John" nor "Fabio", output is "Oh! I thought you were John or Fabio. Anyway, nice to meet you {0}!" where {0} contains the name. 
+    /* Corre y escribe algunos nombres:
+        -> Si nombre es "John", entonces el output es "Hi John!" 
+        -> Si nombre es "Fabio", entonces el output es "Oh, it's you Fabio :)" 
+        -> Si nombre no es "John" noi "Fabio", el output es "Oh! pensé que eras John o Fabio. Bueno, es un placer conocerte {0}!" donde {0} contiene nombre. 
     */ 
 ```
 
-La sentencia if necesita un resultado booleano, es decir, verdadero o falso. En algunos lenguajes de programación, varios tipos de datos se pueden convertir automáticamente en booleanos, pero en C #, tiene que hacer que el resultado sea específicamente booleano. Por ejemplo, no puede usar if (número), pero puede comparar número con algo, para generar un verdadero o falso.
+La oración `if` necesita un resultado booleano, es decir, verdadero o falso. En algunos lenguajes de programación, varios tipos de datos se pueden convertir automáticamente en booleanos, pero en C#, tienes que hacer que el resultado sea específicamente booleano. Por ejemplo, no puede usar if (número), pero puede comparar número con algo, para generar un verdadero (true) o falso (false).
