@@ -1,7 +1,7 @@
 ---
 title: Front End Libraries
 ---
-## Front End Libraries
+# Front End Libraries
 
 A Front End library is a file or a piece of pre-written code that is helpful to the user by reducing the time consumed.
 
@@ -11,6 +11,6 @@ Libraries can be opinionated or non-opinionated, i.e. leaving some choices to th
 
 Since these are front-end libraries, they work with HTML, CSS and JavaScript and modify the layout, style and behavious of the page in a browser respectively.
 
-#### More Information:
+#### Relevant Links
 
 1. [Some Good Front End Libraries](https://medium.com/learnwithrahul/introduction-to-some-kick-ass-front-end-libraries-tools-963f55152f4b)

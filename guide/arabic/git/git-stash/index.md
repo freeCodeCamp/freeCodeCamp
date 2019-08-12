@@ -12,8 +12,9 @@ localeTitle: جيت ستاش
 
 لحفظ تغييراتك في المخبأ ، شغّل الأمر:
 
- `git stash save "optional message for yourself" 
-` 
+```shell
+git stash save "optional message for yourself"
+``` 
 
 هذا يحفظ التغييرات الخاصة بك ويعيد دليل العمل إلى ما بدا لأحدث الالتزام. تتوفر التغييرات المحززة من أي فرع في هذا المستودع.
 
@@ -23,24 +24,26 @@ localeTitle: جيت ستاش
 
 لمعرفة ما يوجد في خبأتك ، شغّل الأمر:
 
- `git stash list 
-` 
+```shell
+git stash list
+``` 
 
 يؤدي هذا إلى إرجاع قائمة من اللقطات المحفوظة الخاصة بك بتنسيق الصيغة `stash@{0}: BRANCH-STASHED-CHANGES-ARE-FOR: MESSAGE` . الجزء `stash@{0}` هو اسم المخبأ ، والرقم الموجود في الأقواس المتعرجة ( `{ }` ) هو فهرس ذلك المخبأ. إذا كانت لديك مجموعات تغيير متعددة مخزنة ، فسيكون لكل مجموعة فهرس مختلف.
 
 إذا نسيت التغييرات التي تم إجراؤها في المخبأ ، فيمكنك الاطلاع على ملخص لها باستخدام `git stash show NAME-OF-STASH` . إذا كنت ترغب في رؤية تخطيط تصحيح نمط diff النموذجية (مع + و s الخاص بالتغييرات سطر - بواسطة - خط) ، يمكنك تضمين الخيار `-p` (من أجل التصحيح). إليك مثال على ذلك:
 
- `git stash show -p stash@{0} 
- 
- # Example result: 
- diff --git a/PathToFile/fileA b/PathToFile/fileA 
- index 2417dd9..b2c9092 100644 
- --- a/PathToFile/fileA 
- +++ b/PathToFile/fileA 
- @@ -1,4 +1,4 @@ 
- -What this line looks like on branch 
- +What this line looks like with stashed changes 
-` 
+```shell
+git stash show -p stash@{0}
+
+# Example result:
+diff --git a/PathToFile/fileA b/PathToFile/fileA
+index 2417dd9..b2c9092 100644
+--- a/PathToFile/fileA
++++ b/PathToFile/fileA
+@@ -1,4 +1,4 @@
+-What this line looks like on branch
++What this line looks like with stashed changes
+``` 
 
 ### استرداد التغييرات الثابتة
 
@@ -55,13 +58,15 @@ localeTitle: جيت ستاش
 
 إذا كنت تريد إزالة التغييرات المظللة دون تطبيقها ، فقم بتشغيل الأمر:
 
- `git stash drop STASH-NAME 
-` 
+```shell
+git stash drop STASH-NAME
+``` 
 
 لمسح المخبأ بالكامل ، قم بتشغيل الأمر:
 
- `git stash clear 
-` 
+```shell
+git stash clear
+``` 
 
 ### معلومات اكثر:
 

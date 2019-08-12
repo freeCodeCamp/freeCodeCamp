@@ -2,6 +2,7 @@
 id: 5900f49a1000cf542c50ffac
 challengeType: 5
 title: 'Problem 300: Protein folding'
+forumTopicId: 301954
 ---
 
 ## Description
@@ -37,7 +38,7 @@ Give your answer using as many decimal places as necessary for an exact result.
 ```yml
 tests:
   - text: <code>euler300()</code> should return 8.0540771484375.
-    testString: assert.strictEqual(euler300(), 8.0540771484375, '<code>euler300()</code> should return 8.0540771484375.');
+    testString: assert.strictEqual(euler300(), 8.0540771484375);
 
 ```
 
@@ -69,4 +70,5 @@ euler300();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,7 +1,7 @@
 ---
 title: Chart the Stock Market
 ---
-## Chart the Stock Market
+# Chart the Stock Market
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/chart-the-stock-market/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

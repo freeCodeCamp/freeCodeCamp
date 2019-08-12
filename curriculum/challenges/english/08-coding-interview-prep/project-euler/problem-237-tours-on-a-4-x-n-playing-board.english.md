@@ -2,6 +2,7 @@
 id: 5900f4591000cf542c50ff6c
 challengeType: 5
 title: 'Problem 237: Tours on a 4 x n playing board'
+forumTopicId: 301882
 ---
 
 ## Description
@@ -30,7 +31,7 @@ T(10) is 2329. What is T(1012) modulo 108?
 ```yml
 tests:
   - text: <code>euler237()</code> should return 15836928.
-    testString: assert.strictEqual(euler237(), 15836928, '<code>euler237()</code> should return 15836928.');
+    testString: assert.strictEqual(euler237(), 15836928);
 
 ```
 
@@ -62,4 +63,5 @@ euler237();
 ```js
 // solution required
 ```
+
 </section>

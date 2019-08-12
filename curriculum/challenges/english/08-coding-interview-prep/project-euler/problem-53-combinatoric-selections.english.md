@@ -2,6 +2,7 @@
 id: 5900f3a11000cf542c50feb4
 challengeType: 5
 title: 'Problem 53: Combinatoric selections'
+forumTopicId: 302164
 ---
 
 ## Description
@@ -30,13 +31,13 @@ How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are gr
 ```yml
 tests:
   - text: <code>combinatoricSelections(1000)</code> should return 4626.
-    testString: assert.strictEqual(combinatoricSelections(1000), 4626, '<code>combinatoricSelections(1000)</code> should return 4626.');
+    testString: assert.strictEqual(combinatoricSelections(1000), 4626);
   - text: <code>combinatoricSelections(10000)</code> should return 4431.
-    testString: assert.strictEqual(combinatoricSelections(10000), 4431, '<code>combinatoricSelections(10000)</code> should return 4431.');
+    testString: assert.strictEqual(combinatoricSelections(10000), 4431);
   - text: <code>combinatoricSelections(100000)</code> should return 4255.
-    testString: assert.strictEqual(combinatoricSelections(100000), 4255, '<code>combinatoricSelections(100000)</code> should return 4255.');
+    testString: assert.strictEqual(combinatoricSelections(100000), 4255);
   - text: <code>combinatoricSelections(1000000)</code> should return 4075.
-    testString: assert.strictEqual(combinatoricSelections(1000000), 4075, '<code>combinatoricSelections(1000000)</code> should return 4075.');
+    testString: assert.strictEqual(combinatoricSelections(1000000), 4075);
 
 ```
 

@@ -32,6 +32,8 @@ Las unidades de estado sólido utilizan circuitos integrados para almacenar dato
 
 Los SSD generalmente solo se usan como unidades de arranque o almacenamiento para las aplicaciones más utilizadas en la computadora de una persona. Esto se debe a que, aunque su precio ha disminuido mucho en los últimos años, sigue siendo mucho más caro que un disco duro tradicional. Por lo tanto, los discos duros aún se utilizan para almacenar grandes cantidades de datos como nuestras fotos y videos, o en centros de datos o granjas de servidores.
 
+Una de las diferencias mas notables entre los SSDs y los HDDs es la velocidad de transferencia, ya que los HDDs al ser mecanicos, sufren la limitacion fisica de la friccion y del torque maxico sobre el disco, mientras que los SSDs no contienen partes mecanicas, no tienen esta limitacion, y con buses de datos como M.2, logran velocidades similares a 3500MB/s lo cual es hasta 7 veces mas que SATA (puerto usada por HDDs en estos dias) 
+
 #### Más información:
 
 *   [Wikipedia - Unidad de disco duro](https://en.wikipedia.org/wiki/Hard_disk_drive)

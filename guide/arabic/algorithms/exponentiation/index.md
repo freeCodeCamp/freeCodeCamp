@@ -10,31 +10,33 @@ localeTitle: الأسي
 
 نموذج حسابي: تقسيم وقهر.
 
- `int power(int x, unsigned int y) { 
-    if (y == 0) 
-        return 1; 
-    else if (y%2 == 0) 
-        return power(x, y/2)*power(x, y/2); 
-    else 
-        return x*power(x, y/2)*power(x, y/2); 
- } 
-` 
+```C
+int power(int x, unsigned int y) {
+    if (y == 0)
+        return 1;
+    else if (y%2 == 0)
+        return power(x, y/2)*power(x, y/2);
+    else
+        return x*power(x, y/2)*power(x, y/2);
+}
+``` 
 
 تعقيد الوقت: O (n) | تعقيد الفضاء: O (1)
 
 #### الحل الأمثل: O (تسجيل الدخول)
 
- `int power(int x, unsigned int y) { 
-    int temp; 
-    if( y == 0) 
-        return 1; 
-    temp = power(x, y/2); 
-    if (y%2 == 0) 
-        return temp*temp; 
-    else 
-        return x*temp*temp; 
- } 
-` 
+```C
+int power(int x, unsigned int y) {
+    int temp;
+    if( y == 0)
+        return 1;
+    temp = power(x, y/2);
+    if (y%2 == 0)
+        return temp*temp;
+    else
+        return x*temp*temp;
+}
+``` 
 
 ## الأسيوي وحدات
 

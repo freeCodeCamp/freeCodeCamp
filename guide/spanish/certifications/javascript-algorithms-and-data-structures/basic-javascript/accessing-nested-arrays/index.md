@@ -15,7 +15,7 @@ var fruitBasket = ['apple', 'banana' 'orange', 'melon'];
 
 En este ejemplo, nuestra fruta favorita es 'naranja', que está en el índice `2` en la matriz `fruitBasket` . Usando la notación de braket, asignamos el índice `2` de la matriz `fruitBasket` a `favoriteFruit` . Esto hace que `favoriteFruit` sea ​​igual a 'naranja'.
 
-### Accediendo a objetos dentro de arreglos usando braket `[]` y dot `.` notación
+### Accediendo a objetos dentro de arreglos usando notación de corchete `[]` y punto `.` 
 
 ```js
 var garage = [ 

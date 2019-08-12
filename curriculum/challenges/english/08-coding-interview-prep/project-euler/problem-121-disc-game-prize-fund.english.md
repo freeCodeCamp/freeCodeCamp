@@ -2,6 +2,7 @@
 id: 5900f3e51000cf542c50fef8
 challengeType: 5
 title: 'Problem 121: Disc game prize fund'
+forumTopicId: 301748
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find the maximum prize fund that should be allocated to a single game in which f
 ```yml
 tests:
   - text: <code>euler121()</code> should return 2269.
-    testString: assert.strictEqual(euler121(), 2269, '<code>euler121()</code> should return 2269.');
+    testString: assert.strictEqual(euler121(), 2269);
 
 ```
 
@@ -55,4 +56,5 @@ euler121();
 ```js
 // solution required
 ```
+
 </section>

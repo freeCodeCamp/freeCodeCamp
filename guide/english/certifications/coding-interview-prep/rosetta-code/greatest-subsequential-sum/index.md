@@ -1,7 +1,7 @@
 ---
 title: Greatest subsequential sum
 ---
-## Greatest subsequential sum
+# Greatest subsequential sum
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/greatest-subsequential-sum/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -52,7 +52,6 @@ const increment = (function() {
  console.log(increment(5)); // returns NaN 
 ```
 
-: ракета: [Код запуска](https://repl.it/@RyanPisuena/PleasingFumblingThings)
 
 ## Обозначение кода
 

@@ -14,7 +14,7 @@ next.
 The problem is pretty simple and usually follows these steps:
 
   1. Take the position of the starting point.
-  2. Decide wether you want to go in 4 directions (**N, S, W, E**) or 8 directions (**N, S, W, E, NW, NE, SW, SE**).
+  2. Decide whether you want to go in 4 directions (**N, S, W, E**) or 8 directions (**N, S, W, E, NW, NE, SW, SE**).
   3. Choose a replacement color and a target color.
   4. Travel in those directions.
   5. If the tile you land on is a target, replace it with the chosen color.
@@ -29,7 +29,7 @@ The red square is the starting point and the gray squares are the so called wall
 For further details, here's a piece of code describing the function:
 
 
-```c++
+```cpp
 
 int wall = -1;
 
@@ -57,7 +57,7 @@ void flood_fill(int pos_x, int pos_y, int target_color, int color)
 
 As seen above, my starting point is (4,4). After calling the function for the start coordinates **x = 4** and **y = 4**,
 I can start checking if there is no wall or color on the spot. If that is valid i mark the spot with one **"color"** 
-and start checking the other adiacent squares.
+and start checking the other adjacent squares.
 
 Going south we will get to point (5,4) and the function runs again.
 
@@ -89,7 +89,7 @@ to island x.
 **Ex:**
 
 You have the following input:
-```c++
+```cpp
 2 4 4
 0 0 0 1
 0 0 1 1

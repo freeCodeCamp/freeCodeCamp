@@ -52,7 +52,6 @@ localeTitle: Palindrome Checker
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/2)
 
 ### Код Объяснение:
 
@@ -85,7 +84,6 @@ localeTitle: Palindrome Checker
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/3)
 
 ### Код Объяснение:
 
@@ -134,7 +132,6 @@ localeTitle: Palindrome Checker
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/4)
 
 ### Код Объяснение:
 

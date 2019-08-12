@@ -50,27 +50,27 @@ Este es el algoritmo de búsqueda binario. Es elegante y eficiente, pero para qu
 
 Encuentra 5 en la matriz de números dada usando la búsqueda binaria.
 
-![Búsqueda binaria 1](https://i.imgur.com/QAuugOL.jpg)
+![Búsqueda binaria 1](https://cdn-media-1.freecodecamp.org/imgr/QAuugOL.jpg)
 
 Marque las posiciones bajas, altas y medias en la matriz.
 
-![Búsqueda binaria 2](https://i.imgur.com/1710fEx.jpg)
+![Búsqueda binaria 2](https://cdn-media-1.freecodecamp.org/imgr/1710fEx.jpg)
 
 Compara el elemento que buscas con el elemento central.
 
-![Búsqueda binaria 3](https://i.imgur.com/jr4icze.jpg)
+![Búsqueda binaria 3](https://cdn-media-1.freecodecamp.org/imgr/jr4icze.jpg)
 
 Tire la mitad izquierda y mire la mitad derecha.
 
-![Búsqueda binaria 4](https://i.imgur.com/W57lGsk.jpg)
+![Búsqueda binaria 4](https://cdn-media-1.freecodecamp.org/imgr/W57lGsk.jpg)
 
 Nuevamente se compara con el elemento medio.
 
-![Búsqueda binaria 5](https://i.imgur.com/5Twm8NE.jpg)
+![Búsqueda binaria 5](https://cdn-media-1.freecodecamp.org/imgr/5Twm8NE.jpg)
 
 Ahora, muévete a la mitad izquierda.
 
-![Búsqueda binaria 6](https://i.imgur.com/01xetay.jpg)
+![Búsqueda binaria 6](https://cdn-media-1.freecodecamp.org/imgr/01xetay.jpg)
 
 ¡El elemento central es el elemento que buscábamos!
 
@@ -89,11 +89,11 @@ El código para la búsqueda binaria recursiva se muestra a continuación:
 
 ```javascript
 function binarySearch(arr, item, low, high) { 
-    if (low > high) { // No more elements in the array. 
+    if (low > high) { // No hay más elementos en la matriz.
         return null; 
     } 
  
-    // Find the middle of the array. 
+    // Encuentra el centro de la matriz.
     var mid = Math.ceil((low + high) / 2); 
  
     if (arr[mid] === item) { // Found the item! 
@@ -192,7 +192,7 @@ int binary_search(int arr[], int l, int r, int target)
 
 ### Implementacion Python
 
-```Python
+```python
 def binary_search(arr, l, r, target): 
     if r >= l: 
         mid = l + (r - l)/2 
@@ -209,7 +209,7 @@ def binary_search(arr, l, r, target):
 ### Ejemplo en C ++
 
 ```cpp
-// Binary Search using iteration 
+// Búsqueda binaria usando iteración 
  int binary_search(int arr[], int beg, int end, int num) 
  { 
     while(beg <= end){ 

@@ -1,8 +1,8 @@
 ---
 title: Exponentiation
-localeTitle: Exposiciónción
+localeTitle: Potenciación
 ---
-## Exposiciónción
+## Potenciación 
 
 Dados dos enteros a y n, escribe una función para calcular a ^ n.
 
@@ -38,7 +38,7 @@ int power(int x, unsigned int y) {
  } 
 ```
 
-## Exponentiación modular
+##  modular
 
 Dados tres números x, yyp, calculamos (x ^ y)% p
 
@@ -50,7 +50,7 @@ int power(int x, unsigned int y, int p) {
         if (y & 1) 
             res = (res*x) % p; 
  
-        // y must be even now 
+        // y debe ser par ahora 
         y = y>>1; 
         x = (x*x) % p; 
     } 

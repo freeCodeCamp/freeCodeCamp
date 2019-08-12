@@ -2,25 +2,35 @@
   overflow: hidden !important;
 }
 
-.editor {
-  height: 100%;
-}
-
-.instructions-panel {
-  padding: 0 10px;
-  height: calc(100vh - 38px);
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.react-monaco-editor-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: end;
-}
-
 .monaco-menu .action-label {
   color: #a2bd9b;
   letter-spacing: 0.02em;
+}
+
+.monaco-aria-container {
+  top: -999em;
+}
+
+#challenge-page-tabs .nav-tabs {
+  margin-left: 2px;
+  display: flex;
+}
+
+#challenge-page-tabs .nav-tabs > li {
+  flex: 1;
+  text-align: center;
+}
+
+#challenge-page-tabs .nav-tabs > li > a {
+  padding: 5px 10px;
+}
+
+#challenge-page-tabs .tab-content {
+  height: calc(100vh - var(--header-height) - 69px);
+  overflow-y: auto;
+}
+
+#challenge-page-tabs .tab-pane {
+  height: 100%;
+  overflow: hidden;
 }
