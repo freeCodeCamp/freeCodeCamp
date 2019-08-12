@@ -9,7 +9,7 @@ La interfaz en Java es un poco como la Clase, pero con una diferencia significat
 ```java
 public interface Vehicle { 
     public String licensePlate = ""; 
-    public float maxVel 
+    public float maxVel = 100;
     public void start(); 
     public void stop(); 
     default void blowHorn(){ 
@@ -18,7 +18,7 @@ public interface Vehicle {
  } 
 ```
 
-La interfaz anterior contiene dos campos, dos métodos y un método predeterminado. Solo, no es de mucha utilidad, pero generalmente se usan junto con las Clases. ¿Cómo? Simple, tienes que asegurarte de que alguna clase lo `implements` .
+La interfaz anterior contiene dos campos (todos los campos declarados son `static` aunque no se escriba el modificador), dos métodos y un método predeterminado. Solo, no es de mucha utilidad, pero generalmente se usan junto con las Clases. ¿Cómo? Simple, tienes que asegurarte de que alguna clase lo `implements` .
 
 ```java
 public class Car implements Vehicle { 
