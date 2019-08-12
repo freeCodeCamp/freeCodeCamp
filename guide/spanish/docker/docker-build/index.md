@@ -16,3 +16,6 @@ Cuando haya construido contenedores Docker, puede ejecutar su aplicación utiliz
 
 *   [Docker CLI docs: compilación](https://docs.docker.com/engine/reference/commandline/rm/)
 *   [Docker construyendo su aplicación](https://docs.docker.com/get-started/part2/#build-the-app)
+*   Explicación sobre comando find (con ejemplos)
+<br>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=khEO30UguAI" target="_blank"><img src="http://img.youtube.com/vi/khEO30UguAI/0.jpg" alt="Video sobre comando find" width="240" height="180" border="10" /></a>
