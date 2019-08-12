@@ -26,7 +26,7 @@ XAML, объявленный как «Zammel», является языком з
 
 В следующем примере показана метка с «Hello World!». как его содержимое в контейнере верхнего уровня, называемом UserControl.
 
-```XAML
+```xml
 <UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"> 
     <Label Content="Hello World!" /> 
  </UserControl> 

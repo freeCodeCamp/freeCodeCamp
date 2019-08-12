@@ -2,13 +2,33 @@
 id: 56533eb9ac21ba0edf2244ca
 title: Using Objects for Lookups
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cdBk8sM'
+forumTopicId: 18373
 ---
 
 ## Description
 <section id='description'>
 Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a <code>switch</code> statement or an <code>if/else</code> chain. This is most useful when you know that your input data is limited to a certain range.
 Here is an example of a simple reverse alphabet lookup:
-<blockquote>var alpha = {<br>&nbsp;&nbsp;1:"Z",<br>&nbsp;&nbsp;2:"Y",<br>&nbsp;&nbsp;3:"X",<br>&nbsp;&nbsp;4:"W",<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;24:"C",<br>&nbsp;&nbsp;25:"B",<br>&nbsp;&nbsp;26:"A"<br>};<br>alpha[2]; // "Y"<br>alpha[24]; // "C"<br><br>var value = 2;<br>alpha[value]; // "Y"</blockquote>
+
+```js
+var alpha = {
+  1:"Z",
+  2:"Y",
+  3:"X",
+  4:"W",
+  ...
+  24:"C",
+  25:"B",
+  26:"A"
+};
+alpha[2]; // "Y"
+alpha[24]; // "C"
+
+var value = 2;
+alpha[value]; // "Y"
+```
+
 </section>
 
 ## Instructions
@@ -22,23 +42,23 @@ Convert the switch statement into an object called <code>lookup</code>. Use it t
 ```yml
 tests:
   - text: <code>phoneticLookup("alpha")</code> should equal <code>"Adams"</code>
-    testString: assert(phoneticLookup("alpha") === 'Adams', '<code>phoneticLookup("alpha")</code> should equal <code>"Adams"</code>');
+    testString: assert(phoneticLookup("alpha") === 'Adams');
   - text: <code>phoneticLookup("bravo")</code> should equal <code>"Boston"</code>
-    testString: assert(phoneticLookup("bravo") === 'Boston', '<code>phoneticLookup("bravo")</code> should equal <code>"Boston"</code>');
+    testString: assert(phoneticLookup("bravo") === 'Boston');
   - text: <code>phoneticLookup("charlie")</code> should equal <code>"Chicago"</code>
-    testString: assert(phoneticLookup("charlie") === 'Chicago', '<code>phoneticLookup("charlie")</code> should equal <code>"Chicago"</code>');
+    testString: assert(phoneticLookup("charlie") === 'Chicago');
   - text: <code>phoneticLookup("delta")</code> should equal <code>"Denver"</code>
-    testString: assert(phoneticLookup("delta") === 'Denver', '<code>phoneticLookup("delta")</code> should equal <code>"Denver"</code>');
+    testString: assert(phoneticLookup("delta") === 'Denver');
   - text: <code>phoneticLookup("echo")</code> should equal <code>"Easy"</code>
-    testString: assert(phoneticLookup("echo") === 'Easy', '<code>phoneticLookup("echo")</code> should equal <code>"Easy"</code>');
+    testString: assert(phoneticLookup("echo") === 'Easy');
   - text: <code>phoneticLookup("foxtrot")</code> should equal <code>"Frank"</code>
-    testString: assert(phoneticLookup("foxtrot") === 'Frank', '<code>phoneticLookup("foxtrot")</code> should equal <code>"Frank"</code>');
+    testString: assert(phoneticLookup("foxtrot") === 'Frank');
   - text: <code>phoneticLookup("")</code> should equal <code>undefined</code>
-    testString: assert(typeof phoneticLookup("") === 'undefined', '<code>phoneticLookup("")</code> should equal <code>undefined</code>');
+    testString: assert(typeof phoneticLookup("") === 'undefined');
   - text: You should not modify the <code>return</code> statement
-    testString: assert(code.match(/return\sresult;/), 'You should not modify the <code>return</code> statement');
+    testString: assert(code.match(/return\sresult;/));
   - text: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements
-    testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')), 'You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements');
+    testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')));
 
 ```
 

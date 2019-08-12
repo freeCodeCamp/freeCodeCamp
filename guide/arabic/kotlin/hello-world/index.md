@@ -10,12 +10,13 @@ localeTitle: مرحبا العالم في Kotlin
 
 ## مرحبا بالبرنامج العالمي
 
- `// This is a simple Hello World program written in Kotlin 
- 
- fun main(args : Array<String>) { 
-    println("Hello, World!") 
- } 
-` 
+```kotlin
+// This is a simple Hello World program written in Kotlin
+
+fun main(args : Array<String>) {
+    println("Hello, World!")
+}
+``` 
 
 كما يجب أن تتوقع ، عند تشغيل هذا البرنامج يجب أن يكون الإخراج "Hello، World!".
 
@@ -23,29 +24,33 @@ localeTitle: مرحبا العالم في Kotlin
 
 ### تعليقات
 
- `// This is a simple Hello World program written in Kotlin 
-` 
+```
+// This is a simple Hello World program written in Kotlin
+``` 
 
 التعليقات عبارة عن نص مكتوب بواسطة مطور تمت إضافته بغرض تسهيل فهم الكود من قِبل مطورين آخرين. في تعليقات Kotlin يمكن أن تكون التعليقات ذات سطر واحد (باستخدام //) أو تعليقات متعددة الخطوط (باستخدام / \*\* /).
 
- `// Single line comment 
- 
- /* This is a 
- Multi-line comment 
- */ 
-` 
+```
+// Single line comment
+
+/* This is a
+Multi-line comment
+*/
+``` 
 
 ### الوظيفة الأساسية
 
- `fun main(args : Array<String>) {...} 
-` 
+```kotlin
+fun main(args : Array<String>) {...}
+``` 
 
 الوظيفة الرئيسية هي وظيفة إلزامية تخبر المترجم حيث يجب أن يبدأ تنفيذ الكود الخاص بنا. يستغرق صفيفًا من السلاسل كمعلمة ويعيد نوع الوحدة الذي يتوافق مع نوع `void` في لغات مثل جافا. كما يمكننا أن نرى ، يتم الإعلان عن الوظائف باستخدام `fun` الكلمة الرئيسية ويجب كتابة جسمها داخل أقواس معقوفة.
 
 ستؤدي الدالات بدون نوع الإرجاع المعلن بشكل صريح إلى إرجاع `Unit` ، لذا ، فإن الشفرة المذكورة أعلاه تعادل
 
- `fun main(args : Array<String>): Unit {...} 
-` 
+```kotlin
+fun main(args : Array<String>): Unit {...}
+``` 
 
 ### بيان الطباعة
 

@@ -10,11 +10,12 @@ localeTitle: وظائف في C ++
 
 ## الشكل العام لتعريف الدالة C ++:
 
- `return_type function_name( parameter list ) 
- { 
-   body of the function 
- } 
-` 
+```cpp
+return_type function_name( parameter list )
+{
+   body of the function
+}
+``` 
 
 ### نوع الإرجاع:
 
@@ -34,19 +35,20 @@ localeTitle: وظائف في C ++
 
 ## مثال:
 
- `int max(int num1, int num2) 
- { 
-   // local variable declaration 
-   int result; 
- 
-   if (num1 > num2) 
-      result = num1; 
-   else 
-      result = num2; 
- 
-   return result; 
- } 
-` 
+```cpp
+int max(int num1, int num2)
+{
+   // local variable declaration
+   int result;
+
+   if (num1 > num2)
+      result = num1;
+   else
+      result = num2;
+
+   return result;
+}
+``` 
 
 ## لماذا تعتبر الوظائف مهمة؟
 

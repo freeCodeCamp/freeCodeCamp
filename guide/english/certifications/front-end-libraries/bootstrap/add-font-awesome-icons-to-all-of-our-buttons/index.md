@@ -1,26 +1,36 @@
 ---
 title: Add Font Awesome Icons to all of our Buttons
 ---
-## Add Font Awesome Icons to all of our Buttons
+# Add Font Awesome Icons to all of our Buttons
 
-### Problem Explanation
+---
+## Problem Explanation
 
 Use Font Awesome to add an `info-circle` icon to your info button and a `trash` icon to your delete button.
 
-#### Relevant Links:
+#### Relevant Links
   - [Font Awesome](https://fontawesome.com/)
   - [Different between Font Awesome v4 and v5](https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4)
   
-### Hint
-* The Font Awesome stylesheet of this page is version 4.5.0, so you should use `fa` prefix instead of new `fas`. Check the [link](https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4) to learn more about difference between v4 and new v5.
-* Logos and the relevant CSS classes for the logos can be found [here](https://fontawesome.com/icons?d=gallery) .
-* Adding a space between the `<i>` tag and the text will give it a nice spacing.
 
-## Spoiler alert!
+---
+## Hints
 
-**Solution ahead!**
+### Hint 1
+The Font Awesome stylesheet of this page is version 4.5.0, so you should use `fa` prefix instead of new `fas`. Check the [link](https://fontawesome.com/how-to-use/on-the-web/setup/upgrading-from-version-4) to learn more about difference between v4 and new v5.
 
-### Solution:
+### Hint 2
+Logos and the relevant CSS classes for the logos can be found [here](https://fontawesome.com/icons?d=gallery) .
+
+### Hint 3
+Adding a space between the `<i>` tag and the text will give it a nice spacing.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <style>
@@ -80,3 +90,4 @@ Use Font Awesome to add an `info-circle` icon to your info button and a `trash` 
   </form>
 </div>
 ```
+</details>

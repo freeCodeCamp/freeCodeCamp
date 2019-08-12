@@ -10,17 +10,18 @@ localeTitle: فهم خاصية منشئ
 
 ### حل
 
- `function Dog(name) { 
-  this.name = name; 
- } 
- 
- // Add your code below this line 
- function joinDogFraternity(candidate) { 
-  if(candidate.constructor === Dog) { 
-    return true; 
-  } 
-  else { 
-    return false; 
-  } 
- } 
-`
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+// Add your code below this line
+function joinDogFraternity(candidate) {
+  if(candidate.constructor === Dog) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+```

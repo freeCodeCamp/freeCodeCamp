@@ -8,16 +8,18 @@ localeTitle: Date.prototype.getDate
 
 ### بناء الجملة
 
- `dateObject.getDate() 
-` 
+```js
+dateObject.getDate()
+``` 
 
 ### مثال
 
- `var Xmas95 = new Date('December 25, 1995 23:15:30'); 
- var day = Xmas95.getDate(); 
- 
- console.log(day); // 25 
-` 
+```js
+var Xmas95 = new Date('December 25, 1995 23:15:30');
+var day = Xmas95.getDate();
+
+console.log(day); // 25
+``` 
 
 #### معلومات اكثر:
 

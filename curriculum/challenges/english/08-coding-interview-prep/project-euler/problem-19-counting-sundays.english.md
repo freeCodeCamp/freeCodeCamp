@@ -2,6 +2,7 @@
 id: 5900f37f1000cf542c50fe92
 challengeType: 5
 title: 'Problem 19: Counting Sundays'
+forumTopicId: 301827
 ---
 
 ## Description
@@ -22,11 +23,11 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 ```yml
 tests:
   - text: <code>countingSundays(1943, 1946)</code> should return 6.
-    testString: assert.strictEqual(countingSundays(1943, 1946), 6, '<code>countingSundays(1943, 1946)</code> should return 6.');
+    testString: assert.strictEqual(countingSundays(1943, 1946), 6);
   - text: <code>countingSundays(1995, 2000)</code> should return 10.
-    testString: assert.strictEqual(countingSundays(1995, 2000), 10, '<code>countingSundays(1995, 2000)</code> should return 10.');
+    testString: assert.strictEqual(countingSundays(1995, 2000), 10);
   - text: <code>countingSundays(1901, 2000)</code> should return 171.
-    testString: assert.strictEqual(countingSundays(1901, 2000), 171, '<code>countingSundays(1901, 2000)</code> should return 171.');
+    testString: assert.strictEqual(countingSundays(1901, 2000), 171);
 
 ```
 

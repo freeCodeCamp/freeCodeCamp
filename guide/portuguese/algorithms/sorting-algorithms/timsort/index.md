@@ -9,7 +9,7 @@ O Timsort é um algoritmo de classificação rápida que trabalha na complexidad
 Timsort é uma mistura em Insertion Sort e Mergesort. Esse algoritmo é implementado no Arrays.sort () do Java, bem como no class () e no sort () do Python. A parte menor é classificada usando Insertion Sort e é posteriormente mesclada usando o Mergesort.
 
 Uma implementação rápida em Python:
-```
+```py
 def binary_search(the_array, item, start, end): 
     if start == end: 
         if the_array[start] > item: 

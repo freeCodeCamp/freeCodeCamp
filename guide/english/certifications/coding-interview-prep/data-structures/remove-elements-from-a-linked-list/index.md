@@ -1,7 +1,7 @@
 ---
 title: Remove Elements from a Linked List
 ---
-## Remove Elements from a Linked List
+# Remove Elements from a Linked List
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/remove-elements-from-a-linked-list/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

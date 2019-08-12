@@ -2,6 +2,12 @@
 title: 3 by 3 Determinants
 ---
 ## 3 by 3 Determinants
+3x3 determinants are a value that can be calculated by the values in a matrix. It is also known as the scaling factor of the linear transformation that the matrix represents.
+When a 3x3 matrix and its rows are comprised of three vectors, the determinant of this 3x3 matrix is the volume of the parallelepiped that is made up of these three vectors.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Determinant_parallelepiped.svg/950px-Determinant_parallelepiped.svg.png" width="400">
+
+## Calculation
 ### Method 1
 Consider the following matrix, which we will call A:
 
@@ -25,7 +31,7 @@ Consider the following matrix, which we will call A:
 
 Then the determinant of this matrix, denoted <em>det(A)</em>, is given by:
 
-<em>det(A) = a * (e * i - h * f) - b * (d * i - f * g) + c * (d * h - e * g)</em>
+<pre><em>det(A) = a * (e * i - h * f) - b * (d * i - f * g) + c * (d * h - e * g)</em></pre>
 
 Please keep in mind the order of operations in the expression above.
 
@@ -51,14 +57,18 @@ For example, consider the following matrix, which we will call B:
 
 <em>det(B)</em> is given by the formula above. We apply the formula below:
 
-<em>det(B) = 1 * ( (-3) * 7 - 5 * 4) - 2 * ( 0 * 7 - 5 * (-10)) + 3 * (0 * 4 - (-3) * (-10))</em>, which we simplify to:
+<pre><em>det(B) = 1 * ( (-3) * 7 - 5 * 4) - 2 * ( 0 * 7 - 5 * (-10)) + 3 * (0 * 4 - (-3) * (-10))</em></pre>
 
-<em>det(B) = 1 * ((-21) - 20) - 2 * (0 - (-50)) + 3 * (0 - (30))</em>, which we simplify to:
+, which we simplify to:
 
-<em>det(B) = (-41) - 100 - 90 = -231</em>
+<pre><em>det(B) = 1 * ((-21) - 20) - 2 * (0 - (-50)) + 3 * (0 - (30))</em></pre>
 
-### Method 2
-This method it similar to 2 by 2 determinants, and based on opertations with diagonals
+, which we simplify to:
+
+<pre><em>det(B) = (-41) - 100 - 90 = -231</em></pre>
+
+### Method 2 - Sarrus's Rule
+This method is similar to 2 by 2 determinants, and based on opertations with diagonals
 Again, consider the following matrix, which we will call A:
 
 <table>
@@ -81,7 +91,7 @@ Again, consider the following matrix, which we will call A:
 
 Then the determinant of this matrix, denoted <em>det(A)</em>, is given by:
 
-<em>det(A) = a * e * i + b * f * g + c * d * h - c * e * g - f * h * a - i * b * d</em>
+<pre><em>det(A) = a * e * i + b * f * g + c * d * h - c * e * g - f * h * a - i * b * d</em></pre>
 
 Note how three top-right to bottom-left diagonals are positive
 
@@ -217,9 +227,12 @@ Consider the same example as in method 2: matrix, which we will call B:
 
 <em>det(B)</em> is given by the formula above. We apply the formula below:
 
-<em>det(B) = 1 * (-3) * 7 + 2 * 5 * (-10) + 3 * 0 * 4 - 3 * (-3) * (-10) - 5 * 4 * 1 - 7 * 2 * 0</em>, which we simplify to:
+<pre><em>det(B) = 1 * (-3) * 7 + 2 * 5 * (-10) + 3 * 0 * 4 - 3 * (-3) * (-10) - 5 * 4 * 1 - 7 * 2 * 0</em></pre>
 
-<em>det(B) = -21 - 100 + 0 - 90 - 20 - 0 = -231</em>, same, as in method 1
+, which we simplify to:
+
+<pre><em>det(B) = -21 - 100 + 0 - 90 - 20 - 0 = -231</em></pre>
+Which is the same as in method 1
 
 
 #### More information:

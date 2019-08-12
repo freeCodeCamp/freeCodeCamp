@@ -2,6 +2,7 @@
 id: 8d5123c8c441eddfaeb5bdef
 title: Implement Bubble Sort
 challengeType: 1
+forumTopicId: 301612
 ---
 
 ## Description
@@ -24,13 +25,13 @@ This method requires multiple iterations through the array and for average and w
 ```yml
 tests:
   - text: <code>bubbleSort</code> is a function.
-    testString: assert(typeof bubbleSort == 'function', '<code>bubbleSort</code> is a function.');
+    testString: assert(typeof bubbleSort == 'function');
   - text: <code>bubbleSort</code> returns a sorted array (least to greatest).
-    testString: assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>bubbleSort</code> returns a sorted array (least to greatest).');
+    testString: assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
   - text: <code>bubbleSort</code> returns an array that is unchanged except for order.
-    testString: assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>bubbleSort</code> returns an array that is unchanged except for order.');
+    testString: assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
   - text: <code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.
-    testString: assert.strictEqual(code.search(/\.sort\(/), -1, '<code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.');
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 
@@ -44,13 +45,11 @@ tests:
 ```js
 function bubbleSort(array) {
   // change code below this line
-
-  // change code above this line
   return array;
+  // change code above this line
 }
 
-// test array:
-// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
+bubbleSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </div>
@@ -74,6 +73,23 @@ function isSorted(arr) {
 <section id='solution'>
 
 ```js
-// solution required
+function bubbleSort(array) {
+  for (let i = 0; i < array.length; i++) {
+    let swapped = false;
+    for (let j = 1; j < array.length; j++) {
+      if (array[j - 1] > array[j]) {
+        let temp = array[j-1];
+        array[j-1] =  array[j];
+        array[j] = temp;
+        swapped = true;
+      }
+    }
+    if (swapped === false) {
+      break;
+    }
+  }
+  return array;
+}
 ```
+
 </section>

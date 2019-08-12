@@ -1,7 +1,7 @@
 ---
 title: Reduce Repetition Using the repeat Function
 ---
-## Reduce Repetition Using the repeat Function
+# Reduce Repetition Using the repeat Function
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/reduce-repetition-using-the-repeat-function/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

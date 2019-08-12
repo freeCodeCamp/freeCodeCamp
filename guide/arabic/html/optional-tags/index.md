@@ -6,23 +6,23 @@ localeTitle: علامات اختيارية
 
 في HTML5 ، يمكنك تجاهل بعض علامات الفتح والإغلاق تحت شروط معينة. على سبيل المثال ، كود HTML التالي ...
 
- `
-<!DOCTYPE html> 
- <p>Hello World. 
-` 
+```html
+<!DOCTYPE html>
+<p>Hello World.
+``` 
 
 سوف تقيم تلقائيا إلى ...
 
- `
-<!DOCTYPE html> 
- <html> 
-  <head></head> 
-  <body> 
-    <p>Hello world. 
-    </p> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p>Hello world.
+    </p>
+  </body>
+</html>
+``` 
 
 مواصفات العلامة الاختيارية لعلامات HTML5 الأكثر شيوعًا هي كالتالي:
 

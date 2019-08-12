@@ -1,7 +1,7 @@
 ---
 title: Fibonacci word
 ---
-## Fibonacci word
+# Fibonacci word
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/fibonacci-word/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

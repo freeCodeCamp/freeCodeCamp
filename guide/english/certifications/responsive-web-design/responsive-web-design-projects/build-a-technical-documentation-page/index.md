@@ -1,7 +1,7 @@
 ---
 title: Build a Technical Documentation Page
 ---
-## Build a Technical Documentation Page
+# Build a Technical Documentation Page
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

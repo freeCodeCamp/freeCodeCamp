@@ -1,8 +1,13 @@
 ---
 title: Use the flex-basis Property to Set the Initial Size of an Item
 ---
-## Use the flex-basis Property to Set the Initial Size of an Item
+# Use the flex-basis Property to Set the Initial Size of an Item
 
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 You can achieve the same effect as the previous two challenges with `flax-basis`.
 After setting sthe appropiate values, you will see `#box-2` being bigger than `#box-1` before any shrinking or grow is applied.
 
@@ -19,3 +24,5 @@ After setting sthe appropiate values, you will see `#box-2` being bigger than `#
   flex-basis: 20em;
 }
 ```
+
+</details>

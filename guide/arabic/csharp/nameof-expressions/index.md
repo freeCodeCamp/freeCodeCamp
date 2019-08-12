@@ -8,21 +8,23 @@ localeTitle: nameof التعبيرات
 
 # #
 
- `public void ProcessStudent(Student student) 
- { 
-    if (student == null) throw new ArgumentNullException("student"); 
- } 
-` 
+```
+public void ProcessStudent(Student student)
+{
+    if (student == null) throw new ArgumentNullException("student");
+}
+``` 
 
 ومع ذلك ، إذا كان سيتم إعادة تسمية المعلمة الطالب ، يجب عليك أن تتذكر أيضا تعديل سلسلة حرفية. الآن مع تعبير nameof ، لن تحتاج إلى استخدام القيم الحرفية للسلسلة وسيتمكن المترجم من تحذيرك إذا كنت تستخدم اسمًا غير صحيح.
 
 # #
 
- `public void ProcessStudent(Student student) 
- { 
-    if (student == null) throw new ArgumentNullException(nameof(student)); 
- } 
-` 
+```
+public void ProcessStudent(Student student)
+{
+    if (student == null) throw new ArgumentNullException(nameof(student));
+}
+``` 
 
 بعض الأمثلة من حيث قد تكون تعبيرات nameof مفيدة تشمل:
 

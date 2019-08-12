@@ -10,66 +10,74 @@ localeTitle: للحصول على بيانات حلقة
 
 البنية الأساسية هي:
 
- `for value in list_of_values: 
-  # use value inside this block 
-` 
+```python
+for value in list_of_values:
+  # use value inside this block
+``` 
 
 بشكل عام ، يمكنك استخدام أي شيء كقيمة المكرر ، حيث يمكن تعيين إدخالات من iterable. على سبيل المثال ، يمكنك فك مجموعة الصفوف من قائمة الصفوف (tuples):
 
- `list_of_tuples = [(1,2), (3,4)] 
- 
- for a, b in list_of_tuples: 
-  print("a:", a, "b:", b) 
-` 
+```python
+list_of_tuples = [(1,2), (3,4)]
+
+for a, b in list_of_tuples:
+  print("a:", a, "b:", b)
+``` 
 
 من ناحية أخرى ، يمكنك تكرار حلقة فوق أي شيء يمكن تثبيته. يمكنك استدعاء وظيفة أو استخدام قائمة حرفية.
 
- `for person in load_persons(): 
-  print("The name is:", person.name) 
-` 
+```python
+for person in load_persons():
+  print("The name is:", person.name)
+``` 
 
- `for character in ["P", "y", "t", "h", "o", "n"]: 
-  print("Give me a '{}'!".format(character)) 
-` 
+```python
+for character in ["P", "y", "t", "h", "o", "n"]:
+  print("Give me a '{}'!".format(character))
+``` 
 
 بعض الطرق التي يتم بها استخدام الحلقات For Forops:
 
 **تكرار عبر الدالة range ()**
 
- `for i in range(10): 
-    print(i) 
-` 
+```python
+for i in range(10):
+    print(i)
+``` 
 
 بدلاً من كونه دالة ، فإن النطاق هو في الواقع نوع تسلسل ثابت. سيحتوي الناتج على نتائج من الحد الأدنى أي 0 إلى الحد الأعلى أي 10 ولكن باستثناء 10.By افتراضي ، يتم تعيين الحد الأدنى أو مؤشر البداية إلى الصفر. انتاج:
 
- `> 
- 0 
- 1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- > 
-` 
+```
+>
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>
+``` 
 
 بالإضافة إلى ذلك ، يمكن تحديد الحد الأدنى للتسلسل وحتى خطوة التسلسل بإضافة معلمة ثانية وثانية.
 
- `for i in range(4,10,2): #From 4 to 9 using a step of two 
-    print(i) 
-` 
+```python
+for i in range(4,10,2): #From 4 to 9 using a step of two
+    print(i)
+``` 
 
 انتاج:
 
- `> 
- 4 
- 6 
- 8 
- > 
-` 
+```
+>
+4
+6
+8
+>
+``` 
 
 **وظيفة xrange ()**
 
@@ -79,40 +87,44 @@ localeTitle: للحصول على بيانات حلقة
 
 **يتكرر فوق القيم في قائمة أو مجموعة**
 
- `A = ["hello", 1, 65, "thank you", [2, 3]] 
- for value in A: 
-    print(value) 
-` 
+```python
+A = ["hello", 1, 65, "thank you", [2, 3]]
+for value in A:
+    print(value)
+``` 
 
 انتاج:
 
- `> 
- hello 
- 1 
- 65 
- thank you 
- [2, 3] 
- > 
-` 
+```
+>
+hello
+1
+65
+thank you
+[2, 3]
+>
+``` 
 
 **تكرار فوق مفاتيح في قاموس (aka hashmap)**
 
- `fruits_to_colors = {"apple": "#ff0000", 
-                    "lemon": "#ffff00", 
-                    "orange": "#ffa500"} 
- 
- for key in fruits_to_colors: 
-    print(key, fruits_to_colors[key]) 
-` 
+```python
+fruits_to_colors = {"apple": "#ff0000",
+                    "lemon": "#ffff00",
+                    "orange": "#ffa500"}
+
+for key in fruits_to_colors:
+    print(key, fruits_to_colors[key])
+``` 
 
 انتاج:
 
- `> 
- apple #ff0000 
- lemon #ffff00 
- orange #ffa500 
- > 
-` 
+```
+>
+apple #ff0000
+lemon #ffff00
+orange #ffa500
+>
+``` 
 
 **يتكرر أكثر من قائمتين من نفس الحجم في حلقة واحدة مع وظيفة zip ()**
 
@@ -120,25 +132,29 @@ localeTitle: للحصول على بيانات حلقة
 
 a، b in zip (A، B): print a، b، a == b
 
- `Output: 
-` 
+```
+Output:
+``` 
 
 \> أأ صحيح bd خطأ م كاذبة >
 
- `**Iterate over a list and get the corresponding index with the enumerate() function** 
-` 
+```
+**Iterate over a list and get the corresponding index with the enumerate() function**
+``` 
 
 الثعبان A = \["this"، "is"، "something"، "fun"\]
 
 للفهرس ، كلمة في التعداد (A): طباعة (فهرس ، كلمة)
 
- `Output: 
-` 
+```
+Output:
+``` 
 
 \> 0 هذا 1 هو 2 شيء 3 مرح >
 
- `A common use case is iterating over a dictionary: 
-` 
+```
+A common use case is iterating over a dictionary:
+``` 
 
 الثعبان للاسم ، phonenumber في contacts.items (): print (الاسم ، "يمكن الوصول إليه تحت" ، phonenumber)
 
@@ -164,8 +180,9 @@ a، b in zip (A، B): print a، b، a == b
 
 UPPERCASE = \[word.upper () للكلمة في A\] طباعة (UPPERCASE)
 
- `Output: 
-` 
+```
+Output:
+``` 
 
 \> \['THIS'، 'IS'، 'AWESOME'، 'SHINNING'، 'STAR'\] > \`\` \`
 

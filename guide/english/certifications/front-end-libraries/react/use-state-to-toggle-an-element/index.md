@@ -1,23 +1,33 @@
 ---
 title: Use State to Toggle an Element
 ---
-## Use State to Toggle an Element
+# Use State to Toggle an Element
 
-- You can toggle an element by checking and changing its state.
+---
+## Problem Explanation
+You can toggle an element by checking and changing its state.
 
-## Hint 1:
+
+---
+## Hints
+
+### Hint 1
 
 - Remember to bind ```this``` to the method constructor.
 
 ```javascript
-    this.toggleVisibility = this.toggleVisibility.bind(this);
+this.toggleVisibility = this.toggleVisibility.bind(this);
 ```
 
-## Hint 2:
+### Hint 2
 
 - Remember, you can use a JavaScript function to check for the state of an element.
 
-## Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```jsx
 class MyComponent extends React.Component {
@@ -61,4 +71,4 @@ class MyComponent extends React.Component {
 };
 ```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+</details>

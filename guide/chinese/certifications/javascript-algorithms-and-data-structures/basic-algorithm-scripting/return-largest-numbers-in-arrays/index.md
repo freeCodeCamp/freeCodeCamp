@@ -53,7 +53,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/734)
 
 ### 代码说明：
 
@@ -82,7 +81,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/733)
 
 ### 代码说明：
 
@@ -106,7 +104,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLjU/17)
 
 ### 代码说明：
 

@@ -61,10 +61,10 @@ No entre en pánico, estos archivos se generan automáticamente por npm para ust
  ``` 
  
  
- #### 7. Guardar el codigo y ejecutar
-```shell
-
-Ionic serve
+ #### 7. Guardar el código y ejecutar
 ```
 
-#### 8\. Para ver su código ejecutándose, vaya al navegador y abra localhost: 8100 en la url.
+ionic serve
+```
+
+ #### 8\. Para ver su código ejecutándose, vaya al navegador y abra localhost: 8100 en la url.

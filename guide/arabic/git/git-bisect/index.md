@@ -12,22 +12,25 @@ localeTitle: جيت بيزكت
 
 لبدء جلسة شرائية ، ستقوم بإخبار بوابة git لبدء جلسة عمل ، وتحديد إصدار "سيئ" ، وتحديد إصدار "جيد". بافتراض أن الالتزام الحالي قد تم كسره ولكن التزام `4b60707` جيد ، فسوف يتم تشغيل ما يلي:
 
- `git bisect start 
- git bisect bad 
- git bisect good 4b60707 
-` 
+```shell
+git bisect start
+git bisect bad
+git bisect good 4b60707
+``` 
 
 سيقوم Git بالتحقق من التزام بين الإصدارات "الجيدة" و "السيئة" وإخراج شيء مثل ما يلي:
 
- `Bisecting: 2 revisions left to test after this (roughly 2 steps) 
-` 
+```
+Bisecting: 2 revisions left to test after this (roughly 2 steps)
+``` 
 
 يجب عليك الآن أن تخبر git إذا كان الالتزام الحالي يعمل مع `git bisect good` أو إذا تم كسر الالتزام الحالي مع `git bisect bad` . ستتكرر هذه العملية حتى يصبح الأمر قادراً على طباعة أول التزام سيء.
 
 عند الانتهاء ، يجب تنظيف جلسة المشط. سيؤدي ذلك إلى إعادة تعيين HEAD إلى ما كان عليه قبل بدء جلسة العمل:
 
- `git bisect reset 
-` 
+```shell
+git bisect reset
+``` 
 
 ### موارد آخرى
 
