@@ -10,6 +10,7 @@
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
         <td><a href="/docs/romanian/CONTRIBUTING.md"> Română </a></td>
+        <td><a href="/docs/german/README.md"> Deutsch </a></td>
     </tr>
 </table>
 

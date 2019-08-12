@@ -51,8 +51,7 @@ function truncateString(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/55)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, começamos com uma simples declaração `if` para determinar um dos três resultados…
@@ -71,8 +70,7 @@ function truncateString(str, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/54)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, precisamos de uma instrução if para testar se o comprimento da string completa passou como o primeiro argumento já se encaixa dentro do limite de tamanho passado como o segundo argumento. Se assim for, podemos apenas retornar a string que foi passada.

@@ -2,6 +2,7 @@
 id: 5900f3c61000cf542c50fed9
 challengeType: 5
 title: 'Problem 90: Cube digit pairs'
+forumTopicId: 302207
 ---
 
 ## Description
@@ -40,7 +41,7 @@ How many distinct arrangements of the two cubes allow for all of the square numb
 ```yml
 tests:
   - text: <code>euler90()</code> should return 1217.
-    testString: assert.strictEqual(euler90(), 1217, '<code>euler90()</code> should return 1217.');
+    testString: assert.strictEqual(euler90(), 1217);
 
 ```
 
@@ -72,4 +73,5 @@ euler90();
 ```js
 // solution required
 ```
+
 </section>

@@ -61,7 +61,6 @@ localeTitle: حروف ناقصة
  fearNotLetter("abce"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnD/0)
 
 ### شرح الشفرة:
 
@@ -99,7 +98,6 @@ localeTitle: حروف ناقصة
  fearNotLetter("abce"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnE/0)
 
 ### شرح الشفرة:
 
@@ -148,7 +146,6 @@ localeTitle: حروف ناقصة
  fearNotLetter("abce"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLnG/0)
 
 ### شرح الشفرة:
 

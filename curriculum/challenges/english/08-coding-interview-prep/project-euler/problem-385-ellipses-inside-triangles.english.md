@@ -2,17 +2,21 @@
 id: 5900f4ee1000cf542c510000
 challengeType: 5
 title: 'Problem 385: Ellipses inside triangles'
+forumTopicId: 302049
 ---
 
 ## Description
 <section id='description'>
+
 For any triangle T in the plane, it can be shown that there is a unique ellipse with largest area that is completely inside T.
 
 
 
 For a given n, consider triangles T such that:
+
 - the vertices of T have integer coordinates with absolute value ≤ n, and
 - the foci1 of the largest-area ellipse inside T are (√13,0) and (-√13,0).
+
 Let A(n) be the sum of the areas of all such triangles.
 
 
@@ -40,7 +44,7 @@ Find A(1 000 000 000).
 ```yml
 tests:
   - text: <code>euler385()</code> should return 3776957309612154000.
-    testString: assert.strictEqual(euler385(), 3776957309612154000, '<code>euler385()</code> should return 3776957309612154000.');
+    testString: assert.strictEqual(euler385(), 3776957309612154000);
 
 ```
 
@@ -72,4 +76,5 @@ euler385();
 ```js
 // solution required
 ```
+
 </section>

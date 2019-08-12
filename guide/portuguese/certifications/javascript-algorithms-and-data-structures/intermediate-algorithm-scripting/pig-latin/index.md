@@ -68,8 +68,7 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmt/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Faça uma corda vazia para segurar sua palavra latina.
@@ -102,8 +101,7 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmw/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Esta é uma abordagem declarativa e recursiva para este problema.
@@ -148,8 +146,7 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmv/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   `isConsonant()` é usado para verificar se um caractere é uma consoante.

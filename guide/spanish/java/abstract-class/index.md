@@ -16,9 +16,9 @@ Considere el siguiente ejemplo para entender las clases abstractas: Usted tiene 
 
 Vehículo público de clase amplía vehículo. { ... }
 
-Clase pública de motocicleta extiende vehículo { ... }
+Clase pública de motocicleta extiende vehíulo { ... }
 ```
-You cannot create an object of Vehicle class anywhere in your program. You can however, extend the abstract vehicle class and create objects of the child classes; 
+No puedes crear un objeto de la clase Vehículo en ninguna parte de tu programa. Pero si puedes extener la clase abstracta Vehículo y crear objetos de las clases hijos;
 ```
 
 Java Vehículo newVehicle = new Vehicle (); // Invalido Vehículo de vehículo = Coche nuevo (); // válido Vehículo mBike = nueva motocicleta (); // válido

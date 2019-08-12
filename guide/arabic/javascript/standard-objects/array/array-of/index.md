@@ -8,17 +8,19 @@ localeTitle: مصفوفة من
 
 بناء الجملة:
 
- `Array.of(element0[, element1[, ...[, elementN]]]) 
-` 
+```javascript
+Array.of(element0[, element1[, ...[, elementN]]])
+``` 
 
 ## مثال
 
- `Array.of(7);       // [7] - creates an array with a single element 
- Array.of(1, 2, 3); // [1, 2, 3] 
- 
- Array(7);          // [ , , , , , , ] - creates an empty array with a length property of 7 
- Array(1, 2, 3);    // [1, 2, 3] 
-` 
+```javascript
+Array.of(7);       // [7] - creates an array with a single element
+Array.of(1, 2, 3); // [1, 2, 3]
+
+Array(7);          // [ , , , , , , ] - creates an empty array with a length property of 7
+Array(1, 2, 3);    // [1, 2, 3]
+``` 
 
 #### معلومات اكثر:
 

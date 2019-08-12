@@ -29,7 +29,6 @@ function sumSquareDifference(n) {
  } 
 ```
 
-*   [运行代码](https://repl.it/@ezioda004/Problem-6-Sum-square-difference)
 
 ### 参考文献：
 

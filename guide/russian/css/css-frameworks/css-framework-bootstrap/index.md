@@ -1,14 +1,14 @@
 ---
 title: CSS Framework Bootstrap
-localeTitle: Исходный код CSS Framework
+localeTitle: CSS фреймворк Bootstrap
 ---
-# Исходный код CSS Framework
+# CSS фреймворк Bootstrap
 
-Bootstrap - самая популярная платформа CSS для разработки адаптивных мобильных проектов для Интернета.
+Bootstrap - это самый популярный CSS-фреймворк в Интернете для создания адаптивных проектов, разработка которых начинается с применения стратегии "Mobile First".
 
 ## Начало работы - Последняя версия: 4.1
 
-Вот простой HTML-шаблон, который включает в себя последние скомпилированные и мини-CSS и Javascript для библиотеки Bootstrap. В этом примере мы использовали CDN, но вы можете проверить [другие способы установки Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/download/) .
+Вот простой HTML-шаблон, который включает в себя скомпилированный и минифицированный CSS и Javascript код для библиотеки Bootstrap. В этом примере мы использовали CDN, но вы можете проверить [другие способы установки Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/download/) .
 
 ```html
 
@@ -23,9 +23,9 @@ Bootstrap - самая популярная платформа CSS для раз
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> 
       </head> 
       <body> 
-        <!-- Add all HTML Code below --> 
+        <!-- Добавьте HTML код ниже --> 
  
-        <!-- Add all HTML Code above --> 
+        <!-- Добавьте HTML код выше --> 
  
         <!-- jQuery --> 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
@@ -39,7 +39,7 @@ Bootstrap - самая популярная платформа CSS для раз
 
 ## Начало работы - Bootstrap 3
 
-Bootstrap 3 - это не последняя стабильная версия Bootstrap, но она по-прежнему является самой распространенной версией. Вы найдете его во множестве шаблонов, тематике WordPress, проектах и ​​многом другом. Имея это в виду, ясно, что все же полезно знать, как его использовать. Не стесняйтесь обращаться с превосходной [документацией Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/) .
+Bootstrap 3 - это не последняя стабильная версия Bootstrap, но она по-прежнему является самой распространенной версией. Вы найдете её во множестве шаблонов, в темах для WordPress, проектах и многом другом. Исходя из всего вышесказанного, становится понятно, что очень полезно знать, как его использовать. Не стесняйтесь прочитать превосходную [документацию Bootstrap 3](https://getbootstrap.com/docs/3.3/getting-started/) .
 
 ```html
 
@@ -76,11 +76,11 @@ Bootstrap 3 - это не последняя стабильная версия B
  </html> 
 ```
 
-**Примечание.** Другие версии доступны и доступны на веб-сайте Bootstrap.
+**Примечание.** Другие версии доступны на веб-сайте Bootstrap.
 
 ## Учебные ресурсы
 
-*   Оформить официальную документацию Bootstrap 4 [здесь](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
-*   Оформить официальную документацию Bootstrap 3 [здесь](https://getbootstrap.com/docs/3.3/getting-started/) .
-*   Оформить заказ [здесь](https://github.com/twbs/bootstrap) . Загрузочный репозиторий GitHub с открытым исходным кодом Bootstrap.
-*   В [FreeCodeCamp](https://www.freecodecamp.com/) мы обучаем Bootstrap как часть нашей учебной программы.
+*   Ознакомиться с официальной документацией Bootstrap 4 [здесь](https://getbootstrap.com/docs/4.1/getting-started/introduction/).
+*   Ознакомиться с официальной документацией Bootstrap 3 [здесь](https://getbootstrap.com/docs/3.3/getting-started/).
+*   Ознакомиться с открытым исходным кодом Bootstrap в репозитории на GitHub [здесь](https://github.com/twbs/bootstrap).
+*   В [FreeCodeCamp](https://www.freecodecamp.com/) Bootstrap включен в нашу учебную программу.

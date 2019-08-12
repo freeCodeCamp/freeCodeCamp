@@ -21,41 +21,47 @@ localeTitle: البيئات الافتراضية
 
 يمكنك تثبيته مع `pip` :
 
- `pip install virtualenv 
-` 
+```
+pip install virtualenv
+``` 
 
 تحقق من التثبيت باستخدام الأمر التالي:
 
- `virtualenv --version 
-` 
+```
+virtualenv --version
+``` 
 
 ### إنشاء environemnt
 
 لإنشاء استخدام بيئة افتراضية:
 
- `virtualenv --no-site-packages my-env 
-` 
+```
+virtualenv --no-site-packages my-env
+``` 
 
 يؤدي هذا إلى إنشاء مجلد في الدليل الحالي باسم البيئة ( `my-env/` ). يحتوي هذا المجلد على الدلائل لتثبيت الوحدات النمطية والملفات التنفيذية Python.
 
 يمكنك أيضًا تحديد إصدار Python الذي تريد العمل به. ما عليك `--python=/path/to/python/version` استخدام الوسيطة `--python=/path/to/python/version` . على سبيل المثال ، `python2.7` :
 
- `virtualenv --python=/usr/bin/python2.7 my-env 
-` 
+```
+virtualenv --python=/usr/bin/python2.7 my-env
+``` 
 
 ### قائمة البيئات
 
 يمكنك إدراج البيئات المتاحة مع:
 
- `lsvirtualenv 
-` 
+```
+lsvirtualenv
+``` 
 
 ### تفعيل بيئة
 
 قبل أن تتمكن من البدء في استخدام البيئة ، يلزمك تنشيطها:
 
- `source my-env/bin/activate 
-` 
+```
+source my-env/bin/activate
+``` 
 
 هذا يضمن أن يتم استخدام حزم فقط تحت `my-env/` .
 
@@ -65,14 +71,16 @@ localeTitle: البيئات الافتراضية
 
 يمكنك تثبيت الحزم واحدة تلو الأخرى ، أو عن طريق تعيين ملف `requirements.txt` لمشروعك.
 
- `pip install some-package 
- pip install -r requirements.txt 
-` 
+```
+pip install some-package
+pip install -r requirements.txt
+``` 
 
 إذا كنت تريد إنشاء ملف `requirements.txt` من الحزم المثبتة بالفعل ، فقم بتشغيل الأمر التالي:
 
- `pip freeze > requirements.txt 
-` 
+```
+pip freeze > requirements.txt
+``` 
 
 سيحتوي الملف على قائمة بجميع الحزم المثبتة في البيئة الحالية ، والإصدارات الخاصة بها. سيساعدك هذا على إطلاق مشروعك باستخدام الوحدات التابعة الخاصة به.
 
@@ -80,8 +88,9 @@ localeTitle: البيئات الافتراضية
 
 إذا انتهيت من العمل مع البيئة الافتراضية ، يمكنك إلغاء تنشيطها باستخدام:
 
- `deactivate 
-` 
+```
+deactivate
+``` 
 
 هذا يعيدك إلى مترجم Python الافتراضي الخاص بالنظام مع كافة المكتبات المثبتة به.
 
@@ -99,29 +108,33 @@ localeTitle: البيئات الافتراضية
 
 لإنشاء استخدام بيئة افتراضية:
 
- `conda create --name my-env 
-` 
+```
+conda create --name my-env
+``` 
 
 سوف Conda إنشاء مجلد المقابلة داخل دليل التثبيت كوندا.
 
 يمكنك أيضًا تحديد إصدار Python الذي تريد العمل معه:
 
- `conda create --name my-env python=3.6 
-` 
+```
+conda create --name my-env python=3.6
+``` 
 
 ### قائمة البيئات
 
 يمكنك سرد جميع البيئات المتاحة مع:
 
- `conda info --envs 
-` 
+```
+conda info --envs
+``` 
 
 ### تفعيل بيئة
 
 قبل أن تتمكن من البدء في استخدام البيئة ، يلزمك تنشيطها:
 
- `source activate my-env 
-` 
+```
+source activate my-env
+``` 
 
 ### تثبيت الحزم
 
@@ -131,15 +144,17 @@ localeTitle: البيئات الافتراضية
 
 إذا انتهيت من العمل مع البيئة الافتراضية ، يمكنك إلغاء تنشيطها باستخدام:
 
- `source deactivate 
-` 
+```
+source deactivate
+``` 
 
 ### قم بإزالة بيئة
 
 إذا كنت تريد إزالة بيئة من استخدام Conda:
 
- `conda remove --name my-env 
-` 
+```
+conda remove --name my-env
+``` 
 
 #### معلومات اكثر:
 

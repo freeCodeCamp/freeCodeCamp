@@ -95,3 +95,5 @@ Use Z Index if you need to put a background element below a container. You can e
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index</a>
 
 <a href="https://philipwalton.com/articles/what-no-one-told-you-about-z-index/" target="_blank">https://philipwalton.com/articles/what-no-one-told-you-about-z-index/</a>
+
+<a href="https://medium.freecodecamp.org/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3" target="_blank">https://medium.freecodecamp.org/z-index-explained-how-to-stack-elements-using-css-7c5aa0f179b3</a>

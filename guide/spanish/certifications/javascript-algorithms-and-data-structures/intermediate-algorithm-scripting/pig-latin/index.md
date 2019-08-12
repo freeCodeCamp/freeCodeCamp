@@ -68,7 +68,6 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLmt/0)
 
 ### Explicación del código:
 
@@ -102,7 +101,6 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLmw/0)
 
 ### Explicación del código:
 
@@ -148,7 +146,6 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLmv/0)
 
 ### Explicación del código:
 

@@ -2,6 +2,7 @@
 id: 5900f4841000cf542c50ff96
 challengeType: 5
 title: 'Problem 279: Triangles with integral sides and an integral angle'
+forumTopicId: 301929
 ---
 
 ## Description
@@ -20,7 +21,7 @@ How many triangles are there with integral sides, at least one integral angle (m
 ```yml
 tests:
   - text: <code>euler279()</code> should return 416577688.
-    testString: assert.strictEqual(euler279(), 416577688, '<code>euler279()</code> should return 416577688.');
+    testString: assert.strictEqual(euler279(), 416577688);
 
 ```
 
@@ -52,4 +53,5 @@ euler279();
 ```js
 // solution required
 ```
+
 </section>

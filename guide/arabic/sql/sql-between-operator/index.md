@@ -14,10 +14,11 @@ localeTitle: مزود بين المشغل
 
 هنا هو بناء الجملة لاستخدام الدالة في جملة WHERE:
 
- `select field1, testField 
- from table1 
- where testField between min and max 
-` 
+```sql
+select field1, testField
+from table1
+where testField between min and max
+``` 
 
 في ما يلي مثال على استخدام جدول الطالب وعبارة WHERE:
 
@@ -35,12 +36,13 @@ localeTitle: مزود بين المشغل
 
 في ما يلي مثال على ذلك باستخدام جدول أموال الحملة والعبارة الفرعية. سيؤدي هذا إلى إرجاع صفوف يتراوح فيها مجموع التبرعات للمرشح بين 3 ملايين و 18 مليون دولار استنادًا إلى شرط HAVING في الجزء GROUP BY من البيان. المزيد عن التجميع في هذا الدليل.
 
- `select Candidate, Office_Sought, Election_Year, format(sum(Total_$),2) 
- from combined_party_data 
- where Election_Year = 2016 
- group by Candidate, Office_Sought, Election_Year 
- having sum(Total_$) between 3000000 and 18000000 
- order by sum(Total_$) desc; 
-` 
+```sql
+select Candidate, Office_Sought, Election_Year, format(sum(Total_$),2)
+from combined_party_data
+where Election_Year = 2016
+group by Candidate, Office_Sought, Election_Year
+having sum(Total_$) between 3000000 and 18000000
+order by sum(Total_$) desc;
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/between02.JPG?raw=true)

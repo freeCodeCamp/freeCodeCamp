@@ -1,7 +1,7 @@
 ---
 title: Use the em Tag to Italicize Text
 ---
-## Use the em Tag to Italicize Text
+# Use the em Tag to Italicize Text
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/use-the-em-tag-to-italicize-text/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
