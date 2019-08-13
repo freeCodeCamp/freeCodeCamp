@@ -1,31 +1,31 @@
 ---
 title: TypeScript
-localeTitle: Mecanografiado
+localeTitle: TypeScript
 ---
-## Mecanografiado
+## TypeScript
 
-### Visión de conjunto
+### Descripción
 
-![Mecanografiado](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
+![TypeScript](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
 
-Por lo que es probable que sepa, JavaScript está expandiendo su huella cada día y es abrumador y sorprendente lo que puede hacer con el lenguaje hoy en día.
+Es muy probable que sepas que JavaScript está expandiendo su huela cada día y es abrumador y sorprendente lo que se puede hacer con este lenguaje hoy en día.
 
-Sin embargo, a medida que más proyectos a gran escala comienzan a usar JavaScript, el proceso de hacer que el código sea más fácil de escribir y más fácil de mantener se vuelve cada vez más difícil.
+Sin embargo, a medida que más proyectos de gran escala empiezan a usar JavaScript, el proceso de crear código fácil de escribir y más mantenible se convierte en una tarea cada vez más difícil.
 
-Este es un problema reconocido por Microsoft desde el principio y se les ocurrió la solución de TypeScript y lanzaron la primera versión aproximadamente el 1 de octubre de 2012.
+Este es un problema reconocido por Microsoft desde muy temprano y por lo tanto se les ocurrió crear TypeScript y lanzaron la primer versión aproximadamente el 1 de Octubre de 2012.
 
-Puede obtener más información sobre las diferencias de sintaxis en [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript) .
+Puedes obtener más información sobre las diferencias de sintaxis en [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript) .
 
 ![Características clave](https://cdn-media-1.freecodecamp.org/imgr/pZij95O.jpg)
 
 En esencia, TypeScript está tratando de ayudar a que JavaScript alcance nuevas alturas y se vuelva muy escalable y se puede resaltar con las siguientes características:
 
 *   lenguaje de programación libre y de código abierto desarrollado y mantenido por Microsoft
-*   super conjunto estricto de JavaScript sintáctico que compila a JavaScript simple
+*   super conjunto estricto de JavaScript sintáctico que compila a JavaScript puro
 *   Facilita el desarrollo de aplicaciones a gran escala escritas en JavaScript.
 *   Extiende JavaScript al agregar tipos estáticos, clases, módulos, interfaces y genéricos.
 
-**🎉 DATO DE DIVERSIÓN** TypeScript cumplió 5 años el 1 de octubre de 2017.
+**🎉 DATO INTERESANTE** TypeScript cumplió 5 años el 1 de octubre de 2017.
 
 ### Versión
 
@@ -33,19 +33,19 @@ La última versión estable disponible es [TypeScript 3.1](https://www.typescrip
 
 ### Instalación
 
-Para obtener más información sobre la instalación, consulte [`TypeScript`](./) > [`Installation`](./installation) .
+Para obtener más información sobre la instalación, consulta [`TypeScript`](./) > [`Installation`](./installation) .
 
 ### Linter
 
-Para obtener más información sobre el uso de una impresora con TypeScript, consulte [`TypeScript`](./) > [`Linter`](./linter) .
+Para obtener más información sobre el uso de un Linter con TypeScript, consulte [`TypeScript`](./) > [`Linter`](./linter) .
 
-### Patio de recreo
+### Playground
 
 ![Patio de recreo](https://cdn-media-1.freecodecamp.org/imgr/vlV7ZFr.png)
 
-Si desea probar TypeScript sin instalarlo, visite el [PlayScript Playground](http://www.typescriptlang.org/play/index.html) .
+Si deseas probar TypeScript sin instalarlo, visita el [Playground de TypeScript](http://www.typescriptlang.org/play/index.html) .
 
-El Playground tiene una función de finalización automática integrada y la capacidad de ver directamente el JavaScript emitido.
+El Playground tiene una función de finalización automática integrada y la capacidad de ver directamente el JavaScript emitido por el transpilador.
 
 ### Otros recursos
 

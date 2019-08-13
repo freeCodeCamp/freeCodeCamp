@@ -16,7 +16,7 @@ Um robô tem que tomar decisões com base na entrada que recebe do ambiente e da
 
 ### Aja
 
-Uma vez que o robô tome sua decisão, ele precisa agir de acordo. Para isso, usa atuadores. Um _atuador_ é um dispositivo que converte energia em movimento. Os atuadores podem ser classificados de acordo com o tipo de energia de entrada que eles exigem. Os dois tipos mais comuns de atuadores são elétricos (que usam energia elétrica para gerar movimento) e pneumáticos (que usam pressão de ar para gerar movimento). Por exemplo, um motor é um atuador que converte energia elétrica em movimento rotatório. Há sempre limitações à precisão e ao grau de controle de um atuador, portanto, [sistemas de controle](https://en.wikipedia.org/wiki/Control_system) são usados ​​para compensar essas limitações.
+Uma vez que o robô tome sua decisão, ele precisa agir de acordo. Para isso, usa atuadores. Um _atuador_ é um dispositivo que converte energia em movimento. Os atuadores podem ser classificados de acordo com o tipo de energia de entrada que eles exigem. Os dois tipos mais comuns de atuadores são elétricos (que usam energia elétrica para gerar movimento), pneumáticos (que usam pressão de ar para gerar movimento) e hidráulicos (que usam um fluido geralmente óleo para gerar movimento). Por exemplo, um motor é um atuador que converte energia elétrica em movimento rotatório. Há sempre limitações à precisão e ao grau de controle de um atuador, portanto, [sistemas de controle](https://en.wikipedia.org/wiki/Control_system) são usados ​​para compensar essas limitações.
 
 ## Coisas essenciais para robótica.
 
@@ -35,5 +35,3 @@ Juntando, esses recursos são bons o suficiente para iniciar sua jornada com a R
 [Sensores (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
 
 [Atuador (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
-
-[RoboCup](https://www.robocup.org/)

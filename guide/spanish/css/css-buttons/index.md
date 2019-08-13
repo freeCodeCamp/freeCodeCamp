@@ -73,14 +73,14 @@ Para cambiar el ancho de un botón, independientemente del contenido del texto, 
 
 Para crear botones redondeados, use la propiedad border-radius:
 
-`button {border-radius: 50%;}`
+``` button {border-radius: 50%;}```
 
 ![Rounded Buttons](https://image.ibb.co/cfH00m/button_bradius.png "Botones redondos")
 
 ### Botones Hoverable
 
 Para cambiar el estilo de un botón cuando mueva el mouse sobre él, use el: selector de desplazamiento:
-```
+```css
 button:hover { 
   background-color: #0E2C5B; 
   color: #FFF; 
@@ -94,7 +94,7 @@ Para determinar la velocidad del efecto de desplazamiento, utilice la `transitio
 ### Botones desactivados
 
 Para deshabilitar un botón, use la propiedad del cursor:
-```
+```css
 button { 
   cursor: not-allowed; 
  } 

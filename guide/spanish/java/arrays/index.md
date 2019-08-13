@@ -54,6 +54,12 @@ double[] List = new double[10];
 dataType[] arrayName = {value_0, value_1, ..., value_k}; 
 ```
 
+Hay que tener en cuenta que este "azúcar sintáctico" es sólo válido cuando la variable se define en la misma línea. Si se instanciara en una línea distinta habría que usar la palabra reservada `new` como se hace en el ejemplo anterior:
+
+```java
+arrayName = {value_0, value_1, ..., value_k}; // el azucar sintactico es erroneo aqui
+```
+
 ## Fragmentos de código de la sintaxis anterior:
 
 ```java

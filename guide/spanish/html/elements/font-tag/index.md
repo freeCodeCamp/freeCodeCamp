@@ -18,7 +18,7 @@ Un ejemplo:
 
 ```html
 
-<font face="fontNameHere" size="7" color="blue">My Text Here</font> 
+<font face="fontNameHere" size="7" color="blue">Mi texto aquí</font> 
 ```
 
 #### Más información:

@@ -10,10 +10,10 @@ Para crear sus páginas en `HTML` , necesita saber cómo estructurar una página
 <!DOCTYPE html> 
  <html> 
   <head> 
-    <title>Title of the Page</title> 
+    <title>Título de la página</title> 
   </head> 
   <body> 
-    <!-- Content --> 
+    <!-- Contenido --> 
   </body> 
  </html> 
 ```
