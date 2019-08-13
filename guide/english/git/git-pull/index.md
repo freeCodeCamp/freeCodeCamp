@@ -95,7 +95,13 @@ For purposes of reviewing and such, PRs in remote should be fetched to the local
 
 `git fetch origin pull/ID/head:BRANCHNAME`
 
-ID is the pull request id and BRANCHNAME is the name of the branch that you want to create. Once the branch has been created you can use `git checkout` to switch to that brach.
+ID is the pull request id and BRANCHNAME is the name of the branch that you want to create. Once the branch has been created you can use `git checkout` to switch to that branch.
+
+### Points to Note
+
+`git pull` is not to be confused with **PR(Pull Request)**. `git pull` is a command offered by git. While Pull Request is a feature provided by github. 
+
+Pull Request is raised by a developer to ensure the code from the developer's branch is merged back to the main branch. Before the code is merged back to the main branch, a reviewer will review the code in the pull request to ensure the code meets all the necessary standards.
 
 
 ### Other Resources on git pull

@@ -31,29 +31,29 @@ The first component of the above equation is the number of ways to arrange `k = 
 
 Consider `P(Single Scenario)` under the general case of `k` successes and `n - k` failures in `n` trials. To find the value, use the Multiplication Rule for independent events:
 
-<img src = "https://i.imgur.com/YXzUPiB.png" height = 25px />
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/YXzUPiB.png" height = 25px />
 
 The number of ways to get `k` successes from `n` trials can be written as __n choose k__:
 
-<img src = "https://i.imgur.com/AQ3P4vi.png" height = 40px />
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/AQ3P4vi.png" height = 40px />
 
 So, the general formula to get the probability of observing exactly `k` successes in `n` independent trials is given by:
 
-<img src = "https://i.imgur.com/ZErXKtQ.png" height = 40px />
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/ZErXKtQ.png" height = 40px />
 
 Hence, the probability of getting exactly one Heads in trials is:
 
-<img src = "https://i.imgur.com/fN5wOH2.png" height = 40px />
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/fN5wOH2.png" height = 40px />
 
 
 ### Mean and Variance
 The mean of a binomial distribution with `n` trials where `p` is the probability of a success is given by:
 
-<img src = "https://i.imgur.com/4ji7JXx.png" height = 15px />
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/4ji7JXx.png" height = 15px />
 
 and variance:
 
-<img src = "https://i.imgur.com/1tPHKHj.png" height = 20px />
+<img src = "https://cdn-media-1.freecodecamp.org/imgr/1tPHKHj.png" height = 20px />
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->

@@ -3,12 +3,19 @@ id: 587d7791367417b2b2512ab4
 title: Adjust the Width of an Element Using the width Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVLPtN'
+forumTopicId: 301039
 ---
 
 ## Description
 <section id='description'>
 You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:
-<blockquote>img {<br>&nbsp;&nbsp;width: 220px;<br>}</blockquote>
+
+```css
+img {
+  width: 220px;
+}
+```
+
 </section>
 
 ## Instructions
@@ -22,7 +29,7 @@ Add a <code>width</code> property to the entire card and set it to an absolute v
 ```yml
 tests:
   - text: Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.
-    testString: assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), 'Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');
+    testString: assert($('.fullCard').css('width') === '245px' && /\.fullCard{\S*width:245px(;\S*}|})/.test($('style').text().replace(/\s/g ,'')));
 
 ```
 

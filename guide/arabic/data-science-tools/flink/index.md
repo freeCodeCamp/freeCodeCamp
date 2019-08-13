@@ -45,10 +45,11 @@ Apache Flink هو إطار مفتوح المصدر لتجهيز التدفق م�
 *   مي Mن (نوصي بالإصدار 3.0.4)
 *   جافا 7 أو 8
 
- `git clone https://github.com/apache/flink.git 
- cd flink 
- mvn clean package -DskipTests # this will take up to 10 minutes 
-` 
+```
+git clone https://github.com/apache/flink.git
+cd flink
+mvn clean package -DskipTests # this will take up to 10 minutes
+``` 
 
 ## تطوير فلينك
 

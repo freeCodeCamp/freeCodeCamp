@@ -60,7 +60,7 @@ Como ejemplo, podemos examinar la complejidad del tiempo del algoritmo [\[de cla
     // Function to implement bubble sort 
     void bubble_sort(int array<a href='http://bigocheatsheet.com/' target='_blank' rel='nofollow'>], int n) 
     { 
-        // Here n is the number of elements in array 
+        // Aquí n es el número de elementos en la matriz
         int temp; 
         for(int i = 0; i < n-1; i++) 
         { 

@@ -1,7 +1,7 @@
 ---
 title: Search within a Linked List
 ---
-## Search within a Linked List
+# Search within a Linked List
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/search-within-a-linked-list/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

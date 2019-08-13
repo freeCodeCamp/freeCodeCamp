@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b35
 title: Catch Misspelled Variable and Function Names
 challengeType: 1
+forumTopicId: 301186
 ---
 
 ## Description
@@ -21,15 +22,15 @@ Fix the two spelling errors in the code so the <code>netWorkingCapital</code> ca
 ```yml
 tests:
   - text: 'Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".'
-    testString: 'assert(netWorkingCapital === 2, ''Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".'');'
+    testString: 'assert(netWorkingCapital === 2);'
   - text: There should be no instances of mis-spelled variables in the code.
-    testString: assert(!code.match(/recievables/g), 'There should be no instances of mis-spelled variables in the code.');
+    testString: assert(!code.match(/recievables/g));
   - text: The <code>receivables</code> variable should be declared and used properly in the code.
-    testString: assert(code.match(/receivables/g).length == 2, 'The <code>receivables</code> variable should be declared and used properly in the code.');
+    testString: assert(code.match(/receivables/g).length == 2);
   - text: There should be no instances of mis-spelled variables in the code.
-    testString: assert(!code.match(/payable;/g), 'There should be no instances of mis-spelled variables in the code.');
+    testString: assert(!code.match(/payable;/g));
   - text: The <code>payables</code> variable should be declared and used properly in the code.
-    testString: assert(code.match(/payables/g).length == 2, 'The <code>payables</code> variable should be declared and used properly in the code.');
+    testString: assert(code.match(/payables/g).length == 2);
 
 ```
 
@@ -57,6 +58,10 @@ console.log(`Net working capital is: ${netWorkingCapital}`);
 <section id='solution'>
 
 ```js
-// solution required
+let receivables = 10;
+let payables = 8;
+let netWorkingCapital = receivables - payables;
+console.log(`Net working capital is: ${netWorkingCapital}`);
 ```
+
 </section>

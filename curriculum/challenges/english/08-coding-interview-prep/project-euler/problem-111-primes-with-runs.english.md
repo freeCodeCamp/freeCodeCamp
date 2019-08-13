@@ -2,6 +2,7 @@
 id: 5900f3db1000cf542c50feee
 challengeType: 5
 title: 'Problem 111: Primes with runs'
+forumTopicId: 301736
 ---
 
 ## Description
@@ -72,7 +73,7 @@ Find the sum of all S(10, d).
 ```yml
 tests:
   - text: <code>euler111()</code> should return 612407567715.
-    testString: assert.strictEqual(euler111(), 612407567715, '<code>euler111()</code> should return 612407567715.');
+    testString: assert.strictEqual(euler111(), 612407567715);
 
 ```
 
@@ -104,4 +105,5 @@ euler111();
 ```js
 // solution required
 ```
+
 </section>

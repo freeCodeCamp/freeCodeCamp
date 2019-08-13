@@ -4,7 +4,7 @@ localeTitle: Exponenciação
 ---
 ## Exponenciação
 
-Dados dois inteiros a e n, escreva uma função para calcular um ^ n.
+Dados dois inteiros a e n, escreva uma função para calcular a^n.
 
 #### Código
 
@@ -21,7 +21,7 @@ int power(int x, unsigned int y) {
  } 
 ```
 
-Complexidade do Tempo: O (n) | Complexidade Espacial: O (1)
+Complexidade de Tempo: O (n) | Complexidade Espacial: O (1)
 
 #### Solução otimizada: O (logn)
 
@@ -40,7 +40,7 @@ int power(int x, unsigned int y) {
 
 ## Exponenciação Modular
 
-Dados três números x, y e p, compute (x ^ y)% p
+Dados três números x, y e p, calcule (x^y)% p
 
 ```C
 int power(int x, unsigned int y, int p) { 
@@ -58,4 +58,7 @@ int power(int x, unsigned int y, int p) {
  } 
 ```
 
-Complexidade do Tempo: O (Log y).
+Complexidade de Tempo: O (Log y).
+
+#### Mais Informações:
+- [Basic Fundamentals](https://mathinsight.org/exponentiation_basic_rules)

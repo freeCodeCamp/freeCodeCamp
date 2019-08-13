@@ -1,7 +1,7 @@
 ---
 title: Animate Elements Continually Using an Infinite Animation Count
 ---
-## Animate Elements Continually Using an Infinite Animation Count
+# Animate Elements Continually Using an Infinite Animation Count
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/animate-elements-continually-using-an-infinite-animation-count/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

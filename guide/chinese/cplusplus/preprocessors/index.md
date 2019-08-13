@@ -6,7 +6,7 @@ localeTitle: 预处理器
 
 顾名思义，预处理器是在编译之前处理源代码的程序。在C / C ++中编写程序和执行程序之间涉及许多步骤。在我们真正开始学习预处理器之前，让我们先看看这些步骤。
 
-![图](https://i.imgur.com/Pb0aTkV.png)
+![图](https://cdn-media-1.freecodecamp.org/imgr/Pb0aTkV.png)
 
 您可以在上图中看到中间步骤。程序员编写的源代码存储在文件program.c中。然后由预处理器处理该文件，并生成名为program的扩展源代码文件。此扩展文件由编译器编译，生成名为program.obj的目标代码文件。最后，链接器将此目标代码文件链接到库函数的目标代码，以生成可执行文件program.exe。
 

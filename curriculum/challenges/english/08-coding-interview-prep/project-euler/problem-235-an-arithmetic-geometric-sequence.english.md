@@ -2,6 +2,7 @@
 id: 5900f4571000cf542c50ff6a
 challengeType: 5
 title: 'Problem 235: An Arithmetic Geometric sequence'
+forumTopicId: 301879
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Give your answer rounded to 12 places behind the decimal point.
 ```yml
 tests:
   - text: <code>euler235()</code> should return 1.002322108633.
-    testString: assert.strictEqual(euler235(), 1.002322108633, '<code>euler235()</code> should return 1.002322108633.');
+    testString: assert.strictEqual(euler235(), 1.002322108633);
 
 ```
 
@@ -59,4 +60,5 @@ euler235();
 ```js
 // solution required
 ```
+
 </section>

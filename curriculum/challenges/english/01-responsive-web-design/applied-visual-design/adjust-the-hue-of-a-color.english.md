@@ -3,6 +3,7 @@ id: 587d78a4367417b2b2512ad4
 title: Adjust the Hue of a Color
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cPp38TZ'
+forumTopicId: 301036
 ---
 
 ## Description
@@ -26,17 +27,17 @@ Change the <code>background-color</code> of each <code>div</code> element based 
 ```yml
 tests:
   - text: Your code should use the <code>hsl()</code> property to declare the color green.
-    testString: assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color green.');
+    testString: assert(code.match(/\.green\s*?{\s*?background-color:\s*?hsl/gi));
   - text: Your code should use the <code>hsl()</code> property to declare the color cyan.
-    testString: assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color cyan.');
+    testString: assert(code.match(/\.cyan\s*?{\s*?background-color:\s*?hsl/gi));
   - text: Your code should use the <code>hsl()</code> property to declare the color blue.
-    testString: assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color blue.');
+    testString: assert(code.match(/\.blue\s*?{\s*?background-color:\s*?hsl/gi));
   - text: The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.
-    testString: assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.');
+    testString: assert($('.green').css('background-color') == 'rgb(0, 255, 0)');
   - text: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.
-    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');
+    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)');
   - text: The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.
-    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
 
 ```
 
@@ -86,7 +87,33 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+
+  .green {
+    background-color: hsl(120, 100%, 50%);
+  }
+
+  .cyan {
+    background-color: 	hsl(180, 100%, 50%);
+  }
+
+  .blue {
+    background-color: hsl(240, 100%, 50%);
+  }
+
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="green"></div>
+<div class="cyan"></div>
+<div class="blue"></div>
 ```
+
 </section>
