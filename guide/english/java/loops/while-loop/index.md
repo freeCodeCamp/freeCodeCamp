@@ -3,7 +3,10 @@ title: While Loop
 ---
 # While Loop
 
-The `while` loop repeatedly executes the block of statements until the condition specified within the parentheses evaluates to `false`. For instance:
+The `while` loop repeatedly executes the block of statements until the condition specified within the parentheses evaluates to `false`.
+It is usually used when the number of iterations is not fixed.
+
+For instance:
 
 ```java
 while (some_condition_is_true)
@@ -36,5 +39,7 @@ Output:
 0 1 2 3 4 5 6 7 8 9
 iter_While Value: 10
 ```
+
+An infinite while loop is created when the loop remains true infinitely , maybe because there is no change in the change in value of the condition or it never turns false.
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") [Run Code](https://repl.it/CJYj/0)

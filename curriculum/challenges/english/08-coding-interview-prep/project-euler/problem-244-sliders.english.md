@@ -2,6 +2,7 @@
 id: 5900f4601000cf542c50ff72
 challengeType: 5
 title: 'Problem 244: Sliders'
+forumTopicId: 301891
 ---
 
 ## Description
@@ -45,7 +46,7 @@ What is the sum of all checksums for the paths having the minimal length?
 ```yml
 tests:
   - text: <code>euler244()</code> should return 96356848.
-    testString: assert.strictEqual(euler244(), 96356848, '<code>euler244()</code> should return 96356848.');
+    testString: assert.strictEqual(euler244(), 96356848);
 
 ```
 
@@ -77,4 +78,5 @@ euler244();
 ```js
 // solution required
 ```
+
 </section>

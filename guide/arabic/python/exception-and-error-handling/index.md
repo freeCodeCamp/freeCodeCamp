@@ -8,22 +8,24 @@ localeTitle: الاستثناءات ومعالجة الأخطاء
 
 مثال:
 
- `>>> try: 
- >>> . . . print "this is not a string "+1 
- >>> except: 
- >>> . . . print "error" 
- error 
-` 
+```shell
+>>> try:
+>>> . . . print "this is not a string "+1
+>>> except:
+>>> . . . print "error"
+error
+``` 
 
 وإذا كنت ترغب في الحصول على رسائل خطأ بمزيد من التفاصيل من التعليمات البرمجية ، فيمكنك إضافة وسائط `except Exception as err`
 
- `>>> try: 
- >>> . . . print "this is not a string "+1 
- >>> except Exception as err: 
- >>> . . . print "error:\n"+str(err) 
- error: 
- cannot concatenate 'str' and 'int' objects 
-` 
+```shell
+>>> try:
+>>> . . . print "this is not a string "+1
+>>> except Exception as err:
+>>> . . . print "error:\n"+str(err)
+error:
+cannot concatenate 'str' and 'int' objects
+``` 
 
 معلومات اكثر:
 

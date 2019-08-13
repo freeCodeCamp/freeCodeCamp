@@ -20,17 +20,18 @@ localeTitle: إنشاء مكون مع التركيب
 
 سوف يقدم التالية في ChildComponent في ParentComponent ، كما هو مطلوب:
 
- `class ParentComponent extends React.Component { 
-  constructor(props) { 
-    super(props); 
-  } 
-  render() { 
-    return ( 
-      <div> 
-        <h1>I am the parent</h1> 
-        <ChildComponent /> 
-      </div> 
-    ); 
-  } 
- }; 
-`
+```javascript
+class ParentComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>I am the parent</h1>
+        <ChildComponent />
+      </div>
+    );
+  }
+};
+```

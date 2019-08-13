@@ -41,36 +41,39 @@ localeTitle: صندوق الظل
 
 المغلق شعبة { مربع الظل: لا شيء \[أقحم؟ && \[ ؟ ؟ ؟ \]\] # -moz-box-shadow: none | \[أقحم؟ && \[ ؟ ؟ ؟ \]\] # -webkit-box-shadow: لا شيء \[أقحم؟ && \[ ؟ ؟ ؟ \]\] # }
 
- `However, this step can be ignored if it is creating confusion, as moz property and webkit property will only work in specific applications such as Firefox, and are not on a standards track. 
- 
- ### Examples 
- 
- #### Basic use 
-` 
+```
+However, this step can be ignored if it is creating confusion, as moz property and webkit property will only work in specific applications such as Firefox, and are not on a standards track.
+
+### Examples
+
+#### Basic use
+``` 
 
 المغلق div { العرض: 200 بكسل ؛ الارتفاع: 50 بكسل ؛ لون الخلفية: # 333 ؛ box-shadow: 10px 10px 5px #ccc؛ }
 
- `10px - offset-x 
- 10px - offset-y 
- 5px -  blur 
- #ccc - light gray color 
- 
- It will display 
- 
- ![image](https://raw.githubusercontent.com/krzysiekh/images/master/box-shadow1.png) 
- 
- #### Inside box shadow 
-` 
+```
+10px - offset-x
+10px - offset-y
+5px -  blur
+#ccc - light gray color
+
+It will display
+
+![image](https://raw.githubusercontent.com/krzysiekh/images/master/box-shadow1.png)
+
+#### Inside box shadow
+``` 
 
 المغلق div { العرض: 200 بكسل ؛ الارتفاع: 50 بكسل ؛ لون الخلفية: # 333 ؛ box-shadow: inset 10px 10px 5px #ccc؛ }
 
- `It uses very similar code, but with inset value, which displays shadow inside the div element 
- 
- ![image](https://raw.githubusercontent.com/krzysiekh/images/master/box-shadow2.png) 
- 
- 
- #### Multiple box shadows 
-` 
+```
+It uses very similar code, but with inset value, which displays shadow inside the div element
+
+![image](https://raw.githubusercontent.com/krzysiekh/images/master/box-shadow2.png)
+
+
+#### Multiple box shadows
+``` 
 
 المغلق div { العرض: 200 بكسل ؛ الارتفاع: 50 بكسل ؛ لون الخلفية: # 333 ؛ box-shadow: inset 10px 10px 5px #ccc، 10px 10px 5px #ccc؛ } \`\` \`
 

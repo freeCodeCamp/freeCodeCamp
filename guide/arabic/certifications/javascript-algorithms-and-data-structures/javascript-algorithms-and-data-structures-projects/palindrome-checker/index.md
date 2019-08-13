@@ -51,7 +51,6 @@ localeTitle: Palindrome المدقق
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/2)
 
 ### شرح الشفرة:
 
@@ -83,7 +82,6 @@ localeTitle: Palindrome المدقق
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/3)
 
 ### شرح الشفرة:
 
@@ -131,7 +129,6 @@ localeTitle: Palindrome المدقق
     } 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLjU/4)
 
 ### شرح الشفرة:
 

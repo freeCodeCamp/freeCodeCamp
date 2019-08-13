@@ -12,12 +12,25 @@ Por lo tanto, en Python, una operación de archivo tiene lugar en el siguiente o
 
 Python tiene muchas formas de operaciones de entrada y salida. Algunas de las operaciones de salida pueden ser la impresión de un texto, los registros de la consola e incluso la salida de un archivo de texto o de hoja de cálculo.
 
-### Salida a pantalla
+### Salida a pantalla (python 2)
 
 Python proporciona la forma más sencilla de producir resultados en la pantalla.
 
 ```python
 print "Python is a powerful language.","It is easy to learn." 
+```
+
+Salida:
+```
+Python is a powerful language.It is easy to learn. 
+```
+
+### Salida a pantalla (python 3)
+
+Python proporciona la forma más sencilla de producir resultados en la pantalla.
+
+```python
+print( "Python is a powerful language.","It is easy to learn." )
 ```
 
 Salida:

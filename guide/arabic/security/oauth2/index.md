@@ -64,42 +64,46 @@ localeTitle: بروتوكول OAuth2
 
 طلب تفويض
 
- `GET /oauth2/authorize?response_type=code 
- &client_id=client123&scope=profile 
- &redirect_uri=https://client.com/callback HTTP/1.1 
- Host: auth.server.com 
-` 
+```
+GET /oauth2/authorize?response_type=code
+&client_id=client123&scope=profile
+&redirect_uri=https://client.com/callback HTTP/1.1
+Host: auth.server.com
+``` 
 
- `HTTP/1.1 302 Found 
- Location: https://client.com/callback#code=sb8s6doy9bsd9sd&state=abcde 
-` 
+```
+HTTP/1.1 302 Found
+Location: https://client.com/callback#code=sb8s6doy9bsd9sd&state=abcde
+``` 
 
 بعد تلقي رمز التفويض ، تقديم طلب خادم التفويض مع رمز ،
 
- `POST /oauth2/token HTTP/1.1 
- Host: auth.server.com 
- Content-Type: application/x-www-form-urlencoded 
- 
- grant_type=authorization_code 
- &code=sb8s6doy9bsd9sd 
- &redirect_uri=https://client.com/callback 
- &client_id=client123 
- &client_secret=secret 
- &scope=profile 
-` 
+```
+POST /oauth2/token HTTP/1.1
+Host: auth.server.com
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code
+&code=sb8s6doy9bsd9sd
+&redirect_uri=https://client.com/callback
+&client_id=client123
+&client_secret=secret
+&scope=profile
+``` 
 
 استجابة
 
- `HTTP/1.1 200 OK 
- Content-Type: application/json;charset=UTF-8 
- Cache-Control: no-store 
- Pragma: no-cache 
- { 
-  "access_token":"gsi8d6fosb9d6fos6df", 
-  "token_type":"bearer", 
-  "expires_in":3600 
- } 
-` 
+```
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Cache-Control: no-store
+Pragma: no-cache
+{
+  "access_token":"gsi8d6fosb9d6fos6df",
+  "token_type":"bearer",
+  "expires_in":3600
+}
+``` 
 
 #### التدفق الضمني
 
@@ -115,15 +119,17 @@ localeTitle: بروتوكول OAuth2
 
 نموذج الكود:
 
- `GET /oauth2/authorize?response_type=token 
- &client_id=client123 
- &redirect_uri=https://client.com/callback HTTP/1.1 
- Host: auth.server.com 
-` 
+```
+GET /oauth2/authorize?response_type=token
+&client_id=client123
+&redirect_uri=https://client.com/callback HTTP/1.1
+Host: auth.server.com
+``` 
 
- `HTTP/1.1 302 Found 
- Location: https://client.com/callback#access_token=98y2b38&token_type=bearer&expires_in=3600&state=abcde 
-` 
+```
+HTTP/1.1 302 Found
+Location: https://client.com/callback#access_token=98y2b38&token_type=bearer&expires_in=3600&state=abcde
+``` 
 
 #### بيانات اعتماد مالك المورد
 
@@ -139,14 +145,15 @@ localeTitle: بروتوكول OAuth2
 
 نموذج الكود:
 
- `POST /oauth2/token HTTP/1.1 
- Host: auth.server.com 
- Content-Type: application/x-www-form-urlencoded 
- 
- grant_type=password 
- &username=john 
- &password=abcde 
-` 
+```
+POST /oauth2/token HTTP/1.1
+Host: auth.server.com
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password
+&username=john
+&password=abcde
+``` 
 
 #### بيانات اعتماد العميل التدفق
 
@@ -162,14 +169,15 @@ localeTitle: بروتوكول OAuth2
 
 نموذج الكود:
 
- `POST /oauth2/token HTTP/1.1 
- Host: auth.server.com 
- Content-Type: application/x-www-form-urlencoded 
- 
- grant_type=client_credentials 
- &client_id=client123 
- &client_secret=xyz123 
-` 
+```
+POST /oauth2/token HTTP/1.1
+Host: auth.server.com
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials
+&client_id=client123
+&client_secret=xyz123
+``` 
 
 ### المراجع
 

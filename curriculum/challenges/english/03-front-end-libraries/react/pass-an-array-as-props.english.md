@@ -3,12 +3,19 @@ id: 5a24c314108439a4d403616a
 title: Pass an Array as Props
 challengeType: 6
 isRequired: false
+forumTopicId: 301401
 ---
 
 ## Description
 <section id='description'>
 The last challenge demonstrated how to pass information from a parent component to a child component as <code>props</code> or properties. This challenge looks at how arrays can be passed as <code>props</code>.  To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.
-<blockquote>&lt;ParentComponent&gt;<br>&nbsp;&nbsp;&lt;ChildComponent colors={["green", "blue", "red"]} /&gt;<br>&lt;/ParentComponent&gt;</blockquote>
+
+```jsx
+<ParentComponent>
+  <ChildComponent colors={["green", "blue", "red"]} />
+</ParentComponent>
+```
+
 The child component then has access to the array property <code>colors</code>.  Array methods such as <code>join()</code> can be used when accessing the property.
 <code>const ChildComponent = (props) => &lt;p&gt{props.colors.join(', ')}&lt;/p&gt</code>
 This will join all <code>colors</code> array items into a comma separated string and produce:
@@ -27,19 +34,19 @@ There are <code>List</code> and <code>ToDo</code> components in the code editor.
 ```yml
 tests:
   - text: The <code>ToDo</code> component should return a single outer <code>div</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === 'div'; })(), 'The <code>ToDo</code> component should return a single outer <code>div</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === 'div'; })());
   - text: The third child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === 'List'; })(), 'The third child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === 'List'; })());
   - text: The fifth child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === 'List'; })(), 'The fifth child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === 'List'; })());
   - text: Both instances of the <code>List</code> component should have a property called <code>tasks</code> and <code>tasks</code> should be of type array.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find('List').get(0).props.tasks) && Array.isArray(mockedComponent.find('List').get(1).props.tasks); })(), 'Both instances of the <code>List</code> component should have a property called <code>tasks</code> and <code>tasks</code> should be of type array.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find('List').get(0).props.tasks) && Array.isArray(mockedComponent.find('List').get(1).props.tasks); })());
   - text: The first <code>List</code> component representing the tasks for today should have 2 or more items.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(0).props.tasks.length >= 2; })(), 'The first <code>List</code> component representing the tasks for today should have 2 or more items.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(0).props.tasks.length >= 2; })());
   - text: The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })(), 'The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })());
   - text: The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })(), 'The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })());
 
 ```
 
@@ -51,7 +58,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-const List= (props) => {
+const List = (props) => {
   { /* change code below this line */ }
   return <p>{}</p>
   { /* change code above this line */ }

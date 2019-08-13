@@ -8,8 +8,9 @@ localeTitle: الكل
 
 ### التوقيع
 
- `public static bool All<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate); 
-` 
+```csharp
+public static bool All<TSource>(this IEnumerable<TSource> source, Func<TSource, bool> predicate);
+``` 
 
 ## مثال
 

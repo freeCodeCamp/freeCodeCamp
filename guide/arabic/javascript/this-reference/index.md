@@ -10,13 +10,14 @@ localeTitle: هذا المرجع
 
 عندما يتم استدعاء دالة في النطاق العمومي ، يكون `this` المرجع بشكل افتراضي مرتبطًا **بالعنصر العام** ( `window` في المستعرض ، أو `global` في Node.js). فمثلا:
 
- `function foo() { 
-  this.a = 2; 
- } 
- 
- foo(); 
- console.log(a); // 2 
-` 
+```javascript
+function foo() {
+  this.a = 2;
+}
+
+foo();
+console.log(a); // 2
+``` 
 
 ملاحظة: إذا قمت بالإعلان عن الدالة `foo()` أعلاه في الوضع المقيد ، فإنك تقوم باستدعاء هذه الوظيفة في النطاق العالمي ، فسيكون `this` `undefined` `this.a = 2` التعيين هذا. `this.a = 2` إلى `this.a = 2` استثناء `Uncaught TypeError` .
 
@@ -24,17 +25,18 @@ localeTitle: هذا المرجع
 
 دعونا نفحص المثال أدناه:
 
- `function foo() { 
-  this.a = 2; 
- } 
- 
- var obj = { 
-  foo: foo 
- }; 
- 
- obj.foo(); 
- console.log(obj.a); // 2 
-` 
+```javascript
+function foo() {
+  this.a = 2;
+}
+
+var obj = {
+  foo: foo
+};
+
+obj.foo();
+console.log(obj.a); // 2
+``` 
 
 بوضوح ، في المقتطف أعلاه ، يتم استدعاء الدالة `foo()` مع _السياق_ هو كائن `obj` `this` الإشارة مرتبطة الآن بـ `obj` . لذلك عندما يتم استدعاء دالة مع كائن سياق ، سيكون `this` المرجع مرتبطًا بهذا الكائن.
 
@@ -42,12 +44,13 @@ localeTitle: هذا المرجع
 
 `.call` ، `.apply` و `.bind` يمكن لجميع استخدامها في موقع الدعوة إلى ربط صراحة `this` . باستخدام `.bind(this)` هو شيء قد تراه في الكثير من مكونات React.
 
- `var foo = function() { 
-  console.log(this.bar) 
- } 
- 
- foo.call({ bar: 1 }) // 1 
-` 
+```javascript
+var foo = function() {
+  console.log(this.bar)
+}
+
+foo.call({ bar: 1 }) // 1
+``` 
 
 في ما يلي مثال سريع عن كيفية استخدام كل منها لربط `this` :
 
@@ -57,15 +60,16 @@ localeTitle: هذا المرجع
 
 ### القاعدة 4
 
- `function Point2D(x, y) { 
-  this.x = x; 
-  this.y = y; 
- } 
- 
- var p1 = new Point2D(1, 2); 
- console.log(p1.x); // 1 
- console.log(p1.y); // 2 
-` 
+```javascript
+function Point2D(x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+var p1 = new Point2D(1, 2);
+console.log(p1.x); // 1
+console.log(p1.y); // 2
+``` 
 
 الشيء الذي يجب أن تلاحظه هو الدالة `Point2D` التي يتم `Point2D` رئيسية `new` ، `this` المرجع مرتبط بـ كائن `p1` . لذلك عندما يتم استدعاء دالة بكلمة رئيسية `new` ، فإنها ستنشئ كائنًا جديدًا وستكون `this` الإشارة مرتبطة بهذا الكائن.
 
@@ -77,16 +81,17 @@ localeTitle: هذا المرجع
 
 خذ بعين الاعتبار هذا المثال لفئة Cat باستخدام طريقة تسمى `makeSound()` ، متبعاً النمط في القاعدة 4 (أعلاه) مع دالة منشئ وكلمة رئيسية `new` .
 
- `var Cat = function(name, sound) { 
-    this.name = name; 
-    this.sound = sound; 
-    this.makeSound = function() { 
-        console.log( this.name + ' says: ' + this.sound ); 
-    }; 
- } 
- var kitty = new Cat('Fat Daddy', 'Mrrooowww'); 
- kitty.makeSound(); // Fat Daddy says: Mrrooowww 
-` 
+```javascript
+var Cat = function(name, sound) {
+    this.name = name;
+    this.sound = sound;
+    this.makeSound = function() {
+        console.log( this.name + ' says: ' + this.sound );
+    };
+}
+var kitty = new Cat('Fat Daddy', 'Mrrooowww');
+kitty.makeSound(); // Fat Daddy says: Mrrooowww
+``` 
 
 الآن دعونا نحاول إعطاء القطة وسيلة `annoy()` الناس عن طريق تكرار صوته 100 مرة ، مرة واحدة كل نصف ثانية.
 
@@ -117,50 +122,52 @@ localeTitle: هذا المرجع
 
 1) قبل إنشاء إطار جديد، تعيين `this` إلى متغير محلي يدعى `me` ، أو `self` ، أو ما تريد أن نسميها، واستخدام هذا المتغير داخل الاستدعاء.
 
- `var Cat = function(name, sound) { 
-    this.name = name; 
-    this.sound = sound; 
-    this.makeSound = function() { 
-        console.log( this.name + ' says: ' + this.sound ); 
-    }; 
-    this.annoy = function() { 
-        var count = 0, max = 100; 
-        var self = this; 
-        var t = setInterval(function() { 
-            self.makeSound(); 
-            count++; 
-            if (count === max) { 
-                clearTimeout(t); 
-            } 
-        }, 500); 
-    }; 
- } 
- var kitty = new Cat('Fat Daddy', 'Mrrooowww'); 
- kitty.annoy(); 
-` 
+```javascript
+var Cat = function(name, sound) {
+    this.name = name;
+    this.sound = sound;
+    this.makeSound = function() {
+        console.log( this.name + ' says: ' + this.sound );
+    };
+    this.annoy = function() {
+        var count = 0, max = 100;
+        var self = this;
+        var t = setInterval(function() {
+            self.makeSound();
+            count++;
+            if (count === max) {
+                clearTimeout(t);
+            }
+        }, 500);
+    };
+}
+var kitty = new Cat('Fat Daddy', 'Mrrooowww');
+kitty.annoy();
+``` 
 
 2) باستخدام ES6 ، يمكنك تجنب تعيين `this` للمتغير المحلي باستخدام وظيفة السهم ، والتي تربط `this` بسياق الرمز المحيط حيث تم تعريفه.
 
- `var Cat = function(name, sound) { 
-    this.name = name; 
-    this.sound = sound; 
-    this.makeSound = function() { 
-        console.log( this.name + ' says: ' + this.sound ); 
-    }; 
-    this.annoy = function() { 
-        var count = 0, max = 100; 
-        var t = setInterval(() => { 
-            this.makeSound(); 
-            count++; 
-            if (count === max) { 
-                clearTimeout(t); 
-            } 
-        }, 500); 
-    }; 
- } 
- var kitty = new Cat('Fat Daddy', 'Mrrooowww'); 
- kitty.annoy(); 
-` 
+```javascript
+var Cat = function(name, sound) {
+    this.name = name;
+    this.sound = sound;
+    this.makeSound = function() {
+        console.log( this.name + ' says: ' + this.sound );
+    };
+    this.annoy = function() {
+        var count = 0, max = 100;
+        var t = setInterval(() => {
+            this.makeSound();
+            count++;
+            if (count === max) {
+                clearTimeout(t);
+            }
+        }, 500);
+    };
+}
+var kitty = new Cat('Fat Daddy', 'Mrrooowww');
+kitty.annoy();
+``` 
 
 ### موارد آخرى
 

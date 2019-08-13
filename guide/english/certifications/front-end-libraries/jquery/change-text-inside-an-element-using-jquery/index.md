@@ -1,9 +1,13 @@
 ---
 title: Change Text Inside an Element Using jQuery
 ---
-## Change Text Inside an Element Using jQuery
+# Change Text Inside an Element Using jQuery
 
-### Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <script>
@@ -12,8 +16,6 @@ title: Change Text Inside an Element Using jQuery
     $("#target4").html('<em>#target4</em>');
   });
 </script>
-
-<!-- Only change code above this line. -->
 
 <div class="container-fluid">
   <h3 class="text-primary text-center">jQuery Playground</h3>
@@ -38,9 +40,10 @@ title: Change Text Inside an Element Using jQuery
 </div>
 ```
 
-### More information
+#### Relevant Links
 
-[JQuery API  Documentation](http://api.jquery.com/html/)
+[jQuery API  Documentation](http://api.jquery.com/html/)
 
-[freeCoceCamp Guide](https://guide.freecodecamp.org/jquery/jquery-html-method)
+[freeCodeCamp Guide](https://guide.freecodecamp.org/jquery/jquery-html-method)
+</details>
 

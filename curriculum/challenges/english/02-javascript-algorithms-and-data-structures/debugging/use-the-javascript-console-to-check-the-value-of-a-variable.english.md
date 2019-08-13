@@ -2,6 +2,7 @@
 id: 587d7b83367417b2b2512b33
 title: Use the JavaScript Console to Check the Value of a Variable
 challengeType: 1
+forumTopicId: 18372
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Use the <code>console.log()</code> method to print the value of the variable <co
 ```yml
 tests:
   - text: Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.
-    testString: assert(code.match(/console\.log\(a\)/g), 'Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');
+    testString: assert(code.match(/console\.log\(a\)/g));
 
 ```
 

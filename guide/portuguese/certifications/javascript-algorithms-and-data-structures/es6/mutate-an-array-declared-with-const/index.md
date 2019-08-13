@@ -41,7 +41,6 @@ Reatribuir os valores das `const` variáveis `s` usando vários atribuição de 
     editInPlace(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://codepen.io/dylantyates/pen/djoVjW)
 
 # Explicação do código:
 

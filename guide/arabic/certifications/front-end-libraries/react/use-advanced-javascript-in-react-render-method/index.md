@@ -12,8 +12,9 @@ localeTitle: استخدم جافا سكريبت المتقدمة في طريقة
 
 ### حل
 
- `const answer = possibleAnswers[this.state.randomIndex]; 
-` 
+```js
+const answer = possibleAnswers[this.state.randomIndex];
+``` 
 
 بعد ذلك ، أدخل "الإجابة" الخاصة بك في علامات p. تأكد من لفها بأقواس معقوفة `{ }` .
 

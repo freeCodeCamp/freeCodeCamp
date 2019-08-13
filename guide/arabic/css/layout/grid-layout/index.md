@@ -24,25 +24,27 @@ CSS Network Layout ، والمعروف ببساطة باسم الشبكة ، ه�
 
 من الناحية المثالية ، عند إنشاء موقع ، يمكنك تصميمه مع الشبكة واستخدام Flex كحل بديل. يمكنك معرفة ما إذا كان المستعرض يدعم الشبكة باستخدام قاعدة CSS `@support` (يُعرف أيضًا باسم استعلام الميزات). إليك مثال على ذلك:
 
- `.container { 
-  display: grid; /* display grid by default */ 
- } 
- 
- @supports not (display: grid) { /* if grid is not supported by the browser */ 
-  .container { 
-    display: flex; /* display flex instead of grid */ 
-  } 
- } 
-` 
+```css
+.container {
+  display: grid; /* display grid by default */
+}
+
+@supports not (display: grid) { /* if grid is not supported by the browser */
+  .container {
+    display: flex; /* display flex instead of grid */
+  }
+}
+``` 
 
 ### ابدء
 
 لجعل أي عنصر شبكة ، تحتاج إلى تعيين خاصية `display` الخاصة بها إلى `grid` ، مثل:
 
- `.conatiner { 
-  display: grid; 
- } 
-` 
+```css
+.conatiner {
+  display: grid;
+}
+``` 
 
 وهذا كل شيء. لقد قمت للتو `.container` . يصبح كل عنصر داخل `.container` عنصر شبكة بشكل تلقائي.
 
@@ -50,9 +52,10 @@ CSS Network Layout ، والمعروف ببساطة باسم الشبكة ، ه�
 
 الصفوف والأعمدة
 
- `grid-template-columns: 1fr 1fr 1fr 1fr; 
- grid-template-rows: auto 300px; 
-` 
+```css
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: auto 300px;
+``` 
 
 المناطق
 
@@ -65,39 +68,41 @@ CSS Network Layout ، والمعروف ببساطة باسم الشبكة ، ه�
 
 أو
 
- `grid-template-areas: 
-  "header header header header" 
-  "nav main main sidebar"; 
-` 
+```css
+grid-template-areas:
+  "header header header header"
+  "nav main main sidebar";
+``` 
 
 ### مناطق الشبكة
 
 فيما يلي بعض نماذج التعليمات البرمجية حول كيفية تحديد مناطق الشبكة وتعيينها
 
- `.site { 
-  display: grid; 
-  grid-template-areas: /* applied to grid container */ 
-    "head head" /* you're assigning cells to areas by giving the cells an area name */ 
-    "nav  main" /* how many values kind of depends on how many cells you have in the grid */ 
-    "nav  foot"; 
- } 
- 
- .site > header { 
-  grid-area: head; 
- } 
- 
- .site > nav { 
-  grid-area: nav; 
- } 
- 
- .site > main { 
-    grid-area: main; 
- } 
- 
- .site > footer { 
-    grid-area: foot; 
- } 
-` 
+```css
+.site {
+  display: grid;
+  grid-template-areas: /* applied to grid container */
+    "head head" /* you're assigning cells to areas by giving the cells an area name */
+    "nav  main" /* how many values kind of depends on how many cells you have in the grid */
+    "nav  foot";
+}
+
+.site > header {
+  grid-area: head;
+}
+
+.site > nav {
+  grid-area: nav;
+}
+
+.site > main {
+    grid-area: main;
+}
+
+.site > footer {
+    grid-area: foot;
+}
+``` 
 
 ### وحدة `fr`
 
@@ -111,25 +116,26 @@ CSS Network Layout ، والمعروف ببساطة باسم الشبكة ، ه�
 
 الحل البسيط هو تغيير `grid-template-areas` أساس حجم الشاشة. يمكنك أيضًا **تغيير عدد الأعمدة والصفوف بناءً على حجم الشاشة** أيضًا. هذا هو بديل أنظف وأبسط بكثير لنظام Bootstrap الشبكة ( `col-xs-8 col-sm-6 col-md-4 col-lg-3` ).
 
- `.site { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-areas: 
-    "title title" 
-    "main header" 
-    "main sidebar" 
- } 
- 
- @media screen and (min-width: 34em) { /* If the screen is big enough, use a different template for grid areas */ 
-  .site { 
-    grid-template-columns: 2fr 1fr 1fr; 
-    grid-template-areas: 
-      "title title title" 
-      "main header header" 
-      "main sidebar footer" 
-  } 
- } 
-` 
+```css
+.site {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "main header"
+    "main sidebar"
+}
+
+@media screen and (min-width: 34em) { /* If the screen is big enough, use a different template for grid areas */
+  .site {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas:
+      "title title title"
+      "main header header"
+      "main sidebar footer"
+  }
+}
+``` 
 
 انظر [شبكة](https://codepen.io/aamnah/pen/RLVVoE/) القلم [المغلق من خلال المثال - 2 (مناطق الشبكة + شبكة الفجوة) من](https://codepen.io/aamnah/pen/RLVVoE/) قبل Aamnah أكرم ( [aamnah](https://codepen.io/aamnah) ) على [CodePen](https://codepen.io) .
 

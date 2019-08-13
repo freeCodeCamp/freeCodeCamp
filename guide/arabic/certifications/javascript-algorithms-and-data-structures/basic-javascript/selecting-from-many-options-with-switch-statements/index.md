@@ -113,7 +113,6 @@ _اكتب عبارة التبديل التي تختبر `val` `answer` عن ال
  caseInSwitch(1); 
 ` 
 
-تشغيل الكود في [repl.it.](https://repl.it/@AdrianSkar/Basic-JS-Switch-statements)
 
 ### تفسير الشفرة
 

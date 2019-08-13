@@ -10,10 +10,11 @@ POJO لتقف على "كائن جافا قديم سهل". هذا يختلف عن
 
 1.  يجب ألا يتم توسيع فئات Java المحددة مسبقًا ؛
 
- `public class Foo extends javax.servlet.http.HttpServlet { 
- ...// body ... 
- } 
-` 
+```java
+public class Foo extends javax.servlet.http.HttpServlet {
+...// body ...
+}
+``` 
 
 2.  يجب أن لا تنفذ واجهات prespecified ؛
 
