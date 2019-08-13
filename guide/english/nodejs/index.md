@@ -10,8 +10,8 @@ title: Node.js
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
 #### Let's break it down.
-- Javascript runtime built on Chrome's V8 JavaScript engine.  
-Every browser has a JavaSript engine built in it to process JavaScript files contained in websites. Google Chrome uses V8 engine which is built using C++. Node.js also uses this super-fast engine to interpret JavaScript files.
+- JavaScript runtime built on Google Chrome's V8 JavaScript engine.  
+Every browser has a JavaSript engine built in it to process JavaScript files contained in websites. Chrome uses V8, which is built using C++. Node.js also uses this super-fast engine to interpret JavaScript files.
 - Node.js uses an event-driven model.  
 This means that Node.js waits for certain events to take place. It then acts on those events. Events can be anything from a click to a HTTP request. We can also declare our own custom events and make node.js listen for those events.
 - Node.js uses a non-blocking I/O model.  
@@ -33,7 +33,7 @@ my_io_task()
 ```
 
 **Node.js**
-```node
+```js
 function my_io_task() {
     setTimeout(function() {
       console.log('done');
@@ -50,12 +50,18 @@ Node.js takes less time because of its non-blocking I/O model. The first call to
 
 When the timer completes it's execution taking 5 seconds, it calls the function and prints ```done``` on the console. Since, both the timers are started together, they complete together and therefore take same amount of time.
 
+#### NPM
+NPM is the default package manager for JavaScript runtime environment NodeJS.
+For more visit : [NPM official site](https://www.npmjs.com/)
+
 #### Why use NodeJS:
 1. Great for beginners. JavaScript is a beginner friendly language.
 2. Great supportive community and massive amount of modules (Express, Grunt, etc).
 3. Wide range of hosting options.
+4. Existing Front-End developers get to transfer existing JavaScript knowledge for an easier transition into Server-Side development
 
 #### More information:
 - [Official NodeJS site](https://nodejs.org)
 - [Node Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
 - [n: Interactive NodeJS Version Manager](https://github.com/tj/n)
+- [The definitive Node.js handbook](https://medium.freecodecamp.org/the-definitive-node-js-handbook-6912378afc6e)

@@ -29,7 +29,6 @@ function sumSquareDifference(n) {
  } 
 ```
 
-*   [Executar código](https://repl.it/@ezioda004/Problem-6-Sum-square-difference)
 
 ### Referências:
 

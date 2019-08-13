@@ -1,7 +1,7 @@
 ---
 title: Perform an Intersection on Two Sets of Data
 ---
-## Perform an Intersection on Two Sets of Data
+# Perform an Intersection on Two Sets of Data
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/perform-an-intersection-on-two-sets-of-data/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

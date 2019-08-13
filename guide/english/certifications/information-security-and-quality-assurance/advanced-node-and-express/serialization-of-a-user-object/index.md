@@ -1,7 +1,7 @@
 ---
 title: Serialization of a User Object
 ---
-## Serialization of a User Object
+# Serialization of a User Object
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/serialization-of-a-user-object/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

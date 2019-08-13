@@ -23,16 +23,38 @@ ON table_name (column1, column2, ...);
 Creating a new index on the student table's field, programOfStudy.
 For reference, here is the current definition of the student table.
 
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/create-index-statement01.JPG?raw=true)
-
-Here's a statement to create the index, and a screen shot of the updated table definition:
-
-```sql
-create index pStudyIndex
-on student (programOfStudy);
+```text
++--------------------+----------------------+--------------+---------------+------------+
+| column_name        | column_default       | is_nullable  | column_type   | key        |
++--------------------+----------------------+--------------+---------------+------------+
+| studentID          | NULL                 | NO           | int(11)       | PRI        |
+| FullName           | NULL                 | YES          | varchar(90)   |            |
+| sat_score          | NULL                 | YEs          | int(4)        |            |
+| recordUpdated      | CURRENT TIMESTAMP    | NO           | timestamp     |            |
+| recordCreated      | 0000-00-00 00:00:00  | NO           | timestamp     |            |
+| programOfStudy     | NULL                 | YES          | varchar(200)  |            |
++--------------------+----------------------+--------------+---------------+------------+
 ```
 
-![image-1](https://github.com/SteveChevalier/guide-images/blob/master/create-index-statement02.JPG?raw=true)
+* Here's a statement to create the index, and below is the updated table definition:
+
+  ```sql
+  create index pStudyIndex
+  on student (programOfStudy);
+  ```
+
+  ```text
+  +--------------------+----------------------+--------------+---------------+------------+
+  | column_name        | column_default       | is_nullable  | column_type   | key        |
+  +--------------------+----------------------+--------------+---------------+------------+
+  | studentID          | NULL                 | NO           | int(11)       | PRI        |
+  | FullName           | NULL                 | YES          | varchar(90)   |            |
+  | sat_score          | NULL                 | YEs          | int(4)        |            |
+  | recordUpdated      | CURRENT TIMESTAMP    | NO           | timestamp     |            |
+  | recordCreated      | 0000-00-00 00:00:00  | NO           | timestamp     |            |
+  | programOfStudy     | NULL                 | YES          | varchar(200)  | MUL        |
+  +--------------------+----------------------+--------------+---------------+------------+
+  ```
 
 In MySQL, you use the ALTER TABLE command to change and drop indexes. The MySQL Workbench also provides GUI tools to manage indexes.
 

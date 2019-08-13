@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244af
 title: Compound Assignment With Augmented Addition
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cDR6LCb'
+forumTopicId: 16661
 ---
 
 ## Description
@@ -10,7 +12,13 @@ In programming, it is common to use assignments to modify the contents of a vari
 <code>myVar = myVar + 5;</code>
 to add <code>5</code> to <code>myVar</code>. Since this is such a common pattern, there are operators which do both a mathematical operation and assignment in one step.
 One such operator is the <code>+=</code> operator.
-<blockquote>var myVar = 1;<br>myVar += 5;<br>console.log(myVar); // Returns 6</blockquote>
+
+```js
+var myVar = 1;
+myVar += 5;
+console.log(myVar); // Returns 6
+```
+
 </section>
 
 ## Instructions
@@ -24,15 +32,15 @@ Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> t
 ```yml
 tests:
   - text: <code>a</code> should equal <code>15</code>
-    testString: assert(a === 15, '<code>a</code> should equal <code>15</code>');
+    testString: assert(a === 15);
   - text: <code>b</code> should equal <code>26</code>
-    testString: assert(b === 26, '<code>b</code> should equal <code>26</code>');
+    testString: assert(b === 26);
   - text: <code>c</code> should equal <code>19</code>
-    testString: assert(c === 19, '<code>c</code> should equal <code>19</code>');
+    testString: assert(c === 19);
   - text: You should use the <code>+=</code> operator for each variable
-    testString: assert(code.match(/\+=/g).length === 3, 'You should use the <code>+=</code> operator for each variable');
+    testString: assert(code.match(/\+=/g).length === 3);
   - text: Do not modify the code above the line
-    testString: assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'Do not modify the code above the line');
+    testString: assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code));
 
 ```
 

@@ -10,16 +10,16 @@ localeTitle: Img Src Attribute
 
 يمكنك تعيين ذلك كصورة باستخدام السمة `src` .
 
- `
-<html> 
-  <head> 
-    <title>Img Src Attribute Example</title> 
-  </head> 
-  <body> 
-    <img src="https://avatars0.githubusercontent.com/u/9892522?v=4&s=400"> 
-  </body> 
- </html> 
-` 
+```html
+<html>
+  <head>
+    <title>Img Src Attribute Example</title>
+  </head>
+  <body>
+    <img src="https://avatars0.githubusercontent.com/u/9892522?v=4&s=400">
+  </body>
+</html>
+``` 
 
 يظهر الرمز أعلاه كما يلي:
 

@@ -1,9 +1,13 @@
 ---
 title: Global Scope and Functions
 ---
-## Global Scope and Functions
+# Global Scope and Functions
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+---
+## Hints
+
+### Hint 1
 The scope of a variable is its visibility; where in the code is the function available? Here is a list of the different scopes a variable can have.
 
 * **Global scope**: The variable is available throughout the code
@@ -36,7 +40,11 @@ function fun() {
 }
 ```
 
-Alright, here is the basic code solution.
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 // Declare your variable here
@@ -44,7 +52,6 @@ var myGlobal = 10;
 
 function fun1() {
   oopsGlobal = 5;
-  
 }
 
 // Only change code above this line
@@ -59,3 +66,4 @@ function fun2() {
   console.log(output);
 }
 ```
+</details>

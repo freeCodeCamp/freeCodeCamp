@@ -14,7 +14,7 @@ Java提供了4级访问修饰符。这意味着您可以通过4种方式修改�
 
 #### 访问修饰符表参考：
 
-![访问修饰符表](https://i.imgur.com/zoMspyn.png)
+![访问修饰符表](https://cdn-media-1.freecodecamp.org/imgr/zoMspyn.png)
 
 #### 私人访问修改器
 

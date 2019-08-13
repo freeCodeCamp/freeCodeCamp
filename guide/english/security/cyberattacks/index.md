@@ -2,7 +2,7 @@
 title: Cyberattacks
 ---
 A cyberattack refers to the exploitation or "hacking" of computer systems, infrastructures, computer networks, and/or personal computer devices using malicious code. 
-The aim of a cyberattack more often than not is to steal, modify or destroy information. 
+More often that not, the aim of a cyberattack is to steal, modify or destroy information. 
 
 The motive for launching a cyberattack can range from financial to political and ideological.
 There are also hackers who infiltrate into systems as a form of entertainment.
@@ -19,7 +19,7 @@ In 2017, a Ukrainian government website was infected with malware that erases vi
 
 One of the biggest cyberattacks to date is the Yahoo hack, this affected all 3 billion user accounts. The hack was dangerous, as it exposed users names,
 email addresses, telephone numbers, DOB, encrypted passwords and unencrypted security questions. This attack proves that no matter how big a company is,
-no one can be 100% that their data is secure.
+no one can be 100% that their data is secure. There are also hardware hacks, i.e. holes in hardware that people with malicious intent can abuse. Some recent examples of this are the widely known Meltdown and Spectre incidents which accidentally allowed websites access to memory that they shouldn't have access to. 
 
 ## Common Types of Cyberattacks
 * Malware  
@@ -44,4 +44,7 @@ no one can be 100% that their data is secure.
 * DNS Poisoning
 * E-mail Spoofing
 * KRACK (Key Reinstallation Attack)
-
+* PMKID Dumping
+* Token replay
+* CyberWarfare
+* Buffer Overflow

@@ -16,8 +16,9 @@ localeTitle: المباراة جميع غير الارقام
 
 ## حل
 
- `let noNumRegex = /\D/g; 
-` 
+```javascript
+let noNumRegex = /\D/g;
+``` 
 
 ## تفسير
 

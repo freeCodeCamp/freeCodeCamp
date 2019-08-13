@@ -20,13 +20,13 @@ Pipes are also *chainable*. You can integrate pipes one after the other to perfo
 
 #### Use Cases
 
-Angular comes prepackaged with a basic set of pipes. Working with a couple of them will develop the intuition to handle the rest. The following list provides two examples.
+Angular comes prepackaged with a basic set of pipes. Working with a couple of them will develop the intuition to handle the rest. The following list provides three examples.
 
 * AsyncPipe
 
 * DatePipe
 
-These two perform simple tasks. Their simplicity is massively beneficial.
+* TitleCasePipe
 
 ##### AsyncPipe
 
@@ -45,6 +45,9 @@ In the example, `potatoSack$` is an Observable pending an upload of potatoes. On
 ##### DatePipe
 
 Formatting date strings takes a fair bit of hacking with the JavaScript `Date` object. The DatePipe provides a powerful way to format dates assuming the given input is a valid time format.
+
+##### TitleCasePipe
+Transforms text to title case. Capitalizes the first letter of each word, and transforms the rest of the word to lower case. Words are delimited by any whitespace character, such as a space, tab, or line-feed character.
 
 ```typescript
 // example.component.ts
@@ -133,7 +136,46 @@ export class AppComponent {
 <h6>{{ someValue | example:‘lowercase’ }}</h6>
 ```
 
-Understanding the above example means you understand Angular pipes. There is only one more topic left to discuss.
+### Using Pipes in Components or Services
+Other than using pipes in the html template as detailed above, we also can call the pipe programmatically in our components or services.
+
+Consider the `ExamplePipe` created above. To use it in a component, we need to provide it to the `@NgModule` where our component is declared.
+
+```typescript
+// app.module.ts
+import { ExamplePipe } from 'example.pipe';
+
+@NgModule({
+  ...
+  providers: [ExamplePipe],
+  ...
+})
+export class AppModule { }
+```
+
+In our component, we need to inject it into the constructor. Then we simply call the transform method on the pipe and passing in the arguments like so:
+
+```typescript
+// app.component.ts
+import { ExamplePipe } from 'example.pipe';
+
+@Component({
+  templateUrl: 'app.component.html'
+})
+export class AppComponent {
+
+  constructor(private examplePipe:ExamplePipe)
+  someValue:string = "HeLlO WoRlD!";
+  
+  // we can call toUpperCase programmatically to convert the string to uppercase
+  toUpperCase(){
+    this.someValue = this.examplePipe.transform(this.someValue, 'uppercase');
+  }
+  
+}
+```
+
+Understanding the above examples means you understand Angular pipes. There is only one more topic left to discuss.
 
 #### Pure and Impure Pipes
 

@@ -1,7 +1,7 @@
 ---
 title: Issue Tracker
 ---
-## Issue Tracker
+# Issue Tracker
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/information-security-and-quality-assurance-projects/issue-tracker/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
