@@ -3,6 +3,7 @@ id: bad87fee1348bd9aecf08806
 title: Use a CSS Class to Style an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MvDtV'
+forumTopicId: 18337
 ---
 
 ## Description
@@ -36,13 +37,13 @@ Give your <code>h2</code> element the <code>class</code> attribute with a value 
 ```yml
 tests:
   - text: Your <code>h2</code> element should be red.
-    testString: assert($("h2").css("color") === "rgb(255, 0, 0)", 'Your <code>h2</code> element should be red.');
+    testString: assert($("h2").css("color") === "rgb(255, 0, 0)");
   - text: Your <code>h2</code> element should have the class <code>red-text</code>.
-    testString: assert($("h2").hasClass("red-text"), 'Your <code>h2</code> element should have the class <code>red-text</code>.');
+    testString: assert($("h2").hasClass("red-text"));
   - text: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.
-    testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), 'Your stylesheet should declare a <code>red-text</code> class and have its color set to red.');
+    testString: assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g));
   - text: Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.
-    testString: assert($("h2").attr("style") === undefined, 'Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.');
+    testString: assert($("h2").attr("style") === undefined);
 
 ```
 
@@ -141,4 +142,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

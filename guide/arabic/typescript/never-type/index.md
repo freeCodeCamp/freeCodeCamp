@@ -8,19 +8,20 @@ localeTitle: أبدا اكتب
 
 النوع `never` هو نوع فرعي من كل نوع ، ويمكن التنازل عنه. ومع ذلك ، لا يوجد نوع هو نوع فرعي أو يمكن التنازل عنه `never` (باستثناء أبداً نفسه). حتى أي شيء لا يمكن التنازل عنه أبداً.
 
- `// Function returning never must have unreachable end point 
- function error(message: string): never { 
-    throw new Error(message); 
- } 
- 
- // Inferred return type is never 
- function fail() { 
-    return error("Something failed"); 
- } 
- 
- // Function returning never must have unreachable end point 
- function infiniteLoop(): never { 
-    while (true) { 
-    } 
- } 
-`
+```typescript
+// Function returning never must have unreachable end point
+function error(message: string): never {
+    throw new Error(message);
+}
+
+// Inferred return type is never
+function fail() {
+    return error("Something failed");
+}
+
+// Function returning never must have unreachable end point
+function infiniteLoop(): never {
+    while (true) {
+    }
+}
+```

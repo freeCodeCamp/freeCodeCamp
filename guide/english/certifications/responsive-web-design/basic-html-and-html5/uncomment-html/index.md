@@ -1,8 +1,10 @@
 ---
 title: Uncomment HTML
 ---
-## Uncomment HTML
+# Uncomment HTML
 
+---
+## Problem Explanation
 The comment topic is often a bit confusing in the beginning.
 
 Let's look at an example:
@@ -18,7 +20,7 @@ You can use comments in-line too: `<!-- Note about html goes here so you can rem
 
 The only thing to consider is that when you see this set of characters `<!--` everything from there is commented out until you see this `-->`; these are the opening and closing tag of an HTML element!
 
-##### UNCOMMENT
+**UNCOMMENT**
 Uncomment means to take things out from the comment text: to uncomment the h3 element of the following sentence (which is all commented out):
 ```
 <!-- <h1>Comment header</h1> <h3>Comment subtle</h3> <article>I am the text of the comment</article> -->

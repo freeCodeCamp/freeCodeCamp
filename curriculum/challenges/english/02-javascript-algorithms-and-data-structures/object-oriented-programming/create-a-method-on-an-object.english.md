@@ -2,6 +2,7 @@
 id: 587d7dad367417b2b2512b75
 title: Create a Method on an Object
 challengeType: 1
+forumTopicId: 301318
 ---
 
 ## Description
@@ -34,9 +35,9 @@ Using the <code>dog</code> <code>object</code>, give it a method called <code>sa
 ```yml
 tests:
   - text: <code>dog.sayLegs()</code> should be a function.
-    testString: assert(typeof(dog.sayLegs) === 'function', '<code>dog.sayLegs()</code> should be a function.');
+    testString: assert(typeof(dog.sayLegs) === 'function');
   - text: <code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.
-    testString: assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.');
+    testString: assert(dog.sayLegs() === 'This dog has 4 legs.');
 
 ```
 

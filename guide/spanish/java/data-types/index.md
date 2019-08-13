@@ -27,13 +27,13 @@ El tipo de datos de byte es un entero de complemento de dos con signo de 8 bits.
 ```
 Wrapper Class: Byte 
  
- Minimum value: -128 (-2^7) 
+ Valor mínimo: -128 (-2^7) 
  
- Maximum value: 127 (2^7 -1) 
+ Valor máximo: 127 (2^7 -1) 
  
- Default value: 0 
+ Valor por defecto: 0 
  
- Example: byte a = 10 , byte b = -50; 
+ Ejemplo: byte a = 10 , byte b = -50; 
 ```
 
 ### corto:
@@ -42,13 +42,13 @@ El tipo de datos cortos es un entero de complemento de dos bits con signo de 16 
 ```
 Wrapper Class: Short 
  
- Minimum value: -32,768 (-2^15) 
+  Valor mínimo: -32,768 (-2^15) 
  
- Maximum value: 32,767 (2^15 -1) 
+ Valor máximo: 32,767 (2^15 -1) 
  
- Default value: 0. 
+ Valor por defecto: 0. 
  
- Example: short s = 10, short r = -1000; 
+ Ejemplo: short s = 10, short r = -1000; 
 ```
 
 ### En t:
@@ -57,13 +57,13 @@ tipo de datos int es un entero de complemento de dos bits con signo de 32 bits. 
 ```
 Wrapper Class: Integer 
  
- Minimum value: (-2^31) 
+ Valor mínimo: (-2^31) 
  
- Maximum value: (2^31 -1) 
+ Valor máximo: (2^31 -1) 
  
- The default value: 0. 
+ Valor por defecto: 0. 
  
- Example: int a = 50000, int b = -20 
+ Ejemplo: int a = 50000, int b = -20 
 ```
 
 ### largo:
@@ -72,16 +72,16 @@ El tipo de datos largo es un entero de complemento a dos con signo de 64 bits.
 ```
 Wrapper Class: Long 
  
- Minimum value: (-2^63) 
+ Valor mínimo: (-2^63) 
  
- Maximum value: (2^63 -1) 
+ Valor máximo: (2^63 -1) 
  
- Default value: 0L. 
+ Valor por defecto: 0L. 
  
- Example: long a = 100000L, long b = -600000L; 
+ Ejemplo: long a = 100000L, long b = -600000L; 
  
- By default all integer type variable is "int". So long num=600851475143  will give an error. 
- But it can be specified as long by appending the suffix L (or l) 
+ Por defecto, todos los valores de integer type es "int". Entonces, num = 600851475143 dará un error.
+  Pero puede especificarse siempre agregando el sufijo L (o l)
 ```
 
 ## Punto Flotante:
@@ -94,14 +94,14 @@ el tipo de datos flotante es un [punto flotante IEEE 754 de](http://steve.hollas
 ```
 Wrapper Class: Float 
  
- Float is mainly used to save memory in large arrays of floating point numbers. 
+ Float se utiliza principalmente para ahorrar memoria en grandes conjuntos de números de floating point.
  
- Default value: 0.0f. 
+ Valor por defecto: 0.0f. 
  
- Example: float f1 = 24.5f; 
+ Ejemplo: float f1 = 24.5f; 
  
- The default data type of floating-point number is double. So float f = 24.5 will introduce an error. 
- However, we can append the suffix F (or f) to designate the data type as float. 
+ El tipo de datos predeterminado del número de floating point es double. Entonces float f = 24.5 introducirá un error.
+  Sin embargo, podemos agregar el sufijo F (o f) para designar el tipo de datos como float. 
 ```
 
 ### doble:
@@ -110,11 +110,11 @@ El tipo de datos doble es un [punto flotante IEEE 754 de](http://steve.hollasch.
 ```
 Wrapper Class: Double 
  
- This data type is generally used as the default data type for decimal values. 
+ Este tipo de datos se usa generalmente como el tipo de datos predeterminado para valores de decimal. 
  
- Default value: 0.0d. 
+ Valor por defecto: 0.0d. 
  
- Example: double d1 = 123.400778; 
+ Ejemplo: double d1 = 123.400778; 
 ```
 
 ## Personaje:
@@ -123,28 +123,28 @@ Utilizamos este tipo de datos para almacenar caracteres. Esto no es lo mismo que
 ```
 Wrapper Class: Character 
  
- Minimum value: '\u0000' (or 0). 
+ Valor mínimo: '\u0000' (or 0). 
  
- Maximum value: '\uffff' (or 65,535). 
+ Valor máximo: '\uffff' (or 65,535). 
  
- Default value: null ('\u0000'). 
+ Valor por defecto: null ('\u0000'). 
  
- Example: char letterA ='a'; 
+ Ejemplo: char letterA ='a'; 
 ```
 
 ## Booleano
 
 Esto se utiliza para almacenar valores lógicos. Un tipo booleano puede tener un valor de verdadero o falso. Este tipo es generalmente devuelto por los operadores relacionales.
 ```
-There are only two possible values: true and false. 
+Solo hay dos valores posibles: verdadero y falso (true y false). 
  
  Wrapper Class: Boolean 
  
- This data type is used for simple flags that track true/false conditions. 
+ Este tipo de datos se utiliza para indicadores simples que rastrean condiciones de verdadero / falso. 
  
- Default value is false. 
+ El valor de defecto es falso. 
  
- Example: boolean b = true, boolean b1 = 1(this is not possible in java and give incompatible type error), boolean b2; 
+ Ejemplo: boolean b = true, boolean b1 = 1(Esto no es posible en java y da error de tipo incompatible), boolean b2; 
 ```
 
 ## Tipos de datos de referencia:
@@ -168,8 +168,8 @@ public class Box{
  class demo{ 
  
     public static void main(String args[]) { 
-        Box box1 = new Box();                //box1 is the reference variable 
-        char[] arr = new char[10];           //arr is the reference variable 
+        Box box1 = new Box();                //box1 es la variable de referencia
+        char[] arr = new char[10];           //arr es la variable de referencia
     } 
  } 
 ```
@@ -181,18 +181,20 @@ La cadena no es un tipo de datos primitivo, pero le permite almacenar múltiples
 En el ejemplo a continuación, intentamos eliminar todas las letras de la cadena y generarlas:
 
 ```java
-String input = "My birthday is 10 January 1984 and my favorite number is 42"; 
+
+//"Mi cumpleaños es el 10 de Enero 1984 y mi número favorito es 42"
+String input = "My birthday is 10 January 1984 and my favorite number is 42";      
  String output = ""; 
  
  for(int i=0;i<input.length();i++){ 
  
- //if the character at index i on the string is a letter or a space, move on to the next index 
+ //si el carácter en el índice i en la cadena es una letra o un espacio, pase al siguiente índice
  if(Character.isLetter(input.charAt(i)) || input.charAt(i)==' '){ 
  
     continue; 
  } 
  
- output = output + input.charAt(i); //the number is added onto the output 
+ output = output + input.charAt(i); //el número esta incluido en la salida 
  
  } 
  

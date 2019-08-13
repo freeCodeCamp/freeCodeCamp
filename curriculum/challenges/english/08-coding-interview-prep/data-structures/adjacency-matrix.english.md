@@ -2,10 +2,12 @@
 id: 587d8256367417b2b2512c78
 title: Adjacency Matrix
 challengeType: 1
+forumTopicId: 301621
 ---
 
 ## Description
 <section id='description'>
+
 Another way to represent a graph is to put it in an <dfn>adjacency matrix</dfn>.
 An <dfn>adjacency matrix</dfn> is a two-dimensional (2D) array where each nested array has the same number of elements as the outer array. In other words, it is a matrix or grid of numbers, where the numbers represent the edges. Zeros mean there is no edge or relationship.
 <blockquote>    1 2 3<br>   ------<br>1 | 0 1 1<br>2 | 1 0 0<br>3 | 1 0 0</blockquote>
@@ -36,6 +38,7 @@ Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unw
 
 ## Instructions
 <section id='instructions'>
+
 Create an adjacency matrix of an undirected graph with five nodes. This matrix should be in a multi-dimensional array. These five nodes have relationships between the first and fourth node, the first and third node, the third and fifth node, and the fourth and fifth node. All edge weights are one.
 </section>
 
@@ -45,16 +48,15 @@ Create an adjacency matrix of an undirected graph with five nodes. This matrix s
 ```yml
 tests:
   - text: <code>undirectedAdjList</code> should only contain five nodes.
-    testString: assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) , '<code>undirectedAdjList</code> should only contain five nodes.');
+    testString: assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) );
   - text: There should be an edge between the first and fourth node.
-    testString: assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1), 'There should be an edge between the first and fourth node.');
+    testString: assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1));
   - text: There should be an edge between the first and third node.
-    testString: assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1), 'There should be an edge between the first and third node.');
+    testString: assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1));
   - text: There should be an edge between the third and fifth node.
-    testString: assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1), 'There should be an edge between the third and fifth node.');
+    testString: assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1));
   - text: There should be an edge between the fourth and fifth node.
-    testString: assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'There should be an edge between the fourth and fifth node.');
-
+    testString: assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1));
 ```
 
 </section>
@@ -65,22 +67,23 @@ tests:
 <div id='js-seed'>
 
 ```js
-var adjMatUndirected = [
-];
+var adjMatUndirected = [];
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-
 ```js
-var adjMatUndirected = [[0, 0, 1, 1, 0],[0, 0, 0, 0, 0],[1, 0, 0, 0, 1],[1, 0, 0, 0, 1],[0, 0, 1, 1, 0]];
+var adjMatUndirected = [
+  [0, 0, 1, 1, 0],
+  [0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1],
+  [0, 0, 1, 1, 0]
+];
 ```
 
 </section>

@@ -14,21 +14,21 @@ localeTitle: شريط التنقل
 
 هذه هي الشفرة اللازمة لإنشاء شريط تنقل أساسي.
 
- `
-<nav class="navbar navbar-default"> 
-  <div class="container-fluid"> 
-    <div class="navbar-header"> 
-      <a class="navbar-brand" href="#">Site Name</a> 
-    </div> 
-    <ul class="nav navbar-nav"> 
-      <li class="active"><a href="#">Home</a></li> 
-      <li><a href="#">Page 1</a></li> 
-      <li><a href="#">Page 2</a></li> 
-      <li><a href="#">Page 3</a></li> 
-    </ul> 
-  </div> 
- </nav> 
-` 
+```html
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Site Name</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+``` 
 
 #### أنماط Navbar
 
@@ -41,26 +41,26 @@ localeTitle: شريط التنقل
 
 يمكنك تضمين قائمة منسدلة داخل شريط التنقل. تتطلب هذه الميزة تضمين ملف javascript في Bootstrap حتى يعمل.
 
- `
-<li class="dropdown"> 
-  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Drop down 
-    <span class="caret"></span> 
-  </a> 
- <ul class="dropdown-menu"> 
-    <li><a href="#">Item 1</a></li> 
-    <li><a href="#">Item 2</a></li> 
-    <li><a href="#">Item 3</a></li> 
-  </ul> 
- </li> 
-` 
+```html
+<li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Drop down
+    <span class="caret"></span>
+  </a>
+<ul class="dropdown-menu">
+    <li><a href="#">Item 1</a></li>
+    <li><a href="#">Item 2</a></li>
+    <li><a href="#">Item 3</a></li>
+  </ul>
+</li>
+``` 
 
 #### إضافة أزرار إلى شريط التنقل
 
 يمكنك إضافة أزرار على شريط التنقل. تعمل فئات Bootstrap Button الموجودة ولكن ستحتاج إلى تضمين `navbar-btn` class إلى نهاية قائمة الفئة.
 
- `
-<button class="btn navbar-btn">Button</button> 
-` 
+```html
+<button class="btn navbar-btn">Button</button>
+``` 
 
 #### إضافة نماذج إلى navbar
 
@@ -79,65 +79,65 @@ localeTitle: شريط التنقل
 
 في بعض الحالات ، قد ترغب في محاذاة عناصر في شريط التنقل إلى اليمين (على سبيل المثال زر تسجيل الدخول أو التسجيل.). للقيام بذلك ، ستحتاج إلى استخدام فئة `navbar-right` .
 
- `
-<nav class="navbar navbar-default"> 
-  <div class="container-fluid"> 
-    <div class="navbar-header"> 
-      <a class="navbar-brand" href="#">Site Name</a> 
-    </div> 
-    <ul class="nav navbar-nav"> 
-      <li class="active"><a href="#">Home</a></li> 
-      <li><a href="#">Page 1</a></li> 
-      <li><a href="#">Page 2</a></li> 
-      <li><a href="#">Page 3</a></li> 
-    </ul> 
-    <ul class="nav navbar-nav navbar-right"> 
-      <li><a href="#">Action Link #1</a></li> 
-      <li><a href="#">Action Link #2</a></li> 
-    </ul> 
-  </div> 
- </nav> 
-` 
+```html
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Site Name</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Action Link #1</a></li>
+      <li><a href="#">Action Link #2</a></li>
+    </ul>
+  </div>
+</nav>
+``` 
 
 #### عرض شريط التنقل مستقل عن التمرير
 
 في بعض الحالات ، قد ترغب في الاحتفاظ بشريط التنقل في الجزء العلوي أو السفلي من الشاشة بغض النظر عن التمرير. ستحتاج إلى إضافة فئة `navbar-fixed-top` أو `navbar-fixed-bottom` إلى عنصر `<nav>` .
 
- `
-<nav class="navbar navbar-default navbar-fixed-top"> 
-  <div class="container-fluid"> 
-    <div class="navbar-header"> 
-      <a class="navbar-brand" href="#">Site Name</a> 
-    </div> 
-    <ul class="nav navbar-nav"> 
-      <li class="active"><a href="#">Home</a></li> 
-      <li><a href="#">Page 1</a></li> 
-      <li><a href="#">Page 2</a></li> 
-      <li><a href="#">Page 3</a></li> 
-    </ul> 
-  </div> 
- </nav> 
-` 
+```html
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Site Name</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+``` 
 
 #### تصغير شريط التنقل
 
 على شاشة صغيرة (مثل الهاتف أو الجهاز اللوحي) سيشغل شريط التنقل مساحة كبيرة جدًا. لحسن الحظ ، يوجد خيار تجميع شريط التنقل. يمكنك تحقيق ذلك باستخدام المثال التالي.
 
- `
-<nav class="navbar navbar-default"> 
-  <div class="container-fluid"> 
-    <div class="navbar-header"> 
-      <a class="navbar-brand" href="#">Site Name</a> 
-    </div> 
-    <ul class="nav navbar-nav"> 
-      <li class="active"><a href="#">Home</a></li> 
-      <li><a href="#">Page 1</a></li> 
-      <li><a href="#">Page 2</a></li> 
-      <li><a href="#">Page 3</a></li> 
-    </ul> 
-  </div> 
- </nav> 
-` 
+```html
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Site Name</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+``` 
 
 #### أمثلة Navbar
 

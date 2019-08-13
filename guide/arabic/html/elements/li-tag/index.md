@@ -10,21 +10,21 @@ localeTitle: لى العلامة
 
 ### مثال
 
- `
-<body> 
-  <ul> 
-    <li> 
-      <p>I'm a list item</p> 
-    </li> 
-    <li> 
-      <p>I'm a list item too</p> 
-    </li> 
-    <li> 
-      <p>Me three/p> 
-    </li> 
-  </ul> 
- </body> 
-` 
+```html
+<body>
+  <ul>
+    <li>
+      <p>I'm a list item</p>
+    </li>
+    <li>
+      <p>I'm a list item too</p>
+    </li>
+    <li>
+      <p>Me three/p>
+    </li>
+  </ul>
+</body>
+``` 
 
 في قائمة مرتبة ، يظهر `<li>` كبند ذو نقطة نقطية.
 
@@ -42,28 +42,28 @@ localeTitle: لى العلامة
 
 أمثلة:
 
- `
-<!-- In a simple unordered list --> 
- <ul> 
-  <li>First item</li> 
-  <li>Second item</li> 
-  <li>Third item</li> 
- </ul> 
- 
- <!-- In a simple ordered list --> 
- <ol> 
-  <li>First item</li> 
-  <li>Second item</li> 
-  <li>Third item</li> 
- </ol> 
- 
- <!-- In a menu list --> 
- <menu> 
-  <li>Menu item one</li> 
-  <li>Menu item two</li> 
-  <li>Menu item three</li> 
- </menu> 
-` 
+```html
+<!-- In a simple unordered list -->
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ul>
+
+<!-- In a simple ordered list -->
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>
+
+<!-- In a menu list -->
+<menu>
+  <li>Menu item one</li>
+  <li>Menu item two</li>
+  <li>Menu item three</li>
+</menu>
+``` 
 
 ### سمات
 
@@ -81,15 +81,15 @@ localeTitle: لى العلامة
 
 #### مثال
 
- `
-<body> 
-  <ol type="I"> 
-    <li>list item</li> 
-    <li>list item</li> 
-    <li>list item</li> 
-  </ol> 
- </body> 
-` 
+```html
+<body>
+  <ol type="I">
+    <li>list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ol>
+</body>
+``` 
 
 سوف ينتج HTMl أعلاه:
 
@@ -103,15 +103,15 @@ localeTitle: لى العلامة
 
 #### مثال
 
- `
-<body> 
-  <ol> 
-    <li value="4">list item</li> 
-    <li>list item</li> 
-    <li>list item</li> 
-  </ol> 
- </body> 
-` 
+```html
+<body>
+  <ol>
+    <li value="4">list item</li>
+    <li>list item</li>
+    <li>list item</li>
+  </ol>
+</body>
+``` 
 
 سوف ينتج HTML أعلاه:
 
@@ -143,31 +143,31 @@ localeTitle: لى العلامة
 
 1.  البند الثالث
 
- `
-<!-- An unordered list with a nested, ordered list. --> 
- <ul> 
-  <li>First item</li> 
-  <li>Second item  <!-- No closing </li> tag before the nested list --> 
-    <ol> 
-      <li>First sub-item</li> 
-      <li>Second sub-item</li> 
-    </ol> 
-  </li>            <!-- The closing </li> tag comes after the nested list --> 
-  <li>Third item</li> 
- </ul> 
- 
- <!-- An ordered list with a nested, unordered list. --> 
- <ol> 
-  <li>First item</li> 
-  <li>Second item  <!-- No closing </li> tag before the nested list --> 
-    <ul> 
-      <li>First sub-item</li> 
-      <li>Second sub-item</li> 
-    </ul> 
-  </li>            <!-- The closing </li> tag comes after the nested list --> 
-  <li>Third item</li> 
- </ol> 
-` 
+```html
+<!-- An unordered list with a nested, ordered list. -->
+<ul>
+  <li>First item</li>
+  <li>Second item  <!-- No closing </li> tag before the nested list -->
+    <ol>
+      <li>First sub-item</li>
+      <li>Second sub-item</li>
+    </ol>
+  </li>            <!-- The closing </li> tag comes after the nested list -->
+  <li>Third item</li>
+</ul>
+
+<!-- An ordered list with a nested, unordered list. -->
+<ol>
+  <li>First item</li>
+  <li>Second item  <!-- No closing </li> tag before the nested list -->
+    <ul>
+      <li>First sub-item</li>
+      <li>Second sub-item</li>
+    </ul>
+  </li>            <!-- The closing </li> tag comes after the nested list -->
+  <li>Third item</li>
+</ol>
+``` 
 
 #### معلومات اكثر:
 

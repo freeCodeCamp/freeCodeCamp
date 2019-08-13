@@ -4,7 +4,10 @@ localeTitle: gobernadores
 ---
 # Kubernetes
 
-"Kubernetes es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. Agrupa los contenedores que conforman una aplicación en unidades lógicas para una fácil administración y descubrimiento. 1 "
+"Kubernetes es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones en contenedores. Agrupa los contenedores que conforman una aplicación en unidades lógicas para una fácil administración y descubrimiento. <sub>1</sub>."
+
+Kubernetes fue originalmente diseñado por Google Engineers y v1.0 se lanzó el 21 de julio de 2015. Ahora lo mantiene la [Cloud Native Computing Foundation](https://www.cncf.io/).
+
 
 ### Enlaces:
 

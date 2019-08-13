@@ -3,6 +3,7 @@ id: 587d7b7e367417b2b2512b21
 title: Use Multiple Conditional (Ternary) Operators
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cyWJBT4'
+forumTopicId: 301179
 ---
 
 ## Description
@@ -28,6 +29,16 @@ The above function can be re-written using multiple <code>conditional operators<
 
 ```js
 function findGreaterOrEqual(a, b) {
+  return (a === b) ? "a and b are equal" 
+    : (a > b) ? "a is greater" 
+    : "b is greater";
+}
+```
+
+However, this should be used with care as using multiple <code>conditional operators</code> without proper indentation may make your code hard to read. For example:
+
+```js
+function findGreaterOrEqual(a, b) {
   return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
 }
 ```
@@ -45,13 +56,13 @@ Use multiple <code>conditional operators</code> in the <code>checkSign</code> fu
 ```yml
 tests:
   - text: <code>checkSign</code> should use multiple <code>conditional operators</code>
-    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), '<code>checkSign</code> should use multiple <code>conditional operators</code>');
+    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code));
   - text: <code>checkSign(10)</code> should return "positive". Note that capitalization matters
-    testString: assert(checkSign(10) === 'positive', '<code>checkSign(10)</code> should return "positive". Note that capitalization matters');
+    testString: assert(checkSign(10) === 'positive');
   - text: <code>checkSign(-12)</code> should return "negative". Note that capitalization matters
-    testString: assert(checkSign(-12) === 'negative', '<code>checkSign(-12)</code> should return "negative". Note that capitalization matters');
+    testString: assert(checkSign(-12) === 'negative');
   - text: <code>checkSign(0)</code> should return "zero". Note that capitalization matters
-    testString: assert(checkSign(0) === 'zero', '<code>checkSign(0)</code> should return "zero". Note that capitalization matters');
+    testString: assert(checkSign(0) === 'zero');
 
 ```
 
@@ -84,4 +95,5 @@ function checkSign(num) {
   return (num > 0) ? 'positive' : (num < 0) ? 'negative' : 'zero';
 }
 ```
+
 </section>

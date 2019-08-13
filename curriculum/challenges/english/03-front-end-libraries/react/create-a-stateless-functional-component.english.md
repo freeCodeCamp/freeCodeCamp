@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036162
 title: Create a Stateless Functional Component
 challengeType: 6
 isRequired: false
+forumTopicId: 301392
 ---
 
 ## Description
@@ -35,11 +36,11 @@ The code editor has a function called <code>MyComponent</code>. Complete this fu
 ```yml
 tests:
   - text: <code>MyComponent</code> should return JSX.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })(), '<code>MyComponent</code> should return JSX.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.length === 1; })());
   - text: <code>MyComponent</code> should return a <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === 'div' })(), '<code>MyComponent</code> should return a <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.children().type() === 'div' })());
   - text: The <code>div</code> element should contain a string of text.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').text() !== ''; })(), 'The <code>div</code> element should contain a string of text.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').text() !== ''; })());
 
 ```
 

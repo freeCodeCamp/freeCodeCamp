@@ -8,23 +8,24 @@ localeTitle: الدعائم
 
 في React ، يستطيع المكون الفرعي الوصول إلى المعلومات من أحد الوالدين عبر الدعائم:
 
- `// the child Header component receives the text prop and can access it via this.props.text 
- class Header extends Component { 
-  render () { 
-    return ( 
-      <Text>{this.props.text}</Text> 
-    ) 
-  } 
- } 
- 
- class App extends Component { 
-  render () { 
-    return ( 
-      <Header text="Welcome!" /> 
-    ); 
-  } 
- } 
-` 
+```jsx
+// the child Header component receives the text prop and can access it via this.props.text
+class Header extends Component {
+  render () {
+    return (
+      <Text>{this.props.text}</Text>
+    )
+  }
+}
+
+class App extends Component {
+  render () {
+    return (
+      <Header text="Welcome!" />
+    );
+  }
+}
+``` 
 
 هذا أيضا يعمل بنفس الطريقة في المكونات الوظيفية:
 

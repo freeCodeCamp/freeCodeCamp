@@ -114,6 +114,54 @@ kill <pid>
 #### Previewing file
 If you would like to preview a file, type the command `cat <name of document>` and you would be able to preview a text document through the terminal.
 
+### Customizing command prompt
+
+If you'd like to you can change how your command prompt looks.  
+For example, many developers find it useful to view their current version control branch right in the command prompt (we will be accomplishing this).
+
+#### Changing your computer hostname
+In short all you need to do is run the command below, replacing `<new host name>` with whatever you would want to name your computer.
+
+```
+sudo scutil --set HostName <new host name>
+```
+
+*Note*: This can be done natively through macOS settings `System Preferences -> Sharing -> Computer Name`
+
+#### Your bash_profile
+
+To accomplish this you need to alter your **bash profile**.  
+This can be viewed with the following command `cat ~/.bash_profile`.
+
+#### Altering bash_profile
+
+Open `~/.bash_profile` with you favorite editor and add the following:
+
+```
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+export PS1="[\u@\h \W]\$(git_branch)\$ "
+```
+
+Here `git_branch()` is a function to print out the name of the branch.
+
+If you want you can add colors to the command prompt as well!
+
+```
+export PS1="\h \[\033[34m\]\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+```
+
+#### Apply Changes without signing in/out of terminal
+
+`source ~/.bashrc`
+
+- [Change computer hostname](https://knowledge.autodesk.com/search-result/caas/sfdcarticles/sfdcarticles/Setting-the-Mac-hostname-or-computer-name-from-the-terminal.html)
+- [Show git branch in terminal command prompt](https://www.shellhacks.com/show-git-branch-terminal-command-prompt/)
+- [Bash prompt escape sequences](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/bash-prompt-escape-sequences.html)
+- [More bash configurations](https://gist.github.com/justintv/168835)
+
 #### Search your command history as you type
 
 ```control+R```

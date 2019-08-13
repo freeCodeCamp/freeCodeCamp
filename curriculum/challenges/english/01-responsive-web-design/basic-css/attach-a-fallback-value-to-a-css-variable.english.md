@@ -3,6 +3,7 @@ id: 5a9d7286424fe3d0e10cad13
 title: Attach a Fallback value to a CSS Variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c6bDNfp'
+forumTopicId: 301084
 ---
 
 ## Description
@@ -30,9 +31,9 @@ It looks like there is a problem with the variables supplied to the <code>.pengu
 ```yml
 tests:
   - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.
-    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
   - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.
-    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 

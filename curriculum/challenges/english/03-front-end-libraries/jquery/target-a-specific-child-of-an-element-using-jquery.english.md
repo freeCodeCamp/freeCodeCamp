@@ -4,6 +4,7 @@ title: Target a Specific Child of an Element Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 18315
 ---
 
 ## Description
@@ -27,13 +28,13 @@ Make the second child in each of your well elements bounce. You must select the 
 ```yml
 tests:
   - text: The second element in your <code>target</code> elements should bounce.
-    testString: assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"), 'The second element in your <code>target</code> elements should bounce.');
+    testString: assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"));
   - text: Only two elements should bounce.
-    testString: assert($(".animated.bounce").length === 2, 'Only two elements should bounce.');
+    testString: assert($(".animated.bounce").length === 2);
   - text: You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.
-    testString: assert(code.match(/\:nth-child\(/g), 'You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.');
+    testString: assert(code.match(/\:nth-child\(/g));
   - text: Only use jQuery to add these classes to the element.
-    testString: assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\('.target:nth-child\(2\)'\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g), 'Only use jQuery to add these classes to the element.');
+    testString: assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\('.target:nth-child\(2\)'\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g));
 
 ```
 
@@ -130,4 +131,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

@@ -23,6 +23,25 @@ We can send these actions to the store by using
 store.dispatch(action)
 ```
 
+like so
+```javascript 
+store.dispatch({
+ type: ADD_ITEM,
+ text: 'This is the first item'
+})
+```
+In real world apps it is often better to use functions aptly called Action Creators that accept a payload and return the action object, making them reusable.
+```javascript
+function addItem(text) {
+  return {
+    type: ADD_ITEM,
+    text
+  }
+}
+
+store.dispatch(addItem('This is the second item'))
+```
+
 An application can have different sorts of events happening at a time and these actions help describe these events. Without these actions there is no way to change the state of the application. 
 
 ## Action Creators

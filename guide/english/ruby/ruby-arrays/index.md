@@ -33,21 +33,21 @@ mixed_array[2] # true
 You can check how many elements an array has with the `length` method:
 
 ```ruby
-mixed_array.length # 3
+mixed_array.length # 4
 [].length # 0
 ```
 
 You can check the first element of an array with the `first` method:
+
 ```ruby
 mixed_array.first # 5
 ```
 
 You can check the last element of an array with the `last` method:
+
 ```ruby
-mixed_array.last # true
+mixed_array.last # [1,2,3]
 ```
 
-
-
 #### More Information:
-<a href='https://ruby-doc.org/core-2.4.2/Array.html' target='_blank' rel='nofollow'>Ruby array documentation</a>
+[Ruby array documentation](https://ruby-doc.org/core-2.4.2/Array.html)

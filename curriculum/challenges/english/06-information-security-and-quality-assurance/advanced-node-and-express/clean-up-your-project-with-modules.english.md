@@ -2,6 +2,7 @@
 id: 589690e6f9fc0f352b528e6e
 title: Clean Up Your Project with Modules
 challengeType: 2
+forumTopicId: 301549
 ---
 
 ## Description
@@ -36,7 +37,7 @@ Congratulations- you're at the end of this section of Advanced Node and Express 
 ```yml
 tests:
   - text: Modules present
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*("|').\/routes.js("|')/gi, 'You should have required your new files'); assert.match(data, /mongo.connect[^]*routes/gi, 'Your new modules should be called after your connection to the database'); }, xhr => { throw new Error(xhr.statusText); })
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require\s*\(('|")\.\/routes(\.js)?\1\)/gi, 'You should have required your new files'); assert.match(data, /mongo.connect[^]*routes/gi, 'Your new modules should be called after your connection to the database'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
@@ -53,4 +54,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

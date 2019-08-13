@@ -44,18 +44,35 @@ abc1def
 
 Even without explicitly converting `Int` value 1 to `String` object first, the resulting output is still a `String`.
 
-Kotlin also supports String templates (expression that starts with dollar sign $) which are preferred to string concatenation.
+### String templates
 
+String templates are a much easy and nice way of concatenate and generate strings:
 ```kotlin
 var a = 1
 // simple name in template:
-val s1 = "a is $a"
+val s1 = "a is $a" 
+
+println(s1)
 ```
+
+Output:
+```shell
+a is 1
+```
+
+The template also allows the use of functions:
 
 ```kotlin
 a = 2
 // arbitrary expression in template:
 val s2 = "${s1.replace("is", "was")}, but now is $a"
+
+println(s2)
+```
+
+Output:
+```shell
+a was 1, but now is 2
 ```
 
 #### String with Multiple Lines

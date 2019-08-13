@@ -3,6 +3,7 @@ id: 56bbb991ad1ed5201cd392d0
 title: Build JavaScript Objects
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cWGkbtd'
+forumTopicId: 16769
 ---
 
 ## Description
@@ -46,15 +47,15 @@ You can set these object properties to whatever values you want, as long <code>"
 ```yml
 tests:
   - text: <code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.
-    testString: assert((function(z){if(z.hasOwnProperty("name") && z.name !== undefined && typeof z.name === "string"){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>name</code> and it should be a <code>string</code>.');
+    testString: assert((function(z){if(z.hasOwnProperty("name") && z.name !== undefined && typeof z.name === "string"){return true;}else{return false;}})(myDog));
   - text: <code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.
-    testString: assert((function(z){if(z.hasOwnProperty("legs") && z.legs !== undefined && typeof z.legs === "number"){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>legs</code> and it should be a <code>number</code>.');
+    testString: assert((function(z){if(z.hasOwnProperty("legs") && z.legs !== undefined && typeof z.legs === "number"){return true;}else{return false;}})(myDog));
   - text: <code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.
-    testString: assert((function(z){if(z.hasOwnProperty("tails") && z.tails !== undefined && typeof z.tails === "number"){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>tails</code> and it should be a <code>number</code>.');
+    testString: assert((function(z){if(z.hasOwnProperty("tails") && z.tails !== undefined && typeof z.tails === "number"){return true;}else{return false;}})(myDog));
   - text: <code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.
-    testString: assert((function(z){if(z.hasOwnProperty("friends") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog), '<code>myDog</code> should contain the property <code>friends</code> and it should be an <code>array</code>.');
+    testString: assert((function(z){if(z.hasOwnProperty("friends") && z.friends !== undefined && Array.isArray(z.friends)){return true;}else{return false;}})(myDog));
   - text: <code>myDog</code> should only contain all the given properties.
-    testString: assert((function(z){return Object.keys(z).length === 4;})(myDog), '<code>myDog</code> should only contain all the given properties.');
+    testString: assert((function(z){return Object.keys(z).length === 4;})(myDog));
 
 ```
 

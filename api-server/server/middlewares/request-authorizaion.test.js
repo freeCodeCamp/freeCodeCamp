@@ -105,7 +105,7 @@ describe('request-authorization', () => {
         const next = sinon.spy();
 
         expect(() => requestAuthorization(req, res, next)).toThrowError(
-          'Access token is no longer vaild'
+          'Access token is no longer valid'
         );
         expect(next.called).toBe(false);
       });
@@ -192,7 +192,7 @@ describe('request-authorization', () => {
         const next = sinon.spy();
 
         expect(() => requestAuthorization(req, res, next)).toThrowError(
-          'Access token is no longer vaild'
+          'Access token is no longer valid'
         );
         expect(next.called).toBe(false);
       });

@@ -2,6 +2,7 @@
 id: 587d7fb4367417b2b2512bff
 title: Add a Version to Your package.json
 challengeType: 2
+forumTopicId: 301525
 ---
 
 ## Description
@@ -42,4 +43,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

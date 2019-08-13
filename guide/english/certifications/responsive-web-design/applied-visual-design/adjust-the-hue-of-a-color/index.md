@@ -1,7 +1,7 @@
 ---
 title: Adjust the Hue of a Color
 ---
-## Adjust the Hue of a Color
+# Adjust the Hue of a Color
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/adjust-the-hue-of-a-color/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

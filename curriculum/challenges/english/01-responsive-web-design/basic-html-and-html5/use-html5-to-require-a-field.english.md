@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedc08830
 title: Use HTML5 to Require a Field
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/cMd4EcQ'
+forumTopicId: 18360
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Then try to submit the form without inputting any text. See how your HTML5 form 
 ```yml
 tests:
   - text: Your text <code>input</code> element should have the <code>required</code> attribute.
-    testString: assert($("input").prop("required"), 'Your text <code>input</code> element should have the <code>required</code> attribute.');
+    testString: assert($("input").prop("required"));
 
 ```
 
@@ -94,4 +95,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

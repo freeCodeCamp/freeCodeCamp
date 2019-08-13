@@ -2,6 +2,7 @@
 id: 587d7b88367417b2b2512b46
 title: Set Default Parameters for Your Functions
 challengeType: 1
+forumTopicId: 301209
 ---
 
 ## Description
@@ -65,4 +66,5 @@ console.log(increment(5)); // returns 6
 ```js
 const increment = (number, value = 1) => number + value;
 ```
+
 </section>

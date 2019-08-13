@@ -2,6 +2,7 @@
 id: bad87fee1348bd9aed508826
 title: Clone an Element Using jQuery
 challengeType: 6
+forumTopicId: 16780
 ---
 
 ## Description
@@ -25,11 +26,11 @@ Clone your <code>target5</code> element and append it to your <code>left-well</c
 ```yml
 tests:
   - text: Your <code>target5</code> element should be inside your <code>right-well</code>.
-    testString: assert($("#right-well").children("#target5").length > 0, 'Your <code>target5</code> element should be inside your <code>right-well</code>.');
+    testString: assert($("#right-well").children("#target5").length > 0);
   - text: A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.
-    testString: assert($("#left-well").children("#target5").length > 0, 'A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.');
+    testString: assert($("#left-well").children("#target5").length > 0);
   - text: Only use jQuery to move these elements.
-    testString: assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');
+    testString: assert(!code.match(/class.*animated/g));
 
 ```
 
@@ -120,4 +121,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

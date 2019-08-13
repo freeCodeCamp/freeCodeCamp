@@ -1,11 +1,13 @@
 ---
 title: Map State to Props
 ---
-## Map State to Props
+# Map State to Props
 
-### Solution
-<details>
-  <summary>Spoiler!</summary>
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```jsx
 const state = [];
@@ -17,5 +19,4 @@ const mapStateToProps = (state)=>{
   }
 }
 ```
-
 </details>

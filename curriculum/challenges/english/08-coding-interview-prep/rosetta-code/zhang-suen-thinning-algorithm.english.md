@@ -2,12 +2,16 @@
 title: Zhang-Suen thinning algorithm
 id: 594810f028c0303b75339ad7
 challengeType: 5
+forumTopicId: 302347
 ---
 
 ## Description
 <section id='description'>
+
 This is an algorithm used to thin a black and white i.e. one bit per pixel images.
 For example, with an input image of:
+<!-- TODO write fully in markdown>
+<!-- markdownlint-disable -->
 <pre>
  #################                   #############
  ##################               ################
@@ -50,17 +54,17 @@ It produces the thinned output:
 Assume black pixels are one and white pixels zero, and that the input image is a rectangular N by M array of ones and zeroes.
 The algorithm operates on all black pixels P1 that can have eight neighbours. The neighbours are, in order, arranged as:
 
-<table border="3">	
-  <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>	
-  <tr><td style="text-align: center;">P8</td><td style="text-align: center;"><b>P1</b></td><td style="text-align: center;">P4</td></tr>	
-  <tr><td style="text-align: center;">P7</td><td style="text-align: center;">P6</td><td style="text-align: center;">P5</td></tr>	
+<table border="3">
+  <tr><td style="text-align: center;">P9</td><td style="text-align: center;">P2</td><td style="text-align: center;">P3</td></tr>
+  <tr><td style="text-align: center;">P8</td><td style="text-align: center;"><strong>P1</strong></td><td style="text-align: center;">P4</td></tr>
+  <tr><td style="text-align: center;">P7</td><td style="text-align: center;">P6</td><td style="text-align: center;">P5</td></tr>
 </table>
 
 Obviously the boundary pixels of the image cannot have the full eight neighbours.
-  <ul>
-    <li>Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).</li>
-    <li>Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )</li>
-  </ul>
+<ul>
+  <li>Define $A(P1)$ = the number of transitions from white to black, (0 -> 1) in the sequence P2, P3, P4, P5, P6, P7, P8, P9, P2. (Note the extra P2 at the end - it is circular).</li>
+  <li>Define $B(P1)$ = the number of black pixel neighbours of P1. ( = sum(P2 .. P9) )</li>
+</ul>
 
 <h3>Step 1:</h3>
 All pixels are tested and pixels satisfying all the following conditions (simultaneously) are just noted at this stage.
@@ -68,8 +72,8 @@ All pixels are tested and pixels satisfying all the following conditions (simult
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
     <li>$A(P1) = 1$</li>
-    <li>At least one of <b>P2, P4 and P6</b> is white</li>
-    <li>At least one of <b>P4, P6 and P8</b> is white</li>
+    <li>At least one of <strong>P2, P4 and P6</strong> is white</li>
+    <li>At least one of <strong>P4, P6 and P8</strong> is white</li>
   </ol>
 After iterating over the image and collecting all the pixels satisfying all step 1 conditions, all these condition satisfying pixels are set to white.
 
@@ -79,8 +83,8 @@ All pixels are again tested and pixels satisfying all the following conditions a
     <li>The pixel is black and has eight neighbours</li>
     <li>$2 <= B(P1) <= 6$</li>
     <li>$A(P1) = 1$</li>
-    <li>At least one of <b>P2, P4 and P8</b> is white</li>
-    <li>At least one of <b>P2, P6 and P8</b> is white</li>
+    <li>At least one of <strong>P2, P4 and P8</strong> is white</li>
+    <li>At least one of <strong>P2, P6 and P8</strong> is white</li>
   </ol>
 After iterating over the image and collecting all the pixels satisfying all step 2 conditions, all these condition satisfying pixels are again set to white.
 <h3>Iteration:</h3>
@@ -98,13 +102,13 @@ Write a routine to perform Zhang-Suen thinning on the provided image matrix.
 ```yml
 tests:
   - text: <code>thinImage</code> must be a function
-    testString: assert.equal(typeof thinImage, 'function', '<code>thinImage</code> must be a function');
+    testString: assert.equal(typeof thinImage, 'function');
   - text: <code>thinImage</code> must return an array
-    testString: assert(Array.isArray(result), '<code>thinImage</code> must return an array');
+    testString: assert(Array.isArray(result));
   - text: <code>thinImage</code> must return an array of strings
-    testString: assert.equal(typeof result[0], 'string', '<code>thinImage</code> must return an array of strings');
+    testString: assert.equal(typeof result[0], 'string');
   - text: <code>thinImage</code> must return an array of strings
-    testString: assert.deepEqual(result, expected, '<code>thinImage</code> must return an array of strings');
+    testString: assert.deepEqual(result, expected);
 
 ```
 

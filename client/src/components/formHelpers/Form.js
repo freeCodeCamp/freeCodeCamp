@@ -2,7 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { reduxForm } from 'redux-form';
 
-import { FormFields, BlockSaveButton, BlockSaveWrapper } from './';
+import {
+  FormFields,
+  BlockSaveButton,
+  BlockSaveWrapper,
+  formatUrlValues
+} from './';
 
 const propTypes = {
   buttonText: PropTypes.string,
@@ -34,6 +39,7 @@ export function DynamicForm({
   fields,
   handleSubmit,
   fields: {
+    // eslint-disable-next-line react/prop-types
     _meta: { allPristine }
   },
 
@@ -48,7 +54,9 @@ export function DynamicForm({
   return (
     <form
       id={`dynamic-${id}`}
-      onSubmit={handleSubmit(submit)}
+      onSubmit={handleSubmit((values, ...args) =>
+        submit(formatUrlValues(values, options), ...args)
+      )}
       style={{ width: '100%' }}
     >
       <FormFields

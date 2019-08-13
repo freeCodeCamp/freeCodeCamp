@@ -48,7 +48,6 @@ localeTitle: 实施快速排序
  } 
 ```
 
-*   [运行代码](https://repl.it/@ezioda004/Quick-Sort)
 
 ### 参考：
 

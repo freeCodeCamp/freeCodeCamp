@@ -2,6 +2,7 @@
 id: 5900f4671000cf542c50ff79
 challengeType: 5
 title: 'Problem 249: Prime Subset Sums'
+forumTopicId: 301896
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Enter the rightmost 16 digits as your answer.
 ```yml
 tests:
   - text: <code>euler249()</code> should return 9275262564250418.
-    testString: assert.strictEqual(euler249(), 9275262564250418, '<code>euler249()</code> should return 9275262564250418.');
+    testString: assert.strictEqual(euler249(), 9275262564250418);
 
 ```
 
@@ -54,4 +55,5 @@ euler249();
 ```js
 // solution required
 ```
+
 </section>

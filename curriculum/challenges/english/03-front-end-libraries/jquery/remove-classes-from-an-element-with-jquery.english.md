@@ -4,6 +4,7 @@ title: Remove Classes from an Element with jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+forumTopicId: 18264
 ---
 
 ## Description
@@ -25,11 +26,11 @@ Let's remove the <code>btn-default</code> class from all of our <code>button</co
 ```yml
 tests:
   - text: Remove the <code>btn-default</code> class from all of your <code>button</code> elements.
-    testString: assert($(".btn-default").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.');
+    testString: assert($(".btn-default").length === 0);
   - text: Only use jQuery to remove this class from the element.
-    testString: assert(code.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.');
+    testString: assert(code.match(/btn btn-default/g));
   - text: Only remove the <code>btn-default</code> class.
-    testString: assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*('|")\s*btn-default\s*('|")[\s\v]*\)/gm), 'Only remove the <code>btn-default</code> class.');
+    testString: assert(code.match(/\.[\v\s]*removeClass[\s\v]*\([\s\v]*('|")\s*btn-default\s*('|")[\s\v]*\)/gm));
 
 ```
 
@@ -118,4 +119,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

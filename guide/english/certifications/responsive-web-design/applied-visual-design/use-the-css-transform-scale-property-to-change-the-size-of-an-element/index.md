@@ -1,7 +1,13 @@
 ---
 title: Use the CSS Transform scale Property to Change the Size of an Element
 ---
-## Use the CSS Transform scale Property to Change the Size of an Element
+# Use the CSS Transform scale Property to Change the Size of an Element
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <style>
@@ -31,3 +37,5 @@ title: Use the CSS Transform scale Property to Change the Size of an Element
 <div class="ball" id= "ball1"></div>
 <div class="ball" id= "ball2"></div>
 ```
+
+</details>

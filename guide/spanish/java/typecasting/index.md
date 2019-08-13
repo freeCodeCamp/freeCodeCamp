@@ -1,7 +1,8 @@
 ---
 title: Typecasting
 localeTitle: Encasillado
----## Encasillado
+---
+## Encasillado
 
 La conversión de un tipo de datos a otro tipo de datos se conoce como conversión de tipos. Ya que Java es un lenguaje de programación orientado a objetos y es compatible con **herencia** y **polimorfismo** . Es fácil que la variable de referencia de súper clase apunte al objeto de subclase.
 
@@ -13,9 +14,9 @@ Java, el casting de tipos se clasifica en dos tipos.
 
 **_1\. Typecasting implícito_** Aquí, la conversión automática de tipos tiene lugar cuando los dos tipos son compatibles el tipo de destino es más grande que el tipo de origen. p.ej. \`\` \`java int i = 100; larga l = i; // no se requiere conversión de tipo explícito float f = l; // no se requiere conversión de tipo explícito
 ```
-***2.  Explicit Typecasting*** 
- When we assign a larger type value to a variable of smaller type, then we need to perform explicit type casting. 
- eg. 
+***2.  Tipo explícito de Casting*** 
+ Cuando asignamos un valor de tipo más grande a una variable de tipo más pequeño, entonces debemos hacer tipo explícito de casting.
+  p.ej.
 ```
 
 Java doble d = 100.04; largo l = (largo) d; // Tipo explícito de casting requerido int i = (int) l; // Tipo explícito de casting requerido \`\` \`

@@ -41,8 +41,6 @@ Reasignar los valores de los `const` variables `s` utilizando diferentes de asig
     editInPlace(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://codepen.io/dylantyates/pen/djoVjW)
-
 # Explicación del código:
 
 Intentar reasignar una variable `const` solo lectura generará un error, pero al usar varios elementos de asignación puede acceder y cambiar el valor de una matriz como lo haría con `let` o `var` .

@@ -2,6 +2,7 @@
 id: 587d7fb5367417b2b2512c01
 title: Manage npm Dependencies By Understanding Semantic Versioning
 challengeType: 2
+forumTopicId: 301529
 ---
 
 ## Description
@@ -49,4 +50,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

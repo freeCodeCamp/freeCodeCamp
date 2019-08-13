@@ -20,3 +20,19 @@ Some advantages of using Joomla!:
 [Joomla Documentation: online collaborative community manual](https://docs.joomla.org/)
 
 [Joomla! Developers Portal](https://docs.joomla.org/Portal:Developers)
+
+### Installation 
+
+#### Arch Linux 
+1. Download Joomla! from https://downloads.joomla.org/
+2. Extract archive file
+3. Move the archive file to /srv/http
+4. For **DEVELOPMENT** purposes, it is recommended to set file permissions of the Joomla! directory to 777. Note that the permission change is strictly for development purposes only. Execute the following command in the terminal. Remember to change the text within <> according to your Joomla! folder name:
+```
+
+sudo chmod -R 777 /srv/http/<insert Joomla! folder name here>
+```
+
+5. Open a browser
+6. Navigate to localhost/<insert Joomla! folder name here>
+7. Follow the graphical install process and you're all set.

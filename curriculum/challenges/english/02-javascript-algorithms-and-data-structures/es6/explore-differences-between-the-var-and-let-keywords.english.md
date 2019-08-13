@@ -2,6 +2,7 @@
 id: 587d7b87367417b2b2512b3f
 title: Explore Differences Between the var and let Keywords
 challengeType: 1
+forumTopicId: 301202
 ---
 
 ## Description
@@ -48,11 +49,11 @@ Update the code so it only uses the <code>let</code> keyword.
 ```yml
 tests:
   - text: <code>var</code> does not exist in code.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g),'<code>var</code> does not exist in code.');
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
   - text: <code>catName</code> should be <code>Oliver</code>.
-    testString: assert(catName === "Oliver", '<code>catName</code> should be <code>Oliver</code>.');
+    testString: assert(catName === "Oliver");
   - text: <code>quote</code> should be <code>"Oliver says Meow!"</code>
-    testString: assert(quote === "Oliver says Meow!", '<code>quote</code> should be <code>"Oliver says Meow!"</code>');
+    testString: assert(quote === "Oliver says Meow!");
 
 ```
 
@@ -96,4 +97,5 @@ function catTalk() {
 }
 catTalk();
 ```
+
 </section>

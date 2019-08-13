@@ -8,16 +8,16 @@ localeTitle: إنشاء خط أفقي باستخدام عنصر hr
 
 يستخدم هذا الدرس علامة `hr` لفصل عنوان ومحتوى "البطاقة". إذن كيف يمكنك إنشاء عنصر `hr` ؟
 
- `
-<!-- It's this easy --> 
- <hr> 
-` 
+```html
+<!-- It's this easy -->
+<hr>
+``` 
 
 هذا العنصر مغلق ذاتيًا ، ولكن يجب أن تضيف علامة إغلاق صريحة لكي تكون وديًا للمحللات والألعاب.
 
- `
-<hr /> 
-` 
+```html
+<hr />
+``` 
 
 أيًا كان التنسيق الذي تختاره ، سيؤدي إلى إنشاء خط أفقي كما في [هذا الدرس](https://learn.freecodecamp.org/responsive-web-design/applied-visual-design/create-a-horizontal-line-using-the-hr-element/) على [freeCodeCamp](https://www.freecodecamp.org/) . في ما يلي لقطة شاشة من هذا الدرس تظهر عنصر `hr` مضمّن في div.
 

@@ -106,7 +106,6 @@ Devuelve el inventario completado en orden alfabético.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLok/0)
 
 ### Explicación del código:
 
@@ -192,7 +191,6 @@ Devuelve el inventario completado en orden alfabético.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLol/0)
 
 ### Explicación del código:
 
@@ -268,7 +266,6 @@ Devuelve el inventario completado en orden alfabético.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/MQvv/latest)
 
 ### Explicación del código:
 

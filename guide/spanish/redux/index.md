@@ -26,16 +26,6 @@ createStore()
 
 Donde creas la tienda que tendrá todo tu estado.
 
-### REGLA 3 (Voy a mostrar la regla 3 primero, ya que tendrá más sentido)
-
-#### El estado solo se puede cambiar mediante una función pura, también conocida como un reductor, de modo que para crear esta conexión, pasaremos nuestro reductor a createStore () de esta forma
-
-```js
-var store = createStore(reducer) 
-```
-
-Se vuelve más complicado cuando tiene más reductores, pero en el núcleo, la tienda ahora tiene un reductor adjunto.
-
 ### REGLA 2
 
 #### Una vez que tenemos una tienda que se crea con store = createStore (reductor). La nueva tienda que creamos tiene un método llamado despacho. ¡Recuerde que en la regla 2, la única forma en que podemos cambiar el estado es despachando una acción!
@@ -58,6 +48,16 @@ createStore = (reducer) => {
   return {dispatch} 
  } 
 ```
+
+### REGLA 3 (Voy a mostrar la regla 3 primero, ya que tendrá más sentido)
+
+#### El estado solo se puede cambiar mediante una función pura, también conocida como un reductor, de modo que para crear esta conexión, pasaremos nuestro reductor a createStore () de esta forma
+
+```js
+var store = createStore(reducer) 
+```
+
+Se vuelve más complicado cuando tiene más reductores, pero en el núcleo, la tienda ahora tiene un reductor adjunto.
 
 Vea cómo pasamos un reductor a createStore y se establece en nuestro método de envío; y cuando llamamos al método de despacho, toma una acción y establece un nuevo estado en función de lo que devolverá el reductor.
 

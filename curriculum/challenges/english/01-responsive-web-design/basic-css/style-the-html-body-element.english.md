@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08736
 title: Style the HTML Body Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB77PHW'
+forumTopicId: 18313
 ---
 
 ## Description
@@ -30,11 +31,11 @@ body {
 ```yml
 tests:
   - text: Give your <code>body</code> element the <code>background-color</code> of black.
-    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)", 'Give your <code>body</code> element the <code>background-color</code> of black.');
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
   - text: Make sure your CSS rule is properly formatted with both opening and closing curly brackets.
-    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), 'Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
   - text: Make sure your CSS rule ends with a semi-colon.
-    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i), 'Make sure your CSS rule ends with a semi-colon.');
+    testString: assert(code.match(/<style>\s*body\s*\{\s*background.*\s*:\s*.*;\s*\}\s*<\/style>/i));
 
 ```
 
@@ -67,4 +68,5 @@ body {
 }
 </style>
 ```
+
 </section>

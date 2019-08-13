@@ -1,8 +1,8 @@
 ---
 title: JavaScript
-localeTitle: JavaScript
+localeTitle: JavaScript的简介
 ---
-## JavaScript
+## JavaScript的简介
 
 JavaScript是地球上使用最广泛的脚本语言。它拥有任何编程语言中最大的图书馆生态系统。
 
@@ -18,7 +18,7 @@ JavaScript的官方名称是在标准[ECMA-262](https://www.ecma-international.o
 
 Mozilla的SpiderMonkey是有史以来第一个用于Mozilla Firefox的JavaScript引擎。 V8，谷歌的JavaScript引擎，用于谷歌浏览器。
 
-Google Apps脚本，一个基于云的/服务器端解释器，提供对Google Apps服务和文档的程序化“宏观”控制。
+Google Apps脚本，一个基于云端/服务器端的解释器，提供对Google Apps服务和文档的程序化“宏观”控制。
 
 Node.js，构建于V8之上，这个平台使服务器端应用程序能够用JavaScript编写。
 
@@ -32,6 +32,4 @@ WebKit（Chromium项目除外）实现了JavaScriptCore引擎。
 
 ## JavaScript框架
 
-
 最常用的JavaScript框架是React JS，Angular JS，Vue.js, Create JS，jQuery，nodeJS等。 有关详细信息请点击此[链接](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/)
-

@@ -2,6 +2,7 @@
 id: 587d7b8f367417b2b2512b63
 title: Use the filter Method to Extract Data from an Array
 challengeType: 1
+forumTopicId: 18179
 ---
 
 ## Description
@@ -21,13 +22,13 @@ The variable <code>watchList</code> holds an array of objects with information o
 ```yml
 tests:
   - text: The <code>watchList</code> variable should not change.
-    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", 'The <code>watchList</code> variable should not change.');
+    testString: assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron");
   - text: Your code should use the <code>filter</code> method.
-    testString: assert(code.match(/\.filter/g), 'Your code should use the <code>filter</code> method.');
+    testString: assert(code.match(/\.filter/g));
   - text: Your code should not use a <code>for</code> loop.
-    testString: assert(!code.match(/for\s*?\(.+?\)/g), 'Your code should not use a <code>for</code> loop.');
+    testString: assert(!code.match(/for\s*?\(.+?\)/g));
   - text: '<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'
-    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}], ''<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'');'
+    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]);'
 
 ```
 
@@ -289,4 +290,5 @@ var watchList = [
 let filteredList = watchList.filter(e => e.imdbRating >= 8).map( ({Title: title, imdbRating: rating}) => ({title, rating}) );
 // Add your code above this line
 ```
+
 </section>

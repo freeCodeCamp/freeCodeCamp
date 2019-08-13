@@ -2,6 +2,7 @@
 id: 587d7fad367417b2b2512bdf
 title: Add Axes to a Visualization
 challengeType: 6
+forumTopicId: 301472
 ---
 
 ## Description
@@ -37,11 +38,11 @@ The scatter plot now has an x-axis. Create a y-axis in a variable named <code>yA
 ```yml
 tests:
   - text: Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.
-    testString: assert(code.match(/\.axisLeft\(yScale\)/g), 'Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.');
+    testString: assert(code.match(/\.axisLeft\(yScale\)/g));
   - text: The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).
-    testString: assert($('g').eq(10).attr('transform').match(/translate\(60\s*?,\s*?0\)/g), 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).');
+    testString: assert($('g').eq(10).attr('transform').match(/translate\(60\s*?,\s*?0\)/g));
   - text: Your code should call the <code>yAxis</code>.
-    testString: assert(code.match(/\.call\(\s*yAxis\s*\)/g), 'Your code should call the <code>yAxis</code>.');
+    testString: assert(code.match(/\.call\(\s*yAxis\s*\)/g));
 
 ```
 
@@ -132,4 +133,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

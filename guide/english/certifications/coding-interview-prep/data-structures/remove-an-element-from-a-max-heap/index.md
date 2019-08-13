@@ -1,7 +1,7 @@
 ---
 title: Remove an Element from a Max Heap
 ---
-## Remove an Element from a Max Heap
+# Remove an Element from a Max Heap
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/remove-an-element-from-a-max-heap/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

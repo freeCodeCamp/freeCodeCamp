@@ -71,6 +71,13 @@ This is an example of how you can add a TableView to a Basic View Controller.
           return data.count
       }
   }
+  //12
+  extension ViewController: UITableViewDelegate {
+  //13
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //14
+    }
+}
 ```
 1. Define the outlet for our tableView
 2. Define the data that we'll be loading into our tableView
@@ -83,3 +90,6 @@ This is an example of how you can add a TableView to a Basic View Controller.
 9. Return the size of our data array
 10. Set the tableView's dataSource to self when the view loads
 11. register the tableView's cell
+12. Adds extension to ViewController class that conforms to UITableViewDelegate
+13. Implement UITableViewDelegate stub for method didSelectRowAt
+14. Add action when appropriate cell is selected

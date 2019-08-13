@@ -1,12 +1,14 @@
 <table>
     <tr>
-        <td> 此指南可阅读的语言版本 </td>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
-        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> Русский </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
@@ -16,7 +18,7 @@
 
 freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很感谢与欢迎您的贡献。
 
-我们严格执行[“行为准则”]（https://www.freecodecamp.org/code-of-conduct）。请您花一点时间阅读它。它只有196个字。
+我们严格执行[“行为准则”](https://www.freecodecamp.org/code-of-conduct)。请您花一点时间阅读它。它只有196个字。
 
 祝您贡献愉快🎉！
 
@@ -30,7 +32,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 3. 帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
 
-##贡献予开源代码库
+## 贡献予开源代码库
 
 我们有数以千计的[编码挑战](https://learn.freecodecamp.org)和[指南文章](https://guide.freecodecamp.org)集中在这个庞大的开源代码库中。
 
@@ -38,11 +40,11 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 - [📝 研究，编写和更新我们的指南文章](#研究编写和更新我们的指南文章)
 
-- [💻 创建，更新编码挑战和修复其中的错误](创建更新编码挑战和修复其中的错误)
+- [💻 创建，更新编码挑战和修复其中的错误](#创建更新编码挑战和修复其中的错误)
 
 - [🌐 翻译指南文章和编码挑战](#翻译指南文章和编码挑战)
 
-- [🛠 帮助我们修复freeCodeCamp.org学习平台中的错误](#帮助我们修复freeCodeCamp.org学习平台中的错误)
+- [🛠 帮助我们修复freeCodeCamp.org学习平台中的错误](#帮助我们修复freecodecamporg学习平台中的错误)
 
 ### 研究，编写和更新我们的指南文章
 
@@ -56,11 +58,11 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 我们欢迎您撰写这些文章的帮助。作为作者你不必是一个主题的专家 - 整个指南是开源的，所以即使你犯了错误，另一个贡献者最终会纠正它。
 
-您可以在我们的[指南网站]（https://www.freecodecamp.org/guide）上找到一个“存根文章”，写下您的文章，然后建立pull request以替换存根文章。 [pull request]（https://help.github.com/articles/about-pull-requests/）是您建议更改的方式。它让其他人了解您的更改，审核并采用它们。
+您可以在我们的[指南网站](https://www.freecodecamp.org/guide)上找到一个“存根文章”，写下您的文章，然后建立pull request以替换存根文章。 [pull request](https://help.github.com/articles/about-pull-requests/)是您建议更改的方式。它让其他人了解您的更改，审核并采用它们。
 
 如果您找不到关于您想要撰写的主题的存根，则可以开一个PR，创建有关存根并包含您的草稿文章。
 
-如果您想帮助改进指南文章，请参阅[如何编辑指南文章]（/docs/how-to-work-on-guide-articles.md）。
+如果您想帮助改进指南文章，请参阅[如何编辑指南文章](/docs/chinese/how-to-work-on-guide-articles.md)。
 
 ### 创建，更新编码挑战和修复其中的错误
 
@@ -100,7 +102,7 @@ freeCodeCamp.org的存在是因为像你这样的数千名志愿者。我们很�
 
 如果您对于以上相关问有任何疑问，请在相关的主题上向我们提问，我们将很乐意的为您澄清。您可以联系我们的平台开发团队中的Mrugesh Mohapatra [`@isedadead`](https://github.com/raisedadead) 或Stuart Taylor [`@bouncey`](https://github.com/bouncey) 为您提供帮助。
 
-如果您想帮助我们改进代码库，请参阅[如何在本地启动freeCodeCamp](/docs/how-to-setup-freecodecamp-locally.md)。
+如果您想帮助我们改进代码库，请参阅[如何在本地启动freeCodeCamp](/docs/chinese/how-to-setup-freecodecamp-locally.md)。
 
 ## 常见的疑问
 

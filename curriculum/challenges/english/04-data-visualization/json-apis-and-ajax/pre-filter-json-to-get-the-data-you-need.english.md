@@ -2,6 +2,7 @@
 id: 587d7fae367417b2b2512be7
 title: Pre-filter JSON to Get the Data You Need
 challengeType: 6
+forumTopicId: 18257
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Add code to <code>filter</code> the json data to remove the cat with the "id" va
 ```yml
 tests:
   - text: Your code should use the <code>filter</code> method.
-    testString: assert(code.match(/json\.filter/g), 'Your code should use the <code>filter</code> method.');
+    testString: assert(code.match(/json\.filter/g));
 
 ```
 
@@ -115,4 +116,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

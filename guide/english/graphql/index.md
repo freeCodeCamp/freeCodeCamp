@@ -18,7 +18,30 @@ npm install graphql --save
 ```
 
 ## Queries
-<!-- This section is a stub.  Consider contributing by forking this repository and submitting a Pull Request with your changes! -->
+
+A query is the shape of the request that get back the exact data you asked for, not the whole object like in REST approach. You can write your query like that:-
+
+```
+{
+  hero {
+    name
+  }
+}
+```
+
+and then the output is like that:-
+
+```
+{
+  "data": {
+    "hero": {
+      "name": "R2-D2"
+    }
+  }
+}
+```
+
+note that the returned data has a special structure which starts with "data" and it has the same structure as the request.
 
 ## Mutations
 <!-- This section is a stub.  Consider contributing by forking this repository and submitting a Pull Request with your changes! -->

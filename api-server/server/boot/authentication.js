@@ -53,7 +53,7 @@ module.exports = function enableAuthentication(app) {
       if (err) {
         throw wrapHandledError(new Error('could not destroy session'), {
           type: 'info',
-          message: 'Oops, something is not right.',
+          message: 'We could not log you out, please try again in a moment.',
           redirectTo: homeLocation
         });
       }

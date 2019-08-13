@@ -3,6 +3,7 @@ id: 587d78a7367417b2b2512ae0
 title: Use CSS Animation to Change the Hover State of a Button
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4vZAa'
+forumTopicId: 301073
 ---
 
 ## Description
@@ -41,9 +42,9 @@ Use CSS <code>@keyframes</code> to change the <code>background-color</code> of t
 ```yml
 tests:
   - text: The @keyframes rule should use the <code>animation-name</code> background-color.
-    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g), 'The @keyframes rule should use the <code>animation-name</code> background-color.');
+    testString: assert(code.match(/@keyframes\s+?background-color\s*?{/g));
   - text: There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.
-    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), 'There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.');
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi));
 
 ```
 
@@ -105,4 +106,5 @@ tests:
 </style>
 <button>Register</button>
 ```
+
 </section>

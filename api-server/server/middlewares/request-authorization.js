@@ -51,10 +51,10 @@ export default ({ jwtSecret = _jwtSecret, getUserById = _getUserById } = {}) =>
         });
       }
       if (!accessToken && error === errorTypes.expiredToken) {
-        throw wrapHandledError(new Error('Access token is no longer vaild'), {
+        throw wrapHandledError(new Error('Access token is no longer valid'), {
           type: 'info',
           redirect: `${homeLocation}/signin`,
-          message: 'Access token is no longer vaild',
+          message: 'Access token is no longer valid',
           status: 403
         });
       }
