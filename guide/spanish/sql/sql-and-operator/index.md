@@ -1,8 +1,8 @@
 ---
 title: SQL and Operator
-localeTitle: SQL y Operador
+localeTitle: SQL AND Operador 
 ---
-## Operador SQL Y
+## Operador SQL AND
 
 AND se utiliza en una cláusula WHERE o GROUP BY HAVING para limitar y definir las filas que retorna desde la sentencia ejecutada.También se puede usar cuando se requiera que se cumpla más de una condición.
 
@@ -46,4 +46,3 @@ select Candidate, Office_Sought, Election_Year, FORMAT(sum(Total_$),2) from comb
 ```
 
 ![imagen-1](https://github.com/SteveChevalier/guide-images/blob/master/and_operator06.JPG?raw=true)
-
