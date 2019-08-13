@@ -14,7 +14,7 @@ Continuing from the previous challenge, we provide you another opportunity to cr
 ## Instructions
 <section id='instructions'>
 
-We have defined a function called <code>countdown</code> with two parameters.  The function should take an array in the <code>myArray</code> parameter and append the numbers n thru 1 based on the <code>n</code> parameter.  
+We have defined a function called <code>countdown</code> with two parameters.  The function should take an array in the <code>myArray</code> parameter and append the numbers n through 1 based on the <code>n</code> parameter.  
 For example, calling this function with <code>n = 5</code> will pad the array with the numbers <code>[5, 4, 3, 2, 1]</code> inside of it.
 Your function must use recursion by calling itself and must not use loops of any kind.
 
