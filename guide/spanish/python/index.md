@@ -182,7 +182,7 @@ El argumento con el que llamamos a la función de `print` es un objeto `str` o _
 
 El parámetro de los `objects` tiene un prefijo `*` que indica que la función tomará un número arbitrario de argumentos para ese parámetro.
 
-## ¿Querer aprender más?
+## ¿Quieres aprender más?
 
 Free Code Camp tiene algunos recursos estupendos. La web es un lugar grande, hay mucho más que explorar:
 *   Libro de práctica de Python: http://anandology.com/python-practice-book/index.html
