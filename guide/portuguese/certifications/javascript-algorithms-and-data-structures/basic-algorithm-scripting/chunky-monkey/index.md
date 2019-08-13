@@ -72,8 +72,7 @@ Finalmente, precisamos de um método para fazer a divisão real e podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/24)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Em primeiro lugar, criamos dois arrays vazios chamados `temp` e `result` , que eventualmente retornaremos.
@@ -101,8 +100,7 @@ Finalmente, precisamos de um método para fazer a divisão real e podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/Cj9x/3)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, criamos um array vazio `arr2` onde armazenaremos nossos 'pedaços'.
@@ -134,8 +132,7 @@ Finalmente, precisamos de um método para fazer a divisão real e podemos usar `
     chunkArrayInGroups(["a", "b", "c", "d"], 2); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/26)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Em primeiro lugar, criamos duas variáveis. `newArr` é um array vazio ao qual iremos empurrar. Nós também temos a variável `i` definida como zero, para uso em nosso loop while.
@@ -169,8 +166,7 @@ Finalmente, precisamos de um método para fazer a divisão real e podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/579)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Em primeiro lugar, criamos uma variável. `newArr` é um array vazio ao qual iremos empurrar.
@@ -198,8 +194,7 @@ Finalmente, precisamos de um método para fazer a divisão real e podemos usar `
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/579)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Matriz menor que o tamanho é retornada aninhada.

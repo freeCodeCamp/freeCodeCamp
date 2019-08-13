@@ -2,6 +2,7 @@
 id: 5900f4da1000cf542c50ffed
 challengeType: 5
 title: 'Problem 366: Stone Game III'
+forumTopicId: 302027
 ---
 
 ## Description
@@ -43,7 +44,7 @@ Give your answer modulo 108.
 ```yml
 tests:
   - text: <code>euler366()</code> should return 88351299.
-    testString: assert.strictEqual(euler366(), 88351299, '<code>euler366()</code> should return 88351299.');
+    testString: assert.strictEqual(euler366(), 88351299);
 
 ```
 
@@ -75,4 +76,5 @@ euler366();
 ```js
 // solution required
 ```
+
 </section>

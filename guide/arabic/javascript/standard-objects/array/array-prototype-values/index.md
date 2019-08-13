@@ -8,8 +8,9 @@ localeTitle: Array.prototype.values
 
 ### بناء الجملة
 
- `arr.values() 
-` 
+```javascript
+arr.values()
+``` 
 
 ### عائدات
 
@@ -17,19 +18,20 @@ localeTitle: Array.prototype.values
 
 ### مثال
 
- `let friends = ["Rachel", "Monica", "Chandler", "Phoebe", "Joey", "Ross"] 
- 
- for (let friend of friends) { 
-  console.log(friend) 
- } 
- 
- // Rachel 
- // Monica 
- // Chandler 
- // Phoebe 
- // Joey 
- // Ross 
-` 
+```javascript
+let friends = ["Rachel", "Monica", "Chandler", "Phoebe", "Joey", "Ross"]
+
+for (let friend of friends) {
+  console.log(friend)
+}
+
+// Rachel
+// Monica
+// Chandler
+// Phoebe
+// Joey
+// Ross
+``` 
 
 #### معلومات اكثر:
 

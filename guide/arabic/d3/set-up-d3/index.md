@@ -8,16 +8,16 @@ localeTitle: إعداد D3
 
 ابدأ بصفحة HTML الأساسية على الويب:
 
- `
-<!DOCTYPE html> 
- <html> 
-  <head> 
-  </head> 
-  <body> 
-    <p>Hello!</p> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p>Hello!</p>
+  </body>
+</html>
+``` 
 
 الذي يظهر في المتصفح:
 

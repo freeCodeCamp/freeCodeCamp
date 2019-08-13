@@ -72,8 +72,7 @@ function updateRecords(id, prop, value) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/C2AZ/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Primeiro, verifica se **prop** é igual a **tracks** E se o **valor** não é uma string em branco. Se ambos os testes forem aprovados, o **valor** será inserido na matriz de **faixas** .

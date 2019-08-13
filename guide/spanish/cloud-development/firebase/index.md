@@ -1,8 +1,8 @@
 ---
 title: Firebase
-localeTitle: Base de fuego
+localeTitle: Firebase
 ---
-## Base de fuego
+## Firebase
 
 ![Logo de Firebase](https://firebase.google.com/_static/558bc0d91d/images/firebase/lockup.png)
 
@@ -22,14 +22,14 @@ Las características principales de Firebase se agrupan en 3 categorías:
     *   Alojamiento
     *   Función
     *   Laboratorio de pruebas
-    *   Reporte de Accidentes
-    *   Actuación
+    *   Reporte de errores
+    *   Rendimiento
 2.  **Crecer**
     
     *   Notificaciones
     *   Configuración remota
     *   Enlaces dinámicos
-3.  **Ganar**
+3.  **Monetizar**
     
     *   AdMob
 

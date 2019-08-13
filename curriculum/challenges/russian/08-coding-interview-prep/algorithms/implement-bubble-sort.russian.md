@@ -3,28 +3,30 @@ id: 8d5123c8c441eddfaeb5bdef
 title: Implement Bubble Sort
 challengeType: 1
 videoUrl: ''
-localeTitle: Реализация Bubble Sort
+localeTitle: Реализация Сортировки пузырьком
 ---
 
-## Description
-undefined
+## Описание
+Это первая из нескольких задач алгоритмов сортировки. Учитывая массив несортированных элементов, мы хотим иметь возможность возвращать отсортированный массив. Мы рассмотрим несколько различных методов для этого и изучим некоторые компромиссы между этими различными подходами. Хотя большинство современных языков имеют встроенные методы сортировки для таких операций, все же важно понять некоторые из общих базовых подходов и узнать, как они могут быть реализованы. Здесь мы увидим вид пузыря. Метод сортировки пузырьков начинается с начала несортированного массива и «выравнивает» несортированные значения до конца, итерации по массиву до тех пор, пока он не будет полностью отсортирован. Он делает это, сравнивая смежные элементы и заменяя их, если они не соответствуют порядку. Метод продолжает цикл через массив до тех пор, пока не произойдет своп, после чего массив будет отсортирован. Этот метод требует нескольких итераций через массив, а для средних и худших случаев имеет квадратичную временную сложность. Хотя это просто, в большинстве случаев это обычно нецелесообразно. Инструкции: Напишите функцию bubbleSort, которая принимает массив целых чисел в качестве входных данных и возвращает массив этих целых чисел в отсортированном порядке от наименьшего к наибольшему. Замечания:
+Мы вызываем эту функцию из-за кулис; тестовый массив, который мы используем, закомментирован в редакторе. Попробуйте logging array, чтобы увидеть ваш алгоритм сортировки в действии!
+
 
 ## Instructions
 undefined
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
 tests:
   - text: ''
-    testString: 'assert(typeof bubbleSort == "function", "<code>bubbleSort</code> is a function.");'
+    testString: 'assert(typeof bubbleSort == "function", "<code>bubbleSort</code> это функция.");'
   - text: ''
-    testString: 'assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>bubbleSort</code> returns a sorted array (least to greatest).");'
+    testString: 'assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>bubbleSort</code> возвращает отсортированный массив (от наименьшего к наибольшему).");'
   - text: ''
-    testString: 'assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>bubbleSort</code> returns an array that is unchanged except for order.");'
+    testString: 'assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>bubbleSort</code> rвыдает массив, который не изменяется, за исключением порядка.");'
   - text: ''
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.");'
+    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>bubbleSort</code> не следует использовать встроенный <code>.sort()</code> method.");'
 
 ```
 
@@ -37,13 +39,13 @@ tests:
 
 ```js
 function bubbleSort(array) {
-  // change code below this line
+  // изменить код ниже этой строки
 
-  // change code above this line
+  // изменить код над этой строкой
   return array;
 }
 
-// test array:
+// массив для задания:
 // [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
 
 ```
@@ -51,11 +53,11 @@ function bubbleSort(array) {
 </div>
 
 
-### After Test
+### После задания
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+console.info('после задания');
 ```
 
 </div>
@@ -66,6 +68,6 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+// требуется решение
 ```
 </section>

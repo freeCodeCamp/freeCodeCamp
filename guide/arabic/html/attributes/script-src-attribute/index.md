@@ -8,24 +8,24 @@ localeTitle: السمة سيناريو Src
 
 على سبيل المثال ، إذا كان لديك ملف جافا سكريبت مخصص لك باسم "script.js" وأردت إضافة وظائفه إلى صفحة HTML ، فيمكنك إضافته كما يلي:
 
- `
-<!DOCTYPE html> 
- <html lang="en"> 
-  <head> 
-    <title>Script Src Attribute Example</title> 
-  </head> 
-  <body> 
- 
-  <script src="./script.js"></script> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Script Src Attribute Example</title>
+  </head>
+  <body>
+
+  <script src="./script.js"></script>
+  </body>
+</html>
+``` 
 
 يشير ذلك إلى ملف يسمى "script.js" موجود في نفس الدليل كملف .html. يمكنك أيضًا الارتباط بأدلة أخرى باستخدام ".." في مسار الملف.
 
- `
-<script src="../public/js/script.js"></script> 
-` 
+```html
+<script src="../public/js/script.js"></script>
+``` 
 
 يقفز هذا مستوى دليل واحد ثم إلى دليل "عام" ثم إلى دليل "js" ثم إلى ملف "script.js".
 
@@ -33,9 +33,9 @@ localeTitle: السمة سيناريو Src
 
 هذا المثال يرتبط بملف jQuery.
 
- `
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> 
-` 
+```html
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+``` 
 
 #### معلومات اكثر:
 

@@ -1,7 +1,7 @@
 ---
 title: Date manipulation
 ---
-## Date manipulation
+# Date manipulation
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/date-manipulation/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

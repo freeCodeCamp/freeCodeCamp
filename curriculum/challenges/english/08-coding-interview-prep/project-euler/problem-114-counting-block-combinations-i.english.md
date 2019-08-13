@@ -2,6 +2,7 @@
 id: 5900f3e01000cf542c50fef2
 challengeType: 5
 title: 'Problem 114: Counting block combinations I'
+forumTopicId: 301740
 ---
 
 ## Description
@@ -123,7 +124,7 @@ NOTE: Although the example above does not lend itself to the possibility, in gen
 ```yml
 tests:
   - text: <code>euler114()</code> should return 16475640049.
-    testString: assert.strictEqual(euler114(), 16475640049, '<code>euler114()</code> should return 16475640049.');
+    testString: assert.strictEqual(euler114(), 16475640049);
 
 ```
 
@@ -155,4 +156,5 @@ euler114();
 ```js
 // solution required
 ```
+
 </section>

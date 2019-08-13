@@ -2,6 +2,7 @@
 id: 5900f46b1000cf542c50ff7d
 challengeType: 5
 title: 'Problem 254: Sums of Digit Factorials'
+forumTopicId: 301902
 ---
 
 ## Description
@@ -30,7 +31,7 @@ What is ∑ sg(i) for 1 ≤ i ≤ 150?
 ```yml
 tests:
   - text: <code>euler254()</code> should return 8184523820510.
-    testString: assert.strictEqual(euler254(), 8184523820510, '<code>euler254()</code> should return 8184523820510.');
+    testString: assert.strictEqual(euler254(), 8184523820510);
 
 ```
 
@@ -62,4 +63,5 @@ euler254();
 ```js
 // solution required
 ```
+
 </section>

@@ -8,16 +8,18 @@ localeTitle: قائمة تمديد الأسلوب
 
 #### مثال للاستخدام
 
- `cities = ["San Francisco", "Los Angeles", "New York"] 
- cities_in_texas = ["San Antonio", "Austin", "Dallas"] 
- cities.extend(cities_in_texas) 
- print(cities) 
-` 
+```py
+cities = ["San Francisco", "Los Angeles", "New York"]
+cities_in_texas = ["San Antonio", "Austin", "Dallas"]
+cities.extend(cities_in_texas)
+print(cities)
+``` 
 
 #### انتاج |
 
- `["San Francisco", "Los Angeles", "New York", "San Antonio", "Austin", "Dallas"] 
-` 
+```
+["San Francisco", "Los Angeles", "New York", "San Antonio", "Austin", "Dallas"]
+``` 
 
 #### معلومات اكثر:
 

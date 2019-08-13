@@ -82,7 +82,6 @@ Explica la solución aquí y agrega cualquier enlace relevante.
 *   [arr.join ()](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 *   [declaración de cambio](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch)
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnP/0)
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":girasol:") Solución de código intermedio:
 ```
@@ -96,7 +95,6 @@ function convertHTML(str) {
  convertHTML("Dolce & Gabbana"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnQ/0)
 
 ### Explicación del código:
 
@@ -127,7 +125,6 @@ Explica la solución aquí y agrega cualquier enlace relevante.
     convertHTML("Dolce & Gabbana"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnR/0)
 
 ### Explicación del código:
 

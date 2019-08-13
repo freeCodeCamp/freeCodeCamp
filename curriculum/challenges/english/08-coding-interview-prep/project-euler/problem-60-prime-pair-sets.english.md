@@ -2,6 +2,7 @@
 id: 5900f3a81000cf542c50febb
 challengeType: 5
 title: 'Problem 60: Prime pair sets'
+forumTopicId: 302172
 ---
 
 ## Description
@@ -21,7 +22,7 @@ Find the lowest sum for a set of five primes for which any two primes concatenat
 ```yml
 tests:
   - text: <code>euler60()</code> should return 26033.
-    testString: assert.strictEqual(euler60(), 26033, '<code>euler60()</code> should return 26033.');
+    testString: assert.strictEqual(euler60(), 26033);
 
 ```
 
@@ -53,4 +54,5 @@ euler60();
 ```js
 // solution required
 ```
+
 </section>

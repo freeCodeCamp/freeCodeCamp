@@ -2,6 +2,7 @@
 id: 5900f49b1000cf542c50ffae
 challengeType: 5
 title: 'Problem 303: Multiples with small digits'
+forumTopicId: 301957
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find .
 ```yml
 tests:
   - text: <code>euler303()</code> should return 1111981904675169.
-    testString: assert.strictEqual(euler303(), 1111981904675169, '<code>euler303()</code> should return 1111981904675169.');
+    testString: assert.strictEqual(euler303(), 1111981904675169);
 
 ```
 
@@ -56,4 +57,5 @@ euler303();
 ```js
 // solution required
 ```
+
 </section>

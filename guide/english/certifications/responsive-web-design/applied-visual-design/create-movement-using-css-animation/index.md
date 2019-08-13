@@ -1,7 +1,7 @@
 ---
 title: Create Movement Using CSS Animation
 ---
-## Create Movement Using CSS Animation
+# Create Movement Using CSS Animation
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/create-movement-using-css-animation/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

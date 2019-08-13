@@ -8,9 +8,9 @@ localeTitle: ب اليوم
 
 ### مثال:
 
- `
-<b>This text is bold</b> 
-` 
+```html
+<b>This text is bold</b>
+``` 
 
 سيظهر هذا على النحو التالي:
 
