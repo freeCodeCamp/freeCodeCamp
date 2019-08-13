@@ -32,4 +32,4 @@ Las compañías más grandes pueden tener una versión diferente del "combinado"
 
 ### Más información:
 
-Quincy Larson sobre la economía de trabajar de forma remota: [Medio](https://medium.freecodecamp.org/the-economics-of-working-remotely-28d4173e16e2)
+Quincy Larson sobre la economía de trabajar de forma remota: [freeCodeCamp News](https://www.freecodecamp.org/news/the-economics-of-working-remotely-28d4173e16e2)
