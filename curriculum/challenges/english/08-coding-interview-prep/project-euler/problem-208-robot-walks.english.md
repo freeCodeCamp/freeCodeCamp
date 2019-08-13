@@ -2,6 +2,7 @@
 id: 5900f43f1000cf542c50ff51
 challengeType: 5
 title: 'Problem 208: Robot Walks'
+forumTopicId: 301849
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Given that the robot starts facing North, how many journeys of 70 arcs in length
 ```yml
 tests:
   - text: <code>euler208()</code> should return 331951449665644800.
-    testString: assert.strictEqual(euler208(), 331951449665644800, '<code>euler208()</code> should return 331951449665644800.');
+    testString: assert.strictEqual(euler208(), 331951449665644800);
 
 ```
 
@@ -59,4 +60,5 @@ euler208();
 ```js
 // solution required
 ```
+
 </section>

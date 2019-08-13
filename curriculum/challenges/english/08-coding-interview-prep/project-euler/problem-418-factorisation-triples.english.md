@@ -2,6 +2,7 @@
 id: 5900f50f1000cf542c510021
 challengeType: 5
 title: 'Problem 418: Factorisation triples'
+forumTopicId: 302087
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find f(43!).
 ```yml
 tests:
   - text: <code>euler418()</code> should return 1177163565297340400.
-    testString: assert.strictEqual(euler418(), 1177163565297340400, '<code>euler418()</code> should return 1177163565297340400.');
+    testString: assert.strictEqual(euler418(), 1177163565297340400);
 
 ```
 
@@ -61,4 +62,5 @@ euler418();
 ```js
 // solution required
 ```
+
 </section>

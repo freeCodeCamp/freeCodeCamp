@@ -2,6 +2,7 @@
 id: 5900f44b1000cf542c50ff5d
 challengeType: 5
 title: 'Problem 222: Sphere Packing'
+forumTopicId: 301865
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Give your answer in micrometres (10-6 m) rounded to the nearest integer.
 ```yml
 tests:
   - text: <code>euler222()</code> should return 1590933.
-    testString: assert.strictEqual(euler222(), 1590933, '<code>euler222()</code> should return 1590933.');
+    testString: assert.strictEqual(euler222(), 1590933);
 
 ```
 
@@ -54,4 +55,5 @@ euler222();
 ```js
 // solution required
 ```
+
 </section>

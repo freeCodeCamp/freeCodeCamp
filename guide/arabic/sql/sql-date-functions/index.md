@@ -18,14 +18,15 @@ localeTitle: دالات تاريخ SQL
 
 الحصول على التاريخ من النظام يمكن أن يكون سهل جدا لمعالجة البيانات باستخدام SQL.
 
- `-- current date 
- select now(), sysdate(), current_date(), current_time(), -- date and time from the system on execution 
- dayofyear(now()) as NumDaysSoFarThisYr, 
- EXTRACT(YEAR FROM now()) as theYearPart, 
- EXTRACT(YEAR_MONTH FROM now()) as theYrMonPart, 
- date_format(now(), '%W %M %Y') as oneOfManyFormats; 
- ; 
-` 
+```sql
+-- current date
+select now(), sysdate(), current_date(), current_time(), -- date and time from the system on execution
+dayofyear(now()) as NumDaysSoFarThisYr,
+EXTRACT(YEAR FROM now()) as theYearPart,
+EXTRACT(YEAR_MONTH FROM now()) as theYrMonPart,
+date_format(now(), '%W %M %Y') as oneOfManyFormats;
+;
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/date-functions04.JPG)
 
@@ -39,12 +40,13 @@ localeTitle: دالات تاريخ SQL
 
 ### تاريخ الرياضيات
 
- `select now(), current_date(), 
- datediff(now(),'2017-01-01') as daysThisYear, 
- subdate(current_date(), interval 150 day) as '150DaysAgo', 
- adddate(now(), interval 7 day) as dateInA_Week -- date in a week 
- ; 
-` 
+```sql
+select now(), current_date(),
+datediff(now(),'2017-01-01') as daysThisYear,
+subdate(current_date(), interval 150 day) as '150DaysAgo',
+adddate(now(), interval 7 day) as dateInA_Week -- date in a week
+;
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/date-functions02.jpg)
 
@@ -58,10 +60,11 @@ localeTitle: دالات تاريخ SQL
 
 فيما يلي مثالان على استخدام تاريخ الرياضيات في مكان جملة:
 
- `select * from student; - to show the current data being used for the example 
- select * from student where recordCreated < '2017-01-01'; 
- select * from student where recordCreated < subdate(current_date(), interval 225 day); 
-` 
+```sql
+select * from student; - to show the current data being used for the example
+select * from student where recordCreated < '2017-01-01';
+select * from student where recordCreated < subdate(current_date(), interval 225 day);
+``` 
 
 ![صورة 1](https://github.com/SteveChevalier/guide-images/blob/master/date-functions03.jpg)
 

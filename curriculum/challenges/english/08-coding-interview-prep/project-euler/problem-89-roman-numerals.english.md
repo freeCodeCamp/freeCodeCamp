@@ -2,6 +2,7 @@
 id: 5900f3c51000cf542c50fed7
 challengeType: 5
 title: 'Problem 89: Roman numerals'
+forumTopicId: 302204
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Note: You can assume that all the Roman numerals in the file contain no more tha
 ```yml
 tests:
   - text: <code>euler89()</code> should return 743.
-    testString: assert.strictEqual(euler89(), 743, '<code>euler89()</code> should return 743.');
+    testString: assert.strictEqual(euler89(), 743);
 
 ```
 
@@ -63,4 +64,5 @@ euler89();
 ```js
 // solution required
 ```
+
 </section>

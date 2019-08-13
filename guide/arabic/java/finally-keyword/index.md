@@ -8,13 +8,14 @@ localeTitle: أخيرا
 
 **_مثال:_**
 
- `try { 
-   // Normal execution path 
-   throw new EmptyStackException(); 
- } catch (ExampleException ee) { 
-   //  deal with the ExampleException 
- } finally { 
-   // This optional section is executed upon termination of any of the try or catch blocks above, 
-   //  except when System.exit() is called in "try" or "catch" blocks; 
- } 
-`
+```java
+try {
+   // Normal execution path
+   throw new EmptyStackException();
+} catch (ExampleException ee) {
+   //  deal with the ExampleException
+} finally {
+   // This optional section is executed upon termination of any of the try or catch blocks above,
+   //  except when System.exit() is called in "try" or "catch" blocks;
+}
+```

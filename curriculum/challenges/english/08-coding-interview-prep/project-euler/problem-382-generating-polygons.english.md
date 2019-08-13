@@ -2,6 +2,7 @@
 id: 5900f4eb1000cf542c50fffd
 challengeType: 5
 title: 'Problem 382: Generating polygons'
+forumTopicId: 302046
 ---
 
 ## Description
@@ -43,7 +44,7 @@ Find the last 9 digits of f(1018).
 ```yml
 tests:
   - text: <code>euler382()</code> should return 697003956.
-    testString: assert.strictEqual(euler382(), 697003956, '<code>euler382()</code> should return 697003956.');
+    testString: assert.strictEqual(euler382(), 697003956);
 
 ```
 
@@ -75,4 +76,5 @@ euler382();
 ```js
 // solution required
 ```
+
 </section>

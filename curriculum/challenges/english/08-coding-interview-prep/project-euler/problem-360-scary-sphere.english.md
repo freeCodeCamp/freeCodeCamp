@@ -2,6 +2,7 @@
 id: 5900f4d41000cf542c50ffe7
 challengeType: 5
 title: 'Problem 360: Scary Sphere'
+forumTopicId: 302021
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Find S(1010).
 ```yml
 tests:
   - text: <code>euler360()</code> should return 878825614395267100.
-    testString: assert.strictEqual(euler360(), 878825614395267100, '<code>euler360()</code> should return 878825614395267100.');
+    testString: assert.strictEqual(euler360(), 878825614395267100);
 
 ```
 
@@ -63,4 +64,5 @@ euler360();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f3d21000cf542c50fee4
 challengeType: 5
 title: 'Problem 101: Optimum polynomial'
+forumTopicId: 301725
 ---
 
 ## Description
@@ -40,7 +41,7 @@ Find the sum of FITs for the BOPs.
 ```yml
 tests:
   - text: <code>euler101()</code> should return 37076114526.
-    testString: assert.strictEqual(euler101(), 37076114526, '<code>euler101()</code> should return 37076114526.');
+    testString: assert.strictEqual(euler101(), 37076114526);
 
 ```
 
@@ -72,4 +73,5 @@ euler101();
 ```js
 // solution required
 ```
+
 </section>

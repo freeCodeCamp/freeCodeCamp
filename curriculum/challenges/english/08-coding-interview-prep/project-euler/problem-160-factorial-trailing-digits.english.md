@@ -2,6 +2,7 @@
 id: 5900f40d1000cf542c50ff1f
 challengeType: 5
 title: 'Problem 160: Factorial trailing digits'
+forumTopicId: 301794
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Find f(1,000,000,000,000)
 ```yml
 tests:
   - text: <code>euler160()</code> should return 16576.
-    testString: assert.strictEqual(euler160(), 16576, '<code>euler160()</code> should return 16576.');
+    testString: assert.strictEqual(euler160(), 16576);
 
 ```
 
@@ -57,4 +58,5 @@ euler160();
 ```js
 // solution required
 ```
+
 </section>

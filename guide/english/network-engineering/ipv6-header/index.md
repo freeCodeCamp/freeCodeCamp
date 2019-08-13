@@ -5,7 +5,7 @@ title: IPv6 Header
 
 Below is the IPv6 header format according to [RFC2460](https://tools.ietf.org/html/rfc2460):
 
-![Image of IPv6 Header](https://i.imgur.com/Jq0eKrO.jpg)
+![Image of IPv6 Header](https://cdn-media-1.freecodecamp.org/imgr/Jq0eKrO.jpg)
 
 ##### Version [4-bits]
   * Internet Protocol (IP) version number (decimal 6, binary 0110)

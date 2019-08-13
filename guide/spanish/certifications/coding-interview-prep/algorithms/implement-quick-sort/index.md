@@ -48,7 +48,6 @@ localeTitle: Implementar ordenación rápida
  } 
 ```
 
-*   [Ejecutar código](https://repl.it/@ezioda004/Quick-Sort)
 
 ### Referencia:
 

@@ -12,7 +12,7 @@ Desde la [página de descarga de golang](https://golang.org/dl/) , obtenga el in
 
 Para verificar si Go se instaló correctamente, abra su terminal y use:
 
-```sh
+```shell
 $ go version 
 ```
 

@@ -64,18 +64,20 @@ RabbitMQ يحدث ليكون أسهل وسيط منصات منصة الوسيط 
 
 بعد استيراد `tortoise` `node-cron` ، لقد ذهبنا إلى الأمام وأضفت اتصالاً بـ RabbitMQ. بعد ذلك ، دعنا نكتب وظيفة سريعة وقذرة تنشر رسالة إلى أرنب:
 
- `function scheduleMessage(){ 
-    let payload = {url: 'https://randomuser.me/api'} 
-    tortoise 
-    .exchange('random-user-exchange', 'direct', { durable:false }) 
-    .publish('random-user-key', payload) 
- } 
-` 
+```javascript
+function scheduleMessage(){
+    let payload = {url: 'https://randomuser.me/api'}
+    tortoise
+    .exchange('random-user-exchange', 'direct', { durable:false })
+    .publish('random-user-key', payload)
+}
+``` 
 
 هذا بسيط بما فيه الكفاية. لقد حددنا قاموسًا يحتوي على عنوان URL [لواجهة](https://randomuser.me/) برمجة تطبيقات [RandomUser.me](https://randomuser.me/) ، والتي يتم نشرها بعد ذلك إلى `random-user-exchange` تبادل `random-user-exchange` على RabbitMQ ، مع `random-user-key` التوجيه `random-user-key` . كما ذكرنا من قبل ، فإن مفتاح التوجيه هو الذي يحدد من الذي يستهلك رسالة. الآن ، دعنا نكتب قاعدة جدولة ، لنشر هذه الرسالة كل 60 ثانية.
 
- `cron.schedule('60 * * * * *', scheduleMessage) 
-` 
+```javascript
+cron.schedule('60 * * * * *', scheduleMessage)
+``` 
 
 وناشرنا جاهز! ولكن في الحقيقة ليس جيدًا بدون المستهلك أن يستهلك هذه الرسائل فعليًا! لكننا نحتاج أولاً إلى مكتبة يمكنها الاتصال بعنوان URL في هذه الرسائل. شخصيا ، أنا استخدم `superagent` : `npm install --save superagent` .
 
@@ -97,20 +99,21 @@ RabbitMQ يحدث ليكون أسهل وسيط منصات منصة الوسيط 
 
 وقت كتابة التعليمات البرمجية لاستهلاك الرسائل فعليًا:
 
- `tortoise 
- .queue('random-user-queue', { durable: false }) 
- // Add as many bindings as needed 
- .exchange('random-user-exchange', 'direct', 'random-user-key', { durable: false }) 
- .prefetch(1) 
- .subscribe(function(msg, ack, nack) { 
-  // Handle 
-  let payload = JSON.parse(msg) 
-  getURL(payload['url']).then((response) => { 
-    console.log('Job result: ', response) 
-  }) 
-  ack() // or nack() 
- }) 
-` 
+```javascript
+tortoise
+.queue('random-user-queue', { durable: false })
+// Add as many bindings as needed
+.exchange('random-user-exchange', 'direct', 'random-user-key', { durable: false })
+.prefetch(1)
+.subscribe(function(msg, ack, nack) {
+  // Handle
+  let payload = JSON.parse(msg)
+  getURL(payload['url']).then((response) => {
+    console.log('Job result: ', response)
+  })
+  ack() // or nack()
+})
+``` 
 
 هنا ، أخبرنا `tortoise` أن نستمع إلى `random-user-queue` ، وهذا يرتبط `random-user-key` `random-user-exchange` . بمجرد استلام الرسالة ، يتم استرداد الحمولة من `msg` ، ويتم تمريرها إلى `getURL` ، والتي بدورها تقوم بإرجاع Promation مع استجابة JSON المطلوبة من RandomUser API.
 

@@ -2,6 +2,7 @@
 id: 5900f5241000cf542c510036
 challengeType: 5
 title: 'Problem 437: Fibonacci primitive roots'
+forumTopicId: 302108
 ---
 
 ## Description
@@ -38,7 +39,7 @@ Find the sum of the primes less than 100,000,000 with at least one Fibonacci pri
 ```yml
 tests:
   - text: <code>euler437()</code> should return 74204709657207.
-    testString: assert.strictEqual(euler437(), 74204709657207, '<code>euler437()</code> should return 74204709657207.');
+    testString: assert.strictEqual(euler437(), 74204709657207);
 
 ```
 
@@ -70,4 +71,5 @@ euler437();
 ```js
 // solution required
 ```
+
 </section>

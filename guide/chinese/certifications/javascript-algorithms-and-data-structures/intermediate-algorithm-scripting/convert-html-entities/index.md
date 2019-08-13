@@ -82,7 +82,6 @@ localeTitle: 转换HTML实体
 *   [arr.join（）](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 *   [切换声明](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/switch)
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnP/0)
 
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 "：向日葵：")中级代码解决方案：
 ```
@@ -96,7 +95,6 @@ function convertHTML(str) {
  convertHTML("Dolce & Gabbana"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnQ/0)
 
 ### 代码说明：
 
@@ -127,7 +125,6 @@ function convertHTML(str) {
     convertHTML("Dolce & Gabbana"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnR/0)
 
 ### 代码说明：
 

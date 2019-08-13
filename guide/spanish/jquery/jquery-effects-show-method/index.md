@@ -42,4 +42,4 @@ javascript $ (". myclass"). slideDown (); // expandirá el elemento con el ident
 
 #### Más información:
 
-Método JQuery Show () en el [sitio web oficial](http://api.jquery.com/show/)
+Método jQuery Show () en el [sitio web oficial](http://api.jquery.com/show/)

@@ -2,6 +2,7 @@
 id: 5900f3781000cf542c50fe8a
 challengeType: 5
 title: 'Problem 11: Largest product in a grid'
+forumTopicId: 301734
 ---
 
 ## Description
@@ -44,9 +45,9 @@ What is the greatest product of four adjacent numbers in the same direction (up,
 ```yml
 tests:
   - text: <code>largestGridProduct(grid)</code> should return 70600674.
-    testString: assert.strictEqual(largestGridProduct(grid), 70600674, '<code>largestGridProduct(grid)</code> should return 70600674.');
+    testString: assert.strictEqual(largestGridProduct(grid), 70600674);
   - text: <code>largestGridProduct(testGrid)</code> should return 14169081.
-    testString: assert.strictEqual(largestGridProduct(testGrid), 14169081, '<code>largestGridProduct(testGrid)</code> should return 14169081.');
+    testString: assert.strictEqual(largestGridProduct(testGrid), 14169081);
 
 ```
 
