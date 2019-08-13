@@ -1,6 +1,6 @@
 /* global describe expect it */
 
-const { createRedirects } = require('./createRedirects');
+const { createRedirects } = require('./create-redirects');
 
 const testLocations = {
   api: 'https://api.example.com',
