@@ -29,14 +29,14 @@ En resumen:
  b   moves to the beginning of the previous word 
  e   moves to the end of the current word 
  
- 0   moves to the beginning of the current line 
- $   moves to the end of the current line 
- :n  moves to line n (ex. :23 moves to line 23) can also use nG 
+ 0   mueve al principio de la linia
+ $   mueve al final de la linia
+ :n  mueve a la linia n (por ejemplo, :5 va a linia 5)
  
  ZZ  moves to the center of the line your on 
- H   moves to the top of the screen 
+ H   mueve al principio de la pagina
  M   moves to the middle of the screen 
- L   moves to the bottom of the screen 
+ L   mueve al final de la pagina 
  
  gg  moves to the first line in the file 
  G   moves to the last line in the file 
