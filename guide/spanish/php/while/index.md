@@ -1,23 +1,39 @@
 ---
 title: While Loop
-localeTitle: Mientras bucle
+localeTitle: Bucle While
 ---
-## mientras Loops
+## Bucle While
 
-Un `while` de bucle ejecuta sentencias dentro del bucle, siempre y cuando se cumpla la condición bucles.
+Un bucle `while` ejecuta las sentencias contenidas dentro de su bloque, siempre y cuando cumpla la condición definida.
 
 ### Sintaxis:
 
 ```php
 $x = 0; 
- while ($x < 11) { 
-    statement1; 
+ while ($x < 11) {
+    echo "Ejecución número " . $x . "<br />; 
     $x++; 
  } 
+ 
+ /* Salida
+ ----------------------
+    Ejecución número 0
+    Ejecución número 1
+    Ejecución número 2
+    Ejecución número 3
+    Ejecución número 4
+    Ejecución número 5
+    Ejecución número 6
+    Ejecución número 7
+    Ejecución número 8
+    Ejecución número 9
+    Ejecución número 10
+-----------------------
+*/
 ```
 
-**Nota:** El código de bloque debe tener una declaración de que los cambios o incrementos de la condición. De lo contrario podría resultar un bucle infinito.
+**Nota:** El código de bloque debe tener alguna declaración para cambiar o incrementar la condición. De lo contrario podría resultar un bucle infinito.
 
 ### Más información:
 
-[PHP Mientras Loop](http://php.net/manual/en/control-structures.while.php)
+[PHP Bucle While](http://php.net/manual/es/control-structures.while.php)
