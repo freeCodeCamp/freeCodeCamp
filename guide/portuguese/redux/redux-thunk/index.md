@@ -66,7 +66,7 @@ import { createStore, applyMiddleware } from 'redux';
 
 ### Referências
 
-*   [Redux Thunk Github Repo](https://github.com/reduxjs/redux-thunk)
+*   [Redux Thunk GitHub Repo](https://github.com/reduxjs/redux-thunk)
 *   [Middleware Redux](https://redux.js.org/advanced/middleware)
 
 ### Fontes

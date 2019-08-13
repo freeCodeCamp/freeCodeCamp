@@ -32,7 +32,6 @@ function insertionSort(array) {
  } 
 ```
 
-*   [Ejecutar código](https://repl.it/@ezioda004/Insertion-Sort)
 
 ### Referencias:
 

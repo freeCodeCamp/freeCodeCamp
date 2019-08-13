@@ -2,7 +2,7 @@
 title: Say Hello to HTML Elements
 localeTitle: Diga hola a los elementos HTML
 ---
-## Diga hola a los elementos HTML
+## Salude a los elementos HTML
 
 Considere el siguiente ejemplo:  
 

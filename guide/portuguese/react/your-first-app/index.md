@@ -30,7 +30,7 @@ import React, { Component } from 'react';
  import './App.css'; 
 ```
 
-Isso é usado pelo [webpack](https://webpack.js.org/) para importar todos os módulos necessários para que seu código possa usá-los. Este código importa 3 módulos: 1) `React` e `Component` , que nos permitem usar Reagir como deveria ser usado. (Com componentes) 2) `logo` , o que nos permite usar `logo.svg` neste arquivo. 3) `./App.css` , que importa a folha de estilo para este arquivo.
+Isso é usado pelo [webpack](https://webpack.js.org/) para importar todos os módulos necessários para que seu código possa usá-los. Este código importa 3 módulos: 1) `React` e `Component` , que nos permitem usar React como deveria ser usado. (Com componentes) 2) `logo` , o que nos permite usar `logo.svg` neste arquivo. 3) `./App.css` , que importa a folha de estilo para este arquivo.
 
 #### classes / componentes
 
@@ -56,9 +56,9 @@ O React é uma biblioteca que faz uso dos Componentes, que permitem dividir sua 
 
 Vamos ver os componentes mais detalhados nos próximos capítulos.
 
-#### exportações
+#### exportando componentes
 
-Ao criar uma classe no reagir, você deve exportá-los após a declaração, o que permite usar o componente em outro arquivo usando a palavra-chave `import` . Você pode usar o `default` após a palavra-chave `export` para informar ao React que esta é a classe principal desse arquivo.
+Ao criar uma classe no React, você deve exportá-los após a declaração, o que permite usar o componente em outro arquivo usando a palavra-chave `import` . Você pode usar o `default` após a palavra-chave `export` para informar ao React que esta é a classe principal desse arquivo.
 
 ```JavaScript
 export default App; 
@@ -70,4 +70,4 @@ Quando você iniciar o servidor de desenvolvimento, emitindo o comando `npm star
 
 ### Fontes
 
-[1\. Reagir documentação](https://reactjs.org/docs/hello-world.html)
+[1\. Documentação do React](https://reactjs.org/docs/hello-world.html)

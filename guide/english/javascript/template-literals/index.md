@@ -2,7 +2,7 @@
 title: Template Literals
 ---
 
-Template Literals are an ES6 feature utilizing the backtick charater to define a string value
+Template Literals are an ES6 feature utilizing the backtick character to define a string value. They give the programmer the ability to combine variables and strings without concatenation, thus making the code cleaner.
 
 ### The basic syntax
 

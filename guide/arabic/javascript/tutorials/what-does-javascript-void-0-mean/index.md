@@ -20,13 +20,13 @@ localeTitle: ماذا يفعل جافا سكريبت Void 0 Mean
 
 #### مثال 1 نموذج مع void Javascript (0):
 
- `
-<html> 
- <body> 
- <a href="javascript:void(0);alert('Hello ! I am here')">Click Me</a> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<body>
+<a href="javascript:void(0);alert('Hello ! I am here')">Click Me</a>
+</body>
+</html>
+``` 
 
 #### انتاج :
 
@@ -36,13 +36,13 @@ localeTitle: ماذا يفعل جافا سكريبت Void 0 Mean
 
 #### مثال 2 نموذج مع void Javascript (0):
 
- `
-<html> 
- <body> 
- <a href="javascript:void(0)" ondblclick="alert('Hi,i didnt refresh the page')" )>Click Me</a> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<body>
+<a href="javascript:void(0)" ondblclick="alert('Hi,i didnt refresh the page')" )>Click Me</a>
+</body>
+</html>
+``` 
 
 #### انتاج :
 
@@ -50,14 +50,14 @@ localeTitle: ماذا يفعل جافا سكريبت Void 0 Mean
 
 #### مثال 3 نموذج مع void Javascript (0):
 
- `
-<html> 
- <body> 
- <a href="javascript:void(0);https://www.google.co.in/" 
- ondblclick="alert('Hello !! You will see me and not get redirected to google.com ')">Click Me</a> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<body>
+<a href="javascript:void(0);https://www.google.co.in/"
+ondblclick="alert('Hello !! You will see me and not get redirected to google.com ')">Click Me</a>
+</body>
+</html>
+``` 
 
 #### انتاج :
 
@@ -65,13 +65,13 @@ localeTitle: ماذا يفعل جافا سكريبت Void 0 Mean
 
 #### مثال نموذج دون void Javascript (0):
 
- `
-<html> 
- <body> 
- <a href="https://www.google.co.in/" ondblclick="alert('Hello !! You will see me and then get redirected to google.com even if not needed')">Click Me</a> 
- </body> 
- </html> 
-` 
+```html
+<html>
+<body>
+<a href="https://www.google.co.in/" ondblclick="alert('Hello !! You will see me and then get redirected to google.com even if not needed')">Click Me</a>
+</body>
+</html>
+``` 
 
 #### انتاج :
 

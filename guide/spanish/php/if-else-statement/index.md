@@ -18,6 +18,7 @@ If / Else es una declaración condicional donde, según la veracidad de una cond
 
 > **Nota:** la sentencia `else` es opcional.
 > 
+
 > ## Declaración de If / Else
 ```
   if (condition){ 
@@ -32,16 +33,17 @@ If / Else es una declaración condicional donde, según la veracidad de una cond
 
 ## Declaración If / Elseif / Else
 ```
-  if (condition){ 
+  if (condition){        // Se ejecuta cuando condition se evalua a true
     statement1; 
     statement2; 
   } 
-  elseif{ 
+  elseif (condition2){  // Se ejecuta cuando condition se evalua a false y condition2 se evalua a true
     statement3; 
     statement4; 
   } 
-  else 
+  else                  // Se ejecuta cuando condition y condition2 se evaluan a false
     statement5; 
 ```
+
 
 Para más información revisa el siguiente enlace: [PHP más](http://php.net/manual/en/control-structures.elseif.php)

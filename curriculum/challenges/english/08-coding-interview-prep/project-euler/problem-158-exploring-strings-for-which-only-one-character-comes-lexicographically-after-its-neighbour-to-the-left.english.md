@@ -2,6 +2,7 @@
 id: 5900f40a1000cf542c50ff1d
 challengeType: 5
 title: 'Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left'
+forumTopicId: 301789
 ---
 
 ## Description
@@ -27,7 +28,7 @@ What is the maximum value of p(n)?
 ```yml
 tests:
   - text: <code>euler158()</code> should return 409511334375.
-    testString: assert.strictEqual(euler158(), 409511334375, '<code>euler158()</code> should return 409511334375.');
+    testString: assert.strictEqual(euler158(), 409511334375);
 
 ```
 
@@ -59,4 +60,5 @@ euler158();
 ```js
 // solution required
 ```
+
 </section>

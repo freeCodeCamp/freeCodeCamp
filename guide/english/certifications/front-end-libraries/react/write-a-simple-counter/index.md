@@ -1,9 +1,13 @@
 ---
 title: Write a Simple Counter
 ---
-## Write a Simple Counter
+# Write a Simple Counter
 
-#### Hint 1:
+
+---
+## Hints
+
+### Hint 1
 ```JSX
 class Counter extends React.Component {
   constructor(props) {
@@ -33,7 +37,12 @@ class Counter extends React.Component {
 };
 ```
 
-## Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```JSX
 class Counter extends React.Component {
   constructor(props) {
@@ -64,3 +73,5 @@ class Counter extends React.Component {
   }
 };
 ```
+
+</details>

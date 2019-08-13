@@ -1,8 +1,10 @@
 ---
 title: Add Rounded Corners with border-radius
 ---
-## Add Rounded Corners with border-radius
+# Add Rounded Corners with border-radius
 
+---
+## Problem Explanation
 Sometimes you want to have rounded corners instead of square ones. In this case we use the "border-radius" property to determine how rounded we want our corners to be. 
 
 To adjust the roundness of a corner use:

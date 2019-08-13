@@ -1,7 +1,7 @@
 ---
 title: Set the line-height of Paragraphs
 ---
-## Set the line-height of Paragraphs
+# Set the line-height of Paragraphs
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/set-the-line-height-of-paragraphs/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

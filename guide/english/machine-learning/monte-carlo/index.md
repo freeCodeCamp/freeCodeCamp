@@ -12,6 +12,10 @@ For example, a Monte Carlo algorithm can be used to estimate the value of π. Th
 
 In modern communication systems, the quality of information exchange is determined by the presence of noise in the channel. The major source of noise - Additive White Gaussian Noise (AWGN) being random in nature can be characterized using the Monte Carlo algorithm in simulating a Communications System.
 
+## Relation to Sampling
+
+One non-intuive use case for a Monte Carlo simulation is to determine probabilities where the space of possibilities is intractably large. In practice, state spaces can explode in size, even for seemingly simple situations. If you consider a game of solitaire using a standard 52 card deck, one reasonable question you could ask is: how many orderings of the deck result in winnable games of solitaire? In this question, there are 52 factorial different orderings of a deck ... or 8e+67 combinations! Rather than work through each deck ordering to determine the exact probability of winnable games, you could instead use a Monte Carlo simulation that plays through randomly ordered decks. After a sufficiently large number of games, you'll converge onto a probability of winnable orderings. By using Monte Carlo simulations to sample from large event spaces, you can build robust intuition around intractably large state spaces.  
+
 ### More Information:
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Monte_Carlo_method)

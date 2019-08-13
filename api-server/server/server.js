@@ -40,7 +40,7 @@ const logOnce = createLogOnce();
 
 boot(app, __dirname, err => {
   if (err) {
-    // rethrowing the error here bacause any error thrown in the boot stage
+    // rethrowing the error here because any error thrown in the boot stage
     // is silent
     logOnce('The below error was thrown in the boot stage');
     throw err;

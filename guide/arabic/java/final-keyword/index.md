@@ -8,13 +8,14 @@ localeTitle: نهائي
 
 **_مثال:_**
 
- `class MyClass { 
-  public static final double PI = 3.14; 
-  public static void main(String[] args){ 
-    System.out.println(PI); 
-  } 
- } 
-` 
+```java
+class MyClass {
+  public static final double PI = 3.14;
+  public static void main(String[] args){
+    System.out.println(PI);
+  }
+}
+``` 
 
 PI هو الآن ثابت. أي محاولة لتعيينه قيمة ستسبب خطأ.
 

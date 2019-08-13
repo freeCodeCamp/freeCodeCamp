@@ -22,6 +22,7 @@ _Usted no puede_
 
 Lo siento, pero no hay una respuesta directa a esta pregunta. Te puedes preguntar las siguientes preguntas:
 
+
 *   ¿Eres capaz de dar estimaciones precisas?
     
 *   ¿Estás abierto a aprender nuevos conceptos?

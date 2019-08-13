@@ -66,7 +66,6 @@ function phoneticLookup(val) {
 
 Javascript result = lookup \[val\]; \`\` \`
 
-· Запустить код в [repl.it.](https://repl.it/@AdrianSkar/Using-objects-for-lookups)
 
 ### Ресурсы
 

@@ -2,6 +2,7 @@
 id: 5900f4ed1000cf542c50ffff
 challengeType: 5
 title: 'Problem 383: Divisibility comparison between factorials'
+forumTopicId: 302047
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find T5(1018).
 ```yml
 tests:
   - text: <code>euler383()</code> should return 22173624649806.
-    testString: assert.strictEqual(euler383(), 22173624649806, '<code>euler383()</code> should return 22173624649806.');
+    testString: assert.strictEqual(euler383(), 22173624649806);
 
 ```
 
@@ -62,4 +63,5 @@ euler383();
 ```js
 // solution required
 ```
+
 </section>

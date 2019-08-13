@@ -48,7 +48,6 @@ localeTitle: Внедрить Quick Sort
  } 
 ```
 
-*   [Код запуска](https://repl.it/@ezioda004/Quick-Sort)
 
 ### Справка:
 

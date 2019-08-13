@@ -10,20 +10,21 @@ Z Index ( `z-index` ) هي خاصية CSS تقوم بتعريف ترتيب عن�
 
 #### القيم الممكنة
 
- `/* Default value if not specified */ 
- z-index: auto; 
- 
- /* Integer values */ 
- z-index: 1; 
- z-index: 100; 
- z-index: 9999; 
- z-index: -1; 
- 
- /* Global values */ 
- z-index: inherit; 
- z-index: initial; 
- z-index: unset; 
-` 
+```css
+/* Default value if not specified */
+z-index: auto;
+
+/* Integer values */
+z-index: 1;
+z-index: 100;
+z-index: 9999;
+z-index: -1;
+
+/* Global values */
+z-index: inherit;
+z-index: initial;
+z-index: unset;
+``` 
 
 #### مثال للاستخدام
 
@@ -31,28 +32,29 @@ Z Index ( `z-index` ) هي خاصية CSS تقوم بتعريف ترتيب عن�
 
 _HTML_
 
- `
-<div class="container"> 
-  <div class="box" id="blue"></div> 
-  <div class="box" id="red"></div> 
-  <div class="box" id="green"></div> 
- </div> 
-` 
+```html
+<div class="container">
+  <div class="box" id="blue"></div>
+  <div class="box" id="red"></div>
+  <div class="box" id="green"></div>
+</div>
+``` 
 
 _CSS_
 
- `#blue { 
-  background-color: blue; 
- } 
- 
- #red { 
-  background-color: red; 
- } 
- 
- #green { 
-  background-color: green; 
- } 
-` 
+```css
+#blue {
+  background-color: blue;
+}
+
+#red {
+  background-color: red;
+}
+
+#green {
+  background-color: green;
+}
+``` 
 
 بما أنه لم يتم تعريف `z-index` ، فستكون له قيمة افتراضية من `auto` . هذه نتيجة:
 
@@ -60,21 +62,22 @@ _CSS_
 
 حاول تغيير الترتيب إلى الأخضر والأزرق والأحمر في CSS باستخدام `z-index` .
 
- `#blue { 
-  background-color: blue; 
-  z-index: 2; 
- } 
- 
- #red { 
-  background-color: red; 
-  z-index: 1; 
- } 
- 
- #green { 
-  background-color: green; 
-  z-index: 3; 
- } 
-` 
+```css
+#blue {
+  background-color: blue;
+  z-index: 2;
+}
+
+#red {
+  background-color: red;
+  z-index: 1;
+}
+
+#green {
+  background-color: green;
+  z-index: 3;
+}
+``` 
 
 ستكون النتيجة الخاصة بك:
 
@@ -82,10 +85,11 @@ _CSS_
 
 استخدم Z Index إذا كنت بحاجة إلى وضع عنصر خلفية أسفل الحاوية. يمكنك وضع الخلفية بسهولة تحت كل عنصر عن طريق إعطائها مؤشر Z سلبي مثل أدناه:
 
- `#background { 
-  z-index: -1; 
- } 
-` 
+```css
+#background {
+  z-index: -1;
+}
+``` 
 
 #### معلومات اكثر:
 

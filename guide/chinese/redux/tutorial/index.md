@@ -1,7 +1,8 @@
 ---
 title: React Redux Basic Setup
 localeTitle: React Redux Basic Setup
----## React Redux Basic Setup
+---
+## React Redux Basic Setup
 
 在本指南中，将向读者介绍如何设置简单的React和Redux应用程序。
 
@@ -12,8 +13,7 @@ localeTitle: React Redux Basic Setup
 假设所有设置都正常并且正常工作，则需要添加一些软件包才能使Redux与React一起工作。
 
 在已创建的项目文件夹中打开一个终端并发出以下命令
-
-```sh
+```shell
 npm install --save react react react-dom react-redux react-router redux 
 ```
 
