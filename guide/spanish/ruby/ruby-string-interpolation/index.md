@@ -1,5 +1,5 @@
 ---
-title: Interpolación de string en Ruby
+title: Ruby String Interpolation
 localeTitle: Interpolación de string en Ruby
 ---
 # Interpolación de string
