@@ -28,29 +28,48 @@ Ejemplo de código:
 
 <form> 
     <label for="username">Username:</label> 
-    <input type="text" name="username" id="username"> 
-    <label for="password">Password:</label> 
-    <input type="password" name="password" id="password"> 
+    <input type="text" name="username" id="username"> <BR>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password"> <br>
     <input type="radio" name="gender" value="male">Male<br> 
     <input type="radio" name="gender" value="female">Female<br> 
     <input type="radio" name="gender" value="other">Other 
-    <input list="Options"> 
-    <datalist id="Options"> 
+    <input list="Options"> <br>
+        <datalist id="Options"> 
       <option value="Option1"> 
       <option value="Option2"> 
       <option value="Option3"> 
     </datalist> 
-    <input type="submit" value="Submit"> 
     <input type="color"> 
-    <input type="checkbox" name="correct" value="correct">Correct 
+    <input type="checkbox" name="correct" value="correct">Correct <br>
+    <input type="submit" value="Submit">
  </form> 
 ```
+Que hace cada codigo:
+
+`label` + `input` = Cuadro de texto para colocar usuario.
+
+`label` + `input` = Cuadro de texto para colocar passpord.
+
+`Input` siguientes `radio` = Boton de seleccion circular.
+
+`input` type `options` = Cuadro de con flecha para opciones, las cuales estan en `datalist`.
+
+`input` type `color` = Boton para elejir color favorito.
+
+`input` type `checkbox` = Boton de seleccion multiple cuadrado.
+
+`input` type `submit` = Boton para enviar.
+
+
+
 
 Otros elementos que forman pueden contener:
 
 *   `textarea` : es un cuadro multilínea que se usa con mayor frecuencia para agregar texto, por ejemplo. comentario. El tamaño del área de texto se define por el número de filas y columnas.
 *   `select` etiqueta `select` - junto con la etiqueta `<option></option>` crea un menú de selección desplegable.
 *   `button` : el elemento botón se puede utilizar para definir un botón en el que se puede hacer clic.
+   
 
 ## MÁS INFORMACIÓN SOBRE FORMAS HTML.
 
