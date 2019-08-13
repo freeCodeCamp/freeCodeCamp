@@ -1,8 +1,8 @@
 ---
-title: HTML DOM (Document Object Model)
-localeTitle: HTML DOM (Document Object Model)
+title: HTML Dom
+localeTitle: HTML Dom
 ---
-## HTML DOM (Document Object Model)
+## HTML Dom
 
 Com o HTML DOM, o JavaScript pode acessar e alterar todos os elementos de um documento HTML.
 
