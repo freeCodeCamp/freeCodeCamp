@@ -14,9 +14,9 @@ JavaScript proporciona al usuario cinco operadores aritméticos: `+` , `-` , `*`
 ```
 2 + 3          // retorna 5 
  true + 2       // interpreta true como 1 y retorna 3 
- false + 5      // interpreta false como y retorna 5 
+ false + 5      // nterpreta false como 0 y retorna 5 
  true + "bar"   // concatena el valor booleano y retorna "truebar" 
- 5 + "foo"      // concatena la cadena y el numero y retorna "5foo"
+ 5 + "foo"      // concatena la cadena y el número y retorna "5foo"
  "foo" + "bar"  // concatena las cadenas y retorna "foobar"
 ```
 
