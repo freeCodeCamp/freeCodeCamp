@@ -15,19 +15,27 @@ true.class
  => NilClass 
  ``` 
  
- `true` and `false` are Ruby's native boolean values. A boolean value is a value that can only be one of two possible values: true or not true. The object `true` represents truth, while `false` represents the opposite. You can assign variables to `true` / `false`, pass them to methods, and generally use them as you would other objects (such as numbers, Strings, Arrays, Hashes). 
+ `true` y `false` son los valores booleanos nativos de Ruby. Un booleano es un valor que solo puede ser uno de dos valores posibles: verdadero o no verdadero. El objecto `true` representa verdad, mientras que `false` representa lo opuesto. Puedes asignar variables a `true` / `false`, pasarlos por metodos y usarlos como lo harias con otros objecto (como numbers, Strings, Arrays, Hashes). 
  
- `nil` is a special value that indicates the absence of a value: it is Ruby's way of referring to "nothing". An example of when you will encounter the `nil` object is when you ask for something that doesn't exist or cannot be found: 
-```
+ `nil` Es un valor especial que indica la ausencia de un valor: es la forma en la que ruby se refiere a "nada". Un ejemplo donde puedes encontrar el objecto `nil` es cuando preguntas por algo que no existe o no puede ser encontrado: 
 
-rubí hats = \["beret", "sombrero", "beanie", "fez", "flatcap"\]
+```rubí 
 
-sombreros \[0\] => "boina" # el sombrero en el índice 0 sombreros \[2\] => "gorro" # el sombrero en el índice 2 sombreros \[4\] => "flatcap" # el sombrero en el índice 4 sombreros \[5\] => nil # no hay sombrero en el índice 5, el índice 5 no tiene nada (nulo)
-```
-Zero is not nothing (it's a number, which is something). Likewise, empty strings, arrays, and hashes are not nothing (they are objects, which happen to be empty). You can call the method `nil?` to check whether an object is nil. 
-```
+sombreros = ["boina", "sombrero", "gorro", "fez", "gorra plana"]
 
-rubí 0.nil? => falso "".¿nulo? => falso \[\].¿nulo? => falso {}.¿nulo? => falso nil.nil? => verdadero # del ejemplo de arriba gorras \[5\] .nil? => verdadero \`\` \`
+sombreros[0] => "boina" # el sombrero en el índice 0 sombreros [2] => "gorro" # el sombrero en el índice 2 sombreros [4] => "gorra plana" # el sombrero en el índice 4 sombreros [5] => nil # no hay sombrero en el índice 5, el índice 5 no tiene nada (nulo)
+```
+Zero no es nada (es un numero, que es algo). Igualmente, strings vacios, arrays, and hashes no son nada (ellos son objectos, que están vacios). puedes llamar el metodo `nil?` para comprobar si un objecto es nulo. 
+
+```rubí 
+0.nil? => false 
+"".nil? => false 
+[].nil? => false 
+{}.nil? => false 
+nil.nil? => true 
+# del ejemplo de arriba 
+gorras[5].nil? => true 
+```
 
 Cada objeto en Ruby tiene un valor booleano, lo que significa que se considera verdadero o falso en un contexto booleano. Aquellos considerados verdaderos en este contexto son "sinceros" y aquellos considerados falsos son "falsey". En Ruby, _solo_ `false` y `nil` son "falsey", todo lo demás es "veraz".
 

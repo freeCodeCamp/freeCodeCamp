@@ -14,37 +14,40 @@ localeTitle: تعتيم الخلفية
 
 **كامد بالكامل**
 
- `.class-name { 
-  opacity:1; 
- } 
- 
- OR 
- 
- .class-name { 
-  opacity:1.0; 
- } 
-` 
+```css
+.class-name {
+  opacity:1;
+}
+
+OR
+
+.class-name {
+  opacity:1.0;
+}
+``` 
 
 **شفافي نصف شفاف**
 
- `.class-name { 
-  opacity:0.5; 
- } 
- Opacity value can be anything between 0 and 1; 
-` 
+```css
+.class-name {
+  opacity:0.5;
+}
+Opacity value can be anything between 0 and 1;
+``` 
 
 **شفاف**
 
- `.class-name { 
-  opacity:0; 
- } 
- 
- OR 
- 
- .class-name { 
-  opacity:0.0; 
- } 
-` 
+```css
+.class-name {
+  opacity:0;
+}
+
+OR
+
+.class-name {
+  opacity:0.0;
+}
+``` 
 
 بدلا من ذلك يمكنك استخدام قيمة rgba شفافة مثل هذا: \`\` \`المغلق
 

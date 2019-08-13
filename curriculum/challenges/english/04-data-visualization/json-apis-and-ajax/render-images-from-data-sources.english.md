@@ -2,6 +2,7 @@
 id: 587d7fae367417b2b2512be6
 title: Render Images from Data Sources
 challengeType: 6
+forumTopicId: 18265
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Add code to use the <code>imageLink</code> and <code>altText</code> properties i
 ```yml
 tests:
   - text: You should use the <code>imageLink</code> property to display the images.
-    testString: assert(code.match(/val\.imageLink/g), 'You should use the <code>imageLink</code> property to display the images.');
+    testString: assert(code.match(/val\.imageLink/g));
 
 ```
 
@@ -84,7 +85,7 @@ tests:
   }
 </style>
 <h1>Cat Photo Finder</h1>
-<p class="message box">
+<p class="message">
   The message will go here
 </p>
 <p>
@@ -106,4 +107,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 587d824d367417b2b2512c50
 title: Test if a Value is an Array
 challengeType: 2
+forumTopicId: 301600
 ---
 
 ## Description
@@ -11,7 +12,7 @@ As a reminder, this project is being built upon the following starter project on
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.isArray()</code> or <code>assert.isNotArray()</code> to make the tests pass.
 </section>
 
 ## Tests
@@ -41,4 +42,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -8,33 +8,35 @@ localeTitle: قواميس
 
 إليك القائمة التي سنعمل معها:
 
- `ice_cream = ["strawberry", 
-             "vanilla", 
-             "vanilla", 
-             "chocolate", 
-             "chocolate", 
-             "chocolate", 
-             "banana", 
-             "rum raisin", 
-             "banana"] 
-` 
+```python
+ice_cream = ["strawberry",
+             "vanilla",
+             "vanilla",
+             "chocolate",
+             "chocolate",
+             "chocolate",
+             "banana",
+             "rum raisin",
+             "banana"]
+``` 
 
 يعطي هذا الرمز ، الذي يستخدم متداخلاً لحلقات ، الإجابة الصحيحة ، وتخزين الإجابة في قائمة "العد":
 
- `count = [] 
- for flavor in ice_cream: 
-  found = False 
-  for entry in count: 
-    if entry[0] == flavor: 
-      entry[1] += 1 
-      found = True 
-  if not found: 
-      count.append([flavor, 1]) 
- 
- # Print. 
- for (entry, total) in count: 
-  print (entry, total) 
-` 
+```python
+count = []
+for flavor in ice_cream:
+  found = False
+  for entry in count:
+    if entry[0] == flavor:
+      entry[1] += 1
+      found = True
+  if not found:
+      count.append([flavor, 1])
+
+# Print.
+for (entry, total) in count:
+  print (entry, total)
+``` 
 
 على الرغم من أن هذا الرمز يعطي الإجابة الصحيحة ، إلا أنه يوجد شيئان خاطئان به. أولاً ، إنها معقدة. كلما زاد عدد الحلقات المتداخلة التي يحتوي عليها البرنامج ، كلما كان من الصعب فهمها وإصلاحها وتوسيعها. علاوة على ذلك ، فهو غير فعال. قد لا يكون هذا مشكلة في هذا المثال الصغير ، ولكن تخيل قائمة تحتوي على آلاف أو ملايين العناصر. إن مسح قائمة الإدخالات في كل مرة نقوم فيها بملاحظة تستغرق وقتًا طويلاً للغاية ، بغض النظر عن سرعة الكمبيوتر. هذا موضوع تم تناوله بشكل كامل عند دراسة موضوعات مثل التدوين الكبير O ومقارنة خوارزميات البحث والفرز.
 
@@ -44,65 +46,70 @@ localeTitle: قواميس
 
 فيما يلي بعض أمثلة التعليمات البرمجية:
 
- `ice_cream = {'chocolate' : 3, 'strawberry' : 1} 
- print (ice_cream) 
- >> {'chocolate' : 3, 'strawberry' : 1} 
- print (ice_cream['strawberry']) 
- >> 1 
-` 
+```python
+ice_cream = {'chocolate' : 3, 'strawberry' : 1}
+print (ice_cream)
+>> {'chocolate' : 3, 'strawberry' : 1}
+print (ice_cream['strawberry'])
+>> 1
+``` 
 
 لاختبار ما إذا كان المفتاح موجودًا في أحد القواميس ، استخدم k في d:
 
- `ice_cream = {'chocolate' : 3, 'strawberry' : 1} 
- if 'chocolate' in ice_cream: 
-    print ('chocolate is in the list') 
- ... 
- 
- del ice_cream['chocolate'] 
- if 'chocolate' in ice_cream: 
-    print ('oops: why is chocolate still there?') 
-` 
+```python
+ice_cream = {'chocolate' : 3, 'strawberry' : 1}
+if 'chocolate' in ice_cream:
+    print ('chocolate is in the list')
+...
+
+del ice_cream['chocolate']
+if 'chocolate' in ice_cream:
+    print ('oops: why is chocolate still there?')
+``` 
 
 **تحديث والعضوية** لتحديث القواميس ، ما عليك سوى تعيين قيمة للمفتاح. إذا كان المفتاح موجودًا بالفعل في القاموس ، فسيؤدي ذلك إلى تغيير القيمة المرتبطة به.
 
 إذا لم يكن المفتاح موجودًا ، فيتم إضافته بالإضافة إلى القيمة:
 
- `ice_cream = {} 
- ice_cream['chocolate'] = 33 
- ice_cream['vanilla'] = 999 # oops 
- print (ice_cream) 
- >> {'chocolate' : 33, vanilla' : 999} 
- ice_cream['vanilla'] = 9 
- print (ice_cream) 
- >> {'chocolate' : 33, vanilla' : 9} 
-` 
+```python
+ice_cream = {}
+ice_cream['chocolate'] = 33
+ice_cream['vanilla'] = 999 # oops
+print (ice_cream)
+>> {'chocolate' : 33, vanilla' : 999}
+ice_cream['vanilla'] = 9
+print (ice_cream)
+>> {'chocolate' : 33, vanilla' : 9}
+``` 
 
 استخدم _del d \[k\]_ ، لإزالة إدخال من قاموس ، حيث _d_ هو اسم القاموس و _k_ هو المفتاح الذي يتم إزالته. يمكن إزالة الإدخالات الموجودة فقط؛ محاولة إزالة واحدة غير موجودة يسبب خطأ:
 
- `ice_cream = {'chocolate' : 33, vanilla' : 9} 
- del ice_cream['chocolate'] 
- print (ice_cream) 
- >> {'vanilla' : 9} 
- del ice_cream['strawberry'] 
- >> Traceback (most recent call last): 
-   File "<stdin>", line 5, in <module> 
-   KeyError: 'strawberry' 
-` 
+```python
+ice_cream = {'chocolate' : 33, vanilla' : 9}
+del ice_cream['chocolate']
+print (ice_cream)
+>> {'vanilla' : 9}
+del ice_cream['strawberry']
+>> Traceback (most recent call last):
+   File "<stdin>", line 5, in <module>
+   KeyError: 'strawberry'
+``` 
 
 **الحلقات** بما أن القواميس عبارة عن مجموعات (جنباً إلى جنب مع القوائم ، والصفوف ، والمجموعات) ، فإننا سنرغب في تكرار حلقاتها محتويات. نقوم بذلك من خلال حلقة for ، والتي تقوم بتعيين كل من المفاتيح في القاموس إلى متغير الحلقة بدوره:
 
- `ice_cream = {'chocolate' : 183, 
-             'vanilla' : 71, 
-             'strawberry' : 63, 
-             'banana', 1} 
- for flavor in ice_cream: 
-  print (flavor, ice_cream[flavor]) 
- 
- >> 'banana' 1 
-   'vanilla' 71 
-   'chocolate' 183 
-   'strawberry' 63 
-` 
+```python
+ice_cream = {'chocolate' : 183,
+             'vanilla' : 71,
+             'strawberry' : 63,
+             'banana', 1}
+for flavor in ice_cream:
+  print (flavor, ice_cream[flavor])
+
+>> 'banana' 1
+   'vanilla' 71
+   'chocolate' 183
+   'strawberry' 63
+``` 
 
 كما هو الحال مع العناصر المحددة ، تقوم بايثون بتكرار أكثر من الإدخالات في القاموس بترتيب عشوائي. ليس هناك ما يضمن أن ينظر إليها أبجديا أو بالترتيب ، تم إضافتها إلى القاموس. لاحظ ، بالمناسبة ، أن التكرار فوق القواميس يختلف قليلاً عن التكرار على القوائم. عندما تقوم بايثون بتكرار أكثر من قائمة ، يتم تعيين القيم في القائمة للمتغير المتكرر. عندما تقوم الحلقات عبر قاموس ، من ناحية أخرى ، فإنه يعيّن المفاتيح. اختار مصممو بيثون القيام بذلك بسبب:
 
@@ -124,48 +131,50 @@ localeTitle: قواميس
 
 لنعد إلى المثال الأصلي - كيف نحسب عدد العناصر في قائمة ice\_cream باستخدام القاموس؟
 
- `# Count all the flavors. 
- ice_cream = ["strawberry", 
-             "vanilla", 
-             "vanilla", 
-             "chocolate", 
-             "chocolate", 
-             "chocolate", 
-             "banana", 
-             "rum raisin", 
-             "banana"] 
- 
- count = {} 
- for flavor in ice_cream: 
-  if flavor in count: 
-    count[flavor] = count[flavor] + 1 
-  else: 
-    count[flavor] = 1 
- 
- # Print. 
- for b in count: 
-  print (b, count[b]) 
-` 
+```python
+# Count all the flavors.
+ice_cream = ["strawberry",
+             "vanilla",
+             "vanilla",
+             "chocolate",
+             "chocolate",
+             "chocolate",
+             "banana",
+             "rum raisin",
+             "banana"]
+
+count = {}
+for flavor in ice_cream:
+  if flavor in count:
+    count[flavor] = count[flavor] + 1
+  else:
+    count[flavor] = 1
+
+# Print.
+for b in count:
+  print (b, count[b])
+``` 
 
 للقيام بذلك ، نقوم بإنشاء قاموس فارغ في البداية. في كل مرة يتم فيها التكرار عبر قائمة ice\_cream ، نتحقق من ذلك لمعرفة ما إذا كانت النكهة موجودة بالفعل في قاموس العدد. إذا كان كذلك ، نضيف واحدة إلى حسابها. إذا لم يكن الأمر كذلك ، فسنضيف الاسم إلى القاموس ذي القيمة 1.
 
 يمكننا اختصار هذا البرنامج قليلا باستخدام الطريقة _dict.get ()_ . هذا يعيد إما القيمة المرتبطة بمفتاح أو بعض القيمة الافتراضية التي نقدمها. في هذه الحالة ، نحصل إما على عدد المرات التي رأينا فيها بالفعل نكهة أو صفر ، أضف واحدًا إلى أي قيمة ترجعها الطريقة ، وتخزينها مرة أخرى في القاموس:
 
- `# Count all the flavors. 
- count = {} 
- for flavor in ice_cream: 
-  count[flavor] = count.get(flavor, 0) + 1 
- 
- # Print. 
- keys = count.keys() 
- keys.sort() 
- for b in keys: 
-  print (b, count[b]) 
- 
- # Print. 
- for key in sorted(count): 
-  print (key, count[key]) 
-` 
+```python
+# Count all the flavors.
+count = {}
+for flavor in ice_cream:
+  count[flavor] = count.get(flavor, 0) + 1
+
+# Print.
+keys = count.keys()
+keys.sort()
+for b in keys:
+  print (b, count[b])
+
+# Print.
+for key in sorted(count):
+  print (key, count[key])
+``` 
 
 لاحظ أننا نستخدم طريقتين منفصلتين لطباعة المفتاح والقيمة: يستخدم أحدهما طريقة التصنيف في Python ، والآخر لا يفعل ذلك.
 

@@ -1,7 +1,13 @@
 ---
 title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 ---
-## Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
+# Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Following the instructions:
 
@@ -12,4 +18,6 @@ the line 4 becomes:
 ```css
 color: #003366;
 ```
+
 and the color of the text will become darker. 
+</details>

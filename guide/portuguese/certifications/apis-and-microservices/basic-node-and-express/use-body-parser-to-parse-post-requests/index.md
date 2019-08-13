@@ -6,7 +6,7 @@ localeTitle: Use o analisador de corpo para analisar solicitações de POST
 
 O analisador de corpo já deve ser adicionado ao seu projeto se você usou o clichê fornecido, mas se não deveria estar lá como:
 
-```code
+```json
 "dependencies": { 
     "body-parser": "^1.4.3", 
     ... 

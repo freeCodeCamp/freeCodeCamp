@@ -20,7 +20,7 @@ C ++包含一个庞大的库，可以帮助执行I / O和硬件操作等困难�
 
 #### 使用和CodeBlocks一样的IDE
 
-它就像单击构建和运行按钮一样简单，它们将在项目文件夹中创建一个文件。 ![IMG](https://i.imgur.com/FwZuFGy.png)
+它就像单击构建和运行按钮一样简单，它们将在项目文件夹中创建一个文件。 ![IMG](https://cdn-media-1.freecodecamp.org/imgr/FwZuFGy.png)
 
 #### 使用命令提示符
 

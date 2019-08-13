@@ -90,8 +90,7 @@ var Person = function(firstAndLast) {
  bob.getFullName(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLov/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie uma variável que faça uma cópia do nome completo que foi passado como um parâmetro.

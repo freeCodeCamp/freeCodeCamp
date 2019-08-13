@@ -40,7 +40,6 @@ localeTitle: Mutate An Array مع const
     editInPlace(); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://codepen.io/dylantyates/pen/djoVjW)
 
 # شرح الشفرة:
 

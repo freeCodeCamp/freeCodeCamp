@@ -8,12 +8,14 @@ localeTitle: فهم قيمة غير محددة عاد من وظيفة
 
 المضي قدما وتحديد `addFive()` مثل ذلك ...
 
- `function addFive() { 
-  sum += 5; 
- } 
-` 
+```javascript
+function addFive() {
+  sum += 5;
+}
+``` 
 
 كما ترى ، يتم إضافة `sum` ب 5 بدون مشاكل ، ولكن بما أنه لا يوجد بيان إرجاع ، فهناك مخرجات `undefined` .
 
- `var result = addFive(); // This is undefined 
-`
+```javascript
+var result = addFive(); // This is undefined
+```

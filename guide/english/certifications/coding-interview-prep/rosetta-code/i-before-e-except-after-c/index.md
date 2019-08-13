@@ -1,7 +1,7 @@
 ---
 title: I before E except after C
 ---
-## I before E except after C
+# I before E except after C
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/i-before-e-except-after-c/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

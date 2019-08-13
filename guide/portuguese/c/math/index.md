@@ -132,7 +132,8 @@ Dê uma corrida para ver o que acontece e não se esqueça de jogar com os opera
 
 C fornece uma biblioteca de matemática ( `math.h` ) que fornece várias funções matemáticas úteis. Por exemplo, o poder de um número pode ser calculado como:
 
-```#include<math.h>
+```c
+#include<math.h>
 int result = pow(2,3) // will result in 2*2*2 or 8 
 ```
 

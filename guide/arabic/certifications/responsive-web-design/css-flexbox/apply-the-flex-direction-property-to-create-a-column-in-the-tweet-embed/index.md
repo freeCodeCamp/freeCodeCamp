@@ -6,9 +6,10 @@ localeTitle: قم بتطبيق الخاصية ذات الاتجاه المرن �
 
 سيؤدي تغيير اتجاه المرن من صفه الافتراضي إلى العمود عن طريق إضافة الخاصية إلى css بشكل واضح إلى إظهار المقبض لإخفاء الاسم.
 
- `header .profile-name { 
-    display: flex; 
-    flex-direction: column; 
-    margin-left: 10px; 
-  } 
-`
+```css
+header .profile-name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+```

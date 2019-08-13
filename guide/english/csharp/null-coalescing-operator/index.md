@@ -10,7 +10,7 @@ The null-coalescing operator in C# is used to help assign one variable to anothe
 
 Since `name` is `null`, `clientName` will be assigned the value "John Doe".
 
-```cs
+```csharp
 string name = null;
 
 string clientName = name ?? "John Doe";
@@ -18,7 +18,7 @@ string clientName = name ?? "John Doe";
 Console.WriteLine(clientName);
 ```
 
-```cs
+```csharp
 > John Doe
 ```
 
@@ -26,7 +26,7 @@ Console.WriteLine(clientName);
 
 Since `name` is not `null`, `clientName` will be assigned the value of `name`, which is "Jane Smith".
 
-```cs
+```csharp
 string name = "Jane Smith";
 
 string clientName = name ?? "John Doe";
@@ -34,7 +34,7 @@ string clientName = name ?? "John Doe";
 Console.WriteLine(clientName);
 ```
 
-```cs
+```csharp
 > Jane Smith
 ```
 
@@ -42,7 +42,7 @@ Console.WriteLine(clientName);
 
 You could use an `if...else` statement to test for the presence of `null` and assign a different value.
 
-```cs
+```csharp
 string clientName;
 
 if (name != null)
@@ -53,7 +53,7 @@ else
 
 However, this can be greatly simplified using the null-coalescing operator.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe";
 ```
 
@@ -61,13 +61,13 @@ string clientName = name ?? "John Doe";
 
 It is also possible to use the conditional operator to test for the presence of `null` and assign a different value.
 
-```cs
+```csharp
 string clientName = name != null ? name : "John Doe";
 ```
 
 Again, this can be simplified using the null-coalescing operator.
 
-```cs
+```csharp
 string clientName = name ?? "John Doe";
 ```
 

@@ -18,11 +18,6 @@ Aqui está um **exemplo** do que parece ser uma abordagem _antes_ e _depois_ :
     grid-template-columns: repeat(3, minmax(50px, 2fr)); 
 ```
 
-* * *
-
-Você também pode verificar essa caneta incorporada no Codepen para ver o exemplo em ação, que você pode redimensionar para exibir os resultados:
-
-Veja a função [limite-de-item-tamanho-usando-o-minmax](https://codepen.io/skywardcode/pen/EeGGze/) da pena por skywardcode ( [@skywardcode](https://codepen.io/skywardcode) ) em [CodePen](https://codepen.io) .
 
 ### Recursos
 

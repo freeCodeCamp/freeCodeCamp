@@ -2,6 +2,7 @@
 id: 5900f4a71000cf542c50ffba
 challengeType: 5
 title: 'Problem 315: Digital root clocks'
+forumTopicId: 301971
 ---
 
 ## Description
@@ -66,7 +67,7 @@ Find the difference between the total number of transitions needed by Sam's cloc
 ```yml
 tests:
   - text: <code>euler315()</code> should return 13625242.
-    testString: assert.strictEqual(euler315(), 13625242, '<code>euler315()</code> should return 13625242.');
+    testString: assert.strictEqual(euler315(), 13625242);
 
 ```
 
@@ -98,4 +99,5 @@ euler315();
 ```js
 // solution required
 ```
+
 </section>

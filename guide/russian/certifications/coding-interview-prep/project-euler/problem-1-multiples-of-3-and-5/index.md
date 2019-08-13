@@ -24,7 +24,6 @@ function multiplesOf3and5(number) {
  } 
 ```
 
-*   [Код запуска](https://repl.it/@ezioda004/Project-Euler-Problem-1-Multiples-of-3-and-5)
 
 ### Справка:
 

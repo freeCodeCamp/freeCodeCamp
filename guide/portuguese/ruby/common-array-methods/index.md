@@ -1,144 +1,223 @@
 ---
 title: Common Array Methods
-localeTitle: Métodos comuns de matriz
+localeTitle: Métodos comuns do Array(arranjo)
 ---
-## Métodos comuns de matriz
+## Métodos comuns do Array(arranjo)
 
-Ruby Arrays formam uma base fundamental na programação em Ruby, e na maioria das linguagens de fato. É usado tanto que seria benéfico conhecer e até memorizar alguns dos métodos mais usados ​​para matrizes. Se você quiser saber mais sobre Ruby Arrays, temos [um artigo sobre eles](https://guide.freecodecamp.org/ruby/ruby-arrays) .
+Arrays(arranjos) Ruby formam uma base fundamental na programação em Ruby, e na maioria das linguagens de fato. É usado tanto que seria benéfico conhecer e até memorizar alguns dos métodos mais usados ​​com Arrays(arranjos). Se você quiser saber mais sobre Arrays Ruby, temos [um artigo sobre eles](https://guide.freecodecamp.org/ruby/ruby-arrays) .
 
 Para os propósitos deste guia, nosso array será o seguinte:
 
-\`\` \`ruby array = \[0, 1, 2, 3, 4\]
+``` ruby
+array = [0, 1, 2, 3, 4]
 ```
+
 #### .length 
- The .length method tallies the number of elements in your array and returns the count: 
+ O método .length conta o número de elementos no seu array e retorna esse número: 
+
+``` ruby
+array.length
+=> 5
+```
+É similar aos métodos .count e .size .
+
+``` ruby
+array.count
+=> 5
+```
+``` ruby
+array.size
+=> 5
 ```
 
-rubi array.length => 5
-```
-#### .first 
- The .first method accesses the first element of the array, the element at index 0: 
+#### .first
+O método .first acessa o primeiro elemento do array, o elemento no índice 0:
+
+``` ruby
+array.first
+=> 0
 ```
 
-rubi array.first => 0
-```
-#### .last 
- The .last method accesses the last element of the array: 
+#### .last
+O método .last accessa o último elemento do array:
+
+``` ruby
+array.last
+=> 4
 ```
 
-rubi array.last => 4
-```
-#### .take 
- The .take method returns the first n elements of the array: 
+#### .take
+O método .take retorna os primeiros n elementos do array:
+
+``` ruby
+array.take(3)
+=> [0, 1, 2]
 ```
 
-rubi array.take (3) => \[0, 1, 2\]
-```
-#### .drop 
- The .drop method returns the elements after n elements of the array: 
+#### .drop
+O método .drop retorna os elementos depois de n elementos do array:
+
+``` ruby
+array.drop(3)
+=> [3, 4]
 ```
 
-rubi array.drop (3) => \[3, 4\]
-```
-#### array index 
- You can access a specific element in an array by accessing its index. If the index does not exist in the array, nil will be returned: 
+#### índice do Array
+Você pode acessar um elemento específico de um array pelo índice dele. Se o índice não existir no array, então, irá retornar nil
+
+```ruby
+array[2]
+=> 2
+
+array[5]
+=> nil
 ```
 
-rubi matriz \[2\] => 2
+#### .pop
+O método .pop irá remover permanentemente o último elemento de um array e retornar este elemento:
 
-matriz \[5\] => nulo
-```
-#### .pop 
- The .pop method will permantently remove the last element of an array: 
-```
-
-rubi array.pop => \[0, 1, 2, 3\]
-```
-#### .shift 
- The .shift method will permantently remove the first element of an array and return this element: 
+``` ruby
+array.pop
+=> [4]
+array
+=> [1, 2, 3]
 ```
 
-rubi array.shift => 0  
-array => \[1, 2, 3, 4\]
-```
-#### .push 
- The .push method will allow you to add an element to the end of an array: 
+#### .shift
+O método .shift irá remover permanenemente o primeiro elemento de um array e retornar este elemento:
+
+``` ruby
+array.shift
+=> 0  
+array
+=> [1, 2, 3, 4]
 ```
 
-rubi array.push (99) => \[0, 1, 2, 3, 4, 99\]
+#### .push
+O metodo .push irá permitir que você you adicione um elemento ao final de um array:
+
+``` ruby
+array.push(99)
+=> [0, 1, 2, 3, 4, 99]
 ```
-#### .unshift 
- The .unshift method will allow you to add an element to the beginning of an array: 
+#### .unshift
+O método .unshift irá permitir que você you adicione um elemento ao começo de um array:
+
+```
+array = [2, 3]
+array.unshift(1)
+=> [1, 2, 3]
 ```
 
-array = \[2, 3\] array.unshift (1) => \[1, 2, 3\]
-```
-#### .delete 
- The .delete method removes a specified element from an array permanently: 
+#### .delete
+O método .delete remove permanentemente um elemento específico de um array:
+
+``` ruby
+array.delete(1)
+=> [0, 2, 3, 4]
 ```
 
-rubi array.delete (1) => \[0, 2, 3, 4\]
-```
-#### .delete_at 
- The .delete_at method allows you to permanently remove an element of an array at a specified index: 
+#### .delete_at
+O método .delete_at permite que você remova permanentemente o elemento que se encontra em um índice específico no array :
+
+``` ruby
+array.delete_at(0)
+=> [1, 2, 3, 4]
 ```
 
-rubi array.delete\_at (0) => \[1, 2, 3, 4\]
+#### .reverse
+O método .reverse retorna em ordem reversa um array, mas não o modifica (o array original permanece como é):
+
+``` ruby
+array.reverse
+=> [4, 3, 2, 1, 0]
 ```
-#### .reverse 
- The .reverse method reverses the array but does not mutate it (the original array stays as is): 
+#### .select
+O método .select itera sobra um array e retorna um novo array, onde estão incluídos todos itens retornaram verdadeiro na condição provida.
+
+``` ruby
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+array.select { |numero| numero > 4 }
+=> [5, 6, 7, 8, 9, 10]
+array
+=> [5, 6, 7, 8, 9, 10]
 ```
 
-rubi array.reverse => \[4, 3, 2, 1, 0\]
-```
-#### .select 
- The .select method iterates over an array and returns a new array that includes any items that return true to the expression provided. 
+#### .include?
+O método include? serve para ver se o argumento passado está incluído no array:
+
+``` ruby
+array = [1, 2, 3, 4, 5]
+=> [1, 2, 3, 4, 5]
+array.include?(3)
+=> true
 ```
 
-rubi array = \[1, 2, 3, 4, 5, 6, 7, 8, 9, 10\] array.select {| number | número> 4} => \[5, 6, 7, 8, 9, 10\] array => \[5, 6, 7, 8, 9, 10\]
-```
-#### .include? 
- The include? method checks to see if the argument given is included in the array: 
+#### .flatten
+O método flatten pode ser usado para pegar um array que contenha outros arrays aninhados e criar um único array uni-dimensional:
+
+``` ruby
+array = [1, 2, [3, 4, 5], [6, 7]]
+array.flatten
+=> [1, 2, 3, 4, 5, 6, 7]
 ```
 
-rubi array = \[1, 2, 3, 4, 5\] => \[1, 2, 3, 4, 5\] array.include? (3) = verdadeiro
+#### .join
+O método .join retorna uma string com todos elementos do array separados pelo parâmetro separador. Se parâmetro separador for nulo, o método usará uma string vazia como separador entre strings.
 
-#### .aplainar
-
-O método flatten pode ser usado para obter uma matriz que contém matrizes aninhadas e criar uma matriz unidimensional:
-
-\`\` \`ruby array = \[1, 2, \[3, 4, 5\], \[6, 7\]\] array.flatten => \[1, 2, 3, 4, 5, 6, 7\]
-```
-#### .join 
- The .join method returns a string of all the elements of the array separated by a separator parameter. If the separator parameter is nil, the method uses an empty string as a separator between strings. 
+``` ruby
+array.join
+=> "1234"
+array.join("*")
+=> "1*2*3*4"
 ```
 
-rubi array.join => "1234" array.join (" _") => "1_ 2 _3_ 4"
-```
-#### .each 
- The .each method iterates over each element of the array, allowing you to perform actions on them. 
+#### .each
+O método .each ira iterar sobre cada elemento do array, permitindo então que você execute ações sobre cada um deles.
+
+``` ruby
+array.each do |elemento|
+  puts elemento
+end
+=> 
+0
+1
+2
+3
+4
 ```
 
-rubi array.each do | element | coloca elemento fim => 0 1 2 3 4
-```
-#### .map 
- The .map method is the same as the .collect method. The .map and .collect methods iterate over each element of the array, allowing you to perform actions on them. The .map and .collect methods differ from the .each method in that they return an array containing the transformed elements. 
+#### .map
+O método .map é o mesmo que o método .collect. O método .map e .collect iteram sobre cada elemento do array, permitindo que você execute ações nele. Os métodos .map e .collect diferem do método .each porque retornam um array contendo os elementos transformados.
+
+``` ruby
+array.map { |elemento| elemento * 2 }
+  puts elemento
+end
+=> 
+0
+2
+4
+6
+8
 ```
 
-rubi array.map {| elemento | elemento \* 2} coloca elemento fim => 0 2 4 6 8
-```
-#### .uniq 
- The .uniq method takes in an array containing duplicate elements, and returns a copy of the array containing only unique elements--any duplicate elements are removed from the array. 
+#### .uniq
+O método .uniq pega um array contendo elementos duplicados e retorna uma cópia do array contendo somente elementos únicos. Elementos duplicados são removidos do array.
+
+``` ruby
+array = [1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 6, 7, 8]
+array.uniq
+=> [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-rubi array = \[1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 6, 7, 8\] array.uniq => \[1, 2, 3, 4, 5, 6, 7, 8\]
+#### .concat
+O método .concat anexa os elementos de um array para o array original. O método .concat pode receber múltiplos arrays como argumento dos quais irá anexar os elementos ao array original.
+``` ruby
+array = [0, 1, 2, 3, 4]
+array.concat([5, 6, 7], [8, 9, 10])
+=> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ```
-#### .concat 
- The .concat method appends the elements from an array to the original array. The .concat method can take in multiple arrays as an argument, which will in turn append multiple arrays to the original array. 
-```
-
-rubi array = \[0, 1, 2, 3, 4\] array.concat (\[5, 6, 7\], \[8, 9, 10\]) => \[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\] \`\` \`
 
 ## Mais Informações
-
-*   [Documentação do Ruby Array](http://ruby-doc.org/core-2.5.1/Array.html)
+* [Ruby Array docs](http://ruby-doc.org/core-2.5.1/Array.html)

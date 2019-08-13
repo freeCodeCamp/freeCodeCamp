@@ -10,9 +10,10 @@ localeTitle: تحديد وظيفة منشئ
 
 ### حل:
 
- `function Dog() { 
-  this.name = "Geogre", 
-  this.color = "White", 
-  this.numLegs = 4; 
- } 
-`
+```javascript
+function Dog() {
+  this.name = "Geogre",
+  this.color = "White",
+  this.numLegs = 4;
+}
+```

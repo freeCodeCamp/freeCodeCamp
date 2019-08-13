@@ -10,13 +10,15 @@ localeTitle: التحولات CSS3
 
 الخاصية `transition` هي خاصية مختزلة لخاصية `transition-property` ، `transition-duration` `transition-timing-function` ، `transition-timing-function` `transition-delay` ، وبناء الجملة هو ما يلي:
 
- `transition: transition-property transition-duration transition-timing-function transition-delay 
-` 
+```css
+transition: transition-property transition-duration transition-timing-function transition-delay
+``` 
 
 فمثلا :
 
- `transition: width 2s ease-in-out 1s; 
-` 
+```
+transition: width 2s ease-in-out 1s;
+``` 
 
 ### وصف الخصائص
 
@@ -34,8 +36,9 @@ localeTitle: التحولات CSS3
 
 فمثلا :
 
- `transition-property: width; /* means the transition applies on the width */ 
-` 
+```
+transition-property: width; /* means the transition applies on the width */
+``` 
 
 #### `transition-duration`
 
@@ -43,8 +46,9 @@ localeTitle: التحولات CSS3
 
 فمثلا :
 
- `transition-duration: 2s /* means the transition effect last 2s */ 
-` 
+```
+transition-duration: 2s /* means the transition effect last 2s */
+``` 
 
 #### `transition-timing-function`
 
@@ -61,8 +65,9 @@ localeTitle: التحولات CSS3
 
 فمثلا :
 
- `transition-timing-function: linear 
-` 
+```css
+transition-timing-function: linear
+``` 
 
 ملاحظة: جميع القيم المذكورة أعلاه هي في الواقع تفاصيل `cubic-bezier` . `linear` ، على سبيل المثال ، تعادل `cubic-bezier(0.25,0.1,0.25,1)`
 
@@ -74,8 +79,9 @@ localeTitle: التحولات CSS3
 
 فمثلا :
 
- `transition-delay: 1s /* means wait 1s before the transition effect start */ 
-` 
+```
+transition-delay: 1s /* means wait 1s before the transition effect start */
+``` 
 
 ### كيفية استخدام التحولات؟
 
@@ -83,25 +89,27 @@ localeTitle: التحولات CSS3
 
 #### استخدام الخاصية المختزلة ( `transition` )
 
- `div { 
-  width: 200px; 
-  transition: all 1s ease-in-out; 
- } 
- 
- div:hover { 
-  width: 300px; 
- } 
-` 
+```css
+div {
+  width: 200px;
+  transition: all 1s ease-in-out;
+}
+
+div:hover {
+  width: 300px;
+}
+``` 
 
 #### إعطاء جميع خصائص النقل قيمة
 
- `div { 
-  width: 200px; 
-  transition-property: width; 
-  transition-duration: 1s; 
-  transition-timing-function: ease-in-out; 
- } 
-` 
+```css
+div {
+  width: 200px;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+}
+``` 
 
 ملاحظة: كلا المثالين **متساويان**
 

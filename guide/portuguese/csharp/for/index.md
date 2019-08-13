@@ -8,7 +8,7 @@ O loop `for` executa um bloco de código até que uma condição especificada se
 
 ## Sintaxe
 
-```C#
+```csharp
 for ((Initial variable); (condition); (step)) 
     { 
     (code) 
@@ -25,7 +25,7 @@ O loop C # for consiste em três expressões e algum código.
 
 ## Exemplo
 
-```C#
+```csharp
 int[] array = { 1, 2, 3, 4, 5 }; 
  for (int i = 0; i < array.Length; i++) 
  { 

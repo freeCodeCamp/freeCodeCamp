@@ -10,24 +10,26 @@ localeTitle: HTTP
 
 من أجل تضمين وحدة نمطية ، استخدم الدالة `require()` مع اسم الوحدة.
 
- `const http = require('http');
-`
+```javascript
+const http = require('http');
+```
 
 ## Node.js كملقم ويب
 
 يتم استخدام الأسلوب `createServer()` لإنشاء خادم HTTP. الوسيطة الأولى من أسلوب `res.writeHead()` هي رمز الحالة ، `200` يعني أن كل شيء على ما يرام ، والوسيطة الثانية هي كائن يحتوي على رؤوس الاستجابة.
 
- `const http = require('http');
+```javascript
+const http = require('http');
 
- //create a server object:
- http.createServer((req, res) => {
+//create a server object:
+http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.write('Hello World!'); //write a response to the client
   res.end(); //end the response
- }).listen(8000); //the server object listens on port 8000
+}).listen(8000); //the server object listens on port 8000
 
- console.log("Server is listening on port no : 8000");
-`
+console.log("Server is listening on port no : 8000");
+```
 
 ### خطوات التنفيذ:
 
