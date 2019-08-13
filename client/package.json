@@ -31,6 +31,8 @@
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.2.0",
     "gatsby-plugin-react-helmet": "^3.1.0",
+    "gatsby-plugin-remove-fingerprints": "0.0.2",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sitemap": "^2.2.0",
     "gatsby-remark-prismjs": "^3.3.0",
     "gatsby-source-filesystem": "^2.1.0",
@@ -68,8 +70,7 @@
     "sanitize-html": "^1.20.0",
     "sass.js": "^0.11.0",
     "store": "^2.0.12",
-    "validator": "^10.11.0",
-    "webpack-remove-serviceworker-plugin": "^1.0.0"
+    "validator": "^10.11.0"
   },
   "keywords": [
     "gatsby"
