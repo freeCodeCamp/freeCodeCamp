@@ -3,6 +3,7 @@ id: ab306dbdcc907c7ddfc30830
 title: Steamroller
 isRequired: true
 challengeType: 5
+forumTopicId: 16079
 ---
 
 ## Description
@@ -22,13 +23,13 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>steamrollArray([[["a"]], [["b"]]])</code> should return <code>["a", "b"]</code>.
-    testString: assert.deepEqual(steamrollArray([[["a"]], [["b"]]]), ["a", "b"], '<code>steamrollArray([[["a"]], [["b"]]])</code> should return <code>["a", "b"]</code>.');
+    testString: assert.deepEqual(steamrollArray([[["a"]], [["b"]]]), ["a", "b"]);
   - text: <code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.
-    testString: assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4], '<code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.');
+    testString: assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4]);
   - text: <code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.
-    testString: assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4], '<code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.');
+    testString: assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4]);
   - text: <code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.
-    testString: assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4], '<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');
+    testString: assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4]);
 
 ```
 

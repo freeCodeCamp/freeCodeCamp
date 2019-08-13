@@ -8,29 +8,33 @@ localeTitle: طرق وعبارات بوديشن التعبير
 
 في ما يلي مثال لإعلان أسلوب منتظم:
 
- `public Point CreatePoint(int x, int y) 
- { 
-    return new Point(x, y); 
- } 
-` 
+```csharp
+public Point CreatePoint(int x, int y)
+{
+    return new Point(x, y);
+}
+``` 
 
 ما يلي يعطي نفس النتيجة ، ولكن يتم كتابتها كطريقة تعبير جسدي:
 
- `public Point CreatePoint(int x, int y) => new Point(x, y); 
-` 
+```csharp
+public Point CreatePoint(int x, int y) => new Point(x, y);
+``` 
 
 يمكنك أيضًا الإعلان عن الخصائص باستخدام بناء الجملة هذا. التعليمة البرمجية التالية هي كيفية تعريف خاصية get-only بدون تعبير lambda:
 
- `public Point Location 
- { 
-    get 
-    { 
-        return _location; 
-    } 
- } 
-` 
+```csharp
+public Point Location
+{
+    get
+    {
+        return _location;
+    }
+}
+``` 
 
 من خلال طريقة التعبير الجسدي ، يمكننا تقليص هذا الرمز إلى سطر واحد فقط:
 
- `public Point Location => _location 
-`
+```csharp
+public Point Location => _location
+```

@@ -67,24 +67,25 @@ localeTitle: بيان التبديل
 
 ## انتاج |
 
- `if case is 1 
- > Dice show number One. 
- 
- if case is 2 
- > Dice show number Two. 
- 
- if case is 3 
- > Dice show number Three or Four. 
- 
- if case is 4 
- > Dice show number Three or Four. 
- 
- if case is 5 
- > FiveSixDice show number Six. 
- 
- if case is 6 
- > SixDice show number Six. 
- 
- if none of the above 
- > Dice show number unknown. 
-`
+```
+if case is 1
+> Dice show number One.
+
+if case is 2
+> Dice show number Two.
+
+if case is 3
+> Dice show number Three or Four.
+
+if case is 4
+> Dice show number Three or Four.
+
+if case is 5
+> FiveSixDice show number Six.
+
+if case is 6
+> SixDice show number Six.
+
+if none of the above
+> Dice show number unknown.
+```

@@ -52,7 +52,6 @@ function getIndexToIns(arr, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/36)
 
 ## Explicación del código:
 
@@ -77,7 +76,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 50); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/2547)
 
 ## Explicación del código:
 
@@ -106,7 +104,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 50); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/4135)
 
 ## Explicación del código:
 
@@ -125,7 +122,6 @@ function getIndexToIns(arr, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/EB10/1)
 
 ## Explicación del código:
 
@@ -154,7 +150,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 500); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/63)
 
 ## Explicación del código:
 
@@ -181,7 +176,6 @@ function getIndexToIns(arr, num) {
  getIndexToIns([1,3,4],2); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/IUJE/0)
 
 ## Explicación del código:
 

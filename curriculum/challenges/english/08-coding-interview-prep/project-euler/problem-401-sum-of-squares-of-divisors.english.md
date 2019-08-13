@@ -2,6 +2,7 @@
 id: 5900f4fd1000cf542c51000f
 challengeType: 5
 title: 'Problem 401: Sum of squares of divisors'
+forumTopicId: 302069
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Find SIGMA2(1015) modulo 109.
 ```yml
 tests:
   - text: <code>euler401()</code> should return 281632621.
-    testString: assert.strictEqual(euler401(), 281632621, '<code>euler401()</code> should return 281632621.');
+    testString: assert.strictEqual(euler401(), 281632621);
 
 ```
 
@@ -63,4 +64,5 @@ euler401();
 ```js
 // solution required
 ```
+
 </section>

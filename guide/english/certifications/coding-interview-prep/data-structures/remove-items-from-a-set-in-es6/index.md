@@ -1,7 +1,7 @@
 ---
 title: Remove items from a set in ES6
 ---
-## Remove items from a set in ES6
+# Remove items from a set in ES6
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/remove-items-from-a-set-in-es6/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -53,7 +53,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/734)
 
 ### Код Объяснение:
 
@@ -82,7 +81,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/733)
 
 ### Код Объяснение:
 
@@ -106,7 +104,6 @@ function largestOfFour(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/17)
 
 ### Код Объяснение:
 

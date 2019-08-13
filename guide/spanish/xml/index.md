@@ -6,7 +6,9 @@ localeTitle: Lenguaje de marcado extensible (XML)
 
 XML significa eXtensible Markup Language. Es extensible, porque no usa un conjunto predefinido de etiquetas para identificar componentes estructurales, sino que proporciona un mecanismo para definir dichos conjuntos de etiquetas. El propósito principal del lenguaje es compartir los datos. A diferencia de HTML, en XML no hay un conjunto predefinido de etiquetas y las etiquetas especifican el significado, en lugar de la presentación.
 
-\## Sintaxis de XML La sintaxis XML se refiere a las reglas que determinan cómo se puede escribir una aplicación XML. La sintaxis XML es muy sencilla, y esto hace que XML sea muy fácil de aprender. Los documentos XML deben contener un elemento raíz que sea el padre de todos los demás elementos:
+## Sintaxis de XML 
+
+La sintaxis XML se refiere a las reglas que determinan cómo se puede escribir una aplicación XML. La sintaxis XML es muy sencilla, y esto hace que XML sea muy fácil de aprender. Los documentos XML deben contener un elemento raíz que sea el padre de todos los demás elementos:
 ```
 <root> 
   <child> 

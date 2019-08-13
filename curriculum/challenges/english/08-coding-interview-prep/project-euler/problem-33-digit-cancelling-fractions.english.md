@@ -2,6 +2,7 @@
 id: 5900f38d1000cf542c50fea0
 challengeType: 5
 title: 'Problem 33: Digit cancelling fractions'
+forumTopicId: 301987
 ---
 
 ## Description
@@ -23,7 +24,7 @@ If the product of these four fractions is given in its lowest common terms, find
 ```yml
 tests:
   - text: <code>digitCancellingFractions()</code> should return 100.
-    testString: assert.strictEqual(digitCancellingFractions(), 100, '<code>digitCancellingFractions()</code> should return 100.');
+    testString: assert.strictEqual(digitCancellingFractions(), 100);
 
 ```
 

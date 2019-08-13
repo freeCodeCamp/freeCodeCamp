@@ -1,9 +1,13 @@
 ---
 title: Render State in the User Interface Another Way
 ---
-## Render State in the User Interface Another Way
+# Render State in the User Interface Another Way
 
-#### Hint 1:
+
+---
+## Hints
+
+### Hint 1
 ```JSX
 class MyComponent extends React.Component {
   constructor(props) {
@@ -28,7 +32,12 @@ class MyComponent extends React.Component {
 };
 ```
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
 ```JSX
 class MyComponent extends React.Component {
   constructor(props) {
@@ -51,3 +60,5 @@ class MyComponent extends React.Component {
   }
 };
 ```
+
+</details>

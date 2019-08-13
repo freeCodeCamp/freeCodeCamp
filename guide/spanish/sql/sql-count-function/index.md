@@ -2,16 +2,16 @@
 title: SQL COUNT Aggregate Function
 localeTitle: Función de agregado de COUNT de SQL
 ---
-## Función de agregado de COUNT de SQL
+## Función de agregado COUNT de SQL
 
-El operador COUNT se usa generalmente en combinación con una cláusula GROUP BY. Es una de las funciones "agregadas" de SQL, que incluyen AVG (promedio) y SUM.
+El operador COUNT se usa generalmente en combinación con una cláusula GROUP BY. Es una de las funciones de "agregación" de SQL, que incluyen AVG (promedio) y SUM.
 
 Esta función contará el número de filas y devolverá ese recuento como una columna en el conjunto de resultados.
 
-Aquí hay ejemplos de lo que usaría COUNT para:
+Aquí hay ejemplos para los cuales usaría COUNT:
 
-*   Contando todas las filas en una tabla (no se requiere grupo)
-*   Recuento de los totales de subconjuntos de datos (requiere una sección Agrupar por de la declaración)
+*   Contando todas las filas en una tabla (no se requiere agrupar)
+*   Recuento de los totales de subconjuntos de datos (requiere una sección GROUP BY en la declaración)
 
 Para referencia, aquí están los datos actuales de todas las filas en nuestra base de datos de estudiantes de ejemplo.
 

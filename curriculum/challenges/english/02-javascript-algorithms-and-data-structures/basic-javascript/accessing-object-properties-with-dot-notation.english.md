@@ -2,6 +2,8 @@
 id: 56533eb9ac21ba0edf2244c7
 title: Accessing Object Properties with Dot Notation
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cGryJs8'
+forumTopicId: 16164
 ---
 
 ## Description
@@ -9,7 +11,16 @@ challengeType: 1
 There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.
 Dot notation is what you use when you know the name of the property you're trying to access ahead of time.
 Here is a sample of using dot notation (<code>.</code>) to read an object's property:
-<blockquote>var myObj = {<br>&nbsp;&nbsp;prop1: "val1",<br>&nbsp;&nbsp;prop2: "val2"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>
+
+```js
+var myObj = {
+  prop1: "val1",
+  prop2: "val2"
+};
+var prop1val = myObj.prop1; // val1
+var prop2val = myObj.prop2; // val2
+```
+
 </section>
 
 ## Instructions
@@ -23,15 +34,15 @@ Read in the property values of <code>testObj</code> using dot notation. Set the 
 ```yml
 tests:
   - text: <code>hatValue</code> should be a string
-    testString: assert(typeof hatValue === 'string' , '<code>hatValue</code> should be a string');
+    testString: assert(typeof hatValue === 'string' );
   - text: The value of <code>hatValue</code> should be <code>"ballcap"</code>
-    testString: assert(hatValue === 'ballcap' , 'The value of <code>hatValue</code> should be <code>"ballcap"</code>');
+    testString: assert(hatValue === 'ballcap' );
   - text: <code>shirtValue</code> should be a string
-    testString: assert(typeof shirtValue === 'string' , '<code>shirtValue</code> should be a string');
+    testString: assert(typeof shirtValue === 'string' );
   - text: The value of <code>shirtValue</code> should be <code>"jersey"</code>
-    testString: assert(shirtValue === 'jersey' , 'The value of <code>shirtValue</code> should be <code>"jersey"</code>');
+    testString: assert(shirtValue === 'jersey' );
   - text: You should use dot notation twice
-    testString: assert(code.match(/testObj\.\w+/g).length > 1, 'You should use dot notation twice');
+    testString: assert(code.match(/testObj\.\w+/g).length > 1);
 
 ```
 

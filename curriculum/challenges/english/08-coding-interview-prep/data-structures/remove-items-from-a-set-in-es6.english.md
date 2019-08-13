@@ -2,6 +2,7 @@
 id: 587d8254367417b2b2512c71
 title: Remove items from a set in ES6
 challengeType: 1
+forumTopicId: 301713
 ---
 
 ## Description
@@ -10,7 +11,12 @@ Let's practice removimg items from an ES6 Set using the <code>delete</code> meth
 First, create an ES6 Set
 <code>var set = new Set([1,2,3]);</code>
 Now remove an item from your Set with the <code>delete</code> method.
-<blockquote>set.delete(1);<br>console.log([...set]) // should return [ 2, 3 ]<blockquote>
+
+```js
+set.delete(1);
+console.log([...set]) // should return [ 2, 3 ]
+```
+
 </section>
 
 ## Instructions
@@ -25,7 +31,7 @@ Now, create a set with the integers 1, 2, 3, 4, & 5.
 ```yml
 tests:
   - text: Your Set should contain the values 1, 3, & 4
-    testString: assert((function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3;})(), 'Your Set should contain the values 1, 3, & 4');
+    testString: assert((function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3;})());
 
 ```
 
@@ -33,7 +39,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -47,14 +52,10 @@ function checkSet(){
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
-
 
 ```js
 function checkSet(){

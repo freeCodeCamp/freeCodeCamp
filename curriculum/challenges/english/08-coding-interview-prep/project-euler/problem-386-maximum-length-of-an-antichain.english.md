@@ -2,6 +2,7 @@
 id: 5900f4ef1000cf542c510001
 challengeType: 5
 title: 'Problem 386: Maximum length of an antichain'
+forumTopicId: 302050
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find ΣN(n) for 1 ≤ n ≤ 108
 ```yml
 tests:
   - text: <code>euler386()</code> should return 528755790.
-    testString: assert.strictEqual(euler386(), 528755790, '<code>euler386()</code> should return 528755790.');
+    testString: assert.strictEqual(euler386(), 528755790);
 
 ```
 
@@ -62,4 +63,5 @@ euler386();
 ```js
 // solution required
 ```
+
 </section>

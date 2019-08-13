@@ -3,14 +3,22 @@ id: 5a94fe0569fb03452672e45c
 title: Divide the Grid Into an Area Template
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cLLpGAy'
+forumTopicId: 301130
 ---
 
 ## Description
 <section id='description'>
 You can group cells of your grid together into an <dfn>area</dfn> and give the area a custom name. Do this by using <code>grid-template-areas</code> on the container like this:
-<blockquote>grid-template-areas:<br>&nbsp;&nbsp;"header header header"<br>&nbsp;&nbsp;"advert content content"<br>&nbsp;&nbsp;"footer footer footer";</blockquote>
+
+```css
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+```
+
 The code above merges the top three cells together into an area named <code>header</code>, the bottom three cells into a <code>footer</code> area, and it makes two areas in the middle row; <code>advert</code> and <code>content</code>.
-<strong>Note</strong><br>Every word in the code represents a cell and every pair of quotation marks represent a row.
+<strong>Note:</strong> Every word in the code represents a cell and every pair of quotation marks represent a row.
 In addition to custom labels, you can use a period (<code>.</code>) to designate an empty cell in the grid.
 </section>
 
@@ -25,7 +33,7 @@ Place the area template so that the cell labeled <code>advert</code> becomes an 
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-areas</code> property similar to the preview but has <code>.</code> instead of the <code>advert</code> area.
-    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi), '<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.');
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi));
 
 ```
 

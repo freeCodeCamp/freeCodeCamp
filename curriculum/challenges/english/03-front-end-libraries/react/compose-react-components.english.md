@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036166
 title: Compose React Components
 challengeType: 6
 isRequired: false
+forumTopicId: 301381
 ---
 
 ## Description
@@ -22,13 +23,13 @@ Nest two components inside of <code>Fruits</code> &mdash; first <code>NonCitrus<
 ```yml
 tests:
   - text: The <code>TypesOfFood</code> component should return a single <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().type() === 'div'; })(), 'The <code>TypesOfFood</code> component should return a single <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().type() === 'div'; })());
   - text: The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(1).name() === 'Fruits'; })(), 'The <code>TypesOfFood</code> component should return the <code>Fruits</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(1).name() === 'Fruits'; })());
   - text: The <code>Fruits</code> component should return the <code>NonCitrus</code> component and the <code>Citrus</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return (mockedComponent.find('Fruits').children().find('NonCitrus').length === 1 && mockedComponent.find('Fruits').children().find('Citrus').length === 1); })(), 'The <code>Fruits</code> component should return the <code>NonCitrus</code> component and the <code>Citrus</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return (mockedComponent.find('Fruits').children().find('NonCitrus').length === 1 && mockedComponent.find('Fruits').children().find('Citrus').length === 1); })());
   - text: The <code>TypesOfFood</code> component should return the <code>Vegetables</code> component below the <code>Fruits</code> component.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === 'Vegetables'; })(), 'The <code>TypesOfFood</code> component should return the <code>Vegetables</code> component below the <code>Fruits</code> component.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === 'Vegetables'; })());
 
 ```
 
@@ -50,7 +51,7 @@ class Fruits extends React.Component {
         <h2>Fruits:</h2>
         { /* change code below this line */ }
 
-         { /* change code above this line */ }
+        { /* change code above this line */ }
       </div>
     );
   }

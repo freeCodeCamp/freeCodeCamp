@@ -2,6 +2,7 @@
 id: 5900f4461000cf542c50ff59
 challengeType: 5
 title: 'Problem 218: Perfect right-angled triangles'
+forumTopicId: 301860
 ---
 
 ## Description
@@ -34,7 +35,7 @@ How many perfect right-angled triangles with c≤1016 exist that are not super-p
 ```yml
 tests:
   - text: <code>euler218()</code> should return 0.
-    testString: assert.strictEqual(euler218(), 0, '<code>euler218()</code> should return 0.');
+    testString: assert.strictEqual(euler218(), 0);
 
 ```
 
@@ -66,4 +67,5 @@ euler218();
 ```js
 // solution required
 ```
+
 </section>

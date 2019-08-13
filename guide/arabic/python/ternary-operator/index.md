@@ -14,24 +14,26 @@ localeTitle: Python Ternary Operater
 
 #### إدخال
 
- `for val in range(1, 11): 
-    is_even = "Even" if val % 2 == 0 else "Odd" 
-    print(val, is_even, sep=' = ') 
-` 
+```python
+for val in range(1, 11):
+    is_even = "Even" if val % 2 == 0 else "Odd"
+    print(val, is_even, sep=' = ')
+``` 
 
 #### انتاج |
 
- `1 = Odd 
- 2 = Even 
- 3 = Odd 
- 4 = Even 
- 5 = Odd 
- 6 = Even 
- 7 = Odd 
- 8 = Even 
- 9 = Odd 
- 10 = Even 
-` 
+```
+1 = Odd
+2 = Even
+3 = Odd
+4 = Even
+5 = Odd
+6 = Even
+7 = Odd
+8 = Even
+9 = Odd
+10 = Even
+``` 
 
 ### مصادر
 

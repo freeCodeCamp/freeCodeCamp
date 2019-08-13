@@ -30,27 +30,30 @@ Vagrant هو أداة لبناء وإدارة بيئات الجهاز الظاه
 
 بعد تثبيت Vagrant ، تحقق من عمل التثبيت عن طريق فتح موجه أوامر أو وحدة تحكم جديدة ، وتحقق من توفر المتشرد:
 
- `$ vagrant 
- Usage: vagrant [options] <command> [<args>] 
- 
-    -v, --version                    Print the version and exit. 
-    -h, --help                       Print this help. 
- 
- # ... 
-` 
+```bash
+$ vagrant
+Usage: vagrant [options] <command> [<args>]
+
+    -v, --version                    Print the version and exit.
+    -h, --help                       Print this help.
+
+# ...
+``` 
 
 ### ابدء
 
- `$ vagrant init hashicorp/precise64 
- $ vagrant up 
-` 
+```bash
+$ vagrant init hashicorp/precise64
+$ vagrant up
+``` 
 
 ### مربعات
 
 تتم إضافة صناديق إلى Vagrant مع إضافة مربع المتشرد. يقوم هذا بتخزين المربع تحت اسم محدد بحيث يمكن لبيئات Vagrant المتعددة إعادة استخدامه. إذا لم تكن قد أضفت مربعًا حتى الآن ، فيمكنك القيام بذلك الآن:
 
- `$ vagrant box add hashicorp/precise64 
-` 
+```bash
+$ vagrant box add hashicorp/precise64
+``` 
 
 ### العثور على المزيد من الصناديق
 

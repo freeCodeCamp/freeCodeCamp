@@ -2,6 +2,7 @@
 id: 5900f3c71000cf542c50feda
 challengeType: 5
 title: 'Problem 91: Right triangles with integer coordinates'
+forumTopicId: 302208
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Given that 0 ≤ x1, y1, x2, y2 ≤ 50, how many right triangles can be formed?
 ```yml
 tests:
   - text: <code>euler91()</code> should return 14234.
-    testString: assert.strictEqual(euler91(), 14234, '<code>euler91()</code> should return 14234.');
+    testString: assert.strictEqual(euler91(), 14234);
 
 ```
 
@@ -62,4 +63,5 @@ euler91();
 ```js
 // solution required
 ```
+
 </section>

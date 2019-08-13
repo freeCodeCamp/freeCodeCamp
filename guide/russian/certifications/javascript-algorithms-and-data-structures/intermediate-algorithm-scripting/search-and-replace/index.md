@@ -57,7 +57,6 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLmo/0)
 
 ### Код Объяснение:
 
@@ -93,7 +92,6 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLmp/0)
 
 ### Код Объяснение:
 
@@ -139,7 +137,6 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLmq/0)
 
 ### Код Объяснение:
 
@@ -199,7 +196,6 @@ function myReplace(str, before, after) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/@kr3at0/SearchAndReplace)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": Rotating_light:") Advanced Code Solution Альтернатива 2:
 

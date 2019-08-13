@@ -8,11 +8,12 @@ localeTitle: تكرار مع JavaScript Do ... While Loops
 
 ## حل
 
- `var myArray = []; 
- var i = 10; 
- 
- do { 
-  myArray.push(i); 
-  i++; 
- } while(i <= 10); 
-`
+```javascript
+var myArray = [];
+var i = 10;
+
+do {
+  myArray.push(i);
+  i++;
+} while(i <= 10);
+```

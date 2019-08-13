@@ -1,10 +1,10 @@
 ---
 title: Modals
-localeTitle: манеры
+localeTitle: Модальные окна
 ---
-## модальности
+## Модальные окна
 
-Модалы - это всплывающие окна для предоставления важной информации, прежде чем продолжить.
+Модальные окна - это всплывающие окна для предоставления важной информации, прежде чем продолжить.
 
 Чтобы создать такие диалоги / всплывающие окна в верхней части текущей страницы, Bootstrap предоставляет плагин Modal.
 
@@ -29,7 +29,7 @@ localeTitle: манеры
   <body> 
  
  <!-- Triggering the modal popup --> 
-   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Open Modal</button> 
+   <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Открыть модальное окно</button> 
  
   <!-- Modal popup --> 
  
@@ -44,11 +44,11 @@ localeTitle: манеры
               </div> 
  
               <div class="modal-body"> 
-                Do you wish to continue? 
+                Желаете продолжить? 
               </div> 
  
               <div class="modal-footer"> 
-                <button class="btn btn-default"  data-dismiss="modal">close</button> 
+                <button class="btn btn-default"  data-dismiss="modal">Закрыть</button> 
               </div> 
  
             </div> 
@@ -62,9 +62,9 @@ localeTitle: манеры
 
 #### Понимание используемых атрибутов и классов:
 
-a) `data-toggle = "modal"` : он открывает модальный.
+a) `data-toggle = "modal"` : он открывает модальные окна.
 
-b) `data-target` : она указывает на идентификатор модальности, который должен открыться.
+b) `data-target` : он указывает на идентификатор модального окна, который должен открыться.
 
 c) `data-dismiss="modal"` : это приводит к закрытию всплывающего окна при нажатии кнопки закрытия.
 
@@ -72,18 +72,18 @@ d) `.modal` class идентифицирует содержимое `<div>` ка
 
 e) `.modal-dialog` class устанавливает правильную высоту и ширину диалога.
 
-f). `.modal-content` стилирует модальный. Он содержит разделы заголовка, тела и нижнего колонтитула.
+f). `.modal-content` стилирует модальное окно. Он содержит разделы заголовка, тела и нижнего колонтитула.
 
-g) `.modal-header` обозначает секцию заголовка модальной (заголовок и (×)).
+g) `.modal-header` обозначает секцию заголовка модального окна (заголовок и (×)).
 
-h) `.modal-title` класс `.modal-title` заголовок модала с соответствующей высотой.
+h) `.modal-title` класс `.modal-title` заголовок модального окна с соответствующей высотой.
 
-i) `.modal-body` класс `.modal-body` модального (диалог / всплывающее окно). Он может иметь другие разметки, такие как `<p>,<img>,<video>` и т. д.
+i) `.modal-body` класс `.modal-body` модального окна. Он может иметь другие разметки, такие как `<p>,<img>,<video>` и т. д.
 
-j). `.modal-footer` - нижний колонтитул модального.
+j). `.modal-footer` - нижний колонтитул модального окна.
 
 #### Дополнительная информация :
 
-[Загрузочный мод](https://bootstrapbay.com/blog/working-bootstrap-modal/)
+[Загрузить плагин](https://bootstrapbay.com/blog/working-bootstrap-modal/)
 
 Если вы хотите изучить **__Bootstrap 4.0 Latest (Alpha version)__** : [Bootstrap Modal v4.0](https://getbootstrap.com/docs/4.0/components/modal/)

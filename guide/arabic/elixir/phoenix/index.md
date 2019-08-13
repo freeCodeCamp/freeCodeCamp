@@ -10,37 +10,43 @@ localeTitle: عنقاء
 
 تركيب فينيكس بسيط نسبيًا ، ولكن قبل أن نتمكن من ذلك ، سنحتاج إلى التأكد من أن Elixir ومدير حزمة Hex و Erlang يعملان بالفعل على نظامنا. يحتوي موقع Elixir على [دليل تركيب](https://elixir-lang.org/install.html) رائع لكل من Elixir و Erlang. بمجرد إعداد هذه البرامج بنجاح ، قم ببساطة بتشغيل:
 
- `$ mix local.hex 
-` 
+```shell
+$ mix local.hex
+``` 
 
 لتثبيت مدير حزمة Hex ، ثم قم بتثبيت تشغيل أرشيف Phoenix:
 
- `$ mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez 
-` 
+```shell
+$ mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
+``` 
 
 ## إنشاء تطبيق Phoenix:
 
 1.  بعد تثبيت تطبيق Phoenix ، يكون إنشاء تطبيق أمرًا بسيطًا:
 
- `$ mix phx.new <application_name> 
-` 
+```shell
+$ mix phx.new <application_name>
+``` 
 
 2.  تشغيل هذا الأمر مع إنشاء بنية دليل وجميع الملفات الأساسية المطلوبة مع اسم _التطبيق_ الذي استخدمته في الأمر السابق. ستتم مطالبتك بعد ذلك بتثبيت اعتماديات أساسية للتطبيق ، لذلك سنقول نعم لذلك.
     
 3.  بعد ذلك ، سيُطلب منك التغيير إلى دليل مشروعنا:
     
 
- `$ cd <application_name> 
-` 
+```shell
+$ cd <application_name>
+``` 
 
 4.  افتراضياً ، يفترض Phoenix أننا سنستخدم PostgreSQL لتطبيقنا مع اسم مستخدم وكلمة مرور لـ 'postgres'. إذا لم يكن الأمر كذلك ، فستحتاج إلى تغيير التكوين - وإلا فكل ما نحتاج إليه هو إنشاء قاعدة البيانات الخاصة بنا:
 
- `$ mix ecto.create 
-` 
+```shell
+$ mix ecto.create
+``` 
 
 5.  أخيرًا ، سنبدأ خادمنا:
 
- `$ mix phx.server 
-` 
+```shell
+$ mix phx.server
+``` 
 
 6.  الآن ، قف في متصفحك وانتقل إلى localhost: 4000 وشاهد صفحة الترحيب! تهانينا ، لقد حصلت على تطبيق Phoenix للعمل.
