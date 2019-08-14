@@ -4,7 +4,7 @@ localeTitle: Loops
 ---
 # Loops
 
-Sempre que você precisar executar um bloco de código várias vezes, um loop(ou laço) geralmente vem a calhar.
+Sempre que você precisar executar um bloco de código várias vezes, um loop(laço) geralmente vem a calhar.
 
 Java tem 4 tipos de loops:
 
