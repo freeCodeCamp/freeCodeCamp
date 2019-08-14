@@ -1,7 +1,7 @@
 ---
 title: Use CSS Variables to change several elements at once
 ---
-## Use CSS Variables to change several elements at once
+# Use CSS Variables to change several elements at once
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-css-variables-to-change-several-elements-at-once/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

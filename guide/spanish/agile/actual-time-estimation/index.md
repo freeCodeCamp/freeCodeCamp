@@ -6,7 +6,7 @@ localeTitle: Estimación del tiempo real
 
 La estimación del tiempo real es el proceso de predecir la cantidad de esfuerzo más realista (expresada en términos de horas por persona o dinero) necesaria para desarrollar o mantener software basado en información incompleta, incierta y ruidosa. Las estimaciones de esfuerzo se pueden utilizar como información para los planes de proyecto, planes de iteración, presupuestos, análisis de inversión, procesos de precios y rondas de licitación.
 
-### Estado de practica
+### Estado de práctica
 
 Las encuestas publicadas sobre la práctica de la estimación sugieren que la estimación de expertos es la estrategia dominante al estimar el esfuerzo de desarrollo de software.
 

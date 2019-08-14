@@ -1,7 +1,13 @@
 ---
 title: Use the flex-direction Property to Make a Column
 ---
-## Use the flex-direction Property to Make a Column
+# Use the flex-direction Property to Make a Column
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 To stack the child elements of your flex container on top of each other you would change the <i>flex-direction</i> the following way:
 
@@ -11,3 +17,4 @@ To stack the child elements of your flex container on top of each other you woul
     flex-direction: column;
 }
 ```
+</details>

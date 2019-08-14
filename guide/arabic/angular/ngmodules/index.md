@@ -20,13 +20,14 @@ localeTitle: iModules
 
 يحدد Angular وحداته عن طريق تزيين فئة عامة. يشير مصمم `@NgModule` إلى الغرض المعياري للصف في Angular. يدمج صنف NgModule تبعيات الجذر التي يمكن الوصول إليها / سريعة التأثر من نطاق الوحدة. "النطاق" يعني أي شيء ينشأ عن البيانات الوصفية للوحدة.
 
- `import { NgModule } from '@angular/core'; 
- 
- @NgModule({ 
-  // … metadata … 
- }) 
- export class AppModule { } 
-` 
+```typescript
+import { NgModule } from '@angular/core';
+
+@NgModule({
+  // … metadata …
+})
+export class AppModule { }
+``` 
 
 #### NgModule Metadata
 
@@ -41,37 +42,39 @@ localeTitle: iModules
 
 تتضمن مصفوفة الإعلانات جميع المكونات أو التوجيهات أو الأنابيب المستضافة من قِبل NgModule. وهي خاصة بالوحدة ما لم يتم تصديرها صراحة داخل البيانات الوصفية الخاصة بها. بالنظر إلى حالة الاستخدام هذه ، فإن المكونات والتوجيهات والأنابيب تُلقَى بـ "المُعلنين". يجب أن يقوم NgModule بإعلان المصادفة بشكل فريد. لا يمكن تعريف declarable مرتين في NgModules منفصلة. يلقى خطأ وإلا. انظر المثال التالي.
 
- `import { NgModule } from '@angular/core'; 
- import { TwoComponent } from './components/two.component.ts'; 
- 
- @NgModule({ 
-  declarations: [ TwoComponent ] 
- }) 
- export class TwoModule { } 
- 
- @NgModule({ 
-  imports: [ TwoModule ], 
-  declarations: [ TwoComponent ] 
- }) 
- export class OneModule { } 
-` 
+```typescript
+import { NgModule } from '@angular/core';
+import { TwoComponent } from './components/two.component.ts';
+
+@NgModule({
+  declarations: [ TwoComponent ]
+})
+export class TwoModule { }
+
+@NgModule({
+  imports: [ TwoModule ],
+  declarations: [ TwoComponent ]
+})
+export class OneModule { }
+``` 
 
 يلقي الزاوي خطأ من أجل تغليف NgModule. تكون Declarables خاصة إلى NgModule التي تعلن عليها بشكل افتراضي. إذا احتاج العديد من NgModules إلى معينة يمكن تعريفه ، فيجب عليهم استيراد إعلان NgModule. يجب على هذا NgModule ثم تصدير المطلوبة declarable بحيث يمكن استخدام NgModules الأخرى عليه.
 
- `import { NgModule } from '@angular/core'; 
- import { TwoComponent } from './components/two.component.ts'; 
- 
- @NgModule({ 
-  declarations: [ TwoComponent ], 
-  exports: [ TwoComponent ] 
- }) 
- export class TwoModule { } 
- 
- @NgModule({ 
-  imports: [ TwoModule ] // this module can now use TwoComponent 
- }) 
- export class OneModule { } 
-` 
+```typescript
+import { NgModule } from '@angular/core';
+import { TwoComponent } from './components/two.component.ts';
+
+@NgModule({
+  declarations: [ TwoComponent ],
+  exports: [ TwoComponent ]
+})
+export class TwoModule { }
+
+@NgModule({
+  imports: [ TwoModule ] // this module can now use TwoComponent
+})
+export class OneModule { }
+``` 
 
 المثال أعلاه لن يرمي خطأ. تم الإعلان عن TwoComponent بشكل فريد بين اثنين NgModules. لدى OneModule أيضاً الوصول إلى TwoComponent منذ أن يقوم باستيراد TwoModule. TwoModule بدوره بتصدير في TwoComponent للاستخدام الخارجي.
 
@@ -89,27 +92,28 @@ localeTitle: iModules
 
 إذا كان موفرو NgModule يحتويون على قيم رمزية مطابقة ، فستكون الأولوية لوحدة جذور الاستيراد. الماضي ، فإن آخر NgModule المستوردة الأسبقية. انظر المثال التالي. انتبه بشكل خاص إلى NgModule باستيراد الاثنين الآخرين. تعرف على كيفية تأثير ذلك على أسبقية الخدمة المقدمة.
 
- `import { NgModule } from '@angular/core'; 
- 
- @NgModule({ 
-  providers: [ AwesomeService ], // 1st precedence + importing module 
-  imports: [ 
-    BModule, 
-    CModule 
-  ] 
- }) 
- export class AModule { } 
- 
- @NgModule({ 
-  providers: [ AwesomeService ]  // 3rd precedence + first import 
- }) 
- export class BModule { } 
- 
- @NgModule({ 
-  providers: [ AwesomeService ]  // 2nd precedence + last import 
- }) 
- export class CModule { } 
-` 
+```typescript
+import { NgModule } from '@angular/core';
+
+@NgModule({
+  providers: [ AwesomeService ], // 1st precedence + importing module
+  imports: [
+    BModule,
+    CModule
+  ]
+})
+export class AModule { }
+
+@NgModule({
+  providers: [ AwesomeService ]  // 3rd precedence + first import
+})
+export class BModule { }
+
+@NgModule({
+  providers: [ AwesomeService ]  // 2nd precedence + last import
+})
+export class CModule { }
+``` 
 
 Instantinating AwesomeService من داخل نطاق AModule ينتج عنه مثيل AwesomeService كما هو منصوص عليه في البيانات الوصفية لـ AModule. إذا قام مزودو AModule بحذف هذه الخدمة ، فستكون الأولوية لـ Awesome Service من CModule. وهكذا ، بالنسبة إلى BModule إذا قام مزودو CModule بحذف AwesomeService.
 
@@ -117,18 +121,19 @@ Instantinating AwesomeService من داخل نطاق AModule ينتج عنه م�
 
 يقبل مصفوفة bootstrap المكونات. بالنسبة لكل مكون في المصفوفة ، يقوم Angular بإدراج المكون كجذر خاص به لملف `index.html` . سوف يكون دائما جذر NgIodule من تطبيق CLI من تطبيق هذا الحقل.
 
- `import { BrowserModule } from '@angular/platform-browser'; 
- import { NgModule } from '@angular/core'; 
- import { AppComponent } from './app.component'; 
- 
- @NgModule({ 
-  declarations: [ AppComponent ], 
-  imports: [ BrowserModule ], 
-  providers: [], 
-  bootstrap: [ AppComponent ] 
- }) 
- export class AppModule { } 
-` 
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [ AppComponent ],
+  imports: [ BrowserModule ],
+  providers: [],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+``` 
 
 سيتم حقن عنصر AppComponent في HTML الأساسي من التطبيق ( `index.html` ). بقية شجرة المكون تتكشف من هناك. يغطي نطاق NgModule الشامل هذه الشجرة بأكملها بالإضافة إلى أي أخرى يتم حقنها من مصفوفة التمهيد. عادة ما يحتوي المصفوفة على عنصر واحد فقط. يمثل هذا المكون الوحدة النمطية كعنصر واحد والشجرة الأساسية.
 
@@ -142,31 +147,32 @@ Instantinating AwesomeService من داخل نطاق AModule ينتج عنه م�
 
 توفر وحدات جافا سكريبت مراجع رمزية للبيانات الوصفية لـ `@NgModule` . يحدث هذا في أعلى ملف يستضيف فصل NgModule. يستخدم NgModule هذه الرموز المميزة داخل حقول البيانات الوصفية (المصاريف ، والواردات ، ومقدمي الخدمات ، إلخ). السبب الوحيد `@NgModule` بتزيين فئة في المقام الأول هو أن JavaScript تقوم باستيرادها من أعلى الملف.
 
- `// JavaScript module system provides tokens 
- import { BrowserModule } from '@angular/platform-browser'; 
- import { NgModule } from '@angular/core'; 
- import { AppComponent } from './app.component'; 
- import { AppService } from './app.service'; 
- // Javascript module system is strict about where it imports. It can only import at the top of files. 
- 
- // Angular NgModule uses those tokens in its metadata settings 
- @NgModule({ // import { NgModule } from '@angular/core'; 
-  declarations: [ 
-    AppComponent // import { AppComponent } from './app.component'; 
-  ], 
-  imports: [ 
-    BrowserModule // import { BrowserModule } from '@angular/platform-browser'; 
-  ], 
-  providers: [ 
-    AppService // import { AppService } from './app.service'; 
-  ], 
-  bootstrap: [ 
-    AppComponent // import { AppComponent } from './app.component'; 
-  ] 
- }) 
- export class AppModule { } 
- // JavaScript module system exports the class. Other modules can now import AppModule. 
-` 
+```typescript
+// JavaScript module system provides tokens
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { AppService } from './app.service';
+// Javascript module system is strict about where it imports. It can only import at the top of files.
+
+// Angular NgModule uses those tokens in its metadata settings
+@NgModule({ // import { NgModule } from '@angular/core';
+  declarations: [
+    AppComponent // import { AppComponent } from './app.component';
+  ],
+  imports: [
+    BrowserModule // import { BrowserModule } from '@angular/platform-browser';
+  ],
+  providers: [
+    AppService // import { AppService } from './app.service';
+  ],
+  bootstrap: [
+    AppComponent // import { AppComponent } from './app.component';
+  ]
+})
+export class AppModule { }
+// JavaScript module system exports the class. Other modules can now import AppModule.
+``` 
 
 المثال أعلاه لا يقدم أي شيء جديد. وينصب التركيز هنا على التعليقات التي توضح كيفية عمل النظامين المعياريين معًا. توفر JavaScript المراجع الرمزية بينما يستخدم NgModule تلك الرمز المميز لتغليف وتكوين الكتل الأساسية من التعليمة البرمجية الخاصة به.
 
@@ -182,50 +188,52 @@ Instantinating AwesomeService من داخل نطاق AModule ينتج عنه م�
 
 في الجذر NgModule من التطبيق ، إضافة الرمز المميز وحدة نمطية في مجموعة `imports` الجذر يفعل خدعة. أيًا كانت الوحدة النمطية التي يصدرها أو يوفرها ، تصبح متاحة للجذر.
 
- `// ./awesome.module.ts 
- 
- import { NgModule } from '@angular/core'; 
- import { AwesomePipe } from './awesome/pipes/awesome.pipe'; 
- import { AwesomeComponent } from './awesome/components/awesome.component'; 
- import { AwesomeDirective } from './awesome/directives/awesome.directive'; 
- 
- @NgModule({ 
-  exports: [ 
-    AwesomePipe, 
-    AwesomeComponent, 
-    AwesomeDirective 
-  ] 
-  declarations: [ 
-    AwesomePipe, 
-    AwesomeComponent, 
-    AwesomeDirective 
-  ] 
- }) 
- export class AwesomeModule { } 
-` 
+```typescript
+// ./awesome.module.ts
 
- `// ./app.module.ts 
- 
- import { AwesomeModule } from './awesome.module'; 
- import { BrowserModule } from '@angular/platform-browser'; 
- import { NgModule } from '@angular/core'; 
- import { AppComponent } from './app.component'; 
- 
- @NgModule({ 
-  declarations: [ 
-    AppComponent 
-  ], 
-  imports: [ 
-    AwesomeModule, 
-    BrowserModule 
-  ], 
-  providers: [], 
-  bootstrap: [ 
-    AppComponent 
-  ] 
- }) 
- export class AppModule { } 
-` 
+import { NgModule } from '@angular/core';
+import { AwesomePipe } from './awesome/pipes/awesome.pipe';
+import { AwesomeComponent } from './awesome/components/awesome.component';
+import { AwesomeDirective } from './awesome/directives/awesome.directive';
+
+@NgModule({
+  exports: [
+    AwesomePipe,
+    AwesomeComponent,
+    AwesomeDirective
+  ]
+  declarations: [
+    AwesomePipe,
+    AwesomeComponent,
+    AwesomeDirective
+  ]
+})
+export class AwesomeModule { }
+``` 
+
+```typescript
+// ./app.module.ts
+
+import { AwesomeModule } from './awesome.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    AwesomeModule,
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [
+    AppComponent
+  ]
+})
+export class AppModule { }
+``` 
 
  ``// ./app.component.ts 
  
@@ -263,67 +271,70 @@ Instantinating AwesomeService من داخل نطاق AModule ينتج عنه م�
 
 لتحديد طريقة الوحدة النمطية الثابتة الخاصة بك يمكنك إضافته إلى فئة الوحدة النمطية باستخدام الكلمة الأساسية `static` . يجب أن يكون نوع الإرجاع هو `ModuleWithProviders` .
 
- `// configureable.module.ts 
- 
- import { AwesomeModule } from './awesome.module'; 
- import { ConfigureableService, CUSTOM_CONFIG_TOKEN, Config } from './configurable.service'; 
- import { BrowserModule } from '@angular/platform-browser'; 
- import { NgModule } from '@angular/core'; 
- 
- 
- @NgModule({ 
-  imports: [ 
-    AwesomeModule, 
-    BrowserModule 
-  ], 
-  providers: [ 
-    ConfigureableService 
-  ] 
- }) 
- export class ConfigureableModule { 
-  static forRoot(config: Config): ModuleWithProviders { 
-    return { 
-        ngModule: ConfigureableModule, 
-        providers: [ 
-            ConfigureableService, 
-            { 
-                provide: CUSTOM_CONFIG_TOKEN, 
-                useValue: config 
-            } 
-        ] 
-    }; 
-  } 
- } 
-` 
+```ts
+// configureable.module.ts
 
- `// configureable.service.ts 
- 
- import { Inject, Injectable, InjectionToken } from '@angular/core'; 
- 
- export const CUSTOM_CONFIG_TOKEN: InjectionToken<string> = new InjectionToken('customConfig'); 
- 
- export interface Config { 
-  url: string 
- } 
- 
- @Injectable() 
- export class ConfigureableService { 
-  constructor( 
-    @Inject(CUSTOM_CONFIG_TOKEN) private config: Config 
-  ) 
- } 
-` 
+import { AwesomeModule } from './awesome.module';
+import { ConfigureableService, CUSTOM_CONFIG_TOKEN, Config } from './configurable.service';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+
+@NgModule({
+  imports: [
+    AwesomeModule,
+    BrowserModule
+  ],
+  providers: [
+    ConfigureableService
+  ]
+})
+export class ConfigureableModule {
+  static forRoot(config: Config): ModuleWithProviders {
+    return {
+        ngModule: ConfigureableModule,
+        providers: [
+            ConfigureableService,
+            {
+                provide: CUSTOM_CONFIG_TOKEN,
+                useValue: config
+            }
+        ]
+    };
+  }
+}
+``` 
+
+```ts
+// configureable.service.ts
+
+import { Inject, Injectable, InjectionToken } from '@angular/core';
+
+export const CUSTOM_CONFIG_TOKEN: InjectionToken<string> = new InjectionToken('customConfig');
+
+export interface Config {
+  url: string
+}
+
+@Injectable()
+export class ConfigureableService {
+  constructor(
+    @Inject(CUSTOM_CONFIG_TOKEN) private config: Config
+  )
+}
+``` 
 
 لاحظ أن الكائن إرجاع أسلوب `forRoot(...)` متطابقة تقريبًا إلى تكوين `NgModule` .
 
 تقبل طريقة `forRoot(...)` كائن تكوين مخصص يمكن للمستخدم توفيره عند استيراد الوحدة النمطية.
 
- `imports: [ 
-  ... 
-  ConfigureableModule.forRoot({ url: 'http://localhost' }), 
-  ... 
- ] 
-` 
+```ts
+imports: [
+  ...
+  ConfigureableModule.forRoot({ url: 'http://localhost' }),
+  ...
+]
+``` 
 
 ثم يتم توفير التكوين باستخدام `InjectionToken` مخصص يسمى `CUSTOM_CONFIG_TOKEN` وحقنها في `ConfigureableService` . يجب أن يتم استيراد `ConfigureableModule` مرة واحدة فقط باستخدام أسلوب `forRoot(...)` . يوفر هذا `CUSTOM_CONFIG_TOKEN` مع التهيئة المخصصة. يجب على كافة الوحدات النمطية الأخرى استيراد `ConfigureableModule` بدون أسلوب `forRoot(...)` .
 

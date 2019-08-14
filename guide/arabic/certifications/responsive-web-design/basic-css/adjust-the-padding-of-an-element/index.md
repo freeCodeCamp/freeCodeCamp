@@ -12,23 +12,25 @@ localeTitle: ضبط الحشو من عنصر
 
 لضبط Padding of Alement ، استخدم:
 
- `padding: 10px; 
-` 
+```css
+padding: 10px;
+``` 
 
 لإنشاء Padding كطبقة لعنصر محدد ، استخدم:
 
- `.example-Padding { 
-  padding: 10px 
- { 
-` 
+```css
+.example-Padding {
+  padding: 10px
+{
+``` 
 
 لتطبيق هذا الصنف على الحقل المناسب ، استخدم:
 
- `
-<div class="example-Padding"> 
- <p> Example Text </p> 
- </div> 
-` 
+```html
+<div class="example-Padding">
+<p> Example Text </p>
+</div>
+``` 
 
 **لضبط Padding of Alement** ، استخدم:
 

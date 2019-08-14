@@ -1,8 +1,10 @@
 ---
 title: Use HTML5 to Require a Field
 ---
-## Use HTML5 to Require a Field
+# Use HTML5 to Require a Field
 
+---
+## Problem Explanation
 The `required` attribute works with almost all possible types of the `input` tag ( it doesn't works because it doesn't make sense for the buttons-like types or the ones with a default value e.g. `type=range`) and force the user to leave at least a minimum mark of the interaction with the required input when submitting ( select _at least_ one checkbox, type _at least_ one character into a text box, etc..)
 
 Its use block the form form submission until the the `required` condition woudn't be fullfilled

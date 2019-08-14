@@ -54,15 +54,22 @@ double[] List = new double[10];
 dataType[] arrayName = {value_0, value_1, ..., value_k}; 
 ```
 
+Hay que tener en cuenta que este "azúcar sintáctico" es sólo válido cuando la variable se define en la misma línea. Si se instanciara en una línea distinta habría que usar la palabra reservada `new` como se hace en el ejemplo anterior:
+
+```java
+arrayName = {value_0, value_1, ..., value_k}; // el azucar sintactico es erroneo aqui
+```
+
 ## Fragmentos de código de la sintaxis anterior:
 
 ```java
 double[] list = {1, 2, 3, 4}; 
  
- The code above is equivalent to: 
+ El fragmento de código arriba es equivalente a: 
  double[] list = new double[4]; 
- *IMPORTANT NOTE: Please note the difference between the types of brackets 
- that are used to represent arrays in two different ways. 
+ *NOTA IMPORTANTE: Por favor notar la diferencia entre los
+ tipos de paréntesis que son usandos para representar arrays
+ de dos diferentes maneras. 
 ```
 
 ## Accediendo a Arrays:

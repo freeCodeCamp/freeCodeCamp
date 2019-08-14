@@ -6,7 +6,7 @@ localeTitle: Algoritmos
 
 En informática, un algoritmo es una especificación inequívoca de cómo resolver una clase de problemas. Los algoritmos pueden realizar cálculos, procesamiento de datos y tareas de razonamiento automatizado.
 
-Un algoritmo es un método efectivo que se puede expresar en una cantidad finita de espacio y tiempo y en un lenguaje formal bien definido para calcular una función. Comenzando desde un estado inicial y una entrada inicial (quizás vacía), las instrucciones describen un cálculo que, cuando se ejecuta, avanza a través de un número finito de estados sucesivos bien definidos, que eventualmente producen "salida" y terminan en un estado final final. La transición de un estado a otro no es necesariamente determinista; algunos algoritmos, conocidos como algoritmos aleatorios, incorporan entrada aleatoria.
+Un algoritmo es un método efectivo que se puede expresar en una cantidad finita de espacio y tiempo y en un lenguaje formal bien definido para calcular una función. Comenzando desde un estado inicial y una entrada inicial (quizás vacía), las instrucciones describen un cálculo que, cuando se ejecuta, avanza a través de un número finito de estados sucesivos bien definidos, que eventualmente producen una "salida" y terminan en un estado final. La transición de un estado a otro no es necesariamente determinista; algunos algoritmos, conocidos como algoritmos aleatorios, incorporan entrada aleatoria.
 
 Hay ciertos requisitos que un algoritmo debe cumplir:
 
@@ -22,11 +22,16 @@ Los algoritmos se juzgan más comúnmente por su eficiencia y la cantidad de rec
 
 ### Clasificación de los algoritmos
 
-Los algoritmos de clasificación vienen en varios sabores dependiendo de su necesidad. Algunos, muy comunes y ampliamente utilizados son:
+Los algoritmos de clasificación se dividen en varios tipos dependiendo de su necesidad. Algunos, muy comunes y ampliamente utilizados son:
 
 #### Ordenación rápida
 
 No hay discusión de clasificación que pueda terminar sin una clasificación rápida. El concepto básico está en el siguiente enlace. [Ordenación rápida](http://me.dt.in.th/page/Quicksort/)
+
+#### Ordenación por Inserción
+Se trata de un algoritmo relativamente lento. Técnicamente es la forma mas lógica de ordenar cualquier cosa para un humano, por ejemplo, una baraja de cartas...
+Inicialmente se tiene un solo elemento, que obviamente es un conjunto ordenado. Después, cuando hay k elementos ordenados de menor a mayor, se toma el elemento k+1 y se compara con todos los elementos ya ordenados, deteniéndose cuando se encuentra un elemento menor (todos los elementos mayores han sido desplazados una posición a la derecha). En este punto se inserta el elemento k+1 debiendo desplazarse los demás elementos.
+[Explicado por GeeksforGeeks](https://www.geeksforgeeks.org/insertion-sort/)
 
 #### Combinar clasificación
 

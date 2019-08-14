@@ -2,6 +2,7 @@
 id: 5900f5311000cf542c510043
 challengeType: 5
 title: 'Problem 452: Long Products'
+forumTopicId: 302125
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find F(109, 109) mod 1 234 567 891.
 ```yml
 tests:
   - text: <code>euler452()</code> should return 345558983.
-    testString: assert.strictEqual(euler452(), 345558983, '<code>euler452()</code> should return 345558983.');
+    testString: assert.strictEqual(euler452(), 345558983);
 
 ```
 
@@ -55,4 +56,5 @@ euler452();
 ```js
 // solution required
 ```
+
 </section>

@@ -7,21 +7,21 @@ localeTitle: Usa las variables CSS para cambiar varios elementos a la vez
 ---
 
 ## Description
-<section id="description"> <dfn>Las Variables CSS</dfn> son una forma poderosa de cambiar muchas propiedades de estilo CSS a la vez cambiando solo un valor. Siga las instrucciones a continuación para ver cómo cambiar solo tres valores puede cambiar el estilo de muchos elementos. </section>
+<section id="description"> <dfn>Las variables CSS</dfn> son una forma poderosa de cambiar muchas propiedades de estilo CSS a la vez, cambiando solo un valor. Siga las instrucciones a continuación para ver cómo, cambiando solo tres valores puede cambiar el estilo de muchos elementos. </section>
 
 ## Instructions
-<section id="instructions"> En la clase de <code>penguin</code> , cambie el valor de <code>black</code> a <code>gray</code> , el valor de <code>gray</code> a <code>white</code> y el de <code>yellow</code> a <code>orange</code> . </section>
+<section id="instructions"> En la clase <code>penguin</code> , cambie el valor <code>black</code> a <code>gray</code> , el valor <code>gray</code> a <code>white</code> y el <code>yellow</code> a <code>orange</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>penguin</code> clase <code>penguin</code> debe declarar la variable <code>--penguin-skin</code> y asignarla a <code>gray</code> .
+  - text: La clase <code>penguin</code> debe declarar la variable <code>--penguin-skin</code> y asignarle el valor <code>gray</code> .
     testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");'
-  - text: <code>penguin</code> clase <code>penguin</code> debe declarar la variable <code>--penguin-belly</code> y asignarla a <code>white</code> .
+  - text: La clase <code>penguin</code> debe declarar la variable <code>--penguin-belly</code> y asignarle el valor <code>white</code> .
     testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.");'
-  - text: <code>penguin</code> clase <code>penguin</code> debe declarar la variable <code>--penguin-beak</code> y asignarla a <code>orange</code> .
+  - text: La clase <code>penguin</code> debe declarar la variable <code>--penguin-beak</code> y asignarle el valor <code>orange</code> .
     testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.");'
 
 ```
@@ -243,7 +243,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

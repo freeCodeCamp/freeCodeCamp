@@ -52,7 +52,6 @@ const increment = (function() {
  console.log(increment(5)); // returns NaN 
 ```
 
-: rocket: [Run Code](https://repl.it/@RyanPisuena/PleasingFumblingThings)
 
 ## Explicação do código
 

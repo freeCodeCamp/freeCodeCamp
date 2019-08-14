@@ -4,13 +4,13 @@ localeTitle: ExpressJS
 ---
 ## ExpressJS
 
-Cuando se trata de crear aplicaciones web con Node.js, crear un servidor puede llevar mucho tiempo. A lo largo de los años, Node.js ha madurado lo suficiente debido al apoyo de la comunidad. El uso de Node.js como backend para aplicaciones web y sitios web ayuda a los desarrolladores a comenzar a trabajar en su aplicación o producto rápidamente. En este tutorial, veremos Expressjs, que es un marco de Node.js para el desarrollo web que viene con características como enrutamiento y representación y soporte para API REST.
+Cuando se trata de crear aplicaciones web con Node.js, crear un servidor puede llevar mucho tiempo. A lo largo de los años, Node.js ha madurado lo suficiente debido al apoyo de la comunidad. El uso de Node.js como backend para aplicaciones web y sitios web ayuda a los desarrolladores a comenzar a trabajar en su aplicación o producto rápidamente. En este tutorial, veremos Expressjs, que es un framework de Node.js para el desarrollo web que viene con características como enrutamiento, rendering y soporte para APIs REST.
 
 ## ¿Qué es Express?
 
-Express es el marco de trabajo de Node.js más popular porque requiere una configuración mínima para iniciar una aplicación o una API y es rápido y no está insinuado al mismo tiempo. En otras palabras, no impone su propia filosofía de que una aplicación o API debe construirse de una manera específica, a diferencia de Rails y Django. Su flexibilidad se puede calcular por la cantidad de módulos `npm` disponibles, lo que lo hace enchufable al mismo tiempo. Si tiene conocimientos básicos de HTML, CSS y JavaScript y cómo funciona Node.js en general, en ningún momento podrá comenzar a utilizar Expressjs.
+Express es el framework para Node.js más popular porque requiere una configuración mínima para iniciar una aplicación o una API y es rápido y no está fijo a seguir una forma de trabajo al mismo tiempo. En otras palabras, no impone su propia filosofía de que una aplicación o API debe construirse de una manera específica, a diferencia de Rails y Django. Su flexibilidad se puede calcular por la cantidad de módulos `npm` disponibles, lo que lo hace enchufable al mismo tiempo. Si tienes conocimientos básicos de HTML, CSS y JavaScript y cómo funciona Node.js en general, podrás empezar en casi nada de tiempo a usar ExpressJS
 
-Express fue desarrollado por TJ Holowaychuk y ahora es mantenido por la fundación Node.js y los desarrolladores de código abierto. Para comenzar con el desarrollo usando Express, necesita tener Node.js y npm instalados. Puede instalar [Node.js](https://nodejs.org/en/) en su máquina local y, junto con ella, viene la utilidad de línea de comandos `npm` que nos ayudará a instalar complementos o como dependencias llamadas más adelante en nuestro proyecto.
+Express fue desarrollado por TJ Holowaychuk y ahora es mantenido por la fundación Node.js y desarrolladores de código abierto. Para comenzar con el desarrollo usando Express, necesita tener Node.js y npm instalados. Puede instalar [Node.js](https://nodejs.org/en/) en su máquina local y, junto con ella, viene la utilidad de línea de comandos `npm` que nos ayudará a instalar complementos o como dependencias llamadas más adelante en nuestro proyecto.
 
 Para verificar si todo está instalado correctamente, abra su terminal y escriba:
 
@@ -31,13 +31,13 @@ Antes de comenzar con el mecanismo de uso de Express como el marco backend, prim
 *   Viene con un motor de plantillas predeterminado, Jade, que ayuda a facilitar el flujo de datos a la estructura de un sitio web y es compatible con otros motores de plantillas.
 *   Es compatible con MVC (Model-View-Controller), una arquitectura muy común para diseñar aplicaciones web.
 *   Es multiplataforma y no se limita a ningún sistema operativo en particular.
-*   Aprovecha sobre Node.js un solo modelo asíncrono y asíncrono.
+*   Aprovecha sobre Node.js un solo modelo asíncrono y a su vez asíncrono.
 
 Cada vez que creamos un proyecto usando `npm` , nuestro proyecto debe tener un archivo `package.json` .
 
 ### Creando package.json
 
-Un archivo JSON (Notación de objetos de JavaScript) contiene toda la información sobre cualquier proyecto Express. La cantidad de módulos instalados, el nombre del proyecto, la versión y otra información meta. Para agregar Expressjs como módulo en nuestro proyecto, primero necesitamos crear un directorio de proyecto y luego crear un archivo package.json.
+Un archivo JSON (Notación de objetos de JavaScript o JavaScript Object Notation por su siglas en inglés) contiene toda la información sobre cualquier proyecto Express. La cantidad de módulos instalados, el nombre del proyecto, la versión y otra información meta. Para agregar Expressjs como módulo en nuestro proyecto, primero necesitamos crear un directorio de proyecto y luego crear un archivo package.json.
 
 ```shell
 mkdir express-app-example 
@@ -88,7 +88,7 @@ Podemos confirmar que Express se ha instalado correctamente de dos maneras. Prim
  } 
 ```
 
-La segunda forma es que una nueva carpeta llamada `node_modules` apareció repentinamente en la raíz de nuestro directorio de proyectos. Esta carpeta almacena los paquetes que instalamos localmente en nuestro proyecto.
+Lo siguiente es que una nueva carpeta llamada `node_modules` apareció repentinamente en la raíz de nuestro directorio de proyectos. Esta carpeta almacena los paquetes que instalamos localmente en nuestro proyecto.
 
 ## Construyendo un servidor con Express
 
@@ -109,27 +109,27 @@ Para iniciar el servidor, vaya a su terminal y escriba:
 node index.js 
 ```
 
-Esto iniciará el servidor. Esta aplicación mínima escuchará en el puerto 3000. Hacemos una solicitud a través de nuestro navegador en `http://localhost:3000` y nuestro servidor responderá con `Hello World` para el cual el navegador es el cliente y el mensaje se mostrará allí.
+Esto iniciará el servidor. Esta aplicación escuchará en el puerto 3000. Hacemos una solicitud a través de nuestro navegador en `http://localhost:3000` y nuestro servidor responderá con `Hello World` para el cual el navegador es el cliente y el mensaje se mostrará ahí.
 
-La primera línea de nuestro código utiliza la función de `require` para incluir el módulo `express` . Así es como incluimos y usamos un paquete instalado desde npm en cualquier archivo JavaScript en nuestro proyecto. Antes de comenzar a utilizar Express, debemos definir una instancia del mismo que maneje la solicitud y la respuesta del servidor al cliente. En nuestro caso, es la `app` variable.
+La primera línea de nuestro código utiliza la función de `require` para incluir el módulo `express` . Así es como incluimos y usamos un paquete instalado desde npm en cualquier archivo JavaScript en nuestro proyecto. Antes de comenzar a utilizar Express, debemos definir una instancia del mismo que maneje la solicitud y la respuesta del servidor al cliente. En nuestro caso, es la variable `app`.
 
-`app.get()` es una función que le dice al servidor qué hacer cuando se llama a una solicitud de `get` en la ruta dada. Tiene una función de devolución de llamada `(req, res)` que escuchar la petición de entrada `req` objeto y responder en consecuencia mediante `res` objeto de respuesta. Tanto `req` como `res` están disponibles para nosotros mediante el marco Express.
+`app.get()` es una función que le dice al servidor qué hacer cuando se llama a una solicitud de `get` en la ruta dada. Tiene una función de devolución de llamada `(req, res)` que escuchará la petición de entrada, tiene un parámetro `req` objeto y responde en consecuencia mediante el objeto de respuesta  `res`. Tanto `req` como `res` están disponibles para nosotros mediante el framework Express.
 
 El objeto `req` representa la solicitud HTTP y tiene propiedades para la cadena de consulta de solicitud, los parámetros, el cuerpo y los encabezados HTTP. El objeto res representa la respuesta HTTP que envía una aplicación Express cuando recibe una solicitud HTTP. En nuestro caso, estamos enviando un `Hello World` texto `Hello World` cuando se realiza una solicitud a la ruta `/` .
 
 Por último, `app.listen()` es la función que inicia un puerto y un host, en nuestro caso, el `localhost` para que las conexiones escuchen las solicitudes entrantes de un cliente. Podemos definir el número de puerto tal como `3000` .
 
-## Anatomía de una aplicación expresa
+## Anatomía de una aplicación Express
 
 Una estructura típica de un archivo de servidor Express probablemente contendrá las siguientes partes:
 
 **Dependencias**
 
-Importando las dependencias como el expreso mismo. Estas dependencias se instalan usando `npm` como hicimos en el ejemplo anterior.
+Importando las dependencias como Express mismo. Estas dependencias se instalan usando `npm` como hicimos en el ejemplo anterior.
 
 **Instancias**
 
-Estas son las declaraciones para crear un objeto. Para usar Express, tenemos que crear una instancia de la variable de la `app` .
+Estas son las declaraciones para crear un objeto. Para usar Express, tenemos que crear una instancia de la variable `app` .
 
 **Configuraciones**
 

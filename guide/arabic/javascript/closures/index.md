@@ -32,36 +32,38 @@ localeTitle: إغلاق
 
 ### مثال آخر
 
- `function by(propName) { 
-    return function(a, b) { 
-        return a[propName] - b[propName]; 
-    } 
- } 
- 
- const person1 = {name: 'joe', height: 72}; 
- const person2 = {name: 'rob', height: 70}; 
- const person3 = {name: 'nicholas', height: 66}; 
- 
- const arr_ = [person1, person2, person3]; 
- 
- const arr_sorted = arr_.sort(by('height')); // [ { name: 'nicholas', height: 66 }, { name: 'rob', height: 70 },{ name: 'joe', height: 72 } ] 
-` 
+```js
+function by(propName) {
+    return function(a, b) {
+        return a[propName] - b[propName];
+    }
+}
+
+const person1 = {name: 'joe', height: 72};
+const person2 = {name: 'rob', height: 70};
+const person3 = {name: 'nicholas', height: 66};
+
+const arr_ = [person1, person2, person3];
+
+const arr_sorted = arr_.sort(by('height')); // [ { name: 'nicholas', height: 66 }, { name: 'rob', height: 70 },{ name: 'joe', height: 72 } ]
+``` 
 
 إغلاق "يتذكر" البيئة التي تم إنشاؤه فيها. تتكون هذه البيئة من أي متغيرات محلية كانت ضمن النطاق في الوقت الذي تم فيه إنشاء الإغلاق.
 
- `function outside(num) { 
-  var rememberedVar = num; // In this example, rememberedVar is the lexical environment that the closure 'remembers' 
-  return function inside() { // This is the function which the closure 'remembers' 
-    console.log(rememberedVar) 
-  } 
- } 
- 
- var remember1 = outside(7); // remember1 is now a closure which contains rememberedVar = 7 in its lexical environment, and //the function 'inside' 
- var remember2 = outside(9); // remember2 is now a closure which contains rememberedVar = 9 in its lexical environment, and //the function 'inside' 
- 
- remember1(); // This now executes the function 'inside' which console.logs(rememberedVar) => 7 
- remember2(); // This now executes the function 'inside' which console.logs(rememberedVar) => 9 
-` 
+```js
+function outside(num) {
+  var rememberedVar = num; // In this example, rememberedVar is the lexical environment that the closure 'remembers'
+  return function inside() { // This is the function which the closure 'remembers'
+    console.log(rememberedVar)
+  }
+}
+
+var remember1 = outside(7); // remember1 is now a closure which contains rememberedVar = 7 in its lexical environment, and //the function 'inside'
+var remember2 = outside(9); // remember2 is now a closure which contains rememberedVar = 9 in its lexical environment, and //the function 'inside'
+
+remember1(); // This now executes the function 'inside' which console.logs(rememberedVar) => 7
+remember2(); // This now executes the function 'inside' which console.logs(rememberedVar) => 9
+``` 
 
 عمليات الإغلاق مفيدة لأنها تتيح لك "تذكر" البيانات ثم تتيح لك العمل على هذه البيانات من خلال الوظائف التي تم إرجاعها. هذا يسمح لجافا سكريبت بمحاكاة الأساليب الخاصة الموجودة في لغات البرمجة الأخرى. تعتبر الطرق الخاصة مفيدة لتقييد الوصول إلى التعليمات البرمجية بالإضافة إلى إدارة مساحة الاسم العام الخاصة بك.
 
@@ -69,25 +71,26 @@ localeTitle: إغلاق
 
 يمكن أيضًا استخدام عمليات الإغلاق لتغليف البيانات / الطرق الخاصة. الق نظرة على هذا المثال:
 
- `const bankAccount = (initialBalance) => { 
-  const balance = initialBalance; 
- 
-  return { 
-    getBalance: function() { 
-      return balance; 
-    }, 
-    deposit: function(amount) { 
-      balance += amount; 
-      return balance; 
-    }, 
-  }; 
- }; 
- 
- const account = bankAccount(100); 
- 
- account.getBalance(); // 100 
- account.deposit(10); // 110 
-` 
+```javascript
+const bankAccount = (initialBalance) => {
+  const balance = initialBalance;
+
+  return {
+    getBalance: function() {
+      return balance;
+    },
+    deposit: function(amount) {
+      balance += amount;
+      return balance;
+    },
+  };
+};
+
+const account = bankAccount(100);
+
+account.getBalance(); // 100
+account.deposit(10); // 110
+``` 
 
 في هذا المثال ، لن نتمكن من الوصول إلى `balance` من أي مكان خارج وظيفة `bankAccount` ، مما يعني أننا قمنا للتو بإنشاء متغير خاص. أين الإغلاق؟ حسنًا ، فكر في ما `bankAccount()` . إنها في الواقع ترجع كائنًا يحتوي على مجموعة من الوظائف داخله ، ومع ذلك عندما نطلق على `account.getBalance()` ، فإن الوظيفة قادرة على "تذكر" مرجعها الأولي إلى `balance` . هذه هي قوة الإغلاق ، حيث "تتذكر" الدالة نطاقها المعجمى (ترجمة النطاق الزمني) ، حتى عندما يتم تنفيذ الوظيفة خارج النطاق المعجمى.
 

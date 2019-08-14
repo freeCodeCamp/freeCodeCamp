@@ -22,7 +22,7 @@ Examples of Structural Patterns include:
 12. **Marker pattern**: an empty interface to associate metadata with a class.
 13. **Pipes and filters**: a chain of processes where the output of each process is the input of the next.
 14. **Opaque pointer**: a pointer to an undeclared or private type, to hide implementation details.
-15. **Proxy pattern** a class functioning as an interface to another thing.
+15. **Proxy pattern**: a class functioning as an interface to another thing.
 
 ### Sources
-[https://en.wikipedia.org/wiki/Structural_pattern](https://en.wikipedia.org/wiki/Structural_pattern)
+[Structural patterns - Wikipedia](https://en.wikipedia.org/wiki/Structural_pattern)

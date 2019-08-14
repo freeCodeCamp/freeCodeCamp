@@ -2,6 +2,7 @@
 id: 5900f3fa1000cf542c50ff0c
 challengeType: 5
 title: 'Problem 140: Modified Fibonacci golden nuggets'
+forumTopicId: 301769
 ---
 
 ## Description
@@ -32,7 +33,7 @@ Find the sum of the first thirty golden nuggets.
 ```yml
 tests:
   - text: <code>euler140()</code> should return 5673835352990.
-    testString: assert.strictEqual(euler140(), 5673835352990, '<code>euler140()</code> should return 5673835352990.');
+    testString: assert.strictEqual(euler140(), 5673835352990);
 
 ```
 
@@ -64,4 +65,5 @@ euler140();
 ```js
 // solution required
 ```
+
 </section>

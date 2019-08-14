@@ -1,25 +1,27 @@
 ---
-title: React TypeChecking with PropTypes
-localeTitle: Tipo de ReaçãoChecendo com PropTypes
----## Reagir PropTypes
+title: Typechecking With PropTypes
+localeTitle: Checagem de tipo com PropTypes
+---
 
-Estes servem como um método de typechecking à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
+## React PropTypes
 
-## Como obter PropTypes
+PropTypes servem como um método de typechecking à medida que um aplicativo tende a crescer, com isso uma base muito grande de bugs tende a ser corrigida com o uso desse recurso.
+
+## Como instalar PropTypes
 
 Começando com o React versão 15.5, esse recurso foi movido para um pacote separado chamado prop-types.
 
-Para usá-lo, é necessário que ele seja adicionado ao projeto como uma dependência, emitindo o seguinte comando em um console.
+Para usá-lo, é necessário que ele seja adicionado ao projeto como uma dependência, digitando o seguinte comando em um console.
 
-```sh
+```shell
 npm install --save prop-types 
 ```
 
-Depois disso, toda uma gama de validadores que podem ser usados ​​para garantir que os dados que o desenvolvedor receberá realmente sejam válidos. Quando um valor inválido é fornecido, haverá um aviso aparecendo no console do JavaScript.
+Depois disso, toda uma gama de validadores de tipo podem ser usados para garantir que os dados que o desenvolvedor receberá realmente sejam válidos. Quando um valor inválido é fornecido, haverá um aviso aparecendo no console do JavaScript.
 
 Observe que, por motivos de desempenho, os propTypes definidos são verificados apenas no modo de desenvolvimento.
 
-Também, ao contrário do estado do componente, que pode ser manipulado conforme necessário, esses suportes são somente leitura.
+Também, ao contrário do estado do componente, que pode ser manipulado conforme necessário, essas propriedades (props) são somente leitura.
 
 Seu valor não pode ser alterado pelo componente.
 
@@ -98,7 +100,7 @@ import PropTypes from 'prop-types';
 
 Como parte deste recurso, também é possível definir valores padrão para qualquer componente definido durante o desenvolvimento.
 
-Eles garantem que o propore tenha um valor, mesmo que não especificado pelo componente pai.
+Eles garantem que a propriedade tenha um valor, mesmo que não especificado pelo componente pai.
 
 O código abaixo ilustra como usar essa funcionalidade.
 
@@ -120,6 +122,6 @@ import React,{Component} from 'react';
  }; 
 ```
 
-Para obter mais informações sobre PropTypes e outros documentos no React.
+Para obter mais informações sobre PropTypes e outros recursos do React.
 
-Vá para o [site oficial](https://reactjs.org/) e leia os documentos ou o [Github Repo](https://github.com/facebook/react/)
+Vá para o [site oficial](https://reactjs.org/) ou o [Github Repo](https://github.com/facebook/react/)

@@ -37,7 +37,6 @@ localeTitle: 探索var和let关键字之间的差异
     catTalk(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://codepen.io/dylantyates/pen/eKqoGY)
 
 # 代码说明：
 

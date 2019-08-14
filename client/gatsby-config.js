@@ -1,6 +1,14 @@
 const path = require('path');
 
-const { buildChallenges } = require('./utils/buildChallenges');
+const {
+  buildChallenges,
+  replaceChallengeNode,
+  localeChallengesRootDir
+} = require('./utils/buildChallenges');
+
+const { API_PROXY: proxyUrl = 'http://localhost:3000' } = process.env;
+
+const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 
 module.exports = {
   siteMetadata: {
@@ -9,7 +17,7 @@ module.exports = {
   },
   proxy: {
     prefix: '/internal',
-    url: 'http://localhost:3000'
+    url: proxyUrl
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -20,7 +28,8 @@ module.exports = {
           '/certification/*',
           '/unsubscribed/*',
           '/user/*',
-          '/settings/*'
+          '/settings/*',
+          '/n/*'
         ]
       }
     },
@@ -28,14 +37,16 @@ module.exports = {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
-        source: buildChallenges
+        source: buildChallenges,
+        onSourceChange: replaceChallengeNode,
+        curriculumPath: localeChallengesRootDir
       }
     },
     {
-      resolve: '@freecodecamp/gatsby-source-filesystem',
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: 'introductions',
-        path: path.resolve(__dirname, './src/pages')
+        path: curriculumIntroRoot
       }
     },
     {
@@ -74,19 +85,6 @@ module.exports = {
     {
       resolve: 'gatsby-remark-node-identity',
       options: {
-        identity: 'guideMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && !block && !superBlock;
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-remark-node-identity',
-      options: {
         identity: 'blockIntroMarkdown',
         predicate: ({ frontmatter }) => {
           if (!frontmatter) {
@@ -110,7 +108,6 @@ module.exports = {
         }
       }
     },
-    'fcc-create-nav-data',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -125,6 +122,14 @@ module.exports = {
         icon: 'src/images/square_puck.png'
       }
     },
-    'gatsby-plugin-sitemap'
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Lato:400,400i,500']
+      }
+    },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-remove-fingerprints',
+    'gatsby-plugin-remove-serviceworker'
   ]
 };

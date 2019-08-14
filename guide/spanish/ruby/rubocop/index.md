@@ -2,9 +2,9 @@
 title: Rubocop
 localeTitle: Rubocop
 ---
-[Rubocop](https://github.com/bbatsov/rubocop) es una herramienta de análisis estático para [Ruby](https://www.ruby-lang.org/en/) ¿Qué significa esto? Significa rubocop desea "leer" su código (en lugar de ejecutarlo, de ahí la parte "estática" del nombre), y analizarlo. Las reglas de análisis que utiliza Rubocop son de la [Guía de Ruby estilo comunidad](https://github.com/bbatsov/ruby-style-guide) .
+[Rubocop](https://github.com/bbatsov/rubocop) es una herramienta de análisis estático para [Ruby](https://www.ruby-lang.org/en/) ¿Qué significa esto? Significa que rubocop desea "leer" su código (en lugar de ejecutarlo, de ahí la parte "estática" del nombre), y analizarlo. Las reglas de análisis que utiliza Rubocop son de la [Guía de Ruby estilo comunidad](https://github.com/bbatsov/ruby-style-guide).
 
-La guía de estilo es un conjunto de sugerencias específicas sobre cómo escribir código que Es más legible, más expresivo y más convencional. Como comunidad, sería fantástico si pudiéramos leer el código de otra persona fácilmente, y ellos podrían Lee el nuestro fácilmente. Esto es lo que Rubocop nos ayuda a hacer. Este tipo de herramienta es siempre es valioso, pero es particularmente útil cuando estás aprendiendo Ruby, y puede codificar qué es _correcto_ , pero que no se adhiere a las convenciones de Ruby, o no aprovecha algunas de las características más poderosas de Ruby.
+La guía de estilo es un conjunto de sugerencias específicas sobre cómo escribir código que es más legible, más expresivo y más convencional. Como comunidad, sería fantástico si pudiéramos leer el código de otra persona fácilmente, y ellos podrían leer el nuestro fácilmente. Esto es lo que Rubocop nos ayuda a hacer. Este tipo de herramienta es valiosa, pero es particularmente útil cuando estás aprendiendo Ruby, y puede codificar qué es _correcto_, pero que no se adhiere a las convenciones de Ruby, o no aprovecha algunas de las características más poderosas de Ruby.
 
 Lo más útil es que Rubocop puede reparar automáticamente muchas de las advertencias menores, como espaciado incorrecto. Esto es muy útil antes de revisar el código, ya que significa que los desarrolladores pueden enfocarse en preocupaciones de alto nivel, y no tener que perder tiempo en cuestiones de sintaxis.
 
@@ -41,7 +41,7 @@ Muchos editores le permitirán integrar Rubocop, lo que le puede dar retroalimen
 
 ### Problemas de fijación
 
-Digamos que he escrito un nuevo código; Antes de que lo cometa, podría decidir Compruebe que se adhiere a las directrices:
+Digamos que he escrito un nuevo código; Antes de que lo cometa, podría decidir comprobar que se adhiere a las directrices:
 
 ```shell
 rubocop <my new file> 

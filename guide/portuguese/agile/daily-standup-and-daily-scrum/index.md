@@ -18,6 +18,8 @@ A agenda padrão para cada pessoa é:
 
 Os membros da equipe devem ouvir atentamente as contribuições uns dos outros e tentar identificar áreas em que possam ajudar o progresso uns dos outros. A reunião em pé também apresentará tópicos mais longos de discussão que precisam ser realizados entre os diferentes membros da equipe. Essas discussões demoradas devem ser interrompidas e realizadas fora do standup, envolvendo apenas os participantes relevantes, e não a equipe inteira.
 
+Muitos times ágeis no Brasil consideram apenas o termo 'Daily Meeting' ou 'Daily' e não necessariamente é obrigatório levar o termo 'em pé' ao pé da letra, mas é importante fazer os primeiros seguindo a forma tradicional e adaptar conforme sugestão do time.
+
 ### Exemplo de reunião em pé
 
 https://www.youtube.com/watch?v=\_3VIC8u1UV8

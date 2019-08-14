@@ -1,8 +1,8 @@
 ---
 title: Links
-localeTitle: Campo de golf
+localeTitle: Enlaces
 ---
-## Campo de golf
+## Enlaces
 
 Esto es un talón. [Ayuda a nuestra comunidad a expandirla](https://github.com/freecodecamp/guides/tree/master/src/pages/html/attributes/links/index.md) .
 

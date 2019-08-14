@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08756
 title: Prioritize One Style Over Another
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ8wnHv'
+forumTopicId: 18258
 ---
 
 ## Description
@@ -24,11 +25,11 @@ Give your <code>h1</code> element the class of <code>pink-text</code>.
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: assert($("h1").hasClass("pink-text"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');
+    testString: assert($("h1").hasClass("pink-text"));
   - text: Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.
-    testString: assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g), 'Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.');
+    testString: assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g));
   - text: Your <code>h1</code> element should be pink.
-    testString: assert($("h1").css("color") === "rgb(255, 192, 203)", 'Your <code>h1</code> element should be pink.');
+    testString: assert($("h1").css("color") === "rgb(255, 192, 203)");
 
 ```
 
@@ -60,6 +61,18 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+<style>
+  body {
+    background-color: black;
+    font-family: monospace;
+    color: green;
+  }
+  .pink-text {
+    color: pink;
+  }
+</style>
+<h1 class="pink-text">Hello World!</h1>
+
 ```
+
 </section>

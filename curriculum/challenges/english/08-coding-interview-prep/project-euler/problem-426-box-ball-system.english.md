@@ -2,6 +2,7 @@
 id: 5900f5171000cf542c510029
 challengeType: 5
 title: 'Problem 426: Box-ball system'
+forumTopicId: 302096
 ---
 
 ## Description
@@ -49,7 +50,7 @@ Give as your answer the sum of the squares of the elements of the final state. F
 ```yml
 tests:
   - text: <code>euler426()</code> should return 31591886008.
-    testString: assert.strictEqual(euler426(), 31591886008, '<code>euler426()</code> should return 31591886008.');
+    testString: assert.strictEqual(euler426(), 31591886008);
 
 ```
 
@@ -81,4 +82,5 @@ euler426();
 ```js
 // solution required
 ```
+
 </section>

@@ -4,7 +4,7 @@ localeTitle: Atributo de alineación de div
 ---
 ## Div align atributos
 
-La `<div align="">` atributo se utiliza para alinear el texto en una etiqueta div a la izquierda, derecha, centro o justificar.
+El atributo `<div align="">` se utiliza para alinear el texto en una etiqueta div a la izquierda, derecha, centro o para justificarlo.
 
 Por ejemplo:
 
@@ -40,8 +40,8 @@ El atributo DIV align se puede utilizar para alinear horizontalmente los conteni
 ```html
 
 <div align="center"> 
-  This Text Will Be Centered 
- </div> 
+Este texto estará centrado
+</div> 
 ```
 
 \*\* Este atributo no es compatible con HTML5 y [texto CSS Align](https://github.com/freeCodeCamp/guides/blob/f50b7370be514b2a03ee707cd0f0febe2bb713ae/src/pages/css/text-align/index.md) debe utilizarse en lugar

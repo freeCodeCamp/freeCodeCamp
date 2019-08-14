@@ -16,7 +16,7 @@ Os Sprints, em média, duram até 30 dias ou em até 7 dias, dependendo do taman
 
 Além disso, em algumas organizações, os desenvolvedores se reunirão diariamente para discutir o andamento, as necessidades e os obstáculos do projeto. Essas reuniões são às vezes mencionadas como reunião SCRUM ou Reunião Diária em Stand-up. A pessoa ou pessoas são às vezes convidadas a ouvir, no entanto, elas estão apenas presentes como observadores.
 
-![sprint schedule](https://i.imgur.com/l8EAw1L.png "exemplo de cronograma de sprint")
+![sprint schedule](https://cdn-media-1.freecodecamp.org/imgr/l8EAw1L.png "exemplo de cronograma de sprint")
 
 O acima é um exemplo de um plano de sprint que foi apresentado em seis sprints de 30 dias. Você pode ver que há um Sprint Dev em cada um dos seis sprints, mas no Sprint 2 existe algo rotulado como **Sprint # Increment** .
 
