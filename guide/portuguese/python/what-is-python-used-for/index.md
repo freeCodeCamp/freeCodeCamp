@@ -12,7 +12,7 @@ Você pode usar o Python para criar aplicativos da Web em muitos níveis de comp
 
 ##### Análise de dados:
 
-Python é a principal linguagem de escolha para muitos cientistas de dados. Python cresceu em popularidade dentro do campo devido à disponibilidade de muitas excelentes bibliotecas focado em ciência de dados (dos quais NumPy e Pandas são dois dos mais conhecidos) e visualização de dados (como Matplotlib e Seaborn). Pyton realmente fez trituração de dados Divertir-se com todas as suas inúmeras bibliotecas disponíveis. O Ipython com JupyterLab é outra forma de Python que melhora o uso do Python no campo da ciência de dados.
+Python é a principal linguagem de escolha para muitos cientistas de dados. Python cresceu em popularidade dentro do campo devido à disponibilidade de muitas excelentes bibliotecas focado em ciência de dados (dos quais NumPy e Pandas são dois dos mais conhecidos) e visualização de dados (como Matplotlib e Seaborn). Python realmente fez a trituração de dados divertida com todas as suas inúmeras bibliotecas disponíveis. O Ipython com JupyterLab é outra forma de Python que melhora o uso do Python no campo da ciência de dados.
 
 ##### Automação:
 
