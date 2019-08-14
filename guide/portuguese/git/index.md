@@ -4,6 +4,9 @@ localeTitle: ir
 ---
 ## Git
 
+Logo do Git:  
+![alt text](https://git-scm.com/images/logos/logomark-orange@2x.png "Logo do Git")
+ 
 O Git é um sistema de controle de versão distribuído de código aberto criado em 2005 por Linus Torvalds e outros da comunidade de desenvolvimento Linux. O Git pode trabalhar com muitos tipos de projetos, mas é mais comumente usado para código-fonte de software.
 
 O controle de versão é um sistema que controla as alterações em um arquivo ou grupo de arquivos ao longo do tempo. Quando você tem um histórico dessas alterações, ele permite que você localize versões específicas mais tarde, compare as alterações entre as versões, recupere arquivos que você tenha excluído ou reverta arquivos para versões anteriores.
@@ -11,6 +14,11 @@ O controle de versão é um sistema que controla as alterações em um arquivo o
 Um sistema de controle de versão _distribuído_ significa que usuários diferentes mantêm seus próprios repositórios de um projeto, em vez de trabalharem a partir de um repositório central. Os usuários têm automaticamente capacidades completas de rastreamento de arquivos e o histórico completo da versão do projeto, sem precisar de acesso a um servidor central ou rede.
 
 Quando o Git é inicializado em um diretório de projeto, ele começa a rastrear as alterações do arquivo e as armazena como "conjuntos de alterações" ou "correções". Os usuários que trabalham juntos em um projeto enviam seus conjuntos de alterações que são incluídos (ou rejeitados) no projeto.
+
+
+Exemplo de um sistema de controle de versão distribuído:  
+![alt text](https://git-scm.com/figures/18333fig0103-tn.png "sistema de controle de versão distribuído")
+
 
 **Índice**
 
@@ -30,14 +38,17 @@ Um projeto Git terá as seguintes três seções principais:
 2.  Diretório de trabalho (ou árvore de trabalho)
 3.  Área de preparação
 
-O **diretório Git** (localizado em `YOUR-PROJECT-PATH/.git/` ) é onde o Git armazena tudo o que precisa para rastrear com precisão o projeto. Isso inclui metadados e um banco de dados de objetos que inclui versões compactadas dos arquivos de projeto.
+O **diretório Git**, ou em inglês, **git directory, também chamado de repository** (localizado em `YOUR-PROJECT-PATH/.git/` ) é onde o Git armazena tudo o que precisa para rastrear com precisão o projeto. Isso inclui metadados e um banco de dados de objetos que inclui versões compactadas dos arquivos de projeto.
 
-O **diretório de trabalho** é onde o usuário faz alterações locais em um projeto. O diretório de trabalho extrai os arquivos do projeto do banco de dados de objetos do diretório Git e os coloca na máquina local do usuário.
+O **diretório de trabalho**, ou em inglês, **working directory** é onde o usuário faz alterações locais em um projeto. O diretório de trabalho extrai os arquivos do projeto do banco de dados de objetos do diretório Git e os coloca na máquina local do usuário.
 
-A **área temporária** é um arquivo (também chamado de "index", "stage" ou "cache") que armazena informações sobre o que irá para o seu próximo commit. Um commit é quando você diz ao Git para salvar essas mudanças em etapas. O Git tira um instantâneo dos arquivos como estão e armazena permanentemente o instantâneo no diretório Git.
+A **área temporária**, ou em inglês, **staging area** é um arquivo (também chamado de "index", "stage" ou "cache") que armazena informações sobre o que irá para o seu próximo commit. Um commit é quando você diz ao Git para salvar essas mudanças em etapas. O Git tira um instantâneo dos arquivos como estão e armazena permanentemente o instantâneo no diretório Git.
 
 Com três seções, há três estados principais em que um arquivo pode estar em um determinado momento: confirmado, modificado ou testado. Você _modifica_ um arquivo sempre que fizer alterações nele em seu diretório de trabalho. Em seguida, é _preparado_ quando você o move para a área de preparação. Finalmente, é _confirmado_ após um commit.
 
+As três seções do Git:  
+![alt text](https://git-scm.com/figures/18333fig0106-tn.png "As três seções do Git")
+ 
 ### Instalar o Git
 
 *   Ubuntu: `sudo apt-get install git`
