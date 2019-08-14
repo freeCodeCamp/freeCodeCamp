@@ -5,8 +5,8 @@ localeTitle: Para loop
 ### Sintaxe
 
 ```javascript
-for ([initialization]); [condition]; [final-expression]) { 
-   // statement 
+for ([inicialização]); [condição]; [expressão final]) { 
+   // bloco de codigo 
  } 
 ```
 
@@ -28,8 +28,8 @@ Qualquer uma dessas três expressões ou a declaração pode ser omitida. For lo
 Ao indexar em um array muitas vezes é fácil exceder os limites do array (ex. Tentar referenciar o 4º elemento de um array de 3 elementos).
 
 ```javascript
-    // This will cause an error. 
-    // The bounds of the array will be exceeded. 
+    // O Limite da matriz(array) foi excedito
+    // Isso causará um erro. 
     var arr = [ 1, 2, 3 ]; 
     for (var i = 0; i <= arr.length; i++) { 
        console.log(arr[i]); 
@@ -68,17 +68,17 @@ for (var i = 0; i < 9; i++) {
 Quebra de um loop antes que a expressão de condição seja falsa
 
 ```javascript
-for (var elephant = 1; elephant < 10; elephant+=2) { 
-    if (elephant === 7) { 
+for (var elefante = 1; elefante < 10; elefante+=2) { 
+    if (elefante === 7) { 
         break; 
     } 
-    console.info('elephant is ' + elephant); 
+    console.info('elefante é ' + elefante); 
  } 
  
  output: 
- elephant is 1 
- elephant is 3 
- elephant is 5 
+ elefante is 1 
+ elefante is 3 
+ elefante is 5 
 ```
 
 ### Outros recursos
