@@ -12,9 +12,9 @@ Para os não iniciados, um neurônio artificial é basicamente uma função mate
 
 ### Por que isso é um grande negócio?
 
-Chegando com o conjunto de regras manualmente para algumas das tarefas pode ser muito complicado (embora teoricamente possível). Por exemplo, se você tentar escrever um conjunto manual de regras para classificar uma imagem (basicamente um monte de valores de pixel) de se ela pertence a um gato ou cachorro, você verá por que é complicado. Acrescente a isso o fato de que cães e gatos vêm em uma variedade de formas, tamanhos e cores, e, para não mencionar, as imagens podem ter origens diferentes. Você pode entender rapidamente porque codificar um problema tão simples pode ser problemático.
+Chegando com o conjunto de regras manualmente para algumas das tarefas pode ser muito complicado (embora teoricamente possível). Por exemplo, se você tentar escrever um conjunto manual de regras para classificar uma imagem (basicamente um monte de valores de pixel) de forma a validar se ela pertence a um gato ou cachorro, você verá por que essa é uma tarefa complicada. Acrescente isso ao fato de que cães e gatos vêm em uma variedade de formas, tamanhos e cores e, para não mencionar, as imagens podem ter origens diferentes. Você pode entender rapidamente porque codificar um problema tão simples pode ser problemático.
 
-Deep Learning ajuda a resolver este problema de descobrir o conjunto de regras que podem classificar uma imagem como a de um gato ou um cachorro, automaticamente! Tudo o que é preciso é um monte de imagens que já estão corretamente classificadas como de um gato ou de um cachorro e que poderão aprender o conjunto de regras necessário. Magia!
+Deep Learning ajuda a resolver o problema de descobrir o conjunto de regras que podem classificar uma imagem como a de um gato ou um cachorro, automaticamente! Tudo o que é preciso é um monte de imagens que já estão corretamente classificadas como de um gato ou de um cachorro e que poderão aprender o conjunto de regras necessário. Magia!
 
 Acontece que há muitos problemas por aí que não são relacionados à imagem (como o reconhecimento de voz), em que encontrar o conjunto de regras é muito complicado. Deep Learning pode ajudar com isso desde que haja muitos dados rotulados já presentes.
 
