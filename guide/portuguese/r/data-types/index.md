@@ -60,6 +60,19 @@ Escalar refere-se a uma quantidade atômica que pode conter apenas um valor por 
  4  4  <NA>  FALSE 
 ```
 
+Um quadro de dados pode ser lido através da função read.table() e com esta função podemos, por exemplo, omitir a primeira coluna desta maneira:
+
+```
+> HousePrice <- read.table("houses.data", header=TRUE)
+
+Price    Floor     Area   Rooms     Age  Cent.heat
+52.00    111.0      830     5       6.2      no
+54.75    128.0      710     5       7.5      no
+57.50    101.0     1000     5       4.2      no
+57.50    131.0      690     6       8.8      no
+59.75     93.0      900     5       1.9     yes
+```
+
 ## Listas
 
 É um objeto-R que pode conter muitos tipos diferentes de elementos dentro dele, como vetores, funções e até mesmo outra lista dentro dele. Por exemplo:
@@ -73,6 +86,7 @@ Escalar refere-se a uma quantidade atômica que pode conter apenas um valor por 
  [[3]] 
  function (x)  .Primitive("sin") 
 ```
+
 ## Datas
 
 As datas podem vir em vários formatos, mas vamos nos focar com o exemplo seguinte:
