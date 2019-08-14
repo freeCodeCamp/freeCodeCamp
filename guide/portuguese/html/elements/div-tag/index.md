@@ -4,7 +4,7 @@ localeTitle: Tag Div
 ---
 ## Tag Div
 
-A tag `<div>` é um contêiner genérico que define uma seção em seu documento HTML. Um elemento `<div>` é usado para agrupar seções de elementos HTML e formatá-los com CSS. Um `<div>` é um elemento de nível de bloco e ajuda na semântica do código. Isso significa que ele ocupa sua própria linha na tela. Elementos logo após o `<div>` serão empurrados para a linha abaixo. Para agrupamentos e estilos semelhantes que não sejam de nível de bloco, mas inline, você usaria a tag `<span>` vez disso. A tag é usada para agrupar elementos inline em um documento.
+A tag `<div>` é um contêiner genérico que define uma seção em seu documento HTML. O nome 'div' vem de divisão. Um elemento `<div>` é usado para agrupar seções de elementos HTML e formatá-los com CSS. Esta tag divide qualquer trecho de sua página HTML. Um `<div>` é um elemento de nível de bloco. Isso significa que ele ocupa sua própria linha na tela. Elementos logo após o `<div>` serão empurrados para a linha abaixo. Para agrupamentos e estilos semelhantes que não sejam de nível de bloco, mas inline, você usaria a tag `<span>` vez disso. A tag também é usada para agrupar elementos inline em um documento. A tag é importante para estruturar e criar uma ordem lógica e organizar o seu documento HTML.
 
 ### Exemplo
 
