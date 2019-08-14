@@ -7,22 +7,21 @@ forumTopicId: 301152
 
 ## Description
 <section id='description'>
-Remember in the last challenge we mentioned that <code>splice()</code> can take up to three parameters? Well, we can go one step further with <code>splice()</code> &mdash; in addition to removing elements, we can use that third parameter, which represents one or more elements, to <em>add</em> them as well. This can be incredibly useful for quickly switching out an element, or a set of elements, for another. For instance, let's say you're storing a color scheme for a set of DOM elements in an array, and want to dynamically change a color based on some action:
+Remember in the last challenge we mentioned that <code>splice()</code> can take up to three parameters? Well, in addition to removing elements with the first two parameters, we can use that third parameter, comprised of one or more element(s), to add them as well. This can be incredibly useful for quickly switching out an element, or a set of elements, for another.
 
 ```js
-function colorChange(arr, index, newColor) {
-  arr.splice(index, 1, newColor);
-  return arr;
-}
+const numbers = [10, 11, 12, 12, 15]
+const startIndex = 3;
+const amountToDelete = 1;
 
-let colorScheme = ['#878787', '#a08794', '#bb7e8c', '#c9b6be', '#d1becf'];
+numbers.splice(startIndex, amountToDelete, 13, 14)
+// the second entry of 12 is removed, and we add 13 and 14 at the same index
 
-colorScheme = colorChange(colorScheme, 2, '#332327');
-// we have removed '#bb7e8c' and added '#332327' in its place
-// colorScheme now equals ['#878787', '#a08794', '#332327', '#c9b6be', '#d1becf']
+console.log(numbers);
+// returns [ 10, 11, 12, 13, 14, 15 ]
 ```
 
-This function takes an array of hex values, an index at which to remove an element, and the new color to replace the removed element with. The return value is an array containing a newly modified color scheme! While this example is a bit oversimplified, we can see the value that utilizing <code>splice()</code> to its maximum potential can have.
+Here we begin with an array of numerical values. Using <code>splice()</code>, we have taken an index at which to begin removing elements (3), the number of elements to be removed (1), and the values (13, 14) to be inserted at that same index. Note that the values passed in the third parameter are separated by commas, but require no additional formatting.
 </section>
 
 ## Instructions
