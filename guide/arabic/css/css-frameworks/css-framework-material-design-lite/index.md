@@ -10,19 +10,19 @@ localeTitle: CSS Framework Material Design Lite
 
 في ما يلي نموذج HTML بسيط يشتمل على أحدث CSS مجمع ومختزن لمكتبة MDL.
 
- `
-<!DOCTYPE html> 
- <html> 
-    <head> 
-        <title></title> 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> 
-        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> 
-    </head> 
-    <body> 
-    </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+``` 
 
 لقد استخدمنا CDN في هذا المثال ، ولكن يمكنك التحقق من الطرق الأخرى لتثبيت MDL [هنا](https://getmdl.io/started/index.html) .
 

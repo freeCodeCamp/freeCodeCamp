@@ -2,6 +2,7 @@
 id: 5900f5461000cf542c510058
 challengeType: 5
 title: 'Problem 473: Phigital number base'
+forumTopicId: 302150
 ---
 
 ## Description
@@ -37,7 +38,7 @@ Find the sum of the positive integers not exceeding $10^{10}$ whose phigital rep
 ```yml
 tests:
   - text: <code>euler473()</code> should return 35856681704365.
-    testString: assert.strictEqual(euler473(), 35856681704365, '<code>euler473()</code> should return 35856681704365.');
+    testString: assert.strictEqual(euler473(), 35856681704365);
 
 ```
 
@@ -69,4 +70,5 @@ euler473();
 ```js
 // solution required
 ```
+
 </section>

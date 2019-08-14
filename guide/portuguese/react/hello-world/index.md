@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: Olá Mundo
----## Olá Mundo !!
+---
+## Olá Mundo !!
 
 Cada aprendizagem de línguas começa com o exemplo do Hello World Tradicional. Aqui, você é apresentado ao React com o mesmo programa HelloWorld.
 
@@ -62,6 +63,6 @@ Se verificarmos o arquivo index.js na pasta src, descobrimos que o App.js acima 
 
 Acima, App.js é chamado de componente. Normalmente, fazemos vários componentes e os reunimos em App.js, que serão então renderizados em index.js, que é então renderizado no div raiz que está no index.html.
 
-Parabéns !! Você criou seu primeiro aplicativo React Hello world. Você aprende mais sobre o Reagir nos próximos artigos.
+Parabéns !! Você criou seu primeiro aplicativo Hello world. Você aprende mais sobre o React nos próximos artigos.
 
-Codificação Feliz !!
+Feliz código !!

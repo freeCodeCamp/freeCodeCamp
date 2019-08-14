@@ -87,6 +87,18 @@ Price    Floor     Area   Rooms     Age  Cent.heat
  function (x)  .Primitive("sin") 
 ```
 
+## Datas
+
+As datas podem vir em vários formatos, mas vamos nos focar com o exemplo seguinte:
+
+```
+> as.Date("10/21/2012", format = "%m/%d/%Y")
+
+[1] "2012-10-21"
+```
+
+A data que inserimos no primeiro argumento, 10/21/2012, passou a ter outro formato devido à função que utilizamos. O segundo argumento é apenas para o R saber em que formato é que a entrada está.
+
 ## Referência:
 
 [Documentos oficiais](https://cran.r-project.org/manuals.html) [Tipos de dados em R por r-bloggers](https://www.r-bloggers.com/classes-and-objects-in-r/)

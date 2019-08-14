@@ -17,9 +17,7 @@ the Firebase Storage. There are following documentation about this:
 
 * [Firebase](https://firebase.google.com/docs/storage/android/start)
 
-There may be chance of confusion in that documentation or if you are new to firebase then you may face little bit hard to understand it. 
-So follow the belows steps carefully:
-
+If you are new to firebase, you may find it a little hard to understand. So follow the steps below carefully:
 
 **Add Gradle Dependencies**
 

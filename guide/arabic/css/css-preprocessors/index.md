@@ -28,11 +28,12 @@ localeTitle: CSS Preprocessors
 
 \`\` \`ساس for $ vfoo 35px to 85px { .margin - # {vfoo} { الهامش: $ vfoo 10px؛ } }
 
- `This loop saves us from having the to write the same code multiple times to change the margin size. 
- 
- ### If/Else Statements 
- Yet another feature which CSS lacks are If/Else statements. These will run a set of instructions only if a given condition is true. An example of this in SASS would be: 
-` 
+```
+This loop saves us from having the to write the same code multiple times to change the margin size.
+
+### If/Else Statements
+Yet another feature which CSS lacks are If/Else statements. These will run a set of instructions only if a given condition is true. An example of this in SASS would be:
+``` 
 
 ساس if width (body)> 500px { لون الخلفية: الأزرق. } آخر { لون الخلفية: أبيض. } \`\` \` هنا ، سيغير لون الخلفية اللون حسب عرض نص الصفحة.
 

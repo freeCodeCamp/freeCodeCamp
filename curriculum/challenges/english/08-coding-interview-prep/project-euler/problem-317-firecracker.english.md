@@ -2,6 +2,7 @@
 id: 5900f4aa1000cf542c50ffbc
 challengeType: 5
 title: 'Problem 317: Firecracker'
+forumTopicId: 301973
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Give your answer rounded to four decimal places.
 ```yml
 tests:
   - text: <code>euler317()</code> should return 1856532.8455.
-    testString: assert.strictEqual(euler317(), 1856532.8455, '<code>euler317()</code> should return 1856532.8455.');
+    testString: assert.strictEqual(euler317(), 1856532.8455);
 
 ```
 
@@ -59,4 +60,5 @@ euler317();
 ```js
 // solution required
 ```
+
 </section>

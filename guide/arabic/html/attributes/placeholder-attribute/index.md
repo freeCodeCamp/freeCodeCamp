@@ -14,18 +14,18 @@ localeTitle: العنصر النائب السمة
 
 مثال المدخلات
 
- `
-<form> 
-    <input type="text" name="fname" placeholder="First Name"> 
-    <input type="text" name="lname" placeholder="Last Name"> 
- </form> 
-` 
+```html
+<form>
+    <input type="text" name="fname" placeholder="First Name">
+    <input type="text" name="lname" placeholder="Last Name">
+</form>
+``` 
 
 مثال على Textarea
 
- `
-<textarea placeholder="Describe yourself here..."></textarea> 
-` 
+```html
+<textarea placeholder="Describe yourself here..."></textarea>
+``` 
 
 ### التوافق
 

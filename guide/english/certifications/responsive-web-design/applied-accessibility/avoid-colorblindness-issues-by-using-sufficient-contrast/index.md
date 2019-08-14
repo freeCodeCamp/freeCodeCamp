@@ -1,8 +1,13 @@
 ---
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
 ---
-## Avoid Colorblindness Issues by Using Sufficient Contrast
+# Avoid Colorblindness Issues by Using Sufficient Contrast
 
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Following the instructions:
 
@@ -15,3 +20,5 @@ the line 4 and 5 become:
     background-color: hsl(120, 25%, 55%);
 ```
 This improves the contrast to 5.9:1.
+
+</details>

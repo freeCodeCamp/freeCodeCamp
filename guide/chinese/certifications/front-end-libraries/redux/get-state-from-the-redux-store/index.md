@@ -6,7 +6,7 @@ localeTitle: 从Redux商店获取状态
 
 使用`getState()`方法从存储中检索数据。
 
-```react.js
+```js
 let currentState = store.getState(); 
 
 ```

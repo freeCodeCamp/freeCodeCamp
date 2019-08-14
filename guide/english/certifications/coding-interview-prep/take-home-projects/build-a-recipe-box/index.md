@@ -1,7 +1,7 @@
 ---
 title: Build a Recipe Box
 ---
-## Build a Recipe Box
+# Build a Recipe Box
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/build-a-recipe-box/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

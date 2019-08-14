@@ -2,9 +2,9 @@
 title: What is Minecraft Forge?
 localeTitle: ¿Qué es Minecraft Forge?
 ---
-Si estás leyendo este artículo, probablemente ya conozcas Minecraft. Usamos Forge para manipular el juego Minecraft para que haga lo que queremos. Esto podría ser cualquier cosa, desde nuevas criaturas geniales hasta sistemas completamente nuevos en el juego.
+Si estás leyendo este artículo, probablemente ya conozcas Minecraft. Usamos Forge para manipular el juego Minecraft para que haga lo que queramos. Esto podría ser cualquier cosa, desde nuevas criaturas geniales hasta sistemas completamente nuevos en el juego.
 
-Forge es una api modding. Minecraft Forge (o Forge para abreviar) es una capa entre nuestro código y el propio Minecraft. No podemos pedir directamente a Minecraft que agregue artículos y haga cosas geniales especiales. Es por eso que necesitamos una API (interfaz de programación de aplicaciones) para manejar nuestra lógica y hacer que Minecraft lo reconozca.
+Forge es una API para modding. Minecraft Forge (o Forge para abreviar) es una capa entre nuestro código y el propio Minecraft. No podemos pedir directamente a Minecraft que agregue artículos y haga cosas geniales especiales. Es por eso que necesitamos una API (interfaz de programación de aplicaciones) para manejar nuestra lógica y hacer que Minecraft lo reconozca.
 
 ## ¡Suena bien! ¿Cómo empiezo?
 
@@ -14,15 +14,16 @@ Forge es una api modding. Minecraft Forge (o Forge para abreviar) es una capa en
 
 Después de instalar / adquirir estas piezas de software, descargue la versión Forge que desee en https://files.minecraftforge.net/ ( _CONSEJO:_ desplace el mouse sobre el botón de información y presione descargar directamente para evitar un virus Adfly). Una vez que hayas descargado este ZIP podrás descomprimirlo. Hazlo y cd (comando cmd) en el directorio con todos los archivos de Forge. Ejecutar `gradlew setupDecompWorkspace`
 
-Lo siguiente es elegir su IDE (entorno de desarrollo integrado). ¿Eclipse? `gradlew eclipse` IntelliJ? ¡Importe el archivo build.gradle en su configuración de IntelliJ!
+Lo siguiente es elegir su IDE (entorno de desarrollo integrado). ¿Eclipse? `gradlew eclipse` ¿IntelliJ? ¡Importe el archivo build.gradle en su configuración de IntelliJ!
 
-## Bien ahora que? ¿Cómo agrego nuevos artículos de lujo? (Configuración de mod básica)
+## Bien, ¿ahora qué? ¿Cómo agrego nuevos artículos de lujo? (Configuración de mod básica)
 
 Calma. Hay mucho más que eso. Tendrás que texturizar un artículo, por supuesto, agregar código y mucho más. En este artículo solo veremos un código de ejemplo simple que también uso para mis propios mods. ¡Aquí está!
 
-\` @ Mod.EventBusSubscriber @Mod (modid = Version.MOD _ID, nombre = Version.MOD_ NAME, version = Version.VERSION) clase pública TheMod {
 ```
-public static ModMetadata metadata; 
+\` @ Mod.EventBusSubscriber @Mod (modid = Version.MOD _ID, name = Version.MOD_ NAME, version = Version.VERSION) 
+public class TheMod {
+ public static ModMetadata metadata; 
  
  public static File baseDir; 
  public static Configuration config; 
@@ -51,8 +52,6 @@ public static ModMetadata metadata;
  public void postInit(FMLPostInitializationEvent event) { 
     proxy.postInit(event); 
  } 
-```
-
 } \`
-
+```
 Use este código como le plazca, ¡asegúrese de editar, por ejemplo, las cadenas de proxy y más! Esto debería darle una descripción básica de cómo se ve una clase mod básica.

@@ -52,8 +52,7 @@ Os `Array.prototype.split` e `Array.prototype.join` métodos podem ser de uso aq
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/2)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Começamos usando expressões regulares para substituir qualquer espaço em branco ou caracteres não alfanuméricos por nada (ou `null` ), o que essencialmente os remove da string.
@@ -85,8 +84,7 @@ Os `Array.prototype.split` e `Array.prototype.join` métodos podem ser de uso aq
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/3)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Começamos usando os mesmos métodos de substituir os caracteres que não queremos na string usando expressões regulares do `RegEx` , e então fazer a nossa string em minúsculo.
@@ -134,8 +132,7 @@ Os `Array.prototype.split` e `Array.prototype.join` métodos podem ser de uso aq
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/4)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Foi-me dado este problema em uma entrevista (spoiler: eu não fui contratado ![:frowning:](https://forum.freecodecamp.com/images/emoji/emoji_one/frowning.png?v=3 ": franzindo a testa:") Rapidamente cheguei à solução básica, e o entrevistador me disse para melhorar. O algoritmo demoraria muito se ele passasse a Bíblia como a string. Ele queria que fosse instantâneo.

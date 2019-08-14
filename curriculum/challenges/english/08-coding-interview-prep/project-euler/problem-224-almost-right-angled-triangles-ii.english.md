@@ -2,6 +2,7 @@
 id: 5900f44e1000cf542c50ff5f
 challengeType: 5
 title: 'Problem 224: Almost right-angled triangles II'
+forumTopicId: 301867
 ---
 
 ## Description
@@ -22,7 +23,7 @@ How many barely obtuse triangles are there with perimeter ≤ 75,000,000?
 ```yml
 tests:
   - text: <code>euler224()</code> should return 4137330.
-    testString: assert.strictEqual(euler224(), 4137330, '<code>euler224()</code> should return 4137330.');
+    testString: assert.strictEqual(euler224(), 4137330);
 
 ```
 
@@ -54,4 +55,5 @@ euler224();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f4f71000cf542c51000a
 challengeType: 5
 title: 'Problem 395: Pythagorean tree'
+forumTopicId: 302060
 ---
 
 ## Description
@@ -38,7 +39,7 @@ Find the smallest area possible for such a bounding rectangle, and give your ans
 ```yml
 tests:
   - text: <code>euler395()</code> should return 28.2453753155.
-    testString: assert.strictEqual(euler395(), 28.2453753155, '<code>euler395()</code> should return 28.2453753155.');
+    testString: assert.strictEqual(euler395(), 28.2453753155);
 
 ```
 
@@ -70,4 +71,5 @@ euler395();
 ```js
 // solution required
 ```
+
 </section>

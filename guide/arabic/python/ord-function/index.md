@@ -8,11 +8,12 @@ localeTitle: بيثون اورد وظيفة
 
 #### أمثلة:
 
- `>>> ord('d') 
- 100 
- >>> ord('1') 
- 49 
-` 
+```
+>>> ord('d')
+100
+>>> ord('1')
+49
+``` 
 
 ## وظيفة chr
 
@@ -20,15 +21,17 @@ localeTitle: بيثون اورد وظيفة
 
 #### أمثلة:
 
- `>>> chr(49) 
- '1' 
-` 
+```
+>>> chr(49)
+'1'
+``` 
 
 هناك أمر واحد يمكن ملاحظته ، إذا كانت قيمة العدد الصحيح التي تم تمريرها إلى `chr()` خارج النطاق ، فسيتم رفع قيمة ValueError.
 
- `>>> chr(-10) 
- 'Traceback (most recent call last): 
-  File "<pyshell#24>", line 1, in <module> 
-    chr(-1) 
- ValueError: chr() arg not in range(0x110000)' 
-`
+```
+>>> chr(-10)
+'Traceback (most recent call last):
+  File "<pyshell#24>", line 1, in <module>
+    chr(-1)
+ValueError: chr() arg not in range(0x110000)'
+```

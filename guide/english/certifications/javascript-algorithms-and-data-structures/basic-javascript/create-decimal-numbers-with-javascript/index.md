@@ -3,8 +3,20 @@ title: Create Decimal Numbers with JavaScript
 ---
 # Create Decimal Numbers with JavaScript
 
+
+---
+## Hints
+
+### Hint 1
 JavaScript number variables can have decimals.
 
-    var myDecimal = 2.8;
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```javascript
+var myDecimal = 2.8;
+```
+</details>

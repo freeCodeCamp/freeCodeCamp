@@ -52,8 +52,7 @@ function findLongestWordLength(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/5)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Pegue a corda e converta-a em uma matriz de palavras. Declare uma variável para acompanhar o comprimento máximo e o loop de 0 até o comprimento da matriz de palavras.
@@ -76,8 +75,7 @@ function findLongestWordLength(s) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/6)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Para mais informações sobre `reduce` [clique aqui.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
@@ -122,8 +120,7 @@ function findLongestWordLength(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/7)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 A primeira linha divide a string em palavras individuais. Então nós verificamos se `str` tem apenas 1 elemento à esquerda, então esse é o elemento mais longo e nós o retornamos. Se o comprimento do primeiro elemento for maior que o segundo (ou igual) do segundo elemento, nós removemos o segundo elemento e chamamos recursivamente a função `findLongestWord` . No entanto, se o comprimento do segundo elemento for maior que o início do primeiro elemento, então chamamos a função após o primeiro elemento.

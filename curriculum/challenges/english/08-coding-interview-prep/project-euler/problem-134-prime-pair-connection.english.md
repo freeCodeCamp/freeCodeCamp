@@ -2,6 +2,7 @@
 id: 5900f3f21000cf542c50ff05
 challengeType: 5
 title: 'Problem 134: Prime pair connection'
+forumTopicId: 301762
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
 ```yml
 tests:
   - text: <code>euler134()</code> should return 18613426663617120.
-    testString: assert.strictEqual(euler134(), 18613426663617120, '<code>euler134()</code> should return 18613426663617120.');
+    testString: assert.strictEqual(euler134(), 18613426663617120);
 
 ```
 
@@ -54,4 +55,5 @@ euler134();
 ```js
 // solution required
 ```
+
 </section>

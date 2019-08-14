@@ -93,8 +93,7 @@ function factorialize(num) {
  factorialize(5); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/1)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 Observe na primeira linha que temos a condição terminal, isto é, uma condição para verificar o final da recursão. Se `num == 0` , então retornamos 1, ou seja, finalizando efetivamente a recursão e informando a pilha para propagar esse valor para os níveis superiores. Se não tivermos essa condição, a recursão continuará até que o espaço da pilha seja consumido, resultando em um [estouro de pilha](https://en.wikipedia.org/wiki/Stack_overflow) .

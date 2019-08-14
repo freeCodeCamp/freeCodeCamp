@@ -1,7 +1,7 @@
 ---
 title: Perform New Updates on a Document Using model.findOneAndUpdate()
 ---
-## Perform New Updates on a Document Using model.findOneAndUpdate()
+# Perform New Updates on a Document Using model.findOneAndUpdate()
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/mongodb-and-mongoose/perform-new-updates-on-a-document-using-model.findoneandupdate/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -8,26 +8,29 @@ localeTitle: الميزة التلقائية
 
 بدون `auto` :
 
- `double x = 10.425; 
- double y = x * x; 
-` 
+```cpp
+double x = 10.425;
+double y = x * x;
+``` 
 
 مع `auto` :
 
- `double x = 10.425; 
- auto y = x * x; 
-` 
+```cpp
+double x = 10.425;
+auto y = x * x;
+``` 
 
 في حين أنه قد يبدو تافهاً ، فإنه يصبح مفيداً بشكل لا يصدق عندما تبدأ أنواع البيانات في التعقيد. على سبيل المثال ، افترض أنك تريد تخزين [`vector`](https://guide.freecodecamp.org/cplusplus/vector) من الموظفين ، وأنك مهتم فقط باسمهم وعمرهم. إحدى الطرق لتخزين الاسم والعمر يمكن أن تكون `pair` `string` وأخرى `unsigned int` . يتم `std::vector<std::pair<std::string, unsigned int>> employees` كـ `std::vector<std::pair<std::string, unsigned int>> employees` . الآن لنفترض أنك تريد الوصول إلى آخر موظف تمت إضافته:
 
- `std::vector<std::pair<std::string, unsigned int>> employees; 
- 
- // without auto, you have to write: 
- std::pair<std::string, unsigned int>> last_employee = employees.back(); 
- 
- // with auto, you just have to write: 
- auto last_employee = employees.back(); 
-` 
+```cpp
+std::vector<std::pair<std::string, unsigned int>> employees;
+
+// without auto, you have to write:
+std::pair<std::string, unsigned int>> last_employee = employees.back();
+
+// with auto, you just have to write:
+auto last_employee = employees.back();
+``` 
 
 بمجرد تحديد المحول البرمجي للنوع على الجانب الأيمن من `=` يستبدل `auto` بهذا النوع.
 

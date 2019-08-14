@@ -3,16 +3,16 @@ id: 587d7db4367417b2b2512b93
 title: Find More Than the First Match
 challengeType: 1
 videoUrl: ''
-localeTitle: Encontre mais do que o primeiro jogo
+localeTitle: Encontre mais do que a primeira correspondência
 ---
 
-## Description
-<section id="description"> Até agora, você só conseguiu extrair ou pesquisar um padrão uma vez. <blockquote> deixe testStr = &quot;Repetir, Repetir, Repetir&quot;; <br> vamos ourRegex = / Repeat /; <br> testStr.match (ourRegex); <br> // Retorna [&quot;Repetir&quot;] </blockquote> Para pesquisar ou extrair um padrão mais de uma vez, você pode usar o sinalizador <code>g</code> . <blockquote> vamos repeatRegex = / Repeat / g; <br> testStr.match (repeatRegex); <br> // Retorna [&quot;Repetir&quot;, &quot;Repetir&quot;, &quot;Repetir&quot;] </blockquote></section>
+## Descrição
+<section id="description"> Até agora, você só conseguiu extrair ou pesquisar um padrão uma vez. <blockquote> let testStr = &quot;Repeat, Repeat, Repeat&quot;; <br> let ourRegex = / Repeat /; <br> testStr.match (ourRegex); <br> // Returns [&quot;Repeat&quot;] </blockquote> Para pesquisar ou extrair um padrão mais de uma vez, você pode usar o sinalizador <code>g</code> . <blockquote> let repeatRegex = / Repeat / g; <br> testStr.match (repeatRegex); <br> // Returns [&quot;Repeat&quot;, &quot;Repeat&quot;, &quot;Repeat&quot;] </blockquote></section>
 
-## Instructions
-<section id="instructions"> Usando o regex <code>starRegex</code> , encontre e extraia ambas as palavras <code>&quot;Twinkle&quot;</code> da string <code>twinkleStar</code> . <strong>Nota</strong> <br> Você pode ter vários sinalizadores no seu regex como <code>/search/gi</code> </section>
+## Instruções
+<section id="instructions"> Usando a expressão regular <code>starRegex</code> , encontre e extraia ambas as palavras <code>&quot;Twinkle&quot;</code> da string <code>twinkleStar</code> . <strong>Nota</strong> <br> Note que você pode ter vários sinalizadores na sua expressão regular como <code>/search/gi</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,15 +30,15 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
 
 ```js
 let twinkleStar = "Twinkle, twinkle, little star";
-let starRegex = /change/; // Change this line
-let result = twinkleStar; // Change this line
+let starRegex = /change/; // Altere esta linha
+let result = twinkleStar; // Altere esta linha
 
 ```
 
@@ -48,7 +48,7 @@ let result = twinkleStar; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

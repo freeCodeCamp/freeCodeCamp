@@ -68,7 +68,6 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLmt/0)
 
 ### Код Объяснение:
 
@@ -102,7 +101,6 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLmw/0)
 
 ### Код Объяснение:
 
@@ -148,7 +146,6 @@ function translatePigLatin(str) {
  translatePigLatin("consonant"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLmv/0)
 
 ### Код Объяснение:
 
