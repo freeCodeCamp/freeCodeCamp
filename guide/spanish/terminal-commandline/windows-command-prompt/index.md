@@ -1,60 +1,62 @@
 ---
 title: Windows Command Prompt
-localeTitle: Símbolo del sistema de Windows
----# Usando el símbolo del sistema en Windows
+localeTitle: Consola de comandos de Windows
+---
+# Usando la consola de comandos en Windows
 
-Windows, MacOS y Linux tienen interfaces de línea de comandos. La línea de comando predeterminada de Windows es el símbolo del sistema. El símbolo del sistema permite a los usuarios utilizar su computadora sin señalar y hacer clic con el mouse. El símbolo del sistema es una pantalla negra donde los usuarios escriben comandos para usar su computadora. Las mismas tareas que se pueden hacer apuntando y haciendo clic con el mouse también se pueden hacer con el símbolo del sistema. La diferencia es que muchas tareas, como crear carpetas y eliminar archivos, se pueden hacer más rápido en el símbolo del sistema. Además, les permite a los usuarios configurar su computadora y ejecutar programas que de otra manera no podrían hacer al señalar y hacer clic.
+Windows, MacOS y Linux tienen interfaces de línea de comandos. La línea de comando predeterminada de Windows es la consola de comandos. La consola de comandos permite a los usuarios utilizar su computadora sin señalar y hacer clic con el mouse. La consola de comandos es una pantalla negra donde los usuarios escriben comandos para usar su computadora. Las mismas tareas que se pueden hacer apuntando y haciendo clic con el mouse también se pueden hacer con la consola de comandos. La diferencia es que muchas tareas, como crear carpetas y eliminar archivos, se pueden hacer más rápido en la consola de comandos. Además, les permite a los usuarios configurar su computadora y ejecutar programas que de otra manera no podrían hacer al señalar y hacer clic.
 
-## Abrir el símbolo del sistema
+## Abrir la consola de comandos
 
-Para acceder al símbolo del sistema, haga clic en el menú de inicio de Windows en la barra de herramientas del escritorio (también puede presionar el botón de Windows en su teclado) y escriba `cmd` y presione `enter` . Aparecerá el símbolo del sistema, se mostrará un texto similar al siguiente: \`\` \` C: \\ Users \\ YourUserName>
+Para acceder la consola de comandos, haga clic en el menú de inicio de Windows en la barra de herramientas del escritorio (también puede presionar el botón de Windows en su teclado) y escriba `cmd` y presione `enter` . Aparecerá la consola de comandos, se mostrará un texto similar al siguiente:
 ```
-## Navigating Directories (Moving through folders) 
- `C:\Users\YourUserName` is called your current working directory (directory is another way to say folder). It is like a street address that tells you where you are on your computer. The current working directory can be a guide as you navigate through your computer. On the right of the `>` we can type `cd`, which stands for Change Directory, and the name of a directory that you want to navigate to. In this case we will type `Documents`. Enter `cd Documents` and your current working directory should look like the following: 
-```
-
-C: \\ Users \\ YourUserName \\ Documents>
-```
-To go back one directory type and enter `cd..`. Your current working directory should return to this: 
+C:\Usuarios\TuNombreDeUsuario>
 ```
 
-C: \\ Users \\ YourUserName>
+## Navegando directorios (carpetas)
+El nombre del directorio (directorio es otra forma de decir carpeta) de trabajo actual es `C:\Usuarios\SuNombreDeUsuario`. Es como una dirección de una casa que te dice donde estas en tu computadora. El directorio de trabajo actual puede ser un guía a medida que navegas a través de tu computadora. A la derecha de la `>` podemos ingresar `cd`, que significa Cambiar de Directorio, y el nombre del directorio al cual quieres navegar. En este caso vamos a ingresar `Documentos`. Ingresa `cd Documentos` y el directorio de trabajo actual debería de verse de la siguiente manera:
 ```
-With the `cd` and `cd ..` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool. 
+C:\Usuarios\TuNombreDeUsuario\Documentos>
+```
+
+Para navegar hacia un directorio atrás ingresa `cd..`. El directorio de trabajo actual debería regresar a: 
+```
+C:\Usuarios\TuNombreDeUsuario>
+```
+
+Con los comandos `cd` y `cd ..` puedes moverte para adelante y para atrás a través de los directorios. Esto puede parecer bastante básico al principio, pero a medida que aprendas mas comandos, la consola de comandos poco a poco se convertirá en una herramienta útil y eficaz. 
  
- ## Here is a list of common commands: 
- | Command | Description  | 
+## Aqui hay una lista de los comandos más comunes: 
+ | Comando | Descripción  | 
  |---------|--------------| 
- |`help`   |Lists commands that can be used| 
- |  `dir`  |Lists the current directories contents| 
- |`dir /a` |Shows hidden files| 
- | `mkdir` |Creates a new directory| 
- | `rmdir` |Deletes a directory (if empty)| 
- | `rmdir /s`|Deletes a folder and its contents 
- | `cls`  |Clears the command prompt screen 
- | `exit`|Closes the command prompt 
+ |`help`   |Lista los comandos que pueden ser usados| 
+ |  `dir`  |Lista los contenidos del actual directorio| 
+ |`dir /a` |Muestra archivos ocultos| 
+ | `mkdir` |Crea un nuevo directorio| 
+ | `rmdir` |Borra un directorio (si esta vacío)| 
+ | `rmdir /s`|Borra un directorio y sus contenidos|
+ | `cls`  |Limpia la pantalla de la consola de comandos| 
+ | `exit`|Cierra la consola de comandos|
  
- ## Usage Examples: 
- #### Making a Directory 
+## Ejemplos de uso: 
+#### Creando un directorio 
 ```
-
-mkdir nombre _del_ _directorio_ que _quieres_ hacer
+mkdir nombre_del_directorio_que_quieres_crear
 ```
-#### Getting Info on a Command 
+#### Obteniendo información de un comando
 ```
-
-tu\_comando /?
+tu_comando ?
 ```
-#### Deleting a File and Contents 
+#### Borrando un directorio y sus contenidos 
 ```
-
-rm / s nombre _del_ directorio __que__ desea eliminar \`\` \`
+rm /s nombre_del_directorio_que_deseas_eliminar
+```
 
 ## Consejos útiles:
 
 *   El comando `Ipconfig` muestra la dirección IP de su computadora
-*   Si escribe parte del nombre de un directorio y presiona la tecla de `tab` el símbolo del sistema lo completará automáticamente y si presiona la tecla de `tab` repetidamente, recorrerá los directorios que comienzan con la misma letra
-*   Puedes usar otros shells o herramientas como git bash o cmder para agregar más comandos y funcionalidad a tu símbolo del sistema.
-*   Algunas tareas requieren que ejecute el indicador de comando como administrador, haga clic en el botón de Windows y escriba `cmd admin` y presione la tecla `enter`
-*   Si conoce la ruta a un archivo o directorio, puede escribir `cd PATH_TO_YOUR_DIRECTORY` lugar de cambiar directorios varias veces para llegar a un directorio o archivo
-*   Cuando presiona la tecla de flecha hacia arriba, aparecerá su comando previamente ingresado y si lo presiona repetidamente, pasará por todos los comandos ingresados ​​anteriormente.
+*   Si escribe parte del nombre de un directorio y presiona la tecla de `tab` la consola de comandos lo completará automáticamente y si presiona la tecla de `tab` repetidamente, recorrerá los directorios que comienzan con la misma letra
+*   Puedes usar otros shells o herramientas como git bash o cmder para agregar más comandos y funcionalidad a tu consola de comandos.
+*   Algunas tareas requieren que ejecutes la consola de comandos como administrador, haz clic en el botón de Windows y escribe `cmd admin` y presiona la tecla `enter`.
+*   Si conoces la ruta a un archivo o directorio, puedes escribir `cd RUTA_A_TU_DIRECTORIO` en lugar de cambiar directorios varias veces para llegar a un directorio o archivo.
+*   Cuando presionas la tecla de flecha hacia arriba, aparecerá el comando previamente ingresado y si la presionas repetidamente, pasarás por todos los comandos ingresados anteriormente.

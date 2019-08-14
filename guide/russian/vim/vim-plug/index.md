@@ -32,5 +32,5 @@ Vim-Plug минималистский менеджер плагинов Vim.
 
 #### Дополнительная информация:
 
-*   [Репозиторий Github](https://github.com/junegunn/vim-plug) - Vim-Plug
+*   [Репозиторий GitHub](https://github.com/junegunn/vim-plug) - Vim-Plug
 *   [VimAwesome](https://vimawesome.com/) - Исследуйте плагины Vim

@@ -2,7 +2,7 @@
 title: Chef
 localeTitle: líder
 ---
-## Cocinero
+## Chef
 
 Chef es una potente plataforma de automatización que transforma la infraestructura en código. Ya sea que esté operando en la nube, en las instalaciones o en un entorno híbrido, Chef automatiza cómo se configura, implementa y administra la infraestructura en su red, sin importar su tamaño.
 

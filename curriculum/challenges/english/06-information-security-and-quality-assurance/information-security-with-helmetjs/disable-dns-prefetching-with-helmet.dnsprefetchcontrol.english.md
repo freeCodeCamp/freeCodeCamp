@@ -2,6 +2,7 @@
 id: 587d8248367417b2b2512c3d
 title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 challengeType: 2
+forumTopicId: 301577
 ---
 
 ## Description
@@ -21,7 +22,7 @@ To improve performance, most browsers prefetch DNS records for the links in a pa
 ```yml
 tests:
   - text: helmet.dnsPrefetchControl() middleware should be mounted correctly
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "dnsPrefetchControl"); assert.equal(data.headers["x-dns-prefetch-control"], "off"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'dnsPrefetchControl'); assert.equal(data.headers['x-dns-prefetch-control'], 'off'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -38,4 +39,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

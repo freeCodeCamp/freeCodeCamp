@@ -9,14 +9,12 @@ for (variable in object) {
  } 
 ```
 
-|必需/可选|参数|说明| | ------------------- | ----------- | ----------------- -------------------------------------------------- --- | |必需|变量|每次迭代都会为变量分配不同的属性名称。 | |可选|对象|迭代其可枚举属性的对象。 |
-
 ## 例子
 ```
-// Initialize object. 
+// 初始一個物件. 
  a = { "a": "Athens", "b": "Belgrade", "c": "Cairo" } 
  
- // Iterate over the properties. 
+ // 迭代对象的可枚举属性. 
  var s = "" 
  for (var key in a) { 
     s += key + ": " + a[key]; 
@@ -24,15 +22,15 @@ for (variable in object) {
     } 
  document.write (s); 
  
- // Output: 
+ // 輸出: 
  // a: Athens 
  // b: Belgrade 
  // c: Cairo 
  
- // Initialize the array. 
+ // 初始化陣列. 
  var arr = new Array("zero", "one", "two"); 
  
- // Add a few expando properties to the array. 
+ // 新增属性至陣列. 
  arr["orange"] = "fruit"; 
  arr["carrot"] = "vegetable"; 
  
@@ -45,7 +43,7 @@ for (variable in object) {
  
  document.write (s); 
  
- // Output: 
+ // 輸出: 
  //   0: zero 
  //   1: one 
  //   2: two 
@@ -58,7 +56,7 @@ for (variable in object) {
  
  document.write(myKeys); 
  
- //Output: 
+ //輸出: 
  //   a 
  //   b 
  //   c 

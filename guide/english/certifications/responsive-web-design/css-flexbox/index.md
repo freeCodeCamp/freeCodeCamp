@@ -1,7 +1,7 @@
 ---
 title: CSS Flexbox
 ---
-## CSS Flexbox
+# CSS Flexbox
 
 These set of challenges will teach you the basics of using flex containers. The challenges are:
 1. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/responsive-web-design/css-flexbox/use-display-flex-to-position-two-boxes/index.md' target='_blank' rel='nofollow'>Use display: flex to Position Two Boxes</a>.

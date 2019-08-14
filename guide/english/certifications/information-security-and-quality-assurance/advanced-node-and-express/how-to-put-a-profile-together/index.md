@@ -1,7 +1,7 @@
 ---
 title: How to Put a Profile Together
 ---
-## How to Put a Profile Together
+# How to Put a Profile Together
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/how-to-put-a-profile-together/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

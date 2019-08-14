@@ -1,9 +1,13 @@
 ---
 title: Understanding Undefined Value returned from a Function
 ---
-## Understanding Undefined Value returned from a Function
+# Understanding Undefined Value returned from a Function
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+---
+## Hints
+
+### Hint 1
 A function with no `return` statement, has an output of `undefined`. So, if you try to equal a varaible to the output of a function with no `return` statement, that variable will equal `undefined`.
 
 Go ahead and define `addFive()` like so...

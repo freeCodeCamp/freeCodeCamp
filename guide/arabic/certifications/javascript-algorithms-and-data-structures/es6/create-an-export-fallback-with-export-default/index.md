@@ -14,6 +14,7 @@ localeTitle: قم بإنشاء "تصدير تراجعي" باستخدام الإ
 
 ## حل:
 
- `"use strict"; 
- export default function subtract(x,y) {return x - y;} 
-`
+```javascript
+"use strict";
+export default function subtract(x,y) {return x - y;}
+```

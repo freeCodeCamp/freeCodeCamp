@@ -1,17 +1,21 @@
 ---
 title: Create a Class to Target with jQuery Selectors
 ---
-## Create a Class to Target with jQuery Selectors
+# Create a Class to Target with jQuery Selectors
 
+---
+## Problem Explanation
 The last challenge had you adding some classes to your ```html <button></button> ``` elements to style them, this time you are required to add other classes to those buttons which would allow jQuery to target them.
 
-### Hint
-
+### Hint 1
 Edit the classes
 
 
-### Solution
-Since you have to add the ``` target ``` class, the following is the solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```html
 <div class="container-fluid">
@@ -34,3 +38,4 @@ Since you have to add the ``` target ``` class, the following is the solution:
   </div>
 </div>
 ```
+</details>

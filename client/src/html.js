@@ -9,21 +9,17 @@ export default class HTML extends React.Component {
           <meta charSet='utf-8' />
           <meta content='ie=edge' httpEquiv='x-ua-compatible' />
           <meta
-            content='width=device-width, initial-scale=1, shrink-to-fit=no'
+            content='width=device-width, initial-scale=1.0, shrink-to-fit=no'
             name='viewport'
           />
-          <link
-            href={
-              'https://cdn.freecodecamp.org/compiled/bootstrap/v3/css/' +
-              'bootstrap.min.css'
-            }
-            rel='stylesheet'
-          />
+          <link as='style' href='/css/bootstrap.min.css' rel='preload' />
+          <link href='/css/bootstrap.min.css' rel='stylesheet' />
           {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
+            className='tex2jax_ignore'
             dangerouslySetInnerHTML={{ __html: this.props.body }}
             id='___gatsby'
             key={'body'}

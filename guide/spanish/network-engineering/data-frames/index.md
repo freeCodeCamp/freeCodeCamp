@@ -10,6 +10,7 @@ Los marcos se dividen en información de control y datos (también llamada "carg
 
 ![Un marco en la capa de enlace de datos](http://www.highteck.net/images/156-Datalink-PDU.jpg)
 
-El encabezado del Marco de datos contiene información específica del protocolo, pero todos los encabezados incluyen el protocolo que se está utilizando y las direcciones MAC de origen / destino. Los protocolos comunes de Capa 2 incluyen Ethernet y Protocolo Punto a Punto (PPP). Los tráilers de cuadros de datos generalmente contienen una secuencia de verificación de cuadros (Frame Check Sequence, FCS) que permite al dispositivo receptor verificar la integridad del cuadro recibido.
+El encabezado del Marco de datos contiene información específica del protocolo, pero todos los encabezados incluyen el protocolo que se está utilizando y las direcciones MAC de origen / destino. Los protocolos comunes de Capa 2 incluyen Ethernet (estandar 802.3), WiFi (estandar 802.11), y Protocolo Punto a Punto (PPP). Los tráilers de cuadros de datos generalmente contienen una secuencia de verificación de cuadros (Frame Check Sequence, FCS) que permite al dispositivo receptor verificar la integridad del cuadro recibido.
 
 #### Más información:
+[Estandar 802 IEEE](https://en.wikipedia.org/wiki/IEEE_802)

@@ -85,7 +85,6 @@ localeTitle: Dna配对
     pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmz/0)
 
 ### 代码说明：
 
@@ -118,7 +117,6 @@ localeTitle: Dna配对
   pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/repls/ThoroughSphericalComputeranimation)
 
 ## 代码说明：
 
