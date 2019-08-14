@@ -1,8 +1,8 @@
 ---
 title: Conditional and Biconditional Statements
-localeTitle: Declarações Condicionais e Biconicionais
+localeTitle: Declarações Condicionais e Bicondicionais
 ---
-## Declarações Condicionais e Biconicionais
+## Declarações Condicionais e Bicondicionais
 
 **Declaração condicional:** "se". Se uma coisa é verdadeira, então outra coisa é verdadeira ou pode acontecer. _Exemplo:_ se chover agora, o solo ficará molhado. _No entanto_ , o inverso ("se o chão está molhado, então está chovendo") não é necessariamente verdade.
 
