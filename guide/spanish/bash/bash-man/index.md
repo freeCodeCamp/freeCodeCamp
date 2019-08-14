@@ -2,11 +2,11 @@
 title: Bash Man
 localeTitle: Bash Man
 ---
-## Hombre
+## Bash: man
 
-Man, la abreviatura de **man** ual, es un comando de bash usado para mostrar manuales de referencia en línea del comando dado.
+El comando **man**, de la abreviatura de **man** ual, es un comando de bash usado para mostrar manuales de referencia en línea algún comando dado.
 
-El hombre muestra la página del manual reletive (corto para **el hombre** **la página** UAL) de la orden dada.
+El comando **man** muestra la página del manual relativa a algún comando dado.
 
 ### Uso
 
@@ -16,7 +16,7 @@ man [options] [command]
 
 Opciones más utilizadas:
 
-*   `-f` , imprime una breve descripción del comando dado
+*   `-f` , imprime una breve descripción de algún comando dado
 *   `-a` , muestra, en sucesión, todas las páginas de introducción disponibles contenidas en el manual
 
 ### Ejemplo

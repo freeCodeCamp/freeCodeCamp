@@ -1,7 +1,7 @@
 ---
 title: Exercise Tracker
 ---
-## Exercise Tracker
+# Exercise Tracker
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/apis-and-microservices/apis-and-microservices-projects/exercise-tracker/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

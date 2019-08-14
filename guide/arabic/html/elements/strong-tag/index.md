@@ -8,8 +8,9 @@ localeTitle: علامة قوية
 
 ### استعمال
 
- `<strong> Hello World! </strong> 
-` 
+```
+<strong> Hello World! </strong>
+``` 
 
 ينتج رمز أعلاه في
 
@@ -33,12 +34,13 @@ localeTitle: علامة قوية
 
 ### مثال:
 
- `<body> 
-  <p> 
-    <strong> This </strong> is important. 
-  </p> 
- </body> 
-` 
+```
+<body>
+  <p>
+    <strong> This </strong> is important.
+  </p>
+</body>
+``` 
 
 #### معلومات اكثر:
 

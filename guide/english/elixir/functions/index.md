@@ -3,11 +3,36 @@ title: Functions
 ---
 ## Functions
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/elixir/functions/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Syntax
+Functions in Elixir are defined using the def/2 macro:
+```elixir
+def name(param1, param2) do
+   # Do stuff
+end
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Private functions use the defp/2 macro:
+```elixir
+defp name(param1, param2) do
+  # Do stuff
+end
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Returning
+Functions in Elixir do not use a return statement. Instead, they take the last expression (no matter how deeply nested in the function) and return that.
+```elixir
+def add(x, y) do
+  x + y
+end
+
+def abs(x) do
+  if x < 0 do
+    -x
+   else
+    x
+   end
+end
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
++ <a href="https://elixir-lang.org/getting-started/modules-and-functions.html">Official Module and Function Guide</a>

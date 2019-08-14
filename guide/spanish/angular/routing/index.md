@@ -648,13 +648,94 @@ import { Component } from '@angular/core';
 
 UserService maneja toda la lógica de AppComponent. AppComponent se refiere principalmente a su plantilla. Un UserService crea una instancia como `user` del constructor de la clase. `user` datos del `user` determinan la funcionalidad de la plantilla.
 
+#### Rutas cargadas perezosamente (Lazy-loading)
+
+Como se mencinó más arriba, Angular también permite cargar contenido a medida que es necesario co nlo que se conoce como **carga perezosa** o **lazy loading**.
+
+Imagina que tienes una gran aplicación, cargar todo el contenido en el inicio haría que el módulo de autenticación, por ejemplo, tardara más de lo nevesario en estar disponible al usuraio. Para evitar este incoinveniente, resulta de gran utilidad separar la aplicación en módulos y cargar al principio solo lo indispensable, de modo que el contenido esté disponible inmediatamente al usuraio. El resto de la aplicación, utilizando carga perezosa, se cargará a medida que sea necesario.
+
+Angular permite implementar la carga perezosa de forma muy sencilla a través del enrutamiento. Para lograrlo es necesario que modificar la configuración de las rutas en el módulo padre (en este caso `AppModule`), cambiando la propiedad `Component` de cada ruta cargada perezosamente por la nueva key `loadChildren`, que contiene la ruta hasta la ubicación del módulo que se desea cargar y el nombre del mismo:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { AuthComponent } from './auth/auth.component';
+
+const routes: Routes = [
+  {
+    path: 'auth',
+    component: 'AuthComponent'
+  },
+  {
+    path: 'lazy',
+    loadChildren: './lazy/lazy.module#LazyModule'
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
+];
+
+@NgModule({ 
+  imports: [ RouterModule.forRoot(routes) ], 
+  exports: [ RouterModule ] 
+ }) 
+ export class AppRoutingModule { }
+```
+De esta menra Angular cargará al inicio el componente `AuthComponent` rápidamente, mientras que demorará la carga del módulo LazyModule para cuando el usuario se dirija a la ruta `/lazy`. Pero aún no funcionará, ya que es necesario hacer un pequeño cambio al módulo cargado perezosamente, reemplazando el método `.forRoot()` por el nuevo `.forChild()` en la propiedad `import` del `NgModule` del archivo de rutas (es este ejemplo *lazy-routing.module.ts*):
+
+```typescript
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { LazyContent } from './lazy-content/lazy-content.component';
+
+
+const routes: Routes = [
+  {
+    path: '',
+    component: LazyContent
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class LazyRoutingModule { }
+```
+
+Por lo demás, el módulo cargado perezosamente no requiere ningún otro cambio. Así quedaría el archivo *lazy.module.ts* para el ejemplo anterior:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { LazyRoutingModule } from './lazy-routing.module';
+import { LazyContentComponent } from './lazy-content/lazy-content.component';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    LazyRoutingModule
+  ],
+  declarations: [LazyContentComponent]
+})
+export class LazyModule { }
+```
+
+Eso es todo, con estos cambios Angular tiene los datos necesarios para cargar el contenido del módulo LazyModule solamente cuando el usuario entre a la ruta */lazy* o cualquiera de sus hijos, permitiendo una carga mucho más veloz del módulo inicial en grandes aplicaciones.
+
+Cabe destacar que lo servicios cargados en los módulos perezosos no estarán disponibles para los demás módulos, (excepto que éstos lo importen en el array `imports` del `NgModule`), aunque si podrás acceder a los servicios globales desde cualquier módulo cargado perezosamente.
+
 #### Conclusión
 
 El enrutamiento logra un buen equilibrio entre la organización y la restricción de las secciones de la aplicación. Una aplicación más pequeña, como un blog o una página de tributo, puede no requerir ningún enrutamiento. Incluso entonces, incluir un poco de enrutamiento hash no podría hacer daño. Un usuario solo puede querer hacer referencia a una parte de la página después de todo.
 
 Angular aplica su propia biblioteca de enrutamiento construida sobre la [API de historial de](https://developer.mozilla.org/en-US/docs/Web/API/History_API) HTML5. Esta API omite el enrutamiento hash para utilizar en su lugar los `pushState(...)` y `replaceState(...)` . Cambian la URL de la dirección web sin actualizar la página. La estrategia de enrutamiento de ubicación de ruta predeterminada en Angular funciona de esta manera. La configuración de `RouterModule.forRoot(routes, { useHash: true })` habilita el enrutamiento hash si se prefiere.
 
-Este artículo se centró en la estrategia de ubicación de ruta predeterminada. Independientemente de la estrategia, muchas utilidades de enrutamiento están disponibles para enrutar una aplicación. El `RouterModule` expone estas utilidades a través de sus exportaciones. Rutas básicas, parametrizadas, anidadas y protegidas son posibles utilizando RouterModule. Para implementaciones más avanzadas que incluyen rutas cargadas perezosamente, vea los enlaces a continuación.
+Este artículo se centró en la estrategia de ubicación de ruta predeterminada. Independientemente de la estrategia, muchas utilidades de enrutamiento están disponibles para enrutar una aplicación. El `RouterModule` expone estas utilidades a través de sus exportaciones. Rutas básicas, parametrizadas, anidadas y protegidas son posibles utilizando RouterModule.
 
 ## Fuentes
 

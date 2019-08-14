@@ -53,6 +53,44 @@ Este Toggle se puede utilizar de la siguiente manera:
 
 Como puede ver, la función de alternar puede ser utilizada por su botón secundario para alternar algún contenido. si está activado, la etiqueta h1 se procesará de otro modo.
 
+También vale la pena brevemente mencionar que una forma análoga y común de usar el patrón de render props puede ser expresada de la siguiente manera:
+
+```jsx
+import React, { PureComponent } from "react";
+
+ class Toggle extends PureComponent {
+  state = {
+    on: false
+  };
+ 
+  toggle = () => {
+    this.setState({
+      on: !this.state.on
+    });
+  };
+ 
+  render() {
+    const { render } = this.props; 
+    return render({
+      on: this.state.on,
+      toggle: this.toggle
+    });
+  }
+ }
+ 
+ export default Toggle;
+```
+Y consecuentemente en su uso,
+
+```jsx
+<Toggle onToggle={onToggle} render={({ on, toggle }) => ( 
+<Fragment>
+  <button onClick={toggle}>Show / Hide</button>
+  {on && <h1>I can be toggled on or off!</h1>}
+</Fragment>)} />
+```
+El uso de ambas formas son funcionalmente equivalentes. No hay ninguna diferencia de funcionalidad.
+
 ## Otros recursos
 
 *   [React docs: Render props](https://reactjs.org/docs/render-props.html)

@@ -19,7 +19,6 @@ function confirmEnding(str, target) {
  confirmEnding("He has to give me a new name", "name"); 
 ```
 
-#### 🚀 [运行代码](https://repl.it/repls/SardonicRoundAfkgaming)
 
 # 代码说明：
 

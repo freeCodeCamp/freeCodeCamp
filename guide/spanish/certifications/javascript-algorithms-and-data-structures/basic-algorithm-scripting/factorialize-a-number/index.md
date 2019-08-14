@@ -93,7 +93,6 @@ function factorialize(num) {
  factorialize(5); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/1)
 
 ## Explicación del código:
 

@@ -8,14 +8,16 @@ localeTitle: String.prototype.endsWith
 
 ### فمثلا
 
- `let str = "Hello world"; 
- let bool = str.endsWith("ld") // true 
- bool = str.endsWith("llo") // false 
-` 
+```js
+let str = "Hello world";
+let bool = str.endsWith("ld") // true
+bool = str.endsWith("llo") // false
+``` 
 
 يمكن أن تقبل هذه الطريقة أيضًا معلمة أخرى ، وهي `length` الذي يحدد قبل أي حرف للبحث في السلسلة.
 
- `let str = "Hello world"; 
- let bool = str.endsWith("ld", 5) // false, it's the same as "Hello".endsWith("ld") 
- bool = str.endsWith("llo", 5) // true, it's the same as "Hello".endsWith("llo") 
-`
+```js
+let str = "Hello world";
+let bool = str.endsWith("ld", 5) // false, it's the same as "Hello".endsWith("ld")
+bool = str.endsWith("llo", 5) // true, it's the same as "Hello".endsWith("llo")
+```

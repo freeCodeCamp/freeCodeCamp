@@ -12,33 +12,33 @@ localeTitle: الصور في HTML
 
 ## مثال
 
- `
-<img src="URL of the Image" alt="Descriptive Title" /> 
-` 
+```html
+<img src="URL of the Image" alt="Descriptive Title" />
+``` 
 
 ### لتحديد ارتفاع وعرض صورة ، يمكنك استخدام سمة الارتفاع والعرض:
 
- `
-<img src="URL of the Image" alt="Descriptive Title" height="100" width="150"/> 
-` 
+```html
+<img src="URL of the Image" alt="Descriptive Title" height="100" width="150"/>
+``` 
 
 ### يمكنك أيضًا تحديد سمك الحدود (0 يعني عدم وجود حد):
 
- `
-<img src="URL of the Image" alt="Descriptive Title" border="2"/> 
-` 
+```html
+<img src="URL of the Image" alt="Descriptive Title" border="2"/>
+``` 
 
 ### محاذاة صورة:
 
- `
-<img src="URL of the Image" alt="Descriptive Title" align="left"/> 
-` 
+```html
+<img src="URL of the Image" alt="Descriptive Title" align="left"/>
+``` 
 
 ### يمكنك أيضًا استخدام الأنماط في سمة نمط:
 
- `
-<img src="URL of the Image" alt="Descriptive Title" style="width: 100px; height: 150px;"/> 
-` 
+```html
+<img src="URL of the Image" alt="Descriptive Title" style="width: 100px; height: 150px;"/>
+``` 
 
 #### معلومات اكثر
 

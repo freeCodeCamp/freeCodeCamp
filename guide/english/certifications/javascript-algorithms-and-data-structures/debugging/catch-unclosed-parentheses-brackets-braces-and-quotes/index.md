@@ -1,8 +1,10 @@
 ---
 title: Catch Unclosed Parentheses, Brackets, Braces and Quotes
 ---
-## Catch Unclosed Parentheses, Brackets, Braces and Quotes
+# Catch Unclosed Parentheses, Brackets, Braces and Quotes
 
+---
+## Problem Explanation
 The reduce() method reduces an array to a single value.  If you're not familiar with it, the following code shows an example of using the the method:
 
 ```
@@ -24,10 +26,16 @@ console.log(array1.reduce(reducer, 5));   // expected output: 15
 
 You can see and run this code at [Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce).
 
-## Solution:
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 let myArray = [1, 2, 3];
 let arraySum = myArray.reduce((previous, current) =>  previous + current);
 console.log(`Sum of array values is: ${arraySum}`);
 ```
+
+</details>

@@ -49,12 +49,12 @@ Echemos un vistazo a los diversos enfoques para resolver este problema.
 
 1.  **Tiempo de inicio más temprano primero,** es decir, seleccione el intervalo que tenga el tiempo de inicio más temprano. Eche un vistazo al siguiente ejemplo que rompe esta solución. Esta solución falló porque podría haber un intervalo que se inicia muy temprano pero que es muy largo. Esto significa que la próxima estrategia que podríamos probar sería donde miremos a intervalos más pequeños primero. ![El tiempo de partida más temprano primero](https://algorithmsandme.files.wordpress.com/2015/03/f268b-jobs.png?w=840)
     
-2.  **Intervalo más pequeño Primero,** es decir, terminas seleccionando las clases por orden de su intervalo general, que no es más que su `finish time - start time` . Una vez más, esta solución no es correcta. Mira el siguiente caso. ![Intervalo más corto primero](https://i.stack.imgur.com/4bz2N.png)
+2.  **Intervalo más pequeño Primero,** es decir, terminas seleccionando las clases por orden de su intervalo general, que no es más que su `finish time - start time` . Una vez más, esta solución no es correcta. Mira el siguiente caso. ![Intervalo más corto primero](https://cdn-media-1.freecodecamp.org/imgr/4bz2N.png)
     
 
 Puede ver claramente que la clase de intervalo más corto es la que está en el medio, pero esa no es la solución óptima aquí. Veamos otra solución para este problema, derivando perspectivas de esta solución.
 
-3.  **Intervalo menos conflictivo Primero,** es decir, debe observar los intervalos que causan el menor número de conflictos. Una vez más, tenemos un ejemplo donde este enfoque no logra encontrar una solución óptima. ![Intervalo menos conflictivo primero](https://i.stack.imgur.com/5LZ9V.png)
+3.  **Intervalo menos conflictivo Primero,** es decir, debe observar los intervalos que causan el menor número de conflictos. Una vez más, tenemos un ejemplo donde este enfoque no logra encontrar una solución óptima. ![Intervalo menos conflictivo primero](https://cdn-media-1.freecodecamp.org/imgr/5LZ9V.png)
 
 El diagrama nos muestra que el intervalo menos conflictivo es el que está en el medio con solo 2 conflictos. Después de eso solo podemos elegir los dos intervalos al final con conflictos 3 cada uno. Pero la solución óptima es elegir los 4 intervalos en el nivel superior.
 

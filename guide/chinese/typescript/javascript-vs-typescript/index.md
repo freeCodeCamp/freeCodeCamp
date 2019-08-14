@@ -4,7 +4,7 @@ localeTitle: JavaScript与TypeScript
 ---
 ## JavaScript与TypeScript
 
-![沃尔多在哪儿](https://i.imgur.com/DznuAou.jpg)
+![沃尔多在哪儿](https://cdn-media-1.freecodecamp.org/imgr/DznuAou.jpg)
 
 好的，现在我们对TypeScript有了一般意义，让我们玩一下**Where's Waldo**的快速游戏吧。
 

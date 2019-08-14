@@ -1,7 +1,7 @@
 ---
 title: Responsive Web Design Principles
 ---
-## Responsive Web Design Principles
+# Responsive Web Design Principles
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
@@ -9,5 +9,5 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
-#### More Information:
+#### Relevant Links
 <!-- Please add any articles you think might be helpful to read before writing the article -->

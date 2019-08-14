@@ -1,20 +1,26 @@
 ---
 title: Accessing Nested Objects
 ---
-## Accessing Nested Objects
-Clue: ***" Use bracket notation for properties with a space in their name."***
+# Accessing Nested Objects
+
+
+---
+## Hints
+
+### Hint 1
+Use bracket notation for properties with a space in their name.
 
 If we look at our object:
 
 ```javascript
 var myStorage = {
-  "car": {
-    "inside": {
+  car: {
+    inside: {
       "glove box": "maps",
       "passenger seat": "crumbs"
-     },
-    "outside": {
-      "trunk": "jack"
+    },
+    outside: {
+      trunk: "jack"
     }
   }
 };
@@ -45,8 +51,8 @@ which in turn, is nested in the `car` object.
 
 We can use dot notation to access the `glove box` as follows:
 
-```javascript
-var gloveBoxContents = myStorage.car.inside'complete here'
+```
+var gloveBoxContents = myStorage.car.inside[complete here]
 ```
 You must replace `complete here` with the correct way to access the property. 
 See clue above if you get stuck.
