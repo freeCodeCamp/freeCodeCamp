@@ -7,15 +7,14 @@ videoUrl:
 
 ## Description
 <section id='description'>
-<code>p</code> elements are the preferred element for paragraph text on websites. <code>p</code> is short for "paragraph".
-You can create a paragraph element like this:
-<code>&#60;p&#62;I'm a p tag!&#60;/p&#62;</code>
+Changing images sizes is the most common image processing procedure. OpenCV comes with a function cv.resize() for this purpose. The size of the image can be specified manually, or you can specify the scaling factor.
+We use the function: <code>cv.resize(src, dst, dsize) </code> where <code>src</code> is an input image,<code>dst</code> - destination one and <code>dsize</code> is a size of output image.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Create a <code>p</code> element below your <code>h2</code> element, and give it the text "Hello Paragraph".
-<strong>Note:</strong> As a convention, all HTML tags are written in lowercase, for example <code>&#60;p&#62;&#60;/p&#62;</code> and not <code>&#60;P&#62;&#60;/P&#62;</code>.
+You should use <code>cv.resize()</code> to resize image, and use src, dst, dsize as arguments of function.
+
 </section>
 
 ## Tests
@@ -38,11 +37,11 @@ tests:
 
 <script type="text/javascript">
 
-  function runResize(){
+  function runSample(){
     let src = cv.imread("src");
     let dst = new cv.Mat();
     let dsize = new cv.Size(src.cols / 2, src.rows / 2);
-    cv.resize(src, dst, dsize);
+
     cv.imshow('canvasOutput', dst);
     src.delete();
     dst.delete();
@@ -53,7 +52,10 @@ tests:
 <p></p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload= 'cv["onRuntimeInitialized"]=()=> { runResize() }' type="text/javascript"></script>
+<script async src="https://docs.opencv.org/master/opencv.js" 
+        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }' 
+        type="text/javascript">
+</script>
 ```
 
 </div>
@@ -66,7 +68,7 @@ tests:
 ```html
 <script type="text/javascript">
 
-  function runResize(){
+  function runSample(){
     let src = cv.imread("src");
     let dst = new cv.Mat();
     let dsize = new cv.Size(src.cols / 2, src.rows / 2);
@@ -81,7 +83,10 @@ tests:
 <p></p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload= 'cv["onRuntimeInitialized"]=()=> { runResize() }' type="text/javascript"></script>
+<script async src="https://docs.opencv.org/master/opencv.js" 
+        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }' 
+        type="text/javascript">
+</script>
 ```
 
 </section>
