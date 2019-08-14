@@ -7,21 +7,14 @@ videoUrl:
 
 ## Description
 <section id='description'>
-Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.
-First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>code editor</code>, which is embedded into this web page.
-Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.
-Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.
-Opening tags look like this:
-<code>&#60;h1&#62;</code>
-Closing tags look like this:
-<code>&#60;/h1&#62;</code>
-The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.
-Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.
+Contours can be explained simply as a curve joining all the continuous points (along the boundary), having same color or intensity. The contours are a useful tool for shape analysis and object detection and recognition. But firstly in this example we use <code>cv.Canny</code> to find edges of object.And only after that we can find contours. 
+We use functions: <code>cv.findContours (image, contours, mode, method) </code> where <code>image</code> is an input image,<code>contours</code> is detect contours, each contour is stored as a vector of points <code>mode</code> is contour retrieval mode, <code>method</code> is contour approximation method, and <code>cv.drawContours(image,  contours,  contourIdx, color, thickness)</code> where <code>image</code> is an output image,<code>contours</code> is all input contours,<code>contourIdx</code> is a  parameter indicating a contour to draw, <code>color</code> is a color of the contours, <code>thickness</code> is a thickness of lines.
+In this lesson we'll find a external contour of image via <code>cv.RETR_EXTERNAL</code> as <code>mode</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-I don't know what is happaning
+You should use <code>cv.findContours()</code> to find contours and <code>cv.drawContours()</code> to draw contours.
 </section>
 
 ## Tests
@@ -47,17 +40,15 @@ tests:
 
 ```html
 <script type="text/javascript">
-  function contour() {
+  function runSample() {
     let mat = cv.imread("imageSrc");
     let edged = new cv.Mat();
     let contours = new cv.MatVector();
     let hierarchy = new cv.Mat();
 
     cv.Canny(mat, edged, 100, 200);
+    cv.imshow("canvasCanny", edged);
 
-    cv.findContours(edged, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
-
-    cv.drawContours(mat, contours, -1, new cv.Scalar(0, 255, 0, 255));
 
     cv.imshow("canvasOutput", mat);
     edged.delete();
@@ -66,12 +57,16 @@ tests:
   };
 </script>
 
-<h2>OpenCV.js</h2>        
-<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>    
+<h2>OpenCV.js</h2>
+<img id="imageSrc" src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg"/>
+<p></p>
+<canvas id="canvasCanny" ></canvas>
 <p></p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { contour() }' type="text/javascript">
+<script async src="https://docs.opencv.org/master/opencv.js"
+        onload='cv["onRuntimeInitialized"]=()=> { runSample() }'
+        type="text/javascript">
 </script>
 ```
 
@@ -84,7 +79,7 @@ tests:
 
 ```html
 <script type="text/javascript">
-  function contour() {
+  function runSample() {
     let mat = cv.imread("imageSrc");
     let edged = new cv.Mat();
     let contours = new cv.MatVector();
@@ -92,9 +87,11 @@ tests:
 
     cv.Canny(mat, edged, 100, 200);
 
-    cv.findContours(edged, contours, hierarchy, cv.RETR_CCOMP, cv.CHAIN_APPROX_SIMPLE);
+    cv.imshow("canvasCanny", edged);
 
-    cv.drawContours(mat, contours, -1, new cv.Scalar(0, 255, 0, 255));
+    cv.findContours(edged, contours, hierarchy, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE);
+
+    cv.drawContours(mat, contours, -1, new cv.Scalar(255, 0, 0, 255),2);
 
     cv.imshow("canvasOutput", mat);
     edged.delete();
@@ -103,12 +100,16 @@ tests:
   };
 </script>
 
-<h2>OpenCV.js</h2>        
-<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>    
+<h2>OpenCV.js</h2>
+<img id="imageSrc" src="http://bit.ly/fcc-relaxing-cat"/>
+<p></p>
+<canvas id="canvasCanny" ></canvas>
 <p></p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { contour() }' type="text/javascript">
+<script async src="https://docs.opencv.org/master/opencv.js"
+        onload='cv["onRuntimeInitialized"]=()=> { runSample() }'
+        type="text/javascript">
 </script>
 ```
 
