@@ -138,7 +138,7 @@ for(i = 0; first_string[i] != '\0'; i++)
 
 #### Concatenar: `strcat`
 
-`strcat` (from 'string concatenate') irá concatenar uma string, significando que irá pegar o conteúdo de uma string e colocá-la no final de outra string. Neste exemplo, o conteúdo do `second` será concatenado no `first` :
+`strcat` (from 'string concatenate') irá concatenar uma string, significando que irá pegar o conteúdo de uma string e a coloca no final de outra string. Neste exemplo, o conteúdo do `second` será concatenado no `first` :
 
 ```C
 strcat(first, second); 
@@ -195,5 +195,5 @@ char *strtok(char *str, const char *delim);
 
 *   Matrizes são coleções de variáveis.
 *   Os arrays têm posições separadas que podem ser declaradas com colchetes e acessadas com colchetes.
-*   Strings são matrizes também, mas podemos tratá-las de forma um pouco diferente: elas podem ser declaradas usando aspas duplas e impressas usando% s.
-*   Strings tem sua própria biblioteca, `string.h` , que tem algumas funções úteis para usar.
+*   Strings são matrizes também, mas podemos tratá-las de forma um pouco diferente: elas podem ser declaradas usando aspas duplas e impressas usando %s.
+*   Strings tem sua própria biblioteca, `string.h` , que tem algumas funções úteis para usar. Estre elas estão a strcpy, strcar, strlen, strcmp e strtok.

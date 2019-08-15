@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "repository": "freecodecamp/freecodecamp",
   "scripts": {
-    "develop": "DEBUG=fcc* node development-start.js",
+    "develop": "cross-env DEBUG=fcc* node development-start.js",
     "babel-dev-server": "babel-node --inspect=0.0.0.0 ./server/index.js",
     "build": "babel server --out-dir lib --ignore 'node_modules /**/*','/**/*.test.js' --copy-files",
     "ensure-env": "node ../tools/scripts/build/ensure-env.js",
-    "start": "DEBUG=fcc* node production-start.js",
+    "start": "cross-env DEBUG=fcc* node production-start.js",
     "test": "jest"
   },
   "license": "BSD-3-Clause",
