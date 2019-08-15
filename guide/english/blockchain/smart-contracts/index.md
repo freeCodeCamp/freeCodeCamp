@@ -27,7 +27,8 @@ There are many other blockchain projects offering (or promising) smart contract 
 Smart contracts in Ethereum are written using Solidity.  Solidity is a contract-oriented, high-level language for implementing Smart Contracts, and targets the Ethereum Virtual Machine. One can use Remix online IDE to try writing and deploying Smart Contracts.
 
 ### Smart Contracts in Hyperledger
-Smart contracts in Hyperledger is called chaincode, and is written in Golang programming language.
+A Smart Contract in Hyperledger is called chaincode and is written in Golang programming language. 
+A chaincode is typically used by administrators to group related smart contracts for deployment, but can also be used for low level system programming of Fabric.
 
 ## Hello World Smart Contract
 ```

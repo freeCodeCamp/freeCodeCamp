@@ -34,7 +34,7 @@ Python se utiliza para crear herramientas de red y herramientas de seguridad que
 
 Python es uno de los mejores lenguajes adecuados para el aprendizaje automático, el aprendizaje profundo y el análisis de datos con una fortaleza en todos ellos.
 
-Existen lenguajes especializados que se adaptan mejor a varios roles, como R y MATLAB, pero cuando se trata de campos superpuestos de aplicaciones, Python gana las manos debido a Su flexibilidad y rápida creación de prototipos y disponibilidad de bibliotecas.
+Existen lenguajes especializados que se adaptan mejor a diferentes roles, como R y MATLAB, pero cuando se trata de campos multidisciplinares de aplicaciones, Python gana la apuesta debido a su flexibilidad, rápida creación de prototipos y disponibilidad de bibliotecas.
 
 #### Desarrollo de Telegram Bots
 

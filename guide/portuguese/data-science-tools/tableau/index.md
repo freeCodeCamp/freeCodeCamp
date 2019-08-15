@@ -1,6 +1,6 @@
 ---
 title: Tableau
-localeTitle: mesa
+localeTitle: Tableau
 ---
 # Quadro
 

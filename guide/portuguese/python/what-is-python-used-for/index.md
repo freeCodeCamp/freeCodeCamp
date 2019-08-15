@@ -1,8 +1,8 @@
 ---
 title: What Is Python Used for
-localeTitle: O que é o Python usado para
+localeTitle: Para o que Python é usado
 ---
-## O que é o Python usado para
+## Para o que Python é usado
 
 O Python pode ser facilmente usado para projetos pequenos, grandes, on-line e off-line. As melhores opções para utilizar Python são desenvolvimento web, scripts simples e análise de dados. Abaixo estão alguns exemplos do que o Python permitirá que você faça:
 
@@ -12,7 +12,7 @@ Você pode usar o Python para criar aplicativos da Web em muitos níveis de comp
 
 ##### Análise de dados:
 
-Python é a principal linguagem de escolha para muitos cientistas de dados. Python cresceu em popularidade dentro do campo devido à disponibilidade de muitas excelentes bibliotecas focado em ciência de dados (dos quais NumPy e Pandas são dois dos mais conhecidos) e visualização de dados (como Matplotlib e Seaborn). Pyton realmente fez trituração de dados Divertir-se com todas as suas inúmeras bibliotecas disponíveis. O Ipython com JupyterLab é outra forma de Python que melhora o uso do Python no campo da ciência de dados.
+Python é a principal linguagem de escolha para muitos cientistas de dados. Python cresceu em popularidade dentro do campo devido à disponibilidade de muitas excelentes bibliotecas focado em ciência de dados (dos quais NumPy e Pandas são dois dos mais conhecidos) e visualização de dados (como Matplotlib e Seaborn). Python realmente fez a trituração de dados divertida com todas as suas inúmeras bibliotecas disponíveis. O Ipython com JupyterLab é outra forma de Python que melhora o uso do Python no campo da ciência de dados.
 
 ##### Automação:
 
@@ -66,7 +66,7 @@ Aqui está um [link](https://www.python.org/about/apps/) para uma seção do sit
 *   Raspando dados de sites
 *   Processamento de imagem
 
-## Por que o Python tem uma gama tão ampla de uso?
+## Por que Python tem uma gama tão ampla de uso?
 
 *   Python tem muitos pacotes para trabalhar, alguns variando de pesquisa aeroespacial para matemática. \* Em segundo lugar, por escolher fazer parte da comunidade de código aberto. Sim! Python é de código aberto.
 *   Por sua sintaxe simples e elegante. \* Existem muitas funções internas por causa de quais códigos Python são pequenos em comparação com outros códigos que são mesmos no contexto, mas escritos em linguagem diferente.

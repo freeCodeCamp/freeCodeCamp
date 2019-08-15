@@ -1,7 +1,8 @@
 ---
 title: If-Else Statement
 localeTitle: Declaración If-Else
----## ¿Qué hace una declaración If-Else?
+---
+## ¿Qué hace una declaración If-Else?
 
 *   La instrucción If-Else es una extensión de la instrucción simple If.
 *   En la declaración simple If, ​​si el valor de la expresión de prueba es falso, omitimos el código de bloqueo y continuamos con nuestra siguiente declaración.
@@ -184,6 +185,23 @@ Enter first number:
     
 *   El tamaño de la escalera if ... else if ... else puede variar según el problema que el programa esté tratando de resolver y la cantidad de condiciones que deben verificarse.
     
+
+### Adiciones a if en las nuevas versiones de C++
+A partir de C++17 es posible añadir una instrucción de inicialización al if, algo parecido a un bucle for.
+```
+if(int status = getStatus(); status < 0) {
+  std::cerr << "Error " << status << '\n';
+}
+```
+Como puedes ver permite usar variables en el if y su bloque sin tener que estar declaradas fuera de este. Es muy útil en apis que retornan códigos de error, como se ve en el ejemplo.
+
+También en C++ 17 se añadio if constexpr, un if diseñado para ser resuelto en tiempo de compilación, por ejemplo si una clase es hija de otra.
+```
+if constexpr (std::is_base_of<Base, Hija>::value) {
+   ...
+}
+```
+
 
 **Buena suerte a todos ustedes**
 

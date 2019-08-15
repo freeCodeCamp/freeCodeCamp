@@ -78,7 +78,7 @@ class GameOfChance extends React.Component {
     });
   }
   render() {
-    let expression = null; // change code here
+    const expression = null; // change code here
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>

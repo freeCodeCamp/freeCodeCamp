@@ -115,7 +115,7 @@ Feel free to ask us questions on the related issue threads, and we will be glad 
 | Ahmad Abdolsaheb | [`@ahmadabdolsaheb`](https://github.com/ahmadabdolsaheb) | [`@Abdolsaheb`](https://twitter.com/Abdolsaheb) |
 | Kristofer Koishigawa | [`@scissorsneedfoodtoo`](https://github.com/scissorsneedfoodtoo) | [`@kriskoishigawa`](https://twitter.com/kriskoishigawa) |
 
-> **Email: `dev at freecodecamp dot org`**
+> **Email: `dev@freecodecamp.org`**
 
 ## Frequently Asked Questions
 

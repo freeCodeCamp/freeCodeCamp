@@ -1,24 +1,24 @@
 ---
 title: Knights and Knaves Puzzles
-localeTitle: Cavaleiros e Knaves Puzzles
+localeTitle: Enigma de Cavaleiros e Valetes
 ---
-## Cavaleiros e patas
+## Cavaleiros e Valetes
 
-Um tipo de quebra-cabeças lógicos, esses quebra-cabeças têm a ver com dois tipos de pessoas. Cavaleiros: pessoas que só dizem a verdade e os Knaves: pessoas que só contam mentiras. Raymond Smullyan coletou dezenas de quebra-cabeças como este em seu livro "Qual é o nome deste livro?". A forma como os quebra-cabeças funcionam é que uma pessoa visita uma ilha onde encontra um habitante ou grupo. O visitante deve usar suas habilidades lógicas para descobrir quem é o cavaleiro e quem é o patife.
+Um tipo de quebra-cabeças lógicos, esses quebra-cabeças têm a ver com dois tipos de pessoas. Cavaleiros: pessoas que só dizem a verdade e os Valetes: pessoas que só contam mentiras. Raymond Smullyan coletou dezenas de quebra-cabeças como este em seu livro "Qual é o nome deste livro?". A forma como os quebra-cabeças funcionam é que uma pessoa visita uma ilha onde encontra um habitante ou grupo. O visitante deve usar suas habilidades lógicas para descobrir quem é o cavaleiro e quem é o valete.
 
-## Puzzles de Amostra
+## Quebra-Cabeças de Amostra
 
 ### Vermelho e azul
 
-Duas pessoas, vermelho e azul, estão diante de você. Red diz: “Nós somos ambos patifes”. O que eles são realmente?
+Duas pessoas, vermelho e azul, estão diante de você. Vermelho diz: “Nós somos ambos valetes”. O que eles são realmente?
 
-**Solução: O** vermelho não pode ser um cavaleiro, porque então ele estaria mentindo dizendo que ele é um patife. Portanto ele é um patife, e sua declaração é uma mentira, significando que Blue deve ser um cavaleiro.
+**Solução: O** vermelho não pode ser um cavaleiro, porque então ele estaria mentindo dizendo que ele é um valete. Portanto ele é um valete, e sua declaração é uma mentira, significando que Azul deve ser um cavaleiro.
 
 ### Qual caminho seguir?
 
 Você chega a uma bifurcação em uma estrada e precisa aprender qual caminho leva ao seu destino. Dois indivíduos estão de pé lá. Você sabe que um é um cavaleiro e um é um valete, mas você não sabe qual é qual. Que pergunta sim-ou-não você poderia pedir a um dos ilhéus para aprender o caminho correto?
 
-**Solução:** Aponte para um caminho e pergunte a um deles: “O outro me diria que esse é o caminho correto?” Se a resposta for Não, esse é o caminho correto; se sim, é o caminho incorreto.
+**Solução:** Aponte para um caminho e pergunte a um deles: “O outro me diria que esse é o caminho correto?” Se a resposta for não, esse é o caminho correto; se sim, é o caminho incorreto.
 
 #### Mais Informações:
 

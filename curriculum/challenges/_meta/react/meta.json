@@ -152,10 +152,6 @@
       "Add Event Listeners"
     ],
     [
-      "5a24c314108439a4d403617f",
-      "Manage Updates with Lifecycle Methods"
-    ],
-    [
       "5a24c314108439a4d4036180",
       "Optimize Re-Renders with shouldComponentUpdate"
     ],
