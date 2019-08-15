@@ -44,6 +44,7 @@ const propTypes = {
   }),
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
+  forumTopicId: PropTypes.number,
   id: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
@@ -94,6 +95,12 @@ export class BackEnd extends Component {
     this.state = {};
     this.updateDimensions = this.updateDimensions.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  getGuideUrl({ forumTopicId, title }) {
+    return forumTopicId
+      ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
+      : createGuideUrl(title);
   }
 
   componentDidMount() {
@@ -155,8 +162,9 @@ export class BackEnd extends Component {
     const {
       data: {
         challengeNode: {
-          fields: { blockName, slug },
+          fields: { blockName },
           challengeType,
+          forumTopicId,
           title,
           description,
           instructions
@@ -210,7 +218,9 @@ export class BackEnd extends Component {
                   updateProjectForm={updateProjectFormValues}
                 />
               )}
-              <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
+              <ProjectToolPanel
+                guideUrl={this.getGuideUrl({ forumTopicId, title })}
+              />
               <br />
               <Output
                 defaultOutput={`/**
@@ -247,6 +257,7 @@ export default connect(
 export const query = graphql`
   query BackendChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
+      forumTopicId
       title
       description
       instructions
