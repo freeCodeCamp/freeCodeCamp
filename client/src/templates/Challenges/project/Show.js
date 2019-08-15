@@ -51,6 +51,12 @@ const propTypes = {
 };
 
 export class Project extends Component {
+  getGuideUrl({ forumTopicId, title }) {
+    return forumTopicId
+      ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
+      : createGuideUrl(title);
+  }
+
   componentDidMount() {
     const {
       challengeMounted,
@@ -93,7 +99,8 @@ export class Project extends Component {
       data: {
         challengeNode: {
           challengeType,
-          fields: { blockName, slug },
+          fields: { blockName },
+          forumTopicId,
           title,
           description,
           guideUrl
@@ -127,7 +134,7 @@ export class Project extends Component {
             onSubmit={openCompletionModal}
             updateProjectForm={updateProjectFormValues}
           />
-          <ToolPanel guideUrl={createGuideUrl(slug)} />
+          <ToolPanel guideUrl={this.getGuideUrl({ forumTopicId, title })} />
           <Spacer />
         </div>
         <CompletionModal />
@@ -148,6 +155,7 @@ export default connect(
 export const query = graphql`
   query ProjectChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
+      forumTopicId
       title
       description
       challengeType
