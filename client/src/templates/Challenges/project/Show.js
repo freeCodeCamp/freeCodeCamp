@@ -13,7 +13,7 @@ import {
   updateProjectFormValues
 } from '../redux';
 import { frontEndProject } from '../../../../utils/challengeTypes';
-import { createGuideUrl } from '../utils';
+import { getGuideUrl } from '../utils';
 
 import LearnLayout from '../../../components/layouts/Learn';
 import Spacer from '../../../components/helpers/Spacer';
@@ -51,12 +51,6 @@ const propTypes = {
 };
 
 export class Project extends Component {
-  getGuideUrl({ forumTopicId, title }) {
-    return forumTopicId
-      ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
-      : createGuideUrl(title);
-  }
-
   componentDidMount() {
     const {
       challengeMounted,
@@ -134,7 +128,7 @@ export class Project extends Component {
             onSubmit={openCompletionModal}
             updateProjectForm={updateProjectFormValues}
           />
-          <ToolPanel guideUrl={this.getGuideUrl({ forumTopicId, title })} />
+          <ToolPanel guideUrl={getGuideUrl({ forumTopicId, title })} />
           <Spacer />
         </div>
         <CompletionModal />

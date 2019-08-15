@@ -20,7 +20,7 @@ import ResetModal from '../components/ResetModal';
 import MobileLayout from './MobileLayout';
 import DesktopLayout from './DesktopLayout';
 
-import { createGuideUrl } from '../utils';
+import { getGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
 import { dasherize } from '../../../../utils';
@@ -166,13 +166,6 @@ class ShowClassic extends Component {
     return `${blockName}: ${title}`;
   }
 
-  getGuideUrl() {
-    const { forumTopicId, title } = this.getChallenge();
-    return forumTopicId
-      ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
-      : createGuideUrl(title);
-  }
-
   getVideoUrl = () => this.getChallenge().videoUrl;
 
   getChallengeFile() {
@@ -200,11 +193,13 @@ class ShowClassic extends Component {
       nextChallengePath,
       prevChallengePath
     } = this.props.pageContext.challengeMeta;
+
+    const { forumTopicId, title } = this.getChallenge();
     return (
       <SidePanel
         className='full-height'
         description={description}
-        guideUrl={this.getGuideUrl()}
+        guideUrl={getGuideUrl({ forumTopicId, title })}
         instructions={instructions}
         introPath={introPath}
         nextChallengePath={nextChallengePath}
@@ -247,6 +242,7 @@ class ShowClassic extends Component {
   }
 
   render() {
+    const { forumTopicId, title } = this.getChallenge();
     return (
       <LearnLayout>
         <Helmet
@@ -255,7 +251,7 @@ class ShowClassic extends Component {
         <Media maxWidth={MAX_MOBILE_WIDTH}>
           <MobileLayout
             editor={this.renderEditor()}
-            guideUrl={this.getGuideUrl()}
+            guideUrl={getGuideUrl({ forumTopicId, title })}
             hasPreview={this.hasPreview()}
             instructions={this.renderInstructionsPanel({
               showToolPanel: false
