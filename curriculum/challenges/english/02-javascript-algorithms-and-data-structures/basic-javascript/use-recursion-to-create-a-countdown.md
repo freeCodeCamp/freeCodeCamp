@@ -25,11 +25,11 @@ Your function must use recursion by calling itself and must not use loops of any
 
 ``` yml
 tests:
-  - text: after calling <code>countdown(myArray, -1)</code>, myArray should be empty.
+  - text: After calling <code>countdown(myArray, -1)</code>, myArray should be empty.
     testString: assert.isEmpty(padArray([], -1));
-  - text: after calling <code>countdown(myArray, 10)</code>, myArray should contain <code>[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code>
+  - text: After calling <code>countdown(myArray, 10)</code>, myArray should contain <code>[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</code>
     testString: assert.deepStrictEqual(padArray([], 10), [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]);
-  - text: after calling <code>countdown(myArray, 5)</code>, myArray should contain <code>[5, 4, 3, 2, 1]</code>
+  - text: After calling <code>countdown(myArray, 5)</code>, myArray should contain <code>[5, 4, 3, 2, 1]</code>
     testString: assert.deepStrictEqual(padArray([], 5), [5, 4, 3, 2, 1]);
   - text: Your code should not rely on any kind of loops (<code>for</code> or <code>while</code> or higher order functions such as <code>forEach</code>, <code>map</code>, <code>filter</code>, or <code>reduce</code>.).
     testString: assert(!removeJSComments(code).match(/for|while|forEach|map|filter|reduce/g));
