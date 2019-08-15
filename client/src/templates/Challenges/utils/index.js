@@ -1,5 +1,11 @@
 const guideBase = 'https://www.freecodecamp.org/forum/search?q=';
 
+export function getGuideUrl({ forumTopicId, title }) {
+  return forumTopicId
+    ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
+    : createGuideUrl(title);
+}
+
 export function createGuideUrl(title = '') {
   return guideBase + title + '%20in%3Atitle%20order%3Aviews';
 }

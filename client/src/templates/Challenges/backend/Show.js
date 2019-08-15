@@ -17,7 +17,7 @@ import {
   updateProjectFormValues,
   backendNS
 } from '../redux';
-import { createGuideUrl } from '../utils';
+import { getGuideUrl } from '../utils';
 
 import LearnLayout from '../../../components/layouts/Learn';
 import ChallengeTitle from '../components/Challenge-Title';
@@ -95,12 +95,6 @@ export class BackEnd extends Component {
     this.state = {};
     this.updateDimensions = this.updateDimensions.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  getGuideUrl({ forumTopicId, title }) {
-    return forumTopicId
-      ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
-      : createGuideUrl(title);
   }
 
   componentDidMount() {
@@ -219,7 +213,7 @@ export class BackEnd extends Component {
                 />
               )}
               <ProjectToolPanel
-                guideUrl={this.getGuideUrl({ forumTopicId, title })}
+                guideUrl={getGuideUrl({ forumTopicId, title })}
               />
               <br />
               <Output
