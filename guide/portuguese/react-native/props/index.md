@@ -2,7 +2,7 @@
 title: Props
 localeTitle: Adereços
 ---
-## Reagir Nativo - Adereços
+## React Native - Adereços
 
 O termo props, abreviação de 'properties', significa algum tipo de dado que é passado de um componente para outro. Adereços sempre fluem para baixo a partir do componente pai para o filho.
 

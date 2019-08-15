@@ -12,12 +12,12 @@ JavaScript proporciona al usuario cinco operadores aritméticos: `+` , `-` , `*`
 
 **Uso**
 ```
-2 + 3          // returns 5 
- true + 2       // interprets true as 1 and returns 3 
- false + 5      // interprets false as 0 and returns 5 
- true + "bar"   // concatenates the boolean value and returns "truebar" 
- 5 + "foo"      // concatenates the string and the number and returns "5foo" 
- "foo" + "bar"  // concatenates the strings and returns "foobar" 
+2 + 3          // retorna 5 
+ true + 2       // interpreta true como 1 y retorna 3 
+ false + 5      // nterpreta false como 0 y retorna 5 
+ true + "bar"   // concatena el valor booleano y retorna "truebar" 
+ 5 + "foo"      // concatena la cadena y el número y retorna "5foo"
+ "foo" + "bar"  // concatena las cadenas y retorna "foobar"
 ```
 
 _Consejo:_ Hay un operador de [incremento](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_() práctico que es un gran atajo cuando agregas números en 1.

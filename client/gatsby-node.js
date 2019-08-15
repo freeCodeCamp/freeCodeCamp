@@ -135,7 +135,6 @@ exports.createPages = function createPages({ graphql, actions }) {
   });
 };
 
-const RmServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
@@ -168,8 +167,7 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
         ENVIRONMENT: JSON.stringify(process.env.NODE_ENV || 'development'),
         PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
-      }),
-      new RmServiceWorkerPlugin()
+      })
     ]
   });
   if (stage !== 'build-html') {

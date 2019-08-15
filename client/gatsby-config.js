@@ -128,6 +128,8 @@ module.exports = {
         fonts: ['Lato:400,400i,500']
       }
     },
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-remove-fingerprints',
+    'gatsby-plugin-remove-serviceworker'
   ]
 };
