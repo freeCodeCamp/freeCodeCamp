@@ -8,7 +8,7 @@ Até agora você deve estar ciente de que C é uma linguagem de baixo nível, e 
 
 #
 ```
-type *var-name; 
+tipo *nomeVariavel; 
 ```
 Declaramos o tipo da variável como o exemplo acima, usamos asterisco (*) antes do nome do ponteiro.
 
@@ -18,16 +18,16 @@ Declaramos o tipo da variável como o exemplo acima, usamos asterisco (*) antes 
 #include <stdio.h> 
  
  int main(void){ 
-    double my_double_variable = 10.1; 
-    double *my_pointer; 
+    double variavelDouble = 10.1; 
+    double *meuPonteiro; 
  
-    my_pointer = &my_double_variable; 
+    meuPonteiro = &variavelDouble; 
  
-    printf("value of my_double_variable: %f\n", my_double_variable); 
+    printf("O valor da variavel double é: %f\n", variavelDouble); 
  
-    ++my_double_variable; 
+    ++variavelDouble; 
  
-    printf("value of my_pointer: %f\n", *my_pointer); 
+    printf("O valor do ponteiro é: %f\n", *meuPonteiro); 
  
     return 0; 
  } 
@@ -35,8 +35,8 @@ Declaramos o tipo da variável como o exemplo acima, usamos asterisco (*) antes 
 
 Saída:
 ```
-value of my_double_variable: 10.100000 
- value of my_pointer: 11.100000 
+O valor da variável double é: 10.100000 
+O valor do ponteiro é: 11.100000 
 ```
 
 Neste código, existem duas declarações. A primeira é uma inicialização típica de variável que cria um `double` e a define como 10.1. Novo em nossas declarações é o uso de `*` . O asterisco ( `*` ) é normalmente usado para multiplicação, mas quando o usamos colocando-o na frente de uma variável, ele diz a C que esta é uma variável de ponteiro.
@@ -46,26 +46,26 @@ A próxima linha diz ao compilador onde isso está em outro lugar. Ao usar `&` d
 Com isso em mente, vamos dar uma olhada neste pedaço de código:
 
 ```c
-double *my_pointer; 
- // my_pointer now stored the address of my_double_variable 
- my_pointer = &my_double_variable; 
+double *meuPonteiro; 
+ // meuPonteiro agora armazena o endereço da variavelDouble
+ meuPonteiro = &variavelDouble; 
 ```
 
-`my_pointer` foi declarado e foi declarado como um ponteiro. O compilador C agora sabe que `my_pointer` vai apontar para um local de memória. A próxima linha atribui `my_pointer` um valor de localização de memória usando o `&` .
+`meuPonteiro` foi declarado e foi declarado como um ponteiro. O compilador C agora sabe que `meuPonteiro` vai apontar para um local de memória. A próxima linha atribui `meuPonteiro` um valor de localização de memória usando o `&` .
 
 Agora vamos dar uma olhada no que se refere a um meio de localização de memória para o seu código:
 
 ```c
-    printf("value of my_double_variable: %f\n", my_double_variable); 
+    printf("O valor da variavelDouble é: %f\n", variavelDouble); 
+    
+    // O mesmo que variavelDouble = variavelDouble + 1
+    // Em português, adiciona uma unidade em variavelDouble
+    ++variavelDouble
  
-    // Same as my_double_variable = my_double_variable + 1 
-    // In human language, adding one to my_double_variable 
-    ++my_double_variable; 
- 
-    printf("value of my_pointer: %f\n", *my_pointer); 
+    printf("O valor do ponteiro é: %f\n", *meuPonteiro); 
 ```
 
-Observe que, para obter o valor dos dados em `*my_pointer` , você precisará informar ao C que deseja obter o valor para o qual a variável está apontando. Tente executar este código sem o asterisco e você poderá imprimir a localização da memória, porque é isso que a variável `my_variable` está mantendo.
+Observe que, para obter o valor dos dados em `*meuPonteiro` , você precisará informar ao C que deseja obter o valor para o qual a variável está apontando. Tente executar este código sem o asterisco e você poderá imprimir a localização da memória, porque é isso que a variável `variavelDouble` está mantendo.
 
 Você pode declarar múltiplos apontadores em uma única instrução como com variáveis ​​padrão, assim:
 
@@ -88,24 +88,23 @@ A aplicação mais comum de um ponteiro está em uma matriz. Matrizes, sobre as 
 O programa a seguir troca os valores de duas variáveis ​​dentro da função de `swap` dedicada. Para conseguir isso, as variáveis ​​são passadas por referência.
 
 ```c
- /* C Program to swap two numbers using pointers and function. */ 
+ /* Programa em C para trocar 2 números usando ponteiros e função. */ 
  #include <stdio.h> 
- void swap(int *n1, int *n2); 
+ void troca(int *n1, int *n2); 
  
  int main() 
  { 
     int num1 = 5, num2 = 10; 
- 
-    // address of num1 and num2 is passed to the swap function 
-    swap( &num1, &num2); 
-    printf("Number1 = %d\n", num1); 
-    printf("Number2 = %d", num2); 
+    // Endereço de num1 e num2 é passado para a função troca
+    troca( &num1, &num2); 
+    printf("Número 1 = %d\n", num1); 
+    printf("Número 2 = %d", num2); 
     return 0; 
  } 
  
- void swap(int * n1, int * n2) 
+ void troca(int * n1, int * n2) 
  { 
-    // pointer n1 and n2 points to the address of num1 and num2 respectively 
+    // Os ponteiros n1 e n2 apontam para o endereço de num1 e num2 respectivamente
     int temp; 
     temp = *n1; 
     *n1 = *n2; 
@@ -115,13 +114,11 @@ O programa a seguir troca os valores de duas variáveis ​​dentro da função
 
 Saída
 ```
-Number1 = 10 
- Number2 = 5 
+Número 1 = 10 
+Número 2 = 5 
 ```
 
-Os endereços, ou localizações de memória, de `num1` e `num2` são passados ​​para a `swap` funções e são representados pelos ponteiros `*n1` e `*n2` dentro da função. Então, agora os ponteiros `n1` e `n2` apontam para os endereços de `num1` e `num2` respectivamente.
-
-Então, agora o ponteiro n1 e n2 aponta para o endereço de num1 e num2, respectivamente.
+Os endereços, ou localizações de memória, de `num1` e `num2` são passados ​​para a função `troca` e são representados pelos ponteiros `*n1` e `*n2` dentro da função. Então, agora os ponteiros `n1` e `n2` apontam para os endereços de `num1` e `num2` respectivamente.
 
 Quando, o valor dos ponteiros é alterado, o valor na localização da memória apontada também muda de forma correspondente.
 
@@ -139,14 +136,14 @@ quando passamos qualquer parâmetro para função, estamos fazendo uma cópia do
  int main(void) { 
     int a = 11; 
     func(a); 
-    printf("%d",a);// print 11 
+    printf("%d",a); //print 11 
  
  
     return 0; 
  } 
  void func(int a){ 
- a=5 
- printf("%d",a);//print 5 
+    a=5 
+    printf("%d",a); //print 5 
  } 
 ```
 
@@ -194,14 +191,14 @@ Podemos alterar o valor de ptr e também podemos alterar o valor do objeto ptr a
  { 
     int i = 10; 
     int j = 20; 
-    int *ptr = &i;        /* pointer to integer */ 
+    int *ptr = &i;        /* Ponteiro para inteiro */ 
     printf("*ptr: %d\n", *ptr); 
  
-    /* pointer is pointing to another variable */ 
+    /* Ponteiro está apontando para outra variável */ 
     ptr = &j; 
     printf("*ptr: %d\n", *ptr); 
  
-    /* we can change value stored by pointer */ 
+    /* É possível mudar o valor armazenado em um ponteiro */ 
     *ptr = 100; 
     printf("*ptr: %d\n", *ptr); 
  
@@ -219,13 +216,13 @@ Podemos mudar o ponteiro para apontar para qualquer outra variável inteira, mas
  { 
     int i = 10; 
     int j = 20; 
-    const int *ptr = &i;    /* ptr is pointer to constant */ 
+    const int *ptr = &i;    /* ptr está apontando para constant */ 
  
     printf("ptr: %d\n", *ptr); 
-    *ptr = 100;        /* error: object pointed cannot be modified 
-                     using the pointer ptr */ 
+    *ptr = 100;        /* error: Objeto apontado não pode ser modificado 
+                     usando o ponteiro ptr */ 
  
-    ptr = &j;          /* valid */ 
+    ptr = &j;          /* Válido */ 
     printf("ptr: %d\n", *ptr); 
  
     return 0; 
@@ -242,14 +239,14 @@ Neste podemos mudar o valor da variável que o ponteiro está apontando. Mas nã
  { 
    int i = 10; 
    int j = 20; 
-   int *const ptr = &i;    /* constant pointer to integer */ 
+   int *const ptr = &i;    /* Constante aponta para um inteiro */ 
  
    printf("ptr: %d\n", *ptr); 
  
-   *ptr = 100;    /* valid */ 
+   *ptr = 100;    /* Válido */ 
    printf("ptr: %d\n", *ptr); 
  
-   ptr = &j;        /* error */ 
+   ptr = &j;        /* Error */ 
    return 0; 
  } 
 ```
@@ -265,12 +262,12 @@ A declaração acima é ponteiro constante para variável constante, o que signi
  { 
     int i = 10; 
     int j = 20; 
-    const int *const ptr = &i; /* constant pointer to constant integer */ 
+    const int *const ptr = &i; /* Ponteiro constante apontando para um inteiro constante */ 
  
     printf("ptr: %d\n", *ptr); 
  
-    ptr = &j;            /* error */ 
-    *ptr = 100;        /* error */ 
+    ptr = &j;            /* Error */ 
+    *ptr = 100;        /* Error */ 
  
     return 0; 
  } 
@@ -291,7 +288,7 @@ Na maioria das vezes, os acessos de ponteiro e array podem ser tratados como agi
 1) o operador sizeof
 
 *   `sizeof(array)` retorna a quantidade de memória usada por todos os elementos da matriz
-*   `sizeof(pointer)` retorna apenas a quantidade de memória usada pela própria variável de ponteiro
+*   `sizeof(ponteiro)` retorna apenas a quantidade de memória usada pela própria variável de ponteiro
 
 2) o operador &
 
