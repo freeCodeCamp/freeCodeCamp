@@ -12,7 +12,7 @@ As velocidades da CPU são medidas em gigahertz (GHz). Para cada gigahertz de ve
 
 Gigahertz não é o único fator determinante na velocidade real de um processador, já que diferentes processadores com a mesma velocidade gigahertz (também conhecida como velocidade de clock) podem executar tarefas reais em velocidades diferentes devido ao uso de diferentes conjuntos de instruções para executar essas tarefas. Esses conjuntos de instruções são chamados de arquiteturas.
 
-As CPUs mais modernas usam uma arquitetura de 64 bits, o que significa que usam endereços de memória de 64 bits. CPUs mais antigas usavam arquiteturas de 32 bits, 16 bits e até 8 bits. O maior número que uma CPU de 64 bits pode armazenar é 18.446.744.073.709.552.000. Um CPPU precisa de endereços de memória para obter valores especificados da RAM. Se chamarmos o comprimento dos endereços de memória n, 2 ^ n é a quantidade de células de memória que uma CPU pode endereçar.
+As CPUs mais modernas usam uma arquitetura de 64 bits, o que significa que usam endereços de memória de 64 bits. CPUs mais antigas usavam arquiteturas de 32 bits, 16 bits e até 8 bits. O maior número que uma CPU de 64 bits pode armazenar é 18.446.744.073.709.552.000. Um CPU precisa de endereços de memória para obter valores especificados da RAM. Se chamarmos o comprimento dos endereços de memória n, 2 ^ n é a quantidade de células de memória que uma CPU pode endereçar.
 
 Um ciclo de instrução para uma CPU é chamado de ciclo de busca e decodificação-execução, em que o computador recupera uma instrução de sua memória, determina qual instrução ela coletou e o que faz, e então executa as instruções mencionadas.
 
