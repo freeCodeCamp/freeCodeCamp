@@ -41,6 +41,6 @@ var course = {
  student.hasOwnProperty('feature'); // returns false 
 ```
 
-#### campo de golf
+#### Enlaces 
 
 [MDN tiene Propiedad propia](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)

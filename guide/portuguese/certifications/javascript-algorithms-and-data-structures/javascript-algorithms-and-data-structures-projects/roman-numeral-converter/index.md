@@ -62,8 +62,7 @@ var convertToRoman = function(num) {
  convertToRoman(36); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmf/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Começamos criando dois arrays com conversão padrão com índices correspondentes. Estes são chamados `decimalValue` e `romanNumeral` . Também criamos uma variável de string vazia, `romanized` , que abrigará o número romano final.
@@ -128,8 +127,7 @@ function convertToRoman(num) {
  convertToRoman(97); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/C1YV)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Crie uma matriz de numerais `romans` ( `romans` ).
@@ -185,8 +183,7 @@ function convertToRoman(num) {
  convertToRoman(36); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/C1YV)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Use uma matriz ( `romans` ) para criar uma matriz contendo o numeral romano para uma determinada potência de 10 e, se disponível, o numeral romano para essa potência de 10 vezes 5.

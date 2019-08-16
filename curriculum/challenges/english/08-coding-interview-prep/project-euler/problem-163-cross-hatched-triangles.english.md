@@ -2,6 +2,7 @@
 id: 5900f40f1000cf542c50ff22
 challengeType: 5
 title: 'Problem 163: Cross-hatched triangles'
+forumTopicId: 301797
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find T(36).
 ```yml
 tests:
   - text: <code>euler163()</code> should return 343047.
-    testString: assert.strictEqual(euler163(), 343047, '<code>euler163()</code> should return 343047.');
+    testString: assert.strictEqual(euler163(), 343047);
 
 ```
 
@@ -59,4 +60,5 @@ euler163();
 ```js
 // solution required
 ```
+
 </section>

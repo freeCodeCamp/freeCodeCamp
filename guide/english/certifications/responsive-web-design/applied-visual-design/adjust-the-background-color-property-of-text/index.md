@@ -1,7 +1,7 @@
 ---
 title: Adjust the background-color Property of Text
 ---
-## Adjust the background-color Property of Text
+# Adjust the background-color Property of Text
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/adjust-the-background-color-property-of-text/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

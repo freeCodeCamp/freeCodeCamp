@@ -37,9 +37,10 @@ localeTitle: ظل النص
 
 المغلق text-shadow: 1px - 2px 5px # a4a4a4؛
 
- `### Example of multiple shadows 
- Multiple shadows can be used for giving text a solid outline on all 4 directions, like a bubble-writing effect. 
-` 
+```
+### Example of multiple shadows
+Multiple shadows can be used for giving text a solid outline on all 4 directions, like a bubble-writing effect.
+``` 
 
 المغلق ظل نص: 1 بكسل × 1 بكسل أسود ، 0 1 بكسل × 1 بكسل أسود ، 1 بكسل × 1 بكسل أسود ، 0 - 1 بكسل × 1 بكسل أسود ؛ \`\` \`
 

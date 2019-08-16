@@ -1,9 +1,12 @@
 ---
 title: State vs Props
-localeTitle: State vs Props
----## State vs Props
+localeTitle: Estado vs Adereços
+---
 
-Quando começamos a trabalhar com os componentes do React, ouvimos frequentemente dois termos. Eles são `state` e `props` . Então, neste artigo, vamos explorar o que são e como eles diferem.
+
+## Estado vs Adereços
+
+Quando começamos a trabalhar com os componentes do React, ouvimos frequentemente dois termos. Eles são `state` e `props`, ou `estado` e `adereços`. Então, neste artigo, vamos explorar o que são e como eles diferem.
 
 ## Estado:
 
@@ -50,7 +53,7 @@ No exemplo acima, `age` é o estado do componente `Person` .
 ## Adereços:
 
 *   Adereços são semelhantes aos argumentos do método. Eles são passados ​​para um componente onde esse componente é usado.
-*   Adereços é imutável. Eles são somente leitura.
+*   Adereços são imutáveis. Eles são somente leitura.
 
 Veja o exemplo abaixo para ter uma ideia de Adereços:
 

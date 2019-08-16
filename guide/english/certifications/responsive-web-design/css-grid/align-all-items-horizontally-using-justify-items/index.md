@@ -1,10 +1,35 @@
 ---
 title: Align All Items Horizontally using justify-items
 ---
-## Align All Items Horizontally using justify-items
+# Align All Items Horizontally using justify-items
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/align-all-items-horizontally-using-justify-items/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Problem Explanation
+In this challenge you are required to use the "justify-items" property to horizontally align all the items in the grid.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Hints
+
+### Hint 1
+
+You can horizontally align the items by declaring the following in your CSS codeblock:
+
+```css
+justify-items: value;
+```
+
+where value is how you would like to horizontally align the items.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+Since the challenge requires you to horizontally center all the items, declare the following in your .container CSS codeblock:
+
+```css
+justify-items: center;
+```
+</details>

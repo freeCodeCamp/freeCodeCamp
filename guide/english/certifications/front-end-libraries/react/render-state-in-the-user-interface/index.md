@@ -1,16 +1,24 @@
 ---
 title: Render State in the User Interface
 ---
-## Render State in the User Interface
+# Render State in the User Interface
 In the challenge, you will need to render a state value in `<h1>` tag, pretty simple.
 
-## Hint
+
+---
+## Hints
+
+### Hint 1
 Just make a `<h1>` tag and render `this.state.name` between tag.
 
 
-## Solution
 
-```react.js
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```jsx
 class MyComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -29,3 +37,4 @@ class MyComponent extends React.Component {
   }
 };
 ```
+</details>

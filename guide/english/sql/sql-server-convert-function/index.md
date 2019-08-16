@@ -4,41 +4,105 @@ title: SQL Server Convert Function
 ## SQL Server Convert Function
 Converts from one data type to another data type.
 
-### Syntax 
-`CONVERT (_New Data Type, Expression, Style_)`
+### Covered in this guide :
+* Convert a decimal number  to an integer
+* Convert a string to date
+* Convert a decimal number into string
+* Convert an integer number to decimal
+* convert a string to date in usa format style
 
-- **New Data Type:** New data type to be converted too. For example: nvarchar, integer, decimal, date
-- **Expression:** Data to be converted.
-- **Style:** Format. For example: The style 110 is USA Date format  mm-dd-yyyy
+### Convert command Syntax
 
-### Example: Convert a Decimal Number to An Integer 
+```sql
+CONVERT (_New Data Type, Expression, Style_)
 
-`SELECT  CONVERT(INT, 23.456) as IntegerNumber`
+```
 
-![convert a decimal number to integer number](https://user-images.githubusercontent.com/12566249/31314884-6c94db4a-ac57-11e7-842f-710fad511131.png)
+**New Data Type:** New data type to be converted too. For example: nvarchar, integer, decimal, date\
+**Expression:** Data to be converted.\
+**Style:** Format. For example: The style 110 is USA Date format  mm-dd-yyyy\
 
-Note: The result is truncated. 
+* ### Convert a Decimal Number to An Integer :
 
-### Example: Convert a String to a Date
-`SELECT CONVERT(DATE, '20161030') as Date`
+  ```sql
+  SELECT  CONVERT(INT, 23.456) as IntegerNumber
 
-![convert a string to a date type](https://user-images.githubusercontent.com/12566249/31314912-c25bbb52-ac57-11e7-880d-6d81041b1728.png) 
+  ```
+  Result : 
+  ```text
+  +---+---------------+
+  |   | IntegerNumber |
+  +---+---------------+
+  | 1 | 23            |
+  +---+---------------+
+  
+  ```
+
+  Note: The result is truncated. 
+
+* ### Convert a String to a Date :
+
+  ```sql
+  SELECT CONVERT(DATE, '20161030') as Date
+  
+  ```
+  Result :
+  ```text
+  +---+---------------+
+  |   | Date          |
+  +---+---------------+
+  | 1 | 2016-10-30    |
+  +---+---------------+
+  
+  ```
 
 
-### Example: Convert a Decimal to a String 
-`SELECT CONVERT(nvarchar, 20.123) as StringData`
+* ### Convert a Decimal to a String :
+  ```sql
+  SELECT CONVERT(nvarchar, 20.123) as StringData
 
-![convert a decimal to a string](https://user-images.githubusercontent.com/12566249/31314923-fb04e410-ac57-11e7-9646-94061e1f0ec2.png)
+  ```
+  Result :
+    ```text
+  +---+---------------+
+  |   | StringData    |
+  +---+---------------+
+  | 1 | 20.123        |
+  +---+---------------+
+  
+  ```
 
-### Example: Convert an Integer Number to a Decimal Number
-`SELECT  CONVERT(DECIMAL (15,3), 13) as DecimalNumber`
 
-![convert an integer to a decimal number](https://user-images.githubusercontent.com/12566249/31314932-1c8668ca-ac58-11e7-8cee-4d57fc523704.png)
 
-### Example: Convert a String to Date Format in USA Date Style
-`SELECT  CONVERT(DATE, '20171030' , 110) To_USA_DateFormat`
+* ### Convert an Integer Number to a Decimal Number :
+  ```sql
+  SELECT  CONVERT(DECIMAL (15,3), 13) as DecimalNumber
 
-![convert a string to date format in usa date style](https://user-images.githubusercontent.com/12566249/31314937-35155d06-ac58-11e7-9d5d-823b66c41d0d.png)
+  ```
+  Result :
+    ```text
+  +---+---------------+
+  |   | DecimalNumber |
+  +---+---------------+
+  | 1 | 13.000        |
+  +---+---------------+
+  
+  ```
+
+* ### Convert a String to Date Format in USA Date Style :
+  ```sql
+  SELECT  CONVERT(DATE, '20171030' , 110) To_USA_DateFormat
+
+  ```
+  Result :
+    ```text
+  +---+-------------------+
+  |   | To_USA_DateFormat |
+  +---+-------------------+
+  | 1 | 2017-10-30        |
+  +---+-------------------+
+  
+  ```  
 
 ### More Information:
 - Information on Convert function: <a href='https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql' target='_blank' rel='nofollow'>Microsoft</a>

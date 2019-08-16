@@ -439,7 +439,7 @@ Na direcotry `views` , crie um arquivo chamado `index.pug` .
 doctype html 
   html 
     head 
-      tite="Hello from Pug" 
+      title="Hello from Pug" 
     body 
       p.greetings Hello World! 
 ```

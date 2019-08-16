@@ -9,8 +9,9 @@ localeTitle: Git Show
 
 بناء جملة هذا الأمر هو كما يلي:
 
- `git show [<options>] [<object>…​]
-`
+```bash
+git show [<options>] [<object>…​]
+```
 
 لكائنات مختلفة بوابة `git show` يعطي مخرجات مختلفة.
 
@@ -21,8 +22,9 @@ localeTitle: Git Show
 
 الاستخدام الأكثر شيوعًا لـ `git show` سيكون بالاشتراك مع كائن git commit
 
- `git show 3357d63
-`
+```bash
+git show 3357d63
+```
 
 ستحصل على إنتاج مشابه لـ ،
 

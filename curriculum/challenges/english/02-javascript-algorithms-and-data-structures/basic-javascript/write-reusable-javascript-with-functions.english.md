@@ -2,13 +2,21 @@
 id: 56bbb991ad1ed5201cd392cf
 title: Write Reusable JavaScript with Functions
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cL6dqfy'
+forumTopicId: 18378
 ---
 
 ## Description
 <section id='description'>
 In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.
 Here's an example of a function:
-<blockquote>function functionName() {<br>&nbsp;&nbsp;console.log("Hello World");<br>}</blockquote>
+
+```js
+function functionName() {
+  console.log("Hello World");
+}
+```
+
 You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:
 <code>functionName();</code>
 Each time the function is called it will print out the message <code>"Hello World"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.
@@ -25,11 +33,11 @@ Each time the function is called it will print out the message <code>"Hello Worl
 ```yml
 tests:
   - text: <code>reusableFunction</code> should be a function
-    testString: assert(typeof reusableFunction === 'function', '<code>reusableFunction</code> should be a function');
+    testString: assert(typeof reusableFunction === 'function');
   - text: <code>reusableFunction</code> should output "Hi World" to the dev console
-    testString: assert("Hi World" === logOutput, '<code>reusableFunction</code> should output "Hi World" to the dev console');
+    testString: assert(hiWorldWasLogged);
   - text: Call <code>reusableFunction</code> after you define it
-    testString: assert(/^\s*reusableFunction\(\)\s*;/m.test(code), 'Call <code>reusableFunction</code> after you define it');
+    testString: assert(/^\s*reusableFunction\(\)\s*/m.test(code));
 
 ```
 
@@ -59,10 +67,12 @@ ourReusableFunction();
 
 ```js
 var logOutput = "";
-var originalConsole = console
+var originalConsole = console;
+var nativeLog = console.log;
+var hiWorldWasLogged = false;
 function capture() {
-    var nativeLog = console.log;
     console.log = function (message) {
+        if(message === 'Hi World')  hiWorldWasLogged = true;
         if(message && message.trim) logOutput = message.trim();
         if(nativeLog.apply) {
           nativeLog.apply(originalConsole, arguments);
@@ -74,7 +84,7 @@ function capture() {
 }
 
 function uncapture() {
-  console.log = originalConsole.log;
+  console.log = nativeLog;
 }
 
 capture();

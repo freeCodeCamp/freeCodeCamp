@@ -17,8 +17,9 @@ localeTitle: طريقة الحمولة الزائدة
     السلسلة العامة SayHello (الشخص الشخص) { "مرحبًا ، هناك" + شخص. اسم أول + "" + شخص. اسم مستعار ؛ } }
     
 
- `2. In your default Program.cs file you can call now this class Person using the method overloading. 
-` 
+```
+2. In your default Program.cs file you can call now this class Person using the method overloading.
+``` 
 
 برنامج الصف { الفراغ الاستاتيكي Main (string \[\] args) { شخص شخص = شخص جديد ("جين" ، "دو") ؛ Console.WriteLine (person.SayHello ("Peter Smith"))؛
 

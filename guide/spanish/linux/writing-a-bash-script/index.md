@@ -88,3 +88,77 @@ La salida de esta versión de myscript.sh se verá así:
 ## Guiones del mundo real
 
 Estos ejemplos no son terriblemente útiles, pero los principios son. Usando `while` , `if` y cualquier comando que de otro modo podría escribir manualmente, puede crear scripts que hacen un trabajo valioso.
+
+Un guion para usar en el mundo real pudiera ser contar la cantidad de intentos fallidos de conexión desde una ip acia nuestro equipo GNU/Linux. Esto con el fin de realizar una auditoria y determinar desde donde estan intentando acceder al equipo.
+
+Utilizaremos el comando **lastb** para eecutar este comando es necesario tener privilgios de administrador del sistema (root). Vamos a redireccionar la salida del comando lastb acia un archivo el cual llamaremos loginbad.txt.
+
+```
+#lastb > loginbad.txt
+```
+
+Al ejecutar el comando **ls -l** veremos el nuevo archivo creado 
+
+```
+-rw-r--r--. 1 root root 270795 Oct 29 22:23 loginbad.txt
+
+```
+
+El contenido del archivo loginbad.txt será similar a esta:
+```
+root     ssh:notty    41.180.5.78      Mon Oct  1 05:04 - 05:04  (00:00)
+upload   ssh:notty    41.180.5.78      Mon Oct  1 05:00 - 05:00  (00:00)
+upload   ssh:notty    41.180.5.78      Mon Oct  1 05:00 - 05:00  (00:00)
+```
+Necesitamos extraer la lista de ip's que se encuentran en la columna 3 y crear un archivo que las contenga. Esto lo podemos relializar con el comando **awk**
+
+```
+awk '{print $3}' loginbad.txt > ips_loginbad.txt
+```
+
+Teniendo el archivo creado procedemos a escribir nuestri Script:
+
+```bash
+#!/bin/bash
+ count=0
+ for i in $(cat ips_loginbad_sort.txt)
+  do
+   if [ $count -ge 1 ]
+   then
+    if [ $IpAnt = $i ]
+    then
+       count=$((count+1))
+    else
+     echo "Cantidad de intentos de acceso de $IpAnt: $count"
+     count=1
+     IpAnt=$i
+    fi
+    else
+     count=$((count+1))
+     IpAnt=$i
+    fi
+done
+```
+Para hacer eecutable el script cambiamos sus permisos:
+```
+#chmod 744 cant_ips.sh
+```
+
+Ahora lo ejecutamos
+```
+#./cant_ips.sh
+```
+
+Y nos produce una salida similar a esta:
+
+```
+Cantidad de intentos de acceso de 111.230.221.72: 9
+Cantidad de intentos de acceso de 111.231.250.117: 3
+Cantidad de intentos de acceso de 111.56.41.134: 210
+Cantidad de intentos de acceso de 111.6.98.74: 1
+```
+Podemos observar como desde la ip 111.6.41.134 existen 210 intetos de acceso. Esto nos hace que se activen nuestras alarmas y tomar acciones que permitan bloquear el trafico proveniente de esta ip a fin de prevenir daños mayores.
+
+
+**MAS INFORMACION**
+[Shell Scritp](https://www.shellscript.sh/)

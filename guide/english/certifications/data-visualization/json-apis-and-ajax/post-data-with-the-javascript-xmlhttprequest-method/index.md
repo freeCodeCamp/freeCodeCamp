@@ -1,7 +1,7 @@
 ---
 title: Post Data with the JavaScript XMLHttpRequest Method
 ---
-## Post Data with the JavaScript XMLHttpRequest Method
+# Post Data with the JavaScript XMLHttpRequest Method
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/json-apis-and-ajax/post-data-with-the-javascript-xmlhttprequest-method/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

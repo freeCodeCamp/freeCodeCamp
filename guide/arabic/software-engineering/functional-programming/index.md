@@ -30,10 +30,11 @@ localeTitle: برمجة وظيفية
 
 في ما يلي مثال على `map` :
 
- `const myList = [6, 3, 5, 29]; 
- 
- let squares = myList.map(num => num * num); // [36, 9, 25, 841] 
-` 
+```javascript
+const myList = [6, 3, 5, 29];
+
+let squares = myList.map(num => num * num); // [36, 9, 25, 841]
+``` 
 
 ### معلومات اكثر:
 

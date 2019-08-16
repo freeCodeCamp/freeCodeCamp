@@ -2,6 +2,7 @@
 id: 5900f4c51000cf542c50ffd7
 challengeType: 5
 title: 'Problem 344: Silver dollar game'
+forumTopicId: 302003
 ---
 
 ## Description
@@ -40,7 +41,7 @@ Find W(1 000 000, 100) modulo the semiprime 1000 036 000 099 (= 1 000 003 · 1 0
 ```yml
 tests:
   - text: <code>euler344()</code> should return 65579304332.
-    testString: assert.strictEqual(euler344(), 65579304332, '<code>euler344()</code> should return 65579304332.');
+    testString: assert.strictEqual(euler344(), 65579304332);
 
 ```
 
@@ -72,4 +73,5 @@ euler344();
 ```js
 // solution required
 ```
+
 </section>

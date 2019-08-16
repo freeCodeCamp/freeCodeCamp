@@ -14,13 +14,15 @@ localeTitle: Nodejs- Buffer
 
 هناك طرق مختلفة يمكنك إنشاء مخزن مؤقت في Node.js. يمكنك إنشاء مخزن مؤقت فارغ بحجم 10 بايت.
 
- `const buf1 = Buffer.alloc(10); 
-` 
+```javascript
+const buf1 = Buffer.alloc(10);
+``` 
 
 من السلاسل UTF-8-encoded ، يكون الإنشاء كالتالي:
 
- `const buf2 = Buffer.from('Hello World!'); 
-` 
+```javascript
+const buf2 = Buffer.from('Hello World!');
+``` 
 
 هناك ترميز مقبول مختلف عند إنشاء مخزن مؤقت:
 
@@ -33,8 +35,9 @@ localeTitle: Nodejs- Buffer
 
 هناك ثلاث وظائف منفصلة مخصصة في API Buffer لاستخدام وإنشاء مخازن جديدة. في الأمثلة أعلاه رأينا `alloc()` ومن `from()` . والثالث هو `allocUnsafe()` .
 
- `const buf3 = Buffer.allocUnsafe(10); 
-` 
+```javascript
+const buf3 = Buffer.allocUnsafe(10);
+``` 
 
 عند إعادتها ، قد تحتوي هذه الوظيفة على بيانات قديمة تحتاج إلى الكتابة فوقها.
 
@@ -42,40 +45,45 @@ localeTitle: Nodejs- Buffer
 
 هناك تفاعلات مختلفة يمكن إجراؤها باستخدام واجهة برمجة تطبيقات Buffer. سنقوم بتغطية معظمهم هنا. دعونا نبدأ بتحويل مخزن مؤقت إلى JSON.
 
- `let bufferOne = Buffer.from('This is a buffer example.'); 
- console.log(bufferOne); 
- 
- // Output: <Buffer 54 68 69 73 20 69 73 20 61 20 62 75 66 66 65 72 20 65 78 61 6d 70 6c 65 2e> 
- 
- let json = JSON.stringify(bufferOne); 
- console.log(json); 
- 
- // Output: {"type": "Buffer", "data": [84,104,105,115,32,105,115,32,97,32,98,117,102,102,101,114,32,101,120,97,109,112,108,101,46]} 
-` 
+```javascript
+let bufferOne = Buffer.from('This is a buffer example.');
+console.log(bufferOne);
+
+// Output: <Buffer 54 68 69 73 20 69 73 20 61 20 62 75 66 66 65 72 20 65 78 61 6d 70 6c 65 2e>
+
+let json = JSON.stringify(bufferOne);
+console.log(json);
+
+// Output: {"type": "Buffer", "data": [84,104,105,115,32,105,115,32,97,32,98,117,102,102,101,114,32,101,120,97,109,112,108,101,46]}
+``` 
 
 تحدد JSON أن نوع الكائن الذي تم تحويله هو Buffer ، وبياناته. سيظهر لنا تحويل مخزن مؤقت فارغ إلى JSON أنه لا يحتوي على أي شيء سوى الأصفار.
 
- `const emptyBuf = Buffer.alloc(10); 
- 
- emptyBuf.toJSON(); 
- 
- // Output: { "type": "Buffer", "data": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ] } 
-` 
+```javascript
+const emptyBuf = Buffer.alloc(10);
+
+emptyBuf.toJSON();
+
+// Output: { "type": "Buffer", "data": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ] }
+``` 
 
 لاحظ أن Buffer API يوفر أيضًا دالة مباشرة `toJSON()` لتحويل مخزن مؤقت إلى كائن JSON. لفحص حجم المخزن المؤقت ، يمكننا استخدام طريقة `length` .
 
- `emptyBuf.length; 
- // Output: 10 
-` 
+```javascript
+emptyBuf.length;
+// Output: 10
+``` 
 
 الآن دعونا تحويل المخزن المؤقت إلى سلسلة قابلة للقراءة ، في حالتنا ، ترميز utf-8.
 
- `console.log(bufferOne.toString('utf8')); 
- 
- // Output: This is a buffer example. 
-` 
+```javascript
+console.log(bufferOne.toString('utf8'));
+
+// Output: This is a buffer example.
+``` 
 
 `.toString()` بشكل افتراضي بتحويل مخزن مؤقت إلى سلسلة تنسيق utf-8. هذه هي الطريقة التي فك ترميز المخزن المؤقت. إذا قمت بتحديد ترميز ، يمكنك تحويل المخزن المؤقت إلى ترميز آخر
 
- `console.log(bufferOne.toString('base64')); 
-`
+```javascript
+console.log(bufferOne.toString('base64'));
+```

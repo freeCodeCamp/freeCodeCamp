@@ -2,9 +2,9 @@
 title: Rubocop
 localeTitle: Rubocop
 ---
-[Rubocop](https://github.com/bbatsov/rubocop) é uma ferramenta de análise estática para [Ruby](https://www.ruby-lang.org/en/) O que isto significa? Significa Rubocop vontade de 'ler' o seu código (ao invés de executá-lo, daí a parte 'estática' do nome), e analisá-lo. As regras de análise usadas pelo Rubocop são do [Guia de estilo da comunidade Ruby](https://github.com/bbatsov/ruby-style-guide) .
+[Rubocop](https://github.com/bbatsov/rubocop) é uma ferramenta de análise estática para [Ruby](https://www.ruby-lang.org/en/) O que isto significa? Significa Rubocop irá 'ler' o seu código (ao invés de executá-lo, daí a parte 'estática' do nome), e analisá-lo. As regras de análise usadas pelo Rubocop são do [Guia de estilo da comunidade Ruby](https://github.com/bbatsov/ruby-style-guide) .
 
-O guia de estilo é um conjunto de sugestões específicas sobre como escrever código que é mais legível, mais expressivo e mais convencional. Como uma comunidade, seria ótimo se pudéssemos ler o código de qualquer outra pessoa facilmente, e eles poderiam leia o nosso facilmente. É isso que o Rubocop nos ajuda a fazer. Esse tipo de ferramenta é sempre valioso, mas é particularmente útil quando você está aprendendo Ruby, e você pode codificar o que é _correto_ , mas que não se ater às convenções Ruby, ou não aproveita alguns dos recursos mais poderosos do Ruby.
+O guia de estilo é um conjunto de sugestões específicas sobre como escrever código que é mais legível, mais expressivo e mais convencional. Como uma comunidade, seria ótimo se pudéssemos ler o código de qualquer outra pessoa facilmente, e eles pudessem ler o nosso facilmente. É isso que o Rubocop nos ajuda a fazer. Esse tipo de ferramenta é sempre valiosa, mas é particularmente útil quando você está aprendendo Ruby, e você pode codificar o que é _correto_ , mas que não se ater às convenções Ruby, ou não aproveitar alguns dos recursos mais poderosos do Ruby.
 
 Mais útil, o Rubocop pode corrigir automaticamente muitos dos menores avisos - como espaçamento incorreto. Isso é muito útil antes da revisão do código, já que significa colegas desenvolvedores podem se concentrar em preocupações de nível mais alto, e não ter que desperdiçar tempo em problemas de sintaxe.
 
@@ -23,7 +23,7 @@ Isso significa que qualquer um usando seu projeto terá a mesma versão do Ruboc
 
 ### Uso
 
-Antes de cada confirmação, gostaria de verificar se meu código recém-modificado está em conformidade o padrão comunitário, simplesmente executando:
+Antes de cada commit, eu gostaria de verificar se meu código recém-modificado está em conformidade o padrão comunitário, simplesmente executando:
 ```
 rubocop 
 ```
@@ -41,18 +41,18 @@ Muitos editores permitirão que você integre o Rubocop, o que pode dar feedback
 
 ### Corrigindo problemas
 
-Digamos que eu tenha escrito algum novo código; antes de comê-lo, eu poderia decidir verifique se segue as diretrizes:
+Digamos que eu tenha escrito algum novo código; antes de commita-lo, eu poderia decidir verificar se segue as diretrizes:
 
 ```shell
 rubocop <my new file> 
 ```
 
-Eu posso editar fazer as alterações sugeridas manualmente, ou posso pedir ao Rubocop para corrigir pequenos problemas automaticamente:
+Eu posso decidir editar e fazer as alterações sugeridas manualmente, ou posso pedir ao Rubocop para corrigir pequenos problemas automaticamente:
 ```
 rubocop --auto-correct 
 ```
 
-### Correndo apenas certos policiais
+### Rodando apenas os Policiais Corretos
 
 Cada diretriz da comunidade é implementada em um 'policial' do Rubocop. Ao trabalhar em um codebase legado você pode ser inundado com avisos ao introduzir o Rubocop. Neste caso, pode ser útil executar apenas um único policial ao longo do codebase, e verificar essas mudanças antes de passar para a próxima diretriz, para exemplo:
 ```

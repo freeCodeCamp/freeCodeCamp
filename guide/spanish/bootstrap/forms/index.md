@@ -2,7 +2,7 @@
 title: Forms
 localeTitle: Formas
 ---
-## \## Formularios
+## Formularios
 
 Bootstrap framework proporciona una función de formulario que un programador puede usar para crear formularios html hermosos fácilmente. El uso de la forma bootstrap le da a cada elemento de forma individual un estilo global unificado. La forma Bootstrap agrega el espacio correcto y mira a cada elemento.
 
