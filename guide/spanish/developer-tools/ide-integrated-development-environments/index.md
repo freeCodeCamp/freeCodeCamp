@@ -10,13 +10,15 @@ Los IDE ofrecen una interfaz gráfica de usuario (GUI) central que incorpora lo 
 
 Ejemplos de IDE son:
 
-*   [NetBeans](https://netbeans.org/)
-*   [Eclipse](https://www.eclipse.org/)
-*   [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-*   [Estudio visual](https://www.visualstudio.com/vs/)
-*   [Xcode](https://developer.apple.com/xcode/)
-*   [Android Studio](https://developer.android.com/studio/index.html)
-*   [PyCharm](https://www.jetbrains.com/pycharm/)
+*   [NetBeans](https://netbeans.org/) - Herramienta de código abierto para desarrollo en Java, PHP, C, C++, HTML5.
+*   [Eclipse](https://www.eclipse.org/) - Herramienta de código abierto para desarrollo en lenguaje Java, Ada, ABAP, C, C++, C#, COBOL, D, Fortran, Haskell, JavaScript, Julia, Lasso, Lua, NATURAL, Perl, PHP, Prolog, Python, R, Ruby, Rust, Scala, Clojure, Groovy, Scheme, Erlang, etc. mediante el uso de plugins.
+*   [IntelliJ IDEA](https://www.jetbrains.com/idea/) - Herramienta de pago para desarrollar en los lenguajes Java, Groovy, Kotlin, Scala, JavaScript, TypeScript y SQL.
+*   [Microsoft Visual Studio](https://www.visualstudio.com/vs/) - Herramienta de desarrollo para lenguajes .NET, tiene versiones gratuitas (express) y una versión gratuita llamada Community para empresas pequeñas o desarrolladores independientes, así como versiones de pago para empresas grandes con requerimientos de herramientas más altos.
+*   [Xcode](https://developer.apple.com/xcode/) - Herramienta oficial de Apple para desarrollo de aplicaciones iOS y MacOS.
+*   [Android Studio](https://developer.android.com/studio/index.html) - Herramienta oficial de Google para desarrollo de aplicaciones Android.
+*   [PyCharm](https://www.jetbrains.com/pycharm/) - Herramienta de pago para desarrollar en lenguaje Python.
+*   [Microsoft Visual Studio Code](https://www.jetbrains.com/pycharm/) - Herramienta de código abierto multiplataforma (Windows, Mac, Linux) y multilenguaje (c#, T-SQL, Javascript, HTML, CSS, Powershell, C++, Java, PHP, Phyton, Go).
+
 
 #### Más información
 

@@ -4,7 +4,7 @@ localeTitle: Alias ​​Git
 ---
 ## Git Alias
 
-Git no infiere automáticamente su comando si lo escribe parcialmente. Si no desea escribir todo el texto de cada uno de los comandos de Git, puede configurar fácilmente un alias para cada comando usando git config. Aquí hay un par de ejemplos que puede querer configurar:
+Git no deduce automáticamente su comando si lo escribe parcialmente. Si no desea escribir todo el texto de cada uno de los comandos de Git, puede configurar fácilmente un alias para cada comando usando git config. Aquí hay un par de ejemplos que puede querer configurar:
 
 ```shell
 $ git config --global alias.co checkout 
@@ -13,9 +13,9 @@ $ git config --global alias.co checkout
  $ git config --global alias.st status 
 ```
 
-Esto significa que, por ejemplo, en lugar de escribir git commit, solo necesita escribir git ci. A medida que continúe usando Git, probablemente también usará otros comandos con frecuencia; No dudes en crear nuevos alias.
+Esto significa que, por ejemplo, en lugar de escribir git commit, solo es necesario escribir git ci. A medida que continúe usando Git, probablemente también usará otros comandos con frecuencia; no dudes en crear nuevos alias.
 
-Esta técnica también puede ser muy útil para crear comandos que creas que deberían existir. Por ejemplo, para corregir el problema de usabilidad que encontraste al desempaquetar un archivo, puedes agregar tu propio alias para Git:
+Esta técnica también puede ser muy útil para crear comandos que crees que deberían existir. Por ejemplo, para corregir el problema de usabilidad que encontraste al quitar un archivo del área de preparación, puedes agregar tu propio alias para Git:
 
 ```shell
 $ git config --global alias.unstage 'reset HEAD --' 
@@ -65,7 +65,7 @@ Reemplazar `cat` por `nano` te permitirá editarlos o eliminarlos completamente.
 
 ### Alias ​​para ver todos los alias
 
-Para agregar un alias para ver todos los demás creados en su máquina, agregue el alias
+Para agregar un alias para ver todos los demás alias creados en su máquina, agregue el alias
 
 ```shell
     git config --global alias.aliases 'config --get-regexp alias' 

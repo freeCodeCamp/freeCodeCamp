@@ -2,6 +2,7 @@
 id: 5900f38c1000cf542c50fe9f
 challengeType: 5
 title: 'Problem 32: Pandigital products'
+forumTopicId: 301976
 ---
 
 ## Description
@@ -26,9 +27,9 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
 ```yml
 tests:
   - text: <code>pandigitalProducts()</code> is a function.
-    testString: assert(typeof pandigitalProducts === 'function', '<code>pandigitalProducts()</code> is a function.');
+    testString: assert(typeof pandigitalProducts === 'function');
   - text: <code>pandigitalProducts()</code> should return 45228.
-    testString: assert.strictEqual(pandigitalProducts(), 45228, '<code>pandigitalProducts()</code> should return 45228.');
+    testString: assert.strictEqual(pandigitalProducts(), 45228);
 
 ```
 

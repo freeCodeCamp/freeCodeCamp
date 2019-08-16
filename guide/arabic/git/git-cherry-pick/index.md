@@ -10,15 +10,17 @@ localeTitle: Git Cherry Pick
 
 لتطبيق التغيير الذي تم تقديمه بواسطة الالتزام على طرف الفرع الرئيسي وإنشاء التزام جديد بهذا التغيير. قم بتشغيل الأمر التالي
 
- `git cherry-pick master 
-` 
+```shell
+git cherry-pick master
+``` 
 
 ### تحقق في تغيير من التزام مختلف
 
 لتطبيق التغيير الذي تم تقديمه بواسطة الالتزام في قيمة التجزئة المحددة التي تريدها ، قم بتشغيل الأمر التالي
 
- `git cherry-pick {HASHVALUE} 
-` 
+```shell
+git cherry-pick {HASHVALUE}
+``` 
 
 سيؤدي هذا إلى إضافة التغييرات التي تمت الإشارة إليها في الالتزام ، إلى المستودع الحالي الخاص بك
 
@@ -26,16 +28,19 @@ localeTitle: Git Cherry Pick
 
 يسمح لك `cherry-pick` بالاختيار بين عمليات من فرع واحد إلى آخر. دعونا نقول لديك فرعين `master` و `develop-1` . في الفرع `develop-1` لديك 3 تلتزم مع تعهدات التزام `commit-1` ، `commit-2` `commit-3` . هنا يمكنك تطبيق `commit-2` على الفرع `master` خلال:
 
- `git checkout master 
- git cherry-pick commit-2 
-` 
+```shell
+git checkout master
+git cherry-pick commit-2
+``` 
 
 إذا واجهت أي تعارضات في هذه المرحلة ، فيجب عليك إصلاحها وإضافتها باستخدام `git add` ، ثم يمكنك استخدام علامة متابعة لتطبيق اختيار cherry-pick.
 
- `git cherry-pick --continue 
-` 
+```shell
+git cherry-pick --continue
+``` 
 
 إذا كنت ترغب في إجهاض اختيار الكرز فيما بين يمكنك استخدام علامة abort:
 
- `git cherry-pick --abort 
-`
+```shell
+git cherry-pick --abort
+```

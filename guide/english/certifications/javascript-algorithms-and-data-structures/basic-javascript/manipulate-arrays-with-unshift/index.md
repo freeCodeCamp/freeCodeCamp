@@ -1,9 +1,13 @@
 ---
 title: Manipulate Arrays With unshift()
 ---
-## Manipulate Arrays With unshift()
+# Manipulate Arrays With unshift()
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+---
+## Hints
+
+### Hint 1
 While `push()` added elements to the back of the array, `unshift()` adds them to the front. All you have to do is:
 
 ```javascript

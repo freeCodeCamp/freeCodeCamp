@@ -1,7 +1,7 @@
 ---
 title: Execute a Markov algorithm
 ---
-## Execute a Markov algorithm
+# Execute a Markov algorithm
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/execute-a-markov-algorithm/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

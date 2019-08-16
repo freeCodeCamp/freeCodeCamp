@@ -8,9 +8,9 @@ localeTitle: سمة الدور
 
 مثال على الاستخدام:
 
- `
-<a href="#" role="button">Button Link</a> 
-` 
+```html
+<a href="#" role="button">Button Link</a>
+``` 
 
 سيقرأ قراء الشاشة هذا العنصر على أنه "زر" بدلاً من "رابط".
 

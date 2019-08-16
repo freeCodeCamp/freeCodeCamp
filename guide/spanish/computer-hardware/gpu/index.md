@@ -38,11 +38,11 @@ La placa "Reality Engine" de Silicon Graphics Inc. (SGI) marcó el inicio del ha
 
 El "3dfx Voodoo" (1996) evolucionó como uno de los primeros verdaderos aceleradores 3D para juegos. Manejaba el mapeado de texturas, la rasterización y el búfer z, pero la CPU todavía tenía que hacer transformaciones de vértice.
 
-### 2ndGeneration
+### 2ª Generation
 
 Este es el punto en el que se lanzó al mercado común la primera GPU verdadera, la "GeForce 256" de NVIDIA. Las GPU del puerto de gráficos acelerados (AGP) de esta generación ofrecían nuevas funciones como la multitimpresión, la transformación de la geometría del hardware, los mapas de luz y la iluminación. Las tuberías tradicionales se conocían como una tubería de "función fija", porque una vez que el desarrollador envió datos gráficos a la tubería de la GPU, los datos no se podían cambiar.
 
-### 3ra generacion
+### 3ª generacion
 
 Con esta generación de CPU, surgió la canalización programable. Ahora las partes previamente no programables podrían ser programadas por los programadores. En 2001, NVIDIA lanzó la GeForce3.
 

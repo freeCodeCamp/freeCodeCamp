@@ -2,8 +2,8 @@
 id: bad87fee1348bd9aedf08822
 title: Adjust the Margin of an Element
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/adjust-the-margin-of-an-element'
 videoUrl: 'https://scrimba.com/c/cVJarHW'
+forumTopicId: 16654
 ---
 
 ## Description
@@ -24,7 +24,7 @@ Change the <code>margin</code> of the blue box to match that of the red box.
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-top") === "20px", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-top") === "20px");
 
 ```
 
@@ -125,4 +125,5 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f4e51000cf542c50fff7
 challengeType: 5
 title: 'Problem 376: Nontransitive sets of dice'
+forumTopicId: 302038
 ---
 
 ## Description
@@ -56,7 +57,7 @@ How many are there for N = 30 ?
 ```yml
 tests:
   - text: <code>euler376()</code> should return 973059630185670.
-    testString: assert.strictEqual(euler376(), 973059630185670, '<code>euler376()</code> should return 973059630185670.');
+    testString: assert.strictEqual(euler376(), 973059630185670);
 
 ```
 
@@ -88,4 +89,5 @@ euler376();
 ```js
 // solution required
 ```
+
 </section>

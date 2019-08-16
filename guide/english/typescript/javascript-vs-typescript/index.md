@@ -3,7 +3,7 @@ title: JavaScript vs TypeScript
 ---
 ## JavaScript vs TypeScript
 
-![Where's Waldo](https://i.imgur.com/DznuAou.jpg)
+![Where's Waldo](https://cdn-media-1.freecodecamp.org/imgr/DznuAou.jpg)
 
 Okay so now that we have a general sense of what TypeScript is, let’s play a quick game of **Where’s Waldo**.
 

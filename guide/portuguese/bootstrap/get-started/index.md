@@ -12,11 +12,11 @@ Um site responsivo é um site que redimensiona e reorganiza esses itens na pági
 
 #### Como adiciono o Bootstrap à minha página
 
-Adicionar bootstrap à sua página é um processo rápido, basta adicionar o seguinte às tags `<head>` no seu código.
+Adicionar bootstrap à sua página é um processo rápido, basta adicionar o seguinte código às tags `<head>` no seu código.
 
 ```html
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 ```
 
 Você também precisará adicionar o seguinte entre as tags `body` em seu código. Com o bootstrap você estará usando tags `<div>` quando usar muitos dos recursos do Bootstrap, cada tag terá seu próprio conjunto de classes aplicadas que permite que a tag execute sua tarefa. Outras seções deste guia do Bootstrap mostrarão mais exemplos de como o Bootstrap usa tags `<div>` . (As tags `<div>` não são exclusivas do Bootstrap, entretanto o Bootstrap faz uso delas.). Abaixo está o código que seria adicionado às tags `body` em seu código para concluir os primeiros passos. Lembre-se de que, embora isso crie o contêiner, a página permanecerá em branco até você adicionar conteúdo ao contêiner.
@@ -29,9 +29,23 @@ Você também precisará adicionar o seguinte entre as tags `body` em seu códig
  </div> 
 ```
 
+Adicionando o Bootstrap via Bower e Npm
+
+Bower:
+```
+$ bower install bootstrap
+```
+
+Npm
+```
+$ npm install bootstrap@3
+```
+
+
+
 **Parabéns!**
 
-Bootstrap está trabalhando agora nesta página
+Agora o Bootstrap está funcionando nesta página
 
 #### Mais Informações
 

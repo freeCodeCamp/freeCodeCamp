@@ -8,7 +8,8 @@ localeTitle: SQL لا المشغل
 
 في ما يلي مثال يختار جميع الأشخاص غير الذكور:
 
- `SELECT Id, Name, DateOfBirth, Gender 
- FROM Person 
- WHERE NOT Gender = "M" 
-`
+```sql
+SELECT Id, Name, DateOfBirth, Gender
+FROM Person
+WHERE NOT Gender = "M"
+```

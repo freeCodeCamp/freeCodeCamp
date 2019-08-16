@@ -59,7 +59,7 @@ nada para cometer, diretório de trabalho limpo
 
 ## Etapas Comuns
 
-1.  Depois que as edições forem confirmadas, você será solicitado a criar uma solicitação de recepção na página do Github do fork.
+1.  Depois que as edições forem confirmadas, você será solicitado a criar uma solicitação de recepção na página do GitHub do fork.
 2.  Por padrão, todas as solicitações de recebimento devem ser contra o repositório principal da FCC, a divisão de `staging` .
 3.  Faça um título claro para o seu PR, que indica sucintamente o que está sendo corrigido. Não adicione o número do problema no título. Exemplos: `Add Test Cases to Algorithm Drop It` `Correct typo in Challenge Size Your Images`
 4.  No corpo do seu PR, inclua um resumo mais detalhado das alterações feitas e por quê.

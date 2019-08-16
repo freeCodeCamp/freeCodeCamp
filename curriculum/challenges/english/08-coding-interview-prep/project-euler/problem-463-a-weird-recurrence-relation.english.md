@@ -2,6 +2,7 @@
 id: 5900f53c1000cf542c51004e
 challengeType: 5
 title: 'Problem 463: A weird recurrence relation'
+forumTopicId: 302138
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find $S(3^{37})$. Give the last 9 digits of your answer.
 ```yml
 tests:
   - text: <code>euler463()</code> should return 808981553.
-    testString: assert.strictEqual(euler463(), 808981553, '<code>euler463()</code> should return 808981553.');
+    testString: assert.strictEqual(euler463(), 808981553);
 
 ```
 
@@ -61,4 +62,5 @@ euler463();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,7 +2,7 @@
 title: Tables
 localeTitle: Mesas
 ---
-## \## Mesas
+## Mesas
 
 #### Tabla basica
 

@@ -14,17 +14,17 @@ Los componentes simplifican la aplicación. Su principal objetivo es canalizar l
 
 #### Introducción de componentes
 
-Como se mencionó, los componentes consumen utilidad (servicios / recursos). Se interponen entre la lógica empresarial y la presentación para producir una unidad cohesiva. Angular une diversos mecanismos a cada componente. Estos adjuntos identifican una clase como un componente y definen sus capacidades estándar.
+Como se mencionó, los componentes consumen utilidad (servicios / recursos). Se ubican entre la lógica de negocios y la presentación para producir una unidad cohesiva. Angular agrega diversos mecanismos a cada componente. Estos agregados identifican una clase como un componente y definen sus capacidades estándar.
 
-Angular debe reconocer componentes cuando se encuentra con ellos. Para hacer esto, `@Component` debe decorar cada clase que pretende ser un componente. Los decoradores indican a Angular lo que es la clase '.
+Angular debe reconocer componentes cuando se encuentra con ellos. Para hacer ésto, `@Component` debe decorar cada clase que pretende ser un componente. Los decoradores indican a Angular lo que es la clase.
 
 En el caso de un componente, debe saber cómo interactuar con su inyector, conectarse con una plantilla, extraer de una lista de estilos, encapsular sus estilos, etc. Angular se encarga de la mayoría de los requisitos de bajo nivel. Los desarrolladores aún necesitan configurar el comportamiento de un componente, importar sus dependencias y extender su lógica.
 
-Para todas esas cosas, tenemos la clase del componente. La clase mantiene todo relativamente uniforme. Se encapsula la lógica empresarial del componente.
+Para todas esas cosas, tenemos la clase del componente. La clase mantiene todo relativamente uniforme. Se encapsula la lógica de negocios del componente.
 
 #### Clase de componente y metadatos
 
-Continúe e instale la [interfaz de línea de comandos Angular (CLI)](https://cli.angular.io) . Puedes aprender más sobre esto en [este artículo](https://guide.freecodecamp.org/angular/command-line-interface) . El comando CLI `ng generate component [name-of-component]` produce lo siguiente.
+Continúe e instale la [interfaz de línea de comandos Angular (CLI)](https://cli.angular.io) . Puedes aprender más sobre ésto en [este artículo](https://guide.freecodecamp.org/angular/command-line-interface) . El comando CLI `ng generate component [nombre-del-componente]` produce lo siguiente.
 
 ```typescript
 import { Component, OnInit } from '@angular/core'; 
@@ -56,11 +56,11 @@ Piense en los metadatos como un gran blob de configuración. El decorador lo tom
 
 La firma de la clase se exporta de forma predeterminada para que se pueda importar el componente. `ngOnInit` también se implementa. `implements` le dice a la clase que defina ciertos métodos según la definición de la interfaz. `ngOnInit` es un gancho de ciclo de vida.
 
-#### Componente del ciclo de vida y detección de cambios
+#### Ciclo de vida del componente y detección de cambios
 
-Los componentes utilizan todo tipo de herramientas, servicios y características. Una característica clave disponible para los componentes son los ganchos del ciclo de vida. Una explicación para cada gancho existe [en este artículo](https://guide.freecodecamp.org/angular/lifecycle-hooks) .
+Los componentes utilizan todo tipo de herramientas, servicios y características. Una característica clave disponible para los componentes son los ganchos del ciclo de vida. Una explicación para cada gancho existe [en este artículo](https://guide.freecodecamp.org/angular/lifecycle-hooks).
 
-Hay un total de ocho y todas ellas sirven como funciones de temporización. Se ejecutan condicionalmente como las transiciones de componentes de estado a estado a través de la [detección de cambios](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f) . Este proceso ocurre constantemente en el árbol de componentes. Busca cambios en los datos que merecen una representación de la plantilla.
+Hay un total de ocho y todas ellas sirven como funciones de temporización. Se ejecutan condicionalmente como las transiciones de componentes de estado a estado a través de la [detección de cambios](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f). Este proceso ocurre constantemente en el árbol de componentes. Busca cambios en los datos que merecen una representación de la plantilla.
 
 Tiempo de seguir adelante. Consulte los artículos mencionados anteriormente para obtener más información sobre el ciclo de vida de los componentes. Merece mucha más explicación.
 
@@ -68,7 +68,7 @@ Tiempo de seguir adelante. Consulte los artículos mencionados anteriormente par
 
 Los datos impulsan todo. Los componentes no son una excepción. Los componentes encapsulan todos sus datos. Para recibir datos externamente, un componente debe declararlo explícitamente. Esta forma de privacidad evita que la información entre en conflicto en el árbol de componentes.
 
-Los datos determinan lo que se muestra desde la clase de componente a su plantilla. Cualquier actualización de los datos de la clase (o al menos debería) actualizará la visualización de la plantilla.
+Los datos determinan lo que se muestra desde la clase de componente a su plantilla. Cualquier actualización de los datos de la clase  actualizará (o al menos debería) la visualización de la plantilla.
 
 Los componentes a menudo inicializan un conjunto de miembros (o variables) que almacenan datos. Se utilizan en toda la lógica de la clase de componentes para mayor comodidad. Esta información alimenta la lógica que resulta en la plantilla y su comportamiento. Vea el siguiente ejemplo.
 

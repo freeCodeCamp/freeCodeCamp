@@ -2,6 +2,7 @@
 id: 5900f4a11000cf542c50ffb4
 challengeType: 5
 title: 'Problem 309: Integer Ladders'
+forumTopicId: 301963
 ---
 
 ## Description
@@ -30,7 +31,7 @@ For integer values x, y, h and 0 < x < y < 1 000 000, how many triplets (x,y,h) 
 ```yml
 tests:
   - text: <code>euler309()</code> should return 210139.
-    testString: assert.strictEqual(euler309(), 210139, '<code>euler309()</code> should return 210139.');
+    testString: assert.strictEqual(euler309(), 210139);
 
 ```
 
@@ -62,4 +63,5 @@ euler309();
 ```js
 // solution required
 ```
+
 </section>

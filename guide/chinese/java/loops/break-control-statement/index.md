@@ -67,8 +67,8 @@ int i = 0;
  int searchFor = 5; 
  
  while(i < 10){ 
- System.out.println("i = " + j); 
- if(arrayOfInts[i] > 7){ 
+ System.out.println("i = " + i); 
+ if(arrayOfInts[i] > searchFor){ 
   break; 
   } 
  } 

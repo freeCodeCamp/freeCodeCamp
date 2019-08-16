@@ -4,7 +4,7 @@ localeTitle: Estado Componente
 ---
 ## Estado Componente
 
-Nos componentes de `Class` , existe uma maneira de armazenar e gerenciar o estado incorporado ao Reagir Nativo.
+Nos componentes de `Class` , existe uma maneira de armazenar e gerenciar o estado incorporado ao React Native.
 
 ```javascript
 class App extends Component { 
@@ -36,7 +36,7 @@ class App extends Component {
  } 
 ```
 
-Estado é semelhante a adereços, mas é privado e totalmente controlado pelo componente. Aqui, o método `constructor()` está chamando o construtor da classe pai com `super();` - **`Component`** é a classe pai do `App` porque estamos usando a palavra-chave `extends` . O método `constructor()` também inicializa o objeto de estado do componente:
+Estado é semelhante a `props`, mas é privado e totalmente controlado pelo componente. Aqui, o método `constructor()` está chamando o construtor da classe pai com `super();` - **`Component`** é a classe pai do `App` porque estamos usando a palavra-chave `extends` . O método `constructor()` também inicializa o objeto de estado do componente:
 ```
 this.state = { 
   counter: 0 
