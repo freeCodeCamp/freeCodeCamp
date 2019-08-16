@@ -2,6 +2,7 @@
 id: 5900f4771000cf542c50ff89
 challengeType: 5
 title: 'Problem 266: Pseudo Square Root'
+forumTopicId: 301915
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find PSR(p) mod 1016.
 ```yml
 tests:
   - text: <code>euler266()</code> should return 1096883702440585.
-    testString: assert.strictEqual(euler266(), 1096883702440585, '<code>euler266()</code> should return 1096883702440585.');
+    testString: assert.strictEqual(euler266(), 1096883702440585);
 
 ```
 
@@ -59,4 +60,5 @@ euler266();
 ```js
 // solution required
 ```
+
 </section>

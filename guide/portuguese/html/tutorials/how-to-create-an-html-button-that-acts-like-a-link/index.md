@@ -4,7 +4,7 @@ localeTitle: Como criar um botão HTML que atua como um link
 ---
 ## Como criar um botão HTML que atua como um link
 
-Às vezes, você pode querer usar um botão para vincular a outra página ou site, em vez de enviar um formulário ou algo assim. Isso é bastante simples de se fazer e pode ser alcançado de várias maneiras.
+Às vezes, você pode querer usar um botão para direcionar a outra página ou site, em vez de enviar um formulário ou algo assim. Isso é bastante simples de se fazer e pode ser alcançado de várias maneiras.
 
 Uma maneira é simplesmente envolver sua tag `<button>` em uma tag `<a>` :
 
@@ -22,9 +22,9 @@ Uma segunda opção é criar seu link como você faria normalmente com sua tag `
 <a href='https://www.freecodecamp.org/'>Link To freeCodeCamp</a> 
 ```
 
-Depois de criar seu link, você pode usar o CSS para parecer um botão. Por exemplo, você pode adicionar uma borda, uma cor de plano de fundo, alguns estilos para quando o usuário estiver passando o link…
+Depois de criar seu link, você pode usar o CSS para parecer um botão. Por exemplo, você pode adicionar uma borda, uma cor de plano de fundo, alguns estilos para quando o usuário estiver passando o cursor sobre o link…
 
-Outra maneira de adicionar um botão é envolver uma `input` dentro de tags de `form` . Especifique o URL de destino desejado no atributo de ação do formulário.
+Outra maneira de adicionar um botão é envolver uma `input` dentro de tags `form` . Especifique o URL de destino desejado no atributo `action` do formulário.
 
 ```html
 

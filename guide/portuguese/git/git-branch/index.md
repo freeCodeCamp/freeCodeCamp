@@ -6,6 +6,12 @@ localeTitle: Filial Git
 
 A funcionalidade de ramificação do Git permite criar novas ramificações de um projeto para testar ideias, isolar novos recursos ou experimentar sem afetar o projeto principal.
 
+A ramificação no Git é muito útil, pois ajuda na organização do repositório e também facilita o entendimento da estrutura do código. Pode-se, por exemplo, em projetos onde se tenham mais de um desenvolvedor trabalhando no código, adotar regras de ramificações. De forma que a ramificação "master" (que é a padrão, criada automáticamente pelo Git ao se iniciar um repositório), seja sempre a ramificação com código em estado pronto, e a cada correção, atualização, introdução de uma nova funcionalidade no projeto, deve-se primeiro criar uma nova ramificação, identificando-a por exemplo como "correcao-bug" e testar o código até que esteja estável e que tenha resolvido o bug, para então, após testado e comprovado o resultado, dar um merge na ramificação master. 
+
+Na imagem abaixo, tem-se um exemplo de como é a ramificação no Git, com três ramificações: master, hotfix e iss53.
+
+![Exemplo de ramificação no Git](https://git-scm.com/figures/18333fig0313-tn.png "Exemplo de ramificação no Git")
+
 **Índice**
 
 *   [Exibir filiais](#view-branches)
@@ -131,3 +137,4 @@ git help branch
 *   O comando `git commit` : [fCC Guide](https://guide.freecodecamp.org/git/git-commit/)
 *   O comando `git stash` : [fCC Guide](https://guide.freecodecamp.org/git/git-stash/)
 *   Documentação do Git: [branch](https://git-scm.com/docs/git-branch)
+*   Um modelo de ramificação bem-sucedido do Git (post original em inglês): [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)

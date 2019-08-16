@@ -1,10 +1,46 @@
 ---
 title: Assert Deep Equality with .deepEqual and .notDeepEqual
 ---
-## Assert Deep Equality with .deepEqual and .notDeepEqual
+# Assert Deep Equality with .deepEqual and .notDeepEqual
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/quality-assurance-and-testing-with-chai/assert-deep-equality-with-.deepequal-and-.notdeepequal/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Problem Explanation
+To begin, locate the file "tests/1_unit_tests.js" and scroll to the suite of tests for 'Equality'
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This file contains multiple suites of tests for the project, and this challenge requires you to make the tests in ` /** 7 */` pass.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+---
+## Hints
+
+### Hint 1
+
+Deep equality checks if two objects, and their child objects, are equal to one another using the `==` operator.
+
+### Hint 2
+
+The lines in the test should be changed from `assert.fail()` to either `assert.deepEqual()` or `assert.notDeepEqual()`
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```js
+/** 7 - .deepEqual(), .notDeepEqual() **/
+// .deepEqual() asserts that two object are deep equal
+test('#deepEqual, #notDeepEqual', function() {
+  assert.deepEqual(
+    { a: '1', b: 5 },
+    { b: 5, a: '1' },
+    "keys order doesn't matter"
+  );
+  assert.notDeepEqual(
+    { a: [5, 6] },
+    { a: [6, 5] },
+    'array elements position does matter !!'
+  );
+});
+```
+</details>

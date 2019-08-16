@@ -2,6 +2,7 @@
 id: 5900f4d91000cf542c50ffeb
 challengeType: 5
 title: 'Problem 363: Bézier Curves'
+forumTopicId: 302024
 ---
 
 ## Description
@@ -41,7 +42,7 @@ That is, if L is the length of the curve, calculate  100 × L − π/2π/2Give y
 ```yml
 tests:
   - text: <code>euler363()</code> should return 0.0000372091.
-    testString: assert.strictEqual(euler363(), 0.0000372091, '<code>euler363()</code> should return 0.0000372091.');
+    testString: assert.strictEqual(euler363(), 0.0000372091);
 
 ```
 
@@ -73,4 +74,5 @@ euler363();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,10 +1,10 @@
 ---
 title: A Href Attribute
-localeTitle: Um atributo Href
+localeTitle: Atributo Href
 ---
 ## Um atributo Href
 
-O atributo `<a href>` refere-se a um destino fornecido por um link. A `a` (âncora) tag é morto sem o `<href>` atributo. Às vezes, no seu fluxo de trabalho, você não deseja um link ativo ou ainda não saberá o destino do link. Nesse caso, é útil definir o atributo `href` como `"#"` para criar um link inativo. O atributo `href` pode ser usado para vincular a arquivos ou arquivos locais na Internet.
+O atributo `<a href>` refere-se a um destino fornecido por um link. A tag `a` (âncora) necessita obrigatoriamente do atributo `<href>`. Às vezes, no seu fluxo de trabalho, você não deseja um link ativo ou ainda não sabe o destino do link. Nesse caso, é útil definir o atributo `href` como `"#"` para criar um link inativo. O atributo `href` pode ser vinculado a arquivos locais ou na Internet.
 
 Por exemplo:
 
@@ -41,7 +41,7 @@ O atributo `<a href>` é suportado por todos os navegadores.
 
 ### Âncoras in-page
 
-Também é possível definir uma âncora para determinado local da página. Para fazer isso, você deve primeiro colocar uma guia no local na página com a tag e o atributo necessário "name" com qualquer descrição de palavra-chave, assim:
+Também é possível definir uma âncora para determinado local da página. Para fazer isso, você deve primeiro colocar uma identificação no local da página com a tag e o atributo necessário "name" com qualquer descrição de palavra-chave, assim:
 
 ```html
 

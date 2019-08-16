@@ -2,6 +2,8 @@
 title: Python 2 vs Python 3
 localeTitle: Python 2 vs Python 3
 ---
+Hay dos versiones de Python que están en uso actualmente. Python 2, actualizado por última vez en 2010, y Python 3 introducido en 2008. Ambas versiones tienen sus defensores y detractores.
+
 No estamos tomando partido en el debate. Si está interesado en saber más sobre esto con fines académicos, tal vez [este artículo que compara Python 2 y Python 3](https://wiki.python.org/moin/Python2orPython3) lo intrigaría.
 
 Pero tampoco podemos ignorar el hecho de que hay dos sabores principales de Python. ¿Por qué debería importarte, te preguntarás? Debido a que el código escrito para una versión de Python puede provocar un error de sintaxis en otra versión de Python.

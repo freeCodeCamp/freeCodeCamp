@@ -28,6 +28,10 @@ std::pair<std::string, unsigned int>> last_employee = employees.back();
 
 // with auto, you just have to write:
 auto last_employee = employees.back();
+//if you want to output the "last_employee" variable you have to do it with a pointer
+cout<<last_employee;  //you will get an error to this
+cout<<*last_employee; // this will run correctly
+
 ```
 
 Once the compiler determines the type on the right side of the `=` it replaces `auto` with that type.

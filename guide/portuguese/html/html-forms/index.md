@@ -21,6 +21,7 @@ Formulário contém elementos de controle que são agrupados em tags `<form></fo
 *   `week`
 *   `color`
 *   `datalist`
+*   `required`
 
 Exemplo de código:
 
@@ -28,14 +29,15 @@ Exemplo de código:
 
 <form> 
     <label for="username">Username:</label> 
-    <input type="text" name="username" id="username"> 
+    <input type="text" name="username" id="username" required> 
     <label for="password">Password:</label> 
-    <input type="password" name="password" id="password"> 
+    <input type="password" name="password" id="password" required> 
     <input type="radio" name="gender" value="male">Male<br> 
     <input type="radio" name="gender" value="female">Female<br> 
     <input type="radio" name="gender" value="other">Other 
     <input list="Options"> 
-    <datalist id="Options"> 
+    <datalist id="Options">
+      <option disabled select value="Select an option">
       <option value="Option1"> 
       <option value="Option2"> 
       <option value="Option3"> 

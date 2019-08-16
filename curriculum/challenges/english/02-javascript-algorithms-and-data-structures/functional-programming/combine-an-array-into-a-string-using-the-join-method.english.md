@@ -2,13 +2,20 @@
 id: 587d7daa367417b2b2512b6c
 title: Combine an Array into a String Using the join Method
 challengeType: 1
+forumTopicId: 18221
 ---
 
 ## Description
 <section id='description'>
 The <code>join</code> method is used to join the elements of an array together to create a string. It takes an argument for the delimiter that is used to separate the array elements in the string.
 Here's an example:
-<blockquote>var arr = ["Hello", "World"];<br>var str = arr.join(" ");<br>// Sets str to "Hello World"</blockquote>
+
+```js
+var arr = ["Hello", "World"];
+var str = arr.join(" ");
+// Sets str to "Hello World"
+```
+
 </section>
 
 ## Instructions
@@ -22,17 +29,17 @@ Use the <code>join</code> method (among others) inside the <code>sentensify</cod
 ```yml
 tests:
   - text: Your code should use the <code>join</code> method.
-    testString: assert(code.match(/\.join/g), 'Your code should use the <code>join</code> method.');
+    testString: assert(code.match(/\.join/g));
   - text: Your code should not use the <code>replace</code> method.
-    testString: assert(!code.match(/\.replace/g), 'Your code should not use the <code>replace</code> method.');
+    testString: assert(!code.match(/\.replace/g));
   - text: <code>sentensify("May-the-force-be-with-you")</code> should return a string.
-    testString: assert(typeof sentensify("May-the-force-be-with-you") === "string", '<code>sentensify("May-the-force-be-with-you")</code> should return a string.');
+    testString: assert(typeof sentensify("May-the-force-be-with-you") === "string");
   - text: <code>sentensify("May-the-force-be-with-you")</code> should return <code>"May the force be with you"</code>.
-    testString: assert(sentensify("May-the-force-be-with-you") === "May the force be with you", '<code>sentensify("May-the-force-be-with-you")</code> should return <code>"May the force be with you"</code>.');
+    testString: assert(sentensify("May-the-force-be-with-you") === "May the force be with you");
   - text: <code>sentensify("The.force.is.strong.with.this.one")</code> should return <code>"The force is strong with this one"</code>.
-    testString: assert(sentensify("The.force.is.strong.with.this.one") === "The force is strong with this one", '<code>sentensify("The.force.is.strong.with.this.one")</code> should return <code>"The force is strong with this one"</code>.');
+    testString: assert(sentensify("The.force.is.strong.with.this.one") === "The force is strong with this one");
   - text: <code>sentensify("There,has,been,an,awakening")</code> should return <code>"There has been an awakening"</code>.
-    testString: assert(sentensify("There,has,been,an,awakening") === "There has been an awakening", '<code>sentensify("There,has,been,an,awakening")</code> should return <code>"There has been an awakening"</code>.');
+    testString: assert(sentensify("There,has,been,an,awakening") === "There has been an awakening");
 
 ```
 
@@ -63,6 +70,11 @@ sentensify("May-the-force-be-with-you");
 <section id='solution'>
 
 ```js
-// solution required
+function sentensify(str) {
+  // Add your code below this line
+  return str.split(/\W/).join(' ');
+  // Add your code above this line
+}
 ```
+
 </section>

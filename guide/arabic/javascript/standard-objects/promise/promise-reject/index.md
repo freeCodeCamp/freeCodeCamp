@@ -8,13 +8,14 @@ localeTitle: وعد رفض
 
 سيسمح لك تسلسل وظيفة catch في نهاية المتصل Promise بالتقاط حالة الخطأ.
 
- `promiseCallingFunction(paramList) 
-  .then( ... ) 
-  ... 
-  .then( ... ) 
-  .catch( function(err) { // catch function 
-    /* 
-     * this is where you can access the reason for the rejection 
-     */ 
-  }); 
-`
+```javascript
+promiseCallingFunction(paramList)
+  .then( ... )
+  ...
+  .then( ... )
+  .catch( function(err) { // catch function
+    /*
+     * this is where you can access the reason for the rejection
+     */
+  });
+```

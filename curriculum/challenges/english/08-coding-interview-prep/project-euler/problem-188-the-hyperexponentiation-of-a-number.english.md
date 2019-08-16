@@ -2,6 +2,7 @@
 id: 5900f4291000cf542c50ff3b
 challengeType: 5
 title: 'Problem 188: The hyperexponentiation of a number'
+forumTopicId: 301824
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Find the last 8 digits of 1777↑↑1855.
 ```yml
 tests:
   - text: <code>euler188()</code> should return 95962097.
-    testString: assert.strictEqual(euler188(), 95962097, '<code>euler188()</code> should return 95962097.');
+    testString: assert.strictEqual(euler188(), 95962097);
 
 ```
 
@@ -57,4 +58,5 @@ euler188();
 ```js
 // solution required
 ```
+
 </section>

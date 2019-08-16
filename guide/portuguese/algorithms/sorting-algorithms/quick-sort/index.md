@@ -4,7 +4,7 @@ localeTitle: Ordenação rápida
 ---
 ## Ordenação rápida
 
-A classificação rápida é um eficiente algoritmo de divisão e conquista de classificação. A complexidade média de tempo de caso de Classificação Rápida é O (nlog (n)), com complexidade de tempo de pior caso sendo O (n ^ 2).
+A Ordenação rápida é um eficiente algoritmo de divisão e conquista de classificação. A complexidade média de tempo de caso de ordenação Rápida é O (nlog (n)), com complexidade de tempo de pior caso sendo O (n^2) dependendo da seleção do elemento dinâmico, que divide a matriz atual em duas sub-matrizes. Por exemplo, a complexidade de tempo do Quick Sort é aproximadamente O (nlog (n)) quando a seleção do pivô divide o array original em dois sub-arrays de tamanho quase igual. Por outro lado, se o algoritmo, que seleciona o elemento pivot das matrizes de entrada, gerar consistentemente 2 sub-matrizes com uma grande diferença em termos de tamanhos de matrizes, o algoritmo de ordenação rápida pode alcançar a complexidade de tempo de pior caso de O (n^2).
 
 As etapas envolvidas no Quick Sort são:
 
@@ -12,7 +12,9 @@ As etapas envolvidas no Quick Sort são:
 *   Particionamento: classifica o array de tal maneira que todos os elementos menores que o pivô estão à esquerda, e todos os elementos maiores que o pivô estão à direita.
 *   Chame o Quicksort recursivamente, levando em consideração o pivô anterior para subdividir corretamente as matrizes esquerda e direita. (Uma explicação mais detalhada pode ser encontrada nos comentários abaixo)
 
-Uma implementação rápida em JavaScript:
+## Exemplo de implementações em vários linguagens
+
+### Implementação em JavaScript:
 
 ```javascript
 const arr = [6, 2, 5, 3, 8, 7, 1, 4] 
@@ -75,7 +77,7 @@ const arr = [6, 2, 5, 3, 8, 7, 1, 4]
  console.log(arr) 
 ```
 
-Uma implementação de classificação rápida em C
+### Implementação em C
 
 ```C
 #include<stdio.h> 
@@ -133,7 +135,112 @@ Uma implementação de classificação rápida em C
  } 
 ```
 
-A complexidade espacial da ordenação rápida é O (n). Isso é uma melhoria em relação a outros algoritmos de ordenação de divisão e conquista, que ocupam o espaço O (nlong (n)). A classificação rápida consegue isso alterando a ordem dos elementos dentro da matriz especificada. Compare isso com o algoritmo de [classificação de mesclagem](https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort) que cria 2 matrizes, cada comprimento n / 2, em cada chamada de função.
+### Implementação no Python3
+```python
+import random
+
+z=[random.randint(0,100) for i in range(0,20)]
+
+def quicksort(z):
+    if(len(z)>1):        
+        piv=int(len(z)/2)
+        val=z[piv]
+        lft=[i for i in z if i<val]
+        mid=[i for i in z if i==val]
+        rgt=[i for i in z if i>val]
+
+        res=quicksort(lft)+mid+quicksort(rgt)
+        return res
+    else:
+        return z
+
+ans1=quicksort(z)
+print(ans1)
+
+```
+
+### Implementação no MATLAB
+```matlab
+a = [9,4,7,3,8,5,1,6,2];
+
+sorted = quicksort(a,1,length(a));
+
+function [unsorted] =  quicksort(unsorted, low, high)
+    if low < high
+        [pInd, unsorted] = partition(unsorted, low, high);
+        unsorted = quicksort(unsorted, low, pInd-1);
+        unsorted = quicksort(unsorted, pInd+1, high);
+    end
+
+end
+
+function [pInd, unsorted] = partition(unsorted, low, high)
+    i = low-1;
+    for j = low:1:high-1
+        if unsorted(j) <= unsorted(high)
+            i = i+1;
+            unsorted([i,j]) = unsorted([j,i]);
+
+        end
+    end
+    unsorted([i+1,high]) = unsorted([high,i+1]);
+    pInd = i+1;
+
+end
+
+```
+
+### Implementação em Java
+
+```java
+public class Quicksort {
+
+  static void quickSort(int[] array, int p, int r) {
+      if (p < r) {
+          int q = partition(array, p, r);
+          quickSort(array, p, q - 1);
+          quickSort(array, q + 1, r);
+      }
+  }
+
+  static int partition(int[] array, int p, int r) {
+      // using the last element as the pivot
+      int pivot = array[r];
+      int i = p - 1;
+      for (int j = p; j <= r - 1; j++) {
+          if (array[j] <= pivot) {
+              i++;
+              int temp = array[i];
+              array[i] = array[j];
+              array[j] = temp;
+          }
+      }
+      int temp = array[i + 1];
+      array[i + 1] = array[r];
+      array[r] = temp;
+      return i + 1;
+  }
+
+    public static void main(String[] args) {
+      int [] array = {2,8,7,1,3,5,6,4};
+      quickSort(array, 0, 7);
+      for (int i : array)
+          System.out.print(i + " ");  
+   }
+}
+
+```
+
+A complexidade espacial da ordenação rápida é `O(n)`. Isso é uma melhoria em relação a outros algoritmos de ordenação de divisão e conquista, que ocupam o espaço `O(nlong(n))`. A Ordenação rápida consegue isso alterando a ordem dos elementos dentro da matriz especificada. Compare isso com o algoritmo de [classificação de mesclagem](https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort) que cria 2 matrizes, cada comprimento `n/2`, em cada chamada de função.
+No entanto, existe o problema deste algoritmo de ordenação ser do tempo `O(n*n)` se o pivô é sempre mantido no meio. Isso pode ser superado utilizando um pivô aleatório
+
+## Complexity
+
+| Nome                  | Melhor          | Média               | Pior                | Memória   | Estável   | Comentários |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :---------- |
+| **Ordenação rápida**  | n&nbsp;log(n)   | n&nbsp;log(n)       | n<sup>2</sup>       | log(n)    | Não       |  A Ordenação rápida geralmente é feito no local com o espaço da pilha O(log(n)) |
+
+A complexidade espacial da ordenação rápida é O(n). Isso é uma melhoria em relação a outros algoritmos de ordenação de divisão e conquista, que ocupam espaço O(n log(n)).
 
 #### Mais Informações:
 
@@ -144,3 +251,5 @@ A complexidade espacial da ordenação rápida é O (n). Isso é uma melhoria em
 *   [Youtube: Uma explicação visual do Quicksort](https://www.youtube.com/watch?v=MZaf_9IZCrc)
     
 *   [Youtube: Gayle Laakmann McDowell (autor de Cracking The Coding Interview) explica os fundamentos do quicksort e mostra algumas implementações](https://www.youtube.com/watch?v=SLauY6PpjW4)
+
+*   [Quick Sort - MyCodeSchool](https://www.youtube.com/watch?v=COk73cpQbFQ)

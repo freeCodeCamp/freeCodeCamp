@@ -2,6 +2,7 @@
 id: 5900f4861000cf542c50ff99
 challengeType: 5
 title: 'Problem 282: The Ackermann function'
+forumTopicId: 301933
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Find A(n, n) and give your answer mod 148.
 ```yml
 tests:
   - text: <code>euler282()</code> should return 1098988351.
-    testString: assert.strictEqual(euler282(), 1098988351, '<code>euler282()</code> should return 1098988351.');
+    testString: assert.strictEqual(euler282(), 1098988351);
 
 ```
 
@@ -59,4 +60,5 @@ euler282();
 ```js
 // solution required
 ```
+
 </section>

@@ -26,7 +26,11 @@ En la programación de procedimientos, simplemente creamos variables y las cambi
 Otro concepto extremadamente útil es el de la herencia. La idea es que una clase puede heredar atributos y comportamiento de una clase base. Por ejemplo, al crear un juego, tenemos un jugador y un enemigo. Podemos crear una clase base llamada persona y darle atributos como nombre, edad, género, etc. El comportamiento de la persona puede ser caminar y saltar. Un jugador y un enemigo pueden heredar estas "cualidades" de la persona, y pueden tener cualidades adicionales como matar, anotar, comer, etc.
 
 Esto ayuda a reutilizar el código y hacer que la estructura de código sea mucho más limpia. La ocultación de datos es otra característica interesante. En OO, tenemos la noción de atributos privados y públicos. Los atributos privados se pueden acceder y modificar solo por métodos de esa clase en particular, mientras que los datos públicos se pueden modificar desde cualquier parte del programa (obviamente dentro del alcance).
-
+ 
+ Pongamos un ejemplo de como y para que:
+ 
+ Una fabrica de vehículos quiere hace un software para su clasificación. Para ello, un programador decide crear un objeto "vehículo" con las propiedades que los diferencian (atributos) como serían el numero de ruedas, el color, si necesita casco, si tiene motor..... 
+ Al mes siguiente, tras el triunfo de esta clasificación descubren que necesitan clasificar los coches que tienen, para ello, el programador crea un objeto coche que hereda las propiedades de vehículo (4 ruedas, sin casco y el color dependerá del coche)
 ## ¿Qué sigue?
 
 Elige un lenguaje OO y crea un juego básico basado en terminales para ilustrar estos conceptos.

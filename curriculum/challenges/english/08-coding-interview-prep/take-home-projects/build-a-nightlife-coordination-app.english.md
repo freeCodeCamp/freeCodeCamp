@@ -3,6 +3,7 @@ id: bd7158d8c443eddfaeb5bdff
 title: Build a Nightlife Coordination App
 challengeType: 4
 isRequired: true
+forumTopicId: 302351
 ---
 
 ## Description
@@ -45,4 +46,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

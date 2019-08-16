@@ -20,7 +20,7 @@ localeTitle: C ++ Compilers
 
 #### باستخدام و IDE مثل CodeBlocks
 
-إنه بسيط مثل النقر فوق أزرار الإنشاء والتشغيل ، سيقومون بإنشاء ملف في مجلد المشروع. ![IMG](https://i.imgur.com/FwZuFGy.png)
+إنه بسيط مثل النقر فوق أزرار الإنشاء والتشغيل ، سيقومون بإنشاء ملف في مجلد المشروع. ![IMG](https://cdn-media-1.freecodecamp.org/imgr/FwZuFGy.png)
 
 #### باستخدام موجه الأوامر
 

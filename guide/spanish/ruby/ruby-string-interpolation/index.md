@@ -1,17 +1,17 @@
 ---
 title: Ruby String Interpolation
-localeTitle: Interpolación Ruby String
+localeTitle: Interpolación de string en Ruby
 ---
-# Interpolación de cuerdas
+# Interpolación de string
 
-La interpolación de cadenas proporciona una sintaxis más legible y concisa para crear cadenas. Puede estar familiarizado con la concatenación a través de los métodos `+` o `<<` :
+La interpolación de string proporciona una sintaxis más legible y concisa para crear string. Puede estar familiarizado con la concatenación a través de los métodos `+` o `<<` :
 
 ```ruby
 "Hello " + "World!" #=> Hello World 
  "Hello " << "World!" #=> Hello World 
 ```
 
-La interpolación de cadenas proporciona una forma de incrustar código Ruby directamente en una cadena:
+La interpolación de string proporciona una forma de incrustar código Ruby directamente en un string:
 
 ```ruby
 place = "World" 

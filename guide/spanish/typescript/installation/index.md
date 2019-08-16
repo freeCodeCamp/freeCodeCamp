@@ -4,7 +4,7 @@ localeTitle: Instalación
 ---
 ## Instalación
 
-![Instalación](https://i.imgur.com/9ILjA1q.jpg)
+![Instalación](https://cdn-media-1.freecodecamp.org/imgr/9ILjA1q.jpg)
 
 Para comenzar, las dos cosas que necesitará son el compilador de TypeScript y un editor que admita TypeScript.
 
@@ -47,7 +47,7 @@ Dentro de su archivo [`tsconfig.json`](https://www.typescriptlang.org/docs/handb
 
 ### Ejemplo rápido
 
-![Multiplicación](https://i.imgur.com/V5nP3xj.jpg)
+![Multiplicación](https://cdn-media-1.freecodecamp.org/imgr/V5nP3xj.jpg)
 
 En la captura de pantalla anterior, puede ver dos archivos: `multiplication.js` y `multiplication.ts` .
 

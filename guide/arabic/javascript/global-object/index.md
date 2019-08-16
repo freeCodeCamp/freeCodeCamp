@@ -8,13 +8,14 @@ localeTitle: كائن عالمي
 
 فمثلا:
 
- `// global scope 
- var foo = "bar"; 
- 
- console.log(global.foo); // bar (in a Node environment) 
- console.log(window.foo); // bar (in a browser window) 
- console.log(this.foo); // bar (if strict mode is disabled) 
-` 
+```javascript
+// global scope
+var foo = "bar";
+
+console.log(global.foo); // bar (in a Node environment)
+console.log(window.foo); // bar (in a browser window)
+console.log(this.foo); // bar (if strict mode is disabled)
+``` 
 
 من المهم هنا التمييز بين النطاقات المحلية إلى الدوال والنطاق العالمي: فالعنصر العام يحتوي فقط على المتغيرات التي تم الإعلان عنها على النطاق العالمي ، وليس النطاقات المحلية للوظائف.
 

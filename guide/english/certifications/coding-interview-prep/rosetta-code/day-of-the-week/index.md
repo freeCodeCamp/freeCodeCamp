@@ -1,7 +1,7 @@
 ---
 title: Day of the week
 ---
-## Day of the week
+# Day of the week
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/day-of-the-week/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

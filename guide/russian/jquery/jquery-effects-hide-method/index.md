@@ -53,4 +53,4 @@ $(".myclass").slideDown(); //will expand the element with the identifier myclass
 
 #### Дополнительная информация:
 
-Метод JQuery hide () на [официальном сайте](http://api.jquery.com/hide/)
+Метод jQuery hide () на [официальном сайте](http://api.jquery.com/hide/)

@@ -4,9 +4,9 @@ localeTitle: Sistemas de enfriamiento
 ---
 Su computadora contiene muchas partes que generan calor. El calor puede causar fallas prematuras y comportamientos erráticos. Cuanto más overclockee los gráficos o la CPU, más caliente se ejecutará la computadora. Los sistemas de enfriamiento aseguran que su computadora sea estable y usted extienda la vida de su inversión.
 
-## Caso de enfriamiento
+## Enfriamiento de la caja
 
-El enfriamiento de la caja puede ser una combinación de una caja bien ventilada y el uso de ventiladores para hacer circular el aire dentro de la caja. La mayoría de los casos vienen con al menos un ventilador. Esta es la configuración mínima. Para obtener los mejores resultados, debe haber al menos dos ventiladores en el caso. Uno es como una admisión para aspirar aire frío, mientras que el otro es un escape para expulsar aire caliente. Hay muchos tipos diferentes de ventiladores y configuraciones. La administración de cables también juega un papel importante en la refrigeración del sistema. La mala gestión de los cables y los cables enredados interrumpen el flujo de aire y hacen que se acumule polvo dentro de la caja.
+El enfriamiento de la caja puede ser una combinación de una caja bien ventilada y el uso de ventiladores para hacer circular el aire dentro de la caja. La mayoría de las cajas vienen con al menos un ventilador. Esta es la configuración mínima. Para obtener los mejores resultados, debe haber al menos dos ventiladores en la caja. Uno es como una admisión para aspirar aire frío, mientras que el otro es un escape para expulsar aire caliente. Hay muchos tipos diferentes de ventiladores y configuraciones. La administración de cables también juega un papel importante en la refrigeración del sistema. La mala gestión de los cables y los cables enredados interrumpen el flujo de aire y hacen que se acumule polvo dentro de la caja.
 
 ## Componentes de Enfriamiento
 

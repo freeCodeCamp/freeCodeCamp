@@ -1,0 +1,4 @@
+**/.cache
+**/public
+client/static
+fixtures

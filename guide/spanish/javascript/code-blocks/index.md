@@ -4,9 +4,9 @@ localeTitle: Bloque de código
 ---
 ## Introducción
 
-En la programación informática, un **bloque de** **bloque** o código es una sección de código que se agrupa juntos. Los bloques constan de una o más declaraciones y declaraciones. Un lenguaje de programación que permite la creación de bloques, incluidos los bloques anidados dentro de otros bloques, se denomina lenguaje de programación de bloques estructurados. JavaScript es uno de esos lenguajes de programación.
+En la programación informática, un **bloque**  o **bloque de código** es una sección de código agrupada. Los bloques constan de una o más declaraciones o expresiones. Un lenguaje de programación que permite la creación de bloques, incluidos los bloques anidados dentro de otros bloques, se denomina lenguaje de [programación estructurada en bloques](https://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada). JavaScript es uno de esos lenguajes de programación.
 
-Una declaración de **bloque** en JavaScript se utiliza para agrupar cero o más declaraciones. El bloque está delimitado por un par de llaves.
+Una declaración en **bloque** en JavaScript se utiliza para agrupar cero o más declaraciones. El bloque está delimitado por un par de llaves.
 ```
 { 
   statement_1; 

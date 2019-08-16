@@ -30,10 +30,10 @@ Hay diferentes codificaciones aceptadas al crear un Buffer:
 *   utf-8
 *   base64:
 *   latin1
-*   binario
-*   maleficio
+*   binary (binario)
+*   hex (hexadecimal)
 
-Hay tres funciones separadas asignadas en la API de Buffer para usar y crear nuevos buffers. En los ejemplos anteriores hemos visto `alloc()` y `from()` . El tercero es `allocUnsafe()` .
+Hay tres funciones distintas asignadas en la API de Buffer para usar y crear nuevos buffers. En los ejemplos anteriores hemos visto `alloc()` y `from()`. La tercera es `allocUnsafe()` .
 
 ```javascript
 const buf3 = Buffer.allocUnsafe(10); 
@@ -43,7 +43,7 @@ Cuando se devuelve, esta función puede contener datos antiguos que deben sobres
 
 ### Interacciones con Buffer
 
-Hay diferentes interacciones que se pueden hacer con la API de Buffer. Vamos a cubrir la mayoría de ellos aquí. Comencemos con la conversión de un búfer a JSON.
+Hay diferentes interacciones que se pueden hacer con la API de Buffer. Vamos a cubrir la mayoría de ellas aquí. Comencemos con la conversión de un búfer a JSON.
 
 ```javascript
 let bufferOne = Buffer.from('This is a buffer example.'); 
@@ -57,7 +57,7 @@ let bufferOne = Buffer.from('This is a buffer example.');
  // Output: {"type": "Buffer", "data": [84,104,105,115,32,105,115,32,97,32,98,117,102,102,101,114,32,101,120,97,109,112,108,101,46]} 
 ```
 
-El JSON especifica que el tipo de objeto que se transforma es un búfer y sus datos. Convertir un búfer vacío a JSON nos mostrará que no contiene más que ceros.
+El JSON especifica que el tipo de objeto que se transforma es un búfer, y sus datos. Convertir un búfer vacío a JSON nos mostrará que no contiene más que ceros.
 
 ```javascript
 const emptyBuf = Buffer.alloc(10); 

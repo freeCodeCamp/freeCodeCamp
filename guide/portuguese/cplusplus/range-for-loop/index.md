@@ -4,9 +4,9 @@ localeTitle: Faixa para Loop
 ---
 ## Baseado em intervalo para loop
 
-O loop `for` baseado `for` ranged permite um loop fácil em um intervalo de elementos (como elementos em um contêiner).
+O loop `for` baseado em intervalos ou range-based `for` loop, permite um loop fácil em um intervalo de elementos (como elementos em um contêiner).
 
-Com tradicional `for` loop:
+Com o tradicional `for` loop:
 
 ```cpp
 std::vector<std::string> stringList {"one", "two", "three"}; 
@@ -17,7 +17,7 @@ std::vector<std::string> stringList {"one", "two", "three"};
  } 
 ```
 
-Com base `for` intervalo `for` loop:
+Com o loop `for` baseado em intervalos:
 
 ```cpp
 std::vector<std::string> stringList {"one", "two", "three"}; 
