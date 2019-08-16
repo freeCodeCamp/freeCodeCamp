@@ -1,6 +1,6 @@
 ---
 title: Responsive Web Design
-localeTitle: Web design responsivo
+localeTitle: Web Design Responsivo
 ---
 ## Web design responsivo
 
@@ -8,17 +8,17 @@ Web design responsivo é o conceito de criação de páginas da Web que se adapt
 
 Para criar uma página da Web responsiva, o CSS é comumente usado para estilizar seus elementos HTML. Alguns métodos comuns em CSS usados ​​para criar projetos da Web responsivos são:
 
-1.  Escrever [consultas de mídia](https://guide.freecodecamp.org/css/media-queries)
+1.  Escrever [media query](https://guide.freecodecamp.org/css/media-queries)
 2.  Usando [estruturas CSS](https://guide.freecodecamp.org/css/css-frameworks) pré-existentes
 3.  Usando o [modelo Flexbox](https://guide.freecodecamp.org/css/layout/flexbox)
 4.  Usando o [CSS Grid](https://guide.freecodecamp.org/css/layout/grid-layout)
 
 ### 1\. Consultas de mídia
 
-Consultas de mídia informam ao navegador da Web para ignorar ou substituir propriedades da página da Web com base em atributos específicos, como largura da tela ou se o usuário está imprimindo.
+Media queries informam ao navegador Web para ignorar ou substituir propriedades da página Web com base em atributos específicos, como largura da tela ou se o usuário está imprimindo.
 ```
 @media (query) { 
-  /* The browser will use the CSS rules within the curly braces when the query is true */ 
+  /* O navegador vai utilizar as regras CSS entre chaves, sempre que a query for verdadeira */ 
  } 
 ```
 
@@ -34,7 +34,7 @@ O exemplo a seguir define `padding-left` e `padding-right` dentro da classe `mor
 
 ### 2\. Frameworks CSS
 
-Estruturas CSS como [Bootstrap](https://www.getbootstrap.com/) , [Material Design Lite](https://getmdl.io/) e [Foundation](https://foundation.zurb.com/) têm classes CSS pré-construídas que simplificam a codificação de projetos responsivos. Essas classes operam como classes HTML padrão.
+Frameworks CSS como [Bootstrap](https://www.getbootstrap.com/) , [Material Design Lite](https://getmdl.io/) e [Foundation](https://foundation.zurb.com/) têm classes CSS pré-construídas que simplificam a codificação de projetos responsivos. Essas classes operam como classes HTML padrão.
 
 Neste exemplo, `col-md-9` e `col-sm-6` definem a largura da tag `<div>` base em se a tela é pequena ou média.
 
@@ -43,7 +43,7 @@ Neste exemplo, `col-md-9` e `col-sm-6` definem a largura da tag `<div>` base em 
 <div class="col-12 col-md-6"></div> 
 ```
 
-O framework Bootstrap divide uma linha em doze colunas. No exemplo acima, o `<div>` se espalhará em nove ou seis deles. O sistema de grade, mostrado abaixo, é fundamental para como o Bootstrap facilita o design responsivo.
+O framework Bootstrap divide uma linha em doze colunas. No exemplo acima, a `<div>` se espalhará em nove ou seis delas. O sistema de grade, mostrado abaixo, é fundamental para compreender como o Bootstrap facilita o design responsivo.
 
 ![Grid Example](https://www.javatpoint.com/bootstrappages/images/bootstrapgrid.jpg "Exemplo básico de grade")
 
