@@ -10,7 +10,7 @@ localeTitle: Operadores
 *   `-` Subtrai o segundo operando do primeiro `C int a = 8; int b = 9; int c = a - b; // c = -1`
 *   `*` Multiplica dois operandos `C int a = 8; int b = 9; int c = a * b; // c = 72`
 *   `/` Divide o primeiro operando pelo segundo `C int a = 8; int b = 4; int c = a / b; // c = 2`
-*   `%` Dá o restante depois de uma divisão inteira `C int a = 8; int b = 9; int c = b % a; // c = 1 because b = 1*a + 1 = 8 + 1`
+*   `%` Dá o restante depois de uma divisão inteira `C int a = 8; int b = 9; int c = b % a; // c = 1 pois 9 dividido por 8 é igual a 1, mas desta divisão ainda sobram um e é isso que retornamos como resultado 9 =( 1 * 8 + 1) = (8 + 1)`
 *   `++` Aumenta o valor int em um `C int a = 8; a++; // a = 9 int b = a++; // postfix operator; a = 10, b = 9 int c = ++a; // prefix operator; a = 11, c = 11`
 *   `--` Diminui o valor int em um `C int a = 8; a--; // a = 7 int b = a--; // postfix operator; a = 6, b = 7 int c = --a; // prefix operator; a = 5, c = 5` // Programa para demonstrar o funcionamento de operadores aritméticos
 
