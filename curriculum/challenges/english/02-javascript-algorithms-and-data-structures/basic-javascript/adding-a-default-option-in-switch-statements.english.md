@@ -2,14 +2,30 @@
 id: 56533eb9ac21ba0edf2244de
 title: Adding a Default Option in Switch Statements
 challengeType: 1
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/adding-a-default-option-in-switch-statements'
+videoUrl: 'https://scrimba.com/c/c3JvVfg'
+forumTopicId: 16653
 ---
 
 ## Description
 <section id='description'>
 In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.
 A <code>default</code> statement should be the last case.
-<blockquote>switch (num) {<br>&nbsp;&nbsp;case value1:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement1;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case value2:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement2;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;defaultStatement;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote>
+
+```js
+switch (num) {
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+...
+  default:
+    defaultStatement;
+    break;
+}
+```
+
 </section>
 
 ## Instructions
@@ -23,21 +39,21 @@ Write a switch statement to set <code>answer</code> for the following conditions
 ```yml
 tests:
   - text: <code>switchOfStuff("a")</code> should have a value of "apple"
-    testString: assert(switchOfStuff("a") === "apple", '<code>switchOfStuff("a")</code> should have a value of "apple"');
+    testString: assert(switchOfStuff("a") === "apple");
   - text: <code>switchOfStuff("b")</code> should have a value of "bird"
-    testString: assert(switchOfStuff("b") === "bird", '<code>switchOfStuff("b")</code> should have a value of "bird"');
+    testString: assert(switchOfStuff("b") === "bird");
   - text: <code>switchOfStuff("c")</code> should have a value of "cat"
-    testString: assert(switchOfStuff("c") === "cat", '<code>switchOfStuff("c")</code> should have a value of "cat"');
+    testString: assert(switchOfStuff("c") === "cat");
   - text: <code>switchOfStuff("d")</code> should have a value of "stuff"
-    testString: assert(switchOfStuff("d") === "stuff", '<code>switchOfStuff("d")</code> should have a value of "stuff"');
+    testString: assert(switchOfStuff("d") === "stuff");
   - text: <code>switchOfStuff(4)</code> should have a value of "stuff"
-    testString: assert(switchOfStuff(4) === "stuff", '<code>switchOfStuff(4)</code> should have a value of "stuff"');
+    testString: assert(switchOfStuff(4) === "stuff");
   - text: You should not use any <code>if</code> or <code>else</code> statements
-    testString: assert(!/else/g.test(code) || !/if/g.test(code), 'You should not use any <code>if</code> or <code>else</code> statements');
+    testString: assert(!/else/g.test(code) || !/if/g.test(code));
   - text: You should use a <code>default</code> statement
-    testString: assert(switchOfStuff("string-to-trigger-default-case") === "stuff", 'You should use a <code>default</code> statement');
+    testString: assert(switchOfStuff("string-to-trigger-default-case") === "stuff");
   - text: You should have at least 3 <code>break</code> statements
-    testString: assert(code.match(/break/g).length > 2, 'You should have at least 3 <code>break</code> statements');
+    testString: assert(code.match(/break/g).length > 2);
 
 ```
 

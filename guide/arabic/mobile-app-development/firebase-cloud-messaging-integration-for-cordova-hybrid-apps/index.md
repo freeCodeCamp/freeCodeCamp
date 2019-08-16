@@ -12,19 +12,21 @@ localeTitle: Firebase Cloud Messaging Integration for Cordova Hybrid Apps
 
 قم بإنشاء مجلد فارغ pushSample
 
- `cd '/opt/lampp/htdocs' 
- mkdir pushSample 
- cd pushSample 
- cordova create pushSample 
- cd pushSample 
- cordova platform add android 
- cordova plugin add cordova-plugin-FCM 
-` 
+```
+cd '/opt/lampp/htdocs'
+mkdir pushSample
+cd pushSample
+cordova create pushSample
+cd pushSample
+cordova platform add android
+cordova plugin add cordova-plugin-FCM
+``` 
 
 أثناء إضافة المكوّن الإضافي Cordova FCM ، سيظهر خطأ:
 
- `Error: cordova-plugin-fcm: You have installed platform android but file 'google-services.json' was not found in your Cordova project root folder. 
-` 
+```
+Error: cordova-plugin-fcm: You have installed platform android but file 'google-services.json' was not found in your Cordova project root folder.
+``` 
 
 ملاحظة: يرجع ذلك إلى أننا لم نضف ملف google-services.json الذي يجب إنشاؤه في الخطوات التالية.
 
@@ -36,38 +38,40 @@ localeTitle: Firebase Cloud Messaging Integration for Cordova Hybrid Apps
 
 في النموذج المنبثق التالي ، املأ التفاصيل كما يلي: **اسم حزمة Android: اسم** الحزمة أو معرفها هو المعرف الفريد لأحد التطبيقات في متجر Play. لاحظ أنها قيمة مهمة جدًا لا يمكن تغييرها لأحد التطبيقات بمجرد تحميلها إلى متجر Play. سيكون في بناء جملة اسم النطاق العكسي: على سبيل المثال ، سيكون لدى hello.pushSample.com معرف التطبيق: com.pushSample.hello. أيضا في ملف **config.xml** في مشروع كوردوفا الخاص بك تعيين معرف التطبيق نفسه. لمشروع العينة لدينا سيكون في: pushSample / pushSample / config.xml على سبيل المثال بالنسبة لي محتويات هذا الملف هي:
 
- `<?xml version='1.0' encoding='utf-8'?> 
- <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"> 
-    <name>HelloCordova</name> 
-    <description> 
-        A sample Apache Cordova application that responds to the deviceready event. 
-    </description> 
-    <author email="dev@cordova.apache.org" href="http://cordova.io"> 
-        Apache Cordova Team 
-    </author> 
-    <content src="index.html" /> 
-    <plugin name="cordova-plugin-whitelist" spec="1" /> 
-    <access origin="*" /> 
-    <allow-intent href="http://*/*" /> 
-    <allow-intent href="https://*/*" /> 
-    <allow-intent href="tel:*" /> 
-    <allow-intent href="sms:*" /> 
-    <allow-intent href="mailto:*" /> 
-    <allow-intent href="geo:*" /> 
-    <platform name="android"> 
-        <allow-intent href="market:*" /> 
-    </platform> 
-    <platform name="ios"> 
-        <allow-intent href="itms:*" /> 
-        <allow-intent href="itms-apps:*" /> 
-    </platform> 
- </widget> 
-` 
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>HelloCordova</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
+``` 
 
 لاحظ العلامة
 
- `<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"> 
-` 
+```xml
+<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+``` 
 
 هنا هوية السمة هو **معرف** حزمة والتي سوف يكون افتراضيا **io.cordova.hellocordova** تغييره إلى معرف التطبيق الذي قمت بتحديده في وحدة تحكم firebase. سوف أستخدم com.pushSample.hello
 
@@ -87,38 +91,41 @@ localeTitle: Firebase Cloud Messaging Integration for Cordova Hybrid Apps
 
 بمجرد حصولك على الملف ، الصقه في المجلد الجذر لمشروع Cordova الخاص بك ، في حالتي:
 
- `/opt/lampp/htdocs/pushSample/pushSample 
-` 
+```
+/opt/lampp/htdocs/pushSample/pushSample
+``` 
 
 المقبل بناء المشروع
 
- `cordova build android 
-` 
+```
+cordova build android
+``` 
 
 بعد إضافة ملف google-services.json ، يجب أن يتم إنشاؤه بنجاح.
 
 بعد ذلك ، يتعين علينا كتابة رمز جانب العميل للتعامل مع إشعارات الدفع:
 
- `FCMPlugin.getToken(function(token) { 
-    //this is the FCM token which can be used 
-    //to send notification to specific device 
-    console.log(token); 
-    //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) ) 
-    //Here you define your application behaviour based on the notification data. 
-    FCMPlugin.onNotification(function(data) { 
-        console.log(data); 
-        //data.wasTapped == true means in Background :  Notification was received on device tray and tapped by the user. 
-        //data.wasTapped == false means in foreground :  Notification was received in foreground. Maybe the user needs to be notified. 
-        // if (data.wasTapped) { 
-        //     //Notification was received on device tray and tapped by the user. 
-        //     alert(JSON.stringify(data)); 
-        // } else { 
-        //     //Notification was received in foreground. Maybe the user needs to be notified. 
-        //     alert(JSON.stringify(data)); 
-        // } 
-    }); 
- }); 
-` 
+```js
+FCMPlugin.getToken(function(token) {
+    //this is the FCM token which can be used
+    //to send notification to specific device
+    console.log(token);
+    //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
+    //Here you define your application behaviour based on the notification data.
+    FCMPlugin.onNotification(function(data) {
+        console.log(data);
+        //data.wasTapped == true means in Background :  Notification was received on device tray and tapped by the user.
+        //data.wasTapped == false means in foreground :  Notification was received in foreground. Maybe the user needs to be notified.
+        // if (data.wasTapped) {
+        //     //Notification was received on device tray and tapped by the user.
+        //     alert(JSON.stringify(data));
+        // } else {
+        //     //Notification was received in foreground. Maybe the user needs to be notified.
+        //     alert(JSON.stringify(data));
+        // }
+    });
+});
+``` 
 
 يقوم الرمز أولاً باستدعاء الدالة **getToken** للحصول على رمز FCM المميز من firebase ، ثم في معاودة الاتصال يقوم بتسجيل رد **اتصال** آخر على **Notification** لمعالجة ما يحدث عند تلقي إعلام الدفع.
 
@@ -138,8 +145,9 @@ localeTitle: Firebase Cloud Messaging Integration for Cordova Hybrid Apps
 
 سيظهر كائن البيانات في رد الاتصال onNotification على النحو التالي
 
- `{myKey2: "valuefor2", myKey: "valuefor1", wasTapped: false} 
-` 
+```js
+{myKey2: "valuefor2", myKey: "valuefor1", wasTapped: false}
+``` 
 
 لاحظ أيضًا أنه عند إرسال إشعارات الدفع باستخدام واجهات برمجة تطبيقات REST من خادم تطبيقاتك بدلاً من ملحن إخطار Firebase ، يجب عليك استخدام البنية التالية:
 
@@ -209,58 +217,68 @@ localeTitle: Firebase Cloud Messaging Integration for Cordova Hybrid Apps
 
 هنا ، كما ناقشنا سابقًا ، قم بتحميل مفتاح APNs Auth الذي أنشأته في مركز عضو Apple. بعد ذلك نقوم بإعداد تطبيق جانب العميل. إنشاء مجلد جديد sampleApp في مجلد التطوير الخاص بك ، بالنسبة لي هو
 
- `/Volumes/Development/ 
-` 
+```
+/Volumes/Development/
+``` 
 
 لذلك سيكون المجلد الجديد
 
- `/Volumes/Development/pushSample 
- cd /Volumes/Development/pushSample 
-` 
+```
+/Volumes/Development/pushSample
+cd /Volumes/Development/pushSample
+``` 
 
 إنشاء مشروع جديد Cordova ، **ملاحظة: استخدم sudo إذا لزم الأمر**
 
- `cordova create pushSample 
- cd pushSample 
-` 
+```
+cordova create pushSample
+cd pushSample
+``` 
 
 أضف الآن أحدث نظام iOS
 
- `sudo cordova platform add ios 
-` 
+```
+sudo cordova platform add ios
+``` 
 
 الآن قم بلصق ملف **Googleservice-info.plist** الذي تم تنزيله مسبقًا في المجلد الجذر لمشروع Cordova ، وهو كذلك
 
- `/Volumes/Development/pushSample/pushSample 
-` 
+```
+/Volumes/Development/pushSample/pushSample
+``` 
 
 إضافة البرنامج المساعد Cordova FCM.
 
- `cordova plugin add cordova-plugin-fcm 
-` 
+```
+cordova plugin add cordova-plugin-fcm
+``` 
 
 حدِّث معرف التطبيق الافتراضي واسم التطبيق بمعرف الحزمة الذي قررناه سابقًا أثناء تهيئة وحدة التحكم في Firebase واسم التطبيق.
 
- `<widget id="com.pushSample.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0"> 
-    <name>PushSample</name> 
-` 
+```xml
+<widget id="com.pushSample.hello" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>PushSample</name>
+``` 
 
 في هذه المرحلة ، سيحتوي نموذج التعليمة البرمجية على ملف app.js ، والذي يمكنك تعديله وإضافة وظائف getToken و onNotification مثل android. شفرة javascript هي نفسها لكلا المنصتين.
 
 التالي تشغيل الأمر بناء cordova
 
- `sudo cordova build ios 
-` 
+```
+sudo cordova build ios
+``` 
 
 بمجرد نجاح أمر بناء cordova ، افتح التطبيق في xcode. للقيام بذلك ، افتح الملف xcode.proj الذي سيكون موجودًا في
 
- `your_cordova_project/platforms/ios/app_name.xcodeproj 
-` 
+```
+your_cordova_project/platforms/ios/app_name.xcodeproj
+``` 
 
 بالنسبة لي هو
 
- `/Volumes/Development/pushSample/pushSample/platforms/ios/PushSample.xcodeproj 
-` 
+```
+/Volumes/Development/pushSample/pushSample/platforms/ios/PushSample.xcodeproj
+``` 
 
 ![مشروع Xcode](https://preview.ibb.co/hePLOa/1_Xe_Kh4_VXU_o_BQ05_UGRa_B6_A.png)
 

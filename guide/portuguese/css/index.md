@@ -4,7 +4,7 @@ localeTitle: Folhas de Estilo em Cascata (CSS)
 ---
 ### Folhas de Estilo em Cascata (CSS)
 
-CSS é um acrônimo para Cascading Style Sheets. Foi inventado pela primeira vez em 1996 e agora é uma característica padrão de todos os principais navegadores da web.
+CSS é um acrônimo para Cascading Style Sheets. Foi inventado pela primeira vez em 1996 por Håkon Wium Lie e Bert Bos, e agora é uma característica padrão de todos os principais navegadores da web.
 
 O CSS permite que os desenvolvedores controlem como as páginas da Web parecem "estilizando" a estrutura HTML dessa página.
 

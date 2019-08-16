@@ -2,6 +2,7 @@
 id: 5900f3cc1000cf542c50fedf
 challengeType: 5
 title: 'Problem 96: Su Doku'
+forumTopicId: 302213
 ---
 
 ## Description
@@ -48,7 +49,7 @@ By solving all fifty puzzles find the sum of the 3-digit numbers found in the to
 ```yml
 tests:
   - text: <code>euler96()</code> should return 24702.
-    testString: assert.strictEqual(euler96(), 24702, '<code>euler96()</code> should return 24702.');
+    testString: assert.strictEqual(euler96(), 24702);
 
 ```
 
@@ -80,4 +81,5 @@ euler96();
 ```js
 // solution required
 ```
+
 </section>

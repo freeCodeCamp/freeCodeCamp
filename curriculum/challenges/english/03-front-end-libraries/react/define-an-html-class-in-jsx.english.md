@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036160
 title: Define an HTML Class in JSX
 challengeType: 6
 isRequired: false
+forumTopicId: 301393
 ---
 
 ## Description
@@ -24,9 +25,9 @@ Apply a class of <code>myDiv</code> to the <code>div</code> provided in the JSX 
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: assert.strictEqual(JSX.type, 'div', 'The constant <code>JSX</code> should return a <code>div</code> element.');
+    testString: assert.strictEqual(JSX.type, 'div');
   - text: The <code>div</code> has a class of <code>myDiv</code>.
-    testString: assert.strictEqual(JSX.props.className, 'myDiv', 'The <code>div</code> has a class of <code>myDiv</code>.');
+    testString: assert.strictEqual(JSX.props.className, 'myDiv');
 
 ```
 

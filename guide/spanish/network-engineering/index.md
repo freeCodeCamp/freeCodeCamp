@@ -19,3 +19,6 @@ Los ingenieros de redes son responsables de implementar, mantener, respaldar, de
 Su objetivo es garantizar la integridad de la infraestructura de red de alta disponibilidad para proporcionar el máximo rendimiento a sus usuarios. Los usuarios pueden ser personal, clientes, clientes y proveedores. Las redes pueden incluir:
 
 computadora; voz; cortafuegos. Los ingenieros de redes pueden trabajar internamente como parte del equipo de soporte de TI de una organización, o externamente como parte de una firma de consultoría de redes de TI subcontratada que trabaja con varios clientes.
+
+Uno de los enfoques mas significativos estan en el area de las redes inalambricas donde, no solo se debe tener en cuenta la confidencialidad de los datos, sino tambien tratar de igualar las velocidades que las redes cableadas ofrecen.
+Las redes inalambricas representan cada vez una mayor parte de las redes, ya que los dispositivos mobiles, gadgets y demas, hacen uso de esta tecnologia para lograr la coneccion, haciendo necesario que las redes inalabricas ofrezcan robustes, confiabilidad y escalabilidad. 

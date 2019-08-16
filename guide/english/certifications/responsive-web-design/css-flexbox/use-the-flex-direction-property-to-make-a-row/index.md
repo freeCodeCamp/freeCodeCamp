@@ -1,7 +1,13 @@
 ---
 title: Use the flex-direction Property to Make a Row
 ---
-## Use the flex-direction Property to Make a Row
+# Use the flex-direction Property to Make a Row
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 Once you have a flex container by adding <i>display: flex;</i> to the parent container, you can specify if you want the children to be stacked in a row by adding the following:
 ```css
@@ -12,3 +18,4 @@ Once you have a flex container by adding <i>display: flex;</i> to the parent con
   }
 ```
 You will notice how the colors switch positions as the default direction of flex containers are rows as you might have noticed from the <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/responsive-web-design/css-flexbox/add-flex-superpowers-to-the-tweet-embed/index.md' target='_blank' rel='nofollow'>tweet example</a>.
+</details>

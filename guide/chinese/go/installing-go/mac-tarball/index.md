@@ -25,7 +25,7 @@ $ curl -O https://storage.googleapis.com/golang/go1.9.1.darwin-amd64.tar.gz
 
 要检查go是否已成功安装，请使用：
 
-```sh
+```shell
 $ go version 
 ```
 

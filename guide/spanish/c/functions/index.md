@@ -104,7 +104,8 @@ Es posible que haya observado un problema similar con cosas como las declaracion
 
 Idealmente, siempre pasará a sus funciones como parámetros, pero es posible que no siempre pueda hacerlo. Escoger la mejor solución es tu trabajo como programador.
 
-Recursion en c Cuando se llama a la función dentro de la misma función, se conoce como recursión en C. La función que llama a la misma función, se conoce como función recursiva.
+## Recursion en C
+Cuando se llama a la función dentro de la misma función, se conoce como recursión en C. La función que llama a la misma función, se conoce como función recursiva.
 ```
 int factorial (int n) 
  { 

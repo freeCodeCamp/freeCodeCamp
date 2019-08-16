@@ -2,6 +2,7 @@
 id: 5900f4111000cf542c50ff24
 challengeType: 5
 title: 'Problem 165: Intersections'
+forumTopicId: 301799
 ---
 
 ## Description
@@ -37,7 +38,7 @@ How many distinct true intersection points are found among the 5000 line segment
 ```yml
 tests:
   - text: <code>euler165()</code> should return 2868868.
-    testString: assert.strictEqual(euler165(), 2868868, '<code>euler165()</code> should return 2868868.');
+    testString: assert.strictEqual(euler165(), 2868868);
 
 ```
 
@@ -69,4 +70,5 @@ euler165();
 ```js
 // solution required
 ```
+
 </section>

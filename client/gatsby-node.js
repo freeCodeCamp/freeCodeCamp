@@ -7,12 +7,10 @@ const { blockNameify } = require('./utils/blockNameify');
 const {
   createChallengePages,
   createBlockIntroPages,
-  createSuperBlockIntroPages,
-  createGuideArticlePages
+  createSuperBlockIntroPages
 } = require('./utils/gatsby');
 
 const createByIdentityMap = {
-  guideMarkdown: createGuideArticlePages,
   blockIntroMarkdown: createBlockIntroPages,
   superBlockIntroMarkdown: createSuperBlockIntroPages
 };
@@ -30,9 +28,13 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 
   if (node.internal.type === 'MarkdownRemark') {
-    let slug = createFilePath({ node, getNode });
+    const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
+      const {
+        frontmatter: { component = '' }
+      } = node;
       createNodeField({ node, name: 'slug', value: slug });
+      createNodeField({ node, name: 'component', value: component });
     }
   }
 };
@@ -74,6 +76,7 @@ exports.createPages = function createPages({ graphql, actions }) {
                 fields {
                   slug
                   nodeIdentity
+                  component
                 }
                 frontmatter {
                   block
@@ -132,7 +135,6 @@ exports.createPages = function createPages({ graphql, actions }) {
   });
 };
 
-const RmServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
@@ -143,8 +145,8 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
           /* eslint-disable max-len */
           exclude: modulePath => {
             return (
-              (/node_modules/).test(modulePath) &&
-              !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
+              /node_modules/.test(modulePath) &&
+              !/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/.test(
                 modulePath
               )
             );
@@ -161,9 +163,11 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         HOME_PATH: JSON.stringify(
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
-      }),
-      new RmServiceWorkerPlugin()
+        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
+        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
+        ENVIRONMENT: JSON.stringify(process.env.NODE_ENV || 'development'),
+        PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
+      })
     ]
   });
   if (stage !== 'build-html') {

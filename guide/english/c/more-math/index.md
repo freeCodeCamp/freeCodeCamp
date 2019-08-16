@@ -25,7 +25,15 @@ There are a lot of situations where you want to take a number and either go up o
 3: a--;
 4: --a;
 ```
-Both the examples at 1 and 2 will increase the value of a by one. Both of the examples at 3 and 4 will decrease the value of a by one. However, 1 does not do quite the same thing as 2, and 3 does not do quite the same thing as 4. Pre-fix operators are called this because the operation is a prefix (2 and 4 are our prefix operators). This acts slightly differently from our post-fix operators at 1 and 3. Pre-fix operators perform the operation, then return the value. Post-fix operators return the value, then perform the incrementation.
+Both the examples at 1 and 2 will increase the value of a by one. Both of the examples at 3 and 4 will decrease the value of a by one. However, 1 does not do quite the same thing as 2, and 3 does not do quite the same thing as 4. Pre-fix operators are called this because the operation is a prefix (2 and 4 are our prefix operators). This acts slightly differently from our post-fix operators at 1 and 3. Pre-fix operators perform the operation, then return the value. Post-fix operators return the value, then perform the incrementation. You can see the effects of this difference here:
+
+```C
+int a = 1; 
+int b = ++a; // b = 2, a = 2
+
+int c = 1;
+int d = c++; //c = 2, d = 1 
+```
 
 ### Unary plus and minus
 In the normal math you're used to, you use a '-' in front of a number or variable, and that makes the number or variable negative. If the number or variable is already negative, it becomes positive.
@@ -42,14 +50,38 @@ Because C is low level as mentioned before, you have access to the individual bi
 ### AND
 `c = a & b;` will perform a bitwise AND. This means that if the first bit of `a` and the first bit of `b` are both 1, the first bit of c will be 1, and 0 otherwise. If the second bit of `a` and `b` are both 1, the second bit of c will be 1, and 0 otherwise. This goes on until all bits have been and'd.
 
+Example:
+
+| Bit   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|:-----:|---|---|---|---|---|---|---|---|
+| a     | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 0 |
+| b     | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 1 |
+| a & b | 1 | 0 | 0 | 1 | 0 | 0 | 1 | 0 |
+
 ### OR
 `c = a | b;` will perform a bitwise OR. The first bit of `c` is 1 if the first bit in either `a` or `b` is 1, the second bit is 1 if the second bit in either `a` or `b` is 1, and so on.
+
+Example:
+
+| Bit    | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|:------:|---|---|---|---|---|---|---|---|
+| a      | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 0 |
+| b      | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 1 |
+| a \| b | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
 
 ### NOT
 `b = ~a;` will set `b` to the one's complement of `a`, meaning that any 1 becomes a 0 and any 0 becomes a 1.
 
 ### XOR
 `c = a ^ b;` will perform a bitwise XOR. This is an exclusive or, meaning that the first bit of `c` is 1 if either `a` or `b` is 1, but not both. The second bit is 1 if either is 1 but not both, and so on.
+
+Example:
+
+| Bit   | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+|:-----:|---|---|---|---|---|---|---|---|
+| a     | 1 | 0 | 1 | 1 | 0 | 0 | 1 | 0 |
+| b     | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 1 |
+| a ^ b | 0 | 1 | 1 | 0 | 0 | 1 | 0 | 1 |
 
 ### Shift
 A bitwise shift will take the bits and move them to some number of places to the left or right. For example, say we have a set of bits: `101110`. C performs an arithmetic shift when bit shifting. Let's use a table to make that more clear:
@@ -82,7 +114,7 @@ This will shift `a` to the left by `b` bits, and set that result equal to `c`.
 
 This example will shift `a` to the right by `b` bits, and set that result equal to `c`.
 ```C
-c = a >> c;
+c = a >> b;
 
 ```
 

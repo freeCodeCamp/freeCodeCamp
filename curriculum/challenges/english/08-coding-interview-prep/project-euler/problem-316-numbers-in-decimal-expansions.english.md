@@ -2,6 +2,7 @@
 id: 5900f4a81000cf542c50ffbb
 challengeType: 5
 title: 'Problem 316: Numbers in decimal expansions'
+forumTopicId: 301972
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Note:  represents the floor function.
 ```yml
 tests:
   - text: <code>euler316()</code> should return 542934735751917760.
-    testString: assert.strictEqual(euler316(), 542934735751917760, '<code>euler316()</code> should return 542934735751917760.');
+    testString: assert.strictEqual(euler316(), 542934735751917760);
 
 ```
 
@@ -66,4 +67,5 @@ euler316();
 ```js
 // solution required
 ```
+
 </section>

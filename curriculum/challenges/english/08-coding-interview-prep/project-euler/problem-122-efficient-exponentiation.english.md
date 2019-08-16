@@ -2,6 +2,7 @@
 id: 5900f3e61000cf542c50fef9
 challengeType: 5
 title: 'Problem 122: Efficient exponentiation'
+forumTopicId: 301749
 ---
 
 ## Description
@@ -27,7 +28,7 @@ For 1 ≤ k ≤ 200, find ∑ m(k).
 ```yml
 tests:
   - text: <code>euler122()</code> should return 1582.
-    testString: assert.strictEqual(euler122(), 1582, '<code>euler122()</code> should return 1582.');
+    testString: assert.strictEqual(euler122(), 1582);
 
 ```
 
@@ -59,4 +60,5 @@ euler122();
 ```js
 // solution required
 ```
+
 </section>

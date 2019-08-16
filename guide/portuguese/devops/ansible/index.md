@@ -4,7 +4,7 @@ localeTitle: Ansible
 ---
 ## Ansible
 
-Ansible é um simples de usar ferramenta de automação. O Ansible pode ser usado para automatizar implementações, atualizações, segurança, gerenciamento de sistemas, provisionamento de contêineres e muito mais. Os arquivos de configuração são fáceis de gerenciar arquivos YAML escritos em inglês simples. A instalação é simples e devido ao seu formato Master-Push, não há agentes necessários em máquinas remotas. Comunicações com máquinas remotas são via SSH.
+Ansible é uma ferramenta de automação simples de se utilizar. O Ansible pode ser usado para automatizar implementações, atualizações, segurança, gerenciamento de sistemas, provisionamento de contêineres e muito mais. Os arquivos de configuração são fáceis de gerenciar arquivos YAML escritos em inglês simples. A instalação é simples e devido ao seu formato Master-Push, não há agentes necessários em máquinas remotas. Comunicações com máquinas remotas são via SSH.
 
 ### Instalação no Ubuntu Servers 14.04 ou mais recente
 

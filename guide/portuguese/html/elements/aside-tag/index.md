@@ -1,11 +1,30 @@
 ---
 title: Aside Tag
-localeTitle: Além de Tag
+localeTitle: Além de Tag 
 ---
-## Além de Tag
 
-Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/aside-tag/index.md) .
+A tag ```<aside>``` faz parte dos elementos de HTML5. Esta serve para definir conteúdo à parte do conteúdo principal.
+O conteúdo desta tag deve fazer sentido com o resto do conteúdo circundante.
 
-[Este guia de estilo rápido ajudará a garantir que sua solicitação de recebimento seja aceita](https://github.com/freecodecamp/guides/blob/master/README.md) .
+Uma forma de utilizar esta tag pode ser como um painel lateral de um artigo.
+
+A estrutura pode ser a seguinte:
+
+```
+<DOCTYPE html>
+<html>
+  <head>
+  </head>
+  
+  <body>
+    <article>
+    </article>
+    
+    <aside>
+    </aside>
+  </body>
+</html>
+```
+
 
 #### Mais Informações:

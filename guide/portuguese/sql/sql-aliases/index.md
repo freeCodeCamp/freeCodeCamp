@@ -12,7 +12,7 @@ Você pode usar o AS para atribuir um nome a uma coluna de dados que você está
 SELECT user_only_num1 AS AgeOfServer, (user_only_num1 - warranty_period) AS NonWarrantyPeriod FROM server_table 
 ```
 
-Isso resulta na saída como abaixo.
+Isso resulta na saída como abaixo, note que o nome da coluna esta especificado conforme o ALIAS depois do AS na query acima.
 
 ```text
 +-------------+------------------------+ 
@@ -30,7 +30,7 @@ Isso resulta na saída como abaixo.
  +-------------+------------------------+ 
 ```
 
-Você também pode usar o AS para atribuir um nome a uma tabela para facilitar a referência nas junções.
+Você também pode usar o AS para atribuir um nome a uma tabela para facilitar a referência nas junções. 
 
 ```sql
 SELECT ord.product, ord.ord_number, ord.price, cust.cust_name, cust.cust_number FROM customer_table AS cust 
