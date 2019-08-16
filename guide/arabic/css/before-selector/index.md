@@ -8,25 +8,26 @@ localeTitle: قبل المختار
 
 لنلق نظرة على بعض الأمثلة:
 
- `p::before { 
-    content: ""; 
-    border: solid 5px #ccc 
- } 
- 
- span.comment::before{ 
-  content: "Comment: "; 
-  color: blue; 
- } 
-` 
+```css
+p::before {
+    content: "";
+    border: solid 5px #ccc
+}
 
- `
-<p> To infinity and beyond</p> 
- <p> I am buz lightyear, I come in peace.</p> 
- 
- <span class="comment"> May the force be with you</span> 
- <br/> 
- <span> Do. Or do not. There is no try</span> 
-` 
+span.comment::before{
+  content: "Comment: ";
+  color: blue;
+}
+``` 
+
+```html
+<p> To infinity and beyond</p>
+<p> I am buz lightyear, I come in peace.</p>
+
+<span class="comment"> May the force be with you</span>
+<br/>
+<span> Do. Or do not. There is no try</span>
+``` 
 
 في المثال أعلاه ، سنقوم بترقيم حدود رمادية قبل كل عنصر فقرة في الصفحة ، ونحن نقوم أيضًا بإضافة كلمة "تعليق" باللون الأزرق قبل كل عنصر في الامتداد مع تعليق الفصل.
 
@@ -41,9 +42,9 @@ localeTitle: قبل المختار
    } 
 ` 
 
- `
-<p>world!!</p> 
-` 
+```html
+<p>world!!</p>
+``` 
 
 هذا سيظهر `Hello world!!` في الصفحة.
 

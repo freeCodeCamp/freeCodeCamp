@@ -1,7 +1,7 @@
 ---
 title: Send and Display Chat Messages
 ---
-## Send and Display Chat Messages
+# Send and Display Chat Messages
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/send-and-display-chat-messages/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

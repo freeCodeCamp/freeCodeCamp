@@ -3,14 +3,13 @@ title: Power BI
 localeTitle: Potencia BI
 ---
 # Power BI:
-
-Power BI es un producto disponible comercialmente por Microsoft para proporcionar información y visualizaciones de datos para los datos curiosos.
+[Power BI](https://powerbi.microsoft.com/es-es/) es un producto disponible comercialmente por [Microsoft](https://www.microsoft.com/es-es/) para proporcionar información y visualizaciones de datos para los datos curiosos.
 
 ## Características principales:
 
 Power BI tiene muchas características para la ingesta de datos, análisis y consumo:
 
-*   Paquetes de contenido de datos para traer datos de muchas fuentes, incluyendo GitHub, Facebook, AWS, Azure y la mayoría de las bases de datos SQL
+*   Paquetes de contenido de datos para traer datos de muchas fuentes, incluyendo GitHub, Facebook, AWS, [Azure](https://azure.microsoft.com/es-es/) y la mayoría de las bases de datos SQL
 *   Herramientas intuitivas de modelado y transformación de datos que pueden automatizarse para tablas de estructura o contenido similares
 *   Gráficos y gráficos de stock (incluida la fuerza dirigida) para el informe de arrastrar y soltar y la creación de paneles de control
 *   Consola R para análisis estadístico avanzado

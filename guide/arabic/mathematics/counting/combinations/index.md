@@ -22,10 +22,11 @@ localeTitle: تركيبات
 
 تعد التوليفات مفيدة جدًا عندما تريد حل المشكلات التجميعية مثل المشاكل التالية:
 
- `Compute the probability to obtain a poker from 
- a standard fifty-two card deck drawing 5 cards 
- at the same time 
-` 
+```
+Compute the probability to obtain a poker from
+a standard fifty-two card deck drawing 5 cards
+at the same time
+``` 
 
 من أجل حل هذه المشكلة البسيطة ، تحتاج إلى حساب عدد 5 أيدي بطاقة ممكن باستخدام مجموعات:
 

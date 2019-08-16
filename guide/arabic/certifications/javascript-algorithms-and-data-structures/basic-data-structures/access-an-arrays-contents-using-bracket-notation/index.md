@@ -8,5 +8,6 @@ localeTitle: الوصول إلى محتويات صفيف باستخدام تدر
 
 ## حل
 
- `myArray[1] = "anything we want"; 
-`
+```javascript
+myArray[1] = "anything we want";
+```

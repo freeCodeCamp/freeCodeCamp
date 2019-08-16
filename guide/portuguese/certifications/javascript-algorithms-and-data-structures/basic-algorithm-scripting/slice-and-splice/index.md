@@ -52,8 +52,7 @@ function frankenSplice(arr1, arr2, n) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Nosso objetivo é pegar todos os elementos de `arr1` e inseri-los em `arr2` começando com a posição de índice `n` . Ao mesmo tempo, devemos assegurar que nem `arr` ou `arr2` foram transformados.

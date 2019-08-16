@@ -2,6 +2,8 @@
 id: 56bbb991ad1ed5201cd392cc
 title: Manipulate Arrays With pop()
 challengeType: 1
+videoUrl: 'https://scrimba.com/c/cRbVZAB'
+forumTopicId: 18236
 ---
 
 ## Description
@@ -9,7 +11,14 @@ challengeType: 1
 Another way to change the data in an array is with the <code>.pop()</code> function.
 <code>.pop()</code> is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable. In other words, <code>.pop()</code> removes the last element from an array and returns that element.
 Any type of entry can be "popped" off of an array - numbers, strings, even nested arrays.
-<blockquote><code>var threeArr = [1, 4, 6];<br> var oneDown = threeArr.pop();<br> console.log(oneDown); // Returns 6<br> console.log(threeArr); // Returns [1, 4]</code></blockquote>
+
+```js
+var threeArr = [1, 4, 6];
+var oneDown = threeArr.pop();
+console.log(oneDown); // Returns 6
+console.log(threeArr); // Returns [1, 4]
+```
+
 </section>
 
 ## Instructions
@@ -23,11 +32,11 @@ Use the <code>.pop()</code> function to remove the last item from <code>myArray<
 ```yml
 tests:
   - text: <code>myArray</code> should only contain <code>[["John", 23]]</code>.
-    testString: assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray), '<code>myArray</code> should only contain <code>[["John", 23]]</code>.');
+    testString: assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray));
   - text: Use <code>pop()</code> on <code>myArray</code>
-    testString: assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code), 'Use <code>pop()</code> on <code>myArray</code>');
+    testString: assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
   - text: <code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.
-    testString: assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), '<code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.');
+    testString: assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray));
 
 ```
 

@@ -1,6 +1,6 @@
 ---
-title: Use Github Static Pages to Host Your Front End Projects
-localeTitle: Use las páginas estáticas de Github para hospedar sus proyectos front-end
+title: Use GitHub Static Pages to Host Your Front End Projects
+localeTitle: Use las páginas estáticas de GitHub para hospedar sus proyectos front-end
 ---
 **Beneficios**
 
@@ -13,11 +13,11 @@ Me encanta Codepen.io, es una herramienta maravillosa y fácil de usar para la s
 *   Versiones de Git
 *   Mejora de la experiencia inmobiliaria en pantalla.
 
-## Git a Github
+## Git a GitHub
 
-Ya que estoy guardando localmente, y usando git para el control de versiones, pensé que también podría subir a Github. Además, Github tiene un servicio fantástico y gratuito para proyectos front-end llamado [Github Pages](https://pages.github.com/) . Solo actualiza tu repositorio y tus cambios están en vivo.
+Ya que estoy guardando localmente, y usando git para el control de versiones, pensé que también podría subir a GitHub. Además, GitHub tiene un servicio fantástico y gratuito para proyectos front-end llamado [GitHub Pages](https://pages.github.com/) . Solo actualiza tu repositorio y tus cambios están en vivo.
 
-El funcionamiento es simple. Github comprueba si su repositorio tiene una rama llamada `gh-pages` y sirve cualquier código que se encuentre en esa rama. Aquí no hay cosas de back-end, pero HTML, CSS y JS funcionan como un encanto.
+El funcionamiento es simple. GitHub comprueba si su repositorio tiene una rama llamada `gh-pages` y sirve cualquier código que se encuentre en esa rama. Aquí no hay cosas de back-end, pero HTML, CSS y JS funcionan como un encanto.
 
 ## Lo primero es lo primero
 
@@ -40,7 +40,7 @@ Crea algunos archivos en tu directorio campNews. No sé, tal vez un index.html y
 
 ## La clave de todo esto.
 
-OK, hasta ahora seguimos siendo locales. Hay algunas cosas que debemos hacer para tomar nuestro trabajo y trasladarlo a Github. Es en este punto que me gusta cambiar de ramas. Recuerde: github solo sirve desde páginas gh, y si ha seguido hasta ahora, su rama se llama 'maestro'. Vamos a hacer una nueva rama (local) de gh-pages.
+OK, hasta ahora seguimos siendo locales. Hay algunas cosas que debemos hacer para tomar nuestro trabajo y trasladarlo a GitHub. Es en este punto que me gusta cambiar de ramas. Recuerde: github solo sirve desde páginas gh, y si ha seguido hasta ahora, su rama se llama 'maestro'. Vamos a hacer una nueva rama (local) de gh-pages.
 
 `git checkout -b gh-pages` lo creará, copiará todo el trabajo de master a gh-pages y me cambiará a la rama. Uf.
 

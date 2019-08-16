@@ -6,16 +6,20 @@ localeTitle: المجمعين
 
 ### برمجة
 
-في قلبها ، جهاز الكمبيوتر المجردة (المعروف أيضا باسم جهاز كمبيوتر مخزن) ليس سوى آلة تعرف كيفية قراءة الخطوات المكتوبة في مجموعة تعليمات ثابتة وتنفيذها. إن مجموعة الإرشادات التي يفهمها الكمبيوتر خاصة به. هذا هو المعروف باسم لغة الآلة ( **opcodes** ). غالبًا ما تتم الإشارة إلى لغة الماكينة باسم "الرمز الثنائي".
+جهاز *الكمبيوتر المجردة* (المعروف أيضا باسم جهاز *كمبيوتر مخزن*) ليس الا مجرد آلة تعرف كيفية قراءة الخطوات المكتوبة في مجموعة تعليمات ثابتة و بالتالي تعرف طريقة تنفيذها. إن مجموعة الإرشادات التي يفهمها الكمبيوتر خاصة به. هذا هو المعروف باسم لغة الآلة  
+غالبًا ما تتم الإشارة إلى لغة الماكينة باسم الرمز الثنائي 
 
-يتفاعل البشر مع أجهزة الكمبيوتر باستخدام **البرامج** . البرنامج هو ببساطة سلسلة من رموز التشغيل المتوفرة للكمبيوتر بالإضافة إلى البيانات الضرورية لتنفيذ رموز التشغيل.
+يتفاعل البشر مع أجهزة الكمبيوتر باستخدام **البرامج**  
 
-فمثلا،
+البرنامج هو ببساطة سلسلة من رموز التشغيل المتوفرة للكمبيوتر بالإضافة إلى البيانات الضرورية لتنفيذ رموز التشغيل
 
- `ADD 10, 20  // ADD is the Opcode 
-            // and 10, 20 are the two operands(data) 
-            // needed for the ADD instruction to be executed successfully 
-` 
+فمثلا
+
+ ```
+ ADD 10, 20  // "Opcode" هو ال ADD 
+             // 10,20: هم البيانات 
+            // بنجاح ADD البيانات لازمة ليتم تنفيذ   
+``` 
 
 يطور البشر برامج لحل المشكلات المعقدة. بالنظر إلى كيفية عمل رموز التشغيل البسيطة ، إذا حاولنا تطوير برامج باستخدام opcodes وحده ، فسيكون ذلك مرهقًا للغاية ويصعب تصحيحه. لحل هذه المشكلة ، تم تطوير لغات عالية المستوى مثل C / C ++ و Python و Java و Javascript وغيرها.
 
@@ -41,15 +45,17 @@ localeTitle: المجمعين
 
 يأخذ _Lexical Analysis_ الشفرة الأولية وينقسمها إلى هذه الأشياء التي يطلق عليها الرموز المميزة بشيء يسمى tokenizer (أو lexer).
 
- `Tokens are an array of tiny little objects that describe an isolated piece of the syntax. 
- They could be numbers, labels, punctuation, operators, etc. 
-` 
+```
+Tokens are an array of tiny little objects that describe an isolated piece of the syntax.
+They could be numbers, labels, punctuation, operators, etc.
+``` 
 
 يأخذ _التحليل النحوي_ الرموز المميزة ويعيد تنسيقها إلى تمثيل يصف كل جزء من البنية وعلاقتهم مع بعضهم البعض. يُعرف هذا بالتمثيل الوسيط أو شجرة الجملة المجردة.
 
- `An Abstract Syntax Tree, or AST for short, is a deeply nested object. 
- It represents code in a way that is both easy to work with and tells us a lot of information. 
-` 
+```
+An Abstract Syntax Tree, or AST for short, is a deeply nested object.
+It represents code in a way that is both easy to work with and tells us a lot of information.
+``` 
 
 #### تحويل
 

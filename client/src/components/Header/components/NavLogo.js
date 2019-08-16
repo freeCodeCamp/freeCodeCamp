@@ -1,28 +1,19 @@
 import React from 'react';
-import Media from 'react-media';
 
 const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
 const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';
 
 function NavLogo() {
   return (
-    <Media query='(min-width: 735px)'>
-      {matches =>
-        matches ? (
-          <img
-            alt='learn to code at freeCodeCamp logo'
-            className='nav-logo logo'
-            src={fCClogo}
-          />
-        ) : (
-          <img
-            alt='learn to code at freeCodeCamp logo'
-            className='nav-logo logo'
-            src={fCCglyph}
-          />
-        )
-      }
-    </Media>
+    <picture>
+      <source media='(max-width: 734px)' srcSet={fCCglyph} />
+      <source media='(min-width: 735px)' srcSet={fCClogo} />
+      <img
+        alt='learn to code at freeCodeCamp logo'
+        className='nav-logo'
+        src={fCCglyph}
+      />
+    </picture>
   );
 }
 

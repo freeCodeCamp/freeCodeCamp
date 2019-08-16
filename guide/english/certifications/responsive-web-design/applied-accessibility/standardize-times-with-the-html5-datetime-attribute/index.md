@@ -1,7 +1,7 @@
 ---
 title: Standardize Times with the HTML5 datetime Attribute
 ---
-## Standardize Times with the HTML5 datetime Attribute
+# Standardize Times with the HTML5 datetime Attribute
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/standardize-times-with-the-html5-datetime-attribute/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

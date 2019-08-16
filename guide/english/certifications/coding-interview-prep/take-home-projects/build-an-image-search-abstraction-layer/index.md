@@ -1,7 +1,7 @@
 ---
 title: Build an Image Search Abstraction Layer
 ---
-## Build an Image Search Abstraction Layer
+# Build an Image Search Abstraction Layer
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/build-an-image-search-abstraction-layer/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

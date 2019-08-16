@@ -251,17 +251,18 @@ localeTitle: الرسوم المتحركة
 
 يتم عرض الرمز الأدنى لهذا السيناريو أدناه. سأعيد استخدام نفس حالة الرسوم المتحركة للشفرة أعلاه للاتساق ولا أقوم بعرض أي من رموز الرسوم المتحركة الفعلية حيث يمكنك بسهولة العثور على ذلك أعلاه.
 
- `import { Component, HostBinding } from '@angular/core'; 
- 
- @Component({ 
- ... 
- }) 
- export class ExampleComponent { 
-  @HostBinding('@animateArc') get arcAnimation() { 
-    return this.arc; 
-  } 
- } 
-` 
+```typescript
+import { Component, HostBinding } from '@angular/core';
+
+@Component({
+...
+})
+export class ExampleComponent {
+  @HostBinding('@animateArc') get arcAnimation() {
+    return this.arc;
+  }
+}
+``` 
 
 الفكرة الكامنة وراء تحريك مكون المضيف تشبه إلى حد كبير تحريك عنصر من القالب مع الاختلاف الوحيد وهو عدم الوصول إلى العنصر الذي تقوم بتحريكه. لا يزال لديك لتمرير اسم الرسوم المتحركة ( `@animateArc` ) عندما يعلن `HostBinding` ولا يزال لديك للعودة للحالة الراهنة للرسوم المتحركة ( `this.arc` ). لا يمثل اسم الدالة مادة فعلية ، لذلك `arcAnimation` الممكن تغيير `arcAnimation` إلى أي شيء ، طالما أنها لا تتعارض مع أسماء الخصائص الموجودة على المكون ، وستعمل بشكل جيد تمامًا.
 

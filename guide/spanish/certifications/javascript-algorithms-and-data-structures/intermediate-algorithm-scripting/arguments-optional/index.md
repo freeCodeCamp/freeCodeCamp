@@ -95,7 +95,6 @@ En el caso de que solo se haya pasado un argumento, no se preocupe acerca de có
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLnz/0)
 
 ### Explicación del código:
 
@@ -154,7 +153,6 @@ En el caso de que solo se haya pasado un argumento, no se preocupe acerca de có
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLoA/0)
 
 ### Explicación del código:
 
@@ -189,7 +187,6 @@ En el caso de que solo se haya pasado un argumento, no se preocupe acerca de có
     addTogether(2,3); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLoB/0)
 
 ### Explicación del código:
 

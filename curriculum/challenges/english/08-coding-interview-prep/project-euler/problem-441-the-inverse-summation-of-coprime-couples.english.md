@@ -2,6 +2,7 @@
 id: 5900f5261000cf542c510038
 challengeType: 5
 title: 'Problem 441: The inverse summation of coprime couples'
+forumTopicId: 302113
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find S(107). Give your answer rounded to four decimal places.
 ```yml
 tests:
   - text: <code>euler441()</code> should return 5000088.8395.
-    testString: assert.strictEqual(euler441(), 5000088.8395, '<code>euler441()</code> should return 5000088.8395.');
+    testString: assert.strictEqual(euler441(), 5000088.8395);
 
 ```
 
@@ -62,4 +63,5 @@ euler441();
 ```js
 // solution required
 ```
+
 </section>

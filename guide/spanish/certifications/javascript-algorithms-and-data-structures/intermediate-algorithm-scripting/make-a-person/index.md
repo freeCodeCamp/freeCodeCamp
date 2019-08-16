@@ -90,7 +90,6 @@ var Person = function(firstAndLast) {
  bob.getFullName(); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLov/0)
 
 ### Explicación del código:
 

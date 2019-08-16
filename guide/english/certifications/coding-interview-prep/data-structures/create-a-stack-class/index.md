@@ -1,9 +1,10 @@
 ---
 title: Create a Stack Class
 ---
-## Create a Stack Class
+# Create a Stack Class
 
-### Method:
+---
+## Problem Explanation
 - Stack is an abstract data structure.
 - Stack follows LIFO/FILO principle.
 - In this challenge, we need to add `.push()`, `.pop()`, `.peek()`, `.isEmpty()` and `.clear()` methods to the class.
@@ -18,58 +19,65 @@ title: Create a Stack Class
 | ----- | ------ | ------ | ------ | ------ |
 | Stack |   n    |    n   |   1    |    1   |
 
-### Solution:
-#### Basic:
-```js
-function Stack() { 
-    var collection = [];
-    this.print = function() {
-        console.log(collection);
-    };
-    this.push = function(val){
-        return collection.push(val);
-    }
-    this.pop = function(){
-        return collection.pop();
-    }
-    this.peek = function(){
-        return collection[collection.length-1];
-    }
-    this.isEmpty = function(){
-        return collection.length === 0;
-    }
-    this.clear = function(){
-        collection.length = 0;
-    }
-}
-```
-#### Advanced - ES6 Class syntax:
-```js
 
-class Stack {
-    constructor() {
-        this.collection = [];
-    }
-    print(){
-        console.log(this.collection);
-    }
-    push(val){
-        retiurn this.collection.push(val);
-    }
-    pop(){
-        return this.collection.pop();
-    }
-    peek(){
-        return this.collection[this.collection.length-1];
-    }
-    isEmpty(){
-        return this.collection.length === 0;
-    }
-    clear(){
-        return this.collection.length = 0;
-    }
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```js
+function Stack() {
+  var collection = [];
+  this.print = function() {
+    console.log(collection);
+  };
+  this.push = function(val) {
+    return collection.push(val);
+  };
+  this.pop = function() {
+    return collection.pop();
+  };
+  this.peek = function() {
+    return collection[collection.length - 1];
+  };
+  this.isEmpty = function() {
+    return collection.length === 0;
+  };
+  this.clear = function() {
+    collection.length = 0;
+  };
 }
 ```
- ### Resources:
+</details>
+
+<details><summary>Solution 2 (Click to Show/Hide)</summary>
+
+```js
+class Stack {
+  constructor() {
+    this.collection = [];
+  }
+  print() {
+    console.log(this.collection);
+  }
+  push(val) {
+    return this.collection.push(val);
+  }
+  pop() {
+    return this.collection.pop();
+  }
+  peek() {
+    return this.collection[this.collection.length - 1];
+  }
+  isEmpty() {
+    return this.collection.length === 0;
+  }
+  clear() {
+    return (this.collection.length = 0);
+  }
+}
+```
+ #### Relevant Links
  
 - [Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+</details>

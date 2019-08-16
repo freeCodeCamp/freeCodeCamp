@@ -2,6 +2,7 @@
 id: 5900f4d21000cf542c50ffe5
 challengeType: 5
 title: 'Problem 358: Cyclic numbers'
+forumTopicId: 302018
 ---
 
 ## Description
@@ -48,7 +49,7 @@ There is only one cyclic number for which, the eleven leftmost digits are 000000
 ```yml
 tests:
   - text: <code>euler358()</code> should return 3284144505.
-    testString: assert.strictEqual(euler358(), 3284144505, '<code>euler358()</code> should return 3284144505.');
+    testString: assert.strictEqual(euler358(), 3284144505);
 
 ```
 
@@ -80,4 +81,5 @@ euler358();
 ```js
 // solution required
 ```
+
 </section>

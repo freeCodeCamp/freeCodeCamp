@@ -8,7 +8,7 @@ Una excepción es un evento no deseado o inesperado, que ocurre durante la ejecu
 
 ## Error vs excepción
 
-Error: un error indica un problema grave que una aplicación razonable no debería intentar capturar. Excepción: la excepción indica las condiciones que una aplicación razonable podría intentar capturar.
+Error: un error indica un problema grave que una aplicación razonable no debería intentar capturar. Excepción: la excepción indica las condiciones que una aplicación razonable podría intentar capturar. Es decir, no estamos obligados a capturar los errores, pero sí estamos obligados a capturar las excepciones.
 
 ## Jerarquía de excepciones
 
@@ -32,3 +32,5 @@ try {
  } 
 
 ```
+
+Se pueden capturar n excepciones utilizando catch, pero se deben capturar de más especifico a menos específico.

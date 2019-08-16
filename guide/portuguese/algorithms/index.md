@@ -22,15 +22,24 @@ Os algoritmos são mais comumente julgados pela sua eficiência e pela quantidad
 
 ### Algoritmos de Ordenação
 
-Algoritmos de classificação vêm em vários sabores, dependendo da sua necessidade. Alguns, muito comuns e amplamente utilizados são:
+Há diversos tipos de algoritmos de ordenação, você pode utilizá-los de acordo com sua necessidade. Alguns, muito comuns e amplamente utilizados são:
 
-#### Ordenação rápida
+#### Ordenação rápida (Quick Sort)
 
 Não há discussão de classificação que possa terminar sem ordenação rápida. O conceito básico está no link abaixo. [Ordenação rápida](http://me.dt.in.th/page/Quicksort/)
+
+Resumidamente, esse algoritmo consiste em você pegar um elemento como "pivô". Depois de selecionado, colocamos os elementos menores que ele à sua esquerda e os maiores à sua direita. Em seguida, selecionamos outro pivô e reptimos o procedimento até que todos os elementos estejam ordenados.
 
 #### Merge Sort
 
 É o algoritmo de classificação que se baseia no conceito de como as matrizes ordenadas são mescladas para fornecer uma matriz ordenada. Leia mais sobre isso aqui- [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
+
+#### Bubble Sorte
+
+É o menos eficiente dos algoritmos de ordenação, porém o mais simples. 
+Leia mais sobre como ele funciona - [Bubble Sort](https://www.embarcados.com.br/algoritmos-de-ordenacao-bubble-sort/)
+
+Basicamente, ele percorre o vetor várias vezes, sempre comparando o elemento da vez com o próximo, trocando-os se o próximo elemento for menor.
 
 O currículo do freeCodeCamp enfatiza fortemente a criação de algoritmos. Isso ocorre porque os algoritmos de aprendizado são uma boa maneira de praticar habilidades de programação. Em geral, os entrevistadores testam candidatos em algoritmos durante entrevistas de emprego de desenvolvedores.
 
