@@ -10,6 +10,7 @@ Até agora você deve estar ciente de que C é uma linguagem de baixo nível, e 
 ```
 type *var-name; 
 ```
+Declaramos o tipo da variável como o exemplo acima, usamos asterisco (*) antes do nome do ponteiro.
 
 ## Fazendo e usando um ponteiro
 
