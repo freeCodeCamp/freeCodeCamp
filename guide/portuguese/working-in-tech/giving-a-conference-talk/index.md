@@ -12,7 +12,7 @@ Há um monte de conferências que gostam de ter oradores que estão no início d
 
 ## Comece pequeno
 
-Se você está interessado em falar em público / dando uma palestra de tecnologia, você pode começar pequeno. Muitas comunidades têm grupos de encontro para uma ampla gama de tecnologias. Você poderia dar uma versão de conversa de raio (uma palestra curta, normalmente 5 minutos) da palestra que você deseja propor em outro lugar.
+Se você está interessado em falar em público / dando uma palestra de tecnologia, você pode começar pequeno. Muitas comunidades têm grupos de encontro para uma ampla gama de tecnologias. Você poderia dar uma versão de "Lightning talk" (do inglês: palestra relâmpago, que é uma palestra curta, normalmente de 5 minutos) da palestra que você deseja propor em outro lugar.
 
 ## Crie um esboço
 
@@ -22,7 +22,7 @@ Organize seus pensamentos em uma lista com marcadores. Isso ajudará quando voc�
 
 Você pode encontrar conferências em sites como o [**PaperCall**](https://papercall.io) , através de mídias sociais, seguindo perfis como [**Call Back Women**](https://twitter.com/callbackwomen) no Twitter, ou simplesmente usando um mecanismo de busca.
 
-Na maioria das vezes, você pode enviar uma proposta para várias conferências ou pode enviar várias propostas para a mesma conferência. Se você fizer isso, você aumenta sua chance de ser aceito. Você deve prestar atenção ao que os organizadores da conferência estão procurando em submittals e editar o seu envio para corresponder.
+Na maioria das vezes, você pode enviar uma proposta para várias conferências ou pode enviar várias propostas para a mesma conferência. Se você fizer isso, você aumenta sua chance de ser aceito. Você deve prestar atenção ao que os organizadores da conferência estão procurando em submissões e editar o seu envio para corresponder.
 
 Muitas conferências fazem uma revisão inicial às cegas, o que significa que sua identidade não é revelada aos revisores. Ao se submeter a uma conferência com essa prática, não inclua nenhuma informação identificável em sua apresentação. Às vezes, as conferências perguntam se você é ou não um orador pela primeira vez, porque querem ver novas pessoas no pódio.
 
