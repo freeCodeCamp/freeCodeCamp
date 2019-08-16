@@ -7,21 +7,18 @@ videoUrl:
 
 ## Description
 <section id='description'>
-Welcome to freeCodeCamp's HTML coding challenges. These will walk you through web development step-by-step.
-First, you'll start by building a simple web page using HTML. You can edit <code>code</code> in your <code>code editor</code>, which is embedded into this web page.
-Do you see the code in your code editor that says <code>&#60;h1&#62;Hello&#60;/h1&#62;</code>? That's an HTML <code>element</code>.
-Most HTML elements have an <code>opening tag</code> and a <code>closing tag</code>.
-Opening tags look like this:
-<code>&#60;h1&#62;</code>
-Closing tags look like this:
-<code>&#60;/h1&#62;</code>
-The only difference between opening and closing tags is the forward slash after the opening bracket of a closing tag.
-Each challenge has tests you can run at any time by clicking the "Run tests" button. When you pass all tests, you'll be prompted to submit your solution and go to the next coding challenge.
+OpenCV has drawing functions which let you draw simple geometric primitives. In this tutorial, we will look at methods like cv.ellipse() and cv.circle(). The main aim of this lesson is to show how to use this functions and draw openCV logo.
+
+<code>ellipse(img, center, axes, angle, startAngle, endAngle, color)</code> where <code>img</code> is an image where the elipse is drawn, <code>center</code> - center of the elipse, <code>angle</code> is ellipse rotation angle in degrees, <code>startAngle</code> is starting angle of the elliptic arc in degrees, <code>endAngle</code> is ending angle of the elliptic arc in degrees,<code>color</code> is a color of object, and <code>thickness</code> is thickness of the ellipse arc outline, if positive. Otherwise, this indicates that a filled ellipse sector is to be drawn.
+
+<code>circle(img, center, radius, color)</code> where <code>img</code> is an image where the circle is drawn, <code>center</code> - center of the circle, <code>radius</code> is a circle's radius, and <code>color</code> is a color of object.
 </section>
 
 ## Instructions
 <section id='instructions'>
-I don't know what is happaning
+
+You should use <code>cv.ellipse()</code> to draw a elliptical figure with the given parameters in <code>for</code>>.
+Also we need to use <code>cv.circle()</code> to draw a circle in <code>for</code> too. We need it to draw centers of our figures.
 </section>
 
 ## Tests
@@ -46,16 +43,22 @@ tests:
 
 <script type="text/javascript">
 
-  function draw() {
+  function runSample() {
+
     let mat = new cv.Mat(300, 300, cv.CV_8UC3, new cv.Scalar(255, 255, 255, 255));
-  
-    cv.ellipse(mat, new cv.Point(220, 170), new cv.Size(50, 50), 300.0, 0.0, 300.0, new cv.Scalar(0, 0, 255, 255), cv.FILLED);
-    cv.ellipse(mat, new cv.Point(80, 170), new cv.Size(50, 50), 0.0, 0.0, 300.0, new cv.Scalar(0, 255, 0, 255), cv.FILLED);
-    cv.ellipse(mat, new cv.Point(150, 60), new cv.Size(50, 50), 120.0, 0.0, 300.0, new cv.Scalar(255, 0, 0, 255), cv.FILLED);
-  
-    cv.circle(mat, new cv.Point(220, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
-    cv.circle(mat, new cv.Point(80, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
-    cv.circle(mat, new cv.Point(150, 60), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+    let startAngles = [240.0, 0.0, -240.0];
+    let endAngles = [-60.0, 300.0, 60.0];
+    let colors = [new cv.Scalar(0, 0, 255, 255), new cv.Scalar(0, 255, 0, 255),new cv.Scalar(255, 0, 0, 255)];
+    let centers = [new cv.Point(220, 170), new cv.Point(80, 170), new cv.Point(150, 60)];
+    let circleRadius = 25;
+    let whiteColor = new cv.Scalar(255, 255, 255, 255);
+    let ellipseAxes = new cv.Size(50, 50);
+
+
+    for (let i = 0; i < 3; ++i) {
+      
+
+    }
   
     cv.putText(mat, "OpenCV", new cv.Point(30, 270), cv.FONT_HERSHEY_PLAIN, 4, new cv.Scalar(0, 0, 0, 255), 5)
   
@@ -66,7 +69,10 @@ tests:
 
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
+<script async src="https://docs.opencv.org/master/opencv.js" 
+        onload='cv["onRuntimeInitialized"]=()=> { runSample() }' 
+        type="text/javascript">
+</script>
 ```
 </div>
 </section>
@@ -78,16 +84,23 @@ tests:
 
 <script type="text/javascript">
 
-  function draw() {
+  function runSample() {
+  
+    
     let mat = new cv.Mat(300, 300, cv.CV_8UC3, new cv.Scalar(255, 255, 255, 255));
-  
-    cv.ellipse(mat, new cv.Point(220, 170), new cv.Size(50, 50), 300.0, 0.0, 300.0, new cv.Scalar(0, 0, 255, 255), cv.FILLED);
-    cv.ellipse(mat, new cv.Point(80, 170), new cv.Size(50, 50), 0.0, 0.0, 300.0, new cv.Scalar(0, 255, 0, 255), cv.FILLED);
-    cv.ellipse(mat, new cv.Point(150, 60), new cv.Size(50, 50), 120.0, 0.0, 300.0, new cv.Scalar(255, 0, 0, 255), cv.FILLED);
-  
-    cv.circle(mat, new cv.Point(220, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
-    cv.circle(mat, new cv.Point(80, 170), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
-    cv.circle(mat, new cv.Point(150, 60), 25, new cv.Scalar(255, 255, 255, 255), cv.FILLED);
+    let startAngles = [240.0, 0.0, -240.0];
+    let endAngles = [-60.0, 300.0, 60.0];
+    let colors = [new cv.Scalar(0, 0, 255, 255), new cv.Scalar(0, 255, 0, 255),new cv.Scalar(255, 0, 0, 255)];
+    let centers = [new cv.Point(220, 170), new cv.Point(80, 170), new cv.Point(150, 60)];
+    let circleRadius = 25;
+    let whiteColor = new cv.Scalar(255, 255, 255, 255);
+    let ellipseAxes = new cv.Size(50, 50);
+
+
+    for (let i = 0; i < 3; ++i) {
+        cv.ellipse(mat,centers[i], ellipseAxes, 0.0, startAngles[i], endAngles[i], colors[i], cv.FILLED);
+        cv.circle(mat,centers[i], circleRadius, whiteColor, cv.FILLED); 
+    }
   
     cv.putText(mat, "OpenCV", new cv.Point(30, 270), cv.FONT_HERSHEY_PLAIN, 4, new cv.Scalar(0, 0, 0, 255), 5)
   
@@ -98,7 +111,10 @@ tests:
 
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" onload='cv["onRuntimeInitialized"]=()=> { draw() }' type="text/javascript"></script>
+<script async src="https://docs.opencv.org/master/opencv.js" 
+        onload='cv["onRuntimeInitialized"]=()=> { runSample() }' 
+        type="text/javascript">
+</script>
 ```
 
 </section>
