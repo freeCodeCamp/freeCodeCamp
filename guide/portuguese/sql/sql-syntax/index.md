@@ -26,7 +26,7 @@ Use é usado para selecionar o banco de dados que contém as tabelas para suas i
 use fcc_sql_guides_database; -- select the guide sample database
 ```
 
-### Cláusulas Select e From
+### Cláusulas Selecionar (select)
 
 A parte Select é normalmente usada para determinar quais colunas dos dados você deseja mostrar nos resultados. Há também opções que você pode usar para mostrar dados que não são uma coluna da tabela.
 
