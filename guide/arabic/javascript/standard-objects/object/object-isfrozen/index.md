@@ -8,24 +8,26 @@ localeTitle: الكائن هو المجمدة
 
 #### **بناء الجملة**
 
- `Object.isFrozen(obj) 
-` 
+```javascript
+Object.isFrozen(obj)
+``` 
 
 **فمثلا:**
 
- `var foods = { 
-    grain : "wheat", 
-    dairy  : "milk", 
-    vegetable : "carrot", 
-    fruit  : "grape" 
- }; 
- 
- var frozenFoods = Object.freeze(foods); 
- 
- var areMyFoodsFrozen = Object.isFrozen(frozenFoods); 
- 
- \\ returns true 
-` 
+```javascript
+var foods = {
+    grain : "wheat",
+    dairy  : "milk",
+    vegetable : "carrot",
+    fruit  : "grape"
+};
+
+var frozenFoods = Object.freeze(foods);
+
+var areMyFoodsFrozen = Object.isFrozen(frozenFoods);
+
+\\ returns true
+``` 
 
 تذكر ، **لا يمكن أن** يكون له خاصية مجمدة تغير خصائصها.  
   

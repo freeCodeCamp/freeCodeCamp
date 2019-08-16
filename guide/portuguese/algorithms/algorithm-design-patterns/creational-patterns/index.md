@@ -10,11 +10,11 @@ Padrões de design criativos são compostos de duas idéias dominantes. Uma é e
 
 Cinco padrões de design bem conhecidos que são partes de padrões criacionais são:
 
-1.  **Padrão de fábrica abstrato** , que fornece uma interface para criar objetos relacionados ou dependentes sem especificar as classes concretas dos objetos.
-2.  **Padrão de construtor** , que separa a construção de um objeto complexo de sua representação para que o mesmo processo de construção possa criar diferentes representações.
-3.  **Padrão de método de fábrica** , que permite que uma classe adie a instanciação para subclasses.
-4.  **Prototype pattern** , que especifica o tipo de objeto a ser criado usando uma instância prototípica e cria novos objetos clonando esse protótipo.
-5.  **Padrão Singleton** , que garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
+1.  **Padrão de fábrica abstrato**, que fornece uma interface para criar objetos relacionados ou dependentes sem especificar as classes concretas dos objetos.
+2.  **Padrão de construtor**, que separa a construção de um objeto complexo de sua representação para que o mesmo processo de construção possa criar diferentes representações.
+3.  **Padrão de método de fábrica**, que permite que uma classe adie a instanciação para subclasses.
+4.  **Prototype pattern**, que especifica o tipo de objeto a ser criado usando uma instância prototípica e cria novos objetos clonando esse protótipo.
+5.  **Padrão Singleton**, que garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
 
 ### Fontes
 

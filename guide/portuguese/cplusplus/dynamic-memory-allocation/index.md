@@ -37,4 +37,4 @@ localeTitle: Alocação Dinâmica de Memória
     
     ### Perdas de memória
     
-    Os vazamentos são causados ​​quando você não consegue desalocar a memória dinâmica alocada por meio do operador `New` no final do programa. Se você não desalocá-lo com o operador Excluir, seu computador continuará criando nova memória no heap toda vez que o programa for executado. Isso faz com que o computador fique lento porque a memória não é excluída e a memória disponível diminui.
+    Os vazamentos são causados ​​quando você não consegue desalocar a memória dinâmica alocada por meio do operador `New` no final do programa. Se você não desalocá-la com o operador `delete`, seu computador continuará criando nova memória no heap toda vez que o programa for executado. Isso faz com que o computador fique lento porque a memória não é excluída e a memória disponível diminui.

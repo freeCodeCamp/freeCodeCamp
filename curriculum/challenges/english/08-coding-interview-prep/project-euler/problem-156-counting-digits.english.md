@@ -2,6 +2,7 @@
 id: 5900f4091000cf542c50ff1b
 challengeType: 5
 title: 'Problem 156: Counting Digits'
+forumTopicId: 301787
 ---
 
 ## Description
@@ -52,7 +53,7 @@ Note: if, for some n, f(n,d)=n
 ```yml
 tests:
   - text: <code>euler156()</code> should return 21295121502550.
-    testString: assert.strictEqual(euler156(), 21295121502550, '<code>euler156()</code> should return 21295121502550.');
+    testString: assert.strictEqual(euler156(), 21295121502550);
 
 ```
 
@@ -84,4 +85,5 @@ euler156();
 ```js
 // solution required
 ```
+
 </section>

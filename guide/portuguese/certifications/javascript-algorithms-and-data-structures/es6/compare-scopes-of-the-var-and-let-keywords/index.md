@@ -41,8 +41,6 @@ Precisamos mudar `var` para `let` em nosso escopo de função e adicionar `let` 
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://codepen.io/dylantyates/pen/wxwxRd)
-
 # Explicação do código:
 
 Usando `let` você pode declarar variáveis em relação ao seu escopo.

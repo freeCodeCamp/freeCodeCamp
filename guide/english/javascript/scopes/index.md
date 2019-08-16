@@ -23,7 +23,7 @@ Before you type the first line of code in your program, a _global scope_ is crea
 
 In the example above, the variable `foo` is in the global scope of the program, while the variable `bar` is declared inside a function and is therefore **in the local scope of that function**.
 
-Lets break down the example line by line. While you might be confused at this point, I promise you will have a much better understanding by the time you finish reading this.
+Let's break down the example line by line. While you might be confused at this point, I promise you will have a much better understanding by the time you finish reading this.
 
 On line 1 we are declaring the variable `foo`. Nothing too fancy here. Lets call this a left-hand size (LHS) reference to `foo`, because we are assigning a value to `foo` and it's on the left-hand side of the `equal` sign.
 
@@ -82,7 +82,7 @@ Any RHS references inside `bar`'s local scope can be fullfilled by LHS reference
 
 **You can only traverse down a scope chain, not up.**
 
-There are other two important things you should know about JavaScript scopes. 
+There are two other important things you should know about JavaScript scopes. 
 
 1. Scopes are declared by functions, not by blocks.
 2. Functions can be forward-referenced, variables can't.

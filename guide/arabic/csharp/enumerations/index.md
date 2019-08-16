@@ -8,12 +8,13 @@ localeTitle: التعدادات
 
 ## مثال
 
- `enum Gender 
- { 
-  Male, 
-  Female 
- } 
-` 
+```
+enum Gender
+{
+  Male,
+  Female
+}
+``` 
 
 بشكل افتراضي ، تبدأ قيم الأعداد الصحيحة عند 0 وتزيد بمقدار 1 ، لكل اسم تعداد أي ذكور = 0 ، أنثى = 1 إلخ.
 
@@ -21,12 +22,13 @@ localeTitle: التعدادات
 
 ## مثال
 
- `enum Gender 
- { 
-  Male = 1, 
-  Female 
- } 
-` 
+```
+enum Gender
+{
+  Male = 1,
+  Female
+}
+``` 
 
 في هذه الحالة ، ستبدأ قيم عدد صحيح في 1 وتزيد من هناك.
 
@@ -36,12 +38,14 @@ localeTitle: التعدادات
 
 يمكنك أيضًا إرسال قيمة اسم التعداد إلى القيمة الصحيحة الأساسية والعكس صحيح:
 
- `Console.WriteLine($"Male: {(int)Gender.Male}"); 
- Console.WriteLine($"Female: {(int)Gender.Female}"); 
-` 
+```
+Console.WriteLine($"Male: {(int)Gender.Male}");
+Console.WriteLine($"Female: {(int)Gender.Female}");
+``` 
 
 ## انتاج:
 
- `Male: 1 
- Female: 2 
-`
+```
+Male: 1
+Female: 2
+```

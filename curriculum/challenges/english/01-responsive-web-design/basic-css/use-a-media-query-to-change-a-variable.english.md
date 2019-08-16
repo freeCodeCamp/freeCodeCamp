@@ -3,6 +3,7 @@ id: 5a9d72ad424fe3d0e10cad16
 title: Use a media query to change a variable
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cWmL8UP'
+forumTopicId: 301091
 ---
 
 ## Description
@@ -22,9 +23,9 @@ In the <code>:root</code> selector of the <code>media query</code>, change it so
 ```yml
 tests:
   - text: <code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.
-    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.');
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi));
   - text: <code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.
-    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.');
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi));
 
 ```
 

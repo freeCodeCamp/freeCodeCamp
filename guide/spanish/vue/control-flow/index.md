@@ -6,9 +6,9 @@ localeTitle: Flujo de control
 
 ### Condicionales
 
-Con Vue.js puedes decidir si mostrar o no un fragmento de código en tu final Página, dependiendo de alguna condición. Por ejemplo, imagine una entrada de formulario que es requiere un texto de al menos 8 caracteres: si la entrada del usuario es más corta que 8, que debería aparecer un mensaje de error; pero si la entrada es más larga que 8, el el mensaje desaparece
+Con Vue.js puedes decidir si mostrar o no un fragmento de código en tu página final, dependiendo de alguna condición. Por ejemplo, imagina una entrada de formulario que requiere un texto de al menos 8 carácteres: si la entrada del usuario tiene menos de 8, debería aparecer un mensaje de error; pero si la entrada es más o igual que 8, el mensaje desaparece.
 
-Pero vamos a hacer un ejemplo más simple. Queremos condicionar la exposición de un mensaje a un contador:
+Vamos a hacer un ejemplo más simple. Queremos condicionar la visualización de un mensaje a un contador:
 
 ```html
 
@@ -28,12 +28,12 @@ let app = new Vue({
  }); 
 ```
 
-Si vas a la consola y empiezas a incrementar el contador, cuando cruza nuestro Umbral de 10, se mostrará el mensaje! Entonces, si decrementas el `counter` , Vue.js ocultará el mensaje cuando el `counter` sea ​​inferior a 10. Para eso, nosotros utiliza la directiva `v-if` .
+Si vas a la consola y empiezas a incrementar el contador, cuando cruce nuestro límite de 10, ¡se mostrará el mensaje! En cambio, si lo decrementas, Vue.js ocultará el mensaje cuando el contador (`counter`) sea inferior a 10. Para ello, nosotros utilizamos la directiva `v-if` .
 
-Y quizás te preguntes si hay `else` para eso `if` . Y ahí está el `v-else` Tenga en cuenta que el `v-else` siempre
+Y quizás te preguntes si hay un `else` para ese `if` . Y ahí está el `v-else` . Ten en cuenta que el `v-else` siempre
 
-*   esperar un `v-if` antes de ello
-*   se refiere al `v-if` más cercano en la página
+*   esperará tener un `v-if` previo a él
+*   se referirá al `v-if` más cercano en la página
 
 Cambiemos un poco nuestro primer ejemplo para aclarar esto.
 
@@ -58,13 +58,13 @@ let app = new Vue({
  }); 
 ```
 
-Juega un poco con eso cambiando los valores de `counter` y pon atención a mensaje mostrado
+Juega un poco con él cambiando los valores de `counter` y pon atención al mensaje mostrado
 
 Vue.js también tiene la directiva `v-else-if` .
 
 ### Bucles
 
-Vue.js también ayuda con la generación de copias múltiples del mismo código. Estructura, con bucles. El ejemplo clásico es una lista renderizada dinámicamente.
+Vue.js también ayuda con la generación de múltiples copias de la misma estructura de código, con bucles. El ejemplo clásico es una lista renderizada dinámicamente.
 
 ```html
 
@@ -91,10 +91,25 @@ let app = new Vue({
  }); 
 ```
 
-Mucho más fácil que insertar una gran cantidad de `<li>` . Y note que cada vez que la `list` cambios, el resultado cambiará de acuerdo a Pruébalo: abre la consola y `push` alguna cadena a la `list` con
+Es mucho más fácil que insertar una gran cantidad de `<li>` . Y observa que cada vez que la lista (`list`) cambie, el resultado cambiará acordemente. Pruébalo: abre la consola y añade (`push`) alguna cadena a la lista (`list`) con
 
 ```javascript
 app.list.push("something else"); 
 ```
 
-Como era de esperar, la página renderizada ahora tiene nuestro nuevo artículo!
+Como es de esperar, ¡la página renderizada ahora tiene nuestro nuevo artículo!
+
+### Accediendo al índice actual en bucles
+
+`v-for` también admite un segundo argumento opcional para el índice del elemento actual:
+
+```html
+<div id="app">
+  <ul>
+    <li v-for="(item, index) in items">
+      {{ index }}: {{ item }}
+    </li>
+  </ul>
+</div>
+```
+De esta manera, podemos usar `index` para añadir estilos al primer, al último, o a los elementos pares/impares de la lista de manera diferenciada, o aplicar lógica extra a nuestro componente.

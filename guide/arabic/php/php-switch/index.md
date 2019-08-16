@@ -27,39 +27,41 @@ localeTitle: تبديل PHP
 
 شكل توضيحي لبيان `switch` مع مثال
 
- `<?php 
- 
- $i = 1 
- switch ($i) { 
-    case 0: 
-        echo "i equals 0"; 
-        break; 
-    case 1: 
-        echo "i equals 1"; 
-        break; 
-    case 2: 
-        echo "i equals 2"; 
-        break; 
- } 
- 
- ?> 
-` 
+```
+<?php
+
+$i = 1
+switch ($i) {
+    case 0:
+        echo "i equals 0";
+        break;
+    case 1:
+        echo "i equals 1";
+        break;
+    case 2:
+        echo "i equals 2";
+        break;
+}
+
+?>
+``` 
 
 يمكن أيضًا استخدام عبارة `switch` دون بيان `break` . في هذه الحالة ، سيتم تنفيذ العبارات بعد الحالات المتطابقة. أدناه هو استخدام بيان `switch` دون بيان `break` .
 
- `<?php 
- switch ($i) { 
-    case 0: 
-        echo "i equals 0"; 
-    case 1: 
-        echo "i equals 1"; 
-    case 2: 
-        echo "i equals 2"; 
- } 
- ?> 
- 
- /*output --> i equals 0i equals 1i equals 2 */ 
-` 
+```
+<?php
+switch ($i) {
+    case 0:
+        echo "i equals 0";
+    case 1:
+        echo "i equals 1";
+    case 2:
+        echo "i equals 2";
+}
+?>
+
+/*output --> i equals 0i equals 1i equals 2 */
+``` 
 
 #### معلومات اكثر:
 

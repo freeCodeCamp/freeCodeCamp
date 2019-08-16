@@ -2,6 +2,7 @@
 id: 5900f50a1000cf542c51001c
 challengeType: 5
 title: 'Problem 413: One-child Numbers'
+forumTopicId: 302082
 ---
 
 ## Description
@@ -29,7 +30,7 @@ Find F(1019).
 ```yml
 tests:
   - text: <code>euler413()</code> should return 3079418648040719.
-    testString: assert.strictEqual(euler413(), 3079418648040719, '<code>euler413()</code> should return 3079418648040719.');
+    testString: assert.strictEqual(euler413(), 3079418648040719);
 
 ```
 
@@ -61,4 +62,5 @@ euler413();
 ```js
 // solution required
 ```
+
 </section>

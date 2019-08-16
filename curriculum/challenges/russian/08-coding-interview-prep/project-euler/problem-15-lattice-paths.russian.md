@@ -7,7 +7,7 @@ localeTitle: 'Задача 15: Решетчатые пути'
 ---
 
 ## Description
-<section id="description"> Начиная в левом верхнем углу сетки 2 × 2 и только имея возможность двигаться вправо и вниз, ровно 6 маршрутов в нижний правый угол. <img class="img-responsive center-block" alt="диаграмма 6 2 на 2 сетки, показывающая все маршруты в нижний правый угол" src="https://i.imgur.com/1Atixoj.gif"><p> Сколько таких маршрутов существует через заданный <code>gridSize</code> ? </p></section>
+<section id="description"> Начиная в левом верхнем углу сетки 2 × 2 и только имея возможность двигаться вправо и вниз, ровно 6 маршрутов в нижний правый угол. <img class="img-responsive center-block" alt="диаграмма 6 2 на 2 сетки, показывающая все маршруты в нижний правый угол" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif"><p> Сколько таких маршрутов существует через заданный <code>gridSize</code> ? </p></section>
 
 ## Instructions
 <section id="instructions">

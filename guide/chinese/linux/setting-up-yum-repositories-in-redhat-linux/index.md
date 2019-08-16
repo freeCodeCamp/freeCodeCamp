@@ -10,7 +10,7 @@ RPM包文件是Red Hat Package Manager文件，可以在Red Hat / CentOS Linux�
 
 第1步：检查是否存在现有存储库。
 
-```sh
+```shell
 #yum repolist 
 ```
 
@@ -18,19 +18,19 @@ RPM包文件是Red Hat Package Manager文件，可以在Red Hat / CentOS Linux�
 
 第2步：将目录更改为
 
-```sh
+```shell
 #cd /etc/yum.repos.d 
 ```
 
 第3步：创建新文件
 
-```sh
+```shell
 #vim myrepo.repo 
 ```
 
 第4步：在文件中键入以下行
 
-```sh
+```shell
 [file-name] 
  name=filename 
  baseurl="location of yum repositories" 
@@ -41,7 +41,7 @@ RPM包文件是Red Hat Package Manager文件，可以在Red Hat / CentOS Linux�
 
 第6步：重复步骤1
 
-```sh
+```shell
 You Will find repositories 
 
 ```

@@ -2,24 +2,24 @@
 title: Sketch
 localeTitle: Bosquejo
 ---
-## Bosquejo
+## Sketch
 
 Sketch es una aplicación de diseño profesional para Mac que utiliza un flujo de trabajo basado en vectores. La interfaz es limpia y atractiva para los nuevos usuarios, además de ser una herramienta familiar para los usuarios de Adobe Fireworks. Sketch se ha convertido en una herramienta alternativa popular a Photoshop para los usuarios que no necesitan una gran cantidad de opciones para los diseños de interfaz.
 
 ### ¿Por qué Sketch?
 
-*   Reutilizar fácilmente los elementos.
+*   Permite reutilizar elementos fácilmente.
 *   Prototipado
 *   Colabora con otros
 *   Muchos complementos
-*   Exporte archivos en múltiples formatos, como png, svg, etc. Incluso las versiones retina de 2x se visualizan con facilidad
+*   Exporta archivos en múltiples formatos, como png, svg, etc. Incluso las versiones retina de 2x se visualizan con facilidad
 *   Comunidad extensa
 *   Copia fácilmente los atributos CSS de los elementos de diseño
 *   Exporta guía de estilo en HTML / CSS fácil de leer.
 
 ### ¿Por qué debería cambiar a Sketch?
 
-Sketch está diseñado para crear productos digitales en lugar de editar fotos e imprimir gráficos. La interfaz limpia de Sketch te ayuda a mantenerte organizado cuando te burlas o construyes tus diseños UI / UX. Los tableros de arte que utiliza Sketch imponen una cuadrícula de píxeles para diseños precisos. Exportar diseños es simple y soporta diferentes resoluciones de dispositivos.
+Sketch está diseñado para crear productos digitales en lugar de editar fotos e imprimir gráficos. La interfaz limpia de Sketch te ayuda a mantenerte organizado cuando prototipas o construyes tus diseños UI / UX. Las mesas de trabajo que utiliza Sketch imponen una cuadrícula de píxeles para diseños precisos. Exportar diseños es simple y soporta diferentes resoluciones de dispositivos.
 
 ### Complementos útiles para Sketch
 

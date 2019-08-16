@@ -1,8 +1,10 @@
 ---
 title: Manage Updates with Lifecycle Methods
 ---
-## Manage Updates with Lifecycle Methods
+# Manage Updates with Lifecycle Methods
 
+---
+## Problem Explanation
 This challenge has you creating a couple lifecycle functions, componentWillUpdate and ComponentWillReceiveProps. You will be provided with another function called componentDidUpdate. We'll discuss how you use them at each stage of the component lifecycle and why you should use them when you are checking different stages of your component.
 
 Lets talk about the functions and how you will be using them. Component lifecycles can be broken down into 4 stages. Initlization -> Mounting -> Updating -> Unmounting. The components that you will work with are going to fall within the Updating stage.
@@ -17,7 +19,13 @@ Once the component passes through the componentWillUpdate phase and the componen
 
 Once you have implemented all the lifecycle functions you should see some console logs being displayed. First, you will see componentWillReceiveProps send you this.props and nextProps. Next, you will see a console log letting you know that componentWillUpdate. Lastly, after the component renders it will call the componentDidUpdate and will log out "Component has updated."
 
-Note: The components that you are creating have been deprecated and will be available to use until version 17. You can find more information about these functions in the resource section below.
+**Note:** The components that you are creating have been deprecated and will be available to use until version 17. You can find more information about these functions in the resource section below.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 class Dialog extends React.Component {
@@ -25,54 +33,56 @@ class Dialog extends React.Component {
     super(props);
   }
   componentWillUpdate() {
-    console.log('Component is about to update...');
+    console.log("Component is about to update...");
   }
   // change code below this line
-  
+
   // Create componentWillReceiveProps
   // Pass in argument nextProps and log out the current prop and next prop
   componentWillReceiveProps(nextProps) {
-    // Log the current property and the next property  
-    console.log(this.props, nextProps)
+    // Log the current property and the next property
+    console.log(this.props, nextProps);
   }
 
   // Create function componentDidUpdate
   // Log out that the component has updated
   componentDidUpdate() {
-    console.log("Component has updated")
+    console.log("Component has updated");
   }
-  
+
   // change code above this line
   render() {
-    return <h1>{this.props.message}</h1>
+    return <h1>{this.props.message}</h1>;
   }
-};
+}
 
 class Controller extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: 'First Message'
+      message: "First Message"
     };
     this.changeMessage = this.changeMessage.bind(this);
   }
   changeMessage() {
     this.setState({
-      message: 'Second Message'
+      message: "Second Message"
     });
   }
   render() {
     return (
       <div>
         <button onClick={this.changeMessage}>Update</button>
-        <Dialog message={this.state.message}/>
+        <Dialog message={this.state.message} />
       </div>
     );
   }
-};
+}
 ```
-### Resources
+
+#### Relevant Links
 - [React Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
 - [React Component Lifecycle Visual](https://cdn-images-1.medium.com/max/2000/1*sn-ftowp0_VVRbeUAFECMA.png)
+</details>
 
 

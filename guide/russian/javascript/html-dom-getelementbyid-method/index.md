@@ -37,4 +37,4 @@ document.getElementById("demo"); // Returns the element with id "demo" containin
 
 #### Альтернативные решения:
 
-Обычно используемая альтернатива `document.getElementById` использует селектор jQuery, который вы читаете [здесь](https://github.com/freeCodeCamp/guides/tree/master/src/pages/jquery) .
+Обычно используемая альтернатива `document.getElementById` использует селектор jQuery, который вы можете прочитать [здесь](https://github.com/freeCodeCamp/guides/tree/master/src/pages/jquery) .

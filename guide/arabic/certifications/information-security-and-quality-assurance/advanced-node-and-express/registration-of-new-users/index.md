@@ -6,13 +6,15 @@ localeTitle: تسجيل المستخدمين الجدد
 
 تأكد من تعديل الملفات الشخصية / الصلصال / الملف الشخصي.الخط 11:
 
- `h1.border.center FCC Advanced Node and Express 
-` 
+```pug
+h1.border.center FCC Advanced Node and Express
+``` 
 
 إلى
 
- `h1.border.center Profile Home 
-` 
+```pug
+h1.border.center Profile Home
+``` 
 
 وإلا لن تمر الاختبارات
 

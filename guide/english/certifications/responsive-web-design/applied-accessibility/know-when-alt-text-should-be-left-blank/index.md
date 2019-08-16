@@ -1,7 +1,7 @@
 ---
 title: Know When Alt Text Should be Left Blank
 ---
-## Know When Alt Text Should be Left Blank
+# Know When Alt Text Should be Left Blank
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/know-when-alt-text-should-be-left-blank/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

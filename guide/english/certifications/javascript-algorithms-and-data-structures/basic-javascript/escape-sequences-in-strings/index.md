@@ -1,10 +1,15 @@
 ---
 title: Escape Sequences in Strings
 ---
-## Escape Sequences in Strings
+# Escape Sequences in Strings
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/escape-sequences-in-strings/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+---
+## Solutions
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```javascript
+var myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+```
+</details>

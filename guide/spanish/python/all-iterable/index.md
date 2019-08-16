@@ -2,7 +2,7 @@
 title: Python All Iterable
 localeTitle: Python Todo Iterable
 ---
-`all()` es una función incorporada en Python 3 (y Python 2 desde la versión 2.5), para verificar si todos los elementos de un [_iterable_](https://docs.python.org/3/glossary.html#term-iterable) son `True` . Se necesita un argumento, `iterable` .
+`all()` es una función incorporada en Python 3 (y en Python 2 desde la versión 2.5), para verificar si todos los elementos de un [_iterable_](https://docs.python.org/3/glossary.html#term-iterable) son `True` . Se necesita un argumento, `iterable` .
 
 ## Argumento
 

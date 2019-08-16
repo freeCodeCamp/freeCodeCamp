@@ -97,7 +97,7 @@ $ rails s
 | teste / | Testes unitários, acessórios e outros aparelhos de teste. Eles são abordados nos aplicativos Testing Rails. |  
 | tmp / | Arquivos temporários (como arquivos cache e pid). |  
 | vendedor / | Um local para todos os códigos de terceiros. Em uma aplicação típica do Rails, isso inclui gems vendidas. |  
-| .gitignore | Este arquivo informa ao git quais arquivos (ou padrões) ele deve ignorar. Veja Github - Ignorando arquivos para mais informações sobre como ignorar arquivos. |
+| .gitignore | Este arquivo informa ao git quais arquivos (ou padrões) ele deve ignorar. Veja GitHub - Ignorando arquivos para mais informações sobre como ignorar arquivos. |
 
 Um ótimo lugar para começar a usar esse framework incrível é ler a [página de Primeiros passos](http://guides.rubyonrails.org/getting_started.html) .
 

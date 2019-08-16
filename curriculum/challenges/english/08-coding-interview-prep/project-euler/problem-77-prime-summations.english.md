@@ -2,6 +2,7 @@
 id: 5900f3b91000cf542c50fecc
 challengeType: 5
 title: 'Problem 77: Prime summations'
+forumTopicId: 302190
 ---
 
 ## Description
@@ -26,7 +27,7 @@ What is the first value which can be written as the sum of primes in over five t
 ```yml
 tests:
   - text: <code>euler77()</code> should return 71.
-    testString: assert.strictEqual(euler77(), 71, '<code>euler77()</code> should return 71.');
+    testString: assert.strictEqual(euler77(), 71);
 
 ```
 
@@ -58,4 +59,5 @@ euler77();
 ```js
 // solution required
 ```
+
 </section>

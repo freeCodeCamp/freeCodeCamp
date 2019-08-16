@@ -6,21 +6,24 @@ localeTitle: VirtualBox
 
 ![](https://upload.wikimedia.org/wikipedia/commons/d/d5/Virtualbox_logo.png)
 
-VirtualBox é um programa de máquina virtual de código aberto da Oracle. Ele permite que os usuários instalem virtualmente muitos sistemas operacionais em unidades virtuais, incluindo Windows, BSD, Linux, Solaris, etc.
+O VirtualBox é um [virtualizador tipo 2](https://itharley.com/a-b-c-docker-capitulo-1/ "Verificar a parte de arquitetura"), ou hosted, de código aberto e suportado pela Oracle. Ele permite a instalação e execução de vários sistemas operacionais, como  Windows, BSD, Linux, Solaris, dentre outros, na forma de máquinas virtuais (ou VMs).
 
-# Instalação
+# Download e Instalação
 
 O VirtualBox pode ser baixado aqui: [Downloads do VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
 # Configuração
 
-*   Para configurar sua primeira máquina virtual, baixe o arquivo .iso do site do sistema operacional desejado.
+*   Para configurar sua primeira máquina virtual, baixe o arquivo .iso do site do sistema operacional desejado;
     
-*   Em seguida, você vai apertar o botão "New" no VirtualBox, e nome da sua VM com qualquer nome que você gosta.
-    
-*   O aplicativo executará várias outras configurações. Mais importante ainda, observe quanto armazenamento você selecionou para a unidade. Esse é o tamanho máximo que o arquivo da máquina pode ter, que ocupará o armazenamento em seu dispositivo. Além disso, não como muita memória que você fornece à máquina, porque esses recursos estarão indisponíveis para o sistema operacional host durante a execução da VM.
-    
+*   Em seguida, aperte o botão "New" no VirtualBox. Dê um nome para sua VM, e preencha os demais campos da caixa de diálogo;
 
+*   Adicionalmente, você pode clicar sobre o botáo "Modo Guiado" para criar a máquina usando um assistente; 
+    
+O aplicativo realizará diversas ações. Ponto importante: observe quanto armazenamento você selecionou para o disco da VM. Esse é o tamanho que o sistema operacional da máquina virtual enxergará. Este espaço será efetivamente ocupado no disco do seu computador, também. Portanto, é importante antes verificar quanto espaço livre você possui no disco do seu computador, de maneira a poder usar tranquilamente não só sua máquina virtual, como também o restante das aplicações do seu computador. 
+
+O mesmo cuidado vale para a memória RAM.  O VirtualBox obviamente não permitirá que você aloque toda a RAM disponível em seu computador para a VM.  Isto se deve ao fato de que esses recursos (disco, RAM e CPU) estarem indisponíveis para o sistema operacional host (ou seja, seu computador) durante a execução da VM.
+    
 Para mais informações, visite o site [Manual do VirtualBox Capítulo 1](https://www.virtualbox.org/manual/ch01.html)
 
 # Execute a máquina
@@ -33,43 +36,44 @@ Para mais informações, visite o site [Manual do VirtualBox Capítulo 1](https:
     
 *   Feche as configurações e aperte Start!
     
-*   Agora sua máquina irá executar e instalar o sistema operacional na unidade virtual.
+*   Agora sua máquina irá executar e instalar o sistema operacional no disco virtual criado anteriormente.
     
 *   Depois de terminar sua máquina pela primeira vez, volte para a guia Armazenamento em Configurações. Certifique-se de remover arquivo .iso ou remova o slot da unidade vazio. Deve haver apenas um.
     
     Parabéns! Você executou sua primeira máquina virtual no VirtualBox.
     
-    Visite a [Manual do VirtualBox](https://www.virtualbox.org/manual/UserManual.html) para obter ainda mais informações sobre como usar e configurar máquinas.
+    Visite a [Manual do VirtualBox](https://www.virtualbox.org/manual/UserManual.html) para obter mais informações sobre como usar e configurar VMs.
     
-
 O Oracle VM VirtualBox é um poderoso produto de virtualização multiplataforma para uso corporativo ou pessoal. O VirtualBox está disponível gratuitamente como software de código aberto sob a licença GNU General Public License (GPL) versão 2.
 
-O VirtualBox estende as capacidades do seu computador existente para que ele possa rodar múltiplos sistemas operacionais, você pode até executar o VirtualBox dentro de uma máquina virtual, rodar outro sistema operacional, todos no mesmo PC, os únicos limites são espaço em disco e memória.
+O VirtualBox estende as capacidades do seu computador existente para que ele possa rodar múltiplos sistemas operacionais. Você pode até executar o VirtualBox dentro de uma máquina virtual, rodar outro sistema operacional, todos no mesmo PC. Os únicos limites são espaço em disco e memória.
+
+Obs.: o VirtualBox ainda não permite a extensão dos [flags de virtualização (AMD-V ou VT-x)](https://pt.wikipedia.org/wiki/Virtualiza%C3%A7%C3%A3o_x86) da CPU física para uma VM. Ou seja, se você precisa executar um sistema operacional dentro do VirtualBox e, a partir deste sistema operacional, subir outra VM (o que daria uma VM dentro de outra VM), isto não é possível.
 
 O VirtualBox é uma solução simples para:
 
-*   Executando vários sistemas operacionais simultaneamente.
-*   Não é necessário reinicializar para usar um programa específico que pode não ser suportado pelo sistema operacional em uso.
-*   Instalações de software mais fáceis
-*   Uma configuração completa de um sistema pode ser empacotada em uma máquina virtual.
-*   Testes e recuperação de desastres
-*   Pode experimentar livremente com um ambiente de computação, sem afetar nada fora da máquina virtual.
-*   Consolidação de infra-estrutura
-*   A virtualização reduz significativamente os custos de hardware e eletricidade.
+*   Executar vários sistemas operacionais simultaneamente;
+*   Verificar programas específicos sem alteração do computador host;
+*   Instalar e testar facilmente softwares diversos;
+*   Configurar um sistema completamente e empacotá-lo como máquina virtual ou virtual appliance;
+*   Realizar testes e recuperação de desastres;
+*   Experimentar livremente um ambiente de computação, sem afetar nada fora da máquina virtual;
+*   Consolidar infra-estrutura;
+*   Reduzir custos de hardware e gastos com energia elétrica.
 
-A caixa virtual suporta uma ampla variedade de sistemas operacionais:
+O VirtualBox suporta uma ampla variedade de sistemas operacionais:
 
-*   janelas
+*   Windows;
 *   Linux
-*   Macintosh
-*   Hosts Solaris
-*   Além de um grande número de sistemas operacionais convidados: (Incluindo mas não limitado a):
-*   Windows (NT 4.0, 2000, XP, Server 2003, Vista, Windows 7, Windows 8, Windows 10)
-*   DOS / Windows 3.x
-*   Linux (2.4, 2.6, 3.xe 4.x)
-*   Solaris e OpenSolaris
-*   OS / 2
-*   OpenBSD
+*   macOS.
+
+E mais um grande número de sistemas operacionais legados: (incluindo, mas não limitado a):
+*   Windows (NT 4.0, 2000, XP, Server 2003, Vista);
+*   DOS / Windows 3.x;
+*   Linux (2.4, 2.6, 3.xe 4.x);
+*   Solaris e OpenSolaris;
+*   OS/2;
+*   OpenBSD.
 
 #### Mais Informações:
 

@@ -2,6 +2,7 @@
 id: 5900f4ca1000cf542c50ffdc
 challengeType: 5
 title: 'Problem 349: Langton''s ant'
+forumTopicId: 302008
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Starting with a grid that is entirely white, how many squares are black after 10
 ```yml
 tests:
   - text: <code>euler349()</code> should return 115384615384614940.
-    testString: assert.strictEqual(euler349(), 115384615384614940, '<code>euler349()</code> should return 115384615384614940.');
+    testString: assert.strictEqual(euler349(), 115384615384614940);
 
 ```
 
@@ -57,4 +58,5 @@ euler349();
 ```js
 // solution required
 ```
+
 </section>

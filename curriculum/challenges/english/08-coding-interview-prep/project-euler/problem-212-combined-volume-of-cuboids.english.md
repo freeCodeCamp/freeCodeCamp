@@ -2,6 +2,7 @@
 id: 5900f4411000cf542c50ff53
 challengeType: 5
 title: 'Problem 212: Combined Volume of Cuboids'
+forumTopicId: 301854
 ---
 
 ## Description
@@ -34,7 +35,7 @@ What is the combined volume of all 50000 cuboids, C1,...,C50000 ?
 ```yml
 tests:
   - text: <code>euler212()</code> should return 328968937309.
-    testString: assert.strictEqual(euler212(), 328968937309, '<code>euler212()</code> should return 328968937309.');
+    testString: assert.strictEqual(euler212(), 328968937309);
 
 ```
 
@@ -66,4 +67,5 @@ euler212();
 ```js
 // solution required
 ```
+
 </section>

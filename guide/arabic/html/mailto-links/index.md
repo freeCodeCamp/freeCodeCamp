@@ -8,9 +8,9 @@ localeTitle: روابط Mailto
 
 ### بناء الجملة الأساسي مع المستلم هو:
 
- `
-<a href="mailto:friend@something.com">Some text</a> 
-` 
+```html
+<a href="mailto:friend@something.com">Some text</a>
+``` 
 
 ### مزيد من التخصيص!
 
@@ -32,9 +32,9 @@ Body: أكون مطورًا
 
 رابط html الآن:
 
- `
-<a href="mailto:?subject=Great%20news&body=I%20am%20becoming%20a%20developer">Send mail!</a> 
-` 
+```html
+<a href="mailto:?subject=Great%20news&body=I%20am%20becoming%20a%20developer">Send mail!</a>
+``` 
 
 هنا ، تركنا mailto فارغة (mailto :؟). سيؤدي ذلك إلى فتح عميل البريد الإلكتروني للمستخدم وسيضيف المستخدم عنوان المستلم نفسه.
 
@@ -44,9 +44,9 @@ Body: أكون مطورًا
 
 يجب أن تسبق المعلمات الإضافية `&` .
 
- `
-<a href="mailto:firstfriend@something.com?subject=Great%20news&cc=secondfriend@something.com,thirdfriend@something.com&bcc=fourthfriend@something.com">Send mail!</a> 
-` 
+```html
+<a href="mailto:firstfriend@something.com?subject=Great%20news&cc=secondfriend@something.com,thirdfriend@something.com&bcc=fourthfriend@something.com">Send mail!</a>
+``` 
 
 #### معلومات اكثر:
 

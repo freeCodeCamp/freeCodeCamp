@@ -2,6 +2,7 @@
 id: 5900f5311000cf542c510042
 challengeType: 5
 title: 'Problem 451: Modular inverses'
+forumTopicId: 302124
 ---
 
 ## Description
@@ -35,7 +36,7 @@ Find ∑I(n) for 3≤n≤2·107
 ```yml
 tests:
   - text: <code>euler451()</code> should return 153651073760956.
-    testString: assert.strictEqual(euler451(), 153651073760956, '<code>euler451()</code> should return 153651073760956.');
+    testString: assert.strictEqual(euler451(), 153651073760956);
 
 ```
 
@@ -67,4 +68,5 @@ euler451();
 ```js
 // solution required
 ```
+
 </section>

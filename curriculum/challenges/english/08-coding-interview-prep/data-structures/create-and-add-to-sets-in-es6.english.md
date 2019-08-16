@@ -2,6 +2,7 @@
 id: 587d8254367417b2b2512c70
 title: Create and Add to Sets in ES6
 challengeType: 1
+forumTopicId: 301636
 ---
 
 ## Description
@@ -14,9 +15,19 @@ You can create a set with a value:
 You can create a set with an array:
 <code>var set = new Set([1, 2, 3]);</code>
 Once you have created a set, you can add the values you wish using the <code>add</code> method:
-<blockquote>var set = new Set([1, 2, 3]);<br>set.add([4, 5, 6]);</blockquote>
+
+```js
+var set = new Set([1, 2, 3]);
+set.add([4, 5, 6]);
+```
+
 As a reminder, a set is a data structure that cannot contain duplicate values:
-<blockquote>var set = new Set([1, 2, 3, 1, 2, 3]);<br>// set contains [1, 2, 3] only</blockquote>
+
+```js
+var set = new Set([1, 2, 3, 1, 2, 3]);
+// set contains [1, 2, 3] only
+```
+
 </section>
 
 ## Instructions
@@ -29,8 +40,8 @@ For this exercise, return a set with the following values: <code>1, 2, 3, 'Taco'
 
 ```yml
 tests:
-  - text: Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.
-    testString: assert((function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');})(), 'Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');
+  - text: 'Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.'
+    testString: 'assert((function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has("Taco") && test.has("Cat") && test.has("Awesome");})());'
 
 ```
 
@@ -38,7 +49,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -47,7 +57,7 @@ function checkSet() {
   // change code below this line
 
   // change code above this line
-  console.log(set);
+  console.log(Array.from(set));
   return set;
 }
 

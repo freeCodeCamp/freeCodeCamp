@@ -1,7 +1,7 @@
 ---
 title: Change the Position of Overlapping Elements with the z-index Property
 ---
-## Change the Position of Overlapping Elements with the z-index Property
+# Change the Position of Overlapping Elements with the z-index Property
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/change-the-position-of-overlapping-elements-with-the-z-index-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

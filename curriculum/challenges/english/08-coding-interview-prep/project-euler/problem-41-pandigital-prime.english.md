@@ -2,6 +2,7 @@
 id: 5900f3951000cf542c50fea8
 challengeType: 5
 title: 'Problem 41: Pandigital prime'
+forumTopicId: 302078
 ---
 
 ## Description
@@ -21,9 +22,9 @@ What is the largest <i>n</i>-length digit pandigital prime that exists?
 ```yml
 tests:
   - text: <code>pandigitalPrime(4)</code> should return 4231.
-    testString: assert(pandigitalPrime(4) == 4231, '<code>pandigitalPrime(4)</code> should return 4231.');
+    testString: assert(pandigitalPrime(4) == 4231);
   - text: <code>pandigitalPrime(7)</code> should return 7652413.
-    testString: assert(pandigitalPrime(7) == 7652413, '<code>pandigitalPrime(7)</code> should return 7652413.');
+    testString: assert(pandigitalPrime(7) == 7652413);
 
 ```
 

@@ -8,16 +8,17 @@ localeTitle: إضافة أنماط مضمنة في React
 
 ### المفسد
 
- `class Colorful extends React.Component { 
-  render() { 
-    // change code below this line 
-    return ( 
-      <div style={{color: "yellow", fontSize: 24}}>Style Me!</div> 
-    ); 
-    // change code above this line 
-  } 
- }; 
-` 
+```jsx
+class Colorful extends React.Component {
+  render() {
+    // change code below this line
+    return (
+      <div style={{color: "yellow", fontSize: 24}}>Style Me!</div>
+    );
+    // change code above this line
+  }
+};
+``` 
 
 ### مصادر
 

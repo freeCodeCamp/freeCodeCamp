@@ -2,6 +2,7 @@
 id: 5900f4951000cf542c50ffa8
 challengeType: 5
 title: 'Problem 297: Zeckendorf Representation'
+forumTopicId: 301949
 ---
 
 ## Description
@@ -30,7 +31,7 @@ Find ∑ z(n) for 0<n<1017.
 ```yml
 tests:
   - text: <code>euler297()</code> should return 2252639041804718000.
-    testString: assert.strictEqual(euler297(), 2252639041804718000, '<code>euler297()</code> should return 2252639041804718000.');
+    testString: assert.strictEqual(euler297(), 2252639041804718000);
 
 ```
 
@@ -62,4 +63,5 @@ euler297();
 ```js
 // solution required
 ```
+
 </section>

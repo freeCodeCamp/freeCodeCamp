@@ -6,7 +6,7 @@ localeTitle: 定义Redux动作
 
 以下是如何声明Redux Action。
 
-```react.js
+```js
 let action={ 
   type: 'LOGIN' 
  } 
