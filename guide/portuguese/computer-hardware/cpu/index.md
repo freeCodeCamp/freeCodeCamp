@@ -4,13 +4,13 @@ localeTitle: CPU
 ---
 ## CPU
 
-A Unidade Central de Processamento (CPU) serve como o "cérebro" de um computador, permitindo-lhe executar tarefas computacionais essenciais.
+A Unidade Central de Processamento (CPU) serve como o "cérebro" de um computador, permitindo a execução tarefas computacionais essenciais.
 
-CPUs são circuitos integrados, que são circuitos complexos embutidos em um único chip. Eles incluem registradores, que armazenam valores únicos e pinos de entrada / saída. Esses pinos permitem que eles falem com o resto do computador. Devido ao contínuo avanço da tecnologia da CPU, muitos computadores utilizam hoje uma unidade de multiprocessamento. Multiprocessadores são chips únicos que contêm duas ou mais CPUs ou "Núcleos" que permitem maior capacidade de processamento.
+CPUs são circuitos integrados, que são circuitos complexos embutidos em um único chip. Eles incluem registradores, que armazenam valores únicos e pinos de entrada / saída. Esses pinos permitem que eles se comuniquem com o resto do computador. Devido ao contínuo avanço de tecnologias de CPU, muitos computadores utilizam hoje uma unidade de multiprocessamento. Multiprocessadores são chips únicos que contêm duas ou mais CPUs, "Núcleos" que permitem maior capacidade de processamento.
 
 As velocidades da CPU são medidas em gigahertz (GHz). Para cada gigahertz de velocidade, uma CPU pode executar um bilhão de instruções em um segundo. Essas instruções são muito simples, como "adicionar dois números" ou "mover essa variável para esse local". Para ver isso em ação, leia sobre o [assembly](https://en.wikipedia.org/wiki/Assembly_language) .
 
-Gigahertz não é o único fator determinante na velocidade real de um processador, já que diferentes processadores com a mesma velocidade gigahertz (também conhecida como velocidade de clock) podem executar tarefas reais em velocidades diferentes devido ao uso de diferentes conjuntos de instruções para executar essas tarefas. . Esses conjuntos de instruções são chamados de arquiteturas de CPU.
+Gigahertz não é o único fator determinante na velocidade real de um processador, já que diferentes processadores com a mesma velocidade gigahertz (também conhecida como velocidade de clock) podem executar tarefas reais em velocidades diferentes devido ao uso de diferentes conjuntos de instruções para executar essas tarefas. Esses conjuntos de instruções são chamados de arquiteturas.
 
 As CPUs mais modernas usam uma arquitetura de 64 bits, o que significa que usam endereços de memória de 64 bits. CPUs mais antigas usavam arquiteturas de 32 bits, 16 bits e até 8 bits. O maior número que uma CPU de 64 bits pode armazenar é 18.446.744.073.709.552.000. Um CPPU precisa de endereços de memória para obter valores especificados da RAM. Se chamarmos o comprimento dos endereços de memória n, 2 ^ n é a quantidade de células de memória que uma CPU pode endereçar.
 
