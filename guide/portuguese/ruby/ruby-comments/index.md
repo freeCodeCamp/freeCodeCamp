@@ -45,4 +45,5 @@ Quando executado, o programa acima produz o seguinte:
 ```
 Hello World! 
 
+Mas vale lembrar que as boas práticas de desenvolvimento em Ruby acabam por dispensar osc omentários como explicação de código, pois o código bem escrito deve ser sempre legível!
 ```
