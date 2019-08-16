@@ -11,6 +11,8 @@ Uma classe pode conter qualquer um dos seguintes tipos de variáveis.
 *   Variáveis ​​de Classe: Estas são as variáveis ​​que são declaradas dentro da definição da classe, fora de qualquer método, com a palavra-chave estática. Uma variável de classe é compartilhada entre todas as instâncias de uma classe. As variáveis ​​de classe também são conhecidas como variáveis ​​estáticas, elas são inicializadas apenas uma vez no momento da compilação da classe, portanto, apenas uma única cópia deste está disponível para todas as instâncias.
 *   Variáveis ​​de instância: A diferença com as variáveis ​​de classe é que as variáveis ​​de instância são inicializadas dentro do construtor de classe e não são compartilhadas entre todos os objetos. No momento da instanciação, uma nova cópia da variável de instância é criada.
 
+Para entender classes e objetos de uma forma mais dinâmica você pode pensar, por exemplo, em jogos de RPG. Em um RPG existem várias classes como guerreiros, magos, clérigos, ladinos entre outros. Cada uma dessas classes possui características e atributos pertencentes a ela. Se, por exemplo,quisessemos criar um mago e que possua característcas que estão ligadas a ele, em forma de código, esse mago seria um objeto, que terá atributos como vida, defesa, armadura etc.
+
 ```java
 public class Example { 
  

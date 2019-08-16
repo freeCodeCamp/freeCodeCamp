@@ -10,13 +10,13 @@ localeTitle: Создание управляемой формы
 
 ### Решение
 
-```react.js
+```jsx
 <input value={this.state.input} onChange={this.handleChange}/> 
 ```
 
 Затем создайте метод handleSubmit для вашего компонента. Во-первых, поскольку ваша форма отправляется, вам придется не обновлять страницу. Во-вторых, вызовите метод `setState()` , передавая в объект разные пары ключ-значение, которые вы хотите изменить. В этом случае вы хотите установить 'submit' в значение переменной 'input' и установить 'input' в пустую строку.
 
-```react.js
+```jsx
 handleSubmit(event) { 
   event.preventDefault(); 
   this.setState({ 

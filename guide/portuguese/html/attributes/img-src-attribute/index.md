@@ -1,8 +1,8 @@
 ---
 title: Img Src Attribute
-localeTitle: Img Src Atributo
+localeTitle: Atributo Img Src
 ---
-## Img Src Atributo
+## Atributo Img Src
 
 O atributo `<img src>` refere-se à origem da imagem que você deseja exibir. A tag `img` não exibirá uma imagem sem o atributo `src` . No entanto, se você definir a fonte para o local da imagem, poderá exibir qualquer imagem.
 

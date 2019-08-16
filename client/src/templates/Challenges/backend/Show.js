@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Col, Row } from '@freecodecamp/react-bootstrap';
 import { createSelector } from 'reselect';
-import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import { graphql } from 'gatsby';
 
 import {
   executeChallenge,
+  challengeMounted,
   challengeTestsSelector,
   consoleOutputSelector,
+  initConsole,
   initTests,
+  updateBackendFormValues,
   updateChallengeMeta,
+  updateProjectFormValues,
   backendNS
 } from '../redux';
 import { createGuideUrl } from '../utils';
@@ -23,53 +27,57 @@ import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
 import ProjectToolPanel from '../project/Tool-Panel';
-import {
-  createFormValidator,
-  isValidURL,
-  makeRequired,
-  Form
-} from '../../../components/formHelpers';
+import ProjectForm from '../project/ProjectForm';
+import { Form } from '../../../components/formHelpers';
 import Spacer from '../../../components/helpers/Spacer';
+import { ChallengeNode } from '../../../redux/propTypes';
+import { isSignedInSelector } from '../../../redux';
+
+import { backend } from '../../../../utils/challengeTypes';
 
 import '../components/test-frame.css';
 
-// provided by redux form
-const reduxFormPropTypes = {
-  fields: PropTypes.object,
-  handleSubmit: PropTypes.func.isRequired,
-  resetForm: PropTypes.func.isRequired,
-  submitting: PropTypes.bool
-};
-
 const propTypes = {
+  challengeMounted: PropTypes.func.isRequired,
+  data: PropTypes.shape({
+    challengeNode: ChallengeNode
+  }),
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
+  initConsole: PropTypes.func.isRequired,
+  initTests: PropTypes.func.isRequired,
+  isSignedIn: PropTypes.bool,
   output: PropTypes.string,
+  pageContext: PropTypes.shape({
+    challengeMeta: PropTypes.object
+  }),
   tests: PropTypes.array,
   title: PropTypes.string,
-  ...reduxFormPropTypes
-};
-
-const fields = ['solution'];
-
-const fieldValidators = {
-  solution: makeRequired(isValidURL)
+  updateBackendFormValues: PropTypes.func.isRequired,
+  updateChallengeMeta: PropTypes.func.isRequired,
+  updateProjectFormValues: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
   consoleOutputSelector,
   challengeTestsSelector,
-  (output, tests) => ({
+  isSignedInSelector,
+  (output, tests, isSignedIn) => ({
     tests,
-    output
+    output,
+    isSignedIn
   })
 );
 
 const mapDispatchToActions = {
+  challengeMounted,
   executeChallenge,
+  initConsole,
   initTests,
-  updateChallengeMeta
+  updateBackendFormValues,
+  updateChallengeMeta,
+  updateProjectFormValues
 };
 
 const formFields = ['solution'];
@@ -85,22 +93,11 @@ export class BackEnd extends Component {
     super(props);
     this.state = {};
     this.updateDimensions = this.updateDimensions.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    const {
-      initTests,
-      updateChallengeMeta,
-      data: {
-        challengeNode: {
-          fields: { tests },
-          challengeType
-        }
-      },
-      pageContext: { challengeMeta }
-    } = this.props;
-    initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, challengeType });
+    this.initializeComponent();
     window.addEventListener('resize', this.updateDimensions);
   }
 
@@ -119,21 +116,39 @@ export class BackEnd extends Component {
       }
     } = prevProps;
     const {
+      data: {
+        challengeNode: { title: currentTitle }
+      }
+    } = this.props;
+    if (prevTitle !== currentTitle) {
+      this.initializeComponent();
+    }
+  }
+
+  initializeComponent() {
+    const {
+      challengeMounted,
+      initConsole,
       initTests,
       updateChallengeMeta,
       data: {
         challengeNode: {
-          title: currentTitle,
           fields: { tests },
           challengeType
         }
       },
       pageContext: { challengeMeta }
     } = this.props;
-    if (prevTitle !== currentTitle) {
-      initTests(tests);
-      updateChallengeMeta({ ...challengeMeta, challengeType });
-    }
+    initConsole('');
+    initTests(tests);
+    updateChallengeMeta({ ...challengeMeta, challengeType });
+    challengeMounted(challengeMeta.id);
+  }
+
+  handleSubmit(values) {
+    const { updateBackendFormValues, executeChallenge } = this.props;
+    updateBackendFormValues(values);
+    executeChallenge();
   }
 
   render() {
@@ -141,62 +156,75 @@ export class BackEnd extends Component {
       data: {
         challengeNode: {
           fields: { blockName, slug },
+          challengeType,
           title,
           description,
           instructions
         }
       },
       output,
+      pageContext: {
+        challengeMeta: { introPath, nextChallengePath, prevChallengePath }
+      },
       tests,
-      submitting,
-      executeChallenge
+      isSignedIn,
+      executeChallenge,
+      updateProjectFormValues
     } = this.props;
 
-    // TODO: Should be tied to user.isSignedIn
-    const buttonCopy = submitting
+    const buttonCopy = isSignedIn
       ? 'Submit and go to my next challenge'
       : "I've completed this challenge";
     const blockNameTitle = `${blockName} - ${title}`;
+
     return (
       <LearnLayout>
         <Grid>
           <Row>
-            <Col xs={12}>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
               <Spacer />
-              <div>
-                <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
-                <ChallengeDescription
-                  description={description}
-                  instructions={instructions}
-                />
-              </div>
-              <div>
+              <ChallengeTitle
+                introPath={introPath}
+                nextChallengePath={nextChallengePath}
+                prevChallengePath={prevChallengePath}
+                showPrevNextBtns={true}
+              >
+                {blockNameTitle}
+              </ChallengeTitle>
+              <ChallengeDescription
+                description={description}
+                instructions={instructions}
+              />
+              {challengeType === backend ? (
                 <Form
-                  buttonText={buttonCopy + '(Ctrl + Enter)'}
+                  buttonText={`${buttonCopy}`}
                   formFields={formFields}
                   id={backendNS}
                   options={options}
-                  submit={executeChallenge}
+                  submit={this.handleSubmit}
                 />
-                <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
-              </div>
-              <div>
-                <br />
-                <Output
-                  defaultOutput={`/**
-  *
-  * Test output will go here
-  *
-  *
-  */`}
-                  dimensions={this.state}
-                  height={150}
-                  output={output}
+              ) : (
+                <ProjectForm
+                  isFrontEnd={false}
+                  onSubmit={executeChallenge}
+                  updateProjectForm={updateProjectFormValues}
                 />
-              </div>
-              <div>
-                <TestSuite tests={tests} />
-              </div>
+              )}
+              <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
+              <br />
+              <Output
+                defaultOutput={`/**
+*
+* Test output will go here
+*
+*
+*/`}
+                dimensions={this.state}
+                height={150}
+                output={output}
+              />
+              <TestSuite tests={tests} />
+
               <Spacer />
             </Col>
             <CompletionModal />
@@ -211,12 +239,7 @@ export class BackEnd extends Component {
 BackEnd.displayName = 'BackEnd';
 BackEnd.propTypes = propTypes;
 
-export default reduxForm(
-  {
-    form: 'BackEndChallenge',
-    fields,
-    validate: createFormValidator(fieldValidators)
-  },
+export default connect(
   mapStateToProps,
   mapDispatchToActions
 )(BackEnd);
@@ -225,7 +248,6 @@ export const query = graphql`
   query BackendChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
-      guideUrl
       description
       instructions
       challengeType

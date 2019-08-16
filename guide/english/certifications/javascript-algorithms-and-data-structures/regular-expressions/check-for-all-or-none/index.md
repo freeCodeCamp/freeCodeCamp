@@ -1,21 +1,32 @@
 ---
 title: Check for All or None
 ---
-## Check for All or None
 
-With Regular Expressions (RegExp) you can have modify your testing pattern with special charaters. To pass this challenge you the __quantifiers__ are very helpful. A quantifier is __?__ in __x?__.
+# Check for All or None
 
-__x?__ Matches the preceding item x 0 or 1 time.
+---
+## Problem Explanation
+In this challenge, you are asked to change the regex so that it defines the existence of the letter u, resulting in the acceptance of both American and British versions of the word favourite/favorite. 
 
-For example, /e?le?/ matches the "el" in "angel" and the "le" in "angle."
 
-If used immediately after any of the quantifiers *, +, ?, or {}, makes the quantifier non-greedy (matching the minimum number of times), as opposed to the default, which is greedy (matching the maximum number of times).  
- 
+---
+## Hints
 
-__Challenge Solution:__  
+### Hint 1
+The variable favWord already contains the American version — favorite. Does the regular expression in favRegex also match the British version?
+
+### Hint 2
+Have you used the question mark, ? symbol, if so, have you placed it in the correct position?
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 let favWord = "favorite";
 let favRegex = /favou?rite/; // Change this line
 let result = favRegex.test(favWord);
 ```
+</details>

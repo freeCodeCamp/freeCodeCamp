@@ -107,7 +107,7 @@
             },
             "crossDomain": {
               "type": "boolean",
-              "description": "Files coming from FreeCodeCamp must mark this true"
+              "description": "Files coming from freeCodeCamp must mark this true"
             }
           }
         }

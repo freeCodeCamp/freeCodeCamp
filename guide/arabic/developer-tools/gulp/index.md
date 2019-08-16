@@ -23,32 +23,35 @@ localeTitle: بلع
 
 لبدء استخدام `Gulp` ، فإن الخطوة الأولى هي تثبيته باستخدام `npm` . بعد تثبيته ، يجب إنشاء ملف `gulpfile.js` . ملف `gulpfile` هذا هو ملف يحتوي على جميع مهام `Gulp` التي يجب تشغيلها كجزء من العملية التلقائية. تتم كتابة المهام في JavaScript. في ما يلي مثال بسيط جدًا `gulpfile` ، والذي يأخذ أي ملفات `CSS` من مجلد `client/templates` ، ويقللها ويضع الملف المُصغر في المجلد `build/css` .
 
- `var gulp = require('gulp'); 
- var minifyCSS = require('gulp-csso'); 
- 
- gulp.task('css', function(){ 
-  return gulp.src('client/templates/*.css') 
-    .pipe(minifyCSS()) 
-    .pipe(gulp.dest('build/css')) 
- }); 
-` 
+```javascript
+var gulp = require('gulp');
+var minifyCSS = require('gulp-csso');
+
+gulp.task('css', function(){
+  return gulp.src('client/templates/*.css')
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('build/css'))
+});
+``` 
 
 لتشغيل مهمة gulp هذه ، كل ما عليك فعله هو كتابة `gulp css` في مطراف في جذر مشروعك.
 
 لمشاهدة ملفات CSS لأية تغييرات وتشغيل مهمة "css" بعد حفظها.
 
- `gulp.watch('css') 
-  .on('change', ['css']); 
-` 
+```javascript
+gulp.watch('css')
+  .on('change', ['css']);
+``` 
 
 ### تبعيات المهام
 
 افتراضيا سيتم تشغيل جولبول جميع المهام المحددة في نفس الوقت وانتظر شيئا. لتشغيل مهمة متعددة بالترتيب الصحيح ، يمكنك إضافة مهمة كتوابع إلى مهمة أخرى.
 
- `gulp.task('two', ['one'], function() { 
-    // task 'one' is done now 
- }); 
-` 
+```javascript
+gulp.task('two', ['one'], function() {
+    // task 'one' is done now
+});
+``` 
 
 مع رمز المقتطف أعلاه، مهمة `two` سيتم تشغيل فقط بعد مهمة `one` اكتمال.
 

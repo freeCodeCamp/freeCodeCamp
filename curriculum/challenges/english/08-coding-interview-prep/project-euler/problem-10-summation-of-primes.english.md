@@ -2,6 +2,7 @@
 id: 5900f3761000cf542c50fe89
 challengeType: 5
 title: 'Problem 10: Summation of primes'
+forumTopicId: 301723
 ---
 
 ## Description
@@ -21,13 +22,13 @@ Find the sum of all the primes below n.
 ```yml
 tests:
   - text: <code>primeSummation(17)</code> should return 41.
-    testString: assert.strictEqual(primeSummation(17), 41, '<code>primeSummation(17)</code> should return 41.');
+    testString: assert.strictEqual(primeSummation(17), 41);
   - text: <code>primeSummation(2001)</code> should return 277050.
-    testString: assert.strictEqual(primeSummation(2001), 277050, '<code>primeSummation(2001)</code> should return 277050.');
+    testString: assert.strictEqual(primeSummation(2001), 277050);
   - text: <code>primeSummation(140759)</code> should return 873608362.
-    testString: assert.strictEqual(primeSummation(140759), 873608362, '<code>primeSummation(140759)</code> should return 873608362.');
+    testString: assert.strictEqual(primeSummation(140759), 873608362);
   - text: <code>primeSummation(2000000)</code> should return 142913828922.
-    testString: assert.strictEqual(primeSummation(2000000), 142913828922, '<code>primeSummation(2000000)</code> should return 142913828922.');
+    testString: assert.strictEqual(primeSummation(2000000), 142913828922);
 
 ```
 

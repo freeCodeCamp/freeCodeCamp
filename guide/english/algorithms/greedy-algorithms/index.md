@@ -48,12 +48,12 @@ Let's look at the various approaches for solving this problem.
 ![Earliest Starting Time First](https://algorithmsandme.files.wordpress.com/2015/03/f268b-jobs.png?w=840)
 
 2. **Smallest Interval First** i.e. you end up selecting the lectures in order of their overall interval which is nothing but their `finish time - start time`. Again, this solution is not correct. Look at the following case.
-![Shortest Interval First](https://i.stack.imgur.com/4bz2N.png)
+![Shortest Interval First](https://cdn-media-1.freecodecamp.org/imgr/4bz2N.png)
 
 You can clearly see that the shortest interval lecture is the one in the middle, but that is not the optimal solution here. Let's look at yet another solution for this problem deriving insights from this solution.
 
 3. **Least Conflicting Interval First** i.e. you should look at intervals that cause the least number of conflicts. Yet again we have an example where this approach fails to find an optimal solution.
-![Least Conflicting Interval First](https://i.stack.imgur.com/5LZ9V.png)
+![Least Conflicting Interval First](https://cdn-media-1.freecodecamp.org/imgr/5LZ9V.png)
 
 The diagram shows us that the least confliciting interval is the one in the middle with just 2 conflicts. After that we can only pick the two intervals at the very ends with conflicts 3 each. But the optimal solution is to pick the 4 intervals on the topmost level.
 

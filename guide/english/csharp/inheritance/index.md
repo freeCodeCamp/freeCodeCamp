@@ -29,35 +29,38 @@ In C# the `:` symbol is used to denote inheritance. This is called when creating
 # Base class
 ```
 public class Animal
-{
-	public int ID;
-	public string title;
-	public enum phylum;
-	public enum dietType;
-	
-	    public DefineAnimal(int id, string name, enum phy, enum diet)
     {
-        this.ID = id;
-        this.title = name;
-        this.phylum = phy;
-        this.dietType = diet;
+        public int ID;
+        public string title;
+        public enum phylum { };
+        public enum dietType { };
+
+        public phylum _phylum;
+        public dietType _dietType;
+
+        public Animal(int id, string name, phylum phylum, dietType diet)
+        {
+            this.ID = ID;
+            this.title = name;
+            this._phylum = phylum;
+            this._dietType = diet;
+        }
     }
-}
 	
 ```
 
 # Derived class
 ```
 public class Dog : Animal
-{
-	public enum breed;
-	public int levelOfTraining;
-	
-	public void SayWoof()
-	{
-		Console.WriteLine("Woof");
-	}
-}
+    {
+        public enum breed { };
+        public int levelOfTraining;
+
+        public void SayWoof()
+        {
+            Console.WriteLine("Woof");
+        }
+    }
 ```
 
 <!--- To do -  Constructor rules, Abstract,	Sealing derived classes--->

@@ -2,6 +2,7 @@
 id: bad87fee1348cd8acdf08812
 title: Create a Bootstrap Button
 challengeType: 0
+forumTopicId: 16811
 ---
 
 ## Description
@@ -21,11 +22,11 @@ Create a new <code>button</code> element below your large kitten photo. Give it 
 ```yml
 tests:
   - text: Create a new <code>button</code> element with the text "Like".
-    testString: assert(new RegExp("like","gi").test($("button").text()) && ($("img.img-responsive + button.btn").length > 0), 'Create a new <code>button</code> element with the text "Like".');
+    testString: assert(new RegExp("like","gi").test($("button").text()) && ($("img.img-responsive + button.btn").length > 0));
   - text: 'Your new button should have two classes: <code>btn</code> and <code>btn-default</code>.'
-    testString: 'assert($("button").hasClass("btn") && $("button").hasClass("btn-default"), ''Your new button should have two classes: <code>btn</code> and <code>btn-default</code>.'');'
+    testString: assert($("button").hasClass("btn") && $("button").hasClass("btn-default"));
   - text: Make sure all your <code>button</code> elements have a closing tag.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 

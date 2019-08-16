@@ -15,6 +15,10 @@ import {
   reducer as challenge,
   ns as challengeNameSpace
 } from '../templates/Challenges/redux';
+import {
+  reducer as search,
+  ns as searchNameSpace
+} from '../components/search/redux';
 
 export default combineReducers({
   [appNameSpace]: app,
@@ -22,5 +26,6 @@ export default combineReducers({
   [curriculumMapNameSpace]: curriculumMap,
   [flashNameSpace]: flash,
   form: formReducer,
+  [searchNameSpace]: search,
   [settingsNameSpace]: settings
 });

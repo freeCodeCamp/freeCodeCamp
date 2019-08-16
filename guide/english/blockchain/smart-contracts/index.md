@@ -4,19 +4,22 @@ title: Smart Contracts
 ## Smart Contracts
 Cryptocurrency transactions that occur on a blockchain are an example of a very basic contract: one party sends money to another. However, blockchains also have the potential to manage and execute more complicated contracts. On the Ethereum blockchain, for example, one can utilize _smart contracts_ — blocks of code that only execute when their conditions are met. Smart contracts are Turing-Complete and as decentralized as the monetary transactions that occur on the blockchain. The combination of decentralized programs and money make for interesting possibilities.
 
-As a piece of code that sits on the blockchain, a Smart Contract can automate tasks in a decentralized and transparent manner. Examples of this include managing the process of recieving and distributing micro-payments for viewing ads (such as with the Basic Attention Token) and managing buy/sell order books for exchanges transparently (such as with the 0x project). The term Smart Contract was coined by computer scientist Nick Szabo in 1994.
+First conceived in  [1994](http://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/smart.contracts.html), the idea was originally described by computer scientist and cryptographer Nick Szabo as a computerized transaction protocol that executes the terms of a contract. The general objectives of smart contract design are to satisfy common contractual conditions (such as payment terms, liens, confidentiality, and even enforcement), minimize exceptions both malicious and accidental, and minimize the need for trusted intermediaries. Related economic goals include lowering fraud loss, arbitration and enforcement costs, and other transaction costs.
 
-Transactions in a blockchain are a very basic form of Smart Contract - One party sends resources to another once an authorization for the transfer has been given. The Bitcoin blockchain supports slightly more complex contracts involving transactions between several parties, but not "fully smart" contracts. That can be achieved in the Ethereum blockchain, given that its transactions can support any kind of logic. They have the expressive power of a Turing-Complete machine - meaning they can carry out any task that a computer can do.
+A smart contract is a computer code running on top of a blockchain containing a set of rules under which the parties to that smart contract agree to interact with each other. If and when the pre-defined rules are met, the agreement is automatically enforced. The smart contract code facilitates, verifies, and enforces the negotiation or performance of an agreement or transaction. It is the simplest form of decentralized automation.
 
-Deployed contracts can be viewed on platforms such as [Etherscan](www.etherscan.io).
+Smart contracts can be used to create Decentralized Apps or Dapps that live on a host blockchain.
+The most famous Dapp is perhaps the game CryptoKitties which exploded in popularity towards the end of 2017. 
+The network that CryptoKitties lives on, Ethereum, faced heavy congestion as a result. 
 
 ## Applications of Smart Contacts
 Smart Contracts allows the transfer of goods and services without the need for a independent third party. Logic and rules are built into the smart contract that define the permissions and processes associated with a particular agreement and enforce the obligations attached to it. This provides an opportunity to remove middlemen that are traditionally required to interact with physical property or financial service instruments.
 
 ## Blockchain Technologies Supporting Smart Contracts
-Two of the most common technologies used are:
-- Ethereum - Created to be a blockchain for smart contracts. The smart contracts run in the Ethereum Virtual Machine (EVM), which can be thought of as a  decentralized computer. Ethereum smart contracts can be written in Solidity, Serpent or Vyper, which are then compiled to byte-code and fed to the EVM.
+Some of the most common technologies used are:
+- Ethereum - Created to be a blockchain for smart contracts. The smart contracts run in the Ethereum Virtual Machine (EVM), which can be thought of as a  decentralized computer. Ethereum smart contracts can be written in languages such as Solidity, Serpent, Vyper, or Go which are then compiled to byte-code and fed to the EVM.
 - Hyperledger - An initiative hosted by the Linux Foundation for private blockchains and tends to be more business-oriented. There are several projects under the Hyperledger name, most of them with Smart Contract capabilities. Ethereum Smart Contracts can be run in Hyperledger too.
+- Corda - A new Operating System for Financial Services
 
 There are many other blockchain projects offering (or promising) smart contract capabilities  - e.g., EOS, NEO or ICON. They may compete with Ethereum for market adoption (still very low globally) in the future.
 
@@ -24,10 +27,11 @@ There are many other blockchain projects offering (or promising) smart contract 
 Smart contracts in Ethereum are written using Solidity.  Solidity is a contract-oriented, high-level language for implementing Smart Contracts, and targets the Ethereum Virtual Machine. One can use Remix online IDE to try writing and deploying Smart Contracts.
 
 ### Smart Contracts in Hyperledger
-Smart contracts in Hyperledger is called chaincode, and is written in Golang programming language.
+A Smart Contract in Hyperledger is called chaincode and is written in Golang programming language. 
+A chaincode is typically used by administrators to group related smart contracts for deployment, but can also be used for low level system programming of Fabric.
 
 ## Hello World Smart Contract
-```solidity
+```
 pragma solidity ^0.4.24;
 contract Hello {
     string public message;

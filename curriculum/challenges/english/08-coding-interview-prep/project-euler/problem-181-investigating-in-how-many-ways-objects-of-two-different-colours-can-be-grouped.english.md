@@ -2,6 +2,7 @@
 id: 5900f4231000cf542c50ff34
 challengeType: 5
 title: 'Problem 181: Investigating in how many ways objects of two different colours can be grouped'
+forumTopicId: 301817
 ---
 
 ## Description
@@ -23,7 +24,7 @@ In how many ways can sixty black objects B and forty white objects W be  thus gr
 ```yml
 tests:
   - text: <code>euler181()</code> should return 83735848679360670.
-    testString: assert.strictEqual(euler181(), 83735848679360670, '<code>euler181()</code> should return 83735848679360670.');
+    testString: assert.strictEqual(euler181(), 83735848679360670);
 
 ```
 
@@ -55,4 +56,5 @@ euler181();
 ```js
 // solution required
 ```
+
 </section>

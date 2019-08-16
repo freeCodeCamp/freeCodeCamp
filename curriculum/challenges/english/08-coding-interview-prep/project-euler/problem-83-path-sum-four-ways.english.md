@@ -2,6 +2,7 @@
 id: 5900f3bf1000cf542c50fed2
 challengeType: 5
 title: 'Problem 83: Path sum: four ways'
+forumTopicId: 302197
 ---
 
 ## Description
@@ -34,7 +35,7 @@ Find the minimal path sum, in matrix.txt (right click and
 ```yml
 tests:
   - text: <code>euler83()</code> should return 425185.
-    testString: assert.strictEqual(euler83(), 425185, '<code>euler83()</code> should return 425185.');
+    testString: assert.strictEqual(euler83(), 425185);
 
 ```
 
@@ -66,4 +67,5 @@ euler83();
 ```js
 // solution required
 ```
+
 </section>

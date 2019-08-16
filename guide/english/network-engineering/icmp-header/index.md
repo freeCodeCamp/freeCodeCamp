@@ -5,7 +5,7 @@ title: ICMP Header
 
 Below is the Internet Control Message Protocol (ICMP) header format for IPv4 according to [RFC792](https://tools.ietf.org/html/rfc792):
 
-![ICMP Header](https://i.imgur.com/W3amiIr.png)
+![ICMP Header](https://cdn-media-1.freecodecamp.org/imgr/W3amiIr.png)
 
 ICMP for IPv4 is encapsulated within an IPv4 packet and contains a data section that includes a copy of the entire IPv4 header along with at least the first 64 bits (8 bytes) of the original datagram's data.  The additional 8 bytes of data is used by the receiving host to match the message to an internal process.  IP-in-IP tunneling (encapsulating an IP packet within another IP header), adds additional bytes in the form of the added IPv4 header(s) and may require additional bytes are included in the data portion of the ICMP packet to allow the host to identify the associated process [[RFC1812](https://tools.ietf.org/html/rfc1812#section-4.3.2.3)].
 

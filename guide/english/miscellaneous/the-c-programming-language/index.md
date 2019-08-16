@@ -59,7 +59,7 @@ Alternatively, you could also download <a href='https://www.visualstudio.com/en-
 
 ## Your First C# Program
 
-```C#
+```csharp
 //this is the single line comment
 
 /** This is multiline comment,
@@ -103,7 +103,7 @@ C# is a strongly typed language. Every variable has a type. Every expression or 
 
 <a href='https://dotnetfiddle.net/JCkTxb' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
-```C#
+```csharp
 int a = 10;
 int b = 20;
 a=b;
@@ -138,7 +138,7 @@ More information <a href='http://www.c-sharpcorner.com/UploadFile/rmcochran/csha
 
 *   <a href='https://msdn.microsoft.com/en-us/library/5011f09h.aspx' target='_blank' rel='nofollow'>If else</a> statement : <a href='https://dotnetfiddle.net/IFVB33' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
-    ```C#
+    ```csharp
     int myScore = 700;
     if (myScore == 700)
     {
@@ -162,7 +162,7 @@ More information <a href='http://www.c-sharpcorner.com/UploadFile/rmcochran/csha
 
 *   <a href='https://msdn.microsoft.com/en-GB/library/06tc147t.aspx' target='_blank' rel='nofollow'>Switch</a> statement : <a href='https://dotnetfiddle.net/lPZftO' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
-    ```C#
+    ```csharp
     using System;
 
     public class Program
@@ -200,7 +200,7 @@ More information <a href='http://www.c-sharpcorner.com/UploadFile/rmcochran/csha
 
 *   <a href='https://msdn.microsoft.com/en-us/library/ch45axte.aspx' target='_blank' rel='nofollow'>For</a> & <a href='https://msdn.microsoft.com/en-gb/library/ttw7t8t6.aspx' target='_blank' rel='nofollow'>Foreach</a> : <a href='https://dotnetfiddle.net/edxtvq' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
-    ```C#
+    ```csharp
     for (int i = 0; i < 10; i++)
     {
       Console.WriteLine(i); //prints  0-9
@@ -228,7 +228,7 @@ More information <a href='http://www.c-sharpcorner.com/UploadFile/rmcochran/csha
 
 *   <a href='https://msdn.microsoft.com/en-us/library/2aeyhxcd.aspx' target='_blank' rel='nofollow'>While</a> & <a href='https://msdn.microsoft.com/en-us/library/370s1zax.aspx' target='_blank' rel='nofollow'>do-while</a> : <a href='https://dotnetfiddle.net/O5hOF1' target='_blank' rel='nofollow'>Edit in .NET Fiddle</a>
 
-    ```C#
+    ```csharp
     // Continue the while-loop until index is equal to 10.
     int i = 0;
     while (i < 10)

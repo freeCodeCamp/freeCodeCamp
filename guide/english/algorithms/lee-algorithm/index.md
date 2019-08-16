@@ -23,7 +23,7 @@ your own version of queue.
 
 C++ code:
 
-```c++
+```cpp
 
 int dl[] = {-1, 0, 1, 0}; // these arrays will help you travel in the 4 directions more easily
 int dc[] = {0, 1, 0, -1};

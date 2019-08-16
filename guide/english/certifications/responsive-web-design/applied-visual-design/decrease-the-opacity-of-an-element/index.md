@@ -1,7 +1,7 @@
 ---
 title: Decrease the Opacity of an Element
 ---
-## Decrease the Opacity of an Element
+# Decrease the Opacity of an Element
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/decrease-the-opacity-of-an-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

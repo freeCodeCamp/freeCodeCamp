@@ -98,6 +98,7 @@ nitesh
 scanf(char *format, arg1, arg2, …)
 
 decimal integer : %d
+There are also many type of integers like short int, long int(%ld), and long long int(%lld), all of these have their unsigned type also.
 
 ```c
 #include <stdio.h> 
@@ -187,9 +188,15 @@ The % specifiers that you can use in ANSI C are:
 | %s | a string |
 | %hi| short(signed)|
 | %hu| short(unsigned)|
+| %lf| double|
 | %Lf| long double |
 | %n | prints nothing |
 | %d | a decimal integer|
+| %u | a decimal integer(unsigned)|
+| %ld| a long decimal integer|
+| %lu| a long dcimal integr(unsigned)|
+|%%lld| a long long integer|
+|%%llu| a long long integer(unsigned)|
 | %o | an octal (base 8) integer|
 | %x | a hexadecimal (base 16) integer |
 | %p | an address (or pointer) |

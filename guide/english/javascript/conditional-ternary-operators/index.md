@@ -39,3 +39,7 @@ const wealth = housesOwned > 3 ? "rich"
              : housesOwned > 1 ? "nothing to complain"
              : "poor"
 ```
+
+### Resources:
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)

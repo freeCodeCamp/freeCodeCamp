@@ -128,6 +128,23 @@ int val = test();
 
 ```
 
+## Recursive Function
+
+When the function calls itself then it is known as recursive function.
+
+Example:
+
+```cpp
+void printNumbersUptoN(int n)
+{
+	if(n == 0)
+		return;
+
+	printNumbersUptoN(n - 1);
+	cout<<n<<endl;
+}
+```
+
 ## Why are functions important?
 
 Functions support modularity (breaking down of work into smaller pieces called modules), which is an essential feature of object-oriented programming (OOP) which primarily separates C++ from C.

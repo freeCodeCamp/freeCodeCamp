@@ -12,13 +12,25 @@ Properties of B-Tree:
 2) A B-Tree is defined by the term minimum degree ‘t’. The value of t depends upon disk block size.
 3) Every node except root must contain at least t-1 keys. Root may contain minimum 1 key.
 4) All nodes (including root) may contain at most 2t – 1 keys.
+5) Speaking in terms of order n , each node must cantain at minimum ciel(m/2) -1 keys and maximum m-1 keys.
 5) Number of children of a node is equal to the number of keys in it plus 1.
 6) All keys of a node are sorted in increasing order. The child between two keys k1 and k2 contains all keys in range from k1 and k2.
 7) B-Tree grows and shrinks from root which is unlike Binary Search Tree. Binary Search Trees grow downward and also shrink from downward.
-8) Like other balanced Binary Search Trees, time complexity to search, insert and delete is O(Logn).
+8) Like other balanced Binary Search Trees, time complexity to search, insert and delete is O(Log(n)).
 
-Search:
-Search is similar to search in Binary Search Tree. Let the key to be searched be k. We start from root and recursively traverse down. For every visited non-leaf node, if the node has key, we simply return the node. Otherwise we recur down to the appropriate child (the child which is just before the first greater key) of the node. If we reach a leaf node and don’t find k in the leaf node, we return NULL.
+### Search:
+Search is similar to search in Binary Search Tree. Let the key to be searched be k. We start from root and recursively traverse down. For every visited non-leaf node, if the node has key, we simply return the node. Otherwise we recur down to the appropriate child (The child which is just before the first greater key) of the node. If we reach a leaf node and don’t find k in the leaf node, we return NULL.
 
-Traverse:
+### Traverse:
 Traversal is also similar to Inorder traversal of Binary Tree. We start from the leftmost child, recursively print the leftmost child, then repeat the same process for remaining children and keys. In the end, recursively print the rightmost child.
+
+### Insert 
+First we search and find out to which node the key should belong to and we insert it into it. Afterwards we look for and fix these problems:
+If the number of keys is too high(greater than t - 1) then we move the middle key to the nodes parent. We do this recursively up until root. If the number of keys in the root is too high, then we make the middle key to be the new root of the whole tree and connect it to the node it was in before.
+
+### Time Analysis for B-Tree:
+
+Suppose a B-tree has n elements and M is the maximum number of children a node can have. What is the maximum depth the tree could have? What is the minimum depth the tree could have?
+
+- The worst-case depth (maximum depth) of a B-tree is: logM/2 n.
+- The best-case depth (minimum depth) of a B-tree is: logM n.

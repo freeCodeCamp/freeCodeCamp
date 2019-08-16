@@ -5,7 +5,7 @@ title: TypeScript
 
 ### Overview
 
-![TypeScript](https://i.imgur.com/uRLunzU.png)
+![TypeScript](https://cdn-media-1.freecodecamp.org/imgr/uRLunzU.png)
 
 So as you are most likely aware, JavaScript is expanding its footprint everyday and it is both overwhelming and amazing what you can do with the language nowadays.
 
@@ -15,7 +15,7 @@ This is a problem Microsoft recognized early on and they came up with the soluti
 
 You can learn more about the syntax differences at [`TypeScript`](./) > [`JavaScript vs TypeScript`](./javascript-vs-typescript).
 
-![Key Features](https://i.imgur.com/pZij95O.jpg)
+![Key Features](https://cdn-media-1.freecodecamp.org/imgr/pZij95O.jpg)
 
 ### Version
 
@@ -31,7 +31,7 @@ To learn more about using a linter with TypeScript, check out [`TypeScript`](./)
 
 ### Playground
 
-![Playground](https://i.imgur.com/vlV7ZFr.png)
+![Playground](https://cdn-media-1.freecodecamp.org/imgr/vlV7ZFr.png)
 
 If you want to try out TypeScript without installing it, visit the <a href='http://www.typescriptlang.org/play/index.html' target='_blank' rel='nofollow'>TypeScript Playground</a>.
 

@@ -2,6 +2,7 @@
 id: 5900f5101000cf542c510022
 challengeType: 5
 title: 'Problem 419: Look and say sequence'
+forumTopicId: 302088
 ---
 
 ## Description
@@ -37,7 +38,7 @@ E.g. for n = 40 the answer would be 31254,20259,11625
 ```yml
 tests:
   - text: <code>euler419()</code> should return 998567458, 1046245404, 43363922.
-    testString: assert.strictEqual(euler419(), 998567458, 1046245404, 43363922, '<code>euler419()</code> should return 998567458, 1046245404, 43363922.');
+    testString: assert.strictEqual(euler419(), 998567458, 1046245404, 43363922);
 
 ```
 
@@ -69,4 +70,5 @@ euler419();
 ```js
 // solution required
 ```
+
 </section>

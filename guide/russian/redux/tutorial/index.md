@@ -1,7 +1,8 @@
 ---
 title: React Redux Basic Setup
 localeTitle: React Redux Basic Setup
----## React Redux Basic Setup
+---
+## React Redux Basic Setup
 
 В этом руководстве читателю будет представлено, как настроить простое приложение React и Redux.
 
@@ -12,8 +13,7 @@ localeTitle: React Redux Basic Setup
 Предполагая, что все настроено и работает правильно, есть некоторые пакеты, которые необходимо добавить, чтобы Redux работал с React.
 
 Откройте терминал внутри созданной папки проекта и выполните следующую команду
-
-```sh
+```shell
 npm install --save react react react-dom react-redux react-router redux 
 ```
 

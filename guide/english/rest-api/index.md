@@ -130,11 +130,11 @@ The frustrating **4xx** resources!
 The lesser known **400** suggests that you are passing wrong parameter. The response can also pass information that describes what is wrong.
 
 Example:
-```output
+```shell
 DELETE /cars/MH09234
 ```
 returns `400` or message 
-```output
+```shell
 Expecting int car id /car/id got string car/MH09234
 ```
 

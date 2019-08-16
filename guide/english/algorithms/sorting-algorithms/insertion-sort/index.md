@@ -85,7 +85,7 @@ Step 5 :
 
 The algorithm shown below is a slightly optimized version to avoid swapping the `key` element in every iteration. Here, the `key` element will be swapped at the end of the iteration (step).
 
-```Algorithm
+```
     InsertionSort(arr[])
       for j = 1 to arr.length
          key = arr[j]
@@ -96,9 +96,9 @@ The algorithm shown below is a slightly optimized version to avoid swapping the 
          arr[i+1] = key
 ```
 
-Here is a detailed implementation in Javascript:
+Here is a detailed implementation in JavaScript:
 
-```
+```js
 function insertion_sort(A) {
     var len = array_length(A);
     var i = 1;
@@ -135,7 +135,7 @@ A quick implementation in Swift is shown below :
   }
 ```
 The Java example is shown below:
-```
+```java
 public int[] insertionSort(int[] arr)
       for (j = 1; j < arr.length; j++) {
          int key = arr[j]

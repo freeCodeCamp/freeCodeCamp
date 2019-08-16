@@ -3,13 +3,22 @@ title: Compose React Components
 ---
 # Compose React Components
 
-## Hint 
+
+---
+## Hints
+
+### Hint 1 
 
 Use nested components as in the previous challenge to render components.
 
-## Solution
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 The following is the solution to the challenge, where it render `Citrus` and `NonCitrus` in a component which is then rendered in another:
+
 ```jsx
 class Fruits extends React.Component {
   constructor(props) {
@@ -41,6 +50,7 @@ class TypesOfFood extends React.Component {
 };
 ```
 
-### Relevant Links:
+#### Relevant Links
   - [Components and Props](https://reactjs.org/docs/components-and-props.html)
   - [Nested Components](http://www.reactjstutorial.net/nested-components.html)
+</details>

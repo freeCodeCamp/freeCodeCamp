@@ -4,7 +4,7 @@ localeTitle: Antes del selector
 ---
 ## Antes del selector
 
-El selector CSS **:: before** se puede usar para insertar cualquier cosa antes del contenido, un elemento o elementos. Permite al diseñador realizar cualquier diseño css antes del contenido en un elemento. Se utiliza adjuntando **:: antes** a un elemento en el que se va a utilizar.
+El selector CSS **:: before** se puede usar para insertar cualquier cosa antes del contenido, un elemento o varios elementos. Permite al diseñador realizar cualquier diseño css antes del contenido en un elemento. Se utiliza adjuntando **:: before** al elemento en el que se va a utilizar.
 
 Veamos algunos ejemplos:
 
@@ -14,29 +14,29 @@ p::before {
     border: solid 5px #ccc 
  } 
  
- span.comment::before{ 
-  content: "Comment: "; 
+ span.comentario::before{ 
+  content: "comentario: "; 
   color: blue; 
  } 
 ```
 
 ```html
 
-<p> To infinity and beyond</p> 
- <p> I am buz lightyear, I come in peace.</p> 
+<p> Al infinito y más allá</p> 
+ <p> Soy Buzz Lightyear, vengo en paz.</p> 
  
- <span class="comment"> May the force be with you</span> 
+ <span class="comentario"> Que la fuerza te acompañe</span> 
  <br/> 
- <span> Do. Or do not. There is no try</span> 
+ <span> Hazlo, o no lo hagas. Pero no lo intentes.</span> 
 ```
 
-En el ejemplo anterior, estamos anteponiendo un borde gris antes de cada elemento de párrafo en una página y también estamos anteponiendo las palabras comentario en azul antes de cada elemento de tramo con el comentario de clase.
+En el ejemplo anterior, estamos anteponiendo un borde gris a cada elemento de párrafo en una página y también estamos anteponiendo las palabras comentario en azul a cada elemento de tramo de la clase "comentario".
 
 > Puede ver esta demostración aquí https://jsfiddle.net/398by400/
 
 #### Definición y uso
 
-`::before` es uno de los selectores de pseudo-elementos CSS, que se utilizan para diseñar partes específicas de un elemento. En este caso, podemos insertar contenido antes de algún elemento HTML desde CSS. Aunque veremos el contenido en la página, no es parte del DOM, lo que significa que no podemos manipularlo desde Javascript. Un truco para resolver esta desventaja: pasar el contenido con un atributo de datos y usar jQuery para manipularlo. Aquí hay un ejemplo de uso:
+`::before` es uno de los selectores de pseudo-elementos CSS que se utilizan para diseñar partes específicas de un elemento. En este caso, podemos insertar contenido antes de algún elemento HTML desde CSS. Aunque veremos el contenido en la página, no es parte del DOM, lo que significa que no podemos manipularlo desde Javascript. Un truco para resolver esta desventaja: pasar el contenido con un atributo de datos y usar jQuery para manipularlo. Aquí hay un ejemplo de uso:
 
 ```css
    p::before { 
@@ -49,13 +49,13 @@ En el ejemplo anterior, estamos anteponiendo un borde gris antes de cada element
 <p>world!!</p> 
 ```
 
-Esto le mostrará a `Hello world!!` en la pagina
+Esto te mostrará `Hello world!!` en la pagina
 
-No solo las cadenas, también las imágenes, los contadores o incluso nada ("", útil para clearfix) se pueden insertar en el `content` , pero **no HTML** . Hay un buen número de cosas geniales que se pueden hacer usando `::before` y `after` de una manera creativa. Si tiene curiosidad, puede echar un vistazo en el siguiente enlace: [Un montón de cosas increíbles que pueden hacer los pseudo elementos](https://www.w3schools.com/css/css_pseudo_elements.asp)
+No solo las cadenas, también las imágenes, los contadores o incluso nada ("", útil para clearfix) se pueden insertar en el `content` , pero **no HTML** . Hay un buen número de cosas geniales que se pueden hacer usando `::before` y `after` de una manera creativa. Si tienes curiosidad, puedes echar un vistazo en el siguiente enlace: [Un montón de cosas increíbles que pueden hacer los pseudo elementos](https://www.w3schools.com/css/css_pseudo_elements.asp)
 
-#### Colón simple vs. colon doble
+#### Colón simple vs. colón doble
 
-Hay un poco de discusión sobre la forma correcta de usar los pseudo-elementos: estilo antiguo de un solo punto ( `:before` ), usado en las especificaciones CSS 1 y 2, versus recomendación de CSS3, dos puntos ( `::before` ), principalmente para _"establecer una discriminación entre pseudo-clases y pseudo-elementos "_ . Pero por razones de compatibilidad, todavía se acepta el punto y coma. Hablando de compatibilidad, IE8 solo admite la notación de un solo punto.
+Hay un poco de discusión sobre la forma correcta de usar los pseudo-elementos: el estilo antiguo de un solo punto ( `:before` ), usado en las especificaciones CSS 1 y 2, versus la recomendación de CSS3, dos puntos ( `::before` ), principalmente para _"establecer una discriminación entre pseudo-clases y pseudo-elementos "_ . Pero por razones de compatibilidad, todavía se acepta el punto y coma. Hablando de compatibilidad, IE8 solo admite la notación de un solo punto.
 
 #### Más información:
 

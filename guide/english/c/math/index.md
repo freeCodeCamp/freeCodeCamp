@@ -108,17 +108,20 @@ Give that a run to see what happens, and be sure to play with the operators and 
 # Math library
 C provides a math library (`math.h`) that provides multiple useful math functions. As an example, the power of a number can be calculated as:
 
-```#include<math.h>
+```c
+#include<math.h>
 int result = pow(2,3) // will result in 2*2*2 or 8
 ```
 
 Some other (`math.h`) library functions that may prove useful are:
 
-```#include <math.h>
+```c
+#include <math.h>
 double angle = cos(90.00); // Givs us 0.00
 int result = sqrt(16); // Gives us 4
 double result = log(10.00) // Gives us 2.30 (note this is ln(10), not log base 10)
 ```
+
 ```c
 // C code to illustrate 
 // the use of ceil function. 
@@ -156,3 +159,4 @@ int main ()
 * If only integers are involved, an integer will be returned
 * If a floating point number is involved in an operation, that part of the operation becomes floating point
 * C provides a `math.h` library with multiple functions like `pow` for calculating the power of a number. 
+* Don't forget to include the library at the top of the file or the compiler will complain.

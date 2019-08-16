@@ -1,5 +1,4 @@
-import { delay } from 'redux-saga';
-import { call, put, takeLatest, takeEvery } from 'redux-saga/effects';
+import { call, delay, put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 import {
   updateUserFlagComplete,

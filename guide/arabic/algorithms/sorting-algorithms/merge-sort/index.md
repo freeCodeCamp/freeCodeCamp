@@ -12,14 +12,15 @@ localeTitle: دمج التصنيف
 
 وضعه في الإنجليزية بسيطة ، نقوم بتحليل المشكلة الفرعية إلى جزأين في كل خطوة ولدينا بعض العمل الخطي الذي يتعين علينا القيام به لدمج النصفين اللذين تم فرزهما معاً في كل خطوة.
 
- `T(n) = 2T(n/2) + n 
-     = 2(2T(n/4) + n/2) + n 
-     = 4T(n/4) + n + n 
-     = 4(2T(n/8) + n/4) + n + n 
-     = 8T(n/8) + n + n + n 
-     = nT(n/n) + n + ... + n + n + n 
-     = n + n + ... + n + n + n 
-` 
+```
+T(n) = 2T(n/2) + n
+     = 2(2T(n/4) + n/2) + n
+     = 4T(n/4) + n + n
+     = 4(2T(n/8) + n/4) + n + n
+     = 8T(n/8) + n + n + n
+     = nT(n/n) + n + ... + n + n + n
+     = n + n + ... + n + n + n
+``` 
 
 بإحصاء عدد التكرارات لـ n في المجموع في النهاية ، نرى أن هناك lg n + 1 منهم. وبالتالي فإن وقت التشغيل هو n (lg n + 1) = n lg n + n. نلاحظ أن ng n + n <n lg n + n lg n = 2n lg n لـ n> 0 ، وبالتالي فإن وقت التشغيل هو O (n lg n).
 
@@ -68,8 +69,9 @@ const merge = (يسار ، يمين) => { var result = \[\]؛ بينما (left.l
 
 console.log (mergeSort (list)) // \[3، 4، 8، 15، 16، 23، 42\]
 
- `### Implementation in C 
-` 
+```
+### Implementation in C
+``` 
 
 C
 
@@ -143,11 +145,12 @@ int m = l + (rl) / 2؛
  return 0; 
 ` 
 
- `### Implementation in C++ 
- 
- Let us consider array A = {2,5,7,8,9,12,13} 
- and array B = {3,5,6,9,15} and we want array C to be in ascending order as well. 
-` 
+```
+### Implementation in C++
+
+Let us consider array A = {2,5,7,8,9,12,13}
+and array B = {3,5,6,9,15} and we want array C to be in ascending order as well.
+``` 
 
 ج ++ vcess mergesort (int A \[\]، int size _a، int B \[\]، int size_ b، int C \[\]) { رمز token _a ، الرمز المميز_ b ، الرمز المميز _c ؛ for (token_ a = 0، token _b = 0، token_ c = 0؛ token _a_ _a && token _b__ __ب؛ ) { إذا (A \[token _a\] <= B \[token_ b\]) C \[token _c ++\] = A \[token_ a ++\]؛ آخر C \[token _c ++\] = B \[token_ b ++\]؛ }__
 
@@ -165,8 +168,9 @@ int m = l + (rl) / 2؛
 
 }
 
- `### Implementation in Python 
-` 
+```
+### Implementation in Python
+``` 
 
 الثعبان درجة الحرارة = لا شيء def def (arr، left، right): درجة الحرارة العالمية ، الانقلابات mid = (يسار + يمين) // 2 لأني في النطاق (يسار ، يمين + 1): درجة الحرارة \[i\] = arr \[i\]
 

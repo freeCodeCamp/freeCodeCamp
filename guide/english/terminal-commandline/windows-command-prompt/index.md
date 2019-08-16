@@ -5,7 +5,7 @@ title: Windows Command Prompt
 Windows, MacOS and Linux have command line interfaces. Windows' default command line is the command prompt. The command prompt allows users to use their computer without pointing and clicking with a mouse. The command prompt is a black screen where users type commands to use their computer. The same tasks that can be done by pointing and clicking with a mouse can also be done with the command prompt. The difference is that many tasks such as creating folders and deleting files can be done faster in the command prompt. Also, it allows users to configure their computer and run programs that they otherwise could not do by pointing and clicking.
 
 ## Opening the Command Prompt 
-To access the command prompt, click the windows start menu on the Desktop tool bar (you can also press the windows button on your keyboard) and type `cmd` and hit `enter`. The command prompt will appear, it will display some text like to following below:
+To access the command prompt, click the windows start menu on the Desktop tool bar (you can also press and hold down the windows button on your keyboard while simultaneously pressing the 'r' key, then releasing both keys - WinKey+R) and type `cmd` and hit `enter`. The command prompt will appear, it will display some text like to following below:
 ``` 
 C:\Users\YourUserName>
 ```
@@ -18,11 +18,11 @@ To go back one directory type and enter `cd..`. Your current working directory s
 ```
 C:\Users\YourUserName>
 ```
-Also, to go back to the root directory type and enter `cd\`. Your current working directory should return to this:
+To go back to the root directory type and enter `cd \`. Your current working directory should return to this:
+```		
+C:\>		
 ```
-C:\>
-```
-With the `cd`, `cd ..` and `cd\` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
+With the `cd` and `cd ..` commands you can move back and forth through directories. This might seem very basic at first but as you learn more commands the command prompt will become a very useful and efficient tool.
 
 ## Here is a list of common commands:
 | Command | Description  |
@@ -59,3 +59,4 @@ rm /s name_of_directory_you_want_to_delete
 - If you know the path to a file or directory can type `cd PATH_TO_YOUR_DIRECTORY` instead of changing directories several times to get to a directory or file 
 - Use `cd ..` to move to the previous parent directory
 - When you hit the up arrow key your previously entered command will appear and if you hit it repeatedly it will cycle through all of your previously entered commands 
+- You can change the color of your terminal font and of its background. `color ?` will give you a list of these colors. 

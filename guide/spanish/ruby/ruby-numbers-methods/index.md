@@ -1,6 +1,6 @@
 ---
 title: Ruby Number Methods
-localeTitle: Métodos de números de rubíes
+localeTitle: Métodos de números en Ruby
 ---
 Ruby proporciona una variedad de métodos incorporados que puedes usar en los números. La siguiente es una lista incompleta de métodos [enteros](https://ruby-doc.org/core-2.2.0/Integer.html) y [flotantes](https://ruby-doc.org/core-2.2.0/Float.html#method-i-ceil) .
 

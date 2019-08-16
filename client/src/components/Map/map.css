@@ -17,19 +17,21 @@
 .map-title {
   display: flex;
   align-items: center;
-  cursor: pointer;
   padding-top: 10px;
   padding-bottom: 20px;
+  border: none;
   border-bottom: 1px solid #e2e2e2;
+  background-color: transparent;
+  width: 100%;
 }
 
-.map-title > h5 {
+.map-title > h4 {
   margin-bottom: 0;
 }
 
 .map-title-completed {
   margin-left: auto;
-  width: 90px;
+  width: 100px;
   padding-left: 20px;
 }
 
@@ -45,10 +47,13 @@ li.open > .map-title svg:first-child {
 
 .map-challenge-title {
   margin-bottom: 0.25rem;
+  max-width: 28rem;
 }
 
-.night .map-challenge-title a {
-  color: #f8f8f8;
+.night .map-challenge-title a,
+.night .map-title h4,
+.night .map-title-completed {
+  color: #67d269;
 }
 
 .map-challenge-title-completed {

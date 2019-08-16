@@ -8,11 +8,12 @@ localeTitle: إدراج SQL في تحديد البيان
 
 يجمع `INSERT INTO SELECT` بين `INSERT INTO` و `SELECT` ، ويمكنك استخدام أي شروط تريدها. الصيغة هي:
 
- `INSERT INTO table2 (column1, column2, column3, ...) 
- SELECT column1, column2, column3, ... 
- FROM table1 
- WHERE condition; 
-` 
+```sql
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;
+``` 
 
 هنا مثال يحتذى به في الجدول الشخص كل الطلاب الذكور من الجدول الطلاب.
 

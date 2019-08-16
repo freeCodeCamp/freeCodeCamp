@@ -5,7 +5,7 @@ title: Cascading Style Sheets (CSS)
 ![CSS Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/320px-CSS3_logo_and_wordmark.svg.png)
 
 ## Cascading Style Sheets (CSS)
-CSS stands for *Cascading Style Sheets*. It is a language used for describing the style of a document written in HTML. It was designed to enable the separation of presentation and content, which greatly improved content accessibility and gave more flexibility and control in the specification of presentation, and reduced complexity and repetition in the structural content. It was first invented in 1996, and is now a standard feature of all major web browsers. The newest version of CSS is CSS3, which builds upon CSS2.1 and adds more visual functionalities, ready for the modern world.
+CSS stands for *Cascading Style Sheets*. It is a language used for describing the style of a document written in HTML. It was designed to enable the separation of presentation and content, which greatly improved content accessibility and gave more flexibility and control in the specification of presentation, and reduced complexity and repetition in the structural content. It was first invented in 1996 and is now a standard feature of all major web browsers. The newest version of CSS is CSS3, which builds upon CSS2.1 and adds more visual functionalities, ready for the modern world.
 
 We can describe CSS in three ways:
  1) Internal CSS
@@ -44,7 +44,7 @@ and `yellow` is the style we want to give it.
 We use the `<style>` and `</style>` tags to define the CSS in the HTML file.
 
 ### Popular CSS Frameworks 2018
-Frameworks exist to make the more complex parts of css easier and more efficient for developers to build out websites.  They also allow the developer to have more flexibility as well as additional features to produce amazing results.
+Frameworks exist to make the more complex parts of CSS easier and more efficient for developers to build out websites.  They also allow the developer to have more flexibility as well as additional features to produce amazing results.
 Some of the most popular CSS Frameworks are:
 * [Bootstrap](https://getbootstrap.com/)
 * [Foundation](https://foundation.zurb.com/sites/docs/v/5.5.3/css.html)
@@ -61,7 +61,7 @@ Some of the most popular CSS Frameworks are:
 * [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css) by freeCodeCamp: a good place to start!
 * [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) by W3C: how to create a style sheet - for beginners.
 * [CSS Zen Garden](http://www.csszengarden.com/): a great example of how the same HTML can be styled to look totally unique.
-* [Jon Duckett's book on HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189) could be an exellent start for the ones who wish to explore the topic to it's great depth with some amazing examples.
+* [Jon Duckett's book on HTML and CSS](https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189) could be an excellent start for the ones who wish to explore the topic to its great depth with some amazing examples.
 * [The Odin Project](https://www.theodinproject.com/courses/html5-and-css3) features a full course on using CSS alongside HTML.
 * [Species In Pieces](http://species-in-pieces.com/#): for a demonstration of the power of CSS. 
 * [MDN Web Docs for CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) for more resources for developers, BY developers!

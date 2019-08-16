@@ -66,12 +66,12 @@ The `-R` flag will cause grep to search recursively through the `/etc` directory
 ```
 
 #### Start Apache
-```sh
+```shell
 sudo systemctl start httpd
 ```
 
 #### Run Apache on Startup
-```sh
+```shell
 sudo systemctl enable httpd
 ```
 
@@ -96,12 +96,12 @@ If you want to host multiple domains on a single server, you can configure Virtu
 You can copy the `default.conf` and modify accordingly in the following directory:
 
 #### On Ubuntu:
-```sh
+```shell
 /etc/apache2/sites-enabled/
 ```
 
 #### On Centos:
-```sh
+```shell
 /etc/httpd/sites-enabled/
 ```
 

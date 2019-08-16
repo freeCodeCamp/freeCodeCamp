@@ -1,7 +1,7 @@
 ---
 title: Gaussian elimination
 ---
-## Gaussian elimination
+# Gaussian elimination
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/gaussian-elimination/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

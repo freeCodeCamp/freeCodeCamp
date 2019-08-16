@@ -4,9 +4,7 @@ import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
-import CurrentChallengeLink from '../helpers/CurrentChallengeLink';
-import FullWidthRow from '../helpers/FullWidthRow';
-import Spacer from '../helpers/Spacer';
+import { CurrentChallengeLink, FullWidthRow, Spacer } from '../helpers';
 import Camper from './components/Camper';
 import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
@@ -27,14 +25,35 @@ const propTypes = {
       showPortfolio: PropTypes.bool,
       showTimeLine: PropTypes.bool
     }),
-    username: PropTypes.string
+    calendar: PropTypes.object,
+    streak: PropTypes.shape({
+      current: PropTypes.number,
+      longest: PropTypes.number
+    }),
+    completedChallenges: PropTypes.array,
+    portfolio: PropTypes.array,
+    about: PropTypes.string,
+    githubProfile: PropTypes.string,
+    isGithub: PropTypes.bool,
+    isLinkedIn: PropTypes.bool,
+    isTwitter: PropTypes.bool,
+    isWebsite: PropTypes.bool,
+    linkedin: PropTypes.string,
+    location: PropTypes.string,
+    name: PropTypes.string,
+    picture: PropTypes.string,
+    points: PropTypes.number,
+    twitter: PropTypes.string,
+    username: PropTypes.string,
+    website: PropTypes.string,
+    yearsTopContributor: PropTypes.array
   })
 };
 
 function TakeMeToTheChallenges() {
   return (
     <CurrentChallengeLink>
-      <Button block={true} bsSize='lg' bsStyle='primary'>
+      <Button block={true} bsSize='lg' bsStyle='primary' className='btn-invert'>
         Take me to the Challenges
       </Button>
     </CurrentChallengeLink>
@@ -45,7 +64,7 @@ function renderIsLocked(username) {
   return (
     <Fragment>
       <Helmet>
-        <title>{username} | freeCodeCamp.org</title>
+        <title>Profile | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size={2} />
       <Grid>
@@ -64,6 +83,7 @@ function renderIsLocked(username) {
         </FullWidthRow>
         <FullWidthRow>
           <TakeMeToTheChallenges />
+          <Spacer />
         </FullWidthRow>
       </Grid>
     </Fragment>
@@ -81,7 +101,7 @@ function renderSettingsButton() {
               bsSize='lg'
               bsStyle='primary'
               className='btn-invert'
-              >
+            >
               Update my settings
             </Button>
           </Link>
@@ -132,23 +152,23 @@ function Profile({ user, isSessionUser }) {
   return (
     <Fragment>
       <Helmet>
-        <title>{username} | freeCodeCamp.org</title>
+        <title>Profile | freeCodeCamp.org</title>
       </Helmet>
       <Spacer size={2} />
       <Grid>
         {isSessionUser ? renderSettingsButton() : null}
         <Camper
-          about={showAbout && about}
+          about={showAbout ? about : null}
           githubProfile={githubProfile}
           isGithub={isGithub}
           isLinkedIn={isLinkedIn}
           isTwitter={isTwitter}
           isWebsite={isWebsite}
           linkedin={linkedin}
-          location={showLocation && location}
-          name={showName && name}
+          location={showLocation ? location : null}
+          name={showName ? name : null}
           picture={picture}
-          points={showPoints && points}
+          points={showPoints ? points : null}
           twitter={twitter}
           username={username}
           website={website}
@@ -158,11 +178,7 @@ function Profile({ user, isSessionUser }) {
         {showCerts ? <Certifications username={username} /> : null}
         {showPortfolio ? <Portfolio portfolio={portfolio} /> : null}
         {showTimeLine ? (
-          <Timeline
-            className='timelime-container'
-            completedMap={completedChallenges}
-            username={username}
-          />
+          <Timeline completedMap={completedChallenges} username={username} />
         ) : null}
       </Grid>
     </Fragment>

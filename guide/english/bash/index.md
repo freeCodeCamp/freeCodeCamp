@@ -46,8 +46,8 @@ That is because it is a convention to let the interactive shell know what kind o
 
 Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, the first line is ignored. 
 
-For example, you can use this method to run the script as the root user:
-To make the file executable call this command under sudo chmod +x "filename".
+Then you could run the script like so:
+
 ```
 zach@marigold:~$ ./myBashScript.sh
 Hello world!

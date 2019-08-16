@@ -7,7 +7,7 @@ title: CSS Framework Foundation
 
 ## Getting Started
 
-Here is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Foundation library.
+Here is a simple HTML template which includes the latest compiled and minified CSS and JavaScript for the Foundation library.
 
 ```html
     <!DOCTYPE html>

@@ -3,16 +3,31 @@ title: Code documentation
 ---
 ## Code Documentation
 
-Code Documentation allows other developers (and yourself) to understand/remember the customs and purposes of particular pieces of code. It is recommended to use documentation before debugging your code, this helps you to debug effectively.
+Code Documentation is the tool developers use to make the purpose of their code clear. It's also called Commenting, but it's about more than just the comments you include with your code. It includes how you space and indent your code, name your variables, and give titles to various sections so it is easy to read and understand.
 
-For example, if you happen to pass along your code to an absolute beginner, they should be able to follow along through comments, appropriate variable names and that means structuring the code in a readable manner. 
+Code Documentation lets anyone (from newbie to seasoned expert) quickly get comfortable with the customs of the particular module, functions etc for a particular programming language. For example, if you pass your code to an absolute beginner, they should be able to follow along. Here is an article from Harry Roberts at CSS Wizardy Ltd. (https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) about structuring class names in CSS. This is just one example of good code documentation.
+
+An excellent example of the value in good code documentation is the debugging process. The first step in debugging is to read the code documentation, right? But good code documentation goes beyond a readme file or header comments. Code Documentation means commenting every function, loop or declaration. It's having, and following, a variable naming process. And it means spacing and indenting your code so it's easy to read.
+
+There is always the danger of over-commenting your code, too. Here is a video from Brian Voong where he discusses this danger and how to avoid it by using good naming conventions. (https://www.youtube.com/watch?v=2-KBQsTo8AY)
 
 It is extremely important to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code, just as regular code should be.
 
-Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do.
+Many developers have probably learned that it is much harder to go back through your code and comment it after you finish. It's always a good idea to label and comment your code as you go, so that you don't forget or mix up what certain variables or functions do. But beware: you should never use comments as an excuse to write bad code! Your code should be readable enough so you can get by with writing only the necessary comments, for example by using clear and fitting variable and function names.
+
+There are certain guidelines for writing good documentation and several tools that can generate an easily readable documentation document from the comments in your code.
+
+### Function documentation
+
+A function should contain descriptions for each of the parameters that are passed to it (including the data type if it is not obvious from the variable name), a description of what the function does, and a description of the return value if there is one. Apart from making the code more readable and easier to understand for others, it makes the programmer really think about their function design and maybe even reconsider and change it. Writing documentation can also help find errors in the code, especially when the code was written hastily and without planning.
+
+### Class documentation
+
+A class documentation should include the author of the code and a short description of what the class is for and how to use it. This is especially helpful when more than one person is working on a project.
 
 Think of Code documentation as a history textbook. It allows current developers to keep tabs on their progress, as well as to educate future developers. Use it not only as a learning tool, but also as a reminder. As George Santayana once said, "Those who do not read history are doomed to repeat it!"
 
+Have an interest in learning more and building your coding skills? Have a look at FreeCodeCamp.org. They have thousands of hours of free instruction that include how to comment and organize your code so it is well documented.
 
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 

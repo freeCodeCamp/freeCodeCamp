@@ -1,8 +1,8 @@
 ---
 title: While Loop
-localeTitle: 而Loop
+localeTitle: While Loop
 ---
-# 而Loop
+# While Loop
 
 `while`循环重复执行语句块，直到括号中指定的条件求值为`false` 。例如：
 

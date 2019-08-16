@@ -12,11 +12,11 @@ Em um exemplo, o modelo pode estar pronto, em outro dado será concluído o uplo
 
 #### Ganchos do ciclo de vida explicados
 
-Os ganchos do ciclo de vida são métodos cronometrados. Eles diferem em quando e por que eles executam. A detecção de alterações aciona esses métodos. Eles executam dependendo das condições do ciclo atual. O Angular executa a detecção de alterações constantemente em seus dados. Os ganchos do ciclo de vida ajudam a gerenciar seus efeitos.
+Os ganchos do ciclo de vida são métodos cronometrados. Eles diferem em quando e por que são executados. A detecção de alterações aciona esses métodos. Eles executam dependendo das condições do ciclo atual. O Angular executa a detecção de alterações constantemente em seus dados. Os ganchos do ciclo de vida ajudam a gerenciar esses efeitos.
 
-Um aspecto importante desses ganchos é sua ordem de execução. Isso nunca se desvia. Eles são executados com base em uma série previsível de eventos de carga produzidos a partir de um ciclo de detecção. Isso os torna previsíveis. Alguns ativos só estão disponíveis depois que um certo gancho é executado. Naturalmente, um gancho só é executado sob certas condições definidas no ciclo de detecção de alteração atual.
+Um aspecto importante desses ganchos é sua ordem de execução. Isso nunca muda. Eles são executados com base em uma série previsível de eventos produzidos a partir de um ciclo de detecção. Isso os torna previsíveis. Alguns ativos só estão disponíveis depois que um certo gancho é executado. Naturalmente, um gancho só é executado sob certas condições definidas no ciclo de detecção de alteração atual.
 
-Este artigo apresenta os ganchos do ciclo de vida na ordem de sua execução (se todos eles forem executados). Certas condições merecem a ativação de um gancho. Existem alguns que só executam uma vez após a inicialização do componente.
+Este artigo apresenta os ganchos do ciclo de vida na ordem de sua execução (se todos eles forem executados). Certas condições ativam um gancho. Existem alguns que só executam uma única vez após a inicialização do componente.
 
 Todos os métodos de ciclo de vida estão disponíveis em `@angular/core` . Embora não seja obrigatório, a Angular [recomenda implementar todos os ganchos](https://angular.io/guide/lifecycle-hooks#interfaces-are-optional-technically) . Essa prática leva a melhores mensagens de erro em relação ao componente.
 
@@ -24,9 +24,9 @@ Todos os métodos de ciclo de vida estão disponíveis em `@angular/core` . Embo
 
 #### ngOnChanges
 
-`ngOnChanges` acionado após a modificação dos membros da classe ligada `@Input` . Dados ligados pelo decorador `@Input()` vêm de uma fonte externa. Quando a fonte externa altera esses dados de uma maneira detectável, ela passa pela propriedade `@Input` novamente.
+`ngOnChanges` é acionado após a modificação dos membros da classe ligada aos `@Input` . Dados ligados pelo decorador `@Input()` vêm de uma fonte externa. Quando a fonte externa altera esses dados de uma maneira detectável, ela passa pela propriedade `@Input` novamente.
 
-Com essa atualização, `ngOnChanges` acionado imediatamente. Também é acionado na inicialização dos dados de entrada. O gancho recebe um parâmetro opcional do tipo `SimpleChanges` . Este valor contém informações sobre as propriedades alteradas de entrada alteradas.
+Com essa atualização, `ngOnChanges` é acionado imediatamente. Também é acionado na inicialização dos dados de entrada. O gancho recebe um parâmetro opcional do tipo `SimpleChanges` . Este valor contém informações sobre as propriedades alteradas de entrada alteradas.
 
 ```typescript
 import { Component, Input, OnChanges } from '@angular/core'; 
@@ -70,7 +70,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 
 #### ngOnInit
 
-`ngOnInit` acionado uma vez na inicialização das propriedades de entrada de dados ( `@Input` ) de um componente. O próximo exemplo será semelhante ao último. O gancho não dispara quando o ChildComponent recebe os dados de entrada. Em vez disso, ele é acionado logo após o processamento dos dados no modelo ChildComponent.
+`ngOnInit` é acionado uma vez na inicialização das propriedades de entrada de dados ( `@Input` ) de um componente. O próximo exemplo será semelhante ao último. O gancho não dispara quando o ChildComponent recebe os dados de entrada. Em vez disso, ele é acionado logo após o processamento dos dados no modelo ChildComponent.
 
 ```typescript
 import { Component, Input, OnInit } from '@angular/core'; 
@@ -110,15 +110,15 @@ import { Component, Input, OnInit } from '@angular/core';
  } 
 ```
 
-**Resumo:** ParentComponent associa dados de entrada ao ChildComponent. ChildComponent recebe esses dados por meio de sua propriedade `@Input` . Os dados são renderizados no modelo. `ngOnInit` acionado. Após cinco segundos, o retorno de chamada `setTimeout` acionado. ParentComponent modifica a fonte de dados da propriedade vinculada a entrada do ChildComponent. ngOnInit **NÃO FOGO** .
+**Resumo:** ParentComponent associa dados de entrada ao ChildComponent. ChildComponent recebe esses dados por meio de sua propriedade `@Input` . Os dados são renderizados no modelo. `ngOnInit` é acionado. Após cinco segundos, o retorno de chamada `setTimeout` é acionado. ParentComponent modifica a fonte de dados da propriedade vinculada a entrada do ChildComponent. ngOnInit **NÃO DISPARA** .
 
-`ngOnInit` é um gancho de um e pronto. Inicialização é sua única preocupação.
+`ngOnInit` é um gancho executado apenas uma vez e sua única preocupação é a inicializaão do componente.
 
 #### ngDoCheck
 
-`ngDoCheck` acionado a cada ciclo de detecção de alterações. Angular executa a detecção de alterações com freqüência. Realizar qualquer ação fará com que ela faça o ciclo. `ngDoCheck` dispara com esses ciclos. Use com cautela. Pode criar problemas de desempenho quando implementado incorretamente.
+`ngDoCheck` é acionado a cada ciclo de detecção de alterações. Angular executa a detecção de alterações com freqüência. Realizar qualquer ação fará com que ela dispare o ciclo. `ngDoCheck` dispara com esses ciclos. Use com cautela. Pode criar problemas de desempenho quando implementado incorretamente.
 
-`ngDoCheck` permite que os desenvolvedores verifiquem seus dados manualmente. Eles podem acionar uma nova data de aplicação condicionalmente. Em conjunto com o `ChangeDetectorRef` , os desenvolvedores podem criar suas próprias verificações para detecção de alterações.
+`ngDoCheck` permite que os desenvolvedores verifiquem seus dados manualmente. Eles podem acionar uma nova data de aplicação condicionalmente. Em conjunto com o `ChangeDetectorRef` os desenvolvedores podem criar suas próprias verificações para detecção de alterações.
 
 ```typescript
 import { Component, DoCheck, ChangeDetectorRef } from '@angular/core'; 
@@ -159,7 +159,7 @@ import { Component, DoCheck, ChangeDetectorRef } from '@angular/core';
  } 
 ```
 
-Preste atenção ao console versus o display. Os dados progridem até 'intermediário' antes do congelamento. Três rodadas de detecção de alterações ocorrem durante esse período, conforme indicado no console. Mais uma rodada de detecção de mudanças ocorre quando a 'final' é empurrada para o final desse `this.data` . Uma última rodada de detecção de alterações ocorre. A avaliação da instrução if determina que não são necessárias atualizações na visualização.
+Preste atenção no console versus o display. Os dados progridem até 'intermediário' antes do congelamento. Três rodadas de detecção de alterações ocorrem durante esse período, conforme indicado no console. Mais uma rodada de detecção de mudanças ocorre quando a 'final' é empurrada para o final desse `this.data` . Uma última rodada de detecção de alterações ocorre. A avaliação da instrução `if` determina que não são necessárias atualizações na visualização.
 
 **Resumo: A** classe instancia após dois ciclos de detecção de alterações. O construtor de classe inicia o `setTimeout` duas vezes. Após três segundos, o primeiro `setTimeout` aciona a detecção de alterações. `ngDoCheck` marca a exibição de uma atualização. Três segundos depois, o segundo `setTimeout` aciona a detecção de alterações. Nenhuma atualização de vista é necessária de acordo com a avaliação do `ngDoCheck` .
 
@@ -167,11 +167,11 @@ Preste atenção ao console versus o display. Os dados progridem até 'intermedi
 
 Antes de prosseguir, aprenda a diferença entre o conteúdo DOM e o DOM (DOM significa Document Object Model).
 
-O conteúdo DOM define o innerHTML dos elementos da diretiva. Por outro lado, a exibição DOM é um modelo de componente, excluindo qualquer modelo HTML aninhado em uma diretiva. Para um melhor entendimento, consulte [este post no blog](http://blog.mgechev.com/2016/01/23/angular2-viewchildren-contentchildren-difference-viewproviders) .
+O conteúdo DOM define o `innerHTML` dos elementos da diretiva. Por outro lado, a exibição DOM é um modelo de componente, excluindo qualquer modelo HTML aninhado em uma diretiva. Para um melhor entendimento, consulte [este post no blog](http://blog.mgechev.com/2016/01/23/angular2-viewchildren-contentchildren-difference-viewproviders) .
 
 #### ngAfterContentInit
 
-`ngAfterContentInit` acionado depois que o DOM do conteúdo do componente é inicializado (carrega pela primeira vez). Esperar em `@ContentChild(ren)` é o caso de uso principal do gancho.
+`ngAfterContentInit` é acionado depois que o DOM do conteúdo do componente é inicializado (carrega pela primeira vez). Esperar em `@ContentChild(ren)` é o caso de uso principal do gancho.
 
 `@ContentChild(ren)` produzem referências de elemento para o conteúdo DOM. Como tal, eles não estão disponíveis até depois do carregamento do conteúdo DOM. Daí porque `ngAfterContentInit` e sua contraparte `ngAfterContentChecked` são usados.
 
@@ -228,7 +228,7 @@ Os resultados da consulta `@ContentChild` estão disponíveis em `ngAfterContent
 
 #### ngAfterContentChecked
 
-`ngAfterContentChecked` acionado após cada ciclo de detecção de alterações visando o conteúdo DOM. Isso permite que os desenvolvedores facilitem como o conteúdo DOM reage para alterar a detecção. `ngAfterContentChecked` pode disparar com freqüência e causar problemas de desempenho se for mal implementado.
+`ngAfterContentChecked` é acionado após cada ciclo de detecção de alterações visando o conteúdo DOM. Isso permite que os desenvolvedores facilitem como o conteúdo DOM reage para alterar a detecção. `ngAfterContentChecked` pode disparar com freqüência e causar problemas de desempenho se for mal implementado.
 
 `ngAfterContentChecked` acionado durante os estágios de inicialização de um componente também. Ele vem logo após o `ngAfterContentInit` .
 
@@ -285,7 +285,7 @@ import { Component, ContentChild, AfterContentChecked, ElementRef, Renderer2 } f
  export class AComponent { } 
 ```
 
-Isso dificilmente difere de `ngAfterContentInit` . Um mero `<button></button>` foi adicionado ao BComponent. Clicar nele causa um loop de detecção de alteração. Isso ativa o gancho, conforme indicado pela aleatorização da `background-color` de `background-color` .
+Isso dificilmente difere de `ngAfterContentInit` . Um mero `<button></button>` foi adicionado ao `BComponent`. Clicar nele causa um loop de detecção de alteração. Isso ativa o gancho, conforme indicado pela aleatorização da `background-color` de `background-color` .
 
 **Resumo: a** renderização começa com AComponent. Para terminar, AComponent deve renderizar o BComponent. BComponent projeta conteúdo aninhado em seu elemento através do elemento `<ng-content></ng-content>` . CComponent faz parte do conteúdo projetado. O conteúdo projetado termina a renderização. `ngAfterContentChecked` acionado. O BComponent finaliza a renderização. AComponent finaliza a renderização. `ngAfterContentChecked` pode disparar novamente por meio da detecção de alterações.
 

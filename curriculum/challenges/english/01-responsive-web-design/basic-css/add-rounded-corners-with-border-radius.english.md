@@ -2,8 +2,8 @@
 id: bad87fee1348bd9aedf08814
 title: Add Rounded Corners with border-radius
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-rounded-corners-a-border-radius'
 videoUrl: 'https://scrimba.com/c/cbZm2hg'
+forumTopicId: 16649
 ---
 
 ## Description
@@ -14,7 +14,7 @@ Your cat photo currently has sharp corners. We can round out those corners with 
 ## Instructions
 <section id='instructions'>
 You can specify a <code>border-radius</code> with pixels. Give your cat photo a <code>border-radius</code> of <code>10px</code>.
-Note: this challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class.
+<strong>Note:</strong> This challenge allows for multiple possible solutions. For example, you may add <code>border-radius</code> to either the <code>.thick-green-border</code> class or the <code>.smaller-image</code> class.
 </section>
 
 ## Tests
@@ -23,9 +23,9 @@ Note: this challenge allows for multiple possible solutions. For example, you ma
 ```yml
 tests:
   - text: Your image element should have the class "thick-green-border".
-    testString: assert($("img").hasClass("thick-green-border"), 'Your image element should have the class "thick-green-border".');
+    testString: assert($("img").hasClass("thick-green-border"));
   - text: Your image should have a border radius of <code>10px</code>
-    testString: assert($("img").css("border-radius") === '10px', 'Your image should have a border radius of <code>10px</code>');
+    testString: assert($("img").css("border-top-left-radius") === '10px' && $("img").css("border-top-right-radius") === '10px' && $("img").css("border-bottom-left-radius") === '10px' && $("img").css("border-bottom-right-radius") === '10px');
 
 ```
 
@@ -165,4 +165,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

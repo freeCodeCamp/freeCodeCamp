@@ -10,7 +10,7 @@ Swift is an [open source](https://en.wikipedia.org/wiki/Open-source_software), g
 
 > Swift is a powerful and intuitive programming language for macOS, iOS, watchOS and tvOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and Swift includes modern features developers love. Swift code is safe by design, yet also produces software that runs lightning-fast.<sup>1</sup>
 
-Want to try out Swift right now? [Repl.it](https://repl.it/languages/swift) offers an online Read-Eval-Print loop for Swift. You won't have access to UIKit or other APIs that are commonly used, but give it a shot!
+Want to try out Swift right now? [Repl.it](https://repl.it/languages/swift) offers an online Read-Eval-Print loop for Swift. You won't have access to UIKit or other APIs that are commonly used, but give it a shot! If you have access to a macOS device, you can also install Xcode, Apple's free IDE for tvOS, watchOS, iOS, and macOS. It can be installed from the Mac App Store. 
 
 # Basics
 
@@ -36,13 +36,14 @@ let x = "World"
 
 print("Hello ")
 print(x)
+print("Hello \(x)")
 ```
 
 
 
 # Version
 
-The latest version is [Swift 4.2](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html), released Sept. 17, 2018. Swift is constantly evolving, and you can expect more changes in the future. It is recommended you use the latest version of Swift when starting a new project.
+The latest version is [Swift 5.0](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html), released March 25, 2019. Swift is constantly evolving, and you can expect more changes in the future. It is recommended you use the latest version of Swift when starting a new project.
 
 # Documentation
 
@@ -60,6 +61,11 @@ project or application, no matter how small!
 
 * [RayWenderlich.com](https://www.raywenderlich.com/) : Has many great tutorials for Swift and iOS development.
 * [Hacking with Swift](https://www.hackingwithswift.com/read) : A complete Swift tutorial, taking you from a beginner to advanced using hands-on projects.
+* [CodewithChris.com](https://codewithchris.com/xcode-tutorial/) : Xcode work environment education
+* [Stanford course](https://www.youtube.com/watch?v=71pyOB4TPRE&list=PLPA-ayBrweUzGFmkT_W65z64MoGnKRZMq) : Excellent course held by the professor at Stanford university 
+* [Basic app](https://developer.apple.com/library/content/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html#//apple_ref/doc/uid/TP40015214-CH2-SW1) : Applying Swift knowledge in order to create a basic app that involves adding, listing, rating, deleting items
+* [Main Swift documentation](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html): Good documentation regarding syntax
+* [Main Swift book](https://itunes.apple.com/us/book/the-swift-programming-language-swift-4-0-3/id881256329?mt=11) : Main Swift book available on iTunes
 
 ### Sources
 

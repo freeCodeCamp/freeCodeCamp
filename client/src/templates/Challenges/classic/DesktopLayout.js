@@ -43,7 +43,7 @@ class DesktopLayout extends Component {
                 renderOnResize={true}
                 renderOnResizeRate={20}
                 {...resizeProps}
-                >
+              >
                 {editor}
               </ReflexElement>
               <ReflexSplitter propagate={true} {...resizeProps} />
@@ -53,7 +53,7 @@ class DesktopLayout extends Component {
                 renderOnResize={true}
                 renderOnResizeRate={20}
                 {...resizeProps}
-                >
+              >
                 {testOutput}
               </ReflexElement>
             </ReflexContainer>

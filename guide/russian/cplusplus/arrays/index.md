@@ -8,13 +8,13 @@ localeTitle: Массивы C ++
 
 Например, массив, содержащий 5 целых чисел (int), объявляется так:
 
-```C++
+```cpp
 int numbers [5]; 
 ```
 
 Начальное заполнение значений при объявлении массива (initializiation):
 
-```C++
+```cpp
 //Initialization with entries: 
  int numbers [5] = {1, 2, 3, 4, 5}; 
  
@@ -34,7 +34,7 @@ int numbers [5];
 Элементы из массива можно получить через ссылку на их позицию в массиве. (Отсчет начинается с 0).  
 Пример:
 
-```C++
+```cpp
 x = numbers[0]; // = 1. [0] == first position 
  numbers[2] = 55; // Sets the third position (3) to the new number 55 
  //numbers[] is now: {1, 2, 55, 4, 5} 

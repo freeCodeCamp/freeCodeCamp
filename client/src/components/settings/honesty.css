@@ -7,18 +7,16 @@
   padding-top: 15px;
 }
 
-.honesty-panel .agreed {
+.honesty-policy .agreed {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
   background-color: rgba(0, 100, 0, 0.8);
   color: #fff;
   border-color: #006400;
-  margin-bottom: 0px;
 }
 
-.honesty-panel .agreed p {
+.honesty-policy .agreed p {
   margin-top: 0;
   margin-bottom: 0;
 }
