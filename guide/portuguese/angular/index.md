@@ -6,7 +6,7 @@ localeTitle: Angular
 
 AngularJS (versões 1.x) é uma estrutura de código aberto baseada em JavaScript. É multi-plataforma e usado para desenvolver o Single Web Page Application (SPA). O AngularJS implementa o padrão MVC para separar a lógica, a apresentação e os componentes de dados. Ele também usa injeção de dependência para fazer uso de serviços do lado do servidor em aplicativos do lado do cliente.
 
-Angular (versões 2 para cima) é uma estrutura de código aberto baseada em Typescript para desenvolver o aplicativos Web front-end. O Angular possui os seguintes recursos, como tipos genéricos, tipagem estática e também alguns recursos do ES6.
+Angular (versões 2 para cima) é uma estrutura de código aberto baseada em TypeScript para desenvolver o aplicativos Web front-end. O Angular possui os seguintes recursos, como tipos genéricos, tipagem estática e também alguns recursos do ES6.
 
 ## Histórico de versões
 
