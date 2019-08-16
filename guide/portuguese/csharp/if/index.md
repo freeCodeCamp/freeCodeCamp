@@ -2,7 +2,7 @@
 title: If
 localeTitle: E se
 ---
-# Condicional: If
+# If
 
 A instrução if executa diferentes blocos de código com base nas condições.
 ```
