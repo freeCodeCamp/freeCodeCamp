@@ -1,8 +1,8 @@
 ---
 title: SQL not Operator
-localeTitle: SQL não Operador
+localeTitle: SQL Operador NÃO (NOT)
 ---
-## SQL não Operador
+## SQL Operador NÃO (NOT)
 
 Você pode usar o operador `NOT` na cláusula `WHERE` da `SELECT` . Você o usa quando deseja selecionar uma condição que não é verdadeira.
 
