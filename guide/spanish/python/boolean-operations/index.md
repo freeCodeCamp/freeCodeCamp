@@ -12,7 +12,7 @@ Operacion | Resultado | Notas
 \--------- | ------------------------------------ | -----  
 x o y | si x es falso, entonces y, si no x | (1)  
 x y y | si x es falso, entonces x, si no y | (2)  
-no x si x es falso, entonces verdadero, sino falso | (3)
+no x  | si x es falso, entonces verdadero, sino falso | (3)
 
 **Notas:**
 
@@ -32,21 +32,21 @@ no x si x es falso, entonces verdadero, sino falso | (3)
 
 ### `and` :
 ```
->>> True and False    # Short-circuited at first argument. 
+>>> True and False    # Evalúa el segundo argumento. 
  False 
- >>> False and True    # Second argument is evaluated. 
+ >>> False and True    # No evalúa el segundo argumento. 
  False 
- >>> True and True     # Second argument is evaluated. 
+ >>> True and True     # Evalúa el segundo argumento. 
  True 
 ```
 
 ### `or` :
 ```
->>> True or False    # Short-circuited at first argument. 
+>>> True or False    # No evalúa el segundo argumento. 
  True 
- >>> False or True    # Second argument is evaluated. 
+ >>> False or True    # Evalúa el segundo argumento. 
  True 
- >>> False or False   # Second argument is evaluated. 
+ >>> False or False   # Evalúa el segundo argumento. 
  False 
 
 ```

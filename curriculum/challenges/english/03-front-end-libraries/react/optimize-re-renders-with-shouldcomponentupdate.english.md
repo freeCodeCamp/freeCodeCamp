@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036180
 title: Optimize Re-Renders with shouldComponentUpdate
 challengeType: 6
 isRequired: false
+forumTopicId: 301398
 ---
 
 ## Description
@@ -13,7 +14,7 @@ This method is a useful way to optimize performance. For example, the default be
 
 ## Instructions
 <section id='instructions'>
-The <code>shouldComponentUpdate()</code> method is added in a component called <code>OnlyEvens</code>. Currently, this method returns <code>true</code> so <code>OnlyEvens</code> re-renders every time it receives new <code>props</code>. Modify the method so <code>OnlyEvens</code> updates only if the <code>value</code> of its new props is even. Click the <code>Add</code> button and watch the order of events in your browser's console as the other lifecycle hooks are triggered.
+The <code>shouldComponentUpdate()</code> method is added in a component called <code>OnlyEvens</code>. Currently, this method returns <code>true</code> so <code>OnlyEvens</code> re-renders every time it receives new <code>props</code>. Modify the method so <code>OnlyEvens</code> updates only if the <code>value</code> of its new props is even. Click the <code>Add</code> button and watch the order of events in your browser's console as the lifecycle hooks are triggered.
 </section>
 
 ## Tests
@@ -49,9 +50,6 @@ class OnlyEvens extends React.Component {
      // change code below this line
     return true;
      // change code above this line
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('Receiving new props...');
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');
@@ -113,9 +111,6 @@ class OnlyEvens extends React.Component {
     // change code below this line
     return nextProps.value % 2 === 0;
     // change code above this line
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('Receiving new props...');
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');

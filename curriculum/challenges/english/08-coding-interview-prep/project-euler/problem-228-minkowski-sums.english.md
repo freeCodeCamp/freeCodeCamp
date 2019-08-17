@@ -2,6 +2,7 @@
 id: 5900f4511000cf542c50ff63
 challengeType: 5
 title: 'Problem 228: Minkowski Sums'
+forumTopicId: 301871
 ---
 
 ## Description
@@ -43,7 +44,7 @@ How many sides does S1864 + S1865 + … + S1909 have?
 ```yml
 tests:
   - text: <code>euler228()</code> should return 86226.
-    testString: assert.strictEqual(euler228(), 86226, '<code>euler228()</code> should return 86226.');
+    testString: assert.strictEqual(euler228(), 86226);
 
 ```
 

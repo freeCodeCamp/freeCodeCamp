@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08746
 title: Inherit Styles from the Body Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c9bmdtR'
+forumTopicId: 18204
 ---
 
 ## Description

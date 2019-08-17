@@ -2,6 +2,7 @@
 id: 587d7b84367417b2b2512b36
 title: 'Catch Unclosed Parentheses, Brackets, Braces and Quotes'
 challengeType: 1
+forumTopicId: 301190
 ---
 
 ## Description
@@ -23,7 +24,7 @@ tests:
   - text: Your code should fix the missing piece of the array.
     testString: assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g));
   - text: 'Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that "Sum of array values is: 6".'
-    testString: 'assert(arraySum === 6, ''Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that "Sum of array values is: 6".'');'
+    testString: 'assert(arraySum === 6);'
 
 ```
 

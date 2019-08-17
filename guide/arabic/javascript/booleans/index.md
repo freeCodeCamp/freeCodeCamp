@@ -22,7 +22,7 @@ if (a) {
 *   غير محدد
 *   نان
 *   0
-*   '' (سلسلة فارغة)
+*   '' أو "" (سلسلة فارغة)
 
 سيتم فرض جميع القيم الأخرى إلى true. عندما تُكرَه القيمة إلى قيمة منطقية ، فإننا نطلق عليها أيضًا إما "كاذبة" أو "صادقة".
 
@@ -69,7 +69,7 @@ if (x) {
 }
 ``` 
 
-لا ينطبق هذا السلوك على الأوليات البولية. على سبيل المثال ، يتم تقييم الشرط الموجود في العبارة if في حالة الخطأ:
+لا ينطبق هذا السلوك على الأوليات المنطقية. على سبيل المثال ، يتم تقييم الشرط الموجود في العبارة if في حالة الخطأ:
 
 ```javascript
 var x = false;
@@ -98,5 +98,5 @@ var s = new Boolean(myString);      // initial value of true
 
 ### مصادر
 
-*   [كائن بولياني](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
-*   [كائن بولياني](https://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html)
+*   [كائن منطقي](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
+*   [كائن منطقي](https://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html)

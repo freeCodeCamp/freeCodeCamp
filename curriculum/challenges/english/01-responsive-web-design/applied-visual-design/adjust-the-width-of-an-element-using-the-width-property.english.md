@@ -3,6 +3,7 @@ id: 587d7791367417b2b2512ab4
 title: Adjust the Width of an Element Using the width Property
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cvVLPtN'
+forumTopicId: 301039
 ---
 
 ## Description

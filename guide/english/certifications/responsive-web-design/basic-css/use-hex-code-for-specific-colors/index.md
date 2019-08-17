@@ -3,8 +3,23 @@ title: Use Hex Code for Specific Colors
 ---
 # Use Hex Code for Specific Colors
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/use-hex-code-for-specific-colors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Problem Explanation
+With CSS, we use 6 hexadecimal number to represent colors. For example, `#000000` is the lowest possible value, and it represents the color black.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This is the same as `#RRGGBB` which can also be simplified to `#RGB`.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+```html
+<style>
+  body {
+    background-color: #000000;
+  }
+</style>
+```
+
+</details>

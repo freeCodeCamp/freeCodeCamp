@@ -2,6 +2,7 @@
 id: 587d7db9367417b2b2512ba4
 title: Match Non-Whitespace Characters
 challengeType: 1
+forumTopicId: 18210
 ---
 
 ## Description
@@ -34,7 +35,7 @@ tests:
   - text: Your regex should find 35 non-spaces in <code>"Men are from Mars and women are from Venus."</code>
     testString: assert("Men are from Mars and women are from Venus.".match(countNonWhiteSpace).length == 35);
   - text: 'Your regex should find 23 non-spaces in <code>"Space: the final frontier."</code>'
-    testString: 'assert("Space: the final frontier.".match(countNonWhiteSpace).length == 23, ''Your regex should find 23 non-spaces in <code>"Space: the final frontier."</code>'');'
+    testString: 'assert("Space: the final frontier.".match(countNonWhiteSpace).length == 23);'
   - text: Your regex should find 21 non-spaces in <code>"MindYourPersonalSpace"</code>
     testString: assert("MindYourPersonalSpace".match(countNonWhiteSpace).length == 21);
 

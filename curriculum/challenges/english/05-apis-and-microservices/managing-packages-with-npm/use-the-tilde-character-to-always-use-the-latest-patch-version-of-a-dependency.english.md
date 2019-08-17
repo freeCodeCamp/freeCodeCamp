@@ -2,6 +2,7 @@
 id: 587d7fb5367417b2b2512c02
 title: Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
 challengeType: 2
+forumTopicId: 301532
 ---
 
 ## Description

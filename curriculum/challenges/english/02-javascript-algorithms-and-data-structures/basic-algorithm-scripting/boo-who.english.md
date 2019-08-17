@@ -3,6 +3,7 @@ id: a77dbc43c33f39daa4429b4f
 title: Boo who
 isRequired: true
 challengeType: 5
+forumTopicId: 16000
 ---
 
 ## Description
@@ -31,7 +32,7 @@ tests:
   - text: <code>booWho([].slice)</code> should return false.
     testString: assert.strictEqual(booWho([].slice), false);
   - text: '<code>booWho({ "a": 1 })</code> should return false.'
-    testString: 'assert.strictEqual(booWho({ "a": 1 }), false, ''<code>booWho({ "a": 1 })</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho({ "a": 1 }), false);'
   - text: <code>booWho(1)</code> should return false.
     testString: assert.strictEqual(booWho(1), false);
   - text: <code>booWho(NaN)</code> should return false.

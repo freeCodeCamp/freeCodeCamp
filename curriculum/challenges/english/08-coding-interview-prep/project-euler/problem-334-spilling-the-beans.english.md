@@ -2,6 +2,7 @@
 id: 5900f4ba1000cf542c50ffcd
 challengeType: 5
 title: 'Problem 334: Spilling the beans'
+forumTopicId: 301992
 ---
 
 ## Description
@@ -43,7 +44,7 @@ Consider now 1500 adjacent bowls containing b1, b2,..., b1500 beans respectively
 ```yml
 tests:
   - text: <code>euler334()</code> should return 150320021261690850.
-    testString: assert.strictEqual(euler334(), 150320021261690850, '<code>euler334()</code> should return 150320021261690850.');
+    testString: assert.strictEqual(euler334(), 150320021261690850);
 
 ```
 

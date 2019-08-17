@@ -2,6 +2,7 @@
 id: 587d7b89367417b2b2512b48
 title: Use the Spread Operator to Evaluate Arrays In-Place
 challengeType: 1
+forumTopicId: 301222
 ---
 
 ## Description
@@ -44,7 +45,7 @@ tests:
   - text: <code>arr2</code> should be correct copy of <code>arr1</code>.
     testString: assert(arr2.every((v, i) => v === arr1[i]));
   - text: <code>...</code> spread operator was used to duplicate <code>arr1</code>.
-    testString: assert(code.match(/\[\s*...arr1\s*\]/g));
+    testString: assert(code.match(/Array\(\s*\.\.\.arr1\s*\)|\[\s*\.\.\.arr1\s*\]/));
   - text: <code>arr2</code> should remain unchanged when <code>arr1</code> is changed.
     testString: assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length});
 

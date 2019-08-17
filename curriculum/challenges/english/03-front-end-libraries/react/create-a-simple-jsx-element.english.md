@@ -3,6 +3,7 @@ id: 587d7dbc367417b2b2512bb1
 title: Create a Simple JSX Element
 challengeType: 6
 isRequired: false
+forumTopicId: 301390
 ---
 
 ## Description

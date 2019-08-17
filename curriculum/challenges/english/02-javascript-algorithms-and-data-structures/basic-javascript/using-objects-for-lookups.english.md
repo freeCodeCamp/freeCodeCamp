@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244ca
 title: Using Objects for Lookups
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cdBk8sM'
+forumTopicId: 18373
 ---
 
 ## Description
@@ -57,7 +58,7 @@ tests:
   - text: You should not modify the <code>return</code> statement
     testString: assert(code.match(/return\sresult;/));
   - text: You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements
-    testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')), 'You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements');
+    testString: assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')));
 
 ```
 

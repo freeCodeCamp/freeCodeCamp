@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8016
 title: Sort using a custom comparator
 challengeType: 5
+forumTopicId: 302309
 ---
 
 ## Description

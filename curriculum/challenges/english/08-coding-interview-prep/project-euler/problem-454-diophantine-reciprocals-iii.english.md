@@ -2,6 +2,7 @@
 id: 5900f5331000cf542c510045
 challengeType: 5
 title: 'Problem 454: Diophantine reciprocals III'
+forumTopicId: 302127
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find F(1012).
 ```yml
 tests:
   - text: <code>euler454()</code> should return 5435004633092.
-    testString: assert.strictEqual(euler454(), 5435004633092, '<code>euler454()</code> should return 5435004633092.');
+    testString: assert.strictEqual(euler454(), 5435004633092);
 
 ```
 

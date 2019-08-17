@@ -2,6 +2,7 @@
 id: 5900f4ee1000cf542c510000
 challengeType: 5
 title: 'Problem 385: Ellipses inside triangles'
+forumTopicId: 302049
 ---
 
 ## Description
@@ -43,7 +44,7 @@ Find A(1 000 000 000).
 ```yml
 tests:
   - text: <code>euler385()</code> should return 3776957309612154000.
-    testString: assert.strictEqual(euler385(), 3776957309612154000, '<code>euler385()</code> should return 3776957309612154000.');
+    testString: assert.strictEqual(euler385(), 3776957309612154000);
 
 ```
 

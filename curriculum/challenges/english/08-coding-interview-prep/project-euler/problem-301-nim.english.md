@@ -2,6 +2,7 @@
 id: 5900f4991000cf542c50ffab
 challengeType: 5
 title: 'Problem 301: Nim'
+forumTopicId: 301955
 ---
 
 ## Description
@@ -36,7 +37,7 @@ For how many positive integers n ≤ 230 does X(n,2n,3n) = 0 ?
 ```yml
 tests:
   - text: <code>euler301()</code> should return 2178309.
-    testString: assert.strictEqual(euler301(), 2178309, '<code>euler301()</code> should return 2178309.');
+    testString: assert.strictEqual(euler301(), 2178309);
 
 ```
 

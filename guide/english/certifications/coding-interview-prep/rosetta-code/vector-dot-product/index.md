@@ -3,8 +3,45 @@ title: Vector dot product
 ---
 # Vector dot product
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/vector-dot-product/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Solutions
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```javascript
+function dotProduct(...vectors) {
+  if (!vectors || !vectors.length) {
+    return null;
+  }
+  if (!vectors[0] || !vectors[0].length) {
+    return null;
+  }
+  const vectorLen = vectors[0].length;
+  const numVectors = vectors.length;
+
+  // If all vectors not same length, return null
+  for (let i = 0; i < numVectors; i++) {
+    if (vectors[i].length !== vectorLen) {
+      return null;  // return undefined
+    }
+  }
+
+  let prod = 0;
+  let sum = 0;
+  let j = vectorLen;
+  let i = numVectors;
+  // Sum terms
+  while (j--) {
+    i = numVectors;
+    prod = 1;
+
+    while (i--) {
+      prod *= vectors[i][j];
+    }
+    sum += prod;
+  }
+  return sum;
+}
+```
+
+</details>

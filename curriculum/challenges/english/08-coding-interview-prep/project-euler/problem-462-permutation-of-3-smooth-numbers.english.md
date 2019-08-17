@@ -2,6 +2,7 @@
 id: 5900f53b1000cf542c51004d
 challengeType: 5
 title: 'Problem 462: Permutation of 3-smooth numbers'
+forumTopicId: 302137
 ---
 
 ## Description
@@ -38,7 +39,7 @@ When giving your answer, use a lowercase e to separate mantissa and exponent. E.
 ```yml
 tests:
   - text: <code>euler462()</code> should return Infinity.
-    testString: assert.strictEqual(euler462(), Infinity, '<code>euler462()</code> should return Infinity.');
+    testString: assert.strictEqual(euler462(), Infinity);
 
 ```
 

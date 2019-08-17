@@ -7,7 +7,7 @@ localeTitle: Pautas para el moderador de Freecodecamp
 Por encima de todo, recuerde que su propósito como moderador es servir a nuestra comunidad:
 
 *   Escucha
-*   Ser servicial
+*   Se servicial
 *   No abuses de tu poder
 
 # Moderador de Gitter
@@ -18,23 +18,23 @@ Así es como los moderadores tratan las violaciones de nuestro [Código de condu
     
 2.  Los moderadores les enviarán este mensaje:
     
-    > Este es un mensaje estándar que le notifica que tuve que prohibirle temporalmente las salas de chat de freeCodeCamp.
+    > Este es un mensaje estándar que le notifica que tuve que prohibirle temporalmente el acceso a las salas de chat de freeCodeCamp.
     > 
-    > Soy un moderador que actúa en nombre de nuestra comunidad de código abierto. Puedo considerar liberarte, pero necesito que hagas algo primero.
+    > Soy un moderador que actúa en nombre de nuestra comunidad de código abierto. Puedo liberarte, pero necesito que hagas algo primero.
     > 
-    > 1\. Lea nuestro [**`Code of Conduct`**]([https://www.freecodecamp.com/code-of-conduct) ).  
+    > 1\. Lee nuestro [**`Code of Conduct`**]([https://www.freecodecamp.com/code-of-conduct) ).  
     > 2\. Por favor, confirme que lo ha leído.  
     > 3\. Explícame por qué crees que te he prohibido.
     
-3.  En función de su respuesta, los moderadores decidirán si desean cancelar la sesión de la campista ofensiva. Si el campista ofensivo no ha sido prohibido por ese moderador antes, y si parece respetuoso y se disculpa, el moderador puede desbancarlos. Como cuestión de política, los moderadores serán corteses durante este proceso, sin importar qué tan mal se haya comportado el campista ofensor.
+3.  En función de su respuesta, los moderadores decidirán si desean cancelar la sesión del campista ofensivo. Si el campista ofensivo no ha sido prohibido por ese moderador antes, y si parece respetuoso y se disculpa, el moderador puede levantar la prohibición. Como cuestión de política, los moderadores serán corteses durante este proceso, sin importar qué tan mal se haya comportado el campista ofensor.
     
 4.  Los moderadores escribirán un breve resumen del evento y cómo respondieron en la [sala de administración](https://gitter.im/freeCodeCamp/admin) . Aquí hay un ejemplo de cómo podrían ser estos resúmenes:
     
-    > Prohibí @ nombre de usuario Para el envío de spam y les envió el Código de Conducta. Dijeron que lo lamentaban y que, honestamente, no se habían dado cuenta de que lo que estaban haciendo se consideraba spam. Yo les quité las brechas.
+    > Prohibí @nombre de usuario por el envío de spam y le envié el Código de Conducta. Dijeron que lo lamentaban y que, honestamente, no se habían dado cuenta de que lo que estaban haciendo se consideraba spam. Yo les quité las brechas.
     > 
-    > He desatendido @ nombre de usuario . Les envié el Código de Conducta. Sólo hoy se dieron cuenta de que estaban prohibidos y se disculparon por lo que hicieron.
+    > He desatendido @nombre de usuario. Les envié el Código de Conducta. Sólo hoy se dieron cuenta de que estaban prohibidos y se disculparon por lo que hicieron.
     > 
-    > He prohibido @ nombre de usuario por acoso. Se pusieron desagradables conmigo. Recomiendo que contactemos a Gitter para una prohibición global.
+    > He prohibido @nombre de usuario por acoso. Se pusieron desagradables conmigo. Recomiendo que contactemos a Gitter para una prohibición global.
     
 
 Para prohibir a alguien, escribe lo siguiente en la sala de chat:
@@ -71,9 +71,9 @@ Si alguien está rompiendo el código de conducta, no los advierta ni amenace co
 
 ### No te jactes de ser un moderador
 
-No te veas como esta por encima de la comunidad. Tú eres la comunidad. Y la comunidad ha confiado en usted para ayudar a proteger algo raro que todos compartimos: un lugar acogedor para los nuevos desarrolladores.
+No te veas por encima de la comunidad. Tú eres la comunidad. Y la comunidad ha confiado en ti para ayudar a proteger algo que todos compartimos: un lugar acogedor para los nuevos desarrolladores.
 
-Si presume de ser un moderador, las personas pueden sentirse incómodas a su alrededor, de la misma manera que las personas pueden sentirse incómodas ante un oficial de policía, incluso si no están haciendo nada mal. Esto es sólo la naturaleza humana.
+Si presume de ser un moderador, las personas pueden sentirse incómodas a su alrededor, de la misma manera que las personas pueden sentirse incómodas ante un oficial de policía, incluso si no están haciendo nada malo. Esto es sólo la naturaleza humana.
 
 ### No contradigas a otros moderadores.
 
@@ -107,13 +107,13 @@ Hay varias clases generales de problemas:
     
 2.  **Problemas de** errores **o aclaraciones** Confirme el error usted mismo si es posible. Busque detalles adicionales según sea necesario, como Pasos para reproducir. Una vez que el problema se ha reproducido, o al menos se considera legítimo, la etiqueta lo `confirmed` . Entonces:
     
-    *   Si se trata de un cambio simple a un desafío existente, márquelo como la `help wanted` y, opcionalmente, solo para `first-timers-only` . Utilice otras etiquetas según corresponda.
+    *   Si se trata de un cambio simple a un desafío existente, márquelo como la `help wanted` y, opcionalmente, solo para `first-timers-only`. Utilice otras etiquetas según corresponda.
         
-    *   Si el problema es más importante, marca como `bug` .
+    *   Si el problema es más importante, márcalo como `bug` .
         
     *   [Guía de uso de etiquetas](https://forum.freecodecamp.com/t/free-code-camp-issue-labels/19556)
         
-        Si existe alguna ambigüedad en cuanto al curso de acción apropiado sobre un tema, siéntase libre de etiquetar **`@freeCodeCamp/moderators`** para obtener opiniones de otros moderadores. Marcar como `Discussing` .
+        Si existe alguna ambigüedad en cuanto al curso de acción apropiado sobre un tema, puedes etiquetarlo **`@freeCodeCamp/moderators`** para obtener opiniones de otros moderadores. Marcar como `Discussing` .
         
 3.  **Problemas duplicados** Si un problema es el mismo que otro problema informado, el problema informado anterior debe tener prioridad. Marque como `Duplicate` , pegue el siguiente mensaje reemplazando `#XXXXX` con el número de problema, luego cierre el problema.
     
@@ -131,18 +131,18 @@ Hay varias clases generales de problemas:
     > 
     > Si cree que estoy equivocado al cerrar este problema, vuelva a abrirlo y agregue más aclaraciones. Gracias, y feliz codificación.
     
-5.  **Bike Shedding** Bike Shedding es un ejemplo de [la ley de la trivialidad](https://en.wikipedia.org/wiki/Parkinson%27s_law_of_triviality) de [Parkinson](https://en.wikipedia.org/wiki/Parkinson%27s_law_of_triviality) . Algunas cuestiones simplemente no valen la pena arreglarlas. Si cree que un problema no vale la pena, `bikeshedding` como `bikeshedding` , pegue y complete el siguiente mensaje, luego cierre el problema:
+5.  **Bike Shedding** Bike Shedding es un ejemplo de [la ley de la trivialidad de Parkinson](https://en.wikipedia.org/wiki/Parkinson%27s_law_of_triviality). Algunas cuestiones simplemente no vale la pena arreglarlas. Si cree que un problema no vale la pena, `bikeshedding` como `bikeshedding` , pegue y complete el siguiente mensaje, luego cierre el problema:
     
     > Gracias por reportar este problema.
     > 
-    > _Dé una breve explicación de por qué se trata de una suspensión de motocicletas, una forma de [la ley de la trivialidad](https://en.wikipedia.org/wiki/Parkinson%27s_law_of_triviality) de [Parkinson](https://en.wikipedia.org/wiki/Parkinson%27s_law_of_triviality) , así que la estoy cerrando._
+    > _Dé una breve explicación de por qué se trata de una Bike Shedding, una forma de [la ley de la trivialidad de Parkinson](https://en.wikipedia.org/wiki/Parkinson%27s_law_of_triviality), así que la estoy cerrando._
     > 
     > Si cree que estoy equivocado al cerrar este problema, vuelva a abrirlo y agregue más aclaraciones. Gracias, y feliz codificación.
     
 
 ### Moderación de solicitudes de extracción
 
-Las solicitudes de extracción (PR) son la forma en que los colaboradores de freeCodeCamp envían los cambios al repositorio para su consideración. Es importante que estos RR.PP. tengan el formato correcto y se sometan a pruebas exhaustivas de control de calidad antes de fusionarse.
+Las solicitudes de extracción (PR) son la forma en que los colaboradores de freeCodeCamp envían los cambios al repositorio para su consideración. Es importante que estos PRs tengan el formato correcto y se sometan a pruebas exhaustivas de control de calidad antes de fusionarse.
 
 ### Requisitos de solicitud de extracción y formato
 
@@ -157,7 +157,7 @@ Todos los RP deben cumplir los siguientes requisitos antes de ser aceptados:
 7.  _Los_ cambios _relacionados_ deben ser aplastados a un solo compromiso. Pero _los_ cambios _relevantes o notables_ pueden tener compromisos separados.
 8.  Código debe pasar todas las pruebas y forro
 
-Si el RP no cumple uno o más de estos requisitos, abra una revisión de GitHub que especifique cuál de los 8 requisitos aún no se ha cumplido. Los nuevos Contribuidores pueden ser referidos a la sala de chat de los [Contribuidores](https://gitter.im/freeCodeCamp/Contributors) . A discreción de un moderador, el problema puede ser cerrado.
+Si el RP no cumple uno o más de estos requisitos, abra una revisión de GitHub que especifique cuál de los 8 requisitos aún no se ha cumplido. Los nuevos Contribuidores pueden ser referidos a la sala de chat de los [Contribuidores](https://gitter.im/freeCodeCamp/Contributors). A discreción de un moderador, el problema puede ser cerrado.
 
 ### Aseguramiento de la Calidad (QA)
 
@@ -180,7 +180,7 @@ Los RP que cambian la función subyacente del sitio o realizan cambios no trivia
 Aunque tendrás acceso de escritura al repositorio de freeCodeCamp:
 
 *   **nunca debe insertar código directamente en el repositorio de freeCodeCamp** . Todo el código debe ingresar en el código base de freeCodeCamp en forma de una solicitud de extracción desde un fork del repositorio.
-*   Nunca debes aceptar tus propias relaciones públicas. Deben ser QA-ed por otro moderador, al igual que con cualquier otro PR.
+*   Nunca debes aceptar tus propias PRs. Deben ser Cualificadas por otro moderador, al igual que con cualquier otro PR.
 
 # Moderar el foro
 
@@ -204,7 +204,7 @@ No es necesario utilizar la sala de administración de Gitter para informar inci
 
 ### Tratar con conversaciones fuera de tema
 
-Las publicaciones o temas que parecen estar en el lugar equivocado, pueden ser re-categorizados o renombrados a lo que sea apropiado.
+Las publicaciones o temas que parecen estar en el lugar equivocado, pueden ser recategorizados o renombrados apropiadamente.
 
 En circunstancias excepcionales, puede ser apropiado que un moderador realice una discusión en varios hilos.
 
@@ -212,9 +212,9 @@ Nuevamente, si tiene algún problema o pregunta, haga una publicación con sus a
 
 # Cómo convertirse en moderador
 
-¿Ha estado contribuyendo a nuestra comunidad y desea el poder / responsabilidad adicional que conlleva ser un moderador?
+¿Ha estado contribuyendo a nuestra comunidad y desea el poder/responsabilidad adicional que conlleva ser un moderador?
 
-Reúna evidencia que demuestre su utilidad en los temas de GitHub y / o ayude a los campistas en Gitter y nuestros foros, y envíelos por PM en:
+Reúna evidencia que demuestre su utilidad en los temas de GitHub y/o ayude a los campistas en Gitter y nuestros foros, y envíelos por PM en:
 
 *   [@BerkeleyTrue](https://gitter.im/berkeleytrue)
 *   [@CodeNonprofit](https://gitter.im/codenonprofit)
@@ -230,7 +230,7 @@ Si es aprobado, lo agregaremos a nuestro [Equipo de moderadores](https://github.
 
 # Cómo nos retiramos los moderadores inactivos.
 
-Tenga en cuenta que con frecuencia eliminaremos las modificaciones de problema que consideremos inactivas. Cuando hagamos esto enviaremos el siguiente mensaje:
+Tenga en cuenta que con frecuencia eliminaremos a los moderadores que consideremos inactivos. Cuando hagamos esto enviaremos el siguiente mensaje:
 
 > Este es un mensaje estándar que le notifica que, dado que no parece haber sido un moderador activo recientemente, lo estamos eliminando de nuestro equipo de moderadores. Apreciamos profundamente su ayuda en el pasado.
 > 
@@ -238,9 +238,9 @@ Tenga en cuenta que con frecuencia eliminaremos las modificaciones de problema q
 
 # Cómo funciona nuestra sala de colaboradores
 
-Cualquiera es bienvenido en la [sala de Contribuyentes](https://gitter.im/freecodecamp/contributors) . Es la sala de chat designada para moderadores y otros campistas que contribuyen a nuestra comunidad de varias maneras, incluso a través de grupos de estudio.
+Cualquiera es bienvenido en la [sala de Contribuyentes](https://gitter.im/freecodecamp/contributors). Es la sala de chat designada para moderadores y otros campistas que contribuyen a nuestra comunidad de varias maneras, incluso a través de grupos de estudio.
 
-Nuestra suposición es que los colaboradores leerán cualquier cosa en esta sala que los mencione directamente con un nombre de `@username` `@/all` o que se dirija a `@/all` . Todo lo demás es opcional. Pero siéntete libre de leer cualquier cosa que alguien publique allí e interactuar.
+Nuestra suposición es que los colaboradores leerán cualquier cosa en esta sala que los mencione directamente con un nombre de `@username` `@/all` o que se dirija a `@/all`. Todo lo demás es opcional. Pero siéntete libre de leer cualquier cosa que alguien publique allí e interactuar.
 
 # Cómo convertirse en moderador en este foro.
 
@@ -248,8 +248,8 @@ Si ya es moderador, también puede solicitar el estado de moderador en este foro
 
 # Tratar con los abogados
 
-Puede ser contactado por organizaciones que quieran asociarse o compartir marcas con freeCodeCamp de alguna manera. Una vez que se dé cuenta de que esto es lo que buscan, deje de hablar con ellos y dígales que hablen directamente con Quincy Larson . Recibe propuestas como esta literalmente todos los días y está en la mejor posición para juzgar si una relación así valdrá la pena para nuestra comunidad (y rara vez lo es).
+Puede ser contactado por organizaciones que quieran asociarse o compartir marcas con freeCodeCamp de alguna manera. Una vez que se dé cuenta de que esto es lo que buscan, deje de hablar con ellos y dígales que hablen directamente con Quincy Larson. Él recibe propuestas como esta literalmente todos los días y está en la mejor posición para juzgar si una relación así valdrá la pena para nuestra comunidad (y rara vez lo es).
 
 # Definiciones
 
-> Las palabras clave "DEBE", "NO DEBE", "REQUERIDO", "DEBERÍA", "NO DEBE", "RECOMENDADO", "MAYO" y "OPCIONAL" en este documento deben interpretarse como se describe en [**RFC 2119**](https://www.ietf.org/rfc/rfc2119.txt) .
+> Las palabras clave "DEBE", "NO DEBE", "REQUERIDO", "DEBERÍA", "NO DEBE", "RECOMENDADO", "PODRIA" y "OPCIONAL" en este documento deben interpretarse como se describe en [**RFC 2119**](https://www.ietf.org/rfc/rfc2119.txt) .

@@ -2,6 +2,7 @@
 id: 587d7b8f367417b2b2512b63
 title: Use the filter Method to Extract Data from an Array
 challengeType: 1
+forumTopicId: 18179
 ---
 
 ## Description
@@ -27,7 +28,7 @@ tests:
   - text: Your code should not use a <code>for</code> loop.
     testString: assert(!code.match(/for\s*?\(.+?\)/g));
   - text: '<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'
-    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}], ''<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'');'
+    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]);'
 
 ```
 

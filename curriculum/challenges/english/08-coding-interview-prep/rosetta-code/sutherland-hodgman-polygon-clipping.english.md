@@ -2,6 +2,7 @@
 id: 5a23c84252665b21eecc8045
 title: Sutherland-Hodgman polygon clipping
 challengeType: 5
+forumTopicId: 302336
 ---
 
 ## Description

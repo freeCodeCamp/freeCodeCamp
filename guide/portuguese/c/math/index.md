@@ -22,7 +22,7 @@ No exemplo acima, o `result` da variável será igual a + b.
 
 #### Subtração: `-`
 
-A adição é executada com um `-` assim:
+A subtração é executada com um `-` assim:
 
 ```C
 result = a - b; 
@@ -38,7 +38,7 @@ A multiplicação é realizada com um `*` , assim:
 result = a * b; 
 ```
 
-No exemplo acima, o `result` da variável será igual a um multiplicado por b.
+No exemplo acima, o `result` da variável será igual a * b (a multiplicado por b).
 
 #### Divisão: `/`
 
@@ -48,7 +48,7 @@ Divisão é realizada com um `/` , assim:
 result = a / b; 
 ```
 
-No exemplo acima, o `result` da variável será igual a a dividido por b. Isso nem sempre é uma fração de over-b, no entanto. Ao lidar com inteiros, as coisas ficam um pouco diferentes - mais sobre isso depois.
+No exemplo acima, o `result` da variável será igual a a/b (a dividido por b). Isso nem sempre é uma fração de over-b, no entanto. Ao lidar com inteiros, as coisas ficam um pouco diferentes - mais sobre isso depois.
 
 # O material não tão básico
 
@@ -139,14 +139,16 @@ int result = pow(2,3) // will result in 2*2*2 or 8
 
 Algumas outras funções da biblioteca ( `math.h` ) que podem ser úteis são:
 
-`#include <math.h> double angle = cos(90.00); // Givs us 0.00 int result = sqrt(16); // Gives us 4 double result = log(10.00) // Gives us 2.30 (note this is ln(10), not log base 10)`
+```c
+#include <math.h> double angle = cos(90.00); // Givs us 0.00 int result = sqrt(16); // Gives us 4 double result = log(10.00) // Gives us 2.30 (note this is ln(10), not log base 10)
+```
 
 // código C para ilustrar // o uso da função ceil.
 
 # incluir
 
 # incluir
-
+```c
 int main () { float val1, val2, val3, val4;
 
 val1 = 1,6; val2 = 1,2; val3 = -2,8; val4 = -2,3;
@@ -154,7 +156,7 @@ val1 = 1,6; val2 = 1,2; val3 = -2,8; val4 = -2,3;
 printf ("valor1 =% .1lf \\ n", ceil (val1)); printf ("valor2 =% .1lf \\ n", ceil (val2)); printf ("value3 =% .1lf \\ n", ceil (val3)); printf ("value4 =% .1lf \\ n", ceil (val4));
 
 retorno (0); }
-
+```
 # Antes de você ir ...
 
 ## Uma revisão

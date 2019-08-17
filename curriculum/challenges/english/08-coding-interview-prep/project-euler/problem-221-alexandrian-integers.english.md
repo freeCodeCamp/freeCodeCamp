@@ -2,6 +2,7 @@
 id: 5900f4491000cf542c50ff5c
 challengeType: 5
 title: 'Problem 221: Alexandrian Integers'
+forumTopicId: 301864
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find the 150000th Alexandrian integer.
 ```yml
 tests:
   - text: <code>euler221()</code> should return 1884161251122450.
-    testString: assert.strictEqual(euler221(), 1884161251122450, '<code>euler221()</code> should return 1884161251122450.');
+    testString: assert.strictEqual(euler221(), 1884161251122450);
 
 ```
 

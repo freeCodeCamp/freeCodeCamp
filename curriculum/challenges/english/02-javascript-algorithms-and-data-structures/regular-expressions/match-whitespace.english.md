@@ -2,6 +2,7 @@
 id: 587d7db8367417b2b2512ba3
 title: Match Whitespace
 challengeType: 1
+forumTopicId: 301359
 ---
 
 ## Description
@@ -35,7 +36,7 @@ tests:
   - text: Your regex should find eight spaces in <code>"Men are from Mars and women are from Venus."</code>
     testString: assert("Men are from Mars and women are from Venus.".match(countWhiteSpace).length == 8);
   - text: 'Your regex should find three spaces in <code>"Space: the final frontier."</code>'
-    testString: 'assert("Space: the final frontier.".match(countWhiteSpace).length == 3, ''Your regex should find three spaces in <code>"Space: the final frontier."</code>'');'
+    testString: 'assert("Space: the final frontier.".match(countWhiteSpace).length == 3);'
   - text: Your regex should find no spaces in <code>"MindYourPersonalSpace"</code>
     testString: assert("MindYourPersonalSpace".match(countWhiteSpace) == null);
 

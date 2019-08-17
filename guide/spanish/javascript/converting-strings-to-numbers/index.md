@@ -4,7 +4,7 @@ localeTitle: Convertir cadenas a números
 ---
 ## Convertir cadenas a números
 
-La `parseInt()` analiza un argumento de cadena y devuelve un número entero de la base especificada (la base en sistemas numéricos matemáticos).
+La función `parseInt()` analiza un argumento de tipo cadena y devuelve un número entero de la base especificada (la base en sistemas numéricos matemáticos).
 
 ```js
     parseInt(string, radix); 
@@ -15,7 +15,7 @@ La `parseInt()` analiza un argumento de cadena y devuelve un número entero de l
 string 
 ```
 
-El valor a analizar. Si el argumento de `string` no es una cadena, entonces se convierte en una cadena (utilizando la `ToString` abstracta `ToString` ). Los espacios en blanco iniciales en el argumento de cadena se ignoran. '= base Un número entero entre 2 y 36 que representa la raíz (la base en sistemas de numeración matemática) de la cadena mencionada anteriormente. Especifique `10` para el sistema de numeración decimal comúnmente utilizado por los humanos. Siempre especifique este parámetro para eliminar la confusión del lector y garantizar un comportamiento predecible. Las diferentes implementaciones producen resultados diferentes cuando no se especifica una raíz, por lo general, el valor predeterminado es 10. Valor de retorno Un número entero analizado de la cadena dada. Si el primer carácter no se puede convertir en un número, se devuelve `NaN` .
+El valor a analizar. Si el argumento `string` no es una cadena, entonces se convierte en una cadena (utilizando la operación abstracta `ToString` ). Los espacios en blanco iniciales en el argumento de cadena se ignoran. '= base Un número entero entre 2 y 36 que representa la raíz (la base en sistemas de numeración matemática) de la cadena mencionada anteriormente. Especifique `10` para el sistema de numeración decimal comúnmente utilizado por los humanos. Siempre especifique este parámetro para eliminar la confusión del lector y garantizar un comportamiento predecible. Las diferentes implementaciones producen resultados diferentes cuando no se especifica una raíz, por lo general, el valor predeterminado es 10. Valor de retorno Un número entero analizado de la cadena dada. Si el primer carácter no se puede convertir en un número, se devuelve `NaN` .
 
 ### Descripción
 
@@ -25,11 +25,11 @@ Si `parseInt` encuentra un carácter que no es un número en el radix especifica
 
 Debido a que algunos números incluyen el carácter `e` en su representación de cadena (por ejemplo, `6.022e23` ), el uso de `parseInt` para truncar valores numéricos producirá resultados inesperados cuando se utiliza en números muy grandes o muy pequeños. `parseInt` no debe utilizarse como sustituto de `Math.floor()` .
 
-Si radix `undefined` está `undefined` o es 0 (o está ausente), JavaScript asume lo siguiente:
+Si radix está `undefined` o es 0 (o está ausente), JavaScript asume lo siguiente:
 
-*   Si la `string` entrada comienza con "0x" o "0X", radix es 16 (hexadecimal) y se analiza el resto de la cadena.
-*   Si la `string` entrada comienza con "0", la raíz es ocho (octal) o 10 (decimal). Exactamente qué radio se elige depende de la implementación. ECMAScript 5 especifica que se usa 10 (decimal), pero no todos los navegadores lo admiten todavía. Por este motivo, siempre especifique un radix cuando use parseInt.
-*   Si la `string` entrada comienza con cualquier otro valor, la raíz es 10 (decimal).
+*   Si el `string` comienza con "0x" o "0X", radix es 16 (hexadecimal) y se analiza el resto de la cadena.
+*   Si el `string` comienza con "0", la raíz es ocho (octal) o 10 (decimal). Exactamente qué radio se elige depende de la implementación. ECMAScript 5 especifica que se usa 10 (decimal), pero no todos los navegadores lo admiten todavía. Por este motivo, siempre especifique un radix cuando use parseInt.
+*   Si el `string` comienza con cualquier otro valor, la raíz es 10 (decimal).
 *   Si el primer carácter no se puede convertir en un número, parseInt devuelve NaN.
 
 Para fines aritméticos, el valor de NaN no es un número en ningún radix. Puede llamar a la función isNaN para determinar si el resultado de parseInt es NaN. Si NaN se pasa a operaciones aritméticas, los resultados de la operación también serán NaN.

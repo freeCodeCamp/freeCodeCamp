@@ -3,6 +3,7 @@ id: bd7156d8c242eddfaeb5bd13
 title: Build a freeCodeCamp Forum Homepage
 isRequired: false
 challengeType: 3
+forumTopicId: 302349
 ---
 
 ## Description

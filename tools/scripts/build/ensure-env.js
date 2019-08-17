@@ -7,7 +7,7 @@ const env = require('../../../config/env');
 const { getChallengesForLang } = require('../../../curriculum/getChallenges');
 const { createPathMigrationMap } = require('../seed/createPathMigrationMap');
 
-const { createRedirects } = require('./createRedirects');
+const { createRedirects } = require('./create-redirects');
 
 const log = debug('fcc:tools:ensure-env');
 

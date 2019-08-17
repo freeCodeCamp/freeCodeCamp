@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244ac
 title: Increment a Number with JavaScript
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/ca8GLT9'
+forumTopicId: 18201
 ---
 
 ## Description

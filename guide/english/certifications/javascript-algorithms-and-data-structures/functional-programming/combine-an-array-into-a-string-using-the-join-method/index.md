@@ -17,10 +17,10 @@ Use the `join` method (among others) inside the `sentensify` function to make a 
 ---
 ## Hints
 
-### Hint1
+### Hint 1
 You may need to convert the string to an array first.
 
-### Hint2
+### Hint 2
 You may need to use regular expression to split the string.
   
 

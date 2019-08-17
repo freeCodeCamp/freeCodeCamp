@@ -1,5 +1,5 @@
 ---
-title: Multiples of 3 and 5
+title: 'Problem 1: Multiples of 3 and 5'
 ---
 # Problem 1: Multiples of 3 and 5
 

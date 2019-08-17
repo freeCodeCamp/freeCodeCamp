@@ -53,6 +53,15 @@ SELECT studentID, FullName, sat_score, rcd_updated FROM student;
  +-----------+------------------------+-----------+---------------------+ 
  9 rows in set (0.00 sec) 
 ```
+Otra forma de ordenar sin necesidad de poner los campos por los cuales se quiere ordenar, es poner el consecutivo de la columna en que aparecen en la cláusula SELECT. Es decir, si tenemos un select que nos trae 4 columnas, y queremos ordenar por la última, podemos poner la cláusula ORDER BY 4 DESC por ejemplo:
+
+```sql
+SELECT  subscriber_id, subscriber_name, subscriber_age
+  FROM  ge_subscriber
+ ORDER BY 3 desc
+```
+Lo anterior hará que nuestros datos sean ordenados de forma descendente por la coumna 3 del SELECT, la cual es subscriber_age
+
 
 Al igual que con todas estas cosas de SQL, hay MUCHO MÁS que lo que está en esta guía introductoria.
 

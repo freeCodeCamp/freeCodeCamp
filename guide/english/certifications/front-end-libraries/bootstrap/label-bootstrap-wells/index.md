@@ -3,8 +3,33 @@ title: Label Bootstrap Wells
 ---
 # Label Bootstrap Wells
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/label-bootstrap-wells/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Solutions
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+</details>

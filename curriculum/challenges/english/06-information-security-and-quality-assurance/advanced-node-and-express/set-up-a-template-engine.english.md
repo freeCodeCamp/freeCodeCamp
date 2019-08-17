@@ -2,6 +2,7 @@
 id: 5895f700f9fc0f352b528e63
 title: Set up a Template Engine
 challengeType: 2
+forumTopicId: 301564
 ---
 
 ## Description

@@ -2,6 +2,7 @@
 id: 587d7da9367417b2b2512b66
 title: Combine Two Arrays Using the concat Method
 challengeType: 1
+forumTopicId: 301229
 ---
 
 ## Description

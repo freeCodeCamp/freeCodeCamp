@@ -2,6 +2,7 @@
 title: Factorial
 id: 597b2b2a2702b44414742771
 challengeType: 5
+forumTopicId: 302263
 ---
 
 ## Description
@@ -30,9 +31,9 @@ For example:
 ```yml
 tests:
   - text: <code>factorial</code> is a function.
-    testString: assert(typeof factorial === 'function', '<code>factorial</code> is a function.');
+    testString: assert(typeof factorial === 'function');
   - text: <code>factorial(2)</code> should return a number.
-    testString: assert(typeof factorial(2) === 'number', '<code>factorial(2)</code> should return a number.');
+    testString: assert(typeof factorial(2) === 'number');
   - text: <code>factorial(3)</code> should return 6.
     testString: assert.equal(factorial(3),results[0]);
   - text: <code>factorial(3)</code> should return 120.

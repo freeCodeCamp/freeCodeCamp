@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244bb
 title: Word Blanks
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cP3vVsm'
+forumTopicId: 18377
 ---
 
 ## Description

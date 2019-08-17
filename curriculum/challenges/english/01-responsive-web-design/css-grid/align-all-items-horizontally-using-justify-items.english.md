@@ -3,6 +3,7 @@ id: 5a90376038fddaf9a66b5d3c
 title: Align All Items Horizontally using justify-items
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cJbpECn'
+forumTopicId: 301120
 ---
 
 ## Description

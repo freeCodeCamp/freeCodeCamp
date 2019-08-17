@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036188
 title: Render Conditionally from Props
 challengeType: 6
 isRequired: false
+forumTopicId: 301405
 ---
 
 ## Description
@@ -77,7 +78,7 @@ class GameOfChance extends React.Component {
     });
   }
   render() {
-    let expression = null; // change code here
+    const expression = null; // change code here
     return (
       <div>
         <button onClick={this.handleClick}>Play Again</button>

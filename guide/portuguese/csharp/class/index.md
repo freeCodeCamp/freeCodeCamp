@@ -4,7 +4,7 @@ localeTitle: Classe
 ---
 ## Classe
 
-Uma classe em C # é definida como um tipo de referência. Para instilar uma variável com um tipo de referência, você deve especificar a `new` palavra-chave, senão a variável terá o valor padrão de `null` . Veja abaixo um exemplo.
+Uma classe em C # é definida como um tipo de referência. Para criar uma variável com um tipo de referência, você deve especificar `new` palavra-chave, senão a variável terá o valor padrão de `null` . Veja abaixo um exemplo.
 
 ```csharp
 // The value of variableOne is null at this point. 
@@ -32,7 +32,7 @@ public class NewClass
  } 
 ```
 
-Uma classe é um protótipo ou blueprint do qual os objetos são criados. Em C #, a classe é definida usando a classe de palavra-chave. Uma classe é usada para combinar alguns métodos, propriedades, campos, eventos e representantes em uma única unidade. Uma classe pode conter classes aninhadas também.
+Uma classe é um protótipo ou a planta do qual os objetos são criados. Em C #, a classe é definida usando a classe de palavra-chave. Uma classe é usada para combinar alguns métodos, propriedades, campos, eventos e representantes em uma única unidade. Uma classe pode conter classes aninhadas também.
 
 #### Exemplo: considere o caso da Classe do Empregado abaixo:
 

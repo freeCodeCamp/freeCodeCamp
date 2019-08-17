@@ -2,6 +2,7 @@
 title: Convert seconds to compound duration
 id: 596fd036dc1ab896c5db98b1
 challengeType: 5
+forumTopicId: 302236
 ---
 
 ## Description
@@ -55,13 +56,13 @@ Demonstrate that it passes the following three test-cases:
 ```yml
 tests:
   - text: <code>convertSeconds</code> is a function.
-    testString: assert(typeof convertSeconds === 'function', '<code>convertSeconds</code> is a function.');
+    testString: assert(typeof convertSeconds === 'function');
   - text: <code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.
-    testString: assert.equal(convertSeconds(testCases[0]), results[0], '<code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.');
+    testString: assert.equal(convertSeconds(testCases[0]), results[0]);
   - text: <code>convertSeconds(86400)</code> should return <code>1 d</code>.
-    testString: assert.equal(convertSeconds(testCases[1]), results[1], '<code>convertSeconds(86400)</code> should return <code>1 d</code>.');
+    testString: assert.equal(convertSeconds(testCases[1]), results[1]);
   - text: <code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.
-    testString: assert.equal(convertSeconds(testCases[2]), results[2], '<code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.');
+    testString: assert.equal(convertSeconds(testCases[2]), results[2]);
 
 ```
 

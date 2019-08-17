@@ -3,6 +3,7 @@ id: 587d774c367417b2b2512a9d
 title: Know When Alt Text Should be Left Blank
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cM9P4t2'
+forumTopicId: 301019
 ---
 
 ## Description

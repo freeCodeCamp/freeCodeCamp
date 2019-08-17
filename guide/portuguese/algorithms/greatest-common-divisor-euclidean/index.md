@@ -44,7 +44,6 @@ Etapa 5: **GCD = b**
 Etapa 6: finalizar
 
 Código JavaScript para executar o GCD-
-
 ```javascript
 function gcd(a, b) { 
   var R; 
@@ -57,8 +56,7 @@ function gcd(a, b) {
  } 
 ```
 
-Código Javascript para executar o GCD usando Recursion-
-
+Código Javascript para executar o GCD usando Recursão-
 ```javascript
 function gcd(a, b) { 
   if (b == 0) 
@@ -68,8 +66,102 @@ function gcd(a, b) {
  } 
 ```
 
-Você também pode usar o Algoritmo Euclidiano para encontrar o GCD de mais de dois números. Como o GCD é associativo, a seguinte operação é válida - `GCD(a,b,c) == GCD(GCD(a,b), c)`
+Código C para executar o GCD usando recursão
+```c
+int gcd(int a, int b) 
+{ 
+    // Everything divides 0  
+    if (a == 0) 
+       return b; 
+    if (b == 0) 
+       return a; 
+  
+    // base case 
+    if (a == b) 
+        return a; 
+  
+    // a is greater 
+    if (a > b) 
+        return gcd(a-b, b); 
+    return gcd(a, b-a); 
+}
+```
 
-Calcule o GCD dos dois primeiros números e depois encontre o GCD do resultado e o próximo número. Exemplo - `GCD(203,91,77) == GCD(GCD(203,91),77) == GCD(7, 77) == 7`
+Código C ++ para executar o GCD-
+```csharp
+int gcd(int a,int b) {
+  int R;
+  while ((a % b) > 0)  {
+    R = a % b;
+    a = b;
+    b = R;
+  }
+  return b;
+}
+```
+
+Código Python para executar o GCD usando recursão
+```Python
+def gcd(a, b):
+  if b == 0:
+    return a:
+  else:
+    return gcd(b, (a % b))
+```
+
+Código Java para executar o GCD usando recursão
+```Java
+static int gcd(int a, int b)
+{
+  if(b == 0)
+  {
+    return a;
+  }
+  return gcd(b, a % b);
+}
+
+```
+
+Você também pode usar o Algoritmo Euclidiano para encontrar o GCD de mais de dois números. 
+Como o GCD é associativo, a seguinte operação é válida - `GCD(a,b,c) == GCD(GCD(a,b), c)`
+
+Calcule o GCD dos dois primeiros números e depois encontre o GCD do resultado e o próximo número. 
+Exemplo - `GCD(203,91,77) == GCD(GCD(203,91),77) == GCD(7, 77) == 7`
 
 Você pode encontrar GCD de `n` números da mesma maneira.
+
+### Algoritmo Euclideano Estendido
+Esta é uma extensão do algoritmo euclidiano. Também calcula os coeficientes x, y tais que
+
+ax+by = gcd(a,b)
+
+x e y são também conhecidos como coeficientes da identidade de Bézout.
+
+Código C para Algoritmo Euclideano Estendido
+
+```c
+struct Triplet{
+	int gcd;
+	int x;
+	int y;
+};
+Triplet gcdExtendedEuclid(int a,int b){
+	//Base Case
+	if(b==0){
+		Triplet myAns;
+		myAns.gcd = a;
+		myAns.x = 1;
+		myAns.y = 0;
+		return myAns;
+
+	}
+	Triplet smallAns = gcdExtendedEuclid(b,a%b);
+	//Extended euclid says
+
+	Triplet myAns;
+	myAns.gcd = smallAns.gcd;
+	myAns.x  = smallAns.y;
+	myAns.y = (smallAns.x - ((a/b)*(smallAns.y)));
+	return myAns;	
+}
+```

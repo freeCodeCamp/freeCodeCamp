@@ -3,8 +3,74 @@ title: Pre-filter JSON to Get the Data You Need
 ---
 # Pre-filter JSON to Get the Data You Need
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/json-apis-and-ajax/pre-filter-json-to-get-the-data-you-need/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+---
+## Solutions
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```html
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    document.getElementById('getMessage').onclick=function(){
+      req=new XMLHttpRequest();
+      req.open("GET",'/json/cats.json',true);
+      req.send();
+      req.onload=function(){
+        json=JSON.parse(req.responseText);
+        var html = "";
+        // Add your code below this line
+        
+        json = json.filter(function(val) {
+          return (val.id !== 1);
+        });
+        // Add your code above this line
+         json.forEach(function(val) {
+           html += "<div class = 'cat'>"
+           
+           html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>"
+           
+           html += "</div>"
+         });
+         document.getElementsByClassName('message')[0].innerHTML=html;
+       };
+     }; 
+  });
+</script>
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+<h1>Cat Photo Finder</h1> 
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</details>

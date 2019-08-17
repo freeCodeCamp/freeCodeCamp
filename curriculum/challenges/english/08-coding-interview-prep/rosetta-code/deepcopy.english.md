@@ -2,6 +2,7 @@
 title: Deepcopy
 id: 596a8888ab7c01048de257d5
 challengeType: 5
+forumTopicId: 302247
 ---
 
 ## Description
@@ -27,15 +28,15 @@ This task will not test for:
 ```yml
 tests:
   - text: <code>deepcopy</code> should be a function.
-    testString: assert(typeof deepcopy === 'function', '<code>deepcopy</code> should be a function.');
+    testString: assert(typeof deepcopy === 'function');
   - text: '<code>deepcopy({test: "test"})</code> should return an object.'
     testString: 'assert(typeof deepcopy(obj1) === ''object'');'
   - text: Should not return the same object that was provided.
-    testString: assert(deepcopy(obj2) != obj2, 'Should not return the same object that was provided.');
+    testString: assert(deepcopy(obj2) != obj2);
   - text: When passed an object containing an array, should return a deep copy of the object.
-    testString: assert.deepEqual(deepcopy(obj2), obj2, 'When passed an object containing an array, should return a deep copy of the object.');
+    testString: assert.deepEqual(deepcopy(obj2), obj2);
   - text: When passed an object containing another object, should return a deep copy of the object.
-    testString: assert.deepEqual(deepcopy(obj3), obj3, 'When passed an object containing another object, should return a deep copy of the object.');
+    testString: assert.deepEqual(deepcopy(obj3), obj3);
 
 ```
 

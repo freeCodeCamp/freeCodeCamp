@@ -2,6 +2,7 @@
 id: 5900f5271000cf542c51003a
 challengeType: 5
 title: 'Problem 443: GCD sequence'
+forumTopicId: 302115
 ---
 
 ## Description
@@ -33,7 +34,7 @@ Find g(1015).
 ```yml
 tests:
   - text: <code>euler443()</code> should return 2744233049300770.
-    testString: assert.strictEqual(euler443(), 2744233049300770, '<code>euler443()</code> should return 2744233049300770.');
+    testString: assert.strictEqual(euler443(), 2744233049300770);
 
 ```
 

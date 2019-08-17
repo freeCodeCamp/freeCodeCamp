@@ -2,6 +2,7 @@
 id: 587d7dbe367417b2b2512bb9
 title: Use @for to Create a Sass Loop
 challengeType: 0
+forumTopicId: 301462
 ---
 
 ## Description
@@ -49,17 +50,17 @@ It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> w
 ```yml
 tests:
   - text: Your code should use the <code>@for</code> directive.
-    testString: assert(code.match(/@for /g), 'Your code should use the <code>@for</code> directive.');
+    testString: assert(code.match(/@for /g));
   - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.
-    testString: assert($('.text-1').css('font-size') == '10px', 'Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.');
+    testString: assert($('.text-1').css('font-size') == '10px');
   - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.
-    testString: assert($('.text-2').css('font-size') == '20px', 'Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.');
+    testString: assert($('.text-2').css('font-size') == '20px');
   - text: Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.
-    testString: assert($('.text-3').css('font-size') == '30px', 'Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.');
+    testString: assert($('.text-3').css('font-size') == '30px');
   - text: Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.
-    testString: assert($('.text-4').css('font-size') == '40px', 'Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.');
+    testString: assert($('.text-4').css('font-size') == '40px');
   - text: Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.
-    testString: assert($('.text-5').css('font-size') == '50px', 'Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.');
+    testString: assert($('.text-5').css('font-size') == '50px');
 
 ```
 
