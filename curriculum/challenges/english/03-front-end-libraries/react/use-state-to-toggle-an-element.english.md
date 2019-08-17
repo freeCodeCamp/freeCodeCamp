@@ -47,6 +47,8 @@ tests:
     testString: assert.strictEqual(Enzyme.mount(React.createElement(MyComponent)).state('visibility'), false);
   - text: Clicking the button element should toggle the <code>visibility</code> property in state between <code>true</code> and <code>false</code>.
     testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ visibility: false }); return waitForIt(() => mockedComponent.state(''visibility'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const third = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(!firstValue && secondValue && !thirdValue); }; '
+  - text: The <code>setState</code> version used should take a function.
+    testString: assert(new RegExp('this\\.setState\\(.*(=>|function)').test(code));
 
 ```
 
