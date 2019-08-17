@@ -4,7 +4,7 @@ localeTitle: Algoritmos
 ---
 ## Algoritmos
 
-Na ciência da computação, um algoritmo é uma especificação inequívoca de como resolver uma classe de problemas. Algoritmos podem realizar cálculos, processamento de dados e tarefas de raciocínio automatizado.
+Na ciência da computação, um algoritmo é uma especificação inequívoca de como resolver uma classe de problemas. Algoritmos podem realizar cálculos, processamento de dados não humanamente possível, e tarefas de raciocínio automatizado.
 
 Um algoritmo é um método efetivo que pode ser expresso dentro de uma quantidade finita de espaço e tempo e em uma linguagem formal bem definida para o cálculo de uma função. Partindo de um estado inicial e de uma entrada inicial (talvez vazia), as instruções descrevem uma computação que, quando executada, passa por um número finito de estados sucessivos bem definidos, produzindo eventualmente "saída" e terminando em um estado final final. A transição de um estado para o outro não é necessariamente determinista; alguns algoritmos, conhecidos como algoritmos aleatórios, incorporam entrada aleatória.
 

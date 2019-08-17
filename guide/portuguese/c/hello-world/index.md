@@ -19,7 +19,7 @@ int main (void) {
 
 *   O #include é um comando de pré-processador. Este comando informa ao compilador para incluir o conteúdo do arquivo stdio.h (entrada e saída padrão) no programa.
     
-*   O arquivo stdio.h contém funções como scanf () e print () para receber entrada e exibir a saída respectivamente.
+*   O arquivo stdio.h contém funções como scanf () e printf () para receber entrada e exibir a saída respectivamente.
     
 *   Se você usa a função printf () sem escrever #include , o programa não será compilado.
     

@@ -6,15 +6,15 @@ localeTitle: Métodos de String Ruby
 
 Ruby tem muitos métodos integrados para trabalhar com strings. Strings em Ruby por padrão são mutáveis ​​e podem ser alteradas no local ou uma nova string pode ser retornada de um método.
 
-### Comprimento:
+### Tamanho:
 
 *   A propriedade `.length` retorna o número de caracteres em uma cadeia, incluindo o espaço em branco. `ruby "Hello".length #=> 5 "Hello World!".length #=> 12`
 
-### Esvaziar:
+### Vazio:
 
 *   O `.empty?` método retorna `true` se uma string tiver comprimento igual a zero. `ruby "Hello".empty? #=> false "!".empty? #=> false " ".empty? #=> false "".empty? #=> true`
 
-### Contagem:
+### Quantidade:
 
 *   O método `.count` conta quantas vezes um caractere específico é encontrado em uma string.
 *   Este método faz distinção entre maiúsculas e minúsculas. `ruby "HELLO".count('L') #=> 2 "HELLO WORLD!".count('LO') #=> 1`
@@ -35,17 +35,17 @@ Ruby tem muitos métodos integrados para trabalhar com strings. Strings em Ruby 
 
 *   O método `.swapcase` transforma os `.swapcase` maiúsculas em uma string em minúsculas e as letras minúsculas em maiúsculas. `ruby "hELLO wORLD".swapcase #=> Hello World`
 
-### Capitalizar:
+### Primeira letra Maiúscula:
 
 *   O método `.capitalize` transforma a primeira letra em uma string em maiúsculas e o restante na string em minúsculo. `ruby "HELLO".capitalize #=> Hello "HELLO, HOW ARE YOU?".capitalize #=> Hello, how are you?`
 
 _Observe que a primeira letra só é maiúscula se estiver no início da string._ `ruby "-HELLO".capitalize #=> -hello "1HELLO".capitalize #=> 1hello`
 
-### Marcha ré:
+### Inverter:
 
 *   O método `.reverse` inverte a ordem dos caracteres em uma string. `ruby "Hello World!".reverse #=> "!dlroW olleH"`
 
-### Dividido:
+### Separar:
 
 *   O `.split` pega uma string, _divide_ -a em uma matriz e retorna a matriz.
     

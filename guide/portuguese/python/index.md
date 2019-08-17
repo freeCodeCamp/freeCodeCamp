@@ -24,7 +24,7 @@ Para saber mais sobre o Python, confira estas páginas em python.org:
 
 ## Instalação
 
-A maioria dos sistemas operacionais baseados em \* nix vem com o Python instalado (geralmente Python 2, Python 3 nos mais recentes). Substituindo o sistema O Python não é recomendado e pode causar problemas. No entanto, versões diferentes do Python podem ser instaladas com segurança ao lado do sistema Python. Veja [Configuração e Uso do Python](https://docs.python.org/3/using/index.html) .
+A maioria dos sistemas operacionais baseados em Linux (também chamados de "Unix like") vem com o Python instalado (geralmente Python 2, Python 3 nos mais recentes). Substituindo o sistema O Python não é recomendado e pode causar problemas. No entanto, versões diferentes do Python podem ser instaladas com segurança ao lado do sistema Python. Veja [Configuração e Uso do Python](https://docs.python.org/3/using/index.html) .
 
 O Windows não vem com o Python, o instalador e as instruções podem ser encontradas [aqui](https://docs.python.org/3/using/windows.html)
 
