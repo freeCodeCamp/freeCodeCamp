@@ -54,7 +54,7 @@ Compruebe si la clave `foo` se ha utilizado en el mapa `m` :
 element, ok = m["foo"] 
 ```
 
-Si `ok` es `true` , la clave se ha utilizado y el `element` mantiene el valor en `m["foo"]` . Si `ok` es `false` , la clave no se ha utilizado y el `element` mantiene sus valores cero.
+Si `ok` es `true`, la clave se ha utilizado y `element` mantiene el valor en `m["foo"]`. Si `ok` es `false`, la clave no se ha utilizado, y `element` mantiene sus valores cero.
 
 ### Mapa literales
 

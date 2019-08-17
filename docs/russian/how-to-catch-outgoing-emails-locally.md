@@ -1,9 +1,9 @@
 <table>
     <tr>
-        <td> Read these guidelines in </td>
+        <td> Прочтите эти рекомендации на </td>
         <td><a href='/CONTRIBUTING.md'> English </a></td>
         <td><a href='/docs/chinese/CONTRIBUTING.md'> 中文 </a></td>
-        <td><a href='/docs/russian/CONTRIBUTING.md'> русский </a></td>
+        <td><a href='/docs/russian/CONTRIBUTING.md'> Русском </a></td>
         <td><a href='/docs/arabic/CONTRIBUTING.md'> عربى </a></td>
         <td><a href='/docs/spanish/CONTRIBUTING.md'> Español </a></td>
         <td><a href='/docs/portuguese/CONTRIBUTING.md'> Português </a></td>
@@ -22,13 +22,17 @@
 
 Установите и запустите MailHog (зависит от установленной ОС):
 
+
 - [Установка MailHog на macOS](#installing-mailhog-on-macos)
 - [Установка MailHog на Windows](#installing-mailhog-on-windows)
 - [Установка MailHog на Linux](#installing-mailhog-on-linux)
 
 ### Установка MailHog на macOS
 
-Вот как настроить MailHog на macOS с помощью [Homebrew](https://brew.sh/):
+ 
+Как установить MailHog на macOS с помощью [Homebrew](https://brew.sh/):
+
+
 
 ```bash
 brew install mailhog
@@ -55,6 +59,7 @@ brew services start mailhog
 
 Для систем на базе Debian, таких как Ubuntu и Linux Mint, выполните команду:
 
+
 ```bash
 sudo apt-get install golang
 ```
@@ -71,10 +76,11 @@ sudo dnf install golang
 sudo yum install golang
 ```
 
-Задайте путь для Go:
+
+Задайте путь к Go:
 
 ```bash
-echo 'export GOPATH=$HOME/go' >> ~/.profile
+echo "export GOPATH=$HOME/go" >> ~/.profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
 ```
@@ -86,7 +92,6 @@ go get github.com/mailhog/MailHog
 sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
-
 Теперь вы можете перейти к [использованию MailHog](#using-mailhog).
 
 ## Использование MailHog
@@ -95,15 +100,15 @@ mailhog
 
 Теперь вы должны увидеть экран, как показано ниже:
 
-![MailHog Скриншот 1](images/mailhog/1.jpg)
+![MailHog Скриншот 1](../images/mailhog/1.jpg)
 
 Когда ваша freeCodeCamp сборка отправит электронное письмо, вы увидите его на экране, как показано ниже:
 
-![MailHog Скриншот 2](images/mailhog/2.jpg)
+![MailHog Скриншот 2](../images/mailhog/2.jpg)
 
 Откройте почту, и вы увидите две вкладки, где вы можете просмотреть содержимое: обычный текст и источник. Убедитесь, что вы находитесь на вкладке обычного текста.
 
-![MailHog Скриншот 3](images/mailhog/3.jpg)
+![MailHog Скриншот 3](../images/mailhog/3.jpg)
 
 Любые ссылки в письме так же должны быть доступны для просмотра.
 

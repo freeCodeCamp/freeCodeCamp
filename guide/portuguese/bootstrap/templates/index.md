@@ -6,11 +6,11 @@ localeTitle: Modelos
 
 ### Visão geral
 
-Os modelos são kits de ferramentas pré-construídos que facilitam a criação de uma nova página da web. Se você tiver uma ideia geral do layout desejado, ou se quiser navegar por uma biblioteca de modelos de layout comuns para obter ideias, os modelos do Bootstrap tiram muito da monotonia e as frustrações se formam no processo inicial de criação. Essa ajuda ajuda você a se concentrar nos detalhes mais sutis do projeto, em vez de se perguntar por que o CSS não está cooperando.
+Os modelos são kits de ferramentas pré-construídos que facilitam a criação de uma nova página da web. Se você tiver uma ideia geral do layout desejado, ou se quiser navegar por uma biblioteca de modelos de layout comuns para obter ideias, os modelos do Bootstrap tiram muito da monotonia e as frustrações que se formam no processo inicial de criação. Isso ajuda você a se concentrar nos detalhes mais sutis do projeto, em vez de se perguntar por que o CSS não está cooperando.
 
 ### Começando
 
-*   A página oficial do Bootstraps oferece "Temas" em vez de modelos. Os temas são apenas projetos iniciados totalmente desenvolvidos, enquanto um modelo descreve apenas um quadro HTML pré-construído. Os temas custam dinheiro e talvez ajudem o desenvolvedor iniciante, enquanto muitos modelos são de código aberto e fornecem apenas os elementos preliminares de layout necessários.
+*   A página oficial do Bootstrap oferece "Temas" em vez de modelos. Os temas são apenas projetos iniciados totalmente desenvolvidos, enquanto um modelo descreve apenas um quadro HTML pré-construído. Os temas custam dinheiro e talvez ajudem o desenvolvedor iniciante, enquanto muitos modelos são de código aberto e fornecem apenas os elementos preliminares de layout necessários.
 *   Abaixo está uma lista de modelos de layout, feitos especificamente para o Bootstrap. Diverta-se!
 
 ### Links de modelo

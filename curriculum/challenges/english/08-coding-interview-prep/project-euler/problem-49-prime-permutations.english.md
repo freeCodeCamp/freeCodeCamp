@@ -2,6 +2,7 @@
 id: 5900f39d1000cf542c50feb0
 challengeType: 5
 title: 'Problem 49: Prime permutations'
+forumTopicId: 302159
 ---
 
 ## Description
@@ -22,7 +23,7 @@ What 12-digit number do you form by concatenating the three terms in this sequen
 ```yml
 tests:
   - text: <code>primePermutations()</code> should return 296962999629.
-    testString: assert.strictEqual(primePermutations(), 296962999629, '<code>primePermutations()</code> should return 296962999629.');
+    testString: assert.strictEqual(primePermutations(), 296962999629);
 
 ```
 

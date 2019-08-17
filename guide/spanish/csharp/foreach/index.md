@@ -14,7 +14,7 @@ foreach (element in iterable-item)
     // body of foreach loop 
  } 
  
- List<string> Names = new List<string>{ "Jim", "Jane", "Jack" } 
+ List<string> Names = new List<string>{ "Jim", "Jane", "Jack" }; 
  
  foreach(string name in Names) 
  { 
@@ -24,7 +24,7 @@ foreach (element in iterable-item)
 
 ### Salida:
 
-```sh
+```shell
 > We have Jim 
  > We have Jane 
  > We have Jack 

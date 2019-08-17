@@ -1,7 +1,7 @@
 ---
 title: Delete a Node with Two Children in a Binary Search Tree
 ---
-## Delete a Node with Two Children in a Binary Search Tree
+# Delete a Node with Two Children in a Binary Search Tree
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/delete-a-node-with-two-children-in-a-binary-search-tree/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

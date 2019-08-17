@@ -30,7 +30,7 @@ $$\huge\textstyle\color{#F00}{BigRed}\small\textstyle\color{#0F0}{SmallGreen}$$
 
 ## Detalles
 
-[KaTeX Github Repo](https://github.com/Khan/KaTeX) LaTeX es un sistema de composición tipográfica de alta calidad; Incluye características diseñadas para la producción de documentación técnica y científica. LaTeX es el estándar de facto para la comunicación y publicación de documentos científicos. Sus ventajas son notables en documentos largos como libros, trabajos o tesis.
+[KaTeX GitHub Repo](https://github.com/Khan/KaTeX) LaTeX es un sistema de composición tipográfica de alta calidad; Incluye características diseñadas para la producción de documentación técnica y científica. LaTeX es el estándar de facto para la comunicación y publicación de documentos científicos. Sus ventajas son notables en documentos largos como libros, trabajos o tesis.
 
 Gitter usa Katex (una implementación personalizada de LaTeX) y se puede usar introduciendo el siguiente código:
 ```

@@ -24,7 +24,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ##### 线性渐变 - 从上到下（这是默认值）
 
-以下示例显示从顶部开始的线性渐变。它开始变红，过渡到黄色： ![默认线性梯度](https://i.imgur.com/2uGfleD.jpg)
+以下示例显示从顶部开始的线性渐变。它开始变红，过渡到黄色： ![默认线性梯度](https://cdn-media-1.freecodecamp.org/imgr/2uGfleD.jpg)
 
 #### 例
 ```
@@ -55,11 +55,11 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  </html> 
 ```
 
-![默认线性梯度](https://i.imgur.com/CvtXCMd.jpg)
+![默认线性梯度](https://cdn-media-1.freecodecamp.org/imgr/CvtXCMd.jpg)
 
 ##### 线性渐变 - 从左到右
 
-以下示例显示从左侧开始的线性渐变。它开始变红，过渡到黄色： ![左到右](https://i.imgur.com/e4dRvZR.jpg)
+以下示例显示从左侧开始的线性渐变。它开始变红，过渡到黄色： ![左到右](https://cdn-media-1.freecodecamp.org/imgr/e4dRvZR.jpg)
 
 #### 例
 ```
@@ -90,7 +90,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  </html> 
 ```
 
-![左到右](https://i.imgur.com/k4FSyXz.jpg)
+![左到右](https://cdn-media-1.freecodecamp.org/imgr/k4FSyXz.jpg)
 
 #### 线性渐变 - 对角线
 
@@ -98,7 +98,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 以下示例显示从左上角开始（并向右下方）的线性渐变。它开始变红，过渡到黄色：
 
-![对角线](https://i.imgur.com/YvtbUBH.jpg)
+![对角线](https://cdn-media-1.freecodecamp.org/imgr/YvtbUBH.jpg)
 
 #### 例
 ```
@@ -129,7 +129,7 @@ background: linear-gradient(direction, color-stop1, color-stop2, ...);
  </html> 
 ```
 
-![对角线EXP](https://i.imgur.com/8gKRhAp.jpg)
+![对角线EXP](https://cdn-media-1.freecodecamp.org/imgr/8gKRhAp.jpg)
 
 #### 更多信息：
 

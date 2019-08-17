@@ -1,9 +1,13 @@
 ---
 title: Manipulate Arrays With push()
 ---
-## Manipulate Arrays With push()
+# Manipulate Arrays With push()
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+---
+## Hints
+
+### Hint 1
 The `push()` method allows you to append (add to the end) an element to an array. Like so...
 
 ```javascript

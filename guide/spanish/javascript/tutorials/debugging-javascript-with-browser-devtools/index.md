@@ -10,7 +10,7 @@ En este artículo, te contaremos algunos de los trucos más interesantes para de
 
 Antes de saltar a la depuración, podemos filtrar algunos datos secretos sobre ese _increíble motor de verificación de códigos_ en FCC.
 
-Usamos un [CodeMirror](http://codemirror.net/mode/javascript/index.html) personalizado, como el editor de código. Se utiliza una [función `eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) para evaluar el código JavaScript representado como una cadena desde el editor. Cuando se llama a `eval()` , los navegadores ejecutarán su código de forma nativa. Aprenderemos más por qué este secreto es importante en las secciones posteriores de este artículo.
+Usamos un [Monaco Editor](https://microsoft.github.io/monaco-editor) personalizado, como el editor de código. Se utiliza una [función `eval()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval) para evaluar el código JavaScript representado como una cadena desde el editor. Cuando se llama a `eval()` , los navegadores ejecutarán su código de forma nativa. Aprenderemos más por qué este secreto es importante en las secciones posteriores de este artículo.
 
 ## Ahora pasamos a los trucos:
 

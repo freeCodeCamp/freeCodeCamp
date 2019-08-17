@@ -52,8 +52,7 @@ function getIndexToIns(arr, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/36)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 *   Primeiro, classifico a matriz usando `.sort(callbackFuntion)` para classificá-la da mais baixa para a mais alta, da esquerda para a direita.
@@ -77,8 +76,7 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 50); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/2547)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 *   Eu não classifico a matriz de entrada arr
@@ -106,8 +104,7 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 50); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/4135)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 *   Classifique o array existente.
@@ -125,8 +122,7 @@ function getIndexToIns(arr, num) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/EB10/1)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 *   Primeiro, adicionamos o número `num` ao array usando `push()` que o adiciona como o último elemento do array.
@@ -154,8 +150,7 @@ function getIndexToIns(arr, num) {
  getIndexToIns([40, 60], 500); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/63)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 *   Primeiro, classifique a matriz em ordem crescente, isso é feito atualmente usando funções de matriz para pegada mínima.
@@ -181,8 +176,7 @@ function getIndexToIns(arr, num) {
  getIndexToIns([1,3,4],2); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/IUJE/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 *   Usamos o método de encadeamento para invocar um método após o outro para resolver o problema em uma única linha. Primeiro nós mesclamos `arr` e `num` invocando o método arr.concat (num)

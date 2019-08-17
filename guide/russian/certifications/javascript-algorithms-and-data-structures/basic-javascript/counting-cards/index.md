@@ -120,7 +120,6 @@ function cc(card) {
  } 
 ```
 
-· Запустить код в [repl.it.](https://repl.it/@AdrianSkar/Basic-JS-Counting-cards)
 
 ### Обозначение кода
 

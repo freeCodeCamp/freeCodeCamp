@@ -6,18 +6,19 @@ freeCodeCamp offers 1,200 hours of interactive coding challenges. These are 100%
 
 You can learn theory through free online university courses. freeCodeCamp will focus instead on helping you learn to code and practice by building apps.
 
-With that practical focus in mind, let’s talk about the requirements for our coding challenges. (Note that these requirements do not apply to our algorithm challenges, checkpoint challenges, or projects.)
+With that practical focus in mind, let’s talk about the requirements for our coding challenges. Note that these requirements do not apply to our algorithm challenges, checkpoint challenges, or projects.
 
 **Table of Contents**
 
 - [Proper nouns](#proper-nouns)
-- [The 2 minute rule](#the-2-minute-rule)
+- [The 2-minute rule](#the-2-minute-rule)
 - [Modularity](#modularity)
 - [Naming challenges](#naming-challenges)
 - [Writing tests](#writing-tests)
 - [Writing instructions](#writing-instructions)
 - [Formatting challenge text](#formatting-challenge-text)
 - [Formatting seed code](#formatting-seed-code)
+- [Formatting solution](#formatting-solution)
 - [Why do we have all these rules?](#why-do-we-have-all-these-rules)
 
 ## Proper nouns
@@ -26,18 +27,17 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 - JavaScript (capital letters in "J" and "S" and no abbreviations)
 - Node.js
+- Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
+## The 2-minute rule
 
-## The 2 minute rule
-
-Each challenge should be solvable within 120 seconds  by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
+Each challenge should be solvable within 120 seconds by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
-- simplify the challenge, or
-- split the challenge into two challenges.
+- Simplify the challenge, or
+- Split the challenge into two challenges.
 
-The 2 minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
 We have JavaScript events that track how long it takes for campers to solve challenges and we can use them to identify challenges that need to be simplified or split.
 
@@ -105,13 +105,13 @@ Challenge tests can make use of the Node.js and Chai.js assertion libraries. Als
 
 ## Writing instructions
 
-Challenges should be written with short, clear sentences, and use as little jargon as necessary. All jargon should be defined immediately in plain English.
+Sentences should be clear and concise with minimal jargon. If used, jargon should be immediately defined in plain English.
 
 Keep paragraphs short (around 1-4 sentences). People are more likely to read several short paragraphs over a wall of text.
 
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way, the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Don't use outbound links. These interrupt the flow. And campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's wiki article on the forum.
+Don't use outbound links. These interrupt the flow. And campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
 You can add diagrams if absolutely necessary.
 
@@ -123,10 +123,26 @@ Here are specific formatting guidelines for challenge text and examples:
 
 - Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
 - The first instance of a keyword when it's being defined, or general keywords (i.e. "object" or "immutable") go in `<dfn>` tags
-- Single line code examples go in `<code>` tags
-- Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
-- A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
-- Additional information in the form of a note should be formatted `<strong>Note</strong><br>Rest of note text...`
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+
+````
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+````
+- Multi-line code blocks **must be preceded by an empty line**.  The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages).  To complete the code block, you must start a newline which only has three backticks and **another empty line**.
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
+See example below:
+````
+The following is an example of code:
+
+```{language}
+
+[YOUR CODE HERE]
+
+```
+
+````
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text.  Second note text.`. 
 - Use double quotes where applicable
 
 ## Formatting seed code
@@ -140,11 +156,45 @@ Here are specific formatting guidelines for the challenge seed code:
 
     `// Fix this line`
 
+## Formatting Solution
+
+The challenge solution must be in proper markdown tags. The code must be wrapped in `section` tags with an id of `solution`.
+
+````
+<section id='solution'>
+
+```html or ```js
+ [ SOLUTION CODE]
+```
+
+</section>
+````
+
+Example:
+
+````
+<section id='solution'>
+  
+```html
+<style>
+  #container p {
+    font-family: Arial, sans-serif;
+  }
+</style>
+
+<div id="container">
+  <p>Hello World!</p>
+</div>
+```
+
+</section>
+````
+
 ## Why do we have all these rules?
 
-Our goal is to have a fun, clear interactive learning experience.
+Our goal is to develop a fun and clear interactive learning experience. 
 
-Designing interactive coding challenges is hard. It would be so much easier to write a lengthy explanation, or to create a video tutorial. There's a place for those on Medium and YouTube. But for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience.
+Designing interactive coding challenges is difficult. It would be much easier to write a lengthy explanation or to create a video tutorial, and there's a place for those on Medium and YouTube. However, for our core curriculum, we're sticking with what works best for most people - a fully interactive, video game-like experience. 
 
 We want campers to achieve a flow state. We want them to build momentum and blast through our curriculum with as few snags as possible. We want them to go into the projects with confidence and a wide exposure to programming concepts.
 

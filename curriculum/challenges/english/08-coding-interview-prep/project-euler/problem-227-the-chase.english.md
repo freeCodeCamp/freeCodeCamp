@@ -2,6 +2,7 @@
 id: 5900f44f1000cf542c50ff61
 challengeType: 5
 title: 'Problem 227: The Chase'
+forumTopicId: 301870
 ---
 
 ## Description
@@ -27,7 +28,7 @@ Give your answer rounded to ten significant digits.
 ```yml
 tests:
   - text: <code>euler227()</code> should return 3780.618622.
-    testString: assert.strictEqual(euler227(), 3780.618622, '<code>euler227()</code> should return 3780.618622.');
+    testString: assert.strictEqual(euler227(), 3780.618622);
 
 ```
 
@@ -59,4 +60,5 @@ euler227();
 ```js
 // solution required
 ```
+
 </section>

@@ -24,21 +24,22 @@ localeTitle: Object.prototype.hasOwnProperty
 
 باستخدام **hasOwnProperty ()** لاختبار ما إذا كانت خاصية موجودة أم لا في كائن محدد:
 
- `var course = { 
-  name: 'freeCodeCamp', 
-  feature: 'is awesome', 
- } 
- 
- var student = { 
-  name: 'enthusiastic student', 
- } 
- 
- course.hasOwnProperty('name');  // returns true 
- course.hasOwnProperty('feature');   // returns true 
- 
- student.hasOwnProperty('name');  // returns true 
- student.hasOwnProperty('feature'); // returns false 
-` 
+```js
+var course = {
+  name: 'freeCodeCamp',
+  feature: 'is awesome',
+}
+
+var student = {
+  name: 'enthusiastic student',
+}
+
+course.hasOwnProperty('name');  // returns true
+course.hasOwnProperty('feature');   // returns true
+
+student.hasOwnProperty('name');  // returns true
+student.hasOwnProperty('feature'); // returns false
+``` 
 
 #### الروابط
 

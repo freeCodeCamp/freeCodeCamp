@@ -2,6 +2,7 @@
 id: 587d7dad367417b2b2512b76
 title: Make Code More Reusable with the this Keyword
 challengeType: 1
+forumTopicId: 301321
 ---
 
 ## Description
@@ -10,7 +11,15 @@ The last challenge introduced a <code>method</code> to the <code>duck</code> obj
 <code>sayName: function() {return "The name of this duck is " + duck.name + ".";}</code>
 While this is a valid way to access the object's property, there is a pitfall here. If the variable name changes, any code referencing the original name would need to be updated as well. In a short object definition, it isn't a problem, but if an object has many references to its properties there is a greater chance for error.
 A way to avoid these issues is with the <code>this</code> keyword:
-<blockquote>let duck = {<br>&nbsp;&nbsp;name: "Aflac",<br>&nbsp;&nbsp;numLegs: 2,<br>&nbsp;&nbsp;sayName: function() {return "The name of this duck is " + this.name + ".";}<br>};</blockquote>
+
+```js
+let duck = {
+  name: "Aflac",
+  numLegs: 2,
+  sayName: function() {return "The name of this duck is " + this.name + ".";}
+};
+```
+
 <code>this</code> is a deep topic, and the above example is only one way to use it. In the current context, <code>this</code> refers to the object that the method is associated with: <code>duck</code>.
 If the object's name is changed to <code>mallard</code>, it is not necessary to find all the references to <code>duck</code> in the code. It makes the code reusable and easier to read.
 </section>
@@ -26,9 +35,9 @@ Modify the <code>dog.sayLegs</code> method to remove any references to <code>dog
 ```yml
 tests:
   - text: <code>dog.sayLegs()</code> should return the given string.
-    testString: assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string.');
+    testString: assert(dog.sayLegs() === 'This dog has 4 legs.');
   - text: Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.
-    testString: assert(code.match(/this\.numLegs/g), 'Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.');
+    testString: assert(code.match(/this\.numLegs/g));
 
 ```
 

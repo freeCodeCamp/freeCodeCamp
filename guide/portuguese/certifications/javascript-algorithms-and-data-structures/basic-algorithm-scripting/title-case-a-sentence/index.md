@@ -58,8 +58,7 @@ String.prototype.replaceAt = function(index, character) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/8)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Estamos modificando a função `replaceAt` usando o protótipo para facilitar o uso do programa.
@@ -86,8 +85,7 @@ function titleCase(str) {
  titleCase("I'm a little tea pot"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/9)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 Estamos fazendo a string inteira em minúscula e depois convertendo-a em array. Então estamos usando a função map para substituir o caractere minúsculo por maiúsculo. Finalmente, estamos retornando a string usando o método `join` .
@@ -103,8 +101,7 @@ function titleCase(str) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLjU/14)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 A solução funciona primeiro diminuindo todos os caracteres da string e, em seguida, apenas o primeiro caractere de cada palavra.

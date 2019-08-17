@@ -6,13 +6,13 @@ localeTitle: Sintaxe PHP
 
 ### Começar
 
-Todos os arquivos PHP são salvos pela extensão `.php` . Scripts PHP podem ser adicionados em qualquer lugar no documento. Um script PHP começa com `<?php` e termina com `?>` .
+Todos os arquivos PHP são salvos pela extensão `.php`. Scripts PHP podem ser adicionados em qualquer lugar no documento. Um script PHP começa com `<?php` e termina com `?>` .
 
-`<?php //PHP code goes here ?>`
+`<?php //O código PHP fica aqui ?>`
 
 ### Impressão
 
-Para imprimir qualquer instrução em PHP, usamos o comando `echo` .
+Para imprimir qualquer instrução em PHP, usamos o comando `echo` ou `print`.
 
 #### Amostra de código
 ```
@@ -20,21 +20,21 @@ Para imprimir qualquer instrução em PHP, usamos o comando `echo` .
  <html> 
  <body> 
  
- <h1>My first PHP page</h1> 
+ <h1>Minha primeira página PHP</h1> 
  
  <?php 
- echo "Hello World!"; 
+ echo "Olá Mundo!"; 
  ?> 
  
  </body> 
  </html> 
 ```
 
-##### NOTA: As instruções do PHP terminam com ponto `;` vírgula `;`
+##### NOTA: As instruções do PHP terminam com ponto e vírgula `;`
 
 ### Declarando Variáveis
 
-Nós declaramos variáveis ​​em PHP adicionando `$` dollar sign antes deles.
+Nós declaramos variáveis em PHP adicionando o símbolo dolar `$` antes.
 ```
 <?php 
  $x = 5; 
@@ -44,19 +44,19 @@ Nós declaramos variáveis ​​em PHP adicionando `$` dollar sign antes deles.
 
 ### Comentários em PHP
 
-Para escrever um comentário de linha única no PHP, colocamos a hashtag `#` ou colocamos `//` antes do comentário.
+Para escrever um comentário de linha única no PHP, colocamos o caractere hashtag `#` ou colocamos `//` antes do comentário.
 ```
 <?php 
- # This is a single line comment 
- // This is also a single line comment 
+ # Este é um comentário de uma linha
+ // Este também é um comentário de uma linha 
  ?> 
 ```
 
-Para escrever um comentário de linha dupla, começamos o comentário com `/*` e terminamos com `*/` .
+Para escrever um comentário de várias linhas, começamos o comentário com `/*` e terminamos com `*/` .
 ```
 <?php 
- /* This is a 
- Double line comment. */ 
+ /* Este é um comentário
+ de várias linhas. */ 
  ?> 
 ```
 
@@ -69,7 +69,7 @@ Também podemos comentar algumas partes da linha de código.
  <body> 
  
  <?php 
- // You can also use comments to leave out parts of a code line 
+ // Você também pode usar comentários para ignorar partes de uma linha de código 
  $x = 5 /* + 15 */ + 5; 
  echo $x; 
  ?> 
@@ -78,4 +78,4 @@ Também podemos comentar algumas partes da linha de código.
  </html> 
 ```
 
-Você pode ver mais sobre isso no [PHP Manual](http://php.net/manual/en/)
+Você pode ver mais sobre isso no [Manual do PHP](http://php.net/manual/pt_BR/)

@@ -112,7 +112,6 @@ var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", 
  golfScore(5, 4); 
 ```
 
-· Ejecutar en [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Golf-code)
 
 \## explicación del código Como ya tenemos una matriz definida en los `names` las variables, podemos aprovecharla y utilizarla para nuestras declaraciones de devolución usando índices (por ejemplo: `names[0] is the first one` ). De esa manera, si alguna vez necesita cambiar un resultado específico, no tendría que buscarlo dentro de la función, estaría al principio, en su matriz.
 

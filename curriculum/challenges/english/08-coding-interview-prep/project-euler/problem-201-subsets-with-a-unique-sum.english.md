@@ -2,6 +2,7 @@
 id: 5900f4361000cf542c50ff48
 challengeType: 5
 title: 'Problem 201: Subsets with a unique sum'
+forumTopicId: 301841
 ---
 
 ## Description
@@ -51,7 +52,7 @@ Determine the sum of all integers which are the sum of exactly one of the 50-ele
 ```yml
 tests:
   - text: <code>euler201()</code> should return 115039000.
-    testString: assert.strictEqual(euler201(), 115039000, '<code>euler201()</code> should return 115039000.');
+    testString: assert.strictEqual(euler201(), 115039000);
 
 ```
 
@@ -83,4 +84,5 @@ euler201();
 ```js
 // solution required
 ```
+
 </section>

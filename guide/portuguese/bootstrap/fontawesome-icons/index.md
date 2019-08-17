@@ -4,7 +4,7 @@ localeTitle: Ícones Fontawesome Para Bootstrap
 ---
 ## Ícones Fontawesome Para Bootstrap
 
-Bootstrap (versão 4) caiu fonte de ícones Glyphicon em sua última versão. Os ícones do Fontawesome fornecem mais de 675 ícones, eles vêm em formato de fonte.
+Bootstrap (versão 4) removeu fonte de ícones Glyphicon em sua última versão. Os ícones do FontAwesome fornecem mais de 675 ícones, eles vêm em formato de fonte.
 
 #### Como usar:
 
@@ -15,7 +15,7 @@ No `<head>` do seu html, inclua uma referência ao Font Awesome.
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
 ```
 
-Usar fontawesome é o mesmo que usar o Glyphicon.
+Usar FontAwesome é o mesmo que usar o Glyphicon.
 
 Basta criar uma tag `<i>` ou `<span>` e aplicar o prefixo CSS `fa` e o nome do ícone. Um exemplo de código foi fornecido abaixo.
 

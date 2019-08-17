@@ -12,7 +12,7 @@ The try-catch statement consists of a **try** block and a **catch** block and an
 
 Below is an example program that handles the divide by zero exception using predefined class in C# library. Exception is the base class for all the exceptions.
 
-```c#
+```csharp
 using System;
 namespace ErrorHandling
 {

@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403617d
 title: Use the Lifecycle Method componentDidMount
 challengeType: 6
 isRequired: false
+forumTopicId: 301422
 ---
 
 ## Description
@@ -22,11 +23,11 @@ There is a mock API call in <code>componentDidMount()</code>. It sets state afte
 ```yml
 tests:
   - text: <code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return (mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1); })(), '<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return (mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1); })());
   - text: Component state should be updated with a timeout function in <code>componentDidMount</code>.
-    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return new RegExp('setTimeout(.|\n)+setState(.|\n)+activeUsers').test(String(mockedComponent.instance().componentDidMount)); })(), 'Component state should be updated with a timeout function in <code>componentDidMount</code>.');
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return new RegExp('setTimeout(.|\n)+setState(.|\n)+activeUsers').test(String(mockedComponent.instance().componentDidMount)); })());
   - text: The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>&apos;s state.
-    testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return mockedComponent.find(''h1'').text(); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return mockedComponent.find(''h1'').text(); }; assert(new RegExp(''1237'').test(first()) && new RegExp(''1000'').test(second()), ''The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>&apos;s state.''); }; '
+    testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return mockedComponent.find(''h1'').text(); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return mockedComponent.find(''h1'').text(); }; assert(new RegExp(''1237'').test(first()) && new RegExp(''1000'').test(second())); }; '
 
 ```
 

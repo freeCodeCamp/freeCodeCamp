@@ -1,8 +1,8 @@
 ---
 title: For..Of Loop
-localeTitle: Para ... de loop
+localeTitle: Bucle For...Of
 ---
-# Para ... de loop
+# Bucle For...Of
 
 `for..of` loop es un bucle especial en TypeScript que puede usar para iterar a través de los valores de una matriz.
 

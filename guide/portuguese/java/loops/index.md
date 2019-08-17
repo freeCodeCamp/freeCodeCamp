@@ -1,23 +1,23 @@
 ---
 title: Loops
-localeTitle: rotações
+localeTitle: Loops
 ---
-# rotações
+# Loops
 
-Sempre que você precisar executar um bloco de código várias vezes, um loop geralmente vem a calhar.
+Sempre que você precisar executar um bloco de código várias vezes, um loop(laço) geralmente vem a calhar.
 
 Java tem 4 tipos de loops:
 
 *   [While Loop](loops/while-loop)
 *   [Do… While Loop](loops/do-while-loop)
-*   [Para loop](loops/for-loop)
-*   [Para cada loop](loops/for-each-loop)
+*   [For Loop](loops/for-loop)
+*   [For Each Loop](loops/for-each-loop)
 
-O comportamento de loops pode ser personalizado usando:
+O comportamento dos loops pode ser personalizado usando:
 
 *   [Declarações de Controle](loops/control-statements)
-    *   [Declaração de controle de quebra](loops/break-control-statement)
-    *   [Continue a declaração de controle](loops/continue-control-statement)
+    *   [Break](loops/break-control-statement)
+    *   [Continue](loops/continue-control-statement)
 
 Um caso especial de loops:
 

@@ -2,6 +2,7 @@
 id: 5900f5021000cf542c510014
 challengeType: 5
 title: 'Problem 405: A rectangular tiling'
+forumTopicId: 302073
 ---
 
 ## Description
@@ -41,7 +42,7 @@ Find f(10k) for k = 1018, give your answer modulo 177.
 ```yml
 tests:
   - text: <code>euler405()</code> should return 237696125.
-    testString: assert.strictEqual(euler405(), 237696125, '<code>euler405()</code> should return 237696125.');
+    testString: assert.strictEqual(euler405(), 237696125);
 
 ```
 
@@ -73,4 +74,5 @@ euler405();
 ```js
 // solution required
 ```
+
 </section>

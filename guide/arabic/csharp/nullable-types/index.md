@@ -8,24 +8,25 @@ localeTitle: أنواع nullable
 
 #### كيفية استخدام نوع nullable
 
- `// Declare a variable of Nullable type (Nullable<int>) 
- int? i = null; 
- 
- int  j = 0; 
- int defaultValue = 0; 
- 
- // test for null and assign value to another variable 
- if (i.HasValue) 
- { 
-    j = i.Value; 
- } 
- 
- // get assigned value or default when current value is null 
- j = i.GetValueOrDefault(); // i.GetValueOrDefault(defaultValue) 
- 
- //use coalescing operator to assign default value when current value is null 
- j = i ?? defaultValue; 
-` 
+```csharp
+// Declare a variable of Nullable type (Nullable<int>)
+int? i = null;
+
+int  j = 0;
+int defaultValue = 0;
+
+// test for null and assign value to another variable
+if (i.HasValue)
+{
+    j = i.Value;
+}
+
+// get assigned value or default when current value is null
+j = i.GetValueOrDefault(); // i.GetValueOrDefault(defaultValue)
+
+//use coalescing operator to assign default value when current value is null
+j = i ?? defaultValue;
+``` 
 
 لمزيد من المعلومات ، قم بزيارة الرابط التالي:
 

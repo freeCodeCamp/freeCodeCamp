@@ -56,6 +56,10 @@ Antes de começar a usar o ambiente, você precisa ativá-lo:
 ```
 source my-env/bin/activate 
 ```
+Em sistema operacional Windows:
+```
+my-env\Scripts\activate
+```
 
 Isso garante que apenas pacotes sob `my-env/` sejam usados.
 
@@ -81,6 +85,10 @@ O arquivo conterá a lista de todos os pacotes instalados no ambiente atual e su
 Se você terminar de trabalhar com o ambiente virtual, poderá desativá-lo com:
 ```
 deactivate 
+```
+Em sistema operacional Windows:
+```
+my-env\Scripts\deactivate.bat
 ```
 
 Isso coloca você de volta ao interpretador Python padrão do sistema com todas as suas bibliotecas instaladas.

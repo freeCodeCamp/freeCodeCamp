@@ -2,6 +2,7 @@
 id: 5900f3db1000cf542c50feec
 challengeType: 5
 title: 'Problem 109: Darts'
+forumTopicId: 301733
 ---
 
 ## Description
@@ -66,7 +67,7 @@ How many distinct ways can a player checkout with a score less than 100?
 ```yml
 tests:
   - text: <code>euler109()</code> should return 38182.
-    testString: assert.strictEqual(euler109(), 38182, '<code>euler109()</code> should return 38182.');
+    testString: assert.strictEqual(euler109(), 38182);
 
 ```
 
@@ -98,4 +99,5 @@ euler109();
 ```js
 // solution required
 ```
+
 </section>

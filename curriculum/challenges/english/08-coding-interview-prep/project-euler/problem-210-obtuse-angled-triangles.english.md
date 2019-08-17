@@ -2,6 +2,7 @@
 id: 5900f43e1000cf542c50ff50
 challengeType: 5
 title: 'Problem 210: Obtuse Angled Triangles'
+forumTopicId: 301852
 ---
 
 ## Description
@@ -25,7 +26,7 @@ What is N(1,000,000,000)?
 ```yml
 tests:
   - text: <code>euler210()</code> should return 1598174770174689500.
-    testString: assert.strictEqual(euler210(), 1598174770174689500, '<code>euler210()</code> should return 1598174770174689500.');
+    testString: assert.strictEqual(euler210(), 1598174770174689500);
 
 ```
 
@@ -57,4 +58,5 @@ euler210();
 ```js
 // solution required
 ```
+
 </section>

@@ -15,9 +15,21 @@ Uma fração normalmente tem duas partes que são divididas por uma linha:
 
 O numerador e o denominador são ambos inteiros (números inteiros).
 
-Uma fração própria é aquela em que o numerador é menor que o denominador.
-
 Frações também podem ser adicionadas após um número inteiro para aumentar sua precisão.
+
+## Tipos de frações
+
+# Fração pŕopria
+São as mais comuns em livros matemáticos, onde o numerador é menor que o denominador, ou seja, representa-se um número menor que um inteiro. Ex: 1/2
+
+# Fração imprópria
+São as frações cujo numerador é maior que o denominador, ou seja, representa-se um número maior que um inteiro. Ex: 3/2
+
+# Fração mista
+É a combinação de números inteiros com frações, resultando na sua parte inteira (vem primeiro) e a fracionária (em segundo). Ex: 1⅓
+
+
+
 
 ### Exemplos
 
