@@ -8,7 +8,7 @@ localeTitle: Vim
 
 O Vim (Vi IMproved) é um editor de texto altamente configurável, criado para tornar a criação e alteração de qualquer tipo de texto altamente eficiente. O mesmo é incluído como "vi" na maioria dos sistemas UNIX, o que inclui o macOS da Apple. O Vim é uma grande melhoria em relação ao seu predecessor *vi* , que foi desenvolvido há mais de 40 anos, e continua sendo usado.
 
-O Vim é extremamente estável e entre os seus muitos recursos estao inclusos:
+O Vim é extremamente estável e entre os seus muitos recursos estão inclusos:
 
 *   árvore de desfazer persistente e de vários níveis
 *   sistema de plugins extensivo
