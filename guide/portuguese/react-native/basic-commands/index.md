@@ -8,7 +8,7 @@ Aqui você encontrará uma lista de comandos básicos para começar a desenvolve
 
 ### Começando um novo projeto
 
-Existem diferentes maneiras de inicializar um aplicativo nativo de resposta. Pode utilizar a **Expo** ou `create-react-native-app` (que por sua vez utiliza o Expo-Cli) para iniciar o seu novo projeto, mas com este método você tem mais controle do que aconteceu no seu projecto e pode comunicar, ajustar e escrever módulos próprios com bibliotecas nativas para iOS e plataforma móvel Android.
+Existem diferentes maneiras de inicializar um aplicativo React Native. Pode utilizar a **Expo** ou `create-react-native-app` (que por sua vez utiliza o Expo-Cli) para iniciar o seu novo projeto, mas com este método você tem mais controle do que aconteceu no seu projecto e pode comunicar, ajustar e escrever módulos próprios com bibliotecas nativas para iOS e plataforma móvel Android.
 ```
 react-native init [PROJECT-NAME] 
  cd [PROJECT-NAME] 

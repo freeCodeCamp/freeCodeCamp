@@ -4,13 +4,15 @@ localeTitle: Caso do interruptor
 ---
 # Caso do interruptor
 
-A instrução switch é como um conjunto de `if statements` .
+A instrução switch é como um conjunto de `if statements` pois ele funciona como um if e verificará apenas afirmações, ele não executa operações.
 
 É uma lista de possibilidades, com uma ação para cada possibilidade, e uma ação padrão opcional, caso nada mais seja avaliado como verdadeiro.
 
 Nós saímos do interruptor por `break` . Se a instrução `break` não for atingida antes do início do próximo caso, a execução cairá e começará a executar o código no próximo caso.
 
-## Sintaxe do switch… case
+Caso a opção digitada seja diferente das constantes definida dentro do switch, será executado o default, podemos colocar uma mensagem de erro e assim que o default for executado mostrará que opção é invalida.
+
+## Sintaxe do switch… case 
 
 ```c
 switch (n) 

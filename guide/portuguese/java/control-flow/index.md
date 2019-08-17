@@ -105,6 +105,37 @@ int cash = 150;
     } 
  } 
 ```
+*   `Operador ternário`
+O operador ternário é um recurso para tomada de decisões com objetivo similar ao do if/else, mas que é codificado em apenas uma linha.
+
+Sintaxe do operador ternário:
+(expressão booleana) ? código 1 : código 2;
+
+Ao avaliar a expressão booleana, caso ela seja verdadeira, o código 1, declarado após o ponto de interrogação (?) será executado; do contrário, o programa irá executar o código 2, declarado após os dois pontos (:).
+
+Vamos ver abaixo um exemplo de como o uso do operador ternário em alguns casos, pode ser bem simples:
+
+Exemplo usando if/else
+
+```java
+int estoque = //valor recuperado do sistema
+ 
+if (estoque >= 100) {
+    System.out.println(“Produto com quantidade suficiente.”);
+} else {
+    System.out.println(“ATENÇÃO! Faça um novo pedido.”);
+}
+```
+O mesmo exemplo, dessa vez usando o operador ternário:
+
+```java
+int estoque = //valor recuperado do sistema
+
+estoque >= 100 ? System.out.println(“Produto com quantidade suficiente.”) : System.out.println(“ATENÇÃO! Faça um novo pedido.”);
+
+```
+
+Quando a necessidade de verificação condicional for simples, o uso do operador ternário pode deixar o código mais simples e mais legível.
 
 Neste exemplo, `meetFriendsAtSportsBar()` será executado.
 

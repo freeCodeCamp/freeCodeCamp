@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const base = '/internal';
+axios.defaults.withCredentials = true;
 
 function get(path) {
   return axios.get(`${base}${path}`);
