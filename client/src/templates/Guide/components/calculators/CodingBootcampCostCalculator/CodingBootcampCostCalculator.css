@@ -1,8 +1,8 @@
-.article .d3-chart {	
+.article .d3-chart {
   position: relative;
 }
 
-.article div.tooltip {	
+.article div.tooltip {
   position: absolute;
   text-align: center;
   width: 80px;
@@ -27,7 +27,7 @@
   width: 100%;
   line-height: 1;
   color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
+  content: '\25BC';
   position: absolute;
   text-align: center;
   bottom: -9px;
