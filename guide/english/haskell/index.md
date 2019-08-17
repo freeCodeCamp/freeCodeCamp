@@ -82,8 +82,6 @@ Hackage provides documentation for Haskell
 
 #### More Information
 * [Haskell wiki](https://wiki.haskell.org/Haskell)
-* [Learn You a Haskell for Great Good](http://learnyouahaskell.com)
 * [Try Haskell in your browser](https://www.tryhaskell.org)
 * [Write yourself a Scheme in 48 hours](https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours/First_Steps)
-* [List of Projects you can make using Haskell](http://www.haskellcraft.com/craft3e/Projects.html)
 * [What is Haskell used for in the real world?](https://stackoverflow.com/questions/1604790/what-is-haskell-used-for-in-the-real-world)
