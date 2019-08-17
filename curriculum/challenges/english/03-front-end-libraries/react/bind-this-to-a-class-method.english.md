@@ -53,9 +53,9 @@ class MyComponent extends React.Component {
     // change code above this line
   }
   addItem() {
-    this.setState({
-      itemCount: this.state.itemCount + 1
-    });
+    this.setState(state => ({
+      itemCount: state.itemCount + 1
+    }));
   }
   render() {
     return (
@@ -98,9 +98,9 @@ class MyComponent extends React.Component {
     this.addItem = this.addItem.bind(this);
   }
   addItem() {
-    this.setState({
-      itemCount: this.state.itemCount + 1
-    });
+    this.setState(state => ({
+      itemCount: state.itemCount + 1
+    }));
   }
   render() {
     return (
