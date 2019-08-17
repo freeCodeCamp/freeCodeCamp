@@ -69,3 +69,4 @@ Hackage provides documentation for Haskell
 * [Haskell wiki](https://wiki.haskell.org/Haskell)
 * [Learn You a Haskell for Great Good](http://learnyouahaskell.com)
 * [Try Haskell in your browser](https://www.tryhaskell.org)
+* [Write yourself a Scheme in 48 hours](https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours/First_Steps)
