@@ -1,3 +1,4 @@
+import dedent from 'dedent';
 import { ofType } from 'redux-observable';
 import {
   types,
@@ -7,6 +8,7 @@ import {
 } from '../redux';
 import { tap, mapTo } from 'rxjs/operators';
 import { helpCategory } from '../../../../utils/challengeTypes';
+import { forumLocation } from '../../../../../config/env.json';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;
@@ -17,17 +19,7 @@ function filesToMarkdown(files = {}) {
     }
     const fileName = moreThenOneFile ? `\\ file: ${file.contents}` : '';
     const fileType = file.ext;
-    return (
-      fileString +
-      '```' +
-      fileType +
-      '\n' +
-      fileName +
-      '\n' +
-      file.contents +
-      '\n' +
-      '```\n\n'
-    );
+    return `${fileString}\`\`\`${fileType}\n${fileName}\n${file.contents}\n\`\`\`\n\n`;
   }, '\n');
 }
 
@@ -45,44 +37,45 @@ function createQuestionEpic(action$, state$, { window }) {
         location: { href }
       } = window;
 
-      const textMessage = [
-        "**Tell us what's happening:**\n\n\n\n",
-        '**Your code so far**\n',
-        filesToMarkdown(files),
-        '**Your browser information:**\n\n',
-        'User Agent is: <code>',
-        userAgent,
-        '</code>.\n\n',
-        '**Challenge:**\n',
-        challengeTitle,
-        '\n**Link to the challenge:**\n',
-        href
-      ].join('');
+      const endingText = dedent(
+        `**Your browser information:**
 
-      const altTextMessage = [
-        "**Tell us what's happening:**\n\n\n\n",
-        '**Your code so far**\n\n',
-        'WARNING\n\n',
-        'The challenge seed code and/or your solution exceeded the maximum',
-        ' length we can port over from the challenge.\n\n',
-        'You will need to take an additional step here so the code you wrote',
-        'presents in an easy to read format.\n\n',
-        'Please copy/paste all the editor code showing in the challenge ',
-        'from where you just linked.\n\n',
-        '```js\n\n',
-        'Replace these two sentences with your copied code. \n',
-        'Please leave the ```js line above and the ``` line below, ',
-        'because they allow your code to properly format in the post.\n\n',
-        '```\n\n',
-        '**Your browser information:**\n\n',
-        'User Agent is: <code>',
-        userAgent,
-        '</code>.\n\n',
-        '**Challenge:**\n',
-        challengeTitle,
-        '\n\n**Link to the challenge:**\n',
-        href
-      ].join('');
+        User Agent is: <code>${userAgent}</code>.
+
+        **Challenge:** ${challengeTitle}
+
+        **Link to the challenge:**
+        ${href}`
+      );
+
+      let textMessage = dedent(
+        `**Tell us what's happening:**\n\n\n\n**Your code so far**
+        ${filesToMarkdown(files)}\n${endingText}`
+      );
+
+      const altTextMessage = dedent(
+        `**Tell us what's happening:**
+
+
+
+        **Your code so far**
+
+        WARNING
+
+        The challenge seed code and/or your solution exceeded the maximum length we can port over from the challenge.
+
+        You will need to take an additional step here so the code you wrote presents in an easy to read format.
+
+        Please copy/paste all the editor code showing in the challenge from where you just linked.
+
+        \`\`\`
+
+        Replace these two sentences with your copied code.
+        Please leave the \`\`\` line above and the \`\`\` line below, 
+        because they allow your code to properly format in the post.
+
+        \`\`\`\n${endingText}`
+      );
 
       const category = window.encodeURIComponent(
         helpCategory[challengeType] || 'Help'
@@ -91,16 +84,11 @@ function createQuestionEpic(action$, state$, { window }) {
       const studentCode = window.encodeURIComponent(textMessage);
       const altStudentCode = window.encodeURIComponent(altTextMessage);
 
-      const defaultURI = `https://www.freecodecamp.org/forum/new-topic?category=${category}
-                          &title=&body=${studentCode}`;
-      const altURI = `https://www.freecodecamp.org/forum/new-topic?category=${category}
-      &title=&body=${altStudentCode}`;
+      const baseURI = `${forumLocation}/new-topic?category=${category}&title=&body=`;
+      const defaultURI = `${baseURI}${studentCode}`;
+      const altURI = `${baseURI}${altStudentCode}`;
 
-      if (defaultURI.length < 8000) {
-        window.open(defaultURI, '_blank');
-      } else {
-        window.open(altURI, '_blank');
-      }
+      window.open(defaultURI.length < 8000 ? defaultURI : altURI, '_blank');
     }),
     mapTo(closeModal('help'))
   );
