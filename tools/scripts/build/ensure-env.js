@@ -11,7 +11,7 @@ const { createRedirects } = require('./create-redirects');
 
 const log = debug('fcc:tools:ensure-env');
 
-const { NODE_ENV } = process.env;
+const { FREECODECAMP_NODE_ENV } = process.env;
 
 const {
   apiLocation: api,
@@ -25,7 +25,7 @@ const clientPath = path.resolve(__dirname, '../../../client');
 const clientStaticPath = path.resolve(clientPath, 'static');
 const globalConfigPath = path.resolve(__dirname, '../../../config');
 
-if (NODE_ENV === 'production') {
+if (FREECODECAMP_NODE_ENV === 'production') {
   const redirects = createRedirects({ api, news, forum });
   fs.writeFile(`${clientStaticPath}/_redirects`, redirects, function(err) {
     if (err) {
@@ -35,16 +35,16 @@ if (NODE_ENV === 'production') {
     log('_redirects written');
   });
 } else {
-  log(`ignoring creation of redirect file in ${NODE_ENV}`);
+  log(`ignoring creation of redirect file in ${FREECODECAMP_NODE_ENV}`);
 }
 
 const migrationMapPath = `${apiPath}/server/resources/pathMigration.json`;
 fs.access(migrationMapPath, err => {
-  if (err && NODE_ENV !== 'production') {
+  if (err && FREECODECAMP_NODE_ENV !== 'production') {
     log('creating pathMigration');
     return fs.writeFileSync(migrationMapPath, '{}');
   }
-  if (NODE_ENV === 'production') {
+  if (FREECODECAMP_NODE_ENV === 'production') {
     return getChallengesForLang(locale)
       .then(createPathMigrationMap)
       .then(map => {
