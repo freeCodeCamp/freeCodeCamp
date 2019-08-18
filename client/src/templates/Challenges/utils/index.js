@@ -1,13 +1,9 @@
-const guideBase = 'https://www.freecodecamp.org/forum/search?q=';
+import { forumLocation } from '../../../../../config/env.json';
 
-export function getGuideUrl({ forumTopicId, title }) {
+export function getGuideUrl({ forumTopicId, title = '' }) {
   return forumTopicId
-    ? 'https://www.freecodecamp.org/forum/t/' + forumTopicId
-    : createGuideUrl(title);
-}
-
-export function createGuideUrl(title = '') {
-  return guideBase + title + '%20in%3Atitle%20order%3Aviews';
+    ? `${forumLocation}/t/${forumTopicId}`
+    : `${forumLocation}/search?q=${title}%20in%3Atitle%20order%3Aviews`;
 }
 
 export function isGoodXHRStatus(status) {
