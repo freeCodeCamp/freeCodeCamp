@@ -58,7 +58,7 @@ Você pode nos ajudar:
 
 Artigos de guia ajudam você a ter um rápido entendimento sobre um conceito tecnológico. Eles são explicações em Português, curtas e diretas, que você pode ler antes de partir para recursos mais aprofundados.
 
-Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](./client/src/pages/html/elements/index.md).
+Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](../../guide/portuguese/html/elements/index.md).
 
 **Sobre o que eu posso escrever um artigo?**
 
