@@ -6,13 +6,9 @@ localeTitle: Área de um círculo
 
 A área de um círculo é todo o espaço dentro da circunferência de um círculo.
 
-Se 'r' é o raio do círculo, sua área é calculada com a fórmula pi \* r 2 onde pi é uma constante matemática.
+Se 'r' é o raio do círculo, sua área é calculada com a fórmula π  \* r² onde pi é uma constante matemática.
 
-pi = 22/7 = 3,141592….
-
-A = pi \* r 2 , r é o raio do círculo
-
-A = pi \* d {2/4}, d é o diâmetro do círculo, d = 2 \* r
+pi = π = 22/7 = 3,141592….
 
 ![alt](http://areacircle.com/Area_of_a_circle_basics.png)
 
@@ -34,13 +30,14 @@ Pi ( π ) - Uma constante matemática que é aproximada como 3.14
 
 ###### Dado raio do círculo
 
-Área do círculo = π \* _raio_ 2
+Área do círculo = π \* r² , r é o raio do círculo
+
 
 ###### Dado diâmetro do círculo
 
 Sabemos que `diameter = 2 * radius` , então você pode derivar a área do círculo como abaixo,
 
-Área do círculo = π \* _(diâmetro / 2)_ 2
+Área do círculo = π \* (d/2)², d é o diâmetro do círculo, d = 2 \* r
 
 ###### Dado circunferência do círculo
 

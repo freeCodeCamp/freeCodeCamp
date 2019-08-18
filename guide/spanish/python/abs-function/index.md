@@ -15,9 +15,9 @@ El valor de retorno sería un número positivo. Incluso si se pasa un número co
 ## Ejemplo de código
 
 ```python
-print(abs(3.4)) # prints 3.4 
- print(abs(-6)) # prints 6 
- print(abs(3 + 4j)) # prints 5, because |3 + 4j| = 5 
+print(abs(3.4)) # imprime 3.4 
+ print(abs(-6)) # imprime 6 
+ print(abs(3 + 4j)) # imprime 5, porque |3 + 4j| = 5 
 ```
 
 [🚀 Ejecutar Código](https://repl.it/CL8k/0)

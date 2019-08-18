@@ -4,7 +4,7 @@ localeTitle: Opacidade de fundo
 ---
 ## Opacidade de fundo
 
-A propriedade opacidade especifica a opacidade / transparência de um elemento, ou seja, o grau em que o conteúdo por trás do elemento é visível.
+A propriedade opacity especifica a opacidade ou transparência de um elemento, ou seja, o grau em que o conteúdo por trás do elemento é visível.
 
 A propriedade de opacidade pode levar um valor de 0,0 a 1,0. Quanto menor o valor, mais transparente:
 
@@ -12,16 +12,18 @@ Encontre mais detalhes [aqui](https://www.w3schools.com/css/css_image_transparen
 
 Você pode escolher até que ponto deseja tornar o elemento transparente. Você precisa adicionar a seguinte propriedade CSS para obter os níveis de transparência.
 
+### Propriedade: opacity
+
 **Totalmente opaco**
 
 ```css
-.class-name { 
+.nome-da-classe { 
   opacity:1; 
  } 
  
  OU
  
- .class-name { 
+ .nome-da-classe { 
   opacity:1.0; 
  } 
 ```
@@ -29,7 +31,7 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
 **Translúcido**
 
 ```css
-.class-name { 
+.nome-da-classe { 
   opacity:0.5; 
  } 
  O valor aceito é de 0 até 1.
@@ -38,26 +40,26 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
 **Transparente**
 
 ```css
-.class-name { 
+.nome-da-classe { 
   opacity:0; 
  } 
  
  OU 
  
- .class-name { 
+ .nome-da-classe { 
   opacity:0.0; 
  } 
 ```
 
-De maneira alternativa, você pode controlar o canal Alfa utilizando valores RGB, ambos os métodos possuem o mesmo efeito, porém utilizando o RGB, você pode definir a cor de fundo.
+### Propriedade: background-color
 
+Alternativamente, você pode usar um valor rgba transparente como este: 
 ```css
-.nome da classe{ 
-   background-color: rgba (0,0,0, 0,5); 
- }  
- ```
-
-O exemplo acima define o plano de fundo como preto com 50% de opacidade. O último valor de um valor rgba é o valor alfa. Um valor alfa de 1 é igual a 100% e 0,5 é de 50%. Usamos esse método para adicionar transparência a um elemento sem afetar o conteúdo interno.
+.nome-da-classe {
+  background-color: rgba(0,0,0,.5);
+}
+```
+O exemplo acima define o plano de fundo como preto com 50% de opacidade. O último valor de um valor rgba é o valor alfa. Um valor alfa de 1 é igual a 100% e 0.5 (.5 para encurtar) é de 50%. Usamos esse método para adicionar transparência a um elemento sem afetar o conteúdo interno.
 
 [Um exemplo codepen para mostrar intervalos de opacidade em segundo plano](https://codepen.io/lvcoulter/full/dVrwmK/)
 

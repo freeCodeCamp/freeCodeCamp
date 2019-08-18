@@ -2,6 +2,7 @@
 id: 5900f3f21000cf542c50ff04
 challengeType: 5
 title: 'Problem 133: Repunit nonfactors'
+forumTopicId: 301761
 ---
 
 ## Description
@@ -23,7 +24,7 @@ Find the sum of all the primes below one-hundred thousand that will never be a f
 ```yml
 tests:
   - text: <code>euler133()</code> should return 453647705.
-    testString: assert.strictEqual(euler133(), 453647705, '<code>euler133()</code> should return 453647705.');
+    testString: assert.strictEqual(euler133(), 453647705);
 
 ```
 
@@ -55,4 +56,5 @@ euler133();
 ```js
 // solution required
 ```
+
 </section>

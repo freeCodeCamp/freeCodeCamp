@@ -1,8 +1,10 @@
 ---
 title: Adjust the Padding of an Element
 ---
-## Adjust the Padding of an Element
+# Adjust the Padding of an Element
 
+---
+## Problem Explanation
 Padding is the spacing between the content and the border of an Element.
 
   •There is spacing from the top, bottom, left, and right. 
@@ -18,7 +20,7 @@ To create Padding as a class for a specific Element, use:
 ```css
 .example-Padding {
   padding: 10px
-{
+}
 ```
 To apply this class to the appropriate field, use:
 ```html

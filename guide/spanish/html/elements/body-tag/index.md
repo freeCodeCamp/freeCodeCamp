@@ -12,10 +12,10 @@ El elemento `<body>` debe contener todo el contenido de una página, incluidos t
 
 <html> 
     <head> 
-        <title>Document Titles Belong in the Head</title> 
+        <title>Titulos de documentos partencen en 'head'</title> 
     </head> 
     <body> 
-        <p>This paragraph is content. It goes in the body!</p> 
+        <p>Este parafo es contenido. Va en el 'body'</p> 
     </body> 
  </html> 
 ```

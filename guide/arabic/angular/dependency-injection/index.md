@@ -30,60 +30,64 @@ localeTitle: حقن التبعية
 
 إلقاء نظرة على الهياكل العظمية لكل فئة: الخدمة ، الوحدة ، التوجيه ، والمكون.
 
- `// service 
- 
- import { Injectable } from '@angular/core'; 
- 
- @Injectable({ 
-  providedIn: /* injector goes here */ 
- }) 
- export class TemplateService { 
-  constructor() { } 
- } 
-` 
+```typescript
+// service
 
- `// module 
- 
- import { NgModule } from '@angular/core'; 
- import { CommonModule } from '@angular/common'; 
- 
- @NgModule({ 
-  imports: [ 
-    CommonModule 
-  ], 
-  declarations: [], 
-  providers: [ /* services go here */ ] 
- }) 
- export class TemplateModule { } 
-` 
+import { Injectable } from '@angular/core';
 
- `// directive 
- 
- import { Directive } from '@angular/core'; 
- 
- @Directive({ 
-  selector: '[appTemplate]', 
-  providers: [ /* services go here */ ] 
- }) 
- export class TemplateDirective { 
-  constructor() { } 
- } 
-` 
+@Injectable({
+  providedIn: /* injector goes here */
+})
+export class TemplateService {
+  constructor() { }
+}
+``` 
 
- `//component 
- 
- import { Component } from '@angular/core'; 
- 
- @Component({ 
-  selector: 'app-template', 
-  templateUrl: './template.component.html', 
-  styleUrls: ['./template.component.css'], 
-  providers: [ /* services go here */ ] 
- }) 
- export class TemplateComponent { 
-  // class logic ... 
- } 
-` 
+```typescript
+// module
+
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@NgModule({
+  imports: [
+    CommonModule
+  ],
+  declarations: [],
+  providers: [ /* services go here */ ]
+})
+export class TemplateModule { }
+``` 
+
+```typescript
+// directive
+
+import { Directive } from '@angular/core';
+
+@Directive({
+  selector: '[appTemplate]',
+  providers: [ /* services go here */ ]
+})
+export class TemplateDirective {
+  constructor() { }
+}
+``` 
+
+```typescript
+//component
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-template',
+  templateUrl: './template.component.html',
+  styleUrls: ['./template.component.css'],
+  providers: [ /* services go here */ ]
+})
+export class TemplateComponent {
+  // class logic ...
+}
+``` 
 
 يمكن لكل هيكل عظمي تسجيل الخدمات إلى حاقن. في الواقع ، TemplateService _هي_ خدمة. اعتبارًا من Angular 6 ، يمكن الآن للخدمات التسجيل باستخدام الحقن باستخدام البيانات الوصفية `@Injectable` .
 
@@ -121,53 +125,55 @@ localeTitle: حقن التبعية
 
 التوجيهات في حاجة مستمرة من مراجع DOM. تؤدي التوجيهات إلى حدوث طفرات في عناصر المضيف من خلال هذه المراجع. انظر المثال التالي. يقوم حاقن التوجيه بإدخال مرجع لعنصر المضيف في مُنشئ الصف.
 
- `// directives/highlight.directive.ts 
- 
- import { Directive, ElementRef, Renderer2, Input } from '@angular/core'; 
- 
- @Directive({ 
-  selector: '[appHighlight]' 
- }) 
- export class HighlightDirective { 
-  constructor( 
-    private renderer: Renderer2, 
-    private host: ElementRef 
-  ) { } 
- 
-  @Input() set appHighlight (color: string) { 
-    this.renderer.setStyle(this.host.nativeElement, 'background-color', color); 
-  } 
- } 
-` 
+```typescript
+// directives/highlight.directive.ts
 
- `
-// app.component.html 
- 
- <p [appHighlight]="'yellow'">Highlighted Text!</p> 
-` 
+import { Directive, ElementRef, Renderer2, Input } from '@angular/core';
+
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  constructor(
+    private renderer: Renderer2,
+    private host: ElementRef
+  ) { }
+
+  @Input() set appHighlight (color: string) {
+    this.renderer.setStyle(this.host.nativeElement, 'background-color', color);
+  }
+}
+``` 
+
+```html
+// app.component.html
+
+<p [appHighlight]="'yellow'">Highlighted Text!</p>
+``` 
 
 `Renderer2` أيضاً يحصل على instantiated. أي حاقن تأتي من هذه الخدمات؟ حسنا ، رمز مصدر كل خدمة يأتي من `@angular/core` . يجب أن تسجل هذه الخدمات بعد ذلك مع حاقن الجذر الخاص بالتطبيق.
 
- `import { BrowserModule } from '@angular/platform-browser'; 
- import { NgModule } from '@angular/core'; 
- import { AppComponent } from './app.component'; 
- import { HighlightDirective } from './directives/highlight.directive'; 
- 
- @NgModule({ 
-  declarations: [ 
-    AppComponent, 
-    HighlightDirective 
-  ], 
-  imports: [ 
-    BrowserModule 
-  ], 
-  providers: [], 
-  bootstrap: [ 
-    AppComponent 
-  ] 
- }) 
- export class AppModule { } 
-` 
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { HighlightDirective } from './directives/highlight.directive';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HighlightDirective
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [
+    AppComponent
+  ]
+})
+export class AppModule { }
+``` 
 
 مجموعة موفري فارغة !؟ لا أخشى. يسجل الزاوي العديد من الخدمات باستخدام حاقن الجذر تلقائيًا. وهذا يشمل `ElementRef` و `Renderer2` . في هذا المثال ، نحن ندير عنصر المضيف من خلال واجهته النابعة من إنشاء `ElementRef` . يتيح لنا `Renderer2` تحديث نموذج عرض DOM من خلال Angular.
 
@@ -181,34 +187,35 @@ localeTitle: حقن التبعية
 
 المثال التالي سيحدد خدمة التسجيل التي تتم إضافتها إلى حاقن المكون من خلال موفريها `providers: []` البيانات التعريفية.
 
- `// services/logger.service.ts 
- 
- import { Injectable } from '@angular/core'; 
- 
- @Injectable() 
- export class LoggerService { 
-  callStack: string[] = []; 
- 
-  addLog(message: string): void { 
-    this.callStack = [message].concat(this.callStack); 
-    this.printHead(); 
-  } 
- 
-  clear(): void { 
-    this.printLog(); 
-    this.callStack = []; 
-    console.log(“DELETED LOG”); 
-  } 
- 
-  private printHead(): void { 
-    console.log(this.callStack[0] || null); 
-  } 
- 
-  private printLog(): void { 
-    this.callStack.reverse().forEach((log) => console.log(message)); 
-  } 
- } 
-` 
+```typescript
+// services/logger.service.ts
+
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class LoggerService {
+  callStack: string[] = [];
+
+  addLog(message: string): void {
+    this.callStack = [message].concat(this.callStack);
+    this.printHead();
+  }
+
+  clear(): void {
+    this.printLog();
+    this.callStack = [];
+    console.log(“DELETED LOG”);
+  }
+
+  private printHead(): void {
+    console.log(this.callStack[0] || null);
+  }
+
+  private printLog(): void {
+    this.callStack.reverse().forEach((log) => console.log(message));
+  }
+}
+``` 
 
  ``// app.component.ts 
  
@@ -234,18 +241,18 @@ localeTitle: حقن التبعية
  } 
 `` 
 
- `
-// app.component.html 
- 
- <h1>Log Example</h1> 
- <form (submit)="logMessage($event, userInput.value)"> 
-  <input #userInput placeholder="Type a message..."> 
-  <button type="submit">SUBMIT</button> 
- </form> 
- 
- <h3>Delete Logged Messages</h3> 
- <button type="button" (click)="clearLog()">CLEAR</button> 
-` 
+```html
+// app.component.html
+
+<h1>Log Example</h1>
+<form (submit)="logMessage($event, userInput.value)">
+  <input #userInput placeholder="Type a message...">
+  <button type="submit">SUBMIT</button>
+</form>
+
+<h3>Delete Logged Messages</h3>
+<button type="button" (click)="clearLog()">CLEAR</button>
+``` 
 
 التركيز على منشئ AppComponent والبيانات الوصفية. يتلقى حاقن المكون إرشادات من حقل بيانات التعريف الخاصة بالموفر الذي يحتوي على LoggerService. ثم يعرف الحاقن ما يتم إنشاء LoggerService من المطلوب في المُنشئ.
 

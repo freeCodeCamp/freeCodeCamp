@@ -104,21 +104,22 @@ localeTitle: ترتيب بالإدراج
 
 في ما يلي تطبيق تم إلغاء تنفيذه في جافا سكريبت:
 
- `function insertion_sort(A) { 
-    var len = array_length(A); 
-    var i = 1; 
-    while (i < len) { 
-        var x = A[i]; 
-        var j = i - 1; 
-        while (j >= 0 && A[j] > x) { 
-            A[j + 1] = A[j]; 
-            j = j - 1; 
-        } 
-        A[j+1] = x; 
-        i = i + 1; 
-    } 
- } 
-` 
+```
+function insertion_sort(A) {
+    var len = array_length(A);
+    var i = 1;
+    while (i < len) {
+        var x = A[i];
+        var j = i - 1;
+        while (j >= 0 && A[j] > x) {
+            A[j + 1] = A[j];
+            j = j - 1;
+        }
+        A[j+1] = x;
+        i = i + 1;
+    }
+}
+``` 
 
 يتم تنفيذ سريع في سويفت كما هو موضح أدناه:
 
@@ -141,37 +142,39 @@ localeTitle: ترتيب بالإدراج
 
 يظهر مثال Java أدناه:
 
- `public int[] insertionSort(int[] arr) 
-      for (j = 1; j < arr.length; j++) { 
-         int key = arr[j] 
-         int i = j - 1 
-         while (i > 0 and arr[i] > key) { 
-            arr[i+1] = arr[i] 
-            i -= 1 
-         } 
-         arr[i+1] = key 
-      } 
-      return arr; 
-` 
+```
+public int[] insertionSort(int[] arr)
+      for (j = 1; j < arr.length; j++) {
+         int key = arr[j]
+         int i = j - 1
+         while (i > 0 and arr[i] > key) {
+            arr[i+1] = arr[i]
+            i -= 1
+         }
+         arr[i+1] = key
+      }
+      return arr;
+``` 
 
 ### الإدراج الإدراج في ج ...
 
- `void insertionSort(int arr[], int n) 
- { 
-   int i, key, j; 
-   for (i = 1; i < n; i++) 
-   { 
-       key = arr[i]; 
-       j = i-1; 
-       while (j >= 0 && arr[j] > key) 
-       { 
-           arr[j+1] = arr[j]; 
-           j = j-1; 
-       } 
-       arr[j+1] = key; 
-   } 
- } 
-` 
+```C
+void insertionSort(int arr[], int n)
+{
+   int i, key, j;
+   for (i = 1; i < n; i++)
+   {
+       key = arr[i];
+       j = i-1;
+       while (j >= 0 && arr[j] > key)
+       {
+           arr[j+1] = arr[j];
+           j = j-1;
+       }
+       arr[j+1] = key;
+   }
+}
+``` 
 
 ### الخصائص:
 

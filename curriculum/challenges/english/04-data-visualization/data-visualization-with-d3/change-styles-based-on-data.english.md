@@ -1,16 +1,21 @@
 ---
 id: 587d7fa7367417b2b2512bc7
 title: Change Styles Based on Data
-required:
-  - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+forumTopicId: 301479
 ---
 
 ## Description
 <section id='description'>
 D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the <code>style()</code> method to change the styling for different elements.
 For example, you may want to color a data point blue if has a value less than 20, and red otherwise. You can use a callback function in the <code>style()</code> method and include the conditional logic. The callback function uses the <code>d</code> parameter to represent the data point:
-<blockquote>selection.style("color", (d) => {<br>&nbsp;&nbsp;/* Logic that returns the color based on a condition */<br>});</blockquote>
+
+```js
+selection.style("color", (d) => {
+  /* Logic that returns the color based on a condition */
+});
+```
+
 The <code>style()</code> method is not limited to setting the <code>color</code> - it can be used with other CSS properties as well.
 </section>
 
@@ -26,23 +31,23 @@ Add the <code>style()</code> method to the code in the editor to set the <code>c
 ```yml
 tests:
   - text: The first <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(0).css('color') == "rgb(255, 0, 0)", 'The first <code>h2</code> should have a <code>color</code> of red.');
+    testString: assert($('h2').eq(0).css('color') == "rgb(255, 0, 0)");
   - text: The second <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(1).css('color') == "rgb(0, 128, 0)", 'The second <code>h2</code> should have a <code>color</code> of green.');
+    testString: assert($('h2').eq(1).css('color') == "rgb(0, 128, 0)");
   - text: The third <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(2).css('color') == "rgb(0, 128, 0)", 'The third <code>h2</code> should have a <code>color</code> of green.');
+    testString: assert($('h2').eq(2).css('color') == "rgb(0, 128, 0)");
   - text: The fourth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(3).css('color') == "rgb(255, 0, 0)", 'The fourth <code>h2</code> should have a <code>color</code> of red.');
+    testString: assert($('h2').eq(3).css('color') == "rgb(255, 0, 0)");
   - text: The fifth <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(4).css('color') == "rgb(0, 128, 0)", 'The fifth <code>h2</code> should have a <code>color</code> of green.');
+    testString: assert($('h2').eq(4).css('color') == "rgb(0, 128, 0)");
   - text: The sixth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(5).css('color') == "rgb(255, 0, 0)", 'The sixth <code>h2</code> should have a <code>color</code> of red.');
+    testString: assert($('h2').eq(5).css('color') == "rgb(255, 0, 0)");
   - text: The seventh <code>h2</code> should have a <code>color</code> of green.
-    testString: assert($('h2').eq(6).css('color') == "rgb(0, 128, 0)", 'The seventh <code>h2</code> should have a <code>color</code> of green.');
+    testString: assert($('h2').eq(6).css('color') == "rgb(0, 128, 0)");
   - text: The eighth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(7).css('color') == "rgb(255, 0, 0)", 'The eighth <code>h2</code> should have a <code>color</code> of red.');
+    testString: assert($('h2').eq(7).css('color') == "rgb(255, 0, 0)");
   - text: The ninth <code>h2</code> should have a <code>color</code> of red.
-    testString: assert($('h2').eq(8).css('color') == "rgb(255, 0, 0)", 'The ninth <code>h2</code> should have a <code>color</code> of red.');
+    testString: assert($('h2').eq(8).css('color') == "rgb(255, 0, 0)");
 
 ```
 
@@ -84,4 +89,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

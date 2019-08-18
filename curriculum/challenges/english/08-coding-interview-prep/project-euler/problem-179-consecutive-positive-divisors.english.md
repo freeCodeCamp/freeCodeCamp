@@ -2,6 +2,7 @@
 id: 5900f41f1000cf542c50ff32
 challengeType: 5
 title: 'Problem 179: Consecutive positive divisors'
+forumTopicId: 301814
 ---
 
 ## Description
@@ -20,7 +21,7 @@ Find the number of integers 1 < n < 107, for which n and n + 1 have the same num
 ```yml
 tests:
   - text: <code>euler179()</code> should return 986262.
-    testString: assert.strictEqual(euler179(), 986262, '<code>euler179()</code> should return 986262.');
+    testString: assert.strictEqual(euler179(), 986262);
 
 ```
 
@@ -52,4 +53,5 @@ euler179();
 ```js
 // solution required
 ```
+
 </section>

@@ -16,9 +16,9 @@ O método Documento `querySelector()` retorna o `first` Elemento dentro do docum
 **Conteúdo JavaScript:**
 
 ```javascript
-document.querySelector("#id-example"); // Returns the element with id "id-example" 
- document.querySelector(".class-example"); // Returns the element with class "class-example" 
- document.querySelector("a"); // Returns the "a" element 
+document.querySelector("#id-example"); // Retorna o elemento que contem o id "id-example" 
+ document.querySelector(".class-example"); // Retorna o elemento que contem a classe "class-example"
+ document.querySelector("a"); // Retorna o elemento "a"
 ```
 
 Nota `querySelector()` retorna o primeiro elemento correspondente, para retornar todas as correspondências, use o método querySelectorAll ().
@@ -30,7 +30,7 @@ Nota `querySelector()` retorna o primeiro elemento correspondente, para retornar
 ```
 
 ```javascript
-document.querySelector("#example"); // Returns only the element containing 'First' 
+document.querySelector("#example"); // Retorna apenas o primeiro elemento com a id="example", no caso a div "First"
 ```
 
 #### Mais Informações:

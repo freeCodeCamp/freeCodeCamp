@@ -10,19 +10,21 @@ localeTitle: استخدم خصائص النموذج لتخفيض قانون مك
 
 #### مثال:
 
- `Obj.prototype.newProperty = "New Property!"; 
-` 
+```javascript
+Obj.prototype.newProperty = "New Property!";
+``` 
 
 باستخدام هذا المنطق ، ببساطة إنشاء خاصية `prototype` جديد لـ `numLegs` . يمكن تمرير حالات الاختبار عن طريق استبدال كائن `Bird` بكائن `Dog` في المثال المعطى - `Bird.prototype.numLegs = 2;`
 
 ### حل:
 
- `function Dog(name) { 
-  this.name = name; 
- } 
- 
- Dog.prototype.numLegs = 4; 
- 
- // Add your code above this line 
- let beagle = new Dog("Snoopy"); 
-`
+```javascript
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+// Add your code above this line
+let beagle = new Dog("Snoopy");
+```

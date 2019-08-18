@@ -2,6 +2,7 @@
 id: 5900f4461000cf542c50ff58
 challengeType: 5
 title: 'Problem 217: Balanced Numbers'
+forumTopicId: 301859
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Find T(47) mod 315
 ```yml
 tests:
   - text: <code>euler217()</code> should return 6273134.
-    testString: assert.strictEqual(euler217(), 6273134, '<code>euler217()</code> should return 6273134.');
+    testString: assert.strictEqual(euler217(), 6273134);
 
 ```
 
@@ -56,4 +57,5 @@ euler217();
 ```js
 // solution required
 ```
+
 </section>

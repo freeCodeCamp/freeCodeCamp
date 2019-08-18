@@ -16,9 +16,9 @@ C nos permite elegir entre varias opciones diferentes con nuestros tipos de dato
 
 ## Tipos de datos enteros
 
-#### Personajes: `char`
+#### Caracteres: `char`
 
-`char` contiene caracteres, cosas como letras, puntuación y espacios. En una computadora, los caracteres se almacenan como números, por lo que `char` contiene valores enteros que representan caracteres. La traducción real está descrita por el estándar ASCII. [Aquí hay](http://www.asciitable.com/) una mesa útil para buscar eso.
+`char` contiene caracteres, cosas como letras, puntuación y espacios. En una computadora, los caracteres se almacenan como números, por lo que `char` contiene valores enteros que representan caracteres. La traducción real está descrita por el estándar ASCII. [Aquí hay](http://www.asciitable.com/) una tabla útil para buscar eso.
 
 El tamaño real, como todos los demás tipos de datos en C, depende del hardware en el que esté trabajando. Como mínimo, es de al menos 8 bits, por lo que tendrá al menos 0 a 127. Alternativamente, puede usar caracteres `signed char` para obtener al menos -128 a 127.
 

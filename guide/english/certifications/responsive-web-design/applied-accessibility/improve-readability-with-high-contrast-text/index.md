@@ -1,7 +1,7 @@
 ---
 title: Improve Readability with High Contrast Text
 ---
-## Improve Readability with High Contrast Text
+# Improve Readability with High Contrast Text
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/improve-readability-with-high-contrast-text/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

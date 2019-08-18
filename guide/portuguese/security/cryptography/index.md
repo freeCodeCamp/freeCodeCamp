@@ -16,31 +16,39 @@ A criptografia ao longo dos anos tornou-se mais avançada.
 
 ### Exemplo
 
-As informações que Person1 deseja enviar para Person2, que chamamos de "texto sem formatação", podem ser texto, dados numéricos ou qualquer tipo de dado. Pessoa1 criptografa o texto simples, usando uma chave predeterminada e envia o "texto cifrado" resultante sobre o canal. Person3, ao ver o texto cifrado no canal, não pode determinar qual era o texto original, mas Person2, que conhece a chave de criptografia, pode descriptografar o texto cifrado e reconstruir o texto simples.
+As informações que Alice deseja enviar para Bob, que chamamos de "texto sem formatação", podem ser texto, dados numéricos ou qualquer tipo de dado. Alice criptografa o texto simples, usando uma chave predeterminada e envia o "texto cifrado" resultante sobre o canal. Eve, agindo como um MiTM (man-in-the-middle, quando um terceiro escuta a conexão sem a devida permissão), ao ver o texto cifrado no canal, não pode determinar qual era o texto original, mas Bob, que conhece a chave de criptografia, pode descriptografar o texto cifrado e reconstruir o texto simples.
 
-### César Cypher (Shift Cypher)
+### Cifra de César (Shift Cypher)
 
-O primeiro cypher conhecido foi o cypher Ceasar. A cifra Ceasar funciona mudando as letras de um "texto simples" por uma quantidade específica para cima ou para baixo no alfabeto.
+A primeira cifra conhecida foi a Cifra de César. A Cifra de César funciona mudando as letras de um "texto simples" por uma quantidade específica para cima ou para baixo no alfabeto.
 
 Do ponto de vista de uma pessoa externa, a mensagem parece ser letras aleatórias com espaços entre elas.
 
+No seu tempo, ela foi muito útil pois não sabiam como decifrar. Porém essa cirfra ainda é ensinada por fins didáticos e históricos pois ela já sofreu com sucesso uma criptoanálise. A vulnerabilidade dela é por repetição das letras do alfabeto de uma determinada língua.
+
+Por exemplo: na língua inglesa, a letra 'e' é a que mais aparece em toda a língua. Se a chave da Cifra de César é 3, a letra 'e' rotacionada três vezes se torna 'h'. Ou seja, toda a letra que for 'e' irá se tornar 'h', assim ficando evidente a repetição das letras.
+
 ### Criptografia Moderna
 
-A criptografia moderna usa números quase aleatórios e funções matematicamente sólidas para permitir uma comunicação segura. Essas funções recém-desenvolvidas não podem ser facilmente quebradas devido à sua estrutura, exigindo que até mesmo centenas de anos de supercomputadores sejam quebrados.
+A criptografia moderna usa números pseudo aleatórios e funções matematicamente sólidas para permitir uma comunicação segura. Essas funções recém desenvolvidas não podem ser facilmente quebradas devido à sua estrutura, exigindo que até mesmo centenas de anos de supercomputadores sejam quebrados.
 
 Existem dois tipos principais de criptografia moderna:
 
 ### 1) Criptografia Simétrica ou de Chave Única:
 
-A Criptografia de Chave Simétrica é um método de criptografia em que ambas as partes usam apenas uma chave para criptografia e descriptografia. Esses algoritmos, devido ao seu design, geralmente são muito mais rápidos do que a criptografia de chave pública ou assimétrica.
+A Criptografia de Chave Simétrica é um método de criptografia em que ambas as partes usam apenas uma chave criptográfica para a criptografia e a decriptografia. Esses algoritmos, devido ao seu design, geralmente são muito mais rápidos do que a criptografia de chave pública ou assimétrica.
 
-Algumas técnicas de criptografia simétrica incluem: Data Encryption Standard (DES), Advanced Encryption Standard (AES), Blow Fish, Dois Peixes, RC4.
+Algumas técnicas de criptografia simétrica incluem: Data Encryption Standard (DES), Advanced Encryption Standard (AES), Blow Fish, Twofish, RC4.
 
-### 2) Criptografia de chave pública ou assimétrica:
+### 2) Criptografia Assimétrica ou de chave pública:
 
 Os algoritmos de criptografia assimétrica fornecem a cada usuário um par de chaves: uma pública e outra privada. Qualquer mensagem criptografada com uma chave do par só pode ser descriptografada com a outra.
 
-Algumas técnicas assimétricas incluem: RSA, Diffie-Hellman, DSS (assinatura digital padrão), ElGamal.
+A chave privada só deve ficar em posse da pessoa em questão. Em hipótese alguma ela poderá ser exposta, assim toda a assinatura digital, a criptografia de dados utilizando essa chave privada estará comprometida.
+
+Por outro lado, a chave pública, como o nome diz, ela deve ser pública.
+
+Algumas técnicas assimétricas incluem: RSA, Diffie-Hellman, DSS (assinatura digital padrão), ElGamal, PGP.
 
 ### Hashing Criptográfico
 

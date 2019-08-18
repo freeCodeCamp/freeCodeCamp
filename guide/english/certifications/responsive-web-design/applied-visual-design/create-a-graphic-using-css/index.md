@@ -1,7 +1,7 @@
 ---
 title: Create a Graphic Using CSS
 ---
-## Create a Graphic Using CSS
+# Create a Graphic Using CSS
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/create-a-graphic-using-css/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

@@ -72,7 +72,6 @@ localeTitle: Короткая обезьяна
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/24)
 
 ### Код Объяснение:
 
@@ -101,7 +100,6 @@ localeTitle: Короткая обезьяна
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/Cj9x/3)
 
 ### Код Объяснение:
 
@@ -134,7 +132,6 @@ localeTitle: Короткая обезьяна
     chunkArrayInGroups(["a", "b", "c", "d"], 2); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/26)
 
 ### Код Объяснение:
 
@@ -169,7 +166,6 @@ localeTitle: Короткая обезьяна
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/579)
 
 ### Код Объяснение:
 
@@ -198,7 +194,6 @@ localeTitle: Короткая обезьяна
     } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://repl.it/CLjU/579)
 
 ### Код Объяснение:
 

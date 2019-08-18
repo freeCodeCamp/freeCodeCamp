@@ -42,8 +42,6 @@ function testLogicalAnd(val) {
  testLogicalAnd(10); 
 ```
 
-· [Ejecutar código en repl.it](https://repl.it/@AdrianSkar/Basic-JS-Comparison-with-the-and-operator)
-
 ### Explicación del código
 
 La función primero evalúa `if` la condición `val <= 50` evalúa como `true` conversión de `val` en un número si es necesario, luego hace lo mismo con `val >=25` debido al operador lógico AND ( `&&` ); Si ambos devuelven verdadero, se ejecuta la instrucción de `return "Yes"` .

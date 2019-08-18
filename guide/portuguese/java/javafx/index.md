@@ -14,7 +14,7 @@ Gulon Scene Builder é um aplicativo usado para design de interface do usuário 
 
 #### Screeenshots:
 
-![IU do Construtor de Cena](https://i.imgur.com/3d9SqBR.png)
+![IU do Construtor de Cena](https://cdn-media-1.freecodecamp.org/imgr/3d9SqBR.png)
 
 ### FXML
 

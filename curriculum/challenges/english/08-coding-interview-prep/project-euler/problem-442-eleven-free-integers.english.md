@@ -2,6 +2,7 @@
 id: 5900f5271000cf542c510039
 challengeType: 5
 title: 'Problem 442: Eleven-free integers'
+forumTopicId: 302114
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find E(1018).
 ```yml
 tests:
   - text: <code>euler442()</code> should return 1295552661530920200.
-    testString: assert.strictEqual(euler442(), 1295552661530920200, '<code>euler442()</code> should return 1295552661530920200.');
+    testString: assert.strictEqual(euler442(), 1295552661530920200);
 
 ```
 
@@ -58,4 +59,5 @@ euler442();
 ```js
 // solution required
 ```
+
 </section>

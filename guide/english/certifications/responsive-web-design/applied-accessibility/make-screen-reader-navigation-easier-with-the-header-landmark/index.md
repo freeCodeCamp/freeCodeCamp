@@ -1,7 +1,7 @@
 ---
 title: Make Screen Reader Navigation Easier with the header Landmark
 ---
-## Make Screen Reader Navigation Easier with the header Landmark
+# Make Screen Reader Navigation Easier with the header Landmark
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/make-screen-reader-navigation-easier-with-the-header-landmark/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
