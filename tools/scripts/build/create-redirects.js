@@ -22,23 +22,29 @@ exports.createRedirects = function createRedirects(locations) {
 };
 
 /* eslint-disable max-len */
-const template = `#api redirect
+const template = `
+#
+# WARNING: The order of this list is very important.
+#
 
-# client-route proxy
+#api redirect
 /internal/*                                   #{{API}}/internal/:splat 200
+
+# pages
+/about                                        #{{NEWS}}/about 200
+/academic-honesty                             #{{NEWS}}/academic-honesty 200
+/code-of-conduct                              #{{NEWS}}/code-of-conduct 200
+/privacy                                      #{{NEWS}}/privacy-policy 200
+/privacy-policy                               #{{NEWS}}/privacy-policy 200
+/sponsors                                     #{{NEWS}}/sponsors 200
+/support                                      #{{NEWS}}/support 200
+/shop                                         #{{news}}/shop 200
+/terms                                        #{{NEWS}}/terms-of-service 200
+/terms-of-service                             #{{NEWS}}/terms-of-service 200
 
 # applications
 /news/*                                       #{{NEWS}}/:splat 200
 /forum/*                                      #{{FORUM}}/:splat 200
-
-# pages
-/about                                        #{{NEWS}}/about
-/terms-of-service                             #{{NEWS}}/terms-of-service
-/terms                                        #{{NEWS}}/terms-of-service
-/academic-honesty                             #{{NEWS}}/academic-honesty
-/code-of-conduct                              #{{NEWS}}/code-of-conduct
-/privacy-policy                               #{{NEWS}}/privacy-policy
-/privacy                                      #{{NEWS}}/privacy-policy
 
 # auth redirects
 /signin                                       #{{API}}/signin 200
