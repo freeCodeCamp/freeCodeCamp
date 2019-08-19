@@ -49,6 +49,7 @@
     "react-dom": "^16.9.0",
     "react-ga": "^2.6.0",
     "react-helmet": "^5.2.1",
+    "react-identicons": "^1.1.7",
     "react-instantsearch-dom": "^5.7.0",
     "react-monaco-editor": "^0.25.1",
     "react-redux": "^5.0.7",
