@@ -38,11 +38,12 @@ const template = `
 /privacy-policy                               #{{NEWS}}/privacy-policy 200
 /sponsors                                     #{{NEWS}}/sponsors 200
 /support                                      #{{NEWS}}/support 200
-/shop                                         #{{news}}/shop 200
+/shop                                         #{{NEWS}}/shop 200
 /terms                                        #{{NEWS}}/terms-of-service 200
 /terms-of-service                             #{{NEWS}}/terms-of-service 200
 
 # applications
+/news                                         #{{NEWS}}/ 200
 /news/*                                       #{{NEWS}}/:splat 200
 /forum/*                                      #{{FORUM}}/:splat 200
 
