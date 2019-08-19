@@ -6,7 +6,7 @@ Em matemática, notação big-O é um simbolismo usado para descrever e comparar
 O comportamento limitador de uma função é como a função atua à medida que tende a um valor particular e, na notação big-O, é geralmente como ela se aproxima do infinito.  
 Em resumo, a notação big-O é usada para descrever o crescimento ou declínio de uma função, geralmente com relação a outra função.
 
-no design de algoritmos, normalmente usamos notação big-O, porque podemos ver quão bom ou ruim um algoritmo funcionará no pior modo. mas tenha isso em mente, nem sempre é o caso, porque o pior caso pode ser super raro e, nesses casos, calculamos o caso médio. por ora, para que não seja notado a notação big-O.
+No design de algoritmos, normalmente usamos notação big-O, porque podemos ver quão bem ou mal um algoritmo funcionará no pior modo. Mas tenha isso em mente, nem sempre é o caso, porque o pior caso pode ser super raro e, nesses casos, calculamos o caso médio. Por ora, para que não seja notado a notação big-O.
 
 Em matemática, notação big-O é um simbolismo usado para descrever e comparar o _comportamento limitante_ de uma função.
 

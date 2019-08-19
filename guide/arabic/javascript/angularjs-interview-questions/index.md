@@ -45,11 +45,11 @@ Question: شرح ng-App directive. الإجابة: يبدأ توجيه ng-app ت
 
 سؤال: اشرح توجيه ng-init الإجابة: يشرح توجيه ng-init بيانات تطبيق AngularJS. يتم استخدامه لوضع القيم للمتغيرات لاستخدامها في التطبيق. على سبيل المثال: في المثال أدناه ، قمنا بتهيئة مجموعة من البلدان ، باستخدام بنية JSON لتحديد مجموعة من البلدان.
 
- `
-<div ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]"> 
-   ... 
- </div> 
-` 
+```html
+<div ng-app = "" ng-init = "countries = [{locale:'en-US',name:'United States'}, {locale:'en-GB',name:'United Kingdom'}, {locale:'en-FR',name:'France'}]">
+   ...
+</div>
+``` 
 
 سؤال: كيف تشارك البيانات بين وحدات التحكم؟ الإجابة: أنشئ خدمة AngularJS التي ستحتفظ بالبيانات وحقنها داخل وحدات التحكم. يعد استخدام الخدمة هو الطريقة الأنظف والأسرع والأسهل للاختبار. ومع ذلك ، هناك طريقتان آخرتان لتنفيذ مشاركة البيانات بين وحدات التحكم ، مثل: - استخدام الأحداث - استخدام $ parent ، nextSibling ، controllerAs ، وما إلى ذلك للوصول مباشرة إلى وحدات التحكم - استخدام $ rootScope لإضافة البيانات على (ليس ممارسة جيدة)
 

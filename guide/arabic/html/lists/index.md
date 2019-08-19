@@ -22,12 +22,13 @@ localeTitle: قوائم
 
 تتم كتابة قائمة مرتبة ك
 
- `<ol> 
-  <li>January</li> 
-  <li>February</li> 
-  <li>March</li> 
- </ol> 
-` 
+```HTML
+<ol>
+  <li>January</li>
+  <li>February</li>
+  <li>March</li>
+</ol>
+``` 
 
 ويتم عرضها على النحو التالي:
 
@@ -37,12 +38,13 @@ localeTitle: قوائم
 
 قائمة غير مرتبة مكتوبة باسم
 
- `<ul> 
-  <li>Macintosh</li> 
-  <li>Fuji</li> 
-  <li>Gala</li> 
- </ul> 
-` 
+```HTML
+<ul>
+  <li>Macintosh</li>
+  <li>Fuji</li>
+  <li>Gala</li>
+</ul>
+``` 
 
 ويتم عرضها على النحو التالي:
 
@@ -56,20 +58,22 @@ localeTitle: قوائم
 
 إزالة الرموز النقطية:
 
- `ul { 
-  list-style: none; 
-  } 
-` 
+```CSS
+ul {
+  list-style: none;
+  }
+``` 
 
 قم بإدخال الخاص بك:
 
- `ul li::before { 
-  content: "\2022"; 
-  color: orange; 
-  display: inline-block; 
-  width: 1em; 
-  } 
-` 
+```CSS
+ul li::before {
+  content: "\2022";
+  color: orange;
+  display: inline-block;
+  width: 1em;
+  }
+``` 
 
 يضيف نمط المحتوى نقطية جديدة بينما يعمل نمط العرض والعرض على إنشاء مسافة بين الرمز النقطي والكلمة. يمكن تطبيق أنماط الخطوط العادية هنا إذا كنت ترغب في جعل الرمز النقطي أكبر أو أكثر جرأة.
 
@@ -79,13 +83,14 @@ localeTitle: قوائم
 
 في ما يلي مثال لقائمة الوصف:
 
- `<dl> 
-  <dt>Programming</dt> 
-  <dd>The process of writing computer programs.</dd> 
-  <dt>freeCodeCamp</dt> 
-  <dd>An awesome non-profit organization teaching people how to code.</dd> 
- </dl> 
-` 
+```HTML
+<dl>
+  <dt>Programming</dt>
+  <dd>The process of writing computer programs.</dd>
+  <dt>freeCodeCamp</dt>
+  <dd>An awesome non-profit organization teaching people how to code.</dd>
+</dl>
+``` 
 
 والتي من شأنها أن تبدو وكأنها:
 

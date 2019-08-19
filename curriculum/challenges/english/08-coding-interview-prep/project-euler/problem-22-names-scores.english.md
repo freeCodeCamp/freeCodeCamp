@@ -2,6 +2,7 @@
 id: 5a51eabcad78bf416f316e2a
 challengeType: 5
 title: 'Problem 22: Names scores'
+forumTopicId: 301862
 ---
 
 ## Description
@@ -22,11 +23,11 @@ What is the total of all the name scores in the file?
 ```yml
 tests:
   - text: <code>namesScores(test1)</code> should return 791.
-    testString: assert.strictEqual(namesScores(test1), 791, '<code>namesScores(test1)</code> should return 791.');
+    testString: assert.strictEqual(namesScores(test1), 791);
   - text: <code>namesScores(test2)</code> should return 1468.
-    testString: assert.strictEqual(namesScores(test2), 1468, '<code>namesScores(test2)</code> should return 1468.');
+    testString: assert.strictEqual(namesScores(test2), 1468);
   - text: <code>namesScores(names)</code> should return 871198282.
-    testString: assert.strictEqual(namesScores(names), 871198282, '<code>namesScores(names)</code> should return 871198282.');
+    testString: assert.strictEqual(namesScores(names), 871198282);
 
 ```
 
@@ -70,4 +71,5 @@ const names = ['MARY','PATRICIA','LINDA','BARBARA','ELIZABETH','JENNIFER','MARIA
 ```js
 // solution required
 ```
+
 </section>

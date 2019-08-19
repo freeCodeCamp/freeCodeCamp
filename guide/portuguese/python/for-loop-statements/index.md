@@ -105,9 +105,9 @@ Saída:
 **Iterar as chaves em um dicionário (também conhecido como hashmap)**
 
 ```python
-fruits_to_colors = {"apple": "#ff0000", 
-                    "lemon": "#ffff00", 
-                    "orange": "#ffa500"} 
+fruits_to_colors = {"maçã": "#ff0000", 
+                    "limão": "#ffff00", 
+                    "laranja": "#ffa500"} 
  
  for key in fruits_to_colors: 
     print(key, fruits_to_colors[key]) 
@@ -116,9 +116,9 @@ fruits_to_colors = {"apple": "#ff0000",
 Saída:
 ```
 > 
- apple #ff0000 
- lemon #ffff00 
- orange #ffa500 
+ maçã #ff0000 
+ limão #ffff00 
+ laranja #ffa500 
  > 
 ```
 
@@ -136,14 +136,14 @@ Output:
 **Iterate over a list and get the corresponding index with the enumerate() function** 
 ```
 
-python A = \["this", "is", "alguma coisa", "divertido"\]
+python A = \["isso", "é", "uma coisa", "divertida"\]
 
 para index, word in enumerate (A): imprimir (índice, palavra)
 ```
 Output: 
 ```
 
-\> 0 isto 1 é 2 algo 3 diversão >
+\> 0 isto 1 é 2 uma coisa 3 divertida >
 ```
 A common use case is iterating over a dictionary: 
 ```
@@ -168,14 +168,14 @@ In the above case the output will be `today is not a week day` since the break w
  We could also iterate inline using python, for example if we need to uppercase all the words in a list from a list we could simply do the following: 
 ```
 
-python A = \["this", "is", "awesome", "shinning", "star"\]
+python A = \["ISTO", "É", "IMPRESSIONANTE", "ESTRELA", "BRILHANTE"\]
 
 UPPERCASE = \[word.upper () para palavra em A\] imprimir (MAIÚSCULAS)
 ```
-Output: 
+Saída: 
 ```
 
-\> \['ISTO', 'IS', 'IMPRESSIONANTE', 'BRILHO', 'ESTRELA'\] > \`\` \`
+\> \['ISTO', 'IS', 'IMPRESSIONANTE', 'ESTRELA', 'BRILHANTE'\] > \`\` \`
 
 #### Mais Informações:
 

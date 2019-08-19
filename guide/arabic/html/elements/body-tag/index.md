@@ -8,16 +8,16 @@ localeTitle: يوم الجسد
 
 يجب أن يحتوي عنصر `<body>` على كل محتوى الصفحة ، بما في ذلك جميع عناصر العرض. يمكن أن يحتوي عنصر `<body>` أيضًا على علامات `<script>` ، وهي برامج نصية عامة يجب تشغيلها بعد تحميل محتوى الصفحة.
 
- `
-<html> 
-    <head> 
-        <title>Document Titles Belong in the Head</title> 
-    </head> 
-    <body> 
-        <p>This paragraph is content. It goes in the body!</p> 
-    </body> 
- </html> 
-` 
+```html
+<html>
+    <head>
+        <title>Document Titles Belong in the Head</title>
+    </head>
+    <body>
+        <p>This paragraph is content. It goes in the body!</p>
+    </body>
+</html>
+``` 
 
 #### معلومات اكثر:
 

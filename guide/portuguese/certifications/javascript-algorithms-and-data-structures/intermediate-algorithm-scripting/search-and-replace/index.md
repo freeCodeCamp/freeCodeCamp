@@ -57,8 +57,7 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmo/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Use `indexOf()` para encontrar o local de **antes** em string.
@@ -93,8 +92,7 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmp/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Nesta solução, a expressão regular `[AZ]` é usada para verificar se o caractere é maiúsculo.
@@ -139,8 +137,7 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmq/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Tanto o **antes** quanto o **depois** são passados ​​como argumentos para `applyCasing()` .
@@ -199,8 +196,7 @@ function myReplace(str, before, after) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/@kr3at0/SearchAndReplace)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ": rotating_light:") Alternativa de Solução de Código Avançado 2:
 
 ```javascript

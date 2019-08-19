@@ -48,7 +48,6 @@ localeTitle: Написание функций стрелок с более вы
     console.log(squaredIntegers); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ": Ракета:") [Код запуска](https://codepen.io/dylantyates/pen/WyWoYJ)
 
 # Код Объяснение:
 

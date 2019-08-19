@@ -59,3 +59,15 @@ El uso del elemento `<sub>` le proporciona un formato útil como texto con subí
 Si desea hacer un texto opuesto al subíndice, puede utilizar fácilmente el elemento `<sup>` . Muestra un texto más pequeño en la parte superior.
 
 `10<sup>x+y</sup> = 1000`
+
+### Subrayado
+
+Para colocar el texto que desea subrayado, solo tienes que utilizar el elemento `<u>`.
+
+`<u> Texto Subrayado </u>`
+
+### Tachartexto
+
+Esta etiqueta `<s>` te sirve para colocar cualquier texto con una raya horizontal que atraviesa por el medio `</s>`
+
+`<s> Texto que quieres subrayado </s>`

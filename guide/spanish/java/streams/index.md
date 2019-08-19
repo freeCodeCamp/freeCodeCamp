@@ -1,16 +1,16 @@
 ---
 title: Streams
-localeTitle: Corrientes
+localeTitle: Streams
 ---
-# Corrientes
+# Streams
 
-En Java 8 Streams se agregó como una nueva característica a la caja de herramientas de Java. Los flujos le permiten procesar colecciones de forma rápida y limpia.
+En Java 8 Streams se agregó como una nueva característica a la caja de herramientas de Java. Los Streams le permiten procesar colecciones de forma rápida y limpia.
 
 Lea el capítulo sobre lambdas y la programación funcional antes de continuar.
 
 ## Cómo funciona
 
-The Stream recorre los elementos de la colección por ti. Cada intermedio y la operación terminal son llamados para cada objeto. Una vez que todas las operaciones han finalizado para los primeros objetos, se carga el segundo objeto.
+Los Stream recorren los elementos de una colección, todos los pasos intermedios y operaciones terminales son llamadas para cada objeto en la colección. Una vez que todas las operaciones han finalizado para el primer objeto, se carga el segundo objeto.
 
 ## Métodos importantes
 
@@ -23,27 +23,27 @@ The Stream recorre los elementos de la colección por ti. Cada intermedio y la o
 
 Estas operaciones convierten los objetos Stream de alguna manera.
 
-*   `Stream.map(Function<In,Out> function)` : aplique una función para convertir de entrada a salida
-*   `Stream.filter(Predicate<In> predicate)` : elimina los objetos de Stream para los cuales el Predicate no prueba verdadero
+*   `Stream.map(Function<In,Out> function)` : aplica una función para convertir el objeto de entrada en otro distinto de salida
+*   `Stream.filter(Predicate<In> predicate)` : elimina los objetos para los cuales el Predicate no es verdadero
 *   `Stream.distinct()` : elimina los objetos de la secuencia que son duplicados
 *   `Stream.sorted()` : ordena los Objetos en el Stream
-*   `Stream.limit(int n)` : end Stream después de n objetos
+*   `Stream.limit(int n)` : parar Stream después de n objetos
 
-### Terminal de Operaciones
+### Operaciones terminales
 
 Estas operaciones reciben los objetos de secuencia y terminan la secuencia.
 
-*   `Stream.collect(Collector<In,?,Out> collector)` : recopila todos los objetos en Stream en Object
-*   `Stream.forEach(Consumer<In> consumer)` : consume todos los Objetos en Stream utilizando la función de consumidor
-*   `Stream.count()` : cuenta todos los objetos en Stream
+*   `Stream.collect(Collector<In,?,Out> collector)` : recopila todos los objetos del Stream en un Object
+*   `Stream.forEach(Consumer<In> consumer)` : consume todos los Objetos del Stream utilizando la función de consumidor
+*   `Stream.count()` : cuenta todos los objetos del Stream
 *   `Stream.findFirst()` : devuelve el primer objeto de la secuencia y se detiene
-*   `Stream.anyMatch(Predicate<In> predicate)` : devuelve verdadero si algún Objeto en el Corriente prueba verdadero para el Predicado
-*   `Stream.allMatch(Predicate<In> predicate)` : devuelve verdadero si todos los Objetos en la Corriente son verdaderos para el Predicado
+*   `Stream.anyMatch(Predicate<In> predicate)` : devuelve verdadero si algún Objeto en el Stream es verdadero para el Predicado
+*   `Stream.allMatch(Predicate<In> predicate)` : devuelve verdadero si todos los Objetos en el Stream son verdaderos para el Predicado
 
 ## Ejemplos
 
 ```java
-// print the length of all Strings in a List 
+// Imprime el largo de todos los Strings de la lista
  for (String string : Arrays.asList("abc", "de", "f", "abc")) { 
     int length = string.length(); 
     System.out.println(length); 
@@ -54,11 +54,11 @@ Estas operaciones reciben los objetos de secuencia y terminan la secuencia.
         .map(String::length) 
         .forEach(System.out::println); 
  
- // output: 3 2 1 3 
+ // salida: 3 2 1 3 
 ```
 
 ```java
-// print all Strings in a List with a Length greater than 2 
+// imprime todos los Strings de la lista con un largo mayor que 2
  for (String string : Arrays.asList("abc", "de", "f", "abc")) { 
     if (string.length() > 2) { 
         System.out.println(string); 
@@ -70,11 +70,11 @@ Estas operaciones reciben los objetos de secuencia y terminan la secuencia.
         .filter(string -> string.length() > 2) 
         .forEach(System.out::println); 
  
- // output: abc abc 
+ // salida: abc abc 
 ```
 
 ```java
-// create a sorted List with all unique Strings from another List which are longer than or requal 2 
+// Crea una lista ordenada con todos los Strings unicos de otra lista que sean mayores o iguales a 2 de largo
  List<String> result = new ArrayList<>(); 
  for (String string : Arrays.asList("de", "abc", "f", "abc")) { 
     if (string.length() >= 2 
@@ -91,7 +91,7 @@ Estas operaciones reciben los objetos de secuencia y terminan la secuencia.
         .sorted() 
         .collect(Collectors.toList()); 
  
- // result: abc de 
+ // salida: abc de 
 ```
 
 ### Fuentes

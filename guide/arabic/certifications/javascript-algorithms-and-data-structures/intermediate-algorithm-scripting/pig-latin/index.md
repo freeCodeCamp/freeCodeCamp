@@ -68,7 +68,6 @@ localeTitle: خنزير اللاتينية
  translatePigLatin("consonant"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmt/0)
 
 ### شرح الشفرة:
 
@@ -102,7 +101,6 @@ localeTitle: خنزير اللاتينية
  translatePigLatin("consonant"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmw/0)
 
 ### شرح الشفرة:
 
@@ -148,7 +146,6 @@ localeTitle: خنزير اللاتينية
  translatePigLatin("consonant"); 
 ` 
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":صاروخ:") [تشغيل الكود](https://repl.it/CLmv/0)
 
 ### شرح الشفرة:
 

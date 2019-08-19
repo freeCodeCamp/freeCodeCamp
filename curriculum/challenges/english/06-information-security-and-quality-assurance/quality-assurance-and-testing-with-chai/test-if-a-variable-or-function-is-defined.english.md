@@ -2,17 +2,18 @@
 id: 587d824b367417b2b2512c47
 title: Test if a Variable or Function is Defined
 challengeType: 2
+forumTopicId: 301602
 ---
 
 ## Description
 <section id='description'>
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
-Use assert.isDefined() or assert.isUndefined() to make the tests pass
+
 </section>
 
 ## Instructions
 <section id='instructions'>
-
+Use <code>assert.isDefined()</code> or <code>assert.isUndefined()</code> to make the tests pass.
 </section>
 
 ## Tests
@@ -44,4 +45,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

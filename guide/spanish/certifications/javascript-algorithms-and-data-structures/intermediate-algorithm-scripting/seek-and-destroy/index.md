@@ -53,7 +53,6 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/CLjU/95)
 
 ### Explicación del código:
 
@@ -85,7 +84,6 @@ function destroyer(arr) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":cohete:") [Ejecutar código](https://repl.it/Ck2m/0)
 
 ### Explicación del código:
 

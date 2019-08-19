@@ -6,6 +6,8 @@ localeTitle: Python
 
 [Python](https://www.python.org) é uma linguagem de programação de uso geral que é tipificada, interpretada e conhecida dinamicamente por sua facilidade de leitura com excelentes princípios de design.
 
+A linguagem foi criada no final da década de 80 por Guido Van Rossum que queria elaborar uma linguagem intermediária, entre o C e o Shell Script.
+
 Para saber mais sobre o Python, confira estas páginas em python.org:
 
 [O que é o Python?](https://www.python.org/doc/essays/blurb/)
@@ -14,7 +16,7 @@ Para saber mais sobre o Python, confira estas páginas em python.org:
 
 ## Python 2 ou Python 3
 
-*   As duas versões são semelhantes, com o conhecimento de uma mudança para escrever código para o outro é fácil.
+*   As duas versões são semelhantes. Conhecendo uma versão, a curva de aprendizado para a outra é simples.
 *   [Python 2 ou Python 3](https://wiki.python.org/moin/Python2orPython3)
     *   [O Python 2.x não será mantido após 2020.](https://www.python.org/dev/peps/pep-0373/)
     *   3.x está em desenvolvimento ativo. Isso significa que todas as melhorias recentes na biblioteca padrão, por exemplo, só estão disponíveis por padrão no Python 3.x.
@@ -22,7 +24,7 @@ Para saber mais sobre o Python, confira estas páginas em python.org:
 
 ## Instalação
 
-A maioria dos sistemas operacionais baseados em \* nix vem com o Python instalado (geralmente Python 2, Python 3 nos mais recentes). Substituindo o sistema O Python não é recomendado e pode causar problemas. No entanto, versões diferentes do Python podem ser instaladas com segurança ao lado do sistema Python. Veja [Configuração e Uso do Python](https://docs.python.org/3/using/index.html) .
+A maioria dos sistemas operacionais baseados em Linux (também chamados de "Unix like") vem com o Python instalado (geralmente Python 2, Python 3 nos mais recentes). Substituindo o sistema O Python não é recomendado e pode causar problemas. No entanto, versões diferentes do Python podem ser instaladas com segurança ao lado do sistema Python. Veja [Configuração e Uso do Python](https://docs.python.org/3/using/index.html) .
 
 O Windows não vem com o Python, o instalador e as instruções podem ser encontradas [aqui](https://docs.python.org/3/using/windows.html)
 
@@ -111,6 +113,7 @@ Alguns dos princípios que influenciaram o design do Python estão incluídos co
 1.  Linguagem interativa com suporte de módulo para quase todas as funcionalidades.
 2.  Código aberto: Assim, você pode contribuir para a comunidade, as funções que você desenvolveu para uso futuro e para ajudar os outros.
 3.  Um monte de bons intérpretes e notebooks disponíveis para uma melhor experiência como o notebook jupyter.
+4.  É uma linguagem boa para prototipação, isto é, testar a lógica antes de implementá-la em outras linguagens de mais baixo nível.
 
 #### Contras
 

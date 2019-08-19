@@ -2,6 +2,7 @@
 id: 5900f3d01000cf542c50fee3
 challengeType: 5
 title: 'Problem 100: Arranged probability'
+forumTopicId: 301724
 ---
 
 ## Description
@@ -22,7 +23,7 @@ By finding the first arrangement to contain over 1012 = 1,000,000,000,000 discs 
 ```yml
 tests:
   - text: <code>euler100()</code> should return 756872327473.
-    testString: assert.strictEqual(euler100(), 756872327473, '<code>euler100()</code> should return 756872327473.');
+    testString: assert.strictEqual(euler100(), 756872327473);
 
 ```
 
@@ -54,4 +55,5 @@ euler100();
 ```js
 // solution required
 ```
+
 </section>

@@ -22,14 +22,14 @@ This is represented in a more **clear** way here:
 
 Just by a glance, we can conclude a few statements for any quadratic equation in Real Number Domain and Range:
 
-Consider the expression under the sqare root " b^2 - 4ac " as E
+Consider the expression under the square root "b^2 - 4ac" as E. This E is known as **discriminant**.  
 
-1. If E is positive, then we will have 2 solutions for x (property of squares)
+1. If E is positive, then we will have 2 distinct real solutions for x (property of squares)
 2. If E is zero, then there is one and only one solution for x
 3. If E is negative, then there is no **real** solution for x
 
 The quadratic formula is a tool for solving quadratic equations. A quadratic equation is a polynomial equation of degree two.
-A degree two polynomial is just a polynomial where the highest exponent of _x_ is 2. The following are examples of quadratic equations.
+A degree two polynomial is just a polynomial where the highest exponent of _x_ is 2. Following are the examples of quadratic equations.
 
 * ![x^2-5x+6=0](https://github.com/jasonu/freecodecamp-images/blob/master/quadratic_integer_roots.png "example quadratic equation")
 * ![x^2+x-1=0](https://github.com/jasonu/freecodecamp-images/blob/master/quadratic_irrational_roots.png "example quadratic equation")
@@ -57,7 +57,7 @@ is obtained by setting _a=1, b=1, c=-1_ in the quadratic formula. This gives two
 * _x=(-1+√5)/2_,
 * _x=(-1-√5)/2_.
 
-The Quadratic Formula can be used to find the solution(s) of any quadratic equation, and using the determinant can determine how many solutions are present.  Other methods, such as factoring, graphing, or completing the square finds the solution(s) of a quadratic equation, but the Quadratic formula is very useful in cases where you can't factor or graph. 
+The Quadratic Formula can be used to find the solution(s) of any quadratic equation, and by looking at the discriminant, one can determine the number and nature of solutions.  Other methods, such as factoring, graphing, or completing the square finds the solution(s) of a quadratic equation, but the Quadratic formula is very useful in cases where you can't factor or graph. 
 
 When writing the quadratic equation as:
 

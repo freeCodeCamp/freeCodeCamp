@@ -34,7 +34,7 @@ Alguns Game Engines têm uma curva de aprendizagem muito íngreme, como o CryEng
 
 O Unity Game Engine varia em algum lugar no meio, enquanto é iniciante amigável, alguns jogos populares e comerciais foram construídos usando Unity (por exemplo, Overcooked, Superhot).
 
-O mecanismo de jogo BuildBox é basicamente para desenvolver jogos hipercuais.
+O mecanismo de jogo BuildBox é basicamente para desenvolver jogos hipercasuais.
 
 ### Motores de Jogo Típicos
 

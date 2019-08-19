@@ -49,7 +49,7 @@ Retorne o inventário completo em ordem alfabética.
         // A helper method to return the index of a specified product (undefined if not found) 
         var getProductIndex = function (name) { 
             for (var i = 0; i < this.length; i++) { 
-                if (this<a href='https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:"' target='_blank' rel='nofollow'>i][1] === name) { 
+                if (this[i][1] === name) { 
                     return i; 
                 } 
             } 
@@ -106,8 +106,7 @@ Retorne o inventário completo em ordem alfabética.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLok/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   O **índice** variável armazena a localização (índice) de um produto.
@@ -133,7 +132,7 @@ Retorne o inventário completo em ordem alfabética.
       // All inventory must be accounted for or you're fired! 
  
       var index; 
-      var arrCurInvName = <a href='https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:"' target='_blank' rel='nofollow'>]; // Names of arr1's items 
+      var arrCurInvName = []; // Names of arr1's items 
       var arrNeInvName = []; // Names of arr2's items 
  
       // Same as using two for loops, this takes care of increasing the number of stock quantity. 
@@ -192,8 +191,7 @@ Retorne o inventário completo em ordem alfabética.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLol/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   O **índice** variável armazena a localização (índice) de um produto.
@@ -268,8 +266,7 @@ Retorne o inventário completo em ordem alfabética.
     updateInventory(curInv, newInv); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/MQvv/latest)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   Converta a matriz de inventário atual **arr1** em uma matriz unidimensional para que o método `indexOf()` possa ser usado para verificar a existência de novos itens de entrega no estoque atual.

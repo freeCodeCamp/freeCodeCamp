@@ -2,34 +2,42 @@
 title: Hash join
 id: 5956795bc9e2c415eb244de1
 challengeType: 5
+forumTopicId: 302284
 ---
 
 ## Description
 <section id='description'>
-<p>An <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_(SQL)#Inner_join">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Nested loop join">nested loop join</a> algorithm, but a more scalable alternative is the <a href="https://en.wikipedia.org/wiki/hash join" title="wp: hash join">hash join</a> algorithm.</p>
-<p>Implement the "hash join" algorithm, and demonstrate that it passes the test-case listed below.</p><p>You should represent the tables as data structures that feel natural in your programming language.</p>
-<p>The "hash join" algorithm consists of two steps:</p>
-Hash phase: Create a <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap">multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.
- The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.
- Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.
-Join phase: Scan the other table, and find matching rows by looking in the multimap created before.
-<p>In pseudo-code, the algorithm could be expressed as follows:</p>
+An <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_(SQL)#Inner_join" target="_blank">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Nested loop join" target="_blank">nested loop join</a> algorithm, but a more scalable alternative is the <a href="https://en.wikipedia.org/wiki/hash join" title="wp: hash join" target="_blank">hash join</a> algorithm.
+The "hash join" algorithm consists of two steps:
+<ol>
+  <li><strong>Hash phase:</strong> Create a <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap" target="_blank">multimap</a> from one of the two tables, mapping from each join column value to all the rows that contain it.</li>
+  <ul>
+    <li>The multimap must support hash-based lookup which scales better than a simple linear search, because that's the whole point of this algorithm.</li>
+    <li>Ideally we should create the multimap for the smaller table, thus minimizing its creation time and memory size.</li>
+  </ul>
+  <li><strong>Join phase:</strong> Scan the other table, and find matching rows by looking in the multimap created before.</li>
+</ol>
+In pseudo-code, the algorithm could be expressed as follows:
 <pre>
-let A = the first input table (or ideally, the larger one)
-let B = the second input table (or ideally, the smaller one)
-let j<sub>A</sub> = the join column ID of table A
-let j<sub>B</sub> = the join column ID of table B
-let M<sub>B</sub> = a multimap for mapping from single values to multiple rows of table B (starts out empty)
-let C = the output table (starts out empty)
-for each row b in table B:
-  place b in multimap M<sub>B</sub> under key b(j<sub>B</sub>)
-for each row a in table A:
-  for each row b in multimap M<sub>B</sub> under key a(j<sub>A</sub>):
-    let c = the concatenation of row a and row b
-    place row c in table C</p>
+<strong>let</strong> <i>A</i> = the first input table (or ideally, the larger one)
+<strong>let</strong> <i>B</i> = the second input table (or ideally, the smaller one)
+<strong>let</strong> <i>j<sub>A</sub></i> = the join column ID of table <i>A</i>
+<strong>let</strong> <i>j<sub>B</sub></i> = the join column ID of table <i>B</i>
+<strong>let</strong> <i>M<sub>B</sub></i> = a multimap for mapping from single values to multiple rows of table <i>B</i> (starts out empty)
+<strong>let</strong> <i>C</i> = the output table (starts out empty)
+<strong>for each</strong> row <i>b</i> in table <i>B</i>:
+  <strong>place</strong> <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>b(j<sub>B</sub>)</i>
+<strong>for each</strong> row <i>a</i> in table <i>A</i>:
+  <strong>for each</strong> row <i>b</i> in multimap <i>M<sub>B</sub></i> under key <i>a(j<sub>A</sub>)</i>:
+    <strong>let</strong> <i>c</i> = the concatenation of row <i>a</i> and row <i>b</i>
+    <strong>place</strong> row <i>c</i> in table <i>C</i>
 </pre>
-Test-case
-<p>Input</p>
+</section>
+
+## Instructions
+<section id='instructions'>
+Implement the "hash join" algorithm as a function and demonstrate that it passes the test-case listed below. The function should accept two arrays of objects and return an array of combined objects.
+<h4><strong>Input</strong></h4>
 <table>
 <tr>
 <td style="padding: 4px; margin: 5px;">
@@ -107,13 +115,13 @@ Test-case
 </td>
 <td style="padding: 4px; margin: 5px;">
 </td></tr></table>
-<p>Output</p>
+<h4><strong>Output</strong></h4>
 <table>
 <tr>
-<th style="padding: 4px; margin: 5px;"> A.Age </th>
-<th style="padding: 4px; margin: 5px;"> A.Name </th>
-<th style="padding: 4px; margin: 5px;"> B.Character </th>
-<th style="padding: 4px; margin: 5px;"> B.Nemesis
+<th style="padding: 4px; margin: 5px;"> A_age </th>
+<th style="padding: 4px; margin: 5px;"> A_name </th>
+<th style="padding: 4px; margin: 5px;"> B_character </th>
+<th style="padding: 4px; margin: 5px;"> B_nemesis
 </th></tr>
 <tr>
 <td style="padding: 4px; margin: 5px;"> 27 </td>
@@ -157,13 +165,7 @@ Test-case
 <td style="padding: 4px; margin: 5px;"> Alan </td>
 <td style="padding: 4px; margin: 5px;"> Zombies
 </td></tr></table>
-<p></p><p></p><p>The order of the rows in the output table is not significant.</p>
-<p>If you're using numerically indexed arrays to represent table rows (rather than referring to columns by name), you could represent the output rows in the form <code style="white-space:nowrap">[[27, "Jonah"], ["Jonah", "Whales"]]</code>.</p><hr>
-</section>
-
-## Instructions
-<section id='instructions'>
-
+The order of the rows in the output table is not significant.
 </section>
 
 ## Tests
@@ -172,9 +174,9 @@ Test-case
 ```yml
 tests:
   - text: <code>hashJoin</code> is a function.
-    testString: assert(typeof hashJoin === 'function', '<code>hashJoin</code> is a function.');
+    testString: assert(typeof hashJoin === 'function');
   - text: '<code>hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])</code> should return <code>[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]</code>'
-    testString: 'assert.deepEqual(hashJoin(hash1, hash2), res, ''<code>hashJoin([{ age: 27, name: "Jonah" }, { age: 18, name: "Alan" }, { age: 28, name: "Glory" }, { age: 18, name: "Popeye" }, { age: 28, name: "Alan" }], [{ character: "Jonah", nemesis: "Whales" }, { character: "Jonah", nemesis: "Spiders" }, { character: "Alan", nemesis: "Ghosts" }, { character:"Alan", nemesis: "Zombies" }, { character: "Glory", nemesis: "Buffy" }, { character: "Bob", nemesis: "foo" }])</code> should return <code>[{"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Whales"}, {"A_age": 27,"A_name": "Jonah", "B_character": "Jonah", "B_nemesis": "Spiders"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 18,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}, {"A_age": 28,"A_name": "Glory", "B_character": "Glory", "B_nemesis": "Buffy"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Ghosts"}, {"A_age": 28,"A_name": "Alan", "B_character": "Alan", "B_nemesis": "Zombies"}]</code>'');'
+    testString: assert.deepEqual(hashJoin(hash1, hash2), res);
 
 ```
 
@@ -186,7 +188,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function hashJoin (hash1, hash2) {
+function hashJoin(hash1, hash2) {
   // Good luck!
   return [];
 }
@@ -239,7 +241,7 @@ const bench2 = [{ friend: 'o8b', num: 8 }, { friend: 'ye', num: 2 }, { friend: '
 
 
 ```js
-function hashJoin (hash1, hash2) {
+function hashJoin(hash1, hash2) {
   const hJoin = (tblA, tblB, strJoin) => {
     const [jA, jB] = strJoin.split('=');
     const M = tblB.reduce((a, x) => {

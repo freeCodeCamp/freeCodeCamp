@@ -1,7 +1,7 @@
 ---
 title: Use the strong Tag to Make Text Bold
 ---
-## Use the strong Tag to Make Text Bold
+# Use the strong Tag to Make Text Bold
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/use-the-strong-tag-to-make-text-bold/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

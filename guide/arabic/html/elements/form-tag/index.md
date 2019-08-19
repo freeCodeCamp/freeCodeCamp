@@ -8,13 +8,13 @@ localeTitle: علامة النموذج
 
 فيما يلي مثال أساسي لكيفية استخدام علامة `<form>` :
 
- `
-<form action="/example.php" method="get"> 
- Name: <input type="text"><br> 
- Email Address: <input type="text"><br> 
- <input type="submit" value="Submit"> 
- </form> 
-` 
+```html
+<form action="/example.php" method="get">
+Name: <input type="text"><br>
+Email Address: <input type="text"><br>
+<input type="submit" value="Submit">
+</form>
+``` 
 
 ### سمة العمل
 
@@ -22,11 +22,11 @@ localeTitle: علامة النموذج
 
 في ما يلي مثال على استخدام سمة الإجراء:
 
- `
-<form action="http://www.google.com/form.php" method="get"> 
- <p>Controls will appear inside here.</p> 
- </form> 
-` 
+```html
+<form action="http://www.google.com/form.php" method="get">
+<p>Controls will appear inside here.</p>
+</form>
+``` 
 
 كما ترى ، يرسل النموذج بياناته إلى عنوان URL [http://www.google.com/from.php](http://www.google.com/from.php) .
 

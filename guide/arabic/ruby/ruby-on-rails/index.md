@@ -10,8 +10,9 @@ localeTitle: روبي على القضبان
 
 يتم تنزيل القضبان بنفس الطريقة مثل أي جوهرة روبي أخرى: باستخدام الأمر `gem install` . قبل تنزيله ، سنحتاج إلى [تنزيل Ruby](https://www.ruby-lang.org) . بعد ذلك ، نحن على بعد 3 كلمات فقط من بداية روبي أون ريلز:
 
- `$ gem install rails 
-` 
+```shell
+$ gem install rails
+``` 
 
 ## إعداد قاعدة البيانات
 
@@ -21,31 +22,36 @@ localeTitle: روبي على القضبان
 
 1.  بعد تثبيت Ruby on Rails ، من السهل جدًا إنشاء تطبيق جديد تمامًا ، سنحتاج إلى 3 كلمات أخرى:
 
- `$ rails new your_application_name 
-` 
+```shell
+$ rails new your_application_name
+``` 
 
 *   إذا كنت ترغب في استخدام MySQL `shell $ rails new <application_name> -d mysql`
 *   إذا كنت ترغب في استخدام بوستجرس `shell $ rails new <application_name> -d postgresql`
 
 1.  سيقوم هذا الأمر بإنشاء مجلد _باسم _التطبيق_ الخاص بك_ الذي أبلغته في الأمر الأخير. الخطوة التالية هي الانتقال إلى الدليل الجديد الذي أنشأته للتو:
 
- `$ cd your_application_name 
-` 
+```shell
+$ cd your_application_name
+``` 
 
 3.  احصل على الجواهر والحزم اللازمة قبل تشغيل التطبيق الخاص بك:
 
- `$ bundle install 
-` 
+```shell
+$ bundle install
+``` 
 
 4.  لتشغيل خادم سكك الحديد ومعرفة ما إذا كان كل شيء يسير على هذا النحو سريعًا أيضًا:
 
- `$ rails server 
-` 
+```shell
+$ rails server
+``` 
 
 لا يمكن أن يكون الأمر بسيطا بعد الآن! حسنًا ، هذا ليس صحيحًا بنسبة 100٪ ، يمكننا جعله أصغر من خلال تقليل أمر `rails server` إلى:
 
- `$ rails s 
-` 
+```shell
+$ rails s
+``` 
 
 5.  الآن ، مع المتصفح المفضل لديك ، انتقل إلى `http://localhost:3000` وستشاهد: "Yay! أنت على القضبان!"
 

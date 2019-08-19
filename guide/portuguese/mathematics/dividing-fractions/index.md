@@ -10,8 +10,8 @@ Considere a expressão A ÷ B, aqui A é chamado de _dividendo_ e B é chamado d
 
 Aqui estão os passos para dividir duas frações,
 
-1.  Tome o recíproco da fração do divisor (B).
-2.  Multiplique a fração de dividendo (A) com a recíproca da fração do divisor
+1.  Inverta a fração do divisor (B).
+2.  Multiplique a fração de dividendo (A) com a fração do divisor invertida
 3.  Simplifique a fração resultante, se possível
 
 #### Exemplos
@@ -20,9 +20,9 @@ Aqui estão os passos para dividir duas frações,
 
  2 ⁄ 3 ÷ 6 ⁄ 7 
 
-1.  Tome o recíproco do divisor. Para obter uma recíproca de uma fração, troque o numerador e o denominador dessa fração. O recíproco de 6 ⁄ 7 é 7 ⁄ 6
+1.  Inverta a fração do divisor (B), para obter uma fração invertida, troque o numerador e o denominador dessa fração. O inverso de 6 ⁄ 7 é 7 ⁄ 6
     
-2.  Multiplique o dividendo com o recíproco do divisor
+2.  Multiplique o dividendo com o divisor invertido
     
 
  2 ⁄ 3 ÷ 6 ⁄ 7 = 2 ⁄ 3 × 7 ⁄ 6 = 7 ⁄ 9 

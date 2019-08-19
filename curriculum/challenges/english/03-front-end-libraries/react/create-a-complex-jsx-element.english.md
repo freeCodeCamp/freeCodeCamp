@@ -3,6 +3,7 @@ id: 5a24bbe0dba28a8d3cbd4c5d
 title: Create a Complex JSX Element
 challengeType: 6
 isRequired: false
+forumTopicId: 301382
 ---
 
 ## Description
@@ -13,9 +14,23 @@ This one parent element would wrap all of the other levels of nested elements.
 For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.
 Here's an example:
 <b>Valid JSX:</b>
-<blockquote>&lt;div&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph Three&lt;/p&gt;<br>&lt;/div&gt;</blockquote>
+
+```jsx
+<div>
+  <p>Paragraph One</p>
+  <p>Paragraph Two</p>
+  <p>Paragraph Three</p>
+</div>
+```
+
 <b>Invalid JSX:</b>
-<blockquote>&lt;p&gt;Paragraph One&lt;/p&gt;<br>&lt;p&gt;Paragraph Two&lt;/p&gt;<br>&lt;p&gt;Paragraph Three&lt;/p&gt;<br></blockquote>
+
+```jsx
+<p>Paragraph One</p>
+<p>Paragraph Two</p>
+<p>Paragraph Three</p>
+```
+
 </section>
 
 ## Instructions
@@ -31,15 +46,15 @@ An <code>h1</code>, a <code>p</code>, and an unordered list that contains three 
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: assert(JSX.type === 'div', 'The constant <code>JSX</code> should return a <code>div</code> element.');
-  - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
-    testString: assert(JSX.props.children[1].type === 'p', 'The <code>div</code> should contain a <code>p</code> tag as the second element.');
-  - text: The <code>div</code> should contain a <code>ul</code> tag as the third element.
-    testString: assert(JSX.props.children[2].type === 'ul', 'The <code>div</code> should contain a <code>ul</code> tag as the third element.');
+    testString: assert(JSX.type === 'div');
   - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
-    testString: assert(JSX.props.children[0].type === 'h1', 'The <code>div</code> should contain an <code>h1</code> tag as the first element.');
+    testString: assert(JSX.props.children[0].type === 'h1');
+  - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
+    testString: assert(JSX.props.children[1].type === 'p');
+  - text: The <code>div</code> should contain a <code>ul</code> tag as the third element.
+    testString: assert(JSX.props.children[2].type === 'ul');
   - text: The <code>ul</code> should contain three <code>li</code> elements.
-    testString: assert(JSX.props.children[2].props.children.length === 3, 'The <code>ul</code> should contain three <code>li</code> elements.');
+    testString: assert(JSX.props.children.filter(ele => ele.type === 'ul')[0].props.children.filter(ele => ele.type === 'li').length === 3);
 
 ```
 
