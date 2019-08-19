@@ -123,7 +123,7 @@ export const completedChallengesSelector = state =>
 export const completionCountSelector = state => state[ns].completionCount;
 export const currentChallengeIdSelector = state =>
   userSelector(state).currentChallengeId || '';
-  export const donationRequestedSelector = state => state[ns].donationRequested;
+export const donationRequestedSelector = state => state[ns].donationRequested;
 
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
