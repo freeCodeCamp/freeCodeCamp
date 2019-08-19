@@ -24,7 +24,21 @@ exports.createRedirects = function createRedirects(locations) {
 /* eslint-disable max-len */
 const template = `#api redirect
 
+# client-route proxy
 /internal/*                                   #{{API}}/internal/:splat 200
+
+# applications
+/news/*                                       #{{NEWS}}/:splat 200
+/forum/*                                      #{{FORUM}}/:splat 200
+
+# pages
+/about                                        #{{NEWS}}/about
+/terms-of-service                             #{{NEWS}}/terms-of-service
+/terms                                        #{{NEWS}}/terms-of-service
+/academic-honesty                             #{{NEWS}}/academic-honesty
+/code-of-conduct                              #{{NEWS}}/code-of-conduct
+/privacy-policy                               #{{NEWS}}/privacy-policy
+/privacy                                      #{{NEWS}}/privacy-policy
 
 # auth redirects
 /signin                                       #{{API}}/signin 200
@@ -51,19 +65,17 @@ const template = `#api redirect
 /chat                                         https://gitter.im/FreeCodeCamp/FreeCodeCamp 301
 /twitch                                       https://twitch.tv/freecodecamp 301
 /nonprofits-form                              / 301
+/nonprofits                                   / 301
+/Nonprofits                                   / 301
 /pmi-acp-agile-project-managers               / 301
 /pmi-acp-agile-project-managers-form          / 301
 /stories                                      / 301
 /all-stories                                  / 301
-/field-guide/*                                /forum 301
-/learn-to-code                                /learn 200
+/field-guide/*                                / 301
+/learn-to-code                                /learn 301
 /map                                          /learn 200
-/news                                         #{{NEWS}} 200
-/news/*                                       #{{NEWS}}/:splat 200
-/forum/*                                      #{{FORUM}}/:splat 200
-/privacy                                      #{{FORUM}}/t/free-code-camp-privacy-policy/19545 301
-/nonprofit-project-instructions               #{{FORUM}}/t/how-free-code-camps-nonprofits-projects-work/19547 301
-/how-nonprofit-projects-work                  https://www.freecodecamp.org/news/open-source-for-good-1a0ea9f32d5a 301
+/nonprofit-project-instructions               / 301
+/how-nonprofit-projects-work                  / 301
 
 `;
 /* eslint-enable max-len */
