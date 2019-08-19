@@ -1,24 +1,9 @@
-.challenge-instructions {
-  font-size: 16px;
-}
-
-.challenge-instructions blockquote,
-.challenge-instructions pre {
-  background-color: #eee;
-  color: #c7254e;
-  padding: 10px 10px 10px 15px;
+.challenge-instructions blockquote {
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  padding: 10px;
   width: 100%;
   margin: 0;
   margin-bottom: 1.45rem;
-  font-family: monospace;
-  font-size: 16px;
-  border: none;
-}
-
-.challenge-instructions pre code {
-  line-height: 1.42;
-  text-shadow: none;
-  font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
-    'Liberation Mono', Menlo, Courier, monospace;
-  color: #c7254e;
+  font-size: 0.9rem;
 }

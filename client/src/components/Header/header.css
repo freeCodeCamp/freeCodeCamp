@@ -1,7 +1,3 @@
-:root {
-  --header-height: 38px;
-}
-
 header {
   top: 0;
   position: fixed;
@@ -10,7 +6,7 @@ header {
 }
 
 #top-nav {
-  background: #006400;
+  background: var(--theme-color);
   height: var(--header-height);
   margin-bottom: 0;
   border-radius: 0;
@@ -24,6 +20,10 @@ header {
 #top-nav .home-link {
   display: flex;
   align-items: center;
+}
+
+#top-nav .home-link:hover {
+  background-color: var(--theme-color);
 }
 
 /* Navbar logo */
