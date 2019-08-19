@@ -89,11 +89,13 @@ function Welcome({
         <title>Welcome | freeCodeCamp.org</title>
       </Helmet>
       <main>
-        <Grid className='text-center'>
+        <Grid>
           <Row>
             <Col xs={12}>
               <Spacer />
-              <h1 className='big-heading'>Welcome {name ? name : 'Camper'}!</h1>
+              <h1 className='big-heading text-center'>
+                Welcome {name ? name : 'Camper'}!
+              </h1>
             </Col>
           </Row>
           <Spacer />

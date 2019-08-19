@@ -15,6 +15,7 @@ import { createIdToNameMapSaga } from './id-to-name-map-saga';
 import { createExecuteChallengeSaga } from './execute-challenge-saga';
 import { createCurrentChallengeSaga } from './current-challenge-saga';
 import { challengeTypes } from '../../../../utils/challengeTypes';
+import { userSelector } from '../../../redux';
 
 export const ns = 'challenge';
 export const backendNS = 'backendChallenge';
@@ -182,6 +183,7 @@ export const projectFormValuesSelector = state =>
   state[ns].projectFormValues || {};
 
 export const challengeDataSelector = state => {
+  const { theme } = userSelector(state);
   const { challengeType } = challengeMetaSelector(state);
   let challengeData = { challengeType };
   if (
@@ -223,6 +225,7 @@ export const challengeDataSelector = state => {
       template
     };
   }
+  challengeData.theme = theme;
   return challengeData;
 };
 

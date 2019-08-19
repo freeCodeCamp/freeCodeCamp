@@ -1,32 +1,29 @@
 .toggle-active.btn[disabled] {
-  background-color: #006400;
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
   opacity: 1;
 }
 
-.night .toggle-active {
-  color: #ddd;
-}
-
-.toggle-not-active.btn-primary.active {
-  background-color: #006400;
-}
-
 .toggle-not-active {
-  background-color: #ffffff;
-  color: rgb(0, 49, 0);
+  background-color: var(--quaternary-background);
+  color: var(--secondary-color);
 }
-
-.night .toggle-not-active {
-  background-color: #dedede;
-  color: #333;
+.toggle-not-active:hover {
+  color: var(--secondary-background);
 }
 
 .toggle-not-active:hover,
 .toggle-not-active:focus {
-  background-color: #006400;
+  background-color: var(--secondary-color);
 }
 
-.night .toggle-not-active:hover,
-.night .toggle-not-active:focus {
-  color: #ddd;
+.btn .toggle-not-active,
+.btn .toggle-active {
+  border-color: var(--secondary-color);
+}
+
+.btn-group .btn-primary,
+.btn-group .btn-primary:focus,
+.btn-group .btn-primary:hover {
+  border-color: var(--secondary-color);
 }

@@ -14,9 +14,9 @@ function Initial(props) {
         <circle
           cx='100'
           cy='99'
-          fill='#555'
+          fill='#858591'
           r='95'
-          stroke='#555'
+          stroke='#858591'
           strokeDasharray='null'
           strokeLinecap='null'
           strokeLinejoin='null'
