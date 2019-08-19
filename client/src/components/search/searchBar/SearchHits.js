@@ -37,6 +37,7 @@ const CustomHits = connectHits(({ hits, currentRefinement, handleSubmit }) => {
 });
 
 const SearchHits = connectStateResults(({ handleSubmit, searchState }) => {
+  console.log(searchState);
   return isEmpty(searchState) || !searchState.query ? null : (
     <CustomHits
       currentRefinement={searchState.query}

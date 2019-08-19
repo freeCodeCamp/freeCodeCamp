@@ -22,12 +22,16 @@ import { isEmpty } from 'lodash';
 // };
 
 const Suggestion = ({ handleSubmit, hit }) => {
+  // console.log(hit);
   return isEmpty(hit) || isEmpty(hit.objectID) ? null : (
     <a
       className='fcc_suggestion_item'
       // href='/search'
       href={hit.url}
-      onClick={e => handleSubmit(e, hit.query)}
+      // onClick={e => handleSubmit(e, hit.query)}
+      onClick={e =>
+        hit.objectID.includes('default-hit-') ? handleSubmit(e, hit.query) : ''
+      }
     >
       <span className='hit-name'>
         {hit.objectID.includes('default-hit-') ? (

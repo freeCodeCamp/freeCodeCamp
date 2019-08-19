@@ -15,7 +15,7 @@ import {
 
 import { createSelector } from 'reselect';
 
-const DEBOUNCE_TIME = 100;
+const DEBOUNCE_TIME = 50;
 
 const propTypes = {
   children: PropTypes.any,
@@ -124,7 +124,7 @@ class InstantSearchRoot extends Component {
         onSearchStateChange={this.onSearchStateChange}
         searchState={{ query }}
       >
-        <Configure hitsPerPage={15} />
+        <Configure hitsPerPage={50} />
         {this.props.children}
       </InstantSearch>
     );
