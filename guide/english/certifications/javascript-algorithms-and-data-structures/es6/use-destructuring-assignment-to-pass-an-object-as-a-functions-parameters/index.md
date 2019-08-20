@@ -6,7 +6,7 @@ title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 ---
 ## Problem Explanation
 
-You could pass the entire object, and then pick the specific attributes you want by using the `.` operator. But ES6 offers a more elegant option!
+You could pass the entire object and then pick the specific attributes you want by using the `.` operator, but ES6 offers a more elegant option!
 
 
 ---
@@ -14,7 +14,7 @@ You could pass the entire object, and then pick the specific attributes you want
 
 ### Hint 1
 
-Get rid of the `stats`, and see if you can destructure it. We need the `max` and `min` of `stats`.
+Get rid of the `stats` and see if you can destructure it. We need the `max` and `min` of `stats`.
 
 
 
