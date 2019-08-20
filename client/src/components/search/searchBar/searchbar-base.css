@@ -420,9 +420,6 @@ a[class^='ais-'] {
   margin-left: 1rem;
   padding: 1rem;
   width: calc(25% - 1rem);
-  border: 1px solid #c4c8d8;
-  -webkit-box-shadow: 0 2px 5px 0px #e3e5ec;
-  box-shadow: 0 2px 5px 0px #e3e5ec;
 }
 .ais-Panel-body .ais-InfiniteHits-item,
 .ais-Panel-body .ais-InfiniteResults-item,
@@ -646,8 +643,9 @@ a[class^='ais-'] {
   transform: translateX(-50%) translateY(-50%);
 }
 .ais-SearchBox-submitIcon path,
-.ais-SearchBox-resetIcon path {
-  fill: #495588;
+.ais-SearchBox-resetIcon path,
+.ais-SearchBox-loadingIndicator > g > g > path {
+  fill: var(--quaternary-color);
 }
 .ais-SearchBox-submitIcon {
   width: 14px;
@@ -667,7 +665,7 @@ a[class^='ais-'] {
   font-size: 14px;
 }
 .ais-SearchBox-submitIcon > path {
-  fill: #006400;
+  fill: var(--quaternary-color);
 }
 .ais-Hits {
   position: absolute;
@@ -679,17 +677,12 @@ a[class^='ais-'] {
   margin: 0;
   padding: 0;
   border: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
 .ais-Hits-list {
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #c4c8d8;
-  -webkit-box-shadow: 0 2px 5px 0px #e3e5ec;
-  box-shadow: 0 2px 5px 0px #e3e5ec;
 }
 strong.ais-Highlight-highlighted {
   background-color: transparent;

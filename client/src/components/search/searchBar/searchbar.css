@@ -59,14 +59,13 @@
 .fcc_suggestion_item {
   display: block;
   padding: 1rem;
-  color: #333;
+  color: var(--secondary-color);
 }
 .fcc_suggestion_item [class^='ais-'] {
   font-size: 17px;
 }
 .fcc_suggestion_item:hover {
-  background-color: rgba(0, 100, 0, 0.4);
-  color: white;
+  background-color: var(--highlight-background);
   cursor: pointer;
 }
 .fcc_sr_only {
