@@ -6,7 +6,7 @@ import { homeLocation } from '../../../config/env';
 
 import { unwrapHandledError } from '../utils/create-handled-error.js';
 
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 
 export default function prodErrorHandler() {
   // error handling in production.
