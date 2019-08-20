@@ -49,6 +49,7 @@ export const types = createTypes(
   [
     'appMount',
     'closeDonationModal',
+    'donationRequested',
     'hardGoTo',
     'openDonationModal',
     'onlineStatusChange',
@@ -80,6 +81,7 @@ export const appMount = createAction(types.appMount);
 
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
+export const donationRequested = createAction(types.donationRequested);
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
@@ -263,7 +265,10 @@ export const reducer = handleActions(
     }),
     [types.openDonationModal]: state => ({
       ...state,
-      showDonationModal: true,
+      showDonationModal: true
+    }),
+    [types.donationRequested]: state => ({
+      ...state,
       donationRequested: true
     }),
     [types.resetUserData]: state => ({
