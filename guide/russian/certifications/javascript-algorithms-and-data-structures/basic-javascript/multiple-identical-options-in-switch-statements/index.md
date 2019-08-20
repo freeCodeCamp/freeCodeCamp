@@ -85,7 +85,6 @@ function sequentialSizes(val) {
  sequentialSizes(1); 
 ```
 
-· Запустить код в [repl.it.](https://repl.it/@AdrianSkar/Basic-JS-Multiple-opts-in-switch)
 
 ### Обозначение кода
 

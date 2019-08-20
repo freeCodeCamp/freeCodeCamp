@@ -1,7 +1,7 @@
 ---
 title: Map Data Across the Globe
 ---
-## Map Data Across the Globe
+# Map Data Across the Globe
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/take-home-projects/map-data-across-the-globe/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

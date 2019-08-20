@@ -14,5 +14,6 @@ localeTitle: إضافة صفوف مع صفوف قالب الشبكة
 
 نظرًا لأن التحدي يتطلب منك إنشاء صفين من `50px` لكل منهما ، `.container` بتعريف المتابعة في كتلة التعليمة البرمجية الخاصة بـ `.container` CSS:
 
- `grid-template-rows: 50px 50px; 
-`
+```css
+grid-template-rows: 50px 50px;
+```

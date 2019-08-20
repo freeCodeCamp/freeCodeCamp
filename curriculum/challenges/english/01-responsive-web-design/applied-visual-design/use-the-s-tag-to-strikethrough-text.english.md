@@ -3,6 +3,7 @@ id: 587d781b367417b2b2512aba
 title: Use the s Tag to Strikethrough Text
 challengeType: 0
 videoUrl: ''
+forumTopicId: 301079
 ---
 
 ## Description
@@ -21,11 +22,11 @@ Wrap the <code>s</code> tag around "Google" inside the <code>h4</code> tag and t
 ```yml
 tests:
   - text: Your code should add one <code>s</code> tag to the markup.
-    testString: assert($('s').length == 1, 'Your code should add one <code>s</code> tag to the markup.');
+    testString: assert($('s').length == 1);
   - text: A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.
-    testString: assert($('s').text().match(/Google/gi) && !$('s').text().match(/Alphabet/gi), 'A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');
+    testString: assert($('h4 > s').text().match(/Google/gi) && !$('h4 > s').text().match(/Alphabet/gi));
   - text: Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.
-    testString: assert($('h4').html().match(/Alphabet/gi), 'Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.');
+    testString: assert($('h4').html().match(/Alphabet/gi));
 
 ```
 
@@ -87,7 +88,7 @@ tests:
 <section id='solution'>
 
 ```html
- <style>
+<style>
   h4 {
     text-align: center;
     height: 25px;
@@ -126,4 +127,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>

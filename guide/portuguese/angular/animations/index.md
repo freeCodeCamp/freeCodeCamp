@@ -8,33 +8,33 @@ localeTitle: Animações
 
 Os componentes da web modernos usam frequentemente animações. Folhas de estilo em cascata (CSS) armam os desenvolvedores com as ferramentas para criar animações impressionantes. Transições de propriedades, animações nomeadas com exclusividade, quadros-chave de várias partes são possíveis com CSS. As possibilidades animables são infinitas graças ao CSS.
 
-Em uma aplicação web moderna, a animação foca a atenção do usuário. Boas animações procuram orientar a atenção do usuário de maneira satisfatória e produtiva. Animações não devem ser irritantes para o usuário.
+Em uma aplicação web moderna, a animação foca a atenção do usuário. Boas animações buscam orientar a atenção do usuário de maneira satisfatória e produtiva. Animações não devem ser irritantes para o usuário.
 
-Animações oferecem feedback na forma de movimento. Eles mostram ao usuário que o aplicativo está manipulando ativamente suas solicitações. Algo tão simples quanto um botão de pressão visível ou um carregador quando o aplicativo deve carregar chama a atenção do usuário.
+Animações oferecem feedback na forma de movimento. Elas mostram ao usuário que a aplicação está ativamente cuidando das suas requisições. Algo tão simples quanto um clique visivel á um botão ou um _loading_ quando a aplicação está carregando chamam a atenção do usuário.
 
-Animações continuam a crescer mais e mais relevantes no caso de Angular. O Google desenvolve o Angular enquanto promove a filosofia de Design de Materiais. Ele incentiva interfaces de usuário concisas (UI) complementadas com feedback animado do usuário. Faz com que os aplicativos da web se sintam um tanto vivos e divertidos de usar.
+Animações continuam a crescer mais e mais relevantes no caso de Angular. O Google desenvolve o Angular enquanto promove a filosofia do _Material Design_. Ele incentiva interfaces de usuário (UI) concisas complementadas com animações para feedback do usuário. Faz com que as aplicações web pareçam de certa forma vivas e mais legais de serem usadas.
 
-A comunidade Angular desenvolve uma biblioteca central de widgets chamada [Material2](https://github.com/angular/material2) . Este projeto adiciona uma variedade de módulos de widgets ao Angular. A maioria deles apresenta animações. Para entender como eles funcionam, este artigo recomenda estudar as animações CSS antes de continuar lendo.
+A comunidade Angular desenvolve uma biblioteca central de _widgets_ chamada [Material2](https://github.com/angular/material2). Este projeto adiciona uma variedade de módulos de _widgets_ ao Angular e a maioria deles apresenta animações. Para entender como eles funcionam, este artigo recomenda estudar as animações CSS antes de continuar lendo.
 
-Animações angulares é a versão simplificada do framework do que o CSS fornece nativamente. CSS é a tecnologia central para animações angulares que ocorrem no navegador da web. CSS está além do escopo deste artigo. É hora de enfrentar animações angulares de frente.
+_Angular animations_ é um framework que fornece uma versão simplificada do que o CSS fornece nativamente. CSS é a tecnologia central para as animações Angular que ocorrem no _browser_. CSS está além do escopo deste artigo, é hora de encarar animações Angular de frente.
 
 #### Configurando animações
 
-Antes de animar, o `BrowserAnimationsModule` deve incluir na matriz de importações do módulo raiz. Está disponível em `@angular/platform-browser/animations` . Este NgModule garante que as animações funcionem para a plataforma em questão. Este artigo pressupõe o navegador da Web padrão para cada exemplo.
+Antes de animar, o `BrowserAnimationsModule`, que está disponível em `@angular/platform-browser/animations`, deve ser incluído no _array_ de _imports_ do módulo raiz. Este NgModule garante que as animações funcionem para a plataforma em questão. Este artigo pressupõe o navegador da Web padrão para cada exemplo.
 
-As animações angulares são declaradas nos metadados do `@Component` . `@Component` decora uma classe para distingui-la como um componente para Angular. Seus metadados contêm configurações de componentes, incluindo o campo `animations: []` . Cada elemento da matriz deste campo representa um acionador de animação ( `AnimationTriggerMetadata` ).
+As animações Angular são declaradas nos metadados do `@Component`. `@Component` decora uma classe para distingui-la como um componente para Angular. Seus metadados contêm configurações de componentes, incluindo o campo `animations: []`. Cada elemento da _array_ deste campo representa um acionador de animação ( `AnimationTriggerMetadata` ).
 
-As animações são exclusivas de seu componente host por meio dos metadados do decorador. Animações só podem ser usadas no modelo do componente host. As animações não herdam os filhos do componente. Existe uma solução fácil para isso.
+As animações são exclusivas de seu componente _host_ por meio dos metadados do decorador. Animações só podem ser usadas no modelo do componente _host_. As animações não herdam os filhos do componente. Existe uma solução fácil para isso.
 
-Você sempre pode criar um arquivo separado que exporte uma matriz. Qualquer classe de componente pode importar essa matriz da parte superior de seu arquivo host. O token de matriz importado, em seguida, entra nos metadados de animações do componente. Repita este processo para quaisquer outros componentes que requeiram o mesmo array em seus metadados de animações.
+Você sempre pode criar um arquivo separado que exporte um _array_. Qualquer classe de componente pode importar esse _array_ da parte superior de seu arquivo _host_. O token de _array_ importado, em seguida, entra nos metadados de animações do componente. Repita este processo para quaisquer outros componentes que requeiram o mesmo _array_ em seus metadados de animações.
 
-A projeção de conteúdo permite aplicar animações ao conteúdo DOM do componente A (Document Object Model). Componente B que envolve este conteúdo O DOM pode projetar o conteúdo em seu próprio modelo. Quando isso acontece, as animações do componente A não negam. O componente B incorpora as animações de A através da projeção de conteúdo.
+A projeção de conteúdo permite aplicar animações ao conteúdo DOM do componente A (Document Object Model). Componente B que envolve este conteúdo da DOM pode projetar o conteúdo em seu próprio modelo. Quando isso acontece, as animações do componente A não negam. O componente B incorpora as animações de A através da projeção de conteúdo.
 
-ESTÁ BEM. Você sabe como configurar animações e onde declará-las. Implementação é o próximo passo.
+Ok, você sabe como configurar animações e onde declará-las. Implementação é o próximo passo.
 
 #### Métodos de Animação
 
-As animações angulares usam uma série de chamadas de método importáveis ​​de `@angular/animations` . Cada elemento da matriz de animações `@Component` começa como um único método. Seus argumentos são desvendados como uma sequência de chamadas de método de ordem superior. A lista a seguir mostra alguns dos métodos usados ​​para criar animações angulares.
+As animações Angular usam uma série de chamadas de método importáveis ​​de `@angular/animations` . Cada elemento da matriz de animações `@Component` começa como um único método. Seus argumentos são desvendados como uma sequência de chamadas de método de ordem superior. A lista a seguir mostra alguns dos métodos usados ​​para criar animações angulares.
 
 *   `trigger(selector: string, AnimationMetadata[])`
 
@@ -56,17 +56,17 @@ retorna `AnimationAnimateMetadata`
 
 retorna `AnimationTransitionMetadata`
 
-Embora existam certamente [mais métodos](https://angular.io/api/animations) para escolher, esses cinco métodos lidam com o básico. Tentar entender esses métodos básicos como uma lista não ajuda muito. Explicações bullet-by-bullet seguidas de um exemplo farão mais sentido.
+Embora existam certamente [mais métodos](https://angular.io/api/animations) para escolher, esses cinco métodos lidam com o básico. Tentar entender esses métodos básicos como uma lista não ajuda muito. Explicações _bullet-by-bullet_ seguidas de um exemplo farão mais sentido.
 
-##### gatilho (seletor: string, AnimationMetadata \[\])
+##### trigger (seletor: string, AnimationMetadata \[\])
 
-O método `trigger(...)` encapsula um único elemento de animação dentro do array de animações.
+O método `trigger(...)` encapsula um único elemento de animação dentro do _array_ de animações.
 
-O primeiro `selector: string` argumento do método `selector: string` corresponde ao atributo de membro `[@selector]` . Ele age como uma diretiva de atributo no modelo de componente. Essencialmente, conecta o elemento de animação ao modelo por meio de um seletor de atributos.
+O primeiro argumento do método (`selector: string`) corresponde ao atributo de membro `[@selector]` . Ele age como uma diretiva de atributo no modelo de componente. Essencialmente, conecta o elemento de animação ao modelo por meio de um seletor de atributos.
 
-O segundo argumento é um array contendo uma lista de métodos de animação aplicáveis. O `trigger(...)` mantém tudo em um único array.
+O segundo argumento é um _array_ contendo uma lista de métodos de animação aplicáveis. O `trigger(...)` mantém tudo em um único _array_.
 
-##### estado (data: string, AnimationStyleMetadata, opções ?: objeto)
+##### state (data: string, AnimationStyleMetadata, opções ?: objeto)
 
 O método `state(...)` define o estado final da animação. Aplica uma lista de propriedades CSS ao elemento de destino depois que uma animação é concluída. Isso é para que o CSS do elemento animado corresponda à resolução da animação.
 
@@ -74,13 +74,13 @@ O primeiro argumento corresponde ao valor dos dados ligados à ligação de anim
 
 O segundo argumento hospeda os estilos CSS que se aplicam a um elemento pós-animação. Os estilos são passados ​​invocando o `style(...)` e passando para o argumento os estilos desejados como um objeto.
 
-Uma lista de opções ocupa opcionalmente o terceiro argumento. As opções de `state(...)` padrão `state(...)` devem permanecer inalteradas, a menos que seja feito um raciocínio diferente.
+Uma lista de opções ocupa opcionalmente o terceiro argumento. As opções padrões de `state(...)` devem permanecer inalteradas, a menos que seja feito um raciocínio diferente.
 
 ##### style (CSSKeyValues: object)
 
-Você pode ter notado `AnimationStyleMetadata` várias vezes na lista anterior. O componente `style(...)` retorna esse tipo exato de metadados. Onde quer que estilos CSS se apliquem, o método `style(...)` deve invocar. Um objeto contendo estilos CSS substitui seu argumento.
+Você pode ter notado `AnimationStyleMetadata` várias vezes na lista anterior. O componente `style(...)` retorna esse tipo exato de metadados. Onde quer que estilos CSS se apliquem, o método `style(...)` deve ser invocado. Um objeto contendo estilos CSS substitui seu argumento.
 
-Obviamente, os estilos animados em CSS são transferidos para o método de `style(...)` angular `style(...)` . Concedido, nada impossível para o CSS torna-se de repente possível com animações angulares.
+Obviamente, os estilos animados em CSS são transferidos para o método de `style(...)`. Concedido, nada impossível para o CSS torna-se de repente possível com animações angulares.
 
 ##### animate (timing: string | number, AnimationStyleMetadata | AnimationKeyframesMetadata)
 
@@ -102,7 +102,7 @@ O segundo argumento de `transition(...)` compreende `AnimationMetadata` (retorna
 
 O valor do primeiro argumento corresponde ao valor dos dados ligados no modelo ( `[selector]="value"` ). Se uma correspondência perfeita ocorrer, o argumento será avaliado com sucesso. O segundo argumento então inicia uma animação em resposta ao sucesso do primeiro.
 
-Uma lista de opções ocupa opcionalmente o terceiro argumento. As opções de `transition(...)` padrão `transition(...)` devem permanecer inalteradas, a menos que seja feito um raciocínio diferente.
+Uma lista de opções ocupa opcionalmente o terceiro argumento. As opções parões de `transition(...)` devem permanecer inalteradas, a menos que seja feito um raciocínio diferente.
 
 ##### Exemplo de Animação
 

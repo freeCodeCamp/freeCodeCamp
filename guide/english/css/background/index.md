@@ -28,11 +28,16 @@ h1 {
 ```
 ![twobackground](https://user-images.githubusercontent.com/26467304/31036152-0607936a-a539-11e7-9e9f-a5e60ade042d.png)
 
-In CSS color can be defined in four ways: (using white as an example)
-* A valid color name such as `white`.
-* A HEX value such as `#FFFFFF`.
-* An abreviated HEX value such as '#FFF'.
-* An RGB value such as `rgb(255,255,255)`.
+In CSS color can be defined in the following ways:
+* A valid "color" keyword name such as `blue`
+* Numerical color values
+  + A HEX value such as `#FFFFF` (This is the hex value for white.)
+  + An abbreviated HEX value such as `#FFF`.
+  + An RGB value such as `rgb(76,175,80)` (This is the RGB value for light green.)
+  + RGBA value (RGB + alpha channel for contolling opacity)
+    - Note: The alpha parameter is a number between `0.0` (fully transparent) and `1.0` (fully opaque)
+  + HSL (Hue, Saturation, Lightness) (e.g., `hsl(115, 75%, 73%)` is HSL for light green)
+  + HSLA (HSL + alpha channel for controlling opacity)
 
 ### Background Images
 You can use the `background-image` property to set an image as a background for an element. 
@@ -110,6 +115,16 @@ body {
 A gradient is a transition between two or more colors and can be used via CSS similar to a background image.  
 
 The syntax of a gradient background can be quite complex and is often still used with vendor prefixes due to inconsistencies between supported browsers.
+
+Below is an example of a background gradient:
+
+![background gradient example image](https://res.cloudinary.com/ikayz/image/upload/v1540563757/gradient.png)
+
+```css
+header {
+  background-image: linear-gradient(to right, #069, #099);
+}
+```
 
 The [Colorzilla Gradient Editor](http://www.colorzilla.com/gradient-editor/) is a great online tool for generating custom gradients and the associated css markup.
 

@@ -81,7 +81,7 @@ For the CSS part :
     }
 }
 ```
-![Imgur](https://imgur.com/sczZjwm.gif)
+![Imgur](https://cdn-media-1.freecodecamp.org/imgr/sczZjwm.gif)
 
 
 #### More Information:

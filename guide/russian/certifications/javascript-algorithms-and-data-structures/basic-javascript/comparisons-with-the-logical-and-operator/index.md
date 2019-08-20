@@ -42,7 +42,6 @@ function testLogicalAnd(val) {
  testLogicalAnd(10); 
 ```
 
-· [Запустить код в repl.it](https://repl.it/@AdrianSkar/Basic-JS-Comparison-with-the-and-operator)
 
 ### Обозначение кода
 

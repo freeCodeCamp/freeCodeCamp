@@ -27,6 +27,11 @@ O MongoDB é um banco de dados não relacional de código aberto que usa uma est
 4.  Alta disponibilidade
 5.  Escalabilidade Horizontal
 
+### Database as a service (DBaaS)
+Assim como diversos serviços, é possível criar uma base de dados na nuvem, ou seja, contratar algum serviço que lhe ofereça toda a interface de um banco de dados rodando em um servidor 24/7. Sendo essa questão seu principal atrativo, agilidade, facilidade e flexibilidade de manusear sem qualquer custo de hardware ou software em sua máquina.
+
+[mLab](https://mlab.com/)
+
 ### Mais Informações
 
 [O que é o Mongo DB?](https://www.mongodb.com/what-is-mongodb)

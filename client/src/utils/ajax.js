@@ -1,7 +1,7 @@
 import axios from 'axios';
-import qs from 'query-string';
 
 const base = '/internal';
+axios.defaults.withCredentials = true;
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -42,32 +42,24 @@ export function getUsernameExists(username) {
 }
 
 export function getArticleById(shortId) {
-  return get(
-    `/n/${shortId}`
-  );
-}
-
-export function getFeaturedList(skip = 0) {
-  return get(
-    `/api/articles?${qs.stringify({
-      filter: JSON.stringify({
-        where: { featured: true, published: true },
-        order: 'firstPublishedDate DESC',
-        limit: 10,
-        skip
-      })
-    })}`
-  );
+  return get(`/n/${shortId}`);
 }
 
 /** POST **/
-
-export function postPopularityEvent(event) {
-  return post('/p', event);
+export function putUpdateLegacyCert(body) {
+  return post('/update-my-projects', body);
 }
 
 export function postReportUser(body) {
   return post('/user/report-user', body);
+}
+
+export function postDeleteAccount(body) {
+  return post('/account/delete', body);
+}
+
+export function postResetProgress(body) {
+  return post('/account/reset-progress', body);
 }
 
 /** PUT **/

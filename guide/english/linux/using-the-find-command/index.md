@@ -27,3 +27,30 @@ Other parameters are optional and can be combined in any way you find useful:
 * The name parameter lets you specify what you want to find by name, either with a literal string ('filename.txt') or using wildcards ('file?.*').
 
 `man find` will show you many more parameters, and is worth reviewing. Find can locate files by name, user, creation date, size and much more. Next time you're looking for something, find it!
+
+## Useful find commands
+### Find all javascript files
+```bash
+find . -type f -name "*.js"
+./server.php
+./model.js
+./config.js
+```
+
+### Find and remove multiple files
+To find and remove multiple files such as .txt, then use.
+```bash 
+find . -type f -name "*.txt" -exec rm -f {} \;
+```
+
+### Find last 30 days modified files
+To find all the files which are modified 30 days back.
+```bash
+find / -mtime 30
+```
+
+### Find files with size between 100MB – 200MB
+To find all the files which are greater than 100MB and less than 200MB.
+```bash 
+find / -size +100M -size -200M
+```

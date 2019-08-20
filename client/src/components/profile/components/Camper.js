@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row, Image } from '@freecodecamp/react-bootstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
+import Identicon from 'react-identicons';
 
 import SocialIcons from './SocialIcons';
 
@@ -61,16 +62,29 @@ function Camper({
   twitter,
   website
 }) {
+  // A lot of the user-profiles are still using the defunct service.
+  const avatar = /example.com|identicon.org/.test(picture) ? (
+    <Identicon
+      bg={'#858591'}
+      count={5}
+      fg={'#0A0A23'}
+      padding={5}
+      size={256}
+      string={username}
+    />
+  ) : (
+    <Image
+      alt={username + "'s avatar"}
+      className='avatar'
+      responsive={true}
+      src={picture}
+    />
+  );
   return (
     <div>
       <Row>
         <Col className='avatar-container' xs={12}>
-          <Image
-            alt={username + "'s avatar"}
-            className='avatar'
-            responsive={true}
-            src={picture}
-          />
+          {avatar}
         </Col>
       </Row>
       <SocialIcons
@@ -81,6 +95,7 @@ function Camper({
         isWebsite={isWebsite}
         linkedin={linkedin}
         twitter={twitter}
+        username={username}
         website={website}
       />
       <br />

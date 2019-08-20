@@ -2,11 +2,20 @@
 title: Extensible prime generator
 id: 598ee8b91b410510ae82efef
 challengeType: 5
+forumTopicId: 302262
 ---
 
 ## Description
 <section id='description'>
-<p>Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.</p> The generator should be able to : Show the first <b>n</b> prime numbers.Show the prime numbers in a range.Show the number of primes in a range.Show the <b>n<sup>th</sup></b> prime number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array.
+Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.
+The generator should be able to:
+<ul>
+  <li>Show the first <code>n</code> prime numbers</li>
+  <li>Show the prime numbers in a range</li>
+  <li>Show the number of primes in a range</li>
+  <li>Show the <code>n<sup>th</sup></code> prime number</li>
+</ul>
+The function should have two parameters. The first will receive <code>n</code> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <code>n<sup>th</sup></code> prime). According to the parameters the function should return an array.
 </section>
 
 ## Instructions
@@ -20,15 +29,15 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>primeGenerator</code> is a function.
-    testString: assert(typeof primeGenerator === 'function', '<code>primeGenerator</code> is a function.');
+    testString: assert(typeof primeGenerator === 'function');
   - text: <code>primeGenerator</code> is a function.
-    testString: assert.deepEqual(primeGenerator(20, true), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71], '<code>primeGenerator</code> is a function.');
+    testString: assert.deepEqual(primeGenerator(20, true), [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71]);
   - text: <code>primeGenerator</code> is a function.
-    testString: assert.deepEqual(primeGenerator([100, 150], true), [101, 103, 107, 109, 113, 127, 131, 137, 139, 149], '<code>primeGenerator</code> is a function.');
+    testString: assert.deepEqual(primeGenerator([100, 150], true), [101, 103, 107, 109, 113, 127, 131, 137, 139, 149]);
   - text: <code>primeGenerator</code> is a function.
-    testString: assert.equal(primeGenerator([7700, 8000], false), 30, '<code>primeGenerator</code> is a function.');
+    testString: assert.equal(primeGenerator([7700, 8000], false), 30);
   - text: <code>primeGenerator</code> is a function.
-    testString: assert.equal(primeGenerator(10000, false), 104729, '<code>primeGenerator</code> is a function.');
+    testString: assert.equal(primeGenerator(10000, false), 104729);
 
 ```
 
@@ -40,7 +49,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function primeGenerator (num, showPrimes) {
+function primeGenerator(num, showPrimes) {
   // Good luck!
 }
 ```

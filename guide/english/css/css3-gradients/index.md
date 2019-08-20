@@ -21,7 +21,7 @@ To create a linear gradient you must define at least two color stops. Color stop
 
 ##### Linear Gradient - Top to Bottom (this is default)
 The following example shows a linear gradient that starts at the top. It starts red, transitioning to green:
-![default-linear-gradient](https://i.imgur.com/2uGfleD.jpg)
+![default-linear-gradient](https://cdn-media-1.freecodecamp.org/imgr/2uGfleD.jpg)
 
 #### Example
 ```
@@ -52,11 +52,11 @@ The following example shows a linear gradient that starts at the top. It starts 
 </html>
 ```
 
-![default-linear-gradient](https://i.imgur.com/CvtXCMd.jpg)
+![default-linear-gradient](https://cdn-media-1.freecodecamp.org/imgr/CvtXCMd.jpg)
 
 ##### Linear Gradient - Left to Right
 The following example shows a linear gradient that starts from the left. It starts red, transitioning to green:
-![left-to-right](https://i.imgur.com/e4dRvZR.jpg)
+![left-to-right](https://cdn-media-1.freecodecamp.org/imgr/e4dRvZR.jpg)
 
 #### Example
 
@@ -88,7 +88,7 @@ The following example shows a linear gradient that starts from the left. It star
 </html>
 ```
 
-![left-to-right](https://i.imgur.com/k4FSyXz.jpg)
+![left-to-right](https://cdn-media-1.freecodecamp.org/imgr/k4FSyXz.jpg)
 
 #### Linear Gradient - Diagonal
 
@@ -96,7 +96,7 @@ You can make a gradient diagonally by specifying both the horizontal and vertica
 
 The following example shows a linear gradient that starts at top left (and goes to bottom right). It starts red, transitioning to green:
 
-![diagonal](https://i.imgur.com/YvtbUBH.jpg)
+![diagonal](https://cdn-media-1.freecodecamp.org/imgr/YvtbUBH.jpg)
 
 #### Example
 
@@ -128,7 +128,7 @@ The following example shows a linear gradient that starts at top left (and goes 
 </html>
 ```
 
-![diagonal-exp](https://i.imgur.com/8gKRhAp.jpg)
+![diagonal-exp](https://cdn-media-1.freecodecamp.org/imgr/8gKRhAp.jpg)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->

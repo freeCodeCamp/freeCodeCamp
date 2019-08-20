@@ -60,21 +60,21 @@ Encontre bibliotecas javascript em [http://jster.net](http://jster.net)
 
 ## Editores
 
-*   [Código do Visual Studio](https://code.visualstudio.com/)
+*   [Visual Studio Code](https://code.visualstudio.com/)
     
-    Código do Visual Studio inclui suporte interno para conclusão de código do IntelliSense, compreensão de código semântico rico e navegação e refatoração de código. Ele vem com um depurador integrado e suporte a git e tem uma infinidade de extensões.
+    Visual Studio Code inclui suporte interno para complementação de código do IntelliSense, rica compreensão de código semântico e navegação e refatoração de código. Ele vem com um depurador integrado e suporte a git e tem uma infinidade de extensões.
     
 *   [Webstorm](https://www.jetbrains.com/webstorm/)
     
-    Um IDE de recursos completos para Javascript, incluindo conclusão de código e suporte para linting dinâmico, controle de versão e teste. Feito por Jet Brains e modelado após seu IntelliJ Java IDE.
+    Um IDE de recursos completos para Javascript, incluindo complementação de código e suporte para linting dinâmico, controle de versão e teste. Feito por Jet Brains e modelado após seu IntelliJ Java IDE.
     
-*   [Colchetes](http://brackets.io)
+*   [Bracktes](http://brackets.io)
     
-*   [Átomo](http://atom.io)
+*   [Atom](http://atom.io)
     
     Editor de texto de código aberto feito pelo GitHub.
     
-*   [Texto Sublime](https://www.sublimetext.com/)
+*   [Sublime text](https://www.sublimetext.com/)
     
 
 ## Blogs

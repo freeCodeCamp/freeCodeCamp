@@ -49,7 +49,6 @@ function nthPrime(n) {
  } 
 ```
 
-\- [Executar código](https://repl.it/@ezioda004/Project-Euler-Problem-7-10001st-prime)
 
 ### Referências:
 

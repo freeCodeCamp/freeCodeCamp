@@ -1,10 +1,10 @@
 ---
 title: Sleep How Can I Make a Time Delay in Python
-localeTitle: Sono como posso fazer um atraso de tempo em Python
+localeTitle: Sleep como posso fazer um atraso de tempo em Python
 ---
-## Sono como posso fazer um atraso de tempo em Python
+## "Sleep"; como posso fazer um atraso de tempo em Python
 
-O módulo de `time` na biblioteca padrão do Python contém a função `sleep()` que suspende um programa por um determinado número de segundos.
+O módulo de `time` na biblioteca padrão do Python contém a função `sleep()` que pausa um programa por um determinado número de segundos. Após esse tempo, o programa continua sendo executado.
 
 Exemplo:
 ```

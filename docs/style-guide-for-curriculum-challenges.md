@@ -111,7 +111,7 @@ Keep paragraphs short (around 1-4 sentences). People are more likely to read sev
 
 Challenge text should use the second person ("you") to help to give it a conversational tone. This way, the text and instructions seem to speak directly to the camper working through the challenge. Try to avoid using the first person ("I", "we", "let's", and "us").
 
-Don't use outbound links. These interrupt the flow. And campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's wiki article on the forum.
+Don't use outbound links. These interrupt the flow. And campers should never have to google anything during these challenges. If there are resources you think campers would benefit from, add them to the challenge's Guide-related article.
 
 You can add diagrams if absolutely necessary.
 
@@ -123,10 +123,26 @@ Here are specific formatting guidelines for challenge text and examples:
 
 - Language keywords go in `<code>` tags. For example, HTML tag names or CSS property names
 - The first instance of a keyword when it's being defined, or general keywords (i.e. "object" or "immutable") go in `<dfn>` tags
-- Single line code examples go in `<code>` tags
-- Multi-line code examples go in `<blockquote>` tags, and use the `<br>` tag to separate lines. For HTML examples, remember to use escape characters to represent the angle brackets
-- A single horizontal rules (`<hr>` tag) should separate the text discussing the challenge concept and the challenge instructions
-- Additional information in the form of a note should be formatted `<strong>Note</strong><br>Rest of note text...`
+- References to code parts (i.e. function, method or variable names) should be wrapped in `<code>` tags. See example below:
+
+````
+Use <code>parseInt</code> to convert the variable <code>realNumber</code> into an integer.
+````
+- Multi-line code blocks **must be preceded by an empty line**.  The next line must start with three backticks followed immediately by one of the [supported languages](https://prismjs.com/#supported-languages).  To complete the code block, you must start a newline which only has three backticks and **another empty line**.
+**Note:** If you are going to use an example code in YAML, use `yaml` instead of `yml` for the language to the right of the backticks.
+See example below:
+````
+The following is an example of code:
+
+```{language}
+
+[YOUR CODE HERE]
+
+```
+
+````
+- Additional information in the form of a note should be formatted `<strong>Note:</strong> Rest of note text...`
+- If multiple notes are needed, then list all of the notes in separate sentences using the format `<strong>Notes:</strong> First note text.  Second note text.`. 
 - Use double quotes where applicable
 
 ## Formatting seed code
@@ -144,15 +160,15 @@ Here are specific formatting guidelines for the challenge seed code:
 
 The challenge solution must be in proper markdown tags. The code must be wrapped in `section` tags with an id of `solution`.
 
-```
+````
 <section id='solution'>
 
-three backticks + html or js
+```html or ```js
  [ SOLUTION CODE]
-three backticks
+```
 
 </section>
-```
+````
 
 Example:
 

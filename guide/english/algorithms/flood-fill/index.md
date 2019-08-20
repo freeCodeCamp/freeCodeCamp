@@ -29,7 +29,7 @@ The red square is the starting point and the gray squares are the so called wall
 For further details, here's a piece of code describing the function:
 
 
-```c++
+```cpp
 
 int wall = -1;
 
@@ -89,7 +89,7 @@ to island x.
 **Ex:**
 
 You have the following input:
-```c++
+```cpp
 2 4 4
 0 0 0 1
 0 0 1 1

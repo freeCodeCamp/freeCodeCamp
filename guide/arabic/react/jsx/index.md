@@ -12,62 +12,68 @@ JSX هو تعبير يستخدم عبارات HTML صالحة داخل JavaScrip
 
 تعبير في سطر مفرد سهل الاستخدام.
 
- `const one = <h1>Hello World!</h1>; 
-` 
+```jsx
+const one = <h1>Hello World!</h1>;
+``` 
 
 عندما تحتاج إلى استخدام أسطر متعددة في تعبير JSX واحد ، اكتب شفرتك داخل قوس واحد.
 
- `const two = ( 
-  <ul> 
-    <li>Once</li> 
-    <li>Twice</li> 
-  </ul> 
- ); 
-` 
+```jsx
+const two = (
+  <ul>
+    <li>Once</li>
+    <li>Twice</li>
+  </ul>
+);
+``` 
 
 ### بإمكانك استخدام علامات HTML فقط
 
- `const greet = <h1>Hello World!</h1>; 
-` 
+```jsx
+const greet = <h1>Hello World!</h1>;
+``` 
 
 ### الجمع بين تعبير JavaScript مع علامات HTML
 
 يمكننا استخدام متغيرات JavaScript في الأقواس.
 
- `const who = "Quincy Larson"; 
- const greet = <h1>Hello {who}!</h1>; 
-` 
+```jsx
+const who = "Quincy Larson";
+const greet = <h1>Hello {who}!</h1>;
+``` 
 
 يمكننا أيضًا استدعاء وظائف JavaScript الأخرى داخل الأقواس.
 
- `function who() { 
-  return "World"; 
- } 
- const greet = <h1>Hello {who()}!</h1>; 
-` 
+```jsx
+function who() {
+  return "World";
+}
+const greet = <h1>Hello {who()}!</h1>;
+``` 
 
 ### يُسمح فقط بعلامة أصل واحدة
 
 يجب أن يحيط تعبير JSX على عنصر رئيسي واحد فقط. يمكننا إضافة عدة علامات متداخلة داخل العنصر الأصل فقط.
 
- `// This is valid. 
- const tags = ( 
-  <ul> 
-    <li>Once</li> 
-    <li>Twice</li> 
-  </ul> 
- ); 
- 
- // This is not valid. 
- const tags = ( 
-  <h1>Hello World!</h1> 
-  <h3>This is my special list:</h3> 
-  <ul> 
-    <li>Once</li> 
-    <li>Twice</li> 
-  </ul> 
- ); 
-` 
+```jsx
+// This is valid.
+const tags = (
+  <ul>
+    <li>Once</li>
+    <li>Twice</li>
+  </ul>
+);
+
+// This is not valid.
+const tags = (
+  <h1>Hello World!</h1>
+  <h3>This is my special list:</h3>
+  <ul>
+    <li>Once</li>
+    <li>Twice</li>
+  </ul>
+);
+``` 
 
 ### معلومات اكثر
 

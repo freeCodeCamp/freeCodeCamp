@@ -2,6 +2,7 @@
 id: 587d7db6367417b2b2512b9b
 title: Find Characters with Lazy Matching
 challengeType: 1
+forumTopicId: 301341
 ---
 
 ## Description
@@ -10,6 +11,7 @@ In regular expressions, a <code>greedy</code> match finds the longest possible p
 You can apply the regex <code>/t[a-z]*i/</code> to the string <code>"titanic"</code>. This regex is basically a pattern that starts with <code>t</code>, ends with <code>i</code>, and has some letters in between.
 Regular expressions are by default <code>greedy</code>, so the match would return <code>["titani"]</code>. It finds the largest sub-string possible to fit the pattern.
 However, you can use the <code>?</code> character to change it to <code>lazy</code> matching. <code>"titanic"</code> matched against the adjusted regex of <code>/t[a-z]*?i/</code> returns <code>["ti"]</code>.
+<strong>Note</strong><br>Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
 </section>
 
 ## Instructions
@@ -23,7 +25,7 @@ Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;<
 ```yml
 tests:
   - text: The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it
-    testString: assert(result[0] == '<h1>', 'The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it');
+    testString: assert(result[0] == '<h1>');
 
 ```
 
@@ -50,6 +52,9 @@ let result = text.match(myRegex);
 <section id='solution'>
 
 ```js
-// solution required
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // Change this line
+let result = text.match(myRegex);
 ```
+
 </section>

@@ -18,20 +18,20 @@ Bulma is a free and open source frontend CSS framework based on Flexbox. It cont
 
 ## Getting started
 
-There are three ways for you to start using bulma.
-You can use npm to install the Bulma package (recommendede), you can link the Bulma stylesheat via CDN or you can clone the GitHub repository of Bulma to get the latest developement version.
+There are three ways for you to start using Bulma.
+You can use npm to install the Bulma package (recommended), you can link the Bulma stylesheet via CDN or you can clone the GitHub repository of Bulma to get the latest development version.
 
 ### Using NPM
 
 Just type the following in your terminal:
 
-```terminal
+```shell
 $ npm install bulma
 ```
 
 ### Using a CDN
 
-Take one of the links from [this page](https://cdnjs.com/libraries/bulma) and embedd them in your project.
+Take one of the links from [this page](https://cdnjs.com/libraries/bulma) and embed them in your project.
 
 ### GitHub Repository
 

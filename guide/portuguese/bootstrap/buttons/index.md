@@ -72,7 +72,7 @@ Esta é uma lista das classes CSS para tamanhos diferentes dos botões.
 
 ampla
 
-`.btn-sm` Este é o pequeno botão do bootstrap.
+`.btn-sm` Este é o botão pequeno do bootstrap.
 
 Pequeno
 

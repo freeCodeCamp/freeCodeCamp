@@ -51,15 +51,16 @@ Redux Thunk هي برامج وسيطة تسمح لك بإعادة الوظائف
 
 يمكن تثبيت Redux Thunk باستخدام `npm install redux-thunk --save` أو `yarn add redux-thunk` مع سطر الأوامر. لأنها أداة Redux ، ستحتاج أيضًا إلى إعداد Redux. بمجرد تثبيته ، يتم تمكينه باستخدام `applyMiddleware()` :
 
- `import { createStore, applyMiddleware } from 'redux'; 
- import thunk from 'redux-thunk'; 
- import rootReducer from './reducers/index'; 
- 
- const store = createStore( 
-  rootReducer, 
-  applyMiddleware(thunk) 
- ); 
-` 
+```javascript
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers/index';
+
+const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk)
+);
+``` 
 
 ### المراجع
 

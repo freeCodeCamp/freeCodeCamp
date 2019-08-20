@@ -6,8 +6,9 @@
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> Русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
@@ -25,20 +26,20 @@ Divirta-se contribuindo 🎉!
 
 Você pode escolher contribuir para uma área do seu interesse:
 
-1. [Contribua para essa base de códigos <i>open source.</i>](#contribua-para-essa-base-de-códigos-<i>open-source</i>)
+1. [Contribua para essa base de códigos abertos.](#contribua-para-essa-base-de-códigos-abertos)
 
-    Nos ajude criando e editando [Artigos de guias](https://www.freecodecamp.org/guide), [desafios de código](https://www.freecodecamp.org/learn) e corrigindo bugs na plataforma de aprendizado.
+    Nos ajude criando e editando [Artigos de guias](https://guide.freecodecamp.org), [desafios de código](https://www.freecodecamp.org/learn) e corrigindo bugs na plataforma de aprendizado.
 
-2. Ajude <i>campers</i> em nosso [fórum público](https://www.freecodecamp.org/forum/).
+2. Ajude campistas em nosso [fórum público](https://www.freecodecamp.org/forum/).
 
-    - ❓ Ajude <i>campers</i> [respondendo suas perguntas](https://www.freecodecamp.org/forum/?max_posts=1).
-    - 💬 [Faça comentários](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) em projetos dos <i>campers</i>.
+    - ❓ Ajude campistas [respondendo suas perguntas](https://www.freecodecamp.org/forum/?max_posts=1).
+    - 💬 [Faça comentários](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) em projetos dos campistas.
 
 3. Nos ajude a legendar nosso [canal no YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
-## Contribua para essa base de códigos <i>open source</i>
+## Contribua para essa base de códigos abertos
 
-Nós temos uma base de código <i>open source</i> gigantesca dos [Desafios de código](https://www.freecodecamp.org/learn) e [Artigos de guia](https://www.freecodecamp.org/guide). 
+Nós temos uma base de código aberto gigantesca dos [Desafios de código](https://www.freecodecamp.org/learn) e [Artigos de guia](https://www.freecodecamp.org/guide).
 Esses desafios e artigos compõem o conteúdo de aprendizado disponível na plataforma de aprendizado da freeCodeCamp.org.
 
 Você pode nos ajudar:
@@ -57,13 +58,13 @@ Você pode nos ajudar:
 
 Artigos de guia ajudam você a ter um rápido entendimento sobre um conceito tecnológico. Eles são explicações em Português, curtas e diretas, que você pode ler antes de partir para recursos mais aprofundados.
 
-Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](./client/src/pages/html/elements/index.md).
+Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](../../guide/portuguese/html/elements/index.md).
 
 **Sobre o que eu posso escrever um artigo?**
 
-Nós agradecemos sua ajuda na escrita desses artigos. Você não precisa ser um especialista em um tópico para escrever sobre isso - Todo o Guia é <i>open source</i>, então mesmo que você cometa um erro, outro contribuidor vai eventualmente corrigí-lo.
+Nós agradecemos sua ajuda na escrita desses artigos. Você não precisa ser um especialista em um tópico para escrever sobre isso - Todo o Guia é código aberto, então mesmo que você cometa um erro, outro contribuidor vai eventualmente corrigí-lo.
 
-Para ajudar, encontre um `artigo provisório` na [página de Guias](https://www.freecodecamp.org/guide), escreva o artigo, e então abra um <i>pull request</i> para substituir o provisório pelo seu artigo. Um [<i>pull request</i>](https://help.github.com/articles/about-pull-requests/) é a forma como você vai sugerir mudanças. Ele permite que outros saibam das suas mudanças, revisem-nas e as adotem.
+Para ajudar, encontre um `artigo provisório` na [página de Guias](https://www.freecodecamp.org/guide), escreva o artigo, e então abra um <i>pull request</i> (PR) para substituir o provisório pelo seu artigo. Um [<i>pull request</i>](https://help.github.com/articles/about-pull-requests/) é a forma como você vai sugerir mudanças. Ele permite que outros saibam das suas mudanças, revisem-nas e as adotem.
 
 Se você não consegue encontrar um artigo provisório do tópico sobre o qual você gostaria de escrever, você pode abrir um PR que cria o artigo provisório e então incluir o rascunho do seu artigo.
 
@@ -84,11 +85,11 @@ Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Po
 
 Você pode nos ajudar a traduzir nossos Artigos de guia e Desafios de código para uma língua que você fala. Atualmente, nós temos versões traduzidas em:
 
-- Chinês (中文)
-- Russo (русский)
-- Árabe (عربي)
-- Espanhol (Español)
-- Português (Português)
+- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/arabic)
+- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/chinese)
+- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese)
+- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/russian)
+- [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/spanish)
 
 A maioria dessas versões são traduções de máquina. Nós vamos amar sua ajuda em melhorar a qualidade dessas traduções.
 
@@ -124,7 +125,7 @@ Se você acha que encontrou um <i>bug</i>, primeiro leia o artigo ["Help I've Fo
 
 Se você está confiante de que se trata de um <i>bug</i> novo, vá em frente e crie uma nova <i>issue</i> no GitHub. Certifique-se de incluir o máximo de informações possível para que nós possamos reproduzir o <i>bug</i>. Nós temos um modelo pré definido para <i>issues</i> para ajudá-lo nisso.
 
-Por favor, repare que qualquer <i>issue</i> que esteja buscando ajuda no código de algum desafio será fechada. O acompanhador de <i>issues</i> é restito a problemas e discussões relacionadas à base de código. Você deve [buscar ajuda no fórum](https://www.freecodecamp.org/forum) antes de reportar sempre que estiver em dúvida.
+Por favor, repare que qualquer <i>issue</i> que esteja buscando ajuda no código de algum desafio será fechada. O acompanhador de <i>issues</i> é restrito a problemas e discussões relacionadas à base de código. Você deve [buscar ajuda no fórum](https://www.freecodecamp.org/forum) antes de reportar sempre que estiver em dúvida.
 
 **Como eu posso reportar um problema de segurança?**
 
@@ -139,7 +140,7 @@ Sinta-se livre para pedir ajuda:
 
 Nós estamos empolgados em te ajudar a contribuir para qualquer tópico em que você queira trabalhar. Certifique-se de fazer uma busca antes de publicar um tópico novo. Seja educado e paciente. Os voluntários e moderadores da nossa comunidade estão sempre por perto para te ajudar em suas questões.
 
-**Eu sou novo no GitHub e <i>Open Source</i> em geral:**
+**Eu sou novo no GitHub e <i>Open Source</i> (Código Aberto) em geral:**
 
 Leia nosso [Guia de como contribuir para <i>Open Source</i>](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 

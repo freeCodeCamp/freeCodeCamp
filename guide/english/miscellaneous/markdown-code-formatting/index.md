@@ -8,7 +8,7 @@ There are two ways to format code in Markdown. You can either use inline code, b
 ## Inline Code
 You can use inline code formatting to emphasise a small command or piece of syntax within a line you're writing.
 
-For example, you may wish to mention Javascript's `Array.protoype.map()` function. By using inline code formatting, it is clear that this is a piece of code. You might also use it to illustrate a terminal command, like `yarn install`.
+For example, you may wish to mention JavaScript's `Array.protoype.map()` function. By using inline code formatting, it is clear that this is a piece of code. You might also use it to illustrate a terminal command, like `yarn install`.
 
 To use inline code formatting, simply wrap the code you wish to format in backticks. On a standard US layout QWERTY keyboard, this can be found to the left of '1', and above Tab. More information on the location of the backtick on international keyboards is provided below.
 

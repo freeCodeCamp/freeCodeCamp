@@ -8,15 +8,17 @@ localeTitle: إدراج SQL في بيان
 
 يمكنك القيام بذلك بطريقتين ، إذا أردت إدراج قيم في بعض الأعمدة فقط ، فيجب عليك إدراج أسمائها بما في ذلك جميع الأعمدة الإلزامية. الصيغة هي:
 
- `INSERT INTO table_name (column1, column2, column3, ...) 
- VALUES (value1, value2, value3, ...); 
-` 
+```sql
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+``` 
 
 والطريقة الأخرى هي إدراج قيم لجميع الأعمدة في الجدول ، وليس من الضروري تحديد أسماء الأعمدة. الصيغة هي:
 
- `INSERT INTO table_name 
- VALUES (value1, value2, value3, ...); 
-` 
+```sql
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+``` 
 
 في ما يلي مثال على إدراج سجل في الجدول الشخص بطريقتين:
 

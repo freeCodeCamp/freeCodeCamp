@@ -19,7 +19,7 @@ self.onmessage = e => {
     if (result.status === 0) {
       self.postMessage(result.text);
     } else {
-      throw result.formatted;
+      self.postMessage({ type: 'error', data: { message: result.formatted } });
     }
   });
 };

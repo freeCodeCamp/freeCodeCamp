@@ -99,5 +99,67 @@ switch (dog)
 ```
 As you see in the above example after `when` keyword you should specify logical condition (an instruction that returns bool value).
 
+## Pattern matching using switch case
+
+We can use switch to not only match certain values, but also match certain data type. This is called pattern matching
+
+## Example
+
+Lets say that we have some different types of shapes:
+```csharp
+  public class Square
+  {
+      public double Side { get; }
+
+      public Square(double side)
+      {
+          Side = side;
+      }
+  }
+  
+  public class Circle
+  {
+      public double Radius { get; }
+
+      public Circle(double radius)
+      {
+          Radius = radius;
+      }
+  }
+  
+  public struct Rectangle
+  {
+      public double Length { get; }
+      public double Height { get; }
+
+      public Rectangle(double length, double height)
+      {
+          Length = length;
+          Height = height;
+      }
+  }
+```
+
+And now we want to create a method which calculates area for any shape we pass to it. We can do that using pattern matching in switch statement like so:
+```csharp
+  public static double ComputeAreaModernSwitch(object shape)
+  {
+      switch (shape)
+      {
+          case Square s:
+              return s.Side * s.Side;
+          case Circle c:
+              return c.Radius * c.Radius * Math.PI;
+          case Rectangle r:
+              return r.Height * r.Length;
+          default:
+              throw new ArgumentException(
+                  message: "shape is not a recognized shape",
+                  paramName: nameof(shape));
+      }
+  }
+```
+
 ### Sources:
 - 1 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch
+- https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching

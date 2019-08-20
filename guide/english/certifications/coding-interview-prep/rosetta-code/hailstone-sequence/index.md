@@ -1,7 +1,7 @@
 ---
 title: Hailstone sequence
 ---
-## Hailstone sequence
+# Hailstone sequence
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/rosetta-code/hailstone-sequence/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

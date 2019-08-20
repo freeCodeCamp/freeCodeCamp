@@ -42,9 +42,9 @@ It is important that after you connect your project to firebase you should speci
 
 * [Enable Google Sign-In in the Firebase console]
 1. In the Firebase console, open the Auth section. 
-![](https://i.imgur.com/mEvXx3A.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/mEvXx3A.png)
 2. On the Sign in method tab, enable the Google sign-in method and click Save.
-![](https://i.imgur.com/tYzAJK1.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/tYzAJK1.png)
 
 There are four steps that must be followed for the sign-in:
 

@@ -6,7 +6,7 @@ localeTitle: Substituir Adereços Padrão
 
 Esse desafio substitui o valor padrão da `quantity` de props para o componente Itens. Onde o valor padrão da `quantity` é definido como `0` .
 
-```react.js
+```jsx
 const Items = (props) => { 
   return <h1>Current Quantity of Items in Cart: {props.quantity}</h1> 
  } 
@@ -18,13 +18,13 @@ const Items = (props) => {
 
 Para substituir um valor props padrão, a sintaxe a ser seguida é
 
-```react.js
+```jsx
 <Component propsName={Value}/> 
 ```
 
 Após a sintaxe, o seguinte código deve ser declarado abaixo do código fornecido
 
-```react.js
+```jsx
 <Items quantity={50}/> 
 ```
 

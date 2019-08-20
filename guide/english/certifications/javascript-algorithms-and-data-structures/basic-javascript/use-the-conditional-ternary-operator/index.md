@@ -1,38 +1,38 @@
 ---
 title: Use the Conditional (Ternary) Operator
 ---
-## Use the Conditional (Ternary) Operator
 
-### Problem explanation:
-_Use the `conditional operator` in the `checkEqual` function to check if two numbers are equal or not. The function should return either true or false._
+# Use the Conditional (Ternary) Operator
 
-#### Hint 1
-Remember that the "traditional" `if...else` syntax can be re-written using the conditional operator (`condition ? statement if true : statement if false;`)
-> _try to solve the problem now_
-> 
+---
+## Problem Explanation
+
+* You need to write a function named `checkEqual`, which checks if the two parameters are equal.
+* If the parameters are equal, `Equal` is to be returned else `Not Equal` should be returned.
 
 
-## Spoiler alert!
+---
+## Hints
 
-**Solution ahead!**
+### Hint 1
 
-## Code solution:
+Use ternary operator to check for equality.
+
+
+---
+## Solutions
+
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
 
 ```javascript
 function checkEqual(a, b) {
-  return a === b ? true : false;
+  return a === b ? "Equal" : "Not Equal";
 }
 ```
-·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Ternary-operator).
 
-### Code explanation
-- The function checks if the `condition` before the interrogation sign (`?`) is true, and if so, executes the `true` statement. Otherwise, it returns `false`.
+#### Code Explanation
 
-
-### Resources
-
-- ["Conditional (ternary) operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
-
-
-
-
+* A function `checkEqual` is declared, it accepts two parameters in variables `a` and `b`.
+* The `return` statement would return the value of the evaluated ternary expression.
+* The ternary expression checks if `a` and `b` are equal or not and returns `Equal` or `Not Equal` respectively.
+</details>

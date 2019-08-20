@@ -10,11 +10,12 @@ localeTitle: جعل صورة مستجيبة
 
 يصبح النمط:
 
- `<style> 
-  img { 
-  max-width: 100%; 
-  display: block; 
-  height: auto; 
- } 
- </style> 
-`
+```css
+<style>
+  img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+</style>
+```

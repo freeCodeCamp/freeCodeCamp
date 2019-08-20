@@ -69,3 +69,6 @@ El siguiente ejemplo dará salida a la suma de dos variables:
 En el ejemplo anterior, observe que no tuvimos que decirle a PHP qué tipo de datos es la variable. PHP convierte automáticamente la variable al tipo de datos correcto, dependiendo de su valor. En otros lenguajes como C, C ++ y Java, el programador debe declarar el nombre y el tipo de la variable antes de usarla.
 
 #### Más información:
+
+* [PHP.net - Variables básicas](https://secure.php.net/manual/es/language.variables.basics.php)
+* [PHP.net - Ámbito de variables](https://secure.php.net/manual/es/language.variables.scope.php)

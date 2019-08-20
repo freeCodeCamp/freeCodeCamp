@@ -1,8 +1,7 @@
 ![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
-[![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
+
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
-[![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp[)
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
 
 ## Welcome to freeCodeCamp.org's open source codebase and curriculum!
@@ -124,14 +123,14 @@ Our community also has:
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
-- Medium's [largest technical publication](https://medium.freecodecamp.org)
+- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
 - A [Facebook group](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) with over 100,000 members worldwide
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
 
 ### Found a bug?
 
-If you think you've found a bug, first read the [Help I've Found a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
+If you think you've found a bug, first read the [How to Report a Bug](https://www.freecodecamp.org/forum/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, and have confirmed that someone else is facing the same issue, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
 ### Found a security issue?
 
@@ -139,7 +138,23 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### Contributing
 
-#### [Please follow these steps to contribute.](CONTRIBUTING.md)
+> ### [Please follow these steps to contribute.](CONTRIBUTING.md)
+
+#### Build Status:
+
+| Platform        | Type       | Status      |
+| :-------------- | :--------- | :---------: |
+| Travis CI       | Unit Tests | [![Travis CI Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=master)](https://travis-ci.org/freeCodeCamp/freeCodeCamp) |
+| Azure Pipelines | Artifacts  | [![Azure Pipelines Build Status](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_apis/build/status/freeCodeCamp-CI)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_build) |
+
+#### Deployment Status:
+
+| Application  | Version    | Status      |
+| :----------- | :--------- | :---------: |
+| Client       | Beta/Next  | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/8)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
+| API          | Beta/Next  | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/9)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
+| Client       | Production | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/12)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
+| API          | Production | [![Azure Pipelines Deployment Status](https://vsrm.dev.azure.com/freeCodeCamp-org/_apis/public/Release/badge/4b80aded-11d9-49ea-9b7d-596e98ff07c4/4/11)](https://dev.azure.com/freeCodeCamp-org/freeCodeCamp/_release) |
 
 ### License
 
@@ -147,5 +162,5 @@ Copyright © 2019 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
-- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
+- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
+- The learning resources in the [`/curriculum`](/curriculum) and [`/guide`](/guide) directories including their subdirectories thereon are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) license.

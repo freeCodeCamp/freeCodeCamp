@@ -3,7 +3,7 @@ title: Firefox Developer Tools
 ---
 ## Firefox Developer Tools
 
-Firefox Developer tools aid web developers with writing, analyzing, and debugging HTML, CSS and Javascript code. 
+Firefox Developer tools aid web developers with writing, analyzing, and debugging HTML, CSS and JavaScript code. 
 
 Core Features:
 

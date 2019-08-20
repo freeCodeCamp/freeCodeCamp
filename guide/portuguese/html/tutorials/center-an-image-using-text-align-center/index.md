@@ -2,11 +2,11 @@
 title: Center an Image Using Text Align Center
 localeTitle: Centralizar uma imagem usando o centro de alinhamento de texto
 ---
-## Centralizar uma imagem usando o centro de alinhamento de texto
+## Centralizar uma imagem usando Text Align Center
 
-Um elemento `<img>` é um elemento embutido (valor de exibição do `inline-block` ). Ele pode ser facilmente centralizado adicionando o `text-align: center;` Propriedade CSS para o elemento pai que contém.
+Um elemento `<img>` é um elemento em linha (valor de exibição do `inline-block` ). Ele pode ser facilmente centralizado adicionando a propriedade CSS `text-align: center;` ao elemento pai que o contém.
 
-Para centralizar uma imagem usando `text-align: center;` você deve colocar o `<img>` dentro de um elemento de nível de bloco, como um `div` . Como a propriedade `text-align` só se aplica a elementos no nível de bloco, você coloca `text-align: center;` no elemento de nível de bloco de acondicionamento para alcançar um `<img>` horizontalmente centrado.
+Para centralizar uma imagem usando `text-align: center;` você deve colocar o `<img>` dentro de um elemento de nível de bloco, como um `div` . Como a propriedade `text-align` só se aplica a elementos de nível de bloco, você coloca `text-align: center;` no elemento de nível de bloco de acondicionamento para alcançar um `<img>` horizontalmente centrado.
 
 ### Exemplo
 
@@ -30,7 +30,7 @@ Para centralizar uma imagem usando `text-align: center;` você deve colocar o `<
  </html> 
 ```
 
-**Nota:** O elemento pai deve ser um elemento de bloco. Se não for um elemento de bloco, você deve adicionar `display: block;` Propriedade CSS junto com a propriedade `text-align` .
+**Nota:** O elemento pai deve ser um elemento bloco. Se não for um elemento bloco, você deve adicionar a propriedade CSS `display: block;` junto com a propriedade `text-align` .
 
 ```html
 

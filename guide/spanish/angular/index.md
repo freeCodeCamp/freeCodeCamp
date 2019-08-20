@@ -54,6 +54,6 @@ html
 
 Para obtener más información sobre la documentación, consulte el sitio oficial de [AngularJS](https://docs.angularjs.org/api)
 
-Puede instalar **Angular 2.xy** otras versiones siguiendo los pasos de la documentación oficial de [Angular](https://angular.io/guide/quickstart)
+Puede instalar **Angular 2.x** y otras versiones siguiendo los pasos de la documentación oficial de [Angular](https://angular.io/guide/quickstart)
 
 _Nota: Consulte la documentación de Angular para obtener información actualizada._

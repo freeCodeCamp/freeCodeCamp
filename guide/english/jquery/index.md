@@ -14,7 +14,7 @@ jQuery adds a global variable with all of the libraries methods attached. The na
 
 ## Get Started
 
-Before studying JQuery, you should have basic knowledge of these topics:
+Before studying jQuery, you should have basic knowledge of these topics:
   1. HTML
   2. CSS
   3. JavaScript

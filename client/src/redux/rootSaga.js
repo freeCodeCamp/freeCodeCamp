@@ -6,10 +6,5 @@ import { sagas as challengeSagas } from '../templates/Challenges/redux';
 import { sagas as settingsSagas } from './settings';
 
 export default function* rootSaga() {
-  yield all([
-    ...errorSagas,
-    ...appSagas,
-    ...challengeSagas,
-    ...settingsSagas
-  ]);
+  yield all([...errorSagas, ...appSagas, ...challengeSagas, ...settingsSagas]);
 }

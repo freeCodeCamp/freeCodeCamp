@@ -664,3 +664,63 @@ int main()
     return 0;
 }
 ```
+#### Example 11: Print Diamond.
+```
+     *
+    ***
+   *****
+  *******
+ *********
+  *******
+   *****
+    ***
+     *
+```
+
+**Source Code**
+
+```c
+#include <stdio.h>
+
+int main()
+{
+     int i, j, k, n;
+     
+     printf("Enter n: ");
+     scanf("%d",&n);
+     
+     for(i=0;i<n;++i)
+     {
+         for(j=0;j<n-i;j++)
+         {
+            printf(" ");
+         }
+         for(k=0;k<=2*i;k++)
+         {
+             printf("*");
+         }
+
+         printf("\n");
+     }
+     
+     n=n-1;
+     
+     for(i=0;i<n;++i)
+     {
+         for(j=n-i-1;j<=n;j++)
+         {
+            printf(" ");
+         }
+         for(k=2*(n-i-1);k>=0;k--)
+         {
+             printf("*");
+         }
+
+         printf("\n");
+     }
+
+
+    return 0;
+}
+
+```

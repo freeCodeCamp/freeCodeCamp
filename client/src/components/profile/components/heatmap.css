@@ -3,11 +3,11 @@
   justify-content: space-around;
   align-items: center;
   font-size: 18px;
-  color: #006400;
+  color: var(--secondary-color);
 }
 
 .streak strong {
-  color: #333;
+  color: var(--secondary-color);
 }
 
 .night .streak strong {
@@ -30,4 +30,9 @@
 }
 .react-calendar-heatmap .colour-scale-a-lot {
   fill: #006400;
+}
+
+.react-tooltip {
+  background-color: #006400 !important;
+  border: 1px solid black !important;
 }

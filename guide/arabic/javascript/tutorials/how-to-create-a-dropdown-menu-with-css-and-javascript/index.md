@@ -14,15 +14,15 @@ localeTitle: كيفية إنشاء قائمة منسدلة باستخدام CSS 
 
 الشاشة الأولي:
 
-![](https://i.imgur.com/jrnu6mE.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/jrnu6mE.png)
 
 فتح القائمة المنسدلة:
 
-![](https://i.imgur.com/gszPtRa.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/gszPtRa.png)
 
 المنسدلة مع اختيار الخيار:
 
-![](https://i.imgur.com/TKXxZGF.png)
+![](https://cdn-media-1.freecodecamp.org/imgr/TKXxZGF.png)
 
 #### HTML:
 

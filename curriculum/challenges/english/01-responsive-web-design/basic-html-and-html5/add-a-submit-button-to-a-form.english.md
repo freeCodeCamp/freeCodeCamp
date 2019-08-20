@@ -2,8 +2,8 @@
 id: bad87fee1348bd9aedd08830
 title: Add a Submit Button to a Form
 challengeType: 0
-guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-a-submit-button-to-a-form'
 videoUrl: 'https://scrimba.com/p/pVMPUv/cp2Nkhz'
+forumTopicId: 16627
 ---
 
 ## Description
@@ -24,13 +24,13 @@ Add a button as the last element of your <code>form</code> element with a type o
 ```yml
 tests:
   - text: Your form should have a button inside it.
-    testString: assert($("form").children("button").length > 0, 'Your form should have a button inside it.');
+    testString: assert($("form").children("button").length > 0);
   - text: Your submit button should have the attribute <code>type</code> set to <code>submit</code>.
-    testString: assert($("button").attr("type") === "submit", 'Your submit button should have the attribute <code>type</code> set to <code>submit</code>.');
+    testString: assert($("button").attr("type") === "submit");
   - text: Your submit button should only have the text "Submit".
-    testString: assert($("button").text().match(/^\s*submit\s*$/gi), 'Your submit button should only have the text "Submit".');
+    testString: assert($("button").text().match(/^\s*submit\s*$/gi));
   - text: Make sure your <code>button</code> element has a closing tag.
-    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, 'Make sure your <code>button</code> element has a closing tag.');
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
@@ -67,18 +67,12 @@ tests:
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-<div id='html-seed'>
-
-```js
-// solution required
+```html
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
@@ -103,6 +97,5 @@ tests:
   </form>
 </main>
 ```
-  
-</div>
+
 </section>

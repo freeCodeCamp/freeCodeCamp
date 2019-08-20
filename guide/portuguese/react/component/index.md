@@ -4,7 +4,7 @@ localeTitle: React - Componentes
 ---
 ## React - Componentes
 
-Componentes são reutilizáveis ​​em react.js. Você pode injetar valor em adereços como dado abaixo:
+Componentes são como funções JavaScript. Eles aceitam inputs (conhecido como `props`) e retornam elementos React descrevendo o que deve aparecer na tela. Veja o exemplo abaixo:
 
 ```jsx
 function Welcome(props) { 
@@ -18,11 +18,11 @@ function Welcome(props) {
  ); 
 ```
 
-`name="Faisal Arkan"` vai dar valor em `{props.name}` da `function Welcome(props)` e retornando o componente que deu valor pelo `name="Faisal Arkan"` , Depois disso o reagente irá renderizar o elemento em html.
+No exemplo acima, vemos que um valor é passado para a propriedade `name="Faisal Arkan"` o valor de `name` estará disponível em `{props.name}` dentro da função `Welcome`, depois disso é renderizado o elemento em html.
 
 ### Outras formas de declarar componentes
 
-Há muitas maneiras de declarar componentes ao usar o React.js, mas há dois tipos de componentes, componentes **_sem_** **_estado_** e componentes **_com estado_** .
+Há muitas maneiras de declarar componentes em React, mas há dois tipos de componentes, componentes **_sem_** **_estado_** e componentes **_com estado_** .
 
 ### Com estado
 
@@ -52,7 +52,7 @@ class Cat extends React.Component {
 
 ### Componentes sem estado
 
-#### Componentes funcionais (função de seta do ES6)
+#### Componentes funcionais (Arrow function do ES6)
 
 ```jsx
 const Cat = props => { 

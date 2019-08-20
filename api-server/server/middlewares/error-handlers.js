@@ -6,7 +6,7 @@ import { homeLocation } from '../../../config/env';
 
 import { unwrapHandledError } from '../utils/create-handled-error.js';
 
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.FREECODECAMP_NODE_ENV !== 'production';
 
 export default function prodErrorHandler() {
   // error handling in production.
@@ -26,7 +26,8 @@ export default function prodErrorHandler() {
 
     const redirectTo = handled.redirectTo || `${homeLocation}/`;
     const message =
-      handled.message || 'Oops! Something went wrong. Please try again later';
+      handled.message ||
+      'Oops! Something went wrong. Please try again in a moment.';
 
     if (isDev) {
       console.error(err);

@@ -2,6 +2,7 @@
 id: 5900f4c71000cf542c50ffd8
 challengeType: 5
 title: 'Problem 346: Strong Repunits'
+forumTopicId: 302005
 ---
 
 ## Description
@@ -25,7 +26,7 @@ Find the sum of all strong repunits below 1012.
 ```yml
 tests:
   - text: <code>euler346()</code> should return 336108797689259260.
-    testString: assert.strictEqual(euler346(), 336108797689259260, '<code>euler346()</code> should return 336108797689259260.');
+    testString: assert.strictEqual(euler346(), 336108797689259260);
 
 ```
 
@@ -57,4 +58,5 @@ euler346();
 ```js
 // solution required
 ```
+
 </section>

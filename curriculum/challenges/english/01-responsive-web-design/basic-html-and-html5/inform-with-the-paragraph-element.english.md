@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08801
 title: Inform with the Paragraph Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pVMPUv/ceZ7DtN'
+forumTopicId: 18202
 ---
 
 ## Description
@@ -15,8 +16,7 @@ You can create a paragraph element like this:
 ## Instructions
 <section id='instructions'>
 Create a <code>p</code> element below your <code>h2</code> element, and give it the text "Hello Paragraph".
-Note:
-As a convention, all HTML tags are written in lowercase, for example <code>&#60;p&#62;&#60;/p&#62;</code> and not <code>&#60;P&#62;&#60;/P&#62;</code>.
+<strong>Note:</strong> As a convention, all HTML tags are written in lowercase, for example <code>&#60;p&#62;&#60;/p&#62;</code> and not <code>&#60;P&#62;&#60;/P&#62;</code>.
 </section>
 
 ## Tests
@@ -24,12 +24,12 @@ As a convention, all HTML tags are written in lowercase, for example <code>&#60;
 
 ```yml
 tests:
-  - text: Create a <code>p</code> element.
-    testString: assert(($("p").length > 0), 'Create a valid <code>p</code> element.');
+  - text: Your code should have a valid <code>p</code> element.
+    testString: assert(($("p").length > 0));
   - text: Your <code>p</code> element should have the text "Hello Paragraph".
-    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()), 'Your <code>p</code> element should have the text "Hello Paragraph".');
+    testString: assert.isTrue((/hello(\s)+paragraph/gi).test($("p").text()));
   - text: Make sure your <code>p</code> element has a closing tag.
-    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length, 'Make sure your <code>p</code> element has a closing tag.');
+    testString: assert(code.match(/<\/p>/g) && code.match(/<\/p>/g).length === code.match(/<p/g).length);
 
 ```
 
@@ -54,7 +54,10 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Hello World</h1>
+<h2>CatPhotoApp</h2>
+<p>Hello Paragraph</p>
 ```
+
 </section>
