@@ -1,0 +1,62 @@
+{
+  "name": "JavaScript RPG Game",
+  "dashedName": "javascript-rpg-game",
+  "order": 11,
+  "time": "2 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "5d5a813321b9e3db6c106a46",
+      "Number 01"
+    ],
+    [
+      "5d5a8dd907f328a948d398ce",
+      "Number 02"
+    ],
+    [
+      "5d5a8f1c07f328a948d398cf",
+      "Number 03"
+    ],
+    [
+      "5d5a903507f328a948d398d0",
+      "Number 04"
+    ],
+    [
+      "5d5aaa5807f328a948d398d1",
+      "Number 05"
+    ],
+    [
+      "5d5aab5d07f328a948d398d2",
+      "Number 06"
+    ],
+    [
+      "5d5aac9c07f328a948d398d3",
+      "Number 07"
+    ],
+    [
+      "5d5aad2307f328a948d398d4",
+      "Number 08"
+    ],
+    [
+      "5d5aae1207f328a948d398d5",
+      "Number 09"
+    ],
+    [
+      "5d5ab57f07f328a948d398d6",
+      "Number 10"
+    ],
+    [
+      "5d5b66ce07f328a948d398d7",
+      "Number 11"
+    ],
+    [
+      "5d64cf8f853b56a21cd16319",
+      "Number 12"
+    ]
+  ],
+  "helpRoom": "HelpJavaScript",
+  "fileName": "02-javascript-algorithms-and-data-structures/javascript-rpg-game.json"
+}
