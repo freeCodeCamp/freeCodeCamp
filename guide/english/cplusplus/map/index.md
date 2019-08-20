@@ -121,6 +121,8 @@ for(it=first.begin(); it!=first.end(); ++it){
 }
 ```
 
+N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
+
 ## Unordered Map
 
 There exists another associative container similar to `map`, named `unordered_map`, which is implemented using a Hash Table as opposed to a balanced binary tree as is the case with `map`. The key values of the `unordered_map` are hashed into indices of the hash table. Unlike `map` the elements of `unordered_map` are not stored in a sorted manner. All operations permissible on `map` are applicable to `unordered_map` as well.
@@ -135,12 +137,4 @@ There exists another associative container similar to `map`, named `unordered_ma
 * Unordered Map has more memory overhead, although it is typically negligible.
 
 ## References:
-For more information about `map`: <a href="http://www.cplusplus.com/reference/map/map/map/" target="_blank">cpluspluc_map</a>
-
-For more information about `unordered_map`: <a href="http://www.cplusplus.com/reference/unordered_map/unordered_map/" target="_blank">cplusplus_unordered_map</a>
-
 For more information about the differences between `map` and `unordered_map`: <a href="https://stackoverflow.com/questions/13799593/how-to-choose-between-map-and-unordered-map" target="_blank">Map vs Unordered Map</a>
-
-N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
-
-
