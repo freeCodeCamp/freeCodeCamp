@@ -16,7 +16,7 @@ Then your browser will display the text <strong>"this links to freecodecamp.org"
 
 ## Instructions
 <section id='instructions'>
-Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has "cat photos" as its <code>anchor text</code>.
+Create an <code>a</code> element that links to <code>http://freecatphotoapp.com</code> and has "cat photos" as its anchor text.
 </section>
 
 ## Tests
@@ -24,7 +24,7 @@ Create an <code>a</code> element that links to <code>http://freecatphotoapp.com<
 
 ```yml
 tests:
-  - text: Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".
+  - text: Your <code>a</code> element should have the anchor text of "cat photos".
     testString: assert((/cat photos/gi).test($("a").text()));
   - text: You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>
     testString: assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")));

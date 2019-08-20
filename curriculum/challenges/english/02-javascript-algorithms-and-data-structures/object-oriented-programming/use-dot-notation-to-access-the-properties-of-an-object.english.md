@@ -7,7 +7,7 @@ forumTopicId: 301333
 
 ## Description
 <section id='description'>
-The last challenge created an <code>object</code> with various <code>properties</code>, now you'll see how to access the values of those <code>properties</code>. Here's an example:
+The last challenge created an object with various properties, now you'll see how to access the values of those properties. Here's an example:
 
 ```js
 let duck = {
@@ -18,12 +18,12 @@ console.log(duck.name);
 // This prints "Aflac" to the console
 ```
 
-Dot notation is used on the <code>object</code> name, <code>duck</code>, followed by the name of the <code>property</code>, <code>name</code>, to access the value of "Aflac".
+Dot notation is used on the object name, <code>duck</code>, followed by the name of the property, <code>name</code>, to access the value of "Aflac".
 </section>
 
 ## Instructions
 <section id='instructions'>
-Print both <code>properties</code> of the <code>dog</code> object to your console.
+Print both properties of the <code>dog</code> object to your console.
 </section>
 
 ## Tests

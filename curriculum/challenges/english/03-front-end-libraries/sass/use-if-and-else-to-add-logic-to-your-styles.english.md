@@ -40,7 +40,7 @@ And just like in JavaScript, <code>@else if</code> and <code>@else</code> test f
 
 ## Instructions
 <section id='instructions'>
-Create a <code>mixin</code> called <code>border-stroke</code> that takes a parameter <code>$val</code>. The <code>mixin</code> should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:
+Create a mixin called <code>border-stroke</code> that takes a parameter <code>$val</code>. The mixin should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:
 
 ```scss
 light - 1px solid black
@@ -56,15 +56,15 @@ If <code>$val</code> is not <code>light</code>, <code>medium</code>, or <code>he
 
 ```yml
 tests:
-  - text: Your code should declare a <code>mixin</code> named <code>border-stroke</code> which has a parameter named <code>$val</code>.
+  - text: Your code should declare a mixin named <code>border-stroke</code> which has a parameter named <code>$val</code>.
     testString: assert(code.match(/@mixin\s+?border-stroke\s*?\(\s*?\$val\s*?\)\s*?{/gi));
-  - text: Your <code>mixin</code> should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.
+  - text: Your mixin should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.
     testString: assert(code.match(/@if\s+?\$val\s*?===?\s*?light\s*?{\s*?border\s*?:\s*?1px\s+?solid\s+?black\s*?;\s*?}/gi));
-  - text: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.
+  - text: Your mixin should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.
     testString: assert(code.match(/@else\s+?if\s+?\$val\s*?===?\s*?medium\s*?{\s*?border\s*?:\s*?3px\s+?solid\s+?black\s*?;\s*?}/gi));
-  - text: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.
+  - text: Your mixin should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.
     testString: assert(code.match(/@else\s+?if\s+?\$val\s*?===?\s*?heavy\s*?{\s*?border\s*?:\s*?6px\s+?solid\s+?black\s*?;\s*?}/gi));
-  - text: Your <code>mixin</code> should have an <code>@else</code> statement to set the <code>border</code> to none.
+  - text: Your mixin should have an <code>@else</code> statement to set the <code>border</code> to none.
     testString: assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));
 
 ```

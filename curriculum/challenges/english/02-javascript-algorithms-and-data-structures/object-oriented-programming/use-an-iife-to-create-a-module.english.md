@@ -7,7 +7,7 @@ forumTopicId: 301332
 
 ## Description
 <section id='description'>
-An <code>immediately invoked function expression</code> (<code>IIFE</code>) is often used to group related functionality into a single object or <code>module</code>. For example, an earlier challenge defined two mixins:
+An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or <dfn>module</dfn>. For example, an earlier challenge defined two mixins:
 
 ```js
 function glideMixin(obj) {
@@ -22,7 +22,7 @@ function flyMixin(obj) {
 }
 ```
 
-We can group these <code>mixins</code> into a module as follows:
+We can group these mixins into a module as follows:
 
 ```js
 let motionModule = (function () {
@@ -41,8 +41,8 @@ let motionModule = (function () {
 })(); // The two parentheses cause the function to be immediately invoked
 ```
 
-Note that you have an <code>immediately invoked function expression</code> (<code>IIFE</code>) that returns an object <code>motionModule</code>. This returned object contains all of the <code>mixin</code> behaviors as properties of the object.
-The advantage of the <code>module</code> pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. Here is an example using it:
+Note that you have an immediately invoked function expression (IIFE) that returns an object <code>motionModule</code>. This returned object contains all of the mixin behaviors as properties of the object.
+The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. Here is an example using it:
 
 ```js
 motionModule.glideMixin(duck);
@@ -53,7 +53,7 @@ duck.glide();
 
 ## Instructions
 <section id='instructions'>
-Create a <code>module</code> named <code>funModule</code> to wrap the two <code>mixins</code> <code>isCuteMixin</code> and <code>singMixin</code>. <code>funModule</code> should return an object.
+Create a module named <code>funModule</code> to wrap the two mixins <code>isCuteMixin</code> and <code>singMixin</code>. <code>funModule</code> should return an object.
 </section>
 
 ## Tests

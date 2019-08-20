@@ -28,7 +28,7 @@ typeof '3' // returns 'string'
 
 ## Instructions
 <section id='instructions'>
-The <code>compareEquality</code> function in the editor compares two values using the <code>equality operator</code>. Modify the function so that it returns "Equal" only when the values are strictly equal.
+The <code>compareEquality</code> function in the editor compares two values using the equality operator. Modify the function so that it returns "Equal" only when the values are strictly equal.
 </section>
 
 ## Tests

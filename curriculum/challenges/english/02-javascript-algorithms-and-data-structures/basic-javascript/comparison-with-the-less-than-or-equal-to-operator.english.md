@@ -8,7 +8,7 @@ forumTopicId: 16788
 
 ## Description
 <section id='description'>
-The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.
+The less than or equal to operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.
 <strong>Examples</strong>
 
 ```js
@@ -23,7 +23,7 @@ The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares th
 
 ## Instructions
 <section id='instructions'>
-Add the <code>less than or equal to</code> operator to the indicated lines so that the return statements make sense.
+Add the less than or equal to operator to the indicated lines so that the return statements make sense.
 </section>
 
 ## Tests

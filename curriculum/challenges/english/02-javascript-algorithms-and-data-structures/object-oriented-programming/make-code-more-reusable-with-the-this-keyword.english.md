@@ -7,7 +7,7 @@ forumTopicId: 301321
 
 ## Description
 <section id='description'>
-The last challenge introduced a <code>method</code> to the <code>duck</code> object. It used <code>duck.name</code> dot notation to access the value for the <code>name</code> property within the return statement:
+The last challenge introduced a method to the <code>duck</code> object. It used <code>duck.name</code> dot notation to access the value for the <code>name</code> property within the return statement:
 <code>sayName: function() {return "The name of this duck is " + duck.name + ".";}</code>
 While this is a valid way to access the object's property, there is a pitfall here. If the variable name changes, any code referencing the original name would need to be updated as well. In a short object definition, it isn't a problem, but if an object has many references to its properties there is a greater chance for error.
 A way to avoid these issues is with the <code>this</code> keyword:

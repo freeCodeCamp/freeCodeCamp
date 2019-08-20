@@ -10,8 +10,8 @@ forumTopicId: 18319
 ## Description
 <section id='description'>
 Now we have a <code>document ready function</code>.
-Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a <code>dollar sign operator</code>, or as <code>bling</code>.
-jQuery often selects an HTML element with a <code>selector</code>, then does something to that element.
+Now let's write our first jQuery statement. All jQuery functions start with a <code>$</code>, usually referred to as a dollar sign operator, or as bling.
+jQuery often selects an HTML element with a <dfn>selector</dfn>, then does something to that element.
 For example, let's make all of your <code>button</code> elements bounce. Just add this code inside your document ready function:
 <code>$("button").addClass("animated bounce");</code>
 Note that we've already included both the jQuery library and the Animate.css library in the background so that you can use them in the editor. So you are using jQuery to apply the Animate.css <code>bounce</code> class to your <code>button</code> elements.

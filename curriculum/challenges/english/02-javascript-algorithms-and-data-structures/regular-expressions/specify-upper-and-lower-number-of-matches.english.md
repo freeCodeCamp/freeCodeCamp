@@ -8,7 +8,7 @@ forumTopicId: 301367
 ## Description
 <section id='description'>
 Recall that you use the plus sign <code>+</code> to look for one or more characters and the asterisk <code>*</code> to look for zero or more characters. These are convenient but sometimes you want to match a certain range of patterns.
-You can specify the lower and upper number of patterns with <code>quantity specifiers</code>. Quantity specifiers are used with curly brackets (<code>{</code> and <code>}</code>). You put two numbers between the curly brackets - for the lower and upper number of patterns.
+You can specify the lower and upper number of patterns with <dfn>quantity specifiers</dfn>. Quantity specifiers are used with curly brackets (<code>{</code> and <code>}</code>). You put two numbers between the curly brackets - for the lower and upper number of patterns.
 For example, to match only the letter <code>a</code> appearing between <code>3</code> and <code>5</code> times in the string <code>"ah"</code>, your regex would be <code>/a{3,5}h/</code>.
 
 ```js

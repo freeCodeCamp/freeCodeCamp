@@ -7,7 +7,7 @@ forumTopicId: 301324
 
 ## Description
 <section id='description'>
-When an object inherits its <code>prototype</code> from another object, it also inherits the <code>supertype</code>'s constructor property.
+When an object inherits its <code>prototype</code> from another object, it also inherits the supertype's constructor property.
 Here's an example:
 
 ```js

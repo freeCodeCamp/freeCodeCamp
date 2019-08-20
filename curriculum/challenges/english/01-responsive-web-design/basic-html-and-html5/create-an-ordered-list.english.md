@@ -8,7 +8,7 @@ forumTopicId: 16824
 
 ## Description
 <section id='description'>
-HTML has another special element for creating <code>ordered lists</code>, or numbered lists.
+HTML has another special element for creating <dfn>ordered lists</dfn>, or numbered lists.
 Ordered lists start with an opening <code>&#60;ol&#62;</code> element, followed by any number of <code>&#60;li&#62;</code> elements. Finally, ordered lists are closed with the <code>&#60;/ol&#62;</code> tag.
 
 For example:

@@ -7,8 +7,8 @@ forumTopicId: 301358
 
 ## Description
 <section id='description'>
-So far, you have created a set of characters that you want to match, but you could also create a set of characters that you do not want to match. These types of character sets are called <code>negated character sets</code>.
-To create a <code>negated character set</code>, you place a <code>caret</code> character (<code>^</code>) after the opening bracket and before the characters you do not want to match.
+So far, you have created a set of characters that you want to match, but you could also create a set of characters that you do not want to match. These types of character sets are called <dfn>negated character sets</dfn>.
+To create a negated character set, you place a caret character (<code>^</code>) after the opening bracket and before the characters you do not want to match.
 For example, <code>/[^aeiou]/gi</code> matches all characters that are not a vowel. Note that characters like <code>.</code>, <code>!</code>, <code>[</code>, <code>@</code>, <code>/</code> and white space are matched - the negated vowel character set only excludes the vowel characters.
 </section>
 

@@ -7,7 +7,7 @@ forumTopicId: 301489
 
 ## Description
 <section id='description'>
-SVG stands for <code>Scalable Vector Graphics</code>.
+<dfn>SVG</dfn> stands for <dfn>Scalable Vector Graphics</dfn>.
 Here "scalable" means that, if you zoom in or out on an object, it would not appear pixelated. It scales with the display system, whether it's on a small mobile screen or a large TV monitor.
 SVG is used to make common geometric shapes. Since D3 maps data into a visual representation, it uses SVG to create the shapes for the visualization. SVG shapes for a web page must go within an HTML <code>svg</code> tag.
 CSS can be scalable when styles use relative units (such as <code>vh</code>, <code>vw</code>, or percentages), but using SVG is more flexible to build data visualizations.

@@ -7,8 +7,8 @@ forumTopicId: 16804
 
 ## Description
 <section id='description'>
-<code>Constructors</code> are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
-Here is an example of a <code>constructor</code>:
+<dfn>Constructors</dfn> are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
+Here is an example of a constructor:
 
 ```js
 function Bird() {
@@ -18,14 +18,14 @@ function Bird() {
 }
 ```
 
-This <code>constructor</code> defines a <code>Bird</code> object with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> set to Albert, blue, and 2, respectively.
-<code>Constructors</code> follow a few conventions:
-<ul><li><code>Constructors</code> are defined with a capitalized name to distinguish them from other functions that are not <code>constructors</code>.</li><li><code>Constructors</code> use the keyword <code>this</code> to set properties of the object they will create. Inside the <code>constructor</code>, <code>this</code> refers to the new object it will create.</li><li><code>Constructors</code> define properties and behaviors instead of returning a value as other functions might.</li></ul>
+This constructor defines a <code>Bird</code> object with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> set to Albert, blue, and 2, respectively.
+Constructors follow a few conventions:
+<ul><li>Constructors are defined with a capitalized name to distinguish them from other functions that are not <code>constructors</code>.</li><li>Constructors use the keyword <code>this</code> to set properties of the object they will create. Inside the constructor, <code>this</code> refers to the new object it will create.</li><li>Constructors define properties and behaviors instead of returning a value as other functions might.</li></ul>
 </section>
 
 ## Instructions
 <section id='instructions'>
-Create a <code>constructor</code>, <code>Dog</code>, with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> that are set to a string, a string, and a number, respectively.
+Create a constructor, <code>Dog</code>, with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> that are set to a string, a string, and a number, respectively.
 </section>
 
 ## Tests

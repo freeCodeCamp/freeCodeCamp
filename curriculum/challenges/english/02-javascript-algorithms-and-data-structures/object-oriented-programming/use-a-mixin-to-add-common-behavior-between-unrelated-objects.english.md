@@ -8,7 +8,7 @@ forumTopicId: 301331
 ## Description
 <section id='description'>
 As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like <code>Bird</code> and <code>Airplane</code>. They can both fly, but a <code>Bird</code> is not a type of <code>Airplane</code> and vice versa.
-For unrelated objects, it's better to use <code>mixins</code>. A <code>mixin</code> allows other objects to use a collection of functions.
+For unrelated objects, it's better to use <dfn>mixins</dfn>. A mixin allows other objects to use a collection of functions.
 
 ```js
 let flyMixin = function(obj) {
@@ -42,12 +42,12 @@ bird.fly(); // prints "Flying, wooosh!"
 plane.fly(); // prints "Flying, wooosh!"
 ```
 
-Note how the <code>mixin</code> allows for the same <code>fly</code> method to be reused by unrelated objects <code>bird</code> and <code>plane</code>.
+Note how the mixin allows for the same <code>fly</code> method to be reused by unrelated objects <code>bird</code> and <code>plane</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Create a <code>mixin</code> named <code>glideMixin</code> that defines a method named <code>glide</code>. Then use the <code>glideMixin</code> to give both <code>bird</code> and <code>boat</code> the ability to glide.
+Create a mixin named <code>glideMixin</code> that defines a method named <code>glide</code>. Then use the <code>glideMixin</code> to give both <code>bird</code> and <code>boat</code> the ability to glide.
 </section>
 
 ## Tests

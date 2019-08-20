@@ -8,14 +8,14 @@ forumTopicId: 18341
 
 ## Description
 <section id='description'>
-<code>Bracket notation</code> is a way to get a character at a specific <code>index</code> within a string.
+<dfn>Bracket notation</dfn> is a way to get a character at a specific <code>index</code> within a string.
 Most modern programming languages, like JavaScript, don't start counting at 1 like humans do. They start at 0. This is referred to as <dfn>Zero-based</dfn> indexing.
 For example, the character at index 0 in the word "Charles" is "C". So if <code>var firstName = "Charles"</code>, you can get the value of the first letter of the string by using <code>firstName[0]</code>.
 </section>
 
 ## Instructions
 <section id='instructions'>
-Use <dfn>bracket notation</dfn> to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.
+Use bracket notation to find the first character in the <code>lastName</code> variable and assign it to <code>firstLetterOfLastName</code>.
 <strong>Hint</strong><br>Try looking at the <code>firstLetterOfFirstName</code> variable declaration if you get stuck.
 </section>
 
