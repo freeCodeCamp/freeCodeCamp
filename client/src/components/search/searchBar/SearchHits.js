@@ -11,10 +11,12 @@ const CustomHits = connectHits(({ hits, currentRefinement, handleSubmit }) => {
       query: currentRefinement,
       _highlightResult: {
         query: {
-          value:
-            'Search for "<ais-highlight-0000000000>' +
-            currentRefinement +
-            '</ais-highlight-0000000000>"'
+          value: `
+            See all results for
+            <ais-highlight-0000000000>
+            ${currentRefinement}
+            </ais-highlight-0000000000>
+          `
         }
       }
     }
@@ -37,7 +39,6 @@ const CustomHits = connectHits(({ hits, currentRefinement, handleSubmit }) => {
 });
 
 const SearchHits = connectStateResults(({ handleSubmit, searchState }) => {
-  console.log(searchState);
   return isEmpty(searchState) || !searchState.query ? null : (
     <CustomHits
       currentRefinement={searchState.query}

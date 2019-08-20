@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
-import { navigate } from 'gatsby';
+// import { navigate } from 'gatsby';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -85,7 +85,13 @@ class SearchBar extends Component {
     if (query) {
       updateSearchQuery(query);
     }
-    return navigate('/search');
+    // For Learn search results page
+    // return navigate('/search');
+
+    // Temporary redirect to News search results page
+    return window.location.assign(
+      `https://freecodecamp.org/news/search/?query=${query}`
+    );
   }
 
   render() {

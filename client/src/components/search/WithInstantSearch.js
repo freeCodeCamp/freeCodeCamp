@@ -124,7 +124,7 @@ class InstantSearchRoot extends Component {
         onSearchStateChange={this.onSearchStateChange}
         searchState={{ query }}
       >
-        <Configure hitsPerPage={50} />
+        <Configure hitsPerPage={15} />
         {this.props.children}
       </InstantSearch>
     );
