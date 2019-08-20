@@ -21,7 +21,7 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
   opacity:1; 
  } 
  
- OR 
+ OU
  
  .nome-da-classe { 
   opacity:1.0; 
@@ -34,7 +34,7 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
 .nome-da-classe { 
   opacity:0.5; 
  } 
- Opacity value can be anything between 0 and 1; 
+ O valor aceito é de 0 até 1.
 ```
 
 **Transparente**
@@ -44,7 +44,7 @@ Você pode escolher até que ponto deseja tornar o elemento transparente. Você 
   opacity:0; 
  } 
  
- OR 
+ OU 
  
  .nome-da-classe { 
   opacity:0.0; 
