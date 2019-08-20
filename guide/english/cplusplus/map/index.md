@@ -121,8 +121,20 @@ for(it=first.begin(); it!=first.end(); ++it){
 }
 ```
 
-Here you can learn more about map: <a href="http://www.cplusplus.com/reference/map/map/map/" target="_blank">cpluspluc_map</a>
-
 N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
 
+## Unordered Map
 
+There exists another associative container similar to `map`, named `unordered_map`, which is implemented using a Hash Table as opposed to a balanced binary tree as is the case with `map`. The key values of the `unordered_map` are hashed into indices of the hash table. Unlike `map` the elements of `unordered_map` are not stored in a sorted manner. All operations permissible on `map` are applicable to `unordered_map` as well.
+
+## Benefits of Unordered Map
+* Average Cost of insert, delete, search is O(1) if there are no hash collisions.
+* Implemented using Hash Table
+
+## Unordered Map vs Map
+* Unordered Map is faster if you want single element access. 
+* Use map when you want to traverse through key values in a sorted fashion or if you want some kind of ordering in the map.
+* Unordered Map has more memory overhead, although it is typically negligible.
+
+## References:
+For more information about the differences between `map` and `unordered_map`: <a href="https://stackoverflow.com/questions/13799593/how-to-choose-between-map-and-unordered-map" target="_blank">Map vs Unordered Map</a>
