@@ -2,9 +2,9 @@
 title: Garbage Collection
 ---
 # Garbage Collection in Java
-In languages like C/C++, it is the duty of the programmer to create and destroy objects. But if the programmer does not performs his duty, sufficient memory may not be available for the creation of a new object and the program may terminate causing **OutOfMemoryErrors**.
+In languages like C/C++, it is the duty of the programmer to create and destroy objects. But if the programmer does not perform his duty, sufficient memory may not be available for the creation of a new object and the program may terminate causing **OutOfMemoryErrors**.
 
-Java relieves the programmer from memory management task and itself reclaims the memory occupied by the objects which are no longer in use. Garbage Collection in java is carried out by a daemon thread called **Garbage Collector**. **JVM(Java Virtual Machine)** invokes it when there is lack of memory(heap) for new objects.
+Java relieves the programmer from memory management task and itself reclaims the memory occupied by the objects which are no longer in use. Garbage Collection in Java is carried out by a daemon thread called **Garbage Collector**. **JVM(Java Virtual Machine)** invokes it when there is lack of memory(heap) for new objects.
 
 ## When an object becomes eligible for Garbage Collection? 
 * An object becomes eligible for Garbage Collection if it is not reachable from any live threads or any static references.
@@ -13,7 +13,7 @@ Java relieves the programmer from memory management task and itself reclaims the
          Integer n = new Integer();
          n = null;			                    //the Integer object is no longer accessible
 ```
-* Cyclic dependencies are not counted as reference so if Object X has reference of Object Y and Object Y has reference of Object X and they don’t have any other live reference then both Objects X and Y will be eligible for Garbage Collection.
+* Cyclic dependencies are not counted as a reference so if Object X has a reference of Object Y and Object Y has a reference of Object X and they don’t have any other live reference then both Objects X and Y will be eligible for Garbage Collection.
 * An object is also eligible for garbage collection when its reference variable is re-assigned and that object no longer has any other reference to it. Look at the code snippet below:
 ```java
 Integer i1 = new Integer(10); //new Integer object created
@@ -26,7 +26,7 @@ i1 = i2;//i1 now references to i2 (re-assigned), therefore 10 (object in the hea
 * There are generally four different ways to make an object eligible for garbage collection.
 1. Nullifying the reference variable
 2. Re-assigning the reference variable
-3. Object is created inside a block and reference goes out of scope once control exit that block.
+3. An object is created inside a block and reference goes out of scope once control exit that block.
 4. [Island of Isolation](http://www.geeksforgeeks.org/island-of-isolation-in-java/)
 
 ## Ways of requesting JVM to run Garbage Collector<sup>1</sup>
@@ -59,7 +59,7 @@ public class Test
     }
      
     @Override
-    // finalize method is a method which is called on object once 
+    // finalize method is a method which is called on an object once 
     // before garbage collector is destroying it and reclaiming its memory
     protected void finalize() throws Throwable
     {
@@ -81,17 +81,16 @@ Note :
 2. The call System.gc() is effectively equivalent to the call : Runtime.getRuntime().gc()
 
 ## Object Finalization
-* Objects have resources associtated with them. It is their responsibility to free the resources. 
-* The finalize(), is declared in Object class and is called by garbage collector once, just before destroying the object. An object can take any last action using this method jst before its area is reclaimed by the garbage collector.
-* finalize() method is present in Object class with following prototype.
+* Objects have resources associated with them. It is their responsibility to free the resources. 
+* The finalize(), is declared in Object class and is called by garbage collector once, just before destroying the object. An object can take any last action using this method just before its area is reclaimed by the garbage collector.
+* finalize() method is present in Object class with the following prototype.
 ```java
     protected void finalize() throws Throwable
 ```
 ## NOTE<sup>1</sup> :
-1. The finalize() method called by Garbage Collector not JVM. Although Garbage Collector is one of the module of JVM.
-2. Object class finalize() method has empty implementation, thus it is recommended to override finalize() method to dispose of system resources or to perform other cleanup.
+1. The finalize() method called by Garbage Collector, not JVM. Although Garbage Collector is one of the modules of JVM.
+2. Object class finalize() method has an empty implementation, thus it is recommended to override finalize() method to dispose of system resources or to perform other cleanups.
 3. The finalize() method is never invoked more than once for any given object.
 4. If an uncaught exception is thrown by the finalize() method, the exception is ignored and finalization of that object terminates.
 ### SOURCES 
 1. [geeksforgeeks.](http://www.geeksforgeeks.org/garbage-collection-java/)Accessed: October 24,2017.
-
