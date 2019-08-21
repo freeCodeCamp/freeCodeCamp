@@ -7,6 +7,8 @@ import { apiLocation } from '../../../config/env.json';
 
 import { hardGoTo } from '../../redux';
 
+import './current-challenge-link.css';
+
 const currentChallengeApi = '/challenges/current-challenge';
 
 const propTypes = {
@@ -25,7 +27,11 @@ const createClickHandler = hardGoTo => e => {
 
 function CurrentChallengeLink({ children, hardGoTo }) {
   return (
-    <a href={currentChallengeApi} onClick={createClickHandler(hardGoTo)}>
+    <a
+      className='current-challenge-link'
+      href={currentChallengeApi}
+      onClick={createClickHandler(hardGoTo)}
+    >
       {children}
     </a>
   );

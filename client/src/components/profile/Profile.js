@@ -11,6 +11,8 @@ import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
 
+import './profile.css';
+
 const propTypes = {
   isSessionUser: PropTypes.bool,
   user: PropTypes.shape({
@@ -95,7 +97,7 @@ function renderSettingsButton() {
     <Fragment>
       <Row>
         <Col sm={4} smOffset={4}>
-          <Link to='/settings'>
+          <Link className='link' to='/settings'>
             <Button
               block={true}
               bsSize='lg'
