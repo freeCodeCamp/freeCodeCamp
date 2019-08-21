@@ -9,7 +9,7 @@ forumTopicId: 301421
 ## Description
 <section id='description'>
 Sometimes you might need to know the previous state when updating the state. However, state updates may be asynchronous - this means React may batch multiple <code>setState()</code> calls into a single update. This means you can't rely on the previous value of <code>this.state</code> or <code>this.props</code> for calculating the next value. So something like <code>this.setState({counter: this.state.counter + this.props.increment})</code> is wrong.
-Instead, you should use an alternative form of <code>setState</code>, which accepts a function as argument. This means that the above should be rewritten as:
+Instead, you should pass <code>setState</code> a function that allows you to access state and props. This means that the above should be rewritten as:
 
 ```js
 this.setState((state, props) => ({
