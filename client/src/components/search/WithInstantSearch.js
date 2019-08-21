@@ -15,7 +15,7 @@ import {
 
 import { createSelector } from 'reselect';
 
-const DEBOUNCE_TIME = 50;
+const DEBOUNCE_TIME = 100;
 
 const propTypes = {
   children: PropTypes.any,

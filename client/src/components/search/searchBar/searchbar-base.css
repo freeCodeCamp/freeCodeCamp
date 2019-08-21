@@ -593,7 +593,6 @@ a[class^='ais-'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  padding: 0.3rem 1.7rem;
   width: 100%;
   position: relative;
   background-color: #fff;
@@ -601,16 +600,16 @@ a[class^='ais-'] {
   border-radius: 0px;
 }
 .ais-SearchBox-input::-webkit-input-placeholder {
-  color: #a5aed1;
+  color: var(--gray-15);
 }
 .ais-SearchBox-input::-moz-placeholder {
-  color: #a5aed1;
+  color: var(--gray-15);
 }
 .ais-SearchBox-input:-ms-input-placeholder {
-  color: #a5aed1;
+  color: var(--gray-15);
 }
 .ais-SearchBox-input:-moz-placeholder {
-  color: #a5aed1;
+  color: var(--gray-15);
 }
 .ais-SearchBox-submit,
 .ais-SearchBox-reset,
@@ -644,8 +643,8 @@ a[class^='ais-'] {
 }
 .ais-SearchBox-submitIcon path,
 .ais-SearchBox-resetIcon path,
-.ais-SearchBox-loadingIndicator > g > g > path {
-  fill: var(--quaternary-color);
+.ais-SearchBox-loadingIndicator {
+  fill: var(--gray-15);
 }
 .ais-SearchBox-submitIcon {
   width: 14px;
@@ -659,13 +658,8 @@ a[class^='ais-'] {
   width: 16px;
   height: 16px;
 }
-
-.ais-SearchBox-input {
-  padding-left: 25px;
-  font-size: 14px;
-}
 .ais-SearchBox-submitIcon > path {
-  fill: var(--quaternary-color);
+  fill: var(--gray-15);
 }
 .ais-Hits {
   position: absolute;

@@ -126,7 +126,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Lato:400,400i,500', 'Roboto Mono:400,700']
+        fonts: ['Lato:300,400,400i,500,700', 'Roboto Mono:400,700']
       }
     },
     'gatsby-plugin-sitemap',
