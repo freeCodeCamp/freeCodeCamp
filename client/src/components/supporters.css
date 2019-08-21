@@ -5,4 +5,5 @@
 
 #supporter-progress-wrapper .progress-bar {
   padding-top: 8px;
+  background-color: var(--primary-color);
 }
