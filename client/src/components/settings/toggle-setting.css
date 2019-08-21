@@ -3,6 +3,29 @@
   justify-content: space-between;
 }
 
-.toggle-setting-container .form-group label {
-  max-width: 50%;
+.toggle-setting-container .btn-group {
+  padding-left: 5px;
+}
+
+.toggle-setting-container > .form-group > * {
+  flex: 1 1 0;
+}
+
+.toggle-setting-container .btn-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@media (max-width: 440px) {
+  .toggle-setting-container > .form-group > * {
+    flex: 0 1 auto;
+  }
+
+  .toggle-setting-container .btn-group,
+  .theme-setting-container .btn-group {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
 }
