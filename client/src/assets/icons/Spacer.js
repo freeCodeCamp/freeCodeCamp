@@ -5,6 +5,7 @@ function Spacer(props) {
     <Fragment>
       <span className='sr-only'>Passed</span>
       <svg
+        className='tick'
         height='50'
         viewBox='-10 -45 200 200'
         width='50'

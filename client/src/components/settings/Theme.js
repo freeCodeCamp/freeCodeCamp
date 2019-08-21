@@ -13,7 +13,7 @@ const propTypes = {
 
 export default function ThemeSettings({ currentTheme, toggleNightMode }) {
   return (
-    <div id='theme-settings-container'>
+    <div className='toggle-setting-container' id='theme-settings-container'>
       <ControlLabel className='theme-label' htmlFor='night-mode'>
         <strong>Night Mode</strong>
       </ControlLabel>
