@@ -14,7 +14,7 @@
   fill: var(--tertiary-background);
 }
 .react-calendar-heatmap .color-scale-1 {
-  fill: var(--alternate-color);
+  fill: var(--gray-45);
 }
 .react-calendar-heatmap .color-scale-2 {
   fill: var(--quaternary-color);
