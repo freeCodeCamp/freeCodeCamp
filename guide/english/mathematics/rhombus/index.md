@@ -3,13 +3,12 @@ title: Rhombus
 ---
 ## Rhombus
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/rhombus/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Rhombus.svg/640px-Rhombus.svg.png)
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+A rhombus is a simple quadrilateral whose four sides all have the same length. The shape resembles the classic diamond shape on playing cards.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Every rhombus is a parallelogram and one with right angles is a square.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+<a href='https://www.mathsisfun.com/geometry/rhombus.html' target='_blank' rel='nofollow'>MathIsFun.com</a>

@@ -57,7 +57,6 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmo/0)
 
 ### 代码说明：
 
@@ -93,7 +92,6 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmp/0)
 
 ### 代码说明：
 
@@ -139,7 +137,6 @@ function myReplace(str, before, after) {
  myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLmq/0)
 
 ### 代码说明：
 
@@ -199,7 +196,6 @@ function myReplace(str, before, after) {
  } 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/@kr3at0/SearchAndReplace)
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 "：rotating_light：")高级代码解决方案备选2：
 

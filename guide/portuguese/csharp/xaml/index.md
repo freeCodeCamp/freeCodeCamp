@@ -26,7 +26,7 @@ Criando um TextBlock com várias propriedades. TextBlocks geralmente são empreg
 
 O exemplo a seguir mostra um rótulo com "Hello World!" como seu conteúdo em um contêiner de nível superior chamado UserControl.
 
-```XAML
+```xml
 <UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"> 
     <Label Content="Hello World!" /> 
  </UserControl> 

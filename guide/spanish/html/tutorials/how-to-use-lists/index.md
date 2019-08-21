@@ -74,7 +74,7 @@ café
 
 Una bebida hecha de granos de café tostados.
 
-#### Lista de estilos
+#### Estilos de las listas
 
 También puede controlar el estilo de la lista. Puede utilizar la propiedad de listas de `list-style` de lista. Su lista puede ser viñetas, cuadradas, en números romanos o puede ser imágenes que desee.
 

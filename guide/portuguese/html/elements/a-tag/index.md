@@ -1,10 +1,10 @@
 ---
 title: A Tag
-localeTitle: Um dia
+localeTitle: Tag "A"
 ---
-## Uma etiqueta
+## Tag "A"
 
-A tag `<a>` ou elemento de _âncora_ cria um hiperlink para outra página ou arquivo. Para vincular a uma página ou arquivo diferente, a tag `<a>` também deve conter um atributo `href` , que indica o destino do link.
+A tag `<a>` ou elemento de _âncora_ cria um hiperlink para outra página, arquivo ou elemento. Para vincular a uma página ou arquivo diferente, a tag `<a>` também deve conter um atributo `href`, que indica o destino do link.
 
 O texto entre as tags `<a>` abertura e fechamento se torna o link.
 
@@ -13,16 +13,14 @@ Por padrão, uma página vinculada é exibida na janela atual do navegador, a me
 #### Exemplo:
 
 ```html
-
   <a href= "https://guide.freecodecamp.org/">freeCodeCamp</a> 
 ```
 
-Uma imagem também pode ser transformada em um link, colocando a tag `<img>` em uma tag `<a>` .
+Uma imagem também pode ser transformada em um link, colocando a tag `<img>` em uma tag `<a>`.
 
 #### Exemplo:
 
 ```html
-
   <a href= "https://guide.freecodecamp.org/"><img src="logo.svg"></a> 
 ```
 
@@ -33,7 +31,6 @@ Também é possível determinar o alvo da tag `<a>` . Isso é feito usando o atr
 #### Exemplo:
 
 ```html
-
   <a href= "https://guide.freecodecamp.org/" target="_blank">freeCodeCamp</a> 
 ```
 

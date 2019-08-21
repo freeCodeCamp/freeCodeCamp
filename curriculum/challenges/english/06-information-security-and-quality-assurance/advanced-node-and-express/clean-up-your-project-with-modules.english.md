@@ -2,6 +2,7 @@
 id: 589690e6f9fc0f352b528e6e
 title: Clean Up Your Project with Modules
 challengeType: 2
+forumTopicId: 301549
 ---
 
 ## Description
@@ -9,10 +10,14 @@ challengeType: 2
 As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
 Right now everything you have is in your server.js file. This can lead to hard to manage code that isn't very expandable.
 Create 2 new files: Routes.js and Auth.js
-Both should start with the following code: <pre>module.exports = function (app, db) {
+Both should start with the following code:
 
+```js
+module.exports = function (app, db) {
 
-}</pre>
+}
+```
+
 Now in the top of your server file, require these files like such: <code>const routes = require('./routes.js');</code>
 Right after you establish a successful connect with the database instantiate each of them like such: <code>routes(app, db)</code>
 Finally, take all of the routes in your server and paste them into your new files and remove them from your server file. Also take the ensureAuthenticated since we created that middleware function for routing specifically. You will have to now correctly add the dependencies in that are used, such as <code>const passport = require('passport');</code>, at the very top above the export line in your routes.js file.
@@ -32,7 +37,7 @@ Congratulations- you're at the end of this section of Advanced Node and Express 
 ```yml
 tests:
   - text: Modules present
-    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*("|').\/routes.js("|')/gi, 'You should have required your new files'); assert.match(data, /mongo.connect[^]*routes/gi, 'Your new modules should be called after your connection to the database'); }, xhr => { throw new Error(xhr.statusText); })
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require\s*\(('|")\.\/routes(\.js)?\1\)/gi, 'You should have required your new files'); assert.match(data, /mongo.connect[^]*routes/gi, 'Your new modules should be called after your connection to the database'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
@@ -49,4 +54,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

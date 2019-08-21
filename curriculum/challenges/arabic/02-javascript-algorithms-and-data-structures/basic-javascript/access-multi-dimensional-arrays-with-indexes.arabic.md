@@ -2,7 +2,6 @@
 id: 56592a60ddddeae28f7aa8e1
 title: Access Multi-Dimensional Arrays With Indexes
 challengeType: 1
-guideUrl: 'https://arabic.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
 videoUrl: ''
 localeTitle: الوصول إلى صفائف متعددة الأبعاد مع فهارس
 ---

@@ -1,7 +1,7 @@
 ---
 title: Improve Chart Accessibility with the figure Element
 ---
-## Improve Chart Accessibility with the figure Element
+# Improve Chart Accessibility with the figure Element
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/improve-chart-accessibility-with-the-figure-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

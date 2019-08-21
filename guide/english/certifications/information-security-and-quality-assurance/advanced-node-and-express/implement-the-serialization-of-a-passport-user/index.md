@@ -1,7 +1,7 @@
 ---
 title: Implement the Serialization of a Passport User
 ---
-## Implement the Serialization of a Passport User
+# Implement the Serialization of a Passport User
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/information-security-and-quality-assurance/advanced-node-and-express/implement-the-serialization-of-a-passport-user/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 

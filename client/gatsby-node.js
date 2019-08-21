@@ -1,18 +1,16 @@
 require('dotenv').config();
 
-const { createFilePath } = require('@freecodecamp/gatsby-source-filesystem');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
 const {
   createChallengePages,
   createBlockIntroPages,
-  createSuperBlockIntroPages,
-  createGuideArticlePages
+  createSuperBlockIntroPages
 } = require('./utils/gatsby');
 
 const createByIdentityMap = {
-  guideMarkdown: createGuideArticlePages,
   blockIntroMarkdown: createBlockIntroPages,
   superBlockIntroMarkdown: createSuperBlockIntroPages
 };
@@ -30,14 +28,18 @@ exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   }
 
   if (node.internal.type === 'MarkdownRemark') {
-    let slug = createFilePath({ node, getNode });
+    const slug = createFilePath({ node, getNode });
     if (!slug.includes('LICENSE')) {
+      const {
+        frontmatter: { component = '' }
+      } = node;
       createNodeField({ node, name: 'slug', value: slug });
+      createNodeField({ node, name: 'component', value: component });
     }
   }
 };
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = function createPages({ graphql, actions }) {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
@@ -73,6 +75,8 @@ exports.createPages = ({ graphql, actions }) => {
               node {
                 fields {
                   slug
+                  nodeIdentity
+                  component
                 }
                 frontmatter {
                   block
@@ -82,9 +86,6 @@ exports.createPages = ({ graphql, actions }) => {
                 htmlAst
                 id
                 excerpt
-                internal {
-                  identity
-                }
               }
             }
           }
@@ -92,7 +93,7 @@ exports.createPages = ({ graphql, actions }) => {
       `).then(result => {
         if (result.errors) {
           console.log(result.errors);
-          reject(result.errors);
+          return reject(result.errors);
         }
 
         // Create challenge pages.
@@ -103,60 +104,41 @@ exports.createPages = ({ graphql, actions }) => {
         // Create intro pages
         result.data.allMarkdownRemark.edges.forEach(edge => {
           const {
-            node: {
-              internal: { identity },
-              frontmatter,
-              fields
-            }
+            node: { frontmatter, fields }
           } = edge;
+
           if (!fields) {
             return null;
           }
-          const { slug } = fields;
+          const { slug, nodeIdentity } = fields;
           if (slug.includes('LICENCE')) {
             return null;
           }
           try {
-            const pageBuilder = createByIdentityMap[identity](createPage);
+            const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
             return pageBuilder(edge);
           } catch (e) {
             console.log(`
-            ident: ${identity} does not belong to a function
+            ident: ${nodeIdentity} does not belong to a function
 
             ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
 
 
             `);
           }
+          return null;
         });
 
-        return;
+        return null;
       })
     );
   });
 };
 
-const RmServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
-    module: {
-      rules: [
-        rules.js({
-          /* eslint-disable max-len */
-          exclude: modulePath => {
-            return (
-              (/node_modules/).test(modulePath) &&
-              !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
-                modulePath
-              )
-            );
-          }
-          /* eslint-enable max-len*/
-        })
-      ]
-    },
     node: {
       fs: 'empty'
     },
@@ -165,9 +147,13 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
         HOME_PATH: JSON.stringify(
           process.env.HOME_PATH || 'http://localhost:3000'
         ),
-        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
-      }),
-      new RmServiceWorkerPlugin()
+        STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || ''),
+        ROLLBAR_CLIENT_ID: JSON.stringify(process.env.ROLLBAR_CLIENT_ID || ''),
+        ENVIRONMENT: JSON.stringify(
+          process.env.FREECODECAMP_NODE_ENV || 'development'
+        ),
+        PAYPAL_SUPPORTERS: JSON.stringify(process.env.PAYPAL_SUPPORTERS || 404)
+      })
     ]
   });
   if (stage !== 'build-html') {

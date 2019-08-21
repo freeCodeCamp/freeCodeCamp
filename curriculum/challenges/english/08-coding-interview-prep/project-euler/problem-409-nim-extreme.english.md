@@ -2,6 +2,7 @@
 id: 5900f5061000cf542c510017
 challengeType: 5
 title: 'Problem 409: Nim Extreme'
+forumTopicId: 302077
 ---
 
 ## Description
@@ -26,7 +27,7 @@ Find W(10 000 000) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler409()</code> should return 253223948.
-    testString: assert.strictEqual(euler409(), 253223948, '<code>euler409()</code> should return 253223948.');
+    testString: assert.strictEqual(euler409(), 253223948);
 
 ```
 
@@ -58,4 +59,5 @@ euler409();
 ```js
 // solution required
 ```
+
 </section>

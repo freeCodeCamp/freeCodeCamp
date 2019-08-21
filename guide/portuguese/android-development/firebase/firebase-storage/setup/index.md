@@ -9,7 +9,7 @@ localeTitle: Configurando o Firebase Storage
 1.  A versão mais recente do Android Studio
 2.  Conecte-se ao Firebase manualmente ou por meio do Firebase Assistant (consulte [Conexão ao Firebase](guide/src/pages/android-development/firebase/connecting-to-firebase) ).
 
-É recomendável que você faça isso para não ser confundido com instruções parciais relacionadas a isso nos documentos mencionados abaixo.
+É recomendável que você siga as instruções do documento acima para não se confundir com instruções parcias descritas abaixo.
 
 ## Configurando com o Android Studio
 
@@ -48,4 +48,4 @@ Você pode acompanhar essas amostras de desenvolvedores do Firebase para iniciar
 
 ## Nota
 
-Google agora depreciado 'compilar' e no lugar de que você precisa usar 'implementação'.
+Google agora depreciado 'compilar' e no lugar de que você precisa usar 'implement'.

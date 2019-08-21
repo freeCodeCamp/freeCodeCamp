@@ -2,6 +2,7 @@
 id: 5900f3f11000cf542c50ff03
 challengeType: 5
 title: 'Problem 132: Large repunit factors'
+forumTopicId: 301760
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Find the sum of the first forty prime factors of R(109).
 ```yml
 tests:
   - text: <code>euler132()</code> should return 843296.
-    testString: assert.strictEqual(euler132(), 843296, '<code>euler132()</code> should return 843296.');
+    testString: assert.strictEqual(euler132(), 843296);
 
 ```
 
@@ -54,4 +55,5 @@ euler132();
 ```js
 // solution required
 ```
+
 </section>

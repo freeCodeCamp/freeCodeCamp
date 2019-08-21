@@ -1,6 +1,6 @@
 ---
 title: Unity
-localeTitle: Unidade
+localeTitle: Unity
 ---
 ## Desenvolvimento de Jogos com Unity
 
@@ -30,7 +30,12 @@ Unity é o kit de desenvolvimento de software padrão (SDK) para a plataforma de
 
 ![Interface Unity](https://github.com/pawelszpiczakowski/PublicStuff/raw/master/unityInterface.png)
 
-Na foto acima, você notará cinco seções: 1) Seção 1. **Scene View** : Isto é onde você estará criando nível para o seu jogo, cena ou projeto 3D. Todos os seus Objetos do Jogo serão colocados e manipulados aqui. 2) Seção 2. **Modo de Exibição do Jogo** : É onde você verá seus resultados, como seu nível ou cena se parece. Você precisa ter uma câmera na cena para ver como ela se parece. Às vezes é chamado Camera View. 3) Seção 3. **Hierarquia** : Esta janela exibirá todos os Objetos do Jogo colocados diretamente na cena. Basicamente tudo o que você vê na Game View, precisa ser listado aqui. Isso incluirá objetos de jogo não visuais e visuais. 4) Seção 4. **Projeto** : Esta é a janela do seu projeto. Basicamente, mostra o que está dentro da pasta Assets no seu disco. Tudo a partir de objetos do jogo, scripts, texturas, pastas, modelos, áudio, vídeo e etc ... será acessível a partir desta janela. 5) Seção 5. **Inspetor** : Este painel exibirá diferentes atributos e propriedades dos Objetos de Jogo selecionados. Dependendo da seleção, os atributos e componentes apropriados serão listados.
+Na foto acima, você notará cinco seções: 
+1) Seção 1. **Scene View** : Isto é onde você estará criando nível para o seu jogo, cena ou projeto 3D. Todos os seus Objetos do Jogo serão colocados e manipulados aqui.
+2) Seção 2. **Modo de Exibição do Jogo** : É onde você verá seus resultados, como seu nível ou cena se parece. Você precisa ter uma câmera na cena para ver como ela se parece. Às vezes é chamado Camera View.
+3) Seção 3. **Hierarquia** : Esta janela exibirá todos os Objetos do Jogo colocados diretamente na cena. Basicamente tudo o que você vê na Game View, precisa ser listado aqui. Isso incluirá objetos de jogo não visuais e visuais.
+4) Seção 4. **Projeto** : Esta é a janela do seu projeto. Basicamente, mostra o que está dentro da pasta Assets no seu disco. Tudo a partir de objetos do jogo, scripts, texturas, pastas, modelos, áudio, vídeo e etc ... será acessível a partir desta janela.
+5) Seção 5. **Inspetor** : Este painel exibirá diferentes atributos e propriedades dos Objetos de Jogo selecionados. Dependendo da seleção, os atributos e componentes apropriados serão listados.
 
 ## Jogos Notáveis:
 
@@ -38,7 +43,7 @@ Na foto acima, você notará cinco seções: 1) Seção 1. **Scene View** : Isto
 *   Trilogia de Temple Run
 *   Battlestar Galactica Online
 *   Hearthstone: Heróis de Warcraft
-*   Dentro
+*   Inside
 *   Cuphead
 
 ## História
@@ -49,7 +54,7 @@ Anteriormente, o Unity suportava sete outras plataformas, incluindo seu próprio
 
 O Unity Web Player era um plug-in de navegador que era suportado apenas no Windows e no OS X, que foi substituído em favor do WebGL.
 
-Unity é o mecanismo usado pelo Rust, Kerbal Space Program e Cup Head.
+Unity é o mecanismo usado pelo Rust, Kerbal Space Program e Cuphead.
 
 #### Mais Informações:
 

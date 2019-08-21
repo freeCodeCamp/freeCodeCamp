@@ -18,17 +18,18 @@ CSS البناء :يحوم { اعلانات css }
 
 يطبق محدد التمرير فقط الأنماط المتوفرة في القاعدة عندما يدخل العنصر في حالة التمرير. هذا هو عندما يمرر المستخدم فوق العنصر باستخدام الماوس الخاص به.
 
- `button { 
-  color: white; 
-  background-color: green; 
- } 
- 
- button:hover { 
-  background-color: white; 
-  border: 2px solid green; 
-  color: green; 
- } 
-` 
+```css
+button {
+  color: white;
+  background-color: green;
+}
+
+button:hover {
+  background-color: white;
+  border: 2px solid green;
+  color: green;
+}
+``` 
 
 في المثال أعلاه ، يكون التصميم العادي للزر عبارة عن نص أبيض على زر أخضر. عندما يمرر المستخدم فوق الزر باستخدام الماوس الخاص به ، فإن القاعدة مع `:hover` سوف تصبح نشطة ، وسوف يتغير نمط الزر.
 

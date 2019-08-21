@@ -2,7 +2,7 @@
 title: If
 localeTitle: E se
 ---
-# E se
+# If
 
 A instrução if executa diferentes blocos de código com base nas condições.
 ```
@@ -95,4 +95,4 @@ Observe que o `else` e `else if` seções não forem necessárias, enquanto `if`
     */ 
 ```
 
-A instrução if precisa de um resultado booleano, isto é, verdadeiro ou falso. Em algumas linguagens de programação, vários tipos de dados podem ser automaticamente convertidos em booleanos, mas em C #, é necessário tornar o resultado booleano especificamente. Por exemplo, você não pode usar se (número), mas você pode comparar o número para algo, para gerar um verdadeiro ou falso.
+A instrução if precisa de um resultado booleano, isto é, verdadeiro ou falso. Em algumas linguagens de programação, vários tipos de dados podem ser automaticamente convertidos em booleanos, mas em C#, é necessário tornar o resultado booleano especificamente. Por exemplo, você não pode usar se (número), mas você pode comparar o número para algo, para gerar condição verdadeira ou falsa.

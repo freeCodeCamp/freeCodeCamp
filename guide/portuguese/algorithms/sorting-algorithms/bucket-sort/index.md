@@ -15,32 +15,26 @@ Vamos dar uma olhada mais de perto.
 Considere que é necessário criar uma matriz de listas, ou seja, de buckets. Os elementos agora precisam ser inseridos nesses buckets com base em suas propriedades. Cada um desses buckets pode ser classificado individualmente usando o Insertion Sort.
 
 ### Pseudocódigo para o tipo de balde:
+
 ```
-void bucketSort(float[] a,int n) 
- 
- { 
- 
-    for(each floating integer 'x' in n) 
- 
-    { 
- 
-        insert x into bucket[n*x]; 
- 
-    } 
- 
-    for(each bucket) 
- 
-    { 
- 
-        sort(bucket); 
- 
-    } 
- 
- } 
+void bucketSort(float[] a,int n)
+{
+  for(each floating integer 'x' in n)
+  {
+    insert x into bucket[n*x]; 
+  }
+
+  for(each bucket)
+  {
+    sort(bucket);
+  }
+}
 ```
 
 ### Mais Informações:
 
 *   [Wikipedia](https://en.wikipedia.org/wiki/Bucket_sort)
-    
+
 *   [GeeksForGeeks](http://www.geeksforgeeks.org/bucket-sort-2/)
+
+*   [Hacker Earth](https://www.hackerearth.com/practice/algorithms/sorting/bucket-sort/tutorial/)

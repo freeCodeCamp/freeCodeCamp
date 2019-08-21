@@ -7,10 +7,10 @@ localeTitle: Manipular matrices con pop ()
 ---
 
 ## Description
-<section id="description"> Otra forma de cambiar los datos en una matriz es con la función <code>.pop()</code> . <code>.pop()</code> se utiliza para &quot; <code>.pop()</code> &quot; un valor del final de una matriz. Podemos almacenar este valor &quot;extraído&quot; asignándolo a una variable. En otras palabras, <code>.pop()</code> elimina el último elemento de una matriz y devuelve ese elemento. Cualquier tipo de entrada se puede &quot;extraer&quot; de una matriz: números, cadenas, incluso matrices anidadas. <blockquote> <code>var threeArr = [1, 4, 6]; <br> var oneDown = threeArr.pop(); <br> console.log(oneDown); // Returns 6 <br> console.log(threeArr); // Returns [1, 4]</code> </blockquote> </section>
+<section id="description"> Otra forma de cambiar los datos en una matriz es con la función <code>.pop()</code> . <code>.pop()</code> se utiliza para  <code>.pop()</code>  un valor del final de una matriz. Podemos almacenar este valor &quot;extraído&quot; asignándolo a una variable. En otras palabras, <code>.pop()</code> elimina el último elemento de una matriz y devuelve ese elemento. Cualquier tipo de entrada se puede &quot;extraer&quot; de una matriz: números, cadenas, incluso matrices anidadas. <blockquote> <code>var threeArr = [1, 4, 6]; <br> var oneDown = threeArr.pop(); <br> console.log(oneDown); // Returns 6 <br> console.log(threeArr); // Returns [1, 4]</code> </blockquote> </section>
 
 ## Instructions
-<section id="instructions"> Use la función <code>.pop()</code> para eliminar el último elemento de <code>myArray</code> , asignando el valor &quot; <code>removedFromMyArray</code> &quot; a <code>removedFromMyArray</code> . </section>
+<section id="instructions"> Use la función <code>.pop()</code> para eliminar el último elemento de <code>myArray</code> , asignando el valor  <code>removedFromMyArray</code> a <code>removedFromMyArray</code> . </section>
 
 ## Tests
 <section id='tests'>

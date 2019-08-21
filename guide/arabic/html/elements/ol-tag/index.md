@@ -6,18 +6,18 @@ localeTitle: رأ العلامة
 
 تقوم العلامة `<ol>` بإنشاء عنصر قائمة مرتبة في HTML. القائمة المطلوبة هي واحدة من بندين قائمة في HTML ، والآخر هو قائمة غير مرتبة ، التي تم إنشاؤها بواسطة العلامة `<ul>` . يتم استخدام القوائم المطلوبة لعرض القوائم بترتيب ذي معنى. بشكل افتراضي ، يتم عرض عناصر القائمة في قائمة مرتبة كقائمة ذات تعداد رقمي ، بدءًا من 1. يمكن تغيير هذا السلوك باستخدام السمة "type" أو باستخدام أنماط CSS. عناصر القائمة يمكن أن تكون متداخلة.
 
- `
-<ol> 
-  <li>First Item</li> 
-  <li>Second Item  <!-- No closing </li> tag before the nested list --> 
-    <ol> 
-      <li>First Subitem</li> 
-      <li>Second Subitem</li> 
-    </ol> 
-  </li>            <!-- The closing </li> tag comes after the nested list --> 
-  <li>Third Item</li> 
- </ol> 
-` 
+```html
+<ol>
+  <li>First Item</li>
+  <li>Second Item  <!-- No closing </li> tag before the nested list -->
+    <ol>
+      <li>First Subitem</li>
+      <li>Second Subitem</li>
+    </ol>
+  </li>            <!-- The closing </li> tag comes after the nested list -->
+  <li>Third Item</li>
+</ol>
+``` 
 
 ### قوائم مرتبة مقابل غير مرتبة
 

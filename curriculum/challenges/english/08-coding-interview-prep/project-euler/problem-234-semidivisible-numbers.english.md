@@ -2,6 +2,7 @@
 id: 5900f4571000cf542c50ff69
 challengeType: 5
 title: 'Problem 234: Semidivisible numbers'
+forumTopicId: 301878
 ---
 
 ## Description
@@ -27,7 +28,7 @@ What is the sum of all semidivisible numbers not exceeding 999966663333 ?
 ```yml
 tests:
   - text: <code>euler234()</code> should return 1259187438574927000.
-    testString: assert.strictEqual(euler234(), 1259187438574927000, '<code>euler234()</code> should return 1259187438574927000.');
+    testString: assert.strictEqual(euler234(), 1259187438574927000);
 
 ```
 
@@ -59,4 +60,5 @@ euler234();
 ```js
 // solution required
 ```
+
 </section>

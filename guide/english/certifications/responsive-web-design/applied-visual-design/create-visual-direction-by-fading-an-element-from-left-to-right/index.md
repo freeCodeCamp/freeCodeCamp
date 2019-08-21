@@ -1,10 +1,43 @@
 ---
 title: Create Visual Direction by Fading an Element from Left to Right
 ---
-## Create Visual Direction by Fading an Element from Left to Right
+# Create Visual Direction by Fading an Element from Left to Right
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/create-visual-direction-by-fading-an-element-from-left-to-right/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+---
+## Solutions
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+<details><summary>Solution 1 (Click to Show/Hide)</summary>
+
+
+```html
+<style>
+
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity: 0.1;
+    }
+  }
+
+</style>
+
+<div id="ball"></div>
+```
+</details>

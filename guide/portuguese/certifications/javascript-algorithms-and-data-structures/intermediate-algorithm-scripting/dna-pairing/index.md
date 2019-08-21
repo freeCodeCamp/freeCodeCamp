@@ -85,8 +85,7 @@ Esse problema não envolve reorganizar a entrada em combinações ou permutaçõ
     pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/CLmz/0)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ### Explicação do código:
 
 *   O programa é muito simples, a melhor solução que tenho é usar um switch para capturar todos os quatro elementos possíveis. Usando instruções if levaria muito código. Você também pode usar expressões regulares.
@@ -118,8 +117,7 @@ Esse problema não envolve reorganizar a entrada em combinações ou permutaçõ
   pairElement("GCG"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:") [Executar código](https://repl.it/repls/ThoroughSphericalComputeranimation)
-
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":foguete:")
 ## Explicação do código:
 
 *   Primeiro defina um objeto com todas as possibilidades de pares, isso nos permite encontrar facilmente por chave ou valor.

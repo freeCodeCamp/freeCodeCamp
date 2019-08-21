@@ -5,21 +5,25 @@
 
 .honesty-panel {
   padding-top: 15px;
-
 }
 
-.honesty-panel .agreed {
+.honesty-policy .agreed {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
-  background-color: rgba(0, 100, 0, 0.8);
+  background-color: var(--quaternary-color);
   color: #fff;
-  border-color: #006400;
-  margin-bottom: 0px;
 }
 
-.honesty-panel .agreed p {
+div .agreed p {
+  color: white;
+}
+
+.honesty-policy .agreed p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.honesty-panel .btn-invert {
+  color: var(--primary-background);
 }

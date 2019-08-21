@@ -11,6 +11,8 @@ Uma classe pode conter qualquer um dos seguintes tipos de variáveis.
 *   Variáveis ​​de Classe: Estas são as variáveis ​​que são declaradas dentro da definição da classe, fora de qualquer método, com a palavra-chave estática. Uma variável de classe é compartilhada entre todas as instâncias de uma classe. As variáveis ​​de classe também são conhecidas como variáveis ​​estáticas, elas são inicializadas apenas uma vez no momento da compilação da classe, portanto, apenas uma única cópia deste está disponível para todas as instâncias.
 *   Variáveis ​​de instância: A diferença com as variáveis ​​de classe é que as variáveis ​​de instância são inicializadas dentro do construtor de classe e não são compartilhadas entre todos os objetos. No momento da instanciação, uma nova cópia da variável de instância é criada.
 
+Para entender classes e objetos de uma forma mais dinâmica você pode pensar, por exemplo, em jogos de RPG. Em um RPG existem várias classes como guerreiros, magos, clérigos, ladinos entre outros. Cada uma dessas classes possui características e atributos pertencentes a ela. Se, por exemplo,quisessemos criar um mago e que possua característcas que estão ligadas a ele, em forma de código, esse mago seria um objeto, que terá atributos como vida, defesa, armadura etc.
+
 ```java
 public class Example { 
  
@@ -23,7 +25,8 @@ public class Example {
 
 Pense em uma `Class` como uma planta para criar algo concreto. Uma `Class` informa como o 'o que' e 'como' um `object` da referida Classe parecerá `instantiated` uma vez. Em essência, define `properties` (digamos, cor, capacidade do motor) e `behavior` (parar, acelerar, mudar de marcha, buzinar etc.) para um carro no caso abaixo.
 
-Objetos são _instâncias_ de uma classe. Todos os objetos são instâncias de uma determinada classe. Imagine uma classe sendo um "modelo", do qual cada objeto é copiado. Quando você cria um objeto, ele basicamente cria um novo objeto no blueprint de uma classe. Agora vamos ver isso em um pequeno trecho de código:
+Objetos são _instâncias_ de uma classe. Todos os objetos são instâncias de uma determinada classe. Imagine uma classe sendo um "modelo", do qual cada objeto é copiado. Um jeito de entender objetos é como se fossem realmente um objeto do mundo real, existem canetas de diferentes cores de tinta, marcas, porém todas continuando sendo canetas, desse jeito uma caneta especifica é um objeto da classe caneta.
+Quando você cria um objeto, ele basicamente cria um novo objeto no blueprint de uma classe. Agora vamos ver isso em um pequeno trecho de código:
 
 ```java
 // Car class 

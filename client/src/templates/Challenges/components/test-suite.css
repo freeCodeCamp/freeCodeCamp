@@ -12,7 +12,7 @@
 }
 
 .test-result:nth-child(odd) {
-  background-color: #eee;
+  background-color: var(--tertiary-background);
 }
 
 .test-output {
