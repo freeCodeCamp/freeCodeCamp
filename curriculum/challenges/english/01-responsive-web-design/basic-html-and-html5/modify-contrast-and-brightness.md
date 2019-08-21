@@ -1,6 +1,6 @@
 ---
 id: 5d47f97b44cec26fdb0a6364
-title: Contrast
+title: Modify contrast and brightness
 challengeType: 0
 videoUrl:
 ---

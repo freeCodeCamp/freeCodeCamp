@@ -129,32 +129,32 @@
       "Smoothing Images"
     ],
     [
-      "5d414905ef3f574940200d32",
-      "Resize opencv"
-    ],
-    [
-      "5d4299689da0aed2a684435c",
-      "Contour"
-    ],
-    [
       "5d47f97b44cec26fdb0a6364",
-      "Contrast"
-    ],
-    [
-      "5d47f9e144cec26fdb0a6365",
-      "logo"
+      "Modify contrast and brightness"
     ],
     [
       "5d4acfab0b988955b7e0c1e8",
-      "Roatate"
+      "Rotate an image"
+    ],
+    [
+      "5d414905ef3f574940200d32",
+      "Resize an image"
     ],
     [
       "5d3ffa56e5b42a8be2747034",
       "Blend images"
     ],
     [
+      "5d4299689da0aed2a684435c",
+      "Find contours"
+    ],
+    [
+      "5d47f9e144cec26fdb0a6365",
+      "Draw on image"
+    ],
+    [
       "5d568cd5b6ed021018c687fa",
-      "Inpaint"
+      "Image recovery"
     ]
   ],
   "helpRoom": "Help",

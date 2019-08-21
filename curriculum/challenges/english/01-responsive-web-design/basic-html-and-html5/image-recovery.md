@@ -1,6 +1,6 @@
 ---
 id: 5d568cd5b6ed021018c687fa
-title: Inpaint
+title: Image recovery
 challengeType: 0
 videoUrl:
 ---
@@ -23,10 +23,10 @@ Via drawing you can create mask for <code>cv.inpaint()</code> function. Then use
 
 ```yml
 tests:
-    - text:  Use <code>cv.ellipse</code> to drow ellips on image
-      testString: assert(code.match(/ellipse/g),'Use <code>cv.ellipse</code> to drow an ellips image');
-    - text:  Use <code>cv.circle</code> to drow ellips on image
-      testString: assert(code.match(/circle/g),'Use <code>cv.circle</code> to drow an ellips image');
+    - text:  Use <code>cv.inpaint</code> to recover image
+      testString: assert(code.match(/inpaint/g),'Use <code>cv.inpaint</code> to recover image');
+    - text:  Use <code>cv.INPAINT_TELEA</code> as 3th function argument
+      testString: assert(code.match(/INPAINT_TELEA/g),'Use <code>cv.INPAINT_TELEA</code> as 3th function argument');
 ```
 </section>
 
@@ -39,7 +39,7 @@ tests:
 ```html
 <canvas id="canvas"></canvas>
 <img id="src" src="http://bit.ly/fcc-relaxing-cat" style="display:none"/>
-<input type="button" id="myButton" value="Test" onclick="inpaint()"/>
+<input type="button" id="myButton" value="Test" onclick="runSample()"/>
 
 <script type="text/javascript">
 
@@ -97,7 +97,7 @@ function init()
   mask = new cv.Mat.zeros(src.size(), cv.CV_8UC1);
 }
 
-function inpaint()
+function runSample()
 {
   let dst = new cv.Mat();
 
@@ -124,7 +124,7 @@ function inpaint()
 ```html
 <canvas id="canvas"></canvas>
 <img id="src" src="http://bit.ly/fcc-relaxing-cat" style="display:none"/>
-<input type="button" id="myButton" value="Test" onclick="inpaint()"/>
+<input type="button" id="myButton" value="Test" onclick="runSample()"/>
 
 <script type="text/javascript">
 
@@ -176,13 +176,13 @@ function init()
     cv.line(srcCopy, {x: xstart, y: ystart}, {x: xend, y: yend}, [0, 0, 0, 255]);
   }
   cv.imshow("canvas", srcCopy);
- 
+
   src = new cv.Mat();
   cv.cvtColor(srcCopy, src, cv.COLOR_RGBA2RGB);
   mask = new cv.Mat.zeros(src.size(), cv.CV_8UC1);
 }
 
-function inpaint()
+function runSample()
 {
   let dst = new cv.Mat();
   cv.inpaint(src, mask, dst, 3, cv.INPAINT_TELEA);

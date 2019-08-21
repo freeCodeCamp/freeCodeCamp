@@ -1,6 +1,6 @@
 ---
 id: 5d414905ef3f574940200d32
-title: Resize  openCV
+title: Resize an image
 challengeType: 0
 videoUrl:
 ---

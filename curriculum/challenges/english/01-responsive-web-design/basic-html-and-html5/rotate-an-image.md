@@ -1,6 +1,6 @@
 ---
 id: 5d4acfab0b988955b7e0c1e8
-title: Rotate
+title: Rotate an image
 challengeType: 0
 videoUrl:
 ---

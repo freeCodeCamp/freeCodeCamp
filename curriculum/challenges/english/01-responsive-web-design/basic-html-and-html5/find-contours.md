@@ -1,6 +1,6 @@
 ---
 id: 5d4299689da0aed2a684435c
-title: Contour
+title: Find contours
 challengeType: 0
 videoUrl:
 ---
