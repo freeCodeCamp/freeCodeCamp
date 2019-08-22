@@ -4,8 +4,6 @@ import { Form } from '@freecodecamp/react-bootstrap';
 
 import ToggleSetting from './ToggleSetting';
 
-import './theme-settings.css';
-
 const propTypes = {
   currentTheme: PropTypes.string.isRequired,
   toggleNightMode: PropTypes.func.isRequired
