@@ -56,19 +56,11 @@ function HeatMap({ calendar, streak }) {
       <FullWidthRow>
         <CalendarHeatMap
           classForValue={value => {
-            if (!value || value.count < 1) {
-              return 'color-empty';
-            }
-            if (value.count < 4) {
-              return 'color-scale-1';
-            }
-            if (value.count < 8) {
-              return 'color-scale-2';
-            }
-            if (value.count >= 8) {
-              return 'color-scale-a-lot';
-            }
-            return 'color-scale-empty';
+            if (!value || value.count < 1) return 'color-empty';
+            if (value.count < 4) return 'color-scale-1';
+            if (value.count < 8) return 'color-scale-2';
+            if (value.count >= 8) return 'color-scale-a-lot';
+            return 'color-empty';
           }}
           endDate={endOfCalendar}
           startDate={startOfCalendar}
