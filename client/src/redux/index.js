@@ -348,7 +348,17 @@ export const reducer = handleActions(
     [settingsTypes.submitNewAboutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>
-      payload ? spreadThePayloadOnUser(state, payload) : state,
+      payload 
+      ? {
+          ...state,
+          user: {
+            ...state.user,
+            [state.appUsername]: {
+              ...state.user[state.appUsername],
+              email: payload
+            }
+          }
+      }: state,
     [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.verifyCertComplete]: (state, { payload }) =>

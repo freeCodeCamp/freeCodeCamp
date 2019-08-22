@@ -437,6 +437,22 @@ export default function(User) {
 
   User.prototype.requestCompletedChallenges = requestCompletedChallenges;
 
+  User.prototype.requestUpdateEmail = function requestUpdateEmail(email) {
+    const userUpdate = new Promise((resolve, reject) =>
+      this.updateAttribute('email', email, err => {
+        if (err) {
+          return reject(err);
+        }
+        return resolve();
+      })
+    );
+    return Observable.fromPromise(userUpdate).map(
+      () => dedent`
+          Your email has been updated.
+        `
+    );
+  }
+
   User.prototype.requestUpdateFlags = async function requestUpdateFlags(
     values
   ) {

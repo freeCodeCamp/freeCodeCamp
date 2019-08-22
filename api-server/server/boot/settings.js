@@ -88,9 +88,16 @@ function updateMyEmail(req, res, next) {
     user,
     body: { email }
   } = req;
-  return user
-    .requestUpdateEmail(email)
-    .subscribe(message => res.json({ message }), next);
+  if (email === user.email) {
+    return res.status(400).json({
+      type: 'danger',
+      message: 'This email is already associated with this account.'
+    });
+  } else {
+    return user
+      .requestUpdateEmail(email)
+      .subscribe(message => res.json({ message }), next);
+  }
 }
 
 const updateMyCurrentChallengeValidators = [
