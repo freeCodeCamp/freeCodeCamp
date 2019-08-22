@@ -83,6 +83,40 @@ Finally, we need a method to do the actual splitting and we can use `Array.slice
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push' rel='nofollow'>Array.push()</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for' target='_blank' rel='nofollow'>For Loops</a>
 
+## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution 2:
+```javascript
+function chunkArrayInGroups(arr, size) {
+  // Break it up.
+  
+  var arr2d = [];
+  var arr1 = [];  
+  
+  while(arr.length!=0){
+    
+     arr1 = arr.splice(0,size);
+     arr2d.push(arr1);
+     
+  }
+  
+  return arr2d;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU/24' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code Explanation:
+* Firstly, we create two empty arrays: `arr2d` and `arr1`. `arr2d` will hold the final answer and will be returned. `arr1` will be used to hold chunks of the orginal array `arr`.
+* In the **while loop**,  the **splice()** is used on the original array `arr` to remove items from `arr` and the removed items are returned as an array which get stored in `arr1`. `arr1` is then pushed into `arr2d`.
+* The **while loop** continues until the original array `arr` becomes empty. 
+* The final result is in `arr2d` which is then returned in the end.
+
+#### Relevant Links
+
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push' rel='nofollow'>Array.push()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while' rel='nofollow'>While Loops</a>
+*  <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice' rel='nofollow'>Array.splice()</a>
+
 ## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution:
 ```javascript
     function chunkArrayInGroups(arr, size) {
