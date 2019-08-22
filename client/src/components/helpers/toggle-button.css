@@ -65,11 +65,6 @@ label.toggle-label {
 }
 
 @media (max-width: 440px) {
-  .btn-group .btn + .btn {
-    margin-left: 0px;
-    margin-top: -2px;
-  }
-
   .btn:first-child > .tick {
     left: auto;
     right: 5px;
