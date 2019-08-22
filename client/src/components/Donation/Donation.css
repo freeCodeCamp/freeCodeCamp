@@ -54,7 +54,7 @@
 }
 
 .donation-email-container input {
-  color: #006400;
+  color: var(--secondary-background);
   font-weight: normal;
 }
 

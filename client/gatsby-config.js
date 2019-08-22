@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-create-client-paths',
       options: {
@@ -115,17 +116,17 @@ module.exports = {
         /* eslint-disable camelcase */
         short_name: 'fCC',
         start_url: '/',
-        theme_color: '#006400',
+        theme_color: '#0a0a23',
         background_color: '#fff',
         /* eslint-enable camelcase */
         display: 'minimal-ui',
-        icon: 'src/images/square_puck.png'
+        icon: 'src/assets/images/square_puck.png'
       }
     },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Lato:400,400i,500']
+        fonts: ['Lato:400,400i,500', 'Roboto Mono:400,700']
       }
     },
     'gatsby-plugin-sitemap',

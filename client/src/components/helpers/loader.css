@@ -8,5 +8,5 @@
 
 .full-screen-wrapper .sk-spinner {
   transform: scale(2);
-  color: #006400;
+  color: var(--secondary-color);
 }

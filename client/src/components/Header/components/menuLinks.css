@@ -4,7 +4,6 @@
   list-style: none;
   justify-content: space-between;
   align-items: center;
-  background-color: #006400;
 }
 
 #top-right-nav li {
@@ -16,13 +15,14 @@
   color: #fff;
   font-size: 18px;
   padding: 8px 15px;
+  text-decoration: none;
 }
 
 .top-right-nav-link:hover,
 .top-right-nav-link:focus,
 .top-right-nav-link:active {
   background-color: #fff;
-  color: #006400;
+  color: var(--theme-color);
   text-decoration: none;
 }
 
@@ -33,6 +33,10 @@
 
 .user-state-spinner > div {
   animation-duration: 1.5s !important;
+}
+
+.top-nav-expanded {
+  background-color: var(--theme-color);
 }
 
 #top-right-nav .signup-btn,

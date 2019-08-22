@@ -6,7 +6,7 @@ localeTitle: Angular
 
 AngularJS (versiones 1.x) es un Framework de código abierto basado en JavaScript. Es multiplataforma y se utiliza para desarrollar una aplicación web de una sola página (SPWA). AngularJS implementa el patrón MVC para separar los componentes de lógica, presentación y datos. También utiliza la inyección de dependencia para hacer uso de los servicios del lado del servidor en las aplicaciones del lado del cliente.
 
-Angular (versiones 2.x y posteriores) es un marco de código abierto basado en Typescript para desarrollar aplicaciones web front-end. Angular tiene las siguientes funciones como genéricos, escritura estática y también algunas características de ES6.
+Angular (versiones 2.x y posteriores) es un marco de código abierto basado en TypeScript para desarrollar aplicaciones web front-end. Angular tiene las siguientes funciones como genéricos, escritura estática y también algunas características de ES6.
 
 ## Historial de versiones
 
