@@ -2,11 +2,11 @@
 title: Getters & Setters
 localeTitle: Hechiceros y Setters
 ---
-# Hechiceros y Setters
+# Getters y Setters
 
-Getters y Setters se utilizan para proteger eficazmente sus datos, especialmente al crear clases. Para cada variable de instancia, un método getter devuelve su valor mientras que un método setter establece o actualiza su valor. Getters y setters también se conocen como accessors y mutators, respectivamente.
+Getters y Setters se utilizan para proteger eficazmente sus datos, especialmente al crear clases. En general, para cada variable de instancia, un método getter devuelve su valor mientras que un método setter establece o actualiza su valor, aunque también pueden incorporar comprobaciones para aceptar o devolver sólo valores válidos (ejemplo más abajo). Getters y setters también se conocen como accessors y mutators, respectivamente.
 
-Por convención, los captadores comienzan con get, seguido del nombre de la variable, con la primera letra del nombre de la variable en mayúscula. Los establecedores comienzan con set, seguido del nombre de la variable, con la primera letra del nombre de la variable en mayúscula.
+Por convención, los getters comienzan con get, seguido del nombre de la variable, con la primera letra del nombre de la variable en mayúscula. Cuando el tipo de retorno es un `boolean` lo más habitual es que empiecen por "is", para indicar que es/esta (ejemplo: `isActive()`). Los setters comienzan con set, seguido del nombre de la variable, con la primera letra del nombre de la variable en mayúscula.
 
 **_Ejemplo:_**
 

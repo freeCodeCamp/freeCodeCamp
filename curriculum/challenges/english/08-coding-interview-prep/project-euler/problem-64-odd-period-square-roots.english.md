@@ -2,6 +2,7 @@
 id: 5900f3ac1000cf542c50febf
 challengeType: 5
 title: 'Problem 64: Odd period square roots'
+forumTopicId: 302176
 ---
 
 ## Description
@@ -143,7 +144,7 @@ How many continued fractions for N ≤ 10000 have an odd period?
 ```yml
 tests:
   - text: <code>euler64()</code> should return 1322.
-    testString: assert.strictEqual(euler64(), 1322, '<code>euler64()</code> should return 1322.');
+    testString: assert.strictEqual(euler64(), 1322);
 
 ```
 
@@ -175,4 +176,5 @@ euler64();
 ```js
 // solution required
 ```
+
 </section>

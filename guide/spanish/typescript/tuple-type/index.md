@@ -29,7 +29,7 @@ arr[3] = 'World!'
 
 ## Propiedades
 
-En el tipo de Typescript puedes tener algunas propiedades de buit-in. Por ejemplo, la longitud o algún otro tipo de cada uno.
+En el tipo de TypeScript puedes tener algunas propiedades de buit-in. Por ejemplo, la longitud o algún otro tipo de cada uno.
 
 ### longitud
 
@@ -45,7 +45,7 @@ let tuple = []; //you can initialize it after the declaration too, not just the 
 
 ## Métodos incorporados
 
-En el tipo de Typescript puedes usar algunas funciones incorporadas. Cada tipo tiene métodos comunes y únicos. A continuación puede leer sobre los métodos más utilizados de los tipos de tuplas.
+En el tipo de TypeScript puedes usar algunas funciones incorporadas. Cada tipo tiene métodos comunes y únicos. A continuación puede leer sobre los métodos más utilizados de los tipos de tuplas.
 
 ### popular()
 

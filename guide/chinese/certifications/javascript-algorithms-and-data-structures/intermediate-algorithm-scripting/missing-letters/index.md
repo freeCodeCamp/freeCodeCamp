@@ -61,7 +61,6 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnD/0)
 
 ### 代码说明：
 
@@ -99,7 +98,6 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnE/0)
 
 ### 代码说明：
 
@@ -148,7 +146,6 @@ function fearNotLetter(str) {
  fearNotLetter("abce"); 
 ```
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 "：火箭：") [运行代码](https://repl.it/CLnG/0)
 
 ### 代码说明：
 

@@ -18,6 +18,9 @@ Estilo de referência: ![alt text](https://upload.wikimedia.org/wikipedia/common
 
 A maioria das operações do BST (por exemplo, busca, max, min, insert, delete ... etc) tomam o tempo O (h) onde h é a altura do BST. O custo dessas operações pode se tornar O (n) para uma árvore binária distorcida. Se nos certificarmos de que a altura da árvore permanece O (Logn) após cada inserção e exclusão, então podemos garantir um limite superior de O (Logn) para todas essas operações. A altura de uma árvore Red Black é sempre O (Logn), onde n é o número de nós na árvore.
 
+### Inserindo em árvores vermelhas e pretas
+Um nó é inicialmente inserido em uma Árvore Vermelho-Preta como qualquer árvore de busca binária. O novo nó recebe uma cor vermelha. Depois que o nó tiver sido inserido, a árvore deve ser validada para garantir que nenhuma das cinco propriedades tenha sido violada. Se uma propriedade foi violada, existem três casos possíveis que exigem uma rotação à esquerda, rotação à direita e / ou uma recoloração dos nós. Os casos são dependentes do "tio" do nó atual. Especificamente, se o nó "tio" é preto ou vermelho. Para mais informações sobre a inserção, os três casos podem ser encontrados [aqui](https://www.geeksforgeeks.org/red-black-tree-set-2-insert/).
+
 ### Comparação com o AVL Tree
 
 As árvores AVL são mais equilibradas em comparação com as árvores pretas vermelhas, mas podem causar mais rotações durante a inserção e a exclusão. Portanto, se o seu aplicativo envolver muitas inserções e exclusões frequentes, as árvores Red Black devem ser preferidas. E se as inserções e exclusões forem menos frequentes e a pesquisa for uma operação mais freqüente, a árvore do AVL deverá ser preferida em relação à Red Black Tree.

@@ -31,7 +31,6 @@ function testEqual(val) {
  testEqual(10); 
 ```
 
-· [Ejecutar código en repl.it](https://repl.it/@AdrianSkar/Basic-JS-Equality-operator)
 
 ### Explicación del código
 

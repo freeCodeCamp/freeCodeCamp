@@ -21,3 +21,23 @@ Un ArrayList es dinámico, lo que significa que aumentará de tamaño si es nece
 Un ArrayList nos permite acceder a elementos al azar. ArrayList es similar a _Vector_ de muchas maneras. Pero es más rápido que los vectores. Lo principal a tener en cuenta es que: los vectores son más rápidos que los arreglos, pero los arreglos de arrays no.
 
 Por lo tanto, cuando se trata de elegir entre los dos, si la velocidad es crítica, entonces se deben considerar los Vectores, de lo contrario las ArrayLists son mejores cuando se trata de almacenar una gran cantidad de elementos y acceder a ellos de manera eficiente.
+
+Para añadir elementos a un ArrayList, digamos ArrayList x, se usa la función add:
+```
+ArrayList<Integer> x = new ArrayList<Integer>();
+x.add(1);
+System.out.println(x);
+x.add(2);
+System.out.println(x);
+for (int i = 0; i <= 10; i++) {
+  x.add(i);
+}
+```
+
+Emisión:
+
+```
+[1]
+[1, 2]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```

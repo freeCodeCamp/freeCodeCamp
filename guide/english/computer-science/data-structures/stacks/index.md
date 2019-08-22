@@ -3,20 +3,22 @@ title: Stacks
 ---
 ## Stacks
 
-A stack is a First In Last Out (FILO) or Last In First Out (LIFO) Data Structure. It is a linear data structure.
+A stack is a First In Last Out (FILO) or Last In First Out (LIFO) linear data structure.
 
-You can imagine a stack as the way plates were organized in buffet restaurant. You can only pick the plate at the top otherwise the stack will collapse. Generally, the last item to be inserted will be removed first. 
+Imagine the way plates are stacked in a buffet restaurant. You can only pick plates from top otherwise the stack will collapse.
 
 Some basics operations of stack are:
-1. Push - Inserts an item at the top of the stack.
-2. Pop - Removes an item at the top of the stack.
-3. isEmpty - Check whether the stack is empty or not
-4. Size - Return the number of items in the stack
-(All the operations can be done in O(1) time)
+1. Push() - Inserts the item on the top of the stack
+2. Pop() - Removes the top item (often times, it is a good idea to implement this function so that it returns the element it removed)
+3. isEmpty() - Check whether the stack is empty or not (returns a boolean)
+4. Size() - Return the number of items in the stack
+5. Top() - Return the item at the top of the stack without popping.
+(All the operations can be done in O(1) time - depending on the implementation)
+Implementation of a stack is possible using arrays, linked lists or other dynamic collections such as array lists (Java) or vectors (C++). When dealing with dynamic collections, it is important to insert items at the end to prevent shifting and maintain an O(1) runtime on each operation. 
 
-Implementation of a stack is possible using either arrays or linked lists. The following is a simple array implementation of the stack data structure with its most common operations.
+The following is a simple array implementation of the stack data structure with its most common operations.
 
-```C++
+```cpp
 //Stack implementation using array in C++
 //You can also include<stack> and then use the C++ STL Library stack class.
 
@@ -65,6 +67,29 @@ int main() {
     return 0;
 }
 ```
+### Stack implementation using STL in C++
+```cpp
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() {
+    stack<int> s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout << "The size of the stack is: " << s.size() << endl;
+    cout << "Top of the stack is: " << s.top() << endl;
+    cout << "The stack is: " << endl;
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    cout << endl;
+}
+```
+
 
 #### Using Arrays as Stacks
 

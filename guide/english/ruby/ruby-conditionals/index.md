@@ -34,6 +34,8 @@ The above statement equal to the statement below
     ```
 ## Ternary Statement
 A ternary statement is used as a short conditional statement. It is written as follows
+   
+ *variable = condition ? true_result : false_result*
 *   ```ruby
     game = "won"
     fans = game == "won" ? "happy" : unhappy

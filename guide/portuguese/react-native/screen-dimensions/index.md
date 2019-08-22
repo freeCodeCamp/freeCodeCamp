@@ -2,9 +2,9 @@
 title: Screen Dimensions
 localeTitle: Dimensões da tela
 ---
-## Reagir Nativo - Dimensões da Tela
+## React Native - Dimensões da Tela
 
-Reagir Native usa Dots Per Inch (DPI) para medir o dimensionamento da interface do usuário (UI) e qualquer coisa exibida na interface do usuário. Esse tipo de medição permite que uma aplicação pareça uniforme em vários tamanhos de tela e densidades de pixels.
+React Native usa Dots Per Inch (DPI) para medir o dimensionamento da interface do usuário (UI) e qualquer coisa exibida na interface do usuário. Esse tipo de medição permite que uma aplicação pareça uniforme em vários tamanhos de tela e densidades de pixels.
 
 Para casos de uso padrão, os aplicativos podem ser desenvolvidos sem a necessidade de conhecer as especificidades do dispositivo do usuário (por exemplo, densidade de pixels), pois os elementos da interface do usuário serão redimensionados automaticamente. Quando é necessário, há APIs disponíveis, como o `PixelRatio` para descobrir a densidade de pixels do dispositivo do usuário.
 
@@ -23,4 +23,4 @@ Dimensions.get('window').height;
  Dimensions.get('screen').width; 
 ```
 
-**Nota: Ocorreram alguns problemas conhecidos no passado com a API de dimensões, como não devolver as informações corretas quando um usuário gira o dispositivo. É melhor certificar-se de testar isso em dispositivos reais antes de implantar um aplicativo.**
+**Nota: Ocorreram alguns problemas conhecidos no passado com a API de `Dimensions`, como não devolver as informações corretas quando um usuário gira o dispositivo. É melhor certificar-se de testar isso em dispositivos reais antes de implantar um aplicativo.**

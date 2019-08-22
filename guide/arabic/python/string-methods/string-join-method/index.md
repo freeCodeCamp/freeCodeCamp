@@ -12,28 +12,33 @@ localeTitle: طريقة الانضمام إلى سلسلة
 
 1) الانضمام إلى ist من السلاسل مع `":"`
 
- `print ":".join(["freeCodeCamp", "is", "fun"]) 
-` 
+```python
+print ":".join(["freeCodeCamp", "is", "fun"])
+``` 
 
 انتاج |
 
- `freeCodeCamp:is:fun 
-` 
+```shell
+freeCodeCamp:is:fun
+``` 
 
 2) الانضمام إلى مجموعة من الأوتار مع `" and "`
 
- `print " and ".join(["A", "B", "C"]) 
-` 
+```python
+print " and ".join(["A", "B", "C"])
+``` 
 
 انتاج |
 
- `A and B and C 
-` 
+```shell
+A and B and C
+``` 
 
 3) أدخل `" "` بعد كل حرف في سلسلة
 
- `print " ".join("freeCodeCamp") 
-` 
+```python
+print " ".join("freeCodeCamp")
+``` 
 
 انتاج:
 
@@ -48,20 +53,23 @@ localeTitle: طريقة الانضمام إلى سلسلة
 
 انتاج:
 
- `program 
-` 
+```shell
+program
+``` 
 
 5) الانضمام مع مجموعات.
 
- `test =  {'2', '1', '3'} 
- s = ', ' 
- print(s.join(test)) 
-` 
+```python
+test =  {'2', '1', '3'}
+s = ', '
+print(s.join(test))
+``` 
 
 انتاج:
 
- `2, 3, 1 
-` 
+```shell
+2, 3, 1
+``` 
 
 #### معلومات اكثر:
 

@@ -27,3 +27,10 @@ localeTitle: termos comuns que todo usuário de Linux deve saber.
 *   **Gerenciador de Pacotes:** é um programa de software que permite pesquisar, instalar, atualizar e remover aplicativos e outras funções de gerenciamento de aplicativos. Cada distro tem gráficos de gerenciadores de pacotes finais (como o Ubuntu Software Center) e ferramentas de gerenciamento de pacotes de linha de comando, como o "apt-get".
     
 *   **Dependência:** uma dependência é um programa de software que o programa que você deseja instalar precisa ser executado. Quando um programa está sendo instalado, ele fornece uma lista de suas dependências ao gerenciador de pacotes padrão para verificar se elas já estão instaladas e baixá-las de um repositório, se não estiverem.
+
+*   **Live** é um modo em que o usuário pode iniciar o sistema Linux a partir de um USB ou CD/DVD sem precisar instalá-lo
+permitindo o usuário "testar" o sistema antes de instala-lo ou executar outras funções disponiveis apenas em uma distribuição especifica sem precisar apagar seu sistema.
+
+*   **GRUB** é o responsável por fazer o sistema linux iniciar. Ele é o primeiro a ser executado quando ligamos o computador e sua função é carregar o kernel linux na memória junto com seus parâmetros.
+
+*   **Root** é o usuário com mais poderes em um sistema Unix/linux, ele pode fazer tudo no sistema desde a criar e deletar usuários à exclusão de arquivos de sistema. Utilizado quando devemos administrar o nosso sistema, quando as permissões de usuários comuns não satisfazem os requisitos das configurações

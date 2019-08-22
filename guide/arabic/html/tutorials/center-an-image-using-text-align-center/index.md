@@ -10,46 +10,46 @@ localeTitle: توسيط صورة باستخدام Text Align Center
 
 ### مثال
 
- `
-<!DOCTYPE html> 
- <html> 
-  <head> 
-    <title>Center an Image using text align center</title> 
-    <style> 
-      .img-container { 
-        text-align: center; 
-      } 
-    </style> 
-  </head> 
-  <body> 
-    <div class="img-container"> <!-- Block parent element --> 
-      <img src="user.png" alt="John Doe"> 
-    </div> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Center an Image using text align center</title>
+    <style>
+      .img-container {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-container"> <!-- Block parent element -->
+      <img src="user.png" alt="John Doe">
+    </div>
+  </body>
+</html>
+``` 
 
 **ملاحظة:** يجب أن يكون العنصر الرئيسي عنصر كتلة. إذا لم يكن عنصر كتلة ، يجب عليك إضافة `display: block;` خاصية CSS مع خاصية `text-align` .
 
- `
-<!DOCTYPE html> 
- <html> 
-  <head> 
-    <title>Center an Image using text align center</title> 
-    <style> 
-      .img-container { 
-        text-align: center; 
-        display: block; 
-      } 
-    </style> 
-  </head> 
-  <body> 
-    <span class="img-container"> <!-- Inline parent element --> 
-      <img src="user.png" alt=""> 
-    </span> 
-  </body> 
- </html> 
-` 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Center an Image using text align center</title>
+    <style>
+      .img-container {
+        text-align: center;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="img-container"> <!-- Inline parent element -->
+      <img src="user.png" alt="">
+    </span>
+  </body>
+</html>
+``` 
 
 **العرض التوضيحي:** [Codepen](https://codepen.io/aravindio/pen/PJMXbp)
 

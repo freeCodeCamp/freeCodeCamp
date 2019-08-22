@@ -6,13 +6,13 @@ localeTitle: Ciência da Computação
 
 Ciência da Computação é o estudo de computadores e os conceitos que tornam os computadores possíveis.
 
-Grande parte da ciência da computação foi pioneira na segunda metade do século XX.
+Uma grande parte da ciência da computação foi pioneira na segunda metade do século XX.
 
 Hoje, se você participar de um curso de graduação em ciência da computação, aprenderá sobre hardware e software. Você aprenderá como os computadores funcionam em um nível baixo de abstração (linguagem de máquina) e em um alto nível de abstração (linguagens de script modernas como JavaScript).
 
 # Campos de Ciência da Computação
 
-A ciência da computação é categorizada em vários campos. A seguir estão os campos atuais estabelecidos e bem estudados. A maioria dos campos é categorizada em sub-campos.
+A ciência da computação é categorizada em vários campos. O seguido são os campos estabelecidos e bem estudados. A maioria dos campos é categorizada em sub-campos.
 
 *   [Teoria da Computação](https://en.wikipedia.org/wiki/Theory_of_computation)
 *   Teoria da Complexidade

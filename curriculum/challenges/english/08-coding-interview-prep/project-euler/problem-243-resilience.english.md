@@ -2,6 +2,7 @@
 id: 5900f4601000cf542c50ff73
 challengeType: 5
 title: 'Problem 243: Resilience'
+forumTopicId: 301890
 ---
 
 ## Description
@@ -28,7 +29,7 @@ Find the smallest denominator d, having a resilience R(d) < 15499/94744 .
 ```yml
 tests:
   - text: <code>euler243()</code> should return 892371480.
-    testString: assert.strictEqual(euler243(), 892371480, '<code>euler243()</code> should return 892371480.');
+    testString: assert.strictEqual(euler243(), 892371480);
 
 ```
 
@@ -60,4 +61,5 @@ euler243();
 ```js
 // solution required
 ```
+
 </section>

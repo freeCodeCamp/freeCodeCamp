@@ -4,7 +4,7 @@ localeTitle: Barra de navegação
 ---
 ## Barra de navegação
 
-A estrutura do Bootstrap fornece uma barra de navegação de chamada de recurso. Resumindo, uma barra de navegação (também chamada de navbars) é um cabeçalho na parte superior da página para exibir informações de navegação.
+A estrutura do Bootstrap fornece uma barra de navegação de chamada de recurso. Resumindo, uma barra de navegação (também chamada de navbar) é um cabeçalho na parte superior da página para exibir informações de navegação.
 
 #### Como usar
 
@@ -127,7 +127,7 @@ Em alguns casos, você pode querer manter a barra de navegação na parte superi
 
 #### Recolhendo a barra de navegação
 
-Em uma tela pequena (como um telefone ou tablet), a barra de navegação ocupará muito espaço. Felizmente a opção de collase a navbar existe. Você pode fazer isso usando o seguinte exemplo.
+Em uma tela pequena (como um telefone ou tablet), a barra de navegação ocupará muito espaço. Felizmente a opção de transformar a navbar em um menu existe (collapse). Você pode fazer isso usando o seguinte exemplo.
 
 ```html
 

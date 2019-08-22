@@ -12,21 +12,23 @@ localeTitle: تخزين HTML5 على الويب
 
 `window.localStorage` : يخزن البيانات بدون تاريخ انتهاء الصلاحية ويعيش حتى تتم إزالتها.
 
- `// Store Item 
- localStorage.setItem("foo", "bar"); 
- 
- // Get Item 
- localStorage.getItem("foo"); //returns "bar" 
-` 
+```javascript
+// Store Item
+localStorage.setItem("foo", "bar");
+
+// Get Item
+localStorage.getItem("foo"); //returns "bar"
+``` 
 
 `window.sessionStorage` : تخزين البيانات لجلسة واحدة ، حيث يتم فقدان البيانات عند إغلاق علامة تبويب المتصفح / المتصفح.
 
- `// Store Item 
- sessionStorage.setItem("foo", "bar"); 
- 
- // Get Item 
- sessionStorage.getItem("foo"); //returns "bar" 
-` 
+```javascript
+// Store Item
+sessionStorage.setItem("foo", "bar");
+
+// Get Item
+sessionStorage.getItem("foo"); //returns "bar"
+``` 
 
 نظرًا لأن التطبيق الحالي يعتمد فقط تعيينات سلسلة إلى سلسلة ، تحتاج إلى إجراء تسلسل وإزالة تسلسل هياكل البيانات الأخرى.
 
@@ -34,18 +36,21 @@ localeTitle: تخزين HTML5 على الويب
 
 على سبيل المثال لـ JSON المعطى
 
- `var jsonObject = { 'one': 1, 'two': 2, 'three': 3 }; 
-` 
+```
+var jsonObject = { 'one': 1, 'two': 2, 'three': 3 };
+``` 
 
 تم أولاً تحويل كائن JSON إلى سلسلة وحفظه في وحدة التخزين المحلية:
 
- `localStorage.setItem('jsonObjectString', JSON.stringify(jsonObject)); 
-` 
+```
+localStorage.setItem('jsonObjectString', JSON.stringify(jsonObject));
+``` 
 
 للحصول على كائن JSON من السلسلة المخزنة في التخزين المحلي:
 
- `var jsonObject = JSON.parse(localStorage.getItem('jsonObjectString')); 
-` 
+```
+var jsonObject = JSON.parse(localStorage.getItem('jsonObjectString'));
+``` 
 
 #### معلومات اكثر:
 

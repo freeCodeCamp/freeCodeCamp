@@ -2,6 +2,7 @@
 id: 587d7b85367417b2b2512b3a
 title: Catch Arguments Passed in the Wrong Order When Calling a Function
 challengeType: 1
+forumTopicId: 301184
 ---
 
 ## Description
@@ -20,9 +21,9 @@ The function <code>raiseToPower</code> raises a base to an exponent. Unfortunate
 ```yml
 tests:
   - text: Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.
-    testString: assert(power == 8, 'Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');
+    testString: assert(power == 8);
   - text: Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.
-    testString: assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g), 'Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');
+    testString: assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 
 ```
 
@@ -54,6 +55,14 @@ console.log(power);
 <section id='solution'>
 
 ```js
-// solution required
+function raiseToPower(b, e) {
+ return Math.pow(b, e);
+}
+
+let base = 2;
+let exp = 3;
+let power = raiseToPower(base, exp);
+console.log(power);
 ```
+
 </section>
