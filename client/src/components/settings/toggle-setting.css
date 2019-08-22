@@ -4,6 +4,12 @@
   margin-bottom: 5px;
 }
 
+.toggle-setting-container .toggle-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .toggle-setting-container .btn-group {
   padding-left: 5px;
 }
@@ -23,8 +29,11 @@
     flex: 0 1 auto;
   }
 
-  .toggle-setting-container .btn-group,
-  .theme-setting-container .btn-group {
+  .toggle-setting-container .toggle-label {
+    justify-content: flex-start;
+  }
+
+  .toggle-setting-container .btn-group {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
