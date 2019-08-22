@@ -51,6 +51,9 @@ const defineMonacoThemes = monaco => {
   monaco.editor.defineTheme('vs-dark-custom', {
     base: 'vs-dark',
     inherit: true,
+    colors: {
+      'editor.background': '#2a2a40'
+    },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
       { token: 'delimiter.parenthesis.js', foreground: yellowCollor },
@@ -70,6 +73,12 @@ class Editor extends Component {
     super(...props);
 
     this.options = {
+      fontSize: '18px',
+      scrollBeyondLastLine: false,
+      selectionHighlight: false,
+      overviewRulerBorder: false,
+      hideCursorInOverviewRuler: true,
+      renderIndentGuides: false,
       minimap: {
         enabled: false
       },
@@ -78,7 +87,9 @@ class Editor extends Component {
       scrollbar: {
         horizontal: 'hidden',
         vertical: 'visible',
-        verticalHasArrows: true
+        verticalHasArrows: false,
+        useShadows: false,
+        verticalScrollbarSize: 5
       }
     };
 

@@ -65,9 +65,9 @@ function Camper({
   // A lot of the user-profiles are still using the defunct service.
   const avatar = /example.com|identicon.org/.test(picture) ? (
     <Identicon
-      bg={'#006400'}
+      bg={'#858591'}
       count={5}
-      fg={'#FCB900'}
+      fg={'#0A0A23'}
       padding={5}
       size={256}
       string={username}

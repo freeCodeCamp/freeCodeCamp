@@ -1,4 +1,4 @@
-html {
+/* html {
   font-family: 'Lato', sans-serif;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -603,4 +603,4 @@ pre code {
   flex-direction: column;
   margin-top: var(--header-height);
   min-height: calc(100vh - var(--header-height));
-}
+} */

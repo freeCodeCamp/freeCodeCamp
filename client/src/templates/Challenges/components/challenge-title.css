@@ -10,5 +10,6 @@
 }
 
 .challenge-title-wrap > a {
+  margin-top: 10px;
   align-self: flex-start;
 }
