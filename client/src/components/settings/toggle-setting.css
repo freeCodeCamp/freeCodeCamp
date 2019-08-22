@@ -25,6 +25,10 @@
 }
 
 @media (max-width: 440px) {
+  .toggle-setting-container .form-group {
+    flex-direction: column;
+  }
+
   .toggle-setting-container > .form-group > * {
     flex: 0 1 auto;
   }
@@ -33,9 +37,13 @@
     justify-content: flex-start;
   }
 
+  .toggle-setting-container .help-block {
+    margin-bottom: 0px;
+  }
+
   .toggle-setting-container .btn-group {
-    flex-direction: column;
-    align-items: stretch;
     justify-content: flex-start;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
