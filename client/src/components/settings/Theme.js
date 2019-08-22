@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ControlLabel } from '@freecodecamp/react-bootstrap';
+import { Form } from '@freecodecamp/react-bootstrap';
 
-import TB from '../helpers/ToggleButton';
+import ToggleSetting from './ToggleSetting';
 
 import './theme-settings.css';
 
@@ -13,18 +13,18 @@ const propTypes = {
 
 export default function ThemeSettings({ currentTheme, toggleNightMode }) {
   return (
-    <div className='toggle-setting-container' id='theme-settings-container'>
-      <ControlLabel className='theme-label' htmlFor='night-mode'>
-        <strong>Night Mode</strong>
-      </ControlLabel>
-      <TB
-        name='night-mode'
-        onChange={() =>
+    <Form inline={true} onSubmit={e => e.preventDefault()}>
+      <ToggleSetting
+        action='Night Mode'
+        flag={currentTheme === 'night'}
+        flagName='currentTheme'
+        offLabel='Off'
+        onLabel='On'
+        toggleFlag={() =>
           toggleNightMode(currentTheme === 'night' ? 'default' : 'night')
         }
-        value={currentTheme === 'night'}
       />
-    </div>
+    </Form>
   );
 }
 

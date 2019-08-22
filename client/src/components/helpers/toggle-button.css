@@ -52,7 +52,6 @@
 label.toggle-label {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 @media (max-width: 550px) {
