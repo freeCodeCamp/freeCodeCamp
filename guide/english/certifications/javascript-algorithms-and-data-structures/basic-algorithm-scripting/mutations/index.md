@@ -97,6 +97,7 @@ Grab the second string, lowercase and turn it into an array; then make sure _eve
 
 **Declarative**
 
+```js
 function mutation(arr) {
   for (var el of arr[1]){
     let re = new RegExp(el,"i");
@@ -106,6 +107,7 @@ function mutation(arr) {
   }
   return true;
 }
+```
 
 #### Code Explanation
 
