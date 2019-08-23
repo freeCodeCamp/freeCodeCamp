@@ -1,5 +1,4 @@
-image:
-  file: .gitpod.Dockerfile
+image: gitpod/workspace-mongodb
 ports:
 - port: 27017 # mongodb
   onOpen: ignore
@@ -17,7 +16,7 @@ tasks:
   # starting mongo in background, so it doesn't block prebuilds
   before: >
     mkdir -p /workspace/data &&
-    (~/mongodb/bin/mongod --dbpath /workspace/data &)
+    (mongod --dbpath /workspace/data &)
 
 - name: server
   before: export COOKIE_DOMAIN=gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
@@ -28,7 +27,7 @@ tasks:
     npm ci &&
     gp await-port 27017 &&
     npm run seed &&
-    ~/mongodb/bin/mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
+    mongo --eval "db.fsyncLock(); db.fsyncUnlock()"
   command: >
     npm run ensure-env &&
     gp await-port 27017 &&
