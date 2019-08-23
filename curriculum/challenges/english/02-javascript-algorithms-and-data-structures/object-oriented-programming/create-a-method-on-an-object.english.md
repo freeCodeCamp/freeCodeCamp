@@ -7,8 +7,8 @@ forumTopicId: 301318
 
 ## Description
 <section id='description'>
-Objects can have a special type of property, called a method.
-<dfn>Methods</dfn> are properties that are functions. This adds different behavior to an object. Here is the <code>duck</code> example with a method:
+Objects can have a special type of property, called a <dfn>method</dfn>.
+Methods are properties that are functions. This adds different behavior to an object. Here is the <code>duck</code> example with a method:
 
 ```js
 let duck = {

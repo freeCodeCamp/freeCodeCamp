@@ -16,7 +16,7 @@ Animal.prototype.eat = function() {
 };
 ```
 
-This and the next challenge will cover how to reuse <code>Animal's</code> methods inside <code>Bird</code> and <code>Dog</code> without defining them again. It uses a technique called inheritance.
+This and the next challenge will cover how to reuse <code>Animal's</code> methods inside <code>Bird</code> and <code>Dog</code> without defining them again. It uses a technique called <dfn>inheritance</dfn>.
 This challenge covers the first step: make an instance of the <code>supertype</code> (or parent).
 You already know one way to create an instance of <code>Animal</code> using the <code>new</code> operator:
 

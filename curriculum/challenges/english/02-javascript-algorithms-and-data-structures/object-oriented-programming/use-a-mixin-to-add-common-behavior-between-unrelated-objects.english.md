@@ -8,7 +8,7 @@ forumTopicId: 301331
 ## Description
 <section id='description'>
 As you have seen, behavior is shared through inheritance. However, there are cases when inheritance is not the best solution. Inheritance does not work well for unrelated objects like <code>Bird</code> and <code>Airplane</code>. They can both fly, but a <code>Bird</code> is not a type of <code>Airplane</code> and vice versa.
-For unrelated objects, it's better to use mixins. A mixin allows other objects to use a collection of functions.
+For unrelated objects, it's better to use <dfn>mixins</dfn>. A mixin allows other objects to use a collection of functions.
 
 ```js
 let flyMixin = function(obj) {

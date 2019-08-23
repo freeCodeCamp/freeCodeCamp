@@ -7,7 +7,7 @@ forumTopicId: 301334
 
 ## Description
 <section id='description'>
-There's a principle in programming called "Don't Repeat Yourself" (DRY). The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
+There's a principle in programming called <dfn>Don't Repeat Yourself (DRY)</dfn>. The reason repeated code is a problem is because any change requires fixing code in multiple places. This usually means more work for programmers and more room for errors.
 Notice in the example below that the <code>describe</code> method is shared by <code>Bird</code> and <code>Dog</code>:
 
 ```js
