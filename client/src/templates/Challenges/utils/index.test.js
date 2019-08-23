@@ -19,7 +19,7 @@ describe('index', () => {
         title: '& a sample title?'
       });
       expect(value).toEqual(
-        `${forumLocation}/search?q=a sample title%20in%3Atitle%20order%3Aviews`
+        `${forumLocation}/search?q=%26%20a%20sample%20title%3F%20in%3Atitle%20order%3Aviews`
       );
     });
   });
