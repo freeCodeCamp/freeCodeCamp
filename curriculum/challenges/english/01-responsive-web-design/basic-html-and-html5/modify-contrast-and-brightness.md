@@ -7,13 +7,13 @@ videoUrl:
 
 ## Description
 <section id='description'>
-This function helps you lighten and change the contrast of the image that stays in one color space. 
-We use the function: <code>cv.convertScaleAbs(src, dst, contrast, brightness) </code>, where <code>src</code> is an input image,<code>dst</code> is a destination one, and <code>contrast</code> is a number argument that defines the color depth, <code>brightness</code> is a number argument that enlightens image.
+<code>cv.convertScaleAbs()</code> method will help you change contrast and brightness of the picture in the current color space.
 </section>
 
 ## Instructions
 <section id='instructions'>
-You should use <code>cv.convertScaleAbs()</code> to change contrast and brightness
+In the current sample we using <code>cv.convertScaleAbs(src, dst, contrast, brightness)</code> function.
+As arguments we using source picture(src), <code>cv.Mat()</code> for result(dst), contrast(value vary from 1.0 to 3.0) and brightness(value vary from 0 to 100).
 </section>
 
 ## Tests
@@ -41,7 +41,7 @@ tests:
     let dst = new cv.Mat();
     let cont = Number(document.getElementById("contrast").value);
     let brig = Number(document.getElementById("brightness").value);
-    
+
     cv.imshow("canvasOutput", dst);
     mat.delete();
     dst.delete();
@@ -55,7 +55,7 @@ contrast:<input type="range" min="1.0" max="3.0" step="0.1" value="1.5" id="cont
 brightness:<input type="range" min="0" max="100" step="1" value="50" id="brightness" onchange="contrast()">
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
+<script async src="https://docs.opencv.org/master/opencv.js"
         onload='cv["onRuntimeInitialized"]=()=> { contrast() }'  
         type="text/javascript">
 </script>
@@ -92,7 +92,7 @@ contrast:<input type="range" min="1.0" max="3.0" step="0.1" value="1.5" id="cont
 brightness:<input type="range" min="0" max="100" step="1" value="50" id="brightness" onchange="contrast()">
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
+<script async src="https://docs.opencv.org/master/opencv.js"
         onload='cv["onRuntimeInitialized"]=()=> { contrast() }'  
         type="text/javascript">
 </script>

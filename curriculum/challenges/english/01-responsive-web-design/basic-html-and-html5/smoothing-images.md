@@ -7,13 +7,15 @@ videoUrl:
 
 ## Description
 <section id='description'>
-Image blurring is achieved by convolving the image with a low-pass filter kernel. It is useful for removing noises. It actually removes high frequency content (eg: noise, edges) from the image. So edges are blurred a little bit in this operation
-We use the functions: <code>cv.blur(src, dst, ksize)</code>  where <code>src</code> is an input image,<code>dst</code> - destination one and <code>ksize</code> blurring kernel size. 
+<code>cv.blur()</code> method will help you smooth picture via using convolution of the picture with a low-pass filter kernel. This is can be used for removing noises and high frequency content.
+In this sample we are using next OpenCV function:
+<code>cv.blur(src, dst, kernelSize)</code>
 </section>
 
 ## Instructions
 <section id='instructions'>
-You should use <code>cv.blur</code> to sumooth image. And use src, dst, kernelSize as arguments.
+In the current sample you should use <code>cv.blur()</code> for smooth the
+picture. As arguments you should use source image, destination <code>cv.Mat()</code> for resulting picture and choose kernel size for math conversion.
 </section>
 
 ## Tests
@@ -22,7 +24,7 @@ You should use <code>cv.blur</code> to sumooth image. And use src, dst, kernelSi
 ```yml
 tests:
    - text:  You must have <code>cv.blur</code> in your code
-     testString: assert(code.match(/cv.blur/g),'You must have <code>cv.blur</code> in your code'); 
+     testString: assert(code.match(/cv.blur/g),'You must have <code>cv.blur</code> in your code');
  ```
 
 </section>
@@ -39,7 +41,7 @@ tests:
     let src = cv.imread('imageSrc');
     let dst = new cv.Mat();
     let kernelSize = new cv.Size(3, 3);
- 
+
     cv.imshow('canvasOutput', dst);
     src.delete();
     dst.delete();

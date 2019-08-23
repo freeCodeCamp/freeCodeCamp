@@ -7,9 +7,9 @@ videoUrl:
 
 ## Description
 <section id='description'>
-"Inpaint" method will help you restore your damaged picture via using one of the two algorithms: Fast Marching Method and algorithm based on fluid dynamics. In the current sample we are going to use Fast Marching Method(<code>cv.INPAINT_TELEA</code>): we are consider region of the picture for being inpainted. Algorithm starts from the boundary of this region and goes inside the region gradually filling everything in the boundary first. It takes a small neighbourhood around the pixel on the neigbourhood to be inpainted. This pixel is replaced by normalized weighted sum of all the known pixels in the neigbourhood.
+"cv.inpaint()" method will help you restore your damaged picture via using one of the two algorithms: Fast Marching Method and algorithm based on fluid dynamics. In the current sample we are going to use Fast Marching Method(<code>cv.INPAINT_TELEA</code>): we are consider region of the picture for being inpainted. Algorithm starts from the boundary of this region and goes inside the region gradually filling everything in the boundary first. It takes a small neighbourhood around the pixel on the neigbourhood to be inpainted. This pixel is replaced by normalized weighted sum of all the known pixels in the neigbourhood.
 In this sample we are using next OpenCV function:
-<code>cv.inpaint(src, mask, dst, radius, method)</code> 
+<code>cv.inpaint(src, mask, dst, radius, method)</code>
 </section>
 
 ## Instructions
@@ -84,14 +84,14 @@ function init()
 {
   srcCopy = cv.imread("src");
   for (let i = 0; i < 5; ++i) {
-    let xstart = Math.floor(Math.random() * srcCopy.cols); 
-    let ystart = Math.floor(Math.random() * srcCopy.rows); 
-    let xend = Math.floor(Math.random() * srcCopy.cols); 
-    let yend = Math.floor(Math.random() * srcCopy.rows); 
+    let xstart = Math.floor(Math.random() * srcCopy.cols);
+    let ystart = Math.floor(Math.random() * srcCopy.rows);
+    let xend = Math.floor(Math.random() * srcCopy.cols);
+    let yend = Math.floor(Math.random() * srcCopy.rows);
     cv.line(srcCopy, {x: xstart, y: ystart}, {x: xend, y: yend}, [0, 0, 0, 255], 2);
   }
   cv.imshow("canvas", srcCopy);
- 
+
   src = new cv.Mat();
   cv.cvtColor(srcCopy, src, cv.COLOR_RGBA2RGB);
   mask = new cv.Mat.zeros(src.size(), cv.CV_8UC1);
@@ -109,7 +109,7 @@ function runSample()
 </script>
 
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
+<script async src="https://docs.opencv.org/master/opencv.js"
         onload='cv["onRuntimeInitialized"]=()=> { init() }'  
         type="text/javascript">
 </script>
@@ -169,10 +169,10 @@ function init()
 {
   srcCopy = cv.imread("src");
   for (let i = 0; i < 10; ++i) {
-    let xstart = Math.floor(Math.random() * srcCopy.cols); 
-    let ystart = Math.floor(Math.random() * srcCopy.rows); 
-    let xend = Math.floor(Math.random() * srcCopy.cols); 
-    let yend = Math.floor(Math.random() * srcCopy.rows); 
+    let xstart = Math.floor(Math.random() * srcCopy.cols);
+    let ystart = Math.floor(Math.random() * srcCopy.rows);
+    let xend = Math.floor(Math.random() * srcCopy.cols);
+    let yend = Math.floor(Math.random() * srcCopy.rows);
     cv.line(srcCopy, {x: xstart, y: ystart}, {x: xend, y: yend}, [0, 0, 0, 255]);
   }
   cv.imshow("canvas", srcCopy);
@@ -194,7 +194,7 @@ function runSample()
 </script>
 
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
+<script async src="https://docs.opencv.org/master/opencv.js"
         onload='cv["onRuntimeInitialized"]=()=> { init() }'  
         type="text/javascript">
 </script>

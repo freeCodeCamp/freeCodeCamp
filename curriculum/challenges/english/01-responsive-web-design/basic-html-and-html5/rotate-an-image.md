@@ -7,15 +7,18 @@ videoUrl:
 
 ## Description
 <section id='description'>
-In many cases we need to rotate image. In openCV you can do this way to matrix transformations.
-We use the function: <code>cv.rotate(src, dst, rotateCode)</code> to rotate on 90 degree where <code>src</code> is an input image, <code>dst</code> is destination one and <code>rotateCode</code> is a rotation code.
+In many cases we need to rotate image. In OpenCV you can do this way to matrix transformations.
+We use the function: <code>cv.rotate(src, dst, rotateCode)</code> to rotate on 90 degree where <code>src</code> is an input image, <code>dst</code> is destination one and <code>rotateCode</code> is a rotation method.
 
 </section>
 
 ## Instructions
 <section id='instructions'>
-You should use <code>cv.rotate()</code> to rotate image.
-Also we need to use <code>cv.ROTATE_90_CLOCKWISE</code> to conver image in shades of gray.
+You should use <code>cv.rotate()</code> function to rotate image.
+You can use this methods as <code>rotateCode</code> argument:
+<code>cv.ROTATE_90_CLOCKWISE</code>;
+<code>cv.ROTATE_180</code>;
+<code>cv.ROTATE_90_COUNTERCLOCKWISE</code>.
 </section>
 
 ## Tests
@@ -23,9 +26,9 @@ Also we need to use <code>cv.ROTATE_90_CLOCKWISE</code> to conver image in shade
 
 ```yml
 tests:
-   - text: Use <code>cv.rotate</code> to rotate image 
+   - text: Use <code>cv.rotate</code> to rotate image
      testString: assert(code.match(/cv.rotate/g),'Use <code>cv.imread</code> to read image and create a matix of image');
-   - text: Use <code>cv.ROTATE_90_CLOCKWISE</code> like argument in <code>cv.rotate</code> to rotate image on 90 degree 
+   - text: Use <code>cv.ROTATE_90_CLOCKWISE</code> like argument in <code>cv.rotate</code> to rotate image on 90 degree
      testString: assert(code.match(/cv.ROTATE_90_CLOCKWISE/g),'Use <code>cv.ROTATE_90_CLOCKWISE</code> like argument in <code>cv.rotate</code> to rotate image on 90 degree  ');
 
 ```
@@ -45,7 +48,7 @@ tests:
   function runSample() {
     let src = cv.imread("imgSrc");
     let dst = new cv.Mat();
-   
+
     cv.imshow("canvasOutput", dst);
     src.delete();
     dst.delete();

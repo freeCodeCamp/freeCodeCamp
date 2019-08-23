@@ -2,21 +2,21 @@
 id: 5d3ffa56e5b42a8be2747034
 title: Blend images
 challengeType: 0
-videoUrl: 
+videoUrl:
 ---
 
 ## Description
 <section id='description'>
-In this lesson we will look at cv.addWeighted. This function calculates the weighted sum of two arrays.
-We use the functions: <code>cv.addWeighted(src1, alpha,	src2,	beta,	gamma, dst)</code>  where <code>src1</code> is first input array, <code>alpha</code> is a weight of the first array elements, <code>src2</code> is second input array, <code>beta</code> is a weight of the second array elements,<code>gamma</code> is a scalar added to the sum. <code>dst</code> output array that has the same size and number of channels as the input arrays.
-The function addWeighted calculates the weighted sum of two arrays as follows:
-dst= src1 * alpha + src2 * beta + gamma
+<code>cv.addWeighted()</code> method will help you blend pictures via calculating the weighted sum of two <code>cv.Mat()</code>.
+Then we saying "weighted" we mean transparency of pictures. It's value vary from 0 to 1.
+In this sample we are using next OpenCV function:
+<code>cv.addWeighted(src1, alpha, src2, beta, gamma, dst)</code>
 
 </section>
 
 ## Instructions
 <section id='instructions'>
-You should use <code>cv.addWeighted()</code> to blend two images.
+In the current sample we should set transparency(alpha, beta) of each picture(src1, src2), scalar which added to result(gamma) and cv.Mat() for result(dst).
 </section>
 
 ## Tests
@@ -25,9 +25,9 @@ You should use <code>cv.addWeighted()</code> to blend two images.
 ```yml
 tests:
    - text: Use <code>cv.addWeighted</code> to blend two image
-     testString: assert(code.match(/cv.addWeighted/g),'to blend image'); 
+     testString: assert(code.match(/cv.addWeighted/g),'to blend image');
 ```
- 
+
 </section>
 
 ## Challenge Seed
@@ -43,9 +43,9 @@ tests:
     let firstSrc = cv.imread("firstImageSrc");
     let secondSrc = cv.imread("secondImageSrc");
     let alpha = 0.5;
-    let beta = 1; 
+    let beta = 1;
     let gamma = 0.0;
-  
+
     cv.imshow("canvasOutput", dst);
     firstSrc.delete();
     secondSrc.delete();
@@ -59,8 +59,8 @@ tests:
 
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
-        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }' 
+<script async src="https://docs.opencv.org/master/opencv.js"
+        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }'
         type="text/javascript">
 </script>
 ```
@@ -78,7 +78,7 @@ tests:
     let firstSrc = cv.imread("firstImageSrc");
     let secondSrc = cv.imread("secondImageSrc");
     let alpha = 0.5;
-    let beta = 1; 
+    let beta = 1;
     let gamma = 0.0;
     cv.addWeighted(firstSrc, alpha, secondSrc, beta, gamma, dst);
     cv.imshow("canvasOutput", dst);
@@ -94,10 +94,10 @@ tests:
 
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
-        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }' 
+<script async src="https://docs.opencv.org/master/opencv.js"
+        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }'
         type="text/javascript">
-</script> 
+</script>
 ```
 
 </section>

@@ -7,8 +7,8 @@ videoUrl:
 
 ## Description
 <section id='description'>
-Changing images sizes is the most common image processing procedure. OpenCV comes with a function cv.resize() for this purpose. The size of the image can be specified manually, or you can specify the scaling factor.
-We use the function: <code>cv.resize(src, dst, dsize) </code> where <code>src</code> is an input image,<code>dst</code> - destination one and <code>dsize</code> is a size of output image.
+Changing images sizes is the most common image processing procedure. OpenCV comes with a function <code>cv.resize()</code> for this purpose. The size of the image can be specified manually, or you can specify the scaling factor.
+We use the function: <code>cv.resize(src, dst, dsize)</code> where <code>src</code> is an input image,<code>dst</code> - destination one and <code>dsize</code> is a size of output image.
 </section>
 
 ## Instructions
@@ -23,7 +23,7 @@ You should use <code>cv.resize()</code> to resize image, and use src, dst, dsize
 ```yml
 tests:
   - text: You must have <code>cv.resize</code> in your code to resize image
-    testString: assert(code.match(/cv.resize/g),'You must have <code>cv.resize</code> in your code to resize image'); 
+    testString: assert(code.match(/cv.resize/g),'You must have <code>cv.resize</code> in your code to resize image');
  ```
 
 </section>
@@ -46,14 +46,14 @@ tests:
     src.delete();
     dst.delete();
   }
-</script> 
+</script>
 
 <img id="src" src="http://bit.ly/fcc-relaxing-cat"/>
 <p></p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
-        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }' 
+<script async src="https://docs.opencv.org/master/opencv.js"
+        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }'
         type="text/javascript">
 </script>
 ```
@@ -77,14 +77,14 @@ tests:
     src.delete();
     dst.delete();
   }
-</script> 
+</script>
 
 <img id="src" src="http://bit.ly/fcc-relaxing-cat"/>
 <p></p>
 <canvas id="canvasOutput" ></canvas>
 
-<script async src="https://docs.opencv.org/master/opencv.js" 
-        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }' 
+<script async src="https://docs.opencv.org/master/opencv.js"
+        onload= 'cv["onRuntimeInitialized"]=()=> { runSample() }'
         type="text/javascript">
 </script>
 ```
