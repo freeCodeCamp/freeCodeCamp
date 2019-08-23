@@ -20,7 +20,7 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ theme = 'default' }) => ({ theme })
+  ({ theme = 'night' }) => ({ theme })
 );
 
 const mapDispatchToProps = dispatch =>
