@@ -16,7 +16,7 @@ describe('index', () => {
 
     it('should use search endpoint when no forumTopicId is supplied', () => {
       const value = getGuideUrl({
-        title: 'a sample title'
+        title: '& a sample title?'
       });
       expect(value).toEqual(
         `${forumLocation}/search?q=a sample title%20in%3Atitle%20order%3Aviews`
