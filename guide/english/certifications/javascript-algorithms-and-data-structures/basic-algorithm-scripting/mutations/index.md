@@ -91,3 +91,32 @@ Grab the second string, lowercase and turn it into an array; then make sure _eve
 *   <a href='http://forum.freecodecamp.com/t/javascript-array-prototype-every/14287' target='_blank' rel='nofollow'>Array.every()</a>
 
 </details>
+
+
+<details><summary>Solution 3 (Click to Show/Hide)</summary>
+
+**Declarative**
+
+```js
+function mutation(arr) {
+  for (var el of arr[1]){
+    let re = new RegExp(el,"i");
+    if (re.test(arr[0]) == false){
+      return false;
+    }
+  }
+  return true;
+}
+```
+
+#### Code Explanation
+
+*   For every letter of the second Array we want to check if it's in the first array using the test() Method.
+*   The RegExp(el,"i") function will create a Regular Expression for every letter. For example RegExp("Hey",i) will create /H/i, then /e/i, then /y/i.
+*   If there is one letter that return false, than we return false. If arr[0] contains all letters than we return true.
+
+#### Relevant Links
+
+*   <a href='https://www.w3schools.com/jsref/jsref_regexp_test.asp'>RegExp.test()</a>
+
+</details>

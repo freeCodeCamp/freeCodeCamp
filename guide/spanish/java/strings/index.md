@@ -4,14 +4,14 @@ localeTitle: Cadena de caracteres
 ---
 # Cadena de caracteres
 
-Las cadenas son secuencias de caracteres. En Java, una `String` es un `Object`. Las cadenas no deben confundirse con `char` ya que los caracteres son literalmente 1 valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
+Las cadenas son secuencias de caracteres. En Java, una `String` es un `Object` u Objeto. Las cadenas no deben confundirse con `char` (caracter) ya que los caracteres son literalmente un valor en lugar de una secuencia de caracteres. Aún puede usar 1 valor dentro de una cadena, sin embargo, es preferible usar `char` cuando está verificando 1 carácter.
 
 ```java
 String course = "FCC"; 
  System.out.println(course instanceof Object); 
 ```
 
-Salida:
+Resultado:
 ```
 true 
 ```
@@ -23,7 +23,7 @@ Puede crear un objeto de cadena de las siguientes maneras:
 
 Podrías estar pensando: ¿Cuál es la diferencia entre los tres?
 
-Bueno, usar la `new` palabra clave garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Cuerda Los literales y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados. y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM usa el mismo objeto. Usar el contructor como el de arriba es casi siempre una opción peor.
+Bueno, usar la palabra clave `new` garantiza que se creará un nuevo objeto `String` y se asignará una nueva ubicación de memoria en el `Heap` memoria [(haga clic aquí para obtener más información)](https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/geninfo/diagnos/garbage_collect.html) . Los literales y las expresiones de cadena constantes se almacenan en caché en tiempo de compilación. El compilador los coloca en el String Literal Pool para evitar duplicados y mejorar el consumo de memoria. La asignación de objetos es costosa y este truco aumenta el rendimiento al crear cadenas. Si utiliza el mismo literal de nuevo, la JVM (Máquina Virtual de Java) usa el mismo objeto. Usar el contructor como el de arriba es casi siempre la opción menos óptima.
 
 En este fragmento de código, ¿cuántos objetos de cadena se crean?
 
@@ -34,9 +34,9 @@ En este fragmento de código, ¿cuántos objetos de cadena se crean?
     String str3 = new String("Soy un String");
 ```
 
-La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` forzados. La creación de un objeto nuevo, distinto.
+La respuesta es: 2 objetos String son creados. `str` y `str2` refieren al mismo objeto. `str3` tiene el mismo contenido pero usando `new` fuerza la creación de un objeto nuevo, distinto.
 
-Cuando creas un literal de cadena, la JVM verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un String similar (en contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el grupo para que el mismo control se puede realizar en el futuro.
+Cuando creas un literal de cadena, la JVM verifica internamente, lo que se conoce como el `String pool` , para ver si puede encontrar un String similar (en contenido). Si lo encuentra, devuelve la misma referencia. De lo contrario, simplemente continúa y crea un nuevo objeto String en el grupo para que la misma referencia se pueda realizar en el futuro.
 
 Puede probar esto usando la comparación de objetos rápida `==` y los `equals()` implementados.
 
@@ -52,7 +52,7 @@ Aquí hay otro ejemplo sobre cómo crear una cadena en Java usando los diferente
 public class StringExample{ 
  
    public static void main(String args[]) { 
-      String s1 = "java";  // Crea un String por medio de un literal
+      String s1 = "java";  // Crea un String (cadena) por medio de un literal
       char ch[] = {'s','t','r','i','n','g','s'}; 
       String s2 = new String(ch);  // convierte arreglo de caracteres en String
       String s3 = new String("example");  // Crea un nuevo String con el constructor
@@ -63,9 +63,9 @@ public class StringExample{
  } 
 ```
 
-#### Comparando Strings
+#### Comparando Strings (cadenas)
 
-Si desea comparar el valor de dos variables de String, no puede usar ==. Esto se debe a que comparará las referencias de las variables. Y no los valores que están vinculados a ellos. Para comparar los valores almacenados de las cadenas, se utiliza el método equals().
+Si desea comparar el valor de dos variables de String, no puede usar ==. Esto se debe a que comparará las referencias de las variables, y no los valores que están vinculados a ellos. Para comparar los valores almacenados de las cadenas, se utiliza el método equals().
 
 ```java
 boolean equals(Object obj) 
@@ -85,7 +85,7 @@ La primera comparación es falsa porque "==" mira las referencias del objeto y n
 
 La segunda comparación es verdadera porque las variables almacenan los mismos valores. En este caso "Hola mundo".
 
-Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método String Length().
+Tenemos varios métodos incorporados en String. El siguiente es un ejemplo del método String: Length().
 
 ```java
 public class StringDemo { 
@@ -108,9 +108,9 @@ Esto resultará en - `El largo del String es: 16`
 4.  La clase de cadena posee una `length()` nombre de método `length()` , mientras que las matrices tienen una longitud de nombre de atributo.
 5.  En java, los objetos de cadena son inmutables. Inmutable simplemente significa inmodificable o inmutable. Una vez que se crea el objeto de cadena, sus datos o estado no se pueden cambiar, pero se crea un nuevo objeto de cadena.
 
-Longitud de la cuerda
+Longitud de la cadena
 
-La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" es la longitud 2 y "Hello" es la longitud 5. El método length () en una cadena devuelve su longitud, de esta manera:
+La "longitud" de una cadena es solo el número de caracteres que contiene. Así que "hi" tiene longitud 2 y "Hello" es de longitud 5. El método length () en una cadena devuelve su longitud, de esta manera:
 
 ```java
 String a = "Hello"; 
@@ -119,12 +119,13 @@ String a = "Hello";
 
 #### Otros métodos de comparación que también se pueden usar en la Cadena son:
 
-1.  equalsIgnoreCase(): compara la cadena sin tener en cuenta la sensibilidad del caso.
+1.  equalsIgnoreCase(): compara la cadena sin tener en cuenta la sensibilidad del caso (mayúsculas/minúsculas).
 
 ```java
  String a = "HELLO"; 
  String b = "hello"; 
- System.out.println(a.equalsIgnoreCase(b));   // Devolverá true
+
+ System.out.println(a.equalsIgnoreCase(b));   // Esto va a imprimir 'true' 
 ```
 
 2.  compareTo(): compara el valor lexicográficamente y devuelve un entero.
