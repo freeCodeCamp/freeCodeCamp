@@ -160,7 +160,7 @@ If you are on a different OS and/or are still running into issues, reach out to 
 ### Configuring dependencies
 
 #### Step 1: Setup the environment variable file
-Within the root directory `freeCodeCamp`, the default API keys and environment variables are stored in the file `sample.env`.  This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step. From here moving forward, all commands should be run from the root directory.
+Within the root directory `freeCodeCamp`, the default API keys and environment variables are stored in the file `sample.env`. This file needs to be copied to a new file named `.env` that is accessed dynamically during the installation step. From here moving forward, all commands should be run from the root directory.
 
 ```sh
 # Create a copy of the "sample.env" and name it ".env".
