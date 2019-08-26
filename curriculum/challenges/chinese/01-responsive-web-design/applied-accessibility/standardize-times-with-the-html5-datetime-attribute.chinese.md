@@ -3,28 +3,34 @@ id: 587d778c367417b2b2512aa9
 title: Standardize Times with the HTML5 datetime Attribute
 challengeType: 0
 videoUrl: ''
-localeTitle: 使用HTML5 datetime属性标准化Times
+localeTitle: 使用 HTML5 的 datatime 属性标准化时间
 ---
 
 ## Description
-<section id="description">继续使用日期主题，HTML5还引入了<code>time</code>元素和<code>datetime</code>属性来标准化时间。这是一个可以在页面上包装日期或时间的内联元素。该日期的有效格式由<code>datetime</code>属性保存。这是辅助设备访问的值。它通过陈述标准化版本的时间来避免混淆，即使它是在文本中以非正式或口语方式编写的。以下是一个例子： <code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code> </section>
+<section id='description'>
+继续日期主题。HTML5 还引入了<code>time</code>标签与<code>datetime</code>属性来标准化时间。<code>time</code>是一个行内标签，用于在页面中呈现日期或时间，而<code>datetime</code>属性保存了日期的有效格式，辅助设备可以访问这个值。通过标准化时间格式，即使时间在文本中是以非正式的或口语化的形式编写，辅助设备依然可以获取准确的时间和日期。
+举个例子：
+<code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code>
+</section>
 
 ## Instructions
-<section id="instructions">露营猫的真人快打调查结果在！在文本“9月15日星期四&lt;sup&gt; th &lt;/ sup&gt;”周围包装一个<code>time</code>标记，并为其设置“2016-09-15”添加<code>datetime</code>属性。 </section>
+<section id='instructions'>
+Camper Cat 的比武大会的时间确定了！请使用<code>time</code>标签包含文本 "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;"，并将<code>datetime</code>属性设置为 "2016-09-15"。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>time</code>标签应该包含“9月15日星期四&lt;sup&gt; th &lt;/ sup&gt;”的文字。
-    testString: 'assert($("time").text().match(/Thursday, September 15th/g), "Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".");'
-  - text: 您的<code>time</code>标记应具有非空的<code>datetime</code>属性。
-    testString: 'assert($("time").attr("datetime"), "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.");'
-  - text: 您的<code>datetime</code>属性应设置为2016-09-15的值。
-    testString: 'assert($("time").attr("datetime") === "2016-09-15", "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.");'
-  - text: 确保您的<code>time</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, "Make sure your <code>time</code> element has a closing tag.");'
+  - text: "<code>time</code>标签应该包含文本'Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;'。"
+    testString: assert($('time').text().match(/Thursday, September 15th/g), '<code>time</code>标签应该包含文本"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;"。');
+  - text: <code>time</code>标签应该有 1 个非空的<code>datetime</code>属性。
+    testString: assert($('time').attr('datetime'), '<code>time</code>标签应该有 1 个非空的<code>datetime</code>属性。');
+  - text: <code>datetime</code>属性的值应该为 2016-09-15。
+    testString: assert($('time').attr('datetime') === "2016-09-15", '<code>datetime</code>属性的值应该为 2016-09-15。');
+  - text: 确保<code>time</code>标签是闭合的。
+    testString: assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, '确保<code>time</code>标签是闭合的。');
 
 ```
 
@@ -34,7 +40,6 @@ tests:
 <section id='challengeSeed'>
 
 <div id='html-seed'>
-
 ```html
 <body>
   <header>
@@ -42,13 +47,13 @@ tests:
   </header>
   <article>
     <h2>Mortal Kombat Tournament Survey Results</h2>
-
+    
     <!-- Add your code below this line -->
-
+    
     <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>
-
+    
     <!-- Add your code above this line -->
-
+    
     <section>
       <h3>Comments:</h3>
       <article>
@@ -65,21 +70,20 @@ tests:
       </article>
     </section>
   </article>
-  <footer>&copy; 2018 Camper Cat</footer>
+  <footer>&copy; 2016 Camper Cat</footer>
 </body>
-
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              

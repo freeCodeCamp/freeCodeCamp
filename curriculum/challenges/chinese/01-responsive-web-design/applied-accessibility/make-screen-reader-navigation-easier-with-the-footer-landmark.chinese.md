@@ -3,26 +3,30 @@ id: 587d7788367417b2b2512aa3
 title: Make Screen Reader Navigation Easier with the footer Landmark
 challengeType: 0
 videoUrl: ''
-localeTitle: 使用页脚Landmark使屏幕阅读器导航更轻松
+localeTitle: 使用 footer 元素使屏幕阅读器更容易导航
 ---
 
 ## Description
-<section id="description">与<code>header</code>和<code>nav</code>类似， <code>footer</code>元素具有内置的地标功能，允许辅助设备快速导航到它。它主要用于包含版权信息或链接到通常位于页面底部的相关文档。 </section>
+<section id='description'>
+与<code>header</code>和<code>nav</code>类似，<code>footer</code>也具有语义化特性，可以使辅助设备快速定位到它。它位于页面底部，用于呈现版权信息或者相关文档链接。
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat的培训页面正在取得良好进展。将用于将其版权信息包含在页面底部的<code>div</code>更改为<code>footer</code>元素。 </section>
+<section id='instructions'>
+Camper Cat 的忍者训练页面进展顺利。请将他在页面底部呈现版权信息的<code>div</code>标签更改为<code>footer</code>标签。
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该有一个<code>footer</code>标记。
-    testString: 'assert($("footer").length == 1, "Your code should have one <code>footer</code> tag.");'
-  - text: 您的代码不应包含任何<code>div</code>标记。
-    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
-  - text: 您的代码应该有一个开始和结束<code>footer</code>标记。
-    testString: 'assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g), "Your code should have an opening and closing <code>footer</code> tag.");'
+  - text: 你的代码中应该包含 1 个<code>footer</code>标签。
+    testString: assert($('footer').length == 1, '你的代码中应该包含 1 个<code>footer</code>标签。');
+  - text: 你的代码中不应包含<code>div</code>标签。
+    testString: assert($('div').length == 0, '你的代码应不应包含<code>div</code>标签。');
+  - text: 你代码中的<code>footer</code>应该是闭合的。
+    testString: assert(code.match(/<footer>\s*&copy; 2016 Camper Cat\s*<\/footer>/g), '你代码中的<code>footer</code>应该是闭合的。');
 
 ```
 
@@ -32,7 +36,6 @@ tests:
 <section id='challengeSeed'>
 
 <div id='html-seed'>
-
 ```html
 <body>
   <header>
@@ -64,23 +67,22 @@ tests:
   </main>
 
 
-  <div>&copy; 2018 Camper Cat</div>
+  <div>&copy; 2016 Camper Cat</div>
 
 
 </body>
-
 ```
+
+
+
+
 
 </div>
 
 
 
+
+
 </section>
 
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
-</section>
+              
