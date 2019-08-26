@@ -49,7 +49,7 @@ A verdade é que você está certo até certo ponto. Se você fez uma pesquisa m
 
 No entanto, fazer esta pesquisa é fundamental na defesa de tal afirmação. Você sabia que havia [jogadores cegos?](http://audiogames.net) e até [fotógrafos cegos?](http://peteeckert.com/). Talvez você soubesse que [músicos podem ser surdos](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians)?
 
-Se você fez, bom para você. Se não, acho que isso aumenta ainda mais meu ponto de vista.
+Se você sabia, bom para você. Se não, acho que isso aumenta ainda mais meu ponto de vista.
 
 A imagem fica ainda mais complicada quando olhamos para a legislação que, na verdade, força você a tornar certos sites e aplicativos da Web acessíveis. Um bom exemplo é a [seção 508](http://jimthatcher.com/webcourse1.htm) baseada nos EUA. Neste momento, esta lei refere-se principalmente a organizações governamentais, sites do setor público, etc. No entanto, as leis mudam.
 
