@@ -25,7 +25,6 @@ A few examples of standard Data Structures include:
 * Maps
 
 **Note: ** Data Types are not to be confused with Data Structures. Data Types are irreducible as opposed to Data Structures which consist of multiple fields of different data. In the above example, integer is a data type whereas the record(which consists of an integer and a string) is a data structure.
-
 Data Types are not to be confused with Data Structures. Data Types are irreducible as opposed to Data Structures which consist of multiple fields of different data. In the above example, integer is a data type whereas the record(which consists of an integer and a string) is a data structure. 
 
 
