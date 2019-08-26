@@ -157,22 +157,30 @@ class DonateOther extends Component {
               <h4>Make a one-time Bitcoin donation</h4>
               <p className='negative-15'>
                 Our Bitcoin wallet is{' '}
-                <code>12skYi7aMCjDUdrVdoB3JjZ77ug8gxJfbL</code>
+                <code className='wallet'>
+                  12skYi7aMCjDUdrVdoB3JjZ77ug8gxJfbL
+                </code>
               </p>
               <h4>Make a one-time Ethereum donation</h4>
               <p className='negative-15'>
                 Our Ethereum wallet is{' '}
-                <code>0x0ADbEf2471416BD8732cf0f3944294eE393CcAF5</code>
+                <code className='wallet'>
+                  0x0ADbEf2471416BD8732cf0f3944294eE393CcAF5
+                </code>
               </p>
               <h4>Make a one-time Litecoin donation</h4>
               <p className='negative-15'>
                 Our Litecoin wallet is{' '}
-                <code>LKu8UG8Z1nbTxnq9Do96PsC3FwbNtycf3X</code>
+                <code className='wallet'>
+                  LKu8UG8Z1nbTxnq9Do96PsC3FwbNtycf3X
+                </code>
               </p>
               <h4>Make a one-time Bitcoin Cash donation</h4>
               <p className='negative-15'>
                 Our Bitcoin Cash wallet is{' '}
-                <code>1EBxPEJWrGZWxe2UayyAsnd5VsRg5H9xfu</code>
+                <code className='wallet'>
+                  1EBxPEJWrGZWxe2UayyAsnd5VsRg5H9xfu
+                </code>
               </p>
               <hr />
               <h3>Donate to freeCodeCamp by mailing us a check</h3>
