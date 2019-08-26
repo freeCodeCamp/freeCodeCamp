@@ -48,7 +48,7 @@ tests:
   - text: Clicking the button element should toggle the <code>visibility</code> property in state between <code>true</code> and <code>false</code>.
     testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ visibility: false }); return waitForIt(() => mockedComponent.state(''visibility'')); }; const second = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const third = () => { mockedComponent.find(''button'').simulate(''click''); return waitForIt(() => mockedComponent.state(''visibility'')); }; const firstValue = await first(); const secondValue = await second(); const thirdValue = await third(); assert(!firstValue && secondValue && !thirdValue); }; '
   - text: An anonymous function should be passed to <code>setState</code>.
-    testString: assert(new RegExp('this\\.setState\\s*\\(\\s*(function|\\(?\\s*[a-zA-Z\s,_]+\\s*\\)?\\s*=>)').test(code));
+    testString: assert(new RegExp('this\\.setState\\s*\\(\\s*(function|\\(?\\s*[a-zA-Z\\s,_]+\\s*\\)?\\s*=>)').test(code));
 
 ```
 
