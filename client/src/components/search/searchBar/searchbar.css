@@ -5,9 +5,19 @@
   font-family: 'Lato', sans-serif;
 }
 
+.fcc_searchBar strong,
+.fcc_searchBar a:hover {
+  color: var(--gray-00);
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  display: none;
+}
+
 .ais-SearchBox-input {
-  padding: 0.15rem 1.7rem;
-  font-size: 17px;
+  padding: 1px 10px;
+  font-size: 18px;
 }
 
 .fcc_searchBar .ais-SearchBox-input,
