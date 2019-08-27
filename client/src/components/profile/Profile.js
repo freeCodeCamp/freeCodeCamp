@@ -68,8 +68,8 @@ function renderIsLocked(username) {
           </h2>
         </FullWidthRow>
         <FullWidthRow>
-          <Alert bsStyle='info'>
-            <p>
+          <Alert>
+            <p className='alert-info'>
               {username} needs to change their privacy setting in order for you
               to view their profile
             </p>
