@@ -19,9 +19,7 @@ Hello 👋!
 
 This directory contains all of the documentation on contributing to freeCodeCamp.org
 
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
-
----
+> ### [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
 
 ## Quick references articles
 
@@ -29,6 +27,7 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 <a href="/docs/how-to-work-on-coding-challenges.md">2. How to work on Coding Challenges.</a><br>
 <a href="/docs/how-to-setup-freecodecamp-locally.md">3. How to setup freeCodeCamp locally.</a><br>
 <a href="/docs/how-to-catch-outgoing-emails-locally.md">4. How to catch outgoing emails locally.</a>
+<a href="/docs/devops.md">5. DevOps Guide for Core Team.</a>
 
 ## Style guides
 
