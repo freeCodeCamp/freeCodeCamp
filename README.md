@@ -142,7 +142,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### Platform, Build and Deployment Status
 
-The build and deployment status for the code is marked in [our DevOps Guide](/docs/devops.md). And our general platform status for all applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org)
+The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md). The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org)
 
 ### License
 
