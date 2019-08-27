@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Alert, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
@@ -10,8 +10,6 @@ import HeatMap from './components/HeatMap';
 import Certifications from './components/Certifications';
 import Portfolio from './components/Portfolio';
 import Timeline from './components/TimeLine';
-
-import './profile.css';
 
 const propTypes = {
   isSessionUser: PropTypes.bool,
@@ -53,13 +51,7 @@ const propTypes = {
 };
 
 function TakeMeToTheChallenges() {
-  return (
-    <CurrentChallengeLink>
-      <Button block={true} bsSize='lg' bsStyle='primary' className='btn-invert'>
-        Take me to the Challenges
-      </Button>
-    </CurrentChallengeLink>
-  );
+  return <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>;
 }
 
 function renderIsLocked(username) {
@@ -97,15 +89,8 @@ function renderSettingsButton() {
     <Fragment>
       <Row>
         <Col sm={4} smOffset={4}>
-          <Link className='link' to='/settings'>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-            >
-              Update my settings
-            </Button>
+          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+            Update my settings
           </Link>
         </Col>
       </Row>

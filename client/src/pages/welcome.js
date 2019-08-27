@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { Loader, Spacer } from '../components/helpers';
-import CurrentChallengeLink from '../components/helpers/CurrentChallengeLink';
+import { CurrentChallengeLink, Loader, Spacer } from '../components/helpers';
 import Supporters from '../components/Supporters';
 import {
   userSelector,
@@ -144,9 +143,7 @@ function Welcome({
           <Row>
             <Col sm={6} smOffset={3} xs={12}>
               <CurrentChallengeLink>
-                <Button block={true} bsStyle='primary' className='btn-cta-big'>
-                  Go to my next challenge
-                </Button>
+                Go to my next challenge
               </CurrentChallengeLink>
             </Col>
           </Row>
