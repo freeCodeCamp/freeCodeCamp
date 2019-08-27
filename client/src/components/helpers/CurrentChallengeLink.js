@@ -26,7 +26,7 @@ const createClickHandler = hardGoTo => e => {
 function CurrentChallengeLink({ children, hardGoTo }) {
   return (
     <a
-      className='btn btn-lg btn-primary btn-block'
+      className='btn-cta-big btn btn-primary btn-block'
       href={currentChallengeApi}
       onClick={createClickHandler(hardGoTo)}
     >
