@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Alert, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
@@ -51,13 +51,7 @@ const propTypes = {
 };
 
 function TakeMeToTheChallenges() {
-  return (
-    <CurrentChallengeLink>
-      <Button block={true} bsSize='lg' bsStyle='primary' className='btn-invert'>
-        Take me to the Challenges
-      </Button>
-    </CurrentChallengeLink>
-  );
+  return <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>;
 }
 
 function renderIsLocked(username) {
@@ -95,15 +89,8 @@ function renderSettingsButton() {
     <Fragment>
       <Row>
         <Col sm={4} smOffset={4}>
-          <Link to='/settings'>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-            >
-              Update my settings
-            </Button>
+          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+            Update my settings
           </Link>
         </Col>
       </Row>
