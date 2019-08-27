@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
@@ -68,12 +68,10 @@ function renderIsLocked(username) {
           </h2>
         </FullWidthRow>
         <FullWidthRow>
-          <Alert bsStyle='info'>
-            <p>
-              {username} needs to change their privacy setting in order for you
-              to view their profile
-            </p>
-          </Alert>
+          <p className='alert alert-info'>
+            {username} needs to change their privacy setting in order for you to
+            view their profile
+          </p>
         </FullWidthRow>
         <FullWidthRow>
           <TakeMeToTheChallenges />
