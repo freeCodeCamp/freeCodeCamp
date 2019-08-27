@@ -12,7 +12,6 @@ import {
   challengeIdToNameMapSelector,
   fetchIdToNameMap
 } from '../../../templates/Challenges/redux';
-import { blockNameify } from '../../../../utils/blockNameify';
 import { FullWidthRow } from '../../helpers';
 import SolutionViewer from '../../settings/SolutionViewer';
 
@@ -70,13 +69,12 @@ class Timeline extends Component {
   renderCompletion(completed) {
     const { idToNameMap } = this.props;
     const { id, completedDate } = completed;
-    const challengeDashedName = idToNameMap[id];
+    const challengeTitle = idToNameMap[id].challengeTitle;
+    const challengePath = idToNameMap[id].challengePath;
     return (
       <tr key={id}>
         <td>
-          <a href={`/challenges/${challengeDashedName}`}>
-            {blockNameify(challengeDashedName)}
-          </a>
+          <Link to={`/learn/${challengePath}`}>{challengeTitle}</Link>
         </td>
         <td className='text-center'>
           <time dateTime={format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ')}>
@@ -143,7 +141,7 @@ class Timeline extends Component {
           >
             <Modal.Header closeButton={true}>
               <Modal.Title id='contained-modal-title'>
-                {`${username}'s Solution to ${blockNameify(idToNameMap[id])}`}
+                {`${username}'s Solution to ${idToNameMap[id].challengeTitle}`}
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>

@@ -1,5 +1,6 @@
 import { Observable } from 'rx';
 import { isEmpty } from 'lodash';
+import { dasherize } from '../utils';
 
 export default function(Challenge) {
   let challengeIdToNameMap;
@@ -20,8 +21,11 @@ export default function(Challenge) {
         throw Error(err);
       }
       challengeIdToNameMap = challenges.reduce((map, challenge) => {
-        const { id, title } = challenge;
-        map[id] = title;
+        const { id, block, dashedName, title, superBlock } = challenge;
+        map[id] = {
+          challengeTitle: title,
+          challengePath: `${superBlock}/${dasherize(block)}/${dashedName}`
+        };
         return map;
       }, {});
     });
