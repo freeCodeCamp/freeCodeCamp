@@ -25,7 +25,7 @@ First, use <code>console.clear()</code> to clear the browser console. After that
 
 ```yml
 tests:
-  - text: Use <code>console.clear()</code> to clear the broswer console before logging the other two.
+  - text: Use <code>console.clear()</code> to clear the browser console.
     testString: assert(code.match(/^(\s*console.clear\(\);?\s*)$/gm));
   - text: Use <code>console.log()</code> to print the <code>output</code> variable.
     testString: assert(code.match(/console\.log\(output\)/g));
