@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
-// import { navigate } from 'gatsby';
 
 import {
   isSearchDropdownEnabledSelector,
