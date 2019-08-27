@@ -103,6 +103,10 @@ Essentially, we expect basic familiarity with some of the aforementioned technol
 
 **If you want to help us improve our codebase, you can either [set up freeCodeCamp locally](/docs/how-to-setup-freecodecamp-locally.md) or use Gitpod, a free online dev environment.**
 
+**Note: If you are a window's 7 user and using git version 2.8.1 or if you observed that git clone is deleting files because of too long filename or path then you need to run this command before cloning repository** 
+
+> git config --system core.longpaths true
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/freeCodeCamp/freeCodeCamp)
 
 (Starts a ready-to-code dev environment for freecodecamp in your browser.)
