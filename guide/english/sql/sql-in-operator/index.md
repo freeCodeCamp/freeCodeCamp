@@ -1,7 +1,7 @@
 ---
-title: SQL In Operator
+title: SQL IN Operator
 ---
-## SQL In Operator
+## SQL IN Operator
 
 ## IN Operator defined
 
@@ -29,6 +29,7 @@ select studentID, FullName, sat_score, rcd_updated from student;
 +-----------+------------------------+-----------+---------------------+
 9 rows in set (0.00 sec)
 ```
+**Example 1:**
 
 Rows will be presented that have an SAT score in this list (1000, 2400):
 
@@ -44,6 +45,28 @@ where sat_score in (1000, 2400);
 +-----------+------------------------+-----------+---------------------+
 |         3 | Spencer Pautier        |      1000 | 2017-08-16 15:34:50 |
 |         7 | Edgar Frank "Ted" Codd |      2400 | 2017-08-16 15:35:33 |
+|         8 | Donald D. Chamberlin   |      2400 | 2017-08-16 15:35:33 |
+|         9 | Raymond F. Boyce       |      2400 | 2017-08-16 15:35:33 |
++-----------+------------------------+-----------+---------------------+
+4 rows in set (0.00 sec)
+```
+
+**Example 2:**
+
+Suppose, we wish to select the details of Customers whose names are one among ['Spencer Pautier', 'Raymond F. Boyce', 'Donald D. Chamberlin', 'Louis Ramsey']. Instead of writing four equality conditions separated by `OR` we could use the `IN` operator.
+
+```sql
+select studentID, FullName, sat_score, rcd_updated 
+from student 
+where FullName in ('Spencer Pautier', 'Raymond F. Boyce', 'Louis Ramsey', 'Donald D. Chamberlin');
+```
+
+```text
++-----------+------------------------+-----------+---------------------+
+| studentID | FullName               | sat_score | rcd_updated         |
++-----------+------------------------+-----------+---------------------+
+|         3 | Spencer Pautier        |      1000 | 2017-08-16 15:34:50 |
+|         4 | Louis Ramsey           |      1200 | 2017-08-16 15:34:50 |
 |         8 | Donald D. Chamberlin   |      2400 | 2017-08-16 15:35:33 |
 |         9 | Raymond F. Boyce       |      2400 | 2017-08-16 15:35:33 |
 +-----------+------------------------+-----------+---------------------+
