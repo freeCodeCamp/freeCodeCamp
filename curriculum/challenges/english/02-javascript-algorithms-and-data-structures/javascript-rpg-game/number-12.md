@@ -7,7 +7,7 @@ isRequired: true
 
 ## Description
 <section id='description'>
-Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: <code>cave</code>, <code>dragon</code>, <code>text</code>, <code>xpText</code>, <code>healthText</code>, <code>goldText</code>, <code>monsterStats</code>, <code>monsterNameText</code>, <code>monsterHealthText</code>. Just like you did with <code>storeButton</code>, create variables and set them equal to the element references.
+Here are the ids of the other HTML elements that we want a reference to in the JavaScript code: <code>button2</code>, <code>button3</code>, <code>text</code>, <code>xpText</code>, <code>healthText</code>, <code>goldText</code>, <code>monsterStats</code>, <code>monsterNameText</code>, <code>monsterHealthText</code>. Just like you did with <code>storeButton</code>, create variables and set them equal to the element references.
 </section>
 
 ## Instructions
@@ -20,8 +20,8 @@ Here are the ids of the other HTML elements that we want a reference to in the J
 
 ```yml
 tests:
-  - text: Just like you did with <code>storeButton</code>, create variables and set them equal to the element references.
-    testString: assert();
+  - text: Just like you did with <code>button1</code>, create variables and set them equal to the element references.
+    testString: assert(/const\s+button2\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button2\s*[\'\"\`]\s*\);?/.test(code) && /const\s+button3\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button3\s*[\'\"\`]\s*\);?/.test(code) && /const\s+text\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#text\s*[\'\"\`]\s*\);?/.test(code) && /const\s+xpText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#xpText\s*[\'\"\`]\s*\);?/.test(code) && /const\s+healthText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#healthText\s*[\'\"\`]\s*\);?/.test(code) && /const\s+goldText\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#goldText\s*[\'\"\`]\s*\);?/.test(code) && /const\s+monsterStats\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterStats\s*[\'\"\`]\s*\);?/.test(code) && /const\s+monsterNameText|monsterName\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterName\s*[\'\"\`]\s*\);?/.test(code) && /const\s+monsterHealthText|monsterHealth\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#monsterHealth\s*[\'\"\`]\s*\);?/.test(code));
 
 ```
 
@@ -42,7 +42,7 @@ tests:
   let monsterHealth;
   let inventory = ["stick"];
 
-  const button1 = document.querySelector('#store');
+  const button1 = document.querySelector('#button1');
 </script>
 ```
 
@@ -104,9 +104,9 @@ tests:
     <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
   </div>
   <div id="controls">
-    <button id="store">Go to store</button>
-    <button id="cave">Go to cave</button>
-    <button id="dragon">Fight dragon</button>
+    <button id="button1">Go to store</button>
+    <button id="button2">Go to cave</button>
+    <button id="button3">Fight dragon</button>
   </div>
   <div id="monsterStats">
     <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
@@ -145,9 +145,9 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
-const button1 = document.querySelector('#store');
-const button2 = document.querySelector("#cave");
-const button3 = document.querySelector("#dragon");
+const button1 = document.querySelector('#button1');
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
 const xpText = document.querySelector("#xpText");
 const healthText = document.querySelector("#healthText");

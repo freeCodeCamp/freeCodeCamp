@@ -1,13 +1,14 @@
 ---
-id: 5d5b66ce07f328a948d398d7
-title: Number 11
+id: 5d651ee1ee291f75bbd738ee
+title: Number 13
 challengeType: 0
 isRequired: true
 ---
 
 ## Description
 <section id='description'>
-You can also declare variables with the <code>const</code> key word. Since <code>button1</code> is a constant that will never change, switch the <code>let</code> keyword that declares the variable to <code>const</code>.
+Make a comment to describe what the next few lines of code will do. Comments can be written with either two forward-slashes <code>//</code> or with a multi-line sequence <code>/* */</code>. For example, here is a single line comment that says "hello world": <code>// hello world</code>.
+Write a single line comment that says "initialize buttons".
 </section>
 
 ## Instructions
@@ -20,8 +21,8 @@ You can also declare variables with the <code>const</code> key word. Since <code
 
 ```yml
 tests:
-  - text: Since <code>button1</code> is a constant that will never change, switch the <code>let</code> keyword that declares the variable to <code>const</code>.
-    testString: assert(/const\s+button1\s*/.test(code));
+  - text: Write a single line comment that says "initialize buttons".
+    testString: assert(/\/\/\s*initialize buttons/.test(code));
 
 ```
 
@@ -42,7 +43,16 @@ tests:
   let monsterHealth;
   let inventory = ["stick"];
 
-  let button1 = document.querySelector('#button1');
+  const button1 = document.querySelector('#button1');
+  const button2 = document.querySelector("#button2");
+  const button3 = document.querySelector("#button3");
+  const text = document.querySelector("#text");
+  const xpText = document.querySelector("#xpText");
+  const healthText = document.querySelector("#healthText");
+  const goldText = document.querySelector("#goldText");
+  const monsterStats = document.querySelector("#monsterStats");
+  const monsterNameText = document.querySelector("#monsterName");
+  const monsterHealthText = document.querySelector("#monsterHealth");
 </script>
 ```
 
@@ -146,6 +156,15 @@ let monsterHealth;
 let inventory = ["stick"];
 
 const button1 = document.querySelector('#button1');
+const button2 = document.querySelector("#button2");
+const button3 = document.querySelector("#button3");
+const text = document.querySelector("#text");
+const xpText = document.querySelector("#xpText");
+const healthText = document.querySelector("#healthText");
+const goldText = document.querySelector("#goldText");
+const monsterStats = document.querySelector("#monsterStats");
+const monsterNameText = document.querySelector("#monsterName");
+const monsterHealthText = document.querySelector("#monsterHealth");
 ```
 
 </section>

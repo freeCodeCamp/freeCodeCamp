@@ -8,8 +8,7 @@ isRequired: true
 ## Description
 <section id='description'>
 In order to update HTML elements on the page, you need to get references to them in your JavaScript code. The code <code>let el = document.querySelector("#el");</code> gets a reference to an HTML element with an <code>id</code> of <code>el</code> and assigns it to the variable <code>el</code>.
-Get a reference to the HTML element with the <code>id</code> of <code>store</code> and assign it to a variable with the name <code>button1</code>.
-***Note:*** Had to rename the id of button1 to store for these tests to work due to the way JS parses all HTML elements when it's included in the HTML file. Maybe this would change in the platform redesign.
+Get a reference to the HTML element with the <code>id</code> of <code>button1</code> and assign it to a variable with the name <code>button1</code>.
 </section>
 
 ## Instructions
@@ -22,8 +21,9 @@ Get a reference to the HTML element with the <code>id</code> of <code>store</cod
 
 ```yml
 tests:
-  - text: Get a reference to the HTML element with the <code>id</code> of <code>store</code> and assign it to a variable with the name <code>button1</code>.
-    testString: assert(typeof button1 === "object" && button1.id === 'store' && button1.innerHTML === 'Go to store');
+  - text: Get a reference to the HTML element with the <code>id</code> of <code>button1</code> and assign it to a variable with the name <code>button1</code>.
+    # testString: assert(typeof button1 === "object" && button1.id === 'store' && button1.innerHTML === 'Go to store'); # More flexible test, but JS needs to be in a separate file
+    testString: assert(/let\s+button1\s*\=\s*document.querySelector\(\s*[\'\"\`]\s*\#button1\s*[\'\"\`]\s*\);?/.test(code));
 
 ```
 
@@ -107,9 +107,9 @@ tests:
     <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
   </div>
   <div id="controls">
-    <button id="store">Go to store</button>
-    <button id="cave">Go to cave</button>
-    <button id="dragon">Fight dragon</button>
+    <button id="button1">Go to store</button>
+    <button id="button2">Go to cave</button>
+    <button id="button3">Fight dragon</button>
   </div>
   <div id="monsterStats">
     <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
@@ -148,7 +148,7 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
-let button1 = document.querySelector('#store');
+let button1 = document.querySelector('#button1');
 ```
 
 </section>
