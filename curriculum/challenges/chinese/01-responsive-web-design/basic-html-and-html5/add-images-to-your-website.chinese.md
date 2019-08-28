@@ -2,7 +2,6 @@
 id: bad87fee1348bd9aedf08812
 title: Add Images to Your Website
 challengeType: 0
-guideUrl: 'https://chinese.freecodecamp.org/guide/certificates/add-images-to-your-website'
 videoUrl: ''
 localeTitle: 添加图片到您的网站
 ---

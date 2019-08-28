@@ -2,6 +2,7 @@
 id: 5900f3a31000cf542c50feb6
 challengeType: 5
 title: 'Problem 55: Lychrel numbers'
+forumTopicId: 302166
 ---
 
 ## Description
@@ -29,15 +30,15 @@ NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretica
 ```yml
 tests:
   - text: <code>countLychrelNumbers(1000)</code> should return 13.
-    testString: assert.strictEqual(countLychrelNumbers(1000), 13, '<code>countLychrelNumbers(1000)</code> should return 13.');
+    testString: assert.strictEqual(countLychrelNumbers(1000), 13);
   - text: <code>countLychrelNumbers(5000)</code> should return 76.
-    testString: assert.strictEqual(countLychrelNumbers(5000), 76, '<code>countLychrelNumbers(5000)</code> should return 76.');
+    testString: assert.strictEqual(countLychrelNumbers(5000), 76);
   - text: <code>countLychrelNumbers(10000)</code> should return 249.
-    testString: assert.strictEqual(countLychrelNumbers(10000), 249, '<code>countLychrelNumbers(10000)</code> should return 249.');
+    testString: assert.strictEqual(countLychrelNumbers(10000), 249);
   - text: Your function should count all Lychrel numbers.
-    testString: assert.strictEqual(countLychrelNumbers(3243), 39, 'Your function should count all Lychrel numbers.');
+    testString: assert.strictEqual(countLychrelNumbers(3243), 39);
   - text: Your function should pass all test cases.
-    testString: assert.strictEqual(countLychrelNumbers(7654), 140, 'Your function should pass all test cases.');
+    testString: assert.strictEqual(countLychrelNumbers(7654), 140);
 
 ```
 

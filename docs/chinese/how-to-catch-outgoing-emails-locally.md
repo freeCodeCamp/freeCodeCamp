@@ -1,5 +1,18 @@
 # 如何局部性地捕获外发电子邮件（用于电子邮件工作流程）
 
+<table>
+    <tr>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
+        <td><a href="/CONTRIBUTING.md"> English </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+    </tr>
+</table>
+
 > **注意:** 这是**可选**步骤 - 仅在使用电子邮件工作流程时需要
 
 ## 介绍

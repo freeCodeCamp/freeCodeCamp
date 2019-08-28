@@ -2,6 +2,7 @@
 id: 587d8253367417b2b2512c6d
 title: Perform an Intersection on Two Sets of Data
 challengeType: 1
+forumTopicId: 301709
 ---
 
 ## Description
@@ -21,9 +22,9 @@ For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d',
 ```yml
 tests:
   - text: Your <code>Set</code> class should have a <code>intersection</code> method.
-    testString: assert((function(){var test = new Set(); return (typeof test.intersection === 'function')})(), 'Your <code>Set</code> class should have a <code>intersection</code> method.');
+    testString: assert((function(){var test = new Set(); return (typeof test.intersection === 'function')})());
   - text: The proper collection was returned
-    testString: assert((function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')})(), 'The proper collection was returned');
+    testString: assert((function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')})());
 
 ```
 
@@ -31,7 +32,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -86,9 +86,6 @@ function Set() {
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution

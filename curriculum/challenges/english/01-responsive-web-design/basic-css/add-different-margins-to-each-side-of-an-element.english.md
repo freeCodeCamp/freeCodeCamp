@@ -3,6 +3,7 @@ id: bad87fee1248bd9aedf08824
 title: Add Different Margins to Each Side of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cg4RWh4'
+forumTopicId: 16633
 ---
 
 ## Description
@@ -22,13 +23,13 @@ Give the blue box a <code>margin</code> of <code>40px</code> on its top and left
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-top") === "40px", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-top") === "40px");
   - text: Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-right") === "20px", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-right") === "20px");
   - text: Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-bottom") === "20px", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-bottom") === "20px");
   - text: Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.
-    testString: assert($(".blue-box").css("margin-left") === "40px", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');
+    testString: assert($(".blue-box").css("margin-left") === "40px");
 
 ```
 
@@ -133,4 +134,5 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
+
 </section>

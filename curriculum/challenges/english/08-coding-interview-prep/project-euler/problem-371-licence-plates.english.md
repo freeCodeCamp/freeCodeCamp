@@ -2,6 +2,7 @@
 id: 5900f4e01000cf542c50fff2
 challengeType: 5
 title: 'Problem 371: Licence plates'
+forumTopicId: 302033
 ---
 
 ## Description
@@ -32,7 +33,7 @@ Note: We assume that each licence plate seen is equally likely to have any three
 ```yml
 tests:
   - text: <code>euler371()</code> should return 40.66368097.
-    testString: assert.strictEqual(euler371(), 40.66368097, '<code>euler371()</code> should return 40.66368097.');
+    testString: assert.strictEqual(euler371(), 40.66368097);
 
 ```
 
@@ -64,4 +65,5 @@ euler371();
 ```js
 // solution required
 ```
+
 </section>

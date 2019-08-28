@@ -1,6 +1,7 @@
-html {
+/* html {
   font-family: 'Lato', sans-serif;
   -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -39,7 +40,6 @@ template {
 }
 a {
   background-color: transparent;
-  -webkit-text-decoration-skip: objects;
 }
 a:active,
 a:hover {
@@ -122,12 +122,6 @@ button,
 select {
   text-transform: none;
 }
-[type='reset'],
-[type='submit'],
-button,
-html [type='button'] {
-  -webkit-appearance: button;
-}
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
 [type='submit']::-moz-focus-inner,
@@ -203,7 +197,6 @@ body {
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
@@ -230,7 +223,6 @@ h1 {
   color: inherit;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
@@ -247,7 +239,6 @@ h2 {
   color: inherit;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
@@ -264,7 +255,6 @@ h3 {
   color: inherit;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
   line-height: 1.1;
@@ -281,7 +271,6 @@ h4 {
   color: inherit;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.1;
@@ -298,7 +287,6 @@ h5 {
   color: inherit;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
   line-height: 1.1;
@@ -315,7 +303,6 @@ h6 {
   color: inherit;
   font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
   line-height: 1.1;
@@ -484,7 +471,12 @@ hr {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
   border: none;
   height: 1px;
 }
@@ -575,7 +567,6 @@ th {
   border-bottom: 1px solid hsla(0, 0%, 0%, 0.12);
   font-feature-settings: 'tnum';
   -moz-font-feature-settings: 'tnum';
-  -ms-font-feature-settings: 'tnum';
   -webkit-font-feature-settings: 'tnum';
   padding-left: 0.96667rem;
   padding-right: 0.96667rem;
@@ -596,26 +587,11 @@ code {
   border-radius: 3px;
   font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
     'Liberation Mono', Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 0.2em 0.3em;
 }
 pre code {
   background: none;
   line-height: 1.42;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: ' ';
-}
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
-  content: '';
 }
 @media only screen and (max-width: 480px) {
   html {
@@ -623,5 +599,8 @@ pre tt:after {
   }
 }
 .default-layout {
-  margin-top: 38px;
-}
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+} */

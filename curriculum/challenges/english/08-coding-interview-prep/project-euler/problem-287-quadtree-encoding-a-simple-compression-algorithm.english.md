@@ -2,6 +2,7 @@
 id: 5900f48b1000cf542c50ff9e
 challengeType: 5
 title: 'Problem 287: Quadtree encoding (a simple compression algorithm)'
+forumTopicId: 301938
 ---
 
 ## Description
@@ -35,7 +36,7 @@ otherwise the pixel is white.What is the length of the minimal sequence describi
 ```yml
 tests:
   - text: <code>euler287()</code> should return 313135496.
-    testString: assert.strictEqual(euler287(), 313135496, '<code>euler287()</code> should return 313135496.');
+    testString: assert.strictEqual(euler287(), 313135496);
 
 ```
 
@@ -67,4 +68,5 @@ euler287();
 ```js
 // solution required
 ```
+
 </section>

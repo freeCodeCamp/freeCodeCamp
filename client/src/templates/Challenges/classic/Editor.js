@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -20,7 +20,7 @@ const propTypes = {
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({ theme = 'default' }) => ({ theme })
+  ({ theme = 'night' }) => ({ theme })
 );
 
 const mapDispatchToProps = dispatch =>
@@ -51,6 +51,9 @@ const defineMonacoThemes = monaco => {
   monaco.editor.defineTheme('vs-dark-custom', {
     base: 'vs-dark',
     inherit: true,
+    colors: {
+      'editor.background': '#2a2a40'
+    },
     rules: [
       { token: 'delimiter.js', foreground: lightBlueColor },
       { token: 'delimiter.parenthesis.js', foreground: yellowCollor },
@@ -65,11 +68,17 @@ const defineMonacoThemes = monaco => {
   });
 };
 
-class Editor extends PureComponent {
+class Editor extends Component {
   constructor(...props) {
     super(...props);
 
     this.options = {
+      fontSize: '18px',
+      scrollBeyondLastLine: false,
+      selectionHighlight: false,
+      overviewRulerBorder: false,
+      hideCursorInOverviewRuler: true,
+      renderIndentGuides: false,
       minimap: {
         enabled: false
       },
@@ -78,15 +87,13 @@ class Editor extends PureComponent {
       scrollbar: {
         horizontal: 'hidden',
         vertical: 'visible',
-        verticalHasArrows: true
+        verticalHasArrows: false,
+        useShadows: false,
+        verticalScrollbarSize: 5
       }
     };
 
     this._editor = null;
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keyup', this.focusEditor);
   }
 
   editorWillMount = monaco => {
@@ -96,7 +103,6 @@ class Editor extends PureComponent {
   editorDidMount = (editor, monaco) => {
     this._editor = editor;
     this._editor.focus();
-    document.addEventListener('keyup', this.focusEditor);
     this._editor.addAction({
       id: 'execute-challenge',
       label: 'Run tests',
@@ -106,13 +112,6 @@ class Editor extends PureComponent {
       ],
       run: this.props.executeChallenge
     });
-  };
-
-  focusEditor = e => {
-    // e key to focus editor
-    if (e.keyCode === 69) {
-      this._editor.focus();
-    }
   };
 
   onChange = editorValue => {
@@ -130,7 +129,7 @@ class Editor extends PureComponent {
     const { contents, ext, theme, fileKey } = this.props;
     const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
-      <div className='classic-editor editor'>
+      <Fragment>
         <base href='/' />
         <MonacoEditor
           editorDidMount={this.editorDidMount}
@@ -142,7 +141,7 @@ class Editor extends PureComponent {
           theme={editorTheme}
           value={contents}
         />
-      </div>
+      </Fragment>
     );
   }
 }

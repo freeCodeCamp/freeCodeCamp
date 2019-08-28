@@ -5,48 +5,50 @@
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
+        <td><a href="/docs/arabic/README.md"> عربي </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/german/README.md"> Deutsch </a></td>
     </tr>
 </table>
 
-# Documentation Quick Reference
+# Краткая справочная документация
 
-Hello 👋 !
+Привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
 
-This directory contains all of the documentation on contributing to freeCodeCamp.org
+Этот каталог содержит всю документацию о внесении вклада в freeCodeCamp.org
 
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
+## [Если вы начинающий, сначала прочтите это.](/docs/russian/CONTRIBUTING.md)
+
 
 ---
 
-## Quick references articles
+## Краткий справочник
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. [Как работать над статьями руководства.](/docs/russian/how-to-work-on-guide-articles.md)
+2. [Как работать над задачами по кодированию.](/docs/russian/how-to-work-on-coding-challenges.md)
+3. [Как настроить freeCodeCamp локально.](/docs/russian/how-to-setup-freecodecamp-locally.md)
+4. [Как поймать исходящие электронные письма локально.](/docs/russian/how-to-catch-outgoing-emails-locally.md)
 
-## Style guides
+## Руководство по стилю
 
-1. Style guide for creating guide articles.
-2. Style guide for creating coding challenges.
+1. [Руководство по стилю для создания руководств.](/docs/russian/how-to-work-on-guide-articles.md)
+2. [Руководство по стилю для создания задач с кодированием.](/docs/russian/how-to-work-on-coding-challenges.md)
 
-## Quick commands reference when working locally
 
-A quick reference to the commands that you will need, when working locally.
+## Справочник по быстрым командам для локальной работы
 
-| command | description |
+Краткий справочник по командам, которые понадобятся при локальной работе.
+
+| команда | описание |
 | ------- | ----------- |
-| `npm run bootstrap` | Bootstraps the different services |
-| `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
-| `npm run develop` | Starts the freeCodeCamp API Server and Client Apps |
-| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests |
-| `npm run test:client` | Run the client test suite |
-| `npm run test:curriculum` | Run the curriculum test suite |
-| `npm run test:server` | Run the server test suite |
-| `npm run commit` | An interactive tool to help you build a good commit message |
+| `npm run bootstrap` | Загружает различные сервисы |
+| `npm run seed` | Парсит файлы с отметкой о проблемах и вставляет их в MongoDB |
+| `npm run develop` | Запускает сервер API и клиентские приложения freeCodeCamp |
+| `npm test` |  Запускайте все тесты JS в системе, включая тесты клиентов, сервера, линта и тесты задач |
+| `npm run test:client` | Запустить клиентский набор тестов |
+| `npm run test:curriculum` | Запуск набора тестов учебных программ |
+| `npm run test:server` | Запуск набора тестов сервера |
+| `npm run commit` | Интерактивный инструмент, который поможет вам создать хорошее сообщение о коммите |
+

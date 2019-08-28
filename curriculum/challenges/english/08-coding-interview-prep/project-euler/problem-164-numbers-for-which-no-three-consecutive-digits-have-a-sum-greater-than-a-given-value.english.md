@@ -2,6 +2,7 @@
 id: 5900f4111000cf542c50ff23
 challengeType: 5
 title: 'Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value'
+forumTopicId: 301798
 ---
 
 ## Description
@@ -20,7 +21,7 @@ How many 20 digit numbers n (without any leading zero) exist such that no three 
 ```yml
 tests:
   - text: <code>euler164()</code> should return 378158756814587.
-    testString: assert.strictEqual(euler164(), 378158756814587, '<code>euler164()</code> should return 378158756814587.');
+    testString: assert.strictEqual(euler164(), 378158756814587);
 
 ```
 
@@ -52,4 +53,5 @@ euler164();
 ```js
 // solution required
 ```
+
 </section>

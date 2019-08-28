@@ -2,17 +2,36 @@
 id: 587d7b87367417b2b2512b43
 title: Use Arrow Functions to Write Concise Anonymous Functions
 challengeType: 1
+forumTopicId: 301211
 ---
 
 ## Description
 <section id='description'>
 In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.
 To achieve this, we often use the following syntax:
-<blockquote>const myFunc = function() {<br>&nbsp;&nbsp;const myVar = "value";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>
+
+```js
+const myFunc = function() {
+  const myVar = "value";
+  return myVar;
+}
+```
+
 ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use <strong>arrow function syntax</strong>:
-<blockquote>const myFunc = () => {<br>&nbsp;&nbsp;const myVar = "value";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>
+
+```js
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+```
+
 When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword <code>return</code> as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:
-<blockquote>const myFunc = () => "value"</blockquote>
+
+```js
+const myFunc = () => "value"
+```
+
 This code will still return <code>value</code> by default.
 </section>
 
@@ -26,16 +45,16 @@ Rewrite the function assigned to the variable <code>magic</code> which returns a
 
 ```yml
 tests:
-  - text: User did replace <code>var</code> keyword.
-    testString: getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');
+  - text: User should replace <code>var</code> keyword.
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
   - text: <code>magic</code> should be a constant variable (by using <code>const</code>).
-    testString: getUserInput => assert(getUserInput('index').match(/const\s+magic/g), '<code>magic</code> should be a constant variable (by using <code>const</code>).');
-  - text: <code>magic</code> is a <code>function</code>.
-    testString: assert(typeof magic === 'function', '<code>magic</code> is a <code>function</code>.');
-  - text: <code>magic()</code> returns correct date.
-    testString: assert(magic().getDate() == new Date().getDate(), '<code>magic()</code> returns correct date.');
-  - text: <code>function</code> keyword was not used.
-    testString: getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+magic/g));
+  - text: <code>magic</code> should be a <code>function</code>.
+    testString: assert(typeof magic === 'function');
+  - text: <code>magic()</code> should return correct date.
+    testString: assert(magic().setHours(0,0,0,0) === new Date().setHours(0,0,0,0));
+  - text: <code>function</code> keyword should not be used.
+    testString: getUserInput => assert(!getUserInput('index').match(/function/g));
 
 ```
 
@@ -68,4 +87,5 @@ const magic = () => {
   return new Date();
 };
 ```
+
 </section>
