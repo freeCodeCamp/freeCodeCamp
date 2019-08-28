@@ -119,3 +119,30 @@ function diffArray(arr1, arr2) {
 *   <a href='https://devdocs.io/javascript/global_objects/array/concat' target='_blank' rel='nofollow'>Array.prototype.concat (Devdocs)</a>
 </details>
 
+<details><summary>Solution 4 (Click to Show/Hide)</summary>
+
+(Declarative Solution)
+
+```javascript
+function diffArray(arr1, arr2) {
+  const concatArr = arr1.concat(arr2);
+  
+  return concatArr.filter(el=>concatArr.indexOf(el) === concatArr.lastIndexOf(el));
+}
+```
+
+#### Code Explanation
+
+- First concat the two array to have one array with all the elements.
+- Then filter the new array created by concat.
+- check if the index of the current element is equal to the last index of the that elemnet.
+- if `true` it mean the element is unique in the array.
+
+#### Relevant Links
+
+*   <a href='https://devdocs.io/javascript/global_objects/array/concat' target='_blank' rel='nofollow'>Array.prototype.concat (Devdocs)</a>
+*   <a href='https://devdocs.io/javascript/global_objects/array/filter' target='_blank' rel='nofollow'>Array.prototype.filter (Devdocs)</a>
+*   <a href='https://devdocs.io/javascript/global_objects/array/indexof' target='_blank' rel='nofollow'>Array.prototype.indexOf (Devdocs)</a>
+*   <a href='https://devdocs.io/javascript/global_objects/array/lastindexof' target='_blank' rel='nofollow'>Array.prototype.lastIndexOf (Devdocs)</a>
+</details>
+
