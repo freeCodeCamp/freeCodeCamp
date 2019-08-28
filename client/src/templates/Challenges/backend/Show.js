@@ -17,7 +17,7 @@ import {
   updateProjectFormValues,
   backendNS
 } from '../redux';
-import { createGuideUrl } from '../utils';
+import { getGuideUrl } from '../utils';
 
 import LearnLayout from '../../../components/layouts/Learn';
 import ChallengeTitle from '../components/Challenge-Title';
@@ -44,6 +44,7 @@ const propTypes = {
   }),
   description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
+  forumTopicId: PropTypes.number,
   id: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
   initTests: PropTypes.func.isRequired,
@@ -155,8 +156,9 @@ export class BackEnd extends Component {
     const {
       data: {
         challengeNode: {
-          fields: { blockName, slug },
+          fields: { blockName },
           challengeType,
+          forumTopicId,
           title,
           description,
           instructions
@@ -210,7 +212,9 @@ export class BackEnd extends Component {
                   updateProjectForm={updateProjectFormValues}
                 />
               )}
-              <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
+              <ProjectToolPanel
+                guideUrl={getGuideUrl({ forumTopicId, title })}
+              />
               <br />
               <Output
                 defaultOutput={`/**
@@ -247,6 +251,7 @@ export default connect(
 export const query = graphql`
   query BackendChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
+      forumTopicId
       title
       description
       instructions
