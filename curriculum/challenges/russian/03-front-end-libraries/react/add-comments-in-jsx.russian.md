@@ -3,29 +3,35 @@ id: 5a24bbe0dba28a8d3cbd4c5e
 title: Add Comments in JSX
 challengeType: 6
 isRequired: false
-videoUrl: ''
+forumTopicId: 301376
 localeTitle: Добавить комментарии в JSX
 ---
 
 ## Description
-<section id="description"> JSX - это синтаксис, который компилируется в действительный JavaScript. Иногда для удобства чтения вам может потребоваться добавить комментарии к вашему коду. Как и большинство языков программирования, JSX имеет свой собственный способ сделать это. Чтобы помещать комментарии в JSX, вы используете синтаксис <code>{/* */}</code> чтобы обернуть текст комментария. </section>
+<section id='description'>
+JSX - это синтаксис, который компилируется в действительный JavaScript. Иногда для удобства чтения вам может потребоваться добавить комментарии к вашему коду. Как и большинство языков программирования, JSX имеет свой собственный способ сделать это. Чтобы помещать комментарии в JSX, вы используете синтаксис <code>{/* */}</code> чтобы обернуть текст комментария.
+</section>
 
 ## Instructions
-<section id="instructions"> Редактор кода имеет элемент JSX, похожий на то, что вы создали в последнем вызове. Добавьте комментарий где-нибудь внутри предоставленного элемента <code>div</code> , не изменяя существующие элементы <code>h1</code> или <code>p</code> . </section>
+<section id='instructions'>
+Редактор кода имеет элемент JSX, похожий на то, что вы создали в последнем вызове. Добавьте комментарий где-нибудь внутри предоставленного элемента <code>div</code> , не изменяя существующие элементы <code>h1</code> или <code>p</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Постоянный <code>JSX</code> должен возвращать элемент <code>div</code> .
-    testString: 'assert(JSX.type === "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
-  - text: <code>div</code> должен содержать тег <code>h1</code> как первый элемент.
-    testString: 'assert(JSX.props.children[0].type === "h1", "The <code>div</code> should contain an <code>h1</code> tag as the first element.");'
-  - text: В <code>div</code> должен быть тег <code>p</code> как второй элемент.
-    testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
-  - text: <code>JSX</code> должен содержать комментарий.
-    testString: 'getUserInput => assert(getUserInput("index").includes("/*") && getUserInput("index").includes("*/"), "The <code>JSX</code> should include a comment.");'
+  - text: The constant <code>JSX</code> should return a <code>div</code> element.
+    testString: assert(JSX.type === 'div');
+  - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
+    testString: assert(JSX.props.children[0].type === 'h1');
+  - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
+    testString: assert(JSX.props.children[1].type === 'p');
+  - text: The existing <code>h1</code> and <code>p</code> elements should not be modified.
+    testString: assert(JSX.props.children[0].props.children === 'This is a block of JSX' && JSX.props.children[1].props.children === 'Here\'s a subtitle');
+  - text: The <code>JSX</code> should use valid comment syntax.
+    testString: assert(/<div>[\s\S]*{\s*\/\*[\s\S]*\*\/\s*}[\s\S]*<\/div>/.test(code));
 
 ```
 
@@ -48,12 +54,12 @@ const JSX = (
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='jsx-teardown'>
 
-```js
-console.info('after the test');
+```jsx
+ReactDOM.render(JSX, document.getElementById('root'))
+
 ```
 
 </div>
@@ -63,7 +69,13 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```jsx
+const JSX = (
+<div>
+  <h1>This is a block of JSX</h1>
+  { /* this is a JSX comment */ }
+  <p>Here's a subtitle</p>
+</div>);
 ```
+
 </section>

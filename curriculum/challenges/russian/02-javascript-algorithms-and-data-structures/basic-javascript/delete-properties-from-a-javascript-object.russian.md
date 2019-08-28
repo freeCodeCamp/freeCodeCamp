@@ -2,25 +2,30 @@
 id: 56bbb991ad1ed5201cd392d3
 title: Delete Properties from a JavaScript Object
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cDqKdTv
+forumTopicId: 17560
 localeTitle: Удаление свойств из объекта JavaScript
 ---
 
 ## Description
-<section id="description"> Мы также можем удалить свойства из таких объектов: <code>delete ourDog.bark;</code> </section>
+<section id='description'>
+Мы также можем удалить свойства из таких объектов: <code>delete ourDog.bark;</code>
+</section>
 
 ## Instructions
-<section id="instructions"> Удалите свойство <code>&quot;tails&quot;</code> из <code>myDog</code> . Вы можете использовать либо точечную, либо скобку. </section>
+<section id='instructions'>
+Удалите свойство <code>&quot;tails&quot;</code> из <code>myDog</code> . Вы можете использовать либо точечную, либо скобку.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Удалите свойство <code>&quot;tails&quot;</code> из <code>myDog</code> .
-    testString: 'assert(typeof myDog === "object" && myDog.tails === undefined, "Delete the property <code>"tails"</code> from <code>myDog</code>.");'
-  - text: Не изменяйте настройку <code>myDog</code>
-    testString: 'assert(code.match(/"tails": 1/g).length > 1, "Do not modify the <code>myDog</code> setup");'
+  - text: Delete the property <code>"tails"</code> from <code>myDog</code>.
+    testString: assert(typeof myDog === "object" && myDog.tails === undefined);
+  - text: Do not modify the <code>myDog</code> setup
+    testString: 'assert(code.match(/"tails": 1/g).length > 1);'
 
 ```
 
@@ -58,12 +63,12 @@ var myDog = {
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return z;})(myDog);
+
 ```
 
 </div>
@@ -74,6 +79,21 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var ourDog = {
+  "name": "Camper",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["everything!"],
+  "bark": "bow-wow"
+};
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+delete myDog.tails;
 ```
+
 </section>

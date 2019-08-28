@@ -2,23 +2,28 @@
 id: 5a94fe3669fb03452672e45f
 title: Reduce Repetition Using the repeat Function
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/p/pByETK/cQvqyHR
+forumTopicId: 301133
 localeTitle: Уменьшить повторение с помощью функции повтора
 ---
 
 ## Description
-<section id="description"> Когда вы использовали <code>grid-template-columns</code> и <code>grid-template-rows</code> для определения структуры сетки, вы ввели значение для каждой строки или столбца, который вы создали. Допустим, вам нужна сетка со 100 рядами одинаковой высоты. Внести 100 значений по отдельности не очень удобно. К счастью, есть лучший способ - с помощью функции <code>repeat</code> указать количество раз, когда вы хотите <code>repeat</code> свой столбец или строку, а затем запятую и значение, которое вы хотите повторить. Вот пример, который создавал бы сетку из 100 строк, каждая строка была бы высотой 50 пикселей. <blockquote> grid-template-rows: repeat (100, 50px); </blockquote> Вы также можете повторить несколько значений с помощью функции повтора и вставить функцию среди других значений при определении структуры сетки. Вот что я имею в виду: <blockquote> grid-template-columns: repeat (2, 1fr 50px) 20px; </blockquote> Это означает: <blockquote> grid-template-columns: 1fr 50px 1fr 50px 20px; </blockquote> <strong>Заметка</strong> <br> <code>1fr 50px</code> повторяется дважды, затем 20px. </section>
+<section id='description'>
+Когда вы использовали <code>grid-template-columns</code> и <code>grid-template-rows</code> для определения структуры сетки, вы ввели значение для каждой строки или столбца, который вы создали. Допустим, вам нужна сетка со 100 рядами одинаковой высоты. Внести 100 значений по отдельности не очень удобно. К счастью, есть лучший способ - с помощью функции <code>repeat</code> указать количество раз, когда вы хотите <code>repeat</code> свой столбец или строку, а затем запятую и значение, которое вы хотите повторить. Вот пример, который создавал бы сетку из 100 строк, каждая строка была бы высотой 50 пикселей. <blockquote> grid-template-rows: repeat (100, 50px); </blockquote> Вы также можете повторить несколько значений с помощью функции повтора и вставить функцию среди других значений при определении структуры сетки. Вот что я имею в виду: <blockquote> grid-template-columns: repeat (2, 1fr 50px) 20px; </blockquote> Это означает: <blockquote> grid-template-columns: 1fr 50px 1fr 50px 20px; </blockquote> <strong>Заметка</strong> <br> <code>1fr 50px</code> повторяется дважды, затем 20px.
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте <code>repeat</code> чтобы удалить повторение из свойства <code>grid-template-columns</code> . </section>
+<section id='instructions'>
+Используйте <code>repeat</code> чтобы удалить повторение из свойства <code>grid-template-columns</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'класс <code>container</code> должен иметь свойство <code>grid-template-columns</code> , которое настроено на повторение 3 столбцов с шириной <code>1fr</code> .'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.");'
+  - text: <code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -65,14 +70,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".container {grid-template-columns: repeat(3, 1fr);}"
 ```
+
 </section>

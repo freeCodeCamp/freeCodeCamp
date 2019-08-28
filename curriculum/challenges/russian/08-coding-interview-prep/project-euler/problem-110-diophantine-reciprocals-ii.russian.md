@@ -2,15 +2,18 @@
 id: 5900f3db1000cf542c50feed
 challengeType: 5
 title: 'Problem 110: Diophantine Reciprocals II'
-videoUrl: ''
+forumTopicId: 301735
 localeTitle: 'Задача 110: диофантийские реципрокты II'
 ---
 
 ## Description
-<section id="description"> В следующем уравнении x, y и n - целые положительные числа. 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n.</var> Можно проверить, что при <var>n</var> = 1260 существует 113 различных решений, и это наименьшее значение <var>n,</var> для которого общее число различных решений превышает сто. Каково наименьшее значение <var>n,</var> для которого количество различных решений превышает четыре миллиона? </section>
+<section id='description'>
+В следующем уравнении x, y и n - целые положительные числа. 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n.</var> Можно проверить, что при <var>n</var> = 1260 существует 113 различных решений, и это наименьшее значение <var>n,</var> для которого общее число различных решений превышает сто. Каково наименьшее значение <var>n,</var> для которого количество различных решений превышает четыре миллиона?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 110: диофантийские реципрокты 
 
 ```yml
 tests:
-  - text: <code>diophantineTwo</code> должен вернуть 9350130049860600.
-    testString: 'assert.strictEqual(diophantineTwo(), 9350130049860600, "<code>diophantineTwo()</code> should return 9350130049860600.");'
+  - text: <code>diophantineTwo()</code> should return 9350130049860600.
+    testString: assert.strictEqual(diophantineTwo(), 9350130049860600);
 
 ```
 
@@ -42,8 +45,6 @@ diophantineTwo();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ diophantineTwo();
 ```js
 // solution required
 ```
+
 </section>

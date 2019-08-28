@@ -2,15 +2,18 @@
 id: 5900f3fa1000cf542c50ff0d
 challengeType: 5
 title: 'Problem 142: Perfect Square Collection'
-videoUrl: ''
+forumTopicId: 301771
 localeTitle: 'Проблема 142: Идеальная квадратная коллекция'
 ---
 
 ## Description
-<section id="description"> Найти наименьшие x + y + z с целыми числами x&gt; y&gt; z&gt; 0 такими, что x + y, x - y, x + z, x - z, y + z, y - z - все совершенные квадраты. </section>
+<section id='description'>
+Найти наименьшие x + y + z с целыми числами x&gt; y&gt; z&gt; 0 такими, что x + y, x - y, x + z, x - z, y + z, y - z - все совершенные квадраты.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Проблема 142: Идеальная квадратная ко
 
 ```yml
 tests:
-  - text: <code>euler142()</code> должен возвращать 1006193.
-    testString: 'assert.strictEqual(euler142(), 1006193, "<code>euler142()</code> should return 1006193.");'
+  - text: <code>euler142()</code> should return 1006193.
+    testString: assert.strictEqual(euler142(), 1006193);
 
 ```
 
@@ -42,8 +45,6 @@ euler142();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler142();
 ```js
 // solution required
 ```
+
 </section>

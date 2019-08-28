@@ -2,25 +2,30 @@
 id: 5a9d72ad424fe3d0e10cad16
 title: Use a media query to change a variable
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cWmL8UP
+forumTopicId: 301091
 localeTitle: Использование медиа-запроса для изменения переменной
 ---
 
 ## Description
-<section id="description"> Переменные CSS могут упростить использование медиа-запросов. Например, когда ваш экран меньше или больше точки прерывания вашего медиа-запроса, вы можете изменить значение переменной, и она будет применять свой стиль везде, где он используется. </section>
+<section id='description'>
+Переменные CSS могут упростить использование медиа-запросов. Например, когда ваш экран меньше или больше точки прерывания вашего медиа-запроса, вы можете изменить значение переменной, и она будет применять свой стиль везде, где он используется.
+</section>
 
 ## Instructions
-<section id="instructions"> В <code>:root</code> селекторе <code>media query</code> измените его так: <code>--penguin-size</code> переопределяется и задается значение <code>200px</code> . Кроме того, переопределите <code>--penguin-skin</code> и придайте ему значение <code>black</code> . Затем измените размер предварительного просмотра, чтобы увидеть это изменение в действии. </section>
+<section id='instructions'>
+В <code>:root</code> селекторе <code>media query</code> измените его так: <code>--penguin-size</code> переопределяется и задается значение <code>200px</code> . Кроме того, переопределите <code>--penguin-skin</code> и придайте ему значение <code>black</code> . Затем измените размер предварительного просмотра, чтобы увидеть это изменение в действии.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>:root</code> должен переназначить переменную <code>--penguin-size</code> до <code>200px</code> .'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.");'
-  - text: '<code>:root</code> должен переназначить переменную <code>--penguin-skin</code> на <code>black</code> .'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.");'
+  - text: <code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi));
+  - text: <code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi));
 
 ```
 
@@ -267,14 +272,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = "@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}"
 ```
+
 </section>

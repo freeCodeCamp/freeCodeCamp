@@ -2,15 +2,25 @@
 id: 5900f4e81000cf542c50fffa
 challengeType: 5
 title: 'Problem 379: Least common multiple count'
-videoUrl: ''
+forumTopicId: 302041
 localeTitle: 'Задача 379: Наименьшее общее количество'
 ---
 
 ## Description
-undefined
+<section id='description'>
+Let f(n) be the number of couples (x,y) with x and y positive integers, x ≤ y and the least common multiple of x and y equal to n.
+
+Let g be the summatory function of f, i.e.:
+g(n) = ∑ f(i)  for 1 ≤ i ≤ n.
+
+You are given that g(106) = 37429395.
+
+Find g(1012).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ undefined
 
 ```yml
 tests:
-  - text: <code>euler379()</code> должен вернуть 132314136838185.
-    testString: 'assert.strictEqual(euler379(), 132314136838185, "<code>euler379()</code> should return 132314136838185.");'
+  - text: <code>euler379()</code> should return 132314136838185.
+    testString: assert.strictEqual(euler379(), 132314136838185);
 
 ```
 
@@ -42,8 +52,6 @@ euler379();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +60,5 @@ euler379();
 ```js
 // solution required
 ```
+
 </section>

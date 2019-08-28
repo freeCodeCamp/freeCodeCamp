@@ -2,15 +2,18 @@
 id: 5900f47b1000cf542c50ff8d
 challengeType: 5
 title: 'Problem 271: Modular Cubes, part 1'
-videoUrl: ''
+forumTopicId: 301921
 localeTitle: 'Проблема 271: Модульные кубы, часть 1'
 ---
 
 ## Description
-<section id="description"> Для положительного числа n определим S (n) как сумму целых чисел x, для которых 1 <p> При n = 91 существует 8 возможных значений для x, а именно: 9, 16, 22, 29, 53, 74, 79, 81. Таким образом, S (91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363. </p><p> Найти S (13082761331670030). </p></section>
+<section id='description'>
+Для положительного числа n определим S (n) как сумму целых чисел x, для которых 1 <p> При n = 91 существует 8 возможных значений для x, а именно: 9, 16, 22, 29, 53, 74, 79, 81. Таким образом, S (91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363. </p><p> Найти S (13082761331670030). </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Проблема 271: Модульные кубы, часть 1'
 
 ```yml
 tests:
-  - text: <code>euler271()</code> должен вернуть 4617456485273130000.
-    testString: 'assert.strictEqual(euler271(), 4617456485273130000, "<code>euler271()</code> should return 4617456485273130000.");'
+  - text: <code>euler271()</code> should return 4617456485273130000.
+    testString: assert.strictEqual(euler271(), 4617456485273130000);
 
 ```
 
@@ -42,8 +45,6 @@ euler271();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler271();
 ```js
 // solution required
 ```
+
 </section>

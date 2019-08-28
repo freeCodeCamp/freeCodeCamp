@@ -2,25 +2,30 @@
 id: 56533eb9ac21ba0edf2244b9
 title: Constructing Strings with Variables
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cqk8rf4
+forumTopicId: 16805
 localeTitle: Построение строк с переменными
 ---
 
 ## Description
-<section id="description"> Иногда вам нужно будет создать строку, стиль <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> . Используя оператор конкатенации ( <code>+</code> ), вы можете вставить одну или несколько переменных в строку, которую вы строите. </section>
+<section id='description'>
+Иногда вам нужно будет создать строку, стиль <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> . Используя оператор конкатенации ( <code>+</code> ), вы можете вставить одну или несколько переменных в строку, которую вы строите.
+</section>
 
 ## Instructions
-<section id="instructions"> Установите <code>myName</code> в строку, равную вашему имени, и создайте <code>myStr</code> с <code>myName</code> между строками <code>&quot;My name is &quot;</code> и <code>&quot; and I am well!&quot;</code> </section>
+<section id='instructions'>
+Установите <code>myName</code> в строку, равную вашему имени, и создайте <code>myStr</code> с <code>myName</code> между строками <code>&quot;My name is &quot;</code> и <code>&quot; and I am well!&quot;</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myName</code> должен быть установлен в строку длиной не менее 3 символов
-    testString: 'assert(typeof myName !== "undefined" && myName.length > 2, "<code>myName</code> should be set to a string at least 3 characters long");'
-  - text: Используйте два <code>+</code> оператора для сборки <code>myStr</code> с <code>myName</code> внутри него
-    testString: 'assert(code.match(/[""]\s*\+\s*myName\s*\+\s*[""]/g).length > 0, "Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it");'
+  - text: <code>myName</code> should be set to a string at least 3 characters long
+    testString: assert(typeof myName !== 'undefined' && myName.length > 2);
+  - text: Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it
+    testString: assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 
 ```
 
@@ -44,12 +49,25 @@ var myStr;
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  var output = [];
+  if(typeof myName === 'string') {
+    output.push('myName = "' + myName + '"');
+  } else {
+    output.push('myName is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
+
 ```
 
 </div>
@@ -60,6 +78,8 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var myName = "Bob";
+var myStr = "My name is " + myName + " and I am well!";
 ```
+
 </section>

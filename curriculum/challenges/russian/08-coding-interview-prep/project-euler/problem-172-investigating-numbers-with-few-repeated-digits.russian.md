@@ -2,15 +2,18 @@
 id: 5900f4181000cf542c50ff2b
 challengeType: 5
 title: 'Problem 172: Investigating numbers with few repeated digits'
-videoUrl: ''
+forumTopicId: 301807
 localeTitle: 'Задача 172: Исследование чисел с несколькими повторными цифрами'
 ---
 
 ## Description
-<section id="description"> Сколько 18-значных чисел n (без начальных нулей) есть такие, что никакая цифра не встречается более трех раз в n? </section>
+<section id='description'>
+Сколько 18-значных чисел n (без начальных нулей) есть такие, что никакая цифра не встречается более трех раз в n?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 172: Исследование чисел с неск�
 
 ```yml
 tests:
-  - text: <code>euler172()</code> должен вернуть 227485267000992000.
-    testString: 'assert.strictEqual(euler172(), 227485267000992000, "<code>euler172()</code> should return 227485267000992000.");'
+  - text: <code>euler172()</code> should return 227485267000992000.
+    testString: assert.strictEqual(euler172(), 227485267000992000);
 
 ```
 
@@ -42,8 +45,6 @@ euler172();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler172();
 ```js
 // solution required
 ```
+
 </section>

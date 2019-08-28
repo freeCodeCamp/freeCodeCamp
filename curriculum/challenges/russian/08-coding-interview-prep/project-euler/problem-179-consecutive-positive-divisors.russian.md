@@ -2,15 +2,18 @@
 id: 5900f41f1000cf542c50ff32
 challengeType: 5
 title: 'Problem 179: Consecutive positive divisors'
-videoUrl: ''
+forumTopicId: 301814
 localeTitle: 'Задача 179: последовательные положительные делители'
 ---
 
 ## Description
-<section id="description"> Найдите число целых чисел 1 &lt;n &lt;107, для которых n и n + 1 имеют одинаковое число положительных делителей. Например, 14 имеет положительные делители 1, 2, 7, 14, а 15 - 1, 3, 5, 15. </section>
+<section id='description'>
+Найдите число целых чисел 1 &lt;n &lt;107, для которых n и n + 1 имеют одинаковое число положительных делителей. Например, 14 имеет положительные делители 1, 2, 7, 14, а 15 - 1, 3, 5, 15.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 179: последовательные положит�
 
 ```yml
 tests:
-  - text: <code>euler179()</code> должен возвращать 986262.
-    testString: 'assert.strictEqual(euler179(), 986262, "<code>euler179()</code> should return 986262.");'
+  - text: <code>euler179()</code> should return 986262.
+    testString: assert.strictEqual(euler179(), 986262);
 
 ```
 
@@ -42,8 +45,6 @@ euler179();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler179();
 ```js
 // solution required
 ```
+
 </section>

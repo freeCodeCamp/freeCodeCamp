@@ -2,25 +2,30 @@
 id: bd7123c9c452eddfaeb5bdef
 title: Use Bracket Notation to Find the Nth-to-Last Character in a String
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cw4vkh9
+forumTopicId: 18344
 localeTitle: Используйте условное обозначение скобки для поиска символа Nth-to-Last в строке
 ---
 
 ## Description
-<section id="description"> Вы можете использовать тот же принцип, который мы использовали для извлечения последнего символа в строке, чтобы получить символ Nth-to-last. Например, вы можете получить значение третьей-последней буквы строки <code>var firstName = &quot;Charles&quot;</code> , используя <code>firstName[firstName.length - 3]</code> </section>
+<section id='description'>
+Вы можете использовать тот же принцип, который мы использовали для извлечения последнего символа в строке, чтобы получить символ Nth-to-last. Например, вы можете получить значение третьей-последней буквы строки <code>var firstName = &quot;Charles&quot;</code> , используя <code>firstName[firstName.length - 3]</code>
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте <dfn>нотацию</dfn> в виде <dfn>скобок,</dfn> чтобы найти второй-последний символ в строке <code>lastName</code> . <strong>намек</strong> <br> Попробуйте просмотреть <code>thirdToLastLetterOfFirstName</code> переменной <code>thirdToLastLetterOfFirstName</code> если вы застряли. </section>
+<section id='instructions'>
+Используйте <dfn>нотацию</dfn> в виде <dfn>скобок,</dfn> чтобы найти второй-последний символ в строке <code>lastName</code> . <strong>намек</strong> <br> Попробуйте просмотреть <code>thirdToLastLetterOfFirstName</code> переменной <code>thirdToLastLetterOfFirstName</code> если вы застряли.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>secondToLastLetterOfLastName</code> должен быть «c».
-    testString: 'assert(secondToLastLetterOfLastName === "c", "<code>secondToLastLetterOfLastName</code> should be "c".");'
-  - text: Вы должны использовать <code>.length</code> для получения второй последней буквы.
-    testString: 'assert(code.match(/\.length/g).length === 2, "You have to use <code>.length</code> to get the second last letter.");'
+  - text: <code>secondToLastLetterOfLastName</code> should be "c".
+    testString: assert(secondToLastLetterOfLastName === 'c');
+  - text: You have to use <code>.length</code> to get the second last letter.
+    testString: assert(code.match(/\.length/g).length === 2);
 
 ```
 
@@ -46,12 +51,12 @@ var secondToLastLetterOfLastName = lastName;
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return v;})(secondToLastLetterOfLastName);
+
 ```
 
 </div>
@@ -62,6 +67,11 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var firstName = "Ada";
+var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];
+
+var lastName = "Lovelace";
+var secondToLastLetterOfLastName = lastName[lastName.length - 2];
 ```
+
 </section>

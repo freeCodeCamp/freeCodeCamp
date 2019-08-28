@@ -2,23 +2,28 @@
 id: 5a94fe1369fb03452672e45d
 title: Place Items in Grid Areas Using the grid-area Property
 challengeType: 0
-videoUrl: ''
+videoUrl: https://scrimba.com/p/pByETK/cRrqmtV
+forumTopicId: 301132
 localeTitle: Поместите объекты в области сетки Используя свойство сетки
 ---
 
 ## Description
-<section id="description"> После создания шаблона областей для вашего контейнера сетки, как показано в предыдущем вызове, вы можете поместить элемент в свою настраиваемую область, указав имя, которое вы ему дали. Для этого вы используете свойство <code>grid-area</code> для элемента, подобного этому: <blockquote> .item1 {grid-area: header; } </blockquote> Это позволяет сетке знать, что вы хотите, чтобы класс <code>item1</code> находился в <code>header</code> . В этом случае элемент будет использовать всю верхнюю строку, потому что целая строка называется зоной заголовка. </section>
+<section id='description'>
+После создания шаблона областей для вашего контейнера сетки, как показано в предыдущем вызове, вы можете поместить элемент в свою настраиваемую область, указав имя, которое вы ему дали. Для этого вы используете свойство <code>grid-area</code> для элемента, подобного этому: <blockquote> .item1 {grid-area: header; } </blockquote> Это позволяет сетке знать, что вы хотите, чтобы класс <code>item1</code> находился в <code>header</code> . В этом случае элемент будет использовать всю верхнюю строку, потому что целая строка называется зоной заголовка.
+</section>
 
 ## Instructions
-<section id="instructions"> Поместите элемент с классом <code>item5</code> в область <code>item5</code> <code>footer</code> используя свойство <code>grid-area</code> . </section>
+<section id='instructions'>
+Поместите элемент с классом <code>item5</code> в область <code>item5</code> <code>footer</code> используя свойство <code>grid-area</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Класс <code>item5</code> должен иметь свойство <code>grid-area</code> которое имеет значение <code>item5</code> <code>footer</code> .
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.");'
+  - text: <code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -72,14 +77,13 @@ tests:
 
 </div>
 
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+var code = ".item5 {grid-area: footer;}"
 ```
+
 </section>

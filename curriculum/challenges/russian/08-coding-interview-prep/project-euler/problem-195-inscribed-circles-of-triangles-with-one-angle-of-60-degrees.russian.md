@@ -2,15 +2,18 @@
 id: 5900f4311000cf542c50ff43
 challengeType: 5
 title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
-videoUrl: ''
+forumTopicId: 301833
 localeTitle: 'Задача 195: Вписанные круги треугольников с одним углом 60 градусов'
 ---
 
 ## Description
-<section id="description"> Назовем целочисленный односторонний треугольник с ровно одним углом 60 градусов на 60-градусный треугольник. Пусть r - радиус вписанной окружности такого 60-градусного треугольника. Существует 1234 60-градусных треугольников, для которых r ≤ 100. Пусть T (n) - число треугольников с 60 градусами, для которых r ≤ n, поэтому T (100) = 1234, T (1000) = 22767 и T 10000) = 359912. <p> Найдите T (1053779). </p></section>
+<section id='description'>
+Назовем целочисленный односторонний треугольник с ровно одним углом 60 градусов на 60-градусный треугольник. Пусть r - радиус вписанной окружности такого 60-градусного треугольника. Существует 1234 60-градусных треугольников, для которых r ≤ 100. Пусть T (n) - число треугольников с 60 градусами, для которых r ≤ n, поэтому T (100) = 1234, T (1000) = 22767 и T 10000) = 359912. <p> Найдите T (1053779). </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 195: Вписанные круги треугольн
 
 ```yml
 tests:
-  - text: <code>euler195()</code> должен вернуть 75085391.
-    testString: 'assert.strictEqual(euler195(), 75085391, "<code>euler195()</code> should return 75085391.");'
+  - text: <code>euler195()</code> should return 75085391.
+    testString: assert.strictEqual(euler195(), 75085391);
 
 ```
 
@@ -42,8 +45,6 @@ euler195();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler195();
 ```js
 // solution required
 ```
+
 </section>

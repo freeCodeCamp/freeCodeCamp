@@ -7,10 +7,14 @@ localeTitle: Записывать краткие декларации объек
 ---
 
 ## Description
-<section id="description"> ES6 добавляет отличную поддержку для простого определения литералов объектов. Рассмотрим следующий код: <blockquote> const getMousePosition = (x, y) =&gt; ({ <br> x: x, <br> y: y <br> }); </blockquote> <code>getMousePosition</code> - простая функция, которая возвращает объект, содержащий два поля. ES6 обеспечивает синтаксический сахар для устранения избыточности необходимости писать <code>x: x</code> . Вы можете просто написать <code>x</code> один раз, и он будет преобразован в <code>x: x</code> (или что-то подобное) под капотом. Вот такая же функция сверху переписана для использования этого нового синтаксиса: <blockquote> const getMousePosition = (x, y) =&gt; ({x, y}); </blockquote></section>
+<section id='description'>
+ES6 добавляет отличную поддержку для простого определения литералов объектов. Рассмотрим следующий код: <blockquote> const getMousePosition = (x, y) =&gt; ({ <br> x: x, <br> y: y <br> }); </blockquote> <code>getMousePosition</code> - простая функция, которая возвращает объект, содержащий два поля. ES6 обеспечивает синтаксический сахар для устранения избыточности необходимости писать <code>x: x</code> . Вы можете просто написать <code>x</code> один раз, и он будет преобразован в <code>x: x</code> (или что-то подобное) под капотом. Вот такая же функция сверху переписана для использования этого нового синтаксиса: <blockquote> const getMousePosition = (x, y) =&gt; ({x, y}); </blockquote>
+</section>
 
 ## Instructions
-<section id="instructions"> Используйте простые поля с объектными литералами для создания и возврата объекта <code>Person</code> . </section>
+<section id='instructions'>
+Используйте простые поля с объектными литералами для создания и возврата объекта <code>Person</code> .
+</section>
 
 ## Tests
 <section id='tests'>
@@ -18,10 +22,9 @@ localeTitle: Записывать краткие декларации объек
 ```yml
 tests:
   - text: 'вывод: <code>{name: &quot;Zodiac Hasbro&quot;, age: 56, gender: &quot;male&quot;}</code> .'
-    testString: 'assert(() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);}, "the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.");'
+    testString: assert(() => {const res={name:'Zodiac Hasbro',age:56,gender:'male'}; const person=createPerson('Zodiac Hasbro', 56, 'male'); return Object.keys(person).every(k => person[k] === res[k]);});
   - text: 'Нет <code>:</code> были использованы.'
-    testString: 'getUserInput => assert(!getUserInput("index").match(/:/g), "No <code>:</code> were used.");'
-
+    testString: getUserInput => assert(!getUserInput('index').match(/:/g));
 ```
 
 </section>
@@ -48,8 +51,6 @@ console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper obje
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -58,4 +59,5 @@ console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper obje
 ```js
 // solution required
 ```
+
 </section>

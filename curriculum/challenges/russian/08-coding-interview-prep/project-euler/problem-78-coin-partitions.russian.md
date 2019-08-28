@@ -2,15 +2,18 @@
 id: 5900f3ba1000cf542c50fecd
 challengeType: 5
 title: 'Problem 78: Coin partitions'
-videoUrl: ''
+forumTopicId: 302191
 localeTitle: 'Проблема 78: Монетные перегородки'
 ---
 
 ## Description
-<section id="description"> Пусть p (n) представляет количество различных способов, в которых n монеты могут быть разделены на свай. Например, пять монет могут быть разделены на сваи ровно семь различными способами, поэтому p (5) = 7. <p> OOOOO OOOO O OOO OO OOO O O OO OO O O O O O O O O O </p><p> Найдите наименьшее значение n, для которого p (n) делится на миллион. </p></section>
+<section id='description'>
+Пусть p (n) представляет количество различных способов, в которых n монеты могут быть разделены на свай. Например, пять монет могут быть разделены на сваи ровно семь различными способами, поэтому p (5) = 7. <p> OOOOO OOOO O OOO OO OOO O O OO OO O O O O O O O O O </p><p> Найдите наименьшее значение n, для которого p (n) делится на миллион. </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Проблема 78: Монетные перегородки'
 
 ```yml
 tests:
-  - text: <code>euler78()</code> должен вернуть 55374.
-    testString: 'assert.strictEqual(euler78(), 55374, "<code>euler78()</code> should return 55374.");'
+  - text: <code>euler78()</code> should return 55374.
+    testString: assert.strictEqual(euler78(), 55374);
 
 ```
 
@@ -42,8 +45,6 @@ euler78();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler78();
 ```js
 // solution required
 ```
+
 </section>

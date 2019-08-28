@@ -2,29 +2,34 @@
 id: 56533eb9ac21ba0edf2244b7
 title: Concatenating Strings with Plus Operator
 challengeType: 1
-videoUrl: ''
+videoUrl: https://scrimba.com/c/cNpM8AN
+forumTopicId: 16802
 localeTitle: Конкатенация строк с помощью оператора Plus
 ---
 
 ## Description
-<section id="description"> В JavaScript, когда оператор <code>+</code> используется со значением <code>String</code> , он называется оператором <dfn>конкатенации</dfn> . Вы можете создать новую строку из других строк путем <dfn>конкатенации</dfn> их вместе. <strong>пример</strong> <blockquote> «Меня зовут Алан, +, я конкатенирую». </blockquote> <strong>Заметка</strong> <br> Следите за пробелами. Конкатенация не добавляет пробелов между конкатенированными строками, поэтому вам нужно будет добавить их самостоятельно. </section>
+<section id='description'>
+В JavaScript, когда оператор <code>+</code> используется со значением <code>String</code> , он называется оператором <dfn>конкатенации</dfn> . Вы можете создать новую строку из других строк путем <dfn>конкатенации</dfn> их вместе. <strong>пример</strong> <blockquote> «Меня зовут Алан, +, я конкатенирую». </blockquote> <strong>Заметка</strong> <br> Следите за пробелами. Конкатенация не добавляет пробелов между конкатенированными строками, поэтому вам нужно будет добавить их самостоятельно.
+</section>
 
 ## Instructions
-<section id="instructions"> Создайте <code>myStr</code> из строк <code>&quot;This is the start. &quot;</code> и <code>&quot;This is the end.&quot;</code> используя оператор <code>+</code> . </section>
+<section id='instructions'>
+Создайте <code>myStr</code> из строк <code>&quot;This is the start. &quot;</code> и <code>&quot;This is the end.&quot;</code> используя оператор <code>+</code> .
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myStr</code> должен иметь значение <code>This is the start. This is the end.</code>
-    testString: 'assert(myStr === "This is the start. This is the end.", "<code>myStr</code> should have a value of <code>This is the start. This is the end.</code>");'
-  - text: Используйте оператор <code>+</code> для создания <code>myStr</code>
-    testString: 'assert(code.match(/([""]).*([""])\s*\+\s*([""]).*([""])/g).length > 1, "Use the <code>+</code> operator to build <code>myStr</code>");'
-  - text: <code>myStr</code> должен быть создан с использованием ключевого слова <code>var</code> .
-    testString: 'assert(/var\s+myStr/.test(code), "<code>myStr</code> should be created using the <code>var</code> keyword.");'
-  - text: Обязательно присвойте результат переменной <code>myStr</code> .
-    testString: 'assert(/myStr\s*=/.test(code), "Make sure to assign the result to the <code>myStr</code> variable.");'
+  - text: <code>myStr</code> should have a value of <code>This is the start. This is the end.</code>
+    testString: assert(myStr === "This is the start. This is the end.");
+  - text: Use the <code>+</code> operator to build <code>myStr</code>
+    testString: assert(code.match(/(["']).*(["'])\s*\+\s*(["']).*(["'])/g).length > 1);
+  - text: <code>myStr</code> should be created using the <code>var</code> keyword.
+    testString: assert(/var\s+myStr/.test(code));
+  - text: Make sure to assign the result to the <code>myStr</code> variable.
+    testString: assert(/myStr\s*=/.test(code));
 
 ```
 
@@ -47,12 +52,18 @@ var myStr;
 
 </div>
 
-
-### After Test
+### After Tests
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  if(typeof myStr === 'string') {
+    return 'myStr = "' + myStr + '"';
+  } else {
+    return 'myStr is not a string';
+  }
+})();
+
 ```
 
 </div>
@@ -63,6 +74,8 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+var ourStr = "I come first. " + "I come second.";
+var myStr = "This is the start. " + "This is the end.";
 ```
+
 </section>

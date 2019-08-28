@@ -2,15 +2,18 @@
 id: 5900f43a1000cf542c50ff4d
 challengeType: 5
 title: 'Problem 206: Concealed Square'
-videoUrl: ''
+forumTopicId: 301847
 localeTitle: 'Задача 206: Скрытая площадь'
 ---
 
 ## Description
-<section id="description"> Найдите уникальное положительное целое число, квадрат которого имеет вид 1_2_3_4_5_6_7_8_9_0, где каждая «_» представляет собой одну цифру. </section>
+<section id='description'>
+Найдите уникальное положительное целое число, квадрат которого имеет вид 1_2_3_4_5_6_7_8_9_0, где каждая «_» представляет собой одну цифру.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 206: Скрытая площадь'
 
 ```yml
 tests:
-  - text: <code>euler206()</code> должен вернуть 1389019170.
-    testString: 'assert.strictEqual(euler206(), 1389019170, "<code>euler206()</code> should return 1389019170.");'
+  - text: <code>euler206()</code> should return 1389019170.
+    testString: assert.strictEqual(euler206(), 1389019170);
 
 ```
 
@@ -42,8 +45,6 @@ euler206();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler206();
 ```js
 // solution required
 ```
+
 </section>

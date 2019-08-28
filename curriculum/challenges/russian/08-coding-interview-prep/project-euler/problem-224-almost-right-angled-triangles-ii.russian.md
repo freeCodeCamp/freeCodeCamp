@@ -2,15 +2,18 @@
 id: 5900f44e1000cf542c50ff5f
 challengeType: 5
 title: 'Problem 224: Almost right-angled triangles II'
-videoUrl: ''
+forumTopicId: 301867
 localeTitle: 'Задача 224: Почти прямоугольные треугольники II'
 ---
 
 ## Description
-<section id="description"> Назовем целочисленный односторонний треугольник со сторонами a ≤ b ≤ c едва тупой, если стороны удовлетворяют a2 + b2 = c2 - 1. <p> Сколько едва туманных треугольников там с периметром ≤ 75 000 000? </p></section>
+<section id='description'>
+Назовем целочисленный односторонний треугольник со сторонами a ≤ b ≤ c едва тупой, если стороны удовлетворяют a2 + b2 = c2 - 1. <p> Сколько едва туманных треугольников там с периметром ≤ 75 000 000? </p>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 224: Почти прямоугольные треуг
 
 ```yml
 tests:
-  - text: <code>euler224()</code> должен возвращать 4137330.
-    testString: 'assert.strictEqual(euler224(), 4137330, "<code>euler224()</code> should return 4137330.");'
+  - text: <code>euler224()</code> should return 4137330.
+    testString: assert.strictEqual(euler224(), 4137330);
 
 ```
 
@@ -42,8 +45,6 @@ euler224();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler224();
 ```js
 // solution required
 ```
+
 </section>

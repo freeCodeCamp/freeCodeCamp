@@ -2,15 +2,18 @@
 id: 5900f4111000cf542c50ff23
 challengeType: 5
 title: 'Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value'
-videoUrl: ''
+forumTopicId: 301798
 localeTitle: 'Задача 164: Числа, для которых нет трех последовательных цифр, сумма которых превышает заданное значение'
 ---
 
 ## Description
-<section id="description"> Сколько 20-значных чисел n (без какого-либо начального нуля) существует так, что никакие три последовательные цифры n не имеют сумму больше 9? </section>
+<section id='description'>
+Сколько 20-значных чисел n (без какого-либо начального нуля) существует так, что никакие три последовательные цифры n не имеют сумму больше 9?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 'Задача 164: Числа, для которых нет тре�
 
 ```yml
 tests:
-  - text: <code>euler164()</code> должен вернуть 378158756814587.
-    testString: 'assert.strictEqual(euler164(), 378158756814587, "<code>euler164()</code> should return 378158756814587.");'
+  - text: <code>euler164()</code> should return 378158756814587.
+    testString: assert.strictEqual(euler164(), 378158756814587);
 
 ```
 
@@ -42,8 +45,6 @@ euler164();
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -52,4 +53,5 @@ euler164();
 ```js
 // solution required
 ```
+
 </section>
