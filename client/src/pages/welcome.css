@@ -10,7 +10,7 @@
 .update-link {
   text-decoration: underline;
   font-size: 1.4em;
-  color: #006400;
+  color: var(--secondary-color);
 }
 
 p.stats {
@@ -18,13 +18,5 @@ p.stats {
 }
 
 p.stats span {
-  color: #006400;
-}
-
-.night p.stats span {
-  color: #67d269;
-}
-
-.night .quote-partial .blockquote {
-  background-color: #333;
+  color: var(--secondary-color);
 }

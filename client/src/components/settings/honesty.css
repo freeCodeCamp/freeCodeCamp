@@ -11,9 +11,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 100, 0, 0.8);
+  background-color: var(--quaternary-color);
   color: #fff;
-  border-color: #006400;
+}
+
+div .agreed p {
+  color: white;
 }
 
 .honesty-policy .agreed p {
@@ -21,11 +24,6 @@
   margin-bottom: 0;
 }
 
-.night .honesty-panel {
-  color: #333333;
-  background-color: #cccccc;
-}
-
-.night .honesty-panel a {
-  color: darkgreen;
+.honesty-panel .btn-invert {
+  color: var(--primary-background);
 }

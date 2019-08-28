@@ -37,8 +37,8 @@ public class PluginAttribute : Attribute
 	}
 }
 
-[Plugin(MyPluginName)] // Won't compile because MyPluginName isn't const
-[Plugin(MyConstPluginName)] // OK
+[Plugin(Variables.MyPluginName)] // Won't compile because MyPluginName isn't const
+[Plugin(Variables.MyConstPluginName)] // OK
 [Plugin("My Cool Plugin")] // OK
 public class MyPlugin
 {
@@ -51,13 +51,16 @@ The `System.Attribute.GetCustomAttributes(Type)` method returns an array of all 
 ```csharp
 public void PrintPluginName()
 {
-	var type = typeof(MyPlugin); // Returns a Type object representing our MyPlugin class
+	var type = typeof(PluginAttribute); // Returns a Type object representing our PluginAttribute class
 	var attributes = System.Attribute.GetCustomAttributes(type); // Returns an Attribute[]
 
 	foreach (var a in attributes)
 	{
-		if (a is PluginAttribute plugin)
-			Console.WriteLine($"Plugin Name: {plugin.Name}");
+		if (a is PluginAttribute)
+                    {
+                        PluginAttribute plug = (PluginAttribute) a; //Cast it first to PluginAttribute class before you can access all accessible properties
+                        Console.WriteLine($"Plugin Name: {plug.Name}");
+                    }
 	}
 }
 ```

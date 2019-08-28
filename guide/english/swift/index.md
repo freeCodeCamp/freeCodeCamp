@@ -10,7 +10,7 @@ Swift is an [open source](https://en.wikipedia.org/wiki/Open-source_software), g
 
 > Swift is a powerful and intuitive programming language for macOS, iOS, watchOS and tvOS. Writing Swift code is interactive and fun, the syntax is concise yet expressive, and Swift includes modern features developers love. Swift code is safe by design, yet also produces software that runs lightning-fast.<sup>1</sup>
 
-Want to try out Swift right now? [Repl.it](https://repl.it/languages/swift) offers an online Read-Eval-Print loop for Swift. You won't have access to UIKit or other APIs that are commonly used, but give it a shot!
+Want to try out Swift right now? [Repl.it](https://repl.it/languages/swift) offers an online Read-Eval-Print loop for Swift. You won't have access to UIKit or other APIs that are commonly used, but give it a shot! If you have access to a macOS device, you can also install Xcode, Apple's free IDE for tvOS, watchOS, iOS, and macOS. It can be installed from the Mac App Store. 
 
 # Basics
 
@@ -36,13 +36,14 @@ let x = "World"
 
 print("Hello ")
 print(x)
+print("Hello \(x)")
 ```
 
 
 
 # Version
 
-The latest version is [Swift 4.2](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html), released Sept. 17, 2018. Swift is constantly evolving, and you can expect more changes in the future. It is recommended you use the latest version of Swift when starting a new project.
+The latest version is [Swift 5.0](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html), released March 25, 2019. Swift is constantly evolving, and you can expect more changes in the future. It is recommended you use the latest version of Swift when starting a new project.
 
 # Documentation
 

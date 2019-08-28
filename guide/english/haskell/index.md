@@ -7,6 +7,21 @@ Haskell is a standardized, general-purpose, purely functional programming langua
 
 Haskell has deep roots in mathematics, and you will soon learn to appreciate the implications of it.
 
+## Why learn Haskell?
+* If you've never used a functional programming language, the only gain in learning Haskell would be to expand your mind and broaden your thinking scope. 
+* Functional langauges tend to more terse.
+* Functional languages encourage quick prototyping.
+* If you've ever tried using mutithreading before, functional languages allow for safe multithreading.
+* As far as Haskell is concerned: 
+  * The syntax is clear,concise and intuitive with inspiration from mathematical notation.
+  * List Comprehension is another great feature.
+  * It allows you to create Lambda expressions which allows for better handling of more complex formulae.
+  * Lazy evaluation: If something causes an error, it won't pop up unless you use the result. This can be both good and bad.
+  * You can basically create anything that you could normally create with any general-purpose language.
+ 
+In a nutshell, you'd do so to expand your thinking ability(isn't that what everyone strives for?).
+  
+
 ## Version
 Currently the latest version of GHC is 8.6 (as of 12 Oct 2018)
 
@@ -67,5 +82,6 @@ Hackage provides documentation for Haskell
 
 #### More Information
 * [Haskell wiki](https://wiki.haskell.org/Haskell)
-* [Learn You a Haskell for Great Good](http://learnyouahaskell.com)
 * [Try Haskell in your browser](https://www.tryhaskell.org)
+* [Write yourself a Scheme in 48 hours](https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours/First_Steps)
+* [What is Haskell used for in the real world?](https://stackoverflow.com/questions/1604790/what-is-haskell-used-for-in-the-real-world)

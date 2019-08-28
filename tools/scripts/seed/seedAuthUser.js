@@ -48,7 +48,7 @@ MongoClient.connect(MONGOHQ_URL, { useNewUrlParser: true }, function(
         about: '',
         name: 'Development User',
         location: '',
-        picture: 'https://identicon.org/?t=dev&s=256',
+        picture: 'https://github.com/identicons/camperbot.png',
         acceptedPrivacyTerms: true,
         sendQuincyEmail: false,
         currentChallengeId: '',

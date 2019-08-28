@@ -6,7 +6,7 @@ localeTitle: Pilhas
 
 Stacks é uma Estrutura de Dados First In Last Out (FILO). É uma estrutura de dados linear.
 
-Você pode imaginar uma pilha como as placas de maneira foram organizadas em restaurante buffet. Você só pode escolher a placa no topo, caso contrário a pilha entrará em colapso. Geralmente, o último item a ser inserido será removido primeiro.
+Você pode imaginar uma pilha como a maneira em que as bandejas foram organizadas em um buffet . Você só pode escolher a bandeja do topo, caso contrário a pilha entrará em colapso. Geralmente, o último item a ser inserido será removido primeiro.
 
 Algumas operações básicas da pilha são:
 
@@ -15,7 +15,7 @@ Algumas operações básicas da pilha são:
 3.  isEmpty - verifica se a pilha está vazia ou não
 4.  Tamanho - Retorna o número de itens na pilha (Todas as operações podem ser feitas no tempo O (1))
 
-A implementação de uma pilha é possível usando arrays ou listas vinculadas. A seguir, uma implementação de matriz simples da estrutura de dados da pilha com suas operações mais comuns.
+A implementação de uma pilha é possível usando arrays ou listas encadeadas. A seguir, uma implementação de matriz simples da estrutura de dados da pilha com suas operações mais comuns.
 
 ```cpp
 //Stack implementation using array in C++ 
@@ -113,3 +113,4 @@ stack = []
 *   [Pilha - Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 *   [Tower of Hanoi Problem e como a solução usa pilhas e recursões](https://en.wikipedia.org/wiki/Tower_of_Hanoi)
 *   [Vídeo do HackerRank Stacks and Queues](https://www.youtube.com/watch?v=wjI1WNcIntg)
+*   [Pilhas - Paulo Feofiloff](https://www.ime.usp.br/~pf/algoritmos/aulas/pilha.html)

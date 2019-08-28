@@ -23,8 +23,8 @@ FXML es un lenguaje de marcado basado en XML que se utiliza para definir estruct
 #### Ejemplo:
 
 ```XML
-<HBox spacing="10" alignment="bottom_right" > // Creates an HBox Object 
-        <Button text="Sign In"/> // Nested inside the HBox is a Button object with the text 'Sign In' 
+<HBox spacing="10" alignment="bottom_right" > // Crea un objeto de HBox
+        <Button text="Sign In"/> // Anidado dentro del HBox hay un objeto Button con el texto 'Sign In'
  </HBox> 
 ```
 

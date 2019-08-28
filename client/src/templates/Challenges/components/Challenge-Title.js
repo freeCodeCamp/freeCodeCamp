@@ -25,7 +25,7 @@ function ChallengeTitle({
   if (isCompleted) {
     icon = (
       // TODO Use SVG here
-      <i className='ion-checkmark-circled text-primary' title='Completed' />
+      <i className='ion-checkmark text-primary' title='Completed' />
     );
   }
   return (

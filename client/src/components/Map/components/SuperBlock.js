@@ -8,7 +8,7 @@ import { uniq, find } from 'lodash';
 import Block from './Block';
 
 import { makeExpandedSuperBlockSelector, toggleSuperBlock } from '../redux';
-import Caret from '../../icons/Caret';
+import Caret from '../../../assets/icons/Caret';
 import { ChallengeNode } from '../../../redux/propTypes';
 
 const mapStateToProps = (state, ownProps) => {

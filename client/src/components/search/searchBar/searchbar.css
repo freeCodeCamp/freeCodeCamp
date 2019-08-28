@@ -6,7 +6,7 @@
 
 .fcc_searchBar .ais-SearchBox-input,
 .fcc_searchBar .ais-Hits {
-  background-color: #fff;
+  background-color: var(--quaternary-background);
 }
 
 .fcc_searchBar .ais-SearchBox-form {

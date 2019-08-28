@@ -7,6 +7,7 @@ import {
   openDonationModal,
   showDonationSelector,
   updateCurrentChallengeUrl,
+  donationRequested,
   updateComplete,
   updateFailed,
   userSelector
@@ -51,6 +52,7 @@ function* showDonateModalSaga() {
   let shouldShowDonate = yield select(showDonationSelector);
   if (!isDonating && shouldShowDonate) {
     yield put(openDonationModal());
+    yield put(donationRequested());
   }
 }
 

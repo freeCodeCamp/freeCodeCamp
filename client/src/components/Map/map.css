@@ -1,28 +1,29 @@
 .map-ui {
   height: 100%;
-  margin-left: 35px;
-}
-
-@media screen, (max-width: 630px) {
-  .map-ui {
-    margin: 0 auto;
-  }
 }
 
 .map-ui ul {
   list-style: none;
-  color: #006400;
+  color: var(--secondary-color);
 }
 
-.map-title {
+.map-ui > ul {
+  padding: 0;
+}
+
+button.map-title {
   display: flex;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  cursor: pointer;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: transparent;
   border: none;
-  border-bottom: 1px solid #e2e2e2;
-  background-color: transparent;
-  width: 100%;
+}
+
+button.map-title:hover {
+  color: var(--tertiary-color);
+  background-color: var(--tertiary-background);
 }
 
 .map-title > h4 {
@@ -35,10 +36,12 @@
   padding-left: 20px;
 }
 
-.map-title > svg {
+.superblock .map-title svg {
   width: 14px;
   margin-right: 5px;
   flex-shrink: 0;
+  fill: var(--color-quaternary) !important;
+  stroke: var(--color-quaternary);
 }
 
 li.open > .map-title svg:first-child {
@@ -50,12 +53,6 @@ li.open > .map-title svg:first-child {
   max-width: 28rem;
 }
 
-.night .map-challenge-title a,
-.night .map-title h4,
-.night .map-title-completed {
-  color: #67d269;
-}
-
-.map-challenge-title-completed {
-  opacity: 0.5;
+.block a {
+  text-decoration: none;
 }

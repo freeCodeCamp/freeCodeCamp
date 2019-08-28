@@ -15,7 +15,7 @@ selector {
 
 Tudo dentro dos estilos de chaves é o que for selecionado pelo [seletor](https://guide.freecodecamp.org/css/selectors) . Dentro de uma regra CSS, há um conjunto de pares de [propriedade](https://guide.freecodecamp.org/css/properties) / valor.
 
-Você pode ter diferentes seletores separados com comas:
+Você pode ter diferentes seletores separados por vírgulas:
 
 ```CSS
 selector1, 

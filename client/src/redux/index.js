@@ -28,6 +28,7 @@ export const defaultFetchState = {
 const initialState = {
   appUsername: '',
   completionCount: 0,
+  donationRequested: false,
   showCert: {},
   showCertFetchState: {
     ...defaultFetchState
@@ -48,6 +49,7 @@ export const types = createTypes(
   [
     'appMount',
     'closeDonationModal',
+    'donationRequested',
     'hardGoTo',
     'openDonationModal',
     'onlineStatusChange',
@@ -80,6 +82,7 @@ export const appMount = createAction(types.appMount);
 
 export const closeDonationModal = createAction(types.closeDonationModal);
 export const openDonationModal = createAction(types.openDonationModal);
+export const donationRequested = createAction(types.donationRequested);
 
 export const onlineStatusChange = createAction(types.onlineStatusChange);
 
@@ -129,6 +132,7 @@ export const currentChallengeIdSelector = state =>
   userSelector(state).currentChallengeId || '';
 export const currentChallengeUrlSelector = state =>
   state[ns].currentChallengeUrl || '';
+export const donationRequestedSelector = state => state[ns].donationRequested;
 
 export const isOnlineSelector = state => state[ns].isOnline;
 export const isSignedInSelector = state => !!state[ns].appUsername;
@@ -143,16 +147,17 @@ export const showDonationSelector = state => {
   const completedChallenges = completedChallengesSelector(state);
   const completionCount = completionCountSelector(state);
   const currentCompletedLength = completedChallenges.length;
+  const donationRequested = donationRequestedSelector(state);
   // the user has not completed 9 challenges in total yet
   if (currentCompletedLength < 9) {
     return false;
   }
   // this will mean we are on the 10th submission in total for the user
-  if (completedChallenges.length === 9) {
+  if (completedChallenges.length === 9 && donationRequested === false) {
     return true;
   }
   // this will mean we are on the 3rd submission for this browser session
-  if (completionCount === 2) {
+  if (completionCount === 2 && donationRequested === false) {
     return true;
   }
   return false;
@@ -268,6 +273,10 @@ export const reducer = handleActions(
     [types.openDonationModal]: state => ({
       ...state,
       showDonationModal: true
+    }),
+    [types.donationRequested]: state => ({
+      ...state,
+      donationRequested: true
     }),
     [types.resetUserData]: state => ({
       ...state,

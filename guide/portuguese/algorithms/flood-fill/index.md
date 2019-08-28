@@ -6,7 +6,7 @@ localeTitle: Algoritmo de preenchimento de inundações
 
 O preenchimento de inundação é um algoritmo usado principalmente para determinar uma área limitada conectada a um determinado nó em uma matriz multidimensional. Isto é uma grande semelhança com a ferramenta balde em programas de pintura.
 
-A implementação mais aproximada do algoritmo é uma função recursiva baseada em pilha, e é sobre isso que vamos falar Próximo.
+A implementação mais aproximada do algoritmo é uma função recursiva baseada em pilha, e é sobre isso que vamos falar a seguir.
 
 ### Como funciona?
 
@@ -33,18 +33,18 @@ int wall = -1;
  void flood_fill(int pos_x, int pos_y, int target_color, int color) 
  { 
  
-   if(a[pos_x][pos_y] == wall || a[pos_x][pos_y] == color) // if there is no wall or if i haven't been there 
-      return;                                              // already go back 
+   if(a[pos_x][pos_y] == wall || a[pos_x][pos_y] == color) // se não houver parede ou se eu não estiver lá 
+      return;                                              // já volto
  
-   if(a[pos_x][pos_y] != target_color) // if it's not color go back 
+   if(a[pos_x][pos_y] != target_color) // se não é cor, voltar
       return; 
  
-   a[pos_x][pos_y] = color; // mark the point so that I know if I passed through it. 
+   a[pos_x][pos_y] = color; // marque o ponto para que eu saiba se passei por ele.
  
-   flood_fill(pos_x + 1, pos_y, color);  // then i can either go south 
-   flood_fill(pos_x - 1, pos_y, color);  // or north 
-   flood_fill(pos_x, pos_y + 1, color);  // or east 
-   flood_fill(pos_x, pos_y - 1, color);  // or west 
+   flood_fill(pos_x + 1, pos_y, color);  // então eu posso ir para o sul
+   flood_fill(pos_x - 1, pos_y, color);  // ou norte
+   flood_fill(pos_x, pos_y + 1, color);  // ou leste
+   flood_fill(pos_x, pos_y - 1, color);  // ou oeste
  
    return; 
  
@@ -57,7 +57,7 @@ Indo para o sul, chegaremos ao ponto (5,4) e a função será executada novament
 
 ### Problema de exercício
 
-Eu sempre considerei que resolver um (ou mais) problema / s usando um novo algoritmo aprendido é a melhor maneira de entender completamente o conceito.
+Eu sempre considerei que resolver um (ou mais) problema(s) usando um novo algoritmo aprendido é a melhor maneira de entender completamente o conceito.
 
 Então aqui está um:
 
@@ -88,13 +88,13 @@ Você tem a seguinte entrada:
  2 2 2 2 
 ```
 
-Para o qual você terá ilha não. 2 como a maior ilha com a área de 5 praças.
+Para o qual você terá: ilha 2 como a maior ilha e área de 5 quadrados.
 
 ### Dicas
 
 O problema é bem fácil, mas aqui estão algumas dicas:
 ```
-1. Use the flood-fill algorithm whenever you encounter a new island. 
- 2. As opposed to the sample code, you should go through the area of the island and not on the ocean (0 tiles). 
+1. Use o algoritmo de preenchimento sempre que encontrar uma nova ilha. 
+2. Ao contrário do código de exemplo, você deve percorrer a área da ilha e não o oceano (0 peças).
 
 ```
