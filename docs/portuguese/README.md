@@ -23,10 +23,10 @@ Este diretório contém toda a documentação sobre como contribuir para o freeC
 
 ## Artigos para referência rápida
 
-1. Como trabalhar em Artigos Guia.
-2. Como trabalhar em Desafios de Código.
-3. Como configurar o freeCodeCamp localmente.
-4. Como apanhar emails enviados localmente.
+1. [Como trabalhar em Artigos Guia.](/docs/portuguese/how-to-work-on-guide-articles.md)
+2. [Como trabalhar em Desafios de Código.](/docs/portuguese/how-to-work-on-coding-challenges.md)
+3. [Como configurar o freeCodeCamp localmente.](/docs/portuguese/how-to-setup-freecodecamp-locally.md)
+4. [Como apanhar emails enviados localmente.](/docs/portuguese/how-to-catch-outgoing-emails-locally.md)
 
 ## Guias de estilo
 
