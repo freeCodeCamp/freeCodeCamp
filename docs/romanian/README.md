@@ -20,9 +20,9 @@ Salut 👋!
 
 freeCodeCamp.org este posibil datorită miilor de voluntari binevoitori ca tine . Suntem recunoscători pentru contribuțiile voastre și suntem încântați să vă întâmpinăm la bord.
 
-Aplicăm cu strictețe ["Codul nostru de conduită"](https://www.freecodecamp.org/code-of-conduct). Ia-ți un moment să il citești. Sunt doar 196 de cuvinte de citit.
+Aplicăm cu strictețe ["Codul nostru de conduită"](https://www.freecodecamp.org/code-of-conduct). Ia-ți un moment să îl citești. Sunt doar 196 de cuvinte de citit.
 
-Iți urăm contribuține plăcută 🎉!
+Iți urăm contribuție plăcută 🎉!
 
 ## Aici sunt câteva moduri plăcute în care ne poți ajuta
 
