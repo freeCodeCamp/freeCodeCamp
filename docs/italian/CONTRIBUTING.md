@@ -26,25 +26,26 @@ Ti auguriamo un felice contributo 🎉!
 
 Puoi scegliere di contribuire a qualsiasi area che ti interessa:
 
-1. [Contribuisci a questo codice open source.](#contribute-to-this-open-source-codebase). Aiuta a modificare gli [articoli guida](https://guide.freecodecamp.org/), [sfide di programmazione](https://learn.freecodecamp.org/), o correggi i bug/errori sulla piattaforma di apprendimento.
+1. [Contribuisci a questo codice open source.](#contribuisci-a-questo-codice-open-source). Aiuta a modificare gli [articoli guida](https://guide.freecodecamp.org/), [sfide di codifica](https://learn.freecodecamp.org/), o correggi i bug/errori sulla piattaforma di apprendimento.
 
-2. Aiuta i colleghi sul nostro [forum pubblico](https://www.freecodecamp.org/forum/). [Rispondi alle loro domande di programmazione](https://www.freecodecamp.org/forum/?max_posts=1) o [dai loro feedback sui loro progetti di programmazione](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Aiuta i colleghi sul nostro [forum pubblico](https://www.freecodecamp.org/forum/). [Rispondi alle loro domande di codifica](https://www.freecodecamp.org/forum/?max_posts=1) o [dai loro feedback sui loro progetti di codifica](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
 3. Aiutaci ad aggiungere i sottotitoli ai nostri [video del canale YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribuisci a questo codice open source
 
-Abbiamo un enorme numero di codice open source delle migliaia di [sfide di programmazione](https://learn.freecodecamp.org) e [articoli guida](https://guide.freecodecamp.org).
+Abbiamo un enorme numero di codice open source nelle migliaia di [sfide di codifica](https://learn.freecodecamp.org) e [articoli guida](https://guide.freecodecamp.org).
 
 Puoi aiutarci:
 
-- [📝 Ricerca, scrivi e aggiorna i nostri articoli guida](#research-write-and-update-our-guide-articles)
+- [📝 Ricerca, scrivi e aggiorna i nostri articoli guida](#ricerca-scrivi-e-aggiorna-i-nostri-articoli-guida)
 
-- [💻 Crea, aggiorna e correggi i bug/errori nelle nostre sfide di programmazione](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Traduci gli articoli guida e le sfide di programmazione](#translate-guide-articles-and-coding-challenges)
+- [💻 Crea, aggiorna e correggi i bug nelle nostre sfide di codifica](#crea-aggiorna-e-correggi-i-bug-nelle-nostre-sfide-di-codifica)
 
-- [🛠 Aiutaci a correggere i bug/errori nella piattaforma di apprendimento di freeCodeCamp.org](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+- [🌐 Traduci gli articoli guida e le sfide di codifica](#traduci-gli-articoli-guida-e-le-sfide-di-codifica)
+
+- [🛠 Aiutaci a correggere i bug nella piattaforma di apprendimento di freeCodeCamp.org](#aiutaci-a-correggere-i-bug-nella-piattaforma-di-apprendimento-di-freecodecamporg)
 
 ###  Ricerca, scrivi e aggiorna i nostri articoli guida
 
@@ -64,7 +65,7 @@ Se non riesci a trovare uno stub sull'argomento di cui vorresti scrivere, puoi a
 
 Se vuoi contribuire a migliorare gli articoli guida, ecco [come lavorare sugli articoli guida](/docs/how-to-work-on-guide-articles.md).
 
-### Crea, aggiorna e correggi i bug/errori nelle nostre sfide di programmazione
+### Crea, aggiorna e correggi i bug nelle nostre sfide di codifica
 
 Tutte le nostre sfide di programmazione sono curate dalla comunità, portando la conoscenza di esperti da volontari come te.
 
@@ -85,7 +86,7 @@ Puoi aiutarci a tradurre i nostri articoli guida e le sfide di programmazione pe
 
 Ci piacerebbe ricevere il tuo aiuto per migliorare la qualità di queste traduzioni. Milioni di persone usano la versione in lingua inglese di freeCodeCamp.org, e ci aspettiamo che altri milioni usino anche queste versioni tradotte.
 
-### Aiutaci a correggere i bug/errori nella piattaforma di apprendimento di freeCodeCamp.org
+### Aiutaci a correggere i bug nella piattaforma di apprendimento di freeCodeCamp.org
 
 La nostra piattaforma di apprendimento funziona su un moderno stack JavaScript. Dispone di vari componenti, strumenti e librerie inclusi, tra l'altro pero' senza limitarsi, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack e altri.
 
