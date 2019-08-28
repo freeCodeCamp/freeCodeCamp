@@ -41,7 +41,7 @@ const propTypes = {
     })
   ),
   fetchIdToNameMap: PropTypes.func.isRequired,
-  idToNameMap: PropTypes.objectOf(PropTypes.string),
+  idToNameMap: PropTypes.object,
   username: PropTypes.string
 };
 
@@ -126,9 +126,11 @@ class Timeline extends Component {
             </thead>
             <tbody>
               {reverse(
-                sortBy(completedMap, ['completedDate']).filter(
-                  ({ id }) => id in idToNameMap
-                )
+                sortBy(completedMap, ['completedDate']).filter(challenge => {
+                  return (
+                    challenge.challengeType !== 7 && idToNameMap[challenge.id]
+                  );
+                })
               ).map(this.renderCompletion)}
             </tbody>
           </Table>
