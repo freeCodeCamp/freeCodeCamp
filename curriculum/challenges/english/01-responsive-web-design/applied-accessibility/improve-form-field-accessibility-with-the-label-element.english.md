@@ -3,6 +3,7 @@ id: 587d778a367417b2b2512aa6
 title: Improve Form Field Accessibility with the label Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMMAN'
+forumTopicId: 301016
 ---
 
 ## Description
@@ -32,9 +33,9 @@ Camper Cat expects a lot of interest in his thoughtful blog posts and wants to i
 ```yml
 tests:
   - text: Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.
-    testString: assert($('label').attr('for'), 'Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.');
+    testString: assert($('label').attr('for'));
   - text: Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.
-    testString: assert($('label').attr('for') == 'email', 'Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.');
+    testString: assert($('label').attr('for') == 'email');
 
 ```
 
@@ -123,4 +124,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

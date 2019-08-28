@@ -6,8 +6,9 @@
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> Русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
@@ -25,7 +26,7 @@ Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp
 
 Puedes optar por contribuir a cualquier área de tu interés:
 
-1. [Contribuir a esta base de código fuente abierto.](#contribute-to-this-open-source-codebase)
+1. [Contribuir a esta base de código fuente abierto.](#contribuye-a-esta-base-de-código-abierto)
 
     Ayúdanos a crear o editar [artículos de guía](https://www.freecodecamp.org/guide), [desafíos de codificación](https://www.freecodecamp.org/learn) o a corregir errores en la plataforma de aprendizaje.
 
@@ -42,13 +43,13 @@ Tenemos una gran base de código abierto con miles de [Desafíos de Codificació
 
 Puedes ayudarnos a:
 
-- [📝 Investigar, escribir y actualizar nuestras guías.](#investiga-escribe-y-actualiza-nuestros-artículos-de-guía)
+- [📝 Investigar, escribir y actualizar nuestras guías.](#investiga-escribe-y-actualiza-nuestras-guías)
 
 - [💻 Crear, actualizar y corregir errores en nuestros desafíos de código.](#crear-actualizar-y-corregir-errores-en-nuestros-desafíos-de-codificación)
 
 - [🌐 Traducir artículos de guía y desafíos de código.](#traducir-artículos-de-guía-y-desafíos-de-codificación)
 
-- [🛠 Corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#ayúdenos-a-corregir-errores-en-la-plataforma-de-aprendizaje-de-freeCodeCamp.org)
+- [🛠 Corregir errores en la plataforma de aprendizaje de freeCodeCamp.org.](#investiga-escribe-y-actualiza-nuestras-guías)
 
 ### Investiga, escribe y actualiza nuestras guías
 

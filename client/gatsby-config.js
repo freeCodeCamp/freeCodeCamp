@@ -6,16 +6,8 @@ const {
   localeChallengesRootDir
 } = require('./utils/buildChallenges');
 
-const {
-  NODE_ENV: env,
-  LOCALE: locale = 'english',
-  API_PROXY: proxyUrl = 'http://localhost:3000'
-} = process.env;
+const { API_PROXY: proxyUrl = 'http://localhost:3000' } = process.env;
 
-const selectedGuideDir = `../${
-  env === 'production' ? 'guide' : 'mock-guide'
-}/${locale}`;
-const guideRoot = path.resolve(__dirname, selectedGuideDir);
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
 
 module.exports = {
@@ -29,6 +21,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-create-client-paths',
       options: {
@@ -48,13 +41,6 @@ module.exports = {
         source: buildChallenges,
         onSourceChange: replaceChallengeNode,
         curriculumPath: localeChallengesRootDir
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'guides',
-        path: guideRoot
       }
     },
     {
@@ -100,19 +86,6 @@ module.exports = {
     {
       resolve: 'gatsby-remark-node-identity',
       options: {
-        identity: 'guideMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && !block && !superBlock;
-        }
-      }
-    },
-    {
-      resolve: 'gatsby-remark-node-identity',
-      options: {
         identity: 'blockIntroMarkdown',
         predicate: ({ frontmatter }) => {
           if (!frontmatter) {
@@ -136,7 +109,6 @@ module.exports = {
         }
       }
     },
-    { resolve: 'fcc-create-nav-data' },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -144,19 +116,21 @@ module.exports = {
         /* eslint-disable camelcase */
         short_name: 'fCC',
         start_url: '/',
-        theme_color: '#006400',
+        theme_color: '#0a0a23',
         background_color: '#fff',
         /* eslint-enable camelcase */
         display: 'minimal-ui',
-        icon: 'src/images/square_puck.png'
+        icon: 'src/assets/images/square_puck.png'
       }
     },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Lato:400,400i,500']
+        fonts: ['Lato:300,400,400i,500,700', 'Roboto Mono:400,700']
       }
     },
-    'gatsby-plugin-sitemap'
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-remove-fingerprints',
+    'gatsby-plugin-remove-serviceworker'
   ]
 };

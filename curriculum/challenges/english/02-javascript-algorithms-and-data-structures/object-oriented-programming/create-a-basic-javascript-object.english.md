@@ -2,6 +2,7 @@
 id: 587d7dac367417b2b2512b73
 title: Create a Basic JavaScript Object
 challengeType: 1
+forumTopicId: 301317
 ---
 
 ## Description
@@ -32,11 +33,11 @@ Create a <code>dog</code> <code>object</code> with <code>name</code> and <code>n
 ```yml
 tests:
   - text: <code>dog</code> should be an <code>object</code>.
-    testString: assert(typeof(dog) === 'object', '<code>dog</code> should be an <code>object</code>.');
+    testString: assert(typeof(dog) === 'object');
   - text: <code>dog</code> should have a <code>name</code> property set to a <code>string</code>.
-    testString: assert(typeof(dog.name) === 'string', '<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.');
+    testString: assert(typeof(dog.name) === 'string');
   - text: <code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.
-    testString: assert(typeof(dog.numLegs) === 'number', '<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.');
+    testString: assert(typeof(dog.numLegs) === 'number');
 
 ```
 

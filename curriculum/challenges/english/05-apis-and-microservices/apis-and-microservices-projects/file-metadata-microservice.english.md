@@ -3,6 +3,7 @@ id: bd7158d8c443edefaeb5bd0f
 title: File Metadata Microservice
 challengeType: 4
 isRequired: true
+forumTopicId: 301506
 ---
 
 ## Description
@@ -42,4 +43,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

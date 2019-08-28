@@ -2,6 +2,7 @@
 id: 587d7b8a367417b2b2512b4d
 title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
 challengeType: 1
+forumTopicId: 301217
 ---
 
 ## Description
@@ -25,7 +26,7 @@ const profileUpdate = ({ name, age, nationality, location }) => {
 ```
 
 This removes some extra lines and makes our code look neat.
-This has the added benefit of not having to manipulate an entire object in a function; only the fields that are needed are copied inside the function.
+This has the added benefit of not having to manipulate an entire object in a function — only the fields that are needed are copied inside the function.
 </section>
 
 ## Instructions
@@ -95,4 +96,5 @@ const stats = {
 
 const half = ( {max, min} ) => (max + min) / 2.0;
 ```
+
 </section>

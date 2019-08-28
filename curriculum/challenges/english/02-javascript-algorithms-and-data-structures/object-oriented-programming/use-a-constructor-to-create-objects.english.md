@@ -2,6 +2,7 @@
 id: 587d7dad367417b2b2512b78
 title: Use a Constructor to Create Objects
 challengeType: 1
+forumTopicId: 18233
 ---
 
 ## Description
@@ -48,9 +49,9 @@ Use the <code>Dog</code> constructor from the last lesson to create a new instan
 ```yml
 tests:
   - text: <code>hound</code> should be created using the <code>Dog</code> constructor.
-    testString: assert(hound instanceof Dog, '<code>hound</code> should be created using the <code>Dog</code> constructor.');
+    testString: assert(hound instanceof Dog);
   - text: Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.
-    testString: assert(code.match(/new/g), 'Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.');
+    testString: assert(code.match(/new/g));
 
 ```
 

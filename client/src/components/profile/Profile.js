@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Alert, Button, Grid, Row, Col } from '@freecodecamp/react-bootstrap';
+import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 
@@ -25,18 +25,33 @@ const propTypes = {
       showPortfolio: PropTypes.bool,
       showTimeLine: PropTypes.bool
     }),
-    username: PropTypes.string
+    calendar: PropTypes.object,
+    streak: PropTypes.shape({
+      current: PropTypes.number,
+      longest: PropTypes.number
+    }),
+    completedChallenges: PropTypes.array,
+    portfolio: PropTypes.array,
+    about: PropTypes.string,
+    githubProfile: PropTypes.string,
+    isGithub: PropTypes.bool,
+    isLinkedIn: PropTypes.bool,
+    isTwitter: PropTypes.bool,
+    isWebsite: PropTypes.bool,
+    linkedin: PropTypes.string,
+    location: PropTypes.string,
+    name: PropTypes.string,
+    picture: PropTypes.string,
+    points: PropTypes.number,
+    twitter: PropTypes.string,
+    username: PropTypes.string,
+    website: PropTypes.string,
+    yearsTopContributor: PropTypes.array
   })
 };
 
 function TakeMeToTheChallenges() {
-  return (
-    <CurrentChallengeLink>
-      <Button block={true} bsSize='lg' bsStyle='primary' className='btn-invert'>
-        Take me to the Challenges
-      </Button>
-    </CurrentChallengeLink>
-  );
+  return <CurrentChallengeLink>Take me to the Challenges</CurrentChallengeLink>;
 }
 
 function renderIsLocked(username) {
@@ -53,12 +68,10 @@ function renderIsLocked(username) {
           </h2>
         </FullWidthRow>
         <FullWidthRow>
-          <Alert bsStyle='info'>
-            <p>
-              {username} needs to change their privacy setting in order for you
-              to view their profile
-            </p>
-          </Alert>
+          <p className='alert alert-info'>
+            {username} needs to change their privacy setting in order for you to
+            view their profile
+          </p>
         </FullWidthRow>
         <FullWidthRow>
           <TakeMeToTheChallenges />
@@ -74,15 +87,8 @@ function renderSettingsButton() {
     <Fragment>
       <Row>
         <Col sm={4} smOffset={4}>
-          <Link to='/settings'>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              className='btn-invert'
-            >
-              Update my settings
-            </Button>
+          <Link className='btn btn-lg btn-primary btn-block' to='/settings'>
+            Update my settings
           </Link>
         </Col>
       </Row>

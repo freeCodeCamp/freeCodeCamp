@@ -3,6 +3,7 @@ id: bd7123c9c441eddfaeb5bdef
 title: Understanding Boolean Values
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9Me8t4'
+forumTopicId: 301176
 ---
 
 ## Description
@@ -22,9 +23,9 @@ Modify the <code>welcomeToBooleans</code> function so that it returns <code>true
 ```yml
 tests:
   - text: The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.
-    testString: assert(typeof welcomeToBooleans() === 'boolean', 'The <code>welcomeToBooleans()</code> function should return a boolean &#40;true/false&#41; value.');
+    testString: assert(typeof welcomeToBooleans() === 'boolean');
   - text: <code>welcomeToBooleans()</code> should return true.
-    testString: assert(welcomeToBooleans() === true, '<code>welcomeToBooleans()</code> should return true.');
+    testString: assert(welcomeToBooleans() === true);
 
 ```
 

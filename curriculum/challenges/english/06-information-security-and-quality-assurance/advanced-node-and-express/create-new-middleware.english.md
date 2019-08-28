@@ -2,6 +2,7 @@
 id: 5895f70df9fc0f352b528e6a
 title: Create New Middleware
 challengeType: 2
+forumTopicId: 301551
 ---
 
 ## Description
@@ -62,4 +63,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 587d7b8c367417b2b2512b54
 title: Use getters and setters to Control Access to an Object
 challengeType: 1
+forumTopicId: 301220
 ---
 
 ## Description
@@ -108,4 +109,5 @@ let temp = thermos.temperature; // 24.44 in C
 thermos.temperature = 26;
 temp = thermos.temperature; // 26 in C
 ```
+
 </section>

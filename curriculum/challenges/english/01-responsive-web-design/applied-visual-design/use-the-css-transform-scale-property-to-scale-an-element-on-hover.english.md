@@ -3,6 +3,7 @@ id: 587d78a5367417b2b2512ada
 title: Use the CSS Transform scale Property to Scale an Element on Hover
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cyLPJuM'
+forumTopicId: 301077
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use 
 ```yml
 tests:
   - text: The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.
-    testString: assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi), 'The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.');
+    testString: assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi));
 
 ```
 

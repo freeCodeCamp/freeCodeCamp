@@ -2,6 +2,7 @@
 id: 587d7fae367417b2b2512be3
 title: Get JSON with the JavaScript XMLHttpRequest Method
 challengeType: 6
+forumTopicId: 301502
 ---
 
 ## Description
@@ -40,17 +41,17 @@ Update the code to create and send a "GET" request to the freeCodeCamp Cat Photo
 ```yml
 tests:
   - text: Your code should create a new <code>XMLHttpRequest</code>.
-    testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g), 'Your code should create a new <code>XMLHttpRequest</code>.');
+    testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
   - text: Your code should use the <code>open</code> method to initialize a "GET" request to the freeCodeCamp Cat Photo API.
-    testString: assert(code.match(/\.open\(\s*?('|")GET\1\s*?,\s*?('|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g), 'Your code should use the <code>open</code> method to initialize a "GET" request to the freeCodeCamp Cat Photo API.');
+    testString: assert(code.match(/\.open\(\s*?('|")GET\1\s*?,\s*?('|")\/json\/cats\.json\2\s*?,\s*?true\s*?\)/g));
   - text: Your code should use the <code>send</code> method to send the request.
-    testString: assert(code.match(/\.send\(\s*\)/g), 'Your code should use the <code>send</code> method to send the request.');
+    testString: assert(code.match(/\.send\(\s*\)/g));
   - text: Your code should have an <code>onload</code> event handler set to a function.
-    testString: assert(code.match(/\.onload\s*=\s*(function|\(\s*?\))\s*?(\(\s*?\)|\=\>)\s*?{/g), 'Your code should have an <code>onload</code> event handler set to a function.');
+    testString: assert(code.match(/\.onload\s*=\s*(function|\(\s*?\))\s*?(\(\s*?\)|\=\>)\s*?{/g));
   - text: Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.
-    testString: assert(code.match(/JSON\s*\.parse\(.*\.responseText\)/g), 'Your code should use the <code>JSON.parse</code> method to parse the <code>responseText</code>.');
+    testString: assert(code.match(/JSON\s*\.parse\(\s*.*\.responseText\s*\)/g));
   - text: Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.
-    testString: assert(code.match(/document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g), 'Your code should get the element with class <code>message</code> and change its inner HTML to the string of JSON data.');
+    testString: assert(code.match(/document\s*\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\s*\.innerHTML\s*?=\s*?JSON\.stringify\(.+?\)/g));
 
 ```
 
@@ -169,4 +170,5 @@ tests:
   </button>
 </p>
 ```
+
 </section>

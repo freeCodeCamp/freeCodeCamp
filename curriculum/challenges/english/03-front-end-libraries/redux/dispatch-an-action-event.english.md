@@ -3,6 +3,7 @@ id: 5a24c314108439a4d403614f
 title: Dispatch an Action Event
 challengeType: 6
 isRequired: false
+forumTopicId: 301442
 ---
 
 ## Description
@@ -28,11 +29,11 @@ The Redux store in the code editor has an initialized state that's an object con
 ```yml
 tests:
   - text: Calling the function <code>loginAction</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.
-    testString: assert(loginAction().type === 'LOGIN', 'Calling the function <code>loginAction</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.');
+    testString: assert(loginAction().type === 'LOGIN');
   - text: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.
-    testString: assert(store.getState().login === false, 'The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');
+    testString: assert(store.getState().login === false);
   - text: The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.
-    testString: "getUserInput => assert((function() {  let noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })(), 'The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.');"
+    testString: "getUserInput => assert((function() {  let noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })());"
 
 ```
 

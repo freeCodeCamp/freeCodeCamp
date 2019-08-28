@@ -18,13 +18,13 @@
 
 Salut 👋!
 
-freeCodeCamp.org este posibil datorită miilor de voluntari și tine . Suntem recunoscători pentru contribuțiile voastre și suntem încântați să vă întâmpinăm la bord.
+freeCodeCamp.org este posibil datorită miilor de voluntari binevoitori ca tine . Suntem recunoscători pentru contribuțiile voastre și suntem încântați să vă întâmpinăm la bord.
 
-Aplicăm cu strictețe ["Codul nostru de conduită"](https://www.freecodecamp.org/code-of-conduct). Ia-ți un moment să il citești. Sunt doar 196 de cuvinte de citit.
+Aplicăm cu strictețe ["Codul nostru de conduită"](https://www.freecodecamp.org/code-of-conduct). Ia-ți un moment să îl citești. Sunt doar 196 de cuvinte de citit.
 
-Iți urăm contribuține plăcută 🎉!
+Iți urăm contribuție plăcută 🎉!
 
-## Aici sunt câteva moduri plăcute în ne poți ajuta
+## Aici sunt câteva moduri plăcute în care ne poți ajuta
 
 Poți alege să contribuiești în orice arie/domeniu care te interesează:
 
@@ -64,7 +64,7 @@ Pentru a-ți fi de ajutor, găsește un "articol stub/trunchi" pe site-ul [Ghidu
 
 Dacă nu poți găsi un articol stub/trunchi despre subiectul despee care dorești să scrii, poți deschide un PR care creează un stub și include schița articolul tău.
 
-Dacă dorești să contribuiești la îmbunătățirea articolelor de orientare, iată [cum să lucrezi cu articole de ghid](/docs/how-to-work-on-guide-articles.md).
+Dacă dorești să contribui la îmbunătățirea articolelor de orientare, iată [cum să lucrezi cu articole de ghid](/docs/how-to-work-on-guide-articles.md).
 
 ### Crează, Actualizează și Corectează erorile în provocările noastre de codare
 
@@ -131,13 +131,13 @@ Suntem bucuroși să te ajutăm să contribuiești la oricare dintre subiectele 
 
 **Sunt nou în GitHub și în Open Source în general:**
 
-Citește [Cum să contribuești la Ghidul Open Source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Citește [Cum să contribui la Ghidul Open Source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
 **Ce înseamnă aceste etichete diferite, care sunt atașate/anexate pe probleme?**
 
 Moderatorii noștri din comunitate [triază](https://en.wikipedia.org/wiki/Software_bug#Bug_management) problemele si solicitarile de integrare a modificărilor pe baza priorității lor, gravității lor și a altor factori. Poți găsi [un glosar complet al semnificațiilor lor aici](https://github.com/freecodecamp/freecodecamp/labels).
 
-Ar trebui să treci prin intermediul paginilor cu probleme **`Help Wanted/Am nevoie de ajutor`**  sau **`first timers welcome/pagina incepatorilor`** pentru a căuta rapid ceea ce este disponibil pentru tine de a lucra. Acestea sunt susținute pentru a fi luate și nu trebuie să lucrați în altceva înainte de a lucra la acestea.
+Ar trebui să treci prin intermediul paginilor cu probleme **`Help Wanted/Am nevoie de ajutor`**  sau **`first timers welcome/pagina incepatorilor`** pentru a căuta rapid ceea ce este disponibil pentru tine pentru a lucra. Acestea sunt susținute pentru a fi luate și nu trebuie să lucrați în altceva înainte de a lucra la acestea.
 
 Dacă aceste aspecte nu prezintă clarificări cu privire la ceea ce trebuie făcut, nu ezita să pui întrebări în comentarii.
 

@@ -3,6 +3,7 @@ id: 587d78a3367417b2b2512ad1
 title: Learn about Complementary Colors
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/c2MD3Tr'
+forumTopicId: 301056
 ---
 
 ## Description
@@ -27,9 +28,9 @@ Change the <code>background-color</code> property of the <code>blue</code> and <
 ```yml
 tests:
   - text: The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.
-    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');
+    testString: assert($('.blue').css('background-color') == 'rgb(0, 0, 255)');
   - text: The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.
-    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.');
+    testString: assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)');
 
 ```
 
@@ -90,4 +91,5 @@ tests:
 <div class="blue"></div>
 <div class="yellow"></div>
 ```
+
 </section>

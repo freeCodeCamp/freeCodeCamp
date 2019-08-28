@@ -1,11 +1,14 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
-import { Index, PoweredBy } from 'react-instantsearch-dom';
+import { Index } from 'react-instantsearch-dom';
 import { Grid, Row, Col } from '@freecodecamp/react-bootstrap';
 
 import { updateSearchQuery } from '../components/search/redux';
 import SearchPageHits from '../components/search/searchPage/SearchPageHits';
+
+import './search.css';
 
 const propTypes = { updateSearchQuery: PropTypes.func.isRequired };
 
@@ -18,16 +21,14 @@ class SearchPage extends Component {
   render() {
     return (
       <Fragment>
-        <Index indexName='challenges' />
-        <Index indexName='guides' />
-        <Index indexName='youtube' />
+        <Helmet title='Search | freeCodeCamp.org' />
+        <Index indexName='news' />
         <Grid>
           <Row>
             <Col xs={12}>
               <main>
                 <SearchPageHits />
               </main>
-              <PoweredBy />
             </Col>
           </Row>
         </Grid>

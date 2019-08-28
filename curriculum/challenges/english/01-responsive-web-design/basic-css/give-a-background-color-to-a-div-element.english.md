@@ -3,6 +3,7 @@ id: bad87fed1348bd9aede07836
 title: Give a Background Color to a div Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cdRKMCk'
+forumTopicId: 18190
 ---
 
 ## Description
@@ -29,11 +30,11 @@ Create a class called <code>silver-background</code> with the <code>background-c
 ```yml
 tests:
   - text: Give your <code>div</code> element the class <code>silver-background</code>.
-    testString: assert($("div").hasClass("silver-background"), 'Give your <code>div</code> element the class <code>silver-background</code>.');
+    testString: assert($("div").hasClass("silver-background"));
   - text: Your <code>div</code> element should have a silver background.
-    testString: assert($("div").css("background-color") === "rgb(192, 192, 192)", 'Your <code>div</code> element should have a silver background.');
+    testString: assert($("div").css("background-color") === "rgb(192, 192, 192)");
   - text: Define a class named <code>silver-background</code> within the <code>style</code> element and assign the value of <code>silver</code> to the <code>background-color</code> property.
-    testString: assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/), "Define a class named <code>silver-background</code> within the <code>style</code> element and assign the value of <code>silver</code> to the <code>background-color</code> property.");
+    testString: assert(code.match(/\.silver-background\s*{\s*background-color:\s*silver;\s*}/));
 
 ```
 
@@ -178,4 +179,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

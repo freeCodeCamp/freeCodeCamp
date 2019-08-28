@@ -3,6 +3,7 @@ id: 587d7788367417b2b2512aa3
 title: Make Screen Reader Navigation Easier with the footer Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/crVrDh8'
+forumTopicId: 301022
 ---
 
 ## Description
@@ -21,11 +22,11 @@ Camper Cat's training page is making good progress. Change the <code>div</code> 
 ```yml
 tests:
   - text: Your code should have one <code>footer</code> tag.
-    testString: assert($('footer').length == 1, 'Your code should have one <code>footer</code> tag.');
+    testString: assert($('footer').length == 1);
   - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
+    testString: assert($('div').length == 0);
   - text: Your code should have an opening and closing <code>footer</code> tag.
-    testString: assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g), 'Your code should have an opening and closing <code>footer</code> tag.');
+    testString: assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g));
 
 ```
 
@@ -118,4 +119,5 @@ tests:
 
 </body>
 ```
+
 </section>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const base = '/internal';
+axios.defaults.withCredentials = true;
 
 function get(path) {
   return axios.get(`${base}${path}`);
@@ -45,6 +46,9 @@ export function getArticleById(shortId) {
 }
 
 /** POST **/
+export function putUpdateLegacyCert(body) {
+  return post('/update-my-projects', body);
+}
 
 export function postReportUser(body) {
   return post('/user/report-user', body);

@@ -1,5 +1,5 @@
 ![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
-[![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
+
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Open Source Helpers](https://www.codetriage.com/freecodecamp/freecodecamp/badges/users.svg)](https://www.codetriage.com/freecodecamp/freecodecamp)
@@ -123,7 +123,7 @@ Our community also has:
 - A [podcast](https://podcast.freecodecamp.org/) with technology insights and inspiring stories from developers.
 - [Local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
-- Medium's [largest technical publication](https://medium.freecodecamp.org)
+- A [Developer News](https://www.freecodecamp.org/news) publication, a free, open source, no-ads place to cross-post your blog articles.
 - A [Facebook group](https://www.facebook.com/groups/freeCodeCampEarth/permalink/428140994253892/) with over 100,000 members worldwide
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
@@ -138,7 +138,11 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### Contributing
 
-#### [Please follow these steps to contribute.](CONTRIBUTING.md)
+> ### [Please follow these steps to contribute.](CONTRIBUTING.md)
+
+### Platform, Build and Deployment Status
+
+The build and deployment status for the code is available in [our DevOps Guide](/docs/devops.md). The general platform status for all our applications is available at [`status.freecodecamp.org`](https://status.freecodecamp.org)
 
 ### License
 

@@ -3,6 +3,7 @@ id: cf1111c1c11feddfaeb5bdef
 title: Iterate with JavaScript For Loops
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/c9yNVCe'
+forumTopicId: 18219
 ---
 
 ## Description
@@ -37,9 +38,9 @@ Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>my
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: assert(code.match(/for\s*\(/g).length > 1, 'You should be using a <code>for</code> loop for this.');
+    testString: assert(code.match(/for\s*\(/g).length > 1);
   - text: <code>myArray</code> should equal <code>[1,2,3,4,5]</code>.
-    testString: assert.deepEqual(myArray, [1,2,3,4,5], '<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');
+    testString: assert.deepEqual(myArray, [1,2,3,4,5]);
 
 ```
 

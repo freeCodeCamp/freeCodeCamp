@@ -2,6 +2,7 @@
 id: 587d7b8e367417b2b2512b5d
 title: Understand the Hazards of Using Imperative Code
 challengeType: 1
+forumTopicId: 301241
 ---
 
 ## Description
@@ -136,4 +137,5 @@ var finalTabs = socialWindow
                     .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
                     .join(workWindow.tabClose(1).tabOpen());
 ```
+
 </section>

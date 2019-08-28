@@ -3,6 +3,7 @@ id: 587d78a8367417b2b2512ae5
 title: Animate Elements at Variable Rates
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cZ89WA4'
+forumTopicId: 301040
 ---
 
 ## Description
@@ -22,7 +23,7 @@ Alter the animation rate for the element with the class name of <code>star-1</co
 ```yml
 tests:
   - text: The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.
-    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g), 'The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.');
+    testString: assert(code.match(/twinkle-1\s*?{\s*?50%/g));
 
 ```
 

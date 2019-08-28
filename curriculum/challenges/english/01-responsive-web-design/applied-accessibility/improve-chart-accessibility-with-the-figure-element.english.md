@@ -3,6 +3,7 @@ id: 587d778a367417b2b2512aa5
 title: Improve Chart Accessibility with the figure Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cGJMqtE'
+forumTopicId: 301015
 ---
 
 ## Description
@@ -34,17 +35,17 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 ```yml
 tests:
   - text: Your code should have one <code>figure</code> tag.
-    testString: assert($('figure').length == 1, 'Your code should have one <code>figure</code> tag.');
+    testString: assert($('figure').length == 1);
   - text: Your code should have one <code>figcaption</code> tag.
-    testString: assert($('figcaption').length == 1, 'Your code should have one <code>figcaption</code> tag.');
+    testString: assert($('figcaption').length == 1);
   - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
+    testString: assert($('div').length == 0);
   - text: Your code should not have any <code>p</code> tags.
-    testString: assert($('p').length == 0, 'Your code should not have any <code>p</code> tags.');
+    testString: assert($('p').length == 0);
   - text: The <code>figcaption</code> should be a child of the <code>figure</code> tag.
-    testString: assert($('figure').children('figcaption').length == 1, 'The <code>figcaption</code> should be a child of the <code>figure</code> tag.');
+    testString: assert($('figure').children('figcaption').length == 1);
   - text: Make sure your <code>figure</code> element has a closing tag.
-    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length, 'Make sure your <code>figure</code> element has a closing tag.');
+    testString: assert(code.match(/<\/figure>/g) && code.match(/<\/figure>/g).length === code.match(/<figure>/g).length);
 
 ```
 
@@ -151,4 +152,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

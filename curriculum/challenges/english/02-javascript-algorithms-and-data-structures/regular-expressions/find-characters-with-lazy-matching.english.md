@@ -2,6 +2,7 @@
 id: 587d7db6367417b2b2512b9b
 title: Find Characters with Lazy Matching
 challengeType: 1
+forumTopicId: 301341
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;<
 ```yml
 tests:
   - text: The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it
-    testString: assert(result[0] == '<h1>', 'The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it');
+    testString: assert(result[0] == '<h1>');
 
 ```
 
@@ -55,4 +56,5 @@ let text = "<h1>Winter is coming</h1>";
 let myRegex = /<.*?>/; // Change this line
 let result = text.match(myRegex);
 ```
+
 </section>

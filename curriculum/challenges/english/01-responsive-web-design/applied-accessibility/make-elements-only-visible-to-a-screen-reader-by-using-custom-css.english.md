@@ -3,6 +3,7 @@ id: 587d778d367417b2b2512aaa
 title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cJ8QGkhJ'
+forumTopicId: 301020
 ---
 
 ## Description
@@ -40,13 +41,13 @@ Camper Cat created a really cool stacked bar chart for his training page, and pu
 ```yml
 tests:
   - text: Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.
-    testString: assert($('.sr-only').css('position') == 'absolute', 'Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.');
+    testString: assert($('.sr-only').css('position') == 'absolute');
   - text: Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.
-    testString: assert($('.sr-only').css('left') == '-10000px', 'Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.');
+    testString: assert($('.sr-only').css('left') == '-10000px');
   - text: Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.
-    testString: assert(code.match(/width:\s*?1px/gi), 'Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.');
+    testString: assert(code.match(/width:\s*?1px/gi));
   - text: Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.
-    testString: assert(code.match(/height:\s*?1px/gi), 'Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.');
+    testString: assert(code.match(/height:\s*?1px/gi));
 
 ```
 
@@ -239,4 +240,5 @@ tests:
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
 ```
+
 </section>

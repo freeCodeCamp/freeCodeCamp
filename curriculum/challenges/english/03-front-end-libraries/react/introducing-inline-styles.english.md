@@ -3,6 +3,7 @@ id: 5a24c314108439a4d4036181
 title: Introducing Inline Styles
 challengeType: 6
 isRequired: false
+forumTopicId: 301395
 ---
 
 ## Description
@@ -28,11 +29,11 @@ Note that you can optionally set the font size to be a number, omitting the unit
 ```yml
 tests:
   - text: The component should render a <code>div</code> element.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })(), 'The component should render a <code>div</code> element.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().type() === 'div'; })());
   - text: The <code>div</code> element should have a color of <code>red</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })(), 'The <code>div</code> element should have a color of <code>red</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return mockedComponent.children().props().style.color === 'red'; })());
   - text: The <code>div</code> element should have a font size of <code>72px</code>.
-    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })(), 'The <code>div</code> element should have a font size of <code>72px</code>.');
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Colorful)); return (mockedComponent.children().props().style.fontSize === 72 || mockedComponent.children().props().style.fontSize === '72' || mockedComponent.children().props().style.fontSize === '72px'); })());
 
 ```
 

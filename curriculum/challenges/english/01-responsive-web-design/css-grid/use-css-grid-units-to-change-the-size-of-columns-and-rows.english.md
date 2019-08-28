@@ -3,6 +3,7 @@ id: 5a9036ee38fddaf9a66b5d34
 title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
 videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
+forumTopicId: 301134
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
 ```yml
 tests:
   - text: '<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi));'
 
 ```
 

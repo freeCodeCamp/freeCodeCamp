@@ -3,6 +3,7 @@ id: 587d78a8367417b2b2512ae3
 title: Animate Elements Continually Using an Infinite Animation Count
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cVJDVfq'
+forumTopicId: 301041
 ---
 
 ## Description
@@ -23,7 +24,7 @@ To keep the ball bouncing on the right on a continuous loop, change the <code>an
 ```yml
 tests:
   - text: The <code>animation-iteration-count</code> property should have a value of infinite.
-    testString: assert($('#ball').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property should have a value of infinite.');
+    testString: assert($('#ball').css('animation-iteration-count') == 'infinite');
 
 ```
 
@@ -113,4 +114,5 @@ tests:
 </style>
 <div id="ball"></div>
 ```
+
 </section>

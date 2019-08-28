@@ -3,6 +3,7 @@ id: bad87fee1348bd9aedf08824
 title: Add Different Padding to Each Side of an Element
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cB7mwUw'
+forumTopicId: 16634
 ---
 
 ## Description
@@ -22,13 +23,13 @@ Give the blue box a <code>padding</code> of <code>40px</code> on its top and lef
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-top") === "40px", 'Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.');
+    testString: assert($(".blue-box").css("padding-top") === "40px");
   - text: Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-right") === "20px", 'Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');
+    testString: assert($(".blue-box").css("padding-right") === "20px");
   - text: Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-bottom") === "20px", 'Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');
+    testString: assert($(".blue-box").css("padding-bottom") === "20px");
   - text: Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.
-    testString: assert($(".blue-box").css("padding-left") === "40px", 'Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');
+    testString: assert($(".blue-box").css("padding-left") === "40px");
 
 ```
 
@@ -133,4 +134,5 @@ tests:
   <h5 class="box blue-box">padding</h5>
 </div>
 ```
+
 </section>

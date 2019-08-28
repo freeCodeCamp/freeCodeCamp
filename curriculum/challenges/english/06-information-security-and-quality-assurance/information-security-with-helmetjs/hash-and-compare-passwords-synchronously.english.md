@@ -2,6 +2,7 @@
 id: 58a25bcff9fc0f352b528e7e
 title: Hash and Compare Passwords Synchronously
 challengeType: 2
+forumTopicId: 301579
 ---
 
 ## Description
@@ -52,4 +53,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

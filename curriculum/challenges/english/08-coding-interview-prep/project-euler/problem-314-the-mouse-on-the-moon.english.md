@@ -2,6 +2,7 @@
 id: 5900f4a71000cf542c50ffb9
 challengeType: 5
 title: 'Problem 314: The Mouse on the Moon'
+forumTopicId: 301970
 ---
 
 ## Description
@@ -37,7 +38,7 @@ Give your answer rounded to 8 places behind the decimal point in the form abc.de
 ```yml
 tests:
   - text: <code>euler314()</code> should return 132.52756426.
-    testString: assert.strictEqual(euler314(), 132.52756426, '<code>euler314()</code> should return 132.52756426.');
+    testString: assert.strictEqual(euler314(), 132.52756426);
 
 ```
 
@@ -69,4 +70,5 @@ euler314();
 ```js
 // solution required
 ```
+
 </section>

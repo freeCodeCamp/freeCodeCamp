@@ -2,6 +2,7 @@
 id: 587d7db5367417b2b2512b95
 title: Match Single Character with Multiple Possibilities
 challengeType: 1
+forumTopicId: 301357
 ---
 
 ## Description
@@ -36,15 +37,15 @@ Use a character class with vowels (<code>a</code>, <code>e</code>, <code>i</code
 ```yml
 tests:
   - text: You should find all 25 vowels.
-    testString: assert(result.length == 25, 'You should find all 25 vowels.');
+    testString: assert(result.length == 25);
   - text: Your regex <code>vowelRegex</code> should use a character class.
-    testString: assert(/\[.*\]/.test(vowelRegex.source), 'Your regex <code>vowelRegex</code> should use a character class.');
+    testString: assert(/\[.*\]/.test(vowelRegex.source));
   - text: Your regex <code>vowelRegex</code> should use the global flag.
-    testString: assert(vowelRegex.flags.match(/g/).length == 1, 'Your regex <code>vowelRegex</code> should use the global flag.');
+    testString: assert(vowelRegex.flags.match(/g/).length == 1);
   - text: Your regex <code>vowelRegex</code> should use the case insensitive flag.
-    testString: assert(vowelRegex.flags.match(/i/).length == 1, 'Your regex <code>vowelRegex</code> should use the case insensitive flag.');
+    testString: assert(vowelRegex.flags.match(/i/).length == 1);
   - text: Your regex should not match any consonants.
-    testString: assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()), 'Your regex should not match any consonants.');
+    testString: assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()));
 
 ```
 
@@ -75,4 +76,5 @@ let quoteSample = "Beware of bugs in the above code; I have only proved it corre
 let vowelRegex = /[aeiou]/gi; // Change this line
 let result = quoteSample.match(vowelRegex); // Change this line
 ```
+
 </section>

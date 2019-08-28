@@ -6,8 +6,9 @@
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> Русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/greek/CONTRIBUTING.md"> Ελληνικά </a></td>
     </tr>
 </table>
 
@@ -27,7 +28,7 @@ Você pode escolher contribuir para uma área do seu interesse:
 
 1. [Contribua para essa base de códigos abertos.](#contribua-para-essa-base-de-códigos-abertos)
 
-    Nos ajude criando e editando [Artigos de guias](https://www.freecodecamp.org/guide), [desafios de código](https://www.freecodecamp.org/learn) e corrigindo bugs na plataforma de aprendizado.
+    Nos ajude criando e editando [Artigos de guias](https://guide.freecodecamp.org), [desafios de código](https://www.freecodecamp.org/learn) e corrigindo bugs na plataforma de aprendizado.
 
 2. Ajude campistas em nosso [fórum público](https://www.freecodecamp.org/forum/).
 
@@ -57,7 +58,7 @@ Você pode nos ajudar:
 
 Artigos de guia ajudam você a ter um rápido entendimento sobre um conceito tecnológico. Eles são explicações em Português, curtas e diretas, que você pode ler antes de partir para recursos mais aprofundados.
 
-Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](./client/src/pages/html/elements/index.md).
+Você pode encontrar um [artigo de exemplo sobre elementos HTML aqui](../../guide/portuguese/html/elements/index.md).
 
 **Sobre o que eu posso escrever um artigo?**
 
@@ -84,11 +85,11 @@ Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Po
 
 Você pode nos ajudar a traduzir nossos Artigos de guia e Desafios de código para uma língua que você fala. Atualmente, nós temos versões traduzidas em:
 
-- Chinês (中文)
-- Russo (русский)
-- Árabe (عربي)
-- Espanhol (Español)
-- Português (Português)
+- [Arabic (عربي)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/arabic)
+- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/chinese)
+- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/portuguese)
+- [Russian (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/russian)
+- [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/guide/spanish)
 
 A maioria dessas versões são traduções de máquina. Nós vamos amar sua ajuda em melhorar a qualidade dessas traduções.
 

@@ -3,6 +3,7 @@ id: 587d78a7367417b2b2512adf
 title: Learn How the CSS @keyframes and animation Properties Work
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/cakprhv'
+forumTopicId: 301059
 ---
 
 ## Description
@@ -42,17 +43,17 @@ Create an animation for the element with the id <code>rect</code>, by setting th
 ```yml
 tests:
   - text: The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.
-    testString: assert($('#rect').css('animation-name') == 'rainbow', 'The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.');
+    testString: assert($('#rect').css('animation-name') == 'rainbow');
   - text: The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.
-    testString: assert($('#rect').css('animation-duration') == '4s', 'The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.');
+    testString: assert($('#rect').css('animation-duration') == '4s');
   - text: The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.
-    testString: assert(code.match(/@keyframes\s+?rainbow\s*?{/g), 'The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.');
+    testString: assert(code.match(/@keyframes\s+?rainbow\s*?{/g));
   - text: The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.
-    testString: assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.');
+    testString: assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?}/gi));
   - text: The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.
-    testString: assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.');
+    testString: assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?}/gi));
   - text: The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.
-    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.');
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?}/gi));
 
 ```
 
@@ -123,4 +124,5 @@ tests:
 </style>
 <div id="rect"></div>
 ```
+
 </section>

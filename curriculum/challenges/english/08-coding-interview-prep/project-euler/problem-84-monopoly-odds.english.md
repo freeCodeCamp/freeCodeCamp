@@ -2,6 +2,7 @@
 id: 5900f3c11000cf542c50fed3
 challengeType: 5
 title: 'Problem 84: Monopoly odds'
+forumTopicId: 302198
 ---
 
 ## Description
@@ -94,7 +95,7 @@ If, instead of using two 6-sided dice, two 4-sided dice are used, find the six-d
 ```yml
 tests:
   - text: <code>euler84()</code> should return 101524.
-    testString: assert.strictEqual(euler84(), 101524, '<code>euler84()</code> should return 101524.');
+    testString: assert.strictEqual(euler84(), 101524);
 
 ```
 
@@ -126,4 +127,5 @@ euler84();
 ```js
 // solution required
 ```
+
 </section>

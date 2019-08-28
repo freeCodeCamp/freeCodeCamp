@@ -3,6 +3,7 @@ id: 56533eb9ac21ba0edf2244bd
 title: Passing Values to Functions with Arguments
 challengeType: 1
 videoUrl: 'https://scrimba.com/c/cy8rahW'
+forumTopicId: 18254
 ---
 
 ## Description
@@ -32,13 +33,13 @@ We have passed two arguments, <code>"Hello"</code> and <code>"World"</code>. Ins
 ```yml
 tests:
   - text: <code>functionWithArgs</code> should be a function
-    testString: assert(typeof functionWithArgs === 'function', '<code>functionWithArgs</code> should be a function');
+    testString: assert(typeof functionWithArgs === 'function');
   - text: <code>functionWithArgs(1,2)</code> should output <code>3</code>
-    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3, '<code>functionWithArgs(1,2)</code> should output <code>3</code>');
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3);
   - text: <code>functionWithArgs(7,9)</code> should output <code>16</code>
-    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16, '<code>functionWithArgs(7,9)</code> should output <code>16</code>');
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16);
   - text: Call <code>functionWithArgs</code> with two numbers after you define it.
-    testString: assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*;/m.test(code), 'Call <code>functionWithArgs</code> with two numbers after you define it.');
+    testString: assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*/m.test(code));
 
 ```
 

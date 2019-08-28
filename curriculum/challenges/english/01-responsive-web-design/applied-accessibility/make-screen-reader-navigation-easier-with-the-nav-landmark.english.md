@@ -3,6 +3,7 @@ id: 587d7788367417b2b2512aa2
 title: Make Screen Reader Navigation Easier with the nav Landmark
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/czVwWSv'
+forumTopicId: 301024
 ---
 
 ## Description
@@ -22,13 +23,13 @@ Camper Cat included navigation links at the top of his training page, but wrappe
 ```yml
 tests:
   - text: Your code should have one <code>nav</code> tag.
-    testString: assert($('nav').length == 1, 'Your code should have one <code>nav</code> tag.');
+    testString: assert($('nav').length == 1);
   - text: Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.
-    testString: assert($('nav').children('ul').length == 1, 'Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.');
+    testString: assert($('nav').children('ul').length == 1);
   - text: Your code should not have any <code>div</code> tags.
-    testString: assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');
+    testString: assert($('div').length == 0);
   - text: Make sure your <code>nav</code> element has a closing tag.
-    testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length, 'Make sure your <code>nav</code> element has a closing tag.');
+    testString: assert(code.match(/<\/nav>/g) && code.match(/<\/nav>/g).length === code.match(/<nav>/g).length);
 
 ```
 
@@ -115,4 +116,5 @@ tests:
   </main>
 </body>
 ```
+
 </section>

@@ -2,6 +2,7 @@
 id: 5900f52a1000cf542c51003c
 challengeType: 5
 title: 'Problem 445: Retractions A'
+forumTopicId: 302117
 ---
 
 ## Description
@@ -31,7 +32,7 @@ Give your answer modulo 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler445()</code> should return 659104042.
-    testString: assert.strictEqual(euler445(), 659104042, '<code>euler445()</code> should return 659104042.');
+    testString: assert.strictEqual(euler445(), 659104042);
 
 ```
 
@@ -63,4 +64,5 @@ euler445();
 ```js
 // solution required
 ```
+
 </section>

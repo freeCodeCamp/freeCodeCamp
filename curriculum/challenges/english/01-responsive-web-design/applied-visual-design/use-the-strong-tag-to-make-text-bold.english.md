@@ -3,6 +3,7 @@ id: 587d781a367417b2b2512ab7
 title: Use the strong Tag to Make Text Bold
 challengeType: 0
 videoUrl: 'https://scrimba.com/c/ceJNBSb'
+forumTopicId: 301080
 ---
 
 ## Description
@@ -21,11 +22,11 @@ Wrap a <code>strong</code> tag around "Stanford University" inside the <code>p</
 ```yml
 tests:
   - text: Your code should add one <code>strong</code> tag to the markup.
-    testString: assert($('strong').length == 1, 'Your code should add one <code>strong</code> tag to the markup.');
+    testString: assert($('strong').length == 1);
   - text: The <code>strong</code> tag should be inside the <code>p</code> tag.
-    testString: assert($('p').children('strong').length == 1, 'The <code>strong</code> tag should be inside the <code>p</code> tag.');
+    testString: assert($('p').children('strong').length == 1);
   - text: The <code>strong</code> tag should wrap around the words "Stanford University".
-    testString: assert($('strong').text().match(/^Stanford University$/gi), 'The <code>strong</code> tag should wrap around the words "Stanford University".');
+    testString: assert($('strong').text().match(/^Stanford University$/gi));
 
 ```
 
@@ -126,4 +127,5 @@ tests:
   </div>
 </div>
 ```
+
 </section>
